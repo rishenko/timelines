@@ -1,0 +1,146 @@
+import { describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { isV1Data, isV2Data, migrateV1, migrateV2, upgrade } from './migrate.ts';
+import { validateDataset } from './validate.ts';
+import REDACTED from '../timelines/REDACTED.json';
+import ancient from '../timelines/ancient-near-east.json';
+import type { Dataset } from '../types.ts';
+
+// Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file.
+const V1_PATH = '../REDACTED/src/data/REDACTED-timeline-data.json';
+const V2_PATH = '../REDACTED/src/data/timeline.json';
+
+function load(path: string) {
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+const shipped: [string, Dataset][] = [
+  ['REDACTED', REDACTED as Dataset],
+  ['ancient-near-east', ancient as unknown as Dataset],
+];
+
+describe('shipped timelines', () => {
+  for (const [id, ds] of shipped) {
+    it(`${id} is valid`, () => {
+      expect(validateDataset(ds)).toEqual([]);
+      expect(ds.meta.id).toBe(id);
+    });
+  }
+
+  it('every ancient event cites at least one source, and every claim has one', () => {
+    const ds = ancient as unknown as Dataset;
+    for (const e of ds.events) {
+      expect(e.sources.length, e.title).toBeGreaterThan(0);
+      for (const c of [...(e.startDates ?? []), ...(e.endDates ?? [])]) expect(c.source, e.title).toBeDefined();
+    }
+    for (const t of ds.tracks) for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? [])])
+      expect(c.source, t.id).toBeDefined();
+  });
+});
+
+describe('validateDataset', () => {
+  const base = (): Dataset => structuredClone(REDACTED as Dataset);
+
+  it('catches end before start', () => {
+    const d = base();
+    d.events[0].end = d.events[0].start - 5;
+    expect(validateDataset(d).join()).toMatch(/ends .* before it starts/);
+  });
+
+  it('catches unknown tracks, sources and links', () => {
+    const d = base();
+    d.events[0].tracks = ['nope'];
+    d.events[1].sources = [{ sourceKey: 'nope', sourceLocation: '' }];
+    d.events[2].links = [{ to: 'missing', kind: 'causes' }];
+    const errs = validateDataset(d).join('\n');
+    expect(errs).toMatch(/unknown track "nope"/);
+    expect(errs).toMatch(/unknown source "nope"/);
+    expect(errs).toMatch(/unknown event "missing"/);
+  });
+
+  it('catches duplicate ids', () => {
+    const d = base();
+    d.events[1].uuid = d.events[0].uuid;
+    expect(validateDataset(d).join()).toMatch(/Duplicate event uuid/);
+  });
+
+  it('allows two levels of nesting but not three', () => {
+    const d = base();
+    d.tracks.push({ id: 'a', name: 'A', color: '#000', parent: 'redacted' }, { id: 'b', name: 'B', color: '#000', parent: 'a' });
+    expect(validateDataset(d)).toEqual([]);
+    d.tracks.push({ id: 'c', name: 'C', color: '#000', parent: 'b' });
+    expect(validateDataset(d).join()).toMatch(/at most 2 levels/);
+  });
+
+  it('catches parent cycles', () => {
+    const d = base();
+    d.tracks.push({ id: 'a', name: 'A', color: '#000', parent: 'b' }, { id: 'b', name: 'B', color: '#000', parent: 'a' });
+    expect(validateDataset(d).join()).toMatch(/own ancestor/);
+  });
+
+  it('checks date claims: chronology, source, margin, and that the best estimate lies within them', () => {
+    const d = base();
+    d.chronologies = { mid: { name: 'Middle', group: 'g' } };
+    d.events[0].startDates = [{ year: d.events[0].start + 10, margin: -1, chronology: 'nope', source: { sourceKey: 'x', sourceLocation: '' } }];
+    const errs = validateDataset(d).join('\n');
+    expect(errs).toMatch(/negative margin/);
+    expect(errs).toMatch(/unknown chronology "nope"/);
+    expect(errs).toMatch(/unknown source "x"/);
+    expect(errs).toMatch(/outside its claims/);
+  });
+
+  it('requires defaultIncrement to be one of the increments', () => {
+    const d = base();
+    d.meta.defaultIncrement = 7;
+    expect(validateDataset(d).join()).toMatch(/defaultIncrement/);
+  });
+});
+
+describe('migration', () => {
+  const v1 = load(V1_PATH);
+  const v2 = load(V2_PATH);
+
+  it.skipIf(!v1)('v1 → v3 keeps every non-marker entry', () => {
+    expect(isV1Data(v1)).toBe(true);
+    const { data, from } = upgrade(v1);
+    expect(from).toBe(1);
+    const ds = data as Dataset;
+    const nonMarkers = v1.timeline.filter((e: { marker?: boolean }) => !e.marker);
+    expect(ds.events).toHaveLength(nonMarkers.length);
+    expect(validateDataset(ds)).toEqual([]);
+    // BE years become negative; REDACTED has a year 0, so stored years equal the signed years
+    expect(ds.events.find((e) => e.title === 'Beginning of The REDACTED')!.start).toBe(-5500);
+    expect(ds.tracks.map((t) => t.id)).not.toContain('REDACTED');
+    expect(Object.keys(ds.sources)).not.toContain('all-sources');
+    expect(migrateV1(v1).schemaVersion).toBe(2);
+  });
+
+  it.skipIf(!v2)('v2 → v3 keeps every event and its years unchanged', () => {
+    expect(isV2Data(v2)).toBe(true);
+    const ds = migrateV2(v2);
+    expect(validateDataset(ds)).toEqual([]);
+    expect(ds.events).toHaveLength(v2.events.length);
+    for (const [i, e] of v2.events.entries()) {
+      expect(ds.events[i].uuid).toBe(e.uuid);
+      expect(ds.events[i].start).toBe(e.start);
+      expect(ds.events[i].end).toBe(e.end);
+    }
+    expect(ds.meta.calendar.yearZero).toBe(true);
+    expect(ds.tracks.find((t) => t.id === 'REDACTED')!.pinLast).toBe(true);
+    expect(ds.tracks.find((t) => t.id === 'redacted')!.image).toBe('timelines/REDACTED/logos/redacted.svg');
+    expect(ds.sources.REDACTED.tags).toEqual(v2.sources.REDACTED.publishingAttributes);
+  });
+
+  it('the shipped REDACTED file matches a fresh v2 → v3 conversion', () => {
+    if (!v2) return;
+    expect(migrateV2(v2)).toEqual(REDACTED);
+  });
+
+  it('leaves v3 data alone', () => {
+    expect(upgrade(REDACTED).from).toBeUndefined();
+  });
+});
