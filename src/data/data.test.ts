@@ -4,6 +4,8 @@ import { isV1Data, isV2Data, migrateV1, migrateV2, upgrade } from './migrate.ts'
 import { validateDataset } from './validate.ts';
 import REDACTED from '../timelines/REDACTED.json';
 import ancient from '../timelines/ancient-near-east.json';
+import example from '../../docs/examples/example-timeline.json';
+import { resolveEvents, defaultSelection } from '../lib/chronology.ts';
 import type { Dataset } from '../types.ts';
 
 // Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file.
@@ -39,6 +41,32 @@ describe('shipped timelines', () => {
     }
     for (const t of ds.tracks) for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? [])])
       expect(c.source, t.id).toBeDefined();
+  });
+});
+
+describe('documented example (docs/examples/example-timeline.json)', () => {
+  const ds = example as unknown as Dataset;
+  it('is valid', () => {
+    expect(validateDataset(ds)).toEqual([]);
+  });
+  it('shows the features the format doc describes', () => {
+    expect(ds.meta.calendar.yearZero).toBe(false);
+    expect(ds.tracks.some((t) => t.parent && ds.tracks.find((p) => p.id === t.parent)?.parent)).toBe(true); // 3 levels
+    expect(ds.tracks.some((t) => t.span?.startDates)).toBe(true);
+    expect(ds.tracks.some((t) => t.pinLast)).toBe(true);
+    expect(ds.events.some((e) => e.ongoing)).toBe(true);
+    expect(ds.events.some((e) => e.circa)).toBe(true);
+    expect(Object.values(ds.chronologies ?? {}).some((c) => c.derive)).toBe(true);
+    const byId = new Map(resolveEvents(ds, defaultSelection(ds)).map((e) => [e.uuid, e]));
+    // claims give the First War a range; the circa flood gets ±circaFade
+    // the First War's range: the chronicle's 85 ± 2, and the temple reckoning derived from the court date (88 - 12)
+    expect(byId.get('first-war')!.startWindow).toEqual([76, 88]);
+    expect(byId.get('great-flood')!.startWindow).toEqual([145, 155]);
+    // the temple reckoning re-plots dates before the reform, not after
+    const temple = new Map(resolveEvents(ds, { 'The North': 'temple' }).map((e) => [e.uuid, e]));
+    expect(temple.get('founding')!.start).toBe(-11);
+    expect(temple.get('calendar-reform')!.start).toBe(188);
+    expect(temple.get('ilse-reign')!.start).toBe(321);
   });
 });
 

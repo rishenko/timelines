@@ -13,7 +13,7 @@ Switch between them with the title menu or `?timeline=ancient-near-east` / `?tim
 
 ### Your own timelines
 
-Any schema-v3 timeline file can be opened without changing the code:
+Any schema-v3 timeline file can be opened without changing the code (format: [docs/data-format.md](docs/data-format.md)):
 
 - **From a link:** `https://…/timelines/?data=<url-of-a-timeline.json>`. The file is fetched, validated,
   saved in the browser and opened. Anyone can open the same link; GitHub page links are converted to raw
@@ -41,7 +41,8 @@ paths; anything else (e.g. `javascript:`) is rejected.
   A track can have a **lifespan**, shaded across its lane, so you can see which civilizations coexisted.
 - **Uncertain dates.** An event's start and end can carry *date claims*: what each source says, under which
   chronology, with what ± margin. The app computes each date's range from those claims and draws it:
-  bars fade across their uncertain ends, and single events get a whisker. Nothing is typed in as a margin
+  a bar's uncertain start and end ranges are drawn in a lighter tint of its color, and a single-year event gets a
+  lighter band across its range. Nothing is typed in as a margin
   by hand; if the sources agree, the date is drawn crisp.
 - **Chronologies.** A timeline can define alternative dating systems (e.g. Mesopotamia's High, Middle and
   Low chronologies), set one per region, and let readers switch. Alternatives can be stated per event or
@@ -68,6 +69,10 @@ npm run data:REDACTED    # re-import REDACTED data from ../REDACTED
 ```
 
 ## Data (schema v3)
+
+**Full reference: [docs/data-format.md](docs/data-format.md)**, with every field, the rules a file must pass, how
+uncertain dates are worked out and drawn, and a complete example to copy
+([docs/examples/example-timeline.json](docs/examples/example-timeline.json)). The summary below shows the shape.
 
 Bundled timelines live in `src/timelines/` and are registered in `src/timelines/index.ts`.
 
@@ -121,7 +126,7 @@ which converts and validates them.
 | `src/lib/calendar.ts` | Eras, year 0, parsing/formatting, round-year ruler ticks |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, error windows |
 | `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
-| `src/timeline/layout.ts` | Lanes from the track tree; row packing, `+N` clusters, faded/whiskered marks |
+| `src/timeline/layout.ts` | Lanes from the track tree; row packing, `+N` clusters, marks with lighter start/end ranges |
 | `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering |
 | `src/state/` | Dataset reducer (per-timeline drafts), the timeline library, filters, theme |
 | `src/Boot.tsx` | Opens `?data=<url>` links before the app starts |

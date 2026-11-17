@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "example-varn",
+    "title": "The Kingdoms of Varn",
+    "subtitle": "an example timeline",
+    "description": "A small fictional timeline that uses every feature of the format.",
+    "credits": "Example data for the Timelines app. Fictional; any resemblance to real history is accidental.",
+    "calendar": {
+      "before": "BF",
+      "after": "AF",
+      "yearZero": false,
+      "aliases": { "before": ["before founding"], "after": ["after founding"] }
+    },
+    "increments": [1, 10, 50],
+    "defaultIncrement": 10,
+    "defaultTheme": "parchment",
+    "customSourceTag": "fan",
+    "circaFade": 5,
+    "collapsed": ["the-south"]
+  },
+  "present": 470,
+  "tags": {
+    "primary": { "name": "Primary source" },
+    "secondary": { "name": "Secondary source" },
+    "fan": { "name": "Fan addition" }
+  },
+  "sources": {
+    "annals": {
+      "name": "The Aldmark Court Annals",
+      "author": "Court scribes of Aldmark",
+      "tags": ["primary"]
+    },
+    "chronicle": {
+      "name": "A Chronicle of the Serathi",
+      "author": "Orren of Tal",
+      "year": "412 AF",
+      "url": "https://example.com/serathi-chronicle",
+      "accessed": "2026-11-17",
+      "tags": ["secondary"]
+    },
+    "travellers-tales": {
+      "name": "Travellers' Tales (later chapters)",
+      "tags": ["secondary"],
+      "hiddenByDefault": true
+    }
+  },
+  "chronologies": {
+    "court": {
+      "name": "Court annals",
+      "group": "The North",
+      "default": true,
+      "description": "Years as the Aldmark court counted them.",
+      "source": { "sourceKey": "annals", "sourceLocation": "preface" }
+    },
+    "temple": {
+      "name": "Temple reckoning",
+      "group": "The North",
+      "description": "The temples began their count 12 years earlier; the two calendars were reconciled in 200 AF.",
+      "source": { "sourceKey": "chronicle", "sourceLocation": "ch. 2" },
+      "derive": { "from": "court", "offset": -12, "until": 200 }
+    }
+  },
+  "tracks": [
+    { "id": "the-north", "name": "The North", "color": "#3f6fae", "chronology": "court" },
+    {
+      "id": "aldmark",
+      "name": "Kingdom of Aldmark",
+      "color": "#4a86c8",
+      "parent": "the-north",
+      "span": {
+        "start": -119,
+        "end": 340,
+        "circa": true,
+        "startDates": [
+          { "year": -119, "source": { "sourceKey": "annals", "sourceLocation": "book 1" } },
+          { "year": -149, "margin": 10, "source": { "sourceKey": "chronicle", "sourceLocation": "ch. 1" }, "note": "Counts the first settlements, not the crowning." }
+        ]
+      }
+    },
+    {
+      "id": "aldmark-early",
+      "name": "Early kings",
+      "color": "#6a9fd6",
+      "parent": "aldmark",
+      "span": { "start": -119, "end": 200 }
+    },
+    {
+      "id": "aldmark-late",
+      "name": "Late kings",
+      "color": "#2f6aa8",
+      "parent": "aldmark",
+      "span": { "start": 201, "end": 340 }
+    },
+    { "id": "the-south", "name": "The South", "color": "#b5523b" },
+    {
+      "id": "serath",
+      "name": "Serath",
+      "color": "#c8643f",
+      "parent": "the-south",
+      "image": "https://example.com/images/serath-crest.svg",
+      "span": { "start": 12, "end": 455 }
+    },
+    { "id": "others", "name": "Other peoples", "color": "#7c8591", "pinLast": true }
+  ],
+  "events": [
+    {
+      "uuid": "founding",
+      "title": "Founding of Aldmark",
+      "descr": "The first king is crowned at Varn. The calendar counts from this year: 1 AF.",
+      "start": 1,
+      "order": 1,
+      "tracks": ["aldmark-early"],
+      "sources": [{ "sourceKey": "annals", "sourceLocation": "book 1, ch. 1" }]
+    },
+    {
+      "uuid": "first-war",
+      "title": "The First War",
+      "descr": "Aldmark and Serath fight over the river crossings.",
+      "start": 88,
+      "end": 96,
+      "tracks": ["aldmark-early", "serath"],
+      "sources": [
+        { "sourceKey": "annals", "sourceLocation": "book 4" },
+        { "sourceKey": "chronicle", "sourceLocation": "ch. 5" }
+      ],
+      "startDates": [
+        { "year": 88, "source": { "sourceKey": "annals", "sourceLocation": "book 4" } },
+        { "year": 85, "margin": 2, "source": { "sourceKey": "chronicle", "sourceLocation": "ch. 5" } }
+      ],
+      "endDates": [
+        { "year": 96, "source": { "sourceKey": "annals", "sourceLocation": "book 4" } },
+        { "year": 97, "source": { "sourceKey": "chronicle", "sourceLocation": "ch. 5" } }
+      ],
+      "links": [{ "to": "river-treaty", "kind": "causes" }]
+    },
+    {
+      "uuid": "river-treaty",
+      "title": "Treaty of the River",
+      "descr": "The war ends with the river as the border.",
+      "start": 97,
+      "tracks": ["aldmark-early", "serath"],
+      "sources": [{ "sourceKey": "chronicle", "sourceLocation": "ch. 6" }]
+    },
+    {
+      "uuid": "great-flood",
+      "title": "The Great Flood",
+      "descr": "A flood remembered by every people of the valley. No source gives the exact year.",
+      "start": 150,
+      "circa": true,
+      "chronology": "temple",
+      "tracks": ["others", "the-north", "the-south"],
+      "sources": [{ "sourceKey": "chronicle", "sourceLocation": "ch. 8" }]
+    },
+    {
+      "uuid": "calendar-reform",
+      "title": "Court and temple calendars reconciled",
+      "descr": "From this year on, both reckonings agree.",
+      "start": 200,
+      "tracks": ["aldmark-early"],
+      "sources": [{ "sourceKey": "chronicle", "sourceLocation": "ch. 9" }]
+    },
+    {
+      "uuid": "ilse-reign",
+      "title": "Reign of Queen Ilse",
+      "descr": "The last ruler of Aldmark.",
+      "start": 321,
+      "end": 340,
+      "tracks": ["aldmark-late"],
+      "sources": [{ "sourceKey": "annals", "sourceLocation": "book 19" }]
+    },
+    {
+      "uuid": "serath-conquest",
+      "title": "Serath conquers Aldmark",
+      "descr": "A two-year campaign ends with the fall of Varn.",
+      "start": 338,
+      "end": 340,
+      "tracks": ["serath", "aldmark-late"],
+      "sources": [{ "sourceKey": "chronicle", "sourceLocation": "ch. 14" }],
+      "links": [{ "to": "ilse-reign", "kind": "conquers" }]
+    },
+    {
+      "uuid": "serathi-republic",
+      "title": "The Serathi Republic",
+      "descr": "Serath's kings are replaced by an elected council, which still governs.",
+      "start": 455,
+      "ongoing": true,
+      "tracks": ["serath"],
+      "sources": [{ "sourceKey": "travellers-tales", "sourceLocation": "ch. 20" }],
+      "links": [{ "to": "serath-conquest", "kind": "related" }]
+    }
+  ]
+}
