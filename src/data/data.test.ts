@@ -6,6 +6,7 @@ import REDACTED from '../timelines/REDACTED.json';
 import ancient from '../timelines/ancient-near-east.json';
 import example from '../../docs/examples/example-timeline.json';
 import { resolveEvents, defaultSelection } from '../lib/chronology.ts';
+import { relatedRegions, allowedDistance } from './proximity.ts';
 import type { Dataset } from '../types.ts';
 
 // Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file.
@@ -41,6 +42,32 @@ describe('shipped timelines', () => {
     }
     for (const t of ds.tracks) for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? [])])
       expect(c.source, t.id).toBeDefined();
+  });
+
+  it('ancient regions that interacted sit near each other', () => {
+    // Rows run west to east so partners are close. If this fails after adding data, move the regions
+    // listed (or their civilizations) closer together rather than loosening the limits.
+    const far = relatedRegions(ancient as unknown as Dataset)
+      .filter((p) => p.distance > allowedDistance(p.shared))
+      .map((p) => `${p.a} and ${p.b}: ${p.shared} shared, ${p.distance} apart (max ${allowedDistance(p.shared)})`);
+    expect(far).toEqual([]);
+  });
+});
+
+describe('relatedRegions', () => {
+  it('counts shared events and links between regions, at their distance in row order', () => {
+    const ds = {
+      tracks: [{ id: 'a' }, { id: 'a1', parent: 'a' }, { id: 'b' }, { id: 'c' }],
+      events: [
+        { uuid: 'x', tracks: ['a1', 'c'] },
+        { uuid: 'y', tracks: ['b'], links: [{ to: 'x', kind: 'causes' }] },
+        { uuid: 'z', tracks: ['a', 'a1'] },
+      ],
+    } as unknown as Dataset;
+    expect(relatedRegions(ds)).toEqual([
+      { a: 'a', b: 'c', shared: 1, distance: 2 },
+      { a: 'a', b: 'b', shared: 1, distance: 1 },
+    ]);
   });
 });
 

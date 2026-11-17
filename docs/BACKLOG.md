@@ -20,9 +20,11 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 - **Drafts hide data updates.** A saved edit-mode draft replaces the bundled timeline entirely, so a
   reader with a draft never sees later fixes to the shipped data. Same issue as REDACTED;
   fix both the same way (e.g. detect a newer shipped dataset and offer to merge).
-- **More ancient content**: Lagash–Umma and Eannatum, Hittite Middle Kingdom, Mitanni rulers, the Levant
-  (Ugarit, Canaan), Elam. Same rule: every date from a cited page.
-- **Toolbar**: with three chronology menus the ancient toolbar wraps onto two rows. Consider a
+- **More ancient content**: Lagash–Umma and Eannatum, Hittite Middle Kingdom, Mitanni rulers, Hazor
+  (fetch *Tel Hazor*), Confucius, Lydia, Sabaeans, the Nubian kingdom of Kerma/Kush. Same rule: every date
+  from a cited page. Many values for the Levant, Assyria and Iran exist only in page summaries
+  (see `docs/ancient-sources.md`) and need a verbatim read before use.
+- **Toolbar**: with four chronology menus (China added) the ancient toolbar wraps onto two rows. Consider a
   single "Dating" popover.
 - **Intro for first-time readers** beyond the legend (which now exists): e.g. a short guided tour.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.

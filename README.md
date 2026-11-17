@@ -5,9 +5,10 @@
 A horizontal, swimlane timeline for any history, fictional or real. Each timeline is one data file
 with its own calendar, eras, scale and theme. Two ship with the app:
 
-- **Ancient Civilizations** (default): Egypt, Mesopotamia (Sumer, Akkad, Babylonia), the Hittites and the
-  Aegean (Minoan and Mycenaean), c. 3500–539 BCE, with Mitanni, Assyria, Persia and the Sea Peoples where
-  they meet. 99 events, every date cited.
+- **Ancient Civilizations** (default): Mesopotamia (Sumer, Akkad, Babylonia, Assyria), the Levant
+  (Canaan, Ebla, Ugarit, Phoenicia, Israel and Judah, Philistines, Aram), Egypt, Anatolia (Hittites, Urartu),
+  the Aegean, Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Indus
+  Valley, China and the Americas, c. 3500–330 BCE. 177 events, every date cited.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
 
