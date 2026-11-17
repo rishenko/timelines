@@ -23,6 +23,7 @@ import {
 import { allTimelines, BUNDLED, BUNDLED_IDS, findTimeline } from './timelines/index.ts';
 import { addToLibrary, fetchTimeline, normalizeUrl, removeFromLibrary, type LibraryEntry } from './state/library.ts';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
+import { LegendPanel } from './components/LegendPanel.tsx';
 import { safeUrl } from './lib/urls.ts';
 import type { Dataset, TimelineEvent, Track } from './types.ts';
 
@@ -48,6 +49,17 @@ function readUrl() {
     links: q.get('links') === '1',
     selected: decodeURIComponent(window.location.hash.slice(1)) || null,
   };
+}
+
+/** Set once the legend has been shown, so it opens by itself only on a first visit. */
+const LEGEND_SEEN_KEY = "timelines:legend-seen";
+
+function firstVisit(): boolean {
+  try {
+    return !localStorage.getItem(LEGEND_SEEN_KEY);
+  } catch {
+    return false;
+  }
 }
 
 /** Picker entry that opens the library panel instead of a timeline. */
@@ -96,6 +108,14 @@ export default function App() {
   const [showFilters, setShowFilters] = useState(false);
   const [showTheme, setShowTheme] = useState(false);
   const [showTimelines, setShowTimelines] = useState(false);
+  const [showLegend, setShowLegend] = useState(firstVisit);
+  useEffect(() => {
+    try {
+      localStorage.setItem(LEGEND_SEEN_KEY, "1");
+    } catch {
+      // storage disabled: the legend just opens on every visit
+    }
+  }, []);
   const [timelines, setTimelines] = useState(allTimelines);
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
   const [editMode, setEditMode] = useState(false);
@@ -429,6 +449,13 @@ export default function App() {
           Filters
         </button>
         <button
+          className={showLegend ? 'on' : ''}
+          onClick={() => setShowLegend((s) => !s)}
+          title="What the bars, diamonds, colors and lines mean"
+        >
+          Legend
+        </button>
+        <button
           className={showTimelines ? 'on' : ''}
           onClick={() => setShowTimelines((s) => !s)}
           title="Open a timeline from a link or file, or manage the ones you've added"
@@ -503,6 +530,8 @@ export default function App() {
           to download or discard them.
         </div>
       )}
+
+      {showLegend && <LegendPanel data={data} onClose={() => setShowLegend(false)} />}
 
       {showTimelines && (
         <TimelinesPanel

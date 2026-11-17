@@ -1,0 +1,220 @@
+import type { ReactNode } from 'react';
+import type { Dataset, LinkKind } from '../types.ts';
+import { formatYear } from '../lib/calendar.ts';
+import { chronologyGroups } from '../lib/chronology.ts';
+
+interface Props {
+  data: Dataset;
+  onClose: () => void;
+}
+
+interface Item {
+  /** Leave out when the timeline doesn't use this feature. */
+  show?: boolean;
+  sample: ReactNode;
+  title: string;
+  text: ReactNode;
+}
+
+/** Arrowheads for the link samples (own ids, so the legend works without the timeline's SVG). */
+function LinkSample({ kind }: { kind: 'causes' | 'part-of' | 'succeeds' | 'conquers' | 'related' }) {
+  return (
+    <svg className="lg-link" width="64" height="16" aria-hidden>
+      <defs>
+        <marker id={`lg-arrow-${kind}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" className={`arrowhead ${kind}`} />
+        </marker>
+      </defs>
+      <path
+        d="M 2 12 C 22 12, 40 4, 60 4"
+        className={`link ${kind}`}
+        markerEnd={kind === 'related' ? undefined : `url(#lg-arrow-${kind})`}
+      />
+    </svg>
+  );
+}
+
+function Section({ title, items }: { title: string; items: Item[] }) {
+  items = items.filter((it) => it.show !== false);
+  if (!items.length) return null;
+  return (
+    <section>
+      <h3>{title}</h3>
+      <dl>
+        {items.map((it) => (
+          <div key={it.title} className="lg-item">
+            <dt className="lg-sample" aria-hidden>
+              {it.sample}
+            </dt>
+            <dd>
+              <strong>{it.title}</strong> {it.text}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  );
+}
+
+export function LegendPanel({ data, onClose }: Props) {
+  const cal = data.meta.calendar;
+  // samples use the timeline's own first row color
+  const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
+  const hasChronologies = [...chronologyGroups(data)].some(([, list]) => list.length > 1);
+  // only explain what this timeline actually uses
+  const has = {
+    nesting: data.tracks.some((t) => t.parent),
+    lifespans: data.tracks.some((t) => t.span),
+    ranges: data.events.some((e) => e.startDates || e.endDates) || data.tracks.some((t) => t.span?.startDates || t.span?.endDates),
+    circa: data.events.some((e) => e.circa),
+    shared: data.events.some((e) => e.tracks.length > 1),
+  };
+  const linkKinds = new Set<LinkKind>(data.events.flatMap((e) => (e.links ?? []).map((l) => l.kind)));
+  const circa = formatYear(cal.yearZero ? 1200 : -1199, cal, true);
+  const era = formatYear(cal.yearZero ? 0 : 1, cal);
+
+  const rows: Item[] = [
+    {
+      sample: (
+        <span className="lg-rows">
+          <span className="lg-row d0">Region ▾</span>
+          <span className="lg-row d1">Civilization ▸</span>
+          <span className="lg-row d2">Period</span>
+        </span>
+      ),
+      title: 'Rows',
+      text: has.nesting
+        ? 'Each row is a track: a region, people, faction or period. Rows nest up to three levels. ▾ folds a row’s sub-rows into it; ▸ opens them again.'
+        : 'Each row is a track: a region, people, faction or period.',
+    },
+    {
+      sample: <span className="lg-lifespan" />,
+      show: has.lifespans,
+      title: 'Lifespan',
+      text: 'The shaded band behind a row shows when that civilization, period or faction existed. Soft edges mean its start or end is uncertain.',
+    },
+    {
+      sample: <span className="lg-row-more">⇣</span>,
+      title: 'Crowded rows',
+      text: 'When a row has more than four stacked lines of events, ⇣ shows them all.',
+    },
+  ];
+
+  const events: Item[] = [
+    {
+      sample: <span className="lg-bar" />,
+      title: 'Span',
+      text: 'An event lasting several years, from its first to its last year.',
+    },
+    {
+      sample: <span className="lg-diamond" />,
+      title: 'Single-year event',
+      text: 'An event dated to one year.',
+    },
+    {
+      sample: <span className="lg-cluster">+3</span>,
+      title: 'Folded events',
+      text: 'Events that didn’t fit in a crowded row. Click to zoom in on them.',
+    },
+    {
+      sample: (
+        <span className="lg-multi">
+          <span className="lg-diamond" />
+          <span className="lg-thread" />
+          <span className="lg-diamond" />
+        </span>
+      ),
+      show: has.shared,
+      title: 'Shared event',
+      text: 'An event that involves several rows appears in each one, joined by a vertical thread.',
+    },
+  ];
+
+  const dates: Item[] = [
+    {
+      sample: <span className="lg-bar uncertain" />,
+      show: has.ranges,
+      title: 'Uncertain start and end',
+      text: 'The lighter ends of a bar are the range of years the sources give for its start and end; the darker middle is the part they agree on. If the ranges overlap, the darker part shows the event’s dates under the selected dating system.',
+    },
+    {
+      sample: (
+        <span className="lg-point-range">
+          <span className="lg-band" />
+          <span className="lg-diamond" />
+        </span>
+      ),
+      show: has.ranges,
+      title: 'Uncertain single date',
+      text: 'The lighter band behind a diamond is the range of years the sources give.',
+    },
+    {
+      sample: <span className="lg-text">{circa}</span>,
+      show: has.circa || has.ranges,
+      title: '“c.”',
+      text: 'Circa: an approximate date. Open an event to see every date its sources give, with their margins.',
+    },
+    ...(hasChronologies
+      ? [
+          {
+            sample: <span className="lg-select">Middle ▾</span>,
+            title: 'Dating systems',
+            text: 'Scholars date some regions differently. The toolbar menus redraw a region’s events under another dating system; the ranges always include all of them.',
+          },
+        ]
+      : []),
+  ];
+
+  const links: Item[] = [
+    { show: linkKinds.has('causes'), sample: <LinkSample kind="causes" />, title: 'Leads to', text: 'One event caused or led to another.' },
+    { show: linkKinds.has('part-of'), sample: <LinkSample kind="part-of" />, title: 'Part of', text: 'An event within a larger one.' },
+    { show: linkKinds.has('succeeds'), sample: <LinkSample kind="succeeds" />, title: 'Succeeds', text: 'Comes after and replaces another.' },
+    { show: linkKinds.has('conquers'), sample: <LinkSample kind="conquers" />, title: 'Conquers', text: 'One power conquers another.' },
+    { show: linkKinds.has('related'), sample: <LinkSample kind="related" />, title: 'Related', text: 'Connected, with no direction.' },
+  ];
+
+  const ruler: Item[] = [
+    {
+      sample: <span className="lg-era">{era}</span>,
+      title: 'Era line',
+      text: `Where ${cal.before} turns to ${cal.after}.${cal.yearZero ? '' : ` This calendar has no year 0: 1 ${cal.before} is followed by 1 ${cal.after}.`}`,
+    },
+    {
+      sample: <span className="lg-gap">⋯</span>,
+      title: 'Compressed gap',
+      text: 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the years skipped. Turn off “Compress gaps” to see true distances.',
+    },
+    {
+      sample: (
+        <span className="lg-focus">
+          <span className="lg-diamond selected" />
+          <span className="lg-diamond dim" />
+        </span>
+      ),
+      title: 'Highlight',
+      text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. Arrows always show for the selected event; “Connections” shows them all.',
+    },
+  ];
+
+  return (
+    <div className="legend-panel" style={{ '--track-color': color } as React.CSSProperties}>
+      <header>
+        <h2>How to read this timeline</h2>
+        <button className="icon" onClick={onClose} title="Close the legend">
+          ✕
+        </button>
+      </header>
+      <div className="legend-grid">
+        <Section title="Rows" items={rows} />
+        <Section title="Events" items={events} />
+        <Section title="Dates" items={dates} />
+        <Section title="Connections" items={links} />
+        <Section title="Ruler and view" items={ruler} />
+      </div>
+      <p className="muted small">
+        Click any event for its description, dates, sources and connections. Use the year buttons to zoom, Filters to hide
+        rows or sources, and Edit mode to add your own.
+      </p>
+    </div>
+  );
+}

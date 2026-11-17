@@ -51,6 +51,8 @@ paths; anything else (e.g. `javascript:`) is rejected.
   `part-of`, `succeeds`, `conquers`, `related`) draw as arrows. The detail panel counts, but doesn't name,
   connections hidden by your filters (spoilers).
 - **Gap compression:** long empty stretches collapse into a hatched `⋯ 900 yrs ⋯` break.
+- **Legend:** the Legend button explains every symbol, color and line, using the current theme and only the features the
+  open timeline uses. It opens by itself on a reader's first visit.
 - **Themes:** presets and per-color pickers. Each timeline has a default (ancient: Parchment, REDACTED: Dark)
   until the reader picks their own.
 - **Deep links:** `?timeline=…&inc=100&at=-1594#sack-of-babylon` restores timeline, scale, position and selection.
