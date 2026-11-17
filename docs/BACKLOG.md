@@ -27,7 +27,7 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 - **Intro for first-time readers** beyond the legend (which now exists): e.g. a short guided tour.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phone and tablet** support: swipe, pinch-zoom, a narrow layout. Desktop-only today.
-- **Hosting**: a public repo (free GitHub Pages) or another static host. Not set up yet.
+- **Hosting**: live on GitHub Pages (public repo); `npm run deploy` publishes.
 - **Editing lifespan claims**: the track form edits a lifespan's dates but not its date claims (those are
   kept when the dates don't change, and editable in the JSON).
 
