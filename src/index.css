@@ -604,30 +604,30 @@ main {
 .tl-mark.span .label {
   padding-left: 6px;
 }
-/* uncertain dates: the bar fades out across its error windows */
-.tl-mark.span.uncertain .bar {
-  border-left-color: transparent;
-  border-right-color: transparent;
-  mask-image: linear-gradient(
-    to right,
-    rgb(0 0 0 / 0.15) 0,
-    #000 var(--fade-in, 0px),
-    #000 calc(var(--bar-w) - var(--fade-out, 0px)),
-    rgb(0 0 0 / 0.15) var(--bar-w)
-  );
+/*
+ * Uncertain dates: the start and end ranges are drawn in a lighter tint of the track color,
+ * the certain middle in the normal bar color. Hard color stops, no fade.
+ */
+.tl-mark {
+  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent);
+  --range-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent);
 }
-.tl-mark.point .whisker {
-  position: absolute;
-  top: 50%;
-  height: 3px;
-  margin-top: -1.5px;
-  border-radius: 2px;
+.tl-mark.span.uncertain .bar {
   background: linear-gradient(
     to right,
-    transparent,
-    color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent) 50%,
-    transparent
+    var(--range-fill) 0 var(--fade-in, 0px),
+    var(--bar-fill) var(--fade-in, 0px) calc(100% - var(--fade-out, 0px)),
+    var(--range-fill) calc(100% - var(--fade-out, 0px)) 100%
   );
+}
+/* a single-year event with a date range: the range as a lighter band behind its diamond */
+.tl-mark.point .whisker {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 3px;
+  background: var(--range-fill);
+  border: 1px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, transparent);
   pointer-events: none;
 }
 .tl-mark.point .diamond,

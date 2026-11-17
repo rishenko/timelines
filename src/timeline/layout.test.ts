@@ -138,6 +138,17 @@ describe('uncertain marks', () => {
     expect(m.fadeOut).toBeCloseTo(scale.x(121) - scale.x(96));
   });
 
+  it('when the start and end ranges overlap, the darker middle shows the event dates', () => {
+    // a 42-year span whose start and end ranges are each 120 years wide (like Hammurabi under High/Middle/Low)
+    const e = { ...ev('r', 100, ['REDACTED'], 142), startWindow: [44, 164] as [number, number], endWindow: [86, 206] as [number, number] };
+    const s = buildScale([0, 300], { increment: 10, tickPx: 80, compress: false });
+    const m = layoutLanes(lanes, [e], s, 300).lanes.find((l) => l.lane.id === 'REDACTED')!.marks[0];
+    expect(m.x0).toBeCloseTo(s.x(44));
+    expect(m.x1).toBeCloseTo(s.x(207));
+    expect(m.fadeIn).toBeCloseTo(s.x(100) - s.x(44));
+    expect(m.fadeOut).toBeCloseTo(s.x(207) - s.x(143));
+  });
+
   it('gives a point event a whisker over its window', () => {
     const e = { ...ev('p', 50, ['REDACTED']), startWindow: [30, 70] as [number, number] };
     const m = layoutLanes(lanes, [e], scale, 200).lanes.find((l) => l.lane.id === 'REDACTED')!.marks[0];

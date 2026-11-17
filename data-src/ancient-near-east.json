@@ -5,7 +5,7 @@
     "title": "Ancient Civilizations",
     "subtitle": "Egypt, Mesopotamia, Anatolia and the Aegean, c. 3500–539 BCE",
     "description": "Bronze Age and early Iron Age civilizations of the eastern Mediterranean and the Near East, from early Sumer to Cyrus taking Babylon.",
-    "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. Faded bar ends and whiskers show the spread of dates the cited sources give, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
+    "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
     "calendar": { "before": "BCE", "after": "CE", "yearZero": false, "aliases": { "before": ["BC"], "after": ["AD"] } },
     "increments": [10, 50, 100, 500],
     "defaultIncrement": 100,

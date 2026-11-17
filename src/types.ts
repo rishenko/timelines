@@ -36,7 +36,7 @@ export interface TimelineMeta {
   defaultTheme?: string;
   /** Tag applied to sources created in the editor (REDACTED: "homebrew"). */
   customSourceTag?: string;
-  /** Years of fade drawn either side of a "circa" date that has no stated margin. */
+  /** Years of range drawn either side of a "circa" date that has no stated margin. */
   circaFade?: number;
   /** Track ids that start collapsed. */
   collapsed?: string[];

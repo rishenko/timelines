@@ -24,7 +24,7 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   (Ugarit, Canaan), Elam. Same rule: every date from a cited page.
 - **Toolbar**: with three chronology menus the ancient toolbar wraps onto two rows. Consider a
   single "Dating" popover.
-- **Legend / intro** explaining bars, diamonds, threads, faded ends, whiskers, lifespans and "c.".
+- **Legend / intro** explaining bars, diamonds, threads, lighter start/end ranges, lifespans and "c.".
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phone and tablet** support: swipe, pinch-zoom, a narrow layout. Desktop-only today.
 - **Hosting**: a public repo (free GitHub Pages) or another static host. Not set up yet.

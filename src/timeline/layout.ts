@@ -30,7 +30,7 @@ export interface Mark {
   x1: number;
   /** Right edge of the mark including its label; used for packing. */
   footprintEnd: number;
-  /** Bars with uncertain ends: px from each end over which the bar fades in or out. */
+  /** Bars with uncertain ends: px at each end drawn in the lighter "range" color. */
   fadeIn?: number;
   fadeOut?: number;
   /** Point events with an uncertain date: the error window, in content px. */
@@ -148,16 +148,22 @@ export function layoutLanes(
       const ew = e.endWindow;
       if (span) {
         const end = effectiveEnd(e, present);
-        // an uncertain bar spans its whole window and fades across the uncertain parts
+        // an uncertain bar spans its whole window; the uncertain parts are drawn lighter
         x0 = scale.x(Math.min(e.start, sw?.[0] ?? e.start));
         // end year is inclusive: the bar runs to the end of that year
         x1 = Math.max(scale.x(Math.max(end, ew?.[1] ?? end) + 1), x0 + o.minBarPx);
-        if (sw) fadeIn = Math.max(0, scale.x(sw[1]) - x0);
-        if (ew) fadeOut = Math.max(0, x1 - scale.x(ew[0] + 1));
-        if (fadeIn !== undefined && fadeOut !== undefined && fadeIn + fadeOut > x1 - x0) {
-          const k = (x1 - x0) / (fadeIn + fadeOut);
-          fadeIn *= k;
-          fadeOut *= k;
+        if (sw || ew) {
+          // The darker middle runs from the latest possible start to the earliest possible end.
+          // When the ranges overlap (e.g. a 42-year reign with a 120-year chronology spread) there is
+          // no certain middle, so it shows the event's own dates under the selected chronology instead.
+          let solid0 = sw ? scale.x(sw[1]) : x0;
+          let solid1 = ew ? scale.x(ew[0] + 1) : x1;
+          if (solid1 <= solid0) {
+            solid0 = scale.x(e.start);
+            solid1 = scale.x(end + 1);
+          }
+          if (sw) fadeIn = Math.max(0, solid0 - x0);
+          if (ew) fadeOut = Math.max(0, x1 - solid1);
         }
         footprintStart = x0;
         // the label starts where the bar is solid
