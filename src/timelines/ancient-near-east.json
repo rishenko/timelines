@@ -3,8 +3,8 @@
   "meta": {
     "id": "ancient-near-east",
     "title": "Ancient Civilizations",
-    "subtitle": "Europe, the Mediterranean, Africa, the Near East, Iran, the Steppe, the Indus, China and the Americas, c. 3500–330 BCE",
-    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, the Indus Valley, China, and the Americas.",
+    "subtitle": "Europe, the Mediterranean, Africa, the Near East, Iran, the Steppe, South and East Asia, and the Americas, c. 3500–330 BCE",
+    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, South Asia, mainland Southeast Asia, China, Korea and Japan, and the Americas.",
     "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
     "calendar": {
       "before": "BCE",
@@ -45,7 +45,9 @@
       "iberia",
       "steppe",
       "nubia",
-      "sub-saharan"
+      "sub-saharan",
+      "se-asia",
+      "korea-japan"
     ]
   },
   "tags": {
@@ -1964,6 +1966,166 @@
     "wp-tichitt": {
       "name": "Wikipedia: Dhar Tichitt",
       "url": "https://en.wikipedia.org/wiki/Dhar_Tichitt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-vedic": {
+      "name": "Wikipedia: Vedic period",
+      "url": "https://en.wikipedia.org/wiki/Vedic_period",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-rigveda": {
+      "name": "Wikipedia: Rigveda",
+      "url": "https://en.wikipedia.org/wiki/Rigveda",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-mahajanapadas": {
+      "name": "Wikipedia: Mahajanapadas",
+      "url": "https://en.wikipedia.org/wiki/Mahajanapadas",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-magadha": {
+      "name": "Wikipedia: Magadha",
+      "url": "https://en.wikipedia.org/wiki/Magadha",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-bimbisara": {
+      "name": "Wikipedia: Bimbisara",
+      "url": "https://en.wikipedia.org/wiki/Bimbisara",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-buddha": {
+      "name": "Wikipedia: The Buddha",
+      "url": "https://en.wikipedia.org/wiki/The_Buddha",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-mahavira": {
+      "name": "Wikipedia: Mahavira",
+      "url": "https://en.wikipedia.org/wiki/Mahavira",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-achaemenid-indus": {
+      "name": "Wikipedia: Achaemenid conquest of the Indus Valley",
+      "url": "https://en.wikipedia.org/wiki/Achaemenid_conquest_of_the_Indus_Valley",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-jomon": {
+      "name": "Wikipedia: Jōmon period",
+      "url": "https://en.wikipedia.org/wiki/J%C5%8Dmon_period",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-yayoi": {
+      "name": "Wikipedia: Yayoi period",
+      "url": "https://en.wikipedia.org/wiki/Yayoi_period",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-sannai": {
+      "name": "Wikipedia: Sannai-Maruyama Site",
+      "url": "https://en.wikipedia.org/wiki/Sannai-Maruyama_Site",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-mumun": {
+      "name": "Wikipedia: Mumun pottery period",
+      "url": "https://en.wikipedia.org/wiki/Mumun_pottery_period",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-gojoseon": {
+      "name": "Wikipedia: Old Chosŏn (Gojoseon)",
+      "url": "https://en.wikipedia.org/wiki/Old_Chos%C5%8Fn",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-ban-chiang": {
+      "name": "Wikipedia: Ban Chiang",
+      "url": "https://en.wikipedia.org/wiki/Ban_Chiang",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-phung-nguyen": {
+      "name": "Wikipedia: Phùng Nguyên culture",
+      "url": "https://en.wikipedia.org/wiki/Ph%C3%B9ng_Nguy%C3%AAn_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-dong-son": {
+      "name": "Wikipedia: Đông Sơn culture",
+      "url": "https://en.wikipedia.org/wiki/%C4%90%C3%B4ng_S%C6%A1n_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-dong-son-drum": {
+      "name": "Wikipedia: Dong Son drum",
+      "url": "https://en.wikipedia.org/wiki/Dong_Son_drum",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-sa-huynh": {
+      "name": "Wikipedia: Sa Huỳnh culture",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-hong-bang": {
+      "name": "Wikipedia: Hồng Bàng dynasty (Văn Lang)",
+      "url": "https://en.wikipedia.org/wiki/H%E1%BB%93ng_B%C3%A0ng_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-plain-of-jars": {
+      "name": "Wikipedia: Plain of Jars",
+      "url": "https://en.wikipedia.org/wiki/Plain_of_Jars",
       "tags": [
         "wikipedia"
       ],
@@ -4769,7 +4931,7 @@
     },
     {
       "id": "indus",
-      "name": "Indus Valley",
+      "name": "South Asia",
       "color": "#b5552b"
     },
     {
@@ -4796,6 +4958,44 @@
             }
           }
         ],
+        "circa": true
+      }
+    },
+    {
+      "id": "vedic",
+      "name": "Vedic period",
+      "color": "#c08040",
+      "parent": "indus",
+      "span": {
+        "start": -1499,
+        "end": -499,
+        "endDates": [
+          {
+            "year": -499,
+            "source": {
+              "sourceKey": "wp-vedic",
+              "sourceLocation": "infobox (Late Vedic) and lead"
+            }
+          },
+          {
+            "year": -599,
+            "source": {
+              "sourceKey": "wp-vedic",
+              "sourceLocation": "section heading ('Later Vedic period (c. 1000 – c. 600 BCE)')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "magadha",
+      "name": "Magadha",
+      "color": "#a0603a",
+      "parent": "indus",
+      "span": {
+        "start": -1199,
+        "end": 625,
         "circa": true
       }
     },
@@ -4833,10 +5033,171 @@
       }
     },
     {
+      "id": "se-asia",
+      "name": "Mainland Southeast Asia",
+      "color": "#4a8a6a"
+    },
+    {
+      "id": "ban-chiang",
+      "name": "Ban Chiang (Thailand)",
+      "color": "#6a8a4a",
+      "parent": "se-asia"
+    },
+    {
+      "id": "phung-nguyen",
+      "name": "Phùng Nguyên culture (Red River)",
+      "color": "#5a7a5a",
+      "parent": "se-asia",
+      "span": {
+        "start": -1999,
+        "end": -1499,
+        "circa": true
+      }
+    },
+    {
+      "id": "dong-son",
+      "name": "Đông Sơn culture",
+      "color": "#3a7a6a",
+      "parent": "se-asia",
+      "span": {
+        "start": -999,
+        "end": 100,
+        "endDates": [
+          {
+            "year": 100,
+            "source": {
+              "sourceKey": "wp-dong-son",
+              "sourceLocation": "navbox ('1,000 BC–100 AD')"
+            }
+          },
+          {
+            "year": 0,
+            "source": {
+              "sourceKey": "wp-dong-son",
+              "sourceLocation": "lead (Vietnamese historians: 'about 1000 BC to 1 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "sa-huynh",
+      "name": "Sa Huỳnh culture (central Vietnam)",
+      "color": "#4a6a8a",
+      "parent": "se-asia",
+      "span": {
+        "start": -999,
+        "end": 200,
+        "circa": true
+      }
+    },
+    {
+      "id": "van-lang",
+      "name": "Văn Lang and the Hùng kings (traditional)",
+      "color": "#7a6a4a",
+      "parent": "se-asia",
+      "span": {
+        "start": -2878,
+        "end": -257
+      }
+    },
+    {
+      "id": "plain-of-jars",
+      "name": "Plain of Jars (Laos)",
+      "color": "#8a7a6a",
+      "parent": "se-asia"
+    },
+    {
       "id": "china",
       "name": "China",
       "color": "#b0302f",
       "chronology": "xszcp"
+    },
+    {
+      "id": "korea-japan",
+      "name": "Korea and Japan",
+      "color": "#8a4a6a"
+    },
+    {
+      "id": "gojoseon",
+      "name": "Old Chosŏn (Gojoseon)",
+      "color": "#7a4a7a",
+      "parent": "korea-japan"
+    },
+    {
+      "id": "mumun",
+      "name": "Mumun pottery period (Korea)",
+      "color": "#9a5a6a",
+      "parent": "korea-japan",
+      "span": {
+        "start": -1499,
+        "end": -299,
+        "circa": true
+      }
+    },
+    {
+      "id": "jomon",
+      "name": "Jōmon (Middle to Final)",
+      "color": "#8a6a5a",
+      "parent": "korea-japan",
+      "span": {
+        "start": -3519,
+        "end": -299,
+        "endDates": [
+          {
+            "year": -299,
+            "source": {
+              "sourceKey": "wp-jomon",
+              "sourceLocation": "lead and Chronology ('refined … to 300 BC')"
+            }
+          },
+          {
+            "year": -499,
+            "source": {
+              "sourceKey": "wp-jomon",
+              "sourceLocation": "Chronology ('Final (1,250–500 BC)')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "yayoi",
+      "name": "Yayoi period (Japan)",
+      "color": "#a06a4a",
+      "parent": "korea-japan",
+      "span": {
+        "start": -299,
+        "end": 300,
+        "startDates": [
+          {
+            "year": -299,
+            "source": {
+              "sourceKey": "wp-yayoi",
+              "sourceLocation": "Features ('generally accepted to date from circa 300 BC')"
+            }
+          },
+          {
+            "year": -899,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-yayoi",
+              "sourceLocation": "Features (radiocarbon, 'highly controversial': 'between ca. 1000 BC and 800 BC')"
+            }
+          },
+          {
+            "year": -399,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-jomon",
+              "sourceLocation": "Chronology (radiocarbon: 'between 500 and 300 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
     },
     {
       "id": "liangzhu",
@@ -12965,6 +13326,613 @@
         }
       ],
       "circa": true
+    },
+    {
+      "uuid": "rigveda",
+      "title": "The Rigveda composed",
+      "start": -1499,
+      "end": -999,
+      "tracks": [
+        "vedic"
+      ],
+      "descr": "Usually dated to roughly 1500–1000 BCE; the dates are not confirmed and remain contentious. Codified around 1200–1000 BCE in the early Kuru kingdom (Witzel).",
+      "sources": [
+        {
+          "sourceKey": "wp-rigveda",
+          "sourceLocation": "infobox, lead and Dating"
+        },
+        {
+          "sourceKey": "wp-vedic",
+          "sourceLocation": "Origins"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1499,
+          "source": {
+            "sourceKey": "wp-rigveda",
+            "sourceLocation": "infobox and lead"
+          }
+        },
+        {
+          "year": -1399,
+          "source": {
+            "sourceKey": "wp-vedic",
+            "sourceLocation": "Origins ('composed c. 1400–1000 BCE')"
+          }
+        },
+        {
+          "year": -1899,
+          "source": {
+            "sourceKey": "wp-rigveda",
+            "sourceLocation": "lead ('a wider approximation of c. 1900–1200 BCE')"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -999,
+          "source": {
+            "sourceKey": "wp-rigveda",
+            "sourceLocation": "infobox and lead"
+          }
+        },
+        {
+          "year": -1199,
+          "source": {
+            "sourceKey": "wp-rigveda",
+            "sourceLocation": "lead (wider approximation)"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "indo-aryan-migrations",
+          "kind": "related"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "vedic-ganges",
+      "title": "Vedic culture spreads to the Ganges plain",
+      "start": -1199,
+      "end": -999,
+      "tracks": [
+        "vedic"
+      ],
+      "descr": "After 1000 BCE iron axes and ploughs come into wide use.",
+      "sources": [
+        {
+          "sourceKey": "wp-vedic",
+          "sourceLocation": "lead and Later Vedic period"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mahajanapadas",
+      "title": "The sixteen Mahajanapadas",
+      "start": -599,
+      "end": -344,
+      "tracks": [
+        "magadha",
+        "vedic"
+      ],
+      "descr": "Political units consolidate into large kingdoms during the second urbanisation; Magadha wins the struggle for supremacy that follows.",
+      "sources": [
+        {
+          "sourceKey": "wp-mahajanapadas",
+          "sourceLocation": "infobox, lead and Overview"
+        },
+        {
+          "sourceKey": "wp-vedic",
+          "sourceLocation": "Mahajanapadas"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "achaemenid-indus",
+      "title": "Persia conquers the Indus valley",
+      "start": -534,
+      "end": -517,
+      "tracks": [
+        "persia",
+        "vedic"
+      ],
+      "descr": "Cyrus the Great begins the campaign around 535 BCE; Darius I pushes into the Indus valley around 518, up to the Jhelum. Gandhara and Hindush become Persian provinces; Kamboja and Gandhara form the twentieth and richest satrapy.",
+      "sources": [
+        {
+          "sourceKey": "wp-achaemenid-indus",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-mahajanapadas",
+          "sourceLocation": "Gandhara"
+        }
+      ],
+      "links": [
+        {
+          "to": "darius-i",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "bimbisara",
+      "title": "Reign of Bimbisara of Magadha",
+      "start": -543,
+      "end": -491,
+      "tracks": [
+        "magadha"
+      ],
+      "descr": "The Haryanka king annexes Anga; his son Ajatashatru succeeds him (by Buddhist accounts, by killing him). Under the short chronology he reigns c. 457–405 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-bimbisara",
+          "sourceLocation": "infobox, lead and Death"
+        },
+        {
+          "sourceKey": "wp-mahajanapadas",
+          "sourceLocation": "Anga"
+        },
+        {
+          "sourceKey": "wp-magadha",
+          "sourceLocation": "Haryanka dynasty"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -543,
+          "source": {
+            "sourceKey": "wp-bimbisara",
+            "sourceLocation": "infobox (long chronology)"
+          }
+        },
+        {
+          "year": -456,
+          "source": {
+            "sourceKey": "wp-bimbisara",
+            "sourceLocation": "infobox (short chronology)"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -491,
+          "source": {
+            "sourceKey": "wp-bimbisara",
+            "sourceLocation": "infobox (long chronology)"
+          }
+        },
+        {
+          "year": -404,
+          "source": {
+            "sourceKey": "wp-bimbisara",
+            "sourceLocation": "infobox (short chronology)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mahavira",
+      "title": "Life of Mahavira",
+      "start": -598,
+      "end": -526,
+      "tracks": [
+        "magadha"
+      ],
+      "descr": "Traditional dates; historians place him in the 6th or 5th century BCE, a contemporary of the Buddha under Bimbisara and Ajatashatru.",
+      "sources": [
+        {
+          "sourceKey": "wp-mahavira",
+          "sourceLocation": "infobox, lead and Dating"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -598,
+          "source": {
+            "sourceKey": "wp-mahavira",
+            "sourceLocation": "infobox (traditional)"
+          }
+        },
+        {
+          "year": -548,
+          "source": {
+            "sourceKey": "wp-mahavira",
+            "sourceLocation": "Dating ('some historians')"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -526,
+          "source": {
+            "sourceKey": "wp-mahavira",
+            "sourceLocation": "infobox (Śvetāmbara)"
+          }
+        },
+        {
+          "year": -509,
+          "source": {
+            "sourceKey": "wp-mahavira",
+            "sourceLocation": "infobox (Digambara)"
+          }
+        },
+        {
+          "year": -476,
+          "source": {
+            "sourceKey": "wp-mahavira",
+            "sourceLocation": "Dating ('some historians')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "buddha",
+      "title": "Life of the Buddha",
+      "start": -479,
+      "end": -399,
+      "tracks": [
+        "magadha"
+      ],
+      "descr": "He lives under Bimbisara and dies under Ajatashatru. Most scholars who give a date place his death within 20 years of 400 BCE; earlier scholarship used 563–483 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-buddha",
+          "sourceLocation": "infobox, Dating and Historical person"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -479,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": -562,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox and Dating ('the earlier dates of 563–483 BCE')"
+          }
+        },
+        {
+          "year": -565,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (long chronology, Asoka at 268 BCE)"
+          }
+        },
+        {
+          "year": -447,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (short chronology)"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -399,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox and Dating ('within 20 years either side of 400 BCE')"
+          }
+        },
+        {
+          "year": -482,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": -485,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (long chronology)"
+          }
+        },
+        {
+          "year": -367,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (short chronology)"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "nanda",
+      "title": "The Nanda dynasty takes Magadha",
+      "start": -344,
+      "end": -321,
+      "tracks": [
+        "magadha"
+      ],
+      "descr": "The Nandas usurp the Shishunaga throne; Chandragupta Maurya overthrows them.",
+      "sources": [
+        {
+          "sourceKey": "wp-mahajanapadas",
+          "sourceLocation": "Magadha"
+        },
+        {
+          "sourceKey": "wp-magadha",
+          "sourceLocation": "infobox and Nanda dynasty"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "ban-chiang-bronze",
+      "title": "Bronze working at Ban Chiang",
+      "start": -1999,
+      "tracks": [
+        "ban-chiang"
+      ],
+      "descr": "Crucibles and bronze fragments; the chronology is still in considerable dispute (Higham puts settlement about 1500 BCE and the Bronze Age about 1000). Rice phytoliths from the lowest grave give 2100 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-ban-chiang",
+          "sourceLocation": "Dating the artifacts"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1999,
+          "source": {
+            "sourceKey": "wp-ban-chiang",
+            "sourceLocation": "Dating the artifacts"
+          }
+        },
+        {
+          "year": -1849,
+          "margin": 150,
+          "source": {
+            "sourceKey": "wp-ban-chiang",
+            "sourceLocation": "Dating the artifacts (radiocarbon)"
+          }
+        },
+        {
+          "year": -999,
+          "source": {
+            "sourceKey": "wp-ban-chiang",
+            "sourceLocation": "Dating the artifacts (Higham)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "red-river-rice",
+      "title": "Rice farming reaches the Red River",
+      "start": -1999,
+      "end": -1499,
+      "tracks": [
+        "phung-nguyen"
+      ],
+      "descr": "Introduced in the Phùng Nguyên period, according to the page by northern Dai people (a cited study says from southern China).",
+      "sources": [
+        {
+          "sourceKey": "wp-phung-nguyen",
+          "sourceLocation": "lead"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "dong-son-drums",
+      "title": "Đông Sơn bronze drums",
+      "start": -599,
+      "tracks": [
+        "dong-son"
+      ],
+      "descr": "Produced from about 600 BCE or earlier until the third century CE, and found from eastern Indonesia to Vietnam and southern China. Vietnamese historians attribute the culture to the states of Văn Lang and Âu Lạc.",
+      "sources": [
+        {
+          "sourceKey": "wp-dong-son-drum",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-dong-son",
+          "sourceLocation": "lead"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "sa-huynh-trade",
+      "title": "Sa Huỳnh–Kalanay trade network",
+      "start": -499,
+      "tracks": [
+        "sa-huynh"
+      ],
+      "descr": "A trade sphere reaching Taiwan, southern Thailand, Borneo and the Philippines. The Sa Huỳnh, who buried their cremated dead in lidded jars, were most likely predecessors of the Austronesian-speaking Cham.",
+      "sources": [
+        {
+          "sourceKey": "wp-sa-huynh",
+          "sourceLocation": "lead, Description and Trade network"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "hung-kings",
+      "title": "Traditional founding of the Hùng kings",
+      "start": -2878,
+      "tracks": [
+        "van-lang"
+      ],
+      "descr": "In legend Lộc Tục comes to power in 2879 BCE; Văn Lang ends when Thục Phán overthrows the last Hùng king, about 258 BCE. The dating of events is still a subject of research.",
+      "sources": [
+        {
+          "sourceKey": "wp-hong-bang",
+          "sourceLocation": "lead, Xích Quỷ Kingdom, Chronology and Âu Lạc Kingdom"
+        }
+      ]
+    },
+    {
+      "uuid": "plain-of-jars",
+      "title": "Stone jars placed on the Plain of Jars",
+      "start": -949,
+      "tracks": [
+        "plain-of-jars"
+      ],
+      "descr": "Luminescence dating puts the jars in place as early as 1240–660 BCE; Madeleine Colani concluded in 1930 that they were associated with burial practices.",
+      "sources": [
+        {
+          "sourceKey": "wp-plain-of-jars",
+          "sourceLocation": "lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -949,
+          "margin": 290,
+          "source": {
+            "sourceKey": "wp-plain-of-jars",
+            "sourceLocation": "lead ('as early as 1240 to 660 BC')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "sannai-maruyama",
+      "title": "Sannai-Maruyama, a large Jōmon settlement",
+      "start": -3899,
+      "end": -2299,
+      "tracks": [
+        "jomon"
+      ],
+      "descr": "Hunter-gatherers use the site from around 3900 BCE and settle permanently around 2900; a six-pillar building stands by about 2600. The settlement ends around 2300 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-sannai",
+          "sourceLocation": "lead and Jōmon era"
+        }
+      ],
+      "endDates": [
+        {
+          "year": -2299,
+          "source": {
+            "sourceKey": "wp-sannai",
+            "sourceLocation": "Demise"
+          }
+        },
+        {
+          "year": -2199,
+          "source": {
+            "sourceKey": "wp-sannai",
+            "sourceLocation": "Jōmon era ('3900 – 2200 BCE')"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "tangun",
+      "title": "Traditional founding of Old Chosŏn by Tan’gun",
+      "start": -2332,
+      "tracks": [
+        "gojoseon"
+      ],
+      "descr": "The mythological founding date from the Samguk yusa. Chinese records treat Old Chosŏn as a country only from 195 BCE; it falls to the Han in 108 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-gojoseon",
+          "sourceLocation": "infobox and lead"
+        }
+      ]
+    },
+    {
+      "uuid": "mumun-rice",
+      "title": "Rice farming and dolmens in Korea",
+      "start": -1499,
+      "end": -849,
+      "tracks": [
+        "mumun"
+      ],
+      "descr": "In the Early Mumun, rice agriculture appears beside the earlier millet farming, and megalithic burials begin.",
+      "sources": [
+        {
+          "sourceKey": "wp-mumun",
+          "sourceLocation": "infobox and Early Mumun"
+        },
+        {
+          "sourceKey": "wp-gojoseon",
+          "sourceLocation": "Dolmens"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "songguk-ri",
+      "title": "Middle Mumun: paddy rice (Songguk-ri culture)",
+      "start": -849,
+      "end": -549,
+      "tracks": [
+        "mumun"
+      ],
+      "descr": "Wet-field rice farming in southern Korea; the culture reaches Jeju Island and western Japan.",
+      "sources": [
+        {
+          "sourceKey": "wp-mumun",
+          "sourceLocation": "Middle Mumun"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kyushu-rice",
+      "title": "Korean rice farmers settle in Kyushu",
+      "start": -899,
+      "tracks": [
+        "jomon",
+        "mumun"
+      ],
+      "descr": "Korean-type settlements appear in western Kyushu, bringing wet rice farming and bronze and iron metallurgy; Yayoi-style pottery appears in northern Kyushu by 800 BCE. Jōmon and Yayoi ways of life coexist for around a thousand years.",
+      "sources": [
+        {
+          "sourceKey": "wp-jomon",
+          "sourceLocation": "Late and Final Jōmon and Chronology"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "jimmu",
+      "title": "Traditional founding of Japan by Emperor Jimmu",
+      "start": -659,
+      "tracks": [
+        "jomon"
+      ],
+      "descr": "The founding date given by the Nihon Shoki, a foundation narrative rather than history.",
+      "sources": [
+        {
+          "sourceKey": "wp-jomon",
+          "sourceLocation": "Foundation narratives"
+        },
+        {
+          "sourceKey": "wp-yayoi",
+          "sourceLocation": "Nihon Shoki"
+        }
+      ]
     }
   ]
 }

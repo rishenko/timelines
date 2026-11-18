@@ -19,11 +19,9 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
 - **Review the key events** in `docs/ancient-key-events.md` (66 key, 21 minor, proposed by Claude). Change
   `data-src/ancient-importance.json` and run `npm run importance:ancient`.
-- **Europe, the Mediterranean, the Steppe and Africa: deeper research.** See the summary-only lists in
-  `docs/ancient-sources.md` (third to sixth passes).
-- **New regions within 3500–330 BCE**, one `scripts/additions/<region>.ts` each (done: `steppe.ts`, `africa.ts`): other Asia (Vedic period,
-  Mahajanapadas, Magadha, the Buddha, Jōmon, Yayoi, Mumun, Gojoseon, Ban Chiang, Đông Sơn, Sa Huỳnh),
-  Island Southeast Asia and the Pacific (Austronesian expansion, Lapita, Buni). Tag key events as they go
+- **Europe, the Mediterranean, the Steppe, Africa and Asia: deeper research.** See the summary-only lists in
+  `docs/ancient-sources.md` (third to seventh passes).
+- **New regions within 3500–330 BCE**, one `scripts/additions/<region>.ts` each (done: `steppe.ts`, `africa.ts`, `asia.ts`): Island Southeast Asia and the Pacific (Austronesian expansion, Lapita, Buni). Tag key events as they go
   in, place each region next to its partners (the proximity test), and consider starting new regions collapsed.
 - **Key events when zoomed out**: at the coarsest zoom, show only key events (a second use of `importance`).
 - **Drafts hide data updates.** A saved edit-mode draft replaces the bundled timeline entirely, so a

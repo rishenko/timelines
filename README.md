@@ -7,8 +7,9 @@ with its own calendar, eras, scale and theme. Two ship with the app:
 
 - **Ancient Civilizations** (default): Europe (megalith builders, Bronze and Iron Age cultures, Italy and Rome, Thrace), the western Mediterranean (Carthage, Greek Sicily and Italy, Sardinia, the Balearics, Iberia), Africa south of the Sahara (Punt, Dʿmt, Tichitt, Nok, the Bantu expansion), North Africa (Libyans, Cyrene, Garamantes), the Aegean (Cycladic, Minoan, Mycenaean, Greece, Macedon), Anatolia (Hittites, Phrygia, Lydia, Lycia, Urartu), Mesopotamia (Sumer, Akkad, Babylonia, Assyria), the Levant
   (Canaan, Ebla, Ugarit, Phoenicia, Israel and Judah, Philistines, Aram, Cyprus), Egypt and Nubia (A-Group, C-Group, Kerma, Kush),
-  Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Eurasian Steppe (Botai, Yamnaya, Afanasievo, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians, Saka, Massagetae, Pazyryk), the Indus
-  Valley, China and the Americas, c. 3500–330 BCE. 230 events, every date cited.
+  Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Eurasian Steppe (Botai, Yamnaya, Afanasievo, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians, Saka, Massagetae, Pazyryk), South Asia (Harappans, the Vedic period,
+  Magadha), mainland Southeast Asia (Ban Chiang, Phùng Nguyên, Đông Sơn, Sa Huỳnh, Văn Lang, the Plain of Jars), China, Korea
+  and Japan (Old Chosŏn, Mumun, Jōmon, Yayoi) and the Americas, c. 3500–330 BCE. 295 events, every date cited.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
 

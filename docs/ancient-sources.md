@@ -246,3 +246,35 @@ sack of Thebes) also placed on the new rows.
 - **Left out:** Napata's 591 "Achaemenid raid" (it conflicts with every other date for the sack), the
   Garamantes' foggaras (200 BCE–200 CE, after the end date), Dʿmt's Yeha temple (undated), the iron slag
   at Gobédra (9th century, before Dʿmt), and the end of the Punt trade (no year on the page).
+
+## Seventh pass: South, Southeast and East Asia (17 November 2026)
+
+Important events only; applied by `scripts/additions/asia.ts` (re-runnable). 20 events, 20 sources,
+14 rows. No page read carried a warning about AI-generated text (*Plain of Jars* has a "needs more
+citations" notice; *Old Chosŏn* has a disputed-neutrality notice in one section).
+
+- **South Asia** (the Indus region, renamed): Vedic period and Magadha rows. Events: the Rigveda (c. 1500–1000,
+  with 1400 and the wider 1900–1200 as claims), the spread to the Ganges plain (1200–1000), the
+  Mahajanapadas (c. 600–345), the Persian conquest of the Indus valley (c. 535–518), Bimbisara (long
+  chronology 544–492 as best, short 457–405 as claims), Mahavira (traditional 599–527, with historians'
+  549 and 477 as claims), the Buddha (480–400 as best, from the infobox and "within 20 years either side
+  of 400 BCE"; 563–483, the long chronology and the short chronology as claims), the Nandas (c. 345).
+- **New region, mainland Southeast Asia** (before China): Ban Chiang (bronze c. 2000; disputed, with
+  Higham's 1000 as a claim), Phùng Nguyên (rice reaches the Red River, 2000–1500), Đông Sơn (bronze drums
+  from about 600 BCE), Sa Huỳnh (the trade network from 500 BCE), Văn Lang (the legendary 2879 founding,
+  labelled traditional), the Plain of Jars (1240–660 stored as 950 ± 290).
+- **New region, Korea and Japan** (after China): Old Chosŏn (the mythological 2333 founding), Mumun (rice
+  and dolmens 1500–850; Middle Mumun paddy rice 850–550), Jōmon (Sannai-Maruyama 3900–2300; Korean
+  rice farmers in Kyushu c. 900; Jimmu's traditional 660), Yayoi (c. 300 BCE, with the controversial
+  radiocarbon 1000–800 and the Jōmon page's 500–300 as claims).
+- **Judgment calls:** the Jōmon row starts at the Middle Jōmon (3520 BCE), inside the timeline's range;
+  the period itself begins c. 14,000 BCE. The Buddha's best dates follow the current majority view, not
+  the older 563–483. Traditional foundings (Hùng kings, Tan'gun, Jimmu) are kept as events with
+  "traditional" in the title, like Rome's.
+- **Key events (7):** the Rigveda, the Mahajanapadas, the Persian conquest of the Indus, the Buddha, Đông Sơn
+  drums, Sannai-Maruyama, rice farmers in Kyushu.
+- **Region order:** unchanged apart from the two new regions. Score 235; it passes.
+- **Left out:** the Kuru kingdom's dates (summary-only), the Liaoning bronze daggers (14th century; no row
+  to hold them without reaching outside Korea), Old Chosŏn's war with Yan (c. 300, after the end date),
+  Rigveda's Mitanni comparison (context not read verbatim), and Mahavira's and the Achaemenid page's later
+  sections (summary-only).
