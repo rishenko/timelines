@@ -103,7 +103,7 @@
       "tags": [
         "wikipedia"
       ],
-      "accessed": "2026-11-17"
+      "accessed": "2026-11-18"
     },
     "wp-roman-republic": {
       "name": "Wikipedia: Roman Republic",
@@ -1544,6 +1544,238 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-gallic-wars": {
+      "name": "Wikipedia: Gallic Wars",
+      "url": "https://en.wikipedia.org/wiki/Gallic_Wars",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-alesia": {
+      "name": "Wikipedia: Battle of Alesia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Alesia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-cimbrian-war": {
+      "name": "Wikipedia: Cimbrian War",
+      "url": "https://en.wikipedia.org/wiki/Cimbrian_War",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-roman-britain": {
+      "name": "Wikipedia: Roman Britain",
+      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-boudican-revolt": {
+      "name": "Wikipedia: Boudican revolt",
+      "url": "https://en.wikipedia.org/wiki/Boudican_revolt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hadrians-wall": {
+      "name": "Wikipedia: Hadrian’s Wall",
+      "url": "https://en.wikipedia.org/wiki/Hadrian%27s_Wall",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-dacian-wars": {
+      "name": "Wikipedia: Trajan’s Dacian Wars",
+      "url": "https://en.wikipedia.org/wiki/Trajan%27s_Dacian_Wars",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-numantine-war": {
+      "name": "Wikipedia: Numantine War",
+      "url": "https://en.wikipedia.org/wiki/Numantine_War",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-galatians": {
+      "name": "Wikipedia: Galatians (people)",
+      "url": "https://en.wikipedia.org/wiki/Galatians_(people)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-teutoburg": {
+      "name": "Wikipedia: Battle of the Teutoburg Forest",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Teutoburg_Forest",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-marcomannic-wars": {
+      "name": "Wikipedia: Marcomannic Wars",
+      "url": "https://en.wikipedia.org/wiki/Marcomannic_Wars",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-goths": {
+      "name": "Wikipedia: Goths",
+      "url": "https://en.wikipedia.org/wiki/Goths",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-visigothic-kingdom": {
+      "name": "Wikipedia: Visigothic Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Visigothic_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-ostrogothic-kingdom": {
+      "name": "Wikipedia: Ostrogothic Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Ostrogothic_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-theodoric": {
+      "name": "Wikipedia: Theodoric the Great",
+      "url": "https://en.wikipedia.org/wiki/Theodoric_the_Great",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-gothic-war": {
+      "name": "Wikipedia: Gothic War (535–554)",
+      "url": "https://en.wikipedia.org/wiki/Gothic_War_(535%E2%80%93554)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-alaric": {
+      "name": "Wikipedia: Alaric I",
+      "url": "https://en.wikipedia.org/wiki/Alaric_I",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-odoacer": {
+      "name": "Wikipedia: Odoacer",
+      "url": "https://en.wikipedia.org/wiki/Odoacer",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-burgundians": {
+      "name": "Wikipedia: Kingdom of the Burgundians",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Burgundians",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-franks": {
+      "name": "Wikipedia: Franks",
+      "url": "https://en.wikipedia.org/wiki/Franks",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-merovingians": {
+      "name": "Wikipedia: Merovingian dynasty",
+      "url": "https://en.wikipedia.org/wiki/Merovingian_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-clovis": {
+      "name": "Wikipedia: Clovis I",
+      "url": "https://en.wikipedia.org/wiki/Clovis_I",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-vouille": {
+      "name": "Wikipedia: Battle of Vouillé",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vouill%C3%A9",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-lombards": {
+      "name": "Wikipedia: Kingdom of the Lombards",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-anglo-saxon-settlement": {
+      "name": "Wikipedia: Anglo-Saxon settlement of Britain",
+      "url": "https://en.wikipedia.org/wiki/Anglo-Saxon_settlement_of_Britain",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-suebi": {
+      "name": "Wikipedia: Kingdom of the Suebi",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Suebi",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-early-slavs": {
+      "name": "Wikipedia: Early Slavs",
+      "url": "https://en.wikipedia.org/wiki/Early_Slavs",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-gregorian-mission": {
+      "name": "Wikipedia: Gregorian mission",
+      "url": "https://en.wikipedia.org/wiki/Gregorian_mission",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-rhine-crossing": {
+      "name": "Wikipedia: Crossing of the Rhine",
+      "url": "https://en.wikipedia.org/wiki/Crossing_of_the_Rhine",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     }
   },
   "tracks": [
@@ -1882,6 +2114,156 @@
       "parent": "europe-med"
     },
     {
+      "id": "roman-britain",
+      "name": "Roman Britain",
+      "color": "#8a3a3a",
+      "parent": "europe",
+      "span": {
+        "start": 43,
+        "end": 410,
+        "circa": true
+      }
+    },
+    {
+      "id": "anglo-saxons",
+      "name": "Anglo-Saxon England",
+      "color": "#6a7a3a",
+      "parent": "europe",
+      "span": {
+        "start": 449,
+        "end": 1066,
+        "startDates": [
+          {
+            "year": 449,
+            "source": {
+              "sourceKey": "wp-roman-britain",
+              "sourceLocation": "English history table (Anglo-Saxon, c. 449–1066)"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "suebi",
+      "name": "Kingdom of the Suebi",
+      "color": "#4a6a8a",
+      "parent": "europe",
+      "span": {
+        "start": 409,
+        "end": 585
+      }
+    },
+    {
+      "id": "visigoths",
+      "name": "Visigothic Kingdom (Toulouse, then Toledo)",
+      "color": "#7a5a8a",
+      "parent": "europe",
+      "span": {
+        "start": 418,
+        "end": 721,
+        "endDates": [
+          {
+            "year": 721,
+            "source": {
+              "sourceKey": "wp-visigothic-kingdom",
+              "sourceLocation": "infobox"
+            }
+          },
+          {
+            "year": 720,
+            "source": {
+              "sourceKey": "wp-visigothic-kingdom",
+              "sourceLocation": "short description"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "celts",
+      "name": "La Tène Celts (Gaul)",
+      "color": "#3a7a5a",
+      "parent": "europe",
+      "span": {
+        "start": -449,
+        "end": 0,
+        "circa": true
+      }
+    },
+    {
+      "id": "franks",
+      "name": "Franks (Merovingians)",
+      "color": "#3a5a9a",
+      "parent": "europe",
+      "span": {
+        "start": 481,
+        "end": 751,
+        "circa": true
+      }
+    },
+    {
+      "id": "burgundians",
+      "name": "Kingdom of the Burgundians",
+      "color": "#9a4a5a",
+      "parent": "europe",
+      "span": {
+        "start": 411,
+        "end": 534
+      }
+    },
+    {
+      "id": "ostrogoths",
+      "name": "Ostrogothic Kingdom (Italy)",
+      "color": "#8a6aaa",
+      "parent": "europe",
+      "span": {
+        "start": 493,
+        "end": 553
+      }
+    },
+    {
+      "id": "lombards",
+      "name": "Kingdom of the Lombards",
+      "color": "#5a8a6a",
+      "parent": "europe",
+      "span": {
+        "start": 568,
+        "end": 774
+      }
+    },
+    {
+      "id": "slavs",
+      "name": "Early Slavs",
+      "color": "#6a5a3a",
+      "parent": "europe",
+      "span": {
+        "start": 550,
+        "end": 950,
+        "startDates": [
+          {
+            "year": 550,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-early-slavs",
+              "sourceLocation": "lead (name first written in the 6th century)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-early-slavs",
+              "sourceLocation": "lead ('from the 5th to the 10th centuries AD')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
       "id": "west-med",
       "name": "Western Mediterranean",
       "color": "#3f6aa8",
@@ -2041,6 +2423,34 @@
       "name": "Anatolia",
       "color": "#a8483a",
       "parent": "near-east"
+    },
+    {
+      "id": "galatia",
+      "name": "Galatians",
+      "color": "#4a8a6a",
+      "parent": "anatolia",
+      "span": {
+        "start": -277,
+        "end": -24,
+        "startDates": [
+          {
+            "year": -277,
+            "source": {
+              "sourceKey": "wp-galatians",
+              "sourceLocation": "lead and note 2"
+            }
+          },
+          {
+            "year": -277,
+            "margin": 1,
+            "source": {
+              "sourceKey": "wp-galatians",
+              "sourceLocation": "History ('278–277 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
     },
     {
       "id": "caucasus",
@@ -8170,6 +8580,921 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "brennus-greece",
+      "title": "Celts invade Greece",
+      "start": -280,
+      "end": -278,
+      "tracks": [
+        "celts",
+        "greece"
+      ],
+      "descr": "Brennus invades Greece in 281 BC. The La Tène page says Delphi was attacked and sacked in 279 BC; the Galatians page says he was turned back before he could plunder it. Celtic expansion is at its maximum by 275 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-galatians",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "wp-la-tene",
+          "sourceLocation": "History and Periodization map"
+        }
+      ]
+    },
+    {
+      "uuid": "galatians-anatolia",
+      "title": "The Galatians settle in Anatolia",
+      "start": -277,
+      "tracks": [
+        "galatia"
+      ],
+      "descr": "Celtic settlers come through Thrace under Leogarios and Leonnorios and appear in Asia Minor in 278–277 BC, hired by Nicomedes I of Bithynia. Attalus I of Pergamon defeats them heavily in 240 or 230 BC. Galatia becomes a Roman client state in 64 BC and a province in 25 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-galatians",
+          "sourceLocation": "lead, History and note 2"
+        }
+      ],
+      "links": [
+        {
+          "to": "brennus-greece",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "galatian-war",
+      "title": "Manlius Vulso’s Galatian War",
+      "start": -188,
+      "tracks": [
+        "galatia",
+        "roman-republic"
+      ],
+      "descr": "Rome sends Gnaeus Manlius Vulso on an expedition against the Galatians.",
+      "sources": [
+        {
+          "sourceKey": "wp-galatians",
+          "sourceLocation": "History and campaign template"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "numantine-war",
+      "title": "Numantine War",
+      "start": -153,
+      "end": -132,
+      "tracks": [
+        "west-med",
+        "roman-republic"
+      ],
+      "descr": "A revolt of the Celtiberians of Numantia in Hispania; the first phase ends in 151, and war flares up again in 143. In 134 BC Scipio Aemilianus is sent to end it, and Numantia falls in 133, opening an era of peace in Hispania until the Sertorian War.",
+      "sources": [
+        {
+          "sourceKey": "wp-numantine-war",
+          "sourceLocation": "infobox, lead, body and note 1"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -153,
+          "source": {
+            "sourceKey": "wp-numantine-war",
+            "sourceLocation": "lead and note 1"
+          }
+        },
+        {
+          "year": -142,
+          "source": {
+            "sourceKey": "wp-numantine-war",
+            "sourceLocation": "infobox (143–133 BC)"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "transalpine-gaul",
+      "title": "Rome conquers southern Gaul",
+      "start": -120,
+      "tracks": [
+        "celts",
+        "roman-republic"
+      ],
+      "descr": "Rome conquers a group of southern Gauls and establishes the province of Transalpine Gaul.",
+      "sources": [
+        {
+          "sourceKey": "wp-gallic-wars",
+          "sourceLocation": "Background > Military"
+        },
+        {
+          "sourceKey": "wp-la-tene",
+          "sourceLocation": "History"
+        }
+      ]
+    },
+    {
+      "uuid": "cimbrian-war",
+      "title": "Cimbrian War",
+      "start": -112,
+      "end": -100,
+      "tracks": [
+        "europe",
+        "roman-republic"
+      ],
+      "descr": "Having left the North Sea around 120–115 BC, the Cimbri reach Noricum on the Danube in 113 BC. They invade Gallia Narbonensis in 109 and meet the consul Mallius Maximus and proconsul Caepio at Arausio in 105; Marius is consul five years in a row from 104 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-cimbrian-war",
+          "sourceLocation": "infobox, lead, Migrations, Initial defeats, Arausio and Marius"
+        }
+      ]
+    },
+    {
+      "uuid": "gallic-wars",
+      "title": "Caesar’s Gallic Wars",
+      "start": -57,
+      "end": -49,
+      "tracks": [
+        "celts",
+        "roman-republic"
+      ],
+      "descr": "Beginning with the migration of the Helvetii in 58 BC, Caesar resolves to conquer all of Gaul (57), defeats the Veneti at sea (56) and crosses to Britain (55–54). Vercingetorix leads a major revolt in 52. The coming civil war withdraws Caesar’s troops in 50; Gaul becomes a Roman province in 27 BC, but resistance lasts until as late as 70 AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-gallic-wars",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-roman-britain",
+          "sourceLocation": "lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "caesar-assassinated",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "alesia",
+      "title": "Siege of Alesia",
+      "start": -51,
+      "tracks": [
+        "celts",
+        "roman-republic"
+      ],
+      "descr": "In September 52 BC Caesar besieges Vercingetorix, building some 25 miles of fortifications in a month; Vercingetorix surrenders.",
+      "sources": [
+        {
+          "sourceKey": "wp-alesia",
+          "sourceLocation": "infobox, lead and Siege"
+        },
+        {
+          "sourceKey": "wp-gallic-wars",
+          "sourceLocation": "lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "gallic-wars",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "claudius-britain",
+      "title": "Claudius invades Britain",
+      "start": 43,
+      "tracks": [
+        "roman-britain",
+        "roman-empire"
+      ],
+      "descr": "Four legions under Aulus Plautius invade; by 47 AD the Romans hold the lands southeast of the Fosse Way. Caligula had massed 200,000 men at the Channel in 40 AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-roman-britain",
+          "sourceLocation": "infobox, lead and History"
+        }
+      ]
+    },
+    {
+      "uuid": "boudica",
+      "title": "Boudica’s revolt",
+      "start": 60,
+      "tracks": [
+        "roman-britain"
+      ],
+      "descr": "While the governor Suetonius Paulinus campaigns against Mona, Boudica, queen of the Iceni, leads a revolt; Verulamium burns around 60 AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-boudican-revolt",
+          "sourceLocation": "infobox, lead, Initial actions and Verulamium"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 60,
+          "source": {
+            "sourceKey": "wp-boudican-revolt",
+            "sourceLocation": "Initial actions ('In AD 60 or 61')"
+          }
+        },
+        {
+          "year": 61,
+          "source": {
+            "sourceKey": "wp-boudican-revolt",
+            "sourceLocation": "Initial actions ('In AD 60 or 61')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mons-graupius",
+      "title": "Mons Graupius",
+      "start": 84,
+      "tracks": [
+        "roman-britain"
+      ],
+      "descr": "In mid-84 AD Agricola, governor from 77 AD, faces the Caledonians under Calgacus, concluding the forty-year conquest of Britain.",
+      "sources": [
+        {
+          "sourceKey": "wp-roman-britain",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-boudican-revolt",
+          "sourceLocation": "campaignbox"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 84,
+          "source": {
+            "sourceKey": "wp-roman-britain",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": 83,
+          "source": {
+            "sourceKey": "wp-boudican-revolt",
+            "sourceLocation": "campaignbox (AD 83)"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "hadrians-wall",
+      "title": "Hadrian’s Wall",
+      "start": 122,
+      "tracks": [
+        "roman-britain",
+        "roman-empire"
+      ],
+      "descr": "Begun in AD 122, in the reign of Hadrian; most of it takes six years to build, by some 15,000 soldiers of three legions. The turf Antonine Wall follows in AD 142.",
+      "sources": [
+        {
+          "sourceKey": "wp-hadrians-wall",
+          "sourceLocation": "infobox, lead and Construction"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "end-roman-britain",
+      "title": "The end of Roman rule in Britain",
+      "start": 410,
+      "tracks": [
+        "roman-britain",
+        "roman-empire"
+      ],
+      "descr": "The final Roman withdrawal comes around 410 AD; the Anglo-Saxon settlement page gives the traditional end as 411, and the Chronica Gallica of 452 says Britain was ravaged by Saxon invaders in 409 or 410.",
+      "sources": [
+        {
+          "sourceKey": "wp-roman-britain",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-anglo-saxon-settlement",
+          "sourceLocation": "Background and Continental sources"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 410,
+          "source": {
+            "sourceKey": "wp-roman-britain",
+            "sourceLocation": "infobox and lead"
+          }
+        },
+        {
+          "year": 411,
+          "source": {
+            "sourceKey": "wp-anglo-saxon-settlement",
+            "sourceLocation": "Background"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "saxons-441",
+      "title": "Britain “handed over” to the Saxons",
+      "start": 441,
+      "tracks": [
+        "anglo-saxons"
+      ],
+      "descr": "The Chronica Gallica of 452 reports for the year 441 that the British provinces have been handed over across a wide area. Gildas, who probably wrote in the early 6th century, is the main British source.",
+      "sources": [
+        {
+          "sourceKey": "wp-anglo-saxon-settlement",
+          "sourceLocation": "lead and Continental sources"
+        }
+      ]
+    },
+    {
+      "uuid": "gregorian-mission",
+      "title": "Augustine’s mission lands in Kent",
+      "start": 597,
+      "tracks": [
+        "anglo-saxons"
+      ],
+      "descr": "Sent by Pope Gregory the Great in 596, forty missionaries arrive in 597; King Æthelberht converts before 601, and by 627 Paulinus has converted King Edwin.",
+      "sources": [
+        {
+          "sourceKey": "wp-gregorian-mission",
+          "sourceLocation": "lead and Arrival"
+        }
+      ]
+    },
+    {
+      "uuid": "teutoburg",
+      "title": "Battle of the Teutoburg Forest",
+      "start": 9,
+      "tracks": [
+        "europe",
+        "roman-empire"
+      ],
+      "descr": "Between 8 and 11 September 9 AD, possibly near Kalkriese; the infobox counts 16,000–20,000 killed. The next major Roman incursion into Germania comes under Marcus Aurelius (r. 161–180).",
+      "sources": [
+        {
+          "sourceKey": "wp-teutoburg",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "marcomannic-wars",
+      "title": "Marcomannic Wars",
+      "start": 166,
+      "end": 180,
+      "tracks": [
+        "europe",
+        "roman-empire"
+      ],
+      "descr": "After incursions into Raetia and Germania Superior (162–165), thousands of Langobardi and Lacringi cross into Pannonia in late 166, beginning wars that last until 180 under Marcus Aurelius.",
+      "sources": [
+        {
+          "sourceKey": "wp-marcomannic-wars",
+          "sourceLocation": "infobox, lead and Initial invasions"
+        }
+      ]
+    },
+    {
+      "uuid": "dacian-wars",
+      "title": "Trajan’s Dacian Wars",
+      "start": 101,
+      "end": 106,
+      "tracks": [
+        "europe",
+        "roman-empire"
+      ],
+      "descr": "Trajan ends Domitian’s treaty of 89 AD with Decebalus. The first war (101–102) ends when Decebalus makes peace; in the second (105–106) the Dacian capital falls and Decebalus kills himself. Southern Dacia is annexed, and Trajan announces 123 days of celebrations.",
+      "sources": [
+        {
+          "sourceKey": "wp-dacian-wars",
+          "sourceLocation": "infobox, lead, First War, Second War and Aftermath"
+        }
+      ],
+      "links": [
+        {
+          "to": "trajan-extent",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "salian-toxandria",
+      "title": "The Salian Franks settle in Toxandria",
+      "start": 358,
+      "tracks": [
+        "europe",
+        "roman-empire"
+      ],
+      "descr": "The first known Frankish tribe to settle with official Roman permission. The Franks are first named during the crisis of the 3rd century; Constantine executes Frankish prisoners at Trier in 306.",
+      "sources": [
+        {
+          "sourceKey": "wp-clovis",
+          "sourceLocation": "Background"
+        },
+        {
+          "sourceKey": "wp-franks",
+          "sourceLocation": "lead and Etymology"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "alaric",
+      "title": "Alaric I, king of the Visigoths",
+      "start": 395,
+      "end": 410,
+      "tracks": [
+        "europe",
+        "roman-empire"
+      ],
+      "descr": "The treaty of 382, after Adrianople, is the first foedus on imperial Roman soil. Alaric, king from 395, sacks Athens in 396 and invades Italy in 401 or 402; he dies at Consentia in 411.",
+      "sources": [
+        {
+          "sourceKey": "wp-alaric",
+          "sourceLocation": "infobox, Early life, Eastern phase and Italy"
+        }
+      ],
+      "links": [
+        {
+          "to": "sack-rome-410",
+          "kind": "related"
+        },
+        {
+          "to": "adrianople",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "rhine-crossing",
+      "title": "Vandals, Alans and Suebi cross the Rhine",
+      "start": 406,
+      "tracks": [
+        "europe",
+        "roman-empire"
+      ],
+      "descr": "Traditionally on 31 December 406, near Mainz; Kulikowski argues for 31 December 405. The invaders cross into Spain in September or October 409.",
+      "sources": [
+        {
+          "sourceKey": "wp-rhine-crossing",
+          "sourceLocation": "infobox, lead, Alternative dating and Aftermath"
+        },
+        {
+          "sourceKey": "wp-suebi",
+          "sourceLocation": "Origins"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 406,
+          "source": {
+            "sourceKey": "wp-rhine-crossing",
+            "sourceLocation": "infobox and lead"
+          }
+        },
+        {
+          "year": 405,
+          "source": {
+            "sourceKey": "wp-rhine-crossing",
+            "sourceLocation": "infobox and Alternative dating"
+          }
+        },
+        {
+          "year": 405,
+          "source": {
+            "sourceKey": "wp-suebi",
+            "sourceLocation": "Origins"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "vandals-cross",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "suebi-gallaecia",
+      "title": "The Suebi settle in Gallaecia",
+      "start": 409,
+      "tracks": [
+        "suebi"
+      ],
+      "descr": "Under Hermeric the Suebi cross into Iberia on 28 September or 12 October 409; in 411 the invaders divide the provinces of Hispania among themselves. Rechiar (from 448) is the first Germanic king to profess Nicene Christianity.",
+      "sources": [
+        {
+          "sourceKey": "wp-suebi",
+          "sourceLocation": "infobox, lead, Settlement and Rechiar"
+        }
+      ],
+      "links": [
+        {
+          "to": "rhine-crossing",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "visigoths-aquitaine",
+      "title": "The Visigoths settle in Aquitaine",
+      "start": 418,
+      "tracks": [
+        "visigoths",
+        "roman-empire"
+      ],
+      "descr": "Honorius rewards his Visigothic federates under King Wallia with land in the Garonne valley; with their capital at Toulouse they remain de facto independent, becoming a sovereign state in 475.",
+      "sources": [
+        {
+          "sourceKey": "wp-visigothic-kingdom",
+          "sourceLocation": "infobox and Federate kingdom"
+        }
+      ],
+      "links": [
+        {
+          "to": "alaric",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "burgundians-destroyed",
+      "title": "Aetius and the Huns destroy the Burgundians",
+      "start": 436,
+      "end": 443,
+      "tracks": [
+        "burgundians",
+        "roman-empire"
+      ],
+      "descr": "King Gundahar, settled on the west bank of the Rhine since 411, is killed in about 436; in 443 the remaining Burgundians are resettled in Sapaudia.",
+      "sources": [
+        {
+          "sourceKey": "wp-burgundians",
+          "sourceLocation": "infobox, lead and body"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "suebi-annexed",
+      "title": "The Visigoths annex the Suebi",
+      "start": 585,
+      "tracks": [
+        "suebi",
+        "visigoths"
+      ],
+      "descr": "King Leovigild conquers the Suebic kingdom, after campaigns starting in the 570s.",
+      "sources": [
+        {
+          "sourceKey": "wp-suebi",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-visigothic-kingdom",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "visigoths-catholic",
+      "title": "The Visigoths renounce Arianism",
+      "start": 589,
+      "tracks": [
+        "visigoths"
+      ],
+      "descr": "Under Reccared (586–601) Catholic Christianity becomes the official religion of the kingdom. The Visigothic Code is completed in 654.",
+      "sources": [
+        {
+          "sourceKey": "wp-visigothic-kingdom",
+          "sourceLocation": "infobox and lead"
+        }
+      ]
+    },
+    {
+      "uuid": "spania-expelled",
+      "title": "The Byzantines are expelled from Spain",
+      "start": 624,
+      "tracks": [
+        "visigoths",
+        "eastern-roman"
+      ],
+      "descr": "Swinthila ends Byzantine Spania (552–624); by 625 only a foothold at Ceuta remains.",
+      "sources": [
+        {
+          "sourceKey": "wp-visigothic-kingdom",
+          "sourceLocation": "infobox, sidebar and lead"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "theodoric-italy",
+      "title": "Theodoric conquers Italy",
+      "start": 488,
+      "end": 493,
+      "tracks": [
+        "ostrogoths",
+        "europe"
+      ],
+      "descr": "Ordered by Zeno to overthrow Odoacer, Theodoric sets out in the autumn of 488 and wins at the Isonzo (28 August 489), Verona and the Adda (11 August 490). Ravenna yields by treaty in February 493, and on 15 March Theodoric kills Odoacer at a banquet.",
+      "sources": [
+        {
+          "sourceKey": "wp-theodoric",
+          "sourceLocation": "body"
+        },
+        {
+          "sourceKey": "wp-ostrogothic-kingdom",
+          "sourceLocation": "body"
+        },
+        {
+          "sourceKey": "wp-odoacer",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "fall-west",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "theodoric",
+      "title": "Reign of Theodoric the Great in Italy",
+      "start": 493,
+      "end": 526,
+      "tracks": [
+        "ostrogoths"
+      ],
+      "descr": "King of the Ostrogoths since 471, he rules Italy from Ravenna from 15 March 493 until his death on 30 August 526, and the Visigoths as regent from 511. He visits Rome in 500; Boethius is executed in 524.",
+      "sources": [
+        {
+          "sourceKey": "wp-theodoric",
+          "sourceLocation": "infobox, lead and body"
+        },
+        {
+          "sourceKey": "wp-gothic-war",
+          "sourceLocation": "Background"
+        }
+      ],
+      "links": [
+        {
+          "to": "theodoric-italy",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "gothic-war",
+      "title": "Justinian’s Gothic War",
+      "start": 535,
+      "end": 554,
+      "tracks": [
+        "ostrogoths",
+        "eastern-roman"
+      ],
+      "descr": "The first phase ends with the fall of Ravenna in 540; the second runs from 540/541. In 554 Justinian issues a pragmatic sanction, though some northern cities hold out until 562. The Ostrogothic kingdom ends with Mons Lactarius in 553.",
+      "sources": [
+        {
+          "sourceKey": "wp-gothic-war",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-ostrogothic-kingdom",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "endDates": [
+        {
+          "year": 554,
+          "source": {
+            "sourceKey": "wp-gothic-war",
+            "sourceLocation": "infobox and lead"
+          }
+        },
+        {
+          "year": 553,
+          "source": {
+            "sourceKey": "wp-ostrogothic-kingdom",
+            "sourceLocation": "infobox (Mons Lactarius)"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "justinian",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "lombards-italy",
+      "title": "The Lombards invade Italy",
+      "start": 568,
+      "tracks": [
+        "lombards",
+        "eastern-roman"
+      ],
+      "descr": "In the spring of 568 King Alboin leads the Lombards from Pannonia into Italy. In 572, after Pavia capitulates and becomes the royal capital, Alboin is assassinated.",
+      "sources": [
+        {
+          "sourceKey": "wp-lombards",
+          "sourceLocation": "infobox and Founding"
+        },
+        {
+          "sourceKey": "wp-gothic-war",
+          "sourceLocation": "lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "avar-khaganate",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "clovis",
+      "title": "Clovis I unites the Franks",
+      "start": 481,
+      "end": 511,
+      "tracks": [
+        "franks"
+      ],
+      "descr": "Clovis succeeds his father Childeric at 15. He defeats Syagrius at Soissons (486) and the Alemanni at Tolbiac (496), and by 509 has united all the Franks and northern Gallo-Romans. He dies on 27 November 511; Salic law is first codified that year.",
+      "sources": [
+        {
+          "sourceKey": "wp-clovis",
+          "sourceLocation": "infobox, lead, Background and Middle reign"
+        },
+        {
+          "sourceKey": "wp-merovingians",
+          "sourceLocation": "lead, History and Government"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "clovis-baptism",
+      "title": "Clovis is baptised",
+      "start": 502,
+      "tracks": [
+        "franks"
+      ],
+      "descr": "He converts to Nicene Christianity rather than Arianism.",
+      "sources": [
+        {
+          "sourceKey": "wp-clovis",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-merovingians",
+          "sourceLocation": "lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 502,
+          "margin": 4,
+          "source": {
+            "sourceKey": "wp-clovis",
+            "sourceLocation": "lead ('between 498 and 506')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "clovis",
+          "kind": "part-of"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "vouille",
+      "title": "Battle of Vouillé",
+      "start": 507,
+      "tracks": [
+        "franks",
+        "visigoths"
+      ],
+      "descr": "Around spring 507, near Poitiers, Clovis defeats and kills Alaric II; the Franks conquer Gallia Aquitania, and the Visigothic capital moves from Toulouse to Barcelona (507–542), then Toledo.",
+      "sources": [
+        {
+          "sourceKey": "wp-vouille",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-visigothic-kingdom",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "links": [
+        {
+          "to": "clovis",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "franks-burgundy",
+      "title": "The Franks conquer Burgundy",
+      "start": 532,
+      "end": 534,
+      "tracks": [
+        "franks",
+        "burgundians"
+      ],
+      "descr": "The Frankish campaign ends near Autun in 534, and Burgundy becomes part of Francia; the Franks extend their rule into Raetia in 537.",
+      "sources": [
+        {
+          "sourceKey": "wp-burgundians",
+          "sourceLocation": "infobox, lead and body"
+        },
+        {
+          "sourceKey": "wp-merovingians",
+          "sourceLocation": "lead"
+        }
+      ]
+    },
+    {
+      "uuid": "clotaire-reunites",
+      "title": "Clotaire II reunites the Frankish realm",
+      "start": 613,
+      "tracks": [
+        "franks"
+      ],
+      "descr": "The realm, divided since Clovis’s death in 511, is reunited under one ruler. Dagobert I, the last powerful Merovingian king, dies in 639.",
+      "sources": [
+        {
+          "sourceKey": "wp-merovingians",
+          "sourceLocation": "lead, Reunification and Weakening"
+        }
+      ]
+    },
+    {
+      "uuid": "jordanes-slavs",
+      "title": "Jordanes’s Getica",
+      "start": 551,
+      "tracks": [
+        "slavs"
+      ],
+      "descr": "The first written use of the name “Slavs” dates to the 6th century; Jordanes describes them in his Getica of 551.",
+      "sources": [
+        {
+          "sourceKey": "wp-early-slavs",
+          "sourceLocation": "lead and Origins"
+        },
+        {
+          "sourceKey": "wp-goths",
+          "sourceLocation": "Prehistory"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "slavs-expand",
+      "title": "The Slavs expand west and south",
+      "start": 600,
+      "tracks": [
+        "slavs"
+      ],
+      "descr": "Between the sixth and seventh centuries Slavs come to control large parts of Europe, reaching the Elbe, the Alps and the Balkans; Carantania is established in the 7th century.",
+      "sources": [
+        {
+          "sourceKey": "wp-early-slavs",
+          "sourceLocation": "lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 600,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-early-slavs",
+            "sourceLocation": "lead ('Between the sixth and seventh centuries')"
+          }
+        }
+      ],
+      "circa": true
     }
   ]
 }

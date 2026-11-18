@@ -11,12 +11,14 @@
     "shiji", "cai-lun-paper", "han-ends", "jin-moves-south", "sui-reunifies", "grand-canal", "tang-founded",
     "gojoseon-falls", "goguryeo-buddhism", "buddhism-japan", "modu-xiongnu", "han-xiongnu-wars", "huns-arrive",
     "attila", "catalaunian-plains", "first-turkic-founded", "masinissa-numidia", "vandals-carthage", "meroe-falls",
-    "aksum-christian", "arab-conquest-egypt"
+    "aksum-christian", "arab-conquest-egypt", "gallic-wars", "teutoburg", "hadrians-wall", "end-roman-britain",
+    "rhine-crossing", "clovis", "theodoric", "gothic-war", "lombards-italy"
   ],
   "3": [
     "la-venta-pyramid", "latin-league", "pella", "kalanay", "naneghat", "wang-xuance", "baekje-ungjin", "gwanggaeto",
     "alans-caucasus", "turk-byzantine-embassies", "balbus-garamantes", "severus-garama", "nero-meroe", "dongola",
-    "philae-closed", "axum-stelae", "aksum-persia", "djenne-growth"
+    "philae-closed", "axum-stelae", "aksum-persia", "djenne-growth", "galatian-war", "salian-toxandria",
+    "jordanes-slavs", "spania-expelled", "suebi-annexed"
   ],
   "_rubric": "Same rubric as data-src/ancient-importance.json. 1 = key: founding, unification or fall of a major state; a decisive turning point; an iconic monument or text. 3 = minor. Everything not listed is normal. The overlap events (500–330 BCE) keep the levels they have in the ancient timeline. Proposed by Claude, pending the author's review."
 }

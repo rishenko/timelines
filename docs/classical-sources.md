@@ -160,3 +160,33 @@ returned a 404, so the war is cited from *Meroë* and *Napata*. Most long pages 
   *Herodotus describes the Garamantes* moved from the region row to the Garamantes row. Not used (summary only): the
   Battle of Thapsus, the Persian occupation of Egypt (618–629), Babylon's treaty dates, Alexandria's surrender (642),
   the Nok pottery phases, Aksum's c. 150 BCE – 150 CE origins.
+
+## Sixth pass: Europe north of the Alps (18 November 2026)
+
+`scripts/classical/europe.ts`: 38 events, 30 sources, 11 rows (10 under Europe, plus the Galatians under Anatolia).
+Three web-fetch agents (on Sonnet) read 30 pages; none carried an AI-text or LLM-translation banner. *Battle of
+Alesia* and *Trajan's Dacian Wars* carry the standard invitation to translate from another Wikipedia, which is not a
+notice about their own text. Most pages were read verbatim only in their first ~40,000 characters.
+
+- **Celts and Gaul:** La Tène (c. 450 BC – c. 1 BC), Brennus in Greece (281–279 BC; Delphi sacked per *La Tène*,
+  turned back per *Galatians*), the Galatians (c. 278 BC – 25 BC; 278–277 as a claim) and Manlius Vulso (189 BC),
+  Transalpine Gaul (121 BC), the Cimbrian War (113–101 BC), the Gallic Wars (58–50 BC) and Alesia (September 52 BC).
+- **Hispania:** the Numantine War (154–133 BC; the infobox's 143 as a claim), the Suebi (409–585) in Gallaecia (409),
+  the Visigoths (418–721; 720 as a claim) in Aquitaine (418), their annexation of the Suebi (585), Catholicism (589)
+  and the end of Byzantine Spania (624).
+- **Britain:** Claudius (43 AD), Boudica (AD 60 or 61), Mons Graupius (mid-84; the Boudica campaignbox's 83 as a
+  claim), Hadrian's Wall (122), the end of Roman rule (c. 410; 411 as a claim), the Chronica Gallica's 441, the
+  Anglo-Saxon period (from c. 449, per the Roman Britain table) and the Gregorian mission (597).
+- **Rome and the Germanic peoples:** Teutoburg (8–11 September 9 AD), the Dacian Wars (101–106), the Marcomannic Wars
+  (166–180), the Salian Franks in Toxandria (358), Alaric (395–410), the Rhine crossing (31 December 406; 405 as a
+  claim), the Burgundians (411–534; destroyed c. 436, resettled 443).
+- **Italy:** Theodoric's conquest (488–493) and reign (493–526), the Gothic War (535–554; the Ostrogothic infobox's 553
+  as a claim), the Lombards (from spring 568).
+- **Franks and Slavs:** Clovis (481–511), his baptism (between 498 and 506), Vouillé (spring 507), Burgundy (532–534),
+  Clotaire II (613); Jordanes (551) and the Slavic expansion (sixth–seventh centuries).
+- **Judgment calls:** the Visigoths' row starts with the kingdom (418), so Alaric sits on the Europe region row; the
+  Teutoburg, Dacian and Marcomannic wars and the Rhine crossing also sit there, as there is no Germanic or Dacian row;
+  the Galatians row is under Anatolia, next to Pergamon's region; the Odoacer–Theodoric treaty is "February 493" (the
+  pages give 2 and 25 February). Not used (summary only): Germanicus and Arminius's death, the Marcomannic details
+  after 166, Vercingetorix's execution, Aquae Sextiae and Vercellae, Abritus, the Gothic Danube crossing year,
+  Reccared's council, the Lombard kings after Alboin, Hengist and Horsa, Badon.
