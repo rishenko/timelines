@@ -1,4 +1,20 @@
-import type { Dataset, DateClaim, Source, SourceRef, Track } from '../types.ts';
+import type { Dataset, DateClaim, Source, SourceRef, TimelineEvent, Track } from '../types.ts';
+import { validateDataset } from '../data/validate.ts';
+
+/**
+ * The problems an edit would add: what `validateDataset` finds in `after` but not in `before`. Forms check this
+ * before saving, because a draft that fails validation can't be restored when the page is opened again.
+ */
+export function newProblems(before: Dataset, after: Dataset): string[] {
+  const had = new Set(validateDataset(before));
+  return validateDataset(after).filter((p) => !had.has(p));
+}
+
+/** Adds or replaces an event (by uuid). */
+export function upsertEvent(d: Dataset, event: TimelineEvent): Dataset {
+  const i = d.events.findIndex((e) => e.uuid === event.uuid);
+  return { ...d, events: i === -1 ? [...d.events, event] : d.events.with(i, event) };
+}
 
 /** Tags applied by default to sources created in the editor (the timeline's custom tag, if it has one). */
 export function customTags(d: Dataset): string[] {

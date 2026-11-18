@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Dataset } from '../types.ts';
 import { applyChanges, changesFromLegacyCopy, diffDataset, isEmpty } from './draft.ts';
-import { draftToStore, restoreDraft } from './dataset.ts';
+import { draftKey, draftToStore, loadInitial, restoreDraft, unreadableDraftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
 import example from '../../docs/examples/example-timeline.json';
 import ancient from '../timelines/ancient-near-east.json';
@@ -113,5 +113,41 @@ describe('restoring saved drafts', () => {
     const size = JSON.stringify(draftToStore(pub, mine)).length;
     expect(size).toBeLessThan(5000);
     expect(JSON.stringify(pub).length).toBeGreaterThan(100 * size);
+  });
+});
+
+describe('opening a timeline with a draft that no longer applies', () => {
+  const stub = () => {
+    const store = new Map<string, string>();
+    globalThis.localStorage = {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => void store.set(k, v),
+      removeItem: (k: string) => void store.delete(k),
+    } as Storage;
+    return store;
+  };
+
+  it('keeps the draft under a backup key instead of losing it', () => {
+    const store = stub();
+    const pub = base();
+    // a change that makes the timeline invalid: an event on a track that doesn't exist
+    const bad = { format: 'changes', base: 'x', changes: { events: { upsert: [{ ...ev(pub, 'founding'), tracks: ['nowhere'] }], remove: [] }, tracks: { upsert: [], remove: [] }, sources: { upsert: {}, remove: [] } } };
+    store.set(draftKey(pub.meta.id), JSON.stringify(bad));
+    const state = loadInitial(pub);
+    expect(state.dirty).toBe(false);
+    expect(state.unreadableDraft).toBe(true);
+    expect(JSON.parse(store.get(unreadableDraftKey(pub.meta.id))!)).toEqual(bad);
+  });
+
+  it('opens a good draft as before, with no backup', () => {
+    const store = stub();
+    const pub = base();
+    const edited = base();
+    ev(edited, 'founding').title = 'Changed';
+    store.set(draftKey(pub.meta.id), JSON.stringify(draftToStore(pub, edited)));
+    const state = loadInitial(pub);
+    expect(state.dirty).toBe(true);
+    expect(ev(state.data, 'founding').title).toBe('Changed');
+    expect(store.has(unreadableDraftKey(pub.meta.id))).toBe(false);
   });
 });

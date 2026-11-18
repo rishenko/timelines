@@ -8,16 +8,18 @@ interface Props {
   increments: number[];
   increment: number;
   onIncrement: (inc: number) => void;
-  /** At the coarsest zoom only key events are drawn; say so. */
-  keyOnly: boolean;
   /** The Dating button and its panel (DatingMenu). */
   dating: ReactNode;
   compress: boolean;
   onCompress: (on: boolean) => void;
   showLinks: boolean;
   onShowLinks: (on: boolean) => void;
-  /** Expand all / Collapse all, and Default view. Omitted when the timeline has no sub-rows. */
-  rows?: { someCollapsed: boolean; onToggleAll: () => void; canReset: boolean; onReset: () => void };
+  /**
+   * Expand all / Collapse all, and ↺ Default view. Omitted when the timeline has no sub-rows. hasDefaultView: the
+   * timeline opens with some rows folded (else "default" is just "all open" and ↺ isn't shown); canReset: the rows
+   * differ from that now.
+   */
+  rows?: { someCollapsed: boolean; onToggleAll: () => void; hasDefaultView: boolean; canReset: boolean; onReset: () => void };
   /** The search box (SearchBox). */
   search: ReactNode;
   panels: Record<PanelName, boolean>;
@@ -39,7 +41,11 @@ export function Toolbar(p: Props) {
     <header className="toolbar">
       <h1>
         {p.picker}
-        {p.subtitle && <span className="muted"> {p.subtitle}</span>}
+        {p.subtitle && (
+          <span className="subtitle muted" title={p.subtitle}>
+            {p.subtitle}
+          </span>
+        )}
       </h1>
       <div className="group" role="group" aria-label="Years per tick">
         {p.increments.map((inc) => (
@@ -48,11 +54,6 @@ export function Toolbar(p: Props) {
           </button>
         ))}
       </div>
-      {p.keyOnly && (
-        <span className="muted small" title="At the widest zoom only key events are drawn; zoom in to see them all">
-          Key events only
-        </span>
-      )}
       {p.dating}
       <label className="check" title="Collapse long stretches with no events">
         <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Compress gaps
@@ -61,26 +62,42 @@ export function Toolbar(p: Props) {
         <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Connections
       </label>
       {p.rows && (
-        <button
-          onClick={p.rows.onToggleAll}
-          title={
-            p.rows.someCollapsed
-              ? 'Open every row, down to the smallest sub-row'
-              : 'Fold every row into its parent, leaving only the top-level rows; open them again one level at a time'
-          }
-        >
-          {p.rows.someCollapsed ? '▾ Expand all' : '▸ Collapse all'}
-        </button>
-      )}
-      {p.rows?.canReset && (
-        <button onClick={p.rows.onReset} title="Fold and open rows the way this timeline opens">
-          ↺ Default view
-        </button>
+        <div className="group rows-group" role="group" aria-label="Rows">
+          <button
+            className="seg"
+            onClick={p.rows.onToggleAll}
+            title={
+              p.rows.someCollapsed
+                ? 'Open every row, down to the smallest sub-row'
+                : 'Fold every row into its parent, leaving only the top-level rows; open them again one level at a time'
+            }
+          >
+            {p.rows.someCollapsed ? '▾ Expand all' : '▸ Collapse all'}
+          </button>
+          {/* always there (disabled when the rows already are as the timeline opens), so the toolbar doesn't jump */}
+          {p.rows.hasDefaultView && (
+            <button
+              className="seg"
+              onClick={p.rows.onReset}
+              disabled={!p.rows.canReset}
+              aria-label="Default view"
+              title={p.rows.canReset ? 'Default view: fold and open rows the way this timeline opens' : 'The rows are as this timeline opens'}
+            >
+              ↺
+            </button>
+          )}
+        </div>
       )}
       {p.search}
       <span className="spacer" />
       {PANEL_BUTTONS.map(({ panel, label, title }) => (
-        <button key={panel} className={p.panels[panel] ? 'on' : ''} onClick={() => p.onTogglePanel(panel)} title={title}>
+        <button
+          key={panel}
+          data-tour={panel}
+          className={p.panels[panel] ? 'on' : ''}
+          onClick={() => p.onTogglePanel(panel)}
+          title={title}
+        >
           {label}
         </button>
       ))}

@@ -6,6 +6,8 @@ import { chronologyGroups } from '../lib/chronology.ts';
 interface Props {
   data: Dataset;
   onClose: () => void;
+  /** Starts the guided tour; the button is left out without it. */
+  onTour?: () => void;
 }
 
 interface Item {
@@ -56,7 +58,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
   );
 }
 
-export function LegendPanel({ data, onClose }: Props) {
+export function LegendPanel({ data, onClose, onTour }: Props) {
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
   const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
@@ -206,6 +208,11 @@ export function LegendPanel({ data, onClose }: Props) {
     <div className="legend-panel" style={{ '--track-color': color } as React.CSSProperties}>
       <header>
         <h2>How to read this timeline</h2>
+        {onTour && (
+          <button className="tour-start" onClick={onTour} title="A one-minute guided tour of the page">
+            Take the tour
+          </button>
+        )}
         <button className="icon" onClick={onClose} title="Close the legend">
           ✕
         </button>

@@ -26,6 +26,8 @@ export interface DatasetState {
   dirty: boolean;
   /** True when a saved draft was replayed onto published data that changed after the draft was made. */
   updatedUnderDraft?: boolean;
+  /** True when a saved draft couldn't be applied; it was kept under `unreadableDraftKey`. */
+  unreadableDraft?: boolean;
 }
 
 export function datasetReducer(state: DatasetState, action: DatasetAction): DatasetState {
@@ -94,15 +96,40 @@ export function restoreDraft(published: Dataset, stored: unknown): { data: Datas
   return validateDataset(data).length === 0 ? { data, updated } : null;
 }
 
-function loadInitial(published: Dataset): DatasetState {
+/** Where a draft that can't be restored is kept, so opening the timeline never deletes a reader's edits. */
+export const unreadableDraftKey = (timelineId: string) => `timelines:${timelineId}:draft-unreadable`;
+
+export function loadInitial(published: Dataset): DatasetState {
+  const key = draftKey(published.meta.id);
+  let raw: string | null = null;
   try {
-    const raw = localStorage.getItem(draftKey(published.meta.id));
+    raw = localStorage.getItem(key);
     const restored = raw ? restoreDraft(published, JSON.parse(raw)) : null;
     if (restored) return { published, data: restored.data, dirty: true, updatedUnderDraft: restored.updated };
   } catch {
-    // ignore unreadable drafts
+    // unreadable JSON: kept below
   }
-  return { published, data: published, dirty: false };
+  // A stored draft that doesn't apply (it would make the timeline invalid, or isn't readable) would be cleared by
+  // the save effect below; keep a copy first. A draft with no changes left is simply dropped.
+  let unreadableDraft = false;
+  if (raw) {
+    let empty = false;
+    try {
+      const s = JSON.parse(raw);
+      empty = s?.format === 'changes' && isEmpty(s.changes);
+    } catch {
+      // not JSON: keep it
+    }
+    if (!empty) {
+      try {
+        localStorage.setItem(unreadableDraftKey(published.meta.id), raw);
+        unreadableDraft = true;
+      } catch {
+        // storage full or disabled: nothing more we can do
+      }
+    }
+  }
+  return { published, data: published, dirty: false, ...(unreadableDraft ? { unreadableDraft } : {}) };
 }
 
 /** What to store for a reader's dataset: their changes against the published data, or nothing. */

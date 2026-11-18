@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import type { Dataset } from '../types.ts';
 import {
   moveTrack,
+  newProblems,
+  upsertEvent,
   nextTrackColor,
   removeSource,
   removeTrack,
@@ -143,5 +145,24 @@ describe('sources', () => {
 describe('shipped data', () => {
   it('has a homebrew tag for custom sources', () => {
     expect((data as Dataset).tags.homebrew).toBeDefined();
+  });
+});
+
+describe('checking an edit before saving', () => {
+  it('reports only the problems the edit adds', () => {
+    const d = base();
+    expect(newProblems(d, d)).toEqual([]);
+    // a start outside its own date claims
+    const e = { ...d.events[0], start: 50, startDates: [{ year: 10, margin: 2 }] };
+    const after = upsertEvent(d, e);
+    expect(newProblems(d, after).join()).toContain('lies outside its claims');
+    // once a problem exists, a later unrelated edit isn't blocked by it
+    expect(newProblems(after, upsertEvent(after, { ...after.events[1], title: 'B2' }))).toEqual([]);
+  });
+
+  it('checks lifespan claims on a track', () => {
+    const d = base();
+    const t = { ...d.tracks[1], span: { start: 0, end: 10, startDates: [{ year: 100 }] } };
+    expect(newProblems(d, upsertTrack(d, t, t.id)).join()).toContain('lifespan start');
   });
 });

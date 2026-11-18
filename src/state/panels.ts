@@ -1,9 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 
-/** The toolbar's toggle panels. Each opens and closes on its own; several can be open at once. */
-export type PanelName = 'filters' | 'legend' | 'timelines' | 'theme';
+/**
+ * The toolbar's toggle panels, plus the guided tour. Each opens and closes on its own; several can be open at once.
+ */
+export type PanelName = 'filters' | 'legend' | 'timelines' | 'theme' | 'tour';
 
-/** Set once the legend has been shown, so it opens by itself only on a first visit. */
+/**
+ * Set on a reader's first visit, so the guided tour starts by itself only once. (The name dates from when the legend
+ * opened on a first visit instead; keeping it means readers who saw the legend aren't sent on the tour.)
+ */
 const LEGEND_SEEN_KEY = 'timelines:legend-seen';
 
 function firstVisit(): boolean {
@@ -17,15 +22,16 @@ function firstVisit(): boolean {
 export function usePanels() {
   const [open, setOpen] = useState<Record<PanelName, boolean>>(() => ({
     filters: false,
-    legend: firstVisit(),
+    legend: false,
     timelines: false,
     theme: false,
+    tour: firstVisit(),
   }));
   useEffect(() => {
     try {
       localStorage.setItem(LEGEND_SEEN_KEY, '1');
     } catch {
-      // storage disabled: the legend just opens on every visit
+      // storage disabled: firstVisit() is false then, so the tour never starts by itself
     }
   }, []);
   const toggle = useCallback((p: PanelName) => setOpen((o) => ({ ...o, [p]: !o[p] })), []);

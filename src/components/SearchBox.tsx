@@ -4,6 +4,8 @@ import { search, type SearchEntry } from '../lib/search.ts';
 interface Props {
   index: SearchEntry[];
   placeholder: string;
+  /** A year written the way this timeline writes years, for the tooltip (e.g. "1274 BCE"). */
+  example?: string;
   /** A year typed as text ("1274 BCE"), or null. */
   parseYear: (text: string) => number | null;
   formatYear: (year: number) => string;
@@ -122,7 +124,7 @@ export function SearchBox(props: Props) {
         aria-controls={listId}
         aria-activedescendant={showList && options.length ? optId(active) : undefined}
         placeholder={props.placeholder}
-        title="Find a civilization, region or event, or type a year. Press / to search from anywhere."
+        title={`Find a civilization, region or event, or type a year${props.example ? ` (e.g. ${props.example})` : ''}. Press / to search from anywhere.`}
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);

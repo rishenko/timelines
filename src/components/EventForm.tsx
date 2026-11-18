@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { useFieldArray, useForm, type Control, type UseFormRegister } from 'react-hook-form';
+import { useFieldArray, useForm } from 'react-hook-form';
 import {
   LINK_KINDS,
   type Calendar,
-  type DateClaim,
   type Dataset,
   type EventLink,
   type SourceRef,
@@ -12,22 +11,14 @@ import {
 import { compareEvents } from '../lib/years.ts';
 import { childrenMap } from '../lib/tracks.ts';
 import { formatYear, fromStored, toStored, type EraSide } from '../lib/calendar.ts';
+import { ClaimList, EraSelect, ProblemList } from './ClaimList.tsx';
+import { claimsFromValues, toClaimValues, type ClaimFields } from '../lib/claims.ts';
 import { eventChronology } from '../lib/chronology.ts';
-import { customTags, nextTrackColor, uniqueId } from '../state/edits.ts';
+import { customTags, newProblems, nextTrackColor, uniqueId, upsertEvent } from '../state/edits.ts';
 import type { Source, Track } from '../types.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 
-interface ClaimValues {
-  year: number;
-  era: EraSide;
-  margin: string;
-  chronology: string;
-  sourceKey: string;
-  sourceLocation: string;
-  note: string;
-}
-
-interface FormValues {
+interface FormValues extends ClaimFields {
   uuid: string;
   title: string;
   descr: string;
@@ -44,32 +35,7 @@ interface FormValues {
   tracks: string[];
   sources: SourceRef[];
   links: EventLink[];
-  startDates: ClaimValues[];
-  endDates: ClaimValues[];
 }
-
-const toClaimValues = (c: DateClaim, cal: Calendar): ClaimValues => {
-  const d = fromStored(c.year, cal);
-  return {
-    year: d.year,
-    era: d.era,
-    margin: c.margin === undefined ? '' : String(c.margin),
-    chronology: c.chronology ?? '',
-    sourceKey: c.source?.sourceKey ?? '',
-    sourceLocation: c.source?.sourceLocation ?? '',
-    note: c.note ?? '',
-  };
-};
-
-const fromClaimValues = (v: ClaimValues, cal: Calendar): DateClaim | null => {
-  if (!Number.isFinite(Number(v.year))) return null;
-  const c: DateClaim = { year: toStored(Number(v.year), v.era, cal) };
-  if (v.margin.trim() !== '' && Number(v.margin) >= 0) c.margin = Number(v.margin);
-  if (v.chronology) c.chronology = v.chronology;
-  if (v.sourceKey) c.source = { sourceKey: v.sourceKey, sourceLocation: v.sourceLocation };
-  if (v.note.trim()) c.note = v.note.trim();
-  return c;
-};
 
 function toForm(e: TimelineEvent, cal: Calendar): FormValues {
   const s = fromStored(e.start, cal);
@@ -115,86 +81,13 @@ function fromForm(v: FormValues, cal: Calendar): TimelineEvent {
   if (v.chronology) e.chronology = v.chronology;
   if (v.order.trim() !== '') e.order = Number(v.order);
   if (v.importance === '1' || v.importance === '3') e.importance = Number(v.importance) as 1 | 3;
-  const starts = v.startDates.map((c) => fromClaimValues(c, cal)).filter((c) => c !== null);
-  if (starts.length) e.startDates = starts;
-  const ends = v.endDates.map((c) => fromClaimValues(c, cal)).filter((c) => c !== null);
-  if (ends.length && e.end !== undefined) e.endDates = ends;
+  const starts = claimsFromValues(v.startDates, cal);
+  if (starts) e.startDates = starts;
+  const ends = claimsFromValues(v.endDates, cal);
+  if (ends && e.end !== undefined) e.endDates = ends;
   const links = v.links.filter((l) => l.to && l.to !== v.uuid);
   if (links.length) e.links = links;
   return e;
-}
-
-function EraSelect({ cal, label, reg }: { cal: Calendar; label: string; reg: ReturnType<UseFormRegister<FormValues>> }) {
-  return (
-    <select aria-label={label} {...reg}>
-      <option value="after">{cal.after}</option>
-      <option value="before">{cal.before}</option>
-    </select>
-  );
-}
-
-/** Editable list of date claims (what each source says the date is). */
-function ClaimList({
-  name,
-  control,
-  register,
-  data,
-}: {
-  name: 'startDates' | 'endDates';
-  control: Control<FormValues>;
-  register: UseFormRegister<FormValues>;
-  data: Dataset;
-}) {
-  const claims = useFieldArray({ control, name });
-  const cal = data.meta.calendar;
-  const chronologies = Object.entries(data.chronologies ?? {});
-  return (
-    <div className="claims">
-      {claims.fields.map((f, i) => (
-        <div key={f.id} className="claim">
-          <div className="row">
-            <input aria-label="Year" type="number" min={0} {...register(`${name}.${i}.year`, { valueAsNumber: true })} />
-            <EraSelect cal={cal} label="Era" reg={register(`${name}.${i}.era`)} />
-            <span className="muted">±</span>
-            <input aria-label="Margin in years" className="narrow" placeholder="0" {...register(`${name}.${i}.margin`)} />
-            {chronologies.length > 0 && (
-              <select aria-label="Chronology" {...register(`${name}.${i}.chronology`)}>
-                <option value="">(event's chronology)</option>
-                {chronologies.map(([id, c]) => (
-                  <option key={id} value={id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-            )}
-            <button type="button" className="icon" onClick={() => claims.remove(i)} title="Remove">
-              ✕
-            </button>
-          </div>
-          <div className="row">
-            <select aria-label="Source" {...register(`${name}.${i}.sourceKey`)}>
-              <option value="">Source…</option>
-              {Object.entries(data.sources).map(([k, s]) => (
-                <option key={k} value={k}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
-            <input aria-label="Location in source" placeholder="p. 12" {...register(`${name}.${i}.sourceLocation`)} />
-          </div>
-          <input aria-label="Note" placeholder="Note (optional)" {...register(`${name}.${i}.note`)} />
-        </div>
-      ))}
-      <button
-        type="button"
-        onClick={() =>
-          claims.append({ year: 0, era: 'before', margin: '', chronology: '', sourceKey: '', sourceLocation: '', note: '' })
-        }
-      >
-        + Add a dated claim
-      </button>
-    </div>
-  );
 }
 
 interface Props {
@@ -211,6 +104,8 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
   const cal = data.meta.calendar;
   const [newTrack, setNewTrack] = useState<{ name: string; color: string; parent: string } | null>(null);
   const [newSource, setNewSource] = useState<{ name: string; url: string } | null>(null);
+  /** What saving would break (e.g. the start outside its date claims); shown above the buttons. */
+  const [problems, setProblems] = useState<string[]>([]);
   const {
     register,
     handleSubmit,
@@ -292,7 +187,9 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
       setError('endYear', { message: 'End year is before the start year.' });
       return;
     }
-    onSave(e);
+    const found = newProblems(data, upsertEvent(data, e));
+    setProblems(found);
+    if (!found.length) onSave(e);
   };
 
   return (
@@ -532,6 +429,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
           <input aria-label="Event id" readOnly {...register('uuid')} />
         </details>
 
+        <ProblemList problems={problems} />
         <footer>
           <button type="submit" className="primary">
             {isNew ? 'Create event' : 'Save changes'}

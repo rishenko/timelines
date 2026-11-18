@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { TimelineView, type FocusRequest } from './timeline/TimelineView.tsx';
-import { downloadDataset, useDataset } from './state/dataset.ts';
+import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
 import { isEventVisible, useFilters } from './state/filters.ts';
 import { useTheme } from './state/theme.ts';
 import { useToast } from './state/toast.ts';
@@ -20,6 +20,8 @@ import { FiltersPanel } from './components/FiltersPanel.tsx';
 import { ThemePanel } from './components/ThemePanel.tsx';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
+import { Tour } from './components/Tour.tsx';
+import { tourSteps } from './lib/tour.ts';
 import { newEvent } from './lib/newEvent.ts';
 import { datasetPresent } from './lib/years.ts';
 import { formatYear } from './lib/calendar.ts';
@@ -35,7 +37,7 @@ import { allTimelines } from './timelines/index.ts';
  */
 export default function App() {
   const [initialUrl] = useState(readUrl);
-  const [{ data, dirty, published, updatedUnderDraft }, dispatch] = useDataset(initialUrl.published);
+  const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch] = useDataset(initialUrl.published);
   const meta = data.meta;
   const cal = meta.calendar;
   const present = datasetPresent(data);
@@ -44,7 +46,12 @@ export default function App() {
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
   // on opening, readers with a saved draft hear if the published timeline changed underneath it
   const [toast, notify] = useToast(
-    updatedUnderDraft ? 'The published timeline has been updated. Your local edits are kept on top of the new version.' : null,
+    unreadableDraft
+      ? "Your saved edits to this timeline couldn't be opened. They are kept in this browser's storage as " +
+          `"${unreadableDraftKey(initialUrl.published.meta.id)}".`
+      : updatedUnderDraft
+        ? 'The published timeline has been updated. Your local edits are kept on top of the new version.'
+        : null,
   );
 
   useEffect(() => {
@@ -78,9 +85,10 @@ export default function App() {
   const hasSubRows = useMemo(() => parentIds(data.tracks).length > 0, [data.tracks]);
   const someCollapsed = useMemo(() => anyCollapsed(data.tracks, collapsed), [data.tracks, collapsed]);
   // "Default view" restores the rows the timeline opens with; only useful when that isn't simply "all open".
+  const hasDefaultView = useMemo(() => anyCollapsed(data.tracks, openingCollapsed), [data.tracks, openingCollapsed]);
   const canReset = useMemo(
-    () => anyCollapsed(data.tracks, openingCollapsed) && !sameCollapsed(data.tracks, collapsed, openingCollapsed),
-    [data.tracks, collapsed, openingCollapsed],
+    () => hasDefaultView && !sameCollapsed(data.tracks, collapsed, openingCollapsed),
+    [hasDefaultView, data.tracks, collapsed, openingCollapsed],
   );
 
   // ---- selection and editing ----
@@ -176,7 +184,6 @@ export default function App() {
         increments={meta.increments}
         increment={increment}
         onIncrement={setIncrement}
-        keyOnly={keyOnly}
         dating={
           <DatingMenu
             groups={chronGroups}
@@ -195,6 +202,7 @@ export default function App() {
             ? {
                 someCollapsed,
                 onToggleAll: () => setCollapsed(someCollapsed ? {} : collapseAll(data.tracks)),
+                hasDefaultView,
                 canReset,
                 onReset: () => setCollapsed(openingCollapsed),
               }
@@ -203,7 +211,8 @@ export default function App() {
         search={
           <SearchBox
             index={search.index}
-            placeholder={`Find a row or event, or a year (${formatYear(cal.yearZero ? 4500 : -1273, cal)})`}
+            placeholder="Find a row, event or year…"
+            example={formatYear(cal.yearZero ? 4500 : -1273, cal)}
             parseYear={search.parseYear}
             formatYear={search.formatYear}
             describeYears={search.describeYears}
@@ -249,7 +258,20 @@ export default function App() {
         </div>
       )}
 
-      {panels.open.legend && <LegendPanel data={data} onClose={() => panels.show('legend', false)} />}
+      {panels.open.legend && (
+        <LegendPanel
+          data={data}
+          onClose={() => panels.show('legend', false)}
+          onTour={() => {
+            panels.show('legend', false);
+            panels.show('tour', true);
+          }}
+        />
+      )}
+
+      {panels.open.tour && (
+        <Tour steps={tourSteps(data, { hasDating: chronGroups.length > 0, hasSubRows })} onClose={() => panels.show('tour', false)} />
+      )}
 
       {panels.open.timelines && (
         <TimelinesPanel
@@ -319,6 +341,7 @@ export default function App() {
             if (next !== undefined) setIncrement(next);
           }}
           edgeLinks={edgeLinks}
+          keyEventsOnly={keyOnly}
         />
         <SidePanel
           data={data}

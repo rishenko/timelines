@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import type { Dataset, Track } from '../types.ts';
-import { nextTrackColor, slug, trackDeletion, uniqueId } from '../state/edits.ts';
+import { newProblems, nextTrackColor, slug, trackDeletion, uniqueId, upsertTrack } from '../state/edits.ts';
+import { ClaimList, ProblemList } from './ClaimList.tsx';
+import { claimsFromValues, toClaimValues, type ClaimFields } from '../lib/claims.ts';
 import { isDescendant, trackDepth } from '../lib/tracks.ts';
 import { formatYear, parseDate } from '../lib/calendar.ts';
 
-interface FormValues {
+interface FormValues extends ClaimFields {
   id: string;
   name: string;
   color: string;
@@ -34,6 +37,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
   const {
     register,
     handleSubmit,
+    control,
     setError,
     watch,
     formState: { errors },
@@ -48,6 +52,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       spanStart: initial?.span ? fmt(initial.span.start, initial.span.circa) : '',
       spanEnd: initial?.span ? fmt(initial.span.end, initial.span.circa) : '',
       pinLast: !!initial?.pinLast,
+      startDates: (initial?.span?.startDates ?? []).map((c) => toClaimValues(c, cal)),
+      endDates: (initial?.span?.endDates ?? []).map((c) => toClaimValues(c, cal)),
     },
   });
   // A track can sit under any track except itself and its own descendants (rows nest to any depth).
@@ -58,6 +64,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
   const previewId = idValue ? slug(idValue) : uniqueId(name, otherIds);
   const chronologies = Object.entries(data.chronologies ?? {});
   const example = fmt(data.meta.calendar.yearZero ? 4500 : -1499);
+  /** What saving would break (e.g. a lifespan date outside its claims); shown above the buttons. */
+  const [problems, setProblems] = useState<string[]>([]);
 
   const submit = (v: FormValues) => {
     const id = v.id ? slug(v.id) : uniqueId(v.name, otherIds);
@@ -74,14 +82,18 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       if (!s) return setError('spanStart', { message: `Write a year like "${example}".` });
       if (!e) return setError('spanEnd', { message: `Write a year like "${example}".` });
       if (e.year < s.year) return setError('spanEnd', { message: 'The end is before the start.' });
-      // keep date claims if the dates themselves didn't change
-      const old = initial?.span;
       t.span = { start: s.year, end: e.year };
       if (s.circa || e.circa) t.span.circa = true;
-      if (old?.startDates && old.start === s.year) t.span.startDates = old.startDates;
-      if (old?.endDates && old.end === e.year) t.span.endDates = old.endDates;
+      const startDates = claimsFromValues(v.startDates, cal);
+      const endDates = claimsFromValues(v.endDates, cal);
+      if (startDates) t.span.startDates = startDates;
+      if (endDates) t.span.endDates = endDates;
+    } else if (v.startDates.length || v.endDates.length) {
+      return setError('spanStart', { message: 'Give the lifespan a start and an end, or remove its date claims.' });
     }
-    onSave(t, initial?.id);
+    const found = newProblems(data, upsertTrack(data, t, initial?.id));
+    setProblems(found);
+    if (!found.length) onSave(t, initial?.id);
   };
 
   const del = () => {
@@ -106,8 +118,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
         </button>
       </header>
       <p className="muted">
-        Each track is a row on the timeline: a faction, a nation, a civilization, a dynasty. Tracks nest up to three
-        levels deep (e.g. region → civilization → period), and a parent can be collapsed to fold its sub-tracks in.
+        Each track is a row on the timeline: a faction, a nation, a civilization, a dynasty. Tracks nest to any depth
+        (e.g. region → civilization → period), and a parent can be collapsed to fold its sub-tracks in.
       </p>
       <form onSubmit={handleSubmit(submit)}>
         <label htmlFor="tr-name">Name</label>
@@ -137,6 +149,16 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
           </div>
           {errors.spanStart && <p role="alert">{errors.spanStart.message}</p>}
           {errors.spanEnd && <p role="alert">{errors.spanEnd.message}</p>}
+          <details open={!!(initial?.span?.startDates?.length || initial?.span?.endDates?.length)}>
+            <summary>Dated claims</summary>
+            <p className="muted small">
+              What each source says the start and end are. The shaded ends of the lifespan show the range they give.
+            </p>
+            <h4>Start</h4>
+            <ClaimList name="startDates" control={control} register={register} data={data} owner="row" />
+            <h4>End</h4>
+            <ClaimList name="endDates" control={control} register={register} data={data} owner="row" />
+          </details>
         </fieldset>
 
         {chronologies.length > 0 && (
@@ -170,6 +192,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
           {errors.id && <p role="alert">{errors.id.message}</p>}
         </details>
 
+        <ProblemList problems={problems} />
         <footer>
           <button type="submit" className="primary">
             {isNew ? 'Create track' : 'Save track'}

@@ -1,11 +1,15 @@
 // Screenshots the app in Microsoft Edge (via playwright-core; no browser download needed).
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
 //        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json] [--click "Button|Other"]
-//        [--pinch in|out] [--long-press "Row name"]
-// --click presses toolbar or panel buttons whose text contains each name, in order, before --expand.
+//        [--pinch in|out] [--long-press "Row name"] [--measure ".toolbar > *"]
+// --close-legend closes the guided tour (it starts by itself on a first visit) and the legend.
+// --click presses buttons whose text contains each name (or whose tooltip is exactly it), in order, before --expand;
+// "=Name" matches the text exactly (so "=Edit" doesn't also match "Edit mode").
 // --expand opens collapsed rows by their label (in order, so a group can be opened before its regions);
 // --scroll-to scrolls the timeline so that row sits near the top. Names are separated by "|".
 // --storage puts a file into localStorage before the page loads (repeatable), e.g. a saved edit-mode draft.
+// --measure prints the size and position of every element a CSS selector matches (e.g. to see what makes the
+// toolbar wrap), measured just before the screenshot.
 // Run `npx vite preview --port 4317` (after `npm run build`) or `npm run dev` first for a local URL; the
 // preview serves the app at /, not /timelines/.
 // Prints any page errors and failed requests, and exits with 1 if there were any.
@@ -13,7 +17,7 @@ import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const args = process.argv.slice(2);
-const valued = /^--(width|height|expand|scroll-to|storage|click|pinch|long-press)$/;
+const valued = /^--(width|height|expand|scroll-to|storage|click|pinch|long-press|measure)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
   console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
@@ -35,12 +39,18 @@ const storage = args.flatMap((a, i) => (a === '--storage' ? [args[i + 1]] : []))
 if (storage.length) await page.addInitScript((pairs) => pairs.forEach(([k, v]) => localStorage.setItem(k, v)), storage);
 await page.goto(url);
 await page.waitForTimeout(2000);
+// --close-legend closes whatever opens by itself on a first visit: the guided tour (and the legend, if open)
 if (args.includes('--close-legend')) {
+  await page.locator('.tour-card footer .linklike').first().click({ timeout: 1000 }).catch(() => {});
   await page.locator('.legend-panel header button.icon').first().click({ timeout: 1000 }).catch(() => {});
   await page.waitForTimeout(300);
 }
 for (const name of opt('--click')?.split('|') ?? []) {
-  const btn = page.locator('button').filter({ hasText: name }).first();
+  // by its text ("=Name": exactly), else by its tooltip (icon buttons such as a row's ✎ "Edit Egypt")
+  const exact = name.startsWith('=');
+  const text = exact ? new RegExp(`^\\s*${name.slice(1)}\\s*$`) : name;
+  let btn = page.locator('button').filter({ hasText: text }).first();
+  if (!(await btn.count())) btn = page.locator(`button[title="${name}"]`).first();
   if (await btn.count()) await btn.click();
   else problems.push(`--click: no button with "${name}"`);
   await page.waitForTimeout(300);
@@ -101,6 +111,18 @@ if (pressRow) {
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
     await page.waitForTimeout(400);
   }
+}
+
+const measure = opt('--measure');
+if (measure) {
+  const boxes = await page.locator(measure).evaluateAll((els) =>
+    els.map((el) => {
+      const b = el.getBoundingClientRect();
+      const name = (el.getAttribute('aria-label') || el.textContent || el.tagName).trim().replace(/\s+/g, ' ').slice(0, 40);
+      return `${Math.round(b.x)},${Math.round(b.y)} ${Math.round(b.width)}×${Math.round(b.height)}  ${el.tagName.toLowerCase()}.${el.className}  ${name}`;
+    }),
+  );
+  console.log(`${measure}: ${boxes.length} element(s)\n${boxes.join('\n')}`);
 }
 
 await page.screenshot({ path: out, fullPage: args.includes('--full') });

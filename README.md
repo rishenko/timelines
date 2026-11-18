@@ -37,8 +37,8 @@ with its own calendar, eras, scale and theme. Three ship with the app:
   dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait), plus a follow-up pass on values first read only in summary (`summary-only.ts`); 371 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first, then the region passes, `summary-only.ts`, and `collapsed.ts` last); sources and judgment calls in `docs/classical-sources.md`.
   It opens like the ancient timeline: groups expanded, each region collapsed to its key events.
-- **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
-  [REDACTED](https://github.com/rishenko/REDACTED).
+- **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, first entered in
+  [REDACTED](https://github.com/rishenko/REDACTED); this app is now where it is used and developed.
 
 Switch between them with the title menu or `?timeline=ancient-near-east` / `?timeline=classical` / `?timeline=REDACTED`.
 
@@ -69,7 +69,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Calendars.** Each timeline names its eras (BCE/CE, BE/U, …) and says whether it has a year 0.
   BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
   years (1500 BCE, not 1501 BCE).
-- **Lanes nest to any depth**, e.g. group → region → civilization → period. Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events. The toolbar's **Expand all / Collapse all** button (shown when a timeline has sub-rows) opens every row, or folds every row so only the top level shows; reopening a row then shows its children still folded, one level at a time. **Default view** (shown once the rows differ from how the timeline opens) restores its opening layout. Where scholars date a region differently, the toolbar's **Dating** button opens a panel with one dating system per region; the button counts regions changed from their default.
+- **Lanes nest to any depth**, e.g. group → region → civilization → period. Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events. The toolbar's **Expand all / Collapse all** button (shown when a timeline has sub-rows) opens every row, or folds every row so only the top level shows; reopening a row then shows its children still folded, one level at a time. Beside it, **↺** (Default view) restores the timeline's opening layout; it is greyed out while the rows are already that way, and left out for timelines that open with every row open. Where scholars date a region differently, the toolbar's **Dating** button opens a panel with one dating system per region; the button counts regions changed from their default.
   A track can have a **lifespan**, shaded across its lane, so you can see which civilizations coexisted.
 - **Uncertain dates.** An event's start and end can carry *date claims*: what each source says, under which
   chronology, with what ± margin. The app computes each date's range from those claims and draws it:
@@ -84,19 +84,29 @@ paths; anything else (e.g. `javascript:`) is rejected.
   connections hidden by your filters (spoilers).
 - **Key events:** events can be marked key, normal or minor. Key events have bold labels, and crowded or
   collapsed rows place them first, so collapsed regions still show their headline events. At a timeline's coarsest
-  zoom (1000 years per tick for the ancient timeline) only key events are drawn.
+  zoom (1000 years per tick for the ancient timeline) only key events are drawn; the ruler's corner says so.
 - **Search:** the toolbar search finds rows (groups, regions, civilizations, periods) and events, shown with their row's path and dates; it ignores case and accents ("hattusa" finds Ḫattuša). Picking a result unfolds the rows above it, scrolls to its row and dates, and highlights the row; an event also opens its details. Results hidden by Filters are greyed out and say so. Typing a year offers "Go to …". Press `/` to search from anywhere.
 - **Gap compression:** long empty stretches collapse into a hatched `⋯ 900 yrs ⋯` break.
+- **Guided tour:** on a reader's first visit a short tour walks through the page: rows, events, zoom, Dating, folding
+  rows, search, and the legend. Each step outlines the part it describes; steps for features a timeline doesn't use are
+  left out. **Take the tour** in the Legend starts it again.
 - **Legend:** the Legend button explains every symbol, color and line, using the current theme and only the features the
-  open timeline uses. It opens by itself on a reader's first visit.
+  open timeline uses.
+- **Toolbar:** one row on screens about 1700 px wide or more. The subtitle sits in small print under the timeline menu
+  (its full text on hover), and the search box widens while you type in it.
 - **Themes:** presets and per-color pickers. Each timeline has a default (ancient: Parchment, REDACTED: Dark)
   until the reader picks their own.
 - **Phones and tablets:** one finger pans the timeline and a two-finger pinch steps through the zoom levels. On
   narrow screens (under 640 px) the toolbar becomes one row that scrolls sideways, the row labels narrow, panels
   overlay the timeline, and the credits note folds to two lines (tap to open). In edit mode, hold a finger on an
-  empty spot in a lane to add an event there.
+  empty spot in a lane to add an event there; the edit bar's buttons are one row that scrolls sideways, with a short hint
+  under it. The tour's card sits at the bottom of the screen.
 - **Deep links:** `?timeline=…&inc=100&at=-1594#sack-of-babylon` restores timeline, scale, position and selection.
-- **Edit mode:** add events, tracks and sources, record date claims, download the JSON and upload it again.
+- **Edit mode:** add events, tracks and sources, record date claims for events and for a track's lifespan, download the
+  JSON and upload it again. The event and track editors check an edit before saving it and list anything it would break
+  (e.g. a date outside its own claims), because a draft that fails validation can't be reopened. Renaming or deleting a
+  source updates every citation of it, date claims included. If a saved draft still can't be applied when the timeline
+  opens, it is kept under `timelines:<id>:draft-unreadable` in the browser's storage and the reader is told.
   Drafts autosave per timeline in the browser as the reader's changes (`src/state/draft.ts`), not a copy, so later
   updates to the published timeline still reach them; where both changed the same item, the reader's version wins, and
   the reader is told when the published timeline changed under their edits. Old full-copy drafts are converted on load
@@ -131,7 +141,7 @@ npm run data -- run-all <timeline>          # replay every content script in ord
 npm run data -- run-all <timeline> --check  # the same, but only report whether the scripts reproduce the source file; changes nothing
 node scripts/additions/europe.ts            # (re)apply one region's additions; then npm run importance:ancient
 node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
-npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all" --pinch in --long-press "Europe"]
+npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all|=Edit|Edit Cyrene" --pinch in --long-press "Europe" --measure ".toolbar > *"]   # --close-legend also closes the first-visit tour
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 npm run audit:batches -- data-src/ancient-near-east.json <out dir> [--pages 10] [--only id,id]   # group descriptions by cited Wikipedia page, one file per fetch agent, to check them against the pages
 node scripts/apply-text-fixes.ts data-src/ancient-near-east.json fixes.json [--dry]   # reword titles/descriptions ({uuid, field, from, to}) in the data and in the script that defines each event
@@ -209,6 +219,7 @@ which converts and validates them.
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (cycle-safe; use these, don't hand-roll walks) |
 | `src/lib/search.ts` | Search index and ranking over rows and events |
 | `src/lib/years.ts`, `urls.ts`, `theme.ts` | Event ordering and date text; URL safety for untrusted timelines; theme presets |
+| `src/lib/claims.ts`, `tour.ts` | Date claims as form fields and back; the guided tour's steps |
 | `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
 | `src/timeline/layout.ts` | Lanes from the track tree; row packing, `+N` clusters, marks with lighter start/end ranges |
 | `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering, scrolling to focus requests |
@@ -219,7 +230,7 @@ which converts and validates them.
 | `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
 | `src/state/useSearchActions.ts` | What picking a search result does (unfold, scroll, select) |
 | `src/state/` (others) | Filters, theme, folded rows (`collapse`), zoom steps, toolbar panels, toasts |
-| `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors), search box, Dating menu, Filters, Legend, Theme and Timelines panels |
+| `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors, with `ClaimList` for date claims), search box, Dating menu, guided `Tour`, Filters, Legend, Theme and Timelines panels |
 | `src/data/` | Validator, importers for old REDACTED formats, row proximity (`proximity.ts`) |
 | `src/timelines/` | Bundled timelines, registered in `index.ts` |
 | `data-src/`, `scripts/` | Readable source data, the compiler, and the data scripts above |
@@ -236,8 +247,8 @@ in `docs/ancient-sources.md` and `docs/classical-sources.md`.
 
 Built from [REDACTED](https://github.com/rishenko/REDACTED) by
 [rishenko](https://github.com/rishenko), itself v2 of
-[REDACTED](https://github.com/rishenko/REDACTED). Both projects are
-maintained; fixes to shared code are ported by hand.
+[REDACTED](https://github.com/rishenko/REDACTED). Timelines has replaced
+REDACTED for REDACTED use (2026-11-18); nothing is ported back to it.
 
 ## AI use
 

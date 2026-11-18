@@ -58,6 +58,8 @@ interface Props {
   onEditTrack: (id: string) => void;
   onAddTrack: (parent?: string) => void;
   onMoveTrack: (id: string, dir: -1 | 1) => void;
+  /** Only key events are drawn (the coarsest zoom); noted under the ruler's scale. */
+  keyEventsOnly?: boolean;
 }
 
 const isApprox = (e: ResolvedEvent) => !!(e.circa || e.startWindow || e.endWindow);
@@ -318,6 +320,11 @@ export function TimelineView(props: Props) {
           <div className="tl-corner" style={{ width: labelW }}>
             <span>Year</span>
             <small>{increment} yr / tick</small>
+            {props.keyEventsOnly && (
+              <small className="key-only" title="At the widest zoom only key events are drawn; zoom in to see them all">
+                Key events only
+              </small>
+            )}
           </div>
           {visibleTicks.map((t) => (
             <div

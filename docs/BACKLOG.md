@@ -31,12 +31,8 @@
 
 ### App
 
-- **Intro for first-time readers** beyond the legend: e.g. a short guided tour.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
-- **Phones:** not yet tried on a real phone. The edit bar is tall on phones (its buttons wrap to three rows).
-- **Toolbar:** two rows at 1700 px on the ancient timeline. One row would need the subtitle or the search box moved.
-- **Editing lifespan claims:** the track form edits a lifespan's dates but not its date claims (those are kept when
-  the dates don't change, and editable in the JSON).
+- **Phones:** not yet tried on a real phone.
 - **Library size:** everything lives in localStorage (about 5 MB per site). Fine for dozens of timelines of this
   size; move to IndexedDB if people keep large ones.
 - **Shared drafts:** edits to a linked timeline stay local. To publish them, download the JSON and replace the file
@@ -57,12 +53,11 @@ the original plan that fall after 650: Srivijaya, the Sailendra and Borobudur, M
 Zimbabwe, the Mississippians, the Mongols, and the settlement of Hawaiʻi, Aotearoa/New Zealand and Rapa Nui. A
 separate later timeline, linked by `meta.continues` as Ancient and Classical are, would keep each one readable.
 
-### Keeping REDACTED in sync with REDACTED
+### REDACTED data lives here
 
-Both apps are maintained. REDACTED data changes in v2 are pulled in with `npm run data:REDACTED`; a test fails when the
-bundled copy drifts from `../REDACTED/src/data/timeline.json`. Code fixes are ported by hand. Not yet
-ported to v2: drafts stored as changes (`src/state/draft.ts`), the row and event search, and the 2026-11-18 fixes
-below (source citations in claims, the App split).
+Decided 2026-11-18: this app replaces REDACTED for REDACTED, and nothing is ported back to v2. Still to do:
+stop re-importing the REDACTED file from v2 (`npm run data:REDACTED`) and drop the test that fails when the bundled copy
+differs from v2's, so REDACTED events can be edited here.
 
 ## Done
 
@@ -104,3 +99,17 @@ below (source citations in claims, the App split).
     and `rows.ts`, plus `RCE` in `dataset-edit.ts`.
   - `apply-text-fixes.ts` warns when no script defines an event.
   - The Ancient key-event list had kept titles from before the description audit; it is regenerated.
+- **App features, 2026-11-18:**
+  - A guided tour for first-time readers (`src/components/Tour.tsx`, steps in `src/lib/tour.ts`). It starts by itself
+    on a first visit, replacing the legend opening, and can be restarted from the Legend.
+  - Lifespan date claims are editable in the track editor (`ClaimList`, shared with the event editor).
+  - Both editors check an edit before saving and list what it would break (`newProblems` in `edits.ts`). A draft
+    that can't be applied on opening is kept under `timelines:<id>:draft-unreadable` instead of being lost.
+  - The editors' fieldsets no longer run past the side panel (a fieldset is as wide as its content by default; the
+    event editor's were up to 800 px in a 380 px panel).
+  - Toolbar on one row at 1700 px: the subtitle sits under the timeline menu; "Key events only" moved to the ruler's
+    corner; ↺ Default view is a small button beside Expand all that never appears or disappears; the search box narrows
+    and widens on focus.
+  - Phones: the edit bar is one sideways-scrolling row of buttons with a short hint (it was three rows).
+  - `scripts/screenshot.ts`: `--measure <selector>` prints element sizes, `--click` also matches tooltips and
+    `=Exact` text, and `--close-legend` closes the tour too.

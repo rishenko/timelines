@@ -61,6 +61,13 @@ button {
 button:hover {
   border-color: var(--muted);
 }
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+button:disabled:hover {
+  border-color: var(--line-2);
+}
 button.on {
   background: color-mix(in srgb, var(--text) 12%, var(--bg-3));
   border-color: var(--text);
@@ -148,21 +155,33 @@ label.check {
 .toolbar {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   padding: 8px 14px;
   border-bottom: 1px solid var(--line);
   background: var(--bg-2);
   flex-wrap: wrap;
 }
+/* The title: the timeline menu, with the subtitle in small print under it, cut to the menu's width (the full
+   text is its tooltip), so a long subtitle never pushes the toolbar onto a second row. */
 .toolbar h1 {
+  display: flex;
+  flex-direction: column;
   font-size: 16px;
-  margin: 0 8px 0 0;
+  margin: 0 6px 0 0;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.toolbar h1 .muted {
-  font-size: 11px;
+.toolbar h1 .subtitle {
+  /* zero width plus min-width 100%: the subtitle takes the menu's width instead of setting it */
+  width: 0;
+  min-width: 100%;
+  padding-left: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10.5px;
   font-weight: normal;
+  letter-spacing: 0;
   text-transform: none;
 }
 .toolbar .group {
@@ -185,7 +204,11 @@ label.check {
   position: relative;
 }
 .toolbar .search {
-  width: 300px;
+  width: 220px;
+  transition: width 0.15s ease-out;
+}
+.toolbar .search:focus {
+  width: 320px;
 }
 /* search results: fixed under the input, so a sideways-scrolling toolbar (phones) can't clip them */
 .search-results {
@@ -277,6 +300,13 @@ label.check {
   padding: 6px 14px;
   background: color-mix(in srgb, var(--accent) 10%, var(--bg));
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, var(--bg));
+}
+/* the edit bar's buttons; on wide screens they sit inline with the hint (display: contents) */
+.editbar-buttons {
+  display: contents;
+}
+.editbar .hint-narrow {
+  display: none;
 }
 .editbar .sep {
   width: 1px;
@@ -423,6 +453,9 @@ main {
   padding: 0 12px;
   z-index: 2;
 }
+.tl-corner {
+  line-height: 1.2;
+}
 .tl-corner span {
   font-weight: 600;
   text-transform: uppercase;
@@ -431,6 +464,11 @@ main {
 }
 .tl-corner small {
   color: var(--muted);
+}
+.tl-corner small.key-only {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 10.5px;
 }
 
 .tl-tick {
@@ -869,6 +907,8 @@ main {
   font-size: 13px;
 }
 .editor fieldset {
+  /* a fieldset is as wide as its content by default; let it shrink to the panel instead */
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 4px;
   display: flex;
@@ -887,6 +927,26 @@ main {
   display: flex;
   gap: 6px;
   align-items: center;
+}
+/* A claim: year, era, ± margin and remove on the first line, the chronology on its own line under them (it wraps
+   there), then the source and its location. Each field keeps a readable width in a narrow panel. */
+.editor .claim .row {
+  flex-wrap: wrap;
+}
+.editor .claim select[aria-label='Era'] {
+  flex: 0 0 auto;
+  min-width: 64px;
+}
+.editor .claim select[aria-label='Chronology'] {
+  order: 5;
+  flex: 1 0 100%;
+}
+.editor .claim select[aria-label='Source'] {
+  flex: 2 1 150px;
+}
+.editor .claim input[aria-label='Location in source'] {
+  flex: 1 1 90px;
+  min-width: 0;
 }
 .editor .year-row label {
   width: 44px;
@@ -1053,6 +1113,24 @@ main {
 }
 .editor .row .grow input {
   width: 100%;
+}
+/* what saving would break (newProblems in state/edits.ts), above an editor's buttons */
+.editor .form-problems {
+  margin: 8px 0;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--danger) 12%, var(--bg-2));
+  border: 1px solid color-mix(in srgb, var(--danger) 55%, transparent);
+  border-radius: 4px;
+}
+.editor .form-problems p {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+.editor .form-problems ul {
+  margin: 0;
+  padding-left: 18px;
 }
 .detail .dating p {
   margin: 4px 0;
@@ -1466,6 +1544,56 @@ main {
   fill: color-mix(in srgb, var(--danger) 85%, transparent);
 }
 
+/* ---------- guided tour (components/Tour.tsx) ---------- */
+/* The step's target is outlined and the rest of the page dimmed by the outline's huge shadow; without a target a
+   plain dim layer is used. Neither catches clicks, so the page stays usable during the tour. */
+.tour-spot,
+.tour-dim {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+}
+.tour-spot {
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 0 0 9999px color-mix(in srgb, #000 38%, transparent);
+  transition: all 0.2s ease-out;
+}
+.tour-dim {
+  inset: 0;
+  background: color-mix(in srgb, #000 38%, transparent);
+}
+.tour-card {
+  position: fixed;
+  z-index: 61;
+  width: 340px;
+  padding: 12px 14px 10px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+.tour-card h3 {
+  margin: 2px 0 6px;
+  font-size: 15px;
+}
+.tour-card p {
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+.tour-card footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tour-card footer .spacer {
+  flex: 1;
+}
+.legend-panel .tour-start {
+  margin-left: auto;
+  margin-right: 8px;
+}
+
 /* ---------- touch and narrow screens ---------- */
 /* One finger pans the timeline natively; two-finger pinch is handled by TimelineView (zoom steps), so the
    browser must not zoom the page there. */
@@ -1546,7 +1674,41 @@ main {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  /* the legend opens on first visit; on a phone it must leave the timeline visible */
+  /* the edit bar: one row of buttons that scrolls sideways, then a one-line hint (it used to wrap to three rows) */
+  .editbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 6px 10px;
+    /* one column, no wrapping: a wrapping column sizes itself to its widest item (the button row), which would
+       stretch the hint past the screen */
+    flex-wrap: nowrap;
+  }
+  .editbar-buttons {
+    display: flex;
+    gap: 8px;
+    min-width: 0;
+    overflow-x: auto;
+  }
+  .editbar-buttons > * {
+    flex-shrink: 0;
+  }
+  .editbar .hint-wide {
+    display: none;
+  }
+  .editbar .hint-narrow {
+    display: block;
+    font-size: 11px;
+  }
+  /* the tour's card sits across the bottom of the screen, clear of the toolbar it points at */
+  .tour-card {
+    left: 8px !important;
+    right: 8px;
+    top: auto !important;
+    bottom: 8px !important;
+    width: auto;
+  }
+  /* on a phone the legend it must leave the timeline visible */
   .legend-panel {
     max-height: 45vh;
   }
