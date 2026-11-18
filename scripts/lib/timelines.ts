@@ -35,11 +35,12 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     compiled: 'src/timelines/ancient-near-east.json',
     importance: 'data-src/ancient-importance.json',
     keyEvents: 'docs/ancient-key-events.md',
-    // groups.ts last: it nests the regions into groups and sets the row order
+    // phases.ts after every script that puts events on period rows; groups.ts last: it nests the regions into
+    // groups and sets the row order
     scripts: additions([
       'europe', 'mediterranean', 'steppe', 'africa', 'asia', 'pacific', 'caucasus', 'arabia', 'eastern-europe',
       'americas', 'north-asia', 'fill-gaps', 'neolithic-near-east', 'neolithic-world', 'neolithic-2', 'neolithic-3',
-      'ideas', 'peoples', 'groups',
+      'ideas', 'peoples', 'phases', 'groups',
     ]),
   },
   {
@@ -49,10 +50,11 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     compiled: 'src/timelines/classical.json',
     importance: 'data-src/classical-importance.json',
     keyEvents: 'docs/classical-key-events.md',
-    // skeleton first; summary-only after the region passes; collapsed.ts last (it reads the final rows)
+    // skeleton first; summary-only after the region passes; phases after every script that defines its rows;
+    // collapsed.ts last (it reads the final rows)
     scripts: classical([
       'skeleton', 'mediterranean-near-east', 'south-asia', 'east-asia', 'steppe', 'africa', 'europe', 'americas',
-      'se-asia-tibet', 'china-north-south', 'island-sea-oceania', 'summary-only', 'collapsed',
+      'se-asia-tibet', 'china-north-south', 'island-sea-oceania', 'summary-only', 'phases', 'collapsed',
     ]),
   },
   {

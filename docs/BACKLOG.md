@@ -74,6 +74,10 @@ separate later timeline, linked by `meta.continues` as Ancient and Classical are
 - **Ancient Civilizations, 2026-11-17/18:** every region on the original list, back to 9000 BCE (tenth to twelfth
   passes), the history of ideas (`ideas.ts`), and tribal and mobile peoples (`peoples.ts`); a description audit of
   every event.
+- **Periods as phases, 2026-11-18:** every civilization's period sub-rows are phases on its own row (Ancient: Egypt,
+  Assyria, Babylonia, Sumer, Elam, Minoan, Mycenaean, Hittites, Harappan, Canaan, Greece, Rome, Zhou; Classical: the
+  Northern and the Southern dynasties, Rome, Egypt, plus Han and Jin phases) via `scripts/additions/phases.ts` and
+  `scripts/classical/phases.ts`. Later: Egypt's overlapping dynasties in the intermediate periods as stacked phases.
 - **The Classical World, 2026-11-18:** a separate timeline (c. 500 BCE – 650 CE) so long-gone civilizations don't
   crowd it, overlapping the ancient one from 500 to 330 BCE. The skeleton, ten region passes and a summary-only
   follow-up are in `scripts/classical/`; every region opens collapsed (`collapsed.ts`).

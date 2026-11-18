@@ -15,7 +15,7 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 **Key**
 
 - The African humid period ends: the Sahara dries (c. 3550 BCE; Sahara (climate)) `green-sahara-ends`
-- Libu and Sea Peoples invade Egypt (1208 BCE; Libyans, New Kingdom, Sea Peoples) `libu-invasion`
+- Libu and Sea Peoples invade Egypt (1208 BCE; Libyans, Pharaonic Egypt, Sea Peoples) `libu-invasion`
 - Cyrene founded (631 BCE; Cyrene) `cyrene-founded`
 
 **Minor**
@@ -56,10 +56,10 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Earliest wheeled vehicles: Flintbek and Bronocice (c. 3400 BCE; Funnelbeaker culture (north-central Europe)) `flintbek`
 - Stonehenge: the sarsen circle raised (c. 2600 BCE–2400 BCE; Megalith builders) `stonehenge-sarsens`
 - Nebra sky disc (c. 1800 BCE–1600 BCE; Únětice culture) `nebra-disc`
-- Founding of Rome (traditional) (c. 753 BCE; Roman Kingdom (traditional)) `founding-of-rome`
+- Founding of Rome (traditional) (c. 753 BCE; Rome) `founding-of-rome`
 - Biskupin fortified settlement built (747 BCE; Biskupin (Lusatian culture, Poland)) `biskupin`
-- Monarchy overthrown: the Roman Republic (c. 509 BCE; Roman Kingdom (traditional), Roman Republic) `roman-republic-founded`
-- Gauls defeat Rome at the Allia and sack the city (c. 387 BCE; Roman Republic, La Tène (Celts)) `gallic-sack`
+- Monarchy overthrown: the Roman Republic (c. 509 BCE; Rome) `roman-republic-founded`
+- Gauls defeat Rome at the Allia and sack the city (c. 387 BCE; Rome, La Tène (Celts)) `gallic-sack`
 
 **Minor**
 
@@ -77,7 +77,7 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Nuraghe towers built (c. 1800 BCE–1100 BCE; Nuragic Sardinia) `nuraghi`
 - Syracuse founded (733 BCE; Magna Graecia and Sicily) `syracuse-founded`
 - Battle of Himera (480 BCE; Carthage, Magna Graecia and Sicily) `himera`
-- Athenian expedition to Sicily (415 BCE–413 BCE; Magna Graecia and Sicily, Classical period) `sicilian-expedition`
+- Athenian expedition to Sicily (415 BCE–413 BCE; Magna Graecia and Sicily, Archaic and Classical Greece) `sicilian-expedition`
 
 **Minor**
 
@@ -90,22 +90,22 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 **Key**
 
 - Early Cycladic culture (c. 3100 BCE–2300 BCE; Cycladic culture) `early-cycladic`
-- First Minoan palaces built (c. 1925 BCE; Protopalatial (MM IB–II)) `first-palaces`
-- Thera (Minoan) eruption (c. 1600 BCE; Aegean, Neopalatial (MM III–LM IB)) `thera`
-- Mycenaeans at Knossos; Linear B appears (c. 1450 BCE; Monopalatial (LM II), Mycenaean Greece) `mycenaean-knossos`
+- First Minoan palaces built (c. 1925 BCE; Minoan Crete) `first-palaces`
+- Thera (Minoan) eruption (c. 1600 BCE; Aegean, Minoan Crete) `thera`
+- Mycenaeans at Knossos; Linear B appears (c. 1450 BCE; Minoan Crete, Mycenaean Greece) `mycenaean-knossos`
 - Late Bronze Age collapse (c. 1200 BCE–1150 BCE; Aegean, Anatolia, Egypt and Nubia, Mesopotamia, Levant) `bronze-age-collapse`
-- Greek alphabet (c. 800 BCE; Archaic period) `greek-alphabet`
-- First Olympic Games (traditional) (776 BCE; Archaic period) `first-olympiad`
-- The Iliad and the Odyssey (c. 700 BCE; Archaic period) `homer`
-- Cleisthenes' reforms in Athens (508 BCE; Archaic period) `cleisthenes`
-- Battle of Marathon (490 BCE; Archaic period, Achaemenid Persia) `marathon`
-- Battle of Salamis (480 BCE; Classical period, Achaemenid Persia) `salamis`
-- Battle of Thermopylae (480 BCE; Classical period, Achaemenid Persia) `thermopylae`
-- The Parthenon built (447 BCE–438 BCE; Classical period) `parthenon`
-- Peloponnesian War (431 BCE–404 BCE; Classical period) `peloponnesian-war`
-- The trial and death of Socrates (399 BCE; Classical period) `socrates`
-- Plato founds the Academy (c. 387 BCE; Classical period) `academy`
-- Philip II wins the Battle of Chaeronea (338 BCE; Classical period, Macedon) `chaeronea`
+- Greek alphabet (c. 800 BCE; Archaic and Classical Greece) `greek-alphabet`
+- First Olympic Games (traditional) (776 BCE; Archaic and Classical Greece) `first-olympiad`
+- The Iliad and the Odyssey (c. 700 BCE; Archaic and Classical Greece) `homer`
+- Cleisthenes' reforms in Athens (508 BCE; Archaic and Classical Greece) `cleisthenes`
+- Battle of Marathon (490 BCE; Archaic and Classical Greece, Achaemenid Persia) `marathon`
+- Battle of Salamis (480 BCE; Archaic and Classical Greece, Achaemenid Persia) `salamis`
+- Battle of Thermopylae (480 BCE; Archaic and Classical Greece, Achaemenid Persia) `thermopylae`
+- The Parthenon built (447 BCE–438 BCE; Archaic and Classical Greece) `parthenon`
+- Peloponnesian War (431 BCE–404 BCE; Archaic and Classical Greece) `peloponnesian-war`
+- The trial and death of Socrates (399 BCE; Archaic and Classical Greece) `socrates`
+- Plato founds the Academy (c. 387 BCE; Archaic and Classical Greece) `academy`
+- Philip II wins the Battle of Chaeronea (338 BCE; Archaic and Classical Greece, Macedon) `chaeronea`
 
 **Minor**
 
@@ -121,17 +121,17 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 
 - Nabta Playa stone circle (c. 4800 BCE; Nabta Playa (Western Desert)) `nabta-circle`
 - Badarian culture: the earliest farming in Upper Egypt (c. 4400 BCE–4000 BCE; Upper Egypt (Badarian, Naqada I)) `badarian`
-- Narmer unifies Egypt (c. 3100 BCE; Egypt and Nubia, Early Dynastic Period) `narmer`
-- Khufu builds the Great Pyramid (2589 BCE–2566 BCE; Old Kingdom) `khufu`
-- Mentuhotep II reunites Egypt (2055 BCE; First Intermediate Period, Middle Kingdom) `mentuhotep-ii`
-- Ahmose I expels the Hyksos (c. 1550 BCE; Second Intermediate Period, New Kingdom) `ahmose-expels-hyksos`
-- Thutmose I conquers Kush and destroys Kerma (c. 1504 BCE; Kerma, New Kingdom) `kerma-destroyed`
-- Reign of Akhenaten (c. 1353 BCE–1336 BCE; New Kingdom) `akhenaten`
-- Reign of Ramesses II (1279 BCE–1213 BCE; New Kingdom) `ramesses-ii`
-- Kush becomes independent, centred at Napata (c. 1070 BCE; Kingdom of Kush (Napata, Meroë), Third Intermediate Period) `kush-independent`
-- Piye conquers Egypt (c. 727 BCE; Kingdom of Kush (Napata, Meroë), Third Intermediate Period) `piye-conquers-egypt`
+- Narmer unifies Egypt (c. 3100 BCE; Egypt and Nubia, Pharaonic Egypt) `narmer`
+- Khufu builds the Great Pyramid (2589 BCE–2566 BCE; Pharaonic Egypt) `khufu`
+- Mentuhotep II reunites Egypt (2055 BCE; Pharaonic Egypt) `mentuhotep-ii`
+- Ahmose I expels the Hyksos (c. 1550 BCE; Pharaonic Egypt) `ahmose-expels-hyksos`
+- Thutmose I conquers Kush and destroys Kerma (c. 1504 BCE; Kerma, Pharaonic Egypt) `kerma-destroyed`
+- Reign of Akhenaten (c. 1353 BCE–1336 BCE; Pharaonic Egypt) `akhenaten`
+- Reign of Ramesses II (1279 BCE–1213 BCE; Pharaonic Egypt) `ramesses-ii`
+- Kush becomes independent, centred at Napata (c. 1070 BCE; Kingdom of Kush (Napata, Meroë), Pharaonic Egypt) `kush-independent`
+- Piye conquers Egypt (c. 727 BCE; Kingdom of Kush (Napata, Meroë), Pharaonic Egypt) `piye-conquers-egypt`
 - Kush moves its capital to Meroë (c. 591 BCE; Kingdom of Kush (Napata, Meroë)) `meroe-capital`
-- Battle of Pelusium: Persia conquers Egypt (525 BCE; Late Period, Achaemenid Persia) `pelusium`
+- Battle of Pelusium: Persia conquers Egypt (525 BCE; Pharaonic Egypt, Achaemenid Persia) `pelusium`
 
 **Minor**
 
@@ -151,15 +151,15 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - The Tower of Jericho (c. 8000 BCE; Pre-Pottery Neolithic A (Levant)) `jericho-tower`
 - ’Ain Ghazal and its plaster statues (c. 7000 BCE; Pre-Pottery Neolithic B (Levant)) `ain-ghazal`
 - Ebla archives (c. 2400 BCE–2300 BCE; Ebla) `ebla-archives`
-- Proto-Sinaitic: the earliest alphabet (c. 1850 BCE; Middle Bronze Age, Middle Kingdom) `proto-sinaitic`
-- Merneptah Stele names "Israel" (c. 1208 BCE; Late Bronze Age, New Kingdom) `merneptah-stele`
+- Proto-Sinaitic: the earliest alphabet (c. 1850 BCE; Canaan, Pharaonic Egypt) `proto-sinaitic`
+- Merneptah Stele names "Israel" (c. 1208 BCE; Canaan, Pharaonic Egypt) `merneptah-stele`
 - Ugarit destroyed (c. 1185 BCE; Ugarit) `ugarit-destroyed`
 - Philistines settle in Canaan (c. 1175 BCE; Philistines) `philistines-settle`
-- Assyria withdraws; Aramean states take the west (c. 1056 BCE–1015 BCE; Arameans, Middle Assyrian Empire) `aramean-states`
+- Assyria withdraws; Aramean states take the west (c. 1056 BCE–1015 BCE; Arameans, Assyria) `aramean-states`
 - Phoenician alphabet (c. 1050 BCE; Phoenician cities) `phoenician-alphabet`
 - Carthage founded (814 BCE; Phoenician cities, Carthage) `carthage-founded`
-- Tiglath-Pileser III conquers Damascus (732 BCE; Aram-Damascus, Neo-Assyrian Empire) `fall-of-damascus`
-- Assyria conquers Israel (c. 720 BCE; Israel and Judah, Neo-Assyrian Empire) `fall-of-samaria`
+- Tiglath-Pileser III conquers Damascus (732 BCE; Aram-Damascus, Assyria) `fall-of-damascus`
+- Assyria conquers Israel (c. 720 BCE; Israel and Judah, Assyria) `fall-of-samaria`
 
 **Minor**
 
@@ -178,12 +178,12 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Karahan Tepe (c. 9750 BCE–9400 BCE; Göbekli Tepe and the Taş Tepeler) `karahan-tepe`
 - Göbekli Tepe: circular enclosures with stone pillars (c. 9500 BCE–8000 BCE; Göbekli Tepe and the Taş Tepeler) `gobekli-tepe`
 - Çatalhöyük (c. 7500 BCE–5600 BCE; Çatalhöyük) `catalhoyuk`
-- Reign of Ḫattušili I; the capital moves to Hattusa (c. 1650 BCE–1620 BCE; Old Kingdom) `hattusili-i`
-- Hittite sack of Babylon (1595 BCE; Old Kingdom, Old Babylonian (First Dynasty)) `sack-of-babylon`
-- Battle of Kadesh (1274 BCE; New Kingdom (Empire), New Kingdom) `kadesh`
-- Egyptian–Hittite peace treaty (c. 1259 BCE; New Kingdom (Empire), New Kingdom) `eternal-treaty`
-- Hattusa abandoned and burned (c. 1180 BCE; New Kingdom (Empire)) `hattusa-abandoned`
-- Tiglath-Pileser III defeats Sarduri II of Urartu (743 BCE; Urartu, Neo-Assyrian Empire) `urartu-sarduri`
+- Reign of Ḫattušili I; the capital moves to Hattusa (c. 1650 BCE–1620 BCE; Hittites) `hattusili-i`
+- Hittite sack of Babylon (1595 BCE; Hittites, Babylonia) `sack-of-babylon`
+- Battle of Kadesh (1274 BCE; Hittites, Pharaonic Egypt) `kadesh`
+- Egyptian–Hittite peace treaty (c. 1259 BCE; Hittites, Pharaonic Egypt) `eternal-treaty`
+- Hattusa abandoned and burned (c. 1180 BCE; Hittites) `hattusa-abandoned`
+- Tiglath-Pileser III defeats Sarduri II of Urartu (743 BCE; Urartu, Assyria) `urartu-sarduri`
 - Cimmerians destroy the kingdom of Phrygia (c. 675 BCE; Phrygia, Cimmerians) `phrygia-falls`
 - Lydian coins (c. 650 BCE; Lydia) `lydian-coins`
 - Cyrus conquers Lydia (546 BCE; Lydia, Achaemenid Persia) `fall-of-sardis`
@@ -205,24 +205,24 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Samarra culture: early irrigation (c. 5500 BCE–4800 BCE; Samarra culture) `samarra`
 - Eridu founded (c. 5400 BCE; Ubaid period) `eridu`
 - Tell Brak becomes one of the first cities (c. 4200 BCE–3600 BCE; Tell Brak (Upper Mesopotamia)) `tell-brak-city`
-- Earliest proto-cuneiform tablets (Uruk IV) (c. 3350 BCE–3200 BCE; Uruk period) `proto-cuneiform`
-- Eannatum of Lagash defeats Umma: the Stele of the Vultures (c. 2450 BCE; Early Dynastic period) `stele-vultures`
-- Sargon conquers Sumer (c. 2300 BCE; Akkadian Empire, Early Dynastic period) `sargon-conquers-sumer`
+- Earliest proto-cuneiform tablets (Uruk IV) (c. 3350 BCE–3200 BCE; Sumer) `proto-cuneiform`
+- Eannatum of Lagash defeats Umma: the Stele of the Vultures (c. 2450 BCE; Sumer) `stele-vultures`
+- Sargon conquers Sumer (c. 2300 BCE; Akkadian Empire, Sumer) `sargon-conquers-sumer`
 - Fall of Akkad and Gutian rule (c. 2154 BCE–2119 BCE; Akkadian Empire, Sumer) `gutian-period`
-- Ur-Nammu founds the Third Dynasty of Ur (c. 2112 BCE–2094 BCE; Third Dynasty of Ur) `ur-nammu`
-- Assur becomes an independent city-state (c. 2025 BCE; Old Assyrian period) `assur-independent`
-- Elamites destroy Ur (c. 2004 BCE; Third Dynasty of Ur) `fall-of-ur`
-- The Epic of Gilgamesh (Old Babylonian version) (c. 1800 BCE; Old Babylonian (First Dynasty)) `gilgamesh`
-- Reign of Hammurabi (1792 BCE–1750 BCE; Old Babylonian (First Dynasty), Amorites) `hammurabi-reign`
-- Code of Hammurabi (c. 1753 BCE; Old Babylonian (First Dynasty)) `code-hammurabi`
+- Ur-Nammu founds the Third Dynasty of Ur (c. 2112 BCE–2094 BCE; Sumer) `ur-nammu`
+- Assur becomes an independent city-state (c. 2025 BCE; Assyria) `assur-independent`
+- Elamites destroy Ur (c. 2004 BCE; Sumer) `fall-of-ur`
+- The Epic of Gilgamesh (Old Babylonian version) (c. 1800 BCE; Babylonia) `gilgamesh`
+- Reign of Hammurabi (1792 BCE–1750 BCE; Babylonia, Amorites) `hammurabi-reign`
+- Code of Hammurabi (c. 1753 BCE; Babylonia) `code-hammurabi`
 - Ashur-uballit I of Assyria takes Mitanni lands (1365 BCE–1330 BCE; Assyria, Mitanni) `ashur-uballit`
-- Reign of Tiglath-Pileser III (745 BCE–727 BCE; Neo-Assyrian Empire) `tiglath-pileser-iii`
-- Marduk-apla-iddina II holds Babylon against Assyria (722 BCE–710 BCE; Chaldeans, Babylonia, Neo-Assyrian Empire) `merodach-baladan`
-- Reign of Ashurbanipal (669 BCE–631 BCE; Neo-Assyrian Empire) `ashurbanipal`
-- The Library of Ashurbanipal (668 BCE–627 BCE; Neo-Assyrian Empire) `ashurbanipal-library`
-- Fall of Nineveh (612 BCE; Assyria, Neo-Babylonian Empire, Medes) `fall-of-nineveh`
-- Destruction of Jerusalem and the First Temple (589 BCE–587 BCE; Neo-Babylonian Empire, Israel and Judah) `jerusalem-587`
-- Cyrus takes Babylon (539 BCE; Neo-Babylonian Empire, Achaemenid Persia) `cyrus-takes-babylon`
+- Reign of Tiglath-Pileser III (745 BCE–727 BCE; Assyria) `tiglath-pileser-iii`
+- Marduk-apla-iddina II holds Babylon against Assyria (722 BCE–710 BCE; Chaldeans, Babylonia, Assyria) `merodach-baladan`
+- Reign of Ashurbanipal (669 BCE–631 BCE; Assyria) `ashurbanipal`
+- The Library of Ashurbanipal (668 BCE–627 BCE; Assyria) `ashurbanipal-library`
+- Fall of Nineveh (612 BCE; Assyria, Babylonia, Medes) `fall-of-nineveh`
+- Destruction of Jerusalem and the First Temple (589 BCE–587 BCE; Babylonia, Israel and Judah) `jerusalem-587`
+- Cyrus takes Babylon (539 BCE; Babylonia, Achaemenid Persia) `cyrus-takes-babylon`
 
 **Minor**
 
@@ -253,9 +253,9 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 **Key**
 
 - Ganj Dareh: the earliest domesticated goats (c. 8200 BCE; Ganj Dareh) `ganj-dareh`
-- Linear Elamite script (c. 2300 BCE–1850 BCE; Old Elamite) `linear-elamite`
-- Untash-Napirisha builds the ziggurat of Chogha Zanbil (c. 1250 BCE; Middle Elamite) `chogha-zanbil`
-- Ashurbanipal sacks Susa (647 BCE–646 BCE; Neo-Elamite, Neo-Assyrian Empire) `susa-sacked`
+- Linear Elamite script (c. 2300 BCE–1850 BCE; Elam) `linear-elamite`
+- Untash-Napirisha builds the ziggurat of Chogha Zanbil (c. 1250 BCE; Elam) `chogha-zanbil`
+- Ashurbanipal sacks Susa (647 BCE–646 BCE; Elam, Assyria) `susa-sacked`
 - Cyrus revolts against Astyages (550 BCE; Achaemenid Persia, Medes) `cyrus-revolt`
 - Persia conquers the Indus valley (c. 535 BCE–518 BCE; Achaemenid Persia, Vedic period) `achaemenid-indus`
 - Reign of Darius I (522 BCE–486 BCE; Achaemenid Persia) `darius-i`
@@ -332,8 +332,8 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 **Key**
 
 - Mehrgarh: the earliest farming in South Asia (c. 7000 BCE; Mehrgarh) `mehrgarh`
-- Indus script (c. 2800 BCE–1900 BCE; Early Harappan, Mature Harappan) `indus-script`
-- Mohenjo-daro (c. 2500 BCE–1700 BCE; Mature Harappan) `mohenjo-daro`
+- Indus script (c. 2800 BCE–1900 BCE; Harappan civilization) `indus-script`
+- Mohenjo-daro (c. 2500 BCE–1700 BCE; Harappan civilization) `mohenjo-daro`
 - The Rigveda composed (c. 1500 BCE–1000 BCE; Vedic period) `rigveda`
 - The sixteen Mahajanapadas (c. 600 BCE–345 BCE; Magadha, Vedic period) `mahajanapadas`
 - Life of the Buddha (c. 480 BCE–400 BCE; Magadha) `buddha`
@@ -377,12 +377,12 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Walled city built at Yanshi (c. 1600 BCE; Shang dynasty, Erlitou culture) `yanshi`
 - Walled city at Sanxingdui (c. 1600 BCE; Sanxingdui) `sanxingdui-city`
 - Oracle-bone inscriptions (c. 1250 BCE–1050 BCE; Shang dynasty) `oracle-bones`
-- Battle of Muye: Zhou conquers Shang (c. 1046 BCE; Shang dynasty, Western Zhou) `muye`
-- Zhou capital moves east (771 BCE; Western Zhou, Eastern Zhou) `zhou-east`
-- The Quanrong sack Haojing and kill King You (771 BCE; Rong and Di peoples, Western Zhou) `quanrong-haojing`
-- Life of Confucius (c. 551 BCE–479 BCE; Eastern Zhou) `confucius`
-- The Hundred Schools of Thought (c. 500 BCE–221 BCE; Eastern Zhou) `hundred-schools`
-- Warring States period (c. 475 BCE–221 BCE; Eastern Zhou) `warring-states`
+- Battle of Muye: Zhou conquers Shang (c. 1046 BCE; Shang dynasty, Zhou dynasty) `muye`
+- Zhou capital moves east (771 BCE; Zhou dynasty) `zhou-east`
+- The Quanrong sack Haojing and kill King You (771 BCE; Rong and Di peoples, Zhou dynasty) `quanrong-haojing`
+- Life of Confucius (c. 551 BCE–479 BCE; Zhou dynasty) `confucius`
+- The Hundred Schools of Thought (c. 500 BCE–221 BCE; Zhou dynasty) `hundred-schools`
+- Warring States period (c. 475 BCE–221 BCE; Zhou dynasty) `warring-states`
 
 ### Korea and Japan
 

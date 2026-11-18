@@ -16,8 +16,8 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 
 - Battle of Himera (480 BCE; North Africa and Carthage, Western Mediterranean) `himera`
 - Masinissa’s kingdom of Numidia (202 BCE–148 BCE; Numidia, Carthage) `masinissa-numidia`
-- Rome destroys Carthage (146 BCE; Carthage, Roman Republic) `carthage-destroyed`
-- The Vandals take Carthage (439 CE; Vandal Kingdom, Roman Empire (and the Western Empire)) `vandals-carthage`
+- Rome destroys Carthage (146 BCE; Carthage, Rome (Republic, then Empire)) `carthage-destroyed`
+- The Vandals take Carthage (439 CE; Vandal Kingdom, Rome (Republic, then Empire)) `vandals-carthage`
 
 **Minor**
 
@@ -67,11 +67,11 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 
 **Key**
 
-- Caesar’s Gallic Wars (58 BCE–50 BCE; La Tène Celts (Gaul), Roman Republic) `gallic-wars`
-- Battle of the Teutoburg Forest (9 CE; Europe, Roman Empire (and the Western Empire)) `teutoburg`
-- Hadrian’s Wall (122 CE; Roman Britain, Roman Empire (and the Western Empire)) `hadrians-wall`
-- Vandals, Alans and Suebi cross the Rhine (406 CE; Europe, Roman Empire (and the Western Empire)) `rhine-crossing`
-- The end of Roman rule in Britain (c. 410 CE; Roman Britain, Roman Empire (and the Western Empire)) `end-roman-britain`
+- Caesar’s Gallic Wars (58 BCE–50 BCE; La Tène Celts (Gaul), Rome (Republic, then Empire)) `gallic-wars`
+- Battle of the Teutoburg Forest (9 CE; Europe, Rome (Republic, then Empire)) `teutoburg`
+- Hadrian’s Wall (122 CE; Roman Britain, Rome (Republic, then Empire)) `hadrians-wall`
+- Vandals, Alans and Suebi cross the Rhine (406 CE; Europe, Rome (Republic, then Empire)) `rhine-crossing`
+- The end of Roman rule in Britain (c. 410 CE; Roman Britain, Rome (Republic, then Empire)) `end-roman-britain`
 - Clovis I unites the Franks (481 CE–511 CE; Franks (Merovingians)) `clovis`
 - Reign of Theodoric the Great in Italy (493 CE–526 CE; Ostrogothic Kingdom (Italy)) `theodoric`
 - Justinian’s Gothic War (535 CE–554 CE; Ostrogothic Kingdom (Italy), Eastern Roman (Byzantine) Empire) `gothic-war`
@@ -102,14 +102,14 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 **Key**
 
 - Gauls defeat Rome at the Allia and sack the city (c. 387 BCE; Rome, Europe) `gallic-sack`
-- Second Punic War: Hannibal (218 BCE–201 BCE; Roman Republic, Carthage) `second-punic-war`
-- Julius Caesar assassinated (44 BCE; Roman Republic) `caesar-assassinated`
-- Battle of Actium (31 BCE; Roman Republic, Ptolemaic Egypt) `actium`
-- Octavian becomes Augustus: the Roman Empire (27 BCE; Roman Empire (and the Western Empire), Roman Republic) `augustus`
-- Edict of Milan (313 CE; Roman Empire (and the Western Empire)) `edict-milan`
-- Constantinople becomes the capital (330 CE; Roman Empire (and the Western Empire), Eastern Roman (Byzantine) Empire) `constantinople`
-- The Visigoths sack Rome (410 CE; Roman Empire (and the Western Empire)) `sack-rome-410`
-- Fall of the Western Roman Empire (476 CE; Roman Empire (and the Western Empire)) `fall-west`
+- Second Punic War: Hannibal (218 BCE–201 BCE; Rome (Republic, then Empire), Carthage) `second-punic-war`
+- Julius Caesar assassinated (44 BCE; Rome (Republic, then Empire)) `caesar-assassinated`
+- Battle of Actium (31 BCE; Rome (Republic, then Empire), Ptolemaic and Roman Egypt) `actium`
+- Octavian becomes Augustus: the Roman Empire (27 BCE; Rome (Republic, then Empire)) `augustus`
+- Edict of Milan (313 CE; Rome (Republic, then Empire)) `edict-milan`
+- Constantinople becomes the capital (330 CE; Rome (Republic, then Empire), Eastern Roman (Byzantine) Empire) `constantinople`
+- The Visigoths sack Rome (410 CE; Rome (Republic, then Empire)) `sack-rome-410`
+- Fall of the Western Roman Empire (476 CE; Rome (Republic, then Empire)) `fall-west`
 - Reign of Justinian I (527 CE–565 CE; Eastern Roman (Byzantine) Empire) `justinian`
 - Hagia Sophia built (532 CE–537 CE; Eastern Roman (Byzantine) Empire) `hagia-sophia`
 
@@ -145,9 +145,9 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 
 **Key**
 
-- Ptolemy I becomes pharaoh: the Ptolemaic Kingdom (305 BCE; Ptolemaic Egypt) `ptolemy-pharaoh`
-- The Library of Alexandria (c. 285 BCE; Ptolemaic Egypt) `library-alexandria`
-- The Arab conquest of Egypt (639 CE–642 CE; Roman and Byzantine Egypt, Early Islam) `arab-conquest-egypt`
+- Ptolemy I becomes pharaoh: the Ptolemaic Kingdom (305 BCE; Ptolemaic and Roman Egypt) `ptolemy-pharaoh`
+- The Library of Alexandria (c. 285 BCE; Ptolemaic and Roman Egypt) `library-alexandria`
+- The Arab conquest of Egypt (639 CE–642 CE; Ptolemaic and Roman Egypt, Early Islam) `arab-conquest-egypt`
 
 ### Levant and Judea
 
@@ -156,7 +156,7 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 **Key**
 
 - Crucifixion of Jesus (c. 30 CE; Judea (Hasmoneans, Herod, Roman rule)) `crucifixion`
-- Rome destroys Jerusalem and the Second Temple (70 CE; Judea (Hasmoneans, Herod, Roman rule), Roman Empire (and the Western Empire)) `jerusalem-70`
+- Rome destroys Jerusalem and the Second Temple (70 CE; Judea (Hasmoneans, Herod, Roman rule), Rome (Republic, then Empire)) `jerusalem-70`
 
 ### Anatolia
 
@@ -204,8 +204,8 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 - Han–Xiongnu wars (133 BCE–89 CE; Xiongnu, Han dynasty) `han-xiongnu-wars`
 - The Huns reach the Volga (c. 370 CE; Huns, Sarmatians and Alans) `huns-arrive`
 - Attila rules the Huns (434 CE–453 CE; Huns) `attila`
-- Battle of the Catalaunian Plains (451 CE; Huns, Roman Empire (and the Western Empire)) `catalaunian-plains`
-- Attila invades Italy (452 CE; Huns, Roman Empire (and the Western Empire)) `attila-italy`
+- Battle of the Catalaunian Plains (451 CE; Huns, Rome (Republic, then Empire)) `catalaunian-plains`
+- Attila invades Italy (452 CE; Huns, Rome (Republic, then Empire)) `attila-italy`
 - Bumin overthrows the Rouran: the Turkic Khaganate (552 CE; First Turkic Khaganate (Göktürks), Rouran Khaganate) `first-turkic-founded`
 
 **Minor**
@@ -293,12 +293,12 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 - Wang Xizhi’s Orchid Pavilion gathering (353 CE; Jin dynasty (Western, then Eastern)) `lantingji`
 - The first Mogao caves at Dunhuang (366 CE; Sixteen Kingdoms (the north)) `mogao`
 - Faxian’s pilgrimage to India (399 CE–412 CE; Sixteen Kingdoms (the north), Jin dynasty (Western, then Eastern), Gupta Empire) `faxian`
-- Liu Yu ends the Eastern Jin: the Liu Song (420 CE; Liu Song (south), Jin dynasty (Western, then Eastern)) `liu-song-founded`
-- Emperor Xiaowen’s reforms (485 CE–496 CE; Northern Wei) `xiaowen-reforms`
-- The Northern Wei splits in two (534 CE–535 CE; Northern Wei, Eastern Wei, Western Wei) `wei-splits`
-- The Hou Jing Disturbance (548 CE–552 CE; Liang (south)) `hou-jing`
-- Northern Zhou conquers the Northern Qi (577 CE; Northern Zhou, Northern Qi) `zhou-conquers-qi`
-- Sui reunites China (589 CE; Sui dynasty, Chen (south)) `sui-reunifies`
+- Liu Yu ends the Eastern Jin: the Liu Song (420 CE; Southern dynasties, Jin dynasty (Western, then Eastern)) `liu-song-founded`
+- Emperor Xiaowen’s reforms (485 CE–496 CE; Northern dynasties) `xiaowen-reforms`
+- The Northern Wei splits in two (534 CE–535 CE; Northern dynasties) `wei-splits`
+- The Hou Jing Disturbance (548 CE–552 CE; Southern dynasties) `hou-jing`
+- Northern Zhou conquers the Northern Qi (577 CE; Northern dynasties) `zhou-conquers-qi`
+- Sui reunites China (589 CE; Sui dynasty, Southern dynasties) `sui-reunifies`
 - The Grand Canal completed (609 CE; Sui dynasty) `grand-canal`
 - The Tang dynasty founded (618 CE; Tang dynasty, Sui dynasty) `tang-founded`
 - Xuanzang’s journey to India (629 CE–645 CE; Tang dynasty, Harsha’s empire (Kannauj)) `xuanzang`

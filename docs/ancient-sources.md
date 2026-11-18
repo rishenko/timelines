@@ -585,3 +585,29 @@ to the `scripts/additions/` script that defines each event). Only titles and des
   4. Optional softenings the agents raised but I left alone: Maya cities "in the Preclassic", Gudea's "about 600
      tablets", Ashur-dan II as "first" Assyrian king (of regular campaigns in a century), Jeitun's "oldest arable
      farming" (the page hedges with "seems to show").
+
+## Periods as phases (18 November 2026)
+
+`scripts/additions/phases.ts` (run after `peoples.ts`, before `groups.ts`; the rules are in `scripts/lib/phases.ts`) turns
+a civilization's period rows into phases on one row. Each phase keeps its period row's name, lifespan and date claims
+unchanged, so the Dating menu still moves them, and the events on the period rows moved onto the civilization's row.
+No date was added or changed, and none of the 48 period rows had any other setting (own chronology, image).
+
+- **Egypt (the pilot):** the nine period rows, Late Predynastic (Dynasty 0) to the Late Period, are now the phases of a
+  new **Pharaonic Egypt** row under "Egypt and Nubia" (61 events). Its lifespan runs from the first period's start to
+  the last period's end. Periods, not dynasties: 31 dynasty names don't fit at the zoom the timeline opens at.
+  Overlapping dynasties in the Second and Third Intermediate Periods (the Hyksos against Thebes; Dynasties 22–25)
+  would suit stacked phases later, once their dates are read from the sources.
+- **Civilization rows that held their periods as sub-rows** keep their own lifespan: Rome, Greece, Minoan Crete,
+  Mycenaean Greece, Canaan, the Hittites, Assyria, Babylonia, Sumer, Elam, the Harappan civilization and Zhou.
+  Babylonia had no lifespan, so it now runs from Isin–Larsa (c. 2025) to the end of the Neo-Babylonian Empire (539).
+  Isin–Larsa and the First Dynasty overlap, so their names stack. Sumer has a blank gap 2350–2112, the Akkadian Empire
+  (its own row).
+- **Left as rows:** separate states, not periods of one: Xia, Shang and Zhou (Xia is disputed and overlaps Erlitou;
+  the Zhou existed before the conquest); Aram-Damascus and Bit-Adini under the Arameans.
+- **Ids:** the old period ids (`eg-old`, `as-neo`, `rome-republic`…) are gone. Earlier scripts still create some
+  (`europe.ts`) or put events on them; `phases.ts` converts and moves them again on every replay, so
+  `run-all ancient --check` reproduces the file.
+- **Layout change:** phase names now stack only when the periods' best dates overlap (rival governments), not when
+  only their uncertainty windows do. Before, Egypt's Early Dynastic and First Intermediate names dropped to a second
+  line.

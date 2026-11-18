@@ -213,6 +213,19 @@ describe('placePhases', () => {
     expect(placePhases(['REDACTED'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['REDACTED:0', 'REDACTED:1']);
   });
 
+  it('keeps periods on one line when only their uncertainty windows overlap', () => {
+    const egypt = new Map([
+      [
+        'egypt',
+        [
+          { name: 'Old Kingdom', start: -2685, end: -2180, endWindow: [-2180, -2117] as [number, number] },
+          { name: 'First Intermediate', start: -2180, end: -2054, startWindow: [-2180, -2117] as [number, number] },
+        ],
+      ],
+    ]);
+    expect(placePhases(['egypt'], egypt).map((p) => p.level)).toEqual([0, 0]);
+  });
+
   it("gathers a collapsed lane's sub-rows and remembers whose phase each is", () => {
     const placed = placePhases(['redacted', 'REDACTED'], phases);
     expect(placed).toHaveLength(5);

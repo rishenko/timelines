@@ -30,19 +30,7 @@
     "defaultTheme": "parchment",
     "circaFade": 0,
     "collapsed": [
-      "minoan",
-      "mycenaean",
-      "hittites",
       "egypt",
-      "sumer",
-      "babylonia",
-      "assyria",
-      "canaan",
-      "elam",
-      "harappan",
-      "zhou",
-      "rome",
-      "greece",
       "iberia",
       "steppe",
       "nubia",
@@ -4768,29 +4756,21 @@
         "start": -752,
         "end": -26,
         "circa": true
-      }
-    },
-    {
-      "id": "rome-kingdom",
-      "name": "Roman Kingdom (traditional)",
-      "color": "#a3444e",
-      "parent": "rome",
-      "span": {
-        "start": -752,
-        "end": -508,
-        "circa": true
-      }
-    },
-    {
-      "id": "rome-republic",
-      "name": "Roman Republic",
-      "color": "#7a2532",
-      "parent": "rome",
-      "span": {
-        "start": -508,
-        "end": -26,
-        "circa": true
-      }
+      },
+      "phases": [
+        {
+          "name": "Roman Kingdom (traditional)",
+          "start": -752,
+          "end": -508,
+          "circa": true
+        },
+        {
+          "name": "Roman Republic",
+          "start": -508,
+          "end": -26,
+          "circa": true
+        }
+      ]
     },
     {
       "id": "samnites",
@@ -5073,62 +5053,39 @@
         "start": -3099,
         "end": -1074,
         "circa": true
-      }
-    },
-    {
-      "id": "minoan-prepalatial",
-      "name": "Prepalatial (EM I–MM IA)",
-      "color": "#5c9bd1",
-      "parent": "minoan",
-      "span": {
-        "start": -3099,
-        "end": -1924,
-        "circa": true
-      }
-    },
-    {
-      "id": "minoan-protopalatial",
-      "name": "Protopalatial (MM IB–II)",
-      "color": "#4a90cc",
-      "parent": "minoan",
-      "span": {
-        "start": -1924,
-        "end": -1749,
-        "circa": true
-      }
-    },
-    {
-      "id": "minoan-neopalatial",
-      "name": "Neopalatial (MM III–LM IB)",
-      "color": "#2f7fc0",
-      "parent": "minoan",
-      "span": {
-        "start": -1749,
-        "end": -1469,
-        "circa": true
-      }
-    },
-    {
-      "id": "minoan-monopalatial",
-      "name": "Monopalatial (LM II)",
-      "color": "#3a78ad",
-      "parent": "minoan",
-      "span": {
-        "start": -1469,
-        "end": -1419,
-        "circa": true
-      }
-    },
-    {
-      "id": "minoan-postpalatial",
-      "name": "Postpalatial (LM III)",
-      "color": "#5b88b0",
-      "parent": "minoan",
-      "span": {
-        "start": -1419,
-        "end": -1074,
-        "circa": true
-      }
+      },
+      "phases": [
+        {
+          "name": "Prepalatial (EM I–MM IA)",
+          "start": -3099,
+          "end": -1924,
+          "circa": true
+        },
+        {
+          "name": "Protopalatial (MM IB–II)",
+          "start": -1924,
+          "end": -1749,
+          "circa": true
+        },
+        {
+          "name": "Neopalatial (MM III–LM IB)",
+          "start": -1749,
+          "end": -1469,
+          "circa": true
+        },
+        {
+          "name": "Monopalatial (LM II)",
+          "start": -1469,
+          "end": -1419,
+          "circa": true
+        },
+        {
+          "name": "Postpalatial (LM III)",
+          "start": -1419,
+          "end": -1074,
+          "circa": true
+        }
+      ]
     },
     {
       "id": "mycenaean",
@@ -5139,130 +5096,117 @@
         "start": -1749,
         "end": -1049,
         "circa": true
-      }
-    },
-    {
-      "id": "myc-early",
-      "name": "Early Mycenaean (Shaft Grave era)",
-      "color": "#6577c4",
-      "parent": "mycenaean",
-      "span": {
-        "start": -1749,
-        "end": -1399,
-        "circa": true
-      }
-    },
-    {
-      "id": "myc-palatial",
-      "name": "Palatial (LH IIIA–IIIB)",
-      "color": "#3c51a8",
-      "parent": "mycenaean",
-      "span": {
-        "start": -1419,
-        "end": -1199,
-        "startDates": [
-          {
-            "year": -1419,
-            "chronology": "aegean-high",
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIA1 '1420/1410' (via Wikipedia: Mycenaean Greece)"
+      },
+      "phases": [
+        {
+          "name": "Early Mycenaean (Shaft Grave era)",
+          "start": -1749,
+          "end": -1399,
+          "circa": true
+        },
+        {
+          "name": "Palatial (LH IIIA–IIIB)",
+          "start": -1419,
+          "end": -1199,
+          "startDates": [
+            {
+              "year": -1419,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIA1 '1420/1410' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1409,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIA1 '1420/1410' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1399,
+              "chronology": "aegean-low",
+              "source": {
+                "sourceKey": "wp-helladic",
+                "sourceLocation": "periodisation table (LH IIIA 1400–1300)"
+              }
             }
-          },
-          {
-            "year": -1409,
-            "chronology": "aegean-high",
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIA1 '1420/1410' (via Wikipedia: Mycenaean Greece)"
+          ],
+          "endDates": [
+            {
+              "year": -1199,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIB '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1209,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIB '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1199,
+              "chronology": "aegean-low",
+              "source": {
+                "sourceKey": "wp-helladic",
+                "sourceLocation": "periodisation table (LH IIIB 1300–1200)"
+              }
             }
-          },
-          {
-            "year": -1399,
-            "chronology": "aegean-low",
-            "source": {
-              "sourceKey": "wp-helladic",
-              "sourceLocation": "periodisation table (LH IIIA 1400–1300)"
+          ]
+        },
+        {
+          "name": "Postpalatial (LH IIIC)",
+          "start": -1199,
+          "end": -1069,
+          "startDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1209,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
             }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1199,
-            "chronology": "aegean-high",
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIB '1210/1200' (via Wikipedia: Mycenaean Greece)"
+          ],
+          "endDates": [
+            {
+              "year": -1069,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC Late '1070/1040' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1039,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC Late '1070/1040' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1049,
+              "chronology": "aegean-low",
+              "source": {
+                "sourceKey": "wp-helladic",
+                "sourceLocation": "periodisation table (LH IIIC 1200–1050)"
+              }
             }
-          },
-          {
-            "year": -1209,
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIB '1210/1200' (via Wikipedia: Mycenaean Greece)"
-            }
-          },
-          {
-            "year": -1199,
-            "chronology": "aegean-low",
-            "source": {
-              "sourceKey": "wp-helladic",
-              "sourceLocation": "periodisation table (LH IIIB 1300–1200)"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "myc-postpalatial",
-      "name": "Postpalatial (LH IIIC)",
-      "color": "#7183c2",
-      "parent": "mycenaean",
-      "span": {
-        "start": -1199,
-        "end": -1069,
-        "startDates": [
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIC '1210/1200' (via Wikipedia: Mycenaean Greece)"
-            }
-          },
-          {
-            "year": -1209,
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIC '1210/1200' (via Wikipedia: Mycenaean Greece)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1069,
-            "chronology": "aegean-high",
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIC Late '1070/1040' (via Wikipedia: Mycenaean Greece)"
-            }
-          },
-          {
-            "year": -1039,
-            "source": {
-              "sourceKey": "knodell-2021",
-              "sourceLocation": "LH IIIC Late '1070/1040' (via Wikipedia: Mycenaean Greece)"
-            }
-          },
-          {
-            "year": -1049,
-            "chronology": "aegean-low",
-            "source": {
-              "sourceKey": "wp-helladic",
-              "sourceLocation": "periodisation table (LH IIIC 1200–1050)"
-            }
-          }
-        ]
-      }
+          ]
+        }
+      ]
     },
     {
       "id": "greece",
@@ -5273,45 +5217,37 @@
         "start": -799,
         "end": -322,
         "circa": true
-      }
-    },
-    {
-      "id": "greece-archaic",
-      "name": "Archaic period",
-      "color": "#5277b8",
-      "parent": "greece",
-      "span": {
-        "start": -799,
-        "end": -479,
-        "circa": true
-      }
-    },
-    {
-      "id": "greece-classical",
-      "name": "Classical period",
-      "color": "#2f5196",
-      "parent": "greece",
-      "span": {
-        "start": -479,
-        "end": -322,
-        "startDates": [
-          {
-            "year": -479,
-            "source": {
-              "sourceKey": "wp-classical-greece",
-              "sourceLocation": "infobox (c. 480–323 BC)"
+      },
+      "phases": [
+        {
+          "name": "Archaic period",
+          "start": -799,
+          "end": -479,
+          "circa": true
+        },
+        {
+          "name": "Classical period",
+          "start": -479,
+          "end": -322,
+          "startDates": [
+            {
+              "year": -479,
+              "source": {
+                "sourceKey": "wp-classical-greece",
+                "sourceLocation": "infobox (c. 480–323 BC)"
+              }
+            },
+            {
+              "year": -509,
+              "source": {
+                "sourceKey": "wp-classical-greece",
+                "sourceLocation": "lead ('the fall of the last Athenian tyrant in 510 BC')"
+              }
             }
-          },
-          {
-            "year": -509,
-            "source": {
-              "sourceKey": "wp-classical-greece",
-              "sourceLocation": "lead ('the fall of the last Athenian tyrant in 510 BC')"
-            }
-          }
-        ],
-        "circa": true
-      }
+          ],
+          "circa": true
+        }
+      ]
     },
     {
       "id": "macedon",
@@ -5371,315 +5307,283 @@
       "parent": "egypt"
     },
     {
-      "id": "eg-predynastic",
-      "name": "Late Predynastic (Dynasty 0)",
-      "color": "#c9a24a",
-      "parent": "egypt",
-      "span": {
-        "start": -3299,
-        "end": -3149,
-        "circa": true
-      }
-    },
-    {
-      "id": "eg-early",
-      "name": "Early Dynastic Period",
-      "color": "#c4952b",
-      "parent": "egypt",
-      "span": {
-        "start": -2999,
-        "end": -2685,
-        "startDates": [
-          {
-            "year": -2999,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
-            }
-          },
-          {
-            "year": -3149,
-            "source": {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "lead and infobox ('conventional Egyptian chronology')"
-            }
-          },
-          {
-            "year": -2899,
-            "margin": 25,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
-            }
-          },
-          {
-            "year": -3099,
-            "margin": 100,
-            "chronology": "egypt-c14",
-            "source": {
-              "sourceKey": "wp-egypt-chron",
-              "sourceLocation": "table, C14 column, Dynasty 1"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2685,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
-            }
-          },
-          {
-            "year": -2589,
-            "margin": 25,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "eg-old",
-      "name": "Old Kingdom",
+      "id": "pharaonic-egypt",
+      "name": "Pharaonic Egypt",
       "color": "#d4a72c",
       "parent": "egypt",
       "span": {
-        "start": -2685,
-        "end": -2180,
-        "startDates": [
-          {
-            "year": -2685,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
-            }
-          },
-          {
-            "year": -2591,
-            "margin": 25,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
-            }
-          },
-          {
-            "year": -2649,
-            "margin": 50,
-            "chronology": "egypt-c14",
-            "source": {
-              "sourceKey": "wp-egypt-chron",
-              "sourceLocation": "table, C14 column, Dynasty 3"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2180,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
-            }
-          },
-          {
-            "year": -2117,
-            "margin": 25,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "eg-fip",
-      "name": "First Intermediate Period",
-      "color": "#a88a4a",
-      "parent": "egypt",
-      "span": {
-        "start": -2180,
-        "end": -2054,
-        "startDates": [
-          {
-            "year": -2180,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "wp-fip",
-              "sourceLocation": "infobox"
-            }
-          },
-          {
-            "year": -2117,
-            "margin": 25,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "end of Dynasty 6 (via Wikipedia: Egyptian chronology)"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "eg-middle",
-      "name": "Middle Kingdom",
-      "color": "#c08a1e",
-      "parent": "egypt",
-      "span": {
-        "start": -2054,
-        "end": -1649,
+        "start": -3299,
+        "end": -331,
         "circa": true
-      }
-    },
-    {
-      "id": "eg-sip",
-      "name": "Second Intermediate Period",
-      "color": "#a3884f",
-      "parent": "egypt",
-      "span": {
-        "start": -1649,
-        "end": -1549,
-        "endDates": [
-          {
-            "year": -1549,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
+      },
+      "phases": [
+        {
+          "name": "Late Predynastic (Dynasty 0)",
+          "start": -3299,
+          "end": -3149,
+          "circa": true
+        },
+        {
+          "name": "Early Dynastic Period",
+          "start": -2999,
+          "end": -2685,
+          "startDates": [
+            {
+              "year": -2999,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
+              }
+            },
+            {
+              "year": -3149,
+              "source": {
+                "sourceKey": "wp-anc-egypt",
+                "sourceLocation": "lead and infobox ('conventional Egyptian chronology')"
+              }
+            },
+            {
+              "year": -2899,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
+              }
+            },
+            {
+              "year": -3099,
+              "margin": 100,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "wp-egypt-chron",
+                "sourceLocation": "table, C14 column, Dynasty 1"
+              }
             }
-          },
-          {
-            "year": -1538,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
+          ],
+          "endDates": [
+            {
+              "year": -2685,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2589,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
+              }
             }
-          },
-          {
-            "year": -1556,
-            "margin": 13,
-            "chronology": "egypt-c14",
-            "source": {
-              "sourceKey": "ramsey-2010",
-              "sourceLocation": "New Kingdom 'placed between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
+          ],
+          "circa": true
+        },
+        {
+          "name": "Old Kingdom",
+          "start": -2685,
+          "end": -2180,
+          "startDates": [
+            {
+              "year": -2685,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2591,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2649,
+              "margin": 50,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "wp-egypt-chron",
+                "sourceLocation": "table, C14 column, Dynasty 3"
+              }
             }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "eg-new",
-      "name": "New Kingdom",
-      "color": "#d9a514",
-      "parent": "egypt",
-      "span": {
-        "start": -1549,
-        "end": -1068,
-        "startDates": [
-          {
-            "year": -1549,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
+          ],
+          "endDates": [
+            {
+              "year": -2180,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2117,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
+              }
             }
-          },
-          {
-            "year": -1538,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
+          ]
+        },
+        {
+          "name": "First Intermediate Period",
+          "start": -2180,
+          "end": -2054,
+          "startDates": [
+            {
+              "year": -2180,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "wp-fip",
+                "sourceLocation": "infobox"
+              }
+            },
+            {
+              "year": -2117,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "end of Dynasty 6 (via Wikipedia: Egyptian chronology)"
+              }
             }
-          },
-          {
-            "year": -1556,
-            "margin": 13,
-            "chronology": "egypt-c14",
-            "source": {
-              "sourceKey": "ramsey-2010",
-              "sourceLocation": "'between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
+          ]
+        },
+        {
+          "name": "Middle Kingdom",
+          "start": -2054,
+          "end": -1649,
+          "circa": true
+        },
+        {
+          "name": "Second Intermediate Period",
+          "start": -1649,
+          "end": -1549,
+          "endDates": [
+            {
+              "year": -1549,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1538,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1556,
+              "margin": 13,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "ramsey-2010",
+                "sourceLocation": "New Kingdom 'placed between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
+              }
             }
-          },
-          {
-            "year": -1569,
-            "source": {
-              "sourceKey": "wp-new-kingdom",
-              "sourceLocation": "infobox ('Rise c. 1570 BC')"
+          ],
+          "circa": true
+        },
+        {
+          "name": "New Kingdom",
+          "start": -1549,
+          "end": -1068,
+          "startDates": [
+            {
+              "year": -1549,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1538,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1556,
+              "margin": 13,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "ramsey-2010",
+                "sourceLocation": "'between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
+              }
+            },
+            {
+              "year": -1569,
+              "source": {
+                "sourceKey": "wp-new-kingdom",
+                "sourceLocation": "infobox ('Rise c. 1570 BC')"
+              }
             }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1068,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
+          ],
+          "endDates": [
+            {
+              "year": -1068,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1076,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
+              }
             }
-          },
-          {
-            "year": -1076,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
+          ]
+        },
+        {
+          "name": "Third Intermediate Period",
+          "start": -1068,
+          "end": -663,
+          "startDates": [
+            {
+              "year": -1068,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1075,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
+              }
             }
-          }
-        ]
-      }
-    },
-    {
-      "id": "eg-tip",
-      "name": "Third Intermediate Period",
-      "color": "#a0844a",
-      "parent": "egypt",
-      "span": {
-        "start": -1068,
-        "end": -663,
-        "startDates": [
-          {
-            "year": -1068,
-            "chronology": "shaw",
-            "source": {
-              "sourceKey": "shaw-2000",
-              "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
-            }
-          },
-          {
-            "year": -1075,
-            "chronology": "hornung",
-            "source": {
-              "sourceKey": "hornung-2006",
-              "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "eg-late",
-      "name": "Late Period",
-      "color": "#c79a3c",
-      "parent": "egypt",
-      "span": {
-        "start": -663,
-        "end": -331
-      }
+          ]
+        },
+        {
+          "name": "Late Period",
+          "start": -663,
+          "end": -331
+        }
+      ]
     },
     {
       "id": "nubia",
@@ -5882,40 +5786,27 @@
         "start": -3499,
         "end": -1199,
         "circa": true
-      }
-    },
-    {
-      "id": "can-eba",
-      "name": "Early Bronze Age",
-      "color": "#b9894b",
-      "parent": "canaan",
-      "span": {
-        "start": -3499,
-        "end": -1999,
-        "circa": true
-      }
-    },
-    {
-      "id": "can-mba",
-      "name": "Middle Bronze Age",
-      "color": "#a87a3c",
-      "parent": "canaan",
-      "span": {
-        "start": -1999,
-        "end": -1549,
-        "circa": true
-      }
-    },
-    {
-      "id": "can-lba",
-      "name": "Late Bronze Age",
-      "color": "#966a30",
-      "parent": "canaan",
-      "span": {
-        "start": -1549,
-        "end": -1199,
-        "circa": true
-      }
+      },
+      "phases": [
+        {
+          "name": "Early Bronze Age",
+          "start": -3499,
+          "end": -1999,
+          "circa": true
+        },
+        {
+          "name": "Middle Bronze Age",
+          "start": -1999,
+          "end": -1549,
+          "circa": true
+        },
+        {
+          "name": "Late Bronze Age",
+          "start": -1549,
+          "end": -1199,
+          "circa": true
+        }
+      ]
     },
     {
       "id": "ebla",
@@ -6151,40 +6042,27 @@
           }
         ],
         "circa": true
-      }
-    },
-    {
-      "id": "hit-old",
-      "name": "Old Kingdom",
-      "color": "#cf6b47",
-      "parent": "hittites",
-      "span": {
-        "start": -1649,
-        "end": -1499,
-        "circa": true
-      }
-    },
-    {
-      "id": "hit-middle",
-      "name": "Middle Kingdom",
-      "color": "#b8604a",
-      "parent": "hittites",
-      "span": {
-        "start": -1499,
-        "end": -1399,
-        "circa": true
-      }
-    },
-    {
-      "id": "hit-new",
-      "name": "New Kingdom (Empire)",
-      "color": "#a94a30",
-      "parent": "hittites",
-      "span": {
-        "start": -1399,
-        "end": -1189,
-        "circa": true
-      }
+      },
+      "phases": [
+        {
+          "name": "Old Kingdom",
+          "start": -1649,
+          "end": -1499,
+          "circa": true
+        },
+        {
+          "name": "Middle Kingdom",
+          "start": -1499,
+          "end": -1399,
+          "circa": true
+        },
+        {
+          "name": "New Kingdom (Empire)",
+          "start": -1399,
+          "end": -1189,
+          "circa": true
+        }
+      ]
     },
     {
       "id": "kaska",
@@ -6542,50 +6420,32 @@
           }
         ],
         "circa": true
-      }
-    },
-    {
-      "id": "as-early",
-      "name": "Early Assyrian period",
-      "color": "#a65d82",
-      "parent": "assyria",
-      "span": {
-        "start": -2599,
-        "end": -2024,
-        "circa": true
-      }
-    },
-    {
-      "id": "as-old",
-      "name": "Old Assyrian period",
-      "color": "#b0688c",
-      "parent": "assyria",
-      "span": {
-        "start": -2024,
-        "end": -1363,
-        "circa": true
-      }
-    },
-    {
-      "id": "as-middle",
-      "name": "Middle Assyrian Empire",
-      "color": "#8f4468",
-      "parent": "assyria",
-      "span": {
-        "start": -1362,
-        "end": -911,
-        "circa": true
-      }
-    },
-    {
-      "id": "as-neo",
-      "name": "Neo-Assyrian Empire",
-      "color": "#7d3159",
-      "parent": "assyria",
-      "span": {
-        "start": -910,
-        "end": -608
-      }
+      },
+      "phases": [
+        {
+          "name": "Early Assyrian period",
+          "start": -2599,
+          "end": -2024,
+          "circa": true
+        },
+        {
+          "name": "Old Assyrian period",
+          "start": -2024,
+          "end": -1363,
+          "circa": true
+        },
+        {
+          "name": "Middle Assyrian Empire",
+          "start": -1362,
+          "end": -911,
+          "circa": true
+        },
+        {
+          "name": "Neo-Assyrian Empire",
+          "start": -910,
+          "end": -608
+        }
+      ]
     },
     {
       "id": "amorites",
@@ -6620,16 +6480,10 @@
       "id": "babylonia",
       "name": "Babylonia",
       "color": "#2d7f6c",
-      "parent": "mesopotamia"
-    },
-    {
-      "id": "bab-isin-larsa",
-      "name": "Isin–Larsa period",
-      "color": "#3f9480",
-      "parent": "babylonia",
+      "parent": "mesopotamia",
       "span": {
         "start": -2024,
-        "end": -1762,
+        "end": -538,
         "startDates": [
           {
             "year": -2024,
@@ -6648,119 +6502,130 @@
             }
           }
         ],
-        "endDates": [
-          {
-            "year": -1762,
-            "chronology": "middle",
-            "source": {
-              "sourceKey": "wp-isin-larsa",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -1698,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-isin-larsa",
-              "sourceLocation": "lead (short chronology)"
-            }
-          }
-        ],
         "circa": true
-      }
-    },
-    {
-      "id": "bab-old",
-      "name": "Old Babylonian (First Dynasty)",
-      "color": "#1f7a63",
-      "parent": "babylonia",
-      "span": {
-        "start": -1893,
-        "end": -1594,
-        "startDates": [
-          {
-            "year": -1893,
-            "chronology": "middle",
-            "source": {
-              "sourceKey": "wp-old-bab",
-              "sourceLocation": "ruler list (MC)"
+      },
+      "phases": [
+        {
+          "name": "Isin–Larsa period",
+          "start": -2024,
+          "end": -1762,
+          "startDates": [
+            {
+              "year": -2024,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -1960,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead (short chronology 1961–1699 BCE)"
+              }
             }
-          },
-          {
-            "year": -1829,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-old-bab",
-              "sourceLocation": "ruler list (SC)"
+          ],
+          "endDates": [
+            {
+              "year": -1762,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -1698,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead (short chronology)"
+              }
             }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1594,
-            "chronology": "middle",
-            "source": {
-              "sourceKey": "wp-chron-ane",
-              "sourceLocation": "table 'Variant Middle Bronze Age chronologies'"
+          ],
+          "circa": true
+        },
+        {
+          "name": "Old Babylonian (First Dynasty)",
+          "start": -1893,
+          "end": -1594,
+          "startDates": [
+            {
+              "year": -1893,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-old-bab",
+                "sourceLocation": "ruler list (MC)"
+              }
+            },
+            {
+              "year": -1829,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-old-bab",
+                "sourceLocation": "ruler list (SC)"
+              }
             }
-          },
-          {
-            "year": -1650,
-            "chronology": "high",
-            "source": {
-              "sourceKey": "wp-chron-ane",
-              "sourceLocation": "table (Long or High)"
+          ],
+          "endDates": [
+            {
+              "year": -1594,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-chron-ane",
+                "sourceLocation": "table 'Variant Middle Bronze Age chronologies'"
+              }
+            },
+            {
+              "year": -1650,
+              "chronology": "high",
+              "source": {
+                "sourceKey": "wp-chron-ane",
+                "sourceLocation": "table (Long or High)"
+              }
+            },
+            {
+              "year": -1530,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-chron-ane",
+                "sourceLocation": "table (Short or Low)"
+              }
             }
-          },
-          {
-            "year": -1530,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-chron-ane",
-              "sourceLocation": "table (Short or Low)"
+          ],
+          "circa": true
+        },
+        {
+          "name": "Kassite dynasty",
+          "start": -1569,
+          "end": -1154,
+          "startDates": [
+            {
+              "year": -1569,
+              "source": {
+                "sourceKey": "wp-old-bab",
+                "sourceLocation": "Kassite rule 'from 1570'"
+              }
+            },
+            {
+              "year": -1530,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-kassites",
+                "sourceLocation": "lead (short chronology)"
+              }
             }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "bab-kassite",
-      "name": "Kassite dynasty",
-      "color": "#4a9a8a",
-      "parent": "babylonia",
-      "span": {
-        "start": -1569,
-        "end": -1154,
-        "startDates": [
-          {
-            "year": -1569,
-            "source": {
-              "sourceKey": "wp-old-bab",
-              "sourceLocation": "Kassite rule 'from 1570'"
-            }
-          },
-          {
-            "year": -1530,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-kassites",
-              "sourceLocation": "lead (short chronology)"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "bab-neo",
-      "name": "Neo-Babylonian Empire",
-      "color": "#167061",
-      "parent": "babylonia",
-      "span": {
-        "start": -625,
-        "end": -538
-      }
+          ],
+          "circa": true
+        },
+        {
+          "name": "Neo-Babylonian Empire",
+          "start": -625,
+          "end": -538
+        }
+      ]
     },
     {
       "id": "chaldeans",
@@ -6819,193 +6684,175 @@
         "start": -3999,
         "end": -2003,
         "circa": true
-      }
-    },
-    {
-      "id": "sum-uruk",
-      "name": "Uruk period",
-      "color": "#6aa84f",
-      "parent": "sumer",
-      "span": {
-        "start": -3999,
-        "end": -3099,
-        "startDates": [
-          {
-            "year": -3999,
-            "source": {
-              "sourceKey": "wp-uruk",
-              "sourceLocation": "Chronology"
+      },
+      "phases": [
+        {
+          "name": "Uruk period",
+          "start": -3999,
+          "end": -3099,
+          "startDates": [
+            {
+              "year": -3999,
+              "source": {
+                "sourceKey": "wp-uruk",
+                "sourceLocation": "Chronology"
+              }
+            },
+            {
+              "year": -3899,
+              "source": {
+                "sourceKey": "wp-uruk",
+                "sourceLocation": "Chronology ('c. 4000/3900 BC')"
+              }
             }
-          },
-          {
-            "year": -3899,
-            "source": {
-              "sourceKey": "wp-uruk",
-              "sourceLocation": "Chronology ('c. 4000/3900 BC')"
+          ],
+          "endDates": [
+            {
+              "year": -3099,
+              "source": {
+                "sourceKey": "wp-uruk",
+                "sourceLocation": "Chronology (older dating)"
+              }
+            },
+            {
+              "year": -3299,
+              "source": {
+                "sourceKey": "wp-uruk",
+                "sourceLocation": "Chronology (radiocarbon dating of the Late Uruk end)"
+              }
             }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -3099,
-            "source": {
-              "sourceKey": "wp-uruk",
-              "sourceLocation": "Chronology (older dating)"
+          ],
+          "circa": true
+        },
+        {
+          "name": "Jemdet Nasr period",
+          "start": -3099,
+          "end": -2899,
+          "startDates": [
+            {
+              "year": -3099,
+              "source": {
+                "sourceKey": "wp-jemdet",
+                "sourceLocation": "Dating and periodization"
+              }
+            },
+            {
+              "year": -3199,
+              "source": {
+                "sourceKey": "wp-jemdet",
+                "sourceLocation": "Dating and periodization (older literature: 3200–3000 BC)"
+              }
             }
-          },
-          {
-            "year": -3299,
-            "source": {
-              "sourceKey": "wp-uruk",
-              "sourceLocation": "Chronology (radiocarbon dating of the Late Uruk end)"
+          ],
+          "endDates": [
+            {
+              "year": -2899,
+              "source": {
+                "sourceKey": "wp-jemdet",
+                "sourceLocation": "Dating and periodization"
+              }
+            },
+            {
+              "year": -2999,
+              "source": {
+                "sourceKey": "wp-jemdet",
+                "sourceLocation": "Dating and periodization (older literature)"
+              }
             }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "sum-jemdet",
-      "name": "Jemdet Nasr period",
-      "color": "#78a85a",
-      "parent": "sumer",
-      "span": {
-        "start": -3099,
-        "end": -2899,
-        "startDates": [
-          {
-            "year": -3099,
-            "source": {
-              "sourceKey": "wp-jemdet",
-              "sourceLocation": "Dating and periodization"
+          ],
+          "circa": true
+        },
+        {
+          "name": "Early Dynastic period",
+          "start": -2899,
+          "end": -2349,
+          "startDates": [
+            {
+              "year": -2899,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-ed-meso",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -2799,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-ed-meso",
+                "sourceLocation": "lead ('2800–2230 BC according to the short chronology')"
+              }
             }
-          },
-          {
-            "year": -3199,
-            "source": {
-              "sourceKey": "wp-jemdet",
-              "sourceLocation": "Dating and periodization (older literature: 3200–3000 BC)"
+          ],
+          "endDates": [
+            {
+              "year": -2349,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-ed-meso",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -2299,
+              "source": {
+                "sourceKey": "bartash-2020",
+                "sourceLocation": "p. 534 (via Wikipedia: Early Dynastic Period), 'latest proposals'"
+              }
+            },
+            {
+              "year": -2229,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-ed-meso",
+                "sourceLocation": "lead (short chronology)"
+              }
             }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2899,
-            "source": {
-              "sourceKey": "wp-jemdet",
-              "sourceLocation": "Dating and periodization"
+          ],
+          "circa": true
+        },
+        {
+          "name": "Third Dynasty of Ur",
+          "start": -2111,
+          "end": -2003,
+          "startDates": [
+            {
+              "year": -2111,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-ur3",
+                "sourceLocation": "lead (middle chronology, 2112/0–2004/3 BC)"
+              }
+            },
+            {
+              "year": -2047,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-ur3",
+                "sourceLocation": "lead (low chronology 2048–1940 BC)"
+              }
             }
-          },
-          {
-            "year": -2999,
-            "source": {
-              "sourceKey": "wp-jemdet",
-              "sourceLocation": "Dating and periodization (older literature)"
+          ],
+          "endDates": [
+            {
+              "year": -2003,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-ur3",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -1939,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-ur3",
+                "sourceLocation": "lead (low chronology)"
+              }
             }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "sum-ed",
-      "name": "Early Dynastic period",
-      "color": "#4e8a3a",
-      "parent": "sumer",
-      "span": {
-        "start": -2899,
-        "end": -2349,
-        "startDates": [
-          {
-            "year": -2899,
-            "chronology": "middle",
-            "source": {
-              "sourceKey": "wp-ed-meso",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -2799,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-ed-meso",
-              "sourceLocation": "lead ('2800–2230 BC according to the short chronology')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2349,
-            "chronology": "middle",
-            "source": {
-              "sourceKey": "wp-ed-meso",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -2299,
-            "source": {
-              "sourceKey": "bartash-2020",
-              "sourceLocation": "p. 534 (via Wikipedia: Early Dynastic Period), 'latest proposals'"
-            }
-          },
-          {
-            "year": -2229,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-ed-meso",
-              "sourceLocation": "lead (short chronology)"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "sum-ur3",
-      "name": "Third Dynasty of Ur",
-      "color": "#2f6e2a",
-      "parent": "sumer",
-      "span": {
-        "start": -2111,
-        "end": -2003,
-        "startDates": [
-          {
-            "year": -2111,
-            "chronology": "middle",
-            "source": {
-              "sourceKey": "wp-ur3",
-              "sourceLocation": "lead (middle chronology, 2112/0–2004/3 BC)"
-            }
-          },
-          {
-            "year": -2047,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-ur3",
-              "sourceLocation": "lead (low chronology 2048–1940 BC)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2003,
-            "chronology": "middle",
-            "source": {
-              "sourceKey": "wp-ur3",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -1939,
-            "chronology": "low",
-            "source": {
-              "sourceKey": "wp-ur3",
-              "sourceLocation": "lead (low chronology)"
-            }
-          }
-        ]
-      }
+          ]
+        }
+      ]
     },
     {
       "id": "caucasus",
@@ -7293,83 +7140,65 @@
           }
         ],
         "circa": true
-      }
-    },
-    {
-      "id": "elam-proto",
-      "name": "Proto-Elamite",
-      "color": "#4fa8a3",
-      "parent": "elam",
-      "span": {
-        "start": -3199,
-        "end": -2699,
-        "startDates": [
-          {
-            "year": -3199,
-            "source": {
-              "sourceKey": "wp-proto-elamite",
-              "sourceLocation": "header (c. 3200–2700 BCE)"
+      },
+      "phases": [
+        {
+          "name": "Proto-Elamite",
+          "start": -3199,
+          "end": -2699,
+          "startDates": [
+            {
+              "year": -3199,
+              "source": {
+                "sourceKey": "wp-proto-elamite",
+                "sourceLocation": "header (c. 3200–2700 BCE)"
+              }
+            },
+            {
+              "year": -3099,
+              "source": {
+                "sourceKey": "wp-proto-elamite",
+                "sourceLocation": "lead ('c. 3100 BC to 2700 BC')"
+              }
             }
-          },
-          {
-            "year": -3099,
-            "source": {
-              "sourceKey": "wp-proto-elamite",
-              "sourceLocation": "lead ('c. 3100 BC to 2700 BC')"
+          ],
+          "circa": true
+        },
+        {
+          "name": "Old Elamite",
+          "start": -2699,
+          "end": -1499,
+          "circa": true
+        },
+        {
+          "name": "Middle Elamite",
+          "start": -1499,
+          "end": -1099,
+          "circa": true
+        },
+        {
+          "name": "Neo-Elamite",
+          "start": -1099,
+          "end": -538,
+          "endDates": [
+            {
+              "year": -538,
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "contents (Neo-Elamite III, 646–539 BC)"
+              }
+            },
+            {
+              "year": -539,
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "contents (Neo-Elamite period c. 1100 – 540 BC)"
+              }
             }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "elam-old",
-      "name": "Old Elamite",
-      "color": "#3d9893",
-      "parent": "elam",
-      "span": {
-        "start": -2699,
-        "end": -1499,
-        "circa": true
-      }
-    },
-    {
-      "id": "elam-middle",
-      "name": "Middle Elamite",
-      "color": "#2d8580",
-      "parent": "elam",
-      "span": {
-        "start": -1499,
-        "end": -1099,
-        "circa": true
-      }
-    },
-    {
-      "id": "elam-neo",
-      "name": "Neo-Elamite",
-      "color": "#46918d",
-      "parent": "elam",
-      "span": {
-        "start": -1099,
-        "end": -538,
-        "endDates": [
-          {
-            "year": -538,
-            "source": {
-              "sourceKey": "wp-elam",
-              "sourceLocation": "contents (Neo-Elamite III, 646–539 BC)"
-            }
-          },
-          {
-            "year": -539,
-            "source": {
-              "sourceKey": "wp-elam",
-              "sourceLocation": "contents (Neo-Elamite period c. 1100 – 540 BC)"
-            }
-          }
-        ],
-        "circa": true
-      }
+          ],
+          "circa": true
+        }
+      ]
     },
     {
       "id": "medes",
@@ -8127,40 +7956,27 @@
           }
         ],
         "circa": true
-      }
-    },
-    {
-      "id": "ind-early",
-      "name": "Early Harappan",
-      "color": "#cf7a4f",
-      "parent": "harappan",
-      "span": {
-        "start": -3299,
-        "end": -2599,
-        "circa": true
-      }
-    },
-    {
-      "id": "ind-mature",
-      "name": "Mature Harappan",
-      "color": "#b44e24",
-      "parent": "harappan",
-      "span": {
-        "start": -2599,
-        "end": -1899,
-        "circa": true
-      }
-    },
-    {
-      "id": "ind-late",
-      "name": "Late Harappan",
-      "color": "#c98a66",
-      "parent": "harappan",
-      "span": {
-        "start": -1899,
-        "end": -1299,
-        "circa": true
-      }
+      },
+      "phases": [
+        {
+          "name": "Early Harappan",
+          "start": -3299,
+          "end": -2599,
+          "circa": true
+        },
+        {
+          "name": "Mature Harappan",
+          "start": -2599,
+          "end": -1899,
+          "circa": true
+        },
+        {
+          "name": "Late Harappan",
+          "start": -1899,
+          "end": -1299,
+          "circa": true
+        }
+      ]
     },
     {
       "id": "vedic",
@@ -8744,53 +8560,45 @@
           }
         ],
         "circa": true
-      }
-    },
-    {
-      "id": "zhou-western",
-      "name": "Western Zhou",
-      "color": "#8a3d5e",
-      "parent": "zhou",
-      "span": {
-        "start": -1045,
-        "end": -770,
-        "startDates": [
-          {
-            "year": -1045,
-            "chronology": "xszcp",
-            "source": {
-              "sourceKey": "wp-zhou",
-              "sourceLocation": "lead"
+      },
+      "phases": [
+        {
+          "name": "Western Zhou",
+          "start": -1045,
+          "end": -770,
+          "startDates": [
+            {
+              "year": -1045,
+              "chronology": "xszcp",
+              "source": {
+                "sourceKey": "wp-zhou",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -1121,
+              "chronology": "liu-xin",
+              "source": {
+                "sourceKey": "wp-muye",
+                "sourceLocation": "Dating (Liu Xin)"
+              }
+            },
+            {
+              "year": -1044,
+              "source": {
+                "sourceKey": "wp-zhou",
+                "sourceLocation": "lead (Nivison and Shaughnessy)"
+              }
             }
-          },
-          {
-            "year": -1121,
-            "chronology": "liu-xin",
-            "source": {
-              "sourceKey": "wp-muye",
-              "sourceLocation": "Dating (Liu Xin)"
-            }
-          },
-          {
-            "year": -1044,
-            "source": {
-              "sourceKey": "wp-zhou",
-              "sourceLocation": "lead (Nivison and Shaughnessy)"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "zhou-eastern",
-      "name": "Eastern Zhou",
-      "color": "#6b2744",
-      "parent": "zhou",
-      "span": {
-        "start": -770,
-        "end": -255
-      }
+          ],
+          "circa": true
+        },
+        {
+          "name": "Eastern Zhou",
+          "start": -770,
+          "end": -255
+        }
+      ]
     },
     {
       "id": "rong-di",
@@ -9480,7 +9288,7 @@
       "start": -3499,
       "end": -3199,
       "tracks": [
-        "sum-uruk"
+        "sumer"
       ],
       "descr": "The peak of Uruk's influence in the Late Uruk phase: colonies such as Habuba Kabira beyond southern Mesopotamia, monumental building and administrative record-keeping.",
       "sources": [
@@ -9497,7 +9305,7 @@
       "start": -3349,
       "end": -3199,
       "tracks": [
-        "sum-uruk"
+        "sumer"
       ],
       "descr": "Administrative tablets, the earliest stage of the writing that became cuneiform. Dates are the CDLI's, as cited by Wikipedia.",
       "sources": [
@@ -9515,7 +9323,7 @@
       "start": -2599,
       "end": -2499,
       "tracks": [
-        "sum-ed"
+        "sumer"
       ],
       "descr": "Early Dynastic IIIa (c. 2600–2500 BCE) is the period of the royal tombs of Ur.",
       "sources": [
@@ -9532,7 +9340,7 @@
       "start": -2357,
       "end": -2333,
       "tracks": [
-        "sum-ed"
+        "sumer"
       ],
       "descr": "King of Umma, then of Uruk. He ended Umma's long border war with Lagash and ruled Ur, Nippur, Larsa and Kish: the last Sumerian king before Akkadian rule. The reign dates are from the article's navbox and carry no footnote.",
       "sources": [
@@ -9614,7 +9422,7 @@
       "start": -2299,
       "tracks": [
         "akkad",
-        "sum-ed"
+        "sumer"
       ],
       "descr": "Sargon defeats Lugal-zage-si, takes Uruk and brings the Sumerian cities under Akkad; later campaigns reach Elam and Mari.",
       "sources": [
@@ -9739,7 +9547,7 @@
       "start": -2111,
       "end": -2093,
       "tracks": [
-        "sum-ur3"
+        "sumer"
       ],
       "descr": "Ur-Nammu takes the titles King of Ur and King of Sumer and Akkad. The Code of Ur-Nammu, the oldest surviving law code, is attributed to him (Wikipedia gives it no date).",
       "sources": [
@@ -9779,7 +9587,7 @@
       "start": -2093,
       "end": -2046,
       "tracks": [
-        "sum-ur3"
+        "sumer"
       ],
       "descr": "Ur-Nammu's son reigns for about half the dynasty's length, consolidating the kingdom into an empire on the Akkadian model.",
       "sources": [
@@ -9795,7 +9603,7 @@
       "title": "Elamites destroy Ur",
       "start": -2003,
       "tracks": [
-        "sum-ur3"
+        "sumer"
       ],
       "descr": "A coalition from Anshan and Shimashki deals the final blow to the Third Dynasty of Ur under Ibbi-Sin; Ur is destroyed. Isin and Larsa rise in its place.",
       "sources": [
@@ -9830,7 +9638,7 @@
       "title": "Sumu-abum, first known king of Babylon",
       "start": -1893,
       "tracks": [
-        "bab-old",
+        "babylonia",
         "amorites"
       ],
       "descr": "The Amorite Sumu-abum is the first known king of the First Dynasty of Babylon.",
@@ -9866,7 +9674,7 @@
       "start": -1791,
       "end": -1749,
       "tracks": [
-        "bab-old",
+        "babylonia",
         "amorites"
       ],
       "descr": "The sixth king of Babylon reigns 43 years, conquers Larsa, Eshnunna and Mari, and issues his law code. His reign is the usual reference point for the competing chronologies.",
@@ -9939,8 +9747,7 @@
       "title": "Hammurabi conquers Larsa",
       "start": -1762,
       "tracks": [
-        "bab-old",
-        "bab-isin-larsa"
+        "babylonia"
       ],
       "descr": "Babylon defeats Rim-Sin I of Larsa in Hammurabi's 30th year, gaining Nippur, Ur, Uruk and Isin and ending the Isin–Larsa period.",
       "sources": [
@@ -9983,7 +9790,7 @@
       "start": -1761,
       "end": -1760,
       "tracks": [
-        "bab-old"
+        "babylonia"
       ],
       "descr": "Eshnunna falls in 1762 and Mari in 1761; Mari's palace is burned, preserving its great archive.",
       "sources": [
@@ -10005,7 +9812,7 @@
       "title": "Code of Hammurabi",
       "start": -1752,
       "tracks": [
-        "bab-old"
+        "babylonia"
       ],
       "descr": "The basalt stele of laws, compiled late in Hammurabi's reign. It was later carried off to Susa as plunder, where it was found in 1901.",
       "sources": [
@@ -10179,7 +9986,7 @@
       "start": -1649,
       "end": -1619,
       "tracks": [
-        "hit-old"
+        "hittites"
       ],
       "descr": "The earliest Hittite king with contemporary records takes the name 'the man of Hattusa', moves his capital there and campaigns into Syria.",
       "sources": [
@@ -10252,7 +10059,7 @@
       "title": "Alalakh's Level VII palace destroyed",
       "start": -1627,
       "tracks": [
-        "hit-old"
+        "hittites"
       ],
       "descr": "Dated by Aslihan K. Yener to the second year of Ḫattušili I's reign, during his Syrian campaigns.",
       "sources": [
@@ -10275,7 +10082,7 @@
       "start": -1619,
       "end": -1589,
       "tracks": [
-        "hit-old"
+        "hittites"
       ],
       "descr": "Ḫattušili's grandson renews the Syrian wars, invades Yamhad and its capital Aleppo, and raids Babylon. He is assassinated on his return by a conspiracy led by his brother-in-law Ḫantili I, which included Zidanta I.",
       "sources": [
@@ -10345,7 +10152,7 @@
       "title": "Mursili I invades Aleppo",
       "start": -1599,
       "tracks": [
-        "hit-old"
+        "hittites"
       ],
       "descr": "Mursili I invades Yamhad and its capital Aleppo, which had eluded Ḫattušili I, before marching 2,000 km southeast into the heart of Mesopotamia to Babylon.",
       "sources": [
@@ -10371,8 +10178,8 @@
       "title": "Hittite sack of Babylon",
       "start": -1594,
       "tracks": [
-        "hit-old",
-        "bab-old"
+        "hittites",
+        "babylonia"
       ],
       "descr": "Mursili I raids Babylon and ends the dynasty of Hammurabi. The raid wasn't meant to hold territory; the Kassites take control afterwards. This date anchors the competing Mesopotamian chronologies.",
       "sources": [
@@ -10436,7 +10243,7 @@
       "title": "Kassites take power in Babylonia",
       "start": -1569,
       "tracks": [
-        "bab-kassite"
+        "babylonia"
       ],
       "descr": "A people from the Zagros mountains take Babylonia after the Hittite raid and rule it until c. 1155 BCE.",
       "sources": [
@@ -10474,7 +10281,7 @@
       "start": -1524,
       "end": -1499,
       "tracks": [
-        "hit-old"
+        "hittites"
       ],
       "descr": "King Telepinu's edict sets rules for the royal succession. Little more than the names of his successors is known for about 80 years.",
       "sources": [
@@ -10507,7 +10314,7 @@
       "start": -1349,
       "end": -1321,
       "tracks": [
-        "hit-new"
+        "hittites"
       ],
       "descr": "The Hittite empire's great expansion: Mitanni is overrun in the One-Year and Six-Year wars and Carchemish is taken. He expands the empire and is mentioned in the Amarna letters.",
       "sources": [
@@ -10602,7 +10409,7 @@
       "start": -1294,
       "end": -1271,
       "tracks": [
-        "hit-new"
+        "hittites"
       ],
       "descr": "Muwatalli moves the royal seat south to Tarḫuntašša and faces Ramesses II at Kadesh.",
       "sources": [
@@ -10634,8 +10441,8 @@
       "title": "Battle of Kadesh",
       "start": -1273,
       "tracks": [
-        "hit-new",
-        "eg-new"
+        "hittites",
+        "pharaonic-egypt"
       ],
       "chronology": "shaw",
       "descr": "Ramesses II and Muwatalli II fight on the Orontes in Ramesses's fifth year; both claim victory and the result is a stalemate. Possibly the largest chariot battle ever fought.",
@@ -10684,7 +10491,7 @@
       "start": -1266,
       "end": -1236,
       "tracks": [
-        "hit-new"
+        "hittites"
       ],
       "descr": "Muwatalli's brother, the Hittite commander at Kadesh, deposes his nephew Mursili III (Urhi-Teshub) and makes peace with Egypt.",
       "sources": [
@@ -10743,8 +10550,8 @@
       "title": "Egyptian–Hittite peace treaty",
       "start": -1258,
       "tracks": [
-        "hit-new",
-        "eg-new"
+        "hittites",
+        "pharaonic-egypt"
       ],
       "chronology": "shaw",
       "descr": "Ramesses II and Ḫattušili III agree the earliest surviving peace treaty, about fifteen years after Kadesh. Egyptian and Hittite versions both survive.",
@@ -10788,8 +10595,8 @@
       "title": "Ramesses II marries a daughter of Ḫattušili III",
       "start": -1245,
       "tracks": [
-        "eg-new",
-        "hit-new"
+        "pharaonic-egypt",
+        "hittites"
       ],
       "chronology": "shaw",
       "descr": "Ramesses II marries Ḫattušili III's daughter Maathorneferure in his 34th year.",
@@ -10807,7 +10614,7 @@
       "start": -1236,
       "end": -1208,
       "tracks": [
-        "hit-new"
+        "hittites"
       ],
       "descr": "Ḫattušili's son loses to Assyria at Nihriya and claims a conquest of Alashiya (perhaps Cyprus).",
       "sources": [
@@ -10859,7 +10666,7 @@
       "title": "Battle of Nihriya",
       "start": -1236,
       "tracks": [
-        "hit-new",
+        "hittites",
         "assyria"
       ],
       "descr": "Tukulti-Ninurta I of Assyria defeats Tudḫaliya IV over the remnants of Mitanni, a severe defeat for the Hittites.",
@@ -10904,7 +10711,7 @@
       "start": -1206,
       "end": -1177,
       "tracks": [
-        "hit-new"
+        "hittites"
       ],
       "descr": "He campaigns against Tarḫuntašša and wins what is described as the first recorded naval battle, off Cyprus. He probably left Hattusa; the old story that he died in its sack is now doubted.",
       "sources": [
@@ -10952,7 +10759,7 @@
       "title": "Hattusa abandoned and burned",
       "start": -1179,
       "tracks": [
-        "hit-new"
+        "hittites"
       ],
       "descr": "The Hittite capital is abandoned over several decades; the final fire probably came after the court had left. A severe drought is one suspected cause.",
       "sources": [
@@ -11113,7 +10920,7 @@
       "start": -3099,
       "tracks": [
         "egypt",
-        "eg-early"
+        "pharaonic-egypt"
       ],
       "descr": "Narmer, shown on the Narmer Palette and widely identified with Menes, is credited with conquering Lower Egypt and founding the First Dynasty. His date carries a margin of about 150 years.",
       "sources": [
@@ -11152,7 +10959,7 @@
       "start": -2685,
       "end": -2648,
       "tracks": [
-        "eg-old"
+        "pharaonic-egypt"
       ],
       "descr": "The first king of the Third Dynasty; his architect Imhotep is credited with the development of building with stone and with the Step Pyramid at Saqqara.",
       "sources": [
@@ -11201,7 +11008,7 @@
       "start": -2588,
       "end": -2565,
       "tracks": [
-        "eg-old"
+        "pharaonic-egypt"
       ],
       "descr": "Khufu's pyramid at Giza, built over about 26 years, stays the tallest structure on Earth for thousands of years. The bar is Khufu's reign; most recent estimates date Khufu and his pyramid between 2700 and 2500 BCE.",
       "sources": [
@@ -11248,8 +11055,7 @@
       "title": "Mentuhotep II reunites Egypt",
       "start": -2054,
       "tracks": [
-        "eg-fip",
-        "eg-middle"
+        "pharaonic-egypt"
       ],
       "descr": "The Theban king takes the throne, captures Herakleopolis in his 14th year and completes reunification by his 39th, founding the Middle Kingdom.",
       "sources": [
@@ -11281,7 +11087,7 @@
       "title": "Senusret III's funerary boat dated",
       "start": -1886,
       "tracks": [
-        "eg-middle"
+        "pharaonic-egypt"
       ],
       "descr": "The funerary boat of Senusret III is dated to 1887 ± 11 BCE; the conventional date of his reign is 1878–1839 BCE.",
       "sources": [
@@ -11308,7 +11114,7 @@
       "start": -1649,
       "end": -1549,
       "tracks": [
-        "eg-sip"
+        "pharaonic-egypt"
       ],
       "descr": "Rulers of Levantine origin hold the north of Egypt from Avaris while Theban dynasties rule the south. Scholars' dates for the dynasty differ by a few decades.",
       "sources": [
@@ -11370,8 +11176,7 @@
       "title": "Ahmose I expels the Hyksos",
       "start": -1549,
       "tracks": [
-        "eg-sip",
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "After three attacks on Avaris, Ahmose takes the city in a fourth and then Sharuhen after a three-year siege, reuniting Egypt and opening the New Kingdom.",
       "sources": [
@@ -11399,7 +11204,7 @@
       "start": -1549,
       "end": -1524,
       "tracks": [
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "Founder of the 18th Dynasty. Published reign dates range over about thirty years; radiocarbon puts his accession at 1570–1544 BCE.",
       "sources": [
@@ -11473,7 +11278,7 @@
       "title": "Egyptian annals mention Tanaju (Danaans?)",
       "start": -1436,
       "tracks": [
-        "eg-new",
+        "pharaonic-egypt",
         "mycenaean"
       ],
       "descr": "Messengers from Tanaju appear in Thutmose III's annals, a possible early Egyptian reference to Mycenaean Greeks.",
@@ -11492,7 +11297,7 @@
       "start": -1478,
       "end": -1457,
       "tracks": [
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "Regent for Thutmose III, then pharaoh in her own right from about her seventh year. She builds at Karnak and Deir el-Bahari and sends a trading expedition to Punt.",
       "sources": [
@@ -11526,7 +11331,7 @@
       "title": "Expedition to Punt",
       "start": -1470,
       "tracks": [
-        "eg-new",
+        "pharaonic-egypt",
         "punt"
       ],
       "descr": "In Hatshepsut's ninth year an expedition goes to Punt; it is recorded in reliefs at Deir el-Bahari.",
@@ -11550,7 +11355,7 @@
       "start": -1478,
       "end": -1424,
       "tracks": [
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "Co-ruler with Hatshepsut, then sole king; he conquers much of the Near East from the Euphrates to Nubia.",
       "sources": [
@@ -11566,8 +11371,8 @@
       "title": "Battle of Megiddo",
       "start": -1456,
       "tracks": [
-        "eg-new",
-        "can-lba"
+        "pharaonic-egypt",
+        "canaan"
       ],
       "descr": "Thutmose III defeats a Canaanite coalition and besieges Megiddo for seven months: the first battle recorded in reasonably reliable detail.",
       "sources": [
@@ -11612,7 +11417,7 @@
       "start": -1352,
       "end": -1335,
       "tracks": [
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "The pharaoh who promotes the worship of the Aten, changes his name in his fifth year and builds a new capital at Akhetaten (Amarna).",
       "sources": [
@@ -11670,10 +11475,10 @@
       "start": -1351,
       "end": -1335,
       "tracks": [
-        "eg-new",
-        "hit-new",
+        "pharaonic-egypt",
+        "hittites",
         "mitanni",
-        "bab-kassite",
+        "babylonia",
         "assyria",
         "ugarit",
         "cyprus"
@@ -11703,7 +11508,7 @@
       "start": -1331,
       "end": -1322,
       "tracks": [
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "Pharaoh at 8 or 9 years of age, he restores the worship of Amun and returns the court to Memphis. His tomb (KV62), robbed in ancient times but retaining much of its original contents, was found in 1922.",
       "sources": [
@@ -11752,7 +11557,7 @@
       "start": -1278,
       "end": -1212,
       "tracks": [
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "A reign of 66 years: Kadesh, the peace with the Hittites, and building from Abu Simbel to the Ramesseum. Most Egyptologists date his accession to 31 May 1279 BCE; older high and middle Egyptian chronologies put it earlier.",
       "sources": [
@@ -11799,7 +11604,7 @@
       "start": -1212,
       "end": -1202,
       "tracks": [
-        "eg-new",
+        "pharaonic-egypt",
         "sea-peoples",
         "libyans"
       ],
@@ -11826,7 +11631,7 @@
       "title": "Battle of the Delta",
       "start": -1174,
       "tracks": [
-        "eg-new",
+        "pharaonic-egypt",
         "sea-peoples",
         "philistines"
       ],
@@ -11866,7 +11671,7 @@
       "title": "Shoshenq I founds the 22nd Dynasty",
       "start": -944,
       "tracks": [
-        "eg-tip"
+        "pharaonic-egypt"
       ],
       "descr": "A dynasty originally from ancient Libya takes the throne, with its capital at Bubastis.",
       "sources": [
@@ -11900,7 +11705,7 @@
       "start": -743,
       "end": -655,
       "tracks": [
-        "eg-tip",
+        "pharaonic-egypt",
         "kush"
       ],
       "descr": "Kings from Kush (Nubia) conquer Egypt, beginning with Piye's march north around 732 BCE, and rule until the Assyrian invasions.",
@@ -11937,7 +11742,7 @@
       "start": -669,
       "end": -662,
       "tracks": [
-        "eg-tip",
+        "pharaonic-egypt",
         "assyria",
         "kush"
       ],
@@ -11960,7 +11765,7 @@
       "title": "Assyrians sack Thebes",
       "start": -663,
       "tracks": [
-        "eg-tip",
+        "pharaonic-egypt",
         "assyria",
         "kush"
       ],
@@ -12003,7 +11808,7 @@
       "title": "Psamtik I reunites Egypt (26th Dynasty)",
       "start": -655,
       "tracks": [
-        "eg-late"
+        "pharaonic-egypt"
       ],
       "descr": "A former Assyrian vassal at Sais, Psamtik (reigned 664–610 BCE) brings Thebes under his rule and Egypt back to independence: the Saite period.",
       "sources": [
@@ -12038,7 +11843,7 @@
       "title": "Battle of Pelusium: Persia conquers Egypt",
       "start": -524,
       "tracks": [
-        "eg-late",
+        "pharaonic-egypt",
         "persia"
       ],
       "descr": "Cambyses II defeats Psamtik III and Egypt is annexed by the Achaemenid Empire, beginning the First Achaemenid Period (525–404 BCE).",
@@ -12059,7 +11864,7 @@
       "title": "First Minoan palaces built",
       "start": -1924,
       "tracks": [
-        "minoan-protopalatial"
+        "minoan"
       ],
       "descr": "The first palaces rise at Knossos, Phaistos and Malia on earlier ceremonial sites; the potter's wheel and Kamares ware appear.",
       "sources": [
@@ -12114,7 +11919,7 @@
       "title": "First palaces destroyed",
       "start": -1749,
       "tracks": [
-        "minoan-protopalatial"
+        "minoan"
       ],
       "descr": "Mass destructions, usually blamed on earthquakes, end the Protopalatial period; most of the palaces are rebuilt, except Phaistos.",
       "sources": [
@@ -12152,7 +11957,7 @@
       "start": -1599,
       "end": -1499,
       "tracks": [
-        "myc-early"
+        "mycenaean"
       ],
       "descr": "Six rich shaft graves holding 19 bodies, among them the gold 'Mask of Agamemnon'; the cemetery is later enclosed within the citadel.",
       "sources": [
@@ -12185,7 +11990,7 @@
       "start": -1599,
       "tracks": [
         "aegean",
-        "minoan-neopalatial"
+        "minoan"
       ],
       "descr": "A huge eruption buries Akrotiri and sends a tsunami to Crete, late in LM IA. Radiocarbon puts it in the late 17th or 16th century BCE; archaeological synchronisms with Egypt suggest about a century later. The exact year is unsettled.",
       "sources": [
@@ -12255,7 +12060,7 @@
       "title": "LM IB destructions across Crete",
       "start": -1469,
       "tracks": [
-        "minoan-neopalatial"
+        "minoan"
       ],
       "descr": "Island-wide destructions, apparently deliberate, end the Neopalatial period; at Knossos the town burns but the palace survives.",
       "sources": [
@@ -12292,7 +12097,7 @@
       "title": "Mycenaeans at Knossos; Linear B appears",
       "start": -1449,
       "tracks": [
-        "minoan-monopalatial",
+        "minoan",
         "mycenaean"
       ],
       "descr": "Knossos becomes a Mycenaean administrative centre keeping its records in Linear B, the earliest written Greek.",
@@ -12338,7 +12143,7 @@
       "start": -1319,
       "tracks": [
         "aegean",
-        "myc-palatial"
+        "mycenaean"
       ],
       "descr": "A merchant ship sinks south of Kaş, in Turkey, carrying about 10 tons of copper, about a ton of tin and glass ingots: a microcosm of the international trade in the Eastern Mediterranean and across the Aegean.",
       "sources": [
@@ -12370,7 +12175,7 @@
       "title": "Palace of Knossos destroyed",
       "start": -1349,
       "tracks": [
-        "minoan-postpalatial"
+        "minoan"
       ],
       "descr": "A major fire destroys the Mycenaean-era palace; the date is conventional and still debated.",
       "sources": [
@@ -12386,7 +12191,7 @@
       "title": "Lion Gate and citadel walls at Mycenae",
       "start": -1249,
       "tracks": [
-        "myc-palatial"
+        "mycenaean"
       ],
       "descr": "Mycenae's fortifications are extended to take in Grave Circle A, and the Lion Gate is built.",
       "sources": [
@@ -12402,7 +12207,7 @@
       "title": "Palace of Nestor at Pylos burns",
       "start": -1199,
       "tracks": [
-        "myc-palatial"
+        "mycenaean"
       ],
       "descr": "The best-preserved Mycenaean palace burns, baking its Linear B archive. Wikipedia's articles give dates from about 1250 to 1180 BCE.",
       "sources": [
@@ -12547,7 +12352,7 @@
       "title": "Nabopolassar crowned king of Babylon",
       "start": -625,
       "tracks": [
-        "bab-neo",
+        "babylonia",
         "chaldeans"
       ],
       "descr": "Nabopolassar revolts against Assyria, takes Babylon and Nippur and is crowned king of Babylon, allied with the Medes.",
@@ -12589,7 +12394,7 @@
       "start": -611,
       "tracks": [
         "assyria",
-        "bab-neo",
+        "babylonia",
         "medes"
       ],
       "descr": "Medes and Babylonians besiege Nineveh from May to August; king Sîn-šar-iškun dies in the siege.",
@@ -12617,7 +12422,7 @@
       "start": -608,
       "tracks": [
         "assyria",
-        "bab-neo"
+        "babylonia"
       ],
       "descr": "The last Assyrian king, Ashur-uballit II, is defeated at Harran.",
       "sources": [
@@ -12637,7 +12442,7 @@
       "start": -604,
       "end": -561,
       "tracks": [
-        "bab-neo"
+        "babylonia"
       ],
       "descr": "Babylon's greatest Neo-Babylonian king campaigns across the Levant and rebuilds Babylon on a grand scale.",
       "sources": [
@@ -12652,8 +12457,8 @@
       "title": "Battle of Carchemish",
       "start": -604,
       "tracks": [
-        "bab-neo",
-        "eg-late"
+        "babylonia",
+        "pharaonic-egypt"
       ],
       "descr": "The Babylonians under crown prince Nebuchadnezzar inflict a crushing defeat on an Egyptian army under Necho II, Assyria's ally.",
       "sources": [
@@ -12678,7 +12483,7 @@
       "title": "Babylon captures Jerusalem",
       "start": -596,
       "tracks": [
-        "bab-neo",
+        "babylonia",
         "israel-judah"
       ],
       "descr": "On 2 Adar (16 March 597 BCE) the city falls; King Jeconiah and the court are deported and Zedekiah is installed as a vassal.",
@@ -12701,7 +12506,7 @@
       "start": -588,
       "end": -586,
       "tracks": [
-        "bab-neo",
+        "babylonia",
         "israel-judah"
       ],
       "descr": "After Zedekiah's revolt, Babylon besieges Jerusalem from January 589, then burns the city and the First Temple and deports much of Judah's population.",
@@ -12741,8 +12546,8 @@
       "start": -567,
       "end": -566,
       "tracks": [
-        "bab-neo",
-        "eg-late"
+        "babylonia",
+        "pharaonic-egypt"
       ],
       "descr": "In the fourth year of Amasis, Babylon invades Egypt.",
       "sources": [
@@ -12791,7 +12596,7 @@
       "start": -555,
       "end": -538,
       "tracks": [
-        "bab-neo"
+        "babylonia"
       ],
       "descr": "The last king of Babylon favours the moon god Sin and spends time in Arabia, leaving his son Belshazzar in command of the army.",
       "sources": [
@@ -12806,7 +12611,7 @@
       "title": "Cyrus takes Babylon",
       "start": -538,
       "tracks": [
-        "bab-neo",
+        "babylonia",
         "persia"
       ],
       "descr": "After victory at Opis, Persian forces enter Babylon on 12 October 539 BCE; Nabonidus surrenders and the Neo-Babylonian Empire ends.",
@@ -12829,7 +12634,7 @@
       "title": "Assur becomes an independent city-state",
       "start": -2024,
       "tracks": [
-        "as-old"
+        "assyria"
       ],
       "descr": "Assur becomes independent from the Third Dynasty of Ur under Puzur-Ashur I. One page credits independence to an earlier ruler, Ushpia, around 2090 BCE.",
       "sources": [
@@ -12874,7 +12679,7 @@
       "start": -1807,
       "end": -1775,
       "tracks": [
-        "as-old",
+        "assyria",
         "amorites"
       ],
       "descr": "An Amorite conqueror takes Assur and builds a kingdom across northern Mesopotamia, ruling from Shubat-Enlil. It falls apart soon after his death.",
@@ -12922,7 +12727,7 @@
       "start": -1429,
       "end": -1359,
       "tracks": [
-        "as-old",
+        "assyria",
         "mitanni"
       ],
       "descr": "Assyria is subjugated by Mitanni for about 70 years, until it becomes an independent territorial state under Ashur-uballit I.",
@@ -12950,7 +12755,7 @@
       "start": -1242,
       "end": -1206,
       "tracks": [
-        "as-middle"
+        "assyria"
       ],
       "descr": "The Middle Assyrian Empire at its height. He builds a new capital, Kar-Tukulti-Ninurta (c. 1233 BCE), and is assassinated about 1207 BCE.",
       "sources": [
@@ -12971,7 +12776,7 @@
       "start": -1113,
       "end": -1075,
       "tracks": [
-        "as-middle"
+        "assyria"
       ],
       "descr": "A second Middle Assyrian expansion after the decline of c. 1206–1115 BCE.",
       "sources": [
@@ -12986,7 +12791,7 @@
       "title": "Ashurnasirpal II makes Nimrud the capital",
       "start": -878,
       "tracks": [
-        "as-neo"
+        "assyria"
       ],
       "descr": "Nimrud remains the capital until 706 BCE.",
       "sources": [
@@ -13002,7 +12807,7 @@
       "start": -744,
       "end": -726,
       "tracks": [
-        "as-neo"
+        "assyria"
       ],
       "descr": "Perhaps a usurper, he more than doubles the land ruled by Assyria: he defeats Urartu (743), conquers Damascus (732) and Babylonia (729).",
       "sources": [
@@ -13018,7 +12823,7 @@
       "title": "Sargon II moves the capital to Dur-Sharrukin",
       "start": -705,
       "tracks": [
-        "as-neo"
+        "assyria"
       ],
       "descr": "The new city is the capital for only a year: after Sargon's death in 705 BCE, Sennacherib moves the capital to Nineveh, where it stays until 612 BCE.",
       "sources": [
@@ -13034,7 +12839,7 @@
       "start": -668,
       "end": -630,
       "tracks": [
-        "as-neo"
+        "assyria"
       ],
       "descr": "The last great Neo-Assyrian king. He wins a civil war against his brother Shamash-shum-ukin, king of Babylon (652–648), and destroys Elam. Assyria falls about two decades after his death.",
       "sources": [
@@ -13051,7 +12856,7 @@
       "start": -651,
       "end": -647,
       "tracks": [
-        "as-neo",
+        "assyria",
         "babylonia"
       ],
       "descr": "Ashurbanipal's brother, king of Babylon, rebels. He dies when Babylon falls after a siege in 648 BCE.",
@@ -13067,7 +12872,7 @@
       "title": "Tyre founded (by tradition)",
       "start": -2749,
       "tracks": [
-        "can-eba"
+        "canaan"
       ],
       "descr": "Herodotus' informants, the priests of Tyre, told him the city had been founded 2,300 years before his visit (around 450 BCE).",
       "sources": [
@@ -13084,8 +12889,8 @@
       "title": "Proto-Sinaitic: the earliest alphabet",
       "start": -1849,
       "tracks": [
-        "can-mba",
-        "eg-middle"
+        "canaan",
+        "pharaonic-egypt"
       ],
       "descr": "Inscriptions from Sinai and Egypt adapting Egyptian hieroglyphs to write a Semitic language; the ancestor of the Phoenician alphabet. Scholars argue for an early date (around 1850 BCE) or a late one (around 1550 BCE).",
       "sources": [
@@ -13198,7 +13003,7 @@
       "start": -1599,
       "tracks": [
         "ebla",
-        "hit-old"
+        "hittites"
       ],
       "descr": "The Hittite king ends the third kingdom of Ebla in about 1600 BCE.",
       "sources": [
@@ -13254,7 +13059,7 @@
       "end": -1314,
       "tracks": [
         "ugarit",
-        "hit-new"
+        "hittites"
       ],
       "descr": "Ugarit, which had corresponded with Egypt in the Amarna letters, passes into the Hittite sphere.",
       "sources": [
@@ -13382,7 +13187,7 @@
       "start": -571,
       "tracks": [
         "phoenicia",
-        "bab-neo"
+        "babylonia"
       ],
       "descr": "Tyre comes under Babylonian rule.",
       "sources": [
@@ -13413,8 +13218,8 @@
       "title": "Merneptah Stele names \"Israel\"",
       "start": -1207,
       "tracks": [
-        "can-lba",
-        "eg-new"
+        "canaan",
+        "pharaonic-egypt"
       ],
       "descr": "Carved in Merneptah's fifth year, it lists Ashkelon, Gezer, Yanoam and Israel among the defeated: the earliest mention of Israel outside the Bible.",
       "sources": [
@@ -13472,7 +13277,7 @@
       "start": -719,
       "tracks": [
         "israel-judah",
-        "as-neo"
+        "assyria"
       ],
       "descr": "The Neo-Assyrian Empire ends the northern kingdom after campaigns from 732 BCE; Sargon II deports 27,290 Israelites.",
       "sources": [
@@ -13519,7 +13324,7 @@
       "start": -603,
       "tracks": [
         "philistines",
-        "bab-neo"
+        "babylonia"
       ],
       "descr": "After a revolt, Babylon destroys Ashkelon, Gaza, Aphek and Ekron and their inhabitants are killed or exiled to Mesopotamia.",
       "sources": [
@@ -13583,7 +13388,7 @@
       "start": -731,
       "tracks": [
         "aram-damascus",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Assyria annexes Aram-Damascus and executes its last king, Rezin.",
       "sources": [
@@ -13639,7 +13444,7 @@
       "start": -2299,
       "end": -1849,
       "tracks": [
-        "elam-old"
+        "elam"
       ],
       "descr": "A script for the Elamite language, associated with Puzur-Inshushinak (in power around 2150 BCE). Its decipherment was proposed in 2020–2022.",
       "sources": [
@@ -13656,7 +13461,7 @@
       "title": "Untash-Napirisha builds the ziggurat of Chogha Zanbil",
       "start": -1249,
       "tracks": [
-        "elam-middle"
+        "elam"
       ],
       "descr": "An Elamite complex about 30 km southeast of Susa. Construction was sometime in the 14th or 13th century BCE; 1250 is the conventional date.",
       "sources": [
@@ -13674,8 +13479,8 @@
       "start": -646,
       "end": -645,
       "tracks": [
-        "elam-neo",
-        "as-neo"
+        "elam",
+        "assyria"
       ],
       "descr": "Assyria's final campaigns against Elam destroy Susa and Chogha Zanbil (the latter 'about 645 BC').",
       "sources": [
@@ -13746,7 +13551,7 @@
       "start": -742,
       "tracks": [
         "urartu",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Urartu had beaten Assyria at Arpad in 754 BCE; this time Tiglath-Pileser wins and Sarduri flees the battle.",
       "sources": [
@@ -13847,7 +13652,7 @@
       "start": -3299,
       "end": -2799,
       "tracks": [
-        "ind-early"
+        "harappan"
       ],
       "descr": "The first settlement at Harappa. A 2025 study dates its start as early as about 3700 BCE.",
       "sources": [
@@ -13880,7 +13685,7 @@
       "start": -2799,
       "end": -2599,
       "tracks": [
-        "ind-early"
+        "harappan"
       ],
       "descr": "The Kot Dijian (Early Harappan) phase, before the Harappan phase; the settlement is enclosed with massive mud-brick walls.",
       "sources": [
@@ -13898,8 +13703,7 @@
       "start": -2799,
       "end": -1899,
       "tracks": [
-        "ind-early",
-        "ind-mature"
+        "harappan"
       ],
       "descr": "Short inscriptions on seals and pottery; still undeciphered. A possible proto-script dates from c. 3500 BCE, and rare later graffiti until c. 1300 BCE.",
       "sources": [
@@ -13917,7 +13721,7 @@
       "start": -2499,
       "end": -1699,
       "tracks": [
-        "ind-mature"
+        "harappan"
       ],
       "descr": "One of the largest cities of the Indus Valley Civilisation, abandoned c. 1700 BCE along with the other large Indus cities.",
       "sources": [
@@ -13935,7 +13739,7 @@
       "start": -2649,
       "end": -1899,
       "tracks": [
-        "ind-mature"
+        "harappan"
       ],
       "descr": "A walled city in Kutch with elaborate water reservoirs. Recent radiocarbon dating puts its first stage around 3500 BCE; after a desertion it was reoccupied until c. 1450 BCE.",
       "sources": [
@@ -13985,7 +13789,7 @@
       "start": -2299,
       "end": -1899,
       "tracks": [
-        "ind-mature"
+        "harappan"
       ],
       "descr": "A Harappan port town in Gujarat. A massive flood around 1900 BCE destroyed it.",
       "sources": [
@@ -14003,7 +13807,7 @@
       "end": -2278,
       "tracks": [
         "akkad",
-        "ind-mature",
+        "harappan",
         "dilmun"
       ],
       "descr": "Sargon of Akkad mentions ships from Meluhha, Magan and Dilmun. Most scholars identify Meluhha with the Indus Valley.",
@@ -14021,8 +13825,8 @@
       "start": -2399,
       "end": -2099,
       "tracks": [
-        "ind-mature",
-        "elam-old"
+        "harappan",
+        "elam"
       ],
       "descr": "A cylinder-seal impression with Indus characters, found in a stratum at Susa: evidence of Indus–Mesopotamian contact.",
       "sources": [
@@ -14039,7 +13843,7 @@
       "title": "Mehrgarh abandoned",
       "start": -2499,
       "tracks": [
-        "ind-mature"
+        "harappan"
       ],
       "descr": "One of the earliest farming sites in South Asia (from c. 5250 or 7000 BCE) is largely abandoned sometime between 2600 and 2000 BCE.",
       "sources": [
@@ -14073,8 +13877,8 @@
       "title": "Last Mesopotamian mention of Meluhha",
       "start": -1759,
       "tracks": [
-        "bab-old",
-        "ind-late"
+        "babylonia",
+        "harappan"
       ],
       "descr": "Direct trade had already given way to trade through Dilmun, possibly as the Indus cities declined.",
       "sources": [
@@ -14223,7 +14027,7 @@
       "start": -1045,
       "tracks": [
         "shang",
-        "zhou-western"
+        "zhou"
       ],
       "descr": "King Wu of Zhou defeats Di Xin, the last Shang king. The day and month are certain but the year is not: at least 44 dates have been proposed.",
       "sources": [
@@ -14312,7 +14116,7 @@
       "start": -840,
       "end": -827,
       "tracks": [
-        "zhou-western"
+        "zhou"
       ],
       "descr": "A regency in the Western Zhou, 841–828 BCE. Sima Qian was only able to establish historical dates after its time.",
       "sources": [
@@ -14328,8 +14132,7 @@
       "title": "Zhou capital moves east",
       "start": -770,
       "tracks": [
-        "zhou-western",
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "After the Battle of Mount Li, the court moves to Wangcheng: the end of the Western Zhou.",
       "sources": [
@@ -14346,7 +14149,7 @@
       "start": -770,
       "end": -480,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "The first part of the Eastern Zhou.",
       "sources": [
@@ -14395,7 +14198,7 @@
       "start": -474,
       "end": -220,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "Qin deposes the last Zhou king in 256 BCE and unifies China in 221 BCE.",
       "sources": [
@@ -14909,7 +14712,7 @@
       "title": "Founding of Rome (traditional)",
       "start": -752,
       "tracks": [
-        "rome-kingdom"
+        "rome"
       ],
       "descr": "Legend credits Romulus. Varro's 753 BCE became the basis of the Roman calendar; ancient writers disagreed, and most modern historians treat the accounts as fiction. Archaeologically, hilltop villages united by the later 8th century BCE.",
       "sources": [
@@ -14981,8 +14784,7 @@
       "title": "Monarchy overthrown: the Roman Republic",
       "start": -508,
       "tracks": [
-        "rome-kingdom",
-        "rome-republic"
+        "rome"
       ],
       "descr": "By tradition the last king, Tarquinius Superbus, is expelled and the first consuls are elected.",
       "sources": [
@@ -15003,7 +14805,7 @@
       "title": "Gauls defeat Rome at the Allia and sack the city",
       "start": -386,
       "tracks": [
-        "rome-republic",
+        "rome",
         "la-tene"
       ],
       "descr": "Celts under Brennus defeat the Romans and sack Rome. The traditional (Varronian) date is 390 BCE; modern historians consider c. 387 the most probable.",
@@ -15041,7 +14843,7 @@
       "title": "Latin League dissolved",
       "start": -337,
       "tracks": [
-        "rome-republic"
+        "rome"
       ],
       "descr": "The league of Latin cities is dissolved.",
       "sources": [
@@ -15057,7 +14859,7 @@
       "title": "Greek alphabet",
       "start": -799,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "In use since the late 9th or early 8th century BCE; still used today.",
       "sources": [
@@ -15074,7 +14876,7 @@
       "title": "First Olympic Games (traditional)",
       "start": -775,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "Traditionally dated to 776 BCE (Aristotle); an Olympiad count gives 765, and scholars disagree on when the games began.",
       "sources": [
@@ -15107,7 +14909,7 @@
       "start": -749,
       "end": -549,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "Archaic Greeks expand across the Mediterranean and the Black Sea, particularly in the 8th–6th centuries BCE.",
       "sources": [
@@ -15123,7 +14925,7 @@
       "title": "Solon reforms Athens",
       "start": -593,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "Solon is appointed 'archon and mediator' in 594/3 BCE.",
       "sources": [
@@ -15154,7 +14956,7 @@
       "title": "Cleisthenes' reforms in Athens",
       "start": -507,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "After the fall of the last Athenian tyrant (510 BCE). Classical Greece calls it the first significant event of the 5th century.",
       "sources": [
@@ -15190,7 +14992,7 @@
       "title": "Battle of Marathon",
       "start": -489,
       "tracks": [
-        "greece-archaic",
+        "greece",
         "persia"
       ],
       "descr": "The Persians are defeated in their first invasion of Greece.",
@@ -15213,7 +15015,7 @@
       "title": "Battle of Salamis",
       "start": -479,
       "tracks": [
-        "greece-classical",
+        "greece",
         "persia"
       ],
       "descr": "A naval battle fought in 480 BCE, part of the Second Persian invasion of Greece, between the Greek city-states and the Achaemenid Empire under King Xerxes.",
@@ -15237,7 +15039,7 @@
       "start": -430,
       "end": -403,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "Athens and Sparta fight for hegemony over Greece; Persia backs Sparta from 413 and Athens surrenders in 404.",
       "sources": [
@@ -15254,7 +15056,7 @@
       "start": -358,
       "end": -335,
       "tracks": [
-        "greece-classical",
+        "greece",
         "macedon"
       ],
       "descr": "King of Macedon from 359 BCE. He is assassinated in 336 and immediately succeeded by his son Alexander.",
@@ -15271,7 +15073,7 @@
       "title": "Philip II wins the Battle of Chaeronea",
       "start": -337,
       "tracks": [
-        "greece-classical",
+        "greece",
         "macedon"
       ],
       "descr": "The next year (337 BCE) Philip becomes hegemon of the Hellenic League.",
@@ -15544,7 +15346,7 @@
       "start": -1454,
       "tracks": [
         "cyprus",
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "Egypt claims Cyprus; the Hittites replace Egypt there in the 13th century BCE.",
       "sources": [
@@ -15571,7 +15373,7 @@
       "start": -1199,
       "tracks": [
         "cyprus",
-        "hit-new"
+        "hittites"
       ],
       "descr": "Shortly before the Late Bronze Age collapse, Tudḫaliya IV and Šuppiluliuma II force Alashiya's king to sign a treaty of submission. Alashiya was a major source of copper for the Near East.",
       "sources": [
@@ -15589,7 +15391,7 @@
       "end": -671,
       "tracks": [
         "cyprus",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Esarhaddon's prism lists ten city-kingdoms of Cyprus. Assyrian rule ends with the fall of the Neo-Assyrian Empire (609 BCE).",
       "sources": [
@@ -15605,7 +15407,7 @@
       "start": -569,
       "tracks": [
         "cyprus",
-        "eg-late"
+        "pharaonic-egypt"
       ],
       "descr": "",
       "sources": [
@@ -15655,7 +15457,7 @@
       "end": -289,
       "tracks": [
         "samnites",
-        "rome-republic"
+        "rome"
       ],
       "descr": "Three wars (343–341, 327–304, 298–290 BCE) in which Rome subjugates the Samnites, despite their great victory at the Caudine Forks (321).",
       "sources": [
@@ -15854,7 +15656,7 @@
       "end": -412,
       "tracks": [
         "magna-graecia",
-        "greece-classical"
+        "greece"
       ],
       "descr": "Athens attacks Syracuse during the Peloponnesian War; the expedition is destroyed in 413 BCE.",
       "sources": [
@@ -15957,7 +15759,7 @@
       "start": -1207,
       "tracks": [
         "libyans",
-        "eg-new",
+        "pharaonic-egypt",
         "sea-peoples"
       ],
       "descr": "In regnal year 5 (1208 BCE) a Libyan coalition under Meryey, allied with Sea Peoples, is defeated.",
@@ -16013,7 +15815,7 @@
       "start": -569,
       "tracks": [
         "cyrene",
-        "eg-late"
+        "pharaonic-egypt"
       ],
       "descr": "The pharaoh Apries, called in by Adicran, is defeated at Irasa.",
       "sources": [
@@ -16375,7 +16177,7 @@
       "start": -671,
       "tracks": [
         "scythians",
-        "as-neo"
+        "assyria"
       ],
       "descr": "",
       "sources": [
@@ -16610,7 +16412,7 @@
       "start": -2999,
       "tracks": [
         "a-group",
-        "eg-early"
+        "pharaonic-egypt"
       ],
       "descr": "The relief of Gebel Sheikh Suleiman likely shows an early pharaoh, possibly Djer, victorious over A-Group Nubians. One account has the First Dynasty destroying the A-Group around 3100 BCE.",
       "sources": [
@@ -16643,7 +16445,7 @@
       "start": -1859,
       "tracks": [
         "kerma",
-        "eg-middle"
+        "pharaonic-egypt"
       ],
       "descr": "Senusret III campaigns four times into Kush and builds a line of forts within signalling distance of one another; Buhen, below the Second Cataract, is the northernmost.",
       "sources": [
@@ -16693,7 +16495,7 @@
       "start": -1674,
       "tracks": [
         "kerma",
-        "eg-sip"
+        "pharaonic-egypt"
       ],
       "descr": "The fortress falls to the Kushites during the 13th Dynasty; Ahmose I retakes it at the start of the 18th.",
       "sources": [
@@ -16711,7 +16513,7 @@
       "end": -1549,
       "tracks": [
         "kerma",
-        "eg-sip"
+        "pharaonic-egypt"
       ],
       "descr": "Recorded in the tomb of Sobeknakht II.",
       "sources": [
@@ -16728,7 +16530,7 @@
       "start": -1503,
       "tracks": [
         "kerma",
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "Egypt annexes Nubia and Thutmose I builds a fortress at Tombos near the Third Cataract. Nubian rebellions continue for about 220 years.",
       "sources": [
@@ -16771,7 +16573,7 @@
       "start": -1069,
       "tracks": [
         "kush",
-        "eg-tip"
+        "pharaonic-egypt"
       ],
       "descr": "As the New Kingdom disintegrates, Kush becomes an independent kingdom, possibly a successor of Kerma.",
       "sources": [
@@ -16816,7 +16618,7 @@
       "start": -726,
       "tracks": [
         "kush",
-        "eg-tip"
+        "pharaonic-egypt"
       ],
       "descr": "In his twentieth year the Kushite king Piye invades against Tefnakht of Sais, wins at Herakleopolis and takes Hermopolis after a five-month siege. He then returns to his homeland in Nubia, never to return to Egypt.",
       "sources": [
@@ -16845,7 +16647,7 @@
       "end": -663,
       "tracks": [
         "kush",
-        "eg-tip"
+        "pharaonic-egypt"
       ],
       "descr": "A king of the 25th Dynasty, one of the Black Pharaohs. He defeats the Assyrians in 674 BCE but loses Memphis to Esarhaddon in 671, retakes it in 669, and dies in 664. The Kush page says he died at Napata, the Taharqa page at Thebes.",
       "sources": [
@@ -16871,7 +16673,7 @@
       "start": -591,
       "tracks": [
         "kush",
-        "eg-late"
+        "pharaonic-egypt"
       ],
       "descr": "The Egyptian army fights its way to Pnubs (Kerma) and Napata, which is sacked under the Kushite king Aspelta.",
       "sources": [
@@ -16939,7 +16741,7 @@
       "start": -2449,
       "tracks": [
         "punt",
-        "eg-old"
+        "pharaonic-egypt"
       ],
       "descr": "Organised by Sahure of the Fifth Dynasty. Recent evidence places Punt in northwestern Eritrea.",
       "sources": [
@@ -16966,7 +16768,7 @@
       "start": -1999,
       "tracks": [
         "punt",
-        "eg-middle"
+        "pharaonic-egypt"
       ],
       "descr": "An officer of Mentuhotep III (11th Dynasty) organises one or more voyages to Punt.",
       "sources": [
@@ -18632,7 +18434,7 @@
       "start": -1111,
       "tracks": [
         "diauehi",
-        "as-middle"
+        "assyria"
       ],
       "descr": "Daiaeni appears in 12th-century BC Assyrian sources as part of the Nairi confederation. Later its king Asia submits to Shalmaneser III in 845 BC.",
       "sources": [
@@ -18797,7 +18599,7 @@
       "start": -549,
       "tracks": [
         "colchis",
-        "greece-archaic"
+        "greece"
       ],
       "descr": "Greek colonies are established in the 6th century BC.",
       "sources": [
@@ -18919,7 +18721,7 @@
       "start": -2099,
       "tracks": [
         "oman",
-        "sum-ur3"
+        "sumer"
       ],
       "descr": "Trade between the two resumes (c. 2100 BC) in the Ur III period.",
       "sources": [
@@ -19101,7 +18903,7 @@
       "start": -1185,
       "tracks": [
         "north-arabia",
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "An inscription at Tayma was commissioned by Ramesses III (r. 1186–1155 BC). Monumental architecture disappears from Tayma by the end of the Early Iron Age (12th–9th centuries BC).",
       "sources": [
@@ -19118,7 +18920,7 @@
       "start": -743,
       "tracks": [
         "north-arabia",
-        "as-neo"
+        "assyria"
       ],
       "descr": "From the 8th century BC Tayma is under the Assyrian Empire, as under Tiglath-Pileser III (744–727 BC); an inscription of Sennacherib (705–681 BC) records gifts of the people of Tema.",
       "sources": [
@@ -19141,7 +18943,7 @@
       "start": -551,
       "tracks": [
         "north-arabia",
-        "bab-neo"
+        "babylonia"
       ],
       "descr": "The Neo-Babylonian ruler campaigns in northwestern Arabia and rules from Tayma; he eliminates the kings of both Taymāʾ and Dadān.",
       "sources": [
@@ -20139,7 +19941,7 @@
       "start": -1499,
       "tracks": [
         "south-india",
-        "eg-new"
+        "pharaonic-egypt"
       ],
       "descr": "Cinnamon, native to Sri Lanka, was in use in Ancient Egypt, suggesting trading links with the island.",
       "sources": [
@@ -22906,7 +22708,7 @@
       "title": "Eannatum of Lagash defeats Umma: the Stele of the Vultures",
       "start": -2449,
       "tracks": [
-        "sum-ed"
+        "sumer"
       ],
       "descr": "The earliest known war monument. Eannatum established one of the first verifiable empires in history, subduing Elam and destroying Susa.",
       "sources": [
@@ -22951,7 +22753,7 @@
       "start": -2377,
       "end": -2367,
       "tracks": [
-        "sum-ed"
+        "sumer"
       ],
       "descr": "King of Lagash and Girsu, described by one study as the first social reformer in history, though there is no solid evidence for a single \"reform of Urukagina\".",
       "sources": [
@@ -23024,7 +22826,7 @@
       "title": "The Epic of Gilgamesh (Old Babylonian version)",
       "start": -1799,
       "tracks": [
-        "bab-old"
+        "babylonia"
       ],
       "descr": "The world’s oldest surviving narrative literature. Sumerian Gilgamesh poems may date to the Third Dynasty of Ur (c. 2100 BCE); the Standard Babylonian version was compiled by Sîn-lēqi-unninni between 1300 and 1000 BCE.",
       "sources": [
@@ -23068,7 +22870,7 @@
       "title": "Hazor, the great Canaanite city, burns",
       "start": -1249,
       "tracks": [
-        "can-lba"
+        "canaan"
       ],
       "descr": "A stratum from around 1200 BCE (13th century) shows catastrophic fire and a scorched palace; the cause is disputed. Hazor had been a major city since the Middle Bronze Age (around 1750 BCE).",
       "sources": [
@@ -23095,7 +22897,7 @@
       "start": -731,
       "tracks": [
         "israel-judah",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Despite its defences the city is captured and its population deported.",
       "sources": [
@@ -23117,7 +22919,7 @@
       "start": -667,
       "end": -626,
       "tracks": [
-        "as-neo"
+        "assyria"
       ],
       "descr": "More than 30,000 clay tablets and fragments from the 7th century BCE, among them the Epic of Gilgamesh. Nineveh is destroyed in 612 BCE.",
       "sources": [
@@ -23264,7 +23066,7 @@
       "title": "The Iliad and the Odyssey",
       "start": -699,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "Traditionally credited to Homer; the poems are thought to have been composed around the late eighth or early seventh century BC.",
       "sources": [
@@ -23291,7 +23093,7 @@
       "title": "Hesiod’s Works and Days",
       "start": -699,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "Hesiod is generally thought to have been active between 750 and 650 BC; Works and Days describes the five Ages of Man.",
       "sources": [
@@ -23317,7 +23119,7 @@
       "title": "Thales predicts a solar eclipse",
       "start": -584,
       "tracks": [
-        "greece-archaic"
+        "greece"
       ],
       "descr": "According to Herodotus. Thales (c. 626/623 – c. 548/545 BC) was one of the Seven Sages.",
       "sources": [
@@ -23332,7 +23134,7 @@
       "title": "Pythagoras founds a school at Croton",
       "start": -529,
       "tracks": [
-        "greece-archaic",
+        "greece",
         "magna-graecia"
       ],
       "descr": "The philosopher and polymath (c. 570 – c. 495 BC), eponymous founder of Pythagoreanism, travels to Croton in southern Italy.",
@@ -23349,7 +23151,7 @@
       "title": "Battle of Thermopylae",
       "start": -479,
       "tracks": [
-        "greece-classical",
+        "greece",
         "persia"
       ],
       "descr": "Greek city-states led by Sparta under Leonidas I hold off Xerxes’ invasion force before the Persians win; the Greeks defeat the invaders at Salamis later that year.",
@@ -23373,7 +23175,7 @@
       "start": -460,
       "end": -428,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "The statesman and general of the Golden Age of Athens dies of the Plague of Athens in 429 BC.",
       "sources": [
@@ -23389,7 +23191,7 @@
       "start": -446,
       "end": -437,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "A temple on the Athenian Acropolis dedicated to Athena, begun when the Delian League was at the peak of its power; work on its decoration continued until 432 BC.",
       "sources": [
@@ -23427,7 +23229,7 @@
       "title": "The trial and death of Socrates",
       "start": -398,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "Athens tries the 70-year-old philosopher on two charges and he is put to death.",
       "sources": [
@@ -23443,7 +23245,7 @@
       "title": "Plato founds the Academy",
       "start": -386,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "Aristotle studies there for twenty years (367–347 BC); the school lasts until 83 BC.",
       "sources": [
@@ -23460,7 +23262,7 @@
       "title": "Aristotle founds the Lyceum",
       "start": -334,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "Returning to Athens after it fell under Macedonian rule, Aristotle sets up his school at the Lyceum.",
       "sources": [
@@ -23492,7 +23294,7 @@
       "start": -352,
       "end": -350,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "The tomb of Mausolus, built between 353 and 351 BC in Halicarnassus; one of the Seven Wonders of the Ancient World.",
       "sources": [
@@ -23508,7 +23310,7 @@
       "start": -483,
       "end": -424,
       "tracks": [
-        "greece-classical"
+        "greece"
       ],
       "descr": "A Greek historian and geographer from Halicarnassus; nothing in his Histories can be dated with certainty after 430 BC.",
       "sources": [
@@ -23525,7 +23327,7 @@
       "start": -550,
       "end": -478,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "Traditionally the paragon of Chinese sages; his teachings, Confucianism, emphasise personal and governmental morality.",
       "sources": [
@@ -23542,7 +23344,7 @@
       "title": "Laozi (traditional dates)",
       "start": -549,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "Considered the author of the Tao Te Ching and the founder of Taoism. Tradition makes him a contemporary of Confucius; he is sometimes dated to the 4th century BC, and the oldest manuscript of his book dates to the late 4th century BC.",
       "sources": [
@@ -23583,7 +23385,7 @@
       "start": -543,
       "end": -495,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "The general and strategist traditionally credited with The Art of War, though its earliest parts probably date at least a century after him.",
       "sources": [
@@ -23599,7 +23401,7 @@
       "start": -469,
       "end": -390,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "A philosophy emphasising universal love, social order, the will of Heaven, sharing and honouring the worthy.",
       "sources": [
@@ -23616,7 +23418,7 @@
       "start": -499,
       "end": -220,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "Confucianism, Taoism, Mohism, Legalism and others flourish in the late Spring and Autumn and Warring States periods; their ideas profoundly influence East Asian culture.",
       "sources": [
@@ -23634,7 +23436,7 @@
       "start": -355,
       "end": -337,
       "tracks": [
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "The reformer takes office in Qin in 359 BCE; his first reforms (356 BC) assign land by military merit and favour agriculture, and a second set follows in 350 BC.",
       "sources": [
@@ -23684,7 +23486,7 @@
       "start": -1099,
       "tracks": [
         "aram",
-        "as-middle"
+        "assyria"
       ],
       "descr": "The first certain reference to the Arameans: an inscription of Tiglath-Pileser I calls them the \"Ahlamu of the land Armaya\". He campaigns in the Levant against the Arameans and other tribal peoples; late in his reign Aramaean tribesmen put pressure on his realm.",
       "sources": [
@@ -23757,7 +23559,7 @@
       "end": -1014,
       "tracks": [
         "aram",
-        "as-middle"
+        "assyria"
       ],
       "descr": "The Middle Assyrian Empire shrinks rapidly after Ashur-bel-kala, its last great ruler, dies in 1056 BC. The Arameans gain independence and take firm control of Eber-Nari, and in the 11th and 10th centuries conquer Sam'al (renamed Bît-Agushi) and Til Barsip, chief town of Bît-Adini.",
       "sources": [
@@ -23795,7 +23597,7 @@
       "end": -911,
       "tracks": [
         "aram",
-        "as-middle"
+        "assyria"
       ],
       "descr": "The first Assyrian king to campaign regularly in over a century; his annals present the wars against the Aramaeans to the west as retaking Assyrian territory. His successor Adad-nirari II (911–891 BC) marches as far as the Balikh river and the middle Euphrates.",
       "sources": [
@@ -23814,7 +23616,7 @@
         "bit-adini",
         "qedarites",
         "israel-judah",
-        "as-neo"
+        "assyria"
       ],
       "descr": "A coalition led by Aram-Damascus and Israel meets Shalmaneser III of Assyria. The Qedarite Gindibuʾ brings 1000 camelry, and Aḫuni of Bit-Adini joins the Levantine states.",
       "sources": [
@@ -23834,7 +23636,7 @@
       "start": -855,
       "tracks": [
         "bit-adini",
-        "as-neo"
+        "assyria"
       ],
       "descr": "The Aramean kingdom with its capital at Til Barsib is conquered and absorbed into the Assyrian Empire. (The page also places Aḫuni in the 853 Qarqar coalition, after this date.)",
       "sources": [
@@ -23859,7 +23661,7 @@
       "start": -749,
       "tracks": [
         "aram",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Imperial Aramaic becomes the empire's common language under Tiglath-Pileser III; it stays a lingua franca under the Neo-Babylonian and Achaemenid empires.",
       "sources": [
@@ -23896,7 +23698,7 @@
       "start": -851,
       "tracks": [
         "chaldeans",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Shalmaneser III subjugates Mushallim-Marduk, chief of the Amukani tribe: the first written attestation of the Chaldeans. Their tribes include Bit-Yâkin, Bet-Dakuri, Bet-Adini, Bet-Amukkani and Bet-Shilani.",
       "sources": [
@@ -23940,7 +23742,7 @@
       "tracks": [
         "chaldeans",
         "babylonia",
-        "as-neo"
+        "assyria"
       ],
       "descr": "A Chaldean of the Bit-Yakin tribe seizes the Babylonian throne from Assyrian control. An Assyrian attempt to defeat him near Der in 720 fails, but Sargon II eventually drives him from Babylon.",
       "sources": [
@@ -23959,7 +23761,7 @@
       "tracks": [
         "chaldeans",
         "babylonia",
-        "as-neo",
+        "assyria",
         "qedarites"
       ],
       "descr": "He reigns nine months before Sennacherib defeats him near Kish; he flees to Elam and dies in exile. The Qedarites back his revolt (his supporter Bašqanu is the brother of an Arab queen named Yaṯiʿe).",
@@ -24121,7 +23923,7 @@
       "end": -671,
       "tracks": [
         "hurrians",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Shupria stays an independent kingdom after the destruction of Mitanni until Assyria conquers it. By the Early Iron Age the Hurrians had been assimilated with other peoples.",
       "sources": [
@@ -24137,7 +23939,7 @@
       "start": -1449,
       "tracks": [
         "kaska",
-        "hit-middle"
+        "hittites"
       ],
       "descr": "They appear in prayers from the reign of Hantili II; Tudhaliya II's third campaign is against the Kaskas, and Arnuwanda I prays for the return of Nerik and tries to buy off some Kaska with tribute.",
       "sources": [
@@ -24155,7 +23957,7 @@
       "end": -1349,
       "tracks": [
         "kaska",
-        "hit-new"
+        "hittites"
       ],
       "descr": "Sometime between Arnuwanda I and Suppiluliuma I, the Kaska join Hayasa-Azzi and Isuwa to burn Hattusa to the ground. Tudhaliya III and Suppiluliuma I hold court at Samuha; Suppiluliuma defeats Piyapili's united tribes and Hattusa returns to the Hittites. The Kaska could field as many as 9,000 warriors and 800 chariots.",
       "sources": [
@@ -24188,7 +23990,7 @@
       "start": -1284,
       "tracks": [
         "kaska",
-        "hit-new"
+        "hittites"
       ],
       "descr": "In the early 13th century, while Muwatalli II is king, the Kaskas sack Hattusa; Hattusili III later recaptures Nerik.",
       "sources": [
@@ -24221,7 +24023,7 @@
       "start": -1159,
       "tracks": [
         "kaska",
-        "as-middle"
+        "assyria"
       ],
       "descr": "The Eastern Mushki, who moved into Hatti around the time the Hittite Empire collapsed, join the Urumu and the Kaska (Apishlu) in an attempt on Alzi and Puruhuzzi; Ashur-Dan I pushes them back and subjugates them.",
       "sources": [
@@ -24250,7 +24052,7 @@
       "title": "Tiglath-Pileser I turns back the Mushki",
       "start": -1113,
       "tracks": [
-        "as-middle",
+        "assyria",
         "kaska"
       ],
       "descr": "The Mushki push into Kadmuhi on the upper Tigris and are turned away by Tiglath-Pileser I, apparently settling in Alzi. He also records the Kaska (\"Apishlu\") late in the 12th century, after which they disappear from the records.",
@@ -24298,7 +24100,7 @@
       "start": -708,
       "tracks": [
         "phrygia",
-        "as-neo"
+        "assyria"
       ],
       "descr": "After joining an anti-Assyrian alliance with Tabal and Carchemish, the Mushki under Mita re-emerge as allies of Assyria; Sargon names Mita his friend. Assyrian sources identify the Western Mushki with the Phrygians, and some scholars think Mita became King Midas.",
       "sources": [
@@ -24320,7 +24122,7 @@
       "start": -737,
       "tracks": [
         "qedarites",
-        "as-neo"
+        "assyria"
       ],
       "descr": "With Rezin of Damascus, Menahem of Israel and Hiram II of Tyre, she acknowledges Assyrian hegemony: the first explicit mention of the Qedarites by name.",
       "sources": [
@@ -24343,7 +24145,7 @@
       "end": -731,
       "tracks": [
         "qedarites",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Šamši pledges allegiance after the 734 campaign and rebels in 733. Tiglath-Pileser III defeats the Qedarites near Mount Saqurri; she flees to the Wadi Sirhan but keeps her throne and later pays 125 white camels.",
       "sources": [
@@ -24365,7 +24167,7 @@
       "start": -690,
       "tracks": [
         "qedarites",
-        "as-neo"
+        "assyria"
       ],
       "descr": "Queen Teʾelḫunu and her daughter Tabūʿa are captured at Dūmat, and Ḫazaʾil surrenders and pays tribute.",
       "sources": [
@@ -24382,7 +24184,7 @@
       "end": -647,
       "tracks": [
         "qedarites",
-        "as-neo",
+        "assyria",
         "babylonia"
       ],
       "descr": "King Abyaṯiʿ supports the revolt against Ashurbanipal, and the Qedarites are trapped in Babylon. After it is suppressed they raid Assyria's western borderlands with the Nabataeans.",
@@ -24405,7 +24207,7 @@
       "start": -963,
       "tracks": [
         "rong-di",
-        "zhou-western"
+        "zhou"
       ],
       "descr": "The following year he attacks the Western Rong and the Xurong.",
       "sources": [
@@ -24423,7 +24225,7 @@
       "end": -840,
       "tracks": [
         "rong-di",
-        "zhou-western"
+        "zhou"
       ],
       "descr": "Under King Li. His successor King Xuan (827–782 BCE) sends Qin against the Western Rong, who submit and cede territory, and Jin against the Northern Rong.",
       "sources": [
@@ -24439,7 +24241,7 @@
       "start": -770,
       "tracks": [
         "rong-di",
-        "zhou-western"
+        "zhou"
       ],
       "descr": "The Marquess of Shen invites the Quanrong to join an attack on King You; the joint force occupies the capital Haojing, kills him and captures Bao Si. (The Xinian bamboo slips say King You attacked Shen, who allied with the Quanrong.) This ends the Western Zhou.",
       "sources": [
@@ -24470,7 +24272,7 @@
       "start": -659,
       "tracks": [
         "rong-di",
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "They kill its ruler but are driven out by Qi. Jin fights many wars with the Di from 660 to 507 BC. The page marks these entries as needing citations.",
       "sources": [
@@ -24486,7 +24288,7 @@
       "start": -649,
       "tracks": [
         "rong-di",
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "After 650 BCE the Rong are rarely mentioned; they seem to have been mostly absorbed by the states of Qi and Jin.",
       "sources": [
@@ -24513,7 +24315,7 @@
       "end": -295,
       "tracks": [
         "rong-di",
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "Some sources (Records of the Grand Historian) say Beidi founded and ruled it; others list it only as not Zhou or Han. Wei conquers it in 407, it regains independence in 381, and Zhao annexes it after ten years of war.",
       "sources": [
@@ -24565,7 +24367,7 @@
       "start": -313,
       "tracks": [
         "rong-di",
-        "zhou-eastern"
+        "zhou"
       ],
       "descr": "By 400 BC most of the Di and Rong had been eliminated as independent polities.",
       "sources": [
@@ -24584,7 +24386,7 @@
       "title": "The Medjay first recorded",
       "start": -2309,
       "tracks": [
-        "eg-old",
+        "pharaonic-egypt",
         "nubia"
       ],
       "descr": "The Autobiography of Weni, from the reign of Pepi I, is the first written mention of the Medjay. Until the end of the Second Intermediate Period the word denotes a Nubian people.",
@@ -24612,7 +24414,7 @@
       "start": -1799,
       "end": -1549,
       "tracks": [
-        "eg-sip",
+        "pharaonic-egypt",
         "nubia"
       ],
       "descr": "The page dates the pan-graves to the late Middle Kingdom and Second Intermediate Period. Medjay serve in Kamose's campaign against the Hyksos; by the 18th Dynasty they are an elite paramilitary police force, and after the 20th Dynasty the term no longer appears in Egyptian records.",
@@ -24645,8 +24447,8 @@
       "title": "\"Land of the Shasu yhw\" in Egyptian texts",
       "start": -1349,
       "tracks": [
-        "eg-new",
-        "can-lba"
+        "pharaonic-egypt",
+        "canaan"
       ],
       "descr": "A list of Egypt's enemies on column bases at Amenhotep III's temple at Soleb includes the name; Egyptian texts refer to 'the Land of the Shasu yhwꜣ'; a 13th-century copy at Amara, under Seti I or Ramesses II, names six Shasu groups. Astour notes this predates the Mesha Stele's use of the divine name by over 500 years. Shasu raids could cut Egypt's northern routes, prompting punitive campaigns by Ramesses II and Merneptah.",
       "sources": [

@@ -3326,25 +3326,28 @@
       "parent": "europe-med"
     },
     {
-      "id": "roman-republic",
-      "name": "Roman Republic",
-      "color": "#a83a3a",
+      "id": "rome-republic-empire",
+      "name": "Rome (Republic, then Empire)",
+      "color": "#a33a3a",
       "parent": "rome",
       "span": {
         "start": -508,
-        "end": -26,
+        "end": 476,
         "circa": true
-      }
-    },
-    {
-      "id": "roman-empire",
-      "name": "Roman Empire (and the Western Empire)",
-      "color": "#9a2a2a",
-      "parent": "rome",
-      "span": {
-        "start": -26,
-        "end": 476
-      }
+      },
+      "phases": [
+        {
+          "name": "Roman Republic",
+          "start": -508,
+          "end": -26,
+          "circa": true
+        },
+        {
+          "name": "Roman Empire (and the Western Empire)",
+          "start": -26,
+          "end": 476
+        }
+      ]
     },
     {
       "id": "eastern-roman",
@@ -3395,13 +3398,13 @@
       "parent": "near-east"
     },
     {
-      "id": "ptolemaic",
-      "name": "Ptolemaic Egypt",
-      "color": "#b08a4a",
+      "id": "ptolemaic-roman-egypt",
+      "name": "Ptolemaic and Roman Egypt",
+      "color": "#a8844a",
       "parent": "egypt",
       "span": {
         "start": -304,
-        "end": -29,
+        "end": 641,
         "startDates": [
           {
             "year": -304,
@@ -3418,17 +3421,35 @@
             }
           }
         ]
-      }
-    },
-    {
-      "id": "roman-egypt",
-      "name": "Roman and Byzantine Egypt",
-      "color": "#9a7a4a",
-      "parent": "egypt",
-      "span": {
-        "start": -29,
-        "end": 641
-      }
+      },
+      "phases": [
+        {
+          "name": "Ptolemaic Egypt",
+          "start": -304,
+          "end": -29,
+          "startDates": [
+            {
+              "year": -304,
+              "source": {
+                "sourceKey": "wp-ptolemaic",
+                "sourceLocation": "lead and infobox"
+              }
+            },
+            {
+              "year": -303,
+              "source": {
+                "sourceKey": "wp-ptolemaic",
+                "sourceLocation": "Notes, note 1 (some scholars)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Roman and Byzantine Egypt",
+          "start": -29,
+          "end": 641
+        }
+      ]
     },
     {
       "id": "levant",
@@ -4539,7 +4560,78 @@
       "span": {
         "start": -201,
         "end": 220
-      }
+      },
+      "phases": [
+        {
+          "name": "Western Han",
+          "start": -201,
+          "end": 9,
+          "startDates": [
+            {
+              "year": -201,
+              "source": {
+                "sourceKey": "wp-han",
+                "sourceLocation": "History, heading \"Western Han (202 BC – 9 AD)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 9,
+              "source": {
+                "sourceKey": "wp-han",
+                "sourceLocation": "History, heading \"Western Han (202 BC – 9 AD)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Xin",
+          "start": 9,
+          "end": 23,
+          "startDates": [
+            {
+              "year": 9,
+              "source": {
+                "sourceKey": "wp-han",
+                "sourceLocation": "infobox (\"9–23 AD: Xin\"; Historical era \"Xin dynasty 9–23 AD\")"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 23,
+              "source": {
+                "sourceKey": "wp-han",
+                "sourceLocation": "infobox (\"9–23 AD: Xin\"; Historical era \"Xin dynasty 9–23 AD\")"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Eastern Han",
+          "start": 25,
+          "end": 220,
+          "startDates": [
+            {
+              "year": 25,
+              "source": {
+                "sourceKey": "wp-han",
+                "sourceLocation": "History, heading \"Eastern Han (25–220 AD)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 220,
+              "source": {
+                "sourceKey": "wp-han",
+                "sourceLocation": "History, heading \"Eastern Han (25–220 AD)\""
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "three-kingdoms-china",
@@ -4559,47 +4651,87 @@
       "span": {
         "start": 266,
         "end": 420
-      }
+      },
+      "phases": [
+        {
+          "name": "Western Jin",
+          "start": 266,
+          "end": 316,
+          "startDates": [
+            {
+              "year": 266,
+              "source": {
+                "sourceKey": "wp-jin",
+                "sourceLocation": "lead (\"Western Jin (266–316 CE)\") and History heading"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 316,
+              "source": {
+                "sourceKey": "wp-jin",
+                "sourceLocation": "lead (\"Western Jin (266–316 CE)\") and History heading"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Eastern Jin",
+          "start": 317,
+          "end": 420,
+          "startDates": [
+            {
+              "year": 317,
+              "source": {
+                "sourceKey": "wp-jin",
+                "sourceLocation": "lead (\"Eastern Jin (317–420 CE)\") and History heading"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 420,
+              "source": {
+                "sourceKey": "wp-jin",
+                "sourceLocation": "lead (\"Eastern Jin (317–420 CE)\") and History heading"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "liu-song",
-      "name": "Liu Song (south)",
-      "color": "#7a5a8a",
+      "id": "southern-dynasties",
+      "name": "Southern dynasties",
+      "color": "#6a5a8a",
       "parent": "china",
       "span": {
         "start": 420,
-        "end": 479
-      }
-    },
-    {
-      "id": "southern-qi",
-      "name": "Southern Qi",
-      "color": "#6a5a9a",
-      "parent": "china",
-      "span": {
-        "start": 479,
-        "end": 502
-      }
-    },
-    {
-      "id": "liang",
-      "name": "Liang (south)",
-      "color": "#8a6a9a",
-      "parent": "china",
-      "span": {
-        "start": 502,
-        "end": 557
-      }
-    },
-    {
-      "id": "chen",
-      "name": "Chen (south)",
-      "color": "#5a4a8a",
-      "parent": "china",
-      "span": {
-        "start": 557,
         "end": 589
-      }
+      },
+      "phases": [
+        {
+          "name": "Liu Song",
+          "start": 420,
+          "end": 479
+        },
+        {
+          "name": "Southern Qi",
+          "start": 479,
+          "end": 502
+        },
+        {
+          "name": "Liang",
+          "start": 502,
+          "end": 557
+        },
+        {
+          "name": "Chen",
+          "start": 557,
+          "end": 589
+        }
+      ]
     },
     {
       "id": "sixteen-kingdoms",
@@ -4612,70 +4744,57 @@
       }
     },
     {
-      "id": "northern-wei",
-      "name": "Northern Wei",
-      "color": "#5a6a8a",
+      "id": "northern-dynasties",
+      "name": "Northern dynasties",
+      "color": "#4a6a8a",
       "parent": "china",
       "span": {
         "start": 386,
-        "end": 535
-      }
-    },
-    {
-      "id": "eastern-wei",
-      "name": "Eastern Wei",
-      "color": "#4a6a7a",
-      "parent": "china",
-      "span": {
-        "start": 534,
-        "end": 550
-      }
-    },
-    {
-      "id": "western-wei",
-      "name": "Western Wei",
-      "color": "#3a5a6a",
-      "parent": "china",
-      "span": {
-        "start": 535,
-        "end": 557,
-        "startDates": [
-          {
-            "year": 535,
-            "source": {
-              "sourceKey": "wp-western-wei",
-              "sourceLocation": "infobox (18 February 535)"
-            }
-          },
-          {
-            "year": 534,
-            "source": {
-              "sourceKey": "wp-western-wei",
-              "sourceLocation": "infobox (8 November 534, start of the division)"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "northern-qi",
-      "name": "Northern Qi",
-      "color": "#5a7a8a",
-      "parent": "china",
-      "span": {
-        "start": 550,
-        "end": 577
-      }
-    },
-    {
-      "id": "northern-zhou",
-      "name": "Northern Zhou",
-      "color": "#2a4a5a",
-      "parent": "china",
-      "span": {
-        "start": 557,
         "end": 581
-      }
+      },
+      "phases": [
+        {
+          "name": "Northern Wei",
+          "start": 386,
+          "end": 535
+        },
+        {
+          "name": "Eastern Wei",
+          "start": 534,
+          "end": 550
+        },
+        {
+          "name": "Western Wei",
+          "start": 535,
+          "end": 557,
+          "startDates": [
+            {
+              "year": 535,
+              "source": {
+                "sourceKey": "wp-western-wei",
+                "sourceLocation": "infobox (18 February 535)"
+              }
+            },
+            {
+              "year": 534,
+              "source": {
+                "sourceKey": "wp-western-wei",
+                "sourceLocation": "infobox (8 November 534, start of the division)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Northern Qi",
+          "start": 550,
+          "end": 577
+        },
+        {
+          "name": "Northern Zhou",
+          "start": 557,
+          "end": 581
+        }
+      ]
     },
     {
       "id": "sui",
@@ -6736,7 +6855,7 @@
       "title": "Ptolemy I becomes pharaoh: the Ptolemaic Kingdom",
       "start": -304,
       "tracks": [
-        "ptolemaic"
+        "ptolemaic-roman-egypt"
       ],
       "descr": "Ptolemy, who had ruled Egypt as satrap since 323 BC, takes the title of basileus and pharaoh. The kingdom lasts until the death of Cleopatra VII in 30 BC.",
       "sources": [
@@ -6774,7 +6893,7 @@
       "title": "The Library of Alexandria",
       "start": -284,
       "tracks": [
-        "ptolemaic"
+        "ptolemaic-roman-egypt"
       ],
       "descr": "Probably built under Ptolemy II Philadelphus (285–246 BC), though Ptolemy I may have planned it. Its decline begins with a purge of intellectuals in 145 BC; part is burned by Julius Caesar in 48 BC.",
       "sources": [
@@ -6865,7 +6984,7 @@
       "title": "The Rosetta Stone decree",
       "start": -195,
       "tracks": [
-        "ptolemaic"
+        "ptolemaic-roman-egypt"
       ],
       "descr": "A decree issued at Memphis on behalf of Ptolemy V Epiphanes on 27 March 196 BC.",
       "sources": [
@@ -6881,7 +7000,7 @@
       "start": -167,
       "tracks": [
         "antigonid",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Defeat in the Third Macedonian War ends the dynasty that had ruled much of Hellenistic Greece since 294 BC.",
       "sources": [
@@ -6897,7 +7016,7 @@
       "start": -132,
       "tracks": [
         "pergamon",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "The childless king bequeaths his realm to the Roman Republic; after a revolt it becomes the Roman province of Asia (129 BC).",
       "sources": [
@@ -6913,7 +7032,7 @@
       "start": -263,
       "end": -240,
       "tracks": [
-        "roman-republic",
+        "rome-republic-empire",
         "carthage"
       ],
       "descr": "It breaks out on Sicily and lasts twenty-three years, until Carthage is defeated.",
@@ -6930,7 +7049,7 @@
       "start": -217,
       "end": -200,
       "tracks": [
-        "roman-republic",
+        "rome-republic-empire",
         "carthage"
       ],
       "descr": "Hannibal is defeated at Zama in 202 BC and a treaty follows in 201 BC.",
@@ -6954,7 +7073,7 @@
       "start": -145,
       "tracks": [
         "carthage",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Rome declares war in 149 BC and storms Carthage in 146 BC; its territory becomes the Roman province of Africa.",
       "sources": [
@@ -6977,7 +7096,7 @@
       "start": -52,
       "tracks": [
         "parthia",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Fought between the Roman Republic and the Parthian Empire; Cicero called the war \"nulla causa\", since Parthia had a treaty with Rome.",
       "sources": [
@@ -6992,7 +7111,7 @@
       "title": "Julius Caesar assassinated",
       "start": -43,
       "tracks": [
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Killed on the Ides of March (15 March), three days before he was to leave on a campaign against the Parthians; the Liberators’ civil war follows (43–42 BC).",
       "sources": [
@@ -7008,8 +7127,8 @@
       "title": "Battle of Actium",
       "start": -30,
       "tracks": [
-        "roman-republic",
-        "ptolemaic"
+        "rome-republic-empire",
+        "ptolemaic-roman-egypt"
       ],
       "descr": "On 2 September 31 BC Octavian’s fleet under Agrippa defeats Antony and Cleopatra. Cleopatra takes her life on 12 August 30 BC, ending the Ptolemaic Kingdom and the Hellenistic period, and Egypt becomes a Roman province.",
       "sources": [
@@ -7029,8 +7148,7 @@
       "title": "Octavian becomes Augustus: the Roman Empire",
       "start": -26,
       "tracks": [
-        "roman-empire",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "The Senate grants Octavian the title Augustus on 16 January 27 BC, often seen as the end of the Republic. He rules as the first emperor until his death in AD 14 and makes peace with Parthia and Kush.",
       "sources": [
@@ -7060,7 +7178,7 @@
       "title": "The Roman Empire at its greatest extent",
       "start": 117,
       "tracks": [
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "At the time of Trajan’s death (r. 98–117 AD) the empire covers some 5,000,000 km².",
       "sources": [
@@ -7076,7 +7194,7 @@
       "start": 235,
       "end": 284,
       "tracks": [
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "It begins with the assassination of Severus Alexander by his own troops; by 268 the empire has split into three competing states, and Aurelian (270–275) turns the tide.",
       "sources": [
@@ -7108,7 +7226,7 @@
       "start": 293,
       "end": 324,
       "tracks": [
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Diocletian divides imperial rule between two augusti and two caesares; Constantine’s victory at the Milvian Bridge (312) begins its end.",
       "sources": [
@@ -7123,7 +7241,7 @@
       "title": "Edict of Milan",
       "start": 313,
       "tracks": [
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "The 13 February 313 agreement to treat Christians benevolently; Christianity becomes the state religion with the Edict of Thessalonica in 380.",
       "sources": [
@@ -7139,7 +7257,7 @@
       "title": "Constantinople becomes the capital",
       "start": 330,
       "tracks": [
-        "roman-empire",
+        "rome-republic-empire",
         "eastern-roman"
       ],
       "descr": "Founded in 324 on the site of Byzantium and dedicated on 11 May 330 as the new eastern capital of the Roman Empire.",
@@ -7160,7 +7278,7 @@
       "title": "Battle of Adrianople",
       "start": 378,
       "tracks": [
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "In 376 the Huns had driven many Goths into the empire; at Adrianople they defeat the Romans.",
       "sources": [
@@ -7179,7 +7297,7 @@
       "title": "Death of Theodosius I: East and West divide",
       "start": 395,
       "tracks": [
-        "roman-empire",
+        "rome-republic-empire",
         "eastern-roman"
       ],
       "descr": "He dies after making Christianity the state religion, ending the unified empire (27 BC – AD 395).",
@@ -7199,7 +7317,7 @@
       "title": "The Visigoths sack Rome",
       "start": 410,
       "tracks": [
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "On 24 August 410 Alaric’s Visigoths enter Rome and pillage it for three days. The Vandals sack it again in 455.",
       "sources": [
@@ -7221,7 +7339,7 @@
       "title": "Fall of the Western Roman Empire",
       "start": 476,
       "tracks": [
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Odoacer deposes Romulus Augustulus, the last Western emperor, and sends the imperial insignia to the Eastern emperor Zeno.",
       "sources": [
@@ -7423,7 +7541,7 @@
       "start": 70,
       "tracks": [
         "judea",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "The decisive event of the First Jewish Revolt (66–73 CE): the siege runs from 13 April to 8 September 70.",
       "sources": [
@@ -7441,7 +7559,7 @@
       "end": 136,
       "tracks": [
         "judea",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Sparked by Hadrian’s plan to rebuild Jerusalem as Aelia Capitolina; the rebels hold an independent state for over three years until Betar falls in 135. The province is renamed Syria Palaestina.",
       "sources": [
@@ -7463,7 +7581,7 @@
       "start": 106,
       "tracks": [
         "nabataea",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Independent since the mid-3rd century BC, it becomes the province of Arabia Petraea.",
       "sources": [
@@ -7500,7 +7618,7 @@
       "start": 260,
       "tracks": [
         "sasanian",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "A disastrous Roman defeat: in 260, probably in June, the emperor Valerian is defeated at Edessa and held prisoner by Shapur I; the date of his death in captivity is debated. The same year Odaenathus of Palmyra defeats Shapur near the Euphrates.",
       "sources": [
@@ -7525,7 +7643,7 @@
       "end": 273,
       "tracks": [
         "palmyra",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "In 270 Zenobia rapidly conquers most of the Roman east, including Egypt; in 271 she claims the imperial title. Aurelian besieges Palmyra in 272 and razes it after a revolt in 273.",
       "sources": [
@@ -8700,7 +8818,7 @@
       "title": "Northern Wei unifies the north",
       "start": 439,
       "tracks": [
-        "northern-wei",
+        "northern-dynasties",
         "sixteen-kingdoms"
       ],
       "descr": "The unification of northern China ends the Sixteen Kingdoms period. The Northern Wei, established on 20 February 386, rules from Pingcheng until it moves its capital to Luoyang on 25 October 493.",
@@ -8721,7 +8839,7 @@
       "start": 589,
       "tracks": [
         "sui",
-        "chen"
+        "southern-dynasties"
       ],
       "descr": "Yang Jian takes the throne on 4 March 581; in 588 the Sui mass 518,000 troops along the Yangtze, and by 589 Sui troops enter Jiankang.",
       "sources": [
@@ -9534,7 +9652,7 @@
       "start": 451,
       "tracks": [
         "huns",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "On 20 June 451, after Attila crosses the Rhine and invades Gaul, Aetius and Theodoric (who is killed) meet him in battle; the result is inconclusive. In 452 the Huns invade Italy.",
       "sources": [
@@ -9687,7 +9805,7 @@
       "end": -104,
       "tracks": [
         "numidia",
-        "roman-republic",
+        "rome-republic-empire",
         "mauretania"
       ],
       "descr": "In 113 BC Jugurtha again declares war on his cousin; Rome declares war on him in 111 BC, and Metellus arrives in Africa in 109 BC. Mauretania fights on Jugurtha’s side from 107 BC and on Rome’s in 105 BC.",
@@ -9720,7 +9838,7 @@
       "start": -45,
       "tracks": [
         "numidia",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Juba I’s reign (60–46 BC) ends. The Numidia infobox dates the annexation by the Roman Empire to 25 BC.",
       "sources": [
@@ -9757,7 +9875,7 @@
       "end": 23,
       "tracks": [
         "mauretania",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "After Bocchus II bequeaths his kingdom to Octavian (33 BC), Augustus makes Mauretania a client kingdom in 25 BC under Juba II, who marries Cleopatra Selene II the same year. In AD 21 Juba makes his son Ptolemy co-ruler.",
       "sources": [
@@ -9790,7 +9908,7 @@
       "end": 44,
       "tracks": [
         "mauretania",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Caligula orders the execution of King Ptolemy in 40 AD; after Aedemon’s death in 42 AD, Sabalus surrenders in 44 AD and the region is annexed to Rome.",
       "sources": [
@@ -9812,7 +9930,7 @@
       "start": -18,
       "tracks": [
         "garamantes",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "The Romans capture fifteen Garamantian settlements. The earliest written record of the Garamantes, by Herodotus, dates to the 5th century BC.",
       "sources": [
@@ -9829,7 +9947,7 @@
       "start": 202,
       "tracks": [
         "garamantes",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "The Garamantian capital falls to Rome. The Garamantes first emerge as a major regional power in the mid-2nd century AD and flourish until the late 7th century.",
       "sources": [
@@ -9847,7 +9965,7 @@
       "end": 435,
       "tracks": [
         "vandals",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "An estimated 80,000 Vandals under Gaiseric cross from Hispania in 429. They besiege Hippo Regius in 430, where St. Augustine dies on 28 August 430, three months into the siege; peace is made with Rome in 435.",
       "sources": [
@@ -9863,7 +9981,7 @@
       "start": 439,
       "tracks": [
         "vandals",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Gaiseric breaks the treaty and captures Carthage, which becomes his capital. The Vandals raid Sicily in 440, and peace is secured in 442.",
       "sources": [
@@ -9886,7 +10004,7 @@
       "start": 455,
       "tracks": [
         "vandals",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "In the 460s the Romans launch two expeditions by sea against the Vandal kingdom.",
       "sources": [
@@ -10012,7 +10130,7 @@
       "end": -21,
       "tracks": [
         "kush",
-        "roman-egypt"
+        "ptolemaic-roman-egypt"
       ],
       "descr": "After a Nubian attack on southern Egypt, the Roman governor Petronius invades Nubia and sacks Napata (22 BC; 23 BC on the Napata page). A peace treaty is signed in 22 BC between Rome and Meroë under Augustus and Amanirenas.",
       "sources": [
@@ -10038,7 +10156,7 @@
       "start": 61,
       "tracks": [
         "kush",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "In the autumn of 61 AD a Praetorian party sent by Nero reaches Meroë and goes up the White Nile to the Sudd. The kingdom begins to fade as a power by the 1st or 2nd century AD.",
       "sources": [
@@ -10289,7 +10407,7 @@
       "start": 55,
       "tracks": [
         "aksum",
-        "roman-egypt"
+        "ptolemaic-roman-egypt"
       ],
       "descr": "A Greek merchants’ guide to the Red Sea and Indian Ocean; a mid-first-century date is now most commonly accepted. It describes the city of the Auxumites, its ivory trade, and its ruler Zoscales.",
       "sources": [
@@ -10671,7 +10789,7 @@
       "start": 639,
       "end": 642,
       "tracks": [
-        "roman-egypt",
+        "ptolemaic-roman-egypt",
         "early-islam"
       ],
       "descr": "Amr ibn al-As invades in December 639 with some 4,000 men. The Rashidun army wins at Heliopolis on 6 July 640, takes the Babylon Fortress after a siege from September 640 to 6 April 641, and besieges Alexandria from March 641; by September 642 the caliphate has annexed Egypt, Cyrenaica and Tripolitania.",
@@ -10750,7 +10868,7 @@
       "start": -188,
       "tracks": [
         "galatia",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Rome sends Gnaeus Manlius Vulso on an expedition against the Galatians.",
       "sources": [
@@ -10768,7 +10886,7 @@
       "end": -132,
       "tracks": [
         "west-med",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "A revolt of the Celtiberians of Numantia in Hispania; the first phase ends in 151, and war flares up again in 143. In 134 BC Scipio Aemilianus is sent to end it, and Numantia falls in 133, opening an era of peace in Hispania until the Sertorian War.",
       "sources": [
@@ -10800,7 +10918,7 @@
       "start": -120,
       "tracks": [
         "celts",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Rome conquers a group of southern Gauls and establishes the province of Transalpine Gaul.",
       "sources": [
@@ -10821,7 +10939,7 @@
       "end": -100,
       "tracks": [
         "europe",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Having left the North Sea around 120–115 BC, the Cimbri reach Noricum on the Danube in 113 BC. They invade Gallia Narbonensis in 109 and meet the consul Mallius Maximus and proconsul Caepio at Arausio in 105; Marius is consul five years in a row from 104 BC.",
       "sources": [
@@ -10838,7 +10956,7 @@
       "end": -49,
       "tracks": [
         "celts",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Beginning with the migration of the Helvetii in 58 BC, Caesar resolves to conquer all of Gaul (57), defeats the Veneti at sea (56) and crosses to Britain (55–54). Vercingetorix leads a major revolt in 52. The coming civil war withdraws Caesar’s troops in 50; Gaul becomes a Roman province in 27 BC, but resistance lasts until as late as 70 AD.",
       "sources": [
@@ -10865,7 +10983,7 @@
       "start": -51,
       "tracks": [
         "celts",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "In September 52 BC Caesar besieges Vercingetorix, building some 25 miles of fortifications in a month; Vercingetorix surrenders.",
       "sources": [
@@ -10891,7 +11009,7 @@
       "start": 43,
       "tracks": [
         "roman-britain",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Four legions under Aulus Plautius invade; by 47 AD the Romans hold the lands southeast of the Fosse Way. Caligula had massed 200,000 men at the Channel in 40 AD.",
       "sources": [
@@ -10974,7 +11092,7 @@
       "start": 122,
       "tracks": [
         "roman-britain",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Begun in AD 122, in the reign of Hadrian; most of it takes six years to build, by some 15,000 soldiers of three legions. The turf Antonine Wall follows in AD 142.",
       "sources": [
@@ -10991,7 +11109,7 @@
       "start": 410,
       "tracks": [
         "roman-britain",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "The final Roman withdrawal comes around 410 AD; the Anglo-Saxon settlement page gives the traditional end as 411, and the Chronica Gallica of 452 says Britain was ravaged by Saxon invaders in 409 or 410.",
       "sources": [
@@ -11059,7 +11177,7 @@
       "start": 9,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Between 8 and 11 September 9 AD, possibly near Kalkriese; the infobox counts 16,000–20,000 killed. The next major Roman incursion into Germania comes under Marcus Aurelius (r. 161–180).",
       "sources": [
@@ -11077,7 +11195,7 @@
       "end": 180,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "After incursions into Raetia and Germania Superior (162–165), thousands of Langobardi and Lacringi cross into Pannonia in late 166, beginning wars that last until 180 under Marcus Aurelius.",
       "sources": [
@@ -11094,7 +11212,7 @@
       "end": 106,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Trajan ends Domitian’s treaty of 89 AD with Decebalus. The first war (101–102) ends when Decebalus makes peace; in the second (105–106) the Dacian capital falls and Decebalus kills himself. Southern Dacia is annexed, and Trajan announces 123 days of celebrations.",
       "sources": [
@@ -11116,7 +11234,7 @@
       "start": 358,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "The first known Frankish tribe to settle with official Roman permission. The Franks are first named during the crisis of the 3rd century; Constantine executes Frankish prisoners at Trier in 306.",
       "sources": [
@@ -11138,7 +11256,7 @@
       "end": 410,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "The treaty of 382, after Adrianople, is the first foedus on imperial Roman soil. Alaric, king from 395, sacks Athens in 396 and invades Italy in 401 or 402; he dies at Consentia in 411.",
       "sources": [
@@ -11164,7 +11282,7 @@
       "start": 406,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Traditionally on 31 December 406, near Mainz; Kulikowski argues for 31 December 405. The invaders cross into Spain in September or October 409.",
       "sources": [
@@ -11235,7 +11353,7 @@
       "start": 418,
       "tracks": [
         "visigoths",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Honorius rewards his Visigothic federates under King Wallia with land in the Garonne valley; with their capital at Toulouse they remain de facto independent, becoming a sovereign state in 475.",
       "sources": [
@@ -11258,7 +11376,7 @@
       "end": 443,
       "tracks": [
         "burgundians",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "King Gundahar, settled on the west bank of the Rhine since 411, is killed in about 436; in 443 the remaining Burgundians are resettled in Sapaudia.",
       "sources": [
@@ -12489,7 +12607,7 @@
       "start": 166,
       "tracks": [
         "funan",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Funan’s port yields Roman gold medallions from the reign of Antoninus Pius and possibly Marcus Aurelius; Chinese texts tell of Romans arriving to conduct diplomacy in 166.",
       "sources": [
@@ -12966,7 +13084,7 @@
       "title": "Liu Yu ends the Eastern Jin: the Liu Song",
       "start": 420,
       "tracks": [
-        "liu-song",
+        "southern-dynasties",
         "jin-china"
       ],
       "descr": "Having led the rising against the usurper Huan Xuan in 404, Liu Yu ends Southern Yan (410) and takes Luoyang (416). On 10 July 420 Emperor Gong of Jin yields the throne to him at Jiankang; he dies on 26 June 422.",
@@ -12988,8 +13106,8 @@
       "start": 425,
       "end": 453,
       "tracks": [
-        "liu-song",
-        "northern-wei"
+        "southern-dynasties",
+        "northern-dynasties"
       ],
       "descr": "Emperor Wen’s long reign; but he loses three commanderies to the Northern Wei in his first year, his campaigns against Wei fail in 450 and 452, and in 453 his son Liu Shao assassinates him.",
       "sources": [
@@ -13005,7 +13123,7 @@
       "start": 464,
       "end": 465,
       "tracks": [
-        "liu-song"
+        "southern-dynasties"
       ],
       "descr": "At Louxian he compiles the Daming calendar (introduced in 465, with a year of 365.24281481 days) and calculates π as between 3.1415926 and 3.1415927, a precision not surpassed for nearly 900 years.",
       "sources": [
@@ -13020,8 +13138,7 @@
       "title": "Xiao Daocheng founds the Southern Qi",
       "start": 479,
       "tracks": [
-        "southern-qi",
-        "liu-song"
+        "southern-dynasties"
       ],
       "descr": "On 3 June 479 he forces Emperor Shun of Liu Song to yield the throne. Sieges and skirmishes with the Northern Wei follow until 481, and peace is signed in 490.",
       "sources": [
@@ -13041,8 +13158,7 @@
       "start": 502,
       "end": 549,
       "tracks": [
-        "liang",
-        "southern-qi"
+        "southern-dynasties"
       ],
       "descr": "Xiao Yan, a Southern Qi royal and general, takes the throne on 30 April 502. By 517 Buddhist influence is plain in his policies; a Persian embassy brings tribute in 547. He dies on 12 June 549, during Hou Jing’s rebellion.",
       "sources": [
@@ -13062,7 +13178,7 @@
       "start": 548,
       "end": 552,
       "tracks": [
-        "liang"
+        "southern-dynasties"
       ],
       "descr": "The former Eastern Wei general rebels in the summer of 548 and besieges Jiankang that winter; the city falls in 549 (24 April in the Liang infobox). He makes and unmakes emperors, declares himself Emperor of Han on 1 January 552, and dies around 26 May 552 after Chen Baxian and Xiao Yi’s generals retake Jiankang.",
       "sources": [
@@ -13092,8 +13208,8 @@
       "title": "Western Wei sacks Jiangling",
       "start": 555,
       "tracks": [
-        "liang",
-        "western-wei"
+        "southern-dynasties",
+        "northern-dynasties"
       ],
       "descr": "The Liang capital falls; Western Wei installs Xiao Cha as emperor of a rump Western Liang at Jiangling, which lasts until the Sui conquer it in 587.",
       "sources": [
@@ -13128,8 +13244,7 @@
       "title": "Chen Baxian founds the Chen",
       "start": 557,
       "tracks": [
-        "chen",
-        "liang"
+        "southern-dynasties"
       ],
       "descr": "On 16 November 557 the former Liang general has Emperor Jing yield the throne to him; he dies in 559.",
       "sources": [
@@ -13149,7 +13264,7 @@
       "start": 485,
       "end": 496,
       "tracks": [
-        "northern-wei"
+        "northern-dynasties"
       ],
       "descr": "The equal-field land system is enacted in 485; in 493–494 the capital moves from Pingcheng to Luoyang; edicts of 495 ban Xianbei clothing and language, and in 496 Xianbei family names are changed to Han ones.",
       "sources": [
@@ -13166,7 +13281,7 @@
       "start": 471,
       "end": 494,
       "tracks": [
-        "northern-wei"
+        "northern-dynasties"
       ],
       "descr": "Near Pingcheng (Datong) the first period of carving ends in 465; a second phase under imperial supervision runs from around 471 to 494, when the court moves to Luoyang. Private patronage continues until 525.",
       "sources": [
@@ -13181,7 +13296,7 @@
       "title": "The Longmen Grottoes begun",
       "start": 493,
       "tracks": [
-        "northern-wei"
+        "northern-dynasties"
       ],
       "descr": "Carving at Luoyang starts with the Northern Wei; the middle Binyang cave is made between 500 and 523. About 30% of the carvings date from the Northern Wei and 60% from the Tang.",
       "sources": [
@@ -13218,7 +13333,7 @@
       "title": "The Six Garrisons revolt",
       "start": 524,
       "tracks": [
-        "northern-wei"
+        "northern-dynasties"
       ],
       "descr": "Agrarian rebels overrun the Northern Wei’s northern provinces.",
       "sources": [
@@ -13234,9 +13349,7 @@
       "start": 534,
       "end": 535,
       "tracks": [
-        "northern-wei",
-        "eastern-wei",
-        "western-wei"
+        "northern-dynasties"
       ],
       "descr": "In the fall of 534 Emperor Xiaowu flees west to Yuwen Tai; Gao Huan installs Yuan Shanjian as Eastern Wei emperor (8 November 534), and around the new year 535 Yuwen Tai poisons Xiaowu and enthrones Emperor Wen of Western Wei (18 February 535).",
       "sources": [
@@ -13260,8 +13373,7 @@
       "title": "Battle of Shayuan",
       "start": 537,
       "tracks": [
-        "eastern-wei",
-        "western-wei"
+        "northern-dynasties"
       ],
       "descr": "After the volcanic winter of 536 brings famine to the Guanzhong, Gao Huan launches a major attack on Western Wei in the spring of 537, met at Shayuan; that winter Dugu Xin captures Luoyang.",
       "sources": [
@@ -13281,8 +13393,7 @@
       "title": "Gao Yang founds the Northern Qi",
       "start": 550,
       "tracks": [
-        "northern-qi",
-        "eastern-wei"
+        "northern-dynasties"
       ],
       "descr": "Gao Huan’s son deposes Emperor Xiaojing of Eastern Wei; the Northern Qi is established on 9 June 550, with its capital at Yecheng.",
       "sources": [
@@ -13302,8 +13413,7 @@
       "title": "Yuwen Hu founds the Northern Zhou",
       "start": 557,
       "tracks": [
-        "northern-zhou",
-        "western-wei"
+        "northern-dynasties"
       ],
       "descr": "After Yuwen Tai’s death in 556, his nephew Yuwen Hu forces Emperor Gong of Western Wei to yield the throne; the Northern Zhou is established at Chang’an on 15 February 557.",
       "sources": [
@@ -13322,8 +13432,7 @@
       "title": "Northern Zhou conquers the Northern Qi",
       "start": 577,
       "tracks": [
-        "northern-zhou",
-        "northern-qi"
+        "northern-dynasties"
       ],
       "descr": "Emperor Wu’s campaign of 576–577 destroys the Northern Qi; its last emperors are captured (28 February 577) and die in late 577.",
       "sources": [
@@ -13348,7 +13457,7 @@
       "start": 580,
       "end": 581,
       "tracks": [
-        "northern-zhou",
+        "northern-dynasties",
         "sui"
       ],
       "descr": "When Emperor Xuan dies in 580, his father-in-law Yang Jian seizes power as regent; his general Wei Xiaokuan defeats Yuchi Jiong within 68 days. On 4 March 581 Emperor Jing abdicates in his favour.",
@@ -14133,7 +14242,7 @@
       "start": 452,
       "tracks": [
         "huns",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Attila returns in 452 to renew his claim to Honoria, razes Aquileia and halts at the River Po. Pope Leo I and two envoys meet him at the Mincio near Mantua and obtain his promise to withdraw; Italy had suffered famine in 451, and an East Roman force had crossed the Danube. He dies in the early months of 453.",
       "sources": [
@@ -14156,7 +14265,7 @@
       "start": -45,
       "tracks": [
         "numidia",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "Caesar defeats the Optimates under Metellus Scipio, with Juba I of Numidia, on 6 April 46 BC (the pre-reform Roman calendar; 7 February by the Julian). Cato commits suicide on news of the defeat, and Juba has a slave kill him after a duel with Petreius. Caesar returns to Rome on 25 July.",
       "sources": [
@@ -14178,7 +14287,7 @@
       "start": 618,
       "end": 629,
       "tracks": [
-        "roman-egypt",
+        "ptolemaic-roman-egypt",
         "sasanian"
       ],
       "descr": "The Persian invasion begins in 617 or 618; Alexandria is betrayed to the Persians in June 619 (Khuzistan Chronicle), and by 621 the province is securely in Persian hands. Egypt stays Persian for 10 years: in the summer of 629 the Persian troops begin to leave.",
@@ -14217,7 +14326,7 @@
       "start": -101,
       "tracks": [
         "europe",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "At Aquae Sextiae (Aix-en-Provence) the Romans under Gaius Marius defeat the Teutons and Ambrones.",
       "sources": [
@@ -14239,7 +14348,7 @@
       "start": -100,
       "tracks": [
         "europe",
-        "roman-republic"
+        "rome-republic-empire"
       ],
       "descr": "On 30 July 101 BC, near Vercellae in Cisalpine Gaul, Marius and Catulus defeat a Celtic-Germanic confederation under the Cimbric king Boiorix, ending the Cimbrian War.",
       "sources": [
@@ -14284,7 +14393,7 @@
       "end": 16,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "Between 14 and 16 Germanicus leads punitive operations against the Germanic tribes, defeating Arminius twice (according to Tacitus), first at Idistaviso. Roman troops recover one of the three lost legionary eagles in 15 and a second in 16. Germanicus dies in Antioch on 10 October 19; Arminius, seeking to become a king, is murdered by opponents in his own tribe in 21.",
       "sources": [
@@ -14310,7 +14419,7 @@
       "start": 251,
       "tracks": [
         "europe",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "In the summer of 251 (June, July or August), near Abritus (modern Razgrad) in Moesia Inferior, Goths under Cniva defeat the Roman army; the emperors Decius and his son Herennius Etruscus are both killed.",
       "sources": [
@@ -14326,7 +14435,7 @@
       "start": 376,
       "tracks": [
         "visigoths",
-        "roman-empire"
+        "rome-republic-empire"
       ],
       "descr": "In the summer of 376 a massive number of Goths arrive on the Danube; the Thervings are probably allowed to cross at or near Durostorum. The Gothic War that follows lasts until 382.",
       "sources": [
@@ -14596,8 +14705,8 @@
       "title": "Wu Mingche’s northern campaign",
       "start": 573,
       "tracks": [
-        "chen",
-        "northern-qi"
+        "southern-dynasties",
+        "northern-dynasties"
       ],
       "descr": "In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall Wu Mingche holds Shouyang, and the land between the Yangtze and the Huai is entirely in Chen hands.",
       "sources": [
@@ -14617,8 +14726,8 @@
       "title": "Northern Zhou captures Wu Mingche",
       "start": 578,
       "tracks": [
-        "chen",
-        "northern-zhou"
+        "southern-dynasties",
+        "northern-dynasties"
       ],
       "descr": "After Northern Zhou destroys Northern Qi in 577, the Zhou general Wang Gui captures Wu Mingche and some 30,000 foot soldiers on 20 March 578.",
       "sources": [

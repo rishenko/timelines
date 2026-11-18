@@ -363,3 +363,24 @@ ways, and brought it up to date:
 
 From now on, overlap events are fixed in the ancient data and copied again by a replay; `apply-text-fixes.ts` warns
 when an event has no defining script.
+
+## Periods as phases (18 November 2026)
+
+`scripts/classical/phases.ts` (after `summary-only.ts`, before `collapsed.ts`; rules in `scripts/lib/phases.ts`), following
+the Ancient timeline. Rows for successive periods of one state, or successive dynasties of one half of China, became
+phases on one row; separate powers stay rows (Qin, the Three Kingdoms, the Sixteen Kingdoms, Sui, Tang; Seleucid,
+Parthian, Sasanian; Maurya, Shunga, Gupta; the Eastern Roman Empire, which outlives the period).
+
+- **Converted, dates unchanged:** **Southern dynasties** (Liu Song, Southern Qi, Liang, Chen); **Northern dynasties**
+  (Northern Wei, Eastern and Western Wei, Northern Qi, Northern Zhou; the rivals' names stack); **Rome (Republic, then
+  Empire)**; **Ptolemaic and Roman Egypt** (Ptolemaic; Roman and Byzantine).
+- **New phases inside a row** (pages read 2026-11-18; no banners on either):
+  - Han (`wp-han`): Western Han 202 BCE – 9 CE (History heading "Western Han (202 BC – 9 AD)"); Xin 9–23 CE (infobox
+    "9–23 AD: Xin"); Eastern Han 25–220 CE (History heading "Eastern Han (25–220 AD)"). Xin is cited from the Han page
+    because the *Xin dynasty* page carries a translation banner pointing to an LLM-translation guideline. The 23–25
+    gap (the Gengshi Emperor) was read only in summary, so it stays blank.
+  - Jin (`wp-jin`): Western Jin 266–316, Eastern Jin 317–420 (lead and History headings). The lead also says Emperor
+    Min was executed in 318, "ending the Western Jin era"; the stated 316 was kept.
+- **Not split:** no page read states when Roman Egypt became "Byzantine" (the *Roman Egypt* page, which *Byzantine
+  Egypt* redirects to, gives the 381 Diocese and Diocletian's reforms, not a Byzantine start), so Egypt has no
+  Byzantine phase. The page's own end dates also disagree (641 navbox, 642 lead, 646 infobox); the row keeps 641.
