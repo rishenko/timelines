@@ -54,10 +54,16 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 
 ## Later
 
-### Next phase of the ancient timeline: after 330 BCE
+### The Classical World (c. 500 BCE – 650 CE): started 2026-11-18
 
-The author's decision (2026-11-17): keep 3500–330 BCE for now and save these for the next phase. Most of
-this history falls after the current end date.
+The author's decision (2026-11-18): a separate timeline rather than extending the ancient one, so long-gone
+civilizations don't crowd it. It overlaps the ancient timeline from 500 to 330 BCE and ends around 650 CE; the two
+link to each other on their rulers (`meta.continues`). The skeleton (`scripts/classical/skeleton.ts`) has the groups,
+regions and the 47 overlap events; the first region pass (`mediterranean-near-east.ts`) covers the Mediterranean and
+the Near East. `meta.range` (500 BCE – 650 CE) keeps the ruler to the period. Next region passes: South Asia (Maurya,
+Kushan, Gupta), China (Qin, Han, Three Kingdoms, Sui, Tang founding), the Steppe (Xiongnu, Huns, Turks), Africa (Kush,
+Aksum), Europe north of the Alps (Celts, Germanic peoples, Franks), and the Americas (Teotihuacan, Classic Maya, Moche,
+Nazca, Hopewell). The list below is the starting point. Not yet decided: which regions open collapsed.
 
 - **Polynesia:** settlement of East Polynesia, Hawaiʻi, Aotearoa/New Zealand and Rapa Nui (mostly after
   about 1000 CE); voyaging and the Polynesian Triangle.

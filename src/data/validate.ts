@@ -30,6 +30,16 @@ export function validateDataset(d: unknown): string[] {
     errors.push('meta.increments must be a list of positive whole numbers.');
   else if (!m.increments.includes(m.defaultIncrement)) errors.push('meta.defaultIncrement must be one of meta.increments.');
   if (m.circaFade !== undefined && !(m.circaFade >= 0)) errors.push('meta.circaFade must be zero or more.');
+  if (m.range !== undefined && !(m.range && Number.isInteger(m.range.start) && Number.isInteger(m.range.end) && m.range.start < m.range.end))
+    errors.push('meta.range needs whole-number years start < end.');
+  if (m.continues !== undefined) {
+    if (!Array.isArray(m.continues)) errors.push('meta.continues must be a list.');
+    else
+      m.continues.forEach((c, i) => {
+        if (!c || !ID_RE.test(String(c.timeline)) || !Number.isInteger(c.at) || (c.side !== 'before' && c.side !== 'after'))
+          errors.push(`meta.continues[${i}] needs a timeline id, a whole-number year "at", and side "before" or "after".`);
+      });
+  }
 
   // Timelines can come from anyone (uploads, links): only allow web and relative links.
   const checkUrl = (label: string, u: unknown) => {

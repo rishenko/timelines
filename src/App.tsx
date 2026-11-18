@@ -149,6 +149,25 @@ export default function App() {
     () => (keyOnly ? visibleEvents.filter((e) => e.importance === 1 || e.uuid === selectedId) : visibleEvents),
     [keyOnly, visibleEvents, selectedId],
   );
+  // Links to neighbouring timelines (meta.continues), for the ends of the ruler; unknown timelines are skipped.
+  const edgeLinks = useMemo(
+    () =>
+      (meta.continues ?? []).flatMap((c) => {
+        const target = allTimelines().find((t) => t.dataset.meta.id === c.timeline)?.dataset;
+        if (!target) return [];
+        const at = formatYear(c.at, target.meta.calendar);
+        return [
+          {
+            side: c.side,
+            year: c.at,
+            label: c.side === 'before' ? `Earlier: ${target.meta.title}` : `Continues in ${target.meta.title}`,
+            title: `Open ${target.meta.title} at ${at}`,
+            href: `?timeline=${encodeURIComponent(c.timeline)}&at=${encodeURIComponent(at)}`,
+          },
+        ];
+      }),
+    [meta.continues],
+  );
   const [initialCenter] = useState(() => {
     if (initialUrl.at !== null) return initialUrl.at;
     const sel = resolved.find((e) => e.uuid === selectedId);
@@ -645,6 +664,7 @@ export default function App() {
             const next = dir === 1 ? [...steps].reverse().find((i) => i < increment) : steps.find((i) => i > increment);
             if (next !== undefined) setIncrement(next);
           }}
+          edgeLinks={edgeLinks}
         />
         {sidePanel}
       </main>

@@ -1,0 +1,3361 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "classical",
+    "title": "The Classical World",
+    "subtitle": "From the Persian Wars to the rise of Islam: Europe, Africa, the Near East, Asia and the Americas, c. 500 BCE – 650 CE",
+    "description": "Empires and cultures of the classical and late antique world, from the Persian Wars and Warring States China to the fall of the Sasanians and the founding of Tang. It overlaps Ancient Civilizations from 500 to 330 BCE.",
+    "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the Dating menu re-plots a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false,
+      "aliases": {
+        "before": [
+          "BC"
+        ],
+        "after": [
+          "AD"
+        ]
+      }
+    },
+    "increments": [
+      10,
+      50,
+      100,
+      500
+    ],
+    "defaultIncrement": 100,
+    "defaultTheme": "parchment",
+    "circaFade": 0,
+    "continues": [
+      {
+        "timeline": "ancient-near-east",
+        "at": -499,
+        "side": "before"
+      }
+    ],
+    "range": {
+      "start": -499,
+      "end": 650
+    }
+  },
+  "tags": {
+    "wikipedia": {
+      "name": "Wikipedia"
+    },
+    "cited-via-wikipedia": {
+      "name": "Cited via Wikipedia (not checked)"
+    }
+  },
+  "sources": {
+    "wp-tyre": {
+      "name": "Wikipedia: Tyre, Lebanon",
+      "url": "https://en.wikipedia.org/wiki/Tyre,_Lebanon",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-achaemenid": {
+      "name": "Wikipedia: Achaemenid Empire",
+      "url": "https://en.wikipedia.org/wiki/Achaemenid_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-zhou": {
+      "name": "Wikipedia: Zhou dynasty",
+      "url": "https://en.wikipedia.org/wiki/Zhou_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-la-venta": {
+      "name": "Wikipedia: La Venta",
+      "url": "https://en.wikipedia.org/wiki/La_Venta",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-maya": {
+      "name": "Wikipedia: Maya civilization",
+      "url": "https://en.wikipedia.org/wiki/Maya_civilization",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-allia": {
+      "name": "Wikipedia: Battle of the Allia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Allia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-la-tene": {
+      "name": "Wikipedia: La Tène culture",
+      "url": "https://en.wikipedia.org/wiki/La_T%C3%A8ne_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-roman-republic": {
+      "name": "Wikipedia: Roman Republic",
+      "url": "https://en.wikipedia.org/wiki/Roman_Republic",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-marathon": {
+      "name": "Wikipedia: Battle of Marathon",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Marathon",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-salamis": {
+      "name": "Wikipedia: Battle of Salamis",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Salamis",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-peloponnesian-war": {
+      "name": "Wikipedia: Peloponnesian War",
+      "url": "https://en.wikipedia.org/wiki/Peloponnesian_War",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-philip-ii": {
+      "name": "Wikipedia: Philip II of Macedon",
+      "url": "https://en.wikipedia.org/wiki/Philip_II_of_Macedon",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-macedon": {
+      "name": "Wikipedia: Macedonia (ancient kingdom)",
+      "url": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-samnite-wars": {
+      "name": "Wikipedia: Samnite Wars",
+      "url": "https://en.wikipedia.org/wiki/Samnite_Wars",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-samnites": {
+      "name": "Wikipedia: Samnites",
+      "url": "https://en.wikipedia.org/wiki/Samnites",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-odrysian": {
+      "name": "Wikipedia: Odrysian kingdom",
+      "url": "https://en.wikipedia.org/wiki/Odrysian_kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-himera": {
+      "name": "Wikipedia: Battle of Himera (480 BC)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Himera_(480_BC)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-syracuse": {
+      "name": "Wikipedia: History of Syracuse, Sicily",
+      "url": "https://en.wikipedia.org/wiki/History_of_Syracuse,_Sicily",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-sicilian-expedition": {
+      "name": "Wikipedia: Sicilian Expedition",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Expedition",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-ateas": {
+      "name": "Wikipedia: Ateas",
+      "url": "https://en.wikipedia.org/wiki/Ateas",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-pazyryk": {
+      "name": "Wikipedia: Pazyryk culture",
+      "url": "https://en.wikipedia.org/wiki/Pazyryk_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-bantu": {
+      "name": "Wikipedia: Bantu expansion",
+      "url": "https://en.wikipedia.org/wiki/Bantu_expansion",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-garamantes": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-buddha": {
+      "name": "Wikipedia: The Buddha",
+      "url": "https://en.wikipedia.org/wiki/The_Buddha",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-mahajanapadas": {
+      "name": "Wikipedia: Mahajanapadas",
+      "url": "https://en.wikipedia.org/wiki/Mahajanapadas",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-magadha": {
+      "name": "Wikipedia: Magadha",
+      "url": "https://en.wikipedia.org/wiki/Magadha",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-sa-huynh": {
+      "name": "Wikipedia: Sa Huỳnh culture",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-prehistory-philippines": {
+      "name": "Wikipedia: Prehistory of the Philippines",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_the_Philippines",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kalanay": {
+      "name": "Wikipedia: Kalanay Cave",
+      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-buni": {
+      "name": "Wikipedia: Buni culture",
+      "url": "https://en.wikipedia.org/wiki/Buni_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-lihyan": {
+      "name": "Wikipedia: Lihyan",
+      "url": "https://en.wikipedia.org/wiki/Lihyan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-dacians": {
+      "name": "Wikipedia: Dacians",
+      "url": "https://en.wikipedia.org/wiki/Dacians",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-adena": {
+      "name": "Wikipedia: Adena culture",
+      "url": "https://en.wikipedia.org/wiki/Adena_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-dorset": {
+      "name": "Wikipedia: Dorset culture",
+      "url": "https://en.wikipedia.org/wiki/Dorset_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-monte-alban": {
+      "name": "Wikipedia: Monte Albán",
+      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-zapotec": {
+      "name": "Wikipedia: Zapotec civilization",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-saladoid": {
+      "name": "Wikipedia: Saladoid",
+      "url": "https://en.wikipedia.org/wiki/Saladoid",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-thermopylae": {
+      "name": "Wikipedia: Battle of Thermopylae",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Thermopylae",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-pericles": {
+      "name": "Wikipedia: Pericles",
+      "url": "https://en.wikipedia.org/wiki/Pericles",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-parthenon": {
+      "name": "Wikipedia: Parthenon",
+      "url": "https://en.wikipedia.org/wiki/Parthenon",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-trial-socrates": {
+      "name": "Wikipedia: Trial of Socrates",
+      "url": "https://en.wikipedia.org/wiki/Trial_of_Socrates",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-academy": {
+      "name": "Wikipedia: Platonic Academy",
+      "url": "https://en.wikipedia.org/wiki/Platonic_Academy",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-lyceum": {
+      "name": "Wikipedia: Lyceum (classical)",
+      "url": "https://en.wikipedia.org/wiki/Lyceum_(classical)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-mausoleum": {
+      "name": "Wikipedia: Mausoleum at Halicarnassus",
+      "url": "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-herodotus": {
+      "name": "Wikipedia: Herodotus",
+      "url": "https://en.wikipedia.org/wiki/Herodotus",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-mozi": {
+      "name": "Wikipedia: Mozi",
+      "url": "https://en.wikipedia.org/wiki/Mozi",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hundred-schools": {
+      "name": "Wikipedia: Hundred Schools of Thought",
+      "url": "https://en.wikipedia.org/wiki/Hundred_Schools_of_Thought",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-shang-yang": {
+      "name": "Wikipedia: Shang Yang",
+      "url": "https://en.wikipedia.org/wiki/Shang_Yang",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-panini": {
+      "name": "Wikipedia: Pāṇini",
+      "url": "https://en.wikipedia.org/wiki/P%C4%81%E1%B9%87ini",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-death-alexander": {
+      "name": "Wikipedia: Death of Alexander the Great",
+      "url": "https://en.wikipedia.org/wiki/Death_of_Alexander_the_Great",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-diadochi": {
+      "name": "Wikipedia: Wars of the Diadochi",
+      "url": "https://en.wikipedia.org/wiki/Wars_of_the_Diadochi",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-ipsus": {
+      "name": "Wikipedia: Battle of Ipsus",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ipsus",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-ptolemaic": {
+      "name": "Wikipedia: Ptolemaic Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-seleucid": {
+      "name": "Wikipedia: Seleucid Empire",
+      "url": "https://en.wikipedia.org/wiki/Seleucid_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-antigonid": {
+      "name": "Wikipedia: Antigonid dynasty",
+      "url": "https://en.wikipedia.org/wiki/Antigonid_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-library-alexandria": {
+      "name": "Wikipedia: Library of Alexandria",
+      "url": "https://en.wikipedia.org/wiki/Library_of_Alexandria",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-pergamon": {
+      "name": "Wikipedia: Kingdom of Pergamon",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Pergamon",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-greco-bactria": {
+      "name": "Wikipedia: Greco-Bactrian Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-rosetta": {
+      "name": "Wikipedia: Rosetta Stone",
+      "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-actium": {
+      "name": "Wikipedia: Battle of Actium",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Actium",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-archimedes": {
+      "name": "Wikipedia: Archimedes",
+      "url": "https://en.wikipedia.org/wiki/Archimedes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-punic-wars": {
+      "name": "Wikipedia: Punic Wars",
+      "url": "https://en.wikipedia.org/wiki/Punic_Wars",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-caesar-assassination": {
+      "name": "Wikipedia: Assassination of Julius Caesar",
+      "url": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-augustus": {
+      "name": "Wikipedia: Augustus",
+      "url": "https://en.wikipedia.org/wiki/Augustus",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-roman-empire": {
+      "name": "Wikipedia: Roman Empire",
+      "url": "https://en.wikipedia.org/wiki/Roman_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-crisis-third-century": {
+      "name": "Wikipedia: Crisis of the Third Century",
+      "url": "https://en.wikipedia.org/wiki/Crisis_of_the_Third_Century",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tetrarchy": {
+      "name": "Wikipedia: Tetrarchy",
+      "url": "https://en.wikipedia.org/wiki/Tetrarchy",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-edict-milan": {
+      "name": "Wikipedia: Edict of Milan",
+      "url": "https://en.wikipedia.org/wiki/Edict_of_Milan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-constantinople": {
+      "name": "Wikipedia: Constantinople",
+      "url": "https://en.wikipedia.org/wiki/Constantinople",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-sack-rome-410": {
+      "name": "Wikipedia: Sack of Rome (410)",
+      "url": "https://en.wikipedia.org/wiki/Sack_of_Rome_(410)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-fall-west": {
+      "name": "Wikipedia: Fall of the Western Roman Empire",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-justinian": {
+      "name": "Wikipedia: Justinian I",
+      "url": "https://en.wikipedia.org/wiki/Justinian_I",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hagia-sophia": {
+      "name": "Wikipedia: Hagia Sophia",
+      "url": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-plague-justinian": {
+      "name": "Wikipedia: Plague of Justinian",
+      "url": "https://en.wikipedia.org/wiki/Plague_of_Justinian",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-parthia": {
+      "name": "Wikipedia: Parthian Empire",
+      "url": "https://en.wikipedia.org/wiki/Parthian_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-carrhae": {
+      "name": "Wikipedia: Battle of Carrhae",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Carrhae",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-sasanian": {
+      "name": "Wikipedia: Sasanian Empire",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-maccabean": {
+      "name": "Wikipedia: Maccabean Revolt",
+      "url": "https://en.wikipedia.org/wiki/Maccabean_Revolt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-herod": {
+      "name": "Wikipedia: Herod the Great",
+      "url": "https://en.wikipedia.org/wiki/Herod_the_Great",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-crucifixion": {
+      "name": "Wikipedia: Crucifixion of Jesus",
+      "url": "https://en.wikipedia.org/wiki/Crucifixion_of_Jesus",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-siege-jerusalem-70": {
+      "name": "Wikipedia: Siege of Jerusalem (70 CE)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-bar-kokhba": {
+      "name": "Wikipedia: Bar Kokhba revolt",
+      "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_revolt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-palmyrene": {
+      "name": "Wikipedia: Palmyrene Empire",
+      "url": "https://en.wikipedia.org/wiki/Palmyrene_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-nabataean": {
+      "name": "Wikipedia: Nabataean Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Nabataean_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-himyar": {
+      "name": "Wikipedia: Himyar",
+      "url": "https://en.wikipedia.org/wiki/Himyar",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hijrah": {
+      "name": "Wikipedia: Hijrah",
+      "url": "https://en.wikipedia.org/wiki/Hijrah",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-conquest-persia": {
+      "name": "Wikipedia: Muslim conquest of Persia",
+      "url": "https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-yarmuk": {
+      "name": "Wikipedia: Battle of the Yarmuk",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Yarmuk",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-byz-sasanian-602": {
+      "name": "Wikipedia: Byzantine–Sasanian War of 602–628",
+      "url": "https://en.wikipedia.org/wiki/Byzantine%E2%80%93Sasanian_War_of_602%E2%80%93628",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-armenia-christian": {
+      "name": "Wikipedia: Christianization of Armenia",
+      "url": "https://en.wikipedia.org/wiki/Christianization_of_Armenia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    }
+  },
+  "tracks": [
+    {
+      "id": "africa",
+      "name": "Africa",
+      "color": "#b8862a"
+    },
+    {
+      "id": "north-africa",
+      "name": "North Africa and Carthage",
+      "color": "#b8862a",
+      "parent": "africa"
+    },
+    {
+      "id": "carthage",
+      "name": "Carthage",
+      "color": "#a07a3a",
+      "parent": "north-africa"
+    },
+    {
+      "id": "nubia",
+      "name": "Kush and Nubia",
+      "color": "#b8862a",
+      "parent": "africa"
+    },
+    {
+      "id": "horn",
+      "name": "Aksum and the Horn of Africa",
+      "color": "#b8862a",
+      "parent": "africa"
+    },
+    {
+      "id": "sub-saharan",
+      "name": "Africa south of the Sahara",
+      "color": "#b8862a",
+      "parent": "africa"
+    },
+    {
+      "id": "europe-med",
+      "name": "Europe & Mediterranean",
+      "color": "#3f6aa8"
+    },
+    {
+      "id": "europe",
+      "name": "Europe",
+      "color": "#3f6aa8",
+      "parent": "europe-med"
+    },
+    {
+      "id": "west-med",
+      "name": "Western Mediterranean",
+      "color": "#3f6aa8",
+      "parent": "europe-med"
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "color": "#3f6aa8",
+      "parent": "europe-med"
+    },
+    {
+      "id": "roman-republic",
+      "name": "Roman Republic",
+      "color": "#a83a3a",
+      "parent": "rome",
+      "span": {
+        "start": -508,
+        "end": -26,
+        "circa": true
+      }
+    },
+    {
+      "id": "roman-empire",
+      "name": "Roman Empire (and the Western Empire)",
+      "color": "#9a2a2a",
+      "parent": "rome",
+      "span": {
+        "start": -26,
+        "end": 476
+      }
+    },
+    {
+      "id": "eastern-roman",
+      "name": "Eastern Roman (Byzantine) Empire",
+      "color": "#8a3a6a",
+      "parent": "rome",
+      "span": {
+        "start": 395,
+        "end": 1453
+      }
+    },
+    {
+      "id": "greece",
+      "name": "Greece and the Hellenistic world",
+      "color": "#3f6aa8",
+      "parent": "europe-med"
+    },
+    {
+      "id": "antigonid",
+      "name": "Antigonid Macedon",
+      "color": "#4a6aa8",
+      "parent": "greece",
+      "span": {
+        "start": -305,
+        "end": -167
+      }
+    },
+    {
+      "id": "pergamon",
+      "name": "Kingdom of Pergamon",
+      "color": "#5a7ab0",
+      "parent": "greece",
+      "span": {
+        "start": -281,
+        "end": -128,
+        "circa": true
+      }
+    },
+    {
+      "id": "near-east",
+      "name": "Near East & Iran",
+      "color": "#a8483a"
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "color": "#a8483a",
+      "parent": "near-east"
+    },
+    {
+      "id": "ptolemaic",
+      "name": "Ptolemaic Egypt",
+      "color": "#b08a4a",
+      "parent": "egypt",
+      "span": {
+        "start": -304,
+        "end": -29,
+        "startDates": [
+          {
+            "year": -304,
+            "source": {
+              "sourceKey": "wp-ptolemaic",
+              "sourceLocation": "lead and infobox"
+            }
+          },
+          {
+            "year": -303,
+            "source": {
+              "sourceKey": "wp-ptolemaic",
+              "sourceLocation": "Notes, note 1 (some scholars)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "roman-egypt",
+      "name": "Roman and Byzantine Egypt",
+      "color": "#9a7a4a",
+      "parent": "egypt",
+      "span": {
+        "start": -29,
+        "end": 641
+      }
+    },
+    {
+      "id": "levant",
+      "name": "Levant and Judea",
+      "color": "#a8483a",
+      "parent": "near-east"
+    },
+    {
+      "id": "judea",
+      "name": "Judea (Hasmoneans, Herod, Roman rule)",
+      "color": "#7a6a4a",
+      "parent": "levant"
+    },
+    {
+      "id": "palmyra",
+      "name": "Palmyra",
+      "color": "#9a6a4a",
+      "parent": "levant",
+      "span": {
+        "start": 270,
+        "end": 273,
+        "startDates": [
+          {
+            "year": 270,
+            "source": {
+              "sourceKey": "wp-palmyrene",
+              "sourceLocation": "infobox (as empire)"
+            }
+          },
+          {
+            "year": 260,
+            "source": {
+              "sourceKey": "wp-palmyrene",
+              "sourceLocation": "infobox (as kingdom)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "anatolia",
+      "name": "Anatolia",
+      "color": "#a8483a",
+      "parent": "near-east"
+    },
+    {
+      "id": "caucasus",
+      "name": "Caucasus",
+      "color": "#a8483a",
+      "parent": "near-east"
+    },
+    {
+      "id": "armenia",
+      "name": "Armenia",
+      "color": "#7a5a8a",
+      "parent": "caucasus"
+    },
+    {
+      "id": "persia",
+      "name": "Iran and Mesopotamia",
+      "color": "#a8483a",
+      "parent": "near-east"
+    },
+    {
+      "id": "seleucid",
+      "name": "Seleucid Empire",
+      "color": "#6a5aa0",
+      "parent": "persia",
+      "span": {
+        "start": -311,
+        "end": -62
+      }
+    },
+    {
+      "id": "greco-bactria",
+      "name": "Greco-Bactrian Kingdom",
+      "color": "#7a6a90",
+      "parent": "persia",
+      "span": {
+        "start": -255,
+        "end": -119,
+        "startDates": [
+          {
+            "year": -255,
+            "source": {
+              "sourceKey": "wp-greco-bactria",
+              "sourceLocation": "lead and infobox"
+            }
+          },
+          {
+            "year": -249,
+            "source": {
+              "sourceKey": "wp-greco-bactria",
+              "sourceLocation": "Independence"
+            }
+          },
+          {
+            "year": -250,
+            "margin": 4,
+            "source": {
+              "sourceKey": "wp-greco-bactria",
+              "sourceLocation": "Independence (high and low chronologies)"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "parthia",
+      "name": "Parthian Empire",
+      "color": "#8a4a3a",
+      "parent": "persia",
+      "span": {
+        "start": -246,
+        "end": 224
+      }
+    },
+    {
+      "id": "sasanian",
+      "name": "Sasanian Empire",
+      "color": "#a84a2a",
+      "parent": "persia",
+      "span": {
+        "start": 224,
+        "end": 651
+      }
+    },
+    {
+      "id": "arabia",
+      "name": "Arabia",
+      "color": "#a8483a",
+      "parent": "near-east"
+    },
+    {
+      "id": "nabataea",
+      "name": "Nabataean Kingdom (Petra)",
+      "color": "#b07a5a",
+      "parent": "arabia",
+      "span": {
+        "start": -249,
+        "end": 106,
+        "startDates": [
+          {
+            "year": -250,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-nabataean",
+              "sourceLocation": "infobox ('3rd century BC')"
+            }
+          },
+          {
+            "year": -350,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-nabataean",
+              "sourceLocation": "Emergence ('from the 4th century BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "himyar",
+      "name": "Himyar",
+      "color": "#a0805a",
+      "parent": "arabia",
+      "span": {
+        "start": -109,
+        "end": 575,
+        "endDates": [
+          {
+            "year": 575,
+            "source": {
+              "sourceKey": "wp-himyar",
+              "sourceLocation": "infobox"
+            }
+          },
+          {
+            "year": 578,
+            "source": {
+              "sourceKey": "wp-himyar",
+              "sourceLocation": "infobox"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "early-islam",
+      "name": "Early Islam",
+      "color": "#3a7a5a",
+      "parent": "arabia"
+    },
+    {
+      "id": "steppe-south-asia",
+      "name": "Steppe & South Asia",
+      "color": "#7a8a2a"
+    },
+    {
+      "id": "steppe",
+      "name": "Steppe peoples",
+      "color": "#7a8a2a",
+      "parent": "steppe-south-asia"
+    },
+    {
+      "id": "south-asia",
+      "name": "South Asia",
+      "color": "#7a8a2a",
+      "parent": "steppe-south-asia"
+    },
+    {
+      "id": "east-asia",
+      "name": "East & Southeast Asia",
+      "color": "#6a4a9a"
+    },
+    {
+      "id": "se-asia",
+      "name": "Southeast Asia",
+      "color": "#6a4a9a",
+      "parent": "east-asia"
+    },
+    {
+      "id": "tibet",
+      "name": "Tibet",
+      "color": "#6a4a9a",
+      "parent": "east-asia"
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "color": "#6a4a9a",
+      "parent": "east-asia"
+    },
+    {
+      "id": "korea-japan",
+      "name": "Korea and Japan",
+      "color": "#6a4a9a",
+      "parent": "east-asia"
+    },
+    {
+      "id": "austronesia",
+      "name": "Island Southeast Asia & Oceania",
+      "color": "#2a8a8a"
+    },
+    {
+      "id": "island-sea",
+      "name": "Island Southeast Asia",
+      "color": "#2a8a8a",
+      "parent": "austronesia"
+    },
+    {
+      "id": "oceania",
+      "name": "Oceania",
+      "color": "#2a8a8a",
+      "parent": "austronesia"
+    },
+    {
+      "id": "americas",
+      "name": "Americas",
+      "color": "#2f7a5a"
+    },
+    {
+      "id": "arctic",
+      "name": "North American Arctic",
+      "color": "#2f7a5a",
+      "parent": "americas"
+    },
+    {
+      "id": "north-america",
+      "name": "North America",
+      "color": "#2f7a5a",
+      "parent": "americas"
+    },
+    {
+      "id": "mesoamerica",
+      "name": "Mesoamerica",
+      "color": "#2f7a5a",
+      "parent": "americas"
+    },
+    {
+      "id": "south-america",
+      "name": "South America",
+      "color": "#2f7a5a",
+      "parent": "americas"
+    },
+    {
+      "id": "caribbean",
+      "name": "Caribbean",
+      "color": "#2f7a5a",
+      "parent": "americas"
+    }
+  ],
+  "events": [
+    {
+      "uuid": "siege-of-tyre",
+      "title": "Alexander the Great takes Tyre",
+      "start": -331,
+      "tracks": [
+        "levant"
+      ],
+      "descr": "After a siege during which he builds a causeway to the island city. Eight thousand Tyrians die and 30,000 are sold into slavery.",
+      "sources": [
+        {
+          "sourceKey": "wp-tyre",
+          "sourceLocation": "History"
+        }
+      ]
+    },
+    {
+      "uuid": "greco-persian-wars",
+      "title": "Greco-Persian Wars",
+      "start": -498,
+      "end": -448,
+      "tracks": [
+        "persia"
+      ],
+      "descr": "From the Ionian Revolt to the end of hostilities; Persian invasions of Greece are repulsed in 492–490 and 480–479 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-achaemenid",
+          "sourceLocation": "infobox (historical era) and lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "persia-falls",
+      "title": "Alexander conquers the Achaemenid Empire",
+      "start": -329,
+      "tracks": [
+        "persia"
+      ],
+      "descr": "The end of a Macedonian campaign that began in 336 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-achaemenid",
+          "sourceLocation": "lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "warring-states",
+      "title": "Warring States period",
+      "start": -474,
+      "end": -220,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Qin deposes the last Zhou king in 256 BCE and unifies China in 221 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-zhou",
+          "sourceLocation": "lead and infobox"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "la-venta-pyramid",
+      "title": "La Venta Great Pyramid",
+      "start": -393,
+      "tracks": [
+        "mesoamerica"
+      ],
+      "descr": "A radiocarbon date from Complex C, the great pyramid.",
+      "sources": [
+        {
+          "sourceKey": "wp-la-venta",
+          "sourceLocation": "Complex C"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -393,
+          "margin": 30,
+          "source": {
+            "sourceKey": "wp-la-venta",
+            "sourceLocation": "Complex C ('394 ± 30 BCE')"
+          }
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "maya-script",
+      "title": "Earliest Maya writing",
+      "start": -299,
+      "end": -199,
+      "tracks": [
+        "mesoamerica"
+      ],
+      "descr": "The earliest inscriptions in an identifiably Maya script, in the Petén Basin.",
+      "sources": [
+        {
+          "sourceKey": "wp-maya",
+          "sourceLocation": "Writing and literacy"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "gallic-sack",
+      "title": "Gauls defeat Rome at the Allia and sack the city",
+      "start": -386,
+      "tracks": [
+        "rome",
+        "europe"
+      ],
+      "descr": "Celts under Brennus defeat the Romans and sack Rome. The traditional (Varronian) date is 390 BCE; modern historians consider c. 387 the most probable.",
+      "sources": [
+        {
+          "sourceKey": "wp-allia",
+          "sourceLocation": "infobox and Date of the battle"
+        },
+        {
+          "sourceKey": "wp-la-tene",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -386,
+          "source": {
+            "sourceKey": "wp-allia",
+            "sourceLocation": "Date of the battle (Polybius; most probable)"
+          }
+        },
+        {
+          "year": -389,
+          "source": {
+            "sourceKey": "wp-allia",
+            "sourceLocation": "Date of the battle (Varronian, traditional)"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "latin-league",
+      "title": "Latin League dissolved",
+      "start": -337,
+      "tracks": [
+        "rome"
+      ],
+      "descr": "The league of Latin cities is dissolved.",
+      "sources": [
+        {
+          "sourceKey": "wp-roman-republic",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "marathon",
+      "title": "Battle of Marathon",
+      "start": -489,
+      "tracks": [
+        "greece",
+        "persia"
+      ],
+      "descr": "The Persians are defeated in their first invasion of Greece.",
+      "sources": [
+        {
+          "sourceKey": "wp-marathon",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "greco-persian-wars",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "salamis",
+      "title": "Battle of Salamis",
+      "start": -479,
+      "tracks": [
+        "greece",
+        "persia"
+      ],
+      "descr": "A naval battle during Xerxes' invasion of Greece (481–479 BCE).",
+      "sources": [
+        {
+          "sourceKey": "wp-salamis",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "greco-persian-wars",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "peloponnesian-war",
+      "title": "Peloponnesian War",
+      "start": -430,
+      "end": -403,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "Athens and Sparta fight for hegemony over Greece; Persia backs Sparta from 413 and Athens surrenders in 404.",
+      "sources": [
+        {
+          "sourceKey": "wp-peloponnesian-war",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "philip-ii",
+      "title": "Reign of Philip II of Macedon",
+      "start": -358,
+      "end": -335,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "King of Macedon from 359 BCE. He is assassinated in 336 and immediately succeeded by his son Alexander.",
+      "sources": [
+        {
+          "sourceKey": "wp-philip-ii",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "chaeronea",
+      "title": "Philip II wins the Battle of Chaeronea",
+      "start": -337,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "The next year (337 BCE) Philip becomes hegemon of the Hellenic League.",
+      "sources": [
+        {
+          "sourceKey": "wp-philip-ii",
+          "sourceLocation": "lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "philip-ii",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "pella",
+      "title": "Macedon moves its capital from Aigai to Pella",
+      "start": -398,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "Pella remains the capital until the kingdom ends in 168 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-macedon",
+          "sourceLocation": "infobox (capitals)"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "samnite-wars",
+      "title": "Samnite Wars",
+      "start": -342,
+      "end": -289,
+      "tracks": [
+        "europe",
+        "rome"
+      ],
+      "descr": "Three wars (343–341, 327–304, 298–290 BCE) in which Rome subjugates the Samnites, despite their great victory at the Caudine Forks (321).",
+      "sources": [
+        {
+          "sourceKey": "wp-samnite-wars",
+          "sourceLocation": "infobox and Chronology"
+        },
+        {
+          "sourceKey": "wp-samnites",
+          "sourceLocation": "lead"
+        }
+      ]
+    },
+    {
+      "uuid": "odrysian-founded",
+      "title": "Teres I founds the Odrysian kingdom",
+      "start": -479,
+      "tracks": [
+        "europe"
+      ],
+      "descr": "A Thracian kingdom founded after the failed Persian invasion of Greece. Philip II of Macedon conquers it in 340 BCE; Seuthes III revives it around 330.",
+      "sources": [
+        {
+          "sourceKey": "wp-odrysian",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "himera",
+      "title": "Battle of Himera",
+      "start": -479,
+      "tracks": [
+        "north-africa",
+        "west-med"
+      ],
+      "descr": "The Greeks of Sicily defeat Hamilcar's expedition, crippling Carthage's power on the island for decades. Tradition put it on the same day as Salamis; modern scholars reject that.",
+      "sources": [
+        {
+          "sourceKey": "wp-himera",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-syracuse",
+          "sourceLocation": "Greek era"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "sicilian-expedition",
+      "title": "Athenian expedition to Sicily",
+      "start": -414,
+      "end": -412,
+      "tracks": [
+        "west-med",
+        "greece"
+      ],
+      "descr": "Athens attacks Syracuse during the Peloponnesian War; the expedition is destroyed in 413 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-sicilian-expedition",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-syracuse",
+          "sourceLocation": "Greek era"
+        },
+        {
+          "sourceKey": "wp-peloponnesian-war",
+          "sourceLocation": "contents ('Sicilian Expedition (415–413 BC)')"
+        }
+      ],
+      "links": [
+        {
+          "to": "peloponnesian-war",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ateas-killed",
+      "title": "Philip II defeats Ateas",
+      "start": -338,
+      "tracks": [
+        "steppe",
+        "greece"
+      ],
+      "descr": "The Scythian king Ateas is killed in battle against Philip II of Macedon in Dobruja, and his empire falls to pieces.",
+      "sources": [
+        {
+          "sourceKey": "wp-ateas",
+          "sourceLocation": "lead and Conflict with Macedon"
+        }
+      ],
+      "links": [
+        {
+          "to": "philip-ii",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "pazyryk-burials",
+      "title": "Pazyryk burials",
+      "start": -449,
+      "tracks": [
+        "steppe"
+      ],
+      "descr": "Burials at Pazyryk and neighbouring sites in the Altai. A Saka (eastern Scythian) culture.",
+      "sources": [
+        {
+          "sourceKey": "wp-pazyryk",
+          "sourceLocation": "lead and Archaeology"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -499,
+          "source": {
+            "sourceKey": "wp-pazyryk",
+            "sourceLocation": "Archaeology ('5th century BC'): start of century"
+          }
+        },
+        {
+          "year": -400,
+          "source": {
+            "sourceKey": "wp-pazyryk",
+            "sourceLocation": "Archaeology: end of century"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "bantu-500",
+      "title": "Bantu speakers reach Lake Victoria and Angola",
+      "start": -499,
+      "tracks": [
+        "sub-saharan"
+      ],
+      "descr": "The Western Stream reaches the southern edge of the rainforest and central Angola; the Eastern Stream, with Urewe pottery and one of the oldest iron-smelting centres in Africa, reaches west of Lake Victoria.",
+      "sources": [
+        {
+          "sourceKey": "wp-bantu",
+          "sourceLocation": "lead, Western Stream and Eastern Stream"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "herodotus-garamantes",
+      "title": "Herodotus describes the Garamantes",
+      "start": -449,
+      "tracks": [
+        "north-africa"
+      ],
+      "descr": "The earliest written record of them: \"a very great nation\" who herded cattle and farmed dates.",
+      "sources": [
+        {
+          "sourceKey": "wp-garamantes",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -499,
+          "source": {
+            "sourceKey": "wp-garamantes",
+            "sourceLocation": "History ('5th century BC'): start of century"
+          }
+        },
+        {
+          "year": -400,
+          "source": {
+            "sourceKey": "wp-garamantes",
+            "sourceLocation": "History: end of century"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "buddha",
+      "title": "Life of the Buddha",
+      "start": -479,
+      "end": -399,
+      "tracks": [
+        "south-asia"
+      ],
+      "descr": "He lives under Bimbisara and dies under Ajatashatru. Most scholars who give a date place his death within 20 years of 400 BCE; earlier scholarship used 563–483 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-buddha",
+          "sourceLocation": "infobox, Dating and Historical person"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -479,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": -562,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox and Dating ('the earlier dates of 563–483 BCE')"
+          }
+        },
+        {
+          "year": -565,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (long chronology, Asoka at 268 BCE)"
+          }
+        },
+        {
+          "year": -447,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (short chronology)"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -399,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox and Dating ('within 20 years either side of 400 BCE')"
+          }
+        },
+        {
+          "year": -482,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": -485,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (long chronology)"
+          }
+        },
+        {
+          "year": -367,
+          "source": {
+            "sourceKey": "wp-buddha",
+            "sourceLocation": "Dating (short chronology)"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "nanda",
+      "title": "The Nanda dynasty takes Magadha",
+      "start": -344,
+      "end": -321,
+      "tracks": [
+        "south-asia"
+      ],
+      "descr": "The Nandas usurp the Shishunaga throne; Chandragupta Maurya overthrows them.",
+      "sources": [
+        {
+          "sourceKey": "wp-mahajanapadas",
+          "sourceLocation": "Magadha"
+        },
+        {
+          "sourceKey": "wp-magadha",
+          "sourceLocation": "infobox and Nanda dynasty"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "sa-huynh-trade",
+      "title": "Sa Huỳnh–Kalanay trade network",
+      "start": -499,
+      "tracks": [
+        "se-asia"
+      ],
+      "descr": "A trade sphere reaching Taiwan, southern Thailand, Borneo and the Philippines. The Sa Huỳnh, who buried their cremated dead in lidded jars, were most likely predecessors of the Austronesian-speaking Cham.",
+      "sources": [
+        {
+          "sourceKey": "wp-sa-huynh",
+          "sourceLocation": "lead, Description and Trade network"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "philippines-metal",
+      "title": "Metal tools in the Philippines",
+      "start": -499,
+      "tracks": [
+        "island-sea"
+      ],
+      "descr": "Metal tools appear somewhere around 500 BC (Jocano: between 500 BC and 1 AD); other evidence points to iron in the ninth and tenth centuries BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-prehistory-philippines",
+          "sourceLocation": "Metal Age"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -499,
+          "source": {
+            "sourceKey": "wp-prehistory-philippines",
+            "sourceLocation": "'somewhere around 500 BC'"
+          }
+        },
+        {
+          "year": -899,
+          "margin": 100,
+          "source": {
+            "sourceKey": "wp-prehistory-philippines",
+            "sourceLocation": "iron 'during the ninth and tenth centuries B.C.'"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kalanay",
+      "title": "Kalanay Cave pottery",
+      "start": -399,
+      "tracks": [
+        "island-sea"
+      ],
+      "descr": "Pottery dated 400 BC to AD 1500, similar to that of the Sa Huỳnh culture of southern Vietnam; iron and bronze artifacts were found at the site. It names the Sa Huỳnh–Kalanay interaction sphere, an Iron Age maritime trading network associated with the Austronesian peoples.",
+      "sources": [
+        {
+          "sourceKey": "wp-kalanay",
+          "sourceLocation": "lead and Other findings"
+        }
+      ],
+      "links": [
+        {
+          "to": "sa-huynh-trade",
+          "kind": "related"
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "buni",
+      "title": "Buni culture in northern West Java",
+      "start": -399,
+      "end": 100,
+      "tracks": [
+        "island-sea"
+      ],
+      "descr": "A clay pottery culture on the coast of northern West Java, Jakarta and Banten, known for incised geometric decoration; burial gifts date from 400 BC to AD 100. The kingdom of Tarumanagara is probably its successor.",
+      "sources": [
+        {
+          "sourceKey": "wp-buni",
+          "sourceLocation": "infobox, lead and Characteristics"
+        }
+      ],
+      "endDates": [
+        {
+          "year": 100,
+          "source": {
+            "sourceKey": "wp-buni",
+            "sourceLocation": "infobox and lead"
+          }
+        },
+        {
+          "year": 500,
+          "source": {
+            "sourceKey": "wp-buni",
+            "sourceLocation": "lead ('probably survived until 500 AD')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "lihyan",
+      "title": "The kingdom of Lihyan at Dadan",
+      "start": -449,
+      "tracks": [
+        "arabia"
+      ],
+      "descr": "Most likely founded after Nabonidus arrived in north-west Arabia; it flourished for at least a century and a half. F. Winnett’s longer chronology places its beginning in the 6th century BC. The Gulf of Aqaba was called the Gulf of Lihyan.",
+      "sources": [
+        {
+          "sourceKey": "wp-lihyan",
+          "sourceLocation": "infobox, lead and Timeline"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -449,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-lihyan",
+            "sourceLocation": "infobox ('Established 5th century BC')"
+          }
+        },
+        {
+          "year": -549,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-lihyan",
+            "sourceLocation": "Timeline (Winnett)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "alexander-getae",
+      "title": "Alexander the Great attacks the Getae",
+      "start": -334,
+      "tracks": [
+        "europe",
+        "greece"
+      ],
+      "descr": "On the lower Danube. Herodotus first used the name Getae; the Dacians were influenced by the Scythians and by the La Tène Celts who arrived in the 4th century BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-dacians",
+          "sourceLocation": "lead, Name and Origins and ethnogenesis"
+        }
+      ]
+    },
+    {
+      "uuid": "adena-mounds",
+      "title": "Adena burial mounds",
+      "start": -499,
+      "end": 100,
+      "tracks": [
+        "north-america"
+      ],
+      "descr": "Mounds built from hundreds of thousands of baskets of graded earth serve as burial and ceremonial sites; trade runs from Great Lakes copper to Gulf Coast shells. The Great Serpent Mound has been attributed to the culture, without conclusive evidence.",
+      "sources": [
+        {
+          "sourceKey": "wp-adena",
+          "sourceLocation": "lead, infobox, Mounds and Importance"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "dorset-begins",
+      "title": "The Dorset culture begins",
+      "start": -499,
+      "tracks": [
+        "arctic"
+      ],
+      "descr": "They hunt seals from holes in the ice and make soapstone lamps (qulliq) burning seal oil; unlike earlier cultures they lack bow and arrow.",
+      "sources": [
+        {
+          "sourceKey": "wp-dorset",
+          "sourceLocation": "lead, Origins and Technology"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "monte-alban",
+      "title": "Monte Albán founded",
+      "start": -499,
+      "tracks": [
+        "mesoamerica"
+      ],
+      "descr": "Built on a mountaintop in a previously uninhabited no-man’s-land; about 5,200 people live there by around 300 BCE. The Danzantes carvings date from its earliest period and show traits of Olmec culture.",
+      "sources": [
+        {
+          "sourceKey": "wp-monte-alban",
+          "sourceLocation": "lead, Site history and Monuments"
+        },
+        {
+          "sourceKey": "wp-zapotec",
+          "sourceLocation": "History"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "saladoid",
+      "title": "Saladoid potters reach the Lesser Antilles and Puerto Rico",
+      "start": -499,
+      "end": -279,
+      "tracks": [
+        "caribbean"
+      ],
+      "descr": "Farmers and potters living in settled villages, believed to have spoken an Arawakan language; they displace the pre-ceramic Ortoiroid culture.",
+      "sources": [
+        {
+          "sourceKey": "wp-saladoid",
+          "sourceLocation": "lead, Migrations and Culture"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "nyatri-tsenpo",
+      "title": "Nyatri Tsenpo, first Yarlung king (traditional date)",
+      "start": -413,
+      "tracks": [
+        "tibet"
+      ],
+      "descr": "Some Tibetan texts give 126 BC, others 414 BC. Tibetan texts name the kingdom of Zhangzhung (c. 500 BC–625 AD) as the precursor of later Tibetan kingdoms.",
+      "sources": [
+        {
+          "sourceKey": "wp-tibet-history",
+          "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo"
+        }
+      ]
+    },
+    {
+      "uuid": "thermopylae",
+      "title": "Battle of Thermopylae",
+      "start": -479,
+      "tracks": [
+        "greece",
+        "persia"
+      ],
+      "descr": "Greek city-states led by Sparta under Leonidas I hold the pass against Xerxes’ invasion; the Greeks defeat the invaders at Salamis later that year.",
+      "sources": [
+        {
+          "sourceKey": "wp-thermopylae",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "salamis",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "pericles",
+      "title": "Pericles leads Athens",
+      "start": -460,
+      "end": -428,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "The statesman and general of the Golden Age of Athens dies of the Plague of Athens in 429 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-pericles",
+          "sourceLocation": "infobox, lead and Ostracising Cimon"
+        }
+      ]
+    },
+    {
+      "uuid": "parthenon",
+      "title": "The Parthenon built",
+      "start": -446,
+      "end": -437,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "A temple on the Athenian Acropolis dedicated to Athena, begun when the Delian League was at the peak of its power; work on its decoration continued until 432 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-parthenon",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "endDates": [
+        {
+          "year": -437,
+          "source": {
+            "sourceKey": "wp-parthenon",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -431,
+          "source": {
+            "sourceKey": "wp-parthenon",
+            "sourceLocation": "infobox"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "pericles",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "socrates",
+      "title": "The trial and death of Socrates",
+      "start": -398,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "Athens tries the 70-year-old philosopher on two charges and he is put to death.",
+      "sources": [
+        {
+          "sourceKey": "wp-trial-socrates",
+          "sourceLocation": "infobox, lead and Trial"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "academy",
+      "title": "Plato founds the Academy",
+      "start": -386,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "Aristotle studies there for twenty years (367–347 BC); the school lasts until 83 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-academy",
+          "sourceLocation": "lead and Plato’s Academy"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "lyceum",
+      "title": "Aristotle founds the Lyceum",
+      "start": -334,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "Returning to Athens after it fell under Macedonian rule, Aristotle sets up his school at the Lyceum.",
+      "sources": [
+        {
+          "sourceKey": "wp-lyceum",
+          "sourceLocation": "lead and The Lyceum"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -334,
+          "source": {
+            "sourceKey": "wp-lyceum",
+            "sourceLocation": "The Lyceum"
+          }
+        },
+        {
+          "year": -333,
+          "source": {
+            "sourceKey": "wp-lyceum",
+            "sourceLocation": "lead"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "mausoleum",
+      "title": "The Mausoleum at Halicarnassus",
+      "start": -352,
+      "end": -350,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "The tomb of Mausolus, built after his death in 353 BC; one of the Seven Wonders of the Ancient World.",
+      "sources": [
+        {
+          "sourceKey": "wp-mausoleum",
+          "sourceLocation": "infobox, lead and Conquest"
+        }
+      ]
+    },
+    {
+      "uuid": "herodotus",
+      "title": "Herodotus, historian of the Greco-Persian Wars",
+      "start": -483,
+      "end": -424,
+      "tracks": [
+        "greece"
+      ],
+      "descr": "A Greek historian and geographer from Halicarnassus; nothing in his Histories can be dated with certainty after 430 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-herodotus",
+          "sourceLocation": "infobox, lead and Later life"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mozi",
+      "title": "Mozi founds Mohism",
+      "start": -469,
+      "end": -390,
+      "tracks": [
+        "china"
+      ],
+      "descr": "A philosophy emphasising universal love, social order, the will of Heaven, sharing and honouring the worthy.",
+      "sources": [
+        {
+          "sourceKey": "wp-mozi",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "hundred-schools",
+      "title": "The Hundred Schools of Thought",
+      "start": -499,
+      "end": -220,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Confucianism, Taoism, Mohism, Legalism and others flourish in the late Spring and Autumn and Warring States periods; their ideas profoundly influence East Asian culture.",
+      "sources": [
+        {
+          "sourceKey": "wp-hundred-schools",
+          "sourceLocation": "lead, Confucianism, Taoism, Mohism and Legalism"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "shang-yang",
+      "title": "Shang Yang’s reforms in Qin",
+      "start": -355,
+      "end": -337,
+      "tracks": [
+        "china"
+      ],
+      "descr": "The reformer takes office in Qin in 359 BCE; his first reforms (356 BC) assign land by military merit and favour agriculture, and a second set follows in 350 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-shang-yang",
+          "sourceLocation": "infobox, lead and Reforms"
+        }
+      ]
+    },
+    {
+      "uuid": "panini",
+      "title": "Pāṇini’s Sanskrit grammar",
+      "start": -449,
+      "tracks": [
+        "south-asia"
+      ],
+      "descr": "The ancient Sanskrit grammarian flourished in the mid 1st millennium BCE, variously dated between the 6th–5th and the 4th century BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-panini",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -500,
+          "margin": 99,
+          "source": {
+            "sourceKey": "wp-panini",
+            "sourceLocation": "infobox ('6th–5th century BCE')"
+          }
+        },
+        {
+          "year": -350,
+          "margin": 49,
+          "source": {
+            "sourceKey": "wp-panini",
+            "sourceLocation": "infobox ('4th century BCE')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "alexander-dies",
+      "title": "Death of Alexander the Great",
+      "start": -322,
+      "tracks": [
+        "greece",
+        "persia"
+      ],
+      "descr": "He dies at the age of 32, between the evenings of 10 and 11 June 323 BCE; fighting between his generals starts almost immediately.",
+      "sources": [
+        {
+          "sourceKey": "wp-death-alexander",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-diadochi",
+          "sourceLocation": "lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "diadochi",
+      "title": "Wars of the Diadochi",
+      "start": -321,
+      "end": -271,
+      "tracks": [
+        "greece",
+        "persia",
+        "egypt"
+      ],
+      "descr": "Conflicts between Alexander’s generals over his empire. Ptolemy receives Egypt; after Corupedium (281 BC) Seleucus I is the last of the original successors, and Macedon is settled for the Antigonids only in 272 BC with the death of Pyrrhus.",
+      "sources": [
+        {
+          "sourceKey": "wp-diadochi",
+          "sourceLocation": "infobox, lead and Background"
+        }
+      ],
+      "links": [
+        {
+          "to": "alexander-dies",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "ipsus",
+      "title": "Battle of Ipsus",
+      "start": -300,
+      "tracks": [
+        "greece",
+        "seleucid"
+      ],
+      "descr": "A coalition of Seleucus, Cassander and Lysimachus defeats Antigonus I, who is killed.",
+      "sources": [
+        {
+          "sourceKey": "wp-ipsus",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-antigonid",
+          "sourceLocation": "History"
+        }
+      ],
+      "links": [
+        {
+          "to": "diadochi",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "seleucus-babylon",
+      "title": "Seleucus takes Babylon: the Seleucid Empire",
+      "start": -311,
+      "tracks": [
+        "seleucid"
+      ],
+      "descr": "After the battle of Gaza (312 BC), Seleucus captures the citadel of Babylon in August 311 BC. His empire is annexed by Rome under Pompey in 63 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-seleucid",
+          "sourceLocation": "lead, infobox, Rise of Seleucus and Babylonian War"
+        }
+      ],
+      "links": [
+        {
+          "to": "diadochi",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ptolemy-pharaoh",
+      "title": "Ptolemy I becomes pharaoh: the Ptolemaic Kingdom",
+      "start": -304,
+      "tracks": [
+        "ptolemaic"
+      ],
+      "descr": "Ptolemy, who had ruled Egypt as satrap since 323 BC, takes the title of basileus and pharaoh. The kingdom lasts until the death of Cleopatra VII in 30 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-ptolemaic",
+          "sourceLocation": "lead, infobox and Establishment"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -304,
+          "source": {
+            "sourceKey": "wp-ptolemaic",
+            "sourceLocation": "Establishment"
+          }
+        },
+        {
+          "year": -303,
+          "source": {
+            "sourceKey": "wp-ptolemaic",
+            "sourceLocation": "Notes, note 1 (some scholars)"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "diadochi",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "library-alexandria",
+      "title": "The Library of Alexandria",
+      "start": -284,
+      "tracks": [
+        "ptolemaic"
+      ],
+      "descr": "Probably built under Ptolemy II Philadelphus (285–246 BC), though Ptolemy I may have planned it. Its decline begins with a purge of intellectuals in 145 BC; part is burned by Julius Caesar in 48 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-library-alexandria",
+          "sourceLocation": "infobox, lead and Founding"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -265,
+          "margin": 19,
+          "source": {
+            "sourceKey": "wp-library-alexandria",
+            "sourceLocation": "infobox (reign of Ptolemy II)"
+          }
+        },
+        {
+          "year": -302,
+          "margin": 20,
+          "source": {
+            "sourceKey": "wp-library-alexandria",
+            "sourceLocation": "Founding (Letter of Aristeas: Ptolemy I)"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "greco-bactria",
+      "title": "The Greco-Bactrian Kingdom breaks away",
+      "start": -255,
+      "tracks": [
+        "greco-bactria"
+      ],
+      "descr": "Founded by the Seleucid satrap Diodotus I; it falls around 120 BC as the Parthians and nomads such as the Saka and Yuezhi press in. The Yuezhi later found the Kushan Empire.",
+      "sources": [
+        {
+          "sourceKey": "wp-greco-bactria",
+          "sourceLocation": "lead, infobox and Independence"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -255,
+          "source": {
+            "sourceKey": "wp-greco-bactria",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -249,
+          "source": {
+            "sourceKey": "wp-greco-bactria",
+            "sourceLocation": "Independence"
+          }
+        },
+        {
+          "year": -250,
+          "margin": 4,
+          "source": {
+            "sourceKey": "wp-greco-bactria",
+            "sourceLocation": "Independence (high and low chronologies)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "archimedes",
+      "title": "Archimedes killed at the siege of Syracuse",
+      "start": -211,
+      "tracks": [
+        "west-med"
+      ],
+      "descr": "One of the greatest mathematicians of all time (c. 287 – c. 212 BC), he designed war machines to defend Syracuse and was killed by a Roman soldier.",
+      "sources": [
+        {
+          "sourceKey": "wp-archimedes",
+          "sourceLocation": "infobox, lead and Biography"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "rosetta-stone",
+      "title": "The Rosetta Stone decree",
+      "start": -195,
+      "tracks": [
+        "ptolemaic"
+      ],
+      "descr": "A decree issued at Memphis on behalf of Ptolemy V Epiphanes on 27 March 196 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-rosetta",
+          "sourceLocation": "infobox, lead and Memphis"
+        }
+      ]
+    },
+    {
+      "uuid": "pydna",
+      "title": "Battle of Pydna: Rome ends the Antigonid kingdom",
+      "start": -167,
+      "tracks": [
+        "antigonid",
+        "roman-republic"
+      ],
+      "descr": "Defeat in the Third Macedonian War ends the dynasty that had ruled much of Hellenistic Greece since 294 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-antigonid",
+          "sourceLocation": "lead and Legacy"
+        }
+      ]
+    },
+    {
+      "uuid": "pergamon-bequest",
+      "title": "Attalus III leaves Pergamon to Rome",
+      "start": -132,
+      "tracks": [
+        "pergamon",
+        "roman-republic"
+      ],
+      "descr": "The childless king bequeaths his realm to the Roman Republic; after a revolt it becomes the Roman province of Asia (129 BC).",
+      "sources": [
+        {
+          "sourceKey": "wp-pergamon",
+          "sourceLocation": "infobox and Final years"
+        }
+      ]
+    },
+    {
+      "uuid": "first-punic-war",
+      "title": "First Punic War",
+      "start": -263,
+      "end": -240,
+      "tracks": [
+        "roman-republic",
+        "carthage"
+      ],
+      "descr": "It breaks out on Sicily and lasts twenty-three years, until Carthage is defeated.",
+      "sources": [
+        {
+          "sourceKey": "wp-punic-wars",
+          "sourceLocation": "lead and infobox"
+        }
+      ]
+    },
+    {
+      "uuid": "second-punic-war",
+      "title": "Second Punic War: Hannibal",
+      "start": -217,
+      "end": -200,
+      "tracks": [
+        "roman-republic",
+        "carthage"
+      ],
+      "descr": "Hannibal is defeated at Zama in 202 BC and a treaty follows in 201 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-punic-wars",
+          "sourceLocation": "lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "first-punic-war",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "carthage-destroyed",
+      "title": "Rome destroys Carthage",
+      "start": -145,
+      "tracks": [
+        "carthage",
+        "roman-republic"
+      ],
+      "descr": "Rome declares war in 149 BC and storms Carthage in 146 BC; its territory becomes the Roman province of Africa.",
+      "sources": [
+        {
+          "sourceKey": "wp-punic-wars",
+          "sourceLocation": "lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "second-punic-war",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "carrhae",
+      "title": "Battle of Carrhae: Parthia defeats Crassus",
+      "start": -52,
+      "tracks": [
+        "parthia",
+        "roman-republic"
+      ],
+      "descr": "Fought between the Roman Republic and the Parthian Empire; Cicero called the war \"nulla causa\", since Parthia had a treaty with Rome.",
+      "sources": [
+        {
+          "sourceKey": "wp-carrhae",
+          "sourceLocation": "infobox, lead and Background"
+        }
+      ]
+    },
+    {
+      "uuid": "caesar-assassinated",
+      "title": "Julius Caesar assassinated",
+      "start": -43,
+      "tracks": [
+        "roman-republic"
+      ],
+      "descr": "Killed on the Ides of March (15 March), three days before he was to leave on a campaign against the Parthians; the Liberators’ civil war follows (43–42 BC).",
+      "sources": [
+        {
+          "sourceKey": "wp-caesar-assassination",
+          "sourceLocation": "infobox, lead and Planning"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "actium",
+      "title": "Battle of Actium",
+      "start": -30,
+      "tracks": [
+        "roman-republic",
+        "ptolemaic"
+      ],
+      "descr": "On 2 September 31 BC Octavian’s fleet under Agrippa defeats Antony and Cleopatra. Cleopatra takes her life on 12 August 30 BC, ending the Ptolemaic Kingdom and the Hellenistic period, and Egypt becomes a Roman province.",
+      "sources": [
+        {
+          "sourceKey": "wp-actium",
+          "sourceLocation": "infobox, lead and Aftermath"
+        },
+        {
+          "sourceKey": "wp-ptolemaic",
+          "sourceLocation": "Final years"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "augustus",
+      "title": "Octavian becomes Augustus: the Roman Empire",
+      "start": -26,
+      "tracks": [
+        "roman-empire",
+        "roman-republic"
+      ],
+      "descr": "The Senate grants Octavian the title Augustus on 16 January 27 BC, often seen as the end of the Republic. He rules as the first emperor until his death in AD 14 and makes peace with Parthia and Kush.",
+      "sources": [
+        {
+          "sourceKey": "wp-augustus",
+          "sourceLocation": "infobox, lead and Name"
+        },
+        {
+          "sourceKey": "wp-roman-republic",
+          "sourceLocation": "lead and infobox"
+        }
+      ],
+      "links": [
+        {
+          "to": "actium",
+          "kind": "related"
+        },
+        {
+          "to": "caesar-assassinated",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "trajan-extent",
+      "title": "The Roman Empire at its greatest extent",
+      "start": 117,
+      "tracks": [
+        "roman-empire"
+      ],
+      "descr": "At the time of Trajan’s death (r. 98–117 AD) the empire covers some 5,000,000 km².",
+      "sources": [
+        {
+          "sourceKey": "wp-roman-empire",
+          "sourceLocation": "infobox and lead"
+        }
+      ]
+    },
+    {
+      "uuid": "crisis-third-century",
+      "title": "Crisis of the Third Century",
+      "start": 235,
+      "end": 284,
+      "tracks": [
+        "roman-empire"
+      ],
+      "descr": "It begins with the assassination of Severus Alexander by his own troops; by 268 the empire has split into three competing states, and Aurelian (270–275) turns the tide.",
+      "sources": [
+        {
+          "sourceKey": "wp-crisis-third-century",
+          "sourceLocation": "lead and infobox"
+        }
+      ],
+      "endDates": [
+        {
+          "year": 284,
+          "source": {
+            "sourceKey": "wp-crisis-third-century",
+            "sourceLocation": "lead (accession of Diocletian)"
+          }
+        },
+        {
+          "year": 285,
+          "source": {
+            "sourceKey": "wp-crisis-third-century",
+            "sourceLocation": "lead and infobox"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "tetrarchy",
+      "title": "The Tetrarchy",
+      "start": 293,
+      "end": 324,
+      "tracks": [
+        "roman-empire"
+      ],
+      "descr": "Diocletian divides imperial rule between two augusti and two caesares; Constantine’s victory at the Milvian Bridge (312) begins its end.",
+      "sources": [
+        {
+          "sourceKey": "wp-tetrarchy",
+          "sourceLocation": "lead"
+        }
+      ]
+    },
+    {
+      "uuid": "edict-milan",
+      "title": "Edict of Milan",
+      "start": 313,
+      "tracks": [
+        "roman-empire"
+      ],
+      "descr": "The 13 February 313 agreement to treat Christians benevolently; Christianity becomes the state religion with the Edict of Thessalonica in 380.",
+      "sources": [
+        {
+          "sourceKey": "wp-edict-milan",
+          "sourceLocation": "lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "constantinople",
+      "title": "Constantinople becomes the capital",
+      "start": 330,
+      "tracks": [
+        "roman-empire",
+        "eastern-roman"
+      ],
+      "descr": "Founded in 324 on the site of Byzantium and dedicated on 11 May 330 as the new eastern capital of the Roman Empire.",
+      "sources": [
+        {
+          "sourceKey": "wp-constantinople",
+          "sourceLocation": "lead, infobox and timeline"
+        },
+        {
+          "sourceKey": "wp-roman-empire",
+          "sourceLocation": "lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "adrianople",
+      "title": "Battle of Adrianople",
+      "start": 378,
+      "tracks": [
+        "roman-empire"
+      ],
+      "descr": "In 376 the Huns had driven many Goths into the empire; at Adrianople they defeat the Romans.",
+      "sources": [
+        {
+          "sourceKey": "wp-sack-rome-410",
+          "sourceLocation": "Background"
+        },
+        {
+          "sourceKey": "wp-fall-west",
+          "sourceLocation": "lead"
+        }
+      ]
+    },
+    {
+      "uuid": "theodosius-dies",
+      "title": "Death of Theodosius I: East and West divide",
+      "start": 395,
+      "tracks": [
+        "roman-empire",
+        "eastern-roman"
+      ],
+      "descr": "He dies after making Christianity the state religion, ending the unified empire (27 BC – AD 395).",
+      "sources": [
+        {
+          "sourceKey": "wp-roman-empire",
+          "sourceLocation": "infobox and Transition to late antiquity"
+        },
+        {
+          "sourceKey": "wp-fall-west",
+          "sourceLocation": "lead"
+        }
+      ]
+    },
+    {
+      "uuid": "sack-rome-410",
+      "title": "The Visigoths sack Rome",
+      "start": 410,
+      "tracks": [
+        "roman-empire"
+      ],
+      "descr": "On 24 August 410 Alaric’s Visigoths enter Rome and pillage it for three days. The Vandals sack it again in 455.",
+      "sources": [
+        {
+          "sourceKey": "wp-sack-rome-410",
+          "sourceLocation": "infobox, lead, Third siege and sack, and Aftermath"
+        }
+      ],
+      "links": [
+        {
+          "to": "adrianople",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fall-west",
+      "title": "Fall of the Western Roman Empire",
+      "start": 476,
+      "tracks": [
+        "roman-empire"
+      ],
+      "descr": "Odoacer deposes Romulus Augustulus, the last Western emperor, and sends the imperial insignia to the Eastern emperor Zeno.",
+      "sources": [
+        {
+          "sourceKey": "wp-fall-west",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-roman-empire",
+          "sourceLocation": "lead and Fall in the West"
+        }
+      ],
+      "links": [
+        {
+          "to": "sack-rome-410",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "justinian",
+      "title": "Reign of Justinian I",
+      "start": 527,
+      "end": 565,
+      "tracks": [
+        "eastern-roman"
+      ],
+      "descr": "He rewrites Roman law as the Corpus Juris Civilis (final code 534) and retakes North Africa from the Vandals (533–534) and Italy from the Ostrogoths; the empire reaches its zenith in 555.",
+      "sources": [
+        {
+          "sourceKey": "wp-justinian",
+          "sourceLocation": "infobox, Life, Legislative activities, Conquest of North Africa, War in Italy and Results"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "hagia-sophia",
+      "title": "Hagia Sophia built",
+      "start": 532,
+      "end": 537,
+      "tracks": [
+        "eastern-roman"
+      ],
+      "descr": "Justinian’s basilica rises after the second church burns in the Nika riots of January 532; it is inaugurated on 27 December 537.",
+      "sources": [
+        {
+          "sourceKey": "wp-hagia-sophia",
+          "sourceLocation": "lead, infobox and Church of Justinian I"
+        },
+        {
+          "sourceKey": "wp-justinian",
+          "sourceLocation": "Nika riots"
+        }
+      ],
+      "links": [
+        {
+          "to": "justinian",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "plague-justinian",
+      "title": "The Plague of Justinian",
+      "start": 541,
+      "end": 549,
+      "tracks": [
+        "eastern-roman",
+        "sasanian"
+      ],
+      "descr": "It reaches Roman Egypt in 541 and every corner of the empire by 543; Justinian catches it and recovers. It strikes the Sasanian Empire too and recurs until the mid-8th century.",
+      "sources": [
+        {
+          "sourceKey": "wp-plague-justinian",
+          "sourceLocation": "infobox, lead and History"
+        }
+      ]
+    },
+    {
+      "uuid": "parthia-founded",
+      "title": "The Parthian Empire",
+      "start": -246,
+      "tracks": [
+        "parthia"
+      ],
+      "descr": "Centred in ancient Iran; Mithridates I (r. c. 171–132 BC) greatly expands it by seizing Media and Mesopotamia from the Seleucids.",
+      "sources": [
+        {
+          "sourceKey": "wp-parthia",
+          "sourceLocation": "lead and infobox"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "maccabees",
+      "title": "The Maccabean Revolt",
+      "start": -166,
+      "end": -159,
+      "tracks": [
+        "judea",
+        "seleucid"
+      ],
+      "descr": "A revolt against the Seleucid king Antiochus IV’s repression of Judaism. The Maccabees take Jerusalem in 164 BCE; Judas Maccabeus dies in 160, and in 141 Simon Thassi expels the Greeks. An alliance with Rome helps secure independence.",
+      "sources": [
+        {
+          "sourceKey": "wp-maccabean",
+          "sourceLocation": "infobox and lead"
+        }
+      ]
+    },
+    {
+      "uuid": "herod",
+      "title": "Herod the Great rules Judea",
+      "start": -36,
+      "end": -3,
+      "tracks": [
+        "judea"
+      ],
+      "descr": "A Roman client king; after his death the Romans divide his kingdom among his heirs. Some scholars (Steinmann) date his reign 36–1 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-herod",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -36,
+          "source": {
+            "sourceKey": "wp-herod",
+            "sourceLocation": "infobox (Schürer)"
+          }
+        },
+        {
+          "year": -35,
+          "source": {
+            "sourceKey": "wp-herod",
+            "sourceLocation": "infobox (Steinmann)"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -3,
+          "source": {
+            "sourceKey": "wp-herod",
+            "sourceLocation": "infobox (Schürer)"
+          }
+        },
+        {
+          "year": 0,
+          "source": {
+            "sourceKey": "wp-herod",
+            "sourceLocation": "infobox (Steinmann)"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "crucifixion",
+      "title": "Crucifixion of Jesus",
+      "start": 30,
+      "tracks": [
+        "judea"
+      ],
+      "descr": "In Jerusalem, in the Roman province of Judaea; dated AD 30 or 33.",
+      "sources": [
+        {
+          "sourceKey": "wp-crucifixion",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 30,
+          "source": {
+            "sourceKey": "wp-crucifixion",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": 33,
+          "source": {
+            "sourceKey": "wp-crucifixion",
+            "sourceLocation": "infobox"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "jerusalem-70",
+      "title": "Rome destroys Jerusalem and the Second Temple",
+      "start": 70,
+      "tracks": [
+        "judea",
+        "roman-empire"
+      ],
+      "descr": "The decisive event of the First Jewish Revolt (66–73 CE): the siege runs from 13 April to 8 September 70.",
+      "sources": [
+        {
+          "sourceKey": "wp-siege-jerusalem-70",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "bar-kokhba",
+      "title": "The Bar Kokhba revolt",
+      "start": 132,
+      "end": 136,
+      "tracks": [
+        "judea",
+        "roman-empire"
+      ],
+      "descr": "Sparked by Hadrian’s plan to rebuild Jerusalem as Aelia Capitolina; the rebels hold an independent state for over three years until Betar falls in 135. The province is renamed Syria Palaestina.",
+      "sources": [
+        {
+          "sourceKey": "wp-bar-kokhba",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "jerusalem-70",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "nabataea-annexed",
+      "title": "Rome annexes the Nabataean Kingdom",
+      "start": 106,
+      "tracks": [
+        "nabataea",
+        "roman-empire"
+      ],
+      "descr": "Independent since the mid-3rd century BC, it becomes the province of Arabia Petraea.",
+      "sources": [
+        {
+          "sourceKey": "wp-nabataean",
+          "sourceLocation": "lead and infobox"
+        }
+      ]
+    },
+    {
+      "uuid": "sasanians-rise",
+      "title": "The Sasanian Empire",
+      "start": 224,
+      "tracks": [
+        "sasanian",
+        "parthia"
+      ],
+      "descr": "Ardashir I defeats the Parthians at the Battle of Hormozdgan on 28 April 224; the last pre-Islamic Iranian empire rules from Ctesiphon until 651.",
+      "sources": [
+        {
+          "sourceKey": "wp-sasanian",
+          "sourceLocation": "infobox"
+        },
+        {
+          "sourceKey": "wp-parthia",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "edessa-260",
+      "title": "Shapur I defeats Rome at Edessa",
+      "start": 260,
+      "tracks": [
+        "sasanian",
+        "roman-empire"
+      ],
+      "descr": "A disastrous Roman defeat; the same year Odaenathus of Palmyra defeats Shapur near the Euphrates.",
+      "sources": [
+        {
+          "sourceKey": "wp-palmyrene",
+          "sourceLocation": "Background"
+        },
+        {
+          "sourceKey": "wp-sasanian",
+          "sourceLocation": "infobox"
+        }
+      ]
+    },
+    {
+      "uuid": "palmyra",
+      "title": "Zenobia’s Palmyrene Empire",
+      "start": 270,
+      "end": 273,
+      "tracks": [
+        "palmyra",
+        "roman-empire"
+      ],
+      "descr": "In 270 Zenobia rapidly conquers most of the Roman east, including Egypt; in 271 she claims the imperial title. Aurelian besieges Palmyra in 272 and razes it after a revolt in 273.",
+      "sources": [
+        {
+          "sourceKey": "wp-palmyrene",
+          "sourceLocation": "infobox, lead and history"
+        }
+      ]
+    },
+    {
+      "uuid": "armenia-christian",
+      "title": "Armenia adopts Christianity",
+      "start": 301,
+      "tracks": [
+        "armenia"
+      ],
+      "descr": "The traditional date; scholars propose dates from 284 to no later than 325, and many favour 314.",
+      "sources": [
+        {
+          "sourceKey": "wp-armenia-christian",
+          "sourceLocation": "lead and Date and causes"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 301,
+          "source": {
+            "sourceKey": "wp-armenia-christian",
+            "sourceLocation": "lead (traditional)"
+          }
+        },
+        {
+          "year": 314,
+          "source": {
+            "sourceKey": "wp-armenia-christian",
+            "sourceLocation": "Date and causes (many modern scholars)"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "aksum-himyar",
+      "title": "Aksum conquers Himyar",
+      "start": 530,
+      "tracks": [
+        "himyar"
+      ],
+      "descr": "After the conquest Christianity becomes Himyar’s main religion; Sasanian intervention brings Yemen under Persian influence in 575 or 578.",
+      "sources": [
+        {
+          "sourceKey": "wp-himyar",
+          "sourceLocation": "infobox, lead and religion"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "byz-sasanian-war",
+      "title": "The last Roman–Persian war",
+      "start": 602,
+      "end": 628,
+      "tracks": [
+        "sasanian",
+        "eastern-roman"
+      ],
+      "descr": "The Sasanians conquer much of the Levant, parts of Anatolia and, for the first time, Egypt; they take Jerusalem after a three-week siege in 614. Heraclius strikes back from 622, the Persians fail before Constantinople in 626, and Persia, torn by civil war, seeks peace.",
+      "sources": [
+        {
+          "sourceKey": "wp-byz-sasanian-602",
+          "sourceLocation": "infobox, lead and Persian ascendancy"
+        }
+      ]
+    },
+    {
+      "uuid": "hijrah",
+      "title": "The Hijrah: start of the Islamic calendar",
+      "start": 622,
+      "tracks": [
+        "early-islam"
+      ],
+      "descr": "Its date equates to 16 July 622; the year is the epoch of the Islamic calendar.",
+      "sources": [
+        {
+          "sourceKey": "wp-hijrah",
+          "sourceLocation": "lead and Note 3"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "yarmuk",
+      "title": "Battle of the Yarmuk",
+      "start": 636,
+      "tracks": [
+        "early-islam",
+        "eastern-roman"
+      ],
+      "descr": "On 15–20 August 636 the Rashidun Caliphate defeats the Byzantine army; Byzantine Syria is annexed.",
+      "sources": [
+        {
+          "sourceKey": "wp-yarmuk",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "links": [
+        {
+          "to": "byz-sasanian-war",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "qadisiyyah",
+      "title": "Battle of al-Qadisiyyah",
+      "start": 636,
+      "tracks": [
+        "early-islam",
+        "sasanian"
+      ],
+      "descr": "The second Rashidun invasion of Sasanian territory wins a decisive victory (16–19 November 636).",
+      "sources": [
+        {
+          "sourceKey": "wp-conquest-persia",
+          "sourceLocation": "lead and history"
+        },
+        {
+          "sourceKey": "wp-sasanian",
+          "sourceLocation": "infobox"
+        }
+      ]
+    },
+    {
+      "uuid": "sasanian-fall",
+      "title": "Fall of the Sasanian Empire",
+      "start": 651,
+      "tracks": [
+        "sasanian",
+        "early-islam"
+      ],
+      "descr": "By 651 most cities of the Iranian lands are in Muslim hands; the Rashidun Caliphate annexes the empire.",
+      "sources": [
+        {
+          "sourceKey": "wp-conquest-persia",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-sasanian",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "links": [
+        {
+          "to": "qadisiyyah",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    }
+  ]
+}

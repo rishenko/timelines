@@ -40,6 +40,20 @@ export interface TimelineMeta {
   circaFade?: number;
   /** Track ids that start collapsed. */
   collapsed?: string[];
+  /**
+   * Neighbouring timelines this one continues into (or from), shown as links at the ends of the ruler. `at` is the
+   * stored year the other timeline opens at; `side` says which end of this timeline the link sits on.
+   */
+  continues?: TimelineEdgeLink[];
+  /** The period the timeline is about (stored years). The ruler doesn't extend past it, even for rows that do. */
+  range?: { start: number; end: number };
+}
+
+export interface TimelineEdgeLink {
+  /** The other timeline's id (a bundled timeline, or one in the reader's library). */
+  timeline: string;
+  at: number;
+  side: 'before' | 'after';
 }
 
 /** A date range on a track: the lifespan of a civilization, period or faction. */

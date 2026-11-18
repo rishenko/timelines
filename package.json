@@ -19,7 +19,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "shot": "node scripts/screenshot.ts",
-    "check:live": "node scripts/check-live.ts"
+    "check:live": "node scripts/check-live.ts",
+    "data:classical": "node scripts/build-dataset.ts data-src/classical.json src/timelines/classical.json",
+    "importance:classical": "node scripts/set-importance.ts data-src/classical.json --plan data-src/classical-importance.json && npm run data:classical && node scripts/list-importance.ts src/timelines/classical.json docs/classical-key-events.md"
   },
   "dependencies": {
     "react": "^19.3.1",

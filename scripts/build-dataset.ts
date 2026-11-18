@@ -59,6 +59,12 @@ function dated(o: Obj, where: string): Obj {
 
 const ds = {
   ...raw,
+  // edge links to neighbouring timelines: "at" may be written as a readable year too
+  meta: {
+    ...raw.meta,
+    ...(raw.meta.continues ? { continues: (raw.meta.continues as Obj[]).map((c, i) => ({ ...c, at: year(c.at, `meta.continues[${i}]`).year })) } : {}),
+    ...(raw.meta.range ? { range: { start: year(raw.meta.range.start, 'meta.range start').year, end: year(raw.meta.range.end, 'meta.range end').year } } : {}),
+  },
   chronologies: raw.chronologies
     ? Object.fromEntries(
         Object.entries(raw.chronologies as Record<string, Obj>).map(([id, c]) => {

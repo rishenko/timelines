@@ -52,7 +52,8 @@
       "mesoamerica",
       "south-america",
       "caribbean"
-    ]
+    ],
+    "continues": [{ "timeline": "classical", "at": "330 BCE", "side": "after" }]
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" } },
   "sources": {

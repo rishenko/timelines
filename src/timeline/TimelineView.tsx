@@ -57,6 +57,8 @@ interface Props {
   onCenterYearChange: (year: number) => void;
   /** Zoom one increment finer, centered on a year. Returns false if already at the finest increment. */
   onZoomIn: (year: number) => boolean;
+  /** Links to neighbouring timelines (from meta.continues), drawn on the ruler at the year where the two meet. */
+  edgeLinks?: { side: 'before' | 'after'; year: number; label: string; title: string; href: string }[];
   /** Touch pinch: one zoom step finer (1) or coarser (-1), keeping the center year. */
   onPinchZoom?: (dir: 1 | -1, centerYear: number) => void;
   onEditTrack: (id: string) => void;
@@ -112,8 +114,8 @@ export function TimelineView(props: Props) {
     return out;
   }, [lanes, spans]);
   const scale = useMemo(
-    () => buildScale(anchorsFor(events, present, laneSpans), { increment, compress, calendar: cal }),
-    [events, present, laneSpans, increment, compress, cal],
+    () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
+    [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
   const layout = useMemo(
     () => layoutLanes(lanes, events, scale, present, { expanded }),
@@ -324,6 +326,17 @@ export function TimelineView(props: Props) {
             <div key={g.y0} className="tl-gap-label" style={{ left: labelW + g.x0, width: g.x1 - g.x0 }}>
               <span title={`${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)} compressed`}>⋯ {g.y1 - g.y0} yrs ⋯</span>
             </div>
+          ))}
+          {props.edgeLinks?.map((l) => (
+            <a
+              key={l.side + l.href}
+              className={`tl-edge-link ${l.side}`}
+              href={l.href}
+              style={{ left: labelW + scale.x(l.year) + 4 }}
+              title={l.title}
+            >
+              {l.side === 'before' ? `← ${l.label}` : `${l.label} →`}
+            </a>
           ))}
         </div>
 

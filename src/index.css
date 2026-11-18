@@ -1457,3 +1457,21 @@ main {
     max-height: 45vh;
   }
 }
+
+/* links to neighbouring timelines at the ends of the ruler (meta.continues) */
+.tl-edge-link {
+  position: absolute;
+  top: 6px;
+  z-index: 3;
+  padding: 2px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 18%, var(--bg-2));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 10px;
+  text-decoration: none;
+}
+.tl-edge-link:hover {
+  background: color-mix(in srgb, var(--accent) 32%, var(--bg-2));
+}

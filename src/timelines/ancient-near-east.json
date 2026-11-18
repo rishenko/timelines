@@ -70,6 +70,13 @@
       "mesoamerica",
       "south-america",
       "caribbean"
+    ],
+    "continues": [
+      {
+        "timeline": "classical",
+        "at": -329,
+        "side": "after"
+      }
     ]
   },
   "tags": {
