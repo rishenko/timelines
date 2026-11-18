@@ -1200,14 +1200,6 @@
       ],
       "accessed": "2026-11-17"
     },
-    "wp-caral-supe": {
-      "name": "Wikipedia: Caral–Supe civilization",
-      "url": "https://en.wikipedia.org/wiki/Norte_Chico_civilization",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-17"
-    },
     "wp-caral": {
       "name": "Wikipedia: Caral",
       "url": "https://en.wikipedia.org/wiki/Caral",
@@ -9374,28 +9366,7 @@
       "id": "caral-supe",
       "name": "Caral–Supe (Norte Chico)",
       "color": "#3a7a8a",
-      "parent": "south-america",
-      "span": {
-        "start": -3499,
-        "end": -1799,
-        "startDates": [
-          {
-            "year": -3499,
-            "source": {
-              "sourceKey": "wp-caral-supe",
-              "sourceLocation": "lead (first city, Huaricanga)"
-            }
-          },
-          {
-            "year": -3099,
-            "source": {
-              "sourceKey": "wp-caral-supe",
-              "sourceLocation": "lead ('From 3100 BCE onward, large-scale … settlement … clearly apparent')"
-            }
-          }
-        ],
-        "circa": true
-      }
+      "parent": "south-america"
     },
     {
       "id": "chavin",
@@ -9511,7 +9482,7 @@
       "tracks": [
         "sum-uruk"
       ],
-      "descr": "The peak of Uruk's influence in the Late Uruk phase: colonies and trading posts far beyond southern Mesopotamia, monumental building and administrative record-keeping.",
+      "descr": "The peak of Uruk's influence in the Late Uruk phase: colonies such as Habuba Kabira beyond southern Mesopotamia, monumental building and administrative record-keeping.",
       "sources": [
         {
           "sourceKey": "wp-uruk",
@@ -9528,7 +9499,7 @@
       "tracks": [
         "sum-uruk"
       ],
-      "descr": "Administrative tablets from Uruk's Eanna district, the earliest stage of the writing that became cuneiform. Dates are the CDLI's, as cited by Wikipedia.",
+      "descr": "Administrative tablets, the earliest stage of the writing that became cuneiform. Dates are the CDLI's, as cited by Wikipedia.",
       "sources": [
         {
           "sourceKey": "wp-uruk",
@@ -9546,7 +9517,7 @@
       "tracks": [
         "sum-ed"
       ],
-      "descr": "The richly furnished royal burials of Ur, including the Standard of Ur, belong to Early Dynastic IIIa.",
+      "descr": "Early Dynastic IIIa (c. 2600–2500 BCE) is the period of the royal tombs of Ur.",
       "sources": [
         {
           "sourceKey": "wp-ed-meso",
@@ -9580,7 +9551,7 @@
       "tracks": [
         "akkad"
       ],
-      "descr": "Founder of the Akkadian Empire, often called the first empire. Within the middle chronology, scholars offer several reign dates; all are recorded here.",
+      "descr": "Founder of the Akkadian Empire, sometimes identified as the first person in recorded history to rule over an empire. Within the middle chronology, scholars offer several reign dates; all are recorded here.",
       "sources": [
         {
           "sourceKey": "wp-sargon",
@@ -9856,13 +9827,13 @@
     },
     {
       "uuid": "sumu-abum",
-      "title": "Sumu-abum makes Babylon independent",
+      "title": "Sumu-abum, first known king of Babylon",
       "start": -1893,
       "tracks": [
         "bab-old",
         "amorites"
       ],
-      "descr": "The Amorite chieftain Sumu-abum founds the First Dynasty of Babylon.",
+      "descr": "The Amorite Sumu-abum is the first known king of the First Dynasty of Babylon.",
       "sources": [
         {
           "sourceKey": "wp-old-bab",
@@ -10014,7 +9985,7 @@
       "tracks": [
         "bab-old"
       ],
-      "descr": "Eshnunna falls in 1762 and Mari in 1761; Mari's palace is burned, preserving its great archive (1774–1761 BCE).",
+      "descr": "Eshnunna falls in 1762 and Mari in 1761; Mari's palace is burned, preserving its great archive.",
       "sources": [
         {
           "sourceKey": "wp-old-bab",
@@ -10036,7 +10007,7 @@
       "tracks": [
         "bab-old"
       ],
-      "descr": "The basalt stele of nearly 300 laws, compiled late in Hammurabi's reign. It was later carried off to Susa as plunder, where it was found in 1901.",
+      "descr": "The basalt stele of laws, compiled late in Hammurabi's reign. It was later carried off to Susa as plunder, where it was found in 1901.",
       "sources": [
         {
           "sourceKey": "wp-code-hammurabi",
@@ -10061,7 +10032,7 @@
         "anatolia",
         "assyria"
       ],
-      "descr": "Old Assyrian merchants trade tin and textiles from a quarter outside the Anatolian city of Kanesh, leaving thousands of tablets. The level ends in a fire.",
+      "descr": "Old Assyrian merchants trade tin and textiles from a portion of the Anatolian city of Kanesh set aside for them, leaving thousands of tablets. The level ends in a fire.",
       "sources": [
         {
           "sourceKey": "wp-kultepe",
@@ -10144,7 +10115,7 @@
       "tracks": [
         "anatolia"
       ],
-      "descr": "Anitta takes Neša (Kanesh) after his father Pithana, defeats Zalpuwa, sacks Hattusa and makes Neša his capital. His inscription is among the oldest texts in Hittite.",
+      "descr": "His father Pithana took Neša (Kanesh); Anitta defeats Zalpuwa, razes Hattusa and moves his capital from Kussara to Neša. His inscription is among the oldest texts in Hittite.",
       "sources": [
         {
           "sourceKey": "wp-anitta",
@@ -10283,7 +10254,7 @@
       "tracks": [
         "hit-old"
       ],
-      "descr": "Dated by the excavator to the second year of Ḫattušili I's reign, during his Syrian campaigns.",
+      "descr": "Dated by Aslihan K. Yener to the second year of Ḫattušili I's reign, during his Syrian campaigns.",
       "sources": [
         {
           "sourceKey": "wp-hattusili1",
@@ -10306,7 +10277,7 @@
       "tracks": [
         "hit-old"
       ],
-      "descr": "Ḫattušili's grandson renews the Syrian wars, takes Aleppo and raids Babylon. He is assassinated on his return by a conspiracy led by Ḫantili I and Zidanta I.",
+      "descr": "Ḫattušili's grandson renews the Syrian wars, invades Yamhad and its capital Aleppo, and raids Babylon. He is assassinated on his return by a conspiracy led by his brother-in-law Ḫantili I, which included Zidanta I.",
       "sources": [
         {
           "sourceKey": "wp-mursili1",
@@ -10371,12 +10342,12 @@
     },
     {
       "uuid": "mursili-aleppo",
-      "title": "Mursili I takes Aleppo",
+      "title": "Mursili I invades Aleppo",
       "start": -1599,
       "tracks": [
         "hit-old"
       ],
-      "descr": "The Hittites conquer Yamhad and its capital Aleppo before marching about 2,000 km down the Euphrates to Babylon.",
+      "descr": "Mursili I invades Yamhad and its capital Aleppo, which had eluded Ḫattušili I, before marching 2,000 km southeast into the heart of Mesopotamia to Babylon.",
       "sources": [
         {
           "sourceKey": "wp-mursili1",
@@ -10467,7 +10438,7 @@
       "tracks": [
         "bab-kassite"
       ],
-      "descr": "A people from the Zagros mountains take Babylonia after the Hittite raid and rule it for over four centuries.",
+      "descr": "A people from the Zagros mountains take Babylonia after the Hittite raid and rule it until c. 1155 BCE.",
       "sources": [
         {
           "sourceKey": "wp-old-bab",
@@ -10505,7 +10476,7 @@
       "tracks": [
         "hit-old"
       ],
-      "descr": "King Telepinu's edict sets rules for the royal succession after generations of murders. Little more than the names of his successors is known for about 80 years.",
+      "descr": "King Telepinu's edict sets rules for the royal succession. Little more than the names of his successors is known for about 80 years.",
       "sources": [
         {
           "sourceKey": "wp-telepinu",
@@ -10516,7 +10487,7 @@
     },
     {
       "uuid": "mitanni-kirta",
-      "title": "Kirta, first king of Mitanni",
+      "title": "Kirta, first known king of Mitanni",
       "start": -1539,
       "tracks": [
         "mitanni"
@@ -10538,7 +10509,7 @@
       "tracks": [
         "hit-new"
       ],
-      "descr": "The Hittite empire's great expansion: Mitanni is broken in the One-Year and Six-Year wars, Carchemish is taken, and Hatti becomes a great power that writes to Egypt in the Amarna letters.",
+      "descr": "The Hittite empire's great expansion: Mitanni is overrun in the One-Year and Six-Year wars and Carchemish is taken. He expands the empire and is mentioned in the Amarna letters.",
       "sources": [
         {
           "sourceKey": "wp-suppiluliuma1",
@@ -10612,7 +10583,7 @@
         "assyria",
         "mitanni"
       ],
-      "descr": "Assyria breaks free of Mitanni and, in the middle of the 14th century, annexes Mitanni territory. Wikipedia notes the Assyrian King List is considered roughly correct from his reign on.",
+      "descr": "Assyria begins to free itself of Mitanni control and, in the middle of the 14th century, annexes Mitanni territory. Wikipedia notes the Assyrian King List is considered roughly correct from his reign on.",
       "sources": [
         {
           "sourceKey": "wp-mitanni",
@@ -10821,7 +10792,7 @@
         "hit-new"
       ],
       "chronology": "shaw",
-      "descr": "A diplomatic marriage in Ramesses's 34th year seals the peace.",
+      "descr": "Ramesses II marries Ḫattušili III's daughter Maathorneferure in his 34th year.",
       "sources": [
         {
           "sourceKey": "wp-hittite-kings",
@@ -10838,7 +10809,7 @@
       "tracks": [
         "hit-new"
       ],
-      "descr": "Ḫattušili's son loses to Assyria at Nihriya and claims a conquest of Alashiya (Cyprus).",
+      "descr": "Ḫattušili's son loses to Assyria at Nihriya and claims a conquest of Alashiya (perhaps Cyprus).",
       "sources": [
         {
           "sourceKey": "wp-tudhaliya4",
@@ -10891,7 +10862,7 @@
         "hit-new",
         "assyria"
       ],
-      "descr": "Tukulti-Ninurta I of Assyria defeats Tudḫaliya IV over the remnants of Mitanni: the first direct defeat of the Hittites by Assyria.",
+      "descr": "Tukulti-Ninurta I of Assyria defeats Tudḫaliya IV over the remnants of Mitanni, a severe defeat for the Hittites.",
       "sources": [
         {
           "sourceKey": "wp-tudhaliya4",
@@ -11081,7 +11052,7 @@
       "tracks": [
         "anatolia"
       ],
-      "descr": "The final sublayer of the great Middle–Late Bronze Age citadel (Troy VI, built c. 1750) is destroyed; Troy VIIa is built soon after.",
+      "descr": "The final sublayer of the fortified Middle–Late Bronze Age citadel (Troy VI, built c. 1750) is destroyed; Troy VIIa is built soon after.",
       "sources": [
         {
           "sourceKey": "wp-troy",
@@ -11115,13 +11086,13 @@
     },
     {
       "uuid": "drought-1198",
-      "title": "Three-year drought in central Anatolia",
+      "title": "Severe drought coincides with the Hittite collapse",
       "start": -1197,
       "end": -1195,
       "tracks": [
         "anatolia"
       ],
-      "descr": "Tree rings show severe drought in 1198, 1197 and 1196 BCE, suggested as a factor in the Hittite collapse.",
+      "descr": "A severe multi-year drought around 1198–1196 BCE, coincident with the Hittite collapse; it has been suggested that a regional drought occurred at that time.",
       "sources": [
         {
           "sourceKey": "wp-hattusa",
@@ -11183,7 +11154,7 @@
       "tracks": [
         "eg-old"
       ],
-      "descr": "The first king of the Third Dynasty; his architect Imhotep is credited with the Step Pyramid at Saqqara, the first large stone pyramid.",
+      "descr": "The first king of the Third Dynasty; his architect Imhotep is credited with the development of building with stone and with the Step Pyramid at Saqqara.",
       "sources": [
         {
           "sourceKey": "wp-old-kingdom",
@@ -11232,7 +11203,7 @@
       "tracks": [
         "eg-old"
       ],
-      "descr": "Khufu's pyramid at Giza, built over about 26 years, stays the tallest structure on Earth for thousands of years. The bar is Khufu's reign; other dating systems put it decades apart.",
+      "descr": "Khufu's pyramid at Giza, built over about 26 years, stays the tallest structure on Earth for thousands of years. The bar is Khufu's reign; most recent estimates date Khufu and his pyramid between 2700 and 2500 BCE.",
       "sources": [
         {
           "sourceKey": "wp-old-kingdom",
@@ -11307,12 +11278,12 @@
     },
     {
       "uuid": "senusret-boat",
-      "title": "Senusret III's funerary boat (tree-ring dated)",
+      "title": "Senusret III's funerary boat dated",
       "start": -1886,
       "tracks": [
         "eg-middle"
       ],
-      "descr": "Dendrochronology dates the boat's timber to 1887 ± 11 BCE, an independent check on the conventional reign of Senusret III (1878–1839 BCE).",
+      "descr": "The funerary boat of Senusret III is dated to 1887 ± 11 BCE; the conventional date of his reign is 1878–1839 BCE.",
       "sources": [
         {
           "sourceKey": "wp-egypt-chron",
@@ -11402,7 +11373,7 @@
         "eg-sip",
         "eg-new"
       ],
-      "descr": "After three failed attacks, Ahmose takes Avaris and then Sharuhen after a three-year siege, reuniting Egypt and opening the New Kingdom.",
+      "descr": "After three attacks on Avaris, Ahmose takes the city in a fourth and then Sharuhen after a three-year siege, reuniting Egypt and opening the New Kingdom.",
       "sources": [
         {
           "sourceKey": "wp-kadesh",
@@ -11558,7 +11529,7 @@
         "eg-new",
         "punt"
       ],
-      "descr": "In Hatshepsut's ninth year a trading fleet sails to Punt; the voyage is recorded in reliefs at Deir el-Bahari.",
+      "descr": "In Hatshepsut's ninth year an expedition goes to Punt; it is recorded in reliefs at Deir el-Bahari.",
       "sources": [
         {
           "sourceKey": "wp-hatshepsut",
@@ -11581,7 +11552,7 @@
       "tracks": [
         "eg-new"
       ],
-      "descr": "Co-ruler with Hatshepsut, then sole king and Egypt's great empire-builder in the Levant.",
+      "descr": "Co-ruler with Hatshepsut, then sole king; he conquers much of the Near East from the Euphrates to Nubia.",
       "sources": [
         {
           "sourceKey": "wp-new-kingdom",
@@ -11707,7 +11678,7 @@
         "ugarit",
         "cyprus"
       ],
-      "descr": "Akhetaten is Egypt's capital. Its archive of 382 cuneiform tablets holds letters between the pharaohs and the kings of Babylon, Mitanni, Hatti and Assyria, covering no more than 30 years in the mid-14th century.",
+      "descr": "Akhetaten is Egypt's capital. Its archive of 382 cuneiform tablets holds diplomatic letters between the Egyptian administration and its representatives in Canaan and Amurru, or neighbouring kings, covering no more than 30 years in the mid-14th century.",
       "sources": [
         {
           "sourceKey": "wp-new-kingdom",
@@ -11734,7 +11705,7 @@
       "tracks": [
         "eg-new"
       ],
-      "descr": "The boy king restores the worship of Amun and returns the court to Memphis. His nearly intact tomb (KV62) was found in 1922.",
+      "descr": "Pharaoh at 8 or 9 years of age, he restores the worship of Amun and returns the court to Memphis. His tomb (KV62), robbed in ancient times but retaining much of its original contents, was found in 1922.",
       "sources": [
         {
           "sourceKey": "wp-tut",
@@ -11859,7 +11830,7 @@
         "sea-peoples",
         "philistines"
       ],
-      "descr": "In his eighth year Ramesses III defeats the Sea Peoples at the mouths of the Nile, the best-recorded of their invasions (Medinet Habu).",
+      "descr": "In his eighth year Ramesses III defeats the Sea Peoples at the mouths of the Nile; the conflict is recorded on the walls of his mortuary temple at Medinet Habu.",
       "sources": [
         {
           "sourceKey": "wp-delta",
@@ -11897,7 +11868,7 @@
       "tracks": [
         "eg-tip"
       ],
-      "descr": "A Libyan dynasty takes the throne at Bubastis; Shoshenq campaigns in the Levant.",
+      "descr": "A dynasty originally from ancient Libya takes the throne, with its capital at Bubastis.",
       "sources": [
         {
           "sourceKey": "wp-tip",
@@ -11993,7 +11964,7 @@
         "assyria",
         "kush"
       ],
-      "descr": "The sack of Egypt's religious capital ends Kushite rule in Egypt.",
+      "descr": "The Assyrians sack Thebes and Memphis, ending Kushite rule in Egypt.",
       "sources": [
         {
           "sourceKey": "wp-tip",
@@ -12070,7 +12041,7 @@
         "eg-late",
         "persia"
       ],
-      "descr": "Cambyses II defeats Psamtik III and Egypt becomes a Persian province, beginning the First Achaemenid Period (525–404 BCE).",
+      "descr": "Cambyses II defeats Psamtik III and Egypt is annexed by the Achaemenid Empire, beginning the First Achaemenid Period (525–404 BCE).",
       "sources": [
         {
           "sourceKey": "wp-pelusium",
@@ -12145,7 +12116,7 @@
       "tracks": [
         "minoan-protopalatial"
       ],
-      "descr": "Mass destructions, usually blamed on earthquakes, end the Protopalatial period; the palaces are rebuilt larger.",
+      "descr": "Mass destructions, usually blamed on earthquakes, end the Protopalatial period; most of the palaces are rebuilt, except Phaistos.",
       "sources": [
         {
           "sourceKey": "wp-minoan-chron",
@@ -12369,7 +12340,7 @@
         "aegean",
         "myc-palatial"
       ],
-      "descr": "A merchant ship sinks off southern Anatolia with ten tons of copper, tin, glass and luxury goods: a snapshot of Late Bronze Age trade between Egypt, the Levant, Cyprus and the Aegean.",
+      "descr": "A merchant ship sinks south of Kaş, in Turkey, carrying about 10 tons of copper, about a ton of tin and glass ingots: a microcosm of the international trade in the Eastern Mediterranean and across the Aegean.",
       "sources": [
         {
           "sourceKey": "wp-uluburun",
@@ -12509,7 +12480,7 @@
       "tracks": [
         "mycenaean"
       ],
-      "descr": "The last traces of Mycenaean culture as Greece enters the Iron Age.",
+      "descr": "The transition from the Bronze Age to the Iron Age in Greece.",
       "sources": [
         {
           "sourceKey": "wp-mycenaean",
@@ -12526,7 +12497,7 @@
       "tracks": [
         "aegean"
       ],
-      "descr": "A period of smaller settlements, no writing and little long-distance trade, until the rise of the Greek city-states.",
+      "descr": "The recordless transitional period after the end of Mycenaean Greece, lasting until the 8th century BCE.",
       "sources": [
         {
           "sourceKey": "wp-mycenaean",
@@ -12559,7 +12530,7 @@
         "assyria",
         "babylonia"
       ],
-      "descr": "After repeated Babylonian revolts, the Assyrian king besieges and destroys the city.",
+      "descr": "After a series of battles, the Assyrian king recaptures Babylon and destroys the city.",
       "sources": [
         {
           "sourceKey": "wp-fall-babylon",
@@ -12579,7 +12550,7 @@
         "bab-neo",
         "chaldeans"
       ],
-      "descr": "Nabopolassar revolts against Assyria, takes Babylon and Nippur and founds the Neo-Babylonian dynasty, allied with the Medes.",
+      "descr": "Nabopolassar revolts against Assyria, takes Babylon and Nippur and is crowned king of Babylon, allied with the Medes.",
       "sources": [
         {
           "sourceKey": "wp-neo-bab",
@@ -12621,7 +12592,7 @@
         "bab-neo",
         "medes"
       ],
-      "descr": "Medes and Babylonians besiege Nineveh from May to August; king Sîn-šar-iškun dies and the Assyrian heartland collapses.",
+      "descr": "Medes and Babylonians besiege Nineveh from May to August; king Sîn-šar-iškun dies in the siege.",
       "sources": [
         {
           "sourceKey": "wp-nineveh",
@@ -12684,7 +12655,7 @@
         "bab-neo",
         "eg-late"
       ],
-      "descr": "The Babylonians under crown prince Nebuchadnezzar defeat Egypt and the last Assyrian forces, taking control of Syria.",
+      "descr": "The Babylonians under crown prince Nebuchadnezzar inflict a crushing defeat on an Egyptian army under Necho II, Assyria's ally.",
       "sources": [
         {
           "sourceKey": "wp-nebuchadnezzar",
@@ -12789,7 +12760,7 @@
         "persia",
         "medes"
       ],
-      "descr": "Cyrus of Persia overthrows his Median overlord, the beginning of the Achaemenid Empire.",
+      "descr": "Cyrus, king of Anshan, revolts against his suzerain Astyages of Media.",
       "sources": [
         {
           "sourceKey": "wp-fall-babylon",
@@ -12822,7 +12793,7 @@
       "tracks": [
         "bab-neo"
       ],
-      "descr": "The last king of Babylon favours the moon god Sin and spends years in Arabia while his son Belshazzar governs.",
+      "descr": "The last king of Babylon favours the moon god Sin and spends time in Arabia, leaving his son Belshazzar in command of the army.",
       "sources": [
         {
           "sourceKey": "wp-fall-babylon",
@@ -12860,7 +12831,7 @@
       "tracks": [
         "as-old"
       ],
-      "descr": "Under Puzur-Ashur I, after the collapse of the Third Dynasty of Ur. One page credits independence to an earlier ruler, Ushpia, around 2090 BCE.",
+      "descr": "Assur becomes independent from the Third Dynasty of Ur under Puzur-Ashur I. One page credits independence to an earlier ruler, Ushpia, around 2090 BCE.",
       "sources": [
         {
           "sourceKey": "wp-old-assyria",
@@ -12954,7 +12925,7 @@
         "as-old",
         "mitanni"
       ],
-      "descr": "Assyria is a vassal of Mitanni for about 70 years, until it breaks free in the early 14th century.",
+      "descr": "Assyria is subjugated by Mitanni for about 70 years, until it becomes an independent territorial state under Ashur-uballit I.",
       "sources": [
         {
           "sourceKey": "wp-old-assyria",
@@ -13012,7 +12983,7 @@
     },
     {
       "uuid": "kalhu-capital",
-      "title": "Ashurnasirpal II makes Nimrud (Kalhu) the capital",
+      "title": "Ashurnasirpal II makes Nimrud the capital",
       "start": -878,
       "tracks": [
         "as-neo"
@@ -13033,7 +13004,7 @@
       "tracks": [
         "as-neo"
       ],
-      "descr": "Takes power in a revolt and turns Assyria into a far larger empire: he defeats Urartu (743), conquers Damascus (732) and Babylonia (729).",
+      "descr": "Perhaps a usurper, he more than doubles the land ruled by Assyria: he defeats Urartu (743), conquers Damascus (732) and Babylonia (729).",
       "sources": [
         {
           "sourceKey": "wp-tp3",
@@ -13049,7 +13020,7 @@
       "tracks": [
         "as-neo"
       ],
-      "descr": "The new city is the capital for only a year: after Sargon dies in battle in 705 BCE, Sennacherib moves the capital to Nineveh, where it stays until 612 BCE.",
+      "descr": "The new city is the capital for only a year: after Sargon's death in 705 BCE, Sennacherib moves the capital to Nineveh, where it stays until 612 BCE.",
       "sources": [
         {
           "sourceKey": "wp-assyria",
@@ -13229,7 +13200,7 @@
         "ebla",
         "hit-old"
       ],
-      "descr": "The Hittite king ends the third kingdom of Ebla, during the same campaigns that took Aleppo and Babylon.",
+      "descr": "The Hittite king ends the third kingdom of Ebla in about 1600 BCE.",
       "sources": [
         {
           "sourceKey": "wp-ebla",
@@ -13251,7 +13222,7 @@
       "tracks": [
         "ugarit"
       ],
-      "descr": "A 30-letter alphabet written in cuneiform signs on clay. It falls out of use when Ugarit is destroyed.",
+      "descr": "A 30-letter alphabet written in cuneiform signs on clay. It falls out of use amid the Late Bronze Age collapse.",
       "sources": [
         {
           "sourceKey": "wp-ugaritic-alphabet",
@@ -13396,7 +13367,7 @@
         "phoenicia",
         "carthage"
       ],
-      "descr": "Tyrian colonists found Carthage in North Africa; in Roman accounts, led by Dido.",
+      "descr": "Phoenicians from Tyre found Carthage; in Roman accounts, it is founded by Dido.",
       "sources": [
         {
           "sourceKey": "wp-phoenicia",
@@ -13413,7 +13384,7 @@
         "phoenicia",
         "bab-neo"
       ],
-      "descr": "Tyre comes under Neo-Babylonian rule.",
+      "descr": "Tyre comes under Babylonian rule.",
       "sources": [
         {
           "sourceKey": "wp-tyre",
@@ -13550,7 +13521,7 @@
         "philistines",
         "bab-neo"
       ],
-      "descr": "After a revolt, Babylon destroys Ashkelon, Gaza, Aphek and Ekron and deports their people.",
+      "descr": "After a revolt, Babylon destroys Ashkelon, Gaza, Aphek and Ekron and their inhabitants are killed or exiled to Mesopotamia.",
       "sources": [
         {
           "sourceKey": "wp-philistines",
@@ -13687,7 +13658,7 @@
       "tracks": [
         "elam-middle"
       ],
-      "descr": "A temple complex near Susa. Construction was sometime in the 14th or 13th century BCE; 1250 is the conventional date.",
+      "descr": "An Elamite complex about 30 km southeast of Susa. Construction was sometime in the 14th or 13th century BCE; 1250 is the conventional date.",
       "sources": [
         {
           "sourceKey": "wp-chogha-zanbil",
@@ -13777,7 +13748,7 @@
         "urartu",
         "as-neo"
       ],
-      "descr": "Urartu had beaten Assyria at Arpad in 754 BCE; this victory reverses the balance.",
+      "descr": "Urartu had beaten Assyria at Arpad in 754 BCE; this time Tiglath-Pileser wins and Sarduri flees the battle.",
       "sources": [
         {
           "sourceKey": "wp-tp3",
@@ -13788,7 +13759,7 @@
     },
     {
       "uuid": "darius-i",
-      "title": "Reign of Darius the Great",
+      "title": "Reign of Darius I",
       "start": -521,
       "end": -485,
       "tracks": [
@@ -13844,7 +13815,7 @@
       "tracks": [
         "dilmun"
       ],
-      "descr": "A trading centre in Bahrain, between Mesopotamia and the Indus, prosperous in the first centuries of the 2nd millennium BCE, then declining from around 1720.",
+      "descr": "A trading centre in the Persian Gulf (encompassing Bahrain), on a trade route between Mesopotamia and the Indus, prosperous in the first centuries of the 2nd millennium BCE, then declining from around 1720.",
       "sources": [
         {
           "sourceKey": "wp-dilmun",
@@ -13911,7 +13882,7 @@
       "tracks": [
         "ind-early"
       ],
-      "descr": "The last Early Harappan phase before the cities.",
+      "descr": "The Kot Dijian (Early Harappan) phase, before the Harappan phase; the settlement is enclosed with massive mud-brick walls.",
       "sources": [
         {
           "sourceKey": "wp-harappa",
@@ -13948,7 +13919,7 @@
       "tracks": [
         "ind-mature"
       ],
-      "descr": "A major city of the Mature Harappan phase, abandoned c. 1700 BCE along with the other large Indus cities.",
+      "descr": "One of the largest cities of the Indus Valley Civilisation, abandoned c. 1700 BCE along with the other large Indus cities.",
       "sources": [
         {
           "sourceKey": "wp-mohenjo",
@@ -14173,7 +14144,7 @@
       "tracks": [
         "shang"
       ],
-      "descr": "The Shang at its zenith. The oldest oracle-bone inscriptions date from his reign.",
+      "descr": "The twenty-first Shang king. Oracle-bone inscriptions from his reign are radiocarbon dated to 1254–1197 BCE (±10 years).",
       "sources": [
         {
           "sourceKey": "wp-shang",
@@ -14325,7 +14296,7 @@
       "tracks": [
         "sanxingdui"
       ],
-      "descr": "A Bronze Age culture in Sichuan with no written records, famous for large bronze heads and masks (13th–12th century BCE).",
+      "descr": "A Bronze Age culture in Sichuan with no written records, known for dozens of large bronze masks and heads; its walled city was founded c. 1600 BCE.",
       "sources": [
         {
           "sourceKey": "wp-sanxingdui",
@@ -14343,7 +14314,7 @@
       "tracks": [
         "zhou-western"
       ],
-      "descr": "The earliest securely dated event in Chinese history.",
+      "descr": "A regency in the Western Zhou, 841–828 BCE. Sima Qian was only able to establish historical dates after its time.",
       "sources": [
         {
           "sourceKey": "wp-zhou",
@@ -14360,7 +14331,7 @@
         "zhou-western",
         "zhou-eastern"
       ],
-      "descr": "After the disaster at Mount Li, the court moves to Wangcheng: the end of the Western Zhou.",
+      "descr": "After the Battle of Mount Li, the court moves to Wangcheng: the end of the Western Zhou.",
       "sources": [
         {
           "sourceKey": "wp-zhou",
@@ -14512,15 +14483,11 @@
       "tracks": [
         "caral-supe"
       ],
-      "descr": "The best-known city of the Caral–Supe civilization. Its abandonment has been linked to a prolonged drought around 2200 BCE.",
+      "descr": "The best studied and one of the largest sites of the Norte Chico civilization, inhabited from around 2600 to 2000 BCE.",
       "sources": [
         {
           "sourceKey": "wp-caral",
           "sourceLocation": "infobox and History"
-        },
-        {
-          "sourceKey": "wp-caral-supe",
-          "sourceLocation": "History and geography"
         }
       ],
       "startDates": [
@@ -14546,13 +14513,6 @@
             "sourceKey": "wp-caral",
             "sourceLocation": "infobox"
           }
-        },
-        {
-          "year": -2019,
-          "source": {
-            "sourceKey": "wp-caral-supe",
-            "sourceLocation": "History and geography (Shady: 'habitation from 2627 BCE to 2020 BCE')"
-          }
         }
       ],
       "importance": 1,
@@ -14565,7 +14525,7 @@
       "tracks": [
         "caral-supe"
       ],
-      "descr": "Bone flutes, the only find at Caral with a stated radiocarbon margin.",
+      "descr": "Bone flutes, radiocarbon dated to 2170±90 BCE.",
       "sources": [
         {
           "sourceKey": "wp-caral",
@@ -14593,7 +14553,7 @@
       "tracks": [
         "valdivia"
       ],
-      "descr": "Phase A on the coast of Ecuador, long thought the oldest pottery in South America.",
+      "descr": "Phase A on the coast of Ecuador, long thought to be the oldest pottery produced by a coastal culture in South America.",
       "sources": [
         {
           "sourceKey": "wp-valdivia",
@@ -14605,13 +14565,13 @@
     },
     {
       "uuid": "san-lorenzo",
-      "title": "San Lorenzo, the first Olmec centre",
+      "title": "San Lorenzo, the first Olmec state-level site",
       "start": -1399,
       "end": -899,
       "tracks": [
         "olmec"
       ],
-      "descr": "The largest city in Mesoamerica from roughly 1200 to 900 BCE, known for its colossal stone heads. Destroyed in the 10th century BCE.",
+      "descr": "The largest city in Mesoamerica from roughly 1200 to 900 BCE, known for its colossal stone heads. It falls in the 10th century BCE.",
       "sources": [
         {
           "sourceKey": "wp-san-lorenzo",
@@ -14924,7 +14884,7 @@
       "tracks": [
         "hallstatt"
       ],
-      "descr": "A cart burial, one of the few Hallstatt finds with a 'solid dating'.",
+      "descr": "A cart burial whose wood gives a 'solid dating' of 778 ± 5 BCE.",
       "sources": [
         {
           "sourceKey": "wp-hallstatt",
@@ -15149,7 +15109,7 @@
       "tracks": [
         "greece-archaic"
       ],
-      "descr": "Greek cities found colonies abroad, particularly in the 8th–6th centuries BCE.",
+      "descr": "Archaic Greeks expand across the Mediterranean and the Black Sea, particularly in the 8th–6th centuries BCE.",
       "sources": [
         {
           "sourceKey": "wp-greek-colonisation",
@@ -15256,7 +15216,7 @@
         "greece-classical",
         "persia"
       ],
-      "descr": "A naval battle during Xerxes' invasion of Greece (481–479 BCE).",
+      "descr": "A naval battle fought in 480 BCE, part of the Second Persian invasion of Greece, between the Greek city-states and the Achaemenid Empire under King Xerxes.",
       "sources": [
         {
           "sourceKey": "wp-salamis",
@@ -15877,7 +15837,7 @@
       "tracks": [
         "magna-graecia"
       ],
-      "descr": "The Greek city of Sybaris, prosperous from 600 BCE, is destroyed.",
+      "descr": "The Greek city of Sybaris, with an estimated population of 300,000 to 500,000 from 600 to 510 BCE, is destroyed.",
       "sources": [
         {
           "sourceKey": "wp-magna-graecia",
@@ -16000,7 +15960,7 @@
         "eg-new",
         "sea-peoples"
       ],
-      "descr": "In Merneptah's 5th year a Libyan coalition under Meryey, allied with Sea Peoples, is defeated.",
+      "descr": "In regnal year 5 (1208 BCE) a Libyan coalition under Meryey, allied with Sea Peoples, is defeated.",
       "sources": [
         {
           "sourceKey": "wp-libu",
@@ -16125,7 +16085,7 @@
       "tracks": [
         "afanasievo"
       ],
-      "descr": "People from the pre-Yamnaya Repin culture cross the Eurasian steppe to the Altai, founding the Afanasievo culture, which has been linked to the Proto-Tocharian language. The two populations are genetically indistinguishable.",
+      "descr": "People from the pre-Yamnaya Repin culture cross the Eurasian steppe to the Altai, founding the Afanasievo culture, which has been linked to the Proto-Tocharian language. The two populations are genetically very close.",
       "sources": [
         {
           "sourceKey": "wp-afanasievo",
@@ -16603,7 +16563,7 @@
       "tracks": [
         "pazyryk"
       ],
-      "descr": "Burials at Pazyryk and neighbouring sites in the Altai. A Saka (eastern Scythian) culture.",
+      "descr": "Burials at Pazyryk and neighbouring sites in the Altai. A Saka (Central Asian Scythian) nomadic Iron Age culture.",
       "sources": [
         {
           "sourceKey": "wp-pazyryk",
@@ -16858,7 +16818,7 @@
         "kush",
         "eg-tip"
       ],
-      "descr": "In his twentieth year the Kushite king Piye invades against Tefnakht of Sais, wins at Herakleopolis and takes Hermopolis after a five-month siege. He then returns to Napata and never comes back to Egypt.",
+      "descr": "In his twentieth year the Kushite king Piye invades against Tefnakht of Sais, wins at Herakleopolis and takes Hermopolis after a five-month siege. He then returns to his homeland in Nubia, never to return to Egypt.",
       "sources": [
         {
           "sourceKey": "wp-kush",
@@ -16887,7 +16847,7 @@
         "kush",
         "eg-tip"
       ],
-      "descr": "The 25th Dynasty's best-known king. He defeats the Assyrians in 674 BCE but loses Memphis to Esarhaddon in 671, retakes it in 669, and dies in 664. The Kush page says he died at Napata, the Taharqa page at Thebes.",
+      "descr": "A king of the 25th Dynasty, one of the Black Pharaohs. He defeats the Assyrians in 674 BCE but loses Memphis to Esarhaddon in 671, retakes it in 669, and dies in 664. The Kush page says he died at Napata, the Taharqa page at Thebes.",
       "sources": [
         {
           "sourceKey": "wp-taharqa",
@@ -17020,13 +16980,13 @@
     },
     {
       "uuid": "dmt-first-king",
-      "title": "Earliest known king of Dʿmt",
+      "title": "First-listed known ruler of Dʿmt",
       "start": -699,
       "end": -649,
       "tracks": [
         "dmt"
       ],
-      "descr": "A contemporary of the Sabaean ruler Karib'il Watar. Dʿmt was an Ethio-Sabaean kingdom, its capital probably Yeha, where the temple of Ilmuqah still stands.",
+      "descr": "A contemporary of the Sabaean ruler Karib'il Watar. Dʿmt was an Ethio-Sabaean kingdom, its capital may have been Yeha, where the temple of Ilmuqah still stands.",
       "sources": [
         {
           "sourceKey": "wp-dmt",
@@ -17318,7 +17278,7 @@
         "persia",
         "vedic"
       ],
-      "descr": "Cyrus the Great begins the campaign around 535 BCE; Darius I pushes into the Indus valley around 518, up to the Jhelum. Gandhara and Hindush become Persian provinces; Kamboja and Gandhara form the twentieth and richest satrapy.",
+      "descr": "Cyrus the Great begins the campaign around 535 BCE; Darius I pushes into the Indus valley around 518, up to the Jhelum. Gandhara and Hindush become Persian provinces; The Mahajanapadas page has Kamboja and Gandhara forming the twentieth and richest satrapy; the conquest page puts Gandhara in the seventh province and the Indians in the twentieth, the richest.",
       "sources": [
         {
           "sourceKey": "wp-achaemenid-indus",
@@ -17346,7 +17306,7 @@
       "tracks": [
         "magadha"
       ],
-      "descr": "The Haryanka king annexes Anga; his son Ajatashatru succeeds him (by Buddhist accounts, by killing him). Under the short chronology he reigns c. 457–405 BCE.",
+      "descr": "The Haryanka king annexes Anga; his son Ajatashatru succeeds him (by Buddhist accounts, by killing him). His reign is dated c. 544–492 or c. 457–405 BCE.",
       "sources": [
         {
           "sourceKey": "wp-bimbisara",
@@ -18690,7 +18650,7 @@
     },
     {
       "uuid": "colchis-consolidates",
-      "title": "The Colchian tribes consolidate",
+      "title": "Colchian culture",
       "start": -1249,
       "tracks": [
         "colchis"
@@ -18736,7 +18696,7 @@
     },
     {
       "uuid": "koban-bronze",
-      "title": "Koban bronze-working at its height",
+      "title": "Koban culture: advanced metallurgy",
       "start": -1049,
       "end": -649,
       "tracks": [
@@ -18779,7 +18739,7 @@
         "colchis",
         "urartu"
       ],
-      "descr": "Two invasions, recorded in Sarduri II’s victory inscription.",
+      "descr": "Two invasions (744/743 BCE); Sarduri II inscribed his victory over Qulḫa on a stele.",
       "sources": [
         {
           "sourceKey": "wp-colchis",
@@ -18795,7 +18755,7 @@
     },
     {
       "uuid": "argishti-diauehi",
-      "title": "Argishti I of Urartu conquers Diauehi",
+      "title": "Argishti I of Urartu defeats Utupursi of Diauehi",
       "start": -782,
       "tracks": [
         "diauehi",
@@ -18961,7 +18921,7 @@
         "oman",
         "sum-ur3"
       ],
-      "descr": "Trade between the two resumes under the Third Dynasty of Ur.",
+      "descr": "Trade between the two resumes (c. 2100 BC) in the Ur III period.",
       "sources": [
         {
           "sourceKey": "wp-magan",
@@ -19183,7 +19143,7 @@
         "north-arabia",
         "bab-neo"
       ],
-      "descr": "The last Neo-Babylonian king campaigns in northwestern Arabia and rules from Tayma; the kings of both Taymāʾ and Dadān are slain.",
+      "descr": "The Neo-Babylonian ruler campaigns in northwestern Arabia and rules from Tayma; he eliminates the kings of both Taymāʾ and Dadān.",
       "sources": [
         {
           "sourceKey": "wp-tayma",
@@ -19645,7 +19605,7 @@
       "tracks": [
         "tlatilco"
       ],
-      "descr": "Chiefdom centres at Tlatilco and Tlapacoya; Olmec-style objects are ubiquitous in early high-status burials. By 700 BCE Cuicuilco is the largest city in the valley.",
+      "descr": "Chiefdom centres at Tlatilco and Tlapacoya; Olmec-style objects are 'ubiquitous' in the earliest upper-middle status burials. By 700 BCE Cuicuilco is the largest city in the valley.",
       "sources": [
         {
           "sourceKey": "wp-tlatilco",
@@ -19780,7 +19740,7 @@
       "tracks": [
         "paracas"
       ],
-      "descr": "Known chiefly for its textile arts. Early Paracas communities were within the Chavín sphere, whose influence dwindled in 500–380 BCE; about 420 mummy bundles date to around 300–200 BCE, and the culture shows the earliest trepanations in the Americas.",
+      "descr": "It makes significant contributions in the textile arts. Early Paracas communities were within the Chavín sphere, whose influence dwindled in 500–380 BCE; about 420 mummy bundles date to around 300–200 BCE, and the culture shows the earliest trepanations in the Americas.",
       "sources": [
         {
           "sourceKey": "wp-paracas",
@@ -19830,7 +19790,7 @@
     },
     {
       "uuid": "casimiroid",
-      "title": "The Casimiroid peoples settle the Caribbean",
+      "title": "The Casimiroid peoples",
       "start": -4189,
       "end": -2164,
       "tracks": [
@@ -19853,7 +19813,7 @@
       "tracks": [
         "archaic-caribbean"
       ],
-      "descr": "Known for stone tools but without ceramics; they bury their dead beneath shell middens. They settle Saint Kitts from 2000 BC to 400 BC and in most places disappear by about 400 BC (the Coroso culture survives until 200 AD).",
+      "descr": "Known for stone tools but without ceramics; they bury their dead beneath shell middens. They settle Saint Kitts from 2000 BC to 400 BC and in many regions disappear by about 400 BC (the Coroso culture survives until 200 AD).",
       "sources": [
         {
           "sourceKey": "wp-ortoiroid",
@@ -20197,7 +20157,7 @@
       "tracks": [
         "south-india"
       ],
-      "descr": "Founded before 900 BC and covering 10 ha by 800 BC. In the protohistoric period (1000–500 BCE) Sri Lanka is culturally united with southern India.",
+      "descr": "Founded before 900 BC at about 15 hectares, it expands to 50 ha within a couple of centuries. In the protohistoric period (1000–500 BCE) Sri Lanka is culturally united with southern India.",
       "sources": [
         {
           "sourceKey": "wp-sri-lanka-prehistory",
@@ -20541,7 +20501,7 @@
       "tracks": [
         "catalhoyuk"
       ],
-      "descr": "A settlement of domestic buildings with no obvious public buildings, rebuilt in 18 successive layers and flourishing around 7000 BC. Vivid murals include what is frequently cited as the world’s oldest map; over 2,500 clay figurines have been found, and some skulls were plastered and painted. About 600–800 people lived there in an average year of the middle phase (6700–6500 BC).",
+      "descr": "A settlement of domestic buildings with no obvious public buildings, with 18 successive layers of buildings and flourishing around 7000 BC. Ornate murals in some of the larger rooms include what is frequently cited as the world’s oldest map; over 2,500 clay figurines have been found, and some skulls were plastered and painted. About 600–800 people lived there in an average year of the middle phase (6700–6500 BC).",
       "sources": [
         {
           "sourceKey": "wp-catalhoyuk",
@@ -20708,7 +20668,7 @@
       "tracks": [
         "chogha-golan"
       ],
-      "descr": "The earliest record of long-term plant management in Iran: people lived mainly on wild plants and hunting, and domesticated emmer appears about 2,000 years after settlement began (around 9,800 BP).",
+      "descr": "The earliest record of long-term plant management in Iran: people lived mainly on wild plants and hunting, and domesticated emmer appears about 2,000 years after wild barley is first found (around 9,800 BP).",
       "sources": [
         {
           "sourceKey": "wp-chogha-golan",
@@ -20748,7 +20708,7 @@
       "tracks": [
         "jeitun"
       ],
-      "descr": "Villagers kept sheep and goats that were brought already domesticated, and built with sun-dried clay blocks. The culture may have begun before 7000 BC.",
+      "descr": "Villagers kept sheep and goats that were already domesticated, and built with sun-dried clay blocks. The culture may have begun before 7000 BC.",
       "sources": [
         {
           "sourceKey": "wp-jeitun",
@@ -20822,7 +20782,7 @@
       "tracks": [
         "shulaveri"
       ],
-      "descr": "The earliest evidence for winemaking and grape cultivation in the Near East. Goats, sheep, cattle, pigs and dogs are kept from the earliest phase; around 5900 BC villagers at Gadachrili divert a river, the oldest water management in the Caucasus.",
+      "descr": "The earliest evidence for winemaking and grape cultivation in the Near East. Goats, sheep, cows, pigs and dogs are kept from the earliest phase; around 5900 BC villagers at Gadachrili attempt to divert the Shulaveri river to nearby fields, the oldest water management in the Caucasus.",
       "sources": [
         {
           "sourceKey": "wp-shulaveri",
@@ -20867,7 +20827,7 @@
     },
     {
       "uuid": "faiyum-a",
-      "title": "Faiyum A: the first farming villages of Lower Egypt",
+      "title": "Faiyum A: the earliest farming culture in the Nile Valley",
       "start": -5599,
       "end": -4399,
       "tracks": [
@@ -21127,13 +21087,13 @@
     },
     {
       "uuid": "maglemosian",
-      "title": "Maglemosian hunters of the north",
+      "title": "Maglemosian culture of Northern Europe",
       "start": -8999,
       "end": -5999,
       "tracks": [
         "mesolithic-north"
       ],
-      "descr": "They appear to have domesticated the dog; bark huts survive, and they fished with a characteristic leister spear.",
+      "descr": "They appear to have domesticated the dog; bark huts survive, and the leister, a characteristic type of fishing spear, is typical of the culture.",
       "sources": [
         {
           "sourceKey": "wp-maglemosian",
@@ -21273,7 +21233,7 @@
       "tracks": [
         "cardial"
       ],
-      "descr": "Pottery impressed with cockle shells, from Epirus and Corfu (6400–6200 BC) to the Atlantic coasts of Portugal and Morocco; it reaches Iberia in probably no more than 100–200 years. Its people were closely related to the earlier Neolithic farmers of north-west Anatolia.",
+      "descr": "Pottery impressed with cockle shells, from Epirus and Corfu (6400–6200 BC) to the Atlantic coasts of Portugal and Morocco; it spreads about 2,000 km, from the Gulf of Genoa to the Mondego estuary, in probably no more than 100–200 years. Its people were closely related to the earlier Neolithic farmers of north-west Anatolia.",
       "sources": [
         {
           "sourceKey": "wp-cardial",
@@ -21455,7 +21415,7 @@
       "tracks": [
         "early-india"
       ],
-      "descr": "Charcoal from the lowest levels gave 7570–7180 BCE, said to predate the Indus Valley civilisation; other excavators date these levels much later (Garge: from about 4600 BCE).",
+      "descr": "Charcoal from the lowest levels gave 7570–7180 BCE, said to predate the Indus Valley civilisation; a review by Garge gives a 'tentative chronological bracket' of '6000(?)-4600-3800' for the lowermost levels.",
       "sources": [
         {
           "sourceKey": "wp-bhirrana",
@@ -21591,12 +21551,12 @@
     },
     {
       "uuid": "xinglongwa",
-      "title": "Xinglongwa: the earliest ditched village in China",
+      "title": "Xinglongwa: the earliest discovered ditched site in China",
       "start": -6199,
       "tracks": [
         "xinglongwa"
       ],
-      "descr": "Houses built in rows; 120 pit-houses at the type site. In the richest grave a man is buried with a pair of pigs and jade objects, and millet remains are found.",
+      "descr": "Houses built in rows; 120 pit-houses at Xinglongwa. In the richest grave a man is buried with a pair of pigs and jade objects, and millet remains are found.",
       "sources": [
         {
           "sourceKey": "wp-xinglongwa",
@@ -21666,7 +21626,7 @@
       "tracks": [
         "dawenkou"
       ],
-      "descr": "Turquoise, jade and ivory are common; the earliest alligator drums appear here. It co-exists with the Yangshao culture and has a lead role in generating Longshan.",
+      "descr": "Turquoise, jade and ivory are common; the earliest alligator drums appear here. It co-exists with the Yangshao culture and sometimes has the lead role, notably in generating Longshan.",
       "sources": [
         {
           "sourceKey": "wp-dawenkou",
@@ -21716,7 +21676,7 @@
       "tracks": [
         "new-guinea"
       ],
-      "descr": "One of the places where people independently developed agriculture; the native crop taro was grown, and drainage ditches date back to about 9,000 years ago.",
+      "descr": "One of the places where people independently developed agriculture; taro was grown, and drainage ditches date back to about 9,000 years ago.",
       "sources": [
         {
           "sourceKey": "wp-kuk",
@@ -21845,7 +21805,7 @@
     },
     {
       "uuid": "cueva-manos",
-      "title": "Cueva de las Manos: the first paintings",
+      "title": "Cueva de las Manos: the oldest-known cave paintings in South America",
       "start": -7299,
       "tracks": [
         "cueva-manos"
@@ -21889,7 +21849,7 @@
     },
     {
       "uuid": "paloma",
-      "title": "Paloma, an early fishing village",
+      "title": "Paloma, one of the earliest villages in the Americas",
       "start": -5699,
       "end": -2799,
       "tracks": [
@@ -22315,7 +22275,7 @@
       "tracks": [
         "lbk"
       ],
-      "descr": "Perhaps the oldest and best known of the circular enclosures of the Central European Neolithic, probably a ritual or cult structure; it dates to the transition from Linear Pottery to Stroke-ornamented ware.",
+      "descr": "Perhaps the oldest and best known of the circular enclosures of the Central European Neolithic, presented as a ritual or cult structure; it dates to the transition from Linear Pottery to Stroke-ornamented ware.",
       "sources": [
         {
           "sourceKey": "wp-goseck",
@@ -22400,7 +22360,7 @@
       "tracks": [
         "hoabinhian"
       ],
-      "descr": "Part of the Hoabinhian, a lithic techno-complex. At Spirit Cave in Thailand, Gorman claimed early plant remains, but Higham and Thosarat find no grounds for linking the site with agriculture; it has no ceramics until after 6800 BCE (Solheim).",
+      "descr": "Often regarded as a variation of the Hoabinhian, a lithic techno-complex. At Spirit Cave in Thailand, Gorman claimed early plant remains, but Higham and Thosarat find no grounds for linking the site with agriculture; it has no ceramics until after 6800 BCE (Solheim).",
       "sources": [
         {
           "sourceKey": "wp-hoabinhian",
@@ -23392,7 +23352,7 @@
         "greece-classical",
         "persia"
       ],
-      "descr": "Greek city-states led by Sparta under Leonidas I hold the pass against Xerxes’ invasion; the Greeks defeat the invaders at Salamis later that year.",
+      "descr": "Greek city-states led by Sparta under Leonidas I hold off Xerxes’ invasion force before the Persians win; the Greeks defeat the invaders at Salamis later that year.",
       "sources": [
         {
           "sourceKey": "wp-thermopylae",
@@ -23534,7 +23494,7 @@
       "tracks": [
         "greece-classical"
       ],
-      "descr": "The tomb of Mausolus, built after his death in 353 BC; one of the Seven Wonders of the Ancient World.",
+      "descr": "The tomb of Mausolus, built between 353 and 351 BC in Halicarnassus; one of the Seven Wonders of the Ancient World.",
       "sources": [
         {
           "sourceKey": "wp-mausoleum",
@@ -24002,7 +23962,7 @@
         "as-neo",
         "qedarites"
       ],
-      "descr": "He reigns nine months before Sennacherib defeats him near Kish; he flees to Elam and dies in exile. The Qedarites back his revolt (his supporter Bašqanu is the brother of their queen Yaṯiʿe).",
+      "descr": "He reigns nine months before Sennacherib defeats him near Kish; he flees to Elam and dies in exile. The Qedarites back his revolt (his supporter Bašqanu is the brother of an Arab queen named Yaṯiʿe).",
       "sources": [
         {
           "sourceKey": "wp-merodach-baladan",
@@ -24098,7 +24058,7 @@
       "tracks": [
         "hurrians"
       ],
-      "descr": "By 1725 BC Hurrians are found in parts of northern Syria such as Alalakh; Hurrians entering northern Syria at the end of the 17th century BC form Mitanni, which rises to power before 1550 BC.",
+      "descr": "By 1725 BC Hurrians are found in parts of northern Syria such as Alalakh; those entering at the end of the 17th century BC bring important political and cultural changes. The Hurrian entity of Mitanni first rises to power before 1550 BC.",
       "sources": [
         {
           "sourceKey": "wp-hurrians",
@@ -24130,7 +24090,7 @@
         "hurrians",
         "mitanni"
       ],
-      "descr": "After Suppiluliuma I defeats Tushratta, the city is largely abandoned.",
+      "descr": "The city appears to have been largely abandoned around 1350 BCE, for reasons unknown.",
       "sources": [
         {
           "sourceKey": "wp-urkesh",
@@ -24481,7 +24441,7 @@
         "rong-di",
         "zhou-western"
       ],
-      "descr": "The Marquess of Shen invites the Quanrong to join an attack on King You; the joint force occupies the capital Haojing, kills him and captures Bao Si. (The Xinian bamboo slips say King You attacked Shen first.) This ends the Western Zhou.",
+      "descr": "The Marquess of Shen invites the Quanrong to join an attack on King You; the joint force occupies the capital Haojing, kills him and captures Bao Si. (The Xinian bamboo slips say King You attacked Shen, who allied with the Quanrong.) This ends the Western Zhou.",
       "sources": [
         {
           "sourceKey": "wp-quanrong",
@@ -24688,7 +24648,7 @@
         "eg-new",
         "can-lba"
       ],
-      "descr": "Column bases of Amenhotep III's temple at Soleb list the land of the Shasu yhwꜣ; a 13th-century copy at Amara, under Seti I or Ramesses II, names six Shasu groups. Astour notes this predates the Mesha Stele's use of the divine name by over 500 years. Shasu raids could cut Egypt's northern routes, prompting punitive campaigns by Ramesses II and Merneptah.",
+      "descr": "A list of Egypt's enemies on column bases at Amenhotep III's temple at Soleb includes the name; Egyptian texts refer to 'the Land of the Shasu yhwꜣ'; a 13th-century copy at Amara, under Seti I or Ramesses II, names six Shasu groups. Astour notes this predates the Mesha Stele's use of the divine name by over 500 years. Shasu raids could cut Egypt's northern routes, prompting punitive campaigns by Ramesses II and Merneptah.",
       "sources": [
         {
           "sourceKey": "wp-shasu",

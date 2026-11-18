@@ -119,7 +119,7 @@ ed.event({
 });
 ed.event({
   uuid: 'wehringen', title: 'Wehringen cart grave', start: 'c. 778 BCE', tracks: ['hallstatt'],
-  descr: "A cart burial, one of the few Hallstatt finds with a 'solid dating'.",
+  descr: "A cart burial whose wood gives a 'solid dating' of 778 ± 5 BCE.",
   sources: [S('wp-hallstatt', 'Absolute dating')],
   startDates: [C(778, 'wp-hallstatt', "Absolute dating ('778 ± 5 BC')", { margin: 5 })],
 });
@@ -170,7 +170,7 @@ ed.event({
 });
 ed.event({
   uuid: 'greek-colonisation', title: 'Greek colonisation', start: 'c. 750 BCE', end: 'c. 550 BCE', tracks: ['greece-archaic'],
-  descr: 'Greek cities found colonies abroad, particularly in the 8th–6th centuries BCE.',
+  descr: 'Archaic Greeks expand across the Mediterranean and the Black Sea, particularly in the 8th–6th centuries BCE.',
   sources: [S('wp-greek-colonisation', "lead and map caption ('Archaic period: 750–550 BC')")],
 });
 ed.event({
@@ -193,7 +193,7 @@ ed.event({
 });
 ed.event({
   uuid: 'salamis', title: 'Battle of Salamis', start: '480 BCE', tracks: ['greece-classical', 'persia'],
-  descr: "A naval battle during Xerxes' invasion of Greece (481–479 BCE).",
+  descr: "A naval battle fought in 480 BCE, part of the Second Persian invasion of Greece, between the Greek city-states and the Achaemenid Empire under King Xerxes.",
   sources: [S('wp-salamis', 'infobox and lead')],
   links: [{ to: 'greco-persian-wars', kind: 'part-of' }],
 });

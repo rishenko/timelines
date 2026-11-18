@@ -112,7 +112,7 @@ ed.event({
 });
 ed.event({
   uuid: 'afanasievo-migration', title: 'Steppe herders migrate to the Altai', start: 'c. 3300 BCE', tracks: ['afanasievo'],
-  descr: 'People from the pre-Yamnaya Repin culture cross the Eurasian steppe to the Altai, founding the Afanasievo culture, which has been linked to the Proto-Tocharian language. The two populations are genetically indistinguishable.',
+  descr: 'People from the pre-Yamnaya Repin culture cross the Eurasian steppe to the Altai, founding the Afanasievo culture, which has been linked to the Proto-Tocharian language. The two populations are genetically very close.',
   sources: [S('wp-afanasievo', 'lead and Genetics (map caption)'), S('wp-yamnaya', 'lead')],
   startDates: [R(3700, 3300, 'wp-afanasievo', "lead ('migrated c. 3700–3300 BCE')"), C(3000, 'wp-afanasievo', "Genetics map caption ('3000 BC: Initial eastward migration')")],
 });
@@ -231,7 +231,7 @@ ed.event({
 });
 ed.event({
   uuid: 'pazyryk-burials', title: 'Pazyryk burials', start: 'c. 450 BCE', tracks: ['pazyryk'],
-  descr: 'Burials at Pazyryk and neighbouring sites in the Altai. A Saka (eastern Scythian) culture.',
+  descr: 'Burials at Pazyryk and neighbouring sites in the Altai. A Saka (Central Asian Scythian) nomadic Iron Age culture.',
   sources: [S('wp-pazyryk', 'lead and Archaeology')],
   startDates: [C(500, 'wp-pazyryk', "Archaeology ('5th century BC'): start of century"), C(401, 'wp-pazyryk', 'Archaeology: end of century')],
 });

@@ -162,7 +162,7 @@ ed.event({
 });
 ed.event({
   uuid: 'tlatilco', title: 'Tlatilco chiefdoms in the Valley of Mexico', start: 'c. 1250 BCE', end: 'c. 800 BCE', tracks: ['tlatilco'],
-  descr: 'Chiefdom centres at Tlatilco and Tlapacoya; Olmec-style objects are ubiquitous in early high-status burials. By 700 BCE Cuicuilco is the largest city in the valley.',
+  descr: 'Chiefdom centres at Tlatilco and Tlapacoya; Olmec-style objects are \'ubiquitous\' in the earliest upper-middle status burials. By 700 BCE Cuicuilco is the largest city in the valley.',
   sources: [S('wp-tlatilco', 'lead, Defining the Tlatilco culture and Phases')],
   links: [{ to: 'san-lorenzo', kind: 'related' }],
 });
@@ -193,7 +193,7 @@ ed.event({
 });
 ed.event({
   uuid: 'paracas', title: 'Paracas textiles and mummy bundles', start: 'c. 800 BCE', end: 'c. 100 BCE', tracks: ['paracas'],
-  descr: 'Known chiefly for its textile arts. Early Paracas communities were within the Chavín sphere, whose influence dwindled in 500–380 BCE; about 420 mummy bundles date to around 300–200 BCE, and the culture shows the earliest trepanations in the Americas.',
+  descr: 'It makes significant contributions in the textile arts. Early Paracas communities were within the Chavín sphere, whose influence dwindled in 500–380 BCE; about 420 mummy bundles date to around 300–200 BCE, and the culture shows the earliest trepanations in the Americas.',
   sources: [S('wp-paracas', 'infobox, lead, Political and social organization, Mummy bundles and Trepanation')],
   links: [{ to: 'chavin-old-temple', kind: 'related' }],
 });
@@ -210,13 +210,13 @@ ed.event({
 
 // ---------- Caribbean ----------
 ed.event({
-  uuid: 'casimiroid', title: 'The Casimiroid peoples settle the Caribbean', start: 'c. 4190 BCE', end: 'c. 2165 BCE', tracks: ['archaic-caribbean'],
+  uuid: 'casimiroid', title: 'The Casimiroid peoples', start: 'c. 4190 BCE', end: 'c. 2165 BCE', tracks: ['archaic-caribbean'],
   descr: 'They precede the Ortoiroid peoples.',
   sources: [S('wp-ortoiroid', "lead ('the Casimiroid peoples (~4190-2165 BC)')")],
 });
 ed.event({
   uuid: 'ortoiroid', title: 'Ortoiroid peoples move into the Antilles', start: 'c. 2000 BCE', end: 'c. 400 BCE', tracks: ['archaic-caribbean'],
-  descr: 'Known for stone tools but without ceramics; they bury their dead beneath shell middens. They settle Saint Kitts from 2000 BC to 400 BC and in most places disappear by about 400 BC (the Coroso culture survives until 200 AD).',
+  descr: 'Known for stone tools but without ceramics; they bury their dead beneath shell middens. They settle Saint Kitts from 2000 BC to 400 BC and in many regions disappear by about 400 BC (the Coroso culture survives until 200 AD).',
   sources: [S('wp-ortoiroid', 'lead, Settlement patterns, Culture and Decline')],
 });
 ed.event({

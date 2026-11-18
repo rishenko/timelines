@@ -116,13 +116,13 @@ ed.event({
 });
 ed.event({
   uuid: 'achaemenid-indus', title: 'Persia conquers the Indus valley', start: 'c. 535 BCE', end: 'c. 518 BCE', tracks: ['persia', 'vedic'],
-  descr: 'Cyrus the Great begins the campaign around 535 BCE; Darius I pushes into the Indus valley around 518, up to the Jhelum. Gandhara and Hindush become Persian provinces; Kamboja and Gandhara form the twentieth and richest satrapy.',
+  descr: 'Cyrus the Great begins the campaign around 535 BCE; Darius I pushes into the Indus valley around 518, up to the Jhelum. Gandhara and Hindush become Persian provinces; The Mahajanapadas page has Kamboja and Gandhara forming the twentieth and richest satrapy; the conquest page puts Gandhara in the seventh province and the Indians in the twentieth, the richest.',
   sources: [S('wp-achaemenid-indus', 'infobox and lead'), S('wp-mahajanapadas', 'Gandhara')],
   links: [{ to: 'darius-i', kind: 'part-of' }],
 });
 ed.event({
   uuid: 'bimbisara', title: 'Reign of Bimbisara of Magadha', start: 'c. 544 BCE', end: 'c. 492 BCE', tracks: ['magadha'],
-  descr: 'The Haryanka king annexes Anga; his son Ajatashatru succeeds him (by Buddhist accounts, by killing him). Under the short chronology he reigns c. 457–405 BCE.',
+  descr: 'The Haryanka king annexes Anga; his son Ajatashatru succeeds him (by Buddhist accounts, by killing him). His reign is dated c. 544–492 or c. 457–405 BCE.',
   sources: [S('wp-bimbisara', 'infobox, lead and Death'), S('wp-mahajanapadas', 'Anga'), S('wp-magadha', 'Haryanka dynasty')],
   startDates: [C(544, 'wp-bimbisara', 'infobox (long chronology)'), C(457, 'wp-bimbisara', 'infobox (short chronology)')],
   endDates: [C(492, 'wp-bimbisara', 'infobox (long chronology)'), C(405, 'wp-bimbisara', 'infobox (short chronology)')],

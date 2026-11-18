@@ -136,8 +136,8 @@ ed.event({
   endDates: [R(8525, 8440, 'wp-star-carr', 'Settlement and artefacts')],
 });
 ed.event({
-  uuid: 'maglemosian', title: 'Maglemosian hunters of the north', start: 'c. 9000 BCE', end: 'c. 6000 BCE', tracks: ['mesolithic-north'],
-  descr: 'They appear to have domesticated the dog; bark huts survive, and they fished with a characteristic leister spear.',
+  uuid: 'maglemosian', title: 'Maglemosian culture of Northern Europe', start: 'c. 9000 BCE', end: 'c. 6000 BCE', tracks: ['mesolithic-north'],
+  descr: 'They appear to have domesticated the dog; bark huts survive, and the leister, a characteristic type of fishing spear, is typical of the culture.',
   sources: [S('wp-maglemosian', 'infobox, lead, table and Characteristics')],
   endDates: [C(6000, 'wp-maglemosian', 'lead and infobox'), C(6400, 'wp-maglemosian', 'table (Late Maglemosian)')],
 });
@@ -162,7 +162,7 @@ ed.event({
 });
 ed.event({
   uuid: 'cardial', title: 'Cardial Ware farmers spread along the Mediterranean', start: 'c. 6400 BCE', end: 'c. 5500 BCE', tracks: ['cardial'],
-  descr: 'Pottery impressed with cockle shells, from Epirus and Corfu (6400–6200 BC) to the Atlantic coasts of Portugal and Morocco; it reaches Iberia in probably no more than 100–200 years. Its people were closely related to the earlier Neolithic farmers of north-west Anatolia.',
+  descr: 'Pottery impressed with cockle shells, from Epirus and Corfu (6400–6200 BC) to the Atlantic coasts of Portugal and Morocco; it spreads about 2,000 km, from the Gulf of Genoa to the Mondego estuary, in probably no more than 100–200 years. Its people were closely related to the earlier Neolithic farmers of north-west Anatolia.',
   sources: [S('wp-cardial', 'infobox, lead, The Mediterranean Neolithic and Genetics')],
 });
 ed.event({
@@ -200,7 +200,7 @@ ed.event({
 });
 ed.event({
   uuid: 'bhirrana', title: 'Bhirrana’s earliest levels (Hakra ware)', start: 'c. 7400 BCE', tracks: ['early-india'],
-  descr: 'Charcoal from the lowest levels gave 7570–7180 BCE, said to predate the Indus Valley civilisation; other excavators date these levels much later (Garge: from about 4600 BCE).',
+  descr: 'Charcoal from the lowest levels gave 7570–7180 BCE, said to predate the Indus Valley civilisation; a review by Garge gives a \'tentative chronological bracket\' of \'6000(?)-4600-3800\' for the lowermost levels.',
   sources: [S('wp-bhirrana', 'infobox, lead and Dating')],
   startDates: [R(7570, 7180, 'wp-bhirrana', 'Notes (Dikshit and Rami)'), R(6689, 6201, 'wp-bhirrana', 'Notes (second date)'), C(4600, 'wp-bhirrana', 'Dating (Garge 2010)')],
 });
@@ -229,8 +229,8 @@ ed.event({
   sources: [S('wp-peiligang', 'infobox, lead and Peiligang culture')],
 });
 ed.event({
-  uuid: 'xinglongwa', title: 'Xinglongwa: the earliest ditched village in China', start: 'c. 6200 BCE', tracks: ['xinglongwa'],
-  descr: 'Houses built in rows; 120 pit-houses at the type site. In the richest grave a man is buried with a pair of pigs and jade objects, and millet remains are found.',
+  uuid: 'xinglongwa', title: 'Xinglongwa: the earliest discovered ditched site in China', start: 'c. 6200 BCE', tracks: ['xinglongwa'],
+  descr: 'Houses built in rows; 120 pit-houses at Xinglongwa. In the richest grave a man is buried with a pair of pigs and jade objects, and millet remains are found.',
   sources: [S('wp-xinglongwa', 'infobox and lead')],
 });
 ed.event({
@@ -250,7 +250,7 @@ ed.event({
 });
 ed.event({
   uuid: 'dawenkou', title: 'Dawenkou culture', start: 'c. 4300 BCE', end: 'c. 2600 BCE', tracks: ['dawenkou'],
-  descr: 'Turquoise, jade and ivory are common; the earliest alligator drums appear here. It co-exists with the Yangshao culture and has a lead role in generating Longshan.',
+  descr: 'Turquoise, jade and ivory are common; the earliest alligator drums appear here. It co-exists with the Yangshao culture and sometimes has the lead role, notably in generating Longshan.',
   sources: [S('wp-dawenkou', 'infobox, lead, Chronology and Interactions with other cultures')],
 });
 ed.event({
@@ -267,7 +267,7 @@ ed.event({
 // ---------- New Guinea ----------
 ed.event({
   uuid: 'kuk-drainage', title: 'Kuk Swamp: drainage ditches and early agriculture', start: 'c. 7050 BCE', tracks: ['new-guinea'],
-  descr: 'One of the places where people independently developed agriculture; the native crop taro was grown, and drainage ditches date back to about 9,000 years ago.',
+  descr: 'One of the places where people independently developed agriculture; taro was grown, and drainage ditches date back to about 9,000 years ago.',
   sources: [S('wp-kuk', 'lead and History')],
 });
 ed.event({
@@ -304,7 +304,7 @@ ed.event({
   sources: [S('wp-maize', 'lead')],
 });
 ed.event({
-  uuid: 'cueva-manos', title: 'Cueva de las Manos: the first paintings', start: 'c. 7300 BCE', tracks: ['cueva-manos'],
+  uuid: 'cueva-manos', title: 'Cueva de las Manos: the oldest-known cave paintings in South America', start: 'c. 7300 BCE', tracks: ['cueva-manos'],
   descr: 'The oldest-known cave paintings in South America, made in several waves until AD 700 by hunters of guanacos.',
   sources: [S('wp-cueva-manos', 'lead, History and Artwork')],
 });
@@ -315,7 +315,7 @@ ed.event({
   startDates: [R(8050, 5050, 'wp-potato', "lead ('about 7,000–10,000 years ago')")],
 });
 ed.event({
-  uuid: 'paloma', title: 'Paloma, an early fishing village', start: 'c. 5700 BCE', end: 'c. 2800 BCE', tracks: ['andes-archaic'],
+  uuid: 'paloma', title: 'Paloma, one of the earliest villages in the Americas', start: 'c. 5700 BCE', end: 'c. 2800 BCE', tracks: ['andes-archaic'],
   descr: 'One of the earliest villages in the Americas dated stratigraphically; its diet was mainly fish and shellfish.',
   sources: [S('wp-paloma', 'lead and Subsistence activities')],
 });

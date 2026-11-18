@@ -124,6 +124,8 @@ node scripts/additions/europe.ts   # (re)apply a region's additions; then npm ru
 node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
 npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all" --pinch in --long-press "Europe"]
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
+npm run audit:batches -- data-src/ancient-near-east.json <out dir> [--pages 10] [--only id,id]   # group descriptions by cited Wikipedia page, one file per fetch agent, to check them against the pages
+node scripts/apply-text-fixes.ts data-src/ancient-near-east.json fixes.json [--dry]   # reword titles/descriptions ({uuid, field, from, to}) in the data and in the script that defines each event
 ```
 
 `scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, caucasus, arabia, eastern-europe, americas, north-asia, fill-gaps, neolithic-near-east, neolithic-world, neolithic-2, neolithic-3, ideas, peoples, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.

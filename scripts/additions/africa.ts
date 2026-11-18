@@ -158,14 +158,14 @@ ed.event({
 });
 ed.event({
   uuid: 'piye-conquers-egypt', title: 'Piye conquers Egypt', start: 'c. 727 BCE', tracks: ['kush', 'eg-tip'],
-  descr: 'In his twentieth year the Kushite king Piye invades against Tefnakht of Sais, wins at Herakleopolis and takes Hermopolis after a five-month siege. He then returns to Napata and never comes back to Egypt.',
+  descr: 'In his twentieth year the Kushite king Piye invades against Tefnakht of Sais, wins at Herakleopolis and takes Hermopolis after a five-month siege. He then returns to his homeland in Nubia, never to return to Egypt.',
   sources: [S('wp-kush', 'Rule over Egypt'), S('wp-piye', 'Conquest of Egypt')],
   links: [{ to: 'kushite-dynasty', kind: 'part-of' }],
 });
 ed.addRow('kushite-dynasty', 'kush');
 ed.event({
   uuid: 'taharqa', title: 'Reign of Taharqa', start: '690 BCE', end: '664 BCE', tracks: ['kush', 'eg-tip'],
-  descr: "The 25th Dynasty's best-known king. He defeats the Assyrians in 674 BCE but loses Memphis to Esarhaddon in 671, retakes it in 669, and dies in 664. The Kush page says he died at Napata, the Taharqa page at Thebes.",
+  descr: "A king of the 25th Dynasty, one of the Black Pharaohs. He defeats the Assyrians in 674 BCE but loses Memphis to Esarhaddon in 671, retakes it in 669, and dies in 664. The Kush page says he died at Napata, the Taharqa page at Thebes.",
   sources: [S('wp-taharqa', 'infobox, lead and War between Taharqa and Assyria'), S('wp-kush', 'Assyrian conquest of Egypt')],
   links: [{ to: 'kushite-dynasty', kind: 'part-of' }],
 });
@@ -198,8 +198,8 @@ ed.event({
 });
 ed.addRow('punt', 'punt');
 ed.event({
-  uuid: 'dmt-first-king', title: 'Earliest known king of Dʿmt', start: 'c. 700 BCE', end: 'c. 650 BCE', tracks: ['dmt'],
-  descr: "A contemporary of the Sabaean ruler Karib'il Watar. Dʿmt was an Ethio-Sabaean kingdom, its capital probably Yeha, where the temple of Ilmuqah still stands.",
+  uuid: 'dmt-first-king', title: 'First-listed known ruler of Dʿmt', start: 'c. 700 BCE', end: 'c. 650 BCE', tracks: ['dmt'],
+  descr: "A contemporary of the Sabaean ruler Karib'il Watar. Dʿmt was an Ethio-Sabaean kingdom, its capital may have been Yeha, where the temple of Ilmuqah still stands.",
   sources: [S('wp-dmt', 'lead, History and Known rulers')],
 });
 ed.event({

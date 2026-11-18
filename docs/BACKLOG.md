@@ -17,6 +17,11 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   the file at the link.
 
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
+- **Re-check banners on cited pages now and then.** Wikipedia adds AI/LLM-text banners after the fact: *Norte Chico
+  civilization* had one by the 2026-11-18 audit, and everything taken from it was removed. Any audit or re-read should
+  report banners, and a flagged page's values come out.
+- **Audit the Classical World descriptions** the same way (`npm run audit:batches -- data-src/classical.json <dir>`);
+  only the 31 summary-only events have been checked so far.
 - **Review the key events** in `docs/ancient-key-events.md` (177 key, 43 minor, proposed by Claude). Change
   `data-src/ancient-importance.json` and run `npm run importance:ancient`.
 - **Every region: deeper research.** See the summary-only lists in `docs/ancient-sources.md` (third to thirteenth passes).

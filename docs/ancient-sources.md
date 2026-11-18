@@ -557,3 +557,31 @@ they pressed, as the proximity rule requires.
   first mention, Urkesh abandoned, the Kaska's first mention, the Rong fade, the Mushki at Alzi, Sennacherib's Qedarite
   campaign, Marduk-apla-usur, King Mu and the Quanrong, the Di take Wey, Suteans and Arameans in Babylonia, Bit-Adini
   annexed.
+
+## Description audit (18 November 2026)
+
+Every event title and description (556) was checked against the Wikipedia pages it cites, for words the pages don't
+say. `npm run audit:batches` grouped the events by cited page into 46 batches of up to 10 pages. One agent per batch
+read the pages and flagged added or changed claims, quoting the page. 113 events were reworded (126 fixes, kept in
+`scripts/archive/2026-11-18-ancient-description-audit.json` and applied by `scripts/apply-text-fixes.ts` to this file and
+to the `scripts/additions/` script that defines each event). Only titles and descriptions changed; no dates moved.
+
+- **Typical fixes:** superlatives and labels the page doesn't use ("the first large stone pyramid", "best-known",
+  "great empire-builder", "the boy king", "often called the first empire"); hedges dropped ("probably", "first known",
+  "perhaps Cyprus", "sometimes the lead role"); details from general knowledge ("down the Euphrates", "Tree rings
+  show", "Kalhu", "dies in battle", "after the collapse of Ur III"); and a few contradictions (Anitta's father took
+  Kanesh, not Anitta; Anuradhapura was 15 ha, not 10; the Khufu dating systems differ by centuries, not decades;
+  Tutankhamun's tomb was robbed in antiquity, so not "nearly intact").
+- **Judgment calls (please check):**
+  1. *Norte Chico civilization* (`wp-caral-supe`) now carries a banner saying it appears to include LLM-generated text
+     (dated November 2025); the region pass that first read the page didn't report it. Everything
+     taken from it was **removed** (`scripts/archive/2026-11-18-drop-norte-chico.ts`): Caral's drought sentence, Caral's
+     2020 BCE end claim and citation, the Caral–Supe row's span (3500/3100 BCE start, c. 1800 end), and the source
+     itself. The row is now events-only (Caral, 2600–2000 BCE, and the Caral flutes, both from the *Caral* page).
+  2. Two claims weren't in the fetched text. "Syro-Hittite" in the Neo-Hittite title was kept. Darius was retitled
+     "Darius I" because "the Great" wasn't found on the cited Achaemenid page.
+  3. The Achaemenid Indus event now gives both pages' satrapy numbering (*Mahajanapadas*: Kamboja and Gandhara the
+     twentieth; *Achaemenid conquest of the Indus Valley*: Gandhara the seventh, the Indians the twentieth).
+  4. Optional softenings the agents raised but I left alone: Maya cities "in the Preclassic", Gudea's "about 600
+     tablets", Ashur-dan II as "first" Assyrian king (of regular campaigns in a century), Jeitun's "oldest arable
+     farming" (the page hedges with "seems to show").

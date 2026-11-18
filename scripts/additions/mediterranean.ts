@@ -295,7 +295,7 @@ ed.event({
 });
 ed.event({
   uuid: 'sybaris', title: 'Sybaris destroyed', start: 'c. 510 BCE', tracks: ['magna-graecia'],
-  descr: 'The Greek city of Sybaris, prosperous from 600 BCE, is destroyed.',
+  descr: 'The Greek city of Sybaris, with an estimated population of 300,000 to 500,000 from 600 to 510 BCE, is destroyed.',
   sources: [S('wp-magna-graecia', 'lead and History')],
 });
 ed.event({
@@ -326,7 +326,7 @@ ed.event({
 ed.addRow('merneptah', 'libyans');
 ed.event({
   uuid: 'libu-invasion', title: 'Libu and Sea Peoples invade Egypt', start: '1208 BCE', tracks: ['libyans', 'eg-new', 'sea-peoples'],
-  descr: "In Merneptah's 5th year a Libyan coalition under Meryey, allied with Sea Peoples, is defeated.",
+  descr: "In regnal year 5 (1208 BCE) a Libyan coalition under Meryey, allied with Sea Peoples, is defeated.",
   sources: [S('wp-libu', 'Early history')],
   links: [{ to: 'merneptah', kind: 'part-of' }],
 });

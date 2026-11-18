@@ -147,7 +147,7 @@ ed.event({
 });
 ed.event({
   uuid: 'thermopylae', title: 'Battle of Thermopylae', start: '480 BCE', tracks: ['greece-classical', 'persia'],
-  descr: 'Greek city-states led by Sparta under Leonidas I hold the pass against Xerxes’ invasion; the Greeks defeat the invaders at Salamis later that year.',
+  descr: 'Greek city-states led by Sparta under Leonidas I hold off Xerxes’ invasion force before the Persians win; the Greeks defeat the invaders at Salamis later that year.',
   sources: [S('wp-thermopylae', 'infobox and lead')],
   links: [{ to: 'salamis', kind: 'related' }],
 });
@@ -181,7 +181,7 @@ ed.event({
 });
 ed.event({
   uuid: 'mausoleum', title: 'The Mausoleum at Halicarnassus', start: '353 BCE', end: '351 BCE', tracks: ['greece-classical'],
-  descr: 'The tomb of Mausolus, built after his death in 353 BC; one of the Seven Wonders of the Ancient World.',
+  descr: 'The tomb of Mausolus, built between 353 and 351 BC in Halicarnassus; one of the Seven Wonders of the Ancient World.',
   sources: [S('wp-mausoleum', 'infobox, lead and Conquest')],
 });
 ed.event({

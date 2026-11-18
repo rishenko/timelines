@@ -192,7 +192,7 @@ ed.event({
 });
 ed.event({
   uuid: 'merodach-baladan-2', title: 'Marduk-apla-iddina II\'s second reign', start: '703 BCE', end: '702 BCE', tracks: ['chaldeans', 'babylonia', 'as-neo', 'qedarites'],
-  descr: 'He reigns nine months before Sennacherib defeats him near Kish; he flees to Elam and dies in exile. The Qedarites back his revolt (his supporter Bašqanu is the brother of their queen Yaṯiʿe).',
+  descr: 'He reigns nine months before Sennacherib defeats him near Kish; he flees to Elam and dies in exile. The Qedarites back his revolt (his supporter Bašqanu is the brother of an Arab queen named Yaṯiʿe).',
   sources: [S('wp-merodach-baladan', 'Biography'), S('wp-qedarites', 'Neo-Assyrian period')],
   links: [{ to: 'merodach-baladan', kind: 'succeeds' }],
 });
@@ -222,14 +222,14 @@ ed.event({
 });
 ed.event({
   uuid: 'hurrians-alalakh', title: 'Hurrians spread into northern Syria', start: 'c. 1725 BCE', tracks: ['hurrians'],
-  descr: 'By 1725 BC Hurrians are found in parts of northern Syria such as Alalakh; Hurrians entering northern Syria at the end of the 17th century BC form Mitanni, which rises to power before 1550 BC.',
+  descr: 'By 1725 BC Hurrians are found in parts of northern Syria such as Alalakh; those entering at the end of the 17th century BC bring important political and cultural changes. The Hurrian entity of Mitanni first rises to power before 1550 BC.',
   sources: [S('wp-hurrians', 'Middle Bronze Age and Late Bronze Age')],
   startDates: [C(1725, 'wp-hurrians', "Middle Bronze Age ('By 1725 BC')")],
   links: [{ to: 'mitanni-kirta', kind: 'causes' }],
 });
 ed.event({
   uuid: 'urkesh-abandoned', title: 'Urkesh abandoned', start: 'c. 1350 BCE', tracks: ['hurrians', 'mitanni'],
-  descr: 'After Suppiluliuma I defeats Tushratta, the city is largely abandoned.',
+  descr: 'The city appears to have been largely abandoned around 1350 BCE, for reasons unknown.',
   sources: [S('wp-urkesh', 'infobox and Mitanni period')],
   startDates: [C(1350, 'wp-urkesh', "Mitanni period ('largely abandoned around 1350 BC')")],
   links: [{ to: 'tushratta', kind: 'related' }],
@@ -321,7 +321,7 @@ ed.event({
 });
 ed.event({
   uuid: 'quanrong-haojing', title: 'The Quanrong sack Haojing and kill King You', start: '771 BCE', tracks: ['rong-di', 'zhou-western'],
-  descr: 'The Marquess of Shen invites the Quanrong to join an attack on King You; the joint force occupies the capital Haojing, kills him and captures Bao Si. (The Xinian bamboo slips say King You attacked Shen first.) This ends the Western Zhou.',
+  descr: 'The Marquess of Shen invites the Quanrong to join an attack on King You; the joint force occupies the capital Haojing, kills him and captures Bao Si. (The Xinian bamboo slips say King You attacked Shen, who allied with the Quanrong.) This ends the Western Zhou.',
   sources: [S('wp-quanrong', 'History'), S('wp-king-you', 'lead, History and In literature'), S('wp-xirong', 'Timeline')],
   links: [{ to: 'zhou-east', kind: 'causes' }],
 });
@@ -366,7 +366,7 @@ ed.event({
 });
 ed.event({
   uuid: 'shasu-yhw', title: '"Land of the Shasu yhw" in Egyptian texts', start: 'c. 1350 BCE', tracks: ['eg-new', 'can-lba'],
-  descr: 'Column bases of Amenhotep III\'s temple at Soleb list the land of the Shasu yhwꜣ; a 13th-century copy at Amara, under Seti I or Ramesses II, names six Shasu groups. Astour notes this predates the Mesha Stele\'s use of the divine name by over 500 years. Shasu raids could cut Egypt\'s northern routes, prompting punitive campaigns by Ramesses II and Merneptah.',
+  descr: 'A list of Egypt\'s enemies on column bases at Amenhotep III\'s temple at Soleb includes the name; Egyptian texts refer to \'the Land of the Shasu yhwꜣ\'; a 13th-century copy at Amara, under Seti I or Ramesses II, names six Shasu groups. Astour notes this predates the Mesha Stele\'s use of the divine name by over 500 years. Shasu raids could cut Egypt\'s northern routes, prompting punitive campaigns by Ramesses II and Merneptah.',
   sources: [S('wp-shasu', 'History, Late Bronze Age and Shasu of Yhw')],
   startDates: [R(1400, 1301, 'wp-shasu', "Shasu of Yhw ('the period of Amenhotep III (14th century BCE)')")],
   links: [{ to: 'merneptah-stele', kind: 'related' }],

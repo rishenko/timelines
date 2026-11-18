@@ -178,7 +178,7 @@ ed.event({
 });
 ed.event({
   uuid: 'goseck', title: 'The Goseck circle', start: 'c. 4900 BCE', end: 'c. 4700 BCE', tracks: ['lbk'],
-  descr: 'Perhaps the oldest and best known of the circular enclosures of the Central European Neolithic, probably a ritual or cult structure; it dates to the transition from Linear Pottery to Stroke-ornamented ware.',
+  descr: 'Perhaps the oldest and best known of the circular enclosures of the Central European Neolithic, presented as a ritual or cult structure; it dates to the transition from Linear Pottery to Stroke-ornamented ware.',
   sources: [S('wp-goseck', 'infobox, lead, History and Astronomical alignment')],
 });
 ed.event({
@@ -205,7 +205,7 @@ ed.event({
 // ---------- East and Southeast Asia ----------
 ed.event({
   uuid: 'bacsonian', title: 'Bacsonian culture', start: 'c. 8000 BCE', end: 'c. 4000 BCE', tracks: ['hoabinhian'],
-  descr: 'Part of the Hoabinhian, a lithic techno-complex. At Spirit Cave in Thailand, Gorman claimed early plant remains, but Higham and Thosarat find no grounds for linking the site with agriculture; it has no ceramics until after 6800 BCE (Solheim).',
+  descr: 'Often regarded as a variation of the Hoabinhian, a lithic techno-complex. At Spirit Cave in Thailand, Gorman claimed early plant remains, but Higham and Thosarat find no grounds for linking the site with agriculture; it has no ceramics until after 6800 BCE (Solheim).',
   sources: [S('wp-hoabinhian', 'lead and Hoabinhian and plant domestication'), S('wp-spirit-cave-thai', 'Plant domestication')],
 });
 ed.event({

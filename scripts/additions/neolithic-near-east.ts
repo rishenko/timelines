@@ -145,7 +145,7 @@ ed.event({
 });
 ed.event({
   uuid: 'catalhoyuk', title: 'Çatalhöyük', start: 'c. 7500 BCE', end: 'c. 5600 BCE', tracks: ['catalhoyuk'],
-  descr: 'A settlement of domestic buildings with no obvious public buildings, rebuilt in 18 successive layers and flourishing around 7000 BC. Vivid murals include what is frequently cited as the world’s oldest map; over 2,500 clay figurines have been found, and some skulls were plastered and painted. About 600–800 people lived there in an average year of the middle phase (6700–6500 BC).',
+  descr: 'A settlement of domestic buildings with no obvious public buildings, with 18 successive layers of buildings and flourishing around 7000 BC. Ornate murals in some of the larger rooms include what is frequently cited as the world’s oldest map; over 2,500 clay figurines have been found, and some skulls were plastered and painted. About 600–800 people lived there in an average year of the middle phase (6700–6500 BC).',
   sources: [S('wp-catalhoyuk', 'infobox, lead, Archaeology and Culture')],
   startDates: [C(7500, 'wp-catalhoyuk', 'lead'), C(7100, 'wp-catalhoyuk', 'infobox')],
 });
@@ -184,7 +184,7 @@ ed.event({
 // ---------- Iran & Central Asia, Caucasus ----------
 ed.event({
   uuid: 'chogha-golan', title: 'Chogha Golan: domesticated emmer wheat', start: 'c. 7850 BCE', tracks: ['chogha-golan'],
-  descr: 'The earliest record of long-term plant management in Iran: people lived mainly on wild plants and hunting, and domesticated emmer appears about 2,000 years after settlement began (around 9,800 BP).',
+  descr: 'The earliest record of long-term plant management in Iran: people lived mainly on wild plants and hunting, and domesticated emmer appears about 2,000 years after wild barley is first found (around 9,800 BP).',
   sources: [S('wp-chogha-golan', 'infobox, lead and Archaeobotany')],
 });
 ed.event({
@@ -195,7 +195,7 @@ ed.event({
 });
 ed.event({
   uuid: 'jeitun', title: 'Jeitun: the oldest arable farming in Central Asia', start: 'c. 7200 BCE', end: 'c. 4500 BCE', tracks: ['jeitun'],
-  descr: 'Villagers kept sheep and goats that were brought already domesticated, and built with sun-dried clay blocks. The culture may have begun before 7000 BC.',
+  descr: 'Villagers kept sheep and goats that were already domesticated, and built with sun-dried clay blocks. The culture may have begun before 7000 BC.',
   sources: [S('wp-jeitun', 'lead, Jeitun culture, Agriculture and Excavations')],
 });
 ed.event({
@@ -216,7 +216,7 @@ ed.event({
 });
 ed.event({
   uuid: 'shulaveri-wine', title: 'Shulaveri–Shomu: the earliest winemaking', start: 'c. 6000 BCE', tracks: ['shulaveri'],
-  descr: 'The earliest evidence for winemaking and grape cultivation in the Near East. Goats, sheep, cattle, pigs and dogs are kept from the earliest phase; around 5900 BC villagers at Gadachrili divert a river, the oldest water management in the Caucasus.',
+  descr: 'The earliest evidence for winemaking and grape cultivation in the Near East. Goats, sheep, cows, pigs and dogs are kept from the earliest phase; around 5900 BC villagers at Gadachrili attempt to divert the Shulaveri river to nearby fields, the oldest water management in the Caucasus.',
   sources: [S('wp-shulaveri', 'infobox, lead, Subsistence and Earliest grapes')],
 });
 
@@ -232,7 +232,7 @@ ed.event({
   sources: [S('wp-nabta', 'Astronomical observation, Recent research and Religious ties')],
 });
 ed.event({
-  uuid: 'faiyum-a', title: 'Faiyum A: the first farming villages of Lower Egypt', start: 'c. 5600 BCE', end: 'c. 4400 BCE', tracks: ['lower-egypt-neolithic'],
+  uuid: 'faiyum-a', title: 'Faiyum A: the earliest farming culture in the Nile Valley', start: 'c. 5600 BCE', end: 'c. 4400 BCE', tracks: ['lower-egypt-neolithic'],
   descr: 'Weaving is evidenced for the first time; goats and sheep had been introduced from the Neolithic Levant around 6000 BCE. Neolithic settlements appear all over Egypt from around 6210 BC.',
   sources: [S('wp-prehistoric-egypt', 'Faiyum A culture and Neolithic anthropology')],
 });

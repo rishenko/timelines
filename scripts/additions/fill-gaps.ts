@@ -61,7 +61,7 @@ ed.event({
 });
 ed.event({
   uuid: 'anuradhapura', title: 'A large settlement at Anuradhapura', start: 'c. 900 BCE', tracks: ['south-india'],
-  descr: 'Founded before 900 BC and covering 10 ha by 800 BC. In the protohistoric period (1000–500 BCE) Sri Lanka is culturally united with southern India.',
+  descr: 'Founded before 900 BC at about 15 hectares, it expands to 50 ha within a couple of centuries. In the protohistoric period (1000–500 BCE) Sri Lanka is culturally united with southern India.',
   sources: [S('wp-sri-lanka-prehistory', 'Iron Age'), S('wp-iron-age-india', 'Sri Lanka')],
 });
 

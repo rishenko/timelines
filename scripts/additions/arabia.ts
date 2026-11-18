@@ -63,7 +63,7 @@ ed.event({
 });
 ed.event({
   uuid: 'magan-ur3', title: 'Ur-Nammu brings back the ships of Magan', start: 'c. 2100 BCE', tracks: ['oman', 'sum-ur3'],
-  descr: 'Trade between the two resumes under the Third Dynasty of Ur.',
+  descr: 'Trade between the two resumes (c. 2100 BC) in the Ur III period.',
   sources: [S('wp-magan', 'Ur III period and Commerce')],
   startDates: [C(2100, 'wp-magan', "Commerce ('trade resumed ... (c. 2100 BC)')"), R(2113, 2096, 'wp-magan', 'Ur III period (Ur-Nammu, 2113–2096 BCE)')],
   links: [{ to: 'ur-nammu', kind: 'related' }],
@@ -114,7 +114,7 @@ ed.event({
 });
 ed.event({
   uuid: 'nabonidus-tayma', title: 'Nabonidus makes Tayma his base', start: 'c. 552 BCE', tracks: ['north-arabia', 'bab-neo'],
-  descr: 'The last Neo-Babylonian king campaigns in northwestern Arabia and rules from Tayma; the kings of both Taymāʾ and Dadān are slain.',
+  descr: 'The Neo-Babylonian ruler campaigns in northwestern Arabia and rules from Tayma; he eliminates the kings of both Taymāʾ and Dadān.',
   sources: [S('wp-tayma', 'Mesopotamian hegemony'), S('wp-lihyan', 'Timeline')],
   links: [{ to: 'nabonidus', kind: 'part-of' }],
 });
