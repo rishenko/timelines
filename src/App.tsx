@@ -84,6 +84,14 @@ export default function App() {
   const [showLinks, setShowLinks] = useState(initialUrl.links);
   // on phones the credits note is clamped to two lines; a tap opens it (see .legal in CSS)
   const [creditsOpen, setCreditsOpen] = useState(false);
+  // One polite live region for screen readers: zoom changes, "Went to …" and toasts. Kept mounted, because a region
+  // that appears together with its text is often not read out.
+  const [announcement, setAnnouncement] = useState('');
+  const [announcedIncrement, setAnnouncedIncrement] = useState(increment);
+  if (increment !== announcedIncrement) {
+    setAnnouncedIncrement(increment);
+    setAnnouncement(`Zoom: ${increment} years per tick`);
+  }
 
   // ---- folded rows ----
   const openingCollapsed = useMemo(() => defaultCollapsed(meta.collapsed), [meta.collapsed]);
@@ -178,6 +186,9 @@ export default function App() {
 
   return (
     <div className="app">
+      <a href="#timeline" className="skip-link">
+        Skip to the timeline
+      </a>
       <Toolbar
         picker={
           <TimelinePicker
@@ -225,7 +236,10 @@ export default function App() {
             describeYears={search.describeYears}
             hiddenReason={search.hiddenReason}
             onPick={search.onPick}
-            onYear={(y) => setFocus({ year: y, nonce: Date.now() })}
+            onYear={(y) => {
+              setFocus({ year: y, nonce: Date.now() });
+              setAnnouncement(`Went to ${formatYear(y, cal)}`);
+            }}
           />
         }
         panels={panels.open}
@@ -368,21 +382,38 @@ export default function App() {
       </main>
 
       {(meta.credits || meta.creditsImage) && (
+        // on phones the note is clamped to two lines: a tap anywhere on it opens it, and so does its More button
+        // (shown only on narrow screens), which keyboard and screen-reader users reach
+        // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
         <footer
           className={`legal${creditsOpen ? ' open' : ''}`}
           onClick={() => setCreditsOpen((o) => !o)}
           title={creditsOpen ? undefined : 'Tap to read the full note'}
         >
           {safeUrl(meta.creditsImage) && <img src={safeUrl(meta.creditsImage)} alt="" />}
-          {meta.credits && <p>{meta.credits}</p>}
+          {meta.credits && <p id="credits-note">{meta.credits}</p>}
+          <button
+            className="legal-toggle linklike"
+            aria-expanded={creditsOpen}
+            aria-controls="credits-note"
+            onClick={(ev) => {
+              ev.stopPropagation();
+              setCreditsOpen((o) => !o);
+            }}
+          >
+            {creditsOpen ? 'Less' : 'More'}
+          </button>
         </footer>
       )}
 
       {toast && (
-        <div key={toast.n} className={`toast ${toast.kind}`} role="status">
+        <div key={toast.n} className={`toast ${toast.kind}`} aria-hidden="true">
           {toast.text}
         </div>
       )}
+      <div className="sr-only" role="status" aria-live="polite">
+        {toast ? toast.text : announcement}
+      </div>
     </div>
   );
 }

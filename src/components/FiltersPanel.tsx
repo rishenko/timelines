@@ -40,7 +40,7 @@ export function FiltersPanel(p: Props) {
                 <span className="chip" /> {t.name}
               </button>
               {p.editMode && (
-                <button className="icon small" title={`Edit ${t.name}`} onClick={() => p.onEditTrack(t.id)}>
+                <button className="icon small" aria-label={`Edit ${t.name}`} title={`Edit ${t.name}`} onClick={() => p.onEditTrack(t.id)}>
                   ✎
                 </button>
               )}
@@ -64,7 +64,7 @@ export function FiltersPanel(p: Props) {
                 {custom && s.tags.includes(custom) && <span className="tag custom">{data.tags[custom]?.name ?? custom}</span>}
               </button>
               {p.editMode && (
-                <button className="icon small" title={`Edit ${s.name}`} onClick={() => p.onEditSource(k)}>
+                <button className="icon small" aria-label={`Edit ${s.name}`} title={`Edit ${s.name}`} onClick={() => p.onEditSource(k)}>
                   ✎
                 </button>
               )}

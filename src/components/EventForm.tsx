@@ -196,7 +196,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
     <aside className="side-panel editor">
       <header>
         <h2>{isNew ? 'New event' : 'Edit event'}</h2>
-        <button className="icon" onClick={onCancel} title="Cancel">
+        <button className="icon" onClick={onCancel} aria-label="Cancel" title="Cancel">
           ✕
         </button>
       </header>
@@ -322,7 +322,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               <button type="button" className="primary" onClick={createTrack} disabled={!newTrack.name.trim()}>
                 Create
               </button>
-              <button type="button" className="icon" onClick={() => setNewTrack(null)} title="Cancel">
+              <button type="button" className="icon" onClick={() => setNewTrack(null)} aria-label="Cancel" title="Cancel">
                 ✕
               </button>
             </div>
@@ -349,7 +349,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
                 ))}
               </select>
               <input aria-label="Location in source" placeholder="pgs. 12" {...register(`sources.${i}.sourceLocation`)} />
-              <button type="button" className="icon" onClick={() => sources.remove(i)} title="Remove source">
+              <button type="button" className="icon" onClick={() => sources.remove(i)} aria-label="Remove source" title="Remove source">
                 ✕
               </button>
             </div>
@@ -384,7 +384,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               <button type="button" className="primary" onClick={createSource} disabled={!newSource.name.trim()}>
                 Create
               </button>
-              <button type="button" className="icon" onClick={() => setNewSource(null)} title="Cancel">
+              <button type="button" className="icon" onClick={() => setNewSource(null)} aria-label="Cancel" title="Cancel">
                 ✕
               </button>
               <p className="muted small">
@@ -414,7 +414,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
                   </option>
                 ))}
               </select>
-              <button type="button" className="icon" onClick={() => links.remove(i)} title="Remove link">
+              <button type="button" className="icon" onClick={() => links.remove(i)} aria-label="Remove link" title="Remove link">
                 ✕
               </button>
             </div>

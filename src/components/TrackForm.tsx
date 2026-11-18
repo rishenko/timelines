@@ -150,7 +150,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     <aside className="side-panel editor">
       <header>
         <h2>{isNew ? 'New track' : `Edit track: ${initial.name}`}</h2>
-        <button className="icon" onClick={onCancel} title="Cancel">
+        <button className="icon" onClick={onCancel} aria-label="Cancel" title="Cancel">
           ✕
         </button>
       </header>
@@ -282,7 +282,7 @@ function PhaseList({
           <div key={f.id} className="phase">
             <div className="row">
               <input aria-label="Phase name" placeholder="Name, e.g. Second Republic" {...register(`phases.${i}.name`)} />
-              <button type="button" className="icon" onClick={() => phases.remove(i)} title="Remove this phase">
+              <button type="button" className="icon" onClick={() => phases.remove(i)} aria-label="Remove this phase" title="Remove this phase">
                 ✕
               </button>
             </div>

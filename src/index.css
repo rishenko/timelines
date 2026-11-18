@@ -1650,7 +1650,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 10px 30px var(--shadow);
 }
-.tour-card h3 {
+.tour-card h2 {
   margin: 2px 0 6px;
   font-size: 15px;
 }
@@ -1658,12 +1658,12 @@ main {
   margin: 0 0 10px;
   line-height: 1.45;
 }
-.tour-card footer {
+.tour-card .tour-actions {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.tour-card footer .spacer {
+.tour-card .tour-actions .spacer {
   flex: 1;
 }
 .legend-panel .tour-start {
@@ -1795,4 +1795,71 @@ main {
 .tl-scroller.editing .tl-lane {
   -webkit-touch-callout: none;
   user-select: none;
+}
+
+/* ---- accessibility ---- */
+
+/* text for screen readers only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* "Skip to the timeline": hidden until a keyboard user tabs to it */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -100px;
+  z-index: 1000;
+  padding: 8px 12px;
+  background: var(--bg-2);
+  color: var(--text);
+  border: 2px solid var(--focus);
+  border-radius: 4px;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* a clear focus outline everywhere a keyboard can go (WCAG 2.4.7 and 2.4.13) */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.tl-mark:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+#timeline:focus-visible,
+.side-panel h2:focus-visible {
+  outline-offset: -2px;
+}
+
+/* the credits note's More/Less button: only on narrow screens, where the note is clamped */
+.legal-toggle {
+  display: none;
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .legal-toggle {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

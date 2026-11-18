@@ -111,7 +111,8 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
     so the visual timeline is made operable from the keyboard, and a **table view** is the full equivalent for screen
     readers (WCAG accepts a conforming alternative version), which scholars want anyway (item 20).
 
-    a. **Foundations (S–M).**
+    a. **Foundations (S–M).** Done 18 November 2026 (see the README's Accessibility entry), except that picking a
+       search result doesn't yet move focus to the event.
        - Landmarks and headings: the toolbar, a labelled timeline region ("Timeline: Ancient Civilizations, c. 9000–330
          BCE"), the detail panel with its own heading, and a "Skip to timeline / table" link.
        - Accessible names that carry the facts: "Battle of Kadesh, c. 1274 BCE, Egypt and the Hittites, key event,

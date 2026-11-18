@@ -237,7 +237,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
             Take the tour
           </button>
         )}
-        <button className="icon" onClick={onClose} title="Close the legend">
+        <button className="icon" onClick={onClose} aria-label="Close the legend" title="Close the legend">
           ✕
         </button>
       </header>

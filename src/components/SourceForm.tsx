@@ -80,7 +80,7 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
     <aside className="side-panel editor">
       <header>
         <h2>{isNew ? 'New source' : `Edit source: ${initial.name}`}</h2>
-        <button className="icon" onClick={onCancel} title="Cancel">
+        <button className="icon" onClick={onCancel} aria-label="Cancel" title="Cancel">
           ✕
         </button>
       </header>

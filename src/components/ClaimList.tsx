@@ -75,7 +75,7 @@ export function ClaimList<T extends FieldValues>({
                 ))}
               </select>
             )}
-            <button type="button" className="icon" onClick={() => claims.remove(i)} title="Remove">
+            <button type="button" className="icon" onClick={() => claims.remove(i)} aria-label="Remove" title="Remove">
               ✕
             </button>
           </div>

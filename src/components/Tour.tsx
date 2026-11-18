@@ -67,7 +67,7 @@ export function Tour({ steps, onClose }: { steps: TourStep[]; onClose: () => voi
   }
 
   return (
-    <div className="tour" role="dialog" aria-modal="false" aria-label="Guided tour">
+    <div className="tour" role="dialog" aria-modal="false" aria-labelledby="tour-title">
       {rect ? (
         <div
           className="tour-spot"
@@ -80,9 +80,9 @@ export function Tour({ steps, onClose }: { steps: TourStep[]; onClose: () => voi
         <div className="tour-count muted small">
           {i + 1} of {steps.length}
         </div>
-        <h3>{step.title}</h3>
+        <h2 id="tour-title">{step.title}</h2>
         <p>{step.text}</p>
-        <footer>
+        <div className="tour-actions">
           <button className="linklike" onClick={onClose}>
             {last ? 'Close' : 'Skip the tour'}
           </button>
@@ -91,7 +91,7 @@ export function Tour({ steps, onClose }: { steps: TourStep[]; onClose: () => voi
           <button className="primary" onClick={next} autoFocus>
             {last ? 'Done' : 'Next'}
           </button>
-        </footer>
+        </div>
       </div>
     </div>
   );

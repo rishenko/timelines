@@ -87,6 +87,7 @@ export function TimelineView(props: Props) {
     editMode,
   } = props;
   const cal = data.meta.calendar;
+  const trackNames = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
   const labelW = useLabelWidth();
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState({ left: 0, width: 1200 });
@@ -208,7 +209,8 @@ export function TimelineView(props: Props) {
       requestAnimationFrame(() => setFlashLane(id));
     }
     focusedAtRef.current = performance.now();
-    el.scrollTo({ left, top, behavior: 'smooth' });
+    const calm = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    el.scrollTo({ left, top, behavior: calm ? 'auto' : 'smooth' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.focus]);
   useEffect(() => {
@@ -360,7 +362,13 @@ export function TimelineView(props: Props) {
   };
 
   return (
+    // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
+    // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <div
+      id="timeline"
+      role="region"
+      aria-label={`Timeline: ${data.meta.title}`}
+      tabIndex={-1}
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
       ref={scrollerRef}
       onScroll={onScroll}
@@ -384,6 +392,7 @@ export function TimelineView(props: Props) {
             <div
               key={t}
               className={`tl-tick ${t === era ? 'era' : ''} ${isMajorTick(t, increment, cal) ? 'major' : ''}`}
+              aria-hidden="true"
               style={{ left: labelW + scale.x(t) }}
             >
               {!gapStarts.has(t) && <span>{formatYear(t, cal)}</span>}
@@ -431,6 +440,8 @@ export function TimelineView(props: Props) {
           {layout.lanes.map(({ lane, height, marks, top, overflow }) => {
             const image = safeUrl(lane.track.image);
             return (
+              // double-click and long-press add an event in edit mode; the edit bar's Add event button does the same
+              // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
               <div
                 key={lane.id}
                 className={`tl-lane${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${flashLane === lane.id ? ' flash' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
@@ -440,6 +451,8 @@ export function TimelineView(props: Props) {
                 onPointerMove={(ev) => press.move(ev.clientX, ev.clientY)}
                 onPointerUp={press.cancel}
                 onPointerCancel={press.cancel}
+                role="group"
+                aria-label={lane.track.name}
               >
                 {lane.members.map((id) => {
                   const s = spans.get(id);
@@ -454,16 +467,16 @@ export function TimelineView(props: Props) {
                   </span>
                   {editMode && (
                     <span className="lane-edit">
-                      <button className="icon small" title={`Edit ${lane.track.name}`} onClick={() => props.onEditTrack(lane.id)}>
+                      <button className="icon small" aria-label={`Edit ${lane.track.name}`} title={`Edit ${lane.track.name}`} onClick={() => props.onEditTrack(lane.id)}>
                         ✎
                       </button>
-                      <button className="icon small" title="Move up" onClick={() => props.onMoveTrack(lane.id, -1)}>
+                      <button className="icon small" aria-label={`Move ${lane.track.name} up`} title="Move up" onClick={() => props.onMoveTrack(lane.id, -1)}>
                         ↑
                       </button>
-                      <button className="icon small" title="Move down" onClick={() => props.onMoveTrack(lane.id, 1)}>
+                      <button className="icon small" aria-label={`Move ${lane.track.name} down`} title="Move down" onClick={() => props.onMoveTrack(lane.id, 1)}>
                         ↓
                       </button>
-                      <button className="icon small" title={`Add a sub-track under ${lane.track.name}`} onClick={() => props.onAddTrack(lane.id)}>
+                      <button className="icon small" aria-label={`Add a sub-track under ${lane.track.name}`} title={`Add a sub-track under ${lane.track.name}`} onClick={() => props.onAddTrack(lane.id)}>
                         +
                       </button>
                     </span>
@@ -471,6 +484,8 @@ export function TimelineView(props: Props) {
                   {(overflow > 0 || expanded[lane.id]) && (
                     <button
                       className="collapse"
+                      aria-label={`All events in ${lane.track.name}${expanded[lane.id] ? '' : ` (${overflow} folded)`}`}
+                      aria-expanded={!!expanded[lane.id]}
                       title={expanded[lane.id] ? 'Limit rows (fold crowded events into +N badges)' : `Show all rows (${overflow} events folded)`}
                       onClick={() => setExpanded((x) => ({ ...x, [lane.id]: !x[lane.id] }))}
                     >
@@ -480,6 +495,8 @@ export function TimelineView(props: Props) {
                   {lane.hasChildren && (
                     <button
                       className="collapse"
+                      aria-label={`Sub-rows of ${lane.track.name}`}
+                      aria-expanded={!lane.collapsed}
                       title={lane.collapsed ? 'Expand sub-tracks' : 'Collapse sub-tracks into this lane'}
                       onClick={() => props.onToggleCollapsed(lane.id)}
                     >
@@ -502,6 +519,7 @@ export function TimelineView(props: Props) {
                           className={`tl-mark cluster ${ids.some((id) => related?.has(id)) ? 'related' : ''}`}
                           style={{ left: labelW + m.x0 - POINT_HALF, top: m.cy - top - MARK_H / 2 }}
                           title={`${ids.length} more events (click to zoom in):\n${titles.join('\n')}`}
+                          aria-label={`${ids.length} more events, ${formatYear(Math.min(...years), cal)} to ${formatYear(Math.max(...years), cal)}; zoom in`}
                           onClick={() => {
                             if (!props.onZoomIn(mid)) setExpanded((x) => ({ ...x, [lane.id]: true }));
                           }}
@@ -537,6 +555,17 @@ export function TimelineView(props: Props) {
                           '--fade-out': `${m.fadeOut ?? 0}px`,
                         } as React.CSSProperties}
                         title={`${e.title}\n${formatEventDates(e, cal, isApprox(e))}`}
+                        aria-label={[
+                          e.title,
+                          formatEventDates(e, cal, isApprox(e)),
+                          e.tracks.map((t) => trackNames.get(t) ?? t).join(' and '),
+                          e.importance === 1 ? 'key event' : '',
+                          uncertain ? 'uncertain date' : '',
+                        ]
+                          .filter(Boolean)
+                          .join(', ')}
+                        aria-pressed={selectedId === e.uuid}
+                        data-event-id={e.uuid}
                         onMouseEnter={() => setHoverId(e.uuid)}
                         onMouseLeave={() => setHoverId(null)}
                         onFocus={() => setHoverId(e.uuid)}

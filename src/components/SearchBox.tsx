@@ -158,6 +158,8 @@ export function SearchBox(props: Props) {
                   {head}
                 </li>
               ),
+              // options are chosen with the arrow keys and Enter in the search input (the combobox pattern)
+              // oxlint-disable-next-line jsx-a11y/click-events-have-key-events
               <li
                 key={o.kind === 'year' ? 'year' : `${o.entry.kind}-${o.entry.id}`}
                 id={optId(i)}

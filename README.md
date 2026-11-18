@@ -112,6 +112,23 @@ paths; anything else (e.g. `javascript:`) is rejected.
   updates to the published timeline still reach them; where both changed the same item, the reader's version wins, and
   the reader is told when the published timeline changed under their edits. Old full-copy drafts are converted on load
   without deleting anything. Old REDACTED files (v1 and v2) are converted on upload.
+- **Accessibility (in progress; target WCAG 2.2 AA, which covers the 2.1 AA of ADA Title II and the 2.0 AA of
+  Section 508).** Plan and status: `docs/feature-audit.md` item 23. Done so far:
+  - a "Skip to the timeline" link, and the timeline as a labelled region with each row a labelled group;
+  - event buttons named with their dates, rows, key status and uncertainty ("Battle of Kadesh, c. 1274 BCE, Egypt
+    and Nubia, key event, uncertain date"); "+N" clusters with their year range; icon buttons named by their action
+    and row; fold buttons with `aria-expanded`;
+  - focus moves to the detail panel when an event opens, and Escape (or Close) returns it to the event;
+  - one polite live region announces zoom changes, "Went to …" and notices;
+  - a 2 px focus outline everywhere, and reduced motion respected (no smooth scrolling or animations);
+  - the guided tour as a dialog labelled by its heading.
+
+  Checks: `src/a11y.test.tsx` runs axe-core over each bundled timeline (and the tour) and tests the names and focus
+  above; jsdom can't check colour contrast, which is left to a per-theme test (planned). oxlint runs the `jsx-a11y`
+  rules, with three off: `prefer-tag-over-role` (a `role="group"` on a `div` is fine), `no-noninteractive-element-to-
+  interactive-role` (the search box's listbox is the standard combobox pattern) and `no-autofocus` (an editor that
+  opens focuses its first field on purpose). Each remaining mouse-only handler has a comment naming its keyboard
+  equivalent.
 
 ## Run
 

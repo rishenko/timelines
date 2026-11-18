@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import type { Dataset, SourceRef, TimelineEvent } from '../types.ts';
 import { compareEvents, formatEventDates } from '../lib/years.ts';
 import { formatYear } from '../lib/calendar.ts';
@@ -80,8 +81,24 @@ function ClaimRows({ data, claims, label, window }: { data: Dataset; claims: Cla
   );
 }
 
+/** Puts focus back on an event's mark in the timeline, if it is drawn (after its detail panel closes). */
+function focusEventMark(uuid: string) {
+  requestAnimationFrame(() => document.querySelector<HTMLElement>(`[data-event-id="${CSS.escape(uuid)}"]`)?.focus());
+}
+
 export function DetailPanel(p: Props) {
   const { event: e, resolved: r, data } = p;
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  // Move focus to the panel when an event opens, so keyboard and screen-reader users land on it. Not on page load
+  // (a deep link opens an event before the reader has done anything; focus stays where the browser put it).
+  useEffect(() => {
+    const active = document.activeElement;
+    if (active && active !== document.body) headingRef.current?.focus();
+  }, [e.uuid]);
+  const close = () => {
+    p.onClose();
+    focusEventMark(e.uuid);
+  };
   const cal = data.meta.calendar;
   const tracks = e.tracks.map((id) => data.tracks.find((t) => t.id === id)).filter((t) => !!t);
   const byId = p.resolvedById;
@@ -102,14 +119,27 @@ export function DetailPanel(p: Props) {
   const hasDating = startClaims.length > 0 || endClaims.length > 0 || r.startWindow || r.endWindow || chronology;
 
   return (
-    <aside className="side-panel detail">
+    // Escape anywhere in the panel closes it
+    // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    <aside
+      className="side-panel detail"
+      aria-labelledby="detail-title"
+      onKeyDown={(ev) => {
+        if (ev.key === 'Escape') {
+          ev.stopPropagation();
+          close();
+        }
+      }}
+    >
       <header>
         <div className="dates">{formatEventDates(r, cal, approx)}</div>
-        <button className="icon" onClick={p.onClose} title="Close">
+        <button className="icon" onClick={close} aria-label="Close details" title="Close (Esc)">
           ✕
         </button>
       </header>
-      <h2>{e.title}</h2>
+      <h2 id="detail-title" ref={headingRef} tabIndex={-1}>
+        {e.title}
+      </h2>
       <div className="track-chips">
         {tracks.map((t) => (
           <span key={t.id} className="track-chip" style={{ '--track-color': t.color } as React.CSSProperties}>
