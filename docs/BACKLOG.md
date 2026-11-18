@@ -60,8 +60,8 @@ The author's decision (2026-11-18): a separate timeline rather than extending th
 civilizations don't crowd it. It overlaps the ancient timeline from 500 to 330 BCE and ends around 650 CE; the two
 link to each other on their rulers (`meta.continues`). The skeleton (`scripts/classical/skeleton.ts`) has the groups,
 regions and the 47 overlap events; the first region pass (`mediterranean-near-east.ts`) covers the Mediterranean and
-the Near East; the second (`south-asia.ts`) South Asia. `meta.range` (500 BCE – 650 CE) keeps the ruler to the period. Next region passes:
-China (Qin, Han, Three Kingdoms, Sui, Tang founding), the Steppe (Xiongnu, Huns, Turks), Africa (Kush,
+the Near East; the second (`south-asia.ts`) South Asia; the third (`east-asia.ts`) China, Korea and Japan. `meta.range` (500 BCE – 650 CE) keeps the ruler to the period. Next region passes:
+the Southern dynasties (Liu Song to Chen), the Steppe (Xiongnu, Huns, Turks), Africa (Kush,
 Aksum), Europe north of the Alps (Celts, Germanic peoples, Franks), and the Americas (Teotihuacan, Classic Maya, Moche,
 Nazca, Hopewell). The list below is the starting point. Not yet decided: which regions open collapsed.
 

@@ -26,7 +26,8 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   330 BCE, and each timeline links to the other on its ruler where they meet. So far: the overlap, and the
   Mediterranean and Near East (the Hellenistic kingdoms, Rome to Justinian, Carthage, Parthia and the Sasanians, Judea,
   Arabia and the rise of Islam) and South Asia (the Maurya Empire to Harsha, the Kushans, the Guptas, the
-  Deccan, Tamilakam and Sri Lanka); 119 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
+  Deccan, Tamilakam and Sri Lanka) and East Asia (Qin to the founding of Tang, the Three Kingdoms of Korea,
+  Yayoi to Asuka Japan); 152 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first); sources and judgment calls in `docs/classical-sources.md`.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).

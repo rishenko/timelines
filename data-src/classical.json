@@ -399,6 +399,83 @@
       "url": "https://en.wikipedia.org/wiki/Nalanda_mahavihara",
       "tags": ["wikipedia"],
       "accessed": "2026-11-18"
+    },
+    "wp-qin": { "name": "Wikipedia: Qin dynasty", "url": "https://en.wikipedia.org/wiki/Qin_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-qin-shi-huang": { "name": "Wikipedia: Qin Shi Huang", "url": "https://en.wikipedia.org/wiki/Qin_Shi_Huang", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-terracotta": { "name": "Wikipedia: Terracotta Army", "url": "https://en.wikipedia.org/wiki/Terracotta_Army", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-han": { "name": "Wikipedia: Han dynasty", "url": "https://en.wikipedia.org/wiki/Han_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-emperor-wu-han": {
+      "name": "Wikipedia: Emperor Wu of Han",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Wu_of_Han",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-sima-qian": { "name": "Wikipedia: Sima Qian", "url": "https://en.wikipedia.org/wiki/Sima_Qian", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-cai-lun": { "name": "Wikipedia: Cai Lun", "url": "https://en.wikipedia.org/wiki/Cai_Lun", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yellow-turban": {
+      "name": "Wikipedia: Yellow Turban Rebellion",
+      "url": "https://en.wikipedia.org/wiki/Yellow_Turban_Rebellion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-three-kingdoms": { "name": "Wikipedia: Three Kingdoms", "url": "https://en.wikipedia.org/wiki/Three_Kingdoms", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-red-cliffs": {
+      "name": "Wikipedia: Battle of Red Cliffs",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Red_Cliffs",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-jin": {
+      "name": "Wikipedia: Jin dynasty (266–420)",
+      "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-sixteen-kingdoms": {
+      "name": "Wikipedia: Sixteen Kingdoms",
+      "url": "https://en.wikipedia.org/wiki/Sixteen_Kingdoms",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-northern-wei": { "name": "Wikipedia: Northern Wei", "url": "https://en.wikipedia.org/wiki/Northern_Wei", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-sui": { "name": "Wikipedia: Sui dynasty", "url": "https://en.wikipedia.org/wiki/Sui_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-grand-canal": {
+      "name": "Wikipedia: Grand Canal (China)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Canal_(China)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-tang": { "name": "Wikipedia: Tang dynasty", "url": "https://en.wikipedia.org/wiki/Tang_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-xuanwu-gate": {
+      "name": "Wikipedia: Xuanwu Gate Incident",
+      "url": "https://en.wikipedia.org/wiki/Xuanwu_Gate_Incident",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-gojoseon": { "name": "Wikipedia: Old Chosŏn", "url": "https://en.wikipedia.org/wiki/Gojoseon", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-four-commanderies": {
+      "name": "Wikipedia: Four Commanderies of Han",
+      "url": "https://en.wikipedia.org/wiki/Four_Commanderies_of_Han",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-three-kingdoms-korea": {
+      "name": "Wikipedia: Three Kingdoms of Korea",
+      "url": "https://en.wikipedia.org/wiki/Three_Kingdoms_of_Korea",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-goguryeo": { "name": "Wikipedia: Goguryeo", "url": "https://en.wikipedia.org/wiki/Goguryeo", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-baekje": { "name": "Wikipedia: Paekche", "url": "https://en.wikipedia.org/wiki/Baekje", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-silla": { "name": "Wikipedia: Silla", "url": "https://en.wikipedia.org/wiki/Silla", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yayoi": { "name": "Wikipedia: Yayoi period", "url": "https://en.wikipedia.org/wiki/Yayoi_period", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-kofun": { "name": "Wikipedia: Kofun period", "url": "https://en.wikipedia.org/wiki/Kofun_period", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-asuka": { "name": "Wikipedia: Asuka period", "url": "https://en.wikipedia.org/wiki/Asuka_period", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-seventeen-article": {
+      "name": "Wikipedia: Seventeen-article constitution",
+      "url": "https://en.wikipedia.org/wiki/Seventeen-article_constitution",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
     }
   },
   "tracks": [
@@ -658,7 +735,86 @@
     { "id": "se-asia", "name": "Southeast Asia", "color": "#6a4a9a", "parent": "east-asia" },
     { "id": "tibet", "name": "Tibet", "color": "#6a4a9a", "parent": "east-asia" },
     { "id": "china", "name": "China", "color": "#6a4a9a", "parent": "east-asia" },
+    {
+      "id": "qin",
+      "name": "Qin dynasty",
+      "color": "#5a5a6a",
+      "parent": "china",
+      "span": {
+        "start": "221 BCE",
+        "end": "206 BCE",
+        "endDates": [
+          { "year": "206 BCE", "source": { "sourceKey": "wp-qin", "sourceLocation": "lead and infobox" } },
+          { "year": "207 BCE", "source": { "sourceKey": "wp-qin", "sourceLocation": "navbox (221–207 BC)" } }
+        ]
+      }
+    },
+    { "id": "han", "name": "Han dynasty", "color": "#a83a2a", "parent": "china", "span": { "start": "202 BCE", "end": "220 CE" } },
+    {
+      "id": "three-kingdoms-china",
+      "name": "Three Kingdoms (Wei, Shu, Wu)",
+      "color": "#8a5a3a",
+      "parent": "china",
+      "span": { "start": "220 CE", "end": "280 CE" }
+    },
+    {
+      "id": "jin-china",
+      "name": "Jin dynasty (Western, then Eastern)",
+      "color": "#6a7a4a",
+      "parent": "china",
+      "span": { "start": "266 CE", "end": "420 CE" }
+    },
+    {
+      "id": "sixteen-kingdoms",
+      "name": "Sixteen Kingdoms (the north)",
+      "color": "#7a6a5a",
+      "parent": "china",
+      "span": { "start": "304 CE", "end": "439 CE" }
+    },
+    { "id": "northern-wei", "name": "Northern Wei", "color": "#5a6a8a", "parent": "china", "span": { "start": "386 CE", "end": "535 CE" } },
+    { "id": "sui", "name": "Sui dynasty", "color": "#4a7a7a", "parent": "china", "span": { "start": "581 CE", "end": "618 CE" } },
+    { "id": "tang", "name": "Tang dynasty", "color": "#b0702a", "parent": "china", "span": { "start": "618 CE", "end": "907 CE" } },
     { "id": "korea-japan", "name": "Korea and Japan", "color": "#6a4a9a", "parent": "east-asia" },
+    { "id": "gojoseon", "name": "Gojoseon (Old Chosŏn)", "color": "#6a5a8a", "parent": "korea-japan" },
+    {
+      "id": "han-commanderies",
+      "name": "Han commanderies (Lelang)",
+      "color": "#a0503a",
+      "parent": "korea-japan",
+      "span": { "start": "108 BCE", "end": "313 CE" }
+    },
+    { "id": "goguryeo", "name": "Goguryeo", "color": "#7a4a5a", "parent": "korea-japan", "span": { "start": "c. 37 BCE", "end": "668 CE" } },
+    { "id": "baekje", "name": "Baekje (Paekche)", "color": "#5a7a5a", "parent": "korea-japan", "span": { "start": "18 BCE", "end": "660 CE" } },
+    { "id": "silla", "name": "Silla", "color": "#9a7a3a", "parent": "korea-japan", "span": { "start": "57 BCE", "end": "935 CE" } },
+    {
+      "id": "yayoi",
+      "name": "Yayoi period (Japan)",
+      "color": "#7a8a6a",
+      "parent": "korea-japan",
+      "span": {
+        "start": "c. 300 BCE",
+        "end": "c. 300 CE",
+        "startDates": [
+          { "year": "300 BCE", "source": { "sourceKey": "wp-yayoi", "sourceLocation": "lead and Features" } },
+          { "year": "900 BCE", "margin": 100, "source": { "sourceKey": "wp-yayoi", "sourceLocation": "Features ('highly controversial')" } }
+        ]
+      }
+    },
+    {
+      "id": "kofun",
+      "name": "Kofun period (Japan)",
+      "color": "#6a6a4a",
+      "parent": "korea-japan",
+      "span": {
+        "start": "c. 300 CE",
+        "end": "538 CE",
+        "startDates": [
+          { "year": "300 CE", "source": { "sourceKey": "wp-kofun", "sourceLocation": "lead" } },
+          { "year": "258 CE", "source": { "sourceKey": "wp-kofun", "sourceLocation": "short description ('258/300')" } }
+        ]
+      }
+    },
+    { "id": "asuka", "name": "Asuka period (Japan)", "color": "#8a6a7a", "parent": "korea-japan", "span": { "start": "538 CE", "end": "710 CE" } },
     { "id": "austronesia", "name": "Island Southeast Asia & Oceania", "color": "#2a8a8a" },
     { "id": "island-sea", "name": "Island Southeast Asia", "color": "#2a8a8a", "parent": "austronesia" },
     { "id": "oceania", "name": "Oceania", "color": "#2a8a8a", "parent": "austronesia" },
@@ -1923,6 +2079,332 @@
       "sources": [{ "sourceKey": "wp-harsha", "sourceLocation": "Reign" }],
       "links": [{ "to": "harsha", "kind": "related" }],
       "importance": 3
+    },
+    {
+      "uuid": "qin-unification",
+      "title": "Qin unifies China",
+      "start": "221 BCE",
+      "tracks": ["qin"],
+      "descr": "Beginning in 230 BC, the Qin under King Ying Zheng wage a series of wars; by 221 BC he has conquered all the other warring states, ending the Warring States period, and rules as Qin Shi Huang.",
+      "sources": [{ "sourceKey": "wp-qin", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-qin-shi-huang", "sourceLocation": "lead and infobox" }],
+      "links": [{ "to": "warring-states", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "terracotta-army",
+      "title": "Qin Shi Huang dies; the Terracotta Army",
+      "start": "210 BCE",
+      "end": "209 BCE",
+      "tracks": ["qin"],
+      "descr": "Qin Shi Huang dies on 12 July 210 BC, during his fifth tour of eastern China. Work on his mausoleum began in 246 BCE; the Terracotta Army was buried with him in 210–209 BCE and discovered by farmers on 29 March 1974.",
+      "sources": [
+        { "sourceKey": "wp-qin-shi-huang", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-terracotta", "sourceLocation": "lead, History and Discovery" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "han-founded",
+      "title": "Liu Bang proclaimed emperor: the Han dynasty",
+      "start": "202 BCE",
+      "tracks": ["han", "qin"],
+      "descr": "The Qin surrender to Liu Bang in 207 BC and Xianyang is destroyed in 206 BC. After the Battle of Gaixia (202 BC), Liu Bang is proclaimed emperor (Emperor Gaozu, 202–195 BC). Western Han: 202 BC – 9 AD; Eastern Han: 25–220 AD.",
+      "sources": [{ "sourceKey": "wp-han", "sourceLocation": "infobox and lead" }, { "sourceKey": "wp-qin", "sourceLocation": "infobox" }],
+      "importance": 1
+    },
+    {
+      "uuid": "emperor-wu-han",
+      "title": "Reign of Emperor Wu of Han",
+      "start": "141 BCE",
+      "end": "87 BCE",
+      "tracks": ["han"],
+      "descr": "The seventh emperor of the Han dynasty, from 141 until his death in 87 BC; his reign lasts 54 years. In 104 BC a new calendar is put into effect.",
+      "sources": [{ "sourceKey": "wp-emperor-wu-han", "sourceLocation": "lead, infobox and Calendar reform" }]
+    },
+    {
+      "uuid": "zhang-qian",
+      "title": "Zhang Qian sent to the Western Regions",
+      "start": "139 BCE",
+      "tracks": ["han"],
+      "descr": "Emperor Wu dispatches his envoy Zhang Qian into the Western Regions.",
+      "sources": [{ "sourceKey": "wp-emperor-wu-han", "sourceLocation": "lead" }],
+      "links": [{ "to": "emperor-wu-han", "kind": "part-of" }]
+    },
+    {
+      "uuid": "shiji",
+      "title": "Sima Qian’s Shiji",
+      "start": "c. 94 BCE",
+      "tracks": ["han"],
+      "descr": "Sima Qian (c. 145 – c. 86 BC), historian of the early Han, completes it before 91 BC, probably around 94 BC. In 99 BC he offends Emperor Wu in the Li Ling affair; released from prison in 96 BC, he lives on as a palace eunuch.",
+      "sources": [{ "sourceKey": "wp-sima-qian", "sourceLocation": "lead and As Han court official" }],
+      "startDates": [
+        { "year": "94 BCE", "source": { "sourceKey": "wp-sima-qian", "sourceLocation": "As Han court official (probably around 94 BC)" } },
+        { "year": "91 BCE", "source": { "sourceKey": "wp-sima-qian", "sourceLocation": "As Han court official (before 91 BC)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "xin-interregnum",
+      "title": "The Xin dynasty interrupts the Han",
+      "start": "9 CE",
+      "end": "23 CE",
+      "tracks": ["han"],
+      "descr": "Between the Western Han (202 BC – 9 AD) and the Eastern Han (25–220 AD).",
+      "sources": [{ "sourceKey": "wp-han", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "cai-lun-paper",
+      "title": "Cai Lun improves papermaking",
+      "start": "105 CE",
+      "tracks": ["han"],
+      "descr": "A eunuch official at the court in Luoyang, he substantially improves the papermaking process; earlier forms of paper have existed since the 3rd century BCE.",
+      "sources": [{ "sourceKey": "wp-cai-lun", "sourceLocation": "lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "yellow-turbans",
+      "title": "Yellow Turban Rebellion",
+      "start": "184 CE",
+      "end": "205 CE",
+      "tracks": ["han"],
+      "descr": "It breaks out in March 184, during the reign of Emperor Ling. The main rebellion is suppressed by 185, but subduing the resisting areas takes until 205.",
+      "sources": [{ "sourceKey": "wp-yellow-turban", "sourceLocation": "infobox, lead and Background" }]
+    },
+    {
+      "uuid": "red-cliffs",
+      "title": "Battle of Red Cliffs",
+      "start": "208 CE",
+      "tracks": ["han", "three-kingdoms-china"],
+      "descr": "A battle on the Yangtze River in the winter of 208–209. Cao Cao’s southern campaign had started in the autumn of 208.",
+      "sources": [
+        { "sourceKey": "wp-red-cliffs", "sourceLocation": "infobox, lead and Background" },
+        { "sourceKey": "wp-three-kingdoms", "sourceLocation": "infobox" }
+      ]
+    },
+    {
+      "uuid": "han-ends",
+      "title": "End of the Han: the Three Kingdoms",
+      "start": "220 CE",
+      "tracks": ["three-kingdoms-china", "han"],
+      "descr": "The Han abdicates to Cao Wei. The Three Kingdoms period runs from the establishment of Cao Wei in 220 to the conquest of Wu by Jin in 280; other starts proposed include 184, 189, 190 and 196.",
+      "sources": [{ "sourceKey": "wp-han", "sourceLocation": "infobox" }, { "sourceKey": "wp-three-kingdoms", "sourceLocation": "lead and Periodization" }],
+      "links": [{ "to": "yellow-turbans", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "jin-reunifies",
+      "title": "Jin reunites China",
+      "start": "280 CE",
+      "tracks": ["jin-china", "three-kingdoms-china"],
+      "descr": "The Western Jin, established in 266 as successor to Cao Wei, conquers Eastern Wu, ending the Three Kingdoms period. Shu Han had fallen to Wei in 263.",
+      "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-three-kingdoms", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "eight-princes",
+      "title": "War of the Eight Princes",
+      "start": "291 CE",
+      "end": "306 CE",
+      "tracks": ["jin-china"],
+      "descr": "A series of civil wars; in 304 the dynasty faces a wave of rebellions, the start of the Sixteen Kingdoms.",
+      "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "jin-moves-south",
+      "title": "Luoyang sacked; the Jin move south",
+      "start": "311 CE",
+      "end": "317 CE",
+      "tracks": ["jin-china", "sixteen-kingdoms"],
+      "descr": "Luoyang is sacked in 311 and Chang’an captured in 316, ending the Western Jin (266–316). In 317 the Eastern Jin begins at Jiankang, south of the Huai River.",
+      "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }],
+      "links": [{ "to": "eight-princes", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "jin-defeats-former-qin",
+      "title": "The Eastern Jin defeat the Former Qin",
+      "start": "383 CE",
+      "tracks": ["jin-china", "sixteen-kingdoms"],
+      "descr": "A devastating defeat for the Former Qin, which from 376 to 383 had unified all of northern and northwest China and Sichuan.",
+      "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "northern-wei-unifies",
+      "title": "Northern Wei unifies the north",
+      "start": "439 CE",
+      "tracks": ["northern-wei", "sixteen-kingdoms"],
+      "descr": "The unification of northern China ends the Sixteen Kingdoms period. The Northern Wei, established on 20 February 386, rules from Pingcheng until it moves its capital to Luoyang on 25 October 493.",
+      "sources": [{ "sourceKey": "wp-northern-wei", "sourceLocation": "infobox and lead" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "sui-reunifies",
+      "title": "Sui reunites China",
+      "start": "589 CE",
+      "tracks": ["sui"],
+      "descr": "Yang Jian takes the throne on 4 March 581; in 588 the Sui mass 518,000 troops along the Yangtze, and by 589 Sui troops enter Jiankang.",
+      "sources": [{ "sourceKey": "wp-sui", "sourceLocation": "infobox and Foundation and Emperor Wen" }],
+      "importance": 1
+    },
+    {
+      "uuid": "grand-canal",
+      "title": "The Grand Canal completed",
+      "start": "609 CE",
+      "tracks": ["sui"],
+      "descr": "The network is expanded and completed by Emperor Yang of Sui; its oldest sections date to the early 5th century BC.",
+      "sources": [{ "sourceKey": "wp-grand-canal", "sourceLocation": "lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "tang-founded",
+      "title": "The Tang dynasty founded",
+      "start": "618 CE",
+      "tracks": ["tang", "sui"],
+      "descr": "Established on 18 June 618; the Sui is abolished by Li Yuan (Emperor Gaozu of Tang, 618–626). Emperor Yang of Sui had been assassinated by Yuwen Huaji in 618.",
+      "sources": [{ "sourceKey": "wp-tang", "sourceLocation": "infobox" }, { "sourceKey": "wp-sui", "sourceLocation": "infobox and lead" }],
+      "links": [{ "to": "sui-reunifies", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "xuanwu-gate",
+      "title": "Xuanwu Gate Incident",
+      "start": "626 CE",
+      "tracks": ["tang"],
+      "descr": "A palace coup for the Tang throne on 2 July 626. Within three days Li Shimin is crown prince; about two months later Emperor Gaozu abdicates in his favour (Emperor Taizong, 626–649).",
+      "sources": [{ "sourceKey": "wp-xuanwu-gate", "sourceLocation": "infobox and lead" }, { "sourceKey": "wp-tang", "sourceLocation": "infobox" }]
+    },
+    {
+      "uuid": "wiman",
+      "title": "Wiman seizes Gojoseon",
+      "start": "194 BCE",
+      "tracks": ["gojoseon"],
+      "descr": "The ruling dynasty of Old Chosŏn is overthrown by Wiman. Tradition places the founding by Tan’gun in 2333 BCE, a date the page calls mythological.",
+      "sources": [{ "sourceKey": "wp-gojoseon", "sourceLocation": "lead and infobox" }]
+    },
+    {
+      "uuid": "gojoseon-falls",
+      "title": "Han conquers Gojoseon",
+      "start": "109 BCE",
+      "end": "108 BCE",
+      "tracks": ["gojoseon", "han-commanderies", "han"],
+      "descr": "The Han dynasty under Emperor Wu invades and conquers Wiman Joseon in the Gojoseon–Han War and establishes commanderies in its place (Lelang, 108 BCE – 313 CE; Xuantu from 107 BCE).",
+      "sources": [
+        { "sourceKey": "wp-gojoseon", "sourceLocation": "lead and infobox" },
+        { "sourceKey": "wp-four-commanderies", "sourceLocation": "History and Commanderies" }
+      ],
+      "links": [{ "to": "emperor-wu-han", "kind": "part-of" }, { "to": "wiman", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "lelang-falls",
+      "title": "Goguryeo annexes Lelang",
+      "start": "313 CE",
+      "tracks": ["goguryeo", "han-commanderies"],
+      "descr": "Lelang had been ruled by the Jin dynasty until 313. Daifang falls in 314–315 and Xuantu in 319.",
+      "sources": [{ "sourceKey": "wp-four-commanderies", "sourceLocation": "History > Goguryeo" }, { "sourceKey": "wp-gojoseon", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "goguryeo-buddhism",
+      "title": "Goguryeo adopts Buddhism",
+      "start": "372 CE",
+      "tracks": ["goguryeo"],
+      "descr": "The first of the Korean kingdoms to do so; Baekje accepts Buddhism in 384, and Silla adopts it in 527–528.",
+      "sources": [
+        { "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" },
+        { "sourceKey": "wp-goguryeo", "sourceLocation": "infobox" },
+        { "sourceKey": "wp-baekje", "sourceLocation": "infobox and Expansion" },
+        { "sourceKey": "wp-silla", "sourceLocation": "infobox" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "gwanggaeto",
+      "title": "Campaigns of Gwanggaeto the Great",
+      "start": "391 CE",
+      "end": "413 CE",
+      "tracks": ["goguryeo"],
+      "descr": "Goguryeo’s capital moves from Gungnae to Pyongyang in 427.",
+      "sources": [{ "sourceKey": "wp-goguryeo", "sourceLocation": "infobox" }],
+      "importance": 3
+    },
+    {
+      "uuid": "baekje-ungjin",
+      "title": "Baekje loses the Seoul region",
+      "start": "475 CE",
+      "tracks": ["baekje", "goguryeo"],
+      "descr": "The Seoul region falls to Goguryeo; Baekje’s capital is at Ungjin (Gongju) from 475 to 538, when King Seong moves it to Sabi.",
+      "sources": [{ "sourceKey": "wp-baekje", "sourceLocation": "Ungjin period and Sabi period" }],
+      "importance": 3
+    },
+    {
+      "uuid": "silla-buddhism",
+      "title": "Silla adopts Buddhism",
+      "start": "527 CE",
+      "end": "528 CE",
+      "tracks": ["silla"],
+      "descr": "Buddhism becomes Silla’s state and official religion from 527.",
+      "sources": [{ "sourceKey": "wp-silla", "sourceLocation": "infobox" }],
+      "links": [{ "to": "goguryeo-buddhism", "kind": "related" }]
+    },
+    {
+      "uuid": "goguryeo-sui-war",
+      "title": "Goguryeo–Sui War",
+      "start": "598 CE",
+      "end": "614 CE",
+      "tracks": ["goguryeo", "sui"],
+      "descr": "Sui’s campaigns end in defeat by 614.",
+      "sources": [{ "sourceKey": "wp-goguryeo", "sourceLocation": "infobox" }, { "sourceKey": "wp-sui", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "goguryeo-tang-war",
+      "title": "Goguryeo–Tang War",
+      "start": "645 CE",
+      "end": "668 CE",
+      "tracks": ["goguryeo", "tang", "silla"],
+      "descr": "Silla, allied with Tang China, conquers Baekje in 660 and Goguryeo in 668 (the fall of Pyongyang).",
+      "sources": [
+        { "sourceKey": "wp-goguryeo", "sourceLocation": "infobox" },
+        { "sourceKey": "wp-silla", "sourceLocation": "lead" },
+        { "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }
+      ]
+    },
+    {
+      "uuid": "yamato-kingship",
+      "title": "The Yamato kingship begins",
+      "start": "c. 250 CE",
+      "tracks": ["kofun"],
+      "descr": "Usually believed to have begun c. 250. Kofun tombs are built for the ruling class from the 3rd to the 7th centuries.",
+      "sources": [{ "sourceKey": "wp-kofun", "sourceLocation": "Yamato court and Kofun tombs" }]
+    },
+    {
+      "uuid": "buddhism-japan",
+      "title": "Buddhism reaches Japan",
+      "start": "538 CE",
+      "tracks": ["kofun", "asuka", "baekje"],
+      "descr": "According to the Nihon Shoki (720), Buddhism and the Chinese characters are introduced from Baekje; the date marks the end of the Kofun period and the start of the Asuka period.",
+      "sources": [{ "sourceKey": "wp-kofun", "sourceLocation": "lead" }, { "sourceKey": "wp-asuka", "sourceLocation": "infobox and lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "seventeen-article",
+      "title": "Seventeen-article constitution",
+      "start": "604 CE",
+      "tracks": ["asuka"],
+      "descr": "According to the Nihon Shoki of 720, a document authored by Prince Shōtoku, adopted in the reign of Empress Suiko (r. 593–628).",
+      "sources": [
+        { "sourceKey": "wp-seventeen-article", "sourceLocation": "lead" },
+        { "sourceKey": "wp-asuka", "sourceLocation": "Soga clan and Shōtoku Taishi" }
+      ]
+    },
+    {
+      "uuid": "taika-reform",
+      "title": "Isshi incident and the Taika Reform",
+      "start": "645 CE",
+      "tracks": ["asuka"],
+      "descr": "A palace coup on 10 July 645 (the Isshi incident) is followed by the Taika Reform; the era of 645–649 is named Taika.",
+      "sources": [{ "sourceKey": "wp-asuka", "sourceLocation": "infobox and Taika Reform" }],
+      "startDates": [
+        { "year": "645 CE", "source": { "sourceKey": "wp-asuka", "sourceLocation": "infobox" } },
+        { "year": "646 CE", "source": { "sourceKey": "wp-asuka", "sourceLocation": "Naming (Sekino)" } }
+      ]
     }
   ]
 }
