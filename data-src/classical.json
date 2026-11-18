@@ -341,6 +341,64 @@
       "url": "https://en.wikipedia.org/wiki/Christianization_of_Armenia",
       "tags": ["wikipedia"],
       "accessed": "2026-11-18"
+    },
+    "wp-maurya": { "name": "Wikipedia: Maurya Empire", "url": "https://en.wikipedia.org/wiki/Maurya_Empire", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-chandragupta-maurya": {
+      "name": "Wikipedia: Chandragupta Maurya",
+      "url": "https://en.wikipedia.org/wiki/Chandragupta_Maurya",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-seleucid-mauryan-war": {
+      "name": "Wikipedia: Seleucid–Mauryan war",
+      "url": "https://en.wikipedia.org/wiki/Seleucid%E2%80%93Mauryan_war",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-ashoka": { "name": "Wikipedia: Ashoka", "url": "https://en.wikipedia.org/wiki/Ashoka", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-kalinga-war": { "name": "Wikipedia: Kalinga War", "url": "https://en.wikipedia.org/wiki/Kalinga_War", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-shunga": { "name": "Wikipedia: Shunga Empire", "url": "https://en.wikipedia.org/wiki/Shunga_Empire", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-indo-greek": {
+      "name": "Wikipedia: Indo-Greek Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Indo-Greek_Kingdom",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-menander": { "name": "Wikipedia: Menander I", "url": "https://en.wikipedia.org/wiki/Menander_I", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-satavahana": {
+      "name": "Wikipedia: Satavahana dynasty",
+      "url": "https://en.wikipedia.org/wiki/Satavahana_dynasty",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-indo-scythians": { "name": "Wikipedia: Indo-Scythians", "url": "https://en.wikipedia.org/wiki/Indo-Scythians", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-kushan": { "name": "Wikipedia: Kushan Empire", "url": "https://en.wikipedia.org/wiki/Kushan_Empire", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-kanishka": { "name": "Wikipedia: Kanishka", "url": "https://en.wikipedia.org/wiki/Kanishka", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-sangam": {
+      "name": "Wikipedia: Sangam literature",
+      "url": "https://en.wikipedia.org/wiki/Sangam_literature",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-gupta": { "name": "Wikipedia: Gupta Empire", "url": "https://en.wikipedia.org/wiki/Gupta_Empire", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-chandragupta-ii": { "name": "Wikipedia: Chandragupta II", "url": "https://en.wikipedia.org/wiki/Chandragupta_II", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-samudragupta": { "name": "Wikipedia: Samudragupta", "url": "https://en.wikipedia.org/wiki/Samudragupta", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-aryabhata": { "name": "Wikipedia: Aryabhata", "url": "https://en.wikipedia.org/wiki/Aryabhata", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-alchon": { "name": "Wikipedia: Alchon Huns", "url": "https://en.wikipedia.org/wiki/Alchon_Huns", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ajanta": { "name": "Wikipedia: Ajanta Caves", "url": "https://en.wikipedia.org/wiki/Ajanta_Caves", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-harsha": { "name": "Wikipedia: Harsha", "url": "https://en.wikipedia.org/wiki/Harsha", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-pallava": { "name": "Wikipedia: Pallava dynasty", "url": "https://en.wikipedia.org/wiki/Pallava_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-nalanda": {
+      "name": "Wikipedia: Nalanda mahavihara",
+      "url": "https://en.wikipedia.org/wiki/Nalanda_mahavihara",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
     }
   },
   "tracks": [
@@ -470,6 +528,132 @@
     { "id": "steppe-south-asia", "name": "Steppe & South Asia", "color": "#7a8a2a" },
     { "id": "steppe", "name": "Steppe peoples", "color": "#7a8a2a", "parent": "steppe-south-asia" },
     { "id": "south-asia", "name": "South Asia", "color": "#7a8a2a", "parent": "steppe-south-asia" },
+    {
+      "id": "indo-greek",
+      "name": "Indo-Greek Kingdom",
+      "color": "#5a7aa8",
+      "parent": "south-asia",
+      "span": { "start": "c. 200 BCE", "end": "c. 10 CE" }
+    },
+    {
+      "id": "indo-scythian",
+      "name": "Indo-Scythians (Sakas)",
+      "color": "#7a6a5a",
+      "parent": "south-asia",
+      "span": { "start": "c. 150 BCE", "end": "400 CE" }
+    },
+    { "id": "kushan", "name": "Kushan Empire", "color": "#a0703a", "parent": "south-asia", "span": { "start": "c. 30 CE", "end": "c. 375 CE" } },
+    { "id": "alchon", "name": "Alchon Huns", "color": "#6a5a7a", "parent": "south-asia", "span": { "start": "370 CE", "end": "670 CE" } },
+    {
+      "id": "maurya",
+      "name": "Maurya Empire",
+      "color": "#b0603a",
+      "parent": "south-asia",
+      "span": {
+        "start": "c. 321 BCE",
+        "end": "185 BCE",
+        "startDates": [
+          { "year": "321 BCE", "source": { "sourceKey": "wp-maurya", "sourceLocation": "infobox" } },
+          { "year": "320 BCE", "source": { "sourceKey": "wp-maurya", "sourceLocation": "navbox (c. 320–185 BCE)" } }
+        ]
+      }
+    },
+    {
+      "id": "shunga",
+      "name": "Shunga Empire",
+      "color": "#9a5a4a",
+      "parent": "south-asia",
+      "span": {
+        "start": "185 BCE",
+        "end": "73 BCE",
+        "startDates": [
+          { "year": "185 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "infobox" } },
+          { "year": "187 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "lead (from around 187)" } },
+          { "year": "184 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "Origins" } }
+        ],
+        "endDates": [
+          { "year": "73 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "infobox and lead" } },
+          { "year": "75 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "lead (to 75) and Name" } }
+        ]
+      }
+    },
+    {
+      "id": "gupta",
+      "name": "Gupta Empire",
+      "color": "#c08a3a",
+      "parent": "south-asia",
+      "span": {
+        "start": "c. 240 CE",
+        "end": "c. 579 CE",
+        "endDates": [
+          { "year": "579 CE", "source": { "sourceKey": "wp-gupta", "sourceLocation": "infobox" } },
+          { "year": "575 CE", "source": { "sourceKey": "wp-gupta", "sourceLocation": "short description" } },
+          { "year": "550 CE", "source": { "sourceKey": "wp-gupta", "sourceLocation": "navbox (320–550)" } }
+        ]
+      }
+    },
+    {
+      "id": "harsha-kannauj",
+      "name": "Harsha’s empire (Kannauj)",
+      "color": "#b07a5a",
+      "parent": "south-asia",
+      "span": { "start": "606 CE", "end": "647 CE" }
+    },
+    {
+      "id": "satavahana",
+      "name": "Satavahana dynasty",
+      "color": "#7a8a4a",
+      "parent": "south-asia",
+      "span": {
+        "start": "c. 117 BCE",
+        "end": "c. 224 CE",
+        "startDates": [
+          {
+            "year": "117 BCE",
+            "margin": 16,
+            "source": { "sourceKey": "wp-satavahana", "sourceLocation": "infobox and lead ('late 2nd century BCE')" }
+          },
+          {
+            "year": "251 BCE",
+            "margin": 49,
+            "source": { "sourceKey": "wp-satavahana", "sourceLocation": "lead ('as early as the 3rd century BCE')" }
+          }
+        ]
+      }
+    },
+    { "id": "pallava", "name": "Pallava dynasty", "color": "#4a8a7a", "parent": "south-asia", "span": { "start": "275 CE", "end": "897 CE" } },
+    {
+      "id": "tamilakam",
+      "name": "Tamilakam: the Sangam period",
+      "color": "#5a9a6a",
+      "parent": "south-asia",
+      "span": {
+        "start": "c. 300 BCE",
+        "end": "c. 300 CE",
+        "startDates": [
+          { "year": "300 BCE", "source": { "sourceKey": "wp-sangam", "sourceLocation": "lead" } },
+          { "year": "100 BCE", "source": { "sourceKey": "wp-sangam", "sourceLocation": "lead (Zvelebil: 100 BCE to 250 CE)" } }
+        ],
+        "endDates": [
+          { "year": "300 CE", "source": { "sourceKey": "wp-sangam", "sourceLocation": "lead" } },
+          { "year": "250 CE", "source": { "sourceKey": "wp-sangam", "sourceLocation": "lead (Zvelebil)" } }
+        ]
+      }
+    },
+    {
+      "id": "anuradhapura",
+      "name": "Anuradhapura kingdom",
+      "color": "#8a6a9a",
+      "parent": "south-asia",
+      "span": {
+        "start": "437 BCE",
+        "end": "1017 CE",
+        "startDates": [
+          { "year": "437 BCE", "source": { "sourceKey": "wp-anuradhapura", "sourceLocation": "lead and infobox" } },
+          { "year": "377 BCE", "source": { "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura (made capital)" } }
+        ]
+      }
+    },
     { "id": "east-asia", "name": "East & Southeast Asia", "color": "#6a4a9a" },
     { "id": "se-asia", "name": "Southeast Asia", "color": "#6a4a9a", "parent": "east-asia" },
     { "id": "tibet", "name": "Tibet", "color": "#6a4a9a", "parent": "east-asia" },
@@ -1455,6 +1639,290 @@
       "sources": [{ "sourceKey": "wp-conquest-persia", "sourceLocation": "infobox and lead" }, { "sourceKey": "wp-sasanian", "sourceLocation": "infobox" }],
       "links": [{ "to": "qadisiyyah", "kind": "related" }],
       "importance": 1
+    },
+    {
+      "uuid": "chandragupta-maurya",
+      "title": "Chandragupta Maurya founds the Maurya Empire",
+      "start": "c. 321 BCE",
+      "tracks": ["maurya"],
+      "descr": "His conquest of Magadha is generally dated to c. 322–319 BCE; an alternative chronology places these events in c. 311–305 BCE. He reigns until c. 297 BCE.",
+      "sources": [{ "sourceKey": "wp-maurya", "sourceLocation": "infobox" }, { "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "lead and infobox" }],
+      "startDates": [
+        { "year": "321 BCE", "source": { "sourceKey": "wp-maurya", "sourceLocation": "infobox (Nanda–Mauryan War)" } },
+        { "year": "321 BCE", "margin": 1, "source": { "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "lead" } },
+        { "year": "308 BCE", "margin": 3, "source": { "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "lead (alternative chronology)" } }
+      ],
+      "links": [{ "to": "nanda", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "seleucid-mauryan-war",
+      "title": "Seleucid–Mauryan war",
+      "start": "305 BCE",
+      "end": "303 BCE",
+      "tracks": ["maurya", "seleucid"],
+      "descr": "Fought sometime between 305 and 303 BCE between Chandragupta and Seleucus I Nicator; it ends in a marriage alliance.",
+      "sources": [
+        { "sourceKey": "wp-seleucid-mauryan-war", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "lead" }
+      ],
+      "links": [{ "to": "chandragupta-maurya", "kind": "related" }]
+    },
+    {
+      "uuid": "ashoka",
+      "title": "Reign of Ashoka",
+      "start": "c. 268 BCE",
+      "end": "232 BCE",
+      "tracks": ["maurya"],
+      "descr": "Mauryan emperor from c. 268 BCE until his death in 232 BCE. His edicts, inscriptions of the 3rd century BCE, are read again only after the decipherment of the Brahmi script in the 19th century.",
+      "sources": [{ "sourceKey": "wp-ashoka", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-maurya", "sourceLocation": "infobox" }],
+      "startDates": [
+        { "year": "268 BCE", "source": { "sourceKey": "wp-ashoka", "sourceLocation": "infobox" } },
+        { "year": "269 BCE", "source": { "sourceKey": "wp-ashoka", "sourceLocation": "infobox (coronation) and short description" } },
+        { "year": "273 BCE", "source": { "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "infobox dynasty table ('273/268')" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "kalinga-war",
+      "title": "Kalinga War",
+      "start": "c. 261 BCE",
+      "tracks": ["maurya"],
+      "descr": "Ashoka conquers Kalinga in the eighth year of his reign, according to his own edicts. The war began an era of more than 40 years of relative peace.",
+      "sources": [
+        { "sourceKey": "wp-kalinga-war", "sourceLocation": "infobox, Course of the war and Aftermath" },
+        { "sourceKey": "wp-ashoka", "sourceLocation": "lead" }
+      ],
+      "startDates": [
+        { "year": "261 BCE", "source": { "sourceKey": "wp-kalinga-war", "sourceLocation": "infobox and Course of the war" } },
+        { "year": "260 BCE", "source": { "sourceKey": "wp-ashoka", "sourceLocation": "lead" } },
+        { "year": "265 BCE", "source": { "sourceKey": "wp-kalinga-war", "sourceLocation": "reference note 2" } }
+      ],
+      "links": [{ "to": "ashoka", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "buddhism-sri-lanka",
+      "title": "Buddhism reaches Sri Lanka",
+      "start": "267 BCE",
+      "tracks": ["anuradhapura"],
+      "descr": "Theravada Buddhism is introduced during the reign of King Devanampiya Tissa.",
+      "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "shunga-coup",
+      "title": "Pushyamitra Shunga kills the last Maurya",
+      "start": "185 BCE",
+      "tracks": ["shunga", "maurya"],
+      "descr": "The assassination of Brihadratha by Pushyamitra Shunga ends the Maurya Empire and begins the Shunga Empire.",
+      "sources": [{ "sourceKey": "wp-maurya", "sourceLocation": "infobox" }, { "sourceKey": "wp-shunga", "sourceLocation": "infobox and Origins" }],
+      "startDates": [
+        { "year": "185 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "infobox" } },
+        { "year": "187 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "lead" } },
+        { "year": "184 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "Origins" } }
+      ]
+    },
+    {
+      "uuid": "indo-greek-founded",
+      "title": "Demetrius I invades India: the Indo-Greek Kingdom",
+      "start": "c. 200 BCE",
+      "tracks": ["indo-greek", "greco-bactria"],
+      "descr": "The Graeco-Bactrian king Demetrius I invades India from Bactria. The Indo-Greeks disappear as a political entity around 10 AD.",
+      "sources": [{ "sourceKey": "wp-indo-greek", "sourceLocation": "lead and infobox" }]
+    },
+    {
+      "uuid": "menander",
+      "title": "Menander I",
+      "start": "c. 160 BCE",
+      "end": "130 BCE",
+      "tracks": ["indo-greek"],
+      "descr": "Indo-Greek king; the precise dates of his reign remain elusive. Patanjali’s Mahabhashya, around 150 BC, describes a failed campaign of Menander as far as Mathura. According to tradition, he embraced the Buddhist faith.",
+      "sources": [{ "sourceKey": "wp-menander", "sourceLocation": "infobox, lead, Reign and Menander and Buddhism" }],
+      "startDates": [
+        { "year": "165 BCE", "source": { "sourceKey": "wp-menander", "sourceLocation": "infobox and lead (165/155)" } },
+        { "year": "155 BCE", "source": { "sourceKey": "wp-menander", "sourceLocation": "infobox and lead (165/155)" } }
+      ]
+    },
+    {
+      "uuid": "maues",
+      "title": "Maues, the first Saka king in India",
+      "start": "c. 85 BCE",
+      "end": "c. 60 BCE",
+      "tracks": ["indo-scythian"],
+      "descr": "The first rulers of the Indo-Scythian kingdom are Maues (c. 85–60 BCE) and Vonones (c. 75–65 BCE).",
+      "sources": [{ "sourceKey": "wp-indo-scythians", "sourceLocation": "lead and infobox" }]
+    },
+    {
+      "uuid": "kushan-founded",
+      "title": "Kujula Kadphises unites the Yuezhi: the Kushan Empire",
+      "start": "c. 30 CE",
+      "tracks": ["kushan"],
+      "descr": "Kujula Kadphises (25–85), the first ruler, unites the Yuezhi tribes into a confederation. The Kushan Empire fragments into semi-independent kingdoms in the 3rd century AD.",
+      "sources": [{ "sourceKey": "wp-kushan", "sourceLocation": "lead and infobox" }],
+      "importance": 1
+    },
+    {
+      "uuid": "ban-chao-khotan",
+      "title": "A Kushan army fights Ban Chao near Khotan",
+      "start": "90 CE",
+      "tracks": ["kushan", "china"],
+      "descr": "Ban Chao fights battles near Khotan with a Kushan army of 70,000 men.",
+      "sources": [{ "sourceKey": "wp-kanishka", "sourceLocation": "Conquests in India and Central Asia" }]
+    },
+    {
+      "uuid": "kanishka",
+      "title": "Reign of Kanishka",
+      "start": "c. 127 CE",
+      "end": "150 CE",
+      "tracks": ["kushan"],
+      "descr": "The empire reaches its zenith. Around 127 CE he replaces Greek with Bactrian as the official language of administration. He never converts to Buddhism but gives it royal sponsorship, and heads the 4th Buddhist Council in Kashmir. Earlier scholars dated his accession to 78 CE.",
+      "sources": [
+        { "sourceKey": "wp-kanishka", "sourceLocation": "lead, infobox and Kanishka and Buddhism" },
+        { "sourceKey": "wp-kushan", "sourceLocation": "infobox (Bactrian official from c. 127)" }
+      ],
+      "startDates": [
+        { "year": "127 CE", "source": { "sourceKey": "wp-kanishka", "sourceLocation": "lead and infobox (Falk)" } },
+        { "year": "78 CE", "source": { "sourceKey": "wp-kanishka", "sourceLocation": "lead (earlier scholars)" } }
+      ],
+      "endDates": [
+        { "year": "150 CE", "source": { "sourceKey": "wp-kanishka", "sourceLocation": "infobox" } },
+        { "year": "151 CE", "source": { "sourceKey": "wp-kanishka", "sourceLocation": "navbox" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "naneghat",
+      "title": "Naneghat inscription of Satakarni I",
+      "start": "70 BCE",
+      "end": "60 BCE",
+      "tracks": ["satavahana"],
+      "descr": "Dated to 70–60 BCE, in the reign of Satakarni I.",
+      "sources": [{ "sourceKey": "wp-satavahana", "sourceLocation": "Naneghat inscription caption" }],
+      "importance": 3
+    },
+    {
+      "uuid": "pallavas-rise",
+      "title": "The Pallavas become a major southern power",
+      "start": "600 CE",
+      "end": "668 CE",
+      "tracks": ["pallava"],
+      "descr": "During the reigns of Mahendravarman I (600–630) and Narasimhavarman I (630–668).",
+      "sources": [{ "sourceKey": "wp-pallava", "sourceLocation": "lead and infobox" }]
+    },
+    {
+      "uuid": "sigiriya",
+      "title": "Kashyapa I rules from Sigiriya",
+      "start": "473 CE",
+      "end": "491 CE",
+      "tracks": ["anuradhapura"],
+      "descr": "Kashyapa I (473–491) chooses Sigiriya to be his capital.",
+      "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura" }]
+    },
+    {
+      "uuid": "chandragupta-i",
+      "title": "Coronation of Chandragupta I",
+      "start": "320 CE",
+      "tracks": ["gupta"],
+      "descr": "Crowned on 26 February 320. The Gupta Empire, established c. 240, exists from the mid 3rd century to the mid 6th century CE.",
+      "sources": [{ "sourceKey": "wp-gupta", "sourceLocation": "infobox and lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "samudragupta",
+      "title": "Reign of Samudragupta",
+      "start": "c. 335 CE",
+      "end": "375 CE",
+      "tracks": ["gupta"],
+      "descr": "The second Gupta emperor. Modern scholars variously assign the start of his reign from c. 319 CE to c. 350 CE.",
+      "sources": [{ "sourceKey": "wp-samudragupta", "sourceLocation": "lead, infobox and Period" }],
+      "startDates": [
+        { "year": "335 CE", "source": { "sourceKey": "wp-samudragupta", "sourceLocation": "infobox" } },
+        { "year": "320 CE", "margin": 1, "source": { "sourceKey": "wp-samudragupta", "sourceLocation": "Period (c. 319–320)" } },
+        { "year": "350 CE", "source": { "sourceKey": "wp-samudragupta", "sourceLocation": "Period" } }
+      ],
+      "links": [{ "to": "chandragupta-i", "kind": "related" }]
+    },
+    {
+      "uuid": "chandragupta-ii",
+      "title": "Reign of Chandragupta II",
+      "start": "c. 375 CE",
+      "end": "c. 415 CE",
+      "tracks": ["gupta"],
+      "descr": "Gupta emperor until his death in c. 415. The beginning of his reign can be dated to either 376–377 CE or 380–381 CE.",
+      "sources": [{ "sourceKey": "wp-chandragupta-ii", "sourceLocation": "lead, infobox and Period of reign" }],
+      "startDates": [
+        { "year": "375 CE", "source": { "sourceKey": "wp-chandragupta-ii", "sourceLocation": "lead" } },
+        { "year": "380 CE", "source": { "sourceKey": "wp-chandragupta-ii", "sourceLocation": "infobox and ruler list" } }
+      ],
+      "links": [{ "to": "samudragupta", "kind": "related" }]
+    },
+    {
+      "uuid": "western-satraps-end",
+      "title": "Chandragupta II defeats the last Western Satrap",
+      "start": "395 CE",
+      "tracks": ["gupta", "indo-scythian"],
+      "descr": "Rudrasimha III, the last of the Western Satraps, is defeated by the Gupta emperor Chandragupta II.",
+      "sources": [{ "sourceKey": "wp-indo-scythians", "sourceLocation": "lead" }],
+      "links": [{ "to": "chandragupta-ii", "kind": "part-of" }]
+    },
+    {
+      "uuid": "nalanda",
+      "title": "Nalanda founded",
+      "start": "c. 427 CE",
+      "tracks": ["gupta"],
+      "descr": "Established by the Gupta emperor Kumaragupta I; it operates for almost a thousand years, until around 1400 CE.",
+      "sources": [{ "sourceKey": "wp-nalanda", "sourceLocation": "infobox and lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "gupta-hunnic-wars",
+      "title": "Gupta–Hunnic Wars",
+      "start": "c. 460 CE",
+      "end": "c. 500 CE",
+      "tracks": ["gupta", "alchon"],
+      "descr": "Wars between the Gupta Empire and the Huns; the Alchon Huns invade India between the 4th and 6th centuries CE.",
+      "sources": [{ "sourceKey": "wp-gupta", "sourceLocation": "infobox" }, { "sourceKey": "wp-alchon", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "ajanta",
+      "title": "Ajanta Caves: the second phase",
+      "start": "c. 470 CE",
+      "tracks": ["south-asia"],
+      "descr": "Buddhist cave monuments dating from the second century BCE to about 480 CE. The second phase falls in a brief period of 460–480 CE according to later scholarship (400–650 CE in older accounts), circa 480 CE under King Harishena.",
+      "sources": [{ "sourceKey": "wp-ajanta", "sourceLocation": "lead, History and map caption" }],
+      "startDates": [
+        { "year": "470 CE", "margin": 10, "source": { "sourceKey": "wp-ajanta", "sourceLocation": "lead (460–480, later scholarship)" } },
+        { "year": "525 CE", "margin": 125, "source": { "sourceKey": "wp-ajanta", "sourceLocation": "lead (400–650, older accounts)" } }
+      ]
+    },
+    {
+      "uuid": "aryabhata",
+      "title": "Aryabhata",
+      "start": "476 CE",
+      "end": "550 CE",
+      "tracks": ["gupta"],
+      "descr": "Mathematician-astronomer of the Gupta era. He states he was 23 years old in 3600 Kali Yuga, 499 CE. His Aryabhatiya is translated into Arabic c. 820 CE.",
+      "sources": [{ "sourceKey": "wp-aryabhata", "sourceLocation": "lead, infobox and Biography" }]
+    },
+    {
+      "uuid": "harsha",
+      "title": "Harsha, emperor of Kannauj",
+      "start": "606 CE",
+      "end": "647 CE",
+      "tracks": ["harsha-kannauj"],
+      "descr": "Crowned at an assembly in April 606, after the downfall of the Gupta Empire in the middle of the 6th century; he rules until his death in 647. An invasion he leads is repelled on the banks of the Narmada in the winter of 618–619.",
+      "sources": [{ "sourceKey": "wp-harsha", "sourceLocation": "lead, infobox, Early years and Reign" }]
+    },
+    {
+      "uuid": "wang-xuance",
+      "title": "Tang Taizong sends Wang Xuance to India",
+      "start": "648 CE",
+      "tracks": ["harsha-kannauj", "china"],
+      "descr": "The Tang Chinese emperor Tang Taizong sends Wang Xuance to India.",
+      "sources": [{ "sourceKey": "wp-harsha", "sourceLocation": "Reign" }],
+      "links": [{ "to": "harsha", "kind": "related" }],
+      "importance": 3
     }
   ]
 }

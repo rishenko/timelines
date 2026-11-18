@@ -1,13 +1,16 @@
 {
-  "_rubric": "Same rubric as data-src/ancient-importance.json. 1 = key: founding, unification or fall of a major state; a decisive turning point; an iconic monument or text. 3 = minor. Everything not listed is normal. The overlap events (500–330 BCE) keep the levels they have in the ancient timeline. Proposed by Claude, pending the author's review.",
   "1": [
     "greco-persian-wars", "persia-falls", "warring-states", "maya-script", "gallic-sack", "marathon", "salamis",
     "peloponnesian-war", "chaeronea", "himera", "sicilian-expedition", "buddha", "adena-mounds", "monte-alban",
-    "saladoid", "thermopylae", "parthenon", "socrates", "academy", "hundred-schools",
-    "alexander-dies", "seleucus-babylon", "ptolemy-pharaoh", "library-alexandria", "parthia-founded",
-    "second-punic-war", "carthage-destroyed", "caesar-assassinated", "actium", "augustus", "crucifixion",
-    "jerusalem-70", "sasanians-rise", "edict-milan", "constantinople", "sack-rome-410", "fall-west",
-    "justinian", "hagia-sophia", "hijrah", "yarmuk", "sasanian-fall"
+    "saladoid", "thermopylae", "parthenon", "socrates", "academy", "hundred-schools", "alexander-dies",
+    "seleucus-babylon", "ptolemy-pharaoh", "library-alexandria", "parthia-founded", "second-punic-war",
+    "carthage-destroyed", "caesar-assassinated", "actium", "augustus", "crucifixion", "jerusalem-70",
+    "sasanians-rise", "edict-milan", "constantinople", "sack-rome-410", "fall-west", "justinian", "hagia-sophia",
+    "hijrah", "yarmuk", "sasanian-fall", "chandragupta-maurya", "ashoka", "kalinga-war", "buddhism-sri-lanka",
+    "kushan-founded", "kanishka", "chandragupta-i", "nalanda"
   ],
-  "3": ["la-venta-pyramid", "latin-league", "pella", "kalanay"]
+  "3": [
+    "la-venta-pyramid", "latin-league", "pella", "kalanay", "naneghat", "wang-xuance"
+  ],
+  "_rubric": "Same rubric as data-src/ancient-importance.json. 1 = key: founding, unification or fall of a major state; a decisive turning point; an iconic monument or text. 3 = minor. Everything not listed is normal. The overlap events (500–330 BCE) keep the levels they have in the ancient timeline. Proposed by Claude, pending the author's review."
 }

@@ -43,3 +43,34 @@ with their sources, claims, importance and internal links.
   578 (both as claims).
 - **Key events:** see `docs/classical-key-events.md` (`data-src/classical-importance.json`); the overlap events keep their
   ancient levels.
+
+## Second pass: South Asia (18 November 2026)
+
+`scripts/classical/south-asia.ts`: 25 events, 23 sources, 12 rows. Three web-fetch agents read 25 pages; none carried an
+AI-text or LLM-translation banner (*Anuradhapura kingdom* is marked "factual accuracy is disputed"). Most pages were
+read verbatim only for their first ~40,000 characters; dates seen only in the summary of the rest are not used.
+
+- **The Maurya Empire:** founded c. 321 BCE (c. 320 in the navbox; the conquest of Magadha c. 322–319, or c. 311–305 in
+  an alternative chronology, as claims), the Seleucid–Mauryan war (305–303), Ashoka (c. 268–232; 269 and the
+  "273/268" of the dynasty table as claims), the Kalinga War (c. 261; 260 and 265 as claims), and Pushyamitra Shunga's
+  coup (185; 187 and 184 as claims). The Shunga end is 73 BCE (75 as a claim).
+- **The north-west:** Demetrius I and the Indo-Greek Kingdom (c. 200 BCE – c. 10 CE), Menander I (165/155–130 BC, both
+  starts as claims), Maues (c. 85–60 BCE), the Indo-Scythians (c. 150 BCE – 400 CE), Kujula Kadphises and the Kushans
+  (c. 30 – c. 375 CE), the battle with Ban Chao near Khotan (90), Kanishka (c. 127–150; 151 and the earlier scholars'
+  78 CE as claims), the Alchon Huns (370–670).
+- **The Guptas:** established c. 240, Chandragupta I crowned 26 February 320, Samudragupta (c. 335–375; c. 319–320 and
+  c. 350 as claims), Chandragupta II (c. 375 or 380 – c. 415), the last Western Satrap defeated (395), Nalanda (c. 427),
+  the Gupta–Hunnic Wars (c. 460–500), Aryabhata (476–550), the end c. 579 (575 and 550 as claims).
+- **After the Guptas and the south:** Harsha (606–647) and Wang Xuance (648); the Satavahanas (late 2nd century BCE –
+  c. 224 CE; "as early as the 3rd century BCE" as a claim) and the Naneghat inscription (70–60 BCE); the Pallavas
+  (275–897) and their rise under Mahendravarman I and Narasimhavarman I (600–668); the Sangam period in Tamilakam
+  (c. 300 BCE – 300 CE; Zvelebil's 100 BCE – 250 CE as claims); the Anuradhapura kingdom (437 BCE – 1017 CE; 377 as
+  capital as a claim), Buddhism in Sri Lanka (267 BCE), Kashyapa I at Sigiriya (473–491); the Ajanta Caves' second
+  phase (460–480 per later scholarship; 400–650 in older accounts).
+- **Judgment calls:** the Satavahana start "late 2nd century BCE" is stored as 133–100 BCE; the Ajanta event sits on
+  the South Asia region row (no Vakataka row yet); Harsha's dynasty table reads "606–647 BCE", an obvious slip on the
+  page, so the CE dates of the lead and infobox are used. An invasion led by Harsha repelled on the Narmada (618–619)
+  is in Harsha's description without naming the victor, who appears only in the page summary.
+- **Not used (summary only):** the Kushan reign list, Satavahana kings after Satakarni I, Gautamiputra Satakarni's
+  dates, Mahinda's mission (247 BCE), the Alchon battles of 510–528, Toramana and Mihirakula, Xuanzang's visit to
+  Nalanda, the Bhanugupta and Eran inscriptions.

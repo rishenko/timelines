@@ -25,7 +25,8 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   States China to the fall of the Sasanians and the founding of Tang. It overlaps Ancient Civilizations from 500 to
   330 BCE, and each timeline links to the other on its ruler where they meet. So far: the overlap, and the
   Mediterranean and Near East (the Hellenistic kingdoms, Rome to Justinian, Carthage, Parthia and the Sasanians, Judea,
-  Arabia and the rise of Islam); 94 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
+  Arabia and the rise of Islam) and South Asia (the Maurya Empire to Harsha, the Kushans, the Guptas, the
+  Deccan, Tamilakam and Sri Lanka); 119 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first); sources and judgment calls in `docs/classical-sources.md`.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
