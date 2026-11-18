@@ -115,7 +115,9 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Table view:** the toolbar's **Timeline | Table** switch (`?view=table` in links) shows the same events as tables,
   grouped by region (or by top-level row, as in REDACTED) or in one list, sorted by date or title. Each event gives its
   dates in words with the range the cited sources allow ("c. 1595 BCE; the sources put it between 1651 BCE and 1531
-  BCE"), its chronology, rows, importance, description and sources. Filters and Dating apply; selecting an event opens
+  BCE"), its chronology, rows, importance, description and sources. Above each section's events, a **rows** table
+  lists its civilizations (or factions) with their lifespans and phases, in words with their source ranges, so
+  everything the chart draws is in the table. Filters and Dating apply; selecting an event opens
   the same detail panel; search picks and "Go to" years scroll to and focus the matching row. **Download CSV** saves
   the listed events (one line each, with stored years and source ranges as numbers). It is the accessible equivalent
   of the chart. The guided tour (about the chart) doesn't start by itself when a page opens in table view.

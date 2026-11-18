@@ -1957,3 +1957,24 @@ main {
     min-width: 9em;
   }
 }
+.events-table caption {
+  text-align: left;
+  padding: 8px 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.rows-table {
+  margin-bottom: 6px;
+}
+.rows-table th[scope='row'] {
+  width: 16em;
+  font-weight: 600;
+}
+.rows-table td.date {
+  width: 15em;
+}
+.phase-list {
+  margin: 0;
+  padding-left: 1.4em;
+}

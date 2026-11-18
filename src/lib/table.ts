@@ -1,5 +1,5 @@
 import type { Calendar, Dataset, Track } from '../types.ts';
-import type { ResolvedEvent, Window } from './chronology.ts';
+import type { ResolvedEvent, ResolvedPhase, ResolvedSpan, Window } from './chronology.ts';
 import { eventChronology } from './chronology.ts';
 import { formatYear } from './calendar.ts';
 import { compareEvents, formatEventDates } from './years.ts';
@@ -122,4 +122,78 @@ export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
     );
   }
   return lines.join('\n') + '\n';
+}
+
+/** A row (civilization, kingdom, faction) with what the chart shows on its bar: its lifespan and its phases. */
+export interface TableRow {
+  track: Track;
+  /** The row it sits under, when that isn't the section itself (so "Kush, in Nubia" reads right without the indent). */
+  parent?: Track;
+  span?: ResolvedSpan;
+  phases: ResolvedPhase[];
+}
+
+/**
+ * The rows to list in a section (or, without a section, in the whole timeline): those with a lifespan or phases, in
+ * the timeline's row order, skipping rows hidden by Filters. Rows that only group others (a region, "Nubia") have
+ * nothing to show on their own and are left out.
+ */
+export function sectionRows(
+  tracks: Track[],
+  sectionId: string | undefined,
+  spans: Map<string, ResolvedSpan>,
+  phases: Map<string, ResolvedPhase[]>,
+  visible: (trackId: string) => boolean,
+): TableRow[] {
+  const byId = trackIndex(tracks);
+  return treeOrder(tracks)
+    .filter((t) => (spans.has(t.id) || phases.has(t.id)) && visible(t.id))
+    .filter((t) => sectionId === undefined || trackPath(t.id, byId).some((a) => a.id === sectionId))
+    .map((t) => {
+      const parent = t.parent ? byId.get(t.parent) : undefined;
+      return {
+        track: t,
+        parent: parent && parent.id !== sectionId ? parent : undefined,
+        span: spans.get(t.id),
+        phases: phases.get(t.id) ?? [],
+      };
+    });
+}
+
+/** A lifespan or phase in words: "c. 1650 BCE – c. 1190 BCE", plus the ranges its sources allow. */
+export function spanInWords(s: ResolvedSpan, cal: Calendar, circa = false): { main: string; ranges: string[] } {
+  const approx = circa || !!(s.startWindow || s.endWindow);
+  const main = `${formatYear(s.start, cal, approx)} – ${formatYear(s.end, cal, approx)}`;
+  const ranges: string[] = [];
+  if (s.startWindow) ranges.push(`start between ${range(s.startWindow, cal)}`);
+  if (s.endWindow) ranges.push(`end between ${range(s.endWindow, cal)}`);
+  return { main, ranges };
+}
+
+export interface FullSection extends TableSection {
+  rows: TableRow[];
+}
+
+/**
+ * Sections with both their rows (lifespans and phases) and their events, in row order. A region with rows but no
+ * events (all filtered out, or none recorded) still gets a section, so every bar the chart draws is in the table.
+ */
+export function fullSections(
+  tracks: Track[],
+  events: ResolvedEvent[],
+  spans: Map<string, ResolvedSpan>,
+  phases: Map<string, ResolvedPhase[]>,
+  visible: (trackId: string) => boolean,
+): FullSection[] {
+  const byId = trackIndex(tracks);
+  const map = new Map<string, FullSection>(tableSections(tracks, events).map((s) => [s.track.id, { ...s, rows: [] }]));
+  for (const r of sectionRows(tracks, undefined, spans, phases, visible)) {
+    const s = sectionTrack(r.track.id, byId);
+    if (!s) continue;
+    let sec = map.get(s.track.id);
+    if (!sec) map.set(s.track.id, (sec = { track: s.track, group: s.group, events: [], rows: [] }));
+    sec.rows.push({ ...r, parent: r.parent && r.parent.id !== s.track.id ? r.parent : undefined });
+  }
+  const order = new Map(treeOrder(tracks).map((t, i) => [t.id, i]));
+  return [...map.values()].sort((a, b) => (order.get(a.track.id) ?? 0) - (order.get(b.track.id) ?? 0));
 }

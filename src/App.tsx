@@ -347,6 +347,9 @@ export default function App() {
               if (editing?.kind === 'event') setEditing(null);
             }}
             focus={focus}
+            spans={spans}
+            phases={phases}
+            visibleTracks={filters.tracks}
           />
         ) : (
           <TimelineView

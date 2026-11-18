@@ -1,11 +1,21 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Dataset } from '../types.ts';
-import type { ResolvedEvent } from '../lib/chronology.ts';
+import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import type { FocusRequest } from '../timeline/TimelineView.tsx';
-import { chronologyName, datesInWords, eventsCsv, tableSections, type TableSection } from '../lib/table.ts';
+import {
+  chronologyName,
+  datesInWords,
+  eventsCsv,
+  fullSections,
+  sectionRows,
+  spanInWords,
+  type FullSection,
+  type TableRow,
+} from '../lib/table.ts';
 import { compareEvents } from '../lib/years.ts';
 import { trackIndex, trackPath } from '../lib/tracks.ts';
 import { safeUrl } from '../lib/urls.ts';
+import { isOn } from '../state/filters.ts';
 
 type Sort = 'date' | 'date-desc' | 'title';
 
@@ -19,6 +29,11 @@ interface Props {
   onSelect: (id: string) => void;
   /** A search pick or "Go to year": scroll to and focus the event, row or year. */
   focus: FocusRequest | null;
+  /** Rows' lifespans and phases, resolved under the reader's chronologies (as the chart draws them). */
+  spans: Map<string, ResolvedSpan>;
+  phases: Map<string, ResolvedPhase[]>;
+  /** Filters' row switches: a row hidden there (or under a hidden row) is left out. */
+  visibleTracks: Record<string, boolean>;
 }
 
 const SORTS: Record<Sort, { label: string; compare: (a: ResolvedEvent, b: ResolvedEvent) => number }> = {
@@ -42,14 +57,35 @@ export function TableView(p: Props) {
   const names = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
   const byId = useMemo(() => trackIndex(data.tracks), [data.tracks]);
 
-  const bySection = useMemo(() => tableSections(data.tracks, p.events), [data.tracks, p.events]);
+  const visible = useMemo(() => {
+    const tracksOn = p.visibleTracks;
+    return (id: string) => trackPath(id, byId).every((t) => isOn(tracksOn, t.id));
+  }, [p.visibleTracks, byId]);
+  const bySection = useMemo(
+    () => fullSections(data.tracks, p.events, p.spans, p.phases, visible),
+    [data.tracks, p.events, p.spans, p.phases, visible],
+  );
   // regions when the timeline has them (Ancient, Classical); else its top-level rows (REDACTED's factions)
   const unit = bySection.some((s) => s.group) ? 'region' : 'row';
-  const sections: TableSection[] = useMemo(() => {
+  const sections: FullSection[] = useMemo(() => {
     const cmp = SORTS[sort].compare;
-    if (!grouped) return [{ track: { id: '', name: 'All events', color: '' }, events: [...p.events].sort(cmp) }];
+    if (!grouped)
+      return [
+        {
+          track: { id: '', name: 'All rows and events', color: '' },
+          events: [...p.events].sort(cmp),
+          rows: sectionRows(data.tracks, undefined, p.spans, p.phases, visible),
+        },
+      ];
     return bySection.map((s) => ({ ...s, events: [...s.events].sort(cmp) }));
-  }, [grouped, sort, bySection, p.events]);
+  }, [grouped, sort, bySection, p.events, data.tracks, p.spans, p.phases, visible]);
+
+  // Opened from a link to an event (#kadesh): scroll to it, as the chart does. Focus stays put on page load.
+  useEffect(() => {
+    if (!p.selectedId) return;
+    rootRef.current?.querySelector(`[data-event-id="${CSS.escape(p.selectedId)}"]`)?.scrollIntoView({ block: 'center' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // A search pick or a year: bring it into view and put focus on it, so keyboard and screen-reader users land there.
   useEffect(() => {
@@ -59,6 +95,7 @@ export function TableView(p: Props) {
     const calm = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     let target: HTMLElement | null = null;
     if (p.selectedId) target = root.querySelector(`[data-event-id="${CSS.escape(p.selectedId)}"]`);
+    if (!target && f.trackId) target = root.querySelector(`[data-row-id="${CSS.escape(f.trackId)}"]`);
     if (!target && f.trackId) {
       const path = trackPath(f.trackId, byId);
       const section = path[1] ?? path[0];
@@ -113,81 +150,151 @@ export function TableView(p: Props) {
         const groupHeading = grouped && s.group && s.group.id !== lastGroup ? s.group : undefined;
         if (grouped && s.group) lastGroup = s.group.id;
         const HeadingTag = grouped && s.group ? 'h3' : 'h2';
-        const headingId = `table-${s.track.id || 'all'}`;
         return (
           <section key={s.track.id || 'all'}>
             {groupHeading && <h2 className="table-group">{groupHeading.name}</h2>}
-            <HeadingTag id={headingId} data-section={s.track.id} tabIndex={-1}>
-              {s.track.name} <span className="muted small">({s.events.length})</span>
+            <HeadingTag data-section={s.track.id} tabIndex={-1}>
+              {s.track.name}{' '}
+              <span className="muted small">
+                ({[s.rows.length && `${s.rows.length} ${s.rows.length === 1 ? 'row' : 'rows'}`, `${s.events.length} ${s.events.length === 1 ? 'event' : 'events'}`]
+                  .filter(Boolean)
+                  .join(', ')}
+                )
+              </span>
             </HeadingTag>
-            <table className="events-table" aria-labelledby={headingId}>
-              <thead>
-                <tr>
-                  <th scope="col" aria-sort={sort === 'date' ? 'ascending' : sort === 'date-desc' ? 'descending' : undefined}>
-                    Date
-                  </th>
-                  <th scope="col" aria-sort={sort === 'title' ? 'ascending' : undefined}>
-                    Event
-                  </th>
-                  <th scope="col">Rows</th>
-                  <th scope="col">Sources</th>
-                </tr>
-              </thead>
-              <tbody>
-                {s.events.map((e) => {
-                  const d = datesInWords(e, cal);
-                  const chron = chronologyName(data, e);
-                  return (
-                    <tr key={e.uuid} className={p.selectedId === e.uuid ? 'selected' : undefined}>
-                      <td className="date">
-                        {d.main}
-                        {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}
-                        {chron && <div className="muted small">{chron}</div>}
-                      </td>
-                      <td className="event">
-                        <button
-                          className="linklike"
-                          data-event-id={e.uuid}
-                          data-start={e.start}
-                          aria-pressed={p.selectedId === e.uuid}
-                          onClick={() => p.onSelect(e.uuid)}
-                        >
-                          {e.title}
-                        </button>
-                        {e.importance === 1 && <span className="key-badge">Key event</span>}
-                        {e.descr && <p className="small">{e.descr}</p>}
-                      </td>
-                      <td className="rows">{e.tracks.map((t) => names.get(t) ?? t).join(', ')}</td>
-                      <td className="sources">
-                        <ul>
-                          {e.sources.map((src, i) => {
-                            const source = data.sources[src.sourceKey];
-                            const href = safeUrl(source?.url);
-                            const name = source?.name ?? src.sourceKey;
-                            return (
-                              <li key={`${src.sourceKey}-${i}`}>
-                                {href ? (
-                                  <a href={href} target="_blank" rel="noreferrer">
-                                    {name}
-                                  </a>
-                                ) : (
-                                  name
-                                )}
-                                {src.sourceLocation && <span className="muted">, {src.sourceLocation}</span>}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} />}
+            {s.events.length > 0 && (
+              <table className="events-table">
+                <caption>Events</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort={sort === 'date' ? 'ascending' : sort === 'date-desc' ? 'descending' : undefined}>
+                      Date
+                    </th>
+                    <th scope="col" aria-sort={sort === 'title' ? 'ascending' : undefined}>
+                      Event
+                    </th>
+                    <th scope="col">Rows</th>
+                    <th scope="col">Sources</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {s.events.map((e) => {
+                    const d = datesInWords(e, cal);
+                    const chron = chronologyName(data, e);
+                    return (
+                      <tr key={e.uuid} className={p.selectedId === e.uuid ? 'selected' : undefined}>
+                        <td className="date">
+                          {d.main}
+                          {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}
+                          {chron && <div className="muted small">{chron}</div>}
+                        </td>
+                        <td className="event">
+                          <button
+                            className="linklike"
+                            data-event-id={e.uuid}
+                            data-start={e.start}
+                            aria-pressed={p.selectedId === e.uuid}
+                            onClick={() => p.onSelect(e.uuid)}
+                          >
+                            {e.title}
+                          </button>
+                          {e.importance === 1 && <span className="key-badge">Key event</span>}
+                          {e.descr && <p className="small">{e.descr}</p>}
+                        </td>
+                        <td className="rows">{e.tracks.map((t) => names.get(t) ?? t).join(', ')}</td>
+                        <td className="sources">
+                          <ul>
+                            {e.sources.map((src, i) => {
+                              const source = data.sources[src.sourceKey];
+                              const href = safeUrl(source?.url);
+                              const name = source?.name ?? src.sourceKey;
+                              return (
+                                <li key={`${src.sourceKey}-${i}`}>
+                                  {href ? (
+                                    <a href={href} target="_blank" rel="noreferrer">
+                                      {name}
+                                    </a>
+                                  ) : (
+                                    name
+                                  )}
+                                  {src.sourceLocation && <span className="muted">, {src.sourceLocation}</span>}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            )}
           </section>
         );
       })}
       {p.events.length === 0 && <p className="muted">No events: Filters hide them all.</p>}
     </div>
+  );
+}
+
+/**
+ * A section's rows with what the chart draws on their bars: the lifespan (shaded) and the phases (named periods),
+ * each with its dates and the ranges its sources allow, in words.
+ */
+function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
+  const cal = data.meta.calendar;
+  return (
+    <table className="events-table rows-table">
+      <caption>Rows: lifespans and phases</caption>
+      <thead>
+        <tr>
+          <th scope="col">Row</th>
+          <th scope="col">Lifespan</th>
+          <th scope="col">Phases</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => {
+          const life = r.span ? spanInWords(r.span, cal, !!r.track.span?.circa) : undefined;
+          return (
+            <tr key={r.track.id}>
+              <th scope="row" data-row-id={r.track.id} tabIndex={-1}>
+                {r.track.name}
+                {r.parent && <span className="muted small"> (in {r.parent.name})</span>}
+              </th>
+              <td className="date">
+                {life ? (
+                  <>
+                    {life.main}
+                    {life.ranges.length > 0 && <div className="muted small">{life.ranges.join('; ')}</div>}
+                  </>
+                ) : (
+                  <span className="muted">Not dated</span>
+                )}
+              </td>
+              <td>
+                {r.phases.length > 0 ? (
+                  <ol className="phase-list">
+                    {r.phases.map((ph, i) => {
+                      // phases come in the row's own order, so its circa flag is at the same index
+                      const w = spanInWords(ph, cal, !!r.track.phases?.[i]?.circa);
+                      return (
+                        <li key={`${ph.name}-${i}`}>
+                          <strong>{ph.name}</strong>: {w.main}
+                          {w.ranges.length > 0 && <span className="muted small"> ({w.ranges.join('; ')})</span>}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                ) : (
+                  <span className="muted">None</span>
+                )}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
