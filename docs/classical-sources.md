@@ -223,3 +223,29 @@ long pages were read verbatim only in their first ~40,000 characters.
   eruption claim is not used, as the same section calls it a series of eruptions. Not used (summary only): the
   Calakmul and Tikal kings after 562 (Dos Pilas, Yuknoom Che'en II), Tikal's Teotihuacan embassies, the Sipán tombs,
   the 6th-century super El Niño, Hopewell's local variants.
+
+## Eighth pass: Southeast Asia and Tibet (18 November 2026)
+
+`scripts/classical/se-asia-tibet.ts`: 21 events, 24 sources (one reused), 12 rows. Three web-fetch agents (on Sonnet)
+read 28 pages; none carried an AI-text or LLM-translation banner. Most were read verbatim only in their first ~40,000
+characters; *Funan* and *Chenla* came back as infoboxes plus summaries, so their rulers (Fan Shiman, Bhavavarman I,
+Isanavarman I's reign) and the Kang Tai and Zhu Ying mission are not used.
+
+- **Vietnam:** Đông Sơn (c. 1000 BC – first century AD; "1 BC" as a claim), Âu Lạc (257–179 BCE; the infobox's
+  208 BCE as a claim), Nanyue (204–111 BC) and its conquest of Âu Lạc (179 BC; 180 BC on the Trưng sisters page as a
+  claim), the Han conquest (112–111 BC), the Trưng sisters (March 40 – 43 AD), Lady Triệu (248), Vạn Xuân (544; revolt
+  543, or 541 in the infobox) and its end under the Sui (602).
+- **Champa, Funan, Chenla, the Pyu:** Lâm Ấp (192), Funan (50–627; the navbox's 68 as a claim) and the Roman finds at
+  Óc Eo (diplomacy in 166), Chenla (550–802) and its takeover of Funan (550–627, labelled differently on the two
+  pages), Isanapura (c. 618), the Pyu (c. 2nd century BCE – c. 1050), Beikthano (c. 180 BCE), the Burmese calendar
+  (22 March 638; the Sri Ksetra infobox's 640 as a claim).
+- **Tibet:** Zhangzhung (c. 500 BC – 645; the infobox's 625 as a claim), the Yarlung kings (127 BCE in traditional
+  historiography; the skeleton's History of Tibet 414 BCE as a claim) to 842/848, Namri Songtsen (c. 600–618; 629 as a
+  claim), Songtsen Gampo (618 or 629 – 650; the Yarlung page's 614 as a claim), the Tuyuhun (284–670; 663 as a claim)
+  and Tang's campaigns against them (634–636), Princess Wencheng (641), the Jokhang (c. 640; 652 as a claim) and the
+  conquest of Zhangzhung (645; 625 and 634 as claims).
+- **Judgment calls:** northern Vietnam under Chinese rule is a row without a span (it holds the Han conquest, the
+  Trưng sisters, Lady Triệu and Lâm Ấp's origin); the skeleton's Nyatri Tsenpo event moved onto the Yarlung row;
+  Dvaravati and Langkasuka are left out (their in-period dates come only from navboxes or begin after 650). Not used
+  (summary only): Champa's kings and the Sui sack of 605, Bhrikuti's marriage date (the page gives both "before 624"
+  and 632), Songtsen Gampo's Songzhou fight as 635–636.

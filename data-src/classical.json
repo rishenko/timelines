@@ -111,7 +111,7 @@
       "name": "Wikipedia: Sa Huỳnh culture",
       "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
       "tags": ["wikipedia"],
-      "accessed": "2026-11-17"
+      "accessed": "2026-11-18"
     },
     "wp-prehistory-philippines": {
       "name": "Wikipedia: Prehistory of the Philippines",
@@ -766,7 +766,55 @@
       "tags": ["wikipedia"],
       "accessed": "2026-11-18"
     },
-    "wp-hohokam": { "name": "Wikipedia: Hohokam", "url": "https://en.wikipedia.org/wiki/Hohokam", "tags": ["wikipedia"], "accessed": "2026-11-18" }
+    "wp-hohokam": { "name": "Wikipedia: Hohokam", "url": "https://en.wikipedia.org/wiki/Hohokam", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-au-lac": { "name": "Wikipedia: Âu Lạc", "url": "https://en.wikipedia.org/wiki/%C3%82u_L%E1%BA%A1c", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-nanyue": { "name": "Wikipedia: Nanyue", "url": "https://en.wikipedia.org/wiki/Nanyue", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-first-domination": {
+      "name": "Wikipedia: First Era of Northern Domination",
+      "url": "https://en.wikipedia.org/wiki/First_Chinese_domination_of_Vietnam",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-trung-sisters": { "name": "Wikipedia: Trưng sisters", "url": "https://en.wikipedia.org/wiki/Tr%C6%B0ng_sisters", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-lady-trieu": { "name": "Wikipedia: Lady Triệu", "url": "https://en.wikipedia.org/wiki/Lady_Tri%E1%BB%87u", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-early-ly": {
+      "name": "Wikipedia: Early Lý dynasty",
+      "url": "https://en.wikipedia.org/wiki/Early_L%C3%BD_dynasty",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-dong-son": {
+      "name": "Wikipedia: Đông Sơn culture",
+      "url": "https://en.wikipedia.org/wiki/Dong_Son_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-champa": { "name": "Wikipedia: Champa", "url": "https://en.wikipedia.org/wiki/Champa", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-funan": { "name": "Wikipedia: Funan", "url": "https://en.wikipedia.org/wiki/Funan", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-oc-eo": { "name": "Wikipedia: Óc Eo", "url": "https://en.wikipedia.org/wiki/%C3%93c_Eo", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-chenla": { "name": "Wikipedia: Chenla", "url": "https://en.wikipedia.org/wiki/Chenla", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-isanapura": { "name": "Wikipedia: Isanapura", "url": "https://en.wikipedia.org/wiki/Isanapura", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-pyu": { "name": "Wikipedia: Pyu city-states", "url": "https://en.wikipedia.org/wiki/Pyu_city-states", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-sri-ksetra": {
+      "name": "Wikipedia: Sri Ksetra kingdom",
+      "url": "https://en.wikipedia.org/wiki/Sri_Ksetra_kingdom",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-tibetan-empire": { "name": "Wikipedia: Tibetan Empire", "url": "https://en.wikipedia.org/wiki/Tibetan_Empire", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-songtsen-gampo": { "name": "Wikipedia: Songtsen Gampo", "url": "https://en.wikipedia.org/wiki/Songtsen_Gampo", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yarlung": { "name": "Wikipedia: Yarlung dynasty", "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-zhangzhung": { "name": "Wikipedia: Zhangzhung", "url": "https://en.wikipedia.org/wiki/Zhangzhung", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-namri-songtsen": { "name": "Wikipedia: Namri Songtsen", "url": "https://en.wikipedia.org/wiki/Namri_Songtsen", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-wencheng": {
+      "name": "Wikipedia: Princess Wencheng",
+      "url": "https://en.wikipedia.org/wiki/Princess_Wencheng",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-tibetan-script": { "name": "Wikipedia: Tibetan script", "url": "https://en.wikipedia.org/wiki/Tibetan_script", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-jokhang": { "name": "Wikipedia: Jokhang", "url": "https://en.wikipedia.org/wiki/Jokhang", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tuyuhun": { "name": "Wikipedia: Tuyuhun", "url": "https://en.wikipedia.org/wiki/Tuyuhun", "tags": ["wikipedia"], "accessed": "2026-11-18" }
   },
   "tracks": [
     { "id": "africa", "name": "Africa", "color": "#b8862a" },
@@ -1362,7 +1410,109 @@
     },
     { "id": "east-asia", "name": "East & Southeast Asia", "color": "#6a4a9a" },
     { "id": "se-asia", "name": "Southeast Asia", "color": "#6a4a9a", "parent": "east-asia" },
+    { "id": "pyu", "name": "Pyu city-states", "color": "#8a6a3a", "parent": "se-asia", "span": { "start": "c. 200 BCE", "end": "c. 1050 CE" } },
+    {
+      "id": "funan",
+      "name": "Funan",
+      "color": "#4a7a6a",
+      "parent": "se-asia",
+      "span": {
+        "start": "50 CE",
+        "end": "627 CE",
+        "startDates": [
+          { "year": "50 CE", "source": { "sourceKey": "wp-funan", "sourceLocation": "infobox (establishment)" } },
+          { "year": "68 CE", "source": { "sourceKey": "wp-funan", "sourceLocation": "History of Vietnam navbox (Funan 68–627)" } }
+        ]
+      }
+    },
+    { "id": "chenla", "name": "Chenla", "color": "#3a6a5a", "parent": "se-asia", "span": { "start": "550 CE", "end": "802 CE" } },
+    { "id": "champa", "name": "Champa (Lâm Ấp)", "color": "#9a5a4a", "parent": "se-asia", "span": { "start": "192 CE", "end": "1832 CE" } },
+    {
+      "id": "dong-son",
+      "name": "Đông Sơn culture",
+      "color": "#6a6a3a",
+      "parent": "se-asia",
+      "span": {
+        "start": "c. 1000 BCE",
+        "end": "c. 50 CE",
+        "endDates": [
+          { "year": "50 CE", "margin": 50, "source": { "sourceKey": "wp-dong-son", "sourceLocation": "lead ('until the first century AD')" } },
+          { "year": "1 BCE", "source": { "sourceKey": "wp-dong-son", "sourceLocation": "lead ('from about 1000 BC to 1 BC')" } }
+        ]
+      }
+    },
+    {
+      "id": "au-lac",
+      "name": "Âu Lạc",
+      "color": "#7a5a3a",
+      "parent": "se-asia",
+      "span": {
+        "start": "c. 257 BCE",
+        "end": "179 BCE",
+        "startDates": [
+          { "year": "257 BCE", "source": { "sourceKey": "wp-au-lac", "sourceLocation": "lead and infobox" } },
+          { "year": "208 BCE", "source": { "sourceKey": "wp-au-lac", "sourceLocation": "infobox ('257/208 BCE')" } }
+        ],
+        "endDates": [
+          { "year": "179 BCE", "source": { "sourceKey": "wp-au-lac", "sourceLocation": "lead and infobox" } },
+          { "year": "208 BCE", "source": { "sourceKey": "wp-au-lac", "sourceLocation": "infobox ('208/179 BCE')" } }
+        ]
+      }
+    },
+    { "id": "nanyue", "name": "Nanyue", "color": "#8a4a3a", "parent": "se-asia", "span": { "start": "204 BCE", "end": "111 BCE" } },
+    { "id": "jiaozhi", "name": "Northern Vietnam under Chinese rule", "color": "#6a4a4a", "parent": "se-asia" },
+    { "id": "early-ly", "name": "Early Lý (Vạn Xuân)", "color": "#9a6a3a", "parent": "se-asia", "span": { "start": "544 CE", "end": "602 CE" } },
     { "id": "tibet", "name": "Tibet", "color": "#6a4a9a", "parent": "east-asia" },
+    {
+      "id": "zhangzhung",
+      "name": "Zhangzhung",
+      "color": "#6a5a7a",
+      "parent": "tibet",
+      "span": {
+        "start": "c. 500 BCE",
+        "end": "645 CE",
+        "endDates": [
+          { "year": "645 CE", "source": { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Songtsen Gampo" } },
+          { "year": "625 CE", "source": { "sourceKey": "wp-zhangzhung", "sourceLocation": "infobox and lead" } }
+        ]
+      }
+    },
+    {
+      "id": "yarlung",
+      "name": "Yarlung kings and the Tibetan Empire",
+      "color": "#8a3a4a",
+      "parent": "tibet",
+      "span": {
+        "start": "c. 127 BCE",
+        "end": "842 CE",
+        "startDates": [
+          {
+            "year": "127 BCE",
+            "source": { "sourceKey": "wp-yarlung", "sourceLocation": "lead ('127 BCE … according to traditional Tibetan historiography')" }
+          },
+          { "year": "127 BCE", "source": { "sourceKey": "wp-tibetan-empire", "sourceLocation": "lead" } },
+          { "year": "414 BCE", "source": { "sourceKey": "wp-tibet-history", "sourceLocation": "Nyatri Tsenpo" } }
+        ],
+        "endDates": [
+          { "year": "842 CE", "source": { "sourceKey": "wp-yarlung", "sourceLocation": "lead" } },
+          { "year": "848 CE", "source": { "sourceKey": "wp-tibetan-empire", "sourceLocation": "infobox (842/848)" } }
+        ]
+      }
+    },
+    {
+      "id": "tuyuhun",
+      "name": "Tuyuhun (Qinghai)",
+      "color": "#5a6a5a",
+      "parent": "tibet",
+      "span": {
+        "start": "284 CE",
+        "end": "670 CE",
+        "endDates": [
+          { "year": "670 CE", "source": { "sourceKey": "wp-tuyuhun", "sourceLocation": "infobox" } },
+          { "year": "663 CE", "source": { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Mangsong Mangtsen" } }
+        ]
+      }
+    },
     { "id": "china", "name": "China", "color": "#6a4a9a", "parent": "east-asia" },
     {
       "id": "qin",
@@ -2011,7 +2161,7 @@
       "uuid": "nyatri-tsenpo",
       "title": "Nyatri Tsenpo, first Yarlung king (traditional date)",
       "start": "414 BCE",
-      "tracks": ["tibet"],
+      "tracks": ["yarlung"],
       "descr": "Some Tibetan texts give 126 BC, others 414 BC. Tibetan texts name the kingdom of Zhangzhung (c. 500 BC–625 AD) as the precursor of later Tibetan kingdoms.",
       "sources": [{ "sourceKey": "wp-tibet-history", "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo" }]
     },
@@ -4607,6 +4757,264 @@
       "tracks": ["hohokam"],
       "descr": "Ceramics appear shortly before 300 CE, and crops and agricultural skill increase between 300 and 500. By 600 a distinct Hohokam architecture with Mesoamerican similarities emerges, and they begin cultivating agave.",
       "sources": [{ "sourceKey": "wp-hohokam", "sourceLocation": "lead, Overview and Pioneer/Formative period" }]
+    },
+    {
+      "uuid": "au-lac-founded",
+      "title": "Thục Phán founds Âu Lạc",
+      "start": "c. 257 BCE",
+      "tracks": ["au-lac", "dong-son"],
+      "descr": "King An Dương annexes Văn Lang; the middle phase of building at his citadel of Cổ Loa falls between 300 and 100 BCE. The infobox also allows a span of 208–179 BCE.",
+      "sources": [{ "sourceKey": "wp-au-lac", "sourceLocation": "infobox, lead, Foundation and Cổ Loa" }]
+    },
+    {
+      "uuid": "nanyue-founded",
+      "title": "Zhao Tuo founds Nanyue",
+      "start": "204 BCE",
+      "tracks": ["nanyue"],
+      "descr": "The Chinese general Zhao Tuo establishes the kingdom at Panyu (now Guangzhou). He sends tribute to the Han in 196 BC, proclaims himself emperor in 183 BC, and rules until 137 BC.",
+      "sources": [
+        { "sourceKey": "wp-nanyue", "sourceLocation": "short description, infobox and lead" },
+        { "sourceKey": "wp-first-domination", "sourceLocation": "Han conquest" },
+        { "sourceKey": "wp-au-lac", "sourceLocation": "Collapse" }
+      ]
+    },
+    {
+      "uuid": "nanyue-takes-au-lac",
+      "title": "Nanyue conquers Âu Lạc",
+      "start": "179 BCE",
+      "tracks": ["nanyue", "au-lac"],
+      "descr": "Zhao Tuo annexes the kingdom of King An Dương.",
+      "sources": [
+        { "sourceKey": "wp-nanyue", "sourceLocation": "infobox" },
+        { "sourceKey": "wp-first-domination", "sourceLocation": "Formation of Nanyue" },
+        { "sourceKey": "wp-trung-sisters", "sourceLocation": "Background" }
+      ],
+      "startDates": [
+        { "year": "179 BCE", "source": { "sourceKey": "wp-nanyue", "sourceLocation": "infobox" } },
+        { "year": "179 BCE", "source": { "sourceKey": "wp-first-domination", "sourceLocation": "Formation of Nanyue" } },
+        { "year": "180 BCE", "source": { "sourceKey": "wp-trung-sisters", "sourceLocation": "Background" } }
+      ],
+      "links": [{ "to": "nanyue-founded", "kind": "related" }]
+    },
+    {
+      "uuid": "han-conquers-nanyue",
+      "title": "Han conquers Nanyue",
+      "start": "112 BCE",
+      "end": "111 BCE",
+      "tracks": ["nanyue", "han", "jiaozhi"],
+      "descr": "In 113 BC the Nanyue court proposes joining the Han; in 112 BC the opposition kills the Queen Dowager, and Emperor Wu sends 100,000 troops. In 111 BC the Han generals advance on Panyu, and Jiaozhi province is established, beginning the first era of Chinese rule.",
+      "sources": [
+        { "sourceKey": "wp-nanyue", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-first-domination", "sourceLocation": "infobox, lead and Han conquest" }
+      ],
+      "links": [{ "to": "emperor-wu-han", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "trung-sisters",
+      "title": "The Trưng sisters’ rebellion",
+      "start": "40 CE",
+      "end": "43 CE",
+      "tracks": ["jiaozhi", "han"],
+      "descr": "In March 40 AD Trưng Trắc and Trưng Nhị lead the Lạc Việt in rebellion and rule for three years. In 42 AD Emperor Guangwu sends Ma Yuan with 20,000 troops; in the summer of 43 he devastates Jiaozhi and the sisters are defeated.",
+      "sources": [
+        { "sourceKey": "wp-trung-sisters", "sourceLocation": "infobox, lead, Biography and Book of the Later Han" },
+        { "sourceKey": "wp-first-domination", "sourceLocation": "lead and Trưng section" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "lady-trieu",
+      "title": "Lady Triệu’s revolt",
+      "start": "248 CE",
+      "tracks": ["jiaozhi", "three-kingdoms-china"],
+      "descr": "The people of Jiaozhi and Jiuzhen rebel against Eastern Wu; after several months of fighting the Wu general Lu Yin puts Lady Triệu to death.",
+      "sources": [{ "sourceKey": "wp-lady-trieu", "sourceLocation": "infobox, lead, Biography and Modern account" }]
+    },
+    {
+      "uuid": "van-xuan",
+      "title": "Lý Bí founds Vạn Xuân",
+      "start": "544 CE",
+      "tracks": ["early-ly", "jiaozhi"],
+      "descr": "Having revolted against the Liang dynasty with his brother in 543 (541 in the infobox), Lý Bí defeats the Liang, proclaims himself emperor and names the country Vạn Xuân. Liang troops return in 545, and he is assassinated in 547.",
+      "sources": [{ "sourceKey": "wp-early-ly", "sourceLocation": "infobox, lead, Lý Bí and Resistance against the Liang" }],
+      "importance": 1
+    },
+    {
+      "uuid": "sui-ends-early-ly",
+      "title": "The Sui end the Early Lý",
+      "start": "602 CE",
+      "tracks": ["early-ly", "sui"],
+      "descr": "Having defeated the Chen in 589, the Sui receive the surrender of Lý Phật Tử (r. 571–602).",
+      "sources": [{ "sourceKey": "wp-early-ly", "sourceLocation": "infobox and Sui invasion" }],
+      "links": [{ "to": "sui-reunifies", "kind": "related" }]
+    },
+    {
+      "uuid": "champa-founded",
+      "title": "Lâm Ấp: the first Cham polity",
+      "start": "192 CE",
+      "tracks": ["champa", "jiaozhi"],
+      "descr": "The first Cham polities are established around the 2nd to 3rd centuries AD, in the wake of Khu Liên’s rebellion. The Old Cham Đông Yên Châu inscription dates to around c. 350 AD.",
+      "sources": [{ "sourceKey": "wp-champa", "sourceLocation": "short description, infobox and lead" }]
+    },
+    {
+      "uuid": "oc-eo-rome",
+      "title": "Roman goods at Óc Eo",
+      "start": "166 CE",
+      "tracks": ["funan", "roman-empire"],
+      "descr": "Funan’s port yields Roman gold medallions from the reign of Antoninus Pius and possibly Marcus Aurelius; Chinese texts tell of Romans arriving to conduct diplomacy in 166.",
+      "sources": [{ "sourceKey": "wp-oc-eo", "sourceLocation": "lead and Remains" }],
+      "importance": 3
+    },
+    {
+      "uuid": "chenla-conquers-funan",
+      "title": "Chenla takes Funan",
+      "start": "550 CE",
+      "end": "627 CE",
+      "tracks": ["chenla", "funan"],
+      "descr": "The Funan infobox gives a Chenla secession in 550 and a Chenla conquest in 627; the Chenla infobox calls 550 vassalage to Funan and 627 independence. Chenla sends an embassy to China in 616/617.",
+      "sources": [{ "sourceKey": "wp-funan", "sourceLocation": "infobox" }, { "sourceKey": "wp-chenla", "sourceLocation": "infobox" }],
+      "importance": 1
+    },
+    {
+      "uuid": "isanapura",
+      "title": "Isanavarman I founds Isanapura",
+      "start": "c. 618 CE",
+      "tracks": ["chenla"],
+      "descr": "The Chenla capital at Sambor Prei Kuk; a linga inscription there is dated 627 AD.",
+      "sources": [{ "sourceKey": "wp-isanapura", "sourceLocation": "infobox, lead and Archaeology" }],
+      "importance": 3
+    },
+    {
+      "uuid": "beikthano",
+      "title": "Beikthano founded",
+      "start": "c. 180 BCE",
+      "tracks": ["pyu"],
+      "descr": "The Pyu begin to enter the Irrawaddy valley in about the 2nd century BCE; Beikthano’s remains date from 200 BCE to 100 CE, and its walls are radiocarbon dated between 180 BCE and 610 CE. Halin is founded in the 1st century AD.",
+      "sources": [{ "sourceKey": "wp-pyu", "sourceLocation": "infobox, lead, Background and Beikthano" }],
+      "importance": 3
+    },
+    {
+      "uuid": "pyu-calendar",
+      "title": "The Burmese calendar begins",
+      "start": "638 CE",
+      "tracks": ["pyu"],
+      "descr": "The Pyu calendar is launched with an epoch of 22 March 638. Xuanzang (648) and Yijing (675) mention Sri Ksetra.",
+      "sources": [
+        { "sourceKey": "wp-pyu", "sourceLocation": "infobox" },
+        { "sourceKey": "wp-sri-ksetra", "sourceLocation": "infobox, lead and royal names table" }
+      ],
+      "startDates": [
+        { "year": "638 CE", "source": { "sourceKey": "wp-pyu", "sourceLocation": "infobox (22 March 638)" } },
+        { "year": "640 CE", "source": { "sourceKey": "wp-sri-ksetra", "sourceLocation": "infobox (21 March 640)" } }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "tuyuhun-founded",
+      "title": "The Tuyuhun kingdom",
+      "start": "284 CE",
+      "tracks": ["tuyuhun"],
+      "descr": "Established by Murong Tuyuhun, who crosses the Yellow River between 307 and 313 and dies in 317.",
+      "sources": [{ "sourceKey": "wp-tuyuhun", "sourceLocation": "infobox and History" }],
+      "importance": 3
+    },
+    {
+      "uuid": "namri-songtsen",
+      "title": "Namri Songtsen unites the Yarlung clans",
+      "start": "c. 600 CE",
+      "end": "618 CE",
+      "tracks": ["yarlung", "sui"],
+      "descr": "Around 600 CE he becomes the uncontested leader of the Yarlung clans; he conquers the Kingdom of Sumpa in the early 7th century and sends the first missions to China in 608 and 609. He is poisoned in 618 (or 629/630).",
+      "sources": [
+        { "sourceKey": "wp-namri-songtsen", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Namri Songtsen" }
+      ],
+      "endDates": [
+        { "year": "618 CE", "source": { "sourceKey": "wp-namri-songtsen", "sourceLocation": "infobox and lead" } },
+        { "year": "629 CE", "margin": 1, "source": { "sourceKey": "wp-namri-songtsen", "sourceLocation": "lead ('618 or 629/630')" } }
+      ]
+    },
+    {
+      "uuid": "songtsen-gampo",
+      "title": "Songtsen Gampo founds the Tibetan Empire",
+      "start": "618 CE",
+      "end": "650 CE",
+      "tracks": ["yarlung"],
+      "descr": "The 33rd king moves the capital from the Yungbulakang Palace to Lhasa and defeats the Sumpa (c. 627); the Tibetan script is created during his reign. He dies in 650.",
+      "sources": [
+        { "sourceKey": "wp-songtsen-gampo", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-tibetan-empire", "sourceLocation": "infobox, lead and History > Songtsen Gampo" },
+        { "sourceKey": "wp-tibetan-script", "sourceLocation": "infobox" }
+      ],
+      "startDates": [
+        { "year": "618 CE", "source": { "sourceKey": "wp-songtsen-gampo", "sourceLocation": "infobox and lead ('618 or 629')" } },
+        { "year": "629 CE", "source": { "sourceKey": "wp-songtsen-gampo", "sourceLocation": "infobox and lead ('618 or 629')" } },
+        { "year": "614 CE", "source": { "sourceKey": "wp-yarlung", "sourceLocation": "lead (empire from 614)" } }
+      ],
+      "links": [{ "to": "namri-songtsen", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "tang-tuyuhun",
+      "title": "Tang campaigns against the Tuyuhun",
+      "start": "634 CE",
+      "end": "636 CE",
+      "tracks": ["tuyuhun", "tang"],
+      "descr": "The Tuyuhun become a vassal of the Tang in 634; in 635–636 Emperor Taizong attacks and defeats them.",
+      "sources": [
+        { "sourceKey": "wp-tuyuhun", "sourceLocation": "infobox and captions" },
+        { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Songtsen Gampo" }
+      ]
+    },
+    {
+      "uuid": "wencheng",
+      "title": "Princess Wencheng marries Songtsen Gampo",
+      "start": "641 CE",
+      "tracks": ["yarlung", "tang"],
+      "descr": "In 634 Songtsen Gampo sends an envoy to the Tang; in 638 the Tibetans attack Songzhou but withdraw after Tang counterattacks. In 640 the Tang accept his marriage proposal, and the princess leaves for Tibet with Gar Tongtsen.",
+      "sources": [
+        { "sourceKey": "wp-wencheng", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Songtsen Gampo" },
+        { "sourceKey": "wp-jokhang", "sourceLocation": "History" }
+      ],
+      "startDates": [
+        { "year": "641 CE", "source": { "sourceKey": "wp-wencheng", "sourceLocation": "lead" } },
+        { "year": "641 CE", "source": { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History ('She arrived a year later')" } }
+      ],
+      "links": [{ "to": "songtsen-gampo", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "jokhang",
+      "title": "The Jokhang",
+      "start": "c. 640 CE",
+      "tracks": ["yarlung"],
+      "descr": "Songtsen Gampo builds the temple in Lhasa to house the Jowo Mikyo Dorje.",
+      "sources": [{ "sourceKey": "wp-jokhang", "sourceLocation": "infobox, lead and History" }, { "sourceKey": "wp-songtsen-gampo", "sourceLocation": "lead" }],
+      "startDates": [
+        { "year": "640 CE", "source": { "sourceKey": "wp-jokhang", "sourceLocation": "lead ('built in c.640')" } },
+        { "year": "652 CE", "source": { "sourceKey": "wp-jokhang", "sourceLocation": "infobox and History (oldest part built in 652)" } }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "zhangzhung-conquered",
+      "title": "Tibet overruns Zhangzhung",
+      "start": "645 CE",
+      "tracks": ["zhangzhung", "yarlung"],
+      "descr": "Per the Tang Annals, Zhangzhung and various Qiang tribes “altogether submitted” to Songtsen Gampo in 634; R. A. Stein places the conquest in 645. The Zhangzhung infobox gives 625.",
+      "sources": [
+        { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Songtsen Gampo" },
+        { "sourceKey": "wp-zhangzhung", "sourceLocation": "infobox, lead and Conquest" }
+      ],
+      "startDates": [
+        { "year": "645 CE", "source": { "sourceKey": "wp-zhangzhung", "sourceLocation": "Conquest (Stein)" } },
+        { "year": "645 CE", "source": { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Songtsen Gampo" } },
+        { "year": "625 CE", "source": { "sourceKey": "wp-zhangzhung", "sourceLocation": "infobox" } },
+        { "year": "634 CE", "source": { "sourceKey": "wp-zhangzhung", "sourceLocation": "Conquest (Tang Annals)" } }
+      ],
+      "links": [{ "to": "songtsen-gampo", "kind": "part-of" }]
     }
   ]
 }
