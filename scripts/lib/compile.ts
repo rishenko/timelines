@@ -64,7 +64,11 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
           }),
         )
       : undefined,
-    tracks: (raw.tracks as Obj[]).map((t) => (t.span ? { ...t, span: dated(t.span as Obj, `track ${t.id}`) } : t)),
+    tracks: (raw.tracks as Obj[]).map((t) => ({
+      ...t,
+      ...(t.span ? { span: dated(t.span as Obj, `track ${t.id}`) } : {}),
+      ...(Array.isArray(t.phases) ? { phases: (t.phases as Obj[]).map((p) => dated(p, `track ${t.id} phase ${p.name}`)) } : {}),
+    })),
     events: (raw.events as Obj[]).map((e) => dated(e, `event ${e.uuid}`)),
   };
   if (!dataset.chronologies) delete dataset.chronologies;

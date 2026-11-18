@@ -79,6 +79,17 @@ export interface Track {
   chronology?: string;
   /** Shaded across the lane: when this track existed. */
   span?: TrackSpan;
+  /**
+   * Named periods within the row, drawn on its own bar: successive governments of one state (France's kingdoms,
+   * republics and empires; REDACTED's REDACTED), dynasties, eras. A line marks each change and the name sits along
+   * the top of the row. Phases may overlap (two rival governments during a civil war).
+   */
+  phases?: TrackPhase[];
+}
+
+/** One named period within a row (see Track.phases). Dated like a lifespan, with date claims for uncertain edges. */
+export interface TrackPhase extends TrackSpan {
+  name: string;
 }
 
 export interface Source {

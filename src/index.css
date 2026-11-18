@@ -623,6 +623,52 @@ main {
 .tl-lane.collapsed .tl-span {
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 8%, transparent);
 }
+/* phases (Track.phases): named periods on a row's own bar, e.g. successive governments */
+.tl-phase {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.tl-phase-fill {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 7%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--fade-in, 0px),
+    #000 calc(100% - var(--fade-out, 0px)),
+    transparent 100%
+  );
+}
+.tl-phase.alt .tl-phase-fill {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 16%, transparent);
+}
+.tl-phase-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent);
+}
+.tl-phase-name {
+  position: sticky;
+  display: inline-block;
+  padding: 1px 6px 0 7px;
+  font-size: 10.5px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, var(--text));
+  pointer-events: auto;
+  cursor: default;
+}
 .tl-lane-label {
   position: sticky;
   left: 0;
@@ -1483,6 +1529,24 @@ main {
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 13%, transparent);
   border-top: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, transparent);
   mask-image: linear-gradient(to right, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%);
+}
+.lg-phases {
+  display: flex;
+  width: 84px;
+  height: 22px;
+}
+.lg-phases > span {
+  flex: 1;
+  padding-left: 5px;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 12px;
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, var(--text));
+  border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent);
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 7%, transparent);
+}
+.lg-phases > .b {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 16%, transparent);
 }
 .lg-row-more,
 .lg-text,

@@ -184,6 +184,23 @@ describe('validateDataset', () => {
     expect(errs).toMatch(/unknown event "missing"/);
   });
 
+  it('checks phases like lifespans', () => {
+    const d = base();
+    const union = d.tracks.find((t) => t.id === 'redacted')!;
+    expect(union.phases?.map((p) => p.name)).toEqual(['First REDACTED', 'Second REDACTED', 'Third REDACTED']);
+    union.phases = [
+      { name: '', start: 0, end: 10 },
+      { name: 'Backwards', start: 10, end: 5 },
+      { name: 'Off claims', start: 20, end: 30, startDates: [{ year: 50 }] },
+      { name: 'Bad source', start: 40, end: 50, endDates: [{ year: 50, source: { sourceKey: 'nope', sourceLocation: '' } }] },
+    ];
+    const errs = validateDataset(d).join('\n');
+    expect(errs).toMatch(/phase 1 has no name/);
+    expect(errs).toMatch(/phase "Backwards" ends before it starts/);
+    expect(errs).toMatch(/phase "Off claims" start: the best estimate \(20\) lies outside its claims/);
+    expect(errs).toMatch(/phase "Bad source" end: a date claim cites unknown source "nope"/);
+  });
+
   it('catches duplicate ids', () => {
     const d = base();
     d.events[1].uuid = d.events[0].uuid;

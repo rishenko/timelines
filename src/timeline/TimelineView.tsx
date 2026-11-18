@@ -2,10 +2,10 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import type { Dataset } from '../types.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor } from './anchors.ts';
-import { buildLanes, layoutLanes, type Mark } from './layout.ts';
+import { buildLanes, layoutLanes, placePhases, type Mark, type PlacedPhase } from './layout.ts';
 import { formatEventDates } from '../lib/years.ts';
 import { eraStart, formatYear, isMajorTick } from '../lib/calendar.ts';
-import type { ResolvedEvent, ResolvedSpan } from '../lib/chronology.ts';
+import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { safeUrl } from '../lib/urls.ts';
 import { rootOf, trackIndex } from '../lib/tracks.ts';
@@ -14,6 +14,9 @@ import { useLabelWidth, useLongPress, usePinchSteps } from './gestures.ts';
 const END_PAD = 260;
 const MARK_H = 22;
 const POINT_HALF = 7;
+/** Height of one line of phase names at the top of a lane. */
+const PHASE_H = 16;
+
 
 export interface FocusRequest {
   year: number;
@@ -35,6 +38,8 @@ interface Props {
   eventsById: Map<string, ResolvedEvent>;
   /** Track lifespans (resolved), shaded behind each lane. */
   spans: Map<string, ResolvedSpan>;
+  /** Track phases (resolved): named periods drawn on the row's own bar. */
+  phases: Map<string, ResolvedPhase[]>;
   visibleTracks: Record<string, boolean>;
   collapsed: Record<string, boolean>;
   onToggleCollapsed: (trackId: string) => void;
@@ -70,6 +75,7 @@ export function TimelineView(props: Props) {
     events,
     eventsById,
     spans,
+    phases,
     visibleTracks,
     collapsed,
     increment,
@@ -100,21 +106,29 @@ export function TimelineView(props: Props) {
     }
     return out;
   }, [data.tracks]);
+  const lanePhases = useMemo(() => new Map(lanes.map((l) => [l.id, placePhases(l.members, phases)])), [lanes, phases]);
+  // a lane with phases gets a strip at the top for their names, one line per level
+  const headerPx = useMemo(() => {
+    const out: Record<string, number> = {};
+    for (const [id, list] of lanePhases) if (list.length) out[id] = (Math.max(...list.map((p) => p.level)) + 1) * PHASE_H;
+    return out;
+  }, [lanePhases]);
   const laneSpans = useMemo(() => {
-    const out: ResolvedSpan[] = [];
+    // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap
+    const out: ResolvedSpan[] = [...lanePhases.values()].flat();
     for (const l of lanes) for (const id of l.members) {
       const s = spans.get(id);
       if (s) out.push(s);
     }
     return out;
-  }, [lanes, spans]);
+  }, [lanes, spans, lanePhases]);
   const scale = useMemo(
     () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded }),
-    [lanes, events, scale, present, expanded],
+    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx }),
+    [lanes, events, scale, present, expanded, headerPx],
   );
 
   const marksByEvent = useMemo(() => {
@@ -305,6 +319,46 @@ export function TimelineView(props: Props) {
     );
   };
 
+  /**
+   * A phase on its row's bar: a tinted fill (alternating strength, so neighbours read apart, fading across uncertain
+   * edges), a line where it begins, and its name in the strip at the top of the lane, kept in view while scrolling.
+   */
+  const phaseBand = (p: PlacedPhase, i: number) => {
+    const x0 = scale.x(Math.min(p.start, p.startWindow?.[0] ?? p.start));
+    const x1 = scale.x(Math.max(p.end, p.endWindow?.[1] ?? p.end) + 1);
+    if (!inView(x0, x1)) return null;
+    const track = data.tracks.find((t) => t.id === p.trackId)!;
+    const fadeIn = p.startWindow ? scale.x(p.startWindow[1]) - x0 : 0;
+    const fadeOut = p.endWindow ? x1 - scale.x(p.endWindow[0] + 1) : 0;
+    const approx = !!(p.startWindow || p.endWindow);
+    const dates = `${formatYear(p.start, cal, approx)} – ${formatYear(p.end, cal, approx)}`;
+    return (
+      <div
+        key={`phase-${p.trackId}-${i}`}
+        className={`tl-phase${i % 2 ? ' alt' : ''}`}
+        style={
+          {
+            left: labelW + x0,
+            width: x1 - x0,
+            '--track-color': track.color,
+            '--fade-in': `${Math.max(0, fadeIn)}px`,
+            '--fade-out': `${Math.max(0, fadeOut)}px`,
+          } as React.CSSProperties
+        }
+      >
+        <div className="tl-phase-fill" />
+        <div className="tl-phase-edge" style={{ left: scale.x(p.start) - x0 }} />
+        <span
+          className="tl-phase-name"
+          style={{ marginTop: p.level * PHASE_H, left: labelW, maxWidth: Math.max(0, x1 - x0 - 6) }}
+          title={`${p.name}: ${dates}`}
+        >
+          {p.name}
+        </span>
+      </div>
+    );
+  };
+
   return (
     <div
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
@@ -391,6 +445,7 @@ export function TimelineView(props: Props) {
                   const s = spans.get(id);
                   return s ? spanBand(id, s) : null;
                 })}
+                {lanePhases.get(lane.id)?.map(phaseBand)}
                 <div className="tl-lane-label" style={{ width: labelW }}>
                   <span className="chip" />
                   {image && <img src={image} alt="" className="logo" />}

@@ -26,8 +26,13 @@
   go in, placed next to its partners (the proximity test), and considered for opening collapsed.
 - **Ancient, other gaps:** the Upanishads (dates read only in summary), more Mitanni rulers, and the many Levant,
   Assyria and Iran values that exist only in page summaries.
-- **REDACTED, sub-faction rows** the data implies: REDACTED's First/Second/Third REDACTED, the REDACTED Administration
-  and Perfect REDACTED (REDACTED Incident), individual REDACTED. Canon only, from the cited books.
+- **REDACTED, sub-faction rows** the data implies: the REDACTED Administration and Perfect REDACTED (REDACTED
+  Incident), individual REDACTED. Canon only, from the cited books. (Governments are done: `scripts/REDACTED/governments.ts`
+  marks REDACTED, the REDACTED, the REDACTED and REDACTED governments as phases.)
+- **Phases, editing and search:** the track editor keeps a row's phases but can't edit them (add a phase list with
+  date claims, like the lifespan's), and search doesn't find phase names yet ("Second REDACTED" should jump there).
+- **REDACTED, REDACTED guides disagree** (header of `scripts/REDACTED/REDACTED-lore-guide.ts`): REDACTED/REDACTED departures, First
+  and Second REDACTED ranges, Second REDACTED Civil War (4700 AE vs. 4800 AE). Events still follow the draft guide.
 - **REDACTED, spans worth a second look** (judgment calls listed in `docs/REDACTED/event-spans.md`): Evolution of
   REDACTED Trade REDACTED ("1400 years" vs. its 1,866-year range), Fourth REDACTED (ongoing?), REDACTED and
   REDACTED Depart (a departure window, not a 4,000-year event), and the two "… Begins" events that carry a whole

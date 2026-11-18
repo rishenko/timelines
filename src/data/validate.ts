@@ -1,4 +1,4 @@
-import { LINK_KINDS, type DateClaim, type Dataset } from '../types.ts';
+import { LINK_KINDS, type DateClaim, type Dataset, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronology } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
 
@@ -114,14 +114,24 @@ export function validateDataset(d: unknown): string[] {
   }
   if (errors.length) return errors;
 
+  const checkSpan = (label: string, s: TrackSpan, chron: string | undefined) => {
+    if (!Number.isInteger(s.start) || !Number.isInteger(s.end)) errors.push(`${label} needs integer start and end.`);
+    else if (s.end < s.start) errors.push(`${label} ends before it starts.`);
+    checkClaims(`${label} start`, s.start, s.startDates, chron);
+    checkClaims(`${label} end`, s.end, s.endDates, chron);
+  };
   for (const t of ds.tracks) {
-    if (!t.span) continue;
-    const label = `Track "${t.id}" lifespan`;
-    if (!Number.isInteger(t.span.start) || !Number.isInteger(t.span.end)) errors.push(`${label} needs integer start and end.`);
-    else if (t.span.end < t.span.start) errors.push(`${label} ends before it starts.`);
     const chron = trackChronology(ds.tracks, t.id);
-    checkClaims(`${label} start`, t.span.start, t.span.startDates, chron);
-    checkClaims(`${label} end`, t.span.end, t.span.endDates, chron);
+    if (t.span) checkSpan(`Track "${t.id}" lifespan`, t.span, chron);
+    if (t.phases === undefined) continue;
+    if (!Array.isArray(t.phases)) {
+      errors.push(`Track "${t.id}" phases must be a list.`);
+      continue;
+    }
+    t.phases.forEach((p, i) => {
+      if (!p.name) errors.push(`Track "${t.id}" phase ${i + 1} has no name.`);
+      checkSpan(`Track "${t.id}" phase "${p.name || i + 1}"`, p, chron);
+    });
   }
 
   for (const [key, s] of Object.entries(ds.sources)) {

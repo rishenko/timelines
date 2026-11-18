@@ -1,6 +1,6 @@
 import type { Track } from '../types.ts';
 import { compareEvents, effectiveEnd, isSpan } from '../lib/years.ts';
-import type { ResolvedEvent } from '../lib/chronology.ts';
+import type { ResolvedEvent, ResolvedPhase } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
 import { childrenMap } from '../lib/tracks.ts';
 
@@ -62,6 +62,8 @@ export interface LayoutOptions {
   maxRows?: number;
   /** Lanes that ignore maxRows. */
   expanded?: Record<string, boolean>;
+  /** Extra space at the top of a lane, above its events (e.g. the strip that names its phases). */
+  headerPx?: Record<string, number>;
 }
 
 export const LAYOUT_DEFAULTS = {
@@ -131,6 +133,7 @@ export function layoutLanes(
   let top = 0;
 
   for (const lane of lanes) {
+    const head = opts.headerPx?.[lane.id] ?? 0;
     const members = new Set(lane.members);
     // Occupied [start, end] footprints per sub-row. Events aren't placed in date order, so a row
     // can have gaps that a later-placed event fills.
@@ -208,7 +211,7 @@ export function layoutLanes(
         ...(fadeIn ? { fadeIn } : {}),
         ...(fadeOut ? { fadeOut } : {}),
         ...(whisker ? { whisker } : {}),
-        cy: top + o.lanePad + row * o.rowH + o.rowH / 2,
+        cy: top + head + o.lanePad + row * o.rowH + o.rowH / 2,
       });
     }
     // Fold overflow into cluster badges on an extra row, merging badges that would touch.
@@ -232,15 +235,35 @@ export function layoutLanes(
         x0: x,
         x1: x,
         footprintEnd: x + o.clusterPx,
-        cy: top + o.lanePad + clusterRow * o.rowH + o.rowH / 2,
+        cy: top + head + o.lanePad + clusterRow * o.rowH + o.rowH / 2,
       };
       marks.push(current);
     }
     const rows = Math.max(1, rowSpans.length + (overflow.length ? 1 : 0));
-    const height = rows * o.rowH + o.lanePad * 2;
+    const height = head + rows * o.rowH + o.lanePad * 2;
     out.push({ lane, top, height, rows, marks, overflow: overflow.length });
     top += height;
   }
 
   return { lanes: out, height: top };
+}
+
+export interface PlacedPhase extends ResolvedPhase {
+  trackId: string;
+  /** Line of the name strip: overlapping phases (rival governments) take the next line down. */
+  level: number;
+}
+
+/** A lane's phases (its own, plus its sub-rows' when it is collapsed), each on the first name line it fits. */
+export function placePhases(members: string[], phases: Map<string, ResolvedPhase[]>): PlacedPhase[] {
+  const all = members.flatMap((id) => (phases.get(id) ?? []).map((p) => ({ ...p, trackId: id })));
+  all.sort((a, b) => a.start - b.start);
+  const lineEnds: number[] = [];
+  return all.map((p) => {
+    const from = p.startWindow?.[0] ?? p.start;
+    let level = lineEnds.findIndex((end) => end <= from);
+    if (level < 0) level = lineEnds.length;
+    lineEnds[level] = p.endWindow?.[1] ?? p.end;
+    return { ...p, level };
+  });
 }

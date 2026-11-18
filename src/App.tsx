@@ -26,7 +26,7 @@ import { newEvent } from './lib/newEvent.ts';
 import { datasetPresent } from './lib/years.ts';
 import { formatYear } from './lib/calendar.ts';
 import { safeUrl } from './lib/urls.ts';
-import { chronologyGroups, defaultSelection, resolveEvents, resolveSpan, type ChronologySelection, type ResolvedSpan } from './lib/chronology.ts';
+import { chronologyGroups, defaultSelection, resolveEvents, resolveSpan, type ChronologySelection, type ResolvedPhase, type ResolvedSpan } from './lib/chronology.ts';
 import { allTimelines } from './timelines/index.ts';
 
 /**
@@ -69,6 +69,12 @@ export default function App() {
   const spans = useMemo(() => {
     const m = new Map<string, ResolvedSpan>();
     for (const t of data.tracks) if (t.span) m.set(t.id, resolveSpan(data, t.id, t.span, chronSel));
+    return m;
+  }, [data, chronSel]);
+  const phases = useMemo(() => {
+    const m = new Map<string, ResolvedPhase[]>();
+    for (const t of data.tracks)
+      if (t.phases?.length) m.set(t.id, t.phases.map((p) => ({ name: p.name, ...resolveSpan(data, t.id, p, chronSel) })));
     return m;
   }, [data, chronSel]);
 
@@ -309,6 +315,7 @@ export default function App() {
           events={drawnEvents}
           eventsById={resolvedById}
           spans={spans}
+          phases={phases}
           visibleTracks={filters.tracks}
           collapsed={collapsed}
           onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}

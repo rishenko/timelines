@@ -1,4 +1,4 @@
-import type { Dataset, DateClaim, Source, SourceRef, TimelineEvent, Track } from '../types.ts';
+import type { Dataset, DateClaim, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { validateDataset } from '../data/validate.ts';
 
 /**
@@ -125,7 +125,7 @@ export function removeTrack(d: Dataset, id: string): Dataset {
 }
 
 /**
- * Rewrites every citation of source `from`: an event's sources, its date claims, a track's lifespan claims and a
+ * Rewrites every citation of source `from`: an event's sources, its date claims, a track's lifespan and phase claims and a
  * chronology's source. `to` renames the key; `null` drops the citation. A date claim keeps its year and margin
  * when its source goes (removing the claim could leave the best estimate outside the remaining claims).
  * Events whose citations change are marked `edited`.
@@ -153,15 +153,18 @@ function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'eve
         }
       : e,
   );
+  const spanCites = (s: TrackSpan | undefined) => !!s && (cites(s.startDates) || cites(s.endDates));
+  const respan = <S extends TrackSpan>(s: S): S => ({
+    ...s,
+    ...(s.startDates ? { startDates: claims(s.startDates) } : {}),
+    ...(s.endDates ? { endDates: claims(s.endDates) } : {}),
+  });
   const tracks = d.tracks.map((t) =>
-    t.span && (cites(t.span.startDates) || cites(t.span.endDates))
+    spanCites(t.span) || t.phases?.some(spanCites)
       ? {
           ...t,
-          span: {
-            ...t.span,
-            ...(t.span.startDates ? { startDates: claims(t.span.startDates) } : {}),
-            ...(t.span.endDates ? { endDates: claims(t.span.endDates) } : {}),
-          },
+          ...(t.span ? { span: respan(t.span) } : {}),
+          ...(t.phases ? { phases: t.phases.map(respan) } : {}),
         }
       : t,
   );

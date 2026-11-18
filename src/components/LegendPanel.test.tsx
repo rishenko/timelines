@@ -22,7 +22,10 @@ describe('LegendPanel', () => {
     const t = titles(REDACTED as Dataset);
     expect(t).toContain('Span');
     expect(t).toContain('Leads to');
-    for (const absent of ['Lifespan', 'Uncertain start and end', 'Dating systems', 'Conquers', 'Succeeds', 'Key event'])
+    // governments as phases (scripts/REDACTED/governments.ts); the REDACTED's end has two dates
+    expect(t).toContain('Phases');
+    expect(t).toContain('Uncertain start and end');
+    for (const absent of ['Lifespan', 'Dating systems', 'Conquers', 'Succeeds', 'Key event'])
       expect(t).not.toContain(absent);
   });
 });

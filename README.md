@@ -69,6 +69,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Calendars.** Each timeline names its eras (BCE/CE, BE/U, …) and says whether it has a year 0.
   BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
   years (1500 BCE, not 1501 BCE).
+- **Phases:** a row can mark named periods on its own bar, such as a state's successive governments (France's kingdoms and republics; REDACTED's REDACTED in REDACTED). A line marks each change and the name runs along the top of the row; rivals that overlapped stack their names. See `docs/data-format.md`.
 - **Lanes nest to any depth**, e.g. group → region → civilization → period. Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events. The toolbar's **Expand all / Collapse all** button (shown when a timeline has sub-rows) opens every row, or folds every row so only the top level shows; reopening a row then shows its children still folded, one level at a time. Beside it, **↺** (Default view) restores the timeline's opening layout; it is greyed out while the rows are already that way, and left out for timelines that open with every row open. Where scholars date a region differently, the toolbar's **Dating** button opens a panel with one dating system per region; the button counts regions changed from their default.
   A track can have a **lifespan**, shaded across its lane, so you can see which civilizations coexisted.
 - **Uncertain dates.** An event's start and end can carry *date claims*: what each source says, under which
@@ -248,7 +249,7 @@ in `docs/ancient-sources.md` and `docs/classical-sources.md`.
 Canon REDACTED only, from the published books each event cites (by page). Readers add their own factions, events and
 sources in edit mode; sources they create get the `homebrew` tag so others can filter them out. Edit
 `data-src/REDACTED.json` (years are stored as signed numbers, since BE/U has a year 0: -4900 is 4900 BE), then
-`npm run data:REDACTED`. Two re-runnable scripts derive data from the event text, and
+`npm run data:REDACTED`. Four re-runnable scripts derive data from the event text and the books, and
 `npm run data -- run-all REDACTED --check` confirms they reproduce the file:
 
 - `scripts/REDACTED/apply-description-ranges.ts` sets an event's end from a year range stated at the start of its
@@ -256,6 +257,14 @@ sources in edit mode; sources they create get the `homebrew` tag so others can f
   See `docs/REDACTED/event-spans.md`.
 - `scripts/REDACTED/apply-canon-links.ts` adds the links listed in `scripts/REDACTED/canonLinks.ts`. Each link rests on
   the event text, with the words it rests on recorded beside it; links are never drawn from outside lore.
+- `scripts/REDACTED/REDACTED-lore-guide.ts` adds the Lore Only REDACTED field guide as a source and cites it where its text
+  matches an event. Its header lists where it disagrees with the draft REDACTED guide.
+- `scripts/REDACTED/governments.ts` marks the governments that ruled REDACTED, the REDACTED, the REDACTED and REDACTED
+  as phases on each faction's row, dated from the books, with each date claim citing its page. The REDACTED and the
+  REDACTED overlap during the REDACTED Civil War, whose end the REDACTED guide dates two ways (c. 3016 AE and 5000 AE), so the
+  REDACTED's end is a range.
+  Eras that are not governments (the REDACTED, Temperate and REDACTEDs) stay as events. Factions without a
+  dated succession of governments (REDACTED, REDACTED, REDACTED, REDACTED) are not split.
 
 Old REDACTED data files (REDACTED v1, REDACTED) still convert on upload, or with
 `node scripts/upgrade-dataset.ts old.json new.json`.

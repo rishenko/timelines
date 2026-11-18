@@ -34,6 +34,11 @@ export interface ResolvedSpan {
   endWindow?: Window;
 }
 
+/** A row's phase (Track.phases), resolved like a lifespan. */
+export interface ResolvedPhase extends ResolvedSpan {
+  name: string;
+}
+
 export function chronologyGroups(ds: Dataset): Map<string, { id: string; c: Chronology }[]> {
   const groups = new Map<string, { id: string; c: Chronology }[]>();
   for (const [id, c] of Object.entries(ds.chronologies ?? {})) groups.set(c.group, [...(groups.get(c.group) ?? []), { id, c }]);

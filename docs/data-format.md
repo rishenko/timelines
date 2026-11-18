@@ -86,11 +86,28 @@ cost label width, so three or four levels is a practical ceiling rather than a r
 | `parent` | no | Id of the row this one sits under. |
 | `chronology` | no | Dating system for events on this row; sub-rows inherit it. See [chronologies](#chronologies). |
 | `span` | no | Lifespan: shaded across the row. See below. |
+| `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
 | `image` | no | Small image in the row label (`https://…` or a path on the app's own site). |
 | `pinLast` | no | Keep at the bottom, e.g. "REDACTED" or "Other peoples". Rows added in the editor go above it. |
 
 **`span`** (lifespan): `{ "start": …, "end": …, "circa": true }`, plus optional `startDates` and
 `endDates` [date claims](#date-claims-and-uncertain-dates). Uncertain ends are drawn the same way as on events.
+
+**`phases`**: a list of named periods within the row, for a state that changed hands over time without becoming a
+different row: France's kingdoms, republics and empires, a dynasty's reigns, or REDACTED's REDACTED in the REDACTED
+timeline. Each phase is dated like a lifespan, with a name:
+
+```json
+"phases": [
+  { "name": "First REDACTED", "start": 0, "end": 2880 },
+  { "name": "Second REDACTED", "start": 2880, "end": 4591, "endDates": [{ "year": 4591, "source": { "sourceKey": "REDACTED", "sourceLocation": "pg. 339" } }] }
+]
+```
+
+A line marks where each phase begins, and its name runs along a strip at the top of the row. The name stays in view
+while you scroll. Neighbouring phases alternate shades, and a gap between phases is left blank. Phases may overlap,
+as rival governments do in a civil war; an overlapping phase's name goes on a second line. Events stay on the row
+itself. The track editor keeps a row's phases, but there is no editor for them yet: edit them in the file.
 
 ## sources and tags
 

@@ -1,7 +1,11 @@
 import type { ReactNode } from 'react';
-import type { Dataset, LinkKind } from '../types.ts';
+import type { Dataset, DateClaim, LinkKind } from '../types.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { chronologyGroups } from '../lib/chronology.ts';
+
+/** Claims that give a range of years: a margin, or sources that disagree. Claims that all agree draw no range. */
+const spreads = (claims: DateClaim[] | undefined) =>
+  !!claims && (claims.some((c) => (c.margin ?? 0) > 0) || new Set(claims.map((c) => c.year)).size > 1);
 
 interface Props {
   data: Dataset;
@@ -67,7 +71,16 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
   const has = {
     nesting: data.tracks.some((t) => t.parent),
     lifespans: data.tracks.some((t) => t.span),
-    ranges: data.events.some((e) => e.startDates || e.endDates) || data.tracks.some((t) => t.span?.startDates || t.span?.endDates),
+    phases: data.tracks.some((t) => t.phases?.length),
+    ranges:
+      hasChronologies ||
+      data.events.some((e) => spreads(e.startDates) || spreads(e.endDates)) ||
+      data.tracks.some(
+        (t) =>
+          spreads(t.span?.startDates) ||
+          spreads(t.span?.endDates) ||
+          !!t.phases?.some((ph) => spreads(ph.startDates) || spreads(ph.endDates)),
+      ),
     circa: data.events.some((e) => e.circa),
     shared: data.events.some((e) => e.tracks.length > 1),
   };
@@ -94,6 +107,17 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       show: has.lifespans,
       title: 'Lifespan',
       text: 'The shaded band behind a row shows when that civilization, period or faction existed. Soft edges mean its start or end is uncertain.',
+    },
+    {
+      sample: (
+        <span className="lg-phases">
+          <span className="a">I</span>
+          <span className="b">II</span>
+        </span>
+      ),
+      show: has.phases,
+      title: 'Phases',
+      text: 'Some rows change hands over time: a new government, dynasty or era. A line marks each change, the name runs along the top of the row, and alternating shades tell neighbouring phases apart. Two names stacked over the same years are rivals that overlapped, as in a civil war. Soft edges mean the change can only be dated to a range.',
     },
     {
       sample: <span className="lg-row-more">⇣</span>,

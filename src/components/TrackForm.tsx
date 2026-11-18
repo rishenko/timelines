@@ -76,6 +76,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (v.image.trim()) t.image = v.image.trim();
     if (v.chronology) t.chronology = v.chronology;
     if (v.pinLast) t.pinLast = true;
+    // phases have no editor yet: keep the row's own (edit them in the data file)
+    if (initial?.phases) t.phases = initial.phases;
     if (v.spanStart.trim() || v.spanEnd.trim()) {
       const s = parseDate(v.spanStart, cal);
       const e = parseDate(v.spanEnd, cal);

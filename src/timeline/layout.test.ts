@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildLanes, layoutLanes } from './layout.ts';
+import { buildLanes, layoutLanes, placePhases } from './layout.ts';
 import { buildScale } from './scale.ts';
 import type { TimelineEvent, Track } from '../types.ts';
 import data from '../timelines/REDACTED.json';
@@ -183,5 +183,52 @@ describe('uncertain marks', () => {
     const m = layoutLanes(lanes, [e], scale, 200).lanes.find((l) => l.lane.id === 'REDACTED')!.marks[0];
     expect(m.whisker).toEqual([scale.x(30), scale.x(71)]);
     expect(m.fadeIn).toBeUndefined();
+  });
+});
+
+describe('placePhases', () => {
+  const phases = new Map([
+    [
+      'REDACTED',
+      [
+        { name: 'REDACTED', start: 2890, end: 5021 },
+        { name: 'REDACTED', start: 1998, end: 5000, endWindow: [3016, 5000] as [number, number] },
+      ],
+    ],
+    [
+      'redacted',
+      [
+        { name: 'First', start: 0, end: 2880 },
+        { name: 'Second', start: 2880, end: 4591 },
+        { name: 'Third', start: 4600, end: 5021 },
+      ],
+    ],
+  ]);
+
+  it('puts successive phases on one line, sharing a boundary year', () => {
+    expect(placePhases(['redacted'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['First:0', 'Second:0', 'Third:0']);
+  });
+
+  it('moves an overlapping phase (a rival government) to the next line, in date order', () => {
+    expect(placePhases(['REDACTED'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['REDACTED:0', 'REDACTED:1']);
+  });
+
+  it("gathers a collapsed lane's sub-rows and remembers whose phase each is", () => {
+    const placed = placePhases(['redacted', 'REDACTED'], phases);
+    expect(placed).toHaveLength(5);
+    expect(placed.find((p) => p.name === 'REDACTED')!.trackId).toBe('REDACTED');
+  });
+});
+
+describe('layoutLanes header strip', () => {
+  const scale = buildScale([0, 100], { increment: 10, tickPx: 80, compress: false });
+  const lanes = buildLanes([{ id: 'a', name: 'A', color: '#000' }], {}, {});
+  const events = [ev('x', 10, ['a'])].map((e) => ({ ...e }));
+
+  it('pushes events down and grows the lane by the header height', () => {
+    const plain = layoutLanes(lanes, events as never, scale, 100);
+    const headed = layoutLanes(lanes, events as never, scale, 100, { headerPx: { a: 32 } });
+    expect(headed.lanes[0].height).toBe(plain.lanes[0].height + 32);
+    expect(headed.lanes[0].marks[0].cy).toBe(plain.lanes[0].marks[0].cy + 32);
   });
 });

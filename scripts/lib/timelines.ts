@@ -62,7 +62,8 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     source: 'data-src/REDACTED.json',
     compiled: 'src/timelines/REDACTED.json',
     // spans stated in descriptions, then the canon links (from the event text, with evidence)
-    scripts: REDACTED(['apply-description-ranges', 'apply-canon-links']),
+    // governments last: it reads the final events and moves each onto the government in charge in its year
+    scripts: REDACTED(['apply-description-ranges', 'apply-canon-links', 'REDACTED-lore-guide', 'governments']),
   },
 ];
 
