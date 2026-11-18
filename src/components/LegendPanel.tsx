@@ -190,7 +190,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       sample: <span className="lg-bar uncertain" />,
       show: has.ranges,
       title: 'Uncertain start and end',
-      text: 'The lighter ends of a bar are the range of years the sources give for its start and end; the darker middle is the part they agree on. If the ranges overlap, the darker part shows the event’s dates under the selected dating system.',
+      text: 'The lighter, striped ends of a bar are the range of years the sources give for its start and end; the darker middle is the part they agree on. If the ranges overlap, the darker part shows the event’s dates under the selected dating system.',
     },
     {
       sample: (
@@ -201,7 +201,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
       show: has.ranges,
       title: 'Uncertain single date',
-      text: 'The lighter band behind a diamond is the range of years the sources give.',
+      text: 'The lighter, striped band behind a diamond is the range of years the sources give.',
     },
     {
       sample: <span className="lg-text">{circa}</span>,

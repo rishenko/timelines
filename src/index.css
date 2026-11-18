@@ -805,10 +805,37 @@ main {
 /*
  * Uncertain dates: the start and end ranges are drawn in a lighter tint of the track color,
  * the certain middle in the normal bar color. Hard color stops, no fade.
+ * The ranges are also hatched, so uncertainty doesn't rest on the tint alone (WCAG 1.4.1).
  */
-.tl-mark {
+.tl-mark,
+.lg-bar,
+.lg-band {
   --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent);
   --range-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent);
+  --hatch: repeating-linear-gradient(
+    -45deg,
+    color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent) 0 1.5px,
+    transparent 1.5px 5px
+  );
+}
+.tl-mark.span.uncertain .bar {
+  overflow: hidden;
+}
+.tl-mark.span.uncertain .bar::before,
+.tl-mark.span.uncertain .bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--hatch);
+}
+.tl-mark.span.uncertain .bar::before {
+  left: 0;
+  width: var(--fade-in, 0px);
+}
+.tl-mark.span.uncertain .bar::after {
+  right: 0;
+  width: var(--fade-out, 0px);
 }
 .tl-mark.span.uncertain .bar {
   background: linear-gradient(
@@ -824,7 +851,7 @@ main {
   top: 2px;
   bottom: 2px;
   border-radius: 3px;
-  background: var(--range-fill);
+  background: var(--hatch), var(--range-fill);
   border: 1px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, transparent);
   pointer-events: none;
 }
@@ -1455,12 +1482,15 @@ main {
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent);
 }
 .lg-bar.uncertain {
-  background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent) 0 22px,
-    color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent) 22px 58px,
-    color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent) 58px 100%
-  );
+  background:
+    var(--hatch) left / 22px 100% no-repeat,
+    var(--hatch) right / 22px 100% no-repeat,
+    linear-gradient(
+      to right,
+      var(--range-fill) 0 22px,
+      var(--bar-fill) 22px 58px,
+      var(--range-fill) 58px 100%
+    );
 }
 .lg-diamond {
   display: inline-block;
@@ -1493,7 +1523,7 @@ main {
   position: absolute;
   inset: 1px 4px;
   border-radius: 3px;
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent);
+  background: var(--hatch), var(--range-fill);
   border: 1px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, transparent);
 }
 .lg-point-range .lg-diamond {
