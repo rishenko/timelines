@@ -175,6 +175,41 @@ describe('accessibility', () => {
     });
   });
 
+  describe('Customize panel', () => {
+    it('replaces the Timelines, Theme and Edit mode buttons', () => {
+      open('REDACTED');
+      expect(screen.getByRole('button', { name: 'Customize' })).toBeTruthy();
+      for (const gone of ['Theme', 'Edit mode', 'Timelines']) expect(screen.queryByRole('button', { name: gone })).toBeNull();
+    });
+
+    it('has three tabs, each without automated violations, moved between with the arrow keys', async () => {
+      const { container } = open('ancient-near-east');
+      fireEvent.click(screen.getByRole('button', { name: 'Customize' }));
+      const tabs = screen.getAllByRole('tab');
+      expect(tabs.map((t) => t.textContent)).toEqual(['Appearance', 'Edit', 'Timelines']);
+      for (const tab of tabs) {
+        fireEvent.click(tab);
+        expect(screen.getByRole('tabpanel', { name: tab.textContent! })).toBeTruthy();
+        expect(await violations(container)).toEqual([]);
+      }
+      screen.getByRole('tab', { name: 'Timelines' }).focus();
+      fireEvent.keyDown(document.activeElement!, { key: 'ArrowRight' });
+      expect(document.activeElement?.textContent).toBe('Appearance');
+      expect(screen.getByRole('tab', { name: 'Appearance' }).getAttribute('aria-selected')).toBe('true');
+    });
+
+    it('turns edit mode on from the Edit tab, and the edit bar turns it off', () => {
+      open('REDACTED');
+      fireEvent.click(screen.getByRole('button', { name: 'Customize' }));
+      fireEvent.click(screen.getByRole('tab', { name: 'Edit' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Turn on edit mode' }));
+      expect(screen.queryByRole('tablist', { name: 'Customize' })).toBeNull(); // the panel closes
+      expect(screen.getByRole('button', { name: '+ Event' })).toBeTruthy();
+      fireEvent.click(screen.getByRole('button', { name: 'Done editing' }));
+      expect(screen.queryByRole('button', { name: '+ Event' })).toBeNull();
+    });
+  });
+
   it('has a skip link to the timeline region', () => {
     open('classical');
     const skip = screen.getByRole('link', { name: 'Skip to the timeline' });

@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 
 /**
  * The toolbar's toggle panels, plus the guided tour. Each opens and closes on its own; several can be open at once.
+ * Customize holds Appearance (the theme), Edit and Timelines as tabs (components/CustomizePanel.tsx).
  */
-export type PanelName = 'filters' | 'legend' | 'timelines' | 'theme' | 'tour';
+export type PanelName = 'filters' | 'legend' | 'customize' | 'tour';
 
 /**
  * Set on a reader's first visit, so the guided tour starts by itself only once. (The name dates from when the legend
@@ -24,8 +25,7 @@ export function usePanels(autoTour = true) {
   const [open, setOpen] = useState<Record<PanelName, boolean>>(() => ({
     filters: false,
     legend: false,
-    timelines: false,
-    theme: false,
+    customize: false,
     tour: autoTour && firstVisit(),
   }));
   useEffect(() => {

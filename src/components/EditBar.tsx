@@ -10,6 +10,8 @@ interface Props {
   /** Shows "Discard local edits" when there is a draft. */
   dirty: boolean;
   onDiscard: () => void;
+  /** Leave edit mode (it is turned on in Customize, Edit). */
+  onDone: () => void;
 }
 
 /** The second toolbar row in edit mode: add items, download and upload the file, discard the draft. */
@@ -19,6 +21,10 @@ export function EditBar(p: Props) {
     <div className="editbar">
       {/* on phones the buttons are one row that scrolls sideways (see .editbar-buttons in CSS) */}
       <div className="editbar-buttons">
+        <button className="primary" onClick={p.onDone} title="Leave edit mode (your edits are kept)">
+          Done editing
+        </button>
+        <span className="sep" />
         <button onClick={p.onAddEvent}>+ Event</button>
         <button onClick={p.onAddTrack}>+ Track</button>
         <button onClick={p.onAddSource}>+ Source</button>

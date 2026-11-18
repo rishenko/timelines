@@ -28,18 +28,15 @@ interface Props {
   search: ReactNode;
   panels: Record<PanelName, boolean>;
   onTogglePanel: (p: PanelName) => void;
-  editMode: boolean;
-  onToggleEdit: () => void;
 }
 
 const PANEL_BUTTONS: { panel: PanelName; label: string; title?: string }[] = [
   { panel: 'filters', label: 'Filters' },
   { panel: 'legend', label: 'Legend', title: 'What the bars, diamonds, colors and lines mean' },
-  { panel: 'timelines', label: 'Timelines', title: "Open a timeline from a link or file, or manage the ones you've added" },
-  { panel: 'theme', label: 'Theme', title: 'Colors and theme' },
+  { panel: 'customize', label: 'Customize', title: 'Appearance, editing, and opening or adding timelines' },
 ];
 
-/** The top bar: timeline picker, zoom, view options, row folding, search, panel toggles and edit mode. */
+/** The top bar: timeline picker, view switch, zoom, view options, row folding, search and the panel toggles. */
 export function Toolbar(p: Props) {
   return (
     <header className="toolbar">
@@ -125,15 +122,13 @@ export function Toolbar(p: Props) {
           key={panel}
           data-tour={panel}
           className={p.panels[panel] ? 'on' : ''}
+          aria-expanded={p.panels[panel]}
           onClick={() => p.onTogglePanel(panel)}
           title={title}
         >
           {label}
         </button>
       ))}
-      <button className={p.editMode ? 'on edit' : ''} onClick={p.onToggleEdit}>
-        Edit mode
-      </button>
     </header>
   );
 }

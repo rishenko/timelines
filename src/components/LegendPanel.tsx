@@ -274,7 +274,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       </div>
       <p className="muted small">
         Click any event for its description, dates, sources and connections. Use the year buttons to zoom, Filters to hide
-        rows or sources, and Edit mode to add your own.
+        rows or sources, and Customize to change the colors, edit the timeline, or open others.
       </p>
     </div>
   );

@@ -14,7 +14,7 @@ a small fictional kingdom with its own calendar. It uses nearly every feature de
 4. To share it, put the file online (a GitHub repository or gist works) and share
    `https://<the app's address>/?data=<link to the file>`.
 
-You can also build a timeline in the app's **Edit mode** and use **Download final** to get the file.
+You can also build a timeline in the app's **edit mode** (Customize → Edit) and use **Download final** to get the file.
 
 ## Years
 
@@ -231,7 +231,7 @@ A file that breaks any of these is refused, with a message naming the problem.
 - **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser.
   Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event.
 - **Update** by replacing the file at the same link. Readers get the new version the next time they open
-  the link, or with **Update** in the Timelines panel.
+  the link, or with **Update** in Customize → Timelines.
 - **Images** must be online too, with full `https://` addresses.
 
 ## Writing dates as text

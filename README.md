@@ -50,7 +50,7 @@ Any schema-v3 timeline file can be opened without changing the code (format: [do
   saved in the browser and opened. Anyone can open the same link; GitHub page links are converted to raw
   file links automatically. The server must allow cross-site reads (CORS); GitHub raw files and gists do.
   If the link later fails, the saved copy opens instead.
-- **From the Timelines panel** (toolbar → *Timelines*, or *Add or manage timelines…* in the title menu):
+- **From the Timelines tab** (toolbar → *Customize* → *Timelines*, or *Add or manage timelines…* in the title menu):
   paste a link, or add a file from your computer. Added timelines are listed under *Your timelines* in the
   title menu, where you can **Update** a linked one to its latest version, **Copy share link**, or
   **Remove** it.
@@ -96,7 +96,10 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Toolbar:** one row on screens about 1700 px wide or more. The subtitle sits in small print under the timeline menu
   (its full text on hover), the zoom buttons show the years per tick as bare numbers (the unit is in the ruler corner,
   their tooltips and their accessible names), and the search box widens while you type in it.
-- **Themes:** presets and per-color pickers. Each timeline has a default (ancient: Parchment, REDACTED: Dark)
+- **Customize** (toolbar): one panel with three tabs. **Appearance** holds the theme; **Edit** turns edit mode on
+  (the edit bar's **Done editing** turns it off); **Timelines** opens and adds timelines. The tabs follow the ARIA
+  tabs pattern (arrow keys move between them). On phones each tab is one column.
+- **Themes** (Customize → Appearance): presets and per-color pickers. Each timeline has a default (ancient: Parchment, REDACTED: Dark)
   until the reader picks their own.
 - **Phones and tablets:** one finger pans the timeline and a two-finger pinch steps through the zoom levels. On
   narrow screens (under 640 px) the toolbar becomes one row that scrolls sideways, the row labels narrow, panels
@@ -104,7 +107,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
   empty spot in a lane to add an event there; the edit bar's buttons are one row that scrolls sideways, with a short hint
   under it. The tour's card sits at the bottom of the screen.
 - **Deep links:** `?timeline=…&inc=100&at=-1594#sack-of-babylon` restores timeline, scale, position and selection.
-- **Edit mode:** add events, tracks and sources, record date claims for events and for a track's lifespan, download the
+- **Edit mode** (Customize → Edit; leave with the edit bar's Done editing): add events, tracks and sources, record date claims for events and for a track's lifespan, download the
   JSON and upload it again. The event and track editors check an edit before saving it and list anything it would break
   (e.g. a date outside its own claims), because a draft that fails validation can't be reopened. Renaming or deleting a
   source updates every citation of it, date claims included. If a saved draft still can't be applied when the timeline
@@ -264,7 +267,7 @@ which converts and validates them.
 | `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
 | `src/state/useSearchActions.ts` | What picking a search result does (unfold, scroll, select) |
 | `src/state/` (others) | Filters, theme, folded rows (`collapse`), zoom steps, toolbar panels, toasts |
-| `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors, with `ClaimList` for date claims), search box, Dating menu, guided `Tour`, Filters, Legend, Theme and Timelines panels |
+| `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors, with `ClaimList` for date claims), search box, Dating menu, guided `Tour`, Filters and Legend panels, and the Customize panel (Appearance: `ThemePanel`; Edit; Timelines: `TimelinesPanel`) |
 | `src/data/` | Validator, importers for old REDACTED formats, row proximity (`proximity.ts`) |
 | `src/timelines/` | Bundled timelines, registered in `index.ts` |
 | `data-src/`, `scripts/` | Readable source data for all three timelines, the compiler, and the data scripts above (`scripts/REDACTED/` for REDACTED) |

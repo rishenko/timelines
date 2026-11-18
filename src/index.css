@@ -187,17 +187,21 @@ label.check {
 .toolbar .group {
   display: inline-flex;
 }
-.toolbar .seg {
+.toolbar .seg,
+.customize-tabs .seg {
   border-radius: 0;
   margin-left: -1px;
 }
-.toolbar .seg:first-child {
+.toolbar .seg:first-child,
+.customize-tabs .seg:first-child {
   border-radius: 4px 0 0 4px;
 }
-.toolbar .seg:last-child {
+.toolbar .seg:last-child,
+.customize-tabs .seg:last-child {
   border-radius: 0 4px 4px 0;
 }
-.toolbar .seg.on {
+.toolbar .seg.on,
+.customize-tabs .seg.on {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--on-accent);
@@ -1989,4 +1993,43 @@ main {
   border-radius: 4px;
   background: var(--bg-3);
   font: 11px/1.6 ui-monospace, monospace;
+}
+
+/* ---- Customize: Appearance, Edit and Timelines as tabs behind one toolbar button ---- */
+.customize-panel {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+}
+.customize-panel > .customize-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 0;
+}
+.customize-tabs {
+  display: inline-flex;
+}
+.customize-panel .theme-panel,
+.customize-panel .timelines-panel {
+  border-bottom: 0;
+}
+.customize-edit {
+  max-width: 70ch;
+  padding: 10px 14px 14px;
+}
+.customize-edit p {
+  margin: 0 0 10px;
+}
+.customize-head .spacer {
+  flex: 1;
+}
+@media (max-width: 640px) {
+  /* the theme and timelines panels: one column on phones (their columns used to run off the screen) */
+  .theme-panel,
+  .timelines-panel {
+    grid-template-columns: 1fr;
+  }
+  .theme-panel .color-grid {
+    grid-template-columns: 1fr;
+  }
 }

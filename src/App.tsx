@@ -21,6 +21,7 @@ import { ThemePanel } from './components/ThemePanel.tsx';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
 import { Tour } from './components/Tour.tsx';
+import { CustomizePanel, type CustomizeTab } from './components/CustomizePanel.tsx';
 import { TableView } from './components/TableView.tsx';
 import { tourSteps } from './lib/tour.ts';
 import { newEvent } from './lib/newEvent.ts';
@@ -84,6 +85,7 @@ export default function App() {
   const [compress, setCompress] = useState(initialUrl.compress);
   const [showLinks, setShowLinks] = useState(initialUrl.links);
   const [view, setView] = useState<View>(initialUrl.view);
+  const [customizeTab, setCustomizeTab] = useState<CustomizeTab>('appearance');
   // on phones the credits note is clamped to two lines; a tap opens it (see .legal in CSS)
   const [creditsOpen, setCreditsOpen] = useState(false);
   // One polite live region for screen readers: zoom changes, "Went to …" and toasts. Kept mounted, because a region
@@ -183,6 +185,15 @@ export default function App() {
     notify,
   });
 
+  // edit mode is turned on in Customize, Edit, and off there or with the edit bar's Done editing
+  const toggleEdit = () => {
+    const on = !editMode;
+    setEditMode(on);
+    setEditing(null);
+    setAnnouncement(on ? 'Edit mode on' : 'Edit mode off');
+    // on: close the panel, so the edit bar and the timeline are in view
+    if (on) panels.show('customize', false);
+  };
   const editTrack = (id: string) => setEditing({ kind: 'track', track: data.tracks.find((t) => t.id === id) ?? null });
   const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId));
 
@@ -205,7 +216,10 @@ export default function App() {
             timelines={library.timelines}
             currentId={published.meta.id}
             onOpen={goToTimeline}
-            onManage={() => panels.show('timelines', true)}
+            onManage={() => {
+              setCustomizeTab('timelines');
+              panels.show('customize', true);
+            }}
           />
         }
         subtitle={meta.subtitle}
@@ -254,11 +268,6 @@ export default function App() {
         }
         panels={panels.open}
         onTogglePanel={panels.toggle}
-        editMode={editMode}
-        onToggleEdit={() => {
-          setEditMode((m) => !m);
-          setEditing(null);
-        }}
       />
 
       {editMode && (
@@ -269,6 +278,7 @@ export default function App() {
           onDownload={(final) => downloadDataset(data, final)}
           onUpload={(f) => void library.upload(f)}
           dirty={dirty}
+          onDone={toggleEdit}
           onDiscard={() => {
             if (!window.confirm('Discard all local edits and reload the published timeline?')) return;
             dispatch({ type: 'reset' });
@@ -282,7 +292,7 @@ export default function App() {
         <div className="draft-banner">
           You're viewing local edits, not the published timeline.{' '}
           {updatedUnderDraft && 'The published timeline has been updated since you made them; your edits are kept on top of it. '}
-          <button className="linklike" onClick={() => setEditMode(true)}>
+          <button className="linklike" onClick={toggleEdit}>
             Open edit mode
           </button>{' '}
           to download or discard them.
@@ -305,20 +315,29 @@ export default function App() {
         <Tour steps={tourSteps(data, { hasDating: chronGroups.length > 0, hasSubRows })} onClose={() => panels.show('tour', false)} />
       )}
 
-      {panels.open.timelines && (
-        <TimelinesPanel
-          timelines={library.timelines}
-          currentId={published.meta.id}
-          onOpen={goToTimeline}
-          onAddUrl={library.addFromUrl}
-          onAddFile={library.importFile}
-          onRefresh={library.refreshEntry}
-          onRemove={library.removeEntry}
-          onCopyShareLink={(e) => void library.copyShareLink(e)}
+      {panels.open.customize && (
+        <CustomizePanel
+          tab={customizeTab}
+          onTab={setCustomizeTab}
+          onClose={() => panels.show('customize', false)}
+          editMode={editMode}
+          dirty={dirty}
+          onToggleEdit={toggleEdit}
+          appearance={<ThemePanel theme={theme} onChange={setTheme} onReset={resetTheme} />}
+          timelines={
+            <TimelinesPanel
+              timelines={library.timelines}
+              currentId={published.meta.id}
+              onOpen={goToTimeline}
+              onAddUrl={library.addFromUrl}
+              onAddFile={library.importFile}
+              onRefresh={library.refreshEntry}
+              onRemove={library.removeEntry}
+              onCopyShareLink={(e) => void library.copyShareLink(e)}
+            />
+          }
         />
       )}
-
-      {panels.open.theme && <ThemePanel theme={theme} onChange={setTheme} onReset={resetTheme} />}
 
       {panels.open.filters && (
         <FiltersPanel

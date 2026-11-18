@@ -58,6 +58,11 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
       text: 'Find a row, an event or a year, and go straight to it. Press / to search from anywhere.',
     },
     {
+      target: '[data-tour="customize"]',
+      title: 'Customize',
+      text: 'Change the colors, edit the timeline (your edits stay in this browser until you download them), or open and add other timelines.',
+    },
+    {
       target: '[data-tour="legend"]',
       title: 'Legend and filters',
       text: 'The Legend explains every symbol, color and line, and can start this tour again. Filters hides rows and sources you don’t need.',
