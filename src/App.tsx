@@ -25,6 +25,7 @@ import { addToLibrary, fetchTimeline, normalizeUrl, removeFromLibrary, type Libr
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
+import { keyEventsOnly } from './state/zoom.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { safeUrl } from './lib/urls.ts';
 import type { Dataset, TimelineEvent, Track } from './types.ts';
@@ -141,6 +142,12 @@ export default function App() {
 
   const [selectedId, setSelectedId] = useState<string | null>(() =>
     initialUrl.selected && data.events.some((e) => e.uuid === initialUrl.selected) ? initialUrl.selected : null,
+  );
+  // At a timeline's coarsest zoom, draw only its key events (plus the selected one), if it marks any.
+  const keyOnly = useMemo(() => keyEventsOnly(meta.increments, increment, data.events), [meta.increments, increment, data.events]);
+  const drawnEvents = useMemo(
+    () => (keyOnly ? visibleEvents.filter((e) => e.importance === 1 || e.uuid === selectedId) : visibleEvents),
+    [keyOnly, visibleEvents, selectedId],
   );
   const [initialCenter] = useState(() => {
     if (initialUrl.at !== null) return initialUrl.at;
@@ -425,6 +432,11 @@ export default function App() {
             </button>
           ))}
         </div>
+        {keyOnly && (
+          <span className="muted small" title="At the widest zoom only key events are drawn; zoom in to see them all">
+            Key events only
+          </span>
+        )}
         <DatingMenu
           groups={groups}
           selection={chronSel}
@@ -598,7 +610,7 @@ export default function App() {
       <main className={sidePanel ? 'with-panel' : ''}>
         <TimelineView
           data={data}
-          events={visibleEvents}
+          events={drawnEvents}
           eventsById={resolvedById}
           spans={spans}
           visibleTracks={filters.tracks}

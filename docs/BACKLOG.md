@@ -28,7 +28,8 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   place it next to its partners (the proximity test), and consider starting it collapsed. Still thin or missing: the
   US Southwest (its pages were 404), South India's Neolithic, the Kintampo complex, southern African hunter-gatherers,
   Yap, New Guinea.
-- **Key events when zoomed out**: at the coarsest zoom, show only key events (a second use of `importance`).
+- **Key events when zoomed out: done (2026-11-18).** At a timeline's coarsest zoom only key events are drawn
+  (`src/state/zoom.ts`), with a "Key events only" note by the zoom buttons.
 - **Drafts hid data updates: fixed here (2026-11-18).** Drafts are now stored as the reader's changes and replayed onto
   the current published data (`src/state/draft.ts`), so later fixes reach readers with drafts. REDACTED still
   has the old behaviour; port `draft.ts` there if v2 work resumes.

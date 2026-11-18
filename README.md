@@ -65,7 +65,8 @@ paths; anything else (e.g. `javascript:`) is rejected.
   `part-of`, `succeeds`, `conquers`, `related`) draw as arrows. The detail panel counts, but doesn't name,
   connections hidden by your filters (spoilers).
 - **Key events:** events can be marked key, normal or minor. Key events have bold labels, and crowded or
-  collapsed rows place them first, so collapsed regions still show their headline events.
+  collapsed rows place them first, so collapsed regions still show their headline events. At a timeline's coarsest
+  zoom (1000 years per tick for the ancient timeline) only key events are drawn.
 - **Gap compression:** long empty stretches collapse into a hatched `⋯ 900 yrs ⋯` break.
 - **Legend:** the Legend button explains every symbol, color and line, using the current theme and only the features the
   open timeline uses. It opens by itself on a reader's first visit.

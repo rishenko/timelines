@@ -115,7 +115,7 @@ export function LegendPanel({ data, onClose }: Props) {
       sample: <span className="lg-text lg-key">Key event</span>,
       show: data.events.some((e) => e.importance === 1),
       title: 'Key event',
-      text: 'Bold labels mark the events that matter most. In a crowded or collapsed row they are placed first, so they stay visible.',
+      text: 'Bold labels mark the events that matter most. In a crowded or collapsed row they are placed first, so they stay visible; at the widest zoom only key events are drawn.',
     },
     {
       sample: <span className="lg-cluster">+3</span>,
