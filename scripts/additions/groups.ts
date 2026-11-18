@@ -7,6 +7,7 @@
 // Egypt sits in the Ancient Near East, the usual scholarly grouping, beside its strongest partners (the
 // Levant and Mesopotamia). The Americas became a group with five regions on 2026-11-18 (americas.ts).
 import { open } from '../lib/dataset-edit.ts';
+import { orderRows, regionsWithSubRows } from '../lib/rows.ts';
 
 const ed = open('data-src/ancient-near-east.json', '2026-11-17');
 type Row = { id: string; name: string; color: string; parent?: string };
@@ -40,25 +41,11 @@ const stray = tops.filter((t) => !topOrder.includes(t));
 if (stray.length) throw new Error(`top-level rows not placed in a group: ${stray.join(', ')}`);
 
 // Rebuild the row list depth-first in the order above; rows inside each region keep their order.
-const order = new Map<string | undefined, string[]>([[undefined, topOrder], ...groups.map((g) => [g.id, g.regions] as [string, string[]])]);
-const kids = (id: string | undefined) => {
-  const ks = tracks.filter((t) => t.parent === id);
-  const o = order.get(id);
-  return o ? o.map((x) => ks.find((k) => k.id === x)!) : ks;
-};
-const out: Row[] = [];
-const visit = (t: Row) => {
-  out.push(t);
-  for (const k of kids(t.id)) visit(k);
-};
-for (const t of kids(undefined)) visit(t);
-if (out.length !== tracks.length) throw new Error(`lost rows while ordering (${tracks.length} → ${out.length})`);
-ed.data.tracks = out;
+ed.data.tracks = orderRows(tracks, new Map([[undefined, topOrder], ...groups.map((g) => [g.id, g.regions] as [string, string[]])]));
 
 // Open on an overview: groups expanded, every region inside them collapsed, so each region row leads with
-// its key events. Readers expand what they want.
+// its key events. Readers expand what they want. Added to the list, which also folds some civilizations.
 const collapsed: string[] = ed.data.meta.collapsed;
-for (const g of groups)
-  for (const r of g.regions) if (tracks.some((t) => t.parent === r) && !collapsed.includes(r)) collapsed.push(r);
+for (const r of regionsWithSubRows(ed.data.tracks)) if (!collapsed.includes(r)) collapsed.push(r);
 
 ed.save();

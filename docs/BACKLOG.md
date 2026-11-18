@@ -29,21 +29,6 @@
 - **Search aliases:** an `aliases` property on tracks and events (Hatti, Kemet, Axum, Wa/Yamato) so other names find
   them. Add it to `types.ts`, `validate.ts`, `search.ts` and `data-format.md`, then fill it in during region reviews.
 
-### Code and tooling (from the 2026-11-18 maintenance review)
-
-- **Tests for every historical timeline.** The "every event and claim cites a source" and proximity tests run on
-  Ancient only; Classical passes both today, so run them on both. Add a test that each `data-src/` file compiles to
-  exactly its `src/timelines/` file, so a forgotten `npm run data:*` fails the tests (as REDACTED's drift test does).
-- **One set of data commands for every timeline.** `data:*` and `importance:*` are copied per timeline, and
-  `format:src` and `row-order` are hard-wired to Ancient. A small table (short name → data-src file, compiled file,
-  importance plan, key-events doc) would let one command take the timeline as an argument. `list-importance.ts`
-  hard-codes the "ancient" short name and its own BCE/CE formatter (use `formatYear` from `calendar.ts`).
-- **A runner per timeline** (`scripts/additions/run-all.ts`, `scripts/classical/run-all.ts`) so the script order
-  lives in code, not only in the README.
-- **Shared script helpers** in `scripts/lib/`: the depth-first row reorder (copied in `groups.ts` and
-  `reorder-regions.ts`), the "regions open collapsed" rule (`groups.ts` and `classical/collapsed.ts`), and the CE
-  range claim `RCE` (local to `classical/summary-only.ts`).
-
 ### App
 
 - **Intro for first-time readers** beyond the legend: e.g. a short guided tour.
@@ -107,3 +92,15 @@ below (source citations in claims, the App split).
   chronologies too (before, the draft failed validation and was erased on reload); `App.tsx` split into hooks and
   components; one row-tree helper (`src/lib/tracks.ts`, which also lifted a 10-level cap on inherited chronologies);
   gesture hooks out of `TimelineView`; CSS sections regrouped.
+- **Data tooling, 2026-11-18:**
+  - One table of the timelines built from `data-src/` (`scripts/lib/timelines.ts`) and one command,
+    `npm run data -- <build|importance|format|row-order|run-all> <timeline|all>`; the old `npm run` names are aliases.
+  - `run-all` replays every content script in order; `--check` proves both timelines reproduce exactly. The first
+    replay brought two overlap events and four audited descriptions into Classical (`docs/classical-sources.md`,
+    overlap sync).
+  - The citation and proximity tests run on both historical timelines, and a test fails when a compiled file is
+    behind its source.
+  - Shared helpers: `scripts/lib/compile.ts`, `importance.ts` (the key-event list now uses the timeline's calendar)
+    and `rows.ts`, plus `RCE` in `dataset-edit.ts`.
+  - `apply-text-fixes.ts` warns when no script defines an event.
+  - The Ancient key-event list had kept titles from before the description audit; it is regenerated.

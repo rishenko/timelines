@@ -135,7 +135,7 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 
 **Minor**
 
-- Senusret III's funerary boat (tree-ring dated) (1887 BCE) `senusret-boat`
+- Senusret III's funerary boat dated (1887 BCE) `senusret-boat`
 - Egyptian annals mention Tanaju (Danaans?) (c. 1437 BCE) `tanaju`
 - Ramesses II marries a daughter of Ḫattušili III (1246 BCE) `hittite-marriage`
 - Alara, first Kushite king known by name (c. 780 BCE) `alara`
@@ -193,7 +193,7 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Trade revives at Kanesh (kārum level Ib) (1798 BCE–1740 BCE) `kanesh-karum-ib`
 - Alalakh's Level VII palace destroyed (1628 BCE) `alalakh-vii`
 - Troy VI destroyed (c. 1300 BCE) `troy-vi`
-- Three-year drought in central Anatolia (1198 BCE–1196 BCE) `drought-1198`
+- Severe drought coincides with the Hittite collapse (1198 BCE–1196 BCE) `drought-1198`
 - Cimmerians sack Sardis; Gyges killed (644 BCE) `gyges-killed`
 
 ### Mesopotamia
@@ -258,7 +258,7 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Ashurbanipal sacks Susa (647 BCE–646 BCE; Neo-Elamite, Neo-Assyrian Empire) `susa-sacked`
 - Cyrus revolts against Astyages (550 BCE; Achaemenid Persia, Medes) `cyrus-revolt`
 - Persia conquers the Indus valley (c. 535 BCE–518 BCE; Achaemenid Persia, Vedic period) `achaemenid-indus`
-- Reign of Darius the Great (522 BCE–486 BCE; Achaemenid Persia) `darius-i`
+- Reign of Darius I (522 BCE–486 BCE; Achaemenid Persia) `darius-i`
 - Persepolis built (c. 515 BCE; Achaemenid Persia) `persepolis`
 - Greco-Persian Wars (499 BCE–449 BCE; Achaemenid Persia) `greco-persian-wars`
 - Alexander conquers the Achaemenid Empire (330 BCE; Achaemenid Persia) `persia-falls`
@@ -445,7 +445,7 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 - Maize domesticated in southern Mexico (c. 7050 BCE; Early domestication (Guilá Naquitz, Balsas)) `maize-domesticated`
 - Squash domesticated at Guilá Naquitz (c. 6050 BCE; Early domestication (Guilá Naquitz, Balsas)) `squash`
 - Mokaya: the first pottery in Mesoamerica (c. 1900 BCE–1700 BCE; Mokaya (Mazatán)) `mokaya-pottery`
-- San Lorenzo, the first Olmec centre (c. 1400 BCE–900 BCE; Olmecs) `san-lorenzo`
+- San Lorenzo, the first Olmec state-level site (c. 1400 BCE–900 BCE; Olmecs) `san-lorenzo`
 - La Venta (c. 900 BCE–400 BCE; Olmecs) `la-venta`
 - First Maya cities (c. 750 BCE; Maya (Preclassic)) `maya-cities`
 - Earliest Zapotec writing (c. 600 BCE; Zapotecs (Valley of Oaxaca)) `zapotec-writing`
@@ -464,7 +464,7 @@ Totals: 180 key, 339 normal, 43 minor (562 events).
 
 - Caverna da Pedra Pintada: the earliest cave paintings in the Americas (c. 9250 BCE–8050 BCE; Amazon (Caverna da Pedra Pintada)) `pedra-pintada`
 - Las Vegas culture of coastal Ecuador (c. 8000 BCE–4600 BCE; Early Andean farmers and fishers) `las-vegas`
-- Cueva de las Manos: the first paintings (c. 7300 BCE; Cueva de las Manos) `cueva-manos`
+- Cueva de las Manos: the oldest-known cave paintings in South America (c. 7300 BCE; Cueva de las Manos) `cueva-manos`
 - Potatoes domesticated around Lake Titicaca (c. 6550 BCE; Early Andean farmers and fishers) `potato`
 - Valdivia pottery (c. 3000 BCE–2700 BCE; Valdivia culture) `valdivia-pottery`
 - Caral (c. 2600 BCE–2000 BCE; Caral–Supe (Norte Chico)) `caral`

@@ -1077,7 +1077,15 @@
     },
     "wp-suiko": { "name": "Wikipedia: Empress Suiko", "url": "https://en.wikipedia.org/wiki/Empress_Suiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
     "wp-himiko": { "name": "Wikipedia: Himiko", "url": "https://en.wikipedia.org/wiki/Himiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
-    "wp-yamatai": { "name": "Wikipedia: Yamatai", "url": "https://en.wikipedia.org/wiki/Yamatai", "tags": ["wikipedia"], "accessed": "2026-11-18" }
+    "wp-yamatai": { "name": "Wikipedia: Yamatai", "url": "https://en.wikipedia.org/wiki/Yamatai", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-zhongshan": {
+      "name": "Wikipedia: Zhongshan (state)",
+      "url": "https://en.wikipedia.org/wiki/Zhongshan_(state)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-beidi": { "name": "Wikipedia: Beidi", "url": "https://en.wikipedia.org/wiki/Beidi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-xirong": { "name": "Wikipedia: Xirong", "url": "https://en.wikipedia.org/wiki/Xirong", "tags": ["wikipedia"], "accessed": "2026-11-18" }
   },
   "tracks": [
     { "id": "africa", "name": "Africa", "color": "#b8862a" },
@@ -2284,7 +2292,7 @@
       "title": "Battle of Salamis",
       "start": "480 BCE",
       "tracks": ["greece", "persia"],
-      "descr": "A naval battle during Xerxes' invasion of Greece (481–479 BCE).",
+      "descr": "A naval battle fought in 480 BCE, part of the Second Persian invasion of Greece, between the Greek city-states and the Achaemenid Empire under King Xerxes.",
       "sources": [{ "sourceKey": "wp-salamis", "sourceLocation": "infobox and lead" }],
       "links": [{ "to": "greco-persian-wars", "kind": "part-of" }],
       "importance": 1
@@ -2382,7 +2390,7 @@
       "title": "Pazyryk burials",
       "start": "c. 450 BCE",
       "tracks": ["steppe"],
-      "descr": "Burials at Pazyryk and neighbouring sites in the Altai. A Saka (eastern Scythian) culture.",
+      "descr": "Burials at Pazyryk and neighbouring sites in the Altai. A Saka (Central Asian Scythian) nomadic Iron Age culture.",
       "sources": [{ "sourceKey": "wp-pazyryk", "sourceLocation": "lead and Archaeology" }],
       "startDates": [
         { "year": "500 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "Archaeology ('5th century BC'): start of century" } },
@@ -2563,7 +2571,7 @@
       "title": "Battle of Thermopylae",
       "start": "480 BCE",
       "tracks": ["greece", "persia"],
-      "descr": "Greek city-states led by Sparta under Leonidas I hold the pass against Xerxes’ invasion; the Greeks defeat the invaders at Salamis later that year.",
+      "descr": "Greek city-states led by Sparta under Leonidas I hold off Xerxes’ invasion force before the Persians win; the Greeks defeat the invaders at Salamis later that year.",
       "sources": [{ "sourceKey": "wp-thermopylae", "sourceLocation": "infobox and lead" }],
       "links": [{ "to": "salamis", "kind": "related" }],
       "importance": 1
@@ -2628,7 +2636,7 @@
       "start": "353 BCE",
       "end": "351 BCE",
       "tracks": ["greece"],
-      "descr": "The tomb of Mausolus, built after his death in 353 BC; one of the Seven Wonders of the Ancient World.",
+      "descr": "The tomb of Mausolus, built between 353 and 351 BC in Halicarnassus; one of the Seven Wonders of the Ancient World.",
       "sources": [{ "sourceKey": "wp-mausoleum", "sourceLocation": "infobox, lead and Conquest" }]
     },
     {
@@ -6295,6 +6303,37 @@
       "descr": "Suiko ascends the throne after an assassination in 592 (15 January 593 by the Gregorian calendar, 8 December 592 by the lunar) and reigns until her death in 628. Prince Shōtoku is regent from 593 to 621.",
       "sources": [{ "sourceKey": "wp-suiko", "sourceLocation": "lead, infobox and Biography" }],
       "links": [{ "to": "seventeen-article", "kind": "related" }]
+    },
+    {
+      "uuid": "zhongshan",
+      "title": "Zhongshan, a non-Zhou state in the north",
+      "start": "414 BCE",
+      "end": "296 BCE",
+      "tracks": ["china"],
+      "descr": "Some sources (Records of the Grand Historian) say Beidi founded and ruled it; others list it only as not Zhou or Han. Wei conquers it in 407, it regains independence in 381, and Zhao annexes it after ten years of war.",
+      "sources": [
+        { "sourceKey": "wp-zhongshan", "sourceLocation": "infobox, Origins and History" },
+        { "sourceKey": "wp-beidi", "sourceLocation": "Name and History" }
+      ],
+      "startDates": [
+        {
+          "year": "414 BCE",
+          "source": { "sourceKey": "wp-zhongshan", "sourceLocation": "History ('in 414 BC ... traditionally considered the founding')" }
+        },
+        { "year": "381 BCE", "source": { "sourceKey": "wp-zhongshan", "sourceLocation": "infobox ('Established 414/381')" } }
+      ],
+      "endDates": [
+        { "year": "296 BCE", "source": { "sourceKey": "wp-zhongshan", "sourceLocation": "infobox and History" } },
+        { "year": "295 BCE", "source": { "sourceKey": "wp-beidi", "sourceLocation": "History" } }
+      ]
+    },
+    {
+      "uuid": "qin-last-rong",
+      "title": "Qin defeats the last hostile Rong tribe",
+      "start": "314 BCE",
+      "tracks": ["china"],
+      "descr": "By 400 BC most of the Di and Rong had been eliminated as independent polities.",
+      "sources": [{ "sourceKey": "wp-xirong", "sourceLocation": "Timeline" }, { "sourceKey": "wp-beidi", "sourceLocation": "History" }]
     }
   ]
 }

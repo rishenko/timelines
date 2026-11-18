@@ -346,3 +346,20 @@ primary sources).
   Sipán* dates only the platform, before 300 AD), the year the Avars took Sirmium (*Bayan I*). *Battle of Songzhou*
   404'd. Not tried: Kumārajīva's titles and Hopewell's local variants (not dated events), Srivijaya (after the
   period), Tabon and Samoa ("years ago" figures).
+
+## Overlap sync (2026-11-18)
+
+The skeleton copies every ancient event that starts in 500 BCE or later. The first replay of all the Classical
+scripts (`npm run data -- run-all classical`) showed the stored data had fallen behind the ancient timeline in two
+ways, and brought it up to date:
+
+- **Two events** the ancient peoples pass added after the skeleton was first run: *Zhongshan, a non-Zhou state in
+  the north* (414–296 BCE) and *Qin defeats the last hostile Rong tribe* (314 BCE), with their sources (*Zhongshan
+  (state)*, *Beidi*, *Xirong*). Both sit on the China row. *Beidi* carries a needs-citations banner, which the ancient
+  data already notes; it is not an AI-text banner.
+- **Four descriptions** reworded by the ancient description audit (checked against the pages there): Salamis,
+  Thermopylae, the Pazyryk burials and the Mausoleum. The Classical audit had covered only the summary-only events,
+  so these still had the earlier wording.
+
+From now on, overlap events are fixed in the ancient data and copied again by a replay; `apply-text-fixes.ts` warns
+when an event has no defining script.

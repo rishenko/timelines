@@ -7,13 +7,7 @@
 // carried an AI-text or LLM-translation banner.
 // Re-runnable: it replaces what it added before. Run after the region passes, before collapsed.ts.
 //   node scripts/classical/summary-only.ts && npm run data:classical
-import { open, C, S } from '../lib/dataset-edit.ts';
-
-/** A CE range on the page, stored as its midpoint ± half the width. */
-const RCE = (from: number, to: number, key: string, loc: string) => {
-  const mid = Math.round((from + to) / 2);
-  return C(`${mid} CE`, key, loc, { margin: Math.abs(from - mid) });
-};
+import { open, C, RCE, S } from '../lib/dataset-edit.ts';
 
 const ed = open('data-src/classical.json', '2026-11-18');
 

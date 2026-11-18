@@ -38,6 +38,12 @@ export const R = (from: number, to: number, sourceKey: string, loc: string, o: {
   return C(mid, sourceKey, loc, { ...o, margin: Math.abs(from - mid) });
 };
 
+/** A CE range on the page (years after the epoch), stored as its midpoint ± half the width. */
+export const RCE = (from: number, to: number, sourceKey: string, loc: string, o: { chron?: string; note?: string } = {}) => {
+  const mid = Math.round((from + to) / 2);
+  return C(`${mid} CE`, sourceKey, loc, { ...o, margin: Math.abs(from - mid) });
+};
+
 export function open(file: string, accessed = new Date().toISOString().slice(0, 10)) {
   const d: Json = readSource(file);
   const log: string[] = [];

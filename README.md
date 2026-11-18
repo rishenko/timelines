@@ -34,7 +34,7 @@ with its own calendar, eras, scale and theme. Three ship with the app:
   Anglo-Saxons, early Slavs) and the Americas (Teotihuacan, Monte Albán, the Epi-Olmec, the Maya cities, Chavín to
   Wari and Tiwanaku, Adena, Hopewell, Hohokam, Dorset) and Southeast Asia and Tibet (Âu Lạc, Nanyue, the Trưng sisters,
   the Early Lý, Champa, Funan, Chenla, the Pyu; Zhangzhung, the Yarlung kings and Songtsen Gampo, the Tuyuhun) and China's Northern and Southern
-  dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait), plus a follow-up pass on values first read only in summary (`summary-only.ts`); 369 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
+  dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait), plus a follow-up pass on values first read only in summary (`summary-only.ts`); 371 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first, then the region passes, `summary-only.ts`, and `collapsed.ts` last); sources and judgment calls in `docs/classical-sources.md`.
   It opens like the ancient timeline: groups expanded, each region collapsed to its key events.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
@@ -117,15 +117,19 @@ npm run deploy         # build and publish dist/ to GitHub Pages
 ```
 
 Scripts for working on the data (all in `scripts/`; source files are written in one compact style by
-`scripts/lib/source-format.ts`):
+`scripts/lib/source-format.ts`). The timelines built from `data-src/` and the files and scripts that belong to
+each are listed once, in `scripts/lib/timelines.ts`; `npm run data` takes a timeline's short name
+(`ancient`, `classical`) or `all`:
 
 ```sh
-npm run importance:ancient   # apply data-src/ancient-importance.json, compile, refresh docs/ancient-key-events.md
-npm run importance:classical # the same for the Classical World (data-src/classical-importance.json)
-npm run row-order            # how close related groups sit (add -- --parent near-east for the regions in a group)
-node scripts/row-order.ts src/timelines/ancient-near-east.json --parent near-east --search --keep "mesopotamia<iran"   # find a passing order
-npm run format:src           # re-format data-src/ancient-near-east.json
-node scripts/additions/europe.ts   # (re)apply a region's additions; then npm run importance:ancient
+npm run data -- build <timeline|all>        # compile data-src/ → src/timelines/ (npm run data:ancient, data:classical)
+npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json, compile, refresh docs/<short>-key-events.md
+                                            #   (npm run importance:ancient, importance:classical)
+npm run data -- format <timeline|all>       # re-format a source file (npm run format:src does all)
+npm run data -- row-order <timeline> [--parent near-east] [--best | --search --keep "mesopotamia<iran"]   # how close related rows sit; find a passing order
+npm run data -- run-all <timeline>          # replay every content script in order, then importance
+npm run data -- run-all <timeline> --check  # the same, but only report whether the scripts reproduce the source file; changes nothing
+node scripts/additions/europe.ts            # (re)apply one region's additions; then npm run importance:ancient
 node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
 npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all" --pinch in --long-press "Europe"]
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
@@ -133,7 +137,14 @@ npm run audit:batches -- data-src/ancient-near-east.json <out dir> [--pages 10] 
 node scripts/apply-text-fixes.ts data-src/ancient-near-east.json fixes.json [--dry]   # reword titles/descriptions ({uuid, field, from, to}) in the data and in the script that defines each event
 ```
 
-`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, caucasus, arabia, eastern-europe, americas, north-asia, fill-gaps, neolithic-near-east, neolithic-world, neolithic-2, neolithic-3, ideas, peoples, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
+`scripts/additions/` (Ancient) and `scripts/classical/` hold one re-runnable script per region pass, built on
+`scripts/lib/dataset-edit.ts` (insert-or-replace by id); shared row helpers are in `scripts/lib/rows.ts`. The order
+they run in is the `scripts` list in `scripts/lib/timelines.ts` (Ancient ends with `groups.ts`, which nests the
+regions into groups and sets the row order; Classical starts with `skeleton.ts` and ends with `collapsed.ts`). Add a
+new pass to that list. Both timelines reproduce exactly from their scripts (`run-all --check`); keep it that way,
+so any script can be edited and the whole timeline re-run. The Classical World's 500–330 BCE overlap events are
+copied from the ancient source by `skeleton.ts`, so fix their wording in the ancient data.
+`scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 

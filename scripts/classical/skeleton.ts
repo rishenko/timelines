@@ -7,6 +7,9 @@
 // ancient timeline that starts in 500–330 BCE (the overlap), copied with its sources and placed on the matching
 // region. Later region scripts add civilization rows and events. Re-runnable: it rebuilds what it owns and keeps
 // anything later scripts added.
+// The overlap events belong to the ancient timeline: a re-run copies them again, so new ancient events in the
+// period and fixes to their text arrive here, and edits made only to the Classical copy are lost. Fix their wording
+// in data-src/ancient-near-east.json (or its defining script), then `npm run data -- run-all classical`.
 //   node scripts/classical/skeleton.ts && npm run data:classical
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../lib/dataset-edit.ts';

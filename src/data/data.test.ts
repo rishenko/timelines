@@ -9,6 +9,8 @@ import example from '../../docs/examples/example-timeline.json';
 import { resolveEvents, defaultSelection } from '../lib/chronology.ts';
 import { relatedRegions, relatedSiblings, proximityParents, allowedDistance } from './proximity.ts';
 import type { Dataset } from '../types.ts';
+import { compileSource, compiledText } from '../../scripts/lib/compile.ts';
+import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
 
 // Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file.
 const V1_PATH = '../REDACTED/src/data/REDACTED-timeline-data.json';
@@ -54,27 +56,43 @@ describe('shipped timelines', () => {
     });
   }
 
-  it('every ancient event cites at least one source, and every claim has one', () => {
-    const ds = ancient as unknown as Dataset;
-    for (const e of ds.events) {
-      expect(e.sources.length, e.title).toBeGreaterThan(0);
-      for (const c of [...(e.startDates ?? []), ...(e.endDates ?? [])]) expect(c.source, e.title).toBeDefined();
-    }
-    for (const t of ds.tracks) for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? [])])
-      expect(c.source, t.id).toBeDefined();
-  });
+  // The historical timelines: every date is cited, and rows that interacted sit together.
+  const historical: [string, Dataset][] = [
+    ['ancient-near-east', ancient as unknown as Dataset],
+    ['classical', classical as unknown as Dataset],
+  ];
+  for (const [id, ds] of historical) {
+    it(`${id}: every event cites at least one source, and every claim has one`, () => {
+      for (const e of ds.events) {
+        expect(e.sources.length, e.title).toBeGreaterThan(0);
+        for (const c of [...(e.startDates ?? []), ...(e.endDates ?? [])]) expect(c.source, e.title).toBeDefined();
+      }
+      for (const t of ds.tracks) for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? [])])
+        expect(c.source, t.id).toBeDefined();
+    });
 
-  it('ancient groups, and the regions inside each group, that interacted sit near each other', () => {
-    // Rows run west to east so partners are close. If this fails after adding data, move the rows
-    // listed (or their civilizations) closer together rather than loosening the limits.
-    const ds = ancient as unknown as Dataset;
-    const far = proximityParents(ds, 2).flatMap((parent) =>
-      relatedSiblings(ds, parent)
-        .filter((p) => p.distance > allowedDistance(p.shared))
-        .map((p) => `${parent ?? 'top level'}: ${p.a} and ${p.b}: ${p.shared} shared, ${p.distance} apart (max ${allowedDistance(p.shared)})`),
-    );
-    expect(far).toEqual([]);
-  });
+    it(`${id}: groups, and the regions inside each group, that interacted sit near each other`, () => {
+      // Rows run west to east so partners are close. If this fails after adding data, move the rows
+      // listed (or their civilizations) closer together rather than loosening the limits.
+      const far = proximityParents(ds, 2).flatMap((parent) =>
+        relatedSiblings(ds, parent)
+          .filter((p) => p.distance > allowedDistance(p.shared))
+          .map((p) => `${parent ?? 'top level'}: ${p.a} and ${p.b}: ${p.shared} shared, ${p.distance} apart (max ${allowedDistance(p.shared)})`),
+      );
+      expect(far).toEqual([]);
+    });
+  }
+
+  // A source file edited without `npm run data -- build <timeline>` would ship stale data.
+  for (const t of SOURCE_TIMELINES) {
+    it(`${t.compiled} is up to date with ${t.source}`, () => {
+      const { dataset, errors } = compileSource(JSON.parse(readFileSync(t.source, 'utf8')));
+      expect(errors).toEqual([]);
+      // line endings may differ after a git checkout on Windows
+      const shipped = readFileSync(t.compiled, 'utf8').replace(/\r\n/g, '\n');
+      expect(compiledText(dataset) === shipped, `run: npm run data -- build ${t.short}`).toBe(true);
+    });
+  }
 });
 
 describe('relatedSiblings', () => {
