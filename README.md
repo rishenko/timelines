@@ -31,7 +31,8 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   Avars) and Africa (Numidia, Mauretania, the Garamantes, the Vandals, Kush and Meroë, the Nubian kingdoms, Dʿmt
   and Aksum, Nok, Djenné-Djenno, the Bantu expansion, the Arab conquest of Egypt) and Europe north of the Alps (the La Tène Celts and Galatians,
   Caesar's Gaul, Roman Britain, the Germanic wars, Suebi, Visigoths, Burgundians, Ostrogoths, Franks, Lombards,
-  Anglo-Saxons, early Slavs); 248 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
+  Anglo-Saxons, early Slavs) and the Americas (Teotihuacan, Monte Albán, the Epi-Olmec, the Maya cities, Chavín to
+  Wari and Tiwanaku, Adena, Hopewell, Hohokam, Dorset); 276 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first); sources and judgment calls in `docs/classical-sources.md`.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).

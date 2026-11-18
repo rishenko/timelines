@@ -1776,6 +1776,206 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-teotihuacan": {
+      "name": "Wikipedia: Teotihuacan",
+      "url": "https://en.wikipedia.org/wiki/Teotihuacan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-pyramid-sun": {
+      "name": "Wikipedia: Pyramid of the Sun",
+      "url": "https://en.wikipedia.org/wiki/Pyramid_of_the_Sun",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-cuicuilco": {
+      "name": "Wikipedia: Cuicuilco",
+      "url": "https://en.wikipedia.org/wiki/Cuicuilco",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-epi-olmec": {
+      "name": "Wikipedia: Epi-Olmec culture",
+      "url": "https://en.wikipedia.org/wiki/Epi-Olmec_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-olmecs": {
+      "name": "Wikipedia: Olmecs",
+      "url": "https://en.wikipedia.org/wiki/Olmecs",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-long-count": {
+      "name": "Wikipedia: Mesoamerican Long Count calendar",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-cholula": {
+      "name": "Wikipedia: Cholula (Mesoamerican site)",
+      "url": "https://en.wikipedia.org/wiki/Cholula_(Mesoamerican_site)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-el-mirador": {
+      "name": "Wikipedia: El Mirador",
+      "url": "https://en.wikipedia.org/wiki/El_Mirador",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tikal": {
+      "name": "Wikipedia: Tikal",
+      "url": "https://en.wikipedia.org/wiki/Tikal",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-calakmul": {
+      "name": "Wikipedia: Calakmul",
+      "url": "https://en.wikipedia.org/wiki/Calakmul",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-copan": {
+      "name": "Wikipedia: Copán",
+      "url": "https://en.wikipedia.org/wiki/Cop%C3%A1n",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-palenque": {
+      "name": "Wikipedia: Palenque",
+      "url": "https://en.wikipedia.org/wiki/Palenque",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-siyaj-kak": {
+      "name": "Wikipedia: Siyaj K’ak’",
+      "url": "https://en.wikipedia.org/wiki/Siyaj_K%27ak%27",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-moche": {
+      "name": "Wikipedia: Moche culture",
+      "url": "https://en.wikipedia.org/wiki/Moche_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-nazca": {
+      "name": "Wikipedia: Nazca culture",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-nazca-lines": {
+      "name": "Wikipedia: Nazca Lines",
+      "url": "https://en.wikipedia.org/wiki/Nazca_Lines",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tiwanaku": {
+      "name": "Wikipedia: Tiwanaku",
+      "url": "https://en.wikipedia.org/wiki/Tiwanaku",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-wari": {
+      "name": "Wikipedia: Wari culture",
+      "url": "https://en.wikipedia.org/wiki/Wari_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-paracas": {
+      "name": "Wikipedia: Paracas culture",
+      "url": "https://en.wikipedia.org/wiki/Paracas_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-chavin": {
+      "name": "Wikipedia: Chavín culture",
+      "url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-lima-culture": {
+      "name": "Wikipedia: Lima culture",
+      "url": "https://en.wikipedia.org/wiki/Lima_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-recuay": {
+      "name": "Wikipedia: Recuay culture",
+      "url": "https://en.wikipedia.org/wiki/Recuay_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-huaca-del-sol": {
+      "name": "Wikipedia: Huaca del Sol",
+      "url": "https://en.wikipedia.org/wiki/Huaca_del_Sol",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hopewell": {
+      "name": "Wikipedia: Hopewell tradition",
+      "url": "https://en.wikipedia.org/wiki/Hopewell_tradition",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hohokam": {
+      "name": "Wikipedia: Hohokam",
+      "url": "https://en.wikipedia.org/wiki/Hohokam",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     }
   },
   "tracks": [
@@ -3421,10 +3621,67 @@
       "parent": "americas"
     },
     {
+      "id": "dorset",
+      "name": "Dorset culture",
+      "color": "#6a8aa0",
+      "parent": "arctic",
+      "span": {
+        "start": -499,
+        "end": 1500,
+        "endDates": [
+          {
+            "year": 1500,
+            "source": {
+              "sourceKey": "wp-dorset",
+              "sourceLocation": "infobox and lead"
+            }
+          },
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-dorset",
+              "sourceLocation": "lead ('perhaps as early as 1000')"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "north-america",
       "name": "North America",
       "color": "#2f7a5a",
       "parent": "americas"
+    },
+    {
+      "id": "adena",
+      "name": "Adena culture",
+      "color": "#7a6a4a",
+      "parent": "north-america",
+      "span": {
+        "start": -499,
+        "end": 100,
+        "circa": true
+      }
+    },
+    {
+      "id": "hopewell",
+      "name": "Hopewell tradition",
+      "color": "#5a7a4a",
+      "parent": "north-america",
+      "span": {
+        "start": -99,
+        "end": 500
+      }
+    },
+    {
+      "id": "hohokam",
+      "name": "Hohokam",
+      "color": "#b07a4a",
+      "parent": "north-america",
+      "span": {
+        "start": 300,
+        "end": 1500
+      }
     },
     {
       "id": "mesoamerica",
@@ -3433,10 +3690,419 @@
       "parent": "americas"
     },
     {
+      "id": "teotihuacan",
+      "name": "Teotihuacan",
+      "color": "#9a4a3a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -99,
+        "end": 750,
+        "endDates": [
+          {
+            "year": 750,
+            "source": {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "infobox (abandoned)"
+            }
+          },
+          {
+            "year": 550,
+            "source": {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "lead (sacked and burned 'around 550 CE')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "cuicuilco",
+      "name": "Cuicuilco",
+      "color": "#7a5a4a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -999,
+        "end": 280,
+        "endDates": [
+          {
+            "year": 280,
+            "margin": 35,
+            "source": {
+              "sourceKey": "wp-cuicuilco",
+              "sourceLocation": "lead (Xitle, 'between 245 and 315 CE')"
+            }
+          },
+          {
+            "year": 400,
+            "source": {
+              "sourceKey": "wp-cuicuilco",
+              "sourceLocation": "End of the culture ('By the year 400 CE')"
+            }
+          },
+          {
+            "year": 175,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-cuicuilco",
+              "sourceLocation": "End of the culture ('around AD 150 to 200')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "epi-olmec",
+      "name": "Epi-Olmec (Tres Zapotes)",
+      "color": "#5a6a4a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -299,
+        "end": 250,
+        "circa": true
+      }
+    },
+    {
+      "id": "zapotec",
+      "name": "Monte Albán (Zapotec)",
+      "color": "#8a6a3a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -499,
+        "end": 950,
+        "endDates": [
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-monte-alban",
+              "sourceLocation": "Site history ('c. AD 900-1000')"
+            }
+          },
+          {
+            "year": 700,
+            "source": {
+              "sourceKey": "wp-zapotec",
+              "sourceLocation": "infobox (capital to AD 700)"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "el-mirador",
+      "name": "El Mirador",
+      "color": "#4a7a5a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -549,
+        "end": 150,
+        "startDates": [
+          {
+            "year": -550,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-el-mirador",
+              "sourceLocation": "infobox ('Built 6th century BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 150,
+            "source": {
+              "sourceKey": "wp-el-mirador",
+              "sourceLocation": "History > Preclassic collapse"
+            }
+          },
+          {
+            "year": 250,
+            "source": {
+              "sourceKey": "wp-el-mirador",
+              "sourceLocation": "lead (Preclassic, 1000 BC – 250 AD)"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "tikal",
+      "name": "Tikal",
+      "color": "#3a6a4a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -349,
+        "end": 900,
+        "startDates": [
+          {
+            "year": -350,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-tikal",
+              "sourceLocation": "infobox and lead ('4th century BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "calakmul",
+      "name": "Calakmul (Kaan)",
+      "color": "#6a3a4a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -324,
+        "end": 950,
+        "startDates": [
+          {
+            "year": -324,
+            "margin": 75,
+            "source": {
+              "sourceKey": "wp-calakmul",
+              "sourceLocation": "infobox ('Built 400–250 BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-calakmul",
+              "sourceLocation": "infobox ('Abandoned 10th century')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "copan",
+      "name": "Copán",
+      "color": "#4a5a7a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": 426,
+        "end": 917,
+        "endDates": [
+          {
+            "year": 917,
+            "margin": 17,
+            "source": {
+              "sourceKey": "wp-copan",
+              "sourceLocation": "lead ('in the early 10th century')"
+            }
+          },
+          {
+            "year": 850,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-copan",
+              "sourceLocation": "infobox ('c. 9th century')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "palenque",
+      "name": "Palenque",
+      "color": "#7a4a6a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": -225,
+        "end": 799,
+        "circa": true
+      }
+    },
+    {
       "id": "south-america",
       "name": "South America",
       "color": "#2f7a5a",
       "parent": "americas"
+    },
+    {
+      "id": "moche",
+      "name": "Moche",
+      "color": "#9a5a3a",
+      "parent": "south-america",
+      "span": {
+        "start": 100,
+        "end": 800
+      }
+    },
+    {
+      "id": "recuay",
+      "name": "Recuay",
+      "color": "#7a6a5a",
+      "parent": "south-america",
+      "span": {
+        "start": -199,
+        "end": 600
+      }
+    },
+    {
+      "id": "chavin",
+      "name": "Chavín",
+      "color": "#5a5a3a",
+      "parent": "south-america",
+      "span": {
+        "start": -899,
+        "end": -249,
+        "circa": true
+      }
+    },
+    {
+      "id": "lima-culture",
+      "name": "Lima culture",
+      "color": "#8a7a5a",
+      "parent": "south-america",
+      "span": {
+        "start": 100,
+        "end": 650,
+        "circa": true
+      }
+    },
+    {
+      "id": "paracas",
+      "name": "Paracas",
+      "color": "#a0603a",
+      "parent": "south-america",
+      "span": {
+        "start": -799,
+        "end": -99,
+        "circa": true
+      }
+    },
+    {
+      "id": "nazca",
+      "name": "Nazca",
+      "color": "#b0703a",
+      "parent": "south-america",
+      "span": {
+        "start": -99,
+        "end": 800,
+        "startDates": [
+          {
+            "year": -99,
+            "source": {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "infobox and lead"
+            }
+          },
+          {
+            "year": -199,
+            "source": {
+              "sourceKey": "wp-nazca-lines",
+              "sourceLocation": "lead ('Nazca phase, from 200 BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "infobox and lead"
+            }
+          },
+          {
+            "year": 750,
+            "source": {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "History > Decline ('by 750 AD')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "wari",
+      "name": "Wari",
+      "color": "#6a4a3a",
+      "parent": "south-america",
+      "span": {
+        "start": 450,
+        "end": 1000,
+        "startDates": [
+          {
+            "year": 450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "infobox ('5th century')"
+            }
+          },
+          {
+            "year": 500,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "lead ('from about 500')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "infobox ('10th century')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "tiwanaku",
+      "name": "Tiwanaku",
+      "color": "#4a6a8a",
+      "parent": "south-america",
+      "span": {
+        "start": 110,
+        "end": 1050,
+        "startDates": [
+          {
+            "year": 110,
+            "margin": 60,
+            "source": {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "Site history ('around AD 110 (50–170, 68% probability)')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1050,
+            "source": {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "infobox (abandoned)"
+            }
+          },
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "Site history ('collapsed around AD 1000')"
+            }
+          }
+        ],
+        "circa": true
+      }
     },
     {
       "id": "caribbean",
@@ -4181,7 +4847,7 @@
       "start": -499,
       "end": 100,
       "tracks": [
-        "north-america"
+        "adena"
       ],
       "descr": "Mounds built from hundreds of thousands of baskets of graded earth serve as burial and ceremonial sites; trade runs from Great Lakes copper to Gulf Coast shells. The Great Serpent Mound has been attributed to the culture, without conclusive evidence.",
       "sources": [
@@ -4198,7 +4864,7 @@
       "title": "The Dorset culture begins",
       "start": -499,
       "tracks": [
-        "arctic"
+        "dorset"
       ],
       "descr": "They hunt seals from holes in the ice and make soapstone lamps (qulliq) burning seal oil; unlike earlier cultures they lack bow and arrow.",
       "sources": [
@@ -4214,7 +4880,7 @@
       "title": "Monte Albán founded",
       "start": -499,
       "tracks": [
-        "mesoamerica"
+        "zapotec"
       ],
       "descr": "Built on a mountaintop in a previously uninhabited no-man’s-land; about 5,200 people live there by around 300 BCE. The Danzantes carvings date from its earliest period and show traits of Olmec culture.",
       "sources": [
@@ -9492,6 +10158,658 @@
             "sourceKey": "wp-early-slavs",
             "sourceLocation": "lead ('Between the sixth and seventh centuries')"
           }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "olmec-decline",
+      "title": "The Olmec heartland is abandoned",
+      "start": -399,
+      "end": -349,
+      "tracks": [
+        "mesoamerica",
+        "epi-olmec"
+      ],
+      "descr": "By about 400 BC the major Olmec centres are abandoned; between 400 and 350 BC the population of the eastern heartland drops precipitously. Tres Zapotes continues to be occupied well past 400 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-olmecs",
+          "sourceLocation": "lead and Decline"
+        },
+        {
+          "sourceKey": "wp-epi-olmec",
+          "sourceLocation": "Cultural context"
+        }
+      ]
+    },
+    {
+      "uuid": "cholula-pyramid",
+      "title": "The Great Pyramid of Cholula begun",
+      "start": -299,
+      "tracks": [
+        "mesoamerica"
+      ],
+      "descr": "Its initial stages probably date to the Terminal Formative; its last construction phase is between CE 750 and 950. By volume, 4.45 million cubic meters.",
+      "sources": [
+        {
+          "sourceKey": "wp-cholula",
+          "sourceLocation": "lead, History and Great Pyramid"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -299,
+          "source": {
+            "sourceKey": "wp-cholula",
+            "sourceLocation": "Great Pyramid ('originally built in 300 BCE')"
+          }
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "early-long-count",
+      "title": "The earliest Long Count dates",
+      "start": -35,
+      "end": -31,
+      "tracks": [
+        "epi-olmec"
+      ],
+      "descr": "Chiapa de Corzo Stela 2 reads 6 December 36 BCE (or 9 October 182 CE), and Tres Zapotes Stela C 1 September 32 BCE, the second oldest Long Count date yet discovered.",
+      "sources": [
+        {
+          "sourceKey": "wp-long-count",
+          "sourceLocation": "Earliest Long Counts table and Correlations caption"
+        },
+        {
+          "sourceKey": "wp-epi-olmec",
+          "sourceLocation": "Script and calendrics"
+        }
+      ],
+      "links": [
+        {
+          "to": "maya-script",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "la-mojarra",
+      "title": "La Mojarra Stela 1",
+      "start": 156,
+      "tracks": [
+        "epi-olmec"
+      ],
+      "descr": "An Isthmian-script text with Long Count dates of 143 and 156 CE, combining images of rulers with script and calendar dates.",
+      "sources": [
+        {
+          "sourceKey": "wp-long-count",
+          "sourceLocation": "Earliest Long Counts table"
+        },
+        {
+          "sourceKey": "wp-olmecs",
+          "sourceLocation": "Artifacts"
+        },
+        {
+          "sourceKey": "wp-epi-olmec",
+          "sourceLocation": "Cultural context"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "monte-alban-capital",
+      "title": "Monte Albán, capital of the Zapotec",
+      "start": -99,
+      "end": 200,
+      "tracks": [
+        "zapotec"
+      ],
+      "descr": "In the Terminal Formative (Monte Albán II) the city of an estimated 17,200 becomes the regional capital; by 200 Zapotec influence reaches from Quiotepec in the north to Ocelotepec and Chiltepec in the south.",
+      "sources": [
+        {
+          "sourceKey": "wp-monte-alban",
+          "sourceLocation": "lead and Site history"
+        },
+        {
+          "sourceKey": "wp-zapotec",
+          "sourceLocation": "History"
+        }
+      ],
+      "links": [
+        {
+          "to": "monte-alban",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "pyramid-of-the-sun",
+      "title": "The Pyramid of the Sun",
+      "start": 150,
+      "tracks": [
+        "teotihuacan"
+      ],
+      "descr": "The largest pyramid at Teotihuacan, whose earliest buildings date to about 200 BCE and whose major monuments are under construction until about 250 CE.",
+      "sources": [
+        {
+          "sourceKey": "wp-pyramid-sun",
+          "sourceLocation": "infobox, lead and History"
+        },
+        {
+          "sourceKey": "wp-teotihuacan",
+          "sourceLocation": "lead and Origins and foundation"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 100,
+          "source": {
+            "sourceKey": "wp-teotihuacan",
+            "sourceLocation": "Origins and foundation ('completed by 100 CE')"
+          }
+        },
+        {
+          "year": 200,
+          "source": {
+            "sourceKey": "wp-pyramid-sun",
+            "sourceLocation": "lead ('constructed about 200 AD')"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "xitle",
+      "title": "Xitle erupts: Cuicuilco is buried",
+      "start": 280,
+      "tracks": [
+        "cuicuilco"
+      ],
+      "descr": "The city, with some 20,000 people at its peak, is destroyed by the eruption; its lava covers about 80 km². The eruption may have prompted a mass emigration out of the central valley.",
+      "sources": [
+        {
+          "sourceKey": "wp-cuicuilco",
+          "sourceLocation": "lead, History and End of the culture"
+        },
+        {
+          "sourceKey": "wp-teotihuacan",
+          "sourceLocation": "Origins and foundation"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 280,
+          "margin": 35,
+          "source": {
+            "sourceKey": "wp-cuicuilco",
+            "sourceLocation": "lead ('between 245 and 315 CE')"
+          }
+        },
+        {
+          "year": 400,
+          "source": {
+            "sourceKey": "wp-cuicuilco",
+            "sourceLocation": "End of the culture ('By the year 400 CE')"
+          }
+        },
+        {
+          "year": 175,
+          "margin": 25,
+          "source": {
+            "sourceKey": "wp-cuicuilco",
+            "sourceLocation": "End of the culture ('around AD 150 to 200')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "feathered-serpent",
+      "title": "The Temple of the Feathered Serpent is desecrated",
+      "start": 300,
+      "tracks": [
+        "teotihuacan"
+      ],
+      "descr": "Power shifts from the temple to the Avenue of the Dead sometime between 250 and 350.",
+      "sources": [
+        {
+          "sourceKey": "wp-teotihuacan",
+          "sourceLocation": "History > Period II"
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "teotihuacan-peak",
+      "title": "Teotihuacan at its height",
+      "start": 350,
+      "end": 650,
+      "tracks": [
+        "teotihuacan"
+      ],
+      "descr": "In Period III the city of around 100,000 people, about half the population of the Valley of Mexico, has 2,000 buildings over 18 square kilometers; in the first half of the first millennium it is the largest city in the Americas. It includes a neighbourhood of ethnic Zapotecs.",
+      "sources": [
+        {
+          "sourceKey": "wp-teotihuacan",
+          "sourceLocation": "lead and History > Period III"
+        },
+        {
+          "sourceKey": "wp-monte-alban",
+          "sourceLocation": "Site history"
+        }
+      ]
+    },
+    {
+      "uuid": "teotihuacan-burned",
+      "title": "Teotihuacan is sacked and burned",
+      "start": 550,
+      "tracks": [
+        "teotihuacan"
+      ],
+      "descr": "Its major monuments are systematically burned; the collapse may be related to the extreme weather of 535–536. The city never regains its population, though it may last until the 7th or 8th century.",
+      "sources": [
+        {
+          "sourceKey": "wp-teotihuacan",
+          "sourceLocation": "lead, Etymology and Period IV"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "el-mirador-height",
+      "title": "El Mirador at its height",
+      "start": -299,
+      "end": 1,
+      "tracks": [
+        "el-mirador"
+      ],
+      "descr": "The city and its sister centres in the Mirador Basin thrive between 300 BC and the Common Era; major construction at Tikal begins around 400–300 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-el-mirador",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "wp-tikal",
+          "sourceLocation": "Preclassic"
+        }
+      ]
+    },
+    {
+      "uuid": "preclassic-collapse",
+      "title": "The Preclassic Maya collapse",
+      "start": 150,
+      "tracks": [
+        "el-mirador",
+        "mesoamerica"
+      ],
+      "descr": "El Mirador is abandoned, as are nearly all other major sites in the area, by about 150 AD, after building a large defensive wall. Tikal may have benefited from the collapse.",
+      "sources": [
+        {
+          "sourceKey": "wp-el-mirador",
+          "sourceLocation": "History > Preclassic collapse"
+        },
+        {
+          "sourceKey": "wp-tikal",
+          "sourceLocation": "Early Classic"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "tikal-stela-29",
+      "title": "Tikal Stela 29",
+      "start": 292,
+      "tracks": [
+        "tikal"
+      ],
+      "descr": "Its Long Count date makes it the first unequivocally Maya artifact; Stela 46 at El Palmar has the earliest Long Count of a lowland Maya site (AD 180).",
+      "sources": [
+        {
+          "sourceKey": "wp-long-count",
+          "sourceLocation": "Earliest Long Counts"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "siyaj-kak",
+      "title": "Siyaj K’ak’ conquers Tikal",
+      "start": 378,
+      "end": 379,
+      "tracks": [
+        "tikal",
+        "teotihuacan"
+      ],
+      "descr": "In January 378 the warlord replaces Tikal’s king; in 378 and 379 he oversees the replacement of the kings of Tikal, Uaxactun and Copán. A Tikal dynasty is thus founded by conquerors from Teotihuacan.",
+      "sources": [
+        {
+          "sourceKey": "wp-siyaj-kak",
+          "sourceLocation": "lead and Overview"
+        },
+        {
+          "sourceKey": "wp-teotihuacan",
+          "sourceLocation": "Year 378"
+        },
+        {
+          "sourceKey": "wp-tikal",
+          "sourceLocation": "lead"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "copan-dynasty",
+      "title": "K’inich Yax K’uk’ Mo’ founds the Copán dynasty",
+      "start": 426,
+      "tracks": [
+        "copan"
+      ],
+      "descr": "A new dynasty with its origins at Tikal: K’uk’ Mo’ Ajaw is installed on the throne in AD 426, using a title borne a generation earlier by Siyaj K’ak’. He dies between 435 and 437.",
+      "sources": [
+        {
+          "sourceKey": "wp-copan",
+          "sourceLocation": "History, Rulers and Founding"
+        }
+      ],
+      "links": [
+        {
+          "to": "siyaj-kak",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "palenque-dynasty",
+      "title": "K’uk’ Bahlam I founds the Palenque dynasty",
+      "start": 431,
+      "tracks": [
+        "palenque"
+      ],
+      "descr": "He governs for four years from 431.",
+      "sources": [
+        {
+          "sourceKey": "wp-palenque",
+          "sourceLocation": "Rulers and Early Classic"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "tikal-defeated-562",
+      "title": "Calakmul defeats Tikal",
+      "start": 562,
+      "tracks": [
+        "tikal",
+        "calakmul"
+      ],
+      "descr": "A Caracol text says Sky Witness of Calakmul defeated Tikal and sacrificed its king Wak Chan K’awiil. The defeat begins a 130-year hiatus at Tikal and marks the division between the Early and Late Classic.",
+      "sources": [
+        {
+          "sourceKey": "wp-calakmul",
+          "sourceLocation": "Tikal defeat"
+        },
+        {
+          "sourceKey": "wp-tikal",
+          "sourceLocation": "Early Classic"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "calakmul-palenque",
+      "title": "Calakmul sacks Palenque",
+      "start": 599,
+      "end": 611,
+      "tracks": [
+        "calakmul",
+        "palenque"
+      ],
+      "descr": "Calakmul and its client states attack Palenque in 599 and again in 611; Palenque rebuilds in response.",
+      "sources": [
+        {
+          "sourceKey": "wp-palenque",
+          "sourceLocation": "History and Early Classic"
+        }
+      ]
+    },
+    {
+      "uuid": "pakal",
+      "title": "K’inich Janaab’ Pakal rules Palenque",
+      "start": 615,
+      "end": 683,
+      "tracks": [
+        "palenque"
+      ],
+      "descr": "He comes to the throne at 12, after his mother Sak K’uk’ steps down; he marries Lady Tzakbu Ajaw in 624 and enlarges the Palace in 654, 661 and 668. His Temple of the Inscriptions is begun perhaps as early as 675.",
+      "sources": [
+        {
+          "sourceKey": "wp-palenque",
+          "sourceLocation": "History, Late Classic and Temple of the Inscriptions"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "chavin-new-temple",
+      "title": "Chavín’s New Temple",
+      "start": -499,
+      "end": -199,
+      "tracks": [
+        "chavin"
+      ],
+      "descr": "Built after the Old Temple (c. 900–500 BCE); the culture ends around 250 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-chavin",
+          "sourceLocation": "infobox, lead and Architecture"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "paracas-necropolis",
+      "title": "The Paracas mummy bundles",
+      "start": -249,
+      "tracks": [
+        "paracas"
+      ],
+      "descr": "About 420 bodies dating to around 300–200 BCE. Burials at the necropolis of Wari Kayan continue until approximately 250 CE.",
+      "sources": [
+        {
+          "sourceKey": "wp-paracas",
+          "sourceLocation": "Mummy bundles and lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -250,
+          "margin": 49,
+          "source": {
+            "sourceKey": "wp-paracas",
+            "sourceLocation": "Mummy bundles ('around 300–200 BCE')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "nazca-lines",
+      "title": "The Nazca Lines",
+      "start": -199,
+      "end": 500,
+      "tracks": [
+        "nazca",
+        "paracas"
+      ],
+      "descr": "The geoglyphs are created between 500 BC and 500 AD, in a Paracas phase (400–200 BC) and a Nazca phase (200 BC – 500 AD). 358 were known by 2022.",
+      "sources": [
+        {
+          "sourceKey": "wp-nazca-lines",
+          "sourceLocation": "lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -199,
+          "source": {
+            "sourceKey": "wp-nazca-lines",
+            "sourceLocation": "lead (Nazca phase)"
+          }
+        },
+        {
+          "year": -399,
+          "source": {
+            "sourceKey": "wp-nazca-lines",
+            "sourceLocation": "lead (Paracas phase)"
+          }
+        },
+        {
+          "year": -499,
+          "source": {
+            "sourceKey": "wp-nazca-lines",
+            "sourceLocation": "lead ('between 500 BC and 500 AD')"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "huaca-del-sol",
+      "title": "The Huaca del Sol",
+      "start": 450,
+      "tracks": [
+        "moche"
+      ],
+      "descr": "By 450 AD eight stages of construction have been completed on the Moche adobe pyramid, built of over 130 million bricks.",
+      "sources": [
+        {
+          "sourceKey": "wp-huaca-del-sol",
+          "sourceLocation": "lead"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "nazca-decline",
+      "title": "The Nazca decline",
+      "start": 500,
+      "end": 750,
+      "tracks": [
+        "nazca"
+      ],
+      "descr": "From 500 AD the civilization declines, with an El Niño triggering widespread, destructive flooding; by 750 it has fallen completely.",
+      "sources": [
+        {
+          "sourceKey": "wp-nazca",
+          "sourceLocation": "History > Decline"
+        }
+      ]
+    },
+    {
+      "uuid": "tiwanaku-rise",
+      "title": "Tiwanaku grows to significance",
+      "start": 375,
+      "end": 700,
+      "tracks": [
+        "tiwanaku"
+      ],
+      "descr": "The city increases its power in the Titicaca basin from 200–500 AD and peaks in 500–600 AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-tiwanaku",
+          "sourceLocation": "Site history and Relationships"
+        }
+      ]
+    },
+    {
+      "uuid": "pampa-grande",
+      "title": "Late Moche: Pampa Grande",
+      "start": 600,
+      "end": 700,
+      "tracks": [
+        "moche"
+      ],
+      "descr": "Late Moche (500–800 AD) is a time of urban nucleation and then collapse; Pampa Grande is prominent in the Moche V period.",
+      "sources": [
+        {
+          "sourceKey": "wp-moche",
+          "sourceLocation": "Background and Southern and Northern Moche"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "wari-expansion",
+      "title": "Wari expansion",
+      "start": 600,
+      "tracks": [
+        "wari",
+        "nazca",
+        "lima-culture"
+      ],
+      "descr": "The Wari take control of villages in the Carahuarazo Valley around 600 A.D.; the Nazca and Lima pages date the arrival of the Wari in their regions to about 650. From around 600 cycles of drought and El Niño hit the Lima culture.",
+      "sources": [
+        {
+          "sourceKey": "wp-wari",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "wp-nazca",
+          "sourceLocation": "Arts > Pottery"
+        },
+        {
+          "sourceKey": "wp-lima-culture",
+          "sourceLocation": "Pachacamac and Decline"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 600,
+          "source": {
+            "sourceKey": "wp-wari",
+            "sourceLocation": "History"
+          }
+        },
+        {
+          "year": 650,
+          "source": {
+            "sourceKey": "wp-nazca",
+            "sourceLocation": "Arts > Pottery"
+          }
+        },
+        {
+          "year": 650,
+          "source": {
+            "sourceKey": "wp-lima-culture",
+            "sourceLocation": "Pachacamac"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "hohokam-pioneer",
+      "title": "Hohokam farming villages",
+      "start": 300,
+      "end": 600,
+      "tracks": [
+        "hohokam"
+      ],
+      "descr": "Ceramics appear shortly before 300 CE, and crops and agricultural skill increase between 300 and 500. By 600 a distinct Hohokam architecture with Mesoamerican similarities emerges, and they begin cultivating agave.",
+      "sources": [
+        {
+          "sourceKey": "wp-hohokam",
+          "sourceLocation": "lead, Overview and Pioneer/Formative period"
         }
       ],
       "circa": true

@@ -190,3 +190,36 @@ notice about their own text. Most pages were read verbatim only in their first ~
   pages give 2 and 25 February). Not used (summary only): Germanicus and Arminius's death, the Marcomannic details
   after 166, Vercingetorix's execution, Aquae Sextiae and Vercellae, Abritus, the Gothic Danube crossing year,
   Reccared's council, the Lombard kings after Alboin, Hengist and Horsa, Badon.
+
+## Seventh pass: the Americas (18 November 2026)
+
+`scripts/classical/americas.ts`: 28 events, 29 sources (four reused from the skeleton), 21 rows. Three web-fetch
+agents (on Sonnet) read 29 pages; none carried an AI-text or LLM-translation banner. *El Mirador* and *Wari culture*
+carry the standard invitation to translate from the Spanish article, which is not a notice about their own text. Most
+long pages were read verbatim only in their first ~40,000 characters.
+
+- **Highlands and Gulf:** the Olmec heartland abandoned (400–350 BC), Cholula's Great Pyramid (300 BCE), the earliest
+  Long Counts (Chiapa de Corzo, 6 December 36 BCE; Tres Zapotes, 1 September 32 BCE), La Mojarra (156 CE), the
+  Epi-Olmec (c. 300 BCE – c. 250 CE), Monte Albán (c. 500 BCE – c. AD 900–1000; the Zapotec infobox's 700 as a claim)
+  and its capital phase (c. 100 BCE – AD 200), Teotihuacan (c. 100 BCE – 750 CE; burned c. 550 as a claim), the
+  Pyramid of the Sun (100 CE and 200 AD as claims), the Feathered Serpent temple (c. 300), the city's height
+  (350–650), Cuicuilco and Xitle (245–315 CE; the page's 400 CE and AD 150–200 as claims).
+- **The Maya:** El Mirador (6th century BC – c. 150 AD; 250 AD as a claim) and its height (300 BC – the Common Era),
+  the Preclassic collapse (c. 150), Tikal (4th century BC – c. 900) and Stela 29 (292), Calakmul (400–250 BC – 10th
+  century), Siyaj K'ak' (January 378; 378–379), Copán (426 – early 10th century; the infobox's 9th century as a
+  claim), Palenque (c. 226 BC – c. 799) and its founder (431), Calakmul's defeat of Tikal (562), the sacks of Palenque
+  (599, 611) and Pakal (615–683).
+- **The Andes:** Chavín (900–250 BCE) and its New Temple (c. 500–200 BCE), Paracas (800–100 BCE) and the mummy
+  bundles (300–200 BCE), the Nazca Lines (500 BC – 500 AD; the Nazca phase 200 BC – 500 AD), Nazca (100 BCE – 800 CE;
+  the Nazca Lines page's 200 BC and the Decline section's 750 as claims) and its decline (500–750), Moche (100–800),
+  the Huaca del Sol (by 450), Pampa Grande (600–700), Recuay (200 BCE – 600 CE), Lima (c. 100 – c. 650), Tiwanaku
+  (c. AD 110, 50–170 – c. 1050; 1000 as a claim) and its rise (375–700), Wari (5th–10th century) and its expansion
+  (c. 600; 650 on the Nazca and Lima pages as claims).
+- **North America:** Adena (c. 500 BC – c. 100 AD), Hopewell (100 BCE – 500 CE; row only), Hohokam (300–1500 CE) and
+  its farming villages (c. 300–600), Dorset (500 BCE – 1500 CE; "perhaps as early as 1000" as a claim).
+- **Judgment calls:** the skeleton's Dorset, Adena and Monte Albán events moved onto the new rows; the Siyaj K'ak'
+  conquest uses "January 378" (no page read verbatim gave the day); Copán's founding is 426 (427 was summary only);
+  El Mirador's row ends with the Preclassic abandonment, not the Late Classic reoccupation; Cuicuilco's 1st-century-BC
+  eruption claim is not used, as the same section calls it a series of eruptions. Not used (summary only): the
+  Calakmul and Tikal kings after 562 (Dos Pilas, Yuknoom Che'en II), Tikal's Teotihuacan embassies, the Sipán tombs,
+  the 6th-century super El Niño, Hopewell's local variants.
