@@ -187,6 +187,83 @@ label.check {
 .toolbar .search {
   width: 300px;
 }
+/* search results: fixed under the input, so a sideways-scrolling toolbar (phones) can't clip them */
+.search-results {
+  position: fixed;
+  z-index: 40;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  width: max-content;
+  max-width: min(520px, calc(100vw - 16px));
+  max-height: min(60vh, 520px);
+  overflow-y: auto;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+.search-head {
+  padding: 6px 12px 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.search-option {
+  display: grid;
+  gap: 1px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.search-option.active {
+  background: color-mix(in srgb, var(--accent) 18%, var(--bg-3));
+}
+.search-option.hidden .search-title {
+  opacity: 0.55;
+}
+.search-title {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.search-years,
+.search-path {
+  font-size: 11.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.search-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-path em {
+  color: var(--danger);
+  font-style: normal;
+}
+.search-empty {
+  padding: 6px 12px;
+}
+/* a row reached from search glows briefly */
+.tl-lane.flash > .tl-lane-label {
+  animation: lane-flash 1.8s ease-out;
+}
+.tl-lane.flash {
+  animation: lane-flash-row 1.8s ease-out;
+}
+@keyframes lane-flash {
+  0%,
+  35% {
+    background: color-mix(in srgb, var(--focus) 45%, var(--bg-2));
+  }
+}
+@keyframes lane-flash-row {
+  0%,
+  35% {
+    background: color-mix(in srgb, var(--focus) 12%, transparent);
+  }
+}
 .toolbar .spacer {
   flex: 1;
 }
@@ -1398,6 +1475,13 @@ main {
   }
   .toolbar .search {
     width: 180px;
+  }
+  .search-results {
+    left: 8px !important;
+    right: 8px;
+    width: auto;
+    max-width: none;
+    min-width: 0 !important;
   }
   /* a horizontally scrolling toolbar would clip the Dating panel, so it opens across the screen */
   .dating-pop {

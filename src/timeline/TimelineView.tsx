@@ -30,6 +30,13 @@ const POINT_HALF = 7;
 
 export interface FocusRequest {
   year: number;
+  /**
+   * Years to bring into view (a row's lifespan, an event's dates). Centered if they fit on screen; if not,
+   * their start goes near the left edge so the reader sees where they begin. Without it, `year` is centered.
+   */
+  range?: [number, number];
+  /** Row to scroll down (or up) to and briefly highlight. */
+  trackId?: string;
   nonce: number;
 }
 
@@ -162,14 +169,55 @@ export function TimelineView(props: Props) {
     if (el) setView({ left: el.scrollLeft, width: el.clientWidth });
   }, [centerOn]);
 
+  // A focus request (search, links, zoom): scroll to its years and, if it names a row, to that row. Rows it
+  // unfolds are already in this render's layout, since the request arrives in the same update.
+  const lanesRef = useRef<HTMLDivElement>(null);
+  /** When the last focus request scrolled; a selection made with it shouldn't re-scroll and cut it short. */
+  const focusedAtRef = useRef(-Infinity);
+  const [flashLane, setFlashLane] = useState<string | null>(null);
   useEffect(() => {
-    if (props.focus) centerOn(props.focus.year, true);
+    const f = props.focus;
+    const el = scrollerRef.current;
+    if (!f || !el) return;
+    const vw = el.clientWidth - labelW;
+    let left = scale.x(f.year) - vw / 2;
+    if (f.range) {
+      const x0 = scale.x(f.range[0]);
+      const x1 = scale.x(f.range[1] + 1);
+      left = x1 - x0 <= vw * 0.85 ? (x0 + x1) / 2 - vw / 2 : x0 - vw * 0.08;
+    }
+    left = Math.max(0, left);
+    centerYearRef.current = Math.round(scale.yearAt(left + vw / 2));
+    let top = el.scrollTop;
+    const lane = f.trackId
+      ? layout.lanes.find((l) => l.lane.id === f.trackId) ?? layout.lanes.find((l) => l.lane.members.includes(f.trackId!))
+      : undefined;
+    if (lane && lanesRef.current) {
+      const rulerH = lanesRef.current.offsetTop;
+      const laneTop = rulerH + lane.top;
+      const viewTop = el.scrollTop + rulerH;
+      const viewBottom = el.scrollTop + el.clientHeight;
+      // only move if the row isn't fully on screen; then put it a third of the way down
+      if (laneTop < viewTop || laneTop + lane.height > viewBottom)
+        top = Math.max(0, laneTop - rulerH - (el.clientHeight - rulerH) / 3);
+      // off then on, so picking the same row again replays the highlight
+      const id = lane.lane.id;
+      setFlashLane(null);
+      requestAnimationFrame(() => setFlashLane(id));
+    }
+    focusedAtRef.current = performance.now();
+    el.scrollTo({ left, top, behavior: 'smooth' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.focus]);
+  useEffect(() => {
+    if (!flashLane) return;
+    const t = setTimeout(() => setFlashLane(null), 1800);
+    return () => clearTimeout(t);
+  }, [flashLane]);
 
   // After a selection (which may open the side panel and narrow the view), make sure the event is on screen.
   useEffect(() => {
-    if (!selectedId) return;
+    if (!selectedId || performance.now() - focusedAtRef.current < 200) return;
     const marks = marksByEventRef.current.get(selectedId);
     if (!marks?.length) return;
     const frame = requestAnimationFrame(() => {
@@ -340,7 +388,7 @@ export function TimelineView(props: Props) {
           ))}
         </div>
 
-        <div className="tl-lanes" style={{ height: layout.height }}>
+        <div className="tl-lanes" ref={lanesRef} style={{ height: layout.height }}>
           <div className="tl-grid" style={{ left: labelW }}>
             {visibleTicks.map((t) => (
               <div key={t} className={`tl-gridline ${t === era ? 'era' : ''}`} style={{ left: scale.x(t) }} />
@@ -366,7 +414,7 @@ export function TimelineView(props: Props) {
             return (
               <div
                 key={lane.id}
-                className={`tl-lane${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
+                className={`tl-lane${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${flashLane === lane.id ? ' flash' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
                 style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
                 onDoubleClick={onLaneDoubleClick(lane.id)}
                 onPointerDown={onLanePointerDown(lane.id)}

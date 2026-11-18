@@ -84,6 +84,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Key events:** events can be marked key, normal or minor. Key events have bold labels, and crowded or
   collapsed rows place them first, so collapsed regions still show their headline events. At a timeline's coarsest
   zoom (1000 years per tick for the ancient timeline) only key events are drawn.
+- **Search:** the toolbar search finds rows (groups, regions, civilizations, periods) and events, shown with their row's path and dates; it ignores case and accents ("hattusa" finds Ḫattuša). Picking a result unfolds the rows above it, scrolls to its row and dates, and highlights the row; an event also opens its details. Results hidden by Filters are greyed out and say so. Typing a year offers "Go to …". Press `/` to search from anywhere.
 - **Gap compression:** long empty stretches collapse into a hatched `⋯ 900 yrs ⋯` break.
 - **Legend:** the Legend button explains every symbol, color and line, using the current theme and only the features the
   open timeline uses. It opens by itself on a reader's first visit.
@@ -184,6 +185,7 @@ which converts and validates them.
 |---|---|
 | `src/lib/calendar.ts` | Eras, year 0, parsing/formatting, round-year ruler ticks |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, error windows |
+| `src/lib/search.ts` | Search index and ranking over rows and events (tested) |
 | `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
 | `src/timeline/layout.ts` | Lanes from the track tree; row packing, `+N` clusters, marks with lighter start/end ranges |
 | `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering |

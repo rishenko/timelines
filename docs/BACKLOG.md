@@ -40,6 +40,11 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 - **Toolbar: done (2026-11-18).** The four chronology menus are now one Dating button with a panel
   (`src/components/DatingMenu.tsx`); the ancient toolbar is two rows at 1700 px instead of three. One row would need
   the subtitle or the search box moved.
+- **Search: done (2026-11-18).** The toolbar search (`src/components/SearchBox.tsx`, `src/lib/search.ts`) finds rows as
+  well as events, shows each result's row path, unfolds collapsed rows and scrolls down to the target, and greys out
+  results hidden by Filters. Still to do: an `aliases` property on tracks and events (Hatti, Kemet, Axum, Wa/Yamato)
+  so other names find them; add it to `types.ts`, `validate.ts` and `data-format.md`, then fill it in during region
+  reviews. REDACTED still has the old event-only search.
 - **Intro for first-time readers** beyond the legend (which now exists): e.g. a short guided tour.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phone and tablet: first pass done (2026-11-18).** Under 640 px: a one-row toolbar that scrolls sideways, a

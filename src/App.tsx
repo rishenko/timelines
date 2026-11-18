@@ -10,7 +10,9 @@ import { SourceForm } from './components/SourceForm.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
 import { ThemePanel } from './components/ThemePanel.tsx';
 import { useTheme } from './state/theme.ts';
-import { compareEvents, datasetPresent } from './lib/years.ts';
+import { compareEvents, datasetPresent, formatEventDates } from './lib/years.ts';
+import { ancestorIds, buildIndex, trackRange, type SearchEntry } from './lib/search.ts';
+import { SearchBox } from './components/SearchBox.tsx';
 import { formatYear, parseYear } from './lib/calendar.ts';
 import {
   chronologyGroups,
@@ -226,17 +228,61 @@ export default function App() {
     setFocus({ year: e.start, nonce: Date.now() });
   };
 
-  const sortedEvents = useMemo(() => [...resolved].sort(compareEvents), [resolved]);
-  const searchLabel = (e: (typeof resolved)[number]) =>
-    `${formatYear(e.start, cal, !!(e.circa || e.startWindow))} · ${e.title}`;
-  const [search, setSearch] = useState('');
-  const onSearch = (value: string) => {
-    setSearch(value);
-    const match = sortedEvents.find((e) => searchLabel(e) === value);
-    if (match) {
-      selectAndFocus(match.uuid);
-      setSearch('');
+  // ---- search: rows and events ----
+  const searchIndex = useMemo(() => buildIndex(data.tracks, [...resolved].sort(compareEvents)), [data.tracks, resolved]);
+  const parseSearchYear = useCallback((text: string) => parseYear(text, cal), [cal]);
+  const formatSearchYear = useCallback((y: number) => formatYear(y, cal), [cal]);
+  const describeYears = useCallback(
+    (entry: SearchEntry) => {
+      if (entry.kind === 'event') {
+        const e = resolvedById.get(entry.id);
+        return e ? formatEventDates(e, cal, !!(e.circa || e.startWindow || e.endWindow)).replace(/ \(.*\)$/, '') : '';
+      }
+      const s = spans.get(entry.id);
+      if (!s) return '';
+      const approx = !!(s.startWindow || s.endWindow || data.tracks.find((t) => t.id === entry.id)?.span?.circa);
+      return `${formatYear(s.start, cal, approx)} – ${formatYear(s.end, cal)}`;
+    },
+    [resolvedById, spans, cal, data.tracks],
+  );
+  const searchHidden = useCallback(
+    (entry: SearchEntry) => {
+      if (entry.kind === 'track') return isOn(filters.tracks, entry.id) ? null : 'row hidden by Filters';
+      const e = resolvedById.get(entry.id);
+      return e && !visibleIds.has(e.uuid) ? 'hidden by Filters' : null;
+    },
+    [filters.tracks, isOn, resolvedById, visibleIds],
+  );
+  /** Opens the folded rows above a row (and, for a row result, the row itself), so the target is on screen. */
+  const reveal = (trackId: string, openSelf: boolean) =>
+    setCollapsed((c) => {
+      const next = { ...c };
+      for (const id of ancestorIds(trackId, data.tracks)) delete next[id];
+      if (openSelf) delete next[trackId];
+      return next;
+    });
+  const onSearchPick = (entry: SearchEntry) => {
+    const hidden = searchHidden(entry);
+    if (entry.kind === 'track') {
+      reveal(entry.id, true);
+      const r = trackRange(entry.id, data.tracks, resolved, spans);
+      setFocus({
+        year: r ? Math.round((r.start + r.end) / 2) : centerRef.current,
+        range: r ? [r.start, r.end] : undefined,
+        trackId: entry.id,
+        nonce: Date.now(),
+      });
+    } else {
+      const e = resolvedById.get(entry.id);
+      if (!e) return;
+      // the row to show it on: its first row that isn't filtered out
+      const trackId = e.tracks.find((t) => isOn(filters.tracks, t)) ?? entry.trackId;
+      reveal(trackId, false);
+      setSelectedId(e.uuid);
+      setFocus({ year: e.start, range: [e.start, e.end ?? e.start], trackId, nonce: Date.now() });
     }
+    if (hidden)
+      notify(`${entry.kind === 'track' ? 'The row ' : ''}“${entry.label}” is hidden by Filters. Open Filters to show it.`);
   };
 
   const fileRef = useRef<HTMLInputElement>(null);
@@ -486,26 +532,16 @@ export default function App() {
             ↺ Default view
           </button>
         )}
-        <input
-          className="search"
-          list="event-titles"
-          placeholder={`Find an event, or type a year + Enter (${exampleYear})`}
-          value={search}
-          onChange={(e) => onSearch(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key !== 'Enter') return;
-            const y = parseYear(search, cal);
-            if (y !== null) {
-              setFocus({ year: y, nonce: Date.now() });
-              setSearch('');
-            }
-          }}
+        <SearchBox
+          index={searchIndex}
+          placeholder={`Find a row or event, or a year (${exampleYear})`}
+          parseYear={parseSearchYear}
+          formatYear={formatSearchYear}
+          describeYears={describeYears}
+          hiddenReason={searchHidden}
+          onPick={onSearchPick}
+          onYear={(y) => setFocus({ year: y, nonce: Date.now() })}
         />
-        <datalist id="event-titles">
-          {sortedEvents.map((e) => (
-            <option key={e.uuid} value={searchLabel(e)} />
-          ))}
-        </datalist>
         <span className="spacer" />
         <button className={showFilters ? 'on' : ''} onClick={() => setShowFilters((s) => !s)}>
           Filters
