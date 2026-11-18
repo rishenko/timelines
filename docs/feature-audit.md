@@ -111,8 +111,8 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
     so the visual timeline is made operable from the keyboard, and a **table view** is the full equivalent for screen
     readers (WCAG accepts a conforming alternative version), which scholars want anyway (item 20).
 
-    a. **Foundations (S–M).** Done 18 November 2026 (see the README's Accessibility entry), except that picking a
-       search result doesn't yet move focus to the event.
+    a. **Foundations (S–M).** Done 18 November 2026 (see the README's Accessibility entry). A search pick opens the
+       event's details with focus there; Escape then lands on the event in the chart.
        - Landmarks and headings: the toolbar, a labelled timeline region ("Timeline: Ancient Civilizations, c. 9000–330
          BCE"), the detail panel with its own heading, and a "Skip to timeline / table" link.
        - Accessible names that carry the facts: "Battle of Kadesh, c. 1274 BCE, Egypt and the Hittites, key event,
@@ -130,6 +130,7 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          chronology"), the rows, importance and sources.
        - It's also the basis of CSV export (item 9).
     c. **Keyboard model for the timeline (M):** one tab stop for the whole timeline (a roving focus), not hundreds.
+       Done 18 November 2026 (README: Accessibility; keys listed in the Legend).
        - ←/→: previous or next event in the row, by date. ↑/↓: the nearest event in the row above or below.
          Home/End: the first or last event in the row. PageUp/PageDown: scroll a screen.
        - +/−: zoom around the focused event. Enter: open it. On a row label, Enter or Space folds or unfolds the row.

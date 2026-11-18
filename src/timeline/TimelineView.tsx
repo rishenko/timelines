@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.ts';
 import type { Dataset } from '../types.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor } from './anchors.ts';
@@ -65,9 +66,24 @@ interface Props {
   onMoveTrack: (id: string, dir: -1 | 1) => void;
   /** Only key events are drawn (the coarsest zoom); noted under the ruler's scale. */
   keyEventsOnly?: boolean;
+  /** Keyboard + / −: one zoom step finer (1) or coarser (-1), centered on a year (the focused event's). */
+  onKeyZoom?: (dir: 1 | -1, year: number) => void;
+  /** Keyboard ?: show the list of keys (the Legend). */
+  onShowKeys?: () => void;
 }
 
 const isApprox = (e: ResolvedEvent) => !!(e.circa || e.startWindow || e.endWindow);
+
+const KEY_MOVES: Record<string, Move> = {
+  ArrowLeft: 'left',
+  ArrowRight: 'right',
+  ArrowUp: 'up',
+  ArrowDown: 'down',
+  Home: 'home',
+  End: 'end',
+  PageUp: 'page-left',
+  PageDown: 'page-right',
+};
 
 export function TimelineView(props: Props) {
   const {
@@ -264,6 +280,82 @@ export function TimelineView(props: Props) {
   const pinch = usePinchSteps(onPinchZoom && ((dir) => onPinchZoom(dir, centerYearRef.current)));
 
   // Only render what is near the viewport (one screen either side).
+  // ---- keyboard: the chart is one Tab stop; arrows move between its controls (rules in ./keyboard.ts) ----
+  const grid = useMemo(
+    () =>
+      buildGrid(layout.lanes, (l) => [
+        ...(l.overflow > 0 || expanded[l.lane.id] ? [labelStopKey(l.lane.id, 'overflow')] : []),
+        ...(l.lane.hasChildren ? [labelStopKey(l.lane.id, 'fold')] : []),
+      ]),
+    [layout, expanded],
+  );
+  /** The control that holds the chart's one Tab stop, with what it held (to find it again after a zoom or fold). */
+  const [active, setActive] = useState<{ key: string; laneId: string; eventIds: string[] } | null>(null);
+  const focusPending = useRef(false);
+  const stopInfo = (key: string) => {
+    for (const l of grid) {
+      const st = l.stops.find((x) => x.key === key);
+      if (st) return { key, laneId: l.laneId, eventIds: st.eventIds };
+    }
+    return null;
+  };
+  const rovingKey = useMemo(() => {
+    const stops = grid.flatMap((l) => l.stops);
+    if (active && stops.some((st) => st.key === active.key)) return active.key;
+    const again = active && relocate(grid, active.laneId, active.eventIds);
+    if (again) return again;
+    const sel = selectedId ? stops.find((st) => !st.label && st.eventIds.includes(selectedId)) : undefined;
+    if (sel) return sel.key;
+    // else the first event at or after the left edge of the view, top to bottom
+    return (stops.find((st) => !st.label && st.x >= view.left) ?? stops.find((st) => !st.label) ?? stops[0])?.key ?? null;
+  }, [grid, active, selectedId, view.left]);
+  const goTo = (key: string) => {
+    setActive(stopInfo(key));
+    focusPending.current = true;
+  };
+  const onStopFocus = (key: string) => {
+    if (active?.key !== key) setActive(stopInfo(key));
+  };
+  // after a key moved focus: focus the control and keep it in sight, clear of the sticky labels and ruler
+  useEffect(() => {
+    if (!focusPending.current || !rovingKey) return;
+    focusPending.current = false;
+    const el = lanesRef.current?.querySelector<HTMLElement>(`[data-stop="${CSS.escape(rovingKey)}"]`);
+    const scroller = scrollerRef.current;
+    if (!el || !scroller) return;
+    el.focus({ preventScroll: true });
+    const r = el.getBoundingClientRect();
+    const box = scroller.getBoundingClientRect();
+    const left = box.left + labelW;
+    const top = box.top + (lanesRef.current?.offsetTop ?? 0);
+    if (!el.closest('.tl-lane-label') && (r.left < left || r.left > box.right - 40))
+      scroller.scrollLeft += r.left - (left + (box.width - labelW) / 3);
+    if (r.top < top || r.bottom > box.bottom) scroller.scrollTop += r.top - (top + 40);
+  });
+  const onKeyNav = (ev: React.KeyboardEvent) => {
+    const key = (ev.target as HTMLElement).closest('[data-stop]')?.getAttribute('data-stop');
+    if (!key || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+    const m = KEY_MOVES[ev.key];
+    if (m) {
+      ev.preventDefault();
+      const to = move(grid, key, m, view.width - labelW);
+      if (to) goTo(to);
+    } else if (ev.key === '+' || ev.key === '=' || ev.key === '-' || ev.key === '_') {
+      ev.preventDefault();
+      const info = stopInfo(key);
+      const e = info?.eventIds.map((id) => eventsById.get(id)).find(Boolean);
+      props.onKeyZoom?.(ev.key === '+' || ev.key === '=' ? 1 : -1, e ? e.start : centerYearRef.current);
+      setActive(info);
+      focusPending.current = true;
+    } else if (ev.key === 'Escape' && selectedId) {
+      ev.preventDefault();
+      onSelect(null);
+    } else if (ev.key === '?') {
+      ev.preventDefault();
+      props.onShowKeys?.();
+    }
+  };
+
   const lo = view.left - view.width;
   const hi = view.left + view.width * 2;
   const inView = (x0: number, x1: number) => x1 >= lo && x0 <= hi;
@@ -416,7 +508,9 @@ export function TimelineView(props: Props) {
           ))}
         </div>
 
-        <div className="tl-lanes" ref={lanesRef} style={{ height: layout.height }}>
+        {/* arrow-key navigation for the controls inside (delegated here; each control is a button) */}
+        {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        <div className="tl-lanes" ref={lanesRef} style={{ height: layout.height }} onKeyDown={onKeyNav}>
           <div className="tl-grid" style={{ left: labelW }}>
             {visibleTicks.map((t) => (
               <div key={t} className={`tl-gridline ${t === era ? 'era' : ''}`} style={{ left: scale.x(t) }} />
@@ -486,6 +580,9 @@ export function TimelineView(props: Props) {
                       className="collapse"
                       aria-label={`All events in ${lane.track.name}${expanded[lane.id] ? '' : ` (${overflow} folded)`}`}
                       aria-expanded={!!expanded[lane.id]}
+                      data-stop={labelStopKey(lane.id, 'overflow')}
+                      tabIndex={rovingKey === labelStopKey(lane.id, 'overflow') ? 0 : -1}
+                      onFocus={() => onStopFocus(labelStopKey(lane.id, 'overflow'))}
                       title={expanded[lane.id] ? 'Limit rows (fold crowded events into +N badges)' : `Show all rows (${overflow} events folded)`}
                       onClick={() => setExpanded((x) => ({ ...x, [lane.id]: !x[lane.id] }))}
                     >
@@ -497,6 +594,9 @@ export function TimelineView(props: Props) {
                       className="collapse"
                       aria-label={`Sub-rows of ${lane.track.name}`}
                       aria-expanded={!lane.collapsed}
+                      data-stop={labelStopKey(lane.id, 'fold')}
+                      tabIndex={rovingKey === labelStopKey(lane.id, 'fold') ? 0 : -1}
+                      onFocus={() => onStopFocus(labelStopKey(lane.id, 'fold'))}
                       title={lane.collapsed ? 'Expand sub-tracks' : 'Collapse sub-tracks into this lane'}
                       onClick={() => props.onToggleCollapsed(lane.id)}
                     >
@@ -505,7 +605,7 @@ export function TimelineView(props: Props) {
                   )}
                 </div>
                 {marks
-                  .filter((m) => inView(Math.min(m.x0, m.whisker?.[0] ?? m.x0), m.footprintEnd))
+                  .filter((m) => m.key === rovingKey || inView(Math.min(m.x0, m.whisker?.[0] ?? m.x0), m.footprintEnd))
                   .map((m) => {
                     if (m.kind === 'cluster') {
                       const ids = m.eventIds!;
@@ -520,6 +620,9 @@ export function TimelineView(props: Props) {
                           style={{ left: labelW + m.x0 - POINT_HALF, top: m.cy - top - MARK_H / 2 }}
                           title={`${ids.length} more events (click to zoom in):\n${titles.join('\n')}`}
                           aria-label={`${ids.length} more events, ${formatYear(Math.min(...years), cal)} to ${formatYear(Math.max(...years), cal)}; zoom in`}
+                          data-stop={m.key}
+                          tabIndex={m.key === rovingKey ? 0 : -1}
+                          onFocus={() => onStopFocus(m.key)}
                           onClick={() => {
                             if (!props.onZoomIn(mid)) setExpanded((x) => ({ ...x, [lane.id]: true }));
                           }}
@@ -568,7 +671,12 @@ export function TimelineView(props: Props) {
                         data-event-id={e.uuid}
                         onMouseEnter={() => setHoverId(e.uuid)}
                         onMouseLeave={() => setHoverId(null)}
-                        onFocus={() => setHoverId(e.uuid)}
+                        data-stop={m.key}
+                        tabIndex={m.key === rovingKey ? 0 : -1}
+                        onFocus={() => {
+                          setHoverId(e.uuid);
+                          onStopFocus(m.key);
+                        }}
                         onBlur={() => setHoverId(null)}
                         onClick={() => onSelect(e.uuid)}
                       >

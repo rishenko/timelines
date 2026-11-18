@@ -94,7 +94,8 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Legend:** the Legend button explains every symbol, color and line, using the current theme and only the features the
   open timeline uses.
 - **Toolbar:** one row on screens about 1700 px wide or more. The subtitle sits in small print under the timeline menu
-  (its full text on hover), and the search box widens while you type in it.
+  (its full text on hover), the zoom buttons show the years per tick as bare numbers (the unit is in the ruler corner,
+  their tooltips and their accessible names), and the search box widens while you type in it.
 - **Themes:** presets and per-color pickers. Each timeline has a default (ancient: Parchment, REDACTED: Dark)
   until the reader picks their own.
 - **Phones and tablets:** one finger pans the timeline and a two-finger pinch steps through the zoom levels. On
@@ -130,7 +131,13 @@ paths; anything else (e.g. `javascript:`) is rejected.
   - focus moves to the detail panel when an event opens, and Escape (or Close) returns it to the event;
   - one polite live region announces zoom changes, "Went to …" and notices;
   - a 2 px focus outline everywhere, and reduced motion respected (no smooth scrolling or animations);
-  - the guided tour as a dialog labelled by its heading.
+  - the guided tour as a dialog labelled by its heading;
+  - **keyboard control of the chart** (`src/timeline/keyboard.ts`): the chart is one Tab stop (a roving focus that
+    starts at the selected event, else one in view); ←/→ move along a row by date (its fold buttons sit left of the
+    first event), ↑/↓ to the nearest event in the next row, Home/End to a row's ends, Page Up/Down about a screen in
+    time; + and − zoom around the focused event; Enter opens it (Esc returns), zooms into a "+N" group or folds a row;
+    ? opens the Legend, whose Keyboard section lists the keys. The view scrolls to keep the focused control in sight,
+    and the focused control stays drawn even when it is off screen.
 
   Checks: `src/a11y.test.tsx` runs axe-core over each bundled timeline (and the tour) and tests the names and focus
   above; jsdom can't check colour contrast, which is left to a per-theme test (planned). oxlint runs the `jsx-a11y`

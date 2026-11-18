@@ -18,6 +18,8 @@ interface Item {
   /** Leave out when the timeline doesn't use this feature. */
   show?: boolean;
   sample: ReactNode;
+  /** The sample is text a screen reader should read (keys), not a drawing. */
+  readSample?: boolean;
   title: string;
   text: ReactNode;
 }
@@ -40,6 +42,27 @@ function LinkSample({ kind }: { kind: 'causes' | 'part-of' | 'succeeds' | 'conqu
   );
 }
 
+const kbd = (...keys: string[]) => (
+  <span className="lg-keys">
+    {keys.map((k) => (
+      <kbd key={k}>{k}</kbd>
+    ))}
+  </span>
+);
+
+/** The chart's keys (src/timeline/keyboard.ts). The whole chart is one Tab stop. */
+const KEYS: Item[] = [
+  { readSample: true, sample: kbd('Tab'), title: 'Into the chart', text: 'The chart is one stop: Tab enters it at the event you last had (or one in view), and Tab again moves on.' },
+  { readSample: true, sample: kbd('←', '→'), title: 'Along a row', text: 'The previous or next event in the row, by date; left of the first are the row’s fold buttons.' },
+  { readSample: true, sample: kbd('↑', '↓'), title: 'Between rows', text: 'The nearest event in time in the row above or below.' },
+  { readSample: true, sample: kbd('Home', 'End'), title: 'Ends of a row', text: 'The first or last event in the row.' },
+  { readSample: true, sample: kbd('PgUp', 'PgDn'), title: 'A screen at a time', text: 'Jump about a screen’s width earlier or later in the row.' },
+  { readSample: true, sample: kbd('+', '−'), title: 'Zoom', text: 'Zoom in or out around the focused event.' },
+  { readSample: true, sample: kbd('Enter'), title: 'Open', text: 'Open the event’s details (Esc closes them and comes back), zoom into a “+N” group, or fold a row.' },
+  { readSample: true, sample: kbd('/'), title: 'Search', text: 'Find a row, an event or a year from anywhere.' },
+  { readSample: true, sample: kbd('?'), title: 'This list', text: 'Opens the legend from the chart.' },
+];
+
 function Section({ title, items }: { title: string; items: Item[] }) {
   items = items.filter((it) => it.show !== false);
   if (!items.length) return null;
@@ -49,7 +72,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
       <dl>
         {items.map((it) => (
           <div key={it.title} className="lg-item">
-            <dt className="lg-sample" aria-hidden>
+            <dt className="lg-sample" aria-hidden={!it.readSample}>
               {it.sample}
             </dt>
             <dd>
@@ -247,6 +270,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
         <Section title="Dates" items={dates} />
         <Section title="Connections" items={links} />
         <Section title="Ruler and view" items={ruler} />
+        <Section title="Keyboard" items={KEYS} />
       </div>
       <p className="muted small">
         Click any event for its description, dates, sources and connections. Use the year buttons to zoom, Filters to hide

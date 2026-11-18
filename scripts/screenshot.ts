@@ -1,7 +1,7 @@
 // Screenshots the app in Microsoft Edge (via playwright-core; no browser download needed).
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
 //        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json] [--click "Button|Other"]
-//        [--pinch in|out] [--long-press "Row name"] [--measure ".toolbar > *"]
+//        [--pinch in|out] [--long-press "Row name"] [--measure ".toolbar > *"] [--keys "Tab|ArrowRight"]
 // --close-legend closes the guided tour (it starts by itself on a first visit) and the legend.
 // --click presses buttons whose text contains each name (or whose tooltip is exactly it), in order, before --expand;
 // "=Name" matches the text exactly (so "=Edit" doesn't also match "Edit mode").
@@ -54,6 +54,14 @@ for (const name of opt('--click')?.split('|') ?? []) {
   if (await btn.count()) await btn.click();
   else problems.push(`--click: no button with "${name}"`);
   await page.waitForTimeout(300);
+}
+
+// --keys presses keys in order, after --click, as a keyboard user would: "Tab|Tab|ArrowRight". "focus:<css>" focuses the
+// first element matching the selector first (e.g. "focus:.tl-mark[tabindex=\"0\"]|ArrowDown").
+for (const k of opt("--keys")?.split("|") ?? []) {
+  if (k.startsWith("focus:")) await page.locator(k.slice(6)).first().focus().catch(() => problems.push(`--keys: nothing matches ${k.slice(6)}`));
+  else await page.keyboard.press(k);
+  await page.waitForTimeout(250);
 }
 
 // --pinch in|out: a two-finger pinch on the timeline (spread = zoom in, close = zoom out), sent as touch events

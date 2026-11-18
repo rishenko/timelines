@@ -132,6 +132,49 @@ describe('accessibility', () => {
     expect(screen.queryByRole('dialog', { name: /Welcome/ })).toBeNull();
   });
 
+  describe('keyboard in the chart', () => {
+    const stops = (c: Element) => [...c.querySelectorAll<HTMLElement>('.tl-lanes [data-stop]')];
+    const laneOf = (el: Element | null) => el?.closest('.tl-lane')?.getAttribute('aria-label');
+    const press = async (key: string) =>
+      act(async () => {
+        fireEvent.keyDown(document.activeElement!, { key });
+      });
+
+    it('is one Tab stop', () => {
+      const { container } = open('ancient-near-east');
+      expect(stops(container).length).toBeGreaterThan(5);
+      expect(stops(container).filter((el) => el.tabIndex === 0)).toHaveLength(1);
+    });
+
+    it('moves along a row with the arrows, and between rows', async () => {
+      const { container } = open('REDACTED');
+      const first = container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!;
+      first.focus();
+      await press('ArrowRight');
+      const next = document.activeElement as HTMLElement;
+      expect(next).not.toBe(first);
+      expect(laneOf(next)).toBe(laneOf(first));
+      expect(next.tabIndex).toBe(0);
+      expect(first.tabIndex).toBe(-1);
+      await press('ArrowDown');
+      expect(laneOf(document.activeElement)).not.toBe(laneOf(first));
+      await press('Home');
+      expect(document.activeElement?.getAttribute('data-stop')).toBeTruthy();
+    });
+
+    it('zooms with + and opens the key list with ?', async () => {
+      const { container } = open('REDACTED');
+      container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!.focus();
+      const zoomOn = () => screen.getByRole('group', { name: 'Years per tick' }).querySelector('.on')?.textContent;
+      const before = zoomOn();
+      await press('+');
+      expect(zoomOn()).not.toBe(before);
+      expect(document.activeElement?.closest('.tl-lanes')).toBeTruthy(); // focus stays in the chart
+      await press('?');
+      expect(screen.getByRole('heading', { name: 'Keyboard' })).toBeTruthy();
+    });
+  });
+
   it('has a skip link to the timeline region', () => {
     open('classical');
     const skip = screen.getByRole('link', { name: 'Skip to the timeline' });

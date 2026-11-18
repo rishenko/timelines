@@ -69,8 +69,17 @@ export function Toolbar(p: Props) {
         <>
           <div className="group" role="group" aria-label="Years per tick">
             {p.increments.map((inc) => (
-              <button key={inc} className={`seg ${p.increment === inc ? 'on' : ''}`} onClick={() => p.onIncrement(inc)}>
-                {inc} yr
+              // numbers only, to keep the toolbar on one row; the unit is in the ruler corner ("500 yr / tick"), the
+              // tooltip and the accessible name
+              <button
+                key={inc}
+                className={`seg ${p.increment === inc ? 'on' : ''}`}
+                aria-label={`${inc} years per tick`}
+                aria-pressed={p.increment === inc}
+                title={`${inc} years per tick`}
+                onClick={() => p.onIncrement(inc)}
+              >
+                {inc}
               </button>
             ))}
           </div>

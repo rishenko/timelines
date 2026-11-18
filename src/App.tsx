@@ -239,7 +239,7 @@ export default function App() {
         search={
           <SearchBox
             index={search.index}
-            placeholder="Find a row, event or year…"
+            placeholder="Row, event or year…"
             example={formatYear(cal.yearZero ? 4500 : -1273, cal)}
             parseYear={search.parseYear}
             formatYear={search.formatYear}
@@ -391,6 +391,13 @@ export default function App() {
             }}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}
+            onKeyZoom={(dir, year) => {
+              const next = dir === 1 ? finerIncrement(meta.increments, increment) : coarserIncrement(meta.increments, increment);
+              if (next === undefined) return setAnnouncement(dir === 1 ? 'Already at the closest zoom' : 'Already at the widest zoom');
+              setIncrement(next);
+              setFocus({ year, nonce: Date.now() });
+            }}
+            onShowKeys={() => panels.show('legend', true)}
           />
         )}
         <SidePanel
