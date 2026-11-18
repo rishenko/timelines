@@ -27,7 +27,8 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   Mediterranean and Near East (the Hellenistic kingdoms, Rome to Justinian, Carthage, Parthia and the Sasanians, Judea,
   Arabia and the rise of Islam) and South Asia (the Maurya Empire to Harsha, the Kushans, the Guptas, the
   Deccan, Tamilakam and Sri Lanka) and East Asia (Qin to the founding of Tang, the Three Kingdoms of Korea,
-  Yayoi to Asuka Japan); 152 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
+  Yayoi to Asuka Japan) and the Steppe (Xiongnu, Xianbei, Rouran, Turks, Kidarites, Hephthalites, Sarmatians, Huns,
+  Avars); 174 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first); sources and judgment calls in `docs/classical-sources.md`.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).

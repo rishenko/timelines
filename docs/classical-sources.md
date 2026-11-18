@@ -99,3 +99,26 @@ read verbatim only for their first ~40,000 characters; dates seen only in the su
 - **Judgment calls:** Gojoseon's row has no span (its founding date, 2333 BCE, is called mythological); Buddhism in
   Japan uses the Kofun page's 538 (the Asuka page's 552 and 592 were read only in summary). Himiko and Yamatai were
   read only in summary and are not included.
+
+## Fourth pass: the Steppe (18 November 2026)
+
+`scripts/classical/steppe.ts`: 22 events, 18 sources, 11 rows. Three web-fetch agents (on Sonnet) read 19 pages; none
+carried an AI-text or LLM-translation banner. *Alans* was read verbatim only in its first line, so it is not cited.
+
+- **The eastern steppe:** the Xiongnu (3rd century BC – 2nd century AD; the lead's "late 1st century AD" as a claim),
+  Modu Chanyu (209–174 BCE), Baideng (200 BC) and the heqin of 198 BC, the Yuezhi defeat (c. 176 BCE; the Wusun page's
+  162 as a claim) and settlement in Bactria (132–130 BCE; 133–132 as a claim), the Han–Xiongnu wars (133 BC – 89 AD),
+  the split (48 AD), the defeat of the Northern Xiongnu (89–91), the Xianbei (from c. 208 BC) and Tanshihuai
+  (c. 156–181).
+- **Turks and Rouran:** the Rouran (330–555; 550 as a claim), Bumin's victory (552), embassies with Byzantium (568–569),
+  the split (581–603), the Eastern (581–645; 603 and 630 as claims) and Western (581–657; 603 as a claim) khaganates,
+  the Tang conquest of the Eastern Turks (630).
+- **Central Asia:** the Kidarites (320–467) and their kingdom in Bactria (360–370), the Hephthalites (440s–560; 450 as a
+  claim) and their destruction by the Turks and Sasanians (557–560).
+- **The west:** the Sarmatians (5th century BCE – 4th century CE) and the Alans in the Caucasus (50–60 CE), the Huns
+  (370s–469) on the Volga (by 370), Attila (434–453; 435 and the Huns infobox's 437 as claims), the Catalaunian Plains
+  (20 June 451), Nedao (c. 454), the Avar Khaganate (567–822) and the Avar–Byzantine wars (568–626).
+- **Judgment calls:** the Yuezhi and Wusun have no rows (their events sit on the Steppe region row); the Sarmatians
+  and Alans share a row; the Hephthalites' destruction uses the First Turkic page's 557 and the Hephthalite lead's 560
+  (the Western Turkic page's Qarshi, 565, is not used). Not used (summary only): Attila's 447 and 452 campaigns in
+  detail, the Rouran founding by Shelun c. 402, Peroz I and the Hephthalites, the Avar khagan list.

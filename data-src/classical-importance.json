@@ -9,10 +9,12 @@
     "hijrah", "yarmuk", "sasanian-fall", "chandragupta-maurya", "ashoka", "kalinga-war", "buddhism-sri-lanka",
     "kushan-founded", "kanishka", "chandragupta-i", "nalanda", "qin-unification", "terracotta-army", "han-founded",
     "shiji", "cai-lun-paper", "han-ends", "jin-moves-south", "sui-reunifies", "grand-canal", "tang-founded",
-    "gojoseon-falls", "goguryeo-buddhism", "buddhism-japan"
+    "gojoseon-falls", "goguryeo-buddhism", "buddhism-japan", "modu-xiongnu", "han-xiongnu-wars", "huns-arrive",
+    "attila", "catalaunian-plains", "first-turkic-founded"
   ],
   "3": [
-    "la-venta-pyramid", "latin-league", "pella", "kalanay", "naneghat", "wang-xuance", "baekje-ungjin", "gwanggaeto"
+    "la-venta-pyramid", "latin-league", "pella", "kalanay", "naneghat", "wang-xuance", "baekje-ungjin", "gwanggaeto",
+    "alans-caucasus", "turk-byzantine-embassies"
   ],
   "_rubric": "Same rubric as data-src/ancient-importance.json. 1 = key: founding, unification or fall of a major state; a decisive turning point; an iconic monument or text. 3 = minor. Everything not listed is normal. The overlap events (500–330 BCE) keep the levels they have in the ancient timeline. Proposed by Claude, pending the author's review."
 }
