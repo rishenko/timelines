@@ -237,11 +237,33 @@ export function TimelineView(props: Props) {
   const canvasW = labelW + scale.width + END_PAD;
   const era = eraStart(cal);
 
-  const onLaneDoubleClick = (trackId: string) => (ev: React.MouseEvent<HTMLDivElement>) => {
-    if (!editMode || (ev.target !== ev.currentTarget && !(ev.target as HTMLElement).classList.contains('tl-span'))) return;
-    const rect = ev.currentTarget.getBoundingClientRect();
-    const contentX = ev.clientX - rect.left - labelW;
+  // Adding an event in edit mode: double-click an empty spot in a lane, or on touch screens hold a finger there.
+  const isEmptySpot = (target: EventTarget, lane: Element) =>
+    target === lane || (target as HTMLElement).classList.contains('tl-span');
+  const createAt = (trackId: string, lane: Element, clientX: number) => {
+    const contentX = clientX - lane.getBoundingClientRect().left - labelW;
     props.onCreateAt(trackId, Math.floor(scale.yearAt(contentX)));
+  };
+  const onLaneDoubleClick = (trackId: string) => (ev: React.MouseEvent<HTMLDivElement>) => {
+    if (editMode && isEmptySpot(ev.target, ev.currentTarget)) createAt(trackId, ev.currentTarget, ev.clientX);
+  };
+  const LONG_PRESS_MS = 550;
+  const pressRef = useRef<{ timer: number; x: number; y: number } | null>(null);
+  const cancelPress = () => {
+    if (pressRef.current) clearTimeout(pressRef.current.timer);
+    pressRef.current = null;
+  };
+  const onLanePointerDown = (trackId: string) => (ev: React.PointerEvent<HTMLDivElement>) => {
+    if (!editMode || ev.pointerType !== 'touch' || !isEmptySpot(ev.target, ev.currentTarget)) return;
+    cancelPress();
+    const lane = ev.currentTarget;
+    const x = ev.clientX;
+    pressRef.current = { x, y: ev.clientY, timer: window.setTimeout(() => (cancelPress(), createAt(trackId, lane, x)), LONG_PRESS_MS) };
+  };
+  const onLanePointerMove = (ev: React.PointerEvent) => {
+    // a finger that moves is panning, not pressing
+    const p = pressRef.current;
+    if (p && Math.hypot(ev.clientX - p.x, ev.clientY - p.y) > 10) cancelPress();
   };
 
   /** Shaded lifespan band, fading across uncertain ends. */
@@ -273,7 +295,7 @@ export function TimelineView(props: Props) {
 
   return (
     <div
-      className={`tl-scroller ${related ? 'has-focus' : ''}`}
+      className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
       ref={scrollerRef}
       onScroll={onScroll}
       onTouchStart={onTouchStart}
@@ -334,6 +356,10 @@ export function TimelineView(props: Props) {
                 className={`tl-lane${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
                 style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
                 onDoubleClick={onLaneDoubleClick(lane.id)}
+                onPointerDown={onLanePointerDown(lane.id)}
+                onPointerMove={onLanePointerMove}
+                onPointerUp={cancelPress}
+                onPointerCancel={cancelPress}
               >
                 {lane.members.map((id) => {
                   const s = spans.get(id);

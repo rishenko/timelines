@@ -1445,3 +1445,15 @@ main {
     overflow: hidden;
   }
 }
+
+/* holding a finger on a lane in edit mode adds an event: keep the phone from selecting text or opening its menu */
+.tl-scroller.editing .tl-lane {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+@media (max-width: 640px) {
+  /* the legend opens on first visit; on a phone it must leave the timeline visible */
+  .legend-panel {
+    max-height: 45vh;
+  }
+}

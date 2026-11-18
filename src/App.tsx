@@ -546,7 +546,7 @@ export default function App() {
             </button>
           )}
           <span className="muted small">
-            Double-click an empty spot in a lane to add an event there; use the lane buttons to edit, reorder or add
+            Double-click an empty spot in a lane (or hold a finger there on a touch screen) to add an event there; use the lane buttons to edit, reorder or add
             sub-tracks. Edits stay in this browser until you discard them.
           </span>
         </div>

@@ -44,8 +44,9 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 - **Phone and tablet: first pass done (2026-11-18).** Under 640 px: a one-row toolbar that scrolls sideways, a
   120 px label column, side panels that overlay the timeline, the credits note clamped to two lines (tap to open),
   and the Dating panel across the screen. Everywhere: one finger pans, a two-finger pinch steps the zoom. Tablets
-  (≥ 768 px) were already usable. Not yet tried on a real phone; still open: edit mode on touch (it relies on
-  double-click) and the legend's height on small screens.
+  (≥ 768 px) were already usable. In edit mode, holding a finger on an empty spot of a lane adds an event (the
+  touch form of double-click); the legend takes at most 45% of a phone's height. Not yet tried on a real phone. The
+  edit bar is tall on phones (its buttons wrap to three rows).
 - **Hosting**: live on GitHub Pages (public repo); `npm run deploy` publishes.
 - **Editing lifespan claims**: the track form edits a lifespan's dates but not its date claims (those are
   kept when the dates don't change, and editable in the JSON).

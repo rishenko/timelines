@@ -1,7 +1,7 @@
 // Screenshots the app in Microsoft Edge (via playwright-core; no browser download needed).
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
 //        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json] [--click "Button|Other"]
-//        [--pinch in|out]
+//        [--pinch in|out] [--long-press "Row name"]
 // --click presses toolbar or panel buttons whose text contains each name, in order, before --expand.
 // --expand opens collapsed rows by their label (in order, so a group can be opened before its regions);
 // --scroll-to scrolls the timeline so that row sits near the top. Names are separated by "|".
@@ -13,7 +13,7 @@ import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const args = process.argv.slice(2);
-const valued = /^--(width|height|expand|scroll-to|storage|click|pinch)$/;
+const valued = /^--(width|height|expand|scroll-to|storage|click|pinch|long-press)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
   console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
@@ -65,7 +65,7 @@ if (pinch) {
   }
 }
 
-const label =(name: string) => page.locator('.tl-lane-label').filter({ has: page.getByText(name, { exact: true }) }).first();
+const label = (name: string) => page.locator('.tl-lane-label').filter({ has: page.getByText(name, { exact: true }) }).first();
 for (const name of opt('--expand')?.split('|') ?? []) {
   const l = label(name);
   await l.scrollIntoViewIfNeeded();
@@ -83,6 +83,24 @@ if (target) {
     if (s) s.scrollTop -= 60; // clear the sticky axis header
   });
   await page.waitForTimeout(300);
+}
+
+// --long-press "Row name": hold one finger on an empty spot of that row's lane (just right of its label, near
+// the lane's bottom edge), as a touch screen would; in edit mode this opens a new event there.
+const pressRow = opt('--long-press');
+if (pressRow) {
+  const l = label(pressRow);
+  const labelBox = await l.boundingBox();
+  const laneBox = await l.locator('xpath=..').boundingBox();
+  if (!labelBox || !laneBox) problems.push(`--long-press: no row "${pressRow}"`);
+  else {
+    const cdp = await page.context().newCDPSession(page);
+    const pt = [{ x: labelBox.x + labelBox.width + 40, y: laneBox.y + laneBox.height - 5, id: 1 }];
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: pt });
+    await page.waitForTimeout(900);
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await page.waitForTimeout(400);
+  }
 }
 
 await page.screenshot({ path: out, fullPage: args.includes('--full') });
