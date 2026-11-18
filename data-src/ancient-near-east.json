@@ -3,15 +3,31 @@
   "meta": {
     "id": "ancient-near-east",
     "title": "Ancient Civilizations",
-    "subtitle": "The Near East, Egypt, the Aegean, Iran, the Indus, China and the Americas, c. 3500–330 BCE",
-    "description": "Bronze Age and early Iron Age civilizations: Mesopotamia and Assyria, the Levant, Egypt, Anatolia, the Aegean, Iran, the Indus Valley, China, and the Americas.",
+    "subtitle": "Europe, the Mediterranean, the Near East, Iran, the Steppe, the Indus, China and the Americas, c. 3500–330 BCE",
+    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, the Indus Valley, China, and the Americas.",
     "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
     "calendar": { "before": "BCE", "after": "CE", "yearZero": false, "aliases": { "before": ["BC"], "after": ["AD"] } },
     "increments": [10, 50, 100, 500],
     "defaultIncrement": 100,
     "defaultTheme": "parchment",
     "circaFade": 0,
-    "collapsed": ["minoan", "mycenaean", "hittites", "egypt", "sumer", "babylonia", "assyria", "canaan", "elam", "harappan", "zhou"]
+    "collapsed": [
+      "minoan",
+      "mycenaean",
+      "hittites",
+      "egypt",
+      "sumer",
+      "babylonia",
+      "assyria",
+      "canaan",
+      "elam",
+      "harappan",
+      "zhou",
+      "rome",
+      "greece",
+      "iberia",
+      "steppe"
+    ]
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" } },
   "sources": {
@@ -529,7 +545,270 @@
       "tags": ["wikipedia"],
       "accessed": "2026-11-17"
     },
-    "wp-el-mirador": { "name": "Wikipedia: El Mirador", "url": "https://en.wikipedia.org/wiki/El_Mirador", "tags": ["wikipedia"], "accessed": "2026-11-17" }
+    "wp-el-mirador": { "name": "Wikipedia: El Mirador", "url": "https://en.wikipedia.org/wiki/El_Mirador", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-stonehenge": { "name": "Wikipedia: Stonehenge", "url": "https://en.wikipedia.org/wiki/Stonehenge", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-newgrange": { "name": "Wikipedia: Newgrange", "url": "https://en.wikipedia.org/wiki/Newgrange", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-malta-temples": {
+      "name": "Wikipedia: Megalithic Temples of Malta",
+      "url": "https://en.wikipedia.org/wiki/Megalithic_Temples_of_Malta",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-otzi": { "name": "Wikipedia: Ötzi", "url": "https://en.wikipedia.org/wiki/%C3%96tzi", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-corded-ware": {
+      "name": "Wikipedia: Corded Ware culture",
+      "url": "https://en.wikipedia.org/wiki/Corded_Ware_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-bell-beaker": {
+      "name": "Wikipedia: Bell Beaker culture",
+      "url": "https://en.wikipedia.org/wiki/Bell_Beaker_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-unetice": {
+      "name": "Wikipedia: Únětice culture",
+      "url": "https://en.wikipedia.org/wiki/%C3%9An%C4%9Btice_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-nordic-ba": {
+      "name": "Wikipedia: Nordic Bronze Age",
+      "url": "https://en.wikipedia.org/wiki/Nordic_Bronze_Age",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-urnfield": {
+      "name": "Wikipedia: Urnfield culture",
+      "url": "https://en.wikipedia.org/wiki/Urnfield_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-hallstatt": {
+      "name": "Wikipedia: Hallstatt culture",
+      "url": "https://en.wikipedia.org/wiki/Hallstatt_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-la-tene": {
+      "name": "Wikipedia: La Tène culture",
+      "url": "https://en.wikipedia.org/wiki/La_T%C3%A8ne_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-etruscans": {
+      "name": "Wikipedia: Etruscan civilization",
+      "url": "https://en.wikipedia.org/wiki/Etruscan_civilization",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-founding-rome": {
+      "name": "Wikipedia: Founding of Rome",
+      "url": "https://en.wikipedia.org/wiki/Founding_of_Rome",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-roman-kingdom": { "name": "Wikipedia: Roman Kingdom", "url": "https://en.wikipedia.org/wiki/Roman_Kingdom", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-roman-republic": { "name": "Wikipedia: Roman Republic", "url": "https://en.wikipedia.org/wiki/Roman_Republic", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-allia": {
+      "name": "Wikipedia: Battle of the Allia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Allia",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-archaic-greece": { "name": "Wikipedia: Archaic Greece", "url": "https://en.wikipedia.org/wiki/Archaic_Greece", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-classical-greece": {
+      "name": "Wikipedia: Classical Greece",
+      "url": "https://en.wikipedia.org/wiki/Classical_Greece",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-olympics": {
+      "name": "Wikipedia: Ancient Olympic Games",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Olympic_Games",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-greek-colonisation": {
+      "name": "Wikipedia: Greek colonisation",
+      "url": "https://en.wikipedia.org/wiki/Greek_colonisation",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-greek-alphabet": { "name": "Wikipedia: Greek alphabet", "url": "https://en.wikipedia.org/wiki/Greek_alphabet", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-marathon": {
+      "name": "Wikipedia: Battle of Marathon",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Marathon",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-salamis": {
+      "name": "Wikipedia: Battle of Salamis",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Salamis",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-peloponnesian-war": {
+      "name": "Wikipedia: Peloponnesian War",
+      "url": "https://en.wikipedia.org/wiki/Peloponnesian_War",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-philip-ii": {
+      "name": "Wikipedia: Philip II of Macedon",
+      "url": "https://en.wikipedia.org/wiki/Philip_II_of_Macedon",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-cycladic": {
+      "name": "Wikipedia: Cycladic culture",
+      "url": "https://en.wikipedia.org/wiki/Cycladic_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-macedon": {
+      "name": "Wikipedia: Macedonia (ancient kingdom)",
+      "url": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-lydia": { "name": "Wikipedia: Lydia", "url": "https://en.wikipedia.org/wiki/Lydia", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-croesus": { "name": "Wikipedia: Croesus", "url": "https://en.wikipedia.org/wiki/Croesus", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-phrygia": { "name": "Wikipedia: Phrygia", "url": "https://en.wikipedia.org/wiki/Phrygia", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-midas": { "name": "Wikipedia: Midas", "url": "https://en.wikipedia.org/wiki/Midas", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-lycia": { "name": "Wikipedia: Lycia", "url": "https://en.wikipedia.org/wiki/Lycia", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-alashiya": { "name": "Wikipedia: Alashiya", "url": "https://en.wikipedia.org/wiki/Alashiya", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-cyprus-ancient": {
+      "name": "Wikipedia: Ancient history of Cyprus",
+      "url": "https://en.wikipedia.org/wiki/Ancient_history_of_Cyprus",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-odrysian": {
+      "name": "Wikipedia: Odrysian kingdom",
+      "url": "https://en.wikipedia.org/wiki/Odrysian_kingdom",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-terramare": {
+      "name": "Wikipedia: Terramare culture",
+      "url": "https://en.wikipedia.org/wiki/Terramare_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-villanovan": {
+      "name": "Wikipedia: Villanovan culture",
+      "url": "https://en.wikipedia.org/wiki/Villanovan_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-samnites": { "name": "Wikipedia: Samnites", "url": "https://en.wikipedia.org/wiki/Samnites", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-samnite-wars": { "name": "Wikipedia: Samnite Wars", "url": "https://en.wikipedia.org/wiki/Samnite_Wars", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-carthage": {
+      "name": "Wikipedia: Ancient Carthage",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Carthage",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-alalia": {
+      "name": "Wikipedia: Battle of Alalia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Alalia",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-himera": {
+      "name": "Wikipedia: Battle of Himera (480 BC)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Himera_(480_BC)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-sicilian-wars": { "name": "Wikipedia: Sicilian Wars", "url": "https://en.wikipedia.org/wiki/Sicilian_Wars", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-magna-graecia": { "name": "Wikipedia: Magna Graecia", "url": "https://en.wikipedia.org/wiki/Magna_Graecia", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-syracuse": {
+      "name": "Wikipedia: History of Syracuse, Sicily",
+      "url": "https://en.wikipedia.org/wiki/History_of_Syracuse,_Sicily",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-sicilian-expedition": {
+      "name": "Wikipedia: Sicilian Expedition",
+      "url": "https://en.wikipedia.org/wiki/Sicilian_Expedition",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-nuragic": {
+      "name": "Wikipedia: Nuragic civilization",
+      "url": "https://en.wikipedia.org/wiki/Nuragic_civilization",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-talaiotic": {
+      "name": "Wikipedia: Talaiotic culture",
+      "url": "https://en.wikipedia.org/wiki/Talaiotic_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-los-millares": { "name": "Wikipedia: Los Millares", "url": "https://en.wikipedia.org/wiki/Los_Millares", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-argaric": { "name": "Wikipedia: Argaric culture", "url": "https://en.wikipedia.org/wiki/El_Argar_culture", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-tartessos": { "name": "Wikipedia: Tartessos", "url": "https://en.wikipedia.org/wiki/Tartessos", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-iberians": { "name": "Wikipedia: Iberians", "url": "https://en.wikipedia.org/wiki/Iberians", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-libu": { "name": "Wikipedia: Libu", "url": "https://en.wikipedia.org/wiki/Libu", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-cyrene": { "name": "Wikipedia: Cyrene, Libya", "url": "https://en.wikipedia.org/wiki/Cyrene,_Libya", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-botai": { "name": "Wikipedia: Botai culture", "url": "https://en.wikipedia.org/wiki/Botai_culture", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-horse-domestication": {
+      "name": "Wikipedia: Domestication of the horse",
+      "url": "https://en.wikipedia.org/wiki/Domestication_of_the_horse",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-yamnaya": { "name": "Wikipedia: Yamnaya culture", "url": "https://en.wikipedia.org/wiki/Yamnaya_culture", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-afanasievo": {
+      "name": "Wikipedia: Afanasievo culture",
+      "url": "https://en.wikipedia.org/wiki/Afanasievo_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-sintashta": {
+      "name": "Wikipedia: Sintashta culture",
+      "url": "https://en.wikipedia.org/wiki/Sintashta_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-arkaim": { "name": "Wikipedia: Arkaim", "url": "https://en.wikipedia.org/wiki/Arkaim", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-chariot": { "name": "Wikipedia: Chariot", "url": "https://en.wikipedia.org/wiki/Chariot", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-andronovo": {
+      "name": "Wikipedia: Andronovo culture",
+      "url": "https://en.wikipedia.org/wiki/Andronovo_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-srubnaya": {
+      "name": "Wikipedia: Srubnaya culture",
+      "url": "https://en.wikipedia.org/wiki/Srubnaya_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-indo-aryan-migrations": {
+      "name": "Wikipedia: Indo-Aryan migrations",
+      "url": "https://en.wikipedia.org/wiki/Indo-Aryan_migrations",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-cimmerians": { "name": "Wikipedia: Cimmerians", "url": "https://en.wikipedia.org/wiki/Cimmerians", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-scythians": { "name": "Wikipedia: Scythians", "url": "https://en.wikipedia.org/wiki/Scythians", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-madyes": { "name": "Wikipedia: Madyes", "url": "https://en.wikipedia.org/wiki/Madyes", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-darius-scythia": {
+      "name": "Wikipedia: Scythian campaign of Darius I",
+      "url": "https://en.wikipedia.org/wiki/Scythian_campaign_of_Darius_I",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-17"
+    },
+    "wp-ateas": { "name": "Wikipedia: Ateas", "url": "https://en.wikipedia.org/wiki/Ateas", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-saka": { "name": "Wikipedia: Saka", "url": "https://en.wikipedia.org/wiki/Saka", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-massagetae": { "name": "Wikipedia: Massagetae", "url": "https://en.wikipedia.org/wiki/Massagetae", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-tomyris": { "name": "Wikipedia: Tomyris", "url": "https://en.wikipedia.org/wiki/Tomyris", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-pazyryk": { "name": "Wikipedia: Pazyryk culture", "url": "https://en.wikipedia.org/wiki/Pazyryk_culture", "tags": ["wikipedia"], "accessed": "2026-11-17" }
   },
   "chronologies": {
     "middle": {
@@ -600,7 +879,205 @@
     }
   },
   "tracks": [
+    { "id": "europe", "name": "Europe", "color": "#5b6e8f" },
+    { "id": "megaliths", "name": "Megalith builders", "color": "#7a8494", "parent": "europe" },
+    {
+      "id": "corded-ware",
+      "name": "Corded Ware culture",
+      "color": "#8a7a5a",
+      "parent": "europe",
+      "span": { "start": "c. 2900 BCE", "end": "c. 2300 BCE" }
+    },
+    {
+      "id": "bell-beaker",
+      "name": "Bell Beaker culture",
+      "color": "#a0784a",
+      "parent": "europe",
+      "span": { "start": "c. 2800 BCE", "end": "c. 1800 BCE" }
+    },
+    { "id": "unetice", "name": "Únětice culture", "color": "#9a8a3a", "parent": "europe", "span": { "start": "c. 2300 BCE", "end": "c. 1600 BCE" } },
+    {
+      "id": "nordic-ba",
+      "name": "Nordic Bronze Age",
+      "color": "#4f7f8f",
+      "parent": "europe",
+      "span": {
+        "start": "c. 1750 BCE",
+        "end": "c. 500 BCE",
+        "startDates": [
+          { "year": "1750 BCE", "source": { "sourceKey": "wp-nordic-ba", "sourceLocation": "infobox ('c. 2000/1750–500 BC')" } },
+          { "year": "2000 BCE", "source": { "sourceKey": "wp-nordic-ba", "sourceLocation": "infobox (2000/1750)" } }
+        ]
+      }
+    },
+    { "id": "urnfield", "name": "Urnfield culture", "color": "#7f6a8a", "parent": "europe", "span": { "start": "c. 1300 BCE", "end": "c. 750 BCE" } },
+    { "id": "hallstatt", "name": "Hallstatt culture", "color": "#6a8a6a", "parent": "europe", "span": { "start": "1200 BCE", "end": "450 BCE" } },
+    { "id": "la-tene", "name": "La Tène (Celts)", "color": "#4f8a5a", "parent": "europe", "span": { "start": "c. 450 BCE", "end": "c. 1 BCE" } },
+    {
+      "id": "terramare",
+      "name": "Terramare culture",
+      "color": "#8a7a4a",
+      "parent": "europe",
+      "span": { "start": "c. 1700 BCE", "end": "c. 1150 BCE" }
+    },
+    {
+      "id": "villanovan",
+      "name": "Villanovan culture",
+      "color": "#9a5a3a",
+      "parent": "europe",
+      "span": { "start": "c. 900 BCE", "end": "c. 700 BCE" }
+    },
+    { "id": "etruscans", "name": "Etruscans", "color": "#a0523a", "parent": "europe", "span": { "start": "900 BCE", "end": "27 BCE" } },
+    { "id": "rome", "name": "Rome", "color": "#8f2f3a", "parent": "europe", "span": { "start": "c. 753 BCE", "end": "27 BCE" } },
+    {
+      "id": "rome-kingdom",
+      "name": "Roman Kingdom (traditional)",
+      "color": "#a3444e",
+      "parent": "rome",
+      "span": { "start": "c. 753 BCE", "end": "c. 509 BCE" }
+    },
+    { "id": "rome-republic", "name": "Roman Republic", "color": "#7a2532", "parent": "rome", "span": { "start": "c. 509 BCE", "end": "27 BCE" } },
+    { "id": "samnites", "name": "Samnites", "color": "#7a4a3a", "parent": "europe" },
+    {
+      "id": "odrysian",
+      "name": "Odrysian kingdom (Thrace)",
+      "color": "#6a5a8a",
+      "parent": "europe",
+      "span": { "start": "c. 480 BCE", "end": "c. 30 BCE" }
+    },
+    { "id": "west-med", "name": "Western Mediterranean", "color": "#3f7f8a" },
+    { "id": "carthage", "name": "Carthage", "color": "#7a3a6a", "parent": "west-med", "span": { "start": "c. 814 BCE", "end": "146 BCE" } },
+    {
+      "id": "magna-graecia",
+      "name": "Magna Graecia and Sicily",
+      "color": "#4a6fb0",
+      "parent": "west-med",
+      "span": {
+        "start": "c. 750 BCE",
+        "end": "205 BCE",
+        "startDates": [
+          {
+            "year": "800 BCE",
+            "source": { "sourceKey": "wp-magna-graecia", "sourceLocation": "infobox ('Founded: 8th century BC'): start of century" }
+          },
+          { "year": "701 BCE", "source": { "sourceKey": "wp-magna-graecia", "sourceLocation": "infobox: end of century" } }
+        ]
+      }
+    },
+    { "id": "nuragic", "name": "Nuragic Sardinia", "color": "#6a7a4a", "parent": "west-med", "span": { "start": "c. 1800 BCE", "end": "238 BCE" } },
+    {
+      "id": "talaiotic",
+      "name": "Talaiotic Balearics",
+      "color": "#8a8a5a",
+      "parent": "west-med",
+      "span": {
+        "start": "c. 1000 BCE",
+        "end": "123 BCE",
+        "startDates": [
+          {
+            "year": "1200 BCE",
+            "source": { "sourceKey": "wp-talaiotic", "sourceLocation": "Periodization (recent Menorca: 'Early Talayotic (1200–500 BCE)')" }
+          },
+          { "year": "1050 BCE", "source": { "sourceKey": "wp-talaiotic", "sourceLocation": "Periodization (UAB: 'Pre-Talayotic (1050–850 BCE)')" } },
+          {
+            "year": "900 BCE",
+            "source": { "sourceKey": "wp-talaiotic", "sourceLocation": "Periodization (University of the Balearic Islands: 'around 900 BCE')" }
+          }
+        ]
+      }
+    },
+    { "id": "iberia", "name": "Iberian Peninsula", "color": "#a06a3a", "parent": "west-med" },
+    {
+      "id": "los-millares",
+      "name": "Los Millares",
+      "color": "#a8804a",
+      "parent": "iberia",
+      "span": {
+        "start": "c. 3025 BCE",
+        "end": "c. 2000 BCE",
+        "endDates": [
+          { "year": "2000 BCE", "source": { "sourceKey": "wp-los-millares", "sourceLocation": "infobox" } },
+          {
+            "year": "1800 BCE",
+            "source": {
+              "sourceKey": "wp-los-millares",
+              "sourceLocation": "Relationship to other cultures ('replaced around 1800 BC … by the El Argar culture')"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "el-argar",
+      "name": "El Argar culture",
+      "color": "#9a6a2a",
+      "parent": "iberia",
+      "span": {
+        "start": "c. 2200 BCE",
+        "end": "c. 1550 BCE",
+        "endDates": [
+          { "year": "1550 BCE", "source": { "sourceKey": "wp-argaric", "sourceLocation": "lead (2200 BC and 1550 BC)" } },
+          { "year": "1300 BCE", "source": { "sourceKey": "wp-argaric", "sourceLocation": "infobox (c. 2200 — c. 1300 BC)" } }
+        ]
+      }
+    },
+    {
+      "id": "tartessos",
+      "name": "Tartessos",
+      "color": "#b08a3a",
+      "parent": "iberia",
+      "span": {
+        "start": "c. 850 BCE",
+        "end": "c. 450 BCE",
+        "startDates": [
+          {
+            "year": "900 BCE",
+            "source": { "sourceKey": "wp-tartessos", "sourceLocation": "Turuñuelo ('born around the 9th century BC'): start of century" }
+          },
+          { "year": "801 BCE", "source": { "sourceKey": "wp-tartessos", "sourceLocation": "end of century" } }
+        ],
+        "endDates": [
+          {
+            "year": "500 BCE",
+            "source": { "sourceKey": "wp-tartessos", "sourceLocation": "Carbon dating ('abandoned in the 5th century BC'): start of century" }
+          },
+          { "year": "401 BCE", "source": { "sourceKey": "wp-tartessos", "sourceLocation": "end of century" } }
+        ]
+      }
+    },
+    {
+      "id": "iberians",
+      "name": "Iberians",
+      "color": "#8a5a2a",
+      "parent": "iberia",
+      "span": {
+        "start": "c. 600 BCE",
+        "end": "16 BCE",
+        "startDates": [
+          { "year": "600 BCE", "source": { "sourceKey": "wp-iberians", "sourceLocation": "History ('developed from the 6th century BC')" } },
+          { "year": "700 BCE", "source": { "sourceKey": "wp-iberians", "sourceLocation": "lead (language 'from the 7th … century BC')" } }
+        ]
+      }
+    },
+    { "id": "north-africa", "name": "North Africa", "color": "#a88a5a" },
+    { "id": "libyans", "name": "Libyans", "color": "#b89a6a", "parent": "north-africa" },
+    {
+      "id": "cyrene",
+      "name": "Cyrene",
+      "color": "#5a7ab0",
+      "parent": "north-africa",
+      "span": {
+        "start": "631 BCE",
+        "end": "96 BCE",
+        "startDates": [
+          { "year": "631 BCE", "source": { "sourceKey": "wp-cyrene", "sourceLocation": "infobox (traditional)" } },
+          { "year": "650 BCE", "source": { "sourceKey": "wp-cyrene", "sourceLocation": "History ('mid-seventh century BC', archaeology)" } }
+        ]
+      }
+    },
+    { "id": "sea-peoples", "name": "Sea Peoples", "color": "#6f8a8f" },
     { "id": "aegean", "name": "Aegean", "color": "#2f6fae", "chronology": "aegean-high" },
+    { "id": "cycladic", "name": "Cycladic culture", "color": "#6a8fbf", "parent": "aegean", "span": { "start": "c. 3100 BCE", "end": "c. 1000 BCE" } },
     { "id": "minoan", "name": "Minoan Crete", "color": "#3d86c6", "parent": "aegean", "span": { "start": "c. 3100 BCE", "end": "c. 1075 BCE" } },
     {
       "id": "minoan-prepalatial",
@@ -721,7 +1198,177 @@
         ]
       }
     },
-    { "id": "sea-peoples", "name": "Sea Peoples", "color": "#6f8a8f" },
+    {
+      "id": "greece",
+      "name": "Archaic and Classical Greece",
+      "color": "#3a5fa8",
+      "parent": "aegean",
+      "span": { "start": "c. 800 BCE", "end": "323 BCE" }
+    },
+    { "id": "greece-archaic", "name": "Archaic period", "color": "#5277b8", "parent": "greece", "span": { "start": "c. 800 BCE", "end": "480 BCE" } },
+    {
+      "id": "greece-classical",
+      "name": "Classical period",
+      "color": "#2f5196",
+      "parent": "greece",
+      "span": {
+        "start": "c. 480 BCE",
+        "end": "323 BCE",
+        "startDates": [
+          { "year": "480 BCE", "source": { "sourceKey": "wp-classical-greece", "sourceLocation": "infobox (c. 480–323 BC)" } },
+          {
+            "year": "510 BCE",
+            "source": { "sourceKey": "wp-classical-greece", "sourceLocation": "lead ('the fall of the last Athenian tyrant in 510 BC')" }
+          }
+        ]
+      }
+    },
+    {
+      "id": "macedon",
+      "name": "Macedon",
+      "color": "#4a4f9a",
+      "parent": "aegean",
+      "span": {
+        "start": "c. 650 BCE",
+        "end": "168 BCE",
+        "startDates": [
+          { "year": "700 BCE", "source": { "sourceKey": "wp-macedon", "sourceLocation": "infobox ('c. 7th century'): start of century" } },
+          { "year": "601 BCE", "source": { "sourceKey": "wp-macedon", "sourceLocation": "infobox: end of century" } }
+        ]
+      }
+    },
+    { "id": "anatolia", "name": "Anatolia", "color": "#a8452f", "chronology": "middle" },
+    {
+      "id": "hittites",
+      "name": "Hittites",
+      "color": "#c25a3a",
+      "parent": "anatolia",
+      "span": {
+        "start": "c. 1650 BCE",
+        "end": "c. 1190 BCE",
+        "endDates": [
+          { "year": "1190 BCE", "source": { "sourceKey": "wp-hittites", "sourceLocation": "infobox (disestablished)" } },
+          { "year": "1180 BCE", "source": { "sourceKey": "wp-hattusa", "sourceLocation": "infobox ('Abandoned c. 1180 BC')" } }
+        ]
+      }
+    },
+    { "id": "hit-old", "name": "Old Kingdom", "color": "#cf6b47", "parent": "hittites", "span": { "start": "c. 1650 BCE", "end": "c. 1500 BCE" } },
+    {
+      "id": "hit-middle",
+      "name": "Middle Kingdom",
+      "color": "#b8604a",
+      "parent": "hittites",
+      "span": { "start": "c. 1500 BCE", "end": "c. 1400 BCE" }
+    },
+    {
+      "id": "hit-new",
+      "name": "New Kingdom (Empire)",
+      "color": "#a94a30",
+      "parent": "hittites",
+      "span": { "start": "c. 1400 BCE", "end": "c. 1190 BCE" }
+    },
+    { "id": "phrygia", "name": "Phrygia", "color": "#b0704a", "parent": "anatolia", "span": { "start": "1200 BCE", "end": "c. 675 BCE" } },
+    {
+      "id": "lydia",
+      "name": "Lydia",
+      "color": "#c08a3a",
+      "parent": "anatolia",
+      "span": {
+        "start": "c. 800 BCE",
+        "end": "546 BCE",
+        "startDates": [
+          { "year": "800 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "Origins ('At approximately around 800 BC')" } },
+          { "year": "1200 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "infobox (1200–546 BC)" } }
+        ],
+        "endDates": [
+          { "year": "546 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "infobox and lead" } },
+          { "year": "547 BCE", "source": { "sourceKey": "wp-croesus", "sourceLocation": "short description ('to 547 BC')" } }
+        ]
+      }
+    },
+    {
+      "id": "lycia",
+      "name": "Lycia",
+      "color": "#9a6a5a",
+      "parent": "anatolia",
+      "span": {
+        "start": "c. 1400 BCE",
+        "end": "546 BCE",
+        "startDates": [
+          { "year": "1500 BCE", "source": { "sourceKey": "wp-lycia", "sourceLocation": "lead ('from 15–14th centuries BC (as Lukka)')" } },
+          { "year": "1301 BCE", "source": { "sourceKey": "wp-lycia", "sourceLocation": "lead (end of the 14th century)" } }
+        ],
+        "endDates": [
+          { "year": "546 BCE", "source": { "sourceKey": "wp-lycia", "sourceLocation": "lead" } },
+          { "year": "540 BCE", "source": { "sourceKey": "wp-lycia", "sourceLocation": "contents ('Acquisition by Cyrus the Great (circa 540 BC)')" } }
+        ]
+      }
+    },
+    {
+      "id": "urartu",
+      "name": "Urartu",
+      "color": "#9a5a48",
+      "parent": "anatolia",
+      "span": {
+        "start": "860 BCE",
+        "end": "590 BCE",
+        "endDates": [
+          { "year": "590 BCE", "source": { "sourceKey": "wp-urartu", "sourceLocation": "infobox (Median conquest)" } },
+          { "year": "547 BCE", "source": { "sourceKey": "wp-urartu", "sourceLocation": "infobox (Achaemenid conquest, 590 BC/547 BC)" } }
+        ]
+      }
+    },
+    { "id": "levant", "name": "Levant", "color": "#9a6a2f" },
+    { "id": "canaan", "name": "Canaan", "color": "#a8773a", "parent": "levant", "span": { "start": "c. 3500 BCE", "end": "c. 1200 BCE" } },
+    { "id": "can-eba", "name": "Early Bronze Age", "color": "#b9894b", "parent": "canaan", "span": { "start": "c. 3500 BCE", "end": "c. 2000 BCE" } },
+    { "id": "can-mba", "name": "Middle Bronze Age", "color": "#a87a3c", "parent": "canaan", "span": { "start": "c. 2000 BCE", "end": "c. 1550 BCE" } },
+    { "id": "can-lba", "name": "Late Bronze Age", "color": "#966a30", "parent": "canaan", "span": { "start": "c. 1550 BCE", "end": "c. 1200 BCE" } },
+    {
+      "id": "ebla",
+      "name": "Ebla",
+      "color": "#b5653a",
+      "parent": "levant",
+      "chronology": "middle",
+      "span": { "start": "c. 3500 BCE", "end": "c. 1600 BCE" }
+    },
+    {
+      "id": "ugarit",
+      "name": "Ugarit",
+      "color": "#c27d4c",
+      "parent": "levant",
+      "span": {
+        "start": "c. 1500 BCE",
+        "end": "c. 1185 BCE",
+        "endDates": [
+          { "year": "1185 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "infobox and History" } },
+          { "year": "1190 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "destruction infobox (c. 1190 BC)" } }
+        ]
+      }
+    },
+    { "id": "phoenicia", "name": "Phoenician cities", "color": "#8b3a62", "parent": "levant", "span": { "start": "c. 1200 BCE", "end": "332 BCE" } },
+    {
+      "id": "israel-judah",
+      "name": "Israel and Judah",
+      "color": "#5f7c9a",
+      "parent": "levant",
+      "span": { "start": "c. 930 BCE", "end": "c. 587 BCE" }
+    },
+    { "id": "philistines", "name": "Philistines", "color": "#7f8d55", "parent": "levant", "span": { "start": "c. 1175 BCE", "end": "604 BCE" } },
+    {
+      "id": "aram",
+      "name": "Aram-Damascus",
+      "color": "#a35f4f",
+      "parent": "levant",
+      "span": {
+        "start": "c. 1150 BCE",
+        "end": "732 BCE",
+        "startDates": [
+          { "year": "1200 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "infobox ('c. 12th century BCE'): start of century" } },
+          { "year": "1101 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "infobox: end of century; lead says 'late 12th century'" } }
+        ]
+      }
+    },
+    { "id": "cyprus", "name": "Cyprus (Alashiya)", "color": "#b07a2f", "parent": "levant" },
     { "id": "egypt", "name": "Egypt", "color": "#b8871b", "chronology": "shaw" },
     {
       "id": "eg-predynastic",
@@ -930,100 +1577,6 @@
       }
     },
     { "id": "eg-late", "name": "Late Period", "color": "#c79a3c", "parent": "egypt", "span": { "start": "664 BCE", "end": "332 BCE" } },
-    { "id": "levant", "name": "Levant", "color": "#9a6a2f" },
-    { "id": "canaan", "name": "Canaan", "color": "#a8773a", "parent": "levant", "span": { "start": "c. 3500 BCE", "end": "c. 1200 BCE" } },
-    { "id": "can-eba", "name": "Early Bronze Age", "color": "#b9894b", "parent": "canaan", "span": { "start": "c. 3500 BCE", "end": "c. 2000 BCE" } },
-    { "id": "can-mba", "name": "Middle Bronze Age", "color": "#a87a3c", "parent": "canaan", "span": { "start": "c. 2000 BCE", "end": "c. 1550 BCE" } },
-    { "id": "can-lba", "name": "Late Bronze Age", "color": "#966a30", "parent": "canaan", "span": { "start": "c. 1550 BCE", "end": "c. 1200 BCE" } },
-    {
-      "id": "ebla",
-      "name": "Ebla",
-      "color": "#b5653a",
-      "parent": "levant",
-      "chronology": "middle",
-      "span": { "start": "c. 3500 BCE", "end": "c. 1600 BCE" }
-    },
-    {
-      "id": "ugarit",
-      "name": "Ugarit",
-      "color": "#c27d4c",
-      "parent": "levant",
-      "span": {
-        "start": "c. 1500 BCE",
-        "end": "c. 1185 BCE",
-        "endDates": [
-          { "year": "1185 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "infobox and History" } },
-          { "year": "1190 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "destruction infobox (c. 1190 BC)" } }
-        ]
-      }
-    },
-    { "id": "phoenicia", "name": "Phoenician cities", "color": "#8b3a62", "parent": "levant", "span": { "start": "c. 1200 BCE", "end": "332 BCE" } },
-    {
-      "id": "israel-judah",
-      "name": "Israel and Judah",
-      "color": "#5f7c9a",
-      "parent": "levant",
-      "span": { "start": "c. 930 BCE", "end": "c. 587 BCE" }
-    },
-    { "id": "philistines", "name": "Philistines", "color": "#7f8d55", "parent": "levant", "span": { "start": "c. 1175 BCE", "end": "604 BCE" } },
-    {
-      "id": "aram",
-      "name": "Aram-Damascus",
-      "color": "#a35f4f",
-      "parent": "levant",
-      "span": {
-        "start": "c. 1150 BCE",
-        "end": "732 BCE",
-        "startDates": [
-          { "year": "1200 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "infobox ('c. 12th century BCE'): start of century" } },
-          { "year": "1101 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "infobox: end of century; lead says 'late 12th century'" } }
-        ]
-      }
-    },
-    { "id": "anatolia", "name": "Anatolia", "color": "#a8452f", "chronology": "middle" },
-    {
-      "id": "hittites",
-      "name": "Hittites",
-      "color": "#c25a3a",
-      "parent": "anatolia",
-      "span": {
-        "start": "c. 1650 BCE",
-        "end": "c. 1190 BCE",
-        "endDates": [
-          { "year": "1190 BCE", "source": { "sourceKey": "wp-hittites", "sourceLocation": "infobox (disestablished)" } },
-          { "year": "1180 BCE", "source": { "sourceKey": "wp-hattusa", "sourceLocation": "infobox ('Abandoned c. 1180 BC')" } }
-        ]
-      }
-    },
-    { "id": "hit-old", "name": "Old Kingdom", "color": "#cf6b47", "parent": "hittites", "span": { "start": "c. 1650 BCE", "end": "c. 1500 BCE" } },
-    {
-      "id": "hit-middle",
-      "name": "Middle Kingdom",
-      "color": "#b8604a",
-      "parent": "hittites",
-      "span": { "start": "c. 1500 BCE", "end": "c. 1400 BCE" }
-    },
-    {
-      "id": "hit-new",
-      "name": "New Kingdom (Empire)",
-      "color": "#a94a30",
-      "parent": "hittites",
-      "span": { "start": "c. 1400 BCE", "end": "c. 1190 BCE" }
-    },
-    {
-      "id": "urartu",
-      "name": "Urartu",
-      "color": "#9a5a48",
-      "parent": "anatolia",
-      "span": {
-        "start": "860 BCE",
-        "end": "590 BCE",
-        "endDates": [
-          { "year": "590 BCE", "source": { "sourceKey": "wp-urartu", "sourceLocation": "infobox (Median conquest)" } },
-          { "year": "547 BCE", "source": { "sourceKey": "wp-urartu", "sourceLocation": "infobox (Achaemenid conquest, 590 BC/547 BC)" } }
-        ]
-      }
-    },
     { "id": "mesopotamia", "name": "Mesopotamia", "color": "#3f7d34", "chronology": "middle" },
     {
       "id": "mitanni",
@@ -1317,6 +1870,170 @@
         "startDates": [
           { "year": "2250 BCE", "source": { "sourceKey": "wp-bmac", "sourceLocation": "header (c. 2250–1700 BC)" } },
           { "year": "2400 BCE", "source": { "sourceKey": "wp-mannaea", "sourceLocation": "History of Iran navbox (Oxus Civilization c. 2400–1700)" } }
+        ]
+      }
+    },
+    { "id": "steppe", "name": "Eurasian Steppe", "color": "#9a8a4a" },
+    { "id": "botai", "name": "Botai culture", "color": "#8a9a5a", "parent": "steppe", "span": { "start": "c. 3700 BCE", "end": "c. 3100 BCE" } },
+    {
+      "id": "yamnaya",
+      "name": "Yamnaya culture",
+      "color": "#a07a3a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 3300 BCE",
+        "end": "c. 2600 BCE",
+        "startDates": [
+          { "year": "3300 BCE", "source": { "sourceKey": "wp-yamnaya", "sourceLocation": "infobox and lead" } },
+          {
+            "year": "3400 BCE",
+            "source": { "sourceKey": "wp-yamnaya", "sourceLocation": "Origins ('originated in the Don–Volga area at c. 3400 BC')" }
+          }
+        ],
+        "endDates": [
+          { "year": "2600 BCE", "source": { "sourceKey": "wp-yamnaya", "sourceLocation": "infobox and lead" } },
+          { "year": "2500 BCE", "source": { "sourceKey": "wp-yamnaya", "sourceLocation": "Origins ('the Yamnaya culture (3300–2500 BC)')" } }
+        ]
+      }
+    },
+    {
+      "id": "afanasievo",
+      "name": "Afanasievo culture (Altai)",
+      "color": "#b08a5a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 3300 BCE",
+        "end": "c. 2500 BCE",
+        "endDates": [
+          { "year": "2500 BCE", "source": { "sourceKey": "wp-afanasievo", "sourceLocation": "infobox, lead and Dating" } },
+          {
+            "year": "2000 BCE",
+            "source": { "sourceKey": "wp-afanasievo", "sourceLocation": "Dating ('Conventional archaeological understanding … 2500–2000 BC')" }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sintashta",
+      "name": "Sintashta culture",
+      "color": "#c07a3a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 2200 BCE",
+        "end": "c. 1900 BCE",
+        "endDates": [
+          { "year": "1900 BCE", "source": { "sourceKey": "wp-sintashta", "sourceLocation": "infobox and lead" } },
+          { "year": "1770 BCE", "source": { "sourceKey": "wp-sintashta", "sourceLocation": "footnote (necropolises 'within c. 2200–1770 BCE')" } },
+          { "year": "1750 BCE", "source": { "sourceKey": "wp-sintashta", "sourceLocation": "lead (Sintashta–Petrovka complex 'c. 2200–1750 BCE')" } }
+        ]
+      }
+    },
+    {
+      "id": "andronovo",
+      "name": "Andronovo culture",
+      "color": "#b0703a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 2000 BCE",
+        "end": "c. 1150 BCE",
+        "endDates": [
+          { "year": "1150 BCE", "source": { "sourceKey": "wp-andronovo", "sourceLocation": "infobox and lead" } },
+          {
+            "year": "1450 BCE",
+            "source": { "sourceKey": "wp-indo-aryan-migrations", "sourceLocation": "Archaeology ('Andronovo culture (2000–1450 BCE)')" }
+          }
+        ]
+      }
+    },
+    {
+      "id": "srubnaya",
+      "name": "Srubnaya (Timber-grave) culture",
+      "color": "#8a6a3a",
+      "parent": "steppe",
+      "span": { "start": "c. 1900 BCE", "end": "c. 1200 BCE" }
+    },
+    { "id": "cimmerians", "name": "Cimmerians", "color": "#7a5a4a", "parent": "steppe" },
+    {
+      "id": "scythians",
+      "name": "Scythians",
+      "color": "#c09a3a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 800 BCE",
+        "end": "c. 250 BCE",
+        "startDates": [
+          {
+            "year": "900 BCE",
+            "source": { "sourceKey": "wp-scythians", "sourceLocation": "header ('c. 9th/8th century BC'): start of the 9th century" }
+          },
+          { "year": "701 BCE", "source": { "sourceKey": "wp-scythians", "sourceLocation": "header: end of the 8th century" } }
+        ],
+        "endDates": [
+          { "year": "300 BCE", "source": { "sourceKey": "wp-scythians", "sourceLocation": "header ('c. 3rd century BC'): start of century" } },
+          { "year": "201 BCE", "source": { "sourceKey": "wp-scythians", "sourceLocation": "header: end of century" } }
+        ]
+      }
+    },
+    {
+      "id": "saka",
+      "name": "Saka",
+      "color": "#a0a04a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 850 BCE",
+        "end": "c. 450 CE",
+        "startDates": [
+          { "year": "900 BCE", "source": { "sourceKey": "wp-saka", "sourceLocation": "infobox ('9th century BC'): start of century" } },
+          { "year": "801 BCE", "source": { "sourceKey": "wp-saka", "sourceLocation": "infobox: end of century" } }
+        ],
+        "endDates": [
+          { "year": "401 CE", "source": { "sourceKey": "wp-saka", "sourceLocation": "infobox ('5th century AD'): start of century" } },
+          { "year": "500 CE", "source": { "sourceKey": "wp-saka", "sourceLocation": "infobox: end of century" } }
+        ]
+      }
+    },
+    {
+      "id": "massagetae",
+      "name": "Massagetae",
+      "color": "#8a8a3a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 750 BCE",
+        "end": "c. 250 BCE",
+        "startDates": [
+          {
+            "year": "800 BCE",
+            "source": { "sourceKey": "wp-massagetae", "sourceLocation": "infobox ('Established c. 8th century BCE'): start of century" }
+          },
+          { "year": "701 BCE", "source": { "sourceKey": "wp-massagetae", "sourceLocation": "infobox: end of century" } }
+        ],
+        "endDates": [
+          {
+            "year": "300 BCE",
+            "source": { "sourceKey": "wp-massagetae", "sourceLocation": "infobox ('Disestablished c. 3rd century BCE'): start of century" }
+          },
+          { "year": "201 BCE", "source": { "sourceKey": "wp-massagetae", "sourceLocation": "infobox: end of century" } }
+        ]
+      }
+    },
+    {
+      "id": "pazyryk",
+      "name": "Pazyryk culture (Altai)",
+      "color": "#9a7a5a",
+      "parent": "steppe",
+      "span": {
+        "start": "c. 550 BCE",
+        "end": "c. 250 BCE",
+        "startDates": [
+          {
+            "year": "600 BCE",
+            "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox and lead ('6th to 3rd centuries BC'): start of the 6th century" }
+          },
+          { "year": "501 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox: end of the 6th century" } }
+        ],
+        "endDates": [
+          { "year": "300 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox: start of the 3rd century" } },
+          { "year": "201 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox: end of the 3rd century" } }
         ]
       }
     },
@@ -2402,7 +3119,7 @@
       "title": "Amarna period and the Amarna letters",
       "start": "c. 1352 BCE",
       "end": "c. 1336 BCE",
-      "tracks": ["eg-new", "hit-new", "mitanni", "bab-kassite", "assyria", "ugarit"],
+      "tracks": ["eg-new", "hit-new", "mitanni", "bab-kassite", "assyria", "ugarit", "cyprus"],
       "descr": "Akhetaten is Egypt's capital. Its archive of 382 cuneiform tablets holds letters between the pharaohs and the kings of Babylon, Mitanni, Hatti and Assyria, covering no more than 30 years in the mid-14th century.",
       "sources": [
         { "sourceKey": "wp-new-kingdom", "sourceLocation": "infobox (Amarna capital c. 1352–1336 BC)" },
@@ -2462,7 +3179,7 @@
       "title": "Reign of Merneptah; war with Libyans and Sea Peoples",
       "start": "1213 BCE",
       "end": "1203 BCE",
-      "tracks": ["eg-new", "sea-peoples"],
+      "tracks": ["eg-new", "sea-peoples", "libyans"],
       "descr": "Ramesses II's successor defeats a Libyan invasion joined by groups of Sea Peoples, recorded in the Great Karnak Inscription.",
       "sources": [
         { "sourceKey": "wp-sea-peoples", "sourceLocation": "Merneptah narrative (reign 1213–1203 BC)" },
@@ -3149,7 +3866,7 @@
       "uuid": "carthage-founded",
       "title": "Carthage founded",
       "start": "814 BCE",
-      "tracks": ["phoenicia"],
+      "tracks": ["phoenicia", "carthage"],
       "descr": "Tyrian colonists found Carthage in North Africa; in Roman accounts, led by Dido.",
       "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "infobox" }],
       "importance": 1
@@ -3795,6 +4512,837 @@
       "descr": "The highland ceremonial centre of the Chavín culture; the New Temple follows from about 500 to 200 BCE.",
       "sources": [{ "sourceKey": "wp-chavin", "sourceLocation": "Architecture" }],
       "importance": 1
+    },
+    {
+      "uuid": "malta-temples",
+      "title": "Megalithic temples of Malta",
+      "start": "c. 3600 BCE",
+      "end": "c. 2500 BCE",
+      "tracks": ["megaliths"],
+      "descr": "Temple complexes built in three phases (Ġgantija, Saflieni, Tarxien). Tarxien remained in use until 2500 BCE.",
+      "sources": [{ "sourceKey": "wp-malta-temples", "sourceLocation": "lead and Temple phases ('Based on recalibrated radiocarbon dating')" }],
+      "importance": 1
+    },
+    {
+      "uuid": "otzi",
+      "title": "Ötzi the Iceman dies in the Alps",
+      "start": "c. 3230 BCE",
+      "tracks": ["europe"],
+      "descr": "A Copper Age man, about 45 years old when he died. His body was discovered in 1991.",
+      "sources": [{ "sourceKey": "wp-otzi", "sourceLocation": "infobox and Initial analysis" }],
+      "startDates": [
+        { "year": "3230 BCE", "source": { "sourceKey": "wp-otzi", "sourceLocation": "infobox (died c. 3230 BC)" } },
+        {
+          "year": "3232 BCE",
+          "margin": 127,
+          "source": { "sourceKey": "wp-otzi", "sourceLocation": "Initial analysis ('lived between 3359 and 3105 BC')" }
+        }
+      ]
+    },
+    {
+      "uuid": "newgrange",
+      "title": "Newgrange passage tomb",
+      "start": "c. 3100 BCE",
+      "tracks": ["megaliths"],
+      "descr": "A Neolithic monument, about 500 years older than the current form of Stonehenge. Its first period of use lasted around 1,000 years.",
+      "sources": [{ "sourceKey": "wp-newgrange", "sourceLocation": "lead and Construction" }],
+      "startDates": [
+        { "year": "3100 BCE", "source": { "sourceKey": "wp-newgrange", "sourceLocation": "Construction" } },
+        {
+          "year": "2750 BCE",
+          "margin": 250,
+          "source": { "sourceKey": "wp-newgrange", "sourceLocation": "Construction ('Some put its period of construction … at 3000 to 2500 BC')" }
+        }
+      ]
+    },
+    {
+      "uuid": "stonehenge-begun",
+      "title": "Stonehenge begun",
+      "start": "c. 3100 BCE",
+      "tracks": ["megaliths"],
+      "descr": "The first stage, an earthwork. Building continued in phases until about 1600 BCE.",
+      "sources": [{ "sourceKey": "wp-stonehenge", "sourceLocation": "lead and 'Stonehenge 1 (c. 3100 BC)'" }]
+    },
+    {
+      "uuid": "stonehenge-sarsens",
+      "title": "Stonehenge: the sarsen circle raised",
+      "start": "c. 2600 BCE",
+      "end": "c. 2400 BCE",
+      "tracks": ["megaliths"],
+      "descr": "The great sarsen stones are placed; the bluestones follow between 2400 and 2200 BCE (radiocarbon).",
+      "sources": [{ "sourceKey": "wp-stonehenge", "sourceLocation": "lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "nebra-disc",
+      "title": "Nebra sky disc",
+      "start": "c. 1800 BCE",
+      "end": "c. 1600 BCE",
+      "tracks": ["unetice"],
+      "descr": "Associated with the Bornhöck mound (c. 1800 BCE), an Únětice princely grave.",
+      "sources": [{ "sourceKey": "wp-unetice", "sourceLocation": "History of research (caption 'Early Bronze Age, 1800–1600 BC') and Barrows" }],
+      "importance": 1
+    },
+    {
+      "uuid": "kivik",
+      "title": "Kivik 'King's Grave'",
+      "start": "c. 1400 BCE",
+      "tracks": ["nordic-ba"],
+      "descr": "A Bronze Age burial.",
+      "sources": [{ "sourceKey": "wp-nordic-ba", "sourceLocation": "Burials" }]
+    },
+    {
+      "uuid": "wehringen",
+      "title": "Wehringen cart grave",
+      "start": "c. 778 BCE",
+      "tracks": ["hallstatt"],
+      "descr": "A cart burial, one of the few Hallstatt finds with a 'solid dating'.",
+      "sources": [{ "sourceKey": "wp-hallstatt", "sourceLocation": "Absolute dating" }],
+      "startDates": [{ "year": "778 BCE", "margin": 5, "source": { "sourceKey": "wp-hallstatt", "sourceLocation": "Absolute dating ('778 ± 5 BC')" } }],
+      "importance": 3
+    },
+    {
+      "uuid": "founding-of-rome",
+      "title": "Founding of Rome (traditional)",
+      "start": "c. 753 BCE",
+      "tracks": ["rome-kingdom"],
+      "descr": "Legend credits Romulus. Varro's 753 BCE became the basis of the Roman calendar; ancient writers disagreed, and most modern historians treat the accounts as fiction. Archaeologically, hilltop villages united by the later 8th century BCE.",
+      "sources": [
+        { "sourceKey": "wp-founding-rome", "sourceLocation": "lead, Ancient tradition, Chronological disagreements, Archaeology" },
+        { "sourceKey": "wp-roman-kingdom", "sourceLocation": "infobox" }
+      ],
+      "startDates": [
+        { "year": "753 BCE", "source": { "sourceKey": "wp-founding-rome", "sourceLocation": "lead (Varronian chronology)" } },
+        { "year": "752 BCE", "source": { "sourceKey": "wp-founding-rome", "sourceLocation": "Chronological disagreements (Fasti Capitolini)" } },
+        { "year": "751 BCE", "source": { "sourceKey": "wp-founding-rome", "sourceLocation": "Chronological disagreements (Cato, Diodorus: 751/50)" } },
+        { "year": "750 BCE", "source": { "sourceKey": "wp-founding-rome", "sourceLocation": "Chronological disagreements (Polybius: 750/49)" } },
+        { "year": "748 BCE", "source": { "sourceKey": "wp-founding-rome", "sourceLocation": "Chronological disagreements (Fabius Pictor: 748/47)" } },
+        { "year": "814 BCE", "source": { "sourceKey": "wp-founding-rome", "sourceLocation": "Chronological disagreements (Timaeus)" } },
+        {
+          "year": "729 BCE",
+          "source": { "sourceKey": "wp-founding-rome", "sourceLocation": "Chronological disagreements (Cincius Alimentus: 729/28)" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "roman-republic-founded",
+      "title": "Monarchy overthrown: the Roman Republic",
+      "start": "c. 509 BCE",
+      "tracks": ["rome-kingdom", "rome-republic"],
+      "descr": "By tradition the last king, Tarquinius Superbus, is expelled and the first consuls are elected.",
+      "sources": [{ "sourceKey": "wp-roman-kingdom", "sourceLocation": "infobox and lead" }, { "sourceKey": "wp-roman-republic", "sourceLocation": "infobox" }],
+      "importance": 1
+    },
+    {
+      "uuid": "gallic-sack",
+      "title": "Gauls defeat Rome at the Allia and sack the city",
+      "start": "c. 387 BCE",
+      "tracks": ["rome-republic", "la-tene"],
+      "descr": "Celts under Brennus defeat the Romans and sack Rome. The traditional (Varronian) date is 390 BCE; modern historians consider c. 387 the most probable.",
+      "sources": [{ "sourceKey": "wp-allia", "sourceLocation": "infobox and Date of the battle" }, { "sourceKey": "wp-la-tene", "sourceLocation": "History" }],
+      "startDates": [
+        { "year": "387 BCE", "source": { "sourceKey": "wp-allia", "sourceLocation": "Date of the battle (Polybius; most probable)" } },
+        { "year": "390 BCE", "source": { "sourceKey": "wp-allia", "sourceLocation": "Date of the battle (Varronian, traditional)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "latin-league",
+      "title": "Latin League dissolved",
+      "start": "338 BCE",
+      "tracks": ["rome-republic"],
+      "descr": "The league of Latin cities is dissolved.",
+      "sources": [{ "sourceKey": "wp-roman-republic", "sourceLocation": "infobox" }],
+      "importance": 3
+    },
+    {
+      "uuid": "greek-alphabet",
+      "title": "Greek alphabet",
+      "start": "c. 800 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "In use since the late 9th or early 8th century BCE; still used today.",
+      "sources": [{ "sourceKey": "wp-greek-alphabet", "sourceLocation": "infobox and lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "first-olympiad",
+      "title": "First Olympic Games (traditional)",
+      "start": "776 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "Traditionally dated to 776 BCE (Aristotle); an Olympiad count gives 765, and scholars disagree on when the games began.",
+      "sources": [{ "sourceKey": "wp-olympics", "sourceLocation": "lead and History" }],
+      "startDates": [
+        { "year": "776 BCE", "source": { "sourceKey": "wp-olympics", "sourceLocation": "lead (traditional)" } },
+        { "year": "765 BCE", "source": { "sourceKey": "wp-olympics", "sourceLocation": "History > Olympiad calendar" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "greek-colonisation",
+      "title": "Greek colonisation",
+      "start": "c. 750 BCE",
+      "end": "c. 550 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "Greek cities found colonies abroad, particularly in the 8th–6th centuries BCE.",
+      "sources": [{ "sourceKey": "wp-greek-colonisation", "sourceLocation": "lead and map caption ('Archaic period: 750–550 BC')" }]
+    },
+    {
+      "uuid": "solon",
+      "title": "Solon reforms Athens",
+      "start": "594 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "Solon is appointed 'archon and mediator' in 594/3 BCE.",
+      "sources": [{ "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments" }],
+      "startDates": [
+        { "year": "594 BCE", "source": { "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments ('In 594/3 BC')" } },
+        { "year": "593 BCE", "source": { "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments" } }
+      ]
+    },
+    {
+      "uuid": "cleisthenes",
+      "title": "Cleisthenes' reforms in Athens",
+      "start": "508 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "After the fall of the last Athenian tyrant (510 BCE). Classical Greece calls it the first significant event of the 5th century.",
+      "sources": [{ "sourceKey": "wp-classical-greece", "sourceLocation": "5th century BC" }, { "sourceKey": "wp-marathon", "sourceLocation": "Background" }],
+      "startDates": [
+        {
+          "year": "508 BCE",
+          "source": { "sourceKey": "wp-classical-greece", "sourceLocation": "5th century BC ('the first significant event … in 508 BC')" }
+        },
+        {
+          "year": "507 BCE",
+          "source": { "sourceKey": "wp-marathon", "sourceLocation": "Background ('Cleisthenes was thus restored to Athens (507 BC)')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "marathon",
+      "title": "Battle of Marathon",
+      "start": "490 BCE",
+      "tracks": ["greece-archaic", "persia"],
+      "descr": "The Persians are defeated in their first invasion of Greece.",
+      "sources": [{ "sourceKey": "wp-marathon", "sourceLocation": "infobox and lead" }],
+      "links": [{ "to": "greco-persian-wars", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "salamis",
+      "title": "Battle of Salamis",
+      "start": "480 BCE",
+      "tracks": ["greece-classical", "persia"],
+      "descr": "A naval battle during Xerxes' invasion of Greece (481–479 BCE).",
+      "sources": [{ "sourceKey": "wp-salamis", "sourceLocation": "infobox and lead" }],
+      "links": [{ "to": "greco-persian-wars", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "peloponnesian-war",
+      "title": "Peloponnesian War",
+      "start": "431 BCE",
+      "end": "404 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "Athens and Sparta fight for hegemony over Greece; Persia backs Sparta from 413 and Athens surrenders in 404.",
+      "sources": [{ "sourceKey": "wp-peloponnesian-war", "sourceLocation": "infobox and lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "philip-ii",
+      "title": "Reign of Philip II of Macedon",
+      "start": "c. 359 BCE",
+      "end": "336 BCE",
+      "tracks": ["greece-classical", "macedon"],
+      "descr": "King of Macedon from 359 BCE. He is assassinated in 336 and immediately succeeded by his son Alexander.",
+      "sources": [{ "sourceKey": "wp-philip-ii", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "chaeronea",
+      "title": "Philip II wins the Battle of Chaeronea",
+      "start": "338 BCE",
+      "tracks": ["greece-classical", "macedon"],
+      "descr": "The next year (337 BCE) Philip becomes hegemon of the Hellenic League.",
+      "sources": [{ "sourceKey": "wp-philip-ii", "sourceLocation": "lead" }],
+      "links": [{ "to": "philip-ii", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "early-cycladic",
+      "title": "Early Cycladic culture",
+      "start": "c. 3100 BCE",
+      "end": "c. 2300 BCE",
+      "tracks": ["cycladic"],
+      "descr": "The island culture of the Cyclades evolves in three Early Cycladic phases, then shades into the archaeologically murkier Middle Cycladic around 2000 BCE.",
+      "sources": [{ "sourceKey": "wp-cycladic", "sourceLocation": "Early Bronze Age and Chronology" }],
+      "importance": 1
+    },
+    {
+      "uuid": "pella",
+      "title": "Macedon moves its capital from Aigai to Pella",
+      "start": "399 BCE",
+      "tracks": ["macedon"],
+      "descr": "Pella remains the capital until the kingdom ends in 168 BCE.",
+      "sources": [{ "sourceKey": "wp-macedon", "sourceLocation": "infobox (capitals)" }],
+      "importance": 3
+    },
+    {
+      "uuid": "midas",
+      "title": "Reign of Midas of Phrygia",
+      "start": "740 BCE",
+      "end": "c. 675 BCE",
+      "tracks": ["phrygia"],
+      "descr": "The historical king behind the legends, whom most historians identify with Mita. Ancient writers date his death to around 695 (Eusebius) or 676 BCE (Julius Africanus).",
+      "sources": [{ "sourceKey": "wp-phrygia", "sourceLocation": "infobox (kings)" }, { "sourceKey": "wp-midas", "sourceLocation": "Midas (8th century BCE)" }],
+      "endDates": [
+        { "year": "675 BCE", "source": { "sourceKey": "wp-phrygia", "sourceLocation": "infobox" } },
+        { "year": "695 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Midas (8th century BCE) (Eusebius)" } },
+        { "year": "676 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Midas (8th century BCE) (Julius Africanus)" } }
+      ]
+    },
+    {
+      "uuid": "phrygia-falls",
+      "title": "Cimmerians destroy the kingdom of Phrygia",
+      "start": "c. 675 BCE",
+      "tracks": ["phrygia", "cimmerians"],
+      "descr": "The end of the major power in Anatolia before Lydia.",
+      "sources": [{ "sourceKey": "wp-phrygia", "sourceLocation": "infobox" }, { "sourceKey": "wp-lydia", "sourceLocation": "Origins" }],
+      "startDates": [
+        { "year": "675 BCE", "source": { "sourceKey": "wp-phrygia", "sourceLocation": "infobox ('Fall to the Cimmerians 675 BC')" } },
+        { "year": "695 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Eusebius (death of Midas)" } },
+        { "year": "676 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Julius Africanus (death of Midas)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "gyges-killed",
+      "title": "Cimmerians sack Sardis; Gyges killed",
+      "start": "644 BCE",
+      "tracks": ["lydia", "cimmerians"],
+      "descr": "The third Cimmerian attack on Lydia.",
+      "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "Mermnad Empire > Gyges" }],
+      "importance": 3
+    },
+    {
+      "uuid": "lydian-coins",
+      "title": "Lydian coins",
+      "start": "c. 650 BCE",
+      "tracks": ["lydia"],
+      "descr": "Electrum coins from Lydia, among the oldest in existence.",
+      "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "lead ('dated to around the 7th century BC')" }],
+      "startDates": [
+        { "year": "700 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "lead ('around the 7th century BC'): start of century" } },
+        { "year": "601 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "lead: end of century" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "croesus",
+      "title": "Reign of Croesus",
+      "start": "c. 585 BCE",
+      "end": "c. 546 BCE",
+      "tracks": ["lydia"],
+      "descr": "The last king of Lydia. After Cyrus conquers the Medes (550 BCE), Croesus attacks Persia and loses his kingdom.",
+      "sources": [{ "sourceKey": "wp-croesus", "sourceLocation": "infobox and lead" }],
+      "startDates": [
+        { "year": "585 BCE", "source": { "sourceKey": "wp-croesus", "sourceLocation": "infobox and lead" } },
+        { "year": "561 BCE", "source": { "sourceKey": "wp-croesus", "sourceLocation": "short description ('from 585 or 561')" } }
+      ]
+    },
+    {
+      "uuid": "fall-of-sardis",
+      "title": "Cyrus conquers Lydia",
+      "start": "546 BCE",
+      "tracks": ["lydia", "persia"],
+      "descr": "Lydia becomes a satrapy of the Achaemenid Empire.",
+      "sources": [
+        { "sourceKey": "wp-lydia", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-achaemenid", "sourceLocation": "infobox (Conquest of Lydia 547 BC)" }
+      ],
+      "startDates": [
+        { "year": "546 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "infobox and lead" } },
+        { "year": "547 BCE", "source": { "sourceKey": "wp-achaemenid", "sourceLocation": "infobox (historical era)" } }
+      ],
+      "links": [{ "to": "croesus", "kind": "conquers" }],
+      "importance": 1
+    },
+    {
+      "uuid": "cyprus-thutmose",
+      "title": "Thutmose III subjugates Cyprus",
+      "start": "c. 1455 BCE",
+      "tracks": ["cyprus", "eg-new"],
+      "descr": "Egypt claims Cyprus; the Hittites replace Egypt there in the 13th century BCE.",
+      "sources": [{ "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Bronze age ('around 1450s BC')" }],
+      "startDates": [{ "year": "1455 BCE", "margin": 4, "source": { "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Bronze age ('around 1450s BC')" } }]
+    },
+    {
+      "uuid": "alashiya-submits",
+      "title": "Alashiya submits to the Hittites",
+      "start": "c. 1200 BCE",
+      "tracks": ["cyprus", "hit-new"],
+      "descr": "Shortly before the Late Bronze Age collapse, Tudḫaliya IV and Šuppiluliuma II force Alashiya's king to sign a treaty of submission. Alashiya was a major source of copper for the Near East.",
+      "sources": [{ "sourceKey": "wp-alashiya", "sourceLocation": "lead and Hittites" }]
+    },
+    {
+      "uuid": "cyprus-ten-kingdoms",
+      "title": "Ten Cypriot kingdoms under Assyria",
+      "start": "673 BCE",
+      "end": "672 BCE",
+      "tracks": ["cyprus", "as-neo"],
+      "descr": "Esarhaddon's prism lists ten city-kingdoms of Cyprus. Assyrian rule ends with the fall of the Neo-Assyrian Empire (609 BCE).",
+      "sources": [{ "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Assyrian conquest and the ten city-kingdoms" }]
+    },
+    {
+      "uuid": "cyprus-egypt",
+      "title": "Amasis II of Egypt conquers Cyprus",
+      "start": "570 BCE",
+      "tracks": ["cyprus", "eg-late"],
+      "descr": "",
+      "sources": [{ "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Egyptian rule" }],
+      "importance": 3
+    },
+    {
+      "uuid": "cyprus-persia",
+      "title": "Persia conquers Cyprus",
+      "start": "545 BCE",
+      "tracks": ["cyprus", "persia"],
+      "descr": "The Achaemenid Empire under Cyrus the Great takes Cyprus.",
+      "sources": [{ "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Persian rule" }]
+    },
+    {
+      "uuid": "terramare-collapse",
+      "title": "Terramare culture collapses",
+      "start": "c. 1150 BCE",
+      "tracks": ["terramare"],
+      "descr": "The Bronze Age Terramare culture enters a severe crisis around 1200 BCE and collapses about 1150.",
+      "sources": [{ "sourceKey": "wp-terramare", "sourceLocation": "lead and Development and collapse" }]
+    },
+    {
+      "uuid": "samnite-wars",
+      "title": "Samnite Wars",
+      "start": "343 BCE",
+      "end": "290 BCE",
+      "tracks": ["samnites", "rome-republic"],
+      "descr": "Three wars (343–341, 327–304, 298–290 BCE) in which Rome subjugates the Samnites, despite their great victory at the Caudine Forks (321).",
+      "sources": [{ "sourceKey": "wp-samnite-wars", "sourceLocation": "infobox and Chronology" }, { "sourceKey": "wp-samnites", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "odrysian-founded",
+      "title": "Teres I founds the Odrysian kingdom",
+      "start": "c. 480 BCE",
+      "tracks": ["odrysian"],
+      "descr": "A Thracian kingdom founded after the failed Persian invasion of Greece. Philip II of Macedon conquers it in 340 BCE; Seuthes III revives it around 330.",
+      "sources": [{ "sourceKey": "wp-odrysian", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "carthage-independent",
+      "title": "Carthage independent of Tyre",
+      "start": "c. 550 BCE",
+      "tracks": ["carthage"],
+      "descr": "Independence from its mother city, Tyre.",
+      "sources": [{ "sourceKey": "wp-carthage", "sourceLocation": "infobox ('mid-6th century BC')" }]
+    },
+    {
+      "uuid": "alalia",
+      "title": "Battle of Alalia",
+      "start": "c. 538 BCE",
+      "tracks": ["carthage", "etruscans"],
+      "descr": "Etruscans and Carthaginians join forces against the Greeks, containing Greek expansion in Spain.",
+      "sources": [{ "sourceKey": "wp-alalia", "sourceLocation": "infobox, lead, Prelude and Aftermath" }],
+      "startDates": [
+        {
+          "year": "538 BCE",
+          "margin": 2,
+          "source": { "sourceKey": "wp-alalia", "sourceLocation": "infobox ('Some time between 540 BC and 535 BC')" }
+        }
+      ]
+    },
+    {
+      "uuid": "sicilian-wars",
+      "title": "Sicilian Wars",
+      "start": "580 BCE",
+      "end": "265 BCE",
+      "tracks": ["carthage", "magna-graecia"],
+      "descr": "Carthage and the Greek cities of Sicily fight for the island, from the first recorded clash (580) until the Punic Wars. Carthage keeps the west, the Greeks the east.",
+      "sources": [{ "sourceKey": "wp-sicilian-wars", "sourceLocation": "infobox, lead and Background" }]
+    },
+    {
+      "uuid": "himera",
+      "title": "Battle of Himera",
+      "start": "480 BCE",
+      "tracks": ["carthage", "magna-graecia"],
+      "descr": "The Greeks of Sicily defeat Hamilcar's expedition, crippling Carthage's power on the island for decades. Tradition put it on the same day as Salamis; modern scholars reject that.",
+      "sources": [{ "sourceKey": "wp-himera", "sourceLocation": "infobox and lead" }, { "sourceKey": "wp-syracuse", "sourceLocation": "Greek era" }],
+      "links": [{ "to": "sicilian-wars", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "cumae",
+      "title": "Cumae founded",
+      "start": "c. 738 BCE",
+      "tracks": ["magna-graecia"],
+      "descr": "A colony of Chalkis and Eretria in Italy.",
+      "sources": [{ "sourceKey": "wp-magna-graecia", "sourceLocation": "List of Greek poleis (Kyme/Cumae)" }],
+      "startDates": [{ "year": "738 BCE", "margin": 12, "source": { "sourceKey": "wp-magna-graecia", "sourceLocation": "List of Greek poleis ('c.750–725 BC')" } }]
+    },
+    {
+      "uuid": "syracuse-founded",
+      "title": "Syracuse founded",
+      "start": "733 BCE",
+      "tracks": ["magna-graecia"],
+      "descr": "Founded by Greek colonists from Corinth. Thucydides' 733 is considered the most reliable date.",
+      "sources": [{ "sourceKey": "wp-syracuse", "sourceLocation": "lead and Foundation" }],
+      "startDates": [
+        { "year": "733 BCE", "source": { "sourceKey": "wp-syracuse", "sourceLocation": "Foundation (Thucydides, most reliable)" } },
+        { "year": "758 BCE", "source": { "sourceKey": "wp-syracuse", "sourceLocation": "Foundation (Marmor Parium)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "sybaris",
+      "title": "Sybaris destroyed",
+      "start": "c. 510 BCE",
+      "tracks": ["magna-graecia"],
+      "descr": "The Greek city of Sybaris, prosperous from 600 BCE, is destroyed.",
+      "sources": [{ "sourceKey": "wp-magna-graecia", "sourceLocation": "lead and History" }],
+      "importance": 3
+    },
+    {
+      "uuid": "sicilian-expedition",
+      "title": "Athenian expedition to Sicily",
+      "start": "415 BCE",
+      "end": "413 BCE",
+      "tracks": ["magna-graecia", "greece-classical"],
+      "descr": "Athens attacks Syracuse during the Peloponnesian War; the expedition is destroyed in 413 BCE.",
+      "sources": [
+        { "sourceKey": "wp-sicilian-expedition", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-syracuse", "sourceLocation": "Greek era" },
+        { "sourceKey": "wp-peloponnesian-war", "sourceLocation": "contents ('Sicilian Expedition (415–413 BC)')" }
+      ],
+      "links": [{ "to": "peloponnesian-war", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "nuraghi",
+      "title": "Nuraghe towers built",
+      "start": "c. 1800 BCE",
+      "end": "c. 1100 BCE",
+      "tracks": ["nuragic"],
+      "descr": "Sardinia's nuraghe towers, built in large numbers from about 1800 BCE; construction had stopped by the 12th–11th century BCE.",
+      "sources": [{ "sourceKey": "wp-nuragic", "sourceLocation": "lead" }],
+      "endDates": [
+        {
+          "year": "1101 BCE",
+          "margin": 99,
+          "source": { "sourceKey": "wp-nuragic", "sourceLocation": "lead ('already stopped by the 12th–11th century BC')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "talaiotic-peak",
+      "title": "Talaiotic culture at its height",
+      "start": "c. 850 BCE",
+      "end": "c. 500 BCE",
+      "tracks": ["talaiotic"],
+      "descr": "The era of the talayots on Menorca and Mallorca. Decline sets in between 600 and 500 BCE, with the onset of Punic influence.",
+      "sources": [{ "sourceKey": "wp-talaiotic", "sourceLocation": "Funerary spaces ('maximum splendor … from 850-800 BCE to 500 BCE') and The Talayot" }],
+      "startDates": [{ "year": "825 BCE", "margin": 25, "source": { "sourceKey": "wp-talaiotic", "sourceLocation": "Funerary spaces" } }]
+    },
+    {
+      "uuid": "tartessos-orientalizing",
+      "title": "Tartessos: the Orientalizing phase",
+      "start": "c. 750 BCE",
+      "end": "c. 550 BCE",
+      "tracks": ["tartessos"],
+      "descr": "The height of Tartessian metalwork in southern Iberia, before it gave way to the Classic Iberian culture.",
+      "sources": [{ "sourceKey": "wp-tartessos", "sourceLocation": "Metallurgy" }]
+    },
+    {
+      "uuid": "libu-invasion",
+      "title": "Libu and Sea Peoples invade Egypt",
+      "start": "1208 BCE",
+      "tracks": ["libyans", "eg-new", "sea-peoples"],
+      "descr": "In Merneptah's 5th year a Libyan coalition under Meryey, allied with Sea Peoples, is defeated.",
+      "sources": [{ "sourceKey": "wp-libu", "sourceLocation": "Early history" }],
+      "links": [{ "to": "merneptah", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "cyrene-founded",
+      "title": "Cyrene founded",
+      "start": "631 BCE",
+      "tracks": ["cyrene"],
+      "descr": "Colonists from Thera led by Battus I found Cyrene, by Greek tradition in 631 BCE; archaeology puts Greek settlement in the mid-7th century.",
+      "sources": [{ "sourceKey": "wp-cyrene", "sourceLocation": "infobox and History" }],
+      "startDates": [
+        { "year": "631 BCE", "source": { "sourceKey": "wp-cyrene", "sourceLocation": "infobox (tradition)" } },
+        { "year": "650 BCE", "source": { "sourceKey": "wp-cyrene", "sourceLocation": "History (archaeology)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "irasa",
+      "title": "Cyrene defeats Egypt at Irasa",
+      "start": "c. 570 BCE",
+      "tracks": ["cyrene", "eg-late"],
+      "descr": "The pharaoh Apries, called in by Adicran, is defeated at Irasa.",
+      "sources": [{ "sourceKey": "wp-cyrene", "sourceLocation": "History" }]
+    },
+    {
+      "uuid": "barca-sacked",
+      "title": "Persians sack Barca",
+      "start": "515 BCE",
+      "tracks": ["cyrene", "persia"],
+      "descr": "The Persian governor of Egypt, Aryandes, besieges and sacks the Cyrenaican city of Barca.",
+      "sources": [{ "sourceKey": "wp-cyrene", "sourceLocation": "History" }],
+      "importance": 3
+    },
+    {
+      "uuid": "botai-horses",
+      "title": "Botai people herd horses",
+      "start": "c. 3500 BCE",
+      "tracks": ["botai"],
+      "descr": "The Botai are major users of horses by about 3500 BCE. Genetics shows Przewalski's horses descend from Botai herds, while modern domestic horses are not closely related to them.",
+      "sources": [
+        { "sourceKey": "wp-botai", "sourceLocation": "Archaeology" },
+        { "sourceKey": "wp-horse-domestication", "sourceLocation": "lead and Genetic evidence" }
+      ],
+      "startDates": [
+        { "year": "3500 BCE", "source": { "sourceKey": "wp-botai", "sourceLocation": "Archaeology ('by about 3,500 BC')" } },
+        {
+          "year": "3600 BCE",
+          "margin": 100,
+          "source": { "sourceKey": "wp-horse-domestication", "sourceLocation": "lead ('Botai settlements (dated to 3700–3500 BCE)')" }
+        }
+      ]
+    },
+    {
+      "uuid": "afanasievo-migration",
+      "title": "Steppe herders migrate to the Altai",
+      "start": "c. 3300 BCE",
+      "tracks": ["afanasievo"],
+      "descr": "People from the pre-Yamnaya Repin culture cross the Eurasian steppe to the Altai, founding the Afanasievo culture, which has been linked to the Proto-Tocharian language. The two populations are genetically indistinguishable.",
+      "sources": [{ "sourceKey": "wp-afanasievo", "sourceLocation": "lead and Genetics (map caption)" }, { "sourceKey": "wp-yamnaya", "sourceLocation": "lead" }],
+      "startDates": [
+        { "year": "3500 BCE", "margin": 200, "source": { "sourceKey": "wp-afanasievo", "sourceLocation": "lead ('migrated c. 3700–3300 BCE')" } },
+        {
+          "year": "3000 BCE",
+          "source": { "sourceKey": "wp-afanasievo", "sourceLocation": "Genetics map caption ('3000 BC: Initial eastward migration')" }
+        }
+      ]
+    },
+    {
+      "uuid": "yamnaya-expansion",
+      "title": "Yamnaya spreads across the Pontic–Caspian steppe",
+      "start": "c. 3300 BCE",
+      "end": "c. 3200 BCE",
+      "tracks": ["yamnaya"],
+      "descr": "Herders with two-wheeled carts and four-wheeled wagons. Later Corded Ware, Bell Beaker, Sintashta and Andronovo populations derive large parts of their ancestry from the Yamnaya.",
+      "sources": [{ "sourceKey": "wp-yamnaya", "sourceLocation": "Origins (map caption), lead and Characteristics" }],
+      "importance": 1
+    },
+    {
+      "uuid": "yamnaya-danube",
+      "title": "Yamnaya expansion into the Danube valley",
+      "start": "c. 3100 BCE",
+      "end": "c. 2600 BCE",
+      "tracks": ["yamnaya"],
+      "descr": "",
+      "sources": [{ "sourceKey": "wp-yamnaya", "sourceLocation": "Origins (map caption)" }]
+    },
+    {
+      "uuid": "yamnaya-corded-ware",
+      "title": "Yamnaya transforms into Corded Ware",
+      "start": "c. 2700 BCE",
+      "tracks": ["yamnaya", "corded-ware"],
+      "descr": "In the north, the Corded Ware culture follows the Yamnaya and carries much of its ancestry; how directly one descends from the other is debated. The same map dates the end of the Cucuteni–Trypillia culture to c. 2700 BCE.",
+      "sources": [{ "sourceKey": "wp-yamnaya", "sourceLocation": "Origins (map caption) and infobox ('Followed by')" }],
+      "links": [{ "to": "yamnaya-expansion", "kind": "causes" }]
+    },
+    {
+      "uuid": "dom2-horse",
+      "title": "The modern domestic horse emerges",
+      "start": "c. 2200 BCE",
+      "tracks": ["sintashta"],
+      "descr": "Genomes trace the lineage of all modern domestic horses (DOM2) to the Volga–Don region around 2200 BCE. Its spread is linked with the peoples before Sintashta, and these horses are buried in Sintashta kurgans with early chariots.",
+      "sources": [{ "sourceKey": "wp-horse-domestication", "sourceLocation": "lead and Genetic evidence" }],
+      "startDates": [
+        {
+          "year": "2200 BCE",
+          "source": { "sourceKey": "wp-horse-domestication", "sourceLocation": "lead ('around 2200 BCE in the Volga–Don region')" }
+        },
+        {
+          "year": "2000 BCE",
+          "source": { "sourceKey": "wp-horse-domestication", "sourceLocation": "lead (Taylor: 'true domestication did not take place until around 2000 BCE')" }
+        },
+        { "year": "3000 BCE", "source": { "sourceKey": "wp-horse-domestication", "sourceLocation": "lead (Warmuth et al. 2012: 'around 3000 BCE')" } }
+      ],
+      "links": [{ "to": "botai-horses", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "arkaim",
+      "title": "Arkaim, a fortified Sintashta settlement",
+      "start": "c. 2150 BCE",
+      "end": "c. 1650 BCE",
+      "tracks": ["sintashta"],
+      "descr": "A settlement of the Sintashta culture, attributed to early Proto-Indo-Iranian speakers. Discovered in 1987.",
+      "sources": [{ "sourceKey": "wp-arkaim", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "first-chariots",
+      "title": "The oldest known chariots",
+      "start": "c. 1915 BCE",
+      "tracks": ["sintashta"],
+      "descr": "Spoke-wheeled vehicles buried with horses in Sintashta graves. Some scholars class them as carts rather than true chariots. Chariots appear on seals at Kültepe in Anatolia by about 1900 BCE, reach Egypt around 1650 BCE and are heavily used by the Mycenaeans around 1600 BCE.",
+      "sources": [
+        { "sourceKey": "wp-chariot", "sourceLocation": "lead, Origins, Near East and Greece" },
+        { "sourceKey": "wp-sintashta", "sourceLocation": "infobox ('Earliest known chariots')" }
+      ],
+      "startDates": [
+        { "year": "1915 BCE", "margin": 35, "source": { "sourceKey": "wp-chariot", "sourceLocation": "lead ('dated to c. 1950–1880 BC')" } },
+        { "year": "2000 BCE", "source": { "sourceKey": "wp-chariot", "sourceLocation": "Origins ('from around 2000 BC')" } }
+      ],
+      "links": [{ "to": "dom2-horse", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "indo-aryan-migrations",
+      "title": "Indo-Aryan migrations begin",
+      "start": "c. 1800 BCE",
+      "tracks": ["andronovo", "harappan", "bmac"],
+      "descr": "The Indo-Aryans split from the Indo-Iranians of the Sintashta and Andronovo cultures and migrate south, by way of the Bactria–Margiana culture, into northern Syria and the Punjab. In South Asia it begins as a slow diffusion in the Late Harappan period. Indo-Iranian loan words appear in Hurrian treaties of Mitanni in the mid-second millennium.",
+      "sources": [{ "sourceKey": "wp-indo-aryan-migrations", "sourceLocation": "lead, Archaeology and Literary research" }],
+      "startDates": [
+        {
+          "year": "1800 BCE",
+          "margin": 200,
+          "source": { "sourceKey": "wp-indo-aryan-migrations", "sourceLocation": "lead ('from approximately 2000 to 1600 BCE')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "srubnaya-lola",
+      "title": "Srubnaya replaces the Lola culture",
+      "start": "c. 1800 BCE",
+      "tracks": ["srubnaya"],
+      "descr": "The Timber-grave culture, probably Iranian-speaking, takes over the Lola lands; historical sources say the Scythians later succeeded it.",
+      "sources": [{ "sourceKey": "wp-srubnaya", "sourceLocation": "lead and Distribution" }],
+      "startDates": [{ "year": "1800 BCE", "source": { "sourceKey": "wp-srubnaya", "sourceLocation": "Distribution ('By 1800 BC')" } }],
+      "importance": 3
+    },
+    {
+      "uuid": "dugdammi-dies",
+      "title": "Death of the Cimmerian king Dugdammî",
+      "start": "640 BCE",
+      "tracks": ["cimmerians"],
+      "descr": "Dugdammî, who led the attack on Lydia, kills himself in Cilicia.",
+      "sources": [{ "sourceKey": "wp-cimmerians", "sourceLocation": "Death of Dugdammî" }],
+      "importance": 3
+    },
+    {
+      "uuid": "cimmerians-defeated",
+      "title": "Scythians and Lydians defeat the Cimmerians",
+      "start": "c. 635 BCE",
+      "tracks": ["cimmerians", "scythians", "lydia"],
+      "descr": "Madyes's Scythians and the Lydians under Alyattes defeat the Cimmerians and Treres; Herodotus and Polyaenus say permanently.",
+      "sources": [{ "sourceKey": "wp-cimmerians", "sourceLocation": "Final defeat" }]
+    },
+    {
+      "uuid": "scythian-assyrian-alliance",
+      "title": "Scythian alliance with Assyria",
+      "start": "c. 672 BCE",
+      "tracks": ["scythians", "as-neo"],
+      "descr": "",
+      "sources": [{ "sourceKey": "wp-scythians", "sourceLocation": "infobox (History)" }],
+      "importance": 3
+    },
+    {
+      "uuid": "madyes",
+      "title": "Madyes: Scythian rule over Media",
+      "start": "c. 653 BCE",
+      "end": "625 BCE",
+      "tracks": ["scythians", "medes"],
+      "descr": "King of the Scythians (c. 658/9–625 BCE). Helping Ashurbanipal suppress the revolt of 652 BCE, he invades Media and holds it for the Assyrians for twenty-eight years, until Cyaxares invites the Scythian rulers to a banquet in 625 BCE and murders them.",
+      "sources": [{ "sourceKey": "wp-madyes", "sourceLocation": "infobox, lead, Conquest of Media and Revolt of Media and death" }],
+      "startDates": [
+        { "year": "653 BCE", "source": { "sourceKey": "wp-madyes", "sourceLocation": "Revolt of Media ('twenty-eight years' before 625)" } },
+        { "year": "659 BCE", "source": { "sourceKey": "wp-madyes", "sourceLocation": "infobox (reign c. 658/9)" } }
+      ],
+      "links": [{ "to": "cimmerians-defeated", "kind": "related" }]
+    },
+    {
+      "uuid": "scythians-expelled",
+      "title": "Medes expel the Scythians from West Asia",
+      "start": "c. 600 BCE",
+      "tracks": ["scythians", "medes"],
+      "descr": "The Scythians retreat into the Pontic steppe.",
+      "sources": [{ "sourceKey": "wp-scythians", "sourceLocation": "infobox (History)" }, { "sourceKey": "wp-madyes", "sourceLocation": "lead and Aftermath" }],
+      "links": [{ "to": "madyes", "kind": "succeeds" }]
+    },
+    {
+      "uuid": "darius-scythia",
+      "title": "Darius I's Scythian campaign",
+      "start": "513 BCE",
+      "tracks": ["scythians", "persia"],
+      "descr": "Darius crosses the Bosphorus on a bridge of boats and then the Danube. The Persians damage the Scythians but suffer heavy losses; the page calls it little more than an expensive stalemate.",
+      "sources": [
+        { "sourceKey": "wp-darius-scythia", "sourceLocation": "infobox, lead, The campaign and Aftermath" },
+        { "sourceKey": "wp-scythians", "sourceLocation": "infobox (Persian invasion 513 BC)" }
+      ],
+      "links": [{ "to": "darius-i", "kind": "part-of" }]
+    },
+    {
+      "uuid": "ateas-killed",
+      "title": "Philip II defeats Ateas",
+      "start": "339 BCE",
+      "tracks": ["scythians", "macedon"],
+      "descr": "The Scythian king Ateas is killed in battle against Philip II of Macedon in Dobruja, and his empire falls to pieces.",
+      "sources": [{ "sourceKey": "wp-ateas", "sourceLocation": "lead and Conflict with Macedon" }],
+      "links": [{ "to": "philip-ii", "kind": "part-of" }]
+    },
+    {
+      "uuid": "arzhan-1",
+      "title": "Arzhan 1 kurgan",
+      "start": "c. 800 BCE",
+      "tracks": ["saka"],
+      "descr": "An early Saka burial mound.",
+      "sources": [{ "sourceKey": "wp-saka", "sourceLocation": "contents ('Arzhan 1 kurgan (c. 800 BC)')" }]
+    },
+    {
+      "uuid": "arzhan-2",
+      "title": "Arzhan 2 kurgan",
+      "start": "c. 650 BCE",
+      "tracks": ["saka"],
+      "descr": "",
+      "sources": [{ "sourceKey": "wp-saka", "sourceLocation": "contents ('Arzhan 2 (c. 650 BC)')" }],
+      "importance": 3
+    },
+    {
+      "uuid": "death-of-cyrus",
+      "title": "Tomyris of the Massagetae kills Cyrus the Great",
+      "start": "530 BCE",
+      "tracks": ["massagetae", "persia"],
+      "descr": "Cyrus dies in battle against the Massagetae, led by their queen Tomyris. Ctesias tells another version, in which he dies fighting the Derbices.",
+      "sources": [
+        { "sourceKey": "wp-tomyris", "sourceLocation": "lead, Death of Cyrus and Aftermath" },
+        { "sourceKey": "wp-massagetae", "sourceLocation": "infobox ('c. 530 BCE' Tomyris)" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "pazyryk-burials",
+      "title": "Pazyryk burials",
+      "start": "c. 450 BCE",
+      "tracks": ["pazyryk"],
+      "descr": "Burials at Pazyryk and neighbouring sites in the Altai. A Saka (eastern Scythian) culture.",
+      "sources": [{ "sourceKey": "wp-pazyryk", "sourceLocation": "lead and Archaeology" }],
+      "startDates": [
+        { "year": "500 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "Archaeology ('5th century BC'): start of century" } },
+        { "year": "401 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "Archaeology: end of century" } }
+      ]
     }
   ]
 }

@@ -1,11 +1,13 @@
 // Reports how well a timeline's region order keeps related regions together.
 //   node scripts/row-order.ts src/timelines/ancient-near-east.json [--best] [--fix china,americas]
+//   node scripts/row-order.ts <file> --try a,b,c,... [--try d,e,f,...]   # score candidate orders
+// Each --try order must list every region; it is scored and checked against the proximity limits.
 // Prints each pair of regions that share events or links, its distance, and the order's score
 // (sum of shared × distance; lower is better). --best also searches every order of the regions for
 // the lowest score; --fix keeps the listed regions at the end, in that order, to shrink the search.
 // The test in src/data/data.test.ts enforces the limits in src/data/proximity.ts.
 import { readFileSync } from 'node:fs';
-import { relatedRegions } from '../src/data/proximity.ts';
+import { relatedRegions, allowedDistance } from '../src/data/proximity.ts';
 import type { Dataset } from '../src/types.ts';
 
 const args = process.argv.slice(2);
@@ -25,9 +27,28 @@ const cost = (order: string[]) => {
   return pairs.reduce((s, p) => s + p.shared * Math.abs(pos.get(p.a)! - pos.get(p.b)!), 0);
 };
 
+const tooFar = (order: string[]) => {
+  const pos = new Map(order.map((r, i) => [r, i]));
+  return pairs
+    .filter((p) => Math.abs(pos.get(p.a)! - pos.get(p.b)!) > allowedDistance(p.shared))
+    .map((p) => `${p.a}–${p.b} (${p.shared} shared, ${Math.abs(pos.get(p.a)! - pos.get(p.b)!)} apart)`);
+};
+
 console.log('order:', regions.join(' > '));
 for (const p of pairs) console.log(`  ${String(p.shared).padStart(3)} shared  ${String(p.distance).padStart(2)} apart  ${p.a} — ${p.b}`);
-console.log('score:', cost(regions));
+console.log('score:', cost(regions), tooFar(regions).length ? `too far: ${tooFar(regions).join('; ')}` : 'passes');
+
+args.forEach((a, i) => {
+  if (a !== '--try') return;
+  const order = args[i + 1].split(',');
+  const missing = regions.filter((r) => !order.includes(r));
+  if (missing.length || order.length !== regions.length) {
+    console.log(`try ${args[i + 1]}: must list every region once (missing: ${missing.join(',') || '-'})`);
+    return;
+  }
+  const far = tooFar(order);
+  console.log(`try ${order.join(' > ')}\n    score ${cost(order)}, ${far.length ? `too far: ${far.join('; ')}` : 'passes'}`);
+});
 
 if (args.includes('--best')) {
   const free = regions.filter((r) => !fixed.includes(r));

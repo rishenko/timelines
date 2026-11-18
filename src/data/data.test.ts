@@ -69,6 +69,16 @@ describe('relatedRegions', () => {
       { a: 'a', b: 'b', shared: 1, distance: 1 },
     ]);
   });
+  it('counts an event once per pair, even when it also links to one of its regions', () => {
+    const ds = {
+      tracks: [{ id: 'a' }, { id: 'b' }],
+      events: [
+        { uuid: 'x', tracks: ['a'] },
+        { uuid: 'y', tracks: ['b', 'a'], links: [{ to: 'x', kind: 'part-of' }] },
+      ],
+    } as unknown as Dataset;
+    expect(relatedRegions(ds)).toEqual([{ a: 'a', b: 'b', shared: 1, distance: 1 }]);
+  });
 });
 
 describe('documented example (docs/examples/example-timeline.json)', () => {

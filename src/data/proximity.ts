@@ -1,5 +1,6 @@
 // How close together related regions sit. Every event shared by two top-level rows (regions), and every
-// link between their events, counts once toward that pair. Distance is how many regions apart the two
+// link between their events, counts toward that pair, but each event counts at most once per pair: a link
+// from an event that already sits on both regions adds nothing. Distance is how many regions apart the two
 // rows are in display order. Used to keep civilizations that interacted near each other.
 import type { Dataset } from '../types.ts';
 
@@ -21,19 +22,20 @@ export function relatedRegions(ds: Dataset): RelatedPair[] {
   const pos = new Map(regions.map((r, i) => [r, i]));
 
   const counts = new Map<string, number>();
-  const bump = (x: string, y: string) => {
-    if (x === y) return;
-    const k = [x, y].sort().join('|');
-    counts.set(k, (counts.get(k) ?? 0) + 1);
-  };
   const eventRegions = new Map(ds.events.map((e) => [e.uuid, [...new Set(e.tracks.map(regionOf))]]));
-  for (const rs of eventRegions.values())
-    for (let i = 0; i < rs.length; i++) for (let j = i + 1; j < rs.length; j++) bump(rs[i], rs[j]);
-  for (const e of ds.events)
+  for (const e of ds.events) {
+    const pairs = new Set<string>();
+    const add = (x: string, y: string) => {
+      if (x !== y) pairs.add([x, y].sort().join('|'));
+    };
+    const rs = eventRegions.get(e.uuid)!;
+    for (let i = 0; i < rs.length; i++) for (let j = i + 1; j < rs.length; j++) add(rs[i], rs[j]);
     for (const l of e.links ?? []) {
       const to = eventRegions.get(l.to);
-      if (to) bump(eventRegions.get(e.uuid)![0], to[0]);
+      if (to) add(rs[0], to[0]);
     }
+    for (const k of pairs) counts.set(k, (counts.get(k) ?? 0) + 1);
+  }
 
   return [...counts]
     .map(([k, shared]) => {

@@ -16,7 +16,15 @@
     "indus-script", "mohenjo-daro",
     "liangzhu-collapse", "yanshi", "oracle-bones", "muye", "zhou-east", "warring-states", "sanxingdui-city",
     "watson-brake", "poverty-point", "caral", "valdivia-pottery", "san-lorenzo", "la-venta",
-    "maya-cities", "maya-script", "chavin-old-temple"
+    "maya-cities", "maya-script", "chavin-old-temple",
+    "malta-temples", "stonehenge-sarsens", "nebra-disc", "founding-of-rome",
+    "roman-republic-founded", "gallic-sack",
+    "greek-alphabet", "first-olympiad", "cleisthenes", "marathon", "salamis", "peloponnesian-war",
+    "chaeronea", "early-cycladic",
+    "phrygia-falls", "lydian-coins", "fall-of-sardis",
+    "himera", "syracuse-founded", "sicilian-expedition", "nuraghi",
+    "cyrene-founded", "libu-invasion",
+    "yamnaya-expansion", "dom2-horse", "first-chariots", "indo-aryan-migrations", "death-of-cyrus"
   ],
   "3": [
     "kanesh-karum-ib", "alalakh-vii", "drought-1198", "hittite-marriage", "troy-vi",
@@ -25,6 +33,13 @@
     "tyre-founded", "ebla-settled", "tyre-babylon",
     "medes-assyria", "mannaea-first", "dilmun-last",
     "kot-diji", "indus-seal-susa", "mehrgarh-abandoned",
-    "caral-flutes", "la-venta-pyramid"
+    "caral-flutes", "la-venta-pyramid",
+    "wehringen", "latin-league",
+    "gyges-killed",
+    "cyprus-egypt",
+    "barca-sacked",
+    "sybaris",
+    "pella",
+    "arzhan-2", "srubnaya-lola", "dugdammi-dies", "scythian-assyrian-alliance"
   ]
 }

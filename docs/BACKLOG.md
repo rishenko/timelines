@@ -19,10 +19,9 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
 - **Review the key events** in `docs/ancient-key-events.md` (66 key, 21 minor, proposed by Claude). Change
   `data-src/ancient-importance.json` and run `npm run importance:ancient`.
-- **New regions within 3500–330 BCE** (research started 2026-11-17; the fetch agents hit a usage limit,
-  re-run them): Europe (Stonehenge, Bell Beaker, Únětice, Nordic Bronze Age, Urnfield, Hallstatt,
-  La Tène, Etruscans, Roman Kingdom, Archaic and Classical Greece), the Steppe (Yamnaya, Afanasievo,
-  Corded Ware, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians), Africa (A-Group, Kerma, Kush,
+- **Europe, the Mediterranean and the Steppe: deeper research.** See the summary-only lists in
+  `docs/ancient-sources.md` (third to fifth passes).
+- **New regions within 3500–330 BCE**, one `scripts/additions/<region>.ts` each (the Steppe is done: `steppe.ts`): Africa (A-Group, Kerma, Kush,
   Napata, Meroë, Nok, Punt, Dʿmt, Garamantes, Bantu expansion), other Asia (Vedic period,
   Mahajanapadas, Magadha, the Buddha, Jōmon, Yayoi, Mumun, Gojoseon, Ban Chiang, Đông Sơn, Sa Huỳnh),
   Island Southeast Asia and the Pacific (Austronesian expansion, Lapita, Buni). Tag key events as they go

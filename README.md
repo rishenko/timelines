@@ -5,10 +5,10 @@
 A horizontal, swimlane timeline for any history, fictional or real. Each timeline is one data file
 with its own calendar, eras, scale and theme. Two ship with the app:
 
-- **Ancient Civilizations** (default): Mesopotamia (Sumer, Akkad, Babylonia, Assyria), the Levant
-  (Canaan, Ebla, Ugarit, Phoenicia, Israel and Judah, Philistines, Aram), Egypt, Anatolia (Hittites, Urartu),
-  the Aegean, Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Indus
-  Valley, China and the Americas, c. 3500–330 BCE. 177 events, every date cited.
+- **Ancient Civilizations** (default): Europe (megalith builders, Bronze and Iron Age cultures, Italy and Rome, Thrace), the western Mediterranean (Carthage, Greek Sicily and Italy, Sardinia, the Balearics, Iberia), North Africa (Libyans, Cyrene), the Aegean (Cycladic, Minoan, Mycenaean, Greece, Macedon), Anatolia (Hittites, Phrygia, Lydia, Lycia, Urartu), Mesopotamia (Sumer, Akkad, Babylonia, Assyria), the Levant
+  (Canaan, Ebla, Ugarit, Phoenicia, Israel and Judah, Philistines, Aram, Cyprus), Egypt,
+  Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Eurasian Steppe (Botai, Yamnaya, Afanasievo, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians, Saka, Massagetae, Pazyryk), the Indus
+  Valley, China and the Americas, c. 3500–330 BCE. 230 events, every date cited.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
 
@@ -82,11 +82,13 @@ Scripts for working on the data (all in `scripts/`; source files are written in 
 npm run importance:ancient   # apply data-src/ancient-importance.json, compile, refresh docs/ancient-key-events.md
 npm run row-order            # how close related regions sit, and the best possible order
 npm run format:src           # re-format data-src/ancient-near-east.json
+node scripts/additions/europe.ts   # (re)apply a region's additions; then npm run importance:ancient
+node scripts/reorder-regions.ts data-src/ancient-near-east.json europe,aegean,…   # reorder regions
 npm run shot -- <url> <out.png> [--width N --height N --full --close-legend]   # screenshot in Edge
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 
-`scripts/archive/` keeps one-off bulk edits that have already been applied, as templates.
+`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 

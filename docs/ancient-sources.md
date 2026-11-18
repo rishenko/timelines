@@ -100,7 +100,7 @@ These values came from summaries and most need checking first:
 20. **Olmec start**: best 1200 (infobox and lead) with claims 1400 (Overview) and 1600–1500 (El Manatí).
 21. **Dholavira**: best 2650–1900 (infobox, Bisht's stages), with recent C14 (Stage I c. 3500–3200) and
     reoccupation until c. 1450 as claims.
-22. **Row order runs west to east so civilizations that interacted sit together:** Aegean, Sea Peoples,
+22. **Row order runs west to east so civilizations that interacted sit together** (order revised in the third pass, below): Aegean, Sea Peoples,
     Egypt, Levant (between Egypt and the Hittites, as on the map), Anatolia (Hittites, then Urartu next to
     Assyria), Mesopotamia (Mitanni, Assyria, Babylonia, Akkad, Sumer: Sumer sits next to Elam), Iran &
     Central Asia (Elam, Medes, Persia, Mannaea, Jiroft, Oxus), Dilmun, Indus, then China and the Americas,
@@ -109,7 +109,7 @@ These values came from summaries and most need checking first:
     from Mesopotamia), and the **Sea Peoples** and **Dilmun** are regions of their own. Achaemenid Persia is
     under Iran & Central Asia.
     - A test (`src/data/proximity.ts`, "ancient regions that interacted sit near each other") counts
-      the events and links each pair of regions shares. Pairs sharing 5 or more must be within 3 regions;
+      the events and links each pair of regions shares (since the fifth pass, each event at most once per pair). Pairs sharing 5 or more must be within 3 regions;
       2 or more, within 5. On the previous order it flags the Sea Peoples and the Indus.
     - Scoring each pair as shared × distance, this order costs 123 (the old order: 155). The best order
       found by checking every arrangement (China and the Americas held last) costs 115. It differs only by
@@ -127,3 +127,86 @@ These values came from summaries and most need checking first:
 - **Thin rows:** Mannaea, Jiroft, the Oxus civilization and Sanxingdui have one event or none.
 - The Maya row extends to 250 CE (end of the Preclassic), past the timeline's nominal 330 BCE end;
   Zhou runs to 256 BCE and the Warring States to 221 BCE.
+
+## Third pass: Europe (17 November 2026)
+
+First pass, important events only; deep research later. Applied by `scripts/additions/europe.ts`
+(re-runnable: it replaces what it added). 22 events, 25 sources, 16 rows.
+
+- **New Europe region:** megalith builders (Malta, Newgrange, Stonehenge), Ötzi, Corded Ware, Bell
+  Beaker, Únětice (Nebra sky disc), Nordic Bronze Age, Urnfield, Hallstatt, La Tène, Etruscans, and Rome
+  (Kingdom and Republic). **Archaic and Classical Greece** sits under the Aegean, after the Mycenaeans.
+- **Founding of Rome:** best 753 (Varro), with the clustered ancient dates from the page's table as
+  claims (814 Timaeus, 752, 751, 750, 748, 729). Naevius and Ennius (c. 1100, c. 884) are left out as
+  outliers far from the rest. The Roman Kingdom row is labelled "traditional".
+- **Gallic sack of Rome:** best 387 (modern consensus per *Battle of the Allia*), traditional 390 as a claim.
+- **Classical Greece** starts at 480 (infobox), with 510 (the lead's "most common dates") as a claim.
+- **Malta:** the temple phases come from the page's recalibrated radiocarbon table (3600–2500). The
+  page's "from 5200 to 2500 BC" construction span is not used.
+- **Region order changed** to keep Greece within reach of Persia (Marathon, Salamis): Europe, Sea
+  Peoples, Aegean, Anatolia, Levant, Egypt, Mesopotamia, Iran, Dilmun, Indus, China, Americas. The Aegean
+  now sits next to Anatolia, which faces it across the Aegean Sea. Score 145; the best possible is 128,
+  but that order puts the Aegean between Mesopotamia and Iran.
+- **Summary-only, left out:** Bell Beaker's regional end dates, Corded Ware's Swiss dendro dates,
+  the Tollense battle, the Trundholm sun chariot, the Hochdorf grave, Etruscan periods and peak, the
+  oldest Greek inscriptions, and Alexander's reign dates.
+
+## Fourth pass: the rest of the Mediterranean (17 November 2026)
+
+Important events only; applied by `scripts/additions/mediterranean.ts` (re-runnable). 31 events,
+29 sources, 23 rows.
+
+- **Aegean:** Cycladic culture (first row) and Macedon (Philip II and Chaeronea now also on Macedon's row).
+- **Anatolia:** Phrygia (Midas; Cimmerian destruction c. 675, with Eusebius 695 and Julius Africanus 676
+  as claims), Lydia (coins, Croesus, Cyrus's conquest 546; 547 per *Achaemenid Empire* as a claim), Lycia.
+- **Levant:** Cyprus (Alashiya) as a row. As its own region it pushed Anatolia and Mesopotamia apart.
+- **Europe:** Terramare, Villanovan, Samnites (the Samnite Wars), the Odrysian kingdom (Thrace).
+- **New region, Western Mediterranean:** Carthage (independence, Alalia, the Sicilian Wars, Himera),
+  Magna Graecia and Sicily (Cumae, Syracuse 733 per Thucydides with 758 as a claim, Sybaris, the Athenian
+  expedition), Nuragic Sardinia, Talaiotic Balearics, and the Iberian Peninsula (Los Millares, El Argar,
+  Tartessos, Iberians).
+- **New region, North Africa:** the Libyans (the 1208 BCE invasion of Egypt) and Cyrene.
+- **"7th century", "9th century" and similar** become a best estimate with claims at the century's
+  first and last years (Macedon, Lydian coins, Tartessos, Magna Graecia). "Around the 1450s" is stored as 1455 ± 5.
+- **Talaiotic start:** the page says periodisations disagree; claims from three schemes (1200, 1050, 900)
+  with best 1000 ("end of the second millennium BC").
+- **Region order now:** Europe, Western Mediterranean, North Africa, Sea Peoples, Aegean, Anatolia,
+  Levant, Egypt, Mesopotamia, Iran, Dilmun, Indus, China, Americas. Score 202; it passes the proximity
+  test. The best possible (177) puts the Aegean between Mesopotamia and Iran.
+- **Summary-only, left out:** the first Rome–Carthage treaty (509 or 508), Carthage's lead date for
+  independence (7th century), the Carthaginian conquest of Sardinia, Persian rule over Phrygia, Amyntas I,
+  the Hellenistic history of Cyrene, the Tartessian script, Dionysius I (no reign dates on the page).
+
+## Fifth pass: the Eurasian Steppe (17 November 2026)
+
+Important events only; applied by `scripts/additions/steppe.ts` (re-runnable). 21 events (plus two
+Cimmerian events already on Anatolia's rows), 19 sources, 12 rows. The region starts collapsed.
+
+- **Rows:** Botai, Yamnaya, Afanasievo (Altai), Sintashta, Andronovo, Srubnaya (Timber-grave), Cimmerians,
+  Scythians, Saka, Massagetae, Pazyryk (Altai).
+- **Events:** Botai horse herding; the Afanasievo migration; the Yamnaya expansion, its push into the
+  Danube valley and its turn into Corded Ware (c. 2700, from the page's map caption); the modern
+  domestic horse (DOM2, c. 2200, with Taylor's 2000 and Warmuth's 3000 as claims); Arkaim; the oldest
+  chariots (1950–1880 stored as 1915 ± 35, with "around 2000 BC" as a claim); the Indo-Aryan migrations
+  (2000–1600, on the Andronovo, BMAC and Harappan rows); Srubnaya replacing Lola; Dugdammî's death (640);
+  the defeat of the Cimmerians by Madyes and Alyattes (c. 635); the Scythian alliance with Assyria (c. 672);
+  Madyes's rule over Media; the Medes expelling the Scythians (c. 600); Darius I's Scythian campaign (513);
+  Philip II defeating Ateas (339); the Arzhan 1 and 2 kurgans; Tomyris killing Cyrus (530; Ctesias's
+  Derbices version in the text); the Pazyryk burials.
+- **Judgment calls:** Madyes's rule over Media starts at 653, which is 625 plus the page's "twenty-eight
+  years"; the infobox's reign start (658/9) is a claim. "Yamnaya transforms into Corded Ware" follows the
+  map caption; the description notes that how directly one descends from the other is debated.
+  Centuries ("9th/8th century", "5th century AD") follow the fourth pass's rule.
+- **Key events (5):** the Yamnaya expansion, the modern horse, the first chariots, the Indo-Aryan
+  migrations, the death of Cyrus. **Minor (4):** Arzhan 2, Srubnaya replaces Lola, Dugdammî's death,
+  the Assyrian alliance.
+- **Region order:** the Steppe sits after Iran. Philip II's defeat of Ateas sits on both the Steppe
+  and Macedon and also links to Philip's reign, so it used to count twice toward Aegean–Steppe (2 shared,
+  6 apart: over the limit). At the author's choice (2026-11-17), the proximity rule now counts each event
+  at most once per pair of regions. Score 220 under the new rule; it passes.
+- **Summary-only, left out:** the first Cimmerian mention (Urartu, 714), Esarhaddon killing Teušpâ (679),
+  the Cimmerian first attack on Lydia, the Cyaxares banquet date from *Scythians* (it is verbatim on
+  *Madyes*, which is used), the Scythian raid to the Hellespont (496), the Saka in the Tarim Basin, Darius's
+  Saka campaign (520–518), Andronovo's Alakul phase and Altai mining, the Poltavka migration (2800–2600),
+  and the Kurgan hypothesis waves. The *Darius I's European Scythian campaign* URL is a 404; the campaign
+  comes from *Scythian campaign of Darius I*.
