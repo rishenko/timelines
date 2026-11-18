@@ -408,7 +408,10 @@ file and the `scripts/classical/` script that defines each event). Only titles a
   killed by his own men while fleeing, and nothing says his enemies retook Jiankang; the *The Vandals sack Rome* entry
   described only the 460s expeditions).
 - **Judgment calls (please check):**
-  1. *Polynesians* (`wp-polynesians`) carries a translation notice that links to the LLM-assisted translation
+  1. **Resolved (author's ruling, 18 November 2026):** translation notices are fine, so *Polynesians* stays cited;
+     `long-pause` now says in its description that the page asks for text translated from the Russian article
+     (`scripts/archive/2026-11-18-polynesians-notice-classical.json`). Pages that flag AI-generated *content* are still
+     not used. Earlier note: *Polynesians* (`wp-polynesians`) carries a translation notice that links to the LLM-assisted translation
      guideline (reported by the batch agent; not confirmed by hand). Under this file's rule the page shouldn't be used.
      It is cited only by `long-pause` (Origins): the c. 900 BCE start, "around 900 BC" reaching Fiji, Samoa and Tonga,
      the pause of "some 1,500 years", the loss of pottery and the resumption "around 700 AD" to the Cook Islands, French

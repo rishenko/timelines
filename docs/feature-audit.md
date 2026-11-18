@@ -93,10 +93,61 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
 
 ## 5. Access
 
-23. **Accessibility (M).** The panels and forms have labels and keyboard handling, but the timeline itself can't be
-    used without a mouse or touch, and a screen reader gets nothing from it. Needs: keyboard navigation between rows
-    and events, an accessible table (item 20), and colour palettes checked for colour-blind readers, since colour
-    tints carry the uncertainty ranges.
+23. **Accessibility (L overall; plan below).** Target: WCAG 2.2 AA, stated in an accessibility statement on the About
+    page (item 1) with its known limits.
+
+    **Today:** the panels and forms are labelled and work from the keyboard. Events and "+N" clusters are buttons, so
+    Tab reaches them, but:
+    - every event is a separate tab stop, in row-by-row rather than time order;
+    - only events within about a screen of the view are in the page, so the rest can't be reached without scrolling;
+    - an event's accessible name is its title alone (its dates are in a `title` tooltip, which screen readers
+      often skip);
+    - opening an event doesn't move focus to the detail panel, and closing it doesn't return focus;
+    - the focus outline is a thin dashed line;
+    - uncertainty is shown only by a lighter tint;
+    - no setting for reduced motion or Windows high-contrast is handled.
+
+    **Principle: two ways in.** A two-dimensional chart of hundreds of positioned events can't be fully read in a line,
+    so the visual timeline is made operable from the keyboard, and a **table view** is the full equivalent for screen
+    readers (WCAG accepts a conforming alternative version), which scholars want anyway (item 20).
+
+    a. **Foundations (S–M).**
+       - Landmarks and headings: the toolbar, a labelled timeline region ("Timeline: Ancient Civilizations, c. 9000–330
+         BCE"), the detail panel with its own heading, and a "Skip to timeline / table" link.
+       - Accessible names that carry the facts: "Battle of Kadesh, c. 1274 BCE, Egypt and the Hittites, key event,
+         uncertain date"; clusters as "12 more events, 1600–1500 BCE; zoom in"; collapse buttons with
+         `aria-expanded`.
+       - Focus: opening an event moves focus to the detail panel's heading; Escape closes it and returns focus to the
+         event. Picking a search result focuses the event.
+       - A polite live region announces zoom changes, "Went to 1595 BCE", and filter counts.
+       - Automated checks: axe-core in the component tests and oxlint's jsx-a11y rules.
+    b. **Table view (M):** a "Timeline | Table" switch (`?view=table`).
+       - Events grouped under region and civilization headings, sortable by date, filterable with the same Filters,
+         and following the reader's chronology choices.
+       - Each row gives the dates and ranges in words ("Start: between 1650 and 1530 BCE; 1595 BCE under the Middle
+         chronology"), the rows, importance and sources.
+       - It's also the basis of CSV export (item 9).
+    c. **Keyboard model for the timeline (M):** one tab stop for the whole timeline (a roving focus), not hundreds.
+       - ←/→: previous or next event in the row, by date. ↑/↓: the nearest event in the row above or below.
+         Home/End: the first or last event in the row. PageUp/PageDown: scroll a screen.
+       - +/−: zoom around the focused event. Enter: open it. On a row label, Enter or Space folds or unfolds the row.
+         `?`: list the shortcuts.
+       - The view scrolls to follow focus, and the focused event stays in the page even when it's off-screen.
+    d. **Visual (S–M).**
+       - Uncertainty gets a second cue besides the tint: hatching or end ticks, shown in the Legend.
+       - A contrast check of every theme preset (text 4.5:1; marks and focus outlines 3:1), run as a test.
+       - A bolder focus outline (2 px, offset).
+       - Readable at 200% zoom and on a 320 px wide screen.
+       - `prefers-reduced-motion` (smooth scrolling, the tour) and `forced-colors` (Windows high contrast).
+       - Check the "related events" dimming (unrelated events at 28% opacity) for legibility.
+    e. **Touch and pointer (S):** targets at least 24 px (WCAG 2.2), including the small event diamonds, and a button
+       alternative wherever an action needs a gesture (long-press to add, pinch to zoom).
+    f. **Edit mode (S):** error messages tied to their fields (`aria-describedby`), and the claim lists announced as
+       lists.
+    g. **Testing:** a keyboard-only pass; NVDA with Firefox and Chrome on Windows; Windows high contrast; 200% zoom.
+       VoiceOver on a phone later.
+
+    **Order:** a and b first (b also serves scholars and CSV export), then c, then d and e, with f alongside.
 24. **Names and transliteration (S–M).** The existing "search aliases" backlog item, plus a note on the transliteration
     conventions used (Ḫattuša vs. Hattusa, pinyin), and later labels in other languages.
 

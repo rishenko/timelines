@@ -9,8 +9,8 @@
   (110 key, 56 minor), all proposed by Claude. Change `data-src/<timeline>-importance.json` and run
   `npm run importance:ancient` or `npm run importance:classical`.
 - **Classical World description audit: check the judgment calls** in `docs/classical-sources.md` ("Description audit
-  (18 November 2026)"), especially *Polynesians*, whose translation notice links to the LLM-assisted translation
-  guideline; `long-pause` still cites it.
+  (18 November 2026)"): pages that disagree with themselves, and optional softenings. (*Polynesians* is settled:
+  translation notices are fine and are mentioned in the event's description.)
 - **Re-check banners on cited pages now and then.** Wikipedia adds AI/LLM-text banners after the fact: *Norte Chico
   civilization* had one by the 2026-11-18 audit, and everything taken from it was removed. Any audit or re-read should
   report banners, and a flagged page's values come out.

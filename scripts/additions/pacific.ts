@@ -67,7 +67,7 @@ ed.event({
 });
 ed.event({
   uuid: 'out-of-taiwan', title: 'Out of Taiwan: the Austronesian expansion', start: 'c. 3000 BCE', end: 'c. 1500 BCE', tracks: ['taiwan', 'philippines'],
-  descr: 'Austronesians were the first humans with seafaring vessels that could cross large distances on the open ocean; they used sails some time before 2000 BCE. The Out-of-Taiwan hypothesis is the current scientific consensus for the settlement of the Philippines.',
+  descr: 'Austronesians were the first humans with seafaring vessels that could cross large distances on the open ocean; they used sails some time before 2000 BCE. The Out-of-Taiwan hypothesis is the current scientific consensus for the settlement of the Philippines. One cited page, Wikipedia\'s Polynesians, carries a notice asking for text translated from the Russian article.',
   sources: [S('wp-austronesian', 'lead, Geographic distribution and Migration from Taiwan'), S('wp-prehistory-philippines', 'Neolithic Austronesian migrations'), S('wp-polynesians', 'Origins')],
   startDates: [C(3000, 'wp-austronesian', "lead ('from Taiwan, c. 3000 to 1500 BCE')"), C(3000, 'wp-polynesians', "Origins ('between 3000 and 1000 BC')")],
   endDates: [C(1500, 'wp-austronesian', 'lead and Migration from Taiwan'), C(1000, 'wp-polynesians', 'Origins')],
@@ -123,7 +123,7 @@ ed.event({
 });
 ed.event({
   uuid: 'lapita-bismarck', title: 'The Lapita culture appears in the Bismarck Archipelago', start: 'c. 1600 BCE', end: 'c. 1200 BCE', tracks: ['lapita'],
-  descr: 'A Neolithic Austronesian people who make dentate-stamped pottery with distinctive geometric designs and keep pigs, dogs and chickens; their villages stand on the beach rather than inland. The complex appears suddenly.',
+  descr: 'A Neolithic Austronesian people who make dentate-stamped pottery with distinctive geometric designs and keep pigs, dogs and chickens; their villages stand on the beach rather than inland. The complex appears suddenly. One cited page, Wikipedia\'s Polynesians, carries a notice asking for text translated from the Russian article.',
   sources: [S('wp-lapita', 'lead, Artifact dating and Origin'), S('wp-polynesians', 'Origins'), S('wp-tonga-history', 'The Lapita Period')],
   startDates: [
     C(1600, 'wp-lapita', "Artifact dating ('between 1,600 and 1,200 BCE')"),
@@ -187,7 +187,7 @@ ed.event({
 });
 ed.event({
   uuid: 'plain-ware', title: 'Pottery decoration ends: the Polynesian Plain Ware period', start: 'c. 700 BCE', end: 'c. 400 CE', tracks: ['lapita'],
-  descr: 'Two hundred years after arriving, settlers in Tonga stop decorating their pots; by 400 AD they make none, and in Samoa pottery-making appears to stop suddenly. Fiji, Samoa and Tonga remain the furthest extent of the Austronesian expansion in the Pacific for about 1,500 years.',
+  descr: 'Two hundred years after arriving, settlers in Tonga stop decorating their pots; by 400 AD they make none, and in Samoa pottery-making appears to stop suddenly. Fiji, Samoa and Tonga remain the furthest extent of the Austronesian expansion in the Pacific for about 1,500 years. One cited page, Wikipedia\'s Polynesians, carries a notice asking for text translated from the Russian article.',
   sources: [S('wp-tonga-history', 'The Lapita Period; The Polynesian Plain Ware Period'), S('wp-samoa-history', 'Early history'), S('wp-polynesians', 'Origins')],
   startDates: [C(700, 'wp-tonga-history', "heading ('2650–1550 BP (700 BC – 400 AD)')")],
   endDates: [C('400 CE', 'wp-tonga-history', "Polynesian Plain Ware ('By 1550 BP (400 AD)')"), C('1 CE', 'wp-lapita', "Lapita in Polynesia (Samoa plainware 'ceases abruptly … around 1 CE')")],

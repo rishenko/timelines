@@ -308,7 +308,9 @@ Southeast Asia and the Americas. Three web-fetch agents read 22 pages.
 - **Not used:** *Puyuma people*, where *Beinan culture* redirects, carries an AI-generated-text warning. Beinan's jade
   dates come from *Prehistory of Taiwan* instead. *Beinan site* and *Maritime Jade Road* do not exist (404).
 - **Other notices:** *Polynesians* asks for expansion by translation from Russian. Its notice mentions an LLM
-  translation guideline but does not flag the existing text as AI-written, so its Origins facts are used.
+  translation guideline but does not flag the existing text as AI-written, so its Origins facts are used. The
+  author's ruling (18 November 2026): translation notices are fine, but each event that cites such a page says so in its
+  description (`out-of-taiwan`, `lapita-bismarck`, `plain-ware`; `scripts/archive/2026-11-18-polynesians-notice-ancient.json`).
   *Prehistory of Australia* has a disputed-neutrality notice; only its lead and "Changes c. 4000 years ago" were read
   verbatim. *Lapita culture*'s "Lapita in Polynesia" section may contain original synthesis, so its two dates (Tonga
   900 BCE, Samoa plainware ending around 1 CE) are claims only.
