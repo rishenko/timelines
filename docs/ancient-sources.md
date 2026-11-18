@@ -458,3 +458,24 @@ Kuahuqiao culture, Shangshan site, Ñanchóc; *Las Vegas culture* redirects to t
   *List of Neolithic cultures of China*, marked tentative, so it is left out.
 - **Key events (5):** Karahan Tepe, Tell Brak as a city, Ounjougou pottery, Doggerland, Pedra Pintada. Minor: the
   Yarmukian.
+
+## Twelfth pass: Iberia, the Southwest and the Sahara (18 November 2026)
+
+`scripts/additions/neolithic-3.ts` (run before `groups.ts`): 17 events, 13 sources, 4 rows. Two web-fetch agents read
+about 20 pages; none carried an AI-text warning. *Prehistoric Iberia* was this time read verbatim through its Neolithic
+section.
+
+- **Iberia** (a new Neolithic row in the Iberian Peninsula): the Almendres Cromlech (6000–4000, in three phases), the
+  first farmers (c. 5700, Cardium pottery; "the 6th millennium BC" as a claim), the first dolmens in southern Portugal
+  (c. 4800), the Dolmen of Menga (c. 3700; the lead's 3750–3650 as a claim).
+- **Asia and Oceania:** Kuahuqiao (c. 6000–5600: dugout canoe, paddy rice 7700 years ago, flooded about 7,550 years ago;
+  on the Hemudu row), Budj Bim's eel traps (6,600 years old), Sanganakallu (c. 3000 BC).
+- **Africa:** the Saharan rock-art periods (Round Head 9500–7000 BP, Pastoral 7200–3000 BP, Horse 3200–1000 BP), the
+  Wilton culture (8,000–4,000 years ago), the Kintampo complex (2500–1400 BCE; Watson's 3,600–3,200 bp as a claim).
+- **Americas:** the Las Vegas culture of Ecuador (8000–4600 BC from *Pre-Columbian Ecuador*'s lead; its own subsection's
+  9000–6000 BC as claims), and the US Southwest: the Oshara Jay phase (7,450 BP; Gibbon and Ames's 6050 B.C. as a claim),
+  maize in the Armijo phase (3,750–2,750 BP), the Basketmaker culture (from about 1500 BCE), the Cochise San Pedro phase
+  (1500–200 BC).
+- **Left out:** the Natufians (they end c. 9500 BC), the Murujuga rock art (40,000–50,000 years old), the Cochise lead's
+  "c. 5000" (no era given), the Wilton rock shelter's unitless dates, and Utnur and Budihal (their pages have no dates).
+- **Key events (3):** the first farmers in Iberia, Las Vegas, Budj Bim. Minor: Sanganakallu, the Horse period.

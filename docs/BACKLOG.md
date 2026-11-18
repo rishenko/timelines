@@ -17,13 +17,12 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   the file at the link.
 
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
-- **Review the key events** in `docs/ancient-key-events.md` (163 key, 41 minor, proposed by Claude). Change
+- **Review the key events** in `docs/ancient-key-events.md` (166 key, 43 minor, proposed by Claude). Change
   `data-src/ancient-importance.json` and run `npm run importance:ancient`.
-- **Every region: deeper research.** See the summary-only lists in `docs/ancient-sources.md` (third to eleventh passes).
-- **Back to 9000 BCE: two passes done** (2026-11-18, tenth and eleventh passes). Still thin: the Natufians (mostly
-  before 9000), Shangshan, Kuahuqiao and the Khartoum Mesolithic (pages missing), the Sahara rock-art sequence, Neolithic
-  Iberia (read only in summary so far), Ecuador's Las Vegas culture and Ñanchóc (pages missing), Neolithic island Southeast
-  Asia, and Australia before the dingo.
+- **Every region: deeper research.** See the summary-only lists in `docs/ancient-sources.md` (third to twelfth passes).
+- **Back to 9000 BCE: three passes done** (2026-11-18, tenth to twelfth passes). Still thin: the Natufians (they end
+  c. 9500 BCE, before the range), Shangshan, the Khartoum Mesolithic and Ñanchóc (pages missing), the South Indian
+  Neolithic (only Sanganakallu has a page with dates), Neolithic island Southeast Asia, and Australia beyond Budj Bim.
 - **New regions**, one `scripts/additions/<region>.ts` each (done: `steppe`, `africa`, `asia`, `pacific`, `caucasus`,
   `arabia`, `eastern-europe`, `americas`, `north-asia`, `fill-gaps`). For any new one: tag key events as they go in,
   place it next to its partners (the proximity test), and consider starting it collapsed. Still thin or missing: the

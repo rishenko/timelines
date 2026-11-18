@@ -3472,6 +3472,110 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-prehistoric-iberia": {
+      "name": "Wikipedia: Prehistoric Iberia",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Iberia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-almendres": {
+      "name": "Wikipedia: Almendres Cromlech",
+      "url": "https://en.wikipedia.org/wiki/Almendres_Cromlech",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-menga": {
+      "name": "Wikipedia: Dolmen of Menga",
+      "url": "https://en.wikipedia.org/wiki/Dolmen_of_Menga",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kuahuqiao": {
+      "name": "Wikipedia: Kuahuqiao site",
+      "url": "https://en.wikipedia.org/wiki/Kuahuqiao_site",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-precolumbian-ecuador": {
+      "name": "Wikipedia: Pre-Columbian Ecuador",
+      "url": "https://en.wikipedia.org/wiki/Pre-Columbian_Ecuador",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-budj-bim": {
+      "name": "Wikipedia: Budj Bim",
+      "url": "https://en.wikipedia.org/wiki/Budj_Bim",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-oshara": {
+      "name": "Wikipedia: Oshara tradition",
+      "url": "https://en.wikipedia.org/wiki/Oshara_tradition",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-cochise": {
+      "name": "Wikipedia: Cochise tradition",
+      "url": "https://en.wikipedia.org/wiki/Cochise_tradition",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-basketmaker": {
+      "name": "Wikipedia: Basketmaker culture",
+      "url": "https://en.wikipedia.org/wiki/Basketmaker_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-saharan-rock-art": {
+      "name": "Wikipedia: Saharan rock art",
+      "url": "https://en.wikipedia.org/wiki/Saharan_rock_art",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-sanganakallu": {
+      "name": "Wikipedia: Sanganakallu",
+      "url": "https://en.wikipedia.org/wiki/Sanganakallu",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kintampo": {
+      "name": "Wikipedia: Kintampo Complex",
+      "url": "https://en.wikipedia.org/wiki/Kintampo_Complex",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-wilton": {
+      "name": "Wikipedia: Wilton culture",
+      "url": "https://en.wikipedia.org/wiki/Wilton_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     }
   },
   "chronologies": {
@@ -3830,6 +3934,28 @@
             }
           }
         ],
+        "circa": true
+      }
+    },
+    {
+      "id": "wilton",
+      "name": "Wilton culture",
+      "color": "#8a7a5a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -6049,
+        "end": -2049,
+        "circa": true
+      }
+    },
+    {
+      "id": "kintampo",
+      "name": "Kintampo complex (Ghana)",
+      "color": "#7a8a4a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -2499,
+        "end": -1399,
         "circa": true
       }
     },
@@ -4368,6 +4494,12 @@
       "name": "Iberian Peninsula",
       "color": "#a06a3a",
       "parent": "west-med"
+    },
+    {
+      "id": "iberia-neolithic",
+      "name": "Neolithic Iberia",
+      "color": "#8a6a4a",
+      "parent": "iberia"
     },
     {
       "id": "los-millares",
@@ -8350,6 +8482,12 @@
       "id": "archaic-na",
       "name": "Early and Middle Archaic (Koster, Windover)",
       "color": "#6a6a4a",
+      "parent": "north-america"
+    },
+    {
+      "id": "southwest",
+      "name": "US Southwest (Oshara, Cochise, Basketmaker)",
+      "color": "#a0703a",
       "parent": "north-america"
     },
     {
@@ -21720,6 +21858,420 @@
         {
           "sourceKey": "wp-spirit-cave-mummy",
           "sourceLocation": "infobox, lead, Discovery and Identity and dating"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "almendres",
+      "title": "Almendres Cromlech",
+      "start": -5999,
+      "end": -3999,
+      "tracks": [
+        "iberia-neolithic",
+        "megaliths"
+      ],
+      "descr": "Its construction dates back to the 6th millennium BC, in three phases: Almendres I (6000 BC, Early Neolithic), II (5000 BC) and III (4000 BC).",
+      "sources": [
+        {
+          "sourceKey": "wp-almendres",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "wp-prehistoric-iberia",
+          "sourceLocation": "Neolithic"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "iberia-farmers",
+      "title": "The first farmers reach Iberia",
+      "start": -5699,
+      "tracks": [
+        "iberia-neolithic"
+      ],
+      "descr": "In the 6th millennium BC the first agriculturalists arrive in Andalusia, and Cardium pottery culture reaches eastern Iberia.",
+      "sources": [
+        {
+          "sourceKey": "wp-prehistoric-iberia",
+          "sourceLocation": "Overview and Neolithic"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -5699,
+          "source": {
+            "sourceKey": "wp-prehistoric-iberia",
+            "sourceLocation": "Neolithic ('In c. 5700 BC, Cardium pottery ...')"
+          }
+        },
+        {
+          "year": -5499,
+          "margin": 500,
+          "source": {
+            "sourceKey": "wp-prehistoric-iberia",
+            "sourceLocation": "Neolithic ('In the 6th millennium BC')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "cardial",
+          "kind": "related"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "portugal-dolmens",
+      "title": "The first dolmens, in southern Portugal",
+      "start": -4799,
+      "tracks": [
+        "iberia-neolithic",
+        "megaliths"
+      ],
+      "descr": "Possibly the oldest dolmen tombs of their kind anywhere.",
+      "sources": [
+        {
+          "sourceKey": "wp-prehistoric-iberia",
+          "sourceLocation": "Neolithic"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "menga",
+      "title": "The Dolmen of Menga (Antequera)",
+      "start": -3699,
+      "tracks": [
+        "iberia-neolithic",
+        "megaliths"
+      ],
+      "descr": "The Antequera Dolmens date from after c. 3700 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-menga",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-prehistoric-iberia",
+          "sourceLocation": "Neolithic"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -3699,
+          "source": {
+            "sourceKey": "wp-menga",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": -3699,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-menga",
+            "sourceLocation": "lead"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kuahuqiao",
+      "title": "Kuahuqiao: an early dugout canoe and paddy rice",
+      "start": -5999,
+      "end": -5599,
+      "tracks": [
+        "hemudu"
+      ],
+      "descr": "A very early dugout canoe, the earliest technology of its kind in China, and paddy rice cultivated 7700 years ago; villagers had domesticated rice, dogs and pigs. Rising seas may have suddenly deluged the area around 7,550 years ago.",
+      "sources": [
+        {
+          "sourceKey": "wp-kuahuqiao",
+          "sourceLocation": "infobox, lead and Discoveries"
+        }
+      ],
+      "links": [
+        {
+          "to": "hemudu",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "budj-bim",
+      "title": "Budj Bim eel traps",
+      "start": -4649,
+      "tracks": [
+        "australia"
+      ],
+      "descr": "Carbon-dated to 6,600 years old.",
+      "sources": [
+        {
+          "sourceKey": "wp-budj-bim",
+          "sourceLocation": "Historic and cultural significance"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "sanganakallu",
+      "title": "Sanganakallu Neolithic settlement",
+      "start": -2999,
+      "tracks": [
+        "south-india"
+      ],
+      "descr": "A Neolithic site.",
+      "sources": [
+        {
+          "sourceKey": "wp-sanganakallu",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "round-head-art",
+      "title": "Round Head rock art period in the Sahara",
+      "start": -7549,
+      "end": -5049,
+      "tracks": [
+        "sahara"
+      ],
+      "descr": "One of the periods of Saharan rock art (9500–7000 BP), after the Large Wild Fauna and Kel Essuf periods.",
+      "sources": [
+        {
+          "sourceKey": "wp-saharan-rock-art",
+          "sourceLocation": "Rock art time periods"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "pastoral-art",
+      "title": "Pastoral period of Saharan rock art",
+      "start": -5249,
+      "end": -1049,
+      "tracks": [
+        "sahara"
+      ],
+      "descr": "Dated 7200–3000 BP. In Egypt, the Cave of Beasts was painted by people who lived between c. 6500 and 4400 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-saharan-rock-art",
+          "sourceLocation": "Rock art time periods and Archaeological sites"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "horse-art",
+      "title": "Horse period of Saharan rock art",
+      "start": -1249,
+      "tracks": [
+        "sahara"
+      ],
+      "descr": "Dated 3200–1000 BP; the Camel Period follows (3000–2000 BP).",
+      "sources": [
+        {
+          "sourceKey": "wp-saharan-rock-art",
+          "sourceLocation": "Rock art time periods"
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "wilton",
+      "title": "Wilton culture: small stone tools",
+      "start": -6049,
+      "end": -2049,
+      "tracks": [
+        "wilton"
+      ],
+      "descr": "A shift from large to small stone technology, 8,000 to 4,000 years ago; at Nelson Bay Cave people depended on small game from 9,000 to 5,000 years ago. Janette Deacon identifies a mature phase around 4,800 years ago.",
+      "sources": [
+        {
+          "sourceKey": "wp-wilton",
+          "sourceLocation": "lead, History, Stone technology and Diet"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kintampo",
+      "title": "Kintampo complex",
+      "start": -2499,
+      "end": -1399,
+      "tracks": [
+        "kintampo"
+      ],
+      "descr": "Established by Saharan agropastoralists; pearl millet spreads into the West African savanna after 2500 cal BC (Champion et al. 2022), and oil palm use starts at least 4000 years ago. Watson dates its appearance to 3,600–3,200 bp.",
+      "sources": [
+        {
+          "sourceKey": "wp-kintampo",
+          "sourceLocation": "lead, Origin and Archaeology"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -2499,
+          "source": {
+            "sourceKey": "wp-kintampo",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -1449,
+          "margin": 200,
+          "source": {
+            "sourceKey": "wp-kintampo",
+            "sourceLocation": "Origin (Watson 2005)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "las-vegas",
+      "title": "Las Vegas culture of coastal Ecuador",
+      "start": -7999,
+      "end": -4599,
+      "tracks": [
+        "andes-archaic"
+      ],
+      "descr": "One of the oldest cultures in the Americas, on the Santa Elena Peninsula; at approximately 6000 BC it is among the first to begin farming (bottle gourd and early maize). Its best-known remains are the Lovers of Sumpa.",
+      "sources": [
+        {
+          "sourceKey": "wp-precolumbian-ecuador",
+          "sourceLocation": "lead and Preceramic period > Las Vegas culture"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -7999,
+          "source": {
+            "sourceKey": "wp-precolumbian-ecuador",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -8999,
+          "source": {
+            "sourceKey": "wp-precolumbian-ecuador",
+            "sourceLocation": "Las Vegas culture"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -4599,
+          "source": {
+            "sourceKey": "wp-precolumbian-ecuador",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -5999,
+          "source": {
+            "sourceKey": "wp-precolumbian-ecuador",
+            "sourceLocation": "Las Vegas culture"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "oshara",
+      "title": "Oshara tradition: the Jay phase",
+      "start": -5499,
+      "tracks": [
+        "southwest"
+      ],
+      "descr": "A Southwestern Archaic tradition. The Jay phase (7,450 to 6,750 years before present) is followed by the Bajada and San Jose phases.",
+      "sources": [
+        {
+          "sourceKey": "wp-oshara",
+          "sourceLocation": "infobox, lead and Phases"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -5499,
+          "source": {
+            "sourceKey": "wp-oshara",
+            "sourceLocation": "Phases (Jay phase)"
+          }
+        },
+        {
+          "year": -6049,
+          "source": {
+            "sourceKey": "wp-oshara",
+            "sourceLocation": "Phases, note 1 (Gibbon and Ames)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "oshara-maize",
+      "title": "Maize cultivation begins in the Oshara tradition",
+      "start": -1799,
+      "end": -799,
+      "tracks": [
+        "southwest"
+      ],
+      "descr": "The Armijo phase (3,750 to 2,750 years BP).",
+      "sources": [
+        {
+          "sourceKey": "wp-oshara",
+          "sourceLocation": "Phases"
+        }
+      ],
+      "links": [
+        {
+          "to": "maize-domesticated",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "basketmaker",
+      "title": "The Basketmaker culture begins",
+      "start": -1499,
+      "tracks": [
+        "southwest"
+      ],
+      "descr": "It continues until about 750 CE.",
+      "sources": [
+        {
+          "sourceKey": "wp-basketmaker",
+          "sourceLocation": "lead"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "san-pedro-cochise",
+      "title": "San Pedro phase of the Cochise tradition",
+      "start": -1499,
+      "end": -199,
+      "tracks": [
+        "southwest"
+      ],
+      "descr": "The southern of the four Southwestern Archaic traditions; provisional radiocarbon dates.",
+      "sources": [
+        {
+          "sourceKey": "wp-cochise",
+          "sourceLocation": "lead and San Pedro phase"
         }
       ],
       "circa": true
