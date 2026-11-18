@@ -1,7 +1,8 @@
-// Screenshots the app in Microsoft Edge (via playwright-core; no browser download needed).
+// Screenshots the app in an installed browser via playwright-core (no browser download needed): Microsoft Edge on
+// Windows, Google Chrome elsewhere; --browser msedge|chrome picks one.
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
 //        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json] [--click "Button|Other"]
-//        [--pinch in|out] [--long-press "Row name"] [--measure ".toolbar > *"] [--keys "Tab|ArrowRight"]
+//        [--pinch in|out] [--long-press "Row name"] [--measure ".toolbar > *"] [--keys "Tab|ArrowRight"] [--browser chrome]
 // --close-legend closes the guided tour (it starts by itself on a first visit) and the legend.
 // --click presses buttons whose text contains each name (or whose tooltip is exactly it), in order, before --expand;
 // "=Name" matches the text exactly (so "=Edit" doesn't also match "Edit mode").
@@ -17,7 +18,7 @@ import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const args = process.argv.slice(2);
-const valued = /^--(width|height|expand|scroll-to|storage|click|pinch|long-press|measure)$/;
+const valued = /^--(width|height|expand|scroll-to|storage|click|pinch|long-press|measure|browser)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
   console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
@@ -26,7 +27,9 @@ if (!url || !out) {
 const opt = (flag: string) => (args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined);
 const num = (flag: string, def: number) => (opt(flag) !== undefined ? Number(opt(flag)) : def);
 
-const browser = await chromium.launch({ channel: 'msedge' });
+const browser = await chromium.launch({
+  channel: opt('--browser') ?? (process.platform === 'win32' ? 'msedge' : 'chrome'),
+});
 const page = await browser.newPage({ viewport: { width: num('--width', 1800), height: num('--height', 1400) } });
 const problems: string[] = [];
 page.on('pageerror', (e) => problems.push(`page error: ${e.message}`));
