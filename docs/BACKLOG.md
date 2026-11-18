@@ -17,9 +17,9 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   the file at the link.
 
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
-- **Review the key events** in `docs/ancient-key-events.md` (166 key, 43 minor, proposed by Claude). Change
+- **Review the key events** in `docs/ancient-key-events.md` (177 key, 43 minor, proposed by Claude). Change
   `data-src/ancient-importance.json` and run `npm run importance:ancient`.
-- **Every region: deeper research.** See the summary-only lists in `docs/ancient-sources.md` (third to twelfth passes).
+- **Every region: deeper research.** See the summary-only lists in `docs/ancient-sources.md` (third to thirteenth passes).
 - **Back to 9000 BCE: three passes done** (2026-11-18, tenth to twelfth passes). Still thin: the Natufians (they end
   c. 9500 BCE, before the range), Shangshan, the Khartoum Mesolithic and Ñanchóc (pages missing), the South Indian
   Neolithic (only Sanganakallu has a page with dates), Neolithic island Southeast Asia, and Australia beyond Budj Bim.
@@ -33,10 +33,10 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
 - **Drafts hid data updates: fixed here (2026-11-18).** Drafts are now stored as the reader's changes and replayed onto
   the current published data (`src/state/draft.ts`), so later fixes reach readers with drafts. REDACTED still
   has the old behaviour; port `draft.ts` there if v2 work resumes.
-- **More ancient content**: Lagash–Umma and Eannatum, Hittite Middle Kingdom, Mitanni rulers, Hazor
-  (fetch *Tel Hazor*), Confucius, Lydia, Sabaeans, the Nubian kingdom of Kerma/Kush. Same rule: every date
-  from a cited page. Many values for the Levant, Assyria and Iran exist only in page summaries
-  (see `docs/ancient-sources.md`) and need a verbatim read before use.
+- **More ancient content: mostly done (2026-11-18, thirteenth pass, `ideas.ts`).** Lagash (Eannatum, Urukagina,
+  Gudea), Hazor, Tushratta, Confucius and the history of ideas are in; Lydia, the Sabaeans and Kerma/Kush came in
+  earlier passes. Still to do: the Upanishads (dates read only in summary), more Mitanni rulers, and the many
+  Levant, Assyria and Iran values that exist only in page summaries (see `docs/ancient-sources.md`).
 - **Toolbar: done (2026-11-18).** The four chronology menus are now one Dating button with a panel
   (`src/components/DatingMenu.tsx`); the ancient toolbar is two rows at 1700 px instead of three. One row would need
   the subtitle or the search box moved.

@@ -18,8 +18,9 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   America (Cupisnique, Paracas, Chinchorro) to the Caribbean. Since 2026-11-18 it reaches back to the first farmers
   (c. 9000 BCE): Jericho and Göbekli Tepe, Çatalhöyük, Hassuna to Ubaid, Ganj Dareh and Mehrgarh, Nabta Playa and the
   Badarians, Neolithic Europe from Star Carr to Varna and Carnac, early Chinese rice and millet farming (Pengtoushan,
-  Jiahu, Yangshao, Hongshan), Kuk Swamp, and the domestication of squash, maize and potatoes in the Americas.
-  c. 9000–330 BCE; 494 events, every date cited.
+  Jiahu, Yangshao, Hongshan), Kuk Swamp, and the domestication of squash, maize and potatoes in the Americas. It also
+  follows ideas and landmarks: Gilgamesh and Ashurbanipal's library, Homer, the Greek philosophers, the Parthenon,
+  Persepolis, Confucius, Laozi and the Hundred Schools. c. 9000–330 BCE; 525 events, every date cited.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
 
@@ -108,7 +109,7 @@ npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --ex
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 
-`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, caucasus, arabia, eastern-europe, americas, north-asia, fill-gaps, neolithic-near-east, neolithic-world, neolithic-2, neolithic-3, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
+`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, caucasus, arabia, eastern-europe, americas, north-asia, fill-gaps, neolithic-near-east, neolithic-world, neolithic-2, neolithic-3, ideas, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 

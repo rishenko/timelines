@@ -479,3 +479,29 @@ section.
 - **Left out:** the Natufians (they end c. 9500 BC), the Murujuga rock art (40,000–50,000 years old), the Cochise lead's
   "c. 5000" (no era given), the Wilton rock shelter's unitless dates, and Utnur and Budihal (their pages have no dates).
 - **Key events (3):** the first farmers in Iberia, Las Vegas, Budj Bim. Minor: Sanganakallu, the Horse period.
+
+## Thirteenth pass: ideas, literature and landmarks (18 November 2026)
+
+`scripts/additions/ideas.ts` (run before `groups.ts`): 31 events, 31 sources, all on existing rows. Three web-fetch
+agents read 34 pages. Not used: *Tao Te Ching* and *Warring States period*, whose banners cite the LLM translation
+guideline (Laozi's dates come from his own page; the Warring States start was already in), and the Upanishads, whose
+chronology section was read only in summary.
+
+- **Mesopotamia, the Levant and Iran:** Eannatum's Stele of the Vultures (c. 2450; the stele's own page gives 2475 and
+  2460, as claims), Urukagina (2378–2368), Gudea (2144–2124; the lead's 2150/2130–2120/2110 as claims), the Old Babylonian
+  Epic of Gilgamesh (c. 1800), Tushratta (1358–1335), Hazor's destruction by fire (13th century) and its capture by
+  Assyria (732), Ashurbanipal's library (668–627), the return from exile (539), the Cyrus Cylinder (539), Persepolis
+  (515; the stairway's 519 as a claim), Zoroaster (date unknown: c. 1000 ± 500 as the scholars' range, the traditional
+  624–599 birth as a claim).
+- **Greece:** the Iliad and the Odyssey (late 8th or early 7th century), Hesiod (750–650), Thales's eclipse (585, per
+  Herodotus), Pythagoras at Croton (c. 530), Thermopylae (480), Pericles (461–429), the Parthenon (447–438; the
+  infobox's 432 as a claim), Socrates (399), Plato's Academy (c. 387), Aristotle's Lyceum (335; the lead's 334 as a
+  claim), the Mausoleum (353–351), Herodotus (c. 484–425).
+- **China and India:** Confucius (c. 551–479), Laozi (traditional 6th century, with the 4th-century dating as a claim),
+  Sun Tzu (traditional 544–496), Mozi (c. 470–391), the Hundred Schools (c. 500–221), Shang Yang's reforms (356–338),
+  Pāṇini (6th–5th or 4th century BCE, both as claims).
+- **Judgment calls:** Zoroaster sits on the Iran region row (no period row fits a date this uncertain); Pāṇini on the
+  South Asia region row; Gudea on the Sumer row (between the Akkadian and Ur III periods). Traditional dates are
+  labelled as such in the titles (Laozi, Sun Tzu).
+- **Key events (11):** the Stele of the Vultures, Gilgamesh, Ashurbanipal's library, Persepolis, Homer, Thermopylae,
+  the Parthenon, Socrates, the Academy, Confucius, the Hundred Schools.

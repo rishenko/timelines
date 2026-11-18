@@ -1472,7 +1472,93 @@
       "tags": ["wikipedia"],
       "accessed": "2026-11-18"
     },
-    "wp-wilton": { "name": "Wikipedia: Wilton culture", "url": "https://en.wikipedia.org/wiki/Wilton_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" }
+    "wp-wilton": { "name": "Wikipedia: Wilton culture", "url": "https://en.wikipedia.org/wiki/Wilton_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-eannatum": { "name": "Wikipedia: Eannatum", "url": "https://en.wikipedia.org/wiki/Eannatum", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-stele-vultures": {
+      "name": "Wikipedia: Stele of the Vultures",
+      "url": "https://en.wikipedia.org/wiki/Stele_of_the_Vultures",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-urukagina": { "name": "Wikipedia: Urukagina", "url": "https://en.wikipedia.org/wiki/Urukagina", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-gudea": { "name": "Wikipedia: Gudea", "url": "https://en.wikipedia.org/wiki/Gudea", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tushratta": { "name": "Wikipedia: Tushratta", "url": "https://en.wikipedia.org/wiki/Tushratta", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tel-hazor": { "name": "Wikipedia: Tel Hazor", "url": "https://en.wikipedia.org/wiki/Tel_Hazor", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-gilgamesh": {
+      "name": "Wikipedia: Epic of Gilgamesh",
+      "url": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-ashurbanipal-library": {
+      "name": "Wikipedia: Library of Ashurbanipal",
+      "url": "https://en.wikipedia.org/wiki/Library_of_Ashurbanipal",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-babylonian-captivity": {
+      "name": "Wikipedia: Babylonian captivity",
+      "url": "https://en.wikipedia.org/wiki/Babylonian_captivity",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-cyrus-cylinder": { "name": "Wikipedia: Cyrus Cylinder", "url": "https://en.wikipedia.org/wiki/Cyrus_Cylinder", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-persepolis": { "name": "Wikipedia: Persepolis", "url": "https://en.wikipedia.org/wiki/Persepolis", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-zoroaster": { "name": "Wikipedia: Zoroaster", "url": "https://en.wikipedia.org/wiki/Zoroaster", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-homer": { "name": "Wikipedia: Homer", "url": "https://en.wikipedia.org/wiki/Homer", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-hesiod": { "name": "Wikipedia: Hesiod", "url": "https://en.wikipedia.org/wiki/Hesiod", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-thales": {
+      "name": "Wikipedia: Thales of Miletus",
+      "url": "https://en.wikipedia.org/wiki/Thales_of_Miletus",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-pythagoras": { "name": "Wikipedia: Pythagoras", "url": "https://en.wikipedia.org/wiki/Pythagoras", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-thermopylae": {
+      "name": "Wikipedia: Battle of Thermopylae",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Thermopylae",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-pericles": { "name": "Wikipedia: Pericles", "url": "https://en.wikipedia.org/wiki/Pericles", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-parthenon": { "name": "Wikipedia: Parthenon", "url": "https://en.wikipedia.org/wiki/Parthenon", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-trial-socrates": {
+      "name": "Wikipedia: Trial of Socrates",
+      "url": "https://en.wikipedia.org/wiki/Trial_of_Socrates",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-academy": {
+      "name": "Wikipedia: Platonic Academy",
+      "url": "https://en.wikipedia.org/wiki/Platonic_Academy",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-lyceum": {
+      "name": "Wikipedia: Lyceum (classical)",
+      "url": "https://en.wikipedia.org/wiki/Lyceum_(classical)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-mausoleum": {
+      "name": "Wikipedia: Mausoleum at Halicarnassus",
+      "url": "https://en.wikipedia.org/wiki/Mausoleum_at_Halicarnassus",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-herodotus": { "name": "Wikipedia: Herodotus", "url": "https://en.wikipedia.org/wiki/Herodotus", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-confucius": { "name": "Wikipedia: Confucius", "url": "https://en.wikipedia.org/wiki/Confucius", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-laozi": { "name": "Wikipedia: Laozi", "url": "https://en.wikipedia.org/wiki/Laozi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-sun-tzu": { "name": "Wikipedia: Sun Tzu", "url": "https://en.wikipedia.org/wiki/Sun_Tzu", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-mozi": { "name": "Wikipedia: Mozi", "url": "https://en.wikipedia.org/wiki/Mozi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-hundred-schools": {
+      "name": "Wikipedia: Hundred Schools of Thought",
+      "url": "https://en.wikipedia.org/wiki/Hundred_Schools_of_Thought",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-shang-yang": { "name": "Wikipedia: Shang Yang", "url": "https://en.wikipedia.org/wiki/Shang_Yang", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-panini": { "name": "Wikipedia: Pāṇini", "url": "https://en.wikipedia.org/wiki/P%C4%81%E1%B9%87ini", "tags": ["wikipedia"], "accessed": "2026-11-18" }
   },
   "chronologies": {
     "middle": {
@@ -9749,6 +9835,337 @@
       "tracks": ["southwest"],
       "descr": "The southern of the four Southwestern Archaic traditions; provisional radiocarbon dates.",
       "sources": [{ "sourceKey": "wp-cochise", "sourceLocation": "lead and San Pedro phase" }]
+    },
+    {
+      "uuid": "stele-vultures",
+      "title": "Eannatum of Lagash defeats Umma: the Stele of the Vultures",
+      "start": "c. 2450 BCE",
+      "tracks": ["sum-ed"],
+      "descr": "The earliest known war monument. Eannatum established one of the first verifiable empires in history, subduing Elam and destroying Susa.",
+      "sources": [
+        { "sourceKey": "wp-eannatum", "sourceLocation": "infobox, lead and Stele of the Vultures" },
+        { "sourceKey": "wp-stele-vultures", "sourceLocation": "infobox, lead and Description" }
+      ],
+      "startDates": [
+        { "year": "2450 BCE", "source": { "sourceKey": "wp-eannatum", "sourceLocation": "Stele of the Vultures" } },
+        { "year": "2475 BCE", "source": { "sourceKey": "wp-stele-vultures", "sourceLocation": "infobox" } },
+        { "year": "2460 BCE", "source": { "sourceKey": "wp-stele-vultures", "sourceLocation": "Description" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "urukagina",
+      "title": "Urukagina of Lagash",
+      "start": "c. 2378 BCE",
+      "end": "c. 2368 BCE",
+      "tracks": ["sum-ed"],
+      "descr": "King of Lagash and Girsu, described by one study as the first social reformer in history, though there is no solid evidence for a single \"reform of Urukagina\".",
+      "sources": [{ "sourceKey": "wp-urukagina", "sourceLocation": "infobox, lead and Reforms" }],
+      "links": [{ "to": "lugalzagesi", "kind": "related" }]
+    },
+    {
+      "uuid": "gudea",
+      "title": "Gudea of Lagash",
+      "start": "c. 2144 BCE",
+      "end": "c. 2124 BCE",
+      "tracks": ["sumer"],
+      "descr": "Best known for the many statues of him; about 600 tablets survive from his dynasty. Exactly when in the 22nd century BC he reigned cannot be determined.",
+      "sources": [{ "sourceKey": "wp-gudea", "sourceLocation": "infobox, lead, Sources and Chronology" }],
+      "startDates": [
+        { "year": "2144 BCE", "source": { "sourceKey": "wp-gudea", "sourceLocation": "infobox" } },
+        { "year": "2140 BCE", "margin": 10, "source": { "sourceKey": "wp-gudea", "sourceLocation": "lead" } }
+      ],
+      "endDates": [
+        { "year": "2124 BCE", "source": { "sourceKey": "wp-gudea", "sourceLocation": "infobox" } },
+        { "year": "2115 BCE", "margin": 5, "source": { "sourceKey": "wp-gudea", "sourceLocation": "lead" } }
+      ]
+    },
+    {
+      "uuid": "gilgamesh",
+      "title": "The Epic of Gilgamesh (Old Babylonian version)",
+      "start": "c. 1800 BCE",
+      "tracks": ["bab-old"],
+      "descr": "The world’s oldest surviving narrative literature. Sumerian Gilgamesh poems may date to the Third Dynasty of Ur (c. 2100 BCE); the Standard Babylonian version was compiled by Sîn-lēqi-unninni between 1300 and 1000 BCE.",
+      "sources": [{ "sourceKey": "wp-gilgamesh", "sourceLocation": "infobox, lead and Versions" }],
+      "importance": 1
+    },
+    {
+      "uuid": "tushratta",
+      "title": "Tushratta of Mitanni",
+      "start": "c. 1358 BCE",
+      "end": "c. 1335 BCE",
+      "tracks": ["mitanni"],
+      "descr": "King of Mitanni at the end of the reign of Amenhotep III, to whom he wrote letters.",
+      "sources": [{ "sourceKey": "wp-tushratta", "sourceLocation": "infobox and lead" }],
+      "links": [{ "to": "amarna-letters", "kind": "related" }, { "to": "suppiluliuma-i", "kind": "related" }]
+    },
+    {
+      "uuid": "hazor-burned",
+      "title": "Hazor, the great Canaanite city, burns",
+      "start": "c. 1250 BCE",
+      "tracks": ["can-lba"],
+      "descr": "A stratum from around 1200 BCE (13th century) shows catastrophic fire and a scorched palace; the cause is disputed. Hazor had been a major city since the Middle Bronze Age (around 1750 BCE).",
+      "sources": [{ "sourceKey": "wp-tel-hazor", "sourceLocation": "lead and Biblical archaeology" }],
+      "startDates": [{ "year": "1250 BCE", "margin": 50, "source": { "sourceKey": "wp-tel-hazor", "sourceLocation": "Biblical archaeology ('13th century BCE')" } }]
+    },
+    {
+      "uuid": "hazor-732",
+      "title": "Assyria captures Hazor",
+      "start": "732 BCE",
+      "tracks": ["israel-judah", "as-neo"],
+      "descr": "Despite its defences the city is captured and its population deported.",
+      "sources": [{ "sourceKey": "wp-tel-hazor", "sourceLocation": "infobox and Israelite Hazor" }],
+      "links": [{ "to": "tiglath-pileser-iii", "kind": "related" }]
+    },
+    {
+      "uuid": "ashurbanipal-library",
+      "title": "The Library of Ashurbanipal",
+      "start": "668 BCE",
+      "end": "627 BCE",
+      "tracks": ["as-neo"],
+      "descr": "More than 30,000 clay tablets and fragments from the 7th century BCE, among them the Epic of Gilgamesh. Nineveh is destroyed in 612 BCE.",
+      "sources": [{ "sourceKey": "wp-ashurbanipal-library", "sourceLocation": "lead, Contents and Discovery" }],
+      "links": [{ "to": "ashurbanipal", "kind": "part-of" }, { "to": "gilgamesh", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "exile-return",
+      "title": "Exiles return from Babylon",
+      "start": "539 BCE",
+      "tracks": ["israel-judah", "persia"],
+      "descr": "After the deportations of 597, 587 and 582 BCE, the exiled Judeans are permitted by the Persians to return after the Battle of Opis; the Second Temple is begun c. 537 BCE.",
+      "sources": [{ "sourceKey": "wp-babylonian-captivity", "sourceLocation": "lead" }],
+      "links": [{ "to": "cyrus-takes-babylon", "kind": "related" }, { "to": "jerusalem-587", "kind": "related" }]
+    },
+    {
+      "uuid": "cyrus-cylinder",
+      "title": "The Cyrus Cylinder",
+      "start": "c. 539 BCE",
+      "tracks": ["persia"],
+      "descr": "An Achaemenid royal inscription in the name of Cyrus the Great, made after the Persian conquest of Babylon; the British Museum dates it between 539 and 530 BC.",
+      "sources": [{ "sourceKey": "wp-cyrus-cylinder", "sourceLocation": "infobox, lead and Description" }],
+      "links": [{ "to": "cyrus-takes-babylon", "kind": "part-of" }]
+    },
+    {
+      "uuid": "persepolis",
+      "title": "Persepolis built",
+      "start": "c. 515 BCE",
+      "tracks": ["persia"],
+      "descr": "The ceremonial capital of the Achaemenid Empire. Cyrus may have chosen the site, but Darius I built the terrace and palaces (André Godard); a broad stairway was begun around 519 BC.",
+      "sources": [{ "sourceKey": "wp-persepolis", "sourceLocation": "infobox, lead and Construction" }],
+      "startDates": [
+        { "year": "515 BCE", "source": { "sourceKey": "wp-persepolis", "sourceLocation": "lead and Construction" } },
+        { "year": "519 BCE", "source": { "sourceKey": "wp-persepolis", "sourceLocation": "Construction (stairway)" } }
+      ],
+      "links": [{ "to": "darius-i", "kind": "part-of" }],
+      "importance": 1
+    },
+    {
+      "uuid": "zoroaster",
+      "title": "Zoroaster (date unknown)",
+      "start": "c. 1000 BCE",
+      "tracks": ["iran"],
+      "descr": "An Iranian religious reformer. There is no consensus on his date: many scholars consider around 1000 BC most likely, others a range of 1500 to 500 BC; tradition places him in the 7th and 6th centuries BC.",
+      "sources": [{ "sourceKey": "wp-zoroaster", "sourceLocation": "infobox, lead and Date" }],
+      "startDates": [
+        { "year": "1000 BCE", "margin": 500, "source": { "sourceKey": "wp-zoroaster", "sourceLocation": "Date (many scholars)" } },
+        { "year": "612 BCE", "margin": 12, "source": { "sourceKey": "wp-zoroaster", "sourceLocation": "infobox (traditional birth)" } }
+      ]
+    },
+    {
+      "uuid": "homer",
+      "title": "The Iliad and the Odyssey",
+      "start": "c. 700 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "Traditionally credited to Homer; the poems are thought to have been composed around the late eighth or early seventh century BC.",
+      "sources": [{ "sourceKey": "wp-homer", "sourceLocation": "lead" }],
+      "startDates": [
+        {
+          "year": "700 BCE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-homer", "sourceLocation": "lead ('the late eighth or early seventh century BC')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "hesiod",
+      "title": "Hesiod’s Works and Days",
+      "start": "c. 700 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "Hesiod is generally thought to have been active between 750 and 650 BC; Works and Days describes the five Ages of Man.",
+      "sources": [{ "sourceKey": "wp-hesiod", "sourceLocation": "infobox, lead and Dating" }],
+      "startDates": [{ "year": "700 BCE", "margin": 50, "source": { "sourceKey": "wp-hesiod", "sourceLocation": "infobox and lead" } }]
+    },
+    {
+      "uuid": "thales-eclipse",
+      "title": "Thales predicts a solar eclipse",
+      "start": "585 BCE",
+      "tracks": ["greece-archaic"],
+      "descr": "According to Herodotus. Thales (c. 626/623 – c. 548/545 BC) was one of the Seven Sages.",
+      "sources": [{ "sourceKey": "wp-thales", "sourceLocation": "lead and Life" }]
+    },
+    {
+      "uuid": "pythagoras",
+      "title": "Pythagoras founds a school at Croton",
+      "start": "c. 530 BCE",
+      "tracks": ["greece-archaic", "magna-graecia"],
+      "descr": "The philosopher and polymath (c. 570 – c. 495 BC), eponymous founder of Pythagoreanism, travels to Croton in southern Italy.",
+      "sources": [{ "sourceKey": "wp-pythagoras", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "thermopylae",
+      "title": "Battle of Thermopylae",
+      "start": "480 BCE",
+      "tracks": ["greece-classical", "persia"],
+      "descr": "Greek city-states led by Sparta under Leonidas I hold the pass against Xerxes’ invasion; the Greeks defeat the invaders at Salamis later that year.",
+      "sources": [{ "sourceKey": "wp-thermopylae", "sourceLocation": "infobox and lead" }],
+      "links": [{ "to": "salamis", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "pericles",
+      "title": "Pericles leads Athens",
+      "start": "461 BCE",
+      "end": "429 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "The statesman and general of the Golden Age of Athens dies of the Plague of Athens in 429 BC.",
+      "sources": [{ "sourceKey": "wp-pericles", "sourceLocation": "infobox, lead and Ostracising Cimon" }]
+    },
+    {
+      "uuid": "parthenon",
+      "title": "The Parthenon built",
+      "start": "447 BCE",
+      "end": "438 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "A temple on the Athenian Acropolis dedicated to Athena, begun when the Delian League was at the peak of its power; work on its decoration continued until 432 BC.",
+      "sources": [{ "sourceKey": "wp-parthenon", "sourceLocation": "infobox and lead" }],
+      "endDates": [
+        { "year": "438 BCE", "source": { "sourceKey": "wp-parthenon", "sourceLocation": "lead" } },
+        { "year": "432 BCE", "source": { "sourceKey": "wp-parthenon", "sourceLocation": "infobox" } }
+      ],
+      "links": [{ "to": "pericles", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "socrates",
+      "title": "The trial and death of Socrates",
+      "start": "399 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "Athens tries the 70-year-old philosopher on two charges and he is put to death.",
+      "sources": [{ "sourceKey": "wp-trial-socrates", "sourceLocation": "infobox, lead and Trial" }],
+      "importance": 1
+    },
+    {
+      "uuid": "academy",
+      "title": "Plato founds the Academy",
+      "start": "c. 387 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "Aristotle studies there for twenty years (367–347 BC); the school lasts until 83 BC.",
+      "sources": [{ "sourceKey": "wp-academy", "sourceLocation": "lead and Plato’s Academy" }],
+      "importance": 1
+    },
+    {
+      "uuid": "lyceum",
+      "title": "Aristotle founds the Lyceum",
+      "start": "335 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "Returning to Athens after it fell under Macedonian rule, Aristotle sets up his school at the Lyceum.",
+      "sources": [{ "sourceKey": "wp-lyceum", "sourceLocation": "lead and The Lyceum" }],
+      "startDates": [
+        { "year": "335 BCE", "source": { "sourceKey": "wp-lyceum", "sourceLocation": "The Lyceum" } },
+        { "year": "334 BCE", "source": { "sourceKey": "wp-lyceum", "sourceLocation": "lead" } }
+      ]
+    },
+    {
+      "uuid": "mausoleum",
+      "title": "The Mausoleum at Halicarnassus",
+      "start": "353 BCE",
+      "end": "351 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "The tomb of Mausolus, built after his death in 353 BC; one of the Seven Wonders of the Ancient World.",
+      "sources": [{ "sourceKey": "wp-mausoleum", "sourceLocation": "infobox, lead and Conquest" }]
+    },
+    {
+      "uuid": "herodotus",
+      "title": "Herodotus, historian of the Greco-Persian Wars",
+      "start": "c. 484 BCE",
+      "end": "c. 425 BCE",
+      "tracks": ["greece-classical"],
+      "descr": "A Greek historian and geographer from Halicarnassus; nothing in his Histories can be dated with certainty after 430 BC.",
+      "sources": [{ "sourceKey": "wp-herodotus", "sourceLocation": "infobox, lead and Later life" }]
+    },
+    {
+      "uuid": "confucius",
+      "title": "Life of Confucius",
+      "start": "c. 551 BCE",
+      "end": "c. 479 BCE",
+      "tracks": ["zhou-eastern"],
+      "descr": "Traditionally the paragon of Chinese sages; his teachings, Confucianism, emphasise personal and governmental morality.",
+      "sources": [{ "sourceKey": "wp-confucius", "sourceLocation": "infobox and lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "laozi",
+      "title": "Laozi (traditional dates)",
+      "start": "c. 550 BCE",
+      "tracks": ["zhou-eastern"],
+      "descr": "Considered the author of the Tao Te Ching and the founder of Taoism. Tradition makes him a contemporary of Confucius; he is sometimes dated to the 4th century BC, and the oldest manuscript of his book dates to the late 4th century BC.",
+      "sources": [{ "sourceKey": "wp-laozi", "sourceLocation": "infobox, lead and Identity" }],
+      "startDates": [
+        { "year": "551 BCE", "margin": 49, "source": { "sourceKey": "wp-laozi", "sourceLocation": "infobox ('trad. 6th century BC')" } },
+        { "year": "351 BCE", "margin": 49, "source": { "sourceKey": "wp-laozi", "sourceLocation": "infobox ('sometimes dated 4th century BC')" } }
+      ],
+      "links": [{ "to": "confucius", "kind": "related" }]
+    },
+    {
+      "uuid": "sun-tzu",
+      "title": "Sun Tzu (traditional dates)",
+      "start": "544 BCE",
+      "end": "496 BCE",
+      "tracks": ["zhou-eastern"],
+      "descr": "The general and strategist traditionally credited with The Art of War, though its earliest parts probably date at least a century after him.",
+      "sources": [{ "sourceKey": "wp-sun-tzu", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "mozi",
+      "title": "Mozi founds Mohism",
+      "start": "c. 470 BCE",
+      "end": "c. 391 BCE",
+      "tracks": ["zhou-eastern"],
+      "descr": "A philosophy emphasising universal love, social order, the will of Heaven, sharing and honouring the worthy.",
+      "sources": [{ "sourceKey": "wp-mozi", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "hundred-schools",
+      "title": "The Hundred Schools of Thought",
+      "start": "c. 500 BCE",
+      "end": "221 BCE",
+      "tracks": ["zhou-eastern"],
+      "descr": "Confucianism, Taoism, Mohism, Legalism and others flourish in the late Spring and Autumn and Warring States periods; their ideas profoundly influence East Asian culture.",
+      "sources": [{ "sourceKey": "wp-hundred-schools", "sourceLocation": "lead, Confucianism, Taoism, Mohism and Legalism" }],
+      "importance": 1
+    },
+    {
+      "uuid": "shang-yang",
+      "title": "Shang Yang’s reforms in Qin",
+      "start": "356 BCE",
+      "end": "338 BCE",
+      "tracks": ["zhou-eastern"],
+      "descr": "The reformer takes office in Qin in 359 BCE; his first reforms (356 BC) assign land by military merit and favour agriculture, and a second set follows in 350 BC.",
+      "sources": [{ "sourceKey": "wp-shang-yang", "sourceLocation": "infobox, lead and Reforms" }]
+    },
+    {
+      "uuid": "panini",
+      "title": "Pāṇini’s Sanskrit grammar",
+      "start": "c. 450 BCE",
+      "tracks": ["indus"],
+      "descr": "The ancient Sanskrit grammarian flourished in the mid 1st millennium BCE, variously dated between the 6th–5th and the 4th century BCE.",
+      "sources": [{ "sourceKey": "wp-panini", "sourceLocation": "infobox" }],
+      "startDates": [
+        { "year": "501 BCE", "margin": 99, "source": { "sourceKey": "wp-panini", "sourceLocation": "infobox ('6th–5th century BCE')" } },
+        { "year": "351 BCE", "margin": 49, "source": { "sourceKey": "wp-panini", "sourceLocation": "infobox ('4th century BCE')" } }
+      ]
     }
   ]
 }
