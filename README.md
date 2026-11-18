@@ -10,8 +10,12 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Eurasian Steppe (Botai, Yamnaya, Afanasievo, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians, Saka, Massagetae, Pazyryk), South Asia (Harappans, the Vedic period,
   Magadha), mainland Southeast Asia (Ban Chiang, Phùng Nguyên, Đông Sơn, Sa Huỳnh, Văn Lang, the Plain of Jars), China, Korea
   and Japan (Old Chosŏn, Mumun, Jōmon, Yayoi), Taiwan and Island Southeast Asia (Dapenkeng, the Out-of-Taiwan expansion, the
-  Maritime Jade Road, Buni), Oceania (the Marianas, Lapita to Fiji, Tonga and Samoa, Australia) and the Americas,
-  c. 3500–330 BCE. 313 events, every date cited.
+  Maritime Jade Road, Buni), Oceania (the Marianas, Palau, Lapita to Fiji, Tonga and Samoa, Australia), the Caucasus
+  (Maykop, Kura–Araxes, Colchis, Koban, Diauehi), Arabia (Magan, Saba, Qataban, Tayma, Lihyan), eastern Europe
+  (Cucuteni–Trypillia, Funnelbeaker, Globular Amphora, Biskupin, the Getae), Siberia and Mongolia (Okunev, Karasuk, Tagar,
+  deer stones), Tibet (Karuo), South India and Sri Lanka, the Sahara and East African herders, and the Americas from the
+  Arctic (Saqqaq, Dorset) through North America (Old Copper, Adena), Mesoamerica (Mokaya, Tlatilco, Zapotecs) and South
+  America (Cupisnique, Paracas, Chinchorro) to the Caribbean, c. 3500–330 BCE. 383 events, every date cited.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
 
@@ -92,7 +96,7 @@ npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --ex
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 
-`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
+`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, caucasus, arabia, eastern-europe, americas, north-asia, fill-gaps, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 

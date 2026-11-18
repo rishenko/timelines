@@ -17,14 +17,15 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   the file at the link.
 
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
-- **Review the key events** in `docs/ancient-key-events.md` (112 key, 35 minor, proposed by Claude). Change
+- **Review the key events** in `docs/ancient-key-events.md` (131 key, 38 minor, proposed by Claude). Change
   `data-src/ancient-importance.json` and run `npm run importance:ancient`.
-- **Europe, the Mediterranean, the Steppe, Africa, Asia and the Pacific: deeper research.** See the summary-only
-  lists in `docs/ancient-sources.md` (third to eighth passes).
-- **New regions within 3500–330 BCE**, one `scripts/additions/<region>.ts` each (done: `steppe.ts`, `africa.ts`,
-  `asia.ts`, `pacific.ts`). Every region on the original list is now in. For any new one: tag key events as they go
-  in, place it next to its partners (the proximity test), and consider starting it collapsed. Candidates: a
-  Micronesia row (Palau and Yap "by 1000 BCE"), New Guinea.
+- **Every region: deeper research.** See the summary-only lists in `docs/ancient-sources.md` (third to ninth passes).
+- **Extend back to 9000 BCE** (the author's request, 2026-11-18): the Neolithic before 3500 BCE.
+- **New regions**, one `scripts/additions/<region>.ts` each (done: `steppe`, `africa`, `asia`, `pacific`, `caucasus`,
+  `arabia`, `eastern-europe`, `americas`, `north-asia`, `fill-gaps`). For any new one: tag key events as they go in,
+  place it next to its partners (the proximity test), and consider starting it collapsed. Still thin or missing: the
+  US Southwest (its pages were 404), South India's Neolithic, the Kintampo complex, southern African hunter-gatherers,
+  Yap, New Guinea.
 - **Key events when zoomed out**: at the coarsest zoom, show only key events (a second use of `importance`).
 - **Drafts hide data updates.** A saved edit-mode draft replaces the bundled timeline entirely, so a
   reader with a draft never sees later fixes to the shipped data. Same issue as REDACTED;

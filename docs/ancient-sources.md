@@ -346,3 +346,51 @@ Southeast Asia and the Americas. Three web-fetch agents read 22 pages.
   - Redd et al.'s migration from India c. 4,000 years ago (a single paper).
   - Everything read only in summary: wet-field rice in Indonesia "as early as the 8th century BCE", the Torres Strait's
     "by 2,500 years ago", and the Australian Holocene tool dates.
+
+## Ninth pass: the remaining gaps (18 November 2026)
+
+Important events only, in six re-runnable scripts (run before `groups.ts`): `caucasus.ts`, `arabia.ts`,
+`eastern-europe.ts`, `americas.ts`, `north-asia.ts`, `fill-gaps.ts`. 70 events, 58 sources, 55 rows. Seven web-fetch
+agents read about 65 pages.
+
+- **Not used (AI-text warnings):** *Trialeti–Vanadzor culture*, *Lusatian culture* (Biskupin's own page is used
+  instead), and *Ma'in* (Minaeans): its banner cites the LLM translation guideline, so it is treated as flagged.
+- **Not found (404):** Umm an-Nar culture (dates from *Magan* and *Hafit period*), Dedan (from *Lihyan*), Casimiroid
+  (from *Ortoiroid people*), Sechín Bajo, Oasisamerica cultures / Tucson Basin / Las Capas (no US Southwest data),
+  Southern Neolithic and Ash mound (no South Indian Neolithic), Megalithic culture of South India (*Iron Age in India*
+  and *Adichanallur* instead), Kintampo complex, Qugong, Zongri culture.
+- **Caucasus** (new region, Near East group): Maykop (3700–3000), Kura–Araxes (3400–2000; lead 4000 and an end as early
+  as 2700–2600 as claims) with its spread into eastern Anatolia (c. 3000) and Shengavit, Colchis (the Colchian culture from
+  2700; tribes consolidate in the 13th century BC; Sarduri II 744; Cimmerians and Scythians 720; Greek colonies in the 6th
+  century), Lchashen–Metsamor (1500–700), Koban (1200–350), Diauehi (Tiglath-Pileser I 1112; Argishti I 783).
+- **Arabia** (new region, Near East group): the Oman Peninsula (Hafit 3200–2600, Umm al-Nar 2600–2000, Akkad's campaigns,
+  Ur-Nammu's ships of Magan, Wadi Suq 2000–1300), Saba (the Marib Dam, 8th century, with the tentative 1750–1700 as a claim;
+  its height 8th–6th centuries; Karib'il Watar), Qataban, North Arabia (Tayma under Ramesses III, Assyria and Nabonidus;
+  Lihyan).
+- **Eastern Europe** (rows in Europe): Funnelbeaker (Flintbek and Bronocice wheels), Globular Amphora, Cucuteni–Trypillia
+  (the Talianki and Maidanetske mega-sites, 3850–3600, before the window opens), Usatove, Yamnaya mounds over the mega-sites,
+  Corded Ware replacing Funnelbeaker by 2650, Biskupin (747, dendrochronology), Alexander and the Getae (335).
+- **Americas** (now a group of five regions; the six existing rows moved in): the Arctic (Paleo-Eskimo migration c. 4000,
+  Saqqaq, Independence I, Dorset), North America (Old Copper, Indian Knoll, Adena), Mesoamerica (Mokaya's first pottery,
+  San José Mogote, Tlatilco, the earliest Zapotec writing, Monte Albán), South America (Kotosh, Cupisnique, Paracas,
+  Chinchorro), the Caribbean (Casimiroid, Ortoiroid, Saladoid).
+- **Siberia and Mongolia** (new region, Steppe & South Asia group): Okunev, Glazkov, Ymyyakhtakh, Karasuk (with Shang
+  chariots and bronzes), deer stones, Slab-grave, Tagar. **Tibet** (new region, East Asia group): Karuo; Zhangzhung and
+  Nyatri Tsenpo's traditional 414 BC.
+- **Smaller gaps:** the Gandhara grave culture, the Early Iron Age in South India (c. 1000; the disputed Sivagalai and
+  Mayiladumparai dates are mentioned, not claimed), Sri Lankan cinnamon in Egypt (c. 1500), Anuradhapura (before 900), the
+  end of the African humid period (c. 3550, from "5,500 years before present is often used"; 6,000–5,000 years ago as a
+  claim), the pan-tropical drought of about 4,000 years ago, East African herding (5000 BP and the highlands c. 3,300 ybp),
+  Palau (c. 1000 BCE; the 3rd–2nd millennia as a claim).
+- **Judgment calls (please check):**
+  - Region order in the Near East is now Egypt, Levant, Anatolia, Mesopotamia, Caucasus, Iran, Arabia, Dilmun (score 114,
+    passes). The search's best (104) ran north to south with the Caucasus first; the chosen order keeps the old west-to-east
+    Fertile Crescent with Arabia next to Dilmun.
+  - The Old Copper row starts at c. 4000 BCE (Oconto, Wisconsin DNR, Pleger) with the infobox's 6500 as a claim; the
+    Chinchorro row starts at 7000 BCE, which widens the ruler.
+  - Pages that disagree internally keep both values as claims (Kura–Araxes start, Dorset end, Cupisnique span).
+  - Row labels name places only when the page does (e.g. "Mokaya (Mazatán)", not Chiapas).
+- **Key events (19)** and **minor (3)**: see `docs/ancient-key-events.md`.
+- **Left out:** San peoples (no in-window date beyond "the first millennium BCE"), Yap (no date), the Okunev figurine's
+  3511–3127 cal BC (one caption), Karib'il's link to Sennacherib as a dated event (the page's two Karib'ils are unclear),
+  the Dacians' Persian and Greek relations (summary only), and the Trypillian details read only in summary.

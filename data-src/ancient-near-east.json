@@ -3,8 +3,8 @@
   "meta": {
     "id": "ancient-near-east",
     "title": "Ancient Civilizations",
-    "subtitle": "Europe, the Mediterranean, Africa, the Near East, Iran, the Steppe, South and East Asia, Island Southeast Asia and Oceania, and the Americas, c. 3500–330 BCE",
-    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, South Asia, mainland Southeast Asia, China, Korea and Japan, Taiwan and Island Southeast Asia, Oceania, and the Americas.",
+    "subtitle": "Europe, Africa, the Near East, Arabia and the Caucasus, the Steppe and Siberia, South and East Asia, Oceania, and the Americas, c. 3500–330 BCE",
+    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa and the Sahara, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, the Caucasus, Iran, Arabia, the Eurasian Steppe, Siberia and Mongolia, South Asia and Sri Lanka, mainland Southeast Asia, Tibet, China, Korea and Japan, Taiwan and Island Southeast Asia, Oceania, and the Americas from the Arctic to the Caribbean and the Andes.",
     "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
     "calendar": { "before": "BCE", "after": "CE", "yearZero": false, "aliases": { "before": ["BC"], "after": ["AD"] } },
     "increments": [10, 50, 100, 500],
@@ -42,7 +42,16 @@
       "indus",
       "china",
       "island-sea",
-      "oceania"
+      "oceania",
+      "arabia",
+      "caucasus",
+      "siberia",
+      "tibet",
+      "arctic",
+      "north-america",
+      "mesoamerica",
+      "south-america",
+      "caribbean"
     ]
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" } },
@@ -956,7 +965,195 @@
       "url": "https://en.wikipedia.org/wiki/Prehistory_of_Australia",
       "tags": ["wikipedia"],
       "accessed": "2026-11-18"
-    }
+    },
+    "wp-maykop": { "name": "Wikipedia: Maykop culture", "url": "https://en.wikipedia.org/wiki/Maykop_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-kura-araxes": {
+      "name": "Wikipedia: Kura–Araxes culture",
+      "url": "https://en.wikipedia.org/wiki/Kura%E2%80%93Araxes_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-colchian": {
+      "name": "Wikipedia: Colchian culture",
+      "url": "https://en.wikipedia.org/wiki/Colchian_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-colchis": { "name": "Wikipedia: Colchis", "url": "https://en.wikipedia.org/wiki/Colchis", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-lchashen": {
+      "name": "Wikipedia: Lchashen–Metsamor culture",
+      "url": "https://en.wikipedia.org/wiki/Lchashen%E2%80%93Metsamor_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-koban": { "name": "Wikipedia: Koban culture", "url": "https://en.wikipedia.org/wiki/Koban_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-diauehi": { "name": "Wikipedia: Diauehi", "url": "https://en.wikipedia.org/wiki/Diauehi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-hafit": { "name": "Wikipedia: Hafit period", "url": "https://en.wikipedia.org/wiki/Hafit_period", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-wadi-suq": {
+      "name": "Wikipedia: Wadi Suq culture",
+      "url": "https://en.wikipedia.org/wiki/Wadi_Suq_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-magan": {
+      "name": "Wikipedia: Magan (civilization)",
+      "url": "https://en.wikipedia.org/wiki/Magan_(civilization)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-sheba": { "name": "Wikipedia: Sheba", "url": "https://en.wikipedia.org/wiki/Sheba", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-marib-dam": { "name": "Wikipedia: Marib Dam", "url": "https://en.wikipedia.org/wiki/Marib_Dam", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-qataban": { "name": "Wikipedia: Qataban", "url": "https://en.wikipedia.org/wiki/Qataban", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tayma": { "name": "Wikipedia: Tayma", "url": "https://en.wikipedia.org/wiki/Tayma", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-lihyan": { "name": "Wikipedia: Lihyan", "url": "https://en.wikipedia.org/wiki/Lihyan", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-trypillia": {
+      "name": "Wikipedia: Cucuteni–Trypillia culture",
+      "url": "https://en.wikipedia.org/wiki/Cucuteni%E2%80%93Trypillia_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-talianki": {
+      "name": "Wikipedia: Talianki (archaeological site)",
+      "url": "https://en.wikipedia.org/wiki/Talianki_(archaeological_site)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-maidanetske": { "name": "Wikipedia: Maidanetske", "url": "https://en.wikipedia.org/wiki/Maidanetske", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-usatove": { "name": "Wikipedia: Usatove culture", "url": "https://en.wikipedia.org/wiki/Usatove_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-funnelbeaker": {
+      "name": "Wikipedia: Funnelbeaker culture",
+      "url": "https://en.wikipedia.org/wiki/Funnelbeaker_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-globular-amphora": {
+      "name": "Wikipedia: Globular Amphora culture",
+      "url": "https://en.wikipedia.org/wiki/Globular_Amphora_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-biskupin": { "name": "Wikipedia: Biskupin", "url": "https://en.wikipedia.org/wiki/Biskupin", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-dacians": { "name": "Wikipedia: Dacians", "url": "https://en.wikipedia.org/wiki/Dacians", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-adena": { "name": "Wikipedia: Adena culture", "url": "https://en.wikipedia.org/wiki/Adena_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-old-copper": {
+      "name": "Wikipedia: Old Copper complex",
+      "url": "https://en.wikipedia.org/wiki/Old_Copper_complex",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-indian-knoll": { "name": "Wikipedia: Indian Knoll", "url": "https://en.wikipedia.org/wiki/Indian_Knoll", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-pre-dorset": { "name": "Wikipedia: Pre-Dorset", "url": "https://en.wikipedia.org/wiki/Pre-Dorset", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-saqqaq": { "name": "Wikipedia: Saqqaq culture", "url": "https://en.wikipedia.org/wiki/Saqqaq_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-independence-i": {
+      "name": "Wikipedia: Independence I culture",
+      "url": "https://en.wikipedia.org/wiki/Independence_I_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-dorset": { "name": "Wikipedia: Dorset culture", "url": "https://en.wikipedia.org/wiki/Dorset_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-mokaya": { "name": "Wikipedia: Mokaya", "url": "https://en.wikipedia.org/wiki/Mokaya_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tlatilco": {
+      "name": "Wikipedia: Tlatilco culture",
+      "url": "https://en.wikipedia.org/wiki/Tlatilco_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-san-jose-mogote": {
+      "name": "Wikipedia: San José Mogote",
+      "url": "https://en.wikipedia.org/wiki/San_Jos%C3%A9_Mogote",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-zapotec": {
+      "name": "Wikipedia: Zapotec civilization",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-monte-alban": { "name": "Wikipedia: Monte Albán", "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-kotosh": { "name": "Wikipedia: Kotosh", "url": "https://en.wikipedia.org/wiki/Kotosh", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-cupisnique": { "name": "Wikipedia: Cupisnique", "url": "https://en.wikipedia.org/wiki/Cupisnique", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-paracas": { "name": "Wikipedia: Paracas culture", "url": "https://en.wikipedia.org/wiki/Paracas_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-chinchorro": {
+      "name": "Wikipedia: Chinchorro culture",
+      "url": "https://en.wikipedia.org/wiki/Chinchorro_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-ortoiroid": {
+      "name": "Wikipedia: Ortoiroid people",
+      "url": "https://en.wikipedia.org/wiki/Ortoiroid_people",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-saladoid": { "name": "Wikipedia: Saladoid", "url": "https://en.wikipedia.org/wiki/Saladoid", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-okunev": { "name": "Wikipedia: Okunev culture", "url": "https://en.wikipedia.org/wiki/Okunev_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-karasuk": { "name": "Wikipedia: Karasuk culture", "url": "https://en.wikipedia.org/wiki/Karasuk_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tagar": { "name": "Wikipedia: Tagar culture", "url": "https://en.wikipedia.org/wiki/Tagar_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-deer-stones": {
+      "name": "Wikipedia: Deer stones culture",
+      "url": "https://en.wikipedia.org/wiki/Deer_stones_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-slab-grave": {
+      "name": "Wikipedia: Slab-grave culture",
+      "url": "https://en.wikipedia.org/wiki/Slab-grave_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-glazkov": { "name": "Wikipedia: Glazkov culture", "url": "https://en.wikipedia.org/wiki/Glazkov_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ymyyakhtakh": {
+      "name": "Wikipedia: Ymyyakhtakh culture",
+      "url": "https://en.wikipedia.org/wiki/Ymyyakhtakh_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-karuo": { "name": "Wikipedia: Karuo culture", "url": "https://en.wikipedia.org/wiki/Karuo_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-iron-age-india": {
+      "name": "Wikipedia: Iron Age in India",
+      "url": "https://en.wikipedia.org/wiki/Iron_Age_in_India",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-adichanallur": { "name": "Wikipedia: Adichanallur", "url": "https://en.wikipedia.org/wiki/Adichanallur", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-sri-lanka-prehistory": {
+      "name": "Wikipedia: Prehistory of Sri Lanka",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Sri_Lanka",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-gandhara-grave": {
+      "name": "Wikipedia: Gandhara grave culture",
+      "url": "https://en.wikipedia.org/wiki/Gandhara_grave_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-humid-period": {
+      "name": "Wikipedia: African humid period",
+      "url": "https://en.wikipedia.org/wiki/African_humid_period",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-pastoral-neolithic": {
+      "name": "Wikipedia: Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-savanna-pn": {
+      "name": "Wikipedia: Savanna Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-palau": { "name": "Wikipedia: Palau", "url": "https://en.wikipedia.org/wiki/Palau", "tags": ["wikipedia"], "accessed": "2026-11-18" }
   },
   "chronologies": {
     "middle": {
@@ -1029,6 +1226,7 @@
   "tracks": [
     { "id": "africa", "name": "Africa", "color": "#b8862a" },
     { "id": "north-africa", "name": "North Africa", "color": "#a88a5a", "parent": "africa" },
+    { "id": "sahara", "name": "Sahara (climate)", "color": "#c0a060", "parent": "north-africa" },
     { "id": "libyans", "name": "Libyans", "color": "#b89a6a", "parent": "north-africa" },
     {
       "id": "cyrene",
@@ -1072,6 +1270,20 @@
       "color": "#9a8a3a",
       "parent": "sub-saharan",
       "span": { "start": "c. 2500 BCE", "end": "c. 980 BCE" }
+    },
+    {
+      "id": "pastoral-neolithic",
+      "name": "East African herders (Pastoral Neolithic)",
+      "color": "#8a6a4a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": "c. 3050 BCE",
+        "end": "c. 750 CE",
+        "startDates": [
+          { "year": "3050 BCE", "source": { "sourceKey": "wp-pastoral-neolithic", "sourceLocation": "lead ('5000 BP')" } },
+          { "year": "3000 BCE", "source": { "sourceKey": "wp-savanna-pn", "sourceLocation": "Overview ('c. 3,000 BC-700 AD')" } }
+        ]
+      }
     },
     {
       "id": "dmt",
@@ -1122,6 +1334,64 @@
     { "id": "europe", "name": "Europe", "color": "#5b6e8f", "parent": "europe-med" },
     { "id": "megaliths", "name": "Megalith builders", "color": "#7a8494", "parent": "europe" },
     {
+      "id": "funnelbeaker",
+      "name": "Funnelbeaker culture (north-central Europe)",
+      "color": "#5a7aa0",
+      "parent": "europe",
+      "span": {
+        "start": "c. 4100 BCE",
+        "end": "c. 2800 BCE",
+        "startDates": [
+          { "year": "4100 BCE", "source": { "sourceKey": "wp-funnelbeaker", "sourceLocation": "lead and infobox" } },
+          { "year": "4300 BCE", "source": { "sourceKey": "wp-funnelbeaker", "sourceLocation": "short description" } }
+        ]
+      }
+    },
+    {
+      "id": "globular-amphora",
+      "name": "Globular Amphora culture",
+      "color": "#4a6a9a",
+      "parent": "europe",
+      "span": { "start": "c. 3400 BCE", "end": "c. 2800 BCE" }
+    },
+    {
+      "id": "trypillia",
+      "name": "Cucuteni–Trypillia culture",
+      "color": "#8a6a4a",
+      "parent": "europe",
+      "span": {
+        "start": "c. 4800 BCE",
+        "end": "c. 3000 BCE",
+        "startDates": [
+          { "year": "4800 BCE", "source": { "sourceKey": "wp-trypillia", "sourceLocation": "infobox" } },
+          { "year": "5050 BCE", "source": { "sourceKey": "wp-trypillia", "sourceLocation": "lead" } }
+        ],
+        "endDates": [
+          { "year": "3000 BCE", "source": { "sourceKey": "wp-trypillia", "sourceLocation": "infobox" } },
+          { "year": "2950 BCE", "source": { "sourceKey": "wp-trypillia", "sourceLocation": "lead" } }
+        ]
+      }
+    },
+    {
+      "id": "usatove",
+      "name": "Usatove culture (northwest Pontic)",
+      "color": "#7a5a4a",
+      "parent": "europe",
+      "span": {
+        "start": "c. 3650 BCE",
+        "end": "c. 2740 BCE",
+        "startDates": [
+          { "year": "3650 BCE", "source": { "sourceKey": "wp-usatove", "sourceLocation": "infobox and lead" } },
+          {
+            "year": "3150 BCE",
+            "margin": 250,
+            "source": { "sourceKey": "wp-usatove", "sourceLocation": "Chronology (radiocarbon dates on pottery)" }
+          },
+          { "year": "3750 BCE", "margin": 250, "source": { "sourceKey": "wp-usatove", "sourceLocation": "Chronology (human remains)" } }
+        ]
+      }
+    },
+    {
       "id": "corded-ware",
       "name": "Corded Ware culture",
       "color": "#8a7a5a",
@@ -1151,6 +1421,7 @@
       }
     },
     { "id": "urnfield", "name": "Urnfield culture", "color": "#7f6a8a", "parent": "europe", "span": { "start": "c. 1300 BCE", "end": "c. 750 BCE" } },
+    { "id": "biskupin", "name": "Biskupin (Lusatian culture, Poland)", "color": "#6a7a8a", "parent": "europe" },
     { "id": "hallstatt", "name": "Hallstatt culture", "color": "#6a8a6a", "parent": "europe", "span": { "start": "1200 BCE", "end": "450 BCE" } },
     { "id": "la-tene", "name": "La Tène (Celts)", "color": "#4f8a5a", "parent": "europe", "span": { "start": "c. 450 BCE", "end": "c. 1 BCE" } },
     {
@@ -1185,6 +1456,7 @@
       "parent": "europe",
       "span": { "start": "c. 480 BCE", "end": "c. 30 BCE" }
     },
+    { "id": "getae", "name": "Getae and Dacians (lower Danube)", "color": "#8a7a5a", "parent": "europe" },
     { "id": "west-med", "name": "Western Mediterranean", "color": "#3f7f8a", "parent": "europe-med" },
     { "id": "carthage", "name": "Carthage", "color": "#7a3a6a", "parent": "west-med", "span": { "start": "c. 814 BCE", "end": "146 BCE" } },
     {
@@ -2046,6 +2318,92 @@
         ]
       }
     },
+    { "id": "caucasus", "name": "Caucasus", "color": "#7a5a8a", "parent": "near-east" },
+    {
+      "id": "maykop",
+      "name": "Maykop culture (North Caucasus)",
+      "color": "#8a5a7a",
+      "parent": "caucasus",
+      "span": { "start": "c. 3700 BCE", "end": "c. 3000 BCE" }
+    },
+    {
+      "id": "kura-araxes",
+      "name": "Kura–Araxes culture",
+      "color": "#6a5a9a",
+      "parent": "caucasus",
+      "span": {
+        "start": "c. 3400 BCE",
+        "end": "c. 2000 BCE",
+        "startDates": [
+          { "year": "3400 BCE", "source": { "sourceKey": "wp-kura-araxes", "sourceLocation": "infobox" } },
+          { "year": "4000 BCE", "source": { "sourceKey": "wp-kura-araxes", "sourceLocation": "lead ('from about 4000 BC')" } }
+        ],
+        "endDates": [
+          { "year": "2000 BCE", "source": { "sourceKey": "wp-kura-araxes", "sourceLocation": "infobox and lead" } },
+          {
+            "year": "2650 BCE",
+            "margin": 50,
+            "source": { "sourceKey": "wp-kura-araxes", "sourceLocation": "lead ('may have disappeared as early as 2600 or 2700 BC')" }
+          }
+        ]
+      }
+    },
+    {
+      "id": "colchis",
+      "name": "Colchian culture and Colchis",
+      "color": "#9a6a5a",
+      "parent": "caucasus",
+      "span": {
+        "start": "c. 2700 BCE",
+        "end": "131 CE",
+        "endDates": [
+          { "year": "131 CE", "source": { "sourceKey": "wp-colchis", "sourceLocation": "infobox (Colchis)" } },
+          { "year": "700 BCE", "source": { "sourceKey": "wp-colchian", "sourceLocation": "lead (the Colchian culture)" } }
+        ]
+      }
+    },
+    {
+      "id": "lchashen",
+      "name": "Lchashen–Metsamor culture (Armenia)",
+      "color": "#7a6a8a",
+      "parent": "caucasus",
+      "span": { "start": "c. 1500 BCE", "end": "c. 700 BCE" }
+    },
+    {
+      "id": "koban",
+      "name": "Koban culture (north-central Caucasus)",
+      "color": "#5a6a7a",
+      "parent": "caucasus",
+      "span": {
+        "start": "c. 1200 BCE",
+        "end": "c. 350 BCE",
+        "startDates": [
+          { "year": "1200 BCE", "source": { "sourceKey": "wp-koban", "sourceLocation": "lead" } },
+          {
+            "year": "1250 BCE",
+            "margin": 50,
+            "source": { "sourceKey": "wp-koban", "sourceLocation": "Description ('possibly ... the 13th century BC')" }
+          },
+          {
+            "year": "1000 BCE",
+            "margin": 400,
+            "source": { "sourceKey": "wp-colchian", "sourceLocation": "Metallurgy (Koban culture c. 1400–600 BC)" }
+          }
+        ]
+      }
+    },
+    {
+      "id": "diauehi",
+      "name": "Diauehi (Daiaeni)",
+      "color": "#8a7a6a",
+      "parent": "caucasus",
+      "span": {
+        "start": "c. 1150 BCE",
+        "end": "c. 750 BCE",
+        "startDates": [{ "year": "1150 BCE", "margin": 50, "source": { "sourceKey": "wp-diauehi", "sourceLocation": "infobox ('12th century BC')" } }],
+        "endDates": [{ "year": "750 BCE", "margin": 50, "source": { "sourceKey": "wp-diauehi", "sourceLocation": "infobox ('8th century BCE')" } }]
+      }
+    },
     { "id": "iran", "name": "Iran & Central Asia", "color": "#2f8a8a", "parent": "near-east" },
     {
       "id": "elam",
@@ -2134,6 +2492,37 @@
         ]
       }
     },
+    { "id": "arabia", "name": "Arabia", "color": "#b0784a", "parent": "near-east" },
+    { "id": "oman", "name": "Oman Peninsula (Magan)", "color": "#a06a3a", "parent": "arabia" },
+    {
+      "id": "saba",
+      "name": "Saba (Sheba)",
+      "color": "#c08a4a",
+      "parent": "arabia",
+      "span": {
+        "start": "c. 1000 BCE",
+        "end": "275 CE",
+        "startDates": [
+          { "year": "900 BCE", "margin": 100, "source": { "sourceKey": "wp-sheba", "sourceLocation": "lead ('between c. 1000 BCE and c. 800 BCE')" } },
+          { "year": "1200 BCE", "source": { "sourceKey": "wp-sheba", "sourceLocation": "Emergence ('estimates placing it around 1200 BCE')" } }
+        ]
+      }
+    },
+    {
+      "id": "qataban",
+      "name": "Qataban",
+      "color": "#a07a5a",
+      "parent": "arabia",
+      "span": {
+        "start": "c. 1000 BCE",
+        "end": "c. 200 CE",
+        "endDates": [
+          { "year": "200 CE", "source": { "sourceKey": "wp-qataban", "sourceLocation": "lead (late 2nd century CE)" } },
+          { "year": "100 CE", "source": { "sourceKey": "wp-qataban", "sourceLocation": "lead (late 1st century CE)" } }
+        ]
+      }
+    },
+    { "id": "north-arabia", "name": "North Arabia (Tayma and Dadan)", "color": "#9a7a4a", "parent": "arabia" },
     { "id": "dilmun", "name": "Dilmun (Persian Gulf)", "color": "#8a8f6a", "parent": "near-east" },
     { "id": "steppe-south-asia", "name": "Steppe & South Asia", "color": "#7a8a2a" },
     { "id": "steppe", "name": "Eurasian Steppe", "color": "#9a8a4a", "parent": "steppe-south-asia" },
@@ -2300,6 +2689,73 @@
         ]
       }
     },
+    { "id": "siberia", "name": "Siberia and Mongolia", "color": "#6a7a6a", "parent": "steppe-south-asia" },
+    { "id": "okunev", "name": "Okunev culture", "color": "#7a6a5a", "parent": "siberia", "span": { "start": "c. 2700 BCE", "end": "c. 1800 BCE" } },
+    { "id": "glazkov", "name": "Glazkov culture", "color": "#5a6a5a", "parent": "siberia", "span": { "start": "c. 2200 BCE", "end": "c. 1200 BCE" } },
+    {
+      "id": "ymyyakhtakh",
+      "name": "Ymyyakhtakh culture",
+      "color": "#6a6a7a",
+      "parent": "siberia",
+      "span": { "start": "c. 2200 BCE", "end": "c. 1300 BCE" }
+    },
+    {
+      "id": "karasuk",
+      "name": "Karasuk culture",
+      "color": "#8a7a4a",
+      "parent": "siberia",
+      "span": {
+        "start": "c. 1500 BCE",
+        "end": "c. 800 BCE",
+        "endDates": [
+          { "year": "800 BCE", "source": { "sourceKey": "wp-karasuk", "sourceLocation": "lead and infobox" } },
+          { "year": "700 BCE", "source": { "sourceKey": "wp-karasuk", "sourceLocation": "Overview ('persisted down to c. 700 BC')" } }
+        ]
+      }
+    },
+    {
+      "id": "deer-stones",
+      "name": "Deer stones culture (Mongolia)",
+      "color": "#7a5a4a",
+      "parent": "siberia",
+      "span": {
+        "start": "c. 1400 BCE",
+        "end": "c. 700 BCE",
+        "startDates": [
+          { "year": "1400 BCE", "source": { "sourceKey": "wp-deer-stones", "sourceLocation": "infobox and lead" } },
+          { "year": "1200 BCE", "source": { "sourceKey": "wp-deer-stones", "sourceLocation": "Construction" } }
+        ]
+      }
+    },
+    {
+      "id": "slab-grave",
+      "name": "Slab-grave culture",
+      "color": "#5a5a6a",
+      "parent": "siberia",
+      "span": {
+        "start": "c. 1300 BCE",
+        "end": "c. 300 BCE",
+        "startDates": [
+          { "year": "1300 BCE", "source": { "sourceKey": "wp-slab-grave", "sourceLocation": "lead and infobox (Transbaikal)" } },
+          { "year": "700 BCE", "source": { "sourceKey": "wp-slab-grave", "sourceLocation": "infobox (Mongolia)" } },
+          { "year": "1100 BCE", "source": { "sourceKey": "wp-slab-grave", "sourceLocation": "navbox" } }
+        ]
+      }
+    },
+    {
+      "id": "tagar",
+      "name": "Tagar culture (South Siberia)",
+      "color": "#8a6a3a",
+      "parent": "siberia",
+      "span": {
+        "start": "c. 800 BCE",
+        "end": "c. 168 BCE",
+        "endDates": [
+          { "year": "168 BCE", "source": { "sourceKey": "wp-tagar", "sourceLocation": "infobox" } },
+          { "year": "1 CE", "source": { "sourceKey": "wp-tagar", "sourceLocation": "lead ('between the 8th and 1st centuries BC')" } }
+        ]
+      }
+    },
     { "id": "indus", "name": "South Asia", "color": "#b5552b", "parent": "steppe-south-asia" },
     {
       "id": "harappan",
@@ -2350,7 +2806,15 @@
         ]
       }
     },
+    {
+      "id": "gandhara-grave",
+      "name": "Gandhara grave culture (Swat)",
+      "color": "#9a7a5a",
+      "parent": "indus",
+      "span": { "start": "c. 1400 BCE", "end": "c. 800 BCE" }
+    },
     { "id": "magadha", "name": "Magadha", "color": "#a0603a", "parent": "indus", "span": { "start": "c. 1200 BCE", "end": "625 CE" } },
+    { "id": "south-india", "name": "South India and Sri Lanka", "color": "#8a5a3a", "parent": "indus" },
     { "id": "east-asia", "name": "East & Southeast Asia", "color": "#6a4a9a" },
     { "id": "se-asia", "name": "Mainland Southeast Asia", "color": "#4a8a6a", "parent": "east-asia" },
     { "id": "ban-chiang", "name": "Ban Chiang (Thailand)", "color": "#6a8a4a", "parent": "se-asia" },
@@ -2390,6 +2854,15 @@
       "span": { "start": "2879 BCE", "end": "258 BCE" }
     },
     { "id": "plain-of-jars", "name": "Plain of Jars (Laos)", "color": "#8a7a6a", "parent": "se-asia" },
+    { "id": "tibet", "name": "Tibet", "color": "#8a5a6a", "parent": "east-asia" },
+    { "id": "karuo", "name": "Karuo culture", "color": "#9a6a5a", "parent": "tibet", "span": { "start": "c. 3300 BCE", "end": "c. 2000 BCE" } },
+    {
+      "id": "zhangzhung",
+      "name": "Zhangzhung and Yarlung (Tibetan tradition)",
+      "color": "#7a5a7a",
+      "parent": "tibet",
+      "span": { "start": "c. 500 BCE", "end": "625 CE" }
+    },
     { "id": "china", "name": "China", "color": "#b0302f", "chronology": "xszcp", "parent": "east-asia" },
     { "id": "liangzhu", "name": "Liangzhu culture", "color": "#4f9a6a", "parent": "china", "span": { "start": "3300 BCE", "end": "2300 BCE" } },
     {
@@ -2574,6 +3047,7 @@
     { "id": "indonesia", "name": "Indonesia", "color": "#5a8a6a", "parent": "island-sea" },
     { "id": "oceania", "name": "Oceania", "color": "#2a7a9a", "parent": "austronesia" },
     { "id": "marianas", "name": "Mariana Islands", "color": "#3a6a9a", "parent": "oceania" },
+    { "id": "palau", "name": "Palau (Micronesia)", "color": "#3a7aaa", "parent": "oceania" },
     {
       "id": "lapita",
       "name": "Lapita culture (Melanesia to Fiji, Tonga and Samoa)",
@@ -2594,12 +3068,111 @@
     },
     { "id": "australia", "name": "Australia and the Torres Strait", "color": "#8a6a3a", "parent": "oceania" },
     { "id": "americas", "name": "Americas", "color": "#2f7a5a" },
-    { "id": "mound-builders", "name": "Mound builders (Louisiana)", "color": "#6f8f4a", "parent": "americas" },
+    { "id": "arctic", "name": "North American Arctic", "color": "#5a8a9a", "parent": "americas" },
+    {
+      "id": "pre-dorset",
+      "name": "Pre-Dorset (Eastern Canadian Arctic)",
+      "color": "#6a8aaa",
+      "parent": "arctic",
+      "span": {
+        "start": "c. 3200 BCE",
+        "end": "c. 850 BCE",
+        "startDates": [
+          { "year": "3200 BCE", "source": { "sourceKey": "wp-pre-dorset", "sourceLocation": "lead" } },
+          {
+            "year": "3150 BCE",
+            "margin": 200,
+            "source": { "sourceKey": "wp-pre-dorset", "sourceLocation": "Chronology (Early Pre-Dorset, cal BCE)" }
+          }
+        ]
+      }
+    },
+    {
+      "id": "saqqaq",
+      "name": "Saqqaq culture (Greenland)",
+      "color": "#5a7a9a",
+      "parent": "arctic",
+      "span": { "start": "c. 2500 BCE", "end": "c. 800 BCE" }
+    },
+    {
+      "id": "independence-i",
+      "name": "Independence I (Greenland)",
+      "color": "#7a8aaa",
+      "parent": "arctic",
+      "span": {
+        "start": "c. 2500 BCE",
+        "end": "c. 1900 BCE",
+        "startDates": [
+          { "year": "2500 BCE", "source": { "sourceKey": "wp-independence-i", "sourceLocation": "History and origin" } },
+          { "year": "2150 BCE", "margin": 250, "source": { "sourceKey": "wp-independence-i", "sourceLocation": "lead" } }
+        ],
+        "endDates": [
+          { "year": "1900 BCE", "source": { "sourceKey": "wp-independence-i", "sourceLocation": "History and origin" } },
+          { "year": "1800 BCE", "margin": 100, "source": { "sourceKey": "wp-independence-i", "sourceLocation": "lead (disappeared)" } }
+        ]
+      }
+    },
+    {
+      "id": "dorset",
+      "name": "Dorset culture",
+      "color": "#4a6a8a",
+      "parent": "arctic",
+      "span": {
+        "start": "c. 500 BCE",
+        "end": "c. 1500 CE",
+        "endDates": [
+          { "year": "1500 CE", "source": { "sourceKey": "wp-dorset", "sourceLocation": "lead" } },
+          { "year": "1000 CE", "source": { "sourceKey": "wp-dorset", "sourceLocation": "lead (perhaps as early as 1000)" } }
+        ]
+      }
+    },
+    { "id": "north-america", "name": "North America", "color": "#4a7a4a", "parent": "americas" },
+    { "id": "mound-builders", "name": "Mound builders (Louisiana)", "color": "#6f8f4a", "parent": "north-america" },
+    {
+      "id": "old-copper",
+      "name": "Old Copper complex (Great Lakes)",
+      "color": "#a0603a",
+      "parent": "north-america",
+      "span": {
+        "start": "c. 4000 BCE",
+        "end": "c. 1000 BCE",
+        "startDates": [
+          {
+            "year": "4000 BCE",
+            "source": { "sourceKey": "wp-old-copper", "sourceLocation": "Oconto Site (used between around 4,000 and 2,000 BCE)" }
+          },
+          { "year": "6500 BCE", "source": { "sourceKey": "wp-old-copper", "sourceLocation": "infobox and Western Great Lakes" } }
+        ],
+        "endDates": [
+          { "year": "1000 BCE", "source": { "sourceKey": "wp-old-copper", "sourceLocation": "infobox" } },
+          { "year": "1580 BCE", "source": { "sourceKey": "wp-old-copper", "sourceLocation": "lead ('dated from 6500 to 1580 BCE')" } }
+        ]
+      }
+    },
+    { "id": "eastern-archaic", "name": "Eastern Woodlands (Indian Knoll)", "color": "#6a7a4a", "parent": "north-america" },
+    { "id": "adena", "name": "Adena culture", "color": "#5a6a3a", "parent": "north-america", "span": { "start": "c. 500 BCE", "end": "c. 100 CE" } },
+    { "id": "mesoamerica", "name": "Mesoamerica", "color": "#3a7a5a", "parent": "americas" },
+    { "id": "mokaya", "name": "Mokaya (Mazatán)", "color": "#4a8a5a", "parent": "mesoamerica" },
+    {
+      "id": "tlatilco",
+      "name": "Tlatilco culture (Valley of Mexico)",
+      "color": "#5a8a6a",
+      "parent": "mesoamerica",
+      "span": {
+        "start": "c. 1250 BCE",
+        "end": "c. 800 BCE",
+        "startDates": [
+          { "year": "1250 BCE", "source": { "sourceKey": "wp-tlatilco", "sourceLocation": "lead" } },
+          { "year": "1450 BCE", "source": { "sourceKey": "wp-tlatilco", "sourceLocation": "Notes (Pool)" } }
+        ]
+      }
+    },
+    { "id": "zapotec", "name": "Zapotecs (Valley of Oaxaca)", "color": "#6a7a5a", "parent": "mesoamerica" },
     {
       "id": "olmec",
       "name": "Olmecs",
       "color": "#3f8a6a",
-      "parent": "americas",
+      "parent": "mesoamerica",
       "span": {
         "start": "c. 1200 BCE",
         "end": "c. 400 BCE",
@@ -2617,12 +3190,13 @@
         ]
       }
     },
-    { "id": "maya", "name": "Maya (Preclassic)", "color": "#4f9a7e", "parent": "americas", "span": { "start": "c. 2000 BCE", "end": "250 CE" } },
+    { "id": "maya", "name": "Maya (Preclassic)", "color": "#4f9a7e", "parent": "mesoamerica", "span": { "start": "c. 2000 BCE", "end": "250 CE" } },
+    { "id": "south-america", "name": "South America", "color": "#5a7a3a", "parent": "americas" },
     {
       "id": "valdivia",
       "name": "Valdivia culture",
       "color": "#5a8a9a",
-      "parent": "americas",
+      "parent": "south-america",
       "span": {
         "start": "c. 3500 BCE",
         "end": "c. 1500 BCE",
@@ -2636,7 +3210,7 @@
       "id": "caral-supe",
       "name": "Caral–Supe (Norte Chico)",
       "color": "#3a7a8a",
-      "parent": "americas",
+      "parent": "south-america",
       "span": {
         "start": "c. 3500 BCE",
         "end": "c. 1800 BCE",
@@ -2649,7 +3223,43 @@
         ]
       }
     },
-    { "id": "chavin", "name": "Chavín culture", "color": "#2f6a7a", "parent": "americas", "span": { "start": "900 BCE", "end": "250 BCE" } }
+    { "id": "chavin", "name": "Chavín culture", "color": "#2f6a7a", "parent": "south-america", "span": { "start": "900 BCE", "end": "250 BCE" } },
+    { "id": "kotosh", "name": "Kotosh", "color": "#7a6a4a", "parent": "south-america" },
+    {
+      "id": "cupisnique",
+      "name": "Cupisnique culture",
+      "color": "#8a6a3a",
+      "parent": "south-america",
+      "span": {
+        "start": "c. 1500 BCE",
+        "end": "c. 500 BCE",
+        "startDates": [
+          { "year": "1500 BCE", "source": { "sourceKey": "wp-cupisnique", "sourceLocation": "lead" } },
+          { "year": "1000 BCE", "source": { "sourceKey": "wp-cupisnique", "sourceLocation": "The Cupisnique and the Chavin (Cordy-Collins)" } }
+        ],
+        "endDates": [
+          { "year": "500 BCE", "source": { "sourceKey": "wp-cupisnique", "sourceLocation": "lead" } },
+          { "year": "200 BCE", "source": { "sourceKey": "wp-cupisnique", "sourceLocation": "Cordy-Collins" } }
+        ]
+      }
+    },
+    {
+      "id": "paracas",
+      "name": "Paracas culture (Peru)",
+      "color": "#9a5a3a",
+      "parent": "south-america",
+      "span": { "start": "c. 800 BCE", "end": "c. 100 BCE" }
+    },
+    {
+      "id": "chinchorro",
+      "name": "Chinchorro culture (coasts of northern Chile and southern Peru)",
+      "color": "#6a5a4a",
+      "parent": "south-america",
+      "span": { "start": "c. 7000 BCE", "end": "c. 1500 BCE" }
+    },
+    { "id": "caribbean", "name": "Caribbean", "color": "#3a8a7a", "parent": "americas" },
+    { "id": "archaic-caribbean", "name": "Archaic Caribbean (Casimiroid, Ortoiroid)", "color": "#4a7a7a", "parent": "caribbean" },
+    { "id": "saladoid", "name": "Saladoid culture", "color": "#3a6a6a", "parent": "caribbean", "span": { "start": "c. 500 BCE", "end": "545 CE" } }
   ],
   "events": [
     {
@@ -6557,6 +7167,786 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "maykop-kurgan",
+      "title": "Maykop culture: royal kurgan, gold and silver",
+      "start": "c. 3700 BCE",
+      "end": "c. 3000 BCE",
+      "tracks": ["maykop"],
+      "descr": "The culture takes its name from a royal burial. More than 7000 gold and some 1000 silver objects are known; wheels date to the second half of the fourth millennium, and the Maykop animal style is more than a thousand years older than the Scythian. Contemporaneous with the late Uruk period in Mesopotamia; the Yamnaya culture lies to the north.",
+      "sources": [{ "sourceKey": "wp-maykop", "sourceLocation": "lead, Territory, Horse breeding, Culture and Art" }],
+      "links": [{ "to": "uruk-expansion", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "kura-araxes-spread",
+      "title": "Kura–Araxes culture spreads into eastern Anatolia",
+      "start": "c. 3000 BCE",
+      "tracks": ["kura-araxes"],
+      "descr": "Early Kura–Araxes pottery appears at Sos Höyük as early as 3500–3300 BC; around 3000 BCE Arslantepe sees widespread burning and destruction, and the culture spreads north in the Caucasus by 3000 BC. It traded with Mesopotamia and Asia Minor, and its precocious metallurgy strongly influenced surrounding regions.",
+      "sources": [{ "sourceKey": "wp-kura-araxes", "sourceLocation": "lead, Expansion, Economy and Metallurgy" }],
+      "startDates": [
+        { "year": "3000 BCE", "source": { "sourceKey": "wp-kura-araxes", "sourceLocation": "lead and Expansion" } },
+        {
+          "year": "3100 BCE",
+          "source": { "sourceKey": "wp-kura-araxes", "sourceLocation": "Expansion (Summers: 'end of Uruk IV phase c. 3100 BC')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "shengavit",
+      "title": "Shengavit settlement",
+      "start": "c. 3200 BCE",
+      "end": "c. 2500 BCE",
+      "tracks": ["kura-araxes"],
+      "descr": "Inhabited from about 3200 to 2500 BC (calibrated), and used irregularly until 2200 BC.",
+      "sources": [{ "sourceKey": "wp-kura-araxes", "sourceLocation": "Settlements" }],
+      "importance": 3
+    },
+    {
+      "uuid": "tiglath-daiaeni",
+      "title": "Tiglath-Pileser I defeats Sien of Daiaeni",
+      "start": "1112 BCE",
+      "tracks": ["diauehi", "as-middle"],
+      "descr": "Daiaeni appears in 12th-century BC Assyrian sources as part of the Nairi confederation. Later its king Asia submits to Shalmaneser III in 845 BC.",
+      "sources": [{ "sourceKey": "wp-diauehi", "sourceLocation": "lead and history" }],
+      "links": [{ "to": "tiglath-pileser-i", "kind": "part-of" }]
+    },
+    {
+      "uuid": "colchis-consolidates",
+      "title": "The Colchian tribes consolidate",
+      "start": "c. 1250 BCE",
+      "tracks": ["colchis"],
+      "descr": "Known in Greek mythology as the destination of the Argonauts; the name is thought to derive from the Urartian Qulḫa. Colchian metalsmiths made distinctive axes with incised geometric or zoomorphic decoration.",
+      "sources": [{ "sourceKey": "wp-colchis", "sourceLocation": "infobox, lead and Name" }, { "sourceKey": "wp-colchian", "sourceLocation": "Metallurgy" }],
+      "startDates": [{ "year": "1250 BCE", "margin": 50, "source": { "sourceKey": "wp-colchis", "sourceLocation": "infobox ('13th century BC')" } }]
+    },
+    {
+      "uuid": "lchashen-chariot",
+      "title": "Lchashen–Metsamor: cyclopean fortresses and a four-wheeled chariot",
+      "start": "c. 1500 BCE",
+      "tracks": ["lchashen"],
+      "descr": "A fully preserved four-wheeled chariot was found at Lchashen; cyclopean fortresses spread at the end of the Bronze Age. The culture is linked with the Etiuni tribal union of Urartian inscriptions.",
+      "sources": [{ "sourceKey": "wp-lchashen", "sourceLocation": "lead and Description" }]
+    },
+    {
+      "uuid": "koban-bronze",
+      "title": "Koban bronze-working at its height",
+      "start": "c. 1050 BCE",
+      "end": "c. 650 BCE",
+      "tracks": ["koban"],
+      "descr": "Major centres from around the 11th to the 7th century BC show an advanced stage of metallurgy (bronze swords; axes with iron inlay at Klin-Yar, c. 700 BC). Jaimoukha links the end of the culture to Scythian invasions.",
+      "sources": [{ "sourceKey": "wp-koban", "sourceLocation": "Settlements, Description, The arts and Ethnic affiliation" }],
+      "startDates": [{ "year": "1050 BCE", "margin": 50, "source": { "sourceKey": "wp-koban", "sourceLocation": "Settlements ('around 11th century BC')" } }],
+      "endDates": [{ "year": "650 BCE", "margin": 50, "source": { "sourceKey": "wp-koban", "sourceLocation": "Settlements ('around the 7th century BC')" } }]
+    },
+    {
+      "uuid": "sarduri-colchis",
+      "title": "Sarduri II of Urartu invades Colchis",
+      "start": "744 BCE",
+      "tracks": ["colchis", "urartu"],
+      "descr": "Two invasions, recorded in Sarduri II’s victory inscription.",
+      "sources": [{ "sourceKey": "wp-colchis", "sourceLocation": "infobox ('Two invasions of Sardur II of Urartu — 744/743 BC') and Name" }],
+      "links": [{ "to": "urartu-sarduri", "kind": "related" }]
+    },
+    {
+      "uuid": "argishti-diauehi",
+      "title": "Argishti I of Urartu conquers Diauehi",
+      "start": "783 BCE",
+      "tracks": ["diauehi", "urartu", "lchashen"],
+      "descr": "Menua (810–785 BC) had conquered part of Diauehi; Argishti I defeats King Utupursi and annexes his possessions. His crossing of the Araxes begins the decline of the Lchashen–Metsamor culture.",
+      "sources": [{ "sourceKey": "wp-diauehi", "sourceLocation": "Urartu period" }, { "sourceKey": "wp-lchashen", "sourceLocation": "Later history" }]
+    },
+    {
+      "uuid": "colchis-cimmerians",
+      "title": "Cimmerian and Scythian invasions of Colchis",
+      "start": "720 BCE",
+      "tracks": ["colchis", "cimmerians"],
+      "descr": "Dated by the infobox of the Colchis page.",
+      "sources": [{ "sourceKey": "wp-colchis", "sourceLocation": "infobox" }],
+      "importance": 3
+    },
+    {
+      "uuid": "colchis-greeks",
+      "title": "Greek colonies in western Georgia",
+      "start": "c. 550 BCE",
+      "tracks": ["colchis", "greece-archaic"],
+      "descr": "Greek colonies are established in the 6th century BC.",
+      "sources": [{ "sourceKey": "wp-colchian", "sourceLocation": "Geography and periodization" }],
+      "startDates": [{ "year": "550 BCE", "margin": 50, "source": { "sourceKey": "wp-colchian", "sourceLocation": "Geography ('in the 6th century BC')" } }],
+      "links": [{ "to": "greek-colonisation", "kind": "part-of" }]
+    },
+    {
+      "uuid": "hafit",
+      "title": "Hafit period: beehive tombs",
+      "start": "c. 3200 BCE",
+      "end": "c. 2600 BCE",
+      "tracks": ["oman"],
+      "descr": "Named for the distinctive beehive burials first found on Jebel Hafit. Finds show trading links to Mesopotamia in the Jemdat Nasr period (3100–2900 B.C.).",
+      "sources": [{ "sourceKey": "wp-hafit", "sourceLocation": "infobox, lead and Discoveries" }]
+    },
+    {
+      "uuid": "umm-an-nar",
+      "title": "Umm al-Nar period: Magan, copper source for Mesopotamia",
+      "start": "c. 2600 BCE",
+      "end": "c. 2000 BCE",
+      "tracks": ["oman"],
+      "descr": "Magan supplies copper and diorite to Mesopotamia; trade between the Indus Valley and Sumer passes through Magan, which also trades with Iran and Bactria. Sumerian cuneiform texts of around 2300 BCE name it.",
+      "sources": [{ "sourceKey": "wp-magan", "sourceLocation": "lead, Early Dynastic period, Ur III period and Commerce" }],
+      "startDates": [
+        {
+          "year": "2600 BCE",
+          "source": { "sourceKey": "wp-magan", "sourceLocation": "Early Dynastic period ('the Umm al-Nar period (2600–2000 BCE)')" }
+        },
+        {
+          "year": "2750 BCE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-hafit", "sourceLocation": "Discoveries (Hafit–Umm al-Nar transition, 'approximately 2800 to 2700 BCE')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "magan-akkad",
+      "title": "Akkad campaigns against Magan",
+      "start": "c. 2250 BCE",
+      "tracks": ["oman", "akkad"],
+      "descr": "Sargon of Akkad boasts that his ports hold boats from Tilmun, Magan and Meluhha; his successor Naram-Sin conquers Magan.",
+      "sources": [{ "sourceKey": "wp-magan", "sourceLocation": "Akkadian period" }],
+      "startDates": [
+        {
+          "year": "2250 BCE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-magan", "sourceLocation": "Akkadian period ('in the twenty-third century BCE')" }
+        }
+      ],
+      "links": [{ "to": "naram-sin", "kind": "related" }, { "to": "meluhha-sargon", "kind": "related" }]
+    },
+    {
+      "uuid": "magan-ur3",
+      "title": "Ur-Nammu brings back the ships of Magan",
+      "start": "c. 2100 BCE",
+      "tracks": ["oman", "sum-ur3"],
+      "descr": "Trade between the two resumes under the Third Dynasty of Ur.",
+      "sources": [{ "sourceKey": "wp-magan", "sourceLocation": "Ur III period and Commerce" }],
+      "startDates": [
+        { "year": "2100 BCE", "source": { "sourceKey": "wp-magan", "sourceLocation": "Commerce ('trade resumed ... (c. 2100 BC)')" } },
+        { "year": "2105 BCE", "margin": 8, "source": { "sourceKey": "wp-magan", "sourceLocation": "Ur III period (Ur-Nammu, 2113–2096 BCE)" } }
+      ],
+      "links": [{ "to": "ur-nammu", "kind": "related" }]
+    },
+    {
+      "uuid": "wadi-suq",
+      "title": "Wadi Suq period",
+      "start": "c. 2000 BCE",
+      "end": "c. 1300 BCE",
+      "tracks": ["oman"],
+      "descr": "The transition from Umm al-Nar took some 200 years and more. Trade links run east to the Indus Valley and west to Mesopotamia, and links with Tilmun (Dilmun) persist.",
+      "sources": [{ "sourceKey": "wp-wadi-suq", "sourceLocation": "infobox, lead, History and Artefacts" }]
+    },
+    {
+      "uuid": "marib-dam",
+      "title": "The Great Dam of Marib",
+      "start": "c. 750 BCE",
+      "tracks": ["saba"],
+      "descr": "The most reliable information dates the dam to about the 8th century BC; one tentative dating puts a first construction around 1750–1700 BC. Around 500 BC its height is raised to 7 metres.",
+      "sources": [
+        { "sourceKey": "wp-marib-dam", "sourceLocation": "lead, Ancient dam and Construction" },
+        { "sourceKey": "wp-sheba", "sourceLocation": "infobox ('8th Century BC: Construction of the Marib Dam')" }
+      ],
+      "startDates": [
+        { "year": "750 BCE", "margin": 50, "source": { "sourceKey": "wp-marib-dam", "sourceLocation": "Ancient dam ('about the 8th century BC')" } },
+        { "year": "1725 BCE", "margin": 25, "source": { "sourceKey": "wp-marib-dam", "sourceLocation": "infobox and Construction (tentative)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "saba-height",
+      "title": "Saba at the height of its power",
+      "start": "c. 750 BCE",
+      "end": "c. 550 BCE",
+      "tracks": ["saba"],
+      "descr": "Saba takes part in the extremely lucrative spice trade; a continuous record of inscriptions begins in the 8th century BCE, when Akkadian cuneiform texts start to mention the Sabaeans. Its mukarrib Karib’il establishes diplomatic contacts with the Assyrian emperor Sennacherib. After the 6th century BCE it cannot keep its supremacy.",
+      "sources": [{ "sourceKey": "wp-sheba", "sourceLocation": "lead, Era of the mukarribs, Era of the kings and Sources" }],
+      "startDates": [
+        {
+          "year": "750 BCE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-sheba", "sourceLocation": "Era of the mukarribs ('between the 8th and 6th centuries BCE')" }
+        }
+      ],
+      "endDates": [{ "year": "550 BCE", "margin": 50, "source": { "sourceKey": "wp-sheba", "sourceLocation": "Era of the mukarribs" } }],
+      "importance": 1
+    },
+    {
+      "uuid": "karibil-watar",
+      "title": "Conquests of Karib’il Watar of Saba",
+      "start": "c. 620 BCE",
+      "end": "c. 600 BCE",
+      "tracks": ["saba", "qataban"],
+      "descr": "Qataban and Ḥaḍramawt are at first his allies; during the 6th century BCE Qataban comes under Saba’s control.",
+      "sources": [
+        { "sourceKey": "wp-sheba", "sourceLocation": "infobox (ruler list and 8th–7th century conquests)" },
+        { "sourceKey": "wp-qataban", "sourceLocation": "Kingdom" }
+      ]
+    },
+    {
+      "uuid": "qataban-timna",
+      "title": "Qataban becomes a state centred on Timna",
+      "start": "c. 600 BCE",
+      "tracks": ["qataban"],
+      "descr": "The earliest settlements in Qataban date from the 11th–10th centuries BCE. Qataban regains its independence from Saba in the late 5th century BCE, and by the 3rd century BCE challenges Saba’s supremacy.",
+      "sources": [{ "sourceKey": "wp-qataban", "sourceLocation": "Prehistory and Kingdom" }],
+      "startDates": [
+        {
+          "year": "600 BCE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-qataban", "sourceLocation": "Kingdom ('by the late 7th or early 6th century BCE')" }
+        }
+      ]
+    },
+    {
+      "uuid": "tayma-egypt",
+      "title": "Tayma under Egyptian hegemony",
+      "start": "c. 1186 BCE",
+      "tracks": ["north-arabia", "eg-new"],
+      "descr": "An inscription at Tayma was commissioned by Ramesses III (r. 1186–1155 BC). Monumental architecture disappears from Tayma by the end of the Early Iron Age (12th–9th centuries BC).",
+      "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Under Egyptian hegemony" }]
+    },
+    {
+      "uuid": "tayma-assyria",
+      "title": "Assyria controls Tayma",
+      "start": "c. 744 BCE",
+      "tracks": ["north-arabia", "as-neo"],
+      "descr": "From the 8th century BC Tayma is under the Assyrian Empire, as under Tiglath-Pileser III (744–727 BC); an inscription of Sennacherib (705–681 BC) records gifts of the people of Tema.",
+      "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Mesopotamian hegemony" }],
+      "links": [{ "to": "tiglath-pileser-iii", "kind": "related" }]
+    },
+    {
+      "uuid": "nabonidus-tayma",
+      "title": "Nabonidus makes Tayma his base",
+      "start": "c. 552 BCE",
+      "tracks": ["north-arabia", "bab-neo"],
+      "descr": "The last Neo-Babylonian king campaigns in northwestern Arabia and rules from Tayma; the kings of both Taymāʾ and Dadān are slain.",
+      "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Mesopotamian hegemony" }, { "sourceKey": "wp-lihyan", "sourceLocation": "Timeline" }],
+      "links": [{ "to": "nabonidus", "kind": "part-of" }]
+    },
+    {
+      "uuid": "lihyan",
+      "title": "The kingdom of Lihyan at Dadan",
+      "start": "c. 450 BCE",
+      "tracks": ["north-arabia"],
+      "descr": "Most likely founded after Nabonidus arrived in north-west Arabia; it flourished for at least a century and a half. F. Winnett’s longer chronology places its beginning in the 6th century BC. The Gulf of Aqaba was called the Gulf of Lihyan.",
+      "sources": [{ "sourceKey": "wp-lihyan", "sourceLocation": "infobox, lead and Timeline" }],
+      "startDates": [
+        { "year": "450 BCE", "margin": 50, "source": { "sourceKey": "wp-lihyan", "sourceLocation": "infobox ('Established 5th century BC')" } },
+        { "year": "550 BCE", "margin": 50, "source": { "sourceKey": "wp-lihyan", "sourceLocation": "Timeline (Winnett)" } }
+      ]
+    },
+    {
+      "uuid": "trypillia-megasites",
+      "title": "Trypillian mega-sites: Talianki and Maidanetske",
+      "start": "c. 3850 BCE",
+      "end": "c. 3600 BCE",
+      "tracks": ["trypillia"],
+      "descr": "Talianki (around 3850–3700 BC) is the largest known settlement in Neolithic Europe, with 15,600 to 21,000 people; at Maidanetske up to 2,968 houses stood at once around 3700 BC. The culture is known for elaborately designed pottery fired in advanced kilns.",
+      "sources": [
+        { "sourceKey": "wp-talianki", "sourceLocation": "lead" },
+        { "sourceKey": "wp-maidanetske", "sourceLocation": "Archaeological remains" },
+        { "sourceKey": "wp-trypillia", "sourceLocation": "lead" }
+      ],
+      "endDates": [
+        {
+          "year": "3650 BCE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-maidanetske", "sourceLocation": "Archaeological remains ('inhabited around 3700–3600 BC')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "usatove",
+      "title": "Usatove culture: Trypillian farmers and steppe traditions",
+      "start": "c. 3650 BCE",
+      "tracks": ["usatove", "trypillia"],
+      "descr": "Kurgan burials and shell-tempered coarse wares shared with steppe cultures; arsenical bronze and silver suggest contacts with the North Caucasus and Anatolia. Within the Kurgan hypothesis it represents the domination of Cucuteni–Trypillia farmers by Indo-European peoples from the steppe.",
+      "sources": [{ "sourceKey": "wp-usatove", "sourceLocation": "lead and Chronology" }],
+      "startDates": [
+        { "year": "3650 BCE", "source": { "sourceKey": "wp-usatove", "sourceLocation": "lead" } },
+        { "year": "3150 BCE", "margin": 250, "source": { "sourceKey": "wp-usatove", "sourceLocation": "Chronology (pottery)" } },
+        { "year": "3750 BCE", "margin": 250, "source": { "sourceKey": "wp-usatove", "sourceLocation": "Chronology" } }
+      ]
+    },
+    {
+      "uuid": "flintbek",
+      "title": "Earliest wheeled vehicles: Flintbek and Bronocice",
+      "start": "c. 3400 BCE",
+      "tracks": ["funnelbeaker"],
+      "descr": "Cart tracks of about 3400 BCE under a long barrow at Flintbek are the earliest known direct evidence for wheeled vehicles in the world; the Bronocice pot (3636–3373 BCE) is the oldest evidence for covered carriages in Central Europe.",
+      "sources": [{ "sourceKey": "wp-funnelbeaker", "sourceLocation": "Technology" }],
+      "importance": 1
+    },
+    {
+      "uuid": "globular-amphora-east",
+      "title": "Globular Amphora culture expands from Volhynia and Podolia",
+      "start": "c. 2950 BCE",
+      "end": "c. 2350 BCE",
+      "tracks": ["globular-amphora"],
+      "descr": "It occupied much of the area of the earlier Funnelbeaker culture and preceded the Corded Ware culture in its central area; it is named for globular pots with two to four handles.",
+      "sources": [{ "sourceKey": "wp-globular-amphora", "sourceLocation": "lead and Extent" }]
+    },
+    {
+      "uuid": "funnelbeaker-replaced",
+      "title": "Corded Ware replaces the Funnelbeaker culture",
+      "start": "c. 2800 BCE",
+      "end": "c. 2650 BCE",
+      "tracks": ["funnelbeaker", "corded-ware"],
+      "descr": "In the early 3rd millennium BCE Corded Ware peoples of marked steppe-related ancestry appear in Northern Europe; defensive palisades mark violent conflict between Funnelbeakers, Corded Ware and Pitted Ware. By 2650 BCE the Funnelbeaker culture has been replaced.",
+      "sources": [{ "sourceKey": "wp-funnelbeaker", "sourceLocation": "lead and History" }],
+      "links": [{ "to": "yamnaya-corded-ware", "kind": "related" }]
+    },
+    {
+      "uuid": "yamnaya-over-trypillia",
+      "title": "Yamnaya burial mounds over the Trypillian mega-sites",
+      "start": "c. 2500 BCE",
+      "tracks": ["yamnaya", "trypillia"],
+      "descr": "Yamnaya tumuli dating to the middle of the 3rd millennium BC stand on top of Talianki and near Maidanetske.",
+      "sources": [{ "sourceKey": "wp-talianki", "sourceLocation": "lead" }, { "sourceKey": "wp-maidanetske", "sourceLocation": "Archaeological remains" }],
+      "startDates": [
+        {
+          "year": "2500 BCE",
+          "margin": 100,
+          "source": { "sourceKey": "wp-talianki", "sourceLocation": "lead ('the middle of the 3rd millennium BC')" }
+        }
+      ]
+    },
+    {
+      "uuid": "biskupin",
+      "title": "Biskupin fortified settlement built",
+      "start": "747 BCE",
+      "tracks": ["biskupin"],
+      "descr": "A Lusatian settlement of some 102–106 log houses inside a tall wooden palisade on an earth-and-timber rampart. Its oak was felled between 747 and 722 B.C., over half of it in the winter of 748/747.",
+      "sources": [{ "sourceKey": "wp-biskupin", "sourceLocation": "infobox, lead, The site and Dating" }],
+      "startDates": [
+        { "year": "747 BCE", "source": { "sourceKey": "wp-biskupin", "sourceLocation": "Dating (dendrochronology)" } },
+        { "year": "720 BCE", "margin": 150, "source": { "sourceKey": "wp-biskupin", "sourceLocation": "Dating (radiocarbon, first settlement)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "alexander-getae",
+      "title": "Alexander the Great attacks the Getae",
+      "start": "335 BCE",
+      "tracks": ["getae", "macedon"],
+      "descr": "On the lower Danube. Herodotus first used the name Getae; the Dacians were influenced by the Scythians and by the La Tène Celts who arrived in the 4th century BC.",
+      "sources": [{ "sourceKey": "wp-dacians", "sourceLocation": "lead, Name and Origins and ethnogenesis" }]
+    },
+    {
+      "uuid": "old-copper",
+      "title": "Old Copper complex: copper tools around the Great Lakes",
+      "start": "c. 4000 BCE",
+      "end": "c. 2000 BCE",
+      "tracks": ["old-copper"],
+      "descr": "Widespread copper tools, weapons and ornaments, worked from 99% pure copper found near Lake Superior; by about 1,000 BCE copper is increasingly restricted to jewelry and status items. The Oconto site, with mostly flexed and bundle burials, was used between around 4,000 and 2,000 BCE.",
+      "sources": [{ "sourceKey": "wp-old-copper", "sourceLocation": "lead, Western Great Lakes and Oconto Site" }]
+    },
+    {
+      "uuid": "indian-knoll",
+      "title": "Indian Knoll shell midden",
+      "start": "c. 3000 BCE",
+      "end": "c. 2000 BCE",
+      "tracks": ["eastern-archaic"],
+      "descr": "Most heavily occupied in this period (the midden formed between 5500 and 2000 BC); trade reaches as far north as Lake Superior. By 1000 BC status differences show in grave goods.",
+      "sources": [{ "sourceKey": "wp-indian-knoll", "sourceLocation": "Background, Burials and grave goods and Social complexity" }]
+    },
+    {
+      "uuid": "adena-mounds",
+      "title": "Adena burial mounds",
+      "start": "c. 500 BCE",
+      "end": "c. 100 CE",
+      "tracks": ["adena"],
+      "descr": "Mounds built from hundreds of thousands of baskets of graded earth serve as burial and ceremonial sites; trade runs from Great Lakes copper to Gulf Coast shells. The Great Serpent Mound has been attributed to the culture, without conclusive evidence.",
+      "sources": [{ "sourceKey": "wp-adena", "sourceLocation": "lead, infobox, Mounds and Importance" }],
+      "importance": 1
+    },
+    {
+      "uuid": "paleo-eskimo",
+      "title": "Paleo-Eskimo ancestors arrive from Siberia",
+      "start": "c. 4000 BCE",
+      "tracks": ["pre-dorset", "saqqaq"],
+      "descr": "Genetic studies point to a single migration from Siberia around 4000 BC by the ancestors of the Saqqaq, Pre-Dorset and Dorset peoples.",
+      "sources": [
+        { "sourceKey": "wp-pre-dorset", "sourceLocation": "Genetics" },
+        { "sourceKey": "wp-saqqaq", "sourceLocation": "Genetics" },
+        { "sourceKey": "wp-dorset", "sourceLocation": "Genetics" }
+      ]
+    },
+    {
+      "uuid": "saqqaq",
+      "title": "The Saqqaq culture settles Greenland",
+      "start": "c. 2500 BCE",
+      "end": "c. 800 BCE",
+      "tracks": ["saqqaq"],
+      "descr": "The longest-residing culture in Greenland’s history: small tents, seals, seabirds and other marine animals, and tools of silicified slate, agate, quartzite and rock crystal.",
+      "sources": [{ "sourceKey": "wp-saqqaq", "sourceLocation": "infobox, lead, Timeframe and Archaeological findings" }]
+    },
+    {
+      "uuid": "independence-i",
+      "title": "Independence I hunters in Greenland",
+      "start": "c. 2500 BCE",
+      "end": "c. 1900 BCE",
+      "tracks": ["independence-i"],
+      "descr": "Muskoxen are a key part of their diet; microblades make up a large share of their tools. They disappear around 1900–1700 BC for unknown reasons.",
+      "sources": [{ "sourceKey": "wp-independence-i", "sourceLocation": "lead, History and origin, Lifestyle and Tools" }]
+    },
+    {
+      "uuid": "dorset-begins",
+      "title": "The Dorset culture begins",
+      "start": "c. 500 BCE",
+      "tracks": ["dorset"],
+      "descr": "They hunt seals from holes in the ice and make soapstone lamps (qulliq) burning seal oil; unlike earlier cultures they lack bow and arrow.",
+      "sources": [{ "sourceKey": "wp-dorset", "sourceLocation": "lead, Origins and Technology" }]
+    },
+    {
+      "uuid": "mokaya-pottery",
+      "title": "Mokaya: the first pottery in Mesoamerica",
+      "start": "c. 1900 BCE",
+      "end": "c. 1700 BCE",
+      "tracks": ["mokaya"],
+      "descr": "The Barra phase. A Mokaya site gives evidence of cacao beverages; the following Locona phase (1700–1500 BC) may have given the stimulus for the Gulf Olmec, and during the Cuadros period the area is believed to have come under Olmec hegemony.",
+      "sources": [{ "sourceKey": "wp-mokaya", "sourceLocation": "Chronology, Barra, Locona and Ocós to Jocotal" }],
+      "startDates": [
+        { "year": "1900 BCE", "source": { "sourceKey": "wp-mokaya", "sourceLocation": "Chronology" } },
+        { "year": "1750 BCE", "margin": 100, "source": { "sourceKey": "wp-mokaya", "sourceLocation": "Barra (ceramic phase)" } }
+      ],
+      "links": [{ "to": "san-lorenzo", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "san-jose-mogote",
+      "title": "San José Mogote, the first farming village of the Valley of Oaxaca",
+      "start": "c. 1500 BCE",
+      "end": "c. 500 BCE",
+      "tracks": ["zapotec"],
+      "descr": "Ceremonial buildings by 1300 B.C.; mirrors made here were traded to the Olmec Gulf Coast. Its dominance ends around 500 BCE with the rise of Monte Albán.",
+      "sources": [{ "sourceKey": "wp-san-jose-mogote", "sourceLocation": "infobox, lead, Development of civilization and Monument 3" }]
+    },
+    {
+      "uuid": "tlatilco",
+      "title": "Tlatilco chiefdoms in the Valley of Mexico",
+      "start": "c. 1250 BCE",
+      "end": "c. 800 BCE",
+      "tracks": ["tlatilco"],
+      "descr": "Chiefdom centres at Tlatilco and Tlapacoya; Olmec-style objects are ubiquitous in early high-status burials. By 700 BCE Cuicuilco is the largest city in the valley.",
+      "sources": [{ "sourceKey": "wp-tlatilco", "sourceLocation": "lead, Defining the Tlatilco culture and Phases" }],
+      "links": [{ "to": "san-lorenzo", "kind": "related" }]
+    },
+    {
+      "uuid": "zapotec-writing",
+      "title": "Earliest Zapotec writing",
+      "start": "c. 600 BCE",
+      "tracks": ["zapotec"],
+      "descr": "Monument 3 at San José Mogote carries the earliest Zapotec glyphs known, though its dating has been doubted. Zapotec writing is a predecessor of Maya, Mixtec and Aztec writing; whether Olmec symbols of 650 BC came first is debated.",
+      "sources": [
+        { "sourceKey": "wp-san-jose-mogote", "sourceLocation": "lead and Monument 3" },
+        { "sourceKey": "wp-zapotec", "sourceLocation": "Technology and Writing" }
+      ],
+      "startDates": [
+        {
+          "year": "600 BCE",
+          "source": { "sourceKey": "wp-san-jose-mogote", "sourceLocation": "lead ('the first evidence of Zapotec hieroglyphic writing (600 B.C.)')" }
+        },
+        { "year": "550 BCE", "margin": 50, "source": { "sourceKey": "wp-zapotec", "sourceLocation": "Writing (Monument 3)" } },
+        {
+          "year": "500 BCE",
+          "source": { "sourceKey": "wp-zapotec", "sourceLocation": "Technology ('the oldest Zapotec writing dated to about 500 BC')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "monte-alban",
+      "title": "Monte Albán founded",
+      "start": "c. 500 BCE",
+      "tracks": ["zapotec"],
+      "descr": "Built on a mountaintop in a previously uninhabited no-man’s-land; about 5,200 people live there by around 300 BCE. The Danzantes carvings date from its earliest period and show traits of Olmec culture.",
+      "sources": [
+        { "sourceKey": "wp-monte-alban", "sourceLocation": "lead, Site history and Monuments" },
+        { "sourceKey": "wp-zapotec", "sourceLocation": "History" }
+      ],
+      "links": [{ "to": "san-jose-mogote", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "kotosh-pottery",
+      "title": "Kotosh: the Wairajirca period and first pottery",
+      "start": "c. 1750 BCE",
+      "end": "c. 1150 BCE",
+      "tracks": ["kotosh"],
+      "descr": "One of three phases at Kotosh that preceded the Chavín culture; the earlier Mito period was preceramic.",
+      "sources": [{ "sourceKey": "wp-kotosh", "sourceLocation": "Stratigraphy, Wairajirca period and Mito period" }]
+    },
+    {
+      "uuid": "cupisnique",
+      "title": "Cupisnique adobe temples",
+      "start": "c. 1500 BCE",
+      "end": "c. 500 BCE",
+      "tracks": ["cupisnique"],
+      "descr": "A distinctive adobe architecture; Cupisnique and Chavín share gods and artistic forms, and the Chavín built a temple beside Collud about three hundred years later. A mural of a spider god found in 2020 is about 3,200 years old.",
+      "sources": [{ "sourceKey": "wp-cupisnique", "sourceLocation": "lead, Spider deity temple and Other Cupisnique sites" }],
+      "links": [{ "to": "chavin-old-temple", "kind": "related" }]
+    },
+    {
+      "uuid": "paracas",
+      "title": "Paracas textiles and mummy bundles",
+      "start": "c. 800 BCE",
+      "end": "c. 100 BCE",
+      "tracks": ["paracas"],
+      "descr": "Known chiefly for its textile arts. Early Paracas communities were within the Chavín sphere, whose influence dwindled in 500–380 BCE; about 420 mummy bundles date to around 300–200 BCE, and the culture shows the earliest trepanations in the Americas.",
+      "sources": [{ "sourceKey": "wp-paracas", "sourceLocation": "infobox, lead, Political and social organization, Mummy bundles and Trepanation" }],
+      "links": [{ "to": "chavin-old-temple", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "chinchorro-tattoo",
+      "title": "Earliest tattoo in the Americas (Chinchorro)",
+      "start": "c. 2300 BCE",
+      "tracks": ["chinchorro"],
+      "descr": "The Chinchorro were famous for detailed mummification, practised from 7,000 BC; around 2000 BC their mummies change from black manganese to red.",
+      "sources": [{ "sourceKey": "wp-chinchorro", "sourceLocation": "lead, Chinchorro mummies and Early tattoo" }]
+    },
+    {
+      "uuid": "chinchorro-end",
+      "title": "The Chinchorro culture ends",
+      "start": "c. 1550 BCE",
+      "tracks": ["chinchorro"],
+      "descr": "Set around 3500 BP. Influences from the Andean Plateau lead to farming around 3,000 BP, and later groups no longer mummify their dead.",
+      "sources": [{ "sourceKey": "wp-chinchorro", "sourceLocation": "lead, Chinchorro mummies and Later developments" }]
+    },
+    {
+      "uuid": "casimiroid",
+      "title": "The Casimiroid peoples settle the Caribbean",
+      "start": "c. 4190 BCE",
+      "end": "c. 2165 BCE",
+      "tracks": ["archaic-caribbean"],
+      "descr": "They precede the Ortoiroid peoples.",
+      "sources": [{ "sourceKey": "wp-ortoiroid", "sourceLocation": "lead ('the Casimiroid peoples (~4190-2165 BC)')" }]
+    },
+    {
+      "uuid": "ortoiroid",
+      "title": "Ortoiroid peoples move into the Antilles",
+      "start": "c. 2000 BCE",
+      "end": "c. 400 BCE",
+      "tracks": ["archaic-caribbean"],
+      "descr": "Known for stone tools but without ceramics; they bury their dead beneath shell middens. They settle Saint Kitts from 2000 BC to 400 BC and in most places disappear by about 400 BC (the Coroso culture survives until 200 AD).",
+      "sources": [{ "sourceKey": "wp-ortoiroid", "sourceLocation": "lead, Settlement patterns, Culture and Decline" }]
+    },
+    {
+      "uuid": "saladoid",
+      "title": "Saladoid potters reach the Lesser Antilles and Puerto Rico",
+      "start": "c. 500 BCE",
+      "end": "c. 280 BCE",
+      "tracks": ["saladoid", "archaic-caribbean"],
+      "descr": "Farmers and potters living in settled villages, believed to have spoken an Arawakan language; they displace the pre-ceramic Ortoiroid culture.",
+      "sources": [{ "sourceKey": "wp-saladoid", "sourceLocation": "lead, Migrations and Culture" }],
+      "links": [{ "to": "ortoiroid", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "okunev-stelae",
+      "title": "Okunev stelae and the first bronze of north-eastern Central Asia",
+      "start": "c. 2600 BCE",
+      "end": "c. 1800 BCE",
+      "tracks": ["okunev"],
+      "descr": "The Okunev raise monumental stelae at gravesites and, with the neighbouring Samus culture, produce the first bronze in north-eastern Central Asia. Images of two-wheeled carts appear at the end of the 3rd millennium BC. They raise livestock, and closely interact with the successors of the Andronovo circle.",
+      "sources": [{ "sourceKey": "wp-okunev", "sourceLocation": "Dating, Monumental steles, Metallurgy, Wheeled transport, Livestock and Related cultures" }],
+      "startDates": [
+        { "year": "2600 BCE", "source": { "sourceKey": "wp-okunev", "sourceLocation": "Dating ('within 2600 –1800 BCE')" } },
+        { "year": "2700 BCE", "source": { "sourceKey": "wp-okunev", "sourceLocation": "infobox" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "glazkov",
+      "title": "Glazkov hunters and fishers",
+      "start": "c. 2200 BCE",
+      "end": "c. 1200 BCE",
+      "tracks": ["glazkov"],
+      "descr": "An economy of hunting, fishing and gathering, with copper knives and bronze fishing hooks; contemporary with the Andronovo culture to the west.",
+      "sources": [{ "sourceKey": "wp-glazkov", "sourceLocation": "infobox, lead, Culture and Areal" }]
+    },
+    {
+      "uuid": "ymyyakhtakh",
+      "title": "Ymyyakhtakh culture",
+      "start": "c. 2200 BCE",
+      "end": "c. 1300 BCE",
+      "tracks": ["ymyyakhtakh"],
+      "descr": "Bronze ware is frequent in its burial grounds; after 1,700 BC it is believed to spread east.",
+      "sources": [{ "sourceKey": "wp-ymyyakhtakh", "sourceLocation": "infobox, lead, Description and Associated sites" }],
+      "importance": 3
+    },
+    {
+      "uuid": "karasuk-shang",
+      "title": "Karasuk bronzes and chariots reach Shang China",
+      "start": "c. 1200 BCE",
+      "tracks": ["karasuk", "shang"],
+      "descr": "Karasuk farmers practise metallurgy on a large scale. Many Shang (13th–11th centuries BCE) and Zhou bronze blades derive from Karasuk designs, and Wu (2013) traces Shang chariots and their equipment to the Karasuk culture.",
+      "sources": [{ "sourceKey": "wp-karasuk", "sourceLocation": "Overview, Chariots and Metallurgy" }],
+      "links": [{ "to": "wu-ding", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "deer-stones",
+      "title": "Deer stones raised in Mongolia",
+      "start": "c. 1200 BCE",
+      "end": "c. 700 BCE",
+      "tracks": ["deer-stones"],
+      "descr": "Large standing stelae renowned for lively images of deer, part of a pastoral tradition of stone burial mounds; deer-stone art is earlier than the first Scythian sites such as Arzhan by 300 to 500 years. The oldest dated stones, in Khovsgol, are of about 1300 BC.",
+      "sources": [{ "sourceKey": "wp-deer-stones", "sourceLocation": "infobox, lead, Construction and Types" }],
+      "startDates": [
+        { "year": "1200 BCE", "source": { "sourceKey": "wp-deer-stones", "sourceLocation": "Construction ('ca. 1200-700 BCE')" } },
+        { "year": "1400 BCE", "source": { "sourceKey": "wp-deer-stones", "sourceLocation": "infobox and lead" } },
+        { "year": "1300 BCE", "source": { "sourceKey": "wp-deer-stones", "sourceLocation": "Types (oldest deer stones)" } }
+      ],
+      "links": [{ "to": "arzhan-1", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "slab-grave",
+      "title": "Slab-grave culture replaces the deer-stone culture",
+      "start": "c. 700 BCE",
+      "tracks": ["slab-grave", "deer-stones"],
+      "descr": "In central and eastern Mongolia. The two cultures had been adjacent and essentially contemporaneous; slab-grave art shares many features with Karasuk and Tagar.",
+      "sources": [{ "sourceKey": "wp-deer-stones", "sourceLocation": "Demise" }, { "sourceKey": "wp-slab-grave", "sourceLocation": "lead and Burials" }]
+    },
+    {
+      "uuid": "tagar-kurgans",
+      "title": "Tagar culture: royal kurgans and bronze-smelting",
+      "start": "c. 800 BCE",
+      "tracks": ["tagar"],
+      "descr": "One of the largest centres of bronze-smelting in ancient Eurasia. Huge royal kurgans are fenced by stone plaques with stelae at the corners; their animal art is very like that of the Scythians of southern European Russia. Usually considered descendants of the Andronovo culture.",
+      "sources": [{ "sourceKey": "wp-tagar", "sourceLocation": "lead, History and Characteristics" }]
+    },
+    {
+      "uuid": "karuo",
+      "title": "Karuo: the first farmers on the Tibetan Plateau",
+      "start": "c. 3000 BCE",
+      "tracks": ["karuo"],
+      "descr": "The oldest permanent settlement in Tibet and the earliest evidence for agriculture on the plateau, growing foxtail millet; its pottery resembles that of Majiayao sites. The residents abandon Karuo suddenly around 1750 BC.",
+      "sources": [{ "sourceKey": "wp-karuo", "sourceLocation": "lead and Type site" }],
+      "importance": 1
+    },
+    {
+      "uuid": "nyatri-tsenpo",
+      "title": "Nyatri Tsenpo, first Yarlung king (traditional date)",
+      "start": "414 BCE",
+      "tracks": ["zhangzhung"],
+      "descr": "Some Tibetan texts give 126 BC, others 414 BC. Tibetan texts name the kingdom of Zhangzhung (c. 500 BC–625 AD) as the precursor of later Tibetan kingdoms.",
+      "sources": [{ "sourceKey": "wp-tibet-history", "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo" }]
+    },
+    {
+      "uuid": "gandhara-graves",
+      "title": "Gandhara grave culture: the Swat graveyards",
+      "start": "c. 1400 BCE",
+      "end": "c. 800 BCE",
+      "tracks": ["gandhara-grave"],
+      "descr": "Large graveyards appear in northern Gandhara close to the end of the second millennium BCE; the inhumations of c. 1200–900 BCE come from a period in which iron technology was introduced. Parpola links it with the Cemetery H culture in Punjab.",
+      "sources": [{ "sourceKey": "wp-gandhara-grave", "sourceLocation": "infobox, lead, Location and Indo-Aryan migrations" }],
+      "endDates": [{ "year": "800 BCE", "source": { "sourceKey": "wp-gandhara-grave", "sourceLocation": "lead (no burials of this kind after 800 BCE)" } }],
+      "links": [{ "to": "indo-aryan-migrations", "kind": "related" }]
+    },
+    {
+      "uuid": "south-india-iron",
+      "title": "Early Iron Age in South India",
+      "start": "c. 1000 BCE",
+      "tracks": ["south-india"],
+      "descr": "Sites such as Hallur and Adichanallur are generally dated to around 1000 BCE; the Iron Age partly corresponds with the megalithic cultures of South India. Much earlier radiocarbon dates from Sivagalai and Mayiladumparai are disputed.",
+      "sources": [
+        { "sourceKey": "wp-iron-age-india", "sourceLocation": "lead and Southern India" },
+        { "sourceKey": "wp-adichanallur", "sourceLocation": "lead and Present Excavations" }
+      ],
+      "startDates": [
+        { "year": "1000 BCE", "source": { "sourceKey": "wp-iron-age-india", "sourceLocation": "Southern India" } },
+        { "year": "800 BCE", "margin": 200, "source": { "sourceKey": "wp-adichanallur", "sourceLocation": "lead" } },
+        { "year": "801 BCE", "margin": 104, "source": { "sourceKey": "wp-adichanallur", "sourceLocation": "Present Excavations (2019 report)" } }
+      ]
+    },
+    {
+      "uuid": "cinnamon-egypt",
+      "title": "Sri Lankan cinnamon in Egypt",
+      "start": "c. 1500 BCE",
+      "tracks": ["south-india", "eg-new"],
+      "descr": "Cinnamon, native to Sri Lanka, was in use in Ancient Egypt, suggesting trading links with the island.",
+      "sources": [{ "sourceKey": "wp-sri-lanka-prehistory", "sourceLocation": "Mesolithic–Iron Age transition" }]
+    },
+    {
+      "uuid": "anuradhapura",
+      "title": "A large settlement at Anuradhapura",
+      "start": "c. 900 BCE",
+      "tracks": ["south-india"],
+      "descr": "Founded before 900 BC and covering 10 ha by 800 BC. In the protohistoric period (1000–500 BCE) Sri Lanka is culturally united with southern India.",
+      "sources": [{ "sourceKey": "wp-sri-lanka-prehistory", "sourceLocation": "Iron Age" }, { "sourceKey": "wp-iron-age-india", "sourceLocation": "Sri Lanka" }]
+    },
+    {
+      "uuid": "green-sahara-ends",
+      "title": "The African humid period ends: the Sahara dries",
+      "start": "c. 3550 BCE",
+      "tracks": ["sahara"],
+      "descr": "Considered the greatest environmental transition of the Holocene in northern Africa; people move to places such as the Nile Valley and Mesopotamia, and the change is linked to the birth of Ancient Egyptian civilization. The end comes in several steps; by 2,700 years ago the central Sahara is a desert.",
+      "sources": [{ "sourceKey": "wp-humid-period", "sourceLocation": "lead, End and Chronology" }],
+      "startDates": [
+        {
+          "year": "3550 BCE",
+          "source": { "sourceKey": "wp-humid-period", "sourceLocation": "End ('an ending date of 5,500 years before present is often used')" }
+        },
+        { "year": "3550 BCE", "margin": 500, "source": { "sourceKey": "wp-humid-period", "sourceLocation": "lead ('ended 6,000–5,000 years ago')" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "drought-4200",
+      "title": "Pan-tropical drought about 4,000 years ago",
+      "start": "c. 2050 BCE",
+      "tracks": ["sahara"],
+      "descr": "A major environmental change accompanied by the collapse of ancient civilizations and severe drought in Africa, Asia and the Middle East; some count this step (the 4.2-kiloyear event) as the true end of the humid period. Nile discharge decreases noticeably.",
+      "sources": [{ "sourceKey": "wp-humid-period", "sourceLocation": "End and Chronology" }]
+    },
+    {
+      "uuid": "herding-turkana",
+      "title": "Herding reaches East Africa",
+      "start": "c. 3050 BCE",
+      "tracks": ["pastoral-neolithic"],
+      "descr": "Livestock arrived in northern Africa around 8000 BP; as the Green Sahara dried, herders spread into the Nile Valley and reached the Turkana Basin around 5000 BP (3000 BC).",
+      "sources": [{ "sourceKey": "wp-pastoral-neolithic", "sourceLocation": "lead, Origins and Migratory patterns" }],
+      "links": [{ "to": "green-sahara-ends", "kind": "related" }]
+    },
+    {
+      "uuid": "savanna-pn",
+      "title": "Herders reach the highlands of Kenya and Tanzania",
+      "start": "c. 1350 BCE",
+      "tracks": ["pastoral-neolithic"],
+      "descr": "South Cushitic-speaking pastoralists who buried their dead in cairns settled first in the Kenyan lowlands (5,200–3,300 ybp). These early Cushitic speakers largely disappeared after the Bantu expansion.",
+      "sources": [{ "sourceKey": "wp-savanna-pn", "sourceLocation": "lead, Overview and Language" }],
+      "links": [{ "to": "bantu-500", "kind": "related" }]
+    },
+    {
+      "uuid": "palau-settled",
+      "title": "First settlement of Palau",
+      "start": "c. 1000 BCE",
+      "tracks": ["palau"],
+      "descr": "Settled by Austronesian peoples, most likely from what is now the Philippines or Indonesia. The page’s history section places it between the 3rd and 2nd millennia BCE.",
+      "sources": [{ "sourceKey": "wp-palau", "sourceLocation": "lead and Early history" }],
+      "startDates": [
+        { "year": "1000 BCE", "source": { "sourceKey": "wp-palau", "sourceLocation": "lead ('approximately 1,000 BCE')" } },
+        {
+          "year": "2000 BCE",
+          "margin": 1000,
+          "source": { "sourceKey": "wp-palau", "sourceLocation": "Early history ('between the 3rd and 2nd millennia BCE')" }
+        }
+      ],
+      "links": [{ "to": "out-of-taiwan", "kind": "part-of" }]
     }
   ]
 }

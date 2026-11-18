@@ -5,8 +5,7 @@
 // every time. Run it last, after every other additions script.
 //   node scripts/additions/groups.ts && npm run importance:ancient
 // Egypt sits in the Ancient Near East, the usual scholarly grouping, beside its strongest partners (the
-// Levant and Mesopotamia). The Americas stay a single top-level row: a group holding one region would only
-// repeat the name.
+// Levant and Mesopotamia). The Americas became a group with five regions on 2026-11-18 (americas.ts).
 import { open } from '../lib/dataset-edit.ts';
 
 const ed = open('data-src/ancient-near-east.json', '2026-11-17');
@@ -17,12 +16,13 @@ const tracks: Row[] = ed.data.tracks;
 const groups: { id: string; name: string; color: string; regions: string[] }[] = [
   { id: 'africa', name: 'Africa', color: '#b8862a', regions: ['north-africa', 'sub-saharan'] },
   { id: 'europe-med', name: 'Europe & Mediterranean', color: '#3f6aa8', regions: ['europe', 'west-med', 'sea-peoples', 'aegean'] },
-  { id: 'near-east', name: 'Ancient Near East', color: '#a8483a', regions: ['egypt', 'levant', 'anatolia', 'mesopotamia', 'iran', 'dilmun'] },
-  { id: 'steppe-south-asia', name: 'Steppe & South Asia', color: '#7a8a2a', regions: ['steppe', 'indus'] },
-  { id: 'east-asia', name: 'East & Southeast Asia', color: '#6a4a9a', regions: ['se-asia', 'china', 'korea-japan'] },
+  { id: 'near-east', name: 'Ancient Near East', color: '#a8483a', regions: ['egypt', 'levant', 'anatolia', 'mesopotamia', 'caucasus', 'iran', 'arabia', 'dilmun'] },
+  { id: 'steppe-south-asia', name: 'Steppe & South Asia', color: '#7a8a2a', regions: ['steppe', 'siberia', 'indus'] },
+  { id: 'east-asia', name: 'East & Southeast Asia', color: '#6a4a9a', regions: ['se-asia', 'tibet', 'china', 'korea-japan'] },
   { id: 'austronesia', name: 'Island Southeast Asia & Oceania', color: '#2a8a8a', regions: ['island-sea', 'oceania'] },
+  { id: 'americas', name: 'Americas', color: '#2f7a5a', regions: ['arctic', 'north-america', 'mesoamerica', 'south-america', 'caribbean'] },
 ];
-const topOrder = [...groups.map((g) => g.id), 'americas'];
+const topOrder = groups.map((g) => g.id);
 
 for (const g of groups) {
   const existing = tracks.find((t) => t.id === g.id);
