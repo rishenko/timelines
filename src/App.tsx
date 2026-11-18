@@ -24,6 +24,7 @@ import { allTimelines, BUNDLED, BUNDLED_IDS, findTimeline } from './timelines/in
 import { addToLibrary, fetchTimeline, normalizeUrl, removeFromLibrary, type LibraryEntry } from './state/library.ts';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
+import { DatingMenu } from './components/DatingMenu.tsx';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { safeUrl } from './lib/urls.ts';
 import type { Dataset, TimelineEvent, Track } from './types.ts';
@@ -89,6 +90,7 @@ export default function App() {
 
   // Chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low).
   const [chronSel, setChronSel] = useState<ChronologySelection>(() => defaultSelection(data));
+  const chronDefaults = useMemo(() => defaultSelection(data), [data]);
   const groups = useMemo(() => [...chronologyGroups(data)].filter(([, list]) => list.length > 1), [data]);
   const resolved = useMemo(() => resolveEvents(data, chronSel), [data, chronSel]);
   const resolvedById = useMemo(() => new Map(resolved.map((e) => [e.uuid, e])), [resolved]);
@@ -421,18 +423,13 @@ export default function App() {
             </button>
           ))}
         </div>
-        {groups.map(([g, list]) => (
-          <label key={g} className="chron-select" title={`Dating system for ${g}: re-plots its dates`}>
-            <span className="muted small">{g}</span>
-            <select value={chronSel[g]} onChange={(e) => setChronSel((s) => ({ ...s, [g]: e.target.value }))}>
-              {list.map(({ id, c }) => (
-                <option key={id} value={id}>
-                  {c.name}
-                </option>
-              ))}
-            </select>
-          </label>
-        ))}
+        <DatingMenu
+          groups={groups}
+          selection={chronSel}
+          defaults={chronDefaults}
+          onChange={(g, id) => setChronSel((s) => ({ ...s, [g]: id }))}
+          onReset={() => setChronSel(chronDefaults)}
+        />
         <label className="check" title="Collapse long stretches with no events">
           <input type="checkbox" checked={compress} onChange={(e) => setCompress(e.target.checked)} /> Compress gaps
         </label>

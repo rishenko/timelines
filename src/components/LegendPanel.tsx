@@ -165,7 +165,7 @@ export function LegendPanel({ data, onClose }: Props) {
           {
             sample: <span className="lg-select">Middle ▾</span>,
             title: 'Dating systems',
-            text: 'Scholars date some regions differently. The toolbar menus redraw a region’s events under another dating system; the ranges always include all of them.',
+            text: 'Scholars date some regions differently. The toolbar’s Dating menu redraws a region’s events under another dating system; the ranges always include all of them.',
           },
         ]
       : []),

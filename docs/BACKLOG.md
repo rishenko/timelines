@@ -36,8 +36,9 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   (fetch *Tel Hazor*), Confucius, Lydia, Sabaeans, the Nubian kingdom of Kerma/Kush. Same rule: every date
   from a cited page. Many values for the Levant, Assyria and Iran exist only in page summaries
   (see `docs/ancient-sources.md`) and need a verbatim read before use.
-- **Toolbar**: with four chronology menus (China added) the ancient toolbar wraps onto two rows. Consider a
-  single "Dating" popover.
+- **Toolbar: done (2026-11-18).** The four chronology menus are now one Dating button with a panel
+  (`src/components/DatingMenu.tsx`); the ancient toolbar is two rows at 1700 px instead of three. One row would need
+  the subtitle or the search box moved.
 - **Intro for first-time readers** beyond the legend (which now exists): e.g. a short guided tour.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phone and tablet** support: swipe, pinch-zoom, a narrow layout. Desktop-only today.
