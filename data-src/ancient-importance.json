@@ -24,7 +24,8 @@
     "phrygia-falls", "lydian-coins", "fall-of-sardis",
     "himera", "syracuse-founded", "sicilian-expedition", "nuraghi",
     "cyrene-founded", "libu-invasion",
-    "yamnaya-expansion", "dom2-horse", "first-chariots", "indo-aryan-migrations", "death-of-cyrus"
+    "yamnaya-expansion", "dom2-horse", "first-chariots", "indo-aryan-migrations", "death-of-cyrus",
+    "kerma-destroyed", "kush-independent", "piye-conquers-egypt", "meroe-capital", "nok-terracottas", "nok-iron"
   ],
   "3": [
     "kanesh-karum-ib", "alalakh-vii", "drought-1198", "hittite-marriage", "troy-vi",
@@ -40,6 +41,7 @@
     "barca-sacked",
     "sybaris",
     "pella",
-    "arzhan-2", "srubnaya-lola", "dugdammi-dies", "scythian-assyrian-alliance"
+    "arzhan-2", "srubnaya-lola", "dugdammi-dies", "scythian-assyrian-alliance",
+    "alara", "hannu-punt"
   ]
 }

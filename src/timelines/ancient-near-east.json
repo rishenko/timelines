@@ -3,8 +3,8 @@
   "meta": {
     "id": "ancient-near-east",
     "title": "Ancient Civilizations",
-    "subtitle": "Europe, the Mediterranean, the Near East, Iran, the Steppe, the Indus, China and the Americas, c. 3500–330 BCE",
-    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, the Indus Valley, China, and the Americas.",
+    "subtitle": "Europe, the Mediterranean, Africa, the Near East, Iran, the Steppe, the Indus, China and the Americas, c. 3500–330 BCE",
+    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, the Indus Valley, China, and the Americas.",
     "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
     "calendar": {
       "before": "BCE",
@@ -43,7 +43,9 @@
       "rome",
       "greece",
       "iberia",
-      "steppe"
+      "steppe",
+      "nubia",
+      "sub-saharan"
     ]
   },
   "tags": {
@@ -1838,6 +1840,134 @@
         "wikipedia"
       ],
       "accessed": "2026-11-17"
+    },
+    "wp-a-group": {
+      "name": "Wikipedia: A-Group culture",
+      "url": "https://en.wikipedia.org/wiki/A-Group_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-kerma": {
+      "name": "Wikipedia: Kerma culture",
+      "url": "https://en.wikipedia.org/wiki/Kerma_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-thutmose-i": {
+      "name": "Wikipedia: Thutmose I",
+      "url": "https://en.wikipedia.org/wiki/Thutmose_I",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-buhen": {
+      "name": "Wikipedia: Buhen",
+      "url": "https://en.wikipedia.org/wiki/Buhen",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-kush": {
+      "name": "Wikipedia: Kingdom of Kush",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-napata": {
+      "name": "Wikipedia: Napata",
+      "url": "https://en.wikipedia.org/wiki/Napata",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-meroe": {
+      "name": "Wikipedia: Meroë",
+      "url": "https://en.wikipedia.org/wiki/Mero%C3%AB",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-piye": {
+      "name": "Wikipedia: Piye",
+      "url": "https://en.wikipedia.org/wiki/Piye",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-taharqa": {
+      "name": "Wikipedia: Taharqa",
+      "url": "https://en.wikipedia.org/wiki/Taharqa",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-psamtik-ii": {
+      "name": "Wikipedia: Psamtik II",
+      "url": "https://en.wikipedia.org/wiki/Psamtik_II",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-punt": {
+      "name": "Wikipedia: Land of Punt",
+      "url": "https://en.wikipedia.org/wiki/Land_of_Punt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-dmt": {
+      "name": "Wikipedia: Dʿmt",
+      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-nok": {
+      "name": "Wikipedia: Nok culture",
+      "url": "https://en.wikipedia.org/wiki/Nok_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-bantu": {
+      "name": "Wikipedia: Bantu expansion",
+      "url": "https://en.wikipedia.org/wiki/Bantu_expansion",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-garamantes": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-tichitt": {
+      "name": "Wikipedia: Dhar Tichitt",
+      "url": "https://en.wikipedia.org/wiki/Dhar_Tichitt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
     }
   },
   "chronologies": {
@@ -2351,6 +2481,137 @@
       }
     },
     {
+      "id": "sub-saharan",
+      "name": "Sub-Saharan Africa",
+      "color": "#7a8a3a"
+    },
+    {
+      "id": "punt",
+      "name": "Land of Punt (Horn of Africa)",
+      "color": "#9a8a3a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -2499,
+        "end": -979,
+        "circa": true
+      }
+    },
+    {
+      "id": "dmt",
+      "name": "Dʿmt (Eritrea and Tigray)",
+      "color": "#8a6a4a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -749,
+        "end": -399,
+        "startDates": [
+          {
+            "year": -799,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox ('8th c. BC'): start of century"
+            }
+          },
+          {
+            "year": -700,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox: end of century"
+            }
+          },
+          {
+            "year": -979,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "short description ('c. 980–400 BCE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -399,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "History ('approximately 800/700–400 BC')"
+            }
+          },
+          {
+            "year": -300,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox ('4th c. BC'): end of century"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "tichitt",
+      "name": "Tichitt culture (Mauritania)",
+      "color": "#a08a5a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -1999,
+        "end": -299,
+        "startDates": [
+          {
+            "year": -1999,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": -2599,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "Chronology ('Pre-Tichitt … 2600 to 1900 BCE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -299,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": -399,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "Chronology ('Late Tichitt … 1000 to 400 BCE')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "nok",
+      "name": "Nok culture (Nigeria)",
+      "color": "#b0703a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -1499,
+        "end": 0,
+        "circa": true
+      }
+    },
+    {
+      "id": "bantu",
+      "name": "Bantu expansion",
+      "color": "#6a7a3a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -3999,
+        "end": 500,
+        "circa": true
+      }
+    },
+    {
       "id": "north-africa",
       "name": "North Africa",
       "color": "#a88a5a"
@@ -2385,6 +2646,49 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "garamantes",
+      "name": "Garamantes (Fezzan)",
+      "color": "#a07a5a",
+      "parent": "north-africa",
+      "span": {
+        "start": -999,
+        "end": 690,
+        "startDates": [
+          {
+            "year": -999,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead ('at least as early as 1000 BC')"
+            }
+          },
+          {
+            "year": -599,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "Origin and prehistory ('From the 6th century BCE … a powerful polity')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 667,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead ('late 7th century AD')"
+            }
+          },
+          {
+            "year": 700,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead: end of century"
+            }
+          }
+        ],
+        "circa": true
       }
     },
     {
@@ -2875,162 +3179,8 @@
       }
     },
     {
-      "id": "levant",
-      "name": "Levant",
-      "color": "#9a6a2f"
-    },
-    {
-      "id": "canaan",
-      "name": "Canaan",
-      "color": "#a8773a",
-      "parent": "levant",
-      "span": {
-        "start": -3499,
-        "end": -1199,
-        "circa": true
-      }
-    },
-    {
-      "id": "can-eba",
-      "name": "Early Bronze Age",
-      "color": "#b9894b",
-      "parent": "canaan",
-      "span": {
-        "start": -3499,
-        "end": -1999,
-        "circa": true
-      }
-    },
-    {
-      "id": "can-mba",
-      "name": "Middle Bronze Age",
-      "color": "#a87a3c",
-      "parent": "canaan",
-      "span": {
-        "start": -1999,
-        "end": -1549,
-        "circa": true
-      }
-    },
-    {
-      "id": "can-lba",
-      "name": "Late Bronze Age",
-      "color": "#966a30",
-      "parent": "canaan",
-      "span": {
-        "start": -1549,
-        "end": -1199,
-        "circa": true
-      }
-    },
-    {
-      "id": "ebla",
-      "name": "Ebla",
-      "color": "#b5653a",
-      "parent": "levant",
-      "chronology": "middle",
-      "span": {
-        "start": -3499,
-        "end": -1599,
-        "circa": true
-      }
-    },
-    {
-      "id": "ugarit",
-      "name": "Ugarit",
-      "color": "#c27d4c",
-      "parent": "levant",
-      "span": {
-        "start": -1499,
-        "end": -1184,
-        "endDates": [
-          {
-            "year": -1184,
-            "source": {
-              "sourceKey": "wp-ugarit",
-              "sourceLocation": "infobox and History"
-            }
-          },
-          {
-            "year": -1189,
-            "source": {
-              "sourceKey": "wp-ugarit",
-              "sourceLocation": "destruction infobox (c. 1190 BC)"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "phoenicia",
-      "name": "Phoenician cities",
-      "color": "#8b3a62",
-      "parent": "levant",
-      "span": {
-        "start": -1199,
-        "end": -331,
-        "circa": true
-      }
-    },
-    {
-      "id": "israel-judah",
-      "name": "Israel and Judah",
-      "color": "#5f7c9a",
-      "parent": "levant",
-      "span": {
-        "start": -929,
-        "end": -586,
-        "circa": true
-      }
-    },
-    {
-      "id": "philistines",
-      "name": "Philistines",
-      "color": "#7f8d55",
-      "parent": "levant",
-      "span": {
-        "start": -1174,
-        "end": -603,
-        "circa": true
-      }
-    },
-    {
-      "id": "aram",
-      "name": "Aram-Damascus",
-      "color": "#a35f4f",
-      "parent": "levant",
-      "span": {
-        "start": -1149,
-        "end": -731,
-        "startDates": [
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "wp-aram",
-              "sourceLocation": "infobox ('c. 12th century BCE'): start of century"
-            }
-          },
-          {
-            "year": -1100,
-            "source": {
-              "sourceKey": "wp-aram",
-              "sourceLocation": "infobox: end of century; lead says 'late 12th century'"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "cyprus",
-      "name": "Cyprus (Alashiya)",
-      "color": "#b07a2f",
-      "parent": "levant"
-    },
-    {
       "id": "egypt",
-      "name": "Egypt",
+      "name": "Egypt and Nubia",
       "color": "#b8871b",
       "chronology": "shaw"
     },
@@ -3344,6 +3494,254 @@
         "start": -663,
         "end": -331
       }
+    },
+    {
+      "id": "nubia",
+      "name": "Nubia",
+      "color": "#a0603a",
+      "parent": "egypt"
+    },
+    {
+      "id": "a-group",
+      "name": "A-Group culture",
+      "color": "#b07a4a",
+      "parent": "nubia",
+      "span": {
+        "start": -3499,
+        "end": -2899,
+        "startDates": [
+          {
+            "year": -3500,
+            "margin": 499,
+            "source": {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "lead ('from the 4th millennium BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2899,
+            "source": {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "lead ('fell 200 years later c. 2900 BC')"
+            }
+          },
+          {
+            "year": -3099,
+            "source": {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "History > B-Group ('came to an end around 3100 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "c-group",
+      "name": "C-Group culture (Lower Nubia)",
+      "color": "#9a7a5a",
+      "parent": "nubia"
+    },
+    {
+      "id": "kerma",
+      "name": "Kerma",
+      "color": "#8a4a2a",
+      "parent": "nubia",
+      "span": {
+        "start": -2499,
+        "end": -1499,
+        "circa": true
+      }
+    },
+    {
+      "id": "kush",
+      "name": "Kingdom of Kush (Napata, Meroë)",
+      "color": "#b0502a",
+      "parent": "nubia",
+      "span": {
+        "start": -779,
+        "end": 350,
+        "startDates": [
+          {
+            "year": -779,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "infobox (Established)"
+            }
+          },
+          {
+            "year": -1069,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "Formation ('Kush became an independent kingdom' around 1070 BC)"
+            }
+          },
+          {
+            "year": -999,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "Formation ('began to emerge around 1000 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "levant",
+      "name": "Levant",
+      "color": "#9a6a2f"
+    },
+    {
+      "id": "canaan",
+      "name": "Canaan",
+      "color": "#a8773a",
+      "parent": "levant",
+      "span": {
+        "start": -3499,
+        "end": -1199,
+        "circa": true
+      }
+    },
+    {
+      "id": "can-eba",
+      "name": "Early Bronze Age",
+      "color": "#b9894b",
+      "parent": "canaan",
+      "span": {
+        "start": -3499,
+        "end": -1999,
+        "circa": true
+      }
+    },
+    {
+      "id": "can-mba",
+      "name": "Middle Bronze Age",
+      "color": "#a87a3c",
+      "parent": "canaan",
+      "span": {
+        "start": -1999,
+        "end": -1549,
+        "circa": true
+      }
+    },
+    {
+      "id": "can-lba",
+      "name": "Late Bronze Age",
+      "color": "#966a30",
+      "parent": "canaan",
+      "span": {
+        "start": -1549,
+        "end": -1199,
+        "circa": true
+      }
+    },
+    {
+      "id": "ebla",
+      "name": "Ebla",
+      "color": "#b5653a",
+      "parent": "levant",
+      "chronology": "middle",
+      "span": {
+        "start": -3499,
+        "end": -1599,
+        "circa": true
+      }
+    },
+    {
+      "id": "ugarit",
+      "name": "Ugarit",
+      "color": "#c27d4c",
+      "parent": "levant",
+      "span": {
+        "start": -1499,
+        "end": -1184,
+        "endDates": [
+          {
+            "year": -1184,
+            "source": {
+              "sourceKey": "wp-ugarit",
+              "sourceLocation": "infobox and History"
+            }
+          },
+          {
+            "year": -1189,
+            "source": {
+              "sourceKey": "wp-ugarit",
+              "sourceLocation": "destruction infobox (c. 1190 BC)"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "phoenicia",
+      "name": "Phoenician cities",
+      "color": "#8b3a62",
+      "parent": "levant",
+      "span": {
+        "start": -1199,
+        "end": -331,
+        "circa": true
+      }
+    },
+    {
+      "id": "israel-judah",
+      "name": "Israel and Judah",
+      "color": "#5f7c9a",
+      "parent": "levant",
+      "span": {
+        "start": -929,
+        "end": -586,
+        "circa": true
+      }
+    },
+    {
+      "id": "philistines",
+      "name": "Philistines",
+      "color": "#7f8d55",
+      "parent": "levant",
+      "span": {
+        "start": -1174,
+        "end": -603,
+        "circa": true
+      }
+    },
+    {
+      "id": "aram",
+      "name": "Aram-Damascus",
+      "color": "#a35f4f",
+      "parent": "levant",
+      "span": {
+        "start": -1149,
+        "end": -731,
+        "startDates": [
+          {
+            "year": -1199,
+            "source": {
+              "sourceKey": "wp-aram",
+              "sourceLocation": "infobox ('c. 12th century BCE'): start of century"
+            }
+          },
+          {
+            "year": -1100,
+            "source": {
+              "sourceKey": "wp-aram",
+              "sourceLocation": "infobox: end of century; lead says 'late 12th century'"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "cyprus",
+      "name": "Cyprus (Alashiya)",
+      "color": "#b07a2f",
+      "parent": "levant"
     },
     {
       "id": "mesopotamia",
@@ -6923,7 +7321,8 @@
       "title": "Expedition to Punt",
       "start": -1470,
       "tracks": [
-        "eg-new"
+        "eg-new",
+        "punt"
       ],
       "descr": "In Hatshepsut's ninth year a trading fleet sails to Punt; the voyage is recorded in reliefs at Deir el-Bahari.",
       "sources": [
@@ -7296,7 +7695,8 @@
       "start": -743,
       "end": -655,
       "tracks": [
-        "eg-tip"
+        "eg-tip",
+        "kush"
       ],
       "descr": "Kings from Kush (Nubia) conquer Egypt, beginning with Piye's march north around 732 BCE, and rule until the Assyrian invasions.",
       "sources": [
@@ -7333,7 +7733,8 @@
       "end": -662,
       "tracks": [
         "eg-tip",
-        "assyria"
+        "assyria",
+        "kush"
       ],
       "descr": "Esarhaddon and Ashurbanipal defeat the Kushite kings; in 664 BCE the Assyrians sack Thebes and Memphis.",
       "sources": [
@@ -7355,7 +7756,8 @@
       "start": -663,
       "tracks": [
         "eg-tip",
-        "assyria"
+        "assyria",
+        "kush"
       ],
       "descr": "The sack of Egypt's religious capital ends Kushite rule in Egypt.",
       "sources": [
@@ -11985,6 +12387,580 @@
           "source": {
             "sourceKey": "wp-pazyryk",
             "sourceLocation": "Archaeology: end of century"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "a-group-height",
+      "title": "A-Group culture at its height",
+      "start": -3099,
+      "tracks": [
+        "a-group"
+      ],
+      "descr": "The first powerful society in Nubia, with commercial ties to Egypt. Agriculture first appears in the Terminal A-Group period (c. 3200–3000 BCE).",
+      "sources": [
+        {
+          "sourceKey": "wp-a-group",
+          "sourceLocation": "lead and Overview"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "gebel-sheikh-suleiman",
+      "title": "An early pharaoh defeats the A-Group",
+      "start": -2999,
+      "tracks": [
+        "a-group",
+        "eg-early"
+      ],
+      "descr": "The relief of Gebel Sheikh Suleiman likely shows an early pharaoh, possibly Djer, victorious over A-Group Nubians. One account has the First Dynasty destroying the A-Group around 3100 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-a-group",
+          "sourceLocation": "image caption and History > B-Group"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "c-group-appears",
+      "title": "Early C-Group culture appears in Lower Nubia",
+      "start": -2299,
+      "tracks": [
+        "c-group"
+      ],
+      "descr": "",
+      "sources": [
+        {
+          "sourceKey": "wp-kerma",
+          "sourceLocation": "History > Early Kerma ('By 2300 BC, the Early C-Group culture was also appearing in Lower Nubia')"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "buhen-fortress",
+      "title": "Senusret III fortifies Buhen",
+      "start": -1859,
+      "tracks": [
+        "kerma",
+        "eg-middle"
+      ],
+      "descr": "Senusret III campaigns four times into Kush and builds a line of forts within signalling distance of one another; Buhen, below the Second Cataract, is the northernmost.",
+      "sources": [
+        {
+          "sourceKey": "wp-buhen",
+          "sourceLocation": "Fortress"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "classic-kerma",
+      "title": "Classic Kerma: the kingdom at its peak",
+      "start": -1749,
+      "end": -1499,
+      "tracks": [
+        "kerma"
+      ],
+      "descr": "Contemporary with the Second Intermediate Period. At its zenith Kerma partners with the Hyksos against Egypt.",
+      "sources": [
+        {
+          "sourceKey": "wp-kerma",
+          "sourceLocation": "lead, Site and periodisation and Classic Kerma"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1749,
+          "source": {
+            "sourceKey": "wp-kerma",
+            "sourceLocation": "Site and periodisation"
+          }
+        },
+        {
+          "year": -1699,
+          "source": {
+            "sourceKey": "wp-kerma",
+            "sourceLocation": "lead ('latest phase, lasting from about 1700 to 1500 BC')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kushites-take-buhen",
+      "title": "Kushites capture Buhen",
+      "start": -1674,
+      "tracks": [
+        "kerma",
+        "eg-sip"
+      ],
+      "descr": "The fortress falls to the Kushites during the 13th Dynasty; Ahmose I retakes it at the start of the 18th.",
+      "sources": [
+        {
+          "sourceKey": "wp-buhen",
+          "sourceLocation": "Fortress and The Buhen Horse ('initial sacking … circa 1675 BC')"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kerma-invades-egypt",
+      "title": "Kerma invades deep into Egypt",
+      "start": -1574,
+      "end": -1549,
+      "tracks": [
+        "kerma",
+        "eg-sip"
+      ],
+      "descr": "Recorded in the tomb of Sobeknakht II.",
+      "sources": [
+        {
+          "sourceKey": "wp-kerma",
+          "sourceLocation": "Classic Kerma"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kerma-destroyed",
+      "title": "Thutmose I conquers Kush and destroys Kerma",
+      "start": -1503,
+      "tracks": [
+        "kerma",
+        "eg-new"
+      ],
+      "descr": "Egypt annexes Nubia and Thutmose I builds a fortress at Tombos near the Third Cataract. Nubian rebellions continue for about 220 years.",
+      "sources": [
+        {
+          "sourceKey": "wp-kerma",
+          "sourceLocation": "Late Kerma and Egyptian conquest"
+        },
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "Egyptian Nubia"
+        },
+        {
+          "sourceKey": "wp-thutmose-i",
+          "sourceLocation": "Military achievements"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1503,
+          "source": {
+            "sourceKey": "wp-kerma",
+            "sourceLocation": "Late Kerma ('annexation of Nubia … c. 1504 BC')"
+          }
+        },
+        {
+          "year": -1499,
+          "margin": 6,
+          "source": {
+            "sourceKey": "wp-thutmose-i",
+            "sourceLocation": "infobox (reign, low chronology)"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "kush-independent",
+      "title": "Kush becomes independent, centred at Napata",
+      "start": -1069,
+      "tracks": [
+        "kush",
+        "eg-tip"
+      ],
+      "descr": "As the New Kingdom disintegrates, Kush becomes an independent kingdom, possibly a successor of Kerma.",
+      "sources": [
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "Formation"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "alara",
+      "title": "Alara, first Kushite king known by name",
+      "start": -779,
+      "tracks": [
+        "kush"
+      ],
+      "descr": "",
+      "sources": [
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "Formation ('between 800 and 760 BC')"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -779,
+          "margin": 20,
+          "source": {
+            "sourceKey": "wp-kush",
+            "sourceLocation": "Formation"
+          }
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "piye-conquers-egypt",
+      "title": "Piye conquers Egypt",
+      "start": -726,
+      "tracks": [
+        "kush",
+        "eg-tip"
+      ],
+      "descr": "In his twentieth year the Kushite king Piye invades against Tefnakht of Sais, wins at Herakleopolis and takes Hermopolis after a five-month siege. He then returns to Napata and never comes back to Egypt.",
+      "sources": [
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "Rule over Egypt"
+        },
+        {
+          "sourceKey": "wp-piye",
+          "sourceLocation": "Conquest of Egypt"
+        }
+      ],
+      "links": [
+        {
+          "to": "kushite-dynasty",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "taharqa",
+      "title": "Reign of Taharqa",
+      "start": -689,
+      "end": -663,
+      "tracks": [
+        "kush",
+        "eg-tip"
+      ],
+      "descr": "The 25th Dynasty's best-known king. He defeats the Assyrians in 674 BCE but loses Memphis to Esarhaddon in 671, retakes it in 669, and dies in 664. The Kush page says he died at Napata, the Taharqa page at Thebes.",
+      "sources": [
+        {
+          "sourceKey": "wp-taharqa",
+          "sourceLocation": "infobox, lead and War between Taharqa and Assyria"
+        },
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "Assyrian conquest of Egypt"
+        }
+      ],
+      "links": [
+        {
+          "to": "kushite-dynasty",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "napata-sacked",
+      "title": "Psamtik II sacks Napata",
+      "start": -591,
+      "tracks": [
+        "kush",
+        "eg-late"
+      ],
+      "descr": "The Egyptian army fights its way to Pnubs (Kerma) and Napata, which is sacked under the Kushite king Aspelta.",
+      "sources": [
+        {
+          "sourceKey": "wp-psamtik-ii",
+          "sourceLocation": "Campaigns and battles"
+        },
+        {
+          "sourceKey": "wp-napata",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-meroe",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -591,
+          "source": {
+            "sourceKey": "wp-psamtik-ii",
+            "sourceLocation": "Campaigns and battles ('a foray into Nubia in 592 BC')"
+          }
+        },
+        {
+          "year": -592,
+          "source": {
+            "sourceKey": "wp-napata",
+            "sourceLocation": "lead ('In 593 BC, it was sacked')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "meroe-capital",
+      "title": "Kush moves its capital to Meroë",
+      "start": -590,
+      "tracks": [
+        "kush"
+      ],
+      "descr": "Aspelta moves the capital far south of Napata, just after the Egyptian sack. The royal burial ground follows only around 280 BCE, and the main temple of Amun stays at Napata.",
+      "sources": [
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "infobox and Meroitic period ('possibly c. 591 BC')"
+        },
+        {
+          "sourceKey": "wp-meroe",
+          "sourceLocation": "History and First Meroitic Period"
+        }
+      ],
+      "links": [
+        {
+          "to": "napata-sacked",
+          "kind": "causes"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "sahure-punt",
+      "title": "First recorded expedition to Punt",
+      "start": -2449,
+      "tracks": [
+        "punt",
+        "eg-old"
+      ],
+      "descr": "Organised by Sahure of the Fifth Dynasty. Recent evidence places Punt in northwestern Eritrea.",
+      "sources": [
+        {
+          "sourceKey": "wp-punt",
+          "sourceLocation": "lead and Egyptian expeditions to Punt"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -2450,
+          "margin": 49,
+          "source": {
+            "sourceKey": "wp-punt",
+            "sourceLocation": "Egyptian expeditions ('Fifth Dynasty (25th century BC)')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "hannu-punt",
+      "title": "Hannu sails to Punt",
+      "start": -1999,
+      "tracks": [
+        "punt",
+        "eg-middle"
+      ],
+      "descr": "An officer of Mentuhotep III (11th Dynasty) organises one or more voyages to Punt.",
+      "sources": [
+        {
+          "sourceKey": "wp-punt",
+          "sourceLocation": "Egyptian expeditions to Punt"
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "dmt-first-king",
+      "title": "Earliest known king of Dʿmt",
+      "start": -699,
+      "end": -649,
+      "tracks": [
+        "dmt"
+      ],
+      "descr": "A contemporary of the Sabaean ruler Karib'il Watar. Dʿmt was an Ethio-Sabaean kingdom, its capital probably Yeha, where the temple of Ilmuqah still stands.",
+      "sources": [
+        {
+          "sourceKey": "wp-dmt",
+          "sourceLocation": "lead, History and Known rulers"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "tichitt-millet",
+      "title": "Millet domesticated at Tichitt",
+      "start": -1799,
+      "tracks": [
+        "tichitt"
+      ],
+      "descr": "The crop was fully domesticated by 1100 BCE at the latest. Plateau settlements are built from about 1400 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-tichitt",
+          "sourceLocation": "Agriculture and lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1799,
+          "margin": 100,
+          "source": {
+            "sourceKey": "wp-tichitt",
+            "sourceLocation": "Agriculture ('around 1900 to 1700 BCE')"
+          }
+        },
+        {
+          "year": -1099,
+          "source": {
+            "sourceKey": "wp-tichitt",
+            "sourceLocation": "Agriculture ('by at least 1100 BCE')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "classic-tichitt",
+      "title": "Classic Tichitt",
+      "start": -1599,
+      "end": -999,
+      "tracks": [
+        "tichitt"
+      ],
+      "descr": "Pastoralists and farmers on the cliffs of Dhar Tichitt; they are thought to be ancestors of the Soninke. The chronology is contentious.",
+      "sources": [
+        {
+          "sourceKey": "wp-tichitt",
+          "sourceLocation": "Chronology and lead"
+        }
+      ]
+    },
+    {
+      "uuid": "nok-terracottas",
+      "title": "Nok terracotta sculptures",
+      "start": -899,
+      "end": -299,
+      "tracks": [
+        "nok"
+      ],
+      "descr": "The earliest Nok terracottas may date from about 900 BCE. The Middle Nok period (c. 900–300 BCE) sees a dramatic increase in sites, terracotta fragments and iron objects.",
+      "sources": [
+        {
+          "sourceKey": "wp-nok",
+          "sourceLocation": "lead and Ceramics"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "nok-iron",
+      "title": "Iron smelting in the Nok culture",
+      "start": -649,
+      "tracks": [
+        "nok"
+      ],
+      "descr": "Iron metallurgy may have developed independently here.",
+      "sources": [
+        {
+          "sourceKey": "wp-nok",
+          "sourceLocation": "lead and Iron metallurgy"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -649,
+          "margin": 100,
+          "source": {
+            "sourceKey": "wp-nok",
+            "sourceLocation": "lead ('between 750 BCE and 550 BCE')"
+          }
+        },
+        {
+          "year": -800,
+          "margin": 99,
+          "source": {
+            "sourceKey": "wp-nok",
+            "sourceLocation": "Iron metallurgy ('in the 9th century BCE or 8th century BCE')"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "bantu-split",
+      "title": "Bantu languages split into East and West",
+      "start": -2499,
+      "end": -1199,
+      "tracks": [
+        "bantu"
+      ],
+      "descr": "The expansion most likely began in the highlands between Cameroon and Nigeria.",
+      "sources": [
+        {
+          "sourceKey": "wp-bantu",
+          "sourceLocation": "Theories on expansion"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "bantu-500",
+      "title": "Bantu speakers reach Lake Victoria and Angola",
+      "start": -499,
+      "tracks": [
+        "bantu"
+      ],
+      "descr": "The Western Stream reaches the southern edge of the rainforest and central Angola; the Eastern Stream, with Urewe pottery and one of the oldest iron-smelting centres in Africa, reaches west of Lake Victoria.",
+      "sources": [
+        {
+          "sourceKey": "wp-bantu",
+          "sourceLocation": "lead, Western Stream and Eastern Stream"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "herodotus-garamantes",
+      "title": "Herodotus describes the Garamantes",
+      "start": -449,
+      "tracks": [
+        "garamantes"
+      ],
+      "descr": "The earliest written record of them: \"a very great nation\" who herded cattle and farmed dates.",
+      "sources": [
+        {
+          "sourceKey": "wp-garamantes",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -499,
+          "source": {
+            "sourceKey": "wp-garamantes",
+            "sourceLocation": "History ('5th century BC'): start of century"
+          }
+        },
+        {
+          "year": -400,
+          "source": {
+            "sourceKey": "wp-garamantes",
+            "sourceLocation": "History: end of century"
           }
         }
       ],

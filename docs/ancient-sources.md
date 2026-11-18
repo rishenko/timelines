@@ -210,3 +210,39 @@ Cimmerian events already on Anatolia's rows), 19 sources, 12 rows. The region st
   Saka campaign (520–518), Andronovo's Alakul phase and Altai mining, the Poltavka migration (2800–2600),
   and the Kurgan hypothesis waves. The *Darius I's European Scythian campaign* URL is a 404; the campaign
   comes from *Scythian campaign of Darius I*.
+
+## Sixth pass: Africa (17 November 2026)
+
+Important events only; applied by `scripts/additions/africa.ts` (re-runnable). 24 events, 16 sources,
+12 rows; four existing events (the Punt expedition, the Kushite dynasty, the Assyrian invasions and the
+sack of Thebes) also placed on the new rows.
+
+- **Nubia, a group inside Egypt** (the region is now "Egypt and Nubia", the Nile valley): A-Group, C-Group
+  (Lower Nubia), Kerma, and the Kingdom of Kush (Napata, then Meroë). Events: the A-Group at its height
+  (c. 3100), the Early C-Group appearing (c. 2300, from *Kerma culture*), an early pharaoh's victory over the A-Group (c. 3000, Gebel Sheikh Suleiman), Senusret III's
+  forts at Buhen (c. 1860), Classic Kerma (1750–1500), the Kushite capture of Buhen (c. 1675), Kerma's
+  invasion of Egypt (1575–1550), Thutmose I's conquest (c. 1504), Kush independent (c. 1070), Alara
+  (800–760), Piye's conquest (c. 727), Taharqa (690–664), Psamtik II's sack of Napata (592; Napata's lead
+  says 593) and the move of the capital to Meroë (c. 591).
+- **New region, Sub-Saharan Africa:** Punt (Sahure's expedition in the 25th century, Hannu c. 2000,
+  Hatshepsut's), Dʿmt (its earliest known king, c. 700–650), Tichitt (millet domestication 1900–1700,
+  Classic Tichitt 1600–1000), Nok (terracottas 900–300; iron 750–550, with "9th or 8th century" as a
+  claim), and the Bantu expansion (the East–West split 2500–1200; Lake Victoria and Angola by 500).
+- **North Africa:** the Garamantes (from at least 1000 BCE; Herodotus, 5th century).
+- **Judgment calls:** the A-Group's start uses "4th millennium" as 3500 ± 500; its end has 2900 (lead) and
+  3100 (B-Group section) as claims. Kush starts at the infobox's c. 780, with independence (1070) and
+  emergence (1000) as claims; the independence is also an event. Dʿmt's start is the infobox's 8th
+  century, with the short description's 980 as a claim. The *C-Group culture* page carries a warning that
+  it may contain text from a large language model, so at the author's request it is not used at all: the
+  C-Group row has no dates of its own and holds one event sourced from *Kerma culture*. The Kush
+  and Taharqa pages disagree on where Taharqa died (Napata vs. Thebes); the description says so.
+- **Key events (6):** Thutmose I destroys Kerma, Kush independent, Piye conquers Egypt, the capital moves to
+  Meroë, Nok terracottas, Nok iron. **Minor (2):** Alara, Hannu's voyage.
+- **Region order** (the author's choice, 2026-11-17): Nubia shares 12 events with Egypt, and as a region
+  of its own it pushed Mesopotamia too far from Anatolia and the Levant. Nubia became a group inside Egypt,
+  Sub-Saharan Africa sits next to North Africa, and Egypt moved below Anatolia: Europe, Western
+  Mediterranean, Sub-Saharan Africa, North Africa, Sea Peoples, Aegean, Anatolia, Egypt and Nubia, Levant,
+  Mesopotamia, Iran, Eurasian Steppe, Dilmun, Indus, China, Americas. Score 230; it passes.
+- **Left out:** Napata's 591 "Achaemenid raid" (it conflicts with every other date for the sack), the
+  Garamantes' foggaras (200 BCE–200 CE, after the end date), Dʿmt's Yeha temple (undated), the iron slag
+  at Gobédra (9th century, before Dʿmt), and the end of the Punt trade (no year on the page).
