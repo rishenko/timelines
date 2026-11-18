@@ -26,7 +26,8 @@
     "cyrene-founded", "libu-invasion",
     "yamnaya-expansion", "dom2-horse", "first-chariots", "indo-aryan-migrations", "death-of-cyrus",
     "kerma-destroyed", "kush-independent", "piye-conquers-egypt", "meroe-capital", "nok-terracottas", "nok-iron",
-    "rigveda", "mahajanapadas", "achaemenid-indus", "buddha", "dong-son-drums", "sannai-maruyama", "kyushu-rice"
+    "rigveda", "mahajanapadas", "achaemenid-indus", "buddha", "dong-son-drums", "sannai-maruyama", "kyushu-rice",
+    "taiwan-farmers", "out-of-taiwan", "lapita-bismarck", "tonga-settled", "dingo"
   ],
   "3": [
     "kanesh-karum-ib", "alalakh-vii", "drought-1198", "hittite-marriage", "troy-vi",
@@ -43,6 +44,7 @@
     "sybaris",
     "pella",
     "arzhan-2", "srubnaya-lola", "dugdammi-dies", "scythian-assyrian-alliance",
-    "alara", "hannu-punt"
+    "alara", "hannu-punt",
+    "kalanay"
   ]
 }

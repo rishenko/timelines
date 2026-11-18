@@ -17,12 +17,14 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   the file at the link.
 
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
-- **Review the key events** in `docs/ancient-key-events.md` (66 key, 21 minor, proposed by Claude). Change
+- **Review the key events** in `docs/ancient-key-events.md` (112 key, 35 minor, proposed by Claude). Change
   `data-src/ancient-importance.json` and run `npm run importance:ancient`.
-- **Europe, the Mediterranean, the Steppe, Africa and Asia: deeper research.** See the summary-only lists in
-  `docs/ancient-sources.md` (third to seventh passes).
-- **New regions within 3500–330 BCE**, one `scripts/additions/<region>.ts` each (done: `steppe.ts`, `africa.ts`, `asia.ts`): Island Southeast Asia and the Pacific (Austronesian expansion, Lapita, Buni). Tag key events as they go
-  in, place each region next to its partners (the proximity test), and consider starting new regions collapsed.
+- **Europe, the Mediterranean, the Steppe, Africa, Asia and the Pacific: deeper research.** See the summary-only
+  lists in `docs/ancient-sources.md` (third to eighth passes).
+- **New regions within 3500–330 BCE**, one `scripts/additions/<region>.ts` each (done: `steppe.ts`, `africa.ts`,
+  `asia.ts`, `pacific.ts`). Every region on the original list is now in. For any new one: tag key events as they go
+  in, place it next to its partners (the proximity test), and consider starting it collapsed. Candidates: a
+  Micronesia row (Palau and Yap "by 1000 BCE"), New Guinea.
 - **Key events when zoomed out**: at the coarsest zoom, show only key events (a second use of `importance`).
 - **Drafts hide data updates.** A saved edit-mode draft replaces the bundled timeline entirely, so a
   reader with a draft never sees later fixes to the shipped data. Same issue as REDACTED;

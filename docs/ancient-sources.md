@@ -298,3 +298,51 @@ Anatolia, Mesopotamia, Iran & Central Asia, Dilmun), Steppe & South Asia, and Ea
 - The timeline opens with groups expanded and every region collapsed, so each region row leads with its
   key events.
 - The app no longer limits nesting depth (it was three levels); this grouping uses four.
+
+## Eighth pass: Island Southeast Asia and Oceania (18 November 2026)
+
+Important events only; applied by `scripts/additions/pacific.ts` (re-runnable; run it before `groups.ts`). 18
+events, 16 sources, 8 rows, in a new top-level group, **Island Southeast Asia & Oceania** (teal), between East &
+Southeast Asia and the Americas. Three web-fetch agents read 22 pages.
+
+- **Not used:** *Puyuma people*, where *Beinan culture* redirects, carries an AI-generated-text warning. Beinan's jade
+  dates come from *Prehistory of Taiwan* instead. *Beinan site* and *Maritime Jade Road* do not exist (404).
+- **Other notices:** *Polynesians* asks for expansion by translation from Russian. Its notice mentions an LLM
+  translation guideline but does not flag the existing text as AI-written, so its Origins facts are used.
+  *Prehistory of Australia* has a disputed-neutrality notice; only its lead and "Changes c. 4000 years ago" were read
+  verbatim. *Lapita culture*'s "Lapita in Polynesia" section may contain original synthesis, so its two dates (Tonga
+  900 BCE, Samoa plainware ending around 1 CE) are claims only.
+- **Taiwan and Island Southeast Asia:**
+  - Taiwan: first farmers and the Dapenkeng culture, c. 3500–2500. Claims: the lead's 4000–3000, "around 5,000 years
+    ago", and the radiocarbon "as late as 4000 BCE".
+  - The Maritime Jade Road, 2000 BCE–1000 CE: jade mined in Taiwan and processed mainly in the Philippines. Claim:
+    Taiwanese nephrite in the northern Philippines, 1850–1350.
+  - Philippines: Out of Taiwan, 3000–1500; the Batanes, 2200; metal tools around 500 (claim: iron in the 9th–10th
+    centuries BC); Kalanay Cave pottery from 400 BCE, linked to the Sa Huỳnh trade network.
+  - Indonesia: Austronesian speakers arrive c. 4,000 years ago; Buni, 400 BCE–100 CE (claim: "probably survived until
+    500 AD").
+- **Oceania:**
+  - The Mariana Islands, 1500–1400, before the first Lapita artifacts.
+  - Lapita: Bismarck Archipelago 1600–1200; Solomons, Vanuatu and New Caledonia after 1200; Teouma c. 1000; Fiji
+    1100–1000; Tongatapu "around 3000 years ago" (claims: 900 BC and Pea's 3180 ± 100 BP); Samoa 1500–900; the
+    Polynesian Plain Ware period, 700 BCE–400 CE.
+  - Australia and the Torres Strait: the dingo; first settlement of the Torres Strait c. 4,000 years ago.
+- **Judgment calls (please check):**
+  - "Years ago" and "YBP" are treated like BP (subtract 1950), as in call 15.
+  - The dingo's best date is the arrival both pages give (about 4,000 years ago, 2050 BCE). The oldest remains (3,450
+    YBP, and 3,348–3,081 by direct dating) are claims, so the drawn range runs to them.
+  - Samoa's best date is the midpoint of the page's 1500–900 BCE window. Tonga's is the lead's "around 3000 years ago".
+  - Fiji, Tonga and Samoa are three events, not one, so each island's claims stay separate.
+  - The Lapita row ends at 500 BCE (the lead's "1600 to 500 BCE").
+- **Key events (5):** first farmers in Taiwan, Out of Taiwan, Lapita in the Bismarck Archipelago, Tongatapu, the dingo.
+  Minor: Kalanay Cave.
+- **Region order:** the top level scores 45 and passes. The new group shares one event with East & Southeast Asia (the
+  Kalanay–Sa Huỳnh link). Inside the group, Taiwan and Island Southeast Asia sits above Oceania (score 2).
+- **Left out:**
+  - Kuk Swamp: its bananas and sugar cane (6,900–6,400 years ago) end before 3500 BCE.
+  - The Lapita page's "1,110 years ago" for New Caledonia, which doesn't fit its other dates.
+  - The *Austronesian peoples* lead's "started at around 500 BCE", which contradicts the page's own 3000–1500 BCE.
+  - Palau and Yap "by 1000 BCE": there is no row for them yet (a Micronesia row would hold them).
+  - Redd et al.'s migration from India c. 4,000 years ago (a single paper).
+  - Everything read only in summary: wet-field rice in Indonesia "as early as the 8th century BCE", the Torres Strait's
+    "by 2,500 years ago", and the Australian Holocene tool dates.

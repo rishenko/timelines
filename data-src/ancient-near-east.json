@@ -3,8 +3,8 @@
   "meta": {
     "id": "ancient-near-east",
     "title": "Ancient Civilizations",
-    "subtitle": "Europe, the Mediterranean, Africa, the Near East, Iran, the Steppe, South and East Asia, and the Americas, c. 3500–330 BCE",
-    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, South Asia, mainland Southeast Asia, China, Korea and Japan, and the Americas.",
+    "subtitle": "Europe, the Mediterranean, Africa, the Near East, Iran, the Steppe, South and East Asia, Island Southeast Asia and Oceania, and the Americas, c. 3500–330 BCE",
+    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, Iran, the Eurasian Steppe, South Asia, mainland Southeast Asia, China, Korea and Japan, Taiwan and Island Southeast Asia, Oceania, and the Americas.",
     "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
     "calendar": { "before": "BCE", "after": "CE", "yearZero": false, "aliases": { "before": ["BC"], "after": ["AD"] } },
     "increments": [10, 50, 100, 500],
@@ -40,7 +40,9 @@
       "mesopotamia",
       "iran",
       "indus",
-      "china"
+      "china",
+      "island-sea",
+      "oceania"
     ]
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" } },
@@ -898,7 +900,63 @@
       "tags": ["wikipedia"],
       "accessed": "2026-11-17"
     },
-    "wp-plain-of-jars": { "name": "Wikipedia: Plain of Jars", "url": "https://en.wikipedia.org/wiki/Plain_of_Jars", "tags": ["wikipedia"], "accessed": "2026-11-17" }
+    "wp-plain-of-jars": { "name": "Wikipedia: Plain of Jars", "url": "https://en.wikipedia.org/wiki/Plain_of_Jars", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-austronesian": {
+      "name": "Wikipedia: Austronesian peoples",
+      "url": "https://en.wikipedia.org/wiki/Austronesian_peoples",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-dapenkeng": {
+      "name": "Wikipedia: Dapenkeng culture",
+      "url": "https://en.wikipedia.org/wiki/Dapenkeng_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-prehistory-taiwan": {
+      "name": "Wikipedia: Prehistory of Taiwan",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-prehistory-philippines": {
+      "name": "Wikipedia: Prehistory of the Philippines",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_the_Philippines",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-kalanay": { "name": "Wikipedia: Kalanay Cave", "url": "https://en.wikipedia.org/wiki/Kalanay_Cave", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-prehistoric-indonesia": {
+      "name": "Wikipedia: Prehistoric Indonesia",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Indonesia",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-buni": { "name": "Wikipedia: Buni culture", "url": "https://en.wikipedia.org/wiki/Buni_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-mariana": { "name": "Wikipedia: Mariana Islands", "url": "https://en.wikipedia.org/wiki/Mariana_Islands", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-lapita": { "name": "Wikipedia: Lapita culture", "url": "https://en.wikipedia.org/wiki/Lapita_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-teouma": { "name": "Wikipedia: Teouma", "url": "https://en.wikipedia.org/wiki/Teouma", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-fiji-history": { "name": "Wikipedia: History of Fiji", "url": "https://en.wikipedia.org/wiki/History_of_Fiji", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tonga-history": {
+      "name": "Wikipedia: History of Tonga",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tonga",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-samoa-history": {
+      "name": "Wikipedia: History of Samoa",
+      "url": "https://en.wikipedia.org/wiki/History_of_Samoa",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-polynesians": { "name": "Wikipedia: Polynesians", "url": "https://en.wikipedia.org/wiki/Polynesians", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-dingo": { "name": "Wikipedia: Dingo", "url": "https://en.wikipedia.org/wiki/Dingo", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-prehistory-australia": {
+      "name": "Wikipedia: Prehistory of Australia",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Australia",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    }
   },
   "chronologies": {
     "middle": {
@@ -2509,6 +2567,32 @@
         ]
       }
     },
+    { "id": "austronesia", "name": "Island Southeast Asia & Oceania", "color": "#2a8a8a" },
+    { "id": "island-sea", "name": "Taiwan and Island Southeast Asia", "color": "#3a8a7a", "parent": "austronesia" },
+    { "id": "taiwan", "name": "Taiwan", "color": "#4a9a8a", "parent": "island-sea" },
+    { "id": "philippines", "name": "Philippines", "color": "#3a7a8a", "parent": "island-sea" },
+    { "id": "indonesia", "name": "Indonesia", "color": "#5a8a6a", "parent": "island-sea" },
+    { "id": "oceania", "name": "Oceania", "color": "#2a7a9a", "parent": "austronesia" },
+    { "id": "marianas", "name": "Mariana Islands", "color": "#3a6a9a", "parent": "oceania" },
+    {
+      "id": "lapita",
+      "name": "Lapita culture (Melanesia to Fiji, Tonga and Samoa)",
+      "color": "#2a8aaa",
+      "parent": "oceania",
+      "span": {
+        "start": "c. 1600 BCE",
+        "end": "c. 500 BCE",
+        "startDates": [
+          { "year": "1600 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "lead ('at around 1600 to 500 BCE')" } },
+          {
+            "year": "1325 BCE",
+            "margin": 25,
+            "source": { "sourceKey": "wp-mariana", "sourceLocation": "History > Early ('the earliest Lapita artifacts are dated to around 1350 to 1300 BCE')" }
+          }
+        ]
+      }
+    },
+    { "id": "australia", "name": "Australia and the Torres Strait", "color": "#8a6a3a", "parent": "oceania" },
     { "id": "americas", "name": "Americas", "color": "#2f7a5a" },
     { "id": "mound-builders", "name": "Mound builders (Louisiana)", "color": "#6f8f4a", "parent": "americas" },
     {
@@ -6157,6 +6241,322 @@
       "tracks": ["jomon"],
       "descr": "The founding date given by the Nihon Shoki, a foundation narrative rather than history.",
       "sources": [{ "sourceKey": "wp-jomon", "sourceLocation": "Foundation narratives" }, { "sourceKey": "wp-yayoi", "sourceLocation": "Nihon Shoki" }]
+    },
+    {
+      "uuid": "taiwan-farmers",
+      "title": "First farmers in Taiwan: the Dapenkeng culture",
+      "start": "c. 3500 BCE",
+      "end": "c. 2500 BCE",
+      "tracks": ["taiwan"],
+      "descr": "Farmers from what is now the southeast coast of China settle the island. Dapenkeng pottery is thick and gritty, impressed with cord marks; the people farm and hunt but rely heavily on marine shells and fish. Around 2500 BC the culture develops into locally differentiated cultures throughout Taiwan.",
+      "sources": [
+        { "sourceKey": "wp-dapenkeng", "sourceLocation": "infobox, lead and Characteristics" },
+        { "sourceKey": "wp-prehistory-taiwan", "sourceLocation": "lead and Neolithic" },
+        { "sourceKey": "wp-austronesian", "sourceLocation": "Neolithic China" }
+      ],
+      "startDates": [
+        { "year": "3500 BCE", "source": { "sourceKey": "wp-dapenkeng", "sourceLocation": "infobox" } },
+        { "year": "3500 BCE", "margin": 500, "source": { "sourceKey": "wp-dapenkeng", "sourceLocation": "lead ('between 4000 and 3000 BC')" } },
+        { "year": "3050 BCE", "source": { "sourceKey": "wp-prehistory-taiwan", "sourceLocation": "lead ('Around 5,000 years ago')" } },
+        { "year": "4000 BCE", "source": { "sourceKey": "wp-austronesian", "sourceLocation": "Neolithic China (radiocarbon: 'as late as 4000 BCE')" } }
+      ],
+      "endDates": [{ "year": "2500 BCE", "source": { "sourceKey": "wp-dapenkeng", "sourceLocation": "infobox and Characteristics" } }],
+      "importance": 1
+    },
+    {
+      "uuid": "out-of-taiwan",
+      "title": "Out of Taiwan: the Austronesian expansion",
+      "start": "c. 3000 BCE",
+      "end": "c. 1500 BCE",
+      "tracks": ["taiwan", "philippines"],
+      "descr": "Austronesians were the first humans with seafaring vessels that could cross large distances on the open ocean; they used sails some time before 2000 BCE. The Out-of-Taiwan hypothesis is the current scientific consensus for the settlement of the Philippines.",
+      "sources": [
+        { "sourceKey": "wp-austronesian", "sourceLocation": "lead, Geographic distribution and Migration from Taiwan" },
+        { "sourceKey": "wp-prehistory-philippines", "sourceLocation": "Neolithic Austronesian migrations" },
+        { "sourceKey": "wp-polynesians", "sourceLocation": "Origins" }
+      ],
+      "startDates": [
+        { "year": "3000 BCE", "source": { "sourceKey": "wp-austronesian", "sourceLocation": "lead ('from Taiwan, c. 3000 to 1500 BCE')" } },
+        { "year": "3000 BCE", "source": { "sourceKey": "wp-polynesians", "sourceLocation": "Origins ('between 3000 and 1000 BC')" } }
+      ],
+      "endDates": [
+        { "year": "1500 BCE", "source": { "sourceKey": "wp-austronesian", "sourceLocation": "lead and Migration from Taiwan" } },
+        { "year": "1000 BCE", "source": { "sourceKey": "wp-polynesians", "sourceLocation": "Origins" } }
+      ],
+      "links": [{ "to": "taiwan-farmers", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "batanes",
+      "title": "Austronesians reach the Batanes Islands",
+      "start": "c. 2200 BCE",
+      "tracks": ["philippines"],
+      "descr": "The Batanes are the northernmost islands of the Philippines.",
+      "sources": [
+        { "sourceKey": "wp-austronesian", "sourceLocation": "lead" },
+        { "sourceKey": "wp-prehistory-philippines", "sourceLocation": "Genetic studies (2013 study)" }
+      ],
+      "links": [{ "to": "out-of-taiwan", "kind": "part-of" }]
+    },
+    {
+      "uuid": "maritime-jade-road",
+      "title": "The Maritime Jade Road",
+      "start": "c. 2000 BCE",
+      "end": "1000 CE",
+      "tracks": ["taiwan", "philippines"],
+      "descr": "One of the most extensive sea-based trade networks of a single material in the prehistoric world: jade is mined in Taiwan and processed mainly in the Philippines, and the route reaches Vietnam, Thailand, Malaysia and Indonesia. Taiwanese nephrite appears in the northern Philippines between 1850 and 1350 BC; lingling-o ornaments crafted in Luzon use Taiwanese stone. In Taiwan, jade ornaments are made from about 2500 BC and peak between 1500 BC and 1 AD in the Beinan culture.",
+      "sources": [
+        { "sourceKey": "wp-prehistory-philippines", "sourceLocation": "Neolithic Austronesian migrations (Maritime Jade Road)" },
+        { "sourceKey": "wp-prehistory-taiwan", "sourceLocation": "Neolithic" }
+      ],
+      "startDates": [
+        {
+          "year": "2000 BCE",
+          "source": { "sourceKey": "wp-prehistory-philippines", "sourceLocation": "'from 2000 BCE-1000 CE'; 'Jade artifacts have been found dated to 2000 BC'" }
+        },
+        {
+          "year": "1600 BCE",
+          "margin": 250,
+          "source": {
+            "sourceKey": "wp-prehistory-taiwan",
+            "sourceLocation": "Neolithic ('Nephrite from Taiwan began to appear in the northern Philippines between 1850 and 1350 BC')"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "philippines-metal",
+      "title": "Metal tools in the Philippines",
+      "start": "c. 500 BCE",
+      "tracks": ["philippines"],
+      "descr": "Metal tools appear somewhere around 500 BC (Jocano: between 500 BC and 1 AD); other evidence points to iron in the ninth and tenth centuries BC.",
+      "sources": [{ "sourceKey": "wp-prehistory-philippines", "sourceLocation": "Metal Age" }],
+      "startDates": [
+        { "year": "500 BCE", "source": { "sourceKey": "wp-prehistory-philippines", "sourceLocation": "'somewhere around 500 BC'" } },
+        {
+          "year": "900 BCE",
+          "margin": 100,
+          "source": { "sourceKey": "wp-prehistory-philippines", "sourceLocation": "iron 'during the ninth and tenth centuries B.C.'" }
+        }
+      ]
+    },
+    {
+      "uuid": "kalanay",
+      "title": "Kalanay Cave pottery",
+      "start": "c. 400 BCE",
+      "tracks": ["philippines"],
+      "descr": "Pottery dated 400 BC to AD 1500, similar to that of the Sa Huỳnh culture of southern Vietnam; iron and bronze artifacts were found at the site. It names the Sa Huỳnh–Kalanay interaction sphere, an Iron Age maritime trading network associated with the Austronesian peoples.",
+      "sources": [{ "sourceKey": "wp-kalanay", "sourceLocation": "lead and Other findings" }],
+      "links": [{ "to": "sa-huynh-trade", "kind": "related" }],
+      "importance": 3
+    },
+    {
+      "uuid": "austronesians-indonesia",
+      "title": "Austronesian speakers reach Indonesia",
+      "start": "c. 2050 BCE",
+      "tracks": ["indonesia"],
+      "descr": "Austronesian speakers arrive around 4,000 years ago, after Austroasiatic speakers from Indochina (around 6,300–5,000 years ago).",
+      "sources": [{ "sourceKey": "wp-prehistoric-indonesia", "sourceLocation": "Austroasiatic migration and admixture; Austronesian migration and expansion" }],
+      "links": [{ "to": "out-of-taiwan", "kind": "part-of" }]
+    },
+    {
+      "uuid": "buni",
+      "title": "Buni culture in northern West Java",
+      "start": "c. 400 BCE",
+      "end": "c. 100 CE",
+      "tracks": ["indonesia"],
+      "descr": "A clay pottery culture on the coast of northern West Java, Jakarta and Banten, known for incised geometric decoration; burial gifts date from 400 BC to AD 100. The kingdom of Tarumanagara is probably its successor.",
+      "sources": [{ "sourceKey": "wp-buni", "sourceLocation": "infobox, lead and Characteristics" }],
+      "endDates": [
+        { "year": "100 CE", "source": { "sourceKey": "wp-buni", "sourceLocation": "infobox and lead" } },
+        { "year": "500 CE", "source": { "sourceKey": "wp-buni", "sourceLocation": "lead ('probably survived until 500 AD')" } }
+      ]
+    },
+    {
+      "uuid": "marianas-settled",
+      "title": "First settlement of the Mariana Islands",
+      "start": "c. 1450 BCE",
+      "tracks": ["marianas", "philippines"],
+      "descr": "Migrants from the Philippines arrive with red-slipped, circle-stamped and punctate-stamped pottery, earlier than the first Lapita artifacts (around 1350–1300 BCE). The Chamorro language is most closely related to the Philippine languages.",
+      "sources": [
+        { "sourceKey": "wp-mariana", "sourceLocation": "History > Early" },
+        { "sourceKey": "wp-austronesian", "sourceLocation": "Migration from Taiwan" }
+      ],
+      "startDates": [
+        { "year": "1450 BCE", "margin": 50, "source": { "sourceKey": "wp-mariana", "sourceLocation": "History > Early ('around 1500 to 1400 BCE')" } },
+        { "year": "1500 BCE", "source": { "sourceKey": "wp-austronesian", "sourceLocation": "Migration ('by 1500 BCE or even earlier')" } }
+      ],
+      "links": [{ "to": "out-of-taiwan", "kind": "part-of" }]
+    },
+    {
+      "uuid": "lapita-bismarck",
+      "title": "The Lapita culture appears in the Bismarck Archipelago",
+      "start": "c. 1600 BCE",
+      "end": "c. 1200 BCE",
+      "tracks": ["lapita"],
+      "descr": "A Neolithic Austronesian people who make dentate-stamped pottery with distinctive geometric designs and keep pigs, dogs and chickens; their villages stand on the beach rather than inland. The complex appears suddenly.",
+      "sources": [
+        { "sourceKey": "wp-lapita", "sourceLocation": "lead, Artifact dating and Origin" },
+        { "sourceKey": "wp-polynesians", "sourceLocation": "Origins" },
+        { "sourceKey": "wp-tonga-history", "sourceLocation": "The Lapita Period" }
+      ],
+      "startDates": [
+        { "year": "1600 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating ('between 1,600 and 1,200 BCE')" } },
+        { "year": "1550 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "Origin ('around 3,500 years ago')" } },
+        { "year": "1500 BCE", "source": { "sourceKey": "wp-polynesians", "sourceLocation": "Origins ('around 1500 BC')" } },
+        {
+          "year": "1500 BCE",
+          "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "The Lapita Period ('began from Papua New Guinea in 1500 BC')" }
+        },
+        { "year": "1325 BCE", "margin": 25, "source": { "sourceKey": "wp-mariana", "sourceLocation": "History > Early (earliest Lapita artifacts)" } }
+      ],
+      "endDates": [{ "year": "1200 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating" } }],
+      "links": [{ "to": "out-of-taiwan", "kind": "related" }, { "to": "marianas-settled", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "lapita-melanesia",
+      "title": "Lapita settlers reach the Solomons, Vanuatu and New Caledonia",
+      "start": "c. 1200 BCE",
+      "tracks": ["lapita"],
+      "descr": "Lapita designs appear in these islands in a period later than 1,200 BCE.",
+      "sources": [
+        { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating" },
+        { "sourceKey": "wp-austronesian", "sourceLocation": "Migration ('by 1200 BCE')" }
+      ],
+      "links": [{ "to": "lapita-bismarck", "kind": "causes" }]
+    },
+    {
+      "uuid": "teouma",
+      "title": "Teouma cemetery, Vanuatu",
+      "start": "c. 1000 BCE",
+      "tracks": ["lapita"],
+      "descr": "The oldest known cemetery in the Pacific Islands. Skulls were removed and replaced with cone shell rings, showing a ceremonial culture.",
+      "sources": [{ "sourceKey": "wp-teouma", "sourceLocation": "lead and Archaeology" }, { "sourceKey": "wp-lapita", "sourceLocation": "Burial customs" }],
+      "startDates": [
+        { "year": "1000 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "Burial customs ('in use around 1000 BCE')" } },
+        {
+          "year": "1150 BCE",
+          "margin": 100,
+          "source": { "sourceKey": "wp-teouma", "sourceLocation": "Archaeology ('between approximately 3200 and 3000 years old')" }
+        },
+        { "year": "900 BCE", "margin": 100, "source": { "sourceKey": "wp-teouma", "sourceLocation": "lead ('the ninth and tenth centuries BC')" } }
+      ]
+    },
+    {
+      "uuid": "fiji-settled",
+      "title": "Lapita settlers reach Fiji",
+      "start": "c. 1050 BCE",
+      "tracks": ["lapita"],
+      "descr": "Pottery shows Austronesian settlement; a large influx of people with predominantly Melanesian genetics follows about the beginning of the Common Era. Moturiki shows settlement from 600 BC, possibly 900 BC.",
+      "sources": [
+        { "sourceKey": "wp-fiji-history", "sourceLocation": "lead and Early settlement and development of Fijian culture" },
+        { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating" }
+      ],
+      "startDates": [
+        {
+          "year": "1050 BCE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-fiji-history", "sourceLocation": "Early settlement ('around 1100–1000 BC')" }
+        },
+        { "year": "1250 BCE", "margin": 250, "source": { "sourceKey": "wp-fiji-history", "sourceLocation": "lead ('around 1,500–1,000 BC')" } },
+        { "year": "1000 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating ('around 1,000 BCE')" } }
+      ],
+      "links": [{ "to": "lapita-melanesia", "kind": "causes" }]
+    },
+    {
+      "uuid": "tonga-settled",
+      "title": "Lapita settlers reach Tongatapu, the first island settled in Polynesia",
+      "start": "c. 1050 BCE",
+      "tracks": ["lapita"],
+      "descr": "Carbon dating places the Lapita landfall first in Tongatapu; a shell at Pea dates the occupation to 3180 ± 100 BP.",
+      "sources": [
+        { "sourceKey": "wp-tonga-history", "sourceLocation": "lead, Pre-contact and The Lapita Period" },
+        { "sourceKey": "wp-lapita", "sourceLocation": "Lapita in Polynesia" }
+      ],
+      "startDates": [
+        { "year": "1050 BCE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "lead ('around 3000 years ago')" } },
+        { "year": "900 BCE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "The Lapita Period ('By 2850 BP (900 BC)')" } },
+        { "year": "1230 BCE", "margin": 100, "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "Pre-contact ('3180 ± 100 BP')" } },
+        { "year": "900 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "Lapita in Polynesia ('dating back to 900 BCE')" } }
+      ],
+      "links": [{ "to": "fiji-settled", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "samoa-settled",
+      "title": "Lapita settlers reach Samoa",
+      "start": "c. 1200 BCE",
+      "tracks": ["lapita"],
+      "descr": "Dated from Lapita pottery sherds found throughout the islands; the site at Mulifanua suggests a Lapita settlement in roughly 1000 BCE.",
+      "sources": [
+        { "sourceKey": "wp-samoa-history", "sourceLocation": "lead and Early history" },
+        { "sourceKey": "wp-lapita", "sourceLocation": "Distribution" }
+      ],
+      "startDates": [
+        {
+          "year": "1200 BCE",
+          "margin": 300,
+          "source": { "sourceKey": "wp-samoa-history", "sourceLocation": "Early history ('around 2900–3500 years before the present (1500-900 BCE)')" }
+        },
+        { "year": "1550 BCE", "source": { "sourceKey": "wp-samoa-history", "sourceLocation": "lead ('some 3,500 years ago')" } },
+        { "year": "1000 BCE", "source": { "sourceKey": "wp-lapita", "sourceLocation": "Distribution (Mulifanua, 'roughly 1000 BCE')" } }
+      ],
+      "links": [{ "to": "tonga-settled", "kind": "related" }]
+    },
+    {
+      "uuid": "plain-ware",
+      "title": "Pottery decoration ends: the Polynesian Plain Ware period",
+      "start": "c. 700 BCE",
+      "end": "c. 400 CE",
+      "tracks": ["lapita"],
+      "descr": "Two hundred years after arriving, settlers in Tonga stop decorating their pots; by 400 AD they make none, and in Samoa pottery-making appears to stop suddenly. Fiji, Samoa and Tonga remain the furthest extent of the Austronesian expansion in the Pacific for about 1,500 years.",
+      "sources": [
+        { "sourceKey": "wp-tonga-history", "sourceLocation": "The Lapita Period; The Polynesian Plain Ware Period" },
+        { "sourceKey": "wp-samoa-history", "sourceLocation": "Early history" },
+        { "sourceKey": "wp-polynesians", "sourceLocation": "Origins" }
+      ],
+      "startDates": [{ "year": "700 BCE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "heading ('2650–1550 BP (700 BC – 400 AD)')" } }],
+      "endDates": [
+        { "year": "400 CE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "Polynesian Plain Ware ('By 1550 BP (400 AD)')" } },
+        {
+          "year": "1 CE",
+          "source": { "sourceKey": "wp-lapita", "sourceLocation": "Lapita in Polynesia (Samoa plainware 'ceases abruptly … around 1 CE')" }
+        }
+      ]
+    },
+    {
+      "uuid": "torres-strait",
+      "title": "First settlement of the Torres Strait Islands",
+      "start": "c. 2050 BCE",
+      "tracks": ["australia"],
+      "descr": "The Torres Strait Islanders were seafarers who lived by seasonal horticulture.",
+      "sources": [{ "sourceKey": "wp-prehistory-australia", "sourceLocation": "lead ('around 4,000 years ago')" }]
+    },
+    {
+      "uuid": "dingo",
+      "title": "The dingo reaches Australia",
+      "start": "c. 2050 BCE",
+      "tracks": ["australia"],
+      "descr": "A widely held view, based on sediment dating, is that dingoes arrived about 4,000 years ago and took 500 years to spread around the continent. The oldest remains, from the Madura Caves in Western Australia, are estimated at 3,450 years old (directly carbon dated in 2018 to 3,348–3,081 years ago).",
+      "sources": [
+        { "sourceKey": "wp-dingo", "sourceLocation": "lead and History" },
+        { "sourceKey": "wp-prehistory-australia", "sourceLocation": "Changes c. 4000 years ago" }
+      ],
+      "startDates": [
+        { "year": "2050 BCE", "source": { "sourceKey": "wp-dingo", "sourceLocation": "History ('first arrived in Australia 4,000 YBP')" } },
+        {
+          "year": "2050 BCE",
+          "source": { "sourceKey": "wp-prehistory-australia", "sourceLocation": "Changes c. 4000 years ago ('about 4,000 years ago')" }
+        },
+        { "year": "1500 BCE", "source": { "sourceKey": "wp-dingo", "sourceLocation": "History (Madura Caves, '3,450 YBP')" } },
+        {
+          "year": "1265 BCE",
+          "margin": 133,
+          "source": { "sourceKey": "wp-dingo", "sourceLocation": "History (2018 direct date, '3,348 and 3,081 YBP')" }
+        }
+      ],
+      "importance": 1
     }
   ]
 }

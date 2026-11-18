@@ -20,6 +20,7 @@ const groups: { id: string; name: string; color: string; regions: string[] }[] =
   { id: 'near-east', name: 'Ancient Near East', color: '#a8483a', regions: ['egypt', 'levant', 'anatolia', 'mesopotamia', 'iran', 'dilmun'] },
   { id: 'steppe-south-asia', name: 'Steppe & South Asia', color: '#7a8a2a', regions: ['steppe', 'indus'] },
   { id: 'east-asia', name: 'East & Southeast Asia', color: '#6a4a9a', regions: ['se-asia', 'china', 'korea-japan'] },
+  { id: 'austronesia', name: 'Island Southeast Asia & Oceania', color: '#2a8a8a', regions: ['island-sea', 'oceania'] },
 ];
 const topOrder = [...groups.map((g) => g.id), 'americas'];
 

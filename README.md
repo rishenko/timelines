@@ -9,7 +9,9 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   (Canaan, Ebla, Ugarit, Phoenicia, Israel and Judah, Philistines, Aram, Cyprus), Egypt and Nubia (A-Group, C-Group, Kerma, Kush),
   Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Eurasian Steppe (Botai, Yamnaya, Afanasievo, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians, Saka, Massagetae, Pazyryk), South Asia (Harappans, the Vedic period,
   Magadha), mainland Southeast Asia (Ban Chiang, Phùng Nguyên, Đông Sơn, Sa Huỳnh, Văn Lang, the Plain of Jars), China, Korea
-  and Japan (Old Chosŏn, Mumun, Jōmon, Yayoi) and the Americas, c. 3500–330 BCE. 295 events, every date cited.
+  and Japan (Old Chosŏn, Mumun, Jōmon, Yayoi), Taiwan and Island Southeast Asia (Dapenkeng, the Out-of-Taiwan expansion, the
+  Maritime Jade Road, Buni), Oceania (the Marianas, Lapita to Fiji, Tonga and Samoa, Australia) and the Americas,
+  c. 3500–330 BCE. 313 events, every date cited.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
 
@@ -90,7 +92,7 @@ npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --ex
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 
-`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
+`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 
