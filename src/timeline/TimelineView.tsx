@@ -366,6 +366,7 @@ export function TimelineView(props: Props) {
                       m.span ? 'span' : 'point',
                       uncertain ? 'uncertain' : '',
                       e.tracks.length > 1 ? 'multi' : '',
+                      e.importance === 1 ? 'key' : '',
                       selectedId === e.uuid ? 'selected' : '',
                       related?.has(e.uuid) ? 'related' : '',
                       editMode && e.edited ? 'edited' : '',

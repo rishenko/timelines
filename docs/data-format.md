@@ -123,6 +123,7 @@ An event or claim cites a source with `{ "sourceKey": "<source id>", "sourceLoca
 | `startDates`, `endDates` | no | [Date claims](#date-claims-and-uncertain-dates): what each source says the date is. |
 | `chronology` | no | Overrides the chronology the event would get from its first track. |
 | `order` | no | Order among events in the same year; lower comes first. |
+| `importance` | no | `1` key, `2` normal (default), `3` minor. Key events have bold labels. A crowded or collapsed row places key events first and folds minor ones into "+N" first, so a reader scanning collapsed regions still sees the headline events. |
 | `links` | no | Connections to other events: `[{ "to": "<event uuid>", "kind": "causes" }]`. |
 
 Link kinds: `causes` (leads to), `part-of`, `succeeds`, `conquers`, `related`. All but `related` draw

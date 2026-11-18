@@ -1,0 +1,30 @@
+{
+  "_rubric": "1 = key: founding, unification or fall of a major state; first writing in a region; a decisive turning point (conquest, collapse, capital move that defines an era); an iconic monument. 3 = minor: archaeological detail, a single find, a passing mention, or an event a reader can skip. Everything not listed is normal (2). Proposed by Claude, pending the author's review.",
+  "1": [
+    "proto-cuneiform", "sargon-conquers-sumer", "gutian-period", "ur-nammu", "fall-of-ur",
+    "hammurabi-reign", "code-hammurabi", "sack-of-babylon", "cyrus-takes-babylon",
+    "assur-independent", "ashur-uballit", "tiglath-pileser-iii", "ashurbanipal", "fall-of-nineveh",
+    "jerusalem-587",
+    "hattusili-i", "kadesh", "eternal-treaty", "hattusa-abandoned", "urartu-sarduri",
+    "narmer", "khufu", "mentuhotep-ii", "ahmose-expels-hyksos", "akhenaten", "ramesses-ii", "pelusium",
+    "first-palaces", "thera", "mycenaean-knossos", "bronze-age-collapse",
+    "proto-sinaitic", "ebla-archives", "ugarit-destroyed", "phoenician-alphabet", "carthage-founded",
+    "merneptah-stele", "fall-of-samaria", "philistines-settle", "fall-of-damascus",
+    "linear-elamite", "chogha-zanbil", "susa-sacked",
+    "cyrus-revolt", "darius-i", "greco-persian-wars", "persia-falls",
+    "dilmun-height",
+    "indus-script", "mohenjo-daro",
+    "liangzhu-collapse", "yanshi", "oracle-bones", "muye", "zhou-east", "warring-states", "sanxingdui-city",
+    "watson-brake", "poverty-point", "caral", "valdivia-pottery", "san-lorenzo", "la-venta",
+    "maya-cities", "maya-script", "chavin-old-temple"
+  ],
+  "3": [
+    "kanesh-karum-ib", "alalakh-vii", "drought-1198", "hittite-marriage", "troy-vi",
+    "senusret-boat", "tanaju",
+    "hammurabi-larsa", "hammurabi-mari", "utu-hengal",
+    "tyre-founded", "ebla-settled", "tyre-babylon",
+    "medes-assyria", "mannaea-first", "dilmun-last",
+    "kot-diji", "indus-seal-susa", "mehrgarh-abandoned",
+    "caral-flutes", "la-venta-pyramid"
+  ]
+}

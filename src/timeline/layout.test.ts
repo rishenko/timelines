@@ -73,6 +73,27 @@ describe('layoutLanes', () => {
     expect(open.rows).toBe(6);
   });
 
+  it('keeps key events visible and folds the least important ones first', () => {
+    const events = [
+      { ...ev('minor-early', 50, ['REDACTED']), importance: 3 as const },
+      ev('normal', 50, ['REDACTED']),
+      { ...ev('key-late', 50, ['REDACTED']), importance: 1 as const, order: 9 },
+    ];
+    const lanes = buildLanes(tracks, {}, {});
+    const lane = layoutLanes(lanes, events, scale, 100, { maxRows: 2 }).lanes.find((l) => l.lane.id === 'REDACTED')!;
+    const shown = lane.marks.filter((m) => m.kind === 'event').map((m) => m.eventId);
+    expect(shown).toEqual(['key-late', 'normal']);
+    expect(lane.marks.find((m) => m.kind === 'cluster')!.eventIds).toEqual(['minor-early']);
+  });
+
+  it('fills gaps in a row left by events placed earlier', () => {
+    // the key event sits at the right; a normal event placed after it still fits to its left in row 0
+    const events = [{ ...ev('key', 80, ['REDACTED']), importance: 1 as const }, ev('early', 5, ['REDACTED'])];
+    const lane = layoutLanes(buildLanes(tracks, {}, {}), events, scale, 100).lanes.find((l) => l.lane.id === 'REDACTED')!;
+    expect(lane.marks.map((m) => m.row)).toEqual([0, 0]);
+    expect(lane.rows).toBe(1);
+  });
+
   it('never overlaps footprints within a row on the real dataset', () => {
     const ds = data as Dataset;
     const present = presentYear(ds.events);

@@ -110,8 +110,9 @@ export function buildLanes(tracks: Track[], visible: Record<string, boolean>, co
   return lanes;
 }
 
-export function labelWidth(title: string, o = LAYOUT_DEFAULTS): number {
-  return Math.min(title.length * o.charPx + 14, o.maxLabelPx);
+/** Estimated label width. Key events are drawn in bold, which runs about 10% wider. */
+export function labelWidth(title: string, o = LAYOUT_DEFAULTS, bold = false): number {
+  return Math.min(title.length * o.charPx * (bold ? 1.1 : 1) + 14, o.maxLabelPx);
 }
 
 /** Positions every event mark in every lane it belongs to, packing overlaps into sub-rows. */
@@ -124,13 +125,18 @@ export function layoutLanes(
 ): { lanes: LaneLayout[]; height: number } {
   const o = { ...LAYOUT_DEFAULTS, ...opts };
   const expanded = opts.expanded ?? {};
-  const sorted = [...events].sort(compareEvents);
+  // Key events are placed first, then normal, then minor; each group in date order. When a row is
+  // full, the events left over are the least important ones, and only those fold into "+N".
+  const rank = (e: ResolvedEvent) => e.importance ?? 2;
+  const sorted = [...events].sort((a, b) => rank(a) - rank(b) || compareEvents(a, b));
   const out: LaneLayout[] = [];
   let top = 0;
 
   for (const lane of lanes) {
     const members = new Set(lane.members);
-    const rowEnds: number[] = [];
+    // Occupied [start, end] footprints per sub-row. Events aren't placed in date order, so a row
+    // can have gaps that a later-placed event fills.
+    const rowSpans: [number, number][][] = [];
     const marks: Mark[] = [];
     const maxRows = expanded[lane.id] ? Infinity : o.maxRows;
     const overflow: { id: string; x: number }[] = [];
@@ -167,27 +173,30 @@ export function layoutLanes(
         }
         footprintStart = x0;
         // the label starts where the bar is solid
-        footprintEnd = Math.max(x1, x0 + (fadeIn ?? 0) + labelWidth(e.title, o));
+        footprintEnd = Math.max(x1, x0 + (fadeIn ?? 0) + labelWidth(e.title, o, rank(e) === 1));
       } else {
         // a single-year event sits in the middle of its year
         x0 = x1 = scale.x(e.start + 0.5);
         footprintStart = x0 - o.pointPx / 2;
-        footprintEnd = x0 + o.pointPx / 2 + labelWidth(e.title, o);
+        footprintEnd = x0 + o.pointPx / 2 + labelWidth(e.title, o, rank(e) === 1);
         if (sw) {
           whisker = [scale.x(sw[0]), scale.x(sw[1] + 1)];
           footprintStart = Math.min(footprintStart, whisker[0]);
           footprintEnd = Math.max(footprintEnd, whisker[1]);
         }
       }
-      let row = rowEnds.findIndex((end) => end + o.gapPx <= footprintStart);
-      if (row === -1 && rowEnds.length >= maxRows) {
+      const fits = (spans: [number, number][]) =>
+        spans.every(([s, en]) => en + o.gapPx <= footprintStart || footprintEnd + o.gapPx <= s);
+      let row = rowSpans.findIndex(fits);
+      if (row === -1 && rowSpans.length >= maxRows) {
         overflow.push({ id: e.uuid, x: x0 });
         continue;
       }
       if (row === -1) {
-        row = rowEnds.length;
-        rowEnds.push(footprintEnd);
-      } else rowEnds[row] = footprintEnd;
+        row = rowSpans.length;
+        rowSpans.push([]);
+      }
+      rowSpans[row].push([footprintStart, footprintEnd]);
       marks.push({
         key: `${lane.id}:${e.uuid}`,
         kind: 'event',
@@ -205,8 +214,9 @@ export function layoutLanes(
       });
     }
     // Fold overflow into cluster badges on an extra row, merging badges that would touch.
-    const clusterRow = rowEnds.length;
+    const clusterRow = rowSpans.length;
     let current: Mark | null = null;
+    overflow.sort((a, b) => a.x - b.x);
     for (const { id, x } of overflow) {
       if (current && x <= current.footprintEnd + o.gapPx) {
         current.eventIds!.push(id);
@@ -228,7 +238,7 @@ export function layoutLanes(
       };
       marks.push(current);
     }
-    const rows = Math.max(1, rowEnds.length + (overflow.length ? 1 : 0));
+    const rows = Math.max(1, rowSpans.length + (overflow.length ? 1 : 0));
     const height = rows * o.rowH + o.lanePad * 2;
     out.push({ lane, top, height, rows, marks, overflow: overflow.length });
     top += height;

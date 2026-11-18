@@ -3351,6 +3351,7 @@
           "sourceLocation": "Outline of the 4th millennium BC (CDLI, Uruk IV)"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -3477,6 +3478,7 @@
           "kind": "part-of"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -3516,6 +3518,7 @@
           "sourceLocation": "The Fall of Akkad"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -3572,6 +3575,7 @@
           "kind": "causes"
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -3611,6 +3615,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -3662,6 +3667,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -3768,7 +3774,8 @@
             "sourceLocation": "table (Short or Low)"
           }
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "hammurabi-larsa",
@@ -3810,7 +3817,8 @@
           "to": "hammurabi-reign",
           "kind": "part-of"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "hammurabi-mari",
@@ -3832,7 +3840,8 @@
           "to": "hammurabi-reign",
           "kind": "part-of"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "code-hammurabi",
@@ -3854,6 +3863,7 @@
           "kind": "part-of"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -3937,7 +3947,8 @@
             "sourceLocation": "Archaeology (table)"
           }
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "anitta",
@@ -4076,6 +4087,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -4097,7 +4109,8 @@
           "to": "hattusili-i",
           "kind": "part-of"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "mursili-i",
@@ -4258,7 +4271,8 @@
           "to": "kassites-take-babylon",
           "kind": "causes"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "kassites-take-babylon",
@@ -4422,7 +4436,8 @@
           "sourceKey": "wp-chron-ane",
           "sourceLocation": "Assyrian King List"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "muwatalli-ii",
@@ -4503,7 +4518,8 @@
           "to": "eternal-treaty",
           "kind": "causes"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "hattusili-iii",
@@ -4607,6 +4623,7 @@
           "kind": "causes"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -4624,7 +4641,8 @@
           "sourceKey": "wp-hittite-kings",
           "sourceLocation": "New kingdom ('1246 BC (Year 34)'; Bryce 2005)"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "tudhaliya-iv",
@@ -4823,6 +4841,7 @@
           "kind": "causes"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -4883,6 +4902,7 @@
           "sourceLocation": "Troy VI (Jablonka 2011; Bryce 2006, pp. 64–66)"
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -4927,7 +4947,8 @@
           "to": "hattusa-abandoned",
           "kind": "causes"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "narmer",
@@ -4965,6 +4986,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -5061,7 +5083,8 @@
             "sourceLocation": "'2613–2577 BC' (via Wikipedia: Great Pyramid of Giza)"
           }
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "mentuhotep-ii",
@@ -5093,7 +5116,8 @@
             "sourceLocation": "infobox (reign c. 2061–2010 BC)"
           }
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "senusret-boat",
@@ -5118,7 +5142,8 @@
             "sourceLocation": "dendrochronology ('1887±11 BC')"
           }
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "hyksos",
@@ -5208,6 +5233,7 @@
           "kind": "conquers"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -5300,6 +5326,7 @@
           "sourceLocation": "Egyptian sources"
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -5476,6 +5503,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -5603,7 +5631,8 @@
           },
           "note": "High Egyptian chronology"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "merneptah",
@@ -5859,7 +5888,8 @@
           "sourceKey": "wp-late-period",
           "sourceLocation": "First Achaemenid Period"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "first-palaces",
@@ -5896,6 +5926,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -6053,6 +6084,7 @@
           "kind": "related"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -6117,6 +6149,7 @@
           "kind": "related"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -6273,6 +6306,7 @@
           "sourceLocation": "lead ('late 13th and early 12th century'); timeline"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -6410,7 +6444,8 @@
           "to": "fall-of-harran",
           "kind": "causes"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "fall-of-harran",
@@ -6533,7 +6568,8 @@
           "to": "nebuchadnezzar",
           "kind": "part-of"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "babylon-invades-egypt",
@@ -6582,7 +6618,8 @@
             "sourceLocation": "'550/549 BC'"
           }
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "nabonidus",
@@ -6620,7 +6657,8 @@
           "to": "nabonidus",
           "kind": "conquers"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "assur-independent",
@@ -6663,6 +6701,7 @@
           "kind": "related"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -6806,7 +6845,8 @@
           "sourceKey": "wp-tp3",
           "sourceLocation": "infobox and lead"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "dur-sharrukin",
@@ -6837,7 +6877,8 @@
           "sourceKey": "wp-ashurbanipal",
           "sourceLocation": "infobox and lead"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "shamash-shum-ukin",
@@ -6870,6 +6911,7 @@
           "sourceLocation": "infobox and History"
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -6903,6 +6945,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -6919,6 +6962,7 @@
           "sourceLocation": "lead and Early Bronze"
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -6940,6 +6984,7 @@
           "sourceLocation": "lead (archive 'dated to 2500 BC–2350 BC')"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7091,6 +7136,7 @@
           "kind": "part-of"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7129,6 +7175,7 @@
           "kind": "succeeds"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7160,7 +7207,8 @@
           "sourceKey": "wp-phoenicia",
           "sourceLocation": "infobox"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "tyre-babylon",
@@ -7176,7 +7224,8 @@
           "sourceKey": "wp-tyre",
           "sourceLocation": "History"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "siege-of-tyre",
@@ -7214,6 +7263,7 @@
           "kind": "part-of"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7271,6 +7321,7 @@
           "kind": "conquers"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7293,6 +7344,7 @@
           "kind": "related"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7379,7 +7431,8 @@
           "to": "tiglath-pileser-iii",
           "kind": "part-of"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "susa-founded",
@@ -7429,6 +7482,7 @@
           "sourceLocation": "infobox and History"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7445,6 +7499,7 @@
           "sourceLocation": "lead and History"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7467,7 +7522,8 @@
           "sourceLocation": "History"
         }
       ],
-      "chronology": "middle"
+      "chronology": "middle",
+      "importance": 1
     },
     {
       "uuid": "medes-assyria",
@@ -7482,7 +7538,8 @@
           "sourceKey": "wp-medes",
           "sourceLocation": "History > Assyrian intervention"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "mannaea-first",
@@ -7497,7 +7554,8 @@
           "sourceKey": "wp-mannaea",
           "sourceLocation": "Etymology of name"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "mannaea-medes",
@@ -7530,7 +7588,8 @@
           "sourceKey": "wp-tp3",
           "sourceLocation": "lead and Assyria before Tiglath-Pileser"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "darius-i",
@@ -7546,7 +7605,8 @@
           "sourceKey": "wp-achaemenid",
           "sourceLocation": "infobox and lead"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "greco-persian-wars",
@@ -7562,7 +7622,8 @@
           "sourceKey": "wp-achaemenid",
           "sourceLocation": "infobox (historical era) and lead"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "persia-falls",
@@ -7577,7 +7638,8 @@
           "sourceKey": "wp-achaemenid",
           "sourceLocation": "lead"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "dilmun-height",
@@ -7594,6 +7656,7 @@
           "sourceLocation": "History"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7609,7 +7672,8 @@
           "sourceKey": "wp-dilmun",
           "sourceLocation": "History"
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "ravi-phase",
@@ -7659,6 +7723,7 @@
           "sourceLocation": "excavators' chronology"
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -7677,6 +7742,7 @@
           "sourceLocation": "infobox"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7694,6 +7760,7 @@
           "sourceLocation": "infobox and lead"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7798,6 +7865,7 @@
           "sourceLocation": "Mesopotamia"
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -7831,6 +7899,7 @@
           }
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -7864,6 +7933,7 @@
           "sourceLocation": "lead and Disappearance"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7881,6 +7951,7 @@
           "sourceLocation": "Phases"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -7977,6 +8048,7 @@
           "sourceLocation": "infobox and lead"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8048,6 +8120,7 @@
           "kind": "conquers"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8064,6 +8137,7 @@
           "sourceLocation": "Background"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8097,7 +8171,8 @@
           "sourceKey": "wp-zhou",
           "sourceLocation": "infobox and lead"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "spring-autumn",
@@ -8163,6 +8238,7 @@
           "sourceLocation": "lead and infobox"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8180,6 +8256,7 @@
           "sourceLocation": "lead and Discovery and dating"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8229,6 +8306,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8282,6 +8360,7 @@
           }
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8308,6 +8387,7 @@
           }
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -8325,6 +8405,7 @@
           "sourceLocation": "Influences on Valdivia culture"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8342,6 +8423,7 @@
           "sourceLocation": "lead and Description"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8363,6 +8445,7 @@
           "sourceLocation": "La Venta"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8389,6 +8472,7 @@
           }
         }
       ],
+      "importance": 3,
       "circa": true
     },
     {
@@ -8405,6 +8489,7 @@
           "sourceLocation": "lead"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8464,6 +8549,7 @@
           "sourceLocation": "Writing and literacy"
         }
       ],
+      "importance": 1,
       "circa": true
     },
     {
@@ -8481,6 +8567,7 @@
           "sourceLocation": "Architecture"
         }
       ],
+      "importance": 1,
       "circa": true
     }
   ]

@@ -634,6 +634,11 @@ main {
 .tl-mark .label {
   z-index: 1;
 }
+/* key events: bold labels, so a reader scanning a collapsed region finds the headline events */
+.tl-mark.key .label {
+  font-weight: 700;
+  color: var(--text);
+}
 .tl-mark.multi .diamond {
   border-color: var(--text);
 }
@@ -1270,6 +1275,9 @@ main {
 }
 .lg-text {
   color: var(--text);
+}
+.lg-key {
+  font-weight: 700;
 }
 .lg-select {
   border: 1px solid var(--line);

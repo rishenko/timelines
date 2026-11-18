@@ -17,6 +17,17 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   the file at the link.
 
 - **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
+- **Review the key events** in `docs/ancient-key-events.md` (66 key, 21 minor, proposed by Claude). Change
+  `data-src/ancient-importance.json` and run `npm run importance:ancient`.
+- **New regions within 3500–330 BCE** (research started 2026-11-17; the fetch agents hit a usage limit,
+  re-run them): Europe (Stonehenge, Bell Beaker, Únětice, Nordic Bronze Age, Urnfield, Hallstatt,
+  La Tène, Etruscans, Roman Kingdom, Archaic and Classical Greece), the Steppe (Yamnaya, Afanasievo,
+  Corded Ware, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians), Africa (A-Group, Kerma, Kush,
+  Napata, Meroë, Nok, Punt, Dʿmt, Garamantes, Bantu expansion), other Asia (Vedic period,
+  Mahajanapadas, Magadha, the Buddha, Jōmon, Yayoi, Mumun, Gojoseon, Ban Chiang, Đông Sơn, Sa Huỳnh),
+  Island Southeast Asia and the Pacific (Austronesian expansion, Lapita, Buni). Tag key events as they go
+  in, place each region next to its partners (the proximity test), and consider starting new regions collapsed.
+- **Key events when zoomed out**: at the coarsest zoom, show only key events (a second use of `importance`).
 - **Drafts hide data updates.** A saved edit-mode draft replaces the bundled timeline entirely, so a
   reader with a draft never sees later fixes to the shipped data. Same issue as REDACTED;
   fix both the same way (e.g. detect a newer shipped dataset and offer to merge).
@@ -34,6 +45,22 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   kept when the dates don't change, and editable in the JSON).
 
 ## Later
+
+### Next phase of the ancient timeline: after 330 BCE
+
+The author's decision (2026-11-17): keep 3500–330 BCE for now and save these for the next phase. Most of
+this history falls after the current end date.
+
+- **Polynesia:** settlement of East Polynesia, Hawaiʻi, Aotearoa/New Zealand and Rapa Nui (mostly after
+  about 1000 CE); voyaging and the Polynesian Triangle.
+- **Indonesia and maritime Southeast Asia:** Buni culture onward, Funan, Tarumanagara, Kutai, Srivijaya,
+  the Sailendra and Borobudur, Mataram, Majapahit.
+- **Europe:** Hellenistic kingdoms, the Roman Republic and Empire, Celts and Germanic peoples, Byzantium.
+- **Steppe:** Xiongnu, Sarmatians, Huns, Göktürks, Mongols.
+- **Africa:** Meroë's later centuries, Aksum, Carthage to 146 BCE, Ghana, Mali, Great Zimbabwe.
+- **Asia:** Maurya, Gupta, Qin and Han, the Three Kingdoms of Korea, Yamato Japan, Funan and Angkor.
+- **Americas:** Classic Maya, Teotihuacan, Moche, Nazca, Tiwanaku, Wari, Hopewell and Mississippian.
+- Extending the end date affects every region; existing regions would need content up to the new end.
 
 ### Shared, collaborative timelines
 

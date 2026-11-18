@@ -40,6 +40,7 @@ interface FormValues {
   circa: boolean;
   chronology: string;
   order: string;
+  importance: string;
   tracks: string[];
   sources: SourceRef[];
   links: EventLink[];
@@ -86,6 +87,7 @@ function toForm(e: TimelineEvent, cal: Calendar): FormValues {
     circa: !!e.circa,
     chronology: e.chronology ?? '',
     order: e.order === undefined ? '' : String(e.order),
+    importance: String(e.importance ?? 2),
     tracks: [...e.tracks],
     sources: e.sources.map((x) => ({ ...x })),
     links: (e.links ?? []).map((x) => ({ ...x })),
@@ -112,6 +114,7 @@ function fromForm(v: FormValues, cal: Calendar): TimelineEvent {
   if (v.circa) e.circa = true;
   if (v.chronology) e.chronology = v.chronology;
   if (v.order.trim() !== '') e.order = Number(v.order);
+  if (v.importance === '1' || v.importance === '3') e.importance = Number(v.importance) as 1 | 3;
   const starts = v.startDates.map((c) => fromClaimValues(c, cal)).filter((c) => c !== null);
   if (starts.length) e.startDates = starts;
   const ends = v.endDates.map((c) => fromClaimValues(c, cal)).filter((c) => c !== null);
@@ -338,6 +341,16 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               Order
             </label>
             <input id="ev-order" type="number" placeholder="(none)" {...register('order')} />
+          </div>
+          <div className="year-row">
+            <label htmlFor="ev-importance" title="Key events are bold and stay visible when a row is crowded or collapsed">
+              Importance
+            </label>
+            <select id="ev-importance" {...register('importance')}>
+              <option value="1">Key</option>
+              <option value="2">Normal</option>
+              <option value="3">Minor</option>
+            </select>
           </div>
         </fieldset>
 

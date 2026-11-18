@@ -12,9 +12,14 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "data:ancient": "node scripts/build-dataset.ts data-src/ancient-near-east.json src/timelines/ancient-near-east.json",
+    "importance:ancient": "node scripts/set-importance.ts data-src/ancient-near-east.json --plan data-src/ancient-importance.json && npm run data:ancient && node scripts/list-importance.ts src/timelines/ancient-near-east.json docs/ancient-key-events.md",
+    "format:src": "node scripts/format-source.ts data-src/ancient-near-east.json",
+    "row-order": "node scripts/row-order.ts src/timelines/ancient-near-east.json --best --fix china,americas",
     "data:REDACTED": "node scripts/upgrade-dataset.ts ../REDACTED/src/data/timeline.json src/timelines/REDACTED.json",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "shot": "node scripts/screenshot.ts",
+    "check:live": "node scripts/check-live.ts"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -31,6 +36,7 @@
     "gh-pages": "^6.3.0",
     "jsdom": "^31.0.1",
     "oxlint": "^1.90.0",
+    "playwright-core": "^1.65.1",
     "typescript": "~7.0.2",
     "vite": "^8.3.6",
     "vitest": "^5.1.0"

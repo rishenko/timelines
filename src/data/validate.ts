@@ -135,6 +135,8 @@ export function validateDataset(d: unknown): string[] {
       if (!Number.isInteger(e.end)) errors.push(`${label} has a non-integer end year.`);
       else if (e.end < e.start) errors.push(`${label} ends (${e.end}) before it starts (${e.start}).`);
     }
+    if (e.importance !== undefined && ![1, 2, 3].includes(e.importance))
+      errors.push(`${label}: importance must be 1 (key), 2 (normal) or 3 (minor).`);
     const tracksOk = Array.isArray(e.tracks) && e.tracks.length > 0;
     if (!tracksOk) errors.push(`${label} has no tracks.`);
     else for (const t of e.tracks) if (!trackIds.has(t)) errors.push(`${label} references unknown track "${t}".`);

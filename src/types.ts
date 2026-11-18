@@ -141,6 +141,12 @@ export interface TimelineEvent {
   ongoing?: boolean;
   /** Ordering among events that start in the same year; lower comes first. */
   order?: number;
+  /**
+   * How much the event matters to its timeline: 1 = key, 2 = normal (the default), 3 = minor.
+   * Crowded and collapsed rows place key events first, so they stay visible while minor ones
+   * fold into "+N" badges.
+   */
+  importance?: 1 | 2 | 3;
   /** The date is approximate ("c."). */
   circa?: boolean;
   /** Overrides the chronology inherited from the event's first track. */

@@ -53,6 +53,8 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Connections:** an event on several tracks gets a thread through each lane; explicit links (`causes`,
   `part-of`, `succeeds`, `conquers`, `related`) draw as arrows. The detail panel counts, but doesn't name,
   connections hidden by your filters (spoilers).
+- **Key events:** events can be marked key, normal or minor. Key events have bold labels, and crowded or
+  collapsed rows place them first, so collapsed regions still show their headline events.
 - **Gap compression:** long empty stretches collapse into a hatched `⋯ 900 yrs ⋯` break.
 - **Legend:** the Legend button explains every symbol, color and line, using the current theme and only the features the
   open timeline uses. It opens by itself on a reader's first visit.
@@ -72,6 +74,19 @@ npm run build          # type-check + production build into dist/
 npm run data:ancient   # compile data-src/ancient-near-east.json → src/timelines/
 npm run data:REDACTED    # re-import REDACTED data from ../REDACTED
 ```
+
+Scripts for working on the data (all in `scripts/`; source files are written in one compact style by
+`scripts/lib/source-format.ts`):
+
+```sh
+npm run importance:ancient   # apply data-src/ancient-importance.json, compile, refresh docs/ancient-key-events.md
+npm run row-order            # how close related regions sit, and the best possible order
+npm run format:src           # re-format data-src/ancient-near-east.json
+npm run shot -- <url> <out.png> [--width N --height N --full --close-legend]   # screenshot in Edge
+npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
+```
+
+`scripts/archive/` keeps one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 
@@ -138,7 +153,8 @@ which converts and validates them.
 | `src/components/` | Detail panel, event/track/source editors, filters, theme |
 | `src/data/` | Validator, importers for old REDACTED formats |
 | `src/timelines/` | Bundled timelines |
-| `data-src/`, `scripts/` | Readable source data and the compiler |
+| `src/data/proximity.ts` | Which regions share events, and how far apart they sit (tested) |
+| `data-src/`, `scripts/` | Readable source data, the compiler, and the data scripts above |
 
 ## The ancient dataset
 

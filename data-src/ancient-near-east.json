@@ -1560,7 +1560,8 @@
       "end": "c. 3200 BCE",
       "tracks": ["sum-uruk"],
       "descr": "Administrative tablets from Uruk's Eanna district, the earliest stage of the writing that became cuneiform. Dates are the CDLI's, as cited by Wikipedia.",
-      "sources": [{ "sourceKey": "wp-uruk", "sourceLocation": "Outline of the 4th millennium BC (CDLI, Uruk IV)" }]
+      "sources": [{ "sourceKey": "wp-uruk", "sourceLocation": "Outline of the 4th millennium BC (CDLI, Uruk IV)" }],
+      "importance": 1
     },
     {
       "uuid": "royal-tombs-ur",
@@ -1609,7 +1610,8 @@
       "tracks": ["akkad", "sum-ed"],
       "descr": "Sargon defeats Lugal-zage-si, takes Uruk and brings the Sumerian cities under Akkad; later campaigns reach Elam and Mari.",
       "sources": [{ "sourceKey": "wp-sargon", "sourceLocation": "Conquests ('around 2300 BC')" }],
-      "links": [{ "to": "lugalzagesi", "kind": "conquers" }, { "to": "sargon-reign", "kind": "part-of" }]
+      "links": [{ "to": "lugalzagesi", "kind": "conquers" }, { "to": "sargon-reign", "kind": "part-of" }],
+      "importance": 1
     },
     {
       "uuid": "naram-sin",
@@ -1630,7 +1632,8 @@
       "sources": [
         { "sourceKey": "wp-gutian", "sourceLocation": "period heading 'Gutian period c. 2154–2119 BC'" },
         { "sourceKey": "wp-akkad", "sourceLocation": "The Fall of Akkad" }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "utu-hengal",
@@ -1649,7 +1652,8 @@
           "note": "The page gives both dates without naming a chronology; the later one matches the low chronology."
         }
       ],
-      "links": [{ "to": "gutian-period", "kind": "conquers" }, { "to": "ur-nammu", "kind": "causes" }]
+      "links": [{ "to": "gutian-period", "kind": "conquers" }, { "to": "ur-nammu", "kind": "causes" }],
+      "importance": 3
     },
     {
       "uuid": "ur-nammu",
@@ -1665,7 +1669,8 @@
       "startDates": [
         { "year": "2112 BCE", "chronology": "middle", "source": { "sourceKey": "wp-urnammu", "sourceLocation": "Reign" } },
         { "year": "2048 BCE", "chronology": "low", "source": { "sourceKey": "wp-ur3", "sourceLocation": "lead (low chronology for Ur III)" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "shulgi",
@@ -1686,7 +1691,8 @@
       "startDates": [
         { "year": "2004 BCE", "chronology": "middle", "source": { "sourceKey": "wp-ur3", "sourceLocation": "lead ('destroyed around 2004 BC')" } },
         { "year": "1940 BCE", "chronology": "low", "source": { "sourceKey": "wp-ur3", "sourceLocation": "lead (low chronology end of Ur III)" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "sumu-abum",
@@ -1720,7 +1726,8 @@
         { "year": "1750 BCE", "chronology": "middle", "source": { "sourceKey": "wp-chron-ane", "sourceLocation": "table (Middle)" } },
         { "year": "1806 BCE", "chronology": "high", "source": { "sourceKey": "wp-chron-ane", "sourceLocation": "table (Long or High)" } },
         { "year": "1686 BCE", "chronology": "low", "source": { "sourceKey": "wp-chron-ane", "sourceLocation": "table (Short or Low)" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "hammurabi-larsa",
@@ -1733,7 +1740,8 @@
         { "year": "1763 BCE", "source": { "sourceKey": "wp-isin-larsa", "sourceLocation": "Demise" } },
         { "year": "1764 BCE", "source": { "sourceKey": "wp-hammurabi", "sourceLocation": "conquest of Larsa" } }
       ],
-      "links": [{ "to": "hammurabi-reign", "kind": "part-of" }]
+      "links": [{ "to": "hammurabi-reign", "kind": "part-of" }],
+      "importance": 3
     },
     {
       "uuid": "hammurabi-mari",
@@ -1743,7 +1751,8 @@
       "tracks": ["bab-old"],
       "descr": "Eshnunna falls in 1762 and Mari in 1761; Mari's palace is burned, preserving its great archive (1774–1761 BCE).",
       "sources": [{ "sourceKey": "wp-old-bab", "sourceLocation": "King Hammurabi" }],
-      "links": [{ "to": "hammurabi-reign", "kind": "part-of" }]
+      "links": [{ "to": "hammurabi-reign", "kind": "part-of" }],
+      "importance": 3
     },
     {
       "uuid": "code-hammurabi",
@@ -1752,7 +1761,8 @@
       "tracks": ["bab-old"],
       "descr": "The basalt stele of nearly 300 laws, compiled late in Hammurabi's reign. It was later carried off to Susa as plunder, where it was found in 1901.",
       "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }],
-      "links": [{ "to": "hammurabi-reign", "kind": "part-of" }]
+      "links": [{ "to": "hammurabi-reign", "kind": "part-of" }],
+      "importance": 1
     },
     {
       "uuid": "kanesh-karum-ii",
@@ -1782,7 +1792,8 @@
       "endDates": [
         { "year": "1740 BCE", "source": { "sourceKey": "wp-kultepe", "sourceLocation": "Archaeology (text)" } },
         { "year": "1719 BCE", "source": { "sourceKey": "wp-kultepe", "sourceLocation": "Archaeology (table)" } }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "anitta",
@@ -1830,7 +1841,8 @@
         { "year": "1620 BCE", "chronology": "middle", "source": { "sourceKey": "wp-hittite-kings", "sourceLocation": "Kuhrt/Bryce column" } },
         { "year": "1610 BCE", "source": { "sourceKey": "wp-hattusili1", "sourceLocation": "Reign (low middle chronology)" } },
         { "year": "1600 BCE", "source": { "sourceKey": "freu-2007", "sourceLocation": "p. 25 (via Wikipedia: List of Hittite kings)" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "alalakh-vii",
@@ -1839,7 +1851,8 @@
       "tracks": ["hit-old"],
       "descr": "Dated by the excavator to the second year of Ḫattušili I's reign, during his Syrian campaigns.",
       "sources": [{ "sourceKey": "wp-hattusili1", "sourceLocation": "Reign (Yener 2021, p. 579, middle chronology)" }],
-      "links": [{ "to": "hattusili-i", "kind": "part-of" }]
+      "links": [{ "to": "hattusili-i", "kind": "part-of" }],
+      "importance": 3
     },
     {
       "uuid": "mursili-i",
@@ -1893,7 +1906,8 @@
         { "year": "1531 BCE", "chronology": "low", "source": { "sourceKey": "wp-chron-ane", "sourceLocation": "table (Short or Low)" } },
         { "year": "1587 BCE", "source": { "sourceKey": "wp-chron-ane", "sourceLocation": "table (Middle Low)" }, "note": "Middle-low chronology" }
       ],
-      "links": [{ "to": "kassites-take-babylon", "kind": "causes" }]
+      "links": [{ "to": "kassites-take-babylon", "kind": "causes" }],
+      "importance": 1
     },
     {
       "uuid": "kassites-take-babylon",
@@ -1957,7 +1971,8 @@
       "sources": [
         { "sourceKey": "wp-mitanni", "sourceLocation": "Early Kingdom (reign 1365–1330 BC)" },
         { "sourceKey": "wp-chron-ane", "sourceLocation": "Assyrian King List" }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "muwatalli-ii",
@@ -1988,7 +2003,8 @@
           "note": "'the high chronology has the date about 20 years earlier'"
         }
       ],
-      "links": [{ "to": "muwatalli-ii", "kind": "part-of" }, { "to": "ramesses-ii", "kind": "part-of" }, { "to": "eternal-treaty", "kind": "causes" }]
+      "links": [{ "to": "muwatalli-ii", "kind": "part-of" }, { "to": "ramesses-ii", "kind": "part-of" }, { "to": "eternal-treaty", "kind": "causes" }],
+      "importance": 1
     },
     {
       "uuid": "hattusili-iii",
@@ -2023,7 +2039,8 @@
         { "year": "1259 BCE", "source": { "sourceKey": "wp-treaty", "sourceLocation": "lead (Klengel 2002, p. 51)" } },
         { "year": "1258 BCE", "source": { "sourceKey": "wp-treaty", "sourceLocation": "body ('the 21st year of Ramesses II's reign (1258 BC)')" } }
       ],
-      "links": [{ "to": "hittite-marriage", "kind": "causes" }]
+      "links": [{ "to": "hittite-marriage", "kind": "causes" }],
+      "importance": 1
     },
     {
       "uuid": "hittite-marriage",
@@ -2032,7 +2049,8 @@
       "tracks": ["eg-new", "hit-new"],
       "chronology": "shaw",
       "descr": "A diplomatic marriage in Ramesses's 34th year seals the peace.",
-      "sources": [{ "sourceKey": "wp-hittite-kings", "sourceLocation": "New kingdom ('1246 BC (Year 34)'; Bryce 2005)" }]
+      "sources": [{ "sourceKey": "wp-hittite-kings", "sourceLocation": "New kingdom ('1246 BC (Year 34)'; Bryce 2005)" }],
+      "importance": 3
     },
     {
       "uuid": "tudhaliya-iv",
@@ -2101,7 +2119,8 @@
         { "year": "1190 BCE", "source": { "sourceKey": "wp-hittites", "sourceLocation": "infobox (disestablished c. 1190 BC)" } },
         { "year": "1200 BCE", "source": { "sourceKey": "wp-hattusa", "sourceLocation": "History ('around 1200 BC')" } }
       ],
-      "links": [{ "to": "bronze-age-collapse", "kind": "part-of" }, { "to": "neo-hittite", "kind": "causes" }]
+      "links": [{ "to": "bronze-age-collapse", "kind": "part-of" }, { "to": "neo-hittite", "kind": "causes" }],
+      "importance": 1
     },
     {
       "uuid": "neo-hittite",
@@ -2126,7 +2145,8 @@
       "start": "c. 1300 BCE",
       "tracks": ["anatolia"],
       "descr": "The final sublayer of the great Middle–Late Bronze Age citadel (Troy VI, built c. 1750) is destroyed; Troy VIIa is built soon after.",
-      "sources": [{ "sourceKey": "wp-troy", "sourceLocation": "Troy VI (Jablonka 2011; Bryce 2006, pp. 64–66)" }]
+      "sources": [{ "sourceKey": "wp-troy", "sourceLocation": "Troy VI (Jablonka 2011; Bryce 2006, pp. 64–66)" }],
+      "importance": 3
     },
     {
       "uuid": "troy-viia",
@@ -2145,7 +2165,8 @@
       "tracks": ["anatolia"],
       "descr": "Tree rings show severe drought in 1198, 1197 and 1196 BCE, suggested as a factor in the Hittite collapse.",
       "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History (Manning et al. 2023, Nature 614)" }],
-      "links": [{ "to": "hattusa-abandoned", "kind": "causes" }]
+      "links": [{ "to": "hattusa-abandoned", "kind": "causes" }],
+      "importance": 3
     },
     {
       "uuid": "narmer",
@@ -2157,7 +2178,8 @@
       "startDates": [
         { "year": "3100 BCE", "margin": 150, "source": { "sourceKey": "wp-narmer", "sourceLocation": "Reign ('c. 3100 BC (± 150 years)')" } },
         { "year": "3150 BCE", "source": { "sourceKey": "wp-anc-egypt", "sourceLocation": "lead (unification c. 3150 BC)" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "djoser",
@@ -2204,7 +2226,8 @@
           "chronology": "egypt-c14",
           "source": { "sourceKey": "ramsey-2010", "sourceLocation": "'2613–2577 BC' (via Wikipedia: Great Pyramid of Giza)" }
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "mentuhotep-ii",
@@ -2216,7 +2239,8 @@
       "startDates": [
         { "year": "2055 BCE", "source": { "sourceKey": "wp-middle-kingdom", "sourceLocation": "Reunification (Shaw)" } },
         { "year": "2061 BCE", "source": { "sourceKey": "wp-middle-kingdom", "sourceLocation": "infobox (reign c. 2061–2010 BC)" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "senusret-boat",
@@ -2225,7 +2249,8 @@
       "tracks": ["eg-middle"],
       "descr": "Dendrochronology dates the boat's timber to 1887 ± 11 BCE, an independent check on the conventional reign of Senusret III (1878–1839 BCE).",
       "sources": [{ "sourceKey": "wp-egypt-chron", "sourceLocation": "dendrochronology" }],
-      "startDates": [{ "year": "1887 BCE", "margin": 11, "source": { "sourceKey": "wp-egypt-chron", "sourceLocation": "dendrochronology ('1887±11 BC')" } }]
+      "startDates": [{ "year": "1887 BCE", "margin": 11, "source": { "sourceKey": "wp-egypt-chron", "sourceLocation": "dendrochronology ('1887±11 BC')" } }],
+      "importance": 3
     },
     {
       "uuid": "hyksos",
@@ -2256,7 +2281,8 @@
         { "sourceKey": "wp-kadesh", "sourceLocation": "Background ('around 1550 BC')" },
         { "sourceKey": "wp-ahmose", "sourceLocation": "Conquest of the Hyksos" }
       ],
-      "links": [{ "to": "hyksos", "kind": "conquers" }]
+      "links": [{ "to": "hyksos", "kind": "conquers" }],
+      "importance": 1
     },
     {
       "uuid": "ahmose-reign",
@@ -2297,7 +2323,8 @@
       "start": "c. 1437 BCE",
       "tracks": ["eg-new", "mycenaean"],
       "descr": "Messengers from Tanaju appear in Thutmose III's annals, a possible early Egyptian reference to Mycenaean Greeks.",
-      "sources": [{ "sourceKey": "wp-achaeans", "sourceLocation": "Egyptian sources" }]
+      "sources": [{ "sourceKey": "wp-achaeans", "sourceLocation": "Egyptian sources" }],
+      "importance": 3
     },
     {
       "uuid": "hatshepsut",
@@ -2367,7 +2394,8 @@
         },
         { "year": "1335 BCE", "source": { "sourceKey": "wp-akhenaten", "sourceLocation": "infobox" } },
         { "year": "1334 BCE", "source": { "sourceKey": "wp-akhenaten", "sourceLocation": "lead" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "amarna-letters",
@@ -2426,7 +2454,8 @@
           "source": { "sourceKey": "kuhrt", "sourceLocation": "1995, p. 205 (via Wikipedia: List of Hittite kings)" },
           "note": "High Egyptian chronology"
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "merneptah",
@@ -2526,7 +2555,8 @@
       "sources": [
         { "sourceKey": "wp-pelusium", "sourceLocation": "lead; infobox" },
         { "sourceKey": "wp-late-period", "sourceLocation": "First Achaemenid Period" }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "first-palaces",
@@ -2541,7 +2571,8 @@
       "startDates": [
         { "year": "1925 BCE", "chronology": "aegean-high", "source": { "sourceKey": "wp-minoan-chron", "sourceLocation": "MM IB start" } },
         { "year": "1900 BCE", "source": { "sourceKey": "wp-knossos", "sourceLocation": "First Palace period" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "linear-a",
@@ -2615,7 +2646,8 @@
           "source": { "sourceKey": "wp-thera", "sourceLocation": "archaeological evidence 'between circa 1550 and 1480 BC'" }
         }
       ],
-      "links": [{ "to": "lm-ib-destructions", "kind": "related" }]
+      "links": [{ "to": "lm-ib-destructions", "kind": "related" }],
+      "importance": 1
     },
     {
       "uuid": "lm-ib-destructions",
@@ -2642,7 +2674,8 @@
         { "sourceKey": "wp-knossos", "sourceLocation": "Mycenaean and Postpalatial period (Hooker 1991)" },
         { "sourceKey": "wp-linear-b", "sourceLocation": "lead ('c. 1450–1200 BC')" }
       ],
-      "links": [{ "to": "lm-ib-destructions", "kind": "related" }]
+      "links": [{ "to": "lm-ib-destructions", "kind": "related" }],
+      "importance": 1
     },
     {
       "uuid": "linear-b",
@@ -2710,7 +2743,8 @@
       "end": "c. 1150 BCE",
       "tracks": ["aegean", "anatolia", "egypt", "mesopotamia", "levant"],
       "descr": "Across the eastern Mediterranean, palace economies fail: the Hittite state ends, Mycenaean palaces burn, Ugarit falls, and Egypt fights off the Sea Peoples. Drought, earthquakes, raids and the breakdown of trade are all proposed causes.",
-      "sources": [{ "sourceKey": "wp-collapse", "sourceLocation": "lead ('late 13th and early 12th century'); timeline" }]
+      "sources": [{ "sourceKey": "wp-collapse", "sourceLocation": "lead ('late 13th and early 12th century'); timeline" }],
+      "importance": 1
     },
     {
       "uuid": "sub-mycenaean",
@@ -2777,7 +2811,8 @@
       "tracks": ["assyria", "bab-neo", "medes"],
       "descr": "Medes and Babylonians besiege Nineveh from May to August; king Sîn-šar-iškun dies and the Assyrian heartland collapses.",
       "sources": [{ "sourceKey": "wp-nineveh", "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3)" }],
-      "links": [{ "to": "neo-assyrian", "kind": "conquers" }, { "to": "fall-of-harran", "kind": "causes" }]
+      "links": [{ "to": "neo-assyrian", "kind": "conquers" }, { "to": "fall-of-harran", "kind": "causes" }],
+      "importance": 1
     },
     {
       "uuid": "fall-of-harran",
@@ -2829,7 +2864,8 @@
         { "year": "587 BCE", "source": { "sourceKey": "wp-jerusalem", "sourceLocation": "lead ('summer 587 BC')" } },
         { "year": "586 BCE", "source": { "sourceKey": "wp-jerusalem", "sourceLocation": "Dating ('July 587 or 586 BC')" } }
       ],
-      "links": [{ "to": "nebuchadnezzar", "kind": "part-of" }]
+      "links": [{ "to": "nebuchadnezzar", "kind": "part-of" }],
+      "importance": 1
     },
     {
       "uuid": "babylon-invades-egypt",
@@ -2850,7 +2886,8 @@
       "startDates": [
         { "year": "550 BCE", "source": { "sourceKey": "wp-fall-babylon", "sourceLocation": "'550/549 BC'" } },
         { "year": "549 BCE", "source": { "sourceKey": "wp-fall-babylon", "sourceLocation": "'550/549 BC'" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "nabonidus",
@@ -2868,7 +2905,8 @@
       "tracks": ["bab-neo", "persia"],
       "descr": "After victory at Opis, Persian forces enter Babylon on 12 October 539 BCE; Nabonidus surrenders and the Neo-Babylonian Empire ends.",
       "sources": [{ "sourceKey": "wp-fall-babylon", "sourceLocation": "lead; Invasion (Babylonian Chronicle)" }],
-      "links": [{ "to": "nabonidus", "kind": "conquers" }]
+      "links": [{ "to": "nabonidus", "kind": "conquers" }],
+      "importance": 1
     },
     {
       "uuid": "assur-independent",
@@ -2887,7 +2925,8 @@
           "source": { "sourceKey": "wp-early-assyria", "sourceLocation": "Under the Third Dynasty of Ur ('beginning with Ushpia c. 2090 BC')" }
         }
       ],
-      "links": [{ "to": "ur-nammu", "kind": "related" }]
+      "links": [{ "to": "ur-nammu", "kind": "related" }],
+      "importance": 1
     },
     {
       "uuid": "shamshi-adad",
@@ -2952,7 +2991,8 @@
       "end": "727 BCE",
       "tracks": ["as-neo"],
       "descr": "Takes power in a revolt and turns Assyria into a far larger empire: he defeats Urartu (743), conquers Damascus (732) and Babylonia (729).",
-      "sources": [{ "sourceKey": "wp-tp3", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-tp3", "sourceLocation": "infobox and lead" }],
+      "importance": 1
     },
     {
       "uuid": "dur-sharrukin",
@@ -2969,7 +3009,8 @@
       "end": "631 BCE",
       "tracks": ["as-neo"],
       "descr": "The last great Neo-Assyrian king. He wins a civil war against his brother Shamash-shum-ukin, king of Babylon (652–648), and destroys Elam. Assyria falls about two decades after his death.",
-      "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "infobox and lead" }],
+      "importance": 1
     },
     {
       "uuid": "shamash-shum-ukin",
@@ -2986,7 +3027,8 @@
       "start": "c. 2750 BCE",
       "tracks": ["can-eba"],
       "descr": "Herodotus' informants, the priests of Tyre, told him the city had been founded 2,300 years before his visit (around 450 BCE).",
-      "sources": [{ "sourceKey": "wp-tyre", "sourceLocation": "infobox and History" }]
+      "sources": [{ "sourceKey": "wp-tyre", "sourceLocation": "infobox and History" }],
+      "importance": 3
     },
     {
       "uuid": "proto-sinaitic",
@@ -2998,7 +3040,8 @@
       "startDates": [
         { "year": "1850 BCE", "source": { "sourceKey": "wp-proto-sinaitic", "sourceLocation": "lead ('an early date, around 1850 BC')" } },
         { "year": "1550 BCE", "source": { "sourceKey": "wp-proto-sinaitic", "sourceLocation": "lead ('a late date, around 1550 BC')" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "ebla-settled",
@@ -3006,7 +3049,8 @@
       "start": "c. 3500 BCE",
       "tracks": ["ebla"],
       "descr": "A small settlement in the Early Bronze Age that grows into a major Syrian city.",
-      "sources": [{ "sourceKey": "wp-ebla", "sourceLocation": "lead and Early Bronze" }]
+      "sources": [{ "sourceKey": "wp-ebla", "sourceLocation": "lead and Early Bronze" }],
+      "importance": 3
     },
     {
       "uuid": "ebla-archives",
@@ -3018,7 +3062,8 @@
       "sources": [
         { "sourceKey": "wp-ebla", "sourceLocation": "Mardikh IIB1" },
         { "sourceKey": "wp-ebla", "sourceLocation": "lead (archive 'dated to 2500 BC–2350 BC')" }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "ebla-first-destruction",
@@ -3074,7 +3119,8 @@
         { "year": "1185 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "History" } },
         { "year": "1190 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "destruction infobox" } }
       ],
-      "links": [{ "to": "bronze-age-collapse", "kind": "part-of" }]
+      "links": [{ "to": "bronze-age-collapse", "kind": "part-of" }],
+      "importance": 1
     },
     {
       "uuid": "phoenician-alphabet",
@@ -3087,7 +3133,8 @@
         { "year": "1050 BCE", "source": { "sourceKey": "wp-phoenician-alphabet", "sourceLocation": "infobox" } },
         { "year": "1100 BCE", "source": { "sourceKey": "wp-phoenician-alphabet", "sourceLocation": "Inscriptions (arrowheads 'dated c. 1100 BC')" } }
       ],
-      "links": [{ "to": "proto-sinaitic", "kind": "succeeds" }]
+      "links": [{ "to": "proto-sinaitic", "kind": "succeeds" }],
+      "importance": 1
     },
     {
       "uuid": "hiram-i",
@@ -3104,7 +3151,8 @@
       "start": "814 BCE",
       "tracks": ["phoenicia"],
       "descr": "Tyrian colonists found Carthage in North Africa; in Roman accounts, led by Dido.",
-      "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "infobox" }]
+      "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "infobox" }],
+      "importance": 1
     },
     {
       "uuid": "tyre-babylon",
@@ -3112,7 +3160,8 @@
       "start": "572 BCE",
       "tracks": ["phoenicia", "bab-neo"],
       "descr": "Tyre comes under Neo-Babylonian rule.",
-      "sources": [{ "sourceKey": "wp-tyre", "sourceLocation": "History" }]
+      "sources": [{ "sourceKey": "wp-tyre", "sourceLocation": "History" }],
+      "importance": 3
     },
     {
       "uuid": "siege-of-tyre",
@@ -3129,7 +3178,8 @@
       "tracks": ["can-lba", "eg-new"],
       "descr": "Carved in Merneptah's fifth year, it lists Ashkelon, Gezer, Yanoam and Israel among the defeated: the earliest mention of Israel outside the Bible.",
       "sources": [{ "sourceKey": "wp-merneptah-stele", "sourceLocation": "infobox and Description" }],
-      "links": [{ "to": "merneptah", "kind": "part-of" }]
+      "links": [{ "to": "merneptah", "kind": "part-of" }],
+      "importance": 1
     },
     {
       "uuid": "kingdom-israel",
@@ -3156,7 +3206,8 @@
       "tracks": ["israel-judah", "as-neo"],
       "descr": "The Neo-Assyrian Empire ends the northern kingdom after campaigns from 732 BCE; Sargon II deports 27,290 Israelites.",
       "sources": [{ "sourceKey": "wp-israel", "sourceLocation": "lead and Conquest by the Neo-Assyrian Empire (732–720 BCE)" }],
-      "links": [{ "to": "kingdom-israel", "kind": "conquers" }]
+      "links": [{ "to": "kingdom-israel", "kind": "conquers" }],
+      "importance": 1
     },
     {
       "uuid": "philistines-settle",
@@ -3165,7 +3216,8 @@
       "tracks": ["philistines"],
       "descr": "Amid the Late Bronze Age collapse. Typically Philistine artifacts appear in Canaan in the 12th century; the link to the Sea Peoples Ramesses III fought is a hypothesis.",
       "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "lead and History" }],
-      "links": [{ "to": "battle-of-delta", "kind": "related" }]
+      "links": [{ "to": "battle-of-delta", "kind": "related" }],
+      "importance": 1
     },
     {
       "uuid": "philistia-destroyed",
@@ -3199,7 +3251,8 @@
       "tracks": ["aram", "as-neo"],
       "descr": "Assyria annexes Aram-Damascus and executes its last king, Rezin.",
       "sources": [{ "sourceKey": "wp-aram", "sourceLocation": "infobox and History" }],
-      "links": [{ "to": "tiglath-pileser-iii", "kind": "part-of" }]
+      "links": [{ "to": "tiglath-pileser-iii", "kind": "part-of" }],
+      "importance": 1
     },
     {
       "uuid": "susa-founded",
@@ -3220,7 +3273,8 @@
       "end": "c. 1850 BCE",
       "tracks": ["elam-old"],
       "descr": "A script for the Elamite language, associated with Puzur-Inshushinak (in power around 2150 BCE). Its decipherment was proposed in 2020–2022.",
-      "sources": [{ "sourceKey": "wp-linear-elamite", "sourceLocation": "infobox and History" }]
+      "sources": [{ "sourceKey": "wp-linear-elamite", "sourceLocation": "infobox and History" }],
+      "importance": 1
     },
     {
       "uuid": "chogha-zanbil",
@@ -3228,7 +3282,8 @@
       "start": "c. 1250 BCE",
       "tracks": ["elam-middle"],
       "descr": "A temple complex near Susa. Construction was sometime in the 14th or 13th century BCE; 1250 is the conventional date.",
-      "sources": [{ "sourceKey": "wp-chogha-zanbil", "sourceLocation": "lead and History" }]
+      "sources": [{ "sourceKey": "wp-chogha-zanbil", "sourceLocation": "lead and History" }],
+      "importance": 1
     },
     {
       "uuid": "susa-sacked",
@@ -3241,7 +3296,8 @@
         { "sourceKey": "wp-ashurbanipal", "sourceLocation": "lead ('in 665, 653 and 647–646')" },
         { "sourceKey": "wp-chogha-zanbil", "sourceLocation": "History" }
       ],
-      "chronology": "middle"
+      "chronology": "middle",
+      "importance": 1
     },
     {
       "uuid": "medes-assyria",
@@ -3249,7 +3305,8 @@
       "start": "834 BCE",
       "tracks": ["medes"],
       "descr": "Shalmaneser III sends a sortie against four settlements, one identified as Media. Medes appear in Assyrian texts from the 9th century BCE.",
-      "sources": [{ "sourceKey": "wp-medes", "sourceLocation": "History > Assyrian intervention" }]
+      "sources": [{ "sourceKey": "wp-medes", "sourceLocation": "History > Assyrian intervention" }],
+      "importance": 3
     },
     {
       "uuid": "mannaea-first",
@@ -3257,7 +3314,8 @@
       "start": "828 BCE",
       "tracks": ["mannaea"],
       "descr": "An inscription from Shalmaneser III's 30th year names Mannaea and its ruler Udaki.",
-      "sources": [{ "sourceKey": "wp-mannaea", "sourceLocation": "Etymology of name" }]
+      "sources": [{ "sourceKey": "wp-mannaea", "sourceLocation": "Etymology of name" }],
+      "importance": 3
     },
     {
       "uuid": "mannaea-medes",
@@ -3273,7 +3331,8 @@
       "start": "743 BCE",
       "tracks": ["urartu", "as-neo"],
       "descr": "Urartu had beaten Assyria at Arpad in 754 BCE; this victory reverses the balance.",
-      "sources": [{ "sourceKey": "wp-tp3", "sourceLocation": "lead and Assyria before Tiglath-Pileser" }]
+      "sources": [{ "sourceKey": "wp-tp3", "sourceLocation": "lead and Assyria before Tiglath-Pileser" }],
+      "importance": 1
     },
     {
       "uuid": "darius-i",
@@ -3282,7 +3341,8 @@
       "end": "486 BCE",
       "tracks": ["persia"],
       "descr": "The empire's campaigns fail to conquer Scythia (513) and Greece (492–490).",
-      "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "infobox and lead" }],
+      "importance": 1
     },
     {
       "uuid": "greco-persian-wars",
@@ -3291,7 +3351,8 @@
       "end": "449 BCE",
       "tracks": ["persia"],
       "descr": "From the Ionian Revolt to the end of hostilities; Persian invasions of Greece are repulsed in 492–490 and 480–479 BCE.",
-      "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "infobox (historical era) and lead" }]
+      "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "infobox (historical era) and lead" }],
+      "importance": 1
     },
     {
       "uuid": "persia-falls",
@@ -3299,7 +3360,8 @@
       "start": "330 BCE",
       "tracks": ["persia"],
       "descr": "The end of a Macedonian campaign that began in 336 BCE.",
-      "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "lead" }]
+      "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "lead" }],
+      "importance": 1
     },
     {
       "uuid": "dilmun-height",
@@ -3308,7 +3370,8 @@
       "end": "c. 1720 BCE",
       "tracks": ["dilmun"],
       "descr": "A trading centre in Bahrain, between Mesopotamia and the Indus, prosperous in the first centuries of the 2nd millennium BCE, then declining from around 1720.",
-      "sources": [{ "sourceKey": "wp-dilmun", "sourceLocation": "History" }]
+      "sources": [{ "sourceKey": "wp-dilmun", "sourceLocation": "History" }],
+      "importance": 1
     },
     {
       "uuid": "dilmun-last",
@@ -3316,7 +3379,8 @@
       "start": "567 BCE",
       "tracks": ["dilmun"],
       "descr": "Neo-Babylonian records; after the fall of Babylon the name falls out of use.",
-      "sources": [{ "sourceKey": "wp-dilmun", "sourceLocation": "History" }]
+      "sources": [{ "sourceKey": "wp-dilmun", "sourceLocation": "History" }],
+      "importance": 3
     },
     {
       "uuid": "ravi-phase",
@@ -3338,7 +3402,8 @@
       "end": "c. 2600 BCE",
       "tracks": ["ind-early"],
       "descr": "The last Early Harappan phase before the cities.",
-      "sources": [{ "sourceKey": "wp-harappa", "sourceLocation": "excavators' chronology" }]
+      "sources": [{ "sourceKey": "wp-harappa", "sourceLocation": "excavators' chronology" }],
+      "importance": 3
     },
     {
       "uuid": "indus-script",
@@ -3347,7 +3412,8 @@
       "end": "c. 1900 BCE",
       "tracks": ["ind-early", "ind-mature"],
       "descr": "Short inscriptions on seals and pottery; still undeciphered. A possible proto-script dates from c. 3500 BCE, and rare later graffiti until c. 1300 BCE.",
-      "sources": [{ "sourceKey": "wp-indus-script", "sourceLocation": "infobox" }]
+      "sources": [{ "sourceKey": "wp-indus-script", "sourceLocation": "infobox" }],
+      "importance": 1
     },
     {
       "uuid": "mohenjo-daro",
@@ -3356,7 +3422,8 @@
       "end": "c. 1700 BCE",
       "tracks": ["ind-mature"],
       "descr": "A major city of the Mature Harappan phase, abandoned c. 1700 BCE along with the other large Indus cities.",
-      "sources": [{ "sourceKey": "wp-mohenjo", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-mohenjo", "sourceLocation": "infobox and lead" }],
+      "importance": 1
     },
     {
       "uuid": "dholavira",
@@ -3404,7 +3471,8 @@
       "end": "c. 2100 BCE",
       "tracks": ["ind-mature", "elam-old"],
       "descr": "A cylinder-seal impression with Indus characters, found in a stratum at Susa: evidence of Indus–Mesopotamian contact.",
-      "sources": [{ "sourceKey": "wp-indus-script", "sourceLocation": "Mesopotamia" }]
+      "sources": [{ "sourceKey": "wp-indus-script", "sourceLocation": "Mesopotamia" }],
+      "importance": 3
     },
     {
       "uuid": "mehrgarh-abandoned",
@@ -3420,7 +3488,8 @@
           "source": { "sourceKey": "wp-mehrgarh", "sourceLocation": "Period VII ('between 2600 BCE and 2000 BCE')" }
         },
         { "year": "2500 BCE", "source": { "sourceKey": "wp-mehrgarh", "sourceLocation": "Period VII (Michael Wood)" } }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "meluhha-last",
@@ -3436,7 +3505,8 @@
       "start": "c. 2300 BCE",
       "tracks": ["liangzhu"],
       "descr": "The jade-working culture of the Yangtze Delta, which flourished around 2500 BCE with a 290-hectare walled city, vanishes after a wet period, perhaps linked to the 4.2-kiloyear climate event.",
-      "sources": [{ "sourceKey": "wp-liangzhu", "sourceLocation": "lead and Disappearance" }]
+      "sources": [{ "sourceKey": "wp-liangzhu", "sourceLocation": "lead and Disappearance" }],
+      "importance": 1
     },
     {
       "uuid": "yanshi",
@@ -3444,7 +3514,8 @@
       "start": "c. 1600 BCE",
       "tracks": ["shang", "erlitou"],
       "descr": "Near Erlitou. The Xia–Shang–Zhou Chronology Project treats it as the founding of the Shang.",
-      "sources": [{ "sourceKey": "wp-erlitou", "sourceLocation": "Phases" }]
+      "sources": [{ "sourceKey": "wp-erlitou", "sourceLocation": "Phases" }],
+      "importance": 1
     },
     {
       "uuid": "yin-capital",
@@ -3483,7 +3554,8 @@
       "end": "c. 1050 BCE",
       "tracks": ["shang"],
       "descr": "Divination records on bones and shells from Yin: the earliest known Chinese writing. No identifiable writing before the 13th century BCE has been found.",
-      "sources": [{ "sourceKey": "wp-oracle-bone", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-oracle-bone", "sourceLocation": "infobox and lead" }],
+      "importance": 1
     },
     {
       "uuid": "muye",
@@ -3512,7 +3584,8 @@
           "source": { "sourceKey": "wp-muye", "sourceLocation": "Dating ('44 different dates … ranging from 1130 to 1018 BC')" }
         }
       ],
-      "links": [{ "to": "yin-capital", "kind": "conquers" }]
+      "links": [{ "to": "yin-capital", "kind": "conquers" }],
+      "importance": 1
     },
     {
       "uuid": "sanxingdui-city",
@@ -3520,7 +3593,8 @@
       "start": "c. 1600 BCE",
       "tracks": ["sanxingdui"],
       "descr": "A Bronze Age culture in Sichuan with no written records, famous for large bronze heads and masks (13th–12th century BCE).",
-      "sources": [{ "sourceKey": "wp-sanxingdui", "sourceLocation": "Background" }]
+      "sources": [{ "sourceKey": "wp-sanxingdui", "sourceLocation": "Background" }],
+      "importance": 1
     },
     {
       "uuid": "gonghe",
@@ -3538,7 +3612,8 @@
       "start": "771 BCE",
       "tracks": ["zhou-western", "zhou-eastern"],
       "descr": "After the disaster at Mount Li, the court moves to Wangcheng: the end of the Western Zhou.",
-      "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox and lead" }],
+      "importance": 1
     },
     {
       "uuid": "spring-autumn",
@@ -3564,7 +3639,8 @@
       "end": "221 BCE",
       "tracks": ["zhou-eastern"],
       "descr": "Qin deposes the last Zhou king in 256 BCE and unifies China in 221 BCE.",
-      "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "lead and infobox" }]
+      "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "lead and infobox" }],
+      "importance": 1
     },
     {
       "uuid": "watson-brake",
@@ -3573,7 +3649,8 @@
       "end": "c. 3000 BCE",
       "tracks": ["mound-builders"],
       "descr": "An earthwork complex in Louisiana, built over about 500 years and abandoned around 2800 BCE: far older than Poverty Point, once thought the earliest mound site in North America.",
-      "sources": [{ "sourceKey": "wp-watson-brake", "sourceLocation": "lead and Discovery and dating" }]
+      "sources": [{ "sourceKey": "wp-watson-brake", "sourceLocation": "lead and Discovery and dating" }],
+      "importance": 1
     },
     {
       "uuid": "poverty-point",
@@ -3590,7 +3667,8 @@
       "endDates": [
         { "year": "1100 BCE", "source": { "sourceKey": "wp-poverty-point", "sourceLocation": "lead" } },
         { "year": "1200 BCE", "source": { "sourceKey": "wp-poverty-point", "sourceLocation": "History > Construction" } }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "caral",
@@ -3613,7 +3691,8 @@
           "year": "2020 BCE",
           "source": { "sourceKey": "wp-caral-supe", "sourceLocation": "History and geography (Shady: 'habitation from 2627 BCE to 2020 BCE')" }
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "caral-flutes",
@@ -3628,7 +3707,8 @@
           "margin": 90,
           "source": { "sourceKey": "wp-caral", "sourceLocation": "Musical instruments ('radiocarbon dated to 2170±90 BC')" }
         }
-      ]
+      ],
+      "importance": 3
     },
     {
       "uuid": "valdivia-pottery",
@@ -3637,7 +3717,8 @@
       "end": "c. 2700 BCE",
       "tracks": ["valdivia"],
       "descr": "Phase A on the coast of Ecuador, long thought the oldest pottery in South America.",
-      "sources": [{ "sourceKey": "wp-valdivia", "sourceLocation": "Influences on Valdivia culture" }]
+      "sources": [{ "sourceKey": "wp-valdivia", "sourceLocation": "Influences on Valdivia culture" }],
+      "importance": 1
     },
     {
       "uuid": "san-lorenzo",
@@ -3646,7 +3727,8 @@
       "end": "c. 900 BCE",
       "tracks": ["olmec"],
       "descr": "The largest city in Mesoamerica from roughly 1200 to 900 BCE, known for its colossal stone heads. Destroyed in the 10th century BCE.",
-      "sources": [{ "sourceKey": "wp-san-lorenzo", "sourceLocation": "lead and Description" }]
+      "sources": [{ "sourceKey": "wp-san-lorenzo", "sourceLocation": "lead and Description" }],
+      "importance": 1
     },
     {
       "uuid": "la-venta",
@@ -3655,7 +3737,8 @@
       "end": "c. 400 BCE",
       "tracks": ["olmec"],
       "descr": "The main Olmec centre after San Lorenzo, with a great earthen pyramid; all but abandoned by the beginning of the 4th century BCE.",
-      "sources": [{ "sourceKey": "wp-la-venta", "sourceLocation": "Overview" }, { "sourceKey": "wp-olmecs", "sourceLocation": "La Venta" }]
+      "sources": [{ "sourceKey": "wp-la-venta", "sourceLocation": "Overview" }, { "sourceKey": "wp-olmecs", "sourceLocation": "La Venta" }],
+      "importance": 1
     },
     {
       "uuid": "la-venta-pyramid",
@@ -3664,7 +3747,8 @@
       "tracks": ["olmec"],
       "descr": "A radiocarbon date from Complex C, the great pyramid.",
       "sources": [{ "sourceKey": "wp-la-venta", "sourceLocation": "Complex C" }],
-      "startDates": [{ "year": "394 BCE", "margin": 30, "source": { "sourceKey": "wp-la-venta", "sourceLocation": "Complex C ('394 ± 30 BCE')" } }]
+      "startDates": [{ "year": "394 BCE", "margin": 30, "source": { "sourceKey": "wp-la-venta", "sourceLocation": "Complex C ('394 ± 30 BCE')" } }],
+      "importance": 3
     },
     {
       "uuid": "maya-cities",
@@ -3672,7 +3756,8 @@
       "start": "c. 750 BCE",
       "tracks": ["maya"],
       "descr": "The first Maya cities develop in the Preclassic period.",
-      "sources": [{ "sourceKey": "wp-maya", "sourceLocation": "lead" }]
+      "sources": [{ "sourceKey": "wp-maya", "sourceLocation": "lead" }],
+      "importance": 1
     },
     {
       "uuid": "el-mirador",
@@ -3698,7 +3783,8 @@
       "end": "c. 200 BCE",
       "tracks": ["maya"],
       "descr": "The earliest inscriptions in an identifiably Maya script, in the Petén Basin.",
-      "sources": [{ "sourceKey": "wp-maya", "sourceLocation": "Writing and literacy" }]
+      "sources": [{ "sourceKey": "wp-maya", "sourceLocation": "Writing and literacy" }],
+      "importance": 1
     },
     {
       "uuid": "chavin-old-temple",
@@ -3707,7 +3793,8 @@
       "end": "c. 500 BCE",
       "tracks": ["chavin"],
       "descr": "The highland ceremonial centre of the Chavín culture; the New Temple follows from about 500 to 200 BCE.",
-      "sources": [{ "sourceKey": "wp-chavin", "sourceLocation": "Architecture" }]
+      "sources": [{ "sourceKey": "wp-chavin", "sourceLocation": "Architecture" }],
+      "importance": 1
     }
   ]
 }

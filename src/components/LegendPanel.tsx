@@ -112,9 +112,15 @@ export function LegendPanel({ data, onClose }: Props) {
       text: 'An event dated to one year.',
     },
     {
+      sample: <span className="lg-text lg-key">Key event</span>,
+      show: data.events.some((e) => e.importance === 1),
+      title: 'Key event',
+      text: 'Bold labels mark the events that matter most. In a crowded or collapsed row they are placed first, so they stay visible.',
+    },
+    {
       sample: <span className="lg-cluster">+3</span>,
       title: 'Folded events',
-      text: 'Events that didn’t fit in a crowded row. Click to zoom in on them.',
+      text: 'Events that didn’t fit in a crowded row, usually the minor ones. Click to zoom in on them.',
     },
     {
       sample: (
