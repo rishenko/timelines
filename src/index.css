@@ -1370,3 +1370,78 @@ main {
 .dating-pop .linklike {
   justify-self: start;
 }
+
+/* ---------- touch and narrow screens ---------- */
+/* One finger pans the timeline natively; two-finger pinch is handled by TimelineView (zoom steps), so the
+   browser must not zoom the page there. */
+.tl-scroller {
+  touch-action: pan-x pan-y;
+}
+.legal {
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  /* the toolbar becomes one row that scrolls sideways, instead of four wrapped rows */
+  .toolbar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 6px 10px;
+  }
+  .toolbar > * {
+    flex-shrink: 0;
+  }
+  .toolbar h1 .muted,
+  .toolbar .spacer {
+    display: none;
+  }
+  .toolbar .search {
+    width: 180px;
+  }
+  /* a horizontally scrolling toolbar would clip the Dating panel, so it opens across the screen */
+  .dating-pop {
+    position: fixed;
+    top: 52px;
+    left: 8px;
+    right: 8px;
+    min-width: 0;
+  }
+  /* row labels use the narrow column (LABEL_W_NARROW in TimelineView) */
+  .tl-lane-label {
+    font-size: 11px;
+    padding: 0 4px 0 6px;
+    gap: 4px;
+  }
+  .tl-lane.nested .tl-lane-label {
+    padding-left: calc(6px + var(--depth, 0) * 8px);
+    font-size: 10.5px;
+  }
+  .tl-lane-label .logo {
+    display: none;
+  }
+  .tl-corner {
+    font-size: 10px;
+  }
+  /* event details and editors cover the timeline instead of squeezing it to nothing */
+  .side-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(100%, 380px);
+    z-index: 20;
+    box-shadow: -6px 0 20px color-mix(in srgb, var(--text) 18%, transparent);
+  }
+  /* the credits note is clamped to two lines; a tap opens it */
+  .legal {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+  .legal:not(.open) p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

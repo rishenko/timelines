@@ -71,6 +71,9 @@ paths; anything else (e.g. `javascript:`) is rejected.
   open timeline uses. It opens by itself on a reader's first visit.
 - **Themes:** presets and per-color pickers. Each timeline has a default (ancient: Parchment, REDACTED: Dark)
   until the reader picks their own.
+- **Phones and tablets:** one finger pans the timeline and a two-finger pinch steps through the zoom levels. On
+  narrow screens (under 640 px) the toolbar becomes one row that scrolls sideways, the row labels narrow, panels
+  overlay the timeline, and the credits note folds to two lines (tap to open).
 - **Deep links:** `?timeline=…&inc=100&at=-1594#sack-of-babylon` restores timeline, scale, position and selection.
 - **Edit mode:** add events, tracks and sources, record date claims, download the JSON and upload it again.
   Drafts autosave per timeline in the browser as the reader's changes (`src/state/draft.ts`), not a copy, so later
@@ -99,7 +102,7 @@ node scripts/row-order.ts src/timelines/ancient-near-east.json --parent near-eas
 npm run format:src           # re-format data-src/ancient-near-east.json
 node scripts/additions/europe.ts   # (re)apply a region's additions; then npm run importance:ancient
 node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
-npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all"]
+npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all" --pinch in]
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 

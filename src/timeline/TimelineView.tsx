@@ -10,6 +10,20 @@ import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { safeUrl } from '../lib/urls.ts';
 
 export const LABEL_W = 236;
+/** On narrow screens (phones) the row labels take less room, leaving more for the timeline. */
+export const LABEL_W_NARROW = 120;
+const NARROW_QUERY = '(max-width: 640px)';
+function useLabelWidth(): number {
+  const [narrow, setNarrow] = useState(() => typeof window !== 'undefined' && !!window.matchMedia?.(NARROW_QUERY).matches);
+  useEffect(() => {
+    const mq = window.matchMedia?.(NARROW_QUERY);
+    if (!mq) return;
+    const on = () => setNarrow(mq.matches);
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, []);
+  return narrow ? LABEL_W_NARROW : LABEL_W;
+}
 const END_PAD = 260;
 const MARK_H = 22;
 const POINT_HALF = 7;
@@ -43,6 +57,8 @@ interface Props {
   onCenterYearChange: (year: number) => void;
   /** Zoom one increment finer, centered on a year. Returns false if already at the finest increment. */
   onZoomIn: (year: number) => boolean;
+  /** Touch pinch: one zoom step finer (1) or coarser (-1), keeping the center year. */
+  onPinchZoom?: (dir: 1 | -1, centerYear: number) => void;
   onEditTrack: (id: string) => void;
   onAddTrack: (parent?: string) => void;
   onMoveTrack: (id: string, dir: -1 | 1) => void;
@@ -67,6 +83,7 @@ export function TimelineView(props: Props) {
     editMode,
   } = props;
   const cal = data.meta.calendar;
+  const labelW = useLabelWidth();
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState({ left: 0, width: 1200 });
   const [hoverId, setHoverId] = useState<string | null>(null);
@@ -123,17 +140,17 @@ export function TimelineView(props: Props) {
     return s;
   }, [focusId, eventsById]);
 
-  const visibleWidth = () => (scrollerRef.current?.clientWidth ?? 1200) - LABEL_W;
+  const visibleWidth = () => (scrollerRef.current?.clientWidth ?? 1200) - labelW;
 
   const centerOn = useCallback(
     (year: number, smooth = false) => {
       const el = scrollerRef.current;
       if (!el) return;
-      const left = scale.x(year) - visibleWidth() / 2;
+      const left = scale.x(year) - (el.clientWidth - labelW) / 2;
       el.scrollTo({ left: Math.max(0, left), behavior: smooth ? 'smooth' : 'instant' });
       centerYearRef.current = year;
     },
-    [scale],
+    [scale, labelW],
   );
 
   // Keep the center year fixed whenever the scale changes (increment, compression, filters).
@@ -158,7 +175,7 @@ export function TimelineView(props: Props) {
       if (!el) return;
       const x = marks[0].x0;
       const left = el.scrollLeft;
-      const right = left + el.clientWidth - LABEL_W;
+      const right = left + el.clientWidth - labelW;
       if (x < left + 20 || x > right - 60) centerOn(scale.yearAt(x), true);
     });
     return () => cancelAnimationFrame(frame);
@@ -188,6 +205,25 @@ export function TimelineView(props: Props) {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  // Two-finger pinch steps through the zoom levels (the page itself doesn't zoom: see touch-action in CSS).
+  // Each time the fingers spread to 1.6x (or close to 0.62x), the zoom moves one step and the gesture restarts.
+  const pinchRef = useRef<number | null>(null);
+  const fingerGap = (t: React.TouchList) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+  const onTouchStart = (e: React.TouchEvent) => {
+    pinchRef.current = e.touches.length === 2 ? fingerGap(e.touches) : null;
+  };
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length !== 2 || pinchRef.current === null || !props.onPinchZoom) return;
+    const ratio = fingerGap(e.touches) / pinchRef.current;
+    if (ratio > 1.6 || ratio < 0.62) {
+      props.onPinchZoom(ratio > 1 ? 1 : -1, centerYearRef.current);
+      pinchRef.current = fingerGap(e.touches);
+    }
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (e.touches.length < 2) pinchRef.current = null;
+  };
+
   // Only render what is near the viewport (one screen either side).
   const lo = view.left - view.width;
   const hi = view.left + view.width * 2;
@@ -198,13 +234,13 @@ export function TimelineView(props: Props) {
   const gaps = scale.gaps().filter((g) => inView(g.x0, g.x1));
   // a tick at the start of a gap would print its label over the gap break
   const gapStarts = useMemo(() => new Set(scale.gaps().map((g) => g.y0)), [scale]);
-  const canvasW = LABEL_W + scale.width + END_PAD;
+  const canvasW = labelW + scale.width + END_PAD;
   const era = eraStart(cal);
 
   const onLaneDoubleClick = (trackId: string) => (ev: React.MouseEvent<HTMLDivElement>) => {
     if (!editMode || (ev.target !== ev.currentTarget && !(ev.target as HTMLElement).classList.contains('tl-span'))) return;
     const rect = ev.currentTarget.getBoundingClientRect();
-    const contentX = ev.clientX - rect.left - LABEL_W;
+    const contentX = ev.clientX - rect.left - labelW;
     props.onCreateAt(trackId, Math.floor(scale.yearAt(contentX)));
   };
 
@@ -223,7 +259,7 @@ export function TimelineView(props: Props) {
         className="tl-span"
         style={
           {
-            left: LABEL_W + x0,
+            left: labelW + x0,
             width: x1 - x0,
             '--track-color': track.color,
             '--fade-in': `${Math.max(0, fadeIn)}px`,
@@ -240,13 +276,16 @@ export function TimelineView(props: Props) {
       className={`tl-scroller ${related ? 'has-focus' : ''}`}
       ref={scrollerRef}
       onScroll={onScroll}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
       onClick={(e) => {
         if (e.target === e.currentTarget) onSelect(null);
       }}
     >
       <div className="tl-canvas" style={{ width: canvasW }}>
         <div className="tl-ruler" style={{ width: canvasW }}>
-          <div className="tl-corner" style={{ width: LABEL_W }}>
+          <div className="tl-corner" style={{ width: labelW }}>
             <span>Year</span>
             <small>{increment} yr / tick</small>
           </div>
@@ -254,20 +293,20 @@ export function TimelineView(props: Props) {
             <div
               key={t}
               className={`tl-tick ${t === era ? 'era' : ''} ${isMajorTick(t, increment, cal) ? 'major' : ''}`}
-              style={{ left: LABEL_W + scale.x(t) }}
+              style={{ left: labelW + scale.x(t) }}
             >
               {!gapStarts.has(t) && <span>{formatYear(t, cal)}</span>}
             </div>
           ))}
           {gaps.map((g) => (
-            <div key={g.y0} className="tl-gap-label" style={{ left: LABEL_W + g.x0, width: g.x1 - g.x0 }}>
+            <div key={g.y0} className="tl-gap-label" style={{ left: labelW + g.x0, width: g.x1 - g.x0 }}>
               <span title={`${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)} compressed`}>⋯ {g.y1 - g.y0} yrs ⋯</span>
             </div>
           ))}
         </div>
 
         <div className="tl-lanes" style={{ height: layout.height }}>
-          <div className="tl-grid" style={{ left: LABEL_W }}>
+          <div className="tl-grid" style={{ left: labelW }}>
             {visibleTicks.map((t) => (
               <div key={t} className={`tl-gridline ${t === era ? 'era' : ''}`} style={{ left: scale.x(t) }} />
             ))}
@@ -277,7 +316,7 @@ export function TimelineView(props: Props) {
           </div>
 
           <ConnectionLayer
-            left={LABEL_W}
+            left={labelW}
             width={scale.width + END_PAD}
             height={layout.height}
             marksByEvent={marksByEvent}
@@ -300,7 +339,7 @@ export function TimelineView(props: Props) {
                   const s = spans.get(id);
                   return s ? spanBand(id, s) : null;
                 })}
-                <div className="tl-lane-label" style={{ width: LABEL_W }}>
+                <div className="tl-lane-label" style={{ width: labelW }}>
                   <span className="chip" />
                   {image && <img src={image} alt="" className="logo" />}
                   <span className="name" title={lane.track.name}>
@@ -354,7 +393,7 @@ export function TimelineView(props: Props) {
                         <button
                           key={m.key}
                           className={`tl-mark cluster ${ids.some((id) => related?.has(id)) ? 'related' : ''}`}
-                          style={{ left: LABEL_W + m.x0 - POINT_HALF, top: m.cy - top - MARK_H / 2 }}
+                          style={{ left: labelW + m.x0 - POINT_HALF, top: m.cy - top - MARK_H / 2 }}
                           title={`${ids.length} more events (click to zoom in):\n${titles.join('\n')}`}
                           onClick={() => {
                             if (!props.onZoomIn(mid)) setExpanded((x) => ({ ...x, [lane.id]: true }));
@@ -382,7 +421,7 @@ export function TimelineView(props: Props) {
                         key={m.key}
                         className={cls}
                         style={{
-                          left: LABEL_W + left,
+                          left: labelW + left,
                           // cy is relative to the lanes area; marks are positioned within their lane
                           top: m.cy - top - MARK_H / 2,
                           width: m.footprintEnd - left,
@@ -423,7 +462,7 @@ export function TimelineView(props: Props) {
           })}
           {editMode && (
             <div className="tl-add-lane">
-              <button style={{ width: LABEL_W }} onClick={() => props.onAddTrack()}>
+              <button style={{ width: labelW }} onClick={() => props.onAddTrack()}>
                 + Add a track
               </button>
             </div>

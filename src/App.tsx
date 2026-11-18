@@ -91,6 +91,8 @@ export default function App() {
   // Chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low).
   const [chronSel, setChronSel] = useState<ChronologySelection>(() => defaultSelection(data));
   const chronDefaults = useMemo(() => defaultSelection(data), [data]);
+  // on phones the credits note is clamped to two lines; a tap opens it (see .legal in CSS)
+  const [creditsOpen, setCreditsOpen] = useState(false);
   const groups = useMemo(() => [...chronologyGroups(data)].filter(([, list]) => list.length > 1), [data]);
   const resolved = useMemo(() => resolveEvents(data, chronSel), [data, chronSel]);
   const resolvedById = useMemo(() => new Map(resolved.map((e) => [e.uuid, e])), [resolved]);
@@ -626,12 +628,21 @@ export default function App() {
             setFocus({ year, nonce: Date.now() });
             return true;
           }}
+          onPinchZoom={(dir) => {
+            const steps = meta.increments;
+            const next = dir === 1 ? [...steps].reverse().find((i) => i < increment) : steps.find((i) => i > increment);
+            if (next !== undefined) setIncrement(next);
+          }}
         />
         {sidePanel}
       </main>
 
       {(meta.credits || meta.creditsImage) && (
-        <footer className="legal">
+        <footer
+          className={`legal${creditsOpen ? ' open' : ''}`}
+          onClick={() => setCreditsOpen((o) => !o)}
+          title={creditsOpen ? undefined : 'Tap to read the full note'}
+        >
           {safeUrl(meta.creditsImage) && <img src={safeUrl(meta.creditsImage)} alt="" />}
           {meta.credits && <p>{meta.credits}</p>}
         </footer>

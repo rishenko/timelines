@@ -1,6 +1,7 @@
 // Screenshots the app in Microsoft Edge (via playwright-core; no browser download needed).
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
 //        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json] [--click "Button|Other"]
+//        [--pinch in|out]
 // --click presses toolbar or panel buttons whose text contains each name, in order, before --expand.
 // --expand opens collapsed rows by their label (in order, so a group can be opened before its regions);
 // --scroll-to scrolls the timeline so that row sits near the top. Names are separated by "|".
@@ -12,7 +13,7 @@ import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const args = process.argv.slice(2);
-const valued = /^--(width|height|expand|scroll-to|storage|click)$/;
+const valued = /^--(width|height|expand|scroll-to|storage|click|pinch)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
   console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
@@ -43,6 +44,25 @@ for (const name of opt('--click')?.split('|') ?? []) {
   if (await btn.count()) await btn.click();
   else problems.push(`--click: no button with "${name}"`);
   await page.waitForTimeout(300);
+}
+
+// --pinch in|out: a two-finger pinch on the timeline (spread = zoom in, close = zoom out), sent as touch events
+// through the DevTools protocol, which Playwright's touchscreen API can't do with two fingers.
+const pinch = opt('--pinch');
+if (pinch) {
+  const box = await page.locator('.tl-scroller').boundingBox();
+  if (!box) problems.push('--pinch: no .tl-scroller');
+  else {
+    const cdp = await page.context().newCDPSession(page);
+    const cx = box.x + box.width / 2, cy = box.y + box.height / 2;
+    const pts = (gap: number) => [{ x: cx - gap / 2, y: cy, id: 1 }, { x: cx + gap / 2, y: cy, id: 2 }];
+    const [from, to] = pinch === 'out' ? [200, 60] : [60, 200];
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: pts(from) });
+    for (let i = 1; i <= 6; i++)
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: pts(from + ((to - from) * i) / 6) });
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await page.waitForTimeout(500);
+  }
 }
 
 const label =(name: string) => page.locator('.tl-lane-label').filter({ has: page.getByText(name, { exact: true }) }).first();

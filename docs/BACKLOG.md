@@ -41,7 +41,11 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   the subtitle or the search box moved.
 - **Intro for first-time readers** beyond the legend (which now exists): e.g. a short guided tour.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
-- **Phone and tablet** support: swipe, pinch-zoom, a narrow layout. Desktop-only today.
+- **Phone and tablet: first pass done (2026-11-18).** Under 640 px: a one-row toolbar that scrolls sideways, a
+  120 px label column, side panels that overlay the timeline, the credits note clamped to two lines (tap to open),
+  and the Dating panel across the screen. Everywhere: one finger pans, a two-finger pinch steps the zoom. Tablets
+  (≥ 768 px) were already usable. Not yet tried on a real phone; still open: edit mode on touch (it relies on
+  double-click) and the legend's height on small screens.
 - **Hosting**: live on GitHub Pages (public repo); `npm run deploy` publishes.
 - **Editing lifespan claims**: the track form edits a lifespan's dates but not its date claims (those are
   kept when the dates don't change, and editable in the JSON).
