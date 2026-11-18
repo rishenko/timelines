@@ -16,7 +16,7 @@
     "teotihuacan-burned", "siyaj-kak", "tikal-defeated-562", "preclassic-collapse", "nazca-lines", "pakal",
     "han-conquers-nanyue", "trung-sisters", "van-xuan", "chenla-conquers-funan", "songtsen-gampo", "wencheng",
     "liu-song-founded", "hou-jing", "xiaowen-reforms", "wei-splits", "zhou-conquers-qi", "lantingji", "mogao",
-    "faxian", "xuanzang", "kutai-yupa", "purnawarman", "long-pause"
+    "faxian", "xuanzang", "kutai-yupa", "purnawarman", "long-pause", "sondani", "attila-italy"
   ],
   "3": [
     "la-venta-pyramid", "latin-league", "pella", "kalanay", "naneghat", "wang-xuance", "baekje-ungjin", "gwanggaeto",
@@ -25,7 +25,9 @@
     "jordanes-slavs", "spania-expelled", "suebi-annexed", "la-mojarra", "feathered-serpent", "palenque-dynasty",
     "pampa-grande", "tikal-stela-29", "cholula-pyramid", "tuyuhun-founded", "oc-eo-rome", "isanapura", "pyu-calendar",
     "jokhang", "beikthano", "tao-yuanming", "shayuan", "northern-qi-founded", "sungai-batu",
-    "plain-ware", "pohnpei-settled", "torres-strait-culture", "ubirr"
+    "plain-ware", "pohnpei-settled", "torres-strait-culture", "ubirr", "bhanugupta-eran", "vima-kadphises",
+    "shelun-khagan", "rule-of-dukes", "bhadravarman-i", "bhrikuti", "dos-pilas-founded", "yuknoom-cheen",
+    "chen-north-573", "wu-mingche-captured", "vercingetorix-executed", "gautamiputra-nahapana", "hengist-horsa"
   ],
   "_rubric": "Same rubric as data-src/ancient-importance.json. 1 = key: founding, unification or fall of a major state; a decisive turning point; an iconic monument or text. 3 = minor. Everything not listed is normal. The overlap events (500–330 BCE) keep the levels they have in the ancient timeline. Proposed by Claude, pending the author's review."
 }

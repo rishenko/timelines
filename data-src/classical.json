@@ -975,7 +975,109 @@
       "tags": ["wikipedia"],
       "accessed": "2026-11-18"
     },
-    "wp-ubirr": { "name": "Wikipedia: Ubirr", "url": "https://en.wikipedia.org/wiki/Ubirr", "tags": ["wikipedia"], "accessed": "2026-11-18" }
+    "wp-ubirr": { "name": "Wikipedia: Ubirr", "url": "https://en.wikipedia.org/wiki/Ubirr", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-gautamiputra": {
+      "name": "Wikipedia: Gautamiputra Satakarni",
+      "url": "https://en.wikipedia.org/wiki/Gautamiputra_Satakarni",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-toramana": { "name": "Wikipedia: Toramana", "url": "https://en.wikipedia.org/wiki/Toramana", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-mihirakula": { "name": "Wikipedia: Mihirakula", "url": "https://en.wikipedia.org/wiki/Mihirakula", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yashodharman": { "name": "Wikipedia: Yashodharman", "url": "https://en.wikipedia.org/wiki/Yashodharman", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-bhanugupta": { "name": "Wikipedia: Bhanugupta", "url": "https://en.wikipedia.org/wiki/Bhanugupta", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-vima-kadphises": { "name": "Wikipedia: Vima Kadphises", "url": "https://en.wikipedia.org/wiki/Vima_Kadphises", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-vasudeva-i": { "name": "Wikipedia: Vasudeva I", "url": "https://en.wikipedia.org/wiki/Vasudeva_I", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-shelun": {
+      "name": "Wikipedia: Yujiulü Shelun",
+      "url": "https://en.wikipedia.org/wiki/Yujiul%C3%BC_Shelun",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-peroz": { "name": "Wikipedia: Peroz I", "url": "https://en.wikipedia.org/wiki/Peroz_I", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-utus": {
+      "name": "Wikipedia: Battle of the Utus",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Utus",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-thapsus": {
+      "name": "Wikipedia: Battle of Thapsus",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Thapsus",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-sasanian-egypt": {
+      "name": "Wikipedia: Sasanian conquest of Egypt",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_conquest_of_Egypt",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-arminius": { "name": "Wikipedia: Arminius", "url": "https://en.wikipedia.org/wiki/Arminius", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-germanicus": { "name": "Wikipedia: Germanicus", "url": "https://en.wikipedia.org/wiki/Germanicus", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-vercingetorix": { "name": "Wikipedia: Vercingetorix", "url": "https://en.wikipedia.org/wiki/Vercingetorix", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-aquae-sextiae": {
+      "name": "Wikipedia: Battle of Aquae Sextiae",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Aquae_Sextiae",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-vercellae": {
+      "name": "Wikipedia: Battle of Vercellae",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vercellae",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-abritus": {
+      "name": "Wikipedia: Battle of Abritus",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Abritus",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-gothic-war-376": {
+      "name": "Wikipedia: Gothic War (376–382)",
+      "url": "https://en.wikipedia.org/wiki/Gothic_War_(376%E2%80%93382)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-rule-of-dukes": {
+      "name": "Wikipedia: Rule of the Dukes",
+      "url": "https://en.wikipedia.org/wiki/Rule_of_the_Dukes",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-hengist-horsa": {
+      "name": "Wikipedia: Hengist and Horsa",
+      "url": "https://en.wikipedia.org/wiki/Hengist_and_Horsa",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-badon": { "name": "Wikipedia: Battle of Badon", "url": "https://en.wikipedia.org/wiki/Battle_of_Badon", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-dos-pilas": { "name": "Wikipedia: Dos Pilas", "url": "https://en.wikipedia.org/wiki/Dos_Pilas", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yuknoom-cheen": {
+      "name": "Wikipedia: Yuknoom Chʼeen II",
+      "url": "https://en.wikipedia.org/wiki/Yuknoom_Ch%CA%BCeen_II",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-bhadravarman": { "name": "Wikipedia: Bhadravarman I", "url": "https://en.wikipedia.org/wiki/Bhadravarman_I", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-bhrikuti": { "name": "Wikipedia: Bhrikuti", "url": "https://en.wikipedia.org/wiki/Bhrikuti", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-valerian": {
+      "name": "Wikipedia: Valerian (emperor)",
+      "url": "https://en.wikipedia.org/wiki/Valerian_(emperor)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-wu-mingche": { "name": "Wikipedia: Wu Mingche", "url": "https://en.wikipedia.org/wiki/Wu_Mingche", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-xuan-chen": {
+      "name": "Wikipedia: Emperor Xuan of Chen",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Xuan_of_Chen",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-suiko": { "name": "Wikipedia: Empress Suiko", "url": "https://en.wikipedia.org/wiki/Empress_Suiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-himiko": { "name": "Wikipedia: Himiko", "url": "https://en.wikipedia.org/wiki/Himiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yamatai": { "name": "Wikipedia: Yamatai", "url": "https://en.wikipedia.org/wiki/Yamatai", "tags": ["wikipedia"], "accessed": "2026-11-18" }
   },
   "tracks": [
     { "id": "africa", "name": "Africa", "color": "#b8862a" },
@@ -1104,7 +1206,8 @@
         "end": "960 CE",
         "startDates": [
           { "year": "50 CE", "margin": 50, "source": { "sourceKey": "wp-aksum", "sourceLocation": "infobox and lead ('1st century')" } },
-          { "year": "150 BCE", "source": { "sourceKey": "wp-dmt", "sourceLocation": "lead ('possibly around 150 BC')" } }
+          { "year": "150 BCE", "source": { "sourceKey": "wp-dmt", "sourceLocation": "lead ('possibly around 150 BC')" } },
+          { "year": "150 BCE", "source": { "sourceKey": "wp-aksum", "sourceLocation": "Eritrea history sidebar ('c. 150 BC–AD 960')" } }
         ]
       }
     },
@@ -2979,8 +3082,12 @@
       "title": "Shapur I defeats Rome at Edessa",
       "start": "260 CE",
       "tracks": ["sasanian", "roman-empire"],
-      "descr": "A disastrous Roman defeat; the same year Odaenathus of Palmyra defeats Shapur near the Euphrates.",
-      "sources": [{ "sourceKey": "wp-palmyrene", "sourceLocation": "Background" }, { "sourceKey": "wp-sasanian", "sourceLocation": "infobox" }]
+      "descr": "A disastrous Roman defeat: in 260, probably in June, the emperor Valerian is defeated at Edessa and held prisoner by Shapur I; the date of his death in captivity is debated. The same year Odaenathus of Palmyra defeats Shapur near the Euphrates.",
+      "sources": [
+        { "sourceKey": "wp-palmyrene", "sourceLocation": "Background" },
+        { "sourceKey": "wp-sasanian", "sourceLocation": "infobox" },
+        { "sourceKey": "wp-valerian", "sourceLocation": "lead, infobox, Rule and fall, Death in captivity" }
+      ]
     },
     {
       "uuid": "palmyra",
@@ -5801,6 +5908,393 @@
       "sources": [{ "sourceKey": "wp-ubirr", "sourceLocation": "lead and Main gallery" }],
       "startDates": [{ "year": "50 BCE", "margin": 100, "source": { "sourceKey": "wp-ubirr", "sourceLocation": "lead ('about 2000 years ago')" } }],
       "importance": 3
+    },
+    {
+      "uuid": "gautamiputra-nahapana",
+      "title": "Gautamiputra Satakarni defeats Nahapana",
+      "start": "c. 78 CE",
+      "tracks": ["satavahana", "indo-scythian"],
+      "descr": "The Satavahana king defeats Nahapana of the Western Satraps (Shakas); most historians agree the two were contemporaries. Scholars date the victory differently: Bhandare to the start of the Saka era (78 CE), Fynes to some time after 71 CE, Dhavalikar to c. 124 CE, which he counts as Gautamiputra’s 18th regnal year. His reign itself is dated anywhere from 60–85 to 106–130 CE.",
+      "sources": [{ "sourceKey": "wp-gautamiputra", "sourceLocation": "lead, infobox and Gautamiputra and Nahapana" }],
+      "startDates": [
+        {
+          "year": "78 CE",
+          "source": { "sourceKey": "wp-gautamiputra", "sourceLocation": "Gautamiputra and Nahapana (Bhandare: 'start of Saka era, 78 CE')" }
+        },
+        { "year": "124 CE", "source": { "sourceKey": "wp-gautamiputra", "sourceLocation": "Gautamiputra and Nahapana (Dhavalikar: 'c. 124 CE')" } }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "toramana",
+      "title": "Toramana leads the Alchon Huns into India",
+      "start": "493 CE",
+      "end": "515 CE",
+      "tracks": ["alchon"],
+      "descr": "King of the Alchon Huns from 493 until his death in 515. His Kura inscription dates to 495–500 and the Sanjeli copper plate to 502–503; Kausambi was probably sacked by his Alkhons in 497–500. The Eran boar inscription is dated to the first year of his reign, placed between 510 and 513. Prakashadharma of Malwa defeats him in 515.",
+      "sources": [{ "sourceKey": "wp-toramana", "sourceLocation": "lead, infobox, Defeats, Sack of Kausambi and Punjab inscription" }]
+    },
+    {
+      "uuid": "bhanugupta-eran",
+      "title": "Bhanugupta’s Eran inscription",
+      "start": "510 CE",
+      "tracks": ["gupta"],
+      "descr": "An inscription at Eran records that Bhanugupta took part in a battle in 510 CE (Fleet’s 1888 reading); a 1981 translation reads it as a battle against the “Maittras”. Toramana may have been the enemy.",
+      "sources": [
+        { "sourceKey": "wp-bhanugupta", "sourceLocation": "Initial translation (J.F Fleet 1888) and New translation (1981)" },
+        { "sourceKey": "wp-toramana", "sourceLocation": "Defeats" }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "mihirakula",
+      "title": "Mihirakula rules the Alchon Huns",
+      "start": "515 CE",
+      "end": "542 CE",
+      "tracks": ["alchon"],
+      "descr": "Toramana’s successor rules from 515; the Chinese monk Song Yun meets him around 520. His campaign is reversed at Sondani, and Xuanzang says the Gupta king Narasimhagupta Baladitya defeated and captured him.",
+      "sources": [{ "sourceKey": "wp-mihirakula", "sourceLocation": "lead, infobox and Xuanzang" }],
+      "endDates": [
+        { "year": "542 CE", "source": { "sourceKey": "wp-mihirakula", "sourceLocation": "lead and infobox" } },
+        { "year": "540 CE", "source": { "sourceKey": "wp-mihirakula", "sourceLocation": "Alchon Huns succession table ('c.515–540')" } }
+      ],
+      "links": [{ "to": "toramana", "kind": "related" }]
+    },
+    {
+      "uuid": "sondani",
+      "title": "Yashodharman defeats Mihirakula at Sondani",
+      "start": "528 CE",
+      "tracks": ["alchon", "south-asia"],
+      "descr": "Yashodharman of Malwa, and possibly the Gupta emperor Narasimhagupta, defeat a Huna army under Mihirakula and drive the Huns out of India. Yashodharman’s Mandsaur stone inscription is dated 532 AD.",
+      "sources": [
+        { "sourceKey": "wp-yashodharman", "sourceLocation": "Reign and infobox" },
+        { "sourceKey": "wp-mihirakula", "sourceLocation": "lead and Mandsaur Pillar inscriptions of Yashodharman" }
+      ],
+      "startDates": [
+        { "year": "528 CE", "source": { "sourceKey": "wp-yashodharman", "sourceLocation": "Reign" } },
+        { "year": "528 CE", "source": { "sourceKey": "wp-mihirakula", "sourceLocation": "Mandsaur Pillar inscriptions of Yashodharman" } },
+        {
+          "year": "529 CE",
+          "margin": 4,
+          "source": { "sourceKey": "wp-mihirakula", "sourceLocation": "lead ('between 525 and 532 CE, likely by 530 CE')" }
+        }
+      ],
+      "links": [{ "to": "mihirakula", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "vima-kadphises",
+      "title": "Reign of Vima Kadphises",
+      "start": "113 CE",
+      "end": "127 CE",
+      "tracks": ["kushan"],
+      "descr": "Kushan emperor from approximately 113 to 127 CE. The same page also gives 90–100 CE (navbox) and AD 100–127 (a quoted source).",
+      "sources": [{ "sourceKey": "wp-vima-kadphises", "sourceLocation": "lead and infobox" }],
+      "importance": 3
+    },
+    {
+      "uuid": "vasudeva-i",
+      "title": "Vasudeva I, the last great Kushan",
+      "start": "191 CE",
+      "end": "232 CE",
+      "tracks": ["kushan"],
+      "descr": "The last of the “Great Kushans”; his reign extended from at least 191 to 232 CE. He sent tribute to China in 229.",
+      "sources": [
+        {
+          "sourceKey": "wp-vasudeva-i",
+          "sourceLocation": "short description, infobox, lead, Contacts with China and Sassanid invasion in the northwest"
+        }
+      ],
+      "startDates": [
+        { "year": "191 CE", "source": { "sourceKey": "wp-vasudeva-i", "sourceLocation": "infobox and lead" } },
+        { "year": "190 CE", "source": { "sourceKey": "wp-vasudeva-i", "sourceLocation": "Kushan table ('c. 190 – 230')" } }
+      ],
+      "endDates": [
+        { "year": "232 CE", "source": { "sourceKey": "wp-vasudeva-i", "sourceLocation": "infobox and lead" } },
+        { "year": "230 CE", "source": { "sourceKey": "wp-vasudeva-i", "sourceLocation": "Kushan table ('c. 190 – 230')" } }
+      ]
+    },
+    {
+      "uuid": "shelun-khagan",
+      "title": "Shelun takes the title khagan",
+      "start": "402 CE",
+      "tracks": ["rouran"],
+      "descr": "Yujiulü Shelun, crowned 11 March 402, rules the Rouran until 410. He is the first major leader of the steppes to take the title khagan.",
+      "sources": [{ "sourceKey": "wp-shelun", "sourceLocation": "lead, infobox, Reign and Personality and achievements" }],
+      "importance": 3
+    },
+    {
+      "uuid": "peroz-hephthalites",
+      "title": "Peroz I’s wars with the Hephthalites",
+      "start": "474 CE",
+      "end": "484 CE",
+      "tracks": ["sasanian", "hephthalites"],
+      "descr": "The Sasanian king attacks the Hephthalites in 474 and is ambushed and captured near the border of Gurgan; ransomed, he is defeated and captured again in a second campaign in the late 470s or early 480s, and sends his son Kavad to the Hephthalite court as a hostage in 482. In 484 his army falls into a trench dug by Akhshunwar’s forces and he is killed.",
+      "sources": [
+        {
+          "sourceKey": "wp-peroz",
+          "sourceLocation": "lead, infobox, First and second war with the Hephthalites, Third war with the Hephthalites and death"
+        }
+      ]
+    },
+    {
+      "uuid": "utus-447",
+      "title": "Battle of the Utus",
+      "start": "447 CE",
+      "tracks": ["huns", "eastern-roman"],
+      "descr": "A Hunnic victory over the Eastern Roman field armies; their commander Arnegisclus is killed and Marcianople falls. Peace comes with a treaty in the fall of 447 or in 448: 6,000 lbs of gold up front and 2,100 lbs a year.",
+      "sources": [{ "sourceKey": "wp-utus", "sourceLocation": "lead, infobox, Battle and Aftermath" }],
+      "links": [{ "to": "attila", "kind": "related" }]
+    },
+    {
+      "uuid": "attila-italy",
+      "title": "Attila invades Italy",
+      "start": "452 CE",
+      "tracks": ["huns", "roman-empire"],
+      "descr": "Attila returns in 452 to renew his claim to Honoria, razes Aquileia and halts at the River Po. Pope Leo I and two envoys meet him at the Mincio near Mantua and obtain his promise to withdraw; Italy had suffered famine in 451, and an East Roman force had crossed the Danube. He dies in the early months of 453.",
+      "sources": [{ "sourceKey": "wp-attila", "sourceLocation": "lead and Invasion of Italy and death" }],
+      "links": [{ "to": "attila", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "thapsus",
+      "title": "Battle of Thapsus",
+      "start": "46 BCE",
+      "tracks": ["numidia", "roman-republic"],
+      "descr": "Caesar defeats the Optimates under Metellus Scipio, with Juba I of Numidia, on 6 April 46 BC (the pre-reform Roman calendar; 7 February by the Julian). Cato commits suicide at Utica, and Juba has a slave kill him after a duel with Petreius. Caesar returns to Rome on 25 July.",
+      "sources": [{ "sourceKey": "wp-thapsus", "sourceLocation": "lead, infobox, note 2 and Aftermath" }],
+      "links": [{ "to": "numidia-province", "kind": "related" }]
+    },
+    {
+      "uuid": "sasanian-egypt",
+      "title": "Persia conquers Egypt",
+      "start": "618 CE",
+      "end": "629 CE",
+      "tracks": ["roman-egypt", "sasanian"],
+      "descr": "The Persian invasion begins in 617 or 618; Alexandria is betrayed to the Persians in June 619 (Khuzistan Chronicle), and by 621 the province is securely in Persian hands. Egypt stays Persian for 10 years: in the summer of 629 the Persian troops begin to leave.",
+      "sources": [{ "sourceKey": "wp-sasanian-egypt", "sourceLocation": "lead, infobox, Fall of Egypt and Aftermath" }],
+      "startDates": [
+        { "year": "618 CE", "source": { "sourceKey": "wp-sasanian-egypt", "sourceLocation": "lead and infobox" } },
+        { "year": "617 CE", "source": { "sourceKey": "wp-sasanian-egypt", "sourceLocation": "Fall of Egypt ('either in 617 or 618')" } }
+      ],
+      "links": [{ "to": "byz-sasanian-war", "kind": "related" }]
+    },
+    {
+      "uuid": "aquae-sextiae",
+      "title": "Marius defeats the Teutons at Aquae Sextiae",
+      "start": "102 BCE",
+      "tracks": ["europe", "roman-republic"],
+      "descr": "At Aquae Sextiae (Aix-en-Provence) the Romans under Gaius Marius defeat the Teutons and Ambrones.",
+      "sources": [{ "sourceKey": "wp-aquae-sextiae", "sourceLocation": "lead and infobox" }],
+      "links": [{ "to": "cimbrian-war", "kind": "related" }]
+    },
+    {
+      "uuid": "vercellae",
+      "title": "Battle of Vercellae",
+      "start": "101 BCE",
+      "tracks": ["europe", "roman-republic"],
+      "descr": "On 30 July 101 BC, near Vercellae in Cisalpine Gaul, Marius and Catulus defeat a Celtic-Germanic confederation under the Cimbric king Boiorix, ending the Cimbrian War.",
+      "sources": [{ "sourceKey": "wp-vercellae", "sourceLocation": "lead, infobox and Battle" }],
+      "links": [{ "to": "cimbrian-war", "kind": "related" }]
+    },
+    {
+      "uuid": "vercingetorix-executed",
+      "title": "Vercingetorix executed",
+      "start": "46 BCE",
+      "tracks": ["celts"],
+      "descr": "Forced to surrender at Alesia in September 52 BC, the Gaulish leader is imprisoned in Rome for six years and executed after Caesar’s triumph in 46 BC.",
+      "sources": [{ "sourceKey": "wp-vercingetorix", "sourceLocation": "lead and infobox" }],
+      "links": [{ "to": "alesia", "kind": "related" }],
+      "importance": 3
+    },
+    {
+      "uuid": "germanicus-germania",
+      "title": "Germanicus campaigns in Germania",
+      "start": "14 CE",
+      "end": "16 CE",
+      "tracks": ["europe", "roman-empire"],
+      "descr": "Between 14 and 16 Germanicus leads punitive operations against the Germanic tribes, defeating Arminius twice (according to Tacitus), first at Idistaviso. Roman troops recover one of Varus’s three lost eagles in 15 and a second in 16. Germanicus dies in Antioch on 10 October 19; Arminius, seeking to become a king, is murdered by opponents in his own tribe in 21.",
+      "sources": [
+        { "sourceKey": "wp-germanicus", "sourceLocation": "lead and infobox" },
+        { "sourceKey": "wp-arminius", "sourceLocation": "lead, infobox and Roman retribution and death" }
+      ],
+      "links": [{ "to": "teutoburg", "kind": "related" }]
+    },
+    {
+      "uuid": "abritus",
+      "title": "Battle of Abritus: the Goths kill Decius",
+      "start": "251 CE",
+      "tracks": ["europe", "roman-empire"],
+      "descr": "In the summer of 251 (June, July or August), near Abritus (modern Razgrad) in Moesia Inferior, Goths under Cniva defeat the Roman army; the emperors Decius and his son Herennius Etruscus are both killed.",
+      "sources": [{ "sourceKey": "wp-abritus", "sourceLocation": "lead, infobox and Battle" }]
+    },
+    {
+      "uuid": "goths-danube",
+      "title": "The Goths reach the Danube",
+      "start": "376 CE",
+      "tracks": ["visigoths", "roman-empire"],
+      "descr": "In the summer of 376 a massive number of Goths arrive on the Danube; the Thervings are probably allowed to cross at or near Durostorum. The Gothic War that follows lasts until 382.",
+      "sources": [{ "sourceKey": "wp-gothic-war-376", "sourceLocation": "infobox and Background" }],
+      "links": [{ "to": "adrianople", "kind": "related" }]
+    },
+    {
+      "uuid": "hengist-horsa",
+      "title": "Hengist and Horsa (traditional date)",
+      "start": "449 CE",
+      "tracks": ["anglo-saxons"],
+      "descr": "The Anglo-Saxon Chronicle records that in 449 Vortigern invited Hengist and Horsa to Britain to help fight the Picts; the History of the Britons gives 447. Bede names them as the first chieftains of the Angles, Saxons and Jutes in England.",
+      "sources": [{ "sourceKey": "wp-hengist-horsa", "sourceLocation": "Anglo-Saxon Chronicle, History of the Britons and Ecclesiastical History" }],
+      "startDates": [
+        { "year": "449 CE", "source": { "sourceKey": "wp-hengist-horsa", "sourceLocation": "Anglo-Saxon Chronicle" } },
+        { "year": "447 CE", "source": { "sourceKey": "wp-hengist-horsa", "sourceLocation": "History of the Britons" } }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "badon",
+      "title": "Battle of Badon",
+      "start": "c. 502 CE",
+      "tracks": ["anglo-saxons"],
+      "descr": "A Brittonic victory over the Saxons whose date is unknown. Scholars have proposed 493, 501 and 516; McCarthy and Ó Cróinín revise it to February 482 and Breeze (2020) to 493. Bede’s chronology implies 493–500. Gildas, writing c. 543–547, is the earliest source.",
+      "sources": [{ "sourceKey": "wp-badon", "sourceLocation": "infobox, Gildas, Bede and Scholarship > Date" }],
+      "startDates": [
+        { "year": "502 CE", "margin": 2, "source": { "sourceKey": "wp-badon", "sourceLocation": "infobox ('Unknown, c. 500–504 AD')" } },
+        { "year": "493 CE", "source": { "sourceKey": "wp-badon", "sourceLocation": "Scholarship > Date (proposed)" } },
+        { "year": "501 CE", "source": { "sourceKey": "wp-badon", "sourceLocation": "Scholarship > Date (proposed)" } },
+        { "year": "516 CE", "source": { "sourceKey": "wp-badon", "sourceLocation": "Scholarship > Date (proposed)" } },
+        { "year": "482 CE", "source": { "sourceKey": "wp-badon", "sourceLocation": "Scholarship > Date (McCarthy and Ó Cróinín)" } }
+      ]
+    },
+    {
+      "uuid": "rule-of-dukes",
+      "title": "The Rule of the Dukes",
+      "start": "574 CE",
+      "end": "584 CE",
+      "tracks": ["lombards"],
+      "descr": "An interregnum in the Lombard kingdom (574/5–584/5): after King Cleph dies, the dukes rule without a king for ten years (Paul the Deacon) or twelve (the Origo Gentis Langobardorum). After invading Frankish Provence in 584/5 they elect Cleph’s son Authari king.",
+      "sources": [
+        {
+          "sourceKey": "wp-rule-of-dukes",
+          "sourceLocation": "lead, Political context, Description by Paul the Deacon and Origo Gentis Langobardorum"
+        }
+      ],
+      "startDates": [{ "year": "575 CE", "margin": 1, "source": { "sourceKey": "wp-rule-of-dukes", "sourceLocation": "lead ('574/5–584/5')" } }],
+      "endDates": [{ "year": "585 CE", "margin": 1, "source": { "sourceKey": "wp-rule-of-dukes", "sourceLocation": "lead ('574/5–584/5')" } }],
+      "links": [{ "to": "lombards-italy", "kind": "related" }],
+      "importance": 3
+    },
+    {
+      "uuid": "dos-pilas-founded",
+      "title": "Tikal founds Dos Pilas",
+      "start": "629 CE",
+      "tracks": ["tikal"],
+      "descr": "The Tikal king Kʼinich Muwaan Jol II installs his four-year-old son Bʼalaj Chan Kʼawiil as ruler of Dos Pilas, an offshoot of the Tikal dynasty.",
+      "sources": [{ "sourceKey": "wp-dos-pilas", "sourceLocation": "lead, infobox and 629: Aligned to Tikal" }],
+      "importance": 3
+    },
+    {
+      "uuid": "yuknoom-cheen",
+      "title": "Yuknoom Chʼeen II rules Calakmul",
+      "start": "636 CE",
+      "end": "686 CE",
+      "tracks": ["calakmul"],
+      "descr": "He accedes on 1 May 636; his successor takes the throne in 686.",
+      "sources": [{ "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "infobox and Reign" }],
+      "importance": 3
+    },
+    {
+      "uuid": "dos-pilas-calakmul",
+      "title": "Dos Pilas defects to Calakmul",
+      "start": "648 CE",
+      "tracks": ["tikal", "calakmul"],
+      "descr": "Dos Pilas breaks away from Tikal and becomes a vassal of Calakmul; Yuknoom Chʼeen II reinstates Bʼalaj Chan Kʼawiil on its throne as his vassal. (The Yuknoom Chʼeen II page dates his expulsion to 650.)",
+      "sources": [
+        { "sourceKey": "wp-dos-pilas", "sourceLocation": "lead, 648: Aligned to Calakmul and Known rulers" },
+        { "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "Reign" }
+      ],
+      "links": [{ "to": "dos-pilas-founded", "kind": "related" }, { "to": "yuknoom-cheen", "kind": "related" }]
+    },
+    {
+      "uuid": "bhadravarman-i",
+      "title": "Bhadravarman I of Champa",
+      "start": "380 CE",
+      "end": "413 CE",
+      "tracks": ["champa"],
+      "descr": "King of Champa from 380 to 413 and author of several Sanskrit inscriptions; he builds temples and palaces at Mỹ Sơn and Trà Kiệu. He campaigns north in 399 and fights the Chinese governor from 405 to 413.",
+      "sources": [{ "sourceKey": "wp-bhadravarman", "sourceLocation": "lead and infobox" }],
+      "importance": 3
+    },
+    {
+      "uuid": "bhrikuti",
+      "title": "Bhrikuti marries Songtsen Gampo",
+      "start": "c. 621 CE",
+      "tracks": ["yarlung"],
+      "descr": "A Nepalese princess and the Tibetan king’s first queen, though her historicity is not certain and the date of the marriage is unknown: presumably about the time Narendradeva fled to Tibet (c. 621), or before 624, while one author gives 632.",
+      "sources": [{ "sourceKey": "wp-bhrikuti", "sourceLocation": "lead, infobox and Life" }],
+      "startDates": [
+        { "year": "621 CE", "source": { "sourceKey": "wp-bhrikuti", "sourceLocation": "Life ('c. 621 CE')" } },
+        { "year": "623 CE", "source": { "sourceKey": "wp-bhrikuti", "sourceLocation": "Life ('before 624 CE')" } },
+        { "year": "632 CE", "source": { "sourceKey": "wp-bhrikuti", "sourceLocation": "Life (Acharya Kirti Tulku Lobsang Tenzin: 'in 632')" } }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "chen-north-573",
+      "title": "Wu Mingche’s northern campaign",
+      "start": "573 CE",
+      "tracks": ["chen", "northern-qi"],
+      "descr": "In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall his general Wu Mingche holds Shouyang, and the land between the Yangtze and the Huai is entirely in Chen hands.",
+      "sources": [
+        { "sourceKey": "wp-wu-mingche", "sourceLocation": "During Emperor Xuan’s reign" },
+        { "sourceKey": "wp-xuan-chen", "sourceLocation": "Early reign" }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "wu-mingche-captured",
+      "title": "Northern Zhou captures Wu Mingche",
+      "start": "578 CE",
+      "tracks": ["chen", "northern-zhou"],
+      "descr": "After Northern Zhou destroys Northern Qi in 577, the Zhou general Wang Gui captures Wu Mingche and some 30,000 foot soldiers on 20 March 578.",
+      "sources": [
+        { "sourceKey": "wp-wu-mingche", "sourceLocation": "During Emperor Xuan’s reign" },
+        { "sourceKey": "wp-xuan-chen", "sourceLocation": "Late reign" }
+      ],
+      "links": [{ "to": "chen-north-573", "kind": "related" }],
+      "importance": 3
+    },
+    {
+      "uuid": "himiko",
+      "title": "Himiko rules Yamatai",
+      "start": "c. 185 CE",
+      "end": "248 CE",
+      "tracks": ["yayoi"],
+      "descr": "The queen of Yamatai sends her first recorded embassy to the Wei court in 238 (Book of Wei; the Nihon Shoki’s quotation gives 239), another in 243, and envoys to Daifang in 247. She dies in 247 or 248.",
+      "sources": [
+        {
+          "sourceKey": "wp-himiko",
+          "sourceLocation": "lead, infobox, Relations with Wei and conflict with Kuna, Japanese sources, Death and succession"
+        },
+        { "sourceKey": "wp-yamatai", "sourceLocation": "lead, infobox, Location and Chinese texts" }
+      ],
+      "startDates": [
+        { "year": "190 CE", "source": { "sourceKey": "wp-himiko", "sourceLocation": "lead and infobox ('around 190')" } },
+        { "year": "180 CE", "source": { "sourceKey": "wp-yamatai", "sourceLocation": "infobox and Location ('c. 180')" } }
+      ],
+      "endDates": [
+        { "year": "248 CE", "margin": 1, "source": { "sourceKey": "wp-himiko", "sourceLocation": "lead ('247 or 248')" } },
+        { "year": "248 CE", "source": { "sourceKey": "wp-yamatai", "sourceLocation": "lead ('died c. 248 CE')" } }
+      ]
+    },
+    {
+      "uuid": "suiko",
+      "title": "Empress Suiko; Prince Shōtoku regent",
+      "start": "593 CE",
+      "end": "628 CE",
+      "tracks": ["asuka"],
+      "descr": "After the assassination of Emperor Sushun in 592, Suiko ascends the throne (15 January 593 by the Gregorian calendar) and reigns until her death in 628. Prince Shōtoku is regent from 593 to 621.",
+      "sources": [{ "sourceKey": "wp-suiko", "sourceLocation": "lead, infobox and Biography" }],
+      "links": [{ "to": "seventeen-article", "kind": "related" }]
     }
   ]
 }

@@ -34,8 +34,8 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   Anglo-Saxons, early Slavs) and the Americas (Teotihuacan, Monte Albán, the Epi-Olmec, the Maya cities, Chavín to
   Wari and Tiwanaku, Adena, Hopewell, Hohokam, Dorset) and Southeast Asia and Tibet (Âu Lạc, Nanyue, the Trưng sisters,
   the Early Lý, Champa, Funan, Chenla, the Pyu; Zhangzhung, the Yarlung kings and Songtsen Gampo, the Tuyuhun) and China's Northern and Southern
-  dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait); 338 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
-  `scripts/classical/` (skeleton first, `collapsed.ts` last); sources and judgment calls in `docs/classical-sources.md`.
+  dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait), plus a follow-up pass on values first read only in summary (`summary-only.ts`); 369 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
+  `scripts/classical/` (skeleton first, then the region passes, `summary-only.ts`, and `collapsed.ts` last); sources and judgment calls in `docs/classical-sources.md`.
   It opens like the ancient timeline: groups expanded, each region collapsed to its key events.
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).

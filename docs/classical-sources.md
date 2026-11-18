@@ -311,3 +311,38 @@ disambiguation page. Australia was added afterwards at Kevin's request (two more
   *Gwion Gwion rock paintings*, *Sydney rock engravings*, *Aboriginal Australians*, *Torres Strait Islanders*, *Torres
   Strait Islands* or *Makassan contact with Australia*. Not used: Palawa shell necklaces ("at least 2,600 years",
   before the period, and a minimum), shell fish hooks at about 1,200 years ago (after it; mentioned in a description).
+
+## Follow-up: values first read only in summary (18 November 2026)
+
+`scripts/classical/summary-only.ts` (run after the region passes, before `collapsed.ts`): 31 events, 32 sources, plus
+Valerian's capture in the Edessa event and the *Kingdom of Aksum* sidebar's "c. 150 BC" as a claim on Aksum's start.
+The region passes had read long overview pages that the fetch tool cut off after about 40,000 characters; this pass
+had five Sonnet fetch agents read the short dedicated articles instead (Toramana, Battle of the Utus, Dos Pilas, …).
+No page carried an AI-text or LLM-translation banner; several carry citation banners (*Emperor Xuan of Chen*,
+*Hou Jing*, *Battle of Thapsus*, *Yuknoom Chʼeen II*, *Bayan I*, *Vima Kadphises*; *Battle of Vercellae* relies on
+primary sources).
+
+- **Now in:** Gautamiputra Satakarni's defeat of Nahapana (claims 78 and 124 CE; the page gives three scholars'
+  dates), Toramana (493–515), Bhanugupta's Eran inscription (510), Mihirakula (515–542; a table says 540), Sondani
+  (528; the *Mihirakula* lead's 525–532 as a claim), Vima Kadphises (113–127; the page also has 90–100 and 100–127),
+  Vasudeva I (191–232); Shelun takes the title khagan (402), Peroz I's Hephthalite wars (474–484), the Utus (447),
+  Attila in Italy (452); Thapsus (6 April 46 BC, pre-Julian), the Persian conquest of Egypt (618–621, troops leave in
+  629); Aquae Sextiae (102 BC), Vercellae (30 July 101 BC), Vercingetorix's execution (46 BC), Germanicus in Germania
+  (14–16, with Arminius's murder in 21), Abritus (251), the Goths on the Danube (summer 376), Hengist and Horsa (449,
+  the *Anglo-Saxon Chronicle*; 447, the *History of the Britons*), Badon (infobox c. 500–504; 482, 493, 501 and 516 as
+  claims), the Rule of the Dukes (574/5–584/5); Dos Pilas founded by Tikal (629) and defecting to Calakmul (648; the
+  *Yuknoom Chʼeen II* page says 650), Yuknoom Chʼeen II (636–686); Bhadravarman I of Champa (380–413), Bhrikuti's
+  marriage (c. 621, before 624, or 632; her historicity is uncertain); Wu Mingche's 573 campaign and his capture on
+  20 March 578; Himiko (c. 180/190 – 247/248; embassy 238, or 239 in the *Nihon Shoki*), Suiko and Shōtoku (593).
+- **Judgment calls:** "before 624" is stored as 623; Himiko's start is c. 185 between the two pages' 180 and 190.
+  Already covered, so not added: the siege of Alexandria (in *The Arab conquest of Egypt*) and Hou Jing's
+  proclamation (in *The Hou Jing Disturbance*). Bayan I's attack on Thrace (582) is in a section with no sources, so
+  it is not used.
+- **Still summary only:** the Nok pottery phases, Aksum's "between 150 BCE and 150 CE", the 642 surrender of
+  Alexandria and the Babylon treaty, the 382 Gothic treaty, Vercingetorix's August/September execution, Idistaviso
+  as AD 16, the Moche super El Niño (563–594), Champa's kings and the Sui sack of 605, the Northern Qi Great Wall
+  (552–563) and Hou Jing’s November 551 proclamation.
+- **Not found:** Mahinda's mission year (*Mahinda (Buddhist monk)* gives none), the Sipán burial date (*Lord of
+  Sipán* dates only the platform, before 300 AD), the year the Avars took Sirmium (*Bayan I*). *Battle of Songzhou*
+  404'd. Not tried: Kumārajīva's titles and Hopewell's local variants (not dated events), Srivijaya (after the
+  period), Tabon and Samoa ("years ago" figures).
