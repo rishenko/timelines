@@ -281,7 +281,7 @@ under Oceania, and the Sa Huỳnh culture under Southeast Asia). Three web-fetch
 carried an AI-text or LLM-translation banner; *Polynesians* asks for help translating from the Russian article, which
 is treated as in the ancient Pacific pass (acceptable). *Kutai Martadipura*, *Mulawarman inscription* and *Maritime
 Jade Road* returned 404s, so Kutai is cited from *Kutai* and the jade road from *Lingling-o*. *Pan Pan* is a
-disambiguation page. Australia was added afterwards at Kevin's request (two more agents, 16 pages; see below).
+disambiguation page. Australia was added afterwards at the author's request (two more agents, 16 pages; see below).
 
 - **Island Southeast Asia:** the Bujang Valley (Sungai Batu monument 110 AD; "5th to 14th century" as a claim), the
   Buni culture (c. 400 BC – 100 AD; "probably survived until 500 AD" as a claim; the skeleton's Buni event moved onto
