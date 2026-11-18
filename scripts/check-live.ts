@@ -1,6 +1,7 @@
 // After `npm run deploy`, waits until GitHub Pages serves the build in dist/, then checks that the page
 // loads without errors and (optionally) contains some text.
 //   node scripts/check-live.ts [--url https://rishenko.github.io/timelines/] [--expect "Harappan civilization"]...
+//   --url may carry its own parameters, e.g. --url "https://rishenko.github.io/timelines/?timeline=REDACTED".
 // Pages can take a minute or two to update; this retries for about three minutes.
 import { readdirSync } from 'node:fs';
 import { chromium } from 'playwright-core';
@@ -19,7 +20,10 @@ page.on('pageerror', (e) => errors.push(e.message));
 let ok = false;
 for (let attempt = 0; attempt < 12 && !ok; attempt++) {
   if (attempt) await page.waitForTimeout(15000);
-  await page.goto(`${base}?nocache=${Date.now()}`);
+  // add the cache-buster to whatever the URL already has (e.g. ?timeline=REDACTED) instead of replacing it
+  const url = new URL(base);
+  url.searchParams.set('nocache', String(Date.now()));
+  await page.goto(url.href);
   await page.waitForTimeout(2500);
   const scripts = await page.$$eval('script[src]', (s) => s.map((x) => (x as HTMLScriptElement).src));
   ok = scripts.some((s) => s.endsWith(bundle));
