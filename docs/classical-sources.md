@@ -122,3 +122,41 @@ carried an AI-text or LLM-translation banner. *Alans* was read verbatim only in 
   and Alans share a row; the Hephthalites' destruction uses the First Turkic page's 557 and the Hephthalite lead's 560
   (the Western Turkic page's Qarshi, 565, is not used). Not used (summary only): Attila's 447 and 452 campaigns in
   detail, the Rouran founding by Shelun c. 402, Peroz I and the Hephthalites, the Avar khagan list.
+
+## Fifth pass: Africa (18 November 2026)
+
+`scripts/classical/africa.ts`: 36 events, 30 sources (two reused from the skeleton), 12 rows. Three web-fetch agents
+(on Sonnet) read 30 pages; none carried an AI-text or LLM-translation banner. *Migration to Abyssinia* invites
+editors to translate from the Arabic article but does not say its text is machine-translated. *Meroitic–Roman War*
+returned a 404, so the war is cited from *Meroë* and *Napata*. Most long pages were read verbatim only in their first
+~40,000 characters; the rest came back as summaries and is not used.
+
+- **North Africa:** Mauretania (from c. 225 BCE; client kingdom under Juba II 25 BC – AD 23, 24 as a claim; annexed
+  40–44 AD), Numidia (202–46 BCE; the Numidia infobox's 25 BC as a claim), Masinissa (202–148 BCE; 149 as a claim),
+  his war with Carthage (152–150 BCE), the Jugurthine War (111–105 BC; 106 as a claim), the Garamantes (6th century
+  BCE – late 7th century CE), Balbus (19 BC), Septimius Severus at Garama (202 AD), the Vandals' crossing (429–435),
+  Carthage (439), the sack of Rome (455) and Belisarius (534).
+- **Kush and Nubia:** Kush (c. 780 BC – c. 350 AD; the 330 capture of Meroë as a claim), the Meroitic period (c. 270
+  BC; Meroë's c. 280 as a claim), the Meroitic script (3rd century BC; Rilly's first half of it), the war with Rome
+  and the treaty with Amanirenas (23–22 BC), Nero's expedition (61 AD), the fall of Meroë (330–350), Nobatia (c. 400
+  – c. 631) and Silko (c. 450, with the last Meroitic inscription, AD 410/450), Dongola (c. 500; "late 5th century" as
+  a claim), Philae (535–538), the conversions (543–580), Makuria's annexation of Nobatia ("during the 620s, but before
+  642"), Makuria (5th century – late 15th) and Alodia (6th century – c. 1500), the Arab invasions and the Baqt
+  (641/642–652).
+- **Aksum and the Horn:** Dʿmt (8th – 4th century BC), Aksum (1st century – 960; the Dʿmt page's c. 150 BC as a
+  claim), the Periplus (AD 40–70; Schoff and Agius's c. 60 as a claim), the first coins (c. 270; the Aksum lead's
+  Endybis 270–310 and the 227–235 captions as claims), Ezana (320s – c. 360; c. 321 as a claim), the conversion (325
+  or 328; Frumentius's consecration 328, or 340–346), the stelae (4th century), Kaleb (514–534; 542 as a claim) and
+  Yemen (around 520), the Aksumite–Persian wars (570–578), the migration to Abyssinia (613 or 615).
+- **South of the Sahara:** Djenné-Djenno (250 BCE – 1400 CE; growth by 400 CE), Nok (c. 1500 BC – c. 1 BC; row
+  only), Eastern Bantu iron-working (1st century BC – 300 AD) and the expansion's arrival in South Africa (300–500
+  AD).
+- **Egypt:** the Arab conquest (December 639 – September 642; Heliopolis 6 July 640, the Babylon Fortress September
+  640 – 6 April 641, Alexandria from March 641).
+- **Judgment calls:** Nobatia ends where Makuria's page dates the annexation, not at the Nobatia page's "by 707";
+  Napata's 593 BC sack and the 591 BC capital move are before the period and left out; Kaleb's Yemen campaign is a
+  separate event from the existing *Aksum conquers Himyar* (c. 530, from the Himyar page), which now also sits on the
+  Aksum row; the skeleton's *Bantu speakers reach Lake Victoria and Angola* covers c. 500 BCE, so no second event;
+  *Herodotus describes the Garamantes* moved from the region row to the Garamantes row. Not used (summary only): the
+  Battle of Thapsus, the Persian occupation of Egypt (618–629), Babylon's treaty dates, Alexandria's surrender (642),
+  the Nok pottery phases, Aksum's c. 150 BCE – 150 CE origins.

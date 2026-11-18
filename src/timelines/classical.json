@@ -223,7 +223,7 @@
       "tags": [
         "wikipedia"
       ],
-      "accessed": "2026-11-17"
+      "accessed": "2026-11-18"
     },
     "wp-garamantes": {
       "name": "Wikipedia: Garamantes",
@@ -231,7 +231,7 @@
       "tags": [
         "wikipedia"
       ],
-      "accessed": "2026-11-17"
+      "accessed": "2026-11-18"
     },
     "wp-buddha": {
       "name": "Wikipedia: The Buddha",
@@ -1320,6 +1320,230 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-numidia": {
+      "name": "Wikipedia: Numidia",
+      "url": "https://en.wikipedia.org/wiki/Numidia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-masinissa": {
+      "name": "Wikipedia: Masinissa",
+      "url": "https://en.wikipedia.org/wiki/Masinissa",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-jugurthine": {
+      "name": "Wikipedia: Jugurthine War",
+      "url": "https://en.wikipedia.org/wiki/Jugurthine_War",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-mauretania": {
+      "name": "Wikipedia: Mauretania",
+      "url": "https://en.wikipedia.org/wiki/Mauretania",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-vandal-kingdom": {
+      "name": "Wikipedia: Vandal Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Vandal_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kush": {
+      "name": "Wikipedia: Kingdom of Kush",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-meroe": {
+      "name": "Wikipedia: Meroë",
+      "url": "https://en.wikipedia.org/wiki/Mero%C3%AB",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-napata": {
+      "name": "Wikipedia: Napata",
+      "url": "https://en.wikipedia.org/wiki/Napata",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-meroitic-script": {
+      "name": "Wikipedia: Meroitic script",
+      "url": "https://en.wikipedia.org/wiki/Meroitic_script",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-nobatia": {
+      "name": "Wikipedia: Nobatia",
+      "url": "https://en.wikipedia.org/wiki/Nobatia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-makuria": {
+      "name": "Wikipedia: Makuria",
+      "url": "https://en.wikipedia.org/wiki/Makuria",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-alodia": {
+      "name": "Wikipedia: Alodia",
+      "url": "https://en.wikipedia.org/wiki/Alodia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-baqt": {
+      "name": "Wikipedia: Baqt",
+      "url": "https://en.wikipedia.org/wiki/Baqt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-aksum": {
+      "name": "Wikipedia: Kingdom of Aksum",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-ezana": {
+      "name": "Wikipedia: Ezana of Axum",
+      "url": "https://en.wikipedia.org/wiki/Ezana_of_Axum",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kaleb": {
+      "name": "Wikipedia: Kaleb of Axum",
+      "url": "https://en.wikipedia.org/wiki/Kaleb_of_Axum",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-dmt": {
+      "name": "Wikipedia: Dʿmt",
+      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-periplus": {
+      "name": "Wikipedia: Periplus of the Erythraean Sea",
+      "url": "https://en.wikipedia.org/wiki/Periplus_of_the_Erythraean_Sea",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-frumentius": {
+      "name": "Wikipedia: Frumentius",
+      "url": "https://en.wikipedia.org/wiki/Frumentius",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-obelisk-axum": {
+      "name": "Wikipedia: Obelisk of Axum",
+      "url": "https://en.wikipedia.org/wiki/Obelisk_of_Axum",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-abyssinia-migration": {
+      "name": "Wikipedia: Migration to Abyssinia",
+      "url": "https://en.wikipedia.org/wiki/Migration_to_Abyssinia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-aksum-currency": {
+      "name": "Wikipedia: Aksumite currency",
+      "url": "https://en.wikipedia.org/wiki/Aksumite_currency",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-nok": {
+      "name": "Wikipedia: Nok culture",
+      "url": "https://en.wikipedia.org/wiki/Nok_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-djenne-djenno": {
+      "name": "Wikipedia: Djenné-Djenno",
+      "url": "https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-arab-egypt": {
+      "name": "Wikipedia: Arab conquest of Egypt",
+      "url": "https://en.wikipedia.org/wiki/Arab_conquest_of_Egypt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-heliopolis-640": {
+      "name": "Wikipedia: Battle of Heliopolis",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Heliopolis",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-babylon-fortress": {
+      "name": "Wikipedia: Siege of Babylon Fortress",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Babylon_Fortress",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-alexandria-641": {
+      "name": "Wikipedia: Siege of Alexandria (641)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Alexandria_(641)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     }
   },
   "tracks": [
@@ -1341,10 +1565,211 @@
       "parent": "north-africa"
     },
     {
+      "id": "mauretania",
+      "name": "Mauretania",
+      "color": "#9a7040",
+      "parent": "north-africa",
+      "span": {
+        "start": -224,
+        "end": 44,
+        "startDates": [
+          {
+            "year": -224,
+            "source": {
+              "sourceKey": "wp-mauretania",
+              "sourceLocation": "History ('around 225 BC', Bagas)"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "numidia",
+      "name": "Numidia",
+      "color": "#b0884a",
+      "parent": "north-africa",
+      "span": {
+        "start": -201,
+        "end": -45,
+        "endDates": [
+          {
+            "year": -45,
+            "source": {
+              "sourceKey": "wp-jugurthine",
+              "sourceLocation": "lead (Roman province)"
+            }
+          },
+          {
+            "year": -24,
+            "source": {
+              "sourceKey": "wp-numidia",
+              "sourceLocation": "infobox (annexed by the Roman Empire)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "vandals",
+      "name": "Vandal Kingdom",
+      "color": "#6a5a8a",
+      "parent": "north-africa",
+      "span": {
+        "start": 435,
+        "end": 534
+      }
+    },
+    {
+      "id": "garamantes",
+      "name": "Garamantes",
+      "color": "#c09060",
+      "parent": "north-africa",
+      "span": {
+        "start": -549,
+        "end": 675,
+        "startDates": [
+          {
+            "year": -550,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "Prehistory ('From the 6th century BCE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 675,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead ('late 7th century AD')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
       "id": "nubia",
       "name": "Kush and Nubia",
       "color": "#b8862a",
       "parent": "africa"
+    },
+    {
+      "id": "kush",
+      "name": "Kingdom of Kush (Napata, Meroë)",
+      "color": "#8a5a2a",
+      "parent": "nubia",
+      "span": {
+        "start": -779,
+        "end": 350,
+        "endDates": [
+          {
+            "year": 350,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "infobox (disestablished)"
+            }
+          },
+          {
+            "year": 350,
+            "source": {
+              "sourceKey": "wp-meroe",
+              "sourceLocation": "Fourth Meroitic Period"
+            }
+          },
+          {
+            "year": 330,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "infobox (Axumite capture of Meroë)"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "nobatia",
+      "name": "Nobatia",
+      "color": "#a06a3a",
+      "parent": "nubia",
+      "span": {
+        "start": 400,
+        "end": 631,
+        "endDates": [
+          {
+            "year": 631,
+            "margin": 11,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "Early period ('presumably during the 620s, but before 642')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "makuria",
+      "name": "Makuria",
+      "color": "#7a4a3a",
+      "parent": "nubia",
+      "span": {
+        "start": 450,
+        "end": 1475,
+        "startDates": [
+          {
+            "year": 450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('5th century')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1475,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('late 15th century')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "alodia",
+      "name": "Alodia",
+      "color": "#9a5a4a",
+      "parent": "nubia",
+      "span": {
+        "start": 550,
+        "end": 1500,
+        "startDates": [
+          {
+            "year": 550,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "infobox ('6th century')"
+            }
+          },
+          {
+            "year": 550,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "Origins ('completed by the mid-6th century')"
+            }
+          }
+        ],
+        "circa": true
+      }
     },
     {
       "id": "horn",
@@ -1353,10 +1778,97 @@
       "parent": "africa"
     },
     {
+      "id": "dmt",
+      "name": "Dʿmt",
+      "color": "#7a6a3a",
+      "parent": "horn",
+      "span": {
+        "start": -749,
+        "end": -349,
+        "startDates": [
+          {
+            "year": -750,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox ('8th c. BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -350,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox ('4th c. BC')"
+            }
+          },
+          {
+            "year": -399,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "History ('approximately 800/700–400 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "aksum",
+      "name": "Kingdom of Aksum",
+      "color": "#5a7a4a",
+      "parent": "horn",
+      "span": {
+        "start": 50,
+        "end": 960,
+        "startDates": [
+          {
+            "year": 50,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-aksum",
+              "sourceLocation": "infobox and lead ('1st century')"
+            }
+          },
+          {
+            "year": -149,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "lead ('possibly around 150 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
       "id": "sub-saharan",
       "name": "Africa south of the Sahara",
       "color": "#b8862a",
       "parent": "africa"
+    },
+    {
+      "id": "djenne-djenno",
+      "name": "Djenné-Djenno",
+      "color": "#a07850",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -249,
+        "end": 1400
+      }
+    },
+    {
+      "id": "nok",
+      "name": "Nok culture",
+      "color": "#8a6040",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -1499,
+        "end": 0,
+        "circa": true
+      }
     },
     {
       "id": "europe-med",
@@ -2972,7 +3484,7 @@
       "title": "Herodotus describes the Garamantes",
       "start": -449,
       "tracks": [
-        "north-africa"
+        "garamantes"
       ],
       "descr": "The earliest written record of them: \"a very great nation\" who herded cattle and farmed dates.",
       "sources": [
@@ -4530,7 +5042,8 @@
       "title": "Aksum conquers Himyar",
       "start": 530,
       "tracks": [
-        "himyar"
+        "himyar",
+        "aksum"
       ],
       "descr": "After the conquest Christianity becomes Himyar’s main religion; Sasanian intervention brings Yemen under Persian influence in 575 or 578.",
       "sources": [
@@ -6569,6 +7082,1094 @@
           "sourceLocation": "lead and infobox"
         }
       ]
+    },
+    {
+      "uuid": "masinissa-numidia",
+      "title": "Masinissa’s kingdom of Numidia",
+      "start": -201,
+      "end": -147,
+      "tracks": [
+        "numidia",
+        "carthage"
+      ],
+      "descr": "During the Second Punic War Masinissa, king of the Massylii, defeats Syphax of the Masaesyli; with Scipio he beats Syphax and Hasdrubal at Cirta in 203 BC. After Zama (202 BC) he rules Numidia until his death in 148 BC, aged about 90, and by 158 BC has conquered Lepcis Magna and the Tripolitanian coast.",
+      "sources": [
+        {
+          "sourceKey": "wp-numidia",
+          "sourceLocation": "infobox, lead and Establishment"
+        },
+        {
+          "sourceKey": "wp-masinissa",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "endDates": [
+        {
+          "year": -147,
+          "source": {
+            "sourceKey": "wp-masinissa",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": -148,
+          "source": {
+            "sourceKey": "wp-jugurthine",
+            "sourceLocation": "Jugurtha and Numidia"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "second-punic-war",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "numidia-carthage-war",
+      "title": "Masinissa’s war with Carthage",
+      "start": -151,
+      "end": -149,
+      "tracks": [
+        "numidia",
+        "carthage"
+      ],
+      "descr": "Masinissa seizes more Carthaginian territory in 152 BC; Carthage invades his lands in 151 BC with 52,000 men, breaking the peace treaty of 201 BC, and its general Hasdrubal is decisively defeated by Masinissa’s son Gulussa in 150 BC. In 146 BC Carthage is obliterated.",
+      "sources": [
+        {
+          "sourceKey": "wp-numidia",
+          "sourceLocation": "War with Carthage"
+        }
+      ],
+      "links": [
+        {
+          "to": "carthage-destroyed",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "jugurthine-war",
+      "title": "Jugurthine War",
+      "start": -110,
+      "end": -104,
+      "tracks": [
+        "numidia",
+        "roman-republic",
+        "mauretania"
+      ],
+      "descr": "In 113 BC Jugurtha again declares war on his cousin; Rome declares war on him in 111 BC, and Metellus arrives in Africa in 109 BC. Mauretania fights on Jugurtha’s side from 107 BC and on Rome’s in 105 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-jugurthine",
+          "sourceLocation": "infobox, lead and Jugurtha and Numidia"
+        }
+      ],
+      "endDates": [
+        {
+          "year": -104,
+          "source": {
+            "sourceKey": "wp-jugurthine",
+            "sourceLocation": "infobox and lead"
+          }
+        },
+        {
+          "year": -105,
+          "source": {
+            "sourceKey": "wp-jugurthine",
+            "sourceLocation": "Algeria navbox (111–106 BC)"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "numidia-province",
+      "title": "Numidia becomes a Roman province",
+      "start": -45,
+      "tracks": [
+        "numidia",
+        "roman-republic"
+      ],
+      "descr": "Juba I’s reign (60–46 BC) ends. The Numidia infobox dates the annexation by the Roman Empire to 25 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-jugurthine",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-numidia",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -45,
+          "source": {
+            "sourceKey": "wp-jugurthine",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -24,
+          "source": {
+            "sourceKey": "wp-numidia",
+            "sourceLocation": "infobox"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "juba-ii",
+      "title": "Juba II: Mauretania a Roman client kingdom",
+      "start": -24,
+      "end": 23,
+      "tracks": [
+        "mauretania",
+        "roman-empire"
+      ],
+      "descr": "After Bocchus II bequeaths his kingdom to Octavian (33 BC), Augustus makes Mauretania a client kingdom in 25 BC under Juba II, who marries Cleopatra Selene II the same year. In AD 21 Juba makes his son Ptolemy co-ruler.",
+      "sources": [
+        {
+          "sourceKey": "wp-mauretania",
+          "sourceLocation": "lead, infobox, History and monarch table"
+        }
+      ],
+      "endDates": [
+        {
+          "year": 23,
+          "source": {
+            "sourceKey": "wp-mauretania",
+            "sourceLocation": "monarch table"
+          }
+        },
+        {
+          "year": 24,
+          "source": {
+            "sourceKey": "wp-mauretania",
+            "sourceLocation": "History ('AD 23–24')"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "mauretania-annexed",
+      "title": "Rome annexes Mauretania",
+      "start": 40,
+      "end": 44,
+      "tracks": [
+        "mauretania",
+        "roman-empire"
+      ],
+      "descr": "Caligula orders the execution of King Ptolemy in 40 AD; after Aedemon’s death in 42 AD, Sabalus surrenders in 44 AD and the region is annexed to Rome.",
+      "sources": [
+        {
+          "sourceKey": "wp-mauretania",
+          "sourceLocation": "lead, infobox and History"
+        }
+      ],
+      "links": [
+        {
+          "to": "juba-ii",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "balbus-garamantes",
+      "title": "Balbus campaigns against the Garamantes",
+      "start": -18,
+      "tracks": [
+        "garamantes",
+        "roman-empire"
+      ],
+      "descr": "The Romans capture fifteen Garamantian settlements. The earliest written record of the Garamantes, by Herodotus, dates to the 5th century BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-garamantes",
+          "sourceLocation": "History"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "severus-garama",
+      "title": "Septimius Severus captures Garama",
+      "start": 202,
+      "tracks": [
+        "garamantes",
+        "roman-empire"
+      ],
+      "descr": "The Garamantian capital falls to Rome. The Garamantes first emerge as a major regional power in the mid-2nd century AD and flourish until the late 7th century.",
+      "sources": [
+        {
+          "sourceKey": "wp-garamantes",
+          "sourceLocation": "lead and History"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "vandals-cross",
+      "title": "The Vandals cross into Africa",
+      "start": 429,
+      "end": 435,
+      "tracks": [
+        "vandals",
+        "roman-empire"
+      ],
+      "descr": "An estimated 80,000 Vandals under Gaiseric cross from Hispania in 429. They besiege Hippo Regius in 430, where St. Augustine dies on 28 August 430, three months into the siege; peace is made with Rome in 435.",
+      "sources": [
+        {
+          "sourceKey": "wp-vandal-kingdom",
+          "sourceLocation": "lead and Establishment"
+        }
+      ]
+    },
+    {
+      "uuid": "vandals-carthage",
+      "title": "The Vandals take Carthage",
+      "start": 439,
+      "tracks": [
+        "vandals",
+        "roman-empire"
+      ],
+      "descr": "Gaiseric breaks the treaty and captures Carthage, which becomes his capital. The Vandals raid Sicily in 440, and peace is secured in 442.",
+      "sources": [
+        {
+          "sourceKey": "wp-vandal-kingdom",
+          "sourceLocation": "infobox, lead and Establishment"
+        }
+      ],
+      "links": [
+        {
+          "to": "vandals-cross",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "vandal-sack-rome",
+      "title": "The Vandals sack Rome",
+      "start": 455,
+      "tracks": [
+        "vandals",
+        "roman-empire"
+      ],
+      "descr": "In the 460s the Romans launch two expeditions by sea against the Vandal kingdom.",
+      "sources": [
+        {
+          "sourceKey": "wp-vandal-kingdom",
+          "sourceLocation": "lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "sack-rome-410",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "vandals-fall",
+      "title": "Belisarius conquers the Vandal kingdom",
+      "start": 534,
+      "tracks": [
+        "vandals",
+        "eastern-roman"
+      ],
+      "descr": "The kingdom ends after 99 years; Gelimer (530–534) is its last ruler.",
+      "sources": [
+        {
+          "sourceKey": "wp-vandal-kingdom",
+          "sourceLocation": "infobox and lead"
+        }
+      ],
+      "links": [
+        {
+          "to": "justinian",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "meroitic-period",
+      "title": "Royal burials move to Meroë: the Meroitic period",
+      "start": -269,
+      "tracks": [
+        "kush"
+      ],
+      "descr": "Under Arakamani the royal burial ground moves from Napata to Meroë, and Napata loses its symbolic role. The pyramids of Meroë are built from c. 300 BC to about 350 AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "section headings"
+        },
+        {
+          "sourceKey": "wp-meroe",
+          "sourceLocation": "First Meroitic Period"
+        },
+        {
+          "sourceKey": "wp-napata",
+          "sourceLocation": "lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -269,
+          "source": {
+            "sourceKey": "wp-kush",
+            "sourceLocation": "section heading (Meroitic period, c. 270 BC)"
+          }
+        },
+        {
+          "year": -269,
+          "source": {
+            "sourceKey": "wp-napata",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -279,
+          "source": {
+            "sourceKey": "wp-meroe",
+            "sourceLocation": "First Meroitic Period (Arakamani, c. 280 BC)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "meroitic-script",
+      "title": "The Meroitic script",
+      "start": -274,
+      "tracks": [
+        "kush"
+      ],
+      "descr": "Developed at the beginning of the Meroitic period to write the Meroitic language; the cursive form predates the earliest surviving hieroglyphic inscription by a century or more. It was deciphered by Francis Llewellyn Griffith (1909, or 1911 in the body of the page).",
+      "sources": [
+        {
+          "sourceKey": "wp-meroitic-script",
+          "sourceLocation": "infobox, lead and footnote 2"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -275,
+          "margin": 24,
+          "source": {
+            "sourceKey": "wp-meroitic-script",
+            "sourceLocation": "footnote 2 (Rilly: 'first half of the 3rd Cent. BC')"
+          }
+        },
+        {
+          "year": -250,
+          "margin": 49,
+          "source": {
+            "sourceKey": "wp-meroitic-script",
+            "sourceLocation": "lead ('3rd century BC')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kush-rome-war",
+      "title": "Kush at war with Rome; peace with Amanirenas",
+      "start": -22,
+      "end": -21,
+      "tracks": [
+        "kush",
+        "roman-egypt"
+      ],
+      "descr": "After a Nubian attack on southern Egypt, the Roman governor Petronius invades Nubia and sacks Napata (22 BC; 23 BC on the Napata page). A peace treaty is signed in 22 BC between Rome and Meroë under Augustus and Amanirenas.",
+      "sources": [
+        {
+          "sourceKey": "wp-meroe",
+          "sourceLocation": "Conflict with Rome"
+        },
+        {
+          "sourceKey": "wp-napata",
+          "sourceLocation": "lead and Late Napatan"
+        }
+      ],
+      "links": [
+        {
+          "to": "augustus",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "nero-meroe",
+      "title": "Nero’s expedition reaches Meroë",
+      "start": 61,
+      "tracks": [
+        "kush",
+        "roman-empire"
+      ],
+      "descr": "In the autumn of 61 AD a Praetorian party sent by Nero reaches Meroë and goes up the White Nile to the Sudd. The kingdom begins to fade as a power by the 1st or 2nd century AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-meroe",
+          "sourceLocation": "Conflict with Rome"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "meroe-falls",
+      "title": "Aksum takes Meroë: the end of Kush",
+      "start": 330,
+      "end": 350,
+      "tracks": [
+        "kush",
+        "aksum"
+      ],
+      "descr": "Meroë is already in decline around 300. Aksumites capture Meroë and loot its gold, and Ezana takes the title “King of Ethiopia”; the Aksumite presence is short-lived, and Kush dissolves into Nobatia, Makuria and Alodia.",
+      "sources": [
+        {
+          "sourceKey": "wp-kush",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-meroe",
+          "sourceLocation": "Fourth Meroitic Period"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 330,
+          "source": {
+            "sourceKey": "wp-kush",
+            "sourceLocation": "infobox (Axumite capture of Meroë)"
+          }
+        },
+        {
+          "year": 330,
+          "source": {
+            "sourceKey": "wp-meroe",
+            "sourceLocation": "Fourth Meroitic Period (Ezana 'around 330')"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": 350,
+          "source": {
+            "sourceKey": "wp-meroe",
+            "sourceLocation": "Fourth Meroitic Period ('In 350 AD Meroë was destroyed by Axum')"
+          }
+        },
+        {
+          "year": 350,
+          "source": {
+            "sourceKey": "wp-kush",
+            "sourceLocation": "infobox (disestablished)"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "ezana",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "silko",
+      "title": "Silko of Nobatia drives out the Blemmyes",
+      "start": 450,
+      "tracks": [
+        "nobatia"
+      ],
+      "descr": "The first known king of Nobatia claims to have driven the Blemmyes into the Eastern Desert; the capital is set at Pachoras (Faras). The last known Meroitic inscription, of the Blemmye king Kharamadoye at Kalabsha, dates to AD 410/450.",
+      "sources": [
+        {
+          "sourceKey": "wp-nobatia",
+          "sourceLocation": "infobox, lead and History"
+        },
+        {
+          "sourceKey": "wp-meroitic-script",
+          "sourceLocation": "lead"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "dongola",
+      "title": "Dongola founded",
+      "start": 500,
+      "tracks": [
+        "makuria"
+      ],
+      "descr": "The Makurian capital; a new Makurian state has emerged by the 5th century, after the collapse of Kush.",
+      "sources": [
+        {
+          "sourceKey": "wp-makuria",
+          "sourceLocation": "lead and Early period"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 500,
+          "source": {
+            "sourceKey": "wp-makuria",
+            "sourceLocation": "lead ('around 500')"
+          }
+        },
+        {
+          "year": 475,
+          "margin": 25,
+          "source": {
+            "sourceKey": "wp-makuria",
+            "sourceLocation": "Early period ('late 5th century')"
+          }
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "philae-closed",
+      "title": "The temple at Philae is closed",
+      "start": 535,
+      "end": 538,
+      "tracks": [
+        "nobatia",
+        "eastern-roman"
+      ],
+      "descr": "In the 530s the Byzantines under Justinian pursue a policy of expansion into Nubia.",
+      "sources": [
+        {
+          "sourceKey": "wp-nobatia",
+          "sourceLocation": "Religion > Paganism"
+        },
+        {
+          "sourceKey": "wp-makuria",
+          "sourceLocation": "Early period"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "nubia-christian",
+      "title": "The Nubian kingdoms convert to Christianity",
+      "start": 543,
+      "end": 580,
+      "tracks": [
+        "nobatia",
+        "makuria",
+        "alodia"
+      ],
+      "descr": "Nobatia converts in 543; Makuria has “received the faith of Christ” by around 568 and sends a delegation to Constantinople in 573. Alodia, first mentioned in 569, is the last: its request is granted in 580 and Longinus is sent.",
+      "sources": [
+        {
+          "sourceKey": "wp-nobatia",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-makuria",
+          "sourceLocation": "Early period"
+        },
+        {
+          "sourceKey": "wp-alodia",
+          "sourceLocation": "lead, Origins and Christianization"
+        }
+      ]
+    },
+    {
+      "uuid": "makuria-nobatia",
+      "title": "Makuria annexes Nobatia",
+      "start": 631,
+      "tracks": [
+        "makuria",
+        "nobatia"
+      ],
+      "descr": "Presumably during the 620s, but before 642; a new bishopric is founded in Faras around 630. The Nobatia page says only that the merger most likely came before 652, and certainly by 707.",
+      "sources": [
+        {
+          "sourceKey": "wp-makuria",
+          "sourceLocation": "lead and Early period"
+        },
+        {
+          "sourceKey": "wp-nobatia",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 631,
+          "margin": 11,
+          "source": {
+            "sourceKey": "wp-makuria",
+            "sourceLocation": "Early period ('during the 620s, but before 642')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "baqt",
+      "title": "Arab invasions of Makuria and the Baqt",
+      "start": 641,
+      "end": 652,
+      "tracks": [
+        "makuria",
+        "early-islam"
+      ],
+      "descr": "A first expedition comes in 641 or 642; a second, under Abd Allah ibn Sa’d ibn Abi al-Sarh, besieges Dongola in 651/652 and is repulsed. The resulting treaty with King Qalidurut, the Baqt, sends 360 slaves a year to Egypt and remains in force for more than six centuries. Alodia is explicitly not affected by it.",
+      "sources": [
+        {
+          "sourceKey": "wp-makuria",
+          "sourceLocation": "lead and Early period"
+        },
+        {
+          "sourceKey": "wp-baqt",
+          "sourceLocation": "History and Provisions"
+        },
+        {
+          "sourceKey": "wp-alodia",
+          "sourceLocation": "Christianization"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 641,
+          "margin": 1,
+          "source": {
+            "sourceKey": "wp-makuria",
+            "sourceLocation": "Early period ('641 or 642')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "arab-conquest-egypt",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "periplus",
+      "title": "The Periplus of the Erythraean Sea",
+      "start": 55,
+      "tracks": [
+        "aksum",
+        "roman-egypt"
+      ],
+      "descr": "A Greek merchants’ guide to the Red Sea and Indian Ocean; a mid-first-century date is now most commonly accepted. It describes the city of the Auxumites, its ivory trade, and its ruler Zoscales.",
+      "sources": [
+        {
+          "sourceKey": "wp-periplus",
+          "sourceLocation": "lead, Date and authorship, and Aksum section"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 55,
+          "margin": 15,
+          "source": {
+            "sourceKey": "wp-periplus",
+            "sourceLocation": "Date and authorship (Hill, Casson: AD 40–70)"
+          }
+        },
+        {
+          "year": 60,
+          "source": {
+            "sourceKey": "wp-periplus",
+            "sourceLocation": "lead (Schoff and Agius: 'around AD 60')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "aksum-coins",
+      "title": "Aksum begins minting coins",
+      "start": 270,
+      "tracks": [
+        "aksum"
+      ],
+      "descr": "Under King Endybis. Coins are known from eighteen Aksumite kings, from c. 295 until c. 620.",
+      "sources": [
+        {
+          "sourceKey": "wp-aksum-currency",
+          "sourceLocation": "lead, Pre-Christian period and Kings"
+        },
+        {
+          "sourceKey": "wp-aksum",
+          "sourceLocation": "lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 270,
+          "source": {
+            "sourceKey": "wp-aksum-currency",
+            "sourceLocation": "lead and Pre-Christian period ('around 270')"
+          }
+        },
+        {
+          "year": 290,
+          "margin": 20,
+          "source": {
+            "sourceKey": "wp-aksum",
+            "sourceLocation": "lead (Endybis, 270–310)"
+          }
+        },
+        {
+          "year": 231,
+          "margin": 4,
+          "source": {
+            "sourceKey": "wp-aksum-currency",
+            "sourceLocation": "Endybis caption (227–235 AD)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "ezana",
+      "title": "Reign of Ezana",
+      "start": 325,
+      "end": 360,
+      "tracks": [
+        "aksum"
+      ],
+      "descr": "The first Aksumite king to embrace Christianity; his coins replace the pagan disc and crescent with a cross. In about 356 Constantius II writes to him and his brother Saizana.",
+      "sources": [
+        {
+          "sourceKey": "wp-ezana",
+          "sourceLocation": "infobox, lead and Reign"
+        },
+        {
+          "sourceKey": "wp-frumentius",
+          "sourceLocation": "Biography"
+        },
+        {
+          "sourceKey": "wp-obelisk-axum",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 325,
+          "margin": 5,
+          "source": {
+            "sourceKey": "wp-ezana",
+            "sourceLocation": "infobox ('320s')"
+          }
+        },
+        {
+          "year": 321,
+          "source": {
+            "sourceKey": "wp-obelisk-axum",
+            "sourceLocation": "History ('c. 321 – c. 360')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "aksum-christian",
+      "title": "Aksum becomes Christian",
+      "start": 328,
+      "tracks": [
+        "aksum"
+      ],
+      "descr": "Ezana converts; Frumentius, who came to Aksum as a child around 316, is consecrated its bishop. The coin weights suggest a conversion before Constantine’s reform of 324, or a few years after.",
+      "sources": [
+        {
+          "sourceKey": "wp-aksum",
+          "sourceLocation": "infobox and lead"
+        },
+        {
+          "sourceKey": "wp-frumentius",
+          "sourceLocation": "Biography"
+        },
+        {
+          "sourceKey": "wp-aksum-currency",
+          "sourceLocation": "Ezana"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 325,
+          "source": {
+            "sourceKey": "wp-aksum",
+            "sourceLocation": "infobox ('325 or 328')"
+          }
+        },
+        {
+          "year": 328,
+          "source": {
+            "sourceKey": "wp-aksum",
+            "sourceLocation": "infobox ('325 or 328')"
+          }
+        },
+        {
+          "year": 328,
+          "source": {
+            "sourceKey": "wp-frumentius",
+            "sourceLocation": "Biography (consecration 'traditionally in the year 328')"
+          }
+        },
+        {
+          "year": 343,
+          "margin": 3,
+          "source": {
+            "sourceKey": "wp-frumentius",
+            "sourceLocation": "Biography ('or according to others, between 340 and 346')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "ezana",
+          "kind": "part-of"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "axum-stelae",
+      "title": "The great stelae of Axum",
+      "start": 350,
+      "tracks": [
+        "aksum"
+      ],
+      "descr": "The Obelisk of Axum is probably carved and erected during the 4th century AD; the last stele raised in Axum is probably King Ezana’s Stele.",
+      "sources": [
+        {
+          "sourceKey": "wp-obelisk-axum",
+          "sourceLocation": "infobox and History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 350,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-obelisk-axum",
+            "sourceLocation": "History ('during the 4th century AD')"
+          }
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "kaleb",
+      "title": "Reign of Kaleb; Aksum invades Yemen",
+      "start": 514,
+      "end": 534,
+      "tracks": [
+        "aksum",
+        "himyar"
+      ],
+      "descr": "Kaleb invades Yemen around 520 (518–525 in the Aksum infobox), and Aksumite control of West Yemen lasts until c. 525, when Abraha deposes Sumyafa Ashwa. The envoy Nonnosus meets him in 530.",
+      "sources": [
+        {
+          "sourceKey": "wp-kaleb",
+          "sourceLocation": "short description, infobox and Life"
+        },
+        {
+          "sourceKey": "wp-aksum",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "endDates": [
+        {
+          "year": 534,
+          "source": {
+            "sourceKey": "wp-kaleb",
+            "sourceLocation": "infobox"
+          }
+        },
+        {
+          "year": 542,
+          "source": {
+            "sourceKey": "wp-kaleb",
+            "sourceLocation": "short description (514 to 542)"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "aksum-himyar",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "aksum-persia",
+      "title": "Aksumite–Persian wars",
+      "start": 570,
+      "end": 578,
+      "tracks": [
+        "aksum",
+        "himyar",
+        "sasanian"
+      ],
+      "descr": "The Aksum infobox lists the Year of the Elephant in 570 and the Aksumite–Persian wars from 570 to 578.",
+      "sources": [
+        {
+          "sourceKey": "wp-aksum",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "links": [
+        {
+          "to": "aksum-himyar",
+          "kind": "related"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "abyssinia-migration",
+      "title": "Muslims take refuge in Aksum",
+      "start": 614,
+      "tracks": [
+        "aksum",
+        "early-islam"
+      ],
+      "descr": "The first Hijrah: a small group of early Muslims, then a second of 83 men and 18 women, find refuge with an Aksumite king identified with Armah. They return to Mecca in 622; a second wave goes to Medina in 628.",
+      "sources": [
+        {
+          "sourceKey": "wp-abyssinia-migration",
+          "sourceLocation": "infobox, lead, The migration(s) and End of the Muslim exile"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 613,
+          "source": {
+            "sourceKey": "wp-abyssinia-migration",
+            "sourceLocation": "lead ('9 BH (613 CE)')"
+          }
+        },
+        {
+          "year": 615,
+          "source": {
+            "sourceKey": "wp-abyssinia-migration",
+            "sourceLocation": "lead ('7 BH (615 CE)')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "hijrah",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "djenne-settled",
+      "title": "Djenné-Djenno settled",
+      "start": -249,
+      "tracks": [
+        "djenne-djenno"
+      ],
+      "descr": "People first settle the site permanently around 250 BCE (Phase I runs to 50 CE); glass beads there date to as early as the third century BC. A similar settlement at Dia exists from around 900 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-djenne-djenno",
+          "sourceLocation": "lead and History"
+        }
+      ]
+    },
+    {
+      "uuid": "bantu-iron-east",
+      "title": "Eastern Bantu iron-working",
+      "start": -99,
+      "end": 300,
+      "tracks": [
+        "sub-saharan"
+      ],
+      "descr": "By the first century BC the Eastern Stream has developed iron forging; from 100 BC to 300 AD it spreads to sites such as Misasa in Tanzania and Kwale in Kenya.",
+      "sources": [
+        {
+          "sourceKey": "wp-bantu",
+          "sourceLocation": "History > Eastern Stream"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "bantu-south-africa",
+      "title": "The Bantu expansion reaches South Africa",
+      "start": 300,
+      "end": 500,
+      "tracks": [
+        "sub-saharan"
+      ],
+      "descr": "Bantu speakers reach KwaZulu-Natal by 300 AD and Limpopo Province by 500 AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-bantu",
+          "sourceLocation": "lead and History > Eastern Stream"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "djenne-growth",
+      "title": "Djenné-Djenno grows",
+      "start": 400,
+      "tracks": [
+        "djenne-djenno"
+      ],
+      "descr": "The town covers as much as 100,000 square meters by 400 CE; Phase III runs from about 400 to 900 AD.",
+      "sources": [
+        {
+          "sourceKey": "wp-djenne-djenno",
+          "sourceLocation": "History"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "arab-conquest-egypt",
+      "title": "The Arab conquest of Egypt",
+      "start": 639,
+      "end": 642,
+      "tracks": [
+        "roman-egypt",
+        "early-islam"
+      ],
+      "descr": "Amr ibn al-As invades in December 639 with some 4,000 men. The Rashidun army wins at Heliopolis on 6 July 640, takes the Babylon Fortress after a siege from September 640 to 6 April 641, and besieges Alexandria from March 641; by September 642 the caliphate has annexed Egypt, Cyrenaica and Tripolitania.",
+      "sources": [
+        {
+          "sourceKey": "wp-arab-egypt",
+          "sourceLocation": "infobox"
+        },
+        {
+          "sourceKey": "wp-heliopolis-640",
+          "sourceLocation": "infobox and body"
+        },
+        {
+          "sourceKey": "wp-babylon-fortress",
+          "sourceLocation": "infobox"
+        },
+        {
+          "sourceKey": "wp-alexandria-641",
+          "sourceLocation": "infobox and body"
+        }
+      ],
+      "links": [
+        {
+          "to": "yarmuk",
+          "kind": "related"
+        }
+      ],
+      "importance": 1
     }
   ]
 }
