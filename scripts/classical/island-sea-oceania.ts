@@ -127,7 +127,7 @@ ed.event({
 });
 ed.event({
   uuid: 'faxian-java', title: 'Faxian stays on Java', start: '412 CE', end: '413 CE', tracks: ['tarumanagara'],
-  descr: 'Returning from India, the monk stays on the island of Ye-po-ti for six months, from December 412 until May 413.',
+  descr: 'The monk stays on the island of Ye-po-ti, most probably western Java, for six months, from December 412 until May 413.',
   sources: [S('wp-tarumanagara', 'Historiography')],
   links: [{ to: 'faxian', kind: 'part-of' }],
 });
@@ -166,7 +166,7 @@ ed.event({
 });
 ed.event({
   uuid: 'ubirr', title: 'Most of Ubirr’s rock paintings', start: 'c. 50 BCE', tracks: ['australia'],
-  descr: 'The rock faces at Ubirr, in Arnhem Land, are painted and repainted continuously; most paintings there were created about 2,000 years ago, and some have been repainted into modern times. A painted thylacine shows an animal extinct in the area for about 2,000 years.',
+  descr: 'The rock faces at Ubirr, in Kakadu National Park, are painted and repainted continuously; most paintings there were created about 2,000 years ago, and some have been repainted into modern times. A painted thylacine shows an animal extinct in the area for about 2,000 years.',
   sources: [S('wp-ubirr', 'lead and Main gallery')],
   startDates: [C(50, 'wp-ubirr', "lead ('about 2000 years ago')", { margin: 100 })],
 });
@@ -191,7 +191,7 @@ ed.event({
 });
 ed.event({
   uuid: 'samoa-quiet', title: 'Samoa’s unrecorded centuries', start: '750 BCE', end: '1000 CE', tracks: ['tonga-samoa'],
-  descr: 'Little is known about human activity in Samoa in this period, when pottery-making appears to stop suddenly; it may have been a time of migrations that settled the rest of Polynesia.',
+  descr: 'Little is known about human activity in Samoa in this period, when pottery-making appears to stop suddenly; it may have been a time of mass migrations that led to the settlement of present-day Polynesia.',
   sources: [S('wp-samoa-history', 'Early history')],
 });
 ed.event({

@@ -384,3 +384,48 @@ Parthian, Sasanian; Maurya, Shunga, Gupta; the Eastern Roman Empire, which outli
 - **Not split:** no page read states when Roman Egypt became "Byzantine" (the *Roman Egypt* page, which *Byzantine
   Egypt* redirects to, gives the 381 Diocese and Diocletian's reforms, not a Byzantine start), so Egypt has no
   Byzantine phase. The page's own end dates also disagree (641 navbox, 642 lead, 646 infobox); the row keeps 641.
+
+## Description audit (18 November 2026)
+
+Every event title and description outside the 500–330 BCE overlap was checked against the Wikipedia pages it cites
+(321 of 371 events; the 50 overlap events, copied from Ancient by `skeleton.ts`, were audited there). `npm run
+audit:batches -- data-src/classical.json <dir> --pages 10 --only <ids>` grouped them into 29 batches of up to 10 pages;
+one agent (on Sonnet) per batch read the pages and flagged added or changed claims, quoting the page. Claims that an
+agent couldn't find because the fetch was truncated (45) went to three follow-up agents, which searched the full
+pages (two of them via the raw wikitext); most turned out to be on the page and were kept. 61 events were reworded (68 fixes, kept in
+`scripts/archive/2026-11-18-classical-description-audit.json` and applied by `scripts/apply-text-fixes.ts` to this
+file and the `scripts/classical/` script that defines each event). Only titles and descriptions changed; no dates moved.
+
+- **Typical fixes:** labels the page doesn't use ("The great stelae of Axum", "the first Cham polity", "the main
+  British source", "a disastrous Roman defeat", "the new eastern capital", "his most famous work"); hedges dropped
+  ("reportedly conquers", "probably first named", "said to hold the earliest Long Count", "tentatively codified",
+  "perhaps in the first half of the first millennium", "about forty missionaries", "may cover", "whose founder was
+  probably from Tikal"); details from general knowledge ("in Arnhem Land", "allied with the Xiongnu", "Returning from
+  India", "rules from Ctesiphon", "at Jiankang", "Trajan ends Domitian's treaty"); and contradictions with the page
+  (in 151 BC Masinissa invaded Carthaginian lands with 52,000 men, not the reverse; the Visigoths, not the
+  Byzantines, held the foothold at Ceuta by 625; the Northern Wei ruled from Pingcheng from 398, not 386; the Tuyuhun
+  page credits the Yellow River crossing to the people of Murong Shegui, not to Tuyuhun as founder; Hou Jing was
+  killed by his own men while fleeing, and nothing says his enemies retook Jiankang; the *The Vandals sack Rome* entry
+  described only the 460s expeditions).
+- **Judgment calls (please check):**
+  1. *Polynesians* (`wp-polynesians`) carries a translation notice that links to the LLM-assisted translation
+     guideline (reported by the batch agent; not confirmed by hand). Under this file's rule the page shouldn't be used.
+     It is cited only by `long-pause` (Origins): the c. 900 BCE start, "around 900 BC" reaching Fiji, Samoa and Tonga,
+     the pause of "some 1,500 years", the loss of pottery and the resumption "around 700 AD" to the Cook Islands, French
+     Polynesia and the Marquesas. **Nothing was removed yet**; if the notice is confirmed, the event's date and
+     description need another source or the event goes.
+  2. Pages that disagree with themselves or each other were left as written: Silla's Buddhism "527–528" (infobox 527,
+     body 528); "the fall of Pyongyang" (Goguryeo infobox only); Hou Jing's "1 January 552" (infobox; the body says
+     November 551); the Baqt expedition "repulsed" (Makuria lead; its body says neither side won); Herod's "heirs" now
+     follow the lead (three sons and his sister); *Han conquers Nanyue* follows *First Era of Northern Domination* for
+     the Queen Dowager's killing, while *Nanyue* has Lü Jia kill Zhao Xing.
+  3. The claudius-britain "Four legions" stays (the *Roman Britain* lead says four; its History section says the number
+     is unclear). Theodoric's Ravenna sentence now gives only the February 493 treaty, since the cited pages disagree on
+     whether Ravenna yielded by treaty or surrendered on 5 March.
+  4. Optional softenings the agents raised but I left alone: Frumentius "is consecrated" (only the date is traditional),
+     Archimedes "designed war machines" (the lead says so flatly; the body hedges his oversight of them), Rhine crossing
+     into Spain (Hydatius's date, not attributed), Reccared's Catholic Christianity (infobox: official after 589), *Rome
+     ends the Antigonid kingdom* (page: "the end of the dynasty"), Aksum coins of "eighteen" kings (the page also says
+     20).
+- **Truncation:** the agents read most long pages only to ~100,000 characters. Every claim flagged as not found was
+  re-checked by a follow-up agent; none is left unchecked. No overlap event was re-read.

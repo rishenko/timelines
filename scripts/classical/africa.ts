@@ -146,7 +146,7 @@ ed.event({
 });
 ed.event({
   uuid: 'numidia-carthage-war', title: 'Masinissa’s war with Carthage', start: '152 BCE', end: '150 BCE', tracks: ['numidia', 'carthage'],
-  descr: 'Masinissa seizes more Carthaginian territory in 152 BC; Carthage invades his lands in 151 BC with 52,000 men, breaking the peace treaty of 201 BC, and its general Hasdrubal is decisively defeated by Masinissa’s son Gulussa in 150 BC. In 146 BC Carthage is obliterated.',
+  descr: 'Masinissa seizes more Carthaginian territory in 152 BC; in 151 BC he invades Carthaginian lands with 52,000 men. Carthage, by preparing to fight back, effectively breaks the peace treaty of 201 BC, and its general Hasdrubal is decisively defeated by Masinissa’s son Gulussa in 150 BC. In 146 BC Carthage is obliterated.',
   sources: [S('wp-numidia', 'War with Carthage')],
   links: [{ to: 'carthage-destroyed', kind: 'causes' }],
 });
@@ -176,7 +176,7 @@ ed.event({
 });
 ed.event({
   uuid: 'balbus-garamantes', title: 'Balbus campaigns against the Garamantes', start: '19 BCE', tracks: ['garamantes', 'roman-empire'],
-  descr: 'The Romans capture fifteen Garamantian settlements. The earliest written record of the Garamantes, by Herodotus, dates to the 5th century BC.',
+  descr: 'The Romans capture fifteen Garamantian settlements. The earliest known written record of the Garamantes dates to the 5th century BC; Herodotus includes them among the Libyan tribes.',
   sources: [S('wp-garamantes', 'History')],
 });
 ed.event({
@@ -197,7 +197,7 @@ ed.event({
 });
 ed.event({
   uuid: 'vandal-sack-rome', title: 'The Vandals sack Rome', start: '455 CE', tracks: ['vandals', 'roman-empire'],
-  descr: 'In the 460s the Romans launch two expeditions by sea against the Vandal kingdom.',
+  descr: 'The Vandal kingdom is primarily remembered for this sack of Rome in 455. In the 460s the Romans launch two expeditions by sea against it; both fail.',
   sources: [S('wp-vandal-kingdom', 'lead')],
   links: [{ to: 'sack-rome-410', kind: 'related' }],
 });
@@ -294,7 +294,7 @@ ed.event({
 });
 ed.event({
   uuid: 'ezana', title: 'Reign of Ezana', start: 'c. 325 CE', end: 'c. 360 CE', tracks: ['aksum'],
-  descr: 'The first Aksumite king to embrace Christianity; his coins replace the pagan disc and crescent with a cross. In about 356 Constantius II writes to him and his brother Saizana.',
+  descr: 'The first Aksumite king to embrace Christianity; his coins replace the pagan disc and crescent with a cross. A surviving letter from Constantius II is addressed to him and his brother Saizana.',
   sources: [S('wp-ezana', 'infobox, lead and Reign'), S('wp-frumentius', 'Biography'), S('wp-obelisk-axum', 'History')],
   startDates: [C('325 CE', 'wp-ezana', "infobox ('320s')", { margin: 5 }), C('321 CE', 'wp-obelisk-axum', "History ('c. 321 – c. 360')")],
 });
@@ -311,7 +311,7 @@ ed.event({
   links: [{ to: 'ezana', kind: 'part-of' }],
 });
 ed.event({
-  uuid: 'axum-stelae', title: 'The great stelae of Axum', start: 'c. 350 CE', tracks: ['aksum'],
+  uuid: 'axum-stelae', title: 'The stelae of Axum', start: 'c. 350 CE', tracks: ['aksum'],
   descr: 'The Obelisk of Axum is probably carved and erected during the 4th century AD; the last stele raised in Axum is probably King Ezana’s Stele.',
   sources: [S('wp-obelisk-axum', 'infobox and History')],
   startDates: [C('350 CE', 'wp-obelisk-axum', "History ('during the 4th century AD')", { margin: 50 })],
@@ -331,7 +331,7 @@ ed.event({
 });
 ed.event({
   uuid: 'abyssinia-migration', title: 'Muslims take refuge in Aksum', start: 'c. 614 CE', tracks: ['aksum', 'early-islam'],
-  descr: 'The first Hijrah: a small group of early Muslims, then a second of 83 men and 18 women, find refuge with an Aksumite king identified with Armah. They return to Mecca in 622; a second wave goes to Medina in 628.',
+  descr: 'The first Hijrah: a small group of early Muslims, then a second of 83 men and 18 women, find refuge with an Aksumite king whom modern historians have alternatively identified with Armah. Many return to Mecca in 622; a second wave goes to Medina in 628.',
   sources: [S('wp-abyssinia-migration', 'infobox, lead, The migration(s) and End of the Muslim exile')],
   startDates: [C('613 CE', 'wp-abyssinia-migration', "lead ('9 BH (613 CE)')"), C('615 CE', 'wp-abyssinia-migration', "lead ('7 BH (615 CE)')")],
   links: [{ to: 'hijrah', kind: 'related' }],
@@ -349,7 +349,7 @@ ed.event({
 });
 ed.event({
   uuid: 'bantu-iron-east', title: 'Eastern Bantu iron-working', start: 'c. 100 BCE', end: '300 CE', tracks: ['sub-saharan'],
-  descr: 'By the first century BC the Eastern Stream has developed iron forging; from 100 BC to 300 AD it spreads to sites such as Misasa in Tanzania and Kwale in Kenya.',
+  descr: 'By the first century BC the Eastern Stream has developed iron forging; by roughly 100 BC to 300 AD Bantu speakers are present at coastal sites such as Misasa in Tanzania and Kwale in Kenya.',
   sources: [S('wp-bantu', 'History > Eastern Stream')],
 });
 ed.event({
@@ -359,7 +359,7 @@ ed.event({
 });
 ed.event({
   uuid: 'djenne-growth', title: 'Djenné-Djenno grows', start: '400 CE', tracks: ['djenne-djenno'],
-  descr: 'The town covers as much as 100,000 square meters by 400 CE; Phase III runs from about 400 to 900 AD.',
+  descr: 'The town may cover as much as 100,000 square meters by 400 CE; Phase III runs from about 400 to 900 AD.',
   sources: [S('wp-djenne-djenno', 'History')],
 });
 

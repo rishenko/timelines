@@ -48,7 +48,7 @@ Totals: 110 key, 205 normal, 56 minor (371 events).
 
 **Minor**
 
-- The great stelae of Axum (c. 350 CE) `axum-stelae`
+- The stelae of Axum (c. 350 CE) `axum-stelae`
 - Aksumite–Persian wars (570 CE–578 CE) `aksum-persia`
 
 ### Africa south of the Sahara

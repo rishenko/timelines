@@ -59,7 +59,7 @@ ed.event({
 });
 ed.event({
   uuid: 'toramana', title: 'Reign of Toramana', start: '493 CE', end: '515 CE', tracks: ['alchon'],
-  descr: 'King of the Alchon Huns from 493 until his death in 515. His Kura inscription dates to 495–500 and the Sanjeli copper plate to 502–503; Kausambi was probably sacked by his Alkhons in 497–500. The Eran boar inscription is dated to the first year of his reign, placed between 510 and 513. Prakashadharma of Malwa defeats him in 515.',
+  descr: 'King of the Alchon Huns from 493 until his death in 515. His Kura inscription dates to 495–500 and the Sanjeli copper plate to 502–503; Kausambi was probably sacked by his Alkhons in 497–500. The Eran boar inscription is dated to the first year of his reign, placed between 510 and 513. Prakashadharma of Malwa defeats him around 515.',
   sources: [S('wp-toramana', 'lead, infobox, Defeats, Sack of Kausambi and Punjab inscription')],
 });
 ed.event({
@@ -175,7 +175,7 @@ ed.event({
 });
 ed.event({
   uuid: 'hengist-horsa', title: 'Hengist and Horsa (traditional date)', start: '449 CE', tracks: ['anglo-saxons'],
-  descr: 'The Anglo-Saxon Chronicle records that in 449 Vortigern invited Hengist and Horsa to Britain to help fight the Picts; the History of the Britons gives 447. Bede names them as the first chieftains of the Angles, Saxons and Jutes in England.',
+  descr: 'The Anglo-Saxon Chronicle records that in 449 Vortigern invited Hengist and Horsa to Britain to help fight the Picts; the History of the Britons gives 447. Bede records that they were said to have been the first chieftains of the Angles, Saxons and Jutes in England.',
   sources: [S('wp-hengist-horsa', 'Anglo-Saxon Chronicle, History of the Britons and Ecclesiastical History')],
   startDates: [C('449 CE', 'wp-hengist-horsa', 'Anglo-Saxon Chronicle'), C('447 CE', 'wp-hengist-horsa', 'History of the Britons')],
 });
@@ -212,8 +212,8 @@ ed.event({
   sources: [S('wp-yuknoom-cheen', 'infobox and Reign')],
 });
 ed.event({
-  uuid: 'dos-pilas-calakmul', title: 'Dos Pilas defects to Calakmul', start: '648 CE', tracks: ['tikal', 'calakmul'],
-  descr: 'Dos Pilas breaks away from Tikal and becomes a vassal of Calakmul; Yuknoom Chʼeen II reinstates Bʼalaj Chan Kʼawiil on its throne as his vassal. (The Yuknoom Chʼeen II page dates his expulsion to 650.)',
+  uuid: 'dos-pilas-calakmul', title: 'Dos Pilas becomes a vassal of Calakmul', start: '648 CE', tracks: ['tikal', 'calakmul'],
+  descr: 'Calakmul attacks and defeats Dos Pilas, which becomes its vassal state; Yuknoom Chʼeen II reinstates Bʼalaj Chan Kʼawiil on its throne as his vassal. (The Yuknoom Chʼeen II page dates his expulsion to 650.)',
   sources: [S('wp-dos-pilas', 'lead, 648: Aligned to Calakmul and Known rulers'), S('wp-yuknoom-cheen', 'Reign')],
   links: [{ to: 'dos-pilas-founded', kind: 'related' }, { to: 'yuknoom-cheen', kind: 'related' }],
 });
@@ -234,7 +234,7 @@ ed.event({
 // ---------- China and Japan ----------
 ed.event({
   uuid: 'chen-north-573', title: 'Wu Mingche’s northern campaign', start: '573 CE', tracks: ['chen', 'northern-qi'],
-  descr: 'In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall Wu Mingche holds Shouyang, and the land between the Yangtze and the Huai is entirely in Chen hands.',
+  descr: 'In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall Wu Mingche besieges Shouyang, which he captures, and the land between the Yangtze and the Huai is entirely in Chen hands.',
   sources: [S('wp-wu-mingche', 'During Emperor Xuan’s reign'), S('wp-xuan-chen', 'Early reign')],
 });
 ed.event({
@@ -260,7 +260,7 @@ ed.event({
 // ---------- updates to earlier events and rows ----------
 const edessa = ed.data.events.find((e: { uuid: string }) => e.uuid === 'edessa-260');
 edessa.descr =
-  'A disastrous Roman defeat: in 260, probably in June, the emperor Valerian is defeated at Edessa and held prisoner by Shapur I; the date of his death in captivity is debated. The same year Odaenathus of Palmyra defeats Shapur near the Euphrates.';
+  'A tremendous defeat for the Romans: in 260, probably in June, the emperor Valerian is defeated at Edessa and held prisoner by Shapur I; the date of his death in captivity is debated. The same year Odaenathus of Palmyra defeats Shapur near the Euphrates.';
 edessa.sources = [S('wp-palmyrene', 'Background'), S('wp-sasanian', 'infobox'), S('wp-valerian', 'lead, infobox, Rule and fall, Death in captivity')];
 
 const aksum = ed.data.tracks.find((t: { id: string }) => t.id === 'aksum');

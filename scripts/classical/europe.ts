@@ -157,12 +157,12 @@ ed.event({
 });
 ed.event({
   uuid: 'saxons-441', title: 'Britain “handed over” to the Saxons', start: '441 CE', tracks: ['anglo-saxons'],
-  descr: 'The Chronica Gallica of 452 reports for the year 441 that the British provinces have been handed over across a wide area. Gildas, who probably wrote in the early 6th century, is the main British source.',
+  descr: 'The Chronica Gallica of 452 reports for the year 441 that the British provinces have been handed over across a wide area. Gildas, who probably wrote in the early 6th century, is one of the few written accounts of the period.',
   sources: [S('wp-anglo-saxon-settlement', 'lead and Continental sources')],
 });
 ed.event({
   uuid: 'gregorian-mission', title: 'Augustine’s mission lands in Kent', start: '597 CE', tracks: ['anglo-saxons'],
-  descr: 'Sent by Pope Gregory the Great in 596, forty missionaries arrive in 597; King Æthelberht converts before 601, and by 627 Paulinus has converted King Edwin.',
+  descr: 'Sent by Pope Gregory the Great in 596, about forty missionaries arrive in 597; King Æthelberht converts before 601, and by 627 Paulinus has converted King Edwin.',
   sources: [S('wp-gregorian-mission', 'lead and Arrival')],
 });
 
@@ -179,13 +179,13 @@ ed.event({
 });
 ed.event({
   uuid: 'dacian-wars', title: 'Trajan’s Dacian Wars', start: '101 CE', end: '106 CE', tracks: ['europe', 'roman-empire'],
-  descr: 'Trajan ends Domitian’s treaty of 89 AD with Decebalus. The first war (101–102) ends when Decebalus makes peace; in the second (105–106) the Dacian capital falls and Decebalus kills himself. Southern Dacia is annexed, and Trajan announces 123 days of celebrations.',
+  descr: 'Discontent with Domitian’s treaty of 89 AD with Decebalus persists, and Trajan reasserts Roman authority. The first war (101–102) ends when Decebalus makes peace; in the second (105–106) the Dacian capital falls and Decebalus kills himself. Southern Dacia is annexed, and Trajan announces 123 days of celebrations.',
   sources: [S('wp-dacian-wars', 'infobox, lead, First War, Second War and Aftermath')],
   links: [{ to: 'trajan-extent', kind: 'related' }],
 });
 ed.event({
   uuid: 'salian-toxandria', title: 'The Salian Franks settle in Toxandria', start: '358 CE', tracks: ['europe', 'roman-empire'],
-  descr: 'The first known Frankish tribe to settle with official Roman permission. The Franks are first named during the crisis of the 3rd century; Constantine executes Frankish prisoners at Trier in 306.',
+  descr: 'The first known Frankish tribe to settle with official Roman permission. The Franks are probably first named during the crisis of the 3rd century; Constantine executes Frankish prisoners at Trier in 306.',
   sources: [S('wp-clovis', 'Background'), S('wp-franks', 'lead and Etymology')],
 });
 ed.event({
@@ -203,7 +203,7 @@ ed.event({
 });
 ed.event({
   uuid: 'suebi-gallaecia', title: 'The Suebi settle in Gallaecia', start: '409 CE', tracks: ['suebi'],
-  descr: 'Under Hermeric the Suebi cross into Iberia on 28 September or 12 October 409; in 411 the invaders divide the provinces of Hispania among themselves. Rechiar (from 448) is the first Germanic king to profess Nicene Christianity.',
+  descr: 'Under Hermeric the Suebi cross into Iberia on 28 September or 12 October 409; in 411 the groups divide Hispania by lot. Rechiar (from 448) is the first Germanic king to profess Nicene Christianity.',
   sources: [S('wp-suebi', 'infobox, lead, Settlement and Rechiar')],
   links: [{ to: 'rhine-crossing', kind: 'related' }],
 });
@@ -214,7 +214,7 @@ ed.event({
   links: [{ to: 'alaric', kind: 'related' }],
 });
 ed.event({
-  uuid: 'burgundians-destroyed', title: 'Aetius and the Huns destroy the Burgundians', start: 'c. 436 CE', end: '443 CE', tracks: ['burgundians', 'roman-empire'],
+  uuid: 'burgundians-destroyed', title: 'Aetius and the Huns defeat the Burgundians', start: 'c. 436 CE', end: '443 CE', tracks: ['burgundians', 'roman-empire'],
   descr: 'King Gundahar, settled on the west bank of the Rhine since 411, is killed in about 436; in 443 the remaining Burgundians are resettled in Sapaudia.',
   sources: [S('wp-burgundians', 'infobox, lead and body')],
 });
@@ -230,14 +230,14 @@ ed.event({
 });
 ed.event({
   uuid: 'spania-expelled', title: 'The Byzantines are expelled from Spain', start: '624 CE', tracks: ['visigoths', 'eastern-roman'],
-  descr: 'Swinthila ends Byzantine Spania (552–624); by 625 only a foothold at Ceuta remains.',
+  descr: 'Swinthila ends Byzantine Spania (552–624); by 625 the Visigoths have expelled the Byzantines from Hispania and established a foothold at Ceuta in Africa.',
   sources: [S('wp-visigothic-kingdom', 'infobox, sidebar and lead')],
 });
 
 // ---------- Italy ----------
 ed.event({
   uuid: 'theodoric-italy', title: 'Theodoric conquers Italy', start: '488 CE', end: '493 CE', tracks: ['ostrogoths', 'europe'],
-  descr: 'Ordered by Zeno to overthrow Odoacer, Theodoric sets out in the autumn of 488 and wins at the Isonzo (28 August 489), Verona and the Adda (11 August 490). Ravenna yields by treaty in February 493, and on 15 March Theodoric kills Odoacer at a banquet.',
+  descr: 'Ordered by Zeno to overthrow Odoacer, Theodoric sets out in the autumn of 488 and wins at the Isonzo (28 August 489), Verona and the Adda (11 August 490). A treaty in February 493 makes Theodoric and Odoacer joint rulers of Italy, and on 15 March Theodoric kills Odoacer at a banquet.',
   sources: [S('wp-theodoric', 'body'), S('wp-ostrogothic-kingdom', 'body'), S('wp-odoacer', 'infobox and lead')],
   links: [{ to: 'fall-west', kind: 'related' }],
 });
@@ -264,7 +264,7 @@ ed.event({
 // ---------- the Franks ----------
 ed.event({
   uuid: 'clovis', title: 'Clovis I unites the Franks', start: '481 CE', end: '511 CE', tracks: ['franks'],
-  descr: 'Clovis succeeds his father Childeric at 15. He defeats Syagrius at Soissons (486) and the Alemanni at Tolbiac (496), and by 509 has united all the Franks and northern Gallo-Romans. He dies on 27 November 511; Salic law is first codified that year.',
+  descr: 'Clovis succeeds his father Childeric at 15. He defeats Syagrius at Soissons (486) and the Alemanni at Tolbiac (496), and by 509 has united all the Franks and northern Gallo-Romans. Tradition dates his death to 27 November 511; Salic law is first tentatively codified that year.',
   sources: [S('wp-clovis', 'infobox, lead, Background and Middle reign'), S('wp-merovingians', 'lead, History and Government')],
 });
 ed.event({
@@ -276,7 +276,7 @@ ed.event({
 });
 ed.event({
   uuid: 'vouille', title: 'Battle of Vouillé', start: '507 CE', tracks: ['franks', 'visigoths'],
-  descr: 'Around spring 507, near Poitiers, Clovis defeats and kills Alaric II; the Franks conquer Gallia Aquitania, and the Visigothic capital moves from Toulouse to Barcelona (507–542), then Toledo.',
+  descr: 'Around spring 507, near Poitiers, Clovis defeats Alaric II, who dies in the battle (allegedly killed by Clovis); the Franks conquer Gallia Aquitania, and the Visigothic capital moves from Toulouse to Barcelona (507–542), then Toledo.',
   sources: [S('wp-vouille', 'infobox and lead'), S('wp-visigothic-kingdom', 'infobox')],
   links: [{ to: 'clovis', kind: 'part-of' }],
 });
@@ -294,12 +294,12 @@ ed.event({
 // ---------- the Slavs ----------
 ed.event({
   uuid: 'jordanes-slavs', title: 'Jordanes’s Getica', start: '551 CE', tracks: ['slavs'],
-  descr: 'The first written use of the name “Slavs” dates to the 6th century; Jordanes describes them in his Getica of 551.',
+  descr: 'The first written use of the name “Slavs” dates to the 6th century; Jordanes describes them in his Getica (c. 551).',
   sources: [S('wp-early-slavs', 'lead and Origins'), S('wp-goths', 'Prehistory')],
 });
 ed.event({
   uuid: 'slavs-expand', title: 'The Slavs expand west and south', start: 'c. 600 CE', tracks: ['slavs'],
-  descr: 'Between the sixth and seventh centuries Slavs come to control large parts of Europe, reaching the Elbe, the Alps and the Balkans; Carantania is established in the 7th century.',
+  descr: 'Between the sixth and seventh centuries the Slavs expand, reaching the Elbe, the Alps and the Balkans; Carantania is established in the 7th century.',
   sources: [S('wp-early-slavs', 'lead')],
   startDates: [C('600 CE', 'wp-early-slavs', "lead ('Between the sixth and seventh centuries')", { margin: 50 })],
 });

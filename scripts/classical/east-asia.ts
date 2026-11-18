@@ -105,7 +105,7 @@ ed.event({
 });
 ed.event({
   uuid: 'shiji', title: 'Sima Qian’s Shiji', start: 'c. 94 BCE', tracks: ['han'],
-  descr: 'Sima Qian (c. 145 – c. 86 BC), historian of the early Han, completes it before 91 BC, probably around 94 BC. In 99 BC he offends Emperor Wu in the Li Ling affair; released from prison in 96 BC, he lives on as a palace eunuch.',
+  descr: 'Sima Qian (c. 145 – c. 86 BC), historian of the early Han, completes it before 91 BC, probably around 94 BC. In 99 BC he becomes embroiled in the Li Ling affair; released from prison in 96 BC, he lives on as a palace eunuch.',
   sources: [S('wp-sima-qian', 'lead and As Han court official')],
   startDates: [C(94, 'wp-sima-qian', 'As Han court official (probably around 94 BC)'), C(91, 'wp-sima-qian', 'As Han court official (before 91 BC)')],
 });
@@ -160,7 +160,7 @@ ed.event({
 });
 ed.event({
   uuid: 'northern-wei-unifies', title: 'Northern Wei unifies the north', start: '439 CE', tracks: ['northern-wei', 'sixteen-kingdoms'],
-  descr: 'The unification of northern China ends the Sixteen Kingdoms period. The Northern Wei, established on 20 February 386, rules from Pingcheng until it moves its capital to Luoyang on 25 October 493.',
+  descr: 'The unification of northern China ends the Sixteen Kingdoms period. The Northern Wei, established on 20 February 386, rules from Pingcheng from 398 until it moves its capital to Luoyang on 25 October 493.',
   sources: [S('wp-northern-wei', 'infobox and lead'), S('wp-sixteen-kingdoms', 'lead')],
 });
 ed.event({

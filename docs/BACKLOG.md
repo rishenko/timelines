@@ -8,8 +8,9 @@
 - **Review the key events** in `docs/ancient-key-events.md` (180 key, 43 minor) and `docs/classical-key-events.md`
   (110 key, 56 minor), all proposed by Claude. Change `data-src/<timeline>-importance.json` and run
   `npm run importance:ancient` or `npm run importance:classical`.
-- **Audit the Classical World descriptions** the same way as the ancient ones
-  (`npm run audit:batches -- data-src/classical.json <dir>`); only the 31 summary-only events have been checked so far.
+- **Classical World description audit: check the judgment calls** in `docs/classical-sources.md` ("Description audit
+  (18 November 2026)"), especially *Polynesians*, whose translation notice links to the LLM-assisted translation
+  guideline; `long-pause` still cites it.
 - **Re-check banners on cited pages now and then.** Wikipedia adds AI/LLM-text banners after the fact: *Norte Chico
   civilization* had one by the 2026-11-18 audit, and everything taken from it was removed. Any audit or re-read should
   report banners, and a flagged page's values come out.
@@ -40,6 +41,13 @@
 
 ### App
 
+- **Feature audit (18 November 2026):** `docs/feature-audit.md` lists what the app lacks for scholarly use (trust and
+  transparency, citation and versions, the dating model, analysis, access) and the author's later additions (splitting
+  the data into its own repo, simple and advanced editing, days and months, business timelines, server-side storage).
+  Move items here as they're scheduled. Contributions to the bundled timelines come as pull requests (item 25).
+- **`apply-text-fixes.ts` should edit the script that defines an event last** (the one whose version wins on replay),
+  not the first match. In the Classical audit, `edessa-260` is defined in `mediterranean-near-east.ts` and again in
+  `summary-only.ts`, so the fix landed in the wrong one and was copied over by hand.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phones:** not yet tried on a real phone.
 - **Library size:** everything lives in localStorage (about 5 MB per site). Fine for dozens of timelines of this

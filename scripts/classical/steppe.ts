@@ -99,7 +99,7 @@ ed.event({
 });
 ed.event({
   uuid: 'yuezhi-to-bactria', title: 'The Great Yuezhi settle in Bactria', start: '132 BCE', end: '130 BCE', tracks: ['steppe'],
-  descr: 'The Wusun, allied with the Xiongnu, drive the Great Yuezhi out of the Ili valley; they migrate west, then south, and settle in north-west Bactria, where the Han envoy Zhang Qian reaches them in 128 BCE. Around 30 CE one of their tribes, the Kushana, forms the basis of the Kushan Empire.',
+  descr: 'The Wusun drive the Great Yuezhi out of the Ili valley; they migrate west, then south, and settle in northern Bactria, where the Han envoy Zhang Qian reaches them in 128 BCE. Around 30 CE one of their tribes, the Kushana, forms the basis of the Kushan Empire.',
   sources: [S('wp-yuezhi', 'timeline table and Exodus of the Great Yuezhi'), S('wp-wusun', 'lead and Migration to the Ili Valley')],
   startDates: [C(132, 'wp-yuezhi', 'timeline table'), R(133, 132, 'wp-wusun', 'lead')],
   links: [{ to: 'yuezhi-defeated', kind: 'related' }, { to: 'zhang-qian', kind: 'related' }, { to: 'kushan-founded', kind: 'related' }],
@@ -112,18 +112,18 @@ ed.event({
 });
 ed.event({
   uuid: 'xiongnu-split', title: 'The Xiongnu split in two', start: '48 CE', tracks: ['xiongnu'],
-  descr: 'After repeated natural disasters from 46 AD severely weaken the Xiongnu, they permanently split into two groups.',
+  descr: 'In 46 AD repeated natural disasters severely weaken the Xiongnu; they permanently split into two groups in 48 AD.',
   sources: [S('wp-han-xiongnu', 'lead')],
 });
 ed.event({
   uuid: 'altai-mountains', title: 'Defeat of the Northern Xiongnu', start: '89 CE', end: '91 CE', tracks: ['xiongnu', 'han', 'xianbei'],
-  descr: 'In 89 AD Dou Xian leads 50,000 cavalry against them; in 91 AD the Northern Chanyu is defeated in the Battle of the Altai Mountains, and the Xianbei begin occupying the Mongolian Plateau, absorbing 100,000 Xiongnu tribes.',
+  descr: 'In 89 AD Dou Xian leads 50,000 cavalry against them; in 91 AD the Northern Chanyu is defeated in the Battle of the Altai Mountains, and the Xianbei take over the Mongolian Plateau, absorbing 100,000 Xiongnu tribes.',
   sources: [S('wp-han-xiongnu', 'lead'), S('wp-xianbei', 'History > Origin')],
   links: [{ to: 'han-xiongnu-wars', kind: 'part-of' }],
 });
 ed.event({
   uuid: 'tanshihuai', title: 'Tanshihuai unifies the Xianbei', start: 'c. 156 CE', end: '181 CE', tracks: ['xianbei', 'han'],
-  descr: 'He unifies the Xianbei in the mid-2nd century and raids the Han dynasty’s northern borders, first in 156; after his death in 181 the Xianbei splinter.',
+  descr: 'He unifies the Xianbei in the mid-2nd century and raids the Han dynasty’s northern borders, with a first recorded raid in 156; after his death in 181 the Xianbei splinter.',
   sources: [S('wp-xianbei', 'infobox, lead and Xianbei Confederation')],
 });
 

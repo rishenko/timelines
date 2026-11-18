@@ -222,7 +222,7 @@ ed.event({
 });
 ed.event({
   uuid: 'tetrarchy', title: 'The Tetrarchy', start: '293 CE', end: '324 CE', tracks: ['roman-empire'],
-  descr: 'Diocletian divides imperial rule between two augusti and two caesares; Constantine’s victory at the Milvian Bridge (312) begins its end.',
+  descr: 'Diocletian divides imperial rule between two augusti and two caesares; the system lasts until c. 324.',
   sources: [S('wp-tetrarchy', 'lead')],
 });
 ed.event({
@@ -232,12 +232,12 @@ ed.event({
 });
 ed.event({
   uuid: 'constantinople', title: 'Constantinople becomes the capital', start: '330 CE', tracks: ['roman-empire', 'eastern-roman'],
-  descr: 'Founded in 324 on the site of Byzantium and dedicated on 11 May 330 as the new eastern capital of the Roman Empire.',
+  descr: 'Founded in 324 on the site of Byzantium and dedicated on 11 May 330 as the capital of the Roman Empire.',
   sources: [S('wp-constantinople', 'lead, infobox and timeline'), S('wp-roman-empire', 'lead')],
 });
 ed.event({
   uuid: 'adrianople', title: 'Battle of Adrianople', start: '378 CE', tracks: ['roman-empire'],
-  descr: 'In 376 the Huns had driven many Goths into the empire; at Adrianople they defeat the Romans.',
+  descr: 'In 376 the Huns had driven many Goths into the empire; at Adrianople the Goths under Fritigern defeat the emperor Valens, who is killed in battle.',
   sources: [S('wp-sack-rome-410', 'Background'), S('wp-fall-west', 'lead')],
 });
 ed.event({
@@ -259,7 +259,7 @@ ed.event({
 });
 ed.event({
   uuid: 'justinian', title: 'Reign of Justinian I', start: '527 CE', end: '565 CE', tracks: ['eastern-roman'],
-  descr: 'He rewrites Roman law as the Corpus Juris Civilis (final code 534) and retakes North Africa from the Vandals (533–534) and Italy from the Ostrogoths; the empire reaches its zenith in 555.',
+  descr: 'He rewrites Roman law as the Corpus Juris Civilis (final code 534) and retakes North Africa from the Vandals (533–534) and Italy from the Ostrogoths; the empire reaches its territorial zenith in 555.',
   sources: [S('wp-justinian', 'infobox, Life, Legislative activities, Conquest of North Africa, War in Italy and Results')],
 });
 ed.event({
@@ -287,7 +287,7 @@ ed.event({
 });
 ed.event({
   uuid: 'herod', title: 'Herod the Great rules Judea', start: '37 BCE', end: '4 BCE', tracks: ['judea'],
-  descr: 'A Roman client king; after his death the Romans divide his kingdom among his heirs. Some scholars (Steinmann) date his reign 36–1 BCE.',
+  descr: 'A Roman client king; after his death the Romans divide his kingdom among three of his sons and his sister. Some scholars (Steinmann) date his reign 36–1 BCE.',
   sources: [S('wp-herod', 'infobox and lead')],
   startDates: [C(37, 'wp-herod', 'infobox (Schürer)'), C(36, 'wp-herod', 'infobox (Steinmann)')],
   endDates: [C(4, 'wp-herod', 'infobox (Schürer)'), C(1, 'wp-herod', 'infobox (Steinmann)')],
@@ -305,7 +305,7 @@ ed.event({
 });
 ed.event({
   uuid: 'bar-kokhba', title: 'The Bar Kokhba revolt', start: '132 CE', end: '136 CE', tracks: ['judea', 'roman-empire'],
-  descr: 'Sparked by Hadrian’s plan to rebuild Jerusalem as Aelia Capitolina; the rebels hold an independent state for over three years until Betar falls in 135. The province is renamed Syria Palaestina.',
+  descr: 'Its primary cause is generally held to be Hadrian’s plan to rebuild Jerusalem as Aelia Capitolina; the rebels hold an independent state for over three years until Betar falls in 135. The province is renamed Syria Palaestina.',
   sources: [S('wp-bar-kokhba', 'infobox and lead')],
   links: [{ to: 'jerusalem-70', kind: 'related' }],
 });
@@ -316,12 +316,12 @@ ed.event({
 });
 ed.event({
   uuid: 'sasanians-rise', title: 'The Sasanian Empire', start: '224 CE', tracks: ['sasanian', 'parthia'],
-  descr: 'Ardashir I defeats the Parthians at the Battle of Hormozdgan on 28 April 224; the last pre-Islamic Iranian empire rules from Ctesiphon until 651.',
+  descr: 'Ardashir I defeats the Parthians at the Battle of Hormozdgan on 28 April 224; the last pre-Islamic Iranian empire rules until 651.',
   sources: [S('wp-sasanian', 'infobox'), S('wp-parthia', 'infobox')],
 });
 ed.event({
   uuid: 'edessa-260', title: 'Shapur I defeats Rome at Edessa', start: '260 CE', tracks: ['sasanian', 'roman-empire'],
-  descr: 'A disastrous Roman defeat; the same year Odaenathus of Palmyra defeats Shapur near the Euphrates.',
+  descr: 'A tremendous defeat for the Romans; the same year Odaenathus of Palmyra defeats Shapur near the Euphrates.',
   sources: [S('wp-palmyrene', 'Background'), S('wp-sasanian', 'infobox')],
 });
 ed.event({

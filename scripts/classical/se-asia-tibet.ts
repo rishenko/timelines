@@ -94,12 +94,12 @@ ed.data.events.find((e: { uuid: string }) => e.uuid === 'nyatri-tsenpo').tracks 
 // ---------- Vietnam ----------
 ed.event({
   uuid: 'au-lac-founded', title: 'Thục Phán founds Âu Lạc', start: 'c. 257 BCE', tracks: ['au-lac', 'dong-son'],
-  descr: 'King An Dương annexes Văn Lang; the middle phase of building at his citadel of Cổ Loa falls between 300 and 100 BCE. The infobox also allows a span of 208–179 BCE.',
+  descr: 'King An Dương reportedly annexes Văn Lang; the middle phase of building at his citadel of Cổ Loa falls between roughly 300 and 100 BCE. The infobox also allows a span of 208–179 BCE.',
   sources: [S('wp-au-lac', 'infobox, lead, Foundation and Cổ Loa')],
 });
 ed.event({
   uuid: 'nanyue-founded', title: 'Zhao Tuo founds Nanyue', start: '204 BCE', tracks: ['nanyue'],
-  descr: 'The Chinese general Zhao Tuo establishes the kingdom at Panyu (now Guangzhou). He sends tribute to the Han in 196 BC, proclaims himself emperor in 183 BC, and rules until 137 BC.',
+  descr: 'The Chinese general Zhao Tuo establishes the kingdom at Panyu (now Guangzhou). He first pledges allegiance to the Han in 196 BC, proclaims himself emperor in 183 BC, and rules until 137 BC.',
   sources: [S('wp-nanyue', 'short description, infobox and lead'), S('wp-first-domination', 'Han conquest'), S('wp-au-lac', 'Collapse')],
 });
 ed.event({
@@ -139,13 +139,13 @@ ed.event({
 
 // ---------- Champa, Funan, Chenla and the Pyu ----------
 ed.event({
-  uuid: 'champa-founded', title: 'Lâm Ấp: the first Cham polity', start: '192 CE', tracks: ['champa', 'jiaozhi'],
+  uuid: 'champa-founded', title: 'Lâm Ấp and the first Cham polities', start: '192 CE', tracks: ['champa', 'jiaozhi'],
   descr: 'The first Cham polities are established around the 2nd to 3rd centuries AD, in the wake of Khu Liên’s rebellion. The Old Cham Đông Yên Châu inscription dates to around c. 350 AD.',
   sources: [S('wp-champa', 'short description, infobox and lead')],
 });
 ed.event({
   uuid: 'oc-eo-rome', title: 'Roman goods at Óc Eo', start: '166 CE', tracks: ['funan', 'roman-empire'],
-  descr: 'Funan’s port yields Roman gold medallions from the reign of Antoninus Pius and possibly Marcus Aurelius; Chinese texts tell of Romans arriving to conduct diplomacy in 166.',
+  descr: 'Funan’s port yields Roman gold medallions from the reign of Antoninus Pius and possibly Marcus Aurelius; Chinese texts claim the Romans first landed in the region before going on into China to conduct diplomacy in 166.',
   sources: [S('wp-oc-eo', 'lead and Remains')],
 });
 ed.event({
@@ -173,18 +173,18 @@ ed.event({
 // ---------- Tibet ----------
 ed.event({
   uuid: 'tuyuhun-founded', title: 'The Tuyuhun kingdom', start: '284 CE', tracks: ['tuyuhun'],
-  descr: 'Established by Murong Tuyuhun, who crosses the Yellow River between 307 and 313 and dies in 317.',
+  descr: 'Established by subjugating the Qiang; the people of Murong Shegui cross the Yellow River between 307 and 313, and Tuyuhun dies in 317.',
   sources: [S('wp-tuyuhun', 'infobox and History')],
 });
 ed.event({
   uuid: 'namri-songtsen', title: 'Namri Songtsen unites the Yarlung clans', start: 'c. 600 CE', end: '618 CE', tracks: ['yarlung', 'sui'],
-  descr: 'Around 600 CE he becomes the uncontested leader of the Yarlung clans; he conquers the Kingdom of Sumpa in the early 7th century and sends the first missions to China in 608 and 609. He is poisoned in 618 (or 629/630).',
+  descr: 'Around 600 CE he becomes the uncontested leader of the Yarlung clans; he reportedly conquers the Kingdom of Sumpa in the early 7th century and according to Beckwith sends the first diplomatic missions to China in 608 and 609. He is poisoned in 618 (or 629/630).',
   sources: [S('wp-namri-songtsen', 'infobox and lead'), S('wp-tibetan-empire', 'History > Namri Songtsen')],
   endDates: [C('618 CE', 'wp-namri-songtsen', 'infobox and lead'), C('629 CE', 'wp-namri-songtsen', "lead ('618 or 629/630')", { margin: 1 })],
 });
 ed.event({
   uuid: 'songtsen-gampo', title: 'Songtsen Gampo founds the Tibetan Empire', start: '618 CE', end: '650 CE', tracks: ['yarlung'],
-  descr: 'The 33rd king moves the capital from the Yungbulakang Palace to Lhasa and defeats the Sumpa (c. 627); the Tibetan script is created during his reign. He dies in 650.',
+  descr: 'The 33rd king moves the capital from the Yungbulakang Palace to Lhasa and defeats the Sumpa (c. 627); he is credited with creating the Tibetan script. He dies in 650.',
   sources: [S('wp-songtsen-gampo', 'infobox and lead'), S('wp-tibetan-empire', 'infobox, lead and History > Songtsen Gampo'), S('wp-tibetan-script', 'infobox')],
   startDates: [C('618 CE', 'wp-songtsen-gampo', "infobox and lead ('618 or 629')"), C('629 CE', 'wp-songtsen-gampo', "infobox and lead ('618 or 629')"), C('614 CE', 'wp-yarlung', 'lead (empire from 614)')],
   links: [{ to: 'namri-songtsen', kind: 'related' }],

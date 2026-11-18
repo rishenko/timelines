@@ -185,7 +185,7 @@ ed.event({
 });
 ed.event({
   uuid: 'monte-alban-capital', title: 'Monte Albán, capital of the Zapotec', start: 'c. 100 BCE', end: 'c. 200 CE', tracks: ['zapotec'],
-  descr: 'In the Terminal Formative (Monte Albán II) the city of an estimated 17,200 becomes the regional capital; by 200 Zapotec influence reaches from Quiotepec in the north to Ocelotepec and Chiltepec in the south.',
+  descr: 'In the Terminal Formative (Monte Albán II) the city of an estimated 17,200 becomes the capital of a large-scale expansionist polity; by 200 Zapotec influence reaches from Quiotepec in the north to Ocelotepec and Chiltepec in the south.',
   sources: [S('wp-monte-alban', 'lead and Site history'), S('wp-zapotec', 'History')],
   links: [{ to: 'monte-alban', kind: 'related' }],
 });
@@ -197,7 +197,7 @@ ed.event({
 });
 ed.event({
   uuid: 'xitle', title: 'Xitle erupts: Cuicuilco is buried', start: 'c. 280 CE', tracks: ['cuicuilco'],
-  descr: 'The city, with some 20,000 people at its peak, is destroyed by the eruption; its lava covers about 80 km². The eruption may have prompted a mass emigration out of the central valley.',
+  descr: 'The city, with some 20,000 people at its peak, is destroyed by the eruption; the lava field covers about 80 km². The eruption may have prompted a mass emigration out of the central valley.',
   sources: [S('wp-cuicuilco', 'lead, History and End of the culture'), S('wp-teotihuacan', 'Origins and foundation')],
   startDates: [
     C('280 CE', 'wp-cuicuilco', "lead ('between 245 and 315 CE')", { margin: 35 }),
@@ -212,7 +212,7 @@ ed.event({
 });
 ed.event({
   uuid: 'teotihuacan-peak', title: 'Teotihuacan at its height', start: '350 CE', end: '650 CE', tracks: ['teotihuacan'],
-  descr: 'In Period III the city of around 100,000 people, about half the population of the Valley of Mexico, has 2,000 buildings over 18 square kilometers; in the first half of the first millennium it is the largest city in the Americas. It includes a neighbourhood of ethnic Zapotecs.',
+  descr: 'In Period III the city of around 100,000 people, about half the population of the Valley of Mexico, has 2,000 buildings over 18 square kilometers; at its zenith, perhaps in the first half of the first millennium, it is the largest city in the Americas. It includes a neighbourhood of ethnic Zapotecs.',
   sources: [S('wp-teotihuacan', 'lead and History > Period III'), S('wp-monte-alban', 'Site history')],
 });
 ed.event({
@@ -234,17 +234,17 @@ ed.event({
 });
 ed.event({
   uuid: 'tikal-stela-29', title: 'Tikal Stela 29', start: '292 CE', tracks: ['tikal'],
-  descr: 'Its Long Count date makes it the first unequivocally Maya artifact; Stela 46 at El Palmar has the earliest Long Count of a lowland Maya site (AD 180).',
+  descr: 'The first unequivocally Maya artifact; Stela 46 at El Palmar is said to hold the earliest Long Count of a lowland Maya site (AD 180).',
   sources: [S('wp-long-count', 'Earliest Long Counts')],
 });
 ed.event({
   uuid: 'siyaj-kak', title: 'Siyaj K’ak’ conquers Tikal', start: '378 CE', end: '379 CE', tracks: ['tikal', 'teotihuacan'],
-  descr: 'In January 378 the warlord replaces Tikal’s king; in 378 and 379 he oversees the replacement of the kings of Tikal, Uaxactun and Copán. A Tikal dynasty is thus founded by conquerors from Teotihuacan.',
+  descr: 'In January 378 the warlord conquers Tikal; in 378 and 379 he oversees the replacement of the kings of Tikal, Uaxactun and Copán. There is evidence that one of the ruling dynasties of Tikal was founded by conquerors from Teotihuacan.',
   sources: [S('wp-siyaj-kak', 'lead and Overview'), S('wp-teotihuacan', 'Year 378'), S('wp-tikal', 'lead')],
 });
 ed.event({
   uuid: 'copan-dynasty', title: 'K’inich Yax K’uk’ Mo’ founds the Copán dynasty', start: '426 CE', tracks: ['copan'],
-  descr: 'A new dynasty with its origins at Tikal: K’uk’ Mo’ Ajaw is installed on the throne in AD 426, using a title borne a generation earlier by Siyaj K’ak’. He dies between 435 and 437.',
+  descr: 'A new dynasty whose founder was probably from Tikal: K’uk’ Mo’ Ajaw is installed on the throne in AD 426, using a title borne a generation earlier by Siyaj K’ak’. He dies between 435 and 437.',
   sources: [S('wp-copan', 'History, Rulers and Founding')],
   links: [{ to: 'siyaj-kak', kind: 'related' }],
 });
@@ -317,7 +317,7 @@ ed.event({
 // ---------- North America ----------
 ed.event({
   uuid: 'hohokam-pioneer', title: 'Hohokam farming villages', start: 'c. 300 CE', end: '600 CE', tracks: ['hohokam'],
-  descr: 'Ceramics appear shortly before 300 CE, and crops and agricultural skill increase between 300 and 500. By 600 a distinct Hohokam architecture with Mesoamerican similarities emerges, and they begin cultivating agave.',
+  descr: 'Ceramics appear shortly before 300 CE, and crops and agricultural skill increase between 300 and 500. By 600 a distinct Hohokam architecture with Mesoamerican similarities emerges, and agave becomes a major food source.',
   sources: [S('wp-hohokam', 'lead, Overview and Pioneer/Formative period')],
 });
 

@@ -64,7 +64,7 @@ ed.tracks(
 // ---------- Eastern Jin and the Sixteen Kingdoms: culture ----------
 ed.event({
   uuid: 'lantingji', title: 'Wang Xizhi’s Orchid Pavilion gathering', start: '353 CE', tracks: ['jin-china'],
-  descr: 'On 22 April 353 Wang Xizhi hosts 41 friends, relatives and pupils at the Orchid Pavilion on Mount Kuaiji; they compose 41 poems, and his preface, the Lantingji xu, becomes his most famous work.',
+  descr: 'On 22 April 353 Wang Xizhi hosts 41 friends, relatives and pupils at the Orchid Pavilion on Mount Kuaiji; they compose 41 poems, and his preface, the Lantingji xu, becomes the most famous calligraphic work attributed to him.',
   sources: [S('wp-wang-xizhi', 'lead and Orchid Pavilion')],
 });
 ed.event({
@@ -92,12 +92,12 @@ ed.event({
 // ---------- the south ----------
 ed.event({
   uuid: 'liu-song-founded', title: 'Liu Yu ends the Eastern Jin: the Liu Song', start: '420 CE', tracks: ['liu-song', 'jin-china'],
-  descr: 'Having led the rising against the usurper Huan Xuan in 404, Liu Yu ends Southern Yan (410) and takes Luoyang (416). On 10 July 420 Emperor Gong of Jin yields the throne to him at Jiankang; he dies on 26 June 422.',
+  descr: 'Having led the rising against the usurper Huan Xuan in 404, Liu Yu ends Southern Yan (410) and takes Luoyang (416). On 10 July 420 Emperor Gong of Jin yields the throne to him; he dies on 26 June 422.',
   sources: [S('wp-liu-song', 'infobox and History'), S('wp-song-wudi', 'infobox, lead and As regent')],
 });
 ed.event({
   uuid: 'yuanjia', title: 'The Reign of Yuanjia', start: '425 CE', end: '453 CE', tracks: ['liu-song', 'northern-wei'],
-  descr: 'Emperor Wen’s long reign; but he loses three commanderies to the Northern Wei in his first year, his campaigns against Wei fail in 450 and 452, and in 453 his son Liu Shao assassinates him.',
+  descr: 'Emperor Wen’s reign is known for political stability and capable administration; but he loses three commanderies to the Northern Wei in his first year, his campaigns against Wei fail in 450 and 452, and in 453 his son Liu Shao assassinates him.',
   sources: [S('wp-liu-song', 'lead and Reign of Emperor Wen')],
 });
 ed.event({
@@ -117,7 +117,7 @@ ed.event({
 });
 ed.event({
   uuid: 'hou-jing', title: 'The Hou Jing Disturbance', start: '548 CE', end: '552 CE', tracks: ['liang'],
-  descr: 'The former Eastern Wei general rebels in the summer of 548 and besieges Jiankang that winter; the city falls in 549 (24 April in the Liang infobox). He makes and unmakes emperors, declares himself Emperor of Han on 1 January 552, and dies around 26 May 552 after Chen Baxian and Xiao Yi’s generals retake Jiankang.',
+  descr: 'The former Eastern Wei general rebels in the summer of 548 and besieges Jiankang that winter; the city falls in 549 (24 April in the Liang infobox). He makes and unmakes emperors, declares himself Emperor of Han on 1 January 552, and, defeated by Xiao Yi’s forces and Chen Baxian, is killed by his own men while fleeing, around 26 May 552.',
   sources: [S('wp-hou-jing', 'lead, infobox and Rebellion against Liang'), S('wp-liang-dynasty', 'infobox and Rule'), S('wp-chen-dynasty', 'Hou Jing')],
   links: [{ to: 'liang-wudi', kind: 'related' }],
 });
@@ -147,7 +147,7 @@ ed.event({
 });
 ed.event({
   uuid: 'longmen', title: 'The Longmen Grottoes begun', start: '493 CE', tracks: ['northern-wei'],
-  descr: 'Carving at Luoyang starts with the Northern Wei; the middle Binyang cave is made between 500 and 523. About 30% of the carvings date from the Northern Wei and 60% from the Tang.',
+  descr: 'Carving at Luoyang starts with the Northern Wei; the middle Binyang cave is said to have been made between 500 and 523. About 30% of the carvings date from the Northern Wei and 60% from the Tang.',
   sources: [S('wp-longmen', 'lead, History and Binyang')],
   startDates: [C('493 CE', 'wp-longmen', 'lead and History'), C('478 CE', 'wp-longmen', 'Guyangdong (earliest carving)')],
   links: [{ to: 'xiaowen-reforms', kind: 'related' }],

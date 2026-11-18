@@ -103,7 +103,7 @@ ed.event({
 });
 ed.event({
   uuid: 'ashoka', title: 'Reign of Ashoka', start: 'c. 268 BCE', end: '232 BCE', tracks: ['maurya'],
-  descr: 'Mauryan emperor from c. 268 BCE until his death in 232 BCE. His edicts, inscriptions of the 3rd century BCE, are read again only after the decipherment of the Brahmi script in the 19th century.',
+  descr: 'Mauryan emperor from c. 268 BCE until his death in 232 BCE. His reputation grows after the 19th-century decipherment of sources written in the Brahmi script.',
   sources: [S('wp-ashoka', 'lead and infobox'), S('wp-maurya', 'infobox')],
   startDates: [C(268, 'wp-ashoka', 'infobox'), C(269, 'wp-ashoka', 'infobox (coronation) and short description'), C(273, 'wp-chandragupta-maurya', "infobox dynasty table ('273/268')")],
 });
