@@ -249,3 +249,65 @@ Isanavarman I's reign) and the Kang Tai and Zhu Ying mission are not used.
   Dvaravati and Langkasuka are left out (their in-period dates come only from navboxes or begin after 650). Not used
   (summary only): Champa's kings and the Sui sack of 605, Bhrikuti's marriage date (the page gives both "before 624"
   and 632), Songtsen Gampo's Songzhou fight as 635–636.
+
+## Ninth pass: China's Northern and Southern dynasties (18 November 2026)
+
+`scripts/classical/china-north-south.ts`: 24 events, 23 sources, 8 rows (four southern dynasties after the Jin, four
+northern ones after the Northern Wei). *Northern and Southern dynasties* carries a machine-translation notice, so each
+dynasty's own page is used. Three web-fetch agents (on Sonnet) read 24 pages; none carried an AI-text or
+LLM-translation banner. *Western Liang (Southern dynasties)* and *Six Garrisons rebellion* returned 404s; the Western
+Liang is cited from *Liang dynasty*, and the Six Garrisons from *Yuwen Tai*.
+
+- **The south:** Liu Song (10 July 420 – 31 May 479; Liu Yu's rise from 404), the Reign of Yuanjia (425–453), Zu
+  Chongzhi's calendar and π (464–465), Southern Qi (3 June 479 – 24 April 502), Emperor Wu of Liang (30 April 502 –
+  12 June 549), the Hou Jing Disturbance (548–552; Jiankang falls 24 April 549), Jiangling (7 January 555; the Chen
+  page's 554 as a claim), Chen (16 November 557 – 10 February 589).
+- **The north:** Xiaowen's reforms (485–496; Luoyang 493–494), Yungang's imperial phase (471–494), Longmen (493; the
+  Guyangdong carving of 478 as a claim), the Six Garrisons (524), the split (8 November 534 – 18 February 535),
+  Shayuan (537), Eastern Wei (534–550), Western Wei (535–557; 534 as a claim), Northern Qi (9 June 550 – 577), Northern
+  Zhou (15 February 557 – 4 March 581) and its conquest of Qi (577), Yang Jian's seizure of power (580–581).
+- **Culture:** Wang Xizhi's Orchid Pavilion (22 April 353), the first Mogao caves (366; the Shazhou Tujing's 353 as a
+  claim), Faxian (399–412), Kumārajīva in Chang'an (401–413), Tao Yuanming's retirement (405), Xuanzang (629–645; 627
+  as a claim).
+- **Judgment calls:** the southern rows sit after the Jin row and the northern ones after the Northern Wei, rather
+  than in strict date order; the existing *Sui reunites China* now also sits on the Chen row; Shayuan's outcome is not
+  stated (no page read verbatim gave it). Not used (summary only): the later Chen reigns and Wu Mingche's campaigns,
+  the Northern Qi Great Wall work, Hou Jing's November 551 proclamation, Kumārajīva's titles.
+
+## Tenth pass: Island Southeast Asia and Oceania (18 November 2026)
+
+`scripts/classical/island-sea-oceania.ts`: 17 events, 21 new sources, 14 rows (seven under Island Southeast Asia, six
+under Oceania, and the Sa Huỳnh culture under Southeast Asia). Three web-fetch agents (on Sonnet) read 26 pages. None
+carried an AI-text or LLM-translation banner; *Polynesians* asks for help translating from the Russian article, which
+is treated as in the ancient Pacific pass (acceptable). *Kutai Martadipura*, *Mulawarman inscription* and *Maritime
+Jade Road* returned 404s, so Kutai is cited from *Kutai* and the jade road from *Lingling-o*. *Pan Pan* is a
+disambiguation page. Australia was added afterwards at Kevin's request (two more agents, 16 pages; see below).
+
+- **Island Southeast Asia:** the Bujang Valley (Sungai Batu monument 110 AD; "5th to 14th century" as a claim), the
+  Buni culture (c. 400 BC – 100 AD; "probably survived until 500 AD" as a claim; the skeleton's Buni event moved onto
+  the row), Tarumanagara (ca. 358 – 669) with Faxian on Java (December 412 – May 413) and Purnawarman's inscriptions
+  (5th century, incl. Ciaruteun), Kutai (399; the sidebar's 350 as a claim) and its yūpa inscriptions (last half of the
+  4th century), Kalingga (6th–7th century), the Sa Huỳnh–Kalanay sphere (500 BC – AD 1500; Kalanay's 400 BC as a
+  claim; the skeleton's Kalanay event moved onto the row), the earliest lingling-o (c. 500 BC), metal in Taiwan
+  (around the beginning of the Common Era; local wrought iron by c. AD 400). Sa Huỳnh culture (c. 1000 BC – c. 200).
+- **Oceania:** the long pause (Fiji, Samoa and Tonga by c. 900 BC; resumed c. 700 AD), the Melanesian influx into
+  Fiji (about the beginning of the Common Era), Polynesian Plain Ware (700 BC – 400 AD; the Lapita page's "about 2,000
+  years ago" for Tonga as a claim), Samoa's unrecorded centuries (750 BC – 1000 AD), Tonga's Formative Dark Age
+  (400–1200), early and superseded East Polynesian dates (Marquesas before 100 AD, Rapa Nui 300–400 CE, Hawaii c. 300,
+  set against the recent 940–1290 dates), people on Pohnpei (AD 80–200; earliest settlement probably AD 1).
+- **Judgment calls:** the East Polynesian dates are one event that says outright they are superseded, so readers see
+  the debate rather than a settlement date; Kalingga's row has no events in the period (Huining 664 and Queen Shima 674
+  fall after it). Not used: Tarumanagara's embassies to China (the Sui and Tang annal lines are tagged "unreliable
+  source"), its later kings and Srivijaya's c. 686 conquest (summary only), Srivijaya itself (c. 671, after the period),
+  Tabon's jar burials (given only as "years ago"), the Lapita summary's "about 1 CE" for Samoa (summary only and in
+  conflict with the page's "2,800 years ago").
+- **Australia and the Torres Strait** (added the same day): no page read gives a dated event inside the period, only
+  round "years ago" figures. Each is a claim counted back from 1950 with a ±100-year margin: the Torres Strait maritime
+  culture ("By 2,500 years ago", *Prehistory of Australia*), dingoes in the Torres Strait (2,100 YBP; Nullarbor 2,200
+  YBP, *Dingo*), spear barbs peaking and giving way to fish hooks, bone points, axes and adzes ("about 2,000 years ago",
+  *Fire-stick farming*), and most of Ubirr's paintings ("about 2000 years ago", *Ubirr*). *Prehistory of Australia*
+  carries a disputed-neutrality banner, used anyway (no AI notice). No in-period dates on *Budj Bim heritage areas*,
+  *Brewarrina Aboriginal Fish Traps*, *Mount William stone axe quarry*, *Wurdi Youang*, *Burrup Peninsula* (Murujuga),
+  *Gwion Gwion rock paintings*, *Sydney rock engravings*, *Aboriginal Australians*, *Torres Strait Islanders*, *Torres
+  Strait Islands* or *Makassan contact with Australia*. Not used: Palawa shell necklaces ("at least 2,600 years",
+  before the period, and a minimum), shell fish hooks at about 1,200 years ago (after it; mentioned in a description).

@@ -814,7 +814,141 @@
     },
     "wp-tibetan-script": { "name": "Wikipedia: Tibetan script", "url": "https://en.wikipedia.org/wiki/Tibetan_script", "tags": ["wikipedia"], "accessed": "2026-11-18" },
     "wp-jokhang": { "name": "Wikipedia: Jokhang", "url": "https://en.wikipedia.org/wiki/Jokhang", "tags": ["wikipedia"], "accessed": "2026-11-18" },
-    "wp-tuyuhun": { "name": "Wikipedia: Tuyuhun", "url": "https://en.wikipedia.org/wiki/Tuyuhun", "tags": ["wikipedia"], "accessed": "2026-11-18" }
+    "wp-tuyuhun": { "name": "Wikipedia: Tuyuhun", "url": "https://en.wikipedia.org/wiki/Tuyuhun", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-liu-song": {
+      "name": "Wikipedia: Liu Song dynasty",
+      "url": "https://en.wikipedia.org/wiki/Liu_Song_dynasty",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-song-wudi": {
+      "name": "Wikipedia: Emperor Wu of Song",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Wu_of_Liu_Song",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-southern-qi": { "name": "Wikipedia: Southern Qi", "url": "https://en.wikipedia.org/wiki/Southern_Qi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-liang-dynasty": { "name": "Wikipedia: Liang dynasty", "url": "https://en.wikipedia.org/wiki/Liang_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-liang-wudi": {
+      "name": "Wikipedia: Emperor Wu of Liang",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Wu_of_Liang",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-hou-jing": { "name": "Wikipedia: Hou Jing", "url": "https://en.wikipedia.org/wiki/Hou_Jing_Disturbance", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-chen-dynasty": { "name": "Wikipedia: Chen dynasty", "url": "https://en.wikipedia.org/wiki/Chen_dynasty", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-eastern-wei": { "name": "Wikipedia: Eastern Wei", "url": "https://en.wikipedia.org/wiki/Eastern_Wei", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-western-wei": { "name": "Wikipedia: Western Wei", "url": "https://en.wikipedia.org/wiki/Western_Wei", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-northern-qi": { "name": "Wikipedia: Northern Qi", "url": "https://en.wikipedia.org/wiki/Northern_Qi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-northern-zhou": { "name": "Wikipedia: Northern Zhou", "url": "https://en.wikipedia.org/wiki/Northern_Zhou", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-xiaowen": {
+      "name": "Wikipedia: Emperor Xiaowen of Northern Wei",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Xiaowen_of_Northern_Wei",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-sui-wendi": {
+      "name": "Wikipedia: Emperor Wen of Sui",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Wen_of_Sui",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-yuwen-tai": { "name": "Wikipedia: Yuwen Tai", "url": "https://en.wikipedia.org/wiki/Yuwen_Tai", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yungang": {
+      "name": "Wikipedia: Yungang Grottoes",
+      "url": "https://en.wikipedia.org/wiki/Yungang_Grottoes",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-longmen": {
+      "name": "Wikipedia: Longmen Grottoes",
+      "url": "https://en.wikipedia.org/wiki/Longmen_Grottoes",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-mogao": { "name": "Wikipedia: Mogao Caves", "url": "https://en.wikipedia.org/wiki/Mogao_Caves", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-faxian": { "name": "Wikipedia: Faxian", "url": "https://en.wikipedia.org/wiki/Faxian", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-kumarajiva": { "name": "Wikipedia: Kumārajīva", "url": "https://en.wikipedia.org/wiki/Kum%C4%81raj%C4%ABva", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-wang-xizhi": { "name": "Wikipedia: Wang Xizhi", "url": "https://en.wikipedia.org/wiki/Wang_Xizhi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tao-yuanming": { "name": "Wikipedia: Tao Yuanming", "url": "https://en.wikipedia.org/wiki/Tao_Yuanming", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-zu-chongzhi": { "name": "Wikipedia: Zu Chongzhi", "url": "https://en.wikipedia.org/wiki/Zu_Chongzhi", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-xuanzang": { "name": "Wikipedia: Xuanzang", "url": "https://en.wikipedia.org/wiki/Xuanzang", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-bujang": { "name": "Wikipedia: Bujang Valley", "url": "https://en.wikipedia.org/wiki/Bujang_Valley", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tarumanagara": { "name": "Wikipedia: Tarumanagara", "url": "https://en.wikipedia.org/wiki/Tarumanagara", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ciaruteun": {
+      "name": "Wikipedia: Ciaruteun inscription",
+      "url": "https://en.wikipedia.org/wiki/Ciaruteun_inscription",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-kutai": { "name": "Wikipedia: Kutai", "url": "https://en.wikipedia.org/wiki/Kutai", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-prehistoric-indonesia": {
+      "name": "Wikipedia: Prehistoric Indonesia",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Indonesia",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-kalingga": {
+      "name": "Wikipedia: Kalingga kingdom",
+      "url": "https://en.wikipedia.org/wiki/Kalingga_kingdom",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-lingling-o": { "name": "Wikipedia: Lingling-o", "url": "https://en.wikipedia.org/wiki/Lingling-o", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-prehistory-taiwan": {
+      "name": "Wikipedia: Prehistory of Taiwan",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-polynesians": { "name": "Wikipedia: Polynesians", "url": "https://en.wikipedia.org/wiki/Polynesians", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-lapita": { "name": "Wikipedia: Lapita culture", "url": "https://en.wikipedia.org/wiki/Lapita_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-samoa-history": {
+      "name": "Wikipedia: History of Samoa",
+      "url": "https://en.wikipedia.org/wiki/History_of_Samoa",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-tonga-history": {
+      "name": "Wikipedia: History of Tonga",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tonga",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-fiji-history": { "name": "Wikipedia: History of Fiji", "url": "https://en.wikipedia.org/wiki/History_of_Fiji", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-marquesas": {
+      "name": "Wikipedia: Marquesas Islands",
+      "url": "https://en.wikipedia.org/wiki/Marquesas_Islands",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-nan-madol": { "name": "Wikipedia: Nan Madol", "url": "https://en.wikipedia.org/wiki/Nan_Madol", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-easter-island-history": {
+      "name": "Wikipedia: History of Easter Island",
+      "url": "https://en.wikipedia.org/wiki/History_of_Easter_Island",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-hawaii-history": {
+      "name": "Wikipedia: History of Hawaii",
+      "url": "https://en.wikipedia.org/wiki/History_of_Hawaii",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-prehistory-australia": {
+      "name": "Wikipedia: Prehistory of Australia",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Australia",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-dingo": { "name": "Wikipedia: Dingo", "url": "https://en.wikipedia.org/wiki/Dingo", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-fire-stick": {
+      "name": "Wikipedia: Fire-stick farming",
+      "url": "https://en.wikipedia.org/wiki/Fire-stick_farming",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-ubirr": { "name": "Wikipedia: Ubirr", "url": "https://en.wikipedia.org/wiki/Ubirr", "tags": ["wikipedia"], "accessed": "2026-11-18" }
   },
   "tracks": [
     { "id": "africa", "name": "Africa", "color": "#b8862a" },
@@ -1428,6 +1562,17 @@
     { "id": "chenla", "name": "Chenla", "color": "#3a6a5a", "parent": "se-asia", "span": { "start": "550 CE", "end": "802 CE" } },
     { "id": "champa", "name": "Champa (Lâm Ấp)", "color": "#9a5a4a", "parent": "se-asia", "span": { "start": "192 CE", "end": "1832 CE" } },
     {
+      "id": "sa-huynh",
+      "name": "Sa Huỳnh culture",
+      "color": "#7a6a4a",
+      "parent": "se-asia",
+      "span": {
+        "start": "c. 1000 BCE",
+        "end": "c. 200 CE",
+        "endDates": [{ "year": "200 CE", "source": { "sourceKey": "wp-sa-huynh", "sourceLocation": "infobox and lead ('1000 BC and 200 AD')" } }]
+      }
+    },
+    {
       "id": "dong-son",
       "name": "Đông Sơn culture",
       "color": "#6a6a3a",
@@ -1543,6 +1688,10 @@
       "parent": "china",
       "span": { "start": "266 CE", "end": "420 CE" }
     },
+    { "id": "liu-song", "name": "Liu Song (south)", "color": "#7a5a8a", "parent": "china", "span": { "start": "420 CE", "end": "479 CE" } },
+    { "id": "southern-qi", "name": "Southern Qi", "color": "#6a5a9a", "parent": "china", "span": { "start": "479 CE", "end": "502 CE" } },
+    { "id": "liang", "name": "Liang (south)", "color": "#8a6a9a", "parent": "china", "span": { "start": "502 CE", "end": "557 CE" } },
+    { "id": "chen", "name": "Chen (south)", "color": "#5a4a8a", "parent": "china", "span": { "start": "557 CE", "end": "589 CE" } },
     {
       "id": "sixteen-kingdoms",
       "name": "Sixteen Kingdoms (the north)",
@@ -1551,6 +1700,23 @@
       "span": { "start": "304 CE", "end": "439 CE" }
     },
     { "id": "northern-wei", "name": "Northern Wei", "color": "#5a6a8a", "parent": "china", "span": { "start": "386 CE", "end": "535 CE" } },
+    { "id": "eastern-wei", "name": "Eastern Wei", "color": "#4a6a7a", "parent": "china", "span": { "start": "534 CE", "end": "550 CE" } },
+    {
+      "id": "western-wei",
+      "name": "Western Wei",
+      "color": "#3a5a6a",
+      "parent": "china",
+      "span": {
+        "start": "535 CE",
+        "end": "557 CE",
+        "startDates": [
+          { "year": "535 CE", "source": { "sourceKey": "wp-western-wei", "sourceLocation": "infobox (18 February 535)" } },
+          { "year": "534 CE", "source": { "sourceKey": "wp-western-wei", "sourceLocation": "infobox (8 November 534, start of the division)" } }
+        ]
+      }
+    },
+    { "id": "northern-qi", "name": "Northern Qi", "color": "#5a7a8a", "parent": "china", "span": { "start": "550 CE", "end": "577 CE" } },
+    { "id": "northern-zhou", "name": "Northern Zhou", "color": "#2a4a5a", "parent": "china", "span": { "start": "557 CE", "end": "581 CE" } },
     { "id": "sui", "name": "Sui dynasty", "color": "#4a7a7a", "parent": "china", "span": { "start": "581 CE", "end": "618 CE" } },
     { "id": "tang", "name": "Tang dynasty", "color": "#b0702a", "parent": "china", "span": { "start": "618 CE", "end": "907 CE" } },
     { "id": "korea-japan", "name": "Korea and Japan", "color": "#6a4a9a", "parent": "east-asia" },
@@ -1596,7 +1762,104 @@
     { "id": "asuka", "name": "Asuka period (Japan)", "color": "#8a6a7a", "parent": "korea-japan", "span": { "start": "538 CE", "end": "710 CE" } },
     { "id": "austronesia", "name": "Island Southeast Asia & Oceania", "color": "#2a8a8a" },
     { "id": "island-sea", "name": "Island Southeast Asia", "color": "#2a8a8a", "parent": "austronesia" },
+    {
+      "id": "bujang-valley",
+      "name": "Bujang Valley (Kedah)",
+      "color": "#8a5a3a",
+      "parent": "island-sea",
+      "span": {
+        "start": "110 CE",
+        "end": "c. 1350 CE",
+        "startDates": [
+          { "year": "110 CE", "source": { "sourceKey": "wp-bujang", "sourceLocation": "lead (Sungai Batu monument)" } },
+          { "year": "450 CE", "margin": 50, "source": { "sourceKey": "wp-bujang", "sourceLocation": "lead ('5th to 14th century CE')" } }
+        ],
+        "endDates": [{ "year": "1350 CE", "margin": 50, "source": { "sourceKey": "wp-bujang", "sourceLocation": "lead ('5th to 14th century CE')" } }]
+      }
+    },
+    {
+      "id": "buni-culture",
+      "name": "Buni culture (West Java)",
+      "color": "#6a7a4a",
+      "parent": "island-sea",
+      "span": {
+        "start": "c. 400 BCE",
+        "end": "c. 100 CE",
+        "endDates": [
+          { "year": "100 CE", "source": { "sourceKey": "wp-buni", "sourceLocation": "infobox and lead" } },
+          { "year": "500 CE", "source": { "sourceKey": "wp-buni", "sourceLocation": "lead ('probably survived until 500 AD')" } }
+        ]
+      }
+    },
+    {
+      "id": "tarumanagara",
+      "name": "Tarumanagara",
+      "color": "#9a6a2a",
+      "parent": "island-sea",
+      "span": {
+        "start": "c. 358 CE",
+        "end": "669 CE",
+        "endDates": [{ "year": "669 CE", "source": { "sourceKey": "wp-tarumanagara", "sourceLocation": "infobox (invasion by Sriwijaya)" } }]
+      }
+    },
+    {
+      "id": "kalingga",
+      "name": "Kalingga (Central Java)",
+      "color": "#7a4a5a",
+      "parent": "island-sea",
+      "span": {
+        "start": "c. 550 CE",
+        "end": "c. 650 CE",
+        "startDates": [{ "year": "550 CE", "margin": 50, "source": { "sourceKey": "wp-kalingga", "sourceLocation": "infobox and lead ('6th century')" } }],
+        "endDates": [{ "year": "650 CE", "margin": 50, "source": { "sourceKey": "wp-kalingga", "sourceLocation": "infobox ('7th century')" } }]
+      }
+    },
+    {
+      "id": "kutai",
+      "name": "Kutai (East Borneo)",
+      "color": "#5a5a8a",
+      "parent": "island-sea",
+      "span": {
+        "start": "399 CE",
+        "end": "1635 CE",
+        "startDates": [
+          { "year": "399 CE", "source": { "sourceKey": "wp-kutai", "sourceLocation": "lead and Kutai Martapura Kingdom" } },
+          { "year": "350 CE", "source": { "sourceKey": "wp-kutai", "sourceLocation": "History of Indonesia sidebar ('Kutai Kingdom 350–1605')" } }
+        ]
+      }
+    },
+    {
+      "id": "sa-huynh-kalanay",
+      "name": "Sa Huỳnh–Kalanay trade sphere",
+      "color": "#3a7a7a",
+      "parent": "island-sea",
+      "span": {
+        "start": "c. 500 BCE",
+        "end": "c. 1500 CE",
+        "startDates": [
+          { "year": "500 BCE", "source": { "sourceKey": "wp-sa-huynh", "sourceLocation": "Trade network ('500 BC to AD 1500')" } },
+          { "year": "400 BCE", "source": { "sourceKey": "wp-kalanay", "sourceLocation": "lead (pottery 'dated 400 BC to AD 1500')" } }
+        ]
+      }
+    },
+    { "id": "taiwan-iron-age", "name": "Iron Age Taiwan", "color": "#4a6a7a", "parent": "island-sea" },
     { "id": "oceania", "name": "Oceania", "color": "#2a8a8a", "parent": "austronesia" },
+    { "id": "australia", "name": "Aboriginal Australia", "color": "#9a5a3a", "parent": "oceania" },
+    { "id": "torres-strait", "name": "Torres Strait", "color": "#6a6a4a", "parent": "oceania" },
+    { "id": "fiji", "name": "Fiji", "color": "#3a6a8a", "parent": "oceania" },
+    { "id": "tonga-samoa", "name": "Tonga and Samoa", "color": "#2a7a9a", "parent": "oceania" },
+    { "id": "east-polynesia", "name": "East Polynesia", "color": "#4a8aaa", "parent": "oceania" },
+    {
+      "id": "pohnpei",
+      "name": "Pohnpei (Micronesia)",
+      "color": "#5a7a6a",
+      "parent": "oceania",
+      "span": {
+        "start": "c. 1 CE",
+        "end": "c. 1628 CE",
+        "startDates": [{ "year": "1 CE", "margin": 50, "source": { "sourceKey": "wp-nan-madol", "sourceLocation": "Archaeology ('probably around AD 1')" } }]
+      }
+    },
     { "id": "americas", "name": "Americas", "color": "#2f7a5a" },
     { "id": "arctic", "name": "North American Arctic", "color": "#2f7a5a", "parent": "americas" },
     {
@@ -2078,7 +2341,7 @@
       "uuid": "kalanay",
       "title": "Kalanay Cave pottery",
       "start": "c. 400 BCE",
-      "tracks": ["island-sea"],
+      "tracks": ["sa-huynh-kalanay"],
       "descr": "Pottery dated 400 BC to AD 1500, similar to that of the Sa Huỳnh culture of southern Vietnam; iron and bronze artifacts were found at the site. It names the Sa Huỳnh–Kalanay interaction sphere, an Iron Age maritime trading network associated with the Austronesian peoples.",
       "sources": [{ "sourceKey": "wp-kalanay", "sourceLocation": "lead and Other findings" }],
       "links": [{ "to": "sa-huynh-trade", "kind": "related" }],
@@ -2089,7 +2352,7 @@
       "title": "Buni culture in northern West Java",
       "start": "c. 400 BCE",
       "end": "c. 100 CE",
-      "tracks": ["island-sea"],
+      "tracks": ["buni-culture"],
       "descr": "A clay pottery culture on the coast of northern West Java, Jakarta and Banten, known for incised geometric decoration; burial gifts date from 400 BC to AD 100. The kingdom of Tarumanagara is probably its successor.",
       "sources": [{ "sourceKey": "wp-buni", "sourceLocation": "infobox, lead and Characteristics" }],
       "endDates": [
@@ -3210,7 +3473,7 @@
       "uuid": "sui-reunifies",
       "title": "Sui reunites China",
       "start": "589 CE",
-      "tracks": ["sui"],
+      "tracks": ["sui", "chen"],
       "descr": "Yang Jian takes the throne on 4 March 581; in 588 the Sui mass 518,000 troops along the Yangtze, and by 589 Sui troops enter Jiankang.",
       "sources": [{ "sourceKey": "wp-sui", "sourceLocation": "infobox and Foundation and Emperor Wen" }],
       "importance": 1
@@ -5015,6 +5278,502 @@
         { "year": "634 CE", "source": { "sourceKey": "wp-zhangzhung", "sourceLocation": "Conquest (Tang Annals)" } }
       ],
       "links": [{ "to": "songtsen-gampo", "kind": "part-of" }]
+    },
+    {
+      "uuid": "lantingji",
+      "title": "Wang Xizhi’s Orchid Pavilion gathering",
+      "start": "353 CE",
+      "tracks": ["jin-china"],
+      "descr": "On 22 April 353 Wang Xizhi hosts 41 friends, relatives and pupils at the Orchid Pavilion on Mount Kuaiji; they compose 41 poems, and his preface, the Lantingji xu, becomes his most famous work.",
+      "sources": [{ "sourceKey": "wp-wang-xizhi", "sourceLocation": "lead and Orchid Pavilion" }],
+      "importance": 1
+    },
+    {
+      "uuid": "mogao",
+      "title": "The first Mogao caves at Dunhuang",
+      "start": "366 CE",
+      "tracks": ["sixteen-kingdoms"],
+      "descr": "The monk Le Zun has a vision of a thousand Buddhas at the site; the first caves are dug as places of meditation and worship. The earliest surviving decorated caves are built in the Northern Liang period (419–439), and caves continue to be built until the 14th century.",
+      "sources": [{ "sourceKey": "wp-mogao", "sourceLocation": "lead and History" }],
+      "startDates": [
+        { "year": "366 CE", "source": { "sourceKey": "wp-mogao", "sourceLocation": "lead and History (Fokan Ji)" } },
+        { "year": "353 CE", "source": { "sourceKey": "wp-mogao", "sourceLocation": "History (Shazhou Tujing)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "faxian",
+      "title": "Faxian’s pilgrimage to India",
+      "start": "399 CE",
+      "end": "412 CE",
+      "tracks": ["sixteen-kingdoms", "jin-china", "gupta"],
+      "descr": "At about 60 he sets out from Chang’an, capital of the Later Qin; he spends ten years in India in the reign of Chandragupta II, leaves from Tamralipti about 409, stays two years in Sri Lanka, and returns in 412 to what is now Nanjing. He writes his travels around 414.",
+      "sources": [{ "sourceKey": "wp-faxian", "sourceLocation": "lead, Biography and Works" }],
+      "importance": 1
+    },
+    {
+      "uuid": "kumarajiva",
+      "title": "Kumārajīva translates in Chang’an",
+      "start": "401 CE",
+      "end": "413 CE",
+      "tracks": ["sixteen-kingdoms"],
+      "descr": "Born in Kucha in 344 and captured by a warlord in 386, he is brought to Chang’an in 401 under the Later Qin; within a dozen years his translation bureau renders about thirty-five sutras in 294 scrolls. He dies in 413.",
+      "sources": [{ "sourceKey": "wp-kumarajiva", "sourceLocation": "infobox, lead, Early life, Capture and Arrival" }]
+    },
+    {
+      "uuid": "tao-yuanming",
+      "title": "Tao Yuanming retires to his farm",
+      "start": "405 CE",
+      "tracks": ["jin-china"],
+      "descr": "The poet (365–427; born 352 by one argument) resigns after some eighty days as magistrate of Pengze and spends the last 22 years of his life on his farmstead.",
+      "sources": [{ "sourceKey": "wp-tao-yuanming", "sourceLocation": "infobox, Year of birth, Government stints and Return to the fields" }],
+      "importance": 3
+    },
+    {
+      "uuid": "liu-song-founded",
+      "title": "Liu Yu ends the Eastern Jin: the Liu Song",
+      "start": "420 CE",
+      "tracks": ["liu-song", "jin-china"],
+      "descr": "Having led the rising against the usurper Huan Xuan in 404, Liu Yu ends Southern Yan (410) and takes Luoyang (416). On 10 July 420 Emperor Gong of Jin yields the throne to him at Jiankang; he dies on 26 June 422.",
+      "sources": [
+        { "sourceKey": "wp-liu-song", "sourceLocation": "infobox and History" },
+        { "sourceKey": "wp-song-wudi", "sourceLocation": "infobox, lead and As regent" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "yuanjia",
+      "title": "The Reign of Yuanjia",
+      "start": "425 CE",
+      "end": "453 CE",
+      "tracks": ["liu-song", "northern-wei"],
+      "descr": "Emperor Wen’s long reign; but he loses three commanderies to the Northern Wei in his first year, his campaigns against Wei fail in 450 and 452, and in 453 his son Liu Shao assassinates him.",
+      "sources": [{ "sourceKey": "wp-liu-song", "sourceLocation": "lead and Reign of Emperor Wen" }]
+    },
+    {
+      "uuid": "zu-chongzhi",
+      "title": "Zu Chongzhi’s Daming calendar and π",
+      "start": "464 CE",
+      "end": "465 CE",
+      "tracks": ["liu-song"],
+      "descr": "At Louxian he compiles the Daming calendar (introduced in 465, with a year of 365.24281481 days) and calculates π as between 3.1415926 and 3.1415927, a precision not surpassed for nearly 900 years.",
+      "sources": [{ "sourceKey": "wp-zu-chongzhi", "sourceLocation": "lead, Life and works and Mathematics" }]
+    },
+    {
+      "uuid": "southern-qi-founded",
+      "title": "Xiao Daocheng founds the Southern Qi",
+      "start": "479 CE",
+      "tracks": ["southern-qi", "liu-song"],
+      "descr": "On 3 June 479 he forces Emperor Shun of Liu Song to yield the throne. Sieges and skirmishes with the Northern Wei follow until 481, and peace is signed in 490.",
+      "sources": [
+        { "sourceKey": "wp-southern-qi", "sourceLocation": "infobox, History and War with Northern Wei" },
+        { "sourceKey": "wp-liu-song", "sourceLocation": "infobox" }
+      ]
+    },
+    {
+      "uuid": "liang-wudi",
+      "title": "Emperor Wu of Liang",
+      "start": "502 CE",
+      "end": "549 CE",
+      "tracks": ["liang", "southern-qi"],
+      "descr": "Xiao Yan, a Southern Qi royal and general, takes the throne on 30 April 502. By 517 Buddhist influence is plain in his policies; a Persian embassy brings tribute in 547. He dies on 12 June 549, during Hou Jing’s rebellion.",
+      "sources": [
+        { "sourceKey": "wp-liang-wudi", "sourceLocation": "infobox, lead and Early reign" },
+        { "sourceKey": "wp-liang-dynasty", "sourceLocation": "infobox and Rule" }
+      ]
+    },
+    {
+      "uuid": "hou-jing",
+      "title": "The Hou Jing Disturbance",
+      "start": "548 CE",
+      "end": "552 CE",
+      "tracks": ["liang"],
+      "descr": "The former Eastern Wei general rebels in the summer of 548 and besieges Jiankang that winter; the city falls in 549 (24 April in the Liang infobox). He makes and unmakes emperors, declares himself Emperor of Han on 1 January 552, and dies around 26 May 552 after Chen Baxian and Xiao Yi’s generals retake Jiankang.",
+      "sources": [
+        { "sourceKey": "wp-hou-jing", "sourceLocation": "lead, infobox and Rebellion against Liang" },
+        { "sourceKey": "wp-liang-dynasty", "sourceLocation": "infobox and Rule" },
+        { "sourceKey": "wp-chen-dynasty", "sourceLocation": "Hou Jing" }
+      ],
+      "links": [{ "to": "liang-wudi", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "jiangling-sacked",
+      "title": "Western Wei sacks Jiangling",
+      "start": "555 CE",
+      "tracks": ["liang", "western-wei"],
+      "descr": "The Liang capital falls; Western Wei installs Xiao Cha as emperor of a rump Western Liang at Jiangling, which lasts until the Sui conquer it in 587.",
+      "sources": [{ "sourceKey": "wp-liang-dynasty", "sourceLocation": "infobox, lead and Rule" }, { "sourceKey": "wp-chen-dynasty", "sourceLocation": "Rise" }],
+      "startDates": [
+        { "year": "555 CE", "source": { "sourceKey": "wp-liang-dynasty", "sourceLocation": "infobox (7 January 555)" } },
+        { "year": "554 CE", "source": { "sourceKey": "wp-chen-dynasty", "sourceLocation": "Rise" } }
+      ]
+    },
+    {
+      "uuid": "chen-founded",
+      "title": "Chen Baxian founds the Chen",
+      "start": "557 CE",
+      "tracks": ["chen", "liang"],
+      "descr": "On 16 November 557 the former Liang general has Emperor Jing yield the throne to him; he dies in 559.",
+      "sources": [
+        { "sourceKey": "wp-chen-dynasty", "sourceLocation": "infobox, History and Emperor Wen" },
+        { "sourceKey": "wp-liang-dynasty", "sourceLocation": "infobox" }
+      ]
+    },
+    {
+      "uuid": "xiaowen-reforms",
+      "title": "Emperor Xiaowen’s reforms",
+      "start": "485 CE",
+      "end": "496 CE",
+      "tracks": ["northern-wei"],
+      "descr": "The equal-field land system is enacted in 485; in 493–494 the capital moves from Pingcheng to Luoyang; edicts of 495 ban Xianbei clothing and language, and in 496 Xianbei family names are changed to Han ones.",
+      "sources": [{ "sourceKey": "wp-xiaowen", "sourceLocation": "lead, Early personal reign and Late reign" }],
+      "importance": 1
+    },
+    {
+      "uuid": "yungang",
+      "title": "The imperial caves at Yungang",
+      "start": "471 CE",
+      "end": "494 CE",
+      "tracks": ["northern-wei"],
+      "descr": "Near Pingcheng (Datong) the first period of carving ends in 465; a second phase under imperial supervision runs from around 471 to 494, when the court moves to Luoyang. Private patronage continues until 525.",
+      "sources": [{ "sourceKey": "wp-yungang", "sourceLocation": "lead and History" }]
+    },
+    {
+      "uuid": "longmen",
+      "title": "The Longmen Grottoes begun",
+      "start": "493 CE",
+      "tracks": ["northern-wei"],
+      "descr": "Carving at Luoyang starts with the Northern Wei; the middle Binyang cave is made between 500 and 523. About 30% of the carvings date from the Northern Wei and 60% from the Tang.",
+      "sources": [{ "sourceKey": "wp-longmen", "sourceLocation": "lead, History and Binyang" }],
+      "startDates": [
+        { "year": "493 CE", "source": { "sourceKey": "wp-longmen", "sourceLocation": "lead and History" } },
+        { "year": "478 CE", "source": { "sourceKey": "wp-longmen", "sourceLocation": "Guyangdong (earliest carving)" } }
+      ],
+      "links": [{ "to": "xiaowen-reforms", "kind": "related" }]
+    },
+    {
+      "uuid": "six-garrisons",
+      "title": "The Six Garrisons revolt",
+      "start": "524 CE",
+      "tracks": ["northern-wei"],
+      "descr": "Agrarian rebels overrun the Northern Wei’s northern provinces.",
+      "sources": [{ "sourceKey": "wp-yuwen-tai", "sourceLocation": "Early career" }]
+    },
+    {
+      "uuid": "wei-splits",
+      "title": "The Northern Wei splits in two",
+      "start": "534 CE",
+      "end": "535 CE",
+      "tracks": ["northern-wei", "eastern-wei", "western-wei"],
+      "descr": "In the fall of 534 Emperor Xiaowu flees west to Yuwen Tai; Gao Huan installs Yuan Shanjian as Eastern Wei emperor (8 November 534), and around the new year 535 Yuwen Tai poisons Xiaowu and enthrones Emperor Wen of Western Wei (18 February 535).",
+      "sources": [
+        { "sourceKey": "wp-yuwen-tai", "sourceLocation": "lead and Alliance with Xiaowu" },
+        { "sourceKey": "wp-eastern-wei", "sourceLocation": "infobox and History" },
+        { "sourceKey": "wp-western-wei", "sourceLocation": "infobox" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "shayuan",
+      "title": "Battle of Shayuan",
+      "start": "537 CE",
+      "tracks": ["eastern-wei", "western-wei"],
+      "descr": "After the volcanic winter of 536 brings famine to the Guanzhong, Gao Huan launches a major attack on Western Wei in the spring of 537, met at Shayuan; that winter Dugu Xin captures Luoyang.",
+      "sources": [{ "sourceKey": "wp-yuwen-tai", "sourceLocation": "Wen’s reign" }, { "sourceKey": "wp-western-wei", "sourceLocation": "History" }],
+      "importance": 3
+    },
+    {
+      "uuid": "northern-qi-founded",
+      "title": "Gao Yang founds the Northern Qi",
+      "start": "550 CE",
+      "tracks": ["northern-qi", "eastern-wei"],
+      "descr": "Gao Huan’s son deposes Emperor Xiaojing of Eastern Wei; the Northern Qi is established on 9 June 550, with its capital at Yecheng.",
+      "sources": [
+        { "sourceKey": "wp-northern-qi", "sourceLocation": "infobox and History" },
+        { "sourceKey": "wp-eastern-wei", "sourceLocation": "infobox and History" }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "northern-zhou-founded",
+      "title": "Yuwen Hu founds the Northern Zhou",
+      "start": "557 CE",
+      "tracks": ["northern-zhou", "western-wei"],
+      "descr": "After Yuwen Tai’s death in 556, his nephew Yuwen Hu forces Emperor Gong of Western Wei to yield the throne; the Northern Zhou is established at Chang’an on 15 February 557.",
+      "sources": [
+        { "sourceKey": "wp-northern-zhou", "sourceLocation": "infobox and Establishment" },
+        { "sourceKey": "wp-western-wei", "sourceLocation": "History" }
+      ]
+    },
+    {
+      "uuid": "zhou-conquers-qi",
+      "title": "Northern Zhou conquers the Northern Qi",
+      "start": "577 CE",
+      "tracks": ["northern-zhou", "northern-qi"],
+      "descr": "Emperor Wu’s campaign of 576–577 destroys the Northern Qi; its last emperors are captured (28 February 577) and die in late 577.",
+      "sources": [
+        { "sourceKey": "wp-northern-zhou", "sourceLocation": "Unified north China" },
+        { "sourceKey": "wp-northern-qi", "sourceLocation": "infobox and History" },
+        { "sourceKey": "wp-sui-wendi", "sourceLocation": "Early life" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "yang-jian",
+      "title": "Yang Jian takes power: the Sui",
+      "start": "580 CE",
+      "end": "581 CE",
+      "tracks": ["northern-zhou", "sui"],
+      "descr": "When Emperor Xuan dies in 580, his father-in-law Yang Jian seizes power as regent; his general Wei Xiaokuan defeats Yuchi Jiong within 68 days. On 4 March 581 Emperor Jing abdicates in his favour.",
+      "sources": [
+        { "sourceKey": "wp-sui-wendi", "sourceLocation": "infobox, lead and Regency" },
+        { "sourceKey": "wp-northern-zhou", "sourceLocation": "Transit to Sui" }
+      ],
+      "links": [{ "to": "sui-reunifies", "kind": "related" }]
+    },
+    {
+      "uuid": "xuanzang",
+      "title": "Xuanzang’s journey to India",
+      "start": "629 CE",
+      "end": "645 CE",
+      "tracks": ["tang", "harsha-kannauj"],
+      "descr": "He sets out in 629 (627 in another version) and returns to Chang’an in the first month of 645, bringing some 657 Sanskrit texts; his Records of the Western Regions is completed in 646.",
+      "sources": [{ "sourceKey": "wp-xuanzang", "sourceLocation": "lead, Dates, Return to China and Original works" }],
+      "startDates": [
+        { "year": "629 CE", "source": { "sourceKey": "wp-xuanzang", "sourceLocation": "Dates ('Most sources … 629 CE')" } },
+        { "year": "627 CE", "source": { "sourceKey": "wp-xuanzang", "sourceLocation": "Dates ('either 627 or 629')" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "lingling-o",
+      "title": "The earliest surviving lingling-o",
+      "start": "c. 500 BCE",
+      "tracks": ["sa-huynh-kalanay", "taiwan-iron-age"],
+      "descr": "Double-headed pendants and earrings carved from nephrite jade. The Maritime Jade Road between the Philippines and Taiwan, established around 2000 BC, peaks until 500 CE and wanes from then until 1000 CE; Philippine craftsmen work Taiwanese jade until around 1000 AD.",
+      "sources": [
+        { "sourceKey": "wp-lingling-o", "sourceLocation": "lead and Batanes workshop site" },
+        { "sourceKey": "wp-kalanay", "sourceLocation": "lead" },
+        { "sourceKey": "wp-prehistory-taiwan", "sourceLocation": "Neolithic" }
+      ]
+    },
+    {
+      "uuid": "sungai-batu",
+      "title": "The Sungai Batu brick monument",
+      "start": "110 CE",
+      "tracks": ["bujang-valley"],
+      "descr": "A clay brick monument in the Bujang Valley, described as the oldest man-made structure recorded in Southeast Asia. Sites explored after 2008 are said to date from the 2nd century CE; Ptolemy wrote of the Golden Chersonese.",
+      "sources": [{ "sourceKey": "wp-bujang", "sourceLocation": "lead, Archaeological research and History" }],
+      "importance": 3
+    },
+    {
+      "uuid": "kutai-yupa",
+      "title": "Mūlawarman’s yūpa inscriptions",
+      "start": "c. 375 CE",
+      "tracks": ["kutai"],
+      "descr": "Seven stone pillars at Kutai, the earliest known stone inscriptions in Indonesia, whose script is dated to the last half of the 4th century. They name Kudungga, his son Aśwawarman, founder of the dynasty, and his grandson Mūlawarman, but not the kingdom.",
+      "sources": [
+        { "sourceKey": "wp-kutai", "sourceLocation": "Kutai Martapura Kingdom" },
+        { "sourceKey": "wp-prehistoric-indonesia", "sourceLocation": "lead" }
+      ],
+      "startDates": [
+        {
+          "year": "375 CE",
+          "margin": 25,
+          "source": { "sourceKey": "wp-kutai", "sourceLocation": "Kutai Martapura Kingdom ('last half the 4th century')" }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "faxian-java",
+      "title": "Faxian stays on Java",
+      "start": "412 CE",
+      "end": "413 CE",
+      "tracks": ["tarumanagara"],
+      "descr": "Returning from India, the monk stays on the island of Ye-po-ti for six months, from December 412 until May 413.",
+      "sources": [{ "sourceKey": "wp-tarumanagara", "sourceLocation": "Historiography" }],
+      "links": [{ "to": "faxian", "kind": "part-of" }]
+    },
+    {
+      "uuid": "purnawarman",
+      "title": "Purnawarman’s inscriptions",
+      "start": "c. 450 CE",
+      "tracks": ["tarumanagara"],
+      "descr": "The 5th-century ruler of Tarumanagara produces the earliest known inscriptions in Java. The Ciaruteun boulder, found near Ciampea in 1863, is the earliest to name the kingdom and bears his footprints, likened to Vishnu’s.",
+      "sources": [
+        { "sourceKey": "wp-tarumanagara", "sourceLocation": "lead and Age of Purnawarman" },
+        { "sourceKey": "wp-ciaruteun", "sourceLocation": "infobox, lead, History and Content" }
+      ],
+      "startDates": [
+        {
+          "year": "450 CE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-ciaruteun", "sourceLocation": "infobox ('early 5th century') and History ('5th century')" }
+        },
+        { "year": "450 CE", "margin": 50, "source": { "sourceKey": "wp-tarumanagara", "sourceLocation": "lead ('5th-century ruler')" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "taiwan-metal",
+      "title": "Metal reaches Taiwan",
+      "start": "c. 1 CE",
+      "tracks": ["taiwan-iron-age"],
+      "descr": "Around the beginning of the Common Era, iron and other metals appear and artisans switch from jade to metal, glass and carnelian. By around AD 400, wrought iron is produced locally in bloomeries, possibly a technology from the Philippines.",
+      "sources": [{ "sourceKey": "wp-prehistory-taiwan", "sourceLocation": "Neolithic and Metal Age" }],
+      "startDates": [
+        {
+          "year": "1 CE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-prehistory-taiwan", "sourceLocation": "Metal Age ('around the beginning of the Common Era')" }
+        }
+      ]
+    },
+    {
+      "uuid": "long-pause",
+      "title": "The long pause in Polynesian settlement",
+      "start": "c. 900 BCE",
+      "end": "c. 700 CE",
+      "tracks": ["tonga-samoa", "fiji"],
+      "descr": "Having reached Fiji, Samoa and Tonga by around 900 BC, Polynesians stay at the furthest extent of the Austronesian expansion for some 1,500 years and lose the art of pottery. Around 700 AD they resume their migrations east, to the Cook Islands, French Polynesia and the Marquesas.",
+      "sources": [{ "sourceKey": "wp-polynesians", "sourceLocation": "Origins" }],
+      "importance": 1
+    },
+    {
+      "uuid": "melanesian-influx",
+      "title": "A Melanesian influx into Fiji",
+      "start": "c. 1 CE",
+      "tracks": ["fiji"],
+      "descr": "About a thousand years after the first Austronesian settlers, a large influx of people with mainly Melanesian genetics arrives around the beginning of the Common Era.",
+      "sources": [{ "sourceKey": "wp-fiji-history", "sourceLocation": "lead and Early settlement" }],
+      "startDates": [
+        {
+          "year": "1 CE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-fiji-history", "sourceLocation": "lead ('about the time of the beginning of the Common Era')" }
+        }
+      ]
+    },
+    {
+      "uuid": "plain-ware",
+      "title": "Polynesian Plain Ware, and the end of pottery",
+      "start": "700 BCE",
+      "end": "400 CE",
+      "tracks": ["tonga-samoa", "fiji"],
+      "descr": "In Tonga, settlers stop decorating their pots two hundred years after arriving and make plain ware until about 400 AD, when they stop making pottery at all; the same happens in Fiji and Samoa. A Lapita hamlet grows into a village over a kilometre long.",
+      "sources": [
+        { "sourceKey": "wp-tonga-history", "sourceLocation": "The Lapita Period and The Polynesian Plain Ware Period" },
+        { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating" }
+      ],
+      "endDates": [
+        { "year": "400 CE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "Plain Ware Period ('By 1550 BP (400 AD)')" } },
+        {
+          "year": "1 CE",
+          "margin": 100,
+          "source": { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating (Tonga 'by about 2,000 years ago')" }
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "samoa-quiet",
+      "title": "Samoa’s unrecorded centuries",
+      "start": "750 BCE",
+      "end": "1000 CE",
+      "tracks": ["tonga-samoa"],
+      "descr": "Little is known about human activity in Samoa in this period, when pottery-making appears to stop suddenly; it may have been a time of migrations that settled the rest of Polynesia.",
+      "sources": [{ "sourceKey": "wp-samoa-history", "sourceLocation": "Early history" }]
+    },
+    {
+      "uuid": "tonga-formative",
+      "title": "Tonga’s Formative Dark Age",
+      "start": "400 CE",
+      "end": "1200 CE",
+      "tracks": ["tonga-samoa"],
+      "descr": "The population of Tongatapu grows to between 17,000 and 25,000. The Tuʻi Tonga line may begin as early as 950 AD; the maritime empire does not begin until after 1200.",
+      "sources": [{ "sourceKey": "wp-tonga-history", "sourceLocation": "The Formative Dark Age" }]
+    },
+    {
+      "uuid": "east-polynesia-early-dates",
+      "title": "Early, superseded dates for East Polynesia",
+      "start": "c. 300 CE",
+      "tracks": ["east-polynesia"],
+      "descr": "Older estimates put people in the Marquesas before 100 AD, on Rapa Nui around 300–400 CE and in Hawaii around 300 (Kirch’s textbooks). Recent studies place the Society Islands at about 1025–1120, the rest of the Marquesas at 1190–1290, Hawaii at around 940–1130, and Rapa Nui possibly as late as 1200.",
+      "sources": [
+        { "sourceKey": "wp-marquesas", "sourceLocation": "History" },
+        { "sourceKey": "wp-easter-island-history", "sourceLocation": "First peoples" },
+        { "sourceKey": "wp-hawaii-history", "sourceLocation": "Polynesian migration and arrival" }
+      ],
+      "startDates": [
+        {
+          "year": "350 CE",
+          "margin": 50,
+          "source": { "sourceKey": "wp-easter-island-history", "sourceLocation": "First peoples ('around 300–400 CE')" }
+        },
+        {
+          "year": "300 CE",
+          "source": { "sourceKey": "wp-hawaii-history", "sourceLocation": "Polynesian migration and arrival (Kirch, 'about 300')" }
+        }
+      ]
+    },
+    {
+      "uuid": "pohnpei-settled",
+      "title": "People on Pohnpei",
+      "start": "c. 80 CE",
+      "end": "200 CE",
+      "tracks": ["pohnpei"],
+      "descr": "Radiocarbon dating shows human activity at Nan Madol from around AD 80–200; the earliest settlement on Pohnpei was probably around AD 1. Islet building starts by the 8th or 9th century, and the megaliths around 1180.",
+      "sources": [{ "sourceKey": "wp-nan-madol", "sourceLocation": "History and Archaeology" }],
+      "importance": 3
+    },
+    {
+      "uuid": "torres-strait-culture",
+      "title": "A Torres Strait maritime culture",
+      "start": "c. 550 BCE",
+      "tracks": ["torres-strait"],
+      "descr": "The islands are first occupied around 4,000 years ago; by 2,500 years ago more of them are occupied and a distinctive maritime culture has emerged. Agriculture develops on some islands, and villages appear by 700 years ago.",
+      "sources": [{ "sourceKey": "wp-prehistory-australia", "sourceLocation": "lead and Culture and technology" }],
+      "startDates": [
+        {
+          "year": "550 BCE",
+          "margin": 100,
+          "source": { "sourceKey": "wp-prehistory-australia", "sourceLocation": "Culture and technology ('By 2,500 years ago')" }
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "dingo-torres-strait",
+      "title": "Dingoes in the Torres Strait",
+      "start": "c. 150 BCE",
+      "tracks": ["torres-strait", "australia"],
+      "descr": "The earliest dingo remains in the Torres Strait date to 2,100 years before present; desiccated dingo flesh from Thylacine Hole on the Nullarbor Plain dates to 2,200. The earliest known dingo remains in Australia, from Western Australia, are about 3,450 years old.",
+      "sources": [{ "sourceKey": "wp-dingo", "sourceLocation": "infobox, lead and History" }],
+      "startDates": [{ "year": "150 BCE", "margin": 100, "source": { "sourceKey": "wp-dingo", "sourceLocation": "History ('2,100 YBP')" } }]
+    },
+    {
+      "uuid": "spear-barbs",
+      "title": "Spear barbs give way to new tools",
+      "start": "c. 50 BCE",
+      "tracks": ["australia"],
+      "descr": "Spear barbs and tips peak about 2,000 years ago, then disappear from the archaeological record in south-eastern Australia, replaced by coastal shell fish hooks and bone points, axes for hunting possums and adzes for digging sticks; regular burning is part of this late Holocene shift. Shell fish hooks appear in Australia about 1,200 years ago.",
+      "sources": [
+        { "sourceKey": "wp-fire-stick", "sourceLocation": "History" },
+        { "sourceKey": "wp-prehistory-australia", "sourceLocation": "Culture and technology" }
+      ],
+      "startDates": [{ "year": "50 BCE", "margin": 100, "source": { "sourceKey": "wp-fire-stick", "sourceLocation": "History ('peaked about 2,000 years ago')" } }]
+    },
+    {
+      "uuid": "ubirr",
+      "title": "Most of Ubirr’s rock paintings",
+      "start": "c. 50 BCE",
+      "tracks": ["australia"],
+      "descr": "The rock faces at Ubirr, in Arnhem Land, are painted and repainted continuously; most paintings there were created about 2,000 years ago, and some have been repainted into modern times. A painted thylacine shows an animal extinct in the area for about 2,000 years.",
+      "sources": [{ "sourceKey": "wp-ubirr", "sourceLocation": "lead and Main gallery" }],
+      "startDates": [{ "year": "50 BCE", "margin": 100, "source": { "sourceKey": "wp-ubirr", "sourceLocation": "lead ('about 2000 years ago')" } }],
+      "importance": 3
     }
   ]
 }
