@@ -24,6 +24,7 @@ import { allTimelines, BUNDLED, BUNDLED_IDS, findTimeline } from './timelines/in
 import { addToLibrary, fetchTimeline, normalizeUrl, removeFromLibrary, type LibraryEntry } from './state/library.ts';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
+import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { safeUrl } from './lib/urls.ts';
 import type { Dataset, TimelineEvent, Track } from './types.ts';
 
@@ -102,8 +103,14 @@ export default function App() {
   const [increment, setIncrement] = useState(initialUrl.increment);
   const [compress, setCompress] = useState(initialUrl.compress);
   const [showLinks, setShowLinks] = useState(initialUrl.links);
-  const [collapsed, setCollapsed] = useState<Record<string, boolean>>(() =>
-    Object.fromEntries((meta.collapsed ?? []).map((id) => [id, true])),
+  const openingCollapsed = useMemo(() => defaultCollapsed(meta.collapsed), [meta.collapsed]);
+  const [collapsed, setCollapsed] = useState<Record<string, boolean>>(() => defaultCollapsed(meta.collapsed));
+  const hasSubRows = useMemo(() => parentIds(data.tracks).length > 0, [data.tracks]);
+  const someCollapsed = useMemo(() => anyCollapsed(data.tracks, collapsed), [data.tracks, collapsed]);
+  // "Default view" restores the rows the timeline opens with; only useful when that isn't simply "all open".
+  const canReset = useMemo(
+    () => anyCollapsed(data.tracks, openingCollapsed) && !sameCollapsed(data.tracks, collapsed, openingCollapsed),
+    [data.tracks, collapsed, openingCollapsed],
   );
   const [showFilters, setShowFilters] = useState(false);
   const [showTheme, setShowTheme] = useState(false);
@@ -424,6 +431,23 @@ export default function App() {
         <label className="check" title="Show arrows between connected events">
           <input type="checkbox" checked={showLinks} onChange={(e) => setShowLinks(e.target.checked)} /> Connections
         </label>
+        {hasSubRows && (
+          <button
+            onClick={() => setCollapsed(someCollapsed ? {} : collapseAll(data.tracks))}
+            title={
+              someCollapsed
+                ? 'Open every row, down to the smallest sub-row'
+                : 'Fold every row into its parent, leaving only the top-level rows; open them again one level at a time'
+            }
+          >
+            {someCollapsed ? '▾ Expand all' : '▸ Collapse all'}
+          </button>
+        )}
+        {canReset && (
+          <button onClick={() => setCollapsed(openingCollapsed)} title="Fold and open rows the way this timeline opens">
+            ↺ Default view
+          </button>
+        )}
         <input
           className="search"
           list="event-titles"

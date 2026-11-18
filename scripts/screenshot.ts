@@ -1,6 +1,7 @@
 // Screenshots the app in Microsoft Edge (via playwright-core; no browser download needed).
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
-//        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json]
+//        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json] [--click "Button|Other"]
+// --click presses toolbar or panel buttons whose text contains each name, in order, before --expand.
 // --expand opens collapsed rows by their label (in order, so a group can be opened before its regions);
 // --scroll-to scrolls the timeline so that row sits near the top. Names are separated by "|".
 // --storage puts a file into localStorage before the page loads (repeatable), e.g. a saved edit-mode draft.
@@ -11,7 +12,7 @@ import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const args = process.argv.slice(2);
-const valued = /^--(width|height|expand|scroll-to|storage)$/;
+const valued = /^--(width|height|expand|scroll-to|storage|click)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
   console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
@@ -37,8 +38,14 @@ if (args.includes('--close-legend')) {
   await page.locator('.legend-panel header button.icon').first().click({ timeout: 1000 }).catch(() => {});
   await page.waitForTimeout(300);
 }
+for (const name of opt('--click')?.split('|') ?? []) {
+  const btn = page.locator('button').filter({ hasText: name }).first();
+  if (await btn.count()) await btn.click();
+  else problems.push(`--click: no button with "${name}"`);
+  await page.waitForTimeout(300);
+}
 
-const label = (name: string) => page.locator('.tl-lane-label').filter({ has: page.getByText(name, { exact: true }) }).first();
+const label =(name: string) => page.locator('.tl-lane-label').filter({ has: page.getByText(name, { exact: true }) }).first();
 for (const name of opt('--expand')?.split('|') ?? []) {
   const l = label(name);
   await l.scrollIntoViewIfNeeded();

@@ -43,7 +43,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Calendars.** Each timeline names its eras (BCE/CE, BE/U, …) and says whether it has a year 0.
   BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
   years (1500 BCE, not 1501 BCE).
-- **Lanes nest to any depth**, e.g. group → region → civilization → period. Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events.
+- **Lanes nest to any depth**, e.g. group → region → civilization → period. Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events. The toolbar's **Expand all / Collapse all** button (shown when a timeline has sub-rows) opens every row, or folds every row so only the top level shows; reopening a row then shows its children still folded, one level at a time. **Default view** (shown once the rows differ from how the timeline opens) restores its opening layout.
   A track can have a **lifespan**, shaded across its lane, so you can see which civilizations coexisted.
 - **Uncertain dates.** An event's start and end can carry *date claims*: what each source says, under which
   chronology, with what ± margin. The app computes each date's range from those claims and draws it:
@@ -88,7 +88,7 @@ node scripts/row-order.ts src/timelines/ancient-near-east.json --parent near-eas
 npm run format:src           # re-format data-src/ancient-near-east.json
 node scripts/additions/europe.ts   # (re)apply a region's additions; then npm run importance:ancient
 node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
-npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json]
+npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all"]
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 
