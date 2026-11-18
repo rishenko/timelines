@@ -77,7 +77,7 @@ function shareSearch(id: string, library?: LibraryEntry): string {
 
 export default function App() {
   const [initialUrl] = useState(readUrl);
-  const [{ data, dirty, published }, dispatch] = useDataset(initialUrl.published);
+  const [{ data, dirty, published, updatedUnderDraft }, dispatch] = useDataset(initialUrl.published);
   const meta = data.meta;
   const cal = meta.calendar;
   const present = datasetPresent(data);
@@ -127,7 +127,12 @@ export default function App() {
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
   const [editMode, setEditMode] = useState(false);
   const [editing, setEditing] = useState<Editing>(null);
-  const [toast, setToast] = useState<{ text: string; kind: 'info' | 'error'; n: number } | null>(null);
+  // on opening, readers with a saved draft hear if the published timeline changed underneath it
+  const [toast, setToast] = useState<{ text: string; kind: 'info' | 'error'; n: number } | null>(() =>
+    updatedUnderDraft
+      ? { text: 'The published timeline has been updated. Your local edits are kept on top of the new version.', kind: 'info', n: 0 }
+      : null,
+  );
   const [focus, setFocus] = useState<FocusRequest | null>(null);
 
   const [selectedId, setSelectedId] = useState<string | null>(() =>
@@ -225,7 +230,8 @@ export default function App() {
       return;
     }
     if (BUNDLED_IDS.includes(id)) {
-      localStorage.setItem(draftKey(id), JSON.stringify(dataset));
+      // a whole file for another bundled timeline: that timeline applies it in full (see restoreDraft)
+      localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
       goToTimeline(id);
       return;
     }
@@ -550,6 +556,7 @@ export default function App() {
       {dirty && !editMode && (
         <div className="draft-banner">
           You're viewing local edits, not the published timeline.{' '}
+          {updatedUnderDraft && 'The published timeline has been updated since you made them; your edits are kept on top of it. '}
           <button className="linklike" onClick={() => setEditMode(true)}>
             Open edit mode
           </button>{' '}

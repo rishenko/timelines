@@ -73,7 +73,10 @@ paths; anything else (e.g. `javascript:`) is rejected.
   until the reader picks their own.
 - **Deep links:** `?timeline=…&inc=100&at=-1594#sack-of-babylon` restores timeline, scale, position and selection.
 - **Edit mode:** add events, tracks and sources, record date claims, download the JSON and upload it again.
-  Drafts autosave per timeline in the browser. Old REDACTED files (v1 and v2) are converted on upload.
+  Drafts autosave per timeline in the browser as the reader's changes (`src/state/draft.ts`), not a copy, so later
+  updates to the published timeline still reach them; where both changed the same item, the reader's version wins, and
+  the reader is told when the published timeline changed under their edits. Old full-copy drafts are converted on load
+  without deleting anything. Old REDACTED files (v1 and v2) are converted on upload.
 
 ## Run
 

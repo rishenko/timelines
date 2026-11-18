@@ -29,9 +29,9 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   US Southwest (its pages were 404), South India's Neolithic, the Kintampo complex, southern African hunter-gatherers,
   Yap, New Guinea.
 - **Key events when zoomed out**: at the coarsest zoom, show only key events (a second use of `importance`).
-- **Drafts hide data updates.** A saved edit-mode draft replaces the bundled timeline entirely, so a
-  reader with a draft never sees later fixes to the shipped data. Same issue as REDACTED;
-  fix both the same way (e.g. detect a newer shipped dataset and offer to merge).
+- **Drafts hid data updates: fixed here (2026-11-18).** Drafts are now stored as the reader's changes and replayed onto
+  the current published data (`src/state/draft.ts`), so later fixes reach readers with drafts. REDACTED still
+  has the old behaviour; port `draft.ts` there if v2 work resumes.
 - **More ancient content**: Lagash–Umma and Eannatum, Hittite Middle Kingdom, Mitanni rulers, Hazor
   (fetch *Tel Hazor*), Confucius, Lydia, Sabaeans, the Nubian kingdom of Kerma/Kush. Same rule: every date
   from a cited page. Many values for the Levant, Assyria and Iran exist only in page summaries

@@ -3,6 +3,7 @@ import type { Dataset, Source, TimelineEvent, Track } from '../types.ts';
 import * as edits from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
 import { upgrade } from '../data/migrate.ts';
+import { applyChanges, changesFromLegacyCopy, diffDataset, fingerprint, isEmpty, type DraftChanges, type StoredDraft } from './draft.ts';
 
 export const draftKey = (timelineId: string) => `timelines:${timelineId}:draft`;
 
@@ -23,6 +24,8 @@ export interface DatasetState {
   data: Dataset;
   /** True when the data differs from the published file (edits or an upload). */
   dirty: boolean;
+  /** True when a saved draft was replayed onto published data that changed after the draft was made. */
+  updatedUnderDraft?: boolean;
 }
 
 export function datasetReducer(state: DatasetState, action: DatasetAction): DatasetState {
@@ -62,17 +65,50 @@ export function datasetReducer(state: DatasetState, action: DatasetAction): Data
   }
 }
 
+/**
+ * Turns whatever is stored for a timeline into the reader's dataset. Three stored forms:
+ * - `{ format: 'changes' }` (current): the reader's changes, replayed onto today's published data;
+ * - `{ format: 'replace', data }`: a whole file uploaded for this timeline from another one (see App), applied in
+ *   full against today's published data, deletions included;
+ * - a bare dataset: a draft saved before drafts were stored as changes; converted conservatively (see
+ *   `changesFromLegacyCopy`).
+ * `updated` is true when the published data has changed since the reader's changes were made.
+ */
+export function restoreDraft(published: Dataset, stored: unknown): { data: Dataset; updated: boolean } | null {
+  if (!stored || typeof stored !== 'object') return null;
+  const s = stored as { format?: string; base?: string; changes?: DraftChanges; data?: unknown };
+  let changes: DraftChanges;
+  let updated: boolean;
+  if (s.format === 'changes' && s.changes) {
+    changes = s.changes;
+    updated = s.base !== fingerprint(published);
+  } else if (s.format === 'replace' && s.data && validateDataset(s.data).length === 0) {
+    changes = diffDataset(published, s.data as Dataset);
+    updated = false;
+  } else if (validateDataset(stored).length === 0) {
+    changes = changesFromLegacyCopy(published, stored as Dataset);
+    updated = true;
+  } else return null;
+  if (isEmpty(changes)) return null;
+  const data = applyChanges(published, changes);
+  return validateDataset(data).length === 0 ? { data, updated } : null;
+}
+
 function loadInitial(published: Dataset): DatasetState {
   try {
     const raw = localStorage.getItem(draftKey(published.meta.id));
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      if (validateDataset(parsed).length === 0) return { published, data: parsed as Dataset, dirty: true };
-    }
+    const restored = raw ? restoreDraft(published, JSON.parse(raw)) : null;
+    if (restored) return { published, data: restored.data, dirty: true, updatedUnderDraft: restored.updated };
   } catch {
     // ignore unreadable drafts
   }
   return { published, data: published, dirty: false };
+}
+
+/** What to store for a reader's dataset: their changes against the published data, or nothing. */
+export function draftToStore(published: Dataset, data: Dataset): StoredDraft | null {
+  const changes = diffDataset(published, data);
+  return isEmpty(changes) ? null : { format: 'changes', base: fingerprint(published), changes };
 }
 
 /** Dataset state for one bundled timeline, with automatic draft persistence to localStorage. */
@@ -80,7 +116,8 @@ export function useDataset(published: Dataset) {
   const [state, dispatch] = useReducer(datasetReducer, published, loadInitial);
   useEffect(() => {
     const key = draftKey(state.published.meta.id);
-    if (state.dirty) localStorage.setItem(key, JSON.stringify(state.data));
+    const draft = state.dirty ? draftToStore(state.published, state.data) : null;
+    if (draft) localStorage.setItem(key, JSON.stringify(draft));
     else localStorage.removeItem(key);
   }, [state]);
   return [state, dispatch] as const;
