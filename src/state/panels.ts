@@ -19,13 +19,14 @@ function firstVisit(): boolean {
   }
 }
 
-export function usePanels() {
+/** autoTour: false when the page opens in table view (the tour is about the chart; the Legend can still start it). */
+export function usePanels(autoTour = true) {
   const [open, setOpen] = useState<Record<PanelName, boolean>>(() => ({
     filters: false,
     legend: false,
     timelines: false,
     theme: false,
-    tour: firstVisit(),
+    tour: autoTour && firstVisit(),
   }));
   useEffect(() => {
     try {

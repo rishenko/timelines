@@ -48,6 +48,11 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     });
   steps.push(
     {
+      target: '[aria-label="View"]',
+      title: 'Timeline or table',
+      text: 'Table lists the same events with their dates, the ranges the sources allow, and the sources, in words. It works with a screen reader, and Download CSV saves it as a spreadsheet.',
+    },
+    {
       target: '.toolbar .search',
       title: 'Search',
       text: 'Find a row, an event or a year, and go straight to it. Press / to search from anywhere.',

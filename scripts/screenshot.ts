@@ -41,7 +41,7 @@ await page.goto(url);
 await page.waitForTimeout(2000);
 // --close-legend closes whatever opens by itself on a first visit: the guided tour (and the legend, if open)
 if (args.includes('--close-legend')) {
-  await page.locator('.tour-card footer .linklike').first().click({ timeout: 1000 }).catch(() => {});
+  await page.locator('.tour-card .tour-actions .linklike').first().click({ timeout: 1000 }).catch(() => {});
   await page.locator('.legend-panel header button.icon').first().click({ timeout: 1000 }).catch(() => {});
   await page.waitForTimeout(300);
 }

@@ -1,9 +1,13 @@
 import type { ReactNode } from 'react';
 import type { PanelName } from '../state/panels.ts';
+import type { View } from '../state/url.ts';
 
 interface Props {
   /** The title menu (TimelinePicker). */
   picker: ReactNode;
+  /** Timeline (the chart) or table. The chart's own controls (zoom, gaps, connections, rows) are hidden in table view. */
+  view: View;
+  onView: (v: View) => void;
   subtitle?: string;
   increments: number[];
   increment: number;
@@ -47,46 +51,63 @@ export function Toolbar(p: Props) {
           </span>
         )}
       </h1>
-      <div className="group" role="group" aria-label="Years per tick">
-        {p.increments.map((inc) => (
-          <button key={inc} className={`seg ${p.increment === inc ? 'on' : ''}`} onClick={() => p.onIncrement(inc)}>
-            {inc} yr
+      <div className="group" role="group" aria-label="View">
+        {(['timeline', 'table'] as const).map((v) => (
+          <button
+            key={v}
+            className={`seg ${p.view === v ? 'on' : ''}`}
+            aria-pressed={p.view === v}
+            onClick={() => p.onView(v)}
+            title={v === 'table' ? 'The same events as tables, with dates and sources in words' : 'The events on a time axis'}
+          >
+            {v === 'timeline' ? 'Timeline' : 'Table'}
           </button>
         ))}
       </div>
       {p.dating}
-      <label className="check" title="Collapse long stretches with no events">
-        <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Compress gaps
-      </label>
-      <label className="check" title="Show arrows between connected events">
-        <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Connections
-      </label>
-      {p.rows && (
-        <div className="group rows-group" role="group" aria-label="Rows">
-          <button
-            className="seg"
-            onClick={p.rows.onToggleAll}
-            title={
-              p.rows.someCollapsed
-                ? 'Open every row, down to the smallest sub-row'
-                : 'Fold every row into its parent, leaving only the top-level rows; open them again one level at a time'
-            }
-          >
-            {p.rows.someCollapsed ? '▾ Expand all' : '▸ Collapse all'}
-          </button>
-          {/* always there (disabled when the rows already are as the timeline opens), so the toolbar doesn't jump */}
-          {p.rows.hasDefaultView && (
-            <button
-              className="seg"
-              onClick={p.rows.onReset}
-              disabled={!p.rows.canReset}
-              aria-label="Default view"
-              title={p.rows.canReset ? 'Default view: fold and open rows the way this timeline opens' : 'The rows are as this timeline opens'}
-            >
-              ↺
-            </button>
+      {p.view === 'timeline' && (
+        <>
+          <div className="group" role="group" aria-label="Years per tick">
+            {p.increments.map((inc) => (
+              <button key={inc} className={`seg ${p.increment === inc ? 'on' : ''}`} onClick={() => p.onIncrement(inc)}>
+                {inc} yr
+              </button>
+            ))}
+          </div>
+          <label className="check" title="Collapse long stretches with no events">
+            <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Compress gaps
+          </label>
+          <label className="check" title="Show arrows between connected events">
+            <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Connections
+          </label>
+          {p.rows && (
+            <div className="group rows-group" role="group" aria-label="Rows">
+              <button
+                className="seg"
+                onClick={p.rows.onToggleAll}
+                title={
+                  p.rows.someCollapsed
+                    ? 'Open every row, down to the smallest sub-row'
+                    : 'Fold every row into its parent, leaving only the top-level rows; open them again one level at a time'
+                }
+              >
+                {p.rows.someCollapsed ? '▾ Expand all' : '▸ Collapse all'}
+              </button>
+              {/* always there (disabled when the rows already are as the timeline opens), so the toolbar doesn't jump */}
+              {p.rows.hasDefaultView && (
+                <button
+                  className="seg"
+                  onClick={p.rows.onReset}
+                  disabled={!p.rows.canReset}
+                  aria-label="Default view"
+                  title={p.rows.canReset ? 'Default view: fold and open rows the way this timeline opens' : 'The rows are as this timeline opens'}
+                >
+                  ↺
+                </button>
+              )}
+            </div>
           )}
-        </div>
+        </>
       )}
       {p.search}
       <span className="spacer" />

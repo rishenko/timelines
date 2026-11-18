@@ -112,6 +112,13 @@ paths; anything else (e.g. `javascript:`) is rejected.
   updates to the published timeline still reach them; where both changed the same item, the reader's version wins, and
   the reader is told when the published timeline changed under their edits. Old full-copy drafts are converted on load
   without deleting anything. Old REDACTED files (v1 and v2) are converted on upload.
+- **Table view:** the toolbar's **Timeline | Table** switch (`?view=table` in links) shows the same events as tables,
+  grouped by region (or by top-level row, as in REDACTED) or in one list, sorted by date or title. Each event gives its
+  dates in words with the range the cited sources allow ("c. 1595 BCE; the sources put it between 1651 BCE and 1531
+  BCE"), its chronology, rows, importance, description and sources. Filters and Dating apply; selecting an event opens
+  the same detail panel; search picks and "Go to" years scroll to and focus the matching row. **Download CSV** saves
+  the listed events (one line each, with stored years and source ranges as numbers). It is the accessible equivalent
+  of the chart. The guided tour (about the chart) doesn't start by itself when a page opens in table view.
 - **Accessibility (in progress; target WCAG 2.2 AA, which covers the 2.1 AA of ADA Title II and the 2.0 AA of
   Section 508).** Plan and status: `docs/feature-audit.md` item 23. Done so far:
   - a "Skip to the timeline" link, and the timeline as a labelled region with each row a labelled group;

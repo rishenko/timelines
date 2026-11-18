@@ -5,7 +5,7 @@ import { isEventVisible, useFilters } from './state/filters.ts';
 import { useTheme } from './state/theme.ts';
 import { useToast } from './state/toast.ts';
 import { usePanels } from './state/panels.ts';
-import { goToTimeline, readUrl, useUrlSync } from './state/url.ts';
+import { goToTimeline, readUrl, useUrlSync, type View } from './state/url.ts';
 import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
 import { coarserIncrement, finerIncrement, keyEventsOnly } from './state/zoom.ts';
@@ -21,6 +21,7 @@ import { ThemePanel } from './components/ThemePanel.tsx';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
 import { Tour } from './components/Tour.tsx';
+import { TableView } from './components/TableView.tsx';
 import { tourSteps } from './lib/tour.ts';
 import { newEvent } from './lib/newEvent.ts';
 import { datasetPresent } from './lib/years.ts';
@@ -42,7 +43,7 @@ export default function App() {
   const cal = meta.calendar;
   const present = datasetPresent(data);
   const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, isOn } = useFilters(data);
-  const panels = usePanels();
+  const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
   // on opening, readers with a saved draft hear if the published timeline changed underneath it
   const [toast, notify] = useToast(
@@ -82,6 +83,7 @@ export default function App() {
   const [increment, setIncrement] = useState(initialUrl.increment);
   const [compress, setCompress] = useState(initialUrl.compress);
   const [showLinks, setShowLinks] = useState(initialUrl.links);
+  const [view, setView] = useState<View>(initialUrl.view);
   // on phones the credits note is clamped to two lines; a tap opens it (see .legal in CSS)
   const [creditsOpen, setCreditsOpen] = useState(false);
   // One polite live region for screen readers: zoom changes, "Went to …" and toasts. Kept mounted, because a region
@@ -162,7 +164,7 @@ export default function App() {
     return present;
   });
   const { centerRef, onCenterYearChange } = useUrlSync(
-    { timelineId: published.meta.id, increment, compress, showLinks, selectedId },
+    { timelineId: published.meta.id, increment, compress, showLinks, selectedId, view },
     initialCenter,
   );
 
@@ -187,9 +189,17 @@ export default function App() {
   return (
     <div className="app">
       <a href="#timeline" className="skip-link">
-        Skip to the timeline
+        {view === 'table' ? 'Skip to the table' : 'Skip to the timeline'}
       </a>
       <Toolbar
+        view={view}
+        onView={(v) => {
+          setView(v);
+          setAnnouncement(v === 'table' ? 'Table view' : 'Timeline view');
+          // back on the chart, bring the selected event into view
+          const sel = selectedId ? resolvedById.get(selectedId) : undefined;
+          if (v === 'timeline' && sel) setFocus({ year: sel.start, range: [sel.start, sel.end ?? sel.start], nonce: Date.now() });
+        }}
         picker={
           <TimelinePicker
             timelines={library.timelines}
@@ -285,6 +295,7 @@ export default function App() {
           onClose={() => panels.show('legend', false)}
           onTour={() => {
             panels.show('legend', false);
+            setView('timeline'); // the tour is about the chart
             panels.show('tour', true);
           }}
         />
@@ -325,46 +336,60 @@ export default function App() {
       )}
 
       <main className={hasSidePanel ? 'with-panel' : ''}>
-        <TimelineView
-          data={data}
-          events={drawnEvents}
-          eventsById={resolvedById}
-          spans={spans}
-          phases={phases}
-          visibleTracks={filters.tracks}
-          collapsed={collapsed}
-          onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}
-          increment={increment}
-          compress={compress}
-          showLinks={showLinks}
-          present={present}
-          selectedId={selectedId}
-          onSelect={(id) => {
-            setSelectedId(id);
-            if (editing?.kind === 'event' && id) setEditing(null);
-          }}
-          editMode={editMode}
-          onCreateAt={(trackId, year) => setEditing({ kind: 'event', event: newEvent(trackId, year), isNew: true })}
-          onEditTrack={editTrack}
-          onAddTrack={(parent) => setEditing({ kind: 'track', track: null, parent })}
-          onMoveTrack={(id, dir) => dispatch({ type: 'moveTrack', id, dir })}
-          focus={focus}
-          initialCenterYear={initialCenter}
-          onCenterYearChange={onCenterYearChange}
-          onZoomIn={(year) => {
-            const finer = finerIncrement(meta.increments, increment);
-            if (finer === undefined) return false;
-            setIncrement(finer);
-            setFocus({ year, nonce: Date.now() });
-            return true;
-          }}
-          onPinchZoom={(dir) => {
-            const next = dir === 1 ? finerIncrement(meta.increments, increment) : coarserIncrement(meta.increments, increment);
-            if (next !== undefined) setIncrement(next);
-          }}
-          edgeLinks={edgeLinks}
-          keyEventsOnly={keyOnly}
-        />
+        {view === 'table' ? (
+          <TableView
+            data={data}
+            events={visibleEvents}
+            hiddenCount={resolved.length - visibleEvents.length}
+            selectedId={selectedId}
+            onSelect={(id) => {
+              setSelectedId(id);
+              if (editing?.kind === 'event') setEditing(null);
+            }}
+            focus={focus}
+          />
+        ) : (
+          <TimelineView
+            data={data}
+            events={drawnEvents}
+            eventsById={resolvedById}
+            spans={spans}
+            phases={phases}
+            visibleTracks={filters.tracks}
+            collapsed={collapsed}
+            onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}
+            increment={increment}
+            compress={compress}
+            showLinks={showLinks}
+            present={present}
+            selectedId={selectedId}
+            onSelect={(id) => {
+              setSelectedId(id);
+              if (editing?.kind === 'event' && id) setEditing(null);
+            }}
+            editMode={editMode}
+            onCreateAt={(trackId, year) => setEditing({ kind: 'event', event: newEvent(trackId, year), isNew: true })}
+            onEditTrack={editTrack}
+            onAddTrack={(parent) => setEditing({ kind: 'track', track: null, parent })}
+            onMoveTrack={(id, dir) => dispatch({ type: 'moveTrack', id, dir })}
+            focus={focus}
+            initialCenterYear={initialCenter}
+            onCenterYearChange={onCenterYearChange}
+            onZoomIn={(year) => {
+              const finer = finerIncrement(meta.increments, increment);
+              if (finer === undefined) return false;
+              setIncrement(finer);
+              setFocus({ year, nonce: Date.now() });
+              return true;
+            }}
+            onPinchZoom={(dir) => {
+              const next = dir === 1 ? finerIncrement(meta.increments, increment) : coarserIncrement(meta.increments, increment);
+              if (next !== undefined) setIncrement(next);
+            }}
+            edgeLinks={edgeLinks}
+            keyEventsOnly={keyOnly}
+          />
+        )}
         <SidePanel
           data={data}
           dispatch={dispatch}

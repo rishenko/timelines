@@ -122,7 +122,8 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          event. Picking a search result focuses the event.
        - A polite live region announces zoom changes, "Went to 1595 BCE", and filter counts.
        - Automated checks: axe-core in the component tests and oxlint's jsx-a11y rules.
-    b. **Table view (M):** a "Timeline | Table" switch (`?view=table`).
+    b. **Table view (M):** a "Timeline | Table" switch (`?view=table`). Done 18 November 2026 (README: Table view),
+       with CSV export (item 9, events only). Still to add: the rows themselves (lifespans and phases) as a table.
        - Events grouped under region and civilization headings, sortable by date, filterable with the same Filters,
          and following the reader's chronology choices.
        - Each row gives the dates and ranges in words ("Start: between 1650 and 1530 BCE; 1595 BCE under the Middle

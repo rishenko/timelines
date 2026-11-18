@@ -23,6 +23,7 @@ export function readUrl() {
     at: at !== null ? parseYear(at, calendar) : null,
     compress: q.get('compress') !== '0',
     links: q.get('links') === '1',
+    view: (q.get('view') === 'table' ? 'table' : 'timeline') as View,
     selected: decodeURIComponent(window.location.hash.slice(1)) || null,
   };
 }
@@ -37,7 +38,11 @@ export function shareSearch(id: string, library?: LibraryEntry): string {
   return library?.sourceUrl ? `?data=${encodeURIComponent(library.sourceUrl)}` : `?timeline=${encodeURIComponent(id)}`;
 }
 
+/** Timeline (the chart) or table (the same events as tables: the accessible equivalent). */
+export type View = 'timeline' | 'table';
+
 interface ViewState {
+  view: View;
   timelineId: string;
   increment: number;
   compress: boolean;
@@ -50,7 +55,7 @@ interface ViewState {
  * kept in a ref rather than state: `onCenterYearChange` records it and schedules a write without re-rendering.
  */
 export function useUrlSync(view: ViewState, initialCenter: number) {
-  const { timelineId, increment, compress, showLinks, selectedId } = view;
+  const { timelineId, increment, compress, showLinks, selectedId, view: mode } = view;
   const centerRef = useRef(initialCenter);
   const timer = useRef(0);
   const writeUrl = useCallback(() => {
@@ -62,10 +67,11 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       q.set('at', String(centerRef.current));
       if (!compress) q.set('compress', '0');
       if (showLinks) q.set('links', '1');
+      if (mode === 'table') q.set('view', 'table');
       const hash = selectedId ? `#${selectedId}` : '';
       window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
     }, 250);
-  }, [timelineId, increment, compress, showLinks, selectedId]);
+  }, [timelineId, increment, compress, showLinks, selectedId, mode]);
   useEffect(writeUrl, [writeUrl]);
   const onCenterYearChange = useCallback(
     (y: number) => {

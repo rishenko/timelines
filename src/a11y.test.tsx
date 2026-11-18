@@ -95,6 +95,43 @@ describe('accessibility', () => {
     expect(await violations(container)).toEqual([]);
   });
 
+  for (const id of ['ancient-near-east', 'classical', 'REDACTED']) {
+    it(`${id}: the table view has no automated WCAG violations`, async () => {
+      const { container } = open(id, '&view=table');
+      expect(screen.getByRole('region', { name: /^Table: / })).toBeTruthy();
+      expect(container.querySelectorAll('table').length).toBeGreaterThan(0);
+      expect(await violations(container)).toEqual([]);
+    }, 30_000);
+  }
+
+  it('table view: an event opens the detail panel, and Escape returns focus to it', async () => {
+    const { container } = open('REDACTED', '&view=table');
+    const button = container.querySelector<HTMLButtonElement>('table [data-event-id]')!;
+    button.focus();
+    fireEvent.click(button);
+    const heading = await screen.findByRole('heading', { level: 2, name: button.textContent! });
+    expect(document.activeElement).toBe(heading);
+    await act(async () => {
+      fireEvent.keyDown(heading, { key: 'Escape' });
+      await new Promise((r) => requestAnimationFrame(() => r(null)));
+    });
+    expect(document.activeElement).toBe(button);
+  });
+
+  it('the view switch says which view is on, and the skip link follows it', () => {
+    open('classical', '&view=table');
+    expect(screen.getByRole('button', { name: 'Table', pressed: true })).toBeTruthy();
+    expect(screen.getByRole('link', { name: 'Skip to the table' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Timeline' }));
+    expect(screen.getByRole('link', { name: 'Skip to the timeline' })).toBeTruthy();
+  });
+
+  it('a first visit straight into table view does not start the tour (it is about the chart)', () => {
+    localStorage.clear();
+    open('REDACTED', '&view=table');
+    expect(screen.queryByRole('dialog', { name: /Welcome/ })).toBeNull();
+  });
+
   it('has a skip link to the timeline region', () => {
     open('classical');
     const skip = screen.getByRole('link', { name: 'Skip to the timeline' });
