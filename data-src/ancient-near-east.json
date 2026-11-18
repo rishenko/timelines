@@ -3,12 +3,12 @@
   "meta": {
     "id": "ancient-near-east",
     "title": "Ancient Civilizations",
-    "subtitle": "Europe, Africa, the Near East, Arabia and the Caucasus, the Steppe and Siberia, South and East Asia, Oceania, and the Americas, c. 3500–330 BCE",
-    "description": "Bronze Age and early Iron Age civilizations: Europe, the western Mediterranean, North Africa and the Sahara, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, the Caucasus, Iran, Arabia, the Eurasian Steppe, Siberia and Mongolia, South Asia and Sri Lanka, mainland Southeast Asia, Tibet, China, Korea and Japan, Taiwan and Island Southeast Asia, Oceania, and the Americas from the Arctic to the Caribbean and the Andes.",
+    "subtitle": "From the first farmers to the Iron Age: Europe, Africa, the Near East, Asia, Oceania and the Americas, c. 9000–330 BCE",
+    "description": "Neolithic, Bronze Age and early Iron Age cultures and civilizations: Europe, the western Mediterranean, North Africa and the Sahara, Nubia, Africa south of the Sahara, the Aegean and Greece, Anatolia, the Levant, Egypt, Mesopotamia and Assyria, the Caucasus, Iran, Arabia, the Eurasian Steppe, Siberia and Mongolia, South Asia and Sri Lanka, mainland Southeast Asia, Tibet, China, Korea and Japan, Taiwan and Island Southeast Asia, Oceania, and the Americas from the Arctic to the Caribbean and the Andes.",
     "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the chronology menus re-plot a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
     "calendar": { "before": "BCE", "after": "CE", "yearZero": false, "aliases": { "before": ["BC"], "after": ["AD"] } },
-    "increments": [10, 50, 100, 500],
-    "defaultIncrement": 100,
+    "increments": [10, 50, 100, 500, 1000],
+    "defaultIncrement": 500,
     "defaultTheme": "parchment",
     "circaFade": 0,
     "collapsed": [
@@ -508,7 +508,7 @@
     "wp-dholavira": { "name": "Wikipedia: Dholavira", "url": "https://en.wikipedia.org/wiki/Dholavira", "tags": ["wikipedia"], "accessed": "2026-11-17" },
     "wp-lothal": { "name": "Wikipedia: Lothal", "url": "https://en.wikipedia.org/wiki/Lothal", "tags": ["wikipedia"], "accessed": "2026-11-17" },
     "wp-indus-script": { "name": "Wikipedia: Indus script", "url": "https://en.wikipedia.org/wiki/Indus_script", "tags": ["wikipedia"], "accessed": "2026-11-17" },
-    "wp-mehrgarh": { "name": "Wikipedia: Mehrgarh", "url": "https://en.wikipedia.org/wiki/Mehrgarh", "tags": ["wikipedia"], "accessed": "2026-11-17" },
+    "wp-mehrgarh": { "name": "Wikipedia: Mehrgarh", "url": "https://en.wikipedia.org/wiki/Mehrgarh", "tags": ["wikipedia"], "accessed": "2026-11-18" },
     "wp-meluhha": { "name": "Wikipedia: Meluhha", "url": "https://en.wikipedia.org/wiki/Meluhha", "tags": ["wikipedia"], "accessed": "2026-11-17" },
     "wp-longshan": {
       "name": "Wikipedia: Longshan culture",
@@ -1153,7 +1153,273 @@
       "tags": ["wikipedia"],
       "accessed": "2026-11-18"
     },
-    "wp-palau": { "name": "Wikipedia: Palau", "url": "https://en.wikipedia.org/wiki/Palau", "tags": ["wikipedia"], "accessed": "2026-11-18" }
+    "wp-palau": { "name": "Wikipedia: Palau", "url": "https://en.wikipedia.org/wiki/Palau", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ppna": {
+      "name": "Wikipedia: Pre-Pottery Neolithic A",
+      "url": "https://en.wikipedia.org/wiki/Pre-Pottery_Neolithic_A",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-ppnb": {
+      "name": "Wikipedia: Pre-Pottery Neolithic B",
+      "url": "https://en.wikipedia.org/wiki/Pre-Pottery_Neolithic_B",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-jericho": { "name": "Wikipedia: Jericho", "url": "https://en.wikipedia.org/wiki/Jericho", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-jericho-tower": {
+      "name": "Wikipedia: Tower of Jericho",
+      "url": "https://en.wikipedia.org/wiki/Tower_of_Jericho",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-ain-ghazal": {
+      "name": "Wikipedia: Ayn Ghazal (archaeological site)",
+      "url": "https://en.wikipedia.org/wiki/Ayn_Ghazal_(archaeological_site)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-ghassulian": { "name": "Wikipedia: Ghassulian", "url": "https://en.wikipedia.org/wiki/Ghassulian", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-gobekli": { "name": "Wikipedia: Göbekli Tepe", "url": "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-catalhoyuk": {
+      "name": "Wikipedia: Çatalhöyük",
+      "url": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-cayonu": { "name": "Wikipedia: Çayönü", "url": "https://en.wikipedia.org/wiki/%C3%87ay%C3%B6n%C3%BC", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-hassuna": { "name": "Wikipedia: Hassuna culture", "url": "https://en.wikipedia.org/wiki/Hassuna_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-samarra": { "name": "Wikipedia: Samarra culture", "url": "https://en.wikipedia.org/wiki/Samarra_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-halaf": { "name": "Wikipedia: Halaf culture", "url": "https://en.wikipedia.org/wiki/Halaf_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ubaid": { "name": "Wikipedia: Ubaid period", "url": "https://en.wikipedia.org/wiki/Ubaid_period", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-eridu": { "name": "Wikipedia: Eridu", "url": "https://en.wikipedia.org/wiki/Eridu", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ganj-dareh": { "name": "Wikipedia: Ganj Dareh", "url": "https://en.wikipedia.org/wiki/Ganj_Dareh", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-chogha-golan": { "name": "Wikipedia: Chogha Golan", "url": "https://en.wikipedia.org/wiki/Chogha_Golan", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-chogha-mish": { "name": "Wikipedia: Chogha Mish", "url": "https://en.wikipedia.org/wiki/Chogha_Mish", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-sialk": { "name": "Wikipedia: Tepe Sialk", "url": "https://en.wikipedia.org/wiki/Tepe_Sialk", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-jeitun": { "name": "Wikipedia: Jeitun", "url": "https://en.wikipedia.org/wiki/Jeitun", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-shahr-e-sukhteh": { "name": "Wikipedia: Shahr-e Sukhteh", "url": "https://en.wikipedia.org/wiki/Shahr-e_Sukhteh", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-shulaveri": {
+      "name": "Wikipedia: Shulaveri–Shomu culture",
+      "url": "https://en.wikipedia.org/wiki/Shulaveri%E2%80%93Shomu_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-nabta": { "name": "Wikipedia: Nabta Playa", "url": "https://en.wikipedia.org/wiki/Nabta_Playa", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-prehistoric-egypt": {
+      "name": "Wikipedia: Prehistoric Egypt",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-merimde": { "name": "Wikipedia: Merimde culture", "url": "https://en.wikipedia.org/wiki/Merimde_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-badarian": {
+      "name": "Wikipedia: Badarian culture",
+      "url": "https://en.wikipedia.org/wiki/Badarian_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-naqada": { "name": "Wikipedia: Naqada culture", "url": "https://en.wikipedia.org/wiki/Naqada_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-naqada-i": { "name": "Wikipedia: Naqada I", "url": "https://en.wikipedia.org/wiki/Naqada_I", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-capsian": { "name": "Wikipedia: Capsian culture", "url": "https://en.wikipedia.org/wiki/Capsian_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-gobero": { "name": "Wikipedia: Gobero", "url": "https://en.wikipedia.org/wiki/Gobero", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-dufuna": { "name": "Wikipedia: Dufuna canoe", "url": "https://en.wikipedia.org/wiki/Dufuna_canoe", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-star-carr": { "name": "Wikipedia: Star Carr", "url": "https://en.wikipedia.org/wiki/Star_Carr", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-maglemosian": {
+      "name": "Wikipedia: Maglemosian culture",
+      "url": "https://en.wikipedia.org/wiki/Maglemosian_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-lepenski-vir": { "name": "Wikipedia: Lepenski Vir", "url": "https://en.wikipedia.org/wiki/Lepenski_Vir", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-neolithic-europe": {
+      "name": "Wikipedia: Neolithic Europe",
+      "url": "https://en.wikipedia.org/wiki/Neolithic_Europe",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-sesklo": { "name": "Wikipedia: Sesklo", "url": "https://en.wikipedia.org/wiki/Sesklo", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-starcevo": {
+      "name": "Wikipedia: Starčevo–Körös–Criș culture",
+      "url": "https://en.wikipedia.org/wiki/Star%C4%8Devo%E2%80%93K%C3%B6r%C3%B6s%E2%80%93Cri%C8%99_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-cardial": { "name": "Wikipedia: Cardium pottery", "url": "https://en.wikipedia.org/wiki/Cardium_pottery", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-lbk": {
+      "name": "Wikipedia: Linear Pottery culture",
+      "url": "https://en.wikipedia.org/wiki/Linear_Pottery_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-vinca": { "name": "Wikipedia: Vinča culture", "url": "https://en.wikipedia.org/wiki/Vin%C4%8Da_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-varna": {
+      "name": "Wikipedia: Varna Necropolis",
+      "url": "https://en.wikipedia.org/wiki/Varna_Necropolis",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-carnac": { "name": "Wikipedia: Carnac stones", "url": "https://en.wikipedia.org/wiki/Carnac_stones", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-bhirrana": { "name": "Wikipedia: Bhirrana", "url": "https://en.wikipedia.org/wiki/Bhirrana", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-lahuradewa": { "name": "Wikipedia: Lahuradewa", "url": "https://en.wikipedia.org/wiki/Lahuradewa", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-pengtoushan": {
+      "name": "Wikipedia: Pengtoushan culture",
+      "url": "https://en.wikipedia.org/wiki/Pengtoushan_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-jiahu": { "name": "Wikipedia: Jiahu", "url": "https://en.wikipedia.org/wiki/Jiahu", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-peiligang": {
+      "name": "Wikipedia: Peiligang culture",
+      "url": "https://en.wikipedia.org/wiki/Peiligang_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-xinglongwa": {
+      "name": "Wikipedia: Xinglongwa culture",
+      "url": "https://en.wikipedia.org/wiki/Xinglongwa_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-yangshao": {
+      "name": "Wikipedia: Yangshao culture",
+      "url": "https://en.wikipedia.org/wiki/Yangshao_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-hemudu": { "name": "Wikipedia: Hemudu culture", "url": "https://en.wikipedia.org/wiki/Hemudu_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-hongshan": {
+      "name": "Wikipedia: Hongshan culture",
+      "url": "https://en.wikipedia.org/wiki/Hongshan_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-dawenkou": {
+      "name": "Wikipedia: Dawenkou culture",
+      "url": "https://en.wikipedia.org/wiki/Dawenkou_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-jeulmun": {
+      "name": "Wikipedia: Jeulmun pottery period",
+      "url": "https://en.wikipedia.org/wiki/Jeulmun_pottery_period",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-kuk": { "name": "Wikipedia: Kuk Swamp", "url": "https://en.wikipedia.org/wiki/Kuk_Swamp", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-guila-naquitz": {
+      "name": "Wikipedia: Guilá Naquitz Cave",
+      "url": "https://en.wikipedia.org/wiki/Guil%C3%A1_Naquitz_Cave",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-maize": { "name": "Wikipedia: Maize", "url": "https://en.wikipedia.org/wiki/Maize", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-koster": { "name": "Wikipedia: Koster Site", "url": "https://en.wikipedia.org/wiki/Koster_Site", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-windover": {
+      "name": "Wikipedia: Windover Archeological Site",
+      "url": "https://en.wikipedia.org/wiki/Windover_Archeological_Site",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-plano": { "name": "Wikipedia: Plano cultures", "url": "https://en.wikipedia.org/wiki/Plano_cultures", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-cueva-manos": {
+      "name": "Wikipedia: Cueva de las Manos",
+      "url": "https://en.wikipedia.org/wiki/Cueva_de_las_Manos",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-paloma": {
+      "name": "Wikipedia: Paloma (archaeological site)",
+      "url": "https://en.wikipedia.org/wiki/Paloma_(archaeological_site)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-huaca-prieta": { "name": "Wikipedia: Huaca Prieta", "url": "https://en.wikipedia.org/wiki/Huaca_Prieta", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-potato": { "name": "Wikipedia: Potato", "url": "https://en.wikipedia.org/wiki/Potato", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-karahan": { "name": "Wikipedia: Karahan Tepe", "url": "https://en.wikipedia.org/wiki/Karahan_Tepe", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-nevali-cori": {
+      "name": "Wikipedia: Nevalı Çori",
+      "url": "https://en.wikipedia.org/wiki/Neval%C4%B1_%C3%87ori",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-asikli": {
+      "name": "Wikipedia: Aşıklı Höyük",
+      "url": "https://en.wikipedia.org/wiki/A%C5%9F%C4%B1kl%C4%B1_H%C3%B6y%C3%BCk",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-abu-hureyra": {
+      "name": "Wikipedia: Tell Abu Hureyra",
+      "url": "https://en.wikipedia.org/wiki/Tell_Abu_Hureyra",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-byblos": { "name": "Wikipedia: Byblos", "url": "https://en.wikipedia.org/wiki/Byblos", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-yarmukian": {
+      "name": "Wikipedia: Yarmukian culture",
+      "url": "https://en.wikipedia.org/wiki/Yarmukian_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-jarmo": { "name": "Wikipedia: Jarmo", "url": "https://en.wikipedia.org/wiki/Jarmo", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-tell-brak": { "name": "Wikipedia: Tell Brak", "url": "https://en.wikipedia.org/wiki/Tell_Brak", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ounjougou": { "name": "Wikipedia: Ounjougou", "url": "https://en.wikipedia.org/wiki/Ounjougou", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-shaheinab": { "name": "Wikipedia: Esh Shaheinab", "url": "https://en.wikipedia.org/wiki/Esh_Shaheinab", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-pesse": { "name": "Wikipedia: Pesse canoe", "url": "https://en.wikipedia.org/wiki/Pesse_canoe", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-doggerland": { "name": "Wikipedia: Doggerland", "url": "https://en.wikipedia.org/wiki/Doggerland", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-storegga": { "name": "Wikipedia: Storegga Slide", "url": "https://en.wikipedia.org/wiki/Storegga_Slide", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-ertebolle": {
+      "name": "Wikipedia: Ertebølle culture",
+      "url": "https://en.wikipedia.org/wiki/Erteb%C3%B8lle_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-dimini": { "name": "Wikipedia: Dimini", "url": "https://en.wikipedia.org/wiki/Dimini", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-hamangia": {
+      "name": "Wikipedia: Hamangia culture",
+      "url": "https://en.wikipedia.org/wiki/Hamangia_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-lengyel": { "name": "Wikipedia: Lengyel culture", "url": "https://en.wikipedia.org/wiki/Lengyel_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-michelsberg": {
+      "name": "Wikipedia: Michelsberg culture",
+      "url": "https://en.wikipedia.org/wiki/Michelsberg_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-goseck": { "name": "Wikipedia: Goseck circle", "url": "https://en.wikipedia.org/wiki/Goseck_Circle", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-barnenez": { "name": "Wikipedia: Barnenez", "url": "https://en.wikipedia.org/wiki/Barnenez", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-knap-of-howar": { "name": "Wikipedia: Knap of Howar", "url": "https://en.wikipedia.org/wiki/Knap_of_Howar", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-hoabinhian": { "name": "Wikipedia: Hoabinhian", "url": "https://en.wikipedia.org/wiki/Hoabinhian", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-spirit-cave-thai": {
+      "name": "Wikipedia: Spirit Cave (Thailand)",
+      "url": "https://en.wikipedia.org/wiki/Spirit_Cave_(Thailand)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-cishan": { "name": "Wikipedia: Cishan culture", "url": "https://en.wikipedia.org/wiki/Cishan_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-houli": { "name": "Wikipedia: Houli culture", "url": "https://en.wikipedia.org/wiki/Houli_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-daxi": { "name": "Wikipedia: Daxi culture", "url": "https://en.wikipedia.org/wiki/Daxi_culture", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-majiabang": {
+      "name": "Wikipedia: Majiabang culture",
+      "url": "https://en.wikipedia.org/wiki/Majiabang_culture",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-pedra-pintada": {
+      "name": "Wikipedia: Caverna da Pedra Pintada",
+      "url": "https://en.wikipedia.org/wiki/Caverna_da_Pedra_Pintada",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    },
+    "wp-spirit-cave-mummy": {
+      "name": "Wikipedia: Spirit Cave mummy",
+      "url": "https://en.wikipedia.org/wiki/Spirit_Cave_mummy",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-18"
+    }
   },
   "chronologies": {
     "middle": {
@@ -1227,6 +1493,13 @@
     { "id": "africa", "name": "Africa", "color": "#b8862a" },
     { "id": "north-africa", "name": "North Africa", "color": "#a88a5a", "parent": "africa" },
     { "id": "sahara", "name": "Sahara (climate)", "color": "#c0a060", "parent": "north-africa" },
+    {
+      "id": "capsian",
+      "name": "Capsian culture (Algeria and Tunisia)",
+      "color": "#a08a5a",
+      "parent": "north-africa",
+      "span": { "start": "c. 9000 BCE", "end": "c. 5400 BCE" }
+    },
     { "id": "libyans", "name": "Libyans", "color": "#b89a6a", "parent": "north-africa" },
     {
       "id": "cyrene",
@@ -1264,6 +1537,8 @@
       }
     },
     { "id": "sub-saharan", "name": "Sub-Saharan Africa", "color": "#7a8a3a", "parent": "africa" },
+    { "id": "ounjougou", "name": "Ounjougou", "color": "#9a7a4a", "parent": "sub-saharan" },
+    { "id": "green-sahara", "name": "Green Sahara peoples (Gobero, Dufuna)", "color": "#7a9a5a", "parent": "sub-saharan" },
     {
       "id": "punt",
       "name": "Land of Punt (Horn of Africa)",
@@ -1332,6 +1607,57 @@
     { "id": "bantu", "name": "Bantu expansion", "color": "#6a7a3a", "parent": "sub-saharan", "span": { "start": "c. 4000 BCE", "end": "c. 500 CE" } },
     { "id": "europe-med", "name": "Europe & Mediterranean", "color": "#3f6aa8" },
     { "id": "europe", "name": "Europe", "color": "#5b6e8f", "parent": "europe-med" },
+    {
+      "id": "mesolithic-north",
+      "name": "Mesolithic northern Europe (Star Carr, Maglemosian)",
+      "color": "#5a7a6a",
+      "parent": "europe",
+      "span": { "start": "c. 9300 BCE", "end": "c. 6000 BCE" }
+    },
+    {
+      "id": "ertebolle",
+      "name": "Ertebølle culture",
+      "color": "#4a6a7a",
+      "parent": "europe",
+      "span": { "start": "c. 5400 BCE", "end": "c. 3950 BCE" }
+    },
+    {
+      "id": "lepenski-vir",
+      "name": "Lepenski Vir",
+      "color": "#6a7a8a",
+      "parent": "europe",
+      "span": {
+        "start": "c. 7200 BCE",
+        "end": "c. 6000 BCE",
+        "startDates": [
+          { "year": "7200 BCE", "source": { "sourceKey": "wp-lepenski-vir", "sourceLocation": "lead" } },
+          { "year": "9500 BCE", "source": { "sourceKey": "wp-lepenski-vir", "sourceLocation": "lead (9500/7200)" } }
+        ]
+      }
+    },
+    { "id": "balkan-neolithic", "name": "Neolithic Greece and the Balkans", "color": "#8a6a6a", "parent": "europe" },
+    {
+      "id": "cardial",
+      "name": "Cardial Ware (Mediterranean)",
+      "color": "#6a8aa0",
+      "parent": "europe",
+      "span": { "start": "c. 6400 BCE", "end": "c. 5500 BCE" }
+    },
+    {
+      "id": "lbk",
+      "name": "Linear Pottery culture",
+      "color": "#7a6a9a",
+      "parent": "europe",
+      "span": { "start": "c. 5500 BCE", "end": "c. 4500 BCE" }
+    },
+    { "id": "lengyel", "name": "Lengyel culture", "color": "#6a5a8a", "parent": "europe", "span": { "start": "c. 5000 BCE", "end": "c. 4000 BCE" } },
+    {
+      "id": "michelsberg",
+      "name": "Michelsberg culture",
+      "color": "#5a6a8a",
+      "parent": "europe",
+      "span": { "start": "c. 4400 BCE", "end": "c. 3500 BCE" }
+    },
     { "id": "megaliths", "name": "Megalith builders", "color": "#7a8494", "parent": "europe" },
     {
       "id": "funnelbeaker",
@@ -1735,6 +2061,9 @@
     },
     { "id": "near-east", "name": "Ancient Near East", "color": "#a8483a" },
     { "id": "egypt", "name": "Egypt and Nubia", "color": "#b8871b", "chronology": "shaw", "parent": "near-east" },
+    { "id": "nabta", "name": "Nabta Playa (Western Desert)", "color": "#b09060", "parent": "egypt" },
+    { "id": "lower-egypt-neolithic", "name": "Lower Egypt Neolithic (Faiyum A, Merimde)", "color": "#a08050", "parent": "egypt" },
+    { "id": "upper-egypt-predynastic", "name": "Upper Egypt (Badarian, Naqada I)", "color": "#c09050", "parent": "egypt" },
     {
       "id": "eg-predynastic",
       "name": "Late Predynastic (Dynasty 0)",
@@ -1979,6 +2308,55 @@
       }
     },
     { "id": "levant", "name": "Levant", "color": "#9a6a2f", "parent": "near-east" },
+    {
+      "id": "ppna",
+      "name": "Pre-Pottery Neolithic A (Levant)",
+      "color": "#9a7a5a",
+      "parent": "levant",
+      "span": {
+        "start": "c. 10000 BCE",
+        "end": "c. 8800 BCE",
+        "startDates": [
+          { "year": "10000 BCE", "source": { "sourceKey": "wp-ppna", "sourceLocation": "lead and infobox" } },
+          { "year": "9600 BCE", "source": { "sourceKey": "wp-gobekli", "sourceLocation": "Dawn of village life" } }
+        ]
+      }
+    },
+    {
+      "id": "ppnb",
+      "name": "Pre-Pottery Neolithic B (Levant)",
+      "color": "#8a6a4a",
+      "parent": "levant",
+      "span": {
+        "start": "c. 8800 BCE",
+        "end": "c. 6500 BCE",
+        "endDates": [
+          { "year": "6500 BCE", "source": { "sourceKey": "wp-ppnb", "sourceLocation": "lead and infobox" } },
+          { "year": "6000 BCE", "source": { "sourceKey": "wp-ppnb", "sourceLocation": "Lifestyle ('8,700–6,000 BC')" } }
+        ]
+      }
+    },
+    {
+      "id": "yarmukian",
+      "name": "Yarmukian culture (Pottery Neolithic)",
+      "color": "#7a6a5a",
+      "parent": "levant",
+      "span": { "start": "c. 6400 BCE", "end": "c. 6000 BCE" }
+    },
+    {
+      "id": "ghassulian",
+      "name": "Ghassulian culture (southern Levant)",
+      "color": "#7a5a3a",
+      "parent": "levant",
+      "span": {
+        "start": "c. 4400 BCE",
+        "end": "c. 3800 BCE",
+        "endDates": [
+          { "year": "3800 BCE", "source": { "sourceKey": "wp-ghassulian", "sourceLocation": "infobox" } },
+          { "year": "3500 BCE", "source": { "sourceKey": "wp-ghassulian", "sourceLocation": "lead" } }
+        ]
+      }
+    },
     { "id": "canaan", "name": "Canaan", "color": "#a8773a", "parent": "levant", "span": { "start": "c. 3500 BCE", "end": "c. 1200 BCE" } },
     { "id": "can-eba", "name": "Early Bronze Age", "color": "#b9894b", "parent": "canaan", "span": { "start": "c. 3500 BCE", "end": "c. 2000 BCE" } },
     { "id": "can-mba", "name": "Middle Bronze Age", "color": "#a87a3c", "parent": "canaan", "span": { "start": "c. 2000 BCE", "end": "c. 1550 BCE" } },
@@ -2030,6 +2408,28 @@
     },
     { "id": "cyprus", "name": "Cyprus (Alashiya)", "color": "#b07a2f", "parent": "levant" },
     { "id": "anatolia", "name": "Anatolia", "color": "#a8452f", "chronology": "middle", "parent": "near-east" },
+    {
+      "id": "gobekli",
+      "name": "Göbekli Tepe and the Taş Tepeler",
+      "color": "#a0704a",
+      "parent": "anatolia",
+      "span": { "start": "c. 9500 BCE", "end": "c. 8000 BCE" }
+    },
+    { "id": "cayonu", "name": "Çayönü", "color": "#906a4a", "parent": "anatolia", "span": { "start": "c. 8630 BCE", "end": "c. 6800 BCE" } },
+    {
+      "id": "catalhoyuk",
+      "name": "Çatalhöyük",
+      "color": "#b07a4a",
+      "parent": "anatolia",
+      "span": {
+        "start": "c. 7500 BCE",
+        "end": "c. 5600 BCE",
+        "startDates": [
+          { "year": "7500 BCE", "source": { "sourceKey": "wp-catalhoyuk", "sourceLocation": "lead" } },
+          { "year": "7100 BCE", "source": { "sourceKey": "wp-catalhoyuk", "sourceLocation": "infobox" } }
+        ]
+      }
+    },
     {
       "id": "hittites",
       "name": "Hittites",
@@ -2111,6 +2511,44 @@
       }
     },
     { "id": "mesopotamia", "name": "Mesopotamia", "color": "#3f7d34", "chronology": "middle", "parent": "near-east" },
+    { "id": "jarmo", "name": "Jarmo", "color": "#6a7a5a", "parent": "mesopotamia", "span": { "start": "c. 7090 BCE", "end": "c. 4950 BCE" } },
+    { "id": "tell-brak", "name": "Tell Brak (Upper Mesopotamia)", "color": "#5a6a4a", "parent": "mesopotamia" },
+    {
+      "id": "hassuna",
+      "name": "Hassuna culture",
+      "color": "#7a8a5a",
+      "parent": "mesopotamia",
+      "span": { "start": "c. 7000 BCE", "end": "c. 6000 BCE" }
+    },
+    { "id": "halaf", "name": "Halaf culture", "color": "#6a8a6a", "parent": "mesopotamia", "span": { "start": "c. 6100 BCE", "end": "c. 5100 BCE" } },
+    {
+      "id": "samarra",
+      "name": "Samarra culture",
+      "color": "#8a9a5a",
+      "parent": "mesopotamia",
+      "span": {
+        "start": "c. 5500 BCE",
+        "end": "c. 4800 BCE",
+        "startDates": [
+          { "year": "5500 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "lead and infobox" } },
+          { "year": "6000 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "chronology table" } }
+        ]
+      }
+    },
+    {
+      "id": "ubaid",
+      "name": "Ubaid period",
+      "color": "#5a7a4a",
+      "parent": "mesopotamia",
+      "span": {
+        "start": "c. 6500 BCE",
+        "end": "c. 3800 BCE",
+        "startDates": [
+          { "year": "6500 BCE", "source": { "sourceKey": "wp-ubaid", "sourceLocation": "lead and infobox" } },
+          { "year": "5500 BCE", "source": { "sourceKey": "wp-ubaid", "sourceLocation": "lead (in the south)" } }
+        ]
+      }
+    },
     {
       "id": "mitanni",
       "name": "Mitanni",
@@ -2320,6 +2758,13 @@
     },
     { "id": "caucasus", "name": "Caucasus", "color": "#7a5a8a", "parent": "near-east" },
     {
+      "id": "shulaveri",
+      "name": "Shulaveri–Shomu culture",
+      "color": "#7a6a9a",
+      "parent": "caucasus",
+      "span": { "start": "c. 6000 BCE", "end": "c. 5000 BCE" }
+    },
+    {
       "id": "maykop",
       "name": "Maykop culture (North Caucasus)",
       "color": "#8a5a7a",
@@ -2405,6 +2850,36 @@
       }
     },
     { "id": "iran", "name": "Iran & Central Asia", "color": "#2f8a8a", "parent": "near-east" },
+    {
+      "id": "chogha-golan",
+      "name": "Chogha Golan (Zagros)",
+      "color": "#8a6a5a",
+      "parent": "iran",
+      "span": { "start": "c. 10050 BCE", "end": "c. 7650 BCE" }
+    },
+    { "id": "ganj-dareh", "name": "Ganj Dareh", "color": "#7a6a5a", "parent": "iran", "span": { "start": "c. 8200 BCE", "end": "c. 7600 BCE" } },
+    {
+      "id": "jeitun",
+      "name": "Jeitun (Central Asia)",
+      "color": "#9a8a5a",
+      "parent": "iran",
+      "span": { "start": "c. 7200 BCE", "end": "c. 4500 BCE" }
+    },
+    {
+      "id": "chogha-mish",
+      "name": "Chogha Mish (Susiana)",
+      "color": "#8a5a4a",
+      "parent": "iran",
+      "span": { "start": "c. 6800 BCE", "end": "c. 4400 BCE" }
+    },
+    { "id": "sialk", "name": "Tepe Sialk", "color": "#9a6a4a", "parent": "iran" },
+    {
+      "id": "shahr-e-sukhteh",
+      "name": "Shahr-e Sukhteh",
+      "color": "#a07a5a",
+      "parent": "iran",
+      "span": { "start": "c. 3550 BCE", "end": "c. 2300 BCE" }
+    },
     {
       "id": "elam",
       "name": "Elam",
@@ -2757,6 +3232,8 @@
       }
     },
     { "id": "indus", "name": "South Asia", "color": "#b5552b", "parent": "steppe-south-asia" },
+    { "id": "mehrgarh", "name": "Mehrgarh", "color": "#a07a4a", "parent": "indus" },
+    { "id": "early-india", "name": "Early farming in northern India (Bhirrana, Lahuradewa)", "color": "#9a6a3a", "parent": "indus" },
     {
       "id": "harappan",
       "name": "Harappan civilization",
@@ -2817,6 +3294,13 @@
     { "id": "south-india", "name": "South India and Sri Lanka", "color": "#8a5a3a", "parent": "indus" },
     { "id": "east-asia", "name": "East & Southeast Asia", "color": "#6a4a9a" },
     { "id": "se-asia", "name": "Mainland Southeast Asia", "color": "#4a8a6a", "parent": "east-asia" },
+    {
+      "id": "hoabinhian",
+      "name": "Hoabinhian foragers",
+      "color": "#5a7a5a",
+      "parent": "se-asia",
+      "span": { "start": "c. 10000 BCE", "end": "c. 2000 BCE" }
+    },
     { "id": "ban-chiang", "name": "Ban Chiang (Thailand)", "color": "#6a8a4a", "parent": "se-asia" },
     {
       "id": "phung-nguyen",
@@ -2864,6 +3348,48 @@
       "span": { "start": "c. 500 BCE", "end": "625 CE" }
     },
     { "id": "china", "name": "China", "color": "#b0302f", "chronology": "xszcp", "parent": "east-asia" },
+    {
+      "id": "pengtoushan",
+      "name": "Pengtoushan culture",
+      "color": "#6a8a6a",
+      "parent": "china",
+      "span": { "start": "c. 7500 BCE", "end": "c. 6100 BCE" }
+    },
+    {
+      "id": "peiligang",
+      "name": "Peiligang culture and Jiahu",
+      "color": "#8a7a5a",
+      "parent": "china",
+      "span": { "start": "c. 7000 BCE", "end": "c. 5000 BCE" }
+    },
+    { "id": "cishan", "name": "Cishan culture", "color": "#8a8a5a", "parent": "china", "span": { "start": "c. 6500 BCE", "end": "c. 5000 BCE" } },
+    { "id": "houli", "name": "Houli culture", "color": "#7a7a6a", "parent": "china", "span": { "start": "c. 6500 BCE", "end": "c. 5500 BCE" } },
+    { "id": "daxi", "name": "Daxi culture", "color": "#6a7a7a", "parent": "china", "span": { "start": "c. 5000 BCE", "end": "c. 3300 BCE" } },
+    {
+      "id": "majiabang",
+      "name": "Majiabang culture",
+      "color": "#5a8a7a",
+      "parent": "china",
+      "span": { "start": "c. 5000 BCE", "end": "c. 3350 BCE" }
+    },
+    {
+      "id": "xinglongwa",
+      "name": "Xinglongwa culture",
+      "color": "#7a6a5a",
+      "parent": "china",
+      "span": {
+        "start": "c. 6200 BCE",
+        "end": "c. 5000 BCE",
+        "endDates": [
+          { "year": "5000 BCE", "source": { "sourceKey": "wp-xinglongwa", "sourceLocation": "infobox" } },
+          { "year": "5400 BCE", "source": { "sourceKey": "wp-xinglongwa", "sourceLocation": "lead" } }
+        ]
+      }
+    },
+    { "id": "hemudu", "name": "Hemudu culture", "color": "#5a7a5a", "parent": "china", "span": { "start": "c. 5500 BCE", "end": "c. 3300 BCE" } },
+    { "id": "yangshao", "name": "Yangshao culture", "color": "#a0603a", "parent": "china", "span": { "start": "c. 5000 BCE", "end": "c. 3000 BCE" } },
+    { "id": "hongshan", "name": "Hongshan culture", "color": "#6a8a8a", "parent": "china", "span": { "start": "c. 4700 BCE", "end": "c. 2900 BCE" } },
+    { "id": "dawenkou", "name": "Dawenkou culture", "color": "#8a5a5a", "parent": "china", "span": { "start": "c. 4300 BCE", "end": "c. 2600 BCE" } },
     { "id": "liangzhu", "name": "Liangzhu culture", "color": "#4f9a6a", "parent": "china", "span": { "start": "3300 BCE", "end": "2300 BCE" } },
     {
       "id": "longshan",
@@ -2995,6 +3521,20 @@
     },
     { "id": "zhou-eastern", "name": "Eastern Zhou", "color": "#6b2744", "parent": "zhou", "span": { "start": "771 BCE", "end": "256 BCE" } },
     { "id": "korea-japan", "name": "Korea and Japan", "color": "#8a4a6a", "parent": "east-asia" },
+    {
+      "id": "jeulmun",
+      "name": "Jeulmun pottery period (Korea)",
+      "color": "#8a5a7a",
+      "parent": "korea-japan",
+      "span": { "start": "c. 8000 BCE", "end": "c. 1500 BCE" }
+    },
+    {
+      "id": "jomon-early",
+      "name": "Jōmon (Initial and Early)",
+      "color": "#9a7a6a",
+      "parent": "korea-japan",
+      "span": { "start": "8500 BCE", "end": "3520 BCE" }
+    },
     { "id": "gojoseon", "name": "Old Chosŏn (Gojoseon)", "color": "#7a4a7a", "parent": "korea-japan" },
     {
       "id": "mumun",
@@ -3046,6 +3586,7 @@
     { "id": "philippines", "name": "Philippines", "color": "#3a7a8a", "parent": "island-sea" },
     { "id": "indonesia", "name": "Indonesia", "color": "#5a8a6a", "parent": "island-sea" },
     { "id": "oceania", "name": "Oceania", "color": "#2a7a9a", "parent": "austronesia" },
+    { "id": "new-guinea", "name": "New Guinea highlands (Kuk Swamp)", "color": "#4a8a6a", "parent": "oceania" },
     { "id": "marianas", "name": "Mariana Islands", "color": "#3a6a9a", "parent": "oceania" },
     { "id": "palau", "name": "Palau (Micronesia)", "color": "#3a7aaa", "parent": "oceania" },
     {
@@ -3127,6 +3668,14 @@
       }
     },
     { "id": "north-america", "name": "North America", "color": "#4a7a4a", "parent": "americas" },
+    {
+      "id": "plano",
+      "name": "Plano cultures",
+      "color": "#8a7a4a",
+      "parent": "north-america",
+      "span": { "start": "c. 9000 BCE", "end": "c. 6000 BCE" }
+    },
+    { "id": "archaic-na", "name": "Early and Middle Archaic (Koster, Windover)", "color": "#6a6a4a", "parent": "north-america" },
     { "id": "mound-builders", "name": "Mound builders (Louisiana)", "color": "#6f8f4a", "parent": "north-america" },
     {
       "id": "old-copper",
@@ -3152,6 +3701,7 @@
     { "id": "eastern-archaic", "name": "Eastern Woodlands (Indian Knoll)", "color": "#6a7a4a", "parent": "north-america" },
     { "id": "adena", "name": "Adena culture", "color": "#5a6a3a", "parent": "north-america", "span": { "start": "c. 500 BCE", "end": "c. 100 CE" } },
     { "id": "mesoamerica", "name": "Mesoamerica", "color": "#3a7a5a", "parent": "americas" },
+    { "id": "oaxaca-archaic", "name": "Early domestication (Guilá Naquitz, Balsas)", "color": "#5a8a4a", "parent": "mesoamerica" },
     { "id": "mokaya", "name": "Mokaya (Mazatán)", "color": "#4a8a5a", "parent": "mesoamerica" },
     {
       "id": "tlatilco",
@@ -3192,6 +3742,15 @@
     },
     { "id": "maya", "name": "Maya (Preclassic)", "color": "#4f9a7e", "parent": "mesoamerica", "span": { "start": "c. 2000 BCE", "end": "250 CE" } },
     { "id": "south-america", "name": "South America", "color": "#5a7a3a", "parent": "americas" },
+    { "id": "amazon", "name": "Amazon (Caverna da Pedra Pintada)", "color": "#4a7a3a", "parent": "south-america" },
+    {
+      "id": "cueva-manos",
+      "name": "Cueva de las Manos",
+      "color": "#a05a4a",
+      "parent": "south-america",
+      "span": { "start": "c. 7300 BCE", "end": "700 CE" }
+    },
+    { "id": "andes-archaic", "name": "Early Andean farmers and fishers", "color": "#7a7a4a", "parent": "south-america" },
     {
       "id": "valdivia",
       "name": "Valdivia culture",
@@ -7947,6 +8506,996 @@
         }
       ],
       "links": [{ "to": "out-of-taiwan", "kind": "part-of" }]
+    },
+    {
+      "uuid": "jericho-founded",
+      "title": "Jericho, the first town",
+      "start": "c. 9000 BCE",
+      "tracks": ["ppna"],
+      "descr": "Jericho is thought to be the world’s first town; it is the type site of the Pre-Pottery Neolithic A and B, defined by Kathleen Kenyon. PPNA people lived in tiny circular mud-brick dwellings, cultivated crops and hunted wild game, without pottery. The PPNA succeeds the Natufian culture.",
+      "sources": [
+        { "sourceKey": "wp-ppna", "sourceLocation": "lead and Settlements" },
+        { "sourceKey": "wp-jericho", "sourceLocation": "infobox, lead and Stone Age" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "jericho-tower",
+      "title": "The Tower of Jericho",
+      "start": "c. 8000 BCE",
+      "tracks": ["ppna"],
+      "descr": "One of the world’s oldest towers and oldest stone buildings, built against the wall inside the town at the end of the PPNA; its construction is estimated to have taken 11,000 working days. Barkai and Liran suggest astronomical and social purposes.",
+      "sources": [
+        { "sourceKey": "wp-jericho-tower", "sourceLocation": "infobox, lead, Structure and Purpose" },
+        { "sourceKey": "wp-ppna", "sourceLocation": "Settlements (caption)" }
+      ],
+      "links": [{ "to": "jericho-founded", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "animal-domestication",
+      "title": "Goats, sheep, pigs and cattle domesticated",
+      "start": "c. 9000 BCE",
+      "end": "c. 8000 BCE",
+      "tracks": ["ppnb", "cayonu"],
+      "descr": "About 9000 BCE for goats and sheep, 8500 BCE for pigs and 8000 BCE for cattle. Çayönü is possibly the place where the pig was first domesticated.",
+      "sources": [
+        { "sourceKey": "wp-ppnb", "sourceLocation": "Domestication of animals" },
+        { "sourceKey": "wp-cayonu", "sourceLocation": "Origin of domestication" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "plastered-skulls",
+      "title": "Plastered skulls of the Levant",
+      "start": "c. 9000 BCE",
+      "end": "c. 6000 BCE",
+      "tracks": ["ppnb"],
+      "descr": "Made in the Pre-Pottery Neolithic B, they are some of the oldest forms of art in the Middle East. In this period houses become rectilinear with thick white plaster floors; plaster work may have led to the discovery of pottery.",
+      "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "Lifestyle" }]
+    },
+    {
+      "uuid": "ain-ghazal",
+      "title": "’Ain Ghazal and its plaster statues",
+      "start": "c. 7000 BCE",
+      "tracks": ["ppnb"],
+      "descr": "At its prime around 7000 BCE some 3,000 people live here, four to five times contemporary Jericho. Its 32 plaster figures, some two-headed, are among the oldest large statues ever found. After 6500 BC the population drops to about one sixth.",
+      "sources": [{ "sourceKey": "wp-ain-ghazal", "sourceLocation": "infobox, lead, Background and Statues" }],
+      "importance": 1
+    },
+    {
+      "uuid": "event-8-2-ka",
+      "title": "The 8.2-kiloyear climate event",
+      "start": "c. 6200 BCE",
+      "tracks": ["ppnb"],
+      "descr": "Approximately 8,200 years before the present. At ’Ain Ghazal the population drops sharply after 6500 BC, a decline its page links to this event.",
+      "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "Extent" }, { "sourceKey": "wp-ain-ghazal", "sourceLocation": "Background" }]
+    },
+    {
+      "uuid": "ghassulian",
+      "title": "Ghassulian villages: copper and painted walls",
+      "start": "c. 4400 BCE",
+      "end": "c. 3800 BCE",
+      "tracks": ["ghassulian"],
+      "descr": "Mixed farming hamlets with remarkable polychrome wall paintings (including the \"Ghassulian Star\"); they smelted copper and buried their dead in stone dolmens. The culture correlates closely with the Amratian of Egypt.",
+      "sources": [{ "sourceKey": "wp-ghassulian", "sourceLocation": "infobox, lead, Origins and Dates" }]
+    },
+    {
+      "uuid": "gobekli-tepe",
+      "title": "Göbekli Tepe: circular enclosures with stone pillars",
+      "start": "c. 9500 BCE",
+      "end": "c. 8000 BCE",
+      "tracks": ["gobekli"],
+      "descr": "Popularly called the world’s first temples: at least 20 large enclosures with stone pillars, carved with reliefs of animals, built by hunter-gatherers who supplemented their diet with early domesticated cereal. The earliest exposed structures date to 9500–9000 BCE. Karahan Tepe and other nearby sites share its architecture and iconography.",
+      "sources": [
+        { "sourceKey": "wp-gobekli", "sourceLocation": "infobox, lead, Dawn of village life and Chronology" },
+        { "sourceKey": "wp-ppna", "sourceLocation": "Settlements (caption)" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "cayonu-copper",
+      "title": "Copper and malachite workshop at Çayönü",
+      "start": "c. 6850 BCE",
+      "tracks": ["cayonu"],
+      "descr": "A specialised workshop found in 2026. Çayönü belongs to the Taş Tepeler tradition of Göbekli Tepe and is an early example of agriculture, implemented from the 9th millennium BC.",
+      "sources": [{ "sourceKey": "wp-cayonu", "sourceLocation": "lead, Archaeology and Origin of domestication" }],
+      "startDates": [{ "year": "6850 BCE", "margin": 50, "source": { "sourceKey": "wp-cayonu", "sourceLocation": "Archaeology ('approximately 6900–6800 BCE')" } }]
+    },
+    {
+      "uuid": "catalhoyuk",
+      "title": "Çatalhöyük",
+      "start": "c. 7500 BCE",
+      "end": "c. 5600 BCE",
+      "tracks": ["catalhoyuk"],
+      "descr": "A settlement of domestic buildings with no obvious public buildings, rebuilt in 18 successive layers and flourishing around 7000 BC. Vivid murals include what is frequently cited as the world’s oldest map; over 2,500 clay figurines have been found, and some skulls were plastered and painted. About 600–800 people lived there in an average year of the middle phase (6700–6500 BC).",
+      "sources": [{ "sourceKey": "wp-catalhoyuk", "sourceLocation": "infobox, lead, Archaeology and Culture" }],
+      "startDates": [
+        { "year": "7500 BCE", "source": { "sourceKey": "wp-catalhoyuk", "sourceLocation": "lead" } },
+        { "year": "7100 BCE", "source": { "sourceKey": "wp-catalhoyuk", "sourceLocation": "infobox" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "hassuna",
+      "title": "Hassuna: the first farmers of northern Mesopotamia",
+      "start": "c. 6000 BCE",
+      "tracks": ["hassuna"],
+      "descr": "By around 6000 BC people had moved into the foothills of northernmost Mesopotamia, making cream-slipped pottery painted in red; Umm Dabaghiyah is believed to have the region’s earliest pottery.",
+      "sources": [{ "sourceKey": "wp-hassuna", "sourceLocation": "lead, Description and phases" }]
+    },
+    {
+      "uuid": "halaf",
+      "title": "Halaf culture: painted pottery and the first stamp seals",
+      "start": "c. 6100 BCE",
+      "end": "c. 5100 BCE",
+      "tracks": ["halaf"],
+      "descr": "The earliest systematic plant motifs in Near Eastern prehistoric art and the earliest known stamp seals in the Near East; Halaf-influenced material is found throughout Greater Mesopotamia. Most scholars see its end as a Halafian adoption of the Ubaid culture.",
+      "sources": [{ "sourceKey": "wp-halaf", "sourceLocation": "infobox, lead, Origin and Pottery" }]
+    },
+    {
+      "uuid": "samarra",
+      "title": "Samarra culture: early irrigation",
+      "start": "c. 5500 BCE",
+      "end": "c. 4800 BCE",
+      "tracks": ["samarra"],
+      "descr": "Irrigation and flax at Tell es-Sawwan show a prosperous settled culture; it is best known for fine pottery decorated with stylised animals, and was the precursor of the Ubaid period.",
+      "sources": [{ "sourceKey": "wp-samarra", "sourceLocation": "infobox and lead" }],
+      "startDates": [
+        { "year": "5500 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "lead and infobox" } },
+        { "year": "6000 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "chronology table" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "oueili",
+      "title": "Tell el-’Oueili: the oldest known site in southern Mesopotamia",
+      "start": "c. 6250 BCE",
+      "tracks": ["ubaid"],
+      "descr": "Its Ubaid 0 levels are older than those of Eridu. The earliest settlements south of Uruk date to the eighth millennium BC.",
+      "sources": [{ "sourceKey": "wp-ubaid", "sourceLocation": "Dating and climate" }],
+      "startDates": [
+        {
+          "year": "6250 BCE",
+          "margin": 250,
+          "source": { "sourceKey": "wp-ubaid", "sourceLocation": "Climate ('the Ubaid 0 levels at Oueili (6500-6000 BC)')" }
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "eridu",
+      "title": "Eridu founded",
+      "start": "c. 5400 BCE",
+      "tracks": ["ubaid"],
+      "descr": "Built on a virgin sand dune, it was traditionally the earliest city of southern Mesopotamia in the Sumerian King List. Eighteen superimposed mudbrick temples stand at the site, and twelve clay tokens from its Ubaid levels are precursors of proto-cuneiform.",
+      "sources": [{ "sourceKey": "wp-eridu", "sourceLocation": "infobox, lead and Ubaid period" }],
+      "startDates": [
+        { "year": "5400 BCE", "source": { "sourceKey": "wp-eridu", "sourceLocation": "Ubaid period" } },
+        { "year": "5400 BCE", "margin": 100, "source": { "sourceKey": "wp-eridu", "sourceLocation": "infobox" } }
+      ],
+      "links": [{ "to": "proto-cuneiform", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "chogha-golan",
+      "title": "Chogha Golan: domesticated emmer wheat",
+      "start": "c. 7850 BCE",
+      "tracks": ["chogha-golan"],
+      "descr": "The earliest record of long-term plant management in Iran: people lived mainly on wild plants and hunting, and domesticated emmer appears about 2,000 years after settlement began (around 9,800 BP).",
+      "sources": [{ "sourceKey": "wp-chogha-golan", "sourceLocation": "infobox, lead and Archaeobotany" }]
+    },
+    {
+      "uuid": "ganj-dareh",
+      "title": "Ganj Dareh: the earliest domesticated goats",
+      "start": "c. 8200 BCE",
+      "tracks": ["ganj-dareh"],
+      "descr": "The earliest evidence for goat domestication in the world; two-row barley is the only domesticated crop found so far.",
+      "sources": [{ "sourceKey": "wp-ganj-dareh", "sourceLocation": "infobox and Research history" }],
+      "links": [{ "to": "animal-domestication", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "jeitun",
+      "title": "Jeitun: the oldest arable farming in Central Asia",
+      "start": "c. 7200 BCE",
+      "end": "c. 4500 BCE",
+      "tracks": ["jeitun"],
+      "descr": "Villagers kept sheep and goats that were brought already domesticated, and built with sun-dried clay blocks. The culture may have begun before 7000 BC.",
+      "sources": [{ "sourceKey": "wp-jeitun", "sourceLocation": "lead, Jeitun culture, Agriculture and Excavations" }]
+    },
+    {
+      "uuid": "chogha-mish",
+      "title": "Chogha Mish settled",
+      "start": "c. 6800 BCE",
+      "tracks": ["chogha-mish"],
+      "descr": "Its Early Susiana period is contemporary with Ubaid 1 in southern Mesopotamia. The main monumental building is destroyed in the early 5th millennium BC, and the site declines about 4400 BC.",
+      "sources": [{ "sourceKey": "wp-chogha-mish", "sourceLocation": "lead and History" }]
+    },
+    {
+      "uuid": "sialk",
+      "title": "Tepe Sialk settled",
+      "start": "c. 5750 BCE",
+      "tracks": ["sialk"],
+      "descr": "Tombs of Sialk I contain pottery. Later, silver metallurgy at the site is radiocarbon-dated to 3660–3520 B.C., and Sialk IV has links with Uruk-period Mesopotamia and with Proto-Elamite Susa.",
+      "sources": [{ "sourceKey": "wp-sialk", "sourceLocation": "History, Sialk I, Sialk IV and Silver metallurgy" }],
+      "startDates": [{ "year": "5750 BCE", "margin": 250, "source": { "sourceKey": "wp-sialk", "sourceLocation": "History ('around 6000–5500 BC')" } }]
+    },
+    {
+      "uuid": "shahr-e-sukhteh",
+      "title": "Shahr-e Sukhteh founded",
+      "start": "c. 3550 BCE",
+      "tracks": ["shahr-e-sukhteh"],
+      "descr": "In Period I it has connections with the Proto-Elamite cities of Khuzestan and Fars; later it is in contact with the pre-Harappan centres of the Indus valley.",
+      "sources": [{ "sourceKey": "wp-shahr-e-sukhteh", "sourceLocation": "infobox, Archaeology, Period I and Period II" }]
+    },
+    {
+      "uuid": "shulaveri-wine",
+      "title": "Shulaveri–Shomu: the earliest winemaking",
+      "start": "c. 6000 BCE",
+      "tracks": ["shulaveri"],
+      "descr": "The earliest evidence for winemaking and grape cultivation in the Near East. Goats, sheep, cattle, pigs and dogs are kept from the earliest phase; around 5900 BC villagers at Gadachrili divert a river, the oldest water management in the Caucasus.",
+      "sources": [{ "sourceKey": "wp-shulaveri", "sourceLocation": "infobox, lead, Subsistence and Earliest grapes" }],
+      "importance": 1
+    },
+    {
+      "uuid": "nabta-playa",
+      "title": "Nabta Playa: herders and early pottery",
+      "start": "c. 7500 BCE",
+      "tracks": ["nabta"],
+      "descr": "One of the earliest sites of the Nubian Neolithic. People begin to make pottery locally around 6800 BC, and larger settlements appear by the 7th millennium BC; domesticated cattle reach northeast Africa in the late 7th millennium BC.",
+      "sources": [{ "sourceKey": "wp-nabta", "sourceLocation": "infobox, lead and Early history" }]
+    },
+    {
+      "uuid": "nabta-circle",
+      "title": "Nabta Playa stone circle",
+      "start": "c. 4800 BCE",
+      "tracks": ["nabta"],
+      "descr": "May be among the world’s earliest known archaeoastronomical devices; a megalith period follows, about 4500 to 3600 BC. Researchers see the site as an early evolution of the Hathor cult.",
+      "sources": [{ "sourceKey": "wp-nabta", "sourceLocation": "Astronomical observation, Recent research and Religious ties" }],
+      "importance": 1
+    },
+    {
+      "uuid": "faiyum-a",
+      "title": "Faiyum A: the first farming villages of Lower Egypt",
+      "start": "c. 5600 BCE",
+      "end": "c. 4400 BCE",
+      "tracks": ["lower-egypt-neolithic"],
+      "descr": "Weaving is evidenced for the first time; goats and sheep had been introduced from the Neolithic Levant around 6000 BCE. Neolithic settlements appear all over Egypt from around 6210 BC.",
+      "sources": [{ "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "Faiyum A culture and Neolithic anthropology" }]
+    },
+    {
+      "uuid": "merimde",
+      "title": "Merimde culture",
+      "start": "c. 4800 BCE",
+      "end": "c. 4300 BCE",
+      "tracks": ["lower-egypt-neolithic"],
+      "descr": "Cattle, sheep, goats and pigs are kept; its later phase corresponds to the Faiyum A and Badari cultures.",
+      "sources": [
+        { "sourceKey": "wp-merimde", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "Merimde culture" }
+      ],
+      "startDates": [
+        { "year": "4800 BCE", "source": { "sourceKey": "wp-merimde", "sourceLocation": "infobox and lead" } },
+        { "year": "5000 BCE", "source": { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "Merimde culture" } }
+      ]
+    },
+    {
+      "uuid": "badarian",
+      "title": "Badarian culture: the earliest farming in Upper Egypt",
+      "start": "c. 4400 BCE",
+      "end": "c. 4000 BCE",
+      "tracks": ["upper-egypt-predynastic"],
+      "descr": "They keep cattle, sheep and goats, give livestock and dogs ceremonial burial, and make black-topped pottery; the Western Desert was probably the most influential of its sources.",
+      "sources": [{ "sourceKey": "wp-badarian", "sourceLocation": "infobox, lead and Cultural features" }],
+      "startDates": [
+        { "year": "4400 BCE", "source": { "sourceKey": "wp-badarian", "sourceLocation": "lead" } },
+        { "year": "5000 BCE", "source": { "sourceKey": "wp-badarian", "sourceLocation": "lead ('might have already emerged by 5000 BC')" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "naqada-i",
+      "title": "Naqada I (Amratian)",
+      "start": "c. 3900 BCE",
+      "end": "c. 3650 BCE",
+      "tracks": ["upper-egypt-predynastic"],
+      "descr": "Obsidian and a little gold are imported from Nubia, and charcoal from Nekhen tombs is cedar from Lebanon. Werner Kaiser’s chronology starts the Naqada culture c. 4000 BC.",
+      "sources": [
+        { "sourceKey": "wp-naqada", "sourceLocation": "Werner Kaiser and Monuments" },
+        { "sourceKey": "wp-naqada-i", "sourceLocation": "infobox, lead and Commerce and crafts" }
+      ],
+      "startDates": [
+        { "year": "3900 BCE", "source": { "sourceKey": "wp-naqada", "sourceLocation": "Werner Kaiser" } },
+        { "year": "4000 BCE", "source": { "sourceKey": "wp-naqada-i", "sourceLocation": "lead" } },
+        { "year": "3750 BCE", "source": { "sourceKey": "wp-naqada-i", "sourceLocation": "infobox" } }
+      ]
+    },
+    {
+      "uuid": "capsian",
+      "title": "Capsian hunters of Algeria and Tunisia",
+      "start": "c. 9000 BCE",
+      "end": "c. 5400 BCE",
+      "tracks": ["capsian"],
+      "descr": "An Epipalaeolithic tradition whose first phase overlaps the African humid period, in open savanna; they hunted game from aurochs and hartebeest to hares and snails. Historical linguists tentatively link it with the earliest Afroasiatic speakers in Africa.",
+      "sources": [{ "sourceKey": "wp-capsian", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "gobero",
+      "title": "Gobero: the oldest cemetery in the Sahara",
+      "start": "c. 7700 BCE",
+      "end": "c. 6200 BCE",
+      "tracks": ["green-sahara"],
+      "descr": "Kiffian fisher-gatherers, makers of pottery with wavy lines, live beside a large lake in the Green Sahara (7500–3500 BCE); after a gap (6200–5200 BCE) Tenerian people herd domesticated cattle there. At least 182 burials include a man buried with a turtle carapace and a grave decorated with flowers.",
+      "sources": [{ "sourceKey": "wp-gobero", "sourceLocation": "infobox, lead, Site, Excavations, Kiffian culture, Tenerian culture and Burials" }],
+      "startDates": [
+        { "year": "7700 BCE", "source": { "sourceKey": "wp-gobero", "sourceLocation": "Site (Phase II)" } },
+        { "year": "8000 BCE", "source": { "sourceKey": "wp-gobero", "sourceLocation": "lead and infobox" } }
+      ]
+    },
+    {
+      "uuid": "dufuna-canoe",
+      "title": "The Dufuna canoe, Africa’s oldest boat",
+      "start": "c. 6250 BCE",
+      "tracks": ["green-sahara"],
+      "descr": "The second-oldest known boat in the world, after the Pesse canoe.",
+      "sources": [{ "sourceKey": "wp-dufuna", "sourceLocation": "infobox, lead and Background" }],
+      "startDates": [
+        { "year": "6250 BCE", "source": { "sourceKey": "wp-dufuna", "sourceLocation": "infobox" } },
+        { "year": "6472 BCE", "margin": 84, "source": { "sourceKey": "wp-dufuna", "sourceLocation": "Background (radiocarbon)" } },
+        { "year": "6085 BCE", "margin": 79, "source": { "sourceKey": "wp-dufuna", "sourceLocation": "Background (radiocarbon)" } }
+      ]
+    },
+    {
+      "uuid": "star-carr",
+      "title": "Star Carr",
+      "start": "c. 9300 BCE",
+      "end": "c. 8480 BCE",
+      "tracks": ["mesolithic-north"],
+      "descr": "Britain’s oldest structure and the earliest known carpentry in Europe; a pendant found in 2015 is thought to be the oldest Mesolithic art in Britain. Occupation lasts about 800 years.",
+      "sources": [{ "sourceKey": "wp-star-carr", "sourceLocation": "infobox, lead, Settlement and artefacts and Post-2000 investigations" }],
+      "startDates": [{ "year": "9305 BCE", "margin": 30, "source": { "sourceKey": "wp-star-carr", "sourceLocation": "Settlement and artefacts" } }],
+      "endDates": [{ "year": "8483 BCE", "margin": 42, "source": { "sourceKey": "wp-star-carr", "sourceLocation": "Settlement and artefacts" } }]
+    },
+    {
+      "uuid": "maglemosian",
+      "title": "Maglemosian hunters of the north",
+      "start": "c. 9000 BCE",
+      "end": "c. 6000 BCE",
+      "tracks": ["mesolithic-north"],
+      "descr": "They appear to have domesticated the dog; bark huts survive, and they fished with a characteristic leister spear.",
+      "sources": [{ "sourceKey": "wp-maglemosian", "sourceLocation": "infobox, lead, table and Characteristics" }],
+      "endDates": [
+        { "year": "6000 BCE", "source": { "sourceKey": "wp-maglemosian", "sourceLocation": "lead and infobox" } },
+        { "year": "6400 BCE", "source": { "sourceKey": "wp-maglemosian", "sourceLocation": "table (Late Maglemosian)" } }
+      ]
+    },
+    {
+      "uuid": "lepenski-vir",
+      "title": "Lepenski Vir: fish-faced sculptures",
+      "start": "c. 6300 BCE",
+      "end": "c. 6000 BCE",
+      "tracks": ["lepenski-vir"],
+      "descr": "The late architectural phase, with numerous fish sculptures with human-like faces. From about 7500 BC Early European Farmers arriving from Asia Minor begin to settle the Balkans and the Danube valley.",
+      "sources": [{ "sourceKey": "wp-lepenski-vir", "sourceLocation": "lead and Archaeogenetics" }]
+    },
+    {
+      "uuid": "farming-greece",
+      "title": "Farming reaches Greece",
+      "start": "c. 7000 BCE",
+      "tracks": ["balkan-neolithic"],
+      "descr": "Neolithic material culture came to Europe via western Anatolia. Farming spread from the Aegean to Britain in about 2,500 years (6500–4000 BC), at about 1 km a year; the Sesklo culture is called the earliest known Neolithic culture of Europe.",
+      "sources": [
+        { "sourceKey": "wp-neolithic-europe", "sourceLocation": "lead and Archaeology" },
+        { "sourceKey": "wp-sesklo", "sourceLocation": "infobox and lead" }
+      ],
+      "startDates": [
+        { "year": "7000 BCE", "source": { "sourceKey": "wp-neolithic-europe", "sourceLocation": "lead" } },
+        { "year": "6500 BCE", "source": { "sourceKey": "wp-neolithic-europe", "sourceLocation": "Archaeology (Knossos, Franchthi Cave, Thessaly)" } },
+        { "year": "7510 BCE", "source": { "sourceKey": "wp-sesklo", "sourceLocation": "infobox (pre-Sesklo)" } }
+      ],
+      "links": [{ "to": "catalhoyuk", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "starcevo",
+      "title": "Starčevo–Körös–Criș farmers",
+      "start": "c. 6200 BCE",
+      "end": "c. 4500 BCE",
+      "tracks": ["balkan-neolithic"],
+      "descr": "Dated by the infobox; the body gives about 5500–4500, and other sources 6200–5200.",
+      "sources": [{ "sourceKey": "wp-starcevo", "sourceLocation": "infobox and Characteristics" }],
+      "startDates": [
+        { "year": "6200 BCE", "source": { "sourceKey": "wp-starcevo", "sourceLocation": "infobox" } },
+        { "year": "5500 BCE", "source": { "sourceKey": "wp-starcevo", "sourceLocation": "Characteristics" } }
+      ],
+      "links": [{ "to": "farming-greece", "kind": "related" }],
+      "importance": 3
+    },
+    {
+      "uuid": "cardial",
+      "title": "Cardial Ware farmers spread along the Mediterranean",
+      "start": "c. 6400 BCE",
+      "end": "c. 5500 BCE",
+      "tracks": ["cardial"],
+      "descr": "Pottery impressed with cockle shells, from Epirus and Corfu (6400–6200 BC) to the Atlantic coasts of Portugal and Morocco; it reaches Iberia in probably no more than 100–200 years. Its people were closely related to the earlier Neolithic farmers of north-west Anatolia.",
+      "sources": [{ "sourceKey": "wp-cardial", "sourceLocation": "infobox, lead, The Mediterranean Neolithic and Genetics" }]
+    },
+    {
+      "uuid": "lbk",
+      "title": "Linear Pottery farmers spread across central Europe",
+      "start": "c. 5500 BCE",
+      "end": "c. 4500 BCE",
+      "tracks": ["lbk"],
+      "descr": "Appearing about 5600–5400 BC on the middle Danube, the culture spreads about 1,500 km in 360 years, building long houses.",
+      "sources": [{ "sourceKey": "wp-lbk", "sourceLocation": "infobox, lead, Culture and Geography" }],
+      "links": [{ "to": "starcevo", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "vinca",
+      "title": "Vinča culture: early copper smelting and Vinča symbols",
+      "start": "c. 5400 BCE",
+      "end": "c. 4500 BCE",
+      "tracks": ["balkan-neolithic"],
+      "descr": "It has the earliest known example of copper smelting, and its symbols are conjectured by some to be the earliest proto-writing.",
+      "sources": [{ "sourceKey": "wp-vinca", "sourceLocation": "infobox, lead and Chronology" }],
+      "startDates": [
+        { "year": "5400 BCE", "source": { "sourceKey": "wp-vinca", "sourceLocation": "infobox and lead" } },
+        { "year": "5700 BCE", "source": { "sourceKey": "wp-vinca", "sourceLocation": "Chronology (Chapman 1981)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "varna",
+      "title": "Varna Necropolis: the oldest gold",
+      "start": "c. 4569 BCE",
+      "end": "c. 4340 BCE",
+      "tracks": ["balkan-neolithic"],
+      "descr": "The oldest gold treasure and jewellery in the world, dated by radiocarbon in 2006.",
+      "sources": [{ "sourceKey": "wp-varna", "sourceLocation": "infobox, lead and Chronology" }],
+      "startDates": [
+        { "year": "4569 BCE", "source": { "sourceKey": "wp-varna", "sourceLocation": "Chronology" } },
+        { "year": "4600 BCE", "source": { "sourceKey": "wp-varna", "sourceLocation": "lead" } }
+      ],
+      "endDates": [
+        { "year": "4340 BCE", "source": { "sourceKey": "wp-varna", "sourceLocation": "Chronology" } },
+        { "year": "4200 BCE", "source": { "sourceKey": "wp-varna", "sourceLocation": "lead" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "carnac",
+      "title": "The Carnac stones",
+      "start": "c. 4500 BCE",
+      "end": "c. 3300 BCE",
+      "tracks": ["megaliths"],
+      "descr": "A dense collection of megalithic sites near the south coast of Brittany; the tumulus at Tumiac was raised between 4790 and 4530 BC, contemporary with the rich Varna burials.",
+      "sources": [{ "sourceKey": "wp-carnac", "sourceLocation": "lead, Tumuli and Tumiac" }],
+      "links": [{ "to": "varna", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "mehrgarh",
+      "title": "Mehrgarh: the earliest farming in South Asia",
+      "start": "c. 7000 BCE",
+      "tracks": ["mehrgarh"],
+      "descr": "A farming village of unbaked mud brick; barley and zebu cattle were probably domesticated locally, and drilled teeth show proto-dentistry. Its dating is debated (Jarrige: before 7000 BCE; Mutin and Zazzo: 5250–4650 BCE). Its culture later migrated into the Indus Valley and became the Indus Valley Civilisation.",
+      "sources": [{ "sourceKey": "wp-mehrgarh", "sourceLocation": "lead, Period I, Lifestyle, History and Notes" }],
+      "startDates": [
+        { "year": "7000 BCE", "source": { "sourceKey": "wp-mehrgarh", "sourceLocation": "lead and Notes (Jarrige)" } },
+        { "year": "4950 BCE", "margin": 300, "source": { "sourceKey": "wp-mehrgarh", "sourceLocation": "Period I (Mutin and Zazzo)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "bhirrana",
+      "title": "Bhirrana’s earliest levels (Hakra ware)",
+      "start": "c. 7400 BCE",
+      "tracks": ["early-india"],
+      "descr": "Charcoal from the lowest levels gave 7570–7180 BCE, said to predate the Indus Valley civilisation; other excavators date these levels much later (Garge: from about 4600 BCE).",
+      "sources": [{ "sourceKey": "wp-bhirrana", "sourceLocation": "infobox, lead and Dating" }],
+      "startDates": [
+        { "year": "7375 BCE", "margin": 195, "source": { "sourceKey": "wp-bhirrana", "sourceLocation": "Notes (Dikshit and Rami)" } },
+        { "year": "6445 BCE", "margin": 244, "source": { "sourceKey": "wp-bhirrana", "sourceLocation": "Notes (second date)" } },
+        { "year": "4600 BCE", "source": { "sourceKey": "wp-bhirrana", "sourceLocation": "Dating (Garge 2010)" } }
+      ]
+    },
+    {
+      "uuid": "lahuradewa",
+      "title": "Lahuradewa: early rice and pottery in the Ganges plain",
+      "start": "c. 6500 BCE",
+      "tracks": ["early-india"],
+      "descr": "Rice from Period IA is AMS-dated to the 7th millennium BCE, but whether it was cultivated or gathered wild is debated; its pottery is the oldest evidence of ceramics in the Indian Subcontinent. Irfan Habib gives 4220–2879 BCE.",
+      "sources": [{ "sourceKey": "wp-lahuradewa", "sourceLocation": "lead" }],
+      "startDates": [
+        { "year": "6500 BCE", "margin": 500, "source": { "sourceKey": "wp-lahuradewa", "sourceLocation": "lead ('the 7th millennium BCE')" } },
+        { "year": "3550 BCE", "margin": 670, "source": { "sourceKey": "wp-lahuradewa", "sourceLocation": "lead (Irfan Habib)" } }
+      ]
+    },
+    {
+      "uuid": "pengtoushan-rice",
+      "title": "Domesticated rice at Pengtoushan",
+      "start": "c. 8000 BCE",
+      "tracks": ["pengtoushan"],
+      "descr": "Rice residues carbon-dated to 8200–7800 BC show that rice had been domesticated; by 4000 BC evidence of rice domestication in the region is abundant.",
+      "sources": [{ "sourceKey": "wp-pengtoushan", "sourceLocation": "Rice cultivation" }],
+      "startDates": [{ "year": "8000 BCE", "margin": 200, "source": { "sourceKey": "wp-pengtoushan", "sourceLocation": "Rice cultivation" } }],
+      "importance": 1
+    },
+    {
+      "uuid": "jiahu",
+      "title": "Jiahu: bone flutes, carved signs and fermented drink",
+      "start": "c. 7000 BCE",
+      "end": "c. 5700 BCE",
+      "tracks": ["peiligang"],
+      "descr": "The earliest Peiligang site: 33 flutes carved from crane wing bones, eleven pictographic symbols on tortoise shell and bone, foxtail millet and rice, alcohol fermented from rice, honey, grapes and hawthorn, and the earliest common-carp aquaculture. A flood ends it around 5700 BC.",
+      "sources": [
+        { "sourceKey": "wp-jiahu", "sourceLocation": "infobox, lead, Inscriptions, Agriculture and Pottery and alcohol production" },
+        { "sourceKey": "wp-peiligang", "sourceLocation": "Jiahu" }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "peiligang",
+      "title": "Peiligang millet farmers",
+      "start": "c. 7000 BCE",
+      "end": "c. 5000 BCE",
+      "tracks": ["peiligang"],
+      "descr": "Cultivating millet and raising pigs, they make some of the oldest pottery in ancient China; their society is egalitarian. They are followed by the Yangshao culture.",
+      "sources": [{ "sourceKey": "wp-peiligang", "sourceLocation": "infobox, lead and Peiligang culture" }]
+    },
+    {
+      "uuid": "xinglongwa",
+      "title": "Xinglongwa: the earliest ditched village in China",
+      "start": "c. 6200 BCE",
+      "tracks": ["xinglongwa"],
+      "descr": "Houses built in rows; 120 pit-houses at the type site. In the richest grave a man is buried with a pair of pigs and jade objects, and millet remains are found.",
+      "sources": [{ "sourceKey": "wp-xinglongwa", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "hemudu",
+      "title": "Hemudu: stilt houses and early rice",
+      "start": "c. 5500 BCE",
+      "end": "c. 3300 BCE",
+      "tracks": ["hemudu"],
+      "descr": "One of the earliest rice-growing cultures; its people live in long stilt houses and make black pottery, carved jade, ivory, bone whistles and a red lacquer bowl.",
+      "sources": [{ "sourceKey": "wp-hemudu", "sourceLocation": "infobox, lead and Material culture" }]
+    },
+    {
+      "uuid": "yangshao",
+      "title": "Yangshao painted pottery (Banpo phase)",
+      "start": "c. 5000 BCE",
+      "end": "c. 4000 BCE",
+      "tracks": ["yangshao"],
+      "descr": "Millet farmers who also grow some rice and raise pigs; they make white, red and black painted pottery. A dragon statue of the fifth millennium BC is the world’s oldest known dragon depiction. Scholars trace a line from Yangshao to the Longshan and Shang cultures.",
+      "sources": [{ "sourceKey": "wp-yangshao", "sourceLocation": "infobox, lead, Phases, Origins, Subsistence, Crafts and Social structure" }],
+      "importance": 1
+    },
+    {
+      "uuid": "hongshan",
+      "title": "Hongshan jade dragons",
+      "start": "c. 4700 BCE",
+      "end": "c. 2900 BCE",
+      "tracks": ["hongshan"],
+      "descr": "Known for jade pig dragons and embryo dragons, among the earliest jade working; it interacts with the contemporary Yangshao, and its jades show considerable kinship with some Shang jades.",
+      "sources": [{ "sourceKey": "wp-hongshan", "sourceLocation": "infobox, lead, Historical context, Artifacts and Development of Chinese civilization" }],
+      "importance": 1
+    },
+    {
+      "uuid": "dawenkou",
+      "title": "Dawenkou culture",
+      "start": "c. 4300 BCE",
+      "end": "c. 2600 BCE",
+      "tracks": ["dawenkou"],
+      "descr": "Turquoise, jade and ivory are common; the earliest alligator drums appear here. It co-exists with the Yangshao culture and has a lead role in generating Longshan.",
+      "sources": [{ "sourceKey": "wp-dawenkou", "sourceLocation": "infobox, lead, Chronology and Interactions with other cultures" }]
+    },
+    {
+      "uuid": "jeulmun",
+      "title": "Early Jeulmun pit-house villages",
+      "start": "c. 6000 BCE",
+      "end": "c. 3500 BCE",
+      "tracks": ["jeulmun"],
+      "descr": "Small semi-permanent settlements with pit-houses. Gosan-ni pottery has been dated to 10,000 BC, though more dating is needed.",
+      "sources": [{ "sourceKey": "wp-jeulmun", "sourceLocation": "infobox, lead, Incipient Jeulmun and Early Jeulmun" }]
+    },
+    {
+      "uuid": "jomon-peach",
+      "title": "Domesticated peaches reach Jōmon Japan from China",
+      "start": "c. 4700 BCE",
+      "end": "c. 4400 BCE",
+      "tracks": ["jomon-early"],
+      "descr": "In the Early Jōmon, a period that saw an explosion in population. Jōmon pottery, decorated by impressing cords into wet clay, is among the oldest in the world.",
+      "sources": [{ "sourceKey": "wp-jomon", "sourceLocation": "Chronology, Early Jōmon, Early agriculture and Pottery" }]
+    },
+    {
+      "uuid": "kuk-drainage",
+      "title": "Kuk Swamp: drainage ditches and early agriculture",
+      "start": "c. 7050 BCE",
+      "tracks": ["new-guinea"],
+      "descr": "One of the places where people independently developed agriculture; the native crop taro was grown, and drainage ditches date back to about 9,000 years ago.",
+      "sources": [{ "sourceKey": "wp-kuk", "sourceLocation": "lead and History" }],
+      "importance": 1
+    },
+    {
+      "uuid": "kuk-bananas",
+      "title": "Bananas and sugar cane planted at Kuk",
+      "start": "c. 4950 BCE",
+      "end": "c. 4450 BCE",
+      "tracks": ["new-guinea"],
+      "descr": "Eumusa bananas; a managed grassland of 6950–6550 years ago points to deliberate planting.",
+      "sources": [{ "sourceKey": "wp-kuk", "sourceLocation": "lead and History" }]
+    },
+    {
+      "uuid": "plano",
+      "title": "Plano bison hunters",
+      "start": "c. 9000 BCE",
+      "end": "c. 6000 BCE",
+      "tracks": ["plano"],
+      "descr": "They hunted Bison antiquus, forcing stampedes off cliffs.",
+      "sources": [{ "sourceKey": "wp-plano", "sourceLocation": "infobox, History and Distinguishing characteristics" }]
+    },
+    {
+      "uuid": "koster-dogs",
+      "title": "The oldest dogs in the Americas (Koster)",
+      "start": "c. 7950 BCE",
+      "tracks": ["archaic-na"],
+      "descr": "Dog burials about 9,900 years old at one of the oldest known cemetery sites in eastern North America, occupied from the early Archaic (7500 BC).",
+      "sources": [{ "sourceKey": "wp-koster", "sourceLocation": "lead" }]
+    },
+    {
+      "uuid": "windover",
+      "title": "Windover pond burials",
+      "start": "c. 6050 BCE",
+      "end": "c. 5050 BCE",
+      "tracks": ["archaic-na"],
+      "descr": "Hunter-gatherers bury their dead in the pond; brain tissue survives in 91 skulls, and graves hold woven palm-leaf fabrics and the earliest documented bottle gourd north of Mexico.",
+      "sources": [{ "sourceKey": "wp-windover", "sourceLocation": "lead, Site, Deposition, Textiles and Bags and containers" }]
+    },
+    {
+      "uuid": "squash",
+      "title": "Squash domesticated at Guilá Naquitz",
+      "start": "c. 6050 BCE",
+      "tracks": ["oaxaca-archaic"],
+      "descr": "The earliest known evidence for domestication of any crop on the continent: intentional breeding of squash (C. pepo) by no later than 8,000 years BP. Earlier AMS dates of 10,000 BP have been called into question.",
+      "sources": [{ "sourceKey": "wp-guila-naquitz", "sourceLocation": "lead, Crop domestication and Timeline of domesticate changes" }],
+      "startDates": [
+        { "year": "6050 BCE", "source": { "sourceKey": "wp-guila-naquitz", "sourceLocation": "Crop domestication ('no later than 8,000 years BP')" } },
+        { "year": "8050 BCE", "source": { "sourceKey": "wp-guila-naquitz", "sourceLocation": "Timeline (AMS 10,000 BP, questioned)" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "maize-domesticated",
+      "title": "Maize domesticated in southern Mexico",
+      "start": "c. 7050 BCE",
+      "tracks": ["oaxaca-archaic"],
+      "descr": "Domesticated by indigenous peoples from wild teosinte about 9,000 years ago.",
+      "sources": [{ "sourceKey": "wp-maize", "sourceLocation": "lead" }],
+      "importance": 1
+    },
+    {
+      "uuid": "cueva-manos",
+      "title": "Cueva de las Manos: the first paintings",
+      "start": "c. 7300 BCE",
+      "tracks": ["cueva-manos"],
+      "descr": "The oldest-known cave paintings in South America, made in several waves until AD 700 by hunters of guanacos.",
+      "sources": [{ "sourceKey": "wp-cueva-manos", "sourceLocation": "lead, History and Artwork" }],
+      "importance": 1
+    },
+    {
+      "uuid": "potato",
+      "title": "Potatoes domesticated around Lake Titicaca",
+      "start": "c. 6550 BCE",
+      "tracks": ["andes-archaic"],
+      "descr": "In southern Peru and northwestern Bolivia, about 7,000–10,000 years ago.",
+      "sources": [{ "sourceKey": "wp-potato", "sourceLocation": "lead and History" }],
+      "startDates": [{ "year": "6550 BCE", "margin": 1500, "source": { "sourceKey": "wp-potato", "sourceLocation": "lead ('about 7,000–10,000 years ago')" } }],
+      "importance": 1
+    },
+    {
+      "uuid": "paloma",
+      "title": "Paloma, an early fishing village",
+      "start": "c. 5700 BCE",
+      "end": "c. 2800 BCE",
+      "tracks": ["andes-archaic"],
+      "descr": "One of the earliest villages in the Americas dated stratigraphically; its diet was mainly fish and shellfish.",
+      "sources": [{ "sourceKey": "wp-paloma", "sourceLocation": "lead and Subsistence activities" }]
+    },
+    {
+      "uuid": "huaca-prieta",
+      "title": "Huaca Prieta: early maize and dyed cotton",
+      "start": "c. 4700 BCE",
+      "tracks": ["andes-archaic"],
+      "descr": "Corncobs from Paredones and Huaca Prieta may date from as early as 4700 BCE (Dolores Piperno); dyed cotton fabric found in 2016 is about 6000 years old.",
+      "sources": [{ "sourceKey": "wp-huaca-prieta", "sourceLocation": "Early maize found and Early use of cotton and indigo dye" }]
+    },
+    {
+      "uuid": "karahan-tepe",
+      "title": "Karahan Tepe",
+      "start": "c. 9750 BCE",
+      "end": "c. 9400 BCE",
+      "tracks": ["gobekli"],
+      "descr": "Possibly the earliest known human village. It lies in the same region as Göbekli Tepe, predates its construction by several centuries, and archaeologists believe the sites are related.",
+      "sources": [{ "sourceKey": "wp-karahan", "sourceLocation": "infobox, lead and History" }],
+      "startDates": [
+        { "year": "9750 BCE", "source": { "sourceKey": "wp-karahan", "sourceLocation": "infobox and History" } },
+        { "year": "9750 BCE", "margin": 250, "source": { "sourceKey": "wp-karahan", "sourceLocation": "lead" } }
+      ],
+      "links": [{ "to": "gobekli-tepe", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "nevali-cori",
+      "title": "Nevalı Çori: temples and monumental sculpture",
+      "start": "c. 8400 BCE",
+      "end": "c. 8100 BCE",
+      "tracks": ["gobekli"],
+      "descr": "Some of the world’s oldest known temples and monumental sculpture, in the Taş Tepeler tradition; similar structures are known only from Göbekli Tepe.",
+      "sources": [{ "sourceKey": "wp-nevali-cori", "sourceLocation": "infobox, lead, Houses and Sculpture" }],
+      "links": [{ "to": "gobekli-tepe", "kind": "related" }]
+    },
+    {
+      "uuid": "asikli",
+      "title": "Aşıklı Höyük settled",
+      "start": "c. 8200 BCE",
+      "end": "c. 7400 BCE",
+      "tracks": ["catalhoyuk"],
+      "descr": "One of the earliest Aceramic Neolithic sites on the Anatolian plateau, considerably smaller than nearby Çatalhöyük.",
+      "sources": [{ "sourceKey": "wp-asikli", "sourceLocation": "infobox, lead and Dates" }]
+    },
+    {
+      "uuid": "abu-hureyra",
+      "title": "Abu Hureyra: a farming village on the Euphrates",
+      "start": "c. 8600 BCE",
+      "end": "c. 5800 BCE",
+      "tracks": ["ppnb"],
+      "descr": "One of the most important sites in the study of the origins of agriculture; its first domesticated cereals came about around 10,000 years ago, and basket weaving there dates back to 6500 BC.",
+      "sources": [{ "sourceKey": "wp-abu-hureyra", "sourceLocation": "lead, Second occupation, Transition from foraging to farming and Agriculture" }]
+    },
+    {
+      "uuid": "byblos-settled",
+      "title": "Byblos first settled",
+      "start": "c. 7900 BCE",
+      "tracks": ["ppnb"],
+      "descr": "In the Pre-Pottery Neolithic B; Byblos has been continuously inhabited since 5000 BC.",
+      "sources": [{ "sourceKey": "wp-byblos", "sourceLocation": "lead and Neolithic and Chalcolithic levels" }],
+      "startDates": [{ "year": "7900 BCE", "margin": 900, "source": { "sourceKey": "wp-byblos", "sourceLocation": "lead ('between 8800 and 7000 BC')" } }]
+    },
+    {
+      "uuid": "yarmukian",
+      "title": "Yarmukian culture",
+      "start": "c. 6400 BCE",
+      "end": "c. 6000 BCE",
+      "tracks": ["yarmukian"],
+      "descr": "A Pottery Neolithic A culture of the Levant, existing alongside the Lodian (Jericho IX) and Nizzanim cultures.",
+      "sources": [{ "sourceKey": "wp-yarmukian", "sourceLocation": "infobox and lead" }],
+      "importance": 3
+    },
+    {
+      "uuid": "jarmo",
+      "title": "Jarmo, an early farming village",
+      "start": "c. 7090 BCE",
+      "end": "c. 4950 BCE",
+      "tracks": ["jarmo"],
+      "descr": "An agricultural community contemporary with Jericho and Çatalhöyük, at its height between 6200 and 5800 BC; its art marks the inception of the Art of Mesopotamia.",
+      "sources": [{ "sourceKey": "wp-jarmo", "sourceLocation": "infobox, lead, The village and Pottery and religion" }]
+    },
+    {
+      "uuid": "tell-brak-settled",
+      "title": "Tell Brak settled",
+      "start": "c. 6500 BCE",
+      "tracks": ["tell-brak"],
+      "descr": "The earliest small settlement belongs to the proto-Halaf culture; Halaf and Northern Ubaid phases follow.",
+      "sources": [{ "sourceKey": "wp-tell-brak", "sourceLocation": "infobox, lead, history table and Early settlement" }]
+    },
+    {
+      "uuid": "tell-brak-city",
+      "title": "Tell Brak becomes one of the first cities",
+      "start": "c. 4200 BCE",
+      "end": "c. 3600 BCE",
+      "tracks": ["tell-brak"],
+      "descr": "Urbanisation begins in the late 5th millennium BCE; in Period E (c. 4200–3900 BC) the city’s walls are built, and by early Period F (c. 3800–3600 BC) it covers 130 hectares. It is one of the earliest known cities in the world; later an Urukean colony is established there.",
+      "sources": [{ "sourceKey": "wp-tell-brak", "sourceLocation": "lead, Brak Period E and Brak Period F" }],
+      "links": [{ "to": "uruk-expansion", "kind": "related" }],
+      "importance": 1
+    },
+    {
+      "uuid": "ounjougou-pottery",
+      "title": "Ounjougou: the earliest pottery in Africa",
+      "start": "c. 9500 BCE",
+      "tracks": ["ounjougou"],
+      "descr": "Before 9400 BCE Niger-Congo speakers independently created and used mature ceramic technology; the pottery makers later migrate, and pottery at Bir Kiseiba in Egypt resembles Ounjougou’s.",
+      "sources": [{ "sourceKey": "wp-ounjougou", "sourceLocation": "lead and Early Holocene" }],
+      "startDates": [
+        {
+          "year": "9750 BCE",
+          "margin": 250,
+          "source": { "sourceKey": "wp-ounjougou", "sourceLocation": "Early Holocene ('during the first half of the 10th millennium BC')" }
+        },
+        { "year": "9400 BCE", "source": { "sourceKey": "wp-ounjougou", "sourceLocation": "Early Holocene ('Prior to 9400 BCE')" } }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "early-khartoum",
+      "title": "Early Khartoum pottery makers",
+      "start": "c. 6850 BCE",
+      "end": "c. 3050 BCE",
+      "tracks": ["nubia"],
+      "descr": "From a time before food production began in Africa; sites in Sudan such as Esh Shaheinab are some of the earliest examples of pottery-making in Africa.",
+      "sources": [{ "sourceKey": "wp-shaheinab", "sourceLocation": "lead ('Early Khartoum (8800 to 5000 BP)') and Pottery" }]
+    },
+    {
+      "uuid": "pesse-canoe",
+      "title": "The Pesse canoe, the world’s oldest known boat",
+      "start": "c. 8040 BCE",
+      "end": "c. 7510 BCE",
+      "tracks": ["mesolithic-north"],
+      "descr": "Made in the early Mesolithic.",
+      "sources": [{ "sourceKey": "wp-pesse", "sourceLocation": "infobox and lead" }],
+      "links": [{ "to": "dufuna-canoe", "kind": "related" }]
+    },
+    {
+      "uuid": "doggerland",
+      "title": "Doggerland floods: Britain is cut off",
+      "start": "c. 6500 BCE",
+      "tracks": ["mesolithic-north"],
+      "descr": "Rising seas inundate Doggerland between 10,000 and 7,000 years ago, cutting the British peninsula off from the mainland by around 6500 BCE; Dogger Bank remains an island until at least 5000 BCE. Doggerland may have been Europe’s most prosperous hunting, fowling and fishing ground in the Mesolithic.",
+      "sources": [{ "sourceKey": "wp-doggerland", "sourceLocation": "lead, Formation and Disappearance" }],
+      "importance": 1
+    },
+    {
+      "uuid": "storegga",
+      "title": "The Storegga Slide tsunami",
+      "start": "c. 6200 BCE",
+      "tracks": ["mesolithic-north"],
+      "descr": "Structural failures of the continental shelf cause underwater landslides and a tsunami in the North Atlantic; one hypothesis holds that it flooded much of Doggerland’s remaining coast.",
+      "sources": [{ "sourceKey": "wp-storegga", "sourceLocation": "lead and Description" }, { "sourceKey": "wp-doggerland", "sourceLocation": "Disappearance" }],
+      "startDates": [{ "year": "6198 BCE", "margin": 27, "source": { "sourceKey": "wp-storegga", "sourceLocation": "lead (carbon dating)" } }],
+      "links": [{ "to": "doggerland", "kind": "related" }, { "to": "event-8-2-ka", "kind": "related" }]
+    },
+    {
+      "uuid": "ertebolle",
+      "title": "Ertebølle hunter-fishers make pottery",
+      "start": "c. 5400 BCE",
+      "end": "c. 3950 BCE",
+      "tracks": ["ertebolle"],
+      "descr": "A hunter-gatherer and fisher culture of the end of the Mesolithic, roughly contemporary with the Linear Pottery culture; shortly after 4,100 BCE it spreads along the Baltic coast, and it is then replaced by the Funnelbeaker culture.",
+      "sources": [{ "sourceKey": "wp-ertebolle", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "hamangia",
+      "title": "Hamangia culture: “The Thinker”",
+      "start": "c. 5250 BCE",
+      "end": "c. 4500 BCE",
+      "tracks": ["balkan-neolithic"],
+      "descr": "Known for exceptional clay figures, including The Thinker and Sitting Woman (c. 4900 BC); it is followed by the Varna culture.",
+      "sources": [{ "sourceKey": "wp-hamangia", "sourceLocation": "infobox, Genesis and successor, Art and Gallery" }],
+      "links": [{ "to": "varna", "kind": "related" }]
+    },
+    {
+      "uuid": "dimini",
+      "title": "Dimini culture: abstract painted vessels",
+      "start": "c. 4800 BCE",
+      "end": "c. 3200 BCE",
+      "tracks": ["balkan-neolithic"],
+      "descr": "Characteristic of the Later Neolithic in eastern Thessaly. An \"invasion theory\" has it conquering the Sesklo culture around 5000 BC; Lyritzis’s thermoluminescence dates instead show it appearing about 4800 BC, four centuries before Sesklo’s end.",
+      "sources": [{ "sourceKey": "wp-dimini", "sourceLocation": "infobox, History and Antiquity" }]
+    },
+    {
+      "uuid": "goseck",
+      "title": "The Goseck circle",
+      "start": "c. 4900 BCE",
+      "end": "c. 4700 BCE",
+      "tracks": ["lbk"],
+      "descr": "Perhaps the oldest and best known of the circular enclosures of the Central European Neolithic, probably a ritual or cult structure; it dates to the transition from Linear Pottery to Stroke-ornamented ware.",
+      "sources": [{ "sourceKey": "wp-goseck", "sourceLocation": "infobox, lead, History and Astronomical alignment" }]
+    },
+    {
+      "uuid": "lengyel",
+      "title": "Lengyel culture: the dawn of the Chalcolithic in Central Europe",
+      "start": "c. 5000 BCE",
+      "end": "c. 4000 BCE",
+      "tracks": ["lengyel"],
+      "descr": "Copper beads and ribbons mark the dawn of the Chalcolithic in Central Europe. It follows the Linear Pottery culture and overlaps the Funnelbeaker culture.",
+      "sources": [{ "sourceKey": "wp-lengyel", "sourceLocation": "infobox, lead and Description" }]
+    },
+    {
+      "uuid": "michelsberg",
+      "title": "Michelsberg culture",
+      "start": "c. 4400 BCE",
+      "end": "c. 3500 BCE",
+      "tracks": ["michelsberg"],
+      "descr": "Undecorated tulip beakers, hilltop settlements and enclosures; it emerges in northeastern France and plays an instrumental role in establishing the Funnelbeaker culture. Its Kapellenberg tumulus shows the influence of the Castellic culture of Brittany.",
+      "sources": [{ "sourceKey": "wp-michelsberg", "sourceLocation": "infobox, lead, History, Settlements and Finds" }]
+    },
+    {
+      "uuid": "barnenez",
+      "title": "Barnenez cairn",
+      "start": "c. 4850 BCE",
+      "end": "c. 4000 BCE",
+      "tracks": ["megaliths"],
+      "descr": "One of the earliest megalithic monuments in Europe, remarkable for its megalithic art; built in two phases (4850–4250 and 4450–4000 BC).",
+      "sources": [{ "sourceKey": "wp-barnenez", "sourceLocation": "infobox, lead and History" }]
+    },
+    {
+      "uuid": "knap-of-howar",
+      "title": "Knap of Howar, the oldest stone house in northern Europe",
+      "start": "c. 3800 BCE",
+      "end": "c. 2800 BCE",
+      "tracks": ["megaliths"],
+      "descr": "It may be the oldest preserved stone house in northern Europe, earlier than the similar houses at Skara Brae.",
+      "sources": [{ "sourceKey": "wp-knap-of-howar", "sourceLocation": "infobox and lead" }]
+    },
+    {
+      "uuid": "bacsonian",
+      "title": "Bacsonian culture",
+      "start": "c. 8000 BCE",
+      "end": "c. 4000 BCE",
+      "tracks": ["hoabinhian"],
+      "descr": "Part of the Hoabinhian, a lithic techno-complex. At Spirit Cave in Thailand, Gorman claimed early plant remains, but Higham and Thosarat find no grounds for linking the site with agriculture; it has no ceramics until after 6800 BCE (Solheim).",
+      "sources": [
+        { "sourceKey": "wp-hoabinhian", "sourceLocation": "lead and Hoabinhian and plant domestication" },
+        { "sourceKey": "wp-spirit-cave-thai", "sourceLocation": "Plant domestication" }
+      ]
+    },
+    {
+      "uuid": "cishan",
+      "title": "Cishan millet farmers",
+      "start": "c. 6500 BCE",
+      "end": "c. 5000 BCE",
+      "tracks": ["cishan"],
+      "descr": "Farming of broomcorn millet, stored in over 500 pits; pigs are the main source of meat, and nets are made of hemp. Dates of 10,000 years ago for its millet have been questioned. It is followed by the Yangshao culture.",
+      "sources": [{ "sourceKey": "wp-cishan", "sourceLocation": "infobox, lead and Type site" }],
+      "links": [{ "to": "peiligang", "kind": "related" }]
+    },
+    {
+      "uuid": "houli",
+      "title": "Houli culture in Shandong",
+      "start": "c. 6500 BCE",
+      "end": "c. 5500 BCE",
+      "tracks": ["houli"],
+      "descr": "Rice, broomcorn millet and foxtail millet are found at its sites (rice at Yuezhang AMS-dated to 8010–7700 BP, not confirmed as domesticated); people live in square semi-subterranean houses and rely mostly on hunting and fishing.",
+      "sources": [{ "sourceKey": "wp-houli", "sourceLocation": "infobox, lead, Archaeological findings and Yuezhang" }]
+    },
+    {
+      "uuid": "daxi",
+      "title": "Daxi culture: rice and walled settlements",
+      "start": "c. 5000 BCE",
+      "end": "c. 3300 BCE",
+      "tracks": ["daxi"],
+      "descr": "The Daxi people cultivate rice extensively, and their sites are some of the earliest in China with moats and walled settlements.",
+      "sources": [{ "sourceKey": "wp-daxi", "sourceLocation": "infobox, lead and Material culture" }]
+    },
+    {
+      "uuid": "majiabang",
+      "title": "Majiabang culture: paddy rice and jade",
+      "start": "c. 5000 BCE",
+      "end": "c. 3350 BCE",
+      "tracks": ["majiabang"],
+      "descr": "Paddy fields at Caoxieshan and Chuodun; jade ornaments, and a wooden scull and oar. It coexists with the Hemudu culture and is succeeded by the Liangzhu culture.",
+      "sources": [{ "sourceKey": "wp-majiabang", "sourceLocation": "infobox, lead, Rice cultivation, Tools, Jade and Related cultures" }],
+      "links": [{ "to": "hemudu", "kind": "related" }]
+    },
+    {
+      "uuid": "pedra-pintada",
+      "title": "Caverna da Pedra Pintada: the earliest cave paintings in the Americas",
+      "start": "c. 9250 BCE",
+      "end": "c. 8050 BCE",
+      "tracks": ["amazon"],
+      "descr": "Human presence about 11,200 to 10,000 years ago, with spear points and Brazil nuts; its paintings are the earliest known cave paintings in the Americas.",
+      "sources": [{ "sourceKey": "wp-pedra-pintada", "sourceLocation": "lead, Rediscovery, Findings and Paintings" }],
+      "importance": 1
+    },
+    {
+      "uuid": "spirit-cave-mummy",
+      "title": "The Spirit Cave mummy",
+      "start": "c. 7420 BCE",
+      "tracks": ["archaic-na"],
+      "descr": "The oldest human mummy found in North America, wrapped in a rabbit-skin blanket and woven tule matting.",
+      "sources": [{ "sourceKey": "wp-spirit-cave-mummy", "sourceLocation": "infobox, lead, Discovery and Identity and dating" }]
     }
   ]
 }

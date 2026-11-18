@@ -394,3 +394,67 @@ agents read about 65 pages.
 - **Left out:** San peoples (no in-window date beyond "the first millennium BCE"), Yap (no date), the Okunev figurine's
   3511–3127 cal BC (one caption), Karib'il's link to Sennacherib as a dated event (the page's two Karib'ils are unclear),
   the Dacians' Persian and Greek relations (summary only), and the Trypillian details read only in summary.
+
+## Tenth pass: back to 9000 BCE (18 November 2026)
+
+At the author's request the ancient timeline now starts with the first farmers. Two re-runnable scripts (run before
+`groups.ts`): `neolithic-near-east.ts` and `neolithic-world.ts`. 65 events, 62 sources, 44 rows. Six web-fetch agents
+read about 70 pages; none carried an AI-text warning. Not found (404): Shangshan culture, Khartoum Neolithic.
+
+- **Near East:** the Levant (PPNA: Jericho c. 9000 and its tower c. 8000; PPNB: animal domestication 9000–8000, plastered
+  skulls, 'Ain Ghazal c. 7000, the 8.2-kiloyear event c. 6200; the Ghassulian 4400–3800), Anatolia (Göbekli Tepe
+  9500–8000, Çayönü and its copper workshop c. 6900–6800, Çatalhöyük 7500–5600), Mesopotamia (Hassuna, Halaf, Samarra,
+  Ubaid with Tell el-'Oueili and Eridu c. 5400), Iran and Central Asia (Chogha Golan, Ganj Dareh's goats c. 8200, Jeitun,
+  Chogha Mish, Tepe Sialk, Shahr-e Sukhteh c. 3550), the Caucasus (Shulaveri–Shomu, the earliest winemaking c. 6000).
+- **Egypt:** Nabta Playa (c. 7500; the stone circle c. 4800), Faiyum A, Merimde, the Badarian, Naqada I.
+- **Africa:** the Capsian (9000–5400), Gobero and the Dufuna canoe (Green Sahara peoples).
+- **Europe:** Star Carr (9335/9275–8525/8440), the Maglemosian, Lepenski Vir, farming reaching Greece (c. 7000), Starčevo,
+  Cardial Ware, Linear Pottery, Vinča, Varna (4569–4340), Carnac (4500–3300).
+- **South Asia:** Mehrgarh (Jarrige's pre-7000 and Mutin and Zazzo's 5250–4650 both as claims), Bhirrana (disputed),
+  Lahuradewa.
+- **East Asia and Oceania:** Pengtoushan rice (8200–7800), Jiahu, Peiligang, Xinglongwa, Hemudu, Yangshao (Banpo phase),
+  Hongshan, Dawenkou, Early Jeulmun, Early Jōmon (8500–3520; peaches from China 4700–4400), Kuk Swamp (drainage c. 9,000
+  years ago; bananas 6,900–6,400 years ago).
+- **Americas:** Plano bison hunters, Koster's dogs (9,900 years ago), Windover, squash at Guilá Naquitz (by 8,000 BP;
+  the questioned 10,000 BP as a claim), maize (about 9,000 years ago), Cueva de las Manos (7300 BC), potatoes (7,000–10,000
+  years ago), Paloma, Huaca Prieta.
+- **App changes:** a 1000-year zoom step; the ancient timeline opens at 500 years per tick; historical timelines open on
+  the median event date instead of the middle of their range (otherwise the opening view sat in the near-empty early
+  Holocene). The subtitle and description now say c. 9000–330 BCE.
+- **Judgment calls (please check):**
+  - Rows that began before 9000 BCE keep their stated starts (PPNA 10,000, Chogha Golan c. 10,050 from 12,000 BP, Star
+    Carr 9335), so the ruler reaches a little further back than 9000.
+  - Where a page gives only "years ago" or BP, the event uses year − 1950 (e.g. maize 7050 BCE, Kuk drainage 7050 BCE,
+    potatoes 6550 ± 1500).
+  - Mehrgarh, Bhirrana and Lahuradewa have strongly disputed dates; each event carries the competing values as claims,
+    so their drawn ranges are wide on purpose.
+  - The Starčevo event keeps the infobox span (6200–4500); its page's body says 5500–4500.
+- **Key events (27)** and **minor (2)**: see `docs/ancient-key-events.md`.
+- **Left out:** the Natufians (ended c. 9500), Faiyum B and Tasian (summary-heavy), the Tassili rock-art periods (summary
+  only), Sesklo's population and "invasion theory", the Archaic-period timeline entries (a list without sources in the
+  page), Koster's mounds, Kennewick Man, Mount Mazama, and items read only in summary (e.g. the Talheim Death Pit, Goseck
+  circle, Jericho's 1981–83 tower dates).
+
+## Eleventh pass: more of the early Holocene (18 November 2026)
+
+Gaps left by the tenth pass, in `scripts/additions/neolithic-2.ts` (run before `groups.ts`). 29 events, 29 sources, 13
+rows. Three web-fetch agents read about 35 pages; none carried an AI-text warning. Not found (404): Khartoum Mesolithic,
+Kuahuqiao culture, Shangshan site, Ñanchóc; *Las Vegas culture* redirects to the city in Nevada. *Prehistoric Iberia*
+(where *Neolithic Iberia* redirects) was read only in summary, so Neolithic Iberia is not added yet.
+
+- **Near East:** Karahan Tepe (9750–9400; the lead's 10,000–9500 as a claim), Nevalı Çori (8400–8100), Aşıklı Höyük
+  (8200–7400), Abu Hureyra's second occupation (8600–5800), Byblos (8800–7000), the Yarmukian (6400–6000), Jarmo
+  (7090–4950), Tell Brak (from 6500; city walls and 130 ha in 4200–3600).
+- **Africa:** Ounjougou, the earliest pottery in Africa (before 9400 BCE); Early Khartoum (8800–5000 BP).
+- **Europe:** the Pesse canoe (8040–7510), Doggerland's flooding (Britain cut off by around 6500 BCE), the Storegga tsunami
+  (6225–6170), Ertebølle, Hamangia, Dimini (with the invasion theory and Lyritzis's dates both described), Goseck,
+  Lengyel, Michelsberg, Barnenez (4850–4000), Knap of Howar (3800–2800).
+- **East and Southeast Asia:** the Bacsonian (8000–4000) on a Hoabinhian row (10,000–2000; Gorman's Spirit Cave plant
+  claims are described with Higham and Thosarat's rejection), Cishan, Houli, Daxi, Majiabang.
+- **Americas:** Caverna da Pedra Pintada (11,200–10,000 years ago; earliest known cave paintings in the Americas), the
+  Spirit Cave mummy (c. 7420 BC).
+- **Judgment calls:** Karahan Tepe sits on the Göbekli Tepe row (same region, related sites). Early Khartoum sits on the
+  Nubia row. Knap of Howar sits on the megalith builders' row, though it is a house. Kuahuqiao's date appears only in the
+  *List of Neolithic cultures of China*, marked tentative, so it is left out.
+- **Key events (5):** Karahan Tepe, Tell Brak as a city, Ounjougou pottery, Doggerland, Pedra Pintada. Minor: the
+  Yarmukian.

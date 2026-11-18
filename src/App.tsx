@@ -137,10 +137,12 @@ export default function App() {
     if (initialUrl.at !== null) return initialUrl.at;
     const sel = resolved.find((e) => e.uuid === selectedId);
     if (sel) return sel.start;
-    // historical timelines open on their middle; fictional ones on their "present"
+    // historical timelines open where most of their events are (the median start); fictional ones on their
+    // "present". The median, not the midpoint of the range, so a few very early events don't pull the opening
+    // view into a near-empty stretch.
     if (data.present === undefined && resolved.length) {
-      const ys = resolved.map((e) => e.start);
-      return Math.round((Math.min(...ys) + Math.max(...ys)) / 2);
+      const ys = resolved.map((e) => e.start).sort((a, b) => a - b);
+      return ys[Math.floor(ys.length / 2)];
     }
     return present;
   });

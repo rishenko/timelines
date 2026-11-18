@@ -30,7 +30,12 @@
     "taiwan-farmers", "out-of-taiwan", "lapita-bismarck", "tonga-settled", "dingo",
     "maykop-kurgan", "kura-araxes-spread", "umm-an-nar", "marib-dam", "saba-height",
     "trypillia-megasites", "flintbek", "biskupin", "adena-mounds", "mokaya-pottery", "zapotec-writing", "monte-alban",
-    "paracas", "saladoid", "okunev-stelae", "karasuk-shang", "deer-stones", "karuo", "green-sahara-ends"
+    "paracas", "saladoid", "okunev-stelae", "karasuk-shang", "deer-stones", "karuo", "green-sahara-ends",
+    "jericho-founded", "jericho-tower", "animal-domestication", "gobekli-tepe", "catalhoyuk", "ain-ghazal", "eridu",
+    "samarra", "ganj-dareh", "shulaveri-wine", "nabta-circle", "badarian", "farming-greece", "lbk", "vinca", "varna",
+    "carnac", "mehrgarh", "pengtoushan-rice", "jiahu", "yangshao", "hongshan", "kuk-drainage", "maize-domesticated",
+    "squash", "potato", "cueva-manos",
+    "karahan-tepe", "tell-brak-city", "ounjougou-pottery", "doggerland", "pedra-pintada"
   ],
   "3": [
     "kanesh-karum-ib", "alalakh-vii", "drought-1198", "hittite-marriage", "troy-vi",
@@ -48,6 +53,6 @@
     "pella",
     "arzhan-2", "srubnaya-lola", "dugdammi-dies", "scythian-assyrian-alliance",
     "alara", "hannu-punt",
-    "kalanay", "ymyyakhtakh", "shengavit", "colchis-cimmerians"
+    "kalanay", "ymyyakhtakh", "shengavit", "colchis-cimmerians", "starcevo", "oueili", "yarmukian"
   ]
 }
