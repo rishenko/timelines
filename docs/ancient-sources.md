@@ -505,3 +505,55 @@ chronology section was read only in summary.
   labelled as such in the titles (Laozi, Sun Tzu).
 - **Key events (11):** the Stele of the Vultures, Gilgamesh, Ashurbanipal's library, Persepolis, Homer, Thermopylae,
   the Parthenon, Socrates, the Academy, Confucius, the Hundred Schools.
+
+## Fourteenth pass: peoples who pressed the great powers (18 November 2026)
+
+`scripts/additions/peoples.ts` (run after `ideas.ts`, before `groups.ts`): 37 events, 21 sources, 8 new rows. Three
+web-fetch agents read 24 pages; none carried an AI-text banner. The rule for inclusion (the author's list): a people named
+in a major power's records with at least one datable event that changed that power's history. Rows sit beside the power
+they pressed, as the proximity rule requires.
+
+- **Rows:** the old *Aram-Damascus* row (id `aram`, kept for links) is now **Arameans** (c. 1100–732), with
+  Aram-Damascus (unchanged span; Hazael and the fall of Damascus moved onto it) and **Bit-Adini** (c. 1000–856) as
+  sub-rows. **Amorites** (c. 2500–1595) and **Chaldeans** (c. 940/860–539) sit beside Babylonia, **Hurrians**
+  (c. 2250–672) beside Mitanni, **Kaska** (c. 1450–late 12th century) beside the Hittites, **Qedarites (Arabs)**
+  (853 – 1st century BCE) beside North Arabia, and **Rong and Di peoples** (no span; events only) beside Zhou.
+- **Arameans and Chaldeans:** Tiglath-Pileser I's "Ahlamu of the land Armaya" (c. 1100), Suteans and Arameans enter
+  Babylonia (c. 1100), Assyria's withdrawal after Ashur-bel-kala (1056) and the Aramean states (late 11th century),
+  Ashur-dan II (934–912), Qarqar (853), Bit-Adini annexed (856–5), Aramaic as lingua franca (mid-8th century), the first
+  Chaldeans (852), Marduk-apla-usur (780), Marduk-apla-iddina II (722–710, 703–702). Nabopolassar is also on the
+  Chaldean row (the page's "Chaldean dynasty", 626–539).
+- **Amorites, Lullubi, Hurrians:** Naram-Sin at Jebel Bishri (c. 2240) and his Lullubi stele (c. 2250, caption);
+  Sumu-abum, Shamshi-Adad I and Hammurabi also on the Amorite row; Tupkish of Urkesh (c. 2250), Hurrians at Alalakh
+  (1725), Urkesh abandoned (c. 1350), Shupria conquered (673–672).
+- **Kaska and Mushki:** first mention under Hantili II (c. 1450), the burning of Hattusa and the court at Samuha
+  (1375–1350), the second sack under Muwatalli II (early 13th century), the Mushki–Kaska attack on Alzi (c. 1160),
+  Tiglath-Pileser I and the Mushki (1115 on *Mushki*, 1112 on *Tiglath-Pileser I*, both kept), Mita as Sargon II's
+  ally (709).
+- **Qedarites:** Zabibe's tribute (738), Šamši's revolt (733–732), Sennacherib's campaign (691), the
+  Šamaš-šuma-ukin revolt (652–648).
+- **Rong and Di:** King Mu and the Quanrong (c. 964), raids under King Li (877–841), the sack of Haojing (771; linked
+  as the cause of the move east), the Red Di take Wey (660), the Rong fade after 650, Zhongshan (414–296), Qin defeats
+  the last Rong (314).
+- **Egypt:** the Medjay first recorded under Pepi I (2332–2287), the pan-graves and Medjay police (1800–1550), the
+  Shasu of yhw at Soleb (14th century).
+- **Judgment calls (please check):**
+  1. The Hurrian row ends at Shupria's fall (673–672), its last dated Hurrian kingdom; the page says only that Hurrians
+     were assimilated "by the Early Iron Age".
+  2. The Kaska row ends late in the 12th century (stored as 1130–1101), when Tiglath-Pileser I last records them.
+  3. The burning of Hattusa has no date of its own; it is drawn over Tudhaliya III's and Suppiluliuma I's years at
+     Samuha (c. 1375–1350).
+  4. The Medjay police event uses the pan-grave dates (1800–1550) because the page gives no year for Kamose's campaign
+     or the 18th-Dynasty police force.
+  5. *Beidi* has a "needs more citations" banner and most History lines are tagged; only the Wey sack (660) and
+     Zhongshan's end (295, as a claim) come from it, and the event says so. *Lullubi*'s Ur III and later sections are
+     unsourced and were not used.
+  6. Mesopotamian and Anatolian rows inherit the region's Middle chronology; the Rong and Di row inherits China's menu.
+- **Gaps (summary only or not on the pages):** Tiglath-Pileser I's Euphrates crossings (no count on his page); the
+  Ur III wall against the Amorites (undated, and *Muriq-Tidnim* returned 404); Aramean conquests from 911 and
+  Babylon's rule over Aramean lands (Arameans page tail, summary only); Ashurbanipal's 645 Arab campaign; the Semna
+  Despatches' Medjay; Duke Mu of Qin (on none of the pages).
+- **Key events (3):** the Aramean states, the Quanrong sack of Haojing, Marduk-apla-iddina II. Minor (11): the Medjay's
+  first mention, Urkesh abandoned, the Kaska's first mention, the Rong fade, the Mushki at Alzi, Sennacherib's Qedarite
+  campaign, Marduk-apla-usur, King Mu and the Quanrong, the Di take Wey, Suteans and Arameans in Babylonia, Bit-Adini
+  annexed.

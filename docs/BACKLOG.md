@@ -35,7 +35,7 @@ title menu, with update/share/remove) and URL safety checks for untrusted timeli
   has the old behaviour; port `draft.ts` there if v2 work resumes.
 - **More ancient content: mostly done (2026-11-18, thirteenth pass, `ideas.ts`).** Lagash (Eannatum, Urukagina,
   Gudea), Hazor, Tushratta, Confucius and the history of ideas are in; Lydia, the Sabaeans and Kerma/Kush came in
-  earlier passes. Still to do: the Upanishads (dates read only in summary), more Mitanni rulers, and the many
+  earlier passes. Tribal and mobile peoples (Arameans, Amorites, Chaldeans, Hurrians, Kaska, Qedarites, Rong and Di) came in the fourteenth pass (`peoples.ts`). Still to do: the Upanishads (dates read only in summary), more Mitanni rulers, and the many
   Levant, Assyria and Iran values that exist only in page summaries (see `docs/ancient-sources.md`).
 - **Toolbar: done (2026-11-18).** The four chronology menus are now one Dating button with a panel
   (`src/components/DatingMenu.tsx`); the ancient toolbar is two rows at 1700 px instead of three. One row would need

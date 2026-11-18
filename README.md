@@ -124,7 +124,7 @@ npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --ex
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 
-`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, caucasus, arabia, eastern-europe, americas, north-asia, fill-gaps, neolithic-near-east, neolithic-world, neolithic-2, neolithic-3, ideas, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
+`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, pacific, caucasus, arabia, eastern-europe, americas, north-asia, fill-gaps, neolithic-near-east, neolithic-world, neolithic-2, neolithic-3, ideas, peoples, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 

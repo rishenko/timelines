@@ -3831,6 +3831,174 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-arameans": {
+      "name": "Wikipedia: Arameans",
+      "url": "https://en.wikipedia.org/wiki/Arameans",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-ahlamu": {
+      "name": "Wikipedia: Ahlamu",
+      "url": "https://en.wikipedia.org/wiki/Ahlamu",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tp1": {
+      "name": "Wikipedia: Tiglath-Pileser I",
+      "url": "https://en.wikipedia.org/wiki/Tiglath-Pileser_I",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-bit-adini": {
+      "name": "Wikipedia: Bit Adini",
+      "url": "https://en.wikipedia.org/wiki/Bit_Adini",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-chaldea": {
+      "name": "Wikipedia: Chaldea",
+      "url": "https://en.wikipedia.org/wiki/Chaldea",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-merodach-baladan": {
+      "name": "Wikipedia: Marduk-apla-iddina II",
+      "url": "https://en.wikipedia.org/wiki/Marduk-apla-iddina_II",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-ashur-dan-ii": {
+      "name": "Wikipedia: Ashur-dan II",
+      "url": "https://en.wikipedia.org/wiki/Ashur-dan_II",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-amorites": {
+      "name": "Wikipedia: Amorites",
+      "url": "https://en.wikipedia.org/wiki/Amorites",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hurrians": {
+      "name": "Wikipedia: Hurrians",
+      "url": "https://en.wikipedia.org/wiki/Hurrians",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-urkesh": {
+      "name": "Wikipedia: Urkesh",
+      "url": "https://en.wikipedia.org/wiki/Urkesh",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kaskians": {
+      "name": "Wikipedia: Kaskians",
+      "url": "https://en.wikipedia.org/wiki/Kaskians",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-lullubi": {
+      "name": "Wikipedia: Lullubi",
+      "url": "https://en.wikipedia.org/wiki/Lullubi",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-mushki": {
+      "name": "Wikipedia: Mushki",
+      "url": "https://en.wikipedia.org/wiki/Mushki",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-qedarites": {
+      "name": "Wikipedia: Qedarites",
+      "url": "https://en.wikipedia.org/wiki/Qedarites",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-xirong": {
+      "name": "Wikipedia: Xirong",
+      "url": "https://en.wikipedia.org/wiki/Xirong",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-quanrong": {
+      "name": "Wikipedia: Quanrong",
+      "url": "https://en.wikipedia.org/wiki/Quanrong",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-beidi": {
+      "name": "Wikipedia: Beidi",
+      "url": "https://en.wikipedia.org/wiki/Beidi",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-zhongshan": {
+      "name": "Wikipedia: Zhongshan (state)",
+      "url": "https://en.wikipedia.org/wiki/Zhongshan_(state)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-king-you": {
+      "name": "Wikipedia: King You of Zhou",
+      "url": "https://en.wikipedia.org/wiki/King_You_of_Zhou",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-shasu": {
+      "name": "Wikipedia: Shasu",
+      "url": "https://en.wikipedia.org/wiki/Shasu",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-medjay": {
+      "name": "Wikipedia: Medjay",
+      "url": "https://en.wikipedia.org/wiki/Medjay",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     }
   },
   "chronologies": {
@@ -5831,9 +5999,37 @@
     },
     {
       "id": "aram",
-      "name": "Aram-Damascus",
+      "name": "Arameans",
       "color": "#a35f4f",
       "parent": "levant",
+      "span": {
+        "start": -1099,
+        "end": -731,
+        "startDates": [
+          {
+            "year": -1099,
+            "source": {
+              "sourceKey": "wp-arameans",
+              "sourceLocation": "Etymology ('inscriptions of Tiglath-Pileser I (c. 1100 BCE)')"
+            }
+          },
+          {
+            "year": -1125,
+            "margin": 24,
+            "source": {
+              "sourceKey": "wp-arameans",
+              "sourceLocation": "lead ('late 12th century BCE')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "aram-damascus",
+      "name": "Aram-Damascus",
+      "color": "#a35f4f",
+      "parent": "aram",
       "span": {
         "start": -1149,
         "end": -731,
@@ -5850,6 +6046,26 @@
             "source": {
               "sourceKey": "wp-aram",
               "sourceLocation": "infobox: end of century; lead says 'late 12th century'"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "bit-adini",
+      "name": "Bit-Adini (Til Barsib)",
+      "color": "#b0705f",
+      "parent": "aram",
+      "span": {
+        "start": -999,
+        "end": -855,
+        "endDates": [
+          {
+            "year": -855,
+            "source": {
+              "sourceKey": "wp-bit-adini",
+              "sourceLocation": "infobox ('c. 1000 BC–856-5 BC')"
             }
           }
         ],
@@ -5975,6 +6191,36 @@
       "span": {
         "start": -1399,
         "end": -1189,
+        "circa": true
+      }
+    },
+    {
+      "id": "kaska",
+      "name": "Kaska",
+      "color": "#8a6a4a",
+      "parent": "anatolia",
+      "span": {
+        "start": -1449,
+        "end": -1114,
+        "startDates": [
+          {
+            "year": -1449,
+            "source": {
+              "sourceKey": "wp-kaskians",
+              "sourceLocation": "History ('reign of Hantili II, c. 1450 BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1115,
+            "margin": 14,
+            "source": {
+              "sourceKey": "wp-kaskians",
+              "sourceLocation": "History (Tiglath-Pileser I, 'late in the 12th century BC'; then they disappear)"
+            }
+          }
+        ],
         "circa": true
       }
     },
@@ -6202,6 +6448,56 @@
       }
     },
     {
+      "id": "hurrians",
+      "name": "Hurrians",
+      "color": "#7f63a0",
+      "parent": "mesopotamia",
+      "span": {
+        "start": -2249,
+        "end": -671,
+        "startDates": [
+          {
+            "year": -2253,
+            "source": {
+              "sourceKey": "wp-hurrians",
+              "sourceLocation": "Early Bronze Age ('a firm hold on the area by the reign of Naram-Sin of Akkad (c. 2254–2218 BC)')"
+            }
+          },
+          {
+            "year": -2249,
+            "source": {
+              "sourceKey": "wp-urkesh",
+              "sourceLocation": "Rulers (Tupkish c. 2250 BC)"
+            }
+          },
+          {
+            "year": -2499,
+            "source": {
+              "sourceKey": "wp-urkesh",
+              "sourceLocation": "infobox (Urkesh built c. 2500 BC; lead: founded possibly by the Hurrians)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -672,
+            "source": {
+              "sourceKey": "wp-hurrians",
+              "sourceLocation": "Shupria ('until its conquest by Assyria in 673–672 BC')"
+            }
+          },
+          {
+            "year": -671,
+            "source": {
+              "sourceKey": "wp-hurrians",
+              "sourceLocation": "Shupria ('673–672 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
       "id": "mitanni",
       "name": "Mitanni",
       "color": "#8e63b0",
@@ -6297,6 +6593,35 @@
       "span": {
         "start": -910,
         "end": -608
+      }
+    },
+    {
+      "id": "amorites",
+      "name": "Amorites",
+      "color": "#a07848",
+      "parent": "mesopotamia",
+      "span": {
+        "start": -2499,
+        "end": -1594,
+        "startDates": [
+          {
+            "year": -2499,
+            "source": {
+              "sourceKey": "wp-amorites",
+              "sourceLocation": "lead ('appearing in Sumerian records c. 2500 BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1594,
+            "source": {
+              "sourceKey": "wp-amorites",
+              "sourceLocation": "Fall ('the Amorite era ended in Mesopotamia ... Kassite dynasty ... around 1595 BC')"
+            }
+          }
+        ],
+        "circa": true
       }
     },
     {
@@ -6443,6 +6768,43 @@
       "span": {
         "start": -625,
         "end": -538
+      }
+    },
+    {
+      "id": "chaldeans",
+      "name": "Chaldeans",
+      "color": "#6f7f4a",
+      "parent": "mesopotamia",
+      "span": {
+        "start": -899,
+        "end": -538,
+        "startDates": [
+          {
+            "year": -899,
+            "margin": 40,
+            "source": {
+              "sourceKey": "wp-chaldea",
+              "sourceLocation": "Ancient Chaldeans ('migrated into Mesopotamia sometime between c. 940 and 860 BC')"
+            }
+          },
+          {
+            "year": -851,
+            "source": {
+              "sourceKey": "wp-chaldea",
+              "sourceLocation": "History (first written attestation, 852 BC)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -538,
+            "source": {
+              "sourceKey": "wp-chaldea",
+              "sourceLocation": "Ancient Chaldeans ('by the time Babylon fell in 539 BC, perhaps before')"
+            }
+          }
+        ],
+        "circa": true
       }
     },
     {
@@ -7189,6 +7551,44 @@
       "name": "North Arabia (Tayma and Dadan)",
       "color": "#9a7a4a",
       "parent": "arabia"
+    },
+    {
+      "id": "qedarites",
+      "name": "Qedarites (Arabs)",
+      "color": "#b0884a",
+      "parent": "arabia",
+      "span": {
+        "start": -852,
+        "end": -49,
+        "startDates": [
+          {
+            "year": -852,
+            "source": {
+              "sourceKey": "wp-qedarites",
+              "sourceLocation": "Neo-Assyrian period (Battle of Qarqar)"
+            }
+          },
+          {
+            "year": -850,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-qedarites",
+              "sourceLocation": "lead ('Attested from the 9th century BCE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -50,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-qedarites",
+              "sourceLocation": "infobox (absorbed into the Nabataean state, 1st century BCE)"
+            }
+          }
+        ],
+        "circa": true
+      }
     },
     {
       "id": "dilmun",
@@ -8401,6 +8801,12 @@
       }
     },
     {
+      "id": "rong-di",
+      "name": "Rong and Di peoples",
+      "color": "#7a6a3a",
+      "parent": "china"
+    },
+    {
       "id": "korea-japan",
       "name": "Korea and Japan",
       "color": "#8a4a6a",
@@ -9453,7 +9859,8 @@
       "title": "Sumu-abum makes Babylon independent",
       "start": -1893,
       "tracks": [
-        "bab-old"
+        "bab-old",
+        "amorites"
       ],
       "descr": "The Amorite chieftain Sumu-abum founds the First Dynasty of Babylon.",
       "sources": [
@@ -9488,7 +9895,8 @@
       "start": -1791,
       "end": -1749,
       "tracks": [
-        "bab-old"
+        "bab-old",
+        "amorites"
       ],
       "descr": "The sixth king of Babylon reigns 43 years, conquers Larsa, Eshnunna and Mari, and issues his law code. His reign is the usual reference point for the competing chronologies.",
       "sources": [
@@ -12168,7 +12576,8 @@
       "title": "Nabopolassar crowned king of Babylon",
       "start": -625,
       "tracks": [
-        "bab-neo"
+        "bab-neo",
+        "chaldeans"
       ],
       "descr": "Nabopolassar revolts against Assyria, takes Babylon and Nippur and founds the Neo-Babylonian dynasty, allied with the Medes.",
       "sources": [
@@ -12494,7 +12903,8 @@
       "start": -1807,
       "end": -1775,
       "tracks": [
-        "as-old"
+        "as-old",
+        "amorites"
       ],
       "descr": "An Amorite conqueror takes Assur and builds a kingdom across northern Mesopotamia, ruling from Shubat-Enlil. It falls apart soon after his death.",
       "sources": [
@@ -13170,7 +13580,7 @@
       "start": -841,
       "end": -795,
       "tracks": [
-        "aram"
+        "aram-damascus"
       ],
       "descr": "A usurper who fights the Assyrians and conquers Israel.",
       "sources": [
@@ -13201,7 +13611,7 @@
       "title": "Tiglath-Pileser III conquers Damascus",
       "start": -731,
       "tracks": [
-        "aram",
+        "aram-damascus",
         "as-neo"
       ],
       "descr": "Assyria annexes Aram-Damascus and executes its last king, Rezin.",
@@ -23304,6 +23714,1001 @@
             "sourceKey": "wp-panini",
             "sourceLocation": "infobox ('4th century BCE')"
           }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "tp1-arameans",
+      "title": "Tiglath-Pileser I fights the Arameans",
+      "start": -1099,
+      "tracks": [
+        "aram",
+        "as-middle"
+      ],
+      "descr": "The first certain reference to the Arameans: an inscription of Tiglath-Pileser I calls them the \"Ahlamu of the land Armaya\". He campaigns in the Levant against the Arameans and other tribal peoples; late in his reign Aramaean tribesmen put pressure on his realm.",
+      "sources": [
+        {
+          "sourceKey": "wp-arameans",
+          "sourceLocation": "Etymology and Under Neo-Assyrian rule"
+        },
+        {
+          "sourceKey": "wp-tp1",
+          "sourceLocation": "Reign"
+        },
+        {
+          "sourceKey": "wp-ahlamu",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1099,
+          "source": {
+            "sourceKey": "wp-arameans",
+            "sourceLocation": "Etymology (c. 1100 BCE)"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "tiglath-pileser-i",
+          "kind": "part-of"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "suteans-arameans-babylonia",
+      "title": "Suteans and Arameans enter Babylonia",
+      "start": -1099,
+      "tracks": [
+        "aram",
+        "babylonia"
+      ],
+      "descr": "West Semitic-speaking tribes arrive from the Levant: the earliest waves are Suteans and Arameans, followed a century or so later by the Kaldu (Chaldeans).",
+      "sources": [
+        {
+          "sourceKey": "wp-chaldea",
+          "sourceLocation": "lead and Ancient Chaldeans"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1099,
+          "source": {
+            "sourceKey": "wp-chaldea",
+            "sourceLocation": "Ancient Chaldeans ('appeared in Babylonia, c. 1100 BC')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "chaldeans-attested",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "aramean-states",
+      "title": "Assyria withdraws; Aramean states take the west",
+      "start": -1055,
+      "end": -1014,
+      "tracks": [
+        "aram",
+        "as-middle"
+      ],
+      "descr": "The Middle Assyrian Empire shrinks rapidly after Ashur-bel-kala, its last great ruler, dies in 1056 BC. The Arameans gain independence and take firm control of Eber-Nari, and in the 11th and 10th centuries conquer Sam'al (renamed Bît-Agushi) and Til Barsip, chief town of Bît-Adini.",
+      "sources": [
+        {
+          "sourceKey": "wp-arameans",
+          "sourceLocation": "Aramean states"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1055,
+          "source": {
+            "sourceKey": "wp-arameans",
+            "sourceLocation": "Aramean states (death of Ashur-bel-kala)"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -1016,
+          "margin": 16,
+          "source": {
+            "sourceKey": "wp-arameans",
+            "sourceLocation": "Aramean states ('in the late 11th century BC')"
+          }
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "ashur-dan-ii-arameans",
+      "title": "Ashur-dan II retakes land from the Arameans",
+      "start": -933,
+      "end": -911,
+      "tracks": [
+        "aram",
+        "as-middle"
+      ],
+      "descr": "The first Assyrian king to campaign regularly in over a century; his annals present the wars against the Aramaeans to the west as retaking Assyrian territory. His successor Adad-nirari II (911–891 BC) marches as far as the Balikh river and the middle Euphrates.",
+      "sources": [
+        {
+          "sourceKey": "wp-ashur-dan-ii",
+          "sourceLocation": "infobox, lead, Accomplishments and Succession"
+        }
+      ]
+    },
+    {
+      "uuid": "qarqar",
+      "title": "Battle of Qarqar",
+      "start": -852,
+      "tracks": [
+        "aram-damascus",
+        "bit-adini",
+        "qedarites",
+        "israel-judah",
+        "as-neo"
+      ],
+      "descr": "A coalition led by Aram-Damascus and Israel meets Shalmaneser III of Assyria. The Qedarite Gindibuʾ brings 1000 camelry, and Aḫuni of Bit-Adini joins the Levantine states.",
+      "sources": [
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "Neo-Assyrian period"
+        },
+        {
+          "sourceKey": "wp-bit-adini",
+          "sourceLocation": "History"
+        }
+      ]
+    },
+    {
+      "uuid": "bit-adini-annexed",
+      "title": "Shalmaneser III annexes Bit-Adini",
+      "start": -855,
+      "tracks": [
+        "bit-adini",
+        "as-neo"
+      ],
+      "descr": "The Aramean kingdom with its capital at Til Barsib is conquered and absorbed into the Assyrian Empire. (The page also places Aḫuni in the 853 Qarqar coalition, after this date.)",
+      "sources": [
+        {
+          "sourceKey": "wp-bit-adini",
+          "sourceLocation": "infobox and History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -855,
+          "source": {
+            "sourceKey": "wp-bit-adini",
+            "sourceLocation": "History ('In 856-5 BC')"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "aramaic-lingua-franca",
+      "title": "Aramaic becomes the lingua franca of the Assyrian empire",
+      "start": -749,
+      "tracks": [
+        "aram",
+        "as-neo"
+      ],
+      "descr": "Imperial Aramaic becomes the empire's common language under Tiglath-Pileser III; it stays a lingua franca under the Neo-Babylonian and Achaemenid empires.",
+      "sources": [
+        {
+          "sourceKey": "wp-chaldea",
+          "sourceLocation": "Language"
+        },
+        {
+          "sourceKey": "wp-arameans",
+          "sourceLocation": "lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -749,
+          "margin": 10,
+          "source": {
+            "sourceKey": "wp-chaldea",
+            "sourceLocation": "Language ('in the mid-8th century BC')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "tiglath-pileser-iii",
+          "kind": "part-of"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "chaldeans-attested",
+      "title": "Chaldeans first recorded",
+      "start": -851,
+      "tracks": [
+        "chaldeans",
+        "as-neo"
+      ],
+      "descr": "Shalmaneser III subjugates Mushallim-Marduk, chief of the Amukani tribe: the first written attestation of the Chaldeans. Their tribes include Bit-Yâkin, Bet-Dakuri, Bet-Adini, Bet-Amukkani and Bet-Shilani.",
+      "sources": [
+        {
+          "sourceKey": "wp-chaldea",
+          "sourceLocation": "History"
+        }
+      ]
+    },
+    {
+      "uuid": "marduk-apla-usur",
+      "title": "A Chaldean takes the Babylonian throne",
+      "start": -779,
+      "tracks": [
+        "chaldeans",
+        "babylonia"
+      ],
+      "descr": "The Chaldeans come to historical prominence in Babylonia for the first time when Marduk-apla-usur usurps the throne.",
+      "sources": [
+        {
+          "sourceKey": "wp-chaldea",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -779,
+          "source": {
+            "sourceKey": "wp-chaldea",
+            "sourceLocation": "History ('in 780 BC')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "merodach-baladan",
+      "title": "Marduk-apla-iddina II holds Babylon against Assyria",
+      "start": -721,
+      "end": -709,
+      "tracks": [
+        "chaldeans",
+        "babylonia",
+        "as-neo"
+      ],
+      "descr": "A Chaldean of the Bit-Yakin tribe seizes the Babylonian throne from Assyrian control. An Assyrian attempt to defeat him near Der in 720 fails, but Sargon II eventually drives him from Babylon.",
+      "sources": [
+        {
+          "sourceKey": "wp-merodach-baladan",
+          "sourceLocation": "infobox and Biography"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "merodach-baladan-2",
+      "title": "Marduk-apla-iddina II's second reign",
+      "start": -702,
+      "end": -701,
+      "tracks": [
+        "chaldeans",
+        "babylonia",
+        "as-neo",
+        "qedarites"
+      ],
+      "descr": "He reigns nine months before Sennacherib defeats him near Kish; he flees to Elam and dies in exile. The Qedarites back his revolt (his supporter Bašqanu is the brother of their queen Yaṯiʿe).",
+      "sources": [
+        {
+          "sourceKey": "wp-merodach-baladan",
+          "sourceLocation": "Biography"
+        },
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "Neo-Assyrian period"
+        }
+      ],
+      "links": [
+        {
+          "to": "merodach-baladan",
+          "kind": "succeeds"
+        }
+      ]
+    },
+    {
+      "uuid": "naram-sin-amorites",
+      "title": "Naram-Sin defeats Sumerians and Amorites at Jebel Bishri",
+      "start": -2239,
+      "tracks": [
+        "amorites",
+        "akkad"
+      ],
+      "descr": "A royal inscription records Naram-Sin of Akkad defeating a coalition of Sumerian cities and Amorites near Jebel Bishri.",
+      "sources": [
+        {
+          "sourceKey": "wp-amorites",
+          "sourceLocation": "History, Third millennium BC"
+        }
+      ],
+      "links": [
+        {
+          "to": "naram-sin",
+          "kind": "part-of"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "naram-sin-lullubi",
+      "title": "Victory Stele of Naram-Sin over the Lullubi",
+      "start": -2249,
+      "tracks": [
+        "akkad"
+      ],
+      "descr": "The stele shows Naram-Sin's victory over the Lullubi mountain tribe and their king Satuni; his inscription names Sidur and Sutuni, princes of the Lulubi, who \"made war against me\".",
+      "sources": [
+        {
+          "sourceKey": "wp-lullubi",
+          "sourceLocation": "Akkadian Empire and Gutian dynasty (stele caption)"
+        }
+      ],
+      "links": [
+        {
+          "to": "naram-sin",
+          "kind": "part-of"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "urkesh-tupkish",
+      "title": "Tupkish, king of Urkesh and Nagar",
+      "start": -2249,
+      "tracks": [
+        "hurrians"
+      ],
+      "descr": "The first known Hurrian kingdom centres on Urkesh (Tell Mozan). Tupkish, a king with a Hurrian name, rules during the ascendancy of Akkad; seals of Tar'am-Agade, a daughter of Naram-Sin, were found at the site.",
+      "sources": [
+        {
+          "sourceKey": "wp-hurrians",
+          "sourceLocation": "Early Bronze Age"
+        },
+        {
+          "sourceKey": "wp-urkesh",
+          "sourceLocation": "Akkadian period and Rulers"
+        }
+      ],
+      "links": [
+        {
+          "to": "naram-sin",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "hurrians-alalakh",
+      "title": "Hurrians spread into northern Syria",
+      "start": -1724,
+      "tracks": [
+        "hurrians"
+      ],
+      "descr": "By 1725 BC Hurrians are found in parts of northern Syria such as Alalakh; Hurrians entering northern Syria at the end of the 17th century BC form Mitanni, which rises to power before 1550 BC.",
+      "sources": [
+        {
+          "sourceKey": "wp-hurrians",
+          "sourceLocation": "Middle Bronze Age and Late Bronze Age"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1724,
+          "source": {
+            "sourceKey": "wp-hurrians",
+            "sourceLocation": "Middle Bronze Age ('By 1725 BC')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "mitanni-kirta",
+          "kind": "causes"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "urkesh-abandoned",
+      "title": "Urkesh abandoned",
+      "start": -1349,
+      "tracks": [
+        "hurrians",
+        "mitanni"
+      ],
+      "descr": "After Suppiluliuma I defeats Tushratta, the city is largely abandoned.",
+      "sources": [
+        {
+          "sourceKey": "wp-urkesh",
+          "sourceLocation": "infobox and Mitanni period"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1349,
+          "source": {
+            "sourceKey": "wp-urkesh",
+            "sourceLocation": "Mitanni period ('largely abandoned around 1350 BC')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "tushratta",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "shupria-conquered",
+      "title": "Assyria conquers Shupria",
+      "start": -672,
+      "end": -671,
+      "tracks": [
+        "hurrians",
+        "as-neo"
+      ],
+      "descr": "Shupria stays an independent kingdom after the destruction of Mitanni until Assyria conquers it. By the Early Iron Age the Hurrians had been assimilated with other peoples.",
+      "sources": [
+        {
+          "sourceKey": "wp-hurrians",
+          "sourceLocation": "Shubria/Shupria and lead"
+        }
+      ]
+    },
+    {
+      "uuid": "kaska-first",
+      "title": "The Kaska first appear in Hittite prayers",
+      "start": -1449,
+      "tracks": [
+        "kaska",
+        "hit-middle"
+      ],
+      "descr": "They appear in prayers from the reign of Hantili II; Tudhaliya II's third campaign is against the Kaskas, and Arnuwanda I prays for the return of Nerik and tries to buy off some Kaska with tribute.",
+      "sources": [
+        {
+          "sourceKey": "wp-kaskians",
+          "sourceLocation": "History"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kaska-burn-hattusa",
+      "title": "Kaska burn Hattusa; the court moves to Samuha",
+      "start": -1374,
+      "end": -1349,
+      "tracks": [
+        "kaska",
+        "hit-new"
+      ],
+      "descr": "Sometime between Arnuwanda I and Suppiluliuma I, the Kaska join Hayasa-Azzi and Isuwa to burn Hattusa to the ground. Tudhaliya III and Suppiluliuma I hold court at Samuha; Suppiluliuma defeats Piyapili's united tribes and Hattusa returns to the Hittites. The Kaska could field as many as 9,000 warriors and 800 chariots.",
+      "sources": [
+        {
+          "sourceKey": "wp-kaskians",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1362,
+          "margin": 12,
+          "source": {
+            "sourceKey": "wp-kaskians",
+            "sourceLocation": "History (Tudhaliya III and Suppiluliuma I at Samuha, 'c. 1375–1350 BC')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "suppiluliuma-i",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "kaska-sack-hattusa",
+      "title": "Kaska sack Hattusa again",
+      "start": -1284,
+      "tracks": [
+        "kaska",
+        "hit-new"
+      ],
+      "descr": "In the early 13th century, while Muwatalli II is king, the Kaskas sack Hattusa; Hattusili III later recaptures Nerik.",
+      "sources": [
+        {
+          "sourceKey": "wp-kaskians",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1284,
+          "margin": 15,
+          "source": {
+            "sourceKey": "wp-kaskians",
+            "sourceLocation": "History ('in the early 13th century')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "muwatalli-ii",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mushki-alzi",
+      "title": "Mushki and Kaska attack Alzi; Ashur-Dan I drives them back",
+      "start": -1159,
+      "tracks": [
+        "kaska",
+        "as-middle"
+      ],
+      "descr": "The Eastern Mushki, who moved into Hatti around the time the Hittite Empire collapsed, join the Urumu and the Kaska (Apishlu) in an attempt on Alzi and Puruhuzzi; Ashur-Dan I pushes them back and subjugates them.",
+      "sources": [
+        {
+          "sourceKey": "wp-mushki",
+          "sourceLocation": "Eastern Mushki"
+        },
+        {
+          "sourceKey": "wp-kaskians",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1159,
+          "source": {
+            "sourceKey": "wp-mushki",
+            "sourceLocation": "Eastern Mushki ('in about 1160 BC')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mushki-tp1",
+      "title": "Tiglath-Pileser I turns back the Mushki",
+      "start": -1113,
+      "tracks": [
+        "as-middle",
+        "kaska"
+      ],
+      "descr": "The Mushki push into Kadmuhi on the upper Tigris and are turned away by Tiglath-Pileser I, apparently settling in Alzi. He also records the Kaska (\"Apishlu\") late in the 12th century, after which they disappear from the records.",
+      "sources": [
+        {
+          "sourceKey": "wp-mushki",
+          "sourceLocation": "Eastern Mushki"
+        },
+        {
+          "sourceKey": "wp-tp1",
+          "sourceLocation": "Reign"
+        },
+        {
+          "sourceKey": "wp-kaskians",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1114,
+          "source": {
+            "sourceKey": "wp-mushki",
+            "sourceLocation": "Eastern Mushki ('In 1115 BC')"
+          }
+        },
+        {
+          "year": -1111,
+          "source": {
+            "sourceKey": "wp-tp1",
+            "sourceLocation": "Reign ('first campaign was against the Phrygians (Mushku) in 1112 BC')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "tiglath-pileser-i",
+          "kind": "part-of"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mita-sargon",
+      "title": "Mita of the Mushki becomes Sargon II's ally",
+      "start": -708,
+      "tracks": [
+        "phrygia",
+        "as-neo"
+      ],
+      "descr": "After joining an anti-Assyrian alliance with Tabal and Carchemish, the Mushki under Mita re-emerge as allies of Assyria; Sargon names Mita his friend. Assyrian sources identify the Western Mushki with the Phrygians, and some scholars think Mita became King Midas.",
+      "sources": [
+        {
+          "sourceKey": "wp-mushki",
+          "sourceLocation": "lead and Western Mushki"
+        }
+      ],
+      "links": [
+        {
+          "to": "midas",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "zabibe-tribute",
+      "title": "Queen Zabibe pays tribute to Tiglath-Pileser III",
+      "start": -737,
+      "tracks": [
+        "qedarites",
+        "as-neo"
+      ],
+      "descr": "With Rezin of Damascus, Menahem of Israel and Hiram II of Tyre, she acknowledges Assyrian hegemony: the first explicit mention of the Qedarites by name.",
+      "sources": [
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "infobox and Neo-Assyrian period"
+        }
+      ],
+      "links": [
+        {
+          "to": "tiglath-pileser-iii",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "samsi-revolt",
+      "title": "Queen Šamši rebels; Assyria wins at Mount Saqurri",
+      "start": -732,
+      "end": -731,
+      "tracks": [
+        "qedarites",
+        "as-neo"
+      ],
+      "descr": "Šamši pledges allegiance after the 734 campaign and rebels in 733. Tiglath-Pileser III defeats the Qedarites near Mount Saqurri; she flees to the Wadi Sirhan but keeps her throne and later pays 125 white camels.",
+      "sources": [
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "Neo-Assyrian period"
+        }
+      ],
+      "links": [
+        {
+          "to": "tiglath-pileser-iii",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "sennacherib-qedarites",
+      "title": "Sennacherib campaigns against the Qedarites",
+      "start": -690,
+      "tracks": [
+        "qedarites",
+        "as-neo"
+      ],
+      "descr": "Queen Teʾelḫunu and her daughter Tabūʿa are captured at Dūmat, and Ḫazaʾil surrenders and pays tribute.",
+      "sources": [
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "Neo-Assyrian period"
+        }
+      ]
+    },
+    {
+      "uuid": "qedarites-babylon-revolt",
+      "title": "Qedarites join Šamaš-šuma-ukin's revolt",
+      "start": -651,
+      "end": -647,
+      "tracks": [
+        "qedarites",
+        "as-neo",
+        "babylonia"
+      ],
+      "descr": "King Abyaṯiʿ supports the revolt against Ashurbanipal, and the Qedarites are trapped in Babylon. After it is suppressed they raid Assyria's western borderlands with the Nabataeans.",
+      "sources": [
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "Neo-Assyrian period"
+        }
+      ],
+      "links": [
+        {
+          "to": "ashurbanipal",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "king-mu-quanrong",
+      "title": "King Mu of Zhou defeats the Quanrong",
+      "start": -963,
+      "tracks": [
+        "rong-di",
+        "zhou-western"
+      ],
+      "descr": "The following year he attacks the Western Rong and the Xurong.",
+      "sources": [
+        {
+          "sourceKey": "wp-xirong",
+          "sourceLocation": "Timeline"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "rong-raids-zhou",
+      "title": "Western Rong and Xianyun raid deep into Zhou",
+      "start": -876,
+      "end": -840,
+      "tracks": [
+        "rong-di",
+        "zhou-western"
+      ],
+      "descr": "Under King Li. His successor King Xuan (827–782 BCE) sends Qin against the Western Rong, who submit and cede territory, and Jin against the Northern Rong.",
+      "sources": [
+        {
+          "sourceKey": "wp-xirong",
+          "sourceLocation": "Timeline"
+        }
+      ]
+    },
+    {
+      "uuid": "quanrong-haojing",
+      "title": "The Quanrong sack Haojing and kill King You",
+      "start": -770,
+      "tracks": [
+        "rong-di",
+        "zhou-western"
+      ],
+      "descr": "The Marquess of Shen invites the Quanrong to join an attack on King You; the joint force occupies the capital Haojing, kills him and captures Bao Si. (The Xinian bamboo slips say King You attacked Shen first.) This ends the Western Zhou.",
+      "sources": [
+        {
+          "sourceKey": "wp-quanrong",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "wp-king-you",
+          "sourceLocation": "lead, History and In literature"
+        },
+        {
+          "sourceKey": "wp-xirong",
+          "sourceLocation": "Timeline"
+        }
+      ],
+      "links": [
+        {
+          "to": "zhou-east",
+          "kind": "causes"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "di-sack-wey",
+      "title": "The Red Di take the capital of Wey",
+      "start": -659,
+      "tracks": [
+        "rong-di",
+        "zhou-eastern"
+      ],
+      "descr": "They kill its ruler but are driven out by Qi. Jin fights many wars with the Di from 660 to 507 BC. The page marks these entries as needing citations.",
+      "sources": [
+        {
+          "sourceKey": "wp-beidi",
+          "sourceLocation": "History"
+        }
+      ]
+    },
+    {
+      "uuid": "rong-absorbed",
+      "title": "The Rong fade from the record",
+      "start": -649,
+      "tracks": [
+        "rong-di",
+        "zhou-eastern"
+      ],
+      "descr": "After 650 BCE the Rong are rarely mentioned; they seem to have been mostly absorbed by the states of Qi and Jin.",
+      "sources": [
+        {
+          "sourceKey": "wp-xirong",
+          "sourceLocation": "Timeline"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -649,
+          "source": {
+            "sourceKey": "wp-xirong",
+            "sourceLocation": "Timeline ('After 650 BCE')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "zhongshan",
+      "title": "Zhongshan, a non-Zhou state in the north",
+      "start": -413,
+      "end": -295,
+      "tracks": [
+        "rong-di",
+        "zhou-eastern"
+      ],
+      "descr": "Some sources (Records of the Grand Historian) say Beidi founded and ruled it; others list it only as not Zhou or Han. Wei conquers it in 407, it regains independence in 381, and Zhao annexes it after ten years of war.",
+      "sources": [
+        {
+          "sourceKey": "wp-zhongshan",
+          "sourceLocation": "infobox, Origins and History"
+        },
+        {
+          "sourceKey": "wp-beidi",
+          "sourceLocation": "Name and History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -413,
+          "source": {
+            "sourceKey": "wp-zhongshan",
+            "sourceLocation": "History ('in 414 BC ... traditionally considered the founding')"
+          }
+        },
+        {
+          "year": -380,
+          "source": {
+            "sourceKey": "wp-zhongshan",
+            "sourceLocation": "infobox ('Established 414/381')"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -295,
+          "source": {
+            "sourceKey": "wp-zhongshan",
+            "sourceLocation": "infobox and History"
+          }
+        },
+        {
+          "year": -294,
+          "source": {
+            "sourceKey": "wp-beidi",
+            "sourceLocation": "History"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "qin-last-rong",
+      "title": "Qin defeats the last hostile Rong tribe",
+      "start": -313,
+      "tracks": [
+        "rong-di",
+        "zhou-eastern"
+      ],
+      "descr": "By 400 BC most of the Di and Rong had been eliminated as independent polities.",
+      "sources": [
+        {
+          "sourceKey": "wp-xirong",
+          "sourceLocation": "Timeline"
+        },
+        {
+          "sourceKey": "wp-beidi",
+          "sourceLocation": "History"
+        }
+      ]
+    },
+    {
+      "uuid": "medjay-first",
+      "title": "The Medjay first recorded",
+      "start": -2309,
+      "tracks": [
+        "eg-old",
+        "nubia"
+      ],
+      "descr": "The Autobiography of Weni, from the reign of Pepi I, is the first written mention of the Medjay. Until the end of the Second Intermediate Period the word denotes a Nubian people.",
+      "sources": [
+        {
+          "sourceKey": "wp-medjay",
+          "sourceLocation": "Origins"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -2309,
+          "margin": 22,
+          "source": {
+            "sourceKey": "wp-medjay",
+            "sourceLocation": "Origins ('Pepi I Meryre (reigned 2332–2287 BCE)')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "medjay-police",
+      "title": "Medjay: from desert people to Egyptian police",
+      "start": -1799,
+      "end": -1549,
+      "tracks": [
+        "eg-sip",
+        "nubia"
+      ],
+      "descr": "The page dates the pan-graves to the late Middle Kingdom and Second Intermediate Period. Medjay serve in Kamose's campaign against the Hyksos; by the 18th Dynasty they are an elite paramilitary police force, and after the 20th Dynasty the term no longer appears in Egyptian records.",
+      "sources": [
+        {
+          "sourceKey": "wp-medjay",
+          "sourceLocation": "Origins, Pan-graves, Police force and Demise"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1674,
+          "margin": 125,
+          "source": {
+            "sourceKey": "wp-medjay",
+            "sourceLocation": "Pan-graves ('(1800-1550 BC)')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "ahmose-expels-hyksos",
+          "kind": "related"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "shasu-yhw",
+      "title": "\"Land of the Shasu yhw\" in Egyptian texts",
+      "start": -1349,
+      "tracks": [
+        "eg-new",
+        "can-lba"
+      ],
+      "descr": "Column bases of Amenhotep III's temple at Soleb list the land of the Shasu yhwꜣ; a 13th-century copy at Amara, under Seti I or Ramesses II, names six Shasu groups. Astour notes this predates the Mesha Stele's use of the divine name by over 500 years. Shasu raids could cut Egypt's northern routes, prompting punitive campaigns by Ramesses II and Merneptah.",
+      "sources": [
+        {
+          "sourceKey": "wp-shasu",
+          "sourceLocation": "History, Late Bronze Age and Shasu of Yhw"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1350,
+          "margin": 49,
+          "source": {
+            "sourceKey": "wp-shasu",
+            "sourceLocation": "Shasu of Yhw ('the period of Amenhotep III (14th century BCE)')"
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "merneptah-stele",
+          "kind": "related"
         }
       ],
       "circa": true
