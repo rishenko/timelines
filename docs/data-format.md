@@ -107,7 +107,8 @@ timeline. Each phase is dated like a lifespan, with a name:
 A line marks where each phase begins, and its name runs along a strip at the top of the row. The name stays in view
 while you scroll. Neighbouring phases alternate shades, and a gap between phases is left blank. Phases may overlap,
 as rival governments do in a civil war; an overlapping phase's name goes on a second line. Events stay on the row
-itself. The track editor keeps a row's phases, but there is no editor for them yet: edit them in the file.
+itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
+order. Search finds phases by name.
 
 ## sources and tags
 

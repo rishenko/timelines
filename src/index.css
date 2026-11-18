@@ -1151,6 +1151,19 @@ main {
   border: 1px solid var(--line);
   border-radius: 4px;
 }
+.editor .phase {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  margin-bottom: 6px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-2);
+  border-radius: 4px;
+}
+.editor .phase .row input:first-child {
+  flex: 1;
+}
 .editor .row input.narrow {
   width: 52px;
 }

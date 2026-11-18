@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import type { Dataset, Track } from '../types.ts';
+import { useFieldArray, useForm, type Control, type FieldErrors, type UseFormRegister } from 'react-hook-form';
+import type { Calendar, Dataset, Track, TrackPhase } from '../types.ts';
 import { newProblems, nextTrackColor, slug, trackDeletion, uniqueId, upsertTrack } from '../state/edits.ts';
 import { ClaimList, ProblemList } from './ClaimList.tsx';
-import { claimsFromValues, toClaimValues, type ClaimFields } from '../lib/claims.ts';
+import { claimsFromValues, toClaimValues, type ClaimFields, type ClaimValues } from '../lib/claims.ts';
 import { isDescendant, trackDepth } from '../lib/tracks.ts';
 import { formatYear, parseDate } from '../lib/calendar.ts';
 
@@ -17,7 +17,25 @@ interface FormValues extends ClaimFields {
   spanStart: string;
   spanEnd: string;
   pinLast: boolean;
+  phases: PhaseValues[];
 }
+
+/** One phase in the form: dates as typed (e.g. "c. 4500 AE"), plus its claims. */
+interface PhaseValues {
+  name: string;
+  start: string;
+  end: string;
+  startDates: ClaimValues[];
+  endDates: ClaimValues[];
+}
+
+const toPhaseValues = (p: TrackPhase, cal: Calendar): PhaseValues => ({
+  name: p.name,
+  start: formatYear(p.start, cal, p.circa),
+  end: formatYear(p.end, cal, p.circa),
+  startDates: (p.startDates ?? []).map((c) => toClaimValues(c, cal)),
+  endDates: (p.endDates ?? []).map((c) => toClaimValues(c, cal)),
+});
 
 interface Props {
   /** Track being edited, or null to create one. */
@@ -54,6 +72,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       pinLast: !!initial?.pinLast,
       startDates: (initial?.span?.startDates ?? []).map((c) => toClaimValues(c, cal)),
       endDates: (initial?.span?.endDates ?? []).map((c) => toClaimValues(c, cal)),
+      phases: (initial?.phases ?? []).map((p) => toPhaseValues(p, cal)),
     },
   });
   // A track can sit under any track except itself and its own descendants (rows nest to any depth).
@@ -76,8 +95,6 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (v.image.trim()) t.image = v.image.trim();
     if (v.chronology) t.chronology = v.chronology;
     if (v.pinLast) t.pinLast = true;
-    // phases have no editor yet: keep the row's own (edit them in the data file)
-    if (initial?.phases) t.phases = initial.phases;
     if (v.spanStart.trim() || v.spanEnd.trim()) {
       const s = parseDate(v.spanStart, cal);
       const e = parseDate(v.spanEnd, cal);
@@ -93,6 +110,24 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     } else if (v.startDates.length || v.endDates.length) {
       return setError('spanStart', { message: 'Give the lifespan a start and an end, or remove its date claims.' });
     }
+    const phases: TrackPhase[] = [];
+    for (const [i, p] of v.phases.entries()) {
+      if (!p.name.trim()) return setError(`phases.${i}.name`, { message: 'Give the phase a name.' });
+      const s = parseDate(p.start, cal);
+      const e = parseDate(p.end, cal);
+      if (!s) return setError(`phases.${i}.start`, { message: `Write a year like "${example}".` });
+      if (!e) return setError(`phases.${i}.end`, { message: `Write a year like "${example}".` });
+      if (e.year < s.year) return setError(`phases.${i}.end`, { message: 'The end is before the start.' });
+      const phase: TrackPhase = { name: p.name.trim(), start: s.year, end: e.year };
+      if (s.circa || e.circa) phase.circa = true;
+      const startDates = claimsFromValues(p.startDates, cal);
+      const endDates = claimsFromValues(p.endDates, cal);
+      if (startDates) phase.startDates = startDates;
+      if (endDates) phase.endDates = endDates;
+      phases.push(phase);
+    }
+    // stored in date order, whatever order they were typed in
+    if (phases.length) t.phases = phases.sort((a, b) => a.start - b.start || a.end - b.end);
     const found = newProblems(data, upsertTrack(data, t, initial?.id));
     setProblems(found);
     if (!found.length) onSave(t, initial?.id);
@@ -163,6 +198,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
           </details>
         </fieldset>
 
+        <PhaseList control={control} register={register} errors={errors} data={data} example={example} />
+
         {chronologies.length > 0 && (
           <>
             <label htmlFor="tr-chron">Chronology</label>
@@ -210,5 +247,71 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
         </footer>
       </form>
     </aside>
+  );
+}
+
+/**
+ * The row's phases: named periods drawn on its own bar, such as successive governments (a kingdom, then a republic,
+ * then an empire). Each has a name, dates, and optional dated claims for its start and end.
+ */
+function PhaseList({
+  control,
+  register,
+  errors,
+  data,
+  example,
+}: {
+  control: Control<FormValues>;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+  data: Dataset;
+  example: string;
+}) {
+  const phases = useFieldArray({ control, name: 'phases' });
+  return (
+    <fieldset className="phases">
+      <legend>Phases (optional)</legend>
+      <p className="muted small">
+        Named periods on this row's own bar, such as successive governments: a kingdom, then a republic. A line marks
+        each change and the name runs along the top of the row. Leave a gap where nothing is known; phases may overlap,
+        as rival governments do in a civil war.
+      </p>
+      {phases.fields.map((f, i) => {
+        const err = errors.phases?.[i];
+        return (
+          <div key={f.id} className="phase">
+            <div className="row">
+              <input aria-label="Phase name" placeholder="Name, e.g. Second Republic" {...register(`phases.${i}.name`)} />
+              <button type="button" className="icon" onClick={() => phases.remove(i)} title="Remove this phase">
+                ✕
+              </button>
+            </div>
+            {err?.name && <p role="alert">{err.name.message}</p>}
+            <div className="row">
+              <input aria-label="Phase start" placeholder="From" {...register(`phases.${i}.start`)} />
+              <input aria-label="Phase end" placeholder="To" {...register(`phases.${i}.end`)} />
+            </div>
+            {err?.start && <p role="alert">{err.start.message}</p>}
+            {err?.end && <p role="alert">{err.end.message}</p>}
+            {/* folded, so a row with many phases stays short; the count says what is inside */}
+            <details>
+              <summary>Dated claims{f.startDates.length + f.endDates.length ? ` (${f.startDates.length + f.endDates.length})` : ''}</summary>
+              <p className="muted small">What each source says this phase's start and end are.</p>
+              <h4>Start</h4>
+              <ClaimList name={`phases.${i}.startDates`} control={control} register={register} data={data} owner="row" />
+              <h4>End</h4>
+              <ClaimList name={`phases.${i}.endDates`} control={control} register={register} data={data} owner="row" />
+            </details>
+          </div>
+        );
+      })}
+      <button
+        type="button"
+        onClick={() => phases.append({ name: '', start: '', end: '', startDates: [], endDates: [] })}
+        title={`Dates are written like "${example}"`}
+      >
+        + Add a phase
+      </button>
+    </fieldset>
   );
 }

@@ -2,19 +2,22 @@ import type { TimelineEvent, Track } from '../types.ts';
 import { subtreeIds, trackPath } from './tracks.ts';
 
 /**
- * Search over a timeline's rows (tracks: groups, regions, civilizations, periods) and events.
+ * Search over a timeline's rows (tracks: groups, regions, civilizations, periods), their phases (named periods on a
+ * row's bar, such as a state's governments) and events.
  * Matching ignores case, accents and apostrophe-like marks (ʻ ’ ʾ), so "hawaii" finds "Hawaiʻi" and
  * "hattusa" finds "Ḫattuša". There is no typo tolerance: with many similar names (dynasties, -ites,
  * -ids) fuzzy matching would bury the right answer.
  */
 
 export interface SearchEntry {
-  kind: 'track' | 'event';
+  kind: 'track' | 'phase' | 'event';
+  /** A row's id, an event's uuid, or for a phase "<row id>#<index in the row's phases>". */
   id: string;
   label: string;
-  /** Ancestor row names, outermost first. For an event: its first row and that row's ancestors. */
+  /** Ancestor row names, outermost first. For an event: its first row and that row's ancestors. For a phase: its row
+   * and that row's ancestors. */
   path: string[];
-  /** For an event: its first row. For a row: itself. */
+  /** For an event: its first row. For a row: itself. For a phase: its row. */
   trackId: string;
   start?: number;
   end?: number;
@@ -73,6 +76,19 @@ export function buildIndex(tracks: Track[], events: EventLike[]): SearchEntry[] 
         end: t.span?.end,
       }),
     );
+    (t.phases ?? []).forEach((p, i) =>
+      out.push(
+        entry({
+          kind: 'phase',
+          id: `${t.id}#${i}`,
+          label: p.name,
+          path: trackPath(t.id, byId).map((a) => a.name),
+          trackId: t.id,
+          start: p.start,
+          end: p.end,
+        }),
+      ),
+    );
   }
   for (const e of events) {
     const first = e.tracks.find((id) => byId.has(id)) ?? e.tracks[0];
@@ -112,7 +128,7 @@ function score(e: SearchEntry, q: string, tokens: string[]): number | null {
 
 /**
  * Best matches for a query: exact, then prefix, then phrase, then all words, then substring, then words
- * spread across the name and its row. Ties put rows before events, key events before others, shorter
+ * spread across the name and its row. Ties put rows before phases before events, key events before others, shorter
  * names first, then earlier dates.
  */
 export function search(index: SearchEntry[], query: string, limit = 20): SearchHit[] {
@@ -124,7 +140,7 @@ export function search(index: SearchEntry[], query: string, limit = 20): SearchH
     const s = score(entry, q, tokens);
     if (s !== null) hits.push({ entry, score: s });
   }
-  const kindRank = (e: SearchEntry) => (e.kind === 'track' ? 0 : 1);
+  const kindRank = (e: SearchEntry) => (e.kind === 'track' ? 0 : e.kind === 'phase' ? 1 : 2);
   hits.sort(
     (a, b) =>
       a.score - b.score ||

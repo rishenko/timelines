@@ -104,3 +104,29 @@ describe('on the bundled timelines', () => {
     });
   }
 });
+
+describe('search phases', () => {
+  const rows: Track[] = [
+    { id: 'europe', name: 'Europe', color: '#000' },
+    {
+      id: 'france',
+      name: 'France',
+      color: '#000',
+      parent: 'europe',
+      phases: [
+        { name: 'Second Republic', start: 1848, end: 1852 },
+        { name: 'Second Empire', start: 1852, end: 1870 },
+      ],
+    },
+  ];
+  const idx = buildIndex(rows, [{ uuid: 'coup', title: 'Coup of the Second Empire', start: 1851, tracks: ['france'] }]);
+
+  it('finds a phase by name, with its row as the path', () => {
+    const [hit] = search(idx, 'second republic');
+    expect(hit.entry).toMatchObject({ kind: 'phase', id: 'france#0', trackId: 'france', path: ['Europe', 'France'], start: 1848 });
+  });
+
+  it('ranks phases after rows and before events on a tie', () => {
+    expect(search(idx, 'second').map((h) => h.entry.kind)).toEqual(['phase', 'phase', 'event']);
+  });
+});

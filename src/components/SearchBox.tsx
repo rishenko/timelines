@@ -17,6 +17,8 @@ interface Props {
   onYear: (year: number) => void;
 }
 
+const HEADS = { track: 'Rows', phase: 'Phases', event: 'Events' } as const;
+
 type Option = { kind: 'year'; year: number } | { kind: 'entry'; entry: SearchEntry; hidden: string | null };
 
 const isTyping = (t: EventTarget | null) =>
@@ -41,10 +43,11 @@ export function SearchBox(props: Props) {
     if (!query.trim()) return [];
     const year = parseYear(query);
     const hits = search(index, query).map((h) => ({ kind: 'entry' as const, entry: h.entry, hidden: hiddenReason(h.entry) }));
-    // rows first, then events, each keeping its ranking
+    // rows first, then phases, then events, each keeping its ranking
     const rows = hits.filter((h) => h.entry.kind === 'track');
+    const phases = hits.filter((h) => h.entry.kind === 'phase');
     const evs = hits.filter((h) => h.entry.kind === 'event');
-    return [...(year !== null ? [{ kind: 'year' as const, year }] : []), ...rows, ...evs];
+    return [...(year !== null ? [{ kind: 'year' as const, year }] : []), ...rows, ...phases, ...evs];
   }, [query, index, parseYear, hiddenReason]);
 
 
@@ -147,7 +150,7 @@ export function SearchBox(props: Props) {
         >
           {options.length === 0 && <li className="search-empty muted">No rows or events match.</li>}
           {options.map((o, i) => {
-            const head = o.kind === 'entry' && o.entry.kind !== lastKind ? (o.entry.kind === 'track' ? 'Rows' : 'Events') : null;
+            const head = o.kind === 'entry' && o.entry.kind !== lastKind ? HEADS[o.entry.kind] : null;
             if (o.kind === 'entry') lastKind = o.entry.kind;
             return [
               head && (

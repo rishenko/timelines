@@ -1,11 +1,15 @@
-import { useFieldArray, type Control, type UseFormRegister } from 'react-hook-form';
+import { useFieldArray, type Control, type FieldValues, type UseFormRegister } from 'react-hook-form';
 import type { Calendar, Dataset } from '../types.ts';
-import type { ClaimFields } from '../lib/claims.ts';
+import type { ClaimValues } from '../lib/claims.ts';
 
 /**
  * Editing date claims (what each source says a date is), shared by the event form and the track form (lifespans).
- * A form that uses ClaimList keeps its claims in `startDates` and `endDates` fields (ClaimFields, lib/claims.ts).
+ * A form keeps each list of claims in a field array of ClaimValues (lib/claims.ts): `startDates` and `endDates` at the
+ * top of the form, or nested, like a row's phases (`phases.2.startDates`).
  */
+
+/** Where a list of claims sits in a form's values. */
+export type ClaimPath = 'startDates' | 'endDates' | `phases.${number}.startDates` | `phases.${number}.endDates`;
 
 /** What saving would break, listed above a form's buttons; nothing when there is nothing. */
 export function ProblemList({ problems }: { problems: string[] }) {
@@ -32,22 +36,23 @@ export function EraSelect({ cal, label, reg }: { cal: Calendar; label: string; r
 }
 
 /** Editable list of date claims. `owner` names what the claims date ("event" or "row"), for the chronology menu. */
-export function ClaimList<T extends ClaimFields>({
+export function ClaimList<T extends FieldValues>({
   name,
   control,
   register,
   data,
   owner = 'event',
 }: {
-  name: 'startDates' | 'endDates';
+  name: ClaimPath;
   control: Control<T>;
   register: UseFormRegister<T>;
   data: Dataset;
   owner?: 'event' | 'row';
 }) {
-  // the form's other fields don't matter here; ClaimList only touches its own field array
-  const ctl = control as unknown as Control<ClaimFields>;
-  const reg = register as unknown as UseFormRegister<ClaimFields>;
+  // the form's other fields don't matter here; ClaimList only touches its own field array (typed loosely, since the
+  // path may be nested)
+  const ctl = control as unknown as Control<Record<string, ClaimValues[]>>;
+  const reg = register as unknown as UseFormRegister<Record<string, string | number>>;
   const claims = useFieldArray({ control: ctl, name });
   const cal = data.meta.calendar;
   const chronologies = Object.entries(data.chronologies ?? {});

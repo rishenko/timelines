@@ -163,6 +163,7 @@ export default function App() {
     resolved,
     resolvedById,
     spans,
+    phases,
     visibleIds,
     filters,
     centerRef,
