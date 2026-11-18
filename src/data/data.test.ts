@@ -12,7 +12,8 @@ import type { Dataset } from '../types.ts';
 import { compileSource, compiledText } from '../../scripts/lib/compile.ts';
 import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
 
-// Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file.
+// Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file. They test the converters for
+// old REDACTED files (readers can still upload them); the bundled REDACTED data now lives here, in data-src/REDACTED.json.
 const V1_PATH = '../REDACTED/src/data/REDACTED-timeline-data.json';
 const V2_PATH = '../REDACTED/src/data/timeline.json';
 
@@ -257,11 +258,6 @@ describe('migration', () => {
     expect(ds.tracks.find((t) => t.id === 'REDACTED')!.pinLast).toBe(true);
     expect(ds.tracks.find((t) => t.id === 'redacted')!.image).toBe('timelines/REDACTED/logos/redacted.svg');
     expect(ds.sources.REDACTED.tags).toEqual(v2.sources.REDACTED.publishingAttributes);
-  });
-
-  it('the shipped REDACTED file matches a fresh v2 → v3 conversion', () => {
-    if (!v2) return;
-    expect(migrateV2(v2)).toEqual(REDACTED);
   });
 
   it('leaves v3 data alone', () => {

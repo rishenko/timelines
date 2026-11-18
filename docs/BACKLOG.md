@@ -26,6 +26,12 @@
   go in, placed next to its partners (the proximity test), and considered for opening collapsed.
 - **Ancient, other gaps:** the Upanishads (dates read only in summary), more Mitanni rulers, and the many Levant,
   Assyria and Iran values that exist only in page summaries.
+- **REDACTED, sub-faction rows** the data implies: REDACTED's First/Second/Third REDACTED, the REDACTED Administration
+  and Perfect REDACTED (REDACTED Incident), individual REDACTED. Canon only, from the cited books.
+- **REDACTED, spans worth a second look** (judgment calls listed in `docs/REDACTED/event-spans.md`): Evolution of
+  REDACTED Trade REDACTED ("1400 years" vs. its 1,866-year range), Fourth REDACTED (ongoing?), REDACTED and
+  REDACTED Depart (a departure window, not a 4,000-year event), and the two "… Begins" events that carry a whole
+  period's range.
 - **Search aliases:** an `aliases` property on tracks and events (Hatti, Kemet, Axum, Wa/Yamato) so other names find
   them. Add it to `types.ts`, `validate.ts`, `search.ts` and `data-format.md`, then fill it in during region reviews.
 
@@ -52,12 +58,6 @@ Extending the end date affects every region; existing regions would need content
 the original plan that fall after 650: Srivijaya, the Sailendra and Borobudur, Majapahit, Angkor, Ghana, Mali, Great
 Zimbabwe, the Mississippians, the Mongols, and the settlement of Hawaiʻi, Aotearoa/New Zealand and Rapa Nui. A
 separate later timeline, linked by `meta.continues` as Ancient and Classical are, would keep each one readable.
-
-### REDACTED data lives here
-
-Decided 2026-11-18: this app replaces REDACTED for REDACTED, and nothing is ported back to v2. Still to do:
-stop re-importing the REDACTED file from v2 (`npm run data:REDACTED`) and drop the test that fails when the bundled copy
-differs from v2's, so REDACTED events can be edited here.
 
 ## Done
 
@@ -113,3 +113,7 @@ differs from v2's, so REDACTED events can be edited here.
   - Phones: the edit bar is one sideways-scrolling row of buttons with a short hint (it was three rows).
   - `scripts/screenshot.ts`: `--measure <selector>` prints element sizes, `--click` also matches tooltips and
     `=Exact` text, and `--close-legend` closes the tour too.
+- **REDACTED data lives here (2026-11-18):** this app replaces REDACTED for REDACTED, and nothing is ported
+  back. `data-src/REDACTED.json` is the source, built like the others (`npm run data:REDACTED`); the re-import from v2
+  and the drift test are gone. v2's span and canon-link scripts moved to `scripts/REDACTED/` with their tests, and
+  `run-all REDACTED --check` reproduces the file exactly.

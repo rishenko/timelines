@@ -1,6 +1,6 @@
 // The timelines built from a readable source file (data-src/), and every file and script that belongs to each.
 // One table, so the data commands (scripts/data.ts), the key-event list and the tests agree on the paths.
-// REDACTED isn't here: it is imported from REDACTED by `npm run data:REDACTED`, not built from data-src/.
+// All three bundled timelines are here. REDACTED moved in from REDACTED on 2026-11-18; this repo is now its home.
 
 export interface SourceTimeline {
   /** The short name used in commands: `npm run data -- build <short>`. */
@@ -11,10 +11,10 @@ export interface SourceTimeline {
   source: string;
   /** Compiled file the app bundles. */
   compiled: string;
-  /** Importance plan: { "1": [key uuids], "3": [minor uuids] }. */
-  importance: string;
-  /** Generated review list of key and minor events. */
-  keyEvents: string;
+  /** Importance plan: { "1": [key uuids], "3": [minor uuids] }. None yet for REDACTED (it marks no key events). */
+  importance?: string;
+  /** Generated review list of key and minor events; written only for a timeline with an importance plan. */
+  keyEvents?: string;
   /**
    * The re-runnable scripts that add this timeline's content, in the order they must run. `run-all` replays them
    * onto the current source file; each is an upsert, so the result should be the file as it is (the test for that
@@ -25,6 +25,7 @@ export interface SourceTimeline {
 
 const additions = (names: string[]) => names.map((n) => `scripts/additions/${n}.ts`);
 const classical = (names: string[]) => names.map((n) => `scripts/classical/${n}.ts`);
+const REDACTED = (names: string[]) => names.map((n) => `scripts/REDACTED/${n}.ts`);
 
 export const SOURCE_TIMELINES: SourceTimeline[] = [
   {
@@ -53,6 +54,15 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
       'skeleton', 'mediterranean-near-east', 'south-asia', 'east-asia', 'steppe', 'africa', 'europe', 'americas',
       'se-asia-tibet', 'china-north-south', 'island-sea-oceania', 'summary-only', 'collapsed',
     ]),
+  },
+  {
+    short: 'REDACTED',
+    id: 'REDACTED',
+    // edited by hand (or downloaded from edit mode and pasted in); stored years, since BE/U has a year 0
+    source: 'data-src/REDACTED.json',
+    compiled: 'src/timelines/REDACTED.json',
+    // spans stated in descriptions, then the canon links (from the event text, with evidence)
+    scripts: REDACTED(['apply-description-ranges', 'apply-canon-links']),
   },
 ];
 

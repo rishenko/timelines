@@ -37,8 +37,8 @@ with its own calendar, eras, scale and theme. Three ship with the app:
   dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait), plus a follow-up pass on values first read only in summary (`summary-only.ts`); 371 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first, then the region passes, `summary-only.ts`, and `collapsed.ts` last); sources and judgment calls in `docs/classical-sources.md`.
   It opens like the ancient timeline: groups expanded, each region collapsed to its key events.
-- **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, first entered in
-  [REDACTED](https://github.com/rishenko/REDACTED); this app is now where it is used and developed.
+- **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from the Fall to the REDACTED Incident, by faction.
+  Its data lives here since 2026-11-18 (`data-src/REDACTED.json`; see "The REDACTED dataset" below).
 
 Switch between them with the title menu or `?timeline=ancient-near-east` / `?timeline=classical` / `?timeline=REDACTED`.
 
@@ -122,7 +122,7 @@ npm run build          # type-check + production build into dist/
 npm run lint           # oxlint
 npm run data:ancient   # compile data-src/ancient-near-east.json → src/timelines/
 npm run data:classical # compile data-src/classical.json → src/timelines/
-npm run data:REDACTED    # re-import REDACTED data from ../REDACTED
+npm run data:REDACTED    # compile data-src/REDACTED.json → src/timelines/
 npm run deploy         # build and publish dist/ to GitHub Pages
 ```
 
@@ -233,7 +233,7 @@ which converts and validates them.
 | `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors, with `ClaimList` for date claims), search box, Dating menu, guided `Tour`, Filters, Legend, Theme and Timelines panels |
 | `src/data/` | Validator, importers for old REDACTED formats, row proximity (`proximity.ts`) |
 | `src/timelines/` | Bundled timelines, registered in `index.ts` |
-| `data-src/`, `scripts/` | Readable source data, the compiler, and the data scripts above |
+| `data-src/`, `scripts/` | Readable source data for all three timelines, the compiler, and the data scripts above (`scripts/REDACTED/` for REDACTED) |
 
 ## The historical datasets
 
@@ -242,6 +242,23 @@ comes from (read 17–18 November 2026). Books and papers appear only where Wiki
 date; they are tagged **Cited via Wikipedia (not checked)** because they were not consulted directly.
 Each region follows one chronology by default. The choices, the disagreements and what to spot-check are
 in `docs/ancient-sources.md` and `docs/classical-sources.md`.
+
+## The REDACTED dataset
+
+Canon REDACTED only, from the published books each event cites (by page). Readers add their own factions, events and
+sources in edit mode; sources they create get the `homebrew` tag so others can filter them out. Edit
+`data-src/REDACTED.json` (years are stored as signed numbers, since BE/U has a year 0: -4900 is 4900 BE), then
+`npm run data:REDACTED`. Two re-runnable scripts derive data from the event text, and
+`npm run data -- run-all REDACTED --check` confirms they reproduce the file:
+
+- `scripts/REDACTED/apply-description-ranges.ts` sets an event's end from a year range stated at the start of its
+  description ("4560-4591 AE."). Without a stated range an event stays a single year; dates are never inferred.
+  See `docs/REDACTED/event-spans.md`.
+- `scripts/REDACTED/apply-canon-links.ts` adds the links listed in `scripts/REDACTED/canonLinks.ts`. Each link rests on
+  the event text, with the words it rests on recorded beside it; links are never drawn from outside lore.
+
+Old REDACTED data files (REDACTED v1, REDACTED) still convert on upload, or with
+`node scripts/upgrade-dataset.ts old.json new.json`.
 
 ## Origins
 
@@ -255,8 +272,10 @@ REDACTED for REDACTED use (2026-11-18); nothing is ported back to it.
 The code, tests and documentation were written with the help of an AI coding assistant
 ([Claude Code](https://claude.com/claude-code), Anthropic), directed and reviewed by the project author.
 
-**REDACTED content** is not AI-generated: it comes unchanged from REDACTED, where every event
-was entered by hand from the published sources it cites.
+**REDACTED events** are not AI-generated: they were entered by hand from the published sources they cite (in
+REDACTED, then REDACTED). Two things were added with AI assistance, both from the event
+text alone: the end years of 33 events, read by a script from ranges their descriptions state, and 66 links
+between events, each recorded with the words it rests on (`scripts/REDACTED/canonLinks.ts`).
 
 **The Ancient Civilizations and Classical World datasets were compiled with AI assistance.** The assistant
 read the cited Wikipedia articles and transcribed their dates; the descriptions are its own summaries. No

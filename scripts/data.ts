@@ -6,7 +6,7 @@
 //   npm run data -- row-order <timeline> [args]  how close related rows sit (args as for scripts/row-order.ts)
 //   npm run data -- run-all <timeline> [--check] replay every content script in order, then `importance`
 //
-// <timeline> is a short name (ancient, classical) or an id (ancient-near-east). `npm run data:ancient`,
+// <timeline> is a short name (ancient, classical, REDACTED) or an id (ancient-near-east). `npm run data:ancient`,
 // `importance:classical` and the like are aliases for the common cases.
 //
 // run-all rebuilds the timeline's additions from the scripts, in the order the table gives. Every script is an
@@ -31,15 +31,22 @@ function build(t: SourceTimeline) {
   return dataset;
 }
 
-/** Applies the plan to the source file (in place); returns the counts. */
+/** Applies the plan to the source file (in place); returns the counts. A timeline without a plan is left alone. */
 function applyPlan(t: SourceTimeline) {
   const d = readSource(t.source);
-  applyImportancePlan(d.events, JSON.parse(readFileSync(t.importance, 'utf8')));
-  writeSource(t.source, d);
+  if (t.importance) {
+    applyImportancePlan(d.events, JSON.parse(readFileSync(t.importance, 'utf8')));
+    writeSource(t.source, d);
+  }
   return importanceCounts(d.events);
 }
 
 function importance(t: SourceTimeline) {
+  if (!t.importance || !t.keyEvents) {
+    console.log(`${t.short}: no importance plan; compiling only`);
+    build(t);
+    return;
+  }
   const { key, normal, minor } = applyPlan(t);
   console.log(`${t.short}: ${key} key, ${normal} normal, ${minor} minor`);
   const compiled = build(t);

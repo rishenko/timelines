@@ -14,7 +14,7 @@
     "data": "node scripts/data.ts",
     "data:ancient": "node scripts/data.ts build ancient",
     "data:classical": "node scripts/data.ts build classical",
-    "data:REDACTED": "node scripts/upgrade-dataset.ts ../REDACTED/src/data/timeline.json src/timelines/REDACTED.json",
+    "data:REDACTED": "node scripts/data.ts build REDACTED",
     "importance:ancient": "node scripts/data.ts importance ancient",
     "importance:classical": "node scripts/data.ts importance classical",
     "format:src": "node scripts/data.ts format all",
