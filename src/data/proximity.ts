@@ -4,6 +4,7 @@
 // Distance is how many siblings apart the two are in display order. Used to keep civilizations that
 // interacted near each other: at the top level for groups (or regions), and inside each group for regions.
 import type { Dataset } from '../types.ts';
+import { trackDepth } from '../lib/tracks.ts';
 
 export interface RelatedPair {
   a: string;
@@ -62,12 +63,7 @@ export const relatedRegions = (ds: Dataset): RelatedPair[] => relatedSiblings(ds
  * `levels - 1` levels that has two or more children. levels = 2 checks groups and the regions inside them.
  */
 export function proximityParents(ds: Dataset, levels: number): (string | undefined)[] {
-  const parent = new Map(ds.tracks.map((t) => [t.id, t.parent]));
-  const depth = (id: string) => {
-    let d = 0;
-    for (let p = parent.get(id); p !== undefined && d <= ds.tracks.length; p = parent.get(p)) d++;
-    return d;
-  };
+  const depth = (id: string) => trackDepth(ds.tracks, id);
   const kids = (id: string) => ds.tracks.filter((t) => t.parent === id).length;
   return [undefined, ...ds.tracks.filter((t) => depth(t.id) < levels - 1 && kids(t.id) > 1).map((t) => t.id)];
 }

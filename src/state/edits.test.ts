@@ -12,6 +12,7 @@ import {
   upsertTrack,
 } from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
+import { draftToStore, restoreDraft } from './dataset.ts';
 import data from '../timelines/REDACTED.json';
 import { REDACTED_META } from '../data/migrate.ts';
 
@@ -100,6 +101,42 @@ describe('sources', () => {
     expect(d.sources).toEqual({});
     expect(d.events[0].sources).toEqual([]);
     expect(validateDataset(d)).toEqual([]);
+  });
+
+  // A source cited by date claims, a lifespan and a chronology, not only by an event's sources list.
+  const claimed = (): Dataset => {
+    const d = base();
+    d.sources.chron = { name: 'Chronicle', tags: ['first'] };
+    const cite = { sourceKey: 'chron', sourceLocation: 'p. 1' };
+    d.events[1].startDates = [{ year: 2, margin: 1, source: cite }];
+    d.tracks[1].span = { start: 0, end: 5, endDates: [{ year: 5, source: cite }] };
+    d.chronologies = { annals: { name: 'Annals', group: 'g', default: true, source: cite } };
+    return d;
+  };
+
+  it('renames a source key in date claims, lifespans and chronologies too', () => {
+    const d = upsertSource(claimed(), 'annals-src', { name: 'Chronicle', tags: ['first'] }, 'chron');
+    expect(validateDataset(d)).toEqual([]);
+    expect(d.events[1].startDates![0].source!.sourceKey).toBe('annals-src');
+    expect(d.tracks[1].span!.endDates![0].source!.sourceKey).toBe('annals-src');
+    expect(d.chronologies!.annals.source!.sourceKey).toBe('annals-src');
+    expect(d.events[1].edited).toBe(true);
+  });
+
+  it('removes a source cited only by claims; the claims keep their values', () => {
+    const before = claimed();
+    expect(sourceUsage(before, 'chron')).toBe(1);
+    const d = removeSource(before, 'chron');
+    expect(validateDataset(d)).toEqual([]);
+    expect(d.events[1].startDates).toEqual([{ year: 2, margin: 1 }]);
+    expect(d.tracks[1].span!.endDates).toEqual([{ year: 5 }]);
+    expect(d.chronologies!.annals.source).toBeUndefined();
+  });
+
+  it('a draft that deletes a source cited by claims survives a reload', () => {
+    const published = claimed();
+    const stored = JSON.parse(JSON.stringify(draftToStore(published, removeSource(published, 'chron'))));
+    expect(restoreDraft(published, stored)?.data.sources.chron).toBeUndefined();
   });
 });
 

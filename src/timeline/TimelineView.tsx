@@ -8,22 +8,9 @@ import { eraStart, formatYear, isMajorTick } from '../lib/calendar.ts';
 import type { ResolvedEvent, ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { safeUrl } from '../lib/urls.ts';
+import { rootOf, trackIndex } from '../lib/tracks.ts';
+import { useLabelWidth, useLongPress, usePinchSteps } from './gestures.ts';
 
-export const LABEL_W = 236;
-/** On narrow screens (phones) the row labels take less room, leaving more for the timeline. */
-export const LABEL_W_NARROW = 120;
-const NARROW_QUERY = '(max-width: 640px)';
-function useLabelWidth(): number {
-  const [narrow, setNarrow] = useState(() => typeof window !== 'undefined' && !!window.matchMedia?.(NARROW_QUERY).matches);
-  useEffect(() => {
-    const mq = window.matchMedia?.(NARROW_QUERY);
-    if (!mq) return;
-    const on = () => setNarrow(mq.matches);
-    mq.addEventListener('change', on);
-    return () => mq.removeEventListener('change', on);
-  }, []);
-  return narrow ? LABEL_W_NARROW : LABEL_W;
-}
 const END_PAD = 260;
 const MARK_H = 22;
 const POINT_HALF = 7;
@@ -102,13 +89,12 @@ export function TimelineView(props: Props) {
   const lanes = useMemo(() => buildLanes(data.tracks, visibleTracks, collapsed), [data.tracks, visibleTracks, collapsed]);
   // A top-level row with sub-rows is a group: its rows share its colour as a background tint.
   const groupColor = useMemo(() => {
-    const byId = new Map(data.tracks.map((t) => [t.id, t]));
+    const byId = trackIndex(data.tracks);
     const parents = new Set(data.tracks.map((t) => t.parent));
     const out = new Map<string, string>();
     for (const t of data.tracks) {
-      let root = t;
-      for (let n = 0; root.parent && byId.has(root.parent) && n < data.tracks.length; n++) root = byId.get(root.parent)!;
-      if (parents.has(root.id)) out.set(t.id, root.color);
+      const root = rootOf(t.id, byId);
+      if (root && parents.has(root.id)) out.set(t.id, root.color);
     }
     return out;
   }, [data.tracks]);
@@ -255,24 +241,9 @@ export function TimelineView(props: Props) {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  // Two-finger pinch steps through the zoom levels (the page itself doesn't zoom: see touch-action in CSS).
-  // Each time the fingers spread to 1.6x (or close to 0.62x), the zoom moves one step and the gesture restarts.
-  const pinchRef = useRef<number | null>(null);
-  const fingerGap = (t: React.TouchList) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
-  const onTouchStart = (e: React.TouchEvent) => {
-    pinchRef.current = e.touches.length === 2 ? fingerGap(e.touches) : null;
-  };
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (e.touches.length !== 2 || pinchRef.current === null || !props.onPinchZoom) return;
-    const ratio = fingerGap(e.touches) / pinchRef.current;
-    if (ratio > 1.6 || ratio < 0.62) {
-      props.onPinchZoom(ratio > 1 ? 1 : -1, centerYearRef.current);
-      pinchRef.current = fingerGap(e.touches);
-    }
-  };
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (e.touches.length < 2) pinchRef.current = null;
-  };
+  // Two-finger pinch steps through the zoom levels, keeping the center year.
+  const { onPinchZoom } = props;
+  const pinch = usePinchSteps(onPinchZoom && ((dir) => onPinchZoom(dir, centerYearRef.current)));
 
   // Only render what is near the viewport (one screen either side).
   const lo = view.left - view.width;
@@ -297,23 +268,12 @@ export function TimelineView(props: Props) {
   const onLaneDoubleClick = (trackId: string) => (ev: React.MouseEvent<HTMLDivElement>) => {
     if (editMode && isEmptySpot(ev.target, ev.currentTarget)) createAt(trackId, ev.currentTarget, ev.clientX);
   };
-  const LONG_PRESS_MS = 550;
-  const pressRef = useRef<{ timer: number; x: number; y: number } | null>(null);
-  const cancelPress = () => {
-    if (pressRef.current) clearTimeout(pressRef.current.timer);
-    pressRef.current = null;
-  };
+  const press = useLongPress();
   const onLanePointerDown = (trackId: string) => (ev: React.PointerEvent<HTMLDivElement>) => {
     if (!editMode || ev.pointerType !== 'touch' || !isEmptySpot(ev.target, ev.currentTarget)) return;
-    cancelPress();
     const lane = ev.currentTarget;
     const x = ev.clientX;
-    pressRef.current = { x, y: ev.clientY, timer: window.setTimeout(() => (cancelPress(), createAt(trackId, lane, x)), LONG_PRESS_MS) };
-  };
-  const onLanePointerMove = (ev: React.PointerEvent) => {
-    // a finger that moves is panning, not pressing
-    const p = pressRef.current;
-    if (p && Math.hypot(ev.clientX - p.x, ev.clientY - p.y) > 10) cancelPress();
+    press.start(x, ev.clientY, () => createAt(trackId, lane, x));
   };
 
   /** Shaded lifespan band, fading across uncertain ends. */
@@ -348,9 +308,7 @@ export function TimelineView(props: Props) {
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
       ref={scrollerRef}
       onScroll={onScroll}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+      {...pinch}
       onClick={(e) => {
         if (e.target === e.currentTarget) onSelect(null);
       }}
@@ -418,9 +376,9 @@ export function TimelineView(props: Props) {
                 style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
                 onDoubleClick={onLaneDoubleClick(lane.id)}
                 onPointerDown={onLanePointerDown(lane.id)}
-                onPointerMove={onLanePointerMove}
-                onPointerUp={cancelPress}
-                onPointerCancel={cancelPress}
+                onPointerMove={(ev) => press.move(ev.clientX, ev.clientY)}
+                onPointerUp={press.cancel}
+                onPointerCancel={press.cancel}
               >
                 {lane.members.map((id) => {
                   const s = spans.get(id);

@@ -1,4 +1,5 @@
 import type { Chronology, DateClaim, Dataset, TimelineEvent, Track, TrackSpan } from '../types.ts';
+import { trackIndex, trackPath } from './tracks.ts';
 
 /**
  * Chronologies, date claims and error margins.
@@ -48,13 +49,7 @@ export function defaultSelection(ds: Dataset): ChronologySelection {
 
 /** The chronology a track uses: its own, else its nearest ancestor's. */
 export function trackChronology(tracks: Track[], id: string): string | undefined {
-  const byId = new Map(tracks.map((t) => [t.id, t]));
-  let t = byId.get(id);
-  for (let guard = 0; t && guard < 10; guard++) {
-    if (t.chronology) return t.chronology;
-    t = t.parent ? byId.get(t.parent) : undefined;
-  }
-  return undefined;
+  return trackPath(id, trackIndex(tracks)).findLast((t) => t.chronology)?.chronology;
 }
 
 export function eventChronology(ds: Dataset, e: TimelineEvent): string | undefined {

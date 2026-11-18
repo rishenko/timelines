@@ -3,7 +3,7 @@
 **Live site:** https://rishenko.github.io/timelines/
 
 A horizontal, swimlane timeline for any history, fictional or real. Each timeline is one data file
-with its own calendar, eras, scale and theme. Two ship with the app:
+with its own calendar, eras, scale and theme. Three ship with the app:
 
 - **Ancient Civilizations** (default): Europe (megalith builders, Bronze and Iron Age cultures, Italy and Rome, Thrace), the western Mediterranean (Carthage, Greek Sicily and Italy, Sardinia, the Balearics, Iberia), Africa south of the Sahara (Punt, Dʿmt, Tichitt, Nok, the Bantu expansion), North Africa (Libyans, Cyrene, Garamantes), the Aegean (Cycladic, Minoan, Mycenaean, Greece, Macedon), Anatolia (Hittites, Phrygia, Lydia, Lycia, Urartu), Mesopotamia (Sumer, Akkad, Babylonia, Assyria), the Levant
   (Canaan, Ebla, Ugarit, Phoenicia, Israel and Judah, Philistines, Aram, Cyprus), Egypt and Nubia (A-Group, C-Group, Kerma, Kush),
@@ -20,10 +20,10 @@ with its own calendar, eras, scale and theme. Two ship with the app:
   Badarians, Neolithic Europe from Star Carr to Varna and Carnac, early Chinese rice and millet farming (Pengtoushan,
   Jiahu, Yangshao, Hongshan), Kuk Swamp, and the domestication of squash, maize and potatoes in the Americas. It also
   follows ideas and landmarks: Gilgamesh and Ashurbanipal's library, Homer, the Greek philosophers, the Parthenon,
-  Persepolis, Confucius, Laozi and the Hundred Schools. c. 9000–330 BCE; 525 events, every date cited.
-- **The Classical World** (in progress since 2026-11-18): c. 500 BCE – 650 CE, from the Persian Wars and Warring
+  Persepolis, Confucius, Laozi and the Hundred Schools. c. 9000–330 BCE; 562 events, every date cited.
+- **The Classical World** (started 2026-11-18): c. 500 BCE – 650 CE, from the Persian Wars and Warring
   States China to the fall of the Sasanians and the founding of Tang. It overlaps Ancient Civilizations from 500 to
-  330 BCE, and each timeline links to the other on its ruler where they meet. So far: the overlap, and the
+  330 BCE, and each timeline links to the other on its ruler where they meet. Every region has had a pass: the overlap, and the
   Mediterranean and Near East (the Hellenistic kingdoms, Rome to Justinian, Carthage, Parthia and the Sasanians, Judea,
   Arabia and the rise of Islam) and South Asia (the Maurya Empire to Harsha, the Kushans, the Guptas, the
   Deccan, Tamilakam and Sri Lanka) and East Asia (Qin to the founding of Tang, the Three Kingdoms of Korea,
@@ -40,7 +40,7 @@ with its own calendar, eras, scale and theme. Two ship with the app:
 - **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from
   [REDACTED](https://github.com/rishenko/REDACTED).
 
-Switch between them with the title menu or `?timeline=ancient-near-east` / `?timeline=REDACTED`.
+Switch between them with the title menu or `?timeline=ancient-near-east` / `?timeline=classical` / `?timeline=REDACTED`.
 
 ### Your own timelines
 
@@ -63,7 +63,8 @@ paths; anything else (e.g. `javascript:`) is rejected.
 
 ## Features
 
-- **Year ruler** with per-timeline scales (REDACTED: 1/10/50/100 years per tick; ancient: 10/50/100/500).
+- **Year ruler** with per-timeline scales (REDACTED: 1/10/50/100 years per tick; ancient: 10/50/100/500/1000; Classical:
+  10/50/100/500).
   Switching keeps the year at the center of the screen fixed.
 - **Calendars.** Each timeline names its eras (BCE/CE, BE/U, …) and says whether it has a year 0.
   BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
@@ -108,8 +109,11 @@ npm install
 npm run dev            # http://localhost:5173
 npm test               # vitest
 npm run build          # type-check + production build into dist/
+npm run lint           # oxlint
 npm run data:ancient   # compile data-src/ancient-near-east.json → src/timelines/
+npm run data:classical # compile data-src/classical.json → src/timelines/
 npm run data:REDACTED    # re-import REDACTED data from ../REDACTED
+npm run deploy         # build and publish dist/ to GitHub Pages
 ```
 
 Scripts for working on the data (all in `scripts/`; source files are written in one compact style by
@@ -117,6 +121,7 @@ Scripts for working on the data (all in `scripts/`; source files are written in 
 
 ```sh
 npm run importance:ancient   # apply data-src/ancient-importance.json, compile, refresh docs/ancient-key-events.md
+npm run importance:classical # the same for the Classical World (data-src/classical-importance.json)
 npm run row-order            # how close related groups sit (add -- --parent near-east for the regions in a group)
 node scripts/row-order.ts src/timelines/ancient-near-east.json --parent near-east --search --keep "mesopotamia<iran"   # find a passing order
 npm run format:src           # re-format data-src/ancient-near-east.json
@@ -185,26 +190,36 @@ which converts and validates them.
 
 | Path | What |
 |---|---|
+| `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
+| `src/types.ts` | The schema v3 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
+| `src/Boot.tsx` | Opens `?data=<url>` links before the app starts |
 | `src/lib/calendar.ts` | Eras, year 0, parsing/formatting, round-year ruler ticks |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, error windows |
-| `src/lib/search.ts` | Search index and ranking over rows and events (tested) |
+| `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (cycle-safe; use these, don't hand-roll walks) |
+| `src/lib/search.ts` | Search index and ranking over rows and events |
+| `src/lib/years.ts`, `urls.ts`, `theme.ts` | Event ordering and date text; URL safety for untrusted timelines; theme presets |
 | `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
 | `src/timeline/layout.ts` | Lanes from the track tree; row packing, `+N` clusters, marks with lighter start/end ranges |
-| `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering |
-| `src/state/` | Dataset reducer (per-timeline drafts), the timeline library, filters, theme |
-| `src/Boot.tsx` | Opens `?data=<url>` links before the app starts |
-| `src/components/` | Detail panel, event/track/source editors, filters, theme |
-| `src/data/` | Validator, importers for old REDACTED formats |
-| `src/timelines/` | Bundled timelines |
-| `src/data/proximity.ts` | Which regions share events, and how far apart they sit (tested) |
+| `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering, scrolling to focus requests |
+| `src/timeline/gestures.ts` | Label-column width, two-finger pinch zoom steps, long press to add an event |
+| `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
+| `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
+| `src/state/library.ts`, `useLibraryActions.ts` | The reader's timeline library; opening, uploading, updating, removing and sharing timelines |
+| `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
+| `src/state/useSearchActions.ts` | What picking a search result does (unfold, scroll, select) |
+| `src/state/` (others) | Filters, theme, folded rows (`collapse`), zoom steps, toolbar panels, toasts |
+| `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors), search box, Dating menu, Filters, Legend, Theme and Timelines panels |
+| `src/data/` | Validator, importers for old REDACTED formats, row proximity (`proximity.ts`) |
+| `src/timelines/` | Bundled timelines, registered in `index.ts` |
 | `data-src/`, `scripts/` | Readable source data, the compiler, and the data scripts above |
 
-## The ancient dataset
+## The historical datasets
 
-Every event cites the English Wikipedia articles it comes from (read 17 November 2026). Books and
-papers appear only where Wikipedia cites them for that date; they are tagged **Cited via Wikipedia
-(not checked)** because they were not consulted directly. Each region follows one chronology by
-default (see `docs/ancient-sources.md` for the choices, the disagreements, and what to spot-check).
+Every event in Ancient Civilizations and The Classical World cites the English Wikipedia articles it
+comes from (read 17–18 November 2026). Books and papers appear only where Wikipedia cites them for that
+date; they are tagged **Cited via Wikipedia (not checked)** because they were not consulted directly.
+Each region follows one chronology by default. The choices, the disagreements and what to spot-check are
+in `docs/ancient-sources.md` and `docs/classical-sources.md`.
 
 ## Origins
 
@@ -221,10 +236,11 @@ The code, tests and documentation were written with the help of an AI coding ass
 **REDACTED content** is not AI-generated: it comes unchanged from REDACTED, where every event
 was entered by hand from the published sources it cites.
 
-**The ancient dataset was compiled with AI assistance.** The assistant read the cited Wikipedia articles
-and transcribed their dates; the descriptions are its own summaries. No date was invented: every
-year and margin comes from a cited page, and where pages disagree all values are kept as claims.
-It has not yet been reviewed by a specialist; `docs/ancient-sources.md` lists the judgment calls.
+**The Ancient Civilizations and Classical World datasets were compiled with AI assistance.** The assistant
+read the cited Wikipedia articles and transcribed their dates; the descriptions are its own summaries. No
+date was invented: every year and margin comes from a cited page, and where pages disagree all values are
+kept as claims. Neither has been reviewed by a specialist yet; `docs/ancient-sources.md` and
+`docs/classical-sources.md` list the judgment calls.
 
 ## Legal
 

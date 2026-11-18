@@ -10,6 +10,7 @@ import {
   type TimelineEvent,
 } from '../types.ts';
 import { compareEvents } from '../lib/years.ts';
+import { childrenMap } from '../lib/tracks.ts';
 import { formatYear, fromStored, toStored, type EraSide } from '../lib/calendar.ts';
 import { eventChronology } from '../lib/chronology.ts';
 import { customTags, nextTrackColor, uniqueId } from '../state/edits.ts';
@@ -261,7 +262,8 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
   const ongoing = watch('ongoing');
 
   const otherEvents = data.events.filter((e) => e.uuid !== initial.uuid).sort(compareEvents);
-  const childrenOf = (id: string | undefined) => data.tracks.filter((t) => t.parent === id);
+  const children = childrenMap(data.tracks);
+  const childrenOf = (id: string | undefined) => children.get(id) ?? [];
   const chronologies = Object.entries(data.chronologies ?? {});
   const inherited = eventChronology(data, { ...initial, chronology: undefined });
   const customTag = data.meta.customSourceTag;

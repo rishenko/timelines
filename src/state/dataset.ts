@@ -68,7 +68,7 @@ export function datasetReducer(state: DatasetState, action: DatasetAction): Data
 /**
  * Turns whatever is stored for a timeline into the reader's dataset. Three stored forms:
  * - `{ format: 'changes' }` (current): the reader's changes, replayed onto today's published data;
- * - `{ format: 'replace', data }`: a whole file uploaded for this timeline from another one (see App), applied in
+ * - `{ format: 'replace', data }`: a whole file uploaded for this timeline from another one (see useLibraryActions), applied in
  *   full against today's published data, deletions included;
  * - a bare dataset: a draft saved before drafts were stored as changes; converted conservatively (see
  *   `changesFromLegacyCopy`).

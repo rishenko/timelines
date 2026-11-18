@@ -1,6 +1,6 @@
 import type { Dataset } from '../types.ts';
 import type { Filters } from '../state/filters.ts';
-import { trackDepth } from '../state/edits.ts';
+import { trackDepth, treeOrder } from '../lib/tracks.ts';
 
 interface Props {
   data: Dataset;
@@ -13,19 +13,6 @@ interface Props {
   editMode: boolean;
   onEditTrack: (id: string) => void;
   onEditSource: (key: string) => void;
-}
-
-/** Tracks in lane order: each followed by its descendants. */
-function treeOrder(data: Dataset) {
-  const kids = new Map<string, typeof data.tracks>();
-  for (const t of data.tracks) if (t.parent) kids.set(t.parent, [...(kids.get(t.parent) ?? []), t]);
-  const out: typeof data.tracks = [];
-  const visit = (t: (typeof data.tracks)[number]) => {
-    out.push(t);
-    for (const k of kids.get(t.id) ?? []) visit(k);
-  };
-  for (const t of data.tracks) if (!t.parent) visit(t);
-  return out;
 }
 
 export function FiltersPanel(p: Props) {
@@ -42,7 +29,7 @@ export function FiltersPanel(p: Props) {
           </span>
         </h3>
         <div className="toggles">
-          {treeOrder(data).map((t) => (
+          {treeOrder(data.tracks).map((t) => (
             <span key={t.id} className="toggle-wrap">
               <button
                 className={`toggle ${isOn(filters.tracks, t.id) ? 'on' : 'off'}${trackDepth(data.tracks, t.id) ? ' nested' : ''}${trackDepth(data.tracks, t.id) > 1 ? ' deep' : ''}`}

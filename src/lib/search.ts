@@ -1,4 +1,5 @@
 import type { TimelineEvent, Track } from '../types.ts';
+import { subtreeIds, trackPath } from './tracks.ts';
 
 /**
  * Search over a timeline's rows (tracks: groups, regions, civilizations, periods) and events.
@@ -43,27 +44,6 @@ export function normalize(s: string): string {
 
 /** "hittites" also finds "Hittite"; short words are left alone ("mars", "ur"). */
 const stem = (w: string) => (w.length > 4 && w.endsWith('s') ? w.slice(0, -1) : w);
-
-/** Ancestor chain of a row (outermost first), guarding against cycles in hand-edited data. */
-export function trackPath(trackId: string, byId: Map<string, Track>): Track[] {
-  const out: Track[] = [];
-  const seen = new Set<string>();
-  let t = byId.get(trackId);
-  while (t && !seen.has(t.id)) {
-    seen.add(t.id);
-    out.unshift(t);
-    t = t.parent ? byId.get(t.parent) : undefined;
-  }
-  return out;
-}
-
-/** Ids of a row's ancestors, nearest last. */
-export function ancestorIds(trackId: string, tracks: Track[]): string[] {
-  const byId = new Map(tracks.map((t) => [t.id, t]));
-  return trackPath(trackId, byId)
-    .slice(0, -1)
-    .map((t) => t.id);
-}
 
 export type EventLike = Pick<TimelineEvent, 'uuid' | 'title' | 'start' | 'end' | 'tracks' | 'importance'>;
 
@@ -168,15 +148,7 @@ export function trackRange(
 ): { start: number; end: number } | undefined {
   const span = spans?.get(trackId) ?? tracks.find((t) => t.id === trackId)?.span;
   if (span) return { start: span.start, end: span.end };
-  const kids = new Map<string, string[]>();
-  for (const t of tracks) if (t.parent) kids.set(t.parent, [...(kids.get(t.parent) ?? []), t.id]);
-  const ids = new Set<string>();
-  const visit = (id: string) => {
-    if (ids.has(id)) return;
-    ids.add(id);
-    for (const k of kids.get(id) ?? []) visit(k);
-  };
-  visit(trackId);
+  const ids = subtreeIds(trackId, tracks);
   let start = Infinity;
   let end = -Infinity;
   for (const e of events) {

@@ -2,6 +2,7 @@ import type { Track } from '../types.ts';
 import { compareEvents, effectiveEnd, isSpan } from '../lib/years.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
+import { childrenMap } from '../lib/tracks.ts';
 
 export interface LaneDef {
   id: string;
@@ -82,10 +83,7 @@ export const LAYOUT_DEFAULTS = {
  * of all its visible descendants.
  */
 export function buildLanes(tracks: Track[], visible: Record<string, boolean>, collapsed: Record<string, boolean>): LaneDef[] {
-  const children = new Map<string, Track[]>();
-  for (const t of tracks) {
-    if (t.parent) children.set(t.parent, [...(children.get(t.parent) ?? []), t]);
-  }
+  const children = childrenMap(tracks);
   const isVisible = (t: Track) => visible[t.id] !== false;
   const visibleDescendants = (t: Track): Track[] =>
     (children.get(t.id) ?? []).flatMap((k) => [...(isVisible(k) ? [k] : []), ...visibleDescendants(k)]);
@@ -106,7 +104,7 @@ export function buildLanes(tracks: Track[], visible: Record<string, boolean>, co
     }
     if (!isCollapsed || !isVisible(t)) for (const k of children.get(t.id) ?? []) visit(k, depth + 1);
   };
-  for (const t of tracks) if (!t.parent) visit(t, 0);
+  for (const t of children.get(undefined) ?? []) visit(t, 0);
   return lanes;
 }
 

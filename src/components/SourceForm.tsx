@@ -71,7 +71,7 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
     if (!sourceKey || !initial) return;
     const n = sourceUsage(data, sourceKey);
     const msg = n
-      ? `Delete "${initial.name}"? ${n} event(s) cite it; the citation will be removed from them (the events stay).`
+      ? `Delete "${initial.name}"? ${n} event(s) cite it; the citation will be removed from them (the events and their dates stay).`
       : `Delete "${initial.name}"?`;
     if (window.confirm(msg)) onDelete(sourceKey);
   };

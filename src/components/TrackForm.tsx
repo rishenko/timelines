@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import type { Dataset, Track } from '../types.ts';
-import { isDescendant, nextTrackColor, slug, trackDeletion, trackDepth, uniqueId } from '../state/edits.ts';
+import { nextTrackColor, slug, trackDeletion, uniqueId } from '../state/edits.ts';
+import { isDescendant, trackDepth } from '../lib/tracks.ts';
 import { formatYear, parseDate } from '../lib/calendar.ts';
 
 interface FormValues {

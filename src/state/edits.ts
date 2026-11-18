@@ -1,4 +1,4 @@
-import type { Dataset, Source, Track } from '../types.ts';
+import type { Dataset, DateClaim, Source, SourceRef, Track } from '../types.ts';
 
 /** Tags applied by default to sources created in the editor (the timeline's custom tag, if it has one). */
 export function customTags(d: Dataset): string[] {
@@ -51,21 +51,6 @@ export function upsertTrack(d: Dataset, track: Track, previousId?: string): Data
     tracks = tracks.map((t) => (t.parent === previousId ? { ...t, parent: track.id } : t));
   }
   return { ...d, tracks, events };
-}
-
-/** 0 for top-level tracks, 1 for their children, and so on (rows nest to any depth). */
-export function trackDepth(tracks: Track[], id: string): number {
-  const byId = new Map(tracks.map((t) => [t.id, t]));
-  let depth = 0;
-  // the bound only guards against a parent cycle in unvalidated data
-  for (let p = byId.get(id)?.parent; p !== undefined && depth < tracks.length; p = byId.get(p)?.parent) depth++;
-  return depth;
-}
-
-export function isDescendant(tracks: Track[], id: string, ancestor: string): boolean {
-  const byId = new Map(tracks.map((t) => [t.id, t]));
-  for (let p = byId.get(id)?.parent, n = 0; p !== undefined && n < tracks.length; p = byId.get(p)?.parent, n++) if (p === ancestor) return true;
-  return false;
 }
 
 /** Swaps a track with its previous/next sibling (same parent). */
@@ -123,7 +108,62 @@ export function removeTrack(d: Dataset, id: string): Dataset {
   return { ...d, tracks: d.tracks.filter((t) => t.id !== id), events };
 }
 
-/** Adds or replaces a source; a key change rewrites event references. Unknown tags are created. */
+/**
+ * Rewrites every citation of source `from`: an event's sources, its date claims, a track's lifespan claims and a
+ * chronology's source. `to` renames the key; `null` drops the citation. A date claim keeps its year and margin
+ * when its source goes (removing the claim could leave the best estimate outside the remaining claims).
+ * Events whose citations change are marked `edited`.
+ */
+function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'events' | 'tracks' | 'chronologies'> {
+  const ref = (r: SourceRef): SourceRef | null => (r.sourceKey !== from ? r : to === null ? null : { ...r, sourceKey: to });
+  const claim = (c: DateClaim): DateClaim => {
+    if (c.source?.sourceKey !== from) return c;
+    const source = ref(c.source);
+    if (source) return { ...c, source };
+    const { source: _dropped, ...rest } = c;
+    return rest;
+  };
+  const claims = (list: DateClaim[] | undefined) => list?.map(claim);
+  const cites = (list: DateClaim[] | undefined) => !!list?.some((c) => c.source?.sourceKey === from);
+
+  const events = d.events.map((e) =>
+    e.sources.some((s) => s.sourceKey === from) || cites(e.startDates) || cites(e.endDates)
+      ? {
+          ...e,
+          sources: e.sources.flatMap((s) => ref(s) ?? []),
+          ...(e.startDates ? { startDates: claims(e.startDates) } : {}),
+          ...(e.endDates ? { endDates: claims(e.endDates) } : {}),
+          edited: true,
+        }
+      : e,
+  );
+  const tracks = d.tracks.map((t) =>
+    t.span && (cites(t.span.startDates) || cites(t.span.endDates))
+      ? {
+          ...t,
+          span: {
+            ...t.span,
+            ...(t.span.startDates ? { startDates: claims(t.span.startDates) } : {}),
+            ...(t.span.endDates ? { endDates: claims(t.span.endDates) } : {}),
+          },
+        }
+      : t,
+  );
+  const chronologies = d.chronologies
+    ? Object.fromEntries(
+        Object.entries(d.chronologies).map(([id, c]) => {
+          if (c.source?.sourceKey !== from) return [id, c];
+          const source = ref(c.source);
+          if (source) return [id, { ...c, source }];
+          const { source: _dropped, ...rest } = c;
+          return [id, rest];
+        }),
+      )
+    : undefined;
+  return { events, tracks, ...(chronologies ? { chronologies } : {}) };
+}
+
+/** Adds or replaces a source; a key change rewrites every citation of it. Unknown tags are created. */
 export function upsertSource(d: Dataset, key: string, source: Source, previousKey?: string): Dataset {
   const sources: Record<string, Source> = {};
   let placed = false;
@@ -136,28 +176,19 @@ export function upsertSource(d: Dataset, key: string, source: Source, previousKe
   if (!placed) sources[key] = source;
   const tags = { ...d.tags };
   for (const a of source.tags) if (!tags[a]) tags[a] = { name: titleCase(a) };
-  const events =
-    previousKey && previousKey !== key
-      ? d.events.map((e) =>
-          e.sources.some((s) => s.sourceKey === previousKey)
-            ? { ...e, sources: e.sources.map((s) => (s.sourceKey === previousKey ? { ...s, sourceKey: key } : s)) }
-            : e,
-        )
-      : d.events;
-  return { ...d, sources, tags, events };
+  const renamed = previousKey && previousKey !== key ? recite(d, previousKey, key) : {};
+  return { ...d, ...renamed, sources, tags };
 }
 
+/** How many events cite a source, in their sources or their date claims. */
 export function sourceUsage(d: Dataset, key: string): number {
-  return d.events.filter((e) => e.sources.some((s) => s.sourceKey === key)).length;
+  const cites = (list: DateClaim[] | undefined) => !!list?.some((c) => c.source?.sourceKey === key);
+  return d.events.filter((e) => e.sources.some((s) => s.sourceKey === key) || cites(e.startDates) || cites(e.endDates))
+    .length;
 }
 
-/** Removes a source and every citation of it. */
+/** Removes a source and every citation of it; date claims that cited it keep their values. */
 export function removeSource(d: Dataset, key: string): Dataset {
   const { [key]: _removed, ...sources } = d.sources;
-  const events = d.events.map((e) =>
-    e.sources.some((s) => s.sourceKey === key)
-      ? { ...e, sources: e.sources.filter((s) => s.sourceKey !== key), edited: true }
-      : e,
-  );
-  return { ...d, sources, events };
+  return { ...d, ...recite(d, key, null), sources };
 }
