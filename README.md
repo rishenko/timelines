@@ -86,7 +86,7 @@ node scripts/row-order.ts src/timelines/ancient-near-east.json --parent near-eas
 npm run format:src           # re-format data-src/ancient-near-east.json
 node scripts/additions/europe.ts   # (re)apply a region's additions; then npm run importance:ancient
 node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
-npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria"]
+npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json]
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 

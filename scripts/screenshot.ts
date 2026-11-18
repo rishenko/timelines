@@ -1,15 +1,17 @@
 // Screenshots the app in Microsoft Edge (via playwright-core; no browser download needed).
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
-//        [--expand "Row name|Other row"] [--scroll-to "Row name"]
+//        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json]
 // --expand opens collapsed rows by their label (in order, so a group can be opened before its regions);
 // --scroll-to scrolls the timeline so that row sits near the top. Names are separated by "|".
+// --storage puts a file into localStorage before the page loads (repeatable), e.g. a saved edit-mode draft.
 // Run `npx vite preview --port 4317` (after `npm run build`) or `npm run dev` first for a local URL; the
 // preview serves the app at /, not /timelines/.
 // Prints any page errors and failed requests, and exits with 1 if there were any.
+import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const args = process.argv.slice(2);
-const valued = /^--(width|height|expand|scroll-to)$/;
+const valued = /^--(width|height|expand|scroll-to|storage)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
   console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
@@ -24,6 +26,11 @@ const problems: string[] = [];
 page.on('pageerror', (e) => problems.push(`page error: ${e.message}`));
 page.on('requestfailed', (r) => problems.push(`request failed: ${r.url()}`));
 page.on('response', (r) => r.status() >= 400 && problems.push(`HTTP ${r.status()}: ${r.url()}`));
+const storage = args.flatMap((a, i) => (a === '--storage' ? [args[i + 1]] : [])).map((kv) => {
+  const at = kv.indexOf('=');
+  return [kv.slice(0, at), readFileSync(kv.slice(at + 1), 'utf8')];
+});
+if (storage.length) await page.addInitScript((pairs) => pairs.forEach(([k, v]) => localStorage.setItem(k, v)), storage);
 await page.goto(url);
 await page.waitForTimeout(2000);
 if (args.includes('--close-legend')) {
