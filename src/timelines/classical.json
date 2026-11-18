@@ -13832,7 +13832,7 @@
         "satavahana",
         "indo-scythian"
       ],
-      "descr": "The Satavahana king defeats Nahapana of the Western Satraps (Shakas); most historians agree the two were contemporaries. Scholars date the victory differently: Bhandare to the start of the Saka era (78 CE), Fynes to some time after 71 CE, Dhavalikar to c. 124 CE, which he counts as Gautamiputra’s 18th regnal year. His reign itself is dated anywhere from 60–85 to 106–130 CE.",
+      "descr": "Most historians now agree that Gautamiputra and Nahapana were contemporaries and that Gautamiputra defeated Nahapana; the Nashik inscription says he defeated the Shakas (Western Kshatrapas). Scholars date the victory differently: Bhandare to the start of the Saka era (78 CE), Fynes to some time after 71 CE, Dhavalikar to c. 124 CE, which he counts as Gautamiputra’s 18th regnal year. His reign itself is dated anywhere from 60–85 to 106–130 CE.",
       "sources": [
         {
           "sourceKey": "wp-gautamiputra",
@@ -13860,7 +13860,7 @@
     },
     {
       "uuid": "toramana",
-      "title": "Toramana leads the Alchon Huns into India",
+      "title": "Reign of Toramana",
       "start": 493,
       "end": 515,
       "tracks": [
@@ -13881,7 +13881,7 @@
       "tracks": [
         "gupta"
       ],
-      "descr": "An inscription at Eran records that Bhanugupta took part in a battle in 510 CE (Fleet’s 1888 reading); a 1981 translation reads it as a battle against the “Maittras”. Toramana may have been the enemy.",
+      "descr": "An inscription at Eran records that Bhanugupta took part in a battle in 510 CE (Fleet’s 1888 reading); a 1981 translation reads it as a battle against the “Maittras”. The Toramana page says Toramana may have been defeated by Bhanugupta in 510, per this inscription; the new reading removes that link.",
       "sources": [
         {
           "sourceKey": "wp-bhanugupta",
@@ -13902,7 +13902,7 @@
       "tracks": [
         "alchon"
       ],
-      "descr": "Toramana’s successor rules from 515; the Chinese monk Song Yun meets him around 520. His campaign is reversed at Sondani, and Xuanzang says the Gupta king Narasimhagupta Baladitya defeated and captured him.",
+      "descr": "He rules from 515; the Chinese monk Song Yun meets him around 520. His campaign is reversed at Sondani, and Xuanzang says the Gupta king Narasimhagupta Baladitya defeated and captured him.",
       "sources": [
         {
           "sourceKey": "wp-mihirakula",
@@ -13940,7 +13940,7 @@
         "alchon",
         "south-asia"
       ],
-      "descr": "Yashodharman of Malwa, and possibly the Gupta emperor Narasimhagupta, defeat a Huna army under Mihirakula and drive the Huns out of India. Yashodharman’s Mandsaur stone inscription is dated 532 AD.",
+      "descr": "Yashodharman, and possibly the Gupta emperor Narasimhagupta, defeat a Huna army under Mihirakula and drive the Huns out of India. Yashodharman’s Mandsaur stone inscription is dated 532 AD.",
       "sources": [
         {
           "sourceKey": "wp-yashodharman",
@@ -14073,7 +14073,7 @@
         "sasanian",
         "hephthalites"
       ],
-      "descr": "The Sasanian king attacks the Hephthalites in 474 and is ambushed and captured near the border of Gurgan; ransomed, he is defeated and captured again in a second campaign in the late 470s or early 480s, and sends his son Kavad to the Hephthalite court as a hostage in 482. In 484 his army falls into a trench dug by Akhshunwar’s forces and he is killed.",
+      "descr": "Peroz attacks the Hephthalites in 474 and is ambushed and captured near the border of Gurgan; ransomed, he is defeated and captured again in a second campaign in the late 470s or early 480s, and sends his son Kavad to the Hephthalite court as a hostage in 482. In 484, charging at Akhshunwar’s forces, he and his army fall into a trench and are killed.",
       "sources": [
         {
           "sourceKey": "wp-peroz",
@@ -14089,7 +14089,7 @@
         "huns",
         "eastern-roman"
       ],
-      "descr": "A Hunnic victory over the Eastern Roman field armies; their commander Arnegisclus is killed and Marcianople falls. Peace comes with a treaty in the fall of 447 or in 448: 6,000 lbs of gold up front and 2,100 lbs a year.",
+      "descr": "A Hunnic victory over the Eastern Roman field armies; Arnegisclus is killed and Marcianople falls. Peace comes with a treaty in the fall of 447 or in 448: 6,000 lbs of gold up front and 2,100 lbs a year.",
       "sources": [
         {
           "sourceKey": "wp-utus",
@@ -14134,7 +14134,7 @@
         "numidia",
         "roman-republic"
       ],
-      "descr": "Caesar defeats the Optimates under Metellus Scipio, with Juba I of Numidia, on 6 April 46 BC (the pre-reform Roman calendar; 7 February by the Julian). Cato commits suicide at Utica, and Juba has a slave kill him after a duel with Petreius. Caesar returns to Rome on 25 July.",
+      "descr": "Caesar defeats the Optimates under Metellus Scipio, with Juba I of Numidia, on 6 April 46 BC (the pre-reform Roman calendar; 7 February by the Julian). Cato commits suicide on news of the defeat, and Juba has a slave kill him after a duel with Petreius. Caesar returns to Rome on 25 July.",
       "sources": [
         {
           "sourceKey": "wp-thapsus",
@@ -14238,7 +14238,7 @@
       "tracks": [
         "celts"
       ],
-      "descr": "Forced to surrender at Alesia in September 52 BC, the Gaulish leader is imprisoned in Rome for six years and executed after Caesar’s triumph in 46 BC.",
+      "descr": "Forced to surrender at Alesia in September 52 BC, Vercingetorix is imprisoned in Rome for six years and executed after Caesar’s triumph in 46 BC.",
       "sources": [
         {
           "sourceKey": "wp-vercingetorix",
@@ -14262,7 +14262,7 @@
         "europe",
         "roman-empire"
       ],
-      "descr": "Between 14 and 16 Germanicus leads punitive operations against the Germanic tribes, defeating Arminius twice (according to Tacitus), first at Idistaviso. Roman troops recover one of Varus’s three lost eagles in 15 and a second in 16. Germanicus dies in Antioch on 10 October 19; Arminius, seeking to become a king, is murdered by opponents in his own tribe in 21.",
+      "descr": "Between 14 and 16 Germanicus leads punitive operations against the Germanic tribes, defeating Arminius twice (according to Tacitus), first at Idistaviso. Roman troops recover one of the three lost legionary eagles in 15 and a second in 16. Germanicus dies in Antioch on 10 October 19; Arminius, seeking to become a king, is murdered by opponents in his own tribe in 21.",
       "sources": [
         {
           "sourceKey": "wp-germanicus",
@@ -14357,7 +14357,7 @@
       "tracks": [
         "anglo-saxons"
       ],
-      "descr": "A Brittonic victory over the Saxons whose date is unknown. Scholars have proposed 493, 501 and 516; McCarthy and Ó Cróinín revise it to February 482 and Breeze (2020) to 493. Bede’s chronology implies 493–500. Gildas, writing c. 543–547, is the earliest source.",
+      "descr": "A Brittonic victory whose date is unknown. Scholars have proposed 493, 501 and 516; McCarthy and Ó Cróinín revise it to February 482 and Breeze (2020) to 493. Bede’s chronology implies 493–500. Gildas’s account was written c. 543–547.",
       "sources": [
         {
           "sourceKey": "wp-badon",
@@ -14575,7 +14575,7 @@
         "chen",
         "northern-qi"
       ],
-      "descr": "In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall his general Wu Mingche holds Shouyang, and the land between the Yangtze and the Huai is entirely in Chen hands.",
+      "descr": "In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall Wu Mingche holds Shouyang, and the land between the Yangtze and the Huai is entirely in Chen hands.",
       "sources": [
         {
           "sourceKey": "wp-wu-mingche",
@@ -14677,7 +14677,7 @@
       "tracks": [
         "asuka"
       ],
-      "descr": "After the assassination of Emperor Sushun in 592, Suiko ascends the throne (15 January 593 by the Gregorian calendar) and reigns until her death in 628. Prince Shōtoku is regent from 593 to 621.",
+      "descr": "Suiko ascends the throne after an assassination in 592 (15 January 593 by the Gregorian calendar, 8 December 592 by the lunar) and reigns until her death in 628. Prince Shōtoku is regent from 593 to 621.",
       "sources": [
         {
           "sourceKey": "wp-suiko",

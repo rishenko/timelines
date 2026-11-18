@@ -334,7 +334,7 @@ primary sources).
   *Yuknoom Chʼeen II* page says 650), Yuknoom Chʼeen II (636–686); Bhadravarman I of Champa (380–413), Bhrikuti's
   marriage (c. 621, before 624, or 632; her historicity is uncertain); Wu Mingche's 573 campaign and his capture on
   20 March 578; Himiko (c. 180/190 – 247/248; embassy 238, or 239 in the *Nihon Shoki*), Suiko and Shōtoku (593).
-- **Judgment calls:** "before 624" is stored as 623; Himiko's start is c. 185 between the two pages' 180 and 190.
+- **Judgment calls:** descriptions were audited against the agents' verbatim quotes the same day and 15 phrases the quotes did not support were removed (e.g. "Yashodharman of Malwa", "Toramana's successor", Cato's suicide "at Utica", Emperor Sushun by name); "before 624" is stored as 623; Himiko's start is c. 185 between the two pages' 180 and 190.
   Already covered, so not added: the siege of Alexandria (in *The Arab conquest of Egypt*) and Hou Jing's
   proclamation (in *The Hou Jing Disturbance*). Bayan I's attack on Thrace (582) is in a section with no sources, so
   it is not used.

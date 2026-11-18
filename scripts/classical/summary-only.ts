@@ -56,7 +56,7 @@ for (const [key, title, slug] of [
 // ---------- South Asia ----------
 ed.event({
   uuid: 'gautamiputra-nahapana', title: 'Gautamiputra Satakarni defeats Nahapana', start: 'c. 78 CE', tracks: ['satavahana', 'indo-scythian'],
-  descr: 'The Satavahana king defeats Nahapana of the Western Satraps (Shakas); most historians agree the two were contemporaries. Scholars date the victory differently: Bhandare to the start of the Saka era (78 CE), Fynes to some time after 71 CE, Dhavalikar to c. 124 CE, which he counts as Gautamiputra’s 18th regnal year. His reign itself is dated anywhere from 60–85 to 106–130 CE.',
+  descr: 'Most historians now agree that Gautamiputra and Nahapana were contemporaries and that Gautamiputra defeated Nahapana; the Nashik inscription says he defeated the Shakas (Western Kshatrapas). Scholars date the victory differently: Bhandare to the start of the Saka era (78 CE), Fynes to some time after 71 CE, Dhavalikar to c. 124 CE, which he counts as Gautamiputra’s 18th regnal year. His reign itself is dated anywhere from 60–85 to 106–130 CE.',
   sources: [S('wp-gautamiputra', 'lead, infobox and Gautamiputra and Nahapana')],
   startDates: [
     C('78 CE', 'wp-gautamiputra', "Gautamiputra and Nahapana (Bhandare: 'start of Saka era, 78 CE')"),
@@ -64,25 +64,25 @@ ed.event({
   ],
 });
 ed.event({
-  uuid: 'toramana', title: 'Toramana leads the Alchon Huns into India', start: '493 CE', end: '515 CE', tracks: ['alchon'],
+  uuid: 'toramana', title: 'Reign of Toramana', start: '493 CE', end: '515 CE', tracks: ['alchon'],
   descr: 'King of the Alchon Huns from 493 until his death in 515. His Kura inscription dates to 495–500 and the Sanjeli copper plate to 502–503; Kausambi was probably sacked by his Alkhons in 497–500. The Eran boar inscription is dated to the first year of his reign, placed between 510 and 513. Prakashadharma of Malwa defeats him in 515.',
   sources: [S('wp-toramana', 'lead, infobox, Defeats, Sack of Kausambi and Punjab inscription')],
 });
 ed.event({
   uuid: 'bhanugupta-eran', title: 'Bhanugupta’s Eran inscription', start: '510 CE', tracks: ['gupta'],
-  descr: 'An inscription at Eran records that Bhanugupta took part in a battle in 510 CE (Fleet’s 1888 reading); a 1981 translation reads it as a battle against the “Maittras”. Toramana may have been the enemy.',
+  descr: 'An inscription at Eran records that Bhanugupta took part in a battle in 510 CE (Fleet’s 1888 reading); a 1981 translation reads it as a battle against the “Maittras”. The Toramana page says Toramana may have been defeated by Bhanugupta in 510, per this inscription; the new reading removes that link.',
   sources: [S('wp-bhanugupta', 'Initial translation (J.F Fleet 1888) and New translation (1981)'), S('wp-toramana', 'Defeats')],
 });
 ed.event({
   uuid: 'mihirakula', title: 'Mihirakula rules the Alchon Huns', start: '515 CE', end: '542 CE', tracks: ['alchon'],
-  descr: 'Toramana’s successor rules from 515; the Chinese monk Song Yun meets him around 520. His campaign is reversed at Sondani, and Xuanzang says the Gupta king Narasimhagupta Baladitya defeated and captured him.',
+  descr: 'He rules from 515; the Chinese monk Song Yun meets him around 520. His campaign is reversed at Sondani, and Xuanzang says the Gupta king Narasimhagupta Baladitya defeated and captured him.',
   sources: [S('wp-mihirakula', 'lead, infobox and Xuanzang')],
   endDates: [C('542 CE', 'wp-mihirakula', 'lead and infobox'), C('540 CE', 'wp-mihirakula', "Alchon Huns succession table ('c.515–540')")],
   links: [{ to: 'toramana', kind: 'related' }],
 });
 ed.event({
   uuid: 'sondani', title: 'Yashodharman defeats Mihirakula at Sondani', start: '528 CE', tracks: ['alchon', 'south-asia'],
-  descr: 'Yashodharman of Malwa, and possibly the Gupta emperor Narasimhagupta, defeat a Huna army under Mihirakula and drive the Huns out of India. Yashodharman’s Mandsaur stone inscription is dated 532 AD.',
+  descr: 'Yashodharman, and possibly the Gupta emperor Narasimhagupta, defeat a Huna army under Mihirakula and drive the Huns out of India. Yashodharman’s Mandsaur stone inscription is dated 532 AD.',
   sources: [S('wp-yashodharman', 'Reign and infobox'), S('wp-mihirakula', 'lead and Mandsaur Pillar inscriptions of Yashodharman')],
   startDates: [
     C('528 CE', 'wp-yashodharman', 'Reign'),
@@ -112,12 +112,12 @@ ed.event({
 });
 ed.event({
   uuid: 'peroz-hephthalites', title: 'Peroz I’s wars with the Hephthalites', start: '474 CE', end: '484 CE', tracks: ['sasanian', 'hephthalites'],
-  descr: 'The Sasanian king attacks the Hephthalites in 474 and is ambushed and captured near the border of Gurgan; ransomed, he is defeated and captured again in a second campaign in the late 470s or early 480s, and sends his son Kavad to the Hephthalite court as a hostage in 482. In 484 his army falls into a trench dug by Akhshunwar’s forces and he is killed.',
+  descr: 'Peroz attacks the Hephthalites in 474 and is ambushed and captured near the border of Gurgan; ransomed, he is defeated and captured again in a second campaign in the late 470s or early 480s, and sends his son Kavad to the Hephthalite court as a hostage in 482. In 484, charging at Akhshunwar’s forces, he and his army fall into a trench and are killed.',
   sources: [S('wp-peroz', 'lead, infobox, First and second war with the Hephthalites, Third war with the Hephthalites and death')],
 });
 ed.event({
   uuid: 'utus-447', title: 'Battle of the Utus', start: '447 CE', tracks: ['huns', 'eastern-roman'],
-  descr: 'A Hunnic victory over the Eastern Roman field armies; their commander Arnegisclus is killed and Marcianople falls. Peace comes with a treaty in the fall of 447 or in 448: 6,000 lbs of gold up front and 2,100 lbs a year.',
+  descr: 'A Hunnic victory over the Eastern Roman field armies; Arnegisclus is killed and Marcianople falls. Peace comes with a treaty in the fall of 447 or in 448: 6,000 lbs of gold up front and 2,100 lbs a year.',
   sources: [S('wp-utus', 'lead, infobox, Battle and Aftermath')],
   links: [{ to: 'attila', kind: 'related' }],
 });
@@ -131,7 +131,7 @@ ed.event({
 // ---------- Africa and Egypt ----------
 ed.event({
   uuid: 'thapsus', title: 'Battle of Thapsus', start: '46 BCE', tracks: ['numidia', 'roman-republic'],
-  descr: 'Caesar defeats the Optimates under Metellus Scipio, with Juba I of Numidia, on 6 April 46 BC (the pre-reform Roman calendar; 7 February by the Julian). Cato commits suicide at Utica, and Juba has a slave kill him after a duel with Petreius. Caesar returns to Rome on 25 July.',
+  descr: 'Caesar defeats the Optimates under Metellus Scipio, with Juba I of Numidia, on 6 April 46 BC (the pre-reform Roman calendar; 7 February by the Julian). Cato commits suicide on news of the defeat, and Juba has a slave kill him after a duel with Petreius. Caesar returns to Rome on 25 July.',
   sources: [S('wp-thapsus', 'lead, infobox, note 2 and Aftermath')],
   links: [{ to: 'numidia-province', kind: 'related' }],
 });
@@ -158,13 +158,13 @@ ed.event({
 });
 ed.event({
   uuid: 'vercingetorix-executed', title: 'Vercingetorix executed', start: '46 BCE', tracks: ['celts'],
-  descr: 'Forced to surrender at Alesia in September 52 BC, the Gaulish leader is imprisoned in Rome for six years and executed after Caesar’s triumph in 46 BC.',
+  descr: 'Forced to surrender at Alesia in September 52 BC, Vercingetorix is imprisoned in Rome for six years and executed after Caesar’s triumph in 46 BC.',
   sources: [S('wp-vercingetorix', 'lead and infobox')],
   links: [{ to: 'alesia', kind: 'related' }],
 });
 ed.event({
   uuid: 'germanicus-germania', title: 'Germanicus campaigns in Germania', start: '14 CE', end: '16 CE', tracks: ['europe', 'roman-empire'],
-  descr: 'Between 14 and 16 Germanicus leads punitive operations against the Germanic tribes, defeating Arminius twice (according to Tacitus), first at Idistaviso. Roman troops recover one of Varus’s three lost eagles in 15 and a second in 16. Germanicus dies in Antioch on 10 October 19; Arminius, seeking to become a king, is murdered by opponents in his own tribe in 21.',
+  descr: 'Between 14 and 16 Germanicus leads punitive operations against the Germanic tribes, defeating Arminius twice (according to Tacitus), first at Idistaviso. Roman troops recover one of the three lost legionary eagles in 15 and a second in 16. Germanicus dies in Antioch on 10 October 19; Arminius, seeking to become a king, is murdered by opponents in his own tribe in 21.',
   sources: [S('wp-germanicus', 'lead and infobox'), S('wp-arminius', 'lead, infobox and Roman retribution and death')],
   links: [{ to: 'teutoburg', kind: 'related' }],
 });
@@ -187,7 +187,7 @@ ed.event({
 });
 ed.event({
   uuid: 'badon', title: 'Battle of Badon', start: 'c. 502 CE', tracks: ['anglo-saxons'],
-  descr: 'A Brittonic victory over the Saxons whose date is unknown. Scholars have proposed 493, 501 and 516; McCarthy and Ó Cróinín revise it to February 482 and Breeze (2020) to 493. Bede’s chronology implies 493–500. Gildas, writing c. 543–547, is the earliest source.',
+  descr: 'A Brittonic victory whose date is unknown. Scholars have proposed 493, 501 and 516; McCarthy and Ó Cróinín revise it to February 482 and Breeze (2020) to 493. Bede’s chronology implies 493–500. Gildas’s account was written c. 543–547.',
   sources: [S('wp-badon', 'infobox, Gildas, Bede and Scholarship > Date')],
   startDates: [
     RCE(500, 504, 'wp-badon', "infobox ('Unknown, c. 500–504 AD')"),
@@ -240,7 +240,7 @@ ed.event({
 // ---------- China and Japan ----------
 ed.event({
   uuid: 'chen-north-573', title: 'Wu Mingche’s northern campaign', start: '573 CE', tracks: ['chen', 'northern-qi'],
-  descr: 'In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall his general Wu Mingche holds Shouyang, and the land between the Yangtze and the Huai is entirely in Chen hands.',
+  descr: 'In spring 573 Emperor Xuan of Chen attacks Northern Qi; by fall Wu Mingche holds Shouyang, and the land between the Yangtze and the Huai is entirely in Chen hands.',
   sources: [S('wp-wu-mingche', 'During Emperor Xuan’s reign'), S('wp-xuan-chen', 'Early reign')],
 });
 ed.event({
@@ -258,7 +258,7 @@ ed.event({
 });
 ed.event({
   uuid: 'suiko', title: 'Empress Suiko; Prince Shōtoku regent', start: '593 CE', end: '628 CE', tracks: ['asuka'],
-  descr: 'After the assassination of Emperor Sushun in 592, Suiko ascends the throne (15 January 593 by the Gregorian calendar) and reigns until her death in 628. Prince Shōtoku is regent from 593 to 621.',
+  descr: 'Suiko ascends the throne after an assassination in 592 (15 January 593 by the Gregorian calendar, 8 December 592 by the lunar) and reigns until her death in 628. Prince Shōtoku is regent from 593 to 621.',
   sources: [S('wp-suiko', 'lead, infobox and Biography')],
   links: [{ to: 'seventeen-article', kind: 'related' }],
 });
