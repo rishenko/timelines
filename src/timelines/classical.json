@@ -38,7 +38,34 @@
     "range": {
       "start": -499,
       "end": 650
-    }
+    },
+    "collapsed": [
+      "north-africa",
+      "nubia",
+      "horn",
+      "sub-saharan",
+      "europe",
+      "rome",
+      "greece",
+      "egypt",
+      "levant",
+      "anatolia",
+      "caucasus",
+      "persia",
+      "arabia",
+      "steppe",
+      "south-asia",
+      "se-asia",
+      "tibet",
+      "china",
+      "korea-japan",
+      "island-sea",
+      "oceania",
+      "arctic",
+      "north-america",
+      "mesoamerica",
+      "south-america"
+    ]
   },
   "tags": {
     "wikipedia": {
