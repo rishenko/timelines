@@ -2,7 +2,7 @@
 
 Done in the first pass (from REDACTED's "Genericize" plan): per-timeline config (title,
 credits, calendar, increments, theme, custom source tag, pinned tracks), BCE/CE without a year 0,
-round-year ticks, three-level nesting, track lifespans, date claims with computed error windows,
+round-year ticks, nesting to any depth (groups → regions → civilizations → periods), track lifespans, date claims with computed error windows,
 switchable chronologies, `succeeds`/`conquers` links, a timeline picker with per-timeline drafts,
 importers for old REDACTED files, and the ancient civilizations dataset.
 

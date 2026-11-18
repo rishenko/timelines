@@ -6,11 +6,10 @@ import { buildLanes, layoutLanes, type Mark } from './layout.ts';
 import { formatEventDates } from '../lib/years.ts';
 import { eraStart, formatYear, isMajorTick } from '../lib/calendar.ts';
 import type { ResolvedEvent, ResolvedSpan } from '../lib/chronology.ts';
-import { MAX_DEPTH } from '../data/validate.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { safeUrl } from '../lib/urls.ts';
 
-export const LABEL_W = 220;
+export const LABEL_W = 236;
 const END_PAD = 260;
 const MARK_H = 22;
 const POINT_HALF = 7;
@@ -75,6 +74,18 @@ export function TimelineView(props: Props) {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   const lanes = useMemo(() => buildLanes(data.tracks, visibleTracks, collapsed), [data.tracks, visibleTracks, collapsed]);
+  // A top-level row with sub-rows is a group: its rows share its colour as a background tint.
+  const groupColor = useMemo(() => {
+    const byId = new Map(data.tracks.map((t) => [t.id, t]));
+    const parents = new Set(data.tracks.map((t) => t.parent));
+    const out = new Map<string, string>();
+    for (const t of data.tracks) {
+      let root = t;
+      for (let n = 0; root.parent && byId.has(root.parent) && n < data.tracks.length; n++) root = byId.get(root.parent)!;
+      if (parents.has(root.id)) out.set(t.id, root.color);
+    }
+    return out;
+  }, [data.tracks]);
   const laneSpans = useMemo(() => {
     const out: ResolvedSpan[] = [];
     for (const l of lanes) for (const id of l.members) {
@@ -281,8 +292,8 @@ export function TimelineView(props: Props) {
             return (
               <div
                 key={lane.id}
-                className={`tl-lane depth-${lane.depth} ${lane.collapsed ? 'collapsed' : ''}`}
-                style={{ height, '--track-color': lane.track.color } as React.CSSProperties}
+                className={`tl-lane${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
+                style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
                 onDoubleClick={onLaneDoubleClick(lane.id)}
               >
                 {lane.members.map((id) => {
@@ -306,15 +317,9 @@ export function TimelineView(props: Props) {
                       <button className="icon small" title="Move down" onClick={() => props.onMoveTrack(lane.id, 1)}>
                         ↓
                       </button>
-                      {lane.depth < MAX_DEPTH && (
-                        <button
-                          className="icon small"
-                          title={`Add a sub-track under ${lane.track.name}`}
-                          onClick={() => props.onAddTrack(lane.id)}
-                        >
-                          +
-                        </button>
-                      )}
+                      <button className="icon small" title={`Add a sub-track under ${lane.track.name}`} onClick={() => props.onAddTrack(lane.id)}>
+                        +
+                      </button>
                     </span>
                   )}
                   {(overflow > 0 || expanded[lane.id]) && (

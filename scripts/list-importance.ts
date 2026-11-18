@@ -1,4 +1,6 @@
-// Writes a review list of a timeline's key and minor events, grouped by region, as Markdown.
+// Writes a review list of a timeline's key and minor events, grouped by region, as Markdown. When the
+// top-level rows are groups of regions (they have grandchildren), each group gets a heading and each
+// region inside it a sub-heading.
 //   node scripts/list-importance.ts src/timelines/ancient-near-east.json docs/ancient-key-events.md
 // Reads the compiled timeline (so dates are already numbers) and prints each event's best-estimate
 // dates. Re-run after changing importance to refresh the list.
@@ -14,9 +16,12 @@ interface Tr { id: string; name: string; parent?: string }
 const d: { meta: { title: string }; tracks: Tr[]; events: Ev[] } = JSON.parse(readFileSync(input, 'utf8'));
 
 const byId = new Map(d.tracks.map((t) => [t.id, t]));
-const regionOf = (id: string) => {
+const kids = (id: string) => d.tracks.filter((t) => t.parent === id);
+const isGroup = (id: string) => kids(id).some((k) => kids(k.id).length > 0);
+/** The section an event's row falls in: a region inside a group, else the top-level row. */
+const sectionOf = (id: string) => {
   let t = byId.get(id)!;
-  while (t.parent) t = byId.get(t.parent)!;
+  while (t.parent && !(byId.get(t.parent)!.parent === undefined && isGroup(t.parent))) t = byId.get(t.parent)!;
   return t.id;
 };
 const year = (y: number) => (y <= 0 ? `${1 - y} BCE` : `${y} CE`);
@@ -35,13 +40,13 @@ const lines: string[] = [
 const count = (n: number) => d.events.filter((e) => (e.importance ?? 2) === n).length;
 lines.push(`Totals: ${count(1)} key, ${count(2)} normal, ${count(3)} minor (${d.events.length} events).`, '');
 
-for (const r of regions) {
-  // an event belongs to the region of its first row
-  const evs = d.events.filter((e) => regionOf(e.tracks[0]) === r.id).sort((a, b) => a.start - b.start);
-  if (!evs.length) continue;
+const section = (r: Tr, h: string) => {
+  // an event belongs to the section of its first row
+  const evs = d.events.filter((e) => sectionOf(e.tracks[0]) === r.id).sort((a, b) => a.start - b.start);
+  if (!evs.length) return;
   const key = evs.filter((e) => e.importance === 1);
   const minor = evs.filter((e) => e.importance === 3);
-  lines.push(`## ${r.name}`, '', `${key.length} key, ${evs.length - key.length - minor.length} normal, ${minor.length} minor.`, '');
+  lines.push(`${h} ${r.name}`, '', `${key.length} key, ${evs.length - key.length - minor.length} normal, ${minor.length} minor.`, '');
   if (key.length) {
     lines.push('**Key**', '');
     for (const e of key) lines.push(`- ${e.title} (${when(e)}; ${rowNames(e)}) \`${e.uuid}\``);
@@ -52,6 +57,15 @@ for (const r of regions) {
     for (const e of minor) lines.push(`- ${e.title} (${when(e)}) \`${e.uuid}\``);
     lines.push('');
   }
+};
+for (const r of regions) {
+  if (!isGroup(r.id)) {
+    section(r, '##');
+    continue;
+  }
+  lines.push(`## ${r.name}`, '');
+  section(r, '###'); // events placed on the group row itself, if any
+  for (const k of kids(r.id)) section(k, '###');
 }
 writeFileSync(output, lines.join('\n'));
 console.log('wrote', output);

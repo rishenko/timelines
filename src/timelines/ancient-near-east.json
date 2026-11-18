@@ -47,7 +47,17 @@
       "nubia",
       "sub-saharan",
       "se-asia",
-      "korea-japan"
+      "korea-japan",
+      "europe",
+      "west-med",
+      "aegean",
+      "north-africa",
+      "levant",
+      "anatolia",
+      "mesopotamia",
+      "iran",
+      "indus",
+      "china"
     ]
   },
   "tags": {
@@ -2240,9 +2250,233 @@
   },
   "tracks": [
     {
+      "id": "africa",
+      "name": "Africa",
+      "color": "#b8862a"
+    },
+    {
+      "id": "north-africa",
+      "name": "North Africa",
+      "color": "#a88a5a",
+      "parent": "africa"
+    },
+    {
+      "id": "libyans",
+      "name": "Libyans",
+      "color": "#b89a6a",
+      "parent": "north-africa"
+    },
+    {
+      "id": "cyrene",
+      "name": "Cyrene",
+      "color": "#5a7ab0",
+      "parent": "north-africa",
+      "span": {
+        "start": -630,
+        "end": -95,
+        "startDates": [
+          {
+            "year": -630,
+            "source": {
+              "sourceKey": "wp-cyrene",
+              "sourceLocation": "infobox (traditional)"
+            }
+          },
+          {
+            "year": -649,
+            "source": {
+              "sourceKey": "wp-cyrene",
+              "sourceLocation": "History ('mid-seventh century BC', archaeology)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "garamantes",
+      "name": "Garamantes (Fezzan)",
+      "color": "#a07a5a",
+      "parent": "north-africa",
+      "span": {
+        "start": -999,
+        "end": 690,
+        "startDates": [
+          {
+            "year": -999,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead ('at least as early as 1000 BC')"
+            }
+          },
+          {
+            "year": -599,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "Origin and prehistory ('From the 6th century BCE … a powerful polity')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 667,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead ('late 7th century AD')"
+            }
+          },
+          {
+            "year": 700,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead: end of century"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "sub-saharan",
+      "name": "Sub-Saharan Africa",
+      "color": "#7a8a3a",
+      "parent": "africa"
+    },
+    {
+      "id": "punt",
+      "name": "Land of Punt (Horn of Africa)",
+      "color": "#9a8a3a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -2499,
+        "end": -979,
+        "circa": true
+      }
+    },
+    {
+      "id": "dmt",
+      "name": "Dʿmt (Eritrea and Tigray)",
+      "color": "#8a6a4a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -749,
+        "end": -399,
+        "startDates": [
+          {
+            "year": -799,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox ('8th c. BC'): start of century"
+            }
+          },
+          {
+            "year": -700,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox: end of century"
+            }
+          },
+          {
+            "year": -979,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "short description ('c. 980–400 BCE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -399,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "History ('approximately 800/700–400 BC')"
+            }
+          },
+          {
+            "year": -300,
+            "source": {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "infobox ('4th c. BC'): end of century"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "tichitt",
+      "name": "Tichitt culture (Mauritania)",
+      "color": "#a08a5a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -1999,
+        "end": -299,
+        "startDates": [
+          {
+            "year": -1999,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": -2599,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "Chronology ('Pre-Tichitt … 2600 to 1900 BCE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -299,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": -399,
+            "source": {
+              "sourceKey": "wp-tichitt",
+              "sourceLocation": "Chronology ('Late Tichitt … 1000 to 400 BCE')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "nok",
+      "name": "Nok culture (Nigeria)",
+      "color": "#b0703a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -1499,
+        "end": 0,
+        "circa": true
+      }
+    },
+    {
+      "id": "bantu",
+      "name": "Bantu expansion",
+      "color": "#6a7a3a",
+      "parent": "sub-saharan",
+      "span": {
+        "start": -3999,
+        "end": 500,
+        "circa": true
+      }
+    },
+    {
+      "id": "europe-med",
+      "name": "Europe & Mediterranean",
+      "color": "#3f6aa8"
+    },
+    {
       "id": "europe",
       "name": "Europe",
-      "color": "#5b6e8f"
+      "color": "#5b6e8f",
+      "parent": "europe-med"
     },
     {
       "id": "megaliths",
@@ -2427,7 +2661,8 @@
     {
       "id": "west-med",
       "name": "Western Mediterranean",
-      "color": "#3f7f8a"
+      "color": "#3f7f8a",
+      "parent": "europe-med"
     },
     {
       "id": "carthage",
@@ -2643,226 +2878,17 @@
       }
     },
     {
-      "id": "sub-saharan",
-      "name": "Sub-Saharan Africa",
-      "color": "#7a8a3a"
-    },
-    {
-      "id": "punt",
-      "name": "Land of Punt (Horn of Africa)",
-      "color": "#9a8a3a",
-      "parent": "sub-saharan",
-      "span": {
-        "start": -2499,
-        "end": -979,
-        "circa": true
-      }
-    },
-    {
-      "id": "dmt",
-      "name": "Dʿmt (Eritrea and Tigray)",
-      "color": "#8a6a4a",
-      "parent": "sub-saharan",
-      "span": {
-        "start": -749,
-        "end": -399,
-        "startDates": [
-          {
-            "year": -799,
-            "source": {
-              "sourceKey": "wp-dmt",
-              "sourceLocation": "infobox ('8th c. BC'): start of century"
-            }
-          },
-          {
-            "year": -700,
-            "source": {
-              "sourceKey": "wp-dmt",
-              "sourceLocation": "infobox: end of century"
-            }
-          },
-          {
-            "year": -979,
-            "source": {
-              "sourceKey": "wp-dmt",
-              "sourceLocation": "short description ('c. 980–400 BCE')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -399,
-            "source": {
-              "sourceKey": "wp-dmt",
-              "sourceLocation": "History ('approximately 800/700–400 BC')"
-            }
-          },
-          {
-            "year": -300,
-            "source": {
-              "sourceKey": "wp-dmt",
-              "sourceLocation": "infobox ('4th c. BC'): end of century"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "tichitt",
-      "name": "Tichitt culture (Mauritania)",
-      "color": "#a08a5a",
-      "parent": "sub-saharan",
-      "span": {
-        "start": -1999,
-        "end": -299,
-        "startDates": [
-          {
-            "year": -1999,
-            "source": {
-              "sourceKey": "wp-tichitt",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -2599,
-            "source": {
-              "sourceKey": "wp-tichitt",
-              "sourceLocation": "Chronology ('Pre-Tichitt … 2600 to 1900 BCE')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -299,
-            "source": {
-              "sourceKey": "wp-tichitt",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -399,
-            "source": {
-              "sourceKey": "wp-tichitt",
-              "sourceLocation": "Chronology ('Late Tichitt … 1000 to 400 BCE')"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "nok",
-      "name": "Nok culture (Nigeria)",
-      "color": "#b0703a",
-      "parent": "sub-saharan",
-      "span": {
-        "start": -1499,
-        "end": 0,
-        "circa": true
-      }
-    },
-    {
-      "id": "bantu",
-      "name": "Bantu expansion",
-      "color": "#6a7a3a",
-      "parent": "sub-saharan",
-      "span": {
-        "start": -3999,
-        "end": 500,
-        "circa": true
-      }
-    },
-    {
-      "id": "north-africa",
-      "name": "North Africa",
-      "color": "#a88a5a"
-    },
-    {
-      "id": "libyans",
-      "name": "Libyans",
-      "color": "#b89a6a",
-      "parent": "north-africa"
-    },
-    {
-      "id": "cyrene",
-      "name": "Cyrene",
-      "color": "#5a7ab0",
-      "parent": "north-africa",
-      "span": {
-        "start": -630,
-        "end": -95,
-        "startDates": [
-          {
-            "year": -630,
-            "source": {
-              "sourceKey": "wp-cyrene",
-              "sourceLocation": "infobox (traditional)"
-            }
-          },
-          {
-            "year": -649,
-            "source": {
-              "sourceKey": "wp-cyrene",
-              "sourceLocation": "History ('mid-seventh century BC', archaeology)"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "garamantes",
-      "name": "Garamantes (Fezzan)",
-      "color": "#a07a5a",
-      "parent": "north-africa",
-      "span": {
-        "start": -999,
-        "end": 690,
-        "startDates": [
-          {
-            "year": -999,
-            "source": {
-              "sourceKey": "wp-garamantes",
-              "sourceLocation": "lead ('at least as early as 1000 BC')"
-            }
-          },
-          {
-            "year": -599,
-            "source": {
-              "sourceKey": "wp-garamantes",
-              "sourceLocation": "Origin and prehistory ('From the 6th century BCE … a powerful polity')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 667,
-            "source": {
-              "sourceKey": "wp-garamantes",
-              "sourceLocation": "lead ('late 7th century AD')"
-            }
-          },
-          {
-            "year": 700,
-            "source": {
-              "sourceKey": "wp-garamantes",
-              "sourceLocation": "lead: end of century"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
       "id": "sea-peoples",
       "name": "Sea Peoples",
-      "color": "#6f8a8f"
+      "color": "#6f8a8f",
+      "parent": "europe-med"
     },
     {
       "id": "aegean",
       "name": "Aegean",
       "color": "#2f6fae",
-      "chronology": "aegean-high"
+      "chronology": "aegean-high",
+      "parent": "europe-med"
     },
     {
       "id": "cycladic",
@@ -3152,199 +3178,16 @@
       }
     },
     {
-      "id": "anatolia",
-      "name": "Anatolia",
-      "color": "#a8452f",
-      "chronology": "middle"
-    },
-    {
-      "id": "hittites",
-      "name": "Hittites",
-      "color": "#c25a3a",
-      "parent": "anatolia",
-      "span": {
-        "start": -1649,
-        "end": -1189,
-        "endDates": [
-          {
-            "year": -1189,
-            "source": {
-              "sourceKey": "wp-hittites",
-              "sourceLocation": "infobox (disestablished)"
-            }
-          },
-          {
-            "year": -1179,
-            "source": {
-              "sourceKey": "wp-hattusa",
-              "sourceLocation": "infobox ('Abandoned c. 1180 BC')"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "hit-old",
-      "name": "Old Kingdom",
-      "color": "#cf6b47",
-      "parent": "hittites",
-      "span": {
-        "start": -1649,
-        "end": -1499,
-        "circa": true
-      }
-    },
-    {
-      "id": "hit-middle",
-      "name": "Middle Kingdom",
-      "color": "#b8604a",
-      "parent": "hittites",
-      "span": {
-        "start": -1499,
-        "end": -1399,
-        "circa": true
-      }
-    },
-    {
-      "id": "hit-new",
-      "name": "New Kingdom (Empire)",
-      "color": "#a94a30",
-      "parent": "hittites",
-      "span": {
-        "start": -1399,
-        "end": -1189,
-        "circa": true
-      }
-    },
-    {
-      "id": "phrygia",
-      "name": "Phrygia",
-      "color": "#b0704a",
-      "parent": "anatolia",
-      "span": {
-        "start": -1199,
-        "end": -674,
-        "circa": true
-      }
-    },
-    {
-      "id": "lydia",
-      "name": "Lydia",
-      "color": "#c08a3a",
-      "parent": "anatolia",
-      "span": {
-        "start": -799,
-        "end": -545,
-        "startDates": [
-          {
-            "year": -799,
-            "source": {
-              "sourceKey": "wp-lydia",
-              "sourceLocation": "Origins ('At approximately around 800 BC')"
-            }
-          },
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "wp-lydia",
-              "sourceLocation": "infobox (1200–546 BC)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -545,
-            "source": {
-              "sourceKey": "wp-lydia",
-              "sourceLocation": "infobox and lead"
-            }
-          },
-          {
-            "year": -546,
-            "source": {
-              "sourceKey": "wp-croesus",
-              "sourceLocation": "short description ('to 547 BC')"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "lycia",
-      "name": "Lycia",
-      "color": "#9a6a5a",
-      "parent": "anatolia",
-      "span": {
-        "start": -1399,
-        "end": -545,
-        "startDates": [
-          {
-            "year": -1499,
-            "source": {
-              "sourceKey": "wp-lycia",
-              "sourceLocation": "lead ('from 15–14th centuries BC (as Lukka)')"
-            }
-          },
-          {
-            "year": -1300,
-            "source": {
-              "sourceKey": "wp-lycia",
-              "sourceLocation": "lead (end of the 14th century)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -545,
-            "source": {
-              "sourceKey": "wp-lycia",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -539,
-            "source": {
-              "sourceKey": "wp-lycia",
-              "sourceLocation": "contents ('Acquisition by Cyrus the Great (circa 540 BC)')"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "urartu",
-      "name": "Urartu",
-      "color": "#9a5a48",
-      "parent": "anatolia",
-      "span": {
-        "start": -859,
-        "end": -589,
-        "endDates": [
-          {
-            "year": -589,
-            "source": {
-              "sourceKey": "wp-urartu",
-              "sourceLocation": "infobox (Median conquest)"
-            }
-          },
-          {
-            "year": -546,
-            "source": {
-              "sourceKey": "wp-urartu",
-              "sourceLocation": "infobox (Achaemenid conquest, 590 BC/547 BC)"
-            }
-          }
-        ]
-      }
+      "id": "near-east",
+      "name": "Ancient Near East",
+      "color": "#a8483a"
     },
     {
       "id": "egypt",
       "name": "Egypt and Nubia",
       "color": "#b8871b",
-      "chronology": "shaw"
+      "chronology": "shaw",
+      "parent": "near-east"
     },
     {
       "id": "eg-predynastic",
@@ -3754,7 +3597,8 @@
     {
       "id": "levant",
       "name": "Levant",
-      "color": "#9a6a2f"
+      "color": "#9a6a2f",
+      "parent": "near-east"
     },
     {
       "id": "canaan",
@@ -3906,10 +3750,201 @@
       "parent": "levant"
     },
     {
+      "id": "anatolia",
+      "name": "Anatolia",
+      "color": "#a8452f",
+      "chronology": "middle",
+      "parent": "near-east"
+    },
+    {
+      "id": "hittites",
+      "name": "Hittites",
+      "color": "#c25a3a",
+      "parent": "anatolia",
+      "span": {
+        "start": -1649,
+        "end": -1189,
+        "endDates": [
+          {
+            "year": -1189,
+            "source": {
+              "sourceKey": "wp-hittites",
+              "sourceLocation": "infobox (disestablished)"
+            }
+          },
+          {
+            "year": -1179,
+            "source": {
+              "sourceKey": "wp-hattusa",
+              "sourceLocation": "infobox ('Abandoned c. 1180 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "hit-old",
+      "name": "Old Kingdom",
+      "color": "#cf6b47",
+      "parent": "hittites",
+      "span": {
+        "start": -1649,
+        "end": -1499,
+        "circa": true
+      }
+    },
+    {
+      "id": "hit-middle",
+      "name": "Middle Kingdom",
+      "color": "#b8604a",
+      "parent": "hittites",
+      "span": {
+        "start": -1499,
+        "end": -1399,
+        "circa": true
+      }
+    },
+    {
+      "id": "hit-new",
+      "name": "New Kingdom (Empire)",
+      "color": "#a94a30",
+      "parent": "hittites",
+      "span": {
+        "start": -1399,
+        "end": -1189,
+        "circa": true
+      }
+    },
+    {
+      "id": "phrygia",
+      "name": "Phrygia",
+      "color": "#b0704a",
+      "parent": "anatolia",
+      "span": {
+        "start": -1199,
+        "end": -674,
+        "circa": true
+      }
+    },
+    {
+      "id": "lydia",
+      "name": "Lydia",
+      "color": "#c08a3a",
+      "parent": "anatolia",
+      "span": {
+        "start": -799,
+        "end": -545,
+        "startDates": [
+          {
+            "year": -799,
+            "source": {
+              "sourceKey": "wp-lydia",
+              "sourceLocation": "Origins ('At approximately around 800 BC')"
+            }
+          },
+          {
+            "year": -1199,
+            "source": {
+              "sourceKey": "wp-lydia",
+              "sourceLocation": "infobox (1200–546 BC)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -545,
+            "source": {
+              "sourceKey": "wp-lydia",
+              "sourceLocation": "infobox and lead"
+            }
+          },
+          {
+            "year": -546,
+            "source": {
+              "sourceKey": "wp-croesus",
+              "sourceLocation": "short description ('to 547 BC')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "lycia",
+      "name": "Lycia",
+      "color": "#9a6a5a",
+      "parent": "anatolia",
+      "span": {
+        "start": -1399,
+        "end": -545,
+        "startDates": [
+          {
+            "year": -1499,
+            "source": {
+              "sourceKey": "wp-lycia",
+              "sourceLocation": "lead ('from 15–14th centuries BC (as Lukka)')"
+            }
+          },
+          {
+            "year": -1300,
+            "source": {
+              "sourceKey": "wp-lycia",
+              "sourceLocation": "lead (end of the 14th century)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -545,
+            "source": {
+              "sourceKey": "wp-lycia",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": -539,
+            "source": {
+              "sourceKey": "wp-lycia",
+              "sourceLocation": "contents ('Acquisition by Cyrus the Great (circa 540 BC)')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "urartu",
+      "name": "Urartu",
+      "color": "#9a5a48",
+      "parent": "anatolia",
+      "span": {
+        "start": -859,
+        "end": -589,
+        "endDates": [
+          {
+            "year": -589,
+            "source": {
+              "sourceKey": "wp-urartu",
+              "sourceLocation": "infobox (Median conquest)"
+            }
+          },
+          {
+            "year": -546,
+            "source": {
+              "sourceKey": "wp-urartu",
+              "sourceLocation": "infobox (Achaemenid conquest, 590 BC/547 BC)"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "mesopotamia",
       "name": "Mesopotamia",
       "color": "#3f7d34",
-      "chronology": "middle"
+      "chronology": "middle",
+      "parent": "near-east"
     },
     {
       "id": "mitanni",
@@ -4366,7 +4401,8 @@
     {
       "id": "iran",
       "name": "Iran & Central Asia",
-      "color": "#2f8a8a"
+      "color": "#2f8a8a",
+      "parent": "near-east"
     },
     {
       "id": "elam",
@@ -4589,9 +4625,21 @@
       }
     },
     {
+      "id": "dilmun",
+      "name": "Dilmun (Persian Gulf)",
+      "color": "#8a8f6a",
+      "parent": "near-east"
+    },
+    {
+      "id": "steppe-south-asia",
+      "name": "Steppe & South Asia",
+      "color": "#7a8a2a"
+    },
+    {
       "id": "steppe",
       "name": "Eurasian Steppe",
-      "color": "#9a8a4a"
+      "color": "#9a8a4a",
+      "parent": "steppe-south-asia"
     },
     {
       "id": "botai",
@@ -4925,14 +4973,10 @@
       }
     },
     {
-      "id": "dilmun",
-      "name": "Dilmun (Persian Gulf)",
-      "color": "#8a8f6a"
-    },
-    {
       "id": "indus",
       "name": "South Asia",
-      "color": "#b5552b"
+      "color": "#b5552b",
+      "parent": "steppe-south-asia"
     },
     {
       "id": "harappan",
@@ -4958,6 +5002,39 @@
             }
           }
         ],
+        "circa": true
+      }
+    },
+    {
+      "id": "ind-early",
+      "name": "Early Harappan",
+      "color": "#cf7a4f",
+      "parent": "harappan",
+      "span": {
+        "start": -3299,
+        "end": -2599,
+        "circa": true
+      }
+    },
+    {
+      "id": "ind-mature",
+      "name": "Mature Harappan",
+      "color": "#b44e24",
+      "parent": "harappan",
+      "span": {
+        "start": -2599,
+        "end": -1899,
+        "circa": true
+      }
+    },
+    {
+      "id": "ind-late",
+      "name": "Late Harappan",
+      "color": "#c98a66",
+      "parent": "harappan",
+      "span": {
+        "start": -1899,
+        "end": -1299,
         "circa": true
       }
     },
@@ -5000,42 +5077,15 @@
       }
     },
     {
-      "id": "ind-early",
-      "name": "Early Harappan",
-      "color": "#cf7a4f",
-      "parent": "harappan",
-      "span": {
-        "start": -3299,
-        "end": -2599,
-        "circa": true
-      }
-    },
-    {
-      "id": "ind-mature",
-      "name": "Mature Harappan",
-      "color": "#b44e24",
-      "parent": "harappan",
-      "span": {
-        "start": -2599,
-        "end": -1899,
-        "circa": true
-      }
-    },
-    {
-      "id": "ind-late",
-      "name": "Late Harappan",
-      "color": "#c98a66",
-      "parent": "harappan",
-      "span": {
-        "start": -1899,
-        "end": -1299,
-        "circa": true
-      }
+      "id": "east-asia",
+      "name": "East & Southeast Asia",
+      "color": "#6a4a9a"
     },
     {
       "id": "se-asia",
       "name": "Mainland Southeast Asia",
-      "color": "#4a8a6a"
+      "color": "#4a8a6a",
+      "parent": "east-asia"
     },
     {
       "id": "ban-chiang",
@@ -5112,92 +5162,8 @@
       "id": "china",
       "name": "China",
       "color": "#b0302f",
-      "chronology": "xszcp"
-    },
-    {
-      "id": "korea-japan",
-      "name": "Korea and Japan",
-      "color": "#8a4a6a"
-    },
-    {
-      "id": "gojoseon",
-      "name": "Old Chosŏn (Gojoseon)",
-      "color": "#7a4a7a",
-      "parent": "korea-japan"
-    },
-    {
-      "id": "mumun",
-      "name": "Mumun pottery period (Korea)",
-      "color": "#9a5a6a",
-      "parent": "korea-japan",
-      "span": {
-        "start": -1499,
-        "end": -299,
-        "circa": true
-      }
-    },
-    {
-      "id": "jomon",
-      "name": "Jōmon (Middle to Final)",
-      "color": "#8a6a5a",
-      "parent": "korea-japan",
-      "span": {
-        "start": -3519,
-        "end": -299,
-        "endDates": [
-          {
-            "year": -299,
-            "source": {
-              "sourceKey": "wp-jomon",
-              "sourceLocation": "lead and Chronology ('refined … to 300 BC')"
-            }
-          },
-          {
-            "year": -499,
-            "source": {
-              "sourceKey": "wp-jomon",
-              "sourceLocation": "Chronology ('Final (1,250–500 BC)')"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
-      "id": "yayoi",
-      "name": "Yayoi period (Japan)",
-      "color": "#a06a4a",
-      "parent": "korea-japan",
-      "span": {
-        "start": -299,
-        "end": 300,
-        "startDates": [
-          {
-            "year": -299,
-            "source": {
-              "sourceKey": "wp-yayoi",
-              "sourceLocation": "Features ('generally accepted to date from circa 300 BC')"
-            }
-          },
-          {
-            "year": -899,
-            "margin": 100,
-            "source": {
-              "sourceKey": "wp-yayoi",
-              "sourceLocation": "Features (radiocarbon, 'highly controversial': 'between ca. 1000 BC and 800 BC')"
-            }
-          },
-          {
-            "year": -399,
-            "margin": 100,
-            "source": {
-              "sourceKey": "wp-jomon",
-              "sourceLocation": "Chronology (radiocarbon: 'between 500 and 300 BC')"
-            }
-          }
-        ],
-        "circa": true
-      }
+      "chronology": "xszcp",
+      "parent": "east-asia"
     },
     {
       "id": "liangzhu",
@@ -5507,6 +5473,92 @@
       "span": {
         "start": -770,
         "end": -255
+      }
+    },
+    {
+      "id": "korea-japan",
+      "name": "Korea and Japan",
+      "color": "#8a4a6a",
+      "parent": "east-asia"
+    },
+    {
+      "id": "gojoseon",
+      "name": "Old Chosŏn (Gojoseon)",
+      "color": "#7a4a7a",
+      "parent": "korea-japan"
+    },
+    {
+      "id": "mumun",
+      "name": "Mumun pottery period (Korea)",
+      "color": "#9a5a6a",
+      "parent": "korea-japan",
+      "span": {
+        "start": -1499,
+        "end": -299,
+        "circa": true
+      }
+    },
+    {
+      "id": "jomon",
+      "name": "Jōmon (Middle to Final)",
+      "color": "#8a6a5a",
+      "parent": "korea-japan",
+      "span": {
+        "start": -3519,
+        "end": -299,
+        "endDates": [
+          {
+            "year": -299,
+            "source": {
+              "sourceKey": "wp-jomon",
+              "sourceLocation": "lead and Chronology ('refined … to 300 BC')"
+            }
+          },
+          {
+            "year": -499,
+            "source": {
+              "sourceKey": "wp-jomon",
+              "sourceLocation": "Chronology ('Final (1,250–500 BC)')"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "yayoi",
+      "name": "Yayoi period (Japan)",
+      "color": "#a06a4a",
+      "parent": "korea-japan",
+      "span": {
+        "start": -299,
+        "end": 300,
+        "startDates": [
+          {
+            "year": -299,
+            "source": {
+              "sourceKey": "wp-yayoi",
+              "sourceLocation": "Features ('generally accepted to date from circa 300 BC')"
+            }
+          },
+          {
+            "year": -899,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-yayoi",
+              "sourceLocation": "Features (radiocarbon, 'highly controversial': 'between ca. 1000 BC and 800 BC')"
+            }
+          },
+          {
+            "year": -399,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-jomon",
+              "sourceLocation": "Chronology (radiocarbon: 'between 500 and 300 BC')"
+            }
+          }
+        ],
+        "circa": true
       }
     },
     {

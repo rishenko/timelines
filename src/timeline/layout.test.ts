@@ -114,7 +114,7 @@ describe('layoutLanes', () => {
   });
 });
 
-describe('three-level nesting', () => {
+describe('nesting', () => {
   const tree: Track[] = [
     { id: 'egypt', name: 'Egypt', color: '#000' },
     { id: 'nk', name: 'New Kingdom', color: '#000', parent: 'egypt' },
@@ -122,6 +122,14 @@ describe('three-level nesting', () => {
     { id: 'd19', name: '19th Dynasty', color: '#000', parent: 'nk' },
     { id: 'aegean', name: 'Aegean', color: '#000' },
   ];
+
+  it('lists any depth: a group above regions adds a level', () => {
+    const grouped: Track[] = [{ id: 'ane', name: 'Ancient Near East', color: '#000' }, ...tree.map((t) => (t.parent ? t : { ...t, parent: 'ane' }))];
+    expect(buildLanes(grouped, {}, {}).map((l) => `${l.id}:${l.depth}`)).toEqual(['ane:0', 'egypt:1', 'nk:2', 'd18:3', 'd19:3', 'aegean:1']);
+    const folded = buildLanes(grouped, {}, { ane: true });
+    expect(folded.map((l) => l.id)).toEqual(['ane']);
+    expect(folded[0].members).toEqual(['ane', 'egypt', 'nk', 'd18', 'd19', 'aegean']);
+  });
 
   it('lists grandchildren at depth 2', () => {
     expect(buildLanes(tree, {}, {}).map((l) => `${l.id}:${l.depth}`)).toEqual([

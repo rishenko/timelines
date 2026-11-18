@@ -55,7 +55,7 @@ export interface Track {
   id: string;
   name: string;
   color: string;
-  /** Parent track id. Up to two levels of nesting (region → civilization → period). */
+  /** Parent track id. Rows nest to any depth (e.g. group → region → civilization → period). */
   parent?: string;
   /** Image URL shown in the lane label (relative to the site root, or absolute). */
   image?: string;

@@ -12,8 +12,7 @@ import {
 import { compareEvents } from '../lib/years.ts';
 import { formatYear, fromStored, toStored, type EraSide } from '../lib/calendar.ts';
 import { eventChronology } from '../lib/chronology.ts';
-import { customTags, nextTrackColor, trackDepth, uniqueId } from '../state/edits.ts';
-import { MAX_DEPTH } from '../data/validate.ts';
+import { customTags, nextTrackColor, uniqueId } from '../state/edits.ts';
 import type { Source, Track } from '../types.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 
@@ -415,7 +414,6 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               >
                 <option value="">Top-level track</option>
                 {data.tracks
-                  .filter((t) => trackDepth(data.tracks, t.id) < MAX_DEPTH)
                   .map((t) => (
                     <option key={t.id} value={t.id}>
                       under {t.name}

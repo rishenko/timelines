@@ -45,7 +45,7 @@ export function FiltersPanel(p: Props) {
           {treeOrder(data).map((t) => (
             <span key={t.id} className="toggle-wrap">
               <button
-                className={`toggle ${isOn(filters.tracks, t.id) ? 'on' : 'off'} depth-${trackDepth(data.tracks, t.id)}`}
+                className={`toggle ${isOn(filters.tracks, t.id) ? 'on' : 'off'}${trackDepth(data.tracks, t.id) ? ' nested' : ''}${trackDepth(data.tracks, t.id) > 1 ? ' deep' : ''}`}
                 style={{ '--track-color': t.color } as React.CSSProperties}
                 onClick={() => p.toggleTrack(t.id)}
                 aria-pressed={isOn(filters.tracks, t.id)}

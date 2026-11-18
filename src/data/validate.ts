@@ -6,7 +6,6 @@ import { isSafeUrl } from '../lib/urls.ts';
 const ID_RE = /^[A-Za-z0-9-]+$/;
 
 /** Maximum nesting: region → civilization → period. */
-export const MAX_DEPTH = 2;
 
 /** Returns a list of human-readable problems; empty means the dataset is valid. */
 export function validateDataset(d: unknown): string[] {
@@ -92,7 +91,6 @@ export function validateDataset(d: unknown): string[] {
       errors.push(`Track "${t.id}" has unknown parent "${t.parent}".`);
       continue;
     }
-    let depth = 0;
     let p: string | undefined = t.parent;
     const seen = new Set([t.id]);
     while (p !== undefined) {
@@ -101,10 +99,8 @@ export function validateDataset(d: unknown): string[] {
         break;
       }
       seen.add(p);
-      depth++;
       p = byId.get(p)?.parent;
     }
-    if (depth > MAX_DEPTH) errors.push(`Track "${t.id}": at most ${MAX_DEPTH} levels of nesting are supported.`);
   }
   if (errors.length) return errors;
 

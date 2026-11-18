@@ -6,7 +6,37 @@ rows; minor ones fold into "+N" first. To change one, edit `data-src/ancient-imp
 
 Totals: 107 key, 154 normal, 34 minor (295 events).
 
-## Europe
+## Africa
+
+### North Africa
+
+2 key, 2 normal, 1 minor.
+
+**Key**
+
+- Libu and Sea Peoples invade Egypt (1208 BCE; Libyans, New Kingdom, Sea Peoples) `libu-invasion`
+- Cyrene founded (631 BCE; Cyrene) `cyrene-founded`
+
+**Minor**
+
+- Persians sack Barca (515 BCE) `barca-sacked`
+
+### Sub-Saharan Africa
+
+2 key, 6 normal, 1 minor.
+
+**Key**
+
+- Nok terracotta sculptures (c. 900 BCE–300 BCE; Nok culture (Nigeria)) `nok-terracottas`
+- Iron smelting in the Nok culture (c. 650 BCE; Nok culture (Nigeria)) `nok-iron`
+
+**Minor**
+
+- Hannu sails to Punt (c. 2000 BCE) `hannu-punt`
+
+## Europe & Mediterranean
+
+### Europe
 
 6 key, 7 normal, 2 minor.
 
@@ -24,7 +54,7 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Wehringen cart grave (c. 778 BCE) `wehringen`
 - Latin League dissolved (338 BCE) `latin-league`
 
-## Western Mediterranean
+### Western Mediterranean
 
 4 key, 6 normal, 1 minor.
 
@@ -39,33 +69,7 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 
 - Sybaris destroyed (c. 510 BCE) `sybaris`
 
-## Sub-Saharan Africa
-
-2 key, 6 normal, 1 minor.
-
-**Key**
-
-- Nok terracotta sculptures (c. 900 BCE–300 BCE; Nok culture (Nigeria)) `nok-terracottas`
-- Iron smelting in the Nok culture (c. 650 BCE; Nok culture (Nigeria)) `nok-iron`
-
-**Minor**
-
-- Hannu sails to Punt (c. 2000 BCE) `hannu-punt`
-
-## North Africa
-
-2 key, 2 normal, 1 minor.
-
-**Key**
-
-- Libu and Sea Peoples invade Egypt (1208 BCE; Libyans, New Kingdom, Sea Peoples) `libu-invasion`
-- Cyrene founded (631 BCE; Cyrene) `cyrene-founded`
-
-**Minor**
-
-- Persians sack Barca (515 BCE) `barca-sacked`
-
-## Aegean
+### Aegean
 
 12 key, 14 normal, 1 minor.
 
@@ -88,31 +92,9 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 
 - Macedon moves its capital from Aigai to Pella (399 BCE) `pella`
 
-## Anatolia
+## Ancient Near East
 
-9 key, 16 normal, 5 minor.
-
-**Key**
-
-- Reign of Ḫattušili I; the capital moves to Hattusa (c. 1650 BCE–1620 BCE; Old Kingdom) `hattusili-i`
-- Hittite sack of Babylon (1595 BCE; Old Kingdom, Old Babylonian (First Dynasty)) `sack-of-babylon`
-- Battle of Kadesh (1274 BCE; New Kingdom (Empire), New Kingdom) `kadesh`
-- Egyptian–Hittite peace treaty (c. 1259 BCE; New Kingdom (Empire), New Kingdom) `eternal-treaty`
-- Hattusa abandoned and burned (c. 1180 BCE; New Kingdom (Empire)) `hattusa-abandoned`
-- Tiglath-Pileser III defeats Sarduri II of Urartu (743 BCE; Urartu, Neo-Assyrian Empire) `urartu-sarduri`
-- Cimmerians destroy the kingdom of Phrygia (c. 675 BCE; Phrygia, Cimmerians) `phrygia-falls`
-- Lydian coins (c. 650 BCE; Lydia) `lydian-coins`
-- Cyrus conquers Lydia (546 BCE; Lydia, Achaemenid Persia) `fall-of-sardis`
-
-**Minor**
-
-- Trade revives at Kanesh (kārum level Ib) (1798 BCE–1740 BCE) `kanesh-karum-ib`
-- Alalakh's Level VII palace destroyed (1628 BCE) `alalakh-vii`
-- Troy VI destroyed (c. 1300 BCE) `troy-vi`
-- Three-year drought in central Anatolia (1198 BCE–1196 BCE) `drought-1198`
-- Cimmerians sack Sardis; Gyges killed (644 BCE) `gyges-killed`
-
-## Egypt and Nubia
+### Egypt and Nubia
 
 11 key, 25 normal, 4 minor.
 
@@ -137,7 +119,7 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Ramesses II marries a daughter of Ḫattušili III (1246 BCE) `hittite-marriage`
 - Alara, first Kushite king known by name (c. 780 BCE) `alara`
 
-## Levant
+### Levant
 
 9 key, 14 normal, 4 minor.
 
@@ -160,7 +142,31 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Tyre under Babylonian rule (572 BCE) `tyre-babylon`
 - Amasis II of Egypt conquers Cyprus (570 BCE) `cyprus-egypt`
 
-## Mesopotamia
+### Anatolia
+
+9 key, 16 normal, 5 minor.
+
+**Key**
+
+- Reign of Ḫattušili I; the capital moves to Hattusa (c. 1650 BCE–1620 BCE; Old Kingdom) `hattusili-i`
+- Hittite sack of Babylon (1595 BCE; Old Kingdom, Old Babylonian (First Dynasty)) `sack-of-babylon`
+- Battle of Kadesh (1274 BCE; New Kingdom (Empire), New Kingdom) `kadesh`
+- Egyptian–Hittite peace treaty (c. 1259 BCE; New Kingdom (Empire), New Kingdom) `eternal-treaty`
+- Hattusa abandoned and burned (c. 1180 BCE; New Kingdom (Empire)) `hattusa-abandoned`
+- Tiglath-Pileser III defeats Sarduri II of Urartu (743 BCE; Urartu, Neo-Assyrian Empire) `urartu-sarduri`
+- Cimmerians destroy the kingdom of Phrygia (c. 675 BCE; Phrygia, Cimmerians) `phrygia-falls`
+- Lydian coins (c. 650 BCE; Lydia) `lydian-coins`
+- Cyrus conquers Lydia (546 BCE; Lydia, Achaemenid Persia) `fall-of-sardis`
+
+**Minor**
+
+- Trade revives at Kanesh (kārum level Ib) (1798 BCE–1740 BCE) `kanesh-karum-ib`
+- Alalakh's Level VII palace destroyed (1628 BCE) `alalakh-vii`
+- Troy VI destroyed (c. 1300 BCE) `troy-vi`
+- Three-year drought in central Anatolia (1198 BCE–1196 BCE) `drought-1198`
+- Cimmerians sack Sardis; Gyges killed (644 BCE) `gyges-killed`
+
+### Mesopotamia
 
 14 key, 29 normal, 3 minor.
 
@@ -187,7 +193,7 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Hammurabi conquers Larsa (1763 BCE) `hammurabi-larsa`
 - Hammurabi takes Eshnunna and Mari (1762 BCE–1761 BCE) `hammurabi-mari`
 
-## Iran & Central Asia
+### Iran & Central Asia
 
 8 key, 2 normal, 2 minor.
 
@@ -207,7 +213,21 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Medes first appear in Assyrian records (834 BCE) `medes-assyria`
 - Mannaea first mentioned (828 BCE) `mannaea-first`
 
-## Eurasian Steppe
+### Dilmun (Persian Gulf)
+
+1 key, 0 normal, 1 minor.
+
+**Key**
+
+- Dilmun at its height (c. 2050 BCE–1720 BCE; Dilmun (Persian Gulf)) `dilmun-height`
+
+**Minor**
+
+- Last mention of Dilmun (567 BCE) `dilmun-last`
+
+## Steppe & South Asia
+
+### Eurasian Steppe
 
 5 key, 12 normal, 4 minor.
 
@@ -226,19 +246,7 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Arzhan 2 kurgan (c. 650 BCE) `arzhan-2`
 - Death of the Cimmerian king Dugdammî (640 BCE) `dugdammi-dies`
 
-## Dilmun (Persian Gulf)
-
-1 key, 0 normal, 1 minor.
-
-**Key**
-
-- Dilmun at its height (c. 2050 BCE–1720 BCE; Dilmun (Persian Gulf)) `dilmun-height`
-
-**Minor**
-
-- Last mention of Dilmun (567 BCE) `dilmun-last`
-
-## South Asia
+### South Asia
 
 5 key, 7 normal, 3 minor.
 
@@ -256,7 +264,9 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Mehrgarh abandoned (c. 2500 BCE) `mehrgarh-abandoned`
 - Indus seal impression at Susa (c. 2400 BCE–2100 BCE) `indus-seal-susa`
 
-## Mainland Southeast Asia
+## East & Southeast Asia
+
+### Mainland Southeast Asia
 
 1 key, 5 normal, 0 minor.
 
@@ -264,7 +274,7 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 
 - Đông Sơn bronze drums (c. 600 BCE; Đông Sơn culture) `dong-son-drums`
 
-## China
+### China
 
 7 key, 4 normal, 0 minor.
 
@@ -278,7 +288,7 @@ Totals: 107 key, 154 normal, 34 minor (295 events).
 - Zhou capital moves east (771 BCE; Western Zhou, Eastern Zhou) `zhou-east`
 - Warring States period (c. 475 BCE–221 BCE; Eastern Zhou) `warring-states`
 
-## Korea and Japan
+### Korea and Japan
 
 2 key, 4 normal, 0 minor.
 

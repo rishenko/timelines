@@ -41,7 +41,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Calendars.** Each timeline names its eras (BCE/CE, BE/U, …) and says whether it has a year 0.
   BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
   years (1500 BCE, not 1501 BCE).
-- **Lanes nest three deep**, e.g. region → civilization → period. Any level collapses into its parent.
+- **Lanes nest to any depth**, e.g. group → region → civilization → period. Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events.
   A track can have a **lifespan**, shaded across its lane, so you can see which civilizations coexisted.
 - **Uncertain dates.** An event's start and end can carry *date claims*: what each source says, under which
   chronology, with what ± margin. The app computes each date's range from those claims and draws it:
@@ -81,15 +81,16 @@ Scripts for working on the data (all in `scripts/`; source files are written in 
 
 ```sh
 npm run importance:ancient   # apply data-src/ancient-importance.json, compile, refresh docs/ancient-key-events.md
-npm run row-order            # how close related regions sit, and the best possible order
+npm run row-order            # how close related groups sit (add -- --parent near-east for the regions in a group)
+node scripts/row-order.ts src/timelines/ancient-near-east.json --parent near-east --search --keep "mesopotamia<iran"   # find a passing order
 npm run format:src           # re-format data-src/ancient-near-east.json
 node scripts/additions/europe.ts   # (re)apply a region's additions; then npm run importance:ancient
-node scripts/reorder-regions.ts data-src/ancient-near-east.json europe,aegean,…   # reorder regions
-npm run shot -- <url> <out.png> [--width N --height N --full --close-legend]   # screenshot in Edge
+node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
+npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria"]
 npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
 ```
 
-`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
+`scripts/additions/` holds one re-runnable script per added region, built on `scripts/lib/dataset-edit.ts` (insert-or-replace by id). Run them in order: europe, mediterranean, steppe, africa, asia, then `groups.ts`, which nests the regions into groups and sets the order. `scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
 
 ## Data (schema v3)
 

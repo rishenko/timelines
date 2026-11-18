@@ -6,7 +6,7 @@ import type { Scale } from './scale.ts';
 export interface LaneDef {
   id: string;
   track: Track;
-  /** 0 for top-level tracks, 1 for children, 2 for grandchildren. */
+  /** 0 for top-level tracks, 1 for children, and so on (any depth). */
   depth: number;
   /** Track ids whose events appear in this lane (includes collapsed children). */
   members: string[];

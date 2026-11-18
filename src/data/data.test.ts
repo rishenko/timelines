@@ -6,7 +6,7 @@ import REDACTED from '../timelines/REDACTED.json';
 import ancient from '../timelines/ancient-near-east.json';
 import example from '../../docs/examples/example-timeline.json';
 import { resolveEvents, defaultSelection } from '../lib/chronology.ts';
-import { relatedRegions, allowedDistance } from './proximity.ts';
+import { relatedRegions, relatedSiblings, proximityParents, allowedDistance } from './proximity.ts';
 import type { Dataset } from '../types.ts';
 
 // Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file.
@@ -44,13 +44,31 @@ describe('shipped timelines', () => {
       expect(c.source, t.id).toBeDefined();
   });
 
-  it('ancient regions that interacted sit near each other', () => {
-    // Rows run west to east so partners are close. If this fails after adding data, move the regions
+  it('ancient groups, and the regions inside each group, that interacted sit near each other', () => {
+    // Rows run west to east so partners are close. If this fails after adding data, move the rows
     // listed (or their civilizations) closer together rather than loosening the limits.
-    const far = relatedRegions(ancient as unknown as Dataset)
-      .filter((p) => p.distance > allowedDistance(p.shared))
-      .map((p) => `${p.a} and ${p.b}: ${p.shared} shared, ${p.distance} apart (max ${allowedDistance(p.shared)})`);
+    const ds = ancient as unknown as Dataset;
+    const far = proximityParents(ds, 2).flatMap((parent) =>
+      relatedSiblings(ds, parent)
+        .filter((p) => p.distance > allowedDistance(p.shared))
+        .map((p) => `${parent ?? 'top level'}: ${p.a} and ${p.b}: ${p.shared} shared, ${p.distance} apart (max ${allowedDistance(p.shared)})`),
+    );
     expect(far).toEqual([]);
+  });
+});
+
+describe('relatedSiblings', () => {
+  it('scores the children of one parent; events outside it are ignored', () => {
+    const ds = {
+      tracks: [{ id: 'g' }, { id: 'a', parent: 'g' }, { id: 'a1', parent: 'a' }, { id: 'b', parent: 'g' }, { id: 'c', parent: 'g' }, { id: 'h' }],
+      events: [
+        { uuid: 'x', tracks: ['a1', 'c'] },
+        { uuid: 'y', tracks: ['b', 'h'] },
+      ],
+    } as unknown as Dataset;
+    expect(relatedSiblings(ds, 'g')).toEqual([{ a: 'a', b: 'c', shared: 1, distance: 2 }]);
+    expect(relatedSiblings(ds)).toEqual([{ a: 'g', b: 'h', shared: 1, distance: 1 }]);
+    expect(proximityParents(ds, 2)).toEqual([undefined, 'g']);
   });
 });
 
@@ -133,12 +151,15 @@ describe('validateDataset', () => {
     expect(validateDataset(d).join()).toMatch(/Duplicate event uuid/);
   });
 
-  it('allows two levels of nesting but not three', () => {
+  it('allows nesting to any depth', () => {
     const d = base();
-    d.tracks.push({ id: 'a', name: 'A', color: '#000', parent: 'redacted' }, { id: 'b', name: 'B', color: '#000', parent: 'a' });
+    d.tracks.push(
+      { id: 'a', name: 'A', color: '#000', parent: 'redacted' },
+      { id: 'b', name: 'B', color: '#000', parent: 'a' },
+      { id: 'c', name: 'C', color: '#000', parent: 'b' },
+      { id: 'e', name: 'E', color: '#000', parent: 'c' },
+    );
     expect(validateDataset(d)).toEqual([]);
-    d.tracks.push({ id: 'c', name: 'C', color: '#000', parent: 'b' });
-    expect(validateDataset(d).join()).toMatch(/at most 2 levels/);
   });
 
   it('catches parent cycles', () => {

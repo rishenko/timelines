@@ -84,7 +84,7 @@ export function LegendPanel({ data, onClose }: Props) {
       ),
       title: 'Rows',
       text: has.nesting
-        ? 'Each row is a track: a region, people, faction or period. Rows nest up to three levels. ▾ folds a row’s sub-rows into it; ▸ opens them again.'
+        ? 'Each row is a track: a region, people, faction or period. Rows nest to any depth. ▾ folds a row’s sub-rows into it; ▸ opens them again.'
         : 'Each row is a track: a region, people, faction or period.',
     },
     {

@@ -53,23 +53,18 @@ export function upsertTrack(d: Dataset, track: Track, previousId?: string): Data
   return { ...d, tracks, events };
 }
 
-/** 0 for top-level tracks, 1 for their children, 2 for grandchildren. */
+/** 0 for top-level tracks, 1 for their children, and so on (rows nest to any depth). */
 export function trackDepth(tracks: Track[], id: string): number {
   const byId = new Map(tracks.map((t) => [t.id, t]));
   let depth = 0;
-  for (let p = byId.get(id)?.parent; p !== undefined && depth < 10; p = byId.get(p)?.parent) depth++;
+  // the bound only guards against a parent cycle in unvalidated data
+  for (let p = byId.get(id)?.parent; p !== undefined && depth < tracks.length; p = byId.get(p)?.parent) depth++;
   return depth;
-}
-
-/** Levels of descendants below a track (0 for a leaf). */
-export function subtreeHeight(tracks: Track[], id: string): number {
-  const kids = tracks.filter((t) => t.parent === id);
-  return kids.length ? 1 + Math.max(...kids.map((k) => subtreeHeight(tracks, k.id))) : 0;
 }
 
 export function isDescendant(tracks: Track[], id: string, ancestor: string): boolean {
   const byId = new Map(tracks.map((t) => [t.id, t]));
-  for (let p = byId.get(id)?.parent, n = 0; p !== undefined && n < 10; p = byId.get(p)?.parent, n++) if (p === ancestor) return true;
+  for (let p = byId.get(id)?.parent, n = 0; p !== undefined && n < tracks.length; p = byId.get(p)?.parent, n++) if (p === ancestor) return true;
   return false;
 }
 

@@ -14,7 +14,7 @@
     "data:ancient": "node scripts/build-dataset.ts data-src/ancient-near-east.json src/timelines/ancient-near-east.json",
     "importance:ancient": "node scripts/set-importance.ts data-src/ancient-near-east.json --plan data-src/ancient-importance.json && npm run data:ancient && node scripts/list-importance.ts src/timelines/ancient-near-east.json docs/ancient-key-events.md",
     "format:src": "node scripts/format-source.ts data-src/ancient-near-east.json",
-    "row-order": "node scripts/row-order.ts src/timelines/ancient-near-east.json --best --fix china,americas",
+    "row-order": "node scripts/row-order.ts src/timelines/ancient-near-east.json --best",
     "data:REDACTED": "node scripts/upgrade-dataset.ts ../REDACTED/src/data/timeline.json src/timelines/REDACTED.json",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",

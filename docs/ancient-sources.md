@@ -278,3 +278,23 @@ citations" notice; *Old Chosŏn* has a disputed-neutrality notice in one section
   to hold them without reaching outside Korea), Old Chosŏn's war with Yan (c. 300, after the end date),
   Rigveda's Mitanni comparison (context not read verbatim), and Mahavira's and the Achaemenid page's later
   sections (summary-only).
+
+## Grouping (17 November 2026)
+
+At the author's request, the regions now sit in five groups, applied by `scripts/additions/groups.ts`
+(run it last): Africa (North Africa, Sub-Saharan Africa), Europe & Mediterranean (Europe, Western
+Mediterranean, Sea Peoples, Aegean), Ancient Near East (Egypt and Nubia, Levant,
+Anatolia, Mesopotamia, Iran & Central Asia, Dilmun), Steppe & South Asia, and East & Southeast Asia
+(mainland Southeast Asia, China, Korea and Japan). The Americas stay one top-level row.
+
+- Egypt belongs to the Ancient Near East (the usual scholarly grouping), next to the Levant; inside the
+  group the order follows the Fertile Crescent (Egypt, Levant, Anatolia, Mesopotamia, Iran, Dilmun).
+- Africa comes first at the author's choice; it is also the best-scoring top-level order (44).
+- Each group has its own hue (ochre, blue, brick red, olive, violet; the Americas keep green). Group rows
+  are tinted with it and every row inside carries a faint wash of it, so areas stay visually separate.
+- The proximity rule now applies per level: groups at the top, then the regions inside each group. All
+  pass (top level 44; Ancient Near East 82). Periods and dynasties are chronological, so deeper levels
+  are not checked.
+- The timeline opens with groups expanded and every region collapsed, so each region row leads with its
+  key events.
+- The app no longer limits nesting depth (it was three levels); this grouping uses four.

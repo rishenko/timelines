@@ -55,6 +55,8 @@ export function open(file: string, accessed = new Date().toISOString().slice(0, 
     track(t: Json, where: { before?: string; after?: string } = {}) {
       const i = trackIdx(t.id);
       if (i >= 0) {
+        // keep a parent set by a later script (scripts/additions/groups.ts nests regions into groups)
+        if (t.parent === undefined && d.tracks[i].parent !== undefined) t = { ...t, parent: d.tracks[i].parent };
         d.tracks[i] = t;
         return;
       }

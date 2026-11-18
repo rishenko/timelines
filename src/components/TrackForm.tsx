@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form';
 import type { Dataset, Track } from '../types.ts';
-import { isDescendant, nextTrackColor, slug, subtreeHeight, trackDeletion, trackDepth, uniqueId } from '../state/edits.ts';
-import { MAX_DEPTH } from '../data/validate.ts';
+import { isDescendant, nextTrackColor, slug, trackDeletion, trackDepth, uniqueId } from '../state/edits.ts';
 import { formatYear, parseDate } from '../lib/calendar.ts';
 
 interface FormValues {
@@ -50,14 +49,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       pinLast: !!initial?.pinLast,
     },
   });
-  // A track can sit under any track that leaves room for its own sub-tracks within the nesting limit.
-  const height = initial ? subtreeHeight(data.tracks, initial.id) : 0;
-  const parents = data.tracks.filter(
-    (t) =>
-      t.id !== initial?.id &&
-      !(initial && isDescendant(data.tracks, t.id, initial.id)) &&
-      trackDepth(data.tracks, t.id) + 1 + height <= MAX_DEPTH,
-  );
+  // A track can sit under any track except itself and its own descendants (rows nest to any depth).
+  const parents = data.tracks.filter((t) => t.id !== initial?.id && !(initial && isDescendant(data.tracks, t.id, initial.id)));
   const name = watch('name');
   const idValue = watch('id');
   const otherIds = data.tracks.filter((t) => t.id !== initial?.id).map((t) => t.id);

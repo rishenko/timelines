@@ -72,8 +72,9 @@ by hand if you write the file in the [readable format](#writing-dates-as-text) a
 
 ## tracks
 
-Each track is a row. Rows nest up to **three levels** (e.g. region → civilization → period). A parent
-row can be collapsed so its sub-rows' events fold into it.
+Each track is a row. Rows nest to **any depth** (e.g. group → region → civilization → period); each
+level indents one step. A parent row can be collapsed so its sub-rows' events fold into it. Deep trees
+cost label width, so three or four levels is a practical ceiling rather than a rule.
 
 | Field | Required | What |
 |---|---|---|
@@ -196,7 +197,7 @@ A file that breaks any of these is refused, with a message naming the problem.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers.
 - Every year is a whole number; an `end` is not before its `start`, for events and lifespans.
 - Every referenced track, parent, source, tag, chronology and linked event exists.
-- Rows nest at most three levels deep, and no row is its own ancestor.
+- No row is its own ancestor (rows may nest to any depth).
 - A derived chronology derives from one in the same group, by a whole number of years.
 - Margins are zero or more. Each best estimate lies within the range of its own claims.
 - `endDates` only appear on events that have an `end`. Events don't link to themselves.
