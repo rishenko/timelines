@@ -2,12 +2,12 @@ import { describe, expect, it } from 'vitest';
 import { buildScale } from './scale.ts';
 
 const INCREMENTS = [1, 10, 50, 100];
-import data from '../timelines/REDACTED.json';
+import data from '../timelines/classical.json';
 import type { Dataset } from '../types.ts';
 import { anchorsFor } from './anchors.ts';
 import { presentYear } from '../lib/years.ts';
 
-const ds = data as Dataset;
+const ds = data as unknown as Dataset;
 
 describe('buildScale', () => {
   it('is linear with no gaps when anchors are close', () => {
@@ -53,7 +53,6 @@ describe('buildScale', () => {
       }
       // every tick is a multiple of the increment and lies in a linear segment
       for (const t of s.ticks()) expect(Math.abs(t % inc)).toBe(0);
-      // the 15005 AE outlier must not blow out the width
       expect(s.width).toBeLessThan(200_000);
       // round trip
       for (const a of anchors) expect(s.yearAt(s.x(a))).toBeCloseTo(a, 6);

@@ -37,10 +37,8 @@ with its own calendar, eras, scale and theme. Three ship with the app:
   dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait), plus a follow-up pass on values first read only in summary (`summary-only.ts`); 371 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
   `scripts/classical/` (skeleton first, then the region passes, `summary-only.ts`, and `collapsed.ts` last); sources and judgment calls in `docs/classical-sources.md`.
   It opens like the ancient timeline: groups expanded, each region collapsed to its key events.
-- **REDACTED Timeline** (unofficial): the REDACTED TTRPG universe, from the Fall to the REDACTED Incident, by faction.
-  Its data lives here since 2026-11-18 (`data-src/REDACTED.json`; see "The REDACTED dataset" below).
 
-Switch between them with the title menu or `?timeline=ancient-near-east` / `?timeline=classical` / `?timeline=REDACTED`.
+Switch between them with the title menu or `?timeline=ancient-near-east` / `?timeline=classical`.
 
 ### Your own timelines
 
@@ -63,13 +61,12 @@ paths; anything else (e.g. `javascript:`) is rejected.
 
 ## Features
 
-- **Year ruler** with per-timeline scales (REDACTED: 1/10/50/100 years per tick; ancient: 10/50/100/500/1000; Classical:
-  10/50/100/500).
+- **Year ruler** with per-timeline scales (ancient: 10/50/100/500/1000 years per tick; Classical: 10/50/100/500).
   Switching keeps the year at the center of the screen fixed.
 - **Calendars.** Each timeline names its eras (BCE/CE, BE/U, …) and says whether it has a year 0.
   BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
   years (1500 BCE, not 1501 BCE).
-- **Phases:** a row can mark named periods on its own bar, such as a state's successive governments (France's kingdoms and republics; REDACTED's REDACTED in REDACTED) or a civilization's periods (Egypt's Old, Middle and New Kingdoms; Assyria's periods; China's Northern dynasties). A line marks each change and the name runs along the top of the row; rivals that overlapped stack their names. Edit them in the track editor; search finds them by name. See `docs/data-format.md`.
+- **Phases:** a row can mark named periods on its own bar, such as a state's successive governments (France's kingdoms and republics) or a civilization's periods (Egypt's Old, Middle and New Kingdoms; Assyria's periods; China's Northern dynasties). A line marks each change and the name runs along the top of the row; rivals that overlapped stack their names. Edit them in the track editor; search finds them by name. See `docs/data-format.md`.
 - **Lanes nest to any depth**, e.g. group → region → civilization (a civilization's periods are phases on its row). Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events. The toolbar's **Expand all / Collapse all** button (shown when a timeline has sub-rows) opens every row, or folds every row so only the top level shows; reopening a row then shows its children still folded, one level at a time. Beside it, **↺** (Default view) restores the timeline's opening layout; it is greyed out while the rows are already that way, and left out for timelines that open with every row open. Where scholars date a region differently, the toolbar's **Dating** button opens a panel with one dating system per region; the button counts regions changed from their default.
   A track can have a **lifespan**, shaded across its lane, so you can see which civilizations coexisted.
 - **Uncertain dates.** An event's start and end can carry *date claims*: what each source says, under which
@@ -99,7 +96,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
 - **Customize** (toolbar): one panel with three tabs. **Appearance** holds the theme; **Edit** turns edit mode on
   (the edit bar's **Done editing** turns it off); **Timelines** opens and adds timelines. The tabs follow the ARIA
   tabs pattern (arrow keys move between them). On phones each tab is one column.
-- **Themes** (Customize → Appearance): presets and per-color pickers. Each timeline has a default (ancient: Parchment, REDACTED: Dark)
+- **Themes** (Customize → Appearance): presets and per-color pickers. Each timeline has a default (ancient and Classical: Parchment)
   until the reader picks their own.
 - **Phones and tablets:** one finger pans the timeline and a two-finger pinch steps through the zoom levels. On
   narrow screens (under 640 px) the toolbar becomes one row that scrolls sideways, the row labels narrow, panels
@@ -117,7 +114,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
   the reader is told when the published timeline changed under their edits. Old full-copy drafts are converted on load
   without deleting anything. Old REDACTED files (v1 and v2) are converted on upload.
 - **Table view:** the toolbar's **Timeline | Table** switch (`?view=table` in links) shows the same events as tables,
-  grouped by region (or by top-level row, as in REDACTED) or in one list, sorted by date or title. Each event gives its
+  grouped by region (or by top-level row, for a timeline without regions) or in one list, sorted by date or title. Each event gives its
   dates in words with the range the cited sources allow ("c. 1595 BCE; the sources put it between 1651 BCE and 1531
   BCE"), its chronology, rows, importance, description and sources. Above each section's events, a **rows** table
   lists its civilizations (or factions) with their lifespans and phases, in words with their source ranges, so
@@ -159,7 +156,6 @@ npm run build          # type-check + production build into dist/
 npm run lint           # oxlint
 npm run data:ancient   # compile data-src/ancient-near-east.json → src/timelines/
 npm run data:classical # compile data-src/classical.json → src/timelines/
-npm run data:REDACTED    # compile data-src/REDACTED.json → src/timelines/
 npm run deploy         # build and publish dist/ to GitHub Pages
 ```
 
@@ -270,7 +266,7 @@ which converts and validates them.
 | `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors, with `ClaimList` for date claims), search box, Dating menu, guided `Tour`, Filters and Legend panels, and the Customize panel (Appearance: `ThemePanel`; Edit; Timelines: `TimelinesPanel`) |
 | `src/data/` | Validator, importers for old REDACTED formats, row proximity (`proximity.ts`) |
 | `src/timelines/` | Bundled timelines, registered in `index.ts` |
-| `data-src/`, `scripts/` | Readable source data for all three timelines, the compiler, and the data scripts above (`scripts/REDACTED/` for REDACTED) |
+| `data-src/`, `scripts/` | Readable source data for both timelines, the compiler, and the data scripts above |
 
 ## The historical datasets
 
@@ -280,47 +276,22 @@ date; they are tagged **Cited via Wikipedia (not checked)** because they were no
 Each region follows one chronology by default. The choices, the disagreements and what to spot-check are
 in `docs/ancient-sources.md` and `docs/classical-sources.md`.
 
-## The REDACTED dataset
+## Old REDACTED data files
 
-Canon REDACTED only, from the published books each event cites (by page). Readers add their own factions, events and
-sources in edit mode; sources they create get the `homebrew` tag so others can filter them out. Edit
-`data-src/REDACTED.json` (years are stored as signed numbers, since BE/U has a year 0: -4900 is 4900 BE), then
-`npm run data:REDACTED`. Four re-runnable scripts derive data from the event text and the books, and
-`npm run data -- run-all REDACTED --check` confirms they reproduce the file:
-
-- `scripts/REDACTED/apply-description-ranges.ts` sets an event's end from a year range stated at the start of its
-  description ("4560-4591 AE."). Without a stated range an event stays a single year; dates are never inferred.
-  See `docs/REDACTED/event-spans.md`.
-- `scripts/REDACTED/apply-canon-links.ts` adds the links listed in `scripts/REDACTED/canonLinks.ts`. Each link rests on
-  the event text, with the words it rests on recorded beside it; links are never drawn from outside lore.
-- `scripts/REDACTED/REDACTED-lore-guide.ts` adds the Lore Only REDACTED field guide as a source and cites it where its text
-  matches an event. Its header lists where it disagrees with the draft REDACTED guide.
-- `scripts/REDACTED/governments.ts` marks the governments that ruled REDACTED, the REDACTED, the REDACTED and REDACTED
-  as phases on each faction's row, dated from the books, with each date claim citing its page. The REDACTED and the
-  REDACTED overlap during the REDACTED Civil War, whose end the REDACTED guide dates two ways (c. 3016 AE and 5000 AE), so the
-  REDACTED's end is a range.
-  Eras that are not governments (the REDACTED, Temperate and REDACTEDs) stay as events. Factions without a
-  dated succession of governments (REDACTED, REDACTED, REDACTED, REDACTED) are not split.
-
-Old REDACTED data files (REDACTED v1, REDACTED) still convert on upload, or with
+The REDACTED timeline started this app but is no longer part of this repo (since 2026-11-18). Data files from the
+older REDACTED timeline apps (REDACTED v1, REDACTED) still convert on upload, or with
 `node scripts/upgrade-dataset.ts old.json new.json`.
 
 ## Origins
 
 Built from [REDACTED](https://github.com/rishenko/REDACTED) by
 [rishenko](https://github.com/rishenko), itself v2 of
-[REDACTED](https://github.com/rishenko/REDACTED). Timelines has replaced
-REDACTED for REDACTED use (2026-11-18); nothing is ported back to it.
+[REDACTED](https://github.com/rishenko/REDACTED).
 
 ## AI use
 
 The code, tests and documentation were written with the help of an AI coding assistant
 ([Claude Code](https://claude.com/claude-code), Anthropic), directed and reviewed by the project author.
-
-**REDACTED events** are not AI-generated: they were entered by hand from the published sources they cite (in
-REDACTED, then REDACTED). Two things were added with AI assistance, both from the event
-text alone: the end years of 33 events, read by a script from ranges their descriptions state, and 66 links
-between events, each recorded with the words it rests on (`scripts/REDACTED/canonLinks.ts`).
 
 **The Ancient Civilizations and Classical World datasets were compiled with AI assistance.** The assistant
 read the cited Wikipedia articles and transcribed their dates; the descriptions are its own summaries. No
@@ -330,7 +301,5 @@ kept as claims. Neither has been reviewed by a specialist yet; `docs/ancient-sou
 
 ## Legal
 
-Licensed GPL v3. The REDACTED timeline is an unofficial third-party work published under the REDACTED
-Third Party License and is not affiliated with REDACTED Press; REDACTED is copyright REDACTED Press. REDACTED
-faction logos come from REDACTED's REDACTED repository. Wikipedia text is CC BY-SA; this project quotes
+Licensed GPL v3. Wikipedia text is CC BY-SA; this project quotes
 only dates and short phrases and links each article.

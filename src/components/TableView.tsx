@@ -65,7 +65,7 @@ export function TableView(p: Props) {
     () => fullSections(data.tracks, p.events, p.spans, p.phases, visible),
     [data.tracks, p.events, p.spans, p.phases, visible],
   );
-  // regions when the timeline has them (Ancient, Classical); else its top-level rows (REDACTED's factions)
+  // regions when the timeline has them (Ancient, Classical); else its top-level rows
   const unit = bySection.some((s) => s.group) ? 'region' : 'row';
   const sections: FullSection[] = useMemo(() => {
     const cmp = SORTS[sort].compare;

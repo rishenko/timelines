@@ -3,7 +3,7 @@ import { addToLibrary, fetchTimeline, isSafeUrl, loadLibrary, normalizeUrl, remo
 import { draftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
 import ancient from '../timelines/ancient-near-east.json';
-import REDACTED from '../timelines/REDACTED.json';
+import classical from '../timelines/classical.json';
 import type { Dataset } from '../types.ts';
 
 function memoryStore() {
@@ -43,8 +43,8 @@ describe('library', () => {
 
   it('renames a timeline whose id clashes with a bundled one', () => {
     const store = memoryStore();
-    const e = addToLibrary(mine('REDACTED'), { store, reservedIds: ['REDACTED', 'ancient-near-east'] });
-    expect(e.dataset.meta.id).toBe('REDACTED-2');
+    const e = addToLibrary(mine('classical'), { store, reservedIds: ['classical', 'ancient-near-east'] });
+    expect(e.dataset.meta.id).toBe('classical-2');
     expect(validateDataset(e.dataset)).toEqual([]);
   });
 
@@ -72,9 +72,9 @@ describe('library', () => {
 describe('fetchTimeline', () => {
   const ok = (body: string) => (async () => new Response(body, { status: 200 })) as unknown as typeof fetch;
 
-  it('loads and validates a timeline, converting old REDACTED files', async () => {
-    const ds = await fetchTimeline('https://x.example/t.json', ok(JSON.stringify(REDACTED)));
-    expect(ds.meta.id).toBe('REDACTED');
+  it('loads and validates a timeline', async () => {
+    const ds = await fetchTimeline('https://x.example/t.json', ok(JSON.stringify(classical)));
+    expect(ds.meta.id).toBe('classical');
   });
 
   it('explains failures', async () => {
@@ -98,7 +98,7 @@ describe('fetchTimeline', () => {
 
 describe('URL safety', () => {
   it('allows web links and relative paths only', () => {
-    for (const u of ['https://a.b/c', 'http://a.b', 'timelines/REDACTED/logos/redacted.svg', './x.svg', '/x.svg'])
+    for (const u of ['https://a.b/c', 'http://a.b', 'timelines/example/logo.svg', './x.svg', '/x.svg'])
       expect(isSafeUrl(u), u).toBe(true);
     for (const u of ['javascript:alert(1)', ' JavaScript:alert(1)', 'data:text/html,x', '//evil.example/x', 'vbscript:x'])
       expect(isSafeUrl(u), u).toBe(false);

@@ -46,7 +46,7 @@ function open(timeline: string, extra = '') {
 }
 
 describe('accessibility', () => {
-  for (const id of ['ancient-near-east', 'classical', 'REDACTED']) {
+  for (const id of ['ancient-near-east', 'classical']) {
     it(`${id}: no automated WCAG violations on the opening view`, async () => {
       const { container } = open(id);
       expect(await violations(container)).toEqual([]);
@@ -54,7 +54,7 @@ describe('accessibility', () => {
   }
 
   it('names every event button with its dates and rows', () => {
-    const { container } = open('REDACTED');
+    const { container } = open('classical');
     const marks = [...container.querySelectorAll<HTMLButtonElement>('button.tl-mark:not(.cluster)')];
     expect(marks.length).toBeGreaterThan(0);
     for (const m of marks) {
@@ -73,7 +73,7 @@ describe('accessibility', () => {
   });
 
   it('moves focus into the detail panel when an event opens, and back when Escape closes it', async () => {
-    const { container } = open('REDACTED');
+    const { container } = open('classical');
     const mark = container.querySelector<HTMLButtonElement>('button.tl-mark:not(.cluster)')!;
     mark.focus();
     fireEvent.click(mark);
@@ -95,7 +95,7 @@ describe('accessibility', () => {
     expect(await violations(container)).toEqual([]);
   });
 
-  for (const id of ['ancient-near-east', 'classical', 'REDACTED']) {
+  for (const id of ['ancient-near-east', 'classical']) {
     it(`${id}: the table view has no automated WCAG violations`, async () => {
       const { container } = open(id, '&view=table');
       expect(screen.getByRole('region', { name: /^Table: / })).toBeTruthy();
@@ -105,7 +105,7 @@ describe('accessibility', () => {
   }
 
   it('table view: an event opens the detail panel, and Escape returns focus to it', async () => {
-    const { container } = open('REDACTED', '&view=table');
+    const { container } = open('classical', '&view=table');
     const button = container.querySelector<HTMLButtonElement>('table [data-event-id]')!;
     button.focus();
     fireEvent.click(button);
@@ -128,7 +128,7 @@ describe('accessibility', () => {
 
   it('a first visit straight into table view does not start the tour (it is about the chart)', () => {
     localStorage.clear();
-    open('REDACTED', '&view=table');
+    open('classical', '&view=table');
     expect(screen.queryByRole('dialog', { name: /Welcome/ })).toBeNull();
   });
 
@@ -147,7 +147,7 @@ describe('accessibility', () => {
     });
 
     it('moves along a row with the arrows, and between rows', async () => {
-      const { container } = open('REDACTED');
+      const { container } = open('classical');
       const first = container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!;
       first.focus();
       await press('ArrowRight');
@@ -163,7 +163,7 @@ describe('accessibility', () => {
     });
 
     it('zooms with + and opens the key list with ?', async () => {
-      const { container } = open('REDACTED');
+      const { container } = open('classical');
       container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!.focus();
       const zoomOn = () => screen.getByRole('group', { name: 'Years per tick' }).querySelector('.on')?.textContent;
       const before = zoomOn();
@@ -177,7 +177,7 @@ describe('accessibility', () => {
 
   describe('Customize panel', () => {
     it('replaces the Timelines, Theme and Edit mode buttons', () => {
-      open('REDACTED');
+      open('classical');
       expect(screen.getByRole('button', { name: 'Customize' })).toBeTruthy();
       for (const gone of ['Theme', 'Edit mode', 'Timelines']) expect(screen.queryByRole('button', { name: gone })).toBeNull();
     });
@@ -199,7 +199,7 @@ describe('accessibility', () => {
     });
 
     it('turns edit mode on from the Edit tab, and the edit bar turns it off', () => {
-      open('REDACTED');
+      open('classical');
       fireEvent.click(screen.getByRole('button', { name: 'Customize' }));
       fireEvent.click(screen.getByRole('tab', { name: 'Edit' }));
       fireEvent.click(screen.getByRole('button', { name: 'Turn on edit mode' }));

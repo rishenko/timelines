@@ -1,12 +1,11 @@
 import type { Dataset } from '../types.ts';
 import { assertDataset, validateDataset } from '../data/validate.ts';
 import { loadLibrary, type LibraryEntry } from '../state/library.ts';
-import REDACTED from './REDACTED.json';
 import ancient from './ancient-near-east.json';
 import classical from './classical.json';
 
 /** Timelines bundled with the app, in picker order. The first is the default. */
-export const BUNDLED: Dataset[] = [assertDataset(ancient), assertDataset(classical), assertDataset(REDACTED)];
+export const BUNDLED: Dataset[] = [assertDataset(ancient), assertDataset(classical)];
 export const BUNDLED_IDS = BUNDLED.map((t) => t.meta.id);
 
 export interface TimelineChoice {

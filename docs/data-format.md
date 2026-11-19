@@ -24,7 +24,7 @@ Every year in the file is a whole number, counted with a **year 0**:
 |---|---|---|
 | No year 0 (`"yearZero": false`, e.g. BCE/CE) | *n* CE | *n* |
 | | *n* BCE | 1 − *n* (so 1 BCE = 0, 1450 BCE = −1449) |
-| With a year 0 (`"yearZero": true`, e.g. REDACTED's BE/U) | *n* U (including 0 AE) | *n* |
+| With a year 0 (`"yearZero": true`, e.g. a fictional calendar's BE/U) | *n* U (including 0 AE) | *n* |
 | | *n* BE | −*n* |
 
 This makes subtraction give the right number of years in every calendar. You never have to convert
@@ -57,7 +57,7 @@ by hand if you write the file in the [readable format](#writing-dates-as-text) a
 | `increments` | yes | Years-per-tick choices for the toolbar, finest first, e.g. `[10, 50, 100, 500]`. |
 | `defaultIncrement` | yes | The one selected when the timeline opens; must be in `increments`. |
 | `defaultTheme` | no | `"dark"`, `"light"`, `"parchment"` or `"contrast"`. Used until the reader picks their own theme. |
-| `customSourceTag` | no | Tag id given to sources readers create in edit mode (REDACTED uses `"homebrew"`), so others can filter them. |
+| `customSourceTag` | no | Tag id given to sources readers create in edit mode (e.g. `"homebrew"`), so others can filter them. |
 | `circaFade` | no | Years of uncertainty drawn either side of a `circa` date that has no other range. Default `0`. |
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
@@ -94,7 +94,7 @@ cost label width, so three or four levels is a practical ceiling rather than a r
 `endDates` [date claims](#date-claims-and-uncertain-dates). Uncertain ends are drawn the same way as on events.
 
 **`phases`**: a list of named periods within the row, for a state that changed hands over time without becoming a
-different row: France's kingdoms, republics and empires, a dynasty's reigns, or REDACTED's REDACTED in the REDACTED
+different row: France's kingdoms, republics and empires, a dynasty's reigns, or a faction's councils in a fictional
 timeline. Each phase is dated like a lifespan, with a name:
 
 ```json

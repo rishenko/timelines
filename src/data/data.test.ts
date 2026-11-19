@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { isV1Data, isV2Data, migrateV1, migrateV2, upgrade } from './migrate.ts';
 import { validateDataset } from './validate.ts';
-import REDACTED from '../timelines/REDACTED.json';
+import { plainTimeline } from '../test/fixtures.ts';
 import ancient from '../timelines/ancient-near-east.json';
 import classical from '../timelines/classical.json';
 import example from '../../docs/examples/example-timeline.json';
@@ -13,7 +13,7 @@ import { compileSource, compiledText } from '../../scripts/lib/compile.ts';
 import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
 
 // Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file. They test the converters for
-// old REDACTED files (readers can still upload them); the bundled REDACTED data now lives here, in data-src/REDACTED.json.
+// old REDACTED files (readers can still upload them).
 const V1_PATH = '../REDACTED/src/data/REDACTED-timeline-data.json';
 const V2_PATH = '../REDACTED/src/data/timeline.json';
 
@@ -26,7 +26,6 @@ function load(path: string) {
 }
 
 const shipped: [string, Dataset][] = [
-  ['REDACTED', REDACTED as Dataset],
   ['ancient-near-east', ancient as unknown as Dataset],
   ['classical', classical as unknown as Dataset],
 ];
@@ -165,7 +164,7 @@ describe('documented example (docs/examples/example-timeline.json)', () => {
 });
 
 describe('validateDataset', () => {
-  const base = (): Dataset => structuredClone(REDACTED as Dataset);
+  const base = (): Dataset => plainTimeline();
 
   it('catches end before start', () => {
     const d = base();
@@ -186,9 +185,9 @@ describe('validateDataset', () => {
 
   it('checks phases like lifespans', () => {
     const d = base();
-    const union = d.tracks.find((t) => t.id === 'redacted')!;
-    expect(union.phases?.map((p) => p.name)).toEqual(['First REDACTED', 'Second REDACTED', 'Third REDACTED']);
-    union.phases = [
+    const quay = d.tracks.find((t) => t.id === 'quay')!;
+    expect(validateDataset(d)).toEqual([]);
+    quay.phases = [
       { name: '', start: 0, end: 10 },
       { name: 'Backwards', start: 10, end: 5 },
       { name: 'Off claims', start: 20, end: 30, startDates: [{ year: 50 }] },
@@ -210,7 +209,7 @@ describe('validateDataset', () => {
   it('allows nesting to any depth', () => {
     const d = base();
     d.tracks.push(
-      { id: 'a', name: 'A', color: '#000', parent: 'redacted' },
+      { id: 'a', name: 'A', color: '#000', parent: 'quay' },
       { id: 'b', name: 'B', color: '#000', parent: 'a' },
       { id: 'c', name: 'C', color: '#000', parent: 'b' },
       { id: 'e', name: 'E', color: '#000', parent: 'c' },
@@ -278,6 +277,6 @@ describe('migration', () => {
   });
 
   it('leaves v3 data alone', () => {
-    expect(upgrade(REDACTED).from).toBeUndefined();
+    expect(upgrade(plainTimeline()).from).toBeUndefined();
   });
 });

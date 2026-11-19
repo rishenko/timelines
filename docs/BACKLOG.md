@@ -27,15 +27,6 @@
   go in, placed next to its partners (the proximity test), and considered for opening collapsed.
 - **Ancient, other gaps:** the Upanishads (dates read only in summary), more Mitanni rulers, and the many Levant,
   Assyria and Iran values that exist only in page summaries.
-- **REDACTED, sub-faction rows** the data implies: the REDACTED Administration and Perfect REDACTED (REDACTED
-  Incident), individual REDACTED. Canon only, from the cited books. (Governments are done: `scripts/REDACTED/governments.ts`
-  marks REDACTED, the REDACTED, the REDACTED and REDACTED governments as phases.)
-- **REDACTED, REDACTED guides disagree** (header of `scripts/REDACTED/REDACTED-lore-guide.ts`): REDACTED/REDACTED departures, First
-  and Second REDACTED ranges, Second REDACTED Civil War (4700 AE vs. 4800 AE). Events still follow the draft guide.
-- **REDACTED, spans worth a second look** (judgment calls listed in `docs/REDACTED/event-spans.md`): Evolution of
-  REDACTED Trade REDACTED ("1400 years" vs. its 1,866-year range), Fourth REDACTED (ongoing?), REDACTED and
-  REDACTED Depart (a departure window, not a 4,000-year event), and the two "… Begins" events that carry a whole
-  period's range.
 - **Search aliases:** an `aliases` property on tracks and events (Hatti, Kemet, Axum, Wa/Yamato) so other names find
   them. Add it to `types.ts`, `validate.ts`, `search.ts` and `data-format.md`, then fill it in during region reviews.
 
@@ -128,7 +119,6 @@ separate later timeline, linked by `meta.continues` as Ancient and Classical are
   - Phones: the edit bar is one sideways-scrolling row of buttons with a short hint (it was three rows).
   - `scripts/screenshot.ts`: `--measure <selector>` prints element sizes, `--click` also matches tooltips and
     `=Exact` text, and `--close-legend` closes the tour too.
-- **REDACTED data lives here (2026-11-18):** this app replaces REDACTED for REDACTED, and nothing is ported
-  back. `data-src/REDACTED.json` is the source, built like the others (`npm run data:REDACTED`); the re-import from v2
-  and the drift test are gone. v2's span and canon-link scripts moved to `scripts/REDACTED/` with their tests, and
-  `run-all REDACTED --check` reproduces the file exactly.
+- **REDACTED moved out (2026-11-18):** the REDACTED timeline, its scripts and its docs are no longer in this repo. Tests
+  that used it as a plain timeline use a small fictional one (`src/test/fixtures.ts`). The importers for old REDACTED
+  files stay.

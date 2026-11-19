@@ -176,14 +176,14 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
     releases and DOIs (item 7) should version the data, not the app; data contributors (item 25) shouldn't need the
     app's code; and people reusing the app don't want ~50 data scripts. Needs: a published JSON Schema and validator
     the data repo's CI can run, a list of featured timelines in the app (so `?timeline=ancient-near-east` and saved
-    drafts keep working), and the data repo's own Pages site serving the compiled JSON. REDACTED could stay bundled as
-    the example, or move too. Best done together with item 7.
+    drafts keep working), and the data repo's own Pages site serving the compiled JSON. (The REDACTED timeline
+    already moved out of this repo, on 18 November 2026.) Best done together with item 7.
 27. **Simple and advanced editing (M).** A timeline sets its editing level (`meta.editing: "simple" | "advanced"`),
     and readers can still switch with "Show advanced fields". The simple event form has title, row, phase, start and
     end, description, and sources, with an inline "add a book (title, page)" or "add a link". It hides date claims,
     chronologies, margins, importance, order and links. Choosing a phase prefills the row and offers "sometime during
-    this phase" as the date, which needs the one-sided and bounded dates of item 12. REDACTED defaults to simple; the
-    historical timelines to advanced.
+    this phase" as the date, which needs the one-sided and bounded dates of item 12. A game or fictional timeline would
+    default to simple; the historical timelines to advanced.
 28. **Days and months (L).** Years are the only unit today (stored years, ruler scales in years). Exact dates (the
     Ides of March, a battle's day) need a finer unit: a day-based time value, month and week ruler scales, partial
     dates ("March 44 BCE"), and a "today" marker. It's the prerequisite for any business or personal use, and it helps

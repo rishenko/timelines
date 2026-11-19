@@ -11,7 +11,7 @@ describe('key events only at the coarsest zoom', () => {
   it('not at finer steps', () => {
     expect(keyEventsOnly([10, 100, 1000], 100, withKey)).toBe(false);
   });
-  it('not when no event is key (e.g. REDACTED), nor with a single zoom step', () => {
+  it('not when no event is key (e.g. a fictional timeline), nor with a single zoom step', () => {
     expect(keyEventsOnly([1, 10, 100], 100, noKey)).toBe(false);
     expect(keyEventsOnly([100], 100, withKey)).toBe(false);
   });

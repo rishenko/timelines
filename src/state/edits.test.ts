@@ -15,7 +15,6 @@ import {
 } from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
 import { draftToStore, restoreDraft } from './dataset.ts';
-import data from '../timelines/REDACTED.json';
 import { REDACTED_META } from '../data/migrate.ts';
 
 const base = (): Dataset => ({
@@ -139,12 +138,6 @@ describe('sources', () => {
     const published = claimed();
     const stored = JSON.parse(JSON.stringify(draftToStore(published, removeSource(published, 'chron'))));
     expect(restoreDraft(published, stored)?.data.sources.chron).toBeUndefined();
-  });
-});
-
-describe('shipped data', () => {
-  it('has a homebrew tag for custom sources', () => {
-    expect((data as Dataset).tags.homebrew).toBeDefined();
   });
 });
 

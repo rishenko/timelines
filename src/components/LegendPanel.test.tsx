@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
 import { LegendPanel } from './LegendPanel.tsx';
 import ancient from '../timelines/ancient-near-east.json';
-import REDACTED from '../timelines/REDACTED.json';
+import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 
 const titles = (ds: Dataset) =>
@@ -19,10 +19,10 @@ describe('LegendPanel', () => {
   });
 
   it('leaves out features a timeline does not use', () => {
-    const t = titles(REDACTED as Dataset);
+    const t = titles(plainTimeline());
     expect(t).toContain('Span');
     expect(t).toContain('Leads to');
-    // governments as phases (scripts/REDACTED/governments.ts); the REDACTED's end has two dates
+    // phases on Quay Town; the Third Council's end has two dates
     expect(t).toContain('Phases');
     expect(t).toContain('Uncertain start and end');
     for (const absent of ['Lifespan', 'Dating systems', 'Conquers', 'Succeeds', 'Key event'])

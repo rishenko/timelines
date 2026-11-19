@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { datesInWords, eventsCsv, fullSections, sectionRows, spanInWords, tableSections } from './table.ts';
 import { defaultSelection, resolveEvents, resolveSpan } from './chronology.ts';
 import ancient from '../timelines/ancient-near-east.json';
-import REDACTED from '../timelines/REDACTED.json';
+import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 
 const anc = ancient as Dataset;
@@ -34,11 +34,11 @@ describe('tableSections', () => {
     }
   });
 
-  it('uses top-level rows as sections when a timeline has no regions (REDACTED)', () => {
-    const ds = REDACTED as Dataset;
+  it('uses top-level rows as sections when a timeline has no regions', () => {
+    const ds = plainTimeline();
     const secs = tableSections(ds.tracks, resolveEvents(ds, defaultSelection(ds)));
     expect(secs.every((s) => s.group === undefined)).toBe(true);
-    expect(secs.map((s) => s.track.id)).toContain('redacted');
+    expect(secs.map((s) => s.track.id)).toContain('quay');
   });
 });
 

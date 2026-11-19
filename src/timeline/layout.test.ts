@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { buildLanes, layoutLanes, placePhases } from './layout.ts';
 import { buildScale } from './scale.ts';
 import type { TimelineEvent, Track } from '../types.ts';
-import data from '../timelines/REDACTED.json';
+import data from '../timelines/classical.json';
 import type { Dataset } from '../types.ts';
 import { anchorsFor } from './anchors.ts';
 import { presentYear } from '../lib/years.ts';
@@ -95,7 +95,7 @@ describe('layoutLanes', () => {
   });
 
   it('never overlaps footprints within a row on the real dataset', () => {
-    const ds = data as Dataset;
+    const ds = data as unknown as Dataset;
     const present = presentYear(ds.events);
     for (const inc of [1, 10, 50, 100]) {
       const s = buildScale(anchorsFor(ds.events, present), { increment: inc });

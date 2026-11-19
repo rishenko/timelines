@@ -6,7 +6,7 @@
 //   npm run data -- row-order <timeline> [args]  how close related rows sit (args as for scripts/row-order.ts)
 //   npm run data -- run-all <timeline> [--check] replay every content script in order, then `importance`
 //
-// <timeline> is a short name (ancient, classical, REDACTED) or an id (ancient-near-east). `npm run data:ancient`,
+// <timeline> is a short name (ancient, classical) or an id (ancient-near-east). `npm run data:ancient`,
 // `importance:classical` and the like are aliases for the common cases.
 //
 // run-all rebuilds the timeline's additions from the scripts, in the order the table gives. Every script is an
