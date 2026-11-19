@@ -81,6 +81,7 @@ npm run audit:batches -- <data-src file> <out dir>   # group descriptions by cit
 npx vite preview --port 4317   # after npm run build; serves the app at /
 npm run shot -- <url> <out.png> [--width N --height N --close-legend --click "Expand all" --expand "Egypt" --keys "Tab|ArrowRight" --measure ".toolbar > *"]
 npm run contrast [-- --timeline classical --preset dark --state focus --sweep --details]   # text contrast per theme
+npm run reflow [-- --width 320 --width 640 --details]   # nothing runs off screen or scrolls sideways (WCAG 1.4.10)
 npm run check:live -- --expect "some text"   # after deploying: wait for the live site and check it loads
 ```
 

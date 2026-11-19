@@ -149,7 +149,9 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          thread passes behind. `npm run contrast -- --sweep` lists them. Marks and focus outlines (3:1) not yet
          checked.
        - A bolder focus outline (2 px, offset).
-       - Readable at 200% zoom and on a 320 px wide screen.
+       - Readable at 200% zoom and on a 320 px wide screen. Done 18 November 2026: on narrow screens the toolbar
+         and edit bar wrap onto rows instead of scrolling sideways, and the editors, Filters, Dating and search
+         results fit the screen; `npm run reflow` checks 15 views per width.
        - `prefers-reduced-motion` (smooth scrolling, the tour) and `forced-colors` (Windows high contrast).
        - Check the "related events" dimming (unrelated events at 28% opacity) for legibility. Done with the contrast
          check above: the marks still fade to 28%, the labels stay at 4.5:1.

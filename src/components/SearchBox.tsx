@@ -63,13 +63,16 @@ export function SearchBox(props: Props) {
     return () => document.removeEventListener('keydown', onKey);
   }, []);
 
-  // The list is position: fixed under the input, so a toolbar that scrolls sideways (phones) doesn't clip it.
+  // The list is position: fixed under the input, so the toolbar can't clip it. It starts at the input's left edge
+  // unless its widest possible size (520 px, see .search-results) would run past the screen's right edge.
   const showList = open && query.trim() !== '';
   useLayoutEffect(() => {
     if (!showList) return;
     const place = () => {
       const r = inputRef.current?.getBoundingClientRect();
-      if (r) setPos({ top: r.bottom + 4, left: r.left, width: r.width });
+      if (!r) return;
+      const maxW = Math.min(520, window.innerWidth - 16);
+      setPos({ top: r.bottom + 4, left: Math.max(8, Math.min(r.left, window.innerWidth - 8 - maxW)), width: r.width });
     };
     place();
     window.addEventListener('resize', place);
