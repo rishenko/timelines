@@ -39,6 +39,14 @@ export interface ResolvedPhase extends ResolvedSpan {
   name: string;
 }
 
+/**
+ * Whether dates read as approximate ("c."): marked circa, or given a range by their sources. Resolved events carry
+ * their own `circa`; a resolved lifespan or phase doesn't, so pass its track's flag as `circa`.
+ */
+export function isApprox(d: { circa?: boolean; startWindow?: Window; endWindow?: Window }, circa = d.circa): boolean {
+  return !!(circa || d.startWindow || d.endWindow);
+}
+
 export function chronologyGroups(ds: Dataset): Map<string, { id: string; c: Chronology }[]> {
   const groups = new Map<string, { id: string; c: Chronology }[]>();
   for (const [id, c] of Object.entries(ds.chronologies ?? {})) groups.set(c.group, [...(groups.get(c.group) ?? []), { id, c }]);

@@ -3,7 +3,7 @@ import { buildIndex, trackRange, type SearchEntry } from '../lib/search.ts';
 import { ancestorIds } from '../lib/tracks.ts';
 import { compareEvents, formatEventDates } from '../lib/years.ts';
 import { formatYear, parseYear } from '../lib/calendar.ts';
-import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
+import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { isOn, type Filters } from './filters.ts';
 import type { Notify } from './toast.ts';
 import type { FocusRequest } from './focus.ts';
@@ -24,10 +24,10 @@ export function useSearchActions(o: {
   centerRef: RefObject<number>;
   setCollapsed: Dispatch<SetStateAction<Record<string, boolean>>>;
   setSelectedId: (id: string) => void;
-  setFocus: (f: FocusRequest) => void;
+  focusOn: (f: Omit<FocusRequest, 'nonce'>) => void;
   notify: Notify;
 }) {
-  const { data, resolved, resolvedById, spans, phases, visibleIds, filters, centerRef, setCollapsed, setSelectedId, setFocus, notify } = o;
+  const { data, resolved, resolvedById, spans, phases, visibleIds, filters, centerRef, setCollapsed, setSelectedId, focusOn, notify } = o;
   const cal = data.meta.calendar;
 
   const index = useMemo(() => buildIndex(data.tracks, [...resolved].sort(compareEvents)), [data.tracks, resolved]);
@@ -42,7 +42,7 @@ export function useSearchActions(o: {
     (entry: SearchEntry) => {
       if (entry.kind === 'event') {
         const e = resolvedById.get(entry.id);
-        return e ? formatEventDates(e, cal, !!(e.circa || e.startWindow || e.endWindow)).replace(/ \(.*\)$/, '') : '';
+        return e ? formatEventDates(e, cal, isApprox(e)).replace(/ \(.*\)$/, '') : '';
       }
       if (entry.kind === 'phase') {
         const p = phaseOf(entry);
@@ -50,7 +50,7 @@ export function useSearchActions(o: {
       }
       const s = spans.get(entry.id);
       if (!s) return '';
-      const approx = !!(s.startWindow || s.endWindow || data.tracks.find((t) => t.id === entry.id)?.span?.circa);
+      const approx = isApprox(s, data.tracks.find((t) => t.id === entry.id)?.span?.circa);
       return `${formatYear(s.start, cal, approx)} – ${formatYear(s.end, cal)}`;
     },
     [resolvedById, spans, cal, data.tracks, phaseOf],
@@ -82,15 +82,14 @@ export function useSearchActions(o: {
       const p = phaseOf(entry);
       const start = p?.startWindow?.[0] ?? p?.start ?? entry.start ?? centerRef.current;
       const end = p?.endWindow?.[1] ?? p?.end ?? entry.end ?? start;
-      setFocus({ year: Math.round((start + end) / 2), range: [start, end], trackId: entry.trackId, nonce: Date.now() });
+      focusOn({ year: Math.round((start + end) / 2), range: [start, end], trackId: entry.trackId });
     } else if (entry.kind === 'track') {
       reveal(entry.id, true);
       const r = trackRange(entry.id, data.tracks, resolved, spans);
-      setFocus({
+      focusOn({
         year: r ? Math.round((r.start + r.end) / 2) : centerRef.current,
         range: r ? [r.start, r.end] : undefined,
         trackId: entry.id,
-        nonce: Date.now(),
       });
     } else {
       const e = resolvedById.get(entry.id);
@@ -99,7 +98,7 @@ export function useSearchActions(o: {
       const trackId = e.tracks.find((t) => isOn(filters.tracks, t)) ?? entry.trackId;
       reveal(trackId, false);
       setSelectedId(e.uuid);
-      setFocus({ year: e.start, range: [e.start, e.end ?? e.start], trackId, nonce: Date.now() });
+      focusOn({ year: e.start, range: [e.start, e.end ?? e.start], trackId });
     }
     if (hidden)
       notify(

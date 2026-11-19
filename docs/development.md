@@ -20,6 +20,16 @@ build, `run-all --check` for each included timeline, and a check that the files 
 lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
 and `npm run data -- importance <timeline>`, and commit the result.
 
+For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
+`npm run dom-snapshot` renders both included timelines in many states (zooms, every row expanded, the table, the
+detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:
+
+```sh
+SNAP_OUT=before.txt npm run dom-snapshot   # on the code before the change
+SNAP_OUT=after.txt npm run dom-snapshot    # after it
+cmp before.txt after.txt                   # no output: nothing visible changed
+```
+
 ## Code map
 
 | Path | What |

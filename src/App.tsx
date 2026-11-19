@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { TimelineView } from './timeline/TimelineView.tsx';
-import type { FocusRequest } from './state/focus.ts';
+import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
 import { isEventVisible, useFilters } from './state/filters.ts';
 import { useTheme } from './state/theme.ts';
@@ -9,7 +9,7 @@ import { usePanels } from './state/panels.ts';
 import { goToTimeline, readUrl, useUrlSync, type View } from './state/url.ts';
 import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
-import { coarserIncrement, finerIncrement, keyEventsOnly } from './state/zoom.ts';
+import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
 import { TimelinePicker } from './components/TimelinePicker.tsx';
@@ -119,7 +119,7 @@ export default function App() {
   // ---- selection and editing ----
   const [editMode, setEditMode] = useState(false);
   const [editing, setEditing] = useState<Editing>(null);
-  const [focus, setFocus] = useState<FocusRequest | null>(null);
+  const [focus, focusOn] = useFocusRequest();
   const [selectedId, setSelectedId] = useState<string | null>(() =>
     initialUrl.selected && data.events.some((e) => e.uuid === initialUrl.selected) ? initialUrl.selected : null,
   );
@@ -127,7 +127,19 @@ export default function App() {
     const e = resolvedById.get(id);
     if (!e) return;
     setSelectedId(id);
-    setFocus({ year: e.start, nonce: Date.now() });
+    focusOn({ year: e.start });
+  };
+
+  /**
+   * One zoom step finer (1) or coarser (-1): centered on `year` if given, else the view keeps its center year.
+   * False if there is no further step that way.
+   */
+  const zoomStep = (dir: 1 | -1, year?: number): boolean => {
+    const next = stepIncrement(meta.increments, increment, dir);
+    if (next === undefined) return false;
+    setIncrement(next);
+    if (year !== undefined) focusOn({ year });
+    return true;
   };
 
   // At a timeline's coarsest zoom, draw only its key events (plus the selected one), if it marks any.
@@ -188,7 +200,7 @@ export default function App() {
     centerRef,
     setCollapsed,
     setSelectedId,
-    setFocus,
+    focusOn,
     notify,
   });
 
@@ -216,7 +228,7 @@ export default function App() {
           setAnnouncement(v === 'table' ? 'Table view' : 'Timeline view');
           // back on the chart, bring the selected event into view
           const sel = selectedId ? resolvedById.get(selectedId) : undefined;
-          if (v === 'timeline' && sel) setFocus({ year: sel.start, range: [sel.start, sel.end ?? sel.start], nonce: Date.now() });
+          if (v === 'timeline' && sel) focusOn({ year: sel.start, range: [sel.start, sel.end ?? sel.start] });
         }}
         picker={
           <TimelinePicker
@@ -268,7 +280,7 @@ export default function App() {
             hiddenReason={search.hiddenReason}
             onPick={search.onPick}
             onYear={(y) => {
-              setFocus({ year: y, nonce: Date.now() });
+              focusOn({ year: y });
               setAnnouncement(`Went to ${formatYear(y, cal)}`);
             }}
           />
@@ -421,24 +433,12 @@ export default function App() {
             focus={focus}
             initialCenterYear={initialCenter}
             onCenterYearChange={onCenterYearChange}
-            onZoomIn={(year) => {
-              const finer = finerIncrement(meta.increments, increment);
-              if (finer === undefined) return false;
-              setIncrement(finer);
-              setFocus({ year, nonce: Date.now() });
-              return true;
-            }}
-            onPinchZoom={(dir) => {
-              const next = dir === 1 ? finerIncrement(meta.increments, increment) : coarserIncrement(meta.increments, increment);
-              if (next !== undefined) setIncrement(next);
-            }}
+            onZoomIn={(year) => zoomStep(1, year)}
+            onPinchZoom={(dir) => void zoomStep(dir)}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}
             onKeyZoom={(dir, year) => {
-              const next = dir === 1 ? finerIncrement(meta.increments, increment) : coarserIncrement(meta.increments, increment);
-              if (next === undefined) return setAnnouncement(dir === 1 ? 'Already at the closest zoom' : 'Already at the widest zoom');
-              setIncrement(next);
-              setFocus({ year, nonce: Date.now() });
+              if (!zoomStep(dir, year)) setAnnouncement(dir === 1 ? 'Already at the closest zoom' : 'Already at the widest zoom');
             }}
             onShowKeys={() => panels.show('legend', true)}
           />

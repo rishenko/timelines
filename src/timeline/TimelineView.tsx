@@ -7,7 +7,7 @@ import { anchorsFor } from './anchors.ts';
 import { buildLanes, layoutLanes, placePhases, type Mark, type PlacedPhase } from './layout.ts';
 import { formatEventDates } from '../lib/years.ts';
 import { eraStart, formatYear, isMajorTick } from '../lib/calendar.ts';
-import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
+import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { safeUrl } from '../lib/urls.ts';
 import { rootOf, trackIndex } from '../lib/tracks.ts';
@@ -61,8 +61,6 @@ interface Props {
   /** Keyboard ?: show the list of keys (the Legend). */
   onShowKeys?: () => void;
 }
-
-const isApprox = (e: ResolvedEvent) => !!(e.circa || e.startWindow || e.endWindow);
 
 const KEY_MOVES: Record<string, Move> = {
   ArrowLeft: 'left',
@@ -386,7 +384,7 @@ export function TimelineView(props: Props) {
     const fadeIn = s.startWindow ? scale.x(s.startWindow[1]) - x0 : 0;
     const fadeOut = s.endWindow ? x1 - scale.x(s.endWindow[0] + 1) : 0;
     const track = data.tracks.find((t) => t.id === trackId)!;
-    const approx = !!(s.startWindow || s.endWindow || track.span?.circa);
+    const approx = isApprox(s, track.span?.circa);
     return (
       <div
         key={`span-${trackId}`}
@@ -416,7 +414,7 @@ export function TimelineView(props: Props) {
     const track = data.tracks.find((t) => t.id === p.trackId)!;
     const fadeIn = p.startWindow ? scale.x(p.startWindow[1]) - x0 : 0;
     const fadeOut = p.endWindow ? x1 - scale.x(p.endWindow[0] + 1) : 0;
-    const approx = !!(p.startWindow || p.endWindow);
+    const approx = isApprox(p);
     const dates = `${formatYear(p.start, cal, approx)} – ${formatYear(p.end, cal, approx)}`;
     return (
       <div

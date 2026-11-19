@@ -6,9 +6,11 @@ import {
   dateWindow,
   defaultSelection,
   eventChronology,
+  isApprox,
   resolveEvents,
   resolveSpan,
   trackChronology,
+  type ResolvedSpan,
 } from './chronology.ts';
 import { validateDataset } from '../data/validate.ts';
 
@@ -124,5 +126,20 @@ describe('error windows', () => {
     expect(s.start).toBe(BCE(1950));
     expect(s.end).toBe(BCE(1651));
     expect(s.startWindow).toEqual([BCE(1950), BCE(1830)]);
+  });
+});
+
+describe('approximate dates', () => {
+  it('an event is approximate when marked circa or given a range', () => {
+    expect(isApprox({})).toBe(false);
+    expect(isApprox({ circa: true })).toBe(true);
+    expect(isApprox({ startWindow: [1, 3] })).toBe(true);
+    expect(isApprox({ endWindow: [5, 9] })).toBe(true);
+  });
+  it("a lifespan or phase takes its track's circa flag", () => {
+    const span: ResolvedSpan = { start: 1, end: 2 };
+    expect(isApprox(span, true)).toBe(true);
+    expect(isApprox(span, undefined)).toBe(false);
+    expect(isApprox({ ...span, startWindow: [0, 1] }, false)).toBe(true);
   });
 });
