@@ -10,10 +10,21 @@ export function newProblems(before: Dataset, after: Dataset): string[] {
   return validateDataset(after).filter((p) => !had.has(p));
 }
 
-/** Adds or replaces an event (by uuid). */
+/** Adds or replaces an event (by uuid), marked `edited`. */
 export function upsertEvent(d: Dataset, event: TimelineEvent): Dataset {
+  const edited = { ...event, edited: true };
   const i = d.events.findIndex((e) => e.uuid === event.uuid);
-  return { ...d, events: i === -1 ? [...d.events, event] : d.events.with(i, event) };
+  return { ...d, events: i === -1 ? [...d.events, edited] : d.events.with(i, edited) };
+}
+
+/** Removes an event and every link to it; events that lose a link are marked `edited`. */
+export function removeEvent(d: Dataset, uuid: string): Dataset {
+  const events = d.events
+    .filter((e) => e.uuid !== uuid)
+    .map((e) =>
+      e.links?.some((l) => l.to === uuid) ? { ...e, links: e.links.filter((l) => l.to !== uuid), edited: true } : e,
+    );
+  return { ...d, events };
 }
 
 /** Tags applied by default to sources created in the editor (the timeline's custom tag, if it has one). */

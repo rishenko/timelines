@@ -6,7 +6,7 @@ import { formatYear, parseYear } from '../lib/calendar.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import { isOn, type Filters } from './filters.ts';
 import type { Notify } from './toast.ts';
-import type { FocusRequest } from '../timeline/TimelineView.tsx';
+import type { FocusRequest } from './focus.ts';
 import type { Dataset } from '../types.ts';
 
 /**

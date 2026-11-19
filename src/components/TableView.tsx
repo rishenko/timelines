@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Dataset } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
-import type { FocusRequest } from '../timeline/TimelineView.tsx';
+import type { FocusRequest } from '../state/focus.ts';
 import {
   chronologyName,
   datesInWords,

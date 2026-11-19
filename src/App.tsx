@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { TimelineView, type FocusRequest } from './timeline/TimelineView.tsx';
+import { TimelineView } from './timeline/TimelineView.tsx';
+import type { FocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
 import { isEventVisible, useFilters } from './state/filters.ts';
 import { useTheme } from './state/theme.ts';

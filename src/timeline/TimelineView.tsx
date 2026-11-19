@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.ts';
 import type { Dataset } from '../types.ts';
+import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor } from './anchors.ts';
 import { buildLanes, layoutLanes, placePhases, type Mark, type PlacedPhase } from './layout.ts';
@@ -19,19 +20,6 @@ const POINT_HALF = 7;
 const PHASE_H = 16;
 /** The narrowest room for a phase's name (about five capitals); narrower phases show no name until zoomed in. */
 const PHASE_NAME_MIN_W = 64;
-
-
-export interface FocusRequest {
-  year: number;
-  /**
-   * Years to bring into view (a row's lifespan, an event's dates). Centered if they fit on screen; if not,
-   * their start goes near the left edge so the reader sees where they begin. Without it, `year` is centered.
-   */
-  range?: [number, number];
-  /** Row to scroll down (or up) to and briefly highlight. */
-  trackId?: string;
-  nonce: number;
-}
 
 interface Props {
   data: Dataset;

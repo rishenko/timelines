@@ -36,23 +36,10 @@ export function datasetReducer(state: DatasetState, action: DatasetAction): Data
       return set(action.dataset);
     case 'reset':
       return { ...state, data: state.published, dirty: false };
-    case 'upsertEvent': {
-      const event = { ...action.event, edited: true };
-      const i = state.data.events.findIndex((e) => e.uuid === event.uuid);
-      const events = i === -1 ? [...state.data.events, event] : state.data.events.with(i, event);
-      return set({ ...state.data, events });
-    }
-    case 'removeEvent': {
-      const events = state.data.events
-        .filter((e) => e.uuid !== action.uuid)
-        // drop dangling links to the removed event
-        .map((e) =>
-          e.links?.some((l) => l.to === action.uuid)
-            ? { ...e, links: e.links.filter((l) => l.to !== action.uuid), edited: true }
-            : e,
-        );
-      return set({ ...state.data, events });
-    }
+    case 'upsertEvent':
+      return set(edits.upsertEvent(state.data, action.event));
+    case 'removeEvent':
+      return set(edits.removeEvent(state.data, action.uuid));
     case 'upsertTrack':
       return set(edits.upsertTrack(state.data, action.track, action.previousId));
     case 'moveTrack':
