@@ -9,6 +9,7 @@ import { usePanels } from './state/panels.ts';
 import { goToTimeline, readUrl, useUrlSync, type View } from './state/url.ts';
 import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
+import { useChronology } from './state/useChronology.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
@@ -24,19 +25,18 @@ import { LegendPanel } from './components/LegendPanel.tsx';
 import { Tour } from './components/Tour.tsx';
 import { CustomizePanel, type CustomizeTab } from './components/CustomizePanel.tsx';
 import { TableView } from './components/TableView.tsx';
+import { Credits } from './components/Credits.tsx';
 import { tourSteps } from './lib/tour.ts';
 import { newEvent } from './lib/newEvent.ts';
 import { datasetPresent } from './lib/years.ts';
 import { formatYear } from './lib/calendar.ts';
-import { safeUrl } from './lib/urls.ts';
-import { chronologyGroups, defaultSelection, resolveEvents, resolveSpan, type ChronologySelection, type ResolvedPhase, type ResolvedSpan } from './lib/chronology.ts';
 import { allTimelines } from './timelines/index.ts';
 
 /**
  * The app shell: owns the open timeline's state (data and draft, chronology choices, zoom, folded rows, selection,
  * editing) and wires it to the toolbar, the timeline view and the side panels. The pieces live elsewhere:
- * state/ (url, toast, panels, library and search actions, zoom, collapse) and components/ (Toolbar, EditBar,
- * SidePanel and the panels).
+ * state/ (url, toast, panels, chronologies, focus requests, library and search actions, zoom, collapse) and
+ * components/ (Toolbar, EditBar, SidePanel, Credits and the panels).
  */
 export default function App() {
   const [initialUrl] = useState(readUrl);
@@ -68,24 +68,10 @@ export default function App() {
   }, [unsaved, notify]);
 
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
-  const [chronSel, setChronSel] = useState<ChronologySelection>(() => defaultSelection(data));
-  const chronDefaults = useMemo(() => defaultSelection(data), [data]);
-  const chronGroups = useMemo(() => [...chronologyGroups(data)].filter(([, list]) => list.length > 1), [data]);
-  const resolved = useMemo(() => resolveEvents(data, chronSel), [data, chronSel]);
-  const resolvedById = useMemo(() => new Map(resolved.map((e) => [e.uuid, e])), [resolved]);
+  const chron = useChronology(data);
+  const { resolved, resolvedById, spans, phases } = chron;
   const visibleEvents = useMemo(() => resolved.filter((e) => isEventVisible(e, filters)), [resolved, filters]);
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
-  const spans = useMemo(() => {
-    const m = new Map<string, ResolvedSpan>();
-    for (const t of data.tracks) if (t.span) m.set(t.id, resolveSpan(data, t.id, t.span, chronSel));
-    return m;
-  }, [data, chronSel]);
-  const phases = useMemo(() => {
-    const m = new Map<string, ResolvedPhase[]>();
-    for (const t of data.tracks)
-      if (t.phases?.length) m.set(t.id, t.phases.map((p) => ({ name: p.name, ...resolveSpan(data, t.id, p, chronSel) })));
-    return m;
-  }, [data, chronSel]);
 
   // ---- view settings ----
   const [increment, setIncrement] = useState(initialUrl.increment);
@@ -93,8 +79,6 @@ export default function App() {
   const [showLinks, setShowLinks] = useState(initialUrl.links);
   const [view, setView] = useState<View>(initialUrl.view);
   const [customizeTab, setCustomizeTab] = useState<CustomizeTab>('appearance');
-  // on phones the credits note is clamped to two lines; a tap opens it (see .legal in CSS)
-  const [creditsOpen, setCreditsOpen] = useState(false);
   // One polite live region for screen readers: zoom changes, "Went to …" and toasts. Kept mounted, because a region
   // that appears together with its text is often not read out.
   const [announcement, setAnnouncement] = useState('');
@@ -247,11 +231,11 @@ export default function App() {
         onIncrement={setIncrement}
         dating={
           <DatingMenu
-            groups={chronGroups}
-            selection={chronSel}
-            defaults={chronDefaults}
-            onChange={(g, id) => setChronSel((s) => ({ ...s, [g]: id }))}
-            onReset={() => setChronSel(chronDefaults)}
+            groups={chron.groups}
+            selection={chron.selection}
+            defaults={chron.defaults}
+            onChange={chron.choose}
+            onReset={chron.reset}
           />
         }
         compress={compress}
@@ -348,7 +332,7 @@ export default function App() {
       )}
 
       {panels.open.tour && (
-        <Tour steps={tourSteps(data, { hasDating: chronGroups.length > 0, hasSubRows })} onClose={() => panels.show('tour', false)} />
+        <Tour steps={tourSteps(data, { hasDating: chron.groups.length > 0, hasSubRows })} onClose={() => panels.show('tour', false)} />
       )}
 
       {panels.open.customize && (
@@ -459,30 +443,7 @@ export default function App() {
         />
       </main>
 
-      {(meta.credits || meta.creditsImage) && (
-        // on phones the note is clamped to two lines: a tap anywhere on it opens it, and so does its More button
-        // (shown only on narrow screens), which keyboard and screen-reader users reach
-        // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-        <footer
-          className={`legal${creditsOpen ? ' open' : ''}`}
-          onClick={() => setCreditsOpen((o) => !o)}
-          title={creditsOpen ? undefined : 'Tap to read the full note'}
-        >
-          {safeUrl(meta.creditsImage) && <img src={safeUrl(meta.creditsImage)} alt="" />}
-          {meta.credits && <p id="credits-note">{meta.credits}</p>}
-          <button
-            className="legal-toggle linklike"
-            aria-expanded={creditsOpen}
-            aria-controls="credits-note"
-            onClick={(ev) => {
-              ev.stopPropagation();
-              setCreditsOpen((o) => !o);
-            }}
-          >
-            {creditsOpen ? 'Less' : 'More'}
-          </button>
-        </footer>
-      )}
+      <Credits text={meta.credits} image={meta.creditsImage} />
 
       {toast && (
         <div key={toast.n} className={`toast ${toast.kind}`} aria-hidden="true">

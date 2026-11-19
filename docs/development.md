@@ -46,13 +46,16 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 | `src/lib/years.ts`, `urls.ts`, `theme.ts`, `claims.ts` | Date text; URL safety for untrusted timelines; theme presets; date claims as form fields |
 | `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
 | `src/timeline/layout.ts` | Lanes from the row tree; row packing, `+N` clusters, phases |
-| `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering |
-| `src/timeline/keyboard.ts`, `gestures.ts` | Keyboard control of the chart; pinch zoom and long press |
+| `src/timeline/TimelineView.tsx` | The chart: lanes from the row tree, windowed rendering; composes the pieces below |
+| `src/timeline/Ruler.tsx`, `Bands.tsx`, `LaneLabel.tsx`, `Marks.tsx` | The year ruler; lifespan and phase bands; row labels and their buttons; event and `+N` marks |
+| `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen |
+| `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys) and its movement rules |
+| `src/timeline/gestures.ts` | Pinch zoom and long press |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
 | `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
 | `src/state/library.ts`, `useLibraryActions.ts` | The reader's own timelines: opening, uploading, updating, sharing |
 | `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
-| `src/state/` (others) | Filters, theme, folded rows, zoom steps, panels, toasts, search actions |
+| `src/state/` (others) | Filters, theme, chronology choices, focus requests, folded rows, zoom steps, panels, toasts, search actions |
 | `src/components/` | Toolbar, panels (Filters, Legend, Customize, Dating), detail panel and editors, search box, table view, tour |
 | `src/test/fixtures.ts` | A small fictional timeline for tests |
 | `data-src/`, `scripts/` | Readable source files for the included timelines, and the scripts that build them |
