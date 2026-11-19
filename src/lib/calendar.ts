@@ -10,7 +10,7 @@ import type { Calendar } from '../types.ts';
 
 export type EraSide = 'before' | 'after';
 
-/** REDACTED-style calendar with a year 0 (5500 BE … 0 AE … 5021 AE). Also the default for untyped data. */
+/** A calendar with a year 0 (550 BE … 0 AE … 502 AE). Also the default for untyped data. */
 export const YEAR_ZERO_CALENDAR: Calendar = { before: 'BE', after: 'AE', yearZero: true };
 
 export const BCE_CE: Calendar = {

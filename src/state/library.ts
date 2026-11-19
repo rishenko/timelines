@@ -86,7 +86,7 @@ export function removeFromLibrary(id: string, store: Store = defaultStore()) {
   store.removeItem(draftKey(id));
 }
 
-/** Fetches, converts and validates a timeline from a URL. Throws an Error with a readable message. */
+/** Fetches and validates a timeline from a URL. Throws an Error with a readable message. */
 export async function fetchTimeline(url: string, fetchImpl: typeof fetch = fetch): Promise<Dataset> {
   if (!/^https?:\/\//i.test(url)) throw new Error('The link must start with http:// or https://.');
   let res: Response;

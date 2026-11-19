@@ -1341,7 +1341,7 @@ main {
   font-size: 12px;
 }
 
-/* Light themes: darken track colors toward the text color so pale tracks (e.g. REDACTED's gray)
+/* Light themes: darken track colors toward the text color so pale tracks (e.g. a pale gray)
    stay visible. The stored track color is unchanged. Matches any element that sets
    --track-color inline. */
 :root[data-mode='light'] [style*='--track-color'] {

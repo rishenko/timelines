@@ -63,7 +63,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
 
 - **Year ruler** with per-timeline scales (ancient: 10/50/100/500/1000 years per tick; Classical: 10/50/100/500).
   Switching keeps the year at the center of the screen fixed.
-- **Calendars.** Each timeline names its eras (BCE/CE, BE/U, …) and says whether it has a year 0.
+- **Calendars.** Each timeline names its eras (BCE/CE, BE/AE, …) and says whether it has a year 0.
   BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
   years (1500 BCE, not 1501 BCE).
 - **Phases:** a row can mark named periods on its own bar, such as a state's successive governments (France's kingdoms and republics) or a civilization's periods (Egypt's Old, Middle and New Kingdoms; Assyria's periods; China's Northern dynasties). A line marks each change and the name runs along the top of the row; rivals that overlapped stack their names. Edit them in the track editor; search finds them by name. See `docs/data-format.md`.
@@ -112,7 +112,7 @@ paths; anything else (e.g. `javascript:`) is rejected.
   Drafts autosave per timeline in the browser as the reader's changes (`src/state/draft.ts`), not a copy, so later
   updates to the published timeline still reach them; where both changed the same item, the reader's version wins, and
   the reader is told when the published timeline changed under their edits. Old full-copy drafts are converted on load
-  without deleting anything. Old REDACTED files (v1 and v2) are converted on upload.
+  without deleting anything.
 - **Table view:** the toolbar's **Timeline | Table** switch (`?view=table` in links) shows the same events as tables,
   grouped by region (or by top-level row, for a timeline without regions) or in one list, sorted by date or title. Each event gives its
   dates in words with the range the cited sources allow ("c. 1595 BCE; the sources put it between 1651 BCE and 1531
@@ -264,7 +264,7 @@ which converts and validates them.
 | `src/state/useSearchActions.ts` | What picking a search result does (unfold, scroll, select) |
 | `src/state/` (others) | Filters, theme, folded rows (`collapse`), zoom steps, toolbar panels, toasts |
 | `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors, with `ClaimList` for date claims), search box, Dating menu, guided `Tour`, Filters and Legend panels, and the Customize panel (Appearance: `ThemePanel`; Edit; Timelines: `TimelinesPanel`) |
-| `src/data/` | Validator, importers for old REDACTED formats, row proximity (`proximity.ts`) |
+| `src/data/` | Validator, row proximity (`proximity.ts`) |
 | `src/timelines/` | Bundled timelines, registered in `index.ts` |
 | `data-src/`, `scripts/` | Readable source data for both timelines, the compiler, and the data scripts above |
 
@@ -276,17 +276,9 @@ date; they are tagged **Cited via Wikipedia (not checked)** because they were no
 Each region follows one chronology by default. The choices, the disagreements and what to spot-check are
 in `docs/ancient-sources.md` and `docs/classical-sources.md`.
 
-## Old REDACTED data files
-
-The REDACTED timeline started this app but is no longer part of this repo (since 2026-11-18). Data files from the
-older REDACTED timeline apps (REDACTED v1, REDACTED) still convert on upload, or with
-`node scripts/upgrade-dataset.ts old.json new.json`.
-
 ## Origins
 
-Built from [REDACTED](https://github.com/rishenko/REDACTED) by
-[rishenko](https://github.com/rishenko), itself v2 of
-[REDACTED](https://github.com/rishenko/REDACTED).
+By [rishenko](https://github.com/rishenko).
 
 ## AI use
 

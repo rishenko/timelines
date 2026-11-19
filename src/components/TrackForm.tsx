@@ -218,7 +218,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
         <input id="tr-image" placeholder="https://… or timelines/…/logo.svg" {...register('image')} />
 
         <label className="check">
-          <input type="checkbox" {...register('pinLast')} /> Keep at the bottom (e.g. "REDACTED", "Other")
+          <input type="checkbox" {...register('pinLast')} /> Keep at the bottom (e.g. "Other peoples", "Other")
         </label>
 
         <details>

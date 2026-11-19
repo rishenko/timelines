@@ -25,7 +25,7 @@ export function useLibraryActions(opts: {
    * Throws an Error with a readable message.
    */
   const importFile = async (file: File) => {
-    const { dataset, errors, migratedFrom } = parseUpload(await file.text());
+    const { dataset, errors } = parseUpload(await file.text());
     if (!dataset) {
       console.error(errors);
       throw new Error(
@@ -35,7 +35,7 @@ export function useLibraryActions(opts: {
     const id = dataset.meta.id;
     if (id === currentId) {
       dispatch({ type: 'load', dataset });
-      notify(`Loaded ${file.name}${migratedFrom ? ` (converted from the v${migratedFrom} format)` : ''}.`);
+      notify(`Loaded ${file.name}.`);
       return;
     }
     if (BUNDLED_IDS.includes(id)) {

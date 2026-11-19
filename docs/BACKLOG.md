@@ -63,10 +63,10 @@ separate later timeline, linked by `meta.continues` as Ancient and Classical are
 
 ## Done
 
-- **First pass** (from REDACTED's "Genericize" plan): per-timeline config (title, credits, calendar,
+- **First pass:** per-timeline config (title, credits, calendar,
   increments, theme, custom source tag, pinned tracks), BCE/CE without a year 0, round-year ticks, nesting to any
   depth, track lifespans, date claims with computed error windows, switchable chronologies, `succeeds`/`conquers`
-  links, a timeline picker with per-timeline drafts, importers for old REDACTED files, and the ancient dataset.
+  links, a timeline picker with per-timeline drafts, and the ancient dataset.
 - **Timeline library:** uploads and `?data=<url>` links saved in the browser, listed in the title menu, with
   update/share/remove, and URL safety checks for untrusted timelines.
 - **Hosting:** live on GitHub Pages (public repo); `npm run deploy` publishes.
@@ -119,6 +119,3 @@ separate later timeline, linked by `meta.continues` as Ancient and Classical are
   - Phones: the edit bar is one sideways-scrolling row of buttons with a short hint (it was three rows).
   - `scripts/screenshot.ts`: `--measure <selector>` prints element sizes, `--click` also matches tooltips and
     `=Exact` text, and `--close-legend` closes the tour too.
-- **REDACTED moved out (2026-11-18):** the REDACTED timeline, its scripts and its docs are no longer in this repo. Tests
-  that used it as a plain timeline use a small fictional one (`src/test/fixtures.ts`). The importers for old REDACTED
-  files stay.

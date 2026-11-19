@@ -24,7 +24,7 @@ Every year in the file is a whole number, counted with a **year 0**:
 |---|---|---|
 | No year 0 (`"yearZero": false`, e.g. BCE/CE) | *n* CE | *n* |
 | | *n* BCE | 1 − *n* (so 1 BCE = 0, 1450 BCE = −1449) |
-| With a year 0 (`"yearZero": true`, e.g. a fictional calendar's BE/U) | *n* U (including 0 AE) | *n* |
+| With a year 0 (`"yearZero": true`, e.g. BE/AE) | *n* AE (including 0 AE) | *n* |
 | | *n* BE | −*n* |
 
 This makes subtraction give the right number of years in every calendar. You never have to convert
@@ -68,7 +68,7 @@ by hand if you write the file in the [readable format](#writing-dates-as-text) a
 | Field | Required | What |
 |---|---|---|
 | `before` | yes | Label for years before the epoch: `"BCE"`, `"BE"`, `"BF"`… |
-| `after` | yes | Label for years from the epoch on: `"CE"`, `"U"`, `"AF"`… |
+| `after` | yes | Label for years from the epoch on: `"CE"`, `"AE"`, `"AF"`… |
 | `yearZero` | yes | `true` if the calendar has a year 0. Real-world BCE/CE does not. |
 | `aliases` | no | Other spellings readers may type in search: `{ "before": ["BC"], "after": ["AD"] }`. |
 
@@ -88,7 +88,7 @@ cost label width, so three or four levels is a practical ceiling rather than a r
 | `span` | no | Lifespan: shaded across the row. See below. |
 | `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
 | `image` | no | Small image in the row label (`https://…` or a path on the app's own site). |
-| `pinLast` | no | Keep at the bottom, e.g. "REDACTED" or "Other peoples". Rows added in the editor go above it. |
+| `pinLast` | no | Keep at the bottom, e.g. "Other peoples" or "Other powers". Rows added in the editor go above it. |
 
 **`span`** (lifespan): `{ "start": …, "end": …, "circa": true }`, plus optional `startDates` and
 `endDates` [date claims](#date-claims-and-uncertain-dates). Uncertain ends are drawn the same way as on events.
@@ -99,8 +99,8 @@ timeline. Each phase is dated like a lifespan, with a name:
 
 ```json
 "phases": [
-  { "name": "First REDACTED", "start": 0, "end": 2880 },
-  { "name": "Second REDACTED", "start": 2880, "end": 4591, "endDates": [{ "year": 4591, "source": { "sourceKey": "REDACTED", "sourceLocation": "pg. 339" } }] }
+  { "name": "First Council", "start": 0, "end": 288 },
+  { "name": "Second Council", "start": 288, "end": 459, "endDates": [{ "year": 459, "source": { "sourceKey": "annals", "sourceLocation": "book 3" } }] }
 ]
 ```
 
@@ -252,7 +252,3 @@ Text dates are accepted for `start`, `end`, claim `year` and `derive.until`. A "
 `circa`. Era labels and their `aliases` come from the file's own calendar. Numbers pass through
 unchanged. `data-src/ancient-near-east.json` is a full example.
 
-## Older files
-
-Data files from the REDACTED timeline apps (REDACTED v1 and REDACTED, schema 2) are
-converted when opened. `node scripts/upgrade-dataset.ts old.json new.json` converts one to a v3 file.

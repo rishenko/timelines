@@ -2,7 +2,6 @@ import { useEffect, useReducer } from 'react';
 import type { Dataset, Source, TimelineEvent, Track } from '../types.ts';
 import * as edits from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
-import { upgrade } from '../data/migrate.ts';
 import { applyChanges, changesFromLegacyCopy, diffDataset, fingerprint, isEmpty, type DraftChanges, type StoredDraft } from './draft.ts';
 
 export const draftKey = (timelineId: string) => `timelines:${timelineId}:draft`;
@@ -150,17 +149,16 @@ export function useDataset(published: Dataset) {
   return [state, dispatch] as const;
 }
 
-/** Parses an uploaded file: v3 is validated; v1 and v2 REDACTED files are converted first. */
-export function parseUpload(text: string): { dataset?: Dataset; errors: string[]; migratedFrom?: 1 | 2 } {
+/** Parses and validates an uploaded file. */
+export function parseUpload(text: string): { dataset?: Dataset; errors: string[] } {
   let json: unknown;
   try {
     json = JSON.parse(text);
   } catch (e) {
     return { errors: [`Not valid JSON: ${(e as Error).message}`] };
   }
-  const { data, from } = upgrade(json);
-  const errors = validateDataset(data);
-  return errors.length ? { errors, migratedFrom: from } : { dataset: data as Dataset, errors: [], migratedFrom: from };
+  const errors = validateDataset(json);
+  return errors.length ? { errors } : { dataset: json as Dataset, errors: [] };
 }
 
 export function downloadDataset(data: Dataset, final: boolean) {

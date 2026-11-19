@@ -3,16 +3,16 @@
  *
  * Years are stored as integers in astronomical numbering: there is always a
  * year 0 internally. A calendar without a year zero (BCE/CE) displays stored 0
- * as 1 BCE and -1449 as 1450 BCE; a calendar with one (REDACTED's BE/U) displays
+ * as 1 BCE and -1449 as 1450 BCE; a calendar with one (e.g. BE/AE) displays
  * -5500 as 5500 BE. Use lib/calendar.ts to convert to and from display form.
  */
 
 export interface Calendar {
   /** Label for years before the epoch, e.g. "BCE" or "BE". */
   before: string;
-  /** Label for years from the epoch on, e.g. "CE" or "U". */
+  /** Label for years from the epoch on, e.g. "CE" or "AE". */
   after: string;
-  /** True if the calendar has a year 0 (REDACTED: 0 AE). False for BCE/CE (1 BCE is followed by 1 CE). */
+  /** True if the calendar has a year 0 (e.g. 0 AE). False for BCE/CE (1 BCE is followed by 1 CE). */
   yearZero: boolean;
   /** Extra spellings accepted when parsing, e.g. { before: ["BC"], after: ["AD"] }. */
   aliases?: { before?: string[]; after?: string[] };
@@ -34,7 +34,7 @@ export interface TimelineMeta {
   defaultIncrement: number;
   /** Theme preset used when the reader hasn't picked one. */
   defaultTheme?: string;
-  /** Tag applied to sources created in the editor (REDACTED: "homebrew"). */
+  /** Tag applied to sources created in the editor (e.g. "homebrew"). */
   customSourceTag?: string;
   /** Years of range drawn either side of a "circa" date that has no stated margin. */
   circaFade?: number;
@@ -73,7 +73,7 @@ export interface Track {
   parent?: string;
   /** Image URL shown in the lane label (relative to the site root, or absolute). */
   image?: string;
-  /** Keep this track after all others (e.g. "REDACTED", "Other powers"); new tracks are inserted before it. */
+  /** Keep this track after all others (e.g. "Other peoples", "Other powers"); new tracks are inserted before it. */
   pinLast?: boolean;
   /** Default chronology for events on this track; children inherit it. */
   chronology?: string;
@@ -81,7 +81,7 @@ export interface Track {
   span?: TrackSpan;
   /**
    * Named periods within the row, drawn on its own bar: successive governments of one state (France's kingdoms,
-   * republics and empires; REDACTED's REDACTED), dynasties, eras. A line marks each change and the name sits along
+   * republics and empires), dynasties, eras. A line marks each change and the name sits along
    * the top of the row. Phases may overlap (two rival governments during a civil war).
    */
   phases?: TrackPhase[];

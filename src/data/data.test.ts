@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { isV1Data, isV2Data, migrateV1, migrateV2, upgrade } from './migrate.ts';
 import { validateDataset } from './validate.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import ancient from '../timelines/ancient-near-east.json';
@@ -11,19 +10,6 @@ import { relatedRegions, relatedSiblings, proximityParents, allowedDistance } fr
 import type { Dataset } from '../types.ts';
 import { compileSource, compiledText } from '../../scripts/lib/compile.ts';
 import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
-
-// Sibling checkouts, used when present: v1's data file and v2's (schema 2) data file. They test the converters for
-// old REDACTED files (readers can still upload them).
-const V1_PATH = '../REDACTED/src/data/REDACTED-timeline-data.json';
-const V2_PATH = '../REDACTED/src/data/timeline.json';
-
-function load(path: string) {
-  try {
-    return JSON.parse(readFileSync(path, 'utf8'));
-  } catch {
-    return null;
-  }
-}
 
 const shipped: [string, Dataset][] = [
   ['ancient-near-east', ancient as unknown as Dataset],
@@ -238,45 +224,5 @@ describe('validateDataset', () => {
     const d = base();
     d.meta.defaultIncrement = 7;
     expect(validateDataset(d).join()).toMatch(/defaultIncrement/);
-  });
-});
-
-describe('migration', () => {
-  const v1 = load(V1_PATH);
-  const v2 = load(V2_PATH);
-
-  it.skipIf(!v1)('v1 → v3 keeps every non-marker entry', () => {
-    expect(isV1Data(v1)).toBe(true);
-    const { data, from } = upgrade(v1);
-    expect(from).toBe(1);
-    const ds = data as Dataset;
-    const nonMarkers = v1.timeline.filter((e: { marker?: boolean }) => !e.marker);
-    expect(ds.events).toHaveLength(nonMarkers.length);
-    expect(validateDataset(ds)).toEqual([]);
-    // BE years become negative; REDACTED has a year 0, so stored years equal the signed years
-    expect(ds.events.find((e) => e.title === 'Beginning of The REDACTED')!.start).toBe(-5500);
-    expect(ds.tracks.map((t) => t.id)).not.toContain('REDACTED');
-    expect(Object.keys(ds.sources)).not.toContain('all-sources');
-    expect(migrateV1(v1).schemaVersion).toBe(2);
-  });
-
-  it.skipIf(!v2)('v2 → v3 keeps every event and its years unchanged', () => {
-    expect(isV2Data(v2)).toBe(true);
-    const ds = migrateV2(v2);
-    expect(validateDataset(ds)).toEqual([]);
-    expect(ds.events).toHaveLength(v2.events.length);
-    for (const [i, e] of v2.events.entries()) {
-      expect(ds.events[i].uuid).toBe(e.uuid);
-      expect(ds.events[i].start).toBe(e.start);
-      expect(ds.events[i].end).toBe(e.end);
-    }
-    expect(ds.meta.calendar.yearZero).toBe(true);
-    expect(ds.tracks.find((t) => t.id === 'REDACTED')!.pinLast).toBe(true);
-    expect(ds.tracks.find((t) => t.id === 'redacted')!.image).toBe('timelines/REDACTED/logos/redacted.svg');
-    expect(ds.sources.REDACTED.tags).toEqual(v2.sources.REDACTED.publishingAttributes);
-  });
-
-  it('leaves v3 data alone', () => {
-    expect(upgrade(plainTimeline()).from).toBeUndefined();
   });
 });

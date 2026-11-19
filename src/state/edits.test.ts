@@ -15,28 +15,34 @@ import {
 } from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
 import { draftToStore, restoreDraft } from './dataset.ts';
-import { REDACTED_META } from '../data/migrate.ts';
 
 const base = (): Dataset => ({
   schemaVersion: 3,
-  meta: structuredClone(REDACTED_META),
+  meta: {
+    id: 'test',
+    title: 'Test',
+    calendar: { before: 'BL', after: 'L', yearZero: true },
+    increments: [1, 10],
+    defaultIncrement: 10,
+    customSourceTag: 'homebrew',
+  },
   tracks: [
-    { id: 'redacted', name: 'REDACTED', color: '#ccc' },
-    { id: 'REDACTED', name: 'REDACTED', color: '#0092a4' },
-    { id: 'REDACTED', name: 'REDACTED', color: '#777', pinLast: true },
+    { id: 'north', name: 'The North', color: '#ccc' },
+    { id: 'guild', name: 'Merchant Guild', color: '#0092a4' },
+    { id: 'others', name: 'Others', color: '#777', pinLast: true },
   ],
-  sources: { REDACTED: { name: 'Core', tags: ['first'] } },
+  sources: { annals: { name: 'Annals', tags: ['first'] } },
   tags: { first: { name: 'First Party' } },
   events: [
-    { uuid: 'a', title: 'A', descr: '', start: 1, tracks: ['REDACTED'], sources: [{ sourceKey: 'REDACTED', sourceLocation: '' }] },
-    { uuid: 'b', title: 'B', descr: '', start: 2, tracks: ['REDACTED', 'redacted'], sources: [], links: [{ to: 'a', kind: 'causes' }] },
+    { uuid: 'a', title: 'A', descr: '', start: 1, tracks: ['guild'], sources: [{ sourceKey: 'annals', sourceLocation: '' }] },
+    { uuid: 'b', title: 'B', descr: '', start: 2, tracks: ['guild', 'north'], sources: [], links: [{ to: 'a', kind: 'causes' }] },
   ],
 });
 
 describe('ids and colors', () => {
   it('makes unique slugs', () => {
-    expect(uniqueId('Second REDACTED', ['second-REDACTED'])).toBe('second-REDACTED-2');
-    expect(uniqueId('Ünïon!', [])).toBe('redacted');
+    expect(uniqueId('Second Council', ['second-council'])).toBe('second-council-2');
+    expect(uniqueId('Ünïty!', [])).toBe('unity');
   });
   it('picks an unused color', () => {
     expect(nextTrackColor(base().tracks)).toMatch(/^#/);
@@ -44,42 +50,42 @@ describe('ids and colors', () => {
 });
 
 describe('tracks', () => {
-  it('inserts new top-level tracks before REDACTED, children at the end', () => {
-    let d = upsertTrack(base(), { id: 'gm', name: 'My Faction', color: '#f00' });
-    expect(d.tracks.map((t) => t.id)).toEqual(['redacted', 'REDACTED', 'gm', 'REDACTED']);
-    d = upsertTrack(d, { id: 'gm-cell', name: 'Cell', color: '#f00', parent: 'gm' });
-    expect(d.tracks.at(-1)!.id).toBe('gm-cell');
+  it('inserts new top-level tracks before the pinned last one, children at the end', () => {
+    let d = upsertTrack(base(), { id: 'mine', name: 'My Faction', color: '#f00' });
+    expect(d.tracks.map((t) => t.id)).toEqual(['north', 'guild', 'mine', 'others']);
+    d = upsertTrack(d, { id: 'mine-cell', name: 'Cell', color: '#f00', parent: 'mine' });
+    expect(d.tracks.at(-1)!.id).toBe('mine-cell');
     expect(validateDataset(d)).toEqual([]);
   });
 
   it('renames a track everywhere', () => {
-    let d = upsertTrack(base(), { id: 'child', name: 'C', color: '#000', parent: 'REDACTED' });
-    d = upsertTrack(d, { id: 'REDACTED', name: 'REDACTED', color: '#0092a4' }, 'REDACTED');
-    expect(d.events[0].tracks).toEqual(['REDACTED']);
-    expect(d.tracks.find((t) => t.id === 'child')!.parent).toBe('REDACTED');
+    let d = upsertTrack(base(), { id: 'child', name: 'C', color: '#000', parent: 'guild' });
+    d = upsertTrack(d, { id: 'merchants', name: 'Merchant Guild', color: '#0092a4' }, 'guild');
+    expect(d.events[0].tracks).toEqual(['merchants']);
+    expect(d.tracks.find((t) => t.id === 'child')!.parent).toBe('merchants');
     expect(validateDataset(d)).toEqual([]);
   });
 
   it('moves among siblings only', () => {
-    const d = moveTrack(base(), 'REDACTED', -1);
-    expect(d.tracks.map((t) => t.id)).toEqual(['REDACTED', 'redacted', 'REDACTED']);
-    expect(moveTrack(d, 'REDACTED', -1)).toBe(d);
+    const d = moveTrack(base(), 'guild', -1);
+    expect(d.tracks.map((t) => t.id)).toEqual(['guild', 'north', 'others']);
+    expect(moveTrack(d, 'guild', -1)).toBe(d);
   });
 
   it('deletes a track, its single-track events, and links to them', () => {
     const d0 = base();
-    expect(trackDeletion(d0, 'REDACTED')).toEqual({ blocked: undefined, orphaned: 1, shared: 1 });
-    const d = removeTrack(d0, 'REDACTED');
+    expect(trackDeletion(d0, 'guild')).toEqual({ blocked: undefined, orphaned: 1, shared: 1 });
+    const d = removeTrack(d0, 'guild');
     expect(d.events.map((e) => e.uuid)).toEqual(['b']);
-    expect(d.events[0].tracks).toEqual(['redacted']);
+    expect(d.events[0].tracks).toEqual(['north']);
     expect(d.events[0].links).toEqual([]);
     expect(validateDataset(d)).toEqual([]);
   });
 
   it('refuses to delete a track with sub-tracks', () => {
-    const d = upsertTrack(base(), { id: 'child', name: 'C', color: '#000', parent: 'REDACTED' });
-    expect(trackDeletion(d, 'REDACTED').blocked).toMatch(/sub-tracks/);
-    expect(removeTrack(d, 'REDACTED')).toBe(d);
+    const d = upsertTrack(base(), { id: 'child', name: 'C', color: '#000', parent: 'guild' });
+    expect(trackDeletion(d, 'guild').blocked).toMatch(/sub-tracks/);
+    expect(removeTrack(d, 'guild')).toBe(d);
   });
 });
 
@@ -91,14 +97,14 @@ describe('sources', () => {
   });
 
   it('renames a source key in citations, keeping order', () => {
-    const d = upsertSource(base(), 'core', { name: 'Core', tags: ['first'] }, 'REDACTED');
-    expect(Object.keys(d.sources)).toEqual(['core']);
-    expect(d.events[0].sources[0].sourceKey).toBe('core');
+    const d = upsertSource(base(), 'annals-2', { name: 'Annals', tags: ['first'] }, 'annals');
+    expect(Object.keys(d.sources)).toEqual(['annals-2']);
+    expect(d.events[0].sources[0].sourceKey).toBe('annals-2');
   });
 
   it('removes a source and its citations', () => {
-    expect(sourceUsage(base(), 'REDACTED')).toBe(1);
-    const d = removeSource(base(), 'REDACTED');
+    expect(sourceUsage(base(), 'annals')).toBe(1);
+    const d = removeSource(base(), 'annals');
     expect(d.sources).toEqual({});
     expect(d.events[0].sources).toEqual([]);
     expect(validateDataset(d)).toEqual([]);

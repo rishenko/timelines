@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   BCE_CE,
-  YEAR_ZERO_CALENDAR as BU_U,
+  YEAR_ZERO_CALENDAR as BE_AE,
   eraStart,
   formatYear,
   fromStored,
@@ -15,18 +15,18 @@ import {
 import { yearsBetween } from './years.ts';
 import { buildScale } from '../timeline/scale.ts';
 
-describe('calendar with a year 0 (REDACTED)', () => {
+describe('calendar with a year 0', () => {
   it('formats and parses', () => {
-    expect(formatYear(-5500, BU_U)).toBe('5500 BE');
-    expect(formatYear(0, BU_U)).toBe('0 AE');
-    expect(parseYear('4560 AE', BU_U)).toBe(4560);
-    expect(parseYear('500 bu', BU_U)).toBe(-500);
-    expect(parseYear('-12', BU_U)).toBe(-12);
-    expect(parseYear('abc', BU_U)).toBeNull();
+    expect(formatYear(-5500, BE_AE)).toBe('5500 BE');
+    expect(formatYear(0, BE_AE)).toBe('0 AE');
+    expect(parseYear('4560AE', BE_AE)).toBe(4560);
+    expect(parseYear('500 be', BE_AE)).toBe(-500);
+    expect(parseYear('-12', BE_AE)).toBe(-12);
+    expect(parseYear('abc', BE_AE)).toBeNull();
   });
   it('ticks on multiples of the increment', () => {
-    expect(ticksBetween(-25, 25, 10, BU_U)).toEqual([-20, -10, 0, 10, 20]);
-    expect(eraStart(BU_U)).toBe(0);
+    expect(ticksBetween(-25, 25, 10, BE_AE)).toEqual([-20, -10, 0, 10, 20]);
+    expect(eraStart(BE_AE)).toBe(0);
   });
 });
 

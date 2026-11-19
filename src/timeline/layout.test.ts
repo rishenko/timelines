@@ -8,9 +8,9 @@ import { anchorsFor } from './anchors.ts';
 import { presentYear } from '../lib/years.ts';
 
 const tracks: Track[] = [
-  { id: 'redacted', name: 'REDACTED', color: '#ccc' },
-  { id: 'second-comm', name: 'Second REDACTED', color: '#aaa', parent: 'redacted' },
-  { id: 'REDACTED', name: 'REDACTED', color: '#0092A4' },
+  { id: 'north', name: 'The North', color: '#ccc' },
+  { id: 'north-coast', name: 'North Coast', color: '#aaa', parent: 'north' },
+  { id: 'guild', name: 'Merchant Guild', color: '#0092A4' },
 ];
 
 function ev(uuid: string, start: number, tracks: string[], end?: number): TimelineEvent {
@@ -20,18 +20,18 @@ function ev(uuid: string, start: number, tracks: string[], end?: number): Timeli
 describe('buildLanes', () => {
   it('nests children after their parent', () => {
     const lanes = buildLanes(tracks, {}, {});
-    expect(lanes.map((l) => `${l.id}:${l.depth}`)).toEqual(['union:0', 'second-comm:1', 'REDACTED:0']);
+    expect(lanes.map((l) => `${l.id}:${l.depth}`)).toEqual(['north:0', 'north-coast:1', 'guild:0']);
   });
 
   it('merges children into a collapsed parent', () => {
-    const lanes = buildLanes(tracks, {}, { redacted: true });
-    expect(lanes.map((l) => l.id)).toEqual(['redacted', 'REDACTED']);
-    expect(lanes[0].members).toEqual(['redacted', 'second-comm']);
+    const lanes = buildLanes(tracks, {}, { north: true });
+    expect(lanes.map((l) => l.id)).toEqual(['north', 'guild']);
+    expect(lanes[0].members).toEqual(['north', 'north-coast']);
   });
 
   it('skips hidden tracks', () => {
-    const lanes = buildLanes(tracks, { REDACTED: false }, {});
-    expect(lanes.map((l) => l.id)).toEqual(['redacted', 'second-comm']);
+    const lanes = buildLanes(tracks, { guild: false }, {});
+    expect(lanes.map((l) => l.id)).toEqual(['north', 'north-coast']);
   });
 });
 
@@ -39,26 +39,26 @@ describe('layoutLanes', () => {
   const scale = buildScale([0, 100], { increment: 10, tickPx: 80, compress: false });
 
   it('stacks overlapping spans into separate rows', () => {
-    const events = [ev('a', 0, ['redacted'], 50), ev('b', 10, ['redacted'], 30), ev('c', 90, ['redacted'])];
+    const events = [ev('a', 0, ['north'], 50), ev('b', 10, ['north'], 30), ev('c', 90, ['north'])];
     const { lanes } = layoutLanes(buildLanes(tracks, {}, {}), events, scale, 100);
-    const union = lanes.find((l) => l.lane.id === 'redacted')!;
-    const row = (id: string) => union.marks.find((m) => m.eventId === id)!.row;
+    const north = lanes.find((l) => l.lane.id === 'north')!;
+    const row = (id: string) => north.marks.find((m) => m.eventId === id)!.row;
     expect(row('a')).not.toBe(row('b'));
     expect(row('c')).toBe(0);
   });
 
   it('puts a multi-track event in every lane it belongs to, at the same x', () => {
-    const events = [ev('war', 20, ['redacted', 'REDACTED'], 25)];
+    const events = [ev('war', 20, ['north', 'guild'], 25)];
     const { lanes } = layoutLanes(buildLanes(tracks, {}, {}), events, scale, 100);
     const marks = lanes.flatMap((l) => l.marks);
-    expect(marks.map((m) => m.laneId).sort()).toEqual(['REDACTED', 'redacted']);
+    expect(marks.map((m) => m.laneId).sort()).toEqual(['guild', 'north']);
     expect(new Set(marks.map((m) => m.x0)).size).toBe(1);
   });
 
   it('folds events beyond maxRows into a cluster mark, unless the lane is expanded', () => {
-    const events = Array.from({ length: 6 }, (_, i) => ev(`e${i}`, 50, ['REDACTED']));
+    const events = Array.from({ length: 6 }, (_, i) => ev(`e${i}`, 50, ['guild']));
     const lanes = buildLanes(tracks, {}, {});
-    const capped = layoutLanes(lanes, events, scale, 100, { maxRows: 2 }).lanes.find((l) => l.lane.id === 'REDACTED')!;
+    const capped = layoutLanes(lanes, events, scale, 100, { maxRows: 2 }).lanes.find((l) => l.lane.id === 'guild')!;
     expect(capped.marks.filter((m) => m.kind === 'event')).toHaveLength(2);
     const clusters = capped.marks.filter((m) => m.kind === 'cluster');
     expect(clusters).toHaveLength(1);
@@ -66,8 +66,8 @@ describe('layoutLanes', () => {
     expect(capped.overflow).toBe(4);
     expect(capped.rows).toBe(3);
 
-    const open = layoutLanes(lanes, events, scale, 100, { maxRows: 2, expanded: { REDACTED: true } }).lanes.find(
-      (l) => l.lane.id === 'REDACTED',
+    const open = layoutLanes(lanes, events, scale, 100, { maxRows: 2, expanded: { guild: true } }).lanes.find(
+      (l) => l.lane.id === 'guild',
     )!;
     expect(open.marks.every((m) => m.kind === 'event')).toBe(true);
     expect(open.rows).toBe(6);
@@ -75,12 +75,12 @@ describe('layoutLanes', () => {
 
   it('keeps key events visible and folds the least important ones first', () => {
     const events = [
-      { ...ev('minor-early', 50, ['REDACTED']), importance: 3 as const },
-      ev('normal', 50, ['REDACTED']),
-      { ...ev('key-late', 50, ['REDACTED']), importance: 1 as const, order: 9 },
+      { ...ev('minor-early', 50, ['guild']), importance: 3 as const },
+      ev('normal', 50, ['guild']),
+      { ...ev('key-late', 50, ['guild']), importance: 1 as const, order: 9 },
     ];
     const lanes = buildLanes(tracks, {}, {});
-    const lane = layoutLanes(lanes, events, scale, 100, { maxRows: 2 }).lanes.find((l) => l.lane.id === 'REDACTED')!;
+    const lane = layoutLanes(lanes, events, scale, 100, { maxRows: 2 }).lanes.find((l) => l.lane.id === 'guild')!;
     const shown = lane.marks.filter((m) => m.kind === 'event').map((m) => m.eventId);
     expect(shown).toEqual(['key-late', 'normal']);
     expect(lane.marks.find((m) => m.kind === 'cluster')!.eventIds).toEqual(['minor-early']);
@@ -88,8 +88,8 @@ describe('layoutLanes', () => {
 
   it('fills gaps in a row left by events placed earlier', () => {
     // the key event sits at the right; a normal event placed after it still fits to its left in row 0
-    const events = [{ ...ev('key', 80, ['REDACTED']), importance: 1 as const }, ev('early', 5, ['REDACTED'])];
-    const lane = layoutLanes(buildLanes(tracks, {}, {}), events, scale, 100).lanes.find((l) => l.lane.id === 'REDACTED')!;
+    const events = [{ ...ev('key', 80, ['guild']), importance: 1 as const }, ev('early', 5, ['guild'])];
+    const lane = layoutLanes(buildLanes(tracks, {}, {}), events, scale, 100).lanes.find((l) => l.lane.id === 'guild')!;
     expect(lane.marks.map((m) => m.row)).toEqual([0, 0]);
     expect(lane.rows).toBe(1);
   });
@@ -159,8 +159,8 @@ describe('uncertain marks', () => {
   const lanes = buildLanes(tracks, {}, {});
 
   it('widens a bar to its windows and fades across them', () => {
-    const e = { ...ev('u', 50, ['REDACTED'], 100), startWindow: [40, 60] as [number, number], endWindow: [95, 120] as [number, number] };
-    const m = layoutLanes(lanes, [e], scale, 200).lanes.find((l) => l.lane.id === 'REDACTED')!.marks[0];
+    const e = { ...ev('u', 50, ['guild'], 100), startWindow: [40, 60] as [number, number], endWindow: [95, 120] as [number, number] };
+    const m = layoutLanes(lanes, [e], scale, 200).lanes.find((l) => l.lane.id === 'guild')!.marks[0];
     expect(m.x0).toBeCloseTo(scale.x(40));
     expect(m.x1).toBeCloseTo(scale.x(121));
     expect(m.fadeIn).toBeCloseTo(scale.x(60) - scale.x(40));
@@ -169,9 +169,9 @@ describe('uncertain marks', () => {
 
   it('when the start and end ranges overlap, the darker middle shows the event dates', () => {
     // a 42-year span whose start and end ranges are each 120 years wide (like Hammurabi under High/Middle/Low)
-    const e = { ...ev('r', 100, ['REDACTED'], 142), startWindow: [44, 164] as [number, number], endWindow: [86, 206] as [number, number] };
+    const e = { ...ev('r', 100, ['guild'], 142), startWindow: [44, 164] as [number, number], endWindow: [86, 206] as [number, number] };
     const s = buildScale([0, 300], { increment: 10, tickPx: 80, compress: false });
-    const m = layoutLanes(lanes, [e], s, 300).lanes.find((l) => l.lane.id === 'REDACTED')!.marks[0];
+    const m = layoutLanes(lanes, [e], s, 300).lanes.find((l) => l.lane.id === 'guild')!.marks[0];
     expect(m.x0).toBeCloseTo(s.x(44));
     expect(m.x1).toBeCloseTo(s.x(207));
     expect(m.fadeIn).toBeCloseTo(s.x(100) - s.x(44));
@@ -179,8 +179,8 @@ describe('uncertain marks', () => {
   });
 
   it('gives a point event a whisker over its window', () => {
-    const e = { ...ev('p', 50, ['REDACTED']), startWindow: [30, 70] as [number, number] };
-    const m = layoutLanes(lanes, [e], scale, 200).lanes.find((l) => l.lane.id === 'REDACTED')!.marks[0];
+    const e = { ...ev('p', 50, ['guild']), startWindow: [30, 70] as [number, number] };
+    const m = layoutLanes(lanes, [e], scale, 200).lanes.find((l) => l.lane.id === 'guild')!.marks[0];
     expect(m.whisker).toEqual([scale.x(30), scale.x(71)]);
     expect(m.fadeIn).toBeUndefined();
   });
@@ -189,28 +189,28 @@ describe('uncertain marks', () => {
 describe('placePhases', () => {
   const phases = new Map([
     [
-      'REDACTED',
+      'harbor',
       [
-        { name: 'REDACTED', start: 2890, end: 5021 },
-        { name: 'REDACTED', start: 1998, end: 5000, endWindow: [3016, 5000] as [number, number] },
+        { name: 'Free City', start: 289, end: 502 },
+        { name: 'Old Republic', start: 199, end: 500, endWindow: [301, 500] as [number, number] },
       ],
     ],
     [
-      'redacted',
+      'north',
       [
-        { name: 'First', start: 0, end: 2880 },
-        { name: 'Second', start: 2880, end: 4591 },
-        { name: 'Third', start: 4600, end: 5021 },
+        { name: 'First', start: 0, end: 288 },
+        { name: 'Second', start: 288, end: 459 },
+        { name: 'Third', start: 460, end: 502 },
       ],
     ],
   ]);
 
   it('puts successive phases on one line, sharing a boundary year', () => {
-    expect(placePhases(['redacted'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['First:0', 'Second:0', 'Third:0']);
+    expect(placePhases(['north'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['First:0', 'Second:0', 'Third:0']);
   });
 
   it('moves an overlapping phase (a rival government) to the next line, in date order', () => {
-    expect(placePhases(['REDACTED'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['REDACTED:0', 'REDACTED:1']);
+    expect(placePhases(['harbor'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['Old Republic:0', 'Free City:1']);
   });
 
   it('keeps periods on one line when only their uncertainty windows overlap', () => {
@@ -227,9 +227,9 @@ describe('placePhases', () => {
   });
 
   it("gathers a collapsed lane's sub-rows and remembers whose phase each is", () => {
-    const placed = placePhases(['redacted', 'REDACTED'], phases);
+    const placed = placePhases(['north', 'harbor'], phases);
     expect(placed).toHaveLength(5);
-    expect(placed.find((p) => p.name === 'REDACTED')!.trackId).toBe('REDACTED');
+    expect(placed.find((p) => p.name === 'Old Republic')!.trackId).toBe('harbor');
   });
 });
 

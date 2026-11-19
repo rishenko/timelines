@@ -4,7 +4,7 @@ import type { Dataset } from '../types.ts';
  * A small fictional timeline for tests that need a plain one: top-level rows only (no regions), a calendar with a
  * year 0, phases on a row (one with two dates for its end), a row image, spans, an uncertain date, a "leads to"
  * link and a source tag for reader additions; and none of lifespans, dating systems, key events, "conquers" or
- * "succeeds". (The REDACTED timeline served this purpose until it moved to a private repo on 2026-11-18.)
+ * "succeeds".
  */
 export function plainTimeline(): Dataset {
   return {
