@@ -10,9 +10,10 @@ a small fictional kingdom with its own calendar. It uses nearly every feature de
 
 1. Copy `examples/example-timeline.json` and give it a new `meta.id` and `meta.title`.
 2. Set the calendar, then replace the tracks, sources and events with your own.
-3. Open it in the app: **Timelines → Add from a file…**. Any problem is reported with the field it's in.
+3. Open it in the app: **Customize → Timelines → Add from a file…**. Any problem is reported with the field it's in.
 4. To share it, put the file online (a GitHub repository or gist works) and share
-   `https://<the app's address>/?data=<link to the file>`.
+   `https://<the app's address>/?data=<link to the file>`. To make it part of your own copy of the app, bundle it
+   (see the [README](../README.md#use-your-own-timeline-data)).
 
 You can also build a timeline in the app's **edit mode** (Customize → Edit) and use **Download final** to get the file.
 

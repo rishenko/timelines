@@ -63,59 +63,12 @@ separate later timeline, linked by `meta.continues` as Ancient and Classical are
 
 ## Done
 
-- **First pass:** per-timeline config (title, credits, calendar,
-  increments, theme, custom source tag, pinned tracks), BCE/CE without a year 0, round-year ticks, nesting to any
-  depth, track lifespans, date claims with computed error windows, switchable chronologies, `succeeds`/`conquers`
-  links, a timeline picker with per-timeline drafts, and the ancient dataset.
-- **Timeline library:** uploads and `?data=<url>` links saved in the browser, listed in the title menu, with
-  update/share/remove, and URL safety checks for untrusted timelines.
-- **Hosting:** live on GitHub Pages (public repo); `npm run deploy` publishes.
-- **Ancient Civilizations, 2026-11-17/18:** every region on the original list, back to 9000 BCE (tenth to twelfth
-  passes), the history of ideas (`ideas.ts`), and tribal and mobile peoples (`peoples.ts`); a description audit of
-  every event.
-- **Periods as phases, 2026-11-18:** every civilization's period sub-rows are phases on its own row (Ancient: Egypt,
-  Assyria, Babylonia, Sumer, Elam, Minoan, Mycenaean, Hittites, Harappan, Canaan, Greece, Rome, Zhou; Classical: the
-  Northern and the Southern dynasties, Rome, Egypt, plus Han and Jin phases) via `scripts/additions/phases.ts` and
-  `scripts/classical/phases.ts`. Later: Egypt's overlapping dynasties in the intermediate periods as stacked phases.
-- **The Classical World, 2026-11-18:** a separate timeline (c. 500 BCE – 650 CE) so long-gone civilizations don't
-  crowd it, overlapping the ancient one from 500 to 330 BCE. The skeleton, ten region passes and a summary-only
-  follow-up are in `scripts/classical/`; every region opens collapsed (`collapsed.ts`).
-- **Key events when zoomed out:** at a timeline's coarsest zoom only key events are drawn (`src/state/zoom.ts`).
-- **Drafts no longer hide data updates:** drafts are stored as the reader's changes and replayed onto the current
-  published data (`src/state/draft.ts`).
-- **Dating button:** one panel for every region's dating system (`src/components/DatingMenu.tsx`), replacing one menu
-  per region.
-- **Search** for rows and events (`src/components/SearchBox.tsx`, `src/lib/search.ts`): row paths, unfolds and
-  scrolls to the target, greys out results hidden by Filters.
-- **Phones and tablets, first pass:** one-row scrolling toolbar under 640 px, narrow labels, overlay panels, clamped
-  credits, pinch zoom steps, long press to add an event in edit mode.
-- **Maintenance, 2026-11-18:** deleting or renaming a source in edit mode now updates date claims, lifespans and
-  chronologies too (before, the draft failed validation and was erased on reload); `App.tsx` split into hooks and
-  components; one row-tree helper (`src/lib/tracks.ts`, which also lifted a 10-level cap on inherited chronologies);
-  gesture hooks out of `TimelineView`; CSS sections regrouped.
-- **Data tooling, 2026-11-18:**
-  - One table of the timelines built from `data-src/` (`scripts/lib/timelines.ts`) and one command,
-    `npm run data -- <build|importance|format|row-order|run-all> <timeline|all>`; the old `npm run` names are aliases.
-  - `run-all` replays every content script in order; `--check` proves both timelines reproduce exactly. The first
-    replay brought two overlap events and four audited descriptions into Classical (`docs/classical-sources.md`,
-    overlap sync).
-  - The citation and proximity tests run on both historical timelines, and a test fails when a compiled file is
-    behind its source.
-  - Shared helpers: `scripts/lib/compile.ts`, `importance.ts` (the key-event list now uses the timeline's calendar)
-    and `rows.ts`, plus `RCE` in `dataset-edit.ts`.
-  - `apply-text-fixes.ts` warns when no script defines an event.
-  - The Ancient key-event list had kept titles from before the description audit; it is regenerated.
-- **App features, 2026-11-18:**
-  - A guided tour for first-time readers (`src/components/Tour.tsx`, steps in `src/lib/tour.ts`). It starts by itself
-    on a first visit, replacing the legend opening, and can be restarted from the Legend.
-  - Lifespan date claims are editable in the track editor (`ClaimList`, shared with the event editor).
-  - Both editors check an edit before saving and list what it would break (`newProblems` in `edits.ts`). A draft
-    that can't be applied on opening is kept under `timelines:<id>:draft-unreadable` instead of being lost.
-  - The editors' fieldsets no longer run past the side panel (a fieldset is as wide as its content by default; the
-    event editor's were up to 800 px in a 380 px panel).
-  - Toolbar on one row at 1700 px: the subtitle sits under the timeline menu; "Key events only" moved to the ruler's
-    corner; ↺ Default view is a small button beside Expand all that never appears or disappears; the search box narrows
-    and widens on focus.
-  - Phones: the edit bar is one sideways-scrolling row of buttons with a short hint (it was three rows).
-  - `scripts/screenshot.ts`: `--measure <selector>` prints element sizes, `--click` also matches tooltips and
-    `=Exact` text, and `--close-legend` closes the tour too.
+- The app: per-timeline settings (calendar, zoom levels, theme, credits), rows that nest to any depth, lifespans and
+  phases, date claims with computed uncertainty ranges, switchable chronologies, connections between events, key and
+  minor events, search, filters, legend, guided tour, table view with CSV, themes, edit mode with drafts stored as the
+  reader's changes, a timeline library (uploads and `?data=` links), and phone and tablet support.
+- Accessibility parts a–c (foundations, table view, keyboard control) and the first items of part d; see
+  [feature-audit.md](feature-audit.md), item 23.
+- Ancient Civilizations (c. 9000–330 BCE) and The Classical World (c. 500 BCE – 650 CE), each with a description
+  audit, and tooling that rebuilds both exactly from their scripts (`npm run data -- run-all <timeline> --check`).
+- Hosting on GitHub Pages (`npm run deploy`).

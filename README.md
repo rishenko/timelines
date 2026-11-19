@@ -1,297 +1,111 @@
 # Timelines
 
+A web app for horizontal swimlane timelines, fictional or historical. Each timeline is one JSON file with its own
+rows, calendar, zoom levels and sources. The app is a static site: build it once, serve it from any web server, and
+give it your own timeline data.
+
 **Live site:** https://rishenko.github.io/timelines/
 
-A horizontal, swimlane timeline for any history, fictional or real. Each timeline is one data file
-with its own calendar, eras, scale and theme. Three ship with the app:
+## Included timelines
 
-- **Ancient Civilizations** (default): Europe (megalith builders, Bronze and Iron Age cultures, Italy and Rome, Thrace), the western Mediterranean (Carthage, Greek Sicily and Italy, Sardinia, the Balearics, Iberia), Africa south of the Sahara (Punt, Dʿmt, Tichitt, Nok, the Bantu expansion), North Africa (Libyans, Cyrene, Garamantes), the Aegean (Cycladic, Minoan, Mycenaean, Greece, Macedon), Anatolia (Hittites, Phrygia, Lydia, Lycia, Urartu), Mesopotamia (Sumer, Akkad, Babylonia, Assyria), the Levant
-  (Canaan, Ebla, Ugarit, Phoenicia, Israel and Judah, Philistines, Aram, Cyprus), Egypt and Nubia (A-Group, C-Group, Kerma, Kush),
-  Iran and Central Asia (Elam, Jiroft, the Oxus civilization, Mannaea, Medes, Persia), the Eurasian Steppe (Botai, Yamnaya, Afanasievo, Sintashta, Andronovo, Srubnaya, Cimmerians, Scythians, Saka, Massagetae, Pazyryk), South Asia (Harappans, the Vedic period,
-  Magadha), mainland Southeast Asia (Ban Chiang, Phùng Nguyên, Đông Sơn, Sa Huỳnh, Văn Lang, the Plain of Jars), China, Korea
-  and Japan (Old Chosŏn, Mumun, Jōmon, Yayoi), Taiwan and Island Southeast Asia (Dapenkeng, the Out-of-Taiwan expansion, the
-  Maritime Jade Road, Buni), Oceania (the Marianas, Palau, Lapita to Fiji, Tonga and Samoa, Australia), the Caucasus
-  (Maykop, Kura–Araxes, Colchis, Koban, Diauehi), Arabia (Magan, Saba, Qataban, Tayma, Lihyan), eastern Europe
-  (Cucuteni–Trypillia, Funnelbeaker, Globular Amphora, Biskupin, the Getae), Siberia and Mongolia (Okunev, Karasuk, Tagar,
-  deer stones), Tibet (Karuo), South India and Sri Lanka, the Sahara and East African herders, and the Americas from the
-  Arctic (Saqqaq, Dorset) through North America (Old Copper, Adena), Mesoamerica (Mokaya, Tlatilco, Zapotecs) and South
-  America (Cupisnique, Paracas, Chinchorro) to the Caribbean. Since 2026-11-18 it reaches back to the first farmers
-  (c. 9000 BCE): Jericho and Göbekli Tepe, Çatalhöyük, Hassuna to Ubaid, Ganj Dareh and Mehrgarh, Nabta Playa and the
-  Badarians, Neolithic Europe from Star Carr to Varna and Carnac, early Chinese rice and millet farming (Pengtoushan,
-  Jiahu, Yangshao, Hongshan), Kuk Swamp, and the domestication of squash, maize and potatoes in the Americas. It also
-  follows ideas and landmarks: Gilgamesh and Ashurbanipal's library, Homer, the Greek philosophers, the Parthenon,
-  Persepolis, Confucius, Laozi and the Hundred Schools. c. 9000–330 BCE; 562 events, every date cited.
-- **The Classical World** (started 2026-11-18): c. 500 BCE – 650 CE, from the Persian Wars and Warring
-  States China to the fall of the Sasanians and the founding of Tang. It overlaps Ancient Civilizations from 500 to
-  330 BCE, and each timeline links to the other on its ruler where they meet. Every region has had a pass: the overlap, and the
-  Mediterranean and Near East (the Hellenistic kingdoms, Rome to Justinian, Carthage, Parthia and the Sasanians, Judea,
-  Arabia and the rise of Islam) and South Asia (the Maurya Empire to Harsha, the Kushans, the Guptas, the
-  Deccan, Tamilakam and Sri Lanka) and East Asia (Qin to the founding of Tang, the Three Kingdoms of Korea,
-  Yayoi to Asuka Japan) and the Steppe (Xiongnu, Xianbei, Rouran, Turks, Kidarites, Hephthalites, Sarmatians, Huns,
-  Avars) and Africa (Numidia, Mauretania, the Garamantes, the Vandals, Kush and Meroë, the Nubian kingdoms, Dʿmt
-  and Aksum, Nok, Djenné-Djenno, the Bantu expansion, the Arab conquest of Egypt) and Europe north of the Alps (the La Tène Celts and Galatians,
-  Caesar's Gaul, Roman Britain, the Germanic wars, Suebi, Visigoths, Burgundians, Ostrogoths, Franks, Lombards,
-  Anglo-Saxons, early Slavs) and the Americas (Teotihuacan, Monte Albán, the Epi-Olmec, the Maya cities, Chavín to
-  Wari and Tiwanaku, Adena, Hopewell, Hohokam, Dorset) and Southeast Asia and Tibet (Âu Lạc, Nanyue, the Trưng sisters,
-  the Early Lý, Champa, Funan, Chenla, the Pyu; Zhangzhung, the Yarlung kings and Songtsen Gampo, the Tuyuhun) and China's Northern and Southern
-  dynasties (Liu Song to Chen; Eastern and Western Wei, Northern Qi and Zhou; Faxian, Kumārajīva, Xuanzang) and Island Southeast Asia and Oceania (the Bujang Valley, Buni, Tarumanagara, Kutai, Kalingga, the Sa Huỳnh–Kalanay trade sphere, Iron Age Taiwan; Fiji, Tonga and Samoa in the long pause, East Polynesia, Pohnpei, Aboriginal Australia and the Torres Strait), plus a follow-up pass on values first read only in summary (`summary-only.ts`); 371 events. Built from `data-src/classical.json` by `npm run data:classical`; scripts in
-  `scripts/classical/` (skeleton first, then the region passes, `summary-only.ts`, and `collapsed.ts` last); sources and judgment calls in `docs/classical-sources.md`.
-  It opens like the ancient timeline: groups expanded, each region collapsed to its key events.
+- **Ancient Civilizations** (opens by default): from the first farmers to the Iron Age, c. 9000–330 BCE, across Europe,
+  Africa, the Near East, Asia, Oceania and the Americas. 562 events.
+- **The Classical World**: from the Persian Wars to the rise of Islam, c. 500 BCE – 650 CE. 371 events. It picks up
+  where Ancient Civilizations ends, and each links to the other.
 
-Switch between them with the title menu or `?timeline=ancient-near-east` / `?timeline=classical`.
+Every date in both cites the Wikipedia article it comes from. See [Data sources and AI use](#data-sources-and-ai-use).
 
-### Your own timelines
+## Quick start
 
-Any schema-v3 timeline file can be opened without changing the code (format: [docs/data-format.md](docs/data-format.md)):
-
-- **From a link:** `https://…/timelines/?data=<url-of-a-timeline.json>`. The file is fetched, validated,
-  saved in the browser and opened. Anyone can open the same link; GitHub page links are converted to raw
-  file links automatically. The server must allow cross-site reads (CORS); GitHub raw files and gists do.
-  If the link later fails, the saved copy opens instead.
-- **From the Timelines tab** (toolbar → *Customize* → *Timelines*, or *Add or manage timelines…* in the title menu):
-  paste a link, or add a file from your computer. Added timelines are listed under *Your timelines* in the
-  title menu, where you can **Update** a linked one to its latest version, **Copy share link**, or
-  **Remove** it.
-- **Upload JSON** in edit mode does the same: the current timeline's own file loads as edits to it, a
-  file for a bundled timeline opens there, and anything else is added to the library.
-
-Timelines from files stay in that browser only. To share one, put the file online and share its link.
-Because timelines can come from anyone, links and images inside them must be `http(s)` or relative
-paths; anything else (e.g. `javascript:`) is rejected.
-
-## Features
-
-- **Year ruler** with per-timeline scales (ancient: 10/50/100/500/1000 years per tick; Classical: 10/50/100/500).
-  Switching keeps the year at the center of the screen fixed.
-- **Calendars.** Each timeline names its eras (BCE/CE, BE/AE, …) and says whether it has a year 0.
-  BCE/CE has none: 1 BCE is followed by 1 CE, durations come out right, and the ruler ticks fall on round
-  years (1500 BCE, not 1501 BCE).
-- **Phases:** a row can mark named periods on its own bar, such as a state's successive governments (France's kingdoms and republics) or a civilization's periods (Egypt's Old, Middle and New Kingdoms; Assyria's periods; China's Northern dynasties). A line marks each change and the name runs along the top of the row; rivals that overlapped stack their names. Edit them in the track editor; search finds them by name. See `docs/data-format.md`.
-- **Lanes nest to any depth**, e.g. group → region → civilization (a civilization's periods are phases on its row). Any level collapses into its parent. A top-level row with sub-rows heads a group: it is tinted in its colour and the rows inside carry a faint wash of it. The ancient timeline opens with its groups expanded and each region collapsed to its key events. The toolbar's **Expand all / Collapse all** button (shown when a timeline has sub-rows) opens every row, or folds every row so only the top level shows; reopening a row then shows its children still folded, one level at a time. Beside it, **↺** (Default view) restores the timeline's opening layout; it is greyed out while the rows are already that way, and left out for timelines that open with every row open. Where scholars date a region differently, the toolbar's **Dating** button opens a panel with one dating system per region; the button counts regions changed from their default.
-  A track can have a **lifespan**, shaded across its lane, so you can see which civilizations coexisted.
-- **Uncertain dates.** An event's start and end can carry *date claims*: what each source says, under which
-  chronology, with what ± margin. The app computes each date's range from those claims and draws it:
-  a bar's uncertain start and end ranges are drawn in a lighter tint of its color, and a single-year event gets a
-  lighter band across its range. Nothing is typed in as a margin
-  by hand; if the sources agree, the date is drawn crisp.
-- **Chronologies.** A timeline can define alternative dating systems (e.g. Mesopotamia's High, Middle and
-  Low chronologies), set one per region, and let readers switch. Alternatives can be stated per event or
-  derived by a fixed shift (Low = Middle + 64 years before 1400 BCE).
-- **Connections:** an event on several tracks gets a thread through each lane; explicit links (`causes`,
-  `part-of`, `succeeds`, `conquers`, `related`) draw as arrows. The detail panel counts, but doesn't name,
-  connections hidden by your filters (spoilers).
-- **Key events:** events can be marked key, normal or minor. Key events have bold labels, and crowded or
-  collapsed rows place them first, so collapsed regions still show their headline events. At a timeline's coarsest
-  zoom (1000 years per tick for the ancient timeline) only key events are drawn; the ruler's corner says so.
-- **Search:** the toolbar search finds rows (groups, regions, civilizations), row phases (a period or a government) and events, shown with their row's path and dates; it ignores case and accents ("hattusa" finds Ḫattuša). Picking a result unfolds the rows above it, scrolls to its row and dates, and highlights the row; an event also opens its details. Results hidden by Filters are greyed out and say so. Typing a year offers "Go to …". Press `/` to search from anywhere.
-- **Gap compression:** long empty stretches collapse into a hatched `⋯ 900 yrs ⋯` break.
-- **Guided tour:** on a reader's first visit a short tour walks through the page: rows, events, zoom, Dating, folding
-  rows, search, and the legend. Each step outlines the part it describes; steps for features a timeline doesn't use are
-  left out. **Take the tour** in the Legend starts it again.
-- **Legend:** the Legend button explains every symbol, color and line, using the current theme and only the features the
-  open timeline uses.
-- **Toolbar:** one row on screens about 1700 px wide or more. The subtitle sits in small print under the timeline menu
-  (its full text on hover), the zoom buttons show the years per tick as bare numbers (the unit is in the ruler corner,
-  their tooltips and their accessible names), and the search box widens while you type in it.
-- **Customize** (toolbar): one panel with three tabs. **Appearance** holds the theme; **Edit** turns edit mode on
-  (the edit bar's **Done editing** turns it off); **Timelines** opens and adds timelines. The tabs follow the ARIA
-  tabs pattern (arrow keys move between them). On phones each tab is one column.
-- **Themes** (Customize → Appearance): presets and per-color pickers. Each timeline has a default (ancient and Classical: Parchment)
-  until the reader picks their own.
-- **Phones and tablets:** one finger pans the timeline and a two-finger pinch steps through the zoom levels. On
-  narrow screens (under 640 px) the toolbar becomes one row that scrolls sideways, the row labels narrow, panels
-  overlay the timeline, and the credits note folds to two lines (tap to open). In edit mode, hold a finger on an
-  empty spot in a lane to add an event there; the edit bar's buttons are one row that scrolls sideways, with a short hint
-  under it. The tour's card sits at the bottom of the screen.
-- **Deep links:** `?timeline=…&inc=100&at=-1594#sack-of-babylon` restores timeline, scale, position and selection.
-- **Edit mode** (Customize → Edit; leave with the edit bar's Done editing): add events, tracks and sources, record date claims for events and for a track's lifespan, download the
-  JSON and upload it again. The event and track editors check an edit before saving it and list anything it would break
-  (e.g. a date outside its own claims), because a draft that fails validation can't be reopened. Renaming or deleting a
-  source updates every citation of it, date claims included. If a saved draft still can't be applied when the timeline
-  opens, it is kept under `timelines:<id>:draft-unreadable` in the browser's storage and the reader is told.
-  Drafts autosave per timeline in the browser as the reader's changes (`src/state/draft.ts`), not a copy, so later
-  updates to the published timeline still reach them; where both changed the same item, the reader's version wins, and
-  the reader is told when the published timeline changed under their edits. Old full-copy drafts are converted on load
-  without deleting anything.
-- **Table view:** the toolbar's **Timeline | Table** switch (`?view=table` in links) shows the same events as tables,
-  grouped by region (or by top-level row, for a timeline without regions) or in one list, sorted by date or title. Each event gives its
-  dates in words with the range the cited sources allow ("c. 1595 BCE; the sources put it between 1651 BCE and 1531
-  BCE"), its chronology, rows, importance, description and sources. Above each section's events, a **rows** table
-  lists its civilizations (or factions) with their lifespans and phases, in words with their source ranges, so
-  everything the chart draws is in the table. Filters and Dating apply; selecting an event opens
-  the same detail panel; search picks and "Go to" years scroll to and focus the matching row. **Download CSV** saves
-  the listed events (one line each, with stored years and source ranges as numbers). It is the accessible equivalent
-  of the chart. The guided tour (about the chart) doesn't start by itself when a page opens in table view.
-- **Accessibility (in progress; target WCAG 2.2 AA, which covers the 2.1 AA of ADA Title II and the 2.0 AA of
-  Section 508).** Plan and status: `docs/feature-audit.md` item 23. Done so far:
-  - a "Skip to the timeline" link, and the timeline as a labelled region with each row a labelled group;
-  - event buttons named with their dates, rows, key status and uncertainty ("Battle of Kadesh, c. 1274 BCE, Egypt
-    and Nubia, key event, uncertain date"); "+N" clusters with their year range; icon buttons named by their action
-    and row; fold buttons with `aria-expanded`;
-  - focus moves to the detail panel when an event opens, and Escape (or Close) returns it to the event;
-  - one polite live region announces zoom changes, "Went to …" and notices;
-  - a 2 px focus outline everywhere, and reduced motion respected (no smooth scrolling or animations);
-  - the guided tour as a dialog labelled by its heading;
-  - **keyboard control of the chart** (`src/timeline/keyboard.ts`): the chart is one Tab stop (a roving focus that
-    starts at the selected event, else one in view); ←/→ move along a row by date (its fold buttons sit left of the
-    first event), ↑/↓ to the nearest event in the next row, Home/End to a row's ends, Page Up/Down about a screen in
-    time; + and − zoom around the focused event; Enter opens it (Esc returns), zooms into a "+N" group or folds a row;
-    ? opens the Legend, whose Keyboard section lists the keys. The view scrolls to keep the focused control in sight,
-    and the focused control stays drawn even when it is off screen.
-
-  Checks: `src/a11y.test.tsx` runs axe-core over each bundled timeline (and the tour) and tests the names and focus
-  above; jsdom can't check colour contrast, which is left to a per-theme test (planned). oxlint runs the `jsx-a11y`
-  rules, with three off: `prefer-tag-over-role` (a `role="group"` on a `div` is fine), `no-noninteractive-element-to-
-  interactive-role` (the search box's listbox is the standard combobox pattern) and `no-autofocus` (an editor that
-  opens focuses its first field on purpose). Each remaining mouse-only handler has a comment naming its keyboard
-  equivalent.
-
-## Run
+Requires Node 22.18 or newer.
 
 ```sh
 npm install
-npm run dev            # http://localhost:5173
-npm test               # vitest
-npm run build          # type-check + production build into dist/
-npm run lint           # oxlint
-npm run data:ancient   # compile data-src/ancient-near-east.json → src/timelines/
-npm run data:classical # compile data-src/classical.json → src/timelines/
-npm run deploy         # build and publish dist/ to GitHub Pages
+npm run dev      # http://localhost:5173
 ```
 
-Scripts for working on the data (all in `scripts/`; source files are written in one compact style by
-`scripts/lib/source-format.ts`). The timelines built from `data-src/` and the files and scripts that belong to
-each are listed once, in `scripts/lib/timelines.ts`; `npm run data` takes a timeline's short name
-(`ancient`, `classical`) or `all`:
+## Host it
 
 ```sh
-npm run data -- build <timeline|all>        # compile data-src/ → src/timelines/ (npm run data:ancient, data:classical)
-npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json, compile, refresh docs/<short>-key-events.md
-                                            #   (npm run importance:ancient, importance:classical)
-npm run data -- format <timeline|all>       # re-format a source file (npm run format:src does all)
-npm run data -- row-order <timeline> [--parent near-east] [--best | --search --keep "mesopotamia<iran"]   # how close related rows sit; find a passing order
-npm run data -- run-all <timeline>          # replay every content script in order, then importance
-npm run data -- run-all <timeline> --check  # the same, but only report whether the scripts reproduce the source file; changes nothing
-node scripts/additions/europe.ts            # (re)apply one region's additions; then npm run importance:ancient
-node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…   # reorder rows
-npm run shot -- <url> <out.png> [--width N --height N --full --close-legend --expand "Assyria|Egypt" --scroll-to "Assyria" --storage key=file.json --click "Expand all|=Edit|Edit Cyrene" --pinch in --long-press "Europe" --measure ".toolbar > *"]   # --close-legend also closes the first-visit tour
-npm run check:live -- --expect "some text"   # after deploy: wait for the live site, check it loads
-npm run audit:batches -- data-src/ancient-near-east.json <out dir> [--pages 10] [--only id,id]   # group descriptions by cited Wikipedia page, one file per fetch agent, to check them against the pages
-node scripts/apply-text-fixes.ts data-src/ancient-near-east.json fixes.json [--dry]   # reword titles/descriptions ({uuid, field, from, to}) in the data and in the script that defines each event
+npm run build    # writes the site to dist/
 ```
 
-`scripts/additions/` (Ancient) and `scripts/classical/` hold one re-runnable script per region pass, built on
-`scripts/lib/dataset-edit.ts` (insert-or-replace by id); shared row helpers are in `scripts/lib/rows.ts`. The order
-they run in is the `scripts` list in `scripts/lib/timelines.ts` (Ancient ends with `groups.ts`, which nests the
-regions into groups and sets the row order; Classical starts with `skeleton.ts` and ends with `collapsed.ts`). Add a
-new pass to that list. Both timelines reproduce exactly from their scripts (`run-all --check`); keep it that way,
-so any script can be edited and the whole timeline re-run. The Classical World's 500–330 BCE overlap events are
-copied from the ancient source by `skeleton.ts`, so fix their wording in the ancient data.
-`scripts/archive/` keeps earlier one-off bulk edits that have already been applied, as templates.
+`dist/` is plain HTML, JavaScript and CSS with relative paths. Copy it to any static web server, in any folder.
+There is no backend or database: timelines are bundled into the site or loaded from a link, and readers' changes
+stay in their own browser. `npm run deploy` publishes `dist/` to GitHub Pages.
 
-## Data (schema v3)
+## Use your own timeline data
 
-**Full reference: [docs/data-format.md](docs/data-format.md)**, with every field, the rules a file must pass, how
-uncertain dates are worked out and drawn, and a complete example to copy
-([docs/examples/example-timeline.json](docs/examples/example-timeline.json)). The summary below shows the shape.
+A timeline is one JSON file. Copy [docs/examples/example-timeline.json](docs/examples/example-timeline.json), a
+small fictional kingdom, and see [docs/data-format.md](docs/data-format.md) for every field.
 
-Bundled timelines live in `src/timelines/` and are registered in `src/timelines/index.ts`.
+There are three ways to get a timeline into the app:
 
-```jsonc
-{
-  "schemaVersion": 3,
-  "meta": {
-    "id": "ancient-near-east", "title": "Ancient Civilizations",
-    "calendar": { "before": "BCE", "after": "CE", "yearZero": false, "aliases": { "before": ["BC"] } },
-    "increments": [10, 50, 100, 500], "defaultIncrement": 100,
-    "defaultTheme": "parchment", "collapsed": ["egypt"], "credits": "…"
-  },
-  "tracks": [
-    { "id": "mesopotamia", "name": "Mesopotamia", "color": "#3f7d34", "chronology": "middle" },
-    { "id": "babylonia", "name": "Babylonia", "color": "#2d7f6c", "parent": "mesopotamia" },
-    { "id": "bab-old", "name": "Old Babylonian", "color": "#1f7a63", "parent": "babylonia",
-      "span": { "start": -1893, "end": -1594, "circa": true } }
-  ],
-  "chronologies": {
-    "middle": { "name": "Middle Chronology", "group": "Mesopotamia & Anatolia", "default": true },
-    "low": { "name": "Low Chronology", "group": "Mesopotamia & Anatolia",
-             "derive": { "from": "middle", "offset": 64, "until": -1399 } }
-  },
-  "sources": { "wp-chron-ane": { "name": "Wikipedia: …", "url": "…", "tags": ["wikipedia"], "accessed": "2026-11-17" } },
-  "tags": { "wikipedia": { "name": "Wikipedia" } },
-  "events": [
-    {
-      "uuid": "sack-of-babylon", "title": "Hittite sack of Babylon", "descr": "…",
-      "start": -1594,                         // stored years are astronomical: -1594 = 1595 BCE
-      "tracks": ["hit-old", "bab-old"],
-      "sources": [{ "sourceKey": "wp-chron-ane", "sourceLocation": "table" }],
-      "startDates": [                         // date claims; the drawn range is computed from these
-        { "year": -1650, "chronology": "high", "source": { "sourceKey": "wp-chron-ane", "sourceLocation": "…" } },
-        { "year": -1586, "margin": 10, "note": "…" }
-      ],
-      "links": [{ "to": "kassites-take-babylon", "kind": "causes" }]
-    }
-  ]
-}
+1. **Bundle it with your copy.** Put the file in `src/timelines/`, import it in `src/timelines/index.ts` and add it
+   to `BUNDLED`. The first entry opens by default. Remove the included timelines the same way, then rebuild.
+2. **Link to it.** Host the file anywhere that lets other sites read it (GitHub raw files, GitHub Pages and gists
+   do) and open `<your site>/?data=<link to the file>`. Anyone with the link sees the same timeline.
+3. **Add it in the browser.** Customize → Timelines → *Add from a file…*, or paste a link there. Timelines added this
+   way are saved in that browser only.
+
+You can also build or change a timeline in edit mode (Customize → Edit) and download the result as JSON.
+
+Every file is validated before it opens. Because timelines can come from anyone, links and images inside them must
+be `http(s)` addresses or relative paths.
+
+## Features
+
+- **Rows** that nest to any depth and fold away, with lifespans and named phases (dynasties, governments).
+- **Any calendar:** BCE/CE or your own era names, with or without a year 0.
+- **Uncertain dates** drawn as ranges, worked out from what each source says. Alternative dating systems (such as
+  Mesopotamia's High, Middle and Low chronologies) that readers can switch between.
+- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows.
+- **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N".
+- **Zoom** by years per tick. Long empty stretches are compressed.
+- **Search** across rows, phases and events; **filters** by source and source tag; a **legend** and a short
+  **guided tour**.
+- **Table view** of the same events, with CSV download.
+- **Themes:** four presets and custom colours.
+- **Phones and tablets:** touch panning, pinch zoom and a compact toolbar.
+- **Links** that reopen a timeline at the same zoom, position and event.
+- **Accessibility:** keyboard control of the chart, screen-reader labels, and the table view as an alternative to
+  the chart. Target: WCAG 2.2 AA (in progress; see [docs/feature-audit.md](docs/feature-audit.md), item 23).
+
+## Development
+
+```sh
+npm test         # unit and component tests (vitest)
+npm run lint     # oxlint
+npm run build    # type-check and build
 ```
 
-Stored years always have a year 0 (astronomical numbering), so subtraction gives durations in every
-calendar; only display depends on the calendar. Don't hand-convert BCE dates: write the source file in
-`data-src/` with readable dates (`"start": "c. 1595 BCE"`) and compile it with `scripts/build-dataset.ts`,
-which converts and validates them.
+The code map, the scripts that build the included timelines, and the screenshot and contrast tools are described in
+[docs/development.md](docs/development.md).
 
-## Code map
+## Documentation
 
-| Path | What |
+| File | What |
 |---|---|
-| `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
-| `src/types.ts` | The schema v3 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
-| `src/Boot.tsx` | Opens `?data=<url>` links before the app starts |
-| `src/lib/calendar.ts` | Eras, year 0, parsing/formatting, round-year ruler ticks |
-| `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, error windows |
-| `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (cycle-safe; use these, don't hand-roll walks) |
-| `src/lib/search.ts` | Search index and ranking over rows and events |
-| `src/lib/years.ts`, `urls.ts`, `theme.ts` | Event ordering and date text; URL safety for untrusted timelines; theme presets |
-| `src/lib/claims.ts`, `tour.ts` | Date claims as form fields and back; the guided tour's steps |
-| `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
-| `src/timeline/layout.ts` | Lanes from the track tree; row packing, `+N` clusters, marks with lighter start/end ranges |
-| `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering, scrolling to focus requests |
-| `src/timeline/gestures.ts` | Label-column width, two-finger pinch zoom steps, long press to add an event |
-| `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
-| `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
-| `src/state/library.ts`, `useLibraryActions.ts` | The reader's timeline library; opening, uploading, updating, removing and sharing timelines |
-| `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
-| `src/state/useSearchActions.ts` | What picking a search result does (unfold, scroll, select) |
-| `src/state/` (others) | Filters, theme, folded rows (`collapse`), zoom steps, toolbar panels, toasts |
-| `src/components/` | Toolbar, TimelinePicker, EditBar, SidePanel (detail panel and event/track/source editors, with `ClaimList` for date claims), search box, Dating menu, guided `Tour`, Filters and Legend panels, and the Customize panel (Appearance: `ThemePanel`; Edit; Timelines: `TimelinesPanel`) |
-| `src/data/` | Validator, row proximity (`proximity.ts`) |
-| `src/timelines/` | Bundled timelines, registered in `index.ts` |
-| `data-src/`, `scripts/` | Readable source data for both timelines, the compiler, and the data scripts above |
+| [docs/data-format.md](docs/data-format.md) | The timeline file format, the rules it must pass, and how to share a timeline |
+| [docs/examples/example-timeline.json](docs/examples/example-timeline.json) | A complete example to copy |
+| [docs/development.md](docs/development.md) | Code map, commands and data tooling |
+| [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where the included timelines' dates come from, and the judgment calls |
+| [docs/ancient-key-events.md](docs/ancient-key-events.md), [docs/classical-key-events.md](docs/classical-key-events.md) | Which events are marked key or minor |
+| [docs/BACKLOG.md](docs/BACKLOG.md) | Planned work |
+| [docs/feature-audit.md](docs/feature-audit.md) | Features under consideration, including the accessibility plan |
 
-## The historical datasets
-
-Every event in Ancient Civilizations and The Classical World cites the English Wikipedia articles it
-comes from (read 17–18 November 2026). Books and papers appear only where Wikipedia cites them for that
-date; they are tagged **Cited via Wikipedia (not checked)** because they were not consulted directly.
-Each region follows one chronology by default. The choices, the disagreements and what to spot-check are
-in `docs/ancient-sources.md` and `docs/classical-sources.md`.
-
-## Origins
-
-By [rishenko](https://github.com/rishenko).
-
-## AI use
+## Data sources and AI use
 
 The code, tests and documentation were written with the help of an AI coding assistant
-([Claude Code](https://claude.com/claude-code), Anthropic), directed and reviewed by the project author.
+([Claude Code](https://claude.com/claude-code), Anthropic), directed and reviewed by the author.
 
-**The Ancient Civilizations and Classical World datasets were compiled with AI assistance.** The assistant
-read the cited Wikipedia articles and transcribed their dates; the descriptions are its own summaries. No
-date was invented: every year and margin comes from a cited page, and where pages disagree all values are
-kept as claims. Neither has been reviewed by a specialist yet; `docs/ancient-sources.md` and
-`docs/classical-sources.md` list the judgment calls.
+The two included timelines were compiled with AI assistance. The assistant read the cited English Wikipedia
+articles (17–18 November 2026) and transcribed their dates; the descriptions are its own summaries. No date was
+invented: every year and margin comes from a cited page, and where pages disagree, every value is kept. Books and
+papers appear only where Wikipedia cites them, tagged **Cited via Wikipedia (not checked)**. Neither timeline has
+been reviewed by a specialist yet.
 
-## Legal
+## License
 
-Licensed GPL v3. Wikipedia text is CC BY-SA; this project quotes
-only dates and short phrases and links each article.
+GPL v3. Wikipedia text is CC BY-SA; the included timelines quote only dates and short phrases, and link each
+article. By [rishenko](https://github.com/rishenko).
