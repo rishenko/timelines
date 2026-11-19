@@ -42,6 +42,11 @@ export function uiStates(base: string, timeline: string): UiState[] {
     ['table view', (p) => p.goto(timelineUrl(base, timeline, '&view=table'))],
     ['edit mode', (p) => editMode(p)],
     ['event editor', async (p) => (await editMode(p), clickText(p, '+ Event'))],
+    ['event editor with claims', async (p) => {
+      await editMode(p);
+      await clickText(p, '+ Event');
+      for (let i = 0; i < 2; i++) await clickText(p, '+ Add a dated claim');
+    }],
     ['track editor', async (p) => (await editMode(p), clickText(p, '+ Track'))],
     ['source editor', async (p) => (await editMode(p), clickText(p, '+ Source'))],
     // a first visit: the tour opens by itself (the page setup below skips marking it seen once this flag is set)

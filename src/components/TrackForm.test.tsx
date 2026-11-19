@@ -63,3 +63,32 @@ describe('TrackForm phases', () => {
     expect(onSave).not.toHaveBeenCalled();
   });
 });
+
+describe('TrackForm accessibility', () => {
+  it('ties an error to its field and moves focus there', async () => {
+    open({ id: 'x', name: 'X', color: '#123456' });
+    fireEvent.click(screen.getByText('+ Add a phase'));
+    fireEvent.change(screen.getByLabelText('Phase start'), { target: { value: '10 L' } });
+    fireEvent.change(screen.getByLabelText('Phase end'), { target: { value: '20 L' } });
+    fireEvent.click(screen.getByText('Save track'));
+    const message = await screen.findByText('Give the phase a name.');
+    const field = screen.getByLabelText('Phase name');
+    expect(field.getAttribute('aria-invalid')).toBe('true');
+    expect(field.getAttribute('aria-describedby')).toBe(message.id);
+    expect(message.getAttribute('role')).toBe('alert');
+    expect(document.activeElement).toBe(field);
+  });
+
+  it('a field without an error is not marked invalid', () => {
+    open(quay);
+    expect(screen.getByLabelText('Name').getAttribute('aria-invalid')).toBeNull();
+  });
+
+  it('announces dated claims as a list, with each Remove button saying which claim', () => {
+    open(quay);
+    const list = screen.getByRole('list', { name: 'Dated claims for the end' });
+    expect(list.querySelectorAll(':scope > li')).toHaveLength(2);
+    expect(screen.getByRole('button', { name: 'Remove claim 1' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Remove claim 2' })).toBeTruthy();
+  });
+});

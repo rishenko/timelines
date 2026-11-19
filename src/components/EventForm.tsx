@@ -17,6 +17,7 @@ import { eventChronology } from '../lib/chronology.ts';
 import { customTags, newProblems, nextTrackColor, uniqueId, upsertEvent } from '../state/edits.ts';
 import type { Source, Track } from '../types.ts';
 import { LINK_LABEL } from './linkLabels.ts';
+import { errorProps, FieldError } from './FieldError.tsx';
 
 interface FormValues extends ClaimFields {
   uuid: string;
@@ -180,11 +181,11 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
   const submit = (v: FormValues) => {
     const e = fromForm(v, cal);
     if (e.tracks.length === 0) {
-      setError('tracks', { message: 'Pick at least one track.' });
+      setError('tracks', { message: 'Pick at least one track.' }, { shouldFocus: true });
       return;
     }
     if (e.end !== undefined && e.end < e.start) {
-      setError('endYear', { message: 'End year is before the start year.' });
+      setError('endYear', { message: 'End year is before the start year.' }, { shouldFocus: true });
       return;
     }
     const found = newProblems(data, upsertEvent(data, e));
@@ -202,8 +203,8 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
       </header>
       <form onSubmit={handleSubmit(submit)}>
         <label htmlFor="ev-title">Title</label>
-        <input id="ev-title" {...register('title', { required: 'Title is required.' })} autoFocus />
-        {errors.title && <p role="alert">{errors.title.message}</p>}
+        <input id="ev-title" {...register('title', { required: 'Title is required.' })} {...errorProps('ev-title', errors.title)} autoFocus />
+        <FieldError id="ev-title" error={errors.title} />
 
         <fieldset>
           <legend>When</legend>
@@ -226,11 +227,11 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
           {hasEnd && !ongoing && (
             <div className="year-row">
               <label htmlFor="ev-end">End</label>
-              <input id="ev-end" type="number" min={0} {...register('endYear', { valueAsNumber: true, min: 0 })} />
+              <input id="ev-end" type="number" min={0} {...register('endYear', { valueAsNumber: true, min: 0 })} {...errorProps('ev-end', errors.endYear)} />
               <EraSelect cal={cal} label="End era" reg={register('endEra')} />
             </div>
           )}
-          {errors.endYear && <p role="alert">{errors.endYear.message}</p>}
+          <FieldError id="ev-end" error={errors.endYear} />
           <label className="check" title="Shown as c. and drawn with soft edges">
             <input type="checkbox" {...register('circa')} /> Approximate ("c.")
           </label>
@@ -286,10 +287,10 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
         <label htmlFor="ev-descr">Description</label>
         <textarea id="ev-descr" rows={5} {...register('descr')} />
 
-        <fieldset>
+        <fieldset {...errorProps('ev-tracks', errors.tracks)}>
           <legend>Tracks</legend>
           <div className="track-checks">{trackTree(undefined, 0)}</div>
-          {errors.tracks && <p role="alert">{errors.tracks.message}</p>}
+          <FieldError id="ev-tracks" error={errors.tracks} />
           {newTrack ? (
             <div className="quick-create">
               <input

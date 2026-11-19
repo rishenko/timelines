@@ -1026,6 +1026,16 @@ main {
 }
 /* A claim: year, era, ± margin and remove on the first line, the chronology on its own line under them (it wraps
    there), then the source and its location. Each field keeps a readable width in a narrow panel. */
+/* the claims are a list (for screen readers), drawn without bullets */
+.editor .claim-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* a column like .claims: a grid track would grow to its widest field and run past the panel */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .editor .claim .row {
   flex-wrap: wrap;
 }

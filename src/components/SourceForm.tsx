@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import type { Dataset, Source } from '../types.ts';
 import { customTags, slug, sourceUsage, uniqueId } from '../state/edits.ts';
+import { errorProps, FieldError } from './FieldError.tsx';
 
 interface FormValues {
   key: string;
@@ -54,8 +55,8 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
 
   const submit = (v: FormValues) => {
     const key = v.key ? slug(v.key) : uniqueId(v.name, otherKeys);
-    if (!key) return setError('key', { message: 'Key is required.' });
-    if (otherKeys.includes(key)) return setError('key', { message: `A source with key "${key}" already exists.` });
+    if (!key) return setError('key', { message: 'Key is required.' }, { shouldFocus: true });
+    if (otherKeys.includes(key)) return setError('key', { message: `A source with key "${key}" already exists.` }, { shouldFocus: true });
     const picked = Array.isArray(v.tags) ? v.tags : v.tags ? [v.tags as unknown as string] : [];
     const extra = slug(v.newTag);
     const s: Source = { name: v.name.trim(), tags: [...new Set([...picked, ...(extra ? [extra] : [])])] };
@@ -90,8 +91,8 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
       </p>
       <form onSubmit={handleSubmit(submit)}>
         <label htmlFor="src-name">Title</label>
-        <input id="src-name" placeholder="The Oxford History of Ancient Egypt" {...register('name', { required: 'A title is required.' })} autoFocus />
-        {errors.name && <p role="alert">{errors.name.message}</p>}
+        <input id="src-name" placeholder="The Oxford History of Ancient Egypt" {...register('name', { required: 'A title is required.' })} {...errorProps('src-name', errors.name)} autoFocus />
+        <FieldError id="src-name" error={errors.name} />
 
         <div className="row">
           <div className="grow">
@@ -123,11 +124,11 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
           <input type="checkbox" {...register('hiddenByDefault')} /> Hidden by default (spoilers)
         </label>
 
-        <details>
+        <details open={errors.key ? true : undefined}>
           <summary>Key: {previewKey || '…'}</summary>
           <p className="muted small">Used in the data file. Leave blank to derive it from the title.</p>
-          <input aria-label="Source key" placeholder={previewKey} {...register('key')} />
-          {errors.key && <p role="alert">{errors.key.message}</p>}
+          <input aria-label="Source key" placeholder={previewKey} {...register('key')} {...errorProps('src-key', errors.key)} />
+          <FieldError id="src-key" error={errors.key} />
         </details>
 
         <footer>

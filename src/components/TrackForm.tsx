@@ -6,6 +6,7 @@ import { ClaimList, ProblemList } from './ClaimList.tsx';
 import { claimsFromValues, toClaimValues, type ClaimFields, type ClaimValues } from '../lib/claims.ts';
 import { isDescendant, trackDepth } from '../lib/tracks.ts';
 import { formatYear, parseDate } from '../lib/calendar.ts';
+import { errorProps, FieldError } from './FieldError.tsx';
 
 interface FormValues extends ClaimFields {
   id: string;
@@ -88,8 +89,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
 
   const submit = (v: FormValues) => {
     const id = v.id ? slug(v.id) : uniqueId(v.name, otherIds);
-    if (!id) return setError('id', { message: 'Id is required.' });
-    if (otherIds.includes(id)) return setError('id', { message: `A track with id "${id}" already exists.` });
+    if (!id) return setError('id', { message: 'Id is required.' }, { shouldFocus: true });
+    if (otherIds.includes(id)) return setError('id', { message: `A track with id "${id}" already exists.` }, { shouldFocus: true });
     const t: Track = { id, name: v.name.trim(), color: v.color };
     if (v.parent) t.parent = v.parent;
     if (v.image.trim()) t.image = v.image.trim();
@@ -98,9 +99,9 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (v.spanStart.trim() || v.spanEnd.trim()) {
       const s = parseDate(v.spanStart, cal);
       const e = parseDate(v.spanEnd, cal);
-      if (!s) return setError('spanStart', { message: `Write a year like "${example}".` });
-      if (!e) return setError('spanEnd', { message: `Write a year like "${example}".` });
-      if (e.year < s.year) return setError('spanEnd', { message: 'The end is before the start.' });
+      if (!s) return setError('spanStart', { message: `Write a year like "${example}".` }, { shouldFocus: true });
+      if (!e) return setError('spanEnd', { message: `Write a year like "${example}".` }, { shouldFocus: true });
+      if (e.year < s.year) return setError('spanEnd', { message: 'The end is before the start.' }, { shouldFocus: true });
       t.span = { start: s.year, end: e.year };
       if (s.circa || e.circa) t.span.circa = true;
       const startDates = claimsFromValues(v.startDates, cal);
@@ -108,16 +109,16 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       if (startDates) t.span.startDates = startDates;
       if (endDates) t.span.endDates = endDates;
     } else if (v.startDates.length || v.endDates.length) {
-      return setError('spanStart', { message: 'Give the lifespan a start and an end, or remove its date claims.' });
+      return setError('spanStart', { message: 'Give the lifespan a start and an end, or remove its date claims.' }, { shouldFocus: true });
     }
     const phases: TrackPhase[] = [];
     for (const [i, p] of v.phases.entries()) {
-      if (!p.name.trim()) return setError(`phases.${i}.name`, { message: 'Give the phase a name.' });
+      if (!p.name.trim()) return setError(`phases.${i}.name`, { message: 'Give the phase a name.' }, { shouldFocus: true });
       const s = parseDate(p.start, cal);
       const e = parseDate(p.end, cal);
-      if (!s) return setError(`phases.${i}.start`, { message: `Write a year like "${example}".` });
-      if (!e) return setError(`phases.${i}.end`, { message: `Write a year like "${example}".` });
-      if (e.year < s.year) return setError(`phases.${i}.end`, { message: 'The end is before the start.' });
+      if (!s) return setError(`phases.${i}.start`, { message: `Write a year like "${example}".` }, { shouldFocus: true });
+      if (!e) return setError(`phases.${i}.end`, { message: `Write a year like "${example}".` }, { shouldFocus: true });
+      if (e.year < s.year) return setError(`phases.${i}.end`, { message: 'The end is before the start.' }, { shouldFocus: true });
       const phase: TrackPhase = { name: p.name.trim(), start: s.year, end: e.year };
       if (s.circa || e.circa) phase.circa = true;
       const startDates = claimsFromValues(p.startDates, cal);
@@ -160,8 +161,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       </p>
       <form onSubmit={handleSubmit(submit)}>
         <label htmlFor="tr-name">Name</label>
-        <input id="tr-name" {...register('name', { required: 'Name is required.' })} autoFocus />
-        {errors.name && <p role="alert">{errors.name.message}</p>}
+        <input id="tr-name" {...register('name', { required: 'Name is required.' })} {...errorProps('tr-name', errors.name)} autoFocus />
+        <FieldError id="tr-name" error={errors.name} />
 
         <label htmlFor="tr-color">Color</label>
         <input id="tr-color" type="color" {...register('color')} />
@@ -181,11 +182,11 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
           <legend>Lifespan (optional)</legend>
           <p className="muted small">Shaded across the row. Write "c." for approximate dates, e.g. "c. {example}".</p>
           <div className="row">
-            <input aria-label="Lifespan start" placeholder="From" {...register('spanStart')} />
-            <input aria-label="Lifespan end" placeholder="To" {...register('spanEnd')} />
+            <input aria-label="Lifespan start" placeholder="From" {...register('spanStart')} {...errorProps('tr-span-start', errors.spanStart)} />
+            <input aria-label="Lifespan end" placeholder="To" {...register('spanEnd')} {...errorProps('tr-span-end', errors.spanEnd)} />
           </div>
-          {errors.spanStart && <p role="alert">{errors.spanStart.message}</p>}
-          {errors.spanEnd && <p role="alert">{errors.spanEnd.message}</p>}
+          <FieldError id="tr-span-start" error={errors.spanStart} />
+          <FieldError id="tr-span-end" error={errors.spanEnd} />
           <details open={!!(initial?.span?.startDates?.length || initial?.span?.endDates?.length)}>
             <summary>Dated claims</summary>
             <p className="muted small">
@@ -221,14 +222,14 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
           <input type="checkbox" {...register('pinLast')} /> Keep at the bottom (e.g. "Other peoples", "Other")
         </label>
 
-        <details>
+        <details open={errors.id ? true : undefined}>
           <summary>Id: {previewId || '…'}</summary>
           <p className="muted small">
             Used in the data file and links. Leave blank to derive it from the name. Changing it updates every event
             on this track.
           </p>
-          <input aria-label="Track id" placeholder={previewId} {...register('id')} />
-          {errors.id && <p role="alert">{errors.id.message}</p>}
+          <input aria-label="Track id" placeholder={previewId} {...register('id')} {...errorProps('tr-id', errors.id)} />
+          <FieldError id="tr-id" error={errors.id} />
         </details>
 
         <ProblemList problems={problems} />
@@ -281,18 +282,18 @@ function PhaseList({
         return (
           <div key={f.id} className="phase">
             <div className="row">
-              <input aria-label="Phase name" placeholder="Name, e.g. Second Republic" {...register(`phases.${i}.name`)} />
+              <input aria-label="Phase name" placeholder="Name, e.g. Second Republic" {...register(`phases.${i}.name`)} {...errorProps(`tr-phase-${i}-name`, err?.name)} />
               <button type="button" className="icon" onClick={() => phases.remove(i)} aria-label="Remove this phase" title="Remove this phase">
                 ✕
               </button>
             </div>
-            {err?.name && <p role="alert">{err.name.message}</p>}
+            <FieldError id={`tr-phase-${i}-name`} error={err?.name} />
             <div className="row">
-              <input aria-label="Phase start" placeholder="From" {...register(`phases.${i}.start`)} />
-              <input aria-label="Phase end" placeholder="To" {...register(`phases.${i}.end`)} />
+              <input aria-label="Phase start" placeholder="From" {...register(`phases.${i}.start`)} {...errorProps(`tr-phase-${i}-start`, err?.start)} />
+              <input aria-label="Phase end" placeholder="To" {...register(`phases.${i}.end`)} {...errorProps(`tr-phase-${i}-end`, err?.end)} />
             </div>
-            {err?.start && <p role="alert">{err.start.message}</p>}
-            {err?.end && <p role="alert">{err.end.message}</p>}
+            <FieldError id={`tr-phase-${i}-start`} error={err?.start} />
+            <FieldError id={`tr-phase-${i}-end`} error={err?.end} />
             {/* folded, so a row with many phases stays short; the count says what is inside */}
             <details>
               <summary>Dated claims{f.startDates.length + f.endDates.length ? ` (${f.startDates.length + f.endDates.length})` : ''}</summary>

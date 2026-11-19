@@ -56,10 +56,14 @@ export function ClaimList<T extends FieldValues>({
   const claims = useFieldArray({ control: ctl, name });
   const cal = data.meta.calendar;
   const chronologies = Object.entries(data.chronologies ?? {});
+  // a real list, so a screen reader says how many claims there are and which one it is in ("2 of 3")
+  const which = name.endsWith('endDates') ? 'end' : 'start';
   return (
     <div className="claims">
+      {claims.fields.length > 0 && (
+        <ul className="claim-list" aria-label={`Dated claims for the ${which}`}>
       {claims.fields.map((f, i) => (
-        <div key={f.id} className="claim">
+        <li key={f.id} className="claim">
           <div className="row">
             <input aria-label="Year" type="number" min={0} {...reg(`${name}.${i}.year`, { valueAsNumber: true })} />
             <EraSelect cal={cal} label="Era" reg={reg(`${name}.${i}.era`)} />
@@ -75,7 +79,13 @@ export function ClaimList<T extends FieldValues>({
                 ))}
               </select>
             )}
-            <button type="button" className="icon" onClick={() => claims.remove(i)} aria-label="Remove" title="Remove">
+            <button
+              type="button"
+              className="icon"
+              onClick={() => claims.remove(i)}
+              aria-label={`Remove claim ${i + 1}`}
+              title={`Remove claim ${i + 1}`}
+            >
               ✕
             </button>
           </div>
@@ -91,8 +101,10 @@ export function ClaimList<T extends FieldValues>({
             <input aria-label="Location in source" placeholder="p. 12" {...reg(`${name}.${i}.sourceLocation`)} />
           </div>
           <input aria-label="Note" placeholder="Note (optional)" {...reg(`${name}.${i}.note`)} />
-        </div>
+        </li>
       ))}
+        </ul>
+      )}
       <button
         type="button"
         onClick={() =>
