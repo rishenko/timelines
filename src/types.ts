@@ -73,6 +73,10 @@ export interface Track {
   parent?: string;
   /** Image URL shown in the lane label (relative to the site root, or absolute). */
   image?: string;
+  /** A page about this row (e.g. its Wikipedia article): the row's name links to it. */
+  url?: string;
+  /** The row's identifiers in other datasets, so it can be matched with them. */
+  ids?: TrackIds;
   /** Keep this track after all others (e.g. "Other peoples", "Other powers"); new tracks are inserted before it. */
   pinLast?: boolean;
   /** Default chronology for events on this track; children inherit it. */
@@ -85,6 +89,12 @@ export interface Track {
    * the top of the row. Phases may overlap (two rival governments during a civil war).
    */
   phases?: TrackPhase[];
+}
+
+/** Identifiers of a row in other datasets. */
+export interface TrackIds {
+  /** Wikidata item id, e.g. "Q11768" (Ancient Egypt). */
+  wikidata?: string;
 }
 
 /** One named period within a row (see Track.phases). Dated like a lifespan, with date claims for uncertain edges. */

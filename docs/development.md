@@ -96,6 +96,32 @@ node scripts/apply-text-fixes.ts <data-src file> fixes.json [--dry]   # reword t
 npm run audit:batches -- <data-src file> <out dir>   # group descriptions by cited page, for checking against the pages
 ```
 
+## Row links
+
+Each row of the included timelines links to its Wikipedia article and carries its Wikidata id (`url` and
+`ids.wikidata`; see [data-format.md](data-format.md#tracks)). The decisions live in a plan per timeline,
+`data-src/<short>-row-links.json`: one line per row, `{ "page": "…", "wikidata": "Q…" }` or `null` for a row
+without a link. `npm run data -- importance` and `run-all` apply it after the content scripts, and a test fails
+when a row has no decision.
+
+```sh
+node scripts/row-links.ts <timeline>                        # propose articles for undecided rows; rewrite docs/<short>-row-links.md
+node scripts/row-links.ts <timeline> --accept-same          # record proposals whose title plainly names the row
+node scripts/row-links.ts <timeline> --decide <file.json>   # record { "<row id>": "Article title" | null, … }
+```
+
+The script asks the Wikipedia API for each candidate's Wikidata id and flags (missing, disambiguation, an
+AI-generated-text template). Rules used for the included timelines:
+
+- A row links to an article plainly about it: for an ancient people or culture, the ancient topic, not a modern
+  country or city of the same name (*Ancient Rome*, not *Rome*; *Prehistory of Taiwan*, not *Taiwan*).
+- A row that combines two things ("Getae and Dacians", "Iran & Central Asia") gets no link unless one article covers
+  both (*Ancient Israel and Judah*).
+- Pages with an AI-generated-text template are never linked (*C-Group culture*, *Lusatian culture* in 2026-11).
+- Group rows link to their region's article when there is one (*Mesopotamia*, *Levant*).
+
+`docs/<short>-row-links.md` lists every decision; the decision files used are in `scripts/archive/`.
+
 ## Checking the UI
 
 ```sh

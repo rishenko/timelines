@@ -2825,7 +2825,11 @@
     {
       "id": "africa",
       "name": "Africa",
-      "color": "#b8862a"
+      "color": "#b8862a",
+      "url": "https://en.wikipedia.org/wiki/Africa",
+      "ids": {
+        "wikidata": "Q15"
+      }
     },
     {
       "id": "north-africa",
@@ -2837,13 +2841,21 @@
       "id": "carthage",
       "name": "Carthage",
       "color": "#a07a3a",
-      "parent": "north-africa"
+      "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Carthage",
+      "ids": {
+        "wikidata": "Q6343"
+      }
     },
     {
       "id": "mauretania",
       "name": "Mauretania",
       "color": "#9a7040",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Mauretania",
+      "ids": {
+        "wikidata": "Q309272"
+      },
       "span": {
         "start": -224,
         "end": 44,
@@ -2864,6 +2876,10 @@
       "name": "Numidia",
       "color": "#b0884a",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Numidia",
+      "ids": {
+        "wikidata": "Q102679"
+      },
       "span": {
         "start": -201,
         "end": -45,
@@ -2890,6 +2906,10 @@
       "name": "Vandal Kingdom",
       "color": "#6a5a8a",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Vandal_Kingdom",
+      "ids": {
+        "wikidata": "Q10416611"
+      },
       "span": {
         "start": 435,
         "end": 534
@@ -2900,6 +2920,10 @@
       "name": "Garamantes",
       "color": "#c09060",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "ids": {
+        "wikidata": "Q839034"
+      },
       "span": {
         "start": -549,
         "end": 675,
@@ -2930,13 +2954,21 @@
       "id": "nubia",
       "name": "Kush and Nubia",
       "color": "#b8862a",
-      "parent": "africa"
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/Nubia",
+      "ids": {
+        "wikidata": "Q135028"
+      }
     },
     {
       "id": "kush",
       "name": "Kingdom of Kush (Napata, Meroë)",
       "color": "#8a5a2a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+      "ids": {
+        "wikidata": "Q241790"
+      },
       "span": {
         "start": -779,
         "end": 350,
@@ -2971,6 +3003,10 @@
       "name": "Nobatia",
       "color": "#a06a3a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Nobatia",
+      "ids": {
+        "wikidata": "Q568523"
+      },
       "span": {
         "start": 400,
         "end": 631,
@@ -2992,6 +3028,10 @@
       "name": "Makuria",
       "color": "#7a4a3a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Makuria",
+      "ids": {
+        "wikidata": "Q829356"
+      },
       "span": {
         "start": 450,
         "end": 1475,
@@ -3023,6 +3063,10 @@
       "name": "Alodia",
       "color": "#9a5a4a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Alodia",
+      "ids": {
+        "wikidata": "Q449639"
+      },
       "span": {
         "start": 550,
         "end": 1500,
@@ -3057,6 +3101,10 @@
       "name": "Dʿmt",
       "color": "#7a6a3a",
       "parent": "horn",
+      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
+      "ids": {
+        "wikidata": "Q139315"
+      },
       "span": {
         "start": -749,
         "end": -349,
@@ -3095,6 +3143,10 @@
       "name": "Kingdom of Aksum",
       "color": "#5a7a4a",
       "parent": "horn",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+      "ids": {
+        "wikidata": "Q139377"
+      },
       "span": {
         "start": 50,
         "end": 960,
@@ -3129,13 +3181,21 @@
       "id": "sub-saharan",
       "name": "Africa south of the Sahara",
       "color": "#b8862a",
-      "parent": "africa"
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/Sub-Saharan_Africa",
+      "ids": {
+        "wikidata": "Q132959"
+      }
     },
     {
       "id": "djenne-djenno",
       "name": "Djenné-Djenno",
       "color": "#a07850",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno",
+      "ids": {
+        "wikidata": "Q607668"
+      },
       "span": {
         "start": -249,
         "end": 1400
@@ -3146,6 +3206,10 @@
       "name": "Nok culture",
       "color": "#8a6040",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Nok_culture",
+      "ids": {
+        "wikidata": "Q927291"
+      },
       "span": {
         "start": -1499,
         "end": 0,
@@ -3161,13 +3225,21 @@
       "id": "europe",
       "name": "Europe",
       "color": "#3f6aa8",
-      "parent": "europe-med"
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Europe",
+      "ids": {
+        "wikidata": "Q46"
+      }
     },
     {
       "id": "roman-britain",
       "name": "Roman Britain",
       "color": "#8a3a3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
+      "ids": {
+        "wikidata": "Q185103"
+      },
       "span": {
         "start": 43,
         "end": 410,
@@ -3179,6 +3251,10 @@
       "name": "Anglo-Saxon England",
       "color": "#6a7a3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
+      "ids": {
+        "wikidata": "Q784963"
+      },
       "span": {
         "start": 449,
         "end": 1066,
@@ -3199,6 +3275,10 @@
       "name": "Kingdom of the Suebi",
       "color": "#4a6a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Suebi",
+      "ids": {
+        "wikidata": "Q1048918"
+      },
       "span": {
         "start": 409,
         "end": 585
@@ -3209,6 +3289,10 @@
       "name": "Visigothic Kingdom (Toulouse, then Toledo)",
       "color": "#7a5a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Visigothic_Kingdom",
+      "ids": {
+        "wikidata": "Q126936"
+      },
       "span": {
         "start": 418,
         "end": 721,
@@ -3235,6 +3319,10 @@
       "name": "La Tène Celts (Gaul)",
       "color": "#3a7a5a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/La_T%C3%A8ne_culture",
+      "ids": {
+        "wikidata": "Q208247"
+      },
       "span": {
         "start": -449,
         "end": 0,
@@ -3246,6 +3334,10 @@
       "name": "Franks (Merovingians)",
       "color": "#3a5a9a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Franks",
+      "ids": {
+        "wikidata": "Q43482"
+      },
       "span": {
         "start": 481,
         "end": 751,
@@ -3257,6 +3349,10 @@
       "name": "Kingdom of the Burgundians",
       "color": "#9a4a5a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Burgundians",
+      "ids": {
+        "wikidata": "Q13590051"
+      },
       "span": {
         "start": 411,
         "end": 534
@@ -3267,6 +3363,10 @@
       "name": "Ostrogothic Kingdom (Italy)",
       "color": "#8a6aaa",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Ostrogothic_Kingdom",
+      "ids": {
+        "wikidata": "Q583038"
+      },
       "span": {
         "start": 493,
         "end": 553
@@ -3277,6 +3377,10 @@
       "name": "Kingdom of the Lombards",
       "color": "#5a8a6a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
+      "ids": {
+        "wikidata": "Q854415"
+      },
       "span": {
         "start": 568,
         "end": 774
@@ -3287,6 +3391,10 @@
       "name": "Early Slavs",
       "color": "#6a5a3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Early_Slavs",
+      "ids": {
+        "wikidata": "Q2378782"
+      },
       "span": {
         "start": 550,
         "end": 950,
@@ -3323,13 +3431,21 @@
       "id": "rome",
       "name": "Rome",
       "color": "#3f6aa8",
-      "parent": "europe-med"
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Rome",
+      "ids": {
+        "wikidata": "Q1747689"
+      }
     },
     {
       "id": "rome-republic-empire",
       "name": "Rome (Republic, then Empire)",
       "color": "#a33a3a",
       "parent": "rome",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Rome",
+      "ids": {
+        "wikidata": "Q1747689"
+      },
       "span": {
         "start": -508,
         "end": 476,
@@ -3354,6 +3470,10 @@
       "name": "Eastern Roman (Byzantine) Empire",
       "color": "#8a3a6a",
       "parent": "rome",
+      "url": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+      "ids": {
+        "wikidata": "Q12544"
+      },
       "span": {
         "start": 395,
         "end": 1453
@@ -3363,13 +3483,21 @@
       "id": "greece",
       "name": "Greece and the Hellenistic world",
       "color": "#3f6aa8",
-      "parent": "europe-med"
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Hellenistic_period",
+      "ids": {
+        "wikidata": "Q428995"
+      }
     },
     {
       "id": "antigonid",
       "name": "Antigonid Macedon",
       "color": "#4a6aa8",
       "parent": "greece",
+      "url": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
+      "ids": {
+        "wikidata": "Q83958"
+      },
       "span": {
         "start": -305,
         "end": -167
@@ -3380,6 +3508,10 @@
       "name": "Kingdom of Pergamon",
       "color": "#5a7ab0",
       "parent": "greece",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Pergamon",
+      "ids": {
+        "wikidata": "Q2022162"
+      },
       "span": {
         "start": -281,
         "end": -128,
@@ -3395,7 +3527,11 @@
       "id": "egypt",
       "name": "Egypt",
       "color": "#a8483a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Egypt",
+      "ids": {
+        "wikidata": "Q79"
+      }
     },
     {
       "id": "ptolemaic-roman-egypt",
@@ -3461,13 +3597,21 @@
       "id": "judea",
       "name": "Judea (Hasmoneans, Herod, Roman rule)",
       "color": "#7a6a4a",
-      "parent": "levant"
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Judea",
+      "ids": {
+        "wikidata": "Q104028"
+      }
     },
     {
       "id": "palmyra",
       "name": "Palmyra",
       "color": "#9a6a4a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Palmyra",
+      "ids": {
+        "wikidata": "Q5747"
+      },
       "span": {
         "start": 270,
         "end": 273,
@@ -3493,13 +3637,21 @@
       "id": "anatolia",
       "name": "Anatolia",
       "color": "#a8483a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Anatolia",
+      "ids": {
+        "wikidata": "Q51614"
+      }
     },
     {
       "id": "galatia",
       "name": "Galatians",
       "color": "#4a8a6a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Galatians_(people)",
+      "ids": {
+        "wikidata": "Q11073103"
+      },
       "span": {
         "start": -277,
         "end": -24,
@@ -3527,13 +3679,21 @@
       "id": "caucasus",
       "name": "Caucasus",
       "color": "#a8483a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Caucasus",
+      "ids": {
+        "wikidata": "Q18869"
+      }
     },
     {
       "id": "armenia",
       "name": "Armenia",
       "color": "#7a5a8a",
-      "parent": "caucasus"
+      "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Armenia_(antiquity)",
+      "ids": {
+        "wikidata": "Q208404"
+      }
     },
     {
       "id": "persia",
@@ -3546,6 +3706,10 @@
       "name": "Seleucid Empire",
       "color": "#6a5aa0",
       "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Seleucid_Empire",
+      "ids": {
+        "wikidata": "Q93180"
+      },
       "span": {
         "start": -311,
         "end": -62
@@ -3556,6 +3720,10 @@
       "name": "Greco-Bactrian Kingdom",
       "color": "#7a6a90",
       "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom",
+      "ids": {
+        "wikidata": "Q488880"
+      },
       "span": {
         "start": -255,
         "end": -119,
@@ -3591,6 +3759,10 @@
       "name": "Parthian Empire",
       "color": "#8a4a3a",
       "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Parthian_Empire",
+      "ids": {
+        "wikidata": "Q1986139"
+      },
       "span": {
         "start": -246,
         "end": 224
@@ -3601,6 +3773,10 @@
       "name": "Sasanian Empire",
       "color": "#a84a2a",
       "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+      "ids": {
+        "wikidata": "Q83891"
+      },
       "span": {
         "start": 224,
         "end": 651
@@ -3610,13 +3786,21 @@
       "id": "arabia",
       "name": "Arabia",
       "color": "#a8483a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Pre-Islamic_Arabia",
+      "ids": {
+        "wikidata": "Q47855"
+      }
     },
     {
       "id": "nabataea",
       "name": "Nabataean Kingdom (Petra)",
       "color": "#b07a5a",
       "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Nabataean_Kingdom",
+      "ids": {
+        "wikidata": "Q11029653"
+      },
       "span": {
         "start": -249,
         "end": 106,
@@ -3646,6 +3830,10 @@
       "name": "Himyar",
       "color": "#a0805a",
       "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Himyar",
+      "ids": {
+        "wikidata": "Q289577"
+      },
       "span": {
         "start": -109,
         "end": 575,
@@ -3683,13 +3871,21 @@
       "id": "steppe",
       "name": "Steppe peoples",
       "color": "#7a8a2a",
-      "parent": "steppe-south-asia"
+      "parent": "steppe-south-asia",
+      "url": "https://en.wikipedia.org/wiki/Eurasian_nomads",
+      "ids": {
+        "wikidata": "Q1753235"
+      }
     },
     {
       "id": "xiongnu",
       "name": "Xiongnu",
       "color": "#7a5a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Xiongnu",
+      "ids": {
+        "wikidata": "Q188836"
+      },
       "span": {
         "start": -249,
         "end": 150,
@@ -3729,6 +3925,10 @@
       "name": "Xianbei",
       "color": "#6a7a5a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Xianbei",
+      "ids": {
+        "wikidata": "Q861054"
+      },
       "span": {
         "start": -207,
         "end": 250,
@@ -3750,6 +3950,10 @@
       "name": "Rouran Khaganate",
       "color": "#5a6a7a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Rouran_Khaganate",
+      "ids": {
+        "wikidata": "Q155361"
+      },
       "span": {
         "start": 330,
         "end": 555,
@@ -3776,6 +3980,10 @@
       "name": "First Turkic Khaganate (Göktürks)",
       "color": "#3a6a8a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/First_Turkic_Khaganate",
+      "ids": {
+        "wikidata": "Q15146034"
+      },
       "span": {
         "start": 552,
         "end": 603
@@ -3786,6 +3994,10 @@
       "name": "Eastern Turkic Khaganate",
       "color": "#4a7a9a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+      "ids": {
+        "wikidata": "Q2607292"
+      },
       "span": {
         "start": 581,
         "end": 645,
@@ -3828,6 +4040,10 @@
       "name": "Western Turkic Khaganate",
       "color": "#2a5a7a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+      "ids": {
+        "wikidata": "Q874357"
+      },
       "span": {
         "start": 581,
         "end": 657,
@@ -3854,6 +4070,10 @@
       "name": "Kidarites",
       "color": "#8a6a4a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Kidarites",
+      "ids": {
+        "wikidata": "Q26996"
+      },
       "span": {
         "start": 320,
         "end": 467
@@ -3864,6 +4084,10 @@
       "name": "Hephthalites",
       "color": "#7a4a6a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Hephthalites",
+      "ids": {
+        "wikidata": "Q26576"
+      },
       "span": {
         "start": 445,
         "end": 560,
@@ -3892,6 +4116,10 @@
       "name": "Sarmatians and Alans",
       "color": "#9a6a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Sarmatians",
+      "ids": {
+        "wikidata": "Q162858"
+      },
       "span": {
         "start": -449,
         "end": 350,
@@ -3923,6 +4151,10 @@
       "name": "Huns",
       "color": "#6a3a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Huns",
+      "ids": {
+        "wikidata": "Q45813"
+      },
       "span": {
         "start": 375,
         "end": 469,
@@ -3944,6 +4176,10 @@
       "name": "Avar Khaganate (Pannonian Avars)",
       "color": "#5a4a6a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Pannonian_Avars",
+      "ids": {
+        "wikidata": "Q68962"
+      },
       "span": {
         "start": 567,
         "end": 822
@@ -3953,13 +4189,21 @@
       "id": "south-asia",
       "name": "South Asia",
       "color": "#7a8a2a",
-      "parent": "steppe-south-asia"
+      "parent": "steppe-south-asia",
+      "url": "https://en.wikipedia.org/wiki/South_Asia",
+      "ids": {
+        "wikidata": "Q771405"
+      }
     },
     {
       "id": "indo-greek",
       "name": "Indo-Greek Kingdom",
       "color": "#5a7aa8",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Greek_Kingdom",
+      "ids": {
+        "wikidata": "Q215643"
+      },
       "span": {
         "start": -199,
         "end": 10,
@@ -3971,6 +4215,10 @@
       "name": "Indo-Scythians (Sakas)",
       "color": "#7a6a5a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Scythian_Kingdom",
+      "ids": {
+        "wikidata": "Q240123"
+      },
       "span": {
         "start": -149,
         "end": 400,
@@ -3982,6 +4230,10 @@
       "name": "Kushan Empire",
       "color": "#a0703a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Kushan_Empire",
+      "ids": {
+        "wikidata": "Q25979"
+      },
       "span": {
         "start": 30,
         "end": 375,
@@ -3993,6 +4245,10 @@
       "name": "Alchon Huns",
       "color": "#6a5a7a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
+      "ids": {
+        "wikidata": "Q21050766"
+      },
       "span": {
         "start": 370,
         "end": 670
@@ -4003,6 +4259,10 @@
       "name": "Maurya Empire",
       "color": "#b0603a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Maurya_Empire",
+      "ids": {
+        "wikidata": "Q62943"
+      },
       "span": {
         "start": -320,
         "end": -184,
@@ -4030,6 +4290,10 @@
       "name": "Shunga Empire",
       "color": "#9a5a4a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Shunga_Empire",
+      "ids": {
+        "wikidata": "Q651377"
+      },
       "span": {
         "start": -184,
         "end": -72,
@@ -4079,6 +4343,10 @@
       "name": "Gupta Empire",
       "color": "#c08a3a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Gupta_Empire",
+      "ids": {
+        "wikidata": "Q11774"
+      },
       "span": {
         "start": 240,
         "end": 579,
@@ -4113,6 +4381,10 @@
       "name": "Harsha’s empire (Kannauj)",
       "color": "#b07a5a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Pushyabhuti_dynasty",
+      "ids": {
+        "wikidata": "Q28109312"
+      },
       "span": {
         "start": 606,
         "end": 647
@@ -4123,6 +4395,10 @@
       "name": "Satavahana dynasty",
       "color": "#7a8a4a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Satavahana_dynasty",
+      "ids": {
+        "wikidata": "Q5257"
+      },
       "span": {
         "start": -116,
         "end": 224,
@@ -4152,6 +4428,10 @@
       "name": "Pallava dynasty",
       "color": "#4a8a7a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
+      "ids": {
+        "wikidata": "Q466803"
+      },
       "span": {
         "start": 275,
         "end": 897
@@ -4162,6 +4442,10 @@
       "name": "Tamilakam: the Sangam period",
       "color": "#5a9a6a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Sangam_literature",
+      "ids": {
+        "wikidata": "Q3219940"
+      },
       "span": {
         "start": -299,
         "end": 300,
@@ -4205,6 +4489,10 @@
       "name": "Anuradhapura kingdom",
       "color": "#8a6a9a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "ids": {
+        "wikidata": "Q1965597"
+      },
       "span": {
         "start": -436,
         "end": 1017,
@@ -4235,13 +4523,21 @@
       "id": "se-asia",
       "name": "Southeast Asia",
       "color": "#6a4a9a",
-      "parent": "east-asia"
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia",
+      "ids": {
+        "wikidata": "Q11708"
+      }
     },
     {
       "id": "pyu",
       "name": "Pyu city-states",
       "color": "#8a6a3a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Pyu_city-states",
+      "ids": {
+        "wikidata": "Q1627675"
+      },
       "span": {
         "start": -199,
         "end": 1050,
@@ -4253,6 +4549,10 @@
       "name": "Funan",
       "color": "#4a7a6a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Funan",
+      "ids": {
+        "wikidata": "Q867782"
+      },
       "span": {
         "start": 50,
         "end": 627,
@@ -4279,6 +4579,10 @@
       "name": "Chenla",
       "color": "#3a6a5a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Chenla",
+      "ids": {
+        "wikidata": "Q1057118"
+      },
       "span": {
         "start": 550,
         "end": 802
@@ -4289,6 +4593,10 @@
       "name": "Champa (Lâm Ấp)",
       "color": "#9a5a4a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Champa",
+      "ids": {
+        "wikidata": "Q216786"
+      },
       "span": {
         "start": 192,
         "end": 1832
@@ -4299,6 +4607,10 @@
       "name": "Sa Huỳnh culture",
       "color": "#7a6a4a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+      "ids": {
+        "wikidata": "Q2000186"
+      },
       "span": {
         "start": -999,
         "end": 200,
@@ -4319,6 +4631,10 @@
       "name": "Đông Sơn culture",
       "color": "#6a6a3a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/%C4%90%C3%B4ng_S%C6%A1n_culture",
+      "ids": {
+        "wikidata": "Q996912"
+      },
       "span": {
         "start": -999,
         "end": 50,
@@ -4347,6 +4663,10 @@
       "name": "Âu Lạc",
       "color": "#7a5a3a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/%C3%82u_L%E1%BA%A1c",
+      "ids": {
+        "wikidata": "Q867227"
+      },
       "span": {
         "start": -256,
         "end": -178,
@@ -4390,6 +4710,10 @@
       "name": "Nanyue",
       "color": "#8a4a3a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Nanyue",
+      "ids": {
+        "wikidata": "Q827040"
+      },
       "span": {
         "start": -203,
         "end": -110
@@ -4399,13 +4723,21 @@
       "id": "jiaozhi",
       "name": "Northern Vietnam under Chinese rule",
       "color": "#6a4a4a",
-      "parent": "se-asia"
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_under_Chinese_rule",
+      "ids": {
+        "wikidata": "Q403827"
+      }
     },
     {
       "id": "early-ly",
       "name": "Early Lý (Vạn Xuân)",
       "color": "#9a6a3a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Early_L%C3%BD_dynasty",
+      "ids": {
+        "wikidata": "Q2441129"
+      },
       "span": {
         "start": 544,
         "end": 602
@@ -4415,13 +4747,21 @@
       "id": "tibet",
       "name": "Tibet",
       "color": "#6a4a9a",
-      "parent": "east-asia"
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/Tibet",
+      "ids": {
+        "wikidata": "Q17252"
+      }
     },
     {
       "id": "zhangzhung",
       "name": "Zhangzhung",
       "color": "#6a5a7a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Zhangzhung",
+      "ids": {
+        "wikidata": "Q1358851"
+      },
       "span": {
         "start": -499,
         "end": 645,
@@ -4449,6 +4789,10 @@
       "name": "Yarlung kings and the Tibetan Empire",
       "color": "#8a3a4a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+      "ids": {
+        "wikidata": "Q2431480"
+      },
       "span": {
         "start": -126,
         "end": 842,
@@ -4499,6 +4843,10 @@
       "name": "Tuyuhun (Qinghai)",
       "color": "#5a6a5a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+      "ids": {
+        "wikidata": "Q1196201"
+      },
       "span": {
         "start": 284,
         "end": 670,
@@ -4524,13 +4872,21 @@
       "id": "china",
       "name": "China",
       "color": "#6a4a9a",
-      "parent": "east-asia"
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/China",
+      "ids": {
+        "wikidata": "Q148"
+      }
     },
     {
       "id": "qin",
       "name": "Qin dynasty",
       "color": "#5a5a6a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Qin_dynasty",
+      "ids": {
+        "wikidata": "Q7183"
+      },
       "span": {
         "start": -220,
         "end": -205,
@@ -4557,6 +4913,10 @@
       "name": "Han dynasty",
       "color": "#a83a2a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Han_dynasty",
+      "ids": {
+        "wikidata": "Q7209"
+      },
       "span": {
         "start": -201,
         "end": 220
@@ -4638,6 +4998,10 @@
       "name": "Three Kingdoms (Wei, Shu, Wu)",
       "color": "#8a5a3a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Three_Kingdoms",
+      "ids": {
+        "wikidata": "Q185043"
+      },
       "span": {
         "start": 220,
         "end": 280
@@ -4648,6 +5012,10 @@
       "name": "Jin dynasty (Western, then Eastern)",
       "color": "#6a7a4a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+      "ids": {
+        "wikidata": "Q7352"
+      },
       "span": {
         "start": 266,
         "end": 420
@@ -4706,6 +5074,10 @@
       "name": "Southern dynasties",
       "color": "#6a5a8a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
+      "ids": {
+        "wikidata": "Q49696"
+      },
       "span": {
         "start": 420,
         "end": 589
@@ -4738,6 +5110,10 @@
       "name": "Sixteen Kingdoms (the north)",
       "color": "#7a6a5a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Sixteen_Kingdoms",
+      "ids": {
+        "wikidata": "Q683551"
+      },
       "span": {
         "start": 304,
         "end": 439
@@ -4748,6 +5124,10 @@
       "name": "Northern dynasties",
       "color": "#4a6a8a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
+      "ids": {
+        "wikidata": "Q49696"
+      },
       "span": {
         "start": 386,
         "end": 581
@@ -4801,6 +5181,10 @@
       "name": "Sui dynasty",
       "color": "#4a7a7a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Sui_dynasty",
+      "ids": {
+        "wikidata": "Q7405"
+      },
       "span": {
         "start": 581,
         "end": 618
@@ -4811,6 +5195,10 @@
       "name": "Tang dynasty",
       "color": "#b0702a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Tang_dynasty",
+      "ids": {
+        "wikidata": "Q9683"
+      },
       "span": {
         "start": 618,
         "end": 907
@@ -4826,13 +5214,21 @@
       "id": "gojoseon",
       "name": "Gojoseon (Old Chosŏn)",
       "color": "#6a5a8a",
-      "parent": "korea-japan"
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Old_Chos%C5%8Fn",
+      "ids": {
+        "wikidata": "Q28405"
+      }
     },
     {
       "id": "han-commanderies",
       "name": "Han commanderies (Lelang)",
       "color": "#a0503a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Four_Commanderies_of_Han",
+      "ids": {
+        "wikidata": "Q706841"
+      },
       "span": {
         "start": -107,
         "end": 313
@@ -4843,6 +5239,10 @@
       "name": "Goguryeo",
       "color": "#7a4a5a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Goguryeo",
+      "ids": {
+        "wikidata": "Q28370"
+      },
       "span": {
         "start": -36,
         "end": 668,
@@ -4854,6 +5254,10 @@
       "name": "Baekje (Paekche)",
       "color": "#5a7a5a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Paekche",
+      "ids": {
+        "wikidata": "Q28428"
+      },
       "span": {
         "start": -17,
         "end": 660
@@ -4864,6 +5268,10 @@
       "name": "Silla",
       "color": "#9a7a3a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Silla",
+      "ids": {
+        "wikidata": "Q28456"
+      },
       "span": {
         "start": -56,
         "end": 935
@@ -4874,6 +5282,10 @@
       "name": "Yayoi period (Japan)",
       "color": "#7a8a6a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Yayoi_period",
+      "ids": {
+        "wikidata": "Q207858"
+      },
       "span": {
         "start": -299,
         "end": 300,
@@ -4902,6 +5314,10 @@
       "name": "Kofun period (Japan)",
       "color": "#6a6a4a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Kofun_period",
+      "ids": {
+        "wikidata": "Q459939"
+      },
       "span": {
         "start": 300,
         "end": 538,
@@ -4929,6 +5345,10 @@
       "name": "Asuka period (Japan)",
       "color": "#8a6a7a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Asuka_period",
+      "ids": {
+        "wikidata": "Q210688"
+      },
       "span": {
         "start": 538,
         "end": 710
@@ -4943,13 +5363,21 @@
       "id": "island-sea",
       "name": "Island Southeast Asia",
       "color": "#2a8a8a",
-      "parent": "austronesia"
+      "parent": "austronesia",
+      "url": "https://en.wikipedia.org/wiki/Maritime_Southeast_Asia",
+      "ids": {
+        "wikidata": "Q2919361"
+      }
     },
     {
       "id": "bujang-valley",
       "name": "Bujang Valley (Kedah)",
       "color": "#8a5a3a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Bujang_Valley",
+      "ids": {
+        "wikidata": "Q3181128"
+      },
       "span": {
         "start": 110,
         "end": 1350,
@@ -4988,6 +5416,10 @@
       "name": "Buni culture (West Java)",
       "color": "#6a7a4a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Buni_culture",
+      "ids": {
+        "wikidata": "Q825018"
+      },
       "span": {
         "start": -399,
         "end": 100,
@@ -5015,6 +5447,10 @@
       "name": "Tarumanagara",
       "color": "#9a6a2a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Tarumanagara",
+      "ids": {
+        "wikidata": "Q2247225"
+      },
       "span": {
         "start": 358,
         "end": 669,
@@ -5035,6 +5471,10 @@
       "name": "Kalingga (Central Java)",
       "color": "#7a4a5a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Kalingga_kingdom",
+      "ids": {
+        "wikidata": "Q11237141"
+      },
       "span": {
         "start": 550,
         "end": 650,
@@ -5066,6 +5506,10 @@
       "name": "Kutai (East Borneo)",
       "color": "#5a5a8a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Kutai",
+      "ids": {
+        "wikidata": "Q1794655"
+      },
       "span": {
         "start": 399,
         "end": 1635,
@@ -5118,31 +5562,51 @@
       "id": "taiwan-iron-age",
       "name": "Iron Age Taiwan",
       "color": "#4a6a7a",
-      "parent": "island-sea"
+      "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "ids": {
+        "wikidata": "Q709357"
+      }
     },
     {
       "id": "oceania",
       "name": "Oceania",
       "color": "#2a8a8a",
-      "parent": "austronesia"
+      "parent": "austronesia",
+      "url": "https://en.wikipedia.org/wiki/Oceania",
+      "ids": {
+        "wikidata": "Q55643"
+      }
     },
     {
       "id": "australia",
       "name": "Aboriginal Australia",
       "color": "#9a5a3a",
-      "parent": "oceania"
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Aboriginal_Australians",
+      "ids": {
+        "wikidata": "Q12060728"
+      }
     },
     {
       "id": "torres-strait",
       "name": "Torres Strait",
       "color": "#6a6a4a",
-      "parent": "oceania"
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Torres_Strait",
+      "ids": {
+        "wikidata": "Q179188"
+      }
     },
     {
       "id": "fiji",
       "name": "Fiji",
       "color": "#3a6a8a",
-      "parent": "oceania"
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/History_of_Fiji",
+      "ids": {
+        "wikidata": "Q2177430"
+      }
     },
     {
       "id": "tonga-samoa",
@@ -5161,6 +5625,10 @@
       "name": "Pohnpei (Micronesia)",
       "color": "#5a7a6a",
       "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Nan_Madol",
+      "ids": {
+        "wikidata": "Q846967"
+      },
       "span": {
         "start": 1,
         "end": 1628,
@@ -5180,19 +5648,31 @@
     {
       "id": "americas",
       "name": "Americas",
-      "color": "#2f7a5a"
+      "color": "#2f7a5a",
+      "url": "https://en.wikipedia.org/wiki/Americas",
+      "ids": {
+        "wikidata": "Q828"
+      }
     },
     {
       "id": "arctic",
       "name": "North American Arctic",
       "color": "#2f7a5a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/North_American_Arctic",
+      "ids": {
+        "wikidata": "Q2944678"
+      }
     },
     {
       "id": "dorset",
       "name": "Dorset culture",
       "color": "#6a8aa0",
       "parent": "arctic",
+      "url": "https://en.wikipedia.org/wiki/Dorset_culture",
+      "ids": {
+        "wikidata": "Q603749"
+      },
       "span": {
         "start": -499,
         "end": 1500,
@@ -5218,13 +5698,21 @@
       "id": "north-america",
       "name": "North America",
       "color": "#2f7a5a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/North_America",
+      "ids": {
+        "wikidata": "Q49"
+      }
     },
     {
       "id": "adena",
       "name": "Adena culture",
       "color": "#7a6a4a",
       "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Adena_culture",
+      "ids": {
+        "wikidata": "Q355841"
+      },
       "span": {
         "start": -499,
         "end": 100,
@@ -5236,6 +5724,10 @@
       "name": "Hopewell tradition",
       "color": "#5a7a4a",
       "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Hopewell_tradition",
+      "ids": {
+        "wikidata": "Q1305793"
+      },
       "span": {
         "start": -99,
         "end": 500
@@ -5246,6 +5738,10 @@
       "name": "Hohokam",
       "color": "#b07a4a",
       "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Hohokam",
+      "ids": {
+        "wikidata": "Q1255768"
+      },
       "span": {
         "start": 300,
         "end": 1500
@@ -5255,13 +5751,21 @@
       "id": "mesoamerica",
       "name": "Mesoamerica",
       "color": "#2f7a5a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerica",
+      "ids": {
+        "wikidata": "Q13703"
+      }
     },
     {
       "id": "teotihuacan",
       "name": "Teotihuacan",
       "color": "#9a4a3a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Teotihuacan",
+      "ids": {
+        "wikidata": "Q172613"
+      },
       "span": {
         "start": -99,
         "end": 750,
@@ -5289,6 +5793,10 @@
       "name": "Cuicuilco",
       "color": "#7a5a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Cuicuilco",
+      "ids": {
+        "wikidata": "Q1143307"
+      },
       "span": {
         "start": -999,
         "end": 280,
@@ -5325,6 +5833,10 @@
       "name": "Epi-Olmec (Tres Zapotes)",
       "color": "#5a6a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Epi-Olmec_culture",
+      "ids": {
+        "wikidata": "Q2527515"
+      },
       "span": {
         "start": -299,
         "end": 250,
@@ -5336,6 +5848,10 @@
       "name": "Monte Albán (Zapotec)",
       "color": "#8a6a3a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
+      "ids": {
+        "wikidata": "Q464899"
+      },
       "span": {
         "start": -499,
         "end": 950,
@@ -5364,6 +5880,10 @@
       "name": "El Mirador",
       "color": "#4a7a5a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/El_Mirador",
+      "ids": {
+        "wikidata": "Q504904"
+      },
       "span": {
         "start": -549,
         "end": 150,
@@ -5401,6 +5921,10 @@
       "name": "Tikal",
       "color": "#3a6a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tikal",
+      "ids": {
+        "wikidata": "Q181172"
+      },
       "span": {
         "start": -349,
         "end": 900,
@@ -5422,6 +5946,10 @@
       "name": "Calakmul (Kaan)",
       "color": "#6a3a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Calakmul",
+      "ids": {
+        "wikidata": "Q272771"
+      },
       "span": {
         "start": -324,
         "end": 950,
@@ -5453,6 +5981,10 @@
       "name": "Copán",
       "color": "#4a5a7a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Cop%C3%A1n",
+      "ids": {
+        "wikidata": "Q214827"
+      },
       "span": {
         "start": 426,
         "end": 917,
@@ -5482,6 +6014,10 @@
       "name": "Palenque",
       "color": "#7a4a6a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Palenque",
+      "ids": {
+        "wikidata": "Q181427"
+      },
       "span": {
         "start": -225,
         "end": 799,
@@ -5492,13 +6028,21 @@
       "id": "south-america",
       "name": "South America",
       "color": "#2f7a5a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/South_America",
+      "ids": {
+        "wikidata": "Q18"
+      }
     },
     {
       "id": "moche",
       "name": "Moche",
       "color": "#9a5a3a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Moche_culture",
+      "ids": {
+        "wikidata": "Q208188"
+      },
       "span": {
         "start": 100,
         "end": 800
@@ -5509,6 +6053,10 @@
       "name": "Recuay",
       "color": "#7a6a5a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Recuay_culture",
+      "ids": {
+        "wikidata": "Q2658710"
+      },
       "span": {
         "start": -199,
         "end": 600
@@ -5519,6 +6067,10 @@
       "name": "Chavín",
       "color": "#5a5a3a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_culture",
+      "ids": {
+        "wikidata": "Q13341477"
+      },
       "span": {
         "start": -899,
         "end": -249,
@@ -5530,6 +6082,10 @@
       "name": "Lima culture",
       "color": "#8a7a5a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Lima_culture",
+      "ids": {
+        "wikidata": "Q2460861"
+      },
       "span": {
         "start": 100,
         "end": 650,
@@ -5541,6 +6097,10 @@
       "name": "Paracas",
       "color": "#a0603a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Paracas_culture",
+      "ids": {
+        "wikidata": "Q1127723"
+      },
       "span": {
         "start": -799,
         "end": -99,
@@ -5552,6 +6112,10 @@
       "name": "Nazca",
       "color": "#b0703a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
+      "ids": {
+        "wikidata": "Q210570"
+      },
       "span": {
         "start": -99,
         "end": 800,
@@ -5595,6 +6159,10 @@
       "name": "Wari",
       "color": "#6a4a3a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Wari_culture",
+      "ids": {
+        "wikidata": "Q605340"
+      },
       "span": {
         "start": 450,
         "end": 1000,
@@ -5640,6 +6208,10 @@
       "name": "Tiwanaku",
       "color": "#4a6a8a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Tiwanaku",
+      "ids": {
+        "wikidata": "Q61750"
+      },
       "span": {
         "start": 110,
         "end": 1050,
@@ -5676,7 +6248,11 @@
       "id": "caribbean",
       "name": "Caribbean",
       "color": "#2f7a5a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/Caribbean",
+      "ids": {
+        "wikidata": "Q664609"
+      }
     }
   ],
   "events": [

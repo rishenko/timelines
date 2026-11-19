@@ -89,6 +89,8 @@ cost label width, so three or four levels is a practical ceiling rather than a r
 | `span` | no | Lifespan: shaded across the row. See below. |
 | `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
 | `image` | no | Small image in the row label (`https://…` or a path on the app's own site). |
+| `url` | no | A page about the row, such as its Wikipedia article (`https://…` or a path on the app's own site). The row's name links to it, in the chart and the table view. |
+| `ids` | no | The row's identifiers in other datasets: `{ "wikidata": "Q11768" }` (a Wikidata item id). Shown in the table view and the CSV download. |
 | `pinLast` | no | Keep at the bottom, e.g. "Other peoples" or "Other powers". Rows added in the editor go above it. |
 
 **`span`** (lifespan): `{ "start": …, "end": …, "circa": true }`, plus optional `startDates` and

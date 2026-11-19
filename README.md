@@ -69,6 +69,8 @@ be `http(s)` addresses or relative paths.
   Mesopotamia's High, Middle and Low chronologies) that readers can switch between.
 - **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows.
 - **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N".
+- **Row links:** a row's name can link to a page about it; in the included timelines, its Wikipedia article. Rows can
+  also carry a Wikidata id, shown in the table view and the CSV download.
 - **Zoom** by years per tick. Long empty stretches are compressed.
 - **Search** across rows, phases and events; **filters** by source and source tag; a **legend** and a short
   **guided tour**.

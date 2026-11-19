@@ -4091,25 +4091,41 @@
     {
       "id": "africa",
       "name": "Africa",
-      "color": "#b8862a"
+      "color": "#b8862a",
+      "url": "https://en.wikipedia.org/wiki/Africa",
+      "ids": {
+        "wikidata": "Q15"
+      }
     },
     {
       "id": "north-africa",
       "name": "North Africa",
       "color": "#a88a5a",
-      "parent": "africa"
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/North_Africa",
+      "ids": {
+        "wikidata": "Q27381"
+      }
     },
     {
       "id": "sahara",
       "name": "Sahara (climate)",
       "color": "#c0a060",
-      "parent": "north-africa"
+      "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/African_humid_period",
+      "ids": {
+        "wikidata": "Q60259056"
+      }
     },
     {
       "id": "capsian",
       "name": "Capsian culture (Algeria and Tunisia)",
       "color": "#a08a5a",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Capsian",
+      "ids": {
+        "wikidata": "Q766150"
+      },
       "span": {
         "start": -8999,
         "end": -5399,
@@ -4120,13 +4136,21 @@
       "id": "libyans",
       "name": "Libyans",
       "color": "#b89a6a",
-      "parent": "north-africa"
+      "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Libya",
+      "ids": {
+        "wikidata": "Q2370577"
+      }
     },
     {
       "id": "cyrene",
       "name": "Cyrene",
       "color": "#5a7ab0",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Cyrene%2C_Libya",
+      "ids": {
+        "wikidata": "Q44112"
+      },
       "span": {
         "start": -630,
         "end": -95,
@@ -4153,6 +4177,10 @@
       "name": "Garamantes (Fezzan)",
       "color": "#a07a5a",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "ids": {
+        "wikidata": "Q839034"
+      },
       "span": {
         "start": -999,
         "end": 690,
@@ -4195,13 +4223,21 @@
       "id": "sub-saharan",
       "name": "Sub-Saharan Africa",
       "color": "#7a8a3a",
-      "parent": "africa"
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/Sub-Saharan_Africa",
+      "ids": {
+        "wikidata": "Q132959"
+      }
     },
     {
       "id": "ounjougou",
       "name": "Ounjougou",
       "color": "#9a7a4a",
-      "parent": "sub-saharan"
+      "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Ounjougou",
+      "ids": {
+        "wikidata": "Q1243595"
+      }
     },
     {
       "id": "green-sahara",
@@ -4214,6 +4250,10 @@
       "name": "Land of Punt (Horn of Africa)",
       "color": "#9a8a3a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Land_of_Punt",
+      "ids": {
+        "wikidata": "Q282350"
+      },
       "span": {
         "start": -2499,
         "end": -979,
@@ -4225,6 +4265,10 @@
       "name": "East African herders (Pastoral Neolithic)",
       "color": "#8a6a4a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
+      "ids": {
+        "wikidata": "Q18208239"
+      },
       "span": {
         "start": -3049,
         "end": 750,
@@ -4252,6 +4296,10 @@
       "name": "Dʿmt (Eritrea and Tigray)",
       "color": "#8a6a4a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
+      "ids": {
+        "wikidata": "Q139315"
+      },
       "span": {
         "start": -749,
         "end": -399,
@@ -4302,6 +4350,10 @@
       "name": "Tichitt culture (Mauritania)",
       "color": "#a08a5a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Dhar_Tichitt",
+      "ids": {
+        "wikidata": "Q1165596"
+      },
       "span": {
         "start": -1999,
         "end": -299,
@@ -4345,6 +4397,10 @@
       "name": "Wilton culture",
       "color": "#8a7a5a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Wilton_culture",
+      "ids": {
+        "wikidata": "Q2986725"
+      },
       "span": {
         "start": -6049,
         "end": -2049,
@@ -4356,6 +4412,10 @@
       "name": "Kintampo complex (Ghana)",
       "color": "#7a8a4a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Kintampo_Complex",
+      "ids": {
+        "wikidata": "Q1320943"
+      },
       "span": {
         "start": -2499,
         "end": -1399,
@@ -4367,6 +4427,10 @@
       "name": "Nok culture (Nigeria)",
       "color": "#b0703a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Nok_culture",
+      "ids": {
+        "wikidata": "Q927291"
+      },
       "span": {
         "start": -1499,
         "end": 0,
@@ -4378,6 +4442,10 @@
       "name": "Bantu expansion",
       "color": "#6a7a3a",
       "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Bantu_expansion",
+      "ids": {
+        "wikidata": "Q130251"
+      },
       "span": {
         "start": -3999,
         "end": 500,
@@ -4393,7 +4461,11 @@
       "id": "europe",
       "name": "Europe",
       "color": "#5b6e8f",
-      "parent": "europe-med"
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Europe",
+      "ids": {
+        "wikidata": "Q46"
+      }
     },
     {
       "id": "mesolithic-north",
@@ -4411,6 +4483,10 @@
       "name": "Ertebølle culture",
       "color": "#4a6a7a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Erteb%C3%B8lle_culture",
+      "ids": {
+        "wikidata": "Q1362485"
+      },
       "span": {
         "start": -5399,
         "end": -3949,
@@ -4422,6 +4498,10 @@
       "name": "Lepenski Vir",
       "color": "#6a7a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Lepenski_Vir",
+      "ids": {
+        "wikidata": "Q906669"
+      },
       "span": {
         "start": -7199,
         "end": -5999,
@@ -4455,6 +4535,10 @@
       "name": "Cardial Ware (Mediterranean)",
       "color": "#6a8aa0",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Cardium_pottery",
+      "ids": {
+        "wikidata": "Q1035710"
+      },
       "span": {
         "start": -6399,
         "end": -5499,
@@ -4466,6 +4550,10 @@
       "name": "Linear Pottery culture",
       "color": "#7a6a9a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Linear_Pottery_culture",
+      "ids": {
+        "wikidata": "Q806348"
+      },
       "span": {
         "start": -5499,
         "end": -4499,
@@ -4477,6 +4565,10 @@
       "name": "Lengyel culture",
       "color": "#6a5a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Lengyel_culture",
+      "ids": {
+        "wikidata": "Q668742"
+      },
       "span": {
         "start": -4999,
         "end": -3999,
@@ -4488,6 +4580,10 @@
       "name": "Michelsberg culture",
       "color": "#5a6a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Michelsberg_culture",
+      "ids": {
+        "wikidata": "Q570798"
+      },
       "span": {
         "start": -4399,
         "end": -3499,
@@ -4498,13 +4594,21 @@
       "id": "megaliths",
       "name": "Megalith builders",
       "color": "#7a8494",
-      "parent": "europe"
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Megalith",
+      "ids": {
+        "wikidata": "Q164240"
+      }
     },
     {
       "id": "funnelbeaker",
       "name": "Funnelbeaker culture (north-central Europe)",
       "color": "#5a7aa0",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Funnelbeaker_culture",
+      "ids": {
+        "wikidata": "Q875115"
+      },
       "span": {
         "start": -4099,
         "end": -2799,
@@ -4532,6 +4636,10 @@
       "name": "Globular Amphora culture",
       "color": "#4a6a9a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Globular_Amphora_culture",
+      "ids": {
+        "wikidata": "Q218257"
+      },
       "span": {
         "start": -3399,
         "end": -2799,
@@ -4543,6 +4651,10 @@
       "name": "Cucuteni–Trypillia culture",
       "color": "#8a6a4a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Cucuteni%E2%80%93Trypillia_culture",
+      "ids": {
+        "wikidata": "Q1162419"
+      },
       "span": {
         "start": -4799,
         "end": -2999,
@@ -4586,6 +4698,10 @@
       "name": "Usatove culture (northwest Pontic)",
       "color": "#7a5a4a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Usatove_culture",
+      "ids": {
+        "wikidata": "Q80960655"
+      },
       "span": {
         "start": -3649,
         "end": -2739,
@@ -4622,6 +4738,10 @@
       "name": "Corded Ware culture",
       "color": "#8a7a5a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Corded_Ware_culture",
+      "ids": {
+        "wikidata": "Q933996"
+      },
       "span": {
         "start": -2899,
         "end": -2299,
@@ -4633,6 +4753,10 @@
       "name": "Bell Beaker culture",
       "color": "#a0784a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Bell_Beaker_culture",
+      "ids": {
+        "wikidata": "Q470867"
+      },
       "span": {
         "start": -2799,
         "end": -1799,
@@ -4644,6 +4768,10 @@
       "name": "Únětice culture",
       "color": "#9a8a3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/%C3%9An%C4%9Btice_culture",
+      "ids": {
+        "wikidata": "Q773818"
+      },
       "span": {
         "start": -2299,
         "end": -1599,
@@ -4655,6 +4783,10 @@
       "name": "Nordic Bronze Age",
       "color": "#4f7f8f",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Nordic_Bronze_Age",
+      "ids": {
+        "wikidata": "Q605601"
+      },
       "span": {
         "start": -1749,
         "end": -499,
@@ -4682,6 +4814,10 @@
       "name": "Urnfield culture",
       "color": "#7f6a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Urnfield_culture",
+      "ids": {
+        "wikidata": "Q223998"
+      },
       "span": {
         "start": -1299,
         "end": -749,
@@ -4692,13 +4828,21 @@
       "id": "biskupin",
       "name": "Biskupin (Lusatian culture, Poland)",
       "color": "#6a7a8a",
-      "parent": "europe"
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Biskupin",
+      "ids": {
+        "wikidata": "Q866393"
+      }
     },
     {
       "id": "hallstatt",
       "name": "Hallstatt culture",
       "color": "#6a8a6a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Hallstatt_culture",
+      "ids": {
+        "wikidata": "Q202165"
+      },
       "span": {
         "start": -1199,
         "end": -449
@@ -4709,6 +4853,10 @@
       "name": "La Tène (Celts)",
       "color": "#4f8a5a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/La_T%C3%A8ne_culture",
+      "ids": {
+        "wikidata": "Q208247"
+      },
       "span": {
         "start": -449,
         "end": 0,
@@ -4720,6 +4868,10 @@
       "name": "Terramare culture",
       "color": "#8a7a4a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Terramare_culture",
+      "ids": {
+        "wikidata": "Q1410539"
+      },
       "span": {
         "start": -1699,
         "end": -1149,
@@ -4731,6 +4883,10 @@
       "name": "Villanovan culture",
       "color": "#9a5a3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Villanovan_culture",
+      "ids": {
+        "wikidata": "Q587309"
+      },
       "span": {
         "start": -899,
         "end": -699,
@@ -4742,6 +4898,10 @@
       "name": "Etruscans",
       "color": "#a0523a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Etruscan_civilization",
+      "ids": {
+        "wikidata": "Q17161"
+      },
       "span": {
         "start": -899,
         "end": -26
@@ -4752,6 +4912,10 @@
       "name": "Rome",
       "color": "#8f2f3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Rome",
+      "ids": {
+        "wikidata": "Q1747689"
+      },
       "span": {
         "start": -752,
         "end": -26,
@@ -4776,13 +4940,21 @@
       "id": "samnites",
       "name": "Samnites",
       "color": "#7a4a3a",
-      "parent": "europe"
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Samnites",
+      "ids": {
+        "wikidata": "Q500272"
+      }
     },
     {
       "id": "odrysian",
       "name": "Odrysian kingdom (Thrace)",
       "color": "#6a5a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Odrysian_kingdom",
+      "ids": {
+        "wikidata": "Q870517"
+      },
       "span": {
         "start": -479,
         "end": -29,
@@ -4806,6 +4978,10 @@
       "name": "Carthage",
       "color": "#7a3a6a",
       "parent": "west-med",
+      "url": "https://en.wikipedia.org/wiki/Carthage",
+      "ids": {
+        "wikidata": "Q6343"
+      },
       "span": {
         "start": -813,
         "end": -145,
@@ -4817,6 +4993,10 @@
       "name": "Magna Graecia and Sicily",
       "color": "#4a6fb0",
       "parent": "west-med",
+      "url": "https://en.wikipedia.org/wiki/Magna_Graecia",
+      "ids": {
+        "wikidata": "Q184313"
+      },
       "span": {
         "start": -749,
         "end": -204,
@@ -4844,6 +5024,10 @@
       "name": "Nuragic Sardinia",
       "color": "#6a7a4a",
       "parent": "west-med",
+      "url": "https://en.wikipedia.org/wiki/Nuragic_civilization",
+      "ids": {
+        "wikidata": "Q1421436"
+      },
       "span": {
         "start": -1799,
         "end": -237,
@@ -4855,6 +5039,10 @@
       "name": "Talaiotic Balearics",
       "color": "#8a8a5a",
       "parent": "west-med",
+      "url": "https://en.wikipedia.org/wiki/Talaiotic_culture",
+      "ids": {
+        "wikidata": "Q530894"
+      },
       "span": {
         "start": -999,
         "end": -122,
@@ -4888,19 +5076,31 @@
       "id": "iberia",
       "name": "Iberian Peninsula",
       "color": "#a06a3a",
-      "parent": "west-med"
+      "parent": "west-med",
+      "url": "https://en.wikipedia.org/wiki/Iberian_Peninsula",
+      "ids": {
+        "wikidata": "Q12837"
+      }
     },
     {
       "id": "iberia-neolithic",
       "name": "Neolithic Iberia",
       "color": "#8a6a4a",
-      "parent": "iberia"
+      "parent": "iberia",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Iberia",
+      "ids": {
+        "wikidata": "Q366971"
+      }
     },
     {
       "id": "los-millares",
       "name": "Los Millares",
       "color": "#a8804a",
       "parent": "iberia",
+      "url": "https://en.wikipedia.org/wiki/Los_Millares",
+      "ids": {
+        "wikidata": "Q1579766"
+      },
       "span": {
         "start": -3024,
         "end": -1999,
@@ -4928,6 +5128,10 @@
       "name": "El Argar culture",
       "color": "#9a6a2a",
       "parent": "iberia",
+      "url": "https://en.wikipedia.org/wiki/Argaric_culture",
+      "ids": {
+        "wikidata": "Q13409799"
+      },
       "span": {
         "start": -2199,
         "end": -1549,
@@ -4955,6 +5159,10 @@
       "name": "Tartessos",
       "color": "#b08a3a",
       "parent": "iberia",
+      "url": "https://en.wikipedia.org/wiki/Tartessos",
+      "ids": {
+        "wikidata": "Q320416"
+      },
       "span": {
         "start": -849,
         "end": -449,
@@ -4998,6 +5206,10 @@
       "name": "Iberians",
       "color": "#8a5a2a",
       "parent": "iberia",
+      "url": "https://en.wikipedia.org/wiki/Iberians",
+      "ids": {
+        "wikidata": "Q190992"
+      },
       "span": {
         "start": -599,
         "end": -15,
@@ -5024,20 +5236,32 @@
       "id": "sea-peoples",
       "name": "Sea Peoples",
       "color": "#6f8a8f",
-      "parent": "europe-med"
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Sea_Peoples",
+      "ids": {
+        "wikidata": "Q193850"
+      }
     },
     {
       "id": "aegean",
       "name": "Aegean",
       "color": "#2f6fae",
       "chronology": "aegean-high",
-      "parent": "europe-med"
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Aegean_civilization",
+      "ids": {
+        "wikidata": "Q192530"
+      }
     },
     {
       "id": "cycladic",
       "name": "Cycladic culture",
       "color": "#6a8fbf",
       "parent": "aegean",
+      "url": "https://en.wikipedia.org/wiki/Cycladic_culture",
+      "ids": {
+        "wikidata": "Q318144"
+      },
       "span": {
         "start": -3099,
         "end": -999,
@@ -5049,6 +5273,10 @@
       "name": "Minoan Crete",
       "color": "#3d86c6",
       "parent": "aegean",
+      "url": "https://en.wikipedia.org/wiki/Minoan_civilization",
+      "ids": {
+        "wikidata": "Q134178"
+      },
       "span": {
         "start": -3099,
         "end": -1074,
@@ -5092,6 +5320,10 @@
       "name": "Mycenaean Greece",
       "color": "#4a5fb8",
       "parent": "aegean",
+      "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
+      "ids": {
+        "wikidata": "Q181264"
+      },
       "span": {
         "start": -1749,
         "end": -1049,
@@ -5213,6 +5445,10 @@
       "name": "Archaic and Classical Greece",
       "color": "#3a5fa8",
       "parent": "aegean",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Greece",
+      "ids": {
+        "wikidata": "Q11772"
+      },
       "span": {
         "start": -799,
         "end": -322,
@@ -5254,6 +5490,10 @@
       "name": "Macedon",
       "color": "#4a4f9a",
       "parent": "aegean",
+      "url": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
+      "ids": {
+        "wikidata": "Q83958"
+      },
       "span": {
         "start": -649,
         "end": -167,
@@ -5279,7 +5519,11 @@
     {
       "id": "near-east",
       "name": "Ancient Near East",
-      "color": "#a8483a"
+      "color": "#a8483a",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Near_East",
+      "ids": {
+        "wikidata": "Q269678"
+      }
     },
     {
       "id": "egypt",
@@ -5292,25 +5536,41 @@
       "id": "nabta",
       "name": "Nabta Playa (Western Desert)",
       "color": "#b09060",
-      "parent": "egypt"
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Nabta_Playa",
+      "ids": {
+        "wikidata": "Q1535226"
+      }
     },
     {
       "id": "lower-egypt-neolithic",
       "name": "Lower Egypt Neolithic (Faiyum A, Merimde)",
       "color": "#a08050",
-      "parent": "egypt"
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
+      "ids": {
+        "wikidata": "Q208520"
+      }
     },
     {
       "id": "upper-egypt-predynastic",
       "name": "Upper Egypt (Badarian, Naqada I)",
       "color": "#c09050",
-      "parent": "egypt"
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
+      "ids": {
+        "wikidata": "Q208520"
+      }
     },
     {
       "id": "pharaonic-egypt",
       "name": "Pharaonic Egypt",
       "color": "#d4a72c",
       "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
+      "ids": {
+        "wikidata": "Q11768"
+      },
       "span": {
         "start": -3299,
         "end": -331,
@@ -5589,13 +5849,21 @@
       "id": "nubia",
       "name": "Nubia",
       "color": "#a0603a",
-      "parent": "egypt"
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Nubia",
+      "ids": {
+        "wikidata": "Q135028"
+      }
     },
     {
       "id": "a-group",
       "name": "A-Group culture",
       "color": "#b07a4a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/A-Group_culture",
+      "ids": {
+        "wikidata": "Q277797"
+      },
       "span": {
         "start": -3499,
         "end": -2899,
@@ -5639,6 +5907,10 @@
       "name": "Kerma",
       "color": "#8a4a2a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Kerma_culture",
+      "ids": {
+        "wikidata": "Q1739282"
+      },
       "span": {
         "start": -2499,
         "end": -1499,
@@ -5650,6 +5922,10 @@
       "name": "Kingdom of Kush (Napata, Meroë)",
       "color": "#b0502a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+      "ids": {
+        "wikidata": "Q241790"
+      },
       "span": {
         "start": -779,
         "end": 350,
@@ -5683,13 +5959,21 @@
       "id": "levant",
       "name": "Levant",
       "color": "#9a6a2f",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Levant",
+      "ids": {
+        "wikidata": "Q81483"
+      }
     },
     {
       "id": "ppna",
       "name": "Pre-Pottery Neolithic A (Levant)",
       "color": "#9a7a5a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Pre-Pottery_Neolithic_A",
+      "ids": {
+        "wikidata": "Q1047444"
+      },
       "span": {
         "start": -9999,
         "end": -8799,
@@ -5717,6 +6001,10 @@
       "name": "Pre-Pottery Neolithic B (Levant)",
       "color": "#8a6a4a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Pre-Pottery_Neolithic_B",
+      "ids": {
+        "wikidata": "Q897323"
+      },
       "span": {
         "start": -8799,
         "end": -6499,
@@ -5744,6 +6032,10 @@
       "name": "Yarmukian culture (Pottery Neolithic)",
       "color": "#7a6a5a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Yarmukian_culture",
+      "ids": {
+        "wikidata": "Q2915635"
+      },
       "span": {
         "start": -6399,
         "end": -5999,
@@ -5755,6 +6047,10 @@
       "name": "Ghassulian culture (southern Levant)",
       "color": "#7a5a3a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Ghassulian",
+      "ids": {
+        "wikidata": "Q1521465"
+      },
       "span": {
         "start": -4399,
         "end": -3799,
@@ -5782,6 +6078,10 @@
       "name": "Canaan",
       "color": "#a8773a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Canaan",
+      "ids": {
+        "wikidata": "Q163329"
+      },
       "span": {
         "start": -3499,
         "end": -1199,
@@ -5814,6 +6114,10 @@
       "color": "#b5653a",
       "parent": "levant",
       "chronology": "middle",
+      "url": "https://en.wikipedia.org/wiki/Ebla",
+      "ids": {
+        "wikidata": "Q5743"
+      },
       "span": {
         "start": -3499,
         "end": -1599,
@@ -5825,6 +6129,10 @@
       "name": "Ugarit",
       "color": "#c27d4c",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Ugarit",
+      "ids": {
+        "wikidata": "Q191369"
+      },
       "span": {
         "start": -1499,
         "end": -1184,
@@ -5852,6 +6160,10 @@
       "name": "Phoenician cities",
       "color": "#8b3a62",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Phoenicia",
+      "ids": {
+        "wikidata": "Q41642"
+      },
       "span": {
         "start": -1199,
         "end": -331,
@@ -5863,6 +6175,10 @@
       "name": "Israel and Judah",
       "color": "#5f7c9a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Israel_and_Judah",
+      "ids": {
+        "wikidata": "Q193748"
+      },
       "span": {
         "start": -929,
         "end": -586,
@@ -5874,6 +6190,10 @@
       "name": "Philistines",
       "color": "#7f8d55",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Philistines",
+      "ids": {
+        "wikidata": "Q193776"
+      },
       "span": {
         "start": -1174,
         "end": -603,
@@ -5885,6 +6205,10 @@
       "name": "Arameans",
       "color": "#a35f4f",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Arameans",
+      "ids": {
+        "wikidata": "Q175064"
+      },
       "span": {
         "start": -1099,
         "end": -731,
@@ -5913,6 +6237,10 @@
       "name": "Aram-Damascus",
       "color": "#a35f4f",
       "parent": "aram",
+      "url": "https://en.wikipedia.org/wiki/Aram-Damascus",
+      "ids": {
+        "wikidata": "Q625649"
+      },
       "span": {
         "start": -1149,
         "end": -731,
@@ -5940,6 +6268,10 @@
       "name": "Bit-Adini (Til Barsib)",
       "color": "#b0705f",
       "parent": "aram",
+      "url": "https://en.wikipedia.org/wiki/Bit_Adini",
+      "ids": {
+        "wikidata": "Q878717"
+      },
       "span": {
         "start": -999,
         "end": -855,
@@ -5959,20 +6291,32 @@
       "id": "cyprus",
       "name": "Cyprus (Alashiya)",
       "color": "#b07a2f",
-      "parent": "levant"
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Cyprus",
+      "ids": {
+        "wikidata": "Q3565569"
+      }
     },
     {
       "id": "anatolia",
       "name": "Anatolia",
       "color": "#a8452f",
       "chronology": "middle",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Anatolia",
+      "ids": {
+        "wikidata": "Q51614"
+      }
     },
     {
       "id": "gobekli",
       "name": "Göbekli Tepe and the Taş Tepeler",
       "color": "#a0704a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Ta%C5%9F_Tepeler",
+      "ids": {
+        "wikidata": "Q112144214"
+      },
       "span": {
         "start": -9499,
         "end": -7999,
@@ -5984,6 +6328,10 @@
       "name": "Çayönü",
       "color": "#906a4a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/%C3%87ay%C3%B6n%C3%BC",
+      "ids": {
+        "wikidata": "Q272720"
+      },
       "span": {
         "start": -8629,
         "end": -6799,
@@ -5995,6 +6343,10 @@
       "name": "Çatalhöyük",
       "color": "#b07a4a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
+      "ids": {
+        "wikidata": "Q192522"
+      },
       "span": {
         "start": -7499,
         "end": -5599,
@@ -6022,6 +6374,10 @@
       "name": "Hittites",
       "color": "#c25a3a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Hittites",
+      "ids": {
+        "wikidata": "Q5406"
+      },
       "span": {
         "start": -1649,
         "end": -1189,
@@ -6069,6 +6425,10 @@
       "name": "Kaska",
       "color": "#8a6a4a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Kaskians",
+      "ids": {
+        "wikidata": "Q116238"
+      },
       "span": {
         "start": -1449,
         "end": -1114,
@@ -6099,6 +6459,10 @@
       "name": "Phrygia",
       "color": "#b0704a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Phrygia",
+      "ids": {
+        "wikidata": "Q32579"
+      },
       "span": {
         "start": -1199,
         "end": -674,
@@ -6110,6 +6474,10 @@
       "name": "Lydia",
       "color": "#c08a3a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Lydia",
+      "ids": {
+        "wikidata": "Q620765"
+      },
       "span": {
         "start": -799,
         "end": -545,
@@ -6153,6 +6521,10 @@
       "name": "Lycia",
       "color": "#9a6a5a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Lycia",
+      "ids": {
+        "wikidata": "Q18927"
+      },
       "span": {
         "start": -1399,
         "end": -545,
@@ -6196,6 +6568,10 @@
       "name": "Urartu",
       "color": "#9a5a48",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Urartu",
+      "ids": {
+        "wikidata": "Q185068"
+      },
       "span": {
         "start": -859,
         "end": -589,
@@ -6222,13 +6598,21 @@
       "name": "Mesopotamia",
       "color": "#3f7d34",
       "chronology": "middle",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Mesopotamia",
+      "ids": {
+        "wikidata": "Q11767"
+      }
     },
     {
       "id": "jarmo",
       "name": "Jarmo",
       "color": "#6a7a5a",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Jarmo",
+      "ids": {
+        "wikidata": "Q1000577"
+      },
       "span": {
         "start": -7089,
         "end": -4949,
@@ -6239,13 +6623,21 @@
       "id": "tell-brak",
       "name": "Tell Brak (Upper Mesopotamia)",
       "color": "#5a6a4a",
-      "parent": "mesopotamia"
+      "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Tell_Brak",
+      "ids": {
+        "wikidata": "Q978443"
+      }
     },
     {
       "id": "hassuna",
       "name": "Hassuna culture",
       "color": "#7a8a5a",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Hassuna_culture",
+      "ids": {
+        "wikidata": "Q1588784"
+      },
       "span": {
         "start": -6999,
         "end": -5999,
@@ -6257,6 +6649,10 @@
       "name": "Halaf culture",
       "color": "#6a8a6a",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Halaf_culture",
+      "ids": {
+        "wikidata": "Q904998"
+      },
       "span": {
         "start": -6099,
         "end": -5099,
@@ -6268,6 +6664,10 @@
       "name": "Samarra culture",
       "color": "#8a9a5a",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Samarra_culture",
+      "ids": {
+        "wikidata": "Q1502858"
+      },
       "span": {
         "start": -5499,
         "end": -4799,
@@ -6295,6 +6695,10 @@
       "name": "Ubaid period",
       "color": "#5a7a4a",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Ubaid_period",
+      "ids": {
+        "wikidata": "Q245156"
+      },
       "span": {
         "start": -6499,
         "end": -3799,
@@ -6322,6 +6726,10 @@
       "name": "Hurrians",
       "color": "#7f63a0",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Hurrians",
+      "ids": {
+        "wikidata": "Q190394"
+      },
       "span": {
         "start": -2249,
         "end": -671,
@@ -6372,6 +6780,11 @@
       "name": "Mitanni",
       "color": "#8e63b0",
       "chronology": "middle",
+      "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Mitanni",
+      "ids": {
+        "wikidata": "Q178665"
+      },
       "span": {
         "start": -1549,
         "end": -1259,
@@ -6392,14 +6805,17 @@
           }
         ],
         "circa": true
-      },
-      "parent": "mesopotamia"
+      }
     },
     {
       "id": "assyria",
       "name": "Assyria",
       "color": "#9b4d73",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Assyria",
+      "ids": {
+        "wikidata": "Q41137"
+      },
       "span": {
         "start": -2599,
         "end": -608,
@@ -6452,6 +6868,10 @@
       "name": "Amorites",
       "color": "#a07848",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Amorites",
+      "ids": {
+        "wikidata": "Q203507"
+      },
       "span": {
         "start": -2499,
         "end": -1594,
@@ -6481,6 +6901,10 @@
       "name": "Babylonia",
       "color": "#2d7f6c",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Babylonia",
+      "ids": {
+        "wikidata": "Q47690"
+      },
       "span": {
         "start": -2024,
         "end": -538,
@@ -6632,6 +7056,10 @@
       "name": "Chaldeans",
       "color": "#6f7f4a",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Chaldea",
+      "ids": {
+        "wikidata": "Q200969"
+      },
       "span": {
         "start": -899,
         "end": -538,
@@ -6669,6 +7097,10 @@
       "name": "Akkadian Empire",
       "color": "#8c8f2c",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Akkadian_Empire",
+      "ids": {
+        "wikidata": "Q4461035"
+      },
       "span": {
         "start": -2333,
         "end": -2153,
@@ -6680,6 +7112,10 @@
       "name": "Sumer",
       "color": "#5a9a3f",
       "parent": "mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Sumer",
+      "ids": {
+        "wikidata": "Q35355"
+      },
       "span": {
         "start": -3999,
         "end": -2003,
@@ -6858,13 +7294,21 @@
       "id": "caucasus",
       "name": "Caucasus",
       "color": "#7a5a8a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Caucasus",
+      "ids": {
+        "wikidata": "Q18869"
+      }
     },
     {
       "id": "shulaveri",
       "name": "Shulaveri–Shomu culture",
       "color": "#7a6a9a",
       "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Shulaveri%E2%80%93Shomu_culture",
+      "ids": {
+        "wikidata": "Q4246675"
+      },
       "span": {
         "start": -5999,
         "end": -4999,
@@ -6876,6 +7320,10 @@
       "name": "Maykop culture (North Caucasus)",
       "color": "#8a5a7a",
       "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Maykop_culture",
+      "ids": {
+        "wikidata": "Q1257373"
+      },
       "span": {
         "start": -3699,
         "end": -2999,
@@ -6887,6 +7335,10 @@
       "name": "Kura–Araxes culture",
       "color": "#6a5a9a",
       "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Kura%E2%80%93Araxes_culture",
+      "ids": {
+        "wikidata": "Q169349"
+      },
       "span": {
         "start": -3399,
         "end": -1999,
@@ -6931,6 +7383,10 @@
       "name": "Colchian culture and Colchis",
       "color": "#9a6a5a",
       "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Colchis",
+      "ids": {
+        "wikidata": "Q183150"
+      },
       "span": {
         "start": -2699,
         "end": 131,
@@ -6958,6 +7414,10 @@
       "name": "Lchashen–Metsamor culture (Armenia)",
       "color": "#7a6a8a",
       "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Lchashen%E2%80%93Metsamor_culture",
+      "ids": {
+        "wikidata": "Q65226046"
+      },
       "span": {
         "start": -1499,
         "end": -699,
@@ -6969,6 +7429,10 @@
       "name": "Koban culture (north-central Caucasus)",
       "color": "#5a6a7a",
       "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Koban_culture",
+      "ids": {
+        "wikidata": "Q914771"
+      },
       "span": {
         "start": -1199,
         "end": -349,
@@ -7005,6 +7469,10 @@
       "name": "Diauehi (Daiaeni)",
       "color": "#8a7a6a",
       "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Diauehi",
+      "ids": {
+        "wikidata": "Q154853"
+      },
       "span": {
         "start": -1149,
         "end": -749,
@@ -7042,6 +7510,10 @@
       "name": "Chogha Golan (Zagros)",
       "color": "#8a6a5a",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Chogha_Golan",
+      "ids": {
+        "wikidata": "Q24036929"
+      },
       "span": {
         "start": -10049,
         "end": -7649,
@@ -7053,6 +7525,10 @@
       "name": "Ganj Dareh",
       "color": "#7a6a5a",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Ganj_Dareh",
+      "ids": {
+        "wikidata": "Q2576851"
+      },
       "span": {
         "start": -8199,
         "end": -7599,
@@ -7064,6 +7540,10 @@
       "name": "Jeitun (Central Asia)",
       "color": "#9a8a5a",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Jeitun",
+      "ids": {
+        "wikidata": "Q420194"
+      },
       "span": {
         "start": -7199,
         "end": -4499,
@@ -7075,6 +7555,10 @@
       "name": "Chogha Mish (Susiana)",
       "color": "#8a5a4a",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Chogha_Mish",
+      "ids": {
+        "wikidata": "Q5103844"
+      },
       "span": {
         "start": -6799,
         "end": -4399,
@@ -7085,13 +7569,21 @@
       "id": "sialk",
       "name": "Tepe Sialk",
       "color": "#9a6a4a",
-      "parent": "iran"
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Tepe_Sialk",
+      "ids": {
+        "wikidata": "Q1581555"
+      }
     },
     {
       "id": "shahr-e-sukhteh",
       "name": "Shahr-e Sukhteh",
       "color": "#a07a5a",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Shahr-e_Sukhteh",
+      "ids": {
+        "wikidata": "Q1025825"
+      },
       "span": {
         "start": -3549,
         "end": -2299,
@@ -7104,6 +7596,10 @@
       "color": "#3a9a96",
       "parent": "iran",
       "chronology": "middle",
+      "url": "https://en.wikipedia.org/wiki/Elam",
+      "ids": {
+        "wikidata": "Q128904"
+      },
       "span": {
         "start": -3199,
         "end": -538,
@@ -7205,6 +7701,10 @@
       "name": "Medes",
       "color": "#3f7f9e",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Medes",
+      "ids": {
+        "wikidata": "Q8735"
+      },
       "span": {
         "start": -677,
         "end": -549
@@ -7215,6 +7715,10 @@
       "name": "Achaemenid Persia",
       "color": "#5d78b0",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Achaemenid_Empire",
+      "ids": {
+        "wikidata": "Q389688"
+      },
       "span": {
         "start": -549,
         "end": -329
@@ -7225,6 +7729,10 @@
       "name": "Mannaea",
       "color": "#5b8f9e",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Mannaea",
+      "ids": {
+        "wikidata": "Q552328"
+      },
       "span": {
         "start": -849,
         "end": -615
@@ -7235,6 +7743,10 @@
       "name": "Jiroft culture",
       "color": "#5a9e7a",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Jiroft_culture",
+      "ids": {
+        "wikidata": "Q1149433"
+      },
       "span": {
         "start": -2499,
         "end": -2199,
@@ -7278,6 +7790,10 @@
       "name": "Oxus civilization (BMAC)",
       "color": "#6b9a52",
       "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Bactria%E2%80%93Margiana_Archaeological_Complex",
+      "ids": {
+        "wikidata": "Q1054850"
+      },
       "span": {
         "start": -2249,
         "end": -1699,
@@ -7304,19 +7820,31 @@
       "id": "arabia",
       "name": "Arabia",
       "color": "#b0784a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Pre-Islamic_Arabia",
+      "ids": {
+        "wikidata": "Q47855"
+      }
     },
     {
       "id": "oman",
       "name": "Oman Peninsula (Magan)",
       "color": "#a06a3a",
-      "parent": "arabia"
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Magan_(civilization)",
+      "ids": {
+        "wikidata": "Q1429914"
+      }
     },
     {
       "id": "saba",
       "name": "Saba (Sheba)",
       "color": "#c08a4a",
       "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Sheba",
+      "ids": {
+        "wikidata": "Q216068"
+      },
       "span": {
         "start": -999,
         "end": 275,
@@ -7345,6 +7873,10 @@
       "name": "Qataban",
       "color": "#a07a5a",
       "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Qataban",
+      "ids": {
+        "wikidata": "Q748595"
+      },
       "span": {
         "start": -999,
         "end": 200,
@@ -7378,6 +7910,10 @@
       "name": "Qedarites (Arabs)",
       "color": "#b0884a",
       "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Qedarites",
+      "ids": {
+        "wikidata": "Q2287491"
+      },
       "span": {
         "start": -852,
         "end": -49,
@@ -7415,7 +7951,11 @@
       "id": "dilmun",
       "name": "Dilmun (Persian Gulf)",
       "color": "#8a8f6a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Dilmun",
+      "ids": {
+        "wikidata": "Q748846"
+      }
     },
     {
       "id": "steppe-south-asia",
@@ -7426,13 +7966,21 @@
       "id": "steppe",
       "name": "Eurasian Steppe",
       "color": "#9a8a4a",
-      "parent": "steppe-south-asia"
+      "parent": "steppe-south-asia",
+      "url": "https://en.wikipedia.org/wiki/Eurasian_Steppe",
+      "ids": {
+        "wikidata": "Q77120"
+      }
     },
     {
       "id": "botai",
       "name": "Botai culture",
       "color": "#8a9a5a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Botai_culture",
+      "ids": {
+        "wikidata": "Q279792"
+      },
       "span": {
         "start": -3699,
         "end": -3099,
@@ -7444,6 +7992,10 @@
       "name": "Yamnaya culture",
       "color": "#a07a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Yamnaya_culture",
+      "ids": {
+        "wikidata": "Q426737"
+      },
       "span": {
         "start": -3299,
         "end": -2599,
@@ -7487,6 +8039,10 @@
       "name": "Afanasievo culture (Altai)",
       "color": "#b08a5a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Afanasievo_culture",
+      "ids": {
+        "wikidata": "Q80974"
+      },
       "span": {
         "start": -3299,
         "end": -2499,
@@ -7514,6 +8070,10 @@
       "name": "Sintashta culture",
       "color": "#c07a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Sintashta_culture",
+      "ids": {
+        "wikidata": "Q656393"
+      },
       "span": {
         "start": -2199,
         "end": -1899,
@@ -7548,6 +8108,10 @@
       "name": "Andronovo culture",
       "color": "#b0703a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Andronovo_culture",
+      "ids": {
+        "wikidata": "Q459376"
+      },
       "span": {
         "start": -1999,
         "end": -1149,
@@ -7575,6 +8139,10 @@
       "name": "Srubnaya (Timber-grave) culture",
       "color": "#8a6a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Srubnaya_culture",
+      "ids": {
+        "wikidata": "Q1470165"
+      },
       "span": {
         "start": -1899,
         "end": -1199,
@@ -7585,13 +8153,21 @@
       "id": "cimmerians",
       "name": "Cimmerians",
       "color": "#7a5a4a",
-      "parent": "steppe"
+      "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Cimmerians",
+      "ids": {
+        "wikidata": "Q192730"
+      }
     },
     {
       "id": "scythians",
       "name": "Scythians",
       "color": "#c09a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Scythians",
+      "ids": {
+        "wikidata": "Q131802"
+      },
       "span": {
         "start": -799,
         "end": -249,
@@ -7635,6 +8211,10 @@
       "name": "Saka",
       "color": "#a0a04a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Saka",
+      "ids": {
+        "wikidata": "Q673001"
+      },
       "span": {
         "start": -849,
         "end": 450,
@@ -7678,6 +8258,10 @@
       "name": "Massagetae",
       "color": "#8a8a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Massagetae",
+      "ids": {
+        "wikidata": "Q379821"
+      },
       "span": {
         "start": -749,
         "end": -249,
@@ -7721,6 +8305,10 @@
       "name": "Pazyryk culture (Altai)",
       "color": "#9a7a5a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Pazyryk_culture",
+      "ids": {
+        "wikidata": "Q917982"
+      },
       "span": {
         "start": -549,
         "end": -249,
@@ -7770,6 +8358,10 @@
       "name": "Okunev culture",
       "color": "#7a6a5a",
       "parent": "siberia",
+      "url": "https://en.wikipedia.org/wiki/Okunev_culture",
+      "ids": {
+        "wikidata": "Q2632835"
+      },
       "span": {
         "start": -2699,
         "end": -1799,
@@ -7781,6 +8373,10 @@
       "name": "Glazkov culture",
       "color": "#5a6a5a",
       "parent": "siberia",
+      "url": "https://en.wikipedia.org/wiki/Glazkov_culture",
+      "ids": {
+        "wikidata": "Q1973554"
+      },
       "span": {
         "start": -2199,
         "end": -1199,
@@ -7792,6 +8388,10 @@
       "name": "Ymyyakhtakh culture",
       "color": "#6a6a7a",
       "parent": "siberia",
+      "url": "https://en.wikipedia.org/wiki/Ymyyakhtakh_culture",
+      "ids": {
+        "wikidata": "Q4529391"
+      },
       "span": {
         "start": -2199,
         "end": -1299,
@@ -7803,6 +8403,10 @@
       "name": "Karasuk culture",
       "color": "#8a7a4a",
       "parent": "siberia",
+      "url": "https://en.wikipedia.org/wiki/Karasuk_culture",
+      "ids": {
+        "wikidata": "Q129282"
+      },
       "span": {
         "start": -1499,
         "end": -799,
@@ -7830,6 +8434,10 @@
       "name": "Deer stones culture (Mongolia)",
       "color": "#7a5a4a",
       "parent": "siberia",
+      "url": "https://en.wikipedia.org/wiki/Deer_stones_culture",
+      "ids": {
+        "wikidata": "Q176824"
+      },
       "span": {
         "start": -1399,
         "end": -699,
@@ -7857,6 +8465,10 @@
       "name": "Slab-grave culture",
       "color": "#5a5a6a",
       "parent": "siberia",
+      "url": "https://en.wikipedia.org/wiki/Slab-grave_culture",
+      "ids": {
+        "wikidata": "Q2098731"
+      },
       "span": {
         "start": -1299,
         "end": -299,
@@ -7891,6 +8503,10 @@
       "name": "Tagar culture (South Siberia)",
       "color": "#8a6a3a",
       "parent": "siberia",
+      "url": "https://en.wikipedia.org/wiki/Tagar_culture",
+      "ids": {
+        "wikidata": "Q2005344"
+      },
       "span": {
         "start": -799,
         "end": -167,
@@ -7917,13 +8533,21 @@
       "id": "indus",
       "name": "South Asia",
       "color": "#b5552b",
-      "parent": "steppe-south-asia"
+      "parent": "steppe-south-asia",
+      "url": "https://en.wikipedia.org/wiki/South_Asia",
+      "ids": {
+        "wikidata": "Q771405"
+      }
     },
     {
       "id": "mehrgarh",
       "name": "Mehrgarh",
       "color": "#a07a4a",
-      "parent": "indus"
+      "parent": "indus",
+      "url": "https://en.wikipedia.org/wiki/Mehrgarh",
+      "ids": {
+        "wikidata": "Q242148"
+      }
     },
     {
       "id": "early-india",
@@ -7936,6 +8560,10 @@
       "name": "Harappan civilization",
       "color": "#c0643a",
       "parent": "indus",
+      "url": "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation",
+      "ids": {
+        "wikidata": "Q42534"
+      },
       "span": {
         "start": -3299,
         "end": -1299,
@@ -7983,6 +8611,10 @@
       "name": "Vedic period",
       "color": "#c08040",
       "parent": "indus",
+      "url": "https://en.wikipedia.org/wiki/Vedic_period",
+      "ids": {
+        "wikidata": "Q215262"
+      },
       "span": {
         "start": -1499,
         "end": -499,
@@ -8010,6 +8642,10 @@
       "name": "Gandhara grave culture (Swat)",
       "color": "#9a7a5a",
       "parent": "indus",
+      "url": "https://en.wikipedia.org/wiki/Gandhara_grave_culture",
+      "ids": {
+        "wikidata": "Q2625916"
+      },
       "span": {
         "start": -1399,
         "end": -799,
@@ -8021,6 +8657,10 @@
       "name": "Magadha",
       "color": "#a0603a",
       "parent": "indus",
+      "url": "https://en.wikipedia.org/wiki/Magadha",
+      "ids": {
+        "wikidata": "Q234009"
+      },
       "span": {
         "start": -1199,
         "end": 625,
@@ -8042,13 +8682,21 @@
       "id": "se-asia",
       "name": "Mainland Southeast Asia",
       "color": "#4a8a6a",
-      "parent": "east-asia"
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/Mainland_Southeast_Asia",
+      "ids": {
+        "wikidata": "Q43467"
+      }
     },
     {
       "id": "hoabinhian",
       "name": "Hoabinhian foragers",
       "color": "#5a7a5a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Hoabinhian",
+      "ids": {
+        "wikidata": "Q1621515"
+      },
       "span": {
         "start": -9999,
         "end": -1999,
@@ -8059,13 +8707,21 @@
       "id": "ban-chiang",
       "name": "Ban Chiang (Thailand)",
       "color": "#6a8a4a",
-      "parent": "se-asia"
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Ban_Chiang",
+      "ids": {
+        "wikidata": "Q584125"
+      }
     },
     {
       "id": "phung-nguyen",
       "name": "Phùng Nguyên culture (Red River)",
       "color": "#5a7a5a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Ph%C3%B9ng_Nguy%C3%AAn_culture",
+      "ids": {
+        "wikidata": "Q825179"
+      },
       "span": {
         "start": -1999,
         "end": -1499,
@@ -8077,6 +8733,10 @@
       "name": "Đông Sơn culture",
       "color": "#3a7a6a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/%C4%90%C3%B4ng_S%C6%A1n_culture",
+      "ids": {
+        "wikidata": "Q996912"
+      },
       "span": {
         "start": -999,
         "end": 100,
@@ -8104,6 +8764,10 @@
       "name": "Sa Huỳnh culture (central Vietnam)",
       "color": "#4a6a8a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+      "ids": {
+        "wikidata": "Q2000186"
+      },
       "span": {
         "start": -999,
         "end": 200,
@@ -8115,6 +8779,10 @@
       "name": "Văn Lang and the Hùng kings (traditional)",
       "color": "#7a6a4a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/H%E1%BB%93ng_B%C3%A0ng_dynasty",
+      "ids": {
+        "wikidata": "Q1209333"
+      },
       "span": {
         "start": -2878,
         "end": -257
@@ -8124,19 +8792,31 @@
       "id": "plain-of-jars",
       "name": "Plain of Jars (Laos)",
       "color": "#8a7a6a",
-      "parent": "se-asia"
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Plain_of_Jars",
+      "ids": {
+        "wikidata": "Q870258"
+      }
     },
     {
       "id": "tibet",
       "name": "Tibet",
       "color": "#8a5a6a",
-      "parent": "east-asia"
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/Tibet",
+      "ids": {
+        "wikidata": "Q17252"
+      }
     },
     {
       "id": "karuo",
       "name": "Karuo culture",
       "color": "#9a6a5a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Karuo_culture",
+      "ids": {
+        "wikidata": "Q1692194"
+      },
       "span": {
         "start": -3299,
         "end": -1999,
@@ -8159,13 +8839,21 @@
       "name": "China",
       "color": "#b0302f",
       "chronology": "xszcp",
-      "parent": "east-asia"
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/China",
+      "ids": {
+        "wikidata": "Q148"
+      }
     },
     {
       "id": "pengtoushan",
       "name": "Pengtoushan culture",
       "color": "#6a8a6a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Pengtoushan_culture",
+      "ids": {
+        "wikidata": "Q1205679"
+      },
       "span": {
         "start": -7499,
         "end": -6099,
@@ -8177,6 +8865,10 @@
       "name": "Peiligang culture and Jiahu",
       "color": "#8a7a5a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Peiligang_culture",
+      "ids": {
+        "wikidata": "Q1193609"
+      },
       "span": {
         "start": -6999,
         "end": -4999,
@@ -8188,6 +8880,10 @@
       "name": "Cishan culture",
       "color": "#8a8a5a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Cishan_culture",
+      "ids": {
+        "wikidata": "Q978917"
+      },
       "span": {
         "start": -6499,
         "end": -4999,
@@ -8199,6 +8895,10 @@
       "name": "Houli culture",
       "color": "#7a7a6a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Houli_culture",
+      "ids": {
+        "wikidata": "Q601258"
+      },
       "span": {
         "start": -6499,
         "end": -5499,
@@ -8210,6 +8910,10 @@
       "name": "Daxi culture",
       "color": "#6a7a7a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Daxi_culture",
+      "ids": {
+        "wikidata": "Q1178981"
+      },
       "span": {
         "start": -4999,
         "end": -3299,
@@ -8221,6 +8925,10 @@
       "name": "Majiabang culture",
       "color": "#5a8a7a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Majiabang_culture",
+      "ids": {
+        "wikidata": "Q1153575"
+      },
       "span": {
         "start": -4999,
         "end": -3349,
@@ -8232,6 +8940,10 @@
       "name": "Xinglongwa culture",
       "color": "#7a6a5a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Xinglongwa_culture",
+      "ids": {
+        "wikidata": "Q1154021"
+      },
       "span": {
         "start": -6199,
         "end": -4999,
@@ -8259,6 +8971,10 @@
       "name": "Hemudu culture",
       "color": "#5a7a5a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Hemudu_culture",
+      "ids": {
+        "wikidata": "Q948642"
+      },
       "span": {
         "start": -5499,
         "end": -3299,
@@ -8270,6 +8986,10 @@
       "name": "Yangshao culture",
       "color": "#a0603a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Yangshao_culture",
+      "ids": {
+        "wikidata": "Q854631"
+      },
       "span": {
         "start": -4999,
         "end": -2999,
@@ -8281,6 +9001,10 @@
       "name": "Hongshan culture",
       "color": "#6a8a8a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Hongshan_culture",
+      "ids": {
+        "wikidata": "Q1195031"
+      },
       "span": {
         "start": -4699,
         "end": -2899,
@@ -8292,6 +9016,10 @@
       "name": "Dawenkou culture",
       "color": "#8a5a5a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Dawenkou_culture",
+      "ids": {
+        "wikidata": "Q1178509"
+      },
       "span": {
         "start": -4299,
         "end": -2599,
@@ -8303,6 +9031,10 @@
       "name": "Liangzhu culture",
       "color": "#4f9a6a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Liangzhu_culture",
+      "ids": {
+        "wikidata": "Q1204909"
+      },
       "span": {
         "start": -3299,
         "end": -2299
@@ -8313,6 +9045,10 @@
       "name": "Longshan culture",
       "color": "#7a6a4a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Longshan_culture",
+      "ids": {
+        "wikidata": "Q1057935"
+      },
       "span": {
         "start": -2999,
         "end": -1899,
@@ -8340,6 +9076,10 @@
       "name": "Xia dynasty (traditional; disputed)",
       "color": "#c58a7a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Xia_dynasty",
+      "ids": {
+        "wikidata": "Q169705"
+      },
       "span": {
         "start": -2069,
         "end": -1599,
@@ -8415,6 +9155,10 @@
       "name": "Erlitou culture",
       "color": "#a8604a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Erlitou_culture",
+      "ids": {
+        "wikidata": "Q1051663"
+      },
       "span": {
         "start": -1749,
         "end": -1529,
@@ -8458,6 +9202,10 @@
       "name": "Shang dynasty",
       "color": "#9c2a2a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Shang_dynasty",
+      "ids": {
+        "wikidata": "Q128938"
+      },
       "span": {
         "start": -1599,
         "end": -1045,
@@ -8520,6 +9268,10 @@
       "name": "Sanxingdui",
       "color": "#b8923a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Sanxingdui",
+      "ids": {
+        "wikidata": "Q929072"
+      },
       "span": {
         "start": -1699,
         "end": -1149,
@@ -8531,6 +9283,10 @@
       "name": "Zhou dynasty",
       "color": "#7a2f4f",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Zhou_dynasty",
+      "ids": {
+        "wikidata": "Q35216"
+      },
       "span": {
         "start": -1045,
         "end": -255,
@@ -8617,6 +9373,10 @@
       "name": "Jeulmun pottery period (Korea)",
       "color": "#8a5a7a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Jeulmun_pottery_period",
+      "ids": {
+        "wikidata": "Q6497916"
+      },
       "span": {
         "start": -7999,
         "end": -1499,
@@ -8628,6 +9388,10 @@
       "name": "Jōmon (Initial and Early)",
       "color": "#9a7a6a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/J%C5%8Dmon_period",
+      "ids": {
+        "wikidata": "Q52824"
+      },
       "span": {
         "start": -8499,
         "end": -3519
@@ -8637,13 +9401,21 @@
       "id": "gojoseon",
       "name": "Old Chosŏn (Gojoseon)",
       "color": "#7a4a7a",
-      "parent": "korea-japan"
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Old_Chos%C5%8Fn",
+      "ids": {
+        "wikidata": "Q28405"
+      }
     },
     {
       "id": "mumun",
       "name": "Mumun pottery period (Korea)",
       "color": "#9a5a6a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Mumun_pottery_period",
+      "ids": {
+        "wikidata": "Q721164"
+      },
       "span": {
         "start": -1499,
         "end": -299,
@@ -8655,6 +9427,10 @@
       "name": "Jōmon (Middle to Final)",
       "color": "#8a6a5a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/J%C5%8Dmon_period",
+      "ids": {
+        "wikidata": "Q52824"
+      },
       "span": {
         "start": -3519,
         "end": -299,
@@ -8682,6 +9458,10 @@
       "name": "Yayoi period (Japan)",
       "color": "#a06a4a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Yayoi_period",
+      "ids": {
+        "wikidata": "Q207858"
+      },
       "span": {
         "start": -299,
         "end": 300,
@@ -8728,49 +9508,81 @@
       "id": "taiwan",
       "name": "Taiwan",
       "color": "#4a9a8a",
-      "parent": "island-sea"
+      "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "ids": {
+        "wikidata": "Q709357"
+      }
     },
     {
       "id": "philippines",
       "name": "Philippines",
       "color": "#3a7a8a",
-      "parent": "island-sea"
+      "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_the_Philippines",
+      "ids": {
+        "wikidata": "Q4164227"
+      }
     },
     {
       "id": "indonesia",
       "name": "Indonesia",
       "color": "#5a8a6a",
-      "parent": "island-sea"
+      "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Indonesia",
+      "ids": {
+        "wikidata": "Q4164216"
+      }
     },
     {
       "id": "oceania",
       "name": "Oceania",
       "color": "#2a7a9a",
-      "parent": "austronesia"
+      "parent": "austronesia",
+      "url": "https://en.wikipedia.org/wiki/Oceania",
+      "ids": {
+        "wikidata": "Q55643"
+      }
     },
     {
       "id": "new-guinea",
       "name": "New Guinea highlands (Kuk Swamp)",
       "color": "#4a8a6a",
-      "parent": "oceania"
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Kuk_Swamp",
+      "ids": {
+        "wikidata": "Q1165562"
+      }
     },
     {
       "id": "marianas",
       "name": "Mariana Islands",
       "color": "#3a6a9a",
-      "parent": "oceania"
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Mariana_Islands",
+      "ids": {
+        "wikidata": "Q153732"
+      }
     },
     {
       "id": "palau",
       "name": "Palau (Micronesia)",
       "color": "#3a7aaa",
-      "parent": "oceania"
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Palau",
+      "ids": {
+        "wikidata": "Q695"
+      }
     },
     {
       "id": "lapita",
       "name": "Lapita culture (Melanesia to Fiji, Tonga and Samoa)",
       "color": "#2a8aaa",
       "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Lapita_culture",
+      "ids": {
+        "wikidata": "Q1021436"
+      },
       "span": {
         "start": -1599,
         "end": -499,
@@ -8798,24 +9610,40 @@
       "id": "australia",
       "name": "Australia and the Torres Strait",
       "color": "#8a6a3a",
-      "parent": "oceania"
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Australia",
+      "ids": {
+        "wikidata": "Q2588711"
+      }
     },
     {
       "id": "americas",
       "name": "Americas",
-      "color": "#2f7a5a"
+      "color": "#2f7a5a",
+      "url": "https://en.wikipedia.org/wiki/Americas",
+      "ids": {
+        "wikidata": "Q828"
+      }
     },
     {
       "id": "arctic",
       "name": "North American Arctic",
       "color": "#5a8a9a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/North_American_Arctic",
+      "ids": {
+        "wikidata": "Q2944678"
+      }
     },
     {
       "id": "pre-dorset",
       "name": "Pre-Dorset (Eastern Canadian Arctic)",
       "color": "#6a8aaa",
       "parent": "arctic",
+      "url": "https://en.wikipedia.org/wiki/Pre-Dorset",
+      "ids": {
+        "wikidata": "Q3702539"
+      },
       "span": {
         "start": -3199,
         "end": -849,
@@ -8844,6 +9672,10 @@
       "name": "Saqqaq culture (Greenland)",
       "color": "#5a7a9a",
       "parent": "arctic",
+      "url": "https://en.wikipedia.org/wiki/Saqqaq_culture",
+      "ids": {
+        "wikidata": "Q666758"
+      },
       "span": {
         "start": -2499,
         "end": -799,
@@ -8855,6 +9687,10 @@
       "name": "Independence I (Greenland)",
       "color": "#7a8aaa",
       "parent": "arctic",
+      "url": "https://en.wikipedia.org/wiki/Independence_I_culture",
+      "ids": {
+        "wikidata": "Q641154"
+      },
       "span": {
         "start": -2499,
         "end": -1899,
@@ -8900,6 +9736,10 @@
       "name": "Dorset culture",
       "color": "#4a6a8a",
       "parent": "arctic",
+      "url": "https://en.wikipedia.org/wiki/Dorset_culture",
+      "ids": {
+        "wikidata": "Q603749"
+      },
       "span": {
         "start": -499,
         "end": 1500,
@@ -8926,13 +9766,21 @@
       "id": "north-america",
       "name": "North America",
       "color": "#4a7a4a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/North_America",
+      "ids": {
+        "wikidata": "Q49"
+      }
     },
     {
       "id": "plano",
       "name": "Plano cultures",
       "color": "#8a7a4a",
       "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Plano_cultures",
+      "ids": {
+        "wikidata": "Q1989372"
+      },
       "span": {
         "start": -8999,
         "end": -5999,
@@ -8943,7 +9791,11 @@
       "id": "archaic-na",
       "name": "Early and Middle Archaic (Koster, Windover)",
       "color": "#6a6a4a",
-      "parent": "north-america"
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Archaic_period_(North_America)",
+      "ids": {
+        "wikidata": "Q632376"
+      }
     },
     {
       "id": "southwest",
@@ -8955,13 +9807,21 @@
       "id": "mound-builders",
       "name": "Mound builders (Louisiana)",
       "color": "#6f8f4a",
-      "parent": "north-america"
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Mound_Builders",
+      "ids": {
+        "wikidata": "Q262714"
+      }
     },
     {
       "id": "old-copper",
       "name": "Old Copper complex (Great Lakes)",
       "color": "#a0603a",
       "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Old_Copper_complex",
+      "ids": {
+        "wikidata": "Q7083763"
+      },
       "span": {
         "start": -3999,
         "end": -999,
@@ -9011,6 +9871,10 @@
       "name": "Adena culture",
       "color": "#5a6a3a",
       "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Adena_culture",
+      "ids": {
+        "wikidata": "Q355841"
+      },
       "span": {
         "start": -499,
         "end": 100,
@@ -9021,7 +9885,11 @@
       "id": "mesoamerica",
       "name": "Mesoamerica",
       "color": "#3a7a5a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerica",
+      "ids": {
+        "wikidata": "Q13703"
+      }
     },
     {
       "id": "oaxaca-archaic",
@@ -9033,13 +9901,21 @@
       "id": "mokaya",
       "name": "Mokaya (Mazatán)",
       "color": "#4a8a5a",
-      "parent": "mesoamerica"
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Mokaya",
+      "ids": {
+        "wikidata": "Q3182469"
+      }
     },
     {
       "id": "tlatilco",
       "name": "Tlatilco culture (Valley of Mexico)",
       "color": "#5a8a6a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tlatilco_culture",
+      "ids": {
+        "wikidata": "Q2345456"
+      },
       "span": {
         "start": -1249,
         "end": -799,
@@ -9066,13 +9942,21 @@
       "id": "zapotec",
       "name": "Zapotecs (Valley of Oaxaca)",
       "color": "#6a7a5a",
-      "parent": "mesoamerica"
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
+      "ids": {
+        "wikidata": "Q844750"
+      }
     },
     {
       "id": "olmec",
       "name": "Olmecs",
       "color": "#3f8a6a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Olmecs",
+      "ids": {
+        "wikidata": "Q135364"
+      },
       "span": {
         "start": -1199,
         "end": -399,
@@ -9108,6 +9992,10 @@
       "name": "Maya (Preclassic)",
       "color": "#4f9a7e",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Maya_civilization",
+      "ids": {
+        "wikidata": "Q28567"
+      },
       "span": {
         "start": -1999,
         "end": 250,
@@ -9118,19 +10006,31 @@
       "id": "south-america",
       "name": "South America",
       "color": "#5a7a3a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/South_America",
+      "ids": {
+        "wikidata": "Q18"
+      }
     },
     {
       "id": "amazon",
       "name": "Amazon (Caverna da Pedra Pintada)",
       "color": "#4a7a3a",
-      "parent": "south-america"
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Caverna_da_Pedra_Pintada",
+      "ids": {
+        "wikidata": "Q5055053"
+      }
     },
     {
       "id": "cueva-manos",
       "name": "Cueva de las Manos",
       "color": "#a05a4a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Cueva_de_las_Manos",
+      "ids": {
+        "wikidata": "Q223385"
+      },
       "span": {
         "start": -7299,
         "end": 700,
@@ -9148,6 +10048,10 @@
       "name": "Valdivia culture",
       "color": "#5a8a9a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Valdivia_culture",
+      "ids": {
+        "wikidata": "Q1755426"
+      },
       "span": {
         "start": -3499,
         "end": -1499,
@@ -9174,13 +10078,21 @@
       "id": "caral-supe",
       "name": "Caral–Supe (Norte Chico)",
       "color": "#3a7a8a",
-      "parent": "south-america"
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Caral",
+      "ids": {
+        "wikidata": "Q219279"
+      }
     },
     {
       "id": "chavin",
       "name": "Chavín culture",
       "color": "#2f6a7a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_culture",
+      "ids": {
+        "wikidata": "Q13341477"
+      },
       "span": {
         "start": -899,
         "end": -249
@@ -9190,13 +10102,21 @@
       "id": "kotosh",
       "name": "Kotosh",
       "color": "#7a6a4a",
-      "parent": "south-america"
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Kotosh",
+      "ids": {
+        "wikidata": "Q2669852"
+      }
     },
     {
       "id": "cupisnique",
       "name": "Cupisnique culture",
       "color": "#8a6a3a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Cupisnique",
+      "ids": {
+        "wikidata": "Q212414"
+      },
       "span": {
         "start": -1499,
         "end": -499,
@@ -9240,6 +10160,10 @@
       "name": "Paracas culture (Peru)",
       "color": "#9a5a3a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Paracas_culture",
+      "ids": {
+        "wikidata": "Q1127723"
+      },
       "span": {
         "start": -799,
         "end": -99,
@@ -9251,6 +10175,10 @@
       "name": "Chinchorro culture (coasts of northern Chile and southern Peru)",
       "color": "#6a5a4a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Chinchorro_culture",
+      "ids": {
+        "wikidata": "Q775089"
+      },
       "span": {
         "start": -6999,
         "end": -1499,
@@ -9261,7 +10189,11 @@
       "id": "caribbean",
       "name": "Caribbean",
       "color": "#3a8a7a",
-      "parent": "americas"
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/Caribbean",
+      "ids": {
+        "wikidata": "Q664609"
+      }
     },
     {
       "id": "archaic-caribbean",
@@ -9274,6 +10206,10 @@
       "name": "Saladoid culture",
       "color": "#3a6a6a",
       "parent": "caribbean",
+      "url": "https://en.wikipedia.org/wiki/Saladoid",
+      "ids": {
+        "wikidata": "Q4405634"
+      },
       "span": {
         "start": -499,
         "end": 545,

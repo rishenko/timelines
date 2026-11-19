@@ -1088,14 +1088,23 @@
     "wp-xirong": { "name": "Wikipedia: Xirong", "url": "https://en.wikipedia.org/wiki/Xirong", "tags": ["wikipedia"], "accessed": "2026-11-18" }
   },
   "tracks": [
-    { "id": "africa", "name": "Africa", "color": "#b8862a" },
+    { "id": "africa", "name": "Africa", "color": "#b8862a", "url": "https://en.wikipedia.org/wiki/Africa", "ids": { "wikidata": "Q15" } },
     { "id": "north-africa", "name": "North Africa and Carthage", "color": "#b8862a", "parent": "africa" },
-    { "id": "carthage", "name": "Carthage", "color": "#a07a3a", "parent": "north-africa" },
+    {
+      "id": "carthage",
+      "name": "Carthage",
+      "color": "#a07a3a",
+      "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Carthage",
+      "ids": { "wikidata": "Q6343" }
+    },
     {
       "id": "mauretania",
       "name": "Mauretania",
       "color": "#9a7040",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Mauretania",
+      "ids": { "wikidata": "Q309272" },
       "span": {
         "start": "c. 225 BCE",
         "end": "44 CE",
@@ -1107,6 +1116,8 @@
       "name": "Numidia",
       "color": "#b0884a",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Numidia",
+      "ids": { "wikidata": "Q102679" },
       "span": {
         "start": "202 BCE",
         "end": "46 BCE",
@@ -1116,12 +1127,22 @@
         ]
       }
     },
-    { "id": "vandals", "name": "Vandal Kingdom", "color": "#6a5a8a", "parent": "north-africa", "span": { "start": "435 CE", "end": "534 CE" } },
+    {
+      "id": "vandals",
+      "name": "Vandal Kingdom",
+      "color": "#6a5a8a",
+      "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Vandal_Kingdom",
+      "ids": { "wikidata": "Q10416611" },
+      "span": { "start": "435 CE", "end": "534 CE" }
+    },
     {
       "id": "garamantes",
       "name": "Garamantes",
       "color": "#c09060",
       "parent": "north-africa",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "ids": { "wikidata": "Q839034" },
       "span": {
         "start": "c. 550 BCE",
         "end": "c. 675 CE",
@@ -1129,12 +1150,21 @@
         "endDates": [{ "year": "675 CE", "margin": 25, "source": { "sourceKey": "wp-garamantes", "sourceLocation": "lead ('late 7th century AD')" } }]
       }
     },
-    { "id": "nubia", "name": "Kush and Nubia", "color": "#b8862a", "parent": "africa" },
+    {
+      "id": "nubia",
+      "name": "Kush and Nubia",
+      "color": "#b8862a",
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/Nubia",
+      "ids": { "wikidata": "Q135028" }
+    },
     {
       "id": "kush",
       "name": "Kingdom of Kush (Napata, Meroë)",
       "color": "#8a5a2a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+      "ids": { "wikidata": "Q241790" },
       "span": {
         "start": "c. 780 BCE",
         "end": "c. 350 CE",
@@ -1150,6 +1180,8 @@
       "name": "Nobatia",
       "color": "#a06a3a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Nobatia",
+      "ids": { "wikidata": "Q568523" },
       "span": {
         "start": "c. 400 CE",
         "end": "c. 631 CE",
@@ -1167,6 +1199,8 @@
       "name": "Makuria",
       "color": "#7a4a3a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Makuria",
+      "ids": { "wikidata": "Q829356" },
       "span": {
         "start": "c. 450 CE",
         "end": "c. 1475 CE",
@@ -1179,6 +1213,8 @@
       "name": "Alodia",
       "color": "#9a5a4a",
       "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Alodia",
+      "ids": { "wikidata": "Q449639" },
       "span": {
         "start": "c. 550 CE",
         "end": "c. 1500 CE",
@@ -1194,6 +1230,8 @@
       "name": "Dʿmt",
       "color": "#7a6a3a",
       "parent": "horn",
+      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
+      "ids": { "wikidata": "Q139315" },
       "span": {
         "start": "c. 750 BCE",
         "end": "c. 350 BCE",
@@ -1209,6 +1247,8 @@
       "name": "Kingdom of Aksum",
       "color": "#5a7a4a",
       "parent": "horn",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+      "ids": { "wikidata": "Q139377" },
       "span": {
         "start": "c. 50 CE",
         "end": "960 CE",
@@ -1219,29 +1259,79 @@
         ]
       }
     },
-    { "id": "sub-saharan", "name": "Africa south of the Sahara", "color": "#b8862a", "parent": "africa" },
-    { "id": "djenne-djenno", "name": "Djenné-Djenno", "color": "#a07850", "parent": "sub-saharan", "span": { "start": "250 BCE", "end": "1400 CE" } },
-    { "id": "nok", "name": "Nok culture", "color": "#8a6040", "parent": "sub-saharan", "span": { "start": "c. 1500 BCE", "end": "c. 1 BCE" } },
+    {
+      "id": "sub-saharan",
+      "name": "Africa south of the Sahara",
+      "color": "#b8862a",
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/Sub-Saharan_Africa",
+      "ids": { "wikidata": "Q132959" }
+    },
+    {
+      "id": "djenne-djenno",
+      "name": "Djenné-Djenno",
+      "color": "#a07850",
+      "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno",
+      "ids": { "wikidata": "Q607668" },
+      "span": { "start": "250 BCE", "end": "1400 CE" }
+    },
+    {
+      "id": "nok",
+      "name": "Nok culture",
+      "color": "#8a6040",
+      "parent": "sub-saharan",
+      "url": "https://en.wikipedia.org/wiki/Nok_culture",
+      "ids": { "wikidata": "Q927291" },
+      "span": { "start": "c. 1500 BCE", "end": "c. 1 BCE" }
+    },
     { "id": "europe-med", "name": "Europe & Mediterranean", "color": "#3f6aa8" },
-    { "id": "europe", "name": "Europe", "color": "#3f6aa8", "parent": "europe-med" },
-    { "id": "roman-britain", "name": "Roman Britain", "color": "#8a3a3a", "parent": "europe", "span": { "start": "43 CE", "end": "c. 410 CE" } },
+    {
+      "id": "europe",
+      "name": "Europe",
+      "color": "#3f6aa8",
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Europe",
+      "ids": { "wikidata": "Q46" }
+    },
+    {
+      "id": "roman-britain",
+      "name": "Roman Britain",
+      "color": "#8a3a3a",
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
+      "ids": { "wikidata": "Q185103" },
+      "span": { "start": "43 CE", "end": "c. 410 CE" }
+    },
     {
       "id": "anglo-saxons",
       "name": "Anglo-Saxon England",
       "color": "#6a7a3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
+      "ids": { "wikidata": "Q784963" },
       "span": {
         "start": "c. 449 CE",
         "end": "1066 CE",
         "startDates": [{ "year": "449 CE", "source": { "sourceKey": "wp-roman-britain", "sourceLocation": "English history table (Anglo-Saxon, c. 449–1066)" } }]
       }
     },
-    { "id": "suebi", "name": "Kingdom of the Suebi", "color": "#4a6a8a", "parent": "europe", "span": { "start": "409 CE", "end": "585 CE" } },
+    {
+      "id": "suebi",
+      "name": "Kingdom of the Suebi",
+      "color": "#4a6a8a",
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Suebi",
+      "ids": { "wikidata": "Q1048918" },
+      "span": { "start": "409 CE", "end": "585 CE" }
+    },
     {
       "id": "visigoths",
       "name": "Visigothic Kingdom (Toulouse, then Toledo)",
       "color": "#7a5a8a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Visigothic_Kingdom",
+      "ids": { "wikidata": "Q126936" },
       "span": {
         "start": "418 CE",
         "end": "721 CE",
@@ -1251,13 +1341,31 @@
         ]
       }
     },
-    { "id": "celts", "name": "La Tène Celts (Gaul)", "color": "#3a7a5a", "parent": "europe", "span": { "start": "c. 450 BCE", "end": "c. 1 BCE" } },
-    { "id": "franks", "name": "Franks (Merovingians)", "color": "#3a5a9a", "parent": "europe", "span": { "start": "c. 481 CE", "end": "751 CE" } },
+    {
+      "id": "celts",
+      "name": "La Tène Celts (Gaul)",
+      "color": "#3a7a5a",
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/La_T%C3%A8ne_culture",
+      "ids": { "wikidata": "Q208247" },
+      "span": { "start": "c. 450 BCE", "end": "c. 1 BCE" }
+    },
+    {
+      "id": "franks",
+      "name": "Franks (Merovingians)",
+      "color": "#3a5a9a",
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Franks",
+      "ids": { "wikidata": "Q43482" },
+      "span": { "start": "c. 481 CE", "end": "751 CE" }
+    },
     {
       "id": "burgundians",
       "name": "Kingdom of the Burgundians",
       "color": "#9a4a5a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Burgundians",
+      "ids": { "wikidata": "Q13590051" },
       "span": { "start": "411 CE", "end": "534 CE" }
     },
     {
@@ -1265,14 +1373,26 @@
       "name": "Ostrogothic Kingdom (Italy)",
       "color": "#8a6aaa",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Ostrogothic_Kingdom",
+      "ids": { "wikidata": "Q583038" },
       "span": { "start": "493 CE", "end": "553 CE" }
     },
-    { "id": "lombards", "name": "Kingdom of the Lombards", "color": "#5a8a6a", "parent": "europe", "span": { "start": "568 CE", "end": "774 CE" } },
+    {
+      "id": "lombards",
+      "name": "Kingdom of the Lombards",
+      "color": "#5a8a6a",
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
+      "ids": { "wikidata": "Q854415" },
+      "span": { "start": "568 CE", "end": "774 CE" }
+    },
     {
       "id": "slavs",
       "name": "Early Slavs",
       "color": "#6a5a3a",
       "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Early_Slavs",
+      "ids": { "wikidata": "Q2378782" },
       "span": {
         "start": "c. 550 CE",
         "end": "c. 950 CE",
@@ -1293,12 +1413,21 @@
       }
     },
     { "id": "west-med", "name": "Western Mediterranean", "color": "#3f6aa8", "parent": "europe-med" },
-    { "id": "rome", "name": "Rome", "color": "#3f6aa8", "parent": "europe-med" },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "color": "#3f6aa8",
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Rome",
+      "ids": { "wikidata": "Q1747689" }
+    },
     {
       "id": "rome-republic-empire",
       "name": "Rome (Republic, then Empire)",
       "color": "#a33a3a",
       "parent": "rome",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Rome",
+      "ids": { "wikidata": "Q1747689" },
       "span": { "start": "c. 509 BCE", "end": "476 CE" },
       "phases": [
         { "name": "Roman Republic", "start": "c. 509 BCE", "end": "27 BCE" },
@@ -1310,13 +1439,45 @@
       "name": "Eastern Roman (Byzantine) Empire",
       "color": "#8a3a6a",
       "parent": "rome",
+      "url": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+      "ids": { "wikidata": "Q12544" },
       "span": { "start": "395 CE", "end": "1453 CE" }
     },
-    { "id": "greece", "name": "Greece and the Hellenistic world", "color": "#3f6aa8", "parent": "europe-med" },
-    { "id": "antigonid", "name": "Antigonid Macedon", "color": "#4a6aa8", "parent": "greece", "span": { "start": "306 BCE", "end": "168 BCE" } },
-    { "id": "pergamon", "name": "Kingdom of Pergamon", "color": "#5a7ab0", "parent": "greece", "span": { "start": "c. 282 BCE", "end": "129 BCE" } },
+    {
+      "id": "greece",
+      "name": "Greece and the Hellenistic world",
+      "color": "#3f6aa8",
+      "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Hellenistic_period",
+      "ids": { "wikidata": "Q428995" }
+    },
+    {
+      "id": "antigonid",
+      "name": "Antigonid Macedon",
+      "color": "#4a6aa8",
+      "parent": "greece",
+      "url": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
+      "ids": { "wikidata": "Q83958" },
+      "span": { "start": "306 BCE", "end": "168 BCE" }
+    },
+    {
+      "id": "pergamon",
+      "name": "Kingdom of Pergamon",
+      "color": "#5a7ab0",
+      "parent": "greece",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Pergamon",
+      "ids": { "wikidata": "Q2022162" },
+      "span": { "start": "c. 282 BCE", "end": "129 BCE" }
+    },
     { "id": "near-east", "name": "Near East & Iran", "color": "#a8483a" },
-    { "id": "egypt", "name": "Egypt", "color": "#a8483a", "parent": "near-east" },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "color": "#a8483a",
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Egypt",
+      "ids": { "wikidata": "Q79" }
+    },
     {
       "id": "ptolemaic-roman-egypt",
       "name": "Ptolemaic and Roman Egypt",
@@ -1344,12 +1505,21 @@
       ]
     },
     { "id": "levant", "name": "Levant and Judea", "color": "#a8483a", "parent": "near-east" },
-    { "id": "judea", "name": "Judea (Hasmoneans, Herod, Roman rule)", "color": "#7a6a4a", "parent": "levant" },
+    {
+      "id": "judea",
+      "name": "Judea (Hasmoneans, Herod, Roman rule)",
+      "color": "#7a6a4a",
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Judea",
+      "ids": { "wikidata": "Q104028" }
+    },
     {
       "id": "palmyra",
       "name": "Palmyra",
       "color": "#9a6a4a",
       "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Palmyra",
+      "ids": { "wikidata": "Q5747" },
       "span": {
         "start": "270 CE",
         "end": "273 CE",
@@ -1359,12 +1529,21 @@
         ]
       }
     },
-    { "id": "anatolia", "name": "Anatolia", "color": "#a8483a", "parent": "near-east" },
+    {
+      "id": "anatolia",
+      "name": "Anatolia",
+      "color": "#a8483a",
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Anatolia",
+      "ids": { "wikidata": "Q51614" }
+    },
     {
       "id": "galatia",
       "name": "Galatians",
       "color": "#4a8a6a",
       "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Galatians_(people)",
+      "ids": { "wikidata": "Q11073103" },
       "span": {
         "start": "c. 278 BCE",
         "end": "25 BCE",
@@ -1374,15 +1553,39 @@
         ]
       }
     },
-    { "id": "caucasus", "name": "Caucasus", "color": "#a8483a", "parent": "near-east" },
-    { "id": "armenia", "name": "Armenia", "color": "#7a5a8a", "parent": "caucasus" },
+    {
+      "id": "caucasus",
+      "name": "Caucasus",
+      "color": "#a8483a",
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Caucasus",
+      "ids": { "wikidata": "Q18869" }
+    },
+    {
+      "id": "armenia",
+      "name": "Armenia",
+      "color": "#7a5a8a",
+      "parent": "caucasus",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Armenia_(antiquity)",
+      "ids": { "wikidata": "Q208404" }
+    },
     { "id": "persia", "name": "Iran and Mesopotamia", "color": "#a8483a", "parent": "near-east" },
-    { "id": "seleucid", "name": "Seleucid Empire", "color": "#6a5aa0", "parent": "persia", "span": { "start": "312 BCE", "end": "63 BCE" } },
+    {
+      "id": "seleucid",
+      "name": "Seleucid Empire",
+      "color": "#6a5aa0",
+      "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Seleucid_Empire",
+      "ids": { "wikidata": "Q93180" },
+      "span": { "start": "312 BCE", "end": "63 BCE" }
+    },
     {
       "id": "greco-bactria",
       "name": "Greco-Bactrian Kingdom",
       "color": "#7a6a90",
       "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom",
+      "ids": { "wikidata": "Q488880" },
       "span": {
         "start": "c. 256 BCE",
         "end": "c. 120 BCE",
@@ -1397,14 +1600,39 @@
         ]
       }
     },
-    { "id": "parthia", "name": "Parthian Empire", "color": "#8a4a3a", "parent": "persia", "span": { "start": "247 BCE", "end": "224 CE" } },
-    { "id": "sasanian", "name": "Sasanian Empire", "color": "#a84a2a", "parent": "persia", "span": { "start": "224 CE", "end": "651 CE" } },
-    { "id": "arabia", "name": "Arabia", "color": "#a8483a", "parent": "near-east" },
+    {
+      "id": "parthia",
+      "name": "Parthian Empire",
+      "color": "#8a4a3a",
+      "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Parthian_Empire",
+      "ids": { "wikidata": "Q1986139" },
+      "span": { "start": "247 BCE", "end": "224 CE" }
+    },
+    {
+      "id": "sasanian",
+      "name": "Sasanian Empire",
+      "color": "#a84a2a",
+      "parent": "persia",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+      "ids": { "wikidata": "Q83891" },
+      "span": { "start": "224 CE", "end": "651 CE" }
+    },
+    {
+      "id": "arabia",
+      "name": "Arabia",
+      "color": "#a8483a",
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Pre-Islamic_Arabia",
+      "ids": { "wikidata": "Q47855" }
+    },
     {
       "id": "nabataea",
       "name": "Nabataean Kingdom (Petra)",
       "color": "#b07a5a",
       "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Nabataean_Kingdom",
+      "ids": { "wikidata": "Q11029653" },
       "span": {
         "start": "c. 250 BCE",
         "end": "106 CE",
@@ -1419,6 +1647,8 @@
       "name": "Himyar",
       "color": "#a0805a",
       "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Himyar",
+      "ids": { "wikidata": "Q289577" },
       "span": {
         "start": "c. 110 BCE",
         "end": "c. 575 CE",
@@ -1430,12 +1660,21 @@
     },
     { "id": "early-islam", "name": "Early Islam", "color": "#3a7a5a", "parent": "arabia" },
     { "id": "steppe-south-asia", "name": "Steppe & South Asia", "color": "#7a8a2a" },
-    { "id": "steppe", "name": "Steppe peoples", "color": "#7a8a2a", "parent": "steppe-south-asia" },
+    {
+      "id": "steppe",
+      "name": "Steppe peoples",
+      "color": "#7a8a2a",
+      "parent": "steppe-south-asia",
+      "url": "https://en.wikipedia.org/wiki/Eurasian_nomads",
+      "ids": { "wikidata": "Q1753235" }
+    },
     {
       "id": "xiongnu",
       "name": "Xiongnu",
       "color": "#7a5a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Xiongnu",
+      "ids": { "wikidata": "Q188836" },
       "span": {
         "start": "c. 250 BCE",
         "end": "c. 150 CE",
@@ -1451,6 +1690,8 @@
       "name": "Xianbei",
       "color": "#6a7a5a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Xianbei",
+      "ids": { "wikidata": "Q861054" },
       "span": {
         "start": "c. 208 BCE",
         "end": "c. 250 CE",
@@ -1462,6 +1703,8 @@
       "name": "Rouran Khaganate",
       "color": "#5a6a7a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Rouran_Khaganate",
+      "ids": { "wikidata": "Q155361" },
       "span": {
         "start": "330 CE",
         "end": "555 CE",
@@ -1476,6 +1719,8 @@
       "name": "First Turkic Khaganate (Göktürks)",
       "color": "#3a6a8a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/First_Turkic_Khaganate",
+      "ids": { "wikidata": "Q15146034" },
       "span": { "start": "552 CE", "end": "603 CE" }
     },
     {
@@ -1483,6 +1728,8 @@
       "name": "Eastern Turkic Khaganate",
       "color": "#4a7a9a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+      "ids": { "wikidata": "Q2607292" },
       "span": {
         "start": "581 CE",
         "end": "645 CE",
@@ -1501,6 +1748,8 @@
       "name": "Western Turkic Khaganate",
       "color": "#2a5a7a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+      "ids": { "wikidata": "Q874357" },
       "span": {
         "start": "581 CE",
         "end": "657 CE",
@@ -1510,12 +1759,22 @@
         ]
       }
     },
-    { "id": "kidarites", "name": "Kidarites", "color": "#8a6a4a", "parent": "steppe", "span": { "start": "320 CE", "end": "467 CE" } },
+    {
+      "id": "kidarites",
+      "name": "Kidarites",
+      "color": "#8a6a4a",
+      "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Kidarites",
+      "ids": { "wikidata": "Q26996" },
+      "span": { "start": "320 CE", "end": "467 CE" }
+    },
     {
       "id": "hephthalites",
       "name": "Hephthalites",
       "color": "#7a4a6a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Hephthalites",
+      "ids": { "wikidata": "Q26576" },
       "span": {
         "start": "c. 445 CE",
         "end": "560 CE",
@@ -1530,6 +1789,8 @@
       "name": "Sarmatians and Alans",
       "color": "#9a6a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Sarmatians",
+      "ids": { "wikidata": "Q162858" },
       "span": {
         "start": "c. 450 BCE",
         "end": "c. 350 CE",
@@ -1548,6 +1809,8 @@
       "name": "Huns",
       "color": "#6a3a3a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Huns",
+      "ids": { "wikidata": "Q45813" },
       "span": {
         "start": "c. 375 CE",
         "end": "469 CE",
@@ -1559,14 +1822,25 @@
       "name": "Avar Khaganate (Pannonian Avars)",
       "color": "#5a4a6a",
       "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Pannonian_Avars",
+      "ids": { "wikidata": "Q68962" },
       "span": { "start": "567 CE", "end": "822 CE" }
     },
-    { "id": "south-asia", "name": "South Asia", "color": "#7a8a2a", "parent": "steppe-south-asia" },
+    {
+      "id": "south-asia",
+      "name": "South Asia",
+      "color": "#7a8a2a",
+      "parent": "steppe-south-asia",
+      "url": "https://en.wikipedia.org/wiki/South_Asia",
+      "ids": { "wikidata": "Q771405" }
+    },
     {
       "id": "indo-greek",
       "name": "Indo-Greek Kingdom",
       "color": "#5a7aa8",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Greek_Kingdom",
+      "ids": { "wikidata": "Q215643" },
       "span": { "start": "c. 200 BCE", "end": "c. 10 CE" }
     },
     {
@@ -1574,15 +1848,35 @@
       "name": "Indo-Scythians (Sakas)",
       "color": "#7a6a5a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Scythian_Kingdom",
+      "ids": { "wikidata": "Q240123" },
       "span": { "start": "c. 150 BCE", "end": "400 CE" }
     },
-    { "id": "kushan", "name": "Kushan Empire", "color": "#a0703a", "parent": "south-asia", "span": { "start": "c. 30 CE", "end": "c. 375 CE" } },
-    { "id": "alchon", "name": "Alchon Huns", "color": "#6a5a7a", "parent": "south-asia", "span": { "start": "370 CE", "end": "670 CE" } },
+    {
+      "id": "kushan",
+      "name": "Kushan Empire",
+      "color": "#a0703a",
+      "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Kushan_Empire",
+      "ids": { "wikidata": "Q25979" },
+      "span": { "start": "c. 30 CE", "end": "c. 375 CE" }
+    },
+    {
+      "id": "alchon",
+      "name": "Alchon Huns",
+      "color": "#6a5a7a",
+      "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
+      "ids": { "wikidata": "Q21050766" },
+      "span": { "start": "370 CE", "end": "670 CE" }
+    },
     {
       "id": "maurya",
       "name": "Maurya Empire",
       "color": "#b0603a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Maurya_Empire",
+      "ids": { "wikidata": "Q62943" },
       "span": {
         "start": "c. 321 BCE",
         "end": "185 BCE",
@@ -1597,6 +1891,8 @@
       "name": "Shunga Empire",
       "color": "#9a5a4a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Shunga_Empire",
+      "ids": { "wikidata": "Q651377" },
       "span": {
         "start": "185 BCE",
         "end": "73 BCE",
@@ -1616,6 +1912,8 @@
       "name": "Gupta Empire",
       "color": "#c08a3a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Gupta_Empire",
+      "ids": { "wikidata": "Q11774" },
       "span": {
         "start": "c. 240 CE",
         "end": "c. 579 CE",
@@ -1631,6 +1929,8 @@
       "name": "Harsha’s empire (Kannauj)",
       "color": "#b07a5a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Pushyabhuti_dynasty",
+      "ids": { "wikidata": "Q28109312" },
       "span": { "start": "606 CE", "end": "647 CE" }
     },
     {
@@ -1638,6 +1938,8 @@
       "name": "Satavahana dynasty",
       "color": "#7a8a4a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Satavahana_dynasty",
+      "ids": { "wikidata": "Q5257" },
       "span": {
         "start": "c. 117 BCE",
         "end": "c. 224 CE",
@@ -1655,12 +1957,22 @@
         ]
       }
     },
-    { "id": "pallava", "name": "Pallava dynasty", "color": "#4a8a7a", "parent": "south-asia", "span": { "start": "275 CE", "end": "897 CE" } },
+    {
+      "id": "pallava",
+      "name": "Pallava dynasty",
+      "color": "#4a8a7a",
+      "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
+      "ids": { "wikidata": "Q466803" },
+      "span": { "start": "275 CE", "end": "897 CE" }
+    },
     {
       "id": "tamilakam",
       "name": "Tamilakam: the Sangam period",
       "color": "#5a9a6a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Sangam_literature",
+      "ids": { "wikidata": "Q3219940" },
       "span": {
         "start": "c. 300 BCE",
         "end": "c. 300 CE",
@@ -1679,6 +1991,8 @@
       "name": "Anuradhapura kingdom",
       "color": "#8a6a9a",
       "parent": "south-asia",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "ids": { "wikidata": "Q1965597" },
       "span": {
         "start": "437 BCE",
         "end": "1017 CE",
@@ -1689,13 +2003,30 @@
       }
     },
     { "id": "east-asia", "name": "East & Southeast Asia", "color": "#6a4a9a" },
-    { "id": "se-asia", "name": "Southeast Asia", "color": "#6a4a9a", "parent": "east-asia" },
-    { "id": "pyu", "name": "Pyu city-states", "color": "#8a6a3a", "parent": "se-asia", "span": { "start": "c. 200 BCE", "end": "c. 1050 CE" } },
+    {
+      "id": "se-asia",
+      "name": "Southeast Asia",
+      "color": "#6a4a9a",
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia",
+      "ids": { "wikidata": "Q11708" }
+    },
+    {
+      "id": "pyu",
+      "name": "Pyu city-states",
+      "color": "#8a6a3a",
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Pyu_city-states",
+      "ids": { "wikidata": "Q1627675" },
+      "span": { "start": "c. 200 BCE", "end": "c. 1050 CE" }
+    },
     {
       "id": "funan",
       "name": "Funan",
       "color": "#4a7a6a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Funan",
+      "ids": { "wikidata": "Q867782" },
       "span": {
         "start": "50 CE",
         "end": "627 CE",
@@ -1705,13 +2036,31 @@
         ]
       }
     },
-    { "id": "chenla", "name": "Chenla", "color": "#3a6a5a", "parent": "se-asia", "span": { "start": "550 CE", "end": "802 CE" } },
-    { "id": "champa", "name": "Champa (Lâm Ấp)", "color": "#9a5a4a", "parent": "se-asia", "span": { "start": "192 CE", "end": "1832 CE" } },
+    {
+      "id": "chenla",
+      "name": "Chenla",
+      "color": "#3a6a5a",
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Chenla",
+      "ids": { "wikidata": "Q1057118" },
+      "span": { "start": "550 CE", "end": "802 CE" }
+    },
+    {
+      "id": "champa",
+      "name": "Champa (Lâm Ấp)",
+      "color": "#9a5a4a",
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Champa",
+      "ids": { "wikidata": "Q216786" },
+      "span": { "start": "192 CE", "end": "1832 CE" }
+    },
     {
       "id": "sa-huynh",
       "name": "Sa Huỳnh culture",
       "color": "#7a6a4a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+      "ids": { "wikidata": "Q2000186" },
       "span": {
         "start": "c. 1000 BCE",
         "end": "c. 200 CE",
@@ -1723,6 +2072,8 @@
       "name": "Đông Sơn culture",
       "color": "#6a6a3a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/%C4%90%C3%B4ng_S%C6%A1n_culture",
+      "ids": { "wikidata": "Q996912" },
       "span": {
         "start": "c. 1000 BCE",
         "end": "c. 50 CE",
@@ -1737,6 +2088,8 @@
       "name": "Âu Lạc",
       "color": "#7a5a3a",
       "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/%C3%82u_L%E1%BA%A1c",
+      "ids": { "wikidata": "Q867227" },
       "span": {
         "start": "c. 257 BCE",
         "end": "179 BCE",
@@ -1750,15 +2103,47 @@
         ]
       }
     },
-    { "id": "nanyue", "name": "Nanyue", "color": "#8a4a3a", "parent": "se-asia", "span": { "start": "204 BCE", "end": "111 BCE" } },
-    { "id": "jiaozhi", "name": "Northern Vietnam under Chinese rule", "color": "#6a4a4a", "parent": "se-asia" },
-    { "id": "early-ly", "name": "Early Lý (Vạn Xuân)", "color": "#9a6a3a", "parent": "se-asia", "span": { "start": "544 CE", "end": "602 CE" } },
-    { "id": "tibet", "name": "Tibet", "color": "#6a4a9a", "parent": "east-asia" },
+    {
+      "id": "nanyue",
+      "name": "Nanyue",
+      "color": "#8a4a3a",
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Nanyue",
+      "ids": { "wikidata": "Q827040" },
+      "span": { "start": "204 BCE", "end": "111 BCE" }
+    },
+    {
+      "id": "jiaozhi",
+      "name": "Northern Vietnam under Chinese rule",
+      "color": "#6a4a4a",
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_under_Chinese_rule",
+      "ids": { "wikidata": "Q403827" }
+    },
+    {
+      "id": "early-ly",
+      "name": "Early Lý (Vạn Xuân)",
+      "color": "#9a6a3a",
+      "parent": "se-asia",
+      "url": "https://en.wikipedia.org/wiki/Early_L%C3%BD_dynasty",
+      "ids": { "wikidata": "Q2441129" },
+      "span": { "start": "544 CE", "end": "602 CE" }
+    },
+    {
+      "id": "tibet",
+      "name": "Tibet",
+      "color": "#6a4a9a",
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/Tibet",
+      "ids": { "wikidata": "Q17252" }
+    },
     {
       "id": "zhangzhung",
       "name": "Zhangzhung",
       "color": "#6a5a7a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Zhangzhung",
+      "ids": { "wikidata": "Q1358851" },
       "span": {
         "start": "c. 500 BCE",
         "end": "645 CE",
@@ -1773,6 +2158,8 @@
       "name": "Yarlung kings and the Tibetan Empire",
       "color": "#8a3a4a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+      "ids": { "wikidata": "Q2431480" },
       "span": {
         "start": "c. 127 BCE",
         "end": "842 CE",
@@ -1795,6 +2182,8 @@
       "name": "Tuyuhun (Qinghai)",
       "color": "#5a6a5a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+      "ids": { "wikidata": "Q1196201" },
       "span": {
         "start": "284 CE",
         "end": "670 CE",
@@ -1804,12 +2193,21 @@
         ]
       }
     },
-    { "id": "china", "name": "China", "color": "#6a4a9a", "parent": "east-asia" },
+    {
+      "id": "china",
+      "name": "China",
+      "color": "#6a4a9a",
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/China",
+      "ids": { "wikidata": "Q148" }
+    },
     {
       "id": "qin",
       "name": "Qin dynasty",
       "color": "#5a5a6a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Qin_dynasty",
+      "ids": { "wikidata": "Q7183" },
       "span": {
         "start": "221 BCE",
         "end": "206 BCE",
@@ -1824,6 +2222,8 @@
       "name": "Han dynasty",
       "color": "#a83a2a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Han_dynasty",
+      "ids": { "wikidata": "Q7209" },
       "span": { "start": "202 BCE", "end": "220 CE" },
       "phases": [
         {
@@ -1864,6 +2264,8 @@
       "name": "Three Kingdoms (Wei, Shu, Wu)",
       "color": "#8a5a3a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Three_Kingdoms",
+      "ids": { "wikidata": "Q185043" },
       "span": { "start": "220 CE", "end": "280 CE" }
     },
     {
@@ -1871,6 +2273,8 @@
       "name": "Jin dynasty (Western, then Eastern)",
       "color": "#6a7a4a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+      "ids": { "wikidata": "Q7352" },
       "span": { "start": "266 CE", "end": "420 CE" },
       "phases": [
         {
@@ -1894,6 +2298,8 @@
       "name": "Southern dynasties",
       "color": "#6a5a8a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
+      "ids": { "wikidata": "Q49696" },
       "span": { "start": "420 CE", "end": "589 CE" },
       "phases": [
         { "name": "Liu Song", "start": "420 CE", "end": "479 CE" },
@@ -1907,6 +2313,8 @@
       "name": "Sixteen Kingdoms (the north)",
       "color": "#7a6a5a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Sixteen_Kingdoms",
+      "ids": { "wikidata": "Q683551" },
       "span": { "start": "304 CE", "end": "439 CE" }
     },
     {
@@ -1914,6 +2322,8 @@
       "name": "Northern dynasties",
       "color": "#4a6a8a",
       "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
+      "ids": { "wikidata": "Q49696" },
       "span": { "start": "386 CE", "end": "581 CE" },
       "phases": [
         { "name": "Northern Wei", "start": "386 CE", "end": "535 CE" },
@@ -1931,25 +2341,76 @@
         { "name": "Northern Zhou", "start": "557 CE", "end": "581 CE" }
       ]
     },
-    { "id": "sui", "name": "Sui dynasty", "color": "#4a7a7a", "parent": "china", "span": { "start": "581 CE", "end": "618 CE" } },
-    { "id": "tang", "name": "Tang dynasty", "color": "#b0702a", "parent": "china", "span": { "start": "618 CE", "end": "907 CE" } },
+    {
+      "id": "sui",
+      "name": "Sui dynasty",
+      "color": "#4a7a7a",
+      "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Sui_dynasty",
+      "ids": { "wikidata": "Q7405" },
+      "span": { "start": "581 CE", "end": "618 CE" }
+    },
+    {
+      "id": "tang",
+      "name": "Tang dynasty",
+      "color": "#b0702a",
+      "parent": "china",
+      "url": "https://en.wikipedia.org/wiki/Tang_dynasty",
+      "ids": { "wikidata": "Q9683" },
+      "span": { "start": "618 CE", "end": "907 CE" }
+    },
     { "id": "korea-japan", "name": "Korea and Japan", "color": "#6a4a9a", "parent": "east-asia" },
-    { "id": "gojoseon", "name": "Gojoseon (Old Chosŏn)", "color": "#6a5a8a", "parent": "korea-japan" },
+    {
+      "id": "gojoseon",
+      "name": "Gojoseon (Old Chosŏn)",
+      "color": "#6a5a8a",
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Old_Chos%C5%8Fn",
+      "ids": { "wikidata": "Q28405" }
+    },
     {
       "id": "han-commanderies",
       "name": "Han commanderies (Lelang)",
       "color": "#a0503a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Four_Commanderies_of_Han",
+      "ids": { "wikidata": "Q706841" },
       "span": { "start": "108 BCE", "end": "313 CE" }
     },
-    { "id": "goguryeo", "name": "Goguryeo", "color": "#7a4a5a", "parent": "korea-japan", "span": { "start": "c. 37 BCE", "end": "668 CE" } },
-    { "id": "baekje", "name": "Baekje (Paekche)", "color": "#5a7a5a", "parent": "korea-japan", "span": { "start": "18 BCE", "end": "660 CE" } },
-    { "id": "silla", "name": "Silla", "color": "#9a7a3a", "parent": "korea-japan", "span": { "start": "57 BCE", "end": "935 CE" } },
+    {
+      "id": "goguryeo",
+      "name": "Goguryeo",
+      "color": "#7a4a5a",
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Goguryeo",
+      "ids": { "wikidata": "Q28370" },
+      "span": { "start": "c. 37 BCE", "end": "668 CE" }
+    },
+    {
+      "id": "baekje",
+      "name": "Baekje (Paekche)",
+      "color": "#5a7a5a",
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Paekche",
+      "ids": { "wikidata": "Q28428" },
+      "span": { "start": "18 BCE", "end": "660 CE" }
+    },
+    {
+      "id": "silla",
+      "name": "Silla",
+      "color": "#9a7a3a",
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Silla",
+      "ids": { "wikidata": "Q28456" },
+      "span": { "start": "57 BCE", "end": "935 CE" }
+    },
     {
       "id": "yayoi",
       "name": "Yayoi period (Japan)",
       "color": "#7a8a6a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Yayoi_period",
+      "ids": { "wikidata": "Q207858" },
       "span": {
         "start": "c. 300 BCE",
         "end": "c. 300 CE",
@@ -1964,6 +2425,8 @@
       "name": "Kofun period (Japan)",
       "color": "#6a6a4a",
       "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Kofun_period",
+      "ids": { "wikidata": "Q459939" },
       "span": {
         "start": "c. 300 CE",
         "end": "538 CE",
@@ -1973,14 +2436,31 @@
         ]
       }
     },
-    { "id": "asuka", "name": "Asuka period (Japan)", "color": "#8a6a7a", "parent": "korea-japan", "span": { "start": "538 CE", "end": "710 CE" } },
+    {
+      "id": "asuka",
+      "name": "Asuka period (Japan)",
+      "color": "#8a6a7a",
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Asuka_period",
+      "ids": { "wikidata": "Q210688" },
+      "span": { "start": "538 CE", "end": "710 CE" }
+    },
     { "id": "austronesia", "name": "Island Southeast Asia & Oceania", "color": "#2a8a8a" },
-    { "id": "island-sea", "name": "Island Southeast Asia", "color": "#2a8a8a", "parent": "austronesia" },
+    {
+      "id": "island-sea",
+      "name": "Island Southeast Asia",
+      "color": "#2a8a8a",
+      "parent": "austronesia",
+      "url": "https://en.wikipedia.org/wiki/Maritime_Southeast_Asia",
+      "ids": { "wikidata": "Q2919361" }
+    },
     {
       "id": "bujang-valley",
       "name": "Bujang Valley (Kedah)",
       "color": "#8a5a3a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Bujang_Valley",
+      "ids": { "wikidata": "Q3181128" },
       "span": {
         "start": "110 CE",
         "end": "c. 1350 CE",
@@ -1996,6 +2476,8 @@
       "name": "Buni culture (West Java)",
       "color": "#6a7a4a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Buni_culture",
+      "ids": { "wikidata": "Q825018" },
       "span": {
         "start": "c. 400 BCE",
         "end": "c. 100 CE",
@@ -2010,6 +2492,8 @@
       "name": "Tarumanagara",
       "color": "#9a6a2a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Tarumanagara",
+      "ids": { "wikidata": "Q2247225" },
       "span": {
         "start": "c. 358 CE",
         "end": "669 CE",
@@ -2021,6 +2505,8 @@
       "name": "Kalingga (Central Java)",
       "color": "#7a4a5a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Kalingga_kingdom",
+      "ids": { "wikidata": "Q11237141" },
       "span": {
         "start": "c. 550 CE",
         "end": "c. 650 CE",
@@ -2033,6 +2519,8 @@
       "name": "Kutai (East Borneo)",
       "color": "#5a5a8a",
       "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Kutai",
+      "ids": { "wikidata": "Q1794655" },
       "span": {
         "start": "399 CE",
         "end": "1635 CE",
@@ -2056,11 +2544,46 @@
         ]
       }
     },
-    { "id": "taiwan-iron-age", "name": "Iron Age Taiwan", "color": "#4a6a7a", "parent": "island-sea" },
-    { "id": "oceania", "name": "Oceania", "color": "#2a8a8a", "parent": "austronesia" },
-    { "id": "australia", "name": "Aboriginal Australia", "color": "#9a5a3a", "parent": "oceania" },
-    { "id": "torres-strait", "name": "Torres Strait", "color": "#6a6a4a", "parent": "oceania" },
-    { "id": "fiji", "name": "Fiji", "color": "#3a6a8a", "parent": "oceania" },
+    {
+      "id": "taiwan-iron-age",
+      "name": "Iron Age Taiwan",
+      "color": "#4a6a7a",
+      "parent": "island-sea",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "ids": { "wikidata": "Q709357" }
+    },
+    {
+      "id": "oceania",
+      "name": "Oceania",
+      "color": "#2a8a8a",
+      "parent": "austronesia",
+      "url": "https://en.wikipedia.org/wiki/Oceania",
+      "ids": { "wikidata": "Q55643" }
+    },
+    {
+      "id": "australia",
+      "name": "Aboriginal Australia",
+      "color": "#9a5a3a",
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Aboriginal_Australians",
+      "ids": { "wikidata": "Q12060728" }
+    },
+    {
+      "id": "torres-strait",
+      "name": "Torres Strait",
+      "color": "#6a6a4a",
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Torres_Strait",
+      "ids": { "wikidata": "Q179188" }
+    },
+    {
+      "id": "fiji",
+      "name": "Fiji",
+      "color": "#3a6a8a",
+      "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/History_of_Fiji",
+      "ids": { "wikidata": "Q2177430" }
+    },
     { "id": "tonga-samoa", "name": "Tonga and Samoa", "color": "#2a7a9a", "parent": "oceania" },
     { "id": "east-polynesia", "name": "East Polynesia", "color": "#4a8aaa", "parent": "oceania" },
     {
@@ -2068,19 +2591,30 @@
       "name": "Pohnpei (Micronesia)",
       "color": "#5a7a6a",
       "parent": "oceania",
+      "url": "https://en.wikipedia.org/wiki/Nan_Madol",
+      "ids": { "wikidata": "Q846967" },
       "span": {
         "start": "c. 1 CE",
         "end": "c. 1628 CE",
         "startDates": [{ "year": "1 CE", "margin": 50, "source": { "sourceKey": "wp-nan-madol", "sourceLocation": "Archaeology ('probably around AD 1')" } }]
       }
     },
-    { "id": "americas", "name": "Americas", "color": "#2f7a5a" },
-    { "id": "arctic", "name": "North American Arctic", "color": "#2f7a5a", "parent": "americas" },
+    { "id": "americas", "name": "Americas", "color": "#2f7a5a", "url": "https://en.wikipedia.org/wiki/Americas", "ids": { "wikidata": "Q828" } },
+    {
+      "id": "arctic",
+      "name": "North American Arctic",
+      "color": "#2f7a5a",
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/North_American_Arctic",
+      "ids": { "wikidata": "Q2944678" }
+    },
     {
       "id": "dorset",
       "name": "Dorset culture",
       "color": "#6a8aa0",
       "parent": "arctic",
+      "url": "https://en.wikipedia.org/wiki/Dorset_culture",
+      "ids": { "wikidata": "Q603749" },
       "span": {
         "start": "500 BCE",
         "end": "1500 CE",
@@ -2090,16 +2624,56 @@
         ]
       }
     },
-    { "id": "north-america", "name": "North America", "color": "#2f7a5a", "parent": "americas" },
-    { "id": "adena", "name": "Adena culture", "color": "#7a6a4a", "parent": "north-america", "span": { "start": "c. 500 BCE", "end": "c. 100 CE" } },
-    { "id": "hopewell", "name": "Hopewell tradition", "color": "#5a7a4a", "parent": "north-america", "span": { "start": "100 BCE", "end": "500 CE" } },
-    { "id": "hohokam", "name": "Hohokam", "color": "#b07a4a", "parent": "north-america", "span": { "start": "300 CE", "end": "1500 CE" } },
-    { "id": "mesoamerica", "name": "Mesoamerica", "color": "#2f7a5a", "parent": "americas" },
+    {
+      "id": "north-america",
+      "name": "North America",
+      "color": "#2f7a5a",
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/North_America",
+      "ids": { "wikidata": "Q49" }
+    },
+    {
+      "id": "adena",
+      "name": "Adena culture",
+      "color": "#7a6a4a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Adena_culture",
+      "ids": { "wikidata": "Q355841" },
+      "span": { "start": "c. 500 BCE", "end": "c. 100 CE" }
+    },
+    {
+      "id": "hopewell",
+      "name": "Hopewell tradition",
+      "color": "#5a7a4a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Hopewell_tradition",
+      "ids": { "wikidata": "Q1305793" },
+      "span": { "start": "100 BCE", "end": "500 CE" }
+    },
+    {
+      "id": "hohokam",
+      "name": "Hohokam",
+      "color": "#b07a4a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Hohokam",
+      "ids": { "wikidata": "Q1255768" },
+      "span": { "start": "300 CE", "end": "1500 CE" }
+    },
+    {
+      "id": "mesoamerica",
+      "name": "Mesoamerica",
+      "color": "#2f7a5a",
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerica",
+      "ids": { "wikidata": "Q13703" }
+    },
     {
       "id": "teotihuacan",
       "name": "Teotihuacan",
       "color": "#9a4a3a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Teotihuacan",
+      "ids": { "wikidata": "Q172613" },
       "span": {
         "start": "c. 100 BCE",
         "end": "750 CE",
@@ -2114,6 +2688,8 @@
       "name": "Cuicuilco",
       "color": "#7a5a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Cuicuilco",
+      "ids": { "wikidata": "Q1143307" },
       "span": {
         "start": "c. 1000 BCE",
         "end": "c. 280 CE",
@@ -2133,6 +2709,8 @@
       "name": "Epi-Olmec (Tres Zapotes)",
       "color": "#5a6a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Epi-Olmec_culture",
+      "ids": { "wikidata": "Q2527515" },
       "span": { "start": "c. 300 BCE", "end": "c. 250 CE" }
     },
     {
@@ -2140,6 +2718,8 @@
       "name": "Monte Albán (Zapotec)",
       "color": "#8a6a3a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
+      "ids": { "wikidata": "Q464899" },
       "span": {
         "start": "c. 500 BCE",
         "end": "c. 950 CE",
@@ -2154,6 +2734,8 @@
       "name": "El Mirador",
       "color": "#4a7a5a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/El_Mirador",
+      "ids": { "wikidata": "Q504904" },
       "span": {
         "start": "c. 550 BCE",
         "end": "c. 150 CE",
@@ -2169,6 +2751,8 @@
       "name": "Tikal",
       "color": "#3a6a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tikal",
+      "ids": { "wikidata": "Q181172" },
       "span": {
         "start": "c. 350 BCE",
         "end": "c. 900 CE",
@@ -2180,6 +2764,8 @@
       "name": "Calakmul (Kaan)",
       "color": "#6a3a4a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Calakmul",
+      "ids": { "wikidata": "Q272771" },
       "span": {
         "start": "c. 325 BCE",
         "end": "c. 950 CE",
@@ -2192,6 +2778,8 @@
       "name": "Copán",
       "color": "#4a5a7a",
       "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Cop%C3%A1n",
+      "ids": { "wikidata": "Q214827" },
       "span": {
         "start": "426 CE",
         "end": "c. 917 CE",
@@ -2201,24 +2789,75 @@
         ]
       }
     },
-    { "id": "palenque", "name": "Palenque", "color": "#7a4a6a", "parent": "mesoamerica", "span": { "start": "c. 226 BCE", "end": "c. 799 CE" } },
-    { "id": "south-america", "name": "South America", "color": "#2f7a5a", "parent": "americas" },
-    { "id": "moche", "name": "Moche", "color": "#9a5a3a", "parent": "south-america", "span": { "start": "100 CE", "end": "800 CE" } },
-    { "id": "recuay", "name": "Recuay", "color": "#7a6a5a", "parent": "south-america", "span": { "start": "200 BCE", "end": "600 CE" } },
-    { "id": "chavin", "name": "Chavín", "color": "#5a5a3a", "parent": "south-america", "span": { "start": "c. 900 BCE", "end": "c. 250 BCE" } },
+    {
+      "id": "palenque",
+      "name": "Palenque",
+      "color": "#7a4a6a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Palenque",
+      "ids": { "wikidata": "Q181427" },
+      "span": { "start": "c. 226 BCE", "end": "c. 799 CE" }
+    },
+    {
+      "id": "south-america",
+      "name": "South America",
+      "color": "#2f7a5a",
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/South_America",
+      "ids": { "wikidata": "Q18" }
+    },
+    {
+      "id": "moche",
+      "name": "Moche",
+      "color": "#9a5a3a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Moche_culture",
+      "ids": { "wikidata": "Q208188" },
+      "span": { "start": "100 CE", "end": "800 CE" }
+    },
+    {
+      "id": "recuay",
+      "name": "Recuay",
+      "color": "#7a6a5a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Recuay_culture",
+      "ids": { "wikidata": "Q2658710" },
+      "span": { "start": "200 BCE", "end": "600 CE" }
+    },
+    {
+      "id": "chavin",
+      "name": "Chavín",
+      "color": "#5a5a3a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_culture",
+      "ids": { "wikidata": "Q13341477" },
+      "span": { "start": "c. 900 BCE", "end": "c. 250 BCE" }
+    },
     {
       "id": "lima-culture",
       "name": "Lima culture",
       "color": "#8a7a5a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Lima_culture",
+      "ids": { "wikidata": "Q2460861" },
       "span": { "start": "c. 100 CE", "end": "c. 650 CE" }
     },
-    { "id": "paracas", "name": "Paracas", "color": "#a0603a", "parent": "south-america", "span": { "start": "c. 800 BCE", "end": "c. 100 BCE" } },
+    {
+      "id": "paracas",
+      "name": "Paracas",
+      "color": "#a0603a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Paracas_culture",
+      "ids": { "wikidata": "Q1127723" },
+      "span": { "start": "c. 800 BCE", "end": "c. 100 BCE" }
+    },
     {
       "id": "nazca",
       "name": "Nazca",
       "color": "#b0703a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
+      "ids": { "wikidata": "Q210570" },
       "span": {
         "start": "c. 100 BCE",
         "end": "c. 800 CE",
@@ -2237,6 +2876,8 @@
       "name": "Wari",
       "color": "#6a4a3a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Wari_culture",
+      "ids": { "wikidata": "Q605340" },
       "span": {
         "start": "c. 450 CE",
         "end": "c. 1000 CE",
@@ -2255,6 +2896,8 @@
       "name": "Tiwanaku",
       "color": "#4a6a8a",
       "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Tiwanaku",
+      "ids": { "wikidata": "Q61750" },
       "span": {
         "start": "c. 110 CE",
         "end": "c. 1050 CE",
@@ -2271,7 +2914,14 @@
         ]
       }
     },
-    { "id": "caribbean", "name": "Caribbean", "color": "#2f7a5a", "parent": "americas" }
+    {
+      "id": "caribbean",
+      "name": "Caribbean",
+      "color": "#2f7a5a",
+      "parent": "americas",
+      "url": "https://en.wikipedia.org/wiki/Caribbean",
+      "ids": { "wikidata": "Q664609" }
+    }
   ],
   "events": [
     {

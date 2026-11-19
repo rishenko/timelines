@@ -47,7 +47,15 @@ export function validateDataset(d: unknown): string[] {
     if (typeof u !== 'string' || !isSafeUrl(u)) errors.push(`${label} must be an http(s) link or a relative path.`);
   };
   checkUrl('meta.creditsImage', m.creditsImage);
-  for (const t of ds.tracks) checkUrl(`Track "${t.id}" image`, t.image);
+  for (const t of ds.tracks) {
+    checkUrl(`Track "${t.id}" image`, t.image);
+    checkUrl(`Track "${t.id}" url`, t.url);
+    if (t.ids !== undefined) {
+      if (!t.ids || typeof t.ids !== 'object' || Array.isArray(t.ids)) errors.push(`Track "${t.id}" ids must be an object.`);
+      else if (t.ids.wikidata !== undefined && !/^Q[1-9]\d*$/.test(String(t.ids.wikidata)))
+        errors.push(`Track "${t.id}" ids.wikidata must be a Wikidata item id such as "Q11768".`);
+    }
+  }
   for (const [k, s] of Object.entries(ds.sources)) checkUrl(`Source "${k}" url`, s.url);
 
   const chronologies = ds.chronologies ?? {};

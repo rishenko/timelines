@@ -86,7 +86,13 @@ if (pinch) {
   }
 }
 
-const label = (name: string) => page.locator('.tl-lane-label').filter({ has: page.getByText(name, { exact: true }) }).first();
+// a row's label by its name; a name that links to the row's page also holds hidden " (opens in a new tab)" text
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const label = (name: string) =>
+  page
+    .locator('.tl-lane-label')
+    .filter({ has: page.locator('.name', { hasText: new RegExp(`^${escapeRe(name)}( \\(opens in a new tab\\))?$`) }) })
+    .first();
 for (const name of opt('--expand')?.split('|') ?? []) {
   const l = label(name);
   await l.scrollIntoViewIfNeeded();

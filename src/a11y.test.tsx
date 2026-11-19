@@ -161,6 +161,19 @@ describe('accessibility', () => {
       expect(document.activeElement?.getAttribute('data-stop')).toBeTruthy();
     });
 
+    it("reaches a row's linked name with the arrow keys, and the link says it opens a new tab", async () => {
+      const { container } = open('classical');
+      const lane = [...container.querySelectorAll('.tl-lane')].find((l) => l.querySelector('.tl-lane-label a.name') && l.querySelector('.tl-mark'))!;
+      const link = lane.querySelector<HTMLAnchorElement>('.tl-lane-label a.name')!;
+      expect(link.getAttribute('target')).toBe('_blank');
+      expect(link.textContent).toMatch(/\(opens in a new tab\)$/);
+      lane.querySelector<HTMLElement>('.tl-mark')!.focus();
+      await press('Home');
+      for (let i = 0; i < 4 && document.activeElement !== link; i++) await press('ArrowLeft');
+      expect(document.activeElement).toBe(link);
+      expect(link.tabIndex).toBe(0);
+    });
+
     it('zooms with + and opens the key list with ?', async () => {
       const { container } = open('classical');
       container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!.focus();
