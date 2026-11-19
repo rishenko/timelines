@@ -6,7 +6,8 @@
 //        [--browser chrome|msedge]
 // Defaults: widths 320 and 640. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1 if anything
 // is reported.
-import { chromium, type Page } from 'playwright-core';
+import { chromium } from 'playwright-core';
+import { openState, uiStates } from './lib/ui-states.ts';
 
 const args = process.argv.slice(2);
 const all = (flag: string) => args.flatMap((a, i) => (a === flag ? [args[i + 1]] : []));
@@ -16,66 +17,15 @@ const timeline = one('--timeline', 'ancient-near-east');
 const widths = all('--width').length ? all('--width').map(Number) : [320, 640];
 const details = args.includes('--details');
 
-/** Each state to check: a name, and what to do after the page opens. */
-const STATES: [string, (p: Page) => Promise<unknown>][] = [
-  ['timeline', async () => {}],
-  ['Dating', (p) => clickText(p, 'Dating')],
-  ['Filters', (p) => clickText(p, 'Filters')],
-  ['Legend', (p) => clickText(p, 'Legend')],
-  ['Customize: Appearance', (p) => clickText(p, 'Customize')],
-  ['Customize: Edit', async (p) => (await clickText(p, 'Customize'), clickRole(p, 'tab', 'Edit'))],
-  ['Customize: Timelines', async (p) => (await clickText(p, 'Customize'), clickRole(p, 'tab', 'Timelines'))],
-  ['search results', async (p) => (await p.locator('input[type=search], .search input').first().fill('egypt'), p.waitForTimeout(300))],
-  ['event details', (p) => click(p, '.tl-mark:not(.cluster)')],
-  ['table view', (p) => p.goto(url('&view=table'))],
-  ['edit mode', (p) => editMode(p)],
-  ['event editor', async (p) => (await editMode(p), clickText(p, '+ Event'))],
-  ['track editor', async (p) => (await editMode(p), clickText(p, '+ Track'))],
-  ['source editor', async (p) => (await editMode(p), clickText(p, '+ Source'))],
-  ['tour', async (p) => (await p.evaluate(() => localStorage.clear()), p.reload(), p.waitForTimeout(1200))],
-];
-
-const url = (extra = '') => `${base}${base.includes('?') ? '&' : '?'}timeline=${timeline}${extra}`;
-async function click(p: Page, css: string) {
-  await p.locator(css).first().click({ timeout: 3000 });
-  await p.waitForTimeout(300);
-}
-async function clickText(p: Page, text: string) {
-  await p.locator('button', { hasText: new RegExp(`^\\s*${text.replace(/[+]/g, '\\+')}`) }).first().click({ timeout: 3000 });
-  await p.waitForTimeout(300);
-}
-async function clickRole(p: Page, role: 'tab', name: string) {
-  await p.getByRole(role, { name }).click({ timeout: 3000 });
-  await p.waitForTimeout(300);
-}
-async function editMode(p: Page) {
-  await clickText(p, 'Customize');
-  await clickRole(p, 'tab', 'Edit');
-  await p.getByRole('button', { name: 'Turn on edit mode' }).click({ timeout: 3000 });
-  await p.waitForTimeout(300);
-}
-
 const browser = await chromium.launch({
   channel: one('--browser', process.platform === 'win32' ? 'msedge' : 'chrome'),
 });
 let problems = 0;
 for (const width of widths) {
-  for (const [name, act] of STATES) {
-    const page = await browser.newPage({ viewport: { width, height: Math.round(Math.max(600, width * 1.6)) } });
-    await page.addInitScript(() => {
-      if (!sessionStorage.getItem('reflow-tour')) localStorage.setItem('timelines:legend-seen', '1');
-    });
-    await page.goto(url());
-    await page.waitForTimeout(1200);
-    await page.locator('.tour-card .tour-actions .linklike').first().click({ timeout: 500 }).catch(() => {});
-    if (name === 'tour') await page.evaluate(() => sessionStorage.setItem('reflow-tour', '1'));
-    try {
-      await act(page);
-    } catch (e) {
-      console.log(`?     ${width}px ${name}: couldn't open (${(e as Error).message.split('\n')[0]})`);
-      await page.close();
-      continue;
-    }
+  for (const state of uiStates(base, timeline)) {
+    const name = state[0];
+    const page = await openState(browser, base, timeline, width, state);
+    if (!page) continue;
     const found = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
       const exempt = (el: Element) => !!el.closest('.tl-scroller, table, .tl-lanes');

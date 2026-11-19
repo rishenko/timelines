@@ -24,7 +24,8 @@
     "shot": "node scripts/screenshot.ts",
     "check:live": "node scripts/check-live.ts",
     "contrast": "node scripts/contrast.ts",
-    "reflow": "node scripts/reflow.ts"
+    "reflow": "node scripts/reflow.ts",
+    "targets": "node scripts/targets.ts"
   },
   "dependencies": {
     "react": "^19.3.1",

@@ -157,6 +157,10 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          check above: the marks still fade to 28%, the labels stay at 4.5:1.
     e. **Touch and pointer (S):** targets at least 24 px (WCAG 2.2), including the small event diamonds, and a button
        alternative wherever an action needs a gesture (long-press to add, pinch to zoom).
+       Done 18 November 2026. The row fold buttons, the edit-mode row buttons (✎ ↑ ↓ +), the editor's row checklist and
+       its Id/Key disclosures now have 24 px hit areas; event marks already passed by spacing. Every gesture has an
+       alternative: pinch zoom has the zoom buttons and +/−, long press (and double-click) to add has "+ Event", and
+       panning is ordinary scrolling. `npm run targets` checks 15 views at a phone and a laptop width.
     f. **Edit mode (S):** error messages tied to their fields (`aria-describedby`), and the claim lists announced as
        lists.
     g. **Testing:** a keyboard-only pass; NVDA with Firefox and Chrome on Windows; Windows high contrast; 200% zoom.

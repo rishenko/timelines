@@ -714,11 +714,17 @@ main {
   white-space: nowrap;
   font-weight: 600;
 }
+/* Small controls get a hit area of at least 24 × 24 px (WCAG 2.5.8); the glyph inside stays the same size */
 .tl-lane-label .collapse {
   background: none;
   border: none;
   color: var(--muted);
   padding: 0 4px;
+  min-width: 24px;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Groups: a top-level row with sub-rows heads a group. The head row is tinted in the group's colour with a
@@ -1069,6 +1075,8 @@ main {
 .editor .track-checks label.check {
   white-space: normal;
   align-items: flex-start;
+  min-height: 24px;
+  padding-top: 3px;
 }
 .editor .track-checks label.check input {
   flex: none;
@@ -1087,6 +1095,9 @@ main {
   cursor: pointer;
   color: var(--muted);
   font-size: 12px;
+  /* 24 px tall to tap (WCAG 2.5.8), keeping its disclosure triangle */
+  line-height: 16px;
+  padding: 4px 0;
 }
 .editor details input {
   width: 100%;
@@ -1116,6 +1127,8 @@ main {
 }
 .lane-edit .icon.small {
   padding: 0 3px;
+  min-width: 24px;
+  min-height: 24px;
 }
 .tl-add-lane {
   position: relative;
