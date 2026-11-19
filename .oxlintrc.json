@@ -7,5 +7,11 @@
     "jsx-a11y/prefer-tag-over-role": "off",
     "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
     "jsx-a11y/no-autofocus": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/test/**"],
+      "rules": { "react/only-export-components": "off" }
+    }
+  ]
 }

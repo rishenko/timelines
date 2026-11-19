@@ -18,7 +18,7 @@ const FILE = 'data-src/classical.json';
 if (!existsSync(FILE)) writeFileSync(FILE, JSON.stringify({ schemaVersion: 3, meta: {}, tags: {}, sources: {}, tracks: [], events: [] }, null, 2) + '\n');
 
 const ancientSrc = JSON.parse(readFileSync('data-src/ancient-near-east.json', 'utf8'));
-const ancient = JSON.parse(readFileSync('src/timelines/ancient-near-east.json', 'utf8')); // stored years
+const ancient = JSON.parse(readFileSync('public/timelines/ancient-near-east.json', 'utf8')); // stored years
 const ed = open(FILE, '2026-11-18');
 const d = ed.data;
 

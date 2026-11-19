@@ -30,7 +30,9 @@ import { tourSteps } from './lib/tour.ts';
 import { newEvent } from './lib/newEvent.ts';
 import { datasetPresent } from './lib/years.ts';
 import { formatYear } from './lib/calendar.ts';
-import { allTimelines } from './timelines/index.ts';
+import type { TimelineIndexEntry } from './data/timelineIndex.ts';
+import type { LibraryEntry } from './state/library.ts';
+import type { Dataset } from './types.ts';
 
 /**
  * The app shell: owns the open timeline's state (data and draft, chronology choices, zoom, folded rows, selection,
@@ -38,9 +40,18 @@ import { allTimelines } from './timelines/index.ts';
  * state/ (url, toast, panels, chronologies, focus requests, library and search actions, zoom, collapse) and
  * components/ (Toolbar, EditBar, SidePanel, Credits and the panels).
  */
-export default function App() {
-  const [initialUrl] = useState(readUrl);
-  const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch, unsaved] = useDataset(initialUrl.published);
+interface Props {
+  /** The opened timeline as published (loaded by Boot); the reader's saved edits go on top of it. */
+  published: Dataset;
+  /** Its library entry, when it is one of the reader's own timelines. */
+  library?: LibraryEntry;
+  /** The site's timelines (timelines/index.json). */
+  site: TimelineIndexEntry[];
+}
+
+export default function App({ published: opened, library: libraryEntry, site }: Props) {
+  const [initialUrl] = useState(() => readUrl(opened));
+  const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch, unsaved] = useDataset(opened);
   const meta = data.meta;
   const cal = meta.calendar;
   const present = datasetPresent(data);
@@ -51,7 +62,7 @@ export default function App() {
   const [toast, notify] = useToast(
     unreadableDraft
       ? "Your saved edits to this timeline couldn't be opened. They are kept in this browser's storage as " +
-          `"${unreadableDraftKey(initialUrl.published.meta.id)}".`
+          `"${unreadableDraftKey(opened.meta.id)}".`
       : updatedUnderDraft
         ? 'The published timeline has been updated. Your local edits are kept on top of the new version.'
         : null,
@@ -133,26 +144,27 @@ export default function App() {
     [keyOnly, visibleEvents, selectedId],
   );
 
-  const library = useLibraryActions({ published, library: initialUrl.library, dispatch, notify });
+  const library = useLibraryActions({ published, library: libraryEntry, site, dispatch, notify });
 
   // Links to neighbouring timelines (meta.continues), for the ends of the ruler; unknown timelines are skipped.
   const edgeLinks = useMemo(
     () =>
       (meta.continues ?? []).flatMap((c) => {
-        const target = allTimelines().find((t) => t.dataset.meta.id === c.timeline)?.dataset;
+        const target = library.timelines.find((t) => t.summary.id === c.timeline)?.summary;
         if (!target) return [];
-        const at = formatYear(c.at, target.meta.calendar);
+        // the year in the other timeline's calendar when the site's list gives it; else as a stored year
+        const at = target.calendar ? formatYear(c.at, target.calendar) : String(c.at);
         return [
           {
             side: c.side,
             year: c.at,
-            label: c.side === 'before' ? `Earlier: ${target.meta.title}` : `Continues in ${target.meta.title}`,
-            title: `Open ${target.meta.title} at ${at}`,
+            label: c.side === 'before' ? `Earlier: ${target.title}` : `Continues in ${target.title}`,
+            title: target.calendar ? `Open ${target.title} at ${at}` : `Open ${target.title}`,
             href: `?timeline=${encodeURIComponent(c.timeline)}&at=${encodeURIComponent(at)}`,
           },
         ];
       }),
-    [meta.continues],
+    [meta.continues, library.timelines],
   );
 
   const [initialCenter] = useState(() => {

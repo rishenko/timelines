@@ -16,8 +16,8 @@ npm run deploy         # build and publish dist/ to GitHub Pages
 ```
 
 CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
-build, `run-all --check` for each included timeline, and a check that the files in `src/timelines/` and the key-event
-lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
+build, `run-all --check` for each included timeline, and a check that the files in `public/timelines/` (with
+`index.json`) and the key-event lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
 and `npm run data -- importance <timeline>`, and commit the result.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
@@ -35,9 +35,9 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 | Path | What |
 |---|---|
 | `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
-| `src/Boot.tsx` | Opens `?data=<url>` links before the app starts |
+| `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` links, the reader's own timelines, the welcome page |
 | `src/types.ts` | The schema v3 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
-| `src/timelines/` | Bundled timelines, registered in `index.ts` |
+| `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
 | `src/data/` | The validator, and row proximity checks for the included timelines (`proximity.ts`) |
 | `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
@@ -67,16 +67,17 @@ display depends on the calendar. See [data-format.md](data-format.md#years).
 ## Building the included timelines
 
 The included timelines are written in `data-src/` with readable dates (`"start": "c. 1595 BCE"`) and compiled into
-`src/timelines/`. `scripts/lib/timelines.ts` lists each one with its files and scripts. `npm run data` takes a
+`public/timelines/`. `scripts/lib/timelines.ts` lists each one with its files and scripts. `npm run data` takes a
 timeline's short name (`ancient`, `classical`) or `all`:
 
 ```sh
-npm run data -- build <timeline|all>        # compile data-src/ → src/timelines/ (also npm run data:ancient, data:classical)
+npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ and rewrite index.json (also npm run data:ancient, data:classical)
 npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and refresh docs/<short>-key-events.md
 npm run data -- format <timeline|all>       # re-format a source file
 npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
 npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing
+npm run data -- index                       # rewrite public/timelines/index.json, the site's list, from the files there
 ```
 
 `scripts/additions/` (Ancient) and `scripts/classical/` hold one re-runnable script per pass, built on

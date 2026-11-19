@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { anchorsFor } from './anchors.ts';
 import { validateDataset } from '../data/validate.ts';
-import classical from '../timelines/classical.json';
+import classical from '../../public/timelines/classical.json';
 import type { ResolvedEvent } from '../lib/chronology.ts';
 import type { Dataset } from '../types.ts';
 

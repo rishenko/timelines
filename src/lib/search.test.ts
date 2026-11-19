@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import type { Dataset, Track } from '../types.ts';
 import { buildIndex, normalize, search, trackRange, type EventLike } from './search.ts';
 import { ancestorIds } from './tracks.ts';
-import ancient from '../timelines/ancient-near-east.json';
-import classical from '../timelines/classical.json';
+import ancient from '../../public/timelines/ancient-near-east.json';
+import classical from '../../public/timelines/classical.json';
 
 const tracks: Track[] = [
   { id: 'ne', name: 'Near East', color: '#000' },

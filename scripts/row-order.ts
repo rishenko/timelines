@@ -1,6 +1,6 @@
 // Reports how well a timeline's row order keeps related rows together: the top-level rows by default, or
 // the children of one row with --parent (e.g. the regions inside a group).
-//   node scripts/row-order.ts src/timelines/ancient-near-east.json [--parent <id>]
+//   node scripts/row-order.ts public/timelines/ancient-near-east.json [--parent <id>]
 //   node scripts/row-order.ts <file> [--parent <id>] --try a,b,c,... [--try d,e,f,...]   # score candidate orders
 //   node scripts/row-order.ts <file> [--parent <id>] --best [--fix a,b]                   # every order (≤ ~10 rows)
 //   node scripts/row-order.ts <file> [--parent <id>] --search [--fix a,b] [--keep a<b,c<d] # local search, any size

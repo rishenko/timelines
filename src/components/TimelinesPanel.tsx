@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import type { TimelineChoice } from '../timelines/index.ts';
+import type { TimelineChoice } from '../state/timelines.ts';
 import type { LibraryEntry } from '../state/library.ts';
 
 interface Props {
@@ -90,13 +90,13 @@ export function TimelinesPanel(p: Props) {
         <h3>Your timelines</h3>
         {library.length === 0 && <p className="muted small">None yet.</p>}
         <ul className="timeline-list">
-          {library.map(({ dataset: d, library: entry }) => (
-            <li key={d.meta.id} className={d.meta.id === p.currentId ? 'current' : ''}>
+          {library.map(({ summary: d, library: entry }) => (
+            <li key={d.id} className={d.id === p.currentId ? 'current' : ''}>
               <div className="info">
-                <strong>{d.meta.title}</strong>
-                {d.meta.subtitle && <span className="muted"> {d.meta.subtitle}</span>}
+                <strong>{d.title}</strong>
+                {d.subtitle && <span className="muted"> {d.subtitle}</span>}
                 <div className="muted small">
-                  {d.events.length} events ·{' '}
+                  {d.eventCount} events ·{' '}
                   {entry!.sourceUrl ? (
                     <span title={entry!.sourceUrl}>from a link, updated {day(entry!.updatedAt)}</span>
                   ) : (
@@ -105,15 +105,15 @@ export function TimelinesPanel(p: Props) {
                 </div>
               </div>
               <div className="actions">
-                {d.meta.id !== p.currentId && <button onClick={() => p.onOpen(d.meta.id)}>Open</button>}
+                {d.id !== p.currentId && <button onClick={() => p.onOpen(d.id)}>Open</button>}
                 {entry!.sourceUrl && (
                   <>
                     <button
                       disabled={!!busy}
                       title="Download the latest version from its link"
-                      onClick={() => void run(`refresh-${d.meta.id}`, () => p.onRefresh(entry!))}
+                      onClick={() => void run(`refresh-${d.id}`, () => p.onRefresh(entry!))}
                     >
-                      {busy === `refresh-${d.meta.id}` ? 'Updating…' : 'Update'}
+                      {busy === `refresh-${d.id}` ? 'Updating…' : 'Update'}
                     </button>
                     <button onClick={() => p.onCopyShareLink(entry!)}>Copy share link</button>
                   </>
@@ -127,23 +127,25 @@ export function TimelinesPanel(p: Props) {
         </ul>
       </section>
 
-      <section>
-        <h3>Included</h3>
-        <ul className="timeline-list">
-          {bundled.map(({ dataset: d }) => (
-            <li key={d.meta.id} className={d.meta.id === p.currentId ? 'current' : ''}>
-              <div className="info">
-                <strong>{d.meta.title}</strong>
-                {d.meta.subtitle && <span className="muted"> {d.meta.subtitle}</span>}
-                <div className="muted small">{d.events.length} events</div>
-              </div>
-              <div className="actions">
-                {d.meta.id !== p.currentId && <button onClick={() => p.onOpen(d.meta.id)}>Open</button>}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {bundled.length > 0 && (
+        <section>
+          <h3>Included</h3>
+          <ul className="timeline-list">
+            {bundled.map(({ summary: d }) => (
+              <li key={d.id} className={d.id === p.currentId ? 'current' : ''}>
+                <div className="info">
+                  <strong>{d.title}</strong>
+                  {d.subtitle && <span className="muted"> {d.subtitle}</span>}
+                  {d.eventCount !== undefined && <div className="muted small">{d.eventCount} events</div>}
+                </div>
+                <div className="actions">
+                  {d.id !== p.currentId && <button onClick={() => p.onOpen(d.id)}>Open</button>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

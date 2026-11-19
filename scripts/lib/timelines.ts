@@ -5,7 +5,7 @@
 export interface SourceTimeline {
   /** The short name used in commands: `npm run data -- build <short>`. */
   short: string;
-  /** meta.id, as in ?timeline= and src/timelines/index.ts. */
+  /** meta.id, as in ?timeline= and public/timelines/index.json. */
   id: string;
   /** Readable source file, edited by hand and by the scripts below. */
   source: string;
@@ -31,7 +31,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     short: 'ancient',
     id: 'ancient-near-east',
     source: 'data-src/ancient-near-east.json',
-    compiled: 'src/timelines/ancient-near-east.json',
+    compiled: 'public/timelines/ancient-near-east.json',
     importance: 'data-src/ancient-importance.json',
     keyEvents: 'docs/ancient-key-events.md',
     // phases.ts after every script that puts events on period rows; groups.ts last: it nests the regions into
@@ -46,7 +46,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     short: 'classical',
     id: 'classical',
     source: 'data-src/classical.json',
-    compiled: 'src/timelines/classical.json',
+    compiled: 'public/timelines/classical.json',
     importance: 'data-src/classical-importance.json',
     keyEvents: 'docs/classical-key-events.md',
     // skeleton first; summary-only after the region passes; phases after every script that defines its rows;

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { datesInWords, eventsCsv, fullSections, sectionRows, spanInWords, tableSections } from './table.ts';
 import { defaultSelection, resolveEvents, resolveSpan } from './chronology.ts';
-import ancient from '../timelines/ancient-near-east.json';
+import ancient from '../../public/timelines/ancient-near-east.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 

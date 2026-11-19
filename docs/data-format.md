@@ -225,6 +225,36 @@ A file that breaks any of these is refused, with a message naming the problem.
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
   Timelines can come from anyone, so anything else (such as `javascript:`) is refused.
 
+## The site's list of timelines
+
+A site lists its own timelines in `timelines/index.json`, next to the files (in this repo, `public/timelines/`).
+The app reads the list when a page opens and loads only the timeline being opened, so a site can change its
+timelines by changing these files, without building the app again.
+
+```json
+{
+  "timelines": [
+    { "id": "my-world", "title": "My World", "file": "my-world.json" },
+    { "id": "campaign", "title": "Our Campaign", "file": "https://example.org/campaign.json" }
+  ]
+}
+```
+
+| Field | Required | Meaning |
+|---|---|---|
+| `id` | yes | The timeline's `meta.id`. The file must hold the timeline with this id. |
+| `title` | yes | The name in the timeline menu. |
+| `file` | yes | A path relative to `index.json`, or a full `https://` address (that server must let other sites read it). |
+| `subtitle` | no | Shown under the title in Customize → Timelines. |
+| `eventCount` | no | Shown in Customize → Timelines. |
+| `calendar` | no | The timeline's calendar, so links from other timelines (`meta.continues`) can name the year they open at. |
+| `defaultTheme` | no | The timeline's `meta.defaultTheme`. |
+
+The first entry opens by default. `npm run data -- index` writes the list from the files in `public/timelines/`,
+filling in every optional field from the files themselves and keeping the order and any `https://` entries. Entries
+with a missing or unsafe `id`, `title` or `file` are skipped. A site without the file, or with an empty list, opens on
+a page that asks readers to add a timeline.
+
 ## Sharing a timeline
 
 - **Host the file** anywhere that allows other sites to read it (CORS). GitHub raw files, GitHub Pages
@@ -246,7 +276,7 @@ compile it with the build script, which converts and validates them:
 ```
 
 ```sh
-node scripts/build-dataset.ts data-src/my-timeline.json src/timelines/my-timeline.json
+node scripts/build-dataset.ts data-src/my-timeline.json public/timelines/my-timeline.json
 ```
 
 Text dates are accepted for `start`, `end`, claim `year` and `derive.until`. A "c." on a start sets

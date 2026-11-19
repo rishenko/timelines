@@ -3,7 +3,7 @@ import { allClaims, eventChronology, trackChronology } from '../lib/chronology.t
 import { isSafeUrl } from '../lib/urls.ts';
 
 // v1 data has a few hand-typed ids that are not strict hex UUIDs; they are live deep links, so accept any URL-safe id.
-const ID_RE = /^[A-Za-z0-9-]+$/;
+export const ID_RE = /^[A-Za-z0-9-]+$/;
 
 /** Maximum nesting: region → civilization → period. */
 
