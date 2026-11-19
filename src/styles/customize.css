@@ -1,0 +1,39 @@
+/* ---- Customize: Appearance, Edit and Timelines as tabs behind one toolbar button ---- */
+.customize-panel {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+}
+.customize-panel > .customize-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 0;
+}
+.customize-tabs {
+  display: inline-flex;
+}
+.customize-panel .theme-panel,
+.customize-panel .timelines-panel {
+  border-bottom: 0;
+}
+.customize-edit {
+  max-width: 70ch;
+  padding: 10px 14px 14px;
+}
+.customize-edit p {
+  margin: 0 0 10px;
+}
+.customize-head .spacer {
+  flex: 1;
+}
+@media (max-width: 640px) {
+  /* the theme, timelines and filters panels: one column on phones (their columns used to run off the screen) */
+  .theme-panel,
+  .timelines-panel,
+  .filters-panel {
+    grid-template-columns: 1fr;
+  }
+  .theme-panel .color-grid {
+    grid-template-columns: 1fr;
+  }
+}

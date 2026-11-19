@@ -57,6 +57,7 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 | `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
 | `src/state/` (others) | Filters, theme, chronology choices, focus requests, folded rows, zoom steps, panels, toasts, search actions |
 | `src/components/` | Toolbar, panels (Filters, Legend, Customize, Dating), detail panel and editors, search box, table view, tour |
+| `src/index.css`, `src/styles/` | Styles, one file per area (chart, side panel, legend, table view, phones…), imported by `index.css` in cascade order |
 | `src/test/fixtures.ts` | A small fictional timeline for tests |
 | `data-src/`, `scripts/` | Readable source files for the included timelines, and the scripts that build them |
 

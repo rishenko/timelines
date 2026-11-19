@@ -1,0 +1,85 @@
+/* ---------- theme panel ---------- */
+.theme-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 3fr;
+  gap: 18px;
+  padding: 10px 14px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+}
+.theme-panel h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.theme-panel .presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.theme-panel .preset {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.theme-panel .swatches {
+  display: inline-flex;
+  border: 1px solid var(--line-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.theme-panel .swatches span {
+  width: 10px;
+  height: 16px;
+}
+.theme-panel .color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 6px 14px;
+}
+.theme-panel .color-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.theme-panel .color-field input[type='color'] {
+  width: 34px;
+  height: 26px;
+  padding: 1px;
+  flex: none;
+  cursor: pointer;
+}
+.theme-panel .color-field span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.theme-panel .color-field small {
+  font-size: 11px;
+}
+.theme-warnings {
+  margin: 10px 0 0;
+  padding: 6px 10px 6px 26px;
+  border-left: 3px solid var(--focus);
+  background: color-mix(in srgb, var(--focus) 9%, var(--bg));
+  font-size: 12px;
+}
+
+/* Light themes: darken track colors toward the text color so pale tracks (e.g. a pale gray)
+   stay visible. The stored track color is unchanged. Matches any element that sets
+   --track-color inline. */
+:root[data-mode='light'] [style*='--track-color'] {
+  --track-ink: color-mix(in srgb, var(--track-color) 68%, var(--text));
+}
+:root[data-mode='light'] .has-focus .tl-mark:not(.related) > :not(.label) {
+  opacity: 0.4;
+}
+/* Dark themes: light text stays readable on a stronger bar fill, and 30% looks washed out on a dark background */
+:root[data-mode='dark'] :is(.tl-mark, .lg-bar, .lg-band) {
+  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 34%, transparent);
+}
+

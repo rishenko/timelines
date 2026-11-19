@@ -1,0 +1,50 @@
+/* ---------- guided tour (components/Tour.tsx) ---------- */
+/* The step's target is outlined and the rest of the page dimmed by the outline's huge shadow; without a target a
+   plain dim layer is used. Neither catches clicks, so the page stays usable during the tour. */
+.tour-spot,
+.tour-dim {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+}
+.tour-spot {
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 0 0 9999px color-mix(in srgb, #000 38%, transparent);
+  transition: all 0.2s ease-out;
+}
+.tour-dim {
+  inset: 0;
+  background: color-mix(in srgb, #000 38%, transparent);
+}
+.tour-card {
+  position: fixed;
+  z-index: 61;
+  width: 340px;
+  padding: 12px 14px 10px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+.tour-card h2 {
+  margin: 2px 0 6px;
+  font-size: 15px;
+}
+.tour-card p {
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+.tour-card .tour-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tour-card .tour-actions .spacer {
+  flex: 1;
+}
+.legend-panel .tour-start {
+  margin-left: auto;
+  margin-right: 8px;
+}
+

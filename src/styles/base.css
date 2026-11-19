@@ -1,0 +1,146 @@
+:root {
+  /* Theme colors. These defaults are the Dark preset; lib/theme.ts sets them at runtime. */
+  --bg: #0f1216;
+  --bg-2: #161a20;
+  --bg-3: #1e232b;
+  --line: #2a313b;
+  --text: #e3e7ec;
+  --muted: #8b95a3;
+  --accent: #e0583a;
+  --focus: #ffd166;
+  --link: #8ab4ff;
+  --danger: #e5484d;
+  --ok: #46a758;
+  /* Readable text on filled accent / danger colors (computed in theme.ts). */
+  --on-accent: #ffffff;
+  --on-danger: #ffffff;
+  --on-ok: #ffffff;
+  /* Derived shades. */
+  --line-2: color-mix(in srgb, var(--line) 75%, var(--text));
+  --hatch: color-mix(in srgb, var(--text) 5%, transparent);
+  --shadow: rgb(0 0 0 / 0.5);
+  --label-shadow: 0 1px 2px rgb(0 0 0 / 0.9);
+  --logo-filter: invert(1) opacity(0.85);
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Light backgrounds: logos stay dark, labels get a halo instead of a drop shadow. */
+:root[data-mode='light'] {
+  --shadow: rgb(0 0 0 / 0.18);
+  --label-shadow: 0 0 2px var(--bg), 0 0 2px var(--bg);
+  --logo-filter: opacity(0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: var(--bg-3);
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+button:hover {
+  border-color: var(--muted);
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+button:disabled:hover {
+  border-color: var(--line-2);
+}
+button.on {
+  background: color-mix(in srgb, var(--text) 12%, var(--bg-3));
+  border-color: var(--text);
+}
+button.on.edit {
+  background: color-mix(in srgb, var(--accent) 18%, var(--bg-3));
+  border-color: var(--accent);
+  color: color-mix(in srgb, var(--accent) 55%, var(--text));
+}
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+button.danger {
+  border-color: color-mix(in srgb, var(--danger) 55%, var(--bg));
+  color: color-mix(in srgb, var(--danger) 75%, var(--text));
+}
+button.icon {
+  background: none;
+  border: none;
+  padding: 2px 6px;
+  color: var(--muted);
+}
+button.icon:hover {
+  color: var(--text);
+}
+button.icon.small {
+  font-size: 12px;
+  padding: 0 4px;
+}
+button.linklike {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--link);
+  text-decoration: underline;
+  text-align: left;
+}
+
+input,
+select,
+textarea {
+  background: var(--bg);
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+a {
+  color: var(--link);
+}
+
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 12px;
+}
+
+label.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.chip {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--track-color, var(--muted));
+  flex: none;
+}
+
