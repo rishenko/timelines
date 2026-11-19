@@ -39,7 +39,7 @@ import { allTimelines } from './timelines/index.ts';
  */
 export default function App() {
   const [initialUrl] = useState(readUrl);
-  const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch] = useDataset(initialUrl.published);
+  const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch, unsaved] = useDataset(initialUrl.published);
   const meta = data.meta;
   const cal = meta.calendar;
   const present = datasetPresent(data);
@@ -59,6 +59,12 @@ export default function App() {
   useEffect(() => {
     document.title = meta.subtitle ? `${meta.title} (${meta.subtitle})` : meta.title;
   }, [meta.title, meta.subtitle]);
+
+  // edits that can't be stored (storage full or turned off) last only until the page closes: say so when it starts
+  // (the banner below stays up while it lasts)
+  useEffect(() => {
+    if (unsaved) notify("Your edits can't be saved in this browser. Download them to keep them.", 'error');
+  }, [unsaved, notify]);
 
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
   const [chronSel, setChronSel] = useState<ChronologySelection>(() => defaultSelection(data));
@@ -288,7 +294,24 @@ export default function App() {
         />
       )}
 
-      {dirty && !editMode && (
+      {unsaved && (
+        <div className="draft-banner unsaved">
+          Your edits aren't being saved: this browser's storage is full or turned off. They last until you close this
+          page.{' '}
+          {editMode ? (
+            'Use Download in-progress in the edit bar to keep them.'
+          ) : (
+            <>
+              <button className="linklike" onClick={toggleEdit}>
+                Open edit mode
+              </button>{' '}
+              to download them.
+            </>
+          )}
+        </div>
+      )}
+
+      {dirty && !editMode && !unsaved && (
         <div className="draft-banner">
           You're viewing local edits, not the published timeline.{' '}
           {updatedUnderDraft && 'The published timeline has been updated since you made them; your edits are kept on top of it. '}

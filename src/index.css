@@ -321,6 +321,11 @@ label.check {
   background: color-mix(in srgb, var(--focus) 9%, var(--bg));
   border-color: color-mix(in srgb, var(--focus) 28%, var(--bg));
 }
+/* edits that can't be stored: a warning, since they are lost when the page closes */
+.draft-banner.unsaved {
+  background: color-mix(in srgb, var(--danger) 12%, var(--bg));
+  border-color: color-mix(in srgb, var(--danger) 45%, var(--bg));
+}
 
 .filters-panel {
   display: grid;

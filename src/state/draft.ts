@@ -22,8 +22,20 @@ export interface StoredDraft {
 
 const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 
+/**
+ * Fingerprints by dataset object. Datasets are never changed in place (every edit makes a new one), and the
+ * published timeline is fingerprinted on every saved edit, so this saves re-serializing it each time.
+ */
+const fingerprints = new WeakMap<Dataset, string>();
+
 /** A short fingerprint of a dataset (FNV-1a over its JSON), to notice when the published data has changed. */
 export function fingerprint(d: Dataset): string {
+  let f = fingerprints.get(d);
+  if (f === undefined) fingerprints.set(d, (f = computeFingerprint(d)));
+  return f;
+}
+
+function computeFingerprint(d: Dataset): string {
   const s = JSON.stringify(d);
   let h = 0x811c9dc5;
   for (let i = 0; i < s.length; i++) {
