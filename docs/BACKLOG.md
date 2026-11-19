@@ -32,9 +32,6 @@
 
 ### App
 
-- **Collapsed rows: no phases.** When a region is folded, `placePhases` gathers the phases of all its sub-rows onto
-  the folded row, mixing unrelated periods (every civilization's dynasties on one strip). Show no phases on a folded
-  row; decide whether a folded row keeps its own.
 - **Feature audit (18 November 2026):** `docs/feature-audit.md` lists what the app lacks for scholarly use (trust and
   transparency, citation and versions, the dating model, analysis, access) and the author's later additions (splitting
   the data into its own repo, simple and advanced editing, days and months, business timelines, server-side storage).

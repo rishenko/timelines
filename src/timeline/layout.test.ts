@@ -206,11 +206,11 @@ describe('placePhases', () => {
   ]);
 
   it('puts successive phases on one line, sharing a boundary year', () => {
-    expect(placePhases(['north'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['First:0', 'Second:0', 'Third:0']);
+    expect(placePhases('north', phases).map((p) => `${p.name}:${p.level}`)).toEqual(['First:0', 'Second:0', 'Third:0']);
   });
 
   it('moves an overlapping phase (a rival government) to the next line, in date order', () => {
-    expect(placePhases(['harbor'], phases).map((p) => `${p.name}:${p.level}`)).toEqual(['Old Republic:0', 'Free City:1']);
+    expect(placePhases('harbor', phases).map((p) => `${p.name}:${p.level}`)).toEqual(['Old Republic:0', 'Free City:1']);
   });
 
   it('keeps periods on one line when only their uncertainty windows overlap', () => {
@@ -223,13 +223,14 @@ describe('placePhases', () => {
         ],
       ],
     ]);
-    expect(placePhases(['egypt'], egypt).map((p) => p.level)).toEqual([0, 0]);
+    expect(placePhases('egypt', egypt).map((p) => p.level)).toEqual([0, 0]);
   });
 
-  it("gathers a collapsed lane's sub-rows and remembers whose phase each is", () => {
-    const placed = placePhases(['north', 'harbor'], phases);
-    expect(placed).toHaveLength(5);
-    expect(placed.find((p) => p.name === 'Old Republic')!.trackId).toBe('harbor');
+  it("places only the row's own phases (a folded row doesn't gather its sub-rows')", () => {
+    const placed = placePhases('north', phases);
+    expect(placed.map((p) => p.name)).toEqual(['First', 'Second', 'Third']);
+    expect(placed.every((p) => p.trackId === 'north')).toBe(true);
+    expect(placePhases('nobody', phases)).toEqual([]);
   });
 });
 

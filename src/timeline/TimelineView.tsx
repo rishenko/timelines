@@ -125,7 +125,7 @@ export function TimelineView(props: Props) {
     }
     return out;
   }, [data.tracks]);
-  const lanePhases = useMemo(() => new Map(lanes.map((l) => [l.id, placePhases(l.members, phases)])), [lanes, phases]);
+  const lanePhases = useMemo(() => new Map(lanes.map((l) => [l.id, placePhases(l.id, phases)])), [lanes, phases]);
   // a lane with phases gets a strip at the top for their names, one line per level
   const headerPx = useMemo(() => {
     const out: Record<string, number> = {};
@@ -133,14 +133,16 @@ export function TimelineView(props: Props) {
     return out;
   }, [lanePhases]);
   const laneSpans = useMemo(() => {
-    // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap
-    const out: ResolvedSpan[] = [...lanePhases.values()].flat();
+    // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap;
+    // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler
+    const out: ResolvedSpan[] = [];
     for (const l of lanes) for (const id of l.members) {
       const s = spans.get(id);
       if (s) out.push(s);
+      out.push(...(phases.get(id) ?? []));
     }
     return out;
-  }, [lanes, spans, lanePhases]);
+  }, [lanes, spans, phases]);
   const scale = useMemo(
     () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],

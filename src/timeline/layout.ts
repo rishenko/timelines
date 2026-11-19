@@ -255,13 +255,14 @@ export interface PlacedPhase extends ResolvedPhase {
 }
 
 /**
- * A lane's phases (its own, plus its sub-rows' when it is collapsed), each on the first name line it fits.
+ * A row's own phases, each on the first name line it fits. A folded row shows only its own: gathering its sub-rows'
+ * phases onto it mixed unrelated periods (every civilization's dynasties on one strip).
  * Overlap is judged on the best dates, not the uncertainty windows: periods whose uncertain edges merely touch
  * (Egypt's Old Kingdom and First Intermediate Period) share a line; only periods that overlap outright (rival
  * governments) take the next one.
  */
-export function placePhases(members: string[], phases: Map<string, ResolvedPhase[]>): PlacedPhase[] {
-  const all = members.flatMap((id) => (phases.get(id) ?? []).map((p) => ({ ...p, trackId: id })));
+export function placePhases(trackId: string, phases: Map<string, ResolvedPhase[]>): PlacedPhase[] {
+  const all = (phases.get(trackId) ?? []).map((p) => ({ ...p, trackId }));
   all.sort((a, b) => a.start - b.start);
   const lineEnds: number[] = [];
   return all.map((p) => {
