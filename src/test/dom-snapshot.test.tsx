@@ -26,7 +26,7 @@ const snap = (name: string, c: Element) => out.push(`=== ${name}\n${c.innerHTML.
 const open = (q: string) => { window.history.replaceState(null, '', `/?${q}`); return render(<App />).container; };
 
 const cases: [string, string, string[]][] = [
-  ['ancient-near-east', 'sargon-reign', ['Egypt', 'Sargon', 'Akkad', 'Old Kingdom', '1595 BCE', 'Hittite']],
+  ['ancient-near-east', 'sargon-reign', ['Egypt', 'Sargon', 'Akkad', 'Old Kingdom', '1595 BCE', 'Hittite', 'Prepalatial', 'Wilton culture']],
   ['classical', 'buddha', ['Rome', 'Han', 'Buddha', 'Principate', '44 BCE', 'Sasanian']],
 ];
 

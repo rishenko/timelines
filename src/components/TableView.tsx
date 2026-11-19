@@ -256,7 +256,7 @@ function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
       </thead>
       <tbody>
         {rows.map((r) => {
-          const life = r.span ? spanInWords(r.span, cal, !!r.track.span?.circa) : undefined;
+          const life = r.span ? spanInWords(r.span, cal) : undefined;
           return (
             <tr key={r.track.id}>
               <th scope="row" data-row-id={r.track.id} tabIndex={-1}>
@@ -277,8 +277,7 @@ function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
                 {r.phases.length > 0 ? (
                   <ol className="phase-list">
                     {r.phases.map((ph, i) => {
-                      // phases come in the row's own order, so its circa flag is at the same index
-                      const w = spanInWords(ph, cal, !!r.track.phases?.[i]?.circa);
+                      const w = spanInWords(ph, cal);
                       return (
                         <li key={`${ph.name}-${i}`}>
                           <strong>{ph.name}</strong>: {w.main}

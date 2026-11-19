@@ -159,8 +159,8 @@ export function sectionRows(
 }
 
 /** A lifespan or phase in words: "c. 1650 BCE – c. 1190 BCE", plus the ranges its sources allow. */
-export function spanInWords(s: ResolvedSpan, cal: Calendar, circa = false): { main: string; ranges: string[] } {
-  const approx = isApprox(s, circa);
+export function spanInWords(s: ResolvedSpan, cal: Calendar): { main: string; ranges: string[] } {
+  const approx = isApprox(s);
   const main = `${formatYear(s.start, cal, approx)} – ${formatYear(s.end, cal, approx)}`;
   const ranges: string[] = [];
   if (s.startWindow) ranges.push(`start between ${range(s.startWindow, cal)}`);

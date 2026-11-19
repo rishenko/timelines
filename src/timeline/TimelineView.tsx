@@ -384,7 +384,7 @@ export function TimelineView(props: Props) {
     const fadeIn = s.startWindow ? scale.x(s.startWindow[1]) - x0 : 0;
     const fadeOut = s.endWindow ? x1 - scale.x(s.endWindow[0] + 1) : 0;
     const track = data.tracks.find((t) => t.id === trackId)!;
-    const approx = isApprox(s, track.span?.circa);
+    const approx = isApprox(s);
     return (
       <div
         key={`span-${trackId}`}

@@ -46,14 +46,13 @@ export function useSearchActions(o: {
       }
       if (entry.kind === 'phase') {
         const p = phaseOf(entry);
-        return p ? `${formatYear(p.start, cal, !!p.startWindow)} – ${formatYear(p.end, cal, !!p.endWindow)}` : '';
+        return p ? `${formatYear(p.start, cal, isApprox(p))} – ${formatYear(p.end, cal, isApprox(p))}` : '';
       }
       const s = spans.get(entry.id);
       if (!s) return '';
-      const approx = isApprox(s, data.tracks.find((t) => t.id === entry.id)?.span?.circa);
-      return `${formatYear(s.start, cal, approx)} – ${formatYear(s.end, cal)}`;
+      return `${formatYear(s.start, cal, isApprox(s))} – ${formatYear(s.end, cal, isApprox(s))}`;
     },
-    [resolvedById, spans, cal, data.tracks, phaseOf],
+    [resolvedById, spans, cal, phaseOf],
   );
   const hiddenReason = useCallback(
     (entry: SearchEntry) => {
