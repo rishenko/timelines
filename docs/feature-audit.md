@@ -111,7 +111,7 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
     so the visual timeline is made operable from the keyboard, and a **table view** is the full equivalent for screen
     readers (WCAG accepts a conforming alternative version), which scholars want anyway (item 20).
 
-    a. **Foundations (S–M).** Done 18 November 2026 (see the README's Accessibility entry). A search pick opens the
+    a. **Foundations (S–M).** Done 18 November 2026. A search pick opens the
        event's details with focus there; Escape then lands on the event in the chart.
        - Landmarks and headings: the toolbar, a labelled timeline region ("Timeline: Ancient Civilizations, c. 9000–330
          BCE"), the detail panel with its own heading, and a "Skip to timeline / table" link.
@@ -122,7 +122,7 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          event. Picking a search result focuses the event.
        - A polite live region announces zoom changes, "Went to 1595 BCE", and filter counts.
        - Automated checks: axe-core in the component tests and oxlint's jsx-a11y rules.
-    b. **Table view (M):** a "Timeline | Table" switch (`?view=table`). Done 18 November 2026 (README: Table view),
+    b. **Table view (M):** a "Timeline | Table" switch (`?view=table`). Done 18 November 2026,
        with CSV export (item 9, events only), and a rows table (lifespans and phases) in each section.
        - Events grouped under region and civilization headings, sortable by date, filterable with the same Filters,
          and following the reader's chronology choices.
@@ -130,19 +130,29 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          chronology"), the rows, importance and sources.
        - It's also the basis of CSV export (item 9).
     c. **Keyboard model for the timeline (M):** one tab stop for the whole timeline (a roving focus), not hundreds.
-       Done 18 November 2026 (README: Accessibility; keys listed in the Legend).
+       Done 18 November 2026 (keys listed in the Legend).
        - ←/→: previous or next event in the row, by date. ↑/↓: the nearest event in the row above or below.
          Home/End: the first or last event in the row. PageUp/PageDown: scroll a screen.
        - +/−: zoom around the focused event. Enter: open it. On a row label, Enter or Space folds or unfolds the row.
          `?`: list the shortcuts.
        - The view scrolls to follow focus, and the focused event stays in the page even when it's off-screen.
     d. **Visual (S–M).**
-       - Uncertainty gets a second cue besides the tint: hatching or end ticks, shown in the Legend.
-       - A contrast check of every theme preset (text 4.5:1; marks and focus outlines 3:1), run as a test.
+       - Uncertainty gets a second cue besides the tint: hatching or end ticks, shown in the Legend. Done 18 November
+         2026 (hatching; row lifespans and phases keep their soft edges, as background bands).
+       - A contrast check of every theme preset (text 4.5:1; marks and focus outlines 3:1), run as a test. Text done
+         18 November 2026 with `npm run contrast`. Fixed for every timeline and preset: event labels on their bars
+         (lighter fills: 30% of the track color, 34% in dark themes), phase names (closer to the text color; no name
+         in phases too narrow for about five capitals, until zoomed in), the light theme's accent, and unrelated
+         events' labels while one is selected (muted instead of faded). Known exceptions, left on purpose: a few
+         labels per timeline in dense rows (where several period bands stack, as behind *Linear B in use*, or in a
+         thicket of threads 2–3 px apart, as around *Urkesh abandoned*), and labels the selected event's highlight
+         thread passes behind. `npm run contrast -- --sweep` lists them. Marks and focus outlines (3:1) not yet
+         checked.
        - A bolder focus outline (2 px, offset).
        - Readable at 200% zoom and on a 320 px wide screen.
        - `prefers-reduced-motion` (smooth scrolling, the tour) and `forced-colors` (Windows high contrast).
-       - Check the "related events" dimming (unrelated events at 28% opacity) for legibility.
+       - Check the "related events" dimming (unrelated events at 28% opacity) for legibility. Done with the contrast
+         check above: the marks still fade to 28%, the labels stay at 4.5:1.
     e. **Touch and pointer (S):** targets at least 24 px (WCAG 2.2), including the small event diamonds, and a button
        alternative wherever an action needs a gesture (long-press to add, pinch to zoom).
     f. **Edit mode (S):** error messages tied to their fields (`aria-describedby`), and the claim lists announced as

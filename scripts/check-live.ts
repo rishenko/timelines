@@ -3,6 +3,7 @@
 //   node scripts/check-live.ts [--url https://rishenko.github.io/timelines/] [--expect "Harappan civilization"]...
 //   --url may carry its own parameters, e.g. --url "https://rishenko.github.io/timelines/?timeline=classical".
 // Pages can take a minute or two to update; this retries for about three minutes.
+// Uses Microsoft Edge on Windows and Google Chrome elsewhere; --browser msedge|chrome picks one.
 import { readdirSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
@@ -13,7 +14,9 @@ const expected = opt('--expect');
 const bundle = readdirSync('dist/assets').find((f) => f.startsWith('index-') && f.endsWith('.js'));
 if (!bundle) throw new Error('no dist/assets/index-*.js: run npm run build (or deploy) first');
 
-const browser = await chromium.launch({ channel: 'msedge' });
+const browser = await chromium.launch({
+  channel: opt('--browser')[0] ?? (process.platform === 'win32' ? 'msedge' : 'chrome'),
+});
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 const errors: string[] = [];
 page.on('pageerror', (e) => errors.push(e.message));

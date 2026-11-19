@@ -669,7 +669,7 @@ main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, var(--text));
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 25%, var(--text));
   pointer-events: auto;
   cursor: default;
 }
@@ -795,7 +795,7 @@ main {
   top: 2px;
   bottom: 2px;
   width: var(--bar-w);
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent);
+  background: var(--bar-fill);
   border: 1px solid var(--track-ink, var(--track-color));
   border-radius: 3px;
 }
@@ -806,15 +806,16 @@ main {
  * Uncertain dates: the start and end ranges are drawn in a lighter tint of the track color,
  * the certain middle in the normal bar color. Hard color stops, no fade.
  * The ranges are also hatched, so uncertainty doesn't rest on the tint alone (WCAG 1.4.1).
+ * Labels are drawn over their bars, so the fills stay light enough for text at 4.5:1 (scripts/contrast.ts).
  */
 .tl-mark,
 .lg-bar,
 .lg-band {
-  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent);
-  --range-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent);
+  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 30%, transparent);
+  --range-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 12%, transparent);
   --hatch: repeating-linear-gradient(
     -45deg,
-    color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent) 0 1.5px,
+    color-mix(in srgb, var(--track-ink, var(--track-color)) 38%, transparent) 0 1.5px,
     transparent 1.5px 5px
   );
 }
@@ -896,8 +897,20 @@ main {
   outline: 1px dashed var(--focus);
 }
 
-.has-focus .tl-mark:not(.related) {
+/*
+ * Unrelated events step back while one is selected: their marks fade, but their labels only turn muted, so they stay
+ * readable (4.5:1 on the row bands too) and can still be clicked.
+ */
+.has-focus .tl-mark:not(.related) > :not(.label) {
   opacity: 0.28;
+}
+.has-focus .tl-mark:not(.related) .label,
+.has-focus .tl-mark.key:not(.related) .label,
+.has-focus .tl-mark.cluster:not(.related) {
+  color: color-mix(in srgb, var(--muted) 50%, var(--text));
+}
+.has-focus .tl-mark.cluster:not(.related) {
+  border-color: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, transparent);
 }
 .has-focus .tl-connections .thread:not(.on),
 .has-focus .tl-connections .link:not(.on) {
@@ -1347,8 +1360,12 @@ main {
 :root[data-mode='light'] [style*='--track-color'] {
   --track-ink: color-mix(in srgb, var(--track-color) 68%, var(--text));
 }
-:root[data-mode='light'] .has-focus .tl-mark:not(.related) {
+:root[data-mode='light'] .has-focus .tl-mark:not(.related) > :not(.label) {
   opacity: 0.4;
+}
+/* Dark themes: light text stays readable on a stronger bar fill, and 30% looks washed out on a dark background */
+:root[data-mode='dark'] :is(.tl-mark, .lg-bar, .lg-band) {
+  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 34%, transparent);
 }
 
 /* ---------- timeline library ---------- */
@@ -1479,7 +1496,7 @@ main {
   height: 14px;
   border: 1px solid var(--track-ink, var(--track-color));
   border-radius: 3px;
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent);
+  background: var(--bar-fill);
 }
 .lg-bar.uncertain {
   background:

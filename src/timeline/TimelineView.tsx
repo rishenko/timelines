@@ -17,6 +17,8 @@ const MARK_H = 22;
 const POINT_HALF = 7;
 /** Height of one line of phase names at the top of a lane. */
 const PHASE_H = 16;
+/** The narrowest room for a phase's name (about five capitals); narrower phases show no name until zoomed in. */
+const PHASE_NAME_MIN_W = 64;
 
 
 export interface FocusRequest {
@@ -442,13 +444,16 @@ export function TimelineView(props: Props) {
       >
         <div className="tl-phase-fill" />
         <div className="tl-phase-edge" style={{ left: scale.x(p.start) - x0 }} />
-        <span
-          className="tl-phase-name"
-          style={{ marginTop: p.level * PHASE_H, left: labelW, maxWidth: Math.max(0, x1 - x0 - 6) }}
-          title={`${p.name}: ${dates}`}
-        >
-          {p.name}
-        </span>
+        {/* a name only where a few letters fit: "O…" over a cluster of edges can't be read; zoom in to see it */}
+        {x1 - x0 - 6 >= PHASE_NAME_MIN_W && (
+          <span
+            className="tl-phase-name"
+            style={{ marginTop: p.level * PHASE_H, left: labelW, maxWidth: x1 - x0 - 6 }}
+            title={`${p.name}: ${dates}`}
+          >
+            {p.name}
+          </span>
+        )}
       </div>
     );
   };

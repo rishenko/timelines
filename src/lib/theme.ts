@@ -74,7 +74,7 @@ export const PRESETS: Record<string, { label: string; colors: ThemeColors }> = {
       line: '#d5dae1',
       text: '#1b1f24',
       muted: '#5d6773',
-      accent: '#c4441f',
+      accent: '#b83f1d',
       focus: '#b7791f',
       link: '#2b63d9',
       danger: '#c62a2f',
