@@ -1,6 +1,7 @@
 # Development
 
-Vite, React 19 and TypeScript. Node 22.18 or newer: the scripts in `scripts/` are TypeScript run directly by Node.
+Vite, React 19 and TypeScript. Node 22.22.2 or newer on the 22 line, or 24.15 or newer (the test environment, jsdom, needs
+those; the scripts in `scripts/` are TypeScript run directly by Node).
 
 ## Commands
 
@@ -13,6 +14,11 @@ npm run build          # type-check (app and scripts) and build into dist/
 npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages
 ```
+
+CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
+build, `run-all --check` for each included timeline, and a check that the files in `src/timelines/` and the key-event
+lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
+and `npm run data -- importance <timeline>`, and commit the result.
 
 ## Code map
 
