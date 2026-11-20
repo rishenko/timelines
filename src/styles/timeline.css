@@ -325,6 +325,12 @@
   width: 0;
   border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent);
 }
+/* a phase name's own stretch of its band (PlacedPhase.nameFrom/nameTo): the name sticks inside it */
+.tl-phase-names {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
 .tl-phase-name {
   position: sticky;
   display: inline-block;

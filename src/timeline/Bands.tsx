@@ -69,20 +69,24 @@ export function PhaseBand({
   if (!inView(b.x0, b.x1)) return null;
   const approx = isApprox(p);
   const dates = `${formatYear(p.start, cal, approx)} – ${formatYear(p.end, cal, approx)}`;
-  const w = b.x1 - b.x0;
+  // the name sticks within its own stretch of the band, which stops where the next phase on its line starts
+  const n0 = scale.x(p.nameFrom) - b.x0;
+  const w = scale.x(p.nameTo) - b.x0 - n0;
   return (
     <div className={`tl-phase${alt ? ' alt' : ''}`} style={bandStyle(labelW, b, color)}>
       <div className="tl-phase-fill" />
       <div className="tl-phase-edge" style={{ left: scale.x(p.start) - b.x0 }} />
       {/* a name only where a few letters fit: "O…" over a cluster of edges can't be read; zoom in to see it */}
       {w - 6 >= PHASE_NAME_MIN_W && (
-        <span
-          className="tl-phase-name"
-          style={{ marginTop: p.level * PHASE_H, left: labelW, maxWidth: w - 6 }}
-          title={`${p.name}: ${dates}`}
-        >
-          {p.name}
-        </span>
+        <div className="tl-phase-names" style={{ left: n0, width: w }}>
+          <span
+            className="tl-phase-name"
+            style={{ marginTop: p.level * PHASE_H, left: labelW, maxWidth: w - 6 }}
+            title={`${p.name}: ${dates}`}
+          >
+            {p.name}
+          </span>
+        </div>
       )}
     </div>
   );

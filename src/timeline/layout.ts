@@ -260,6 +260,13 @@ export interface PlacedPhase extends ResolvedPhase {
   trackId: string;
   /** Line of the name strip: overlapping phases (rival governments) take the next line down. */
   level: number;
+  /**
+   * Where the name may stick while scrolling, in years (from, up to but not including to): the whole band, uncertain
+   * edges included, except where the band runs into the next or previous phase on the same line; there the two meet at
+   * the later phase's start, so their names never overlap.
+   */
+  nameFrom: number;
+  nameTo: number;
 }
 
 /**
@@ -273,10 +280,25 @@ export function placePhases(trackId: string, phases: Map<string, ResolvedPhase[]
   const all = (phases.get(trackId) ?? []).map((p) => ({ ...p, trackId }));
   all.sort((a, b) => a.start - b.start);
   const lineEnds: number[] = [];
+  const lastOnLine: PlacedPhase[] = [];
   return all.map((p) => {
     let level = lineEnds.findIndex((end) => end <= p.start);
     if (level < 0) level = lineEnds.length;
     lineEnds[level] = p.end;
-    return { ...p, level };
+    const placed: PlacedPhase = {
+      ...p,
+      level,
+      nameFrom: Math.min(p.start, p.startWindow?.[0] ?? p.start),
+      nameTo: Math.max(p.end, p.endWindow?.[1] ?? p.end) + 1,
+    };
+    // the band before on this line reaches into this one (through its uncertain end, or by ending in the year this
+    // one starts): split the name strip at this phase's start
+    const prev = lastOnLine[level];
+    if (prev && prev.nameTo > placed.nameFrom) {
+      prev.nameTo = Math.max(prev.nameFrom, p.start);
+      placed.nameFrom = Math.max(placed.nameFrom, p.start);
+    }
+    lastOnLine[level] = placed;
+    return placed;
   });
 }
