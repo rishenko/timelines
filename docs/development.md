@@ -35,7 +35,7 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 | Path | What |
 |---|---|
 | `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
-| `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` links, the reader's own timelines, the welcome page |
+| `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` and `?collection=<url>` links, update checks for timelines from links, the reader's own timelines, the welcome page |
 | `src/types.ts` | The schema v3 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
 | `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
 | `src/data/` | The validator, and row proximity checks for the included timelines (`proximity.ts`) |
@@ -54,6 +54,7 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
 | `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
 | `src/state/library.ts`, `useLibraryActions.ts` | The reader's own timelines: opening, uploading, updating, sharing |
+| `src/state/collections.ts` | Shared lists (`?collection=`): reading, saving and removing them; `listTimelines` in `timelines.ts` merges them into the picker |
 | `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
 | `src/state/` (others) | Filters, theme, chronology choices, focus requests, folded rows, zoom steps, panels, toasts, search actions |
 | `src/components/` | Toolbar, panels (Filters, Legend, Customize, Dating), detail panel and editors, search box, table view, tour |

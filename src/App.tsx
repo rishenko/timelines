@@ -47,9 +47,11 @@ interface Props {
   library?: LibraryEntry;
   /** The site's timelines (timelines/index.json). */
   site: TimelineIndexEntry[];
+  /** A message for the first toast (e.g. that a timeline from a link was updated as it opened). */
+  notice?: string;
 }
 
-export default function App({ published: opened, library: libraryEntry, site }: Props) {
+export default function App({ published: opened, library: libraryEntry, site, notice }: Props) {
   const [initialUrl] = useState(() => readUrl(opened));
   const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch, unsaved] = useDataset(opened);
   const meta = data.meta;
@@ -65,7 +67,7 @@ export default function App({ published: opened, library: libraryEntry, site }: 
           `"${unreadableDraftKey(opened.meta.id)}".`
       : updatedUnderDraft
         ? 'The published timeline has been updated. Your local edits are kept on top of the new version.'
-        : null,
+        : (notice ?? null),
   );
 
   useEffect(() => {
@@ -366,6 +368,10 @@ export default function App({ published: opened, library: libraryEntry, site }: 
               onRefresh={library.refreshEntry}
               onRemove={library.removeEntry}
               onCopyShareLink={(e) => void library.copyShareLink(e)}
+              collections={library.collections}
+              onRefreshList={library.refreshCollection}
+              onRemoveList={library.removeList}
+              onCopyListLink={(c) => void library.copyListLink(c)}
             />
           }
         />

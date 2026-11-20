@@ -1,11 +1,12 @@
 // @vitest-environment jsdom
 // Opening the page: the site's list, loading only the opened timeline, the reader's own timelines, errors, and a
-// site with no timelines.
+// site with no timelines; shared lists (?collection=) and checking timelines from links for a newer version.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import { Boot } from './Boot.tsx';
 import { SITE, SITE_DATASETS } from './test/app.tsx';
-import { addToLibrary } from './state/library.ts';
+import { addToLibrary, loadLibrary } from './state/library.ts';
+import { loadCollections, parseCollection, saveCollection } from './state/collections.ts';
 import { plainTimeline } from './test/fixtures.ts';
 
 beforeAll(() => {
@@ -84,7 +85,7 @@ describe('Boot', () => {
     const s = server({});
     open('', s.fetchImpl);
     expect(await screen.findByRole('heading', { name: 'Timelines' })).toBeTruthy();
-    expect(screen.getByRole('textbox', { name: 'Timeline link' })).toBeTruthy();
+    expect(screen.getByRole('textbox', { name: 'Timeline or list link' })).toBeTruthy();
   });
 
   it('a site with no list still opens the reader’s own timelines', async () => {
@@ -115,5 +116,114 @@ describe('Boot', () => {
     const s = server({ 'timelines/index.json': 500 });
     open('', s.fetchImpl);
     expect((await screen.findByRole('alert')).textContent).toMatch(/server answered 500/);
+  });
+});
+
+describe('Boot: shared lists and timelines from links', () => {
+  const LIST = 'https://lists.example/club/list.json';
+  const named = (id: string, title: string) => {
+    const d = plainTimeline();
+    return { ...d, meta: { ...d.meta, id, title } };
+  };
+  const remote = () => ({
+    [LIST]: { title: 'Reading club', timelines: [{ id: 'club-a', title: 'Club A', file: 'a.json' }, { id: 'club-b', title: 'Club B', file: 'b.json' }] },
+    'https://lists.example/club/a.json': named('club-a', 'Club A'),
+    'https://lists.example/club/b.json': named('club-b', 'Club B'),
+  });
+  /** A fake web: the site's files by path, other sites by full address; `null` fails like a network error. */
+  function web(other: Record<string, unknown>) {
+    const asked: string[] = [];
+    const site = server(siteFiles());
+    const fetchImpl = (async (url: string, init?: RequestInit) => {
+      if (url.startsWith('http://localhost')) return site.fetchImpl(url, init);
+      asked.push(url);
+      if (!(url in other)) return json({}, 404);
+      if (other[url] === null) throw new TypeError('Failed to fetch');
+      return json(other[url]);
+    }) as typeof fetch;
+    return { fetchImpl, asked };
+  }
+  const go = (query: string, fetchImpl: typeof fetch) => {
+    const went: string[] = [];
+    window.history.replaceState(null, '', `/?${query}`);
+    render(<Boot fetchImpl={fetchImpl} navigate={(u) => went.push(u)} />);
+    return went;
+  };
+  const until = async (f: () => boolean) => {
+    for (let i = 0; i < 50 && !f(); i++) await new Promise((r) => setTimeout(r, 10));
+    expect(f()).toBe(true);
+  };
+
+  it("?collection= saves the list and continues at its first timeline, keeping the other settings", async () => {
+    const w = web(remote());
+    const went = go(`collection=${encodeURIComponent(LIST)}&inc=100`, w.fetchImpl);
+    await until(() => went.length > 0);
+    expect(went[0]).toBe('/?inc=100&timeline=club-a');
+    expect(loadCollections().map((c) => [c.title, c.entries.map((e) => e.file)])).toEqual([
+      ['Reading club', ['https://lists.example/club/a.json', 'https://lists.example/club/b.json']],
+    ]);
+    expect(w.asked).toEqual([LIST]); // the timelines themselves load when opened
+  });
+
+  it('?collection= with ?timeline= continues at that timeline when the list has it', async () => {
+    const went = go(`collection=${encodeURIComponent(LIST)}&timeline=club-b`, web(remote()).fetchImpl);
+    await until(() => went.length > 0);
+    expect(went[0]).toBe('/?timeline=club-b');
+  });
+
+  it('?collection= uses the saved copy when the list is out of reach, and says so when there is none', async () => {
+    const went = go(`collection=${encodeURIComponent(LIST)}`, web({ [LIST]: null }).fetchImpl);
+    expect((await screen.findByRole('alert')).textContent).toMatch(/Couldn't open the shared list/);
+    expect(went).toEqual([]);
+    cleanup();
+    saveCollection(parseCollection(remote()[LIST], LIST));
+    const again = go(`collection=${encodeURIComponent(LIST)}`, web({ [LIST]: null }).fetchImpl);
+    await until(() => again.length > 0);
+    expect(again[0]).toBe('/?timeline=club-a');
+  });
+
+  it("opens a list's timeline from its own address, after checking the list for changes", async () => {
+    saveCollection(parseCollection(remote()[LIST], LIST));
+    const w = web(remote());
+    go('timeline=club-b', w.fetchImpl);
+    expect(await screen.findByRole('region', { name: 'Timeline: Club B' })).toBeTruthy();
+    expect(w.asked).toEqual([LIST, 'https://lists.example/club/b.json']);
+  });
+
+  it('a list that changed is saved again as the timeline opens; out of reach, the saved list is used', async () => {
+    saveCollection(parseCollection(remote()[LIST], LIST));
+    const files = remote();
+    files[LIST] = { ...files[LIST], title: 'Renamed club' };
+    go('timeline=club-a', web(files).fetchImpl);
+    expect(await screen.findByRole('region', { name: 'Timeline: Club A' })).toBeTruthy();
+    expect(loadCollections()[0].title).toBe('Renamed club');
+    cleanup();
+    go('timeline=club-a', web({ ...files, [LIST]: null }).fetchImpl);
+    expect(await screen.findByRole('region', { name: 'Timeline: Club A' })).toBeTruthy();
+  });
+
+  describe('a timeline from a link', () => {
+    const LINK = 'https://files.example/harbor.json';
+    const saved = () => addToLibrary(plainTimeline(), { sourceUrl: LINK, reservedIds: SITE.map((e) => e.id) });
+
+    it('opens the newer version when its link has one, and says so', async () => {
+      saved();
+      const newer = { ...plainTimeline(), meta: { ...plainTimeline().meta, title: 'The Harbor Towns, revised' } };
+      go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: newer }).fetchImpl);
+      expect(await screen.findByRole('region', { name: 'Timeline: The Harbor Towns, revised' })).toBeTruthy();
+      expect(screen.getByRole('status').textContent).toMatch(/Updated "The Harbor Towns, revised" to the latest version/);
+      expect(loadLibrary()[0].dataset.meta.title).toBe('The Harbor Towns, revised');
+    });
+
+    it('opens the saved copy, without a message, when nothing changed or the link is out of reach', async () => {
+      const before = saved().updatedAt;
+      for (const answer of [plainTimeline(), null]) {
+        go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: answer }).fetchImpl);
+        expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+        expect(screen.getByRole('status').textContent ?? '').not.toMatch(/Updated/);
+        cleanup();
+      }
+      expect(loadLibrary()[0].updatedAt).toBe(before);
+    });
   });
 });

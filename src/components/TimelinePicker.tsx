@@ -1,4 +1,5 @@
 import type { TimelineChoice } from '../state/timelines.ts';
+import { collectionName, type Collection } from '../state/collections.ts';
 
 /** Picker entry that opens the library panel instead of a timeline. */
 const MANAGE = '__manage__';
@@ -11,10 +12,17 @@ interface Props {
   onManage: () => void;
 }
 
-/** The title menu: bundled timelines, then the reader's own, then a way to add more. */
+/** The title menu: the site's timelines, then each shared list's, then the reader's own, then a way to add more. */
 export function TimelinePicker({ timelines, currentId, onOpen, onManage }: Props) {
-  const bundled = timelines.filter((t) => !t.library);
+  const bundled = timelines.filter((t) => t.entry && !t.collection);
   const library = timelines.filter((t) => t.library);
+  const lists = new Map<string, { collection: Collection; items: TimelineChoice[] }>();
+  for (const t of timelines)
+    if (t.collection) {
+      const g = lists.get(t.collection.url) ?? { collection: t.collection, items: [] };
+      g.items.push(t);
+      lists.set(t.collection.url, g);
+    }
   return (
     <select
       className="timeline-picker"
@@ -31,6 +39,15 @@ export function TimelinePicker({ timelines, currentId, onOpen, onManage }: Props
           ))}
         </optgroup>
       )}
+      {[...lists.values()].map(({ collection, items }) => (
+        <optgroup key={collection.url} label={collectionName(collection)}>
+          {items.map(({ summary: t }) => (
+            <option key={t.id} value={t.id}>
+              {t.title}
+            </option>
+          ))}
+        </optgroup>
+      ))}
       {library.length > 0 && (
         <optgroup label="Your timelines">
           {library.map(({ summary: t }) => (

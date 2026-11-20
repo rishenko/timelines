@@ -263,8 +263,33 @@ a page that asks readers to add a timeline.
   and gists do. A GitHub page link (`github.com/…/blob/…`) is converted to the raw file automatically.
 - **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser.
   Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event.
-- **Update** by replacing the file at the same link. Readers get the new version the next time they open
-  the link, or with **Update** in Customize → Timelines.
+- **Update** by replacing the file at the same link. Readers get the new version the next time they open the
+  timeline (the app checks the link for a few seconds, then opens the saved copy if it can't reach it), or with
+  **Update** in Customize → Timelines. Edits a reader made are kept on top of the new version.
+
+## Shared lists
+
+A group (a class, a reading club, a gaming table) can share several timelines as one list. A list is a file in the
+same format as [the site's list](#the-sites-list-of-timelines), hosted anywhere that allows other sites to read it,
+with an optional `title` for the picker:
+
+```json
+{
+  "title": "Reading club",
+  "timelines": [
+    { "id": "harbor-towns", "title": "The Harbor Towns", "file": "harbor-towns.json" },
+    { "id": "inland-kingdoms", "title": "The Inland Kingdoms", "file": "https://example.org/inland.json" }
+  ]
+}
+```
+
+- **Share** `<app address>/?collection=<list link>`. It saves the list in the reader's browser and opens its first
+  timeline; add `&timeline=<id>` to open another. Readers can also paste the list's link in Customize → Timelines.
+- `file` is relative to the list's own address, or a full `https://` address. Each timeline loads from its file when
+  it's opened, so readers always see the current version, and the list itself is checked for changes then too.
+- A list's timeline whose `id` is already used (by the site's timelines, the reader's own, or an earlier list) isn't
+  shown; Customize → Timelines says how many are hidden. Use ids that are unlikely to clash.
+- Readers remove a list, and their edits to its timelines, with **Remove list**.
 - **Images** must be online too, with full `https://` addresses.
 
 ## Writing dates as text
