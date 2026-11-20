@@ -69,8 +69,11 @@ separate later timeline, linked by `meta.continues`, would keep each one readabl
   phases, date claims with computed uncertainty ranges, switchable chronologies, connections between events, key and
   minor events, search, filters, legend, guided tour, table view with CSV, themes, edit mode with drafts stored as the
   reader's changes, a timeline library (uploads and `?data=` links), and phone and tablet support.
-- Accessibility parts a–c (foundations, table view, keyboard control) and the first items of part d; see
-  [feature-audit.md](feature-audit.md), item 23.
+- Since then: shared lists (`?collection=`) and update checks for timelines and lists from links; row links to
+  Wikipedia with Wikidata ids; "Hide rows with nothing in view" (or thin lines); connections on by default, with a
+  Filters switch; the "Lifespans" tour step; event maps (Cliopatria borders, else Wikipedia pins and map images).
+- Accessibility parts a–f (foundations, table view, keyboard control, visual, touch targets, edit forms), except
+  `forced-colors` and the 3:1 check of marks in part d; see [feature-audit.md](feature-audit.md), item 23.
 - Ancient Civilizations (c. 9000–330 BCE) and The Classical World (c. 500 BCE – 650 CE), each with a description
   audit, merged on 2026-11-20 into one timeline, Ancient and Classical World (the originals are in `archive/`), whose
   scripts reproduce its source file exactly (`npm run data:check`).
