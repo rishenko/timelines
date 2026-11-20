@@ -61,6 +61,7 @@ by hand if you write the file in the [readable format](#writing-dates-as-text) a
 | `customSourceTag` | no | Tag id given to sources readers create in edit mode (e.g. `"homebrew"`), so others can filter them. |
 | `circaFade` | no | Years of uncertainty drawn either side of a `circa` date that has no other range. Default `0`. |
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
+| `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). Not shown in the app yet (a prototype is in progress). |
 | `hideRowsOutOfView` | no | `true` to open with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). For timelines with many rows that come and go. Default `false`. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
 | `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
@@ -113,6 +114,21 @@ while you scroll. Neighbouring phases alternate shades, and a gap between phases
 as rival governments do in a civil war; an overlapping phase's name goes on a second line. Events stay on the row
 itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
 order. Search finds phases by name.
+
+### memberships
+
+**`memberships`**: the facet values a row belongs to (see [`meta.facets`](#meta)), each with the sources that place
+it there, cited like date claims:
+
+```json
+"memberships": [
+  { "facet": "geography", "value": "anatolia", "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "category \"Ancient peoples of Anatolia\"" }] },
+  { "facet": "people", "value": "indo-european-anatolian", "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "infobox common_languages: \"Hittite, Hattic, Luwian, Hurrian\"" }] }
+]
+```
+
+A row may belong to several values of one facet (Mitanni: Mesopotamia, Anatolia and the Levant). Together, rows,
+events and facet values form a graph: events link rows, memberships link rows to values, and `broader` links values.
 
 ## sources and tags
 
@@ -222,6 +238,8 @@ A file that breaks any of these is refused, with a message naming the problem.
 - Every year is a whole number; an `end` is not before its `start`, for events and lifespans.
 - Every referenced track, parent, source, tag, chronology and linked event exists.
 - No row is its own ancestor (rows may nest to any depth).
+- Facet and value ids use letters, digits and dashes; every `broader` value exists and none contains itself.
+  Every membership names a known facet and value and cites at least one known source.
 - A derived chronology derives from one in the same group, by a whole number of years.
 - Margins are zero or more. Each best estimate lies within the range of its own claims.
 - `endDates` only appear on events that have an `end`. Events don't link to themselves.

@@ -46,6 +46,11 @@ export interface TimelineMeta {
    */
   hideRowsOutOfView?: boolean;
   /**
+   * Ways to group the rows besides the row tree (geography, people, civilization), each with its values. Rows join
+   * values through Track.memberships; the reader picks values to group by.
+   */
+  facets?: Record<string, Facet>;
+  /**
    * Neighbouring timelines this one continues into (or from), shown as links at the ends of the ruler. `at` is the
    * stored year the other timeline opens at; `side` says which end of this timeline the link sits on.
    */
@@ -94,6 +99,28 @@ export interface Track {
    * the top of the row. Phases may overlap (two rival governments during a civil war).
    */
   phases?: TrackPhase[];
+  /** The facet values this row belongs to (meta.facets), each with the sources that place it there. */
+  memberships?: Membership[];
+}
+
+/** A way to group rows (meta.facets): its name and values. */
+export interface Facet {
+  name: string;
+  values: Record<string, FacetValue>;
+}
+
+/** A facet value, e.g. the region "Aegean". */
+export interface FacetValue {
+  name: string;
+  /** Broader values it is part of (the Aegean is part of the Mediterranean): a row in it belongs to them too. */
+  broader?: string[];
+}
+
+/** A row's membership in a facet value, with its evidence, e.g. the Hittites in Anatolia per their article. */
+export interface Membership {
+  facet: string;
+  value: string;
+  sources: SourceRef[];
 }
 
 /** Identifiers of a row in other datasets. */

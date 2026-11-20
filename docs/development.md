@@ -126,6 +126,20 @@ AI-generated-text template). Rules used for the included timelines:
 
 `docs/<short>-row-links.md` lists every decision; the decision files used are in `scripts/archive/`.
 
+## Category memberships
+
+Rows can belong to values of three facets, geography, people and civilization, each membership citing where its
+source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). They feed the
+reader-chosen groups prototype. The decisions live in a plan, `data-src/ancient-classical-memberships.json`: the
+facets, the sources it adds (a row's Wikipedia article that no event cited yet, `wp-row-<row id>`), and each row's
+memberships. `npm run data -- importance` and `run-all` apply it after the row links (`scripts/lib/memberships.ts`).
+
+The pilot (2026-11-20) covers the 75 Mediterranean, Mesopotamian and Anatolian rows with a Wikipedia article.
+Candidates came from each article's categories (and their parent categories), first sentence and infobox, with PeriodO
+period definitions as supporting evidence; the author reviewed them in a checklist. Candidates resting only on a
+PeriodO period matched by one word ("Neolithic", "Roman Period") were left out, to revisit with a stricter matcher.
+The plan was built by `scripts/archive/2026-11-20-memberships-plan.mjs`.
+
 ## Event maps
 
 Opening an event shows its rows on a map (`src/components/EventMap.tsx`, data helpers in `src/map/mapData.ts`). The

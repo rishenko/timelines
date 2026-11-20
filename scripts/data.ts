@@ -21,6 +21,7 @@ import { readSource, writeSource } from './lib/source-format.ts';
 import { SOURCE_TIMELINES, sourceTimeline, type SourceTimeline } from './lib/timelines.ts';
 import { TIMELINES_DIR, writeTimelineIndex } from './lib/timeline-index.ts';
 import { applyRowLinks } from './lib/row-links.ts';
+import { applyMemberships } from './lib/memberships.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
 const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], or npm run data -- index';
@@ -42,14 +43,15 @@ function index() {
 }
 
 /**
- * Applies the timeline's plans to the source file (in place): importance, then row links. Returns the importance
+ * Applies the timeline's plans to the source file (in place): importance, row links, then memberships. Returns the importance
  * counts. A timeline without plans is left alone.
  */
 function applyPlan(t: SourceTimeline) {
   const d = readSource(t.source);
   if (t.importance) applyImportancePlan(d.events, JSON.parse(readFileSync(t.importance, 'utf8')));
   if (t.rowLinks) applyRowLinks(d.tracks, JSON.parse(readFileSync(t.rowLinks, 'utf8')));
-  if (t.importance || t.rowLinks) writeSource(t.source, d);
+  if (t.memberships) applyMemberships(d, JSON.parse(readFileSync(t.memberships, 'utf8')));
+  if (t.importance || t.rowLinks || t.memberships) writeSource(t.source, d);
   return importanceCounts(d.events);
 }
 

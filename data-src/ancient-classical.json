@@ -44,7 +44,80 @@
       "caribbean"
     ],
     "hideRowsOutOfView": true,
-    "range": { "start": "10050 BCE", "end": "650 CE" }
+    "range": { "start": "10050 BCE", "end": "650 CE" },
+    "facets": {
+      "geography": {
+        "name": "Region",
+        "values": {
+          "mediterranean": { "name": "Mediterranean" },
+          "mesopotamia": { "name": "Mesopotamia" },
+          "anatolia": { "name": "Anatolia" },
+          "levant": { "name": "Levant" },
+          "nile": { "name": "Nile", "broader": ["north-africa"] },
+          "north-africa": { "name": "North Africa" },
+          "aegean": { "name": "Aegean", "broader": ["mediterranean"] },
+          "iberia": { "name": "Iberia" },
+          "caucasus": { "name": "Caucasus" }
+        }
+      },
+      "people": {
+        "name": "People",
+        "values": {
+          "indo-european-greek": { "name": "Indo-European: Greek" },
+          "berber-libyco-berber": { "name": "Berber (Libyco-Berber)" },
+          "semitic": { "name": "Semitic" },
+          "indo-european-italic": { "name": "Indo-European: Italic" },
+          "indo-european-other": { "name": "Indo-European: other" },
+          "berber-peoples-and-tribes": { "name": "Berber peoples and tribes" },
+          "pre-indo-europeans": { "name": "Pre-Indo-Europeans" },
+          "iberian": { "name": "Iberian" },
+          "pre-roman-peoples-of-the-iberian-peninsula": { "name": "Pre-Roman peoples of the Iberian Peninsula" },
+          "ancient-peoples": { "name": "Ancient peoples" },
+          "sea-peoples": { "name": "Sea Peoples" },
+          "indo-european-anatolian": { "name": "Indo-European: Anatolian" },
+          "nubian-meroitic": { "name": "Nubian / Meroitic" },
+          "egyptian": { "name": "Egyptian" },
+          "sumerian": { "name": "Sumerian" },
+          "semitic-speaking-peoples": { "name": "Semitic-speaking peoples" },
+          "indo-european-peoples": { "name": "Indo-European peoples" },
+          "ancient-peoples-of-anatolia": { "name": "Ancient peoples of Anatolia" },
+          "hurro-urartian": { "name": "Hurro-Urartian" },
+          "indo-aryan-peoples": { "name": "Indo-Aryan peoples" },
+          "ancient-peoples-of-the-near-east": { "name": "Ancient peoples of the Near East" }
+        }
+      },
+      "civilization": {
+        "name": "Civilization",
+        "values": {
+          "ancient-libya": { "name": "Ancient Libya" },
+          "carthage": { "name": "Carthage" },
+          "phoenicia": { "name": "Phoenicia" },
+          "ancient-rome": { "name": "Ancient Rome" },
+          "classical-antiquity": { "name": "Classical antiquity" },
+          "byzantine-empire": { "name": "Byzantine Empire" },
+          "ancient-egypt": { "name": "Ancient Egypt" },
+          "ancient-near-east": { "name": "Ancient Near East" },
+          "aegean-civilizations": { "name": "Aegean civilizations" },
+          "minoan-civilization": { "name": "Minoan civilization" },
+          "mycenaean-greece": { "name": "Mycenaean Greece" },
+          "ancient-greece": { "name": "Ancient Greece" },
+          "hellenistic-period": { "name": "Hellenistic period" },
+          "kingdom-of-kush": { "name": "Kingdom of Kush" },
+          "canaan": { "name": "Canaan" },
+          "ancient-israel-and-judah": { "name": "Ancient Israel and Judah" },
+          "ancient-mesopotamia": { "name": "Ancient Mesopotamia" },
+          "sumer": { "name": "Sumer" },
+          "arameans": { "name": "Arameans" },
+          "hittites": { "name": "Hittites" },
+          "hittite-empire": { "name": "Hittite Empire" },
+          "urartu": { "name": "Urartu" },
+          "akkadian-empire": { "name": "Akkadian Empire" },
+          "hurrians": { "name": "Hurrians" },
+          "assyria": { "name": "Assyria" },
+          "babylonia": { "name": "Babylonia" }
+        }
+      }
+    }
   },
   "tracks": [
     { "id": "africa", "name": "Africa", "color": "#b8862a", "url": "https://en.wikipedia.org/wiki/Africa", "ids": { "wikidata": "Q15" } },
@@ -62,7 +135,8 @@
       "color": "#c0a060",
       "parent": "north-africa",
       "url": "https://en.wikipedia.org/wiki/African_humid_period",
-      "ids": { "wikidata": "Q60259056" }
+      "ids": { "wikidata": "Q60259056" },
+      "memberships": [{ "facet": "geography", "value": "north-africa", "sources": [{ "sourceKey": "wp-humid-period", "sourceLocation": "first sentence" }] }]
     },
     {
       "id": "capsian",
@@ -71,7 +145,18 @@
       "parent": "north-africa",
       "url": "https://en.wikipedia.org/wiki/Capsian",
       "ids": { "wikidata": "Q766150" },
-      "span": { "start": "c. 9000 BCE", "end": "5400 BCE" }
+      "span": { "start": "c. 9000 BCE", "end": "5400 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-row-capsian", "sourceLocation": "category \"Archaeological cultures in Morocco\"" },
+            { "sourceKey": "wp-row-capsian", "sourceLocation": "category \"Archaeology of Algeria\"" },
+            { "sourceKey": "wp-row-capsian", "sourceLocation": "category \"Archaeology of Libya\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "libyans",
@@ -79,7 +164,29 @@
       "color": "#b89a6a",
       "parent": "north-africa",
       "url": "https://en.wikipedia.org/wiki/Ancient_Libya",
-      "ids": { "wikidata": "Q2370577" }
+      "ids": { "wikidata": "Q2370577" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-row-libyans", "sourceLocation": "category \"Ancient Greek geography of North Africa\"" },
+            { "sourceKey": "wp-row-libyans", "sourceLocation": "category \"Ancient Libya\"" },
+            { "sourceKey": "wp-row-libyans", "sourceLocation": "first sentence" }
+          ]
+        },
+        { "facet": "geography", "value": "nile", "sources": [{ "sourceKey": "wp-row-libyans", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "indo-european-greek", "sources": [{ "sourceKey": "wp-row-libyans", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "berber-libyco-berber", "sources": [{ "sourceKey": "wp-row-libyans", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-libya",
+          "sources": [
+            { "sourceKey": "wp-row-libyans", "sourceLocation": "category \"Ancient Libya\"" },
+            { "sourceKey": "wp-row-libyans", "sourceLocation": "category \"Libya in Greek mythology\" (in \"Ancient Libya\")" }
+          ]
+        }
+      ]
     },
     {
       "id": "carthage",
@@ -88,7 +195,46 @@
       "parent": "north-africa",
       "url": "https://en.wikipedia.org/wiki/Carthage",
       "ids": { "wikidata": "Q6343" },
-      "span": { "start": "c. 814 BCE", "end": "146 BCE" }
+      "span": { "start": "c. 814 BCE", "end": "146 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Former populated places in Tunisia\"" },
+            { "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Phoenician colonies in Tunisia\"" },
+            { "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Tourist attractions in Tunisia\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Carthage\" (in \"History of the Mediterranean\")" },
+            {
+              "sourceKey": "wp-row-carthage",
+              "sourceLocation": "category \"Phoenician cities\" (in \"Port cities and towns of the Mediterranean Sea\")"
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [{ "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Carthage\" (in \"Ancient history of the Iberian Peninsula\")" }]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [{ "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Phoenician cities\" (in \"Geography of Phoenicia\")" }]
+        },
+        { "facet": "people", "value": "semitic", "sources": [{ "sourceKey": "wp-row-carthage", "sourceLocation": "first sentence" }] },
+        { "facet": "civilization", "value": "carthage", "sources": [{ "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Carthage\"" }] },
+        {
+          "facet": "civilization",
+          "value": "phoenicia",
+          "sources": [{ "sourceKey": "wp-row-carthage", "sourceLocation": "category \"Phoenician cities\" (in \"Phoenicia\")" }]
+        }
+      ]
     },
     {
       "id": "mauretania",
@@ -101,7 +247,32 @@
         "start": "c. 225 BCE",
         "end": "44 CE",
         "startDates": [{ "year": "225 BCE", "source": { "sourceKey": "wp-mauretania", "sourceLocation": "History ('around 225 BC', Bagas)" } }]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-mauretania", "sourceLocation": "category \"Ancient Greek geography of North Africa\"" },
+            { "sourceKey": "wp-mauretania", "sourceLocation": "category \"Ancient history of North Africa\"" },
+            { "sourceKey": "wp-mauretania", "sourceLocation": "first sentence" }
+          ]
+        },
+        { "facet": "geography", "value": "mediterranean", "sources": [{ "sourceKey": "wp-mauretania", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "people",
+          "value": "indo-european-italic",
+          "sources": [
+            { "sourceKey": "wp-mauretania", "sourceLocation": "infobox common_languages: \"Berbers, Latin and Punic\"" },
+            { "sourceKey": "wp-mauretania", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "semitic",
+          "sources": [{ "sourceKey": "wp-mauretania", "sourceLocation": "infobox common_languages: \"Berbers, Latin and Punic\"" }]
+        }
+      ]
     },
     {
       "id": "numidia",
@@ -117,7 +288,19 @@
           { "year": "46 BCE", "source": { "sourceKey": "wp-jugurthine", "sourceLocation": "lead (Roman province)" } },
           { "year": "25 BCE", "source": { "sourceKey": "wp-numidia", "sourceLocation": "infobox (annexed by the Roman Empire)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-numidia", "sourceLocation": "category \"Ancient Greek geography of North Africa\"" },
+            { "sourceKey": "wp-numidia", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-numidia", "sourceLocation": "infobox capital: \"Cirta (today Constantine, Algeria)\"" }
+          ]
+        },
+        { "facet": "people", "value": "berber-libyco-berber", "sources": [{ "sourceKey": "wp-numidia", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "vandals",
@@ -126,7 +309,83 @@
       "parent": "north-africa",
       "url": "https://en.wikipedia.org/wiki/Vandal_Kingdom",
       "ids": { "wikidata": "Q10416611" },
-      "span": { "start": "435 CE", "end": "534 CE" }
+      "span": { "start": "435 CE", "end": "534 CE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-vandal-kingdom", "sourceLocation": "category \"Ancient Libya\"" },
+            { "sourceKey": "wp-vandal-kingdom", "sourceLocation": "category \"Ancient Tunisia\"" },
+            { "sourceKey": "wp-vandal-kingdom", "sourceLocation": "category \"Medieval history of Libya\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-vandal-kingdom", "sourceLocation": "category \"Ancient Sicily\"" },
+            { "sourceKey": "wp-vandal-kingdom", "sourceLocation": "category \"Ancient Sicily\" (in \"Archaeology of Sicily\")" },
+            { "sourceKey": "wp-vandal-kingdom", "sourceLocation": "category \"Ancient Sicily\" (in \"History of Sicily\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-other",
+          "sources": [
+            {
+              "sourceKey": "wp-vandal-kingdom",
+              "sourceLocation": "infobox common_languages: \"Latin (spoken by elite and clergy)Vulgar Latin and African Romance (spoken by co\""
+            },
+            { "sourceKey": "wp-vandal-kingdom", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "semitic",
+          "sources": [
+            {
+              "sourceKey": "wp-vandal-kingdom",
+              "sourceLocation": "infobox common_languages: \"Latin (spoken by elite and clergy)Vulgar Latin and African Romance (spoken by co\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [
+            {
+              "sourceKey": "wp-vandal-kingdom",
+              "sourceLocation": "infobox common_languages: \"Latin (spoken by elite and clergy)Vulgar Latin and African Romance (spoken by co\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-italic",
+          "sources": [
+            {
+              "sourceKey": "wp-vandal-kingdom",
+              "sourceLocation": "infobox common_languages: \"Latin (spoken by elite and clergy)Vulgar Latin and African Romance (spoken by co\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "berber-libyco-berber",
+          "sources": [
+            {
+              "sourceKey": "wp-vandal-kingdom",
+              "sourceLocation": "infobox common_languages: \"Latin (spoken by elite and clergy)Vulgar Latin and African Romance (spoken by co\""
+            }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-libya",
+          "sources": [{ "sourceKey": "wp-vandal-kingdom", "sourceLocation": "category \"Ancient Libya\"" }]
+        }
+      ]
     },
     {
       "id": "garamantes",
@@ -147,7 +406,36 @@
           }
         ],
         "endDates": [{ "year": "675 CE", "margin": 25, "source": { "sourceKey": "wp-garamantes-classical", "sourceLocation": "lead ('late 7th century AD')" } }]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-garamantes-classical", "sourceLocation": "category \"Ancient Greek geography of North Africa\"" },
+            { "sourceKey": "wp-garamantes-classical", "sourceLocation": "category \"Ancient Libya\"" },
+            { "sourceKey": "wp-garamantes-classical", "sourceLocation": "category \"Ancient Libyans\"" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "berber-peoples-and-tribes",
+          "sources": [{ "sourceKey": "wp-garamantes-classical", "sourceLocation": "category \"Berber peoples and tribes\"" }]
+        },
+        {
+          "facet": "people",
+          "value": "berber-libyco-berber",
+          "sources": [{ "sourceKey": "wp-garamantes-classical", "sourceLocation": "first sentence" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-libya",
+          "sources": [
+            { "sourceKey": "wp-garamantes-classical", "sourceLocation": "category \"Ancient Libya\"" },
+            { "sourceKey": "wp-garamantes-classical", "sourceLocation": "category \"Ancient Libyans\" (in \"Ancient Libya\")" }
+          ]
+        }
+      ]
     },
     { "id": "horn", "name": "Aksum and the Horn of Africa", "color": "#b8862a", "parent": "africa" },
     {
@@ -688,7 +976,23 @@
       "parent": "west-med",
       "url": "https://en.wikipedia.org/wiki/Nuragic_civilization",
       "ids": { "wikidata": "Q1421436" },
-      "span": { "start": "c. 1800 BCE", "end": "238 BCE" }
+      "span": { "start": "c. 1800 BCE", "end": "238 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-nuragic", "sourceLocation": "category \"Archaeological cultures in Sardinia\"" },
+            { "sourceKey": "wp-nuragic", "sourceLocation": "category \"History of Sardinia\"" },
+            { "sourceKey": "wp-nuragic", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "pre-indo-europeans",
+          "sources": [{ "sourceKey": "wp-nuragic", "sourceLocation": "category \"Pre-Indo-Europeans\"" }]
+        }
+      ]
     },
     {
       "id": "talaiotic",
@@ -711,7 +1015,30 @@
             "source": { "sourceKey": "wp-talaiotic", "sourceLocation": "Periodization (University of the Balearic Islands: 'around 900 BCE')" }
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [
+            { "sourceKey": "wp-talaiotic", "sourceLocation": "category \"Archaeological cultures in Spain\"" },
+            { "sourceKey": "wp-talaiotic", "sourceLocation": "category \"Iron Age Spain\"" },
+            { "sourceKey": "wp-talaiotic", "sourceLocation": "category \"Archaeological cultures in Spain\" (in \"Archaeology of Spain\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-talaiotic", "sourceLocation": "category \"Prehistory of the Balearic Islands\"" },
+            { "sourceKey": "wp-talaiotic", "sourceLocation": "first sentence" },
+            {
+              "sourceKey": "wp-talaiotic",
+              "sourceLocation": "category \"Prehistory of the Balearic Islands\" (in \"History of the Balearic Islands\")"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "iberia",
@@ -727,7 +1054,19 @@
       "color": "#8a6a4a",
       "parent": "iberia",
       "url": "https://en.wikipedia.org/wiki/Prehistoric_Iberia",
-      "ids": { "wikidata": "Q366971" }
+      "ids": { "wikidata": "Q366971" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [
+            { "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "category \"Ancient history of the Iberian Peninsula\"" },
+            { "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "category \"Prehistoric Portugal\"" },
+            { "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "category \"Prehistoric Spain\"" }
+          ]
+        },
+        { "facet": "people", "value": "iberian", "sources": [{ "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "los-millares",
@@ -749,7 +1088,18 @@
             }
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [
+            { "sourceKey": "wp-los-millares", "sourceLocation": "category \"Archaeological cultures in Spain\"" },
+            { "sourceKey": "wp-los-millares", "sourceLocation": "category \"Archaeological discoveries in Spain\"" },
+            { "sourceKey": "wp-los-millares", "sourceLocation": "category \"Indigenous ancient cities in Spain\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "el-argar",
@@ -765,7 +1115,18 @@
           { "year": "1550 BCE", "source": { "sourceKey": "wp-argaric", "sourceLocation": "lead (2200 BC and 1550 BC)" } },
           { "year": "1300 BCE", "source": { "sourceKey": "wp-argaric", "sourceLocation": "infobox (c. 2200 — c. 1300 BC)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [
+            { "sourceKey": "wp-row-el-argar", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-row-el-argar", "sourceLocation": "infobox region: \"Southeast Spain\"" },
+            { "sourceKey": "wp-row-el-argar", "sourceLocation": "category \"Agaric culture\" (in \"Archaeological cultures in Spain\")" }
+          ]
+        }
+      ]
     },
     {
       "id": "tartessos",
@@ -791,7 +1152,27 @@
           },
           { "year": "401 BCE", "source": { "sourceKey": "wp-tartessos", "sourceLocation": "end of century" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [
+            { "sourceKey": "wp-tartessos", "sourceLocation": "category \"Prehistoric Spain\"" },
+            { "sourceKey": "wp-tartessos", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-tartessos", "sourceLocation": "category \"Prehistoric Spain\" (in \"History of Spain by period\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-tartessos", "sourceLocation": "category \"Trade in Phoenicia\"" },
+            { "sourceKey": "wp-tartessos", "sourceLocation": "category \"Trade in Phoenicia\" (in \"Economy of Phoenicia\")" }
+          ]
+        },
+        { "facet": "people", "value": "iberian", "sources": [{ "sourceKey": "wp-tartessos", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "iberians",
@@ -807,7 +1188,30 @@
           { "year": "600 BCE", "source": { "sourceKey": "wp-iberians", "sourceLocation": "History ('developed from the 6th century BC')" } },
           { "year": "700 BCE", "source": { "sourceKey": "wp-iberians", "sourceLocation": "lead (language 'from the 7th … century BC')" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [
+            { "sourceKey": "wp-iberians", "sourceLocation": "category \"Pre-Roman peoples of the Iberian Peninsula\"" },
+            { "sourceKey": "wp-iberians", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-iberians", "sourceLocation": "category \"History of Catalonia\" (in \"History of Spain by autonomous community\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "pre-indo-europeans",
+          "sources": [{ "sourceKey": "wp-iberians", "sourceLocation": "category \"Pre-Indo-Europeans\"" }]
+        },
+        {
+          "facet": "people",
+          "value": "pre-roman-peoples-of-the-iberian-peninsula",
+          "sources": [{ "sourceKey": "wp-iberians", "sourceLocation": "category \"Pre-Roman peoples of the Iberian Peninsula\"" }]
+        },
+        { "facet": "people", "value": "indo-european-italic", "sources": [{ "sourceKey": "wp-iberians", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "iberian", "sources": [{ "sourceKey": "wp-iberians", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "rome",
@@ -829,6 +1233,36 @@
         { "name": "Roman Kingdom (traditional)", "start": "c. 753 BCE", "end": "509 BCE" },
         { "name": "Roman Republic", "start": "c. 509 BCE", "end": "27 BCE" },
         { "name": "Roman Empire (and the Western Empire)", "start": "27 BCE", "end": "476 CE" }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-row-rome-republic-empire", "sourceLocation": "category \"8th-century BC establishments in Italy\"" },
+            {
+              "sourceKey": "wp-row-rome-republic-empire",
+              "sourceLocation": "category \"8th-century BC establishments in Italy\" (in \"1st-millennium BC establishments in Italy\")"
+            },
+            {
+              "sourceKey": "wp-row-rome-republic-empire",
+              "sourceLocation": "category \"8th-century BC establishments in Italy\" (in \"8th century BC in Italy\")"
+            }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-rome",
+          "sources": [{ "sourceKey": "wp-row-rome-republic-empire", "sourceLocation": "category \"Ancient Rome\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "classical-antiquity",
+          "sources": [
+            { "sourceKey": "wp-row-rome-republic-empire", "sourceLocation": "category \"Ancient Rome\" (in \"Classical antiquity\")" },
+            { "sourceKey": "wp-row-rome-republic-empire", "sourceLocation": "category \"Classical civilizations\" (in \"Classical antiquity\")" }
+          ]
+        }
       ]
     },
     {
@@ -838,7 +1272,29 @@
       "parent": "rome",
       "url": "https://en.wikipedia.org/wiki/Byzantine_Empire",
       "ids": { "wikidata": "Q12544" },
-      "span": { "start": "395 CE", "end": "1453 CE" }
+      "span": { "start": "395 CE", "end": "1453 CE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [{ "sourceKey": "wp-row-eastern-roman", "sourceLocation": "category \"Byzantine Empire\" (in \"History of the Mediterranean\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [{ "sourceKey": "wp-row-eastern-roman", "sourceLocation": "infobox common_languages: \"Greek, Latin (until the 6th century)\"" }]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-italic",
+          "sources": [{ "sourceKey": "wp-row-eastern-roman", "sourceLocation": "infobox common_languages: \"Greek, Latin (until the 6th century)\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "byzantine-empire",
+          "sources": [{ "sourceKey": "wp-row-eastern-roman", "sourceLocation": "category \"Byzantine Empire\"" }]
+        }
+      ]
     },
     {
       "id": "sea-peoples",
@@ -846,7 +1302,76 @@
       "color": "#6f8a8f",
       "parent": "europe-med",
       "url": "https://en.wikipedia.org/wiki/Sea_Peoples",
-      "ids": { "wikidata": "Q193850" }
+      "ids": { "wikidata": "Q193850" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Ancient Egypt\"" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Invasions of Egypt\"" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"History of the Mediterranean\"" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Military history of the Mediterranean\"" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Ancient Levant\" (in \"History of the Levant\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Iron Age Anatolia\"" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Iron Age Anatolia\" (in \"Ancient Anatolia by period\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Iron Age Greece\"" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Iron Age Greece\" (in \"1st millennium BC in Greece\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [{ "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Ancient Egypt\" (in \"Ancient history of North Africa\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples",
+          "sources": [{ "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Ancient peoples\"" }]
+        },
+        { "facet": "people", "value": "sea-peoples", "sources": [{ "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Sea Peoples\"" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-egypt",
+          "sources": [{ "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Ancient Egypt\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Late Bronze Age collapse\" (in \"Ancient Near East\")" },
+            { "sourceKey": "wp-sea-peoples", "sourceLocation": "category \"Sea Peoples\" (in \"Ancient Near East\")" }
+          ]
+        }
+      ]
     },
     {
       "id": "aegean",
@@ -872,7 +1397,23 @@
       "parent": "aegean-bronze",
       "url": "https://en.wikipedia.org/wiki/Cycladic_culture",
       "ids": { "wikidata": "Q318144" },
-      "span": { "start": "c. 3100 BCE", "end": "1000 BCE" }
+      "span": { "start": "c. 3100 BCE", "end": "1000 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [
+            { "sourceKey": "wp-cycladic", "sourceLocation": "category \"Archaeological cultures in Greece\"" },
+            { "sourceKey": "wp-cycladic", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-cycladic", "sourceLocation": "category \"Archaeological cultures in Greece\" (in \"Archaeology of Greece\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "aegean-civilizations",
+          "sources": [{ "sourceKey": "wp-cycladic", "sourceLocation": "category \"Cycladic civilization\" (in \"Aegean civilizations\")" }]
+        }
+      ]
     },
     {
       "id": "minoan",
@@ -889,6 +1430,41 @@
         { "name": "Neopalatial (MM III–LM IB)", "start": "c. 1750 BCE", "end": "1470 BCE" },
         { "name": "Monopalatial (LM II)", "start": "c. 1470 BCE", "end": "1420 BCE" },
         { "name": "Postpalatial (LM III)", "start": "c. 1420 BCE", "end": "1075 BCE" }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [
+            { "sourceKey": "wp-minoan", "sourceLocation": "category \"History of Crete\"" },
+            { "sourceKey": "wp-minoan", "sourceLocation": "category \"Prehistoric Crete\"" },
+            { "sourceKey": "wp-minoan", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-minoan", "sourceLocation": "category \"History of Crete\"" },
+            { "sourceKey": "wp-minoan", "sourceLocation": "category \"Prehistoric Crete\"" },
+            { "sourceKey": "wp-minoan", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "pre-indo-europeans",
+          "sources": [{ "sourceKey": "wp-minoan", "sourceLocation": "category \"Pre-Indo-Europeans\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "minoan-civilization",
+          "sources": [{ "sourceKey": "wp-minoan", "sourceLocation": "category \"Minoan civilization\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "aegean-civilizations",
+          "sources": [{ "sourceKey": "wp-minoan", "sourceLocation": "category \"Minoan civilization\" (in \"Aegean civilizations\")" }]
+        }
       ]
     },
     {
@@ -971,6 +1547,35 @@
             }
           ]
         }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [
+            { "sourceKey": "wp-mycenaean", "sourceLocation": "first sentence" },
+            {
+              "sourceKey": "wp-mycenaean",
+              "sourceLocation": "infobox region: \"Mainland Greece, Ionian islands, Aegean islands and Western Anatolia\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            {
+              "sourceKey": "wp-mycenaean",
+              "sourceLocation": "infobox region: \"Mainland Greece, Ionian islands, Aegean islands and Western Anatolia\""
+            }
+          ]
+        },
+        { "facet": "people", "value": "indo-european-greek", "sources": [{ "sourceKey": "wp-mycenaean", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "mycenaean-greece",
+          "sources": [{ "sourceKey": "wp-mycenaean", "sourceLocation": "category \"Mycenaean Greece\"" }]
+        }
       ]
     },
     {
@@ -994,6 +1599,29 @@
               "source": { "sourceKey": "wp-classical-greece", "sourceLocation": "lead ('the fall of the last Athenian tyrant in 510 BC')" }
             }
           ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [
+            { "sourceKey": "wp-row-greece", "sourceLocation": "category \"Ancient Greece\"" },
+            { "sourceKey": "wp-row-greece", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-row-greece", "sourceLocation": "category \"Ancient Greece\" (in \"History of Greece by period\")" }
+          ]
+        },
+        { "facet": "geography", "value": "mediterranean", "sources": [{ "sourceKey": "wp-row-greece", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "indo-european-greek", "sources": [{ "sourceKey": "wp-row-greece", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-greece",
+          "sources": [{ "sourceKey": "wp-row-greece", "sourceLocation": "category \"Ancient Greece\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "classical-antiquity",
+          "sources": [{ "sourceKey": "wp-row-greece", "sourceLocation": "category \"Ancient Greece\" (in \"Classical antiquity\")" }]
         }
       ]
     },
@@ -1022,7 +1650,22 @@
           },
           { "year": "701 BCE", "source": { "sourceKey": "wp-magna-graecia", "sourceLocation": "infobox: end of century" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-magna-graecia", "sourceLocation": "category \"Geographical, historical and cultural regions of Italy\"" },
+            { "sourceKey": "wp-magna-graecia", "sourceLocation": "first sentence" },
+            {
+              "sourceKey": "wp-magna-graecia",
+              "sourceLocation": "category \"Geographical, historical and cultural regions of Italy\" (in \"Historical geography of Italy\")"
+            }
+          ]
+        },
+        { "facet": "people", "value": "indo-european-greek", "sources": [{ "sourceKey": "wp-magna-graecia", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "cyrene",
@@ -1038,7 +1681,29 @@
           { "year": "631 BCE", "source": { "sourceKey": "wp-cyrene", "sourceLocation": "infobox (traditional)" } },
           { "year": "650 BCE", "source": { "sourceKey": "wp-cyrene", "sourceLocation": "History ('mid-seventh century BC', archaeology)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-row-cyrene", "sourceLocation": "category \"Ancient Greek archaeological sites in Libya\"" },
+            { "sourceKey": "wp-row-cyrene", "sourceLocation": "category \"Archaeological sites in Libya\"" },
+            { "sourceKey": "wp-row-cyrene", "sourceLocation": "category \"Baladiyat of Libya\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [{ "sourceKey": "wp-row-cyrene", "sourceLocation": "category \"Ancient Thera\" (in \"Ancient Cyclades\")" }]
+        },
+        { "facet": "people", "value": "indo-european-greek", "sources": [{ "sourceKey": "wp-row-cyrene", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-libya",
+          "sources": [{ "sourceKey": "wp-row-cyrene", "sourceLocation": "category \"Greek colonies in Libya\" (in \"Ancient Libya\")" }]
+        }
+      ]
     },
     {
       "id": "hellenistic",
@@ -1115,6 +1780,27 @@
           ],
           "endDates": [{ "year": "168 BCE", "source": { "sourceKey": "wp-antigonid", "sourceLocation": "lead ('the Battle of Pydna in 168 BC')" } }]
         }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [
+            { "sourceKey": "wp-macedon", "sourceLocation": "category \"1st-millennium BC disestablishments in Greece\"" },
+            { "sourceKey": "wp-macedon", "sourceLocation": "category \"7th-century BC establishments in Greece\"" },
+            { "sourceKey": "wp-macedon", "sourceLocation": "category \"Ancient Macedonia\"" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [{ "sourceKey": "wp-macedon", "sourceLocation": "infobox common_languages: \"Ancient Macedonian, Attic, Koine Greek\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "hellenistic-period",
+          "sources": [{ "sourceKey": "wp-macedon", "sourceLocation": "category \"Hellenistic states\" (in \"Hellenistic period\")" }]
+        }
       ]
     },
     {
@@ -1124,7 +1810,24 @@
       "parent": "hellenistic",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_Pergamon",
       "ids": { "wikidata": "Q2022162" },
-      "span": { "start": "c. 282 BCE", "end": "129 BCE" }
+      "span": { "start": "c. 282 BCE", "end": "129 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-pergamon", "sourceLocation": "category \"States in Hellenistic Anatolia\"" },
+            { "sourceKey": "wp-pergamon", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-pergamon", "sourceLocation": "infobox capital: \"Pergamon(modern-day Bergama, İzmir Province, Turkey)\"" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-anatolian",
+          "sources": [{ "sourceKey": "wp-pergamon", "sourceLocation": "infobox common_languages: \"GreekLycian, Carian, Lydian\"" }]
+        },
+        { "facet": "people", "value": "indo-european-greek", "sources": [{ "sourceKey": "wp-pergamon", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "near-east",
@@ -1148,7 +1851,24 @@
       "color": "#b09060",
       "parent": "egypt",
       "url": "https://en.wikipedia.org/wiki/Nabta_Playa",
-      "ids": { "wikidata": "Q1535226" }
+      "ids": { "wikidata": "Q1535226" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-nabta", "sourceLocation": "category \"Archaeological sites in Egypt\"" },
+            { "sourceKey": "wp-nabta", "sourceLocation": "category \"Kingdom of Kush\"" },
+            { "sourceKey": "wp-nabta", "sourceLocation": "category \"Prehistoric Egypt\"" }
+          ]
+        },
+        { "facet": "people", "value": "nubian-meroitic", "sources": [{ "sourceKey": "wp-nabta", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "kingdom-of-kush",
+          "sources": [{ "sourceKey": "wp-nabta", "sourceLocation": "category \"Kingdom of Kush\"" }]
+        }
+      ]
     },
     {
       "id": "lower-egypt-neolithic",
@@ -1156,7 +1876,18 @@
       "color": "#a08050",
       "parent": "egypt",
       "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
-      "ids": { "wikidata": "Q208520" }
+      "ids": { "wikidata": "Q208520" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "category \"Prehistoric Egypt\"" },
+            { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "infobox capital: \"| common_languages       = Egyptian\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "upper-egypt-predynastic",
@@ -1164,7 +1895,18 @@
       "color": "#c09050",
       "parent": "egypt",
       "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
-      "ids": { "wikidata": "Q208520" }
+      "ids": { "wikidata": "Q208520" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "category \"Prehistoric Egypt\"" },
+            { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-prehistoric-egypt", "sourceLocation": "infobox capital: \"| common_languages       = Egyptian\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "pharaonic-egypt",
@@ -1349,6 +2091,45 @@
           ]
         },
         { "name": "Late Period", "start": "664 BCE", "end": "332 BCE" }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-anc-egypt", "sourceLocation": "category \"Ancient Egypt\"" },
+            { "sourceKey": "wp-anc-egypt", "sourceLocation": "category \"History of Egypt by period\"" },
+            { "sourceKey": "wp-anc-egypt", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [{ "sourceKey": "wp-anc-egypt", "sourceLocation": "category \"History of the Mediterranean\"" }]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [{ "sourceKey": "wp-anc-egypt", "sourceLocation": "category \"Ancient Egypt\" (in \"Ancient history of North Africa\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "egyptian",
+          "sources": [
+            { "sourceKey": "wp-anc-egypt", "sourceLocation": "infobox common_languages: \"Egyptian language\"" },
+            { "sourceKey": "wp-anc-egypt", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples",
+          "sources": [{ "sourceKey": "wp-anc-egypt", "sourceLocation": "category \"Ancient peoples\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-egypt",
+          "sources": [{ "sourceKey": "wp-anc-egypt", "sourceLocation": "category \"Ancient Egypt\"" }]
+        }
       ]
     },
     {
@@ -1374,7 +2155,27 @@
           { "year": "2900 BCE", "source": { "sourceKey": "wp-a-group", "sourceLocation": "lead ('fell 200 years later c. 2900 BC')" } },
           { "year": "3100 BCE", "source": { "sourceKey": "wp-a-group", "sourceLocation": "History > B-Group ('came to an end around 3100 BC')" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-a-group", "sourceLocation": "category \"Archaeological cultures in Egypt\"" },
+            { "sourceKey": "wp-a-group", "sourceLocation": "category \"Archaeological cultures in Sudan\"" },
+            { "sourceKey": "wp-a-group", "sourceLocation": "category \"History of Nubia\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-a-group", "sourceLocation": "category \"Archaeology of North Africa\"" },
+            { "sourceKey": "wp-a-group", "sourceLocation": "category \"Archaeology of North Africa\" (in \"History of North Africa\")" },
+            { "sourceKey": "wp-a-group", "sourceLocation": "category \"Sudan\" (in \"Countries in North Africa\")" }
+          ]
+        }
+      ]
     },
     { "id": "c-group", "name": "C-Group culture (Lower Nubia)", "color": "#9a7a5a", "parent": "nubia" },
     {
@@ -1384,7 +2185,34 @@
       "parent": "nubia",
       "url": "https://en.wikipedia.org/wiki/Kerma_culture",
       "ids": { "wikidata": "Q1739282" },
-      "span": { "start": "c. 2500 BCE", "end": "1500 BCE" }
+      "span": { "start": "c. 2500 BCE", "end": "1500 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-kerma", "sourceLocation": "category \"Archaeology of Sudan\"" },
+            { "sourceKey": "wp-kerma", "sourceLocation": "category \"History of Nubia\"" },
+            { "sourceKey": "wp-kerma", "sourceLocation": "category \"Kingdom of Kush\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-kerma", "sourceLocation": "category \"Archaeology of North Africa\"" },
+            { "sourceKey": "wp-kerma", "sourceLocation": "category \"Archaeology of North Africa\" (in \"History of North Africa\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "kingdom-of-kush",
+          "sources": [
+            { "sourceKey": "wp-kerma", "sourceLocation": "category \"Kingdom of Kush\"" },
+            { "sourceKey": "wp-kerma", "sourceLocation": "category \"Kerma culture\" (in \"Kingdom of Kush\")" }
+          ]
+        }
+      ]
     },
     {
       "id": "kush",
@@ -1410,7 +2238,23 @@
           { "year": "350 CE", "source": { "sourceKey": "wp-meroe-classical", "sourceLocation": "Fourth Meroitic Period" } },
           { "year": "330 CE", "source": { "sourceKey": "wp-kush-classical", "sourceLocation": "infobox (Axumite capture of Meroë)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-kush-classical", "sourceLocation": "category \"Kingdom of Kush\"" },
+            { "sourceKey": "wp-kush-classical", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-kush-classical", "sourceLocation": "category \"Kingdom of Kush\" (in \"Foreign contacts of ancient Egypt\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "kingdom-of-kush",
+          "sources": [{ "sourceKey": "wp-kush-classical", "sourceLocation": "category \"Kingdom of Kush\"" }]
+        }
+      ]
     },
     {
       "id": "nobatia",
@@ -1429,7 +2273,25 @@
             "source": { "sourceKey": "wp-makuria", "sourceLocation": "Early period ('presumably during the 620s, but before 642')" }
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-nobatia", "sourceLocation": "category \"Christianity in Sudan\"" },
+            { "sourceKey": "wp-nobatia", "sourceLocation": "category \"History of Nubia\"" },
+            { "sourceKey": "wp-nobatia", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [{ "sourceKey": "wp-nobatia", "sourceLocation": "category \"Christianity in Sudan\" (in \"Christianity in North Africa\")" }]
+        },
+        { "facet": "people", "value": "indo-european-greek", "sources": [{ "sourceKey": "wp-nobatia", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "nubian-meroitic", "sources": [{ "sourceKey": "wp-nobatia", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "makuria",
@@ -1443,7 +2305,59 @@
         "end": "1475 CE",
         "startDates": [{ "year": "450 CE", "margin": 50, "source": { "sourceKey": "wp-makuria", "sourceLocation": "infobox ('5th century')" } }],
         "endDates": [{ "year": "1475 CE", "margin": 25, "source": { "sourceKey": "wp-makuria", "sourceLocation": "infobox ('late 15th century')" } }]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-makuria", "sourceLocation": "category \"History of Nubia\"" },
+            { "sourceKey": "wp-makuria", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-makuria", "sourceLocation": "category \"Coptic Orthodox Church\" (in \"Oriental Orthodoxy in Egypt\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "nubian-meroitic",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            },
+            { "sourceKey": "wp-makuria", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "semitic",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "egyptian",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "alodia",
@@ -1459,7 +2373,34 @@
           { "year": "550 CE", "margin": 50, "source": { "sourceKey": "wp-alodia", "sourceLocation": "infobox ('6th century')" } },
           { "year": "550 CE", "source": { "sourceKey": "wp-alodia", "sourceLocation": "Origins ('completed by the mid-6th century')" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-alodia", "sourceLocation": "category \"Christianity in Sudan\"" },
+            { "sourceKey": "wp-alodia", "sourceLocation": "category \"History of Nubia\"" },
+            { "sourceKey": "wp-alodia", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [{ "sourceKey": "wp-alodia", "sourceLocation": "category \"Christianity in Sudan\" (in \"Christianity in North Africa\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "infobox common_languages: \"NubianMeroitic (possibly still spoken) Greek (liturgical) Others\""
+            },
+            { "sourceKey": "wp-alodia", "sourceLocation": "first sentence" }
+          ]
+        }
+      ]
     },
     {
       "id": "ptolemaic-roman-egypt",
@@ -1509,7 +2450,11 @@
           { "year": "10000 BCE", "source": { "sourceKey": "wp-ppna", "sourceLocation": "lead and infobox" } },
           { "year": "9600 BCE", "source": { "sourceKey": "wp-gobekli", "sourceLocation": "Dawn of village life" } }
         ]
-      }
+      },
+      "memberships": [
+        { "facet": "geography", "value": "levant", "sources": [{ "sourceKey": "wp-ppna", "sourceLocation": "first sentence" }] },
+        { "facet": "geography", "value": "anatolia", "sources": [{ "sourceKey": "wp-ppna", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "ppnb",
@@ -1525,7 +2470,11 @@
           { "year": "6500 BCE", "source": { "sourceKey": "wp-ppnb", "sourceLocation": "lead and infobox" } },
           { "year": "6000 BCE", "source": { "sourceKey": "wp-ppnb", "sourceLocation": "Lifestyle ('8,700–6,000 BC')" } }
         ]
-      }
+      },
+      "memberships": [
+        { "facet": "geography", "value": "levant", "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "first sentence" }] },
+        { "facet": "geography", "value": "mesopotamia", "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "yarmukian",
@@ -1534,7 +2483,18 @@
       "parent": "levant",
       "url": "https://en.wikipedia.org/wiki/Yarmukian_culture",
       "ids": { "wikidata": "Q2915635" },
-      "span": { "start": "c. 6400 BCE", "end": "6000 BCE" }
+      "span": { "start": "c. 6400 BCE", "end": "6000 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-yarmukian", "sourceLocation": "category \"Archaeological cultures in Israel\"" },
+            { "sourceKey": "wp-yarmukian", "sourceLocation": "category \"Archaeological cultures in Jordan\"" },
+            { "sourceKey": "wp-yarmukian", "sourceLocation": "category \"Archaeological cultures in Lebanon\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "ghassulian",
@@ -1550,7 +2510,23 @@
           { "year": "3800 BCE", "source": { "sourceKey": "wp-ghassulian", "sourceLocation": "infobox" } },
           { "year": "3500 BCE", "source": { "sourceKey": "wp-ghassulian", "sourceLocation": "lead" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-ghassulian", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-ghassulian", "sourceLocation": "category \"Archaeological cultures in Jordan\"" },
+            { "sourceKey": "wp-ghassulian", "sourceLocation": "category \"Archaeological cultures in Palestine\"" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-ghassulian", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" }]
+        }
+      ]
     },
     {
       "id": "canaan",
@@ -1564,6 +2540,29 @@
         { "name": "Early Bronze Age", "start": "c. 3500 BCE", "end": "2000 BCE" },
         { "name": "Middle Bronze Age", "start": "c. 2000 BCE", "end": "1550 BCE" },
         { "name": "Late Bronze Age", "start": "c. 1550 BCE", "end": "1200 BCE" }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-canaan", "sourceLocation": "category \"Ancient history of Jordan\"" },
+            { "sourceKey": "wp-canaan", "sourceLocation": "category \"Land of Israel\"" },
+            { "sourceKey": "wp-canaan", "sourceLocation": "first sentence" }
+          ]
+        },
+        { "facet": "people", "value": "semitic", "sources": [{ "sourceKey": "wp-canaan", "sourceLocation": "first sentence" }] },
+        { "facet": "civilization", "value": "canaan", "sources": [{ "sourceKey": "wp-canaan", "sourceLocation": "category \"Canaan\"" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-israel-and-judah",
+          "sources": [{ "sourceKey": "wp-canaan", "sourceLocation": "category \"Ancient Jewish settlements\" (in \"Ancient Israel and Judah\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "phoenicia",
+          "sources": [{ "sourceKey": "wp-canaan", "sourceLocation": "category \"Canaan\" (in \"Phoenicia\")" }]
+        }
       ]
     },
     {
@@ -1574,7 +2573,49 @@
       "chronology": "middle",
       "url": "https://en.wikipedia.org/wiki/Ebla",
       "ids": { "wikidata": "Q5743" },
-      "span": { "start": "c. 3500 BCE", "end": "1600 BCE" }
+      "span": { "start": "c. 3500 BCE", "end": "1600 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Former populated places in Syria\"" },
+            { "sourceKey": "wp-ebla", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-ebla", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Ebla\" (in \"Ancient Mesopotamia\")" },
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Kish civilization\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        { "facet": "people", "value": "sumerian", "sources": [{ "sourceKey": "wp-ebla", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" },
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Ebla\" (in \"Ancient Near East\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Ebla\" (in \"Ancient Mesopotamia\")" },
+            { "sourceKey": "wp-ebla", "sourceLocation": "category \"Kish civilization\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "sumer",
+          "sources": [{ "sourceKey": "wp-ebla", "sourceLocation": "category \"Kish civilization\" (in \"Sumer\")" }]
+        }
+      ]
     },
     {
       "id": "ugarit",
@@ -1590,7 +2631,27 @@
           { "year": "1185 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "infobox and History" } },
           { "year": "1190 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "destruction infobox (c. 1190 BC)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-ugarit", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-ugarit", "sourceLocation": "category \"Bronze Age sites in Syria\"" },
+            { "sourceKey": "wp-ugarit", "sourceLocation": "category \"Former populated places in Syria\"" }
+          ]
+        },
+        { "facet": "people", "value": "semitic", "sources": [{ "sourceKey": "wp-ugarit", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [
+            { "sourceKey": "wp-ugarit", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" },
+            { "sourceKey": "wp-ugarit", "sourceLocation": "category \"Late Bronze Age collapse\" (in \"Ancient Near East\")" }
+          ]
+        }
+      ]
     },
     {
       "id": "phoenicia",
@@ -1599,7 +2660,82 @@
       "parent": "levant",
       "url": "https://en.wikipedia.org/wiki/Phoenicia",
       "ids": { "wikidata": "Q41642" },
-      "span": { "start": "c. 1200 BCE", "end": "332 BCE" }
+      "span": { "start": "c. 1200 BCE", "end": "332 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient Israel and Judah\"" },
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient Lebanon\"" },
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient Levant\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"History of the Mediterranean\"" },
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient Near East\" (in \"History of the Mediterranean\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "iberia",
+          "sources": [
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient history of the Iberian Peninsula\"" },
+            {
+              "sourceKey": "wp-phoenicia",
+              "sourceLocation": "category \"Ancient history of the Iberian Peninsula\" (in \"History of Spain by period\")"
+            },
+            {
+              "sourceKey": "wp-phoenicia",
+              "sourceLocation": "category \"Ancient history of the Iberian Peninsula\" (in \"History of the Iberian Peninsula\")"
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient history of North Africa\"" },
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient history of North Africa\" (in \"History of North Africa\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "semitic",
+          "sources": [
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "infobox common_languages: \"Phoenician\"" },
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "semitic-speaking-peoples",
+          "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Semitic-speaking peoples\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient Near East\"" },
+            { "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-israel-and-judah",
+          "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Ancient Israel and Judah\"" }]
+        },
+        { "facet": "civilization", "value": "phoenicia", "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Phoenicia\"" }] },
+        {
+          "facet": "civilization",
+          "value": "canaan",
+          "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "category \"Canaanite people\" (in \"Canaan\")" }]
+        }
+      ]
     },
     {
       "id": "israel-judah",
@@ -1608,7 +2744,28 @@
       "parent": "levant",
       "url": "https://en.wikipedia.org/wiki/Ancient_Israel_and_Judah",
       "ids": { "wikidata": "Q193748" },
-      "span": { "start": "c. 930 BCE", "end": "587 BCE" }
+      "span": { "start": "c. 930 BCE", "end": "587 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-row-israel-judah", "sourceLocation": "category \"Ancient Israel and Judah\"" },
+            { "sourceKey": "wp-row-israel-judah", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-row-israel-judah", "sourceLocation": "infobox location: \"Southern Levant\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [{ "sourceKey": "wp-row-israel-judah", "sourceLocation": "category \"Ancient Jewish history\" (in \"Ancient Mediterranean religions\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-israel-and-judah",
+          "sources": [{ "sourceKey": "wp-row-israel-judah", "sourceLocation": "category \"Ancient Israel and Judah\"" }]
+        }
+      ]
     },
     {
       "id": "philistines",
@@ -1617,7 +2774,52 @@
       "parent": "levant",
       "url": "https://en.wikipedia.org/wiki/Philistines",
       "ids": { "wikidata": "Q193776" },
-      "span": { "start": "c. 1175 BCE", "end": "604 BCE" }
+      "span": { "start": "c. 1175 BCE", "end": "604 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-philistines", "sourceLocation": "category \"Ancient Israel and Judah\"" },
+            { "sourceKey": "wp-philistines", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-philistines", "sourceLocation": "category \"Ancient Israel and Judah\" (in \"Ancient Levant\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            { "sourceKey": "wp-philistines", "sourceLocation": "category \"Sea Peoples\" (in \"Foreign contacts of ancient Egypt\")" },
+            { "sourceKey": "wp-philistines", "sourceLocation": "category \"Sea Peoples\" (in \"Military history of ancient Egypt\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "category \"Philistines\" (in \"History of Crete\")" }]
+        },
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "category \"Philistines\" (in \"History of Crete\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-peoples",
+          "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "category \"Indo-European peoples\"" }]
+        },
+        { "facet": "people", "value": "sea-peoples", "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "category \"Sea Peoples\"" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-israel-and-judah",
+          "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "category \"Ancient Israel and Judah\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "category \"Sea Peoples\" (in \"Ancient Near East\")" }]
+        }
+      ]
     },
     {
       "id": "aram",
@@ -1652,7 +2854,28 @@
           { "year": "1200 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "infobox ('c. 12th century BCE'): start of century" } },
           { "year": "1101 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "infobox: end of century; lead says 'late 12th century'" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-aram", "sourceLocation": "category \"Ancient Syria\"" },
+            { "sourceKey": "wp-aram", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-aram", "sourceLocation": "category \"Ancient Damascus\" (in \"Ancient Syria\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "semitic",
+          "sources": [{ "sourceKey": "wp-aram", "sourceLocation": "infobox common_languages: \"Old Aramaic\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "arameans",
+          "sources": [{ "sourceKey": "wp-aram", "sourceLocation": "category \"Aramean states\" (in \"Arameans\")" }]
+        }
+      ]
     },
     {
       "id": "bit-adini",
@@ -1665,7 +2888,51 @@
         "start": "c. 1000 BCE",
         "end": "856 BCE",
         "endDates": [{ "year": "856 BCE", "source": { "sourceKey": "wp-bit-adini", "sourceLocation": "infobox ('c. 1000 BC–856-5 BC')" } }]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-bit-adini", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-bit-adini", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-bit-adini", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient history of Iraq\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-bit-adini", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-bit-adini", "sourceLocation": "category \"Neo-Hittite states\" (in \"Ancient Syria\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [{ "sourceKey": "wp-bit-adini", "sourceLocation": "category \"Neo-Hittite states\" (in \"States in Iron Age Anatolia\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "semitic",
+          "sources": [{ "sourceKey": "wp-bit-adini", "sourceLocation": "infobox common_languages: \"Aramaic\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [{ "sourceKey": "wp-bit-adini", "sourceLocation": "category \"Ancient Mesopotamia\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-bit-adini", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient Near East\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "arameans",
+          "sources": [{ "sourceKey": "wp-bit-adini", "sourceLocation": "category \"Aramean states\" (in \"Arameans\")" }]
+        }
+      ]
     },
     {
       "id": "cyprus",
@@ -1673,7 +2940,23 @@
       "color": "#b07a2f",
       "parent": "levant",
       "url": "https://en.wikipedia.org/wiki/Prehistoric_Cyprus",
-      "ids": { "wikidata": "Q3565569" }
+      "ids": { "wikidata": "Q3565569" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-row-cyprus", "sourceLocation": "category \"Prehistoric Cyprus\"" },
+            { "sourceKey": "wp-row-cyprus", "sourceLocation": "category \"Ancient Near East\" (in \"History of the Mediterranean\")" },
+            { "sourceKey": "wp-row-cyprus", "sourceLocation": "category \"Prehistoric Cyprus\" (in \"History of Cyprus by period\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-row-cyprus", "sourceLocation": "category \"Ancient Near East\"" }]
+        }
+      ]
     },
     {
       "id": "judea",
@@ -1681,7 +2964,18 @@
       "color": "#7a6a4a",
       "parent": "levant",
       "url": "https://en.wikipedia.org/wiki/Judea",
-      "ids": { "wikidata": "Q104028" }
+      "ids": { "wikidata": "Q104028" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-row-judea", "sourceLocation": "category \"Geography of Palestine\"" },
+            { "sourceKey": "wp-row-judea", "sourceLocation": "category \"Historical regions in Israel\"" },
+            { "sourceKey": "wp-row-judea", "sourceLocation": "category \"Historical regions in Palestine\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "palmyra",
@@ -1697,7 +2991,20 @@
           { "year": "270 CE", "source": { "sourceKey": "wp-palmyrene", "sourceLocation": "infobox (as empire)" } },
           { "year": "260 CE", "source": { "sourceKey": "wp-palmyrene", "sourceLocation": "infobox (as kingdom)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-row-palmyra", "sourceLocation": "category \"Former populated places in Syria\"" },
+            { "sourceKey": "wp-row-palmyra", "sourceLocation": "category \"Oases of Syria\"" },
+            { "sourceKey": "wp-row-palmyra", "sourceLocation": "category \"Roman towns and cities in Syria\"" }
+          ]
+        },
+        { "facet": "geography", "value": "mediterranean", "sources": [{ "sourceKey": "wp-row-palmyra", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "semitic", "sources": [{ "sourceKey": "wp-row-palmyra", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "anatolia",
@@ -1715,7 +3022,19 @@
       "parent": "anatolia",
       "url": "https://en.wikipedia.org/wiki/Ta%C5%9F_Tepeler",
       "ids": { "wikidata": "Q112144214" },
-      "span": { "start": "c. 9500 BCE", "end": "8000 BCE" }
+      "span": { "start": "c. 9500 BCE", "end": "8000 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-row-gobekli", "sourceLocation": "category \"Archaeological sites in the Southeastern Anatolia region\"" },
+            { "sourceKey": "wp-row-gobekli", "sourceLocation": "category \"Former populated places in Turkey\"" },
+            { "sourceKey": "wp-row-gobekli", "sourceLocation": "first sentence" }
+          ]
+        },
+        { "facet": "geography", "value": "mesopotamia", "sources": [{ "sourceKey": "wp-row-gobekli", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "cayonu",
@@ -1724,7 +3043,18 @@
       "parent": "anatolia",
       "url": "https://en.wikipedia.org/wiki/%C3%87ay%C3%B6n%C3%BC",
       "ids": { "wikidata": "Q272720" },
-      "span": { "start": "c. 8630 BCE", "end": "6800 BCE" }
+      "span": { "start": "c. 8630 BCE", "end": "6800 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-cayonu", "sourceLocation": "category \"Archaeological sites in the Southeastern Anatolia region\"" },
+            { "sourceKey": "wp-cayonu", "sourceLocation": "category \"Former populated places in Turkey\"" },
+            { "sourceKey": "wp-cayonu", "sourceLocation": "category \"Prehistoric Anatolia\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "catalhoyuk",
@@ -1740,7 +3070,18 @@
           { "year": "7500 BCE", "source": { "sourceKey": "wp-catalhoyuk", "sourceLocation": "lead" } },
           { "year": "7100 BCE", "source": { "sourceKey": "wp-catalhoyuk", "sourceLocation": "infobox" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-catalhoyuk", "sourceLocation": "category \"Archaeological discoveries in Turkey\"" },
+            { "sourceKey": "wp-catalhoyuk", "sourceLocation": "category \"Archaeological museums in Turkey\"" },
+            { "sourceKey": "wp-catalhoyuk", "sourceLocation": "category \"Former populated places in Turkey\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "hittites",
@@ -1761,6 +3102,52 @@
         { "name": "Old Kingdom", "start": "c. 1650 BCE", "end": "1500 BCE" },
         { "name": "Middle Kingdom", "start": "c. 1500 BCE", "end": "1400 BCE" },
         { "name": "New Kingdom (Empire)", "start": "c. 1400 BCE", "end": "1190 BCE" }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-hittites", "sourceLocation": "category \"Ancient peoples of Anatolia\"" },
+            { "sourceKey": "wp-hittites", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-hittites", "sourceLocation": "category \"Ancient peoples of Anatolia\" (in \"Ancient Anatolia\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-hittites", "sourceLocation": "category \"Ancient Syria\"" },
+            { "sourceKey": "wp-hittites", "sourceLocation": "category \"Ancient Syria\" (in \"Ancient Levant\")" },
+            { "sourceKey": "wp-hittites", "sourceLocation": "category \"Ancient Syria\" (in \"History of Syria by period\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "category \"History of the Mediterranean\"" }]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples-of-anatolia",
+          "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "category \"Ancient peoples of Anatolia\"" }]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-anatolian",
+          "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "infobox common_languages: \"Hittite, Hattic, Luwian, Hurrian\"" }]
+        },
+        {
+          "facet": "people",
+          "value": "hurro-urartian",
+          "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "infobox common_languages: \"Hittite, Hattic, Luwian, Hurrian\"" }]
+        },
+        { "facet": "civilization", "value": "hittites", "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "category \"Hittites\"" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-hittites", "sourceLocation": "category \"Hittites\" (in \"Ancient Near East\")" }]
+        }
       ]
     },
     {
@@ -1781,7 +3168,39 @@
             "source": { "sourceKey": "wp-kaskians", "sourceLocation": "History (Tiglath-Pileser I, 'late in the 12th century BC'; then they disappear)" }
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-kaskians", "sourceLocation": "category \"Ancient peoples of Anatolia\"" },
+            { "sourceKey": "wp-kaskians", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-kaskians", "sourceLocation": "category \"Ancient peoples of Anatolia\" (in \"Ancient Anatolia\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples-of-anatolia",
+          "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "category \"Ancient peoples of Anatolia\"" }]
+        },
+        { "facet": "people", "value": "indo-european-anatolian", "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "hittite-empire",
+          "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "category \"Hittite Empire\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "hittites",
+          "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "category \"Hittite Empire\" (in \"Hittites\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "category \"Late Bronze Age collapse\" (in \"Ancient Near East\")" }]
+        }
+      ]
     },
     {
       "id": "phrygia",
@@ -1790,7 +3209,23 @@
       "parent": "anatolia",
       "url": "https://en.wikipedia.org/wiki/Phrygia",
       "ids": { "wikidata": "Q32579" },
-      "span": { "start": "c. 1200 BCE", "end": "675 BCE" }
+      "span": { "start": "c. 1200 BCE", "end": "675 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-phrygia", "sourceLocation": "category \"Historical regions of Anatolia\"" },
+            { "sourceKey": "wp-phrygia", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-phrygia", "sourceLocation": "category \"Historical regions of Anatolia\" (in \"History of Anatolia\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-other",
+          "sources": [{ "sourceKey": "wp-phrygia", "sourceLocation": "infobox common_languages: \"Phrygian\"" }]
+        }
+      ]
     },
     {
       "id": "lydia",
@@ -1810,7 +3245,28 @@
           { "year": "546 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "infobox and lead" } },
           { "year": "547 BCE", "source": { "sourceKey": "wp-croesus", "sourceLocation": "short description ('to 547 BC')" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-lydia", "sourceLocation": "category \"Historical regions of Anatolia\"" },
+            { "sourceKey": "wp-lydia", "sourceLocation": "category \"History of Turkey\"" },
+            { "sourceKey": "wp-lydia", "sourceLocation": "category \"Iron Age Anatolia\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "category \"History of Turkey\" (in \"History of the Mediterranean\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-anatolian",
+          "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "infobox common_languages: \"Lydian\"" }]
+        }
+      ]
     },
     {
       "id": "lycia",
@@ -1830,7 +3286,36 @@
           { "year": "546 BCE", "source": { "sourceKey": "wp-lycia", "sourceLocation": "lead" } },
           { "year": "540 BCE", "source": { "sourceKey": "wp-lycia", "sourceLocation": "contents ('Acquisition by Cyrus the Great (circa 540 BC)')" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-lycia", "sourceLocation": "category \"Historical regions of Anatolia\"" },
+            { "sourceKey": "wp-lycia", "sourceLocation": "first sentence" },
+            {
+              "sourceKey": "wp-lycia",
+              "sourceLocation": "category \"Buildings and structures in Antalya Province\" (in \"Buildings and structures in Turkey by province\")"
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "aegean",
+          "sources": [
+            { "sourceKey": "wp-lycia", "sourceLocation": "category \"Geography of ancient Greece\"" },
+            { "sourceKey": "wp-lycia", "sourceLocation": "category \"Geography of ancient Greece\" (in \"Ancient Greece\")" },
+            { "sourceKey": "wp-lycia", "sourceLocation": "category \"Geography of ancient Greece\" (in \"Historical geography of Greece\")" }
+          ]
+        },
+        { "facet": "people", "value": "indo-european-anatolian", "sources": [{ "sourceKey": "wp-lycia", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-greece",
+          "sources": [{ "sourceKey": "wp-lycia", "sourceLocation": "category \"Geography of ancient Greece\" (in \"Ancient Greece\")" }]
+        }
+      ]
     },
     {
       "id": "urartu",
@@ -1846,7 +3331,38 @@
           { "year": "590 BCE", "source": { "sourceKey": "wp-urartu", "sourceLocation": "infobox (Median conquest)" } },
           { "year": "547 BCE", "source": { "sourceKey": "wp-urartu", "sourceLocation": "infobox (Achaemenid conquest, 590 BC/547 BC)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caucasus",
+          "sources": [
+            { "sourceKey": "wp-urartu", "sourceLocation": "category \"Ancient Armenia\"" },
+            { "sourceKey": "wp-urartu", "sourceLocation": "category \"Archaeology of Armenia\"" },
+            { "sourceKey": "wp-urartu", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-urartu", "sourceLocation": "category \"Iron Age Anatolia\"" },
+            { "sourceKey": "wp-urartu", "sourceLocation": "category \"Iron Age Anatolia\" (in \"Ancient Anatolia by period\")" },
+            { "sourceKey": "wp-urartu", "sourceLocation": "category \"Urartu\" (in \"Ancient peoples of Anatolia\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [{ "sourceKey": "wp-urartu", "sourceLocation": "category \"Ancient Near East\" (in \"History of the Mediterranean\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-urartu", "sourceLocation": "category \"Ancient Near East\"" }]
+        },
+        { "facet": "civilization", "value": "urartu", "sources": [{ "sourceKey": "wp-urartu", "sourceLocation": "category \"Urartu\"" }] }
+      ]
     },
     {
       "id": "galatia",
@@ -1862,7 +3378,24 @@
           { "year": "278 BCE", "source": { "sourceKey": "wp-galatians", "sourceLocation": "lead and note 2" } },
           { "year": "278 BCE", "margin": 1, "source": { "sourceKey": "wp-galatians", "sourceLocation": "History ('278–277 BC')" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-galatians", "sourceLocation": "category \"Ancient peoples of Anatolia\"" },
+            { "sourceKey": "wp-galatians", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-galatians", "sourceLocation": "category \"Ancient peoples of Anatolia\" (in \"Ancient Anatolia\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples-of-anatolia",
+          "sources": [{ "sourceKey": "wp-galatians", "sourceLocation": "category \"Ancient peoples of Anatolia\"" }]
+        },
+        { "facet": "people", "value": "indo-european-other", "sources": [{ "sourceKey": "wp-galatians", "sourceLocation": "first sentence" }] }
+      ]
     },
     {
       "id": "mesopotamia",
@@ -1880,7 +3413,18 @@
       "parent": "mesopotamia",
       "url": "https://en.wikipedia.org/wiki/Jarmo",
       "ids": { "wikidata": "Q1000577" },
-      "span": { "start": "c. 7090 BCE", "end": "4950 BCE" }
+      "span": { "start": "c. 7090 BCE", "end": "4950 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-jarmo", "sourceLocation": "category \"Archaeological discoveries in Iraq\"" },
+            { "sourceKey": "wp-jarmo", "sourceLocation": "category \"Archaeological sites in Iraq\"" },
+            { "sourceKey": "wp-jarmo", "sourceLocation": "category \"Former populated places in Iraq\"" }
+          ]
+        }
+      ]
     },
     {
       "id": "tell-brak",
@@ -1888,7 +3432,62 @@
       "color": "#5a6a4a",
       "parent": "mesopotamia",
       "url": "https://en.wikipedia.org/wiki/Tell_Brak",
-      "ids": { "wikidata": "Q978443" }
+      "ids": { "wikidata": "Q978443" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Archaeological sites in Syria\"" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Former populated places in Syria\"" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Stone Age sites in Syria\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Halaf culture\" (in \"Archaeological cultures in Iraq\")" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Kish civilization\" (in \"Ancient Mesopotamia\")" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Ubaid period\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Halaf culture\" (in \"Archaeological cultures in Turkey\")" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Hurrian cities\" (in \"Archaeological sites of ancient Anatolia\")" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Ubaid period\" (in \"Archaeological cultures in Turkey\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Kish civilization\" (in \"Ancient Mesopotamia\")" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Ubaid period\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "sumer",
+          "sources": [
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Kish civilization\" (in \"Sumer\")" },
+            { "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Uruk period\" (in \"Sumer\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "akkadian-empire",
+          "sources": [{ "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Akkadian cities\" (in \"Akkadian Empire\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "hurrians",
+          "sources": [{ "sourceKey": "wp-tell-brak", "sourceLocation": "category \"Hurrian cities\" (in \"Hurrians\")" }]
+        }
+      ]
     },
     {
       "id": "hassuna",
@@ -1897,7 +3496,33 @@
       "parent": "mesopotamia",
       "url": "https://en.wikipedia.org/wiki/Hassuna_culture",
       "ids": { "wikidata": "Q1588784" },
-      "span": { "start": "c. 7000 BCE", "end": "6000 BCE" }
+      "span": { "start": "c. 7000 BCE", "end": "6000 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-hassuna", "sourceLocation": "category \"Ancient Upper Mesopotamia\"" },
+            { "sourceKey": "wp-hassuna", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-hassuna", "sourceLocation": "infobox region: \"Mesopotamia\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [{ "sourceKey": "wp-hassuna", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Syria\")" }]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [{ "sourceKey": "wp-hassuna", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient history of Turkey\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [{ "sourceKey": "wp-hassuna", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Mesopotamia\")" }]
+        }
+      ]
     },
     {
       "id": "halaf",
@@ -1906,7 +3531,36 @@
       "parent": "mesopotamia",
       "url": "https://en.wikipedia.org/wiki/Halaf_culture",
       "ids": { "wikidata": "Q904998" },
-      "span": { "start": "c. 6100 BCE", "end": "5100 BCE" }
+      "span": { "start": "c. 6100 BCE", "end": "5100 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Archaeological cultures in Syria\"" },
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Prehistoric Syria\"" },
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Archaeological cultures in Syria\" (in \"Archaeology of Syria\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Archaeological cultures in Iraq\"" },
+            { "sourceKey": "wp-halaf", "sourceLocation": "infobox region: \"Mesopotamia\"" },
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Archaeological cultures in Iraq\" (in \"Archaeology of Iraq\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Archaeological cultures in Turkey\"" },
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Archaeological cultures in Turkey\" (in \"Archaeology of Turkey\")" },
+            { "sourceKey": "wp-halaf", "sourceLocation": "category \"Archaeological cultures in Turkey\" (in \"Prehistoric Turkey\")" }
+          ]
+        }
+      ]
     },
     {
       "id": "samarra",
@@ -1922,7 +3576,33 @@
           { "year": "5500 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "lead and infobox" } },
           { "year": "6000 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "chronology table" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-samarra", "sourceLocation": "category \"Ancient Upper Mesopotamia\"" },
+            { "sourceKey": "wp-samarra", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-samarra", "sourceLocation": "infobox region: \"Mesopotamia\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [{ "sourceKey": "wp-samarra", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Syria\")" }]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [{ "sourceKey": "wp-samarra", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient history of Turkey\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [{ "sourceKey": "wp-samarra", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Mesopotamia\")" }]
+        }
+      ]
     },
     {
       "id": "ubaid",
@@ -1938,7 +3618,41 @@
           { "year": "6500 BCE", "source": { "sourceKey": "wp-ubaid", "sourceLocation": "lead and infobox" } },
           { "year": "5500 BCE", "source": { "sourceKey": "wp-ubaid", "sourceLocation": "lead (in the south)" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-ubaid", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-ubaid", "sourceLocation": "category \"Archaeology of Iraq\"" },
+            { "sourceKey": "wp-ubaid", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient history of Iraq\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [{ "sourceKey": "wp-ubaid", "sourceLocation": "category \"Ubaid period\" (in \"Archaeological cultures in Syria\")" }]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [{ "sourceKey": "wp-ubaid", "sourceLocation": "category \"Ubaid period\" (in \"Archaeological cultures in Turkey\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-ubaid", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-ubaid", "sourceLocation": "category \"Ubaid period\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-ubaid", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient Near East\")" }]
+        }
+      ]
     },
     {
       "id": "hurrians",
@@ -1968,7 +3682,48 @@
           { "year": "673 BCE", "source": { "sourceKey": "wp-hurrians", "sourceLocation": "Shupria ('until its conquest by Assyria in 673–672 BC')" } },
           { "year": "672 BCE", "source": { "sourceKey": "wp-hurrians", "sourceLocation": "Shupria ('673–672 BC')" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-hurrians", "sourceLocation": "category \"Ancient Syria\"" },
+            { "sourceKey": "wp-hurrians", "sourceLocation": "category \"Ancient Syria\" (in \"Ancient Levant\")" },
+            { "sourceKey": "wp-hurrians", "sourceLocation": "category \"Ancient Syria\" (in \"History of Syria by period\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-hurrians", "sourceLocation": "category \"Hurrians\" (in \"Ancient peoples of Anatolia\")" },
+            { "sourceKey": "wp-hurrians", "sourceLocation": "category \"Hurrians\" (in \"Bronze Age Anatolia\")" },
+            { "sourceKey": "wp-hurrians", "sourceLocation": "category \"Hurrians\" (in \"Prehistoric Anatolia\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [{ "sourceKey": "wp-hurrians", "sourceLocation": "category \"Hurrians\" (in \"Ancient Mesopotamia\")" }]
+        },
+        {
+          "facet": "people",
+          "value": "hurro-urartian",
+          "sources": [{ "sourceKey": "wp-hurrians", "sourceLocation": "infobox languages: \"Hurrian\"" }]
+        },
+        { "facet": "civilization", "value": "hurrians", "sources": [{ "sourceKey": "wp-hurrians", "sourceLocation": "category \"Hurrians\"" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [{ "sourceKey": "wp-hurrians", "sourceLocation": "category \"Hurrians\" (in \"Ancient Mesopotamia\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-hurrians", "sourceLocation": "category \"Hurrians\" (in \"Ancient Near East\")" }]
+        }
+      ]
     },
     {
       "id": "mitanni",
@@ -1985,7 +3740,66 @@
           { "year": "1550 BCE", "source": { "sourceKey": "wp-mitanni", "sourceLocation": "lead" } },
           { "year": "1600 BCE", "source": { "sourceKey": "wp-mitanni", "sourceLocation": "infobox" } }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Ancient Upper Mesopotamia\"" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            { "sourceKey": "wp-mitanni", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient history of Turkey\")" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Hurrians\" (in \"Ancient peoples of Anatolia\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-mitanni", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Syria\")" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Hurrians\" (in \"Ancient Syria\")" }
+          ]
+        },
+        { "facet": "geography", "value": "nile", "sources": [{ "sourceKey": "wp-mitanni", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "people",
+          "value": "indo-aryan-peoples",
+          "sources": [{ "sourceKey": "wp-mitanni", "sourceLocation": "category \"Indo-Aryan peoples\"" }]
+        },
+        { "facet": "people", "value": "semitic", "sources": [{ "sourceKey": "wp-mitanni", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "hurro-urartian", "sources": [{ "sourceKey": "wp-mitanni", "sourceLocation": "first sentence" }] },
+        { "facet": "people", "value": "egyptian", "sources": [{ "sourceKey": "wp-mitanni", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "hurrians",
+          "sources": [
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Hurrians\"" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Mitanni\" (in \"Hurrians\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Mesopotamia\")" },
+            { "sourceKey": "wp-mitanni", "sourceLocation": "category \"Hurrians\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-mitanni", "sourceLocation": "category \"Hurrians\" (in \"Ancient Near East\")" }]
+        }
+      ]
     },
     {
       "id": "assyria",
@@ -2007,6 +3821,52 @@
         { "name": "Old Assyrian period", "start": "c. 2025 BCE", "end": "1364 BCE" },
         { "name": "Middle Assyrian Empire", "start": "c. 1363 BCE", "end": "912 BCE" },
         { "name": "Neo-Assyrian Empire", "start": "911 BCE", "end": "609 BCE" }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient history of Iraq\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Levant\" (in \"History of the Levant\")" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Assyria\" (in \"Archaeology of Syria\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mediterranean",
+          "sources": [
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Near East\" (in \"History of the Mediterranean\")" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Eastern Mediterranean\" (in \"Geography of the Mediterranean\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Near East\"" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient Near East\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-assyria", "sourceLocation": "category \"Assyria\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        { "facet": "civilization", "value": "assyria", "sources": [{ "sourceKey": "wp-assyria", "sourceLocation": "category \"Assyria\"" }] }
       ]
     },
     {
@@ -2026,7 +3886,57 @@
             "source": { "sourceKey": "wp-amorites", "sourceLocation": "Fall ('the Amorite era ended in Mesopotamia ... Kassite dynasty ... around 1595 BC')" }
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-amorites", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-amorites", "sourceLocation": "category \"Ancient Syria\"" },
+            { "sourceKey": "wp-amorites", "sourceLocation": "category \"Amorites\" (in \"Archaeology of Syria\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-amorites", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-amorites", "sourceLocation": "category \"Amorites\" (in \"Ancient Mesopotamia\")" },
+            { "sourceKey": "wp-amorites", "sourceLocation": "category \"Amorites\" (in \"Archaeology of Iraq\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples-of-the-near-east",
+          "sources": [{ "sourceKey": "wp-amorites", "sourceLocation": "category \"Ancient peoples of the Near East\"" }]
+        },
+        {
+          "facet": "people",
+          "value": "semitic-speaking-peoples",
+          "sources": [{ "sourceKey": "wp-amorites", "sourceLocation": "category \"Semitic-speaking peoples\"" }]
+        },
+        { "facet": "people", "value": "semitic", "sources": [{ "sourceKey": "wp-amorites", "sourceLocation": "first sentence" }] },
+        { "facet": "civilization", "value": "canaan", "sources": [{ "sourceKey": "wp-amorites", "sourceLocation": "category \"Canaan\"" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [
+            { "sourceKey": "wp-amorites", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" },
+            { "sourceKey": "wp-amorites", "sourceLocation": "category \"Ancient peoples of the Near East\" (in \"Ancient Near East\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [{ "sourceKey": "wp-amorites", "sourceLocation": "category \"Amorites\" (in \"Ancient Mesopotamia\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "phoenicia",
+          "sources": [{ "sourceKey": "wp-amorites", "sourceLocation": "category \"Canaan\" (in \"Phoenicia\")" }]
+        }
+      ]
     },
     {
       "id": "babylonia",
@@ -2093,6 +4003,42 @@
           ]
         },
         { "name": "Neo-Babylonian Empire", "start": "626 BCE", "end": "539 BCE" }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-row-babylonia", "sourceLocation": "category \"History of Mesopotamia\"" },
+            { "sourceKey": "wp-row-babylonia", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-row-babylonia", "sourceLocation": "infobox capital: \"Babylon\"" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-row-babylonia", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-row-babylonia", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-row-babylonia", "sourceLocation": "category \"Ancient Levant\" (in \"History of the Levant\")" }
+          ]
+        },
+        { "facet": "people", "value": "semitic", "sources": [{ "sourceKey": "wp-row-babylonia", "sourceLocation": "first sentence" }] },
+        {
+          "facet": "civilization",
+          "value": "babylonia",
+          "sources": [{ "sourceKey": "wp-row-babylonia", "sourceLocation": "category \"Babylonia\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-row-babylonia", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [{ "sourceKey": "wp-row-babylonia", "sourceLocation": "category \"Babylonia\" (in \"Ancient Mesopotamia\")" }]
+        }
       ]
     },
     {
@@ -2119,7 +4065,44 @@
             "source": { "sourceKey": "wp-chaldea", "sourceLocation": "Ancient Chaldeans ('by the time Babylon fell in 539 BC, perhaps before')" }
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-chaldea", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-chaldea", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-chaldea", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient history of Iraq\")" }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples",
+          "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "category \"Ancient peoples\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-chaldea", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-chaldea", "sourceLocation": "category \"Babylonia\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "babylonia",
+          "sources": [
+            { "sourceKey": "wp-chaldea", "sourceLocation": "category \"Babylonia\"" },
+            { "sourceKey": "wp-chaldea", "sourceLocation": "category \"Chaldea\" (in \"Babylonia\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient Near East\")" }]
+        }
+      ]
     },
     {
       "id": "akkad",
@@ -2128,7 +4111,54 @@
       "parent": "mesopotamia",
       "url": "https://en.wikipedia.org/wiki/Akkadian_Empire",
       "ids": { "wikidata": "Q4461035" },
-      "span": { "start": "c. 2334 BCE", "end": "2154 BCE" }
+      "span": { "start": "c. 2334 BCE", "end": "2154 BCE" },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Upper Mesopotamia\"" },
+            { "sourceKey": "wp-akkad", "sourceLocation": "first sentence" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Levant\"" },
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Levant\" (in \"History of the Levant\")" },
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Syria\")" }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [{ "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient history of Turkey\")" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Mesopotamia\"" },
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Akkadian Empire\" (in \"Ancient Mesopotamia\")" },
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Upper Mesopotamia\" (in \"Ancient Mesopotamia\")" }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "akkadian-empire",
+          "sources": [{ "sourceKey": "wp-akkad", "sourceLocation": "category \"Akkadian Empire\"" }]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-near-east",
+          "sources": [
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Levant\" (in \"Ancient Near East\")" },
+            { "sourceKey": "wp-akkad", "sourceLocation": "category \"Ancient Mesopotamia\" (in \"Ancient Near East\")" }
+          ]
+        }
+      ]
     },
     {
       "id": "sumer",
@@ -2205,6 +4235,23 @@
             { "year": "2004 BCE", "chronology": "middle", "source": { "sourceKey": "wp-ur3", "sourceLocation": "lead" } },
             { "year": "1940 BCE", "chronology": "low", "source": { "sourceKey": "wp-ur3", "sourceLocation": "lead (low chronology)" } }
           ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            { "sourceKey": "wp-row-sumer", "sourceLocation": "category \"Archaeology of Iraq\"" },
+            { "sourceKey": "wp-row-sumer", "sourceLocation": "first sentence" },
+            { "sourceKey": "wp-row-sumer", "sourceLocation": "infobox region: \"Mesopotamia, Near East, Middle East\"" }
+          ]
+        },
+        { "facet": "civilization", "value": "sumer", "sources": [{ "sourceKey": "wp-row-sumer", "sourceLocation": "category \"Sumer\"" }] },
+        {
+          "facet": "civilization",
+          "value": "ancient-mesopotamia",
+          "sources": [{ "sourceKey": "wp-row-sumer", "sourceLocation": "category \"Sumer\" (in \"Ancient Mesopotamia\")" }]
         }
       ]
     },
@@ -7365,7 +9412,37 @@
     "wp-suiko": { "name": "Wikipedia: Empress Suiko", "url": "https://en.wikipedia.org/wiki/Empress_Suiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
     "wp-himiko": { "name": "Wikipedia: Himiko", "url": "https://en.wikipedia.org/wiki/Himiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
     "wp-yamatai": { "name": "Wikipedia: Yamatai", "url": "https://en.wikipedia.org/wiki/Yamatai", "tags": ["wikipedia"], "accessed": "2026-11-18" },
-    "wp-khufu": { "name": "Wikipedia: Khufu", "url": "https://en.wikipedia.org/wiki/Khufu", "tags": ["wikipedia"], "accessed": "2026-11-20" }
+    "wp-khufu": { "name": "Wikipedia: Khufu", "url": "https://en.wikipedia.org/wiki/Khufu", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-capsian": { "name": "Wikipedia: Capsian", "url": "https://en.wikipedia.org/wiki/Capsian", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-libyans": { "name": "Wikipedia: Ancient Libya", "url": "https://en.wikipedia.org/wiki/Ancient_Libya", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-carthage": { "name": "Wikipedia: Carthage", "url": "https://en.wikipedia.org/wiki/Carthage", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-el-argar": { "name": "Wikipedia: Argaric culture", "url": "https://en.wikipedia.org/wiki/Argaric_culture", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-rome-republic-empire": { "name": "Wikipedia: Ancient Rome", "url": "https://en.wikipedia.org/wiki/Ancient_Rome", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-eastern-roman": {
+      "name": "Wikipedia: Byzantine Empire",
+      "url": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-20"
+    },
+    "wp-row-greece": { "name": "Wikipedia: Ancient Greece", "url": "https://en.wikipedia.org/wiki/Ancient_Greece", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-cyrene": { "name": "Wikipedia: Cyrene, Libya", "url": "https://en.wikipedia.org/wiki/Cyrene%2C_Libya", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-israel-judah": {
+      "name": "Wikipedia: Ancient Israel and Judah",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Israel_and_Judah",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-20"
+    },
+    "wp-row-cyprus": {
+      "name": "Wikipedia: Prehistoric Cyprus",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Cyprus",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-20"
+    },
+    "wp-row-judea": { "name": "Wikipedia: Judea", "url": "https://en.wikipedia.org/wiki/Judea", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-palmyra": { "name": "Wikipedia: Palmyra", "url": "https://en.wikipedia.org/wiki/Palmyra", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-gobekli": { "name": "Wikipedia: Taş Tepeler", "url": "https://en.wikipedia.org/wiki/Ta%C5%9F_Tepeler", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-babylonia": { "name": "Wikipedia: Babylonia", "url": "https://en.wikipedia.org/wiki/Babylonia", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-row-sumer": { "name": "Wikipedia: Sumer", "url": "https://en.wikipedia.org/wiki/Sumer", "tags": ["wikipedia"], "accessed": "2026-11-20" }
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" } },
   "chronologies": {
