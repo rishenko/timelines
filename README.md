@@ -160,6 +160,7 @@ The code map, the scripts that build the included timeline, and the screenshot a
 | [archive/README.md](archive/README.md) | The two original timelines and the scripts that built them |
 | [docs/BACKLOG.md](docs/BACKLOG.md) | Planned work |
 | [docs/feature-audit.md](docs/feature-audit.md) | Features under consideration, including the accessibility plan |
+| [docs/wcag-coverage.md](docs/wcag-coverage.md), [docs/wcag-report.md](docs/wcag-report.md) | Which WCAG 2.2 AA criteria the automated checks cover, and the latest results (`npm run a11y:report`) |
 
 ## Data sources and AI use
 

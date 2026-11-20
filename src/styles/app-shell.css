@@ -119,6 +119,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* the highlighted result's tinted background: muted text closer to the text color, to keep 4.5:1 (WCAG 1.4.3) */
+.search-option.active .search-years,
+.search-option.active .search-path {
+  color: color-mix(in srgb, var(--muted) 55%, var(--text));
+}
 .search-path em {
   color: var(--danger);
   font-style: normal;
@@ -205,6 +210,10 @@
   display: flex;
   gap: 6px;
   align-items: baseline;
+  /* checkboxes at least 24 px apart (WCAG 2.5.8) */
+  min-height: 24px;
+  padding-top: 3px;
+  box-sizing: border-box;
   /* long labels wrap inside their column instead of running under the next one */
   white-space: normal;
 }

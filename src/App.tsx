@@ -16,7 +16,7 @@ import { Toolbar } from './components/Toolbar.tsx';
 import { TimelinePicker } from './components/TimelinePicker.tsx';
 import { EditBar } from './components/EditBar.tsx';
 import { SidePanel, type Editing } from './components/SidePanel.tsx';
-import { SearchBox } from './components/SearchBox.tsx';
+import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
 import { ThemePanel } from './components/ThemePanel.tsx';
@@ -256,14 +256,14 @@ export default function App({ published: opened, library: libraryEntry, site, no
           <TimelinePicker
             timelines={library.timelines}
             currentId={published.meta.id}
-            onOpen={goToTimeline}
+            title={meta.title}
+            subtitle={meta.subtitle}
             onManage={() => {
               setCustomizeTab('timelines');
               panels.show('customize', true);
             }}
           />
         }
-        subtitle={meta.subtitle}
         increments={meta.increments}
         increment={increment}
         onIncrement={setIncrement}
@@ -478,6 +478,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
               if (!zoomStep(dir, year)) setAnnouncement(dir === 1 ? 'Already at the closest zoom' : 'Already at the widest zoom');
             }}
             onShowKeys={() => panels.show('legend', true)}
+            onSearchKey={() => document.getElementById(SEARCH_INPUT_ID)?.focus()}
           />
         )}
         <SidePanel

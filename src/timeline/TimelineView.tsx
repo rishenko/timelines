@@ -74,6 +74,8 @@ interface Props {
   onKeyZoom?: (dir: 1 | -1, year: number) => void;
   /** Keyboard ?: show the list of keys (the Legend). */
   onShowKeys?: () => void;
+  /** "/" in the chart: move to the search box. */
+  onSearchKey?: () => void;
 }
 
 /**
@@ -276,6 +278,7 @@ export function TimelineView(props: Props) {
     onSelect,
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,
+    onSearchKey: props.onSearchKey,
   });
 
   // Only render what is near the viewport (one screen either side).

@@ -3,12 +3,11 @@ import type { PanelName } from '../state/panels.ts';
 import type { View } from '../state/url.ts';
 
 interface Props {
-  /** The title menu (TimelinePicker). */
+  /** The page heading and title menu (TimelinePicker). */
   picker: ReactNode;
   /** Timeline (the chart) or table. The chart's own controls (zoom, rows) are hidden in table view. */
   view: View;
   onView: (v: View) => void;
-  subtitle?: string;
   increments: number[];
   increment: number;
   onIncrement: (inc: number) => void;
@@ -36,14 +35,7 @@ const PANEL_BUTTONS: { panel: PanelName; label: string; title?: string }[] = [
 export function Toolbar(p: Props) {
   return (
     <header className="toolbar">
-      <h1>
-        {p.picker}
-        {p.subtitle && (
-          <span className="subtitle muted" title={p.subtitle}>
-            {p.subtitle}
-          </span>
-        )}
-      </h1>
+      {p.picker}
       <div className="group" role="group" aria-label="View">
         {(['timeline', 'table'] as const).map((v) => (
           <button

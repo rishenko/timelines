@@ -40,8 +40,15 @@
   .toolbar {
     position: relative;
   }
-  .dating-menu {
+  .dating-menu,
+  .timeline-menu {
     position: static;
+  }
+  .timeline-pop {
+    left: 8px;
+    right: 8px;
+    max-width: none;
+    min-width: 0;
   }
   .dating-pop {
     top: calc(100% + 4px);

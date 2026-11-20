@@ -32,12 +32,14 @@ interface Options {
   onSelect: (id: string | null) => void;
   onKeyZoom?: (dir: 1 | -1, year: number) => void;
   onShowKeys?: () => void;
+  /** "/": move to the search box. Only in the chart, so it never takes a key typed elsewhere (WCAG 2.1.4). */
+  onSearchKey?: () => void;
 }
 
 /**
  * Keyboard control of the chart (rules in ./keyboard.ts): the chart is one Tab stop (a roving tabindex), and arrow
  * keys, Home/End and Page Up/Down move between its controls; + and − zoom on the focused event, Escape deselects,
- * ? shows the keys. After a zoom or fold the stop is found again by what it held.
+ * ? shows the keys, / moves to the search box. After a zoom or fold the stop is found again by what it held.
  * Returns the key of the control that holds the Tab stop, its focus handler, and the keydown handler for the lanes.
  */
 export function useRovingFocus(o: Options) {
@@ -116,6 +118,9 @@ export function useRovingFocus(o: Options) {
     } else if (ev.key === '?') {
       ev.preventDefault();
       o.onShowKeys?.();
+    } else if (ev.key === '/') {
+      ev.preventDefault();
+      o.onSearchKey?.();
     }
   };
   return { rovingKey, onStopFocus, onKeyNav };
