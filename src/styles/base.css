@@ -112,7 +112,8 @@ input,
 select,
 textarea {
   background: var(--bg);
-  border: 1px solid var(--line-2);
+  /* a field's edge at 3:1 against the panel (WCAG 1.4.11) */
+  border: 1px solid var(--muted);
   border-radius: 4px;
   padding: 4px 6px;
 }

@@ -155,6 +155,7 @@ npm run map:build    # → public/maps/ancient-classical.json and docs/ancient-c
 npx vite preview --port 4317   # after npm run build; serves the app at /
 npm run shot -- <url> <out.png> [--width N --height N --close-legend --click "Expand all" --expand "Egypt" --keys "Tab|ArrowRight" --measure ".toolbar > *"]
 npm run contrast [-- --timeline ancient-classical --preset dark --state focus --sweep --details]   # text contrast per theme
+npm run contrast:ui [-- --preset dark --check marks|focus|fields --sweep --details]   # marks, focus outline, fields at 3:1 (WCAG 1.4.11)
 npm run reflow [-- --width 320 --width 640 --details]   # nothing runs off screen or scrolls sideways (WCAG 1.4.10)
 npm run targets [-- --width 390 --details]   # every control at least 24 × 24 px, or spaced apart (WCAG 2.5.8)
 npm run a11y:report [-- --skip contrast]     # all of the above, axe in the browser, and the a11y tests → docs/wcag-report.md (~10 min)
@@ -171,6 +172,8 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
   and tests accessible names, focus handling and keyboard control.
 - jsdom can't check colour contrast, so `npm run contrast` does it in a real browser: axe-core for ordinary text,
   and a pixel check for text on the timeline's layered backgrounds. `--sweep` checks every screen of a timeline.
+  `npm run contrast:ui` does the same at 3:1 for what isn't text: event marks (with and without them on screen,
+  pixel by pixel), the focus outline on each kind of control, and form fields' borders.
 - oxlint runs the `jsx-a11y` rules, with three off: `prefer-tag-over-role`, `no-noninteractive-element-to-interactive-role`
   (the search box's listbox is the standard combobox pattern) and `no-autofocus` (editors focus their first field on
   purpose). Each mouse-only handler has a comment naming its keyboard equivalent.

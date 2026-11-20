@@ -6,13 +6,14 @@
 //   axe       axe-core in a real browser (so colour contrast and target size are judged too), over every view in
 //             scripts/lib/ui-states.ts at each width. Each axe rule counts toward the criteria its WCAG tags name.
 //   contrast  npm run contrast (1.4.3, text on the timeline's layered backgrounds, every theme preset)
+//   contrast-ui  npm run contrast:ui (1.4.11 marks and form fields, 2.4.7 focus outline; every theme preset)
 //   reflow    npm run reflow (1.4.10, 1.4.4)
 //   targets   npm run targets (2.5.8)
 //   tests     the accessibility tests (vitest): src/a11y.test.tsx and the files in TEST_FILES
-// Which criteria rely on contrast, reflow, targets and tests is the matrix's "Run" column.
+// Which criteria rely on contrast, contrast-ui, reflow, targets and tests is the matrix's "Run" column.
 //
 //   node scripts/a11y-report.ts [--url http://localhost:4317/] [--timeline ancient-classical] [--width 1280]...
-//        [--skip axe|contrast|reflow|targets|tests]... [--out docs/wcag-report.md] [--browser chrome|msedge]
+//        [--skip axe|contrast|contrast-ui|reflow|targets|tests]... [--out docs/wcag-report.md] [--browser chrome|msedge]
 // Defaults: widths 390 and 1280. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1 if any
 // check fails.
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -37,7 +38,7 @@ const MATRIX = 'docs/wcag-coverage.md';
 /** Test files with accessibility checks (the "tests" check). */
 const TEST_FILES = ['src/a11y.test.tsx', 'src/components/TrackForm.test.tsx', 'src/timeline/keyboard.test.ts', 'src/components/ErrorBoundary.test.tsx'];
 const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22a', 'wcag22aa'];
-const SCRIPT_CHECKS = ['contrast', 'reflow', 'targets'] as const;
+const SCRIPT_CHECKS = ['contrast', 'contrast-ui', 'reflow', 'targets'] as const;
 type CheckId = (typeof SCRIPT_CHECKS)[number] | 'tests';
 
 // ---- the matrix ----
