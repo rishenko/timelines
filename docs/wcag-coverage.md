@@ -19,15 +19,16 @@ would be caught", not as "conforms".
 - **N/A:** the app has nothing the criterion applies to. Single-page criteria ("a set of web pages") count as N/A:
   the app is one page.
 
-The **Run** column names the checks the report runs for a criterion besides axe: `contrast`, `reflow`, `targets`
-(the scripts) and `tests` (the accessibility tests). axe rules count toward the criteria their WCAG tags name, so
-they aren't listed there.
+The **Run** column names the checks the report runs for a criterion besides axe: `contrast`, `contrast-ui`, `reflow`,
+`targets` (the scripts) and `tests` (the accessibility tests). axe rules count toward the criteria their WCAG tags
+name, so they aren't listed there.
 
 Where the checks run:
 
 - **CI:** on every push and pull request. axe-core in `src/a11y.test.tsx` (jsdom, so no colour or layout), the
   component and unit tests, and oxlint's `jsx-a11y` rules.
-- **By hand:** `npm run contrast`, `npm run reflow` and `npm run targets`, in Chrome or Edge. Not in CI.
+- **By hand:** `npm run contrast`, `npm run contrast:ui`, `npm run reflow` and `npm run targets`, in Chrome or Edge.
+  Not in CI.
   `npm run a11y:report` runs all of them, plus axe-core in the browser over every view (colour and target size
   included), about 10 minutes.
 
@@ -36,12 +37,12 @@ Where the checks run:
 | Coverage | Criteria | Of the 42 that apply |
 |---|---:|---:|
 | Automated | 6 (3 in CI, 3 by hand) | 14% |
-| Partial | 16 | 38% |
-| Manual | 20 | 48% |
+| Partial | 18 | 43% |
+| Manual | 18 | 43% |
 | N/A | 13 | — |
 
-So 22 of the 42 applicable criteria (52%) have at least some automated check. Status: none fail their checks; 1
-has a known gap (see [Known problems](#known-problems)); the rest pass or haven't been reviewed.
+So 24 of the 42 applicable criteria (57%) have at least some automated check. Status: none fail their checks (see
+[Known problems](#known-problems)); the rest pass or haven't been reviewed.
 
 ## Matrix
 
@@ -69,7 +70,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 | 1.4.4 Resize Text | AA | Partial | reflow | CI: axe `meta-viewport`. By hand: `npm run reflow` at 640 px (200% zoom of 1280). Text-only zoom (browser font size) not checked. | Pass |
 | 1.4.5 Images of Text | AA | Manual | — | Text is drawn as text; row and credits images are logos (exempt). | Pass (code) |
 | 1.4.10 Reflow | AA | Automated (by hand) | reflow | `npm run reflow`: 17 views at 320 and 640 px (200% zoom), nothing scrolls sideways. The chart and maps are 2-D content (exempt). | Pass |
-| 1.4.11 Non-text Contrast | AA | Manual | — | Marks, focus outline, form borders at 3:1: not checked. | **Gap** |
+| 1.4.11 Non-text Contrast | AA | Partial | contrast-ui | `npm run contrast:ui`, every preset: event diamonds and bars against what's behind them (pixel comparison; `--sweep` for the whole chart), and the borders of text fields and menus. "+N" pills are buttons named by their text (WCAG accepts that); marks faded while another event is selected are reported, not failed. Icons and other graphics are manual. | Pass, with exceptions (fixed 20 Nov 2026; bars a few pixels wide on a same-colored line) |
 | 1.4.12 Text Spacing | AA | Partial | — | CI: axe `avoid-inline-spacing` (only inline styles). Overlap with the WCAG spacing applied: not checked. | Not reviewed |
 | 1.4.13 Content on Hover or Focus | AA | Manual | — | Tooltips are native `title` (exempt); hovering an event restyles related events, adds no content. | Pass (code) |
 
@@ -89,7 +90,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 | 2.4.4 Link Purpose (In Context) | A | Partial | tests | CI: axe `link-name`; test: a row's linked name says it opens a new tab. | Pass |
 | 2.4.5 Multiple Ways | AA | N/A | — | One page (search and the table view exist anyway). | — |
 | 2.4.6 Headings and Labels | AA | Manual | — | Whether headings and labels describe their content. | Not reviewed |
-| 2.4.7 Focus Visible | AA | Manual | — | A 2 px outline on every focusable element (`src/styles/accessibility.css`); not tested. | Not reviewed |
+| 2.4.7 Focus Visible | AA | Partial | contrast-ui | `npm run contrast:ui`: one control of each kind (toolbar button, title menu, search box, event mark, "+N" pill, fold button, row link, panel button) is focused from the keyboard; its outline must change the pixels by 3:1. Other controls share the same `:focus-visible` rule. | Pass |
 | 2.4.11 Focus Not Obscured (Minimum) | AA | Manual | — | Sticky toolbar, ruler and row labels could cover a focused event; the view scrolls to follow focus. Not tested. | Not reviewed |
 | 2.5.1 Pointer Gestures | A | Manual | — | Pinch zoom has buttons and `+`/`−`; long press has *+ Event* (reviewed 18 Nov 2026). | Pass |
 | 2.5.2 Pointer Cancellation | A | Manual | — | Long press opens an editor that can be cancelled; other actions are on click. | Pass (code) |
@@ -125,7 +126,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 
 ## Known problems
 
-1. **1.4.11:** marks, focus outlines and form borders aren't checked at 3:1 (feature-audit item 23d).
+None open.
 
 Fixed on 20 November 2026:
 
@@ -135,6 +136,10 @@ Fixed on 20 November 2026:
   path was 4.2–4.5:1), **2.5.3** (the "N rows hidden" button's name didn't contain its visible text) and **2.5.8**
   (row-name links beside the row buttons since 19 November, Filters' checkboxes since 20 November, and the table
   view's row and Wikidata links, which only axe flagged; they now follow axe).
+- **1.4.11** (checked for the first time, with `npm run contrast:ui`): marks below 3:1 against what's behind them
+  (across the whole chart, 28–223 of 797 per preset, most in the dark theme), every form field's border, and the
+  focus outline in row labels. Mark edges now move toward the text color, field borders use the muted text color,
+  and row labels' focus outline the text color. Left: 4–8 bars per preset a few pixels wide on a same-colored line.
 
 ## Next to automate
 
@@ -143,10 +148,8 @@ A browser run over the same views as `reflow` and `targets` could move these fro
 | SC | Check |
 |---|---|
 | 1.3.4 | axe's experimental `css-orientation-lock` |
-| 1.4.11 | extend the contrast pixel check to marks, focus outlines and form borders |
 | 1.4.12 | apply the WCAG spacing values, then the reflow overlap check |
-| 2.1.2, 2.4.7, 2.4.11 | Tab through each view: focus always moves on, shows a 2 px outline at 3:1, and isn't covered |
+| 2.1.2, 2.4.11 | Tab through each view: focus always moves on and isn't covered |
 | 4.1.3 | a test that zoom, "Went to …" and toasts reach the live region |
 
-With those, 27 of 42 applicable criteria (64%) would have automated checks. Running `npm run a11y:report` in CI would
-put all of them on every pull request.
+With those, 27 of 42 applicable criteria (64%) would have automated checks.

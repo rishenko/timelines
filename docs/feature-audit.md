@@ -153,8 +153,10 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          events' labels while one is selected (muted instead of faded). Known exceptions, left on purpose: a few
          labels per timeline in dense rows (where several period bands stack, as behind *Linear B in use*, or in a
          thicket of threads 2–3 px apart, as around *Urkesh abandoned*), and labels the selected event's highlight
-         thread passes behind. `npm run contrast -- --sweep` lists them. Marks and focus outlines (3:1) not yet
-         checked.
+         thread passes behind. `npm run contrast -- --sweep` lists them. Marks, focus outlines and form fields at
+         3:1 done 20 November 2026 with `npm run contrast:ui`: mark edges move toward the text color, field borders
+         use the muted text color, and the focus outline in row labels the text color. Known exceptions: bars a few
+         pixels wide on a same-colored phase edge or thread.
        - A bolder focus outline (2 px, offset). Done.
        - Readable at 200% zoom and on a 320 px wide screen. Done 18 November 2026: on narrow screens the toolbar
          and edit bar wrap onto rows instead of scrolling sideways, and the editors, Filters, Dating and search
