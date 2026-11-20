@@ -80,3 +80,13 @@ option in the Dating menu still moves at least one event, lifespan or phase:
 | Egypt | Radiocarbon | 6 |
 | Aegean | Low | 3 (Thera, the two Mycenaean phases) |
 | China | Traditional (Liu Xin) | 5 (Muye; Xia, Shang and Zhou lifespans; Western Zhou) |
+
+## Khufu's reign under each dating system (20 November 2026)
+
+`scripts/ancient-classical/khufu-reign.ts`. Khufu's event had a start date under each Egyptian dating system (from the
+*Great Pyramid of Giza* table "Modern estimates of dating the Great Pyramid and Khufu's first regnal year": Shaw 2589,
+Hornung 2509, Ramsey et al. 2613–2577 BC) but no end dates, so under Hornung its start passed its end and the reign
+shrank to one year. *Khufu* (read 20 November; no AI or translation notice) gives the whole reign in its infobox note
+"Proposed dates": "2589–2566 BC (23 years)" citing Shaw's *Oxford History of Ancient Egypt*, and "2509–2483 BC (26
+years)" citing Hornung, Krauss & Warburton. Both ends are now claims. The radiocarbon study gives only a start ("Khufu
+began his reign between 2629 and 2558 BC"), so under Radiocarbon only the start moves.

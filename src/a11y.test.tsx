@@ -46,7 +46,8 @@ function open(timeline: string, extra = '') {
 
 describe('accessibility', () => {
   for (const id of ['ancient-classical']) {
-    it(`${id}: no automated WCAG violations on the opening view`, async () => {
+    // axe scans the whole chart (hundreds of rows): about 1 s locally, but over 5 s once on a CI runner
+    it(`${id}: no automated WCAG violations on the opening view`, { timeout: 20_000 }, async () => {
       const { container } = open(id);
       expect(await violations(container)).toEqual([]);
     });
