@@ -75,10 +75,10 @@ describe('hide rows with nothing in view', () => {
   it('the ruler says rows are hidden while it is on, and its note turns it off', async () => {
     const { container: c } = renderApp('timeline=ancient-classical&inc=100&at=-2000');
     expandAll(c);
-    const note = await screen.findByRole('button', { name: /^\d+ rows with nothing in view hidden\. Show every row$/ });
+    const note = await screen.findByRole('button', { name: /^\d+ rows hidden: nothing in view\. Show every row$/ });
     expect(note.textContent).toMatch(/^\d+ rows hidden$/);
     act(() => fireEvent.click(note));
-    expect(screen.queryByRole('button', { name: /with nothing in view hidden/ })).toBeNull();
+    expect(screen.queryByRole('button', { name: /hidden: nothing in view/ })).toBeNull();
     expect(hiddenButtons(c)).toEqual([]);
     expect(filtersCheckbox().checked).toBe(false);
   });

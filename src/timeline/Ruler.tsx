@@ -33,6 +33,9 @@ interface Props {
 }
 
 /** The sticky year ruler: the corner over the row labels, ticks, compressed gaps and links to neighbouring timelines. */
+/** The corner note's text: "No rows hidden", "1 row hidden", "12 rows hidden". */
+const hiddenLabel = (n: number) => (n === 0 ? 'No rows hidden' : `${n} ${n === 1 ? 'row' : 'rows'} hidden`);
+
 export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hiddenRows, onShowAllRows, ticks, gapStarts, gaps, era, edgeLinks }: Props) {
   return (
     <div className="tl-ruler" style={{ width }}>
@@ -45,9 +48,10 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
               className="rows-hidden"
               onClick={onShowAllRows}
               title="Rows with nothing in view are hidden (Filters). Click to show every row."
-              aria-label={`${hiddenRows === 0 ? 'No rows' : hiddenRows === 1 ? '1 row' : `${hiddenRows} rows`} with nothing in view hidden. Show every row`}
+              // the name starts with the visible text, so speech input can say what it sees (WCAG 2.5.3)
+              aria-label={`${hiddenLabel(hiddenRows)}: nothing in view. Show every row`}
             >
-              {hiddenRows === 0 ? 'No rows hidden' : `${hiddenRows} ${hiddenRows === 1 ? 'row' : 'rows'} hidden`}
+              {hiddenLabel(hiddenRows)}
             </button>
           )}
         </div>

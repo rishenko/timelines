@@ -105,6 +105,12 @@
   width: 16em;
   font-weight: 600;
 }
+/* a row's name and Wikidata id sit side by side: each link gets a 24 px tall hit area (WCAG 2.5.8) */
+.rows-table th[scope='row'] a {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+}
 .rows-table td.date {
   width: 15em;
 }
