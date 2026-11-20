@@ -175,4 +175,6 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
   person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
+  It isn't in CI (about 6 minutes): run it after a major UI change or a batch of UI changes, before merging, and
+  commit the new report.
 - Plan and status: [feature-audit.md](feature-audit.md), item 23.
