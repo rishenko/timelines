@@ -27,7 +27,8 @@
     "check:live": "node scripts/check-live.ts",
     "contrast": "node scripts/contrast.ts",
     "reflow": "node scripts/reflow.ts",
-    "targets": "node scripts/targets.ts"
+    "targets": "node scripts/targets.ts",
+    "a11y:report": "node scripts/a11y-report.ts"
   },
   "dependencies": {
     "react": "^19.3.1",

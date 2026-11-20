@@ -155,6 +155,7 @@ npm run shot -- <url> <out.png> [--width N --height N --close-legend --click "Ex
 npm run contrast [-- --timeline ancient-classical --preset dark --state focus --sweep --details]   # text contrast per theme
 npm run reflow [-- --width 320 --width 640 --details]   # nothing runs off screen or scrolls sideways (WCAG 1.4.10)
 npm run targets [-- --width 390 --details]   # every control at least 24 × 24 px, or spaced apart (WCAG 2.5.8)
+npm run a11y:report [-- --skip contrast]     # all of the above, axe in the browser, and the a11y tests → docs/wcag-report.md (~10 min)
 npm run check:live -- --expect "some text"   # after deploying: wait for the live site and check it loads
 ```
 
@@ -171,4 +172,7 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - oxlint runs the `jsx-a11y` rules, with three off: `prefer-tag-over-role`, `no-noninteractive-element-to-interactive-role`
   (the search box's listbox is the standard combobox pattern) and `no-autofocus` (editors focus their first field on
   purpose). Each mouse-only handler has a comment naming its keyboard equivalent.
+- `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
+  per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
+  person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
 - Plan and status: [feature-audit.md](feature-audit.md), item 23.

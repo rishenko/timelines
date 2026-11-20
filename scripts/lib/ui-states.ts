@@ -1,5 +1,5 @@
 // The app's views and panels, opened one at a time in a browser page: shared by the UI checks (reflow.ts,
-// targets.ts) so they cover the same ground.
+// targets.ts, a11y-report.ts) so they cover the same ground.
 import type { Browser, Page } from 'playwright-core';
 
 export type UiState = [name: string, open: (p: Page) => Promise<unknown>];
@@ -31,6 +31,7 @@ export const timelineUrl = (base: string, timeline: string, extra = '') =>
 export function uiStates(base: string, timeline: string): UiState[] {
   return [
     ['timeline', async () => {}],
+    ['timeline menu', (p) => click(p, '.timeline-picker')],
     ['Dating', (p) => clickText(p, 'Dating')],
     ['Filters', (p) => clickText(p, 'Filters')],
     ['Legend', (p) => clickText(p, 'Legend')],
