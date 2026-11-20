@@ -1552,7 +1552,6 @@
       "id": "aegean",
       "name": "Aegean, Greece and the Hellenistic world",
       "color": "#2f6fae",
-      "chronology": "aegean-high",
       "parent": "europe-med",
       "url": "https://en.wikipedia.org/wiki/Aegean_civilization",
       "ids": {
@@ -1563,6 +1562,7 @@
       "id": "cycladic",
       "name": "Cycladic culture",
       "color": "#6a8fbf",
+      "chronology": "aegean-high",
       "parent": "aegean",
       "url": "https://en.wikipedia.org/wiki/Cycladic_culture",
       "ids": {
@@ -1578,6 +1578,7 @@
       "id": "minoan",
       "name": "Minoan Crete",
       "color": "#3d86c6",
+      "chronology": "aegean-high",
       "parent": "aegean",
       "url": "https://en.wikipedia.org/wiki/Minoan_civilization",
       "ids": {
@@ -1625,6 +1626,7 @@
       "id": "mycenaean",
       "name": "Mycenaean Greece",
       "color": "#4a5fb8",
+      "chronology": "aegean-high",
       "parent": "aegean",
       "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
       "ids": {

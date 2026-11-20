@@ -76,6 +76,25 @@ export function eventChronology(ds: Dataset, e: TimelineEvent): string | undefin
   return undefined;
 }
 
+/**
+ * The chronology an event is dated by, when it matters: `eventChronology`, but only if another dating system of the
+ * same group would plot the event elsewhere (a claim under that system, or a derived shift). Undefined when every
+ * choice in the Dating menu leaves the event where it is, so the app doesn't say "Dated by …" for nothing.
+ */
+export function datingChronology(ds: Dataset, e: TimelineEvent): string | undefined {
+  const chron = eventChronology(ds, e);
+  const group = chron ? ds.chronologies?.[chron]?.group : undefined;
+  if (!chron || !group) return undefined;
+  const others = Object.entries(ds.chronologies ?? {})
+    .filter(([id, c]) => c.group === group && id !== chron)
+    .map(([id]) => id);
+  const moves = (best: number, claims: DateClaim[] | undefined) => {
+    const all = allClaims(ds, best, claims, chron);
+    return others.some((t) => yearUnder(best, all, chron, t) !== best);
+  };
+  return moves(e.start, e.startDates) || (e.end !== undefined && moves(e.end, e.endDates)) ? chron : undefined;
+}
+
 export interface Claim extends DateClaim {
   /** True when computed from another chronology's date rather than stated by a source. */
   derived?: boolean;
