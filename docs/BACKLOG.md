@@ -10,6 +10,9 @@
 - **Classical World description audit: check the judgment calls** in `docs/classical-sources.md` ("Description audit
   (18 November 2026)"): pages that disagree with themselves, and optional softenings. (*Polynesians* is settled:
   translation notices are fine and are mentioned in the event's description.)
+- **High/Low shifts at the 1400 BCE cut-off:** the Mesopotamian High and Low chronologies shift only dates before
+  1400 BCE, so an event that starts just before it and ends just after can shrink: Assyria's subjugation under Mitanni
+  (c. 1430–1360 BCE) becomes 1366–1360 BCE under Low. Decide whether a span's end should follow its start there.
 - **Re-check banners on cited pages now and then.** Wikipedia adds AI/LLM-text banners after the fact: *Norte Chico
   civilization* had one by the 2026-11-18 audit, and everything taken from it was removed. Any audit or re-read should
   report banners, and a flagged page's values come out.

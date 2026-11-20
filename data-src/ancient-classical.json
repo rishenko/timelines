@@ -7340,7 +7340,8 @@
     },
     "wp-suiko": { "name": "Wikipedia: Empress Suiko", "url": "https://en.wikipedia.org/wiki/Empress_Suiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
     "wp-himiko": { "name": "Wikipedia: Himiko", "url": "https://en.wikipedia.org/wiki/Himiko", "tags": ["wikipedia"], "accessed": "2026-11-18" },
-    "wp-yamatai": { "name": "Wikipedia: Yamatai", "url": "https://en.wikipedia.org/wiki/Yamatai", "tags": ["wikipedia"], "accessed": "2026-11-18" }
+    "wp-yamatai": { "name": "Wikipedia: Yamatai", "url": "https://en.wikipedia.org/wiki/Yamatai", "tags": ["wikipedia"], "accessed": "2026-11-18" },
+    "wp-khufu": { "name": "Wikipedia: Khufu", "url": "https://en.wikipedia.org/wiki/Khufu", "tags": ["wikipedia"], "accessed": "2026-11-20" }
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" } },
   "chronologies": {
@@ -8075,7 +8076,11 @@
       "descr": "Khufu's pyramid at Giza, built over about 26 years, stays the tallest structure on Earth for thousands of years. The bar is Khufu's reign; most recent estimates date Khufu and his pyramid between 2700 and 2500 BCE.",
       "sources": [
         { "sourceKey": "wp-old-kingdom", "sourceLocation": "Height of the Old Kingdom ('Khufu (2589–2566 BC)')" },
-        { "sourceKey": "wp-great-pyramid", "sourceLocation": "lead; Historiographical record (table of reign dates)" }
+        {
+          "sourceKey": "wp-great-pyramid",
+          "sourceLocation": "lead; Age (table 'Modern estimates of dating the Great Pyramid and Khufu's first regnal year')"
+        },
+        { "sourceKey": "wp-khufu", "sourceLocation": "infobox, note 'Proposed dates'" }
       ],
       "startDates": [
         {
@@ -8093,6 +8098,18 @@
           "margin": 18,
           "chronology": "egypt-c14",
           "source": { "sourceKey": "ramsey-2010", "sourceLocation": "'2613–2577 BC' (via Wikipedia: Great Pyramid of Giza)" }
+        }
+      ],
+      "endDates": [
+        {
+          "year": "2566 BCE",
+          "chronology": "shaw",
+          "source": { "sourceKey": "shaw-2000", "sourceLocation": "via Wikipedia: Khufu, infobox note 'Proposed dates' ('2589–2566 BC (23 years)')" }
+        },
+        {
+          "year": "2483 BCE",
+          "chronology": "hornung",
+          "source": { "sourceKey": "hornung-2006", "sourceLocation": "via Wikipedia: Khufu, infobox note 'Proposed dates' ('2509–2483 BC (26 years)')" }
         }
       ],
       "importance": 1

@@ -15269,6 +15269,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-khufu": {
+      "name": "Wikipedia: Khufu",
+      "url": "https://en.wikipedia.org/wiki/Khufu",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     }
   },
   "tags": {
@@ -17122,7 +17130,11 @@
         },
         {
           "sourceKey": "wp-great-pyramid",
-          "sourceLocation": "lead; Historiographical record (table of reign dates)"
+          "sourceLocation": "lead; Age (table 'Modern estimates of dating the Great Pyramid and Khufu's first regnal year')"
+        },
+        {
+          "sourceKey": "wp-khufu",
+          "sourceLocation": "infobox, note 'Proposed dates'"
         }
       ],
       "startDates": [
@@ -17149,6 +17161,24 @@
           "source": {
             "sourceKey": "ramsey-2010",
             "sourceLocation": "'2613–2577 BC' (via Wikipedia: Great Pyramid of Giza)"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -2565,
+          "chronology": "shaw",
+          "source": {
+            "sourceKey": "shaw-2000",
+            "sourceLocation": "via Wikipedia: Khufu, infobox note 'Proposed dates' ('2589–2566 BC (23 years)')"
+          }
+        },
+        {
+          "year": -2482,
+          "chronology": "hornung",
+          "source": {
+            "sourceKey": "hornung-2006",
+            "sourceLocation": "via Wikipedia: Khufu, infobox note 'Proposed dates' ('2509–2483 BC (26 years)')"
           }
         }
       ],
