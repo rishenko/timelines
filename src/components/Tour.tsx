@@ -7,14 +7,64 @@ import type { TourStep } from '../lib/tour.ts';
  * visit (see state/panels.ts) and from the Legend's "Take the tour" button.
  */
 
-/** The first element matching the selector that is on screen (falls back to the first match). */
-function findTarget(selector: string): HTMLElement | null {
-  const all = [...document.querySelectorAll<HTMLElement>(selector)];
-  const onScreen = all.find((el) => {
-    const r = el.getBoundingClientRect();
-    return r.width > 0 && r.right > 0 && r.left < window.innerWidth && r.bottom > 0 && r.top < window.innerHeight;
-  });
-  return onScreen ?? all[0] ?? null;
+interface Box {
+  left: number;
+  top: number;
+  right: number;
+  bottom: number;
+}
+
+/**
+ * The part of an element a reader can see: inside the screen and, for chart content, inside the chart's scroll area
+ * and clear of the sticky row labels and ruler, which cover content scrolled under them. Null unless it shows whole
+ * (near enough), or, when `partly`, a good stretch of it (a long band reaching past the view).
+ */
+function visibleBox(el: HTMLElement, partly = false): Box | null {
+  const r = el.getBoundingClientRect();
+  if (r.width === 0 || r.height === 0) return null;
+  const b: Box = { left: Math.max(r.left, 0), top: Math.max(r.top, 0), right: Math.min(r.right, window.innerWidth), bottom: Math.min(r.bottom, window.innerHeight) };
+  if (el.closest('.tl-lanes')) {
+    const clip = (c: Box) => {
+      b.left = Math.max(b.left, c.left);
+      b.top = Math.max(b.top, c.top);
+      b.right = Math.min(b.right, c.right);
+      b.bottom = Math.min(b.bottom, c.bottom);
+    };
+    for (let p = el.parentElement; p; p = p.parentElement) {
+      const o = getComputedStyle(p);
+      if (/(auto|scroll)/.test(o.overflowX + o.overflowY)) {
+        clip(p.getBoundingClientRect());
+        break;
+      }
+    }
+    // the labels themselves are what covers the rest, so they aren't clipped by it
+    const label = el.closest('.tl-lane-label, .thin-label') ? null : document.querySelector('.tl-lane-label, .thin-label');
+    if (label) b.left = Math.max(b.left, label.getBoundingClientRect().right);
+    const ruler = document.querySelector('.tl-ruler');
+    if (ruler) b.top = Math.max(b.top, ruler.getBoundingClientRect().bottom);
+  }
+  const w = b.right - b.left;
+  const h = b.bottom - b.top;
+  return w >= (partly ? Math.min(r.width - 1, 40) : r.width - 1) && h >= Math.min(r.height - 1, 10) ? b : null;
+}
+
+/**
+ * The step's target and the part of it to outline: the first match a reader can see (the widest, for steps that ask),
+ * else a toolbar item off screen (the toolbar scrolls sideways on a phone; it is scrolled into view), else none.
+ */
+function findTarget(step: TourStep): { el: HTMLElement; box: Box | null } | null {
+  if (!step.target) return null;
+  const all = [...document.querySelectorAll<HTMLElement>(step.target)];
+  let best: { el: HTMLElement; box: Box | null } | null = null;
+  for (const el of all) {
+    const box = visibleBox(el, step.widest);
+    if (!box) continue;
+    if (!step.widest) return { el, box };
+    if (!best?.box || box.right - box.left > best.box.right - best.box.left) best = { el, box };
+  }
+  if (best) return best;
+  const offScreen = all.find((el) => el.closest('.toolbar'));
+  return offScreen ? { el: offScreen, box: null } : null;
 }
 
 const CARD_W = 340;
@@ -22,7 +72,7 @@ const PAD = 6;
 
 export function Tour({ steps, onClose }: { steps: TourStep[]; onClose: () => void }) {
   const [i, setI] = useState(0);
-  const [rect, setRect] = useState<DOMRect | null>(null);
+  const [rect, setRect] = useState<Box | null>(null);
   const step = steps[i];
   const last = i === steps.length - 1;
   const next = useCallback(() => (last ? onClose() : setI((n) => n + 1)), [last, onClose]);
@@ -30,19 +80,24 @@ export function Tour({ steps, onClose }: { steps: TourStep[]; onClose: () => voi
 
   // find and measure the step's target; toolbar items may sit off screen on a phone (the toolbar scrolls sideways)
   const measure = useCallback(() => {
-    const el = step.target ? findTarget(step.target) : null;
-    setRect(el ? el.getBoundingClientRect() : null);
+    const t = findTarget(step);
+    setRect(t ? (t.box ?? visibleBox(t.el, true)) : null);
   }, [step]);
   useLayoutEffect(() => {
-    const el = step.target ? findTarget(step.target) : null;
-    if (el?.closest('.toolbar')) el.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    const t = findTarget(step);
+    if (t?.el.closest('.toolbar')) t.el.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     // measuring the page after it renders is what a layout effect is for; the rect can't be derived during render
     // oxlint-disable-next-line react/set-state-in-effect
     measure();
   }, [step, measure]);
   useEffect(() => {
+    // the outline follows its target when the page or the chart scrolls
     window.addEventListener('resize', measure);
-    return () => window.removeEventListener('resize', measure);
+    window.addEventListener('scroll', measure, true);
+    return () => {
+      window.removeEventListener('resize', measure);
+      window.removeEventListener('scroll', measure, true);
+    };
   }, [measure]);
 
   useEffect(() => {
@@ -71,7 +126,7 @@ export function Tour({ steps, onClose }: { steps: TourStep[]; onClose: () => voi
       {rect ? (
         <div
           className="tour-spot"
-          style={{ left: rect.left - PAD, top: rect.top - PAD, width: rect.width + 2 * PAD, height: rect.height + 2 * PAD }}
+          style={{ left: rect.left - PAD, top: rect.top - PAD, width: rect.right - rect.left + 2 * PAD, height: rect.bottom - rect.top + 2 * PAD }}
         />
       ) : (
         <div className="tour-dim" />

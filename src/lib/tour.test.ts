@@ -18,4 +18,30 @@ describe('guided tour', () => {
     expect(titles).not.toContain('Open and fold rows');
     expect(titles).toContain('Events');
   });
+
+  it('shows the chart first, then the toolbar from left to right', () => {
+    const titles = tourSteps(ancient as unknown as Dataset, { hasDating: true, hasSubRows: true }).map((s) => s.title);
+    expect(titles.slice(1)).toEqual([
+      'Rows',
+      'Events',
+      'Lifespans',
+      'Timelines',
+      'Timeline or table',
+      'Dating',
+      'Zoom and move',
+      'Open and fold rows',
+      'Search',
+      'Filters',
+      'Legend',
+      'Customize',
+    ]);
+  });
+
+  it('explains lifespan bands, right after Events, only when rows have them', () => {
+    const titles = tourSteps(ancient as unknown as Dataset, { hasDating: true, hasSubRows: true }).map((s) => s.title);
+    expect(titles.indexOf('Lifespans')).toBe(titles.indexOf('Events') + 1);
+    const plain = plainTimeline();
+    const noSpans = { ...plain, tracks: plain.tracks.map(({ span: _span, ...t }) => t) } as Dataset;
+    expect(tourSteps(noSpans, { hasDating: false, hasSubRows: false }).map((s) => s.title)).not.toContain('Lifespans');
+  });
 });
