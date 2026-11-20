@@ -30,6 +30,8 @@ export interface ResolvedEvent extends TimelineEvent {
 export interface ResolvedSpan {
   start: number;
   end: number;
+  /** The span's dates are marked approximate (TrackSpan.circa). */
+  circa?: boolean;
   startWindow?: Window;
   endWindow?: Window;
 }
@@ -37,6 +39,14 @@ export interface ResolvedSpan {
 /** A row's phase (Track.phases), resolved like a lifespan. */
 export interface ResolvedPhase extends ResolvedSpan {
   name: string;
+}
+
+/**
+ * Whether dates read as approximate ("c."): marked circa, or given a range by their sources. Both ends of an event,
+ * lifespan or phase read the same way, everywhere they are shown.
+ */
+export function isApprox(d: { circa?: boolean; startWindow?: Window; endWindow?: Window }): boolean {
+  return !!(d.circa || d.startWindow || d.endWindow);
 }
 
 export function chronologyGroups(ds: Dataset): Map<string, { id: string; c: Chronology }[]> {
@@ -143,5 +153,7 @@ export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selec
   const chron = trackChronology(ds.tracks, trackId);
   const s = resolveDate(ds, span.start, span.startDates, chron, selection, !!span.circa);
   const e = resolveDate(ds, span.end, span.endDates, chron, selection, !!span.circa);
-  return { start: s.year, end: Math.max(e.year, s.year), startWindow: s.window, endWindow: e.window };
+  const out: ResolvedSpan = { start: s.year, end: Math.max(e.year, s.year), startWindow: s.window, endWindow: e.window };
+  if (span.circa) out.circa = true;
+  return out;
 }

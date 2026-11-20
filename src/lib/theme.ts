@@ -1,6 +1,6 @@
 /**
  * App color theme. The user-facing colors map to CSS custom properties on
- * :root; every other shade in index.css is derived from them with
+ * :root (src/styles/base.css); every other shade in the styles is derived from them with
  * color-mix(), so a custom theme never leaves stray hard-coded colors behind.
  */
 

@@ -1,0 +1,127 @@
+/* ---------- dating: chronologies and claims ---------- */
+.chron-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: capitalize;
+}
+.timeline-picker {
+  font: inherit;
+  font-weight: 700;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text);
+}
+.timeline-picker:hover {
+  border-color: var(--line);
+}
+.editor h4,
+.detail h4 {
+  margin: 8px 0 2px;
+  font-size: 12px;
+}
+.editor .claims {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.editor .claim {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.editor .phase {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  margin-bottom: 6px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-2);
+  border-radius: 4px;
+}
+.editor .phase .row input:first-child {
+  flex: 1;
+}
+.editor .row input.narrow {
+  width: 52px;
+}
+.editor .row .grow {
+  flex: 1;
+}
+.editor .row .grow input {
+  width: 100%;
+}
+/* what saving would break (newProblems in state/edits.ts), above an editor's buttons */
+.editor .form-problems {
+  margin: 8px 0;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--danger) 12%, var(--bg-2));
+  border: 1px solid color-mix(in srgb, var(--danger) 55%, transparent);
+  border-radius: 4px;
+}
+.editor .form-problems p {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+.editor .form-problems ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.detail .dating p {
+  margin: 4px 0;
+}
+.detail .claims-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+.detail .claims-list li {
+  margin: 3px 0;
+}
+.detail .claims-list .chron {
+  font-size: 11px;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent) 18%, var(--bg));
+}
+
+/* One "Dating" button for every region's dating system (it replaced one menu per region in the toolbar). */
+.dating-menu {
+  position: relative;
+}
+.dating-pop {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 30;
+  display: grid;
+  gap: 8px;
+  min-width: 320px;
+  padding: 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--text) 18%, transparent);
+}
+.dating-pop p {
+  margin: 0;
+}
+.dating-pop .chron-select {
+  display: grid;
+  grid-template-columns: 9em minmax(0, 1fr);
+  gap: 8px;
+}
+.dating-pop .chron-select select {
+  min-width: 0;
+  width: 100%;
+}
+.dating-pop .linklike {
+  justify-self: start;
+}
+

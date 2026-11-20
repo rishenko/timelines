@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { TimelineView, type FocusRequest } from './timeline/TimelineView.tsx';
+import { TimelineView } from './timeline/TimelineView.tsx';
+import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
 import { isEventVisible, useFilters } from './state/filters.ts';
 import { useTheme } from './state/theme.ts';
@@ -8,7 +9,8 @@ import { usePanels } from './state/panels.ts';
 import { goToTimeline, readUrl, useUrlSync, type View } from './state/url.ts';
 import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
-import { coarserIncrement, finerIncrement, keyEventsOnly } from './state/zoom.ts';
+import { useChronology } from './state/useChronology.ts';
+import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
 import { TimelinePicker } from './components/TimelinePicker.tsx';
@@ -23,23 +25,22 @@ import { LegendPanel } from './components/LegendPanel.tsx';
 import { Tour } from './components/Tour.tsx';
 import { CustomizePanel, type CustomizeTab } from './components/CustomizePanel.tsx';
 import { TableView } from './components/TableView.tsx';
+import { Credits } from './components/Credits.tsx';
 import { tourSteps } from './lib/tour.ts';
 import { newEvent } from './lib/newEvent.ts';
 import { datasetPresent } from './lib/years.ts';
 import { formatYear } from './lib/calendar.ts';
-import { safeUrl } from './lib/urls.ts';
-import { chronologyGroups, defaultSelection, resolveEvents, resolveSpan, type ChronologySelection, type ResolvedPhase, type ResolvedSpan } from './lib/chronology.ts';
 import { allTimelines } from './timelines/index.ts';
 
 /**
  * The app shell: owns the open timeline's state (data and draft, chronology choices, zoom, folded rows, selection,
  * editing) and wires it to the toolbar, the timeline view and the side panels. The pieces live elsewhere:
- * state/ (url, toast, panels, library and search actions, zoom, collapse) and components/ (Toolbar, EditBar,
- * SidePanel and the panels).
+ * state/ (url, toast, panels, chronologies, focus requests, library and search actions, zoom, collapse) and
+ * components/ (Toolbar, EditBar, SidePanel, Credits and the panels).
  */
 export default function App() {
   const [initialUrl] = useState(readUrl);
-  const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch] = useDataset(initialUrl.published);
+  const [{ data, dirty, published, updatedUnderDraft, unreadableDraft }, dispatch, unsaved] = useDataset(initialUrl.published);
   const meta = data.meta;
   const cal = meta.calendar;
   const present = datasetPresent(data);
@@ -60,25 +61,17 @@ export default function App() {
     document.title = meta.subtitle ? `${meta.title} (${meta.subtitle})` : meta.title;
   }, [meta.title, meta.subtitle]);
 
+  // edits that can't be stored (storage full or turned off) last only until the page closes: say so when it starts
+  // (the banner below stays up while it lasts)
+  useEffect(() => {
+    if (unsaved) notify("Your edits can't be saved in this browser. Download them to keep them.", 'error');
+  }, [unsaved, notify]);
+
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
-  const [chronSel, setChronSel] = useState<ChronologySelection>(() => defaultSelection(data));
-  const chronDefaults = useMemo(() => defaultSelection(data), [data]);
-  const chronGroups = useMemo(() => [...chronologyGroups(data)].filter(([, list]) => list.length > 1), [data]);
-  const resolved = useMemo(() => resolveEvents(data, chronSel), [data, chronSel]);
-  const resolvedById = useMemo(() => new Map(resolved.map((e) => [e.uuid, e])), [resolved]);
+  const chron = useChronology(data);
+  const { resolved, resolvedById, spans, phases } = chron;
   const visibleEvents = useMemo(() => resolved.filter((e) => isEventVisible(e, filters)), [resolved, filters]);
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
-  const spans = useMemo(() => {
-    const m = new Map<string, ResolvedSpan>();
-    for (const t of data.tracks) if (t.span) m.set(t.id, resolveSpan(data, t.id, t.span, chronSel));
-    return m;
-  }, [data, chronSel]);
-  const phases = useMemo(() => {
-    const m = new Map<string, ResolvedPhase[]>();
-    for (const t of data.tracks)
-      if (t.phases?.length) m.set(t.id, t.phases.map((p) => ({ name: p.name, ...resolveSpan(data, t.id, p, chronSel) })));
-    return m;
-  }, [data, chronSel]);
 
   // ---- view settings ----
   const [increment, setIncrement] = useState(initialUrl.increment);
@@ -86,8 +79,6 @@ export default function App() {
   const [showLinks, setShowLinks] = useState(initialUrl.links);
   const [view, setView] = useState<View>(initialUrl.view);
   const [customizeTab, setCustomizeTab] = useState<CustomizeTab>('appearance');
-  // on phones the credits note is clamped to two lines; a tap opens it (see .legal in CSS)
-  const [creditsOpen, setCreditsOpen] = useState(false);
   // One polite live region for screen readers: zoom changes, "Went to …" and toasts. Kept mounted, because a region
   // that appears together with its text is often not read out.
   const [announcement, setAnnouncement] = useState('');
@@ -112,7 +103,7 @@ export default function App() {
   // ---- selection and editing ----
   const [editMode, setEditMode] = useState(false);
   const [editing, setEditing] = useState<Editing>(null);
-  const [focus, setFocus] = useState<FocusRequest | null>(null);
+  const [focus, focusOn] = useFocusRequest();
   const [selectedId, setSelectedId] = useState<string | null>(() =>
     initialUrl.selected && data.events.some((e) => e.uuid === initialUrl.selected) ? initialUrl.selected : null,
   );
@@ -120,7 +111,19 @@ export default function App() {
     const e = resolvedById.get(id);
     if (!e) return;
     setSelectedId(id);
-    setFocus({ year: e.start, nonce: Date.now() });
+    focusOn({ year: e.start });
+  };
+
+  /**
+   * One zoom step finer (1) or coarser (-1): centered on `year` if given, else the view keeps its center year.
+   * False if there is no further step that way.
+   */
+  const zoomStep = (dir: 1 | -1, year?: number): boolean => {
+    const next = stepIncrement(meta.increments, increment, dir);
+    if (next === undefined) return false;
+    setIncrement(next);
+    if (year !== undefined) focusOn({ year });
+    return true;
   };
 
   // At a timeline's coarsest zoom, draw only its key events (plus the selected one), if it marks any.
@@ -181,7 +184,7 @@ export default function App() {
     centerRef,
     setCollapsed,
     setSelectedId,
-    setFocus,
+    focusOn,
     notify,
   });
 
@@ -209,7 +212,7 @@ export default function App() {
           setAnnouncement(v === 'table' ? 'Table view' : 'Timeline view');
           // back on the chart, bring the selected event into view
           const sel = selectedId ? resolvedById.get(selectedId) : undefined;
-          if (v === 'timeline' && sel) setFocus({ year: sel.start, range: [sel.start, sel.end ?? sel.start], nonce: Date.now() });
+          if (v === 'timeline' && sel) focusOn({ year: sel.start, range: [sel.start, sel.end ?? sel.start] });
         }}
         picker={
           <TimelinePicker
@@ -228,11 +231,11 @@ export default function App() {
         onIncrement={setIncrement}
         dating={
           <DatingMenu
-            groups={chronGroups}
-            selection={chronSel}
-            defaults={chronDefaults}
-            onChange={(g, id) => setChronSel((s) => ({ ...s, [g]: id }))}
-            onReset={() => setChronSel(chronDefaults)}
+            groups={chron.groups}
+            selection={chron.selection}
+            defaults={chron.defaults}
+            onChange={chron.choose}
+            onReset={chron.reset}
           />
         }
         compress={compress}
@@ -261,7 +264,7 @@ export default function App() {
             hiddenReason={search.hiddenReason}
             onPick={search.onPick}
             onYear={(y) => {
-              setFocus({ year: y, nonce: Date.now() });
+              focusOn({ year: y });
               setAnnouncement(`Went to ${formatYear(y, cal)}`);
             }}
           />
@@ -288,7 +291,24 @@ export default function App() {
         />
       )}
 
-      {dirty && !editMode && (
+      {unsaved && (
+        <div className="draft-banner unsaved">
+          Your edits aren't being saved: this browser's storage is full or turned off. They last until you close this
+          page.{' '}
+          {editMode ? (
+            'Use Download in-progress in the edit bar to keep them.'
+          ) : (
+            <>
+              <button className="linklike" onClick={toggleEdit}>
+                Open edit mode
+              </button>{' '}
+              to download them.
+            </>
+          )}
+        </div>
+      )}
+
+      {dirty && !editMode && !unsaved && (
         <div className="draft-banner">
           You're viewing local edits, not the published timeline.{' '}
           {updatedUnderDraft && 'The published timeline has been updated since you made them; your edits are kept on top of it. '}
@@ -312,7 +332,7 @@ export default function App() {
       )}
 
       {panels.open.tour && (
-        <Tour steps={tourSteps(data, { hasDating: chronGroups.length > 0, hasSubRows })} onClose={() => panels.show('tour', false)} />
+        <Tour steps={tourSteps(data, { hasDating: chron.groups.length > 0, hasSubRows })} onClose={() => panels.show('tour', false)} />
       )}
 
       {panels.open.customize && (
@@ -397,24 +417,12 @@ export default function App() {
             focus={focus}
             initialCenterYear={initialCenter}
             onCenterYearChange={onCenterYearChange}
-            onZoomIn={(year) => {
-              const finer = finerIncrement(meta.increments, increment);
-              if (finer === undefined) return false;
-              setIncrement(finer);
-              setFocus({ year, nonce: Date.now() });
-              return true;
-            }}
-            onPinchZoom={(dir) => {
-              const next = dir === 1 ? finerIncrement(meta.increments, increment) : coarserIncrement(meta.increments, increment);
-              if (next !== undefined) setIncrement(next);
-            }}
+            onZoomIn={(year) => zoomStep(1, year)}
+            onPinchZoom={(dir) => void zoomStep(dir)}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}
             onKeyZoom={(dir, year) => {
-              const next = dir === 1 ? finerIncrement(meta.increments, increment) : coarserIncrement(meta.increments, increment);
-              if (next === undefined) return setAnnouncement(dir === 1 ? 'Already at the closest zoom' : 'Already at the widest zoom');
-              setIncrement(next);
-              setFocus({ year, nonce: Date.now() });
+              if (!zoomStep(dir, year)) setAnnouncement(dir === 1 ? 'Already at the closest zoom' : 'Already at the widest zoom');
             }}
             onShowKeys={() => panels.show('legend', true)}
           />
@@ -435,30 +443,7 @@ export default function App() {
         />
       </main>
 
-      {(meta.credits || meta.creditsImage) && (
-        // on phones the note is clamped to two lines: a tap anywhere on it opens it, and so does its More button
-        // (shown only on narrow screens), which keyboard and screen-reader users reach
-        // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-        <footer
-          className={`legal${creditsOpen ? ' open' : ''}`}
-          onClick={() => setCreditsOpen((o) => !o)}
-          title={creditsOpen ? undefined : 'Tap to read the full note'}
-        >
-          {safeUrl(meta.creditsImage) && <img src={safeUrl(meta.creditsImage)} alt="" />}
-          {meta.credits && <p id="credits-note">{meta.credits}</p>}
-          <button
-            className="legal-toggle linklike"
-            aria-expanded={creditsOpen}
-            aria-controls="credits-note"
-            onClick={(ev) => {
-              ev.stopPropagation();
-              setCreditsOpen((o) => !o);
-            }}
-          >
-            {creditsOpen ? 'Less' : 'More'}
-          </button>
-        </footer>
-      )}
+      <Credits text={meta.credits} image={meta.creditsImage} />
 
       {toast && (
         <div key={toast.n} className={`toast ${toast.kind}`} aria-hidden="true">

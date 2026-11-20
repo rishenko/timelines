@@ -6,9 +6,11 @@ import {
   dateWindow,
   defaultSelection,
   eventChronology,
+  isApprox,
   resolveEvents,
   resolveSpan,
   trackChronology,
+  type ResolvedSpan,
 } from './chronology.ts';
 import { validateDataset } from '../data/validate.ts';
 
@@ -124,5 +126,30 @@ describe('error windows', () => {
     expect(s.start).toBe(BCE(1950));
     expect(s.end).toBe(BCE(1651));
     expect(s.startWindow).toEqual([BCE(1950), BCE(1830)]);
+  });
+});
+
+describe('approximate dates', () => {
+  it('an event is approximate when marked circa or given a range', () => {
+    expect(isApprox({})).toBe(false);
+    expect(isApprox({ circa: true })).toBe(true);
+    expect(isApprox({ startWindow: [1, 3] })).toBe(true);
+    expect(isApprox({ endWindow: [5, 9] })).toBe(true);
+  });
+  it('a resolved lifespan or phase keeps its circa flag, so both its ends read "c."', () => {
+    const ds: Dataset = {
+      schemaVersion: 3,
+      meta: { id: 't', title: 'T', calendar: BCE_CE, increments: [10], defaultIncrement: 10 },
+      tracks: [{ id: 'r', name: 'R', color: '#888' }],
+      sources: {},
+      tags: {},
+      events: [],
+    };
+    const circa = resolveSpan(ds, 'r', { start: -1000, end: -900, circa: true }, {});
+    expect(circa.circa).toBe(true);
+    expect(isApprox(circa)).toBe(true);
+    const exact: ResolvedSpan = resolveSpan(ds, 'r', { start: -1000, end: -900 }, {});
+    expect('circa' in exact).toBe(false);
+    expect(isApprox(exact)).toBe(false);
   });
 });

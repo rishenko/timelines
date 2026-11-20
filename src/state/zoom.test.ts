@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { coarserIncrement, finerIncrement, keyEventsOnly } from './zoom.ts';
+import { coarserIncrement, finerIncrement, keyEventsOnly, stepIncrement } from './zoom.ts';
 
 const withKey = [{ importance: 1 as const }, {}];
 const noKey = [{}, { importance: 3 as const }];
@@ -23,5 +23,14 @@ describe('zoom steps', () => {
     expect(coarserIncrement([10, 50, 100, 500], 100)).toBe(500);
     expect(finerIncrement([10, 50], 10)).toBeUndefined();
     expect(coarserIncrement([10, 50], 50)).toBeUndefined();
+  });
+});
+
+describe('zoom steps', () => {
+  it('steps one increment finer or coarser, and stops at either end', () => {
+    expect(stepIncrement([10, 100, 1000], 100, 1)).toBe(10);
+    expect(stepIncrement([10, 100, 1000], 100, -1)).toBe(1000);
+    expect(stepIncrement([10, 100, 1000], 10, 1)).toBeUndefined();
+    expect(stepIncrement([10, 100, 1000], 1000, -1)).toBeUndefined();
   });
 });

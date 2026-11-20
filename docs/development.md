@@ -1,6 +1,7 @@
 # Development
 
-Vite, React 19 and TypeScript. Node 22.18 or newer: the scripts in `scripts/` are TypeScript run directly by Node.
+Vite, React 19 and TypeScript. Node 22.22.2 or newer on the 22 line, or 24.15 or newer (the test environment, jsdom, needs
+those; the scripts in `scripts/` are TypeScript run directly by Node).
 
 ## Commands
 
@@ -12,6 +13,21 @@ npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages
+```
+
+CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
+build, `run-all --check` for each included timeline, and a check that the files in `src/timelines/` and the key-event
+lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
+and `npm run data -- importance <timeline>`, and commit the result.
+
+For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
+`npm run dom-snapshot` renders both included timelines in many states (zooms, every row expanded, the table, the
+detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:
+
+```sh
+SNAP_OUT=before.txt npm run dom-snapshot   # on the code before the change
+SNAP_OUT=after.txt npm run dom-snapshot    # after it
+cmp before.txt after.txt                   # no output: nothing visible changed
 ```
 
 ## Code map
@@ -30,14 +46,18 @@ npm run deploy         # build and publish dist/ to GitHub Pages
 | `src/lib/years.ts`, `urls.ts`, `theme.ts`, `claims.ts` | Date text; URL safety for untrusted timelines; theme presets; date claims as form fields |
 | `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
 | `src/timeline/layout.ts` | Lanes from the row tree; row packing, `+N` clusters, phases |
-| `src/timeline/TimelineView.tsx` | Ruler, lanes, lifespans, marks, windowed rendering |
-| `src/timeline/keyboard.ts`, `gestures.ts` | Keyboard control of the chart; pinch zoom and long press |
+| `src/timeline/TimelineView.tsx` | The chart: lanes from the row tree, windowed rendering; composes the pieces below |
+| `src/timeline/Ruler.tsx`, `Bands.tsx`, `LaneLabel.tsx`, `Marks.tsx` | The year ruler; lifespan and phase bands; row labels and their buttons; event and `+N` marks |
+| `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen |
+| `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys) and its movement rules |
+| `src/timeline/gestures.ts` | Pinch zoom and long press |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
 | `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
 | `src/state/library.ts`, `useLibraryActions.ts` | The reader's own timelines: opening, uploading, updating, sharing |
 | `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
-| `src/state/` (others) | Filters, theme, folded rows, zoom steps, panels, toasts, search actions |
+| `src/state/` (others) | Filters, theme, chronology choices, focus requests, folded rows, zoom steps, panels, toasts, search actions |
 | `src/components/` | Toolbar, panels (Filters, Legend, Customize, Dating), detail panel and editors, search box, table view, tour |
+| `src/index.css`, `src/styles/` | Styles, one file per area (chart, side panel, legend, table view, phones…), imported by `index.css` in cascade order |
 | `src/test/fixtures.ts` | A small fictional timeline for tests |
 | `data-src/`, `scripts/` | Readable source files for the included timelines, and the scripts that build them |
 

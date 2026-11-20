@@ -1,0 +1,207 @@
+/* ---------- side panel ---------- */
+
+.side-panel {
+  width: 380px;
+  flex: none;
+  border-left: 1px solid var(--line-2);
+  background: var(--bg-2);
+  overflow-y: auto;
+  padding: 12px 16px 20px;
+}
+.side-panel header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.side-panel h2 {
+  font-size: 18px;
+  margin: 6px 0 8px;
+}
+.side-panel h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 18px 0 6px;
+}
+.side-panel .dates {
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-weight: 600;
+}
+.side-panel .descr {
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+.side-panel ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.side-panel li {
+  margin-bottom: 4px;
+}
+.side-panel .links .kind {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.side-panel footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+.track-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.track-chip {
+  font-size: 12px;
+  border-left: 4px solid var(--track-ink, var(--track-color));
+  background: var(--bg-3);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.editor form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.editor label {
+  font-size: 12px;
+  color: var(--muted);
+}
+.editor label.check {
+  color: var(--text);
+  font-size: 13px;
+}
+.editor fieldset {
+  /* a fieldset is as wide as its content by default; let it shrink to the panel instead */
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 6px 0;
+}
+.editor legend {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.editor .year-row,
+.editor .row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+/* A claim: year, era, ± margin and remove on the first line, the chronology on its own line under them (it wraps
+   there), then the source and its location. Each field keeps a readable width in a narrow panel. */
+/* the claims are a list (for screen readers), drawn without bullets */
+.editor .claim-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* a column like .claims: a grid track would grow to its widest field and run past the panel */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.editor .claim .row {
+  flex-wrap: wrap;
+}
+.editor .claim select[aria-label='Era'] {
+  flex: 0 0 auto;
+  min-width: 64px;
+}
+.editor .claim select[aria-label='Chronology'] {
+  order: 5;
+  flex: 1 0 100%;
+}
+.editor .claim select[aria-label='Source'] {
+  flex: 2 1 150px;
+}
+.editor .claim input[aria-label='Location in source'] {
+  flex: 1 1 90px;
+  min-width: 0;
+}
+/* labels as wide as their text (a fixed width cut "Importance" short), and the row wraps in a narrow panel */
+.editor .year-row {
+  flex-wrap: wrap;
+}
+.editor .year-row label {
+  flex: none;
+  min-width: 44px;
+}
+.editor .year-row input {
+  width: 110px;
+}
+.editor .row select {
+  flex: 1;
+  min-width: 0;
+}
+.editor .row input {
+  width: 90px;
+}
+/* two columns that may shrink below their longest row name (which then wraps), one in a narrow panel */
+.editor .track-checks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11em), 1fr));
+  gap: 2px 10px;
+}
+.editor .track-checks > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.editor .track-checks label.check {
+  white-space: normal;
+  align-items: flex-start;
+  min-height: 24px;
+  padding-top: 3px;
+}
+.editor .track-checks label.check input {
+  flex: none;
+  margin-top: 2px;
+}
+.editor .track-checks .check.child {
+  padding-left: 18px;
+  font-size: 12px;
+}
+.editor [role='alert'] {
+  color: color-mix(in srgb, var(--danger) 75%, var(--text));
+  margin: 0;
+  font-size: 12px;
+}
+.editor details summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 12px;
+  /* 24 px tall to tap (WCAG 2.5.8), keeping its disclosure triangle */
+  line-height: 16px;
+  padding: 4px 0;
+}
+.editor details input {
+  width: 100%;
+  margin-top: 4px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.tl-mark.cluster {
+  height: 20px;
+  padding: 0 8px;
+  border: 1px dashed var(--track-ink, var(--track-color));
+  border-radius: 10px;
+  background: var(--bg-3);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+}
+.tl-mark.cluster:hover {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, var(--bg-3));
+}
+

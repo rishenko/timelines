@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { Boot } from './Boot.tsx'
+import { ErrorBoundary } from './components/ErrorBoundary.tsx'
 import { applyTheme, loadTheme } from './lib/theme.ts'
 import { findTimeline } from './timelines/index.ts'
 
@@ -12,6 +13,8 @@ applyTheme(loadTheme(timeline.dataset.meta.defaultTheme).colors)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Boot />
+    <ErrorBoundary>
+      <Boot />
+    </ErrorBoundary>
   </StrictMode>,
 )

@@ -12,6 +12,11 @@ export function coarserIncrement(increments: number[], current: number): number 
   return coarser.length ? Math.min(...coarser) : undefined;
 }
 
+/** One zoom step finer (1) or coarser (-1) than `current`, if there is one. */
+export function stepIncrement(increments: number[], current: number, dir: 1 | -1): number | undefined {
+  return dir === 1 ? finerIncrement(increments, current) : coarserIncrement(increments, current);
+}
+
 /**
  * At a timeline's coarsest zoom only its key events are drawn, so the whole range stays readable. This applies only
  * when the timeline has more than one zoom step and marks at least one event as key (importance 1); otherwise every

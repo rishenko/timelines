@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import type { Dataset, Source, TimelineEvent, Track } from '../types.ts';
 import * as edits from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
@@ -36,23 +36,10 @@ export function datasetReducer(state: DatasetState, action: DatasetAction): Data
       return set(action.dataset);
     case 'reset':
       return { ...state, data: state.published, dirty: false };
-    case 'upsertEvent': {
-      const event = { ...action.event, edited: true };
-      const i = state.data.events.findIndex((e) => e.uuid === event.uuid);
-      const events = i === -1 ? [...state.data.events, event] : state.data.events.with(i, event);
-      return set({ ...state.data, events });
-    }
-    case 'removeEvent': {
-      const events = state.data.events
-        .filter((e) => e.uuid !== action.uuid)
-        // drop dangling links to the removed event
-        .map((e) =>
-          e.links?.some((l) => l.to === action.uuid)
-            ? { ...e, links: e.links.filter((l) => l.to !== action.uuid), edited: true }
-            : e,
-        );
-      return set({ ...state.data, events });
-    }
+    case 'upsertEvent':
+      return set(edits.upsertEvent(state.data, action.event));
+    case 'removeEvent':
+      return set(edits.removeEvent(state.data, action.uuid));
     case 'upsertTrack':
       return set(edits.upsertTrack(state.data, action.track, action.previousId));
     case 'moveTrack':
@@ -137,16 +124,28 @@ export function draftToStore(published: Dataset, data: Dataset): StoredDraft | n
   return isEmpty(changes) ? null : { format: 'changes', base: fingerprint(published), changes };
 }
 
-/** Dataset state for one bundled timeline, with automatic draft persistence to localStorage. */
+/**
+ * Dataset state for one bundled timeline, with automatic draft persistence to localStorage. `unsaved` is true while
+ * the latest draft couldn't be stored (storage full or turned off): the edits still apply, but only until the page
+ * closes, so the app tells the reader to download them.
+ */
 export function useDataset(published: Dataset) {
   const [state, dispatch] = useReducer(datasetReducer, published, loadInitial);
+  const [unsaved, setUnsaved] = useState(false);
   useEffect(() => {
     const key = draftKey(state.published.meta.id);
     const draft = state.dirty ? draftToStore(state.published, state.data) : null;
-    if (draft) localStorage.setItem(key, JSON.stringify(draft));
-    else localStorage.removeItem(key);
+    try {
+      if (draft) localStorage.setItem(key, JSON.stringify(draft));
+      else localStorage.removeItem(key);
+      // whether storage took the draft is only known after writing it; an unchanged value doesn't re-render
+      // oxlint-disable-next-line react/set-state-in-effect
+      setUnsaved(false);
+    } catch {
+      setUnsaved(true);
+    }
   }, [state]);
-  return [state, dispatch] as const;
+  return [state, dispatch, unsaved] as const;
 }
 
 /** Parses and validates an uploaded file. */

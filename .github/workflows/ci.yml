@@ -1,0 +1,46 @@
+# Checks every push to main and every pull request: lint, tests (including the accessibility checks), the
+# type-check and build, and the included timelines' data (see docs/development.md).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # the oldest supported Node line and the current LTS
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+      # The content scripts must reproduce each source file exactly
+      - run: npm run data -- run-all ancient --check
+      - run: npm run data -- run-all classical --check
+
+      # The bundled files and key-event lists must be what data-src/ compiles to
+      - name: Compiled timelines match data-src/
+        run: |
+          for t in ancient classical; do
+            npm run data -- build "$t"
+            npm run data -- importance "$t"
+          done
+          git diff --exit-code -- src/timelines docs

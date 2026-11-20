@@ -1,0 +1,285 @@
+/* ---------- layout ---------- */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+  flex-wrap: wrap;
+}
+/* The title: the timeline menu, with the subtitle in small print under it, cut to the menu's width (the full
+   text is its tooltip), so a long subtitle never pushes the toolbar onto a second row. */
+.toolbar h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  margin: 0 6px 0 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.toolbar h1 .subtitle {
+  /* zero width plus min-width 100%: the subtitle takes the menu's width instead of setting it */
+  width: 0;
+  min-width: 100%;
+  padding-left: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10.5px;
+  font-weight: normal;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.toolbar .group {
+  display: inline-flex;
+}
+.toolbar .seg,
+.customize-tabs .seg {
+  border-radius: 0;
+  margin-left: -1px;
+}
+.toolbar .seg:first-child,
+.customize-tabs .seg:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.toolbar .seg:last-child,
+.customize-tabs .seg:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.toolbar .seg.on,
+.customize-tabs .seg.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  position: relative;
+}
+.toolbar .search {
+  width: 175px;
+  transition: width 0.15s ease-out;
+}
+.toolbar .search:focus {
+  width: 320px;
+}
+/* search results: fixed under the input, so a sideways-scrolling toolbar (phones) can't clip them */
+.search-results {
+  position: fixed;
+  z-index: 40;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  width: max-content;
+  max-width: min(520px, calc(100vw - 16px));
+  max-height: min(60vh, 520px);
+  overflow-y: auto;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+.search-head {
+  padding: 6px 12px 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.search-option {
+  display: grid;
+  gap: 1px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.search-option.active {
+  background: color-mix(in srgb, var(--accent) 18%, var(--bg-3));
+}
+.search-option.hidden .search-title {
+  opacity: 0.55;
+}
+.search-title {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.search-years,
+.search-path {
+  font-size: 11.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.search-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-path em {
+  color: var(--danger);
+  font-style: normal;
+}
+.search-empty {
+  padding: 6px 12px;
+}
+/* a row reached from search glows briefly */
+.tl-lane.flash > .tl-lane-label {
+  animation: lane-flash 1.8s ease-out;
+}
+.tl-lane.flash {
+  animation: lane-flash-row 1.8s ease-out;
+}
+@keyframes lane-flash {
+  0%,
+  35% {
+    background: color-mix(in srgb, var(--focus) 45%, var(--bg-2));
+  }
+}
+@keyframes lane-flash-row {
+  0%,
+  35% {
+    background: color-mix(in srgb, var(--focus) 12%, transparent);
+  }
+}
+.toolbar .spacer {
+  flex: 1;
+}
+
+.editbar,
+.draft-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 14px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, var(--bg));
+}
+/* the edit bar's buttons; on wide screens they sit inline with the hint (display: contents) */
+.editbar-buttons {
+  display: contents;
+}
+.editbar .hint-narrow {
+  display: none;
+}
+.editbar .sep {
+  width: 1px;
+  height: 20px;
+  background: color-mix(in srgb, var(--accent) 30%, var(--bg));
+}
+.draft-banner {
+  background: color-mix(in srgb, var(--focus) 9%, var(--bg));
+  border-color: color-mix(in srgb, var(--focus) 28%, var(--bg));
+}
+/* edits that can't be stored: a warning, since they are lost when the page closes */
+.draft-banner.unsaved {
+  background: color-mix(in srgb, var(--danger) 12%, var(--bg));
+  border-color: color-mix(in srgb, var(--danger) 45%, var(--bg));
+}
+
+.filters-panel {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 18px;
+  padding: 10px 14px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+}
+.filters-panel h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 8px;
+  display: flex;
+  gap: 8px;
+}
+.filters-panel .bulk button {
+  font-size: 11px;
+  padding: 0 6px;
+  margin-left: 4px;
+}
+.toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.toggle.off {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+.toggle.nested {
+  font-size: 12px;
+}
+.toggle.deep {
+  font-size: 11px;
+}
+.toggle .tag {
+  font-size: 10px;
+  background: color-mix(in srgb, var(--accent) 30%, var(--bg));
+  border-radius: 3px;
+  padding: 0 4px;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  position: relative;
+}
+
+.legal {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 6px 14px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+}
+.legal img {
+  height: 28px;
+}
+.legal p {
+  margin: 0;
+}
+
+.toast {
+  position: fixed;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-3);
+  border: 1px solid var(--line-2);
+  border-left: 3px solid var(--ok);
+  padding: 8px 14px;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px var(--shadow);
+  animation: toast-in 0.15s ease-out;
+  z-index: 50;
+  /* never block clicks on the timeline underneath */
+  pointer-events: none;
+}
+.toast.error {
+  border-left-color: var(--danger);
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+}
+

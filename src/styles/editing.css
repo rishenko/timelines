@@ -1,0 +1,71 @@
+/* ---------- editing tracks & sources ---------- */
+.lane-edit {
+  display: inline-flex;
+  flex: none;
+}
+.lane-edit .icon.small {
+  padding: 0 3px;
+  min-width: 24px;
+  min-height: 24px;
+}
+.tl-add-lane {
+  position: relative;
+  height: 40px;
+  border-bottom: 1px dashed var(--line-2);
+}
+.tl-add-lane button {
+  position: sticky;
+  left: 0;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid var(--line-2);
+  border-left: 4px dashed var(--accent);
+  background: var(--bg-2);
+  color: color-mix(in srgb, var(--accent) 55%, var(--text));
+  text-align: left;
+  padding-left: 12px;
+  z-index: 4;
+}
+.tl-add-lane button:hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+}
+.quick-create {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding: 8px;
+  border: 1px dashed var(--accent);
+  border-radius: 4px;
+}
+.quick-create input:not([type="color"]) {
+  flex: 1;
+  min-width: 140px;
+}
+.quick-create p {
+  flex-basis: 100%;
+  margin: 0;
+}
+.side-panel footer .push-right {
+  margin-left: auto;
+}
+.toggle .tag.custom {
+  background: color-mix(in srgb, var(--ok) 30%, var(--bg));
+}
+/* edit controls get their own line so lane names keep their full width */
+.tl-lane-label:has(.lane-edit) {
+  flex-wrap: wrap;
+  align-content: center;
+  row-gap: 0;
+}
+.tl-lane-label .lane-edit {
+  order: 10;
+  flex-basis: 100%;
+  padding-left: 26px;
+  margin-top: -2px;
+}
+.tl-lane.nested .tl-lane-label .lane-edit {
+  padding-left: 0;
+}
+

@@ -17,7 +17,7 @@ Every date in both cites the Wikipedia article it comes from. See [Data sources 
 
 ## Quick start
 
-Requires Node 22.18 or newer.
+Requires Node 22.22.2 or newer on the 22 line, or 24.15 or newer.
 
 ```sh
 npm install

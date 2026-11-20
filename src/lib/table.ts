@@ -1,6 +1,6 @@
 import type { Calendar, Dataset, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan, Window } from './chronology.ts';
-import { eventChronology } from './chronology.ts';
+import { eventChronology, isApprox } from './chronology.ts';
 import { formatYear } from './calendar.ts';
 import { compareEvents, formatEventDates } from './years.ts';
 import { trackIndex, trackPath, treeOrder } from './tracks.ts';
@@ -19,8 +19,6 @@ export interface TableSection {
   group?: Track;
   events: ResolvedEvent[];
 }
-
-export const isApprox = (e: ResolvedEvent) => !!(e.circa || e.startWindow || e.endWindow);
 
 /** The section an event row belongs to: the second level of its path (a region), else the top level. */
 function sectionTrack(trackId: string, byId: Map<string, Track>): { track: Track; group?: Track } | undefined {
@@ -161,8 +159,8 @@ export function sectionRows(
 }
 
 /** A lifespan or phase in words: "c. 1650 BCE – c. 1190 BCE", plus the ranges its sources allow. */
-export function spanInWords(s: ResolvedSpan, cal: Calendar, circa = false): { main: string; ranges: string[] } {
-  const approx = circa || !!(s.startWindow || s.endWindow);
+export function spanInWords(s: ResolvedSpan, cal: Calendar): { main: string; ranges: string[] } {
+  const approx = isApprox(s);
   const main = `${formatYear(s.start, cal, approx)} – ${formatYear(s.end, cal, approx)}`;
   const ranges: string[] = [];
   if (s.startWindow) ranges.push(`start between ${range(s.startWindow, cal)}`);
