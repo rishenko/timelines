@@ -1,0 +1,59 @@
+{
+  "about": "Map plan for scripts/map/build-map.ts. rows, when present, limits the build to those rows. A row gets Cliopatria's borders for every Cliopatria polity with the row's Wikidata id or Wikipedia article, plus the polities under add, minus those under skip; each polity only in the years Cliopatria gives it, cut to the row's lifespan. Rows without borders in a year fall back to their point and map image (data-src/ancient-classical-places.json). Names are Cliopatria's Name field; groupings in parentheses (alliances) are never used.",
+  "cliopatria": {
+    "version": "v0.2.1",
+    "url": "https://raw.githubusercontent.com/Seshat-Global-History-Databank/cliopatria/v0.2.1/cliopatria.geojson.zip",
+    "sha256": "e10a4e429fca708788ff9e7572a95fce801fae55852d217cffabc1c59cd4eed4"
+  },
+  "land": {
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_land.geojson"
+  },
+  "add": {
+    "carthage": ["Carthage"],
+    "numidia": ["Kingdom of Numidia"],
+    "cyrene": ["Cyrenaica"],
+    "franks": ["Kingdom of the Franks"],
+    "lombards": ["Lombards", "Duchy of Benevento", "Duchy of Spoleto"],
+    "rome-republic-empire": ["Roman Kingdom", "Roman Republic", "Roman Empire", "Western Roman Empire"],
+    "greece": ["Greek City-States", "Peloponnesian League", "Second Athenian League", "Thebans", "Sacred Band of Thebes"],
+    "macedon": ["Antigonid Dynasty", "Antigonid Macedonia"],
+    "pharaonic-egypt": [
+      "Early Dynastic Period of Egypt", "Old Kingdom of Egypt", "Lower Egypt", "Upper Egypt", "Middle Kingdom of Egypt",
+      "Hyksos", "Fifteenth Dynasty of Egypt", "Sixteenth Dynasty of Egypt", "Seventeenth Dynasty of Egypt",
+      "New Kingdom of Egypt", "Twenty-second Dynasty of Egypt", "Twenty-third Dynasty of Egypt",
+      "Twenty-sixth Dynasty of Egypt", "Thirtieth Dynasty of Egypt"
+    ],
+    "ptolemaic-roman-egypt": ["Ptolemaic Kingdom"],
+    "israel-judah": ["Kingdom of Israel", "Kingdom of Judah"],
+    "philistines": ["Philistia"],
+    "sumer": ["Sumerian City-States"],
+    "assyria": ["Neo-Assyrian Empire", "Assyrian Egypt"],
+    "babylonia": ["Neo-Babylonian Empire"],
+    "medes": ["Median Kingdom"],
+    "seleucid": ["Seleucid Empire"],
+    "galatia": ["Galatia"],
+    "palmyra": ["Palmyrene Empire"],
+    "saba": ["Sabaeans"],
+    "nabataea": ["Nabataeans"],
+    "hephthalites": ["White Huns"],
+    "eastern-turkic": ["Eastern Göktürks"],
+    "western-turkic": ["Western Göktürks"],
+    "magadha": ["Magadha - Haryanka dynasty", "Magadha - Shaishunaga dynasty", "Nanda Empire"],
+    "harsha-kannauj": ["Harsha's Empire"],
+    "tamilakam": ["Early Cheras", "Early Cholas", "Early Pandyas"],
+    "anuradhapura": ["Anurādhapura"],
+    "three-kingdoms-china": ["Cao Wei", "Shu Han", "Eastern Wu"],
+    "sixteen-kingdoms": [
+      "Former Zhao", "Later Zhao", "Cheng Han", "Former Liang", "Former Yan", "Former Qin", "Later Liang", "Later Qin",
+      "Later Yan", "Western Qin", "Western Yan", "Northern Liang", "Southern Liang", "Southern Yan", "Western Liang",
+      "Northern Yan", "Xia"
+    ],
+    "northern-dynasties": ["Northern Wei", "Eastern Wei", "Western Wei", "Northern Qi", "Northern Zhou"],
+    "southern-dynasties": ["Liu Song Dynasty", "Southern Qi", "Liang Dynasty", "Chen Dynasty"]
+  },
+  "skip": {
+    "qin": ["Zhai"],
+    "xia": ["Xia"],
+    "zhou": ["Later Zhou"]
+  }
+}

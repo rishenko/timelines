@@ -1,0 +1,58 @@
+/* ---------- the map in an event's details (components/EventMap.tsx) ---------- */
+
+.event-map-svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+}
+.event-map-svg .sea {
+  fill: color-mix(in srgb, var(--link) 38%, var(--bg));
+}
+.event-map-svg .land {
+  fill: var(--bg);
+  stroke: var(--line-2);
+  stroke-width: 0.5px;
+}
+.event-map-svg .other {
+  fill: color-mix(in srgb, var(--muted) 35%, var(--bg));
+  stroke: var(--muted);
+  stroke-width: 0.5px;
+}
+.event-map-svg .own {
+  fill-opacity: 0.8;
+  stroke: var(--text);
+  stroke-width: 1.25px;
+}
+.event-map-svg .own-point path,
+.event-map-svg .own-point circle {
+  stroke: var(--text);
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+}
+.event-map-svg .own-point .pin-hole {
+  fill: var(--bg);
+}
+.event-map-notes {
+  margin-top: 6px !important;
+}
+.event-map-image {
+  margin: 10px 0 0;
+}
+.event-map-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+  background: #fff;
+}
+.event-map-image figcaption {
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.event-map-credits {
+  margin-top: 6px;
+  line-height: 1.4;
+}

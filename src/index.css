@@ -12,6 +12,8 @@
 @import './styles/timeline.css';
 /* the panel beside the chart: event details and the editors' shared layout */
 @import './styles/side-panel.css';
+/* the map in an event's details (components/EventMap.tsx) */
+@import './styles/event-map.css';
 /* edit mode: quick-create boxes, lane edit buttons, Add a track */
 @import './styles/editing.css';
 /* chronology menus, date claims, what saving would break, the Dating button (and the timeline picker's button) */

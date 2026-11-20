@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Map build downloads (scripts/map/build-map.ts)
+.cache
