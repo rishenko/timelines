@@ -6,8 +6,9 @@ import type { Dataset } from '../types.ts';
 import { summarize, type TimelineIndexEntry } from '../data/timelineIndex.ts';
 import ancient from '../../public/timelines/ancient-near-east.json';
 import classical from '../../public/timelines/classical.json';
+import combined from '../../public/timelines/ancient-classical.json';
 
-export const SITE_DATASETS = [ancient, classical] as unknown as Dataset[];
+export const SITE_DATASETS = [ancient, classical, combined] as unknown as Dataset[];
 export const SITE: TimelineIndexEntry[] = SITE_DATASETS.map((d) => ({ ...summarize(d), file: `${d.meta.id}.json` }));
 
 /** Sets the address to `/?<query>` (with any #hash) and renders the app on the timeline it names (else the first). */

@@ -70,7 +70,7 @@ describe('listTimelines with shared lists', () => {
     saveCollection(parseCollection(list('a', 'classical', plainTimeline().meta.id), URL_));
     saveCollection(parseCollection(list('a', 'z'), 'https://other.example/list.json'));
     const got = listTimelines(SITE).map((t) => `${t.collection ? collectionName(t.collection) + ':' : t.library ? 'own:' : ''}${t.summary.id}`);
-    expect(got).toEqual(['ancient-near-east', 'classical', 'Reading club:a', 'Reading club:z', `own:${plainTimeline().meta.id}`]);
+    expect(got).toEqual([...SITE.map((t) => t.id), 'Reading club:a', 'Reading club:z', `own:${plainTimeline().meta.id}`]);
   });
 
   it("a list's timeline carries its full file address, so it loads like the site's", () => {
