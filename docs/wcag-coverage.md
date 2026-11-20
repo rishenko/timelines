@@ -40,8 +40,8 @@ Where the checks run:
 | Manual | 20 | 48% |
 | N/A | 13 | — |
 
-So 22 of the 42 applicable criteria (52%) have at least some automated check. Status: 3 fail and 1 has a known
-gap (see [Known problems](#known-problems)); the rest pass their checks or haven't been reviewed.
+So 22 of the 42 applicable criteria (52%) have at least some automated check. Status: none fail their checks; 1
+has a known gap (see [Known problems](#known-problems)); the rest pass or haven't been reviewed.
 
 ## Matrix
 
@@ -65,7 +65,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 | 1.3.5 Identify Input Purpose | AA | N/A | — | No fields collect information about the user. | — |
 | 1.4.1 Use of Color | A | Partial | — | CI: axe `link-in-text-block`. Uncertain dates are hatched as well as tinted (18 Nov 2026); rows are named, not only coloured. | Pass |
 | 1.4.2 Audio Control | A | N/A | — | No audio. | — |
-| 1.4.3 Contrast (Minimum) | AA | Automated (by hand) | contrast | `npm run contrast`: axe `color-contrast` in a real browser plus a pixel check for text on layered backgrounds, every preset; `--sweep` every screen. Known exceptions: a few labels in dense rows and under the selection thread (feature-audit item 23d). Readers' custom colours are their own choice; the theme panel warns. Report: axe `color-contrast` in every view. | **Fails**: the row path under each search result (axe, 20 Nov 2026); otherwise pass, with exceptions |
+| 1.4.3 Contrast (Minimum) | AA | Automated (by hand) | contrast | `npm run contrast`: axe `color-contrast` in a real browser plus a pixel check for text on layered backgrounds, every preset; `--sweep` every screen. Known exceptions: a few labels in dense rows and under the selection thread (feature-audit item 23d). Readers' custom colours are their own choice; the theme panel warns. Report: axe `color-contrast` in every view. | Pass, with exceptions (the highlighted search result's row path fixed 20 Nov 2026) |
 | 1.4.4 Resize Text | AA | Partial | reflow | CI: axe `meta-viewport`. By hand: `npm run reflow` at 640 px (200% zoom of 1280). Text-only zoom (browser font size) not checked. | Pass |
 | 1.4.5 Images of Text | AA | Manual | — | Text is drawn as text; row and credits images are logos (exempt). | Pass (code) |
 | 1.4.10 Reflow | AA | Automated (by hand) | reflow | `npm run reflow`: 17 views at 320 and 640 px (200% zoom), nothing scrolls sideways. The chart and maps are 2-D content (exempt). | Pass |
@@ -93,10 +93,10 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 | 2.4.11 Focus Not Obscured (Minimum) | AA | Manual | — | Sticky toolbar, ruler and row labels could cover a focused event; the view scrolls to follow focus. Not tested. | Not reviewed |
 | 2.5.1 Pointer Gestures | A | Manual | — | Pinch zoom has buttons and `+`/`−`; long press has *+ Event* (reviewed 18 Nov 2026). | Pass |
 | 2.5.2 Pointer Cancellation | A | Manual | — | Long press opens an editor that can be cancelled; other actions are on click. | Pass (code) |
-| 2.5.3 Label in Name | A | Partial | — | axe `label-content-name-mismatch`: in CI it passes (jsdom); in the browser it fails. | **Fails**: the ruler corner's "N rows hidden" button: its name doesn't contain its visible text (axe, 20 Nov 2026) |
+| 2.5.3 Label in Name | A | Partial | — | axe `label-content-name-mismatch`, in CI (jsdom) and in the browser (the report); only the browser run sees visible text. | Pass (fixed 20 Nov 2026: the "N rows hidden" button's name now starts with its visible text) |
 | 2.5.4 Motion Actuation | A | N/A | — | No device motion. | — |
 | 2.5.7 Dragging Movements | AA | Manual | — | Panning is scrolling (scrollbar, wheel, keys); no drag-only action found. | Pass (code) |
-| 2.5.8 Target Size (Minimum) | AA | Automated (by hand) | targets | `npm run targets`: every control 24 × 24 px or spaced apart, 17 views at a phone and a laptop width. Report: axe `target-size` in every view too. | **Fails**: row-name links in edit mode and Filters' checkboxes (since 19–20 Nov); axe also flags the table view's Wikidata links, which `targets` passes |
+| 2.5.8 Target Size (Minimum) | AA | Automated (by hand) | targets | `npm run targets`: every control 24 × 24 px or spaced apart, 17 views at a phone and a laptop width. Report: axe `target-size` in every view too. | Pass (fixed 20 Nov 2026: row-name links beside the row buttons, the table view's row and Wikidata links, Filters' checkboxes) |
 
 ### 3 Understandable
 
@@ -125,22 +125,16 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 
 ## Known problems
 
-Found by `npm run a11y:report` on 20 November 2026; all are on `main` too.
+1. **1.4.11:** marks, focus outlines and form borders aren't checked at 3:1 (feature-audit item 23d).
 
-1. **1.4.3:** the row path under each search result ("Ancient Near East") is below 4.5:1. `npm run contrast` never
-   opens the search results.
-2. **2.5.3:** the ruler corner's "N rows hidden" button is named "N rows with nothing in view hidden. Show every
-   row", which doesn't contain its visible text.
-3. **2.5.8:** targets too small or too close: the row names' Wikipedia links in edit mode (next to the ✎ ↑ ↓
-   buttons, since 19 November) and Filters' new checkboxes (20 November). axe also flags the table view's Wikidata
-   id links (15 px tall); `targets` passes them, so decide which rule to follow.
-4. **1.4.11:** marks, focus outlines and form borders aren't checked at 3:1 (feature-audit item 23d).
+Fixed on 20 November 2026:
 
-Fixed on 20 November 2026: **2.1.4** (the `/` shortcut worked page-wide; now only in the chart) and **3.2.2** (the
-timeline picker, a `<select>`, opened a timeline on every change; now a menu of links).
-
-Not WCAG A/AA, but planned in item 23: Windows high contrast (`forced-colors`), and testing with NVDA and VoiceOver
-(item 23g).
+- **2.1.4:** the `/` shortcut worked page-wide; now only in the chart.
+- **3.2.2:** the timeline picker, a `<select>`, opened a timeline on every change; now a menu of links.
+- Found by the first `npm run a11y:report` run, and on `main` too: **1.4.3** (the highlighted search result's row
+  path was 4.2–4.5:1), **2.5.3** (the "N rows hidden" button's name didn't contain its visible text) and **2.5.8**
+  (row-name links beside the row buttons since 19 November, Filters' checkboxes since 20 November, and the table
+  view's row and Wikidata links, which only axe flagged; they now follow axe).
 
 ## Next to automate
 
