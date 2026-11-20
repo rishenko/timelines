@@ -59,3 +59,24 @@ ends c. 500 BCE. Its text repeated two Classical events beside it: "The long pau
 "Samoa's unrecorded centuries". Classical's version, written in the same pass as those two, is now used word for word,
 on its rows (Tonga and Samoa, Fiji). From Ancient's version it keeps the start claim from *History of Tonga* (heading
 "2650–1550 BP (700 BC – 400 AD)") and the "c." on 700 BCE.
+
+## The Aegean dating systems on the Bronze Age rows (20 November 2026)
+
+`scripts/ancient-classical/aegean-chronology.ts`. The Aegean group carried the High (radiocarbon) Aegean chronology, so
+35 later events under it (Archaic and Classical Greece, Macedon, Pergamon) said "Dated by the High (radiocarbon) Aegean
+chronology". Only Minoan events and the Mycenaean phases have claims under the High or Low Aegean chronology, so it now
+sits on the Cycladic, Minoan and Mycenaean rows instead. No date moved: the app's own date code places every event
+the same under each of the ten dating choices. 
+
+The app now also names an event's dating system only where a choice in the Dating menu can move it, so 151 events
+under the Middle Chronology show it on 67, Shaw's Egyptian chronology on 3 of 81 (Khufu, Ahmose I, Shoshenq I), the
+High Aegean on 1 of 14 (Thera), and the Xia–Shang–Zhou Chronology Project on 1 of 101 (the Battle of Muye). Every
+option in the Dating menu still moves at least one event, lifespan or phase:
+
+| Group | Option | Events, lifespans and phases it moves |
+|---|---|---|
+| Mesopotamia & Anatolia | High, Low | 102 each (dates before 1400 BCE) |
+| Egypt | Hornung, Krauss & Warburton | 9 |
+| Egypt | Radiocarbon | 6 |
+| Aegean | Low | 3 (Thera, the two Mycenaean phases) |
+| China | Traditional (Liu Xin) | 5 (Muye; Xia, Shang and Zhou lifespans; Western Zhou) |

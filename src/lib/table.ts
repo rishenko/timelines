@@ -1,6 +1,6 @@
 import type { Calendar, Dataset, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan, Window } from './chronology.ts';
-import { eventChronology, isApprox } from './chronology.ts';
+import { datingChronology, isApprox } from './chronology.ts';
 import { formatYear } from './calendar.ts';
 import { compareEvents, formatEventDates } from './years.ts';
 import { trackIndex, trackPath, treeOrder } from './tracks.ts';
@@ -70,9 +70,12 @@ export function datesInWords(e: ResolvedEvent, cal: Calendar): { main: string; r
   return { main, ranges };
 }
 
-/** The chronology an event is dated by, by name (only where the timeline defines chronologies). */
+/**
+ * The chronology an event is dated by, by name: only where a choice in the Dating menu can move it (from the
+ * event as published, since `e` may already be re-plotted).
+ */
 export function chronologyName(data: Dataset, e: ResolvedEvent): string | undefined {
-  const id = eventChronology(data, e);
+  const id = datingChronology(data, data.events.find((x) => x.uuid === e.uuid) ?? e);
   return id ? data.chronologies?.[id]?.name : undefined;
 }
 

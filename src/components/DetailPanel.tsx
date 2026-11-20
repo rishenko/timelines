@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import type { Dataset, SourceRef, TimelineEvent } from '../types.ts';
 import { compareEvents, formatEventDates } from '../lib/years.ts';
 import { formatYear } from '../lib/calendar.ts';
-import { allClaims, eventChronology, isApprox, type Claim, type ResolvedEvent, type Window } from '../lib/chronology.ts';
+import { allClaims, datingChronology, eventChronology, isApprox, type Claim, type ResolvedEvent, type Window } from '../lib/chronology.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 import { safeUrl } from '../lib/urls.ts';
 
@@ -111,7 +111,9 @@ export function DetailPanel(p: Props) {
   const hiddenLinks = all.length - links.length;
 
   const chron = eventChronology(data, e);
-  const chronology = chron ? data.chronologies?.[chron] : undefined;
+  // named only when a choice in the Dating menu can move this event
+  const dating = datingChronology(data, e);
+  const chronology = dating ? data.chronologies?.[dating] : undefined;
   const startClaims = allClaims(data, e.start, e.startDates, chron);
   const endClaims = e.end !== undefined ? allClaims(data, e.end, e.endDates, chron) : [];
   const approx = isApprox(r);

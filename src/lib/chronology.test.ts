@@ -5,6 +5,7 @@ import {
   allClaims,
   dateWindow,
   defaultSelection,
+  datingChronology,
   eventChronology,
   isApprox,
   resolveEvents,
@@ -57,6 +58,22 @@ describe('chronologies', () => {
     expect(trackChronology(ds.tracks, 'egypt')).toBe('shaw');
     expect(eventChronology(ds, ev('x', 0, ['old-bab']))).toBe('middle');
     expect(eventChronology(ds, ev('x', 0, ['old-bab'], { chronology: 'shaw' }))).toBe('shaw');
+  });
+
+  it('names the dating system only where another choice would move the event', () => {
+    const ds = fixture([]);
+    // before the cut-off, High and Low shift the date; after it, nothing does
+    expect(datingChronology(ds, ev('early', BCE(1595), ['old-bab']))).toBe('middle');
+    expect(datingChronology(ds, ev('late', BCE(900), ['old-bab']))).toBeUndefined();
+    // an end before the cut-off is enough
+    expect(datingChronology(ds, ev('span', BCE(1600), ['old-bab'], { end: BCE(1400) }))).toBe('middle');
+    expect(datingChronology(ds, ev('late-span', BCE(1400), ['old-bab'], { end: BCE(1300) }))).toBeUndefined();
+    // Egypt has no derived shifts: only a claim under another system moves an event
+    expect(datingChronology(ds, ev('plain', BCE(2560), ['egypt']))).toBeUndefined();
+    const claimed = ev('claimed', BCE(2560), ['egypt'], { startDates: [{ year: BCE(2600), chronology: 'hornung', source: src }] });
+    expect(datingChronology(ds, claimed)).toBe('shaw');
+    // no chronology at all
+    expect(datingChronology(ds, ev('none', 0, []))).toBeUndefined();
   });
 
   it('picks each group default', () => {

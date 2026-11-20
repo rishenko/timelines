@@ -7,8 +7,6 @@
 - **Review the data** against the books: start with `docs/ancient-sources.md`.
 - **Review the key events** in `docs/ancient-classical-key-events.md` (270 key, 94 minor), all proposed by Claude.
   Change `data-src/ancient-classical-importance.json` and run `npm run importance`.
-- **Aegean dating label:** the Aegean group carries the Aegean chronology, so its Hellenistic rows (Macedon,
-  Pergamon) say "Dated by the High (radiocarbon) Aegean chronology" too. It likely belongs only on the Bronze Age rows.
 - **Classical World description audit: check the judgment calls** in `docs/classical-sources.md` ("Description audit
   (18 November 2026)"): pages that disagree with themselves, and optional softenings. (*Polynesians* is settled:
   translation notices are fine and are mentioned in the event's description.)
@@ -74,3 +72,5 @@ separate later timeline, linked by `meta.continues`, would keep each one readabl
   audit, merged on 2026-11-20 into one timeline, Ancient and Classical World (the originals are in `archive/`), whose
   scripts reproduce its source file exactly (`npm run data:check`).
 - Hosting on GitHub Pages (`npm run deploy`).
+- "Dated by …" only where the reader's choice in the Dating menu can move the event (`datingChronology`); every
+  dating option moves at least one event, lifespan or phase, so all are kept.
