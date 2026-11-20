@@ -51,7 +51,9 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 | `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen |
 | `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys) and its movement rules |
 | `src/timeline/gestures.ts` | Pinch zoom and long press |
+| `src/timeline/rowsInView.ts` | Which rows have nothing near the view ("Hide rows with nothing in view") |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
+| `src/map/mapData.ts`, `src/components/EventMap.tsx` | Event maps: which borders, pins and map images to draw for an event's year (see [Event maps](#event-maps)) |
 | `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
 | `src/state/library.ts`, `useLibraryActions.ts` | The reader's own timelines: opening, uploading, updating, sharing |
 | `src/state/collections.ts` | Shared lists (`?collection=`): reading, saving and removing them; `listTimelines` in `timelines.ts` merges them into the picker |

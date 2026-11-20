@@ -66,25 +66,74 @@ be `http(s)` addresses or relative paths.
 
 ## Features
 
-- **Rows** that nest to any depth and fold away, with lifespans and named phases (dynasties, governments).
+### Reading a timeline
+
+- **Rows** that nest to any depth and fold away, with lifespans, named phases (dynasties, governments) and an
+  optional image. *Expand all*, *Collapse all* and ↺ (back to the way the timeline opens) fold every row at once.
 - **Any calendar:** BCE/CE or your own era names, with or without a year 0.
-- **Uncertain dates** drawn as ranges, worked out from what each source says. Alternative dating systems (such as
-  Mesopotamia's High, Middle and Low chronologies) that readers can switch between.
-- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows.
-- **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N".
-- **Row links:** a row's name can link to a page about it; in the included timelines, its Wikipedia article. Rows can
-  also carry a Wikidata id, shown in the table view and the CSV download.
+- **Uncertain dates** drawn as hatched ranges, worked out from what each source says. Alternative dating systems
+  (such as Mesopotamia's High, Middle and Low chronologies) that readers can switch between in the **Dating** menu.
+- **Events** on one row or several (joined by a thread), with a start and end, or ongoing to the timeline's "now".
+- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows: all of them, or
+  only the selected event's (Filters → *Show all event connections*).
+- **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N". A row's
+  "show all" button unfolds its "+N" groups.
+- **Event details:** the dates each source gives, the sources with page or section, the connections, a map, and a
+  *Copy link* button.
 - **Maps:** opening an event shows its rows on a map of its year: borders where a source has them, else a pin at
   the row's location and the map from its Wikipedia article. Loaded only when an event is opened.
-- **Zoom** by years per tick. Long empty stretches are compressed.
-- **Search** across rows, phases and events; **filters** by source and source tag; a **legend** and a short
+- **Row links:** a row's name can link to a page about it; in the included timeline, its Wikipedia article. Rows can
+  also carry a Wikidata id, shown in the table view and the CSV download.
+- **Zoom** by years per tick (buttons, `+`/`−`, or pinch). Long empty stretches are shortened (Filters →
+  *Shorten gaps with no events*).
+- **Hide rows with nothing in view**, or draw them as thin lines, so a timeline with many short-lived rows stays
+  readable (Filters → Rows). The ruler corner says how many are hidden.
+- **Search** across rows, phases and events, or type a year to go there (`/` from anywhere).
+- **Filters** by source and source tag; a timeline can start with some sources hidden (to avoid spoilers).
+- **Legend** that explains only what the open timeline uses, including the keyboard keys, and a one-minute
   **guided tour**.
-- **Table view** of the same events, with CSV download.
+- **Table view** of the same events and rows, with dates and sources in words, and a CSV download of the events
+  listed.
+- **Neighbouring timelines:** a timeline can link to the one before or after it, drawn on the ruler where they meet.
 - **Themes:** four presets and custom colours.
 - **Phones and tablets:** touch panning, pinch zoom and a compact toolbar.
-- **Links** that reopen a timeline at the same zoom, position and event.
-- **Accessibility:** keyboard control of the chart, screen-reader labels, and the table view as an alternative to
-  the chart. Target: WCAG 2.2 AA (in progress; see [docs/feature-audit.md](docs/feature-audit.md), item 23).
+- **Links** that reopen a timeline at the same zoom, position, view, row settings and event.
+
+### Your own timelines
+
+- **Open timelines** from a file, a link (`?data=`) or a shared list (`?collection=`); see
+  [Use your own timeline data](#use-your-own-timeline-data). Timelines and lists from a link are checked for a newer
+  version each time they open, and open from the saved copy when offline.
+- **Edit mode** (Customize → Edit): add and change events, rows, phases, sources and their dated claims; add an
+  event with *+ Event*, a double-click or a long press on an empty spot in a row. Edits are kept in the browser as
+  changes on top of the published timeline, so they carry over to a new version of it.
+- **Download** the result as JSON, *in progress* (your changes marked) or *final* (ready to publish), and upload a
+  JSON file to add it to your timelines.
+
+### Accessibility
+
+Target: WCAG 2.2 AA. Done so far ([docs/feature-audit.md](docs/feature-audit.md), item 23):
+
+- Landmarks, a skip link, and screen-reader names that carry each event's dates, rows and importance.
+- The table view as a full alternative to the chart.
+- Keyboard control of the chart as a single Tab stop:
+
+  | Key | Does |
+  |---|---|
+  | ← → | Previous or next event in the row |
+  | ↑ ↓ | Nearest event in the row above or below |
+  | Home, End | First or last event in the row |
+  | PgUp, PgDn | About a screen earlier or later |
+  | + − | Zoom around the focused event |
+  | Enter | Open the event (Esc closes and returns to it), zoom into "+N", or fold a row |
+  | / | Search |
+  | ? | Open the legend's list of keys |
+
+- Text contrast of at least 4.5:1 in every theme preset, a 2 px focus outline, hatching as a second cue for
+  uncertain dates, reflow down to 320 px wide and at 200% zoom, controls of at least 24 × 24 px, a button for every
+  gesture, form errors tied to their fields, and less motion when the system asks for it.
+- Not done yet: Windows high contrast (`forced-colors`), a 3:1 check of marks and focus outlines, and testing with
+  screen readers.
 
 ## Development
 

@@ -47,6 +47,7 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
    app or linked from it. Partly exists already: the draft code detects when the published data changed.
 9. **Exports (M).** CSV/TSV of events (title, dates, claims, rows, sources) for spreadsheets and statistics, and the
    full JSON outside edit mode. Later, JSON-LD for linked data (item 13).
+   CSV of events done 18 November 2026, from the table view (the events it lists).
 10. **Bibliography view (M).** A panel listing every source with the events and claims that cite it, filterable and
     exportable (CSL-JSON for Zotero). It's the natural way to check a source's influence on the data.
 11. **Figure export (M).** Save the current view as SVG or PNG (and print to PDF) with a caption that cites the data
@@ -67,6 +68,8 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
     PeriodO period URIs. They make the data linkable and deduplicable with other projects, and enable JSON-LD export.
     PeriodO is the closest match to this app's phases: it records *who* defined a period and how, rather than one
     agreed definition.
+    Rows done 19 November 2026: `ids.wikidata` and a link to the row's Wikipedia article (`url`); events, places and
+    phases not yet.
 14. **Period definitions as assertions (M).** Let a phase or lifespan carry several sourced definitions ("Middle
     Kingdom" per Shaw, per Hornung) like date claims do now, rather than one span per chronology. Lines up with
     PeriodO.
@@ -86,17 +89,21 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
     "my view"). Today the row order is fixed west to east; a scholar comparing Egypt with China has to scroll.
 20. **Table view (M).** A sortable, filterable list of events and rows with dates, ranges, claims and sources. Scholars
     scan and check data this way, it doubles as the accessible alternative (item 23), and it's the basis of CSV export.
+    Done 18 November 2026 (see item 23b).
 21. **Filter by evidence (S).** By uncertainty width ("dates known to ±10 years"), claim basis, source kind or review
     status, on top of the existing source-tag filters.
 22. **Map view (L).** Places as structured data (coordinates or Pleiades ids), with a map that follows the timeline's
     period. Many digital humanities tools pair the two; it's the largest item here.
+    First step done 20 November 2026: opening an event shows its rows on a map of its year (borders from Cliopatria,
+    else a pin and the Wikipedia article's map; see `docs/ancient-classical-map.md`). Not yet: a map that follows
+    the view, places on events, Pleiades ids.
 
 ## 5. Access
 
 23. **Accessibility (L overall; plan below).** Target: WCAG 2.2 AA, stated in an accessibility statement on the About
     page (item 1) with its known limits.
 
-    **Today:** the panels and forms are labelled and work from the keyboard. Events and "+N" clusters are buttons, so
+    **Before this work (18 November 2026):** the panels and forms are labelled and work from the keyboard. Events and "+N" clusters are buttons, so
     Tab reaches them, but:
     - every event is a separate tab stop, in row-by-row rather than time order;
     - only events within about a screen of the view are in the page, so the rest can't be reached without scrolling;
@@ -148,11 +155,12 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
          thicket of threads 2–3 px apart, as around *Urkesh abandoned*), and labels the selected event's highlight
          thread passes behind. `npm run contrast -- --sweep` lists them. Marks and focus outlines (3:1) not yet
          checked.
-       - A bolder focus outline (2 px, offset).
+       - A bolder focus outline (2 px, offset). Done.
        - Readable at 200% zoom and on a 320 px wide screen. Done 18 November 2026: on narrow screens the toolbar
          and edit bar wrap onto rows instead of scrolling sideways, and the editors, Filters, Dating and search
          results fit the screen; `npm run reflow` checks 16 views per width.
        - `prefers-reduced-motion` (smooth scrolling, the tour) and `forced-colors` (Windows high contrast).
+         Reduced motion done (no smooth scrolling or animation); `forced-colors` not yet.
        - Check the "related events" dimming (unrelated events at 28% opacity) for legibility. Done with the contrast
          check above: the marks still fade to 28%, the labels stay at 4.5:1.
     e. **Touch and pointer (S):** targets at least 24 px (WCAG 2.2), including the small event diamonds, and a button
@@ -226,7 +234,8 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
 1. About page, Report a problem, Cite this (1, 3, 6): small, and they change how a scholar first reads the site.
 2. Versioned releases with a DOI, and the changelog (7, 8).
 3. Review status and source kinds (2, 4), then the books review itself (5).
-4. Table view, CSV export and keyboard access (20, 9, 23): one piece of work serving three needs.
+4. Table view, CSV export and keyboard access (20, 9, 23): one piece of work serving three needs. Done, except
+   23 d (marks at 3:1, `forced-colors`) and g (manual testing).
 5. One-sided bounds and claim basis (12, first step; 15).
 6. External ids and period assertions (13, 14).
 7. The large items when wanted: relative dating and synchronisms, radiocarbon curves, the map (12, 16, 22).
