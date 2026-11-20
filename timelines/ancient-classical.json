@@ -123,36 +123,6 @@
       }
     },
     {
-      "id": "cyrene",
-      "name": "Cyrene",
-      "color": "#5a7ab0",
-      "parent": "north-africa",
-      "url": "https://en.wikipedia.org/wiki/Cyrene%2C_Libya",
-      "ids": {
-        "wikidata": "Q44112"
-      },
-      "span": {
-        "start": -630,
-        "end": -95,
-        "startDates": [
-          {
-            "year": -630,
-            "source": {
-              "sourceKey": "wp-cyrene",
-              "sourceLocation": "infobox (traditional)"
-            }
-          },
-          {
-            "year": -649,
-            "source": {
-              "sourceKey": "wp-cyrene",
-              "sourceLocation": "History ('mid-seventh century BC', archaeology)"
-            }
-          }
-        ]
-      }
-    },
-    {
       "id": "carthage",
       "name": "Carthage",
       "color": "#7a3a6a",
@@ -1237,37 +1207,6 @@
       "parent": "europe-med"
     },
     {
-      "id": "magna-graecia",
-      "name": "Magna Graecia and Sicily",
-      "color": "#4a6fb0",
-      "parent": "west-med",
-      "url": "https://en.wikipedia.org/wiki/Magna_Graecia",
-      "ids": {
-        "wikidata": "Q184313"
-      },
-      "span": {
-        "start": -749,
-        "end": -204,
-        "startDates": [
-          {
-            "year": -799,
-            "source": {
-              "sourceKey": "wp-magna-graecia",
-              "sourceLocation": "infobox ('Founded: 8th century BC'): start of century"
-            }
-          },
-          {
-            "year": -700,
-            "source": {
-              "sourceKey": "wp-magna-graecia",
-              "sourceLocation": "infobox: end of century"
-            }
-          }
-        ],
-        "circa": true
-      }
-    },
-    {
       "id": "nuragic",
       "name": "Nuragic Sardinia",
       "color": "#6a7a4a",
@@ -1550,9 +1489,19 @@
     },
     {
       "id": "aegean",
-      "name": "Aegean, Greece and the Hellenistic world",
+      "name": "Aegean and Greek world",
       "color": "#2f6fae",
       "parent": "europe-med",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Greece",
+      "ids": {
+        "wikidata": "Q11772"
+      }
+    },
+    {
+      "id": "aegean-bronze",
+      "name": "Bronze Age Aegean",
+      "color": "#4f7fb8",
+      "parent": "aegean",
       "url": "https://en.wikipedia.org/wiki/Aegean_civilization",
       "ids": {
         "wikidata": "Q192530"
@@ -1563,7 +1512,7 @@
       "name": "Cycladic culture",
       "color": "#6a8fbf",
       "chronology": "aegean-high",
-      "parent": "aegean",
+      "parent": "aegean-bronze",
       "url": "https://en.wikipedia.org/wiki/Cycladic_culture",
       "ids": {
         "wikidata": "Q318144"
@@ -1579,7 +1528,7 @@
       "name": "Minoan Crete",
       "color": "#3d86c6",
       "chronology": "aegean-high",
-      "parent": "aegean",
+      "parent": "aegean-bronze",
       "url": "https://en.wikipedia.org/wiki/Minoan_civilization",
       "ids": {
         "wikidata": "Q134178"
@@ -1627,7 +1576,7 @@
       "name": "Mycenaean Greece",
       "color": "#4a5fb8",
       "chronology": "aegean-high",
-      "parent": "aegean",
+      "parent": "aegean-bronze",
       "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
       "ids": {
         "wikidata": "Q181264"
@@ -1794,10 +1743,91 @@
       ]
     },
     {
+      "id": "greek-colonies",
+      "name": "Greek colonies",
+      "color": "#4a6fb0",
+      "parent": "aegean",
+      "url": "https://en.wikipedia.org/wiki/Greek_colonisation",
+      "ids": {
+        "wikidata": "Q828047"
+      }
+    },
+    {
+      "id": "magna-graecia",
+      "name": "Magna Graecia and Sicily",
+      "color": "#4a6fb0",
+      "parent": "greek-colonies",
+      "url": "https://en.wikipedia.org/wiki/Magna_Graecia",
+      "ids": {
+        "wikidata": "Q184313"
+      },
+      "span": {
+        "start": -749,
+        "end": -204,
+        "startDates": [
+          {
+            "year": -799,
+            "source": {
+              "sourceKey": "wp-magna-graecia",
+              "sourceLocation": "infobox ('Founded: 8th century BC'): start of century"
+            }
+          },
+          {
+            "year": -700,
+            "source": {
+              "sourceKey": "wp-magna-graecia",
+              "sourceLocation": "infobox: end of century"
+            }
+          }
+        ],
+        "circa": true
+      }
+    },
+    {
+      "id": "cyrene",
+      "name": "Cyrene",
+      "color": "#5a7ab0",
+      "parent": "greek-colonies",
+      "url": "https://en.wikipedia.org/wiki/Cyrene%2C_Libya",
+      "ids": {
+        "wikidata": "Q44112"
+      },
+      "span": {
+        "start": -630,
+        "end": -95,
+        "startDates": [
+          {
+            "year": -630,
+            "source": {
+              "sourceKey": "wp-cyrene",
+              "sourceLocation": "infobox (traditional)"
+            }
+          },
+          {
+            "year": -649,
+            "source": {
+              "sourceKey": "wp-cyrene",
+              "sourceLocation": "History ('mid-seventh century BC', archaeology)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "hellenistic",
+      "name": "Macedon and the Hellenistic kingdoms",
+      "color": "#3d5f9e",
+      "parent": "aegean",
+      "url": "https://en.wikipedia.org/wiki/Hellenistic_period",
+      "ids": {
+        "wikidata": "Q428995"
+      }
+    },
+    {
       "id": "macedon",
       "name": "Macedon",
       "color": "#4a4f9a",
-      "parent": "aegean",
+      "parent": "hellenistic",
       "url": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
       "ids": {
         "wikidata": "Q83958"
@@ -1914,7 +1944,7 @@
       "id": "pergamon",
       "name": "Kingdom of Pergamon",
       "color": "#5a7ab0",
-      "parent": "aegean",
+      "parent": "hellenistic",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_Pergamon",
       "ids": {
         "wikidata": "Q2022162"
@@ -18123,7 +18153,7 @@
       "title": "Thera (Minoan) eruption",
       "start": -1599,
       "tracks": [
-        "aegean",
+        "aegean-bronze",
         "minoan"
       ],
       "descr": "A huge eruption buries Akrotiri and sends a tsunami to Crete, late in LM IA. Radiocarbon puts it in the late 17th or 16th century BCE; archaeological synchronisms with Egypt suggest about a century later. The exact year is unsettled.",
@@ -18276,7 +18306,7 @@
       "title": "Uluburun shipwreck",
       "start": -1319,
       "tracks": [
-        "aegean",
+        "aegean-bronze",
         "mycenaean"
       ],
       "descr": "A merchant ship sinks south of Kaş, in Turkey, carrying about 10 tons of copper, about a ton of tin and glass ingots: a microcosm of the international trade in the Eastern Mediterranean and across the Aegean.",
@@ -18395,7 +18425,7 @@
       "start": -1199,
       "end": -1149,
       "tracks": [
-        "aegean",
+        "aegean-bronze",
         "anatolia",
         "egypt",
         "mesopotamia",
@@ -21043,7 +21073,8 @@
       "start": -749,
       "end": -549,
       "tracks": [
-        "greece"
+        "greece",
+        "greek-colonies"
       ],
       "descr": "Archaic Greeks expand across the Mediterranean and the Black Sea, particularly in the 8th–6th centuries BCE.",
       "sources": [
@@ -24731,7 +24762,7 @@
       "start": -549,
       "tracks": [
         "colchis",
-        "greece"
+        "greek-colonies"
       ],
       "descr": "Greek colonies are established in the 6th century BC.",
       "sources": [
@@ -30612,7 +30643,7 @@
       "title": "Death of Alexander the Great",
       "start": -322,
       "tracks": [
-        "aegean",
+        "hellenistic",
         "iran"
       ],
       "descr": "He dies at the age of 32, between the evenings of 10 and 11 June 323 BCE; fighting between his generals starts almost immediately.",
@@ -30634,7 +30665,7 @@
       "start": -321,
       "end": -271,
       "tracks": [
-        "aegean",
+        "hellenistic",
         "iran",
         "egypt"
       ],
@@ -30657,7 +30688,7 @@
       "title": "Battle of Ipsus",
       "start": -300,
       "tracks": [
-        "aegean",
+        "hellenistic",
         "seleucid"
       ],
       "descr": "A coalition of Seleucus, Cassander and Lysimachus defeats Antigonus I, who is killed.",
@@ -34676,7 +34707,7 @@
       "end": -278,
       "tracks": [
         "la-tene",
-        "aegean"
+        "hellenistic"
       ],
       "descr": "Brennus invades Greece in 281 BC. The La Tène page says Delphi was attacked and sacked in 279 BC; the Galatians page says he was turned back before he could plunder it. Celtic expansion is at its maximum by 275 BC.",
       "sources": [
