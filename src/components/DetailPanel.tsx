@@ -5,6 +5,7 @@ import { formatYear } from '../lib/calendar.ts';
 import { allClaims, datingChronology, eventChronology, isApprox, type Claim, type ResolvedEvent, type Window } from '../lib/chronology.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 import { safeUrl } from '../lib/urls.ts';
+import { EventMap } from './EventMap.tsx';
 
 interface Props {
   /** The event as stored (best estimates and claims). */
@@ -21,6 +22,8 @@ interface Props {
   onEdit: () => void;
   onDelete: () => void;
   onCopyLink: () => void;
+  /** The timeline's map file, when it has one: the panel then shows the event's rows on a map of its year. */
+  mapUrl?: string;
 }
 
 function Cite({ data, s }: { data: Dataset; s: SourceRef }) {
@@ -150,6 +153,7 @@ export function DetailPanel(p: Props) {
         ))}
       </div>
       {e.descr && <p className="descr">{e.descr}</p>}
+      {p.mapUrl && <EventMap url={p.mapUrl} tracks={e.tracks} start={r.start} end={r.end} data={data} />}
 
       {hasDating && (
         <section className="dating">

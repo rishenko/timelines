@@ -27,6 +27,12 @@ export interface TimelineIndexEntry {
   calendar?: Calendar;
   /** Theme preset to use when the reader hasn't picked one. */
   defaultTheme?: string;
+  /**
+   * The timeline's map file (borders, locations and map images per row; see src/map/mapData.ts), relative to
+   * index.json. Used only for the site's own timelines. `npm run data -- index` adds it when public/maps/<id>.json
+   * exists.
+   */
+  map?: string;
 }
 
 export interface TimelineIndex {
@@ -88,6 +94,7 @@ export function parseTimelineIndex(json: unknown): { entries: TimelineIndexEntry
     if (Number.isInteger(e.eventCount) && (e.eventCount as number) >= 0) entry.eventCount = e.eventCount as number;
     if (isCalendar(e.calendar)) entry.calendar = e.calendar;
     if (typeof e.defaultTheme === 'string') entry.defaultTheme = e.defaultTheme;
+    if (typeof e.map === 'string' && e.map && isSafeUrl(e.map)) entry.map = e.map;
     entries.push(entry);
   });
   return { entries, errors, ...(title ? { title } : {}) };

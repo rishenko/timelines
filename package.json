@@ -17,6 +17,8 @@
     "data:check": "node scripts/data.ts run-all ancient-classical --check",
     "importance": "node scripts/data.ts importance all",
     "format:src": "node scripts/data.ts format all",
+    "map:fetch": "node scripts/map/fetch-places.ts",
+    "map:build": "node scripts/map/build-map.ts",
     "row-order": "node scripts/data.ts row-order ancient-classical --best",
     "audit:batches": "node scripts/audit-batches.ts",
     "predeploy": "npm run build",

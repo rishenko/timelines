@@ -31,6 +31,7 @@ import { newEvent } from './lib/newEvent.ts';
 import { datasetPresent } from './lib/years.ts';
 import { formatYear } from './lib/calendar.ts';
 import type { TimelineIndexEntry } from './data/timelineIndex.ts';
+import { indexUrl } from './state/timelines.ts';
 import type { LibraryEntry } from './state/library.ts';
 import type { Dataset } from './types.ts';
 
@@ -57,6 +58,11 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const meta = data.meta;
   const cal = meta.calendar;
   const present = datasetPresent(data);
+  // the site's own timelines may have a map file (timelines/index.json → map); readers' and listed ones don't
+  const mapUrl = useMemo(() => {
+    const m = libraryEntry ? undefined : site.find((x) => x.id === meta.id)?.map;
+    return m ? new URL(m, indexUrl()).href : undefined;
+  }, [libraryEntry, site, meta.id]);
   const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, isOn } = useFilters(data);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
@@ -487,6 +493,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           visibleIds={visibleIds}
           onSelectAndFocus={selectAndFocus}
           onCopyLink={(id) => void library.copyEventLink(id)}
+          mapUrl={mapUrl}
         />
       </main>
 

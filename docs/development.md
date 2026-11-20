@@ -124,6 +124,29 @@ AI-generated-text template). Rules used for the included timelines:
 
 `docs/<short>-row-links.md` lists every decision; the decision files used are in `scripts/archive/`.
 
+## Event maps
+
+Opening an event shows its rows on a map (`src/components/EventMap.tsx`, data helpers in `src/map/mapData.ts`). The
+map file is `public/maps/<timeline id>.json`; `npm run data -- index` points the timeline's `index.json` entry at it
+(`map`), and the app loads it the first time a reader opens an event (only for the site's own timelines).
+
+```sh
+npm run map:fetch    # Wikipedia/Wikidata → data-src/ancient-classical-places.json (committed; network, ~2 min)
+npm run map:build    # → public/maps/ancient-classical.json and docs/ancient-classical-map.md (offline after the first run)
+```
+
+- **Borders** come from Cliopatria (pinned to a release with its sha256 in `data-src/ancient-classical-map.json`,
+  downloaded once into `.cache/map/` with Natural Earth's land). A row gets every Cliopatria polity with its Wikidata
+  id or Wikipedia article, plus the plan's `add` list, minus `skip`; each only in Cliopatria's years, cut to the
+  row's lifespan. Cliopatria counts BCE years without a year 0; the build converts them to astronomical years.
+- **Locations**, in order: the Wikipedia article's coordinates; the mark on its infobox location map, when the map
+  has exactly one; the Wikidata coordinate (P625).
+- **Map images:** the article's infobox map (`image_map`, `map`, `overlay_image` …), with caption, author and licence
+  from Commons; marker icons are skipped. Pages with an AI-generated-text template give nothing.
+- **Which year:** the first year of the event's range in which one of its rows has borders, else its start; rows
+  without borders that year get a pin and their map image.
+- The plan's optional `rows` list limits the build to those rows (used for the pilot).
+
 ## Checking the UI
 
 ```sh

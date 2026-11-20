@@ -74,6 +74,8 @@ be `http(s)` addresses or relative paths.
 - **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N".
 - **Row links:** a row's name can link to a page about it; in the included timelines, its Wikipedia article. Rows can
   also carry a Wikidata id, shown in the table view and the CSV download.
+- **Maps:** opening an event shows its rows on a map of its year: borders where a source has them, else a pin at
+  the row's location and the map from its Wikipedia article. Loaded only when an event is opened.
 - **Zoom** by years per tick. Long empty stretches are compressed.
 - **Search** across rows, phases and events; **filters** by source and source tag; a **legend** and a short
   **guided tour**.
@@ -104,6 +106,7 @@ The code map, the scripts that build the included timeline, and the screenshot a
 | [docs/development.md](docs/development.md) | Code map, commands and data tooling |
 | [docs/ancient-classical-sources.md](docs/ancient-classical-sources.md) | How the included timeline was made from two, and the changes since |
 | [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where its dates come from, and the judgment calls, as researched for the two original timelines |
+| [docs/ancient-classical-map.md](docs/ancient-classical-map.md) | Which rows the event maps can draw, and from what |
 | [docs/ancient-classical-key-events.md](docs/ancient-classical-key-events.md) | Which events are marked key or minor |
 | [archive/README.md](archive/README.md) | The two original timelines and the scripts that built them |
 | [docs/BACKLOG.md](docs/BACKLOG.md) | Planned work |
@@ -119,6 +122,12 @@ articles (17–18 November 2026) and transcribed their dates; the descriptions a
 invented: every year and margin comes from a cited page, and where pages disagree, every value is kept. Books and
 papers appear only where Wikipedia cites them, tagged **Cited via Wikipedia (not checked)**. It has not
 been reviewed by a specialist yet.
+
+The event maps draw borders from [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria)
+(Seshat Global History Databank, CC BY 4.0; simplified and cut to each row's lifespan) on land from
+[Natural Earth](https://www.naturalearthdata.com/) (public domain). Rows without borders in a year get the
+location from their Wikipedia article (or its infobox map, or Wikidata) and that article's map image, shown from
+Wikimedia Commons with its author and licence.
 
 ## License
 

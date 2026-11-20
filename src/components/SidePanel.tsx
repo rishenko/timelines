@@ -29,6 +29,8 @@ interface Props {
   /** Selects an event and scrolls to it (a link in the detail panel). */
   onSelectAndFocus: (id: string) => void;
   onCopyLink: (eventId: string) => void;
+  /** The timeline's map file, if it has one (shown in event details). */
+  mapUrl?: string;
 }
 
 /**
@@ -120,6 +122,7 @@ export function SidePanel(p: Props) {
       onClose={() => setSelectedId(null)}
       onSelect={p.onSelectAndFocus}
       onCopyLink={() => p.onCopyLink(selected.uuid)}
+      mapUrl={p.mapUrl}
       onEdit={() => setEditing({ kind: 'event', event: selected, isNew: false })}
       onDelete={() => {
         if (!window.confirm(`Delete "${selected.title}"?`)) return;

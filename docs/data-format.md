@@ -252,6 +252,7 @@ timelines by changing these files, without building the app again.
 | `eventCount` | no | Shown in Customize → Timelines. |
 | `calendar` | no | The timeline's calendar, so links from other timelines (`meta.continues`) can name the year they open at. |
 | `defaultTheme` | no | The timeline's `meta.defaultTheme`. |
+| `map` | no | The timeline's map file, relative to `index.json` (see [development.md](development.md#event-maps)). Used only in the site's own `timelines/index.json`, not in shared lists. |
 
 The first entry opens by default. `npm run data -- index` writes the list from the files in `public/timelines/`,
 filling in every optional field from the files themselves and keeping the order and any `https://` entries. Entries

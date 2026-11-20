@@ -28,7 +28,9 @@ export function timelineIndexText(dir = TIMELINES_DIR): { text: string; notes: s
       return null;
     }
     const { id, title, ...rest } = summarize(data);
-    return { id, title, file, ...rest };
+    // a map file built by `npm run map:build` sits in public/maps/, next to this folder
+    const map = existsSync(join(dir, '..', 'maps', `${id}.json`)) ? { map: `../maps/${id}.json` } : {};
+    return { id, title, file, ...rest, ...map };
   };
 
   const out: TimelineIndexEntry[] = [];

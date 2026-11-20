@@ -3,9 +3,9 @@
 // on the rows (run by \`npm run data -- importance\` and \`run-all\`, after the content scripts).
 
 const API = 'https://en.wikipedia.org/w/api.php';
-const UA = 'timelines-data-script/1.0 (https://github.com/rishenko/timelines)';
+export const UA = 'timelines-data-script/1.0 (https://github.com/rishenko/timelines)';
 /** Templates that mark AI-generated text (or sources found by AI) on a page. */
-const AI_TEMPLATES = [
+export const AI_TEMPLATES = [
   'Template:AI-generated',
   'Template:AI-generated section',
   'Template:AI-generated span',
@@ -30,9 +30,9 @@ export const titleFromUrl = (url: string) => {
   const m = /^https?:\/\/en\.wikipedia\.org\/wiki\/([^#?]+)/.exec(url);
   return m ? decodeURIComponent(m[1]).replace(/_/g, ' ') : null;
 };
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-async function api(params: Record<string, string>): Promise<Json> {
+export async function api(params: Record<string, string>): Promise<Json> {
   const q = new URLSearchParams({ format: 'json', formatversion: '2', ...params });
   for (let attempt = 0; ; attempt++) {
     const res = await fetch(`${API}?${q}`, { headers: { 'User-Agent': UA } });
