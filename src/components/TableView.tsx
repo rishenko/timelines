@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { Dataset } from '../types.ts';
+import type { Dataset, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import {
@@ -242,6 +242,34 @@ export function TableView(p: Props) {
  * A section's rows with what the chart draws on their bars: the lifespan (shaded) and the phases (named periods),
  * each with its dates and the ranges its sources allow, in words.
  */
+/** A row's name, linked to its page (Track.url) when it has one, and its Wikidata id. */
+function RowName({ track }: { track: Track }) {
+  const url = safeUrl(track.url);
+  const qid = track.ids?.wikidata;
+  return (
+    <>
+      {url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          {track.name}
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+      ) : (
+        track.name
+      )}
+      {qid && (
+        <>
+          {' '}
+          <a className="muted small" href={`https://www.wikidata.org/wiki/${qid}`} target="_blank" rel="noopener noreferrer">
+            <span className="sr-only">Wikidata </span>
+            {qid}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </>
+      )}
+    </>
+  );
+}
+
 function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
   const cal = data.meta.calendar;
   return (
@@ -260,7 +288,7 @@ function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
           return (
             <tr key={r.track.id}>
               <th scope="row" data-row-id={r.track.id} tabIndex={-1}>
-                {r.track.name}
+                <RowName track={r.track} />
                 {r.parent && <span className="muted small"> (in {r.parent.name})</span>}
               </th>
               <td className="date">

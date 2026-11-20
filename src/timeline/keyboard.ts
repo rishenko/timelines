@@ -4,7 +4,8 @@ import type { LaneLayout } from './layout.ts';
  * Keyboard navigation in the chart (accessibility part c; docs/feature-audit.md item 23c). The whole timeline is one
  * Tab stop: one control in it is focusable at a time (a "roving" focus) and the arrow keys move between controls.
  *
- * The controls form a grid: one line per lane, holding the lane's fold buttons ("label stops", at the left) and then
+ * The controls form a grid: one line per lane, holding the lane label's controls ("label stops", at the left: the
+ * row's name when it links to a page, and the fold buttons) and then
  * its events and "+N" clusters in time order. Left and Right walk a lane; Up and Down move to the nearest control in
  * the next lane that has any; Home and End go to a lane's first and last event; Page Up and Page Down jump about a
  * screen's width in time. Pure functions over the layout, so the rules are testable without a browser.
@@ -26,8 +27,8 @@ export interface StopLane {
 
 export type Move = 'left' | 'right' | 'up' | 'down' | 'home' | 'end' | 'page-left' | 'page-right';
 
-/** Keys of a lane's fold buttons, in the order the lane label shows them. */
-export const labelStopKey = (laneId: string, which: 'overflow' | 'fold') => `label:${laneId}:${which}`;
+/** Keys of a lane label's controls (its name when it is a link, then the fold buttons), in the order shown. */
+export const labelStopKey = (laneId: string, which: 'link' | 'overflow' | 'fold') => `label:${laneId}:${which}`;
 
 /** The navigation grid: each lane's label stops, then its marks sorted by time (left edge), top to bottom. */
 export function buildGrid(lanes: LaneLayout[], labelStops: (lane: LaneLayout) => string[]): StopLane[] {

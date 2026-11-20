@@ -1,7 +1,7 @@
 // One command for the data work on every timeline built from data-src/ (the table is scripts/lib/timelines.ts).
 //
 //   npm run data -- build <timeline|all>         compile data-src/<file> → public/timelines/<file>, then `index`
-//   npm run data -- importance <timeline|all>    apply the importance plan, compile, refresh docs/<short>-key-events.md
+//   npm run data -- importance <timeline|all>    apply the importance and row-link plans, compile, refresh docs/<short>-key-events.md
 //   npm run data -- format <timeline|all>        re-format the source file in the repo's compact style
 //   npm run data -- row-order <timeline> [args]  how close related rows sit (args as for scripts/row-order.ts)
 //   npm run data -- run-all <timeline> [--check] replay every content script in order, then `importance`
@@ -20,6 +20,7 @@ import { applyImportancePlan, importanceCounts, keyEventsMarkdown } from './lib/
 import { readSource, writeSource } from './lib/source-format.ts';
 import { SOURCE_TIMELINES, sourceTimeline, type SourceTimeline } from './lib/timelines.ts';
 import { TIMELINES_DIR, writeTimelineIndex } from './lib/timeline-index.ts';
+import { applyRowLinks } from './lib/row-links.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
 const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], or npm run data -- index';
@@ -40,13 +41,15 @@ function index() {
   console.log(`index: wrote ${TIMELINES_DIR}/index.json`);
 }
 
-/** Applies the plan to the source file (in place); returns the counts. A timeline without a plan is left alone. */
+/**
+ * Applies the timeline's plans to the source file (in place): importance, then row links. Returns the importance
+ * counts. A timeline without plans is left alone.
+ */
 function applyPlan(t: SourceTimeline) {
   const d = readSource(t.source);
-  if (t.importance) {
-    applyImportancePlan(d.events, JSON.parse(readFileSync(t.importance, 'utf8')));
-    writeSource(t.source, d);
-  }
+  if (t.importance) applyImportancePlan(d.events, JSON.parse(readFileSync(t.importance, 'utf8')));
+  if (t.rowLinks) applyRowLinks(d.tracks, JSON.parse(readFileSync(t.rowLinks, 'utf8')));
+  if (t.importance || t.rowLinks) writeSource(t.source, d);
   return importanceCounts(d.events);
 }
 

@@ -92,3 +92,45 @@ describe('TrackForm accessibility', () => {
     expect(screen.getByRole('button', { name: 'Remove claim 2' })).toBeTruthy();
   });
 });
+
+describe('TrackForm page link and Wikidata id', () => {
+  const linked: Track = {
+    id: 'harbor',
+    name: 'Harbor',
+    color: '#123456',
+    url: 'https://en.wikipedia.org/wiki/Harbor',
+    ids: { wikidata: 'Q283202' },
+  };
+
+  it('keeps a row’s link and id when it is saved unchanged', async () => {
+    const onSave = open(linked);
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0]).toMatchObject({ url: linked.url, ids: { wikidata: 'Q283202' } });
+  });
+
+  it('clearing both fields removes them', async () => {
+    const onSave = open(linked);
+    fireEvent.change(screen.getByLabelText('Page about this row (optional)'), { target: { value: '' } });
+    fireEvent.change(screen.getByLabelText('Wikidata id (optional)'), { target: { value: '' } });
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0].url).toBeUndefined();
+    expect(onSave.mock.calls[0][0].ids).toBeUndefined();
+  });
+
+  it('refuses an unsafe link and a malformed id, with the error tied to the field', async () => {
+    const onSave = open({ id: 'x', name: 'X', color: '#123456' });
+    const url = screen.getByLabelText('Page about this row (optional)');
+    fireEvent.change(url, { target: { value: 'javascript:alert(1)' } });
+    fireEvent.click(screen.getByText('Save track'));
+    expect((await screen.findByRole('alert')).textContent).toMatch(/https:\/\//);
+    expect(url.getAttribute('aria-invalid')).toBe('true');
+    fireEvent.change(url, { target: { value: '' } });
+    fireEvent.change(screen.getByLabelText('Wikidata id (optional)'), { target: { value: 'egypt' } });
+    fireEvent.click(screen.getByText('Save track'));
+    expect(await screen.findByText(/like Q11768/)).toBeTruthy();
+    expect(screen.queryByText(/starts with https/)).toBeNull();
+    expect(onSave).not.toHaveBeenCalled();
+  });
+});

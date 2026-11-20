@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.ts';
 import type { LaneLayout } from './layout.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
+import { safeUrl } from '../lib/urls.ts';
 
 const KEY_MOVES: Record<string, Move> = {
   ArrowLeft: 'left',
@@ -42,6 +43,7 @@ export function useRovingFocus(o: Options) {
   const grid = useMemo(
     () =>
       buildGrid(lanes, (l) => [
+        ...(safeUrl(l.lane.track.url) ? [labelStopKey(l.lane.id, 'link')] : []),
         ...(l.overflow > 0 || expanded[l.lane.id] ? [labelStopKey(l.lane.id, 'overflow')] : []),
         ...(l.lane.hasChildren ? [labelStopKey(l.lane.id, 'fold')] : []),
       ]),

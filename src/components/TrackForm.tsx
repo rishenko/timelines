@@ -7,6 +7,7 @@ import { claimsFromValues, toClaimValues, type ClaimFields, type ClaimValues } f
 import { isDescendant, trackDepth } from '../lib/tracks.ts';
 import { formatYear, parseDate } from '../lib/calendar.ts';
 import { errorProps, FieldError } from './FieldError.tsx';
+import { isSafeUrl } from '../lib/urls.ts';
 
 interface FormValues extends ClaimFields {
   id: string;
@@ -14,6 +15,8 @@ interface FormValues extends ClaimFields {
   color: string;
   parent: string;
   image: string;
+  url: string;
+  wikidata: string;
   chronology: string;
   spanStart: string;
   spanEnd: string;
@@ -67,6 +70,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       color: initial?.color ?? nextTrackColor(data.tracks),
       parent: initial?.parent ?? defaultParent ?? '',
       image: initial?.image ?? '',
+      url: initial?.url ?? '',
+      wikidata: initial?.ids?.wikidata ?? '',
       chronology: initial?.chronology ?? '',
       spanStart: initial?.span ? fmt(initial.span.start, initial.span.circa) : '',
       spanEnd: initial?.span ? fmt(initial.span.end, initial.span.circa) : '',
@@ -94,6 +99,17 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     const t: Track = { id, name: v.name.trim(), color: v.color };
     if (v.parent) t.parent = v.parent;
     if (v.image.trim()) t.image = v.image.trim();
+    const url = v.url.trim();
+    if (url && !isSafeUrl(url))
+      return setError('url', { message: 'Use a link that starts with https:// (or a path on this site).' }, { shouldFocus: true });
+    if (url) t.url = url;
+    // keeps any other ids the row has (only the Wikidata id is edited here)
+    const qid = v.wikidata.trim().toUpperCase();
+    if (qid && !/^Q[1-9]\d*$/.test(qid))
+      return setError('wikidata', { message: 'A Wikidata id is a Q and a number, like Q11768.' }, { shouldFocus: true });
+    const { wikidata: _old, ...keptIds } = initial?.ids ?? {};
+    const ids = { ...keptIds, ...(qid ? { wikidata: qid } : {}) };
+    if (Object.keys(ids).length) t.ids = ids;
     if (v.chronology) t.chronology = v.chronology;
     if (v.pinLast) t.pinLast = true;
     if (v.spanStart.trim() || v.spanEnd.trim()) {
@@ -217,6 +233,15 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
 
         <label htmlFor="tr-image">Image link (optional)</label>
         <input id="tr-image" placeholder="https://… or timelines/…/logo.svg" {...register('image')} />
+
+        <label htmlFor="tr-url">Page about this row (optional)</label>
+        <input id="tr-url" placeholder="https://en.wikipedia.org/wiki/…" {...register('url')} {...errorProps('tr-url', errors.url)} />
+        <FieldError id="tr-url" error={errors.url} />
+        <p className="muted small">The row's name links to it.</p>
+
+        <label htmlFor="tr-wikidata">Wikidata id (optional)</label>
+        <input id="tr-wikidata" placeholder="Q11768" {...register('wikidata')} {...errorProps('tr-wikidata', errors.wikidata)} />
+        <FieldError id="tr-wikidata" error={errors.wikidata} />
 
         <label className="check">
           <input type="checkbox" {...register('pinLast')} /> Keep at the bottom (e.g. "Other peoples", "Other")

@@ -20,19 +20,49 @@ interface Props {
   onAddSubTrack: () => void;
 }
 
-/** The row's label, sticky at the left: name, logo, edit buttons in edit mode, and the show-all and fold buttons. */
+/** The site a link goes to, for its tooltip ("en.wikipedia.org"). */
+const hostOf = (url: string) => {
+  try {
+    return new URL(url, window.location.href).hostname;
+  } catch {
+    return url;
+  }
+};
+
+/**
+ * The row's label, sticky at the left: name (a link to the row's page, when it has one), logo, edit buttons in edit
+ * mode, and the show-all and fold buttons.
+ */
 export function LaneLabel({ lane, labelW, overflow, expanded, editMode, rovingKey, onStopFocus, ...on }: Props) {
   const image = safeUrl(lane.track.image);
+  const url = safeUrl(lane.track.url);
   const name = lane.track.name;
+  const linkKey = labelStopKey(lane.id, 'link');
   const overflowKey = labelStopKey(lane.id, 'overflow');
   const foldKey = labelStopKey(lane.id, 'fold');
   return (
     <div className="tl-lane-label" style={{ width: labelW }}>
       <span className="chip" />
       {image && <img src={image} alt="" className="logo" />}
-      <span className="name" title={name}>
-        {name}
-      </span>
+      {url ? (
+        <a
+          className="name"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`${name}: ${hostOf(url)} (opens in a new tab)`}
+          data-stop={linkKey}
+          tabIndex={rovingKey === linkKey ? 0 : -1}
+          onFocus={() => onStopFocus(linkKey)}
+        >
+          {name}
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+      ) : (
+        <span className="name" title={name}>
+          {name}
+        </span>
+      )}
       {editMode && (
         <span className="lane-edit">
           <button className="icon small" aria-label={`Edit ${name}`} title={`Edit ${name}`} onClick={on.onEditTrack}>

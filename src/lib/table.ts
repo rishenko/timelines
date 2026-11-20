@@ -88,9 +88,10 @@ const csvCell = (v: string | number | undefined) => {
 export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
   const cal = data.meta.calendar;
   const names = new Map(data.tracks.map((t) => [t.id, t.name]));
+  const qids = new Map(data.tracks.map((t) => [t.id, t.ids?.wikidata ?? '']));
   const head = [
     'id', 'title', 'dates', 'start_year', 'end_year', 'start_earliest', 'start_latest', 'end_earliest', 'end_latest',
-    'approximate', 'chronology', 'rows', 'importance', 'sources', 'description',
+    'approximate', 'chronology', 'rows', 'rows_wikidata', 'importance', 'sources', 'description',
   ];
   const lines = [head.join(',')];
   for (const e of [...events].sort(compareEvents)) {
@@ -111,6 +112,8 @@ export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
         isApprox(e) ? 'yes' : 'no',
         chronologyName(data, e),
         e.tracks.map((t) => names.get(t) ?? t).join('; '),
+        // one entry per row, in the same order as rows (empty for a row without an id)
+        e.tracks.map((t) => qids.get(t) ?? '').join('; '),
         e.importance === 1 ? 'key' : e.importance === 3 ? 'minor' : 'normal',
         sources,
         e.descr,

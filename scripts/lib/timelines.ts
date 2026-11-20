@@ -13,6 +13,8 @@ export interface SourceTimeline {
   compiled: string;
   /** Importance plan: { "1": [key uuids], "3": [minor uuids] }. */
   importance?: string;
+  /** Row links plan: each row's Wikipedia article and Wikidata id (scripts/row-links.ts). */
+  rowLinks?: string;
   /** Generated review list of key and minor events; written only for a timeline with an importance plan. */
   keyEvents?: string;
   /**
@@ -33,6 +35,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     source: 'data-src/ancient-near-east.json',
     compiled: 'public/timelines/ancient-near-east.json',
     importance: 'data-src/ancient-importance.json',
+    rowLinks: 'data-src/ancient-row-links.json',
     keyEvents: 'docs/ancient-key-events.md',
     // phases.ts after every script that puts events on period rows; groups.ts last: it nests the regions into
     // groups and sets the row order
@@ -48,6 +51,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     source: 'data-src/classical.json',
     compiled: 'public/timelines/classical.json',
     importance: 'data-src/classical-importance.json',
+    rowLinks: 'data-src/classical-row-links.json',
     keyEvents: 'docs/classical-key-events.md',
     // skeleton first; summary-only after the region passes; phases after every script that defines its rows;
     // collapsed.ts last (it reads the final rows)
