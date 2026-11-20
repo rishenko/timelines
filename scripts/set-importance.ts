@@ -3,7 +3,7 @@
 //   node scripts/set-importance.ts <data-src file> --plan <plan.json>
 // A plan file is { "1": [uuids], "3": [uuids] }; every uuid it doesn't list is reset to normal, so the
 // plan is the whole truth about importance and can be re-run safely. For the bundled timelines,
-// `npm run importance:<short>` applies the plan, compiles and refreshes the key-event list in one go.
+// `npm run data -- importance <short>` applies the plan, compiles and refreshes the key-event list in one go.
 import { readFileSync } from 'node:fs';
 import { readSource, writeSource } from './lib/source-format.ts';
 import { applyImportancePlan, importanceCounts, setImportance } from './lib/importance.ts';

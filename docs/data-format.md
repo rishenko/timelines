@@ -63,7 +63,7 @@ by hand if you write the file in the [readable format](#writing-dates-as-text) a
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
 | `hideRowsOutOfView` | no | `true` to open with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). For timelines with many rows that come and go. Default `false`. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
-| `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the Classical World's Eastern Roman Empire runs to 1453). Readable years work in a source file. |
+| `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
 
 ### calendar
 
@@ -309,5 +309,5 @@ node scripts/build-dataset.ts data-src/my-timeline.json public/timelines/my-time
 
 Text dates are accepted for `start`, `end`, claim `year` and `derive.until`. A "c." on a start sets
 `circa`. Era labels and their `aliases` come from the file's own calendar. Numbers pass through
-unchanged. `data-src/ancient-near-east.json` is a full example.
+unchanged. `data-src/ancient-classical.json` is a full example.
 

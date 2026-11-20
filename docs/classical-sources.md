@@ -1,5 +1,9 @@
 # The Classical World: sources and judgment calls
 
+> **Since 2026-11-20** The Classical World is part of the combined timeline, Ancient and Classical World
+> (`data-src/ancient-classical.json`; see `docs/ancient-classical-sources.md`). This note records how its data was
+> researched; the files, scripts and commands it names are now in `archive/`.
+
 The second ancient timeline, c. 500 BCE – 650 CE (id `classical`). Same rules as Ancient Civilizations
 (`docs/ancient-sources.md`): every date is quoted verbatim from a Wikipedia page read by a fetch agent; values seen only in
 a page summary are not used; pages carrying an AI-generated-text warning, or a banner citing the LLM translation

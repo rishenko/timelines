@@ -1,7 +1,7 @@
 // Writes the review list of a timeline's key and minor events, grouped by region, as Markdown
 // (scripts/lib/importance.ts). Reads the compiled timeline, so dates are already numbers.
 //   node scripts/list-importance.ts public/timelines/ancient-classical.json docs/ancient-classical-key-events.md
-// `npm run importance:<short>` runs this for the bundled timelines.
+// `npm run data -- importance <short>` runs this for the bundled timelines.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { keyEventsMarkdown } from './lib/importance.ts';
 import { SOURCE_TIMELINES } from './lib/timelines.ts';
