@@ -19,7 +19,8 @@
           ]
         }
       },
-      "defaultTheme": "parchment"
+      "defaultTheme": "parchment",
+      "map": "../maps/ancient-classical.json"
     }
   ]
 }
