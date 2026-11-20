@@ -4,7 +4,7 @@ import type { LibraryEntry } from './library.ts';
 import type { Dataset } from '../types.ts';
 
 /**
- * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=1&rows=all`; rows is all, active or thin)
+ * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=0&rows=all`; rows is all, active or thin)
  * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link.
  */
 
@@ -18,7 +18,7 @@ export function readUrl(published: Dataset) {
     increment: increments.includes(inc) ? inc : defaultIncrement,
     at: at !== null ? parseYear(at, calendar) : null,
     compress: q.get('compress') !== '0',
-    links: q.get('links') === '1',
+    links: q.get('links') !== '0',
     /** Hide rows with nothing in view: from the link if it says, else the timeline's default. */
     hideOutOfView: ['active', 'thin'].includes(q.get('rows') ?? '') ? true : q.get('rows') === 'all' ? false : !!published.meta.hideRowsOutOfView,
     /** Hidden rows drawn as thin lines rather than taken out. */
@@ -75,7 +75,7 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       q.set('inc', String(increment));
       q.set('at', String(centerRef.current));
       if (!compress) q.set('compress', '0');
-      if (showLinks) q.set('links', '1');
+      if (!showLinks) q.set('links', '0');
       if (hideOutOfView !== hideOutOfViewDefault || (hideOutOfView && thinRows))
         q.set('rows', !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active');
       if (mode === 'table') q.set('view', 'table');

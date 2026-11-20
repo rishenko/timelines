@@ -238,7 +238,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     {
       sample: <span className="lg-gap">⋯</span>,
       title: 'Compressed gap',
-      text: 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the years skipped. Turn off “Compress gaps” to see true distances.',
+      text: 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the years skipped. Turn off “Compress gaps” in Filters to see true distances.',
     },
     {
       sample: (
@@ -248,7 +248,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
         </span>
       ),
       title: 'Highlight',
-      text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. Arrows always show for the selected event; “Connections” shows them all.',
+      text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. Arrows always show for the selected event; “Connections” in Filters shows them all.',
     },
   ];
 

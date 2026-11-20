@@ -198,6 +198,9 @@
   display: flex;
   gap: 8px;
 }
+.filters-panel h3:not(:first-child) {
+  margin-top: 14px;
+}
 .filters-panel .check {
   display: flex;
   gap: 6px;

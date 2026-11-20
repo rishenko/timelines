@@ -5,7 +5,7 @@ import type { View } from '../state/url.ts';
 interface Props {
   /** The title menu (TimelinePicker). */
   picker: ReactNode;
-  /** Timeline (the chart) or table. The chart's own controls (zoom, gaps, connections, rows) are hidden in table view. */
+  /** Timeline (the chart) or table. The chart's own controls (zoom, rows) are hidden in table view. */
   view: View;
   onView: (v: View) => void;
   subtitle?: string;
@@ -14,10 +14,6 @@ interface Props {
   onIncrement: (inc: number) => void;
   /** The Dating button and its panel (DatingMenu). */
   dating: ReactNode;
-  compress: boolean;
-  onCompress: (on: boolean) => void;
-  showLinks: boolean;
-  onShowLinks: (on: boolean) => void;
   /**
    * Expand all / Collapse all, and ↺ Default view. Omitted when the timeline has no sub-rows. hasDefaultView: the
    * timeline opens with some rows folded (else "default" is just "all open" and ↺ isn't shown); canReset: the rows
@@ -80,12 +76,6 @@ export function Toolbar(p: Props) {
               </button>
             ))}
           </div>
-          <label className="check" title="Collapse long stretches with no events">
-            <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Compress gaps
-          </label>
-          <label className="check" title="Show arrows between connected events">
-            <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Connections
-          </label>
           {p.rows && (
             <div className="group rows-group" role="group" aria-label="Rows">
               <button

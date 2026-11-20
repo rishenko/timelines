@@ -10,6 +10,12 @@ interface Props {
   toggleSource: (k: string) => void;
   toggleTag: (k: string) => void;
   setAllTracks: (on: boolean) => void;
+  /** Long stretches with no events are squeezed into gap breaks. */
+  compress: boolean;
+  onCompress: (on: boolean) => void;
+  /** Arrows between every pair of connected events, not only the selected one's. */
+  showLinks: boolean;
+  onShowLinks: (on: boolean) => void;
   /** Rows with nothing near the view are hidden. */
   hideOutOfView: boolean;
   onHideOutOfView: (on: boolean) => void;
@@ -27,6 +33,13 @@ export function FiltersPanel(p: Props) {
   return (
     <div className="filters-panel">
       <section>
+        <h3>Chart</h3>
+        <label className="check" title="Collapse long stretches with no events">
+          <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Compress gaps
+        </label>
+        <label className="check" title="Show arrows between connected events">
+          <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Connections
+        </label>
         <h3>Rows</h3>
         <label className="check">
           <input type="checkbox" checked={p.hideOutOfView} onChange={(e) => p.onHideOutOfView(e.target.checked)} />

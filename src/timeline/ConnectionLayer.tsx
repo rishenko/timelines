@@ -14,20 +14,23 @@ interface Props {
 
 /**
  * Draws the threads that tie the timeline together:
- * - a vertical connector through every lane a multi-track event appears in;
+ * - a vertical connector through every lane a multi-track event appears in (through its "+N" pills only while focused);
  * - curved arrows for explicit event links (causes / part-of / succeeds / conquers / related).
- * Links always show for the focused event, even when showLinks is off.
+ * Links always show for the focused event, even when showLinks is off. Otherwise a link ends only at events drawn as
+ * their own mark: an event gathered into a "+N" pill gets its arrows only while it, or the event at the other end, is focused.
  */
 export function ConnectionLayer({ left, width, height, marksByEvent, eventsById, showLinks, related, inView }: Props) {
   const threads: React.ReactNode[] = [];
-  for (const [id, marks] of marksByEvent) {
+  for (const [id, all] of marksByEvent) {
+    const on = related?.has(id);
+    // the line reaches "+N" cluster pills only while the event is focused, like the link arrows below
+    const marks = on ? all : all.filter((m) => m.kind === 'event');
     if (marks.length < 2) continue;
     const x = marks[0].x0;
     if (!inView(x, x)) continue;
     const ys = marks.map((m) => m.cy).sort((a, b) => a - b);
-    // no dot on "+N" cluster pills; the line still reaches them
+    // no dot on "+N" cluster pills
     const dots = marks.filter((m) => m.kind === 'event').map((m) => m.cy);
-    const on = related?.has(id);
     threads.push(
       <g key={id} className={`thread ${on ? 'on' : ''}`}>
         <line x1={x} x2={x} y1={ys[0]} y2={ys[ys.length - 1]} />
@@ -43,9 +46,10 @@ export function ConnectionLayer({ left, width, height, marksByEvent, eventsById,
     for (const l of e.links ?? []) {
       const focused = !!related && related.has(id) && related.has(l.to);
       if (!showLinks && !focused) continue;
-      const from = marksByEvent.get(id);
-      const to = marksByEvent.get(l.to);
-      if (!from || !to) continue;
+      const reachable = (ms: Mark[] | undefined) => (focused ? ms : ms?.filter((m) => m.kind === 'event'));
+      const from = reachable(marksByEvent.get(id));
+      const to = reachable(marksByEvent.get(l.to));
+      if (!from?.length || !to?.length) continue;
       // pick the closest pair of marks so the arrow takes the shortest vertical path
       let best: [Mark, Mark] = [from[0], to[0]];
       for (const a of from)

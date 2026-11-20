@@ -270,10 +270,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
             onReset={chron.reset}
           />
         }
-        compress={compress}
-        onCompress={setCompress}
-        showLinks={showLinks}
-        onShowLinks={setShowLinks}
         rows={
           hasSubRows
             ? {
@@ -404,6 +400,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
           toggleSource={toggleSource}
           toggleTag={toggleTag}
           setAllTracks={setAllTracks}
+          compress={compress}
+          onCompress={setCompress}
+          showLinks={showLinks}
+          onShowLinks={setShowLinks}
           hideOutOfView={hideOutOfView}
           onHideOutOfView={switchHideOutOfView}
           thinRows={thinRows}
