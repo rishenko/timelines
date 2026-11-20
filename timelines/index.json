@@ -41,6 +41,27 @@
         }
       },
       "defaultTheme": "parchment"
+    },
+    {
+      "id": "ancient-classical",
+      "title": "Ancient and Classical World",
+      "file": "ancient-classical.json",
+      "subtitle": "From the first farmers to the rise of Islam: Europe, Africa, the Near East, Asia, Oceania and the Americas, c. 9000 BCE – 650 CE",
+      "eventCount": 883,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      },
+      "defaultTheme": "parchment"
     }
   ]
 }
