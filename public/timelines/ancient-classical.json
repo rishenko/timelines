@@ -61,6 +61,7 @@
       "south-america",
       "caribbean"
     ],
+    "hideRowsOutOfView": true,
     "range": {
       "start": -10049,
       "end": 650

@@ -18,7 +18,8 @@
     "id": "ancient-classical",
     "title": "Ancient and Classical World",
     "subtitle": "From the first farmers to the rise of Islam: Europe, Africa, the Near East, Asia, Oceania and the Americas, c. 9000 BCE – 650 CE",
-    "description": "Ancient Civilizations and The Classical World on one chart, from the Neolithic to the fall of the Sasanians and the founding of Tang. Rows from both are merged by region; where the two give the same row different dates, its start follows Ancient Civilizations and its end The Classical World."
+    "description": "Ancient Civilizations and The Classical World on one chart, from the Neolithic to the fall of the Sasanians and the founding of Tang. Rows from both are merged by region; where the two give the same row different dates, its start follows Ancient Civilizations and its end The Classical World.",
+    "hideRowsOutOfView": true
   },
   "renameRows": {
     "ancient": {

@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Dataset } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
@@ -15,9 +15,15 @@ import { Ruler, type EdgeLink } from './Ruler.tsx';
 import { PHASE_H, PhaseBand, SpanBand } from './Bands.tsx';
 import { LaneLabel } from './LaneLabel.tsx';
 import { ClusterMark, EventMark } from './Marks.tsx';
+import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
+/** Hiding rows with nothing in view waits this long after the last scroll, so rows don't come and go mid-scroll. */
+const SETTLE_MS = 350;
+/** A row counts as in view with something this close to either edge (a share of the view's width), so rows arrive
+ * just before their years do and don't flicker at the edges. */
+const ROW_MARGIN = 0.25;
 
 interface Props {
   data: Dataset;
@@ -31,6 +37,10 @@ interface Props {
   phases: Map<string, ResolvedPhase[]>;
   visibleTracks: Record<string, boolean>;
   collapsed: Record<string, boolean>;
+  /** Hide rows with nothing in or near the view (headers stay and count them). */
+  hideOutOfView?: boolean;
+  /** After hiding settles on a new count: how many rows are hidden, and the year at the center. */
+  onRowsHidden?: (count: number, centerYear: number) => void;
   onToggleCollapsed: (trackId: string) => void;
   increment: number;
   compress: boolean;
@@ -77,7 +87,29 @@ export function TimelineView(props: Props) {
   const [hoverId, setHoverId] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-  const lanes = useMemo(() => buildLanes(data.tracks, visibleTracks, collapsed), [data.tracks, visibleTracks, collapsed]);
+  // every lane; the ones drawn may be fewer (hideOutOfView), but the ruler is built from all of them so it never moves
+  const allLanes = useMemo(() => buildLanes(data.tracks, visibleTracks, collapsed), [data.tracks, visibleTracks, collapsed]);
+  /** The years the hidden rows were last checked against (when scrolling settled), or null before the first check. */
+  const [rowWindow, setRowWindow] = useState<YearWindow | null>(null);
+  /** Headers whose rows with nothing in view the reader asked to see. */
+  const [revealed, setRevealed] = useState<ReadonlySet<string>>(new Set());
+  /** The lane holding keyboard focus when hiding last settled: it stays, so focus isn't lost. */
+  const [focusedLane, setFocusedLane] = useState<string | null>(null);
+  const hideOutOfView = !!props.hideOutOfView;
+  const keep = useMemo(() => {
+    const ids = new Set<string>();
+    const sel = selectedId ? eventsById.get(selectedId) : undefined;
+    const want = new Set([...(sel?.tracks ?? []), ...(props.focus?.trackId ? [props.focus.trackId] : [])]);
+    for (const l of allLanes) if (l.members.some((m) => want.has(m))) ids.add(l.id);
+    if (focusedLane) ids.add(focusedLane);
+    return ids;
+  }, [allLanes, selectedId, eventsById, props.focus, focusedLane]);
+  const shown = useMemo(() => {
+    if (!hideOutOfView || !rowWindow) return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0 };
+    const active = activeLanes(allLanes, events, spans, phases, present, rowWindow);
+    return shownLanes(allLanes, trackById, active, keep, revealed);
+  }, [hideOutOfView, rowWindow, allLanes, events, spans, phases, present, trackById, keep, revealed]);
+  const lanes = shown.lanes;
   // A top-level row with sub-rows is a group: its rows share its colour as a background tint.
   const groupColor = useMemo(() => {
     const parents = new Set(data.tracks.map((t) => t.parent));
@@ -97,16 +129,17 @@ export function TimelineView(props: Props) {
   }, [lanePhases]);
   const laneSpans = useMemo(() => {
     // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap;
-    // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler
+    // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler; so do rows
+    // hidden for having nothing in view
     const out: ResolvedSpan[] = [];
-    for (const l of lanes)
+    for (const l of allLanes)
       for (const id of l.members) {
         const s = spans.get(id);
         if (s) out.push(s);
         out.push(...(phases.get(id) ?? []));
       }
     return out;
-  }, [lanes, spans, phases]);
+  }, [allLanes, spans, phases]);
   const scale = useMemo(
     () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
@@ -154,9 +187,63 @@ export function TimelineView(props: Props) {
   const { onPinchZoom } = props;
   const pinch = usePinchSteps(onPinchZoom && ((dir) => onPinchZoom(dir, centerYearRef.current)));
 
+  // ---- hide rows with nothing in view ----
+  // The rows are checked against the years in view plus a margin either side, once scrolling settles (at once
+  // after a zoom). The first row on screen stays where it was, so the rows don't jump under the reader.
+  const laneIndex = useMemo(() => new Map(allLanes.map((l, i) => [l.id, i])), [allLanes]);
+  const anchorRef = useRef<{ index: number; offset: number } | null>(null);
+  const lastScaleRef = useRef(scale);
+  const settleTimer = useRef(0);
+  const settleRows = useEffectEvent(() => {
+    const w = {
+      y0: Math.floor(scale.yearAt(Math.max(0, view.left - view.width * ROW_MARGIN))),
+      y1: Math.ceil(scale.yearAt(view.left + view.width * (1 + ROW_MARGIN))),
+    };
+    if (rowWindow && rowWindow.y0 === w.y0 && rowWindow.y1 === w.y1) return;
+    const el = scrollerRef.current;
+    const first = el ? layout.lanes.find((l) => l.top + l.height > el.scrollTop) : undefined;
+    anchorRef.current = el && first ? { index: laneIndex.get(first.lane.id) ?? 0, offset: first.top - el.scrollTop } : null;
+    const focused = document.activeElement;
+    const laneEl = focused && lanesRef.current?.contains(focused) ? focused.closest('[data-lane]') : null;
+    setFocusedLane(laneEl?.getAttribute('data-lane') ?? null);
+    setRowWindow(w);
+  });
+  useEffect(() => {
+    if (!hideOutOfView) return;
+    const now = rowWindow === null || lastScaleRef.current !== scale;
+    lastScaleRef.current = scale;
+    window.clearTimeout(settleTimer.current);
+    if (now) settleRows();
+    else settleTimer.current = window.setTimeout(settleRows, SETTLE_MS);
+    return () => window.clearTimeout(settleTimer.current);
+  }, [view, scale, hideOutOfView, rowWindow]);
+  // after the rows change, put the first row that was on screen back where it was; if it is now hidden, the next row
+  // still drawn goes where it was, or at the top when it was partly scrolled past
+  useLayoutEffect(() => {
+    const a = anchorRef.current;
+    anchorRef.current = null;
+    const el = scrollerRef.current;
+    if (!a || !el) return;
+    const target = layout.lanes.find((l) => (laneIndex.get(l.lane.id) ?? -1) >= a.index) ?? layout.lanes.at(-1);
+    const same = target && laneIndex.get(target.lane.id) === a.index;
+    if (target) el.scrollTop = Math.max(0, target.top - (same ? a.offset : Math.max(a.offset, 0)));
+  }, [layout, laneIndex]);
+  // say how many rows are hidden when the count changes (not on opening)
+  const { onRowsHidden } = props;
+  const announcedRef = useRef<number | null>(null);
+  const announce = useEffectEvent((n: number) => {
+    if (announcedRef.current !== null && announcedRef.current !== n) onRowsHidden?.(n, centerYearRef.current);
+    announcedRef.current = n;
+  });
+  useEffect(() => {
+    if (hideOutOfView && rowWindow) announce(shown.hiddenCount);
+    else announcedRef.current = null;
+  }, [hideOutOfView, rowWindow, shown.hiddenCount]);
+
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: layout.lanes,
     expanded,
+    inactiveBelow: shown.inactiveBelow,
     selectedId,
     view,
     labelW,
@@ -269,6 +356,7 @@ export function TimelineView(props: Props) {
               onPointerCancel={press.cancel}
               role="group"
               aria-label={lane.track.name}
+              data-lane={lane.id}
             >
               {lane.members.map((id) => {
                 const s = spans.get(id);
@@ -290,6 +378,15 @@ export function TimelineView(props: Props) {
                 onEditTrack={() => props.onEditTrack(lane.id)}
                 onMoveTrack={(dir) => props.onMoveTrack(lane.id, dir)}
                 onAddSubTrack={() => props.onAddTrack(lane.id)}
+                inactiveBelow={shown.inactiveBelow.get(lane.id)}
+                revealed={revealed.has(lane.id)}
+                onToggleRevealed={() =>
+                  setRevealed((r) => {
+                    const next = new Set(r);
+                    if (!next.delete(lane.id)) next.add(lane.id);
+                    return next;
+                  })
+                }
               />
               {marks
                 .filter((m) => m.key === rovingKey || inView(Math.min(m.x0, m.whisker?.[0] ?? m.x0), m.footprintEnd))

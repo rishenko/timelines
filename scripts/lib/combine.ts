@@ -12,7 +12,7 @@ export interface CombineRules {
   output: string;
   ancient: string;
   classical: string;
-  meta: { id: string; title: string; subtitle: string; description: string };
+  meta: { id: string; title: string; subtitle: string; description: string; hideRowsOutOfView?: boolean };
   renameRows: { ancient: Record<string, Rule>; classical: Record<string, Rule> };
   parents: Record<string, Rule>;
   /** A group's children in a set order, when the merged order fails the proximity test. */
