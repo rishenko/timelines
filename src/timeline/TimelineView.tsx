@@ -24,6 +24,8 @@ const SETTLE_MS = 350;
 /** A row counts as in view with something this close to either edge (a share of the view's width), so rows arrive
  * just before their years do and don't flicker at the edges. */
 const ROW_MARGIN = 0.25;
+/** How long a thin line's name stays up after a click or tap. */
+const PEEK_MS = 2500;
 
 interface Props {
   data: Dataset;
@@ -109,6 +111,13 @@ export function TimelineView(props: Props) {
     return ids;
   }, [allLanes, selectedId, eventsById, props.focus, focusedLane]);
   const thinRows = !!props.thinRows;
+  /** The thin line whose name was asked for with a click or tap (touch screens can't hover); shown for a moment. */
+  const [peekLane, setPeekLane] = useState<string | null>(null);
+  useEffect(() => {
+    if (!peekLane) return;
+    const t = window.setTimeout(() => setPeekLane(null), PEEK_MS);
+    return () => window.clearTimeout(t);
+  }, [peekLane]);
   const shown = useMemo(() => {
     if (!hideOutOfView || !rowWindow)
       return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
@@ -315,6 +324,8 @@ export function TimelineView(props: Props) {
       {...pinch}
       onClick={(e) => {
         if (e.target === e.currentTarget) onSelect(null);
+        // a click anywhere but a thin line puts away a thin line's name
+        if (peekLane && !(e.target as HTMLElement).closest?.('.tl-lane.thin')) setPeekLane(null);
       }}
     >
       <div className="tl-canvas" style={{ width: canvasW }}>
@@ -359,11 +370,14 @@ export function TimelineView(props: Props) {
 
           {layout.lanes.map(({ lane, height, marks, top, overflow }) =>
             shown.thin.has(lane.id) ? (
-              // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering its
-              // strip in the name column shows its name
+              // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering the
+              // line, or clicking or tapping it, shows its name in the name column. Mouse/touch only: keyboard and
+              // screen-reader users reach these rows through the header's +N button.
+              // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
               <div
                 key={lane.id}
-                className={`tl-lane thin${lane.depth ? ' nested' : ''}${groupColor.has(lane.id) ? ' in-group' : ''}`}
+                className={`tl-lane thin${lane.depth ? ' nested' : ''}${groupColor.has(lane.id) ? ' in-group' : ''}${peekLane === lane.id ? ' peek' : ''}`}
+                onClick={() => setPeekLane((p) => (p === lane.id ? null : lane.id))}
                 style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
                 aria-hidden="true"
                 data-lane={lane.id}

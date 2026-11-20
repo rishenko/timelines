@@ -98,6 +98,11 @@ describe('hide rows with nothing in view', () => {
     expect(thin[0].querySelector('.thin-name')?.textContent).toBeTruthy();
     expect(thin[0].getAttribute('aria-hidden')).toBe('true');
     await waitFor(() => expect(window.location.search).toContain('rows=thin'));
+    // a click or tap on a line shows its name (touch screens can't hover); again hides it
+    act(() => fireEvent.click(thin[0]));
+    expect(c.querySelector('.tl-lane.thin')!.classList.contains('peek')).toBe(true);
+    act(() => fireEvent.click(c.querySelector('.tl-lane.thin')!));
+    expect(c.querySelector('.tl-lane.thin.peek')).toBeNull();
   });
 
   it('is off elsewhere unless the link turns it on', async () => {

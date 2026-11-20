@@ -207,7 +207,7 @@
   border-top: 1px solid var(--bg);
   border-bottom: 1px solid var(--bg);
 }
-/* its strip in the name column: hovering it (a few px either side of the line) shows the row's name */
+/* its strip in the name column, where the row's name pops up while the line is hovered */
 .tl-lane.thin .thin-label {
   position: sticky;
   left: 0;
@@ -244,11 +244,32 @@
   pointer-events: none;
   z-index: 6;
 }
-.tl-lane.thin .thin-label:hover {
+/* the line itself is easier to hover with a few px either side of it too (again not over a thin line above) */
+.tl-lane.thin::before {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+.tl-lane.thin + .tl-lane.thin::before {
+  top: -1px;
+}
+/* hovering anywhere along the line shows the name in the name column */
+.tl-lane.thin.peek .thin-label {
   z-index: 7; /* over the neighbouring rows' names */
 }
-.tl-lane.thin .thin-label:hover .thin-name {
+/* ...and so does a click or tap, for a moment (touch screens can't hover) */
+.tl-lane.thin.peek .thin-name {
   display: block;
+}
+/* hover only where there is a real pointer: touch browsers keep a tapped element "hovered", which would leave the
+   name up after a tap */
+@media (hover: hover) {
+  .tl-lane.thin:hover .thin-label {
+    z-index: 7;
+  }
+  .tl-lane.thin:hover .thin-name {
+    display: block;
+  }
 }
 /* lifespan of a track (civilization, period…): a soft band, faded where its dates are uncertain */
 .tl-span {
