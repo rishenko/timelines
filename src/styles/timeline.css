@@ -129,7 +129,12 @@
   bottom: 0;
   border-left: 1px solid color-mix(in srgb, var(--text) 6%, transparent);
 }
-.tl-gridline.era {
+.tl-era-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
   border-left: 2px solid color-mix(in srgb, var(--accent) 35%, transparent);
 }
 .tl-gap-band {

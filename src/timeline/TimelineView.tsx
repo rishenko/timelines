@@ -350,12 +350,14 @@ export function TimelineView(props: Props) {
         <div className="tl-lanes" ref={lanesRef} style={{ height: layout.height }} onKeyDown={onKeyNav}>
           <div className="tl-grid" style={{ left: labelW }}>
             {visibleTicks.map((t) => (
-              <div key={t} className={`tl-gridline ${t === era ? 'era' : ''}`} style={{ left: scale.x(t) }} />
+              <div key={t} className="tl-gridline" style={{ left: scale.x(t) }} />
             ))}
             {gaps.map((g) => (
               <div key={g.y0} className="tl-gap-band" style={{ left: g.x0, width: g.x1 - g.x0 }} />
             ))}
           </div>
+          {/* the era line has its own layer, over the rows' backgrounds and spans (which cover the grid), under the marks */}
+          {visibleTicks.includes(era) && <div className="tl-era-line" style={{ left: labelW + scale.x(era) }} />}
 
           <ConnectionLayer
             left={labelW}
