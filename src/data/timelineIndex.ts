@@ -8,6 +8,9 @@ import { ID_RE } from './validate.ts';
  *
  *   { "timelines": [ { "id": "my-world", "title": "My World", "file": "my-world.json" }, … ] }
  *
+ * The same format, hosted anywhere, is a shared list: `?collection=<link to it>` adds its timelines to a reader's
+ * picker (see state/collections.ts). An optional top-level `"title"` names the list there.
+ *
  * The first entry opens by default. `file` is a path relative to index.json, or a full http(s) address (the server
  * must let other sites read it). Everything but `id`, `title` and `file` is optional: it lets the picker and links
  * show more before the timeline itself is loaded. `npm run data -- index` writes it for the files in public/timelines.
@@ -27,6 +30,8 @@ export interface TimelineIndexEntry {
 }
 
 export interface TimelineIndex {
+  /** The list's name (shown for shared lists). */
+  title?: string;
   timelines: TimelineIndexEntry[];
 }
 
@@ -58,9 +63,11 @@ const isCalendar = (c: unknown): c is Calendar => {
  * Checks an index file. Returns its usable entries and a list of problems: an entry without a valid id, title or
  * file is left out; a malformed optional field is dropped from its entry.
  */
-export function parseTimelineIndex(json: unknown): { entries: TimelineIndexEntry[]; errors: string[] } {
+export function parseTimelineIndex(json: unknown): { entries: TimelineIndexEntry[]; errors: string[]; title?: string } {
   const list = (json as TimelineIndex | null)?.timelines;
   if (!Array.isArray(list)) return { entries: [], errors: ['The index needs a "timelines" list.'] };
+  const t = (json as TimelineIndex).title;
+  const title = typeof t === 'string' && t.trim() ? t.trim() : undefined;
   const errors: string[] = [];
   const entries: TimelineIndexEntry[] = [];
   list.forEach((raw: unknown, i) => {
@@ -83,5 +90,9 @@ export function parseTimelineIndex(json: unknown): { entries: TimelineIndexEntry
     if (typeof e.defaultTheme === 'string') entry.defaultTheme = e.defaultTheme;
     entries.push(entry);
   });
-  return { entries, errors };
+  return { entries, errors, ...(title ? { title } : {}) };
 }
+
+/** True for JSON shaped like a list of timelines rather than a timeline (which has meta and events). */
+export const isTimelineIndex = (json: unknown): boolean =>
+  !!json && typeof json === 'object' && Array.isArray((json as TimelineIndex).timelines) && !('meta' in json);

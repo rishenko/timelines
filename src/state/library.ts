@@ -86,8 +86,8 @@ export function removeFromLibrary(id: string, store: Store = defaultStore()) {
   store.removeItem(draftKey(id));
 }
 
-/** Fetches and validates a timeline from a URL. Throws an Error with a readable message. */
-export async function fetchTimeline(url: string, fetchImpl: typeof fetch = fetch): Promise<Dataset> {
+/** Fetches a file from a URL as text. Throws an Error with a readable message. */
+export async function fetchText(url: string, fetchImpl: typeof fetch = fetch): Promise<string> {
   if (!/^https?:\/\//i.test(url)) throw new Error('The link must start with http:// or https://.');
   let res: Response;
   try {
@@ -98,10 +98,26 @@ export async function fetchTimeline(url: string, fetchImpl: typeof fetch = fetch
     );
   }
   if (!res.ok) throw new Error(`The server answered ${res.status} ${res.statusText}.`);
-  const { dataset, errors } = parseUpload(await res.text());
+  return res.text();
+}
+
+/** Checks a timeline file's text. Throws an Error with a readable message. */
+export function timelineFromText(text: string): Dataset {
+  const { dataset, errors } = parseUpload(text);
   if (!dataset) throw new Error(`That file isn't a valid timeline: ${errors[0]}${errors.length > 1 ? ` (+${errors.length - 1} more)` : ''}`);
   return dataset;
 }
+
+/** Fetches and validates a timeline from a URL. Throws an Error with a readable message. */
+export async function fetchTimeline(url: string, fetchImpl: typeof fetch = fetch): Promise<Dataset> {
+  return timelineFromText(await fetchText(url, fetchImpl));
+}
+
+/** A fetch that gives up after `ms`, for checks that mustn't hold up opening the page. */
+export const withTimeout =
+  (fetchImpl: typeof fetch, ms: number): typeof fetch =>
+  (input, init) =>
+    fetchImpl(input, { ...init, signal: AbortSignal.timeout(ms) });
 
 /** Turns a GitHub page link into its raw file link, so people can paste either. */
 export function normalizeUrl(url: string): string {

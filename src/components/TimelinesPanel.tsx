@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import type { TimelineChoice } from '../state/timelines.ts';
 import type { LibraryEntry } from '../state/library.ts';
+import { collectionName, type Collection } from '../state/collections.ts';
 
 interface Props {
   timelines: TimelineChoice[];
@@ -12,6 +13,11 @@ interface Props {
   onRefresh: (entry: LibraryEntry) => Promise<void>;
   onRemove: (entry: LibraryEntry) => void;
   onCopyShareLink: (entry: LibraryEntry) => void;
+  /** Shared lists added in this browser, and what can be done with them (not on the welcome page). */
+  collections?: Collection[];
+  onRefreshList?: (c: Collection) => Promise<void>;
+  onRemoveList?: (c: Collection) => void;
+  onCopyListLink?: (c: Collection) => void;
 }
 
 const day = (iso: string) => iso.slice(0, 10);
@@ -34,7 +40,7 @@ export function TimelinesPanel(p: Props) {
     }
   };
 
-  const bundled = p.timelines.filter((t) => !t.library);
+  const bundled = p.timelines.filter((t) => t.entry && !t.collection);
   const library = p.timelines.filter((t) => t.library);
 
   return (
@@ -50,8 +56,8 @@ export function TimelinesPanel(p: Props) {
         >
           <input
             type="url"
-            aria-label="Timeline link"
-            placeholder="https://… link to a timeline .json file (GitHub links work)"
+            aria-label="Timeline or list link"
+            placeholder="https://… link to a timeline .json file or a list of them (GitHub links work)"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
@@ -81,8 +87,9 @@ export function TimelinesPanel(p: Props) {
           </p>
         )}
         <p className="muted small">
-          Timelines you add are kept in this browser. Links work for anyone: share a timeline that was opened from a link
-          with <em>Copy share link</em>. Timelines added from a file stay on this computer.
+          Timelines and lists you add are kept in this browser, and those from a link are checked for a newer version
+          when they open. Links work for anyone: share one that was opened from a link with <em>Copy share link</em>.
+          Timelines added from a file stay on this computer.
         </p>
       </section>
 
@@ -127,25 +134,74 @@ export function TimelinesPanel(p: Props) {
         </ul>
       </section>
 
-      {bundled.length > 0 && (
-        <section>
-          <h3>Included</h3>
-          <ul className="timeline-list">
-            {bundled.map(({ summary: d }) => (
-              <li key={d.id} className={d.id === p.currentId ? 'current' : ''}>
-                <div className="info">
-                  <strong>{d.title}</strong>
-                  {d.subtitle && <span className="muted"> {d.subtitle}</span>}
-                  {d.eventCount !== undefined && <div className="muted small">{d.eventCount} events</div>}
-                </div>
-                <div className="actions">
-                  {d.id !== p.currentId && <button onClick={() => p.onOpen(d.id)}>Open</button>}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <div>
+        {bundled.length > 0 && (
+          <section>
+            <h3>Included</h3>
+            <ul className="timeline-list">
+              {bundled.map(({ summary: d }) => (
+                <li key={d.id} className={d.id === p.currentId ? 'current' : ''}>
+                  <div className="info">
+                    <strong>{d.title}</strong>
+                    {d.subtitle && <span className="muted"> {d.subtitle}</span>}
+                    {d.eventCount !== undefined && <div className="muted small">{d.eventCount} events</div>}
+                  </div>
+                  <div className="actions">
+                    {d.id !== p.currentId && <button onClick={() => p.onOpen(d.id)}>Open</button>}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        {(p.collections ?? []).map((c) => {
+          const shown = p.timelines.filter((t) => t.collection?.url === c.url);
+          const hidden = c.entries.length - shown.length;
+          const name = collectionName(c);
+          return (
+            <section key={c.url} aria-label={`Shared list: ${name}`}>
+              <h3>{name}</h3>
+              <div className="row list-head">
+                <span className="muted small" title={c.url}>
+                  Shared list · updated {day(c.updatedAt)}
+                  {hidden > 0 && ` · ${hidden} not shown (their ids are already in use here)`}
+                </span>
+              </div>
+              <div className="row">
+                {p.onRefreshList && (
+                  <button
+                    disabled={!!busy}
+                    title="Download the latest version of the list"
+                    onClick={() => void run(`list-${c.url}`, () => p.onRefreshList!(c))}
+                  >
+                    {busy === `list-${c.url}` ? 'Updating…' : 'Update list'}
+                  </button>
+                )}
+                {p.onCopyListLink && <button onClick={() => p.onCopyListLink!(c)}>Copy link to list</button>}
+                {p.onRemoveList && (
+                  <button className="danger" onClick={() => p.onRemoveList!(c)}>
+                    Remove list
+                  </button>
+                )}
+              </div>
+              <ul className="timeline-list">
+                {shown.map(({ summary: d }) => (
+                  <li key={d.id} className={d.id === p.currentId ? 'current' : ''}>
+                    <div className="info">
+                      <strong>{d.title}</strong>
+                      {d.subtitle && <span className="muted"> {d.subtitle}</span>}
+                      {d.eventCount !== undefined && <div className="muted small">{d.eventCount} events</div>}
+                    </div>
+                    <div className="actions">
+                      {d.id !== p.currentId && <button onClick={() => p.onOpen(d.id)}>Open</button>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </div>
     </div>
   );
 }

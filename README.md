@@ -42,7 +42,7 @@ The built site doesn't need to be built again to change its timelines: replace, 
 A timeline is one JSON file. Copy [docs/examples/example-timeline.json](docs/examples/example-timeline.json), a
 small fictional kingdom, and see [docs/data-format.md](docs/data-format.md) for every field.
 
-There are three ways to get a timeline into the app:
+There are four ways to get a timeline into the app:
 
 1. **Put it on your site.** Add the file to `public/timelines/` and run `npm run data -- index`, which lists every
    file there in `public/timelines/index.json` (the next build copies both into `dist/timelines/`). On a site
@@ -53,8 +53,11 @@ There are three ways to get a timeline into the app:
    [the site's list of timelines](docs/data-format.md#the-sites-list-of-timelines).
 2. **Link to it.** Host the file anywhere that lets other sites read it (GitHub raw files, GitHub Pages and gists
    do) and open `<your site>/?data=<link to the file>`. Anyone with the link sees the same timeline.
-3. **Add it in the browser.** Customize → Timelines → *Add from a file…*, or paste a link there. Timelines added this
-   way are saved in that browser only.
+3. **Share a list of them.** A group can keep its own list of timelines, in the same format as `timelines/index.json`,
+   anywhere online, and share `<your site>/?collection=<link to the list>`. Each reader's picker then shows the
+   list's timelines next to the site's. See [shared lists](docs/data-format.md#shared-lists).
+4. **Add it in the browser.** Customize → Timelines → *Add from a file…*, or paste a link to a timeline or a list
+   there. Timelines added this way are saved in that browser only.
 
 You can also build or change a timeline in edit mode (Customize → Edit) and download the result as JSON.
 

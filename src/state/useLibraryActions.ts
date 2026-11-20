@@ -1,7 +1,15 @@
 import { useState, type Dispatch } from 'react';
 import { draftKey, parseUpload, type DatasetAction } from './dataset.ts';
-import { addToLibrary, fetchTimeline, normalizeUrl, removeFromLibrary, type LibraryEntry } from './library.ts';
-import { listTimelines } from './timelines.ts';
+import { addToLibrary, fetchTimeline, removeFromLibrary, type LibraryEntry } from './library.ts';
+import {
+  collectionName,
+  fetchCollection,
+  loadCollections,
+  removeCollection,
+  saveCollection,
+  type Collection,
+} from './collections.ts';
+import { addFromLink, listTimelines, reservedIds } from './timelines.ts';
 import { goHome, goToTimeline, shareSearch } from './url.ts';
 import type { TimelineIndexEntry } from '../data/timelineIndex.ts';
 import type { Notify } from './toast.ts';
@@ -19,14 +27,21 @@ export function useLibraryActions(opts: {
 }) {
   const { published, library, site, dispatch, notify } = opts;
   const currentId = published.meta.id;
-  /** Ids a library timeline can't take: the site's own. */
-  const siteIds = site.map((e) => e.id);
-  /** Every timeline the picker lists: the site's, then this browser's library. */
+  /** Every timeline the picker lists: the site's, then shared lists', then this browser's library. */
   const [timelines, setTimelines] = useState(() => listTimelines(site));
+  /** The shared lists added in this browser. */
+  const [collections, setCollections] = useState(loadCollections);
+  const reload = () => {
+    setTimelines(listTimelines(site));
+    setCollections(loadCollections());
+  };
+  /** The shared list the open timeline comes from, if any. */
+  const collection = timelines.find((t) => t.summary.id === currentId)?.collection;
 
   /**
    * Opens a timeline file. The current timeline's own file loads as edits to it; a file for another
-   * of the site's timelines opens there as its edits; anything else is added to the library and opened.
+   * of the site's (or a shared list's) timelines opens there as its edits; anything else is added to the library and
+   * opened.
    * Throws an Error with a readable message.
    */
   const importFile = async (file: File) => {
@@ -43,30 +58,27 @@ export function useLibraryActions(opts: {
       notify(`Loaded ${file.name}.`);
       return;
     }
-    if (siteIds.includes(id)) {
+    if (timelines.some((t) => t.entry && t.summary.id === id)) {
       // a whole file for another of the site's timelines: that timeline applies it in full (see restoreDraft)
       localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
       goToTimeline(id);
       return;
     }
-    goToTimeline(addToLibrary(dataset, { reservedIds: siteIds }).dataset.meta.id);
+    goToTimeline(addToLibrary(dataset, { reservedIds: reservedIds(site) }).dataset.meta.id);
   };
 
   /** The edit bar's Upload JSON: like importFile, but errors become a toast. */
   const upload = (file: File) => importFile(file).catch((e: Error) => notify(e.message, 'error'));
 
-  const addFromUrl = async (raw: string) => {
-    const url = normalizeUrl(raw);
-    const dataset = await fetchTimeline(url);
-    goToTimeline(addToLibrary(dataset, { sourceUrl: url, reservedIds: siteIds }).dataset.meta.id);
-  };
+  /** A link to a timeline or to a list of them. */
+  const addFromUrl = async (raw: string) => goToTimeline(await addFromLink(raw, site));
 
   const refreshEntry = async (entry: LibraryEntry) => {
     const dataset = await fetchTimeline(entry.sourceUrl!);
-    const updated = addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: siteIds });
+    const updated = addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: reservedIds(site) });
     if (updated.dataset.meta.id === currentId) window.location.reload();
     else {
-      setTimelines(listTimelines(site));
+      reload();
       notify(`Updated "${updated.dataset.meta.title}".`);
     }
   };
@@ -77,13 +89,46 @@ export function useLibraryActions(opts: {
     removeFromLibrary(d.meta.id);
     if (d.meta.id === currentId) goHome();
     else {
-      setTimelines(listTimelines(site));
+      reload();
       notify(`Removed "${d.meta.title}".`);
     }
   };
 
+  const refreshCollection = async (c: Collection) => {
+    const saved = saveCollection(await fetchCollection(c.url));
+    const next = listTimelines(site);
+    // the open timeline left the list: open the site's default
+    if (collection?.url === c.url && !next.some((t) => t.summary.id === currentId)) return goHome();
+    reload();
+    notify(`Updated the list "${collectionName(saved)}".`);
+  };
+
+  const removeList = (c: Collection) => {
+    const name = collectionName(c);
+    if (!window.confirm(`Remove the list "${name}" from this browser? Any edits you made to its timelines are deleted too.`))
+      return;
+    const others = timelines.filter((t) => t.collection?.url !== c.url).map((t) => t.summary.id);
+    removeCollection(c.url, others);
+    if (collection?.url === c.url) goHome();
+    else {
+      reload();
+      notify(`Removed the list "${name}".`);
+    }
+  };
+
+  const listLink = (c: Collection, id?: string) =>
+    `${window.location.origin}${window.location.pathname}?collection=${encodeURIComponent(c.url)}${id ? `&timeline=${encodeURIComponent(id)}` : ''}`;
+
+  const copyListLink = async (c: Collection) => {
+    await navigator.clipboard.writeText(listLink(c));
+    notify('Link to the list copied.');
+  };
+
+  // a shared list's timeline shares as ?collection=…&timeline=…, so the link works in any browser
   const shareBase = (entry?: LibraryEntry) =>
-    `${window.location.origin}${window.location.pathname}${shareSearch(currentId, entry)}`;
+    collection
+      ? listLink(collection, currentId)
+      : `${window.location.origin}${window.location.pathname}${shareSearch(currentId, entry)}`;
 
   const copyShareLink = async (entry: LibraryEntry) => {
     await navigator.clipboard.writeText(shareBase(entry));
@@ -102,5 +147,18 @@ export function useLibraryActions(opts: {
     notify('Link copied.');
   };
 
-  return { timelines, importFile, upload, addFromUrl, refreshEntry, removeEntry, copyShareLink, copyEventLink };
+  return {
+    timelines,
+    collections,
+    importFile,
+    upload,
+    addFromUrl,
+    refreshEntry,
+    removeEntry,
+    copyShareLink,
+    copyEventLink,
+    refreshCollection,
+    removeList,
+    copyListLink,
+  };
 }
