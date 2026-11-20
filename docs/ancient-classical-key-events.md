@@ -10,13 +10,12 @@ Totals: 270 key, 519 normal, 94 minor (883 events).
 
 ### North Africa
 
-7 key, 18 normal, 4 minor.
+6 key, 17 normal, 3 minor.
 
 **Key**
 
 - The African humid period ends: the Sahara dries (c. 3550 BCE; Sahara (climate)) `green-sahara-ends`
 - Libu and Sea Peoples invade Egypt (1208 BCE; Libyans, Pharaonic Egypt, Sea Peoples) `libu-invasion`
-- Cyrene founded (631 BCE; Cyrene) `cyrene-founded`
 - Battle of Himera (480 BCE; Carthage, Magna Graecia and Sicily) `himera`
 - Masinissa’s kingdom of Numidia (202 BCE–148 BCE; Numidia, Carthage) `masinissa-numidia`
 - Rome destroys Carthage (146 BCE; Carthage, Rome (Kingdom, Republic, then Empire)) `carthage-destroyed`
@@ -25,7 +24,6 @@ Totals: 270 key, 519 normal, 94 minor (883 events).
 **Minor**
 
 - Horse period of Saharan rock art (c. 1250 BCE) `horse-art`
-- Persians sack Barca (515 BCE) `barca-sacked`
 - Balbus campaigns against the Garamantes (19 BCE) `balbus-garamantes`
 - Septimius Severus captures Garama (202 CE) `severus-garama`
 
@@ -101,18 +99,12 @@ Totals: 270 key, 519 normal, 94 minor (883 events).
 
 ### Western Mediterranean
 
-4 key, 8 normal, 1 minor.
+2 key, 7 normal, 0 minor.
 
 **Key**
 
 - The first farmers reach Iberia (c. 5700 BCE; Neolithic Iberia) `iberia-farmers`
 - Nuraghe towers built (c. 1800 BCE–1100 BCE; Nuragic Sardinia) `nuraghi`
-- Syracuse founded (733 BCE; Magna Graecia and Sicily) `syracuse-founded`
-- Athenian expedition to Sicily (415 BCE–413 BCE; Magna Graecia and Sicily, Archaic and Classical Greece) `sicilian-expedition`
-
-**Minor**
-
-- Sybaris destroyed (c. 510 BCE) `sybaris`
 
 ### Rome
 
@@ -138,33 +130,38 @@ Totals: 270 key, 519 normal, 94 minor (883 events).
 
 - Latin League dissolved (338 BCE) `latin-league`
 
-### Aegean, Greece and the Hellenistic world
+### Aegean and Greek world
 
-18 key, 25 normal, 1 minor.
+21 key, 27 normal, 3 minor.
 
 **Key**
 
 - Early Cycladic culture (c. 3100 BCE–2300 BCE; Cycladic culture) `early-cycladic`
 - First Minoan palaces built (c. 1925 BCE; Minoan Crete) `first-palaces`
-- Thera (Minoan) eruption (c. 1600 BCE; Aegean, Greece and the Hellenistic world, Minoan Crete) `thera`
+- Thera (Minoan) eruption (c. 1600 BCE; Bronze Age Aegean, Minoan Crete) `thera`
 - Mycenaeans at Knossos; Linear B appears (c. 1450 BCE; Minoan Crete, Mycenaean Greece) `mycenaean-knossos`
-- Late Bronze Age collapse (c. 1200 BCE–1150 BCE; Aegean, Greece and the Hellenistic world, Anatolia, Egypt and Nubia, Mesopotamia, Levant) `bronze-age-collapse`
+- Late Bronze Age collapse (c. 1200 BCE–1150 BCE; Bronze Age Aegean, Anatolia, Egypt and Nubia, Mesopotamia, Levant) `bronze-age-collapse`
 - Greek alphabet (c. 800 BCE; Archaic and Classical Greece) `greek-alphabet`
 - First Olympic Games (traditional) (776 BCE; Archaic and Classical Greece) `first-olympiad`
+- Syracuse founded (733 BCE; Magna Graecia and Sicily) `syracuse-founded`
 - The Iliad and the Odyssey (c. 700 BCE; Archaic and Classical Greece) `homer`
+- Cyrene founded (631 BCE; Cyrene) `cyrene-founded`
 - Cleisthenes' reforms in Athens (508 BCE; Archaic and Classical Greece) `cleisthenes`
 - Battle of Marathon (490 BCE; Archaic and Classical Greece, Achaemenid Persia) `marathon`
 - Battle of Salamis (480 BCE; Archaic and Classical Greece, Achaemenid Persia) `salamis`
 - Battle of Thermopylae (480 BCE; Archaic and Classical Greece, Achaemenid Persia) `thermopylae`
 - The Parthenon built (447 BCE–438 BCE; Archaic and Classical Greece) `parthenon`
 - Peloponnesian War (431 BCE–404 BCE; Archaic and Classical Greece) `peloponnesian-war`
+- Athenian expedition to Sicily (415 BCE–413 BCE; Magna Graecia and Sicily, Archaic and Classical Greece) `sicilian-expedition`
 - The trial and death of Socrates (399 BCE; Archaic and Classical Greece) `socrates`
 - Plato founds the Academy (c. 387 BCE; Archaic and Classical Greece) `academy`
 - Philip II wins the Battle of Chaeronea (338 BCE; Archaic and Classical Greece, Macedon) `chaeronea`
-- Death of Alexander the Great (323 BCE; Aegean, Greece and the Hellenistic world, Iran and Central Asia) `alexander-dies`
+- Death of Alexander the Great (323 BCE; Macedon and the Hellenistic kingdoms, Iran and Central Asia) `alexander-dies`
 
 **Minor**
 
+- Persians sack Barca (515 BCE) `barca-sacked`
+- Sybaris destroyed (c. 510 BCE) `sybaris`
 - Macedon moves its capital from Aigai to Pella (399 BCE) `pella`
 
 ## Ancient Near East
