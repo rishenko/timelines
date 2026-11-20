@@ -207,6 +207,49 @@
   border-top: 1px solid var(--bg);
   border-bottom: 1px solid var(--bg);
 }
+/* its strip in the name column: hovering it (a few px either side of the line) shows the row's name */
+.tl-lane.thin .thin-label {
+  position: sticky;
+  left: 0;
+  height: 100%;
+  z-index: 4;
+}
+.tl-lane.thin .thin-label::before {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+/* a thin line right after another doesn't reach up over it: each keeps its own strip */
+.tl-lane.thin + .tl-lane.thin .thin-label::before {
+  top: -1px;
+}
+.tl-lane.thin .thin-name {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: calc(12px + var(--depth, 0) * 14px);
+  transform: translateY(-50%);
+  max-width: calc(100% - 20px - var(--depth, 0) * 14px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border: 1px solid var(--line-2);
+  border-left: 4px solid var(--track-ink, var(--track-color));
+  border-radius: 4px;
+  background: var(--bg-2);
+  color: var(--text);
+  font-size: 12px;
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--text) 18%, transparent);
+  pointer-events: none;
+  z-index: 6;
+}
+.tl-lane.thin .thin-label:hover {
+  z-index: 7; /* over the neighbouring rows' names */
+}
+.tl-lane.thin .thin-label:hover .thin-name {
+  display: block;
+}
 /* lifespan of a track (civilization, period…): a soft band, faded where its dates are uncertain */
 .tl-span {
   position: absolute;

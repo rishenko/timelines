@@ -93,8 +93,9 @@ describe('hide rows with nothing in view', () => {
     const thin = c.querySelectorAll('.tl-lane.thin');
     expect(thin.length).toBeGreaterThan(0);
     expect(lanes(c)).toBe(drawn + thin.length);
-    // a thin line holds nothing: no label, no events, hidden from screen readers
-    expect(thin[0].children.length).toBe(0);
+    // a thin line holds no events, only its name for hovering, and is hidden from screen readers
+    expect(thin[0].querySelectorAll('.tl-mark').length).toBe(0);
+    expect(thin[0].querySelector('.thin-name')?.textContent).toBeTruthy();
     expect(thin[0].getAttribute('aria-hidden')).toBe('true');
     await waitFor(() => expect(window.location.search).toContain('rows=thin'));
   });

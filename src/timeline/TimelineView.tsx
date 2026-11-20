@@ -359,15 +359,19 @@ export function TimelineView(props: Props) {
 
           {layout.lanes.map(({ lane, height, marks, top, overflow }) =>
             shown.thin.has(lane.id) ? (
-              // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it)
+              // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering its
+              // strip in the name column shows its name
               <div
                 key={lane.id}
                 className={`tl-lane thin${lane.depth ? ' nested' : ''}${groupColor.has(lane.id) ? ' in-group' : ''}`}
                 style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
-                title={`${lane.track.name}: nothing in view`}
                 aria-hidden="true"
                 data-lane={lane.id}
-              />
+              >
+                <div className="thin-label" style={{ width: labelW }}>
+                  <span className="thin-name">{lane.track.name}</span>
+                </div>
+              </div>
             ) : (
             // double-click and long-press add an event in edit mode; the edit bar's Add event button does the same
             // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
