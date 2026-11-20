@@ -226,6 +226,31 @@ describe('placePhases', () => {
     expect(placePhases('egypt', egypt).map((p) => p.level)).toEqual([0, 0]);
   });
 
+  it("gives each name its own stretch: the whole band, split where it runs into the next phase's on its line", () => {
+    const egypt = new Map([
+      [
+        'egypt',
+        [
+          { name: 'Old Kingdom', start: -2685, end: -2180, startWindow: [-2700, -2685] as [number, number], endWindow: [-2180, -2117] as [number, number] },
+          { name: 'First Intermediate', start: -2150, end: -2054, startWindow: [-2180, -2150] as [number, number] },
+        ],
+      ],
+    ]);
+    const [old, first] = placePhases('egypt', egypt);
+    // the Old Kingdom's band runs to -2117 through its uncertain end; its name stops where the next one starts
+    expect([old.nameFrom, old.nameTo]).toEqual([-2700, -2150]);
+    expect([first.nameFrom, first.nameTo]).toEqual([-2150, -2053]);
+    expect(old.nameTo).toBeLessThanOrEqual(first.nameFrom);
+  });
+
+  it('splits names at a shared boundary year, and leaves phases on other lines alone', () => {
+    const [a, b, c] = placePhases('north', phases);
+    expect([a.nameFrom, a.nameTo, b.nameFrom, b.nameTo, c.nameFrom, c.nameTo]).toEqual([0, 288, 288, 460, 460, 503]);
+    const [republic, freeCity] = placePhases('harbor', phases);
+    expect([republic.nameFrom, republic.nameTo]).toEqual([199, 501]);
+    expect([freeCity.nameFrom, freeCity.nameTo]).toEqual([289, 503]);
+  });
+
   it("places only the row's own phases (a folded row doesn't gather its sub-rows')", () => {
     const placed = placePhases('north', phases);
     expect(placed.map((p) => p.name)).toEqual(['First', 'Second', 'Third']);
