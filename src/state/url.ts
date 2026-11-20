@@ -1,24 +1,20 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { findTimeline } from '../timelines/index.ts';
 import { parseYear } from '../lib/calendar.ts';
 import type { LibraryEntry } from './library.ts';
+import type { Dataset } from '../types.ts';
 
 /**
  * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=1`)
  * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link.
  */
 
-/** Reads the timeline and view settings the page was opened with. */
-export function readUrl() {
+/** Reads the view settings the page was opened with, for the timeline it opened (see Boot). */
+export function readUrl(published: Dataset) {
   const q = new URLSearchParams(window.location.search);
-  const choice = findTimeline(q.get('timeline'));
-  const published = choice.dataset;
   const { increments, defaultIncrement, calendar } = published.meta;
   const inc = Number(q.get('inc'));
   const at = q.get('at');
   return {
-    published,
-    library: choice.library,
     increment: increments.includes(inc) ? inc : defaultIncrement,
     at: at !== null ? parseYear(at, calendar) : null,
     compress: q.get('compress') !== '0',
@@ -31,6 +27,11 @@ export function readUrl() {
 /** Opens another timeline (a full page load, so it starts from its own defaults and draft). */
 export const goToTimeline = (id: string) => {
   window.location.href = `${window.location.pathname}?timeline=${encodeURIComponent(id)}`;
+};
+
+/** Opens the site's default timeline (the first in its list, else the reader's first, else the welcome page). */
+export const goHome = () => {
+  window.location.href = window.location.pathname;
 };
 
 /** A link anyone can open: timelines from a URL travel as ?data=<url>; others by id (bundled, or in this browser's library). */

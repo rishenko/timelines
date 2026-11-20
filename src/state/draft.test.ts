@@ -4,7 +4,7 @@ import { applyChanges, changesFromLegacyCopy, diffDataset, isEmpty } from './dra
 import { draftKey, draftToStore, loadInitial, restoreDraft, unreadableDraftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
 import example from '../../docs/examples/example-timeline.json';
-import ancient from '../timelines/ancient-near-east.json';
+import ancient from '../../public/timelines/ancient-near-east.json';
 
 const base = () => structuredClone(example) as unknown as Dataset;
 const ev = (d: Dataset, uuid: string) => d.events.find((e) => e.uuid === uuid)!;

@@ -1,10 +1,11 @@
 // One command for the data work on every timeline built from data-src/ (the table is scripts/lib/timelines.ts).
 //
-//   npm run data -- build <timeline|all>         compile data-src/<file> → src/timelines/<file>
+//   npm run data -- build <timeline|all>         compile data-src/<file> → public/timelines/<file>, then `index`
 //   npm run data -- importance <timeline|all>    apply the importance plan, compile, refresh docs/<short>-key-events.md
 //   npm run data -- format <timeline|all>        re-format the source file in the repo's compact style
 //   npm run data -- row-order <timeline> [args]  how close related rows sit (args as for scripts/row-order.ts)
 //   npm run data -- run-all <timeline> [--check] replay every content script in order, then `importance`
+//   npm run data -- index                        rewrite public/timelines/index.json from the files there
 //
 // <timeline> is a short name (ancient, classical) or an id (ancient-near-east). `npm run data:ancient`,
 // `importance:classical` and the like are aliases for the common cases.
@@ -18,9 +19,10 @@ import { compileSource, compiledText } from './lib/compile.ts';
 import { applyImportancePlan, importanceCounts, keyEventsMarkdown } from './lib/importance.ts';
 import { readSource, writeSource } from './lib/source-format.ts';
 import { SOURCE_TIMELINES, sourceTimeline, type SourceTimeline } from './lib/timelines.ts';
+import { TIMELINES_DIR, writeTimelineIndex } from './lib/timeline-index.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
-const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options]';
+const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], or npm run data -- index';
 
 function build(t: SourceTimeline) {
   const { dataset, errors } = compileSource(readSource(t.source));
@@ -28,7 +30,14 @@ function build(t: SourceTimeline) {
   writeFileSync(t.compiled, compiledText(dataset));
   const n = (k: string) => (dataset[k] as unknown[]).length;
   console.log(`${t.short}: wrote ${t.compiled} (${n('tracks')} tracks, ${n('events')} events)`);
+  index();
   return dataset;
+}
+
+/** Rewrites the site's list of timelines from the files in public/timelines. */
+function index() {
+  for (const note of writeTimelineIndex()) console.log(`index: ${note}`);
+  console.log(`index: wrote ${TIMELINES_DIR}/index.json`);
 }
 
 /** Applies the plan to the source file (in place); returns the counts. A timeline without a plan is left alone. */
@@ -106,6 +115,9 @@ try {
     }
     case 'run-all':
       runAll(sourceTimeline(name), rest.includes('--check'));
+      break;
+    case 'index':
+      index();
       break;
     default:
       console.error(USAGE);

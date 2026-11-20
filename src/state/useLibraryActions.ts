@@ -1,8 +1,9 @@
 import { useState, type Dispatch } from 'react';
 import { draftKey, parseUpload, type DatasetAction } from './dataset.ts';
 import { addToLibrary, fetchTimeline, normalizeUrl, removeFromLibrary, type LibraryEntry } from './library.ts';
-import { allTimelines, BUNDLED, BUNDLED_IDS } from '../timelines/index.ts';
-import { goToTimeline, shareSearch } from './url.ts';
+import { listTimelines } from './timelines.ts';
+import { goHome, goToTimeline, shareSearch } from './url.ts';
+import type { TimelineIndexEntry } from '../data/timelineIndex.ts';
 import type { Notify } from './toast.ts';
 import type { Dataset } from '../types.ts';
 
@@ -11,17 +12,21 @@ export function useLibraryActions(opts: {
   published: Dataset;
   /** The library entry the open timeline came from, if any. */
   library?: LibraryEntry;
+  /** The site's timelines (timelines/index.json). */
+  site: TimelineIndexEntry[];
   dispatch: Dispatch<DatasetAction>;
   notify: Notify;
 }) {
-  const { published, library, dispatch, notify } = opts;
+  const { published, library, site, dispatch, notify } = opts;
   const currentId = published.meta.id;
-  /** Every timeline the picker lists: bundled, then this browser's library. */
-  const [timelines, setTimelines] = useState(allTimelines);
+  /** Ids a library timeline can't take: the site's own. */
+  const siteIds = site.map((e) => e.id);
+  /** Every timeline the picker lists: the site's, then this browser's library. */
+  const [timelines, setTimelines] = useState(() => listTimelines(site));
 
   /**
    * Opens a timeline file. The current timeline's own file loads as edits to it; a file for another
-   * bundled timeline opens there as its edits; anything else is added to the library and opened.
+   * of the site's timelines opens there as its edits; anything else is added to the library and opened.
    * Throws an Error with a readable message.
    */
   const importFile = async (file: File) => {
@@ -38,13 +43,13 @@ export function useLibraryActions(opts: {
       notify(`Loaded ${file.name}.`);
       return;
     }
-    if (BUNDLED_IDS.includes(id)) {
-      // a whole file for another bundled timeline: that timeline applies it in full (see restoreDraft)
+    if (siteIds.includes(id)) {
+      // a whole file for another of the site's timelines: that timeline applies it in full (see restoreDraft)
       localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
       goToTimeline(id);
       return;
     }
-    goToTimeline(addToLibrary(dataset, { reservedIds: BUNDLED_IDS }).dataset.meta.id);
+    goToTimeline(addToLibrary(dataset, { reservedIds: siteIds }).dataset.meta.id);
   };
 
   /** The edit bar's Upload JSON: like importFile, but errors become a toast. */
@@ -53,15 +58,15 @@ export function useLibraryActions(opts: {
   const addFromUrl = async (raw: string) => {
     const url = normalizeUrl(raw);
     const dataset = await fetchTimeline(url);
-    goToTimeline(addToLibrary(dataset, { sourceUrl: url, reservedIds: BUNDLED_IDS }).dataset.meta.id);
+    goToTimeline(addToLibrary(dataset, { sourceUrl: url, reservedIds: siteIds }).dataset.meta.id);
   };
 
   const refreshEntry = async (entry: LibraryEntry) => {
     const dataset = await fetchTimeline(entry.sourceUrl!);
-    const updated = addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: BUNDLED_IDS });
+    const updated = addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: siteIds });
     if (updated.dataset.meta.id === currentId) window.location.reload();
     else {
-      setTimelines(allTimelines());
+      setTimelines(listTimelines(site));
       notify(`Updated "${updated.dataset.meta.title}".`);
     }
   };
@@ -70,9 +75,9 @@ export function useLibraryActions(opts: {
     const d = entry.dataset;
     if (!window.confirm(`Remove "${d.meta.title}" from this browser? Any edits you made to it are deleted too.`)) return;
     removeFromLibrary(d.meta.id);
-    if (d.meta.id === currentId) goToTimeline(BUNDLED[0].meta.id);
+    if (d.meta.id === currentId) goHome();
     else {
-      setTimelines(allTimelines());
+      setTimelines(listTimelines(site));
       notify(`Removed "${d.meta.title}".`);
     }
   };

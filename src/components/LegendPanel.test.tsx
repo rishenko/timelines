@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
 import { LegendPanel } from './LegendPanel.tsx';
-import ancient from '../timelines/ancient-near-east.json';
+import ancient from '../../public/timelines/ancient-near-east.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 

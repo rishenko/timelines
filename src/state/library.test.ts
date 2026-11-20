@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { addToLibrary, fetchTimeline, isSafeUrl, loadLibrary, normalizeUrl, removeFromLibrary } from './library.ts';
 import { draftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
-import ancient from '../timelines/ancient-near-east.json';
-import classical from '../timelines/classical.json';
+import ancient from '../../public/timelines/ancient-near-east.json';
+import classical from '../../public/timelines/classical.json';
 import type { Dataset } from '../types.ts';
 
 function memoryStore() {

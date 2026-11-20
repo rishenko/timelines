@@ -5,9 +5,9 @@
 // files mean nothing visible changed. Skipped unless SNAP_OUT names the file to write:
 //   SNAP_OUT=before.txt npm run dom-snapshot   …change…   SNAP_OUT=after.txt npm run dom-snapshot   cmp before.txt after.txt
 import { afterEach, beforeAll, beforeEach, describe, it } from 'vitest';
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import { act, cleanup, fireEvent } from '@testing-library/react';
 import { writeFileSync } from 'node:fs';
-import App from '../App.tsx';
+import { renderApp } from './app.tsx';
 
 const OUT = process.env.SNAP_OUT!;
 afterEach(() => { cleanup(); localStorage.clear(); window.history.replaceState(null, '', '/'); });
@@ -23,7 +23,7 @@ beforeEach(() => localStorage.setItem('timelines:legend-seen', '1'));
 
 const out: string[] = [];
 const snap = (name: string, c: Element) => out.push(`=== ${name}\n${c.innerHTML.replace(/></g, '>\n<')}`);
-const open = (q: string) => { window.history.replaceState(null, '', `/?${q}`); return render(<App />).container; };
+const open = (q: string) => renderApp(q).container;
 
 const cases: [string, string, string[]][] = [
   ['ancient-near-east', 'sargon-reign', ['Egypt', 'Sargon', 'Akkad', 'Old Kingdom', '1595 BCE', 'Hittite', 'Prepalatial', 'Wilton culture']],

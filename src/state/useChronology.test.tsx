@@ -3,7 +3,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { act, cleanup, renderHook } from '@testing-library/react';
 import type { Dataset } from '../types.ts';
 import { useChronology } from './useChronology.ts';
-import ancient from '../timelines/ancient-near-east.json';
+import ancient from '../../public/timelines/ancient-near-east.json';
 
 afterEach(cleanup);
 const data = ancient as unknown as Dataset;

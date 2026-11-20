@@ -2,8 +2,8 @@
 // Search results write a lifespan's or phase's dates the way the chart and the table do: "c." on both ends when
 // the dates are approximate.
 import { afterEach, beforeAll, beforeEach, expect, it } from 'vitest';
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
-import App from '../App.tsx';
+import { act, cleanup, fireEvent } from '@testing-library/react';
+import { renderApp } from '../test/app.tsx';
 
 beforeAll(() => {
   window.matchMedia ??= ((q: string) => ({ matches: false, media: q, addEventListener() {}, removeEventListener() {} })) as never;
@@ -23,8 +23,7 @@ afterEach(() => {
 });
 
 function results(query: string): string[] {
-  window.history.replaceState(null, '', '/?timeline=ancient-near-east');
-  const { container } = render(<App />);
+  const { container } = renderApp('timeline=ancient-near-east');
   const input = container.querySelector<HTMLInputElement>('input[placeholder="Row, event or year…"]')!;
   act(() => fireEvent.change(input, { target: { value: query } }));
   return [...container.querySelectorAll('[role="option"]')].map((o) => o.textContent ?? '');

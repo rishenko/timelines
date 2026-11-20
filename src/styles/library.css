@@ -66,4 +66,23 @@
 .boot code {
   word-break: break-all;
 }
+/* the welcome page (a site with no timelines): one column, the add-a-timeline panel under the text */
+main.boot.welcome {
+  display: block;
+  max-width: 720px;
+}
+.boot.welcome .timelines-panel {
+  grid-template-columns: 1fr;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+/* "Loading timeline…" appears only when loading takes a moment, so a quick load doesn't flash it */
+.boot .loading {
+  animation: boot-appear 0.2s 0.4s both;
+}
+@keyframes boot-appear {
+  from {
+    opacity: 0;
+  }
+}
 

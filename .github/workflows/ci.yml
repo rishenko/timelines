@@ -36,11 +36,11 @@ jobs:
       - run: npm run data -- run-all ancient --check
       - run: npm run data -- run-all classical --check
 
-      # The bundled files and key-event lists must be what data-src/ compiles to
+      # The included timelines, their list (index.json) and key-event lists must be what data-src/ compiles to
       - name: Compiled timelines match data-src/
         run: |
           for t in ancient classical; do
             npm run data -- build "$t"
             npm run data -- importance "$t"
           done
-          git diff --exit-code -- src/timelines docs
+          git diff --exit-code -- public/timelines docs

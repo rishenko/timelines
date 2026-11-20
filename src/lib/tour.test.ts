@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { tourSteps } from './tour.ts';
-import ancient from '../timelines/ancient-near-east.json';
+import ancient from '../../public/timelines/ancient-near-east.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 

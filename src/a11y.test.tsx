@@ -3,9 +3,9 @@
 // axe-core runs the automated WCAG rules on the rendered page. jsdom has no layout or colours, so the colour-contrast
 // rule is off here (it's checked per theme separately); everything else axe can see from the markup is on.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import axe from 'axe-core';
-import App from './App.tsx';
+import { renderApp } from './test/app.tsx';
 
 afterEach(() => {
   cleanup();
@@ -41,8 +41,7 @@ async function violations(root: Element) {
 }
 
 function open(timeline: string, extra = '') {
-  window.history.replaceState(null, '', `/?timeline=${timeline}${extra}`);
-  return render(<App />);
+  return renderApp(`timeline=${timeline}${extra}`);
 }
 
 describe('accessibility', () => {

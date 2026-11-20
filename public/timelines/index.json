@@ -1,0 +1,46 @@
+{
+  "timelines": [
+    {
+      "id": "ancient-near-east",
+      "title": "Ancient Civilizations",
+      "file": "ancient-near-east.json",
+      "subtitle": "From the first farmers to the Iron Age: Europe, Africa, the Near East, Asia, Oceania and the Americas, c. 9000–330 BCE",
+      "eventCount": 562,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      },
+      "defaultTheme": "parchment"
+    },
+    {
+      "id": "classical",
+      "title": "The Classical World",
+      "file": "classical.json",
+      "subtitle": "From the Persian Wars to the rise of Islam: Europe, Africa, the Near East, Asia and the Americas, c. 500 BCE – 650 CE",
+      "eventCount": 371,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      },
+      "defaultTheme": "parchment"
+    }
+  ]
+}

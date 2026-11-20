@@ -1,4 +1,4 @@
-import type { TimelineChoice } from '../timelines/index.ts';
+import type { TimelineChoice } from '../state/timelines.ts';
 
 /** Picker entry that opens the library panel instead of a timeline. */
 const MANAGE = '__manage__';
@@ -22,18 +22,20 @@ export function TimelinePicker({ timelines, currentId, onOpen, onManage }: Props
       value={currentId}
       onChange={(e) => (e.target.value === MANAGE ? onManage() : onOpen(e.target.value))}
     >
-      <optgroup label="Included">
-        {bundled.map(({ dataset: t }) => (
-          <option key={t.meta.id} value={t.meta.id}>
-            {t.meta.title}
-          </option>
-        ))}
-      </optgroup>
+      {bundled.length > 0 && (
+        <optgroup label="Included">
+          {bundled.map(({ summary: t }) => (
+            <option key={t.id} value={t.id}>
+              {t.title}
+            </option>
+          ))}
+        </optgroup>
+      )}
       {library.length > 0 && (
         <optgroup label="Your timelines">
-          {library.map(({ dataset: t }) => (
-            <option key={t.meta.id} value={t.meta.id}>
-              {t.meta.title}
+          {library.map(({ summary: t }) => (
+            <option key={t.id} value={t.id}>
+              {t.title}
             </option>
           ))}
         </optgroup>

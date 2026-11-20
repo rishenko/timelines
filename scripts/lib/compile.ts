@@ -1,4 +1,4 @@
-// Compiles a hand-written timeline (data-src/<id>.json) into the app's format (src/timelines/<id>.json).
+// Compiles a hand-written timeline (data-src/<id>.json) into the app's format (public/timelines/<id>.json).
 //
 // In the source file, any year may be written for people instead of as a stored integer:
 //   "start": "c. 2334 BCE", "end": "2154 BCE", "year": "1651 BCE", "until": "1400 BCE"

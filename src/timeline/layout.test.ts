@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { buildLanes, layoutLanes, placePhases } from './layout.ts';
 import { buildScale } from './scale.ts';
 import type { TimelineEvent, Track } from '../types.ts';
-import data from '../timelines/classical.json';
+import data from '../../public/timelines/classical.json';
 import type { Dataset } from '../types.ts';
 import { anchorsFor } from './anchors.ts';
 import { presentYear } from '../lib/years.ts';

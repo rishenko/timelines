@@ -31,8 +31,11 @@ npm run build    # writes the site to dist/
 ```
 
 `dist/` is plain HTML, JavaScript and CSS with relative paths. Copy it to any static web server, in any folder.
-There is no backend or database: timelines are bundled into the site or loaded from a link, and readers' changes
-stay in their own browser. `npm run deploy` publishes `dist/` to GitHub Pages.
+There is no backend or database: the site's timelines are JSON files in `dist/timelines/`, readers can add more from
+a link or a file, and readers' changes stay in their own browser. `npm run deploy` publishes `dist/` to GitHub Pages.
+
+The built site doesn't need to be built again to change its timelines: replace, add or remove files in
+`timelines/` on the server and update `timelines/index.json`, the site's list (see below).
 
 ## Use your own timeline data
 
@@ -41,8 +44,13 @@ small fictional kingdom, and see [docs/data-format.md](docs/data-format.md) for 
 
 There are three ways to get a timeline into the app:
 
-1. **Bundle it with your copy.** Put the file in `src/timelines/`, import it in `src/timelines/index.ts` and add it
-   to `BUNDLED`. The first entry opens by default. Remove the included timelines the same way, then rebuild.
+1. **Put it on your site.** Add the file to `public/timelines/` and run `npm run data -- index`, which lists every
+   file there in `public/timelines/index.json` (the next build copies both into `dist/timelines/`). On a site
+   that is already built, copy the file into its `timelines/` folder and add an entry to `timelines/index.json` by
+   hand: `{ "id": "<the file's meta.id>", "title": "…", "file": "my-timeline.json" }`. The first entry opens by
+   default; remove the included timelines by deleting their files and entries. A site with no timelines at all
+   opens on a page that asks readers to add one. See
+   [the site's list of timelines](docs/data-format.md#the-sites-list-of-timelines).
 2. **Link to it.** Host the file anywhere that lets other sites read it (GitHub raw files, GitHub Pages and gists
    do) and open `<your site>/?data=<link to the file>`. Anyone with the link sees the same timeline.
 3. **Add it in the browser.** Customize → Timelines → *Add from a file…*, or paste a link there. Timelines added this
