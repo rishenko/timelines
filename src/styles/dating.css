@@ -8,12 +8,62 @@
 .timeline-picker {
   font: inherit;
   font-weight: 700;
+  padding: 2px 4px;
+  text-align: left;
   background: transparent;
   border: 1px solid transparent;
+  border-radius: 4px;
   color: var(--text);
+  cursor: pointer;
 }
-.timeline-picker:hover {
+.timeline-picker:hover,
+.timeline-picker[aria-expanded='true'] {
   border-color: var(--line);
+}
+/* the title menu's list (TimelinePicker), outside the <h1> */
+.timeline-menu {
+  position: relative;
+}
+.timeline-pop {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 30;
+  display: grid;
+  gap: 10px;
+  min-width: 260px;
+  max-width: min(420px, calc(100vw - 16px));
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--text) 18%, transparent);
+}
+.timeline-pop p {
+  margin: 0 0 4px;
+}
+.timeline-pop ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.timeline-pop li a {
+  display: block;
+  min-height: 24px;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.timeline-pop li a[aria-current='page'] {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.timeline-pop .linklike {
+  justify-self: start;
+  min-height: 24px;
 }
 .editor h4,
 .detail h4 {

@@ -21,13 +21,13 @@ const HEADS = { track: 'Rows', phase: 'Phases', event: 'Events' } as const;
 
 type Option = { kind: 'year'; year: number } | { kind: 'entry'; entry: SearchEntry; hidden: string | null };
 
-const isTyping = (t: EventTarget | null) =>
-  t instanceof HTMLElement && (t.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(t.tagName));
+/** The search field's id: "/" in the chart moves to it (src/timeline/useRovingFocus.ts). */
+export const SEARCH_INPUT_ID = 'timeline-search';
 
 /**
  * The toolbar search: finds rows (groups, regions, civilizations) and events, or jumps to a typed year.
  * A combobox rather than a <datalist>, so results can be ranked, grouped and shown with their row's path.
- * Press "/" anywhere to focus it.
+ * Press "/" in the chart to move to it. Only there: a page-wide one-key shortcut can't be turned off (WCAG 2.1.4).
  */
 export function SearchBox(props: Props) {
   const { index, parseYear, hiddenReason } = props;
@@ -51,17 +51,6 @@ export function SearchBox(props: Props) {
   }, [query, index, parseYear, hiddenReason]);
 
 
-  // "/" focuses the search from anywhere except a text field
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || isTyping(e.target)) return;
-      e.preventDefault();
-      inputRef.current?.focus();
-      inputRef.current?.select();
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, []);
 
   // The list is position: fixed under the input, so the toolbar can't clip it. It starts at the input's left edge
   // unless its widest possible size (520 px, see .search-results) would run past the screen's right edge.
@@ -121,6 +110,7 @@ export function SearchBox(props: Props) {
     <>
       <input
         ref={inputRef}
+        id={SEARCH_INPUT_ID}
         className="search"
         type="search"
         role="combobox"

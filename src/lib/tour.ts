@@ -69,7 +69,7 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     {
       target: '.toolbar .search',
       title: 'Search',
-      text: 'Find a row, an event or a year, and go straight to it. Press / to search from anywhere.',
+      text: 'Find a row, an event or a year, and go straight to it. In the chart, / moves here.',
     },
     {
       target: '[data-tour="filters"]',

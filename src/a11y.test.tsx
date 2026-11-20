@@ -186,6 +186,58 @@ describe('accessibility', () => {
       await press('?');
       expect(screen.getByRole('heading', { name: 'Keyboard' })).toBeTruthy();
     });
+
+    it('/ moves from the chart to the search box, and does nothing outside the chart (WCAG 2.1.4)', async () => {
+      const { container } = open('ancient-classical');
+      const search = screen.getByRole('combobox', { name: /^Search rows and events/ });
+      const tableButton = screen.getByRole('button', { name: 'Table' });
+      tableButton.focus();
+      await press('/');
+      expect(document.activeElement).toBe(tableButton);
+      await act(async () => {
+        fireEvent.keyDown(document.body, { key: '/' });
+      });
+      expect(document.activeElement).not.toBe(search);
+      container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!.focus();
+      await press('/');
+      expect(document.activeElement).toBe(search);
+    });
+  });
+
+  describe('timeline menu', () => {
+    const title = 'Ancient and Classical World';
+
+    it('lists the timelines as links, so another opens only when one is followed (WCAG 3.2.2)', async () => {
+      const { container } = open('ancient-classical');
+      const button = screen.getByRole('button', { name: title });
+      expect(button.closest('h1')).toBeTruthy();
+      expect(button.getAttribute('aria-expanded')).toBe('false');
+      fireEvent.click(button);
+      expect(button.getAttribute('aria-expanded')).toBe('true');
+      const link = screen.getByRole('link', { name: title });
+      expect(link.getAttribute('href')).toBe('?timeline=ancient-classical');
+      expect(link.getAttribute('aria-current')).toBe('page');
+      expect(link.closest('h1')).toBeNull(); // the heading is only the title
+      expect(screen.getByRole('list', { name: 'Included' })).toBeTruthy();
+      expect(await violations(container.querySelector('.timeline-menu')!)).toEqual([]);
+    });
+
+    it('closes with Escape, back on its button', () => {
+      open('ancient-classical');
+      const button = screen.getByRole('button', { name: title });
+      fireEvent.click(button);
+      fireEvent.keyDown(document, { key: 'Escape' });
+      expect(screen.queryByRole('link', { name: title })).toBeNull();
+      expect(document.activeElement).toBe(button);
+    });
+
+    it('"Add or manage timelines…" opens Customize at its Timelines tab', () => {
+      open('ancient-classical');
+      fireEvent.click(screen.getByRole('button', { name: title }));
+      fireEvent.click(screen.getByRole('button', { name: 'Add or manage timelines…' }));
+      expect(screen.getByRole('tab', { name: 'Timelines' }).getAttribute('aria-selected')).toBe('true');
+      expect(screen.queryByRole('link', { name: title })).toBeNull();
+    });
   });
 
   describe('Customize panel', () => {
