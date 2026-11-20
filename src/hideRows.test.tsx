@@ -53,6 +53,12 @@ describe('hide rows with nothing in view', () => {
     expect(filtersCheckbox().checked).toBe(true);
   });
 
+  it('opens with thin lines from a link', async () => {
+    const { container: c } = renderApp('timeline=ancient-classical&inc=100&at=-2000&rows=thin');
+    expandAll(c);
+    await waitFor(() => expect(c.querySelectorAll('.tl-lane.thin').length).toBeGreaterThan(0));
+  });
+
   it('turning it off in Filters shows every row, and the link remembers it', async () => {
     const { container: c } = renderApp('timeline=ancient-classical&inc=100&at=-2000');
     expandAll(c);
@@ -74,6 +80,23 @@ describe('hide rows with nothing in view', () => {
     expect(screen.queryByRole('button', { name: /with nothing in view hidden/ })).toBeNull();
     expect(hiddenButtons(c)).toEqual([]);
     expect(filtersCheckbox().checked).toBe(false);
+  });
+
+  it('can draw hidden rows as thin lines in their place instead', async () => {
+    const { container: c } = renderApp('timeline=ancient-classical&inc=100&at=-2000');
+    expandAll(c);
+    await waitFor(() => expect(hiddenButtons(c).length).toBeGreaterThan(0));
+    const drawn = lanes(c);
+    filtersCheckbox(); // opens the panel
+    const thinRadio = screen.getByRole('radio', { name: 'Show them as thin lines' });
+    act(() => fireEvent.click(thinRadio));
+    const thin = c.querySelectorAll('.tl-lane.thin');
+    expect(thin.length).toBeGreaterThan(0);
+    expect(lanes(c)).toBe(drawn + thin.length);
+    // a thin line holds nothing: no label, no events, hidden from screen readers
+    expect(thin[0].children.length).toBe(0);
+    expect(thin[0].getAttribute('aria-hidden')).toBe('true');
+    await waitFor(() => expect(window.location.search).toContain('rows=thin'));
   });
 
   it('is off elsewhere unless the link turns it on', async () => {

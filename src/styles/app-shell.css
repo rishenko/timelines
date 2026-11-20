@@ -203,7 +203,16 @@
   gap: 6px;
   align-items: center;
 }
-.filters-panel .check + p {
+.filters-panel .rows-look {
+  border: none;
+  margin: 4px 0 0;
+  padding: 0 0 0 22px;
+}
+.filters-panel .rows-look:disabled {
+  opacity: 0.6;
+}
+.filters-panel .check + p,
+.filters-panel .rows-look + p {
   margin: 6px 0 0;
 }
 .filters-panel .bulk button {

@@ -201,6 +201,12 @@
 .tl-lane.nested {
   background: color-mix(in srgb, var(--bg-2) 45%, var(--bg));
 }
+/* a row with nothing in view, drawn thin (Filters: show them as thin lines): a line in the row's colour */
+.tl-lane.thin {
+  background: color-mix(in srgb, var(--track-color) 60%, var(--bg));
+  border-top: 1px solid var(--bg);
+  border-bottom: 1px solid var(--bg);
+}
 /* lifespan of a track (civilization, period…): a soft band, faded where its dates are uncertain */
 .tl-span {
   position: absolute;

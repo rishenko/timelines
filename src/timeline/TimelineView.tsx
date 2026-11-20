@@ -39,6 +39,8 @@ interface Props {
   collapsed: Record<string, boolean>;
   /** Hide rows with nothing in or near the view (headers stay and count them). */
   hideOutOfView?: boolean;
+  /** ...drawing them as thin lines in their place instead of taking them out. */
+  thinRows?: boolean;
   /** After hiding settles on a new count: how many rows are hidden, and the year at the center. */
   onRowsHidden?: (count: number, centerYear: number) => void;
   /** The ruler's "N rows hidden" note was clicked: turn hiding off. */
@@ -106,11 +108,17 @@ export function TimelineView(props: Props) {
     if (focusedLane) ids.add(focusedLane);
     return ids;
   }, [allLanes, selectedId, eventsById, props.focus, focusedLane]);
+  const thinRows = !!props.thinRows;
   const shown = useMemo(() => {
-    if (!hideOutOfView || !rowWindow) return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0 };
+    if (!hideOutOfView || !rowWindow)
+      return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
     const active = activeLanes(allLanes, events, spans, phases, present, rowWindow);
-    return shownLanes(allLanes, trackById, active, keep, revealed);
-  }, [hideOutOfView, rowWindow, allLanes, events, spans, phases, present, trackById, keep, revealed]);
+    const r = shownLanes(allLanes, trackById, active, keep, revealed);
+    if (!thinRows) return { ...r, thin: new Set<string>() };
+    // thin lines: every lane stays, the ones that would be taken out are drawn thin
+    const drawn = new Set(r.lanes.map((l) => l.id));
+    return { ...r, lanes: allLanes, thin: new Set(allLanes.filter((l) => !drawn.has(l.id)).map((l) => l.id)) };
+  }, [hideOutOfView, thinRows, rowWindow, allLanes, events, spans, phases, present, trackById, keep, revealed]);
   const lanes = shown.lanes;
   // A top-level row with sub-rows is a group: its rows share its colour as a background tint.
   const groupColor = useMemo(() => {
@@ -147,8 +155,8 @@ export function TimelineView(props: Props) {
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx }),
-    [lanes, events, scale, present, expanded, headerPx],
+    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin }),
+    [lanes, events, scale, present, expanded, headerPx, shown.thin],
   );
   const marksByEvent = useMemo(() => {
     const m = new Map<string, Mark[]>();
@@ -227,7 +235,8 @@ export function TimelineView(props: Props) {
     const el = scrollerRef.current;
     if (!a || !el) return;
     const target = layout.lanes.find((l) => (laneIndex.get(l.lane.id) ?? -1) >= a.index) ?? layout.lanes.at(-1);
-    const same = target && laneIndex.get(target.lane.id) === a.index;
+    // (a row now drawn thin is shorter than the part of it that was scrolled past: it goes at the top too)
+    const same = target && laneIndex.get(target.lane.id) === a.index && target.height > -a.offset;
     if (target) el.scrollTop = Math.max(0, target.top - (same ? a.offset : Math.max(a.offset, 0)));
   }, [layout, laneIndex]);
   // say how many rows are hidden when the count changes (not on opening)
@@ -242,8 +251,10 @@ export function TimelineView(props: Props) {
     else announcedRef.current = null;
   }, [hideOutOfView, rowWindow, shown.hiddenCount]);
 
+  // thin lines hold nothing to reach with the keyboard
+  const navLanes = useMemo(() => layout.lanes.filter((l) => !shown.thin.has(l.lane.id)), [layout, shown.thin]);
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
-    lanes: layout.lanes,
+    lanes: navLanes,
     expanded,
     inactiveBelow: shown.inactiveBelow,
     selectedId,
@@ -346,7 +357,18 @@ export function TimelineView(props: Props) {
             inView={inView}
           />
 
-          {layout.lanes.map(({ lane, height, marks, top, overflow }) => (
+          {layout.lanes.map(({ lane, height, marks, top, overflow }) =>
+            shown.thin.has(lane.id) ? (
+              // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it)
+              <div
+                key={lane.id}
+                className={`tl-lane thin${lane.depth ? ' nested' : ''}${groupColor.has(lane.id) ? ' in-group' : ''}`}
+                style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
+                title={`${lane.track.name}: nothing in view`}
+                aria-hidden="true"
+                data-lane={lane.id}
+              />
+            ) : (
             // double-click and long-press add an event in edit mode; the edit bar's Add event button does the same
             // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <div
@@ -431,7 +453,8 @@ export function TimelineView(props: Props) {
                   ),
                 )}
             </div>
-          ))}
+            ),
+          )}
           {editMode && (
             <div className="tl-add-lane">
               <button style={{ width: labelW }} onClick={() => props.onAddTrack()}>
