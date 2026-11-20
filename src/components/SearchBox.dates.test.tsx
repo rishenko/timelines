@@ -23,7 +23,7 @@ afterEach(() => {
 });
 
 function results(query: string): string[] {
-  const { container } = renderApp('timeline=ancient-near-east');
+  const { container } = renderApp('timeline=ancient-classical');
   const input = container.querySelector<HTMLInputElement>('input[placeholder="Row, event or year…"]')!;
   act(() => fireEvent.change(input, { target: { value: query } }));
   return [...container.querySelectorAll('[role="option"]')].map((o) => o.textContent ?? '');

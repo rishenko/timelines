@@ -3,10 +3,10 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { act, cleanup, renderHook } from '@testing-library/react';
 import type { Dataset } from '../types.ts';
 import { useChronology } from './useChronology.ts';
-import ancient from '../../public/timelines/ancient-near-east.json';
+import combined from '../../public/timelines/ancient-classical.json';
 
 afterEach(cleanup);
-const data = ancient as unknown as Dataset;
+const data = combined as unknown as Dataset;
 
 describe('useChronology', () => {
   it('starts on each group default and lists only groups with a choice', () => {

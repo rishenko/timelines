@@ -1,6 +1,6 @@
 // Turns period rows into phases (Track.phases) on one row: a line where each period begins and its name along the
 // top of the row, so the periods stay named even when the row or its region is collapsed. Used by
-// scripts/additions/phases.ts (Ancient) and scripts/classical/phases.ts (Classical).
+// archive/scripts/additions/phases.ts and archive/scripts/classical/phases.ts (the timelines merged into ancient-classical).
 //
 // For each conversion:
 //   - Each period row becomes a phase with the row's name (or the name given) and its lifespan, date claims included,

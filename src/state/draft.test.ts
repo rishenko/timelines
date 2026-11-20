@@ -4,7 +4,7 @@ import { applyChanges, changesFromLegacyCopy, diffDataset, isEmpty } from './dra
 import { draftKey, draftToStore, loadInitial, restoreDraft, unreadableDraftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
 import example from '../../docs/examples/example-timeline.json';
-import ancient from '../../public/timelines/ancient-near-east.json';
+import combined from '../../public/timelines/ancient-classical.json';
 
 const base = () => structuredClone(example) as unknown as Dataset;
 const ev = (d: Dataset, uuid: string) => d.events.find((e) => e.uuid === uuid)!;
@@ -106,8 +106,8 @@ describe('restoring saved drafts', () => {
     expect(draftToStore(base(), base())).toBeNull();
   });
 
-  it('a one-event edit to the large ancient timeline stores a small draft', () => {
-    const pub = structuredClone(ancient) as unknown as Dataset;
+  it('a one-event edit to the large combined timeline stores a small draft', () => {
+    const pub = structuredClone(combined) as unknown as Dataset;
     const mine = structuredClone(pub);
     mine.events[0] = { ...mine.events[0], title: 'Edited', edited: true };
     const size = JSON.stringify(draftToStore(pub, mine)).length;

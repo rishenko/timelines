@@ -3,7 +3,8 @@
 // elsewhere; the link and the Filters panel switch it; headers count the hidden rows and can show them.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { act, cleanup, fireEvent, screen, waitFor } from '@testing-library/react';
-import { renderApp } from './test/app.tsx';
+import { renderApp, SITE_DATASETS } from './test/app.tsx';
+import type { Dataset } from './types.ts';
 
 afterEach(() => {
   cleanup();
@@ -106,13 +107,16 @@ describe('hide rows with nothing in view', () => {
   });
 
   it('is off elsewhere unless the link turns it on', async () => {
-    let c = renderApp('timeline=ancient-near-east&inc=100&at=-2000').container;
+    // the same timeline, without meta.hideRowsOutOfView
+    const plain = structuredClone(SITE_DATASETS[0]) as Dataset;
+    delete plain.meta.hideRowsOutOfView;
+    let c = renderApp('timeline=ancient-classical&inc=100&at=-2000', [plain]).container;
     expandAll(c);
     expect(hiddenButtons(c)).toEqual([]);
     expect(c.querySelector('.rows-hidden')).toBeNull();
     expect(filtersCheckbox().checked).toBe(false);
     cleanup();
-    c = renderApp('timeline=ancient-near-east&inc=100&at=-2000&rows=active').container;
+    c = renderApp('timeline=ancient-classical&inc=100&at=-2000&rows=active', [plain]).container;
     expandAll(c);
     await waitFor(() => expect(hiddenButtons(c).length).toBeGreaterThan(0));
   });

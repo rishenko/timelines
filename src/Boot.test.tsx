@@ -51,8 +51,8 @@ function server(files: Record<string, unknown | number>) {
 
 const siteFiles = () => ({
   'timelines/index.json': { timelines: SITE },
-  'timelines/ancient-near-east.json': SITE_DATASETS[0],
-  'timelines/classical.json': SITE_DATASETS[1],
+  'timelines/ancient-classical.json': SITE_DATASETS[0],
+  'timelines/second-site.json': SITE_DATASETS[1],
 });
 
 function open(query: string, fetchImpl: typeof fetch) {
@@ -63,34 +63,34 @@ function open(query: string, fetchImpl: typeof fetch) {
 describe('Boot', () => {
   it('opens the named site timeline, loading only that file', async () => {
     const s = server(siteFiles());
-    open('timeline=classical', s.fetchImpl);
-    expect(await screen.findByRole('region', { name: 'Timeline: The Classical World' })).toBeTruthy();
-    expect(s.asked).toEqual(['timelines/index.json', 'timelines/classical.json']);
+    open('timeline=second-site', s.fetchImpl);
+    expect(await screen.findByRole('region', { name: 'Timeline: A Second Timeline' })).toBeTruthy();
+    expect(s.asked).toEqual(['timelines/index.json', 'timelines/second-site.json']);
   });
 
   it("paints the timeline's own theme from the site's list before its file arrives, and remembers it", async () => {
     let release = () => {};
     const s = server(siteFiles());
     const slow = (async (url: string, init?: RequestInit) => {
-      if (url.endsWith('ancient-near-east.json')) await new Promise<void>((r) => (release = r));
+      if (url.endsWith('ancient-classical.json')) await new Promise<void>((r) => (release = r));
       return s.fetchImpl(url, init);
     }) as typeof fetch;
     const bg = () => document.documentElement.style.getPropertyValue('--bg');
     document.documentElement.style.removeProperty('--bg');
-    open('timeline=ancient-near-east', slow);
+    open('timeline=ancient-classical', slow);
     for (let i = 0; i < 50 && !bg(); i++) await new Promise((r) => setTimeout(r, 10));
     expect(SITE[0].defaultTheme).toBe('parchment');
     expect(bg()).toBe(PRESETS.parchment.colors.bg);
     expect(screen.queryByRole('region')).toBeNull(); // the file hasn't loaded yet
     release();
-    expect(await screen.findByRole('region', { name: 'Timeline: Ancient Civilizations' })).toBeTruthy();
-    expect(themeHint('ancient-near-east')).toBe('parchment');
+    expect(await screen.findByRole('region', { name: 'Timeline: Ancient and Classical World' })).toBeTruthy();
+    expect(themeHint('ancient-classical')).toBe('parchment');
   });
 
   it('opens the first site timeline for an unknown or missing id', async () => {
     const s = server(siteFiles());
     open('timeline=no-such-thing', s.fetchImpl);
-    expect(await screen.findByRole('region', { name: 'Timeline: Ancient Civilizations' })).toBeTruthy();
+    expect(await screen.findByRole('region', { name: 'Timeline: Ancient and Classical World' })).toBeTruthy();
   });
 
   it("opens one of the reader's own timelines at once, without loading any site timeline", async () => {
@@ -117,19 +117,19 @@ describe('Boot', () => {
 
   it('says so, with a Reload button, when the timeline file fails to load', async () => {
     const files = siteFiles();
-    files['timelines/classical.json'] = 500 as never;
+    files['timelines/second-site.json'] = 500 as never;
     const s = server(files);
-    open('timeline=classical', s.fetchImpl);
-    expect((await screen.findByRole('alert')).textContent).toMatch(/Couldn't load "The Classical World"\. The server answered 500/);
+    open('timeline=second-site', s.fetchImpl);
+    expect((await screen.findByRole('alert')).textContent).toMatch(/Couldn't load "A Second Timeline"\. The server answered 500/);
     expect(screen.getByRole('button', { name: 'Reload' })).toBeTruthy();
   });
 
   it('refuses a file that holds a different timeline than the list says', async () => {
     const files = siteFiles();
-    files['timelines/classical.json'] = SITE_DATASETS[0];
+    files['timelines/second-site.json'] = SITE_DATASETS[0];
     const s = server(files);
-    open('timeline=classical', s.fetchImpl);
-    expect((await screen.findByRole('alert')).textContent).toMatch(/holds the timeline "ancient-near-east"/);
+    open('timeline=second-site', s.fetchImpl);
+    expect((await screen.findByRole('alert')).textContent).toMatch(/holds the timeline "ancient-classical"/);
   });
 
   it('says so when the list itself is broken', async () => {

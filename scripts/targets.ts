@@ -1,7 +1,7 @@
 // Checks target size (WCAG 2.5.8, AA): every control is at least 24 × 24 px, or a 24 px circle centred on it touches
 // no other control (and no other small control's circle). Exempt, as WCAG allows: links inside a sentence, and
 // native controls the app doesn't restyle (checkboxes, radio buttons). Opens the same views and panels as reflow.ts.
-//   node scripts/targets.ts [--url http://localhost:4317/] [--timeline ancient-near-east] [--width 1280]... [--details]
+//   node scripts/targets.ts [--url http://localhost:4317/] [--timeline ancient-classical] [--width 1280]... [--details]
 //        [--browser chrome|msedge]
 // Defaults: widths 390 (a phone) and 1280. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1
 // if any control fails.
@@ -12,7 +12,7 @@ const args = process.argv.slice(2);
 const all = (flag: string) => args.flatMap((a, i) => (a === flag ? [args[i + 1]] : []));
 const one = (flag: string, def: string) => all(flag)[0] ?? def;
 const base = one('--url', 'http://localhost:4317/');
-const timeline = one('--timeline', 'ancient-near-east');
+const timeline = one('--timeline', 'ancient-classical');
 const widths = all('--width').length ? all('--width').map(Number) : [390, 1280];
 const details = args.includes('--details');
 

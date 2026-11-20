@@ -5,11 +5,10 @@
 //   npm run data -- format <timeline|all>        re-format the source file in the repo's compact style
 //   npm run data -- row-order <timeline> [args]  how close related rows sit (args as for scripts/row-order.ts)
 //   npm run data -- run-all <timeline> [--check] replay every content script in order, then `importance`
-//   npm run data -- combine [--check]            rebuild the combined Ancient + Classical timeline (rules: data-src/combined.json)
 //   npm run data -- index                        rewrite public/timelines/index.json from the files there
 //
-// <timeline> is a short name (ancient, classical) or an id (ancient-near-east). `npm run data:ancient`,
-// `importance:classical` and the like are aliases for the common cases.
+// <timeline> is a short name or an id (both ancient-classical for the bundled timeline). `npm run data:build`,
+// `npm run importance` and `npm run data:check` are aliases for the common cases.
 //
 // run-all rebuilds the timeline's additions from the scripts, in the order the table gives. Every script is an
 // upsert, so on an up-to-date source file it should change nothing. --check proves that: it replays everything,
@@ -22,12 +21,9 @@ import { readSource, writeSource } from './lib/source-format.ts';
 import { SOURCE_TIMELINES, sourceTimeline, type SourceTimeline } from './lib/timelines.ts';
 import { TIMELINES_DIR, writeTimelineIndex } from './lib/timeline-index.ts';
 import { applyRowLinks } from './lib/row-links.ts';
-import { combine, type CombineRules } from './lib/combine.ts';
-import type { Dataset } from '../src/types.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
-const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], or npm run data -- <combine|index>';
-const COMBINE_RULES = 'data-src/combined.json';
+const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], or npm run data -- index';
 
 function build(t: SourceTimeline) {
   const { dataset, errors } = compileSource(readSource(t.source));
@@ -35,29 +31,8 @@ function build(t: SourceTimeline) {
   writeFileSync(t.compiled, compiledText(dataset));
   const n = (k: string) => (dataset[k] as unknown[]).length;
   console.log(`${t.short}: wrote ${t.compiled} (${n('tracks')} tracks, ${n('events')} events)`);
-  writeCombined(false);
   index();
   return dataset;
-}
-
-/**
- * Rebuilds the combined Ancient + Classical timeline from the two compiled files. With `check`, writes nothing and
- * reports (exit code 1) when the shipped file is out of date.
- */
-function writeCombined(check: boolean) {
-  const rules = JSON.parse(readFileSync(COMBINE_RULES, 'utf8')) as CombineRules;
-  const read = (f: string) => JSON.parse(readFileSync(f, 'utf8')) as Dataset;
-  const { dataset, errors } = combine(read(rules.ancient), read(rules.classical), rules);
-  if (errors.length) throw new Error(`${COMBINE_RULES}:\n${errors.join('\n')}`);
-  const text = compiledText(dataset);
-  if (check) {
-    const same = readFileSync(rules.output, 'utf8').replace(/\r\n/g, '\n') === text;
-    console.log(`combine: ${rules.output} is ${same ? 'up to date' : 'out of date (run: npm run data -- combine)'}`);
-    if (!same) process.exitCode = 1;
-    return;
-  }
-  writeFileSync(rules.output, text);
-  console.log(`combine: wrote ${rules.output} (${dataset.tracks.length} tracks, ${dataset.events.length} events)`);
 }
 
 /** Rewrites the site's list of timelines from the files in public/timelines. */
@@ -143,10 +118,6 @@ try {
     }
     case 'run-all':
       runAll(sourceTimeline(name), rest.includes('--check'));
-      break;
-    case 'combine':
-      writeCombined(rest.includes('--check') || name === '--check');
-      if (!(rest.includes('--check') || name === '--check')) index();
       break;
     case 'index':
       index();

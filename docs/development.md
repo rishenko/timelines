@@ -65,41 +65,35 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 Stored years are astronomical (there is always a year 0), so subtraction gives durations in every calendar; only
 display depends on the calendar. See [data-format.md](data-format.md#years).
 
-## Building the included timelines
+## Building the included timeline
 
-The included timelines are written in `data-src/` with readable dates (`"start": "c. 1595 BCE"`) and compiled into
-`public/timelines/`. `scripts/lib/timelines.ts` lists each one with its files and scripts. `npm run data` takes a
-timeline's short name (`ancient`, `classical`) or `all`:
+The included timeline is written in `data-src/ancient-classical.json` with readable dates (`"start": "c. 1595 BCE"`)
+and compiled into `public/timelines/ancient-classical.json`. `scripts/lib/timelines.ts` lists it with its files and
+scripts. `npm run data` takes its short name (`ancient-classical`) or `all`:
 
 ```sh
-npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ and rewrite index.json (also npm run data:ancient, data:classical)
-npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and refresh docs/<short>-key-events.md
+npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ and rewrite index.json (also npm run data:build)
+npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and row links; refresh docs/<short>-key-events.md (also npm run importance)
 npm run data -- format <timeline|all>       # re-format a source file
 npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
-npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing
-npm run data -- combine [--check]           # rebuild the combined Ancient + Classical timeline (build does this too)
+npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing (also npm run data:check)
 npm run data -- index                       # rewrite public/timelines/index.json, the site's list, from the files there
 ```
 
-The combined timeline (`public/timelines/ancient-classical.json`) has no source file: `npm run data -- combine` builds
-it from the two compiled files and the rules in `data-src/combined.json` (renamed and moved rows, names, row order,
-and the events whose Classical rows are used). Fix data in the Ancient or Classical source, never in the combined file.
-The command stops on any new conflict between the two (a shared row under a different parent, a shared event worded
-differently) until a rule settles it, and a test fails if the shipped file is out of date.
-
-`scripts/additions/` (Ancient) and `scripts/classical/` hold one re-runnable script per pass, built on
-`scripts/lib/dataset-edit.ts` (insert or replace by id). They run in the order listed in `scripts/lib/timelines.ts`;
-add a new pass there. Both timelines reproduce exactly from their scripts (`run-all --check`), so any script can be
-edited and the whole timeline re-run; keep it that way. The Classical World's 500–330 BCE overlap events are copied
-from the Ancient source, so fix their wording there. `scripts/archive/` keeps one-off edits that have already been
-applied, as templates.
+The timeline began on 2026-11-20 as the merge of two earlier ones, Ancient Civilizations and The Classical World. Their
+source files, plans and content scripts, and the merge itself, are in `archive/` (see its README); they are not built
+or tested. Changes since then are re-runnable scripts in `scripts/ancient-classical/`, built on
+`scripts/lib/dataset-edit.ts` (insert or replace by id), run in the order listed in `scripts/lib/timelines.ts`; add a
+new one there. The scripts must reproduce the source file exactly (`npm run data:check`, also run in CI), so any of them
+can be edited and re-run; keep it that way. Content that no script defines lives only in the source file, and can be
+edited there directly. `scripts/archive/` keeps one-off edits that have already been applied, as templates.
 
 Other data tools:
 
 ```sh
 node scripts/build-dataset.ts <in.json> <out.json>   # compile any readable source file
-node scripts/reorder-regions.ts data-src/ancient-near-east.json [--parent near-east] egypt,levant,…
+node scripts/reorder-regions.ts data-src/ancient-classical.json [--parent near-east] egypt,levant,…
 node scripts/apply-text-fixes.ts <data-src file> fixes.json [--dry]   # reword titles or descriptions in the data and its scripts
 npm run audit:batches -- <data-src file> <out dir>   # group descriptions by cited page, for checking against the pages
 ```
@@ -135,7 +129,7 @@ AI-generated-text template). Rules used for the included timelines:
 ```sh
 npx vite preview --port 4317   # after npm run build; serves the app at /
 npm run shot -- <url> <out.png> [--width N --height N --close-legend --click "Expand all" --expand "Egypt" --keys "Tab|ArrowRight" --measure ".toolbar > *"]
-npm run contrast [-- --timeline classical --preset dark --state focus --sweep --details]   # text contrast per theme
+npm run contrast [-- --timeline ancient-classical --preset dark --state focus --sweep --details]   # text contrast per theme
 npm run reflow [-- --width 320 --width 640 --details]   # nothing runs off screen or scrolls sideways (WCAG 1.4.10)
 npm run targets [-- --width 390 --details]   # every control at least 24 × 24 px, or spaced apart (WCAG 2.5.8)
 npm run check:live -- --expect "some text"   # after deploying: wait for the live site and check it loads

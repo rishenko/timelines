@@ -1,6 +1,6 @@
 // Proposes each row's Wikipedia article and Wikidata id, and records decisions in the plan.
 //
-//   node scripts/row-links.ts <timeline> [--decide <file.json>] [--accept-same]     <timeline>: ancient, classical
+//   node scripts/row-links.ts <timeline> [--decide <file.json>] [--accept-same]     <timeline>: ancient-classical
 //
 // For every row not yet decided in data-src/<short>-row-links.json (the plan; rows listed there are skipped), it
 // asks the Wikipedia API for:

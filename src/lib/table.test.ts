@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { datesInWords, eventsCsv, fullSections, sectionRows, spanInWords, tableSections } from './table.ts';
 import { defaultSelection, resolveEvents, resolveSpan } from './chronology.ts';
-import ancient from '../../public/timelines/ancient-near-east.json';
+import combined from '../../public/timelines/ancient-classical.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 
-const anc = ancient as Dataset;
+const anc = combined as Dataset;
 const resolved = resolveEvents(anc, defaultSelection(anc));
 const byUuid = new Map(resolved.map((e) => [e.uuid, e]));
 

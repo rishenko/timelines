@@ -4,10 +4,11 @@
 
 ### Data review
 
-- **Review the ancient data** against the books: start with `docs/ancient-sources.md`.
-- **Review the key events** in `docs/ancient-key-events.md` (180 key, 43 minor) and `docs/classical-key-events.md`
-  (110 key, 56 minor), all proposed by Claude. Change `data-src/<timeline>-importance.json` and run
-  `npm run importance:ancient` or `npm run importance:classical`.
+- **Review the data** against the books: start with `docs/ancient-sources.md`.
+- **Review the key events** in `docs/ancient-classical-key-events.md` (270 key, 94 minor), all proposed by Claude.
+  Change `data-src/ancient-classical-importance.json` and run `npm run importance`.
+- **Aegean dating label:** the Aegean group carries the Aegean chronology, so its Hellenistic rows (Macedon,
+  Pergamon) say "Dated by the High (radiocarbon) Aegean chronology" too. It likely belongs only on the Bronze Age rows.
 - **Classical World description audit: check the judgment calls** in `docs/classical-sources.md` ("Description audit
   (18 November 2026)"): pages that disagree with themselves, and optional softenings. (*Polynesians* is settled:
   translation notices are fine and are mentioned in the event's description.)
@@ -23,7 +24,7 @@
   Khartoum Mesolithic and Ñanchóc (pages missing), the South Indian Neolithic (only Sanganakallu has a page with
   dates), Neolithic island Southeast Asia, and Australia beyond Budj Bim.
 - **Ancient, thin or missing regions:** the US Southwest (its pages were 404), the Kintampo complex, southern African
-  hunter-gatherers, Yap, New Guinea. For a new region: one `scripts/additions/<region>.ts`, key events tagged as they
+  hunter-gatherers, Yap, New Guinea. For a new region: one `scripts/ancient-classical/<region>.ts`, key events tagged as they
   go in, placed next to its partners (the proximity test), and considered for opening collapsed.
 - **Ancient, other gaps:** the Upanishads (dates read only in summary), more Mitanni rulers, and the many Levant,
   Assyria and Iran values that exist only in page summaries.
@@ -54,12 +55,12 @@ Let several people contribute to one timeline instead of trading JSON files. Que
 accounts, storage (hosted database vs. git-backed data with pull requests), conflicts and review, keeping community
 additions separate from the published data, moderation and consent.
 
-### The Classical World beyond 650 CE
+### Beyond 650 CE
 
 Extending the end date affects every region; existing regions would need content up to the new end. Candidates from
 the original plan that fall after 650: Srivijaya, the Sailendra and Borobudur, Majapahit, Angkor, Ghana, Mali, Great
 Zimbabwe, the Mississippians, the Mongols, and the settlement of Hawaiʻi, Aotearoa/New Zealand and Rapa Nui. A
-separate later timeline, linked by `meta.continues` as Ancient and Classical are, would keep each one readable.
+separate later timeline, linked by `meta.continues`, would keep each one readable.
 
 ## Done
 
@@ -70,5 +71,6 @@ separate later timeline, linked by `meta.continues` as Ancient and Classical are
 - Accessibility parts a–c (foundations, table view, keyboard control) and the first items of part d; see
   [feature-audit.md](feature-audit.md), item 23.
 - Ancient Civilizations (c. 9000–330 BCE) and The Classical World (c. 500 BCE – 650 CE), each with a description
-  audit, and tooling that rebuilds both exactly from their scripts (`npm run data -- run-all <timeline> --check`).
+  audit, merged on 2026-11-20 into one timeline, Ancient and Classical World (the originals are in `archive/`), whose
+  scripts reproduce its source file exactly (`npm run data:check`).
 - Hosting on GitHub Pages (`npm run deploy`).

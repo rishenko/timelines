@@ -108,3 +108,10 @@ export function plainTimeline(): Dataset {
     ],
   };
 }
+
+/** A second timeline for the test site (src/test/app.tsx), so tests can switch timelines and clash with ids. */
+export function secondSiteTimeline(): Dataset {
+  const d = plainTimeline();
+  d.meta = { ...d.meta, id: 'second-site', title: 'A Second Timeline' };
+  return d;
+}

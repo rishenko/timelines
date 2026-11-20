@@ -3,7 +3,7 @@
 // can be edited and run again. Placement (before/after) applies only when a row is first added.
 //
 //   import { open } from './lib/dataset-edit.ts';
-//   const ed = open('data-src/ancient-near-east.json');
+//   const ed = open('data-src/ancient-classical.json');
 //   ed.wikipedia('wp-stonehenge', 'Stonehenge', 'Stonehenge');
 //   ed.track({ id: 'europe', name: 'Europe', color: '#…' }, { before: 'aegean' });
 //   ed.event({ uuid: 'stonehenge', title: '…', start: 'c. 3100 BCE', tracks: ['megaliths'], descr: '…',
@@ -61,7 +61,7 @@ export function open(file: string, accessed = new Date().toISOString().slice(0, 
     track(t: Json, where: { before?: string; after?: string } = {}) {
       const i = trackIdx(t.id);
       if (i >= 0) {
-        // keep a parent set by a later script (scripts/additions/groups.ts nests regions into groups)
+        // keep a parent set by a later script (as archive/scripts/additions/groups.ts did, nesting regions into groups)
         if (t.parent === undefined && d.tracks[i].parent !== undefined) t = { ...t, parent: d.tracks[i].parent };
         d.tracks[i] = t;
         return;

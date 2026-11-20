@@ -1,5 +1,5 @@
 // Re-formats a timeline source file in place, in the repo's compact style.
-//   node scripts/format-source.ts data-src/ancient-near-east.json
+//   node scripts/format-source.ts data-src/ancient-classical.json
 import { readSource, writeSource } from './lib/source-format.ts';
 
 const files = process.argv.slice(2);

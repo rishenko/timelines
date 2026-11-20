@@ -2,8 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { addToLibrary, fetchTimeline, isSafeUrl, loadLibrary, normalizeUrl, removeFromLibrary } from './library.ts';
 import { draftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
-import ancient from '../../public/timelines/ancient-near-east.json';
-import classical from '../../public/timelines/classical.json';
+import combined from '../../public/timelines/ancient-classical.json';
 import type { Dataset } from '../types.ts';
 
 function memoryStore() {
@@ -17,7 +16,7 @@ function memoryStore() {
 }
 
 const mine = (id: string, title = id): Dataset => {
-  const d = structuredClone(ancient as unknown as Dataset);
+  const d = structuredClone(combined as unknown as Dataset);
   d.meta = { ...d.meta, id, title };
   return d;
 };
@@ -43,8 +42,8 @@ describe('library', () => {
 
   it('renames a timeline whose id clashes with a bundled one', () => {
     const store = memoryStore();
-    const e = addToLibrary(mine('classical'), { store, reservedIds: ['classical', 'ancient-near-east'] });
-    expect(e.dataset.meta.id).toBe('classical-2');
+    const e = addToLibrary(mine('ancient-classical'), { store, reservedIds: ['ancient-classical', 'second-site'] });
+    expect(e.dataset.meta.id).toBe('ancient-classical-2');
     expect(validateDataset(e.dataset)).toEqual([]);
   });
 
@@ -73,8 +72,8 @@ describe('fetchTimeline', () => {
   const ok = (body: string) => (async () => new Response(body, { status: 200 })) as unknown as typeof fetch;
 
   it('loads and validates a timeline', async () => {
-    const ds = await fetchTimeline('https://x.example/t.json', ok(JSON.stringify(classical)));
-    expect(ds.meta.id).toBe('classical');
+    const ds = await fetchTimeline('https://x.example/t.json', ok(JSON.stringify(combined)));
+    expect(ds.meta.id).toBe('ancient-classical');
   });
 
   it('explains failures', async () => {

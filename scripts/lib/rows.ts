@@ -1,6 +1,6 @@
 // Row (track) helpers for the data scripts: putting rows in a new order and choosing which open collapsed.
 // Rows are listed depth-first in a source file: each row, then its sub-rows. Used by scripts/reorder-regions.ts,
-// scripts/additions/groups.ts and scripts/classical/collapsed.ts.
+// archive/scripts/additions/groups.ts and archive/scripts/classical/collapsed.ts.
 
 export type Row = { id: string; parent?: string };
 

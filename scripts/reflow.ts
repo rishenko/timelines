@@ -2,7 +2,7 @@
 // content that runs past the screen's edges or is cut off by a box that hides its overflow. 640 px is 200% zoom on a
 // 1280 px screen; 320 px is the reflow test's width. The chart and data tables may scroll in two directions (WCAG
 // exempts content that needs a two-dimensional layout), so they are skipped; a box that scrolls sideways is reported.
-//   node scripts/reflow.ts [--url http://localhost:4317/] [--timeline ancient-near-east] [--width 320]... [--details]
+//   node scripts/reflow.ts [--url http://localhost:4317/] [--timeline ancient-classical] [--width 320]... [--details]
 //        [--browser chrome|msedge]
 // Defaults: widths 320 and 640. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1 if anything
 // is reported.
@@ -13,7 +13,7 @@ const args = process.argv.slice(2);
 const all = (flag: string) => args.flatMap((a, i) => (a === flag ? [args[i + 1]] : []));
 const one = (flag: string, def: string) => all(flag)[0] ?? def;
 const base = one('--url', 'http://localhost:4317/');
-const timeline = one('--timeline', 'ancient-near-east');
+const timeline = one('--timeline', 'ancient-classical');
 const widths = all('--width').length ? all('--width').map(Number) : [320, 640];
 const details = args.includes('--details');
 

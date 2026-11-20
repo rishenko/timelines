@@ -6,14 +6,14 @@ give it your own timeline data.
 
 **Live site:** https://rishenko.github.io/timelines/
 
-## Included timelines
+## Included timeline
 
-- **Ancient Civilizations** (opens by default): from the first farmers to the Iron Age, c. 9000–330 BCE, across Europe,
-  Africa, the Near East, Asia, Oceania and the Americas. 562 events.
-- **The Classical World**: from the Persian Wars to the rise of Islam, c. 500 BCE – 650 CE. 371 events. It picks up
-  where Ancient Civilizations ends, and each links to the other.
+**Ancient and Classical World**: from the first farmers to the rise of Islam, c. 9000 BCE – 650 CE, across Europe,
+Africa, the Near East, Asia, Oceania and the Americas. 883 events on 368 rows. It began as two timelines, Ancient
+Civilizations (c. 9000–330 BCE) and The Classical World (c. 500 BCE – 650 CE), merged into one in November 2026; they
+are kept in [archive/](archive/README.md).
 
-Every date in both cites the Wikipedia article it comes from. See [Data sources and AI use](#data-sources-and-ai-use).
+Every date cites the Wikipedia article it comes from. See [Data sources and AI use](#data-sources-and-ai-use).
 
 ## Quick start
 
@@ -48,7 +48,7 @@ There are four ways to get a timeline into the app:
    file there in `public/timelines/index.json` (the next build copies both into `dist/timelines/`). On a site
    that is already built, copy the file into its `timelines/` folder and add an entry to `timelines/index.json` by
    hand: `{ "id": "<the file's meta.id>", "title": "…", "file": "my-timeline.json" }`. The first entry opens by
-   default; remove the included timelines by deleting their files and entries. A site with no timelines at all
+   default; remove the included timeline by deleting its file and entry. A site with no timelines at all
    opens on a page that asks readers to add one. See
    [the site's list of timelines](docs/data-format.md#the-sites-list-of-timelines).
 2. **Link to it.** Host the file anywhere that lets other sites read it (GitHub raw files, GitHub Pages and gists
@@ -92,7 +92,7 @@ npm run lint     # oxlint
 npm run build    # type-check and build
 ```
 
-The code map, the scripts that build the included timelines, and the screenshot and contrast tools are described in
+The code map, the scripts that build the included timeline, and the screenshot and contrast tools are described in
 [docs/development.md](docs/development.md).
 
 ## Documentation
@@ -102,8 +102,10 @@ The code map, the scripts that build the included timelines, and the screenshot 
 | [docs/data-format.md](docs/data-format.md) | The timeline file format, the rules it must pass, and how to share a timeline |
 | [docs/examples/example-timeline.json](docs/examples/example-timeline.json) | A complete example to copy |
 | [docs/development.md](docs/development.md) | Code map, commands and data tooling |
-| [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where the included timelines' dates come from, and the judgment calls |
-| [docs/ancient-key-events.md](docs/ancient-key-events.md), [docs/classical-key-events.md](docs/classical-key-events.md) | Which events are marked key or minor |
+| [docs/ancient-classical-sources.md](docs/ancient-classical-sources.md) | How the included timeline was made from two, and the changes since |
+| [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where its dates come from, and the judgment calls, as researched for the two original timelines |
+| [docs/ancient-classical-key-events.md](docs/ancient-classical-key-events.md) | Which events are marked key or minor |
+| [archive/README.md](archive/README.md) | The two original timelines and the scripts that built them |
 | [docs/BACKLOG.md](docs/BACKLOG.md) | Planned work |
 | [docs/feature-audit.md](docs/feature-audit.md) | Features under consideration, including the accessibility plan |
 
@@ -112,13 +114,13 @@ The code map, the scripts that build the included timelines, and the screenshot 
 The code, tests and documentation were written with the help of an AI coding assistant
 ([Claude Code](https://claude.com/claude-code), Anthropic), directed and reviewed by the author.
 
-The two included timelines were compiled with AI assistance. The assistant read the cited English Wikipedia
+The included timeline was compiled with AI assistance. The assistant read the cited English Wikipedia
 articles (17–18 November 2026) and transcribed their dates; the descriptions are its own summaries. No date was
 invented: every year and margin comes from a cited page, and where pages disagree, every value is kept. Books and
-papers appear only where Wikipedia cites them, tagged **Cited via Wikipedia (not checked)**. Neither timeline has
+papers appear only where Wikipedia cites them, tagged **Cited via Wikipedia (not checked)**. It has not
 been reviewed by a specialist yet.
 
 ## License
 
-GPL v3. Wikipedia text is CC BY-SA; the included timelines quote only dates and short phrases, and link each
+GPL v3. Wikipedia text is CC BY-SA; the included timeline quotes only dates and short phrases, and link each
 article. By [rishenko](https://github.com/rishenko).

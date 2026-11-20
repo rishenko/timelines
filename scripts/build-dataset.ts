@@ -1,8 +1,8 @@
 // Compiles a hand-written timeline (data-src/<id>.json) into the app's format (public/timelines/<id>.json).
 // The conversion rules are in scripts/lib/compile.ts. For the bundled timelines use the short form:
-//   npm run data -- build ancient        (or npm run data:ancient)
+//   npm run data -- build ancient-classical   (or npm run data:build)
 // Any pair of files:
-//   node scripts/build-dataset.ts data-src/ancient-near-east.json public/timelines/ancient-near-east.json
+//   node scripts/build-dataset.ts data-src/ancient-classical.json public/timelines/ancient-classical.json
 import { readFileSync, writeFileSync } from 'node:fs';
 import { compileSource, compiledText } from './lib/compile.ts';
 

@@ -1,5 +1,9 @@
 # Ancient Civilizations: sources, chronologies and judgment calls
 
+> **Since 2026-11-20** Ancient Civilizations is part of the combined timeline, Ancient and Classical World
+> (`data-src/ancient-classical.json`; see `docs/ancient-classical-sources.md`). This note records how its data was
+> researched; the files, scripts and commands it names are now in `archive/`.
+
 Source file: `data-src/ancient-near-east.json` (compiled with `npm run data:ancient`).
 Research: English Wikipedia, read 17 November 2026, by AI fetch agents that reported dates as written
 on each page. **Nothing here has been checked against the books yet.**

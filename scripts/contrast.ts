@@ -10,7 +10,7 @@
 // For each timeline and theme preset it checks two states:
 //   rest     the timeline with every row expanded;
 //   focus    the same with a key event selected, so unrelated events are dimmed.
-//   node scripts/contrast.ts [--url http://localhost:4317/] [--timeline ancient-near-east|classical]...
+//   node scripts/contrast.ts [--url http://localhost:4317/] [--timeline ancient-classical]...
 //        [--preset parchment|dark|light|contrast]... [--state rest|focus]... [--width 1700] [--height 1000]
 //        [--zoom 100] [--sweep] [--details] [--browser chrome|msedge]
 // Defaults: every bundled timeline, every preset, both states. --details lists each failing element; without it,
@@ -31,7 +31,7 @@ const args = process.argv.slice(2);
 const all = (flag: string) => args.flatMap((a, i) => (a === flag ? [args[i + 1]] : []));
 const one = (flag: string, def: string) => all(flag)[0] ?? def;
 const base = one('--url', 'http://localhost:4317/');
-const timelines = all('--timeline').length ? all('--timeline') : ['ancient-near-east', 'classical'];
+const timelines = all('--timeline').length ? all('--timeline') : ['ancient-classical'];
 const presets = all('--preset').length ? all('--preset') : Object.keys(PRESETS);
 const states = all('--state').length ? all('--state') : ['rest', 'focus'];
 const zoom = all('--zoom')[0];
