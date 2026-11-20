@@ -41,6 +41,8 @@ interface Props {
   hideOutOfView?: boolean;
   /** After hiding settles on a new count: how many rows are hidden, and the year at the center. */
   onRowsHidden?: (count: number, centerYear: number) => void;
+  /** The ruler's "N rows hidden" note was clicked: turn hiding off. */
+  onShowAllRows?: () => void;
   onToggleCollapsed: (trackId: string) => void;
   increment: number;
   compress: boolean;
@@ -312,6 +314,8 @@ export function TimelineView(props: Props) {
           width={canvasW}
           increment={increment}
           keyEventsOnly={props.keyEventsOnly}
+          hiddenRows={hideOutOfView && rowWindow ? shown.hiddenCount : undefined}
+          onShowAllRows={props.onShowAllRows}
           ticks={visibleTicks}
           gapStarts={gapStarts}
           gaps={gaps}

@@ -223,6 +223,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
     if (on) panels.show('customize', false);
   };
   const editTrack = (id: string) => setEditing({ kind: 'track', track: data.tracks.find((t) => t.id === id) ?? null });
+  const switchHideOutOfView = (on: boolean) => {
+    setHideOutOfView(on);
+    setAnnouncement(on ? 'Rows with nothing in view are hidden' : 'All rows shown');
+  };
   const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId));
 
   return (
@@ -398,10 +402,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           toggleTag={toggleTag}
           setAllTracks={setAllTracks}
           hideOutOfView={hideOutOfView}
-          onHideOutOfView={(on) => {
-            setHideOutOfView(on);
-            setAnnouncement(on ? 'Rows with nothing in view are hidden' : 'All rows shown');
-          }}
+          onHideOutOfView={switchHideOutOfView}
           editMode={editMode}
           onEditTrack={editTrack}
           onEditSource={(key) => setEditing({ kind: 'source', key })}
@@ -434,6 +435,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             visibleTracks={filters.tracks}
             collapsed={collapsed}
             hideOutOfView={hideOutOfView && !editMode}
+            onShowAllRows={() => switchHideOutOfView(false)}
             onRowsHidden={(n, year) => setAnnouncement(n ? `${n} rows with nothing near ${formatYear(year, cal)} hidden` : 'Every row has something in view')}
             onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}
             increment={increment}

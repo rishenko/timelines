@@ -43,6 +43,25 @@
 .tl-corner small {
   color: var(--muted);
 }
+.tl-corner .corner-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+/* "N rows hidden": hiding rows with nothing in view is on (a reminder; clicking turns it off) */
+.tl-corner .rows-hidden {
+  min-height: 20px;
+  padding: 0 6px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: none;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
 .tl-corner small.key-only {
   color: var(--accent);
   font-weight: 600;

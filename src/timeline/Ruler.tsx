@@ -19,6 +19,9 @@ interface Props {
   width: number;
   increment: number;
   keyEventsOnly?: boolean;
+  /** Rows hidden for having nothing in view, while that option is on (undefined: off); the note turns it off. */
+  hiddenRows?: number;
+  onShowAllRows?: () => void;
   /** The ticks near the viewport (only those are drawn). */
   ticks: number[];
   /** Ticks where a compressed gap starts: their label would sit on the gap's break, so it is left out. */
@@ -30,11 +33,24 @@ interface Props {
 }
 
 /** The sticky year ruler: the corner over the row labels, ticks, compressed gaps and links to neighbouring timelines. */
-export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, ticks, gapStarts, gaps, era, edgeLinks }: Props) {
+export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hiddenRows, onShowAllRows, ticks, gapStarts, gaps, era, edgeLinks }: Props) {
   return (
     <div className="tl-ruler" style={{ width }}>
       <div className="tl-corner" style={{ width: labelW }}>
-        <span>Year</span>
+        <div className="corner-head">
+          <span>Year</span>
+          {/* a reminder that rows are being hidden (Filters), so it isn't forgotten; clicking shows every row */}
+          {hiddenRows !== undefined && (
+            <button
+              className="rows-hidden"
+              onClick={onShowAllRows}
+              title="Rows with nothing in view are hidden (Filters). Click to show every row."
+              aria-label={`${hiddenRows === 0 ? 'No rows' : hiddenRows === 1 ? '1 row' : `${hiddenRows} rows`} with nothing in view hidden. Show every row`}
+            >
+              {hiddenRows === 0 ? 'No rows hidden' : `${hiddenRows} ${hiddenRows === 1 ? 'row' : 'rows'} hidden`}
+            </button>
+          )}
+        </div>
         <small>{increment} yr / tick</small>
         {keyEventsOnly && (
           <small className="key-only" title="At the widest zoom only key events are drawn; zoom in to see them all">
