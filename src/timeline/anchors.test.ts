@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { anchorsFor } from './anchors.ts';
 import { validateDataset } from '../data/validate.ts';
-import classical from '../../public/timelines/classical.json';
+import combined from '../../public/timelines/ancient-classical.json';
 import type { ResolvedEvent } from '../lib/chronology.ts';
 import type { Dataset } from '../types.ts';
 
@@ -14,10 +14,10 @@ describe('a timeline range keeps the ruler to its period', () => {
     expect(anchorsFor([ev(-1100)], 2000)).toEqual([-1100]);
   });
 
-  it('the Classical World states its range, and reversed ranges are rejected', () => {
-    const d = structuredClone(classical) as unknown as Dataset;
-    expect(d.meta.range).toEqual({ start: -499, end: 650 });
-    d.meta.range = { start: 650, end: -499 };
+  it('the bundled timeline states its range, and reversed ranges are rejected', () => {
+    const d = structuredClone(combined) as unknown as Dataset;
+    expect(d.meta.range).toEqual({ start: -10049, end: 650 });
+    d.meta.range = { start: 650, end: -10049 };
     expect(validateDataset(d).join()).toContain('meta.range');
   });
 });

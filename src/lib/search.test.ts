@@ -2,8 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Dataset, Track } from '../types.ts';
 import { buildIndex, normalize, search, trackRange, type EventLike } from './search.ts';
 import { ancestorIds } from './tracks.ts';
-import ancient from '../../public/timelines/ancient-near-east.json';
-import classical from '../../public/timelines/classical.json';
+import combined from '../../public/timelines/ancient-classical.json';
 
 const tracks: Track[] = [
   { id: 'ne', name: 'Near East', color: '#000' },
@@ -90,7 +89,7 @@ describe('ancestorIds and trackRange', () => {
 });
 
 describe('on the bundled timelines', () => {
-  for (const ds of [ancient, classical] as unknown as Dataset[]) {
+  for (const ds of [combined] as unknown as Dataset[]) {
     const idx = buildIndex(ds.tracks, ds.events);
     it(`${ds.meta.id}: every row finds itself first by its own name`, () => {
       // rows sharing a name with another row are allowed to tie

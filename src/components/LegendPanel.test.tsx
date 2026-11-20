@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
 import { LegendPanel } from './LegendPanel.tsx';
-import ancient from '../../public/timelines/ancient-near-east.json';
+import combined from '../../public/timelines/ancient-classical.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 
@@ -12,8 +12,8 @@ const titles = (ds: Dataset) =>
   );
 
 describe('LegendPanel', () => {
-  it('explains everything the ancient timeline uses', () => {
-    const t = titles(ancient as unknown as Dataset);
+  it('explains everything the combined timeline uses', () => {
+    const t = titles(combined as unknown as Dataset);
     for (const want of ['Lifespan', 'Uncertain start and end', 'Dating systems', 'Conquers', 'Succeeds', 'Era line', 'Key event'])
       expect(t).toContain(want);
   });

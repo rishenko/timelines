@@ -6364,6 +6364,10 @@
       "name": "Zhangzhung",
       "color": "#7a5a7a",
       "parent": "tibet",
+      "url": "https://en.wikipedia.org/wiki/Zhangzhung",
+      "ids": {
+        "wikidata": "Q1358851"
+      },
       "span": {
         "start": -499,
         "end": 645,
@@ -6384,10 +6388,6 @@
             }
           }
         ]
-      },
-      "url": "https://en.wikipedia.org/wiki/Zhangzhung",
-      "ids": {
-        "wikidata": "Q1358851"
       }
     },
     {

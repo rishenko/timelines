@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { tourSteps } from './tour.ts';
-import ancient from '../../public/timelines/ancient-near-east.json';
+import combined from '../../public/timelines/ancient-classical.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
 
 describe('guided tour', () => {
   it('covers the dating systems and nested rows of a timeline that has them', () => {
-    const steps = tourSteps(ancient as unknown as Dataset, { hasDating: true, hasSubRows: true });
-    expect(steps[0].title).toBe('Welcome to Ancient Civilizations');
+    const steps = tourSteps(combined as unknown as Dataset, { hasDating: true, hasSubRows: true });
+    expect(steps[0].title).toBe('Welcome to Ancient and Classical World');
     expect(steps[0].target).toBeUndefined();
     expect(steps.map((s) => s.title)).toEqual(expect.arrayContaining(['Dating', 'Open and fold rows', 'Search']));
   });
@@ -20,7 +20,7 @@ describe('guided tour', () => {
   });
 
   it('shows the chart first, then the toolbar from left to right', () => {
-    const titles = tourSteps(ancient as unknown as Dataset, { hasDating: true, hasSubRows: true }).map((s) => s.title);
+    const titles = tourSteps(combined as unknown as Dataset, { hasDating: true, hasSubRows: true }).map((s) => s.title);
     expect(titles.slice(1)).toEqual([
       'Rows',
       'Events',
@@ -38,7 +38,7 @@ describe('guided tour', () => {
   });
 
   it('explains lifespan bands, right after Events, only when rows have them', () => {
-    const titles = tourSteps(ancient as unknown as Dataset, { hasDating: true, hasSubRows: true }).map((s) => s.title);
+    const titles = tourSteps(combined as unknown as Dataset, { hasDating: true, hasSubRows: true }).map((s) => s.title);
     expect(titles.indexOf('Lifespans')).toBe(titles.indexOf('Events') + 1);
     const plain = plainTimeline();
     const noSpans = { ...plain, tracks: plain.tracks.map(({ span: _span, ...t }) => t) } as Dataset;

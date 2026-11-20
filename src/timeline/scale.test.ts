@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { buildScale } from './scale.ts';
 
 const INCREMENTS = [1, 10, 50, 100];
-import data from '../../public/timelines/classical.json';
+import data from '../../public/timelines/ancient-classical.json';
 import type { Dataset } from '../types.ts';
 import { anchorsFor } from './anchors.ts';
 import { presentYear } from '../lib/years.ts';

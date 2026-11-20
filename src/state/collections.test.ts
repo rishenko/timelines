@@ -55,19 +55,19 @@ describe('saved lists', () => {
   });
 
   it("removing a list deletes the reader's edits to its timelines, but not to timelines listed elsewhere", () => {
-    saveCollection(parseCollection(list('a', 'b', 'classical'), URL_));
-    for (const id of ['a', 'b', 'classical']) localStorage.setItem(draftKey(id), '{}');
+    saveCollection(parseCollection(list('a', 'b', 'ancient-classical'), URL_));
+    for (const id of ['a', 'b', 'ancient-classical']) localStorage.setItem(draftKey(id), '{}');
     saveCollection(parseCollection(list('b'), 'https://other.example/list.json'));
-    removeCollection(URL_, ['classical']);
+    removeCollection(URL_, ['ancient-classical']);
     expect(loadCollections().map((c) => c.url)).toEqual(['https://other.example/list.json']);
-    expect(['a', 'b', 'classical'].map((id) => localStorage.getItem(draftKey(id)) !== null)).toEqual([false, true, true]);
+    expect(['a', 'b', 'ancient-classical'].map((id) => localStorage.getItem(draftKey(id)) !== null)).toEqual([false, true, true]);
   });
 });
 
 describe('listTimelines with shared lists', () => {
   it("lists the site's, then the lists', then the reader's own; taken ids are left out of lists", () => {
     addToLibrary(plainTimeline());
-    saveCollection(parseCollection(list('a', 'classical', plainTimeline().meta.id), URL_));
+    saveCollection(parseCollection(list('a', 'ancient-classical', plainTimeline().meta.id), URL_));
     saveCollection(parseCollection(list('a', 'z'), 'https://other.example/list.json'));
     const got = listTimelines(SITE).map((t) => `${t.collection ? collectionName(t.collection) + ':' : t.library ? 'own:' : ''}${t.summary.id}`);
     expect(got).toEqual([...SITE.map((t) => t.id), 'Reading club:a', 'Reading club:z', `own:${plainTimeline().meta.id}`]);
@@ -100,7 +100,7 @@ describe('addFromLink', () => {
   });
 
   it("refuses, and doesn't keep, a new list whose timelines are all here already", async () => {
-    await expect(addFromLink(URL_, SITE, serve(list('classical')))).rejects.toThrow(/already here/);
+    await expect(addFromLink(URL_, SITE, serve(list('ancient-classical')))).rejects.toThrow(/already here/);
     expect(loadCollections()).toEqual([]);
   });
 

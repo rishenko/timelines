@@ -32,15 +32,12 @@ jobs:
       - run: npm test
       - run: npm run build
 
-      # The content scripts must reproduce each source file exactly
-      - run: npm run data -- run-all ancient --check
-      - run: npm run data -- run-all classical --check
+      # The content scripts must reproduce the source file exactly
+      - run: npm run data:check
 
-      # The included timelines, their list (index.json) and key-event lists must be what data-src/ compiles to
-      - name: Compiled timelines match data-src/
+      # The included timeline, its list (index.json) and key-event list must be what data-src/ compiles to
+      - name: Compiled timeline matches data-src/
         run: |
-          for t in ancient classical; do
-            npm run data -- build "$t"
-            npm run data -- importance "$t"
-          done
+          npm run data:build
+          npm run importance
           git diff --exit-code -- public/timelines docs

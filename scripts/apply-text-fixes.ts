@@ -39,12 +39,11 @@ for (const fx of fixes) {
   if (count(text, fx.from) !== 1) { problems.push(`${fx.uuid}.${field}: "${fx.from}" found ${count(text, fx.from)}×`); continue; }
   ev[field] = text.replace(fx.from, fx.to).replace(/ {2,}/g, ' ').replace(/ ([,.;])/g, '$1').trim();
   ok++;
-  // The defining script: the block from `uuid: '<id>'` to the next `uuid:`.
-  let defined = false;
+  // The defining script, if any: the block from `uuid: '<id>'` to the next `uuid:`. An event no script defines
+  // lives only in the source file, so the source edit is the whole fix.
   for (const [p, src] of scripts) {
     const at = src.indexOf(`uuid: '${fx.uuid}'`);
     if (at < 0) continue;
-    defined = true;
     const next = src.indexOf('uuid:', at + 6);
     const end = next < 0 ? src.length : next;
     const block = src.slice(at, end);
@@ -53,10 +52,6 @@ for (const fx of fixes) {
     if (count(block, from) !== 1) { problems.push(`${fx.uuid}: not found once in ${p}`); continue; }
     scripts.set(p, src.slice(0, at) + block.replace(from, to) + src.slice(end));
   }
-  // No script spells it out: it came from the base data, or was copied (the Classical World's 500–330 BCE overlap
-  // events are copied from the ancient source by scripts/classical/skeleton.ts). A re-run would undo the fix there.
-  if (!defined)
-    problems.push(`${fx.uuid}: no script defines it, so \`npm run data -- run-all\` may undo this fix. For a Classical overlap event, fix it in data-src/ancient-near-east.json instead.`);
 }
 console.log(`${ok}/${fixes.length} fixes applied${dry ? ' (dry run)' : ''}`);
 problems.forEach((p) => console.log('  ' + p));

@@ -35,7 +35,7 @@ export function importanceCounts(events: { importance?: number }[]) {
 /**
  * The review list of a compiled timeline's key and minor events, grouped by region, as Markdown. When the
  * top-level rows are groups of regions (they have grandchildren), each group gets a heading and each region
- * inside it a sub-heading. `short` names the plan and npm command ("ancient" → data-src/ancient-importance.json).
+ * inside it a sub-heading. `short` names the plan and npm command ("ancient-classical" → data-src/ancient-classical-importance.json).
  */
 export function keyEventsMarkdown(
   d: { meta: { title: string; calendar: Calendar }; tracks: Tr[]; events: Ev[] },

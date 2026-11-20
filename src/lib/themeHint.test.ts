@@ -7,9 +7,9 @@ afterEach(() => localStorage.clear());
 
 describe('theme hints', () => {
   it("remembers each ?timeline= value's theme, and '' for a page without one", () => {
-    rememberThemeHint('classical', 'parchment');
+    rememberThemeHint('ancient-classical', 'parchment');
     rememberThemeHint(null, 'parchment');
-    expect(themeHint('classical')).toBe('parchment');
+    expect(themeHint('ancient-classical')).toBe('parchment');
     expect(themeHint(null)).toBe('parchment');
     expect(themeHint('other')).toBeUndefined();
   });

@@ -1,6 +1,6 @@
 // The timelines built from a readable source file (data-src/), and every file and script that belongs to each.
 // One table, so the data commands (scripts/data.ts), the key-event list and the tests agree on the paths.
-// Both bundled timelines are here.
+// The bundled timeline is here.
 
 export interface SourceTimeline {
   /** The short name used in commands: `npm run data -- build <short>`. */
@@ -25,40 +25,21 @@ export interface SourceTimeline {
   scripts: string[];
 }
 
-const additions = (names: string[]) => names.map((n) => `scripts/additions/${n}.ts`);
-const classical = (names: string[]) => names.map((n) => `scripts/classical/${n}.ts`);
+// Each timeline's own content scripts live in scripts/<short>/. The combined timeline started on 2026-11-20 from
+// the merged Ancient Civilizations and Classical World files (their scripts and plans are in archive/), so only
+// the scripts written since then replay onto it.
+const own = (short: string, names: string[]) => names.map((n) => `scripts/${short}/${n}.ts`);
 
 export const SOURCE_TIMELINES: SourceTimeline[] = [
   {
-    short: 'ancient',
-    id: 'ancient-near-east',
-    source: 'data-src/ancient-near-east.json',
-    compiled: 'public/timelines/ancient-near-east.json',
-    importance: 'data-src/ancient-importance.json',
-    rowLinks: 'data-src/ancient-row-links.json',
-    keyEvents: 'docs/ancient-key-events.md',
-    // phases.ts after every script that puts events on period rows; groups.ts last: it nests the regions into
-    // groups and sets the row order
-    scripts: additions([
-      'europe', 'mediterranean', 'steppe', 'africa', 'asia', 'pacific', 'caucasus', 'arabia', 'eastern-europe',
-      'americas', 'north-asia', 'fill-gaps', 'neolithic-near-east', 'neolithic-world', 'neolithic-2', 'neolithic-3',
-      'ideas', 'peoples', 'phases', 'groups',
-    ]),
-  },
-  {
-    short: 'classical',
-    id: 'classical',
-    source: 'data-src/classical.json',
-    compiled: 'public/timelines/classical.json',
-    importance: 'data-src/classical-importance.json',
-    rowLinks: 'data-src/classical-row-links.json',
-    keyEvents: 'docs/classical-key-events.md',
-    // skeleton first; summary-only after the region passes; phases after every script that defines its rows;
-    // collapsed.ts last (it reads the final rows)
-    scripts: classical([
-      'skeleton', 'mediterranean-near-east', 'south-asia', 'east-asia', 'steppe', 'africa', 'europe', 'americas',
-      'se-asia-tibet', 'china-north-south', 'island-sea-oceania', 'summary-only', 'phases', 'collapsed',
-    ]),
+    short: 'ancient-classical',
+    id: 'ancient-classical',
+    source: 'data-src/ancient-classical.json',
+    compiled: 'public/timelines/ancient-classical.json',
+    importance: 'data-src/ancient-classical-importance.json',
+    rowLinks: 'data-src/ancient-classical-row-links.json',
+    keyEvents: 'docs/ancient-classical-key-events.md',
+    scripts: own('ancient-classical', []),
   },
 ];
 
