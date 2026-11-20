@@ -35,10 +35,10 @@ export function FiltersPanel(p: Props) {
       <section>
         <h3>Chart</h3>
         <label className="check" title="Collapse long stretches with no events">
-          <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Compress gaps
+          <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Shorten gaps with no events
         </label>
-        <label className="check" title="Show arrows between connected events">
-          <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Connections
+        <label className="check" title="Arrows between every pair of connected events; off, only the selected event’s arrows show">
+          <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Show all event connections
         </label>
         <h3>Rows</h3>
         <label className="check">

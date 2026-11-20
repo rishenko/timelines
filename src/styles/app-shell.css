@@ -204,7 +204,12 @@
 .filters-panel .check {
   display: flex;
   gap: 6px;
-  align-items: center;
+  align-items: baseline;
+  /* long labels wrap inside their column instead of running under the next one */
+  white-space: normal;
+}
+.filters-panel .check input {
+  flex-shrink: 0;
 }
 .filters-panel .rows-look {
   border: none;
