@@ -39,7 +39,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     importance: 'data-src/ancient-classical-importance.json',
     rowLinks: 'data-src/ancient-classical-row-links.json',
     keyEvents: 'docs/ancient-classical-key-events.md',
-    scripts: own('ancient-classical', []),
+    scripts: own('ancient-classical', ['macedon-phases', 'plain-ware']),
   },
 ];
 

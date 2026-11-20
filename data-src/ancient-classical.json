@@ -1036,16 +1036,60 @@
           { "year": "700 BCE", "source": { "sourceKey": "wp-macedon", "sourceLocation": "infobox ('c. 7th century'): start of century" } },
           { "year": "601 BCE", "source": { "sourceKey": "wp-macedon", "sourceLocation": "infobox: end of century" } }
         ]
-      }
-    },
-    {
-      "id": "antigonid",
-      "name": "Antigonid Macedon",
-      "color": "#4a6aa8",
-      "parent": "aegean",
-      "url": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
-      "ids": { "wikidata": "Q83958" },
-      "span": { "start": "306 BCE", "end": "168 BCE" }
+      },
+      "phases": [
+        {
+          "name": "Argead dynasty",
+          "start": "c. 650 BCE",
+          "end": "310 BCE",
+          "startDates": [
+            { "year": "700 BCE", "source": { "sourceKey": "wp-macedon", "sourceLocation": "infobox ('c. 7th century'): start of century" } },
+            { "year": "601 BCE", "source": { "sourceKey": "wp-macedon", "sourceLocation": "infobox: end of century" } }
+          ],
+          "endDates": [
+            {
+              "year": "310 BCE",
+              "source": {
+                "sourceKey": "wp-antigonid",
+                "sourceLocation": "History ('In 310/309 BC' Alexander IV is killed: 'the Macedonian Argead dynasty became extinct')"
+              }
+            },
+            { "year": "309 BCE", "source": { "sourceKey": "wp-antigonid", "sourceLocation": "History (310/309 BC)" } }
+          ]
+        },
+        {
+          "name": "Antipatrid dynasty",
+          "start": "305 BCE",
+          "end": "294 BCE",
+          "startDates": [
+            {
+              "year": "305 BCE",
+              "source": { "sourceKey": "wp-antigonid", "sourceLocation": "History ('Cassander (r. 305 – 297 BC), son of Antipater')" }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "294 BCE",
+              "source": { "sourceKey": "wp-antigonid", "sourceLocation": "History ('in 294 BC' Demetrius makes himself king of Macedon)" }
+            }
+          ]
+        },
+        {
+          "name": "Antigonid dynasty",
+          "start": "294 BCE",
+          "end": "168 BCE",
+          "startDates": [
+            {
+              "year": "294 BCE",
+              "source": {
+                "sourceKey": "wp-antigonid",
+                "sourceLocation": "lead ('from 294 until their defeat at the Battle of Pydna in 168 BC'); dynasty table"
+              }
+            }
+          ],
+          "endDates": [{ "year": "168 BCE", "source": { "sourceKey": "wp-antigonid", "sourceLocation": "lead ('the Battle of Pydna in 168 BC')" } }]
+        }
+      ]
     },
     {
       "id": "pergamon",
@@ -6484,7 +6528,7 @@
       "name": "Wikipedia: Antigonid dynasty",
       "url": "https://en.wikipedia.org/wiki/Antigonid_dynasty",
       "tags": ["wikipedia"],
-      "accessed": "2026-11-18"
+      "accessed": "2026-11-20"
     },
     "wp-library-alexandria": {
       "name": "Wikipedia: Library of Alexandria",
@@ -11211,22 +11255,22 @@
     },
     {
       "uuid": "plain-ware",
-      "title": "Pottery decoration ends: the Polynesian Plain Ware period",
+      "title": "Polynesian Plain Ware, and the end of pottery",
       "start": "c. 700 BCE",
       "end": "400 CE",
-      "tracks": ["lapita"],
-      "descr": "Two hundred years after arriving, settlers in Tonga stop decorating their pots; by 400 AD they make none, and in Samoa pottery-making appears to stop suddenly. Fiji, Samoa and Tonga remain the furthest extent of the Austronesian expansion in the Pacific for about 1,500 years. One cited page, Wikipedia's Polynesians, carries a notice asking for text translated from the Russian article.",
+      "tracks": ["tonga-samoa", "fiji"],
+      "descr": "In Tonga, settlers stop decorating their pots two hundred years after arriving and make plain ware until about 400 AD, when they stop making pottery at all; the same happens in Fiji and Samoa. A Lapita hamlet grows into a village over a kilometre long.",
       "sources": [
-        { "sourceKey": "wp-tonga-history", "sourceLocation": "The Lapita Period; The Polynesian Plain Ware Period" },
-        { "sourceKey": "wp-samoa-history", "sourceLocation": "Early history" },
-        { "sourceKey": "wp-polynesians", "sourceLocation": "Origins" }
+        { "sourceKey": "wp-tonga-history", "sourceLocation": "The Lapita Period and The Polynesian Plain Ware Period" },
+        { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating" }
       ],
       "startDates": [{ "year": "700 BCE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "heading ('2650–1550 BP (700 BC – 400 AD)')" } }],
       "endDates": [
-        { "year": "400 CE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "Polynesian Plain Ware ('By 1550 BP (400 AD)')" } },
+        { "year": "400 CE", "source": { "sourceKey": "wp-tonga-history", "sourceLocation": "Plain Ware Period ('By 1550 BP (400 AD)')" } },
         {
           "year": "1 CE",
-          "source": { "sourceKey": "wp-lapita", "sourceLocation": "Lapita in Polynesia (Samoa plainware 'ceases abruptly … around 1 CE')" }
+          "margin": 100,
+          "source": { "sourceKey": "wp-lapita", "sourceLocation": "Artifact dating (Tonga 'by about 2,000 years ago')" }
         }
       ]
     },
@@ -14062,7 +14106,7 @@
       "uuid": "pydna",
       "title": "Battle of Pydna: Rome ends the Antigonid kingdom",
       "start": "168 BCE",
-      "tracks": ["antigonid", "rome-republic-empire"],
+      "tracks": ["macedon", "rome-republic-empire"],
       "descr": "Defeat in the Third Macedonian War ends the dynasty that had ruled much of Hellenistic Greece since 294 BC.",
       "sources": [{ "sourceKey": "wp-antigonid", "sourceLocation": "lead and Legacy" }]
     },
