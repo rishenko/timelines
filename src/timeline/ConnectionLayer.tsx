@@ -16,13 +16,15 @@ interface Props {
  * Draws the threads that tie the timeline together:
  * - a vertical connector through every lane a multi-track event appears in (through its "+N" pills only while focused);
  * - curved arrows for explicit event links (causes / part-of / succeeds / conquers / related).
- * Links always show for the focused event, even when showLinks is off. Otherwise a link ends only at events drawn as
+ * With showLinks off, both show only for the focused event and those related to it (a shared event still reads as
+ * one by its diamond's border). Links always show for the focused event, even when showLinks is off. Otherwise a link ends only at events drawn as
  * their own mark: an event gathered into a "+N" pill gets its arrows only while it, or the event at the other end, is focused.
  */
 export function ConnectionLayer({ left, width, height, marksByEvent, eventsById, showLinks, related, inView }: Props) {
   const threads: React.ReactNode[] = [];
   for (const [id, all] of marksByEvent) {
     const on = related?.has(id);
+    if (!showLinks && !on) continue;
     // the line reaches "+N" cluster pills only while the event is focused, like the link arrows below
     const marks = on ? all : all.filter((m) => m.kind === 'event');
     if (marks.length < 2) continue;
