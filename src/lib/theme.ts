@@ -196,6 +196,44 @@ export function loadTheme(timelineDefault?: string): ThemeSetting {
   return { preset, colors: { ...PRESETS[preset].colors } };
 }
 
+const HINTS_KEY = 'timelines:theme-hints';
+const MAX_HINTS = 20;
+
+/**
+ * The timeline's own theme that a page opened with last time, by its `?timeline=` value ('' for none): main.tsx
+ * paints it before the timeline loads, so readers who never picked a theme don't see the app default flash first.
+ */
+export function themeHint(timelineParam: string | null): string | undefined {
+  try {
+    const hints = JSON.parse(localStorage.getItem(HINTS_KEY) ?? '{}') as Record<string, unknown>;
+    const p = hints[timelineParam ?? ''];
+    return typeof p === 'string' && p in PRESETS ? p : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Records the theme a page opened with (see themeHint); keeps the most recent few. */
+export function rememberThemeHint(timelineParam: string | null, preset: string | undefined) {
+  const key = timelineParam ?? '';
+  let old: Record<string, string> = {};
+  try {
+    const parsed: unknown = JSON.parse(localStorage.getItem(HINTS_KEY) ?? '{}');
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) old = parsed as Record<string, string>;
+  } catch {
+    // unreadable: start again
+  }
+  try {
+    const value = preset && preset in PRESETS ? preset : DEFAULT_PRESET;
+    if (old[key] === value) return;
+    delete old[key];
+    const entries = [...Object.entries(old), [key, value]].slice(-MAX_HINTS);
+    localStorage.setItem(HINTS_KEY, JSON.stringify(Object.fromEntries(entries)));
+  } catch {
+    // storage full or disabled: the next visit may flash the default
+  }
+}
+
 /** Forgets the reader's choice, so each timeline's own default applies again. */
 export function clearTheme() {
   try {

@@ -7,6 +7,7 @@ import { Boot } from './Boot.tsx';
 import { SITE, SITE_DATASETS } from './test/app.tsx';
 import { addToLibrary, loadLibrary } from './state/library.ts';
 import { loadCollections, parseCollection, saveCollection } from './state/collections.ts';
+import { PRESETS, themeHint } from './lib/theme.ts';
 import { plainTimeline } from './test/fixtures.ts';
 
 beforeAll(() => {
@@ -65,6 +66,25 @@ describe('Boot', () => {
     open('timeline=classical', s.fetchImpl);
     expect(await screen.findByRole('region', { name: 'Timeline: The Classical World' })).toBeTruthy();
     expect(s.asked).toEqual(['timelines/index.json', 'timelines/classical.json']);
+  });
+
+  it("paints the timeline's own theme from the site's list before its file arrives, and remembers it", async () => {
+    let release = () => {};
+    const s = server(siteFiles());
+    const slow = (async (url: string, init?: RequestInit) => {
+      if (url.endsWith('ancient-near-east.json')) await new Promise<void>((r) => (release = r));
+      return s.fetchImpl(url, init);
+    }) as typeof fetch;
+    const bg = () => document.documentElement.style.getPropertyValue('--bg');
+    document.documentElement.style.removeProperty('--bg');
+    open('timeline=ancient-near-east', slow);
+    for (let i = 0; i < 50 && !bg(); i++) await new Promise((r) => setTimeout(r, 10));
+    expect(SITE[0].defaultTheme).toBe('parchment');
+    expect(bg()).toBe(PRESETS.parchment.colors.bg);
+    expect(screen.queryByRole('region')).toBeNull(); // the file hasn't loaded yet
+    release();
+    expect(await screen.findByRole('region', { name: 'Timeline: Ancient Civilizations' })).toBeTruthy();
+    expect(themeHint('ancient-near-east')).toBe('parchment');
   });
 
   it('opens the first site timeline for an unknown or missing id', async () => {

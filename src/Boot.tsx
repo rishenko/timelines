@@ -15,7 +15,7 @@ import {
 } from './state/timelines.ts';
 import { parseUpload } from './state/dataset.ts';
 import { goToTimeline } from './state/url.ts';
-import { applyTheme, loadTheme } from './lib/theme.ts';
+import { applyTheme, loadTheme, rememberThemeHint } from './lib/theme.ts';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 
 type Phase =
@@ -136,6 +136,8 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
   const id = q.get('timeline');
   let choice = findTimeline(listTimelines(site), id);
   if (!choice) return { kind: 'welcome', site };
+  // the timeline's own theme as soon as its list says it, before its file (the larger part) loads
+  applyTheme(loadTheme(choice.summary.defaultTheme).colors);
   let notice: string | undefined;
   if (choice.collection) {
     if (await recheckCollection(choice.collection, fetchImpl)) choice = findTimeline(listTimelines(site), id) ?? choice;
@@ -147,8 +149,9 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
     }
   }
   const published = choice.library ? choice.library.dataset : await loadSiteTimeline(choice.entry!, fetchImpl);
-  // the reader's saved theme, else this timeline's own (main.tsx already applied the saved one, or the default)
+  // the reader's saved theme, else this timeline's own (the list's entry may have lacked it); remembered for next time
   applyTheme(loadTheme(published.meta.defaultTheme).colors);
+  rememberThemeHint(id, published.meta.defaultTheme);
   return { kind: 'ready', published, library: choice.library, site, notice };
 }
 
