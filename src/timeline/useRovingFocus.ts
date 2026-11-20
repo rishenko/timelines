@@ -19,6 +19,8 @@ interface Options {
   lanes: LaneLayout[];
   /** Lanes showing all their events: their show-all button stays a stop even with nothing folded. */
   expanded: Record<string, boolean>;
+  /** Header lanes with rows below them that have nothing in view: their show/hide button is a stop. */
+  inactiveBelow?: Map<string, number>;
   selectedId: string | null;
   /** The visible stretch of the chart, content px. */
   view: { left: number; width: number };
@@ -46,8 +48,9 @@ export function useRovingFocus(o: Options) {
         ...(safeUrl(l.lane.track.url) ? [labelStopKey(l.lane.id, 'link')] : []),
         ...(l.overflow > 0 || expanded[l.lane.id] ? [labelStopKey(l.lane.id, 'overflow')] : []),
         ...(l.lane.hasChildren ? [labelStopKey(l.lane.id, 'fold')] : []),
+        ...(o.inactiveBelow?.get(l.lane.id) ? [labelStopKey(l.lane.id, 'hidden')] : []),
       ]),
-    [lanes, expanded],
+    [lanes, expanded, o.inactiveBelow],
   );
   /** The control that holds the chart's one Tab stop, with what it held (to find it again after a zoom or fold). */
   const [active, setActive] = useState<{ key: string; laneId: string; eventIds: string[] } | null>(null);

@@ -78,8 +78,15 @@ npm run data -- format <timeline|all>       # re-format a source file
 npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
 npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing
+npm run data -- combine [--check]           # rebuild the combined Ancient + Classical timeline (build does this too)
 npm run data -- index                       # rewrite public/timelines/index.json, the site's list, from the files there
 ```
+
+The combined timeline (`public/timelines/ancient-classical.json`) has no source file: `npm run data -- combine` builds
+it from the two compiled files and the rules in `data-src/combined.json` (renamed and moved rows, names, row order,
+and the events whose Classical rows are used). Fix data in the Ancient or Classical source, never in the combined file.
+The command stops on any new conflict between the two (a shared row under a different parent, a shared event worded
+differently) until a rule settles it, and a test fails if the shipped file is out of date.
 
 `scripts/additions/` (Ancient) and `scripts/classical/` hold one re-runnable script per pass, built on
 `scripts/lib/dataset-edit.ts` (insert or replace by id). They run in the order listed in `scripts/lib/timelines.ts`;

@@ -64,6 +64,8 @@ export interface LayoutOptions {
   expanded?: Record<string, boolean>;
   /** Extra space at the top of a lane, above its events (e.g. the strip that names its phases). */
   headerPx?: Record<string, number>;
+  /** Lanes drawn as a thin line with nothing in them (rows with nothing in view, when shown thin). */
+  thin?: ReadonlySet<string>;
 }
 
 export const LAYOUT_DEFAULTS = {
@@ -76,6 +78,7 @@ export const LAYOUT_DEFAULTS = {
   gapPx: 8,
   maxRows: 4,
   clusterPx: 44,
+  thinPx: 6,
 };
 
 /**
@@ -133,6 +136,11 @@ export function layoutLanes(
   let top = 0;
 
   for (const lane of lanes) {
+    if (opts.thin?.has(lane.id)) {
+      out.push({ lane, top, height: o.thinPx, rows: 0, marks: [], overflow: 0 });
+      top += o.thinPx;
+      continue;
+    }
     const head = opts.headerPx?.[lane.id] ?? 0;
     const members = new Set(lane.members);
     // Occupied [start, end] footprints per sub-row. Events aren't placed in date order, so a row

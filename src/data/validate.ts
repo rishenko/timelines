@@ -30,6 +30,7 @@ export function validateDataset(d: unknown): string[] {
     errors.push('meta.increments must be a list of positive whole numbers.');
   else if (!m.increments.includes(m.defaultIncrement)) errors.push('meta.defaultIncrement must be one of meta.increments.');
   if (m.circaFade !== undefined && !(m.circaFade >= 0)) errors.push('meta.circaFade must be zero or more.');
+  if (m.hideRowsOutOfView !== undefined && typeof m.hideRowsOutOfView !== 'boolean') errors.push('meta.hideRowsOutOfView must be true or false.');
   if (m.range !== undefined && !(m.range && Number.isInteger(m.range.start) && Number.isInteger(m.range.end) && m.range.start < m.range.end))
     errors.push('meta.range needs whole-number years start < end.');
   if (m.continues !== undefined) {

@@ -90,6 +90,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const [increment, setIncrement] = useState(initialUrl.increment);
   const [compress, setCompress] = useState(initialUrl.compress);
   const [showLinks, setShowLinks] = useState(initialUrl.links);
+  // rows with nothing near the view are hidden (Filters); not while editing, where every row must be reachable
+  const [hideOutOfView, setHideOutOfView] = useState(initialUrl.hideOutOfView);
+  // ...taken out, or drawn as thin lines in their place
+  const [thinRows, setThinRows] = useState(initialUrl.thinRows);
   const [view, setView] = useState<View>(initialUrl.view);
   const [customizeTab, setCustomizeTab] = useState<CustomizeTab>('appearance');
   // One polite live region for screen readers: zoom changes, "Went to …" and toasts. Kept mounted, because a region
@@ -183,7 +187,17 @@ export default function App({ published: opened, library: libraryEntry, site, no
     return present;
   });
   const { centerRef, onCenterYearChange } = useUrlSync(
-    { timelineId: published.meta.id, increment, compress, showLinks, selectedId, view },
+    {
+      timelineId: published.meta.id,
+      increment,
+      compress,
+      showLinks,
+      selectedId,
+      view,
+      hideOutOfView,
+      thinRows,
+      hideOutOfViewDefault: !!published.meta.hideRowsOutOfView,
+    },
     initialCenter,
   );
 
@@ -212,6 +226,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
     if (on) panels.show('customize', false);
   };
   const editTrack = (id: string) => setEditing({ kind: 'track', track: data.tracks.find((t) => t.id === id) ?? null });
+  const switchHideOutOfView = (on: boolean) => {
+    setHideOutOfView(on);
+    setAnnouncement(on ? 'Rows with nothing in view are hidden' : 'All rows shown');
+  };
   const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId));
 
   return (
@@ -386,6 +404,13 @@ export default function App({ published: opened, library: libraryEntry, site, no
           toggleSource={toggleSource}
           toggleTag={toggleTag}
           setAllTracks={setAllTracks}
+          hideOutOfView={hideOutOfView}
+          onHideOutOfView={switchHideOutOfView}
+          thinRows={thinRows}
+          onThinRows={(thin) => {
+            setThinRows(thin);
+            setAnnouncement(thin ? 'Rows with nothing in view are drawn as thin lines' : 'Rows with nothing in view are taken out');
+          }}
           editMode={editMode}
           onEditTrack={editTrack}
           onEditSource={(key) => setEditing({ kind: 'source', key })}
@@ -417,6 +442,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
             phases={phases}
             visibleTracks={filters.tracks}
             collapsed={collapsed}
+            hideOutOfView={hideOutOfView && !editMode}
+            thinRows={thinRows}
+            onShowAllRows={() => switchHideOutOfView(false)}
+            onRowsHidden={(n, year) => setAnnouncement(n ? `${n} rows with nothing near ${formatYear(year, cal)} hidden` : 'Every row has something in view')}
             onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}
             increment={increment}
             compress={compress}

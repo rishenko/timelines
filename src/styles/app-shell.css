@@ -183,7 +183,7 @@
 
 .filters-panel {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: minmax(150px, 1fr) 2fr 2fr 1fr;
   gap: 18px;
   padding: 10px 14px 14px;
   border-bottom: 1px solid var(--line);
@@ -197,6 +197,23 @@
   margin: 0 0 8px;
   display: flex;
   gap: 8px;
+}
+.filters-panel .check {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.filters-panel .rows-look {
+  border: none;
+  margin: 4px 0 0;
+  padding: 0 0 0 22px;
+}
+.filters-panel .rows-look:disabled {
+  opacity: 0.6;
+}
+.filters-panel .check + p,
+.filters-panel .rows-look + p {
+  margin: 6px 0 0;
 }
 .filters-panel .bulk button {
   font-size: 11px;

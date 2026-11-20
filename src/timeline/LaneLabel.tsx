@@ -18,6 +18,10 @@ interface Props {
   onEditTrack: () => void;
   onMoveTrack: (dir: -1 | 1) => void;
   onAddSubTrack: () => void;
+  /** Rows below this header with nothing in view (hidden, or shown when `revealed`); 0 or absent: no button. */
+  inactiveBelow?: number;
+  revealed?: boolean;
+  onToggleRevealed?: () => void;
 }
 
 /** The site a link goes to, for its tooltip ("en.wikipedia.org"). */
@@ -33,13 +37,15 @@ const hostOf = (url: string) => {
  * The row's label, sticky at the left: name (a link to the row's page, when it has one), logo, edit buttons in edit
  * mode, and the show-all and fold buttons.
  */
-export function LaneLabel({ lane, labelW, overflow, expanded, editMode, rovingKey, onStopFocus, ...on }: Props) {
+export function LaneLabel({ lane, labelW, overflow, expanded, editMode, rovingKey, onStopFocus, inactiveBelow = 0, revealed = false, ...on }: Props) {
   const image = safeUrl(lane.track.image);
   const url = safeUrl(lane.track.url);
   const name = lane.track.name;
   const linkKey = labelStopKey(lane.id, 'link');
   const overflowKey = labelStopKey(lane.id, 'overflow');
   const foldKey = labelStopKey(lane.id, 'fold');
+  const hiddenKey = labelStopKey(lane.id, 'hidden');
+  const rows = (n: number) => (n === 1 ? '1 row' : `${n} rows`);
   return (
     <div className="tl-lane-label" style={{ width: labelW }}>
       <span className="chip" />
@@ -91,6 +97,20 @@ export function LaneLabel({ lane, labelW, overflow, expanded, editMode, rovingKe
           onClick={on.onToggleExpanded}
         >
           {expanded ? '⇡' : '⇣'}
+        </button>
+      )}
+      {inactiveBelow > 0 && (
+        <button
+          className="hidden-rows"
+          aria-label={revealed ? `Hide ${rows(inactiveBelow)} in ${name} with nothing in view` : `Show ${rows(inactiveBelow)} in ${name} with nothing in view`}
+          aria-pressed={revealed}
+          data-stop={hiddenKey}
+          tabIndex={rovingKey === hiddenKey ? 0 : -1}
+          onFocus={() => onStopFocus(hiddenKey)}
+          title={revealed ? `Hide the ${rows(inactiveBelow)} with nothing in view` : `${rows(inactiveBelow)} with nothing in view hidden: show them`}
+          onClick={on.onToggleRevealed}
+        >
+          {revealed ? `−${inactiveBelow}` : `+${inactiveBelow}`}
         </button>
       )}
       {lane.hasChildren && (

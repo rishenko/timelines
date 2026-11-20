@@ -43,6 +43,25 @@
 .tl-corner small {
   color: var(--muted);
 }
+.tl-corner .corner-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+/* "N rows hidden": hiding rows with nothing in view is on (a reminder; clicking turns it off) */
+.tl-corner .rows-hidden {
+  min-height: 20px;
+  padding: 0 6px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: none;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
 .tl-corner small.key-only {
   color: var(--accent);
   font-weight: 600;
@@ -182,6 +201,76 @@
 .tl-lane.nested {
   background: color-mix(in srgb, var(--bg-2) 45%, var(--bg));
 }
+/* a row with nothing in view, drawn thin (Filters: show them as thin lines): a line in the row's colour */
+.tl-lane.thin {
+  background: color-mix(in srgb, var(--track-color) 60%, var(--bg));
+  border-top: 1px solid var(--bg);
+  border-bottom: 1px solid var(--bg);
+}
+/* its strip in the name column, where the row's name pops up while the line is hovered */
+.tl-lane.thin .thin-label {
+  position: sticky;
+  left: 0;
+  height: 100%;
+  z-index: 4;
+}
+.tl-lane.thin .thin-label::before {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+/* a thin line right after another doesn't reach up over it: each keeps its own strip */
+.tl-lane.thin + .tl-lane.thin .thin-label::before {
+  top: -1px;
+}
+.tl-lane.thin .thin-name {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: calc(12px + var(--depth, 0) * 14px);
+  transform: translateY(-50%);
+  max-width: calc(100% - 20px - var(--depth, 0) * 14px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border: 1px solid var(--line-2);
+  border-left: 4px solid var(--track-ink, var(--track-color));
+  border-radius: 4px;
+  background: var(--bg-2);
+  color: var(--text);
+  font-size: 12px;
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--text) 18%, transparent);
+  pointer-events: none;
+  z-index: 6;
+}
+/* the line itself is easier to hover with a few px either side of it too (again not over a thin line above) */
+.tl-lane.thin::before {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+.tl-lane.thin + .tl-lane.thin::before {
+  top: -1px;
+}
+/* hovering anywhere along the line shows the name in the name column */
+.tl-lane.thin.peek .thin-label {
+  z-index: 7; /* over the neighbouring rows' names */
+}
+/* ...and so does a click or tap, for a moment (touch screens can't hover) */
+.tl-lane.thin.peek .thin-name {
+  display: block;
+}
+/* hover only where there is a real pointer: touch browsers keep a tapped element "hovered", which would leave the
+   name up after a tap */
+@media (hover: hover) {
+  .tl-lane.thin:hover .thin-label {
+    z-index: 7;
+  }
+  .tl-lane.thin:hover .thin-name {
+    display: block;
+  }
+}
 /* lifespan of a track (civilization, period…): a soft band, faded where its dates are uncertain */
 .tl-span {
   position: absolute;
@@ -308,6 +397,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+/* rows hidden for having nothing in view: a small count on their header (+N hidden, −N to hide them again) */
+.tl-lane-label .hidden-rows {
+  flex: none;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0 6px;
+  border: 1px dashed var(--muted);
+  border-radius: 10px;
+  background: none;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1;
+}
+.tl-lane-label .hidden-rows[aria-pressed='true'] {
+  border-style: solid;
 }
 
 /* Groups: a top-level row with sub-rows heads a group. The head row is tinted in the group's colour with a

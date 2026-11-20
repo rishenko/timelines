@@ -10,6 +10,12 @@ interface Props {
   toggleSource: (k: string) => void;
   toggleTag: (k: string) => void;
   setAllTracks: (on: boolean) => void;
+  /** Rows with nothing near the view are hidden. */
+  hideOutOfView: boolean;
+  onHideOutOfView: (on: boolean) => void;
+  /** Hidden rows are drawn as thin lines in their place rather than taken out. */
+  thinRows: boolean;
+  onThinRows: (thin: boolean) => void;
   editMode: boolean;
   onEditTrack: (id: string) => void;
   onEditSource: (key: string) => void;
@@ -20,6 +26,26 @@ export function FiltersPanel(p: Props) {
   const custom = data.meta.customSourceTag;
   return (
     <div className="filters-panel">
+      <section>
+        <h3>Rows</h3>
+        <label className="check">
+          <input type="checkbox" checked={p.hideOutOfView} onChange={(e) => p.onHideOutOfView(e.target.checked)} />
+          Hide rows with nothing in view
+        </label>
+        <fieldset className="rows-look" disabled={!p.hideOutOfView}>
+          <legend className="sr-only">Hidden rows</legend>
+          <label className="check">
+            <input type="radio" name="rows-look" checked={!p.thinRows} onChange={() => p.onThinRows(false)} /> Take them out
+          </label>
+          <label className="check">
+            <input type="radio" name="rows-look" checked={p.thinRows} onChange={() => p.onThinRows(true)} /> Show them as thin lines
+          </label>
+        </fieldset>
+        <p className="muted small">
+          Rows come back as you scroll to their years. Groups stay and say how many rows are hidden below them. Thin lines keep every row in its place.
+          {p.editMode && ' Off while editing, so every row can be reached.'}
+        </p>
+      </section>
       <section>
         <h3>
           Tracks

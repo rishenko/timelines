@@ -45,7 +45,7 @@ function open(timeline: string, extra = '') {
 }
 
 describe('accessibility', () => {
-  for (const id of ['ancient-near-east', 'classical']) {
+  for (const id of ['ancient-near-east', 'classical', 'ancient-classical']) {
     it(`${id}: no automated WCAG violations on the opening view`, async () => {
       const { container } = open(id);
       expect(await violations(container)).toEqual([]);
@@ -94,7 +94,7 @@ describe('accessibility', () => {
     expect(await violations(container)).toEqual([]);
   });
 
-  for (const id of ['ancient-near-east', 'classical']) {
+  for (const id of ['ancient-near-east', 'classical', 'ancient-classical']) {
     it(`${id}: the table view has no automated WCAG violations`, async () => {
       const { container } = open(id, '&view=table');
       expect(screen.getByRole('region', { name: /^Table: / })).toBeTruthy();

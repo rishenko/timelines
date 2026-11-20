@@ -122,7 +122,8 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
       title: 'Rows',
       text: has.nesting
-        ? 'Each row is a track: a region, people, faction or period. Rows nest to any depth. ▾ folds a row’s sub-rows into it; ▸ opens them again.'
+        ? 'Each row is a track: a region, people, faction or period. Rows nest to any depth. ▾ folds a row’s sub-rows into it; ▸ opens them again. ' +
+          'With “Hide rows with nothing in view” (Filters), a +N beside a row counts the sub-rows hidden for having nothing near the years on screen (taken out, or thin lines in their place); it shows them.'
         : 'Each row is a track: a region, people, faction or period.',
     },
     {

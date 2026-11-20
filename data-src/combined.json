@@ -1,0 +1,65 @@
+{
+  "about": [
+    "Rules for the combined timeline (public/timelines/ancient-classical.json), generated from the compiled Ancient and",
+    "Classical files by `npm run data -- combine` (scripts/lib/combine.ts). Don't edit the generated file: fix the data in",
+    "data-src/ancient-near-east.json or data-src/classical.json, or a rule here, and run the command again.",
+    "General rules (in the code, not listed here): Ancient's version of a shared row or event wins (name, colour, link,",
+    "description, importance) except as listed below; a shared row's lifespan starts as Ancient gives it and ends as",
+    "Classical gives it; phases are merged by name (Classical's wins a tie); rows keep the dating system they had in",
+    "Ancient; a source key that the two files define differently is split, Classical's copy getting the suffix",
+    "'-classical'. Sibling rows keep Ancient's order, with Classical's rows slotted in after their Classical neighbour.",
+    "The command stops on any new conflict (a shared row with a different parent, a shared event with a different title)",
+    "until it is settled here."
+  ],
+  "output": "public/timelines/ancient-classical.json",
+  "ancient": "public/timelines/ancient-near-east.json",
+  "classical": "public/timelines/classical.json",
+  "meta": {
+    "id": "ancient-classical",
+    "title": "Ancient and Classical World",
+    "subtitle": "From the first farmers to the rise of Islam: Europe, Africa, the Near East, Asia, Oceania and the Americas, c. 9000 BCE – 650 CE",
+    "description": "Ancient Civilizations and The Classical World on one chart, from the Neolithic to the fall of the Sasanians and the founding of Tang. Rows from both are merged by region; where the two give the same row different dates, its start follows Ancient Civilizations and its end The Classical World.",
+    "hideRowsOutOfView": true
+  },
+  "renameRows": {
+    "ancient": {
+      "rome": { "to": "rome-republic-empire", "why": "Ancient's Rome row and Classical's Rome (Republic, then Empire) are the same state: one row, with the Kingdom phase from Ancient." }
+    },
+    "classical": {
+      "greece": { "to": "aegean", "why": "Classical's Greece group holds what Ancient's Aegean group holds (Ancient uses the id greece for the Archaic and Classical Greece row)." },
+      "persia": { "to": "iran", "why": "Classical's 'Iran and Mesopotamia' group becomes Ancient's Iran group; the id persia stays Ancient's Achaemenid Persia row." },
+      "south-asia": { "to": "indus", "why": "Both are the South Asia group; Ancient's id is indus." },
+      "celts": { "to": "la-tene", "why": "La Tène Celts (Gaul) in Classical is Ancient's La Tène (Celts) row, with the same lifespan." }
+    }
+  },
+  "parents": {
+    "carthage": { "to": "north-africa", "why": "As in Classical: Carthage sits beside Numidia and Mauretania, its neighbours and later rivals." },
+    "dmt": { "to": "horn", "why": "As in Classical: Dʿmt sits in the Horn of Africa group, before Aksum." },
+    "nubia": { "to": "egypt", "why": "As in Ancient: Nubia stays inside Egypt's group, since Egypt and Kush interacted throughout; Classical's group sits in Africa." },
+    "rome-republic-empire": { "to": "rome", "why": "As in Classical: Rome is its own group (with the Eastern Roman Empire), between the western Mediterranean and Greece." }
+  },
+  "order": {
+    "near-east": {
+      "to": ["egypt", "levant", "anatolia", "mesopotamia", "arabia", "iran", "caucasus", "dilmun"],
+      "why": "With Classical's rows added, Arabia and Egypt share more events: the proximity test needs them closer (scored with scripts/row-order.ts; 184 against 204 for Ancient's order)."
+    }
+  },
+  "names": {
+    "aegean": { "to": "Aegean, Greece and the Hellenistic world", "why": "The group now runs from the Cycladic culture to the Hellenistic kingdoms." },
+    "egypt": { "to": "Egypt and Nubia", "why": "Ancient's name: Nubia stays inside the group." },
+    "nubia": { "to": "Kush and Nubia", "why": "Classical's name: the group now runs to Makuria and Alodia." },
+    "zhangzhung": { "to": "Zhangzhung", "why": "Classical's name: Yarlung has its own row here." },
+    "rome-republic-empire": { "to": "Rome (Kingdom, Republic, then Empire)", "why": "The merged row carries all three phases." },
+    "iran": { "to": "Iran and Central Asia", "why": "The group runs from the Zagros farmers to the Sasanians; Ancient's name, spelled out." }
+  },
+  "eventTracks": {
+    "classical": {
+      "buni": "Classical has a Buni culture row; Ancient files it under Indonesia.",
+      "kalanay": "Classical has a Sa Huỳnh–Kalanay row; Ancient files it under the Philippines.",
+      "nyatri-tsenpo": "Classical has a Yarlung row; Ancient files the first Yarlung king under Zhangzhung."
+    }
+  },
+  "eventsWorded": {
+    "plain-ware": "Classical rewrote this event in its Oceania pass (other rows, other wording); Ancient's version is used, which carries the translation-notice disclosure."
+  }
+}

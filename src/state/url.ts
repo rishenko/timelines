@@ -4,7 +4,7 @@ import type { LibraryEntry } from './library.ts';
 import type { Dataset } from '../types.ts';
 
 /**
- * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=1`)
+ * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=1&rows=all`; rows is all, active or thin)
  * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link.
  */
 
@@ -19,6 +19,10 @@ export function readUrl(published: Dataset) {
     at: at !== null ? parseYear(at, calendar) : null,
     compress: q.get('compress') !== '0',
     links: q.get('links') === '1',
+    /** Hide rows with nothing in view: from the link if it says, else the timeline's default. */
+    hideOutOfView: ['active', 'thin'].includes(q.get('rows') ?? '') ? true : q.get('rows') === 'all' ? false : !!published.meta.hideRowsOutOfView,
+    /** Hidden rows drawn as thin lines rather than taken out. */
+    thinRows: q.get('rows') === 'thin',
     view: (q.get('view') === 'table' ? 'table' : 'timeline') as View,
     selected: decodeURIComponent(window.location.hash.slice(1)) || null,
   };
@@ -49,6 +53,10 @@ interface ViewState {
   compress: boolean;
   showLinks: boolean;
   selectedId: string | null;
+  hideOutOfView: boolean;
+  thinRows: boolean;
+  /** The timeline's default for hideOutOfView: the link says rows= only when the reader changed it. */
+  hideOutOfViewDefault: boolean;
 }
 
 /**
@@ -56,7 +64,7 @@ interface ViewState {
  * kept in a ref rather than state: `onCenterYearChange` records it and schedules a write without re-rendering.
  */
 export function useUrlSync(view: ViewState, initialCenter: number) {
-  const { timelineId, increment, compress, showLinks, selectedId, view: mode } = view;
+  const { timelineId, increment, compress, showLinks, selectedId, view: mode, hideOutOfView, thinRows, hideOutOfViewDefault } = view;
   const centerRef = useRef(initialCenter);
   const timer = useRef(0);
   const writeUrl = useCallback(() => {
@@ -68,11 +76,13 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       q.set('at', String(centerRef.current));
       if (!compress) q.set('compress', '0');
       if (showLinks) q.set('links', '1');
+      if (hideOutOfView !== hideOutOfViewDefault || (hideOutOfView && thinRows))
+        q.set('rows', !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active');
       if (mode === 'table') q.set('view', 'table');
       const hash = selectedId ? `#${selectedId}` : '';
       window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
     }, 250);
-  }, [timelineId, increment, compress, showLinks, selectedId, mode]);
+  }, [timelineId, increment, compress, showLinks, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault]);
   useEffect(writeUrl, [writeUrl]);
   const onCenterYearChange = useCallback(
     (y: number) => {

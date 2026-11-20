@@ -4,16 +4,19 @@ import { validateDataset } from './validate.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import ancient from '../../public/timelines/ancient-near-east.json';
 import classical from '../../public/timelines/classical.json';
+import combined from '../../public/timelines/ancient-classical.json';
 import example from '../../docs/examples/example-timeline.json';
 import { resolveEvents, defaultSelection } from '../lib/chronology.ts';
 import { relatedRegions, relatedSiblings, proximityParents, allowedDistance } from './proximity.ts';
 import type { Dataset } from '../types.ts';
 import { compileSource, compiledText } from '../../scripts/lib/compile.ts';
 import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
+import { combine, type CombineRules } from '../../scripts/lib/combine.ts';
 
 const shipped: [string, Dataset][] = [
   ['ancient-near-east', ancient as unknown as Dataset],
   ['classical', classical as unknown as Dataset],
+  ['ancient-classical', combined as unknown as Dataset],
 ];
 
 describe('shipped timelines', () => {
@@ -46,6 +49,7 @@ describe('shipped timelines', () => {
   const historical: [string, Dataset][] = [
     ['ancient-near-east', ancient as unknown as Dataset],
     ['classical', classical as unknown as Dataset],
+    ['ancient-classical', combined as unknown as Dataset],
   ];
   for (const [id, ds] of historical) {
     it(`${id}: every event cites at least one source, and every claim has one`, () => {
@@ -68,6 +72,27 @@ describe('shipped timelines', () => {
       expect(far).toEqual([]);
     });
   }
+
+  // Generated from the two compiled files and data-src/combined.json; `npm run data -- build` refreshes it too.
+  it('the combined timeline is up to date with Ancient, Classical and its rules', () => {
+    const rules = JSON.parse(readFileSync('data-src/combined.json', 'utf8')) as CombineRules;
+    const { dataset, errors } = combine(ancient as unknown as Dataset, classical as unknown as Dataset, rules);
+    expect(errors).toEqual([]);
+    const shipped = readFileSync(rules.output, 'utf8').replace(/\r\n/g, '\n');
+    expect(compiledText(dataset) === shipped, 'run: npm run data -- combine').toBe(true);
+  });
+
+  it('the combined timeline has every event and row of both, once', () => {
+    const c = combined as unknown as Dataset;
+    const uuids = new Set([...ancient.events, ...classical.events].map((e) => e.uuid));
+    expect(c.events.map((e) => e.uuid).sort()).toEqual([...uuids].sort());
+    const ids = new Set(c.tracks.map((t) => t.id));
+    expect(ids.size).toBe(c.tracks.length);
+    // rows renamed by a rule are the only ones missing
+    const rules = JSON.parse(readFileSync('data-src/combined.json', 'utf8')) as CombineRules;
+    const renamed = new Set([...Object.keys(rules.renameRows.ancient), ...Object.keys(rules.renameRows.classical)]);
+    for (const t of [...ancient.tracks, ...classical.tracks]) if (!ids.has(t.id)) expect(renamed.has(t.id), t.id).toBe(true);
+  });
 
   // A source file edited without `npm run data -- build <timeline>` would ship stale data.
   for (const t of SOURCE_TIMELINES) {

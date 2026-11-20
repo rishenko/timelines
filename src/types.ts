@@ -41,6 +41,11 @@ export interface TimelineMeta {
   /** Track ids that start collapsed. */
   collapsed?: string[];
   /**
+   * Start with rows that have nothing near the view hidden (readers can turn it off in Filters). For timelines with
+   * many rows that come and go over a long period.
+   */
+  hideRowsOutOfView?: boolean;
+  /**
    * Neighbouring timelines this one continues into (or from), shown as links at the ends of the ruler. `at` is the
    * stored year the other timeline opens at; `side` says which end of this timeline the link sits on.
    */
