@@ -3,6 +3,7 @@ import type { Dataset, Track } from '../types.ts';
 import type { Filters } from '../state/filters.ts';
 import { childrenMap } from '../lib/tracks.ts';
 import { FilterTree, type FilterNode } from './FilterTree.tsx';
+import { spanStretches } from '../lib/lifespan.ts';
 
 interface Props {
   data: Dataset;
@@ -126,8 +127,9 @@ export function FiltersPanel(p: Props) {
       for (const src of [...e.sources, ...[...(e.startDates ?? []), ...(e.endDates ?? [])].flatMap((c) => (c.source ? [c.source] : []))])
         for (const t of e.tracks) use(src.sourceKey, t);
     for (const t of data.tracks) {
-      for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? []), ...(t.phases ?? []).flatMap((ph) => [...(ph.startDates ?? []), ...(ph.endDates ?? [])])])
+      for (const c of [...spanStretches(t.span).flatMap((s) => [...(s.startDates ?? []), ...(s.endDates ?? [])]), ...(t.phases ?? []).flatMap((ph) => [...(ph.startDates ?? []), ...(ph.endDates ?? [])])])
         use(c.source?.sourceKey, t.id);
+      for (const s of [...spanStretches(t.span), ...(t.phases ?? [])]) for (const r of s.ongoingSources ?? []) use(r.sourceKey, t.id);
       for (const m of t.memberships ?? []) for (const src of m.sources) use(src.sourceKey, t.id);
     }
     const leaf = (group: string, k: string, dim: boolean): FilterNode => {

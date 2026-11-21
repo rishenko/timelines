@@ -1,5 +1,7 @@
 import type { TimelineEvent, Track } from '../types.ts';
 import { subtreeIds, trackPath } from './tracks.ts';
+import { rawLifespan, stretchEnd, stretchHull } from './lifespan.ts';
+import { presentYear } from './years.ts';
 
 /**
  * Search over a timeline's rows (tracks: groups, regions, civilizations, periods), their phases (named periods on a
@@ -62,7 +64,10 @@ export function buildIndex(tracks: Track[], events: EventLike[]): SearchEntry[] 
     };
   };
   const out: SearchEntry[] = [];
+  const present = presentYear(events);
   for (const t of tracks) {
+    // its lifespan, typed or worked out from its phases
+    const life = rawLifespan(t, present);
     out.push(
       entry({
         kind: 'track',
@@ -72,8 +77,8 @@ export function buildIndex(tracks: Track[], events: EventLike[]): SearchEntry[] 
           .slice(0, -1)
           .map((a) => a.name),
         trackId: t.id,
-        start: t.span?.start,
-        end: t.span?.end,
+        start: life?.start,
+        end: life?.end,
       }),
     );
     (t.phases ?? []).forEach((p, i) =>
@@ -85,7 +90,7 @@ export function buildIndex(tracks: Track[], events: EventLike[]): SearchEntry[] 
           path: trackPath(t.id, byId).map((a) => a.name),
           trackId: t.id,
           start: p.start,
-          end: p.end,
+          end: stretchEnd(p, present),
         }),
       ),
     );
@@ -160,10 +165,11 @@ export function trackRange(
   trackId: string,
   tracks: Track[],
   events: EventLike[],
-  spans?: Map<string, { start: number; end: number }>,
+  spans?: Map<string, { start: number; end: number }[]>,
 ): { start: number; end: number } | undefined {
-  const span = spans?.get(trackId) ?? tracks.find((t) => t.id === trackId)?.span;
-  if (span) return { start: span.start, end: span.end };
+  const track = tracks.find((t) => t.id === trackId);
+  const span = stretchHull(spans?.get(trackId)) ?? (track && rawLifespan(track, presentYear(events)));
+  if (span) return span;
   const ids = subtreeIds(trackId, tracks);
   let start = Infinity;
   let end = -Infinity;

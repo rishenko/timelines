@@ -25,7 +25,7 @@ const ev = (uuid: string, start: number, trackIds: string[], o: Partial<Timeline
 });
 const none = new Set<string>();
 const lanes = buildLanes(tracks, {}, {});
-const noSpans = new Map<string, ResolvedSpan>();
+const noSpans = new Map<string, ResolvedSpan[]>();
 const noPhases = new Map<string, ResolvedPhase[]>();
 
 describe('activeLanes', () => {
@@ -40,7 +40,7 @@ describe('activeLanes', () => {
     expect([...activeLanes(lanes, [{ ...ev('a', 120, ['old']), startWindow: [90, 150] }], noSpans, noPhases, 2000, w)]).toEqual(['old']);
     expect(activeLanes(lanes, [ev('a', 120, ['old'])], noSpans, noPhases, 2000, w).size).toBe(0);
     // a lifespan across the window, and a phase whose end range reaches into it
-    const spans = new Map([['new', { start: -300, end: 300 }]]);
+    const spans = new Map([['new', [{ start: -300, end: 300 }]]]);
     const phases = new Map([['isles', [{ name: 'p', start: -300, end: -10, endWindow: [-20, 5] as [number, number] }]]]);
     expect([...activeLanes(lanes, [], spans, phases, 2000, w)].sort()).toEqual(['isles', 'new']);
   });

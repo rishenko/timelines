@@ -34,7 +34,7 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
       title: 'Events',
       text: 'A bar is an event that lasted years; a diamond is one dated to a single year. Lighter ends show the range of dates the sources give. Click an event for its dates, sources and connections; “+N” gathers events too close to show apart.',
     },
-    data.tracks.some((t) => t.span) && {
+    data.tracks.some((t) => t.span || t.phases?.length) && {
       target: '.tl-span',
       widest: true,
       title: 'Lifespans',

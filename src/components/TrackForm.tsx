@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useFieldArray, useForm, type Control, type FieldErrors, type UseFormRegister } from 'react-hook-form';
-import type { Calendar, Dataset, Track, TrackPhase } from '../types.ts';
+import { useFieldArray, useForm, useWatch, type Control, type FieldErrors, type UseFormRegister } from 'react-hook-form';
+import type { Calendar, Dataset, SourceRef, Track, TrackPhase, TrackSpan } from '../types.ts';
 import { newProblems, nextTrackColor, slug, trackDeletion, uniqueId, upsertTrack } from '../state/edits.ts';
 import { ClaimList, ProblemList } from './ClaimList.tsx';
 import { claimsFromValues, toClaimValues, type ClaimFields, type ClaimValues } from '../lib/claims.ts';
@@ -8,6 +8,9 @@ import { isDescendant, trackDepth } from '../lib/tracks.ts';
 import { formatYear, parseDate } from '../lib/calendar.ts';
 import { errorProps, FieldError } from './FieldError.tsx';
 import { isSafeUrl } from '../lib/urls.ts';
+import { resolveLifespan, spanDates, spanStretches } from '../lib/lifespan.ts';
+import { defaultSelection, isApprox } from '../lib/chronology.ts';
+import { citationsInWords } from '../lib/table.ts';
 
 interface FormValues extends ClaimFields {
   id: string;
@@ -20,6 +23,7 @@ interface FormValues extends ClaimFields {
   chronology: string;
   spanStart: string;
   spanEnd: string;
+  spanOngoing: boolean;
   pinLast: boolean;
   phases: PhaseValues[];
 }
@@ -29,16 +33,21 @@ interface PhaseValues {
   name: string;
   start: string;
   end: string;
+  ongoing: boolean;
   startDates: ClaimValues[];
   endDates: ClaimValues[];
+  /** Sources saying it is still going: not edited here, kept while the phase stays ongoing. */
+  ongoingSources?: SourceRef[];
 }
 
 const toPhaseValues = (p: TrackPhase, cal: Calendar): PhaseValues => ({
   name: p.name,
   start: formatYear(p.start, cal, p.circa),
-  end: formatYear(p.end, cal, p.circa),
+  end: p.end === undefined ? '' : formatYear(p.end, cal, p.circa),
+  ongoing: !!p.ongoing,
   startDates: (p.startDates ?? []).map((c) => toClaimValues(c, cal)),
   endDates: (p.endDates ?? []).map((c) => toClaimValues(c, cal)),
+  ...(p.ongoingSources ? { ongoingSources: p.ongoingSources } : {}),
 });
 
 interface Props {
@@ -56,6 +65,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
   const isNew = !initial;
   const cal = data.meta.calendar;
   const fmt = (y: number, circa?: boolean) => formatYear(y, cal, circa);
+  // the form edits the lifespan's first stretch; any later stretches (a lifespan with gaps) are kept as they are
+  const [first, ...laterStretches] = spanStretches(initial?.span);
   const {
     register,
     handleSubmit,
@@ -73,17 +84,26 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       url: initial?.url ?? '',
       wikidata: initial?.ids?.wikidata ?? '',
       chronology: initial?.chronology ?? '',
-      spanStart: initial?.span ? fmt(initial.span.start, initial.span.circa) : '',
-      spanEnd: initial?.span ? fmt(initial.span.end, initial.span.circa) : '',
+      spanStart: first ? fmt(first.start, first.circa) : '',
+      spanEnd: first?.end !== undefined ? fmt(first.end, first.circa) : '',
+      spanOngoing: !!first?.ongoing,
       pinLast: !!initial?.pinLast,
-      startDates: (initial?.span?.startDates ?? []).map((c) => toClaimValues(c, cal)),
-      endDates: (initial?.span?.endDates ?? []).map((c) => toClaimValues(c, cal)),
+      startDates: (first?.startDates ?? []).map((c) => toClaimValues(c, cal)),
+      endDates: (first?.endDates ?? []).map((c) => toClaimValues(c, cal)),
       phases: (initial?.phases ?? []).map((p) => toPhaseValues(p, cal)),
     },
   });
   // A track can sit under any track except itself and its own descendants (rows nest to any depth).
   const parents = data.tracks.filter((t) => t.id !== initial?.id && !(initial && isDescendant(data.tracks, t.id, initial.id)));
   const name = watch('name');
+  const spanOngoing = watch('spanOngoing');
+  // a row with phases and no typed lifespan: its lifespan as worked out from them (read-only)
+  const derivedLife =
+    initial && !initial.span && initial.phases?.length
+      ? resolveLifespan(data, initial, defaultSelection(data))
+          .map((s) => spanDates(s, cal, isApprox(s)))
+          .join(', ')
+      : undefined;
   const idValue = watch('id');
   const otherIds = data.tracks.filter((t) => t.id !== initial?.id).map((t) => t.id);
   const previewId = idValue ? slug(idValue) : uniqueId(name, otherIds);
@@ -112,39 +132,44 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (Object.keys(ids).length) t.ids = ids;
     if (v.chronology) t.chronology = v.chronology;
     if (v.pinLast) t.pinLast = true;
-    if (v.spanStart.trim() || v.spanEnd.trim()) {
+    let firstStretch: TrackSpan | undefined;
+    if (v.spanStart.trim() || (!v.spanOngoing && v.spanEnd.trim())) {
       const s = parseDate(v.spanStart, cal);
-      const e = parseDate(v.spanEnd, cal);
+      const e = v.spanOngoing ? null : parseDate(v.spanEnd, cal);
       if (!s) return setError('spanStart', { message: `Write a year like "${example}".` }, { shouldFocus: true });
-      if (!e) return setError('spanEnd', { message: `Write a year like "${example}".` }, { shouldFocus: true });
-      if (e.year < s.year) return setError('spanEnd', { message: 'The end is before the start.' }, { shouldFocus: true });
-      t.span = { start: s.year, end: e.year };
-      if (s.circa || e.circa) t.span.circa = true;
+      if (!v.spanOngoing && !e) return setError('spanEnd', { message: `Write a year like "${example}", or tick "Still going".` }, { shouldFocus: true });
+      if (e && e.year < s.year) return setError('spanEnd', { message: 'The end is before the start.' }, { shouldFocus: true });
+      firstStretch = e ? { start: s.year, end: e.year } : { start: s.year, ongoing: true };
+      if (s.circa || e?.circa) firstStretch.circa = true;
       const startDates = claimsFromValues(v.startDates, cal);
-      const endDates = claimsFromValues(v.endDates, cal);
-      if (startDates) t.span.startDates = startDates;
-      if (endDates) t.span.endDates = endDates;
+      const endDates = e ? claimsFromValues(v.endDates, cal) : undefined;
+      if (startDates) firstStretch.startDates = startDates;
+      if (endDates) firstStretch.endDates = endDates;
+      if (!e && first?.ongoing && first.ongoingSources) firstStretch.ongoingSources = first.ongoingSources;
     } else if (v.startDates.length || v.endDates.length) {
       return setError('spanStart', { message: 'Give the lifespan a start and an end, or remove its date claims.' }, { shouldFocus: true });
     }
+    const stretches = [...(firstStretch ? [firstStretch] : []), ...laterStretches];
+    if (stretches.length) t.span = stretches.length === 1 ? stretches[0] : stretches;
     const phases: TrackPhase[] = [];
     for (const [i, p] of v.phases.entries()) {
       if (!p.name.trim()) return setError(`phases.${i}.name`, { message: 'Give the phase a name.' }, { shouldFocus: true });
       const s = parseDate(p.start, cal);
-      const e = parseDate(p.end, cal);
+      const e = p.ongoing ? null : parseDate(p.end, cal);
       if (!s) return setError(`phases.${i}.start`, { message: `Write a year like "${example}".` }, { shouldFocus: true });
-      if (!e) return setError(`phases.${i}.end`, { message: `Write a year like "${example}".` }, { shouldFocus: true });
-      if (e.year < s.year) return setError(`phases.${i}.end`, { message: 'The end is before the start.' }, { shouldFocus: true });
-      const phase: TrackPhase = { name: p.name.trim(), start: s.year, end: e.year };
-      if (s.circa || e.circa) phase.circa = true;
+      if (!p.ongoing && !e) return setError(`phases.${i}.end`, { message: `Write a year like "${example}", or tick "Still going".` }, { shouldFocus: true });
+      if (e && e.year < s.year) return setError(`phases.${i}.end`, { message: 'The end is before the start.' }, { shouldFocus: true });
+      const phase: TrackPhase = e ? { name: p.name.trim(), start: s.year, end: e.year } : { name: p.name.trim(), start: s.year, ongoing: true };
+      if (s.circa || e?.circa) phase.circa = true;
       const startDates = claimsFromValues(p.startDates, cal);
-      const endDates = claimsFromValues(p.endDates, cal);
+      const endDates = e ? claimsFromValues(p.endDates, cal) : undefined;
       if (startDates) phase.startDates = startDates;
       if (endDates) phase.endDates = endDates;
+      if (!e && p.ongoingSources?.length) phase.ongoingSources = p.ongoingSources;
       phases.push(phase);
     }
     // stored in date order, whatever order they were typed in
-    if (phases.length) t.phases = phases.sort((a, b) => a.start - b.start || a.end - b.end);
+    if (phases.length) t.phases = phases.sort((a, b) => a.start - b.start || (a.end ?? Infinity) - (b.end ?? Infinity));
     const found = newProblems(data, upsertTrack(data, t, initial?.id));
     setProblems(found);
     if (!found.length) onSave(t, initial?.id);
@@ -196,14 +221,37 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
 
         <fieldset>
           <legend>Lifespan (optional)</legend>
-          <p className="muted small">Shaded across the row. Write "c." for approximate dates, e.g. "c. {example}".</p>
+          <p className="muted small">
+            Shaded across the row. Write "c." for approximate dates, e.g. "c. {example}". A row with phases can leave it
+            empty: its lifespan is then worked out from its phases, blank in the gaps between them. Type one only if the
+            row carried on through those gaps; it must cover all its phases.
+          </p>
+          {derivedLife && <p className="small">Worked out from its phases: {derivedLife}</p>}
           <div className="row">
             <input aria-label="Lifespan start" placeholder="From" {...register('spanStart')} {...errorProps('tr-span-start', errors.spanStart)} />
-            <input aria-label="Lifespan end" placeholder="To" {...register('spanEnd')} {...errorProps('tr-span-end', errors.spanEnd)} />
+            <input
+              aria-label="Lifespan end"
+              placeholder={spanOngoing ? 'Still going' : 'To'}
+              disabled={spanOngoing}
+              {...register('spanEnd')}
+              {...errorProps('tr-span-end', errors.spanEnd)}
+            />
           </div>
+          <label className="check">
+            <input type="checkbox" {...register('spanOngoing')} /> Still going (runs to the present)
+          </label>
           <FieldError id="tr-span-start" error={errors.spanStart} />
           <FieldError id="tr-span-end" error={errors.spanEnd} />
-          <details open={!!(initial?.span?.startDates?.length || initial?.span?.endDates?.length)}>
+          {spanOngoing && first?.ongoingSources?.length ? (
+            <p className="small">Still going per {citationsInWords(first.ongoingSources, data.sources)} (kept; edit in the file)</p>
+          ) : null}
+          {laterStretches.length > 0 && (
+            <p className="small">
+              Later stretches, kept as they are (edit them in the file):{' '}
+              {laterStretches.map((s) => `${fmt(s.start, s.circa)} – ${s.ongoing || s.end === undefined ? 'ongoing' : fmt(s.end, s.circa)}`).join(', ')}
+            </p>
+          )}
+          <details open={!!(first?.startDates?.length || first?.endDates?.length)}>
             <summary>Dated claims</summary>
             <p className="muted small">
               What each source says the start and end are. The shaded ends of the lifespan show the range they give.
@@ -294,6 +342,7 @@ function PhaseList({
   example: string;
 }) {
   const phases = useFieldArray({ control, name: 'phases' });
+  const ongoingList = useWatch({ control, name: 'phases' });
   return (
     <fieldset className="phases">
       <legend>Phases (optional)</legend>
@@ -304,6 +353,7 @@ function PhaseList({
       </p>
       {phases.fields.map((f, i) => {
         const err = errors.phases?.[i];
+        const ongoing = ongoingList?.[i]?.ongoing;
         return (
           <div key={f.id} className="phase">
             <div className="row">
@@ -315,10 +365,22 @@ function PhaseList({
             <FieldError id={`tr-phase-${i}-name`} error={err?.name} />
             <div className="row">
               <input aria-label="Phase start" placeholder="From" {...register(`phases.${i}.start`)} {...errorProps(`tr-phase-${i}-start`, err?.start)} />
-              <input aria-label="Phase end" placeholder="To" {...register(`phases.${i}.end`)} {...errorProps(`tr-phase-${i}-end`, err?.end)} />
+              <input
+                aria-label="Phase end"
+                placeholder={ongoing ? 'Still going' : 'To'}
+                disabled={ongoing}
+                {...register(`phases.${i}.end`)}
+                {...errorProps(`tr-phase-${i}-end`, err?.end)}
+              />
             </div>
+            <label className="check">
+              <input type="checkbox" {...register(`phases.${i}.ongoing`)} /> Still going
+            </label>
             <FieldError id={`tr-phase-${i}-start`} error={err?.start} />
             <FieldError id={`tr-phase-${i}-end`} error={err?.end} />
+            {ongoing && f.ongoingSources?.length ? (
+              <p className="small">Still going per {citationsInWords(f.ongoingSources, data.sources)} (kept; edit in the file)</p>
+            ) : null}
             {/* folded, so a row with many phases stays short; the count says what is inside */}
             <details>
               <summary>Dated claims{f.startDates.length + f.endDates.length ? ` (${f.startDates.length + f.endDates.length})` : ''}</summary>
@@ -333,7 +395,7 @@ function PhaseList({
       })}
       <button
         type="button"
-        onClick={() => phases.append({ name: '', start: '', end: '', startDates: [], endDates: [] })}
+        onClick={() => phases.append({ name: '', start: '', end: '', ongoing: false, startDates: [], endDates: [] })}
         title={`Dates are written like "${example}"`}
       >
         + Add a phase

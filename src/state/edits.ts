@@ -1,5 +1,6 @@
 import type { Dataset, DateClaim, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { validateDataset } from '../data/validate.ts';
+import { spanStretches } from '../lib/lifespan.ts';
 
 /**
  * The problems an edit would add: what `validateDataset` finds in `after` but not in `before`. Forms check this
@@ -136,9 +137,10 @@ export function removeTrack(d: Dataset, id: string): Dataset {
 }
 
 /**
- * Rewrites every citation of source `from`: an event's sources, its date claims, a track's lifespan and phase claims and a
- * chronology's source. `to` renames the key; `null` drops the citation. A date claim keeps its year and margin
- * when its source goes (removing the claim could leave the best estimate outside the remaining claims).
+ * Rewrites every citation of source `from`: an event's sources, its date claims, a track's lifespan and phase claims
+ * (and the sources saying they are still going) and a chronology's source. `to` renames the key; `null` drops the
+ * citation. A date claim keeps its year and margin when its source goes (removing the claim could leave the best
+ * estimate outside the remaining claims).
  * Events whose citations change are marked `edited`.
  */
 function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'events' | 'tracks' | 'chronologies'> {
@@ -164,17 +166,26 @@ function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'eve
         }
       : e,
   );
-  const spanCites = (s: TrackSpan | undefined) => !!s && (cites(s.startDates) || cites(s.endDates));
-  const respan = <S extends TrackSpan>(s: S): S => ({
-    ...s,
-    ...(s.startDates ? { startDates: claims(s.startDates) } : {}),
-    ...(s.endDates ? { endDates: claims(s.endDates) } : {}),
-  });
+  const spanCites = (s: TrackSpan | undefined) =>
+    !!s && (cites(s.startDates) || cites(s.endDates) || !!s.ongoingSources?.some((r) => r.sourceKey === from));
+  const respan = <S extends TrackSpan>(s: S): S => {
+    const out: S = {
+      ...s,
+      ...(s.startDates ? { startDates: claims(s.startDates) } : {}),
+      ...(s.endDates ? { endDates: claims(s.endDates) } : {}),
+    };
+    if (s.ongoingSources) {
+      const kept = s.ongoingSources.flatMap((r) => ref(r) ?? []);
+      if (kept.length) out.ongoingSources = kept;
+      else delete out.ongoingSources;
+    }
+    return out;
+  };
   const tracks = d.tracks.map((t) =>
-    spanCites(t.span) || t.phases?.some(spanCites)
+    spanStretches(t.span).some(spanCites) || t.phases?.some(spanCites)
       ? {
           ...t,
-          ...(t.span ? { span: respan(t.span) } : {}),
+          ...(t.span ? { span: Array.isArray(t.span) ? t.span.map(respan) : respan(t.span) } : {}),
           ...(t.phases ? { phases: t.phases.map(respan) } : {}),
         }
       : t,

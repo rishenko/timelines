@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { Dataset, DateClaim, LinkKind } from '../types.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { chronologyGroups } from '../lib/chronology.ts';
+import { spanStretches } from '../lib/lifespan.ts';
 
 /** Claims that give a range of years: a margin, or sources that disagree. Claims that all agree draw no range. */
 const spreads = (claims: DateClaim[] | undefined) =>
@@ -93,15 +94,15 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
   // only explain what this timeline actually uses
   const has = {
     nesting: data.tracks.some((t) => t.parent),
-    lifespans: data.tracks.some((t) => t.span),
+    // typed, or worked out from phases
+    lifespans: data.tracks.some((t) => t.span || t.phases?.length),
     phases: data.tracks.some((t) => t.phases?.length),
     ranges:
       hasChronologies ||
       data.events.some((e) => spreads(e.startDates) || spreads(e.endDates)) ||
       data.tracks.some(
         (t) =>
-          spreads(t.span?.startDates) ||
-          spreads(t.span?.endDates) ||
+          spanStretches(t.span).some((s) => spreads(s.startDates) || spreads(s.endDates)) ||
           !!t.phases?.some((ph) => spreads(ph.startDates) || spreads(ph.endDates)),
       ),
     circa: data.events.some((e) => e.circa),
@@ -130,7 +131,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       sample: <span className="lg-lifespan" />,
       show: has.lifespans,
       title: 'Lifespan',
-      text: 'The shaded band behind a row shows when that civilization, period or faction existed. Soft edges mean its start or end is uncertain.',
+      text: 'The shaded band behind a row shows when that civilization, period or faction existed. A row with phases is shaded where they are, so a blank gap between them is a time it didn’t exist. Soft edges mean its start or end is uncertain; a row still going runs to the present.',
     },
     {
       sample: (

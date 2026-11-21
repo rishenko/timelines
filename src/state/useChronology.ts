@@ -9,6 +9,7 @@ import {
   type ResolvedPhase,
   type ResolvedSpan,
 } from '../lib/chronology.ts';
+import { resolveLifespan } from '../lib/lifespan.ts';
 
 /**
  * Dating systems: readers pick one chronology per group (e.g. Mesopotamia: High / Middle / Low), and every event,
@@ -20,17 +21,21 @@ export function useChronology(data: Dataset) {
   const groups = useMemo(() => [...chronologyGroups(data)].filter(([, list]) => list.length > 1), [data]);
   const resolved = useMemo(() => resolveEvents(data, selection), [data, selection]);
   const resolvedById = useMemo(() => new Map(resolved.map((e) => [e.uuid, e])), [resolved]);
-  const spans = useMemo(() => {
-    const m = new Map<string, ResolvedSpan>();
-    for (const t of data.tracks) if (t.span) m.set(t.id, resolveSpan(data, t.id, t.span, selection));
-    return m;
-  }, [data, selection]);
   const phases = useMemo(() => {
     const m = new Map<string, ResolvedPhase[]>();
     for (const t of data.tracks)
       if (t.phases?.length) m.set(t.id, t.phases.map((p) => ({ name: p.name, ...resolveSpan(data, t.id, p, selection) })));
     return m;
   }, [data, selection]);
+  /** Each row's lifespan stretches: typed, or worked out from its phases (lib/lifespan.ts). Rows with neither are absent. */
+  const spans = useMemo(() => {
+    const m = new Map<string, ResolvedSpan[]>();
+    for (const t of data.tracks) {
+      const list = resolveLifespan(data, t, selection, phases.get(t.id));
+      if (list.length) m.set(t.id, list);
+    }
+    return m;
+  }, [data, selection, phases]);
 
   const choose = (group: string, id: string) => setSelection((s) => ({ ...s, [group]: id }));
   const reset = () => setSelection(defaults);

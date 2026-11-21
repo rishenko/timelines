@@ -3,7 +3,7 @@
 // In the source file, any year may be written for people instead of as a stored integer:
 //   "start": "c. 2334 BCE", "end": "2154 BCE", "year": "1651 BCE", "until": "1400 BCE"
 // They are converted with the timeline's own calendar (so "1450 BCE" becomes -1449, because BCE/CE has no
-// year 0). A "c." on an event's or lifespan's start sets `circa`. Integers pass through unchanged. The result
+// year 0). A "c." on an event's, lifespan stretch's or phase's start sets `circa`. Integers pass through unchanged. The result
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
 import { parseDate } from '../../src/lib/calendar.ts';
 import { validateDataset } from '../../src/data/validate.ts';
@@ -66,7 +66,14 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
       : undefined,
     tracks: (raw.tracks as Obj[]).map((t) => ({
       ...t,
-      ...(t.span ? { span: dated(t.span as Obj, `track ${t.id}`) } : {}),
+      // a lifespan is one stretch or a list of them; an ongoing stretch or phase has no end to convert
+      ...(t.span
+        ? {
+            span: Array.isArray(t.span)
+              ? (t.span as Obj[]).map((s, i) => dated(s, `track ${t.id} stretch ${i + 1}`))
+              : dated(t.span as Obj, `track ${t.id}`),
+          }
+        : {}),
       ...(Array.isArray(t.phases) ? { phases: (t.phases as Obj[]).map((p) => dated(p, `track ${t.id} phase ${p.name}`)) } : {}),
     })),
     events: (raw.events as Obj[]).map((e) => dated(e, `event ${e.uuid}`)),

@@ -24,8 +24,10 @@ describe('LegendPanel', () => {
     expect(t).toContain('Leads to');
     // phases on Quay Town; the Third Council's end has two dates
     expect(t).toContain('Phases');
+    // a row with phases has a lifespan worked out from them
+    expect(t).toContain('Lifespan');
     expect(t).toContain('Uncertain start and end');
-    for (const absent of ['Lifespan', 'Dating systems', 'Conquers', 'Succeeds', 'Key event'])
+    for (const absent of ['Dating systems', 'Conquers', 'Succeeds', 'Key event'])
       expect(t).not.toContain(absent);
   });
 });

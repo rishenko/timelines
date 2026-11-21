@@ -34,7 +34,8 @@ interface Props {
   /** All events (resolved), for connections and cluster titles. */
   eventsById: Map<string, ResolvedEvent>;
   /** Track lifespans (resolved), shaded behind each lane. */
-  spans: Map<string, ResolvedSpan>;
+  /** Each row's lifespan stretches (typed, or worked out from its phases). */
+  spans: Map<string, ResolvedSpan[]>;
   /** Track phases (resolved): named periods drawn on the row's own bar. */
   phases: Map<string, ResolvedPhase[]>;
   visibleTracks: Record<string, boolean>;
@@ -169,8 +170,7 @@ export function TimelineView(props: Props) {
     const out: ResolvedSpan[] = [];
     for (const l of allLanes)
       for (const id of l.members) {
-        const s = spans.get(id);
-        if (s) out.push(s);
+        out.push(...(spans.get(id) ?? []));
         out.push(...(phases.get(id) ?? []));
       }
     return out;
@@ -456,10 +456,10 @@ export function TimelineView(props: Props) {
               aria-label={lane.track.name}
               data-lane={lane.id}
             >
-              {lane.members.map((id) => {
-                const s = spans.get(id);
-                return s ? <SpanBand key={`span-${id}`} track={trackById.get(id)!} span={s} {...band} /> : null;
-              })}
+              {/* each stretch of a lifespan is its own band; the gaps between them stay blank */}
+              {lane.members.flatMap((id) =>
+                (spans.get(id) ?? []).map((s, i) => <SpanBand key={`span-${id}-${i}`} track={trackById.get(id)!} span={s} {...band} />),
+              )}
               {lanePhases.get(lane.id)?.map((p, i) => (
                 <PhaseBand key={`phase-${p.trackId}-${i}`} phase={p} color={trackById.get(p.trackId)!.color} alt={i % 2 === 1} {...band} />
               ))}

@@ -1,6 +1,7 @@
 import { useCallback, useMemo, type Dispatch, type RefObject, type SetStateAction } from 'react';
 import { buildIndex, trackRange, type SearchEntry } from '../lib/search.ts';
 import { ancestorIds } from '../lib/tracks.ts';
+import { spanDates } from '../lib/lifespan.ts';
 import { compareEvents, formatEventDates } from '../lib/years.ts';
 import { formatYear, parseYear } from '../lib/calendar.ts';
 import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
@@ -17,7 +18,7 @@ export function useSearchActions(o: {
   data: Dataset;
   resolved: ResolvedEvent[];
   resolvedById: Map<string, ResolvedEvent>;
-  spans: Map<string, ResolvedSpan>;
+  spans: Map<string, ResolvedSpan[]>;
   phases: Map<string, ResolvedPhase[]>;
   visibleIds: Set<string>;
   filters: Filters;
@@ -46,11 +47,10 @@ export function useSearchActions(o: {
       }
       if (entry.kind === 'phase') {
         const p = phaseOf(entry);
-        return p ? `${formatYear(p.start, cal, isApprox(p))} – ${formatYear(p.end, cal, isApprox(p))}` : '';
+        return p ? spanDates(p, cal, isApprox(p)) : '';
       }
-      const s = spans.get(entry.id);
-      if (!s) return '';
-      return `${formatYear(s.start, cal, isApprox(s))} – ${formatYear(s.end, cal, isApprox(s))}`;
+      // every stretch of its lifespan (typed, or worked out from its phases): "1569 – 1795, 1807 – 1915, 1918 – ongoing"
+      return (spans.get(entry.id) ?? []).map((s) => spanDates(s, cal, isApprox(s))).join(', ');
     },
     [resolvedById, spans, cal, phaseOf],
   );

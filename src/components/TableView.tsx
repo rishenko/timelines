@@ -31,7 +31,7 @@ interface Props {
   /** A search pick or "Go to year": scroll to and focus the event, row or year. */
   focus: FocusRequest | null;
   /** Rows' lifespans and phases, resolved under the reader's chronologies (as the chart draws them). */
-  spans: Map<string, ResolvedSpan>;
+  spans: Map<string, ResolvedSpan[]>;
   phases: Map<string, ResolvedPhase[]>;
   /** Filters' row switches: a row hidden there (or under a hidden row) is left out. */
   visibleTracks: Record<string, boolean>;
@@ -324,7 +324,8 @@ function RowsTable({ rows, data, regionsOf }: { rows: TableRow[]; data: Dataset;
       </thead>
       <tbody>
         {rows.map((r) => {
-          const life = r.span ? spanInWords(r.span, cal) : undefined;
+          const life = r.spans.map((s) => spanInWords(s, cal, data.sources));
+          const derived = r.spans.some((s) => s.derived);
           return (
             <tr key={r.track.id}>
               <th scope="row" data-row-id={r.track.id} tabIndex={-1}>
@@ -332,10 +333,16 @@ function RowsTable({ rows, data, regionsOf }: { rows: TableRow[]; data: Dataset;
                 {r.parent && <span className="muted small"> (in {r.parent.name})</span>}
               </th>
               <td className="date">
-                {life ? (
+                {life.length ? (
                   <>
-                    {life.main}
-                    {life.ranges.length > 0 && <div className="muted small">{life.ranges.join('; ')}</div>}
+                    {/* one line per stretch: a gap between them is a time the row didn't exist */}
+                    {life.map((l, i) => (
+                      <div key={i}>
+                        {l.main}
+                        {l.ranges.length > 0 && <div className="muted small">{l.ranges.join('; ')}</div>}
+                      </div>
+                    ))}
+                    {derived && <div className="muted small">From its phases</div>}
                   </>
                 ) : (
                   <span className="muted">{regionsOf ? 'No lifespan' : 'Not dated'}</span>
@@ -345,7 +352,7 @@ function RowsTable({ rows, data, regionsOf }: { rows: TableRow[]; data: Dataset;
                 {r.phases.length > 0 ? (
                   <ol className="phase-list">
                     {r.phases.map((ph, i) => {
-                      const w = spanInWords(ph, cal);
+                      const w = spanInWords(ph, cal, data.sources);
                       return (
                         <li key={`${ph.name}-${i}`}>
                           <strong>{ph.name}</strong>: {w.main}

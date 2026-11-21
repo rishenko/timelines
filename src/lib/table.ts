@@ -1,9 +1,10 @@
-import type { Calendar, Dataset, Track } from '../types.ts';
+import type { Calendar, Dataset, SourceRef, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan, Window } from './chronology.ts';
 import { datingChronology, isApprox } from './chronology.ts';
 import { formatYear } from './calendar.ts';
 import { compareEvents, formatEventDates } from './years.ts';
 import { trackIndex, trackPath, treeOrder } from './tracks.ts';
+import { spanDates } from './lifespan.ts';
 
 /**
  * The table view's data: events grouped into sections (a region, or a top-level row when there are no regions),
@@ -133,7 +134,8 @@ export interface TableRow {
   track: Track;
   /** The row it sits under, when that isn't the section itself (so "Kush, in Nubia" reads right without the indent). */
   parent?: Track;
-  span?: ResolvedSpan;
+  /** Its lifespan's stretches (typed, or worked out from its phases); empty when it has neither. */
+  spans: ResolvedSpan[];
   phases: ResolvedPhase[];
 }
 
@@ -145,7 +147,7 @@ export interface TableRow {
 export function sectionRows(
   tracks: Track[],
   sectionId: string | undefined,
-  spans: Map<string, ResolvedSpan>,
+  spans: Map<string, ResolvedSpan[]>,
   phases: Map<string, ResolvedPhase[]>,
   visible: (trackId: string) => boolean,
   alsoList: (trackId: string) => boolean = () => false,
@@ -159,19 +161,33 @@ export function sectionRows(
       return {
         track: t,
         parent: parent && parent.id !== sectionId ? parent : undefined,
-        span: spans.get(t.id),
+        spans: spans.get(t.id) ?? [],
         phases: phases.get(t.id) ?? [],
       };
     });
 }
 
-/** A lifespan or phase in words: "c. 1650 BCE – c. 1190 BCE", plus the ranges its sources allow. */
-export function spanInWords(s: ResolvedSpan, cal: Calendar): { main: string; ranges: string[] } {
+/** Citations in words: "French Fifth Republic (infobox life span: 1958–present) and Poland". */
+export function citationsInWords(refs: SourceRef[], sources: Dataset['sources']): string {
+  return refs
+    .map((r) => {
+      const name = sources[r.sourceKey]?.name ?? r.sourceKey;
+      return r.sourceLocation ? `${name} (${r.sourceLocation})` : name;
+    })
+    .join(' and ');
+}
+
+/**
+ * A lifespan or phase in words: "c. 1650 BCE – c. 1190 BCE", plus the ranges its sources allow and, given the
+ * timeline's sources, which of them say it is still going ("still going per …").
+ */
+export function spanInWords(s: ResolvedSpan, cal: Calendar, sources?: Dataset['sources']): { main: string; ranges: string[] } {
   const approx = isApprox(s);
-  const main = `${formatYear(s.start, cal, approx)} – ${formatYear(s.end, cal, approx)}`;
+  const main = spanDates(s, cal, approx);
   const ranges: string[] = [];
   if (s.startWindow) ranges.push(`start between ${range(s.startWindow, cal)}`);
   if (s.endWindow) ranges.push(`end between ${range(s.endWindow, cal)}`);
+  if (sources && s.ongoing && s.ongoingSources?.length) ranges.push(`still going per ${citationsInWords(s.ongoingSources, sources)}`);
   return { main, ranges };
 }
 
@@ -186,7 +202,7 @@ export interface FullSection extends TableSection {
 export function fullSections(
   tracks: Track[],
   events: ResolvedEvent[],
-  spans: Map<string, ResolvedSpan>,
+  spans: Map<string, ResolvedSpan[]>,
   phases: Map<string, ResolvedPhase[]>,
   visible: (trackId: string) => boolean,
   alsoList?: (trackId: string) => boolean,

@@ -66,10 +66,18 @@ export interface TimelineEdgeLink {
   side: 'before' | 'after';
 }
 
-/** A date range on a track: the lifespan of a civilization, period or faction. */
+/**
+ * A date range on a track: a stretch of the lifespan of a civilization, period or faction, or a phase. It has an
+ * `end`, or is `ongoing` (still going: runs to the dataset's present).
+ */
 export interface TrackSpan {
   start: number;
-  end: number;
+  /** Last year, inclusive. Absent when `ongoing`. */
+  end?: number;
+  /** Still going as of the dataset's present. Use instead of `end`. */
+  ongoing?: boolean;
+  /** Sources saying it is still going (only when `ongoing`): an ongoing stretch's counterpart to `endDates`. */
+  ongoingSources?: SourceRef[];
   circa?: boolean;
   startDates?: DateClaim[];
   endDates?: DateClaim[];
@@ -91,8 +99,12 @@ export interface Track {
   pinLast?: boolean;
   /** Default chronology for events on this track; children inherit it. */
   chronology?: string;
-  /** Shaded across the lane: when this track existed. */
-  span?: TrackSpan;
+  /**
+   * Shaded across the lane: when this track existed. One stretch, or a list of stretches in date order with gaps
+   * between them (gaps: the row didn't exist then). Must contain all of the row's phases. Without it, a row with
+   * phases gets its lifespan worked out from them (lib/lifespan.ts).
+   */
+  span?: TrackSpan | TrackSpan[];
   /**
    * Named periods within the row, drawn on its own bar: successive governments of one state (France's kingdoms,
    * republics and empires), dynasties, eras. A line marks each change and the name sits along

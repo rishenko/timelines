@@ -1,5 +1,5 @@
 import type { Calendar, Track } from '../types.ts';
-import { formatYear } from '../lib/calendar.ts';
+import { spanDates } from '../lib/lifespan.ts';
 import { isApprox, type ResolvedSpan } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
 import type { PlacedPhase } from './layout.ts';
@@ -38,7 +38,10 @@ interface Common {
   inView: (x0: number, x1: number) => boolean;
 }
 
-/** A row's lifespan: a soft band across the lane, fading across uncertain ends. */
+/**
+ * One stretch of a row's lifespan: a soft band across the lane, fading across uncertain ends. A lifespan with gaps is
+ * several bands; an ongoing one runs to the present and says so in its tooltip.
+ */
 export function SpanBand({ track, span, scale, cal, labelW, inView }: Common & { track: Track; span: ResolvedSpan }) {
   const b = bandBox(scale, span);
   if (!inView(b.x0, b.x1)) return null;
@@ -47,7 +50,7 @@ export function SpanBand({ track, span, scale, cal, labelW, inView }: Common & {
     <div
       className="tl-span"
       style={bandStyle(labelW, b, track.color)}
-      title={`${track.name}: ${formatYear(span.start, cal, approx)} – ${formatYear(span.end, cal, approx)}`}
+      title={`${track.name}: ${spanDates(span, cal, approx)}${span.derived ? ' (from its phases)' : ''}`}
     />
   );
 }
@@ -68,7 +71,7 @@ export function PhaseBand({
   const b = bandBox(scale, p);
   if (!inView(b.x0, b.x1)) return null;
   const approx = isApprox(p);
-  const dates = `${formatYear(p.start, cal, approx)} – ${formatYear(p.end, cal, approx)}`;
+  const dates = spanDates(p, cal, approx);
   // the name sticks within its own stretch of the band, which stops where the next phase on its line starts
   const n0 = scale.x(p.nameFrom) - b.x0;
   const w = scale.x(p.nameTo) - b.x0 - n0;

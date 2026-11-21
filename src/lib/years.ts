@@ -40,7 +40,7 @@ export function datasetPresent(ds: { present?: number; events: TimelineEvent[] }
   return ds.present ?? presentYear(ds.events);
 }
 
-export function presentYear(events: TimelineEvent[]): number {
+export function presentYear(events: Pick<TimelineEvent, 'start' | 'end'>[]): number {
   let max = -Infinity;
   for (const e of events) max = Math.max(max, e.start, e.end ?? e.start);
   return Number.isFinite(max) ? max : 0;

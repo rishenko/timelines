@@ -15,6 +15,7 @@ import {
 } from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
 import { draftToStore, restoreDraft } from './dataset.ts';
+import { spanStretches } from '../lib/lifespan.ts';
 
 const base = (): Dataset => ({
   schemaVersion: 3,
@@ -125,7 +126,7 @@ describe('sources', () => {
     const d = upsertSource(claimed(), 'annals-src', { name: 'Chronicle', tags: ['first'] }, 'chron');
     expect(validateDataset(d)).toEqual([]);
     expect(d.events[1].startDates![0].source!.sourceKey).toBe('annals-src');
-    expect(d.tracks[1].span!.endDates![0].source!.sourceKey).toBe('annals-src');
+    expect(spanStretches(d.tracks[1].span)[0].endDates![0].source!.sourceKey).toBe('annals-src');
     expect(d.chronologies!.annals.source!.sourceKey).toBe('annals-src');
     expect(d.events[1].edited).toBe(true);
   });
@@ -136,7 +137,7 @@ describe('sources', () => {
     const d = removeSource(before, 'chron');
     expect(validateDataset(d)).toEqual([]);
     expect(d.events[1].startDates).toEqual([{ year: 2, margin: 1 }]);
-    expect(d.tracks[1].span!.endDates).toEqual([{ year: 5 }]);
+    expect(spanStretches(d.tracks[1].span)[0].endDates).toEqual([{ year: 5 }]);
     expect(d.chronologies!.annals.source).toBeUndefined();
   });
 

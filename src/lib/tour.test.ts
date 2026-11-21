@@ -41,7 +41,8 @@ describe('guided tour', () => {
     const titles = tourSteps(combined as unknown as Dataset, { hasDating: true, hasSubRows: true }).map((s) => s.title);
     expect(titles.indexOf('Lifespans')).toBe(titles.indexOf('Events') + 1);
     const plain = plainTimeline();
-    const noSpans = { ...plain, tracks: plain.tracks.map(({ span: _span, ...t }) => t) } as Dataset;
+    // a row with phases has a lifespan worked out from them, so take the phases away too
+    const noSpans = { ...plain, tracks: plain.tracks.map(({ span: _span, phases: _phases, ...t }) => t) } as Dataset;
     expect(tourSteps(noSpans, { hasDating: false, hasSubRows: false }).map((s) => s.title)).not.toContain('Lifespans');
   });
 });

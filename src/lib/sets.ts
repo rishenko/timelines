@@ -1,6 +1,7 @@
 import type { Track, TimelineEvent } from '../types.ts';
 import { childrenMap, trackIndex, trackPath, treeOrder } from './tracks.ts';
 import { trackChronology } from './chronology.ts';
+import { rawLifespan } from './lifespan.ts';
 
 /**
  * Comparison sets: rows the reader picks from anywhere in the timeline, shown side by side as a flat list (feature
@@ -40,7 +41,11 @@ function rowStarts(tracks: Track[], events: TimelineEvent[], setRowOf: (id: stri
       const r = setRowOf(t);
       if (r) out.set(r, Math.min(out.get(r) ?? Infinity, e.start));
     }
-  for (const t of tracks) if (t.span && setRowOf(t.id) === t.id) out.set(t.id, t.span.start);
+  for (const t of tracks) {
+    // typed or worked out from phases; only its start matters, so the present doesn't
+    const life = rawLifespan(t, 0);
+    if (life && setRowOf(t.id) === t.id) out.set(t.id, life.start);
+  }
   return out;
 }
 
