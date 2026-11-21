@@ -168,7 +168,7 @@ export function TableView(p: Props) {
                 )
               </span>
             </HeadingTag>
-            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} regionsOf={regionsOf} />}
+            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} regionsOf={regionsOf} onSelect={p.onSelect} />}
             {s.events.length > 0 && (
               <table className="events-table">
                 <caption>Events</caption>
@@ -309,8 +309,46 @@ function RegionCell({ regions }: { regions: RowRegion[] }) {
   );
 }
 
-function RowsTable({ rows, data, regionsOf }: { rows: TableRow[]; data: Dataset; regionsOf?: Map<string, RowRegion[]> }) {
+/**
+ * The events that began and ended a lifespan stretch or phase (startEvent, endEvent), each a button that opens the
+ * event; nothing when it names none.
+ */
+function BeganEnded({ s, titles, onSelect, inline }: { s: { startEvent?: string; endEvent?: string }; titles: Map<string, string>; onSelect: (id: string) => void; inline?: boolean }) {
+  const parts: [string, string][] = [];
+  if (s.startEvent && titles.has(s.startEvent)) parts.push(['Began with', s.startEvent]);
+  if (s.endEvent && titles.has(s.endEvent)) parts.push(['ended with', s.endEvent]);
+  if (!parts.length) return null;
+  const link = (id: string) => (
+    <button type="button" className="linklike" onClick={() => onSelect(id)}>
+      {titles.get(id)}
+    </button>
+  );
+  // in a phase's line, one run of text; under a lifespan's dates (a narrow column), one line each
+  if (inline)
+    return (
+      <span className="began-ended muted small">
+        {parts.map(([label, id], i) => (
+          <span key={label}>
+            {i > 0 ? '; ' : ' '}
+            {i === 0 ? label[0].toUpperCase() + label.slice(1) : label} {link(id)}
+          </span>
+        ))}
+      </span>
+    );
+  return (
+    <>
+      {parts.map(([label, id]) => (
+        <div key={label} className="began-ended muted small">
+          {label[0].toUpperCase() + label.slice(1)} {link(id)}
+        </div>
+      ))}
+    </>
+  );
+}
+
+function RowsTable({ rows, data, regionsOf, onSelect }: { rows: TableRow[]; data: Dataset; regionsOf?: Map<string, RowRegion[]>; onSelect: (id: string) => void }) {
   const cal = data.meta.calendar;
+  const titles = useMemo(() => new Map(data.events.map((e) => [e.uuid, e.title])), [data.events]);
   return (
     <table className="events-table rows-table">
       <caption>{regionsOf ? 'Rows: lifespans, phases and regions' : 'Rows: lifespans and phases'}</caption>
@@ -340,6 +378,7 @@ function RowsTable({ rows, data, regionsOf }: { rows: TableRow[]; data: Dataset;
                       <div key={i}>
                         {l.main}
                         {l.ranges.length > 0 && <div className="muted small">{l.ranges.join('; ')}</div>}
+                        <BeganEnded s={r.spans[i]} titles={titles} onSelect={onSelect} />
                       </div>
                     ))}
                     {derived && <div className="muted small">From its phases</div>}
@@ -357,6 +396,7 @@ function RowsTable({ rows, data, regionsOf }: { rows: TableRow[]; data: Dataset;
                         <li key={`${ph.name}-${i}`}>
                           <strong>{ph.name}</strong>: {w.main}
                           {w.ranges.length > 0 && <span className="muted small"> ({w.ranges.join('; ')})</span>}
+                          <BeganEnded s={ph} titles={titles} onSelect={onSelect} inline />
                         </li>
                       );
                     })}

@@ -25,7 +25,25 @@ export function removeEvent(d: Dataset, uuid: string): Dataset {
     .map((e) =>
       e.links?.some((l) => l.to === uuid) ? { ...e, links: e.links.filter((l) => l.to !== uuid), edited: true } : e,
     );
-  return { ...d, events };
+  return { ...d, tracks: dropEdgeEvents(d.tracks, new Set([uuid])), events };
+}
+
+/** Lifespan stretches and phases that named a removed event as their start or end no longer name it. */
+function dropEdgeEvents(tracks: Track[], removed: ReadonlySet<string>): Track[] {
+  const clean = <S extends TrackSpan>(s: S): S => {
+    if (!(s.startEvent && removed.has(s.startEvent)) && !(s.endEvent && removed.has(s.endEvent))) return s;
+    const out = { ...s };
+    if (out.startEvent && removed.has(out.startEvent)) delete out.startEvent;
+    if (out.endEvent && removed.has(out.endEvent)) delete out.endEvent;
+    return out;
+  };
+  return tracks.map((t) => {
+    if (!t.span && !t.phases) return t;
+    const span = Array.isArray(t.span) ? t.span.map(clean) : t.span && clean(t.span);
+    const phases = t.phases?.map(clean);
+    const same = (span === t.span || (Array.isArray(span) && span.every((x, i) => x === (t.span as TrackSpan[])[i]))) && (phases ?? []).every((p, i) => p === t.phases![i]);
+    return same ? t : { ...t, ...(span ? { span } : {}), ...(phases ? { phases } : {}) };
+  });
 }
 
 /** Tags applied by default to sources created in the editor (the timeline's custom tag, if it has one). */
@@ -133,7 +151,7 @@ export function removeTrack(d: Dataset, id: string): Dataset {
     events = events.map((e) =>
       e.links?.some((l) => removed.has(l.to)) ? { ...e, links: e.links.filter((l) => !removed.has(l.to)) } : e,
     );
-  return { ...d, tracks: d.tracks.filter((t) => t.id !== id), events };
+  return { ...d, tracks: dropEdgeEvents(d.tracks.filter((t) => t.id !== id), removed), events };
 }
 
 /**

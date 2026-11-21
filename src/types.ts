@@ -81,6 +81,10 @@ export interface TrackSpan {
   circa?: boolean;
   startDates?: DateClaim[];
   endDates?: DateClaim[];
+  /** The event that began it (an event uuid): the event lists it as started. */
+  startEvent?: string;
+  /** The event that ended it (an event uuid; not on an ongoing stretch or phase). */
+  endEvent?: string;
 }
 
 export interface Track {

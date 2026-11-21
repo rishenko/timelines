@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import type { Dataset, SourceRef, TimelineEvent } from '../types.ts';
 import { compareEvents, formatEventDates } from '../lib/years.ts';
 import { formatYear } from '../lib/calendar.ts';
@@ -6,6 +6,7 @@ import { allClaims, datingChronology, eventChronology, isApprox, type Claim, typ
 import { LINK_LABEL } from './linkLabels.ts';
 import { safeUrl } from '../lib/urls.ts';
 import { EventMap } from './EventMap.tsx';
+import { edgeName, successionIndex, type SuccessionEdge } from '../lib/succession.ts';
 
 interface Props {
   /** The event as stored (best estimates and claims). */
@@ -44,6 +45,28 @@ function Cite({ data, s }: { data: Dataset; s: SourceRef }) {
       {s.sourceLocation && <span className="muted">, {s.sourceLocation}</span>}
       {src?.accessed && <span className="muted"> (read {src.accessed})</span>}
     </>
+  );
+}
+
+/** The rows' lifespans and phases an event started or ended (TrackSpan.startEvent, endEvent). */
+function SuccessionList({ data, label, edges }: { data: Dataset; label: string; edges: SuccessionEdge[] }) {
+  if (!edges.length) return null;
+  const cal = data.meta.calendar;
+  return (
+    <div className="claim-group">
+      <h4>{label}</h4>
+      <ul className="claims-list">
+        {edges.map((x) => (
+          <li key={`${x.trackId}-${x.phase ?? ''}-${x.side}`}>
+            <strong>{edgeName(x, data)}</strong>
+            <span className="muted">
+              {' '}
+              ({x.phase === undefined ? 'lifespan' : 'phase'}, {x.side === 'start' ? 'from' : 'to'} {formatYear(x.year, cal)})
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -121,6 +144,7 @@ export function DetailPanel(p: Props) {
   const endClaims = e.end !== undefined ? allClaims(data, e.end, e.endDates, chron) : [];
   const approx = isApprox(r);
   const moved = r.start !== e.start || (r.end ?? r.start) !== (e.end ?? e.start);
+  const succession = useMemo(() => successionIndex(data.tracks), [data.tracks]).get(e.uuid);
   const hasDating = startClaims.length > 0 || endClaims.length > 0 || r.startWindow || r.endWindow || chronology;
 
   return (
@@ -154,6 +178,14 @@ export function DetailPanel(p: Props) {
       </div>
       {e.descr && <p className="descr">{e.descr}</p>}
       {p.mapUrl && <EventMap url={p.mapUrl} tracks={e.tracks} start={r.start} end={r.end} data={data} />}
+
+      {succession && (
+        <section className="succession">
+          <h3>Began and ended</h3>
+          <SuccessionList data={data} label="Ended" edges={succession.ended} />
+          <SuccessionList data={data} label="Began" edges={succession.started} />
+        </section>
+      )}
 
       {hasDating && (
         <section className="dating">

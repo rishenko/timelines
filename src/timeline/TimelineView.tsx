@@ -1,4 +1,4 @@
-import { useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Dataset } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
@@ -347,7 +347,9 @@ export function TimelineView(props: Props) {
   const gapStarts = useMemo(() => new Set(scale.gaps().map((g) => g.y0)), [scale]);
   const canvasW = labelW + scale.width + END_PAD;
   const era = eraStart(cal);
-  const band = { scale, cal, labelW, inView };
+  const eventTitles = useMemo(() => new Map(data.events.map((e) => [e.uuid, e.title])), [data.events]);
+  const eventTitle = useCallback((id: string) => eventTitles.get(id), [eventTitles]);
+  const band = { scale, cal, labelW, inView, eventTitle };
 
   // Adding an event in edit mode: double-click an empty spot in a lane, or on touch screens hold a finger there.
   const isEmptySpot = (target: EventTarget, lane: Element) =>

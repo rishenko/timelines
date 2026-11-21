@@ -39,8 +39,8 @@ const hi = (s: ResolvedSpan) => Math.max(s.end, s.endWindow?.[1] ?? s.end);
 /**
  * The stretches covered by resolved phases (or any dated parts): parts whose extents (with their uncertainty ranges)
  * overlap, touch or lie within GAP_TOLERANCE years of each other merge. Each stretch takes its start, start range and
- * circa from the part that starts earliest, and its end (with any sources saying it is still going) from the part that
- * ends latest. Marked `derived`.
+ * circa (and the event that began it) from the part that starts earliest, and its end (with any sources saying it is
+ * still going, and the event that ended it) from the part that ends latest. Marked `derived`.
  */
 export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
   const sorted = [...parts].sort((a, b) => lo(a) - lo(b) || a.start - b.start);
@@ -52,6 +52,7 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
         cur.start = p.start;
         cur.startWindow = p.startWindow;
         cur.startCirca = p.circa;
+        cur.startEvent = p.startEvent;
       } else if (p.startWindow && p.startWindow[0] < lo(cur)) cur.startWindow = [p.startWindow[0], cur.startWindow?.[1] ?? cur.start];
       if (p.end > cur.end || (p.end === cur.end && p.ongoing)) {
         cur.end = p.end;
@@ -59,6 +60,7 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
         cur.endCirca = p.circa;
         cur.ongoing = p.ongoing;
         cur.ongoingSources = p.ongoingSources;
+        cur.endEvent = p.endEvent;
       } else if (p.endWindow && p.endWindow[1] > hi(cur)) cur.endWindow = [cur.endWindow?.[0] ?? cur.end, p.endWindow[1]];
     } else
       out.push({
@@ -70,6 +72,8 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
         endCirca: p.circa,
         ongoing: p.ongoing,
         ongoingSources: p.ongoingSources,
+        startEvent: p.startEvent,
+        endEvent: p.endEvent,
       });
   }
   return out.map(({ startCirca, endCirca, ...s }) => {
@@ -79,6 +83,8 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
     if (startCirca || endCirca) r.circa = true;
     if (s.ongoing) r.ongoing = true;
     if (s.ongoing && s.ongoingSources?.length) r.ongoingSources = s.ongoingSources;
+    if (s.startEvent) r.startEvent = s.startEvent;
+    if (s.endEvent && !s.ongoing) r.endEvent = s.endEvent;
     return r;
   });
 }

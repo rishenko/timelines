@@ -155,6 +155,26 @@ shows the same arrow on its top edge. A folded row shows only its own phases, ov
 any row folded into it existed. Events stay on the row itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
 order. Search finds phases by name.
 
+### Succession: `startEvent`, `endEvent`
+
+A lifespan stretch or a phase may name the event that began or ended it, by its `uuid`:
+
+```json
+"span": { "start": 1922, "end": 1991, "startEvent": "ussr-founded", "endEvent": "ussr-dissolved" },
+"phases": [
+  { "name": "Ukrainian SSR", "start": 1919, "end": 1991, "endEvent": "ussr-dissolved" },
+  { "name": "Ukraine (independent)", "start": 1991, "ongoing": true, "startEvent": "ussr-dissolved" }
+]
+```
+
+- The event must exist and be dated within a year of the edge (its start to its end, or to `present` if ongoing). An
+  ongoing stretch or phase has no `endEvent`. Name an event only when its sources say it began or ended that phase.
+- A lifespan worked out from phases takes its first phase's `startEvent` and last phase's `endEvent`.
+- The event's detail panel lists what it **ended** and **began** (row, phase or lifespan, year). The lifespan's or
+  phase's tooltip on the chart names its events ("Began with: …", "Ended with: …"), and the table view's rows table
+  lists them under its dates, each a button that opens the event.
+- The chart draws nothing extra for them: an event on several rows already draws a thread joining them.
+
 ### Lifespan, phases or a row?
 
 - **A row** is one thing: a state, people or faction with its own identity. Something that existed alongside it, or
@@ -175,8 +195,9 @@ order. Search finds phases by name.
   government, so it's a phase; "Soviet Union" on Ukraine's row would be a copy). A member that carried on inside the
   union types a lifespan across those years (Egypt 1958–71, Syria 1958–61).
 - **Mergers and splits** are one event placed on every row involved: the union and each member that joins or leaves.
-  An event on several rows draws a thread joining them. Add `links` between such events where one leads to another
-  (a union's founding `causes` a war; a restored name `succeeds` a civil war).
+  An event on several rows draws a thread joining them. Name it as the `endEvent` of what it ended and the
+  `startEvent` of what it began (see [succession](#succession-startevent-endevent)). Add `links` between such events
+  where one leads to another (a union's founding `causes` a war; a restored name `succeeds` a civil war).
 - **Still-existing things** are `ongoing`, never typed as ending at the present year; cite that they still exist in
   `ongoingSources`.
 
@@ -314,6 +335,8 @@ A file that breaks any of these is refused, with a message naming the problem.
 - A derived chronology derives from one in the same group, by a whole number of years.
 - Margins are zero or more. Each best estimate lies within the range of its own claims.
 - `endDates` only appear on events, stretches and phases that have an `end`. Events don't link to themselves.
+- A `startEvent` or `endEvent` names an existing event dated within a year of that edge; an ongoing stretch or phase
+  has no `endEvent`.
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
   Timelines can come from anyone, so anything else (such as `javascript:`) is refused.
 

@@ -39,6 +39,9 @@ export interface ResolvedSpan {
   ongoingSources?: SourceRef[];
   /** A lifespan stretch worked out from the row's phases rather than typed. */
   derived?: boolean;
+  /** The events that began and ended it (TrackSpan.startEvent, endEvent). */
+  startEvent?: string;
+  endEvent?: string;
   startWindow?: Window;
   endWindow?: Window;
 }
@@ -183,10 +186,13 @@ export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selec
     const out: ResolvedSpan = { start: s.year, end: Math.max(datasetPresent(ds), s.year), startWindow: s.window, ongoing: true };
     if (span.circa) out.circa = true;
     if (span.ongoingSources?.length) out.ongoingSources = span.ongoingSources;
+    if (span.startEvent) out.startEvent = span.startEvent;
     return out;
   }
   const e = resolveDate(ds, span.end, span.endDates, chron, selection, !!span.circa);
   const out: ResolvedSpan = { start: s.year, end: Math.max(e.year, s.year), startWindow: s.window, endWindow: e.window };
   if (span.circa) out.circa = true;
+  if (span.startEvent) out.startEvent = span.startEvent;
+  if (span.endEvent) out.endEvent = span.endEvent;
   return out;
 }

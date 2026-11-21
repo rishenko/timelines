@@ -38,6 +38,9 @@ interface PhaseValues {
   endDates: ClaimValues[];
   /** Sources saying it is still going: not edited here, kept while the phase stays ongoing. */
   ongoingSources?: SourceRef[];
+  /** The events that began and ended it: not edited here, kept (the end only while the phase has one). */
+  startEvent?: string;
+  endEvent?: string;
 }
 
 const toPhaseValues = (p: TrackPhase, cal: Calendar): PhaseValues => ({
@@ -48,6 +51,8 @@ const toPhaseValues = (p: TrackPhase, cal: Calendar): PhaseValues => ({
   startDates: (p.startDates ?? []).map((c) => toClaimValues(c, cal)),
   endDates: (p.endDates ?? []).map((c) => toClaimValues(c, cal)),
   ...(p.ongoingSources ? { ongoingSources: p.ongoingSources } : {}),
+  ...(p.startEvent ? { startEvent: p.startEvent } : {}),
+  ...(p.endEvent ? { endEvent: p.endEvent } : {}),
 });
 
 interface Props {
@@ -146,6 +151,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       if (startDates) firstStretch.startDates = startDates;
       if (endDates) firstStretch.endDates = endDates;
       if (!e && first?.ongoing && first.ongoingSources) firstStretch.ongoingSources = first.ongoingSources;
+      if (first?.startEvent) firstStretch.startEvent = first.startEvent;
+      if (e && first?.endEvent) firstStretch.endEvent = first.endEvent;
     } else if (v.startDates.length || v.endDates.length) {
       return setError('spanStart', { message: 'Give the lifespan a start and an end, or remove its date claims.' }, { shouldFocus: true });
     }
@@ -166,6 +173,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       if (startDates) phase.startDates = startDates;
       if (endDates) phase.endDates = endDates;
       if (!e && p.ongoingSources?.length) phase.ongoingSources = p.ongoingSources;
+      if (p.startEvent) phase.startEvent = p.startEvent;
+      if (e && p.endEvent) phase.endEvent = p.endEvent;
       phases.push(phase);
     }
     // stored in date order, whatever order they were typed in

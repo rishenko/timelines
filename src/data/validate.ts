@@ -1,7 +1,7 @@
 import { LINK_KINDS, type DateClaim, type Dataset, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronology } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
-import { spanStretches, stretchEnd } from '../lib/lifespan.ts';
+import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
 import { datasetPresent } from '../lib/years.ts';
 import { formatYear } from '../lib/calendar.ts';
 
@@ -267,6 +267,39 @@ export function validateDataset(d: unknown): string[] {
       if (e.end !== undefined) checkClaims(`${label} end`, e.end, e.endDates, chron);
       else if (e.endDates) errors.push(`${label} has end date claims but no end.`);
     }
+  }
+
+  // succession: the events that began and ended lifespan stretches and phases
+  const eventsById = new Map(ds.events.map((e) => [e.uuid, e]));
+  for (const t of ds.tracks) {
+    const stretches = spanStretches(t.span);
+    const parts = [
+      ...stretches.map((s, i) => ({ s, label: `Track "${t.id}" lifespan${stretches.length > 1 ? ` stretch ${i + 1}` : ''}` })),
+      ...(Array.isArray(t.phases) ? t.phases : []).map((p, i) => ({ s: p, label: `Track "${t.id}" phase "${p.name || i + 1}"` })),
+    ];
+    for (const { s, label } of parts)
+      for (const side of ['start', 'end'] as const) {
+        const id = side === 'start' ? s.startEvent : s.endEvent;
+        if (id === undefined) continue;
+        const field = `${side}Event`;
+        const e = typeof id === 'string' ? eventsById.get(id) : undefined;
+        if (!e) {
+          errors.push(`${label} ${field} names unknown event "${String(id)}".`);
+          continue;
+        }
+        if (side === 'end' && s.ongoing) {
+          errors.push(`${label} is ongoing, so it has no end for an endEvent.`);
+          continue;
+        }
+        const y = side === 'start' ? s.start : s.end;
+        if (!Number.isInteger(y) || !Number.isInteger(e.start)) continue;
+        const from = e.start;
+        const to = e.ongoing ? present : (e.end ?? e.start);
+        if (y! < from - GAP_TOLERANCE || y! > to + GAP_TOLERANCE)
+          errors.push(
+            `${label} ${side === 'start' ? 'starts' : 'ends'} in ${yr(y!)}, but its ${field} "${e.title}" is dated ${yr(from)}${to !== from ? ` – ${yr(to)}` : ''}: the event must fall within a year of the edge it begins or ends.`,
+          );
+      }
   }
 
   for (const e of ds.events) {

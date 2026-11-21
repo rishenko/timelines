@@ -3,6 +3,7 @@ import { spanDates } from '../lib/lifespan.ts';
 import { isApprox, type ResolvedSpan } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
 import type { PhaseCell } from './layout.ts';
+import { successionTip } from '../lib/succession.ts';
 
 /**
  * Where a lifespan or phase sits, in content px: from the earliest possible start to the latest possible end, with
@@ -31,7 +32,11 @@ interface Common {
   labelW: number;
   /** Whether content px x0..x1 is near the viewport (only those bands are drawn). */
   inView: (x0: number, x1: number) => boolean;
+  /** An event's title by uuid: tooltips name the events that began and ended a lifespan or phase. */
+  eventTitle?: (id: string) => string | undefined;
 }
+
+const noTitle = () => undefined;
 
 /**
  * One stretch of a row's lifespan: a soft band across the lane, fading across uncertain ends; the only thing that
@@ -48,6 +53,7 @@ export function SpanBand({
   inView,
   cue = true,
   title,
+  eventTitle = noTitle,
 }: Common & { track: Track; span: ResolvedSpan; cue?: boolean; title?: string }) {
   const b = bandBox(scale, span);
   if (!inView(b.x0, b.x1)) return null;
@@ -56,7 +62,7 @@ export function SpanBand({
     <div
       className="tl-span"
       style={bandStyle(labelW, b, track.color)}
-      title={`${title ?? track.name}: ${spanDates(span, cal, approx)}${span.derived && !title ? ' (from its phases)' : ''}`}
+      title={`${title ?? track.name}: ${spanDates(span, cal, approx)}${span.derived && !title ? ' (from its phases)' : ''}${title ? '' : successionTip(span, eventTitle)}`}
     >
       {span.ongoing && cue && (
         <div className="tl-ongoing-run">
@@ -79,10 +85,11 @@ export function PhaseStripCell({
   cal,
   labelW,
   inView,
+  eventTitle = noTitle,
 }: Omit<Common, 'scale'> & { cell: PhaseCell; color: string }) {
   const p = c.phase;
   if (!inView(c.x0, c.x1)) return null;
-  const tip = `${p.name}: ${spanDates(p, cal, isApprox(p))}`;
+  const tip = `${p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}`;
   return (
     <div
       className={`tl-phase${c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${c.name?.outside ? ' has-outside' : ''}`}
