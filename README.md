@@ -97,7 +97,10 @@ be `http(s)` addresses or relative paths.
 - **A busy ring** in the chart's top-right corner while the rows are about to change after a sideways scroll, or while
   a slow update (filters, regions, a comparison, dating) is drawn; the chart is marked busy for screen readers.
 - **Search** across rows, phases and events, or type a year to go there (`/` from anywhere).
-- **Filters** by source and source tag; a timeline can start with some sources hidden (to avoid spoilers).
+- **Filters** in two sections: *Visual filters* (how the chart draws: gaps, connections, hidden rows) and *Data
+  filters* (what it shows: regions, rows and sources as folding lists with a find box, source tags). While regions are
+  ticked, the rows and sources outside them are dimmed. A timeline can start with some sources hidden (to avoid
+  spoilers).
 - **Legend** that explains only what the open timeline uses, including the keyboard keys, and a one-minute
   **guided tour**.
 - **Table view** of the same events and rows, with dates and sources in words, and a CSV download of the events

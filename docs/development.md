@@ -166,6 +166,16 @@ Each row's own regions and the sources placing it there (`rowRegionList`) show i
 Regions column; rows with regions but no lifespan are listed too) and in the row name's tooltip in the chart
 (`regionsTooltip`). The same spoiler rule applies: only regions and sources whose sources are switched on.
 
+### Filters panel
+
+`FiltersPanel.tsx` has two native `<details>` sections, Visual filters (chart options, hidden rows) and Data filters
+(Regions, Tracks, Sources, Source tags); both open on wide screens, Visual folded on phones, the reader's choice kept in
+`timelines:filters-open`. Tracks and Sources are `FilterTree`s (`src/components/FilterTree.tsx`): folding lists with a
+find box, where a group's checkbox switches everything below it (native indeterminate state when mixed). Tracks follow
+the row tree; Sources are grouped by the areas whose rows use them (events, date claims, region memberships). While
+regions are ticked, lines outside them are dimmed (muted, italic, read out) and an opened group folds its dimmed lines
+into one "N more" line. Lines are 40 px tall on touch screens.
+
 ### Busy ring
 
 `TimelineView` shows a ring in the chart's top-right corner (`.tl-busy`, in a zero-height sticky strip so it stays in
