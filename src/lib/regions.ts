@@ -85,3 +85,56 @@ export function parseRegions(param: string | null, facet: Facet | undefined): st
   for (const v of (param ?? '').split(',').map((s) => s.trim())) if (v && Object.hasOwn(facet.values, v) && !out.includes(v)) out.push(v);
   return out;
 }
+
+/** A row's region as shown to readers: its name, the regions containing it, and the sources placing the row there. */
+export interface RowRegion {
+  id: string;
+  name: string;
+  /** Names of the regions it sits inside, nearest first ("Near East" for Anatolia). */
+  within: string[];
+  /** Each source once, with every place in it that says so. */
+  sources: { key: string; name: string; url?: string; locations: string[] }[];
+}
+
+/**
+ * A row's own regions (the ones its memberships name, not the regions containing them), for the table and the row
+ * label's tooltip. Like the filter, a membership counts only while one of its sources is on, and only those sources
+ * are listed.
+ */
+export function rowRegionList(
+  t: Track,
+  facetId: string,
+  facet: Facet,
+  sources: Record<string, { name: string; url?: string }>,
+  sourceOn: (key: string) => boolean,
+): RowRegion[] {
+  const out: RowRegion[] = [];
+  for (const m of t.memberships ?? []) {
+    if (m.facet !== facetId || !facet.values[m.value]) continue;
+    const on = m.sources.filter((s) => sourceOn(s.sourceKey));
+    if (!on.length) continue;
+    const bySource = new Map<string, RowRegion['sources'][number]>();
+    for (const s of on) {
+      const src = sources[s.sourceKey];
+      let entry = bySource.get(s.sourceKey);
+      if (!entry) bySource.set(s.sourceKey, (entry = { key: s.sourceKey, name: src?.name ?? s.sourceKey, url: src?.url, locations: [] }));
+      if (s.sourceLocation && !entry.locations.includes(s.sourceLocation)) entry.locations.push(s.sourceLocation);
+    }
+    const within: string[] = [];
+    const seen = new Set<string>([m.value]);
+    for (let next = facet.values[m.value].broader?.[0]; next && !seen.has(next); next = facet.values[next]?.broader?.[0]) {
+      seen.add(next);
+      within.push(facet.values[next]?.name ?? next);
+    }
+    out.push({ id: m.value, name: facet.values[m.value].name, within, sources: [...bySource.values()] });
+  }
+  return out;
+}
+
+/** "Regions: Anatolia (Near East), Levant (Near East) — from Wikipedia: Hittites", for a tooltip. */
+export function regionsTooltip(list: RowRegion[]): string {
+  if (!list.length) return '';
+  const names = list.map((r) => (r.within.length ? `${r.name} (${r.within.join(', ')})` : r.name)).join('; ');
+  const from = [...new Set(list.flatMap((r) => r.sources.map((s) => s.name)))].join('; ');
+  return `Regions: ${names} — from ${from}`;
+}

@@ -162,6 +162,10 @@ while one of its sources is switched on (so tags cited to hidden spoiler sources
 over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
 without knowing about regions. Off in edit mode. The link carries `&regions=`.
 
+Each row's own regions and the sources placing it there (`rowRegionList`) show in the table view's rows tables (a
+Regions column; rows with regions but no lifespan are listed too) and in the row name's tooltip in the chart
+(`regionsTooltip`). The same spoiler rule applies: only regions and sources whose sources are switched on.
+
 ## Event maps
 
 Opening an event shows its rows on a map (`src/components/EventMap.tsx`, data helpers in `src/map/mapData.ts`). The

@@ -138,9 +138,9 @@ export interface TableRow {
 }
 
 /**
- * The rows to list in a section (or, without a section, in the whole timeline): those with a lifespan or phases, in
- * the timeline's row order, skipping rows hidden by Filters. Rows that only group others (a region, "Nubia") have
- * nothing to show on their own and are left out.
+ * The rows to list in a section (or, without a section, in the whole timeline): those with a lifespan or phases (or
+ * anything else `alsoList` asks for, such as regions), in the timeline's row order, skipping rows hidden by Filters.
+ * Rows that only group others (a region, "Nubia") have nothing to show on their own and are left out.
  */
 export function sectionRows(
   tracks: Track[],
@@ -148,10 +148,11 @@ export function sectionRows(
   spans: Map<string, ResolvedSpan>,
   phases: Map<string, ResolvedPhase[]>,
   visible: (trackId: string) => boolean,
+  alsoList: (trackId: string) => boolean = () => false,
 ): TableRow[] {
   const byId = trackIndex(tracks);
   return treeOrder(tracks)
-    .filter((t) => (spans.has(t.id) || phases.has(t.id)) && visible(t.id))
+    .filter((t) => (spans.has(t.id) || phases.has(t.id) || alsoList(t.id)) && visible(t.id))
     .filter((t) => sectionId === undefined || trackPath(t.id, byId).some((a) => a.id === sectionId))
     .map((t) => {
       const parent = t.parent ? byId.get(t.parent) : undefined;
@@ -188,10 +189,11 @@ export function fullSections(
   spans: Map<string, ResolvedSpan>,
   phases: Map<string, ResolvedPhase[]>,
   visible: (trackId: string) => boolean,
+  alsoList?: (trackId: string) => boolean,
 ): FullSection[] {
   const byId = trackIndex(tracks);
   const map = new Map<string, FullSection>(tableSections(tracks, events).map((s) => [s.track.id, { ...s, rows: [] }]));
-  for (const r of sectionRows(tracks, undefined, spans, phases, visible)) {
+  for (const r of sectionRows(tracks, undefined, spans, phases, visible, alsoList)) {
     const s = sectionTrack(r.track.id, byId);
     if (!s) continue;
     let sec = map.get(s.track.id);

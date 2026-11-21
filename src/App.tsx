@@ -467,6 +467,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             spans={spans}
             phases={phases}
             visibleTracks={rowsOn}
+            regionsOf={regions.regionsOf}
           />
         ) : (
           <TimelineView
@@ -476,6 +477,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             spans={spans}
             phases={phases}
             visibleTracks={rowsOn}
+            regionTips={regions.regionTips}
             collapsed={collapsed}
             hideOutOfView={hideOutOfView && !editMode}
             thinRows={thinRows}

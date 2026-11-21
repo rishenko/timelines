@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Facet, Track } from '../types.ts';
-import { parseRegions, regionOverlay, regionTree, rowRegions } from './regions.ts';
+import { parseRegions, regionOverlay, regionsTooltip, regionTree, rowRegionList, rowRegions } from './regions.ts';
 
 const FACET: Facet = {
   name: 'Region',
@@ -56,5 +56,21 @@ describe('region filter', () => {
     expect(parseRegions('aegean,atlantis,aegean, meso', FACET)).toEqual(['aegean', 'meso']);
     expect(parseRegions(null, FACET)).toEqual([]);
     expect(parseRegions('aegean', undefined)).toEqual([]);
+  });
+
+  it('lists a row\'s own regions with the regions containing them and their sources, each source once', () => {
+    const t = row('x', undefined, [
+      { facet: 'geography', value: 'aegean', sources: [{ sourceKey: 'book', sourceLocation: 'p. 1' }, { sourceKey: 'book', sourceLocation: 'p. 9' }] },
+      inRegion('meso', 'late-book'),
+    ]);
+    const SOURCES = { book: { name: 'A history', url: 'https://example.org/h' }, 'late-book': { name: 'Book 7' } };
+    expect(rowRegionList(t, 'geography', FACET, SOURCES, all)).toEqual([
+      { id: 'aegean', name: 'Aegean', within: ['Mediterranean'], sources: [{ key: 'book', name: 'A history', url: 'https://example.org/h', locations: ['p. 1', 'p. 9'] }] },
+      { id: 'meso', name: 'Mesopotamia', within: [], sources: [{ key: 'late-book', name: 'Book 7', url: undefined, locations: ['p. 1'] }] },
+    ]);
+    const shownOnly = rowRegionList(t, 'geography', FACET, SOURCES, noSpoilers);
+    expect(shownOnly.map((r) => r.id)).toEqual(['aegean']);
+    expect(regionsTooltip(shownOnly)).toBe('Regions: Aegean (Mediterranean) — from A history');
+    expect(regionsTooltip([])).toBe('');
   });
 });

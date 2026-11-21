@@ -100,4 +100,23 @@ describe('the region filter', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Done editing' }));
     expect(laneIds(c)).not.toContain('hittites');
   });
+
+  it('shows each row\'s regions with their sources: in the table, and in the row name\'s tooltip', () => {
+    renderApp('timeline=ancient-classical&view=table');
+    const hittites = document.querySelector<HTMLElement>('[data-row-id="hittites"]')!.closest('tr')!;
+    const cells = within(hittites).getAllByRole('cell');
+    const regions = cells[cells.length - 1];
+    expect(regions.textContent).toMatch(/^Anatolia \(in Near East\)/);
+    expect(within(regions).getByRole('link', { name: /Wikipedia: Hittites/ })).toBeTruthy();
+    // a row with regions but no lifespan is listed too
+    const libyans = document.querySelector<HTMLElement>('[data-row-id="libyans"]')!.closest('tr')!;
+    expect(libyans.textContent).toMatch(/No lifespan/);
+  });
+
+  it('adds the regions to the row name\'s tooltip in the chart', () => {
+    const { container: c } = renderApp(OPEN);
+    expandAll();
+    const name = c.querySelector<HTMLElement>('.tl-lane[data-lane="hittites"] .tl-lane-label .name')!;
+    expect(name.getAttribute('title')).toMatch(/\nRegions: Anatolia \(Near East\) — from Wikipedia: Hittites/);
+  });
 });

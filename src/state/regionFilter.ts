@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { Dataset } from '../types.ts';
-import { regionOverlay, regionTree, type RegionNode } from '../lib/regions.ts';
+import { regionOverlay, regionTree, rowRegionList, regionsTooltip, type RegionNode, type RowRegion } from '../lib/regions.ts';
 import { isOn } from './filters.ts';
 
 /**
@@ -27,6 +27,15 @@ export function useRegionFilter(data: Dataset, initial: string[], sources: Recor
     [active, data.tracks, facetId, facet, picked, sourceOn],
   );
   const names = useMemo(() => picked.map((id) => facet?.values[id]?.name ?? id), [picked, facet]);
+  /** Each row's own regions with their sources (table view), and the same as tooltip text (row labels). */
+  const regionsOf = useMemo<Map<string, RowRegion[]> | undefined>(
+    () => (facet && facetId ? new Map(data.tracks.map((t) => [t.id, rowRegionList(t, facetId, facet, data.sources, sourceOn)])) : undefined),
+    [data.tracks, data.sources, facet, facetId, sourceOn],
+  );
+  const regionTips = useMemo(
+    () => (regionsOf ? new Map([...regionsOf].flatMap(([id, list]) => (list.length ? [[id, regionsTooltip(list)] as const] : []))) : undefined),
+    [regionsOf],
+  );
 
   /** Regions that contain `id` (its `broader` values, and theirs). */
   const containing = (id: string, seen = new Set<string>()): Set<string> => {
@@ -37,5 +46,5 @@ export function useRegionFilter(data: Dataset, initial: string[], sources: Recor
   const toggle = (id: string) =>
     setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p.filter((x) => !containing(x).has(id)), id]));
   const clear = () => setPicked([]);
-  return { tree, picked, names, active, overlay, toggle, clear, containing };
+  return { tree, picked, names, active, overlay, toggle, clear, containing, regionsOf, regionTips };
 }
