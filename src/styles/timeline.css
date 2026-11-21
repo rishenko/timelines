@@ -682,15 +682,16 @@
 }
 .tl-busy {
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 14px;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--bg-2);
-  box-shadow: 0 1px 4px color-mix(in srgb, var(--text) 25%, transparent);
+  /* an inverted chip (text colour behind, page colour for the ring) stands out on any theme and over any chart */
+  background: var(--text);
+  box-shadow: 0 1px 6px color-mix(in srgb, var(--text) 45%, transparent);
   /* quick updates don't flash it: it fades in only if the update is still running */
   opacity: 0;
   animation: tl-busy-in 120ms ease-out 150ms forwards;
@@ -700,12 +701,13 @@
   animation-delay: 60ms;
 }
 .tl-busy .ring {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   box-sizing: border-box;
   border-radius: 50%;
-  border: 2px solid color-mix(in srgb, var(--text) 25%, transparent);
-  border-top-color: var(--text);
+  border: 3px solid color-mix(in srgb, var(--bg) 30%, transparent);
+  border-top-color: var(--bg);
+  border-right-color: var(--bg);
   animation: tl-spin 0.7s linear infinite;
 }
 @keyframes tl-busy-in {

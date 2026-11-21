@@ -59,7 +59,7 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     {
       target: '[aria-label="Years per tick"]',
       title: 'Zoom and move',
-      text: 'Pick how many years each tick of the ruler covers. Scroll or drag sideways to move through time; on a touch screen, pinch to zoom.',
+      text: 'Pick how many years each tick of the ruler covers. Scroll or drag sideways to move through time; on a touch screen, pinch to zoom. When rows are about to come or go as you move, or a change is still being drawn, a spinning ring shows in the chart’s top-right corner until it is done.',
     },
     o.hasSubRows && {
       target: '[aria-label="Rows"]',
