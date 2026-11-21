@@ -27,14 +27,29 @@ interface Props {
   filtersNote?: string;
 }
 
+// Filters sits with the view controls, before the search box (it changes what the chart shows as much as the zoom
+// does); Legend and Customize sit at the right end.
 const PANEL_BUTTONS: { panel: PanelName; label: string; title?: string }[] = [
-  { panel: 'filters', label: 'Filters' },
+  { panel: 'filters', label: 'Filters', title: 'Regions, rows and sources to show, and how the chart draws them' },
   { panel: 'legend', label: 'Legend', title: 'What the bars, diamonds, colors and lines mean' },
   { panel: 'customize', label: 'Customize', title: 'Appearance, editing, and opening or adding timelines' },
 ];
 
 /** The top bar: timeline picker, view switch, zoom, view options, row folding, search and the panel toggles. */
 export function Toolbar(p: Props) {
+  const panelButton = ({ panel, label, title }: (typeof PANEL_BUTTONS)[number]) => (
+    <button
+      key={panel}
+      data-tour={panel}
+      className={p.panels[panel] ? 'on' : ''}
+      aria-expanded={p.panels[panel]}
+      onClick={() => p.onTogglePanel(panel)}
+      title={title}
+    >
+      {label}
+      {panel === 'filters' && p.filtersNote ? ` · ${p.filtersNote}` : ''}
+    </button>
+  );
   return (
     <header className="toolbar">
       {p.picker}
@@ -99,21 +114,10 @@ export function Toolbar(p: Props) {
           )}
         </>
       )}
+      {PANEL_BUTTONS.filter((b) => b.panel === 'filters').map(panelButton)}
       {p.search}
       <span className="spacer" />
-      {PANEL_BUTTONS.map(({ panel, label, title }) => (
-        <button
-          key={panel}
-          data-tour={panel}
-          className={p.panels[panel] ? 'on' : ''}
-          aria-expanded={p.panels[panel]}
-          onClick={() => p.onTogglePanel(panel)}
-          title={title}
-        >
-          {label}
-          {panel === 'filters' && p.filtersNote ? ` · ${p.filtersNote}` : ''}
-        </button>
-      ))}
+      {PANEL_BUTTONS.filter((b) => b.panel !== 'filters').map(panelButton)}
     </header>
   );
 }

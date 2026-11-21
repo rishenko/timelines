@@ -127,7 +127,10 @@ it there, cited like date claims:
 ]
 ```
 
-A row may belong to several values of one facet (Mitanni: Mesopotamia, Anatolia and the Levant). Together, rows,
+A row may belong to several values of one facet (the Hurrians: Mesopotamia, Anatolia and the Levant). The app's
+region filter and comparison sets use the first facet. A membership counts only while one of its sources is switched
+on in Filters, so a value cited only to a spoiler source (`hiddenByDefault`) stays hidden until the reader turns that
+source on; the example timeline's Serath shows this with "The coast". Together, rows,
 events and facet values form a graph: events link rows, memberships link rows to values, and `broader` links values.
 
 ## sources and tags
@@ -282,7 +285,10 @@ a page that asks readers to add a timeline.
 - **Host the file** anywhere that allows other sites to read it (CORS). GitHub raw files, GitHub Pages
   and gists do. A GitHub page link (`github.com/…/blob/…`) is converted to the raw file automatically.
 - **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser.
-  Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event.
+  Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. The link also carries
+  the reader's view: `&view=table`, `&compress=0`, `&links=0`, `&rows=all|active|thin` (hidden rows), ticked regions
+  (`&regions=anatolia,nile`) and a comparison set (`&set=<row ids>&order=related|start`). Row and source toggles and
+  dating choices aren't in the link yet.
 - **Update** by replacing the file at the same link. Readers get the new version the next time they open the
   timeline (the app checks the link for a few seconds, then opens the saved copy if it can't reach it), or with
   **Update** in Customize → Timelines. Edits a reader made are kept on top of the new version.

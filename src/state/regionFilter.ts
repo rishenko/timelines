@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { Dataset } from '../types.ts';
-import { regionOverlay, regionTree, rowRegionList, regionsTooltip, type RegionNode, type RowRegion } from '../lib/regions.ts';
+import { regionOverlay, regionTree, rowRegionList, rowRegions, regionsTooltip, type RegionNode, type RowRegion } from '../lib/regions.ts';
 import { isOn } from './filters.ts';
 
 /**
@@ -27,6 +27,12 @@ export function useRegionFilter(data: Dataset, initial: string[], sources: Recor
     [active, data.tracks, facetId, facet, picked, sourceOn],
   );
   const names = useMemo(() => picked.map((id) => facet?.values[id]?.name ?? id), [picked, facet]);
+  /** The rows themselves in a ticked region (not the headers kept over them), for "make a comparison of these rows". */
+  const rowsInPicked = useMemo(() => {
+    if (!active) return [];
+    const want = new Set(picked);
+    return data.tracks.filter((t) => [...rowRegions(t, facetId!, facet!, sourceOn)].some((v) => want.has(v))).map((t) => t.id);
+  }, [active, picked, data.tracks, facetId, facet, sourceOn]);
   /** Each row's own regions with their sources (table view), and the same as tooltip text (row labels). */
   const regionsOf = useMemo<Map<string, RowRegion[]> | undefined>(
     () => (facet && facetId ? new Map(data.tracks.map((t) => [t.id, rowRegionList(t, facetId, facet, data.sources, sourceOn)])) : undefined),
@@ -46,5 +52,5 @@ export function useRegionFilter(data: Dataset, initial: string[], sources: Recor
   const toggle = (id: string) =>
     setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p.filter((x) => !containing(x).has(id)), id]));
   const clear = () => setPicked([]);
-  return { tree, picked, names, active, overlay, toggle, clear, containing, regionsOf, regionTips };
+  return { tree, picked, names, active, overlay, toggle, clear, containing, regionsOf, regionTips, rowsInPicked };
 }

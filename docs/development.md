@@ -129,8 +129,9 @@ AI-generated-text template). Rules used for the included timelines:
 ## Category memberships
 
 Rows can belong to values of three facets, geography, people and civilization, each membership citing where its
-source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). They are meant for
-region filters and comparison sets (planned). The decisions live in a plan, `data-src/ancient-classical-memberships.json`:
+source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). The region filter
+uses the first facet (geography), and comparison sets show each row's broad region; people and civilization are in the
+data but not offered yet. The decisions live in a plan, `data-src/ancient-classical-memberships.json`:
 the facets, the sources it adds (a row's Wikipedia article that no event cited yet, `wp-row-<row id>`), and each row's
 memberships. `npm run data -- importance` and `run-all` apply it after the row links (`scripts/lib/memberships.ts`).
 
@@ -165,6 +166,38 @@ without knowing about regions. Off in edit mode. The link carries `&regions=`.
 Each row's own regions and the sources placing it there (`rowRegionList`) show in the table view's rows tables (a
 Regions column; rows with regions but no lifespan are listed too) and in the row name's tooltip in the chart
 (`regionsTooltip`). The same spoiler rule applies: only regions and sources whose sources are switched on.
+
+### Filters panel
+
+`FiltersPanel.tsx` has two native `<details>` sections, Visual filters (chart options, hidden rows) and Data filters
+(Regions, Tracks, Sources, Source tags); both open on wide screens, Visual folded on phones, the reader's choice kept in
+`timelines:filters-open`. Tracks and Sources are `FilterTree`s (`src/components/FilterTree.tsx`): folding lists with a
+find box, where a group's checkbox switches everything below it (native indeterminate state when mixed). Tracks follow
+the row tree; Sources are grouped by the areas whose rows use them (events, date claims, region memberships). While
+regions are ticked, lines outside them are dimmed (muted, italic, read out) and an opened group folds its dimmed lines
+into one "N more" line. Lines are 40 px tall on touch screens.
+
+### Busy ring
+
+`TimelineView` shows a ring in the chart's top-right corner (`.tl-busy`, in a zero-height sticky strip so it stays in
+the corner however far the chart is scrolled; pinned to the window's top-right when that corner is off screen) and
+sets `aria-busy` on the chart: while `rowsPending` (the view has moved to years where another set of rows has
+something, and the check waits `SETTLE_MS` = 200 ms for scrolling to settle; nothing shows if the rows won't change),
+and while `busy` (App passes the chart and table deferred copies of what they draw, `useDeferredValue`, so a click
+updates its own control at once and the chart redraws in the background; busy = a deferred copy is behind). The ring
+fades in after 150 ms (60 ms for rows), so quick updates don't flash it; it spins on the compositor and stands still
+with reduced motion. Zoom isn't deferred (its scroll anchoring needs the new scale at once).
+
+### Comparison sets
+
+Rows picked from anywhere, shown side by side (`src/lib/sets.ts`, state in `src/state/comparison.ts`, the bar above
+the chart in `src/components/ComparisonBar.tsx`). While a set is shown the chart and table draw `setTracks`: each picked
+row at the top level (keeping the chronology it inherited) with its own sub-rows; rows outside the set are switched off
+in `rowsOn`, so events and search follow, and the region filter is paused. Orders: as picked, by start, or related rows
+together (`orderSet`: clusters of rows tied by shared events and links, by their middle row's start, each tightened to
+shorten the distance between related rows; ported from the dropped reader-chosen groups prototype). Each label has a compare
+button (a stop in the chart's keyboard navigation); in a set each row shows its broad region under its name. The link
+carries `&set=` and `&order=` while the set is shown. Off in edit mode.
 
 ## Event maps
 

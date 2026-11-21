@@ -27,8 +27,8 @@ export interface StopLane {
 
 export type Move = 'left' | 'right' | 'up' | 'down' | 'home' | 'end' | 'page-left' | 'page-right';
 
-/** Keys of a lane label's controls (its name when it is a link, then the fold and hidden-rows buttons), in the order shown. */
-export const labelStopKey = (laneId: string, which: 'link' | 'overflow' | 'fold' | 'hidden') => `label:${laneId}:${which}`;
+/** Keys of a lane label's controls (its name when it is a link, the compare button, then the fold and hidden-rows buttons), in the order shown. */
+export const labelStopKey = (laneId: string, which: 'link' | 'compare' | 'overflow' | 'fold' | 'hidden') => `label:${laneId}:${which}`;
 
 /** The navigation grid: each lane's label stops, then its marks sorted by time (left edge), top to bottom. */
 export function buildGrid(lanes: LaneLayout[], labelStops: (lane: LaneLayout) => string[]): StopLane[] {

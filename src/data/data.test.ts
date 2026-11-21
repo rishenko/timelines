@@ -117,6 +117,12 @@ describe('documented example (docs/examples/example-timeline.json)', () => {
     expect(ds.events.some((e) => e.ongoing)).toBe(true);
     expect(ds.events.some((e) => e.circa)).toBe(true);
     expect(Object.values(ds.chronologies ?? {}).some((c) => c.derive)).toBe(true);
+    expect(ds.tracks.some((t) => t.phases?.length)).toBe(true);
+    expect(ds.events.some((e) => e.importance === 1) && ds.events.some((e) => e.importance === 3)).toBe(true);
+    expect(ds.meta.range && ds.meta.facets?.geography.values['north-bank'].broader).toEqual(['varn-valley']);
+    // a region cited only to the spoiler source (hidden by default), so the region filter keeps it hidden at first
+    const coast = ds.tracks.find((t) => t.memberships?.some((m) => m.value === 'coast'))!;
+    expect(coast.memberships!.find((m) => m.value === 'coast')!.sources.every((s) => ds.sources[s.sourceKey].hiddenByDefault)).toBe(true);
     const byId = new Map(resolveEvents(ds, defaultSelection(ds)).map((e) => [e.uuid, e]));
     // claims give the First War a range; the circa flood gets ±circaFade
     // the First War's range: the chronicle's 85 ± 2, and the temple reckoning derived from the court date (88 - 12)

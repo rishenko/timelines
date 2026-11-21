@@ -34,6 +34,8 @@ interface Options {
   onShowKeys?: () => void;
   /** "/": move to the search box. Only in the chart, so it never takes a key typed elsewhere (WCAG 2.1.4). */
   onSearchKey?: () => void;
+  /** Each label has a compare button (comparison sets). */
+  compare?: boolean;
 }
 
 /**
@@ -48,11 +50,12 @@ export function useRovingFocus(o: Options) {
     () =>
       buildGrid(lanes, (l) => [
         ...(safeUrl(l.lane.track.url) ? [labelStopKey(l.lane.id, 'link')] : []),
+        ...(o.compare ? [labelStopKey(l.lane.id, 'compare')] : []),
         ...(l.overflow > 0 || expanded[l.lane.id] ? [labelStopKey(l.lane.id, 'overflow')] : []),
         ...(l.lane.hasChildren ? [labelStopKey(l.lane.id, 'fold')] : []),
         ...(o.inactiveBelow?.get(l.lane.id) ? [labelStopKey(l.lane.id, 'hidden')] : []),
       ]),
-    [lanes, expanded, o.inactiveBelow],
+    [lanes, expanded, o.inactiveBelow, o.compare],
   );
   /** The control that holds the chart's one Tab stop, with what it held (to find it again after a zoom or fold). */
   const [active, setActive] = useState<{ key: string; laneId: string; eventIds: string[] } | null>(null);

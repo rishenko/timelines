@@ -30,8 +30,8 @@ describe('guided tour', () => {
       'Dating',
       'Zoom and move',
       'Open and fold rows',
-      'Search',
       'Filters',
+      'Search',
       'Legend',
       'Customize',
     ]);

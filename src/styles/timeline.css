@@ -628,3 +628,106 @@
   opacity: 0.25;
 }
 
+
+/* Comparison sets: the compare button on each row label, and the row's region beside its name in a set */
+.tl-lane-label .compare {
+  flex: none;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1;
+}
+.tl-lane-label .compare.on {
+  color: var(--text);
+  font-weight: 700;
+}
+.tl-lane-label .name-wrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.tl-lane-label .name-wrap .name {
+  flex: none;
+}
+.tl-lane-label .row-tag {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10.5px;
+  color: var(--muted);
+}
+/* phones: the label column is too narrow for both; the comparison bar lists the rows */
+@media (max-width: 640px) {
+  .tl-lane-label .row-tag {
+    display: none;
+  }
+}
+
+/* The busy ring (TimelineView): top-right of the chart while the rows are about to change after scrolling, or while
+   an update is being drawn. A zero-height strip as wide as the view, sticky at the top left of the canvas, holds it in
+   the corner however far the chart is scrolled. The spin runs on the compositor, so it keeps moving while the page
+   works; with reduced motion it stands still (accessibility.css). */
+.tl-busy-strip {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+.tl-busy {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  /* an inverted chip (text colour behind, page colour for the ring) stands out on any theme and over any chart */
+  background: var(--text);
+  box-shadow: 0 1px 6px color-mix(in srgb, var(--text) 45%, transparent);
+  /* quick updates don't flash it: it fades in only if the update is still running */
+  opacity: 0;
+  animation: tl-busy-in 120ms ease-out 150ms forwards;
+}
+/* rows about to change: show it almost at once (the check waits 200 ms for scrolling to settle) */
+.tl-busy.rows {
+  animation-delay: 60ms;
+}
+.tl-busy .ring {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 3px solid color-mix(in srgb, var(--bg) 30%, transparent);
+  border-top-color: var(--bg);
+  border-right-color: var(--bg);
+  animation: tl-spin 0.7s linear infinite;
+}
+@keyframes tl-busy-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes tl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* the chart's corner is off screen: the ring waits in the window's top-right corner instead */
+.tl-busy.floating {
+  position: fixed;
+  /* just below the toolbar on wide screens (on phones the wrapped toolbar is taller; the ring lets clicks through) */
+  top: 62px;
+  right: 16px;
+}
+/* the row name keeps a 24 px wide hit area beside the compare and fold buttons on narrow labels (WCAG 2.5.8) */
+.tl-lane-label .name {
+  min-width: 24px;
+}

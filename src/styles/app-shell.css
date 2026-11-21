@@ -188,7 +188,9 @@
 
 .filters-panel {
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) 2fr 2fr 1fr;
+  /* Visual filters (chart and rows) beside Data filters (regions, tracks, sources, tags) */
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+  align-items: start;
   gap: 18px;
   padding: 10px 14px 14px;
   border-bottom: 1px solid var(--line);
@@ -318,9 +320,55 @@ main {
 }
 
 
-/* Filters → Regions (components/RegionFilter.tsx): its own column before the row toggles, on timelines with regions */
-.filters-panel.has-regions {
-  grid-template-columns: minmax(150px, 1fr) minmax(190px, 1.2fr) 2fr 2fr 1fr;
+/* the two collapsible sections; their headings are the native <details> summaries */
+.filters-group > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: 24px;
+  padding: 2px 0;
+  cursor: pointer;
+  list-style-position: inside;
+}
+/* a flex summary loses the native triangle: draw one, ▸ closed and ▾ open */
+.filters-group > summary::-webkit-details-marker {
+  display: none;
+}
+.filters-group > summary::before {
+  content: '▸';
+  width: 1em;
+  color: var(--text);
+}
+.filters-group[open] > summary::before {
+  content: '▾';
+}
+.filters-group > summary .filters-title {
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+/* the hint ("how the chart draws") drops under the title in a narrow column rather than breaking it */
+.filters-group > summary {
+  flex-wrap: wrap;
+  row-gap: 0;
+}
+.filters-group[open] > summary {
+  margin-bottom: 8px;
+}
+.filters-group-body.data-body {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 18px;
+}
+/* Filters → Regions (components/RegionFilter.tsx): its own column before the tracks, on timelines with regions */
+.filters-group-body.data-body.has-regions {
+  grid-template-columns: minmax(190px, 1.2fr) 2fr 2fr 1fr;
+}
+@media (pointer: coarse) {
+  .filters-group > summary {
+    min-height: 40px;
+    align-items: center;
+  }
 }
 .region-tree,
 .region-tree ul {
@@ -353,4 +401,135 @@ main {
 }
 .region-filter > p {
   margin: 6px 0 0;
+}
+
+/* The comparison set above the chart (components/ComparisonBar.tsx), styled like the edit bar */
+.comparison-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 14px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, var(--bg));
+}
+.comparison-bar.on {
+  display: grid;
+  gap: 6px;
+}
+.comparison-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.comparison-head .spacer {
+  flex: 1;
+}
+.comparison-add {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.comparison-add input {
+  width: 16em;
+}
+.comparison-error {
+  color: color-mix(in srgb, var(--danger) 75%, var(--text));
+}
+.comparison-rows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+}
+.comparison-rows li {
+  display: inline-flex;
+  align-items: center;
+}
+.comparison-rows button.icon.small {
+  min-width: 24px;
+  min-height: 24px;
+}
+.region-filter .make-set {
+  margin-top: 8px;
+}
+
+/* Filters → Tracks and Sources (components/FilterTree.tsx): folding trees with a find box, like Regions */
+.tree-find {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+.tree-list,
+.tree-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tree-list ul {
+  padding-left: 16px;
+}
+.tree-line {
+  display: flex;
+  align-items: center;
+}
+.tree-line .fold,
+.tree-line .fold-space {
+  flex: 0 0 24px;
+  min-height: 24px;
+}
+.tree-line .fold {
+  font-size: 14px;
+  padding: 0;
+  color: var(--text);
+}
+.tree-line .check {
+  flex: 1;
+  min-width: 0;
+}
+.tree-name .chip {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--track-color);
+}
+/* outside the ticked regions: muted (still at text contrast) and in italics, and read out as such */
+.tree-list li.dim > .tree-line .tree-name {
+  color: var(--muted);
+  font-style: italic;
+}
+/* touch screens: taller lines, easier to hit with a thumb (the 24 px minimum is for mice) */
+@media (pointer: coarse) {
+  .tree-line .fold,
+  .tree-line .fold-space,
+  .tree-line .check,
+  .region-line .fold,
+  .region-line .fold-space,
+  .region-line .check {
+    min-height: 40px;
+  }
+}
+/* phones: less indent per level, so deep rows keep room for their names */
+@media (max-width: 640px) {
+  .tree-list ul,
+  .region-tree ul {
+    padding-left: 10px;
+  }
+}
+.tree-list .dim-more .more {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: left;
+  min-height: 24px;
+}
+/* a checkbox's 24 px target circle mustn't overlap the ▸ beside it (WCAG 2.5.8; axe target-size) */
+.tree-line .check,
+.region-line .check {
+  padding-left: 6px;
 }

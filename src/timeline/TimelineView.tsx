@@ -20,7 +20,7 @@ import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
 /** Hiding rows with nothing in view waits this long after the last scroll, so rows don't come and go mid-scroll. */
-const SETTLE_MS = 350;
+const SETTLE_MS = 200;
 /** A row counts as in view with something this close to either edge (a share of the view's width), so rows arrive
  * just before their years do and don't flicker at the edges. */
 const ROW_MARGIN = 0.25;
@@ -40,6 +40,13 @@ interface Props {
   visibleTracks: Record<string, boolean>;
   /** Each row's regions as tooltip text for its label ("Regions: Anatolia (Near East) — from Wikipedia: Hittites"). */
   regionTips?: Map<string, string>;
+  /** Short tags after row names (in a comparison set: each row's broad region). */
+  rowTags?: Map<string, string>;
+  /** An update is still being drawn (a filter, region, comparison or dating change): the busy ring shows if it takes long. */
+  busy?: boolean;
+  /** Comparison sets: the rows in the set, and adding or removing a row (a compare button on each label). */
+  compareRows?: Set<string>;
+  onToggleCompare?: (trackId: string) => void;
   collapsed: Record<string, boolean>;
   /** Hide rows with nothing in or near the view (headers stay and count them). */
   hideOutOfView?: boolean;
@@ -122,16 +129,21 @@ export function TimelineView(props: Props) {
     const t = window.setTimeout(() => setPeekLane(null), PEEK_MS);
     return () => window.clearTimeout(t);
   }, [peekLane]);
+  /** The lanes with anything in the years last checked (hide rows with nothing in view). */
+  const activeNow = useMemo(
+    () => (hideOutOfView && rowWindow ? activeLanes(allLanes, events, spans, phases, present, rowWindow) : null),
+    [hideOutOfView, rowWindow, allLanes, events, spans, phases, present],
+  );
   const shown = useMemo(() => {
-    if (!hideOutOfView || !rowWindow)
+    if (!hideOutOfView || !rowWindow || !activeNow)
       return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
-    const active = activeLanes(allLanes, events, spans, phases, present, rowWindow);
+    const active = activeNow;
     const r = shownLanes(allLanes, trackById, active, keep, revealed);
     if (!thinRows) return { ...r, thin: new Set<string>() };
     // thin lines: every lane stays, the ones that would be taken out are drawn thin
     const drawn = new Set(r.lanes.map((l) => l.id));
     return { ...r, lanes: allLanes, thin: new Set(allLanes.filter((l) => !drawn.has(l.id)).map((l) => l.id)) };
-  }, [hideOutOfView, thinRows, rowWindow, allLanes, events, spans, phases, present, trackById, keep, revealed]);
+  }, [hideOutOfView, thinRows, rowWindow, activeNow, allLanes, trackById, keep, revealed]);
   const lanes = shown.lanes;
   // A top-level row with sub-rows is a group: its rows share its colour as a background tint.
   const groupColor = useMemo(() => {
@@ -217,11 +229,36 @@ export function TimelineView(props: Props) {
   const anchorRef = useRef<{ index: number; offset: number } | null>(null);
   const lastScaleRef = useRef(scale);
   const settleTimer = useRef(0);
-  const settleRows = useEffectEvent(() => {
-    const w = {
+  /** The years the rows would be checked against for the current view (the view plus a margin either side). */
+  const nextWindow = useMemo(
+    () => ({
       y0: Math.floor(scale.yearAt(Math.max(0, view.left - view.width * ROW_MARGIN))),
       y1: Math.ceil(scale.yearAt(view.left + view.width * (1 + ROW_MARGIN))),
-    };
+    }),
+    [scale, view.left, view.width],
+  );
+  /**
+   * The rows are about to change: the view has moved to years where another set of rows has something, and the check
+   * that hides or shows them is waiting for scrolling to settle. The busy ring shows meanwhile.
+   */
+  const rowsPending = useMemo(() => {
+    if (!activeNow || !rowWindow || (nextWindow.y0 === rowWindow.y0 && nextWindow.y1 === rowWindow.y1)) return false;
+    const next = activeLanes(allLanes, events, spans, phases, present, nextWindow);
+    return next.size !== activeNow.size || [...next].some((id) => !activeNow.has(id));
+  }, [activeNow, rowWindow, nextWindow, allLanes, events, spans, phases, present]);
+  // the busy ring sits in the chart's top-right corner; when that corner is off screen (a tall Filters panel pushed the
+  // chart down), it is pinned to the window's top-right instead, so a click's update is still seen
+  const busyStripRef = useRef<HTMLDivElement>(null);
+  const [cornerOnScreen, setCornerOnScreen] = useState(true);
+  useEffect(() => {
+    const el = busyStripRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver(([entry]) => setCornerOnScreen(entry.isIntersecting), { rootMargin: '0px 0px -40px 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const settleRows = useEffectEvent(() => {
+    const w = nextWindow;
     if (rowWindow && rowWindow.y0 === w.y0 && rowWindow.y1 === w.y1) return;
     const el = scrollerRef.current;
     const first = el ? layout.lanes.find((l) => l.top + l.height > el.scrollTop) : undefined;
@@ -270,6 +307,7 @@ export function TimelineView(props: Props) {
     lanes: navLanes,
     expanded,
     inactiveBelow: shown.inactiveBelow,
+    compare: !!props.onToggleCompare && !editMode,
     selectedId,
     view,
     labelW,
@@ -324,6 +362,7 @@ export function TimelineView(props: Props) {
       aria-label={`Timeline: ${data.meta.title}`}
       tabIndex={-1}
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
+      aria-busy={rowsPending || !!props.busy}
       ref={scrollerRef}
       onScroll={onScroll}
       {...pinch}
@@ -334,6 +373,14 @@ export function TimelineView(props: Props) {
       }}
     >
       <div className="tl-canvas" style={{ width: canvasW }}>
+        {/* the busy ring, pinned to the chart's top-right corner however far it is scrolled */}
+        <div className="tl-busy-strip" ref={busyStripRef} style={{ width: view.width }} aria-hidden="true">
+          {(rowsPending || props.busy) && (
+            <span className={`tl-busy${rowsPending ? ' rows' : ''}${cornerOnScreen ? '' : ' floating'}`} title={rowsPending ? 'Updating the rows for these years' : 'Updating'}>
+              <span className="ring" />
+            </span>
+          )}
+        </div>
         <Ruler
           scale={scale}
           cal={cal}
@@ -419,6 +466,12 @@ export function TimelineView(props: Props) {
               <LaneLabel
                 lane={lane}
                 regionTip={props.regionTips?.get(lane.id)}
+                tag={props.rowTags?.get(lane.id)}
+                compare={
+                  props.onToggleCompare && !editMode
+                    ? { inSet: !!props.compareRows?.has(lane.id), onToggle: () => props.onToggleCompare!(lane.id) }
+                    : undefined
+                }
                 labelW={labelW}
                 overflow={overflow}
                 expanded={!!expanded[lane.id]}

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
@@ -11,6 +11,7 @@ import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
 import { useChronology } from './state/useChronology.ts';
 import { useRegionFilter } from './state/regionFilter.ts';
+import { useComparison } from './state/comparison.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
@@ -21,6 +22,7 @@ import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
 import { RegionFilter } from './components/RegionFilter.tsx';
+import { ComparisonBar } from './components/ComparisonBar.tsx';
 import { ThemePanel } from './components/ThemePanel.tsx';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
@@ -65,15 +67,47 @@ export default function App({ published: opened, library: libraryEntry, site, no
     const m = libraryEntry ? undefined : site.find((x) => x.id === meta.id)?.map;
     return m ? new URL(m, indexUrl()).href : undefined;
   }, [libraryEntry, site, meta.id]);
-  const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, isOn } = useFilters(data);
+  const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, setTracks, setSources, isOn } = useFilters(data);
   // edit mode is declared here because the region filter (below) is off while editing
   const [editMode, setEditMode] = useState(false);
   // ---- region filter: rows outside the ticked regions are hidden, on top of the reader's own row toggles ----
   const regions = useRegionFilter(data, initialUrl.regions, filters.sources, editMode);
+  // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
+  const comparison = useComparison(data, initialUrl, editMode);
   const rowsOn = useMemo(
-    () => (regions.active ? { ...filters.tracks, ...regions.overlay } : filters.tracks),
-    [regions.active, regions.overlay, filters.tracks],
+    () =>
+      comparison.active
+        ? { ...filters.tracks, ...comparison.overlay }
+        : regions.active
+          ? { ...filters.tracks, ...regions.overlay }
+          : filters.tracks,
+    [comparison.active, comparison.overlay, regions.active, regions.overlay, filters.tracks],
   );
+  /** The data the chart and table draw: the set's rows while a comparison is shown. */
+  const viewData = useMemo(() => (comparison.tracks ? { ...data, tracks: comparison.tracks } : data), [comparison.tracks, data]);
+  // in a comparison each row shows its broad region beside its name
+  const rowTags = useMemo(() => {
+    if (!comparison.active || !regions.regionsOf) return undefined;
+    const tags = new Map<string, string>();
+    for (const id of comparison.ordered) {
+      const r = regions.regionsOf.get(id)?.[0];
+      if (r) tags.set(id, r.within.at(-1) ?? r.name);
+    }
+    return tags;
+  }, [comparison.active, comparison.ordered, regions.regionsOf]);
+  const trackName = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
+  // in Filters, rows and sources outside the ticked regions are dimmed and the groups holding the ones inside open
+  const regionRows = useMemo(
+    () => (regions.active ? new Set(data.tracks.filter((t) => regions.overlay[t.id] !== false).map((t) => t.id)) : undefined),
+    [regions.active, regions.overlay, data.tracks],
+  );
+  const regionOpen = useMemo(() => {
+    if (!regions.active) return undefined;
+    const byId = new Map(data.tracks.map((t) => [t.id, t]));
+    const open = new Set<string>();
+    for (const id of regions.rowsInPicked) for (let p = byId.get(id)?.parent; p && !open.has(p); p = byId.get(p)?.parent) open.add(p);
+    return [...open];
+  }, [regions.active, regions.rowsInPicked, data.tracks]);
   const shownFilters = useMemo(() => ({ ...filters, tracks: rowsOn }), [filters, rowsOn]);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
@@ -120,6 +154,16 @@ export default function App({ published: opened, library: libraryEntry, site, no
   if (increment !== announcedIncrement) {
     setAnnouncedIncrement(increment);
     setAnnouncement(`Zoom: ${increment} years per tick`);
+  }
+  const comparisonSays = comparison.active
+    ? `Comparing ${comparison.ordered.length} ${comparison.ordered.length === 1 ? 'row' : 'rows'}${comparison.order === 'related' ? ', related rows together' : comparison.order === 'start' ? ', by start date' : ''}`
+    : comparison.rows.length
+      ? `${comparison.rows.length} ${comparison.rows.length === 1 ? 'row' : 'rows'} in the comparison; showing the whole timeline`
+      : '';
+  const [announcedComparison, setAnnouncedComparison] = useState(comparisonSays);
+  if (comparisonSays !== announcedComparison) {
+    setAnnouncedComparison(comparisonSays);
+    setAnnouncement(comparisonSays || 'Comparison cleared');
   }
   const [announcedRegions, setAnnouncedRegions] = useState(regions.picked);
   if (regions.picked !== announcedRegions) {
@@ -219,6 +263,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
       thinRows,
       hideOutOfViewDefault: !!published.meta.hideRowsOutOfView,
       regions: regions.picked,
+      set: comparison.active ? comparison.rows : [],
+      order: comparison.order,
     },
     initialCenter,
   );
@@ -253,6 +299,33 @@ export default function App({ published: opened, library: libraryEntry, site, no
     setAnnouncement(on ? 'Rows with nothing in view are hidden' : 'All rows shown');
   };
   const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId));
+
+  // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
+  // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
+  // Zoom stays immediate: its scroll anchoring needs the new scale at once.
+  const shownData = useDeferredValue(viewData);
+  const shownEvents = useDeferredValue(drawnEvents);
+  const shownListEvents = useDeferredValue(visibleEvents);
+  const shownSpans = useDeferredValue(spans);
+  const shownPhases = useDeferredValue(phases);
+  const shownRows = useDeferredValue(rowsOn);
+  const shownCollapsed = useDeferredValue(collapsed);
+  const shownCompress = useDeferredValue(compress);
+  const shownLinks = useDeferredValue(showLinks);
+  const shownHide = useDeferredValue(hideOutOfView && !editMode);
+  const shownThin = useDeferredValue(thinRows);
+  const busy =
+    shownData !== viewData ||
+    shownEvents !== drawnEvents ||
+    shownListEvents !== visibleEvents ||
+    shownSpans !== spans ||
+    shownPhases !== phases ||
+    shownRows !== rowsOn ||
+    shownCollapsed !== collapsed ||
+    shownCompress !== compress ||
+    shownLinks !== showLinks ||
+    shownHide !== (hideOutOfView && !editMode) ||
+    shownThin !== thinRows;
 
   return (
     <div className="app">
@@ -321,7 +394,13 @@ export default function App({ published: opened, library: libraryEntry, site, no
         }
         panels={panels.open}
         onTogglePanel={panels.toggle}
-        filtersNote={regions.active ? `${regions.picked.length} ${regions.picked.length === 1 ? 'region' : 'regions'}` : undefined}
+        filtersNote={
+          comparison.active
+            ? 'comparison'
+            : regions.active
+              ? `${regions.picked.length} ${regions.picked.length === 1 ? 'region' : 'regions'}`
+              : undefined
+        }
       />
 
       {editMode && (
@@ -368,6 +447,20 @@ export default function App({ published: opened, library: libraryEntry, site, no
           </button>{' '}
           to download or discard them.
         </div>
+      )}
+
+      {!editMode && comparison.rows.length > 0 && (
+        <ComparisonBar
+          rows={comparison.ordered.map((id) => ({ id, name: trackName.get(id) ?? id }))}
+          candidates={data.tracks.filter((t) => !comparison.inSet.has(t.id)).map((t) => ({ id: t.id, name: t.name }))}
+          order={comparison.order}
+          onOrder={comparison.setOrder}
+          viewing={comparison.viewing}
+          onView={comparison.setViewing}
+          onAdd={comparison.add}
+          onRemove={comparison.toggle}
+          onClear={comparison.clear}
+        />
       )}
 
       {panels.open.legend && (
@@ -423,6 +516,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
           toggleSource={toggleSource}
           toggleTag={toggleTag}
           setAllTracks={setAllTracks}
+          setTracks={setTracks}
+          setSources={setSources}
+          regionRows={regionRows}
+          regionOpen={regionOpen}
           compress={compress}
           onCompress={setCompress}
           showLinks={showLinks}
@@ -446,6 +543,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
                 editMode={editMode}
                 onToggle={regions.toggle}
                 onClear={regions.clear}
+                rowCount={regions.rowsInPicked.length}
+                paused={comparison.active}
+                onMakeSet={regions.active ? () => comparison.replace(regions.rowsInPicked, 'related') : undefined}
               />
             )
           }
@@ -455,8 +555,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
       <main className={hasSidePanel ? 'with-panel' : ''}>
         {view === 'table' ? (
           <TableView
-            data={data}
-            events={visibleEvents}
+            data={shownData}
+            events={shownListEvents}
             hiddenCount={resolved.length - visibleEvents.length}
             selectedId={selectedId}
             onSelect={(id) => {
@@ -464,29 +564,33 @@ export default function App({ published: opened, library: libraryEntry, site, no
               if (editing?.kind === 'event') setEditing(null);
             }}
             focus={focus}
-            spans={spans}
-            phases={phases}
-            visibleTracks={rowsOn}
+            spans={shownSpans}
+            phases={shownPhases}
+            visibleTracks={shownRows}
             regionsOf={regions.regionsOf}
           />
         ) : (
           <TimelineView
-            data={data}
-            events={drawnEvents}
+            data={shownData}
+            events={shownEvents}
             eventsById={resolvedById}
-            spans={spans}
-            phases={phases}
-            visibleTracks={rowsOn}
+            spans={shownSpans}
+            phases={shownPhases}
+            visibleTracks={shownRows}
+            busy={busy}
             regionTips={regions.regionTips}
-            collapsed={collapsed}
-            hideOutOfView={hideOutOfView && !editMode}
-            thinRows={thinRows}
+            rowTags={rowTags}
+            compareRows={comparison.inSet}
+            onToggleCompare={comparison.toggle}
+            collapsed={shownCollapsed}
+            hideOutOfView={shownHide}
+            thinRows={shownThin}
             onShowAllRows={() => switchHideOutOfView(false)}
             onRowsHidden={(n, year) => setAnnouncement(n ? `${n} rows with nothing near ${formatYear(year, cal)} hidden` : 'Every row has something in view')}
             onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}
             increment={increment}
-            compress={compress}
-            showLinks={showLinks}
+            compress={shownCompress}
+            showLinks={shownLinks}
             present={present}
             selectedId={selectedId}
             onSelect={(id) => {

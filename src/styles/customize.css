@@ -31,7 +31,8 @@
   .theme-panel,
   .timelines-panel,
   .filters-panel,
-  .filters-panel.has-regions {
+  .filters-group-body.data-body,
+  .filters-group-body.data-body.has-regions {
     grid-template-columns: 1fr;
   }
   .theme-panel .color-grid {

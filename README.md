@@ -70,15 +70,18 @@ be `http(s)` addresses or relative paths.
 
 - **Rows** that nest to any depth and fold away, with lifespans, named phases (dynasties, governments) and an
   optional image. *Expand all*, *Collapse all* and ↺ (back to the way the timeline opens) fold every row at once.
-- **Region filter:** Filters → Regions shows only the rows in the regions you tick (broad regions with the narrower ones
+- **Region filter:** Filters → Data filters → Regions shows only the rows in the regions you tick (broad regions with the narrower ones
   folded under them). Each row's regions come from its sources, listed in the table view and the row name's tooltip;
   the ticked regions go into the link (`&regions=anatolia,nile`).
+- **Comparison sets:** pick rows from anywhere (the + on a row's label, the "Add a row" box, or "Compare these rows"
+  under a region filter) and see them side by side, each with its region: as picked, related rows together, or by start
+  date. The set goes into the link (`&set=hittites,pharaonic-egypt&order=related`).
 - **Any calendar:** BCE/CE or your own era names, with or without a year 0.
 - **Uncertain dates** drawn as hatched ranges, worked out from what each source says. Alternative dating systems
   (such as Mesopotamia's High, Middle and Low chronologies) that readers can switch between in the **Dating** menu.
 - **Events** on one row or several (joined by a thread), with a start and end, or ongoing to the timeline's "now".
 - **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows, and the lines joining
-  a shared event's rows: all of them, or only the selected event's (Filters → *Show all event connections*).
+  a shared event's rows: all of them, or only the selected event's (Filters → Visual filters → *Show all event connections*).
 - **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N". A row's
   "show all" button unfolds its "+N" groups.
 - **Event details:** the dates each source gives, the sources with page or section, the connections, a map, and a
@@ -87,12 +90,17 @@ be `http(s)` addresses or relative paths.
   the row's location and the map from its Wikipedia article. Loaded only when an event is opened.
 - **Row links:** a row's name can link to a page about it; in the included timeline, its Wikipedia article. Rows can
   also carry a Wikidata id, shown in the table view and the CSV download.
-- **Zoom** by years per tick (buttons, `+`/`−`, or pinch). Long empty stretches are shortened (Filters →
-  *Shorten gaps with no events*).
+- **Zoom** by years per tick (buttons, `+`/`−`, or pinch). Long empty stretches are shortened (Filters → Visual
+  filters → *Shorten gaps with no events*).
 - **Hide rows with nothing in view**, or draw them as thin lines, so a timeline with many short-lived rows stays
-  readable (Filters → Rows). The ruler corner says how many are hidden.
+  readable (Filters → Visual filters → Rows). The ruler corner says how many are hidden.
+- **A busy ring** in the chart's top-right corner while the rows are about to change after a sideways scroll, or while
+  a slow update (filters, regions, a comparison, dating) is drawn; the chart is marked busy for screen readers.
 - **Search** across rows, phases and events, or type a year to go there (`/` from anywhere).
-- **Filters** by source and source tag; a timeline can start with some sources hidden (to avoid spoilers).
+- **Filters** in two sections: *Visual filters* (how the chart draws: gaps, connections, hidden rows) and *Data
+  filters* (what it shows: regions, rows and sources as folding lists with a find box, source tags). While regions are
+  ticked, the rows and sources outside them are dimmed. A timeline can start with some sources hidden (to avoid
+  spoilers).
 - **Legend** that explains only what the open timeline uses, including the keyboard keys, and a one-minute
   **guided tour**.
 - **Table view** of the same events and rows, with dates and sources in words, and a CSV download of the events

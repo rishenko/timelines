@@ -87,6 +87,9 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
 
 19. **Synchronoptic comparison (M).** Pick any rows from any region and place them side by side, saved in the link (a
     "my view"). Today the row order is fixed west to east; a scholar comparing Egypt with China has to scroll.
+    Done 21 November 2026: comparison sets (a + on each row label, an "Add a row" box, or "Compare these rows" under
+    a region filter), as picked, related rows together or by start date, in the link (`&set=…&order=…`). Not yet:
+    naming and saving sets, planned as part of saved filter collections.
 20. **Table view (M).** A sortable, filterable list of events and rows with dates, ranges, claims and sources. Scholars
     scan and check data this way, it doubles as the accessible alternative (item 23), and it's the basis of CSV export.
     Done 18 November 2026 (see item 23b).

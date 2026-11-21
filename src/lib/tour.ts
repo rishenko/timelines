@@ -59,7 +59,7 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     {
       target: '[aria-label="Years per tick"]',
       title: 'Zoom and move',
-      text: 'Pick how many years each tick of the ruler covers. Scroll or drag sideways to move through time; on a touch screen, pinch to zoom.',
+      text: 'Pick how many years each tick of the ruler covers. Scroll or drag sideways to move through time; on a touch screen, pinch to zoom. When rows are about to come or go as you move, or a change is still being drawn, a spinning ring shows in the chart’s top-right corner until it is done.',
     },
     o.hasSubRows && {
       target: '[aria-label="Rows"]',
@@ -67,14 +67,14 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
       text: 'Expand all opens every row; Collapse all folds them to the top level. ↺ puts the rows back the way the timeline opens.',
     },
     {
-      target: '.toolbar .search',
-      title: 'Search',
-      text: 'Find a row, an event or a year, and go straight to it. In the chart, / moves here.',
-    },
-    {
       target: '[data-tour="filters"]',
       title: 'Filters',
       text: 'Filters changes what the chart shows: shorten gaps with no events, show the arrows between all connected events, hide rows with nothing in view, show only some regions, and hide rows and sources you don’t need.',
+    },
+    {
+      target: '.toolbar .search',
+      title: 'Search',
+      text: 'Find a row, an event or a year, and go straight to it. In the chart, / moves here.',
     },
     {
       target: '[data-tour="legend"]',
