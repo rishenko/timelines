@@ -59,6 +59,39 @@ export function validateDataset(d: unknown): string[] {
   }
   for (const [k, s] of Object.entries(ds.sources)) checkUrl(`Source "${k}" url`, s.url);
 
+  // facets (ways to group rows) and the rows' memberships in their values
+  const facets = m.facets ?? {};
+  if (m.facets !== undefined && (typeof m.facets !== 'object' || Array.isArray(m.facets))) errors.push('meta.facets must be an object.');
+  for (const [fid, f] of Object.entries(facets)) {
+    if (!ID_RE.test(fid)) errors.push(`Facet id "${fid}" must be letters, digits and dashes.`);
+    if (!f?.name) errors.push(`Facet "${fid}" has no name.`);
+    const values = f?.values ?? {};
+    if (!f?.values || typeof f.values !== 'object') errors.push(`Facet "${fid}" needs values.`);
+    for (const [vid, v] of Object.entries(values)) {
+      if (!ID_RE.test(vid)) errors.push(`Facet "${fid}" value id "${vid}" must be letters, digits and dashes.`);
+      if (!v?.name) errors.push(`Facet "${fid}" value "${vid}" has no name.`);
+      for (const b of v?.broader ?? []) if (!values[b]) errors.push(`Facet "${fid}" value "${vid}" names unknown broader value "${b}".`);
+    }
+    // broader values may not loop back (a value inside itself)
+    const loops = (vid: string, seen: Set<string>): boolean =>
+      seen.has(vid) || (values[vid]?.broader ?? []).some((b) => loops(b, new Set([...seen, vid])));
+    for (const vid of Object.keys(values)) if ((values[vid]?.broader ?? []).some((b) => loops(b, new Set([vid])))) errors.push(`Facet "${fid}" value "${vid}" is inside itself through broader values.`);
+  }
+  for (const t of ds.tracks) {
+    if (t.memberships === undefined) continue;
+    if (!Array.isArray(t.memberships)) {
+      errors.push(`Track "${t.id}" memberships must be a list.`);
+      continue;
+    }
+    for (const ms of t.memberships) {
+      const f = facets[ms?.facet];
+      if (!f) errors.push(`Track "${t.id}" has a membership in unknown facet "${ms?.facet}".`);
+      else if (!f.values?.[ms.value]) errors.push(`Track "${t.id}" has a membership in unknown ${ms.facet} value "${ms.value}".`);
+      if (!Array.isArray(ms?.sources) || !ms.sources.length) errors.push(`Track "${t.id}" membership ${ms?.facet}/${ms?.value} cites no source.`);
+      else for (const s of ms.sources) if (!ds.sources[s?.sourceKey]) errors.push(`Track "${t.id}" membership ${ms.facet}/${ms.value} cites unknown source "${s?.sourceKey}".`);
+    }
+  }
+
   const chronologies = ds.chronologies ?? {};
   for (const [id, c] of Object.entries(chronologies)) {
     if (!c.name) errors.push(`Chronology "${id}" has no name.`);

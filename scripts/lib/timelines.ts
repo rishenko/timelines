@@ -15,6 +15,8 @@ export interface SourceTimeline {
   importance?: string;
   /** Row links plan: each row's Wikipedia article and Wikidata id (scripts/row-links.ts). */
   rowLinks?: string;
+  /** Category memberships plan: facets, and each row's memberships with their sources (scripts/lib/memberships.ts). */
+  memberships?: string;
   /** Generated review list of key and minor events; written only for a timeline with an importance plan. */
   keyEvents?: string;
   /**
@@ -38,6 +40,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     compiled: 'public/timelines/ancient-classical.json',
     importance: 'data-src/ancient-classical-importance.json',
     rowLinks: 'data-src/ancient-classical-row-links.json',
+    memberships: 'data-src/ancient-classical-memberships.json',
     keyEvents: 'docs/ancient-classical-key-events.md',
     scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign']),
   },
