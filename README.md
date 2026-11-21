@@ -70,6 +70,9 @@ be `http(s)` addresses or relative paths.
 
 - **Rows** that nest to any depth and fold away, with lifespans, named phases (dynasties, governments) and an
   optional image. *Expand all*, *Collapse all* and ↺ (back to the way the timeline opens) fold every row at once.
+- **Region filter:** Filters → Regions shows only the rows in the regions you tick (broad regions with the narrower ones
+  folded under them). Each row's regions come from its sources; the ticked regions go into the link
+  (`&regions=anatolia,nile`).
 - **Any calendar:** BCE/CE or your own era names, with or without a year 0.
 - **Uncertain dates** drawn as hatched ranges, worked out from what each source says. Alternative dating systems
   (such as Mesopotamia's High, Middle and Low chronologies) that readers can switch between in the **Dating** menu.

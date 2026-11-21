@@ -74,7 +74,7 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     {
       target: '[data-tour="filters"]',
       title: 'Filters',
-      text: 'Filters changes what the chart shows: shorten gaps with no events, show the arrows between all connected events, hide rows with nothing in view, and hide rows and sources you don’t need.',
+      text: 'Filters changes what the chart shows: shorten gaps with no events, show the arrows between all connected events, hide rows with nothing in view, show only some regions, and hide rows and sources you don’t need.',
     },
     {
       target: '[data-tour="legend"]',

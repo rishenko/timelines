@@ -1,0 +1,41 @@
+import { useMemo, useState } from 'react';
+import type { Dataset } from '../types.ts';
+import { regionOverlay, regionTree, type RegionNode } from '../lib/regions.ts';
+import { isOn } from './filters.ts';
+
+/**
+ * The region filter's state (see lib/regions.ts): the ticked regions, from the link (`?regions=`) at first. It works on
+ * the timeline's first facet (geography in the bundled timeline; the people and civilization lists aren't settled).
+ * Off in edit mode, where every row must be reachable.
+ */
+export const regionFacetId = (data: Dataset): string | undefined => Object.keys(data.meta.facets ?? {})[0];
+
+export function useRegionFilter(data: Dataset, initial: string[], sources: Record<string, boolean>, editMode: boolean) {
+  const [picked, setPicked] = useState<string[]>(initial);
+  const facetId = regionFacetId(data);
+  const facet = facetId ? data.meta.facets![facetId] : undefined;
+  const sourceOn = useMemo(() => (key: string) => isOn(sources, key), [sources]);
+
+  const tree = useMemo<RegionNode[]>(
+    () => (facet && facetId ? regionTree(data.tracks, facetId, facet, sourceOn) : []),
+    [data.tracks, facet, facetId, sourceOn],
+  );
+  const active = !editMode && !!facet && picked.length > 0;
+  /** `false` for each row the filter hides, to lay over the reader's own row toggles. */
+  const overlay = useMemo<Record<string, false>>(
+    () => (active ? regionOverlay(data.tracks, facetId!, facet!, picked, sourceOn) : {}),
+    [active, data.tracks, facetId, facet, picked, sourceOn],
+  );
+  const names = useMemo(() => picked.map((id) => facet?.values[id]?.name ?? id), [picked, facet]);
+
+  /** Regions that contain `id` (its `broader` values, and theirs). */
+  const containing = (id: string, seen = new Set<string>()): Set<string> => {
+    for (const b of facet?.values[id]?.broader ?? []) if (!seen.has(b)) containing(b, seen.add(b));
+    return seen;
+  };
+  // ticking a region drops the regions inside it from the list (it includes them now)
+  const toggle = (id: string) =>
+    setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p.filter((x) => !containing(x).has(id)), id]));
+  const clear = () => setPicked([]);
+  return { tree, picked, names, active, overlay, toggle, clear, containing };
+}

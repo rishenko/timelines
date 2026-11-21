@@ -317,3 +317,40 @@ main {
   }
 }
 
+
+/* Filters → Regions (components/RegionFilter.tsx): its own column before the row toggles, on timelines with regions */
+.filters-panel.has-regions {
+  grid-template-columns: minmax(150px, 1fr) minmax(190px, 1.2fr) 2fr 2fr 1fr;
+}
+.region-tree,
+.region-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.region-tree ul {
+  padding-left: 18px;
+}
+.region-line {
+  display: flex;
+  align-items: center;
+}
+.region-line .fold,
+.region-line .fold-space {
+  flex: 0 0 24px;
+  min-height: 24px;
+}
+.region-line .fold {
+  font-size: 14px;
+  padding: 0;
+  color: var(--text);
+}
+.region-line .check {
+  flex: 1;
+}
+.region-line input:disabled + span {
+  color: var(--muted);
+}
+.region-filter > p {
+  margin: 6px 0 0;
+}

@@ -47,7 +47,7 @@ export interface TimelineMeta {
   hideRowsOutOfView?: boolean;
   /**
    * Ways to sort rows into categories besides the row tree (geography, people, civilization), each with its values.
-   * Rows join values through Track.memberships. Meant for region filters and comparison sets (not in the app yet).
+   * Rows join values through Track.memberships. The region filter uses the first facet; comparison sets are planned.
    */
   facets?: Record<string, Facet>;
   /**

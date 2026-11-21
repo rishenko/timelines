@@ -153,6 +153,15 @@ infobox. Articles carrying an AI-generated-text notice were not used. The author
 outside the repo with the dump (`~/data/timelines-analysis/2026-11-20-groups/`). Megalith builders has no region on
 purpose (its sources name none).
 
+### Region filter
+
+Filters → Regions (`src/components/RegionFilter.tsx`, rules in `src/lib/regions.ts`, state in
+`src/state/regionFilter.ts`) works on the timeline's first facet. A row shows if it is in any ticked region, counting
+the regions inside each (`broader`); rows with sub-rows stay while any row below them shows; a membership counts only
+while one of its sources is switched on (so tags cited to hidden spoiler sources give nothing away). The result is laid
+over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
+without knowing about regions. Off in edit mode. The link carries `&regions=`.
+
 ## Event maps
 
 Opening an event shows its rows on a map (`src/components/EventMap.tsx`, data helpers in `src/map/mapData.ts`). The

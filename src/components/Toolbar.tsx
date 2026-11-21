@@ -23,6 +23,8 @@ interface Props {
   search: ReactNode;
   panels: Record<PanelName, boolean>;
   onTogglePanel: (p: PanelName) => void;
+  /** Shown on the Filters button while a filter the reader may forget is on (e.g. "2 regions"). */
+  filtersNote?: string;
 }
 
 const PANEL_BUTTONS: { panel: PanelName; label: string; title?: string }[] = [
@@ -109,6 +111,7 @@ export function Toolbar(p: Props) {
           title={title}
         >
           {label}
+          {panel === 'filters' && p.filtersNote ? ` · ${p.filtersNote}` : ''}
         </button>
       ))}
     </header>

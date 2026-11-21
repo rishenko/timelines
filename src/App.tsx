@@ -10,6 +10,7 @@ import { goToTimeline, readUrl, useUrlSync, type View } from './state/url.ts';
 import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
 import { useChronology } from './state/useChronology.ts';
+import { useRegionFilter } from './state/regionFilter.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
@@ -19,6 +20,7 @@ import { SidePanel, type Editing } from './components/SidePanel.tsx';
 import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
+import { RegionFilter } from './components/RegionFilter.tsx';
 import { ThemePanel } from './components/ThemePanel.tsx';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
@@ -64,6 +66,15 @@ export default function App({ published: opened, library: libraryEntry, site, no
     return m ? new URL(m, indexUrl()).href : undefined;
   }, [libraryEntry, site, meta.id]);
   const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, isOn } = useFilters(data);
+  // edit mode is declared here because the region filter (below) is off while editing
+  const [editMode, setEditMode] = useState(false);
+  // ---- region filter: rows outside the ticked regions are hidden, on top of the reader's own row toggles ----
+  const regions = useRegionFilter(data, initialUrl.regions, filters.sources, editMode);
+  const rowsOn = useMemo(
+    () => (regions.active ? { ...filters.tracks, ...regions.overlay } : filters.tracks),
+    [regions.active, regions.overlay, filters.tracks],
+  );
+  const shownFilters = useMemo(() => ({ ...filters, tracks: rowsOn }), [filters, rowsOn]);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
   // on opening, readers with a saved draft hear if the published timeline changed underneath it
@@ -89,7 +100,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
   const chron = useChronology(data);
   const { resolved, resolvedById, spans, phases } = chron;
-  const visibleEvents = useMemo(() => resolved.filter((e) => isEventVisible(e, filters)), [resolved, filters]);
+  const visibleEvents = useMemo(() => resolved.filter((e) => isEventVisible(e, shownFilters)), [resolved, shownFilters]);
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
 
   // ---- view settings ----
@@ -110,6 +121,11 @@ export default function App({ published: opened, library: libraryEntry, site, no
     setAnnouncedIncrement(increment);
     setAnnouncement(`Zoom: ${increment} years per tick`);
   }
+  const [announcedRegions, setAnnouncedRegions] = useState(regions.picked);
+  if (regions.picked !== announcedRegions) {
+    setAnnouncedRegions(regions.picked);
+    setAnnouncement(regions.names.length ? `Showing rows in ${regions.names.join(', ')}` : 'Region filter off: all rows');
+  }
 
   // ---- folded rows ----
   const openingCollapsed = useMemo(() => defaultCollapsed(meta.collapsed), [meta.collapsed]);
@@ -124,7 +140,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
   );
 
   // ---- selection and editing ----
-  const [editMode, setEditMode] = useState(false);
   const [editing, setEditing] = useState<Editing>(null);
   const [focus, focusOn] = useFocusRequest();
   const [selectedId, setSelectedId] = useState<string | null>(() =>
@@ -203,6 +218,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       hideOutOfView,
       thinRows,
       hideOutOfViewDefault: !!published.meta.hideRowsOutOfView,
+      regions: regions.picked,
     },
     initialCenter,
   );
@@ -214,7 +230,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
     spans,
     phases,
     visibleIds,
-    filters,
+    filters: shownFilters,
     centerRef,
     setCollapsed,
     setSelectedId,
@@ -305,6 +321,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
         }
         panels={panels.open}
         onTogglePanel={panels.toggle}
+        filtersNote={regions.active ? `${regions.picked.length} ${regions.picked.length === 1 ? 'region' : 'regions'}` : undefined}
       />
 
       {editMode && (
@@ -420,6 +437,18 @@ export default function App({ published: opened, library: libraryEntry, site, no
           editMode={editMode}
           onEditTrack={editTrack}
           onEditSource={(key) => setEditing({ kind: 'source', key })}
+          regions={
+            regions.tree.length > 0 && (
+              <RegionFilter
+                tree={regions.tree}
+                picked={regions.picked}
+                containing={regions.containing}
+                editMode={editMode}
+                onToggle={regions.toggle}
+                onClear={regions.clear}
+              />
+            )
+          }
         />
       )}
 
@@ -437,7 +466,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             focus={focus}
             spans={spans}
             phases={phases}
-            visibleTracks={filters.tracks}
+            visibleTracks={rowsOn}
           />
         ) : (
           <TimelineView
@@ -446,7 +475,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             eventsById={resolvedById}
             spans={spans}
             phases={phases}
-            visibleTracks={filters.tracks}
+            visibleTracks={rowsOn}
             collapsed={collapsed}
             hideOutOfView={hideOutOfView && !editMode}
             thinRows={thinRows}

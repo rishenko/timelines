@@ -30,7 +30,8 @@
   /* the theme, timelines and filters panels: one column on phones (their columns used to run off the screen) */
   .theme-panel,
   .timelines-panel,
-  .filters-panel {
+  .filters-panel,
+  .filters-panel.has-regions {
     grid-template-columns: 1fr;
   }
   .theme-panel .color-grid {
