@@ -528,3 +528,8 @@ main {
   text-align: left;
   min-height: 24px;
 }
+/* a checkbox's 24 px target circle mustn't overlap the ▸ beside it (WCAG 2.5.8; axe target-size) */
+.tree-line .check,
+.region-line .check {
+  padding-left: 6px;
+}
