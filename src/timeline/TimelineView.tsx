@@ -3,7 +3,8 @@ import type { Dataset } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor } from './anchors.ts';
-import { buildLanes, layoutLanes, placePhases, type Mark } from './layout.ts';
+import { buildLanes, layoutLanes, layoutPhaseStrips, placePhases, type Mark } from './layout.ts';
+import { mergeStretches } from '../lib/lifespan.ts';
 import { eraStart } from '../lib/calendar.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
@@ -12,7 +13,7 @@ import { useLabelWidth, useLongPress, usePinchSteps } from './gestures.ts';
 import { useViewport } from './useViewport.ts';
 import { useRovingFocus } from './useRovingFocus.ts';
 import { Ruler, type EdgeLink } from './Ruler.tsx';
-import { PHASE_H, PhaseBand, SpanBand } from './Bands.tsx';
+import { PhaseStripCell, SpanBand } from './Bands.tsx';
 import { LaneLabel } from './LaneLabel.tsx';
 import { ClusterMark, EventMark } from './Marks.tsx';
 import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
@@ -157,12 +158,6 @@ export function TimelineView(props: Props) {
     return out;
   }, [data.tracks, trackById]);
   const lanePhases = useMemo(() => new Map(lanes.map((l) => [l.id, placePhases(l.id, phases)])), [lanes, phases]);
-  // a lane with phases gets a strip at the top for their names, one line per level
-  const headerPx = useMemo(() => {
-    const out: Record<string, number> = {};
-    for (const [id, list] of lanePhases) if (list.length) out[id] = (Math.max(...list.map((p) => p.level)) + 1) * PHASE_H;
-    return out;
-  }, [lanePhases]);
   const laneSpans = useMemo(() => {
     // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap;
     // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler; so do rows
@@ -179,6 +174,25 @@ export function TimelineView(props: Props) {
     () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
+  // a folded row's background is one lifespan: when it or any row folded into it existed, in its own colour (its
+  // sub-rows' bands overlaid in their colours would stack into shades that mean nothing)
+  const laneLifespans = useMemo(
+    () =>
+      new Map(
+        lanes.map((l) => [
+          l.id,
+          l.collapsed ? mergeStretches(l.members.flatMap((id) => spans.get(id) ?? [])) : (spans.get(l.id) ?? []),
+        ]),
+      ),
+    [lanes, spans],
+  );
+  // a lane with phases gets their strips at the top, one line per level: tall enough for names where any fit at this
+  // zoom, thin where none do
+  const laneStrips = useMemo(
+    () => new Map([...lanePhases].filter(([, list]) => list.length).map(([id, list]) => [id, layoutPhaseStrips(list, scale.x, {}, laneLifespans.get(id))])),
+    [lanePhases, scale, laneLifespans],
+  );
+  const headerPx = useMemo(() => Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height])), [laneStrips]);
   const layout = useMemo(
     () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin }),
     [lanes, events, scale, present, expanded, headerPx, shown.thin],
@@ -337,7 +351,7 @@ export function TimelineView(props: Props) {
 
   // Adding an event in edit mode: double-click an empty spot in a lane, or on touch screens hold a finger there.
   const isEmptySpot = (target: EventTarget, lane: Element) =>
-    target === lane || (target as HTMLElement).classList.contains('tl-span');
+    target === lane || (target as HTMLElement).classList.contains('tl-span') || (target as HTMLElement).classList.contains('tl-phase-fill');
   const createAt = (trackId: string, lane: Element, clientX: number) => {
     const contentX = clientX - lane.getBoundingClientRect().left - labelW;
     props.onCreateAt(trackId, Math.floor(scale.yearAt(contentX)));
@@ -456,12 +470,20 @@ export function TimelineView(props: Props) {
               aria-label={lane.track.name}
               data-lane={lane.id}
             >
-              {/* each stretch of a lifespan is its own band; the gaps between them stay blank */}
-              {lane.members.flatMap((id) =>
-                (spans.get(id) ?? []).map((s, i) => <SpanBand key={`span-${id}-${i}`} track={trackById.get(id)!} span={s} {...band} />),
-              )}
-              {lanePhases.get(lane.id)?.map((p, i) => (
-                <PhaseBand key={`phase-${p.trackId}-${i}`} phase={p} color={trackById.get(p.trackId)!.color} alt={i % 2 === 1} {...band} />
+              {/* each stretch of a lifespan is its own band; the gaps between them stay blank. A still-going one shows
+                  an arrow on its top edge, unless a still-going phase on screen already shows one in its strip */}
+              {laneLifespans.get(lane.id)?.map((s, i) => (
+                <SpanBand
+                  key={`span-${i}`}
+                  track={lane.track}
+                  span={s}
+                  cue={!laneStrips.get(lane.id)?.cells.some((c) => c.phase.ongoing && c.x0 < view.left + view.width - labelW && c.x1 > view.left)}
+                  title={lane.collapsed ? `${lane.track.name} and the rows folded into it` : undefined}
+                  {...band}
+                />
+              ))}
+              {laneStrips.get(lane.id)?.cells.map((c, i) => (
+                <PhaseStripCell key={`phase-${i}`} cell={c} color={trackById.get(c.phase.trackId)!.color} {...band} />
               ))}
               <LaneLabel
                 lane={lane}

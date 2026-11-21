@@ -122,7 +122,7 @@ naming the row and the phase. In the table view, a lifespan worked out from phas
 **`ongoing`**: `"ongoing": true` instead of `end`, on a lifespan stretch or a phase, means it is still going: it runs to
 the timeline's [`present`](#top-level), as an ongoing event does. Use it for a state that still exists rather than
 typing the present year as its end. Only the last stretch of a lifespan can be ongoing. An ongoing stretch or phase has
-no end claims; its tooltip, the table view and search say "– ongoing" (the bar itself looks like any other).
+no end claims; it ends in an arrow on the chart, and its tooltip, the table view and search say "– ongoing".
 
 **`ongoingSources`**: the sources that say an ongoing stretch or phase is still going, cited like events' `sources`. It
 takes the place of end claims, so only an ongoing stretch or phase may have it; the table view lists them ("still going
@@ -144,10 +144,15 @@ timeline. Each phase is dated like a lifespan stretch (it may be `ongoing`), wit
 ]
 ```
 
-A line marks where each phase begins, and its name runs along a strip at the top of the row. The name stays in view
-while you scroll. Neighbouring phases alternate shades, and a gap between phases is left blank. Phases may overlap,
-as rival governments do in a civil war; an overlapping phase's name goes on a second line. Events stay on the row
-itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
+Each phase is drawn as a cell in a thin strip at the top of the row, under the lifespan's edge (the lifespan is the
+only thing that shades the row itself). A line marks where each phase begins and where it ends, unless the next phase
+begins there; neighbouring phases alternate shades, and a gap between phases leaves the strip blank. The name stays in
+view while you scroll; a phase too short for its name has it beside the phase in the blank strip, with a pointer, when
+there is room (else its tooltip names it). Zoomed out so far that no name fits, a strip is a thin line. Phases may
+overlap, as rival governments do in a civil war; an overlapping phase goes on a second strip. A still-going phase
+(`ongoing`) ends in an arrow, kept at the right edge of the chart while its end is off screen; a still-going lifespan
+shows the same arrow on its top edge. A folded row shows only its own phases, over one lifespan: the years when it or
+any row folded into it existed. Events stay on the row itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
 order. Search finds phases by name.
 
 ### Lifespan, phases or a row?

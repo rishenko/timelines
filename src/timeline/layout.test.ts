@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { buildLanes, layoutLanes, placePhases } from './layout.ts';
+import { buildLanes, layoutLanes, layoutPhaseStrips, placePhases, STRIP_DEFAULTS } from './layout.ts';
+import type { ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import { buildScale } from './scale.ts';
 import type { TimelineEvent, Track } from '../types.ts';
 import data from '../../public/timelines/ancient-classical.json';
@@ -256,6 +257,133 @@ describe('placePhases', () => {
     expect(placed.map((p) => p.name)).toEqual(['First', 'Second', 'Third']);
     expect(placed.every((p) => p.trackId === 'north')).toBe(true);
     expect(placePhases('nobody', phases)).toEqual([]);
+  });
+});
+
+describe('layoutPhaseStrips', () => {
+  const strips = (list: ResolvedPhase[], pxPerYear: number) =>
+    layoutPhaseStrips(placePhases('row', new Map([['row', list]])), (y) => y * pxPerYear);
+  const { namedPx, thinPx } = STRIP_DEFAULTS;
+
+  it('draws a change once: no end line where the next phase on the line begins', () => {
+    const { cells } = strips(
+      [
+        { name: 'First Council', start: 0, end: 100 },
+        { name: 'Second Council', start: 100, end: 200 },
+      ],
+      2,
+    );
+    expect(cells.map((c) => [c.x0, c.x1, c.startX, c.endX])).toEqual([
+      [0, 200, 0, null],
+      [200, 402, 200, 402],
+    ]);
+  });
+
+  it('ends a phase visibly at a gap, and gives a still-going phase no end line (it gets an arrow)', () => {
+    const { cells } = strips(
+      [
+        { name: 'Old Kingdom', start: 0, end: 50 },
+        { name: 'New Kingdom', start: 80, end: 300, ongoing: true },
+      ],
+      2,
+    );
+    expect(cells[0].endX).toBe(102);
+    expect(cells[1].endX).toBeNull();
+  });
+
+  it('puts rivals on a second line, each line named or thin by what fits at this zoom', () => {
+    const list = [
+      { name: 'Republic', start: 0, end: 400 },
+      { name: 'Rebel Republic', start: 100, end: 400 },
+    ];
+    const near = strips(list, 2);
+    expect(near.lines).toEqual([
+      { top: 0, height: namedPx, named: true },
+      { top: namedPx, height: namedPx, named: true },
+    ]);
+    expect(near.height).toBe(2 * namedPx);
+    expect(near.cells.map((c) => c.line.top)).toEqual([0, namedPx]);
+    // zoomed far out nothing fits: both lines thin, and the row is shorter than with names
+    const far = strips(list, 0.01);
+    expect(far.lines.map((l) => [l.height, l.named])).toEqual([
+      [thinPx, false],
+      [thinPx, false],
+    ]);
+    expect(far.cells.every((c) => c.name === null)).toBe(true);
+  });
+
+  it('names a phase too short for its name in the blank strip after it, pointing back at it', () => {
+    const list = [
+      { name: 'Long Reign', start: 0, end: 300 },
+      { name: 'Hundred Days', start: 50, end: 50 },
+      { name: 'Rival Council', start: 200, end: 300 },
+    ];
+    const short = strips(list, 2).cells.find((c) => c.phase.name === 'Hundred Days')!;
+    expect(short.name).toMatchObject({ x0: 102, outside: 'after' });
+    // only on a line that has names: alone on a thin line, the tooltip names it
+    expect(strips(list.slice(0, 2), 2).cells[1].name).toBeNull();
+  });
+
+  it('or before it when the strip after it is taken, and never over another phase', () => {
+    const { cells } = strips(
+      [
+        { name: 'People’s Republic', start: 0, end: 100 },
+        { name: 'State', start: 60, end: 60 },
+        { name: 'Soviet Republic', start: 61, end: 100 },
+      ],
+      2,
+    );
+    const state = cells.find((c) => c.phase.name === 'State')!;
+    expect(state.name).toMatchObject({ x1: 120, outside: 'before' });
+    // squeezed between phases on both sides: only the tooltip names it
+    const boxed = strips(
+      [
+        { name: 'A long first phase', start: 0, end: 59 },
+        { name: 'Interregnum', start: 60, end: 60 },
+        { name: 'A long last phase', start: 61, end: 120 },
+      ],
+      2,
+    ).cells.find((c) => c.phase.name === 'Interregnum')!;
+    expect(boxed.name).toBeNull();
+  });
+
+  it("never places a name beside its phase over years where the row didn't exist (outside its lifespan)", () => {
+    // a rival government of one year at the very start of the row (Ukrainian State 1918, the row from 1917), with the
+    // strip after it taken: the room before it is blank strip but no lifespan, so only the tooltip names it
+    const list: ResolvedPhase[] = [
+      { name: 'People’s Republic', start: 1917, end: 1921 },
+      { name: 'Ukrainian State', start: 1918, end: 1918 },
+      { name: 'Soviet Republic', start: 1919, end: 1991 },
+    ];
+    const at = (lifespan?: ResolvedSpan[]) =>
+      layoutPhaseStrips(placePhases('row', new Map([['row', list]])), (y) => (y - 1800) * 2, {}, lifespan).cells.find(
+        (c) => c.phase.name === 'Ukrainian State',
+      )!.name;
+    // unbounded, it goes before the phase, across 1880–1917
+    expect(at()).toMatchObject({ outside: 'before', x1: 236 });
+    expect(at([{ start: 1917, end: 1991, derived: true }])).toBeNull();
+    // a lifespan that reaches back far enough leaves room again, cut at the lifespan's start
+    expect(at([{ start: 1860, end: 1991 }])).toMatchObject({ outside: 'before', x0: 120, x1: 236 });
+    // after its end: bounded by the end of the lifespan stretch it lies in (here one ending the year after)
+    const after = layoutPhaseStrips(
+      placePhases('row', new Map([['row', [{ name: 'Long reign', start: 0, end: 99 }, { name: 'Hundred Days', start: 100, end: 100 }]]])),
+      (y) => y * 2,
+      {},
+      [{ start: 0, end: 100 }],
+    ).cells[1].name;
+    expect(after).toBeNull();
+  });
+
+  it('cuts an uncertain end where the next phase on the line begins (its fade ends there)', () => {
+    const { cells } = strips(
+      [
+        { name: 'Old', start: 0, end: 100, endWindow: [100, 140] },
+        { name: 'New', start: 120, end: 200, startWindow: [100, 120] },
+      ],
+      1,
+    );
+    expect([cells[0].x1, cells[0].fadeOut, cells[0].endX]).toEqual([120, 19, 101]);
+    expect([cells[1].x0, cells[1].fadeIn]).toEqual([120, 0]);
   });
 });
 

@@ -158,7 +158,10 @@
 .lg-phases {
   display: flex;
   width: 84px;
-  height: 22px;
+  height: 14px;
+  margin-bottom: 8px;
+  border-top: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, transparent);
+  padding-top: 2px;
 }
 .lg-phases > span {
   flex: 1;
@@ -166,12 +169,29 @@
   font-size: 9px;
   font-weight: 600;
   line-height: 12px;
-  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, var(--text));
-  border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent);
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 7%, transparent);
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 20%, var(--text));
+  border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 22%, transparent);
 }
 .lg-phases > .b {
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 16%, transparent);
+  flex: 0.7;
+  border-right: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 40%, transparent);
+}
+.lg-ongoing {
+  display: flex;
+  align-items: stretch;
+  width: 84px;
+  height: 12px;
+  margin-bottom: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 22%, transparent);
+  justify-content: flex-end;
+}
+.lg-ongoing > span {
+  width: 10px;
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 .lg-row-more,
 .lg-text,

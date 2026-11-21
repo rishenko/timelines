@@ -38,7 +38,12 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
       target: '.tl-span',
       widest: true,
       title: 'Lifespans',
-      text: 'The shaded band behind a row shows when that civilization, period or faction existed, so the shading starts where it begins. Soft edges mean its start or end is uncertain.',
+      text:
+        'The shaded band behind a row shows when that civilization, period or faction existed, so the shading starts where it begins. Soft edges mean its start or end is uncertain.' +
+        (data.tracks.some((t) => t.phases?.length) ? ' A row’s phases (its governments, dynasties or eras) sit in a thin strip along its top.' : '') +
+        (data.tracks.some((t) => (Array.isArray(t.span) ? t.span : t.span ? [t.span] : []).some((s) => s.ongoing) || t.phases?.some((p) => p.ongoing))
+          ? ' An arrow at the end means it is still going.'
+          : ''),
     },
     // the toolbar, left to right
     {
