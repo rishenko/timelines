@@ -118,6 +118,16 @@
   margin: 0;
   padding-left: 1.4em;
 }
+/* Regions column: each region, then the sources placing the row there (as events cite theirs) */
+.region-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.region-list .source-list {
+  margin: 2px 0 4px;
+  padding-left: 1em;
+  font-size: 0.92em;
+}
 .lg-keys {
   display: inline-flex;
   gap: 3px;

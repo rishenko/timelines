@@ -38,6 +38,8 @@ interface Props {
   /** Track phases (resolved): named periods drawn on the row's own bar. */
   phases: Map<string, ResolvedPhase[]>;
   visibleTracks: Record<string, boolean>;
+  /** Each row's regions as tooltip text for its label ("Regions: Anatolia (Near East) — from Wikipedia: Hittites"). */
+  regionTips?: Map<string, string>;
   collapsed: Record<string, boolean>;
   /** Hide rows with nothing in or near the view (headers stay and count them). */
   hideOutOfView?: boolean;
@@ -416,6 +418,7 @@ export function TimelineView(props: Props) {
               ))}
               <LaneLabel
                 lane={lane}
+                regionTip={props.regionTips?.get(lane.id)}
                 labelW={labelW}
                 overflow={overflow}
                 expanded={!!expanded[lane.id]}

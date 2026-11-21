@@ -4,6 +4,8 @@ import type { LaneDef } from './layout.ts';
 
 interface Props {
   lane: LaneDef;
+  /** The row's regions with their sources, added to the name's tooltip. */
+  regionTip?: string;
   labelW: number;
   /** Events folded into "+N" badges for lack of room. */
   overflow: number;
@@ -37,7 +39,7 @@ const hostOf = (url: string) => {
  * The row's label, sticky at the left: name (a link to the row's page, when it has one), logo, edit buttons in edit
  * mode, and the show-all and fold buttons.
  */
-export function LaneLabel({ lane, labelW, overflow, expanded, editMode, rovingKey, onStopFocus, inactiveBelow = 0, revealed = false, ...on }: Props) {
+export function LaneLabel({ lane, regionTip, labelW, overflow, expanded, editMode, rovingKey, onStopFocus, inactiveBelow = 0, revealed = false, ...on }: Props) {
   const image = safeUrl(lane.track.image);
   const url = safeUrl(lane.track.url);
   const name = lane.track.name;
@@ -56,7 +58,7 @@ export function LaneLabel({ lane, labelW, overflow, expanded, editMode, rovingKe
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          title={`${name}: ${hostOf(url)} (opens in a new tab)`}
+          title={`${name}: ${hostOf(url)} (opens in a new tab)${regionTip ? `\n${regionTip}` : ''}`}
           data-stop={linkKey}
           tabIndex={rovingKey === linkKey ? 0 : -1}
           onFocus={() => onStopFocus(linkKey)}
@@ -65,7 +67,7 @@ export function LaneLabel({ lane, labelW, overflow, expanded, editMode, rovingKe
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
       ) : (
-        <span className="name" title={name}>
+        <span className="name" title={regionTip ? `${name}\n${regionTip}` : name}>
           {name}
         </span>
       )}

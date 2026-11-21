@@ -14,6 +14,7 @@ import {
 } from '../lib/table.ts';
 import { compareEvents } from '../lib/years.ts';
 import { trackIndex, trackPath } from '../lib/tracks.ts';
+import type { RowRegion } from '../lib/regions.ts';
 import { safeUrl } from '../lib/urls.ts';
 import { isOn } from '../state/filters.ts';
 
@@ -34,6 +35,8 @@ interface Props {
   phases: Map<string, ResolvedPhase[]>;
   /** Filters' row switches: a row hidden there (or under a hidden row) is left out. */
   visibleTracks: Record<string, boolean>;
+  /** Each row's regions with their sources, on timelines with regions (a Regions column in the rows tables). */
+  regionsOf?: Map<string, RowRegion[]>;
 }
 
 const SORTS: Record<Sort, { label: string; compare: (a: ResolvedEvent, b: ResolvedEvent) => number }> = {
@@ -61,9 +64,12 @@ export function TableView(p: Props) {
     const tracksOn = p.visibleTracks;
     return (id: string) => trackPath(id, byId).every((t) => isOn(tracksOn, t.id));
   }, [p.visibleTracks, byId]);
+  const regionsOf = p.regionsOf;
+  // rows with regions are listed too, so every row's regions can be read here
+  const hasRegions = useMemo(() => (regionsOf ? (id: string) => !!regionsOf.get(id)?.length : undefined), [regionsOf]);
   const bySection = useMemo(
-    () => fullSections(data.tracks, p.events, p.spans, p.phases, visible),
-    [data.tracks, p.events, p.spans, p.phases, visible],
+    () => fullSections(data.tracks, p.events, p.spans, p.phases, visible, hasRegions),
+    [data.tracks, p.events, p.spans, p.phases, visible, hasRegions],
   );
   // regions when the timeline has them (Ancient, Classical); else its top-level rows
   const unit = bySection.some((s) => s.group) ? 'region' : 'row';
@@ -74,11 +80,11 @@ export function TableView(p: Props) {
         {
           track: { id: '', name: 'All rows and events', color: '' },
           events: [...p.events].sort(cmp),
-          rows: sectionRows(data.tracks, undefined, p.spans, p.phases, visible),
+          rows: sectionRows(data.tracks, undefined, p.spans, p.phases, visible, hasRegions),
         },
       ];
     return bySection.map((s) => ({ ...s, events: [...s.events].sort(cmp) }));
-  }, [grouped, sort, bySection, p.events, data.tracks, p.spans, p.phases, visible]);
+  }, [grouped, sort, bySection, p.events, data.tracks, p.spans, p.phases, visible, hasRegions]);
 
   // Opened from a link to an event (#kadesh): scroll to it, as the chart does. Focus stays put on page load.
   useEffect(() => {
@@ -162,7 +168,7 @@ export function TableView(p: Props) {
                 )
               </span>
             </HeadingTag>
-            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} />}
+            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} regionsOf={regionsOf} />}
             {s.events.length > 0 && (
               <table className="events-table">
                 <caption>Events</caption>
@@ -270,16 +276,50 @@ function RowName({ track }: { track: Track }) {
   );
 }
 
-function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
+/** A row's regions, each with the regions containing it and the sources placing the row there (as events cite them). */
+function RegionCell({ regions }: { regions: RowRegion[] }) {
+  if (!regions.length) return <span className="muted">None</span>;
+  return (
+    <ul className="region-list">
+      {regions.map((r) => (
+        <li key={r.id}>
+          <strong>{r.name}</strong>
+          {r.within.length > 0 && <span className="muted small"> (in {r.within.join(', in ')})</span>}
+          <ul className="source-list">
+            {r.sources.map((s) => {
+              const url = safeUrl(s.url);
+              return (
+                <li key={s.key}>
+                  {url ? (
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                      {s.name}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ) : (
+                    s.name
+                  )}
+                  {s.locations.length > 0 && <span className="muted">, {s.locations.join('; ')}</span>}
+                </li>
+              );
+            })}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function RowsTable({ rows, data, regionsOf }: { rows: TableRow[]; data: Dataset; regionsOf?: Map<string, RowRegion[]> }) {
   const cal = data.meta.calendar;
   return (
     <table className="events-table rows-table">
-      <caption>Rows: lifespans and phases</caption>
+      <caption>{regionsOf ? 'Rows: lifespans, phases and regions' : 'Rows: lifespans and phases'}</caption>
       <thead>
         <tr>
           <th scope="col">Row</th>
           <th scope="col">Lifespan</th>
           <th scope="col">Phases</th>
+          {regionsOf && <th scope="col">Regions</th>}
         </tr>
       </thead>
       <tbody>
@@ -298,7 +338,7 @@ function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
                     {life.ranges.length > 0 && <div className="muted small">{life.ranges.join('; ')}</div>}
                   </>
                 ) : (
-                  <span className="muted">Not dated</span>
+                  <span className="muted">{regionsOf ? 'No lifespan' : 'Not dated'}</span>
                 )}
               </td>
               <td>
@@ -318,6 +358,11 @@ function RowsTable({ rows, data }: { rows: TableRow[]; data: Dataset }) {
                   <span className="muted">None</span>
                 )}
               </td>
+              {regionsOf && (
+                <td>
+                  <RegionCell regions={regionsOf.get(r.track.id) ?? []} />
+                </td>
+              )}
             </tr>
           );
         })}

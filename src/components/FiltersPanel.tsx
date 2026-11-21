@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import type { Dataset } from '../types.ts';
 import type { Filters } from '../state/filters.ts';
 import { trackDepth, treeOrder } from '../lib/tracks.ts';
@@ -25,13 +26,15 @@ interface Props {
   editMode: boolean;
   onEditTrack: (id: string) => void;
   onEditSource: (key: string) => void;
+  /** The Regions section (RegionFilter), on timelines whose rows have regions. */
+  regions?: ReactNode;
 }
 
 export function FiltersPanel(p: Props) {
   const { data, filters, isOn } = p;
   const custom = data.meta.customSourceTag;
   return (
-    <div className="filters-panel">
+    <div className={`filters-panel${p.regions ? ' has-regions' : ''}`}>
       <section>
         <h3>Chart</h3>
         <label className="check" title="Collapse long stretches with no events">
@@ -59,6 +62,7 @@ export function FiltersPanel(p: Props) {
           {p.editMode && ' Off while editing, so every row can be reached.'}
         </p>
       </section>
+      {p.regions}
       <section>
         <h3>
           Tracks
