@@ -4,6 +4,7 @@ import { isSafeUrl } from '../lib/urls.ts';
 import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
 import { datasetPresent } from '../lib/years.ts';
 import { formatYear } from '../lib/calendar.ts';
+import { bestLifespan, withinLifespan } from '../lib/memberOf.ts';
 
 // v1 data has a few hand-typed ids that are not strict hex UUIDs; they are live deep links, so accept any URL-safe id.
 export const ID_RE = /^[A-Za-z0-9-]+$/;
@@ -234,6 +235,41 @@ export function validateDataset(d: unknown): string[] {
     });
   }
 
+  // dated memberships: the row a row belonged to for a stretch of years (a republic in a union)
+  const isDescendant = (id: string, of: string): boolean => {
+    for (let p = byId.get(id)?.parent; p !== undefined; p = byId.get(p)?.parent) if (p === of) return true;
+    return false;
+  };
+  for (const t of ds.tracks) {
+    if (t.memberOf === undefined) continue;
+    if (!Array.isArray(t.memberOf)) {
+      errors.push(`Track "${t.id}" memberOf must be a list.`);
+      continue;
+    }
+    t.memberOf.forEach((ms, i) => {
+      const union = byId.get(ms?.row);
+      const label = `Track "${t.id}" membership ${i + 1}${union ? ` (in "${ms.row}")` : ''}`;
+      if (!ms || typeof ms !== 'object') {
+        errors.push(`${label} must be an object with a row, a start and an end.`);
+        return;
+      }
+      if (!union) errors.push(`${label} names unknown row "${String(ms.row)}".`);
+      else if (ms.row === t.id) errors.push(`${label} names the row itself.`);
+      else if (isDescendant(ms.row, t.id)) errors.push(`${label} names "${ms.row}", which sits under it: a row can't belong to its own sub-row.`);
+      if (!Array.isArray(ms.sources) || !ms.sources.length) errors.push(`${label} cites no source.`);
+      else
+        for (const r of ms.sources) {
+          if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
+          else if (typeof r.sourceLocation !== 'string') errors.push(`${label}: a source needs a sourceLocation (may be "").`);
+        }
+      if (!checkSpan(label, ms, trackChronology(ds.tracks, t.id)) || !union || ms.row === t.id) return;
+      // within both rows' lifespans (best estimates): a member can't belong before it or the union existed
+      const years = `${yr(ms.start)} – ${ms.ongoing ? 'ongoing' : yr(ms.end!)}`;
+      if (!withinLifespan(ms, bestLifespan(t, present), present)) errors.push(`${label} (${years}) lies outside the lifespan of "${t.id}".`);
+      if (!withinLifespan(ms, bestLifespan(union, present), present)) errors.push(`${label} (${years}) lies outside the lifespan of "${ms.row}".`);
+    });
+  }
+
   for (const [key, s] of Object.entries(ds.sources)) {
     if (!Array.isArray(s.tags)) errors.push(`Source "${key}" tags must be a list.`);
     else for (const a of s.tags) if (!ds.tags[a]) errors.push(`Source "${key}" has unknown tag "${a}".`);
@@ -276,6 +312,7 @@ export function validateDataset(d: unknown): string[] {
     const parts = [
       ...stretches.map((s, i) => ({ s, label: `Track "${t.id}" lifespan${stretches.length > 1 ? ` stretch ${i + 1}` : ''}` })),
       ...(Array.isArray(t.phases) ? t.phases : []).map((p, i) => ({ s: p, label: `Track "${t.id}" phase "${p.name || i + 1}"` })),
+      ...(Array.isArray(t.memberOf) ? t.memberOf : []).flatMap((m, i) => (m && typeof m === 'object' ? [{ s: m, label: `Track "${t.id}" membership ${i + 1} (in "${m.row}")` }] : [])),
     ];
     for (const { s, label } of parts)
       for (const side of ['start', 'end'] as const) {

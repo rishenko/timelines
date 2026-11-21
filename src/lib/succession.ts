@@ -9,8 +9,10 @@ import { spanStretches } from './lifespan.ts';
 /** One edge of a lifespan stretch or a phase that names its event. */
 export interface SuccessionEdge {
   trackId: string;
-  /** The phase's name; absent for a lifespan stretch. */
+  /** The phase's name; absent for a lifespan stretch or a membership. */
   phase?: string;
+  /** For a membership (Track.memberOf): the row it was a membership in. */
+  member?: string;
   side: 'start' | 'end';
   eventId: string;
   /** The edge's best estimate (stored year). */
@@ -26,6 +28,11 @@ export function successionEdges(tracks: Track[]): SuccessionEdge[] {
       if (s.startEvent) out.push({ trackId: t.id, ...(phase !== undefined ? { phase } : {}), side: 'start', eventId: s.startEvent, year: s.start });
       if (s.endEvent && s.end !== undefined)
         out.push({ trackId: t.id, ...(phase !== undefined ? { phase } : {}), side: 'end', eventId: s.endEvent, year: s.end });
+    }
+    // memberships (Track.memberOf) come after the row's own lifespan and phases
+    for (const m of t.memberOf ?? []) {
+      if (m.startEvent) out.push({ trackId: t.id, member: m.row, side: 'start', eventId: m.startEvent, year: m.start });
+      if (m.endEvent && m.end !== undefined) out.push({ trackId: t.id, member: m.row, side: 'end', eventId: m.endEvent, year: m.end });
     }
   }
   return out;
@@ -58,8 +65,15 @@ export function successionTip(s: { startEvent?: string; endEvent?: string }, eve
   return `${began ? `\nBegan with: ${began}` : ''}${ended ? `\nEnded with: ${ended}` : ''}`;
 }
 
-/** "Russia: Russian Federation" for a phase, "Soviet Union" for a lifespan. */
-export function edgeName(e: Pick<SuccessionEdge, 'trackId' | 'phase'>, ds: Pick<Dataset, 'tracks'>): string {
-  const row = ds.tracks.find((t) => t.id === e.trackId)?.name ?? e.trackId;
+/** "Russia: Russian Federation" for a phase, "Soviet Union" for a lifespan, "Ukraine in Soviet Union" for a membership. */
+export function edgeName(e: Pick<SuccessionEdge, 'trackId' | 'phase' | 'member'>, ds: Pick<Dataset, 'tracks'>): string {
+  const name = (id: string) => ds.tracks.find((t) => t.id === id)?.name ?? id;
+  const row = name(e.trackId);
+  if (e.member !== undefined) return `${row} in ${name(e.member)}`;
   return e.phase !== undefined ? `${row}: ${e.phase}` : row;
+}
+
+/** What an edge is the edge of, in words: "lifespan", "phase" or "membership". */
+export function edgeKind(e: Pick<SuccessionEdge, 'phase' | 'member'>): string {
+  return e.member !== undefined ? 'membership' : e.phase !== undefined ? 'phase' : 'lifespan';
 }

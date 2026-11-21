@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildLanes, layoutLanes, layoutPhaseStrips, placePhases, STRIP_DEFAULTS } from './layout.ts';
+import { buildLanes, layoutLanes, layoutPhaseStrips, placeMemberships, placePhases, STRIP_DEFAULTS } from './layout.ts';
 import type { ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import { buildScale } from './scale.ts';
 import type { TimelineEvent, Track } from '../types.ts';
@@ -384,6 +384,79 @@ describe('layoutPhaseStrips', () => {
     );
     expect([cells[0].x1, cells[0].fadeOut, cells[0].endX]).toEqual([120, 19, 101]);
     expect([cells[1].x0, cells[1].fadeIn]).toEqual([120, 0]);
+  });
+});
+
+describe('memberships as strip lines (placeMemberships)', () => {
+  const { namedPx, thinPx } = STRIP_DEFAULTS;
+  const phases: ResolvedPhase[] = [
+    { name: 'Ukrainian People’s Republic', start: 1917, end: 1921 },
+    { name: 'Ukrainian State', start: 1918, end: 1918 },
+    { name: 'Ukrainian SSR', start: 1919, end: 1991 },
+    { name: 'Ukraine', start: 1991, end: 2026, ongoing: true },
+  ];
+  const label = (m: { start: number; end: number; row: string }) => `in ${m.row}, ${m.start}–${m.end}`;
+  const layout = (memberships: (ResolvedSpan & { row: string })[], pxPerYear: number, lifespan?: ResolvedSpan[]) => {
+    const own = placePhases('ukraine', new Map([['ukraine', phases]]));
+    const lines = Math.max(...own.map((p) => p.level)) + 1;
+    return layoutPhaseStrips([...own, ...placeMemberships('ukraine', memberships, lines, label)], (y) => (y - 1800) * pxPerYear, {}, lifespan);
+  };
+
+  it('adds one line per membership after the phase lines, named with the union and its years', () => {
+    const st = layout([{ row: 'USSR', start: 1922, end: 1991 }], 4);
+    // rivals 1917–21 take two phase lines; the membership is the third
+    expect(st.lines).toHaveLength(3);
+    const m = st.cells.find((c) => c.phase.member === 'USSR')!;
+    expect(m.phase.level).toBe(2);
+    expect(m.line).toBe(st.lines[2]);
+    expect(m.phase.name).toBe('in USSR, 1922–1991');
+    expect(m.name).toMatchObject({ outside: false, x0: (1922 - 1800) * 4 });
+    expect(st.height).toBe(st.lines.reduce((n, l) => n + l.height, 0));
+  });
+
+  it('memberships that overlap take a line each; ones that follow each other share one', () => {
+    const one = layout(
+      [
+        { row: 'A', start: 1922, end: 1940 },
+        { row: 'B', start: 1940, end: 1991 },
+      ],
+      4,
+    );
+    expect(one.lines).toHaveLength(3);
+    const two = layout(
+      [
+        { row: 'A', start: 1922, end: 1991 },
+        { row: 'B', start: 1950, end: 1960 },
+      ],
+      4,
+    );
+    expect(two.lines).toHaveLength(4);
+  });
+
+  it('is thin when zoomed out so far that its name does not fit, as a phase line is', () => {
+    // ...and no room beside it within the member's lifespan
+    const st = layout([{ row: 'USSR', start: 1922, end: 1991 }], 0.5, [{ start: 1917, end: 2026 }]);
+    expect(st.lines[2]).toMatchObject({ named: false, height: thinPx });
+    expect(layout([{ row: 'USSR', start: 1922, end: 1991 }], 4).lines[2]).toMatchObject({ named: true, height: namedPx });
+  });
+
+  it('names a short membership beside it even alone on its line, when there is room', () => {
+    // Syria in the UAR 1958–61 at 4 px a year: 16 px, too short for its name, and no other name on its line
+    const st = layout([{ row: 'UAR', start: 1958, end: 1961 }], 4);
+    expect(st.cells.find((c) => c.phase.member)!.name).toMatchObject({ outside: 'after', x0: (1962 - 1800) * 4 });
+    expect(st.lines[2]).toMatchObject({ named: true, height: namedPx });
+  });
+
+  it("places a short membership's name beside it only within the member's lifespan", () => {
+    // a two-year membership on a line with names: too short for its own at 4 px a year, so it goes after it
+    const short = [
+      { row: 'A', start: 1922, end: 1923 },
+      { row: 'B', start: 1960, end: 1991 },
+    ];
+    const nameOfA = (lifespan?: ResolvedSpan[]) => layout(short, 4, lifespan).cells.find((c) => c.phase.member === 'A')!.name;
+    expect(nameOfA()).toMatchObject({ outside: 'after', x0: (1924 - 1800) * 4 });
+    // ...but never past the stretch of the member's lifespan it lies in (here ending the year after), nor before it
+    expect(nameOfA([{ start: 1922, end: 1924 }, { start: 1960, end: 1991 }])).toBeNull();
   });
 });
 

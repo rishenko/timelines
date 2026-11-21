@@ -4,6 +4,7 @@ import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronolo
 import type { FocusRequest } from '../state/focus.ts';
 import {
   chronologyName,
+  citationsInWords,
   datesInWords,
   eventsCsv,
   fullSections,
@@ -17,6 +18,7 @@ import { trackIndex, trackPath } from '../lib/tracks.ts';
 import type { RowRegion } from '../lib/regions.ts';
 import { safeUrl } from '../lib/urls.ts';
 import { isOn } from '../state/filters.ts';
+import { membersByUnion, type ResolvedMembership, type UnionMember } from '../lib/memberOf.ts';
 
 type Sort = 'date' | 'date-desc' | 'title';
 
@@ -33,6 +35,8 @@ interface Props {
   /** Rows' lifespans and phases, resolved under the reader's chronologies (as the chart draws them). */
   spans: Map<string, ResolvedSpan[]>;
   phases: Map<string, ResolvedPhase[]>;
+  /** Rows' dated memberships in other rows (Track.memberOf): a Memberships column in the rows tables when any row has one. */
+  memberOf?: Map<string, ResolvedMembership[]>;
   /** Filters' row switches: a row hidden there (or under a hidden row) is left out. */
   visibleTracks: Record<string, boolean>;
   /** Each row's regions with their sources, on timelines with regions (a Regions column in the rows tables). */
@@ -65,6 +69,7 @@ export function TableView(p: Props) {
     return (id: string) => trackPath(id, byId).every((t) => isOn(tracksOn, t.id));
   }, [p.visibleTracks, byId]);
   const regionsOf = p.regionsOf;
+  const memberOf = p.memberOf?.size ? p.memberOf : undefined;
   // rows with regions are listed too, so every row's regions can be read here
   const hasRegions = useMemo(() => (regionsOf ? (id: string) => !!regionsOf.get(id)?.length : undefined), [regionsOf]);
   const bySection = useMemo(
@@ -168,7 +173,7 @@ export function TableView(p: Props) {
                 )
               </span>
             </HeadingTag>
-            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} regionsOf={regionsOf} onSelect={p.onSelect} />}
+            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} regionsOf={regionsOf} memberOf={memberOf} onSelect={p.onSelect} />}
             {s.events.length > 0 && (
               <table className="events-table">
                 <caption>Events</caption>
@@ -346,17 +351,83 @@ function BeganEnded({ s, titles, onSelect, inline }: { s: { startEvent?: string;
   );
 }
 
-function RowsTable({ rows, data, regionsOf, onSelect }: { rows: TableRow[]; data: Dataset; regionsOf?: Map<string, RowRegion[]>; onSelect: (id: string) => void }) {
+/**
+ * A row's memberships in other rows ("in Soviet Union: 1922 CE – 1991 CE", with the ranges its sources allow, its
+ * sources and the events that began and ended it), and, for a union, its members with their years.
+ */
+function MembershipCell({
+  own,
+  members,
+  data,
+  titles,
+  onSelect,
+}: {
+  own: ResolvedMembership[];
+  members: UnionMember[];
+  data: Dataset;
+  titles: Map<string, string>;
+  onSelect: (id: string) => void;
+}) {
+  const cal = data.meta.calendar;
+  const name = (id: string) => data.tracks.find((t) => t.id === id)?.name ?? id;
+  if (!own.length && !members.length) return <span className="muted">None</span>;
+  return (
+    <>
+      {own.length > 0 && (
+        <ul className="phase-list">
+          {own.map((m, i) => {
+            const w = spanInWords(m, cal, data.sources);
+            return (
+              <li key={`${m.row}-${i}`}>
+                in <strong>{name(m.row)}</strong>: {w.main}
+                {w.ranges.length > 0 && <span className="muted small"> ({w.ranges.join('; ')})</span>}
+                <span className="muted small"> per {citationsInWords(m.sources, data.sources)}</span>
+                <BeganEnded s={m} titles={titles} onSelect={onSelect} inline />
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      {members.length > 0 && (
+        <div>
+          <span className="muted small">Members ({members.length}): </span>
+          {members.map((u, i) => (
+            <span key={`${u.member}-${i}`}>
+              {i > 0 && ', '}
+              {name(u.member)} <span className="muted small">({spanInWords(u.membership, cal).main})</span>
+            </span>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+function RowsTable({
+  rows,
+  data,
+  regionsOf,
+  memberOf,
+  onSelect,
+}: {
+  rows: TableRow[];
+  data: Dataset;
+  regionsOf?: Map<string, RowRegion[]>;
+  memberOf?: Map<string, ResolvedMembership[]>;
+  onSelect: (id: string) => void;
+}) {
   const cal = data.meta.calendar;
   const titles = useMemo(() => new Map(data.events.map((e) => [e.uuid, e.title])), [data.events]);
+  const unions = useMemo(() => (memberOf ? membersByUnion(memberOf) : undefined), [memberOf]);
   return (
     <table className="events-table rows-table">
-      <caption>{regionsOf ? 'Rows: lifespans, phases and regions' : 'Rows: lifespans and phases'}</caption>
+      <caption>{`Rows: lifespans, phases${memberOf ? ', memberships' : ''}${regionsOf ? ' and regions' : ''}`.replace(/, (\w+)$/, ' and $1')}</caption>
       <thead>
         <tr>
           <th scope="col">Row</th>
           <th scope="col">Lifespan</th>
           <th scope="col">Phases</th>
+          {memberOf && <th scope="col">Memberships</th>}
           {regionsOf && <th scope="col">Regions</th>}
         </tr>
       </thead>
@@ -405,6 +476,11 @@ function RowsTable({ rows, data, regionsOf, onSelect }: { rows: TableRow[]; data
                   <span className="muted">None</span>
                 )}
               </td>
+              {memberOf && (
+                <td>
+                  <MembershipCell own={memberOf.get(r.track.id) ?? []} members={unions?.get(r.track.id) ?? []} data={data} titles={titles} onSelect={onSelect} />
+                </td>
+              )}
               {regionsOf && (
                 <td>
                   <RegionCell regions={regionsOf.get(r.track.id) ?? []} />

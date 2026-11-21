@@ -1,4 +1,4 @@
-import type { Dataset, DateClaim, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
+import type { Dataset, DateClaim, RowMembership, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { validateDataset } from '../data/validate.ts';
 import { spanStretches } from '../lib/lifespan.ts';
 
@@ -28,7 +28,7 @@ export function removeEvent(d: Dataset, uuid: string): Dataset {
   return { ...d, tracks: dropEdgeEvents(d.tracks, new Set([uuid])), events };
 }
 
-/** Lifespan stretches and phases that named a removed event as their start or end no longer name it. */
+/** Lifespan stretches, phases and memberships that named a removed event as their start or end no longer name it. */
 function dropEdgeEvents(tracks: Track[], removed: ReadonlySet<string>): Track[] {
   const clean = <S extends TrackSpan>(s: S): S => {
     if (!(s.startEvent && removed.has(s.startEvent)) && !(s.endEvent && removed.has(s.endEvent))) return s;
@@ -38,11 +38,15 @@ function dropEdgeEvents(tracks: Track[], removed: ReadonlySet<string>): Track[] 
     return out;
   };
   return tracks.map((t) => {
-    if (!t.span && !t.phases) return t;
+    if (!t.span && !t.phases && !t.memberOf) return t;
     const span = Array.isArray(t.span) ? t.span.map(clean) : t.span && clean(t.span);
     const phases = t.phases?.map(clean);
-    const same = (span === t.span || (Array.isArray(span) && span.every((x, i) => x === (t.span as TrackSpan[])[i]))) && (phases ?? []).every((p, i) => p === t.phases![i]);
-    return same ? t : { ...t, ...(span ? { span } : {}), ...(phases ? { phases } : {}) };
+    const memberOf = t.memberOf?.map(clean);
+    const same =
+      (span === t.span || (Array.isArray(span) && span.every((x, i) => x === (t.span as TrackSpan[])[i]))) &&
+      (phases ?? []).every((p, i) => p === t.phases![i]) &&
+      (memberOf ?? []).every((m, i) => m === t.memberOf![i]);
+    return same ? t : { ...t, ...(span ? { span } : {}), ...(phases ? { phases } : {}), ...(memberOf ? { memberOf } : {}) };
   });
 }
 
@@ -77,7 +81,10 @@ export function nextTrackColor(tracks: Track[]): string {
   return PALETTE.find((c) => !used.has(c)) ?? PALETTE[tracks.length % PALETTE.length];
 }
 
-/** Adds or replaces a track; a rename rewrites event and child references. New top-level tracks go before pinned-last ones. */
+/**
+ * Adds or replaces a track; a rename rewrites event, child and membership references. New top-level tracks go before
+ * pinned-last ones.
+ */
 export function upsertTrack(d: Dataset, track: Track, previousId?: string): Dataset {
   const id = previousId ?? track.id;
   const i = d.tracks.findIndex((t) => t.id === id);
@@ -95,6 +102,10 @@ export function upsertTrack(d: Dataset, track: Track, previousId?: string): Data
       e.tracks.includes(previousId) ? { ...e, tracks: e.tracks.map((t) => (t === previousId ? track.id : t)) } : e,
     );
     tracks = tracks.map((t) => (t.parent === previousId ? { ...t, parent: track.id } : t));
+    // memberships in the renamed row follow it
+    tracks = tracks.map((t) =>
+      t.memberOf?.some((m) => m.row === previousId) ? { ...t, memberOf: t.memberOf.map((m) => (m.row === previousId ? { ...m, row: track.id } : m)) } : t,
+    );
   }
   return { ...d, tracks, events };
 }
@@ -134,7 +145,7 @@ export function trackDeletion(d: Dataset, id: string): TrackDeletion {
   };
 }
 
-/** Removes a track; events left with no track are deleted, and links to them are dropped. */
+/** Removes a track; events left with no track are deleted, links to them are dropped, and so are memberships in it. */
 export function removeTrack(d: Dataset, id: string): Dataset {
   if (trackDeletion(d, id).blocked) return d;
   const removed = new Set<string>();
@@ -151,12 +162,21 @@ export function removeTrack(d: Dataset, id: string): Dataset {
     events = events.map((e) =>
       e.links?.some((l) => removed.has(l.to)) ? { ...e, links: e.links.filter((l) => !removed.has(l.to)) } : e,
     );
-  return { ...d, tracks: dropEdgeEvents(d.tracks.filter((t) => t.id !== id), removed), events };
+  // memberships in the removed row go with it (a row that had only those loses the field)
+  const tracks = d.tracks
+    .filter((t) => t.id !== id)
+    .map((t) => {
+      if (!t.memberOf?.some((m) => m.row === id)) return t;
+      const memberOf = t.memberOf.filter((m) => m.row !== id);
+      const { memberOf: _dropped, ...rest } = t;
+      return memberOf.length ? { ...t, memberOf } : rest;
+    });
+  return { ...d, tracks: dropEdgeEvents(tracks, removed), events };
 }
 
 /**
- * Rewrites every citation of source `from`: an event's sources, its date claims, a track's lifespan and phase claims
- * (and the sources saying they are still going) and a chronology's source. `to` renames the key; `null` drops the
+ * Rewrites every citation of source `from`: an event's sources, its date claims, a track's lifespan, phase and
+ * membership claims (and the sources saying they are still going, and a membership's sources) and a chronology's source. `to` renames the key; `null` drops the
  * citation. A date claim keeps its year and margin when its source goes (removing the claim could leave the best
  * estimate outside the remaining claims).
  * Events whose citations change are marked `edited`.
@@ -199,15 +219,23 @@ function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'eve
     }
     return out;
   };
-  const tracks = d.tracks.map((t) =>
-    spanStretches(t.span).some(spanCites) || t.phases?.some(spanCites)
-      ? {
-          ...t,
-          ...(t.span ? { span: Array.isArray(t.span) ? t.span.map(respan) : respan(t.span) } : {}),
-          ...(t.phases ? { phases: t.phases.map(respan) } : {}),
-        }
-      : t,
-  );
+  // a membership keeps its other citations; one left citing nothing is dropped (a membership must cite a source)
+  const memberCites = (m: RowMembership) => spanCites(m) || m.sources.some((r) => r.sourceKey === from);
+  const remember = (m: RowMembership): RowMembership[] => {
+    const sources = m.sources.flatMap((r) => ref(r) ?? []);
+    return sources.length ? [{ ...respan(m), sources }] : [];
+  };
+  const tracks = d.tracks.map((t) => {
+    if (!(spanStretches(t.span).some(spanCites) || t.phases?.some(spanCites) || t.memberOf?.some(memberCites))) return t;
+    const { memberOf: _old, ...rest } = t;
+    const memberOf = t.memberOf?.flatMap(remember);
+    return {
+      ...rest,
+      ...(t.span ? { span: Array.isArray(t.span) ? t.span.map(respan) : respan(t.span) } : {}),
+      ...(t.phases ? { phases: t.phases.map(respan) } : {}),
+      ...(memberOf?.length ? { memberOf } : {}),
+    };
+  });
   const chronologies = d.chronologies
     ? Object.fromEntries(
         Object.entries(d.chronologies).map(([id, c]) => {

@@ -321,6 +321,38 @@
 .tl-phase.alt .tl-phase-fill {
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 40%, transparent);
 }
+/* a membership in another row (Track.memberOf), on its own strip line after the phases: in the union's colour (set as
+   --track-color), a faint cell with a dashed underline instead of a filled one, so it never reads as a phase of the
+   row; begins and ends with the same lines as a phase. Its name is in ordinary type, not capitals. */
+.tl-phase.member .tl-phase-fill {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, transparent);
+  box-shadow: none;
+  border-bottom: 2px dashed var(--strip-line);
+}
+.tl-phase.member .tl-phase-name {
+  font-size: 11px;
+  line-height: 12px; /* clear of the dashed underline */
+  vertical-align: top;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+}
+/* a membership's name keeps its years when it doesn't fit: the union's name is cut short instead */
+.tl-phase.member .tl-phase-name,
+.tl-phase.member .tl-phase-names.outside .tl-phase-name {
+  display: inline-flex;
+  align-items: center;
+}
+.tl-phase.member .tl-phase-name .union {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tl-phase.member .tl-phase-name .years {
+  flex: none;
+  white-space: pre;
+}
 /* where a phase begins and ends: a 2 px line the height of its strip, in a colour that stands out 3:1 from the row */
 .tl-phase-edge {
   position: absolute;

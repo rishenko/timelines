@@ -109,6 +109,10 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
           .map((s) => spanDates(s, cal, isApprox(s)))
           .join(', ')
       : undefined;
+  // its memberships in other rows (Track.memberOf), read-only: "Soviet Union (1922 CE – 1991 CE)"
+  const memberOfText = initial?.memberOf
+    ?.map((m) => `${data.tracks.find((t) => t.id === m.row)?.name ?? m.row} (${spanDates({ start: m.start, end: m.end ?? m.start, ongoing: m.ongoing }, cal, !!m.circa)})`)
+    .join(', ');
   const idValue = watch('id');
   const otherIds = data.tracks.filter((t) => t.id !== initial?.id).map((t) => t.id);
   const previewId = idValue ? slug(idValue) : uniqueId(name, otherIds);
@@ -179,6 +183,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     }
     // stored in date order, whatever order they were typed in
     if (phases.length) t.phases = phases.sort((a, b) => a.start - b.start || (a.end ?? Infinity) - (b.end ?? Infinity));
+    // memberships in other rows aren't edited here yet: kept as they were
+    if (initial?.memberOf?.length) t.memberOf = initial.memberOf;
     const found = newProblems(data, upsertTrack(data, t, initial?.id));
     setProblems(found);
     if (!found.length) onSave(t, initial?.id);
@@ -236,6 +242,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
             row carried on through those gaps; it must cover all its phases.
           </p>
           {derivedLife && <p className="small">Worked out from its phases: {derivedLife}</p>}
+          {memberOfText && <p className="small">Member of {memberOfText} (kept as they are; edit them in the file).</p>}
           <div className="row">
             <input aria-label="Lifespan start" placeholder="From" {...register('spanStart')} {...errorProps('tr-span-start', errors.spanStart)} />
             <input

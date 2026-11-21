@@ -10,6 +10,7 @@ import {
   type ResolvedSpan,
 } from '../lib/chronology.ts';
 import { resolveLifespan } from '../lib/lifespan.ts';
+import { resolveMemberships } from '../lib/memberOf.ts';
 
 /**
  * Dating systems: readers pick one chronology per group (e.g. Mesopotamia: High / Middle / Low), and every event,
@@ -36,8 +37,10 @@ export function useChronology(data: Dataset) {
     }
     return m;
   }, [data, selection, phases]);
+  /** Each row's dated memberships in other rows (Track.memberOf), resolved like phases. */
+  const memberOf = useMemo(() => resolveMemberships(data, selection), [data, selection]);
 
   const choose = (group: string, id: string) => setSelection((s) => ({ ...s, [group]: id }));
   const reset = () => setSelection(defaults);
-  return { selection, defaults, groups, choose, reset, resolved, resolvedById, spans, phases };
+  return { selection, defaults, groups, choose, reset, resolved, resolvedById, spans, phases, memberOf };
 }

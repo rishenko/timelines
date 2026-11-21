@@ -117,6 +117,21 @@ export interface Track {
   phases?: TrackPhase[];
   /** The facet values this row belongs to (meta.facets), each with the sources that place it there. */
   memberships?: Membership[];
+  /**
+   * Other rows this row belonged to for a stretch of years (a republic in the Soviet Union 1922–1991), each dated like
+   * a phase and with its sources. Different from `memberships` (facet values such as regions, undated).
+   */
+  memberOf?: RowMembership[];
+}
+
+/**
+ * A row's membership in another row (Track.memberOf) for a stretch of years: dated like a phase (date claims, an end
+ * or `ongoing`, the events that began and ended it), naming the row it belonged to and citing at least one source.
+ */
+export interface RowMembership extends TrackSpan {
+  /** The row it belonged to (a track id): a union, empire or alliance with its own row. */
+  row: string;
+  sources: SourceRef[];
 }
 
 /** A way to group rows (meta.facets): its name and values. */

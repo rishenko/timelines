@@ -133,7 +133,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
   const chron = useChronology(data);
-  const { resolved, resolvedById, spans, phases } = chron;
+  const { resolved, resolvedById, spans, phases, memberOf } = chron;
   const visibleEvents = useMemo(() => resolved.filter((e) => isEventVisible(e, shownFilters)), [resolved, shownFilters]);
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
 
@@ -308,6 +308,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const shownListEvents = useDeferredValue(visibleEvents);
   const shownSpans = useDeferredValue(spans);
   const shownPhases = useDeferredValue(phases);
+  const shownMemberOf = useDeferredValue(memberOf);
   const shownRows = useDeferredValue(rowsOn);
   const shownCollapsed = useDeferredValue(collapsed);
   const shownCompress = useDeferredValue(compress);
@@ -320,6 +321,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
     shownListEvents !== visibleEvents ||
     shownSpans !== spans ||
     shownPhases !== phases ||
+    shownMemberOf !== memberOf ||
     shownRows !== rowsOn ||
     shownCollapsed !== collapsed ||
     shownCompress !== compress ||
@@ -566,6 +568,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             focus={focus}
             spans={shownSpans}
             phases={shownPhases}
+            memberOf={shownMemberOf}
             visibleTracks={shownRows}
             regionsOf={regions.regionsOf}
           />
@@ -576,6 +579,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             eventsById={resolvedById}
             spans={shownSpans}
             phases={shownPhases}
+            memberOf={shownMemberOf}
             visibleTracks={shownRows}
             busy={busy}
             regionTips={regions.regionTips}

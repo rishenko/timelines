@@ -267,47 +267,77 @@ export interface PlacedPhase extends ResolvedPhase {
    */
   nameFrom: number;
   nameTo: number;
+  /**
+   * Set on a membership (Track.memberOf) laid out as one more strip line: the row it was a membership in. Its `name`
+   * is the strip's text ("in Soviet Union, 1922–91").
+   */
+  member?: string;
 }
 
 /**
- * A row's own phases, each on the first name line it fits. A folded row shows only its own: gathering its sub-rows'
- * phases onto it mixed unrelated periods (every civilization's dynasties on one strip).
- * Overlap is judged on the best dates, not the uncertainty windows: periods whose uncertain edges merely touch
- * (Egypt's Old Kingdom and First Intermediate Period) share a line; only periods that overlap outright (rival
+ * Dated parts of a row (phases, or memberships), each on the first strip line it fits, counting lines from
+ * `fromLevel`. Overlap is judged on the best dates, not the uncertainty windows: periods whose uncertain edges merely
+ * touch (Egypt's Old Kingdom and First Intermediate Period) share a line; only periods that overlap outright (rival
  * governments) take the next one.
  */
-export function placePhases(trackId: string, phases: Map<string, ResolvedPhase[]>): PlacedPhase[] {
-  const all = (phases.get(trackId) ?? []).map((p) => ({ ...p, trackId }));
+export function placeOnLines<T extends ResolvedPhase>(trackId: string, list: T[], fromLevel = 0): (T & PlacedPhase)[] {
+  const all = list.map((p) => ({ ...p, trackId }));
   all.sort((a, b) => a.start - b.start);
   const lineEnds: number[] = [];
   const lastOnLine: PlacedPhase[] = [];
   return all.map((p) => {
-    let level = lineEnds.findIndex((end) => end <= p.start);
-    if (level < 0) level = lineEnds.length;
-    lineEnds[level] = p.end;
-    const placed: PlacedPhase = {
+    let line = lineEnds.findIndex((end) => end <= p.start);
+    if (line < 0) line = lineEnds.length;
+    lineEnds[line] = p.end;
+    const placed: T & PlacedPhase = {
       ...p,
-      level,
+      level: fromLevel + line,
       nameFrom: Math.min(p.start, p.startWindow?.[0] ?? p.start),
       nameTo: Math.max(p.end, p.endWindow?.[1] ?? p.end) + 1,
     };
     // the band before on this line reaches into this one (through its uncertain end, or by ending in the year this
     // one starts): split the name strip at this phase's start
-    const prev = lastOnLine[level];
+    const prev = lastOnLine[line];
     if (prev && prev.nameTo > placed.nameFrom) {
       prev.nameTo = Math.max(prev.nameFrom, p.start);
       placed.nameFrom = Math.max(placed.nameFrom, p.start);
     }
-    lastOnLine[level] = placed;
+    lastOnLine[line] = placed;
     return placed;
   });
+}
+
+/**
+ * A row's own phases, each on the first name line it fits (see placeOnLines). A folded row shows only its own:
+ * gathering its sub-rows' phases onto it mixed unrelated periods (every civilization's dynasties on one strip).
+ */
+export function placePhases(trackId: string, phases: Map<string, ResolvedPhase[]>): PlacedPhase[] {
+  return placeOnLines(trackId, phases.get(trackId) ?? []);
+}
+
+/**
+ * A row's memberships in other rows (Track.memberOf) as strip lines after its phases' lines: `fromLevel` is the
+ * number of phase lines. Each is named by `label` (the union's name and years); memberships that overlap (a row in
+ * two unions at once) take a line each, as rival phases do.
+ */
+export function placeMemberships<M extends ResolvedSpan & { row: string }>(
+  trackId: string,
+  memberships: M[],
+  fromLevel: number,
+  label: (m: M) => string,
+): PlacedPhase[] {
+  return placeOnLines(
+    trackId,
+    memberships.map((m) => ({ ...m, name: label(m), member: m.row })),
+    fromLevel,
+  );
 }
 
 /**
  * Phase strips: each line of a row's phases (see placePhases) is a thin strip at the top of the lane, under the
  * lifespan's edge. A strip line is tall enough for names when at least one of its phases gets a name at this zoom;
  * otherwise it is drawn thin (zoomed out, the row loses no height to names it can't show). The lines stack in level
- * order; another kind of strip (a row's memberships, say) would stack after them the same way.
+ * order; a row's memberships (placeMemberships) stack after its phases' lines the same way.
  */
 export const STRIP_DEFAULTS = {
   /** A strip line with names: 2 px of space above, then a 14 px strip. */
@@ -405,8 +435,9 @@ export function layoutPhaseStrips(
     }
     // a line with no room for names stays thin; on a line with names, a phase too short for its own gets it in the
     // blank strip beside it, pointing at it: after its end, else before its start (never over another phase or name,
-    // which would read as that phase's name)
-    if (!line.some((p) => names.get(p))) continue;
+    // which would read as that phase's name). A membership's line is mostly blank strip, so a short membership gets
+    // its name beside it even when no name fits inside (the line is thin only when there's no room for any).
+    if (!line.some((p) => names.get(p) || p.member !== undefined)) continue;
     const boxes = () => line.flatMap((q) => [[x(q.start), x(q.end + 1)], ...(names.get(q) ? [[names.get(q)!.x0, names.get(q)!.x1]] : [])]);
     const free = (x0: number, x1: number) => boxes().every(([b0, b1]) => b1 <= x0 || b0 >= x1);
     line.forEach((p, i) => {

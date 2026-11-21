@@ -97,7 +97,10 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     // typed, or worked out from phases
     lifespans: data.tracks.some((t) => t.span || t.phases?.length),
     phases: data.tracks.some((t) => t.phases?.length),
-    ongoing: data.tracks.some((t) => spanStretches(t.span).some((s) => s.ongoing) || !!t.phases?.some((p) => p.ongoing)),
+    memberOf: data.tracks.some((t) => t.memberOf?.length),
+    ongoing: data.tracks.some(
+      (t) => spanStretches(t.span).some((s) => s.ongoing) || !!t.phases?.some((p) => p.ongoing) || !!t.memberOf?.some((m) => m.ongoing),
+    ),
     ranges:
       hasChronologies ||
       data.events.some((e) => spreads(e.startDates) || spreads(e.endDates)) ||
@@ -144,6 +147,16 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       show: has.phases,
       title: 'Phases',
       text: 'Some rows change hands over time: a new government, dynasty or era. Each phase is a cell in a thin strip at the top of the row, with a line where it begins and one where it ends; alternating shades tell neighbours apart. Rivals that overlapped, as in a civil war, take a second strip. A blank stretch of strip under a shaded row means it carried on without a phase of its own. A name that doesn’t fit sits beside its phase with a pointer (◂ or ▸), or shows when you point at the phase; zoomed far out, a strip is a thin line without names.',
+    },
+    {
+      sample: (
+        <span className="lg-member">
+          <span>in Union</span>
+        </span>
+      ),
+      show: has.memberOf,
+      title: 'Membership',
+      text: 'A row that belonged to another row for a while, such as a republic in a union, gets one more strip under its phases for each membership: the union’s name and years (“in Soviet Union, 1922–91”) in the union’s colour, with a dashed underline. The union is its own row; pointing at its name or lifespan lists its members.',
     },
     {
       sample: (

@@ -6,7 +6,7 @@ import { allClaims, datingChronology, eventChronology, isApprox, type Claim, typ
 import { LINK_LABEL } from './linkLabels.ts';
 import { safeUrl } from '../lib/urls.ts';
 import { EventMap } from './EventMap.tsx';
-import { edgeName, successionIndex, type SuccessionEdge } from '../lib/succession.ts';
+import { edgeKind, edgeName, successionIndex, type SuccessionEdge } from '../lib/succession.ts';
 
 interface Props {
   /** The event as stored (best estimates and claims). */
@@ -48,7 +48,7 @@ function Cite({ data, s }: { data: Dataset; s: SourceRef }) {
   );
 }
 
-/** The rows' lifespans and phases an event started or ended (TrackSpan.startEvent, endEvent). */
+/** The rows' lifespans, phases and memberships an event started or ended (startEvent, endEvent). */
 function SuccessionList({ data, label, edges }: { data: Dataset; label: string; edges: SuccessionEdge[] }) {
   if (!edges.length) return null;
   const cal = data.meta.calendar;
@@ -57,11 +57,11 @@ function SuccessionList({ data, label, edges }: { data: Dataset; label: string; 
       <h4>{label}</h4>
       <ul className="claims-list">
         {edges.map((x) => (
-          <li key={`${x.trackId}-${x.phase ?? ''}-${x.side}`}>
+          <li key={`${x.trackId}-${x.phase ?? ''}-${x.member ?? ''}-${x.side}`}>
             <strong>{edgeName(x, data)}</strong>
             <span className="muted">
               {' '}
-              ({x.phase === undefined ? 'lifespan' : 'phase'}, {x.side === 'start' ? 'from' : 'to'} {formatYear(x.year, cal)})
+              ({edgeKind(x)}, {x.side === 'start' ? 'from' : 'to'} {formatYear(x.year, cal)})
             </span>
           </li>
         ))}

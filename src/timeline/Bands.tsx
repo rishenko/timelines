@@ -53,8 +53,9 @@ export function SpanBand({
   inView,
   cue = true,
   title,
+  members,
   eventTitle = noTitle,
-}: Common & { track: Track; span: ResolvedSpan; cue?: boolean; title?: string }) {
+}: Common & { track: Track; span: ResolvedSpan; cue?: boolean; title?: string; members?: string }) {
   const b = bandBox(scale, span);
   if (!inView(b.x0, b.x1)) return null;
   const approx = isApprox(span);
@@ -62,7 +63,7 @@ export function SpanBand({
     <div
       className="tl-span"
       style={bandStyle(labelW, b, track.color)}
-      title={`${title ?? track.name}: ${spanDates(span, cal, approx)}${span.derived && !title ? ' (from its phases)' : ''}${title ? '' : successionTip(span, eventTitle)}`}
+      title={`${title ?? track.name}: ${spanDates(span, cal, approx)}${span.derived && !title ? ' (from its phases)' : ''}${title ? '' : successionTip(span, eventTitle)}${members ? `\n${members}` : ''}`}
     >
       {span.ongoing && cue && (
         <div className="tl-ongoing-run">
@@ -78,6 +79,8 @@ export function SpanBand({
  * uncertain edges), a line where it begins and another where it ends (unless the next phase begins there), an arrow
  * instead of an end when it is still going, and its name where it fits. Display only: hovering it shows its name and
  * dates, and clicks go through to the row.
+ * A membership in another row (PlacedPhase.member) is drawn the same way on its own line, in the union's colour, as a
+ * dashed outline rather than a filled cell, with its name ("in Soviet Union, 1922–91") in ordinary type.
  */
 export function PhaseStripCell({
   cell: c,
@@ -86,13 +89,16 @@ export function PhaseStripCell({
   labelW,
   inView,
   eventTitle = noTitle,
-}: Omit<Common, 'scale'> & { cell: PhaseCell; color: string }) {
+  memberName,
+  unionName,
+}: Omit<Common, 'scale'> & { cell: PhaseCell; color: string; memberName?: string; unionName?: string }) {
   const p = c.phase;
   if (!inView(c.x0, c.x1)) return null;
-  const tip = `${p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}`;
+  const member = p.member !== undefined;
+  const tip = `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}`;
   return (
     <div
-      className={`tl-phase${c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${c.name?.outside ? ' has-outside' : ''}`}
+      className={`tl-phase${member ? ' member' : c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${c.name?.outside ? ' has-outside' : ''}`}
       style={
         {
           left: labelW + c.x0,
@@ -121,10 +127,25 @@ export function PhaseStripCell({
             style={{ left: labelW, maxWidth: c.name.x1 - c.name.x0, marginRight: p.ongoing && !c.name.outside ? 12 : 0 }}
             title={tip}
           >
-            {p.name}
+            {member ? <MemberName name={p.name} /> : p.name}
           </span>
         </div>
       )}
     </div>
+  );
+}
+
+/**
+ * A membership's name, "in Soviet Union, 1922–91": when it doesn't fit, the union's name is cut short ("in Federated
+ * Comm…, 3055–67") and the years stay.
+ */
+function MemberName({ name }: { name: string }) {
+  const at = name.lastIndexOf(', ');
+  if (at < 0) return <span className="union">{name}</span>;
+  return (
+    <>
+      <span className="union">{name.slice(0, at + 1)}</span>
+      <span className="years">{name.slice(at + 1)}</span>
+    </>
   );
 }

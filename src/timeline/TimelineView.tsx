@@ -3,10 +3,11 @@ import type { Dataset } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor } from './anchors.ts';
-import { buildLanes, layoutLanes, layoutPhaseStrips, placePhases, type Mark } from './layout.ts';
+import { buildLanes, layoutLanes, layoutPhaseStrips, placeMemberships, placePhases, type Mark } from './layout.ts';
+import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
 import { mergeStretches } from '../lib/lifespan.ts';
 import { eraStart } from '../lib/calendar.ts';
-import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
+import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { rootOf, trackIndex } from '../lib/tracks.ts';
 import { useLabelWidth, useLongPress, usePinchSteps } from './gestures.ts';
@@ -25,6 +26,7 @@ const SETTLE_MS = 200;
 /** A row counts as in view with something this close to either edge (a share of the view's width), so rows arrive
  * just before their years do and don't flicker at the edges. */
 const ROW_MARGIN = 0.25;
+const NO_MEMBERSHIPS = new Map<string, ResolvedMembership[]>();
 /** How long a thin line's name stays up after a click or tap. */
 const PEEK_MS = 2500;
 
@@ -39,6 +41,8 @@ interface Props {
   spans: Map<string, ResolvedSpan[]>;
   /** Track phases (resolved): named periods drawn on the row's own bar. */
   phases: Map<string, ResolvedPhase[]>;
+  /** Each row's dated memberships in other rows (Track.memberOf): one more strip line each, after its phases. */
+  memberOf?: Map<string, ResolvedMembership[]>;
   visibleTracks: Record<string, boolean>;
   /** Each row's regions as tooltip text for its label ("Regions: Anatolia (Near East) — from Wikipedia: Hittites"). */
   regionTips?: Map<string, string>;
@@ -157,7 +161,27 @@ export function TimelineView(props: Props) {
     }
     return out;
   }, [data.tracks, trackById]);
-  const lanePhases = useMemo(() => new Map(lanes.map((l) => [l.id, placePhases(l.id, phases)])), [lanes, phases]);
+  const memberOf = props.memberOf ?? NO_MEMBERSHIPS;
+  // a lane's strip lines: its phases, then one line per membership in another row ("in Soviet Union, 1922–91"), drawn
+  // in the union's colour
+  const lanePhases = useMemo(
+    () =>
+      new Map(
+        lanes.map((l) => {
+          const own = placePhases(l.id, phases);
+          const lines = own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0;
+          const label = (m: ResolvedMembership) => membershipLabel(m, trackById.get(m.row)?.name ?? m.row, cal, isApprox(m));
+          return [l.id, [...own, ...placeMemberships(l.id, memberOf.get(l.id) ?? [], lines, label)]];
+        }),
+      ),
+    [lanes, phases, memberOf, trackById, cal],
+  );
+  // a union's row says who its members were, and when (its name's and lifespan's tooltips)
+  const unionTips = useMemo(() => {
+    const out = new Map<string, string>();
+    for (const [id, list] of membersByUnion(memberOf)) out.set(id, membersTip(list, (m) => trackById.get(m)?.name ?? m, cal));
+    return out;
+  }, [memberOf, trackById, cal]);
   const laneSpans = useMemo(() => {
     // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap;
     // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler; so do rows
@@ -167,9 +191,10 @@ export function TimelineView(props: Props) {
       for (const id of l.members) {
         out.push(...(spans.get(id) ?? []));
         out.push(...(phases.get(id) ?? []));
+        out.push(...(memberOf.get(id) ?? []));
       }
     return out;
-  }, [allLanes, spans, phases]);
+  }, [allLanes, spans, phases, memberOf]);
   const scale = useMemo(
     () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
@@ -481,15 +506,23 @@ export function TimelineView(props: Props) {
                   span={s}
                   cue={!laneStrips.get(lane.id)?.cells.some((c) => c.phase.ongoing && c.x0 < view.left + view.width - labelW && c.x1 > view.left)}
                   title={lane.collapsed ? `${lane.track.name} and the rows folded into it` : undefined}
+                  members={unionTips.get(lane.id)}
                   {...band}
                 />
               ))}
               {laneStrips.get(lane.id)?.cells.map((c, i) => (
-                <PhaseStripCell key={`phase-${i}`} cell={c} color={trackById.get(c.phase.trackId)!.color} {...band} />
+                <PhaseStripCell
+                  key={`phase-${i}`}
+                  cell={c}
+                  color={(trackById.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
+                  memberName={lane.track.name}
+                  unionName={c.phase.member && (trackById.get(c.phase.member)?.name ?? c.phase.member)}
+                  {...band}
+                />
               ))}
               <LaneLabel
                 lane={lane}
-                regionTip={props.regionTips?.get(lane.id)}
+                regionTip={[props.regionTips?.get(lane.id), unionTips.get(lane.id)].filter(Boolean).join('\n') || undefined}
                 tag={props.rowTags?.get(lane.id)}
                 compare={
                   props.onToggleCompare && !editMode

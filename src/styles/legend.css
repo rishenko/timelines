@@ -178,6 +178,24 @@
   border-right: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 40%, transparent);
 }
+.lg-member {
+  display: flex;
+  width: 84px;
+  height: 14px;
+  margin-bottom: 8px;
+  border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  border-right: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  border-bottom: 2px dashed color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, transparent);
+}
+.lg-member > span {
+  padding-left: 5px;
+  font-size: 9.5px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 12px;
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 20%, var(--text));
+}
 .lg-ongoing {
   display: flex;
   align-items: stretch;
