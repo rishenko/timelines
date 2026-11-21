@@ -1,0 +1,1623 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "poc-ancient",
+    "title": "POC: ancient",
+    "subtitle": "test set (baseline format)",
+    "description": "The POC test set: Babylonia and Mycenaean Greece, copied from the ancient timeline.",
+    "credits": "Dates and events come from English Wikipedia (read 17 November 2026) and the scholarly works it cites; each event lists its sources. Ancient dates are uncertain and scholars disagree. The lighter parts of a bar show the range of dates the cited sources give for its start and end, and the Dating menu re-plots a region under another dating system. Compiled with AI assistance and not yet reviewed by a specialist.",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false,
+      "aliases": {
+        "before": [
+          "BC"
+        ],
+        "after": [
+          "AD"
+        ]
+      }
+    },
+    "increments": [
+      10,
+      50,
+      100,
+      500,
+      1000
+    ],
+    "defaultIncrement": 500,
+    "defaultTheme": "parchment",
+    "circaFade": 0
+  },
+  "tracks": [
+    {
+      "id": "near-east",
+      "name": "Mesopotamia",
+      "color": "#8f6a3a",
+      "chronology": "middle"
+    },
+    {
+      "id": "aegean",
+      "name": "Aegean",
+      "color": "#3a6a8f",
+      "chronology": "aegean-high"
+    },
+    {
+      "id": "babylonia",
+      "name": "Babylonia",
+      "color": "#2d7f6c",
+      "url": "https://en.wikipedia.org/wiki/Babylonia",
+      "ids": {
+        "wikidata": "Q47690"
+      },
+      "span": {
+        "start": -2024,
+        "end": -538,
+        "startDates": [
+          {
+            "year": -2024,
+            "chronology": "middle",
+            "source": {
+              "sourceKey": "wp-isin-larsa",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": -1960,
+            "chronology": "low",
+            "source": {
+              "sourceKey": "wp-isin-larsa",
+              "sourceLocation": "lead (short chronology 1961–1699 BCE)"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "phases": [
+        {
+          "name": "Isin–Larsa period",
+          "start": -2024,
+          "end": -1762,
+          "startDates": [
+            {
+              "year": -2024,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -1960,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead (short chronology 1961–1699 BCE)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1762,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead"
+              }
+            },
+            {
+              "year": -1698,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-isin-larsa",
+                "sourceLocation": "lead (short chronology)"
+              }
+            }
+          ],
+          "circa": true
+        },
+        {
+          "name": "Old Babylonian (First Dynasty)",
+          "start": -1893,
+          "end": -1594,
+          "startDates": [
+            {
+              "year": -1893,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-old-bab",
+                "sourceLocation": "ruler list (MC)"
+              }
+            },
+            {
+              "year": -1829,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-old-bab",
+                "sourceLocation": "ruler list (SC)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1594,
+              "chronology": "middle",
+              "source": {
+                "sourceKey": "wp-chron-ane",
+                "sourceLocation": "table 'Variant Middle Bronze Age chronologies'"
+              }
+            },
+            {
+              "year": -1650,
+              "chronology": "high",
+              "source": {
+                "sourceKey": "wp-chron-ane",
+                "sourceLocation": "table (Long or High)"
+              }
+            },
+            {
+              "year": -1530,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-chron-ane",
+                "sourceLocation": "table (Short or Low)"
+              }
+            }
+          ],
+          "circa": true
+        },
+        {
+          "name": "Kassite dynasty",
+          "start": -1569,
+          "end": -1154,
+          "startDates": [
+            {
+              "year": -1569,
+              "source": {
+                "sourceKey": "wp-old-bab",
+                "sourceLocation": "Kassite rule 'from 1570'"
+              }
+            },
+            {
+              "year": -1530,
+              "chronology": "low",
+              "source": {
+                "sourceKey": "wp-kassites",
+                "sourceLocation": "lead (short chronology)"
+              }
+            }
+          ],
+          "circa": true
+        },
+        {
+          "name": "Neo-Babylonian Empire",
+          "start": -625,
+          "end": -538
+        }
+      ],
+      "parent": "near-east"
+    },
+    {
+      "id": "mycenaean",
+      "name": "Mycenaean Greece",
+      "color": "#4a5fb8",
+      "chronology": "aegean-high",
+      "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
+      "ids": {
+        "wikidata": "Q181264"
+      },
+      "span": {
+        "start": -1749,
+        "end": -1049,
+        "circa": true
+      },
+      "phases": [
+        {
+          "name": "Early Mycenaean (Shaft Grave era)",
+          "start": -1749,
+          "end": -1399,
+          "circa": true
+        },
+        {
+          "name": "Palatial (LH IIIA–IIIB)",
+          "start": -1419,
+          "end": -1199,
+          "startDates": [
+            {
+              "year": -1419,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIA1 '1420/1410' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1409,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIA1 '1420/1410' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1399,
+              "chronology": "aegean-low",
+              "source": {
+                "sourceKey": "wp-helladic",
+                "sourceLocation": "periodisation table (LH IIIA 1400–1300)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1199,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIB '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1209,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIB '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1199,
+              "chronology": "aegean-low",
+              "source": {
+                "sourceKey": "wp-helladic",
+                "sourceLocation": "periodisation table (LH IIIB 1300–1200)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Postpalatial (LH IIIC)",
+          "start": -1199,
+          "end": -1069,
+          "startDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1209,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC '1210/1200' (via Wikipedia: Mycenaean Greece)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1069,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC Late '1070/1040' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1039,
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "LH IIIC Late '1070/1040' (via Wikipedia: Mycenaean Greece)"
+              }
+            },
+            {
+              "year": -1049,
+              "chronology": "aegean-low",
+              "source": {
+                "sourceKey": "wp-helladic",
+                "sourceLocation": "periodisation table (LH IIIC 1200–1050)"
+              }
+            }
+          ]
+        }
+      ],
+      "parent": "aegean"
+    }
+  ],
+  "sources": {
+    "wp-chron-ane": {
+      "name": "Wikipedia: Chronology of the ancient Near East",
+      "url": "https://en.wikipedia.org/wiki/Chronology_of_the_ancient_Near_East",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-isin-larsa": {
+      "name": "Wikipedia: Isin-Larsa period",
+      "url": "https://en.wikipedia.org/wiki/Isin-Larsa_period",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-old-bab": {
+      "name": "Wikipedia: Old Babylonian Empire",
+      "url": "https://en.wikipedia.org/wiki/Old_Babylonian_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-hammurabi": {
+      "name": "Wikipedia: Hammurabi",
+      "url": "https://en.wikipedia.org/wiki/Hammurabi",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-code-hammurabi": {
+      "name": "Wikipedia: Code of Hammurabi",
+      "url": "https://en.wikipedia.org/wiki/Code_of_Hammurabi",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-kassites": {
+      "name": "Wikipedia: Kassites",
+      "url": "https://en.wikipedia.org/wiki/Kassites",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-neo-bab": {
+      "name": "Wikipedia: Neo-Babylonian Empire",
+      "url": "https://en.wikipedia.org/wiki/Neo-Babylonian_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-nebuchadnezzar": {
+      "name": "Wikipedia: Nebuchadnezzar II",
+      "url": "https://en.wikipedia.org/wiki/Nebuchadnezzar_II",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-nineveh": {
+      "name": "Wikipedia: Fall of Nineveh",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Nineveh",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-jerusalem": {
+      "name": "Wikipedia: Siege of Jerusalem (587 BC)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(587_BC)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-fall-babylon": {
+      "name": "Wikipedia: Fall of Babylon",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Babylon",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-neo-assyria": {
+      "name": "Wikipedia: Neo-Assyrian Empire",
+      "url": "https://en.wikipedia.org/wiki/Neo-Assyrian_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-new-kingdom": {
+      "name": "Wikipedia: New Kingdom of Egypt",
+      "url": "https://en.wikipedia.org/wiki/New_Kingdom_of_Egypt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-amarna": {
+      "name": "Wikipedia: Amarna letters",
+      "url": "https://en.wikipedia.org/wiki/Amarna_letters",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-late-period": {
+      "name": "Wikipedia: Late Period of ancient Egypt",
+      "url": "https://en.wikipedia.org/wiki/Late_Period_of_Egypt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-hittite-kings": {
+      "name": "Wikipedia: List of Hittite kings",
+      "url": "https://en.wikipedia.org/wiki/List_of_Hittite_kings",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-mursili1": {
+      "name": "Wikipedia: Mursili I",
+      "url": "https://en.wikipedia.org/wiki/Mursili_I",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-achaeans": {
+      "name": "Wikipedia: Achaeans (Homer) — Ahhiyawa",
+      "url": "https://en.wikipedia.org/wiki/Achaeans_(Homer)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-minoan-chron": {
+      "name": "Wikipedia: Minoan chronology",
+      "url": "https://en.wikipedia.org/wiki/Minoan_chronology",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-knossos": {
+      "name": "Wikipedia: Knossos",
+      "url": "https://en.wikipedia.org/wiki/Knossos",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-mycenaean": {
+      "name": "Wikipedia: Mycenaean Greece",
+      "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-helladic": {
+      "name": "Wikipedia: Helladic chronology",
+      "url": "https://en.wikipedia.org/wiki/Helladic_chronology",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-linear-b": {
+      "name": "Wikipedia: Linear B",
+      "url": "https://en.wikipedia.org/wiki/Linear_B",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-grave-circle-a": {
+      "name": "Wikipedia: Grave Circle A, Mycenae",
+      "url": "https://en.wikipedia.org/wiki/Grave_Circle_A,_Mycenae",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-nestor": {
+      "name": "Wikipedia: Palace of Nestor",
+      "url": "https://en.wikipedia.org/wiki/Palace_of_Nestor",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-uluburun": {
+      "name": "Wikipedia: Uluburun shipwreck",
+      "url": "https://en.wikipedia.org/wiki/Uluburun_shipwreck",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-collapse": {
+      "name": "Wikipedia: Late Bronze Age collapse",
+      "url": "https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "knodell-2021": {
+      "name": "Societies in Transition in Early Greece",
+      "author": "Knodell, Alex R.",
+      "year": "2021",
+      "tags": [
+        "cited-via-wikipedia"
+      ]
+    },
+    "manning-2009": {
+      "name": "Absolute Age of the Uluburun Shipwreck, in Tree-Rings, Kings and Old World Archaeology",
+      "author": "Manning, Sturt W., et al.",
+      "year": "2009",
+      "tags": [
+        "cited-via-wikipedia"
+      ]
+    },
+    "wp-tyre": {
+      "name": "Wikipedia: Tyre, Lebanon",
+      "url": "https://en.wikipedia.org/wiki/Tyre,_Lebanon",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-philistines": {
+      "name": "Wikipedia: Philistines",
+      "url": "https://en.wikipedia.org/wiki/Philistines",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-ashurbanipal": {
+      "name": "Wikipedia: Ashurbanipal",
+      "url": "https://en.wikipedia.org/wiki/Ashurbanipal",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-meluhha": {
+      "name": "Wikipedia: Meluhha",
+      "url": "https://en.wikipedia.org/wiki/Meluhha",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-tayma": {
+      "name": "Wikipedia: Tayma",
+      "url": "https://en.wikipedia.org/wiki/Tayma",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-lihyan": {
+      "name": "Wikipedia: Lihyan",
+      "url": "https://en.wikipedia.org/wiki/Lihyan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-gilgamesh": {
+      "name": "Wikipedia: Epic of Gilgamesh",
+      "url": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-chaldea": {
+      "name": "Wikipedia: Chaldea",
+      "url": "https://en.wikipedia.org/wiki/Chaldea",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-merodach-baladan": {
+      "name": "Wikipedia: Marduk-apla-iddina II",
+      "url": "https://en.wikipedia.org/wiki/Marduk-apla-iddina_II",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-qedarites": {
+      "name": "Wikipedia: Qedarites",
+      "url": "https://en.wikipedia.org/wiki/Qedarites",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    }
+  },
+  "tags": {
+    "wikipedia": {
+      "name": "Wikipedia"
+    },
+    "cited-via-wikipedia": {
+      "name": "Cited via Wikipedia (not checked)"
+    }
+  },
+  "events": [
+    {
+      "uuid": "sumu-abum",
+      "title": "Sumu-abum, first known king of Babylon",
+      "start": -1893,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The Amorite Sumu-abum is the first known king of the First Dynasty of Babylon.",
+      "sources": [
+        {
+          "sourceKey": "wp-old-bab",
+          "sourceLocation": "ruler list"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1893,
+          "chronology": "middle",
+          "source": {
+            "sourceKey": "wp-old-bab",
+            "sourceLocation": "ruler list (MC)"
+          }
+        },
+        {
+          "year": -1829,
+          "chronology": "low",
+          "source": {
+            "sourceKey": "wp-old-bab",
+            "sourceLocation": "ruler list (SC)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "hammurabi-reign",
+      "title": "Reign of Hammurabi",
+      "start": -1791,
+      "end": -1749,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The sixth king of Babylon reigns 43 years, conquers Larsa, Eshnunna and Mari, and issues his law code. His reign is the usual reference point for the competing chronologies.",
+      "sources": [
+        {
+          "sourceKey": "wp-chron-ane",
+          "sourceLocation": "table 'Variant Middle Bronze Age chronologies'"
+        },
+        {
+          "sourceKey": "wp-hammurabi",
+          "sourceLocation": "Dating"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1791,
+          "chronology": "middle",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Middle)"
+          }
+        },
+        {
+          "year": -1847,
+          "chronology": "high",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Long or High)"
+          }
+        },
+        {
+          "year": -1727,
+          "chronology": "low",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Short or Low)"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -1749,
+          "chronology": "middle",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Middle)"
+          }
+        },
+        {
+          "year": -1805,
+          "chronology": "high",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Long or High)"
+          }
+        },
+        {
+          "year": -1685,
+          "chronology": "low",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Short or Low)"
+          }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "hammurabi-larsa",
+      "title": "Hammurabi conquers Larsa",
+      "start": -1762,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Babylon defeats Rim-Sin I of Larsa in Hammurabi's 30th year, gaining Nippur, Ur, Uruk and Isin and ending the Isin–Larsa period.",
+      "sources": [
+        {
+          "sourceKey": "wp-isin-larsa",
+          "sourceLocation": "Demise"
+        },
+        {
+          "sourceKey": "wp-old-bab",
+          "sourceLocation": "King Hammurabi"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1762,
+          "source": {
+            "sourceKey": "wp-isin-larsa",
+            "sourceLocation": "Demise"
+          }
+        },
+        {
+          "year": -1763,
+          "source": {
+            "sourceKey": "wp-hammurabi",
+            "sourceLocation": "conquest of Larsa"
+          }
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "hammurabi-mari",
+      "title": "Hammurabi takes Eshnunna and Mari",
+      "start": -1761,
+      "end": -1760,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Eshnunna falls in 1762 and Mari in 1761; Mari's palace is burned, preserving its great archive.",
+      "sources": [
+        {
+          "sourceKey": "wp-old-bab",
+          "sourceLocation": "King Hammurabi"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "code-hammurabi",
+      "title": "Code of Hammurabi",
+      "start": -1752,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The basalt stele of laws, compiled late in Hammurabi's reign. It was later carried off to Susa as plunder, where it was found in 1901.",
+      "sources": [
+        {
+          "sourceKey": "wp-code-hammurabi",
+          "sourceLocation": "infobox ('Created c. 1753 BC')"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "sack-of-babylon",
+      "title": "Hittite sack of Babylon",
+      "start": -1594,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Mursili I raids Babylon and ends the dynasty of Hammurabi. The raid wasn't meant to hold territory; the Kassites take control afterwards. This date anchors the competing Mesopotamian chronologies.",
+      "sources": [
+        {
+          "sourceKey": "wp-chron-ane",
+          "sourceLocation": "table 'Variant Middle Bronze Age chronologies'"
+        },
+        {
+          "sourceKey": "wp-mursili1",
+          "sourceLocation": "Sack of Babylon"
+        },
+        {
+          "sourceKey": "wp-hittite-kings",
+          "sourceLocation": "chronology options (Bryce 2005, p. 378)"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1594,
+          "chronology": "middle",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Middle)"
+          }
+        },
+        {
+          "year": -1650,
+          "chronology": "high",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Long or High)"
+          }
+        },
+        {
+          "year": -1530,
+          "chronology": "low",
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Short or Low)"
+          }
+        },
+        {
+          "year": -1586,
+          "source": {
+            "sourceKey": "wp-chron-ane",
+            "sourceLocation": "table (Middle Low)"
+          },
+          "note": "Middle-low chronology"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "kassites-take-babylon",
+      "title": "Kassites take power in Babylonia",
+      "start": -1569,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "A people from the Zagros mountains take Babylonia after the Hittite raid and rule it until c. 1155 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-old-bab",
+          "sourceLocation": "'from 1570'"
+        },
+        {
+          "sourceKey": "wp-kassites",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1569,
+          "source": {
+            "sourceKey": "wp-old-bab",
+            "sourceLocation": "'from 1570'"
+          }
+        },
+        {
+          "year": -1530,
+          "chronology": "low",
+          "source": {
+            "sourceKey": "wp-kassites",
+            "sourceLocation": "lead (short chronology)"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "tanaju",
+      "title": "Egyptian annals mention Tanaju (Danaans?)",
+      "start": -1436,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "Messengers from Tanaju appear in Thutmose III's annals, a possible early Egyptian reference to Mycenaean Greeks.",
+      "sources": [
+        {
+          "sourceKey": "wp-achaeans",
+          "sourceLocation": "Egyptian sources"
+        }
+      ],
+      "importance": 3,
+      "circa": true
+    },
+    {
+      "uuid": "amarna-letters",
+      "title": "Amarna period and the Amarna letters",
+      "start": -1351,
+      "end": -1335,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Akhetaten is Egypt's capital. Its archive of 382 cuneiform tablets holds diplomatic letters between the Egyptian administration and its representatives in Canaan and Amurru, or neighbouring kings, covering no more than 30 years in the mid-14th century.",
+      "sources": [
+        {
+          "sourceKey": "wp-new-kingdom",
+          "sourceLocation": "infobox (Amarna capital c. 1352–1336 BC)"
+        },
+        {
+          "sourceKey": "wp-amarna",
+          "sourceLocation": "lead; Chronology"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "shaft-graves",
+      "title": "Shaft graves of Grave Circle A, Mycenae",
+      "start": -1599,
+      "end": -1499,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "Six rich shaft graves holding 19 bodies, among them the gold 'Mask of Agamemnon'; the cemetery is later enclosed within the citadel.",
+      "sources": [
+        {
+          "sourceKey": "wp-grave-circle-a",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1599,
+          "source": {
+            "sourceKey": "wp-grave-circle-a",
+            "sourceLocation": "History ('formed circa 1600 BC', Heitz 2008)"
+          }
+        },
+        {
+          "year": -1649,
+          "source": {
+            "sourceKey": "wp-grave-circle-a",
+            "sourceLocation": "Anthony 2007, p. 48 ('dated about 1650 BCE')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "mycenaean-knossos",
+      "title": "Mycenaeans at Knossos; Linear B appears",
+      "start": -1449,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "Knossos becomes a Mycenaean administrative centre keeping its records in Linear B, the earliest written Greek.",
+      "sources": [
+        {
+          "sourceKey": "wp-knossos",
+          "sourceLocation": "Mycenaean and Postpalatial period (Hooker 1991)"
+        },
+        {
+          "sourceKey": "wp-linear-b",
+          "sourceLocation": "lead ('c. 1450–1200 BC')"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "linear-b",
+      "title": "Linear B in use",
+      "start": -1449,
+      "end": -1199,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "The Mycenaean palace script, deciphered by Michael Ventris in 1952.",
+      "sources": [
+        {
+          "sourceKey": "wp-linear-b",
+          "sourceLocation": "lead; infobox"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "uluburun",
+      "title": "Uluburun shipwreck",
+      "start": -1319,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "A merchant ship sinks south of Kaş, in Turkey, carrying about 10 tons of copper, about a ton of tin and glass ingots: a microcosm of the international trade in the Eastern Mediterranean and across the Aegean.",
+      "sources": [
+        {
+          "sourceKey": "wp-uluburun",
+          "sourceLocation": "Dating"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1319,
+          "margin": 15,
+          "source": {
+            "sourceKey": "manning-2009",
+            "sourceLocation": "'1320±15' (via Wikipedia: Uluburun shipwreck)"
+          }
+        },
+        {
+          "year": -1326,
+          "source": {
+            "sourceKey": "wp-uluburun",
+            "sourceLocation": "Dating (Kuniholm, revised dendro date 'ca. 1327 BC')"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "lion-gate",
+      "title": "Lion Gate and citadel walls at Mycenae",
+      "start": -1249,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "Mycenae's fortifications are extended to take in Grave Circle A, and the Lion Gate is built.",
+      "sources": [
+        {
+          "sourceKey": "wp-grave-circle-a",
+          "sourceLocation": "History (Geldard 2000, p. 157)"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "pylos-burns",
+      "title": "Palace of Nestor at Pylos burns",
+      "start": -1199,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "The best-preserved Mycenaean palace burns, baking its Linear B archive. Wikipedia's articles give dates from about 1250 to 1180 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-nestor",
+          "sourceLocation": "lead"
+        },
+        {
+          "sourceKey": "wp-linear-b",
+          "sourceLocation": "Blegen's dating"
+        },
+        {
+          "sourceKey": "wp-mycenaean",
+          "sourceLocation": "Collapse"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1249,
+          "source": {
+            "sourceKey": "wp-nestor",
+            "sourceLocation": "lead ('destroyed by fire around 1250 BC')"
+          }
+        },
+        {
+          "year": -1199,
+          "source": {
+            "sourceKey": "wp-linear-b",
+            "sourceLocation": "Blegen's dating, end of LH IIIB"
+          }
+        },
+        {
+          "year": -1179,
+          "source": {
+            "sourceKey": "wp-collapse",
+            "sourceLocation": "Cline 2014, p. 129"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "sub-mycenaean",
+      "title": "Sub-Mycenaean period",
+      "start": -1049,
+      "end": -999,
+      "tracks": [
+        "mycenaean"
+      ],
+      "descr": "The transition from the Bronze Age to the Iron Age in Greece.",
+      "sources": [
+        {
+          "sourceKey": "wp-mycenaean",
+          "sourceLocation": "Chronology"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "sennacherib-babylon",
+      "title": "Sennacherib destroys Babylon",
+      "start": -688,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "After a series of battles, the Assyrian king recaptures Babylon and destroys the city.",
+      "sources": [
+        {
+          "sourceKey": "wp-fall-babylon",
+          "sourceLocation": "hatnote ('siege of Babylon (689 BCE)')"
+        },
+        {
+          "sourceKey": "wp-neo-assyria",
+          "sourceLocation": "Sargon II and Sennacherib"
+        }
+      ]
+    },
+    {
+      "uuid": "nabopolassar",
+      "title": "Nabopolassar crowned king of Babylon",
+      "start": -625,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Nabopolassar revolts against Assyria, takes Babylon and Nippur and is crowned king of Babylon, allied with the Medes.",
+      "sources": [
+        {
+          "sourceKey": "wp-neo-bab",
+          "sourceLocation": "Foundation and the fall of Assyria (Lipschits 2005, pp. 13–14)"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-nineveh",
+      "title": "Fall of Nineveh",
+      "start": -611,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Medes and Babylonians besiege Nineveh from May to August; king Sîn-šar-iškun dies in the siege.",
+      "sources": [
+        {
+          "sourceKey": "wp-nineveh",
+          "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fall-of-harran",
+      "title": "Fall of Harran: end of Assyria",
+      "start": -608,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The last Assyrian king, Ashur-uballit II, is defeated at Harran.",
+      "sources": [
+        {
+          "sourceKey": "wp-neo-assyria",
+          "sourceLocation": "infobox ('Fall of Harran 609 BCE')"
+        },
+        {
+          "sourceKey": "wp-neo-bab",
+          "sourceLocation": "Radner 2019, p. 141"
+        }
+      ]
+    },
+    {
+      "uuid": "nebuchadnezzar",
+      "title": "Reign of Nebuchadnezzar II",
+      "start": -604,
+      "end": -561,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Babylon's greatest Neo-Babylonian king campaigns across the Levant and rebuilds Babylon on a grand scale.",
+      "sources": [
+        {
+          "sourceKey": "wp-nebuchadnezzar",
+          "sourceLocation": "Reign (Parker & Dubberstein 1942, p. 10)"
+        }
+      ]
+    },
+    {
+      "uuid": "carchemish",
+      "title": "Battle of Carchemish",
+      "start": -604,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The Babylonians under crown prince Nebuchadnezzar inflict a crushing defeat on an Egyptian army under Necho II, Assyria's ally.",
+      "sources": [
+        {
+          "sourceKey": "wp-nebuchadnezzar",
+          "sourceLocation": "Reign"
+        },
+        {
+          "sourceKey": "wp-neo-bab",
+          "sourceLocation": "Lange 2011, p. 580"
+        }
+      ]
+    },
+    {
+      "uuid": "jerusalem-597",
+      "title": "Babylon captures Jerusalem",
+      "start": -596,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "On 2 Adar (16 March 597 BCE) the city falls; King Jeconiah and the court are deported and Zedekiah is installed as a vassal.",
+      "sources": [
+        {
+          "sourceKey": "wp-jerusalem",
+          "sourceLocation": "Background"
+        }
+      ]
+    },
+    {
+      "uuid": "jerusalem-587",
+      "title": "Destruction of Jerusalem and the First Temple",
+      "start": -588,
+      "end": -586,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "After Zedekiah's revolt, Babylon besieges Jerusalem from January 589, then burns the city and the First Temple and deports much of Judah's population.",
+      "sources": [
+        {
+          "sourceKey": "wp-jerusalem",
+          "sourceLocation": "lead; Siege; Dating"
+        }
+      ],
+      "endDates": [
+        {
+          "year": -586,
+          "source": {
+            "sourceKey": "wp-jerusalem",
+            "sourceLocation": "lead ('summer 587 BC')"
+          }
+        },
+        {
+          "year": -585,
+          "source": {
+            "sourceKey": "wp-jerusalem",
+            "sourceLocation": "Dating ('July 587 or 586 BC')"
+          }
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "babylon-invades-egypt",
+      "title": "Babylonian invasion of Egypt",
+      "start": -567,
+      "end": -566,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "In the fourth year of Amasis, Babylon invades Egypt.",
+      "sources": [
+        {
+          "sourceKey": "wp-late-period",
+          "sourceLocation": "26th Dynasty ('around 568–567 BC')"
+        }
+      ]
+    },
+    {
+      "uuid": "nabonidus",
+      "title": "Reign of Nabonidus",
+      "start": -555,
+      "end": -538,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The last king of Babylon favours the moon god Sin and spends time in Arabia, leaving his son Belshazzar in command of the army.",
+      "sources": [
+        {
+          "sourceKey": "wp-fall-babylon",
+          "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)"
+        }
+      ]
+    },
+    {
+      "uuid": "cyrus-takes-babylon",
+      "title": "Cyrus takes Babylon",
+      "start": -538,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "After victory at Opis, Persian forces enter Babylon on 12 October 539 BCE; Nabonidus surrenders and the Neo-Babylonian Empire ends.",
+      "sources": [
+        {
+          "sourceKey": "wp-fall-babylon",
+          "sourceLocation": "lead; Invasion (Babylonian Chronicle)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "shamash-shum-ukin",
+      "title": "Babylon revolts under Shamash-shum-ukin",
+      "start": -651,
+      "end": -647,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Ashurbanipal's brother, king of Babylon, rebels. He dies when Babylon falls after a siege in 648 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-ashurbanipal",
+          "sourceLocation": "lead"
+        }
+      ]
+    },
+    {
+      "uuid": "tyre-babylon",
+      "title": "Tyre under Babylonian rule",
+      "start": -571,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Tyre comes under Babylonian rule.",
+      "sources": [
+        {
+          "sourceKey": "wp-tyre",
+          "sourceLocation": "History"
+        }
+      ],
+      "importance": 3
+    },
+    {
+      "uuid": "philistia-destroyed",
+      "title": "Nebuchadnezzar II destroys the Philistine cities",
+      "start": -603,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "After a revolt, Babylon destroys Ashkelon, Gaza, Aphek and Ekron and their inhabitants are killed or exiled to Mesopotamia.",
+      "sources": [
+        {
+          "sourceKey": "wp-philistines",
+          "sourceLocation": "lead and History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -603,
+          "source": {
+            "sourceKey": "wp-philistines",
+            "sourceLocation": "lead"
+          }
+        },
+        {
+          "year": -602,
+          "source": {
+            "sourceKey": "wp-philistines",
+            "sourceLocation": "History ('In 604/603 BC')"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "meluhha-last",
+      "title": "Last Mesopotamian mention of Meluhha",
+      "start": -1759,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "Direct trade had already given way to trade through Dilmun, possibly as the Indus cities declined.",
+      "sources": [
+        {
+          "sourceKey": "wp-meluhha",
+          "sourceLocation": "Trading colony ('no known mentions of Meluhha after 1760 BCE')"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "nabonidus-tayma",
+      "title": "Nabonidus makes Tayma his base",
+      "start": -551,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The Neo-Babylonian ruler campaigns in northwestern Arabia and rules from Tayma; he eliminates the kings of both Taymāʾ and Dadān.",
+      "sources": [
+        {
+          "sourceKey": "wp-tayma",
+          "sourceLocation": "Mesopotamian hegemony"
+        },
+        {
+          "sourceKey": "wp-lihyan",
+          "sourceLocation": "Timeline"
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "gilgamesh",
+      "title": "The Epic of Gilgamesh (Old Babylonian version)",
+      "start": -1799,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The world’s oldest surviving narrative literature. Sumerian Gilgamesh poems may date to the Third Dynasty of Ur (c. 2100 BCE); the Standard Babylonian version was compiled by Sîn-lēqi-unninni between 1300 and 1000 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-gilgamesh",
+          "sourceLocation": "infobox, lead and Versions"
+        }
+      ],
+      "importance": 1,
+      "circa": true
+    },
+    {
+      "uuid": "suteans-arameans-babylonia",
+      "title": "Suteans and Arameans enter Babylonia",
+      "start": -1099,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "West Semitic-speaking tribes arrive from the Levant: the earliest waves are Suteans and Arameans, followed a century or so later by the Kaldu (Chaldeans).",
+      "sources": [
+        {
+          "sourceKey": "wp-chaldea",
+          "sourceLocation": "lead and Ancient Chaldeans"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1099,
+          "source": {
+            "sourceKey": "wp-chaldea",
+            "sourceLocation": "Ancient Chaldeans ('appeared in Babylonia, c. 1100 BC')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "marduk-apla-usur",
+      "title": "A Chaldean takes the Babylonian throne",
+      "start": -779,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "The Chaldeans come to historical prominence in Babylonia for the first time when Marduk-apla-usur usurps the throne.",
+      "sources": [
+        {
+          "sourceKey": "wp-chaldea",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -779,
+          "source": {
+            "sourceKey": "wp-chaldea",
+            "sourceLocation": "History ('in 780 BC')"
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "merodach-baladan",
+      "title": "Marduk-apla-iddina II holds Babylon against Assyria",
+      "start": -721,
+      "end": -709,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "A Chaldean of the Bit-Yakin tribe seizes the Babylonian throne from Assyrian control. An Assyrian attempt to defeat him near Der in 720 fails, but Sargon II eventually drives him from Babylon.",
+      "sources": [
+        {
+          "sourceKey": "wp-merodach-baladan",
+          "sourceLocation": "infobox and Biography"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "merodach-baladan-2",
+      "title": "Marduk-apla-iddina II's second reign",
+      "start": -702,
+      "end": -701,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "He reigns nine months before Sennacherib defeats him near Kish; he flees to Elam and dies in exile. The Qedarites back his revolt (his supporter Bašqanu is the brother of an Arab queen named Yaṯiʿe).",
+      "sources": [
+        {
+          "sourceKey": "wp-merodach-baladan",
+          "sourceLocation": "Biography"
+        },
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "Neo-Assyrian period"
+        }
+      ]
+    },
+    {
+      "uuid": "qedarites-babylon-revolt",
+      "title": "Qedarites join Šamaš-šuma-ukin's revolt",
+      "start": -651,
+      "end": -647,
+      "tracks": [
+        "babylonia"
+      ],
+      "descr": "King Abyaṯiʿ supports the revolt against Ashurbanipal, and the Qedarites are trapped in Babylon. After it is suppressed they raid Assyria's western borderlands with the Nabataeans.",
+      "sources": [
+        {
+          "sourceKey": "wp-qedarites",
+          "sourceLocation": "Neo-Assyrian period"
+        }
+      ]
+    }
+  ],
+  "chronologies": {
+    "middle": {
+      "name": "Middle Chronology",
+      "group": "Mesopotamia & Anatolia",
+      "default": true,
+      "description": "Fall of Babylon in 1595 BCE; Hammurabi reigns 1792–1750 BCE. Wikipedia calls it the most commonly seen solution, 'but there is far from a consensus'.",
+      "source": {
+        "sourceKey": "wp-chron-ane",
+        "sourceLocation": "Middle Bronze Age; table 'Variant Middle Bronze Age chronologies'"
+      }
+    },
+    "high": {
+      "name": "High (Long) Chronology",
+      "group": "Mesopotamia & Anatolia",
+      "description": "Fall of Babylon in 1651 BCE: 56 years earlier than the Middle Chronology. Applied here to dates before 1400 BCE (see docs/ancient-sources.md).",
+      "source": {
+        "sourceKey": "wp-chron-ane",
+        "sourceLocation": "table 'Variant Middle Bronze Age chronologies'"
+      },
+      "derive": {
+        "from": "middle",
+        "offset": -56,
+        "until": -1399
+      }
+    },
+    "low": {
+      "name": "Low (Short) Chronology",
+      "group": "Mesopotamia & Anatolia",
+      "description": "Fall of Babylon in 1531 BCE: 64 years later than the Middle Chronology. Where a source gives its own short-chronology date, that date is used instead of the shift.",
+      "source": {
+        "sourceKey": "wp-chron-ane",
+        "sourceLocation": "table 'Variant Middle Bronze Age chronologies'"
+      },
+      "derive": {
+        "from": "middle",
+        "offset": 64,
+        "until": -1399
+      }
+    },
+    "aegean-high": {
+      "name": "High (radiocarbon) Aegean chronology",
+      "group": "Aegean",
+      "default": true,
+      "description": "Absolute dates for the Minoan and Helladic phases based on radiocarbon (Manning 2012), with the Thera eruption in the late 17th or 16th century BCE.",
+      "source": {
+        "sourceKey": "wp-minoan-chron",
+        "sourceLocation": "table, note 1 ('based on Manning (2012)')"
+      }
+    },
+    "aegean-low": {
+      "name": "Low (conventional) Aegean chronology",
+      "group": "Aegean",
+      "description": "Dates from archaeological synchronisms with Egypt, roughly a century later for the eruption and early Late Bronze Age phases.",
+      "source": {
+        "sourceKey": "wp-minoan-chron",
+        "sourceLocation": "prose on 'low chronological assessments'"
+      }
+    }
+  }
+}

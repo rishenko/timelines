@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "poc-battletech",
+    "title": "POC: BattleTech",
+    "subtitle": "test set (baseline format)",
+    "description": "Test data for lifespans and phases, built from the data-format docs. Dates from Sarna.net and the sourcebooks it cites.",
+    "credits": "BattleTech is a trademark of its owners. Dates from Sarna.net (BattleTechWiki) and the sourcebooks it cites; sourcebook pages were not checked directly. Test data, not an official product.",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false,
+      "aliases": {
+        "before": [
+          "BC"
+        ],
+        "after": [
+          "AD"
+        ]
+      }
+    },
+    "increments": [
+      5,
+      10,
+      25,
+      50,
+      100
+    ],
+    "defaultIncrement": 50,
+    "defaultTheme": "dark",
+    "range": {
+      "start": 2300,
+      "end": 3152
+    }
+  },
+  "present": 3152,
+  "tags": {
+    "wiki": {
+      "name": "Sarna.net (wiki)"
+    },
+    "sourcebook": {
+      "name": "Sourcebook (cited via Sarna, not checked)"
+    }
+  },
+  "sources": {
+    "sarna-fs": {
+      "name": "Federated Suns",
+      "author": "Sarna.net",
+      "url": "https://www.sarna.net/wiki/Federated_Suns",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wiki"
+      ]
+    },
+    "sarna-lc": {
+      "name": "Lyran Commonwealth",
+      "author": "Sarna.net",
+      "url": "https://www.sarna.net/wiki/Lyran_Commonwealth",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wiki"
+      ]
+    },
+    "sarna-fc": {
+      "name": "Federated Commonwealth",
+      "author": "Sarna.net",
+      "url": "https://www.sarna.net/wiki/Federated_Commonwealth",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wiki"
+      ]
+    },
+    "sarna-fccw": {
+      "name": "FedCom Civil War",
+      "author": "Sarna.net",
+      "url": "https://www.sarna.net/wiki/FedCom_Civil_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wiki"
+      ]
+    },
+    "hb-davion": {
+      "name": "Handbook: House Davion",
+      "tags": [
+        "sourcebook"
+      ]
+    },
+    "hb-steiner": {
+      "name": "Handbook: House Steiner",
+      "tags": [
+        "sourcebook"
+      ]
+    },
+    "io-alt-eras": {
+      "name": "Interstellar Operations: Alternate Eras",
+      "tags": [
+        "sourcebook"
+      ]
+    }
+  },
+  "tracks": [
+    {
+      "id": "inner-sphere",
+      "name": "Inner Sphere",
+      "color": "#5b6b82"
+    },
+    {
+      "id": "federated-suns",
+      "name": "Federated Suns",
+      "color": "#d4a72c",
+      "parent": "inner-sphere",
+      "url": "https://www.sarna.net/wiki/Federated_Suns",
+      "span": {
+        "start": 2317,
+        "end": 3152,
+        "startDates": [
+          {
+            "year": 2317,
+            "source": {
+              "sourceKey": "hb-davion",
+              "sourceLocation": "p. 16, \"The Crucis Pact\" (cited via Sarna, not checked)"
+            }
+          },
+          {
+            "year": 2317,
+            "source": {
+              "sourceKey": "sarna-fs",
+              "sourceLocation": "infobox Founded; History: \"Founded in 2317\""
+            }
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Presidents",
+          "start": 2317,
+          "end": 2417
+        },
+        {
+          "name": "First Princes",
+          "start": 2417,
+          "end": 3055
+        },
+        {
+          "name": "Federated Commonwealth",
+          "start": 3055,
+          "end": 3067,
+          "endDates": [
+            {
+              "year": 3067,
+              "source": {
+                "sourceKey": "sarna-fs",
+                "sourceLocation": "History: \"officially renamed back to Federated Suns in 3067 by Regent Yvonne\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Federated Suns",
+          "start": 3067,
+          "end": 3152
+        }
+      ]
+    },
+    {
+      "id": "federated-commonwealth",
+      "name": "Federated Commonwealth",
+      "color": "#c9853a",
+      "parent": "inner-sphere",
+      "url": "https://www.sarna.net/wiki/Federated_Commonwealth",
+      "span": {
+        "start": 3028,
+        "end": 3067,
+        "startDates": [
+          {
+            "year": 3028,
+            "source": {
+              "sourceKey": "sarna-fc",
+              "sourceLocation": "infobox Founded: \"20 August 3028 (Federated Commonwealth Alliance)\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 3067,
+            "source": {
+              "sourceKey": "sarna-fc",
+              "sourceLocation": "infobox Dissolved: \"24 April 3067 (Final dissolution)\""
+            }
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Federated Commonwealth Alliance",
+          "start": 3028,
+          "end": 3055,
+          "startDates": [
+            {
+              "year": 3028,
+              "source": {
+                "sourceKey": "io-alt-eras",
+                "sourceLocation": "pp. 14, 18 (cited via Sarna, not checked)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 3055,
+              "source": {
+                "sourceKey": "io-alt-eras",
+                "sourceLocation": "pp. 14, 18: the legal name \"until 3055\" (cited via Sarna, not checked)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Federated Commonwealth",
+          "start": 3055,
+          "end": 3057,
+          "endDates": [
+            {
+              "year": 3057,
+              "source": {
+                "sourceKey": "hb-steiner",
+                "sourceLocation": "pp. 63–64, \"The Lyran Secession\" (cited via Sarna, not checked)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Davion half only",
+          "start": 3057,
+          "end": 3067,
+          "endDates": [
+            {
+              "year": 3067,
+              "source": {
+                "sourceKey": "sarna-fs",
+                "sourceLocation": "History: \"officially renamed back to Federated Suns in 3067\""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lyran-commonwealth",
+      "name": "Lyran Commonwealth",
+      "color": "#4f8fd0",
+      "parent": "inner-sphere",
+      "url": "https://www.sarna.net/wiki/Lyran_Commonwealth",
+      "span": {
+        "start": 2341,
+        "end": 3152,
+        "startDates": [
+          {
+            "year": 2341,
+            "source": {
+              "sourceKey": "hb-steiner",
+              "sourceLocation": "p. 14, \"False Start: Reign of the Nine\" (cited via Sarna, not checked)"
+            }
+          },
+          {
+            "year": 2341,
+            "source": {
+              "sourceKey": "sarna-lc",
+              "sourceLocation": "History: \"formed in 2341 as a merger between three mercantile alliances\""
+            }
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Nine Archons",
+          "start": 2341,
+          "end": 2375
+        },
+        {
+          "name": "Archon Basileus (Marsden)",
+          "start": 2375,
+          "end": 2408
+        },
+        {
+          "name": "Steiner Archons",
+          "start": 2408,
+          "end": 3055
+        },
+        {
+          "name": "Federated Commonwealth",
+          "start": 3055,
+          "end": 3057
+        },
+        {
+          "name": "Lyran Alliance",
+          "start": 3057,
+          "end": 3084,
+          "startDates": [
+            {
+              "year": 3057,
+              "source": {
+                "sourceKey": "sarna-lc",
+                "sourceLocation": "Lyran Alliance infobox: \"18 September 3057 – 5 January 3084\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 3084,
+              "source": {
+                "sourceKey": "sarna-lc",
+                "sourceLocation": "History: \"On 5 January 3084, the nation was renamed back to the Lyran Commonwealth\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lyran Commonwealth",
+          "start": 3084,
+          "end": 3152
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "uuid": "lc-founded",
+      "title": "Lyran Commonwealth founded",
+      "descr": "A merger of three mercantile alliances: the Protectorate of Donegal, the Federation of Skye and the Tamar Pact. Its charter called for nine Archons.",
+      "start": 2341,
+      "importance": 1,
+      "tracks": [
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-lc",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "hb-steiner",
+          "sourceLocation": "p. 14 (cited via Sarna, not checked)"
+        }
+      ]
+    },
+    {
+      "uuid": "fs-founded",
+      "title": "Federated Suns founded",
+      "descr": "Founded by Lucien Davion of New Avalon.",
+      "start": 2317,
+      "importance": 1,
+      "tracks": [
+        "federated-suns"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fs",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "hb-davion",
+          "sourceLocation": "p. 16 (cited via Sarna, not checked)"
+        }
+      ]
+    },
+    {
+      "uuid": "marsden-coup",
+      "title": "Robert Marsden declares himself Archon Basileus",
+      "descr": "The leader of Donegal ends rule by nine Archons in a coup.",
+      "start": 2375,
+      "tracks": [
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-lc",
+          "sourceLocation": "History: \"declared himself Archon Basileus in August 2375\""
+        }
+      ]
+    },
+    {
+      "uuid": "steiner-rule",
+      "title": "Katherine Steiner becomes Archon",
+      "descr": "Archon Alistair Marsden dies during a Draconis Combine invasion; rule passes to his wife, Katherine Steiner, on Tharkad.",
+      "start": 2408,
+      "tracks": [
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-lc",
+          "sourceLocation": "History: \"The reign of House Steiner had begun\""
+        }
+      ]
+    },
+    {
+      "uuid": "fedcom-accords",
+      "title": "FedCom Accords",
+      "descr": "A treaty for military, scientific and economic exchange, with a secret provision for the marriage of Hanse Davion and Melissa Steiner.",
+      "start": 3022,
+      "tracks": [
+        "federated-suns",
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fc",
+          "sourceLocation": "History: Formation"
+        }
+      ]
+    },
+    {
+      "uuid": "davion-steiner-wedding",
+      "title": "Wedding of Hanse Davion and Melissa Steiner",
+      "descr": "Held on Terra on 20 August 3028. The marriage enacts the Federated Commonwealth Alliance and launches the Fourth Succession War.",
+      "start": 3028,
+      "importance": 1,
+      "order": 1,
+      "tracks": [
+        "federated-commonwealth",
+        "federated-suns",
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fc",
+          "sourceLocation": "History: Formation"
+        }
+      ],
+      "links": [
+        {
+          "to": "fourth-succession-war",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "fourth-succession-war",
+      "title": "Fourth Succession War",
+      "descr": "The combined Davion and Steiner forces attack the Capellan Confederation and the Draconis Combine. It ends on 10 January 3030.",
+      "start": 3028,
+      "end": 3030,
+      "order": 2,
+      "tracks": [
+        "federated-commonwealth",
+        "federated-suns",
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fc",
+          "sourceLocation": "History: Formation"
+        }
+      ]
+    },
+    {
+      "uuid": "war-of-3039",
+      "title": "War of 3039",
+      "descr": "A planned conquest of the Draconis Combine ends in a practical draw. It began in April and ended in December; the Exeter Accords were signed on 19 January 3040.",
+      "start": 3039,
+      "tracks": [
+        "federated-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fc",
+          "sourceLocation": "History: War of 3039"
+        }
+      ]
+    },
+    {
+      "uuid": "affc-established",
+      "title": "Armed Forces of the Federated Commonwealth established",
+      "descr": "The two militaries are reorganized into one, in early 3041.",
+      "start": 3041,
+      "importance": 3,
+      "tracks": [
+        "federated-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fc",
+          "sourceLocation": "History: Decade of Peace"
+        }
+      ]
+    },
+    {
+      "uuid": "victor-archon-prince",
+      "title": "Victor Steiner-Davion becomes Archon-Prince",
+      "descr": "After Archon Melissa Steiner's assassination, Victor's accession formally unites the Lyran Commonwealth and the Federated Suns.",
+      "start": 3055,
+      "importance": 1,
+      "tracks": [
+        "federated-commonwealth",
+        "federated-suns",
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-lc",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "sarna-fc",
+          "sourceLocation": "lead"
+        }
+      ]
+    },
+    {
+      "uuid": "lyran-secession",
+      "title": "Lyran secession",
+      "descr": "Katherine Steiner-Davion invokes war powers on 18 September 3057 to take the Lyran half out of the union, calling it the Lyran Alliance.",
+      "start": 3057,
+      "importance": 1,
+      "tracks": [
+        "lyran-commonwealth",
+        "federated-commonwealth",
+        "federated-suns"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-lc",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "hb-steiner",
+          "sourceLocation": "pp. 63–64, \"The Lyran Secession\" (cited via Sarna, not checked)"
+        }
+      ]
+    },
+    {
+      "uuid": "fedcom-civil-war",
+      "title": "FedCom Civil War",
+      "descr": "War between Victor Steiner-Davion's Allies and Katherine Steiner-Davion's Loyalists, across both former halves of the Federated Commonwealth. It runs from 16 November 3062 to 20 April 3067, when Katherine surrenders at New Avalon.",
+      "start": 3062,
+      "end": 3067,
+      "importance": 1,
+      "tracks": [
+        "federated-commonwealth",
+        "federated-suns",
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fccw",
+          "sourceLocation": "infobox; lead"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 3062,
+          "source": {
+            "sourceKey": "sarna-fccw",
+            "sourceLocation": "infobox date: \"16 November 3062\""
+          }
+        },
+        {
+          "year": 3062,
+          "source": {
+            "sourceKey": "sarna-lc",
+            "sourceLocation": "History: \"Victor's hand was forced in 3062\""
+          }
+        },
+        {
+          "year": 3057,
+          "source": {
+            "sourceKey": "sarna-fs",
+            "sourceLocation": "History: \"The Lyran Commonwealth seceded from the alliance in 3057, beginning the FedCom Civil War\""
+          },
+          "note": "The Federated Suns page dates the war from the secession; the war's own page and the Lyran page start it in 3062."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 3067,
+          "source": {
+            "sourceKey": "sarna-fccw",
+            "sourceLocation": "infobox enddate: \"20 April 3067\""
+          }
+        }
+      ],
+      "links": [
+        {
+          "to": "lyran-secession",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "fs-name-restored",
+      "title": "Federated Suns name restored",
+      "descr": "With the civil war over, Regent Yvonne Steiner-Davion renames the Davion half back to the Federated Suns.",
+      "start": 3067,
+      "order": 2,
+      "tracks": [
+        "federated-suns",
+        "federated-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-fs",
+          "sourceLocation": "History"
+        },
+        {
+          "sourceKey": "sarna-fc",
+          "sourceLocation": "History: FedCom Civil War"
+        }
+      ],
+      "links": [
+        {
+          "to": "fedcom-civil-war",
+          "kind": "succeeds"
+        }
+      ]
+    },
+    {
+      "uuid": "lc-name-restored",
+      "title": "Lyran Commonwealth name restored",
+      "descr": "Archon Adam Steiner renames the Lyran Alliance back to the Lyran Commonwealth on 5 January 3084.",
+      "start": 3084,
+      "tracks": [
+        "lyran-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "sarna-lc",
+          "sourceLocation": "History; lead"
+        }
+      ]
+    }
+  ]
+}

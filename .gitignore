@@ -25,3 +25,4 @@ dist-ssr
 
 # Map build downloads (scripts/map/build-map.ts)
 .cache
+public/timelines/_poc-folded/

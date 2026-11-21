@@ -1,0 +1,2870 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "poc-modern",
+    "title": "POC: modern states",
+    "subtitle": "test set (baseline format)",
+    "description": "The POC test set: modern rows that test phases, gaps, overlaps, unions and splits.",
+    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026. Test data.",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false,
+      "aliases": {
+        "before": [
+          "BC"
+        ],
+        "after": [
+          "AD"
+        ]
+      }
+    },
+    "increments": [
+      1,
+      5,
+      10,
+      25,
+      50
+    ],
+    "defaultIncrement": 10,
+    "range": {
+      "start": "1700 CE",
+      "end": "2026 CE"
+    },
+    "collapsed": []
+  },
+  "present": 2026,
+  "tracks": [
+    {
+      "id": "west",
+      "name": "Western and Central Europe",
+      "color": "#5a6f8f"
+    },
+    {
+      "id": "east",
+      "name": "Eastern Europe",
+      "color": "#7a5a8f"
+    },
+    {
+      "id": "mideast",
+      "name": "Middle East",
+      "color": "#8f7a4a"
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "color": "#3f62b0",
+      "url": "https://en.wikipedia.org/wiki/France",
+      "span": {
+        "start": "987 CE",
+        "end": "2026 CE",
+        "startDates": [
+          {
+            "year": "987 CE",
+            "source": {
+              "sourceKey": "wp-kingdom-of-france",
+              "sourceLocation": "infobox"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": "2026 CE",
+            "source": {
+              "sourceKey": "wp-french-fifth-republic",
+              "sourceLocation": "infobox life span: 1958–present"
+            },
+            "note": "Still in being; the format has no \"ongoing\" for phases, so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Kingdom of France",
+          "start": "987 CE",
+          "end": "1792 CE",
+          "startDates": [
+            {
+              "year": "987 CE",
+              "source": {
+                "sourceKey": "wp-kingdom-of-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1792 CE",
+              "source": {
+                "sourceKey": "wp-kingdom-of-france",
+                "sourceLocation": "infobox: abolition of the monarchy, 21 September 1792"
+              }
+            }
+          ]
+        },
+        {
+          "name": "First Republic",
+          "start": "1792 CE",
+          "end": "1804 CE",
+          "startDates": [
+            {
+              "year": "1792 CE",
+              "source": {
+                "sourceKey": "wp-french-first-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1804 CE",
+              "source": {
+                "sourceKey": "wp-french-first-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "First Empire",
+          "start": "1804 CE",
+          "end": "1814 CE",
+          "startDates": [
+            {
+              "year": "1804 CE",
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1814 CE",
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 1804–1814"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bourbon Restoration",
+          "start": "1814 CE",
+          "end": "1830 CE",
+          "startDates": [
+            {
+              "year": "1814 CE",
+              "source": {
+                "sourceKey": "wp-kingdom-of-france",
+                "sourceLocation": "infobox: Bourbon Restoration, 6 April 1814"
+              }
+            },
+            {
+              "year": "1815 CE",
+              "source": {
+                "sourceKey": "wp-bourbon-restoration",
+                "sourceLocation": "infobox"
+              },
+              "note": "Counts from the second restoration, after the Hundred Days."
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1830 CE",
+              "source": {
+                "sourceKey": "wp-bourbon-restoration",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hundred Days (Napoleon returns)",
+          "start": "1815 CE",
+          "end": "1815 CE",
+          "startDates": [
+            {
+              "year": "1815 CE",
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 20 March – 7 July 1815"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1815 CE",
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 20 March – 7 July 1815"
+              }
+            }
+          ]
+        },
+        {
+          "name": "July Monarchy",
+          "start": "1830 CE",
+          "end": "1848 CE",
+          "startDates": [
+            {
+              "year": "1830 CE",
+              "source": {
+                "sourceKey": "wp-july-monarchy",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1848 CE",
+              "source": {
+                "sourceKey": "wp-july-monarchy",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Republic",
+          "start": "1848 CE",
+          "end": "1852 CE",
+          "startDates": [
+            {
+              "year": "1848 CE",
+              "source": {
+                "sourceKey": "wp-french-second-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1852 CE",
+              "source": {
+                "sourceKey": "wp-french-second-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Empire",
+          "start": "1852 CE",
+          "end": "1870 CE",
+          "startDates": [
+            {
+              "year": "1852 CE",
+              "source": {
+                "sourceKey": "wp-second-french-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1870 CE",
+              "source": {
+                "sourceKey": "wp-second-french-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Third Republic",
+          "start": "1870 CE",
+          "end": "1940 CE",
+          "startDates": [
+            {
+              "year": "1870 CE",
+              "source": {
+                "sourceKey": "wp-french-third-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1940 CE",
+              "source": {
+                "sourceKey": "wp-french-third-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vichy France (French State)",
+          "start": "1940 CE",
+          "end": "1944 CE",
+          "startDates": [
+            {
+              "year": "1940 CE",
+              "source": {
+                "sourceKey": "wp-vichy-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1944 CE",
+              "source": {
+                "sourceKey": "wp-vichy-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Free France",
+          "start": "1940 CE",
+          "end": "1944 CE",
+          "startDates": [
+            {
+              "year": "1940 CE",
+              "source": {
+                "sourceKey": "wp-free-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1944 CE",
+              "source": {
+                "sourceKey": "wp-free-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Provisional Government",
+          "start": "1944 CE",
+          "end": "1946 CE",
+          "startDates": [
+            {
+              "year": "1944 CE",
+              "source": {
+                "sourceKey": "wp-gprf",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1946 CE",
+              "source": {
+                "sourceKey": "wp-gprf",
+                "sourceLocation": "infobox: succeeded by the Fourth Republic, 27 October 1946"
+              }
+            },
+            {
+              "year": "1945 CE",
+              "source": {
+                "sourceKey": "wp-gprf",
+                "sourceLocation": "infobox end: admitted to the UN, 24 October 1945"
+              },
+              "note": "The infobox closes its dates at UN admission."
+            }
+          ]
+        },
+        {
+          "name": "Fourth Republic",
+          "start": "1946 CE",
+          "end": "1958 CE",
+          "startDates": [
+            {
+              "year": "1946 CE",
+              "source": {
+                "sourceKey": "wp-french-fourth-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1958 CE",
+              "source": {
+                "sourceKey": "wp-french-fourth-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fifth Republic",
+          "start": "1958 CE",
+          "end": "2026 CE",
+          "startDates": [
+            {
+              "year": "1958 CE",
+              "source": {
+                "sourceKey": "wp-french-fifth-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "2026 CE",
+              "source": {
+                "sourceKey": "wp-french-fifth-republic",
+                "sourceLocation": "infobox life span: 1958–present"
+              },
+              "note": "Still in being; the format has no \"ongoing\" for phases, so it ends at the present year."
+            }
+          ]
+        }
+      ],
+      "parent": "west"
+    },
+    {
+      "id": "germany",
+      "name": "Germany (the German lands)",
+      "color": "#b0563f",
+      "url": "https://en.wikipedia.org/wiki/Germany",
+      "span": {
+        "start": "962 CE",
+        "end": "2026 CE",
+        "startDates": [
+          {
+            "year": "962 CE",
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox: Otto I crowned, 2 February 962"
+            }
+          },
+          {
+            "year": "800 CE",
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox, note \"Charlemagne\""
+            },
+            "note": "Some historians count from Charlemagne's coronation."
+          }
+        ],
+        "endDates": [
+          {
+            "year": "2026 CE",
+            "source": {
+              "sourceKey": "wp-german-reunification",
+              "sourceLocation": "date: 9 November 1989 – 3 October 1990"
+            },
+            "note": "Still in being; ends at the present year for want of \"ongoing\"."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Holy Roman Empire",
+          "start": "962 CE",
+          "end": "1806 CE",
+          "startDates": [
+            {
+              "year": "962 CE",
+              "source": {
+                "sourceKey": "wp-holy-roman-empire",
+                "sourceLocation": "infobox: Otto I crowned, 2 February 962"
+              }
+            },
+            {
+              "year": "800 CE",
+              "source": {
+                "sourceKey": "wp-holy-roman-empire",
+                "sourceLocation": "infobox, note \"Charlemagne\""
+              },
+              "note": "Some historians count from Charlemagne's coronation."
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1806 CE",
+              "source": {
+                "sourceKey": "wp-holy-roman-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Confederation of the Rhine",
+          "start": "1806 CE",
+          "end": "1813 CE",
+          "startDates": [
+            {
+              "year": "1806 CE",
+              "source": {
+                "sourceKey": "wp-confederation-of-the-rhine",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1813 CE",
+              "source": {
+                "sourceKey": "wp-confederation-of-the-rhine",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Confederation",
+          "start": "1815 CE",
+          "end": "1848 CE",
+          "startDates": [
+            {
+              "year": "1815 CE",
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1815–1848"
+              }
+            },
+            {
+              "year": "1813 CE",
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox start: German campaign, 17 March 1813"
+              },
+              "note": "The infobox dates its start to the 1813 campaign."
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1848 CE",
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1815–1848"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Empire of 1848–49",
+          "start": "1848 CE",
+          "end": "1849 CE",
+          "startDates": [
+            {
+              "year": "1848 CE",
+              "source": {
+                "sourceKey": "wp-german-empire-1848",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1849 CE",
+              "source": {
+                "sourceKey": "wp-german-empire-1848",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Confederation (restored)",
+          "start": "1850 CE",
+          "end": "1866 CE",
+          "startDates": [
+            {
+              "year": "1850 CE",
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1850–1866"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1866 CE",
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1850–1866"
+              }
+            }
+          ]
+        },
+        {
+          "name": "North German Confederation",
+          "start": "1866 CE",
+          "end": "1871 CE",
+          "startDates": [
+            {
+              "year": "1866 CE",
+              "source": {
+                "sourceKey": "wp-north-german-confederation",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1871 CE",
+              "source": {
+                "sourceKey": "wp-north-german-confederation",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Empire",
+          "start": "1871 CE",
+          "end": "1918 CE",
+          "startDates": [
+            {
+              "year": "1871 CE",
+              "source": {
+                "sourceKey": "wp-german-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1918 CE",
+              "source": {
+                "sourceKey": "wp-german-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Weimar Republic",
+          "start": "1918 CE",
+          "end": "1933 CE",
+          "startDates": [
+            {
+              "year": "1918 CE",
+              "source": {
+                "sourceKey": "wp-weimar-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1933 CE",
+              "source": {
+                "sourceKey": "wp-weimar-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Nazi Germany",
+          "start": "1933 CE",
+          "end": "1945 CE",
+          "startDates": [
+            {
+              "year": "1933 CE",
+              "source": {
+                "sourceKey": "wp-nazi-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1945 CE",
+              "source": {
+                "sourceKey": "wp-nazi-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Allied occupation",
+          "start": "1945 CE",
+          "end": "1949 CE",
+          "startDates": [
+            {
+              "year": "1945 CE",
+              "source": {
+                "sourceKey": "wp-allied-occupied-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1949 CE",
+              "source": {
+                "sourceKey": "wp-allied-occupied-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "West Germany (Federal Republic)",
+          "start": "1949 CE",
+          "end": "1990 CE",
+          "startDates": [
+            {
+              "year": "1949 CE",
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1990 CE",
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "East Germany (GDR)",
+          "start": "1949 CE",
+          "end": "1990 CE",
+          "startDates": [
+            {
+              "year": "1949 CE",
+              "source": {
+                "sourceKey": "wp-east-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1990 CE",
+              "source": {
+                "sourceKey": "wp-east-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Reunified Federal Republic",
+          "start": "1990 CE",
+          "end": "2026 CE",
+          "startDates": [
+            {
+              "year": "1990 CE",
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox end: reunification, 3 October 1990"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "2026 CE",
+              "source": {
+                "sourceKey": "wp-german-reunification",
+                "sourceLocation": "date: 9 November 1989 – 3 October 1990"
+              },
+              "note": "Still in being; ends at the present year for want of \"ongoing\"."
+            }
+          ]
+        }
+      ],
+      "parent": "west"
+    },
+    {
+      "id": "poland",
+      "name": "Poland",
+      "color": "#c0394b",
+      "parent": "west",
+      "url": "https://en.wikipedia.org/wiki/Poland",
+      "span": {
+        "start": 1569,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 1569,
+            "source": {
+              "sourceKey": "wp-polish-lithuanian-commonwealth",
+              "sourceLocation": "infobox year_start: 1569"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-poland",
+              "sourceLocation": "infobox: current state"
+            },
+            "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Polish–Lithuanian Commonwealth",
+          "start": 1569,
+          "end": 1795,
+          "startDates": [
+            {
+              "year": 1569,
+              "source": {
+                "sourceKey": "wp-polish-lithuanian-commonwealth",
+                "sourceLocation": "infobox year_start: 1569"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1795,
+              "source": {
+                "sourceKey": "wp-polish-lithuanian-commonwealth",
+                "sourceLocation": "infobox year_end: 1795"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Duchy of Warsaw",
+          "start": 1807,
+          "end": 1815,
+          "startDates": [
+            {
+              "year": 1807,
+              "source": {
+                "sourceKey": "wp-duchy-of-warsaw",
+                "sourceLocation": "infobox year_start: 1807"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-duchy-of-warsaw",
+                "sourceLocation": "infobox year_end: 1815"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Congress Poland (in union with Russia)",
+          "start": 1815,
+          "end": 1915,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-congress-poland",
+                "sourceLocation": "infobox life span: 1815–1915"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1915,
+              "source": {
+                "sourceKey": "wp-congress-poland",
+                "sourceLocation": "infobox life span: 1815–1915"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Republic",
+          "start": 1918,
+          "end": 1939,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-second-polish-republic",
+                "sourceLocation": "infobox life span: 1918–1939"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-second-polish-republic",
+                "sourceLocation": "infobox life span: 1918–1939"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Government-in-exile",
+          "start": 1939,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-polish-government-in-exile",
+                "sourceLocation": "infobox year_start: 1939"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-polish-government-in-exile",
+                "sourceLocation": "infobox year_end: 1990"
+              }
+            }
+          ]
+        },
+        {
+          "name": "People's Republic",
+          "start": 1947,
+          "end": 1989,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-polish-people-s-republic",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1989,
+              "source": {
+                "sourceKey": "wp-polish-people-s-republic",
+                "sourceLocation": "infobox year_end: 1989"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Third Republic",
+          "start": 1989,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 1989,
+              "source": {
+                "sourceKey": "wp-poland",
+                "sourceLocation": "infobox: Third Republic (31 December 1989)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-poland",
+                "sourceLocation": "infobox: current state"
+              },
+              "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soviet-union",
+      "name": "Soviet Union",
+      "color": "#b33a3a",
+      "parent": "east",
+      "url": "https://en.wikipedia.org/wiki/Soviet_Union",
+      "span": {
+        "start": 1922,
+        "end": 1991,
+        "startDates": [
+          {
+            "year": 1922,
+            "source": {
+              "sourceKey": "wp-soviet-union",
+              "sourceLocation": "infobox life span: 1922–1991"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1991,
+            "source": {
+              "sourceKey": "wp-soviet-union",
+              "sourceLocation": "infobox date_end: 26 December 1991"
+            }
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Soviet Union",
+          "start": 1922,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-soviet-union",
+                "sourceLocation": "infobox life span: 1922–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-soviet-union",
+                "sourceLocation": "infobox date_end: 26 December 1991"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "russia",
+      "name": "Russia",
+      "color": "#8a4f3a",
+      "parent": "east",
+      "url": "https://en.wikipedia.org/wiki/Russia",
+      "span": {
+        "start": 1547,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 1547,
+            "source": {
+              "sourceKey": "wp-tsardom-of-russia",
+              "sourceLocation": "infobox year_start: 1547"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-russia",
+              "sourceLocation": "infobox: current state"
+            },
+            "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Tsardom of Russia",
+          "start": 1547,
+          "end": 1721,
+          "startDates": [
+            {
+              "year": 1547,
+              "source": {
+                "sourceKey": "wp-tsardom-of-russia",
+                "sourceLocation": "infobox year_start: 1547"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-tsardom-of-russia",
+                "sourceLocation": "infobox year_end: 1721"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Russian Empire",
+          "start": 1721,
+          "end": 1917,
+          "startDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-russian-empire",
+                "sourceLocation": "infobox year_start: 1721"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-russian-empire",
+                "sourceLocation": "infobox year_end: 1917"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Russian Republic",
+          "start": 1917,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-russian-republic",
+                "sourceLocation": "infobox year_start: 1917"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-russian-republic",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Russian SFSR",
+          "start": 1917,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-russian-soviet-federative-socialist-republic",
+                "sourceLocation": "infobox year_start: 1917"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-russian-soviet-federative-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Russian Federation",
+          "start": 1991,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-russia",
+                "sourceLocation": "infobox: Belovezha Accords ratifed (12 December 1991)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-russia",
+                "sourceLocation": "infobox: current state"
+              },
+              "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ukraine",
+      "name": "Ukraine",
+      "color": "#3a6fb3",
+      "parent": "east",
+      "url": "https://en.wikipedia.org/wiki/Ukraine",
+      "span": {
+        "start": 1648,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 1648,
+            "source": {
+              "sourceKey": "wp-cossack-hetmanate",
+              "sourceLocation": "infobox year_start: 1648"
+            }
+          },
+          {
+            "year": 1649,
+            "source": {
+              "sourceKey": "wp-cossack-hetmanate",
+              "sourceLocation": "infobox date_start: 18 (8) August 1649"
+            },
+            "note": "The same article gives this year too."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-ukraine",
+              "sourceLocation": "infobox: current state"
+            },
+            "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Cossack Hetmanate",
+          "start": 1648,
+          "end": 1764,
+          "startDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-cossack-hetmanate",
+                "sourceLocation": "infobox year_start: 1648"
+              }
+            },
+            {
+              "year": 1649,
+              "source": {
+                "sourceKey": "wp-cossack-hetmanate",
+                "sourceLocation": "infobox date_start: 18 (8) August 1649"
+              },
+              "note": "The same article gives this year too."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1764,
+              "source": {
+                "sourceKey": "wp-cossack-hetmanate",
+                "sourceLocation": "infobox year_end: 1764"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ukrainian People's Republic",
+          "start": 1917,
+          "end": 1921,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-ukrainian-people-s-republic",
+                "sourceLocation": "infobox year_start: 1917"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1921,
+              "source": {
+                "sourceKey": "wp-ukrainian-people-s-republic",
+                "sourceLocation": "infobox year_end: 1921"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ukrainian State (Second Hetmanate)",
+          "start": 1918,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-ukrainian-state",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-ukrainian-state",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ukrainian SSR",
+          "start": 1919,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-ukrainian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1919–1991"
+              }
+            },
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-ukrainian-soviet-socialist-republic",
+                "sourceLocation": "infobox date_start: 30 December 1922"
+              },
+              "note": "The same article gives this year too."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-ukrainian-soviet-socialist-republic",
+                "sourceLocation": "infobox date_end: 26 December 1991"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ukraine (independent)",
+          "start": 1991,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-ukraine",
+                "sourceLocation": "infobox: Independence declared (24 August 1991)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-ukraine",
+                "sourceLocation": "infobox: current state"
+              },
+              "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estonia",
+      "name": "Estonia",
+      "color": "#3a8fb3",
+      "parent": "east",
+      "url": "https://en.wikipedia.org/wiki/Estonia",
+      "span": {
+        "start": 1918,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 1918,
+            "source": {
+              "sourceKey": "wp-estonia",
+              "sourceLocation": "infobox: Declaration of Independence (24 February 1918)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-estonia",
+              "sourceLocation": "infobox: current state"
+            },
+            "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Republic of Estonia",
+          "start": 1918,
+          "end": 1940,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-estonia",
+                "sourceLocation": "infobox: Declaration of Independence (24 February 1918)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-estonia",
+                "sourceLocation": "infobox: German and Soviet occupations (1940–1991)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Estonian SSR",
+          "start": 1940,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1940"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            },
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox life_span: 1940–1941, 1944–1990"
+              },
+              "note": "The same article gives this year too."
+            }
+          ]
+        },
+        {
+          "name": "Republic of Estonia (restored)",
+          "start": 1991,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-estonia",
+                "sourceLocation": "infobox: Restoration of Independence (20 August 1991)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-estonia",
+                "sourceLocation": "infobox: current state"
+              },
+              "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "color": "#b3923a",
+      "parent": "mideast",
+      "url": "https://en.wikipedia.org/wiki/Egypt",
+      "span": {
+        "start": 1517,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 1517,
+            "source": {
+              "sourceKey": "wp-ottoman-egypt",
+              "sourceLocation": "infobox year_start: 1517"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-united-arab-republic",
+              "sourceLocation": "infobox: current state"
+            },
+            "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Ottoman Egypt",
+          "start": 1517,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1517,
+              "source": {
+                "sourceKey": "wp-ottoman-egypt",
+                "sourceLocation": "infobox year_start: 1517"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-ottoman-egypt",
+                "sourceLocation": "infobox year_end: 1914"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Khedivate of Egypt",
+          "start": 1867,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1867,
+              "source": {
+                "sourceKey": "wp-khedivate-of-egypt",
+                "sourceLocation": "infobox year_start: 1867"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-khedivate-of-egypt",
+                "sourceLocation": "infobox year_end: 1914"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sultanate of Egypt",
+          "start": 1914,
+          "end": 1922,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-sultanate-of-egypt",
+                "sourceLocation": "infobox year_start: 1914"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-sultanate-of-egypt",
+                "sourceLocation": "infobox year_end: 1922"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kingdom of Egypt",
+          "start": 1922,
+          "end": 1953,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-kingdom-of-egypt",
+                "sourceLocation": "infobox year_start: 1922"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1953,
+              "source": {
+                "sourceKey": "wp-kingdom-of-egypt",
+                "sourceLocation": "infobox year_end: 1953"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Republic of Egypt",
+          "start": 1953,
+          "end": 1958,
+          "startDates": [
+            {
+              "year": 1953,
+              "source": {
+                "sourceKey": "wp-republic-of-egypt-1953-1958",
+                "sourceLocation": "infobox year_start: 1953"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-republic-of-egypt-1953-1958",
+                "sourceLocation": "infobox year_end: 1958"
+              }
+            }
+          ]
+        },
+        {
+          "name": "United Arab Republic",
+          "start": 1958,
+          "end": 1971,
+          "startDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox year_start: 1958"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1971,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox year_end: 1971"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Arab Republic of Egypt",
+          "start": 1971,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 1971,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox year_end: 1971"
+              }
+            },
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox year_start: 1958"
+              },
+              "note": "The same article gives this year too."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox: current state"
+              },
+              "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syria",
+      "name": "Syria",
+      "color": "#3a9b6f",
+      "parent": "mideast",
+      "url": "https://en.wikipedia.org/wiki/Syria",
+      "span": {
+        "start": 1516,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 1516,
+            "source": {
+              "sourceKey": "wp-damascus-eyalet",
+              "sourceLocation": "infobox year_start: 1516"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-syria",
+              "sourceLocation": "infobox: current state"
+            },
+            "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Ottoman Syria (Damascus Eyalet)",
+          "start": 1516,
+          "end": 1865,
+          "startDates": [
+            {
+              "year": 1516,
+              "source": {
+                "sourceKey": "wp-damascus-eyalet",
+                "sourceLocation": "infobox year_start: 1516"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1865,
+              "source": {
+                "sourceKey": "wp-damascus-eyalet",
+                "sourceLocation": "infobox year_end: 1865"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Syria Vilayet",
+          "start": 1865,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1865,
+              "source": {
+                "sourceKey": "wp-syria-vilayet",
+                "sourceLocation": "infobox year_start: 1865"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-syria-vilayet",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Arab Kingdom of Syria",
+          "start": 1919,
+          "end": 1920,
+          "startDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-arab-kingdom-of-syria",
+                "sourceLocation": "infobox year_start: 1919"
+              }
+            },
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-arab-kingdom-of-syria",
+                "sourceLocation": "infobox life_span: 1920"
+              },
+              "note": "The same article gives this year too."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-arab-kingdom-of-syria",
+                "sourceLocation": "infobox year_end: 1920"
+              }
+            }
+          ]
+        },
+        {
+          "name": "French Mandate (State of Syria, First Republic)",
+          "start": 1924,
+          "end": 1946,
+          "startDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-syria",
+                "sourceLocation": "infobox: State of Syria under French mandate (1 December 1924)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1946,
+              "source": {
+                "sourceKey": "wp-syria",
+                "sourceLocation": "infobox: End of the French mandate (17 April 1946)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Syrian Republic",
+          "start": 1950,
+          "end": 1958,
+          "startDates": [
+            {
+              "year": 1950,
+              "source": {
+                "sourceKey": "wp-second-syrian-republic",
+                "sourceLocation": "infobox life span: 1950–1963"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-second-syrian-republic",
+                "sourceLocation": "infobox life span: 1958–1961: United Arab Republic"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Syrian Republic (restored)",
+          "start": 1961,
+          "end": 1963,
+          "startDates": [
+            {
+              "year": 1961,
+              "source": {
+                "sourceKey": "wp-second-syrian-republic",
+                "sourceLocation": "infobox life span: 1958–1961: United Arab Republic"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1963,
+              "source": {
+                "sourceKey": "wp-second-syrian-republic",
+                "sourceLocation": "infobox life span: 1950–1963"
+              }
+            }
+          ]
+        },
+        {
+          "name": "United Arab Republic",
+          "start": 1958,
+          "end": 1961,
+          "startDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox year_start: 1958"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1961,
+              "source": {
+                "sourceKey": "wp-syria",
+                "sourceLocation": "infobox: Part of the United Arab Republic (22 February 1958 – 28 September 1961)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ba'athist Syria",
+          "start": 1963,
+          "end": 2024,
+          "startDates": [
+            {
+              "year": 1963,
+              "source": {
+                "sourceKey": "wp-ba-athist-syria",
+                "sourceLocation": "infobox year_start: 1963"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2024,
+              "source": {
+                "sourceKey": "wp-ba-athist-syria",
+                "sourceLocation": "infobox year_end: 2024"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Transitional government",
+          "start": 2025,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 2025,
+              "source": {
+                "sourceKey": "wp-syria",
+                "sourceLocation": "infobox: Syrian transitional government established (29 March 2025)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-syria",
+                "sourceLocation": "infobox: current state"
+              },
+              "note": "Still in being; today's format has no \"ongoing\", so it ends at the present year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uar",
+      "name": "United Arab Republic",
+      "color": "#6f6f3a",
+      "parent": "mideast",
+      "url": "https://en.wikipedia.org/wiki/United_Arab_Republic",
+      "span": {
+        "start": 1958,
+        "end": 1971,
+        "startDates": [
+          {
+            "year": 1958,
+            "source": {
+              "sourceKey": "wp-united-arab-republic",
+              "sourceLocation": "infobox year_start: 1958"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1971,
+            "source": {
+              "sourceKey": "wp-united-arab-republic",
+              "sourceLocation": "infobox year_end: 1971"
+            }
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "United Arab Republic (Egypt and Syria)",
+          "start": 1958,
+          "end": 1961,
+          "startDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox year_start: 1958"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1961,
+              "source": {
+                "sourceKey": "wp-syria",
+                "sourceLocation": "infobox: Part of the United Arab Republic (22 February 1958 – 28 September 1961)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "United Arab Republic (Egypt only)",
+          "start": 1961,
+          "end": 1971,
+          "startDates": [
+            {
+              "year": 1961,
+              "source": {
+                "sourceKey": "wp-syria",
+                "sourceLocation": "infobox: Part of the United Arab Republic (22 February 1958 – 28 September 1961)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1971,
+              "source": {
+                "sourceKey": "wp-united-arab-republic",
+                "sourceLocation": "infobox year_end: 1971"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "wp-kingdom-of-france": {
+      "name": "Kingdom of France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-first-republic": {
+      "name": "French First Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_First_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-french-empire": {
+      "name": "First French Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_French_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bourbon-restoration": {
+      "name": "Bourbon Restoration in France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bourbon_Restoration_in_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-july-monarchy": {
+      "name": "July Monarchy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/July_Monarchy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-second-republic": {
+      "name": "French Second Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Second_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-french-empire": {
+      "name": "Second French Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_French_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-third-republic": {
+      "name": "French Third Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Third_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vichy-france": {
+      "name": "Vichy France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vichy_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-free-france": {
+      "name": "Free France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Free_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gprf": {
+      "name": "Provisional Government of the French Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Provisional_Government_of_the_French_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-fourth-republic": {
+      "name": "French Fourth Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Fourth_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-fifth-republic": {
+      "name": "French Fifth Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Fifth_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-holy-roman-empire": {
+      "name": "Holy Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-confederation-of-the-rhine": {
+      "name": "Confederation of the Rhine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Confederation_of_the_Rhine",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-confederation": {
+      "name": "German Confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-empire-1848": {
+      "name": "German Empire (1848–1849) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Empire_(1848–1849)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-north-german-confederation": {
+      "name": "North German Confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/North_German_Confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-empire": {
+      "name": "German Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-weimar-republic": {
+      "name": "Weimar Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Weimar_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nazi-germany": {
+      "name": "Nazi Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nazi_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-allied-occupied-germany": {
+      "name": "Allied-occupied Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Allied-occupied_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-west-germany": {
+      "name": "West Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/West_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-east-germany": {
+      "name": "East Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/East_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-reunification": {
+      "name": "German reunification (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_reunification",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-spanish-succession": {
+      "name": "War of the Spanish Succession (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bastille": {
+      "name": "Storming of the Bastille (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hre-dissolution": {
+      "name": "Dissolution of the Holy Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dissolution_of_the_Holy_Roman_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-1848": {
+      "name": "German revolutions of 1848–1849 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_revolutions_of_1848–1849",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-franco-prussian-war": {
+      "name": "Franco-Prussian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ww1": {
+      "name": "World War I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ww2": {
+      "name": "World War II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-algerian-war": {
+      "name": "Algerian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Algerian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-berlin-wall": {
+      "name": "Berlin Wall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berlin_Wall",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-polish-lithuanian-commonwealth": {
+      "name": "Polish–Lithuanian Commonwealth (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Polish–Lithuanian_Commonwealth",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-duchy-of-warsaw": {
+      "name": "Duchy of Warsaw (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Warsaw",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-congress-poland": {
+      "name": "Congress Poland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Congress_Poland",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-polish-republic": {
+      "name": "Second Polish Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Polish_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-polish-government-in-exile": {
+      "name": "Polish government-in-exile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Polish_government-in-exile",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-polish-people-s-republic": {
+      "name": "Polish People's Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Polish_People's_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-poland": {
+      "name": "Poland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Poland",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-soviet-union": {
+      "name": "Soviet Union (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Soviet_Union",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tsardom-of-russia": {
+      "name": "Tsardom of Russia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tsardom_of_Russia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-empire": {
+      "name": "Russian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-republic": {
+      "name": "Russian Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-soviet-federative-socialist-republic": {
+      "name": "Russian Soviet Federative Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Soviet_Federative_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russia": {
+      "name": "Russia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cossack-hetmanate": {
+      "name": "Cossack Hetmanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cossack_Hetmanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukrainian-people-s-republic": {
+      "name": "Ukrainian People's Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukrainian_People's_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukrainian-state": {
+      "name": "Ukrainian State (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukrainian_State",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukrainian-soviet-socialist-republic": {
+      "name": "Ukrainian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukrainian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukraine": {
+      "name": "Ukraine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukraine",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-estonia": {
+      "name": "Estonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Estonia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-estonian-soviet-socialist-republic": {
+      "name": "Estonian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Estonian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ottoman-egypt": {
+      "name": "Ottoman Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ottoman_Egypt",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khedivate-of-egypt": {
+      "name": "Khedivate of Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khedivate_of_Egypt",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-egypt": {
+      "name": "Sultanate of Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Egypt",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-egypt": {
+      "name": "Kingdom of Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Egypt",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-republic-of-egypt-1953-1958": {
+      "name": "Republic of Egypt (1953–1958) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_Egypt_(1953–1958)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-united-arab-republic": {
+      "name": "United Arab Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/United_Arab_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-damascus-eyalet": {
+      "name": "Damascus Eyalet (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Damascus_Eyalet",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-syria-vilayet": {
+      "name": "Syria vilayet (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Syria_vilayet",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-arab-kingdom-of-syria": {
+      "name": "Arab Kingdom of Syria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Arab_Kingdom_of_Syria",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-syria": {
+      "name": "Syria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Syria",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-syrian-republic": {
+      "name": "Second Syrian Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Syrian_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ba-athist-syria": {
+      "name": "Ba'athist Syria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ba'athist_Syria",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-partitions-of-poland": {
+      "name": "Partitions of Poland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Partitions_of_Poland",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-occupation-of-the-baltic-states": {
+      "name": "Occupation of the Baltic states (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Occupation_of_the_Baltic_states",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dissolution-of-the-soviet-union": {
+      "name": "Dissolution of the Soviet Union (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    }
+  },
+  "tags": {
+    "wikipedia": {
+      "name": "Wikipedia"
+    }
+  },
+  "events": [
+    {
+      "uuid": "spanish-succession",
+      "title": "War of the Spanish Succession",
+      "descr": "France against a coalition led by the Emperor, Britain and the Dutch over the Spanish throne.",
+      "start": "1701 CE",
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-spanish-succession",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": "1714 CE"
+    },
+    {
+      "uuid": "bastille",
+      "title": "Storming of the Bastille",
+      "descr": "Parisians take the royal fortress-prison on 14 July; the start of the Revolution in the streets.",
+      "start": "1789 CE",
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bastille",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "napoleon-crowned",
+      "title": "Coronation of Napoleon",
+      "descr": "",
+      "start": "1804 CE",
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-french-empire",
+          "sourceLocation": "infobox: 2 December 1804"
+        }
+      ]
+    },
+    {
+      "uuid": "hre-dissolved",
+      "title": "Dissolution of the Holy Roman Empire",
+      "descr": "Francis II lays down the imperial crown on 6 August.",
+      "start": "1806 CE",
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hre-dissolution",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "german-1848",
+      "title": "German revolutions of 1848–49",
+      "descr": "",
+      "start": "1848 CE",
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-1848",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": "1849 CE"
+    },
+    {
+      "uuid": "franco-prussian-war",
+      "title": "Franco-Prussian War",
+      "descr": "",
+      "start": "1870 CE",
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-franco-prussian-war",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": "1871 CE",
+      "importance": 1,
+      "links": [
+        {
+          "to": "german-empire-proclaimed",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "german-empire-proclaimed",
+      "title": "German Empire proclaimed",
+      "descr": "",
+      "start": "1871 CE",
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-empire",
+          "sourceLocation": "infobox: unification, 18 January 1871"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ww1",
+      "title": "First World War",
+      "descr": "",
+      "start": "1914 CE",
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ww1",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": "1918 CE",
+      "importance": 1
+    },
+    {
+      "uuid": "ww2",
+      "title": "Second World War",
+      "descr": "",
+      "start": "1939 CE",
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ww2",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": "1945 CE",
+      "importance": 1
+    },
+    {
+      "uuid": "algerian-war",
+      "title": "Algerian War",
+      "descr": "",
+      "start": "1954 CE",
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-algerian-war",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": "1962 CE"
+    },
+    {
+      "uuid": "berlin-wall",
+      "title": "Berlin Wall",
+      "descr": "Built from 13 August 1961; opened on 9 November 1989.",
+      "start": "1961 CE",
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-berlin-wall",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": "1989 CE"
+    },
+    {
+      "uuid": "reunification",
+      "title": "German reunification",
+      "descr": "",
+      "start": "1990 CE",
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-reunification",
+          "sourceLocation": "date: 3 October 1990"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "partition-1795",
+      "title": "Third Partition of Poland",
+      "descr": "",
+      "start": 1795,
+      "tracks": [
+        "poland",
+        "russia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-partitions-of-poland",
+          "sourceLocation": "infobox date"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ussr-founded",
+      "title": "Treaty on the Creation of the USSR",
+      "descr": "",
+      "start": 1922,
+      "tracks": [
+        "soviet-union",
+        "russia",
+        "ukraine"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-soviet-union",
+          "sourceLocation": "infobox: 30 December 1922"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "estonia-annexed",
+      "title": "Soviet occupation of the Baltic states",
+      "descr": "",
+      "start": 1940,
+      "tracks": [
+        "estonia",
+        "soviet-union"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-occupation-of-the-baltic-states",
+          "sourceLocation": "infobox date"
+        }
+      ]
+    },
+    {
+      "uuid": "uar-formed",
+      "title": "Egypt and Syria form the United Arab Republic",
+      "descr": "",
+      "start": 1958,
+      "tracks": [
+        "uar",
+        "egypt",
+        "syria"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-united-arab-republic",
+          "sourceLocation": "infobox: 22 February 1958"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "syria-secedes",
+      "title": "Syria leaves the United Arab Republic",
+      "descr": "",
+      "start": 1961,
+      "tracks": [
+        "uar",
+        "syria"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-syria",
+          "sourceLocation": "infobox: 28 September 1961"
+        }
+      ]
+    },
+    {
+      "uuid": "ussr-dissolved",
+      "title": "Dissolution of the Soviet Union",
+      "descr": "",
+      "start": 1991,
+      "tracks": [
+        "soviet-union",
+        "russia",
+        "ukraine",
+        "estonia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-dissolution-of-the-soviet-union",
+          "sourceLocation": "infobox date"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "assad-falls",
+      "title": "Fall of the Assad regime",
+      "descr": "",
+      "start": 2024,
+      "tracks": [
+        "syria"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ba-athist-syria",
+          "sourceLocation": "infobox: 8 December 2024"
+        }
+      ]
+    }
+  ]
+}

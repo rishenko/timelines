@@ -21,6 +21,88 @@
       },
       "defaultTheme": "parchment",
       "map": "../maps/ancient-classical.json"
+    },
+    {
+      "id": "modern-states",
+      "title": "Modern States",
+      "file": "modern-states.json",
+      "subtitle": "test timeline (pilot)",
+      "eventCount": 12,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      }
+    },
+    {
+      "id": "poc-ancient",
+      "title": "POC: ancient",
+      "file": "poc-ancient.json",
+      "subtitle": "test set (baseline format)",
+      "eventCount": 38,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      },
+      "defaultTheme": "parchment"
+    },
+    {
+      "id": "poc-battletech",
+      "title": "POC: BattleTech",
+      "file": "poc-battletech.json",
+      "subtitle": "test set (baseline format)",
+      "eventCount": 14,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      },
+      "defaultTheme": "dark"
+    },
+    {
+      "id": "poc-modern",
+      "title": "POC: modern states",
+      "file": "poc-modern.json",
+      "subtitle": "test set (baseline format)",
+      "eventCount": 19,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      }
     }
   ]
 }

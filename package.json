@@ -29,7 +29,9 @@
     "contrast:ui": "node scripts/contrast-ui.ts",
     "reflow": "node scripts/reflow.ts",
     "targets": "node scripts/targets.ts",
-    "a11y:report": "node scripts/a11y-report.ts"
+    "a11y:report": "node scripts/a11y-report.ts",
+    "poc:shots": "bash scripts/poc-shots.sh",
+    "poc:metrics": "node scripts/poc-metrics.ts"
   },
   "dependencies": {
     "react": "^19.3.1",
