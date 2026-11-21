@@ -1,4 +1,4 @@
-import { useMemo, type ReactNode } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import type { Dataset, Track } from '../types.ts';
 import type { Filters } from '../state/filters.ts';
 import { childrenMap } from '../lib/tracks.ts';
@@ -37,8 +37,36 @@ interface Props {
   regions?: ReactNode;
 }
 
+const OPEN_KEY = 'timelines:filters-open';
+/**
+ * Which of the two sections are open: the reader's last choice, else both on wide screens and only Data filters on
+ * phones (the chart options are the ones readers change least).
+ */
+function initialOpen(): { visual: boolean; data: boolean } {
+  try {
+    const saved = JSON.parse(localStorage.getItem(OPEN_KEY) ?? 'null') as { visual?: unknown; data?: unknown } | null;
+    if (saved && typeof saved.visual === 'boolean' && typeof saved.data === 'boolean') return { visual: saved.visual, data: saved.data };
+  } catch {
+    // unreadable: use the defaults
+  }
+  const phone = typeof window !== 'undefined' && !!window.matchMedia?.('(max-width: 640px)').matches;
+  return { visual: !phone, data: true };
+}
+
 export function FiltersPanel(p: Props) {
   const { data, filters, isOn } = p;
+  const [open, setOpenState] = useState(initialOpen);
+  const setOpen = (which: 'visual' | 'data', on: boolean) =>
+    setOpenState((o) => {
+      if (o[which] === on) return o;
+      const next = { ...o, [which]: on };
+      try {
+        localStorage.setItem(OPEN_KEY, JSON.stringify(next));
+      } catch {
+        // storage off: the choice lasts until the page closes
+      }
+      return next;
+    });
   const custom = data.meta.customSourceTag;
   // Tracks as a tree: the row tree, each group switching everything below it, rows outside the ticked regions dimmed
   const { trackNodes, rowCount, inRegions } = useMemo(() => {
@@ -152,96 +180,110 @@ export function FiltersPanel(p: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, p.regionRows, p.editMode, custom]);
   return (
-    <div className={`filters-panel${p.regions ? ' has-regions' : ''}`}>
-      <section>
-        <h3>Chart</h3>
-        <label className="check" title="Collapse long stretches with no events">
-          <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Shorten gaps with no events
-        </label>
-        <label className="check" title="Arrows between connected events, and the lines joining a shared event’s rows; off, only the selected event’s show">
-          <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Show all event connections
-        </label>
-        <h3>Rows</h3>
-        <label className="check">
-          <input type="checkbox" checked={p.hideOutOfView} onChange={(e) => p.onHideOutOfView(e.target.checked)} />
-          Hide rows with nothing in view
-        </label>
-        <fieldset className="rows-look" disabled={!p.hideOutOfView}>
-          <legend className="sr-only">Hidden rows</legend>
-          <label className="check">
-            <input type="radio" name="rows-look" checked={!p.thinRows} onChange={() => p.onThinRows(false)} /> Take them out
-          </label>
-          <label className="check">
-            <input type="radio" name="rows-look" checked={p.thinRows} onChange={() => p.onThinRows(true)} /> Show them as thin lines
-          </label>
-        </fieldset>
-        <p className="muted small">
-          Rows come back as you scroll to their years. Groups stay and say how many rows are hidden below them. Thin lines keep every row in its place.
-          {p.editMode && ' Off while editing, so every row can be reached.'}
-        </p>
-      </section>
-      {p.regions}
-      <section className="tracks-filter">
-        <h3>
-          Tracks
-          <span className="bulk">
-            <button onClick={() => p.setAllTracks(true)}>all</button>
-            <button onClick={() => p.setAllTracks(false)}>none</button>
-          </span>
-        </h3>
-        {p.regionRows && (
-          <p className="muted small">
-            {inRegions} of {rowCount} rows are in the ticked regions; the rest are dimmed.
-          </p>
-        )}
-        <FilterTree
-          nodes={trackNodes}
-          label="Tracks"
-          noun="row"
-          isOn={(id) => isOn(filters.tracks, id)}
-          setMany={p.setTracks}
-          dimNote="outside the ticked regions"
-          openKeys={p.regionOpen}
-        />
-      </section>
-      <section>
-        <h3>
-          Sources
-          <span className="bulk">
-            <button onClick={() => p.setSources(Object.keys(data.sources), true)}>all</button>
-            <button onClick={() => p.setSources(Object.keys(data.sources), false)}>none</button>
-          </span>
-        </h3>
-        <FilterTree
-          nodes={sourceNodes}
-          label="Sources"
-          noun="source"
-          isOn={(k) => isOn(filters.sources, k)}
-          setMany={p.setSources}
-          dimNote="not used by rows in the ticked regions"
-        />
-      </section>
-      {Object.keys(data.tags).length > 0 && (
-        <section>
-          <h3>Source tags</h3>
-          <div className="toggles">
-            {Object.entries(data.tags).map(([k, a]) => (
-              <button
-                key={k}
-                className={`toggle ${isOn(filters.tags, k) ? 'on' : 'off'}`}
-                onClick={() => p.toggleTag(k)}
-                aria-pressed={isOn(filters.tags, k)}
-              >
-                {a.name}
-              </button>
-            ))}
-          </div>
-          <p className="muted small">
-            An event shows while at least one of its tracks and one of its sources are on. Sources marked as spoilers
-            start hidden.
-          </p>
-        </section>
-      )}
+    <div className="filters-panel">
+      <details className="filters-group visual" open={open.visual} onToggle={(e) => setOpen('visual', e.currentTarget.open)}>
+        <summary>
+          <span className="filters-title">Visual filters</span> <span className="muted small">how the chart draws</span>
+        </summary>
+        <div className="filters-group-body">
+          <section>
+            <h3>Chart</h3>
+            <label className="check" title="Collapse long stretches with no events">
+              <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Shorten gaps with no events
+            </label>
+            <label className="check" title="Arrows between connected events, and the lines joining a shared event’s rows; off, only the selected event’s show">
+              <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Show all event connections
+            </label>
+            <h3>Rows</h3>
+            <label className="check">
+              <input type="checkbox" checked={p.hideOutOfView} onChange={(e) => p.onHideOutOfView(e.target.checked)} />
+              Hide rows with nothing in view
+            </label>
+            <fieldset className="rows-look" disabled={!p.hideOutOfView}>
+              <legend className="sr-only">Hidden rows</legend>
+              <label className="check">
+                <input type="radio" name="rows-look" checked={!p.thinRows} onChange={() => p.onThinRows(false)} /> Take them out
+              </label>
+              <label className="check">
+                <input type="radio" name="rows-look" checked={p.thinRows} onChange={() => p.onThinRows(true)} /> Show them as thin lines
+              </label>
+            </fieldset>
+            <p className="muted small">
+              Rows come back as you scroll to their years. Groups stay and say how many rows are hidden below them. Thin lines keep every row in its place.
+              {p.editMode && ' Off while editing, so every row can be reached.'}
+            </p>
+          </section>
+        </div>
+      </details>
+      <details className="filters-group data" open={open.data} onToggle={(e) => setOpen('data', e.currentTarget.open)}>
+        <summary>
+          <span className="filters-title">Data filters</span> <span className="muted small">what it shows</span>
+        </summary>
+        <div className={`filters-group-body data-body${p.regions ? ' has-regions' : ''}`}>
+          {p.regions}
+          <section className="tracks-filter">
+            <h3>
+              Tracks
+              <span className="bulk">
+                <button onClick={() => p.setAllTracks(true)}>all</button>
+                <button onClick={() => p.setAllTracks(false)}>none</button>
+              </span>
+            </h3>
+            {p.regionRows && (
+              <p className="muted small">
+                {inRegions} of {rowCount} rows are in the ticked regions; the rest are dimmed.
+              </p>
+            )}
+            <FilterTree
+              nodes={trackNodes}
+              label="Tracks"
+              noun="row"
+              isOn={(id) => isOn(filters.tracks, id)}
+              setMany={p.setTracks}
+              dimNote="outside the ticked regions"
+              openKeys={p.regionOpen}
+            />
+          </section>
+          <section>
+            <h3>
+              Sources
+              <span className="bulk">
+                <button onClick={() => p.setSources(Object.keys(data.sources), true)}>all</button>
+                <button onClick={() => p.setSources(Object.keys(data.sources), false)}>none</button>
+              </span>
+            </h3>
+            <FilterTree
+              nodes={sourceNodes}
+              label="Sources"
+              noun="source"
+              isOn={(k) => isOn(filters.sources, k)}
+              setMany={p.setSources}
+              dimNote="not used by rows in the ticked regions"
+            />
+          </section>
+          {Object.keys(data.tags).length > 0 && (
+            <section>
+              <h3>Source tags</h3>
+              <div className="toggles">
+                {Object.entries(data.tags).map(([k, a]) => (
+                  <button
+                    key={k}
+                    className={`toggle ${isOn(filters.tags, k) ? 'on' : 'off'}`}
+                    onClick={() => p.toggleTag(k)}
+                    aria-pressed={isOn(filters.tags, k)}
+                  >
+                    {a.name}
+                  </button>
+                ))}
+              </div>
+              <p className="muted small">
+                An event shows while at least one of its tracks and one of its sources are on. Sources marked as spoilers
+                start hidden.
+              </p>
+            </section>
+          )}
+        </div>
+      </details>
     </div>
   );
 }

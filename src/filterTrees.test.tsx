@@ -75,4 +75,30 @@ describe('Filters → Tracks and Sources', () => {
     expect(box(sources(), 'Used by rows in the ticked regions')).toBeTruthy();
     expect(box(sources(), 'Other sources')).toBeTruthy();
   });
+
+  it('splits into Visual filters and Data filters, both open on wide screens, and remembers the reader\'s choice', () => {
+    renderApp(OPEN);
+    openFilters();
+    const visual = document.querySelector<HTMLDetailsElement>('details.filters-group.visual')!;
+    const dataSection = document.querySelector<HTMLDetailsElement>('details.filters-group.data')!;
+    expect(visual.open && dataSection.open).toBe(true);
+    expect(within(visual).getByRole('checkbox', { name: 'Hide rows with nothing in view' })).toBeTruthy();
+    expect(within(dataSection).getByRole('list', { name: 'Tracks' })).toBeTruthy();
+    visual.open = false;
+    act(() => fireEvent(visual, new Event('toggle')));
+    expect(JSON.parse(localStorage.getItem('timelines:filters-open')!)).toEqual({ visual: false, data: true });
+  });
+
+  it('on a phone, starts with Visual filters folded', () => {
+    const was = window.matchMedia;
+    window.matchMedia = ((q: string) => ({ matches: q.includes('max-width'), media: q, addEventListener() {}, removeEventListener() {} })) as never;
+    try {
+      renderApp(OPEN);
+      openFilters();
+      expect(document.querySelector<HTMLDetailsElement>('details.filters-group.visual')!.open).toBe(false);
+      expect(document.querySelector<HTMLDetailsElement>('details.filters-group.data')!.open).toBe(true);
+    } finally {
+      window.matchMedia = was;
+    }
+  });
 });

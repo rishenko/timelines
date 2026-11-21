@@ -188,7 +188,9 @@
 
 .filters-panel {
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) 2fr 2fr 1fr;
+  /* Visual filters (chart and rows) beside Data filters (regions, tracks, sources, tags) */
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+  align-items: start;
   gap: 18px;
   padding: 10px 14px 14px;
   border-bottom: 1px solid var(--line);
@@ -318,9 +320,49 @@ main {
 }
 
 
-/* Filters → Regions (components/RegionFilter.tsx): its own column before the row toggles, on timelines with regions */
-.filters-panel.has-regions {
-  grid-template-columns: minmax(150px, 1fr) minmax(190px, 1.2fr) 2fr 2fr 1fr;
+/* the two collapsible sections; their headings are the native <details> summaries */
+.filters-group > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: 24px;
+  padding: 2px 0;
+  cursor: pointer;
+  list-style-position: inside;
+}
+/* a flex summary loses the native triangle: draw one, ▸ closed and ▾ open */
+.filters-group > summary::-webkit-details-marker {
+  display: none;
+}
+.filters-group > summary::before {
+  content: '▸';
+  width: 1em;
+  color: var(--text);
+}
+.filters-group[open] > summary::before {
+  content: '▾';
+}
+.filters-group > summary .filters-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+.filters-group[open] > summary {
+  margin-bottom: 8px;
+}
+.filters-group-body.data-body {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 18px;
+}
+/* Filters → Regions (components/RegionFilter.tsx): its own column before the tracks, on timelines with regions */
+.filters-group-body.data-body.has-regions {
+  grid-template-columns: minmax(190px, 1.2fr) 2fr 2fr 1fr;
+}
+@media (pointer: coarse) {
+  .filters-group > summary {
+    min-height: 40px;
+    align-items: center;
+  }
 }
 .region-tree,
 .region-tree ul {
