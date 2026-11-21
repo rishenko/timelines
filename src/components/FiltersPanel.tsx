@@ -1,7 +1,8 @@
-import type { ReactNode } from 'react';
-import type { Dataset } from '../types.ts';
+import { useMemo, type ReactNode } from 'react';
+import type { Dataset, Track } from '../types.ts';
 import type { Filters } from '../state/filters.ts';
-import { trackDepth, treeOrder } from '../lib/tracks.ts';
+import { childrenMap } from '../lib/tracks.ts';
+import { FilterTree, type FilterNode } from './FilterTree.tsx';
 
 interface Props {
   data: Dataset;
@@ -11,6 +12,12 @@ interface Props {
   toggleSource: (k: string) => void;
   toggleTag: (k: string) => void;
   setAllTracks: (on: boolean) => void;
+  /** Switches several rows or sources at once (a group's checkbox). */
+  setTracks: (ids: string[], on: boolean) => void;
+  setSources: (keys: string[], on: boolean) => void;
+  /** While regions are ticked: the rows they show (the rest are dimmed in the lists), and the groups to open. */
+  regionRows?: Set<string>;
+  regionOpen?: string[];
   /** Long stretches with no events are squeezed into gap breaks. */
   compress: boolean;
   onCompress: (on: boolean) => void;
@@ -32,6 +39,40 @@ interface Props {
 
 export function FiltersPanel(p: Props) {
   const { data, filters, isOn } = p;
+  // Tracks as a tree: the row tree, each group switching everything below it, rows outside the ticked regions dimmed
+  const { trackNodes, rowCount, inRegions } = useMemo(() => {
+    const kids = childrenMap(data.tracks);
+    const leaves = data.tracks.filter((t) => !kids.has(t.id));
+    const build = (t: Track): FilterNode => {
+      const children = (kids.get(t.id) ?? []).map(build);
+      const ids = [t.id, ...children.flatMap((c) => c.ids)];
+      const rows = children.length ? children.reduce((n, c) => n + (c.count ?? 1), 0) : undefined;
+      return {
+        key: t.id,
+        name: t.name,
+        label: (
+          <>
+            <span className="chip" style={{ '--track-color': t.color } as React.CSSProperties} /> {t.name}
+          </>
+        ),
+        ids,
+        children,
+        count: rows,
+        dim: !!p.regionRows && !p.regionRows.has(t.id),
+        extra: p.editMode ? (
+          <button className="icon small" aria-label={`Edit ${t.name}`} title={`Edit ${t.name}`} onClick={() => p.onEditTrack(t.id)}>
+            ✎
+          </button>
+        ) : undefined,
+      };
+    };
+    return {
+      trackNodes: (kids.get(undefined) ?? []).map(build),
+      rowCount: leaves.length,
+      inRegions: p.regionRows ? leaves.filter((t) => p.regionRows!.has(t.id)).length : 0,
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.tracks, p.regionRows, p.editMode]);
   const custom = data.meta.customSourceTag;
   return (
     <div className={`filters-panel${p.regions ? ' has-regions' : ''}`}>
@@ -63,7 +104,7 @@ export function FiltersPanel(p: Props) {
         </p>
       </section>
       {p.regions}
-      <section>
+      <section className="tracks-filter">
         <h3>
           Tracks
           <span className="bulk">
@@ -71,25 +112,20 @@ export function FiltersPanel(p: Props) {
             <button onClick={() => p.setAllTracks(false)}>none</button>
           </span>
         </h3>
-        <div className="toggles">
-          {treeOrder(data.tracks).map((t) => (
-            <span key={t.id} className="toggle-wrap">
-              <button
-                className={`toggle ${isOn(filters.tracks, t.id) ? 'on' : 'off'}${trackDepth(data.tracks, t.id) ? ' nested' : ''}${trackDepth(data.tracks, t.id) > 1 ? ' deep' : ''}`}
-                style={{ '--track-color': t.color } as React.CSSProperties}
-                onClick={() => p.toggleTrack(t.id)}
-                aria-pressed={isOn(filters.tracks, t.id)}
-              >
-                <span className="chip" /> {t.name}
-              </button>
-              {p.editMode && (
-                <button className="icon small" aria-label={`Edit ${t.name}`} title={`Edit ${t.name}`} onClick={() => p.onEditTrack(t.id)}>
-                  ✎
-                </button>
-              )}
-            </span>
-          ))}
-        </div>
+        {p.regionRows && (
+          <p className="muted small">
+            {inRegions} of {rowCount} rows are in the ticked regions; the rest are dimmed.
+          </p>
+        )}
+        <FilterTree
+          nodes={trackNodes}
+          label="Tracks"
+          noun="row"
+          isOn={(id) => isOn(filters.tracks, id)}
+          setMany={p.setTracks}
+          dimNote="outside the ticked regions"
+          openKeys={p.regionOpen}
+        />
       </section>
       <section>
         <h3>Sources</h3>

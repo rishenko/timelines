@@ -45,11 +45,21 @@ export function useFilters(ds: Dataset) {
       }),
     [ds.sources],
   );
+  /** Switches several rows at once (a group's checkbox switches the group and every row below it). */
+  const setTracks = useCallback(
+    (ids: string[], on: boolean) => setFilters((f) => ({ ...f, tracks: { ...f.tracks, ...Object.fromEntries(ids.map((id) => [id, on])) } })),
+    [],
+  );
+  /** Switches several sources at once (a group of sources in Filters). */
+  const setSources = useCallback(
+    (keys: string[], on: boolean) => setFilters((f) => ({ ...f, sources: { ...f.sources, ...Object.fromEntries(keys.map((k) => [k, on])) } })),
+    [],
+  );
   const setAllTracks = useCallback(
     (on: boolean) =>
       setFilters((f) => ({ ...f, tracks: Object.fromEntries(ds.tracks.map((t) => [t.id, on])) })),
     [ds.tracks],
   );
 
-  return { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, isOn };
+  return { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, setTracks, setSources, isOn };
 }

@@ -410,3 +410,73 @@ main {
 .region-filter .make-set {
   margin-top: 8px;
 }
+
+/* Filters → Tracks and Sources (components/FilterTree.tsx): folding trees with a find box, like Regions */
+.tree-find {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+.tree-list,
+.tree-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tree-list ul {
+  padding-left: 16px;
+}
+.tree-line {
+  display: flex;
+  align-items: center;
+}
+.tree-line .fold,
+.tree-line .fold-space {
+  flex: 0 0 24px;
+  min-height: 24px;
+}
+.tree-line .fold {
+  font-size: 14px;
+  padding: 0;
+  color: var(--text);
+}
+.tree-line .check {
+  flex: 1;
+  min-width: 0;
+}
+.tree-name .chip {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--track-color);
+}
+/* outside the ticked regions: muted (still at text contrast) and in italics, and read out as such */
+.tree-list li.dim > .tree-line .tree-name {
+  color: var(--muted);
+  font-style: italic;
+}
+/* touch screens: taller lines, easier to hit with a thumb (the 24 px minimum is for mice) */
+@media (pointer: coarse) {
+  .tree-line .fold,
+  .tree-line .fold-space,
+  .tree-line .check,
+  .region-line .fold,
+  .region-line .fold-space,
+  .region-line .check {
+    min-height: 40px;
+  }
+}
+/* phones: less indent per level, so deep rows keep room for their names */
+@media (max-width: 640px) {
+  .tree-list ul,
+  .region-tree ul {
+    padding-left: 10px;
+  }
+}
+.tree-list .dim-more .more {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: left;
+  min-height: 24px;
+}

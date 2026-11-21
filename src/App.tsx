@@ -67,7 +67,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
     const m = libraryEntry ? undefined : site.find((x) => x.id === meta.id)?.map;
     return m ? new URL(m, indexUrl()).href : undefined;
   }, [libraryEntry, site, meta.id]);
-  const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, isOn } = useFilters(data);
+  const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, setTracks, setSources, isOn } = useFilters(data);
   // edit mode is declared here because the region filter (below) is off while editing
   const [editMode, setEditMode] = useState(false);
   // ---- region filter: rows outside the ticked regions are hidden, on top of the reader's own row toggles ----
@@ -96,6 +96,18 @@ export default function App({ published: opened, library: libraryEntry, site, no
     return tags;
   }, [comparison.active, comparison.ordered, regions.regionsOf]);
   const trackName = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
+  // in Filters, rows and sources outside the ticked regions are dimmed and the groups holding the ones inside open
+  const regionRows = useMemo(
+    () => (regions.active ? new Set(data.tracks.filter((t) => regions.overlay[t.id] !== false).map((t) => t.id)) : undefined),
+    [regions.active, regions.overlay, data.tracks],
+  );
+  const regionOpen = useMemo(() => {
+    if (!regions.active) return undefined;
+    const byId = new Map(data.tracks.map((t) => [t.id, t]));
+    const open = new Set<string>();
+    for (const id of regions.rowsInPicked) for (let p = byId.get(id)?.parent; p && !open.has(p); p = byId.get(p)?.parent) open.add(p);
+    return [...open];
+  }, [regions.active, regions.rowsInPicked, data.tracks]);
   const shownFilters = useMemo(() => ({ ...filters, tracks: rowsOn }), [filters, rowsOn]);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
@@ -504,6 +516,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
           toggleSource={toggleSource}
           toggleTag={toggleTag}
           setAllTracks={setAllTracks}
+          setTracks={setTracks}
+          setSources={setSources}
+          regionRows={regionRows}
+          regionOpen={regionOpen}
           compress={compress}
           onCompress={setCompress}
           showLinks={showLinks}
