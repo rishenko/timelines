@@ -34,9 +34,12 @@ for (const f of files) {
   let repeatedDates = 0;
   for (const t of tracks) {
     if (!t.span || !t.phases?.length) continue;
-    const edges = new Set(t.phases.flatMap((p: Json) => [String(p.start), String(p.end)]));
-    if (edges.has(String(t.span.start))) repeatedDates++;
-    if (edges.has(String(t.span.end))) repeatedDates++;
+    // a span may be one stretch or a list (POC 2); only typed years count (an ongoing end has none)
+    const edges = new Set(t.phases.flatMap((p: Json) => [p.start, p.end]).filter((y: unknown) => y !== undefined).map(String));
+    for (const s of [t.span].flat()) {
+      if (s.start !== undefined && edges.has(String(s.start))) repeatedDates++;
+      if (s.end !== undefined && edges.has(String(s.end))) repeatedDates++;
+    }
   }
   const seen = new Map<string, Set<string>>();
   for (const p of phases) {
