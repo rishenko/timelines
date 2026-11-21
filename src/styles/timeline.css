@@ -727,3 +727,7 @@
   top: 62px;
   right: 16px;
 }
+/* the row name keeps a 24 px wide hit area beside the compare and fold buttons on narrow labels (WCAG 2.5.8) */
+.tl-lane-label .name {
+  min-width: 24px;
+}

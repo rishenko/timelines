@@ -39,6 +39,7 @@ interface Props {
 
 export function FiltersPanel(p: Props) {
   const { data, filters, isOn } = p;
+  const custom = data.meta.customSourceTag;
   // Tracks as a tree: the row tree, each group switching everything below it, rows outside the ticked regions dimmed
   const { trackNodes, rowCount, inRegions } = useMemo(() => {
     const kids = childrenMap(data.tracks);
@@ -73,7 +74,83 @@ export function FiltersPanel(p: Props) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.tracks, p.regionRows, p.editMode]);
-  const custom = data.meta.customSourceTag;
+
+  // Sources grouped by where they are used: the areas (top-level rows) of the rows whose events, dates or regions cite
+  // them; while regions are ticked, the sources those rows use first (open), every other one folded below
+  const sourceNodes = useMemo(() => {
+    const byId = new Map(data.tracks.map((t) => [t.id, t]));
+    const areaOf = (id: string) => {
+      let t = byId.get(id);
+      const seen = new Set<string>();
+      while (t?.parent && !seen.has(t.id)) {
+        seen.add(t.id);
+        t = byId.get(t.parent);
+      }
+      return t?.id;
+    };
+    const rowsOf = new Map<string, Set<string>>();
+    const use = (key: string | undefined, row: string) => {
+      if (!key) return;
+      if (!rowsOf.has(key)) rowsOf.set(key, new Set());
+      rowsOf.get(key)!.add(row);
+    };
+    for (const e of data.events)
+      for (const src of [...e.sources, ...[...(e.startDates ?? []), ...(e.endDates ?? [])].flatMap((c) => (c.source ? [c.source] : []))])
+        for (const t of e.tracks) use(src.sourceKey, t);
+    for (const t of data.tracks) {
+      for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? []), ...(t.phases ?? []).flatMap((ph) => [...(ph.startDates ?? []), ...(ph.endDates ?? [])])])
+        use(c.source?.sourceKey, t.id);
+      for (const m of t.memberships ?? []) for (const src of m.sources) use(src.sourceKey, t.id);
+    }
+    const leaf = (group: string, k: string, dim: boolean): FilterNode => {
+      const src = data.sources[k];
+      return {
+        key: `${group}:${k}`,
+        name: src.name,
+        label: (
+          <span title={src.tags.map((a) => data.tags[a]?.name ?? a).join(', ')}>
+            {src.name}
+            {src.hiddenByDefault && <span className="tag">spoilers</span>}
+            {custom && src.tags.includes(custom) && <span className="tag custom">{data.tags[custom]?.name ?? custom}</span>}
+          </span>
+        ),
+        ids: [k],
+        dim,
+        extra: p.editMode ? (
+          <button className="icon small" aria-label={`Edit ${src.name}`} title={`Edit ${src.name}`} onClick={() => p.onEditSource(k)}>
+            ✎
+          </button>
+        ) : undefined,
+      };
+    };
+    const byName = (a: string, b: string) => data.sources[a].name.localeCompare(data.sources[b].name);
+    const group = (key: string, name: string, keys: string[], dim: boolean, children?: FilterNode[]): FilterNode => ({
+      key,
+      name,
+      ids: keys,
+      count: keys.length,
+      children: children ?? [...keys].sort(byName).map((k) => leaf(key, k, dim)),
+    });
+    const keys = Object.keys(data.sources);
+    const areasOf = (k: string) => new Set([...(rowsOf.get(k) ?? [])].map(areaOf).filter((a): a is string => !!a));
+    const byArea = (list: string[], prefix: string, dim: boolean) => {
+      const roots = data.tracks.filter((t) => !t.parent);
+      const out = roots
+        .map((r) => group(`${prefix}${r.id}`, r.name, list.filter((k) => areasOf(k).has(r.id)), dim))
+        .filter((g) => g.ids.length);
+      const unused = list.filter((k) => !areasOf(k).size);
+      if (unused.length) out.push(group(`${prefix}unused`, 'Not cited by any row', unused, dim));
+      return out;
+    };
+    if (!p.regionRows) return byArea(keys, 'src:', false);
+    const inside = keys.filter((k) => [...(rowsOf.get(k) ?? [])].some((r) => p.regionRows!.has(r)));
+    const others = keys.filter((k) => !inside.includes(k));
+    return [
+      group('src:in-regions', 'Used by rows in the ticked regions', inside, false),
+      group('src:others', 'Other sources', others, true, byArea(others, 'src:other:', true)),
+    ];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, p.regionRows, p.editMode, custom]);
   return (
     <div className={`filters-panel${p.regions ? ' has-regions' : ''}`}>
       <section>
@@ -128,28 +205,21 @@ export function FiltersPanel(p: Props) {
         />
       </section>
       <section>
-        <h3>Sources</h3>
-        <div className="toggles">
-          {Object.entries(data.sources).map(([k, s]) => (
-            <span key={k} className="toggle-wrap">
-              <button
-                className={`toggle ${isOn(filters.sources, k) ? 'on' : 'off'}`}
-                onClick={() => p.toggleSource(k)}
-                aria-pressed={isOn(filters.sources, k)}
-                title={s.tags.map((a) => data.tags[a]?.name ?? a).join(', ')}
-              >
-                {s.name}
-                {s.hiddenByDefault && <span className="tag">spoilers</span>}
-                {custom && s.tags.includes(custom) && <span className="tag custom">{data.tags[custom]?.name ?? custom}</span>}
-              </button>
-              {p.editMode && (
-                <button className="icon small" aria-label={`Edit ${s.name}`} title={`Edit ${s.name}`} onClick={() => p.onEditSource(k)}>
-                  ✎
-                </button>
-              )}
-            </span>
-          ))}
-        </div>
+        <h3>
+          Sources
+          <span className="bulk">
+            <button onClick={() => p.setSources(Object.keys(data.sources), true)}>all</button>
+            <button onClick={() => p.setSources(Object.keys(data.sources), false)}>none</button>
+          </span>
+        </h3>
+        <FilterTree
+          nodes={sourceNodes}
+          label="Sources"
+          noun="source"
+          isOn={(k) => isOn(filters.sources, k)}
+          setMany={p.setSources}
+          dimNote="not used by rows in the ticked regions"
+        />
       </section>
       {Object.keys(data.tags).length > 0 && (
         <section>
