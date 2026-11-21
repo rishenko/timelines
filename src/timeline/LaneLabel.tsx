@@ -6,6 +6,10 @@ interface Props {
   lane: LaneDef;
   /** The row's regions with their sources, added to the name's tooltip. */
   regionTip?: string;
+  /** A short tag after the name (in a comparison set: the row's broad region). */
+  tag?: string;
+  /** The compare button: whether the row is in the comparison set, and adding or removing it. */
+  compare?: { inSet: boolean; onToggle: () => void };
   labelW: number;
   /** Events folded into "+N" badges for lack of room. */
   overflow: number;
@@ -39,7 +43,7 @@ const hostOf = (url: string) => {
  * The row's label, sticky at the left: name (a link to the row's page, when it has one), logo, edit buttons in edit
  * mode, and the show-all and fold buttons.
  */
-export function LaneLabel({ lane, regionTip, labelW, overflow, expanded, editMode, rovingKey, onStopFocus, inactiveBelow = 0, revealed = false, ...on }: Props) {
+export function LaneLabel({ lane, regionTip, tag, compare, labelW, overflow, expanded, editMode, rovingKey, onStopFocus, inactiveBelow = 0, revealed = false, ...on }: Props) {
   const image = safeUrl(lane.track.image);
   const url = safeUrl(lane.track.url);
   const name = lane.track.name;
@@ -47,29 +51,53 @@ export function LaneLabel({ lane, regionTip, labelW, overflow, expanded, editMod
   const overflowKey = labelStopKey(lane.id, 'overflow');
   const foldKey = labelStopKey(lane.id, 'fold');
   const hiddenKey = labelStopKey(lane.id, 'hidden');
+  const compareKey = labelStopKey(lane.id, 'compare');
   const rows = (n: number) => (n === 1 ? '1 row' : `${n} rows`);
+  const nameEl = url ? (
+    <a
+      className="name"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${name}: ${hostOf(url)} (opens in a new tab)${regionTip ? `\n${regionTip}` : ''}`}
+      data-stop={linkKey}
+      tabIndex={rovingKey === linkKey ? 0 : -1}
+      onFocus={() => onStopFocus(linkKey)}
+    >
+      {name}
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
+  ) : (
+    <span className="name" title={regionTip ? `${name}\n${regionTip}` : name}>
+      {name}
+    </span>
+  );
   return (
     <div className="tl-lane-label" style={{ width: labelW }}>
       <span className="chip" />
       {image && <img src={image} alt="" className="logo" />}
-      {url ? (
-        <a
-          className="name"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={`${name}: ${hostOf(url)} (opens in a new tab)${regionTip ? `\n${regionTip}` : ''}`}
-          data-stop={linkKey}
-          tabIndex={rovingKey === linkKey ? 0 : -1}
-          onFocus={() => onStopFocus(linkKey)}
-        >
-          {name}
-          <span className="sr-only"> (opens in a new tab)</span>
-        </a>
-      ) : (
-        <span className="name" title={regionTip ? `${name}\n${regionTip}` : name}>
-          {name}
+      {tag ? (
+        // in a comparison set the row's region sits under its name
+        <span className="name-wrap">
+          {nameEl}
+          <span className="row-tag">{tag}</span>
         </span>
+      ) : (
+        nameEl
+      )}
+      {compare && (
+        <button
+          className={`compare${compare.inSet ? ' on' : ''}`}
+          aria-label={`Compare ${name}`}
+          aria-pressed={compare.inSet}
+          data-stop={compareKey}
+          tabIndex={rovingKey === compareKey ? 0 : -1}
+          onFocus={() => onStopFocus(compareKey)}
+          title={compare.inSet ? `In the comparison: remove ${name}` : `Add ${name} to the comparison`}
+          onClick={compare.onToggle}
+        >
+          {compare.inSet ? '✓' : '+'}
+        </button>
       )}
       {editMode && (
         <span className="lane-edit">

@@ -628,3 +628,42 @@
   opacity: 0.25;
 }
 
+
+/* Comparison sets: the compare button on each row label, and the row's region beside its name in a set */
+.tl-lane-label .compare {
+  flex: none;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1;
+}
+.tl-lane-label .compare.on {
+  color: var(--text);
+  font-weight: 700;
+}
+.tl-lane-label .name-wrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.tl-lane-label .name-wrap .name {
+  flex: none;
+}
+.tl-lane-label .row-tag {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10.5px;
+  color: var(--muted);
+}
+/* phones: the label column is too narrow for both; the comparison bar lists the rows */
+@media (max-width: 640px) {
+  .tl-lane-label .row-tag {
+    display: none;
+  }
+}

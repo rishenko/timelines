@@ -166,6 +166,17 @@ Each row's own regions and the sources placing it there (`rowRegionList`) show i
 Regions column; rows with regions but no lifespan are listed too) and in the row name's tooltip in the chart
 (`regionsTooltip`). The same spoiler rule applies: only regions and sources whose sources are switched on.
 
+### Comparison sets
+
+Rows picked from anywhere, shown side by side (`src/lib/sets.ts`, state in `src/state/comparison.ts`, the bar above
+the chart in `src/components/ComparisonBar.tsx`). While a set is shown the chart and table draw `setTracks`: each picked
+row at the top level (keeping the chronology it inherited) with its own sub-rows; rows outside the set are switched off
+in `rowsOn`, so events and search follow, and the region filter is paused. Orders: as picked, by start, or related rows
+together (`orderSet`: clusters of rows tied by shared events and links, by their middle row's start, each tightened to
+shorten the distance between related rows; the engine from the parked groups prototype). Each label has a compare
+button (a stop in the chart's keyboard navigation); in a set each row shows its broad region under its name. The link
+carries `&set=` and `&order=` while the set is shown. Off in edit mode.
+
 ## Event maps
 
 Opening an event shows its rows on a map (`src/components/EventMap.tsx`, data helpers in `src/map/mapData.ts`). The

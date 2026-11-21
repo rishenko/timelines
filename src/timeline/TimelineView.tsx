@@ -40,6 +40,11 @@ interface Props {
   visibleTracks: Record<string, boolean>;
   /** Each row's regions as tooltip text for its label ("Regions: Anatolia (Near East) — from Wikipedia: Hittites"). */
   regionTips?: Map<string, string>;
+  /** Short tags after row names (in a comparison set: each row's broad region). */
+  rowTags?: Map<string, string>;
+  /** Comparison sets: the rows in the set, and adding or removing a row (a compare button on each label). */
+  compareRows?: Set<string>;
+  onToggleCompare?: (trackId: string) => void;
   collapsed: Record<string, boolean>;
   /** Hide rows with nothing in or near the view (headers stay and count them). */
   hideOutOfView?: boolean;
@@ -270,6 +275,7 @@ export function TimelineView(props: Props) {
     lanes: navLanes,
     expanded,
     inactiveBelow: shown.inactiveBelow,
+    compare: !!props.onToggleCompare && !editMode,
     selectedId,
     view,
     labelW,
@@ -419,6 +425,12 @@ export function TimelineView(props: Props) {
               <LaneLabel
                 lane={lane}
                 regionTip={props.regionTips?.get(lane.id)}
+                tag={props.rowTags?.get(lane.id)}
+                compare={
+                  props.onToggleCompare && !editMode
+                    ? { inSet: !!props.compareRows?.has(lane.id), onToggle: () => props.onToggleCompare!(lane.id) }
+                    : undefined
+                }
                 labelW={labelW}
                 overflow={overflow}
                 expanded={!!expanded[lane.id]}

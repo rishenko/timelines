@@ -3,11 +3,12 @@ import { parseYear } from '../lib/calendar.ts';
 import type { LibraryEntry } from './library.ts';
 import type { Dataset } from '../types.ts';
 import { parseRegions } from '../lib/regions.ts';
+import { parseOrder, parseSet, type SetOrder } from '../lib/sets.ts';
 import { regionFacetId } from './regionFilter.ts';
 
 /**
  * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=0&rows=all`; rows is all, active or thin;
- * the region filter as `&regions=anatolia,nile`)
+ * the region filter as `&regions=anatolia,nile`; a comparison set as `&set=hittites,pharaonic-egypt&order=related`)
  * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link.
  */
 
@@ -29,6 +30,9 @@ export function readUrl(published: Dataset) {
     view: (q.get('view') === 'table' ? 'table' : 'timeline') as View,
     /** Ticked regions of the region filter (values of the timeline's first facet). */
     regions: parseRegions(q.get('regions'), published.meta.facets?.[regionFacetId(published) ?? '']),
+    /** A comparison set to open on, and its order. */
+    set: parseSet(q.get('set'), published.tracks),
+    order: parseOrder(q.get('order')),
     selected: decodeURIComponent(window.location.hash.slice(1)) || null,
   };
 }
@@ -64,6 +68,9 @@ interface ViewState {
   hideOutOfViewDefault: boolean;
   /** Ticked regions of the region filter. */
   regions: string[];
+  /** The comparison set while it is shown (empty otherwise), and its order. */
+  set: string[];
+  order: SetOrder;
 }
 
 /**
@@ -73,6 +80,8 @@ interface ViewState {
 export function useUrlSync(view: ViewState, initialCenter: number) {
   const { timelineId, increment, compress, showLinks, selectedId, view: mode, hideOutOfView, thinRows, hideOutOfViewDefault } = view;
   const regions = view.regions.join(',');
+  const set = view.set.join(',');
+  const order = view.order;
   const centerRef = useRef(initialCenter);
   const timer = useRef(0);
   const writeUrl = useCallback(() => {
@@ -88,10 +97,12 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
         q.set('rows', !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active');
       if (mode === 'table') q.set('view', 'table');
       if (regions) q.set('regions', regions);
+      if (set) q.set('set', set);
+      if (set && order !== 'picked') q.set('order', order);
       const hash = selectedId ? `#${selectedId}` : '';
       window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
     }, 250);
-  }, [timelineId, increment, compress, showLinks, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions]);
+  }, [timelineId, increment, compress, showLinks, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order]);
   useEffect(writeUrl, [writeUrl]);
   const onCenterYearChange = useCallback(
     (y: number) => {

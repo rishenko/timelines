@@ -11,6 +11,7 @@ import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
 import { useChronology } from './state/useChronology.ts';
 import { useRegionFilter } from './state/regionFilter.ts';
+import { useComparison } from './state/comparison.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
@@ -21,6 +22,7 @@ import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
 import { RegionFilter } from './components/RegionFilter.tsx';
+import { ComparisonBar } from './components/ComparisonBar.tsx';
 import { ThemePanel } from './components/ThemePanel.tsx';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
 import { LegendPanel } from './components/LegendPanel.tsx';
@@ -70,10 +72,30 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const [editMode, setEditMode] = useState(false);
   // ---- region filter: rows outside the ticked regions are hidden, on top of the reader's own row toggles ----
   const regions = useRegionFilter(data, initialUrl.regions, filters.sources, editMode);
+  // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
+  const comparison = useComparison(data, initialUrl, editMode);
   const rowsOn = useMemo(
-    () => (regions.active ? { ...filters.tracks, ...regions.overlay } : filters.tracks),
-    [regions.active, regions.overlay, filters.tracks],
+    () =>
+      comparison.active
+        ? { ...filters.tracks, ...comparison.overlay }
+        : regions.active
+          ? { ...filters.tracks, ...regions.overlay }
+          : filters.tracks,
+    [comparison.active, comparison.overlay, regions.active, regions.overlay, filters.tracks],
   );
+  /** The data the chart and table draw: the set's rows while a comparison is shown. */
+  const viewData = useMemo(() => (comparison.tracks ? { ...data, tracks: comparison.tracks } : data), [comparison.tracks, data]);
+  // in a comparison each row shows its broad region beside its name
+  const rowTags = useMemo(() => {
+    if (!comparison.active || !regions.regionsOf) return undefined;
+    const tags = new Map<string, string>();
+    for (const id of comparison.ordered) {
+      const r = regions.regionsOf.get(id)?.[0];
+      if (r) tags.set(id, r.within.at(-1) ?? r.name);
+    }
+    return tags;
+  }, [comparison.active, comparison.ordered, regions.regionsOf]);
+  const trackName = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
   const shownFilters = useMemo(() => ({ ...filters, tracks: rowsOn }), [filters, rowsOn]);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
@@ -120,6 +142,16 @@ export default function App({ published: opened, library: libraryEntry, site, no
   if (increment !== announcedIncrement) {
     setAnnouncedIncrement(increment);
     setAnnouncement(`Zoom: ${increment} years per tick`);
+  }
+  const comparisonSays = comparison.active
+    ? `Comparing ${comparison.ordered.length} ${comparison.ordered.length === 1 ? 'row' : 'rows'}${comparison.order === 'related' ? ', related rows together' : comparison.order === 'start' ? ', by start date' : ''}`
+    : comparison.rows.length
+      ? `${comparison.rows.length} ${comparison.rows.length === 1 ? 'row' : 'rows'} in the comparison; showing the whole timeline`
+      : '';
+  const [announcedComparison, setAnnouncedComparison] = useState(comparisonSays);
+  if (comparisonSays !== announcedComparison) {
+    setAnnouncedComparison(comparisonSays);
+    setAnnouncement(comparisonSays || 'Comparison cleared');
   }
   const [announcedRegions, setAnnouncedRegions] = useState(regions.picked);
   if (regions.picked !== announcedRegions) {
@@ -219,6 +251,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
       thinRows,
       hideOutOfViewDefault: !!published.meta.hideRowsOutOfView,
       regions: regions.picked,
+      set: comparison.active ? comparison.rows : [],
+      order: comparison.order,
     },
     initialCenter,
   );
@@ -321,7 +355,13 @@ export default function App({ published: opened, library: libraryEntry, site, no
         }
         panels={panels.open}
         onTogglePanel={panels.toggle}
-        filtersNote={regions.active ? `${regions.picked.length} ${regions.picked.length === 1 ? 'region' : 'regions'}` : undefined}
+        filtersNote={
+          comparison.active
+            ? 'comparison'
+            : regions.active
+              ? `${regions.picked.length} ${regions.picked.length === 1 ? 'region' : 'regions'}`
+              : undefined
+        }
       />
 
       {editMode && (
@@ -368,6 +408,20 @@ export default function App({ published: opened, library: libraryEntry, site, no
           </button>{' '}
           to download or discard them.
         </div>
+      )}
+
+      {!editMode && comparison.rows.length > 0 && (
+        <ComparisonBar
+          rows={comparison.ordered.map((id) => ({ id, name: trackName.get(id) ?? id }))}
+          candidates={data.tracks.filter((t) => !comparison.inSet.has(t.id)).map((t) => ({ id: t.id, name: t.name }))}
+          order={comparison.order}
+          onOrder={comparison.setOrder}
+          viewing={comparison.viewing}
+          onView={comparison.setViewing}
+          onAdd={comparison.add}
+          onRemove={comparison.toggle}
+          onClear={comparison.clear}
+        />
       )}
 
       {panels.open.legend && (
@@ -446,6 +500,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
                 editMode={editMode}
                 onToggle={regions.toggle}
                 onClear={regions.clear}
+                rowCount={regions.rowsInPicked.length}
+                paused={comparison.active}
+                onMakeSet={regions.active ? () => comparison.replace(regions.rowsInPicked, 'related') : undefined}
               />
             )
           }
@@ -455,7 +512,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       <main className={hasSidePanel ? 'with-panel' : ''}>
         {view === 'table' ? (
           <TableView
-            data={data}
+            data={viewData}
             events={visibleEvents}
             hiddenCount={resolved.length - visibleEvents.length}
             selectedId={selectedId}
@@ -471,13 +528,16 @@ export default function App({ published: opened, library: libraryEntry, site, no
           />
         ) : (
           <TimelineView
-            data={data}
+            data={viewData}
             events={drawnEvents}
             eventsById={resolvedById}
             spans={spans}
             phases={phases}
             visibleTracks={rowsOn}
             regionTips={regions.regionTips}
+            rowTags={rowTags}
+            compareRows={comparison.inSet}
+            onToggleCompare={comparison.toggle}
             collapsed={collapsed}
             hideOutOfView={hideOutOfView && !editMode}
             thinRows={thinRows}

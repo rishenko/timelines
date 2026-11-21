@@ -11,6 +11,11 @@ interface Props {
   editMode: boolean;
   onToggle: (id: string) => void;
   onClear: () => void;
+  /** Rows the ticked regions show, to start a comparison set from (absent while no region is ticked). */
+  rowCount?: number;
+  onMakeSet?: () => void;
+  /** A comparison set is shown, so the region filter doesn't apply for now. */
+  paused?: boolean;
 }
 
 /**
@@ -18,7 +23,7 @@ interface Props {
  * each with a checkbox and its row count. Ticking a region includes the regions inside it, which show as ticked and
  * can't be unticked on their own.
  */
-export function RegionFilter({ tree, picked, containing, editMode, onToggle, onClear }: Props) {
+export function RegionFilter({ tree, picked, containing, editMode, onToggle, onClear, rowCount, onMakeSet, paused }: Props) {
   // open the branches holding a ticked region, so the reader sees what is ticked
   const [open, setOpen] = useState<Set<string>>(() => new Set(picked.flatMap((id) => [...containing(id)])));
   const flip = (id: string) =>
@@ -77,9 +82,15 @@ export function RegionFilter({ tree, picked, containing, editMode, onToggle, onC
       <ul className="region-tree" aria-label="Regions">
         {tree.map((n) => node(n))}
       </ul>
+      {onMakeSet && !!rowCount && (
+        <button className="make-set" onClick={onMakeSet} title="Show these rows side by side, related rows together">
+          Compare these {rowCount} rows
+        </button>
+      )}
       <p className="muted small">
         Tick regions to show only their rows. Each row’s regions come from its sources; ▸ opens the regions inside one.
         {editMode && ' Off while editing, so every row can be reached.'}
+        {paused && !editMode && ' Paused while a comparison is shown.'}
       </p>
     </section>
   );

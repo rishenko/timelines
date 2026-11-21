@@ -354,3 +354,59 @@ main {
 .region-filter > p {
   margin: 6px 0 0;
 }
+
+/* The comparison set above the chart (components/ComparisonBar.tsx), styled like the edit bar */
+.comparison-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 14px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, var(--bg));
+}
+.comparison-bar.on {
+  display: grid;
+  gap: 6px;
+}
+.comparison-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.comparison-head .spacer {
+  flex: 1;
+}
+.comparison-add {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.comparison-add input {
+  width: 16em;
+}
+.comparison-error {
+  color: color-mix(in srgb, var(--danger) 75%, var(--text));
+}
+.comparison-rows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+}
+.comparison-rows li {
+  display: inline-flex;
+  align-items: center;
+}
+.comparison-rows button.icon.small {
+  min-width: 24px;
+  min-height: 24px;
+}
+.region-filter .make-set {
+  margin-top: 8px;
+}
