@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
@@ -288,6 +288,33 @@ export default function App({ published: opened, library: libraryEntry, site, no
   };
   const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId));
 
+  // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
+  // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
+  // Zoom stays immediate: its scroll anchoring needs the new scale at once.
+  const shownData = useDeferredValue(viewData);
+  const shownEvents = useDeferredValue(drawnEvents);
+  const shownListEvents = useDeferredValue(visibleEvents);
+  const shownSpans = useDeferredValue(spans);
+  const shownPhases = useDeferredValue(phases);
+  const shownRows = useDeferredValue(rowsOn);
+  const shownCollapsed = useDeferredValue(collapsed);
+  const shownCompress = useDeferredValue(compress);
+  const shownLinks = useDeferredValue(showLinks);
+  const shownHide = useDeferredValue(hideOutOfView && !editMode);
+  const shownThin = useDeferredValue(thinRows);
+  const busy =
+    shownData !== viewData ||
+    shownEvents !== drawnEvents ||
+    shownListEvents !== visibleEvents ||
+    shownSpans !== spans ||
+    shownPhases !== phases ||
+    shownRows !== rowsOn ||
+    shownCollapsed !== collapsed ||
+    shownCompress !== compress ||
+    shownLinks !== showLinks ||
+    shownHide !== (hideOutOfView && !editMode) ||
+    shownThin !== thinRows;
+
   return (
     <div className="app">
       <a href="#timeline" className="skip-link">
@@ -512,8 +539,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
       <main className={hasSidePanel ? 'with-panel' : ''}>
         {view === 'table' ? (
           <TableView
-            data={viewData}
-            events={visibleEvents}
+            data={shownData}
+            events={shownListEvents}
             hiddenCount={resolved.length - visibleEvents.length}
             selectedId={selectedId}
             onSelect={(id) => {
@@ -521,32 +548,33 @@ export default function App({ published: opened, library: libraryEntry, site, no
               if (editing?.kind === 'event') setEditing(null);
             }}
             focus={focus}
-            spans={spans}
-            phases={phases}
-            visibleTracks={rowsOn}
+            spans={shownSpans}
+            phases={shownPhases}
+            visibleTracks={shownRows}
             regionsOf={regions.regionsOf}
           />
         ) : (
           <TimelineView
-            data={viewData}
-            events={drawnEvents}
+            data={shownData}
+            events={shownEvents}
             eventsById={resolvedById}
-            spans={spans}
-            phases={phases}
-            visibleTracks={rowsOn}
+            spans={shownSpans}
+            phases={shownPhases}
+            visibleTracks={shownRows}
+            busy={busy}
             regionTips={regions.regionTips}
             rowTags={rowTags}
             compareRows={comparison.inSet}
             onToggleCompare={comparison.toggle}
-            collapsed={collapsed}
-            hideOutOfView={hideOutOfView && !editMode}
-            thinRows={thinRows}
+            collapsed={shownCollapsed}
+            hideOutOfView={shownHide}
+            thinRows={shownThin}
             onShowAllRows={() => switchHideOutOfView(false)}
             onRowsHidden={(n, year) => setAnnouncement(n ? `${n} rows with nothing near ${formatYear(year, cal)} hidden` : 'Every row has something in view')}
             onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}
             increment={increment}
-            compress={compress}
-            showLinks={showLinks}
+            compress={shownCompress}
+            showLinks={shownLinks}
             present={present}
             selectedId={selectedId}
             onSelect={(id) => {

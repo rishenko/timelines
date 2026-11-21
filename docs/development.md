@@ -166,6 +166,17 @@ Each row's own regions and the sources placing it there (`rowRegionList`) show i
 Regions column; rows with regions but no lifespan are listed too) and in the row name's tooltip in the chart
 (`regionsTooltip`). The same spoiler rule applies: only regions and sources whose sources are switched on.
 
+### Busy ring
+
+`TimelineView` shows a ring in the chart's top-right corner (`.tl-busy`, in a zero-height sticky strip so it stays in
+the corner however far the chart is scrolled; pinned to the window's top-right when that corner is off screen) and
+sets `aria-busy` on the chart: while `rowsPending` (the view has moved to years where another set of rows has
+something, and the check waits `SETTLE_MS` = 200 ms for scrolling to settle; nothing shows if the rows won't change),
+and while `busy` (App passes the chart and table deferred copies of what they draw, `useDeferredValue`, so a click
+updates its own control at once and the chart redraws in the background; busy = a deferred copy is behind). The ring
+fades in after 150 ms (60 ms for rows), so quick updates don't flash it; it spins on the compositor and stands still
+with reduced motion. Zoom isn't deferred (its scroll anchoring needs the new scale at once).
+
 ### Comparison sets
 
 Rows picked from anywhere, shown side by side (`src/lib/sets.ts`, state in `src/state/comparison.ts`, the bar above

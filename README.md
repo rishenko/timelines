@@ -94,6 +94,8 @@ be `http(s)` addresses or relative paths.
   *Shorten gaps with no events*).
 - **Hide rows with nothing in view**, or draw them as thin lines, so a timeline with many short-lived rows stays
   readable (Filters → Rows). The ruler corner says how many are hidden.
+- **A busy ring** in the chart's top-right corner while the rows are about to change after a sideways scroll, or while
+  a slow update (filters, regions, a comparison, dating) is drawn; the chart is marked busy for screen readers.
 - **Search** across rows, phases and events, or type a year to go there (`/` from anywhere).
 - **Filters** by source and source tag; a timeline can start with some sources hidden (to avoid spoilers).
 - **Legend** that explains only what the open timeline uses, including the keyboard keys, and a one-minute
