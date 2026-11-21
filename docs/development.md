@@ -129,8 +129,9 @@ AI-generated-text template). Rules used for the included timelines:
 ## Category memberships
 
 Rows can belong to values of three facets, geography, people and civilization, each membership citing where its
-source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). They are meant for
-region filters and comparison sets (planned). The decisions live in a plan, `data-src/ancient-classical-memberships.json`:
+source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). The region filter
+uses the first facet (geography), and comparison sets show each row's broad region; people and civilization are in the
+data but not offered yet. The decisions live in a plan, `data-src/ancient-classical-memberships.json`:
 the facets, the sources it adds (a row's Wikipedia article that no event cited yet, `wp-row-<row id>`), and each row's
 memberships. `npm run data -- importance` and `run-all` apply it after the row links (`scripts/lib/memberships.ts`).
 
@@ -194,7 +195,7 @@ the chart in `src/components/ComparisonBar.tsx`). While a set is shown the chart
 row at the top level (keeping the chronology it inherited) with its own sub-rows; rows outside the set are switched off
 in `rowsOn`, so events and search follow, and the region filter is paused. Orders: as picked, by start, or related rows
 together (`orderSet`: clusters of rows tied by shared events and links, by their middle row's start, each tightened to
-shorten the distance between related rows; the engine from the parked groups prototype). Each label has a compare
+shorten the distance between related rows; ported from the dropped reader-chosen groups prototype). Each label has a compare
 button (a stop in the chart's keyboard navigation); in a set each row shows its broad region under its name. The link
 carries `&set=` and `&order=` while the set is shown. Off in edit mode.
 

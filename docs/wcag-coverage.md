@@ -122,7 +122,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 | SC | Level | Coverage | Run | Checks | Status |
 |---|---|---|---|---|---|
 | 4.1.2 Name, Role, Value | A | Partial | tests | CI: axe's 29 name/role/ARIA rules (`button-name`, `aria-*`, `nested-interactive`, …); tests: event names, fold buttons' state, the view switch's `aria-pressed`. Custom widgets (roving chart, combobox) need a screen-reader pass. | Pass |
-| 4.1.3 Status Messages | AA | Manual | — | One polite live region for zoom, "Went to …", filter counts and toasts; errors in `role="alert"`. No test reads the live region. | Not reviewed |
+| 4.1.3 Status Messages | AA | Manual | — | One polite live region for zoom, "Went to …", filter counts, region and comparison changes, and toasts; the Filters find boxes announce their match counts; the chart sets `aria-busy` while the busy ring shows; errors in `role="alert"`. Tests read the announcements for regions and comparison sets. | Not reviewed |
 
 ## Known problems
 

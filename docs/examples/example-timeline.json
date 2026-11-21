@@ -4,7 +4,7 @@
     "id": "example-varn",
     "title": "The Kingdoms of Varn",
     "subtitle": "an example timeline",
-    "description": "A small fictional timeline that uses every feature of the format.",
+    "description": "A small fictional timeline that uses nearly every feature of the format.",
     "credits": "Example data for the Timelines app. Fictional; any resemblance to real history is accidental.",
     "calendar": {
       "before": "BF",
@@ -17,7 +17,20 @@
     "defaultTheme": "parchment",
     "customSourceTag": "fan",
     "circaFade": 5,
-    "collapsed": ["the-south"]
+    "collapsed": ["the-south"],
+    "hideRowsOutOfView": false,
+    "facets": {
+      "geography": {
+        "name": "Region",
+        "values": {
+          "varn-valley": { "name": "Varn valley" },
+          "north-bank": { "name": "North bank", "broader": ["varn-valley"] },
+          "south-bank": { "name": "South bank", "broader": ["varn-valley"] },
+          "coast": { "name": "The coast" }
+        }
+      }
+    },
+    "range": { "start": -150, "end": 470 }
   },
   "present": 470,
   "tags": {
@@ -83,14 +96,20 @@
       "name": "Early kings",
       "color": "#6a9fd6",
       "parent": "aldmark",
-      "span": { "start": -119, "end": 200 }
+      "span": { "start": -119, "end": 200 },
+      "memberships": [
+        { "facet": "geography", "value": "north-bank", "sources": [{ "sourceKey": "annals", "sourceLocation": "book 1" }] }
+      ]
     },
     {
       "id": "aldmark-late",
       "name": "Late kings",
       "color": "#2f6aa8",
       "parent": "aldmark",
-      "span": { "start": 201, "end": 340 }
+      "span": { "start": 201, "end": 340 },
+      "memberships": [
+        { "facet": "geography", "value": "north-bank", "sources": [{ "sourceKey": "annals", "sourceLocation": "book 15" }] }
+      ]
     },
     { "id": "the-south", "name": "The South", "color": "#b5523b" },
     {
@@ -99,7 +118,15 @@
       "color": "#c8643f",
       "parent": "the-south",
       "image": "https://example.com/images/serath-crest.svg",
-      "span": { "start": 12, "end": 455 }
+      "span": { "start": 12, "end": 455 },
+      "phases": [
+        { "name": "Early kings", "start": 12, "end": 199 },
+        { "name": "House of Tal", "start": 200, "end": 455, "circa": true }
+      ],
+      "memberships": [
+        { "facet": "geography", "value": "south-bank", "sources": [{ "sourceKey": "chronicle", "sourceLocation": "ch. 1" }] },
+        { "facet": "geography", "value": "coast", "sources": [{ "sourceKey": "travellers-tales", "sourceLocation": "ch. 18" }] }
+      ]
     },
     { "id": "others", "name": "Other peoples", "color": "#7c8591", "pinLast": true }
   ],
@@ -109,6 +136,7 @@
       "title": "Founding of Aldmark",
       "descr": "The first king is crowned at Varn. The calendar counts from this year: 1 AF.",
       "start": 1,
+      "importance": 1,
       "order": 1,
       "tracks": ["aldmark-early"],
       "sources": [{ "sourceKey": "annals", "sourceLocation": "book 1, ch. 1" }]
@@ -125,8 +153,13 @@
         { "sourceKey": "chronicle", "sourceLocation": "ch. 5" }
       ],
       "startDates": [
-        { "year": 88, "source": { "sourceKey": "annals", "sourceLocation": "book 4" } },
-        { "year": 85, "margin": 2, "source": { "sourceKey": "chronicle", "sourceLocation": "ch. 5" } }
+        { "year": 88, "chronology": "court", "source": { "sourceKey": "annals", "sourceLocation": "book 4" } },
+        {
+          "year": 85,
+          "margin": 2,
+          "source": { "sourceKey": "chronicle", "sourceLocation": "ch. 5" },
+          "note": "The chronicle counts back from the treaty, so its year may be off by two."
+        }
       ],
       "endDates": [
         { "year": 96, "source": { "sourceKey": "annals", "sourceLocation": "book 4" } },
@@ -157,6 +190,7 @@
       "title": "Court and temple calendars reconciled",
       "descr": "From this year on, both reckonings agree.",
       "start": 200,
+      "importance": 3,
       "tracks": ["aldmark-early"],
       "sources": [{ "sourceKey": "chronicle", "sourceLocation": "ch. 9" }]
     },

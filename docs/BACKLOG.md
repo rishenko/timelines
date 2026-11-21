@@ -41,6 +41,9 @@
 - **`apply-text-fixes.ts` should edit the script that defines an event last** (the one whose version wins on replay),
   not the first match. In the Classical audit, `edessa-260` is defined in `mediterranean-near-east.ts` and again in
   `summary-only.ts`, so the fix landed in the wrong one and was copied over by hand.
+- **Filter collections:** save the current filters under a name and come back to them, or share them, by link. The
+  link already carries zoom, year, view, chart options, hidden rows, regions and a comparison set; not yet the row and
+  source toggles, folded rows or dating choices. Would include naming and saving comparison sets.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phones:** not yet tried on a real phone.
 - **Library size:** everything lives in localStorage (about 5 MB per site). Fine for dozens of timelines of this
@@ -72,6 +75,10 @@ separate later timeline, linked by `meta.continues`, would keep each one readabl
 - Since then: shared lists (`?collection=`) and update checks for timelines and lists from links; row links to
   Wikipedia with Wikidata ids; "Hide rows with nothing in view" (or thin lines); connections on by default, with a
   Filters switch; the "Lifespans" tour step; event maps (Cliopatria borders, else Wikipedia pins and map images).
+- November 2026: sourced regions for every row (72 regions in two levels), the region filter (Filters → Data
+  filters → Regions) with each row's regions and sources in the table and tooltip, comparison sets (feature audit
+  item 19), a busy ring while rows or a slow update are being drawn, and Filters in two sections (Visual and Data
+  filters) with folding Tracks and Sources lists.
 - Accessibility parts a–f (foundations, table view, keyboard control, visual, touch targets, edit forms), except
   `forced-colors` and the 3:1 check of marks in part d; see [feature-audit.md](feature-audit.md), item 23.
 - Ancient Civilizations (c. 9000–330 BCE) and The Classical World (c. 500 BCE – 650 CE), each with a description
