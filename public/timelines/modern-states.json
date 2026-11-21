@@ -1,0 +1,1248 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "modern-states",
+    "title": "Modern States",
+    "subtitle": "test timeline (pilot)",
+    "description": "European states from 1700 to today: a test of lifespans and phases on modern data.",
+    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026. Test data.",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false,
+      "aliases": {
+        "before": [
+          "BC"
+        ],
+        "after": [
+          "AD"
+        ]
+      }
+    },
+    "increments": [
+      1,
+      5,
+      10,
+      25,
+      50
+    ],
+    "defaultIncrement": 10,
+    "range": {
+      "start": 1700,
+      "end": 2026
+    }
+  },
+  "present": 2026,
+  "tracks": [
+    {
+      "id": "france",
+      "name": "France",
+      "color": "#3f62b0",
+      "url": "https://en.wikipedia.org/wiki/France",
+      "span": {
+        "start": 987,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 987,
+            "source": {
+              "sourceKey": "wp-kingdom-of-france",
+              "sourceLocation": "infobox"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-french-fifth-republic",
+              "sourceLocation": "infobox life span: 1958–present"
+            },
+            "note": "Still in being; the format has no \"ongoing\" for phases, so it ends at the present year."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Kingdom of France",
+          "start": 987,
+          "end": 1792,
+          "startDates": [
+            {
+              "year": 987,
+              "source": {
+                "sourceKey": "wp-kingdom-of-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1792,
+              "source": {
+                "sourceKey": "wp-kingdom-of-france",
+                "sourceLocation": "infobox: abolition of the monarchy, 21 September 1792"
+              }
+            }
+          ]
+        },
+        {
+          "name": "First Republic",
+          "start": 1792,
+          "end": 1804,
+          "startDates": [
+            {
+              "year": 1792,
+              "source": {
+                "sourceKey": "wp-french-first-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1804,
+              "source": {
+                "sourceKey": "wp-french-first-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "First Empire",
+          "start": 1804,
+          "end": 1814,
+          "startDates": [
+            {
+              "year": 1804,
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1814,
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 1804–1814"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bourbon Restoration",
+          "start": 1814,
+          "end": 1830,
+          "startDates": [
+            {
+              "year": 1814,
+              "source": {
+                "sourceKey": "wp-kingdom-of-france",
+                "sourceLocation": "infobox: Bourbon Restoration, 6 April 1814"
+              }
+            },
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-bourbon-restoration",
+                "sourceLocation": "infobox"
+              },
+              "note": "Counts from the second restoration, after the Hundred Days."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1830,
+              "source": {
+                "sourceKey": "wp-bourbon-restoration",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hundred Days (Napoleon returns)",
+          "start": 1815,
+          "end": 1815,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 20 March – 7 July 1815"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 20 March – 7 July 1815"
+              }
+            }
+          ]
+        },
+        {
+          "name": "July Monarchy",
+          "start": 1830,
+          "end": 1848,
+          "startDates": [
+            {
+              "year": 1830,
+              "source": {
+                "sourceKey": "wp-july-monarchy",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-july-monarchy",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Republic",
+          "start": 1848,
+          "end": 1852,
+          "startDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-french-second-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1852,
+              "source": {
+                "sourceKey": "wp-french-second-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Empire",
+          "start": 1852,
+          "end": 1870,
+          "startDates": [
+            {
+              "year": 1852,
+              "source": {
+                "sourceKey": "wp-second-french-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1870,
+              "source": {
+                "sourceKey": "wp-second-french-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Third Republic",
+          "start": 1870,
+          "end": 1940,
+          "startDates": [
+            {
+              "year": 1870,
+              "source": {
+                "sourceKey": "wp-french-third-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-french-third-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vichy France (French State)",
+          "start": 1940,
+          "end": 1944,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-vichy-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-vichy-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Free France",
+          "start": 1940,
+          "end": 1944,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-free-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-free-france",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Provisional Government",
+          "start": 1944,
+          "end": 1946,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-gprf",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1946,
+              "source": {
+                "sourceKey": "wp-gprf",
+                "sourceLocation": "infobox: succeeded by the Fourth Republic, 27 October 1946"
+              }
+            },
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-gprf",
+                "sourceLocation": "infobox end: admitted to the UN, 24 October 1945"
+              },
+              "note": "The infobox closes its dates at UN admission."
+            }
+          ]
+        },
+        {
+          "name": "Fourth Republic",
+          "start": 1946,
+          "end": 1958,
+          "startDates": [
+            {
+              "year": 1946,
+              "source": {
+                "sourceKey": "wp-french-fourth-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-french-fourth-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fifth Republic",
+          "start": 1958,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-french-fifth-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-french-fifth-republic",
+                "sourceLocation": "infobox life span: 1958–present"
+              },
+              "note": "Still in being; the format has no \"ongoing\" for phases, so it ends at the present year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "germany",
+      "name": "Germany (the German lands)",
+      "color": "#b0563f",
+      "url": "https://en.wikipedia.org/wiki/Germany",
+      "span": {
+        "start": 962,
+        "end": 2026,
+        "startDates": [
+          {
+            "year": 962,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox: Otto I crowned, 2 February 962"
+            }
+          },
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox, note \"Charlemagne\""
+            },
+            "note": "Some historians count from Charlemagne's coronation."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2026,
+            "source": {
+              "sourceKey": "wp-german-reunification",
+              "sourceLocation": "date: 9 November 1989 – 3 October 1990"
+            },
+            "note": "Still in being; ends at the present year for want of \"ongoing\"."
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Holy Roman Empire",
+          "start": 962,
+          "end": 1806,
+          "startDates": [
+            {
+              "year": 962,
+              "source": {
+                "sourceKey": "wp-holy-roman-empire",
+                "sourceLocation": "infobox: Otto I crowned, 2 February 962"
+              }
+            },
+            {
+              "year": 800,
+              "source": {
+                "sourceKey": "wp-holy-roman-empire",
+                "sourceLocation": "infobox, note \"Charlemagne\""
+              },
+              "note": "Some historians count from Charlemagne's coronation."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1806,
+              "source": {
+                "sourceKey": "wp-holy-roman-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Confederation of the Rhine",
+          "start": 1806,
+          "end": 1813,
+          "startDates": [
+            {
+              "year": 1806,
+              "source": {
+                "sourceKey": "wp-confederation-of-the-rhine",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1813,
+              "source": {
+                "sourceKey": "wp-confederation-of-the-rhine",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Confederation",
+          "start": 1815,
+          "end": 1848,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1815–1848"
+              }
+            },
+            {
+              "year": 1813,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox start: German campaign, 17 March 1813"
+              },
+              "note": "The infobox dates its start to the 1813 campaign."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1815–1848"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Empire of 1848–49",
+          "start": 1848,
+          "end": 1849,
+          "startDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-german-empire-1848",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1849,
+              "source": {
+                "sourceKey": "wp-german-empire-1848",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Confederation (restored)",
+          "start": 1850,
+          "end": 1866,
+          "startDates": [
+            {
+              "year": 1850,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1850–1866"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1866,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1850–1866"
+              }
+            }
+          ]
+        },
+        {
+          "name": "North German Confederation",
+          "start": 1866,
+          "end": 1871,
+          "startDates": [
+            {
+              "year": 1866,
+              "source": {
+                "sourceKey": "wp-north-german-confederation",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1871,
+              "source": {
+                "sourceKey": "wp-north-german-confederation",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "German Empire",
+          "start": 1871,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1871,
+              "source": {
+                "sourceKey": "wp-german-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-german-empire",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Weimar Republic",
+          "start": 1918,
+          "end": 1933,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-weimar-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1933,
+              "source": {
+                "sourceKey": "wp-weimar-republic",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Nazi Germany",
+          "start": 1933,
+          "end": 1945,
+          "startDates": [
+            {
+              "year": 1933,
+              "source": {
+                "sourceKey": "wp-nazi-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-nazi-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Allied occupation",
+          "start": 1945,
+          "end": 1949,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allied-occupied-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-allied-occupied-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "West Germany (Federal Republic)",
+          "start": 1949,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "East Germany (GDR)",
+          "start": 1949,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-east-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-east-germany",
+                "sourceLocation": "infobox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Reunified Federal Republic",
+          "start": 1990,
+          "end": 2026,
+          "startDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox end: reunification, 3 October 1990"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2026,
+              "source": {
+                "sourceKey": "wp-german-reunification",
+                "sourceLocation": "date: 9 November 1989 – 3 October 1990"
+              },
+              "note": "Still in being; ends at the present year for want of \"ongoing\"."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "wp-kingdom-of-france": {
+      "name": "Kingdom of France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-first-republic": {
+      "name": "French First Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_First_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-french-empire": {
+      "name": "First French Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_French_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bourbon-restoration": {
+      "name": "Bourbon Restoration in France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bourbon_Restoration_in_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-july-monarchy": {
+      "name": "July Monarchy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/July_Monarchy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-second-republic": {
+      "name": "French Second Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Second_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-french-empire": {
+      "name": "Second French Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_French_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-third-republic": {
+      "name": "French Third Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Third_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vichy-france": {
+      "name": "Vichy France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vichy_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-free-france": {
+      "name": "Free France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Free_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gprf": {
+      "name": "Provisional Government of the French Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Provisional_Government_of_the_French_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-fourth-republic": {
+      "name": "French Fourth Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Fourth_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-fifth-republic": {
+      "name": "French Fifth Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Fifth_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-holy-roman-empire": {
+      "name": "Holy Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-confederation-of-the-rhine": {
+      "name": "Confederation of the Rhine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Confederation_of_the_Rhine",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-confederation": {
+      "name": "German Confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-empire-1848": {
+      "name": "German Empire (1848–1849) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Empire_(1848–1849)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-north-german-confederation": {
+      "name": "North German Confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/North_German_Confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-empire": {
+      "name": "German Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-weimar-republic": {
+      "name": "Weimar Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Weimar_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nazi-germany": {
+      "name": "Nazi Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nazi_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-allied-occupied-germany": {
+      "name": "Allied-occupied Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Allied-occupied_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-west-germany": {
+      "name": "West Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/West_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-east-germany": {
+      "name": "East Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/East_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-reunification": {
+      "name": "German reunification (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_reunification",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-spanish-succession": {
+      "name": "War of the Spanish Succession (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bastille": {
+      "name": "Storming of the Bastille (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hre-dissolution": {
+      "name": "Dissolution of the Holy Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dissolution_of_the_Holy_Roman_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-1848": {
+      "name": "German revolutions of 1848–1849 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_revolutions_of_1848–1849",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-franco-prussian-war": {
+      "name": "Franco-Prussian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ww1": {
+      "name": "World War I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ww2": {
+      "name": "World War II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-algerian-war": {
+      "name": "Algerian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Algerian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-berlin-wall": {
+      "name": "Berlin Wall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berlin_Wall",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    }
+  },
+  "tags": {
+    "wikipedia": {
+      "name": "Wikipedia"
+    }
+  },
+  "events": [
+    {
+      "uuid": "spanish-succession",
+      "title": "War of the Spanish Succession",
+      "descr": "France against a coalition led by the Emperor, Britain and the Dutch over the Spanish throne.",
+      "start": 1701,
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-spanish-succession",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": 1714
+    },
+    {
+      "uuid": "bastille",
+      "title": "Storming of the Bastille",
+      "descr": "Parisians take the royal fortress-prison on 14 July; the start of the Revolution in the streets.",
+      "start": 1789,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bastille",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "napoleon-crowned",
+      "title": "Coronation of Napoleon",
+      "descr": "",
+      "start": 1804,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-french-empire",
+          "sourceLocation": "infobox: 2 December 1804"
+        }
+      ]
+    },
+    {
+      "uuid": "hre-dissolved",
+      "title": "Dissolution of the Holy Roman Empire",
+      "descr": "Francis II lays down the imperial crown on 6 August.",
+      "start": 1806,
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hre-dissolution",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "german-1848",
+      "title": "German revolutions of 1848–49",
+      "descr": "",
+      "start": 1848,
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-1848",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": 1849
+    },
+    {
+      "uuid": "franco-prussian-war",
+      "title": "Franco-Prussian War",
+      "descr": "",
+      "start": 1870,
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-franco-prussian-war",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": 1871,
+      "importance": 1,
+      "links": [
+        {
+          "to": "german-empire-proclaimed",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "german-empire-proclaimed",
+      "title": "German Empire proclaimed",
+      "descr": "",
+      "start": 1871,
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-empire",
+          "sourceLocation": "infobox: unification, 18 January 1871"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ww1",
+      "title": "First World War",
+      "descr": "",
+      "start": 1914,
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ww1",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": 1918,
+      "importance": 1
+    },
+    {
+      "uuid": "ww2",
+      "title": "Second World War",
+      "descr": "",
+      "start": 1939,
+      "tracks": [
+        "france",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ww2",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": 1945,
+      "importance": 1
+    },
+    {
+      "uuid": "algerian-war",
+      "title": "Algerian War",
+      "descr": "",
+      "start": 1954,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-algerian-war",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": 1962
+    },
+    {
+      "uuid": "berlin-wall",
+      "title": "Berlin Wall",
+      "descr": "Built from 13 August 1961; opened on 9 November 1989.",
+      "start": 1961,
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-berlin-wall",
+          "sourceLocation": "infobox"
+        }
+      ],
+      "end": 1989
+    },
+    {
+      "uuid": "reunification",
+      "title": "German reunification",
+      "descr": "",
+      "start": 1990,
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-reunification",
+          "sourceLocation": "date: 3 October 1990"
+        }
+      ],
+      "importance": 1
+    }
+  ]
+}
