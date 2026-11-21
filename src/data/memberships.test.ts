@@ -46,11 +46,16 @@ describe('the memberships plan', () => {
     for (const t of data.tracks) expect(t.memberships ?? []).toEqual(plan.rows[t.id] ?? []);
   });
 
-  it('places every pilot row in at least one region, citing its own Wikipedia article', () => {
+  it('places every row it lists in at least one region, each citing Wikipedia: the row\'s own article when it has one', () => {
     for (const [id, ms] of Object.entries(plan.rows)) {
       const t = data.tracks.find((x) => x.id === id)!;
       expect(ms.some((m) => m.facet === 'geography'), id).toBe(true);
-      for (const m of ms) for (const s of m.sources) expect(data.sources[s.sourceKey].url, `${id} ${m.facet}/${m.value}`).toBe(t.url);
+      for (const m of ms) {
+        const urls = m.sources.map((s) => decodeURIComponent(data.sources[s.sourceKey].url ?? ''));
+        for (const u of urls) expect(u, `${id} ${m.facet}/${m.value}`).toMatch(/^https:\/\/en\.wikipedia\.org\/wiki\//);
+        // a state's region may come from its capital's article, but always next to the row's own infobox
+        if (t.url) expect(urls, `${id} ${m.facet}/${m.value}`).toContain(decodeURIComponent(t.url));
+      }
     }
   });
 

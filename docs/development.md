@@ -129,9 +129,9 @@ AI-generated-text template). Rules used for the included timelines:
 ## Category memberships
 
 Rows can belong to values of three facets, geography, people and civilization, each membership citing where its
-source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). They feed the
-reader-chosen groups prototype. The decisions live in a plan, `data-src/ancient-classical-memberships.json`: the
-facets, the sources it adds (a row's Wikipedia article that no event cited yet, `wp-row-<row id>`), and each row's
+source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). They are meant for
+region filters and comparison sets (planned). The decisions live in a plan, `data-src/ancient-classical-memberships.json`:
+the facets, the sources it adds (a row's Wikipedia article that no event cited yet, `wp-row-<row id>`), and each row's
 memberships. `npm run data -- importance` and `run-all` apply it after the row links (`scripts/lib/memberships.ts`).
 
 The pilot (2026-11-20) covers the 75 Mediterranean, Mesopotamian and Anatolian rows with a Wikipedia article.
@@ -139,6 +139,19 @@ Candidates came from each article's categories (and their parent categories), fi
 period definitions as supporting evidence; the author reviewed them in a checklist. Candidates resting only on a
 PeriodO period matched by one word ("Neolithic", "Roman Period") were left out, to revisit with a stricter matcher.
 The plan was built by `scripts/archive/2026-11-20-memberships-plan.mjs`.
+
+**Every row (2026-11-20, geography only).** The region list grew to 72 values in two levels (broad regions such as
+Near East, Europe, East Asia, Mesoamerica; narrower ones inside them through `broader`), following the *Encyclopedia of
+Prehistory* (Peregrine and Ember, 2001–2003) for the broad level, Sinor's *Cambridge History of Early Inner Asia* (1990)
+for the steppe and Central Asia, and the regions' own Wikipedia articles for the narrow level. Candidates for all 330
+bottom-level rows came from a local copy of the English Wikipedia dump (enwiki-20261101): each row's article (its
+categories, the parent categories of its own topic category, first sentence and infobox), or for rows without one the
+articles their events cite. States and empires (articles with Wikipedia's country infobox) get only the region they are
+most associated with: points for their capital's region (from the capital's article), first sentence, categories and
+infobox. Articles carrying an AI-generated-text notice were not used. The author reviewed the result in a checklist;
+`scripts/archive/2026-11-20-region-memberships-plan.py` turned the ticks into the plan. The candidate finder lives
+outside the repo with the dump (`~/data/timelines-analysis/2026-11-20-groups/`). Megalith builders has no region on
+purpose (its sources name none).
 
 ## Event maps
 
