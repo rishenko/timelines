@@ -345,6 +345,12 @@ main {
 .filters-group > summary .filters-title {
   font-weight: 700;
   font-size: 14px;
+  white-space: nowrap;
+}
+/* the hint ("how the chart draws") drops under the title in a narrow column rather than breaking it */
+.filters-group > summary {
+  flex-wrap: wrap;
+  row-gap: 0;
 }
 .filters-group[open] > summary {
   margin-bottom: 8px;
