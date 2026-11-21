@@ -5,10 +5,23 @@ import type { Dataset } from '../types.ts';
 import { parseRegions } from '../lib/regions.ts';
 import { parseOrder, parseSet, type SetOrder } from '../lib/sets.ts';
 import { regionFacetId } from './regionFilter.ts';
+import { parentIds } from './collapse.ts';
+import {
+  FOLD_PARAMS,
+  readDating,
+  readSwitches,
+  readTags,
+  ROW_PARAMS,
+  rowBranches,
+  SOURCE_PARAMS,
+  sourceBaseline,
+  unknownCount,
+} from '../lib/viewLink.ts';
 
 /**
  * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=0&rows=all`; rows is all, active or thin;
  * the region filter as `&regions=anatolia,nile`; a comparison set as `&set=hittites,pharaonic-egypt&order=related`)
+ * the reader's row and source switches, folded rows and Dating choices as in lib/viewLink.ts)
  * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link.
  */
 
@@ -18,6 +31,26 @@ export function readUrl(published: Dataset) {
   const { increments, defaultIncrement, calendar } = published.meta;
   const inc = Number(q.get('inc'));
   const at = q.get('at');
+  const trackIds = published.tracks.map((t) => t.id);
+  const rows = readSwitches(q, trackIds, () => true, ROW_PARAMS, rowBranches(published.tracks));
+  const tags = readTags(q.get('hidetag'), published);
+  const baseline = sourceBaseline(published, tags.off);
+  const sourceKeys = Object.keys(published.sources);
+  const sources =
+    readSwitches(q, sourceKeys, baseline, SOURCE_PARAMS) ??
+    (tags.off.length ? { on: Object.fromEntries(sourceKeys.map((k) => [k, baseline(k)])), skipped: 0 } : null);
+  const openFolded = new Set(published.meta.collapsed ?? []);
+  const folded = readSwitches(q, parentIds(published.tracks), (id) => openFolded.has(id), FOLD_PARAMS);
+  const dating = readDating(q.get('dating'), published);
+  const regionValues = published.meta.facets?.[regionFacetId(published) ?? '']?.values ?? {};
+  const skipped =
+    (rows?.skipped ?? 0) +
+    (sources?.skipped ?? 0) +
+    tags.skipped +
+    (folded?.skipped ?? 0) +
+    dating.skipped +
+    unknownCount(q.get('regions'), (v) => Object.hasOwn(regionValues, v)) +
+    unknownCount(q.get('set'), (id) => trackIds.includes(id));
   return {
     increment: increments.includes(inc) ? inc : defaultIncrement,
     at: at !== null ? parseYear(at, calendar) : null,
@@ -33,6 +66,15 @@ export function readUrl(published: Dataset) {
     /** A comparison set to open on, and its order. */
     set: parseSet(q.get('set'), published.tracks),
     order: parseOrder(q.get('order')),
+    /** Row and source switches from the link (null when it says nothing about them). */
+    tracks: rows?.on ?? null,
+    sources: sources?.on ?? null,
+    /** Folded rows from the link (null: the timeline's own). */
+    folded: folded?.on ?? null,
+    /** Dating choices from the link, over each group's default. */
+    dating: dating.selection,
+    /** How many ids in the link the timeline doesn't have (they were skipped). */
+    skipped,
     selected: decodeURIComponent(window.location.hash.slice(1)) || null,
   };
 }
@@ -71,6 +113,8 @@ interface ViewState {
   /** The comparison set while it is shown (empty otherwise), and its order. */
   set: string[];
   order: SetOrder;
+  /** The filters lib/viewLink.ts writes (rows, sources, folds, dating), only what differs from the defaults. */
+  filterParams: [string, string][];
 }
 
 /**
@@ -82,6 +126,7 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
   const regions = view.regions.join(',');
   const set = view.set.join(',');
   const order = view.order;
+  const filterParams = JSON.stringify(view.filterParams);
   const centerRef = useRef(initialCenter);
   const timer = useRef(0);
   const writeUrl = useCallback(() => {
@@ -99,11 +144,14 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       if (regions) q.set('regions', regions);
       if (set) q.set('set', set);
       if (set && order !== 'picked') q.set('order', order);
+      for (const [k, v] of JSON.parse(filterParams) as [string, string][]) q.set(k, v);
       const hash = selectedId ? `#${selectedId}` : '';
-      window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
+      // commas are fine in a query string: keep id lists readable (a,b rather than a%2Cb)
+      window.history.replaceState(null, '', `${window.location.pathname}?${String(q).replaceAll('%2C', ',')}${hash}`);
     }, 250);
-  }, [timelineId, increment, compress, showLinks, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order]);
+  }, [timelineId, increment, compress, showLinks, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order, filterParams]);
   useEffect(writeUrl, [writeUrl]);
+  useEffect(() => () => clearTimeout(timer.current), []);
   const onCenterYearChange = useCallback(
     (y: number) => {
       centerRef.current = y;

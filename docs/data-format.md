@@ -287,8 +287,16 @@ a page that asks readers to add a timeline.
 - **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser.
   Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. The link also carries
   the reader's view: `&view=table`, `&compress=0`, `&links=0`, `&rows=all|active|thin` (hidden rows), ticked regions
-  (`&regions=anatolia,nile`) and a comparison set (`&set=<row ids>&order=related|start`). Row and source toggles and
-  dating choices aren't in the link yet.
+  (`&regions=anatolia,nile`), a comparison set (`&set=<row ids>&order=related|start`), and the reader's filters, each
+  only where it differs from how the timeline opens:
+  - rows switched off, `&hide=hittites,egypt*` (`row*` is a row and every row below it), or only the rows left on,
+    `&show=…`, whichever is shorter;
+  - source tags switched off, `&hidetag=wikipedia`, then sources against that: `&hidesrc=<keys>` (off),
+    `&addsrc=<keys>` (on, e.g. one hidden by default), or `&src=<keys>` (only these on);
+  - folded rows against the timeline's `meta.collapsed`: `&fold=<ids>`, `&unfold=<ids>`, or `&folded=<ids>|all|none`;
+  - Dating choices, `&dating=low,hornung` (chronology ids).
+
+  Ids the timeline doesn't have (renamed or removed rows, say) are skipped, and the reader is told how many.
 - **Update** by replacing the file at the same link. Readers get the new version the next time they open the
   timeline (the app checks the link for a few seconds, then opens the saved copy if it can't reach it), or with
   **Update** in Customize → Timelines. Edits a reader made are kept on top of the new version.

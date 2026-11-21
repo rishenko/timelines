@@ -41,9 +41,9 @@
 - **`apply-text-fixes.ts` should edit the script that defines an event last** (the one whose version wins on replay),
   not the first match. In the Classical audit, `edessa-260` is defined in `mediterranean-near-east.ts` and again in
   `summary-only.ts`, so the fix landed in the wrong one and was copied over by hand.
-- **Filter collections:** save the current filters under a name and come back to them, or share them, by link. The
-  link already carries zoom, year, view, chart options, hidden rows, regions and a comparison set; not yet the row and
-  source toggles, folded rows or dating choices. Would include naming and saving comparison sets.
+- **Saved views:** save the current filters under a name in this browser and come back to them (a Saved views menu in
+  Filters; rename, copy link and remove in Customize → Timelines). The link already carries every filter (November
+  2026); a saved view holds the filters, not the zoom and year. Includes naming and saving comparison sets.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phones:** not yet tried on a real phone.
 - **Library size:** everything lives in localStorage (about 5 MB per site). Fine for dozens of timelines of this

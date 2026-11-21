@@ -199,6 +199,16 @@ shorten the distance between related rows; ported from the dropped reader-chosen
 button (a stop in the chart's keyboard navigation); in a set each row shows its broad region under its name. The link
 carries `&set=` and `&order=` while the set is shown. Off in edit mode.
 
+### Filters in the link
+
+`src/lib/viewLink.ts` writes the reader's row and source switches, source tags, folded rows and Dating choices as link
+parameters, only what differs from the timeline's defaults (the formats are in data-format.md, "Sharing a timeline").
+`switchParams` picks the shorter of the two difference lists (`hide=` / `unhide=`) and the "only these on" list
+(`show=`); `rowBranches` writes a row whose whole branch is listed as `row*`. Sources are compared with
+`sourceBaseline` (the defaults after the switched-off tags), so switching off a tag doesn't list every source carrying
+it. `readUrl` (`src/state/url.ts`) reads them back and counts unknown ids; `App` builds `filterParams` for
+`useUrlSync`, which writes commas unescaped so id lists stay readable.
+
 ## Event maps
 
 Opening an event shows its rows on a map (`src/components/EventMap.tsx`, data helpers in `src/map/mapData.ts`). The

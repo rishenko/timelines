@@ -12,10 +12,10 @@ import {
 
 /**
  * Dating systems: readers pick one chronology per group (e.g. Mesopotamia: High / Middle / Low), and every event,
- * lifespan and phase is re-plotted under the choice. `groups` lists only groups with a real choice (two or more).
+ * lifespan and phase is re-plotted under the choice. `initial` holds choices from the link. `groups` lists only groups with a real choice (two or more).
  */
-export function useChronology(data: Dataset) {
-  const [selection, setSelection] = useState<ChronologySelection>(() => defaultSelection(data));
+export function useChronology(data: Dataset, initial: ChronologySelection = {}) {
+  const [selection, setSelection] = useState<ChronologySelection>(() => ({ ...defaultSelection(data), ...initial }));
   const defaults = useMemo(() => defaultSelection(data), [data]);
   const groups = useMemo(() => [...chronologyGroups(data)].filter(([, list]) => list.length > 1), [data]);
   const resolved = useMemo(() => resolveEvents(data, selection), [data, selection]);

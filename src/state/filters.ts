@@ -16,6 +16,24 @@ export function initialFilters(ds: Dataset): Filters {
   return { tracks: {}, sources, tags: {} };
 }
 
+/**
+ * Filters opened from a link: its row and source switches over the defaults. A tag counts as off when every source
+ * carrying it is off, so the tag buttons match the sources.
+ */
+export function linkedFilters(
+  ds: Dataset,
+  link: { tracks: Record<string, boolean> | null; sources: Record<string, boolean> | null },
+): Filters {
+  const f = initialFilters(ds);
+  const sources = link.sources ? { ...f.sources, ...link.sources } : f.sources;
+  const tags: Record<string, boolean> = {};
+  for (const tag of Object.keys(ds.tags)) {
+    const carrying = Object.entries(ds.sources).filter(([, s]) => s.tags.includes(tag));
+    if (carrying.length && carrying.every(([k]) => !isOn(sources, k))) tags[tag] = false;
+  }
+  return { tracks: link.tracks ?? f.tracks, sources, tags };
+}
+
 export function isEventVisible(e: TimelineEvent, f: Filters): boolean {
   const anyTrack = e.tracks.some((t) => isOn(f.tracks, t));
   // events with no sources are not hidden by the source filter
@@ -23,8 +41,9 @@ export function isEventVisible(e: TimelineEvent, f: Filters): boolean {
   return anyTrack && anySource;
 }
 
-export function useFilters(ds: Dataset) {
-  const [filters, setFilters] = useState<Filters>(() => initialFilters(ds));
+/** `initial` makes the opening filters (e.g. from the link); the timeline's defaults otherwise. */
+export function useFilters(ds: Dataset, initial?: () => Filters) {
+  const [filters, setFilters] = useState<Filters>(() => initial?.() ?? initialFilters(ds));
 
   const toggleTrack = useCallback(
     (id: string) => setFilters((f) => ({ ...f, tracks: { ...f.tracks, [id]: !isOn(f.tracks, id) } })),

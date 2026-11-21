@@ -2,7 +2,17 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
-import { isEventVisible, useFilters } from './state/filters.ts';
+import { isEventVisible, isOn as switchOn, linkedFilters, useFilters } from './state/filters.ts';
+import {
+  datingParam,
+  FOLD_PARAMS,
+  ROW_PARAMS,
+  rowBranches,
+  skippedNotice,
+  SOURCE_PARAMS,
+  sourceBaseline,
+  switchParams,
+} from './lib/viewLink.ts';
 import { useTheme } from './state/theme.ts';
 import { useToast } from './state/toast.ts';
 import { usePanels } from './state/panels.ts';
@@ -67,7 +77,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
     const m = libraryEntry ? undefined : site.find((x) => x.id === meta.id)?.map;
     return m ? new URL(m, indexUrl()).href : undefined;
   }, [libraryEntry, site, meta.id]);
-  const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, setTracks, setSources, isOn } = useFilters(data);
+  const { filters, toggleTrack, toggleSource, toggleTag, setAllTracks, setTracks, setSources, isOn } = useFilters(data, () =>
+    linkedFilters(data, initialUrl),
+  );
   // edit mode is declared here because the region filter (below) is off while editing
   const [editMode, setEditMode] = useState(false);
   // ---- region filter: rows outside the ticked regions are hidden, on top of the reader's own row toggles ----
@@ -118,7 +130,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           `"${unreadableDraftKey(opened.meta.id)}".`
       : updatedUnderDraft
         ? 'The published timeline has been updated. Your local edits are kept on top of the new version.'
-        : (notice ?? null),
+        : [notice, initialUrl.skipped ? skippedNotice(initialUrl.skipped) : ''].filter(Boolean).join(' ') || null,
   );
 
   useEffect(() => {
@@ -132,7 +144,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
   }, [unsaved, notify]);
 
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
-  const chron = useChronology(data);
+  const chron = useChronology(data, initialUrl.dating);
   const { resolved, resolvedById, spans, phases } = chron;
   const visibleEvents = useMemo(() => resolved.filter((e) => isEventVisible(e, shownFilters)), [resolved, shownFilters]);
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
@@ -173,7 +185,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
   // ---- folded rows ----
   const openingCollapsed = useMemo(() => defaultCollapsed(meta.collapsed), [meta.collapsed]);
-  const [collapsed, setCollapsed] = useState<Record<string, boolean>>(openingCollapsed);
+  const [collapsed, setCollapsed] = useState<Record<string, boolean>>(() => initialUrl.folded ?? openingCollapsed);
   const hasSubRows = useMemo(() => parentIds(data.tracks).length > 0, [data.tracks]);
   const someCollapsed = useMemo(() => anyCollapsed(data.tracks, collapsed), [data.tracks, collapsed]);
   // "Default view" restores the rows the timeline opens with; only useful when that isn't simply "all open".
@@ -251,6 +263,26 @@ export default function App({ published: opened, library: libraryEntry, site, no
     }
     return present;
   });
+  // the reader's row and source switches, folded rows and Dating choices, as link parameters
+  const branches = useMemo(() => rowBranches(data.tracks), [data.tracks]);
+  const filterParams = useMemo(() => {
+    const trackIds = data.tracks.map((t) => t.id);
+    const openFolded = new Set(data.meta.collapsed ?? []);
+    const dating = datingParam(chron.selection, chron.defaults);
+    const tagsOff = Object.keys(data.tags).filter((t) => !switchOn(filters.tags, t));
+    return [
+      ...switchParams(trackIds, (id) => switchOn(filters.tracks, id), () => true, ROW_PARAMS, branches),
+      ...(tagsOff.length ? [['hidetag', tagsOff.join(',')] as [string, string]] : []),
+      ...switchParams(
+        Object.keys(data.sources),
+        (k) => switchOn(filters.sources, k),
+        sourceBaseline(data, tagsOff),
+        SOURCE_PARAMS,
+      ),
+      ...switchParams(parentIds(data.tracks), (id) => !!collapsed[id], (id) => openFolded.has(id), FOLD_PARAMS),
+      ...(dating ? [['dating', dating] as [string, string]] : []),
+    ];
+  }, [data, filters, collapsed, chron.selection, chron.defaults, branches]);
   const { centerRef, onCenterYearChange } = useUrlSync(
     {
       timelineId: published.meta.id,
@@ -265,6 +297,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       regions: regions.picked,
       set: comparison.active ? comparison.rows : [],
       order: comparison.order,
+      filterParams,
     },
     initialCenter,
   );

@@ -73,6 +73,9 @@ be `http(s)` addresses or relative paths.
 - **Region filter:** Filters → Data filters → Regions shows only the rows in the regions you tick (broad regions with the narrower ones
   folded under them). Each row's regions come from its sources, listed in the table view and the row name's tooltip;
   the ticked regions go into the link (`&regions=anatolia,nile`).
+- **Shareable views:** the link keeps your filters as well as the zoom and year: rows and sources switched off,
+  folded rows, Dating choices, regions and the comparison set. Reloading keeps them, and anyone you send the link to
+  sees the same view.
 - **Comparison sets:** pick rows from anywhere (the + on a row's label, the "Add a row" box, or "Compare these rows"
   under a region filter) and see them side by side, each with its region: as picked, related rows together, or by start
   date. The set goes into the link (`&set=hittites,pharaonic-egypt&order=related`).
