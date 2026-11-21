@@ -43,8 +43,14 @@ describe('the busy ring', () => {
     await waitFor(() => expect(chart().getAttribute('aria-busy')).toBe('false'));
     scrollBy(4000);
     // the view updates on the next animation frame; the rows wait 200 ms for scrolling to settle
-    await waitFor(() => expect(document.querySelector('.tl-busy.rows')).toBeTruthy(), { interval: 20 });
-    expect(chart().getAttribute('aria-busy')).toBe('true');
+    // ring and busy state checked together: on a slow machine the 200 ms wait can end right after the ring shows
+    await waitFor(
+      () => {
+        expect(document.querySelector('.tl-busy.rows')).toBeTruthy();
+        expect(chart().getAttribute('aria-busy')).toBe('true');
+      },
+      { interval: 10 },
+    );
     await waitFor(() => expect(chart().getAttribute('aria-busy')).toBe('false'), { timeout: 2000 });
     expect(document.querySelector('.tl-busy')).toBeNull();
   });
