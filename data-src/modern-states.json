@@ -67666,6 +67666,94 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-the-holocaust": {
+      "name": "The Holocaust (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Holocaust",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-attack-on-pearl-harbor": {
+      "name": "Attack on Pearl Harbor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Attack_on_Pearl_Harbor",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-treaty-of-versailles": {
+      "name": "Treaty of Versailles (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Versailles",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-armenian-genocide": {
+      "name": "Armenian genocide (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Armenian_genocide",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-great-depression": {
+      "name": "Great Depression (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Depression",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-holodomor": {
+      "name": "Holodomor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holodomor",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-munich-agreement": {
+      "name": "Munich Agreement (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Munich_Agreement",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nanjing-massacre": {
+      "name": "Nanjing Massacre (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nanjing_Massacre",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-stalingrad": {
+      "name": "Battle of Stalingrad (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Stalingrad",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-normandy-landings": {
+      "name": "Normandy landings (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Normandy_landings",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-paris-peace-conference-1919-1920": {
+      "name": "Paris Peace Conference (1919–1920) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paris_Peace_Conference_(1919–1920)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -91915,6 +92003,243 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "armenian-genocide",
+      "title": "Armenian genocide",
+      "descr": "During the First World War the Ottoman government massacres its Armenian subjects and sends them on death marches to the Syrian desert.",
+      "start": 1915,
+      "end": 1917,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-armenian-genocide",
+          "sourceLocation": "infobox date: 1915–1917"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww1",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "great-depression",
+      "title": "Great Depression",
+      "descr": "A worldwide economic collapse that begins with the Wall Street crash of October 1929; mass unemployment in Germany helps bring the Nazis to power.",
+      "start": 1929,
+      "end": 1939,
+      "tracks": [
+        "united-states",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-great-depression",
+          "sourceLocation": "infobox date: 1929–1939"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "holodomor",
+      "title": "Holodomor",
+      "descr": "A man-made famine in Soviet Ukraine, caused by forced collectivization and grain requisitions under Stalin; millions die.",
+      "start": 1932,
+      "end": 1933,
+      "tracks": [
+        "soviet-union",
+        "ukraine"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-holodomor",
+          "sourceLocation": "infobox period: 1932–1933"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "munich-agreement",
+      "title": "Munich Agreement",
+      "descr": "Britain, France and Italy let Germany annex the Sudetenland from Czechoslovakia, which was not invited; the high point of appeasement.",
+      "start": 1938,
+      "tracks": [
+        "germany",
+        "united-kingdom",
+        "france",
+        "italy",
+        "czechoslovakia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-munich-agreement",
+          "sourceLocation": "infobox date_signed: 30 September 1938"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "german-occupation-of-czechoslovakia",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "nanjing-massacre",
+      "title": "Nanjing Massacre",
+      "descr": "After taking Nanjing, the Chinese capital, in December 1937, Japanese troops murder and rape civilians and prisoners of war for about six weeks.",
+      "start": 1937,
+      "end": 1938,
+      "tracks": [
+        "japan",
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nanjing-massacre",
+          "sourceLocation": "infobox date: From December 13, 1937, for six weeks (traditional historiography), atrocities i"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-stalingrad",
+      "title": "Battle of Stalingrad",
+      "descr": "The Soviet Red Army defeats the German siege of Stalingrad, a turning point of the war on the Eastern Front.",
+      "start": 1942,
+      "end": 1943,
+      "tracks": [
+        "germany",
+        "soviet-union"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-stalingrad",
+          "sourceLocation": "infobox date: 17 July 1942 – 2 February 1943"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "normandy-landings",
+      "title": "Normandy landings",
+      "descr": "On D-Day, 6 June 1944, Allied forces land in German-occupied France and open a second front in western Europe.",
+      "start": 1944,
+      "tracks": [
+        "united-states",
+        "united-kingdom",
+        "canada",
+        "germany",
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-normandy-landings",
+          "sourceLocation": "infobox date: 6 June 1944"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "holocaust",
+      "title": "The Holocaust",
+      "descr": "Nazi Germany and its collaborators murder about six million European Jews, most of them in occupied Poland, along with millions of others they persecuted.",
+      "start": 1941,
+      "end": 1945,
+      "tracks": [
+        "germany",
+        "poland"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-the-holocaust",
+          "sourceLocation": "infobox date: 1941–1945"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-versailles",
+      "title": "Treaty of Versailles",
+      "descr": "Signed on 28 June 1919 at the Paris Peace Conference, where the victorious Allies set the terms for the defeated Central Powers; Germany loses territory and its colonies and must pay reparations.",
+      "start": 1919,
+      "tracks": [
+        "germany",
+        "france",
+        "united-kingdom",
+        "united-states",
+        "italy",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-treaty-of-versailles",
+          "sourceLocation": "infobox date_signed: 28 June 1919"
+        },
+        {
+          "sourceKey": "wp-paris-peace-conference-1919-1920",
+          "sourceLocation": "lead: \"The Paris Peace Conference was a set of formal and informal diplomatic meetings in 1919 and 1920 after the end of World War I, in which the victorious Allies se\""
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww1",
+          "kind": "succeeds"
+        }
+      ]
+    },
+    {
+      "uuid": "pearl-harbor",
+      "title": "Attack on Pearl Harbor",
+      "descr": "Japan strikes the US Pacific Fleet on 7 December 1941; the United States enters the Second World War.",
+      "start": 1941,
+      "tracks": [
+        "japan",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-attack-on-pearl-harbor",
+          "sourceLocation": "infobox date: 7 December 1941"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
     }
   ]
 }
