@@ -5,6 +5,9 @@
 //   npm run data -- format <timeline|all>        re-format the source file in the repo's compact style
 //   npm run data -- row-order <timeline> [args]  how close related rows sit (args as for scripts/row-order.ts)
 //   npm run data -- run-all <timeline> [--check] replay every content script in order, then `importance`
+//   npm run data -- ids [--check] [--base <rev>] [<dir> ...]
+//                                                the id-stability check: ids links can name that a compiled timeline
+//                                                lost since <rev> (default origin/main) without a redirect (CI runs it)
 //   npm run data -- index                        print the site's list of timelines (timelines/index.json, made at
 //                                                build time from public/timelines and data-src/site-timelines.json)
 //
@@ -23,9 +26,10 @@ import { SOURCE_TIMELINES, sourceTimeline, type SourceTimeline } from './lib/tim
 import { timelineIndexText } from './lib/timeline-index.ts';
 import { applyRowLinks } from './lib/row-links.ts';
 import { applyMemberships } from './lib/memberships.ts';
+import { idsCommand } from './lib/ids-check.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
-const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], or npm run data -- index';
+const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], npm run data -- ids [--check] [--base <rev>] [<dir> ...], or npm run data -- index';
 
 function build(t: SourceTimeline) {
   const { dataset, errors } = compileSource(readSource(t.source));
@@ -121,6 +125,9 @@ try {
     }
     case 'run-all':
       runAll(sourceTimeline(name), rest.includes('--check'));
+      break;
+    case 'ids':
+      idsCommand(process.argv.slice(3));
       break;
     case 'index':
       index();

@@ -42,3 +42,12 @@ jobs:
           npm run data:build
           npm run importance
           git diff --exit-code -- public/timelines docs
+
+      # No id a link can name (rows, events, eras, regions, sources, tags…) disappears without a redirect. Compares
+      # with the pull request's base branch, or with the commit before a push (docs/data-format.md#keeping-ids-stable)
+      - name: No id lost without a redirect
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.base_ref || github.event.before }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE"
+          npm run data -- ids --check --base FETCH_HEAD
