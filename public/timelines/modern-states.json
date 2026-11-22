@@ -3,7 +3,7 @@
   "meta": {
     "id": "modern-states",
     "title": "Modern States",
-    "subtitle": "Europe, with pilots for India, Nigeria, Mexico and Indonesia; 1500 to today",
+    "subtitle": "Europe and the post-Soviet states, with pilots for India, Nigeria, Mexico and Indonesia; 1500 to today",
     "description": "States from 1500 to today: their governments as phases, unions as their own rows, and which union each state was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field.",
     "calendar": {
@@ -112,6 +112,12 @@
       "name": "Central America",
       "color": "#4a7a8f",
       "parent": "americas"
+    },
+    {
+      "id": "central-asia",
+      "name": "Central Asia",
+      "color": "#7a8f3a",
+      "parent": "asia"
     },
     {
       "id": "france",
@@ -3908,6 +3914,38 @@
             }
           ]
         }
+      ],
+      "memberOf": [
+        {
+          "row": "russia",
+          "start": 1809,
+          "end": 1917,
+          "startDates": [
+            {
+              "year": 1809,
+              "source": {
+                "sourceKey": "wp-grand-duchy-of-finland",
+                "sourceLocation": "infobox year_start: 1809"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-grand-duchy-of-finland",
+                "sourceLocation": "infobox year_end: 1917"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-grand-duchy-of-finland",
+              "sourceLocation": "lead: \"The Grand Duchy of Finland was the direct predecessor to modern Finland, existing from 1809 to 1917 as an autonomous region within the Russian Empire and briefl\""
+            }
+          ],
+          "endEvent": "finnish-independence"
+        }
       ]
     },
     {
@@ -4121,6 +4159,66 @@
           ],
           "startEvent": "union-of-lublin",
           "endEvent": "third-partition"
+        },
+        {
+          "row": "soviet-union",
+          "start": 1940,
+          "end": 1941,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-lithuanian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1941"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-lithuanian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-lithuanian-soviet-socialist-republic",
+              "sourceLocation": "infobox life span: 1940–1941 / (1941–1944: German occupation) / 1944–1990"
+            }
+          ],
+          "startEvent": "soviet-occupation-of-the-baltic-states"
+        },
+        {
+          "row": "soviet-union",
+          "start": 1944,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-lithuanian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1944–1990"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-lithuanian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1944–1990"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-lithuanian-soviet-socialist-republic",
+              "sourceLocation": "infobox life span: 1940–1941 / (1941–1944: German occupation) / 1944–1990"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
         }
       ]
     },
@@ -8581,6 +8679,35 @@
           ],
           "startEvent": "union-of-lublin",
           "endEvent": "third-partition"
+        },
+        {
+          "row": "russia",
+          "start": 1815,
+          "end": 1915,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-congress-poland",
+                "sourceLocation": "infobox life span: 1815–1915"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1915,
+              "source": {
+                "sourceKey": "wp-congress-poland",
+                "sourceLocation": "infobox life span: 1815–1915"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-congress-poland",
+              "sourceLocation": "lead: \"Congress Poland, or the Congress Kingdom of Poland, formally known as the Kingdom of Poland, was a semi-autonomous Polish state established in 1815 by the Congr\""
+            }
+          ]
         }
       ]
     },
@@ -9960,6 +10087,3152 @@
           }
         ]
       }
+    },
+    {
+      "id": "russia",
+      "name": "Russia",
+      "color": "#c0303a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Russia",
+      "phases": [
+        {
+          "name": "Grand Principality of Moscow",
+          "start": 1263,
+          "end": 1547,
+          "startDates": [
+            {
+              "year": 1263,
+              "source": {
+                "sourceKey": "wp-grand-principality-of-moscow",
+                "sourceLocation": "infobox year_start: 1263"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1547,
+              "source": {
+                "sourceKey": "wp-grand-principality-of-moscow",
+                "sourceLocation": "infobox year_end: 1547"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Tsardom of Russia",
+          "start": 1547,
+          "end": 1721,
+          "startDates": [
+            {
+              "year": 1547,
+              "source": {
+                "sourceKey": "wp-tsardom-of-russia",
+                "sourceLocation": "infobox year_start: 1547"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-tsardom-of-russia",
+                "sourceLocation": "infobox year_end: 1721"
+              }
+            }
+          ],
+          "endEvent": "great-northern-war"
+        },
+        {
+          "name": "Russian Empire",
+          "start": 1721,
+          "end": 1917,
+          "startDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-russian-empire",
+                "sourceLocation": "infobox year_start: 1721"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-russian-empire",
+                "sourceLocation": "infobox year_end: 1917"
+              }
+            }
+          ],
+          "startEvent": "great-northern-war",
+          "endEvent": "russian-revolution"
+        },
+        {
+          "name": "Russian Republic",
+          "start": 1917,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-russian-republic",
+                "sourceLocation": "infobox year_start: 1917"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-russian-republic",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ],
+          "startEvent": "russian-revolution"
+        },
+        {
+          "name": "Russian SFSR",
+          "start": 1917,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-russian-soviet-federative-socialist-republic",
+                "sourceLocation": "infobox life span: 1917–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-russian-soviet-federative-socialist-republic",
+                "sourceLocation": "infobox life span: 1917–1991"
+              }
+            }
+          ],
+          "startEvent": "russian-revolution",
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Russian Federation",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-russia",
+                "sourceLocation": "infobox: Belovezha Accords ratifed (12 December 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-russia",
+              "sourceLocation": "infobox established_event10: Current constitution, 12 December 1993 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "soviet-union",
+          "start": 1922,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-soviet-union",
+                "sourceLocation": "infobox life span: 1922–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-soviet-union",
+                "sourceLocation": "infobox life span: 1922–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-russia",
+              "sourceLocation": "infobox established_event7: Soviet Union, 30 December 1922"
+            }
+          ],
+          "startEvent": "soviet-union-founded",
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "soviet-union",
+      "name": "Soviet Union",
+      "color": "#b02020",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Soviet_Union",
+      "span": {
+        "start": 1922,
+        "end": 1991,
+        "startDates": [
+          {
+            "year": 1922,
+            "source": {
+              "sourceKey": "wp-soviet-union",
+              "sourceLocation": "infobox life span: 1922–1991"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1991,
+            "source": {
+              "sourceKey": "wp-soviet-union",
+              "sourceLocation": "infobox life span: 1922–1991"
+            }
+          }
+        ],
+        "startEvent": "soviet-union-founded",
+        "endEvent": "dissolution-of-the-soviet-union"
+      }
+    },
+    {
+      "id": "ukraine",
+      "name": "Ukraine",
+      "color": "#2a6ad0",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Ukraine",
+      "phases": [
+        {
+          "name": "Cossack Hetmanate",
+          "start": 1649,
+          "end": 1764,
+          "startDates": [
+            {
+              "year": 1649,
+              "source": {
+                "sourceKey": "wp-cossack-hetmanate",
+                "sourceLocation": "infobox date_start: 18 (8) August 1649"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1764,
+              "source": {
+                "sourceKey": "wp-cossack-hetmanate",
+                "sourceLocation": "infobox year_end: 1764"
+              }
+            }
+          ],
+          "startEvent": "khmelnytsky-uprising"
+        },
+        {
+          "name": "Ukrainian People's Republic",
+          "start": 1917,
+          "end": 1921,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-ukrainian-people-s-republic",
+                "sourceLocation": "infobox year_start: 1917"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1921,
+              "source": {
+                "sourceKey": "wp-ukrainian-people-s-republic",
+                "sourceLocation": "infobox year_end: 1921"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ukrainian State",
+          "start": 1918,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-ukrainian-state",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-ukrainian-state",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ]
+        },
+        {
+          "name": "West Ukrainian People's Republic",
+          "start": 1918,
+          "end": 1919,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-west-ukrainian-people-s-republic",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-west-ukrainian-people-s-republic",
+                "sourceLocation": "infobox year_end: 1919"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ukrainian SSR",
+          "start": 1919,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-ukrainian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1919–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-ukrainian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1919–1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Ukraine",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-ukraine",
+                "sourceLocation": "infobox: Independence declared (24 August 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-ukraine",
+              "sourceLocation": "infobox established_event11: Current constitution, 28 June 1996 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "russia",
+          "start": 1654,
+          "end": 1764,
+          "startDates": [
+            {
+              "year": 1654,
+              "source": {
+                "sourceKey": "wp-cossack-hetmanate",
+                "sourceLocation": "lead: \"Establishment of vassal relations with the Tsardom of Moscow in the Treaty of Pereiaslav of 1654 is considered a benchmark of the Cossack Hetmanate in Soviet, U\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1764,
+              "source": {
+                "sourceKey": "wp-cossack-hetmanate",
+                "sourceLocation": "infobox year_end: 1764"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-cossack-hetmanate",
+              "sourceLocation": "lead: \"Establishment of vassal relations with the Tsardom of Moscow in the Treaty of Pereiaslav of 1654 is considered a benchmark of the Cossack Hetmanate in Soviet, U\""
+            }
+          ]
+        },
+        {
+          "row": "soviet-union",
+          "start": 1922,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-soviet-union",
+                "sourceLocation": "infobox life span: 1922–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-ukrainian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1919–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-ukrainian-soviet-socialist-republic",
+              "sourceLocation": "infobox event_start: USSR created, 30 December 1922"
+            }
+          ],
+          "startEvent": "soviet-union-founded",
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "belarus",
+      "name": "Belarus",
+      "color": "#3a9a4a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Belarus",
+      "phases": [
+        {
+          "name": "Belarusian People's Republic",
+          "start": 1918,
+          "end": 1919,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-belarusian-people-s-republic",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-belarusian-people-s-republic",
+                "sourceLocation": "infobox year_end: 1919"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Byelorussian SSR",
+          "start": 1920,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-byelorussian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-byelorussian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Republic of Belarus",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-belarus",
+                "sourceLocation": "infobox: Declaration of Independence (25 August 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-belarus",
+              "sourceLocation": "infobox established_event7: Current constitution, 15 March 1994 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "soviet-union",
+          "start": 1922,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-soviet-union",
+                "sourceLocation": "infobox life span: 1922–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-byelorussian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-belarus",
+              "sourceLocation": "infobox established_event4: Byelorussian Soviet Socialist Republic, 31 July 1920"
+            }
+          ],
+          "startEvent": "soviet-union-founded",
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "moldova",
+      "name": "Moldova",
+      "color": "#3a5ab0",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Moldova",
+      "span": {
+        "start": 1812,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1812,
+            "source": {
+              "sourceKey": "wp-bessarabia-governorate",
+              "sourceLocation": "infobox year_start: 1812"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-moldova",
+            "sourceLocation": "infobox established_event9: Constitution adopted, 29 July 1994 (current state)"
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Bessarabia Governorate",
+          "start": 1812,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1812,
+              "source": {
+                "sourceKey": "wp-bessarabia-governorate",
+                "sourceLocation": "infobox year_start: 1812"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-bessarabia-governorate",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Moldavian Democratic Republic",
+          "start": 1917,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-moldavian-democratic-republic",
+                "sourceLocation": "infobox life span: 1917–1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-moldavian-democratic-republic",
+                "sourceLocation": "infobox life span: 1917–1918"
+              }
+            }
+          ],
+          "endEvent": "union-of-bessarabia-with-romania"
+        },
+        {
+          "name": "Moldavian SSR",
+          "start": 1940,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-moldavian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-moldavian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Republic of Moldova",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-moldova",
+                "sourceLocation": "infobox: Independence from the Soviet Union (27 August 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-moldova",
+              "sourceLocation": "infobox established_event9: Constitution adopted, 29 July 1994 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "russia",
+          "start": 1812,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1812,
+              "source": {
+                "sourceKey": "wp-bessarabia-governorate",
+                "sourceLocation": "infobox year_start: 1812"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-bessarabia-governorate",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-bessarabia-governorate",
+              "sourceLocation": "lead: \"It included the eastern part of the Principality of Moldavia along with the neighboring Ottoman-ruled territories annexed by Russia by the Treaty of Bucharest f\""
+            }
+          ]
+        },
+        {
+          "row": "romania",
+          "start": 1918,
+          "end": 1940,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-moldova",
+                "sourceLocation": "infobox: Union with Romania (9 April 1918)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-moldavian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-moldova",
+              "sourceLocation": "infobox established_event4: Union with Romania, 9 April 1918"
+            }
+          ],
+          "startEvent": "union-of-bessarabia-with-romania"
+        },
+        {
+          "row": "soviet-union",
+          "start": 1940,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-moldavian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-moldavian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-moldova",
+              "sourceLocation": "infobox established_event6: Moldavian SSR, 2 August 1940"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "transnistria",
+      "name": "Transnistria (disputed)",
+      "color": "#7a3a3a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Transnistria",
+      "span": {
+        "start": 1990,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1990,
+            "source": {
+              "sourceKey": "wp-transnistria",
+              "sourceLocation": "infobox: Independence from Moldavian SSR declared (2 September 1990)"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-transnistria",
+            "sourceLocation": "infobox established_event1: Independence from Moldavian SSR declared, 1990 (current state; unrecognised, claimed by Moldova)"
+          }
+        ],
+        "startEvent": "transnistria-war"
+      }
+    },
+    {
+      "id": "terra-mariana",
+      "name": "Terra Mariana (Livonian Confederation)",
+      "color": "#6a6a7a",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Terra_Mariana",
+      "span": {
+        "start": 1207,
+        "end": 1561,
+        "startDates": [
+          {
+            "year": 1207,
+            "source": {
+              "sourceKey": "wp-terra-mariana",
+              "sourceLocation": "infobox year_start: 1207"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1561,
+            "source": {
+              "sourceKey": "wp-terra-mariana",
+              "sourceLocation": "infobox year_end: 1561"
+            }
+          }
+        ],
+        "endEvent": "livonian-war"
+      }
+    },
+    {
+      "id": "duchy-of-courland",
+      "name": "Duchy of Courland and Semigallia",
+      "color": "#8a6a3a",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Courland_and_Semigallia",
+      "span": {
+        "start": 1561,
+        "end": 1795,
+        "startDates": [
+          {
+            "year": 1561,
+            "source": {
+              "sourceKey": "wp-duchy-of-courland-and-semigallia",
+              "sourceLocation": "infobox year_start: 1561"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1795,
+            "source": {
+              "sourceKey": "wp-duchy-of-courland-and-semigallia",
+              "sourceLocation": "infobox year_end: 1795"
+            }
+          }
+        ],
+        "startEvent": "livonian-war",
+        "endEvent": "third-partition"
+      },
+      "memberOf": [
+        {
+          "row": "polish-lithuanian-commonwealth",
+          "start": 1569,
+          "end": 1795,
+          "startDates": [
+            {
+              "year": 1569,
+              "source": {
+                "sourceKey": "wp-polish-lithuanian-commonwealth",
+                "sourceLocation": "infobox year_start: 1569"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1795,
+              "source": {
+                "sourceKey": "wp-duchy-of-courland-and-semigallia",
+                "sourceLocation": "infobox year_end: 1795"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-duchy-of-courland-and-semigallia",
+              "sourceLocation": "lead: \"The Duchy of Courland and Semigallia was a duchy in the Baltic region, then known as Livonia, that existed from 1561 to 1569 as a nominal vassal state of the Gr\""
+            }
+          ],
+          "startEvent": "union-of-lublin",
+          "endEvent": "third-partition"
+        }
+      ]
+    },
+    {
+      "id": "duchy-of-livonia",
+      "name": "Duchy of Livonia",
+      "color": "#9a7a4a",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Livonia",
+      "span": {
+        "start": 1561,
+        "end": 1629,
+        "startDates": [
+          {
+            "year": 1561,
+            "source": {
+              "sourceKey": "wp-duchy-of-livonia",
+              "sourceLocation": "infobox year_start: 1561"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1629,
+            "source": {
+              "sourceKey": "wp-duchy-of-livonia",
+              "sourceLocation": "infobox year_end: 1629"
+            }
+          }
+        ],
+        "startEvent": "livonian-war"
+      },
+      "memberOf": [
+        {
+          "row": "polish-lithuanian-commonwealth",
+          "start": 1569,
+          "end": 1629,
+          "startDates": [
+            {
+              "year": 1569,
+              "source": {
+                "sourceKey": "wp-polish-lithuanian-commonwealth",
+                "sourceLocation": "infobox year_start: 1569"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1629,
+              "source": {
+                "sourceKey": "wp-duchy-of-livonia",
+                "sourceLocation": "infobox year_end: 1629"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-duchy-of-livonia",
+              "sourceLocation": "lead: \"The Duchy of Livonia, also referred to as Polish Livonia or Livonia, was a semi-autonomous vassal state of the Grand Duchy of Lithuania and, from 1569, the Poli\""
+            }
+          ],
+          "startEvent": "union-of-lublin"
+        }
+      ]
+    },
+    {
+      "id": "swedish-livonia",
+      "name": "Swedish Livonia",
+      "color": "#4a6aa0",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Swedish_Livonia",
+      "span": {
+        "start": 1629,
+        "end": 1721,
+        "startDates": [
+          {
+            "year": 1629,
+            "source": {
+              "sourceKey": "wp-swedish-livonia",
+              "sourceLocation": "infobox year_start: 1629"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1721,
+            "source": {
+              "sourceKey": "wp-swedish-livonia",
+              "sourceLocation": "infobox year_end: 1721"
+            }
+          }
+        ],
+        "endEvent": "great-northern-war"
+      },
+      "memberOf": [
+        {
+          "row": "sweden",
+          "start": 1629,
+          "end": 1721,
+          "startDates": [
+            {
+              "year": 1629,
+              "source": {
+                "sourceKey": "wp-swedish-livonia",
+                "sourceLocation": "infobox year_start: 1629"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-swedish-livonia",
+                "sourceLocation": "infobox year_end: 1721"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-swedish-livonia",
+              "sourceLocation": "lead: \"Swedish Livonia () was a dominion of the Swedish Empire from 1629 until 1721.\""
+            }
+          ],
+          "endEvent": "great-northern-war"
+        }
+      ]
+    },
+    {
+      "id": "estonia",
+      "name": "Estonia",
+      "color": "#2a7ac0",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Estonia",
+      "span": {
+        "start": 1918,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1918,
+            "source": {
+              "sourceKey": "wp-estonia",
+              "sourceLocation": "infobox: Declaration of Independence (24 February 1918)"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-estonia",
+            "sourceLocation": "infobox established_event5: Restoration of Independence, 20 August 1991 (current state)"
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Republic of Estonia",
+          "start": 1918,
+          "end": 1940,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-history-of-estonia-1920-1939",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-history-of-estonia-1920-1939",
+                "sourceLocation": "infobox year_end: 1940"
+              }
+            }
+          ],
+          "endEvent": "soviet-occupation-of-the-baltic-states"
+        },
+        {
+          "name": "Estonian SSR",
+          "start": 1940,
+          "end": 1941,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1940"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1941, 1944–1990"
+              }
+            }
+          ],
+          "startEvent": "soviet-occupation-of-the-baltic-states"
+        },
+        {
+          "name": "Estonian SSR (reoccupied)",
+          "start": 1944,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1941, 1944–1990"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            },
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox life_span: 1940–1941, 1944–1990"
+              },
+              "note": "The same article gives this year too."
+            }
+          ]
+        },
+        {
+          "name": "Republic of Estonia (restored)",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-estonia",
+                "sourceLocation": "infobox: Restoration of Independence (20 August 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-estonia",
+              "sourceLocation": "infobox established_event5: Restoration of Independence, 20 August 1991 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "soviet-union",
+          "start": 1940,
+          "end": 1941,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1940"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1941, 1944–1990"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-estonia",
+              "sourceLocation": "infobox established_event4: German and Soviet occupations, 1940–1991"
+            }
+          ],
+          "startEvent": "soviet-occupation-of-the-baltic-states"
+        },
+        {
+          "row": "soviet-union",
+          "start": 1944,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-estonian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1941, 1944–1990"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-estonia",
+                "sourceLocation": "infobox: Restoration of Independence (20 August 1991)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-estonia",
+              "sourceLocation": "infobox established_event4: German and Soviet occupations, 1940–1991"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "latvia",
+      "name": "Latvia",
+      "color": "#a03040",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Latvia",
+      "span": {
+        "start": 1918,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1918,
+            "source": {
+              "sourceKey": "wp-latvia",
+              "sourceLocation": "infobox: Declared (18 November 1918)"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-latvia",
+            "sourceLocation": "infobox established_event4: Restored, 21 August 1991 (current state)"
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Republic of Latvia",
+          "start": 1918,
+          "end": 1940,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-latvia",
+                "sourceLocation": "infobox: Declared (18 November 1918)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-latvian-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1940"
+              }
+            }
+          ],
+          "endEvent": "soviet-occupation-of-the-baltic-states"
+        },
+        {
+          "name": "Latvian SSR",
+          "start": 1940,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-latvian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1990"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-latvian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1990"
+              }
+            }
+          ],
+          "startEvent": "soviet-occupation-of-the-baltic-states"
+        },
+        {
+          "name": "Republic of Latvia (restored)",
+          "start": 1990,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-latvian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1990"
+              }
+            },
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-latvia",
+                "sourceLocation": "infobox: Restored (21 August 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-latvia",
+              "sourceLocation": "infobox established_event4: Restored, 21 August 1991 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "soviet-union",
+          "start": 1940,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-latvian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1990"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-latvian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1940–1990"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-latvian-soviet-socialist-republic",
+              "sourceLocation": "infobox life span: 1940–1990 / 1941–1944/45: German occupation"
+            }
+          ],
+          "startEvent": "soviet-occupation-of-the-baltic-states",
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "golden-horde",
+      "name": "Golden Horde",
+      "color": "#c0a030",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Golden_Horde",
+      "span": {
+        "start": 1225,
+        "end": 1502,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1225,
+            "source": {
+              "sourceKey": "wp-golden-horde",
+              "sourceLocation": "infobox year_start: c. 1225"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1502,
+            "source": {
+              "sourceKey": "wp-golden-horde",
+              "sourceLocation": "infobox year_end: 1502"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "crimean-khanate",
+      "name": "Crimean Khanate",
+      "color": "#5a8a3a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Crimean_Khanate",
+      "span": {
+        "start": 1441,
+        "end": 1783,
+        "startDates": [
+          {
+            "year": 1441,
+            "source": {
+              "sourceKey": "wp-crimean-khanate",
+              "sourceLocation": "infobox year_start: 1441"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1783,
+            "source": {
+              "sourceKey": "wp-crimean-khanate",
+              "sourceLocation": "infobox year_end: 1783"
+            }
+          }
+        ],
+        "endEvent": "annexation-of-crimea-1783"
+      }
+    },
+    {
+      "id": "kazan-khanate",
+      "name": "Khanate of Kazan",
+      "color": "#3a7a5a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Kazan",
+      "span": {
+        "start": 1438,
+        "end": 1552,
+        "startDates": [
+          {
+            "year": 1438,
+            "source": {
+              "sourceKey": "wp-khanate-of-kazan",
+              "sourceLocation": "infobox year_start: 1438"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1552,
+            "source": {
+              "sourceKey": "wp-khanate-of-kazan",
+              "sourceLocation": "infobox year_end: 1552"
+            }
+          }
+        ],
+        "endEvent": "siege-of-kazan"
+      }
+    },
+    {
+      "id": "astrakhan-khanate",
+      "name": "Astrakhan Khanate",
+      "color": "#7a5a3a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Astrakhan_Khanate",
+      "span": {
+        "start": 1466,
+        "end": 1556,
+        "startDates": [
+          {
+            "year": 1466,
+            "source": {
+              "sourceKey": "wp-astrakhan-khanate",
+              "sourceLocation": "infobox year_start: 1466"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1556,
+            "source": {
+              "sourceKey": "wp-astrakhan-khanate",
+              "sourceLocation": "infobox year_end: 1556"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "khanate-of-sibir",
+      "name": "Khanate of Sibir",
+      "color": "#4a5a7a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Sibir",
+      "span": {
+        "start": 1468,
+        "end": 1598,
+        "startDates": [
+          {
+            "year": 1468,
+            "source": {
+              "sourceKey": "wp-khanate-of-sibir",
+              "sourceLocation": "infobox year_start: 1468"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1598,
+            "source": {
+              "sourceKey": "wp-khanate-of-sibir",
+              "sourceLocation": "infobox year_end: 1598"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "nogai-horde",
+      "name": "Nogai Horde",
+      "color": "#8a7a3a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Nogai_Horde",
+      "span": {
+        "start": 1480,
+        "end": 1634,
+        "startDates": [
+          {
+            "year": 1480,
+            "source": {
+              "sourceKey": "wp-nogai-horde",
+              "sourceLocation": "infobox year_start: 1480"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1634,
+            "source": {
+              "sourceKey": "wp-nogai-horde",
+              "sourceLocation": "infobox year_end: 1634"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "kalmyk-khanate",
+      "name": "Kalmyk Khanate",
+      "color": "#6a4a7a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Kalmyk_Khanate",
+      "span": {
+        "start": 1630,
+        "end": 1771,
+        "startDates": [
+          {
+            "year": 1630,
+            "source": {
+              "sourceKey": "wp-kalmyk-khanate",
+              "sourceLocation": "infobox year_start: 1630"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1771,
+            "source": {
+              "sourceKey": "wp-kalmyk-khanate",
+              "sourceLocation": "infobox year_end: 1771"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "kartli",
+      "name": "Kingdom of Kartli",
+      "color": "#a04a4a",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kartli",
+      "span": {
+        "start": 1478,
+        "end": 1762,
+        "startDates": [
+          {
+            "year": 1478,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kartli",
+              "sourceLocation": "infobox year_start: 1478"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1762,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kartli",
+              "sourceLocation": "infobox year_end: 1762"
+            }
+          }
+        ],
+        "endEvent": "union-of-kartli-and-kakheti"
+      }
+    },
+    {
+      "id": "kakheti",
+      "name": "Kingdom of Kakheti",
+      "color": "#8a3a5a",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kakheti",
+      "span": {
+        "start": 1466,
+        "end": 1762,
+        "startDates": [
+          {
+            "year": 1466,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kakheti",
+              "sourceLocation": "infobox year_start: 1466"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1762,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kakheti",
+              "sourceLocation": "infobox year_end: 1762"
+            }
+          }
+        ],
+        "endEvent": "union-of-kartli-and-kakheti"
+      }
+    },
+    {
+      "id": "imereti",
+      "name": "Kingdom of Imereti",
+      "color": "#7a4a6a",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Imereti",
+      "span": {
+        "start": 1463,
+        "end": 1810,
+        "startDates": [
+          {
+            "year": 1463,
+            "source": {
+              "sourceKey": "wp-kingdom-of-imereti",
+              "sourceLocation": "infobox year_start: 1463"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1810,
+            "source": {
+              "sourceKey": "wp-kingdom-of-imereti",
+              "sourceLocation": "infobox year_end: 1810"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "georgia",
+      "name": "Georgia",
+      "color": "#d03040",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Georgia_(country)",
+      "phases": [
+        {
+          "name": "Kingdom of Kartli-Kakheti",
+          "start": 1762,
+          "end": 1801,
+          "startDates": [
+            {
+              "year": 1762,
+              "source": {
+                "sourceKey": "wp-kingdom-of-kartli-kakheti",
+                "sourceLocation": "infobox year_start: 1762"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1801,
+              "source": {
+                "sourceKey": "wp-kingdom-of-kartli-kakheti",
+                "sourceLocation": "infobox year_end: 1801"
+              }
+            }
+          ],
+          "startEvent": "union-of-kartli-and-kakheti"
+        },
+        {
+          "name": "Democratic Republic of Georgia",
+          "start": 1918,
+          "end": 1921,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-democratic-republic-of-georgia",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1921,
+              "source": {
+                "sourceKey": "wp-democratic-republic-of-georgia",
+                "sourceLocation": "infobox year_end: 1921"
+              }
+            }
+          ],
+          "endEvent": "red-army-invasion-of-georgia"
+        },
+        {
+          "name": "Georgian SSR",
+          "start": 1921,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1921,
+              "source": {
+                "sourceKey": "wp-georgian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1921–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-georgian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1921–1991"
+              }
+            }
+          ],
+          "startEvent": "red-army-invasion-of-georgia",
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Georgia",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-georgia-country",
+                "sourceLocation": "infobox: Independence from the Soviet Union Declared / Finalized (9 April 1991 / 26 December 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-georgia-country",
+              "sourceLocation": "infobox established_event10: Current constitution, 24 August 1995 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "transcaucasian-sfsr",
+          "start": 1922,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_start: 1922"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+              "sourceLocation": "lead: \"The TSFSR was dissolved upon the adoption of the 1936 Soviet Constitution and its constituent republics were elevated individually to republics of the Soviet Un\""
+            }
+          ]
+        },
+        {
+          "row": "soviet-union",
+          "start": 1936,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-georgian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1921–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-georgia-country",
+              "sourceLocation": "infobox established_event8: Soviet annexation, 25 February 1921"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "transcaucasian-sfsr",
+      "name": "Transcaucasian SFSR",
+      "color": "#8a5a3a",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Transcaucasian_Socialist_Federative_Soviet_Republic",
+      "span": {
+        "start": 1922,
+        "end": 1936,
+        "startDates": [
+          {
+            "year": 1922,
+            "source": {
+              "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+              "sourceLocation": "infobox year_start: 1922"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1936,
+            "source": {
+              "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+              "sourceLocation": "infobox year_end: 1936"
+            }
+          }
+        ]
+      },
+      "memberOf": [
+        {
+          "row": "soviet-union",
+          "start": 1922,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-soviet-union",
+                "sourceLocation": "infobox life span: 1922–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+              "sourceLocation": "lead: \"It was created in March 1922 to unify the region following a Soviet invasion two years prior, and was one of the four republics to sign the Treaty on the Creati\""
+            }
+          ],
+          "startEvent": "soviet-union-founded"
+        }
+      ]
+    },
+    {
+      "id": "armenia",
+      "name": "Armenia",
+      "color": "#d08020",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Armenia",
+      "phases": [
+        {
+          "name": "First Republic of Armenia",
+          "start": 1918,
+          "end": 1920,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-first-republic-of-armenia",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-first-republic-of-armenia",
+                "sourceLocation": "infobox year_end: 1920"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Armenian SSR",
+          "start": 1920,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-armenian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-armenian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Republic of Armenia",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-armenia",
+                "sourceLocation": "infobox: Independence from the USSR (21 September 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-armenia",
+              "sourceLocation": "infobox established_event6: Current constitution, 5 July 1995 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "transcaucasian-sfsr",
+          "start": 1922,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_start: 1922"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-armenian-soviet-socialist-republic",
+              "sourceLocation": "infobox event_start: Becomes part of the Transcaucasian SFSR"
+            }
+          ]
+        },
+        {
+          "row": "soviet-union",
+          "start": 1936,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-armenian-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-armenia",
+              "sourceLocation": "infobox established_event4: Soviet Republic, 29 November 1920"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "azerbaijan",
+      "name": "Azerbaijan",
+      "color": "#2a8ac0",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Azerbaijan",
+      "phases": [
+        {
+          "name": "Azerbaijan Democratic Republic",
+          "start": 1918,
+          "end": 1920,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-azerbaijan-democratic-republic",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-azerbaijan-democratic-republic",
+                "sourceLocation": "infobox year_end: 1920"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Azerbaijan SSR",
+          "start": 1920,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-azerbaijan-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-azerbaijan-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Republic of Azerbaijan",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-azerbaijan",
+                "sourceLocation": "infobox: Independence from the Soviet Union (30 August 1991 (announced) / 18 October 1991 (declared) / 26 December 1991 (reco)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-azerbaijan",
+              "sourceLocation": "infobox established_event4: Constitution adopted, 12 November 1995 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "transcaucasian-sfsr",
+          "start": 1922,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1922,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_start: 1922"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+              "sourceLocation": "lead: \"The TSFSR was dissolved upon the adoption of the 1936 Soviet Constitution and its constituent republics were elevated individually to republics of the Soviet Un\""
+            }
+          ]
+        },
+        {
+          "row": "soviet-union",
+          "start": 1936,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-transcaucasian-socialist-federative-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-azerbaijan-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1920–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-azerbaijan",
+              "sourceLocation": "infobox established_event2: Soviet Socialist Republic, 28 April 1920"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "abkhazia",
+      "name": "Abkhazia (disputed)",
+      "color": "#4a8a6a",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Abkhazia",
+      "span": {
+        "start": 1992,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1992,
+            "source": {
+              "sourceKey": "wp-abkhazia",
+              "sourceLocation": "infobox: Abkhazian declaration of independence (23 July 1992)"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-abkhazia",
+            "sourceLocation": "infobox established_event5: Abkhazian declaration of independence, 23 July 1992 (current state; unrecognised by most states; claimed by Georgia)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "south-ossetia",
+      "name": "South Ossetia (disputed)",
+      "color": "#6a8a4a",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/South_Ossetia",
+      "span": {
+        "start": 1991,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1991,
+            "source": {
+              "sourceKey": "wp-south-ossetia",
+              "sourceLocation": "infobox: Republic of South Ossetia (21 December 1991)"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-south-ossetia",
+            "sourceLocation": "infobox established_event3: Republic of South Ossetia, 21 December 1991 (current state; unrecognised by most states; claimed by Georgia)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "artsakh",
+      "name": "Artsakh (disputed)",
+      "color": "#9a5a2a",
+      "parent": "western-asia",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_Artsakh",
+      "span": {
+        "start": 1991,
+        "end": 2023,
+        "startDates": [
+          {
+            "year": 1991,
+            "source": {
+              "sourceKey": "wp-republic-of-artsakh",
+              "sourceLocation": "infobox life span: 1991–2023"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 2023,
+            "source": {
+              "sourceKey": "wp-republic-of-artsakh",
+              "sourceLocation": "infobox life span: 1991–2023"
+            }
+          }
+        ],
+        "endEvent": "azerbaijani-offensive-2023"
+      }
+    },
+    {
+      "id": "kazakhstan",
+      "name": "Kazakhstan",
+      "color": "#2a9ab0",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Kazakhstan",
+      "phases": [
+        {
+          "name": "Kazakh Khanate",
+          "start": 1465,
+          "end": 1780,
+          "startDates": [
+            {
+              "year": 1465,
+              "source": {
+                "sourceKey": "wp-kazakh-khanate",
+                "sourceLocation": "infobox year_start: 1465"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1780,
+              "source": {
+                "sourceKey": "wp-kazakh-khanate",
+                "sourceLocation": "infobox year_end: 1780"
+              }
+            },
+            {
+              "year": 1822,
+              "source": {
+                "sourceKey": "wp-kazakhstan",
+                "sourceLocation": "infobox: Abolition of the khanate (3 August 1822)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Alash Autonomy",
+          "start": 1917,
+          "end": 1920,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-alash-autonomy",
+                "sourceLocation": "infobox life span: 1917–1920"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-alash-autonomy",
+                "sourceLocation": "infobox life span: 1917–1920"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kazakh ASSR",
+          "start": 1920,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-kazakh-autonomous-socialist-soviet-republic",
+                "sourceLocation": "infobox year_start: 1920"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kazakh-autonomous-socialist-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kazakh SSR",
+          "start": 1936,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kazakh-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1936–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-kazakh-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1936–1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Republic of Kazakhstan",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-kazakhstan",
+                "sourceLocation": "infobox: Independence from the Soviet Union (16 December 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-kazakhstan",
+              "sourceLocation": "infobox established_event8: Recognized, 26 December 1991 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "russia",
+          "start": 1920,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-kazakh-autonomous-socialist-soviet-republic",
+                "sourceLocation": "infobox year_start: 1920"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kazakh-autonomous-socialist-soviet-republic",
+                "sourceLocation": "infobox year_end: 1936"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kazakh-autonomous-socialist-soviet-republic",
+              "sourceLocation": "lead: \"The Kazakh Autonomous Socialist Soviet Republic (; ), abbreviated as Kazakh ASSR (; ) and simply Kazakhstan (; ), was an autonomous republic of the Russian Sovi\""
+            }
+          ]
+        },
+        {
+          "row": "soviet-union",
+          "start": 1936,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kazakh-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1936–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-kazakh-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1936–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kazakhstan",
+              "sourceLocation": "infobox established_event6: Kazakh SSR, 5 December 1936"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "bukhara",
+      "name": "Bukhara",
+      "color": "#b07a2a",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Emirate_of_Bukhara",
+      "phases": [
+        {
+          "name": "Khanate of Bukhara",
+          "start": 1501,
+          "end": 1785,
+          "startDates": [
+            {
+              "year": 1501,
+              "source": {
+                "sourceKey": "wp-khanate-of-bukhara",
+                "sourceLocation": "infobox year_start: 1501"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1785,
+              "source": {
+                "sourceKey": "wp-khanate-of-bukhara",
+                "sourceLocation": "infobox year_end: 1785"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Emirate of Bukhara",
+          "start": 1785,
+          "end": 1920,
+          "startDates": [
+            {
+              "year": 1785,
+              "source": {
+                "sourceKey": "wp-emirate-of-bukhara",
+                "sourceLocation": "infobox year_start: 1785"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-emirate-of-bukhara",
+                "sourceLocation": "infobox year_end: 1920"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bukharan People's Soviet Republic",
+          "start": 1920,
+          "end": 1924,
+          "startDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-bukharan-people-s-soviet-republic",
+                "sourceLocation": "infobox year_start: 1920"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-bukharan-people-s-soviet-republic",
+                "sourceLocation": "infobox year_end: 1924"
+              }
+            }
+          ],
+          "endEvent": "national-delimitation"
+        }
+      ]
+    },
+    {
+      "id": "khiva",
+      "name": "Khiva",
+      "color": "#8a6a2a",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Khiva",
+      "phases": [
+        {
+          "name": "Khanate of Khiva",
+          "start": 1511,
+          "end": 1920,
+          "startDates": [
+            {
+              "year": 1511,
+              "source": {
+                "sourceKey": "wp-khanate-of-khiva",
+                "sourceLocation": "infobox year_start: 1511"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-khanate-of-khiva",
+                "sourceLocation": "infobox year_end: 1920"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Khorezm People's Soviet Republic",
+          "start": 1920,
+          "end": 1924,
+          "startDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-khorezm-people-s-soviet-republic",
+                "sourceLocation": "infobox year_start: 1920"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-khorezm-people-s-soviet-republic",
+                "sourceLocation": "infobox year_end: 1924"
+              }
+            }
+          ],
+          "endEvent": "national-delimitation"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "russia",
+          "start": 1873,
+          "end": 1920,
+          "startDates": [
+            {
+              "year": 1873,
+              "source": {
+                "sourceKey": "wp-khanate-of-khiva",
+                "sourceLocation": "lead: \"In 1873, the Khanate of Khiva was greatly reduced in size and became a Russian protectorate.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-khanate-of-khiva",
+                "sourceLocation": "infobox year_end: 1920"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-khanate-of-khiva",
+              "sourceLocation": "lead: \"In 1873, the Khanate of Khiva was greatly reduced in size and became a Russian protectorate.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kokand",
+      "name": "Khanate of Kokand",
+      "color": "#6a8a2a",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Kokand",
+      "span": {
+        "start": 1709,
+        "end": 1876,
+        "startDates": [
+          {
+            "year": 1709,
+            "source": {
+              "sourceKey": "wp-khanate-of-kokand",
+              "sourceLocation": "infobox year_start: 1709"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1876,
+            "source": {
+              "sourceKey": "wp-khanate-of-kokand",
+              "sourceLocation": "infobox year_end: 1876"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "turkestan",
+      "name": "Turkestan",
+      "color": "#7a7a3a",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Russian_Turkestan",
+      "phases": [
+        {
+          "name": "Governorate-General of Turkestan",
+          "start": 1867,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1867,
+              "source": {
+                "sourceKey": "wp-russian-turkestan",
+                "sourceLocation": "infobox year_start: 1867"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-russian-turkestan",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Turkestan ASSR",
+          "start": 1918,
+          "end": 1924,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-turkestan-autonomous-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-turkestan-autonomous-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1924"
+              }
+            }
+          ],
+          "endEvent": "national-delimitation"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "russia",
+          "start": 1867,
+          "end": 1924,
+          "startDates": [
+            {
+              "year": 1867,
+              "source": {
+                "sourceKey": "wp-russian-turkestan",
+                "sourceLocation": "infobox year_start: 1867"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-turkestan-autonomous-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1924"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-turkestan-autonomous-soviet-socialist-republic",
+              "sourceLocation": "lead: \"The Turkestan Autonomous Soviet Socialist Republic (TASSR; ; ), originally called the Turkestan Soviet Federative Republic, was an autonomous republic of the Ru\""
+            }
+          ],
+          "endEvent": "national-delimitation"
+        }
+      ]
+    },
+    {
+      "id": "uzbekistan",
+      "name": "Uzbekistan",
+      "color": "#2a9a7a",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Uzbekistan",
+      "phases": [
+        {
+          "name": "Uzbek SSR",
+          "start": 1924,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-uzbek-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1924"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-uzbek-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ],
+          "startEvent": "national-delimitation",
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Republic of Uzbekistan",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-uzbekistan",
+                "sourceLocation": "infobox: Independence from the Soviet Union (1 September 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-uzbekistan",
+              "sourceLocation": "infobox established_event7: Current constitution, 8 December 1992 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "soviet-union",
+          "start": 1924,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-uzbek-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1924"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-uzbek-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-uzbekistan",
+              "sourceLocation": "infobox established_event3: Uzbek SSR, 27 October 1924"
+            }
+          ],
+          "startEvent": "national-delimitation",
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "turkmenistan",
+      "name": "Turkmenistan",
+      "color": "#3a8a5a",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Turkmenistan",
+      "phases": [
+        {
+          "name": "Turkmen SSR",
+          "start": 1925,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1925,
+              "source": {
+                "sourceKey": "wp-turkmen-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1925–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-turkmen-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1925–1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Turkmenistan",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-turkmenistan",
+                "sourceLocation": "infobox: Independence declared (27 October 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-turkmenistan",
+              "sourceLocation": "infobox established_event3: Independence recognized, 26 December 1991 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "soviet-union",
+          "start": 1925,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1925,
+              "source": {
+                "sourceKey": "wp-turkmen-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1925–1991"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-turkmen-soviet-socialist-republic",
+                "sourceLocation": "infobox life span: 1925–1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-turkmen-soviet-socialist-republic",
+              "sourceLocation": "infobox event_start: Republic proclaimed, 13 May 1925"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "kyrgyzstan",
+      "name": "Kyrgyzstan",
+      "color": "#c03a3a",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Kyrgyzstan",
+      "phases": [
+        {
+          "name": "Kara-Kirghiz Autonomous Oblast",
+          "start": 1924,
+          "end": 1926,
+          "startDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-kara-kirghiz-autonomous-oblast",
+                "sourceLocation": "infobox year_start: 1924"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1926,
+              "source": {
+                "sourceKey": "wp-kara-kirghiz-autonomous-oblast",
+                "sourceLocation": "infobox year_end: 1926"
+              }
+            }
+          ],
+          "startEvent": "national-delimitation"
+        },
+        {
+          "name": "Kirghiz ASSR",
+          "start": 1926,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1926,
+              "source": {
+                "sourceKey": "wp-kyrgyzstan",
+                "sourceLocation": "infobox: Kirghiz ASSR (11 February 1926)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kyrgyzstan",
+                "sourceLocation": "infobox: Kirghiz SSR (5 December 1936)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kirghiz SSR",
+          "start": 1936,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kirghiz-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1936"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-kirghiz-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Kyrgyz Republic",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-kyrgyzstan",
+                "sourceLocation": "infobox: Independence declared from USSR (31 August 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-kyrgyzstan",
+              "sourceLocation": "infobox established_event10: Current constitution, 11 April 2021 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "russia",
+          "start": 1924,
+          "end": 1936,
+          "startDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-kara-kirghiz-autonomous-oblast",
+                "sourceLocation": "infobox year_start: 1924"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kyrgyzstan",
+                "sourceLocation": "infobox: Kirghiz SSR (5 December 1936)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kara-kirghiz-autonomous-oblast",
+              "sourceLocation": "lead: \"The Kara-Kirghiz Autonomous Oblast, abbreviated as Kara-Kirghiz AO or KAO in the former region of Soviet Central Asia, was created on 14 October 1924 within the\""
+            }
+          ],
+          "startEvent": "national-delimitation"
+        },
+        {
+          "row": "soviet-union",
+          "start": 1936,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1936,
+              "source": {
+                "sourceKey": "wp-kirghiz-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1936"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-kirghiz-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kyrgyzstan",
+              "sourceLocation": "infobox established_event6: Kirghiz SSR, 5 December 1936"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
+    },
+    {
+      "id": "tajikistan",
+      "name": "Tajikistan",
+      "color": "#d0a030",
+      "parent": "central-asia",
+      "url": "https://en.wikipedia.org/wiki/Tajikistan",
+      "phases": [
+        {
+          "name": "Tajik ASSR",
+          "start": 1924,
+          "end": 1929,
+          "startDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-tajik-autonomous-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1924"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1929,
+              "source": {
+                "sourceKey": "wp-tajik-autonomous-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1929"
+              }
+            }
+          ],
+          "startEvent": "national-delimitation"
+        },
+        {
+          "name": "Tajik SSR",
+          "start": 1929,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1929,
+              "source": {
+                "sourceKey": "wp-tajik-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1929"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-tajik-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "name": "Republic of Tajikistan",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-tajikistan",
+                "sourceLocation": "infobox: Independence declared (9 September 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-tajikistan",
+              "sourceLocation": "infobox established_event3: Independence recognised, 26 December 1991 (current state)"
+            }
+          ],
+          "startEvent": "dissolution-of-the-soviet-union"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "uzbekistan",
+          "start": 1924,
+          "end": 1929,
+          "startDates": [
+            {
+              "year": 1924,
+              "source": {
+                "sourceKey": "wp-tajik-autonomous-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1924"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1929,
+              "source": {
+                "sourceKey": "wp-tajik-autonomous-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1929"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-tajik-autonomous-soviet-socialist-republic",
+              "sourceLocation": "lead: \"It was created on 14 October 1924 by a series of legal acts that partitioned the three existing regional entities in Central Asia – Turkestan ASSR, Bukharan Peo\""
+            }
+          ],
+          "startEvent": "national-delimitation"
+        },
+        {
+          "row": "soviet-union",
+          "start": 1929,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1929,
+              "source": {
+                "sourceKey": "wp-tajik-soviet-socialist-republic",
+                "sourceLocation": "infobox year_start: 1929"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-tajik-soviet-socialist-republic",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-tajikistan",
+              "sourceLocation": "infobox established_event1: Soviet annexation, 5 December 1929"
+            }
+          ],
+          "endEvent": "dissolution-of-the-soviet-union"
+        }
+      ]
     }
   ],
   "sources": {
@@ -12466,6 +15739,862 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-grand-principality-of-moscow": {
+      "name": "Grand Principality of Moscow (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Principality_of_Moscow",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tsardom-of-russia": {
+      "name": "Tsardom of Russia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tsardom_of_Russia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-empire": {
+      "name": "Russian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-republic": {
+      "name": "Russian Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-soviet-federative-socialist-republic": {
+      "name": "Russian Soviet Federative Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Soviet_Federative_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russia": {
+      "name": "Russia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-soviet-union": {
+      "name": "Soviet Union (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Soviet_Union",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cossack-hetmanate": {
+      "name": "Cossack Hetmanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cossack_Hetmanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukrainian-people-s-republic": {
+      "name": "Ukrainian People's Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukrainian_People's_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukrainian-state": {
+      "name": "Ukrainian State (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukrainian_State",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-west-ukrainian-people-s-republic": {
+      "name": "West Ukrainian People's Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/West_Ukrainian_People's_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukrainian-soviet-socialist-republic": {
+      "name": "Ukrainian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukrainian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ukraine": {
+      "name": "Ukraine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ukraine",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-belarusian-people-s-republic": {
+      "name": "Belarusian People's Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Belarusian_People's_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-byelorussian-soviet-socialist-republic": {
+      "name": "Byelorussian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Byelorussian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-belarus": {
+      "name": "Belarus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Belarus",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bessarabia-governorate": {
+      "name": "Bessarabia Governorate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bessarabia_Governorate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-moldova": {
+      "name": "Moldova (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Moldova",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-moldavian-democratic-republic": {
+      "name": "Moldavian Democratic Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Moldavian_Democratic_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-moldavian-soviet-socialist-republic": {
+      "name": "Moldavian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Moldavian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-transnistria": {
+      "name": "Transnistria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Transnistria",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-terra-mariana": {
+      "name": "Terra Mariana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Terra_Mariana",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-duchy-of-courland-and-semigallia": {
+      "name": "Duchy of Courland and Semigallia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Courland_and_Semigallia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-duchy-of-livonia": {
+      "name": "Duchy of Livonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Livonia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-swedish-livonia": {
+      "name": "Swedish Livonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Swedish_Livonia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-estonia": {
+      "name": "Estonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Estonia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-estonia-1920-1939": {
+      "name": "History of Estonia (1920–1939) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Estonia_(1920–1939)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-estonian-soviet-socialist-republic": {
+      "name": "Estonian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Estonian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-latvia": {
+      "name": "Latvia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Latvia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-latvian-soviet-socialist-republic": {
+      "name": "Latvian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Latvian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-golden-horde": {
+      "name": "Golden Horde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Golden_Horde",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-crimean-khanate": {
+      "name": "Crimean Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Crimean_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khanate-of-kazan": {
+      "name": "Khanate of Kazan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Kazan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-astrakhan-khanate": {
+      "name": "Astrakhan Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Astrakhan_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khanate-of-sibir": {
+      "name": "Khanate of Sibir (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Sibir",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nogai-horde": {
+      "name": "Nogai Horde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nogai_Horde",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kalmyk-khanate": {
+      "name": "Kalmyk Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kalmyk_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kartli": {
+      "name": "Kingdom of Kartli (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kartli",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kakheti": {
+      "name": "Kingdom of Kakheti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kakheti",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-imereti": {
+      "name": "Kingdom of Imereti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Imereti",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kartli-kakheti": {
+      "name": "Kingdom of Kartli-Kakheti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kartli-Kakheti",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-democratic-republic-of-georgia": {
+      "name": "Democratic Republic of Georgia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Democratic_Republic_of_Georgia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-georgian-soviet-socialist-republic": {
+      "name": "Georgian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Georgian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-georgia-country": {
+      "name": "Georgia (country) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Georgia_(country)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-transcaucasian-socialist-federative-soviet-republic": {
+      "name": "Transcaucasian Socialist Federative Soviet Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Transcaucasian_Socialist_Federative_Soviet_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-republic-of-armenia": {
+      "name": "First Republic of Armenia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Republic_of_Armenia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-armenian-soviet-socialist-republic": {
+      "name": "Armenian Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Armenian_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-armenia": {
+      "name": "Armenia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Armenia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-azerbaijan-democratic-republic": {
+      "name": "Azerbaijan Democratic Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Azerbaijan_Democratic_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-azerbaijan-soviet-socialist-republic": {
+      "name": "Azerbaijan Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Azerbaijan_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-azerbaijan": {
+      "name": "Azerbaijan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Azerbaijan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-abkhazia": {
+      "name": "Abkhazia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abkhazia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-south-ossetia": {
+      "name": "South Ossetia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/South_Ossetia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-republic-of-artsakh": {
+      "name": "Republic of Artsakh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_Artsakh",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kazakh-khanate": {
+      "name": "Kazakh Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kazakh_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kazakhstan": {
+      "name": "Kazakhstan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kazakhstan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-alash-autonomy": {
+      "name": "Alash Autonomy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alash_Autonomy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kazakh-autonomous-socialist-soviet-republic": {
+      "name": "Kazakh Autonomous Socialist Soviet Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kazakh_Autonomous_Socialist_Soviet_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kazakh-soviet-socialist-republic": {
+      "name": "Kazakh Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kazakh_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khanate-of-bukhara": {
+      "name": "Khanate of Bukhara (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Bukhara",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-emirate-of-bukhara": {
+      "name": "Emirate of Bukhara (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emirate_of_Bukhara",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bukharan-people-s-soviet-republic": {
+      "name": "Bukharan People's Soviet Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bukharan_People's_Soviet_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khanate-of-khiva": {
+      "name": "Khanate of Khiva (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Khiva",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khorezm-people-s-soviet-republic": {
+      "name": "Khorezm People's Soviet Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khorezm_People's_Soviet_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khanate-of-kokand": {
+      "name": "Khanate of Kokand (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Kokand",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-turkestan": {
+      "name": "Russian Turkestan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Turkestan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-turkestan-autonomous-soviet-socialist-republic": {
+      "name": "Turkestan Autonomous Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Turkestan_Autonomous_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-uzbek-soviet-socialist-republic": {
+      "name": "Uzbek Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Uzbek_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-uzbekistan": {
+      "name": "Uzbekistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Uzbekistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-turkmen-soviet-socialist-republic": {
+      "name": "Turkmen Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Turkmen_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-turkmenistan": {
+      "name": "Turkmenistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Turkmenistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kara-kirghiz-autonomous-oblast": {
+      "name": "Kara-Kirghiz Autonomous Oblast (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kara-Kirghiz_Autonomous_Oblast",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kyrgyzstan": {
+      "name": "Kyrgyzstan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kyrgyzstan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kirghiz-soviet-socialist-republic": {
+      "name": "Kirghiz Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kirghiz_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tajik-autonomous-soviet-socialist-republic": {
+      "name": "Tajik Autonomous Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tajik_Autonomous_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tajik-soviet-socialist-republic": {
+      "name": "Tajik Soviet Socialist Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tajik_Soviet_Socialist_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tajikistan": {
+      "name": "Tajikistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tajikistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russo-ukrainian-war": {
+      "name": "Russo-Ukrainian war (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russo-Ukrainian_war",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-kazan": {
+      "name": "Siege of Kazan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Kazan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-livonian-war": {
+      "name": "Livonian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Livonian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-conquest-of-siberia": {
+      "name": "Russian conquest of Siberia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_conquest_of_Siberia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-polish-russian-war-1609-1618": {
+      "name": "Polish–Russian War (1609–1618) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Polish–Russian_War_(1609–1618)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khmelnytsky-uprising": {
+      "name": "Khmelnytsky Uprising (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khmelnytsky_Uprising",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-poltava": {
+      "name": "Battle of Poltava (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Poltava",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russo-turkish-war-1768-1774": {
+      "name": "Russo-Turkish War (1768–1774) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russo-Turkish_War_(1768–1774)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-invasion-of-russia": {
+      "name": "French invasion of Russia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_invasion_of_Russia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-crimean-war": {
+      "name": "Crimean War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Crimean_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russo-japanese-war": {
+      "name": "Russo-Japanese War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-revolution": {
+      "name": "Russian Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-civil-war": {
+      "name": "Russian Civil War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_Civil_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-molotov-ribbentrop-pact": {
+      "name": "Molotov–Ribbentrop Pact (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Molotov–Ribbentrop_Pact",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-soviet-occupation-of-the-baltic-states-1940": {
+      "name": "Soviet occupation of the Baltic states (1940) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Soviet_occupation_of_the_Baltic_states_(1940)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-chernobyl-disaster": {
+      "name": "Chernobyl disaster (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chernobyl_disaster",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-singing-revolution": {
+      "name": "Singing Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Singing_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-chechen-war": {
+      "name": "First Chechen War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Chechen_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-orange-revolution": {
+      "name": "Orange Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Orange_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-revolution-of-dignity": {
+      "name": "Revolution of Dignity (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolution_of_Dignity",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-transnistrian-war": {
+      "name": "Transnistrian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Transnistrian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-treaty-of-georgievsk": {
+      "name": "Treaty of Georgievsk (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Georgievsk",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-rose-revolution": {
+      "name": "Rose Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rose_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russo-georgian-war": {
+      "name": "Russo-Georgian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russo-Georgian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-nagorno-karabakh-war": {
+      "name": "First Nagorno-Karabakh War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-nagorno-karabakh-war": {
+      "name": "Second Nagorno-Karabakh War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Nagorno-Karabakh_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2023-azerbaijani-offensive-in-nagorno-karabakh": {
+      "name": "2023 Azerbaijani offensive in Nagorno-Karabakh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2023_Azerbaijani_offensive_in_Nagorno-Karabakh",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tajikistani-civil-war": {
+      "name": "Tajikistani Civil War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tajikistani_Civil_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-russian-conquest-of-central-asia": {
+      "name": "Russian conquest of Central Asia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Russian_conquest_of_Central_Asia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2020-2021-belarusian-protests": {
+      "name": "2020–2021 Belarusian protests (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2020–2021_Belarusian_protests",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -12716,7 +16845,8 @@
         "bulgaria",
         "greece",
         "portugal",
-        "montenegro"
+        "montenegro",
+        "russia"
       ],
       "sources": [
         {
@@ -12764,7 +16894,8 @@
         "hungary",
         "romania",
         "bulgaria",
-        "finland"
+        "finland",
+        "soviet-union"
       ],
       "sources": [
         {
@@ -13501,7 +17632,8 @@
       "descr": "Finland declares independence from Russia on 6 December 1917.",
       "start": 1917,
       "tracks": [
-        "finland"
+        "finland",
+        "russia"
       ],
       "sources": [
         {
@@ -13553,7 +17685,8 @@
       "tracks": [
         "polish-lithuanian-commonwealth",
         "poland",
-        "lithuania"
+        "lithuania",
+        "russia"
       ],
       "sources": [
         {
@@ -14080,7 +18213,8 @@
         "bosnia-and-herzegovina",
         "romania",
         "serbia",
-        "montenegro"
+        "montenegro",
+        "russia"
       ],
       "sources": [
         {
@@ -14100,7 +18234,8 @@
         "ottoman-empire",
         "romania",
         "serbia",
-        "montenegro"
+        "montenegro",
+        "russia"
       ],
       "sources": [
         {
@@ -14288,7 +18423,8 @@
       "tracks": [
         "sweden",
         "polish-lithuanian-commonwealth",
-        "denmark-norway"
+        "denmark-norway",
+        "russia"
       ],
       "sources": [
         {
@@ -14311,7 +18447,8 @@
         "prussia",
         "spain",
         "portugal",
-        "sweden"
+        "sweden",
+        "russia"
       ],
       "sources": [
         {
@@ -14364,7 +18501,8 @@
       "start": 1939,
       "tracks": [
         "poland",
-        "germany"
+        "germany",
+        "soviet-union"
       ],
       "sources": [
         {
@@ -14491,6 +18629,662 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "siege-of-kazan",
+      "title": "Siege of Kazan",
+      "descr": "Ivan IV takes Kazan; the khanate is annexed.",
+      "start": 1552,
+      "tracks": [
+        "russia",
+        "kazan-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-kazan",
+          "sourceLocation": "infobox date: September 2 – October 13, 1552"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "livonian-war",
+      "title": "Livonian War",
+      "descr": "",
+      "start": 1558,
+      "end": 1583,
+      "tracks": [
+        "terra-mariana",
+        "russia",
+        "sweden",
+        "polish-lithuanian-union",
+        "denmark"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-livonian-war",
+          "sourceLocation": "infobox date: 22 January 1558 – 10 August 1583"
+        }
+      ]
+    },
+    {
+      "uuid": "russian-conquest-of-siberia",
+      "title": "Russian conquest of Siberia",
+      "descr": "",
+      "start": 1580,
+      "end": 1778,
+      "tracks": [
+        "russia",
+        "khanate-of-sibir"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russian-conquest-of-siberia",
+          "sourceLocation": "infobox date: 1580–1778 (198 years)"
+        }
+      ]
+    },
+    {
+      "uuid": "polish-muscovite-war",
+      "title": "Polish–Muscovite War",
+      "descr": "Part of Russia's Time of Troubles; Polish forces hold Moscow in 1610–12.",
+      "start": 1609,
+      "end": 1618,
+      "tracks": [
+        "russia",
+        "polish-lithuanian-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-polish-russian-war-1609-1618",
+          "sourceLocation": "infobox date: 1609–1618"
+        }
+      ]
+    },
+    {
+      "uuid": "khmelnytsky-uprising",
+      "title": "Khmelnytsky Uprising",
+      "descr": "A Cossack rising against the Commonwealth founds the Hetmanate.",
+      "start": 1648,
+      "end": 1657,
+      "tracks": [
+        "ukraine",
+        "polish-lithuanian-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khmelnytsky-uprising",
+          "sourceLocation": "infobox date: 25 January 1648 – 6 August 1657"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-poltava",
+      "title": "Battle of Poltava",
+      "descr": "",
+      "start": 1709,
+      "tracks": [
+        "russia",
+        "sweden",
+        "ukraine"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-poltava",
+          "sourceLocation": "infobox date: 8 July 1709"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "russo-turkish-war-1768",
+      "title": "Russo-Turkish War of 1768–74",
+      "descr": "",
+      "start": 1768,
+      "end": 1774,
+      "tracks": [
+        "russia",
+        "ottoman-empire",
+        "crimean-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russo-turkish-war-1768-1774",
+          "sourceLocation": "infobox date: 1768–1774"
+        }
+      ]
+    },
+    {
+      "uuid": "annexation-of-crimea-1783",
+      "title": "Russia annexes the Crimean Khanate",
+      "descr": "",
+      "start": 1783,
+      "tracks": [
+        "crimean-khanate",
+        "russia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-crimean-khanate",
+          "sourceLocation": "infobox year_end: 1783 (Annexation by the Russian Empire)"
+        }
+      ]
+    },
+    {
+      "uuid": "french-invasion-of-russia",
+      "title": "French invasion of Russia",
+      "descr": "",
+      "start": 1812,
+      "tracks": [
+        "russia",
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-french-invasion-of-russia",
+          "sourceLocation": "infobox date: 24 June – 24 December 1812"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "crimean-war",
+      "title": "Crimean War",
+      "descr": "",
+      "start": 1853,
+      "end": 1856,
+      "tracks": [
+        "russia",
+        "ottoman-empire",
+        "united-kingdom",
+        "france",
+        "italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-crimean-war",
+          "sourceLocation": "infobox date: 1853 – 1856"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "russo-japanese-war",
+      "title": "Russo-Japanese War",
+      "descr": "",
+      "start": 1904,
+      "end": 1905,
+      "tracks": [
+        "russia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russo-japanese-war",
+          "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+        }
+      ]
+    },
+    {
+      "uuid": "russian-revolution",
+      "title": "Russian Revolution",
+      "descr": "The February Revolution ends the monarchy; the Bolsheviks take power in October.",
+      "start": 1917,
+      "end": 1922,
+      "tracks": [
+        "russia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russian-revolution",
+          "sourceLocation": "infobox date: 8 March 1917 – 25 October 1922"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "russian-civil-war",
+      "title": "Russian Civil War",
+      "descr": "",
+      "start": 1917,
+      "end": 1922,
+      "tracks": [
+        "russia",
+        "ukraine",
+        "belarus"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russian-civil-war",
+          "sourceLocation": "infobox date: 7 November 1917 – 25 October 1922"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "soviet-union-founded",
+      "title": "Treaty on the Creation of the USSR",
+      "descr": "",
+      "start": 1922,
+      "tracks": [
+        "soviet-union",
+        "russia",
+        "ukraine",
+        "belarus",
+        "transcaucasian-sfsr"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-soviet-union",
+          "sourceLocation": "infobox event_start: Treaty of Creation, 30 December 1922"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "molotov-ribbentrop-pact",
+      "title": "Molotov–Ribbentrop Pact",
+      "descr": "",
+      "start": 1939,
+      "tracks": [
+        "soviet-union",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-molotov-ribbentrop-pact",
+          "sourceLocation": "infobox date_signed: 23 August 1939"
+        }
+      ]
+    },
+    {
+      "uuid": "soviet-occupation-of-the-baltic-states",
+      "title": "Soviet occupation of the Baltic states",
+      "descr": "",
+      "start": 1940,
+      "tracks": [
+        "soviet-union",
+        "estonia",
+        "latvia",
+        "lithuania"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-soviet-occupation-of-the-baltic-states-1940",
+          "sourceLocation": "infobox date: 1940 – 1940"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "chernobyl",
+      "title": "Chernobyl disaster",
+      "descr": "",
+      "start": 1986,
+      "tracks": [
+        "ukraine",
+        "soviet-union"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chernobyl-disaster",
+          "sourceLocation": "infobox date: 26 April 1986"
+        }
+      ]
+    },
+    {
+      "uuid": "singing-revolution",
+      "title": "Singing Revolution",
+      "descr": "",
+      "start": 1987,
+      "end": 1991,
+      "tracks": [
+        "estonia",
+        "latvia",
+        "lithuania"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-singing-revolution",
+          "sourceLocation": "infobox date: 1987 – 1991"
+        }
+      ]
+    },
+    {
+      "uuid": "dissolution-of-the-soviet-union",
+      "title": "Dissolution of the Soviet Union",
+      "descr": "The union is formally dissolved on 26 December 1991; its fifteen republics are independent.",
+      "start": 1991,
+      "tracks": [
+        "soviet-union",
+        "russia",
+        "ukraine",
+        "belarus",
+        "moldova",
+        "estonia",
+        "latvia",
+        "georgia",
+        "armenia",
+        "azerbaijan",
+        "kazakhstan",
+        "uzbekistan",
+        "turkmenistan",
+        "kyrgyzstan",
+        "tajikistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-soviet-union",
+          "sourceLocation": "infobox life span: 1922–1991"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "first-chechen-war",
+      "title": "First Chechen War",
+      "descr": "",
+      "start": 1994,
+      "end": 1996,
+      "tracks": [
+        "russia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-chechen-war",
+          "sourceLocation": "infobox date: 11 December 1994 – 31 August 1996 ()"
+        }
+      ]
+    },
+    {
+      "uuid": "orange-revolution",
+      "title": "Orange Revolution",
+      "descr": "",
+      "start": 2004,
+      "end": 2005,
+      "tracks": [
+        "ukraine"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-orange-revolution",
+          "sourceLocation": "infobox date: 22 November 2004 – 23 January 2005"
+        }
+      ]
+    },
+    {
+      "uuid": "revolution-of-dignity",
+      "title": "Revolution of Dignity",
+      "descr": "",
+      "start": 2014,
+      "tracks": [
+        "ukraine"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-revolution-of-dignity",
+          "sourceLocation": "infobox date: 18–23 February 2014"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "russo-ukrainian-war",
+      "title": "Russo-Ukrainian war",
+      "descr": "From the annexation of Crimea and the war in Donbas to the full-scale invasion of February 2022.",
+      "start": 2014,
+      "tracks": [
+        "russia",
+        "ukraine"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russo-ukrainian-war",
+          "sourceLocation": "infobox date: Late February 2014 – present"
+        }
+      ],
+      "importance": 1,
+      "ongoing": true
+    },
+    {
+      "uuid": "union-of-bessarabia-with-romania",
+      "title": "Union of Bessarabia with Romania",
+      "descr": "",
+      "start": 1918,
+      "tracks": [
+        "moldova",
+        "romania"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-moldavian-democratic-republic",
+          "sourceLocation": "infobox event_end: Union with Romania, 9 April 1918"
+        }
+      ]
+    },
+    {
+      "uuid": "transnistria-war",
+      "title": "Transnistria War",
+      "descr": "",
+      "start": 1990,
+      "end": 1992,
+      "tracks": [
+        "moldova",
+        "transnistria"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-transnistrian-war",
+          "sourceLocation": "infobox date: 2 November 1990 – 21 July 1992"
+        }
+      ]
+    },
+    {
+      "uuid": "union-of-kartli-and-kakheti",
+      "title": "Union of Kartli and Kakheti",
+      "descr": "",
+      "start": 1762,
+      "tracks": [
+        "kartli",
+        "kakheti",
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kartli-kakheti",
+          "sourceLocation": "infobox year_start: 1762"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-georgievsk",
+      "title": "Treaty of Georgievsk",
+      "descr": "Kartli-Kakheti becomes a Russian protectorate.",
+      "start": 1783,
+      "tracks": [
+        "georgia",
+        "russia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-treaty-of-georgievsk",
+          "sourceLocation": "infobox date_signed: July 24, 1783"
+        }
+      ]
+    },
+    {
+      "uuid": "red-army-invasion-of-georgia",
+      "title": "Red Army invasion of Georgia",
+      "descr": "",
+      "start": 1921,
+      "tracks": [
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-democratic-republic-of-georgia",
+          "sourceLocation": "infobox year_end: 1921"
+        }
+      ]
+    },
+    {
+      "uuid": "rose-revolution",
+      "title": "Rose Revolution",
+      "descr": "",
+      "start": 2003,
+      "tracks": [
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-rose-revolution",
+          "sourceLocation": "infobox date: 3–23 November 2003"
+        }
+      ]
+    },
+    {
+      "uuid": "russo-georgian-war",
+      "title": "Russo-Georgian War",
+      "descr": "",
+      "start": 2008,
+      "tracks": [
+        "russia",
+        "georgia",
+        "south-ossetia",
+        "abkhazia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russo-georgian-war",
+          "sourceLocation": "infobox date: 1–16 August 2008"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "first-nagorno-karabakh-war",
+      "title": "First Nagorno-Karabakh War",
+      "descr": "",
+      "start": 1988,
+      "end": 1994,
+      "tracks": [
+        "armenia",
+        "azerbaijan",
+        "artsakh"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-nagorno-karabakh-war",
+          "sourceLocation": "infobox date: 20 February 1988 – 12 May 1994"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "second-nagorno-karabakh-war",
+      "title": "Second Nagorno-Karabakh War",
+      "descr": "",
+      "start": 2020,
+      "tracks": [
+        "armenia",
+        "azerbaijan",
+        "artsakh"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-second-nagorno-karabakh-war",
+          "sourceLocation": "infobox date: 27 September – 10 November 2020"
+        }
+      ]
+    },
+    {
+      "uuid": "azerbaijani-offensive-2023",
+      "title": "Azerbaijani offensive in Nagorno-Karabakh",
+      "descr": "Artsakh capitulates and is dissolved; nearly all its Armenian population leaves.",
+      "start": 2023,
+      "tracks": [
+        "azerbaijan",
+        "artsakh"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-2023-azerbaijani-offensive-in-nagorno-karabakh",
+          "sourceLocation": "infobox date: 2023 – 2023"
+        }
+      ]
+    },
+    {
+      "uuid": "national-delimitation",
+      "title": "National delimitation in Central Asia",
+      "descr": "Turkestan, Bukhara and Khorezm are divided into national republics on 14 October 1924.",
+      "start": 1924,
+      "tracks": [
+        "turkestan",
+        "bukhara",
+        "khiva",
+        "uzbekistan",
+        "tajikistan",
+        "kyrgyzstan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tajik-autonomous-soviet-socialist-republic",
+          "sourceLocation": "lead: \"It was created on 14 October 1924 by a series of legal acts that partitioned the three existing regional entities in Central Asia – Turkestan ASSR, Bukharan Peo\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "tajik-civil-war",
+      "title": "Tajikistani Civil War",
+      "descr": "",
+      "start": 1992,
+      "end": 1997,
+      "tracks": [
+        "tajikistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tajikistani-civil-war",
+          "sourceLocation": "infobox date: 5 May 1992 – 27 June 1997"
+        }
+      ]
+    },
+    {
+      "uuid": "russian-conquest-of-central-asia",
+      "title": "Russian conquest of Central Asia",
+      "descr": "",
+      "start": 1717,
+      "end": 1895,
+      "tracks": [
+        "russia",
+        "bukhara",
+        "khiva",
+        "kokand",
+        "turkestan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-russian-conquest-of-central-asia",
+          "sourceLocation": "infobox date: 1717–1895"
+        }
+      ]
+    },
+    {
+      "uuid": "belarusian-protests-2020",
+      "title": "Belarusian protests",
+      "descr": "",
+      "start": 2020,
+      "end": 2021,
+      "tracks": [
+        "belarus"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-2020-2021-belarusian-protests",
+          "sourceLocation": "infobox date: 24 May 2020 – 25 March 2021 ()"
+        }
+      ]
     }
   ]
 }
