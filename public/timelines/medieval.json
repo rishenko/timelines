@@ -21575,7 +21575,7 @@
     {
       "uuid": "song-founded",
       "title": "Song dynasty established",
-      "descr": "",
+      "descr": "The Song dynasty begins its rule of China, which lasts until 1279. In its Northern Song period (960–1127) the capital is Bianjing, now Kaifeng.",
       "start": 960,
       "tracks": [
         "china"
@@ -21588,6 +21588,10 @@
         {
           "sourceKey": "wp-song-dynasty",
           "sourceLocation": "lead: \"The Song dynasty ( ) was an imperial dynasty of China that ruled from 960 to 1279.\""
+        },
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "lead: \"The dynasty's history is divided into two periods: during the Northern Song (; 960–1127), the capital was in the northern city of Bianjing (now Kaifeng) and the\""
         }
       ],
       "importance": 1
@@ -21717,7 +21721,7 @@
     {
       "uuid": "ming-founded",
       "title": "Ming dynasty established in Nanjing",
-      "descr": "",
+      "descr": "After the collapse of the Mongol-led Yuan dynasty, the Ming dynasty takes power; it rules China until 1644.",
       "start": 1368,
       "tracks": [
         "china"
@@ -21782,7 +21786,7 @@
     {
       "uuid": "christianisation-of-bulgaria",
       "title": "Christianisation of Bulgaria",
-      "descr": "",
+      "descr": "Under Byzantium's strong cultural influence, Bulgaria adopts Christianity.",
       "start": 864,
       "tracks": [
         "bulgaria"
@@ -21791,6 +21795,10 @@
         {
           "sourceKey": "wp-first-bulgarian-empire",
           "sourceLocation": "infobox event1: Christianisation, 864"
+        },
+        {
+          "sourceKey": "wp-first-bulgarian-empire",
+          "sourceLocation": "lead: \"Byzantium had a strong cultural influence on Bulgaria, which also led to the eventual adoption of Christianity in 864.\""
         }
       ],
       "importance": 1
@@ -21904,7 +21912,7 @@
     {
       "uuid": "proclamation-of-the-empire",
       "title": "Proclamation of the Empire",
-      "descr": "",
+      "descr": "The Kingdom of Serbia is proclaimed an empire. Kingship carries on as an institution: the title of king is kept for a co-ruler of the emperor.",
       "start": 1346,
       "tracks": [
         "serbia"
@@ -21917,6 +21925,10 @@
         {
           "sourceKey": "wp-serbian-empire",
           "sourceLocation": "infobox event_start: Proclamation of the Empire, 16 April 1346"
+        },
+        {
+          "sourceKey": "wp-kingdom-of-serbia-1217-1346",
+          "sourceLocation": "lead: \"The kingdom was proclaimed an empire in 1346, but kingship was not abolished as an institution, since the title of a king was used as an official designation fo\""
         }
       ],
       "importance": 1
@@ -22102,7 +22114,7 @@
     {
       "uuid": "battle-of-mohacs",
       "title": "Battle of Mohács",
-      "descr": "",
+      "descr": "King Louis II dies in the battle. After a brief dynastic dispute, the crowns of Hungary and Croatia pass to the Austrian House of Habsburg, and both realms become part of the Habsburg monarchy.",
       "start": 1526,
       "tracks": [
         "croatia",
@@ -22116,6 +22128,10 @@
         {
           "sourceKey": "wp-kingdom-of-hungary-1301-1526",
           "sourceLocation": "infobox event_end: Battle of Mohács, 29 August 1526"
+        },
+        {
+          "sourceKey": "wp-croatia-in-personal-union-with-hungary",
+          "sourceLocation": "lead: \"After the death of Louis II in 1526 during the Battle of Mohács and a brief period of dynastic dispute, both crowns passed to the Austrian House of Habsburg, an\""
         }
       ],
       "importance": 1
@@ -22418,7 +22434,7 @@
     {
       "uuid": "treaty-of-verdun",
       "title": "Treaty of Verdun",
-      "descr": "",
+      "descr": "After three years of civil war following the death of Louis the Pious, his three sons divide Francia into three kingdoms: East, Middle and West Francia.",
       "start": 843,
       "tracks": [
         "east-francia",
@@ -22442,6 +22458,14 @@
         {
           "sourceKey": "wp-west-francia",
           "sourceLocation": "infobox event_start: Treaty of Verdun, August 843"
+        },
+        {
+          "sourceKey": "wp-east-francia",
+          "sourceLocation": "section \"History\": \"In August 843, after three years of civil war following the death of Emperor Louis the Pious on 20 June 840, the Treaty of Verdun was signed by his three sons a\""
+        },
+        {
+          "sourceKey": "wp-east-francia",
+          "sourceLocation": "lead: \"It was established through the 843 Treaty of Verdun which divided the former kingdom of Francia into three kingdoms: Francia Orientalis (the East Frankish kingd\""
         }
       ],
       "importance": 1
@@ -22717,7 +22741,7 @@
     {
       "uuid": "coronation-of-stephen-i",
       "title": "Coronation of Stephen I",
-      "descr": "",
+      "descr": "Stephen I is crowned at Esztergom on Christmas Day 1000 (or 1 January 1001), and the Principality of Hungary is succeeded by the Christian Kingdom of Hungary.",
       "start": 1000,
       "end": 1001,
       "tracks": [
@@ -22727,6 +22751,10 @@
         {
           "sourceKey": "wp-principality-of-hungary",
           "sourceLocation": "infobox event_end: Coronation of Stephen I, 25 December 1000 / or 1 January 1001"
+        },
+        {
+          "sourceKey": "wp-principality-of-hungary",
+          "sourceLocation": "lead: \"The principality was succeeded by the Christian Kingdom of Hungary with the coronation of St Stephen I at Esztergom on Christmas Day 1000 (its alternative date \""
         }
       ],
       "importance": 1
@@ -23065,7 +23093,7 @@
     {
       "uuid": "battle-of-grunwald",
       "title": "Battle of Grunwald",
-      "descr": "",
+      "descr": "After this battle and the Battle of Wilkomierz (1435), the State of the Teutonic Order falls into decline.",
       "start": 1410,
       "tracks": [
         "teutonic-order"
@@ -23074,6 +23102,10 @@
         {
           "sourceKey": "wp-state-of-the-teutonic-order",
           "sourceLocation": "infobox event2: Battle of Grunwald, 15 July 1410"
+        },
+        {
+          "sourceKey": "wp-state-of-the-teutonic-order",
+          "sourceLocation": "lead: \"Following the battles of Grunwald in 1410 and Wilkomierz in 1435, the State fell into decline.\""
         }
       ],
       "importance": 1
@@ -23373,7 +23405,7 @@
     {
       "uuid": "sicilian-vespers",
       "title": "Sicilian Vespers",
-      "descr": "",
+      "descr": "A revolt on the island of Sicily throws off the brief Angevin rule of Charles of Anjou.",
       "start": 1282,
       "tracks": [
         "sicily",
@@ -23387,6 +23419,10 @@
         {
           "sourceKey": "wp-kingdom-of-naples",
           "sourceLocation": "infobox event_start: Sicilian Vespers, 1282"
+        },
+        {
+          "sourceKey": "wp-kingdom-of-sicily",
+          "sourceLocation": "lead: \"After a brief rule by Charles of Anjou, a revolt in 1282 known as the Sicilian Vespers threw off Angevin rule in the island of Sicily.\""
         }
       ],
       "importance": 1
@@ -23747,7 +23783,7 @@
     {
       "uuid": "conquest-of-granada",
       "title": "Conquest of Granada",
-      "descr": "",
+      "descr": "Muhammad XI, the last Nasrid ruler, formally surrenders Granada in January, ending independent Muslim rule in the Iberian Peninsula.",
       "start": 1492,
       "tracks": [
         "spain",
@@ -23761,6 +23797,10 @@
         {
           "sourceKey": "wp-emirate-of-granada",
           "sourceLocation": "infobox event_end: Castilian conquest, 1492"
+        },
+        {
+          "sourceKey": "wp-emirate-of-granada",
+          "sourceLocation": "lead: \"Muhammad XI, the last Nasrid ruler, formally surrendered Granada in January 1492, marking the end of independent Muslim rule in the Iberian Peninsula.\""
         }
       ],
       "importance": 1
@@ -23927,7 +23967,7 @@
     {
       "uuid": "abd-al-rahman-iii-proclaims-himself-caliph",
       "title": "Abd al-Rahman III proclaims himself caliph",
-      "descr": "",
+      "descr": "The Umayyad emir of Córdoba takes the title of caliph: the independent emirate ruled since 756 becomes the Caliphate of Córdoba.",
       "start": 929,
       "tracks": [
         "umayyad-cordoba"
@@ -23936,6 +23976,10 @@
         {
           "sourceKey": "wp-umayyad-state-of-c-rdoba",
           "sourceLocation": "infobox event1: Abd al-Rahman III proclaims himself caliph, 929"
+        },
+        {
+          "sourceKey": "wp-umayyad-state-of-c-rdoba",
+          "sourceLocation": "lead: \"From 756 it was ruled as an independent emirate until Abd al-Rahman III proclaimed himself as caliph in 929.\""
         }
       ],
       "importance": 1
@@ -24018,7 +24062,7 @@
     {
       "uuid": "capetian-dynasty-established",
       "title": "Capetian dynasty established",
-      "descr": "",
+      "descr": "The Robertians, counts of Paris, become kings and found the Capetian dynasty; West Francia, the first stage of the Kingdom of France, ends.",
       "start": 987,
       "tracks": [
         "france"
@@ -24031,6 +24075,14 @@
         {
           "sourceKey": "wp-kingdom-of-france",
           "sourceLocation": "infobox event_start: Capetian dynasty established, 3 July 987"
+        },
+        {
+          "sourceKey": "wp-west-francia",
+          "sourceLocation": "lead: \"The Robertians, after becoming counts of Paris and dukes of Italy became kings themselves and established the Capetian dynasty after 987.\""
+        },
+        {
+          "sourceKey": "wp-west-francia",
+          "sourceLocation": "lead: \"In medieval historiography, West Francia (Medieval Latin: Francia occidentalis) or the Kingdom of the West Franks () constitutes the initial stage of the Kingdo\""
         }
       ],
       "importance": 1
@@ -24058,7 +24110,7 @@
     {
       "uuid": "hundred-years-war",
       "title": "Hundred Years' War",
-      "descr": "",
+      "descr": "A series of conflicts in which the kings of England lay claim to the French throne.",
       "start": 1337,
       "end": 1453,
       "tracks": [
@@ -24073,6 +24125,10 @@
         {
           "sourceKey": "wp-duchy-of-burgundy",
           "sourceLocation": "infobox event2: Hundred Years' War, 1337–1453"
+        },
+        {
+          "sourceKey": "wp-kingdom-of-france",
+          "sourceLocation": "lead: \"The most notorious of them all are the series of conflicts known as the Hundred Years' War (1337–1453) in which the kings of England laid claim to the French th\""
         }
       ],
       "importance": 1
@@ -24473,7 +24529,7 @@
     {
       "uuid": "kalmar-union-formed",
       "title": "Kalmar Union formed",
-      "descr": "",
+      "descr": "Sweden joins Norway and Denmark to form the Scandinavian Kalmar Union; Sweden leaves it in 1523.",
       "start": 1397,
       "tracks": [
         "kalmar-union",
@@ -24489,6 +24545,10 @@
         {
           "sourceKey": "wp-sweden",
           "sourceLocation": "infobox established_event2: Part of the Kalmar Union, 17 June 1397 – 6 June 1523"
+        },
+        {
+          "sourceKey": "wp-sweden",
+          "sourceLocation": "lead: \"In 1397, Sweden joined Norway and Denmark to form the Scandinavian Kalmar Union, which Sweden left in 1523.\""
         }
       ],
       "importance": 1
@@ -24756,7 +24816,7 @@
     {
       "uuid": "saladin-abolishes-the-fatimid-caliphate",
       "title": "Saladin abolishes the Fatimid Caliphate",
-      "descr": "",
+      "descr": "Saladin ends the Fatimid dynasty's rule and founds the Ayyubid dynasty, bringing the Levant and Egypt back into the nominal sphere of authority of the Abbasid Caliphate.",
       "start": 1171,
       "tracks": [
         "fatimid-caliphate",
@@ -24770,6 +24830,10 @@
         {
           "sourceKey": "wp-ayyubid-dynasty",
           "sourceLocation": "infobox event_start: Established by Saladin, 1171"
+        },
+        {
+          "sourceKey": "wp-fatimid-caliphate",
+          "sourceLocation": "lead: \"In 1171, Saladin abolished the dynasty's rule and founded the Ayyubid dynasty, which incorporated the Levant and Egypt back into the nominal sphere of authority\""
         }
       ],
       "importance": 1
@@ -24777,7 +24841,7 @@
     {
       "uuid": "murder-of-turanshah-the-mamluks-take-power",
       "title": "Murder of Turanshah; the Mamluks take power",
-      "descr": "",
+      "descr": "Mamluk regiments of the Ayyubid sultan al-Salih Ayyub seize power from his successor. The first, Turkic or Bahri, period of Mamluk rule lasts until 1382.",
       "start": 1250,
       "tracks": [
         "mamluk-sultanate"
@@ -24786,6 +24850,14 @@
         {
           "sourceKey": "wp-mamluk-sultanate",
           "sourceLocation": "infobox event_start: Murder of Turanshah, 2 May 1250"
+        },
+        {
+          "sourceKey": "wp-mamluk-sultanate",
+          "sourceLocation": "lead: \"The first rulers of the sultanate hailed from the mamluk regiments of the Ayyubid sultan al-Salih Ayyub (), usurping power from his successor in 1250.\""
+        },
+        {
+          "sourceKey": "wp-mamluk-sultanate",
+          "sourceLocation": "lead: \"Mamluk history is generally divided into the Turkic or Bahri period (1250–1382) and the Circassian or Burji period (1382–1517), named after the predominant ethn\""
         }
       ],
       "importance": 1
@@ -25585,7 +25657,7 @@
     {
       "uuid": "battle-of-manzikert",
       "title": "Battle of Manzikert",
-      "descr": "",
+      "descr": "A decisive turning point in the Byzantine–Seljuk wars in the Seljuks' favour, after their expansion into eastern Anatolia; it undermines the authority of the Byzantine Empire.",
       "start": 1071,
       "tracks": [
         "seljuk-empire"
@@ -25594,6 +25666,10 @@
         {
           "sourceKey": "wp-seljuk-empire",
           "sourceLocation": "infobox event2: Battle of Manzikert, 1071"
+        },
+        {
+          "sourceKey": "wp-seljuk-empire",
+          "sourceLocation": "lead: \"The subsequent Seljuk expansion into eastern Anatolia triggered the Byzantine–Seljuk wars, with the Battle of Manzikert in 1071 marking a decisive turning point\""
         }
       ],
       "importance": 1
@@ -29463,7 +29539,7 @@
     {
       "uuid": "triple-alliance-formed",
       "title": "Triple Alliance formed",
-      "descr": "",
+      "descr": "After conquering Azcapotzalco, Tlacopan allies with Tenochtitlan and Texcoco. The Aztec Triple Alliance gives birth to the Aztec Empire.",
       "start": 1428,
       "tracks": [
         "aztec-empire",
@@ -29483,6 +29559,10 @@
         {
           "sourceKey": "wp-tlacopan",
           "sourceLocation": "infobox event_start: Formation of the Aztec Empire, 1428"
+        },
+        {
+          "sourceKey": "wp-tlacopan",
+          "sourceLocation": "section \"History\": \"In 1428, after its successful conquest of Azcapotzalco, Tlacopan allied with the neighbouring city-states of Tenochtitlan and Texcoco, thus becoming a member of\""
         }
       ],
       "importance": 1
