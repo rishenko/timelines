@@ -188,7 +188,12 @@ def short_title(text):
 
 
 def _row(sp, event_text, plain, head, link):
-    """A dated row; its quote is the event's own text (found verbatim in the page), the location shows the whole row."""
+    """A dated row; its quote is the event's own text (found verbatim in the page), the location shows the whole row.
+    A row whose text is only a name ("Ulster Volunteers", an organisation) is no event: at least three words, one of
+    them lowercase."""
+    words = event_text.split()
+    if len(words) < 3 or not any(w[:1].islower() for w in words):
+        return
     for s in sp[:1]:
         yield {'kind': 'table', 'span': s, 'quote': event_text[:300], 'title_suggestion': short_title(event_text),
                'sourceLocation': f'{head or "list"}: {plain[:160]}',
