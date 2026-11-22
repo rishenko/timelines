@@ -678,7 +678,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
             onCenterYearChange={onCenterYearChange}
             onZoomIn={(year) => zoomStep(1, year)}
             ages={ages}
-            onCenter={(year) => focusOn({ year })}
             onPinchZoom={(dir) => void zoomStep(dir)}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}

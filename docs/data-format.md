@@ -144,8 +144,8 @@ each row they name (a region's title band, under any phase strips), with the sam
 has one line per `group` (in the order groups first appear there),
 lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
 a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
-clicking it opens its details: its dates, its article (`url`) and its sources as links, and a button that centres the
-chart on it, so every age reaches its article and sources however narrow its bar. An age with a `url` has a ↗ link to that page just before its name (when its bar
+clicking it opens its details: its dates, its article (`url`) and its sources as links, so every age reaches its
+article and sources however narrow its bar. Ages never move the chart. An age with a `url` has a ↗ link to that page just before its name (when its bar
 has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`, and names its region (its rows, or "All
 regions"). Deleting a row in edit mode names the ages that move to the strip.
 

@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, fireEvent, render, within } from '@testing-library/react';
 import { AgeStrip } from './AgeStrip.tsx';
 import { placeAges } from '../lib/eras.ts';
@@ -11,18 +11,18 @@ afterEach(cleanup);
 
 const cite = [{ sourceKey: 'ledger', sourceLocation: 'p. 1' }];
 
-function render_(eras: Era[], onSelect = vi.fn(), viewLeft = 0) {
+function render_(eras: Era[], viewLeft = 0) {
   const d = plainTimeline();
   d.meta.eras = eras;
   const ages = placeAges(d, {});
   // the chart runs from 0 to 200 L
   const scale = buildScale([0, 200], { increment: 10, tickPx: 80, compress: false });
   const { container } = render(
-    <AgeStrip ages={ages} lines={2} scale={scale} labelW={100} width={2000} viewLeft={viewLeft} cal={d.meta.calendar} sources={d.sources} onSelect={onSelect} />,
+    <AgeStrip ages={ages} lines={2} scale={scale} labelW={100} width={2000} viewLeft={viewLeft} cal={d.meta.calendar} sources={d.sources} />,
   );
   return container;
 }
-const strip = (eras: Era[], onSelect = vi.fn()) => [...render_(eras, onSelect).querySelectorAll<HTMLButtonElement>('button.tl-age')];
+const strip = (eras: Era[]) => [...render_(eras).querySelectorAll<HTMLButtonElement>('button.tl-age')];
 const wiki = 'https://en.wikipedia.org/wiki/Salt_Years';
 
 describe('the Ages strip', () => {
@@ -35,9 +35,8 @@ describe('the Ages strip', () => {
     expect(b.title).toContain('Click for its article and sources');
   });
 
-  it('opens an age’s details on click: its article, its sources as links, and a button that centres the chart', () => {
-    const onSelect = vi.fn();
-    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 24, url: wiki, sources: cite }], onSelect);
+  it('opens an age’s details on click (never moving the chart): its article and its sources as links', () => {
+    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 24, url: wiki, sources: cite }]);
     const b = c.querySelector<HTMLButtonElement>('button.tl-age')!;
     fireEvent.click(b);
     expect(b.getAttribute('aria-expanded')).toBe('true');
@@ -47,8 +46,7 @@ describe('the Ages strip', () => {
     // a bar too narrow for the ↗ still reaches its article here
     expect(within(pop).getByRole('link', { name: /^Article on en\.wikipedia\.org/, hidden: true }).getAttribute('href')).toBe(wiki);
     expect(within(pop).getByText('The Harbor Ledger', { exact: false })).toBeTruthy();
-    fireEvent.click(within(pop).getByRole('button', { name: 'Centre the chart on it', hidden: true }));
-    expect(onSelect).toHaveBeenCalledWith(22);
+    expect(within(pop).queryByRole('button', { hidden: true })).toBeNull();
   });
 
   it('links the sources in the details, the way out for an age with no article', () => {
@@ -105,7 +103,7 @@ describe('the Ages strip', () => {
   it('keeps the ↗ beside the name while the age starts off to the left', () => {
     // the view starts 20 years (160 px) into the age: the name and the link move along with it
     const x0 = buildScale([0, 200], { increment: 10, tickPx: 80, compress: false }).x(20);
-    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 100, url: wiki, sources: cite }], vi.fn(), x0 + 160);
+    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 100, url: wiki, sources: cite }], x0 + 160);
     const a = c.querySelector<HTMLAnchorElement>('a.tl-age-link')!;
     const name = c.querySelector<HTMLElement>('button.tl-age .name')!;
     expect(name.style.left).toBe('160px');

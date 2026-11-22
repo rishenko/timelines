@@ -45,8 +45,6 @@ interface Props {
   periodLane?: ReadonlySet<string>;
   /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler, and bands on the rows they name. */
   ages?: PlacedAge[];
-  /** Centre the chart on a year, keeping the zoom (an age was clicked). */
-  onCenter?: (year: number) => void;
   /** Each event's categories (its main kind draws a glyph; both are in its accessible name). */
   categories?: Map<string, EventCategories>;
   /** Visible events, re-plotted under the selected chronologies. */
@@ -508,7 +506,7 @@ export function TimelineView(props: Props) {
           edgeLinks={props.edgeLinks}
           viewLeft={view.left}
         />
-        {props.ages && props.onCenter && (
+        {props.ages && (
           <AgeStrip
             ages={agesShown.strip}
             lines={ageLines(agesShown.strip)}
@@ -518,7 +516,6 @@ export function TimelineView(props: Props) {
             viewLeft={view.left}
             cal={cal}
             sources={props.data.sources}
-            onSelect={props.onCenter}
           />
         )}
 
@@ -610,7 +607,7 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
-              {props.onCenter && agesShown.bands.has(lane.id) && (
+              {agesShown.bands.has(lane.id) && (
                 // the row's ages (e.g. the Nile Valley's on Africa): the strip's buttons and links, on lines of their own
                 // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
                 <div
@@ -629,7 +626,6 @@ export function TimelineView(props: Props) {
                     viewLeft={view.left}
                     cal={cal}
                     sources={props.data.sources}
-                    onSelect={props.onCenter}
                   />
                 </div>
               )}

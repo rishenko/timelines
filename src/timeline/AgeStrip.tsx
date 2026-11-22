@@ -27,8 +27,6 @@ interface Props {
   viewLeft: number;
   cal: Calendar;
   sources: Dataset['sources'];
-  /** Centre the chart on this year (the zoom stays). */
-  onSelect: (year: number) => void;
 }
 
 /**
@@ -37,14 +35,14 @@ interface Props {
  * it. An age with a page (`url`) has a ↗ link to it just before its name, when its bar has room for both (two 24 px
  * targets); otherwise the Ages table links it. It stays on screen as the chart scrolls down, like the ruler.
  */
-export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, onSelect }: Props) {
+export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources }: Props) {
   if (!ages.length) return null;
   return (
     <div className="tl-ages" style={{ width, height: lines * AGE_LINE_PX }} role="group" aria-label="Ages">
       <div className="tl-ages-corner" style={{ width: labelW }}>
         Ages
       </div>
-      <AgeBars ages={ages} scale={scale} labelW={labelW} viewLeft={viewLeft} cal={cal} sources={sources} onSelect={onSelect} />
+      <AgeBars ages={ages} scale={scale} labelW={labelW} viewLeft={viewLeft} cal={cal} sources={sources} />
     </div>
   );
 }
@@ -55,9 +53,9 @@ type BarProps = Omit<Props, 'lines' | 'width'>;
  * The ages' buttons (and ↗ links), placed by their line: shared by the Ages strip and the rows' age bands. Positions
  * are from the top of their container, `labelW` in from its left edge.
  */
-export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect }: BarProps) {
-  // clicking an age (or Enter on it) opens its details: dates, region, its article and its sources as links, and a
-  // button to centre the chart on it. However narrow its bar, every age reaches its article and sources this way.
+export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources }: BarProps) {
+  // clicking an age (or Enter on it) opens its details: dates, region, its article and its sources as links. However
+  // narrow its bar, every age reaches its article and sources this way; it never moves the chart.
   const [open, setOpen] = useState<{ age: PlacedAge; from: HTMLElement; x: number; y: number } | null>(null);
   const pop = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -69,7 +67,7 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
     } catch {
       // no popover API (jsdom): it's shown as a plain box
     }
-    el.querySelector<HTMLElement>('a, button')?.focus();
+    el.querySelector<HTMLElement>('a')?.focus();
     const closed = (ev: Event) => {
       if ((ev as ToggleEvent).newState !== 'closed') return;
       if (!document.activeElement || document.activeElement === document.body || el.contains(document.activeElement)) open.from.focus();
@@ -78,10 +76,6 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
     el.addEventListener('toggle', closed);
     return () => el.removeEventListener('toggle', closed);
   }, [open]);
-  const close = () => {
-    if (pop.current?.hidePopover) pop.current.hidePopover();
-    else setOpen(null);
-  };
   // a named line (a band with two or more): its name at the line's left end, kept on screen; the ages' names and links
   // on that line start after it
   const named = new Map<number, { name: string; x0: number }>();
@@ -197,15 +191,15 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
           aria-label={open.age.era.name}
           style={{ left: Math.max(8, Math.min(open.x, window.innerWidth - 328)), top: open.y + 4 }}
         >
-          <AgeDetails age={open.age} cal={cal} sources={sources} onCentre={() => (onSelect((open.age.span.start + open.age.span.end) / 2), close())} />
+          <AgeDetails age={open.age} cal={cal} sources={sources} />
         </div>
       )}
     </>
   );
 }
 
-/** An age's details in its popover: name, region, dates, its article, its sources as links, and centring on it. */
-function AgeDetails({ age, cal, sources, onCentre }: { age: PlacedAge; cal: Calendar; sources: Dataset['sources']; onCentre: () => void }) {
+/** An age's details in its popover: name, region, dates, its article and its sources as links. */
+function AgeDetails({ age, cal, sources }: { age: PlacedAge; cal: Calendar; sources: Dataset['sources'] }) {
   const { era, span, lineName } = age;
   const dates = spanInWords(span, cal, sources);
   const url = safeUrl(era.url);
@@ -228,9 +222,6 @@ function AgeDetails({ age, cal, sources, onCentre }: { age: PlacedAge; cal: Cale
       )}
       <p className="muted small">Sources</p>
       <SourceList refs={era.sources} sources={sources} />
-      <button type="button" onClick={onCentre}>
-        Centre the chart on it
-      </button>
     </>
   );
 }
