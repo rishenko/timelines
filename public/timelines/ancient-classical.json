@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "meta": {
     "id": "ancient-classical",
     "title": "Ancient and Classical World",
@@ -60885,7 +60885,7 @@
     {
       "uuid": "golden-age-of-athens",
       "title": "Golden Age of Athens",
-      "descr": "",
+      "descr": "After the Persian invasion is defeated, Athens leads the Delian League and turns it into an empire whose treasury pays for the Acropolis. Under Pericles the city is home to the playwrights Aeschylus, Sophocles and Euripides, the historians Herodotus and Thucydides, and the philosophers Socrates and Plato.",
       "start": -477,
       "end": -403,
       "tracks": [
@@ -60899,6 +60899,18 @@
         {
           "sourceKey": "wp-athens-in-the-5th-century-bc",
           "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"After peace was made with Persia in the mid-5th century BC, what started as an Athenian-led alliance of independent city-states, had become an Athenian empire s\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"With the empire's funds, military dominance and its political fortunes guided by statesman and orator Pericles, Athens produced some of the most influential and\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"The playwrights Aeschylus, Sophocles and Euripides all lived and worked in 5th-century BC Athens, as did the historians Herodotus and Thucydides, the physician \""
         }
       ],
       "startDates": [

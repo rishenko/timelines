@@ -27,7 +27,7 @@ function claim(year: number, month: number, day: number, at: string) {
 }
 
 export const everyField = {
-  schemaVersion: 5,
+  schemaVersion: 6,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -60,6 +60,8 @@ export const everyField = {
       {
         id: 'age-of-piers',
         name: 'The Age of Piers',
+        url: 'https://example.com/age-of-piers',
+        ids: { wikidata: 'Q4242' },
         group: 'harbor-ages',
         color: '#c8a24a',
         chronology: 'court',

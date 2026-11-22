@@ -81,6 +81,10 @@ export interface Era extends TrackSpan {
   color?: string;
   /** The chronology its dates follow. */
   chronology?: string;
+  /** A page about the age (e.g. its Wikipedia article): its name links to it. Not a date source; those are `sources`. */
+  url?: string;
+  /** The age's identifiers in other datasets (as a row's). */
+  ids?: TrackIds;
   sources: SourceRef[];
 }
 
@@ -343,7 +347,7 @@ export interface TimelineEvent extends DateDays {
 
 export interface Dataset {
   /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 5;
+  schemaVersion: 6;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest

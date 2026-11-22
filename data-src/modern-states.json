@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "meta": {
     "id": "modern-states",
     "title": "Modern States",
@@ -119676,7 +119676,7 @@
     {
       "uuid": "polish-golden-age",
       "title": "Polish Golden Age",
-      "descr": "",
+      "descr": "The Renaissance in the Kingdom of Poland and then the Polish–Lithuanian Commonwealth, which grows into one of the largest states in Europe and prospers from its grain, timber, salt and cloth trade through the Baltic ports.",
       "start": 1475,
       "end": 1650,
       "circa": true,
@@ -119692,6 +119692,14 @@
         {
           "sourceKey": "wp-polish-golden-age",
           "sourceLocation": "lead: \"Historians argue that the Polish Golden Age ended by the mid-17th century, when Poland was ravaged by the Khmelnytsky Uprising (1648–57) and by the Swedish and \""
+        },
+        {
+          "sourceKey": "wp-polish-golden-age",
+          "sourceLocation": "lead: \"During its Golden Age, the Commonwealth became one of the largest kingdoms of Europe and at its peak stretched from modern-day Estonia in the north to Moldavia \""
+        },
+        {
+          "sourceKey": "wp-polish-golden-age",
+          "sourceLocation": "lead: \"It prospered from its enormous grain, wood, salt, and cloth trade with Western Europe via the Baltic Sea ports of Danzig (Gdańsk), Elbing (Elbląg), Riga, Memel \""
         }
       ],
       "startDates": [
@@ -119733,7 +119741,7 @@
     {
       "uuid": "elizabethan-era",
       "title": "Elizabethan era",
-      "descr": "",
+      "descr": "The reign of Elizabeth I: effective government, an economy boosted by transatlantic trade and privateering, the start of English exploration overseas, and a flowering of poetry, music and theatre, with playwrights such as William Shakespeare.",
       "start": 1558,
       "end": 1603,
       "tracks": [
@@ -119747,6 +119755,18 @@
         {
           "sourceKey": "wp-elizabethan-era",
           "sourceLocation": "infobox end: 1603"
+        },
+        {
+          "sourceKey": "wp-elizabethan-era",
+          "sourceLocation": "lead: \"Historians often depict it as the golden age in English history, with an effective government, resulting from the reforms of Henry VII and Henry VIII, and a pro\""
+        },
+        {
+          "sourceKey": "wp-elizabethan-era",
+          "sourceLocation": "lead: \"England began to engage in international exploration and expansion.\""
+        },
+        {
+          "sourceKey": "wp-elizabethan-era",
+          "sourceLocation": "lead: \"Culturally, this period represented the apogee of the English Renaissance and saw a flowering of poetry, music, literature, and especially theatre, with playwri\""
         }
       ],
       "startDates": [
@@ -119784,7 +119804,7 @@
     {
       "uuid": "dutch-golden-age",
       "title": "Dutch Golden Age",
-      "descr": "",
+      "descr": "The Dutch Republic becomes one of the leading commercial and maritime powers in Europe, trading through Amsterdam and the Dutch East India Company, while Dutch culture and science flourish.",
       "start": 1588,
       "end": 1672,
       "tracks": [
@@ -119794,6 +119814,18 @@
         {
           "sourceKey": "wp-dutch-golden-age",
           "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
+        },
+        {
+          "sourceKey": "wp-dutch-golden-age",
+          "sourceLocation": "lead: \"During this period, the Dutch Republic became one of the leading commercial and maritime powers in Europe.\""
+        },
+        {
+          "sourceKey": "wp-dutch-golden-age",
+          "sourceLocation": "lead: \"Institutions such as the Dutch East India Company helped expand its reach in global commerce.\""
+        },
+        {
+          "sourceKey": "wp-dutch-golden-age",
+          "sourceLocation": "lead: \"The prosperity of several cities, relatively high income levels, and an active cultural and scientific life made the Dutch Republic an important economic center\""
         }
       ],
       "startDates": [

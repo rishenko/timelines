@@ -55,15 +55,20 @@ export function validateDataset(d: unknown): string[] {
     if (u === undefined) return;
     if (typeof u !== 'string' || !isSafeUrl(u)) errors.push(`${label} must be an http(s) link or a relative path.`);
   };
+  /** Identifiers in other datasets (a row's or an age's `ids`). */
+  const checkIds = (label: string, ids: unknown) => {
+    if (ids === undefined) return;
+    if (!ids || typeof ids !== 'object' || Array.isArray(ids)) errors.push(`${label} ids must be an object.`);
+    else {
+      const w = (ids as { wikidata?: unknown }).wikidata;
+      if (w !== undefined && !/^Q[1-9]\d*$/.test(String(w))) errors.push(`${label} ids.wikidata must be a Wikidata item id such as "Q11768".`);
+    }
+  };
   checkUrl('meta.creditsImage', m.creditsImage);
   for (const t of ds.tracks) {
     checkUrl(`Track "${t.id}" image`, t.image);
     checkUrl(`Track "${t.id}" url`, t.url);
-    if (t.ids !== undefined) {
-      if (!t.ids || typeof t.ids !== 'object' || Array.isArray(t.ids)) errors.push(`Track "${t.id}" ids must be an object.`);
-      else if (t.ids.wikidata !== undefined && !/^Q[1-9]\d*$/.test(String(t.ids.wikidata)))
-        errors.push(`Track "${t.id}" ids.wikidata must be a Wikidata item id such as "Q11768".`);
-    }
+    checkIds(`Track "${t.id}"`, t.ids);
   }
   for (const [k, s] of Object.entries(ds.sources)) {
     checkUrl(`Source "${k}" url`, s.url);
@@ -409,6 +414,8 @@ export function validateDataset(d: unknown): string[] {
       eraIds.add(era.id);
       if (!era.name) errors.push(`${label} has no name.`);
       checkChronology(label, era.chronology);
+      checkUrl(`${label} url`, era.url);
+      checkIds(label, era.ids);
       if (!Array.isArray(era.sources) || !era.sources.length) errors.push(`${label} cites no source.`);
       else for (const r of era.sources) if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
       if (!checkSpan(label, era, era.chronology)) continue;
