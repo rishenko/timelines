@@ -125,6 +125,13 @@ node scripts/apply-text-fixes.ts <data-src file> fixes.json [--dry]   # reword t
 npm run audit:batches -- <data-src file> <out dir>   # group descriptions by cited page, for checking against the pages
 ```
 
+### Timelines generated from Wikipedia
+
+`data-src/modern-states.json` is not hand-written. `pipelines/modern-states/gen_modern.py` builds it from an offline
+English Wikipedia dump, citing each date's infobox field or sentence, and writes its provenance manifest to
+`data-src/provenance/`. Edit the generator, not the file, then rerun it and check `git diff data-src/`.
+`pipelines/README.md` covers the inputs, the settings and how to rerun.
+
 ## Row links
 
 Each row of the included timelines links to its Wikipedia article and carries its Wikidata id (`url` and
