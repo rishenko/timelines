@@ -110,7 +110,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Data filters → Regions) uses the first facet that rows belong to, and comparison sets show each row's broad region from it. |
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
-| `eras` | no | Named periods across the whole timeline (the Bronze Age, the Age of Revolutions). See [eras](#eras). Not drawn yet. |
+| `eras` | no | Named periods across the whole timeline (the Bronze Age, the Age of Revolutions). See [eras](#eras). Readers see them as ages, in a strip under the ruler. |
 | `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
 
 ### eras
@@ -134,7 +134,12 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `color` | no | `#rrggbb`. |
 | `chronology` | no | The dating system its dates follow. |
 
-An era must lie within `meta.range` when the timeline has one. The app checks eras but doesn't draw them yet.
+An era must lie within `meta.range` when the timeline has one.
+
+The app draws eras as **ages** in a strip under the ruler: one line per `group` (in the order groups first appear),
+lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
+a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
+clicking it centres the chart on it. The table view lists them in an Ages table.
 
 ### calendar
 

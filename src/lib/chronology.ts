@@ -200,8 +200,14 @@ export function resolveEvents(ds: Dataset, selection: ChronologySelection): Reso
   });
 }
 
-export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selection: ChronologySelection): ResolvedSpan {
-  const chron = trackChronology(ds.tracks, trackId);
+/** A span's dates under the reader's Dating choice; `chron` overrides the row's chronology (an era names its own). */
+export function resolveSpan(
+  ds: Dataset,
+  trackId: string,
+  span: TrackSpan,
+  selection: ChronologySelection,
+  chron: string | undefined = trackChronology(ds.tracks, trackId),
+): ResolvedSpan {
   const s = resolveDate(ds, span.start, span.startDates, chron, selection, !!span.circa);
   if (span.ongoing || span.end === undefined) {
     // still going: runs to the present, which no dating system moves

@@ -30,6 +30,7 @@ gives them.
 | **c.** (circa) | An approximate date. | |
 | **dating system** | One of several absolute datings of a region that scholars disagree on, chosen in the **Dating** menu. In the file: `chronologies`. | calendar, chronology (in app text) |
 | **calendar** | The era names a timeline counts years in (BCE/CE or its own), and whether it has a year 0. | |
+| **age** | A named period across the whole timeline, such as the Islamic Golden Age, drawn in the **Ages** strip under the ruler. In the file: `meta.eras`. | era, period |
 | **era line** | The line on the chart where one era name gives way to the next (BCE to CE, or the timeline's own). | |
 | **ruler** | The strip of years along the top of the chart. | time axis (only to say what it is) |
 | **zoom step** | How much time each tick of the ruler covers (years, or a quarter, month, week or day). | scale, increment (in app text) |
@@ -40,5 +41,3 @@ gives them.
 | **table view** | Events and rows as a sortable table, with CSV download. | list view, spreadsheet |
 | **Legend** | The key to every symbol, colour and line the open timeline uses. | key |
 
-Not settled yet: a reader-facing word for `meta.eras` (periods that run across every row). They aren't drawn yet;
-choose the word when they are, and keep it apart from **era line** and **phase**.

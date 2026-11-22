@@ -252,6 +252,12 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
 
   const dates: Item[] = [
     {
+      sample: <span className="lg-age">Age</span>,
+      show: !!data.meta.eras?.length,
+      title: 'Age',
+      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age to centre the chart on it.',
+    },
+    {
       sample: <span className="lg-bar uncertain" />,
       show: has.ranges,
       title: 'Uncertain start and end',

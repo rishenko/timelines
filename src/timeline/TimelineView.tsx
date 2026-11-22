@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { AgeStrip } from './AgeStrip.tsx';
+import { ageLines, agesInView, type PlacedAge } from '../lib/eras.ts';
 import type { Dataset, Track } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
@@ -39,6 +41,10 @@ const PEEK_MS = 2500;
 
 interface Props {
   data: Dataset;
+  /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler. */
+  ages?: PlacedAge[];
+  /** Centre the chart on a year, keeping the zoom (an age was clicked). */
+  onCenter?: (year: number) => void;
   /** Each event's categories (its main kind draws a glyph; both are in its accessible name). */
   categories?: Map<string, EventCategories>;
   /** Visible events, re-plotted under the selected chronologies. */
@@ -238,6 +244,8 @@ export function TimelineView(props: Props) {
     () => new Map([...lanePhases].filter(([, list]) => list.length).map(([id, list]) => [id, layoutPhaseStrips(list, scale.x, {}, laneLifespans.get(id))])),
     [lanePhases, scale, laneLifespans],
   );
+  // ages: only the strip's lines with an age in the years in view (checked when scrolling settles, as rows are)
+  const agesShown = useMemo(() => agesInView(props.ages ?? [], rowWindow), [props.ages, rowWindow]);
   const headerPx = useMemo(() => Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height])), [laneStrips]);
   // events drawn with a category glyph before their title: their labels are that much wider
   const glyphs = useMemo(
@@ -493,6 +501,19 @@ export function TimelineView(props: Props) {
           edgeLinks={props.edgeLinks}
           viewLeft={view.left}
         />
+        {props.ages && props.onCenter && (
+          <AgeStrip
+            ages={agesShown}
+            lines={ageLines(agesShown)}
+            scale={scale}
+            labelW={labelW}
+            width={canvasW}
+            viewLeft={view.left}
+            cal={cal}
+            sources={props.data.sources}
+            onSelect={props.onCenter}
+          />
+        )}
 
         {/* arrow-key navigation for the controls inside (delegated here; each control is a button) */}
         {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions */}

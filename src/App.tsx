@@ -1,4 +1,5 @@
 import { useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { placeAges } from './lib/eras.ts';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
@@ -139,6 +140,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
   const chron = useChronology(data);
+  // ages (meta.eras) under the reader's Dating choice, on their lines
+  const ages = useMemo(() => placeAges(data, chron.selection), [data, chron.selection]);
   const { resolved, resolvedById, spans, phases, memberOf } = chron;
   const visibleEvents = useMemo(
     () => resolved.filter((e) => isEventVisible(e, shownFilters) && categories.shows(e)),
@@ -623,6 +626,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             visibleTracks={shownRows}
             regionsOf={regions.regionsOf}
             categoriesOf={categories.info}
+            ages={ages}
           />
         ) : (
           <TimelineView
@@ -663,6 +667,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
             initialCenterYear={initialCenter}
             onCenterYearChange={onCenterYearChange}
             onZoomIn={(year) => zoomStep(1, year)}
+            ages={ages}
+            onCenter={(year) => focusOn({ year })}
             onPinchZoom={(dir) => void zoomStep(dir)}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}
