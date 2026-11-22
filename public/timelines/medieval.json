@@ -1,0 +1,2421 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "medieval",
+    "title": "Medieval World",
+    "subtitle": "Pilot: Byzantium, the Caliphate, the Holy Roman Empire, the Mongols, Mali and China, 650–1500",
+    "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
+    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false,
+      "aliases": {
+        "before": [
+          "BC"
+        ],
+        "after": [
+          "AD"
+        ]
+      }
+    },
+    "increments": [
+      10,
+      25,
+      50,
+      100,
+      250
+    ],
+    "defaultIncrement": 50,
+    "hideRowsOutOfView": true,
+    "facets": {
+      "geography": {
+        "name": "Region",
+        "values": {
+          "near-east": {
+            "name": "Near East"
+          },
+          "mesopotamia": {
+            "name": "Mesopotamia",
+            "broader": [
+              "near-east"
+            ]
+          },
+          "anatolia": {
+            "name": "Anatolia",
+            "broader": [
+              "near-east"
+            ]
+          },
+          "levant": {
+            "name": "Levant",
+            "broader": [
+              "near-east"
+            ]
+          },
+          "caucasus": {
+            "name": "Caucasus",
+            "broader": [
+              "near-east"
+            ]
+          },
+          "iranian-plateau": {
+            "name": "Iranian Plateau",
+            "broader": [
+              "near-east"
+            ]
+          },
+          "arabia": {
+            "name": "Arabia",
+            "broader": [
+              "near-east"
+            ]
+          },
+          "africa": {
+            "name": "Africa"
+          },
+          "north-africa": {
+            "name": "North Africa",
+            "broader": [
+              "africa"
+            ]
+          },
+          "nile": {
+            "name": "Nile",
+            "broader": [
+              "north-africa"
+            ]
+          },
+          "sahara": {
+            "name": "Sahara",
+            "broader": [
+              "africa"
+            ]
+          },
+          "east-africa": {
+            "name": "East Africa",
+            "broader": [
+              "africa"
+            ]
+          },
+          "horn-of-africa": {
+            "name": "Horn of Africa",
+            "broader": [
+              "east-africa"
+            ]
+          },
+          "west-africa": {
+            "name": "West Africa",
+            "broader": [
+              "africa"
+            ]
+          },
+          "southern-africa": {
+            "name": "Southern Africa",
+            "broader": [
+              "africa"
+            ]
+          },
+          "europe": {
+            "name": "Europe"
+          },
+          "iberia": {
+            "name": "Iberia",
+            "broader": [
+              "europe",
+              "mediterranean"
+            ]
+          },
+          "balkans": {
+            "name": "Balkans",
+            "broader": [
+              "europe"
+            ]
+          },
+          "central-europe": {
+            "name": "Central Europe",
+            "broader": [
+              "europe"
+            ]
+          },
+          "northern-europe": {
+            "name": "Northern Europe",
+            "broader": [
+              "europe"
+            ]
+          },
+          "western-europe": {
+            "name": "Western Europe",
+            "broader": [
+              "europe"
+            ]
+          },
+          "british-isles": {
+            "name": "British Isles",
+            "broader": [
+              "europe"
+            ]
+          },
+          "eastern-europe": {
+            "name": "Eastern Europe",
+            "broader": [
+              "europe"
+            ]
+          },
+          "eurasian-steppe": {
+            "name": "Eurasian Steppe"
+          },
+          "pontic-caspian-steppe": {
+            "name": "Pontic–Caspian steppe",
+            "broader": [
+              "eurasian-steppe",
+              "eastern-europe"
+            ]
+          },
+          "kazakh-steppe": {
+            "name": "Kazakh Steppe",
+            "broader": [
+              "eurasian-steppe"
+            ]
+          },
+          "mongolian-plateau": {
+            "name": "Mongolian Plateau",
+            "broader": [
+              "eurasian-steppe",
+              "east-asia"
+            ]
+          },
+          "altai-sayan": {
+            "name": "Altai-Sayan region",
+            "broader": [
+              "eurasian-steppe",
+              "siberia"
+            ]
+          },
+          "central-asia": {
+            "name": "Central Asia"
+          },
+          "bactria": {
+            "name": "Bactria",
+            "broader": [
+              "central-asia"
+            ]
+          },
+          "south-asia": {
+            "name": "South Asia"
+          },
+          "indus-valley": {
+            "name": "Indus Valley",
+            "broader": [
+              "south-asia"
+            ]
+          },
+          "gandhara": {
+            "name": "Gandhara",
+            "broader": [
+              "south-asia"
+            ]
+          },
+          "gangetic-plain": {
+            "name": "Gangetic Plain",
+            "broader": [
+              "south-asia"
+            ]
+          },
+          "deccan": {
+            "name": "Deccan",
+            "broader": [
+              "south-asia"
+            ]
+          },
+          "south-india": {
+            "name": "South India",
+            "broader": [
+              "south-asia"
+            ]
+          },
+          "sri-lanka": {
+            "name": "Sri Lanka",
+            "broader": [
+              "south-asia"
+            ]
+          },
+          "east-asia": {
+            "name": "East Asia"
+          },
+          "china": {
+            "name": "China",
+            "broader": [
+              "east-asia"
+            ]
+          },
+          "yellow-river": {
+            "name": "Yellow River valley",
+            "broader": [
+              "china"
+            ]
+          },
+          "yangtze": {
+            "name": "Yangtze valley",
+            "broader": [
+              "china"
+            ]
+          },
+          "northeast-china": {
+            "name": "Northeast China",
+            "broader": [
+              "china"
+            ]
+          },
+          "sichuan": {
+            "name": "Sichuan Basin",
+            "broader": [
+              "china"
+            ]
+          },
+          "tibetan-plateau": {
+            "name": "Tibetan Plateau",
+            "broader": [
+              "east-asia"
+            ]
+          },
+          "korea": {
+            "name": "Korea",
+            "broader": [
+              "east-asia"
+            ]
+          },
+          "japan": {
+            "name": "Japan",
+            "broader": [
+              "east-asia"
+            ]
+          },
+          "taiwan": {
+            "name": "Taiwan",
+            "broader": [
+              "east-asia"
+            ]
+          },
+          "southeast-asia": {
+            "name": "Southeast Asia"
+          },
+          "mainland-sea": {
+            "name": "Mainland Southeast Asia",
+            "broader": [
+              "southeast-asia"
+            ]
+          },
+          "red-river-delta": {
+            "name": "Red River Delta",
+            "broader": [
+              "mainland-sea"
+            ]
+          },
+          "maritime-sea": {
+            "name": "Maritime Southeast Asia",
+            "broader": [
+              "southeast-asia"
+            ]
+          },
+          "oceania": {
+            "name": "Oceania"
+          },
+          "australia": {
+            "name": "Australia",
+            "broader": [
+              "oceania"
+            ]
+          },
+          "melanesia": {
+            "name": "Melanesia",
+            "broader": [
+              "oceania"
+            ]
+          },
+          "micronesia": {
+            "name": "Micronesia",
+            "broader": [
+              "oceania"
+            ]
+          },
+          "polynesia": {
+            "name": "Polynesia",
+            "broader": [
+              "oceania"
+            ]
+          },
+          "north-america": {
+            "name": "North America"
+          },
+          "na-arctic": {
+            "name": "North American Arctic",
+            "broader": [
+              "north-america"
+            ]
+          },
+          "great-plains": {
+            "name": "Great Plains",
+            "broader": [
+              "north-america"
+            ]
+          },
+          "eastern-woodlands": {
+            "name": "Eastern Woodlands",
+            "broader": [
+              "north-america"
+            ]
+          },
+          "oasisamerica": {
+            "name": "Oasisamerica",
+            "broader": [
+              "north-america"
+            ]
+          },
+          "caribbean": {
+            "name": "Caribbean",
+            "broader": [
+              "north-america"
+            ]
+          },
+          "mesoamerica": {
+            "name": "Mesoamerica"
+          },
+          "maya-region": {
+            "name": "Maya Region",
+            "broader": [
+              "mesoamerica"
+            ]
+          },
+          "south-america": {
+            "name": "South America"
+          },
+          "andes": {
+            "name": "Andes",
+            "broader": [
+              "south-america"
+            ]
+          },
+          "amazonia": {
+            "name": "Amazonia",
+            "broader": [
+              "south-america"
+            ]
+          },
+          "patagonia": {
+            "name": "Patagonia",
+            "broader": [
+              "south-america"
+            ]
+          },
+          "siberia": {
+            "name": "Siberia"
+          },
+          "mediterranean": {
+            "name": "Mediterranean"
+          },
+          "aegean": {
+            "name": "Aegean",
+            "broader": [
+              "mediterranean",
+              "europe"
+            ]
+          },
+          "italy": {
+            "name": "Italy",
+            "broader": [
+              "mediterranean",
+              "europe"
+            ]
+          }
+        }
+      }
+    },
+    "range": {
+      "start": 650,
+      "end": 1500
+    }
+  },
+  "tracks": [
+    {
+      "id": "europe",
+      "name": "Europe",
+      "color": "#3f6aa8"
+    },
+    {
+      "id": "eastern-roman",
+      "name": "Byzantine Empire",
+      "color": "#8a3a6a",
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+      "ids": {
+        "wikidata": "Q12544"
+      },
+      "span": {
+        "start": 395,
+        "end": 1453,
+        "startDates": [
+          {
+            "year": 395,
+            "source": {
+              "sourceKey": "wp-list-of-byzantine-emperors",
+              "sourceLocation": "lead: \"The Byzantine Empire was the direct legal continuation of the eastern half of the Roman Empire following its division in 395.\""
+            }
+          },
+          {
+            "year": 330,
+            "source": {
+              "sourceKey": "wp-byzantine-empire",
+              "sourceLocation": "infobox life span: 330–1453"
+            },
+            "note": "Counted from the founding of Constantinople, the conventional start."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1453,
+            "source": {
+              "sourceKey": "wp-byzantine-empire",
+              "sourceLocation": "lead: \"The fall of Constantinople to the Ottomans in 1453 brought the empire to an end.\""
+            }
+          },
+          {
+            "year": 1453,
+            "source": {
+              "sourceKey": "wp-byzantine-empire",
+              "sourceLocation": "infobox life span: 330–1453"
+            }
+          }
+        ],
+        "endEvent": "fall-of-constantinople"
+      },
+      "phases": [
+        {
+          "name": "Heraclian dynasty",
+          "start": 610,
+          "end": 695,
+          "startDates": [
+            {
+              "year": 610,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Heraclian dynasty (610–695)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 695,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Heraclian dynasty (610–695)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Twenty Years' Anarchy",
+          "start": 695,
+          "end": 717,
+          "startDates": [
+            {
+              "year": 695,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Twenty Years' Anarchy (695–717)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 717,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Twenty Years' Anarchy (695–717)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Isaurian dynasty",
+          "start": 717,
+          "end": 802,
+          "startDates": [
+            {
+              "year": 717,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Isaurian (Syrian) dynasty (717–802)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 802,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Isaurian (Syrian) dynasty (717–802)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Nikephorian dynasty",
+          "start": 802,
+          "end": 813,
+          "startDates": [
+            {
+              "year": 802,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Nikephorian dynasty (802–813)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 813,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Nikephorian dynasty (802–813)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Amorian dynasty",
+          "start": 820,
+          "end": 867,
+          "startDates": [
+            {
+              "year": 820,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Amorian dynasty (820–867)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 867,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Amorian dynasty (820–867)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Macedonian dynasty",
+          "start": 867,
+          "end": 1059,
+          "startDates": [
+            {
+              "year": 867,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Macedonian dynasty (867–1059)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1059,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Macedonian dynasty (867–1059)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Doukas dynasty",
+          "start": 1059,
+          "end": 1078,
+          "startDates": [
+            {
+              "year": 1059,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Doukas dynasty (1059–1078)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1078,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Doukas dynasty (1059–1078)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Komnenos dynasty",
+          "start": 1081,
+          "end": 1185,
+          "startDates": [
+            {
+              "year": 1081,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Komnenos dynasty (1081–1185)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1185,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Komnenos dynasty (1081–1185)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Angelos dynasty",
+          "start": 1185,
+          "end": 1204,
+          "startDates": [
+            {
+              "year": 1185,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Angelos dynasty (1185–1204)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1204,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Angelos dynasty (1185–1204)\""
+              }
+            }
+          ],
+          "endEvent": "sack-of-constantinople"
+        },
+        {
+          "name": "Laskaris dynasty (Empire of Nicaea)",
+          "start": 1205,
+          "end": 1261,
+          "startDates": [
+            {
+              "year": 1205,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Laskaris dynasty (1205–1261)\""
+              }
+            },
+            {
+              "year": 1204,
+              "source": {
+                "sourceKey": "wp-empire-of-nicaea",
+                "sourceLocation": "infobox year_start: 1204"
+              },
+              "note": "The Empire of Nicaea counts from the 1204 sack."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1261,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Laskaris dynasty (1205–1261)\""
+              }
+            },
+            {
+              "year": 1261,
+              "source": {
+                "sourceKey": "wp-empire-of-nicaea",
+                "sourceLocation": "infobox year_end: 1261"
+              }
+            }
+          ],
+          "startEvent": "sack-of-constantinople",
+          "endEvent": "constantinople-recovered"
+        },
+        {
+          "name": "Palaiologos dynasty",
+          "start": 1259,
+          "end": 1453,
+          "startDates": [
+            {
+              "year": 1259,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Palaiologos dynasty (1259–1453)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1453,
+              "source": {
+                "sourceKey": "wp-list-of-byzantine-emperors",
+                "sourceLocation": "section \"Palaiologos dynasty (1259–1453)\""
+              }
+            }
+          ],
+          "endEvent": "fall-of-constantinople"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            {
+              "sourceKey": "wp-empire-of-nicaea",
+              "sourceLocation": "lead: \"The Empire of Nicaea was established by the Laskaris noble family in the Byzantine holdings of northwestern Anatolia, and lasted from 1204 to 1261, when it reca\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hre",
+      "name": "Holy Roman Empire",
+      "color": "#8a6d3b",
+      "parent": "europe",
+      "url": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+      "span": {
+        "start": 962,
+        "end": 1806,
+        "startDates": [
+          {
+            "year": 962,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox date_start: 2 February 962"
+            }
+          },
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox life span: 800/962–1806"
+            },
+            "note": "Counted from Charlemagne's coronation by some historians."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1806,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox date_end: 6 August 1806"
+            }
+          }
+        ],
+        "startEvent": "otto-crowned"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-europe",
+          "sources": [
+            {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "lead: \"The Holy Roman Empire, also known as the Holy Roman Empire of the German Nation after 1512, was a polity comprising and controlling much of Central Europe and W\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "western-europe",
+          "sources": [
+            {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "lead: \"The Holy Roman Empire, also known as the Holy Roman Empire of the German Nation after 1512, was a polity comprising and controlling much of Central Europe and W\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "italy",
+          "sources": [
+            {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "lead: \"Initially, it consisted of three constituent kingdoms—Germany, Italy, and (from 1032) Burgundy—held together by the emperor's overlordship.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "near-east",
+      "name": "Near East and North Africa",
+      "color": "#a8732f"
+    },
+    {
+      "id": "caliphate",
+      "name": "Caliphate",
+      "color": "#2f7d4f",
+      "parent": "near-east",
+      "url": "https://en.wikipedia.org/wiki/Caliphate",
+      "phases": [
+        {
+          "name": "Rashidun Caliphate",
+          "start": 632,
+          "end": 661,
+          "startDates": [
+            {
+              "year": 632,
+              "source": {
+                "sourceKey": "wp-rashidun-caliphate",
+                "sourceLocation": "infobox year_start: 632"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 661,
+              "source": {
+                "sourceKey": "wp-rashidun-caliphate",
+                "sourceLocation": "infobox year_end: 661"
+              }
+            }
+          ],
+          "endEvent": "ali-assassinated"
+        },
+        {
+          "name": "Umayyad Caliphate",
+          "start": 661,
+          "end": 750,
+          "startDates": [
+            {
+              "year": 661,
+              "source": {
+                "sourceKey": "wp-umayyad-caliphate",
+                "sourceLocation": "infobox year_start: 661"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 750,
+              "source": {
+                "sourceKey": "wp-umayyad-caliphate",
+                "sourceLocation": "infobox year_end: 750"
+              }
+            }
+          ],
+          "startEvent": "ali-assassinated",
+          "endEvent": "abbasid-revolution"
+        },
+        {
+          "name": "Abbasid Caliphate",
+          "start": 750,
+          "end": 1258,
+          "startDates": [
+            {
+              "year": 750,
+              "source": {
+                "sourceKey": "wp-abbasid-caliphate",
+                "sourceLocation": "infobox life span: 750–1258"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1258,
+              "source": {
+                "sourceKey": "wp-abbasid-caliphate",
+                "sourceLocation": "infobox life span: 750–1258"
+              }
+            }
+          ],
+          "startEvent": "abbasid-revolution",
+          "endEvent": "siege-of-baghdad"
+        },
+        {
+          "name": "Abbasid caliphs in Cairo",
+          "start": 1261,
+          "end": 1517,
+          "startDates": [
+            {
+              "year": 1261,
+              "source": {
+                "sourceKey": "wp-abbasid-caliphate",
+                "sourceLocation": "infobox life span: 1261–1517"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1517,
+              "source": {
+                "sourceKey": "wp-abbasid-caliphate",
+                "sourceLocation": "infobox life span: 1261–1517"
+              }
+            }
+          ],
+          "startEvent": "abbasids-in-cairo"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "lead: \"By the 650s, in addition to the Arabian Peninsula, the caliphate had subjugated the Levant and parts of Transcaucasia to the north; North Africa from Egypt to t\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "lead: \"By the 650s, in addition to the Arabian Peninsula, the caliphate had subjugated the Levant and parts of Transcaucasia to the north; North Africa from Egypt to t\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "lead: \"By the 650s, in addition to the Arabian Peninsula, the caliphate had subjugated the Levant and parts of Transcaucasia to the north; North Africa from Egypt to t\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            {
+              "sourceKey": "wp-abbasid-caliphate",
+              "sourceLocation": "lead: \"They ruled as caliphs from their base in Iraq until 1258, with Baghdad as their capital for most of their history.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "steppe",
+      "name": "Steppe and Central Asia",
+      "color": "#7a6a9a"
+    },
+    {
+      "id": "mongol-empire",
+      "name": "Mongol Empire",
+      "color": "#4a5a8a",
+      "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Mongol_Empire",
+      "span": {
+        "start": 1206,
+        "end": 1368,
+        "startDates": [
+          {
+            "year": 1206,
+            "source": {
+              "sourceKey": "wp-mongol-empire",
+              "sourceLocation": "infobox life span: 1206–1368"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1368,
+            "source": {
+              "sourceKey": "wp-mongol-empire",
+              "sourceLocation": "infobox life span: 1206–1368"
+            }
+          }
+        ],
+        "startEvent": "genghis-enthroned",
+        "endEvent": "fall-of-dadu"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mongolian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-empire",
+              "sourceLocation": "lead: \"The empire emerged from the unification of several nomadic tribes in the Mongol heartland under the leadership of Temüjin, known by the title of Genghis Khan (c\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "golden-horde",
+      "name": "Golden Horde",
+      "color": "#b08a2a",
+      "parent": "steppe",
+      "url": "https://en.wikipedia.org/wiki/Golden_Horde",
+      "span": {
+        "start": 1225,
+        "end": 1502,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1225,
+            "source": {
+              "sourceKey": "wp-golden-horde",
+              "sourceLocation": "infobox year_start: c. 1225"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1502,
+            "source": {
+              "sourceKey": "wp-golden-horde",
+              "sourceLocation": "infobox year_end: 1502"
+            }
+          }
+        ],
+        "endEvent": "sarai-sacked"
+      },
+      "memberOf": [
+        {
+          "row": "mongol-empire",
+          "start": 1225,
+          "end": 1259,
+          "circa": true,
+          "startDates": [
+            {
+              "year": 1225,
+              "source": {
+                "sourceKey": "wp-golden-horde",
+                "sourceLocation": "infobox year_start: c. 1225"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1259,
+              "source": {
+                "sourceKey": "wp-golden-horde",
+                "sourceLocation": "lead: \"After the division of the empire in 1259, it became a functionally independent khanate.\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-golden-horde",
+              "sourceLocation": "lead: \"After the division of the empire in 1259, it became a functionally independent khanate.\""
+            },
+            {
+              "sourceKey": "wp-golden-horde",
+              "sourceLocation": "infobox predecessor: Mongol Empire"
+            }
+          ],
+          "endEvent": "mongke-dies"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "eastern-europe",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-empire",
+              "sourceLocation": "lead: \"The Golden Horde had broken into competing khanates by the end of the 15th century, and its rule on Eastern Europe is traditionally considered to have ended in \""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east-asia",
+      "name": "East Asia",
+      "color": "#b0302f"
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "color": "#b0302f",
+      "parent": "east-asia",
+      "url": "https://en.wikipedia.org/wiki/China",
+      "ids": {
+        "wikidata": "Q148"
+      },
+      "phases": [
+        {
+          "name": "Tang dynasty",
+          "start": 618,
+          "end": 690,
+          "startDates": [
+            {
+              "year": 618,
+              "source": {
+                "sourceKey": "wp-tang-dynasty",
+                "sourceLocation": "infobox life span: 618–690"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 690,
+              "source": {
+                "sourceKey": "wp-tang-dynasty",
+                "sourceLocation": "infobox life span: 618–690"
+              }
+            }
+          ],
+          "endEvent": "wu-zhou-proclaimed"
+        },
+        {
+          "name": "Wu Zhou",
+          "start": 690,
+          "end": 705,
+          "startDates": [
+            {
+              "year": 690,
+              "source": {
+                "sourceKey": "wp-wu-zhou",
+                "sourceLocation": "infobox year_start: 690"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 705,
+              "source": {
+                "sourceKey": "wp-wu-zhou",
+                "sourceLocation": "infobox year_end: 705"
+              }
+            }
+          ],
+          "startEvent": "wu-zhou-proclaimed",
+          "endEvent": "shenlong-coup"
+        },
+        {
+          "name": "Tang dynasty (restored)",
+          "start": 705,
+          "end": 907,
+          "startDates": [
+            {
+              "year": 705,
+              "source": {
+                "sourceKey": "wp-tang-dynasty",
+                "sourceLocation": "infobox life span: 705–907"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 907,
+              "source": {
+                "sourceKey": "wp-tang-dynasty",
+                "sourceLocation": "infobox life span: 705–907"
+              }
+            }
+          ],
+          "startEvent": "shenlong-coup",
+          "endEvent": "tang-abdicates"
+        },
+        {
+          "name": "Later Liang",
+          "start": 907,
+          "end": 923,
+          "startDates": [
+            {
+              "year": 907,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Liang (907–923)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 923,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Liang (907–923)\""
+              }
+            }
+          ],
+          "startEvent": "tang-abdicates"
+        },
+        {
+          "name": "Later Tang",
+          "start": 923,
+          "end": 936,
+          "startDates": [
+            {
+              "year": 923,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Tang (923–936)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 936,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Tang (923–936)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Later Jin",
+          "start": 937,
+          "end": 947,
+          "startDates": [
+            {
+              "year": 937,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Jin (937–947)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 947,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Jin (937–947)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Later Han",
+          "start": 947,
+          "end": 951,
+          "startDates": [
+            {
+              "year": 947,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Han (947–951)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 951,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Han (947–951)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Later Zhou",
+          "start": 951,
+          "end": 960,
+          "startDates": [
+            {
+              "year": 951,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Zhou (951–960)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 960,
+              "source": {
+                "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+                "sourceLocation": "section \"Later Zhou (951–960)\""
+              }
+            }
+          ],
+          "endEvent": "song-founded"
+        },
+        {
+          "name": "Northern Song",
+          "start": 960,
+          "end": 1127,
+          "startDates": [
+            {
+              "year": 960,
+              "source": {
+                "sourceKey": "wp-song-dynasty",
+                "sourceLocation": "section \"Northern Song, 960–1127\""
+              }
+            },
+            {
+              "year": 960,
+              "source": {
+                "sourceKey": "wp-song-dynasty",
+                "sourceLocation": "infobox year_start: 960"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1127,
+              "source": {
+                "sourceKey": "wp-song-dynasty",
+                "sourceLocation": "section \"Northern Song, 960–1127\""
+              }
+            }
+          ],
+          "startEvent": "song-founded",
+          "endEvent": "jingkang-incident"
+        },
+        {
+          "name": "Southern Song",
+          "start": 1127,
+          "end": 1279,
+          "startDates": [
+            {
+              "year": 1127,
+              "source": {
+                "sourceKey": "wp-song-dynasty",
+                "sourceLocation": "section \"Southern Song, 1127–1279\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1279,
+              "source": {
+                "sourceKey": "wp-song-dynasty",
+                "sourceLocation": "section \"Southern Song, 1127–1279\""
+              }
+            },
+            {
+              "year": 1279,
+              "source": {
+                "sourceKey": "wp-song-dynasty",
+                "sourceLocation": "infobox year_end: 1279"
+              }
+            }
+          ],
+          "startEvent": "jingkang-incident",
+          "endEvent": "battle-of-yamen"
+        },
+        {
+          "name": "Yuan dynasty",
+          "start": 1271,
+          "end": 1368,
+          "startDates": [
+            {
+              "year": 1271,
+              "source": {
+                "sourceKey": "wp-yuan-dynasty",
+                "sourceLocation": "infobox year_start: 1271"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1368,
+              "source": {
+                "sourceKey": "wp-yuan-dynasty",
+                "sourceLocation": "infobox year_end: 1368"
+              }
+            }
+          ],
+          "startEvent": "yuan-proclaimed",
+          "endEvent": "fall-of-dadu"
+        },
+        {
+          "name": "Ming dynasty",
+          "start": 1368,
+          "end": 1644,
+          "startDates": [
+            {
+              "year": 1368,
+              "source": {
+                "sourceKey": "wp-ming-dynasty",
+                "sourceLocation": "infobox year_start: 1368"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1644,
+              "source": {
+                "sourceKey": "wp-ming-dynasty",
+                "sourceLocation": "infobox year_end: 1644"
+              }
+            }
+          ],
+          "startEvent": "ming-founded"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "china",
+          "sources": [
+            {
+              "sourceKey": "wp-tang-dynasty",
+              "sourceLocation": "lead: \"The Tang dynasty was an imperial dynasty of China that ruled from 618 to 907, with an interregnum between 690 and 705.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "africa",
+      "name": "Africa south of the Sahara",
+      "color": "#9a5a2a"
+    },
+    {
+      "id": "mali-empire",
+      "name": "Mali Empire",
+      "color": "#c08a2a",
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/Mali_Empire",
+      "span": {
+        "start": 1235,
+        "end": 1610,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1235,
+            "source": {
+              "sourceKey": "wp-mali-empire",
+              "sourceLocation": "infobox year_start: c. 1235"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1610,
+            "source": {
+              "sourceKey": "wp-mali-empire",
+              "sourceLocation": "infobox year_end: 1610"
+            }
+          }
+        ],
+        "startEvent": "conquest-of-sosso"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-mali-empire",
+              "sourceLocation": "lead: \"The Mali Empire was an empire in West Africa from c. 1235 to 1610.\""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "wp-list-of-byzantine-emperors": {
+      "name": "List of Byzantine emperors (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Byzantine_emperors",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-byzantine-empire": {
+      "name": "Byzantine Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-empire-of-nicaea": {
+      "name": "Empire of Nicaea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Empire_of_Nicaea",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-holy-roman-empire": {
+      "name": "Holy Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-rashidun-caliphate": {
+      "name": "Rashidun Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rashidun_Caliphate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-umayyad-caliphate": {
+      "name": "Umayyad Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Umayyad_Caliphate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-abbasid-caliphate": {
+      "name": "Abbasid Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abbasid_Caliphate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-empire": {
+      "name": "Mongol Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-golden-horde": {
+      "name": "Golden Horde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Golden_Horde",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tang-dynasty": {
+      "name": "Tang dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tang_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wu-zhou": {
+      "name": "Wu Zhou (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wu_Zhou",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-five-dynasties-and-ten-kingdoms-period": {
+      "name": "Five Dynasties and Ten Kingdoms period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Five_Dynasties_and_Ten_Kingdoms_period",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-song-dynasty": {
+      "name": "Song dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Song_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-yuan-dynasty": {
+      "name": "Yuan dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yuan_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ming-dynasty": {
+      "name": "Ming dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ming_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mali-empire": {
+      "name": "Mali Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mali_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    }
+  },
+  "tags": {
+    "wikipedia": {
+      "name": "Wikipedia"
+    }
+  },
+  "events": [
+    {
+      "uuid": "africa-lost",
+      "title": "Africa lost to the Umayyads",
+      "descr": "The Umayyad Caliphate completes its conquest of North Africa; the empire then stabilises under the Isaurian dynasty.",
+      "start": 698,
+      "tracks": [
+        "eastern-roman",
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-byzantine-empire",
+          "sourceLocation": "lead: \"In 698, Africa was lost to the Umayyad Caliphate, but the empire stabilised under the Isaurian dynasty.\""
+        },
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "infobox event3: Conquest of North Africa, 698"
+        }
+      ]
+    },
+    {
+      "uuid": "sack-of-constantinople",
+      "title": "Sack of Constantinople (Fourth Crusade)",
+      "descr": "The Fourth Crusade sacks Constantinople; the empire splits into competing Greek rump states and Latin realms.",
+      "start": 1204,
+      "tracks": [
+        "eastern-roman"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-byzantine-empire",
+          "sourceLocation": "lead: \"The empire was severely fragmented in 1204, following the sack of Constantinople during the Fourth Crusade; its former territories were then divided into compet\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "constantinople-recovered",
+      "title": "Constantinople recovered",
+      "descr": "The Empire of Nicaea recaptures Constantinople and restores the empire, which holds only regional power from then on.",
+      "start": 1261,
+      "tracks": [
+        "eastern-roman"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-byzantine-empire",
+          "sourceLocation": "lead: \"Despite the eventual recovery of Constantinople in 1261, the reconstituted empire wielded only regional power during its final two centuries.\""
+        },
+        {
+          "sourceKey": "wp-empire-of-nicaea",
+          "sourceLocation": "lead: \"The Empire of Nicaea was established by the Laskaris noble family in the Byzantine holdings of northwestern Anatolia, and lasted from 1204 to 1261, when it reca\""
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-constantinople",
+      "title": "Fall of Constantinople",
+      "descr": "The Ottomans take Constantinople, ending the empire.",
+      "start": 1453,
+      "tracks": [
+        "eastern-roman"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-byzantine-empire",
+          "sourceLocation": "lead: \"The fall of Constantinople to the Ottomans in 1453 brought the empire to an end.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "charlemagne-crowned",
+      "title": "Charlemagne crowned emperor",
+      "descr": "Pope Leo III crowns the Frankish king Charlemagne as Roman Emperor on 25 December 800, reviving the title in the West.",
+      "start": 800,
+      "tracks": [
+        "hre"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "infobox event_pre: Charlemagne crowned Emperor, 25 December 800"
+        },
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "lead: \"On 25 December 800, Pope Leo III crowned Charlemagne (the Frankish king) as Roman Emperor, reviving the title more than three centuries after the fall of the We\""
+        }
+      ]
+    },
+    {
+      "uuid": "otto-crowned",
+      "title": "Otto I crowned emperor",
+      "descr": "The title, lapsed by 924, is revived when Pope John XII crowns Otto of Saxony on 2 February 962.",
+      "start": 962,
+      "tracks": [
+        "hre"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "infobox event_start: Otto I crowned Emperor, 2 February 962"
+        },
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "lead: \"The title had again lapsed by 924 but was revived again in 962 with the crowning of Otto of Saxony as emperor by Pope John XII.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "burgundy-incorporated",
+      "title": "Burgundy joins the empire",
+      "descr": "Conrad II incorporates the Kingdom of Burgundy, the third of the empire's constituent kingdoms.",
+      "start": 1033,
+      "tracks": [
+        "hre"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "infobox event1: Conrad II incorporates the Kingdom of Burgundy, 2 February 1033"
+        }
+      ]
+    },
+    {
+      "uuid": "golden-bull",
+      "title": "Golden Bull of 1356",
+      "descr": "The Golden Bull is issued in 1356.",
+      "start": 1356,
+      "tracks": [
+        "hre"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "infobox event2: Golden Bull of 1356, 10 January and 25 December 1356"
+        }
+      ]
+    },
+    {
+      "uuid": "conquest-of-persia",
+      "title": "Conquest of Persia",
+      "descr": "The Rashidun Caliphate conquers the Sasanian Empire; the conquest is completed under Uthman in 651.",
+      "start": 633,
+      "end": 654,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-rashidun-caliphate",
+          "sourceLocation": "infobox event1: Conquest of Persia, 633–654"
+        },
+        {
+          "sourceKey": "wp-rashidun-caliphate",
+          "sourceLocation": "lead: \"His reign oversaw the completion of the conquest of Persia in 651 and continued the military campaigns into Byzantine territories.\""
+        }
+      ]
+    },
+    {
+      "uuid": "ali-assassinated",
+      "title": "Ali assassinated; Mu'awiya becomes caliph",
+      "descr": "A Kharijite dissident kills Ali; Mu'awiya, the governor of Syria, wins the First Fitna and founds the Umayyad Caliphate.",
+      "start": 661,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-rashidun-caliphate",
+          "sourceLocation": "infobox event_end: Assassination of Ali, 661"
+        },
+        {
+          "sourceKey": "wp-rashidun-caliphate",
+          "sourceLocation": "lead: \"Following Ali's assassination by a Kharijite dissident in 661, Mu'awiya invaded Iraq with his Syrian army and compelled Ali's eldest son and successor Hasan—who\""
+        },
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "infobox event_start: Mu'awiya I wins the First Fitna, 661"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "second-fitna",
+      "title": "Abd al-Malik wins the Second Fitna",
+      "descr": "Abd al-Malik restores Umayyad control over the Caliphate after defeating the Zubayrids.",
+      "start": 692,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "infobox event2: Abd al-Malik wins the Second Fitna, 692"
+        },
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "lead: \"His eldest son and successor Abd al-Malik ibn Marwan restored Umayyad control over the Caliphate after defeating the Zubayrids in 692.\""
+        }
+      ]
+    },
+    {
+      "uuid": "hispania-sindh",
+      "title": "Conquests of Hispania and Sindh",
+      "descr": "",
+      "start": 711,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "infobox event4: Conquests of Hispania and Sindh, 711"
+        }
+      ]
+    },
+    {
+      "uuid": "abbasid-revolution",
+      "title": "Abbasid Revolution",
+      "descr": "The Abbasids overthrow Caliph Marwan II, and most of the Umayyad family are slain.",
+      "start": 750,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "infobox event_end: Abbasid revolution, 750"
+        },
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "lead: \"In 750, the Abbasids overthrew Caliph Marwan II, and most of the Umayyad family were slain.\""
+        },
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "infobox event_start: Abbasid Revolution, 750"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "baghdad-founded",
+      "title": "Founding of Baghdad",
+      "descr": "The second Abbasid caliph, al-Mansur, founds Baghdad and makes it the capital.",
+      "start": 762,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "infobox event1: Founding of Baghdad, 762"
+        },
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "lead: \"The Abbasids first centered their government in Kufa, Iraq, but in 762 the second caliph al-Mansur founded the city of Baghdad and made it the capital.\""
+        }
+      ]
+    },
+    {
+      "uuid": "buyids-take-baghdad",
+      "title": "Buyids take control of Baghdad",
+      "descr": "The caliphs become figureheads; real power rests with the Iranian Buyids.",
+      "start": 945,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "infobox event5: Buyids take control of Baghdad, 945"
+        }
+      ]
+    },
+    {
+      "uuid": "seljuks-take-baghdad",
+      "title": "The Seljuks conquer Baghdad",
+      "descr": "",
+      "start": 1055,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "infobox event6: The Seljuks conquer Baghdad, 1055"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-baghdad",
+      "title": "Mongol siege of Baghdad",
+      "descr": "The Mongols under Hulagu Khan sack Baghdad and execute Caliph al-Musta'sim, the effective end of the Abbasid Caliphate.",
+      "start": 1258,
+      "tracks": [
+        "caliphate",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "infobox event8: Mongol siege of Baghdad, 1258"
+        },
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "lead: \"This revival ended in 1258 with the sack of Baghdad by the Mongols under Hulagu Khan and the execution of Caliph al-Musta'sim, marking the effective end of the \""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "abbasids-in-cairo",
+      "title": "Abbasid caliphs re-established in Cairo",
+      "descr": "The Mamluk sultans reinstate a surviving branch of the dynasty in Cairo, without political power.",
+      "start": 1261,
+      "tracks": [
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "infobox event9: Abbasids re-established as ceremonial caliphs in Cairo, 1261"
+        },
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "lead: \"A surviving branch of the Abbasid dynasty was formally reinstated in 1261 by the Mamluk sultans in Cairo, but it lacked any political power.\""
+        }
+      ]
+    },
+    {
+      "uuid": "genghis-enthroned",
+      "title": "Genghis Khan enthroned as khagan",
+      "descr": "A council of the unified Mongol tribes enthrones Temüjin as Genghis Khan.",
+      "start": 1206,
+      "tracks": [
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "lead: \"Although Genghis Khan's enthronement as khagan in 1206 was described in Chinese as the Han-style title of emperor and the Mongol Empire had ruled territories in\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "mongke-dies",
+      "title": "Möngke dies; the empire divides",
+      "descr": "After Möngke Khan dies, rival councils elect different successors, and the Golden Horde becomes a functionally independent khanate.",
+      "start": 1259,
+      "tracks": [
+        "mongol-empire",
+        "golden-horde"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-empire",
+          "sourceLocation": "section \"Death of Möngke Khan (1259)\""
+        },
+        {
+          "sourceKey": "wp-golden-horde",
+          "sourceLocation": "lead: \"After the division of the empire in 1259, it became a functionally independent khanate.\""
+        }
+      ]
+    },
+    {
+      "uuid": "toluid-civil-war",
+      "title": "Toluid Civil War",
+      "descr": "The brothers Ariq Böke and Kublai Khan fight over the succession.",
+      "start": 1260,
+      "end": 1264,
+      "tracks": [
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-empire",
+          "sourceLocation": "lead: \"After Möngke Khan died in 1259, rival kurultai councils simultaneously elected different successors, the brothers Ariq Böke and Kublai Khan, who fought each oth\""
+        }
+      ]
+    },
+    {
+      "uuid": "yuan-proclaimed",
+      "title": "Kublai proclaims the Great Yuan",
+      "descr": "Kublai Khan proclaims the dynastic name \"Great Yuan\" and claims the succession of former Chinese dynasties.",
+      "start": 1271,
+      "tracks": [
+        "china",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "infobox event_start: Kublai's proclamation of the dynastic name \"Great Yuan\", 5 November 1271"
+        },
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "lead: \"His younger brother Kublai Khan was proclaimed the new Great Khan and in 1271 founded the Yuan dynasty.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "horde-united",
+      "title": "Blue Horde and White Horde united",
+      "descr": "",
+      "start": 1379,
+      "tracks": [
+        "golden-horde"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-golden-horde",
+          "sourceLocation": "infobox event1: Blue Horde and White Horde united, 1379"
+        }
+      ]
+    },
+    {
+      "uuid": "great-stand-ugra",
+      "title": "Great Stand on the Ugra River",
+      "descr": "Moscow formally rids itself of the \"Tatar yoke\", traditionally the end of Mongol rule over Russia.",
+      "start": 1480,
+      "tracks": [
+        "golden-horde"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-golden-horde",
+          "sourceLocation": "infobox event3: Great Stand on the Ugra River, 1480"
+        },
+        {
+          "sourceKey": "wp-golden-horde",
+          "sourceLocation": "lead: \"These internal struggles allowed Moscow to formally rid itself of the \"Tatar yoke\" at the Great Stand on the Ugra River in 1480, which traditionally marks the e\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "sarai-sacked",
+      "title": "Sack of Sarai by the Crimean Khanate",
+      "descr": "The Crimean Khanate sacks Sarai, ending the Horde.",
+      "start": 1502,
+      "tracks": [
+        "golden-horde"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-golden-horde",
+          "sourceLocation": "infobox event_end: Sack of Sarai by the Crimean Khanate, 1502"
+        }
+      ]
+    },
+    {
+      "uuid": "conquest-of-sosso",
+      "title": "Conquest of Sosso",
+      "descr": "The conquest of Sosso marks the emergence of Mali as a major power, with the Kouroukan Fouga as its constitution.",
+      "start": 1235,
+      "circa": true,
+      "tracks": [
+        "mali-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mali-empire",
+          "sourceLocation": "lead: \"The conquest of Sosso in c. 1235 marked the emergence of Mali as a major power, with the Kouroukan Fouga as its constitution.\""
+        },
+        {
+          "sourceKey": "wp-mali-empire",
+          "sourceLocation": "infobox event_start: Conquest of Sosso; year_start: c. 1235"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "sakura-coup",
+      "title": "Sakura's coup",
+      "descr": "Sakura, a former slave of the imperial family risen to general, seizes power.",
+      "start": 1285,
+      "tracks": [
+        "mali-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mali-empire",
+          "sourceLocation": "lead: \"In 1285, Sakura, a former slave of the imperial family who had risen to the rank of general, carried out a military coup.\""
+        }
+      ]
+    },
+    {
+      "uuid": "musa-pilgrimage",
+      "title": "Mansa Musa's pilgrimage to Mecca",
+      "descr": "His gifts and spending of gold cause significant inflation in Egypt.",
+      "start": 1324,
+      "end": 1326,
+      "tracks": [
+        "mali-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mali-empire",
+          "sourceLocation": "lead: \"He made a famous pilgrimage to Mecca from 1324 to 1326, where his generous gifts and his expenditure of gold caused significant inflation in Egypt.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "wu-zhou-proclaimed",
+      "title": "Wu Zetian proclaims the Zhou dynasty",
+      "descr": "Wu Zhao takes the throne from her son, Emperor Ruizong of Tang, the only legitimate Chinese female emperor.",
+      "start": 690,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-wu-zhou",
+          "sourceLocation": "infobox event_start: Established by Wu Zetian, 17 October 690"
+        },
+        {
+          "sourceKey": "wp-wu-zhou",
+          "sourceLocation": "lead: \"The dynasty consisted of the reign of one female emperor, Wu Zhao (Wu Zetian), who usurped the throne of her son, the Emperor Ruizong of Tang, in 690.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "shenlong-coup",
+      "title": "Shenlong Coup restores the Tang",
+      "descr": "Emperor Zhongzong of Tang is restored to the throne.",
+      "start": 705,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-wu-zhou",
+          "sourceLocation": "infobox event_end: Emperor Wu Zetian deposed, 21 February 705"
+        },
+        {
+          "sourceKey": "wp-wu-zhou",
+          "sourceLocation": "lead: \"The dynasty lasted until another one of Wu Zhao's sons, the Emperor Zhongzong of Tang, was restored to the throne in the Shenlong Coup in 705, marking the resto\""
+        }
+      ]
+    },
+    {
+      "uuid": "an-lushan-rebellion",
+      "title": "An Lushan rebellion",
+      "descr": "The rebellion devastates the empire and begins the decline of central authority.",
+      "start": 755,
+      "end": 763,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tang-dynasty",
+          "sourceLocation": "infobox event2: An Lushan rebellion, 755–763"
+        },
+        {
+          "sourceKey": "wp-tang-dynasty",
+          "sourceLocation": "lead: \"The An Lushan rebellion (755–763) led to devastation and the decline of central authority during the latter half of the dynasty.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "huang-chao-rebellion",
+      "title": "Huang Chao Rebellion",
+      "descr": "",
+      "start": 874,
+      "end": 884,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tang-dynasty",
+          "sourceLocation": "infobox event3: Huang Chao Rebellion, 874-884"
+        }
+      ]
+    },
+    {
+      "uuid": "tang-abdicates",
+      "title": "Tang abdicates in favour of Later Liang",
+      "descr": "The Tang ends; the Five Dynasties and Ten Kingdoms period begins.",
+      "start": 907,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tang-dynasty",
+          "sourceLocation": "infobox event_end: Abdication in favour of Later Liang, June 1, 907"
+        },
+        {
+          "sourceKey": "wp-five-dynasties-and-ten-kingdoms-period",
+          "sourceLocation": "lead: \"Traditionally, the era is seen as beginning with the fall of the Tang dynasty in 907 and reaching its climax with the founding of the Song dynasty in 960.\""
+        }
+      ]
+    },
+    {
+      "uuid": "song-founded",
+      "title": "Song dynasty established",
+      "descr": "",
+      "start": 960,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "infobox event_start: Established, 4 February 960"
+        },
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "lead: \"The Song dynasty ( ) was an imperial dynasty of China that ruled from 960 to 1279.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "chanyuan-treaty",
+      "title": "Chanyuan Treaty with Liao",
+      "descr": "",
+      "start": 1005,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "infobox event1: Signing of the Chanyuan Treaty with Liao, 1005"
+        }
+      ]
+    },
+    {
+      "uuid": "jingkang-incident",
+      "title": "Jingkang incident",
+      "descr": "The Song loses the north to the Jurchen-led Jin dynasty; the Southern Song period begins.",
+      "start": 1127,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "infobox event3: Jingkang incident, 1127"
+        },
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "lead: \"The Southern Song (; 1127–1279) comprised the period following the loss of control over the northern half of Song territory to the Jurchen-led Jin dynasty in th\""
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-linan",
+      "title": "Fall of Lin'an",
+      "descr": "The Southern Song capital falls to the Yuan.",
+      "start": 1276,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "infobox event5: Fall of Lin'an, 4 February 1276"
+        },
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "infobox event2: Conquest of Southern Song, 4 February 1276"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-yamen",
+      "title": "Battle of Yamen",
+      "descr": "Kublai Khan's armies defeat the Southern Song, ending the dynasty and reuniting China under the Yuan.",
+      "start": 1279,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "infobox event_end: Battle of Yamen (end of dynasty), 19 March 1279"
+        },
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "infobox event3: Battle of Yamen, 19 March 1279"
+        },
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "lead: \"After two decades of sporadic warfare, Kublai Khan's armies conquered the Song dynasty in 1279 after defeating the Southern Song in the Battle of Yamen, and reu\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "red-turban-rebellion",
+      "title": "Red Turban Rebellion",
+      "descr": "",
+      "start": 1351,
+      "end": 1368,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "infobox event4: Red Turban Rebellion, 1351–1368"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-dadu",
+      "title": "Fall of Dadu",
+      "descr": "Ming forces take the Yuan capital; the Genghisid rulers retreat to the Mongolian Plateau.",
+      "start": 1368,
+      "tracks": [
+        "china",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "infobox event_end: Fall of Dadu, 14 September 1368"
+        },
+        {
+          "sourceKey": "wp-mongol-empire",
+          "sourceLocation": "lead: \"Next, the Yuan dynasty lost control of the Tibetan Plateau and China proper in 1354 and 1368, respectively, and collapsed after its capital Dadu was taken over \""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ming-founded",
+      "title": "Ming dynasty established in Nanjing",
+      "descr": "",
+      "start": 1368,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ming-dynasty",
+          "sourceLocation": "infobox event_start: Established in Nanjing, 23 January 1368"
+        },
+        {
+          "sourceKey": "wp-ming-dynasty",
+          "sourceLocation": "lead: \"The Ming dynasty, officially the Great Ming, was an imperial dynasty of China that ruled from 1368 to 1644, following the collapse of the Mongol-led Yuan dynast\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "beijing-capital",
+      "title": "Beijing designated as capital",
+      "descr": "",
+      "start": 1420,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ming-dynasty",
+          "sourceLocation": "infobox event1: Beijing designated as capital, 28 October 1420"
+        }
+      ]
+    }
+  ]
+}
