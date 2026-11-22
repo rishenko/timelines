@@ -97,7 +97,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 | 2.5.3 Label in Name | A | Partial | — | axe `label-content-name-mismatch`, in CI (jsdom) and in the browser (the report); only the browser run sees visible text. | Pass (fixed 20 Nov 2026: the "N rows hidden" button's name now starts with its visible text) |
 | 2.5.4 Motion Actuation | A | N/A | — | No device motion. | — |
 | 2.5.7 Dragging Movements | AA | Manual | — | Panning is scrolling (scrollbar, wheel, keys); no drag-only action found. | Pass (code) |
-| 2.5.8 Target Size (Minimum) | AA | Automated (by hand) | targets | `npm run targets`: every control 24 × 24 px or spaced apart, 17 views at a phone and a laptop width. Report: axe `target-size` in every view too. | Pass (fixed 20 Nov 2026: row-name links beside the row buttons, the table view's row and Wikidata links, Filters' checkboxes) |
+| 2.5.8 Target Size (Minimum) | AA | Automated (by hand) | targets | `npm run targets`: every control 24 × 24 px or spaced apart, 17 views at a phone and a laptop width. Report: axe `target-size` in every view too. | Pass (fixed 20 Nov 2026: row-name links beside the row buttons, the table view's row and Wikidata links, Filters' checkboxes; 22 Nov 2026: links to neighbouring timelines are left out once they scroll under the ruler's corner, where they sat on the "rows hidden" button; the credits note's More button) |
 
 ### 3 Understandable
 
