@@ -124,6 +124,8 @@ top = lambda v: PARENT.get(v, v)
 DESCR_OK = {'conflict', 'unrest', 'place', 'diplomacy'}
 # words that are a title's head noun when they end it ("Reform War"); others at the end are verbs or objects
 HEAD_NOUNS = {'massacre', 'genocide', 'war', 'wars', 'rebellion', 'revolution', 'revolt', 'uprising', 'coup', 'siege', 'battle', 'campaign', 'invasion', 'conquest', 'treaty', 'massacre', 'mutiny'}
+# words that make a founding a state's founding
+STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|khanate|emirate|principality|duchy|county|march|dynasty|confederation|federation|colony|protectorate|order)\b', re.I)
 # generic sub-kinds a more specific one of the same top level replaces
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
@@ -203,7 +205,11 @@ def classify(e, ds, wp=None):
         hits.sort(key=lambda h: 0 if h[2].lower().split()[-1] == head and h[0] > 0 else 1)
     # "dynasty" as an object ("Alliance with the Almoravid dynasty", "Fall of Liao dynasty") says nothing about a succession
     obj = lambda start, w: w.lower() == 'dynasty' and re.search(r'\b(of|from|with|by|the)\s+(\S+\s+){0,2}$', title[:start], re.I)
-    found += [(v, f'title: "{w}"') for st, v, w in hits if not (m and w.lower() in ('fall of', 'falls')) and not obj(st, w)]
+    # "Creation of the Burmese alphabet", "founding of the university": the thing founded is a script, a school or a
+    # church, not a state, unless the title also names a state
+    society_obj = any(top(v) == 'society' for _, v, _ in hits) and not STATE_NOUN.search(title)
+    found += [(v, f'title: "{w}"') for st, v, w in hits
+              if not (m and w.lower() in ('fall of', 'falls')) and not obj(st, w) and not (society_obj and v == 'founded')]
     if wp:
         art = [x for t in own_articles(e, ds) for x in article_evidence(t, wp)]
         # categories name sub-kinds; the infobox only the broad kind ("military conflict" also covers revolts)
