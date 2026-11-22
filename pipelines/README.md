@@ -18,7 +18,7 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
   - `medieval/clio-years.json`, a summary of [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) v0.2.1. `medieval/clio_years.py` rebuilds it from the release's GeoJSON.
   - `medieval/descriptions.json`, the event descriptions.
   - The repo's own `public/timelines/ancient-classical.json`.
-  - Modern States' committed build at `e585724`, read with `git show` (the seam at 1500).
+  - Modern States' committed build at `d9c6674`, read with `git show` (the seam at 1500).
 
 ## Settings
 

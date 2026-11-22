@@ -354,10 +354,10 @@ def ancient_row(anc, id_, parent):
 
 # ---------- the 1500 seam: Modern States owns what spans it ----------
 
-# Modern States' committed build, read from git (never their working copy): commit e585724 on main
+# Modern States' committed build, read from git (never their working copy): commit d9c6674 on main (Modern after the blocs, #42)
 # (after #32).
 # To sync with a later Modern States build, change the commit and rerun.
-MODERN_COMMIT = 'e585724'
+MODERN_COMMIT = 'd9c6674'
 
 
 @functools.lru_cache(maxsize=None)
