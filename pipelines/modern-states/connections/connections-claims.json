@@ -1,0 +1,4614 @@
+{
+ "note": "Connections claims (Education session, 2026-11-22). Format-neutral: a later data session turns these into rows once schema v5 (Track.kind) is approved. Blocs are unions: their members get memberOf entries on the row (phaseAtStart is informational: memberOf is per row, and phases change during a membership); pilot themes are kind \"theme\" rows whose events also sit on the state rows they touch. Years only; days in \"date\". Every quote is verbatim from the cached page (checkedIn says where); parsed table/list memberships carry the parsed cell.",
+ "dump": "enwiki-20261101",
+ "modernStates": "data-src/modern-states.json at 77c8375",
+ "entities": [
+  {
+   "id": "nato",
+   "name": "NATO",
+   "suggestedKind": "union",
+   "timeline": "modern-states",
+   "pages": [
+    "NATO",
+    "Member states of NATO"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1949,
+     "date": "4 April 1949",
+     "source": {
+      "page": "NATO",
+      "url": "https://en.wikipedia.org/wiki/NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "formation",
+       "value": "4 April 1949"
+      }
+     }
+    },
+    {
+     "what": "ongoing",
+     "year": null,
+     "date": null,
+     "source": {
+      "page": "NATO",
+      "url": "https://en.wikipedia.org/wiki/NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "The North Atlantic Treaty Organization (NATO) is an intergovernmental military alliance between 32 member states"
+      }
+     },
+     "note": "Ongoing: cite in ongoingSources (schema v5)."
+    }
+   ],
+   "memberships": [
+    {
+     "member": "Albania",
+     "row": "albania",
+     "phaseAtStart": "Republic of Albania",
+     "from": 2009,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Albania | Accession 1 April 2009"
+      }
+     }
+    },
+    {
+     "member": "Belgium",
+     "row": "belgium",
+     "phaseAtStart": "Kingdom of Belgium",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Belgium | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Bulgaria",
+     "row": "bulgaria",
+     "phaseAtStart": "Republic of Bulgaria",
+     "from": 2004,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Bulgaria | Accession 29 March 2004"
+      }
+     }
+    },
+    {
+     "member": "Canada",
+     "row": "canada",
+     "phaseAtStart": "Canada",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Canada | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Croatia",
+     "row": "croatia",
+     "phaseAtStart": "Republic of Croatia",
+     "from": 2009,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Croatia | Accession 1 April 2009"
+      }
+     }
+    },
+    {
+     "member": "Czech Republic",
+     "row": "czechia",
+     "phaseAtStart": "Czech Republic",
+     "from": 1999,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Czech Republic | Accession 12 March 1999"
+      }
+     }
+    },
+    {
+     "member": "Denmark",
+     "row": "denmark",
+     "phaseAtStart": null,
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Denmark | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Estonia",
+     "row": "estonia",
+     "phaseAtStart": "Republic of Estonia (restored)",
+     "from": 2004,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Estonia | Accession 29 March 2004"
+      }
+     }
+    },
+    {
+     "member": "Finland",
+     "row": "finland",
+     "phaseAtStart": "Republic of Finland",
+     "from": 2023,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Finland | Accession 4 April 2023"
+      }
+     }
+    },
+    {
+     "member": "France",
+     "row": "france",
+     "phaseAtStart": "Fourth Republic",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "France | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Germany",
+     "row": "germany",
+     "phaseAtStart": "West Germany",
+     "from": 1955,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Germany | Accession 6 May 1955"
+      }
+     }
+    },
+    {
+     "member": "Greece",
+     "row": "greece",
+     "phaseAtStart": "Kingdom of Greece (restored)",
+     "from": 1952,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Greece | Accession 18 February 1952"
+      }
+     }
+    },
+    {
+     "member": "Hungary",
+     "row": "hungary",
+     "phaseAtStart": "Third Republic",
+     "from": 1999,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Hungary | Accession 12 March 1999"
+      }
+     }
+    },
+    {
+     "member": "Iceland",
+     "row": "iceland",
+     "phaseAtStart": "Republic of Iceland",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Iceland | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Italy",
+     "row": "italy",
+     "phaseAtStart": "Italian Republic",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "NATO",
+      "url": "https://en.wikipedia.org/wiki/NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The 12 founding members of the alliance were Belgium, Canada, Denmark, France, Iceland, Italy, Luxembourg, the Netherlands, Norway, Portugal, the United Kingdom, and the United States."
+      }
+     },
+     "note": "Member states of NATO table has no accession cell for this row in this dump; cited from the NATO page."
+    },
+    {
+     "member": "Latvia",
+     "row": "latvia",
+     "phaseAtStart": "Republic of Latvia (restored)",
+     "from": 2004,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Latvia | Accession 29 March 2004"
+      }
+     }
+    },
+    {
+     "member": "Lithuania",
+     "row": "lithuania",
+     "phaseAtStart": "Republic of Lithuania (restored)",
+     "from": 2004,
+     "to": null,
+     "fromSource": {
+      "page": "NATO",
+      "url": "https://en.wikipedia.org/wiki/NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Bulgaria, Estonia, Latvia, Lithuania, Romania, Slovakia, and Slovenia in 2004"
+      }
+     },
+     "note": "Member states of NATO table has no accession cell for this row in this dump; cited from the NATO page."
+    },
+    {
+     "member": "Luxembourg",
+     "row": "luxembourg",
+     "phaseAtStart": null,
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Luxembourg | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Montenegro",
+     "row": "montenegro",
+     "phaseAtStart": "Montenegro",
+     "from": 2017,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Montenegro | Accession 5 June 2017"
+      }
+     }
+    },
+    {
+     "member": "Netherlands",
+     "row": "netherlands",
+     "phaseAtStart": "Kingdom of the Netherlands",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Netherlands | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "North Macedonia",
+     "row": "north-macedonia",
+     "phaseAtStart": "Republic of North Macedonia",
+     "from": 2020,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "North Macedonia | Accession 27 March 2020"
+      }
+     }
+    },
+    {
+     "member": "Norway",
+     "row": "norway",
+     "phaseAtStart": null,
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Norway | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Poland",
+     "row": "poland",
+     "phaseAtStart": "Third Republic",
+     "from": 1999,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Poland | Accession 12 March 1999"
+      }
+     }
+    },
+    {
+     "member": "Portugal",
+     "row": "portugal",
+     "phaseAtStart": "Estado Novo",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Portugal | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "Romania",
+     "row": "romania",
+     "phaseAtStart": "Romania",
+     "from": 2004,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Romania | Accession 29 March 2004"
+      }
+     }
+    },
+    {
+     "member": "Slovakia",
+     "row": "slovakia",
+     "phaseAtStart": "Slovak Republic",
+     "from": 2004,
+     "to": null,
+     "fromSource": {
+      "page": "NATO",
+      "url": "https://en.wikipedia.org/wiki/NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Bulgaria, Estonia, Latvia, Lithuania, Romania, Slovakia, and Slovenia in 2004"
+      }
+     },
+     "note": "Member states of NATO table has no accession cell for this row in this dump; cited from the NATO page."
+    },
+    {
+     "member": "Slovenia",
+     "row": "slovenia",
+     "phaseAtStart": "Republic of Slovenia",
+     "from": 2004,
+     "to": null,
+     "fromSource": {
+      "page": "NATO",
+      "url": "https://en.wikipedia.org/wiki/NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Bulgaria, Estonia, Latvia, Lithuania, Romania, Slovakia, and Slovenia in 2004"
+      }
+     },
+     "note": "Member states of NATO table has no accession cell for this row in this dump; cited from the NATO page."
+    },
+    {
+     "member": "Spain",
+     "row": "spain",
+     "phaseAtStart": "Kingdom of Spain",
+     "from": 1982,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Spain | Accession 30 May 1982"
+      }
+     }
+    },
+    {
+     "member": "Sweden",
+     "row": "sweden",
+     "phaseAtStart": null,
+     "from": 2024,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Sweden | Accession 7 March 2024"
+      }
+     }
+    },
+    {
+     "member": "Turkey",
+     "row": "turkey",
+     "phaseAtStart": "Republic of Turkey",
+     "from": 1952,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "Turkey | Accession 18 February 1952"
+      }
+     }
+    },
+    {
+     "member": "United Kingdom",
+     "row": "united-kingdom",
+     "phaseAtStart": "United Kingdom of Great Britain and Northern Ireland",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "Member states of NATO",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "List of member states",
+       "quote": "United Kingdom | Accession 24 August 1949"
+      }
+     },
+     "note": "Founding member (treaty signed 4 April 1949; table gives entry into force)."
+    },
+    {
+     "member": "United States",
+     "row": "united-states",
+     "phaseAtStart": "United States under the Constitution",
+     "from": 1949,
+     "to": null,
+     "fromSource": {
+      "page": "NATO",
+      "url": "https://en.wikipedia.org/wiki/NATO",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The 12 founding members of the alliance were Belgium, Canada, Denmark, France, Iceland, Italy, Luxembourg, the Netherlands, Norway, Portugal, the United Kingdom, and the United States."
+      }
+     },
+     "note": "Member states of NATO table has no accession cell for this row in this dump; cited from the NATO page."
+    }
+   ],
+   "events": [],
+   "existingEvents": [],
+   "gaps": [
+    "France left the integrated military command 1966–2009 and Greece 1974–1980; still members, so not modelled as ends. Say if they should be notes or phases."
+   ],
+   "unmapped": []
+  },
+  {
+   "id": "warsaw-pact",
+   "name": "Warsaw Pact",
+   "suggestedKind": "union",
+   "timeline": "modern-states",
+   "pages": [
+    "Warsaw Pact"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1955,
+     "date": "14 May 1955",
+     "source": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "established_date1",
+       "value": "14 May 1955"
+      }
+     }
+    },
+    {
+     "what": "end",
+     "year": 1991,
+     "date": "25 February 1991 (disbanded); treaty disestablished 1 July 1991",
+     "source": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "On 25 February 1991, the Warsaw Pact was declared disbanded at a meeting of defence and foreign ministers from remaining Pact countries meeting in Hungary."
+      }
+     }
+    }
+   ],
+   "memberships": [
+    {
+     "member": "People's Republic of Bulgaria",
+     "row": "bulgaria",
+     "phaseAtStart": "People's Republic of Bulgaria",
+     "from": 1955,
+     "to": 1991,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 25 February 1991, at a meeting in Hungary, the pact ceased to exist via joint declaration by the defence and foreign ministers of the six remaining member states."
+      }
+     }
+    },
+    {
+     "member": "Czechoslovak Socialist Republic",
+     "row": "czechoslovakia",
+     "phaseAtStart": "Czechoslovakia (restored)",
+     "from": 1955,
+     "to": 1991,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 25 February 1991, at a meeting in Hungary, the pact ceased to exist via joint declaration by the defence and foreign ministers of the six remaining member states."
+      }
+     }
+    },
+    {
+     "member": "Hungarian People's Republic",
+     "row": "hungary",
+     "phaseAtStart": "Hungarian People's Republic",
+     "from": 1955,
+     "to": 1991,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 25 February 1991, at a meeting in Hungary, the pact ceased to exist via joint declaration by the defence and foreign ministers of the six remaining member states."
+      }
+     }
+    },
+    {
+     "member": "Polish People's Republic",
+     "row": "poland",
+     "phaseAtStart": "Polish People's Republic",
+     "from": 1955,
+     "to": 1991,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 25 February 1991, at a meeting in Hungary, the pact ceased to exist via joint declaration by the defence and foreign ministers of the six remaining member states."
+      }
+     }
+    },
+    {
+     "member": "Socialist Republic of Romania",
+     "row": "romania",
+     "phaseAtStart": "Socialist Republic of Romania",
+     "from": 1955,
+     "to": 1991,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 25 February 1991, at a meeting in Hungary, the pact ceased to exist via joint declaration by the defence and foreign ministers of the six remaining member states."
+      }
+     }
+    },
+    {
+     "member": "Soviet Union",
+     "row": "soviet-union",
+     "phaseAtStart": null,
+     "from": 1955,
+     "to": 1991,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 25 February 1991, at a meeting in Hungary, the pact ceased to exist via joint declaration by the defence and foreign ministers of the six remaining member states."
+      }
+     }
+    },
+    {
+     "member": "People's Socialist Republic of Albania",
+     "row": "albania",
+     "phaseAtStart": "People's Socialist Republic",
+     "from": 1955,
+     "to": 1968,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Albania withheld its support to the Warsaw Pact in 1961 due to the Soviet–Albanian split and formally withdrew in 1968."
+      }
+     },
+     "note": "De facto out from 1961; formal withdrawal 1968. Option: end 1961 with a 1961–1968 'withheld support' phase-like note."
+    },
+    {
+     "member": "East Germany",
+     "row": "germany",
+     "phaseAtStart": "East Germany",
+     "from": 1955,
+     "to": 1990,
+     "fromSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 14 May 1955, the USSR and seven other Eastern European countries"
+      }
+     },
+     "toSource": {
+      "page": "Warsaw Pact",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "East Germany withdrew from the pact following German reunification in 1990."
+      }
+     },
+     "note": "Same row as West Germany (germany): from 1955 to 1990 the row is in NATO and the Warsaw Pact at once."
+    }
+   ],
+   "events": [],
+   "existingEvents": [],
+   "gaps": [],
+   "unmapped": []
+  },
+  {
+   "id": "comecon",
+   "name": "Comecon",
+   "suggestedKind": "union",
+   "timeline": "modern-states",
+   "pages": [
+    "Comecon"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1949,
+     "date": "25 January 1949",
+     "source": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "year_start",
+       "value": "25 January 1949"
+      }
+     }
+    },
+    {
+     "what": "end",
+     "year": 1991,
+     "date": "28 June 1991 (final session; dissolution agreed within 90 days)",
+     "source": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "The final Comecon council session took place on 28 June 1991, in Budapest, and led to an agreement to dissolve in 90 days."
+      }
+     }
+    }
+   ],
+   "memberships": [
+    {
+     "member": "Soviet Union",
+     "row": "soviet-union",
+     "phaseAtStart": null,
+     "from": 1949,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The Comecon was founded in 1949 by the Soviet Union, Bulgaria, Czechoslovakia, Hungary, Poland, and Romania"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "People's Republic of Bulgaria",
+     "row": "bulgaria",
+     "phaseAtStart": "People's Republic of Bulgaria",
+     "from": 1949,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The Comecon was founded in 1949 by the Soviet Union, Bulgaria, Czechoslovakia, Hungary, Poland, and Romania"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "Czechoslovak Socialist Republic",
+     "row": "czechoslovakia",
+     "phaseAtStart": "Czechoslovakia (restored)",
+     "from": 1949,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The Comecon was founded in 1949 by the Soviet Union, Bulgaria, Czechoslovakia, Hungary, Poland, and Romania"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "Hungarian People's Republic",
+     "row": "hungary",
+     "phaseAtStart": "Hungarian People's Republic",
+     "from": 1949,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The Comecon was founded in 1949 by the Soviet Union, Bulgaria, Czechoslovakia, Hungary, Poland, and Romania"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "Polish People's Republic",
+     "row": "poland",
+     "phaseAtStart": "Polish People's Republic",
+     "from": 1949,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The Comecon was founded in 1949 by the Soviet Union, Bulgaria, Czechoslovakia, Hungary, Poland, and Romania"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "Socialist Republic of Romania",
+     "row": "romania",
+     "phaseAtStart": "Socialist Republic of Romania",
+     "from": 1949,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The Comecon was founded in 1949 by the Soviet Union, Bulgaria, Czechoslovakia, Hungary, Poland, and Romania"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "People's Socialist Republic of Albania",
+     "row": "albania",
+     "phaseAtStart": "People's Socialist Republic",
+     "from": 1949,
+     "to": 1987,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "its foundation was publicly announced on 25 January; Albania joined a month later and East Germany in 1950."
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "wikitext",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Stopped participating in Comecon activities in 1961, withdrew in 1987."
+      }
+     },
+     "note": "Inactive from 1961; formal withdrawal 1987."
+    },
+    {
+     "member": "East Germany",
+     "row": "germany",
+     "phaseAtStart": "East Germany",
+     "from": 1950,
+     "to": 1990,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "its foundation was publicly announced on 25 January; Albania joined a month later and East Germany in 1950."
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "wikitext",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Withdrew in 1990"
+      }
+     }
+    },
+    {
+     "member": "Mongolian People's Republic",
+     "row": "mongolia",
+     "phaseAtStart": "Mongolian People's Republic",
+     "from": 1962,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Mongolian People's Republic(Бүгд Найрамдах Монгол Ард Улс) June 1962"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "Republic of Cuba",
+     "row": "cuba",
+     "phaseAtStart": "Revolutionary Cuba",
+     "from": 1972,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Republic of Cuba(República de Cuba) July 1972"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    },
+    {
+     "member": "Socialist Republic of Vietnam",
+     "row": "vietnam",
+     "phaseAtStart": "Socialist Republic of Vietnam",
+     "from": 1978,
+     "to": 1991,
+     "fromSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Socialist Republic of Vietnam(Cộng hòa xã hội chủ nghĩa Việt Nam) June 1978"
+      }
+     },
+     "toSource": {
+      "page": "Comecon",
+      "url": "https://en.wikipedia.org/wiki/Comecon",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The final Comecon council session took place on 28 June 1991"
+      }
+     }
+    }
+   ],
+   "events": [],
+   "existingEvents": [],
+   "gaps": [
+    "Associate (Yugoslavia, 1964) and observer members left out; say if they should become memberships with a role."
+   ],
+   "unmapped": []
+  },
+  {
+   "id": "seato",
+   "name": "SEATO",
+   "suggestedKind": "union",
+   "timeline": "modern-states",
+   "pages": [
+    "Southeast Asia Treaty Organization"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1954,
+     "date": "8 September 1954",
+     "source": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "formation",
+       "value": "8 September 1954"
+      }
+     }
+    },
+    {
+     "what": "end",
+     "year": 1977,
+     "date": "30 June 1977",
+     "source": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "dissolved",
+       "value": "30 June 1977"
+      }
+     }
+    }
+   ],
+   "memberships": [
+    {
+     "member": "Australia",
+     "row": "australia",
+     "phaseAtStart": "Commonwealth of Australia",
+     "from": 1954,
+     "to": 1977,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "Australia"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "the organization was formally dissolved on 30 June 1977"
+      }
+     }
+    },
+    {
+     "member": "France",
+     "row": "france",
+     "phaseAtStart": "Fourth Republic",
+     "from": 1954,
+     "to": 1977,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "France"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "the organization was formally dissolved on 30 June 1977"
+      }
+     },
+     "note": "France withdrew financial support in 1975."
+    },
+    {
+     "member": "New Zealand",
+     "row": "new-zealand",
+     "phaseAtStart": "New Zealand",
+     "from": 1954,
+     "to": 1977,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "New Zealand"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "the organization was formally dissolved on 30 June 1977"
+      }
+     }
+    },
+    {
+     "member": "Philippines",
+     "row": "philippines",
+     "phaseAtStart": "Third Republic",
+     "from": 1954,
+     "to": 1977,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "Philippines"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "the organization was formally dissolved on 30 June 1977"
+      }
+     }
+    },
+    {
+     "member": "Thailand",
+     "row": "thailand",
+     "phaseAtStart": "Constitutional monarchy",
+     "from": 1954,
+     "to": 1977,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "Thailand"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "the organization was formally dissolved on 30 June 1977"
+      }
+     }
+    },
+    {
+     "member": "United Kingdom",
+     "row": "united-kingdom",
+     "phaseAtStart": "United Kingdom of Great Britain and Northern Ireland",
+     "from": 1954,
+     "to": 1977,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "United Kingdom"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "the organization was formally dissolved on 30 June 1977"
+      }
+     }
+    },
+    {
+     "member": "United States",
+     "row": "united-states",
+     "phaseAtStart": "United States under the Constitution",
+     "from": 1954,
+     "to": 1977,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "United States"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "the organization was formally dissolved on 30 June 1977"
+      }
+     }
+    },
+    {
+     "member": "Pakistan",
+     "row": "pakistan",
+     "phaseAtStart": "Dominion of Pakistan",
+     "from": 1954,
+     "to": 1973,
+     "fromSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "num_members",
+       "value": "Pakistan"
+      }
+     },
+     "toSource": {
+      "page": "Southeast Asia Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Southeast_Asia_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Pakistan withdrew in 1973, after East Pakistan seceded and became Bangladesh on 16 December 1971."
+      }
+     }
+    }
+   ],
+   "events": [],
+   "existingEvents": [],
+   "gaps": [
+    "Protected non-members (Cambodia, Laos, South Vietnam) left out."
+   ],
+   "unmapped": []
+  },
+  {
+   "id": "cento",
+   "name": "CENTO (Baghdad Pact)",
+   "suggestedKind": "union",
+   "timeline": "modern-states",
+   "pages": [
+    "Central Treaty Organization"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1955,
+     "date": "24 February 1955",
+     "source": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "formation",
+       "value": "24 February 1955"
+      }
+     }
+    },
+    {
+     "what": "end",
+     "year": 1979,
+     "date": "16 March 1979",
+     "source": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "dissolved",
+       "value": "16 March 1979"
+      }
+     }
+    }
+   ],
+   "memberships": [
+    {
+     "member": "Turkey",
+     "row": "turkey",
+     "phaseAtStart": "Republic of Turkey",
+     "from": 1955,
+     "to": 1979,
+     "fromSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Iraq and Turkey sign a military agreement in Baghdad and the term \"Baghdad Pact\" started to be used."
+      }
+     },
+     "toSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "CENTO is formally disbanded. United Kingdom and Turkey withdraw from CENTO."
+      }
+     }
+    },
+    {
+     "member": "Kingdom of Iraq",
+     "row": "iraq",
+     "phaseAtStart": "Kingdom of Iraq",
+     "from": 1955,
+     "to": 1959,
+     "fromSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Iraq and Turkey sign a military agreement in Baghdad and the term \"Baghdad Pact\" started to be used."
+      }
+     },
+     "toSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The new republican regime of Iraq withdrew the country from the alliance."
+      }
+     },
+     "note": "Withdrew 24 March 1959, after the 1958 revolution: the end falls in the First Republic, not the Kingdom of Iraq phase."
+    },
+    {
+     "member": "United Kingdom",
+     "row": "united-kingdom",
+     "phaseAtStart": "United Kingdom of Great Britain and Northern Ireland",
+     "from": 1955,
+     "to": 1979,
+     "fromSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "United Kingdom (April 5), Pakistan (September 23) and Iran (November 3) joined the Baghdad Pact"
+      }
+     },
+     "toSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "CENTO is formally disbanded. United Kingdom and Turkey withdraw from CENTO."
+      }
+     }
+    },
+    {
+     "member": "Pakistan",
+     "row": "pakistan",
+     "phaseAtStart": "Dominion of Pakistan",
+     "from": 1955,
+     "to": 1979,
+     "fromSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "United Kingdom (April 5), Pakistan (September 23) and Iran (November 3) joined the Baghdad Pact"
+      }
+     },
+     "toSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Pakistan withdraws from CENTO."
+      }
+     }
+    },
+    {
+     "member": "Iran",
+     "row": "iran",
+     "phaseAtStart": "Pahlavi Iran",
+     "from": 1955,
+     "to": 1979,
+     "fromSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "United Kingdom (April 5), Pakistan (September 23) and Iran (November 3) joined the Baghdad Pact"
+      }
+     },
+     "toSource": {
+      "page": "Central Treaty Organization",
+      "url": "https://en.wikipedia.org/wiki/Central_Treaty_Organization",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "withdraws the country from CENTO."
+      }
+     }
+    }
+   ],
+   "events": [],
+   "existingEvents": [],
+   "gaps": [
+    "The United States was an associate, never a member (it signed bilateral agreements in 1959); left out."
+   ],
+   "unmapped": []
+  },
+  {
+   "id": "non-aligned-movement",
+   "name": "Non-Aligned Movement",
+   "suggestedKind": "union",
+   "timeline": "modern-states",
+   "pages": [
+    "Non-Aligned Movement"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1961,
+     "date": "1 September 1961",
+     "source": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "infobox",
+      "locator": {
+       "kind": "infobox",
+       "field": "established",
+       "value": "1 September 1961"
+      }
+     }
+    },
+    {
+     "what": "ongoing",
+     "year": null,
+     "date": null,
+     "source": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "With the end of the Cold War, the Non-Aligned Movement transformed."
+      }
+     },
+     "note": "Ongoing: cite in ongoingSources (schema v5)."
+    }
+   ],
+   "memberships": [
+    {
+     "member": "Algeria",
+     "row": "algeria",
+     "phaseAtStart": "Provisional Government of the Algerian Republic",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Algeria}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Angola",
+     "row": "angola",
+     "phaseAtStart": "People's Republic of Angola",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Angola}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Benin",
+     "row": "benin",
+     "phaseAtStart": "Republic of Dahomey",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Benin}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Botswana",
+     "row": "botswana",
+     "phaseAtStart": "Republic of Botswana",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Botswana}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Burkina Faso",
+     "row": "burkina-faso",
+     "phaseAtStart": "Republic of Upper Volta",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Burkina Faso}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Burundi",
+     "row": "burundi",
+     "phaseAtStart": "Kingdom of Burundi",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Burundi}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Cameroon",
+     "row": "cameroon",
+     "phaseAtStart": "Federal Republic of Cameroon",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Cameroon}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Cape Verde",
+     "row": "cape-verde",
+     "phaseAtStart": "Republic of Cape Verde",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Cape Verde}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Central African Republic",
+     "row": "central-african-republic",
+     "phaseAtStart": "Central African Republic",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Central African Republic}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Chad",
+     "row": "chad",
+     "phaseAtStart": "Republic of Chad",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Chad}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Comoros",
+     "row": "comoros",
+     "phaseAtStart": "State of the Comoros",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Comoros}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Democratic Republic of the Congo",
+     "row": "dr-congo",
+     "phaseAtStart": "Republic of the Congo (Léopoldville)",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Democratic Republic of the Congo}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Djibouti",
+     "row": "djibouti",
+     "phaseAtStart": "Republic of Djibouti",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Djibouti}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "Egypt",
+     "row": "egypt",
+     "phaseAtStart": null,
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Egypt}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Equatorial Guinea",
+     "row": "equatorial-guinea",
+     "phaseAtStart": "Republic of Equatorial Guinea",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Equatorial Guinea}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Eritrea",
+     "row": "eritrea",
+     "phaseAtStart": "State of Eritrea",
+     "from": 1995,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Eritrea}} (1995)"
+      }
+     }
+    },
+    {
+     "member": "Eswatini",
+     "row": "eswatini",
+     "phaseAtStart": "Kingdom of Swaziland",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Eswatini}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Ethiopia",
+     "row": "ethiopia",
+     "phaseAtStart": "Ethiopian Empire (Solomonic)",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Ethiopia}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Gabon",
+     "row": "gabon",
+     "phaseAtStart": "Gabonese Republic",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Gabon}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Gambia",
+     "row": "gambia",
+     "phaseAtStart": "Republic of the Gambia",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Gambia}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Ghana",
+     "row": "ghana",
+     "phaseAtStart": "Republic of Ghana",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Ghana}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Guinea",
+     "row": "guinea",
+     "phaseAtStart": "Republic of Guinea",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Guinea}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Guinea-Bissau",
+     "row": "guinea-bissau",
+     "phaseAtStart": "Republic of Guinea-Bissau",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Guinea-Bissau}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Ivory Coast",
+     "row": "ivory-coast",
+     "phaseAtStart": "Republic of Côte d'Ivoire",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Ivory Coast}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Kenya",
+     "row": "kenya",
+     "phaseAtStart": "Republic of Kenya",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Kenya}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Lesotho",
+     "row": "lesotho",
+     "phaseAtStart": "Kingdom of Lesotho",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Lesotho}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Liberia",
+     "row": "liberia",
+     "phaseAtStart": "Republic of Liberia",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Liberia}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Libya",
+     "row": "libya",
+     "phaseAtStart": "Kingdom of Libya",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Libya}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Madagascar",
+     "row": "madagascar",
+     "phaseAtStart": "Malagasy Republic",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Madagascar}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Malawi",
+     "row": "malawi",
+     "phaseAtStart": "Malawi (Commonwealth realm)",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Malawi}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Mali",
+     "row": "mali",
+     "phaseAtStart": "Republic of Mali",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Mali}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Mauritania",
+     "row": "mauritania",
+     "phaseAtStart": "Islamic Republic of Mauritania",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Mauritania}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Mauritius",
+     "row": "mauritius",
+     "phaseAtStart": "Mauritius (Commonwealth realm)",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Mauritius}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Morocco",
+     "row": "morocco",
+     "phaseAtStart": "Kingdom of Morocco",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Morocco}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Mozambique",
+     "row": "mozambique",
+     "phaseAtStart": "People's Republic of Mozambique",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Mozambique}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Namibia",
+     "row": "namibia",
+     "phaseAtStart": "South West Africa (South African rule)",
+     "from": 1979,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Namibia}} (1979)"
+      }
+     }
+    },
+    {
+     "member": "Niger",
+     "row": "niger",
+     "phaseAtStart": "Republic of Niger",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Niger}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Nigeria",
+     "row": "nigeria",
+     "phaseAtStart": "First Republic",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Nigeria}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Republic of the Congo",
+     "row": "republic-of-the-congo",
+     "phaseAtStart": "Republic of the Congo",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Republic of the Congo}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Rwanda",
+     "row": "rwanda",
+     "phaseAtStart": "Republic of Rwanda",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Rwanda}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "São Tomé and Príncipe",
+     "row": "sao-tome-and-principe",
+     "phaseAtStart": "Democratic Republic of São Tomé and Príncipe",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|São Tomé and Príncipe}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Senegal",
+     "row": "senegal",
+     "phaseAtStart": "Republic of Senegal",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Senegal}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Seychelles",
+     "row": "seychelles",
+     "phaseAtStart": "Republic of Seychelles",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Seychelles}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Sierra Leone",
+     "row": "sierra-leone",
+     "phaseAtStart": "Dominion of Sierra Leone",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Sierra Leone}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Somalia",
+     "row": "somalia",
+     "phaseAtStart": "Somali Republic",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Somalia}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "South Africa",
+     "row": "south-africa",
+     "phaseAtStart": "Republic of South Africa",
+     "from": 1994,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|South Africa}} (1994)"
+      }
+     }
+    },
+    {
+     "member": "South Sudan",
+     "row": "south-sudan",
+     "phaseAtStart": "Republic of South Sudan",
+     "from": 2024,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|South Sudan}} (2024)"
+      }
+     }
+    },
+    {
+     "member": "Sudan",
+     "row": "sudan",
+     "phaseAtStart": "Republic of the Sudan",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Sudan}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Tanzania",
+     "row": "tanzania",
+     "phaseAtStart": "United Republic of Tanzania",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Tanzania}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Togo",
+     "row": "togo",
+     "phaseAtStart": "Togolese Republic",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Togo}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Tunisia",
+     "row": "tunisia",
+     "phaseAtStart": "Tunisian Republic",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Tunisia}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Uganda",
+     "row": "uganda",
+     "phaseAtStart": "Republic of Uganda",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Uganda}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Zambia",
+     "row": "zambia",
+     "phaseAtStart": "Republic of Zambia",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Zambia}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Zimbabwe",
+     "row": "zimbabwe",
+     "phaseAtStart": "Southern Rhodesia (British transition)",
+     "from": 1979,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Africa",
+       "quote": "# {{flag|Zimbabwe}} (1979)"
+      }
+     }
+    },
+    {
+     "member": "Afghanistan",
+     "row": "afghanistan",
+     "phaseAtStart": "Kingdom of Afghanistan",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flagdeco|Afghanistan|2013}}/{{flag|Afghanistan|2021}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Bahrain",
+     "row": "bahrain",
+     "phaseAtStart": "State of Bahrain",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Bahrain}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Bangladesh",
+     "row": "bangladesh",
+     "phaseAtStart": "People's Republic of Bangladesh",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Bangladesh}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Bhutan",
+     "row": "bhutan",
+     "phaseAtStart": "Absolute monarchy (Wangchuk dynasty)",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Bhutan}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Brunei Darussalam",
+     "row": "brunei",
+     "phaseAtStart": "Brunei Darussalam",
+     "from": 1993,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Brunei Darussalam}} (1993)"
+      }
+     }
+    },
+    {
+     "member": "Cambodia",
+     "row": "cambodia",
+     "phaseAtStart": "Kingdom of Cambodia",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Cambodia}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "India",
+     "row": "india",
+     "phaseAtStart": "Republic of India",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|India}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Indonesia",
+     "row": "indonesia",
+     "phaseAtStart": "Republic of Indonesia",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Indonesia}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Iran",
+     "row": "iran",
+     "phaseAtStart": "Islamic Republic of Iran",
+     "from": 1979,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Iran}} (1979)"
+      }
+     }
+    },
+    {
+     "member": "Iraq",
+     "row": "iraq",
+     "phaseAtStart": "First Republic of Iraq",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Iraq}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Jordan",
+     "row": "jordan",
+     "phaseAtStart": "Hashemite Kingdom of Jordan",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Jordan}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Kuwait",
+     "row": "kuwait",
+     "phaseAtStart": "State of Kuwait",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Kuwait}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Laos",
+     "row": "laos",
+     "phaseAtStart": "Kingdom of Laos",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Laos}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Lebanon",
+     "row": "lebanon",
+     "phaseAtStart": "Lebanese Republic",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Lebanon}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Malaysia",
+     "row": "malaysia",
+     "phaseAtStart": "Malaysia",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Malaysia}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Maldives",
+     "row": "maldives",
+     "phaseAtStart": "Republic of Maldives",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Maldives}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Mongolia",
+     "row": "mongolia",
+     "phaseAtStart": "Mongolia",
+     "from": 1993,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Mongolia}} (1993)"
+      }
+     }
+    },
+    {
+     "member": "Myanmar",
+     "row": "myanmar",
+     "phaseAtStart": "Union of Burma",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Myanmar}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Nepal",
+     "row": "nepal",
+     "phaseAtStart": "Kingdom of Nepal",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Nepal}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "North Korea",
+     "row": "north-korea",
+     "phaseAtStart": "Democratic People's Republic of Korea",
+     "from": 1975,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|North Korea}} (1975)"
+      }
+     }
+    },
+    {
+     "member": "Oman",
+     "row": "oman",
+     "phaseAtStart": "Sultanate of Oman",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Oman}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Pakistan",
+     "row": "pakistan",
+     "phaseAtStart": "Islamic Republic of Pakistan",
+     "from": 1979,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Pakistan}} (1979)"
+      }
+     }
+    },
+    {
+     "member": "Palestine",
+     "row": "palestine",
+     "phaseAtStart": null,
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Palestine}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Philippines",
+     "row": "philippines",
+     "phaseAtStart": "Fifth Republic",
+     "from": 1993,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Philippines}} (1993)"
+      }
+     }
+    },
+    {
+     "member": "Qatar",
+     "row": "qatar",
+     "phaseAtStart": null,
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Qatar}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Saudi Arabia",
+     "row": "saudi-arabia",
+     "phaseAtStart": "Kingdom of Saudi Arabia",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Saudi Arabia}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Singapore",
+     "row": "singapore",
+     "phaseAtStart": "Republic of Singapore",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Singapore}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Sri Lanka",
+     "row": "sri-lanka",
+     "phaseAtStart": "Dominion of Ceylon",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Sri Lanka}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Syria",
+     "row": "syria",
+     "phaseAtStart": "Ba'athist Syria",
+     "from": 1964,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Syria}} (1964)"
+      }
+     }
+    },
+    {
+     "member": "Thailand",
+     "row": "thailand",
+     "phaseAtStart": "Constitutional monarchy",
+     "from": 1993,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Thailand}} (1993)"
+      }
+     }
+    },
+    {
+     "member": "East Timor",
+     "row": "timor-leste",
+     "phaseAtStart": "Democratic Republic of Timor-Leste",
+     "from": 2003,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|East Timor}} (2003)"
+      }
+     }
+    },
+    {
+     "member": "Turkmenistan",
+     "row": "turkmenistan",
+     "phaseAtStart": "Turkmenistan",
+     "from": 1995,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Turkmenistan}} (1995)"
+      }
+     }
+    },
+    {
+     "member": "United Arab Emirates",
+     "row": "united-arab-emirates",
+     "phaseAtStart": "Trucial States",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|United Arab Emirates}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Uzbekistan",
+     "row": "uzbekistan",
+     "phaseAtStart": "Republic of Uzbekistan",
+     "from": 1993,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Uzbekistan}} (1993)"
+      }
+     }
+    },
+    {
+     "member": "Vietnam",
+     "row": "vietnam",
+     "phaseAtStart": "Socialist Republic of Vietnam",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Vietnam}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Yemen",
+     "row": "yemen",
+     "phaseAtStart": "Republic of Yemen",
+     "from": 1990,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Asia",
+       "quote": "# {{flag|Yemen}} (1990)"
+      }
+     }
+    },
+    {
+     "member": "Azerbaijan",
+     "row": "azerbaijan",
+     "phaseAtStart": "Republic of Azerbaijan",
+     "from": 2011,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Eastern Europe",
+       "quote": "# {{flag|Azerbaijan}} (2011)"
+      }
+     }
+    },
+    {
+     "member": "Belarus",
+     "row": "belarus",
+     "phaseAtStart": "Republic of Belarus",
+     "from": 1998,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Eastern Europe",
+       "quote": "# {{flag|Belarus}} (1998)"
+      }
+     }
+    },
+    {
+     "member": "Antigua and Barbuda",
+     "row": "antigua-and-barbuda",
+     "phaseAtStart": "Antigua and Barbuda",
+     "from": 2006,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Antigua and Barbuda}} (2006)"
+      }
+     }
+    },
+    {
+     "member": "Bahamas",
+     "row": "bahamas",
+     "phaseAtStart": "Commonwealth of The Bahamas",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Bahamas}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "Barbados",
+     "row": "barbados",
+     "phaseAtStart": "Commonwealth realm",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Barbados}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "Belize",
+     "row": "belize",
+     "phaseAtStart": "Belize",
+     "from": 1981,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Belize}} (1981)"
+      }
+     }
+    },
+    {
+     "member": "Bolivia",
+     "row": "bolivia",
+     "phaseAtStart": "Republic of Bolivia",
+     "from": 1979,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Bolivia|state}} (1979)"
+      }
+     }
+    },
+    {
+     "member": "Colombia",
+     "row": "colombia",
+     "phaseAtStart": "Republic of Colombia",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Colombia}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "Cuba",
+     "row": "cuba",
+     "phaseAtStart": "Revolutionary Cuba",
+     "from": 1961,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Cuba}} (1961)"
+      }
+     }
+    },
+    {
+     "member": "Dominica",
+     "row": "dominica",
+     "phaseAtStart": "Commonwealth of Dominica",
+     "from": 2006,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Dominica}} (2006)"
+      }
+     }
+    },
+    {
+     "member": "Dominican Republic",
+     "row": "dominican-republic",
+     "phaseAtStart": "Fourth Republic",
+     "from": 2000,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Dominican Republic}} (2000)"
+      }
+     }
+    },
+    {
+     "member": "Ecuador",
+     "row": "ecuador",
+     "phaseAtStart": "Republic of Ecuador",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Ecuador}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "Grenada",
+     "row": "grenada",
+     "phaseAtStart": "People's Revolutionary Government",
+     "from": 1979,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Grenada}} (1979)"
+      }
+     }
+    },
+    {
+     "member": "Guatemala",
+     "row": "guatemala",
+     "phaseAtStart": "Republic of Guatemala",
+     "from": 1993,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Guatemala}} (1993)"
+      }
+     }
+    },
+    {
+     "member": "Guyana",
+     "row": "guyana",
+     "phaseAtStart": "Co-operative Republic of Guyana",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Guyana}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Haiti",
+     "row": "haiti",
+     "phaseAtStart": "Republic of Haiti (since 1957)",
+     "from": 2006,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Haiti}} (2006)"
+      }
+     }
+    },
+    {
+     "member": "Honduras",
+     "row": "honduras",
+     "phaseAtStart": "Republic of Honduras",
+     "from": 1995,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Honduras}} (1995)"
+      }
+     }
+    },
+    {
+     "member": "Jamaica",
+     "row": "jamaica",
+     "phaseAtStart": "Jamaica",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Jamaica}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Nicaragua",
+     "row": "nicaragua",
+     "phaseAtStart": "Republic of Nicaragua",
+     "from": 1979,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Nicaragua}} (1979)"
+      }
+     }
+    },
+    {
+     "member": "Panama",
+     "row": "panama",
+     "phaseAtStart": "Republic of Panama",
+     "from": 1976,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Panama}} (1976)"
+      }
+     }
+    },
+    {
+     "member": "Peru",
+     "row": "peru",
+     "phaseAtStart": "Republic of Peru (restored)",
+     "from": 1973,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Peru|state}} (1973)"
+      }
+     }
+    },
+    {
+     "member": "Saint Kitts and Nevis",
+     "row": "saint-kitts-and-nevis",
+     "phaseAtStart": "Saint Kitts and Nevis",
+     "from": 2006,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Saint Kitts and Nevis}} (2006)"
+      }
+     }
+    },
+    {
+     "member": "Saint Lucia",
+     "row": "saint-lucia",
+     "phaseAtStart": "Saint Lucia",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Saint Lucia}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "Saint Vincent and the Grenadines",
+     "row": "saint-vincent-and-the-grenadines",
+     "phaseAtStart": "Saint Vincent and the Grenadines",
+     "from": 2003,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Saint Vincent and the Grenadines}} (2003)"
+      }
+     }
+    },
+    {
+     "member": "Suriname",
+     "row": "suriname",
+     "phaseAtStart": "Republic of Suriname",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Suriname}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "Trinidad and Tobago",
+     "row": "trinidad-and-tobago",
+     "phaseAtStart": "Dominion of Trinidad and Tobago",
+     "from": 1970,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Trinidad and Tobago}} (1970)"
+      }
+     }
+    },
+    {
+     "member": "Venezuela",
+     "row": "venezuela",
+     "phaseAtStart": "Republic of Venezuela",
+     "from": 1989,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Latin America",
+       "quote": "# {{flag|Venezuela|state}} (1989"
+      }
+     }
+    },
+    {
+     "member": "Fiji",
+     "row": "fiji",
+     "phaseAtStart": "Republic of Fiji",
+     "from": 2011,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Pacific Islands",
+       "quote": "# {{flag|Fiji}} (2011)"
+      }
+     }
+    },
+    {
+     "member": "Papua New Guinea",
+     "row": "papua-new-guinea",
+     "phaseAtStart": "Papua New Guinea",
+     "from": 1993,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Pacific Islands",
+       "quote": "# {{flag|Papua New Guinea}} (1993)"
+      }
+     }
+    },
+    {
+     "member": "Vanuatu",
+     "row": "vanuatu",
+     "phaseAtStart": "Republic of Vanuatu",
+     "from": 1983,
+     "to": null,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Pacific Islands",
+       "quote": "# {{flag|Vanuatu}} (1983)"
+      }
+     }
+    },
+    {
+     "member": "North Yemen",
+     "row": "yemen",
+     "phaseAtStart": "Kingdom of Yemen (North)",
+     "from": 1961,
+     "to": 1990,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Former members",
+       "quote": "# {{flag|North Yemen}} (1961–1990)"
+      }
+     }
+    },
+    {
+     "member": "Cyprus",
+     "row": "cyprus",
+     "phaseAtStart": "Republic of Cyprus",
+     "from": 1961,
+     "to": 2004,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Former members",
+       "quote": "# {{flag|Cyprus|1960}} (1961–2004)"
+      }
+     }
+    },
+    {
+     "member": "Yugoslavia",
+     "row": "yugoslavia",
+     "phaseAtStart": "Socialist Federal Republic",
+     "from": 1961,
+     "to": 1992,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Former members",
+       "quote": "# {{flag|Yugoslavia}} (1961–[[Breakup of Yugoslavia|1992]])"
+      }
+     }
+    },
+    {
+     "member": "South Yemen",
+     "row": "yemen",
+     "phaseAtStart": "People's Democratic Republic of Yemen (South)",
+     "from": 1970,
+     "to": 1990,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Former members",
+       "quote": "# {{flag|South Yemen}} (1970–1990)"
+      }
+     }
+    },
+    {
+     "member": "Chile",
+     "row": "chile",
+     "phaseAtStart": "Presidential Republic",
+     "from": 1971,
+     "to": 2026,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Former members",
+       "quote": "# {{flag|Chile}} (1971–2026)"
+      }
+     }
+    },
+    {
+     "member": "Malta",
+     "row": "malta",
+     "phaseAtStart": "State of Malta",
+     "from": 1973,
+     "to": 2004,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Former members",
+       "quote": "# {{flag|Malta}} (1973–2004)"
+      }
+     }
+    },
+    {
+     "member": "Argentina",
+     "row": "argentina",
+     "phaseAtStart": "Argentine Republic",
+     "from": 1973,
+     "to": 1991,
+     "fromSource": {
+      "page": "Non-Aligned Movement",
+      "url": "https://en.wikipedia.org/wiki/Non-Aligned_Movement",
+      "dump": "enwiki-20261101",
+      "checkedIn": "parsed",
+      "locator": {
+       "kind": "section",
+       "heading": "Former members",
+       "quote": "# {{flag|Argentina}} (1973–1991)"
+      }
+     }
+    }
+   ],
+   "events": [],
+   "existingEvents": [],
+   "gaps": [
+    "Observers and guests left out. SWAPO (a movement, not a state) was a member until 1990; left out."
+   ],
+   "unmapped": []
+  },
+  {
+   "id": "reformation",
+   "name": "Protestant Reformation",
+   "suggestedKind": "theme",
+   "timeline": "modern-states",
+   "pages": [
+    "Reformation"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1517,
+     "date": "31 October 1517",
+     "source": {
+      "page": "Reformation",
+      "url": "https://en.wikipedia.org/wiki/Reformation",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "The Reformation is usually dated from Martin Luther's publication of the Ninety-five Theses in 1517, which gave birth to Lutheranism."
+      }
+     }
+    },
+    {
+     "what": "end",
+     "year": [
+      1555,
+      1618,
+      1648
+     ],
+     "date": "disputed",
+     "source": {
+      "page": "Reformation",
+      "url": "https://en.wikipedia.org/wiki/Reformation",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "The end date of the Reformation is even more disputed: considered as political/martial strife, 25 September 1555 (when the Peace of Augsburg was accepted), 23 May 1618 and 24 October 1648 (when the Thirty Years' War began and ended, respectively) are the most commonly mentioned terminuses."
+      }
+     }
+    }
+   ],
+   "memberships": [],
+   "events": [
+    {
+     "title": "Ninety-five Theses",
+     "year": 1517,
+     "end": null,
+     "date": "31 October 1517",
+     "tracks": [
+      "reformation",
+      "hre"
+     ],
+     "source": {
+      "page": "Ninety-five Theses",
+      "url": "https://en.wikipedia.org/wiki/Ninety-five_Theses",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "On 31 October 1517, Luther sent a letter to the Archbishop of Mainz, Albert of Brandenburg, under whose authority the indulgences were being sold."
+      }
+     }
+    },
+    {
+     "title": "Diet of Worms",
+     "year": 1521,
+     "end": null,
+     "date": "28 January – 25 May 1521",
+     "tracks": [
+      "reformation",
+      "hre"
+     ],
+     "source": {
+      "page": "Diet of Worms",
+      "url": "https://en.wikipedia.org/wiki/Diet_of_Worms",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The diet was conducted from 28 January to 25 May 1521 at the Bischofshof palace in Worms, with the Emperor presiding."
+      }
+     }
+    },
+    {
+     "title": "Act of Supremacy",
+     "year": 1534,
+     "end": null,
+     "date": null,
+     "tracks": [
+      "reformation",
+      "united-kingdom"
+     ],
+     "source": {
+      "page": "Acts of Supremacy",
+      "url": "https://en.wikipedia.org/wiki/Acts_of_Supremacy",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The 1534 act declared King Henry VIII and his successors as the Supreme Head of the Church, replacing the Pope."
+      }
+     },
+     "phaseNote": "united-kingdom: Kingdom of England phase"
+    },
+    {
+     "title": "Council of Trent",
+     "year": 1545,
+     "end": 1563,
+     "date": "13 December 1545 – 4 December 1563",
+     "tracks": [
+      "reformation"
+     ],
+     "source": {
+      "page": "Council of Trent",
+      "url": "https://en.wikipedia.org/wiki/Council_of_Trent",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The council met for twenty-five sessions between 13 December 1545 and 4 December 1563."
+      }
+     },
+     "note": "Catholic response: on the theme row only, or on a Papal States row if Modern States has one."
+    },
+    {
+     "title": "Peace of Augsburg",
+     "year": 1555,
+     "end": null,
+     "date": "25 September 1555",
+     "tracks": [
+      "reformation",
+      "hre"
+     ],
+     "source": {
+      "page": "Peace of Augsburg",
+      "url": "https://en.wikipedia.org/wiki/Peace_of_Augsburg",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "signed on 25 September 1555 in the German city of Augsburg."
+      }
+     }
+    },
+    {
+     "title": "Peace of Westphalia",
+     "year": 1648,
+     "end": null,
+     "date": "October 1648",
+     "tracks": [
+      "reformation",
+      "hre",
+      "sweden",
+      "france",
+      "spain",
+      "netherlands"
+     ],
+     "source": {
+      "page": "Peace of Westphalia",
+      "url": "https://en.wikipedia.org/wiki/Peace_of_Westphalia",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "The Peace of Westphalia (, ) is the collective name for two peace treaties signed in October 1648 in the Westphalian cities of Osnabrück and Münster."
+      }
+     },
+     "note": "Ends the existing thirty-years-war event (1618); check its tracks before choosing these."
+    }
+   ],
+   "existingEvents": [
+    {
+     "uuid": "thirty-years-war",
+     "title": "Thirty Years' War",
+     "start": 1618,
+     "tracks": [
+      "hre",
+      "czechia",
+      "sweden",
+      "france",
+      "denmark",
+      "spain",
+      "habsburg-monarchy"
+     ],
+     "note": "existing event; add the theme row to its tracks?"
+    }
+   ],
+   "gaps": [],
+   "unmapped": []
+  },
+  {
+   "id": "enlightenment",
+   "name": "The Enlightenment",
+   "suggestedKind": "theme",
+   "timeline": "modern-states",
+   "pages": [
+    "Age of Enlightenment"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": [
+      "late 17th century",
+      1715
+     ],
+     "date": "disputed",
+     "source": {
+      "page": "Age of Enlightenment",
+      "url": "https://en.wikipedia.org/wiki/Age_of_Enlightenment",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "European historians traditionally dated its beginning with the death of Louis XIV of France in 1715 and its end with the outbreak of the French Revolution in 1789."
+      }
+     },
+     "note": "The lead also says it emerged 'in the late 17th century'. No single year: an approximate start is needed."
+    },
+    {
+     "what": "end",
+     "year": [
+      1789,
+      1804
+     ],
+     "date": "disputed",
+     "source": {
+      "page": "Age of Enlightenment",
+      "url": "https://en.wikipedia.org/wiki/Age_of_Enlightenment",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "Many historians now date the end of the Enlightenment as the start of the 19th century, with the latest proposed year being the death of Immanuel Kant in 1804."
+      }
+     }
+    }
+   ],
+   "memberships": [],
+   "events": [
+    {
+     "title": "Encyclopédie published",
+     "year": 1751,
+     "end": 1772,
+     "date": "1751–1772",
+     "tracks": [
+      "enlightenment",
+      "france"
+     ],
+     "source": {
+      "page": "Encyclopédie",
+      "url": "https://en.wikipedia.org/wiki/Encyclopédie",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "was a general encyclopedia published in France between 1751 and 1772"
+      }
+     }
+    },
+    {
+     "title": "Declaration of the Rights of Man and of the Citizen",
+     "year": 1789,
+     "end": null,
+     "date": "August 1789",
+     "tracks": [
+      "enlightenment",
+      "france"
+     ],
+     "source": {
+      "page": "Declaration of the Rights of Man and of the Citizen",
+      "url": "https://en.wikipedia.org/wiki/Declaration_of_the_Rights_of_Man_and_of_the_Citizen",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "In August 1789, Abbé Emmanuel Joseph Sieyès and Honoré Mirabeau played a central role in conceptualizing and drafting the final Declaration of the Rights of Man and of the Citizen."
+      }
+     }
+    }
+   ],
+   "existingEvents": [],
+   "gaps": [
+    "Thin: the enlightenment's milestones are books and people (Locke, Newton, Voltaire), which the data has no place for until person rows (Visuals 6)."
+   ],
+   "unmapped": []
+  },
+  {
+   "id": "abolitionism",
+   "name": "Abolition of slavery",
+   "suggestedKind": "theme",
+   "timeline": "modern-states",
+   "pages": [
+    "Abolitionism"
+   ],
+   "span": [
+    {
+     "what": "start",
+     "year": 1772,
+     "date": "late 18th century (British movement); 1772 Somerset case",
+     "source": {
+      "page": "Abolitionism",
+      "url": "https://en.wikipedia.org/wiki/Abolitionism",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "The British abolitionist movement began in the late 18th century, and the 1772 Somersett case established that slavery did not exist in English law."
+      }
+     },
+     "note": "Start is a choice: the British movement (late 18th c.), or earlier Quaker petitions. 1772 is the first datable milestone."
+    },
+    {
+     "what": "end",
+     "year": 1981,
+     "date": "1981 (Mauritania), or ongoing",
+     "source": {
+      "page": "Abolitionism",
+      "url": "https://en.wikipedia.org/wiki/Abolitionism",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "lead",
+       "quote": "Mauritania is the latest country to officially abolish slavery, with a presidential decree in 1981."
+      }
+     },
+     "note": "Or ongoing (modern anti-slavery). Recommend ending at 1888 for the Atlantic story and putting 1981 as an event, or splitting the row."
+    }
+   ],
+   "memberships": [],
+   "events": [
+    {
+     "title": "Somerset v Stewart",
+     "year": 1772,
+     "end": null,
+     "date": "1772",
+     "tracks": [
+      "abolitionism",
+      "united-kingdom"
+     ],
+     "source": {
+      "page": "Somerset v Stewart",
+      "url": "https://en.wikipedia.org/wiki/Somerset_v_Stewart",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Somerset v Stewart (1772) 98 ER 499 (also known as Sommersett v Steuart, Somersett's case, and the Mansfield Judgment) is a judgment of the English Court of King's Bench"
+      }
+     }
+    },
+    {
+     "title": "France abolishes slavery",
+     "year": 1794,
+     "end": null,
+     "date": "4 February 1794",
+     "tracks": [
+      "abolitionism",
+      "france",
+      "french-colonial-empire"
+     ],
+     "source": {
+      "page": "Abolitionism",
+      "url": "https://en.wikipedia.org/wiki/Abolitionism",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "on 4 February 1794, under the leadership of Maximilien Robespierre, abolished slavery in law in France and its colonies."
+      }
+     },
+     "note": "Napoleon restored slavery in 1802 (not cited here)."
+    },
+    {
+     "title": "Slave Trade Act",
+     "year": 1807,
+     "end": null,
+     "date": "25 March 1807",
+     "tracks": [
+      "abolitionism",
+      "united-kingdom",
+      "british-empire"
+     ],
+     "source": {
+      "page": "Abolitionism",
+      "url": "https://en.wikipedia.org/wiki/Abolitionism",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "In 1807, the slave trade was made illegal throughout the British Empire, though existing slaves in British colonies were not liberated until the Slavery Abolition Act 1833."
+      }
+     }
+    },
+    {
+     "title": "Thirteenth Amendment",
+     "year": 1865,
+     "end": null,
+     "date": "ratified 6 December 1865",
+     "tracks": [
+      "abolitionism",
+      "united-states"
+     ],
+     "source": {
+      "page": "Thirteenth Amendment to the United States Constitution",
+      "url": "https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_United_States_Constitution",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "ratified by the required 27 of the then 36 states on December 6, 1865, and proclaimed on December 18, 1865."
+      }
+     }
+    },
+    {
+     "title": "Mauritania abolishes slavery",
+     "year": 1981,
+     "end": null,
+     "date": null,
+     "tracks": [
+      "abolitionism",
+      "mauritania"
+     ],
+     "source": {
+      "page": "Abolitionism",
+      "url": "https://en.wikipedia.org/wiki/Abolitionism",
+      "dump": "enwiki-20261101",
+      "checkedIn": "text",
+      "locator": {
+       "kind": "section",
+       "heading": "",
+       "quote": "Mauritania is the latest country to officially abolish slavery, with a presidential decree in 1981."
+      }
+     }
+    }
+   ],
+   "existingEvents": [
+    {
+     "uuid": "haitian-revolution",
+     "title": "Haitian Revolution",
+     "start": 1791,
+     "tracks": [
+      "haiti",
+      "france",
+      "french-colonial-empire"
+     ],
+     "note": "existing event; add the theme row to its tracks?"
+    },
+    {
+     "uuid": "slavery-abolition-act",
+     "title": "Slavery Abolition Act",
+     "start": 1833,
+     "tracks": [
+      "british-empire"
+     ],
+     "note": "existing event (1833, british-empire); add the theme row"
+    },
+    {
+     "uuid": "abolition-of-slavery-in-brazil",
+     "title": "Abolition of slavery in Brazil",
+     "start": 1888,
+     "tracks": [
+      "brazil"
+     ],
+     "note": "existing event (1888, brazil); add the theme row"
+    },
+    {
+     "uuid": "abolition-of-slavery-in-suriname",
+     "title": "Abolition of slavery in Suriname",
+     "start": 1863,
+     "tracks": [
+      "suriname",
+      "dutch-empire"
+     ],
+     "note": "existing event (1863); add the theme row"
+    }
+   ],
+   "gaps": [],
+   "unmapped": []
+  }
+ ]
+}
