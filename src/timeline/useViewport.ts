@@ -86,7 +86,8 @@ export function useViewport(o: Options) {
     if (!el) return;
     // a request made with a zoom change can arrive before the (deferred) redraw widens the chart; scrolling then
     // would stop at the old width's end, so wait for the new width (a few frames at most)
-    if (el.scrollWidth + 1 < labelW + scale.width && tries < 30) {
+    // (scrollWidth lags the canvas's new width in the browser; it is 0 where nothing is laid out, as in tests)
+    if (el.scrollWidth > 0 && el.scrollWidth + 1 < labelW + scale.width && tries < 30) {
       requestAnimationFrame(() => scrollToFocus(f, tries + 1));
       return;
     }
