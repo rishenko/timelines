@@ -3,8 +3,9 @@
 // as it was. The forms copy fields one by one, so a field they don't know would be dropped silently on save (as the
 // row form once dropped category memberships); this catches it for every field the data uses, now and later.
 // Runs the bundled timelines, and the local ones when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts).
-// By default one row and one event per shape (the set of fields used, at every level), which covers every field and
-// combination the data has in seconds; ROUNDTRIP=all opens every one (a few minutes).
+// By default enough rows and events that every field path the data uses is saved at least once (seconds);
+// ROUNDTRIP=all opens every one (minutes). Phase order is compared by date: the row editor stores phases in date
+// order, and the order they are written in has no meaning (the chart sorts them).
 import { readFileSync } from 'node:fs';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
@@ -12,30 +13,34 @@ import { EventForm } from './EventForm.tsx';
 import { TrackForm } from './TrackForm.tsx';
 import { localTimelineFiles } from '../../scripts/lib/local-data.ts';
 import { migrate } from '../data/migrate.ts';
-import type { Dataset } from '../types.ts';
+import type { Dataset, Track } from '../types.ts';
+import { at0 } from '../lib/subYear.ts';
 import index from '../../public/timelines/index.json';
 
 afterEach(cleanup);
 
 const ALL = process.env.ROUNDTRIP === 'all';
 
-/** The fields an item uses, at every level (keys only, values left out): items of one shape exercise the same code. */
-const shape = (v: unknown): string =>
-  Array.isArray(v)
-    ? `[${[...new Set(v.map(shape))].sort().join(',')}]`
-    : v && typeof v === 'object'
-      ? `{${Object.keys(v).sort().map((k) => `${k}:${shape((v as Record<string, unknown>)[k])}`).join(',')}}`
-      : typeof v;
+/** Every field path an item uses, at every level ("phases.startDates.source.sourceKey"; values left out). */
+function paths(v: unknown, at = '', out = new Set<string>()): Set<string> {
+  if (Array.isArray(v)) for (const x of v) paths(x, at, out);
+  else if (v && typeof v === 'object')
+    for (const [k, x] of Object.entries(v)) {
+      const p = at ? `${at}.${k}` : k;
+      out.add(p);
+      paths(x, p, out);
+    }
+  return out;
+}
 
-/** Every item, or the first of each shape. */
+/** Every item, or enough items that every field path the data uses is saved at least once (greedy, in file order). */
 function sample<T>(items: T[]): T[] {
   if (ALL) return items;
   const seen = new Set<string>();
   return items.filter((i) => {
-    const s = shape(i);
-    if (seen.has(s)) return false;
-    seen.add(s);
-    return true;
+    const fresh = [...paths(i)].filter((p) => !seen.has(p));
+    fresh.forEach((p) => seen.add(p));
+    return fresh.length > 0;
   });
 }
 
@@ -81,7 +86,7 @@ describe('editor round trip: saving unchanged keeps every field', () => {
         render(<TrackForm initial={t} data={data} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
         const saved = await submit('Save track', onSave);
         try {
-          expect(saved).toEqual(t);
+          expect(saved).toEqual(byDate(t));
         } catch {
           lost.push(`${t.id}: ${saved ? JSON.stringify(diff(t, saved)) : 'not saved'}`);
         }
@@ -91,6 +96,9 @@ describe('editor round trip: saving unchanged keeps every field', () => {
     }, 600_000);
   }
 });
+
+/** A row with its phases in date order (stable: phases starting together keep their order). */
+const byDate = (t: Track): Track => (t.phases ? { ...t, phases: [...t.phases].sort((a, b) => at0(a) - at0(b)) } : t);
 
 /** The top-level fields that differ, as [before, after]. */
 function diff(a: object, b: object): Record<string, [unknown, unknown]> {
