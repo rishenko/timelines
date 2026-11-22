@@ -17,5 +17,15 @@ class Sentences(unittest.TestCase):
         self.assertEqual(s, ['Gen. Allenby entered Jerusalem.', 'J. R. Smith wrote of it in 1918.'])
 
 
+
+class ShortTitles(unittest.TestCase):
+    def test_lead_phrase(self):
+        from extractors import short_title
+        self.assertEqual(short_title('Free State President Arthur Griffith dies of a stroke. He is replaced by W. T. Cosgrave.'),
+                         'Free State President Arthur Griffith dies of a stroke')
+        self.assertEqual(short_title('Republican officer Tom Barry, who had escaped, was recaptured in Dublin.'),
+                         'Republican officer Tom Barry, who had escaped, was recaptured in Dublin')
+
+
 if __name__ == '__main__':
     unittest.main()
