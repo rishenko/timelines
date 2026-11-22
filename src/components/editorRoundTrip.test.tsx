@@ -4,7 +4,7 @@
 // row form once dropped category memberships); this catches it for every field the data uses, now and later.
 // Runs the bundled timelines, and the local ones when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts).
 // By default enough rows and events that every field path the data uses is saved at least once (seconds);
-// ROUNDTRIP=all opens every one (minutes).
+// ROUNDTRIP=all opens every one (about 40 minutes).
 import { readFileSync } from 'node:fs';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
@@ -18,6 +18,8 @@ import index from '../../public/timelines/index.json';
 afterEach(cleanup);
 
 const ALL = process.env.ROUNDTRIP === 'all';
+/** Every event of a large timeline takes over ten minutes (Modern States: about 1,450 events). */
+const TIMEOUT = ALL ? 3_600_000 : 600_000;
 
 /** Every field path an item uses, at every level ("phases.startDates.source.sourceKey"; values left out). */
 function paths(v: unknown, at = '', out = new Set<string>()): Set<string> {
@@ -92,7 +94,7 @@ describe('editor round trip: saving unchanged keeps every field', () => {
         cleanup();
       }
       expect(lost).toEqual([]);
-    }, 600_000);
+    }, TIMEOUT);
 
     it(`${name}: every row`, async () => {
       const lost: string[] = [];
@@ -108,7 +110,7 @@ describe('editor round trip: saving unchanged keeps every field', () => {
         cleanup();
       }
       expect(lost).toEqual([]);
-    }, 600_000);
+    }, TIMEOUT);
   }
 });
 
