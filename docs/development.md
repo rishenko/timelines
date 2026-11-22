@@ -74,6 +74,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
+| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, and the strip under the ruler |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -226,6 +227,15 @@ the regions inside each (`broader`); rows with sub-rows stay while any row below
 while one of its sources is switched on (so tags cited to hidden spoiler sources give nothing away). The result is laid
 over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
 without knowing about regions. Off in edit mode. The link carries `&regions=`.
+
+### Ages strip
+
+`meta.eras` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`) in a sticky strip under the
+ruler. `placeAges` resolves each under the reader's Dating choice (`resolveSpan` with the era's own `chronology`) and
+gives each `group` a line; `agesInView` drops lines with no age in the settled year window the chart already keeps
+for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
+hatching; ends past the chart are cut with a dashed edge. Clicking an age asks `App.tsx` to centre on it
+(`focusOn`, the zoom unchanged). The table view's Ages table is its accessible equivalent.
 
 ### Category filter
 
