@@ -472,3 +472,32 @@ describe('layoutLanes header strip', () => {
     expect(headed.lanes[0].marks[0].cy).toBe(plain.lanes[0].marks[0].cy + 32);
   });
 });
+
+describe('a year-only end meeting a day-dated start (days and months)', () => {
+  const px = 100;
+  const strips = (list: ResolvedPhase[]) => layoutPhaseStrips(placePhases('germany', new Map([['germany', list]])), (y) => (y - 1900) * px);
+  const nazi: ResolvedPhase = { name: 'Nazi Germany', start: 1933, startMonth: 1, startDay: 30, end: 1945, endMonth: 5, endDay: 23 };
+
+  it('snaps the year-only end to the next start: one line, no rival strip', () => {
+    const weimar: ResolvedPhase = { name: 'Weimar Republic', start: 1918, startMonth: 11, startDay: 9, end: 1933 };
+    const s = strips([weimar, nazi]);
+    expect(s.lines).toHaveLength(1);
+    const [w, n] = s.cells;
+    const naziStart = (1933 + 29 / 365 - 1900) * px;
+    expect(n.startX).toBeCloseTo(naziStart, 6);
+    expect(w.x1).toBeCloseTo(naziStart, 6);
+    // the change is drawn once, by the next phase's start line
+    expect(w.endX).toBeNull();
+  });
+
+  it('still shows a real overlap given in days as a rival strip', () => {
+    const weimar: ResolvedPhase = { name: 'Weimar Republic', start: 1918, startMonth: 11, startDay: 9, end: 1933, endMonth: 3, endDay: 23 };
+    expect(strips([weimar, nazi]).lines).toHaveLength(2);
+  });
+
+  it('does the same for memberships', () => {
+    const m = (row: string, o: Partial<ResolvedSpan>) => ({ row, sources: [], start: 0, end: 0, ...o }) as ResolvedSpan & { row: string };
+    const placed = placeMemberships('reach', [m('a', { start: 390, end: 398 }), m('b', { start: 398, startMonth: 8, startDay: 18, end: 399 })], 0, (x) => x.row);
+    expect(new Set(placed.map((p) => p.level)).size).toBe(1);
+  });
+});

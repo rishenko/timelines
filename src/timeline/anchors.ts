@@ -1,4 +1,4 @@
-import { effectiveEnd } from '../lib/years.ts';
+import { effectiveEnd, isSpan } from '../lib/years.ts';
 import { at0, at1, startAt } from '../lib/subYear.ts';
 import type { ResolvedEvent, ResolvedSpan } from '../lib/chronology.ts';
 
@@ -29,4 +29,13 @@ export function anchorsFor(
     if (s.endWindow) out.push(...s.endWindow);
   }
   return range ? out.map((y) => Math.min(Math.max(y, range.start), range.end)) : out;
+}
+
+/**
+ * Below a year's zoom, the stretches never compressed: every event bar, from its start to the end of its last day
+ * (Kevin, 2026-11-21: days inside an event bar are never squeezed out; lifespans and phases still may be).
+ */
+export function keptStretches(events: ResolvedEvent[], present: number, range?: { start: number; end: number }): [number, number][] {
+  const clamp = (y: number) => (range ? Math.min(Math.max(y, range.start), range.end + 1) : y);
+  return events.filter(isSpan).map((e) => [clamp(at0(e)), clamp(at1(e, effectiveEnd(e, present)))]);
 }
