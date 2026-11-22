@@ -3,7 +3,7 @@
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
-    "subtitle": "Europe, Africa, Asia and Oceania, 650–1500 (the Americas to come)",
+    "subtitle": "Europe, Africa, Asia, Oceania and the Americas, 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
     "calendar": {
@@ -5287,8 +5287,7 @@
               }
             }
           ],
-          "startEvent": "abbasids-in-cairo",
-          "endEvent": "ottoman-conquest-of-cairo"
+          "startEvent": "abbasids-in-cairo"
         }
       ],
       "memberships": [
@@ -5338,7 +5337,26 @@
       "id": "egypt",
       "name": "Egypt and Nubia",
       "color": "#b08a3a",
-      "parent": "near-east"
+      "parent": "near-east",
+      "span": {
+        "start": 1517,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1517,
+            "source": {
+              "sourceKey": "wp-ottoman-egypt",
+              "sourceLocation": "infobox year_start: 1517"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-egypt",
+            "sourceLocation": "infobox established_event4: Current constitution, 18 January 2014 (current state)"
+          }
+        ]
+      }
     },
     {
       "id": "tulunids",
@@ -5535,9 +5553,7 @@
               "sourceLocation": "infobox year_end: 1517"
             }
           }
-        ],
-        "startEvent": "murder-of-turanshah-the-mamluks-take-power",
-        "endEvent": "ottoman-conquest-of-cairo"
+        ]
       },
       "memberships": [
         {
@@ -6664,14 +6680,6 @@
             "year": 1508,
             "source": {
               "sourceKey": "wp-aq-qoyunlu",
-              "sourceLocation": "infobox life_span: 1378–1508"
-            },
-            "note": "The same article gives this year too."
-          },
-          {
-            "year": 1508,
-            "source": {
-              "sourceKey": "wp-aq-qoyunlu",
               "sourceLocation": "infobox life span: 1378–1508"
             },
             "note": "The infobox life span ends in 1508."
@@ -7265,8 +7273,7 @@
               "sourceLocation": "infobox year_end: 1556"
             }
           }
-        ],
-        "startEvent": "kingdom-of-tlemcen-established"
+        ]
       },
       "memberships": [
         {
@@ -14575,6 +14582,1451 @@
           ]
         }
       ]
+    },
+    {
+      "id": "americas",
+      "name": "The Americas",
+      "color": "#3a8a5a"
+    },
+    {
+      "id": "north-america",
+      "name": "North America and the Arctic",
+      "color": "#5a7a3a",
+      "parent": "americas"
+    },
+    {
+      "id": "dorset",
+      "name": "Dorset culture",
+      "color": "#4a6a8a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Dorset_culture",
+      "ids": {
+        "wikidata": "Q603749"
+      },
+      "span": {
+        "start": -499,
+        "end": 1500,
+        "circa": true,
+        "endDates": [
+          {
+            "year": 1500,
+            "source": {
+              "sourceKey": "wp-dorset",
+              "sourceLocation": "infobox and lead"
+            }
+          },
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-dorset",
+              "sourceLocation": "lead ('perhaps as early as 1000')"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "na-arctic",
+          "sources": [
+            {
+              "sourceKey": "wp-dorset",
+              "sourceLocation": "category \"Archaeology of Greenland\""
+            },
+            {
+              "sourceKey": "wp-dorset",
+              "sourceLocation": "category \"Archaeology of Nunavut\""
+            },
+            {
+              "sourceKey": "wp-dorset",
+              "sourceLocation": "category \"Prehistory of the Arctic\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hohokam",
+      "name": "Hohokam",
+      "color": "#b07a4a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Hohokam",
+      "ids": {
+        "wikidata": "Q1255768"
+      },
+      "span": {
+        "start": 300,
+        "end": 1500
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "oasisamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-hohokam",
+              "sourceLocation": "category \"Hohokam\" (in \"Oasisamerica cultures\")"
+            },
+            {
+              "sourceKey": "wp-hohokam",
+              "sourceLocation": "category \"Hohokam\" (in \"Native American history of Arizona\")"
+            },
+            {
+              "sourceKey": "wp-hohokam",
+              "sourceLocation": "category \"Hohokam\" (in \"Indigenous culture of Oasisamerica\")"
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-hohokam",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fremont-culture",
+      "name": "Fremont culture",
+      "color": "#8a6a3a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Fremont_culture",
+      "span": {
+        "start": 1,
+        "end": 1301,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1,
+            "source": {
+              "sourceKey": "wp-fremont-culture",
+              "sourceLocation": "lead: \"It inhabited sites in what is now Utah and parts of Nevada, Idaho, Wyoming and Colorado from AD 1 to 1301 (2,000–700 years ago).\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1301,
+            "source": {
+              "sourceKey": "wp-fremont-culture",
+              "sourceLocation": "lead: \"It inhabited sites in what is now Utah and parts of Nevada, Idaho, Wyoming and Colorado from AD 1 to 1301 (2,000–700 years ago).\""
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "oasisamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-fremont-culture",
+              "sourceLocation": "lead: \"It inhabited sites in what is now Utah and parts of Nevada, Idaho, Wyoming and Colorado from AD 1 to 1301 (2,000–700 years ago).\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plaquemine-culture",
+      "name": "Plaquemine culture",
+      "color": "#5a8a6a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Plaquemine_culture",
+      "span": {
+        "start": 1200,
+        "end": 1700,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1200,
+            "source": {
+              "sourceKey": "wp-plaquemine-culture",
+              "sourceLocation": "lead: \"The Plaquemine culture was an archaeological culture (circa 1200 to 1700 CE) centered on the Lower Mississippi River valley.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1700,
+            "source": {
+              "sourceKey": "wp-plaquemine-culture",
+              "sourceLocation": "lead: \"The Plaquemine culture was an archaeological culture (circa 1200 to 1700 CE) centered on the Lower Mississippi River valley.\""
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "eastern-woodlands",
+          "sources": [
+            {
+              "sourceKey": "wp-plaquemine-culture",
+              "sourceLocation": "lead: \"The Plaquemine culture was an archaeological culture (circa 1200 to 1700 CE) centered on the Lower Mississippi River valley.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mesoamerica",
+      "name": "Mesoamerica",
+      "color": "#a8603a",
+      "parent": "americas"
+    },
+    {
+      "id": "teotihuacan",
+      "name": "Teotihuacan",
+      "color": "#9a4a3a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Teotihuacan",
+      "ids": {
+        "wikidata": "Q172613"
+      },
+      "span": {
+        "start": -99,
+        "end": 750,
+        "endDates": [
+          {
+            "year": 750,
+            "source": {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "infobox (abandoned)"
+            }
+          },
+          {
+            "year": 550,
+            "source": {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "lead (sacked and burned 'around 550 CE')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "category \"Teotihuacan\" (in \"Classic period in Mesoamerica\")"
+            },
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "category \"Teotihuacan\" (in \"Archaeological sites in Mexico\")"
+            },
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "category \"Teotihuacan\" (in \"Cultural heritage of the State of Mexico\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zapotec",
+      "name": "Zapotecs (Valley of Oaxaca)",
+      "color": "#6a7a5a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
+      "ids": {
+        "wikidata": "Q844750"
+      },
+      "span": {
+        "start": -499,
+        "end": 950,
+        "endDates": [
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-monte-alban",
+              "sourceLocation": "Site history ('c. AD 900-1000')"
+            }
+          },
+          {
+            "year": 700,
+            "source": {
+              "sourceKey": "wp-zapotec",
+              "sourceLocation": "infobox (capital to AD 700)"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-zapotec",
+              "sourceLocation": "category \"Zapotec civilization\" (in \"Pre-Columbian cultures of Mexico\")"
+            },
+            {
+              "sourceKey": "wp-zapotec",
+              "sourceLocation": "category \"Zapotec civilization\" (in \"History of Oaxaca\")"
+            },
+            {
+              "sourceKey": "wp-zapotec",
+              "sourceLocation": "category \"Zapotec civilization\" (in \"Classic period in Mesoamerica\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tikal",
+      "name": "Tikal",
+      "color": "#3a6a4a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tikal",
+      "ids": {
+        "wikidata": "Q181172"
+      },
+      "span": {
+        "start": -349,
+        "end": 900,
+        "startDates": [
+          {
+            "year": -350,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-tikal",
+              "sourceLocation": "infobox and lead ('4th century BC')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-tikal",
+              "sourceLocation": "category \"Tikal\" (in \"Former populated places in Guatemala\")"
+            },
+            {
+              "sourceKey": "wp-tikal",
+              "sourceLocation": "category \"Tikal\" (in \"Maya sites in Petén Department\")"
+            },
+            {
+              "sourceKey": "wp-tikal",
+              "sourceLocation": "category \"Tikal\" (in \"National parks of Guatemala\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calakmul",
+      "name": "Calakmul (Kaan)",
+      "color": "#6a3a4a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Calakmul",
+      "ids": {
+        "wikidata": "Q272771"
+      },
+      "span": {
+        "start": -324,
+        "end": 950,
+        "startDates": [
+          {
+            "year": -324,
+            "margin": 75,
+            "source": {
+              "sourceKey": "wp-calakmul",
+              "sourceLocation": "infobox ('Built 400–250 BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-calakmul",
+              "sourceLocation": "infobox ('Abandoned 10th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-calakmul",
+              "sourceLocation": "category \"Calakmul\" (in \"Maya sites in Campeche\")"
+            },
+            {
+              "sourceKey": "wp-calakmul",
+              "sourceLocation": "category \"Maya sites in Campeche\""
+            },
+            {
+              "sourceKey": "wp-calakmul",
+              "sourceLocation": "category \"Tourist attractions in Campeche\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "copan",
+      "name": "Copán",
+      "color": "#4a5a7a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Cop%C3%A1n",
+      "ids": {
+        "wikidata": "Q214827"
+      },
+      "span": {
+        "start": 426,
+        "end": 917,
+        "endDates": [
+          {
+            "year": 917,
+            "margin": 17,
+            "source": {
+              "sourceKey": "wp-copan",
+              "sourceLocation": "lead ('in the early 10th century')"
+            }
+          },
+          {
+            "year": 850,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-copan",
+              "sourceLocation": "infobox ('c. 9th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-copan",
+              "sourceLocation": "category \"Copán\" (in \"Maya sites in Honduras\")"
+            },
+            {
+              "sourceKey": "wp-copan",
+              "sourceLocation": "category \"Archaeological sites in Honduras\""
+            },
+            {
+              "sourceKey": "wp-copan",
+              "sourceLocation": "category \"Copán Department\" (in \"Departments of Honduras\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palenque",
+      "name": "Palenque",
+      "color": "#7a4a6a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Palenque",
+      "ids": {
+        "wikidata": "Q181427"
+      },
+      "span": {
+        "start": -225,
+        "end": 799,
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-palenque",
+              "sourceLocation": "category \"Palenque\" (in \"Maya sites in Chiapas\")"
+            },
+            {
+              "sourceKey": "wp-palenque",
+              "sourceLocation": "category \"Maya sites in Chiapas\""
+            },
+            {
+              "sourceKey": "wp-palenque",
+              "sourceLocation": "category \"Museums in Chiapas\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toltec-empire",
+      "name": "Toltec Empire",
+      "color": "#8a5a7a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Toltec_Empire",
+      "span": {
+        "start": 674,
+        "end": 1122,
+        "startDates": [
+          {
+            "year": 674,
+            "source": {
+              "sourceKey": "wp-toltec-empire",
+              "sourceLocation": "infobox year_start: 674 (disputed)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1122,
+            "source": {
+              "sourceKey": "wp-toltec-empire",
+              "sourceLocation": "infobox year_end: 1122 (disputed)"
+            }
+          }
+        ],
+        "startEvent": "toltecs-arrive-at-mam-he-mi-and-rename-it-tollan",
+        "endEvent": "abandonment-of-tollan-xicocotitlan"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-toltec-empire",
+              "sourceLocation": "infobox capital: Tollan-Xicocotitlan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "league-of-mayapan",
+      "name": "League of Mayapan",
+      "color": "#3a7a5a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/League_of_Mayapan",
+      "span": {
+        "start": 1007,
+        "end": 1441,
+        "startDates": [
+          {
+            "year": 1007,
+            "source": {
+              "sourceKey": "wp-league-of-mayapan",
+              "sourceLocation": "infobox year_start: 1007"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1441,
+            "source": {
+              "sourceKey": "wp-league-of-mayapan",
+              "sourceLocation": "infobox year_end: 1441"
+            }
+          }
+        ],
+        "startEvent": "ah-mekat-tutul-xiu-unites-chichen-itza-mayapan-and-uxmal",
+        "endEvent": "rebellions-by-the-tutul-xiu-and-their-allies-disintegrate-th"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-league-of-mayapan",
+              "sourceLocation": "infobox capital: Mayapan, Uxmal, Chichen Itza"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kiche-kingdom-of-qumarkaj",
+      "name": "Kʼicheʼ kingdom of Qʼumarkaj",
+      "color": "#5a8a3a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Kʼicheʼ_kingdom_of_Qʼumarkaj",
+      "span": {
+        "start": 1225,
+        "end": 1524,
+        "startDates": [
+          {
+            "year": 1225,
+            "source": {
+              "sourceKey": "wp-k-iche-kingdom-of-q-umarkaj",
+              "sourceLocation": "infobox year_start: c.1225"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1524,
+            "source": {
+              "sourceKey": "wp-k-iche-kingdom-of-q-umarkaj",
+              "sourceLocation": "infobox year_end: 1524"
+            }
+          }
+        ],
+        "endEvent": "end-of-the-k-iche-kingdom-of-q-umarkaj"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-k-iche-kingdom-of-q-umarkaj",
+              "sourceLocation": "infobox capital: Chitinamit (1225-1400), Qʼumarkaj (1400-1524)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "purepecha-empire",
+      "name": "Purépecha (Tarascan) Empire",
+      "color": "#7a3a3a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Purépecha_Empire",
+      "span": {
+        "start": 1300,
+        "end": 1530,
+        "startDates": [
+          {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-pur-pecha-empire",
+              "sourceLocation": "infobox year_start: c. 1300"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1530,
+            "source": {
+              "sourceKey": "wp-pur-pecha-empire",
+              "sourceLocation": "infobox year_end: 1530"
+            }
+          }
+        ],
+        "endEvent": "conquered-by-new-spain"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-pur-pecha-empire",
+              "sourceLocation": "infobox capital: Tzintzuntzan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tlaxcala-nahua-state",
+      "name": "Tlaxcala",
+      "color": "#c08a3a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tlaxcala_(Nahua_state)",
+      "span": {
+        "start": 1348,
+        "end": 1520,
+        "startDates": [
+          {
+            "year": 1348,
+            "source": {
+              "sourceKey": "wp-tlaxcala-nahua-state",
+              "sourceLocation": "infobox year_start: 1348"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1520,
+            "source": {
+              "sourceKey": "wp-tlaxcala-nahua-state",
+              "sourceLocation": "infobox year_end: 1520"
+            }
+          }
+        ],
+        "startEvent": "tlaxcaltec-migration-to-central-mexico",
+        "endEvent": "spanish-conquest-of-the-aztec-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-tlaxcala-nahua-state",
+              "sourceLocation": "infobox capital: Tlaxcala"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aztec-empire",
+      "name": "Aztec Empire (Triple Alliance)",
+      "color": "#2a8a7a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Aztec_Empire",
+      "span": {
+        "start": 1428,
+        "end": 1521,
+        "startDates": [
+          {
+            "year": 1428,
+            "source": {
+              "sourceKey": "wp-aztec-empire",
+              "sourceLocation": "infobox year_start: 1428"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1521,
+            "source": {
+              "sourceKey": "wp-aztec-empire",
+              "sourceLocation": "infobox year_end: 1521"
+            }
+          }
+        ],
+        "startEvent": "triple-alliance-formed",
+        "endEvent": "spanish-conquest-of-the-aztec-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-aztec-empire",
+              "sourceLocation": "infobox capital: Mexico-Tenochtitlan (de facto)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tenochtitlan",
+      "name": "Tenochtitlan",
+      "color": "#3a6aa8",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tenochtitlan",
+      "span": {
+        "start": 1325,
+        "end": 1521,
+        "startDates": [
+          {
+            "year": 1325,
+            "source": {
+              "sourceKey": "wp-tenochtitlan",
+              "sourceLocation": "infobox year_start: 1325"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1521,
+            "source": {
+              "sourceKey": "wp-tenochtitlan",
+              "sourceLocation": "infobox year_end: 1521"
+            }
+          }
+        ],
+        "startEvent": "foundation-1325",
+        "endEvent": "destruction-due-to-the-spanish-conquest-of-mexico"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-tenochtitlan",
+              "sourceLocation": "infobox capital: Tenochtitlan"
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "aztec-empire",
+          "start": 1428,
+          "end": 1521,
+          "startDates": [
+            {
+              "year": 1428,
+              "source": {
+                "sourceKey": "wp-aztec-empire",
+                "sourceLocation": "infobox year_start: 1428"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1521,
+              "source": {
+                "sourceKey": "wp-aztec-empire",
+                "sourceLocation": "infobox year_end: 1521"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-aztec-empire",
+              "sourceLocation": "infobox event_start: Foundation of the alliance, 1428"
+            }
+          ],
+          "startEvent": "triple-alliance-formed",
+          "endEvent": "spanish-conquest-of-the-aztec-empire"
+        }
+      ]
+    },
+    {
+      "id": "tetzcoco",
+      "name": "Tetzcoco",
+      "color": "#6a8aa8",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tetzcoco_(altepetl)",
+      "span": {
+        "start": 1200,
+        "end": 1521,
+        "startDates": [
+          {
+            "year": 1200,
+            "source": {
+              "sourceKey": "wp-tetzcoco-altepetl",
+              "sourceLocation": "infobox year_start: 1200"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1521,
+            "source": {
+              "sourceKey": "wp-tetzcoco-altepetl",
+              "sourceLocation": "infobox year_end: 1521"
+            }
+          }
+        ],
+        "endEvent": "spanish-conquest-of-the-aztec-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-tetzcoco-altepetl",
+              "sourceLocation": "lead: \"A survey of Mesoamerican cities estimated that pre-conquest Tetzcoco had a population of 24,000+ and occupied an area of 450 hectares.\""
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "aztec-empire",
+          "start": 1428,
+          "end": 1521,
+          "startDates": [
+            {
+              "year": 1428,
+              "source": {
+                "sourceKey": "wp-aztec-empire",
+                "sourceLocation": "infobox year_start: 1428"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1521,
+              "source": {
+                "sourceKey": "wp-aztec-empire",
+                "sourceLocation": "infobox year_end: 1521"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-aztec-empire",
+              "sourceLocation": "infobox event_start: Foundation of the alliance, 1428"
+            }
+          ],
+          "startEvent": "triple-alliance-formed",
+          "endEvent": "spanish-conquest-of-the-aztec-empire"
+        }
+      ]
+    },
+    {
+      "id": "tlacopan",
+      "name": "Tlacopan",
+      "color": "#8a8aa8",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Tlacopan",
+      "span": {
+        "start": 1428,
+        "end": 1521,
+        "startDates": [
+          {
+            "year": 1428,
+            "source": {
+              "sourceKey": "wp-tlacopan",
+              "sourceLocation": "infobox year_start: 1428"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1521,
+            "source": {
+              "sourceKey": "wp-tlacopan",
+              "sourceLocation": "infobox year_end: 1521"
+            }
+          }
+        ],
+        "startEvent": "triple-alliance-formed",
+        "endEvent": "spanish-conquest-of-the-aztec-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-tlacopan",
+              "sourceLocation": "article"
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "aztec-empire",
+          "start": 1428,
+          "end": 1521,
+          "startDates": [
+            {
+              "year": 1428,
+              "source": {
+                "sourceKey": "wp-aztec-empire",
+                "sourceLocation": "infobox year_start: 1428"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1521,
+              "source": {
+                "sourceKey": "wp-aztec-empire",
+                "sourceLocation": "infobox year_end: 1521"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-aztec-empire",
+              "sourceLocation": "infobox event_start: Foundation of the alliance, 1428"
+            }
+          ],
+          "startEvent": "triple-alliance-formed",
+          "endEvent": "spanish-conquest-of-the-aztec-empire"
+        }
+      ]
+    },
+    {
+      "id": "south-america",
+      "name": "South America",
+      "color": "#3a6a8a",
+      "parent": "americas"
+    },
+    {
+      "id": "cueva-manos",
+      "name": "Cueva de las Manos",
+      "color": "#a05a4a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Cueva_de_las_Manos",
+      "ids": {
+        "wikidata": "Q223385"
+      },
+      "span": {
+        "start": -7299,
+        "end": 700,
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "patagonia",
+          "sources": [
+            {
+              "sourceKey": "wp-cueva-manos",
+              "sourceLocation": "category \"Protected areas of Santa Cruz Province, Argentina\""
+            },
+            {
+              "sourceKey": "wp-cueva-manos",
+              "sourceLocation": "category \"Tourist attractions in Santa Cruz Province, Argentina\""
+            },
+            {
+              "sourceKey": "wp-cueva-manos",
+              "sourceLocation": "infobox location"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moche",
+      "name": "Moche",
+      "color": "#9a5a3a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Moche_culture",
+      "ids": {
+        "wikidata": "Q208188"
+      },
+      "span": {
+        "start": 100,
+        "end": 800
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-moche",
+              "sourceLocation": "category \"Moche culture\" (in \"Andean civilizations\")"
+            },
+            {
+              "sourceKey": "wp-moche",
+              "sourceLocation": "category \"Andean civilizations\""
+            },
+            {
+              "sourceKey": "wp-moche",
+              "sourceLocation": "category \"Prehistory of Peru\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nazca",
+      "name": "Nazca",
+      "color": "#b0703a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
+      "ids": {
+        "wikidata": "Q210570"
+      },
+      "span": {
+        "start": -99,
+        "end": 800,
+        "startDates": [
+          {
+            "year": -99,
+            "source": {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "infobox and lead"
+            }
+          },
+          {
+            "year": -199,
+            "source": {
+              "sourceKey": "wp-nazca-lines",
+              "sourceLocation": "lead ('Nazca phase, from 200 BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "infobox and lead"
+            }
+          },
+          {
+            "year": 750,
+            "source": {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "History > Decline ('by 750 AD')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "category \"Nazca culture\" (in \"Andean civilizations\")"
+            },
+            {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "category \"Nazca culture\" (in \"Archaeology of Peru\")"
+            },
+            {
+              "sourceKey": "wp-nazca",
+              "sourceLocation": "category \"Andean civilizations\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wari",
+      "name": "Wari",
+      "color": "#6a4a3a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Wari_culture",
+      "ids": {
+        "wikidata": "Q605340"
+      },
+      "span": {
+        "start": 450,
+        "end": 1000,
+        "startDates": [
+          {
+            "year": 450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "infobox ('5th century')"
+            }
+          },
+          {
+            "year": 500,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "lead ('from about 500')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "infobox ('10th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "category \"Wari culture\" (in \"Andean civilizations\")"
+            },
+            {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "category \"Andean civilizations\""
+            },
+            {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "category \"Archaeology of Peru\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiwanaku",
+      "name": "Tiwanaku",
+      "color": "#4a6a8a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Tiwanaku",
+      "ids": {
+        "wikidata": "Q61750"
+      },
+      "span": {
+        "start": 110,
+        "end": 1050,
+        "startDates": [
+          {
+            "year": 110,
+            "margin": 60,
+            "source": {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "Site history ('around AD 110 (50–170, 68% probability)')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1050,
+            "source": {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "infobox (abandoned)"
+            }
+          },
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "Site history ('collapsed around AD 1000')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "category \"Archaeological sites in Bolivia\""
+            },
+            {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "category \"World Heritage Sites in Bolivia\""
+            },
+            {
+              "sourceKey": "wp-tiwanaku",
+              "sourceLocation": "category \"Former populated places in Bolivia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sican-culture",
+      "name": "Sican culture (Lambayeque)",
+      "color": "#c0a03a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Sican_culture",
+      "span": {
+        "start": 750,
+        "end": 1375,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 750,
+            "source": {
+              "sourceKey": "wp-sican-culture",
+              "sourceLocation": "lead: \"The Sican (also Sicán) culture is the name that archaeologist Izumi Shimada gave to the culture that inhabited what is now the north coast of Peru between about\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1375,
+            "source": {
+              "sourceKey": "wp-sican-culture",
+              "sourceLocation": "lead: \"The Sican (also Sicán) culture is the name that archaeologist Izumi Shimada gave to the culture that inhabited what is now the north coast of Peru between about\""
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-sican-culture",
+              "sourceLocation": "lead: \"The Sican (also Sicán) culture is the name that archaeologist Izumi Shimada gave to the culture that inhabited what is now the north coast of Peru between about\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chimor",
+      "name": "Chimor (Chimú)",
+      "color": "#8a3a5a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Chimor",
+      "span": {
+        "start": 900,
+        "end": 1470,
+        "startDates": [
+          {
+            "year": 900,
+            "source": {
+              "sourceKey": "wp-chimor",
+              "sourceLocation": "infobox year_start: c. 900"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1470,
+            "source": {
+              "sourceKey": "wp-chimor",
+              "sourceLocation": "infobox year_end: 1470"
+            }
+          }
+        ],
+        "endEvent": "inca-conquest"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-chimor",
+              "sourceLocation": "infobox capital: Chan Chan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "muisca-confederation",
+      "name": "Muisca Confederation",
+      "color": "#5a5a3a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Muisca_Confederations_(political_units)",
+      "span": {
+        "start": 800,
+        "end": 1540,
+        "startDates": [
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-muisca-confederations-political-units",
+              "sourceLocation": "infobox year_start: c. 800"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1540,
+            "source": {
+              "sourceKey": "wp-muisca-confederations-political-units",
+              "sourceLocation": "infobox year_end: 1540"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-muisca-confederations-political-units",
+              "sourceLocation": "infobox capital: Bacatá (Bogotá), Hunza, and Suamox, Tundama(800–1540)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inca-empire",
+      "name": "Inca Empire",
+      "color": "#c0302a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Inca_Empire",
+      "phases": [
+        {
+          "name": "Kingdom of Cusco",
+          "start": 1200,
+          "end": 1438,
+          "startDates": [
+            {
+              "year": 1200,
+              "source": {
+                "sourceKey": "wp-kingdom-of-cusco",
+                "sourceLocation": "infobox year_start: c. 1200"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1438,
+              "source": {
+                "sourceKey": "wp-kingdom-of-cusco",
+                "sourceLocation": "infobox year_end: c. 1438"
+              }
+            }
+          ],
+          "startEvent": "manco-capac-organized-the-kingdom-of-cusco",
+          "endEvent": "cusi-yupanqui-defeats-the-chanka-people"
+        },
+        {
+          "name": "Inca Empire (Tawantinsuyu)",
+          "start": 1438,
+          "end": 1533,
+          "startDates": [
+            {
+              "year": 1438,
+              "source": {
+                "sourceKey": "wp-inca-empire",
+                "sourceLocation": "infobox year_start: 1438"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1533,
+              "source": {
+                "sourceKey": "wp-inca-empire",
+                "sourceLocation": "infobox year_end: 1533/1572"
+              }
+            },
+            {
+              "year": 1572,
+              "source": {
+                "sourceKey": "wp-inca-empire",
+                "sourceLocation": "infobox year_end: 1533/1572"
+              },
+              "note": "The infobox gives 1533 or 1572."
+            }
+          ],
+          "startEvent": "pachacuti-creates-tawantinsuyu"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-inca-empire",
+              "sourceLocation": "infobox capital: Cusco"
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -15274,14 +16726,6 @@
         "wikipedia"
       ]
     },
-    "wp-roman-britain": {
-      "name": "Wikipedia: Roman Britain",
-      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-row-anglo-saxons": {
       "name": "Wikipedia: History of Anglo-Saxon England",
       "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
@@ -15289,6 +16733,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-roman-britain": {
+      "name": "Wikipedia: Roman Britain",
+      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-history-of-anglo-saxon-england": {
       "name": "History of Anglo-Saxon England (Wikipedia)",
@@ -15914,6 +17366,22 @@
         "wikipedia"
       ]
     },
+    "wp-egypt": {
+      "name": "Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Egypt",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ottoman-egypt": {
+      "name": "Ottoman Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ottoman_Egypt",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-second-turkic-khaganate": {
       "name": "Second Turkic Khaganate (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Second_Turkic_Khaganate",
@@ -15962,17 +17430,17 @@
       ],
       "accessed": "2026-11-20"
     },
-    "wp-eastern-turkic": {
-      "name": "Wikipedia: Eastern Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+    "wp-western-turkic": {
+      "name": "Wikipedia: Western Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-western-turkic": {
-      "name": "Wikipedia: Western Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+    "wp-eastern-turkic": {
+      "name": "Wikipedia: Eastern Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
@@ -16410,14 +17878,6 @@
         "wikipedia"
       ]
     },
-    "wp-kanchipuram": {
-      "name": "Wikipedia: Kanchipuram",
-      "url": "https://en.wikipedia.org/wiki/Kanchipuram",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-pallava": {
       "name": "Wikipedia: Pallava dynasty",
       "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
@@ -16425,6 +17885,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-kanchipuram": {
+      "name": "Wikipedia: Kanchipuram",
+      "url": "https://en.wikipedia.org/wiki/Kanchipuram",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-chola-empire": {
       "name": "Chola Empire (Wikipedia)",
@@ -16458,14 +17926,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
@@ -16473,6 +17933,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -16610,9 +18078,9 @@
         "wikipedia"
       ]
     },
-    "wp-yarlung": {
-      "name": "Wikipedia: Yarlung dynasty",
-      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
+    "wp-tibetan-empire": {
+      "name": "Wikipedia: Tibetan Empire",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
       "tags": [
         "wikipedia"
       ],
@@ -16626,17 +18094,9 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-tibetan-empire": {
-      "name": "Wikipedia: Tibetan Empire",
-      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
-    "wp-tuyuhun": {
-      "name": "Wikipedia: Tuyuhun",
-      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+    "wp-yarlung": {
+      "name": "Wikipedia: Yarlung dynasty",
+      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
       "tags": [
         "wikipedia"
       ],
@@ -16649,6 +18109,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-tuyuhun": {
+      "name": "Wikipedia: Tuyuhun",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-tibet-under-yuan-rule": {
       "name": "Tibet under Yuan rule (Wikipedia)",
@@ -16946,9 +18414,9 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-sa-huynh-classical": {
-      "name": "Wikipedia: Sa Huỳnh culture",
-      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+    "wp-kalanay": {
+      "name": "Wikipedia: Kalanay Cave",
+      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
       "tags": [
         "wikipedia"
       ],
@@ -16962,9 +18430,9 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-kalanay": {
-      "name": "Wikipedia: Kalanay Cave",
-      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
+    "wp-sa-huynh-classical": {
+      "name": "Wikipedia: Sa Huỳnh culture",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
       "tags": [
         "wikipedia"
       ],
@@ -17286,6 +18754,254 @@
     "wp-mutapa-empire": {
       "name": "Mutapa Empire (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Mutapa_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dorset": {
+      "name": "Wikipedia: Dorset culture",
+      "url": "https://en.wikipedia.org/wiki/Dorset_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-hohokam": {
+      "name": "Wikipedia: Hohokam",
+      "url": "https://en.wikipedia.org/wiki/Hohokam",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-fremont-culture": {
+      "name": "Fremont culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fremont_culture",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-plaquemine-culture": {
+      "name": "Plaquemine culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Plaquemine_culture",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-teotihuacan": {
+      "name": "Wikipedia: Teotihuacan",
+      "url": "https://en.wikipedia.org/wiki/Teotihuacan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-monte-alban": {
+      "name": "Wikipedia: Monte Albán",
+      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-zapotec": {
+      "name": "Wikipedia: Zapotec civilization",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tikal": {
+      "name": "Wikipedia: Tikal",
+      "url": "https://en.wikipedia.org/wiki/Tikal",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-calakmul": {
+      "name": "Wikipedia: Calakmul",
+      "url": "https://en.wikipedia.org/wiki/Calakmul",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-copan": {
+      "name": "Wikipedia: Copán",
+      "url": "https://en.wikipedia.org/wiki/Cop%C3%A1n",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-palenque": {
+      "name": "Wikipedia: Palenque",
+      "url": "https://en.wikipedia.org/wiki/Palenque",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-toltec-empire": {
+      "name": "Toltec Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Toltec_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-league-of-mayapan": {
+      "name": "League of Mayapan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/League_of_Mayapan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-k-iche-kingdom-of-q-umarkaj": {
+      "name": "Kʼicheʼ kingdom of Qʼumarkaj (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kʼicheʼ_kingdom_of_Qʼumarkaj",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pur-pecha-empire": {
+      "name": "Purépecha Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Purépecha_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tlaxcala-nahua-state": {
+      "name": "Tlaxcala (Nahua state) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tlaxcala_(Nahua_state)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-aztec-empire": {
+      "name": "Aztec Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aztec_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tenochtitlan": {
+      "name": "Tenochtitlan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tenochtitlan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tetzcoco-altepetl": {
+      "name": "Tetzcoco (altepetl) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tetzcoco_(altepetl)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tlacopan": {
+      "name": "Tlacopan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tlacopan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cueva-manos": {
+      "name": "Wikipedia: Cueva de las Manos",
+      "url": "https://en.wikipedia.org/wiki/Cueva_de_las_Manos",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-moche": {
+      "name": "Wikipedia: Moche culture",
+      "url": "https://en.wikipedia.org/wiki/Moche_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-nazca": {
+      "name": "Wikipedia: Nazca culture",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-nazca-lines": {
+      "name": "Wikipedia: Nazca Lines",
+      "url": "https://en.wikipedia.org/wiki/Nazca_Lines",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-wari": {
+      "name": "Wikipedia: Wari culture",
+      "url": "https://en.wikipedia.org/wiki/Wari_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tiwanaku": {
+      "name": "Wikipedia: Tiwanaku",
+      "url": "https://en.wikipedia.org/wiki/Tiwanaku",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-sican-culture": {
+      "name": "Sican culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sican_culture",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-chimor": {
+      "name": "Chimor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chimor",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-muisca-confederations-political-units": {
+      "name": "Muisca Confederations (political units) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muisca_Confederations_(political_units)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-cusco": {
+      "name": "Kingdom of Cusco (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Cusco",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-inca-empire": {
+      "name": "Inca Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Inca_Empire",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -25661,6 +27377,306 @@
           "sourceLocation": "infobox event2: Nyatsimba Mutota leaves to establish the Kingdom of Mutapa, c. 1450"
         }
       ]
+    },
+    {
+      "uuid": "toltecs-arrive-at-mam-he-mi-and-rename-it-tollan",
+      "title": "Toltecs arrive at Mam-he-mi, and rename it Tollan",
+      "descr": "",
+      "start": 674,
+      "tracks": [
+        "toltec-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-toltec-empire",
+          "sourceLocation": "infobox event_start: Toltecs arrive at Mam-he-mi, and rename it Tollan, 674 (disputed)"
+        }
+      ]
+    },
+    {
+      "uuid": "abandonment-of-tollan-xicocotitlan",
+      "title": "Abandonment of Tollan-Xicocotitlan",
+      "descr": "",
+      "start": 1122,
+      "tracks": [
+        "toltec-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-toltec-empire",
+          "sourceLocation": "infobox event_end: Abandonment of Tollan-Xicocotitlan, 1122 (disputed)"
+        }
+      ]
+    },
+    {
+      "uuid": "topiltzin-ce-acatl-quetzalcoatl-goes-into-exile-and-leaves-f",
+      "title": "Topiltzin Ce Acatl Quetzalcoatl goes into exile and leaves for Tlapallan",
+      "descr": "",
+      "start": 947,
+      "tracks": [
+        "toltec-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-toltec-empire",
+          "sourceLocation": "infobox event2: Topiltzin Ce Acatl Quetzalcoatl goes into exile and leaves for Tlapallan, 947 (disputed)"
+        }
+      ]
+    },
+    {
+      "uuid": "ah-mekat-tutul-xiu-unites-chichen-itza-mayapan-and-uxmal",
+      "title": "Ah Mekat Tutul Xiu unites Chichen Itza, Mayapan, and Uxmal",
+      "descr": "",
+      "start": 1007,
+      "tracks": [
+        "league-of-mayapan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-league-of-mayapan",
+          "sourceLocation": "infobox event_start: Ah Mekat Tutul Xiu unites Chichen Itza, Mayapan, and Uxmal, 1007"
+        }
+      ]
+    },
+    {
+      "uuid": "rebellions-by-the-tutul-xiu-and-their-allies-disintegrate-th",
+      "title": "Rebellions by the Tutul Xiu and their allies disintegrate the government",
+      "descr": "",
+      "start": 1441,
+      "tracks": [
+        "league-of-mayapan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-league-of-mayapan",
+          "sourceLocation": "infobox event_end: Rebellions by the Tutul Xiu and their allies disintegrate the government, 1441"
+        }
+      ]
+    },
+    {
+      "uuid": "hunac-ceel-cauich-claims-divine-power-and-attempts-to-reform",
+      "title": "Hunac Ceel Cauich claims divine power and attempts to reform the government",
+      "descr": "",
+      "start": 1194,
+      "tracks": [
+        "league-of-mayapan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-league-of-mayapan",
+          "sourceLocation": "infobox event1: Hunac Ceel Cauich claims divine power and attempts to reform the government, 1194"
+        }
+      ]
+    },
+    {
+      "uuid": "end-of-the-k-iche-kingdom-of-q-umarkaj",
+      "title": "End of the Kʼicheʼ kingdom of Qʼumarkaj",
+      "descr": "",
+      "start": 1524,
+      "tracks": [
+        "kiche-kingdom-of-qumarkaj"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-k-iche-kingdom-of-q-umarkaj",
+          "sourceLocation": "infobox event_end: Conquered, 1524"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-by-new-spain",
+      "title": "Conquered by New Spain",
+      "descr": "",
+      "start": 1530,
+      "tracks": [
+        "purepecha-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pur-pecha-empire",
+          "sourceLocation": "infobox event_end: Conquered by New Spain, 1530"
+        }
+      ]
+    },
+    {
+      "uuid": "tlaxcaltec-migration-to-central-mexico",
+      "title": "Tlaxcaltec migration to Central Mexico",
+      "descr": "",
+      "start": 1348,
+      "tracks": [
+        "tlaxcala-nahua-state"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tlaxcala-nahua-state",
+          "sourceLocation": "infobox event_start: Tlaxcaltec migration to Central Mexico, 1348"
+        }
+      ]
+    },
+    {
+      "uuid": "spanish-conquest-of-the-aztec-empire",
+      "title": "Spanish conquest of the Aztec Empire",
+      "descr": "",
+      "start": 1520,
+      "tracks": [
+        "tlaxcala-nahua-state",
+        "aztec-empire",
+        "tenochtitlan",
+        "tetzcoco",
+        "tlacopan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tlaxcala-nahua-state",
+          "sourceLocation": "infobox event_end: Spanish conquest of the Aztec Empire, 1520"
+        },
+        {
+          "sourceKey": "wp-aztec-empire",
+          "sourceLocation": "infobox event_end: Spanish conquest, 13 August 1521"
+        },
+        {
+          "sourceKey": "wp-tetzcoco-altepetl",
+          "sourceLocation": "infobox event_end: Spanish conquest of the Aztec Empire, 1521"
+        },
+        {
+          "sourceKey": "wp-tlacopan",
+          "sourceLocation": "infobox event_end: Spanish conquest of the Aztec Empire, 1521"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "triple-alliance-formed",
+      "title": "Triple Alliance formed",
+      "descr": "",
+      "start": 1428,
+      "tracks": [
+        "aztec-empire",
+        "tenochtitlan",
+        "tetzcoco",
+        "tlacopan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aztec-empire",
+          "sourceLocation": "infobox event_start: Foundation of the alliance, 1428"
+        },
+        {
+          "sourceKey": "wp-tenochtitlan",
+          "sourceLocation": "infobox event2: Formation of the Aztec Empire, 1428"
+        },
+        {
+          "sourceKey": "wp-tlacopan",
+          "sourceLocation": "infobox event_start: Formation of the Aztec Empire, 1428"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "foundation-1325",
+      "title": "Tenochtitlan founded",
+      "descr": "",
+      "start": 1325,
+      "tracks": [
+        "tenochtitlan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tenochtitlan",
+          "sourceLocation": "infobox event_start: Foundation, 1325"
+        }
+      ]
+    },
+    {
+      "uuid": "destruction-due-to-the-spanish-conquest-of-mexico",
+      "title": "Destruction due to the Spanish conquest of Mexico",
+      "descr": "",
+      "start": 1521,
+      "tracks": [
+        "tenochtitlan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tenochtitlan",
+          "sourceLocation": "infobox event_end: Destruction due to the Spanish conquest of Mexico, 1521"
+        }
+      ]
+    },
+    {
+      "uuid": "inca-conquest",
+      "title": "Inca conquest",
+      "descr": "",
+      "start": 1470,
+      "tracks": [
+        "chimor"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chimor",
+          "sourceLocation": "infobox event_end: Inca conquest, 1470"
+        }
+      ]
+    },
+    {
+      "uuid": "manco-capac-organized-the-kingdom-of-cusco",
+      "title": "Manco Capac organized the Kingdom of Cusco",
+      "descr": "",
+      "start": 1200,
+      "tracks": [
+        "inca-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-cusco",
+          "sourceLocation": "infobox event_start: Manco Capac organized the Kingdom of Cusco, c. 1200"
+        }
+      ]
+    },
+    {
+      "uuid": "cusi-yupanqui-defeats-the-chanka-people",
+      "title": "Cusi Yupanqui defeats the Chanka people",
+      "descr": "",
+      "start": 1438,
+      "tracks": [
+        "inca-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-cusco",
+          "sourceLocation": "infobox event_end: Cusi Yupanqui defeats the Chanka people, c. 1438"
+        }
+      ]
+    },
+    {
+      "uuid": "inca-roca-overthrows-capac-yupanqui-and-becomes-the-first-ha",
+      "title": "Inca Roca overthrows Capac Yupanqui and becomes the first Hanan Cusco ruler",
+      "descr": "",
+      "start": 1350,
+      "tracks": [
+        "inca-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-cusco",
+          "sourceLocation": "infobox event1: Inca Roca overthrows Capac Yupanqui and becomes the first Hanan Cusco ruler, c. 1350"
+        }
+      ]
+    },
+    {
+      "uuid": "pachacuti-creates-tawantinsuyu",
+      "title": "Pachacuti creates Tawantinsuyu",
+      "descr": "",
+      "start": 1438,
+      "tracks": [
+        "inca-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-inca-empire",
+          "sourceLocation": "infobox event_start: Pachacuti created the Tawantinsuyu, 1438"
+        }
+      ],
+      "importance": 1
     }
   ]
 }
