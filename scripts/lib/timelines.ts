@@ -1,6 +1,6 @@
 // The timelines built from a readable source file (data-src/), and every file and script that belongs to each.
 // One table, so the data commands (scripts/data.ts), the key-event list and the tests agree on the paths.
-// The bundled timeline is here.
+// The bundled timelines are here.
 
 export interface SourceTimeline {
   /** The short name used in commands: `npm run data -- build <short>`. */
@@ -43,6 +43,15 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     memberships: 'data-src/ancient-classical-memberships.json',
     keyEvents: 'docs/ancient-classical-key-events.md',
     scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign', 'derived-lifespans']),
+  },
+  {
+    // generated: data-src/modern-states.json is written by pipelines/modern-states/gen_modern.py (pipelines/README.md),
+    // not by hand or by content scripts; listed so `data:build` and CI check its compiled file
+    short: 'modern-states',
+    id: 'modern-states',
+    source: 'data-src/modern-states.json',
+    compiled: 'public/timelines/modern-states.json',
+    scripts: [],
   },
 ];
 

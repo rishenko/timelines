@@ -1,0 +1,4 @@
+# Generator reports and partial-run manifests (gen_modern.py ... <some modules>)
+out/
+__pycache__/
+.venv/

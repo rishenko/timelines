@@ -1,0 +1,3797 @@
+{
+  "about": "Event descriptions (Kevin: one pass after the last wave; this is the PILOT of 18, 2026-11-21). Each says only what the cited sentences say; 'basis' lists [article, a phrase from the sentence]. gen_medieval.py applies them and adds each basis sentence to the event's sources (lead or section opener), refusing any phrase it can't find.",
+  "events": {
+    "song-founded": {
+      "descr": "The Song dynasty begins its rule of China, which lasts until 1279. In its Northern Song period (960–1127) the capital is Bianjing, now Kaifeng.",
+      "basis": [
+        [
+          "Song dynasty",
+          "ruled from 960 to 1279"
+        ],
+        [
+          "Song dynasty",
+          "the capital was in the northern city of Bianjing"
+        ]
+      ]
+    },
+    "ming-founded": {
+      "descr": "After the collapse of the Mongol-led Yuan dynasty, the Ming dynasty takes power; it rules China until 1644.",
+      "basis": [
+        [
+          "Ming dynasty",
+          "following the collapse of the Mongol-led Yuan dynasty"
+        ]
+      ]
+    },
+    "christianisation-of-bulgaria": {
+      "descr": "Under Byzantium's strong cultural influence, Bulgaria adopts Christianity.",
+      "basis": [
+        [
+          "First Bulgarian Empire",
+          "eventual adoption of Christianity in 864"
+        ]
+      ]
+    },
+    "proclamation-of-the-empire": {
+      "descr": "The Kingdom of Serbia is proclaimed an empire. Kingship carries on as an institution: the title of king is kept for a co-ruler of the emperor.",
+      "basis": [
+        [
+          "Kingdom of Serbia (1217–1346)",
+          "proclaimed an empire in 1346"
+        ]
+      ]
+    },
+    "battle-of-mohacs": {
+      "descr": "King Louis II dies in the battle. After a brief dynastic dispute, the crowns of Hungary and Croatia pass to the Austrian House of Habsburg, and both realms become part of the Habsburg monarchy.",
+      "basis": [
+        [
+          "Croatia in personal union with Hungary",
+          "After the death of Louis II in 1526"
+        ]
+      ]
+    },
+    "treaty-of-verdun": {
+      "descr": "After three years of civil war following the death of Louis the Pious, his three sons divide Francia into three kingdoms: East, Middle and West Francia.",
+      "basis": [
+        [
+          "East Francia",
+          "the Treaty of Verdun was signed by his three sons"
+        ],
+        [
+          "East Francia",
+          "divided the former kingdom of Francia into three kingdoms"
+        ]
+      ]
+    },
+    "coronation-of-stephen-i": {
+      "descr": "Stephen I is crowned at Esztergom on Christmas Day 1000 (or 1 January 1001), and the Principality of Hungary is succeeded by the Christian Kingdom of Hungary.",
+      "basis": [
+        [
+          "Principality of Hungary",
+          "coronation of St Stephen I at Esztergom"
+        ]
+      ]
+    },
+    "battle-of-grunwald": {
+      "descr": "After this battle and the Battle of Wilkomierz (1435), the State of the Teutonic Order falls into decline.",
+      "basis": [
+        [
+          "State of the Teutonic Order",
+          "Following the battles of Grunwald in 1410"
+        ]
+      ]
+    },
+    "sicilian-vespers": {
+      "descr": "A revolt on the island of Sicily throws off the brief Angevin rule of Charles of Anjou.",
+      "basis": [
+        [
+          "Kingdom of Sicily",
+          "a revolt in 1282 known as the Sicilian Vespers"
+        ]
+      ]
+    },
+    "conquest-of-granada": {
+      "descr": "Muhammad XI, the last Nasrid ruler, formally surrenders Granada in January, ending independent Muslim rule in the Iberian Peninsula.",
+      "basis": [
+        [
+          "Emirate of Granada",
+          "formally surrendered Granada in January 1492"
+        ]
+      ]
+    },
+    "abd-al-rahman-iii-proclaims-himself-caliph": {
+      "descr": "The Umayyad emir of Córdoba takes the title of caliph: the independent emirate ruled since 756 becomes the Caliphate of Córdoba.",
+      "basis": [
+        [
+          "Emirate of Córdoba",
+          "until Abd al-Rahman III proclaimed himself as caliph in 929"
+        ]
+      ]
+    },
+    "capetian-dynasty-established": {
+      "descr": "The Robertians, counts of Paris, become kings and found the Capetian dynasty; West Francia, the first stage of the Kingdom of France, ends.",
+      "basis": [
+        [
+          "West Francia",
+          "established the Capetian dynasty after 987"
+        ],
+        [
+          "West Francia",
+          "constitutes the initial stage of the Kingdom of France"
+        ]
+      ]
+    },
+    "hundred-years-war": {
+      "descr": "A series of conflicts in which the kings of England lay claim to the French throne.",
+      "basis": [
+        [
+          "Kingdom of France",
+          "Hundred Years' War (1337–1453)"
+        ]
+      ]
+    },
+    "kalmar-union-formed": {
+      "descr": "Sweden joins Norway and Denmark to form the Scandinavian Kalmar Union; Sweden leaves it in 1523.",
+      "basis": [
+        [
+          "Sweden",
+          "to form the Scandinavian Kalmar Union"
+        ]
+      ]
+    },
+    "saladin-abolishes-the-fatimid-caliphate": {
+      "descr": "Saladin ends the Fatimid dynasty's rule and founds the Ayyubid dynasty, bringing the Levant and Egypt back into the nominal sphere of authority of the Abbasid Caliphate.",
+      "basis": [
+        [
+          "Fatimid Caliphate",
+          "In 1171, Saladin abolished the dynasty's rule"
+        ]
+      ]
+    },
+    "murder-of-turanshah-the-mamluks-take-power": {
+      "descr": "Mamluk regiments of the Ayyubid sultan al-Salih Ayyub seize power from his successor. The first, Turkic or Bahri, period of Mamluk rule lasts until 1382.",
+      "basis": [
+        [
+          "Mamluk Sultanate",
+          "usurping power from his successor in 1250"
+        ],
+        [
+          "Mamluk Sultanate",
+          "the Turkic or Bahri period (1250–1382)"
+        ]
+      ]
+    },
+    "battle-of-manzikert": {
+      "descr": "A decisive turning point in the Byzantine–Seljuk wars in the Seljuks' favour, after their expansion into eastern Anatolia; it undermines the authority of the Byzantine Empire.",
+      "basis": [
+        [
+          "Seljuk Empire",
+          "the Battle of Manzikert in 1071"
+        ]
+      ]
+    },
+    "triple-alliance-formed": {
+      "descr": "After conquering Azcapotzalco, Tlacopan allies with Tenochtitlan and Texcoco. The Aztec Triple Alliance gives birth to the Aztec Empire.",
+      "basis": [
+        [
+          "Tlacopan",
+          "Tlacopan allied with the neighbouring city-states of Tenochtitlan and Texcoco"
+        ]
+      ]
+    },
+    "hispania-sindh": {
+      "descr": "Tariq ibn Ziyad, the Berber mawla of Musa, invades the Visigothic Kingdom; within five years most of Hispania is conquered.",
+      "basis": [
+        [
+          "Umayyad Caliphate",
+          "invaded the Visigothic Kingdom in 711"
+        ]
+      ]
+    },
+    "seljuks-take-baghdad": {
+      "descr": "The Seljuq Turks take control of Baghdad. By now the Abbasid caliphs are figureheads, with real power held by others.",
+      "basis": [
+        [
+          "Abbasid Caliphate",
+          "who took control of Baghdad in 945 and 1055"
+        ]
+      ]
+    },
+    "huang-chao-rebellion": {
+      "descr": "Huang Chao's rebellion (874–884) devastates northern and southern China, takes a decade to suppress, and ends with both Chang'an and Luoyang sacked.",
+      "basis": [
+        [
+          "Tang dynasty",
+          "a rebellion by Huang Chao (874–884)"
+        ]
+      ]
+    },
+    "chanyuan-treaty": {
+      "descr": "The Song and the Liao sign the Chanyuan Treaty, ending yearly border clashes: the Song pay the Liao a yearly tribute in silk and silver, and the two emperors address each other as equals.",
+      "basis": [
+        [
+          "Song dynasty",
+          "the signing of the Chanyuan Treaty ended"
+        ],
+        [
+          "Liao dynasty",
+          "the two sides signed the Chanyuan Treaty"
+        ]
+      ]
+    },
+    "red-turban-rebellion": {
+      "descr": "The Red Turban Rebellion, led by Song loyalists, begins and grows into a nationwide uprising; the loyalists declare a renewed Song dynasty with its capital at Kaifeng.",
+      "basis": [
+        [
+          "Yuan dynasty",
+          "the Red Turban Rebellion led by Song loyalists"
+        ]
+      ]
+    },
+    "new-bulgarian-state-recognized-by-eastern-roman-empire": {
+      "descr": "Defeated, the Byzantines sign a peace treaty that recognises Bulgaria as an independent state, cedes the lands north of the Balkan Mountains and pays a yearly tribute.",
+      "basis": [
+        [
+          "First Bulgarian Empire",
+          "the Byzantines were compelled to sign a humiliating peace treaty"
+        ]
+      ]
+    },
+    "theme-bulgaria-established-in-byzantine-empire": {
+      "descr": "The last Bulgarian strongholds surrender, and Basil II annexes Bulgaria to the Byzantine Empire; the First Bulgarian Empire ceases to exist.",
+      "basis": [
+        [
+          "First Bulgarian Empire",
+          "By 1018, the last Bulgarian strongholds had surrendered"
+        ]
+      ]
+    },
+    "adoption-of-old-bulgarian-as-a-national-language": {
+      "descr": "The Council of Preslav moves the capital from Pliska to Preslav, banishes the Byzantine clergy, and replaces Greek with Old Bulgarian in the liturgy.",
+      "basis": [
+        [
+          "First Bulgarian Empire",
+          "In 893 he convened the Council of Preslav"
+        ]
+      ]
+    },
+    "simeon-i-assumes-the-title-of-tsar-emperor": {
+      "descr": "Bulgaria's rulers first take the imperial title of tsar.",
+      "basis": [
+        [
+          "First Bulgarian Empire",
+          "adopted the imperial title Tsar, firstly in 913"
+        ]
+      ]
+    },
+    "second-bulgarian-empire-re-established": {
+      "descr": "The Second Bulgarian Empire begins; it lasts until 1396, perhaps with remnants until 1422.",
+      "basis": [
+        [
+          "Second Bulgarian Empire",
+          "existed from 1185 to 1396"
+        ]
+      ]
+    },
+    "proclamation-of-the-kingdom": {
+      "descr": "The medieval Kingdom of Serbia begins under the Nemanjić dynasty; it lasts until 1346.",
+      "basis": [
+        [
+          "Kingdom of Serbia (1217–1346)",
+          "existed from 1217 to 1346"
+        ]
+      ]
+    },
+    "end-of-the-serbian-empire": {
+      "descr": "Uroš V dies childless, after much of the Serbian nobility was killed at the Battle of Maritsa. With his death the Serbian Empire effectively ends and the state breaks up.",
+      "basis": [
+        [
+          "Serbian Empire",
+          "effectively ended with the death of Uroš V in 1371"
+        ],
+        [
+          "Serbian Empire",
+          "Stefan Uroš V died childless on 4 December 1371"
+        ]
+      ]
+    },
+    "du-ans-code": {
+      "descr": "The first of two state assemblies, at Skopje, enacts Dušan's Code; the second follows at Serres in 1354.",
+      "basis": [
+        [
+          "Serbian Empire",
+          "Dušan's Code was enacted in two state assemblies"
+        ]
+      ]
+    },
+    "ottoman-conquest-of-the-serbian-despotate": {
+      "descr": "Murad II's army attacks and sacks Serbia; Smederevo falls after a three-month siege, while Novo Brdo holds out until 1441.",
+      "basis": [
+        [
+          "Serbian Despotate",
+          "In 1439, the Ottoman army"
+        ],
+        [
+          "Serbian Despotate",
+          "Smederevo fell on August 18, 1439"
+        ]
+      ]
+    },
+    "ottoman-reconquest-of-the-serbian-despotate": {
+      "descr": "Three years after Despot Đurađ Branković's death, the Despotate falls under Ottoman rule. Titular despots of Serbia carry on in exile in Hungary.",
+      "basis": [
+        [
+          "Serbian Despotate",
+          "finally fell under Ottoman rule in 1459"
+        ],
+        [
+          "Serbian Despotate",
+          "continued to exist in exile"
+        ]
+      ]
+    },
+    "elevated-to-the-status-of-kingdom": {
+      "descr": "Under Tomislav, Croatia becomes a kingdom.",
+      "basis": [
+        [
+          "Duchy of Croatia",
+          "during the rule of Tomislav, Croatia became a kingdom"
+        ]
+      ]
+    },
+    "croatia-under-frankish-vassalage": {
+      "descr": "In the 790s Duke Vojnomir of Pannonia accepts Frankish overlordship, and the Franks try to extend their rule over the Croatians of Dalmatia.",
+      "basis": [
+        [
+          "Duchy of Croatia",
+          "Duke Vojnomir of Pannonia accepted the Frankish overlordship"
+        ]
+      ]
+    },
+    "papal-recognition": {
+      "descr": "The Duchy under Branimir, now free of Frankish suzerainty, receives papal recognition as a state.",
+      "basis": [
+        [
+          "Duchy of Croatia",
+          "received papal recognition as a state"
+        ]
+      ]
+    },
+    "succession-crisis-and-coronation-of-king-coloman-of-hungary": {
+      "descr": "After a decade of conflict over the throne, Coloman of Hungary is crowned King of Croatia and Dalmatia in Biograd, uniting the two kingdoms under one crown.",
+      "basis": [
+        [
+          "Kingdom of Croatia (925–1102)",
+          "the crown passed to the Árpád dynasty"
+        ]
+      ]
+    },
+    "treaty-of-zadar": {
+      "descr": "Venice is forced to sign the Treaty of Zadar and gives up all claims to Dalmatia.",
+      "basis": [
+        [
+          "Croatia in personal union with Hungary",
+          "Venice was forced to sign the Treaty of Zadar"
+        ],
+        [
+          "Republic of Ragusa",
+          "the Treaty of Zadar forced Venice"
+        ]
+      ]
+    },
+    "battle-of-krbava-field": {
+      "descr": "About 10,000 Croatian troops meet Ottoman forces in open battle near Udbina in Lika and suffer a huge defeat.",
+      "basis": [
+        [
+          "Croatia in personal union with Hungary",
+          "Croatian nobles gathered around 10,000 men"
+        ]
+      ]
+    },
+    "first-known-ban-ban-bori": {
+      "descr": "Ban Borić, the first known Bosnian ruler, appears as a Hungarian vassal at the Siege of Braničevo.",
+      "basis": [
+        [
+          "Banate of Bosnia",
+          "Ban Borić appears as the first known Bosnian ruler"
+        ]
+      ]
+    },
+    "tvrtko-i-crowned-king-of-bosnia": {
+      "descr": "Ban Tvrtko Kotromanić, under whom the banate reached its peak, has himself crowned king, and Bosnia becomes a kingdom.",
+      "basis": [
+        [
+          "Banate of Bosnia",
+          "had himself crowned as King on 26 October 1377"
+        ]
+      ]
+    },
+    "ottoman-conquest-of-bosnia": {
+      "descr": "The Ottomans capture and kill Stephen Tomašević, the last king of Bosnia. The kingdom falls and eventually becomes the westernmost Ottoman province.",
+      "basis": [
+        [
+          "Kingdom of Bosnia",
+          "Stephen Tomašević, the last king of Bosnia"
+        ],
+        [
+          "Kingdom of Bosnia",
+          "The Kingdom fell in 1463"
+        ]
+      ]
+    },
+    "wallachian-independence": {
+      "descr": "After Basarab I's victory over Hungary at the Battle of Posada, the Wallachian state is consolidated and enters a period of relative independence.",
+      "basis": [
+        [
+          "Wallachia",
+          "following Basarab I's victory in the Battle of Posada"
+        ]
+      ]
+    },
+    "ottoman-suzerainty-for-the-first-time": {
+      "descr": "Wallachia is forced to accept Ottoman suzerainty for the first time, after Mehmed I takes Turnu Măgurele and Giurgiu. The suzerainty lasts until the mid-19th century.",
+      "basis": [
+        [
+          "Wallachia",
+          "In 1417, Wallachia was forced to accept the suzerainty"
+        ],
+        [
+          "Wallachia",
+          "accepted a peace treaty with the Ottomans in 1417"
+        ]
+      ]
+    },
+    "ragusa-becomes-an-ottoman-tributary": {
+      "descr": "The Republic signs a treaty with the Ottomans that makes it a tributary of the sultan.",
+      "basis": [
+        [
+          "Republic of Ragusa",
+          "In 1458, the Republic signed a treaty with the Ottomans"
+        ]
+      ]
+    },
+    "joint-nicean-bulgarian-campaign-against-empire": {
+      "descr": "Allied with Bulgaria, John III Doukas Vatatzes of Nicaea campaigns against the Latin Empire and besieges Constantinople without success.",
+      "basis": [
+        [
+          "Latin Empire",
+          "which in 1235 resulted in a joint campaign"
+        ]
+      ]
+    },
+    "byzantine-conquest-of-epirus": {
+      "descr": "The restored Byzantine Empire conquers Epirus. Emperor Andronikos III Palaiologos arrives in northern Epirus with an army partly made up of 2,000 Turks from his ally Umur of Aydın.",
+      "basis": [
+        [
+          "Despotate of Epirus",
+          "until being conquered by the restored Palaiologan Byzantine Empire"
+        ],
+        [
+          "Despotate of Epirus",
+          "In 1337 the new Emperor, Andronikos III Palaiologos"
+        ]
+      ]
+    },
+    "re-establishment-by-nikephoros-ii-orsini": {
+      "descr": "Using the Byzantine civil war and the death of Dušan, Nikephoros II escapes, re-establishes himself in Epirus and adds Thessaly.",
+      "basis": [
+        [
+          "Despotate of Epirus",
+          "to escape and to reestablish himself in Epirus in 1356"
+        ]
+      ]
+    },
+    "empire-of-trebizond-established": {
+      "descr": "Alexios Komnenos and his brother David seize Trebizond and the province of Chaldia, with troops from their relative Queen Tamar of Georgia, a few weeks before the Sack of Constantinople.",
+      "basis": [
+        [
+          "Empire of Trebizond",
+          "The Trapezuntine Empire was formed in 1204"
+        ],
+        [
+          "Empire of Trebizond",
+          "The empire traces its foundation to April 1204"
+        ]
+      ]
+    },
+    "fall-of-trebizond": {
+      "descr": "After a month-long siege, Ottoman sultan Mehmed II conquers Trebizond and takes its ruler and his family captive.",
+      "basis": [
+        [
+          "Empire of Trebizond",
+          "Trebizond lasted until 1461"
+        ]
+      ]
+    },
+    "john-ii-renounces-imperial-claims": {
+      "descr": "By a treaty with Michael, John II Komnenos strips off his imperial regalia before the walls of Constantinople, marries Michael's daughter, and accepts the title of despot.",
+      "basis": [
+        [
+          "Empire of Trebizond",
+          "In 1282, John II Komnenos"
+        ]
+      ]
+    },
+    "treaty-of-meerssen": {
+      "descr": "The Treaty of Meerssen adds the western part of Lotharingia to West Francia.",
+      "basis": [
+        [
+          "West Francia",
+          "With the 870 Treaty of Meerssen"
+        ]
+      ]
+    },
+    "end-of-great-moravia": {
+      "descr": "Great Moravia collapses at an unknown date between 902 and 907. Historians differ: the Hungarians occupied it in 902, or 903–904, or the state ended in 907.",
+      "basis": [
+        [
+          "Great Moravia",
+          "The exact date of Moravia's collapse is unknown"
+        ],
+        [
+          "Great Moravia",
+          "Róna-Tas writes that the Hungarians occupied Moravia in 902"
+        ]
+      ]
+    },
+    "raised-to-kingdom": {
+      "descr": "Duke Ottokar I has himself elevated by the German king Philip of Swabia, and the Duchy of Bohemia becomes a hereditary kingdom. Emperor Frederick II confirms the royal title in the Golden Bull of Sicily (1212).",
+      "basis": [
+        [
+          "Duchy of Bohemia",
+          "was raised to a hereditary Kingdom of Bohemia"
+        ],
+        [
+          "Duchy of Bohemia",
+          "In 1212, Ottokar I, bearing the title"
+        ]
+      ]
+    },
+    "bohemia-becomes-a-state-of-the-holy-roman-empire": {
+      "descr": "With Bohemia occupied by Bolesław I of Poland and the Přemyslids divided, Duke Vladivoj receives the duchy as a fief from King Henry II, and it becomes an Imperial State of the Holy Roman Empire.",
+      "basis": [
+        [
+          "Duchy of Bohemia",
+          "Duke Vladivoj received Bohemia as a fief"
+        ]
+      ]
+    },
+    "became-main-part-of-the-crown-of-bohemia": {
+      "descr": "Charles IV creates the Crown of Bohemia, joining the kingdom with incorporated provinces such as the Margraviate of Moravia.",
+      "basis": [
+        [
+          "Kingdom of Bohemia",
+          "In 1348 Charles IV created the Crown of Bohemia"
+        ]
+      ]
+    },
+    "king-confirmed-elector": {
+      "descr": "Charles IV's Golden Bull of 1356 codifies how the emperor is elected and names the King of Bohemia among the seven electors.",
+      "basis": [
+        [
+          "Kingdom of Bohemia",
+          "he issued the Golden Bull of 1356"
+        ]
+      ]
+    },
+    "privilegium-minus": {
+      "descr": "The Privilegium Minus detaches the Margraviate of Austria from Bavaria and raises it to a duchy in its own right.",
+      "basis": [
+        [
+          "Duchy of Austria",
+          "established in 1156 by the Privilegium Minus"
+        ]
+      ]
+    },
+    "georgenberg-pact": {
+      "descr": "The Babenbergs sign the Georgenberg Pact with Duke Ottokar IV of Styria; on his death in 1192 they acquire Styria, ruled with Austria in personal union until 1918.",
+      "basis": [
+        [
+          "Duchy of Austria",
+          "they signed the Georgenberg Pact"
+        ]
+      ]
+    },
+    "battle-on-the-marchfeld": {
+      "descr": "United Austrian and Hungarian forces defeat and kill King Ottokar.",
+      "basis": [
+        [
+          "Duchy of Austria",
+          "King Ottokar was finally defeated and killed"
+        ]
+      ]
+    },
+    "privilegium-maius": {
+      "descr": "Duke Rudolf has the Privilegium Maius forged to make himself a privileged \"archduke\" of the Empire, but Emperor Charles IV does not confirm it.",
+      "basis": [
+        [
+          "Duchy of Austria",
+          "he had the Privilegium Maius forged"
+        ]
+      ]
+    },
+    "treaty-of-neuberg": {
+      "descr": "After Rudolf IV's rule, his brothers Albert III and Leopold III divide the Austrian domains between them by the Treaty of Neuberg.",
+      "basis": [
+        [
+          "Duchy of Austria",
+          "in accordance with the Treaty of Neuberg"
+        ]
+      ]
+    },
+    "battle-of-pressburg": {
+      "descr": "After the Battle of Pressburg, no western army attacks Hungary for more than 100 years, until 1030.",
+      "basis": [
+        [
+          "Principality of Hungary",
+          "after the Battle of Pressburg in 907"
+        ]
+      ]
+    },
+    "battle-of-lechfeld": {
+      "descr": "A Hungarian defeat at Lechfeld, one of two (with Arcadiopolis in 970) that mark a shift in the Hungarian principality.",
+      "basis": [
+        [
+          "Principality of Hungary",
+          "two military defeats in 955 (Lechfeld)"
+        ]
+      ]
+    },
+    "death-of-king-andrew-iii-the-last-member-of-the-house-of-arp": {
+      "descr": "Andrew III, the last male descendant of the Árpád dynasty, dies unexpectedly while a young pretender is marching from Croatia towards Buda.",
+      "basis": [
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "the last male descendant of the native Árpád dynasty"
+        ],
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "Andrew III unexpectedly died on 14 January 1301"
+        ]
+      ]
+    },
+    "golden-bull-of-1222": {
+      "descr": "A movement of the royal servants forces Andrew II to issue his Golden Bull, \"one of the first examples of constitutional limits being placed on the powers of a European monarch\".",
+      "basis": [
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "They forced Andrew II to issue his Golden Bull of 1222"
+        ],
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "obliged Andrew II to issue his Golden Bull in 1222"
+        ]
+      ]
+    },
+    "first-mongol-invasion-of-hungary": {
+      "descr": "The main Mongol army crosses the northeastern Carpathian passes in March and wins a decisive victory over the royal troops at Mohi on the river Sajó. The invasion of 1241–42 is a major blow to the kingdom.",
+      "basis": [
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "The kingdom received a major blow from the Mongol invasion"
+        ],
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "The main Mongol army arrived"
+        ],
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "the Mongols won a decisive victory in the battle of Mohi"
+        ]
+      ]
+    },
+    "second-mongol-invasion-of-hungary": {
+      "descr": "A second Mongol invasion is routed by the royal troops.",
+      "basis": [
+        [
+          "Kingdom of Hungary (1000–1301)",
+          "a second Mongol invasion in 1285"
+        ]
+      ]
+    },
+    "siege-of-belgrade": {
+      "descr": "A victory at Nándorfehérvár (Belgrade) stabilises Hungary's southern frontier for more than half a century.",
+      "basis": [
+        [
+          "Kingdom of Hungary (1301–1526)",
+          "His victory at Nándorfehérvár"
+        ]
+      ]
+    },
+    "coronation-of-boleslaw-i-the-brave": {
+      "descr": "With permission from Pope John XIX, Bolesław I is crowned the first King of Poland, using royal regalia Otto gave him.",
+      "basis": [
+        [
+          "Civitas Schinesghe",
+          "his coronation as the first King of Poland in 1025"
+        ]
+      ]
+    },
+    "kingdom-of-lithuania-mindaugas": {
+      "descr": "Mindaugas is baptised, and Pope Innocent IV issues a bull proclaiming the Kingdom of Lithuania.",
+      "basis": [
+        [
+          "Grand Duchy of Lithuania",
+          "In 1251, Mindaugas was baptized"
+        ]
+      ]
+    },
+    "golden-bull-of-rimini": {
+      "descr": "By the Golden Bull of Rimini, and the Papal Bull of Rieti in 1234, Prussia comes into the Teutonic Order's possession.",
+      "basis": [
+        [
+          "State of the Teutonic Order",
+          "As a result of the Golden Bull of Rimini"
+        ]
+      ]
+    },
+    "teutonic-takeover-of-danzig-gda-sk": {
+      "descr": "The Teutonic Knights seize the Polish port city of Gdańsk in November.",
+      "basis": [
+        [
+          "State of the Teutonic Order",
+          "The Teutonic Knights seized the Polish port city of Gdańsk"
+        ]
+      ]
+    },
+    "second-peace-of-thorn": {
+      "descr": "The Second Peace of Thorn ends the war: the Teutonic Order cedes the western half of its lands to Poland as the autonomous province of Royal Prussia, and what remains becomes known as Monastic Prussia.",
+      "basis": [
+        [
+          "State of the Teutonic Order",
+          "The Second Peace of Thorn in October 1466"
+        ],
+        [
+          "State of the Teutonic Order",
+          "After losing extensive territories in the imposed Peace of Thorn"
+        ]
+      ]
+    },
+    "frankish-conquest-of-the-lombard-kingdom": {
+      "descr": "The Franks conquer the Lombard kingdom, after the Lombards' long conflict with the Pope cost them power.",
+      "basis": [
+        [
+          "Kingdom of the Lombards",
+          "who conquered the kingdom in 774"
+        ]
+      ]
+    },
+    "donation-of-pepin": {
+      "descr": "Pepin's Frankish army defeats the Lombards, and he gives the pope the lands of the former Exarchate of Ravenna.",
+      "basis": [
+        [
+          "Papal States",
+          "Pepin led a Frankish army into Italy in 754 and 756"
+        ]
+      ]
+    },
+    "treaty-of-venice": {
+      "descr": "The Treaty of Venice is signed, in response to the struggle between the Guelphs and the Ghibellines.",
+      "basis": [
+        [
+          "Papal States",
+          "the Treaty of Venice was signed in 1177"
+        ]
+      ]
+    },
+    "publication-of-the-constitutiones-aegidianae": {
+      "descr": "Cardinal Albornoz, about to be recalled, promulgates a uniform code of civil law for the Papal States, replacing their patchwork of local laws and liberties.",
+      "basis": [
+        [
+          "Papal States",
+          "promulgated the Constitutiones Sanctæ Matris Ecclesiæ"
+        ]
+      ]
+    },
+    "first-doge-elected-venice-a-byzantine-province": {
+      "descr": "According to tradition, the first doge is elected, though this figure's historicity is doubtful.",
+      "basis": [
+        [
+          "Republic of Venice",
+          "the first doge was elected in 697"
+        ]
+      ]
+    },
+    "pactum-lotharii-recognition-of-de-facto-independence-provinc": {
+      "descr": "After the Pactum Lotharii, the doge's title changes from \"Doge of the Province of Venice\" to \"Doge of the Venetians\".",
+      "basis": [
+        [
+          "Republic of Venice",
+          "following the signing of the Pactum Lotharii"
+        ]
+      ]
+    },
+    "golden-bull-of-alexios-i": {
+      "descr": "A Byzantine Golden Bull lets Venetian merchants trade with the Byzantines tax-free and settle in Constantinople itself.",
+      "basis": [
+        [
+          "Republic of Venice",
+          "starting from 1082 when, with the issuing of the Golden Bull"
+        ]
+      ]
+    },
+    "battle-of-motta": {
+      "descr": "An invading army of Hungarians, Germans and Croats under Pippo Spano and Miklós Marczali attacks the Venetian positions at Motta and suffers a heavy defeat.",
+      "basis": [
+        [
+          "Republic of Venice",
+          "the Battle of Motta in late August 1412"
+        ]
+      ]
+    },
+    "participation-in-the-first-crusade": {
+      "descr": "Genoa helps Western Europe supply the troops of the First Crusade (1096–1099) by sea.",
+      "basis": [
+        [
+          "Republic of Genoa",
+          "supply the troops of the First Crusade of 1096–1099 by sea"
+        ]
+      ]
+    },
+    "treaty-of-nymphaeum": {
+      "descr": "A treaty of alliance is signed at Nymphaeum in March.",
+      "basis": [
+        [
+          "Republic of Genoa",
+          "In March 1261 the treaty of the alliance was signed in Nymphaeum"
+        ]
+      ]
+    },
+    "foundation-of-the-bank-of-saint-george": {
+      "descr": "The Bank of Saint George is founded in Genoa; at its closure in 1805 it is the oldest state deposit bank in the world.",
+      "basis": [
+        [
+          "Republic of Genoa",
+          "the Bank of Saint George, founded in 1407"
+        ]
+      ]
+    },
+    "coronation-of-roger": {
+      "descr": "Roger II founds the Kingdom of Sicily: Antipope Anacletus II, whom he supports, enthrones him on Christmas Day. The kingdom lasts until 1816.",
+      "basis": [
+        [
+          "Kingdom of Sicily",
+          "from its founding by Roger II of Sicily in 1130"
+        ],
+        [
+          "Kingdom of Sicily",
+          "who enthroned him as King of Sicily on Christmas Day 1130"
+        ]
+      ]
+    },
+    "sicily-annexed-to-the-aragonese-dominions": {
+      "descr": "After rule by relatives of the House of Barcelona, Sicily is added permanently to the Crown of Aragon by the Compromise of Caspe.",
+      "basis": [
+        [
+          "Kingdom of Sicily",
+          "as a result of the Compromise of Caspe of 1412"
+        ]
+      ]
+    },
+    "peace-of-caltabellotta": {
+      "descr": "The Peace of Caltabellotta ends the War of the Vespers and names the mainland realm the Kingdom of Sicily Citra Farum.",
+      "basis": [
+        [
+          "Kingdom of Naples",
+          "the Peace of Caltabellotta (1302)"
+        ]
+      ]
+    },
+    "republic-of-florence-first-established": {
+      "descr": "On the death of Matilda of Tuscany, the Florentines rebel against the Margraviate of Tuscany, and the republic begins.",
+      "basis": [
+        [
+          "Republic of Florence",
+          "The republic originated in 1115"
+        ]
+      ]
+    },
+    "ciompi-revolt": {
+      "descr": "Discontented wool workers revolt.",
+      "basis": [
+        [
+          "Republic of Florence",
+          "In 1378 discontented wool workers revolted"
+        ]
+      ]
+    },
+    "incorporation-of-pisa": {
+      "descr": "After a long siege accompanied by many atrocities, the Florentine army under Maso degli Albizzi takes Pisa.",
+      "basis": [
+        [
+          "Republic of Florence",
+          "took Pisa on 9 October 1406"
+        ]
+      ]
+    },
+    "foundation-of-the-house-of-medici": {
+      "descr": "The Medici faction under Cosimo de' Medici gains control of Florence; the family rules it, in effect hereditarily, until 1494.",
+      "basis": [
+        [
+          "Republic of Florence",
+          "The Medici faction gained governance of the city in 1434"
+        ],
+        [
+          "Republic of Florence",
+          "The Medici family effectively ruled Florence on a hereditary basis"
+        ]
+      ]
+    },
+    "created-by-rudolph-iii-king-of-burgundy": {
+      "descr": "Rudolph III, the last king of Burgundy, raises Humbert the White-Handed to count.",
+      "basis": [
+        [
+          "County of Savoy",
+          "Humbert the White-Handed was raised to count"
+        ]
+      ]
+    },
+    "raised-to-duchy-by-sigismund": {
+      "descr": "Sigismund gives Count Amadeus VIII the title of duke, and the Savoy lands become a duchy (to 1847).",
+      "basis": [
+        [
+          "Duchy of Savoy",
+          "The duchy was created in 1416"
+        ],
+        [
+          "Duchy of Savoy",
+          "existed from 1416 until 1847"
+        ]
+      ]
+    },
+    "incorporated-into-the-kingdom-of-germany-by-emperor-charles-": {
+      "descr": "Because of its strategic location, Emperor Charles IV moves the County of Savoy from the Kingdom of Burgundy to the Kingdom of Germany.",
+      "basis": [
+        [
+          "County of Savoy",
+          "In 1361, Emperor Charles IV transferred the County of Savoy"
+        ]
+      ]
+    },
+    "acquired-county-of-nice": {
+      "descr": "Amadeus VII acquires the County of Nice, giving Savoy access to the Mediterranean.",
+      "basis": [
+        [
+          "County of Savoy",
+          "by the acquisition of the County of Nice in 1388"
+        ]
+      ]
+    },
+    "acquired-county-of-geneva": {
+      "descr": "Amadeus VIII buys the County of Geneva.",
+      "basis": [
+        [
+          "County of Savoy",
+          "purchased the County of Geneva in 1401"
+        ]
+      ]
+    },
+    "asturias-annexed-by-leon": {
+      "descr": "Fruela II of Asturias becomes king with his court at León, and the Kingdom of Asturias passes into the Kingdom of León. León, Galicia and Asturias are reunited under the crown of León.",
+      "basis": [
+        [
+          "Kingdom of Asturias",
+          "transitioned into the Kingdom of León in 924"
+        ],
+        [
+          "Kingdom of Asturias",
+          "The three kingdoms were eventually reunited in 924"
+        ]
+      ]
+    },
+    "creations-of-the-kingdoms-of-galicia-and-leon": {
+      "descr": "Alfonso III's sons force his abdication, and the Kingdom of Asturias splits into three kingdoms: León, Galicia and Asturias. The capital moves from Oviedo to León.",
+      "basis": [
+        [
+          "Kingdom of Asturias",
+          "When Alfonso III's sons forced his abdication in 910"
+        ],
+        [
+          "Kingdom of León",
+          "It was founded in 910"
+        ]
+      ]
+    },
+    "permanent-union-of-castile-and-leon": {
+      "descr": "When Alfonso IX of León dies, his son Ferdinand III of Castile invades León and takes the crown; the union of Castile and León becomes permanent.",
+      "basis": [
+        [
+          "Kingdom of León",
+          "when Alfonso IX died in 1230"
+        ],
+        [
+          "Kingdom of Castile",
+          "after 1230, the union became permanent"
+        ]
+      ]
+    },
+    "kingdom-of-castile-established": {
+      "descr": "After a century of growing autonomy under its counts, Castile separates from the Kingdom of León and becomes a kingdom in its own right.",
+      "basis": [
+        [
+          "Kingdom of Castile",
+          "it was not until 1065 that it was separated"
+        ]
+      ]
+    },
+    "union-of-ferdinand-ii-and-isabella-i": {
+      "descr": "Ferdinand marries Infanta Isabella of Castile, half-sister of Henry IV of Castile; she becomes Queen of Castile and León on Henry's death in 1474.",
+      "basis": [
+        [
+          "Crown of Aragon",
+          "In 1469, Ferdinand married Infanta Isabella of Castile"
+        ]
+      ]
+    },
+    "aragon-barcelona-union": {
+      "descr": "Alfonso II, son of Petronilla of Aragon and Raymond Berenguer IV of Barcelona, takes the throne and joins their titles in one person. The dynastic union of Aragon and Barcelona dates from his parents' marriage in 1137.",
+      "basis": [
+        [
+          "Crown of Aragon",
+          "The Crown of Aragon originated in 1137"
+        ]
+      ]
+    },
+    "conquest-of-the-kingdom-of-valencia": {
+      "descr": "The Moorish taifa of Valencia is taken in the Reconquista and the Kingdom of Valencia formally created; the entry into the city on 9 October is regarded as its dawn.",
+      "basis": [
+        [
+          "Kingdom of Valencia",
+          "He entered the city of Valencia on 9 October 1238"
+        ],
+        [
+          "Kingdom of Valencia",
+          "The Kingdom of Valencia was formally created in 1238"
+        ]
+      ]
+    },
+    "county-of-aragon-established-as-independent-kingdom": {
+      "descr": "On the death of Sancho III, Navarre is divided into three parts; one is Sobrarbe, Ribagorza and Aragon.",
+      "basis": [
+        [
+          "Kingdom of Aragon",
+          "On the death of Sancho III of Navarre in 1035"
+        ]
+      ]
+    },
+    "legal-definition-of-catalonia": {
+      "descr": "Under Alfons I, Catalonia is legally delimited for the first time, and the Usages of Barcelona are first compiled into Catalan law.",
+      "basis": [
+        [
+          "Principality of Catalonia",
+          "in 1173, Catalonia was legally delimited for the first time"
+        ]
+      ]
+    },
+    "generalitat-of-catalonia-founded": {
+      "descr": "The Courts establish the Generalitat (Diputació del General), a permanent council of deputies.",
+      "basis": [
+        [
+          "Principality of Catalonia",
+          "permanent council of deputies, established in 1359"
+        ]
+      ]
+    },
+    "avis-dynasty-begins": {
+      "descr": "After the Portuguese interregnum of 1383–1385, the monarchy passes from the Afonsine dynasty to the House of Aviz.",
+      "basis": [
+        [
+          "Kingdom of Portugal",
+          "after which the monarchy passed to the House of Aviz"
+        ]
+      ]
+    },
+    "abd-al-rahman-i-proclaimed-emir-in-cordoba": {
+      "descr": "Abd al-Rahman I, a prince of the deposed Umayyad family, refuses to recognise the Abbasid Caliphate and becomes independent emir of Córdoba. Umayyads rule there until 1031.",
+      "basis": [
+        [
+          "Umayyad state of Córdoba",
+          "In 756, Abd al-Rahman I"
+        ],
+        [
+          "Umayyad state of Córdoba",
+          "ruled by the Umayyad dynasty from 756 to 1031"
+        ]
+      ]
+    },
+    "disintegrated-into-independent-taifa-kingdoms": {
+      "descr": "After years of infighting, the caliphate collapses into independent Muslim taifas, among them Córdoba, Seville and Zaragoza.",
+      "basis": [
+        [
+          "Umayyad state of Córdoba",
+          "after years of infighting, the caliphate collapsed"
+        ],
+        [
+          "Umayyad state of Córdoba",
+          "the caliphate crumbled in 1031"
+        ]
+      ]
+    },
+    "death-of-louis-the-pious": {
+      "descr": "Louis dies. By the custom of partible inheritance, a brief civil war among his three sons ends with the Treaty of Verdun (843), which divides the empire in three.",
+      "basis": [
+        [
+          "Francia",
+          "When Louis died in 840"
+        ]
+      ]
+    },
+    "death-of-charles-the-fat": {
+      "descr": "Charles the Fat, who reunited all the Carolingian kingdoms for the last time, dies; the empire immediately dissolves.",
+      "basis": [
+        [
+          "Carolingian Empire",
+          "In 884 Charles the Fat reunited"
+        ]
+      ]
+    },
+    "charles-the-fat-deposed": {
+      "descr": "The Frankish nobility deposes Charles the Fat.",
+      "basis": [
+        [
+          "Carolingian Empire",
+          "he was deposed by the Frankish nobility in 887"
+        ]
+      ]
+    },
+    "treaty-of-saint-clair-sur-epte": {
+      "descr": "King Charles III of West Francia and the Viking leader Rollo make the treaty from which the Duchy of Normandy grows.",
+      "basis": [
+        [
+          "Duchy of Normandy",
+          "grew out of the 911 Treaty of Saint-Clair-sur-Epte"
+        ]
+      ]
+    },
+    "duchy-of-burgundy-established": {
+      "descr": "Richard the Justiciar is the first duke of Burgundy attested by that title.",
+      "basis": [
+        [
+          "Duchy of Burgundy",
+          "was Richard the Justiciar in 918"
+        ]
+      ]
+    },
+    "war-of-the-burgundian-succession": {
+      "descr": "The last Valois duke, Charles the Bold, is killed at the Battle of Nancy; the War of the Burgundian Succession follows (1477–1482).",
+      "basis": [
+        [
+          "Duchy of Burgundy",
+          "killed in the 1477 Battle of Nancy"
+        ],
+        [
+          "Duchy of Burgundy",
+          "The War of the Burgundian Succession took place from 1477 to 1482"
+        ]
+      ]
+    },
+    "split-into-guernsey-and-jersey": {
+      "descr": "Otto de Grandson, Lord of the Channel Islands, splits the duchy (by now just the islands) into the Bailiwicks of Guernsey and Jersey.",
+      "basis": [
+        [
+          "Duchy of Normandy",
+          "split around 1290 into the Bailiwicks of Guernsey and Jersey"
+        ]
+      ]
+    },
+    "continental-normandy-conquered-by-philip-ii": {
+      "descr": "Having declared Normandy forfeit in 1202, Philip II of France seizes it by force, except the Channel Islands; it becomes part of the royal domain.",
+      "basis": [
+        [
+          "Duchy of Normandy",
+          "In 1202, Philip II of France declared Normandy forfeit"
+        ],
+        [
+          "Duchy of Normandy",
+          "when Philip II of France conquered the continental lands"
+        ]
+      ]
+    },
+    "treaty-of-paris-cedes-continental-normandy-to-the-french-cro": {
+      "descr": "In the Treaty of Paris, the English king gives up his claim to mainland Normandy, which joins the French royal domain; England keeps only the Channel Islands.",
+      "basis": [
+        [
+          "Duchy of Normandy",
+          "It remained disputed territory until 1259"
+        ],
+        [
+          "Duchy of Normandy",
+          "continued to claim them until the Treaty of Paris (1259)"
+        ]
+      ]
+    },
+    "unification-of-the-angles-saxons-and-danes": {
+      "descr": "Æthelstan drives the Danes from York, strengthening the dominance of Wessex.",
+      "basis": [
+        [
+          "History of Anglo-Saxon England",
+          "drove the Danes from York in 927"
+        ]
+      ]
+    },
+    "norman-conquest": {
+      "descr": "Edward the Confessor dies in January after naming Harold king. William of Normandy's fleet sets sail on 27 September, as Harold celebrates his victory at Stamford Bridge, and Harold is killed at the Battle of Hastings on 14 October.",
+      "basis": [
+        [
+          "History of Anglo-Saxon England",
+          "Edward died on 5 January 1066"
+        ],
+        [
+          "History of Anglo-Saxon England",
+          "invasion fleet set sail"
+        ],
+        [
+          "History of Anglo-Saxon England",
+          "Harold was killed when he fought and lost the Battle of Hastings"
+        ]
+      ]
+    },
+    "scotland-united": {
+      "descr": "The traditional founding date of the Kingdom of Scotland.",
+      "basis": [
+        [
+          "Kingdom of Scotland",
+          "traditionally said to have been founded in 843"
+        ]
+      ]
+    },
+    "hebrides-isle-of-man-and-caithness-incorporated": {
+      "descr": "After defeat at Largs and winter storms send the Norwegian fleet home, Norway cedes the Western Isles to Alexander.",
+      "basis": [
+        [
+          "Kingdom of Scotland",
+          "leading to the ceding of the Western Isles to Alexander in 1266"
+        ]
+      ]
+    },
+    "treaty-of-aberconwy": {
+      "descr": "After the Treaty of Aberconwy, Llywelyn is again confined to Gwynedd Uwch Conwy.",
+      "basis": [
+        [
+          "Principality of Wales",
+          "Following the Treaty of Aberconwy in 1277"
+        ]
+      ]
+    },
+    "statute-of-rhuddlan": {
+      "descr": "The Statute of Rhuddlan sets out how the conquered principality is governed and its constitutional position.",
+      "basis": [
+        [
+          "Principality of Wales",
+          "set out in the Statute of Rhuddlan of 1284"
+        ]
+      ]
+    },
+    "welsh-revolt": {
+      "descr": "Madog ap Llywelyn leads a revolt against English rule (1294–95) and is proclaimed \"Prince of Wales\".",
+      "basis": [
+        [
+          "Principality of Wales",
+          "Madog ap Llywelyn led a Welsh revolt"
+        ]
+      ]
+    },
+    "lordship-of-ireland-established": {
+      "descr": "At the Oxford parliament, Henry makes his ten-year-old son John Lord of Ireland and encourages his subordinates to conquer more land. The Lordship lasts until 1542.",
+      "basis": [
+        [
+          "Lordship of Ireland",
+          "in 1177 Henry made his son John"
+        ],
+        [
+          "Lordship of Ireland",
+          "At the Oxford parliament in May 1177"
+        ]
+      ]
+    },
+    "bruce-campaign": {
+      "descr": "Edward Bruce invades from Scotland (1315–1318), destroying much of the Lordship's economy during the great famine of 1315–1317.",
+      "basis": [
+        [
+          "Lordship of Ireland",
+          "invasion from Scotland by Edward Bruce in 1315–1318"
+        ]
+      ]
+    },
+    "engelbrekt-rebellion": {
+      "descr": "The Engelbrekt rebellion begins; it leads to King Erik's overthrow in Denmark and Sweden (1439) and in Norway (1442).",
+      "basis": [
+        [
+          "Kalmar Union",
+          "The Engelbrekt rebellion, which started in 1434"
+        ]
+      ]
+    },
+    "al-ingi-established": {
+      "descr": "The first Alþingi assembly meets at Þingvellir.",
+      "basis": [
+        [
+          "Icelandic Commonwealth",
+          "The first Alþingi assembly convened around the year 930"
+        ]
+      ]
+    },
+    "iceland-accepts-norwegian-kingship": {
+      "descr": "Weary of internal feuds and pressed by Norway, the Icelandic chieftains accept Haakon IV as king by the Old Covenant, ending the Commonwealth.",
+      "basis": [
+        [
+          "Icelandic Commonwealth",
+          "led the Icelandic chieftains to accept Norway's Haakon IV"
+        ],
+        [
+          "Icelandic Commonwealth",
+          "the pledge of fealty to the Norwegian king with the Old Covenant in 1262"
+        ]
+      ]
+    },
+    "moscow-elevated-to-grand-principality": {
+      "descr": "The Principality of Moscow becomes the Grand Principality of Moscow.",
+      "basis": [
+        [
+          "Grand Principality of Moscow",
+          "before 1389 the Principality of Moscow"
+        ]
+      ]
+    },
+    "galicia-volhynia-becomes-a-kingdom": {
+      "descr": "The Principality of Galicia–Volhynia becomes a kingdom.",
+      "basis": [
+        [
+          "Kingdom of Galicia–Volhynia",
+          "known as the Principality of Galicia–Volhynia before 1253"
+        ]
+      ]
+    },
+    "transfer-of-galicia-to-the-polish-crown": {
+      "descr": "Casimir III of Poland invades and annexes Galicia and takes the title King of Poland and Ruthenia; the kingdom is absorbed into Poland.",
+      "basis": [
+        [
+          "Kingdom of Galicia–Volhynia",
+          "Polish conquest of the kingdom in 1349"
+        ],
+        [
+          "Kingdom of Galicia–Volhynia",
+          "Upon annexing Galicia in 1349"
+        ]
+      ]
+    },
+    "incorporation-of-galicia-by-poland": {
+      "descr": "The territory becomes the Ruthenian Voivodeship; the last of its legal autonomy is abolished in 1506.",
+      "basis": [
+        [
+          "Kingdom of Galicia–Volhynia",
+          "Upon annexing Galicia in 1349"
+        ]
+      ]
+    },
+    "abbasid-reconquest": {
+      "descr": "The Tulunids cannot resist an Abbasid invasion, which restores direct caliphal rule in Syria and Egypt.",
+      "basis": [
+        [
+          "Tulunids",
+          "In 905, the Tulunids were unable to resist"
+        ]
+      ]
+    },
+    "fatimid-conquest-of-egypt-and-foundation-of-cairo": {
+      "descr": "Under al-Mu'izz, the Fatimid general Jawhar al-Siqilli conquers Egypt, ending the Ikhshidids; in 973 the caliphate's centre moves to the new capital, Cairo.",
+      "basis": [
+        [
+          "Fatimid Caliphate",
+          "In 969, during the reign of al-Mu'izz"
+        ],
+        [
+          "Ikhshidid dynasty",
+          "Only a later attempt by the Fatimid general Jawhar al-Siqilli"
+        ],
+        [
+          "Ikhshidid dynasty",
+          "The Ikhshidids came to an end when the Fatimid army conquered Fustat"
+        ]
+      ]
+    },
+    "fatimids-overthrow-the-aghlabids": {
+      "descr": "The new power of the Fatimids overthrows the Aghlabids.",
+      "basis": [
+        [
+          "Aghlabid dynasty",
+          "overthrown by the new power of the Fatimids in 909"
+        ]
+      ]
+    },
+    "ottoman-conquest-of-cairo": {
+      "descr": "Ottoman sultan Selim I conquers Egypt and ends Mamluk rule. His army overwhelms the defenders at al-Raydaniyya in January and reaches Cairo; Tuman Bay is defeated and captured near Giza in April.",
+      "basis": [
+        [
+          "Mamluk Sultanate",
+          "who subsequently conquered Egypt in 1517"
+        ],
+        [
+          "Mamluk Sultanate",
+          "The Ottoman attack at al-Raydaniyya"
+        ],
+        [
+          "Mamluk Sultanate",
+          "Tuman Bay, with 4,000 cavalry"
+        ]
+      ]
+    },
+    "barquq-overthrows-al-salih-hajji-burji-rule-begins": {
+      "descr": "The emir Barquq overthrows the sultan, inaugurating the Circassian or Burji period of Mamluk rule (1382–1517).",
+      "basis": [
+        [
+          "Mamluk Sultanate",
+          "Barquq, overthrew the sultan in 1382"
+        ],
+        [
+          "Mamluk Sultanate",
+          "the Circassian or Burji period (1382–1517)"
+        ]
+      ]
+    },
+    "first-fall-of-jerusalem": {
+      "descr": "The Kingdom of Jerusalem collapses after the siege of Jerusalem; it is restored after the Third Crusade in 1192.",
+      "basis": [
+        [
+          "Kingdom of Jerusalem",
+          "beginning with its collapse after the siege of Jerusalem in 1187"
+        ]
+      ]
+    },
+    "third-crusade": {
+      "descr": "The loss of Jerusalem leads to the Third Crusade, led by Richard the Lionheart, Philip Augustus and Frederick Barbarossa; Barbarossa drowns on the way.",
+      "basis": [
+        [
+          "Kingdom of Jerusalem",
+          "The capture of the city led to the Third Crusade"
+        ]
+      ]
+    },
+    "sixth-crusade": {
+      "descr": "Emperor Frederick II arrives on the Sixth Crusade in September and claims the regency of the kingdom for his infant son. His presence sparks a civil war among the nobility (1228–1243).",
+      "basis": [
+        [
+          "Kingdom of Jerusalem",
+          "Frederick finally arrived on the Sixth Crusade"
+        ],
+        [
+          "Kingdom of Jerusalem",
+          "but his presence sparked a civil war (1228–1243)"
+        ]
+      ]
+    },
+    "barons-crusade": {
+      "descr": "Plans for a crusade led by Frederick come to nothing, and he is excommunicated again. After a short-lived victory, the crusaders are defeated by the Egyptian army at Gaza in November.",
+      "basis": [
+        [
+          "Kingdom of Jerusalem",
+          "Plans for a new crusade to be led by Frederick came to nothing"
+        ],
+        [
+          "Kingdom of Jerusalem",
+          "defeated by the Egyptian army at Gaza in November 1239"
+        ]
+      ]
+    },
+    "second-fall-of-jerusalem": {
+      "descr": "Forces backed by Ayyub sack Jerusalem in the summer, leaving it in ruins and useless to Christians and Muslims alike.",
+      "basis": [
+        [
+          "Kingdom of Jerusalem",
+          "they sacked Jerusalem in the summer of 1244"
+        ]
+      ]
+    },
+    "principality-of-antioch-founded-first-crusade": {
+      "descr": "An Armenian guard, Firouz, lets the crusaders into Antioch on 2 June, and Bohemond then defeats the Muslim relief army in the battle of Antioch.",
+      "basis": [
+        [
+          "Principality of Antioch",
+          "Bohemond convinced a guard in one of the towers"
+        ],
+        [
+          "Principality of Antioch",
+          "which was defeated in the battle of Antioch in 1098"
+        ]
+      ]
+    },
+    "conquered-by-the-mamluk-sultanate-under-baibars": {
+      "descr": "Baibars takes Antioch, and all of northern Syria is quickly lost. Twenty-three years later Acre falls and the Crusader states cease to exist.",
+      "basis": [
+        [
+          "Principality of Antioch",
+          "Baibars finally took the city in 1268"
+        ]
+      ]
+    },
+    "conquered-by-nur-ad-din-zengi-and-the-rest-sold-to-manuel-i-": {
+      "descr": "Zengi besieges Edessa and captures it on 24 December.",
+      "basis": [
+        [
+          "County of Edessa",
+          "Zengi besieged the city in 1144"
+        ]
+      ]
+    },
+    "conquered-by-qalawun": {
+      "descr": "The County of Tripoli falls to the Mamluks under Sultan Qalawun and is absorbed into the Mamluk Sultanate.",
+      "basis": [
+        [
+          "County of Tripoli",
+          "In 1289, the County of Tripoli fell"
+        ]
+      ]
+    },
+    "division-from-the-seljuk-empire": {
+      "descr": "Under Suleiman ibn Qutalmish, the Sultanate of Rum breaks away from the Seljuk Empire.",
+      "basis": [
+        [
+          "Sultanate of Rum",
+          "seceded from the Seljuk Empire under Suleiman ibn Qutalmish in 1077"
+        ]
+      ]
+    },
+    "battle-of-ain-salm": {
+      "descr": "Suleiman fails to take Aleppo and dies at the Battle of Ain Salm, either fighting or by suicide.",
+      "basis": [
+        [
+          "Sultanate of Rum",
+          "Suleiman tried unsuccessfully to conquer Aleppo in 1086"
+        ]
+      ]
+    },
+    "first-crusade": {
+      "descr": "The Seljuks easily defeat the People's Crusade, but the princes' army of the First Crusade takes Nicaea, Konya, Kayseri and Antioch on its march to Jerusalem. Kilij Arslan is driven back into south-central Anatolia and makes Konya his capital.",
+      "basis": [
+        [
+          "Seljuk Empire",
+          "The Seljuks easily defeated the People's Crusade arriving in 1096"
+        ],
+        [
+          "Sultanate of Rum",
+          "Kilij Arslan, although victorious against the People's Crusade of 1096"
+        ]
+      ]
+    },
+    "battle-of-myriokephalon": {
+      "descr": "Kilij Arslan II defeats a Byzantine army led by Manuel I Komnenos.",
+      "basis": [
+        [
+          "Sultanate of Rum",
+          "At the Battle of Myriokephalon in 1176"
+        ]
+      ]
+    },
+    "battle-of-k-se-da": {
+      "descr": "The Mongol commander Baiju crushes the sultan at Köse Dağ, between Sivas and Erzincan; the Seljuks of Rum have to swear allegiance to the Mongols as their vassals.",
+      "basis": [
+        [
+          "Sultanate of Rum",
+          "the sultan was crushed by Baiju in the Battle of Köse Dağ"
+        ]
+      ]
+    },
+    "ottoman-interregnum": {
+      "descr": "Timur invades Ottoman Anatolia, defeats the Ottomans at Ankara and takes Sultan Bayezid I prisoner, throwing the empire into disorder. Murad II wins back the lost Balkan lands between the 1430s and 1450s.",
+      "basis": [
+        [
+          "Ottoman Empire",
+          "founder of the Timurid Empire, invaded Ottoman Anatolia"
+        ],
+        [
+          "Ottoman Empire",
+          "In the Battle of Ankara in 1402"
+        ],
+        [
+          "Ottoman Empire",
+          "The Balkan territories lost by the Ottomans after 1402"
+        ]
+      ]
+    },
+    "prince-ruben-i-founds-an-armenian-principality-in-cilicia": {
+      "descr": "Ruben gathers Armenian troops and revolts against the Byzantine Empire, laying the foundations of an independent Armenian principality in Cilicia.",
+      "basis": [
+        [
+          "Armenian Kingdom of Cilicia",
+          "Ruben organized a band of Armenian troops"
+        ],
+        [
+          "Armenian Kingdom of Cilicia",
+          "the foundations of the independent Armenian princedom of Cilicia"
+        ]
+      ]
+    },
+    "sis-conquered-by-the-egyptian-mamluks": {
+      "descr": "After relentless Mamluk attacks, Sis falls, then the fortress of Gaban where King Levon V had taken refuge; the kingdom ends.",
+      "basis": [
+        [
+          "Armenian Kingdom of Cilicia",
+          "After relentless attacks by the Mamluks"
+        ],
+        [
+          "Armenian Kingdom of Cilicia",
+          "the fall of Sis to the Mamluks"
+        ]
+      ]
+    },
+    "prince-leo-ii-crowned-as-king-leo-i": {
+      "descr": "Prince Levon II is crowned in the cathedral of Tarsus on 6 January, Armenian Christmas, and Cilician Armenia becomes a kingdom.",
+      "basis": [
+        [
+          "Armenian Kingdom of Cilicia",
+          "In 1198, with the crowning of Leo I"
+        ],
+        [
+          "Armenian Kingdom of Cilicia",
+          "On January 6, 1198"
+        ]
+      ]
+    },
+    "unification-of-georgia": {
+      "descr": "The Kingdom of Georgia is founded.",
+      "basis": [
+        [
+          "Kingdom of Georgia",
+          "founded in c. 1008 AD"
+        ]
+      ]
+    },
+    "ghaznavid-samanid-war-karakhanid-samanid-wars": {
+      "descr": "The Karakhanids conquer Bukhara and imprison Nuh II's youngest son Isma'il Muntasir; Samanid rule ends.",
+      "basis": [
+        [
+          "Samanid Empire",
+          "from 819 to 999"
+        ],
+        [
+          "Samanid Empire",
+          "imprisoned by the Karakhanids after their conquest of Bukhara in 999"
+        ]
+      ]
+    },
+    "imad-al-dawla-proclaimed-himself-emir": {
+      "descr": "Imad al-Dawla founds Buyid rule, which covers central and southern Iran and Iraq until 1062.",
+      "basis": [
+        [
+          "Buyid dynasty",
+          "Founded by Imad al-Dawla"
+        ]
+      ]
+    },
+    "siege-of-lahore": {
+      "descr": "The Ghurid sultan Muhammad of Ghor conquers Lahore, ending Ghaznavid power in northwestern India; the last Ghaznavid ruler, Khusrau Malik, is imprisoned and later executed.",
+      "basis": [
+        [
+          "Ghaznavid Empire",
+          "In 1186, Lahore was conquered by the Ghurid sultan"
+        ]
+      ]
+    },
+    "battle-of-ghazni": {
+      "descr": "Mahmud, son of Sabuktigin, defeats and captures Ismail at Ghazni and succeeds to the governorship.",
+      "basis": [
+        [
+          "Ghaznavid Empire",
+          "Ismail was defeated and captured in 998"
+        ],
+        [
+          "Ghaznavid Empire",
+          "In 998, Mahmud, son of Sabuktigin"
+        ]
+      ]
+    },
+    "battle-of-dandanaqan": {
+      "descr": "The Seljuks decisively defeat Mas'ud I at Dandanaqan. He loses all Ghaznavid lands in Persia and Central Asia, and the realm enters a \"time of troubles\".",
+      "basis": [
+        [
+          "Seljuk Empire",
+          "In 1040, at the Battle of Dandanaqan"
+        ],
+        [
+          "Ghaznavid Empire",
+          "following a disastrous defeat at the Battle of Dandanaqan"
+        ]
+      ]
+    },
+    "battle-of-ghazni-1117": {
+      "descr": "Bahram Shah defeats his brother Arslan for the throne.",
+      "basis": [
+        [
+          "Ghaznavid Empire",
+          "Bahram Shah defeated his brother Arslan"
+        ]
+      ]
+    },
+    "formation-under-tughril": {
+      "descr": "Tughril and his brother Chaghri found the Seljuk Empire and rule it together, after leading the Seljuks to capture Merv and Nishapur.",
+      "basis": [
+        [
+          "Seljuk Empire",
+          "The Seljuk Empire was founded in 1037"
+        ],
+        [
+          "Seljuk Empire",
+          "led them to capture Merv and Nishapur"
+        ]
+      ]
+    },
+    "battle-of-ray-and-the-supplantation-by-the-khwarazmian-empir": {
+      "descr": "Toghrul III is defeated by Ala al-Din Tekish, Shah of Khwarazm, and the Seljuk Empire collapses; Seljuk rule continues only in Anatolia.",
+      "basis": [
+        [
+          "Seljuk Empire",
+          "Toghrul III, however, was defeated by Ala al-Din Tekish"
+        ],
+        [
+          "Seljuk Empire",
+          "though Seljuk rule beyond the Anatolian peninsula ended in 1194"
+        ]
+      ]
+    },
+    "battle-of-qatwan": {
+      "descr": "Near Samarkand, the army of Yelu Dashi's Western Liao decisively defeats Sanjar, and the Seljuks lose vast eastern territories.",
+      "basis": [
+        [
+          "Seljuk Empire",
+          "In 1141, the Seljuk Empire suffered a devastating defeat"
+        ],
+        [
+          "Seljuk Empire",
+          "Sanjar's army was decisively defeated by the host of Yelu Dashi"
+        ]
+      ]
+    },
+    "aq-qoyunlu-established": {
+      "descr": "Qara Yuluk Uthman Beg founds the Aq Qoyunlu in the Diyarbakir region; they rule until 1508.",
+      "basis": [
+        [
+          "Aq Qoyunlu",
+          "Founded in the Diyarbakir region by Qara Yuluk Uthman Beg"
+        ]
+      ]
+    },
+    "establishment-of-timurid-empire": {
+      "descr": "Timur founds the empire; he rules it until his death in 1405.",
+      "basis": [
+        [
+          "Timurid Empire",
+          "Timur established the empire in 1370"
+        ]
+      ]
+    },
+    "fall-of-herat": {
+      "descr": "The Uzbeks under Shaybani Khan take Herat, ending the rule of the main Timurid branches.",
+      "basis": [
+        [
+          "Timurid Empire",
+          "conquered the key cities of Samarkand and Herat in 1501 and 1507"
+        ]
+      ]
+    },
+    "westward-expansion-begins": {
+      "descr": "Timur begins a westward campaign against the successor states of the Ilkhanate.",
+      "basis": [
+        [
+          "Timurid Empire",
+          "Timur began a campaign westwards in 1380"
+        ]
+      ]
+    },
+    "battle-of-ankara": {
+      "descr": "A year after destroying Baghdad, Timur defeats the Ottomans at the Battle of Ankara.",
+      "basis": [
+        [
+          "Timurid Empire",
+          "He destroyed Baghdad in 1401"
+        ]
+      ]
+    },
+    "qarmatians-established": {
+      "descr": "Claiming Alid descent, the Qarmatians set up a religious state centred on al-Ahsa in Eastern Arabia.",
+      "basis": [
+        [
+          "Qarmatians",
+          "where they established a religious state in 899 CE"
+        ]
+      ]
+    },
+    "sack-of-mecca": {
+      "descr": "Under Abu Tahir al-Jannabi, the Qarmatians sack Mecca.",
+      "basis": [
+        [
+          "Qarmatians",
+          "sacking Mecca in 930 CE"
+        ]
+      ]
+    },
+    "al-isfahani-proclaimed-to-be-the-mahdi": {
+      "descr": "Abu Tahir al-Janabi hands the state in Bahrain to Abu'l-Fadl al-Isfahani, a young Persian the Qarmatians believe to be the Mahdi; according to Farhad Daftary, this sets off the movement's collapse.",
+      "basis": [
+        [
+          "Qarmatians",
+          "the catalyst of the collapse of Qarmatian movement"
+        ]
+      ]
+    },
+    "black-stone-returned": {
+      "descr": "The Abbasids pay a huge ransom for the return of the Black Stone, which the Qarmatians had held.",
+      "basis": [
+        [
+          "Qarmatians",
+          "They held the Black Stone for ransom"
+        ]
+      ]
+    },
+    "defeated-by-the-abbasids": {
+      "descr": "After their defeat by the Abbasids, the Qarmatians turn inward and become a local power.",
+      "basis": [
+        [
+          "Qarmatians",
+          "After their defeat by the Abbasids in 976"
+        ]
+      ]
+    },
+    "almoravids-overthrown": {
+      "descr": "Under Abd al-Mu'min, the Almohads overthrow the Almoravids, capture Marrakesh and take control of the western Maghreb.",
+      "basis": [
+        [
+          "Almohad Caliphate",
+          "Under Abd al-Mu'min, the Almohads overthrew the Almoravids"
+        ]
+      ]
+    },
+    "battle-of-las-navas-de-tolosa": {
+      "descr": "An alliance of Castile, Aragon and Navarre defeats the Almohad caliph Muhammad al-Nasir in the Sierra Morena: the decisive turning point of Almohad power in Iberia.",
+      "basis": [
+        [
+          "Almohad Caliphate",
+          "The decisive turning point of Almohad power in Iberia"
+        ],
+        [
+          "Almohad Caliphate",
+          "In 1212, the Almohad Caliph Muhammad 'al-Nasir'"
+        ]
+      ]
+    },
+    "victory-against-the-almohad-caliphate": {
+      "descr": "Tlemcen's ruler defeats the Almohad caliph at the Battle of Oujda, where the caliph is killed, ending the independence war with the Almohads (1236–1248).",
+      "basis": [
+        [
+          "Kingdom of Tlemcen",
+          "In 1248 he defeated the Almohad Caliph in the Battle of Oujda"
+        ],
+        [
+          "Kingdom of Tlemcen",
+          "1236-1248: Independence war with the Almohad Caliphate"
+        ]
+      ]
+    },
+    "zayyanid-capture-of-sijilmasa": {
+      "descr": "Yaghmurasan takes Sijilmasa, bringing it and Tlemcen, the two main outlets of the trans-Saharan trade, under one authority; he holds it for almost ten years.",
+      "basis": [
+        [
+          "Kingdom of Tlemcen",
+          "In 1264 he managed to conquer Sijilmasa"
+        ],
+        [
+          "Kingdom of Tlemcen",
+          "Yaghmurasan made an attempt to capture Sijilmasa in 1257"
+        ]
+      ]
+    },
+    "siege-of-tlemcen": {
+      "descr": "The Marinid Abu Yaqub Yusuf an-Nasr besieges Tlemcen; the siege lasts until 1307.",
+      "basis": [
+        [
+          "Kingdom of Tlemcen",
+          "The Marinid Abu Yaqub Yusuf an-Nasr besieged Tlemcen from 1299 to 1307"
+        ]
+      ]
+    },
+    "capture-of-tunis": {
+      "descr": "The Zayyanids win the Battle of er-Rias and occupy Tunis.",
+      "basis": [
+        [
+          "Kingdom of Tlemcen",
+          "1329: Victory in Battle of er-Rias and Tunis occupied by Zayyanids"
+        ]
+      ]
+    },
+    "first-marinid-rule": {
+      "descr": "After a siege begun in 1335, Tlemcen falls to the Marinid sultan; the first Marinid occupation lasts until 1348.",
+      "basis": [
+        [
+          "Kingdom of Tlemcen",
+          "The Marinid sultan initiated a siege of Tlemcen in 1335"
+        ],
+        [
+          "Kingdom of Tlemcen",
+          "1337–1348: 1st period of Marinid occupation"
+        ]
+      ]
+    },
+    "second-marinid-rule": {
+      "descr": "The second period of Marinid occupation begins; it lasts until 1359.",
+      "basis": [
+        [
+          "Kingdom of Tlemcen",
+          "1352–1359: 2nd period of Marinid occupation"
+        ]
+      ]
+    },
+    "death-of-uskhal-khan-t-gus-temur": {
+      "descr": "After Uskhal Khan Tögüs Temür's death, his successor Jorightu Khan Yesüder abandons the dynastic name \"Great Yuan\" and other Han-style imperial titles.",
+      "basis": [
+        [
+          "Northern Yuan",
+          "Following the death of Uskhal Khan Tögüs Temür"
+        ]
+      ]
+    },
+    "tibet-invades-and-conquers-khotan": {
+      "descr": "The Tibetan Empire invades and conquers Khotan, then known as one of the \"four garrisons\".",
+      "basis": [
+        [
+          "Kingdom of Khotan",
+          "670: Tibetan Empire invades and conquers Khotan"
+        ]
+      ]
+    },
+    "khotan-held-by-the-muslim-y-suf-qadr-kh-n": {
+      "descr": "The Kara-Khanid ruler Yusuf Kadir Khan of Kashgar conquers Khotan, ending more than a thousand years of the Buddhist kingdom's independence.",
+      "basis": [
+        [
+          "Kingdom of Khotan",
+          "In 1006, the Muslim Kara-Khanid ruler Yusuf Kadir"
+        ],
+        [
+          "Kingdom of Khotan",
+          "This largely Buddhist kingdom existed for over a thousand years"
+        ]
+      ]
+    },
+    "mongol-invasion-of-the-khwarazmian-empire": {
+      "descr": "The Mongols under Genghis Khan invade the Khwarazmian Empire and conquer most of it in two years.",
+      "basis": [
+        [
+          "Khwarazmian Empire",
+          "In 1219, the Mongols under their ruler Genghis Khan invaded"
+        ]
+      ]
+    },
+    "battle-of-yass-emen": {
+      "descr": "Sultan Kayqubad I defeats Jalal al-Din at Arzinjan on the Upper Euphrates.",
+      "basis": [
+        [
+          "Khwarazmian Empire",
+          "Sultan Kayqubad I defeated him at Arzinjan"
+        ]
+      ]
+    },
+    "yelu-dashi-proclaims-himself-king-qara-khitai-founded": {
+      "descr": "Yelü Dashi flees northwest with Khitans, Han Chinese and others and sets up his headquarters at Kedun on the Orkhon River. His new state keeps the dynastic name \"Great Liao\".",
+      "basis": [
+        [
+          "Qara Khitai",
+          "In 1124, Yelü Dashi fled northwest"
+        ],
+        [
+          "Qara Khitai",
+          "continued to use the Chinese dynastic name"
+        ],
+        [
+          "Qara Khitai",
+          "in 1124 migrated with the Khitans under Yelü Dashi"
+        ]
+      ]
+    },
+    "kuchlug-executed-by-the-mongols-end-of-qara-khitai": {
+      "descr": "Pursued by Genghis Khan's general Jebe since 1216, Kuchlug is captured and beheaded; the Mongols complete their conquest of the Qara Khitai.",
+      "basis": [
+        [
+          "Qara Khitai",
+          "Genghis Khan dispatched his general Jebe to pursue Kuchlug"
+        ],
+        [
+          "Qara Khitai",
+          "until the Mongol conquest of the Qara Khitai in 1218"
+        ]
+      ]
+    },
+    "fall-of-liao-dynasty": {
+      "descr": "The Jurchen-led Jin dynasty captures Emperor Tianzuo and destroys the Liao dynasty, completing a conquest begun in 1114.",
+      "basis": [
+        [
+          "Liao dynasty",
+          "The Liao dynasty was destroyed by the Jurchen-led Jin dynasty in 1125"
+        ],
+        [
+          "Qara Khitai",
+          "From 1114 to 1125, the Jurchen-led Jin dynasty conquered the Liao"
+        ]
+      ]
+    },
+    "kuchlug-usurps-power": {
+      "descr": "The Naiman prince Kuchlug revolts, later capturing Yelü Zhilugu while he is hunting, and usurps the empire.",
+      "basis": [
+        [
+          "Qara Khitai",
+          "The empire was usurped by the Naiman prince Kuchlug in 1211"
+        ],
+        [
+          "Qara Khitai",
+          "However, in 1211, Kuchlug revolted"
+        ]
+      ]
+    },
+    "chagatai-khan-inherits-part-of-the-mongol-empire": {
+      "descr": "On Genghis Khan's death, his son Chagatai inherits lands roughly matching the former Qara Khitai: Issyk-Kul, the Ili, Chu and Talas valleys, Transoxania and the Tarim Basin.",
+      "basis": [
+        [
+          "Chagatai Khanate",
+          "When Genghis Khan died in 1227"
+        ]
+      ]
+    },
+    "death-of-chagatai": {
+      "descr": "Chagatai Khan dies and is succeeded by his grandson, Qara Hülegü.",
+      "basis": [
+        [
+          "Chagatai Khanate",
+          "Chagatai Khan died in 1242"
+        ]
+      ]
+    },
+    "chagatai-khanate-split-between-west-and-east-moghulistan": {
+      "descr": "The increasingly unstable khanate splits in two during the 1340s.",
+      "basis": [
+        [
+          "Chagatai Khanate",
+          "split in two during the 1340s"
+        ]
+      ]
+    },
+    "western-portion-annexed-by-timur": {
+      "descr": "After Tughlugh's death, Timur and Amir Husayn take over Transoxiana, which the Chagatais progressively lose to the Timurids.",
+      "basis": [
+        [
+          "Chagatai Khanate",
+          "Following Tughlugh's death in 1363"
+        ],
+        [
+          "Chagatai Khanate",
+          "From 1363, the Chagatais progressively lost Transoxiana"
+        ]
+      ]
+    },
+    "abul-khayr-becomes-the-uzbek-khan": {
+      "descr": "Abulkhair Khan is proclaimed ruler of a new political union of the Uzbeks, often called the \"State of the Nomadic Uzbeks\".",
+      "basis": [
+        [
+          "Uzbek Khanate",
+          "In 1428, Abulkhair Khan was proclaimed the ruler"
+        ]
+      ]
+    },
+    "shaybanids-invade-transoxiana": {
+      "descr": "By 1446 the Uzbek Khanate has taken land in Transoxiana from the Timurids, in campaigns begun in 1430.",
+      "basis": [
+        [
+          "Uzbek Khanate",
+          "Between 1430 and 1446 the Uzbek Khanate took land in Transoxiana"
+        ]
+      ]
+    },
+    "death-of-abul-khayr": {
+      "descr": "Around 1468–1470, Abu'l-Khayr Khan and several of his sons die in battle against the Kazakhs.",
+      "basis": [
+        [
+          "Uzbek Khanate",
+          "Somewhere around 1468–1470, Abu'l-Khayr Khan died in battle"
+        ]
+      ]
+    },
+    "sviatoslav-sacks-atil-end-of-the-khazar-khaganate": {
+      "descr": "Sviatoslav I of Kiev and his allies take the Khazar capital Atil, four years after Sarkel fell; Khazaria declines and breaks up by the mid-11th century.",
+      "basis": [
+        [
+          "Khazars",
+          "By 969, Sviatoslav I of Kiev"
+        ],
+        [
+          "Khazars",
+          "Sarkel fell in 965"
+        ]
+      ]
+    },
+    "conversion-to-islam": {
+      "descr": "Volga Bulgaria adopts Islam as its state religion, 66 years before the Christianization of Kievan Rus'.",
+      "basis": [
+        [
+          "Volga Bulgaria",
+          "Volga Bulgaria adopted Islam as a state religion in 922"
+        ]
+      ]
+    },
+    "elevation-of-ulugh-muhammad": {
+      "descr": "Ulugh Muhammad, a former khan of the Golden Horde, takes power in Kazan with the support of the local nobility. Some historians date the khanate's founding from this (1437 or 1438), others from his son Maxmud's rule in 1445.",
+      "basis": [
+        [
+          "Khanate of Kazan",
+          "when Ulugh Muhammad, a former khan of the Golden Horde"
+        ],
+        [
+          "Khanate of Kazan",
+          "Historians date its founding either to 1437 or 1438"
+        ]
+      ]
+    },
+    "ibak-khan-establishes-chimgi-tura-as-an-independent-khanate": {
+      "descr": "The Khanate's lands leave Golden Horde control, which had lasted since 1242.",
+      "basis": [
+        [
+          "Khanate of Sibir",
+          "under the Golden Horde from 1242 to 1468"
+        ]
+      ]
+    },
+    "battle-of-peshawar": {
+      "descr": "Jayapala fights his last battle against Mahmud at Peshawar on 27 September; a Shahi governor, Adira Afghan, is held to have changed sides and eased the passage of Mahmud's troops.",
+      "basis": [
+        [
+          "Hindu Shahis",
+          "Jayapala met with Mahmud in the Battle of Peshawar"
+        ]
+      ]
+    },
+    "annexed-by-the-ghaznavids": {
+      "descr": "After more than two decades of resisting the Ghaznavids, the Shahi dynasty falls.",
+      "basis": [
+        [
+          "Hindu Shahis",
+          "resulting in the fall of the dynasty in 1026 CE"
+        ]
+      ]
+    },
+    "conquest-of-kannauj-by-mahmud-of-ghazni": {
+      "descr": "Mahmud of Ghazni captures Kannauj. The last important Pratihara king, Rajyapala, flees, then returns to surrender, and is killed by Vidyadhara for it.",
+      "basis": [
+        [
+          "Pratihara dynasty",
+          "Mahmud of Ghazni captured Kannauj in 1018"
+        ],
+        [
+          "Pratihara dynasty",
+          "Their last important king, Rajyapala"
+        ]
+      ]
+    },
+    "khalji-revolution": {
+      "descr": "The Khalji dynasty becomes the second ruling house of the Delhi Sultanate; it rules until 1320.",
+      "basis": [
+        [
+          "Khalji dynasty",
+          "The Khalji or Khilji dynasty was the second ruling house"
+        ],
+        [
+          "Delhi Sultanate",
+          "Khalji (1290–1320)"
+        ]
+      ]
+    },
+    "first-battle-of-panipat": {
+      "descr": "Babur presses his advantage from the start; Ibrahim dies on the battlefield in April with 20,000 of his men.",
+      "basis": [
+        [
+          "Lodi dynasty",
+          "Babur pressed his advantage from the start"
+        ]
+      ]
+    },
+    "lodi-sharqi-war": {
+      "descr": "Mahmud Shah Sharqi of Jaunpur besieges Delhi but is defeated by Bahlul Lodi.",
+      "basis": [
+        [
+          "Jaunpur Sultanate",
+          "In 1452, he besieged Delhi"
+        ]
+      ]
+    },
+    "sack-of-delhi": {
+      "descr": "Timur's devastating raid on Delhi triggers a major political transformation across northern India.",
+      "basis": [
+        [
+          "Delhi Sultanate",
+          "Timur's devastating raid on Delhi in 1398"
+        ]
+      ]
+    },
+    "muzaffar-shahs-invasion-of-malwa": {
+      "descr": "Muzaffar Shah of Gujarat, who this year declares himself sultan, invades and occupies Malwa; it is restored in 1408.",
+      "basis": [
+        [
+          "Malwa Sultanate",
+          "Malwa was invaded and occupied by Muzaffar Shah of Gujarat in 1407"
+        ],
+        [
+          "Gujarat Sultanate",
+          "In 1407, he declared himself as Sultan Muzaffar Shah I"
+        ]
+      ]
+    },
+    "declared-independence-from-delhi-sultanate": {
+      "descr": "With Delhi weakened, Muzaffar Shah I, governor of Gujarat, declares independence from the Tughlaq dynasty and establishes the Gujarat Sultanate.",
+      "basis": [
+        [
+          "Gujarat Sultanate",
+          "The kingdom was established in 1394"
+        ]
+      ]
+    },
+    "siege-of-warangal-end-of-the-kakatiyas": {
+      "descr": "Khan returns with a reinforced army, and after a five-month siege the Kakatiya king Prataparudra, short of supplies, submits.",
+      "basis": [
+        [
+          "Kakatiya dynasty",
+          "Khan returned in 1323"
+        ]
+      ]
+    },
+    "gujarat-sultanates-campaign-in-khandesh": {
+      "descr": "The Gujarat army enters Khandesh.",
+      "basis": [
+        [
+          "Farooqui dynasty",
+          "in 1498 Gujarat army entered Khandesh"
+        ]
+      ]
+    },
+    "berar-sultanate-declares-independence": {
+      "descr": "Amid civil unrest in the Bahmani Sultanate, its governor of Berar, Fathullah Imad-ul-Mulk, proclaims independence and founds the Imad Shahi dynasty, one of the five Deccan sultanates.",
+      "basis": [
+        [
+          "Berar Sultanate",
+          "In 1490, Fathullah Imad-ul-Mulk"
+        ],
+        [
+          "Berar Sultanate",
+          "One of the five Deccan sultanates"
+        ]
+      ]
+    },
+    "capital-moved-from-gampola": {
+      "descr": "Parakramabahu VI makes Kotte his capital. The article also says he became king of Gampola in 1412 and moved to Kotte in 1415.",
+      "basis": [
+        [
+          "Kingdom of Kotte",
+          "In 1412, Parakramabahu VI established Kotte"
+        ],
+        [
+          "Kingdom of Kotte",
+          "first became the king of Gampola in 1412"
+        ]
+      ]
+    },
+    "fall-of-the-polonnaruwa-kingdom-by-kalinga-maghas-invasion-o": {
+      "descr": "In the widely accepted view, the Jaffna kingdom of the Aryacakravarti dynasty begins with the invasion of Magha, a previously unknown chieftain who claims to be from Kalinga.",
+      "basis": [
+        [
+          "Jaffna kingdom",
+          "the widely accepted view is that the kingdom"
+        ]
+      ]
+    },
+    "jaffna-in-the-kingdom-of-kotte": {
+      "descr": "Prince Sapumal invades Jaffna on the orders of Parakramabahu VI of Kotte; the kingdom loses its independence until 1467.",
+      "basis": [
+        [
+          "Jaffna kingdom",
+          "invaded by Prince Sapumal"
+        ],
+        [
+          "Jaffna kingdom",
+          "briefly losing its independence under the Kotte kingdom from 1450 to 1467"
+        ]
+      ]
+    },
+    "bengal-jaunpur-war": {
+      "descr": "Raja Ganesha agrees, and Jadu begins ruling Bengal as Jalaluddin Muhammad Shah.",
+      "basis": [
+        [
+          "Bengal Sultanate",
+          "Jadu started ruling Bengal as Jalaluddin Muhammad Shah"
+        ]
+      ]
+    },
+    "bengal-kamata-war": {
+      "descr": "Led by Shah Ismail Ghazi, the Bengali army overthrows the Hindu Khen dynasty of the Kamata Kingdom.",
+      "basis": [
+        [
+          "Bengal Sultanate",
+          "the Bengali army overthrew the Kamata Kingdom"
+        ]
+      ]
+    },
+    "ahom-kingdom-established-by-sukapha": {
+      "descr": "Sukaphaa, a Tai prince, crosses the Patkai range from Möng Mao into the Brahmaputra valley and founds the Ahom kingdom, which lasts until 1826.",
+      "basis": [
+        [
+          "Ahom kingdom",
+          "The Ahom kingdom was established in 1228"
+        ],
+        [
+          "Ahom kingdom",
+          "existed from 1228 until 1826"
+        ]
+      ]
+    },
+    "abaoji-assumes-the-title-of-emperor": {
+      "descr": "Abaoji, leader of the Khitans, takes the title of Celestial Emperor, proclaims a Chinese era name and builds a Confucian temple: a Chinese-style dynastic state.",
+      "basis": [
+        [
+          "Liao dynasty",
+          "In 916, Abaoji assumed the title of Celestial Emperor"
+        ],
+        [
+          "Liao dynasty",
+          "proclaimed a Chinese-style dynastic state in 916"
+        ]
+      ]
+    },
+    "great-liao-adopted-as-a-dynastic-name": {
+      "descr": "Abaoji's successor, Emperor Taizong, officially renames the dynasty Great Liao (in 938 or 947).",
+      "basis": [
+        [
+          "Liao dynasty",
+          "In 938 or 947 Abaoji's successor"
+        ]
+      ]
+    },
+    "dynasty-established-by-emperor-jingzong": {
+      "descr": "Yuanhao declares himself emperor of the Great Xia, with his capital at Xingqing (modern Yinchuan). The Tangut-led Western Xia lasts until 1227.",
+      "basis": [
+        [
+          "Western Xia",
+          "In 1038, Yuanhao declared himself emperor"
+        ],
+        [
+          "Western Xia",
+          "existed from 1038 to 1227 AD"
+        ]
+      ]
+    },
+    "destruction-by-the-mongol-empire": {
+      "descr": "Genghis Khan besieges the Western Xia capital while his forces strike the Jin to keep reinforcements away; the Western Xia is annihilated.",
+      "basis": [
+        [
+          "Western Xia",
+          "Genghis reached the Western Xia capital in 1227"
+        ],
+        [
+          "Western Xia",
+          "The Western Xia was annihilated by the Mongols in 1227 AD"
+        ]
+      ]
+    },
+    "subjugation-by-the-mongol-empire": {
+      "descr": "Xiangzong submits to Mongol rule, giving his daughter Chaka in marriage to Genghis and paying tribute in camels, falcons and textiles.",
+      "basis": [
+        [
+          "Western Xia",
+          "In 1210, Xiangzong agreed to submit to Mongol rule"
+        ]
+      ]
+    },
+    "fall-of-caizhou-to-the-mongol-empire": {
+      "descr": "The Mongols conquer the Jin dynasty. Emperor Aizong kills himself, and one loyalist makes explosives from all the metal in his city, even gold and silver, to throw at the Mongols.",
+      "basis": [
+        [
+          "Jin dynasty (1115–1234)",
+          "They were finally conquered by the Mongols in 1234"
+        ],
+        [
+          "Jin dynasty (1115–1234)",
+          "Even after Aizong committed suicide in 1234"
+        ]
+      ]
+    },
+    "capture-of-bianliang-from-the-northern-song": {
+      "descr": "The Song fail to defend Kaifeng, but the conflict goes on and the Song do not surrender.",
+      "basis": [
+        [
+          "Jin dynasty (1115–1234)",
+          "The failure of the Song to defend Kaifeng in 1127"
+        ]
+      ]
+    },
+    "mongol-invasion-of-the-jin": {
+      "descr": "In spring the Mongols under Genghis Khan invade the Jin Empire from two directions and win several victories.",
+      "basis": [
+        [
+          "Jin dynasty (1115–1234)",
+          "In 1211, the Mongols, led by Genghis Khan"
+        ],
+        [
+          "Jin dynasty (1115–1234)",
+          "In the spring of 1211"
+        ]
+      ]
+    },
+    "coup-detat-by-gao-shengtai": {
+      "descr": "The former prime minister Gao Shengtai forces King Duan Zhengming to give up the throne to him and renames the Dali Kingdom the Dazhong Kingdom.",
+      "basis": [
+        [
+          "Dali Kingdom",
+          "In 1094, the former prime minister Gao Shengtai"
+        ]
+      ]
+    },
+    "fall-of-sang-gyeong": {
+      "descr": "Parhae falls.",
+      "basis": [
+        [
+          "Parhae",
+          "prior to the fall of Parhae in 926"
+        ]
+      ]
+    },
+    "parhae-as-a-kingdom-name": {
+      "descr": "The Tang dynasty gives the ruler of Jin the title \"Prince of Commandery of Bohai (Parhae)\", and the kingdom takes the name Parhae.",
+      "basis": [
+        [
+          "Parhae",
+          "It was originally known as the Kingdom of Jin"
+        ],
+        [
+          "Parhae",
+          "In 713, the Tang dynasty bestowed"
+        ]
+      ]
+    },
+    "unification-of-the-later-three-kingdoms": {
+      "descr": "At Kyŏn Hwŏn's request, Taejo and Kyŏn Hwŏn conquer Later Baekje with 87,500 soldiers, ending the Later Three Kingdoms period.",
+      "basis": [
+        [
+          "Goryeo",
+          "In 936, upon Kyŏn Hwŏn's request"
+        ]
+      ]
+    },
+    "goryeo-khitan-war": {
+      "descr": "The Khitans, who see Goryeo as a threat, invade; the Liao invasions of 993–1020 are repelled.",
+      "basis": [
+        [
+          "Goryeo",
+          "with tensions rising, invaded in 993"
+        ],
+        [
+          "Goryeo",
+          "The Liao invasions of Goryeo from 993 to 1020"
+        ]
+      ]
+    },
+    "goryeo-jurchen-war": {
+      "descr": "The Wanyan Jurchens, pursuing tribes that resist them, reach Chongju.",
+      "basis": [
+        [
+          "Goryeo",
+          "In 1104, the Wanyan Jurchens reached Chongju"
+        ]
+      ]
+    },
+    "goryeo-military-dictatorship": {
+      "descr": "Powerful warrior families, most notably the Ch'oe, take de facto control of the government in a military dictatorship akin to a shogunate.",
+      "basis": [
+        [
+          "Goryeo",
+          "Beginning in 1170, the government of Goryeo"
+        ]
+      ]
+    },
+    "mongol-invasions-of-korea": {
+      "descr": "The Mongols under Ögedei Khan invade Goryeo, beginning campaigns (1231–1259) that ravage parts of Gyeongsang and Jeolla.",
+      "basis": [
+        [
+          "Goryeo",
+          "In 1231, Mongols under Ögedei Khan invaded Goryeo"
+        ],
+        [
+          "Goryeo",
+          "the Mongols began a campaign from 1231 to 1259"
+        ]
+      ]
+    },
+    "son-in-law-state-of-the-yuan-dynasty": {
+      "descr": "Goryeo capitulates to the Mongols and becomes a semi-autonomous \"son-in-law state\" of the Yuan dynasty, ending its imperial system.",
+      "basis": [
+        [
+          "Goryeo",
+          "In 1270, Goryeo capitulated to the Mongols"
+        ]
+      ]
+    },
+    "enthronement-of-taejo": {
+      "descr": "Taejo founds Joseon, which lasts until the Korean Empire replaces it in 1897.",
+      "basis": [
+        [
+          "Joseon",
+          "It was founded by Taejo of Joseon in 1392"
+        ]
+      ]
+    },
+    "siege-of-kamakura": {
+      "descr": "The Kamakura shogunate is overthrown in the Kenmu Restoration under Emperor Go-Daigo, restoring imperial rule until 1336.",
+      "basis": [
+        [
+          "Kamakura shogunate",
+          "The Kamakura shogunate was overthrown in the Kenmu Restoration"
+        ]
+      ]
+    },
+    "ashikaga-takauji-captures-kyoto": {
+      "descr": "Ashikaga Takauji enters the capital on 25 February, ending the Kenmu Restoration; he becomes shōgun and founds the Ashikaga shogunate, beginning the Northern and Southern Courts period.",
+      "basis": [
+        [
+          "Kenmu Restoration",
+          "On February 25, 1336, Ashikaga Takauji entered the capital"
+        ],
+        [
+          "Kenmu Restoration",
+          "The Kenmu Restoration was ultimately overthrown"
+        ]
+      ]
+    },
+    "nin-war": {
+      "descr": "The Ōnin War (1467–1477) breaks out as the daimyō feud for power, starting the constant civil war of the Sengoku period.",
+      "basis": [
+        [
+          "Ashikaga shogunate",
+          "upon outbreak of the Ōnin War in 1467"
+        ],
+        [
+          "Ashikaga shogunate",
+          "during the Ōnin War (1467–1477)"
+        ]
+      ]
+    },
+    "unification-of-okinawa-island": {
+      "descr": "Shō Hashi, having conquered Hokuzan in 1416, conquers Nanzan, unites Okinawa for the first time and founds the first Shō dynasty. The Ryukyu Kingdom lasts until 1872.",
+      "basis": [
+        [
+          "Ryukyu Kingdom",
+          "Hashi conquered Hokuzan in 1416 and Nanzan in 1429"
+        ],
+        [
+          "Ryukyu Kingdom",
+          "The Ryukyu Kingdom was a kingdom in the Ryukyu Islands from 1429"
+        ]
+      ]
+    },
+    "consecration-of-jayavarman-ii": {
+      "descr": "Khmer prince Jayavarman II declares himself chakravartin (emperor) in a grand consecration on Mount Mahendraparvata (Phnom Kulen): the conventional start of the Khmer Empire.",
+      "basis": [
+        [
+          "Khmer Empire",
+          "The beginning of the Khmer Empire is conventionally dated to 802 AD"
+        ],
+        [
+          "Khmer Empire",
+          "Jayavarman II conducted a grandiose consecration ritual"
+        ]
+      ]
+    },
+    "fall-of-angkor": {
+      "descr": "Under Siamese pressure, King Ponhea Yat abandons Angkor as indefensible and moves to the Phnom Penh area, traditionally the end of the Khmer Empire.",
+      "basis": [
+        [
+          "Khmer Empire",
+          "the Khmer king Ponhea Yat abandoned Angkor"
+        ],
+        [
+          "Khmer Empire",
+          "the end of the Khmer Empire has traditionally been marked"
+        ]
+      ]
+    },
+    "construction-of-angkor-wat": {
+      "descr": "Suryavarman II takes the throne. Under him the empire unites internally and Angkor Wat, dedicated to Vishnu, is built over 37 years.",
+      "basis": [
+        [
+          "Khmer Empire",
+          "Under Suryavarman II (reigned 1113–1150)"
+        ]
+      ]
+    },
+    "lan-xang-founded": {
+      "descr": "Fa Ngum is crowned and names his kingdom Lan Xang Hom Khao, \"The Land of a Million Elephants and the White Parasol\"; it holds present-day Laos until 1707.",
+      "basis": [
+        [
+          "Lan Xang",
+          "In 1353 Fa Ngum was crowned"
+        ],
+        [
+          "Lan Xang",
+          "held the area of present-day Laos from 1353 to 1707"
+        ]
+      ]
+    },
+    "founding-of-kingdom": {
+      "descr": "The chronicle date for Pagan, given as its fortification but likely its foundation (876 after adjusting the chronicle's dates).",
+      "basis": [
+        [
+          "Pagan Kingdom",
+          "Though Hmannan states that Pagan was fortified in 849"
+        ]
+      ]
+    },
+    "myinsaing-takeover": {
+      "descr": "On 17 December the three brothers overthrow Kyawswa and found the Myinsaing Kingdom.",
+      "basis": [
+        [
+          "Pagan Kingdom",
+          "On 17 December 1297, the three brothers overthrew Kyawswa"
+        ]
+      ]
+    },
+    "pagan-kingdoms-expansion": {
+      "descr": "By the mid-1050s Anawrahta's reforms have made Pagan a regional power; he expands, founding the Pagan Empire, probably the first polity to unite the Irrawaddy valley.",
+      "basis": [
+        [
+          "Pagan Kingdom",
+          "By the mid-1050s, Anawrahta's reforms"
+        ],
+        [
+          "Pagan Kingdom",
+          "until the 1050s and 1060s when King Anawrahta founded the Pagan Empire"
+        ]
+      ]
+    },
+    "peak": {
+      "descr": "Pagan reaches the height of its political and administrative development under Narapatisithu (r. 1174–1211) and Htilominlo (r. 1211–1235).",
+      "basis": [
+        [
+          "Pagan Kingdom",
+          "Pagan reached the height of political and administrative development"
+        ]
+      ]
+    },
+    "first-mongol-invasion": {
+      "descr": "The first Mongol invasion defeats the Burmese at the Battle of Ngasaunggyan; repeated invasions (1277–1301) topple the kingdom in 1287.",
+      "basis": [
+        [
+          "Pagan Kingdom",
+          "The first invasion in 1277 defeated the Burmese"
+        ],
+        [
+          "Pagan Kingdom",
+          "Repeated Mongol invasions (1277–1301)"
+        ]
+      ]
+    },
+    "kingdom-of-ava-founded": {
+      "descr": "The Ava Kingdom is founded, succeeding the petty kingdoms of Myinsaing, Pinya and Sagaing; it rules upper Burma until 1555.",
+      "basis": [
+        [
+          "Kingdom of Ava",
+          "Founded in 1365, the kingdom was the successor state"
+        ],
+        [
+          "Kingdom of Ava",
+          "ruled upper Burma (Myanmar) from 1365 to 1555"
+        ]
+      ]
+    },
+    "forty-years-war": {
+      "descr": "The Forty Years' War between Ava and Hanthawaddy begins (to 1424). Razadarit fends off Ava, but the war leaves Ava exhausted.",
+      "basis": [
+        [
+          "Kingdom of Ava",
+          "The Forty Years' War (1385–1424)"
+        ],
+        [
+          "Hanthawaddy kingdom",
+          "successfully fended off the northern Burmese-speaking Ava kingdom"
+        ]
+      ]
+    },
+    "independence-from-pagan": {
+      "descr": "After Pagan collapses, King Wareru founds the Mon-speaking kingdom of Ramaññadesa, a nominal vassal of Sukhothai and the Yuan; it becomes formally independent in 1330.",
+      "basis": [
+        [
+          "Hanthawaddy kingdom",
+          "Originally founded as a Mon-speaking kingdom"
+        ]
+      ]
+    },
+    "vassal-of-sukhothai": {
+      "descr": "Wareru's new kingdom of Ramaññadesa starts as a nominal vassal of the Sukhothai Kingdom and the Yuan dynasty.",
+      "basis": [
+        [
+          "Hanthawaddy kingdom",
+          "Originally founded as a Mon-speaking kingdom"
+        ]
+      ]
+    },
+    "sukhothai-kingdom-established": {
+      "descr": "Si Inthrathit founds the Sukhothai Kingdom. By legend, Central Thai peoples led by the chief Pho Khun Bang Klang Hao rebel against the governor at Sukhodaya and make Sukhothai an independent Thai state.",
+      "basis": [
+        [
+          "Sukhothai Kingdom",
+          "The kingdom was founded by Si Inthrathit in 1238"
+        ],
+        [
+          "Sukhothai Kingdom",
+          "According to legend, in 1238"
+        ]
+      ]
+    },
+    "annexed-to-ayutthaya": {
+      "descr": "On Borommapan's death, Ayutthaya annexes its tributary Sukhothai; King Borommarachathirat II installs his son Ramesuan there as Upparat.",
+      "basis": [
+        [
+          "Sukhothai Kingdom",
+          "It remained a tributary state of Ayutthaya"
+        ],
+        [
+          "Sukhothai Kingdom",
+          "When Borommapan died in 1438"
+        ]
+      ]
+    },
+    "kingdom-official-establishment": {
+      "descr": "Uthong V brings Phetchaburi, Ayodhya, Suphannabhum and Lavo under one ruler; 4 March 1351 is the conventional founding date of Ayutthaya, which lasts until 1767.",
+      "basis": [
+        [
+          "Ayutthaya Kingdom",
+          "4 March 1351 is conventionally given"
+        ],
+        [
+          "Ayutthaya Kingdom",
+          "existed in Southeast Asia from 1351 to 1767"
+        ]
+      ]
+    },
+    "founding-of-chiang-mai": {
+      "descr": "Chiang Mai is founded and made the capital.",
+      "basis": [
+        [
+          "Lanna Kingdom",
+          "He founded Chiang Mai in 1296"
+        ]
+      ]
+    },
+    "ng-quy-n-founded-the-dynasty": {
+      "descr": "The Ngô dynasty begins, a semi-independent Vietnamese dynasty that lasts until 968.",
+      "basis": [
+        [
+          "Ngô dynasty",
+          "was a semi-independent Vietnamese dynasty from 939 to 968"
+        ]
+      ]
+    },
+    "death-of-ng-x-ng-v-n": {
+      "descr": "Ngô Xương Văn dies and his son Ngô Xương Xí succeeds him.",
+      "basis": [
+        [
+          "Ngô dynasty",
+          "After Ngô Xương Văn's death in 965"
+        ]
+      ]
+    },
+    "inh-b-l-nh-ends-the-anarchy-of-the-12-warlords-and-establish": {
+      "descr": "Đinh Bộ Lĩnh puts down the upheavals of the Twelve Warlords and founds the Đinh dynasty.",
+      "basis": [
+        [
+          "Đinh dynasty",
+          "It was founded in 968 when Đinh Bộ Lĩnh"
+        ]
+      ]
+    },
+    "general-l-ho-n-succeeded-the-throne": {
+      "descr": "At Hoa Lư, Empress Dương Vân Nga puts the emperor's robe on Lê Hoàn and offers him the throne, ending the Đinh dynasty.",
+      "basis": [
+        [
+          "Đinh dynasty",
+          "In 980, officials and generals gathered at Hoa Lư"
+        ]
+      ]
+    },
+    "coronation-of-l-c-ng-u-n": {
+      "descr": "Công Uẩn succeeds Lê Long Đĩnh and founds the Lý dynasty.",
+      "basis": [
+        [
+          "Lý dynasty",
+          "In 1009, Công Uẩn succeeded Lê Long Đĩnh"
+        ]
+      ]
+    },
+    "l-chi-u-ho-ng-abdicates-cedes-throne-to-tr-n-c-nh": {
+      "descr": "The eight-year-old Empress Lý Chiêu Hoàng is pressured to abdicate in favour of her husband Trần Cảnh, ending the Lý dynasty after 216 years.",
+      "basis": [
+        [
+          "Lý dynasty",
+          "The dynasty ended when empress regnant Lý Chiêu Hoàng"
+        ]
+      ]
+    },
+    "war-with-dali-kingdom": {
+      "descr": "Dali forces and Tuấn, with tribal support, invade Đại Cồ Việt in spring.",
+      "basis": [
+        [
+          "Lý dynasty",
+          "Dali forces and Tuấn with tribal supports invaded"
+        ]
+      ]
+    },
+    "l-thanh-t-ng-changes-the-state-name-from-i-c-vi-t-to-i-vi-t": {
+      "descr": "Under Lý Thánh Tông the country's name changes from Đại Cồ Việt to Đại Việt.",
+      "basis": [
+        [
+          "Lý dynasty",
+          "One of the big events of the Lý dynasty"
+        ]
+      ]
+    },
+    "l-song-war": {
+      "descr": "Song chancellor Wang Anshi tells the emperor that a defeat by Champa has weakened the Lý and that it is a good moment to annex the country. The Lý–Song War follows, and the Song invasion fails.",
+      "basis": [
+        [
+          "Lý dynasty",
+          "In 1075, Song prime minister Wang Anshi"
+        ],
+        [
+          "Lý dynasty",
+          "so it would be a good occasion to annex the country"
+        ]
+      ]
+    },
+    "tr-n-thi-u-ceded-the-throne-to-h-qu-ly": {
+      "descr": "The child emperor Thiếu Đế, put on the throne in 1398, is forced to abdicate in favour of the minister Hồ Quý Ly.",
+      "basis": [
+        [
+          "Trần dynasty",
+          "In 1398, emperor Trần Thuận Tông was forced to cede the throne"
+        ]
+      ]
+    },
+    "chola-invasion-of-srivijaya": {
+      "descr": "Rajendra Chola launches naval raids on Srivijaya's ports; the kingdom may have broken up after these raids.",
+      "basis": [
+        [
+          "Srivijaya",
+          "Rajendra Chola, the Chola king from Tamil Nadu"
+        ],
+        [
+          "Srivijaya",
+          "The kingdom may have disintegrated after 1025"
+        ]
+      ]
+    },
+    "mataram-srivijayan-wars": {
+      "descr": "The Anjukladang inscription records an attack from Malayu, that is, a Srivijayan attack on the Mataram Kingdom of East Java.",
+      "basis": [
+        [
+          "Srivijaya",
+          "the Anjukladang inscription dated 937"
+        ]
+      ]
+    },
+    "sanjaya-ascends-the-throne": {
+      "descr": "Sanjaya begins his reign (716–746); later inscriptions list the kings of Mataram back to him.",
+      "basis": [
+        [
+          "Mataram kingdom",
+          "going as far as back as King Sanjaya (r. 716 AD–746 AD)"
+        ]
+      ]
+    },
+    "dharmawangsa-defeat-to-wurawari": {
+      "descr": "The vassal king of Wurawari attacks the reigning king Dharmawangsa Teguh, and the Mataram state breaks up.",
+      "basis": [
+        [
+          "Mataram kingdom",
+          "when the reigning king Dharmawangsa Teguh was attacked"
+        ]
+      ]
+    },
+    "airlangga-divided-his-kingdom-into-janggala-and-panjalu": {
+      "descr": "Airlangga divides his kingdom of Kahuripan into Janggala and Panjalu (Kadiri) and abdicates in favour of his sons to live as an ascetic.",
+      "basis": [
+        [
+          "Kediri kingdom",
+          "In 1042, Airlangga divided his kingdom of Kahuripan"
+        ]
+      ]
+    },
+    "kertajaya-defeat-to-ken-arok-of-singhasari": {
+      "descr": "Kertajaya, the last king of Kediri, is forced to surrender his throne to Ken Arok, and his kingdom passes to the new kingdom of Singhasari.",
+      "basis": [
+        [
+          "Kediri kingdom",
+          "In 1222, he was forced to surrender his throne to Ken Arok"
+        ]
+      ]
+    },
+    "revival-of-the-kediri-by-jayakatwang": {
+      "descr": "Jayakatwang, vassal king of Daha (Kediri), rebels against Kertanegara of Singhasari over the old defeat of his ancestor Kertajaya by Ken Arok, aided by Arya Viraraja of Sumenep.",
+      "basis": [
+        [
+          "Kediri kingdom",
+          "In 1292, Jayakatwang rebelled against Singhasari"
+        ],
+        [
+          "Singhasari",
+          "In 1292, Regent Jayakatwang"
+        ]
+      ]
+    },
+    "establishment-of-majapahit-after-the-mongol-invasion": {
+      "descr": "Raden Wijaya founds a stronghold with its capital at Majapahit, in the year of the Mongol invasion of Java.",
+      "basis": [
+        [
+          "Majapahit",
+          "In 1293, Raden Wijaya founded a stronghold"
+        ],
+        [
+          "Majapahit",
+          "Gunpowder technology entered Java in the Mongol invasion"
+        ]
+      ]
+    },
+    "coronation-of-king-kertarajasa-jayawardhana": {
+      "descr": "Raden Wijaya is crowned on 10 November (15 Kārttika 1215 Śaka), the date taken as the birth of the Majapahit kingdom.",
+      "basis": [
+        [
+          "Majapahit",
+          "The exact date used as the birth of the Majapahit kingdom"
+        ]
+      ]
+    },
+    "battle-of-bubat": {
+      "descr": "The Sunda king and his family arrive in Majapahit with a fleet of 200 large ships and 2,000 smaller ones; Gajah Mada attacks the Sundanese troops at Bubat from a chariot.",
+      "basis": [
+        [
+          "Majapahit",
+          "Before the Battle of Bubat in 1357"
+        ],
+        [
+          "Majapahit",
+          "Gajah Mada also rode in a chariot"
+        ]
+      ]
+    },
+    "demak-majapahit-conflicts": {
+      "descr": "In the Sudarma Wisuta war, Ranawijaya's army under general Udara breaches Trowulan's defences and kills Kertabumi in his palace. This is the traditional end date of Majapahit, though not the fall of the whole empire; other dates run to 1527.",
+      "basis": [
+        [
+          "Majapahit",
+          "The year 1478 was the year of Sudarma Wisuta war"
+        ],
+        [
+          "Majapahit",
+          "Dates for the end of the Majapahit Empire range from 1478"
+        ]
+      ]
+    },
+    "foundation": {
+      "descr": "Merah Silu, who later converts to Islam as Malik ul Salih, is believed to found the kingdom.",
+      "basis": [
+        [
+          "Samudera Pasai Sultanate",
+          "founded by Merah Silu"
+        ]
+      ]
+    },
+    "conquered-by-the-aceh-sultanate": {
+      "descr": "The Portuguese garrison, there since the 1521 invasion, leaves Pasai, and Ali Mughayat Syah, the first Sultan of Aceh, annexes it.",
+      "basis": [
+        [
+          "Samudera Pasai Sultanate",
+          "After the 1521 Portuguese invasion"
+        ]
+      ]
+    },
+    "founding": {
+      "descr": "The conventional founding year of the Malacca Sultanate, by Parameswara (Iskandar Shah), King of Singapura; earlier dates have been proposed.",
+      "basis": [
+        [
+          "Malacca Sultanate",
+          "Conventional historical thesis marks c. 1400"
+        ]
+      ]
+    },
+    "aho-eitu-brought-his-faction-to-samoa": {
+      "descr": "The first Tuʻi Tonga, ʻAhoʻeitu, begins to extend his rule beyond Tonga.",
+      "basis": [
+        [
+          "Tuʻi Tonga Empire",
+          "In about 950 AD, the first Tuʻi Tonga"
+        ]
+      ]
+    },
+    "battle-of-sagrajas": {
+      "descr": "4,000 black cavalrymen, possibly from Takrur, are crucial to the Almoravid victory at Sagrajas in Al-Andalus.",
+      "basis": [
+        [
+          "Takrur",
+          "4,000 black cavalrymen"
+        ]
+      ]
+    },
+    "independence-from-mali-empire": {
+      "descr": "Mali's hold on Gao, whose kings it taxed, lasts until about the 1430s.",
+      "basis": [
+        [
+          "Songhai Empire",
+          "collected taxes from its kings until about the 1430s"
+        ]
+      ]
+    },
+    "askiya-dynasty-begins": {
+      "descr": "The Askia dynasty replaces the Sonni dynasty as rulers of the Songhai Empire; it rules until 1591.",
+      "basis": [
+        [
+          "Songhai Empire",
+          "it was later replaced by the Askia dynasty (1493–1591)"
+        ]
+      ]
+    },
+    "loss-of-kanem-to-the-bilala-re-centered-in-bornu": {
+      "descr": "Around 1380 the Bilala oust the Sayfawa from power in Kanem and capture Njimi.",
+      "basis": [
+        [
+          "Kanem–Bornu Empire",
+          "around the year 1380, the Bilala"
+        ]
+      ]
+    },
+    "battle-of-ansata": {
+      "descr": "The last Zagwe ruler, Za-Ilmaknun, is killed in battle by the forces of Yekuno Amlak of Amhara.",
+      "basis": [
+        [
+          "Zagwe dynasty",
+          "when the last Zagwe Negus Za-Ilmaknun was killed in battle"
+        ]
+      ]
+    },
+    "ascension-of-yekuno-amlak": {
+      "descr": "Yekuno Amlak, who claims descent from the last Aksumite king and from Solomon and the Queen of Sheba, founds the Solomonic dynasty, replacing the Zagwe; the empire lasts until 1974.",
+      "basis": [
+        [
+          "Ethiopian Empire",
+          "Founded in 1270 by Yekuno Amlak"
+        ],
+        [
+          "Ethiopian Empire",
+          "It existed from the establishment of the Solomonic dynasty"
+        ]
+      ]
+    },
+    "conquests-of-amda-seyon-i": {
+      "descr": "Amda Seyon I begins his reign (1314–1344); his conquests greatly expand the empire.",
+      "basis": [
+        [
+          "Ethiopian Empire",
+          "under the conquests of Amda Seyon I (1314–1344)"
+        ]
+      ]
+    },
+    "sultanate-of-shewa-annexed-by-ifat": {
+      "descr": "Wali Asma of Ifat deposes the Shewan kings and founds the Walasma dynasty; Shewa becomes one of Ifat's seven districts.",
+      "basis": [
+        [
+          "Sultanate of Shewa",
+          "In 1285 Ifat's ruler Wali Asma deposed Shewan kings"
+        ]
+      ]
+    },
+    "sabr-ad-din-iii-returns-from-exile-in-yemen": {
+      "descr": "Sabr ad-Din III, eldest son of Sa'ad ad-Din II, returns to Adal from exile in Arabia to restore his father's throne.",
+      "basis": [
+        [
+          "Adal Sultanate",
+          "In 1415, Sabr ad-Din III"
+        ]
+      ]
+    },
+    "mapungubwe-hill-abandoned": {
+      "descr": "After unknown events and a northward shift in trade routes, Mapungubwe's people move away; Great Zimbabwe replaces it as the main trading centre of the interior, exporting gold via the Swahili city-states.",
+      "basis": [
+        [
+          "Kingdom of Mapungubwe",
+          "Following unknown events and shifting trade routes north"
+        ],
+        [
+          "Kingdom of Great Zimbabwe",
+          "Around 1300, Great Zimbabwe replaced Mapungubwe"
+        ]
+      ]
+    },
+    "topiltzin-ce-acatl-quetzalcoatl-goes-into-exile-and-leaves-f": {
+      "descr": "According to the Anales de Cuauhtitlan, the priest-king Quetzalcoatl, ruler of Tollan since 923, leaves the city after a humiliation and travels east to the mythical land of Tlapallan.",
+      "basis": [
+        [
+          "Toltec Empire",
+          "Quetzalcoatl left Tollan in 947"
+        ],
+        [
+          "Toltec Empire",
+          "ruled by the priest-king Cē Ācatl Topiltzin Quetzalcoatl from 923 to 947"
+        ]
+      ]
+    },
+    "end-of-the-k-iche-kingdom-of-q-umarkaj": {
+      "descr": "After several defeats, the Kʼicheʼ offer the Spanish vassalage and invite them to Qʼumarkaj on 7 March; Spanish and Nahua forces under Pedro de Alvarado conquer the kingdom.",
+      "basis": [
+        [
+          "Kʼicheʼ kingdom of Qʼumarkaj",
+          "After several more defeats the Kʼicheʼ offered the Spanish vassalage"
+        ],
+        [
+          "Kʼicheʼ kingdom of Qʼumarkaj",
+          "conquered by Spanish and Nahua forces led by Pedro de Alvarado"
+        ]
+      ]
+    },
+    "foundation-1325": {
+      "descr": "Tenochtitlan, capital of the Mexica, is founded.",
+      "basis": [
+        [
+          "Tenochtitlan",
+          "Tenochtitlan was the capital of the Mexican civilization"
+        ]
+      ]
+    },
+    "inca-conquest": {
+      "descr": "Topa Inca Yupanqui begins the Inca conquest of Chimor, defeating its ruler Minchançaman; the conquest is nearly complete when Huayna Capac takes the throne in 1493.",
+      "basis": [
+        [
+          "Chimor",
+          "later conquered by the Inca emperor Topa Inca Yupanqui around 1470"
+        ],
+        [
+          "Chimor",
+          "But the Inca conquest began in the 1470s"
+        ]
+      ]
+    },
+    "pachacuti-creates-tawantinsuyu": {
+      "descr": "The Inca begin a far-reaching expansion under the 9th Sapa Inca, Pachacuti, whose name means \"the turn of the world\".",
+      "basis": [
+        [
+          "Inca Empire",
+          "In 1438, they began a far-reaching expansion"
+        ]
+      ]
+    },
+    "cahokia-founded": {
+      "descr": "The city of Cahokia is founded; between 1050 and 1150 Cahokians briefly set up outposts as far as 500 miles to the north.",
+      "basis": [
+        [
+          "Mississippian period (archaeology)",
+          "Founded in 1050, the city of Cahokia"
+        ],
+        [
+          "Mississippian period (archaeology)",
+          "Between 1050 and 1150, the Cahokians"
+        ]
+      ]
+    },
+    "cahokia-at-its-peak": {
+      "descr": "Cahokia reaches its peak, with a population of at least 22,400.",
+      "basis": [
+        [
+          "Mississippian period (archaeology)",
+          "Founded in 1050, the city of Cahokia"
+        ]
+      ]
+    },
+    "exodus-from-cahokia": {
+      "descr": "About half the Cahokians move to the Nashville area, where population peaks around 1275; several thousand more go to places such as Angel on the Ohio.",
+      "basis": [
+        [
+          "Mississippian period (archaeology)",
+          "These developments resulted in an exodus"
+        ]
+      ]
+    },
+    "landtag-formed": {
+      "descr": "To settle internal disputes, the Livonian Diet (Landtag) meets for the first time, at the initiative of Archbishop Ambundii.",
+      "basis": [
+        [
+          "Terra Mariana",
+          "the Livonian Diet or Landtag gathered in 1419"
+        ]
+      ]
+    },
+    "confederation-agreement": {
+      "descr": "The Livonian confederation agreement is signed at Walk on 4 December by the archbishop of Riga, four bishops, the Livonian Order and its vassals, and the councils of Riga, Reval and Dorpat.",
+      "basis": [
+        [
+          "Terra Mariana",
+          "The Livonian confederation agreement"
+        ]
+      ]
+    },
+    "georgia-kartli-recognizes-independence": {
+      "descr": "The king recognises Alexander I, son of George VIII, as King of Kakheti, and in 1491 Alexander II as King of Imereti, keeping Kartli for himself.",
+      "basis": [
+        [
+          "Kingdom of Kakheti",
+          "He recognized in 1490 Alexander I"
+        ]
+      ]
+    },
+    "imamate-established": {
+      "descr": "By some scholars' account, Julanda ibn Masud is elected the first Imam of Oman.",
+      "basis": [
+        [
+          "Oman",
+          "Julanda ibn Masud was the first elected Imam of Oman"
+        ]
+      ]
+    },
+    "nabhani-dynasty": {
+      "descr": "The Nabhani dynasty comes to power in Oman.",
+      "basis": [
+        [
+          "Oman",
+          "when the Nabhani dynasty came to power"
+        ]
+      ]
+    },
+    "first-kathiri-state-established": {
+      "descr": "Badr as-Sahab ibn al-Habrali Bu Tuwairik founds the Kathiri state and rules it until about 1430.",
+      "basis": [
+        [
+          "Kathiri",
+          "The Kathiri state was established in 1395"
+        ]
+      ]
+    },
+    "vassal-of-bengal-sultanate": {
+      "descr": "Mrauk-U becomes a protectorate of the Bengal Sultanate, as it remains until 1531.",
+      "basis": [
+        [
+          "Kingdom of Mrauk U",
+          "a protectorate of the Bengal Sultanate from 1429 to 1531"
+        ]
+      ]
+    },
+    "bornu-suzerainty-and-opening-of-trade-routes": {
+      "descr": "In Abdullahi Burja's reign (1438–52), Kano begins paying tribute to Bornu.",
+      "basis": [
+        [
+          "Kingdom of Kano",
+          "saw Kano begin paying tribute to Bornu"
+        ]
+      ]
+    },
+    "beijing-capital": {
+      "descr": "Building of the new capital city, which employed hundreds of thousands of workers daily from 1407, is completed.",
+      "basis": [
+        [
+          "Ming dynasty",
+          "Construction of a new city there lasted from 1407 to 1420"
+        ]
+      ]
+    },
+    "principality-of-serbia-early-medieval-established": {
+      "descr": "Višeslav, the first Serbian ruler known by name and a contemporary of Charlemagne, begins his rule.",
+      "basis": [
+        [
+          "Principality of Serbia (early medieval)",
+          "The first of the dynasty known by name was Višeslav"
+        ]
+      ]
+    },
+    "trapezuntine-civil-wars": {
+      "descr": "The short stability under Basil (1332–1340) ends; Trebizond suffers repeated imperial depositions and assassinations.",
+      "basis": [
+        [
+          "Empire of Trebizond",
+          "Trebizond suffered a period of repeated imperial depositions"
+        ]
+      ]
+    },
+    "duchy-of-bohemia-established": {
+      "descr": "Czechs form the Duchy of Bohemia as part of the Great Moravian realm.",
+      "basis": [
+        [
+          "Duchy of Bohemia",
+          "It was formed around 870 by Czechs"
+        ]
+      ]
+    },
+    "hereditary-royal-title-confirmed": {
+      "descr": "Emperor Frederick II's Golden Bull of Sicily officially recognises the kingdom, raising the Duchy of Bohemia to a kingdom and proclaiming its independence.",
+      "basis": [
+        [
+          "Kingdom of Bohemia",
+          "It was officially recognized in 1212 by the Golden Bull of Sicily"
+        ]
+      ]
+    },
+    "archduchy-recognized": {
+      "descr": "On Epiphany, Emperor Frederick III officially acknowledges the archducal title that Rudolf IV invented in the forged Privilegium Maius.",
+      "basis": [
+        [
+          "Duchy of Austria",
+          "In 1453, the archducal title of the Austrian rulers"
+        ],
+        [
+          "Archduchy of Austria",
+          "On Epiphany 1453, Emperor Frederick III"
+        ]
+      ]
+    },
+    "raised-to-electorate": {
+      "descr": "The Golden Bull of 1356 makes the margraves of Brandenburg prince-electors, with a vote in the election of the Holy Roman Emperor.",
+      "basis": [
+        [
+          "Margraviate of Brandenburg",
+          "Its ruling margraves were established as prestigious prince-electors"
+        ]
+      ]
+    },
+    "hungarian-interregnum": {
+      "descr": "Andrew III dies on 14 January, opening the interregnum of 1301–1323.",
+      "basis": [
+        [
+          "Kingdom of Hungary (1301–1526)",
+          "Andrew III died on January 14, 1301"
+        ]
+      ]
+    },
+    "crusade-of-varna": {
+      "descr": "In the \"long campaign\" of 1443–1444, Hungarian forces push into the Ottoman Empire as far as Sofia.",
+      "basis": [
+        [
+          "Kingdom of Hungary (1301–1526)",
+          "During his \"long campaign\" of 1443-1444"
+        ]
+      ]
+    },
+    "thirteen-years-war": {
+      "descr": "In February the Prussian Confederation asks King Casimir IV of Poland to back its revolt and annex the region; he signs the act of incorporation in Kraków on 6 March, and cities pledge allegiance to him.",
+      "basis": [
+        [
+          "State of the Teutonic Order",
+          "In February 1454, the Prussian Confederation asked King Casimir IV"
+        ],
+        [
+          "State of the Teutonic Order",
+          "King Casimir IV agreed and signed the act of incorporation"
+        ]
+      ]
+    },
+    "papal-states-codified": {
+      "descr": "Some later claimed that Charlemagne extended the pope's temporal rule this year to the Duchy of Rome, Ravenna, the Pentapolis, parts of Benevento, Tuscany, Corsica, Lombardy and several Italian cities.",
+      "basis": [
+        [
+          "Papal States",
+          "Some later claimed that in 781"
+        ]
+      ]
+    },
+    "creation-of-the-dogate": {
+      "descr": "From now until the republic ends in 1797, Genoa is ruled by a doge, at first elected for life.",
+      "basis": [
+        [
+          "Republic of Genoa",
+          "From 1339 until the state's extinction in 1797"
+        ]
+      ]
+    },
+    "marquisate-restored-by-imperial-force": {
+      "descr": "Emperor Frederick I Barbarossa invades Italy, shattering Florence's prosperity.",
+      "basis": [
+        [
+          "Republic of Florence",
+          "This prosperity was shattered when Emperor Frederick I Barbarossa"
+        ]
+      ]
+    },
+    "inherited-march-of-turin": {
+      "descr": "Otto of Savoy marries Adelaide, daughter of Ulric Manfred II, marquis of Susa.",
+      "basis": [
+        [
+          "County of Savoy",
+          "In 1046, his younger son Otto married Adelaide"
+        ]
+      ]
+    },
+    "conquest-of-the-kingdom-of-sardinia": {
+      "descr": "James II begins seizing the Pisan territories in the former states of Cagliari and Gallura.",
+      "basis": [
+        [
+          "Crown of Aragon",
+          "In 1324, James II finally started to seize the Pisan territories"
+        ]
+      ]
+    },
+    "burgundian-succession-crisis": {
+      "descr": "Henry the Venerable dies, leaving two possible heirs: his nephew Robert the Pious, King of France, and his adopted stepson Otto-William, count of Mâcon and of Burgundy.",
+      "basis": [
+        [
+          "Duchy of Burgundy",
+          "Henry the Venerable died in 1002"
+        ]
+      ]
+    },
+    "orkney-and-shetland-incorporated": {
+      "descr": "Scotland annexes the Northern Isles from Norway.",
+      "basis": [
+        [
+          "Kingdom of Scotland",
+          "Following Scotland's annexation of the Hebrides and the Northern Isles"
+        ]
+      ]
+    },
+    "county-of-edessa-established": {
+      "descr": "Baldwin of Boulogne leaves the main crusading army on its way to Antioch and Jerusalem; in March, Edessa's unpopular ruler Thoros is removed from power.",
+      "basis": [
+        [
+          "County of Edessa",
+          "In 1098, Baldwin of Boulogne left the main Crusading army"
+        ],
+        [
+          "County of Edessa",
+          "which led to his removal from power in March 1098"
+        ]
+      ]
+    },
+    "battle-of-khabur-river": {
+      "descr": "The sultan marches east and takes Mosul, but dies the same year fighting Mehmed Tapar, son of Malik Shah.",
+      "basis": [
+        [
+          "Sultanate of Rum",
+          "In 1107, he ventured east and captured Mosul"
+        ]
+      ]
+    },
+    "siege-of-sinope": {
+      "descr": "Kaykaus captures Sinop and makes the Empire of Trebizond his vassal.",
+      "basis": [
+        [
+          "Sultanate of Rum",
+          "His son Kaykaus captured Sinop"
+        ]
+      ]
+    },
+    "kaykubads-campaigns": {
+      "descr": "In the 1220s the sultan sends an expeditionary force across the Black Sea to Crimea.",
+      "basis": [
+        [
+          "Sultanate of Rum",
+          "In the 1220s, he sent an expeditionary force across the Black Sea to Crimea"
+        ]
+      ]
+    },
+    "georgian-golden-age": {
+      "descr": "David IV the Builder retakes Tbilisi, essentially completing the unification of Georgia.",
+      "basis": [
+        [
+          "Kingdom of Georgia",
+          "flourished under David IV the Builder"
+        ]
+      ]
+    },
+    "ghaznavid-conquest": {
+      "descr": "Mahmud of Ghazni invades Sistan and dethrones Khalaf ibn Ahmad, ending the Saffarid dynasty.",
+      "basis": [
+        [
+          "Saffarid dynasty",
+          "In 1002, Mahmud of Ghazni invaded Sistan"
+        ]
+      ]
+    },
+    "ghaznavid-invasion": {
+      "descr": "Facing a revolt by his Daylami troops in Ray, Majd al-Dawla asks Mahmud of Ghazna for help.",
+      "basis": [
+        [
+          "Buyid dynasty",
+          "In 1029, Majd al-Dawla"
+        ]
+      ]
+    },
+    "qarmatians-overthrown": {
+      "descr": "The rule of Abu Yaqub Yousuf's descendants in Eastern Arabia ends.",
+      "basis": [
+        [
+          "Qarmatians",
+          "Descendants of Abu Yaqub Yousuf ruled until 1077"
+        ]
+      ]
+    },
+    "capture-of-tahert": {
+      "descr": "The militarily weak Rustamids are easily conquered by the Isma'ili Fatimids; many Ibadis, including the last imam, flee to the Sedrata tribe of Ouargla.",
+      "basis": [
+        [
+          "Rustamid dynasty",
+          "they were easily conquered by the Isma'ili Fatimids in 909"
+        ]
+      ]
+    },
+    "kingdom-of-tlemcen-established": {
+      "descr": "As the Almohad empire begins to fall apart, Yaghmurasen, newly head of his family, declares independence.",
+      "basis": [
+        [
+          "Kingdom of Tlemcen",
+          "When the Almohad empire began to fall apart, in 1235"
+        ],
+        [
+          "Kingdom of Tlemcen",
+          "He inherited leadership of the family from his brother in 1235"
+        ]
+      ]
+    },
+    "yelu-dashi-captures-balasagun-and-establishes-capital": {
+      "descr": "Yelü Dashi conquers the Karakhanid city of Balasaghun, and the nearby Kankalis, Karluks, Kyrgyz and the Kingdom of Qocho become his vassals.",
+      "basis": [
+        [
+          "Qara Khitai",
+          "In 1134 he conquered the Karakhanid city of Balasaghun"
+        ]
+      ]
+    },
+    "battle-of-chach": {
+      "descr": "In December, Mahmud invades the Hindu Shahi realm, for reasons that are not clear.",
+      "basis": [
+        [
+          "Hindu Shahis",
+          "December 1008, Mahmud mounted an invasion"
+        ]
+      ]
+    },
+    "battle-of-lahrawat": {
+      "descr": "Ghazi Malik, later Ghiyath al-Din Tughluq, defeats and kills Khusrau Khan and takes power, ending the Khalji dynasty and starting the Tughlaq.",
+      "basis": [
+        [
+          "Delhi Sultanate",
+          "Khusrau Khan's reign lasted only a few months"
+        ]
+      ]
+    },
+    "aryacakravarti-dynasty-restored": {
+      "descr": "Kanakasooriya Cinkaiariyan and his two sons return from Madurai with mercenaries and win the Jaffna kingdom back from Kotte.",
+      "basis": [
+        [
+          "Jaffna kingdom",
+          "It gained independence from the Kingdom of Kotte in 1467"
+        ]
+      ]
+    },
+    "emergence-of-jin-dynasty": {
+      "descr": "In late autumn, Aguda attacks Ningjiang.",
+      "basis": [
+        [
+          "Jin dynasty (1115–1234)",
+          "In the late autumn of 1114 Aguda attacked Ningjiang"
+        ]
+      ]
+    },
+    "nanzhao-established": {
+      "descr": "The Tang give Piluoge the name Meng Guiyi and the title \"Prince of Yunnan\"; his kingdom is officially called Dameng until 859.",
+      "basis": [
+        [
+          "Nanzhao",
+          "In 738, the Tang granted Piluoge"
+        ],
+        [
+          "Nanzhao",
+          "The kingdom was officially called Dameng"
+        ]
+      ]
+    },
+    "nanzhao-overthrown": {
+      "descr": "The chief minister Zheng Maisi murders the royal family, usurps the throne and renames the kingdom Dachanghe.",
+      "basis": [
+        [
+          "Nanzhao",
+          "In 902, the dynasty came to a bloody end"
+        ]
+      ]
+    },
+    "establishment-in-tianmenling": {
+      "descr": "Tae Choyŏng declares himself King of Jin, founding the multiethnic kingdom later called Parhae; most accounts say its founding involved Goguryeo and Mohe people.",
+      "basis": [
+        [
+          "Parhae",
+          "In 698, Tae Choyŏng declared himself King of Zhen (Jin)"
+        ],
+        [
+          "Parhae",
+          "There are differing accounts of Parhae's founding"
+        ]
+      ]
+    },
+    "abdication-of-gongyang": {
+      "descr": "Goryeo falls to Yi Sŏnggye, who puts the last three Goryeo kings to death, takes the throne and founds the Joseon dynasty.",
+      "basis": [
+        [
+          "Goryeo",
+          "Goryeo fell to Yi Sŏnggye"
+        ]
+      ]
+    },
+    "country-renamed-from-goryeo-to-joseon": {
+      "descr": "Korea is given its new name, and the capital moves to modern-day Seoul.",
+      "basis": [
+        [
+          "Joseon",
+          "In 1393, Korea was retitled"
+        ]
+      ]
+    },
+    "h-j-regency-established": {
+      "descr": "The Hōjō clan become the de facto rulers of Japan as shikken (regents) of the shōgun.",
+      "basis": [
+        [
+          "Kamakura shogunate",
+          "The Hōjō clan were the de facto rulers of Japan"
+        ]
+      ]
+    },
+    "surrender-of-emperor-go-kameyama": {
+      "descr": "The Southern Court concedes to the Northern Court under the third shōgun, Ashikaga Yoshimitsu, and the two combine into one court, ending the Nanboku-chō period.",
+      "basis": [
+        [
+          "Ashikaga shogunate",
+          "The Southern Court gave up during the reign of the third Shōgun"
+        ],
+        [
+          "Ashikaga shogunate",
+          "until the South conceded to the North in 1392"
+        ]
+      ]
+    },
+    "tributary-of-ayutthaya": {
+      "descr": "Lue Thai (Maha Thammaracha II) has to submit to Ayutthaya as a vassal.",
+      "basis": [
+        [
+          "Sukhothai Kingdom",
+          "In 1378, Lue Thai (Maha Thammaracha II)"
+        ]
+      ]
+    },
+    "lopburi-and-suphanburi-rivalry": {
+      "descr": "Ramesuan loses Ayutthaya to Borommarachathirat; he recovers it from Thong Lan in 1388.",
+      "basis": [
+        [
+          "Ayutthaya Kingdom",
+          "Ramesuan lost Ayutthaya to Borommarachathirat in 1370"
+        ]
+      ]
+    },
+    "i-vi-t-lan-xang-war-1479-1484": {
+      "descr": "During the White Elephant War with Đại Việt, King Chakkaphat refuses restoration by Prince Thaen Kham and abdicates; his son is crowned as Suvanna Balang.",
+      "basis": [
+        [
+          "Lan Xang",
+          "Prince Thaen Kham then offered to restore his father Chakkphat"
+        ]
+      ]
+    },
+    "anarchy-of-the-12-warlords": {
+      "descr": "Ngô Xương Văn is shot and killed; the breakup known as the Anarchy of the 12 Warlords follows.",
+      "basis": [
+        [
+          "Ngô dynasty",
+          "In 965 Ngô Xương Văn was shot"
+        ]
+      ]
+    },
+    "overthrow-of-d-ng-tam-kha-with-ng-x-ng-v-n-and-ng-x-ng-ng-p-": {
+      "descr": "Ngô Xương Văn deposes Dương Tam Kha and styles himself \"Nam Tấn Vương\"; he and Ngô Xương Ngập reign together until 954.",
+      "basis": [
+        [
+          "Ngô dynasty",
+          "Ngô Xương Văn (吳昌文) deposed Dương Tam Kha in 950"
+        ]
+      ]
+    },
+    "death-of-ng-x-ng-ng-p": {
+      "descr": "Ngô Xương Ngập dies, and Chu Thái, leader of Thao Gian district, turns against the Ngô dynasty.",
+      "basis": [
+        [
+          "Ngô dynasty",
+          "In 954, Ngô Xương Ngập died"
+        ]
+      ]
+    },
+    "inh-b-l-nh-and-inh-li-n-assassinated": {
+      "descr": "In October a eunuch, Đỗ Thích, kills Emperor Đinh Bộ Lĩnh and Prince Đinh Liễn as they sleep in the palace.",
+      "basis": [
+        [
+          "Đinh dynasty",
+          "In October 979, a eunuch named Đỗ Thích"
+        ]
+      ]
+    },
+    "battle-of-b-ch-ng-981": {
+      "descr": "Song Emperor Taizong orders a Chinese army to invade Đại Cồ Việt.",
+      "basis": [
+        [
+          "Anterior Lê dynasty",
+          "In 980, the Song dynasty of China under Emperor Taizong"
+        ]
+      ]
+    },
+    "coup-overthrown-of-d-ng-nh-t-l": {
+      "descr": "In the tenth lunar month, Trần Phủ, the emperor's father-in-law, raises an army to overthrow Nhật Lễ on the advice of mandarins and imperial kin.",
+      "basis": [
+        [
+          "Trần dynasty",
+          "In the tenth lunar month of 1370"
+        ]
+      ]
+    },
+    "abandonment-of-tollan-xicocotitlan": {
+      "descr": "Betrayed by his followers, Huemac hangs himself in Chapultepec; by 1150 Tula is virtually abandoned.",
+      "basis": [
+        [
+          "Toltec Empire",
+          "In 1122, shortly after being betrayed by his followers"
+        ]
+      ]
+    },
+    "rebellions-by-the-tutul-xiu-and-their-allies-disintegrate-th": {
+      "descr": "Ah Xiu Xupan, ruler of Uxmal, makes war on the Cocom royal family and kills them.",
+      "basis": [
+        [
+          "League of Mayapan",
+          "In 1441, Ah Xiu Xupan"
+        ]
+      ]
+    },
+    "conquered-by-new-spain": {
+      "descr": "The Spanish send Nuño de Guzmán, who allies with the Purépecha noble Don Pedro Panza Cuinierángari; King Tangáxuan is executed on 14 February and the kingdom loses its independence.",
+      "basis": [
+        [
+          "Purépecha Empire",
+          "the king was executed on February 14, 1530"
+        ],
+        [
+          "Purépecha Empire",
+          "lost its independence to the Spanish in 1530"
+        ]
+      ]
+    },
+    "st-georges-night-uprising": {
+      "descr": "The Estonians of Harju rebel. The revolt (1343–1345) ends with the Danish Duchy of Estonia annexed into the Teutonic Order's state; the German nobles hand Reval and Wesenberg to the Order on 16 May.",
+      "basis": [
+        [
+          "Terra Mariana",
+          "After the Estonians of Harju started a rebellion in 1343"
+        ],
+        [
+          "Terra Mariana",
+          "in 1343–1345 the Estonian revolt"
+        ],
+        [
+          "Terra Mariana",
+          "The castles in Reval and Wesenberg were handed over"
+        ]
+      ]
+    },
+    "treaty-of-zamora": {
+      "descr": "Alfonso VII of León and Castile recognises Afonso Henriques as king through the Treaty of Zamora, the second of the three stages of Portugal's independence from León.",
+      "basis": [
+        [
+          "Kingdom of Portugal",
+          "through the Treaty of Zamora"
+        ]
+      ]
+    },
+    "genk-war-begins": {
+      "descr": "Go-Daigo launches the Genkō War against the Kamakura shogunate, but he is defeated and exiled to the Oki Islands.",
+      "basis": [
+        [
+          "Kenmu Restoration",
+          "Go-Daigo launched the Genkō War in 1331"
+        ]
+      ]
+    }
+  }
+}
