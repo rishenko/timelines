@@ -1,5 +1,9 @@
 # Timelines
 
+> [!NOTE]
+> **Under heavy development.** The app and its timeline data are being built and processed right now: features,
+> rows, events, categories and dates change often. Check back regularly.
+
 A web app for horizontal swimlane timelines, historical or fictional. Each timeline is one JSON file with its own
 rows, calendar, zoom steps and sources. The app is a static site: build it once, serve it from any web server, and
 give it your own timelines.
