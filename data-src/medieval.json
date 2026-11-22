@@ -3,7 +3,7 @@
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
-    "subtitle": "Wave 1: Europe; pilot rows elsewhere; 650–1500",
+    "subtitle": "Europe, the Near East and North Africa; pilot rows elsewhere; 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
     "calendar": {
@@ -1026,6 +1026,137 @@
             }
           ]
         }
+      ],
+      "span": [
+        {
+          "start": 780,
+          "end": 960,
+          "startDates": [
+            {
+              "year": 780,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia-early-medieval",
+                "sourceLocation": "infobox year_start: 780"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 960,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia-early-medieval",
+                "sourceLocation": "infobox year_end: 960"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1091,
+          "end": 1371,
+          "startDates": [
+            {
+              "year": 1091,
+              "source": {
+                "sourceKey": "wp-grand-principality-of-serbia",
+                "sourceLocation": "infobox year_start: 1091"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1371,
+              "source": {
+                "sourceKey": "wp-serbian-empire",
+                "sourceLocation": "infobox year_end: 1371"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1402,
+          "end": 1442,
+          "startDates": [
+            {
+              "year": 1402,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1402–1442"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1442,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1402–1442"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1444,
+          "end": 1459,
+          "startDates": [
+            {
+              "year": 1444,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1444–1459"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1459,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1444–1459"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1804,
+          "end": 1813,
+          "startDates": [
+            {
+              "year": 1804,
+              "source": {
+                "sourceKey": "wp-revolutionary-serbia",
+                "sourceLocation": "infobox year_start: 1804"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1813,
+              "source": {
+                "sourceKey": "wp-revolutionary-serbia",
+                "sourceLocation": "infobox year_end: 1813"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1815,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia",
+                "sourceLocation": "infobox year_start: 1815"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-serbia",
+              "sourceLocation": "infobox established_event9: Republic of Serbia, 2006"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1110,8 +1241,7 @@
               }
             }
           ],
-          "startEvent": "succession-crisis-and-coronation-of-king-coloman-of-hungary",
-          "endEvent": "battle-of-mohacs"
+          "startEvent": "succession-crisis-and-coronation-of-king-coloman-of-hungary"
         }
       ],
       "memberOf": [
@@ -1156,7 +1286,28 @@
             }
           ]
         }
-      ]
+      ],
+      "span": {
+        "start": 700,
+        "ongoing": true,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 700,
+            "source": {
+              "sourceKey": "wp-duchy-of-croatia",
+              "sourceLocation": "infobox year_start: 7th/8th century"
+            },
+            "note": "The infobox gives \"7th/8th century\"; 700 as in the Medieval World timeline."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-croatia",
+            "sourceLocation": "infobox established_event8: Declaration of independence, 25 June 1991 (current state)"
+          }
+        ]
+      }
     },
     {
       "id": "bosnia-and-herzegovina",
@@ -1227,7 +1378,26 @@
             }
           ]
         }
-      ]
+      ],
+      "span": {
+        "start": 1154,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1154,
+            "source": {
+              "sourceKey": "wp-banate-of-bosnia",
+              "sourceLocation": "infobox year_start: 1154"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-bosnia-and-herzegovina",
+            "sourceLocation": "infobox established_event12: Dayton Agreement, 14 December 1995 (current state)"
+          }
+        ]
+      }
     },
     {
       "id": "wallachia",
@@ -1278,37 +1448,40 @@
       ]
     },
     {
-      "id": "moldova",
-      "name": "Moldova",
+      "id": "moldavia",
+      "name": "Moldavia",
       "color": "#6a5a9a",
       "parent": "southeast-europe",
       "url": "https://en.wikipedia.org/wiki/Moldavia",
-      "phases": [
-        {
-          "name": "Principality of Moldavia",
-          "start": 1346,
-          "end": 1862,
-          "startDates": [
-            {
-              "year": 1346,
-              "source": {
-                "sourceKey": "wp-moldavia",
-                "sourceLocation": "infobox year_start: 1346"
-              }
+      "span": {
+        "start": 1346,
+        "end": 1859,
+        "startDates": [
+          {
+            "year": 1346,
+            "source": {
+              "sourceKey": "wp-moldavia",
+              "sourceLocation": "infobox year_start: 1346"
             }
-          ],
-          "endDates": [
-            {
-              "year": 1862,
-              "source": {
-                "sourceKey": "wp-moldavia",
-                "sourceLocation": "infobox year_end: 1862"
-              }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1859,
+            "source": {
+              "sourceKey": "wp-united-principalities-of-moldavia-and-wallachia",
+              "sourceLocation": "infobox year_start: 1859"
             }
-          ],
-          "startEvent": "foundation-of-the-moldavian-mark"
-        }
-      ],
+          },
+          {
+            "year": 1862,
+            "source": {
+              "sourceKey": "wp-moldavia",
+              "sourceLocation": "infobox year_end: 1862"
+            }
+          }
+        ]
+      },
       "memberships": [
         {
           "facet": "geography",
@@ -1808,7 +1981,26 @@
             }
           ]
         }
-      ]
+      ],
+      "span": {
+        "start": 870,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 870,
+            "source": {
+              "sourceKey": "wp-duchy-of-bohemia",
+              "sourceLocation": "infobox year_start: c. 870"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-czech-republic",
+            "sourceLocation": "infobox established_event4: Czech Republic, 1 January 1993 (current state)"
+          }
+        ]
+      }
     },
     {
       "id": "austria",
@@ -1931,8 +2123,7 @@
               "source": {
                 "sourceKey": "wp-margraviate-of-brandenburg",
                 "sourceLocation": "infobox event2: Brandenburg-Prussia, 27 August 1618"
-              },
-              "note": "Ends where Brandenburg–Prussia begins."
+              }
             }
           ]
         }
@@ -2058,7 +2249,26 @@
             }
           ]
         }
-      ]
+      ],
+      "span": {
+        "start": 895,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 895,
+            "source": {
+              "sourceKey": "wp-principality-of-hungary",
+              "sourceLocation": "infobox life span: c. 895–1000"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-hungary",
+            "sourceLocation": "infobox established_event11: Third Republic, 23 October 1989 (current state)"
+          }
+        ]
+      }
     },
     {
       "id": "poland",
@@ -2331,8 +2541,7 @@
               "sourceLocation": "infobox year_end: 1561"
             }
           }
-        ],
-        "startEvent": "golden-bull-of-rimini"
+        ]
       },
       "memberships": [
         {
@@ -2963,7 +3172,7 @@
               "year": 1416,
               "source": {
                 "sourceKey": "wp-duchy-of-savoy",
-                "sourceLocation": "infobox year_start: 1416"
+                "sourceLocation": "infobox life span: 1416–1792"
               }
             }
           ],
@@ -3264,8 +3473,7 @@
               "sourceLocation": "infobox year_end: 1707"
             }
           }
-        ],
-        "startEvent": "county-of-aragon-established-as-independent-kingdom"
+        ]
       },
       "memberOf": [
         {
@@ -3907,7 +4115,6 @@
       "span": {
         "start": 918,
         "end": 1790,
-        "circa": true,
         "startDates": [
           {
             "year": 918,
@@ -3925,8 +4132,7 @@
               "sourceLocation": "infobox year_end: 1790"
             }
           }
-        ],
-        "startEvent": "duchy-of-burgundy-established"
+        ]
       },
       "memberships": [
         {
@@ -5092,7 +5298,8 @@
               }
             }
           ],
-          "startEvent": "abbasids-in-cairo"
+          "startEvent": "abbasids-in-cairo",
+          "endEvent": "ottoman-conquest-of-cairo"
         }
       ],
       "memberships": [
@@ -5133,6 +5340,1957 @@
             {
               "sourceKey": "wp-abbasid-caliphate",
               "sourceLocation": "lead: \"They ruled as caliphs from their base in Iraq until 1258, with Baghdad as their capital for most of their history.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt and Nubia",
+      "color": "#b08a3a",
+      "parent": "near-east"
+    },
+    {
+      "id": "tulunids",
+      "name": "Tulunids",
+      "color": "#8a6a2a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Tulunids",
+      "span": {
+        "start": 868,
+        "end": 905,
+        "startDates": [
+          {
+            "year": 868,
+            "source": {
+              "sourceKey": "wp-tulunids",
+              "sourceLocation": "infobox year_start: 868"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 905,
+            "source": {
+              "sourceKey": "wp-tulunids",
+              "sourceLocation": "infobox year_end: 905"
+            }
+          }
+        ],
+        "endEvent": "abbasid-reconquest"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-tulunids",
+              "sourceLocation": "infobox capital: Al-Qata'i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ikhshidid-dynasty",
+      "name": "Ikhshidids",
+      "color": "#7a7a3a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Ikhshidid_dynasty",
+      "span": {
+        "start": 935,
+        "end": 969,
+        "startDates": [
+          {
+            "year": 935,
+            "source": {
+              "sourceKey": "wp-ikhshidid-dynasty",
+              "sourceLocation": "infobox year_start: 935"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 969,
+            "source": {
+              "sourceKey": "wp-ikhshidid-dynasty",
+              "sourceLocation": "infobox year_end: 969"
+            }
+          }
+        ],
+        "endEvent": "fatimid-conquest-of-egypt-and-foundation-of-cairo"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-ikhshidid-dynasty",
+              "sourceLocation": "infobox capital: Fustat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fatimid-caliphate",
+      "name": "Fatimid Caliphate",
+      "color": "#2a8a4a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Fatimid_Caliphate",
+      "span": {
+        "start": 909,
+        "end": 1171,
+        "startDates": [
+          {
+            "year": 909,
+            "source": {
+              "sourceKey": "wp-fatimid-caliphate",
+              "sourceLocation": "infobox year_start: 909"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1171,
+            "source": {
+              "sourceKey": "wp-fatimid-caliphate",
+              "sourceLocation": "infobox year_end: 1171"
+            }
+          }
+        ],
+        "startEvent": "fatimids-overthrow-the-aghlabids",
+        "endEvent": "saladin-abolishes-the-fatimid-caliphate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-fatimid-caliphate",
+              "sourceLocation": "infobox capital: Raqqada (909–921) / Mahdia (921–948) / al-Mansuriya (948–973) / Cairo "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ayyubid-dynasty",
+      "name": "Ayyubids",
+      "color": "#c09a2a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Ayyubid_dynasty",
+      "span": {
+        "start": 1171,
+        "end": 1260,
+        "startDates": [
+          {
+            "year": 1171,
+            "source": {
+              "sourceKey": "wp-ayyubid-dynasty",
+              "sourceLocation": "infobox year_start: 1171"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1260,
+            "source": {
+              "sourceKey": "wp-ayyubid-dynasty",
+              "sourceLocation": "infobox year_end: 1260a"
+            }
+          }
+        ],
+        "startEvent": "saladin-abolishes-the-fatimid-caliphate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-ayyubid-dynasty",
+              "sourceLocation": "infobox capital: Cairo (1171–1174; 1218–1250) / Damascus (1174–1218) / Aleppo (1250–126"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mamluk-sultanate",
+      "name": "Mamluk Sultanate",
+      "color": "#a85a2a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Mamluk_Sultanate",
+      "span": {
+        "start": 1250,
+        "end": 1517,
+        "startDates": [
+          {
+            "year": 1250,
+            "source": {
+              "sourceKey": "wp-mamluk-sultanate",
+              "sourceLocation": "infobox year_start: 1250"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1517,
+            "source": {
+              "sourceKey": "wp-mamluk-sultanate",
+              "sourceLocation": "infobox year_end: 1517"
+            }
+          }
+        ],
+        "startEvent": "murder-of-turanshah-the-mamluks-take-power",
+        "endEvent": "ottoman-conquest-of-cairo"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-mamluk-sultanate",
+              "sourceLocation": "infobox capital: Cairo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makuria",
+      "name": "Makuria",
+      "color": "#7a4a3a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Makuria",
+      "ids": {
+        "wikidata": "Q829356"
+      },
+      "span": {
+        "start": 450,
+        "end": 1475,
+        "startDates": [
+          {
+            "year": 450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('5th century')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1475,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('late 15th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"Makuria\" (in \"History of Nubia\")"
+            },
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"Makuria\" (in \"Christianity in Sudan\")"
+            },
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"History of Nubia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alodia",
+      "name": "Alodia",
+      "color": "#9a5a4a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Alodia",
+      "ids": {
+        "wikidata": "Q449639"
+      },
+      "span": {
+        "start": 550,
+        "end": 1500,
+        "startDates": [
+          {
+            "year": 550,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "infobox ('6th century')"
+            }
+          },
+          {
+            "year": 550,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "Origins ('completed by the mid-6th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "category \"History of Nubia\""
+            },
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "category \"Christianity in Sudan\""
+            },
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "levant",
+      "name": "Levant and the Crusader states",
+      "color": "#6a8a3a",
+      "parent": "near-east"
+    },
+    {
+      "id": "kingdom-of-jerusalem",
+      "name": "Kingdom of Jerusalem",
+      "color": "#c0c0c0",
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Jerusalem",
+      "span": [
+        {
+          "start": 1099,
+          "end": 1187,
+          "startDates": [
+            {
+              "year": 1099,
+              "source": {
+                "sourceKey": "wp-kingdom-of-jerusalem",
+                "sourceLocation": "infobox life span: 1099–1187"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1187,
+              "source": {
+                "sourceKey": "wp-kingdom-of-jerusalem",
+                "sourceLocation": "infobox life span: 1099–1187"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1192,
+          "end": 1291,
+          "startDates": [
+            {
+              "year": 1192,
+              "source": {
+                "sourceKey": "wp-kingdom-of-jerusalem",
+                "sourceLocation": "infobox life span: 1192–1291"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1291,
+              "source": {
+                "sourceKey": "wp-kingdom-of-jerusalem",
+                "sourceLocation": "infobox life span: 1192–1291"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-jerusalem",
+              "sourceLocation": "infobox capital: Jerusalem (1099–1187) / Tyre (1187–1191) / Acre (1191–1291)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "principality-of-antioch",
+      "name": "Principality of Antioch",
+      "color": "#8a8a9a",
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Antioch",
+      "span": {
+        "start": 1098,
+        "end": 1268,
+        "startDates": [
+          {
+            "year": 1098,
+            "source": {
+              "sourceKey": "wp-principality-of-antioch",
+              "sourceLocation": "infobox year_start: 1098"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1268,
+            "source": {
+              "sourceKey": "wp-principality-of-antioch",
+              "sourceLocation": "infobox year_end: 1268"
+            }
+          }
+        ],
+        "startEvent": "principality-of-antioch-founded-first-crusade",
+        "endEvent": "conquered-by-the-mamluk-sultanate-under-baibars"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-principality-of-antioch",
+              "sourceLocation": "infobox capital: Antioch / (modern-day Antakya, Hatay, Turkey)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "county-of-edessa",
+      "name": "County of Edessa",
+      "color": "#7a7a8a",
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/County_of_Edessa",
+      "span": {
+        "start": 1098,
+        "end": 1144,
+        "startDates": [
+          {
+            "year": 1098,
+            "source": {
+              "sourceKey": "wp-county-of-edessa",
+              "sourceLocation": "infobox year_start: 1098"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1144,
+            "source": {
+              "sourceKey": "wp-county-of-edessa",
+              "sourceLocation": "infobox year_end: 1144"
+            }
+          }
+        ],
+        "startEvent": "county-of-edessa-established",
+        "endEvent": "conquered-by-nur-ad-din-zengi-and-the-rest-sold-to-manuel-i-"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-county-of-edessa",
+              "sourceLocation": "infobox capital: Edessa (1098–1144; 1146) / (modern-day Şanlıurfa, Turkey) / Turbessel "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "county-of-tripoli",
+      "name": "County of Tripoli",
+      "color": "#9a9aaa",
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/County_of_Tripoli",
+      "span": {
+        "start": 1102,
+        "end": 1289,
+        "startDates": [
+          {
+            "year": 1102,
+            "source": {
+              "sourceKey": "wp-county-of-tripoli",
+              "sourceLocation": "infobox year_start: 1102"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1289,
+            "source": {
+              "sourceKey": "wp-county-of-tripoli",
+              "sourceLocation": "infobox year_end: 1289"
+            }
+          }
+        ],
+        "endEvent": "conquered-by-qalawun"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-county-of-tripoli",
+              "sourceLocation": "infobox capital: Tortosa (1102–1109), Tripoli (1109–1289)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zengid-dynasty",
+      "name": "Zengids",
+      "color": "#4a7a3a",
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Zengid_dynasty",
+      "span": {
+        "start": 1127,
+        "end": 1174,
+        "startDates": [
+          {
+            "year": 1127,
+            "source": {
+              "sourceKey": "wp-zengid-dynasty",
+              "sourceLocation": "infobox year_start: 1127"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1174,
+            "source": {
+              "sourceKey": "wp-zengid-dynasty",
+              "sourceLocation": "infobox year_end: 1174 / (with nominal power until 1250)"
+            }
+          },
+          {
+            "year": 1250,
+            "source": {
+              "sourceKey": "wp-zengid-dynasty",
+              "sourceLocation": "infobox year_end: 1174 / (with nominal power until 1250)"
+            },
+            "note": "Nominal power until 1250."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-zengid-dynasty",
+              "sourceLocation": "infobox capital: Multiple bases: Mosul (until 1234) / Damascus (1154–1174)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hamdanid-dynasty",
+      "name": "Hamdanids",
+      "color": "#5a6a2a",
+      "parent": "levant",
+      "url": "https://en.wikipedia.org/wiki/Hamdanid_dynasty",
+      "span": {
+        "start": 890,
+        "end": 1004,
+        "startDates": [
+          {
+            "year": 890,
+            "source": {
+              "sourceKey": "wp-hamdanid-dynasty",
+              "sourceLocation": "infobox year_start: 890"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1004,
+            "source": {
+              "sourceKey": "wp-hamdanid-dynasty",
+              "sourceLocation": "infobox year_end: 1004"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            {
+              "sourceKey": "wp-hamdanid-dynasty",
+              "sourceLocation": "infobox capital: Mardin (892–895) / Mosul (905–990) (in Iraq) / Aleppo (944–1002) (in S"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anatolia",
+      "name": "Anatolia and the Caucasus",
+      "color": "#8a4a3a",
+      "parent": "near-east"
+    },
+    {
+      "id": "sultanate-of-rum",
+      "name": "Sultanate of Rum",
+      "color": "#3a7a6a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Rum",
+      "span": {
+        "start": 1077,
+        "end": 1308,
+        "startDates": [
+          {
+            "year": 1077,
+            "source": {
+              "sourceKey": "wp-sultanate-of-rum",
+              "sourceLocation": "infobox year_start: 1077"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1308,
+            "source": {
+              "sourceKey": "wp-sultanate-of-rum",
+              "sourceLocation": "infobox year_end: 1308"
+            }
+          }
+        ],
+        "startEvent": "division-from-the-seljuk-empire",
+        "endEvent": "karamanid-conquest"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-rum",
+              "sourceLocation": "infobox capital: Nicaea (İznik) / (1077–1097) / Iconium (Konya) / (1097–1308) / Sebasti"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ottoman-empire",
+      "name": "Ottoman Empire",
+      "color": "#a82a2a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+      "span": {
+        "start": 1299,
+        "end": 1922,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1299,
+            "source": {
+              "sourceKey": "wp-ottoman-empire",
+              "sourceLocation": "infobox life span: c. 1299–1922"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1922,
+            "source": {
+              "sourceKey": "wp-ottoman-empire",
+              "sourceLocation": "infobox life span: c. 1299–1922"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            {
+              "sourceKey": "wp-ottoman-empire",
+              "sourceLocation": "infobox capital: Söğüt / (c. 1299–1331) / Nicaea (İznik) / (1331–1335) / Prousa (Bursa)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "armenian-kingdom-of-cilicia",
+      "name": "Armenian Kingdom of Cilicia",
+      "color": "#c0602a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Armenian_Kingdom_of_Cilicia",
+      "span": {
+        "start": 1080,
+        "end": 1375,
+        "startDates": [
+          {
+            "year": 1080,
+            "source": {
+              "sourceKey": "wp-armenian-kingdom-of-cilicia",
+              "sourceLocation": "infobox year_start: 1080"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1375,
+            "source": {
+              "sourceKey": "wp-armenian-kingdom-of-cilicia",
+              "sourceLocation": "infobox year_end: April 13, 1375"
+            }
+          }
+        ],
+        "startEvent": "prince-ruben-i-founds-an-armenian-principality-in-cilicia",
+        "endEvent": "sis-conquered-by-the-egyptian-mamluks"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            {
+              "sourceKey": "wp-armenian-kingdom-of-cilicia",
+              "sourceLocation": "infobox capital: Tarson (Tarsus, Mersin) (1080–1198) / Sis (Kozan, Adana) (1198–1375)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "georgia",
+      "name": "Georgia",
+      "color": "#a83a3a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Georgia",
+      "phases": [
+        {
+          "name": "Kingdom of Georgia",
+          "start": 1008,
+          "end": 1490,
+          "circa": true,
+          "startDates": [
+            {
+              "year": 1008,
+              "source": {
+                "sourceKey": "wp-kingdom-of-georgia",
+                "sourceLocation": "infobox year_start: c. 1008"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1490,
+              "source": {
+                "sourceKey": "wp-kingdom-of-georgia",
+                "sourceLocation": "infobox life span: 1008–1490"
+              }
+            },
+            {
+              "year": 1463,
+              "source": {
+                "sourceKey": "wp-kingdom-of-georgia",
+                "sourceLocation": "infobox year_end: 1463 / 1490"
+              },
+              "note": "The infobox gives 1463 (de facto) and 1490 (de jure)."
+            }
+          ],
+          "startEvent": "unification-of-georgia"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caucasus",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-georgia",
+              "sourceLocation": "infobox capital: Kutaisi / (c. 1008–1122) / Tbilisi / (c. 1122–1490)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "armenia",
+      "name": "Armenia",
+      "color": "#d07a2a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Bagratid_Armenia",
+      "phases": [
+        {
+          "name": "Bagratid Armenia",
+          "start": 880,
+          "end": 1045,
+          "startDates": [
+            {
+              "year": 880,
+              "source": {
+                "sourceKey": "wp-bagratid-armenia",
+                "sourceLocation": "infobox year_start: 880s"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1045,
+              "source": {
+                "sourceKey": "wp-bagratid-armenia",
+                "sourceLocation": "infobox year_end: 1045"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caucasus",
+          "sources": [
+            {
+              "sourceKey": "wp-bagratid-armenia",
+              "sourceLocation": "infobox capital: Bagaran (885–890) / Shirakavan (890–929) / Kars (929–961) / Ani (961–1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iran",
+      "name": "Iran and Iraq",
+      "color": "#a84a2a",
+      "parent": "near-east"
+    },
+    {
+      "id": "sasanian",
+      "name": "Sasanian Empire",
+      "color": "#a84a2a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+      "ids": {
+        "wikidata": "Q83891"
+      },
+      "span": {
+        "start": 224,
+        "end": 651
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-sasanian",
+              "sourceLocation": "category \"Sasanian Empire\" (in \"Former monarchies of Iran\")"
+            },
+            {
+              "sourceKey": "wp-sasanian",
+              "sourceLocation": "category \"Sasanian Empire\" (in \"History of Iran\")"
+            },
+            {
+              "sourceKey": "wp-sasanian",
+              "sourceLocation": "category \"Sasanian Empire\" (in \"Ancient Persia\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tahirid-dynasty",
+      "name": "Tahirids",
+      "color": "#6a4a2a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Tahirid_dynasty",
+      "span": {
+        "start": 821,
+        "end": 873,
+        "startDates": [
+          {
+            "year": 821,
+            "source": {
+              "sourceKey": "wp-tahirid-dynasty",
+              "sourceLocation": "infobox year_start: 821"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 873,
+            "source": {
+              "sourceKey": "wp-tahirid-dynasty",
+              "sourceLocation": "infobox year_end: 873"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-tahirid-dynasty",
+              "sourceLocation": "infobox capital: Merv, later Nishapur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "samanid-empire",
+      "name": "Samanid Empire",
+      "color": "#3a6a9a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Samanid_Empire",
+      "span": {
+        "start": 819,
+        "end": 999,
+        "startDates": [
+          {
+            "year": 819,
+            "source": {
+              "sourceKey": "wp-samanid-empire",
+              "sourceLocation": "infobox year_start: 819"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 999,
+            "source": {
+              "sourceKey": "wp-samanid-empire",
+              "sourceLocation": "infobox year_end: 999"
+            }
+          }
+        ],
+        "endEvent": "ghaznavid-samanid-war-karakhanid-samanid-wars"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-samanid-empire",
+              "sourceLocation": "infobox capital: Samarkand (819–892) / Bukhara (892–999)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "saffarid-dynasty",
+      "name": "Saffarids",
+      "color": "#9a4a3a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Saffarid_dynasty",
+      "span": {
+        "start": 861,
+        "end": 1002,
+        "startDates": [
+          {
+            "year": 861,
+            "source": {
+              "sourceKey": "wp-saffarid-dynasty",
+              "sourceLocation": "infobox year_start: 861"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1002,
+            "source": {
+              "sourceKey": "wp-saffarid-dynasty",
+              "sourceLocation": "infobox year_end: 1002"
+            }
+          }
+        ],
+        "endEvent": "ghaznavid-conquest"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-saffarid-dynasty",
+              "sourceLocation": "infobox capital: Zaranj (Modern-day Afghanistan)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "buyid-dynasty",
+      "name": "Buyids",
+      "color": "#4a8a7a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Buyid_dynasty",
+      "span": {
+        "start": 934,
+        "end": 1062,
+        "startDates": [
+          {
+            "year": 934,
+            "source": {
+              "sourceKey": "wp-buyid-dynasty",
+              "sourceLocation": "infobox year_start: 934"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1062,
+            "source": {
+              "sourceKey": "wp-buyid-dynasty",
+              "sourceLocation": "infobox year_end: 1062"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            {
+              "sourceKey": "wp-buyid-dynasty",
+              "sourceLocation": "infobox capital: Shiraz / (Buyids of Fars, 934–1062) / Ray / (Buyids of Jibal, 943–1029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghaznavid-empire",
+      "name": "Ghaznavid Empire",
+      "color": "#7a3a7a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Ghaznavid_Empire",
+      "span": {
+        "start": 977,
+        "end": 1186,
+        "startDates": [
+          {
+            "year": 977,
+            "source": {
+              "sourceKey": "wp-ghaznavid-empire",
+              "sourceLocation": "infobox year_start: 977"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1186,
+            "source": {
+              "sourceKey": "wp-ghaznavid-empire",
+              "sourceLocation": "infobox year_end: 1186"
+            }
+          }
+        ],
+        "endEvent": "siege-of-lahore"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-ghaznavid-empire",
+              "sourceLocation": "infobox capital: Ghazni / (977–1163) / Lahore / (1163–1186)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seljuk-empire",
+      "name": "Seljuk Empire",
+      "color": "#2a6a5a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Seljuk_Empire",
+      "span": {
+        "start": 1037,
+        "end": 1194,
+        "startDates": [
+          {
+            "year": 1037,
+            "source": {
+              "sourceKey": "wp-seljuk-empire",
+              "sourceLocation": "infobox year_start: 1037"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1194,
+            "source": {
+              "sourceKey": "wp-seljuk-empire",
+              "sourceLocation": "infobox year_end: 1194"
+            }
+          }
+        ],
+        "startEvent": "formation-under-tughril",
+        "endEvent": "battle-of-ray-and-the-supplantation-by-the-khwarazmian-empir"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-seljuk-empire",
+              "sourceLocation": "infobox capital: Nishapur (1037–1043) / Ray (1043–1051) / Isfahan (1051–1118) / Merv (1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ilkhanate",
+      "name": "Ilkhanate",
+      "color": "#5a5a9a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Ilkhanate",
+      "span": {
+        "start": 1256,
+        "end": 1335,
+        "startDates": [
+          {
+            "year": 1256,
+            "source": {
+              "sourceKey": "wp-ilkhanate",
+              "sourceLocation": "infobox life span: 1256–1335"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1335,
+            "source": {
+              "sourceKey": "wp-ilkhanate",
+              "sourceLocation": "infobox life span: 1256–1335"
+            }
+          }
+        ]
+      },
+      "memberOf": [
+        {
+          "row": "mongol-empire",
+          "start": 1256,
+          "end": 1259,
+          "startDates": [
+            {
+              "year": 1256,
+              "source": {
+                "sourceKey": "wp-ilkhanate",
+                "sourceLocation": "infobox life span: 1256–1335"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1259,
+              "source": {
+                "sourceKey": "wp-ilkhanate",
+                "sourceLocation": "lead: \"It was established after Hülegü, the son of Tolui and grandson of Genghis Khan, inherited the West Asian and Central Asian part of the Mongol Empire after his b\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-ilkhanate",
+              "sourceLocation": "lead: \"It was established after Hülegü, the son of Tolui and grandson of Genghis Khan, inherited the West Asian and Central Asian part of the Mongol Empire after his b\""
+            }
+          ],
+          "endEvent": "mongke-dies"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-ilkhanate",
+              "sourceLocation": "infobox capital: Maragheh (1258-1265) / Tabriz (1265–1307) / Soltaniyeh (1306–1335)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jalayirid-sultanate",
+      "name": "Jalayirids",
+      "color": "#6a7a3a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Jalayirid_Sultanate",
+      "span": {
+        "start": 1335,
+        "end": 1432,
+        "startDates": [
+          {
+            "year": 1335,
+            "source": {
+              "sourceKey": "wp-jalayirid-sultanate",
+              "sourceLocation": "infobox life span: 1335–1432"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1432,
+            "source": {
+              "sourceKey": "wp-jalayirid-sultanate",
+              "sourceLocation": "infobox life span: 1335–1432"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            {
+              "sourceKey": "wp-jalayirid-sultanate",
+              "sourceLocation": "infobox capital: Baghdad (1335–1358 and 1388–1411) / Tabriz (1358–1388) / Hillah (1409–"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qara-qoyunlu",
+      "name": "Qara Qoyunlu",
+      "color": "#2a2a5a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Qara_Qoyunlu",
+      "span": {
+        "start": 1374,
+        "end": 1468,
+        "startDates": [
+          {
+            "year": 1374,
+            "source": {
+              "sourceKey": "wp-qara-qoyunlu",
+              "sourceLocation": "infobox year_start: 1374"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1468,
+            "source": {
+              "sourceKey": "wp-qara-qoyunlu",
+              "sourceLocation": "infobox year_end: 1468"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-qara-qoyunlu",
+              "sourceLocation": "infobox capital: Erciş (summer pastures) / Mosul (winter pastures) / Tabriz"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aq-qoyunlu",
+      "name": "Aq Qoyunlu",
+      "color": "#c0c0a0",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Aq_Qoyunlu",
+      "span": {
+        "start": 1348,
+        "end": 1503,
+        "startDates": [
+          {
+            "year": 1348,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox year_start: 1348"
+            }
+          },
+          {
+            "year": 1378,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox life span: 1378–1508"
+            },
+            "note": "The infobox life span starts in 1378."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1503,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox year_end: Summer 1503"
+            }
+          },
+          {
+            "year": 1508,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox life_span: 1378–1508"
+            },
+            "note": "The same article gives this year too."
+          },
+          {
+            "year": 1508,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox life span: 1378–1508"
+            },
+            "note": "The infobox life span ends in 1508."
+          }
+        ],
+        "startEvent": "siege-of-trebizond",
+        "endEvent": "collapse-of-the-aq-qoyunlu-rule-in-iran"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox capital: Bayburt (summer pastures) / Kiğı, Palu, and Ergani (winter pastures) /"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "timurid-empire",
+      "name": "Timurid Empire",
+      "color": "#3a8a8a",
+      "parent": "iran",
+      "url": "https://en.wikipedia.org/wiki/Timurid_Empire",
+      "span": {
+        "start": 1370,
+        "end": 1507,
+        "startDates": [
+          {
+            "year": 1370,
+            "source": {
+              "sourceKey": "wp-timurid-empire",
+              "sourceLocation": "infobox year_start: 1370"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1507,
+            "source": {
+              "sourceKey": "wp-timurid-empire",
+              "sourceLocation": "infobox year_end: 1507"
+            }
+          }
+        ],
+        "startEvent": "establishment-of-timurid-empire",
+        "endEvent": "fall-of-herat"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-timurid-empire",
+              "sourceLocation": "infobox capital: Samarkand (1370–1405; 1447–1459) / Herat (1405–1447; 1459–1507)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arabia",
+      "name": "Arabia",
+      "color": "#c09a4a",
+      "parent": "near-east"
+    },
+    {
+      "id": "qarmatians",
+      "name": "Qarmatians",
+      "color": "#7a5a3a",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Qarmatians",
+      "span": {
+        "start": 899,
+        "end": 1077,
+        "startDates": [
+          {
+            "year": 899,
+            "source": {
+              "sourceKey": "wp-qarmatians",
+              "sourceLocation": "infobox year_start: 899"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1077,
+            "source": {
+              "sourceKey": "wp-qarmatians",
+              "sourceLocation": "infobox year_end: 1077"
+            }
+          }
+        ],
+        "startEvent": "qarmatians-established",
+        "endEvent": "qarmatians-overthrown"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-qarmatians",
+              "sourceLocation": "infobox capital: Al-Ahsa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rasulid-dynasty",
+      "name": "Rasulids (Yemen)",
+      "color": "#2a7a7a",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Rasulid_dynasty",
+      "span": {
+        "start": 1229,
+        "end": 1454,
+        "startDates": [
+          {
+            "year": 1229,
+            "source": {
+              "sourceKey": "wp-rasulid-dynasty",
+              "sourceLocation": "infobox year_start: 1229"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1454,
+            "source": {
+              "sourceKey": "wp-rasulid-dynasty",
+              "sourceLocation": "infobox year_end: 1454"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-rasulid-dynasty",
+              "sourceLocation": "infobox capital: Zabid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maghreb",
+      "name": "The Maghreb",
+      "color": "#8a5a3a",
+      "parent": "near-east"
+    },
+    {
+      "id": "garamantes",
+      "name": "Garamantes (Fezzan)",
+      "color": "#a07a5a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "ids": {
+        "wikidata": "Q839034"
+      },
+      "span": {
+        "start": -999,
+        "end": 675,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -999,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead ('at least as early as 1000 BC')"
+            }
+          },
+          {
+            "year": -599,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "Origin and prehistory ('From the 6th century BCE … a powerful polity')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 675,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "lead ('late 7th century AD')"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"Ancient Libya\""
+            },
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"Ancient Libyans\""
+            },
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"History of Fezzan\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "sahara",
+          "sources": [
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"History of the Sahara\""
+            },
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rustamid-dynasty",
+      "name": "Rustamids",
+      "color": "#6a8a5a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Rustamid_dynasty",
+      "span": {
+        "start": 777,
+        "end": 909,
+        "startDates": [
+          {
+            "year": 777,
+            "source": {
+              "sourceKey": "wp-rustamid-dynasty",
+              "sourceLocation": "infobox year_start: 777"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 909,
+            "source": {
+              "sourceKey": "wp-rustamid-dynasty",
+              "sourceLocation": "infobox year_end: 909"
+            }
+          }
+        ],
+        "endEvent": "capture-of-tahert"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-rustamid-dynasty",
+              "sourceLocation": "infobox capital: Tahert"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aghlabid-dynasty",
+      "name": "Aghlabids",
+      "color": "#8a7a2a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Aghlabid_dynasty",
+      "span": {
+        "start": 800,
+        "end": 909,
+        "startDates": [
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-aghlabid-dynasty",
+              "sourceLocation": "infobox year_start: 800"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 909,
+            "source": {
+              "sourceKey": "wp-aghlabid-dynasty",
+              "sourceLocation": "infobox year_end: 909"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-aghlabid-dynasty",
+              "sourceLocation": "infobox capital: Kairouan, with royal court at: / al-Abbasiyya (800–876) / Raqqada (876"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morocco",
+      "name": "Morocco",
+      "color": "#a8302a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Morocco",
+      "phases": [
+        {
+          "name": "Idrisid dynasty",
+          "start": 788,
+          "end": 974,
+          "startDates": [
+            {
+              "year": 788,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event2: Idrisid Dynasty, 788"
+              }
+            },
+            {
+              "year": 788,
+              "source": {
+                "sourceKey": "wp-idrisid-dynasty",
+                "sourceLocation": "infobox year_start: 788"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 974,
+              "source": {
+                "sourceKey": "wp-idrisid-dynasty",
+                "sourceLocation": "infobox year_end: 974"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Almoravid dynasty",
+          "start": 1040,
+          "end": 1147,
+          "startDates": [
+            {
+              "year": 1040,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event3: Almoravid Dynasty, 1040"
+              }
+            },
+            {
+              "year": 1050,
+              "source": {
+                "sourceKey": "wp-almoravid-dynasty",
+                "sourceLocation": "infobox year_start: 1050s"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1147,
+              "source": {
+                "sourceKey": "wp-almoravid-dynasty",
+                "sourceLocation": "infobox year_end: 1147"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Almohad Caliphate",
+          "start": 1121,
+          "end": 1269,
+          "startDates": [
+            {
+              "year": 1121,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event4: Almohad Dynasty, 1121"
+              }
+            },
+            {
+              "year": 1121,
+              "source": {
+                "sourceKey": "wp-almohad-caliphate",
+                "sourceLocation": "infobox year_start: 1121"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1269,
+              "source": {
+                "sourceKey": "wp-almohad-caliphate",
+                "sourceLocation": "infobox year_end: 1269"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Marinid Sultanate",
+          "start": 1244,
+          "end": 1465,
+          "startDates": [
+            {
+              "year": 1244,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event5: Marinid Dynasty, 1244"
+              }
+            },
+            {
+              "year": 1244,
+              "source": {
+                "sourceKey": "wp-marinid-dynasty",
+                "sourceLocation": "infobox year_start: 1244"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1465,
+              "source": {
+                "sourceKey": "wp-marinid-dynasty",
+                "sourceLocation": "infobox year_end: 1465"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Wattasid dynasty",
+          "start": 1472,
+          "end": 1554,
+          "startDates": [
+            {
+              "year": 1472,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event6: Wattasid Dynasty, 1472"
+              }
+            },
+            {
+              "year": 1472,
+              "source": {
+                "sourceKey": "wp-wattasid-dynasty",
+                "sourceLocation": "infobox year_start: 1472"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1554,
+              "source": {
+                "sourceKey": "wp-wattasid-dynasty",
+                "sourceLocation": "infobox year_end: 1554"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-morocco",
+              "sourceLocation": "infobox capital: Rabat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zirid-dynasty",
+      "name": "Zirids",
+      "color": "#4a6a8a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Zirid_dynasty",
+      "span": {
+        "start": 972,
+        "end": 1148,
+        "startDates": [
+          {
+            "year": 972,
+            "source": {
+              "sourceKey": "wp-zirid-dynasty",
+              "sourceLocation": "infobox year_start: 972"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1148,
+            "source": {
+              "sourceKey": "wp-zirid-dynasty",
+              "sourceLocation": "infobox year_end: 1148"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-zirid-dynasty",
+              "sourceLocation": "infobox capital: 'Ashir / (936–1014) / al-Mansuriyya / (972–1057) / Mahdia / (1057–1148"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hafsid-tunisia",
+      "name": "Hafsids (Tunisia)",
+      "color": "#c0702a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Hafsid_dynasty",
+      "span": {
+        "start": 1229,
+        "end": 1574,
+        "startDates": [
+          {
+            "year": 1229,
+            "source": {
+              "sourceKey": "wp-hafsid-dynasty",
+              "sourceLocation": "infobox year_start: 1229"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1574,
+            "source": {
+              "sourceKey": "wp-hafsid-dynasty",
+              "sourceLocation": "infobox year_end: 1574"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-hafsid-dynasty",
+              "sourceLocation": "infobox capital: Tunis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zayyanid-tlemcen",
+      "name": "Zayyanids (Tlemcen)",
+      "color": "#5a3a6a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen",
+      "span": {
+        "start": 1235,
+        "end": 1556,
+        "startDates": [
+          {
+            "year": 1235,
+            "source": {
+              "sourceKey": "wp-kingdom-of-tlemcen",
+              "sourceLocation": "infobox year_start: 1235"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1556,
+            "source": {
+              "sourceKey": "wp-kingdom-of-tlemcen",
+              "sourceLocation": "infobox year_end: 1556"
+            }
+          }
+        ],
+        "startEvent": "kingdom-of-tlemcen-established"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-tlemcen",
+              "sourceLocation": "infobox capital: Tlemcen"
             }
           ]
         }
@@ -6073,14 +8231,6 @@
         "wikipedia"
       ]
     },
-    "wp-cividale-del-friuli": {
-      "name": "Wikipedia: Cividale del Friuli",
-      "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-lombards": {
       "name": "Wikipedia: Kingdom of the Lombards",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
@@ -6088,6 +8238,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-cividale-del-friuli": {
+      "name": "Wikipedia: Cividale del Friuli",
+      "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-kingdom-of-the-lombards": {
       "name": "Kingdom of the Lombards (Wikipedia)",
@@ -6345,14 +8503,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anglo-saxons": {
-      "name": "Wikipedia: History of Anglo-Saxon England",
-      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-roman-britain": {
       "name": "Wikipedia: Roman Britain",
       "url": "https://en.wikipedia.org/wiki/Roman_Britain",
@@ -6360,6 +8510,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anglo-saxons": {
+      "name": "Wikipedia: History of Anglo-Saxon England",
+      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-history-of-anglo-saxon-england": {
       "name": "History of Anglo-Saxon England (Wikipedia)",
@@ -6505,9 +8663,65 @@
         "wikipedia"
       ]
     },
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-serbia": {
+      "name": "Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-principality-of-serbia": {
+      "name": "Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-croatia": {
+      "name": "Croatia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Croatia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bosnia-and-herzegovina": {
+      "name": "Bosnia and Herzegovina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-united-principalities-of-moldavia-and-wallachia": {
       "name": "United Principalities of Moldavia and Wallachia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/United_Principalities_of_Moldavia_and_Wallachia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-czech-republic": {
+      "name": "Czech Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Czech_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -6521,9 +8735,9 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-hungary": {
+      "name": "Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -6564,6 +8778,366 @@
     "wp-republic-of-ireland": {
       "name": "Republic of Ireland (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tulunids": {
+      "name": "Tulunids (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tulunids",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ikhshidid-dynasty": {
+      "name": "Ikhshidid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ikhshidid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-fatimid-caliphate": {
+      "name": "Fatimid Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fatimid_Caliphate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ayyubid-dynasty": {
+      "name": "Ayyubid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ayyubid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mamluk-sultanate": {
+      "name": "Mamluk Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mamluk_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-makuria": {
+      "name": "Wikipedia: Makuria",
+      "url": "https://en.wikipedia.org/wiki/Makuria",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-alodia": {
+      "name": "Wikipedia: Alodia",
+      "url": "https://en.wikipedia.org/wiki/Alodia",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kingdom-of-jerusalem": {
+      "name": "Kingdom of Jerusalem (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Jerusalem",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-principality-of-antioch": {
+      "name": "Principality of Antioch (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Antioch",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-county-of-edessa": {
+      "name": "County of Edessa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/County_of_Edessa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-county-of-tripoli": {
+      "name": "County of Tripoli (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/County_of_Tripoli",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-zengid-dynasty": {
+      "name": "Zengid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zengid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hamdanid-dynasty": {
+      "name": "Hamdanid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hamdanid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-rum": {
+      "name": "Sultanate of Rum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Rum",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ottoman-empire": {
+      "name": "Ottoman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-armenian-kingdom-of-cilicia": {
+      "name": "Armenian Kingdom of Cilicia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Armenian_Kingdom_of_Cilicia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-georgia": {
+      "name": "Kingdom of Georgia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Georgia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bagratid-armenia": {
+      "name": "Bagratid Armenia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bagratid_Armenia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sasanian": {
+      "name": "Wikipedia: Sasanian Empire",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tahirid-dynasty": {
+      "name": "Tahirid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tahirid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-samanid-empire": {
+      "name": "Samanid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samanid_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-saffarid-dynasty": {
+      "name": "Saffarid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saffarid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-buyid-dynasty": {
+      "name": "Buyid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Buyid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ghaznavid-empire": {
+      "name": "Ghaznavid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghaznavid_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-seljuk-empire": {
+      "name": "Seljuk Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seljuk_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ilkhanate": {
+      "name": "Ilkhanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ilkhanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jalayirid-sultanate": {
+      "name": "Jalayirid Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jalayirid_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-qara-qoyunlu": {
+      "name": "Qara Qoyunlu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qara_Qoyunlu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-aq-qoyunlu": {
+      "name": "Aq Qoyunlu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aq_Qoyunlu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-timurid-empire": {
+      "name": "Timurid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timurid_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-qarmatians": {
+      "name": "Qarmatians (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qarmatians",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-rasulid-dynasty": {
+      "name": "Rasulid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rasulid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-garamantes-classical": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-garamantes": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
+    },
+    "wp-rustamid-dynasty": {
+      "name": "Rustamid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rustamid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-aghlabid-dynasty": {
+      "name": "Aghlabid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aghlabid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-morocco": {
+      "name": "Morocco (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Morocco",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-idrisid-dynasty": {
+      "name": "Idrisid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Idrisid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-almoravid-dynasty": {
+      "name": "Almoravid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Almoravid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-almohad-caliphate": {
+      "name": "Almohad Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Almohad_Caliphate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-marinid-dynasty": {
+      "name": "Marinid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marinid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wattasid-dynasty": {
+      "name": "Wattasid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wattasid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-zirid-dynasty": {
+      "name": "Zirid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zirid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hafsid-dynasty": {
+      "name": "Hafsid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hafsid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-tlemcen": {
+      "name": "Kingdom of Tlemcen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -6653,12 +9227,17 @@
       "descr": "The Ottomans take Constantinople, ending the empire.",
       "start": 1453,
       "tracks": [
-        "eastern-roman"
+        "eastern-roman",
+        "ottoman-empire"
       ],
       "sources": [
         {
           "sourceKey": "wp-byzantine-empire",
           "sourceLocation": "lead: \"The fall of Constantinople to the Ottomans in 1453 brought the empire to an end.\""
+        },
+        {
+          "sourceKey": "wp-ottoman-empire",
+          "sourceLocation": "infobox event2: Conquest of Constantinople, 29 May 1453"
         }
       ],
       "importance": 1
@@ -6750,7 +9329,8 @@
       "start": 633,
       "end": 654,
       "tracks": [
-        "caliphate"
+        "caliphate",
+        "sasanian"
       ],
       "sources": [
         {
@@ -6901,7 +9481,8 @@
       "start": 1258,
       "tracks": [
         "caliphate",
-        "mongol-empire"
+        "mongol-empire",
+        "ilkhanate"
       ],
       "sources": [
         {
@@ -6957,7 +9538,8 @@
       "start": 1259,
       "tracks": [
         "mongol-empire",
-        "golden-horde"
+        "golden-horde",
+        "ilkhanate"
       ],
       "sources": [
         {
@@ -7866,7 +10448,7 @@
       "descr": "",
       "start": 1346,
       "tracks": [
-        "moldova"
+        "moldavia"
       ],
       "sources": [
         {
@@ -10319,6 +12901,1344 @@
         {
           "sourceKey": "wp-kingdom-of-galicia-volhynia",
           "sourceLocation": "infobox event4: Incorporation of Galicia by Poland, 1434"
+        }
+      ]
+    },
+    {
+      "uuid": "abbasid-reconquest",
+      "title": "Abbasid reconquest",
+      "descr": "",
+      "start": 905,
+      "tracks": [
+        "tulunids"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tulunids",
+          "sourceLocation": "infobox event_end: Abbasid reconquest, 905"
+        }
+      ]
+    },
+    {
+      "uuid": "fatimid-conquest-of-egypt-and-foundation-of-cairo",
+      "title": "Fatimid conquest of Egypt and foundation of Cairo",
+      "descr": "",
+      "start": 969,
+      "tracks": [
+        "ikhshidid-dynasty",
+        "fatimid-caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ikhshidid-dynasty",
+          "sourceLocation": "infobox event_end: Fatimid conquest, 969"
+        },
+        {
+          "sourceKey": "wp-fatimid-caliphate",
+          "sourceLocation": "infobox event1: Fatimid conquest of Egypt and foundation of Cairo, 969"
+        }
+      ]
+    },
+    {
+      "uuid": "fatimids-overthrow-the-aghlabids",
+      "title": "Fatimids overthrow the Aghlabids",
+      "descr": "",
+      "start": 909,
+      "tracks": [
+        "fatimid-caliphate",
+        "aghlabid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-fatimid-caliphate",
+          "sourceLocation": "infobox event_start: Overthrow of the Aghlabids, 909"
+        },
+        {
+          "sourceKey": "wp-aghlabid-dynasty",
+          "sourceLocation": "infobox event1: Overthrown by the Fatimids, 909"
+        }
+      ]
+    },
+    {
+      "uuid": "saladin-abolishes-the-fatimid-caliphate",
+      "title": "Saladin abolishes the Fatimid Caliphate",
+      "descr": "",
+      "start": 1171,
+      "tracks": [
+        "fatimid-caliphate",
+        "ayyubid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-fatimid-caliphate",
+          "sourceLocation": "infobox event_end: Abolished by Saladin, 17 September 1171"
+        },
+        {
+          "sourceKey": "wp-ayyubid-dynasty",
+          "sourceLocation": "infobox event_start: Established by Saladin, 1171"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "murder-of-turanshah-the-mamluks-take-power",
+      "title": "Murder of Turanshah; the Mamluks take power",
+      "descr": "",
+      "start": 1250,
+      "tracks": [
+        "mamluk-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mamluk-sultanate",
+          "sourceLocation": "infobox event_start: Murder of Turanshah, 2 May 1250"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ottoman-conquest-of-cairo",
+      "title": "Ottoman conquest of Cairo",
+      "descr": "",
+      "start": 1517,
+      "tracks": [
+        "mamluk-sultanate",
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mamluk-sultanate",
+          "sourceLocation": "infobox event_end: Ottoman conquest of Cairo, 22 January 1517"
+        }
+      ]
+    },
+    {
+      "uuid": "barquq-overthrows-al-salih-hajji-burji-rule-begins",
+      "title": "Barquq overthrows al-Salih Hajji; Burji rule begins",
+      "descr": "",
+      "start": 1382,
+      "tracks": [
+        "mamluk-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mamluk-sultanate",
+          "sourceLocation": "infobox event1: Barquq overthrows al-Salih Hajji; Burji rule begins, November 1382"
+        }
+      ]
+    },
+    {
+      "uuid": "first-fall-of-jerusalem",
+      "title": "First Fall of Jerusalem",
+      "descr": "",
+      "start": 1187,
+      "tracks": [
+        "kingdom-of-jerusalem"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-jerusalem",
+          "sourceLocation": "infobox event1: First Fall of Jerusalem, 2 October 1187"
+        }
+      ]
+    },
+    {
+      "uuid": "third-crusade",
+      "title": "Third Crusade",
+      "descr": "",
+      "start": 1189,
+      "end": 1192,
+      "tracks": [
+        "kingdom-of-jerusalem",
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-jerusalem",
+          "sourceLocation": "infobox event2: Third Crusade, 1189–1192"
+        },
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event6: Third Crusade, 1189–1192"
+        }
+      ]
+    },
+    {
+      "uuid": "sixth-crusade",
+      "title": "Sixth Crusade",
+      "descr": "",
+      "start": 1228,
+      "end": 1229,
+      "tracks": [
+        "kingdom-of-jerusalem"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-jerusalem",
+          "sourceLocation": "infobox event3: Sixth Crusade, 1228–1229"
+        }
+      ]
+    },
+    {
+      "uuid": "barons-crusade",
+      "title": "Barons' Crusade",
+      "descr": "",
+      "start": 1239,
+      "end": 1241,
+      "tracks": [
+        "kingdom-of-jerusalem"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-jerusalem",
+          "sourceLocation": "infobox event4: Barons' Crusade, 1239–1241"
+        }
+      ]
+    },
+    {
+      "uuid": "second-fall-of-jerusalem",
+      "title": "Second Fall of Jerusalem",
+      "descr": "",
+      "start": 1244,
+      "tracks": [
+        "kingdom-of-jerusalem"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-jerusalem",
+          "sourceLocation": "infobox event5: Second Fall of Jerusalem, 15 July 1244"
+        }
+      ]
+    },
+    {
+      "uuid": "principality-of-antioch-founded-first-crusade",
+      "title": "Principality of Antioch founded (First Crusade)",
+      "descr": "",
+      "start": 1098,
+      "tracks": [
+        "principality-of-antioch"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-principality-of-antioch",
+          "sourceLocation": "infobox event_start: First Crusade, 1098"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-by-the-mamluk-sultanate-under-baibars",
+      "title": "Conquered by the Mamluk Sultanate under Baibars",
+      "descr": "",
+      "start": 1268,
+      "tracks": [
+        "principality-of-antioch"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-principality-of-antioch",
+          "sourceLocation": "infobox event_end: Conquered by the Mamluk Sultanate under Baibars, 1268"
+        }
+      ]
+    },
+    {
+      "uuid": "county-of-edessa-established",
+      "title": "County of Edessa established",
+      "descr": "",
+      "start": 1098,
+      "tracks": [
+        "county-of-edessa"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-county-of-edessa",
+          "sourceLocation": "infobox event_start: Establishment, 1098"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-by-nur-ad-din-zengi-and-the-rest-sold-to-manuel-i-",
+      "title": "Conquered by Nur ad-Din Zengi, and the rest sold to Manuel I Komnenos",
+      "descr": "",
+      "start": 1144,
+      "tracks": [
+        "county-of-edessa"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-county-of-edessa",
+          "sourceLocation": "infobox event_end: Conquered by Nur ad-Din Zengi, and the rest sold to Manuel I Komnenos, 1144"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-by-qalawun",
+      "title": "Conquered by Qalawun",
+      "descr": "",
+      "start": 1289,
+      "tracks": [
+        "county-of-tripoli"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-county-of-tripoli",
+          "sourceLocation": "infobox event_end: Conquered by Qalawun, 27 April 1289"
+        }
+      ]
+    },
+    {
+      "uuid": "husayn-ibn-hamdan-establishes-himself-as-leader-of-al-jazira",
+      "title": "Husayn ibn Hamdan establishes himself as leader of Al-Jazira for the Abbasids.",
+      "descr": "",
+      "start": 895,
+      "tracks": [
+        "hamdanid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hamdanid-dynasty",
+          "sourceLocation": "infobox event1: Husayn ibn Hamdan establishes himself as leader of Al-Jazira for the Abbasids., 895"
+        }
+      ]
+    },
+    {
+      "uuid": "sayf-al-dawla-establishes-himself-in-aleppo-after-successful",
+      "title": "Sayf al-Dawla establishes himself in Aleppo after successfully countering the Ikhshidids of Egypt.",
+      "descr": "",
+      "start": 944,
+      "tracks": [
+        "hamdanid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hamdanid-dynasty",
+          "sourceLocation": "infobox event2: Sayf al-Dawla establishes himself in Aleppo after successfully countering the Ikhshidids of Egypt., 944"
+        }
+      ]
+    },
+    {
+      "uuid": "division-from-the-seljuk-empire",
+      "title": "Division from the Seljuk Empire",
+      "descr": "",
+      "start": 1077,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event_start: Division from the Seljuk Empire, 1077"
+        }
+      ]
+    },
+    {
+      "uuid": "karamanid-conquest",
+      "title": "Karamanid conquest",
+      "descr": "",
+      "start": 1308,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event_end: Karamanid conquest, 1308"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-ain-salm",
+      "title": "Battle of Ain Salm",
+      "descr": "",
+      "start": 1086,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event1: Battle of Ain Salm, 1086"
+        }
+      ]
+    },
+    {
+      "uuid": "first-crusade",
+      "title": "First Crusade",
+      "descr": "",
+      "start": 1096,
+      "tracks": [
+        "sultanate-of-rum",
+        "seljuk-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event2: First Crusade, 1096-99"
+        },
+        {
+          "sourceKey": "wp-seljuk-empire",
+          "sourceLocation": "infobox event3: First Crusade, 1095–1099"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-khabur-river",
+      "title": "Battle of Khabur River",
+      "descr": "",
+      "start": 1107,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event3: Battle of Khabur River, 1107"
+        }
+      ]
+    },
+    {
+      "uuid": "second-crusade",
+      "title": "Second Crusade",
+      "descr": "",
+      "start": 1147,
+      "end": 1150,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event4: Second Crusade, 1147-1150"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-myriokephalon",
+      "title": "Battle of Myriokephalon",
+      "descr": "",
+      "start": 1176,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event5: Battle of Myriokephalon, 1176"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-ala-ehir",
+      "title": "Battle of Alaşehir",
+      "descr": "",
+      "start": 1211,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event7: Battle of Alaşehir, 1211"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-sinope",
+      "title": "Siege of Sinope",
+      "descr": "",
+      "start": 1214,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event8: Siege of Sinope, 1214"
+        }
+      ]
+    },
+    {
+      "uuid": "kaykubads-campaigns",
+      "title": "Kaykubad's Campaigns",
+      "descr": "",
+      "start": 1220,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event9: Kaykubad's Campaigns, 1220-37"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-k-se-da",
+      "title": "Battle of Köse Dağ",
+      "descr": "",
+      "start": 1243,
+      "tracks": [
+        "sultanate-of-rum"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-rum",
+          "sourceLocation": "infobox event10: Battle of Köse Dağ, 1243"
+        }
+      ]
+    },
+    {
+      "uuid": "ottoman-interregnum",
+      "title": "Ottoman Interregnum",
+      "descr": "",
+      "start": 1402,
+      "end": 1413,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ottoman-empire",
+          "sourceLocation": "infobox event1: Interregnum, 1402–1413"
+        }
+      ]
+    },
+    {
+      "uuid": "prince-ruben-i-founds-an-armenian-principality-in-cilicia",
+      "title": "Prince Ruben I founds an Armenian principality in Cilicia",
+      "descr": "",
+      "start": 1080,
+      "tracks": [
+        "armenian-kingdom-of-cilicia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-armenian-kingdom-of-cilicia",
+          "sourceLocation": "infobox event_start: Prince Ruben I founds an Armenian principality in Cilicia, 1080"
+        }
+      ]
+    },
+    {
+      "uuid": "sis-conquered-by-the-egyptian-mamluks",
+      "title": "Sis conquered by the Egyptian Mamluks",
+      "descr": "",
+      "start": 1375,
+      "tracks": [
+        "armenian-kingdom-of-cilicia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-armenian-kingdom-of-cilicia",
+          "sourceLocation": "infobox event_end: Sis conquered by the Egyptian Mamluks, April 13, 1375"
+        }
+      ]
+    },
+    {
+      "uuid": "prince-leo-ii-crowned-as-king-leo-i",
+      "title": "Prince Leo II crowned as King Leo I",
+      "descr": "",
+      "start": 1198,
+      "tracks": [
+        "armenian-kingdom-of-cilicia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-armenian-kingdom-of-cilicia",
+          "sourceLocation": "infobox event1: Prince Leo II crowned as King Leo I, January 6, 1198"
+        }
+      ]
+    },
+    {
+      "uuid": "cilicia-becomes-tributary-to-the-mongols",
+      "title": "Cilicia becomes tributary to the Mongols",
+      "descr": "",
+      "start": 1236,
+      "tracks": [
+        "armenian-kingdom-of-cilicia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-armenian-kingdom-of-cilicia",
+          "sourceLocation": "infobox event2: Tributary to the Mongols, 1236"
+        }
+      ]
+    },
+    {
+      "uuid": "unification-of-georgia",
+      "title": "Unification of Georgia",
+      "descr": "",
+      "start": 1008,
+      "tracks": [
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-georgia",
+          "sourceLocation": "infobox event_start: Unification, c. 1008"
+        }
+      ]
+    },
+    {
+      "uuid": "georgian-golden-age",
+      "title": "Georgian Golden Age",
+      "descr": "",
+      "start": 1122,
+      "end": 1226,
+      "tracks": [
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-georgia",
+          "sourceLocation": "infobox event1: Georgian Golden Age, 1122–1226"
+        }
+      ]
+    },
+    {
+      "uuid": "georgian-interregnum",
+      "title": "Georgian interregnum",
+      "descr": "",
+      "start": 1245,
+      "end": 1247,
+      "tracks": [
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-georgia",
+          "sourceLocation": "infobox event2: Interregnum, 1245–1247"
+        }
+      ]
+    },
+    {
+      "uuid": "georgia-divided-into-east-and-west",
+      "title": "Georgia divided into east and west",
+      "descr": "",
+      "start": 1247,
+      "end": 1329,
+      "tracks": [
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-georgia",
+          "sourceLocation": "infobox event3: East and West division, 1247–1329"
+        }
+      ]
+    },
+    {
+      "uuid": "reunification-of-georgia",
+      "title": "Reunification of Georgia",
+      "descr": "",
+      "start": 1329,
+      "tracks": [
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-georgia",
+          "sourceLocation": "infobox event4: Reunification, 1329"
+        }
+      ]
+    },
+    {
+      "uuid": "ghaznavid-samanid-war-karakhanid-samanid-wars",
+      "title": "Ghaznavid–Samanid war & Karakhanid–Samanid wars",
+      "descr": "",
+      "start": 999,
+      "tracks": [
+        "samanid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-samanid-empire",
+          "sourceLocation": "infobox event_end: Ghaznavid–Samanid war & Karakhanid–Samanid wars, 999"
+        }
+      ]
+    },
+    {
+      "uuid": "samanid-civil-war-of-888",
+      "title": "Samanid Civil War of 888",
+      "descr": "",
+      "start": 888,
+      "tracks": [
+        "samanid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-samanid-empire",
+          "sourceLocation": "infobox event1: Samanid Civil War of 888, 888"
+        }
+      ]
+    },
+    {
+      "uuid": "ghaznavid-conquest",
+      "title": "Ghaznavid conquest",
+      "descr": "",
+      "start": 1002,
+      "tracks": [
+        "saffarid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-saffarid-dynasty",
+          "sourceLocation": "infobox event_end: Ghaznavid conquest, 1002"
+        }
+      ]
+    },
+    {
+      "uuid": "war-with-hindu-shahi",
+      "title": "War with Hindu Shahi",
+      "descr": "",
+      "start": 870,
+      "end": 900,
+      "tracks": [
+        "saffarid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-saffarid-dynasty",
+          "sourceLocation": "infobox event1: War with Hindu Shahi, 870-900"
+        }
+      ]
+    },
+    {
+      "uuid": "imad-al-dawla-proclaimed-himself-emir",
+      "title": "Imad al-Dawla proclaimed himself Emir",
+      "descr": "",
+      "start": 934,
+      "tracks": [
+        "buyid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-buyid-dynasty",
+          "sourceLocation": "infobox event1: Imad al-Dawla proclaimed himself Emir, 934"
+        }
+      ]
+    },
+    {
+      "uuid": "adud-al-dawla-becomes-the-supreme-ruler-of-the-buyid-dynasty",
+      "title": "Adud al-Dawla becomes the supreme ruler of the Buyid dynasty",
+      "descr": "",
+      "start": 979,
+      "tracks": [
+        "buyid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-buyid-dynasty",
+          "sourceLocation": "infobox event2: Adud al-Dawla becomes the supreme ruler of the Buyid dynasty, 979"
+        }
+      ]
+    },
+    {
+      "uuid": "ghaznavid-invasion",
+      "title": "Ghaznavid invasion",
+      "descr": "",
+      "start": 1029,
+      "tracks": [
+        "buyid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-buyid-dynasty",
+          "sourceLocation": "infobox event3: Ghaznavid invasion, 1029"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-lahore",
+      "title": "Siege of Lahore",
+      "descr": "",
+      "start": 1186,
+      "tracks": [
+        "ghaznavid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ghaznavid-empire",
+          "sourceLocation": "infobox event_end: Siege of Lahore, 1186"
+        }
+      ]
+    },
+    {
+      "uuid": "hindu-shahi-wars",
+      "title": "Hindu Shahi Wars",
+      "descr": "",
+      "start": 977,
+      "end": 1026,
+      "tracks": [
+        "ghaznavid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ghaznavid-empire",
+          "sourceLocation": "infobox event1: Hindu Shahi Wars, 977–1026"
+        }
+      ]
+    },
+    {
+      "uuid": "ghaznavid-campaigns-in-india",
+      "title": "Ghaznavid campaigns in India",
+      "descr": "",
+      "start": 977,
+      "end": 1167,
+      "tracks": [
+        "ghaznavid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ghaznavid-empire",
+          "sourceLocation": "infobox event2: Campaigns in India, 977–1167"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-ghazni",
+      "title": "Battle of Ghazni",
+      "descr": "",
+      "start": 998,
+      "tracks": [
+        "ghaznavid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ghaznavid-empire",
+          "sourceLocation": "infobox event3: Battle of Ghazni, 998"
+        }
+      ]
+    },
+    {
+      "uuid": "ghaznavid-campaigns-in-persia",
+      "title": "Ghaznavid campaigns in Persia",
+      "descr": "",
+      "start": 1026,
+      "tracks": [
+        "ghaznavid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ghaznavid-empire",
+          "sourceLocation": "infobox event4: Campaigns in Persia, 1026–34"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-dandanaqan",
+      "title": "Battle of Dandanaqan",
+      "descr": "",
+      "start": 1040,
+      "tracks": [
+        "ghaznavid-empire",
+        "seljuk-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ghaznavid-empire",
+          "sourceLocation": "infobox event5: Battle of Dandanaqan, 1040"
+        },
+        {
+          "sourceKey": "wp-seljuk-empire",
+          "sourceLocation": "infobox event1: Battle of Dandanaqan, 1040"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-ghazni-1117",
+      "title": "Battle of Ghazni",
+      "descr": "",
+      "start": 1117,
+      "tracks": [
+        "ghaznavid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ghaznavid-empire",
+          "sourceLocation": "infobox event6: Battle of Ghazni, 1117"
+        }
+      ]
+    },
+    {
+      "uuid": "formation-under-tughril",
+      "title": "Formation under Tughril",
+      "descr": "",
+      "start": 1037,
+      "tracks": [
+        "seljuk-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-seljuk-empire",
+          "sourceLocation": "infobox event_start: Formation under Tughril, 1037"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-ray-and-the-supplantation-by-the-khwarazmian-empir",
+      "title": "Battle of Ray and the supplantation by the Khwarazmian Empire",
+      "descr": "",
+      "start": 1194,
+      "tracks": [
+        "seljuk-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-seljuk-empire",
+          "sourceLocation": "infobox event_end: Battle of Ray and the supplantation by the Khwarazmian Empire, 1194"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-manzikert",
+      "title": "Battle of Manzikert",
+      "descr": "",
+      "start": 1071,
+      "tracks": [
+        "seljuk-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-seljuk-empire",
+          "sourceLocation": "infobox event2: Battle of Manzikert, 1071"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-qatwan",
+      "title": "Battle of Qatwan",
+      "descr": "",
+      "start": 1141,
+      "tracks": [
+        "seljuk-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-seljuk-empire",
+          "sourceLocation": "infobox event4: Battle of Qatwan, 1141"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-trebizond",
+      "title": "Siege of Trebizond",
+      "descr": "",
+      "start": 1348,
+      "tracks": [
+        "aq-qoyunlu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aq-qoyunlu",
+          "sourceLocation": "infobox event_start: Siege of Trebizond, 1348"
+        }
+      ]
+    },
+    {
+      "uuid": "collapse-of-the-aq-qoyunlu-rule-in-iran",
+      "title": "Collapse of the Aq Qoyunlu rule in Iran",
+      "descr": "",
+      "start": 1503,
+      "tracks": [
+        "aq-qoyunlu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aq-qoyunlu",
+          "sourceLocation": "infobox event_end: Collapse of the Aq Qoyunlu rule in Iran, Summer 1503"
+        }
+      ]
+    },
+    {
+      "uuid": "aq-qoyunlu-established",
+      "title": "Aq Qoyunlu established",
+      "descr": "",
+      "start": 1378,
+      "tracks": [
+        "aq-qoyunlu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aq-qoyunlu",
+          "sourceLocation": "infobox event1: Established, 1378"
+        }
+      ]
+    },
+    {
+      "uuid": "coup-by-uzun-hasan",
+      "title": "Coup by Uzun Hasan",
+      "descr": "",
+      "start": 1452,
+      "tracks": [
+        "aq-qoyunlu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aq-qoyunlu",
+          "sourceLocation": "infobox event2: Coup by Uzun Hasan, Autumn 1452"
+        }
+      ]
+    },
+    {
+      "uuid": "reunification-of-the-aq-qoyunlu",
+      "title": "Reunification of the Aq Qoyunlu",
+      "descr": "",
+      "start": 1457,
+      "tracks": [
+        "aq-qoyunlu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aq-qoyunlu",
+          "sourceLocation": "infobox event3: Reunification, 1457"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-ahmad-beg-division-of-the-aq-qoyunlu",
+      "title": "Death of Ahmad Beg, division of the Aq Qoyunlu",
+      "descr": "",
+      "start": 1497,
+      "tracks": [
+        "aq-qoyunlu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aq-qoyunlu",
+          "sourceLocation": "infobox event4: Death of Ahmad Beg, division of the Aq Qoyunlu, December, 1497"
+        }
+      ]
+    },
+    {
+      "uuid": "establishment-of-timurid-empire",
+      "title": "Establishment of Timurid Empire",
+      "descr": "",
+      "start": 1370,
+      "tracks": [
+        "timurid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-timurid-empire",
+          "sourceLocation": "infobox event_start: Establishment of Timurid Empire, 1370"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-herat",
+      "title": "Fall of Herat",
+      "descr": "",
+      "start": 1507,
+      "tracks": [
+        "timurid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-timurid-empire",
+          "sourceLocation": "infobox event_end: Fall of Herat, 1507"
+        }
+      ]
+    },
+    {
+      "uuid": "westward-expansion-begins",
+      "title": "Westward expansion begins",
+      "descr": "",
+      "start": 1380,
+      "tracks": [
+        "timurid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-timurid-empire",
+          "sourceLocation": "infobox event1: Westward expansion begins, 1380"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-ankara",
+      "title": "Battle of Ankara",
+      "descr": "",
+      "start": 1402,
+      "tracks": [
+        "timurid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-timurid-empire",
+          "sourceLocation": "infobox event2: Battle of Ankara, 28 July 1402"
+        }
+      ]
+    },
+    {
+      "uuid": "qarmatians-established",
+      "title": "Qarmatians established",
+      "descr": "",
+      "start": 899,
+      "tracks": [
+        "qarmatians"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qarmatians",
+          "sourceLocation": "infobox event_start: Established, 899"
+        }
+      ]
+    },
+    {
+      "uuid": "qarmatians-overthrown",
+      "title": "Qarmatians overthrown",
+      "descr": "",
+      "start": 1077,
+      "tracks": [
+        "qarmatians"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qarmatians",
+          "sourceLocation": "infobox event_end: Overthrow, 1077"
+        }
+      ]
+    },
+    {
+      "uuid": "sack-of-mecca",
+      "title": "Sack of Mecca",
+      "descr": "",
+      "start": 930,
+      "tracks": [
+        "qarmatians"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qarmatians",
+          "sourceLocation": "infobox event1: Sack of Mecca, 930"
+        }
+      ]
+    },
+    {
+      "uuid": "al-isfahani-proclaimed-to-be-the-mahdi",
+      "title": "al-Isfahani proclaimed to be the Mahdi",
+      "descr": "",
+      "start": 931,
+      "tracks": [
+        "qarmatians"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qarmatians",
+          "sourceLocation": "infobox event2: al-Isfahani proclaimed to be the Mahdi, 931"
+        }
+      ]
+    },
+    {
+      "uuid": "black-stone-returned",
+      "title": "Black Stone returned",
+      "descr": "",
+      "start": 952,
+      "tracks": [
+        "qarmatians"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qarmatians",
+          "sourceLocation": "infobox event3: Black Stone returned, 952"
+        }
+      ]
+    },
+    {
+      "uuid": "defeated-by-the-abbasids",
+      "title": "Defeated by the Abbasids",
+      "descr": "",
+      "start": 976,
+      "tracks": [
+        "qarmatians"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qarmatians",
+          "sourceLocation": "infobox event4: Defeated by the Abbasids, 976"
+        }
+      ]
+    },
+    {
+      "uuid": "capture-of-tahert",
+      "title": "Capture of Tahert",
+      "descr": "",
+      "start": 909,
+      "tracks": [
+        "rustamid-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-rustamid-dynasty",
+          "sourceLocation": "infobox event_end: Capture of Tahert, 909"
+        }
+      ]
+    },
+    {
+      "uuid": "almoravids-overthrown",
+      "title": "Almoravids overthrown",
+      "descr": "",
+      "start": 1147,
+      "tracks": [
+        "morocco"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-almohad-caliphate",
+          "sourceLocation": "infobox event1: Almoravids overthrown, 1147"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-las-navas-de-tolosa",
+      "title": "Battle of Las Navas de Tolosa",
+      "descr": "",
+      "start": 1212,
+      "tracks": [
+        "morocco"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-almohad-caliphate",
+          "sourceLocation": "infobox event2: Battle of Las Navas de Tolosa, 1212"
+        }
+      ]
+    },
+    {
+      "uuid": "marinid-suzerainty",
+      "title": "Marinid suzerainty",
+      "descr": "",
+      "start": 1248,
+      "tracks": [
+        "morocco"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-almohad-caliphate",
+          "sourceLocation": "infobox event3: Marinid suzerainty, 1248"
+        }
+      ]
+    },
+    {
+      "uuid": "kingdom-of-tlemcen-established",
+      "title": "Kingdom of Tlemcen established",
+      "descr": "",
+      "start": 1235,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event_start: Establishment, 1235"
+        }
+      ]
+    },
+    {
+      "uuid": "victory-against-the-almohad-caliphate",
+      "title": "Victory against the Almohad Caliphate",
+      "descr": "",
+      "start": 1248,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event1: Victory against the Almohad Caliphate, 1248"
+        }
+      ]
+    },
+    {
+      "uuid": "zayyanid-capture-of-sijilmasa",
+      "title": "Zayyanid Capture of Sijilmasa",
+      "descr": "",
+      "start": 1264,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event2: Zayyanid Capture of Sijilmasa, 1264"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-tlemcen",
+      "title": "Siege of Tlemcen",
+      "descr": "",
+      "start": 1299,
+      "end": 1307,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event3: Siege of Tlemcen, 1299-1307"
+        }
+      ]
+    },
+    {
+      "uuid": "capture-of-tunis",
+      "title": "Capture of Tunis",
+      "descr": "",
+      "start": 1329,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event4: Capture of Tunis, 1329"
+        }
+      ]
+    },
+    {
+      "uuid": "first-marinid-rule",
+      "title": "First Marinid rule",
+      "descr": "",
+      "start": 1337,
+      "end": 1348,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event5: First Marinid rule, 1337-1348"
+        }
+      ]
+    },
+    {
+      "uuid": "second-marinid-rule",
+      "title": "Second Marinid rule",
+      "descr": "",
+      "start": 1352,
+      "end": 1359,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event6: Second Marinid rule, 1352-1359"
+        }
+      ]
+    },
+    {
+      "uuid": "zayyanid-capture-of-fez",
+      "title": "Zayyanid capture of Fez",
+      "descr": "",
+      "start": 1411,
+      "tracks": [
+        "zayyanid-tlemcen"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tlemcen",
+          "sourceLocation": "infobox event7: Zayyanid capture of Fez, 1411"
         }
       ]
     }

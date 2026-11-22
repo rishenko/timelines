@@ -26,8 +26,8 @@
       "id": "medieval",
       "title": "Medieval World",
       "file": "medieval.json",
-      "subtitle": "Wave 1: Europe; pilot rows elsewhere; 650–1500",
-      "eventCount": 226,
+      "subtitle": "Europe, the Near East and North Africa; pilot rows elsewhere; 650–1500",
+      "eventCount": 312,
       "calendar": {
         "before": "BCE",
         "after": "CE",
