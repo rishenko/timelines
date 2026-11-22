@@ -3,7 +3,7 @@
   "meta": {
     "id": "modern-states",
     "title": "Modern States",
-    "subtitle": "Europe and the post-Soviet states, with pilots for India, Nigeria, Mexico and Indonesia; 1500 to today",
+    "subtitle": "Europe, the post-Soviet states and South Asia, with pilots for Nigeria, Mexico and Indonesia; 1500 to today",
     "description": "States from 1500 to today: their governments as phases, unions as their own rows, and which union each state was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field.",
     "calendar": {
@@ -13233,6 +13233,2967 @@
           "endEvent": "dissolution-of-the-soviet-union"
         }
       ]
+    },
+    {
+      "id": "afghanistan",
+      "name": "Afghanistan",
+      "color": "#3a6a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Afghanistan",
+      "phases": [
+        {
+          "name": "Emirate of Afghanistan",
+          "start": 1823,
+          "end": 1926,
+          "startDates": [
+            {
+              "year": 1823,
+              "source": {
+                "sourceKey": "wp-emirate-of-afghanistan",
+                "sourceLocation": "infobox year_start: 1823"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1926,
+              "source": {
+                "sourceKey": "wp-emirate-of-afghanistan",
+                "sourceLocation": "infobox year_end: 9 June 1926"
+              }
+            }
+          ],
+          "startEvent": "fall-of-kabul-1823",
+          "endEvent": "afghan-kingdom-1926"
+        },
+        {
+          "name": "Kingdom of Afghanistan",
+          "start": 1926,
+          "end": 1973,
+          "startDates": [
+            {
+              "year": 1926,
+              "source": {
+                "sourceKey": "wp-kingdom-of-afghanistan",
+                "sourceLocation": "infobox year_start: 1926"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1973,
+              "source": {
+                "sourceKey": "wp-kingdom-of-afghanistan",
+                "sourceLocation": "infobox year_end: 1973"
+              }
+            }
+          ],
+          "startEvent": "afghan-kingdom-1926",
+          "endEvent": "afghan-coup-1973"
+        },
+        {
+          "name": "Republic of Afghanistan",
+          "start": 1973,
+          "end": 1978,
+          "startDates": [
+            {
+              "year": 1973,
+              "source": {
+                "sourceKey": "wp-republic-of-afghanistan-1973-1978",
+                "sourceLocation": "infobox year_start: 1973"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-republic-of-afghanistan-1973-1978",
+                "sourceLocation": "infobox year_end: 1978"
+              }
+            }
+          ],
+          "startEvent": "afghan-coup-1973",
+          "endEvent": "saur-revolution"
+        },
+        {
+          "name": "Democratic Republic of Afghanistan",
+          "start": 1978,
+          "end": 1992,
+          "startDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-democratic-republic-of-afghanistan",
+                "sourceLocation": "infobox year_start: 1978"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-democratic-republic-of-afghanistan",
+                "sourceLocation": "infobox year_end: 1992"
+              }
+            }
+          ],
+          "startEvent": "saur-revolution"
+        },
+        {
+          "name": "Islamic State of Afghanistan",
+          "start": 1992,
+          "end": 2002,
+          "startDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-islamic-state-of-afghanistan",
+                "sourceLocation": "infobox year_start: 1992"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2002,
+              "source": {
+                "sourceKey": "wp-islamic-state-of-afghanistan",
+                "sourceLocation": "infobox year_end: 2002"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Islamic Emirate (Taliban)",
+          "start": 1996,
+          "end": 2001,
+          "startDates": [
+            {
+              "year": 1996,
+              "source": {
+                "sourceKey": "wp-islamic-emirate-of-afghanistan-1996-2001",
+                "sourceLocation": "infobox year_start: 1996"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2001,
+              "source": {
+                "sourceKey": "wp-islamic-emirate-of-afghanistan-1996-2001",
+                "sourceLocation": "infobox year_end: 2001"
+              }
+            }
+          ],
+          "startEvent": "taliban-capture-kabul-1996",
+          "endEvent": "us-invasion-afghanistan"
+        },
+        {
+          "name": "Interim and transitional administrations",
+          "start": 2001,
+          "end": 2004,
+          "startDates": [
+            {
+              "year": 2001,
+              "source": {
+                "sourceKey": "wp-islamic-republic-of-afghanistan",
+                "sourceLocation": "lead: \"The state was established to replace the Afghan interim (2001–2002) and transitional (2002–2004) administrations, which were formed after the 2001 United States\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2004,
+              "source": {
+                "sourceKey": "wp-islamic-republic-of-afghanistan",
+                "sourceLocation": "lead: \"The state was established to replace the Afghan interim (2001–2002) and transitional (2002–2004) administrations, which were formed after the 2001 United States\""
+              }
+            }
+          ],
+          "startEvent": "us-invasion-afghanistan"
+        },
+        {
+          "name": "Islamic Republic of Afghanistan",
+          "start": 2004,
+          "end": 2021,
+          "startDates": [
+            {
+              "year": 2004,
+              "source": {
+                "sourceKey": "wp-islamic-republic-of-afghanistan",
+                "sourceLocation": "infobox year_start: 2004"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2021,
+              "source": {
+                "sourceKey": "wp-islamic-republic-of-afghanistan",
+                "sourceLocation": "infobox year_end: 2021"
+              }
+            }
+          ],
+          "endEvent": "fall-of-kabul-2021"
+        },
+        {
+          "name": "Islamic Emirate (restored)",
+          "start": 2021,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 2021,
+              "source": {
+                "sourceKey": "wp-afghanistan",
+                "sourceLocation": "infobox: Restoration of Islamic Emirate (15 August 2021)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-afghanistan",
+              "sourceLocation": "infobox established_event12: Restoration of Islamic Emirate, 15 August 2021 (current state)"
+            }
+          ],
+          "startEvent": "fall-of-kabul-2021"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1879,
+          "end": 1919,
+          "startDates": [
+            {
+              "year": 1879,
+              "source": {
+                "sourceKey": "wp-emirate-of-afghanistan",
+                "sourceLocation": "infobox event4: Treaty of Gandamak, 24 May 1879"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-emirate-of-afghanistan",
+                "sourceLocation": "infobox event6: Anglo-Afghan Treaty of 1919, 8 August 1919"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-emirate-of-afghanistan",
+              "sourceLocation": "lead: \"However, during the Second Anglo-Afghan War (1878–1880), the British and Afghans signed the Treaty of Gandamak, which allowed the British to assume control of t\""
+            },
+            {
+              "sourceKey": "wp-emirate-of-afghanistan",
+              "sourceLocation": "lead: \"Emir Amanullah Khan signed the Anglo-Afghan Treaty of 1919 following the Third Anglo-Afghan War, gaining full Afghan autonomy, and the removal of Afghanistan's \""
+            }
+          ],
+          "startEvent": "treaty-of-gandamak",
+          "endEvent": "anglo-afghan-treaty-1919"
+        }
+      ]
+    },
+    {
+      "id": "bangladesh",
+      "name": "Bangladesh",
+      "color": "#1f7a4f",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Bangladesh",
+      "phases": [
+        {
+          "name": "East Bengal",
+          "start": 1947,
+          "end": 1956,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-east-bengal",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1956,
+              "source": {
+                "sourceKey": "wp-east-bengal",
+                "sourceLocation": "infobox year_end: 1956"
+              }
+            }
+          ],
+          "startEvent": "indian-independence",
+          "endEvent": "pakistan-republic"
+        },
+        {
+          "name": "East Pakistan",
+          "start": 1956,
+          "end": 1971,
+          "startDates": [
+            {
+              "year": 1956,
+              "source": {
+                "sourceKey": "wp-east-pakistan",
+                "sourceLocation": "infobox year_start: 1956"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1971,
+              "source": {
+                "sourceKey": "wp-east-pakistan",
+                "sourceLocation": "infobox year_end: 1971"
+              }
+            }
+          ],
+          "startEvent": "pakistan-republic",
+          "endEvent": "bangladesh-liberation-war"
+        },
+        {
+          "name": "People's Republic of Bangladesh",
+          "start": 1971,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1971,
+              "source": {
+                "sourceKey": "wp-bangladesh",
+                "sourceLocation": "infobox: Proclamation of independence (26 March 1971)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-bangladesh",
+              "sourceLocation": "infobox established_event6: Current constitution, 16 December 1972 (current state)"
+            }
+          ],
+          "startEvent": "bangladesh-liberation-war"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "pakistan",
+          "start": 1947,
+          "end": 1971,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-east-bengal",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1971,
+              "source": {
+                "sourceKey": "wp-east-pakistan",
+                "sourceLocation": "infobox year_end: 1971"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-east-bengal",
+              "sourceLocation": "lead: \"East Bengal existed from 1947 until 1956, when it was re-structured as East Pakistan under the One Unit Scheme by the Constitution of Pakistan of 1956.\""
+            },
+            {
+              "sourceKey": "wp-east-pakistan",
+              "sourceLocation": "lead: \"East Pakistan was the eastern province of Pakistan between 1956 and 1971, restructured and renamed from the province of East Bengal and covering the territory o\""
+            }
+          ],
+          "startEvent": "indian-independence",
+          "endEvent": "bangladesh-liberation-war"
+        }
+      ]
+    },
+    {
+      "id": "bhutan",
+      "name": "Bhutan",
+      "color": "#d08a2a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Bhutan",
+      "span": {
+        "start": 1616,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1616,
+            "source": {
+              "sourceKey": "wp-bhutan",
+              "sourceLocation": "infobox: Unification (1616–1634)"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-bhutan",
+            "sourceLocation": "infobox established_event6: Constitutional monarchy, 18 July 2008 (current state)"
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Druk Desi system",
+          "start": 1650,
+          "end": 1905,
+          "startDates": [
+            {
+              "year": 1650,
+              "source": {
+                "sourceKey": "wp-bhutan",
+                "sourceLocation": "infobox: Druk Desi period (1650–1905)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1905,
+              "source": {
+                "sourceKey": "wp-bhutan",
+                "sourceLocation": "infobox: Druk Desi period (1650–1905)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Absolute monarchy (Wangchuk dynasty)",
+          "start": 1907,
+          "end": 2008,
+          "startDates": [
+            {
+              "year": 1907,
+              "source": {
+                "sourceKey": "wp-bhutan",
+                "sourceLocation": "infobox: Ascension of the Wangchuk dynasty (17 December 1907)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2008,
+              "source": {
+                "sourceKey": "wp-bhutan",
+                "sourceLocation": "infobox: Constitutional monarchy (18 July 2008)"
+              }
+            }
+          ],
+          "startEvent": "wangchuk-dynasty",
+          "endEvent": "bhutan-constitution-2008"
+        },
+        {
+          "name": "Constitutional monarchy",
+          "start": 2008,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 2008,
+              "source": {
+                "sourceKey": "wp-bhutan",
+                "sourceLocation": "infobox: Constitutional monarchy (18 July 2008)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-bhutan",
+              "sourceLocation": "infobox established_event6: Constitutional monarchy, 18 July 2008 (current state)"
+            }
+          ],
+          "startEvent": "bhutan-constitution-2008"
+        }
+      ]
+    },
+    {
+      "id": "iran",
+      "name": "Iran",
+      "color": "#2a7a7a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Iran",
+      "phases": [
+        {
+          "name": "Safavid Iran",
+          "start": 1501,
+          "end": 1736,
+          "startDates": [
+            {
+              "year": 1501,
+              "source": {
+                "sourceKey": "wp-safavid-iran",
+                "sourceLocation": "infobox year_start: 1501"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1736,
+              "source": {
+                "sourceKey": "wp-safavid-iran",
+                "sourceLocation": "infobox year_end: 1736"
+              }
+            },
+            {
+              "year": 1722,
+              "source": {
+                "sourceKey": "wp-safavid-iran",
+                "sourceLocation": "lead: \"It was ruled by the Safavid dynasty from 1501 to 1736, though some historians date its fall to 1722, when Isfahan fell to the Afghans.\""
+              },
+              "note": "Some historians end the Safavid state in 1722, when Isfahan fell to the Afghans."
+            }
+          ],
+          "startEvent": "battle-of-sharur",
+          "endEvent": "nader-crowned"
+        },
+        {
+          "name": "Hotak occupation",
+          "start": 1722,
+          "end": 1729,
+          "startDates": [
+            {
+              "year": 1722,
+              "source": {
+                "sourceKey": "wp-hotak-dynasty",
+                "sourceLocation": "infobox event1: Siege of Isfahan, 23 October 1722"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1729,
+              "source": {
+                "sourceKey": "wp-hotak-dynasty",
+                "sourceLocation": "infobox event2: Battle of Damghan, 29 September 1729"
+              }
+            }
+          ],
+          "startEvent": "siege-of-isfahan",
+          "endEvent": "battle-of-damghan"
+        },
+        {
+          "name": "Afsharid Iran",
+          "start": 1736,
+          "end": 1796,
+          "startDates": [
+            {
+              "year": 1736,
+              "source": {
+                "sourceKey": "wp-afsharid-iran",
+                "sourceLocation": "infobox year_start: 1736"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1796,
+              "source": {
+                "sourceKey": "wp-afsharid-iran",
+                "sourceLocation": "infobox year_end: 1796"
+              }
+            }
+          ],
+          "startEvent": "nader-crowned"
+        },
+        {
+          "name": "Zand Iran",
+          "start": 1751,
+          "end": 1794,
+          "startDates": [
+            {
+              "year": 1751,
+              "source": {
+                "sourceKey": "wp-zand-iran",
+                "sourceLocation": "infobox year_start: 1751"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1794,
+              "source": {
+                "sourceKey": "wp-zand-iran",
+                "sourceLocation": "infobox year_end: 1794"
+              }
+            }
+          ],
+          "endEvent": "qajar-conquest-of-zand"
+        },
+        {
+          "name": "Qajar Iran",
+          "start": 1789,
+          "end": 1925,
+          "startDates": [
+            {
+              "year": 1789,
+              "source": {
+                "sourceKey": "wp-qajar-iran",
+                "sourceLocation": "infobox year_start: 1789"
+              }
+            },
+            {
+              "year": 1794,
+              "source": {
+                "sourceKey": "wp-iran",
+                "sourceLocation": "infobox established_event9: Qajar Iran, 20 March 1794"
+              },
+              "note": "The Iran article dates the Qajar state from 1794."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1925,
+              "source": {
+                "sourceKey": "wp-qajar-iran",
+                "sourceLocation": "infobox year_end: 1925"
+              }
+            }
+          ],
+          "endEvent": "pahlavi-dynasty-founded"
+        },
+        {
+          "name": "Pahlavi Iran",
+          "start": 1925,
+          "end": 1979,
+          "startDates": [
+            {
+              "year": 1925,
+              "source": {
+                "sourceKey": "wp-pahlavi-iran",
+                "sourceLocation": "infobox year_start: 1925"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-pahlavi-iran",
+                "sourceLocation": "infobox year_end: 1979"
+              }
+            }
+          ],
+          "startEvent": "pahlavi-dynasty-founded",
+          "endEvent": "iranian-revolution"
+        },
+        {
+          "name": "Islamic Republic of Iran",
+          "start": 1979,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-iran",
+                "sourceLocation": "infobox: Islamic Republic established (1 April 1979)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-iran",
+              "sourceLocation": "infobox established_event14: Current constitution, 3 December 1979 (current state)"
+            }
+          ],
+          "startEvent": "iranian-revolution"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "hotak-dynasty",
+          "start": 1722,
+          "end": 1729,
+          "startDates": [
+            {
+              "year": 1722,
+              "source": {
+                "sourceKey": "wp-hotak-dynasty",
+                "sourceLocation": "infobox event1: Siege of Isfahan, 23 October 1722"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1729,
+              "source": {
+                "sourceKey": "wp-hotak-dynasty",
+                "sourceLocation": "infobox event2: Battle of Damghan, 29 September 1729"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-hotak-dynasty",
+              "sourceLocation": "lead: \"The Hotak Empire (; ) also known as the Hotaki Empire was an Afghan dynasty founded by Ghilji Pashtuns that briefly ruled parts of Iran and Afghanistan during t\""
+            }
+          ],
+          "startEvent": "siege-of-isfahan",
+          "endEvent": "battle-of-damghan"
+        }
+      ]
+    },
+    {
+      "id": "maldives",
+      "name": "Maldives",
+      "color": "#2a8ab0",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Maldives",
+      "span": {
+        "start": 1153,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1153,
+            "source": {
+              "sourceKey": "wp-maldives",
+              "sourceLocation": "section \"History > Islamic period\": \"The importance of the Arabs as traders in the Indian Ocean by the 12th century may partly explain why the last Buddhist king of Maldives, Dhovemi, converted to \""
+            }
+          },
+          {
+            "year": 1193,
+            "source": {
+              "sourceKey": "wp-maldives",
+              "sourceLocation": "section \"History > Islamic period\": \"The importance of the Arabs as traders in the Indian Ocean by the 12th century may partly explain why the last Buddhist king of Maldives, Dhovemi, converted to \""
+            },
+            "note": "The article gives 1193 as the other date for the conversion."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-maldives",
+            "sourceLocation": "infobox established_event3: Current constitution, 7 August 2008 (current state)"
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Portuguese occupation",
+          "start": 1558,
+          "end": 1573,
+          "startDates": [
+            {
+              "year": 1558,
+              "source": {
+                "sourceKey": "wp-history-of-the-maldives",
+                "sourceLocation": "lead: \"The Portuguese had occupied the country from 1558 to 1573.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1573,
+              "source": {
+                "sourceKey": "wp-history-of-the-maldives",
+                "sourceLocation": "lead: \"The Portuguese had occupied the country from 1558 to 1573.\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "British protectorate",
+          "start": 1887,
+          "end": 1965,
+          "startDates": [
+            {
+              "year": 1887,
+              "source": {
+                "sourceKey": "wp-maldives",
+                "sourceLocation": "lead: \"From the mid-16th century, the region came under the increasing influence of European colonial powers, with the Maldives becoming a British protectorate in 1887\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1965,
+              "source": {
+                "sourceKey": "wp-maldives",
+                "sourceLocation": "infobox: Independence declared (26 July 1965)"
+              }
+            }
+          ],
+          "startEvent": "maldives-protectorate",
+          "endEvent": "maldives-independence"
+        },
+        {
+          "name": "Sultanate (independent)",
+          "start": 1965,
+          "end": 1968,
+          "startDates": [
+            {
+              "year": 1965,
+              "source": {
+                "sourceKey": "wp-maldives",
+                "sourceLocation": "infobox: Independence declared (26 July 1965)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1968,
+              "source": {
+                "sourceKey": "wp-maldives",
+                "sourceLocation": "infobox: Second Republic (11 November 1968)"
+              }
+            }
+          ],
+          "startEvent": "maldives-independence",
+          "endEvent": "maldives-republic"
+        },
+        {
+          "name": "Republic of Maldives",
+          "start": 1968,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1968,
+              "source": {
+                "sourceKey": "wp-maldives",
+                "sourceLocation": "infobox: Second Republic (11 November 1968)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-maldives",
+              "sourceLocation": "infobox established_event3: Current constitution, 7 August 2008 (current state)"
+            }
+          ],
+          "startEvent": "maldives-republic"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "portuguese-empire",
+          "start": 1558,
+          "end": 1573,
+          "startDates": [
+            {
+              "year": 1558,
+              "source": {
+                "sourceKey": "wp-history-of-the-maldives",
+                "sourceLocation": "lead: \"The Portuguese had occupied the country from 1558 to 1573.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1573,
+              "source": {
+                "sourceKey": "wp-history-of-the-maldives",
+                "sourceLocation": "lead: \"The Portuguese had occupied the country from 1558 to 1573.\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-history-of-the-maldives",
+              "sourceLocation": "section \"Colonial period > Portuguese colonisation and local revolt\": \"In 1558, the Portuguese Empire established a colony in the Maldives, which they administered from their main colony in Goa.\""
+            }
+          ]
+        },
+        {
+          "row": "british-empire",
+          "start": 1887,
+          "end": 1965,
+          "startDates": [
+            {
+              "year": 1887,
+              "source": {
+                "sourceKey": "wp-maldives",
+                "sourceLocation": "lead: \"From the mid-16th century, the region came under the increasing influence of European colonial powers, with the Maldives becoming a British protectorate in 1887\""
+              }
+            },
+            {
+              "year": 1796,
+              "source": {
+                "sourceKey": "wp-history-of-the-maldives",
+                "sourceLocation": "section \"Colonial period > British protectorate\": \"The British expelled the Dutch from Ceylon in 1796, after which they designated Maldives as a British-protected area.\""
+              },
+              "note": "The History of the Maldives article says the islands were designated a British-protected area after 1796."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1965,
+              "source": {
+                "sourceKey": "wp-maldives",
+                "sourceLocation": "infobox: Independence declared (26 July 1965)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-maldives",
+              "sourceLocation": "lead: \"From the mid-16th century, the region came under the increasing influence of European colonial powers, with the Maldives becoming a British protectorate in 1887\""
+            }
+          ],
+          "startEvent": "maldives-protectorate",
+          "endEvent": "maldives-independence"
+        }
+      ]
+    },
+    {
+      "id": "nepal",
+      "name": "Nepal",
+      "color": "#c03a4a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Nepal",
+      "phases": [
+        {
+          "name": "Malla dynasty",
+          "start": 1201,
+          "end": 1769,
+          "startDates": [
+            {
+              "year": 1201,
+              "source": {
+                "sourceKey": "wp-malla-dynasty-nepal",
+                "sourceLocation": "infobox year_start: c. 1201"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1769,
+              "source": {
+                "sourceKey": "wp-malla-dynasty-nepal",
+                "sourceLocation": "infobox year_end: 25 November 1769"
+              }
+            }
+          ],
+          "endEvent": "nepal-unification"
+        },
+        {
+          "name": "Gorkha kingdom",
+          "start": 1559,
+          "end": 1768,
+          "startDates": [
+            {
+              "year": 1559,
+              "source": {
+                "sourceKey": "wp-gorkha-kingdom",
+                "sourceLocation": "infobox year_start: 1559"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1768,
+              "source": {
+                "sourceKey": "wp-gorkha-kingdom",
+                "sourceLocation": "infobox year_end: 1768"
+              }
+            }
+          ],
+          "endEvent": "nepal-unification"
+        },
+        {
+          "name": "Kingdom of Nepal",
+          "start": 1768,
+          "end": 2008,
+          "startDates": [
+            {
+              "year": 1768,
+              "source": {
+                "sourceKey": "wp-kingdom-of-nepal",
+                "sourceLocation": "infobox year_start: 1768"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2008,
+              "source": {
+                "sourceKey": "wp-kingdom-of-nepal",
+                "sourceLocation": "infobox year_end: 2008"
+              }
+            }
+          ],
+          "startEvent": "nepal-unification",
+          "endEvent": "nepal-republic"
+        },
+        {
+          "name": "Federal Democratic Republic of Nepal",
+          "start": 2008,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 2008,
+              "source": {
+                "sourceKey": "wp-nepal",
+                "sourceLocation": "infobox: Federal Republic (28 May 2008)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-nepal",
+              "sourceLocation": "infobox established_event5: Current constitution, 20 September 2015 (current state)"
+            }
+          ],
+          "startEvent": "nepal-republic"
+        }
+      ]
+    },
+    {
+      "id": "pakistan",
+      "name": "Pakistan",
+      "color": "#1f6a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Pakistan",
+      "phases": [
+        {
+          "name": "Dominion of Pakistan",
+          "start": 1947,
+          "end": 1956,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-dominion-of-pakistan",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1956,
+              "source": {
+                "sourceKey": "wp-dominion-of-pakistan",
+                "sourceLocation": "infobox year_end: 1956"
+              }
+            }
+          ],
+          "startEvent": "indian-independence",
+          "endEvent": "pakistan-republic"
+        },
+        {
+          "name": "Islamic Republic of Pakistan",
+          "start": 1956,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1956,
+              "source": {
+                "sourceKey": "wp-pakistan",
+                "sourceLocation": "infobox: Republic (23 March 1956)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-pakistan",
+              "sourceLocation": "infobox established_event6: Current constitution, 14 August 1973 (current state)"
+            }
+          ],
+          "startEvent": "pakistan-republic"
+        }
+      ]
+    },
+    {
+      "id": "sri-lanka",
+      "name": "Sri Lanka",
+      "color": "#a85a2a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Sri_Lanka",
+      "phases": [
+        {
+          "name": "Kingdom of Kotte",
+          "start": 1412,
+          "end": 1597,
+          "startDates": [
+            {
+              "year": 1412,
+              "source": {
+                "sourceKey": "wp-kingdom-of-kotte",
+                "sourceLocation": "infobox year_start: 1412"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1597,
+              "source": {
+                "sourceKey": "wp-kingdom-of-kotte",
+                "sourceLocation": "infobox year_end: 1597"
+              }
+            }
+          ],
+          "endEvent": "death-of-dharmapala"
+        },
+        {
+          "name": "Kingdom of Kandy",
+          "start": 1592,
+          "end": 1815,
+          "startDates": [
+            {
+              "year": 1592,
+              "source": {
+                "sourceKey": "wp-sri-lanka",
+                "sourceLocation": "infobox: Kandyan period (1592–1815)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-sri-lanka",
+                "sourceLocation": "infobox: Kandyan period (1592–1815)"
+              }
+            }
+          ],
+          "endEvent": "kandyan-convention"
+        },
+        {
+          "name": "Portuguese Ceylon",
+          "start": 1597,
+          "end": 1658,
+          "startDates": [
+            {
+              "year": 1597,
+              "source": {
+                "sourceKey": "wp-portuguese-ceylon",
+                "sourceLocation": "infobox year_start: 1597"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1658,
+              "source": {
+                "sourceKey": "wp-portuguese-ceylon",
+                "sourceLocation": "infobox year_end: 1658"
+              }
+            }
+          ],
+          "startEvent": "death-of-dharmapala",
+          "endEvent": "dutch-portuguese-war"
+        },
+        {
+          "name": "Dutch Ceylon",
+          "start": 1640,
+          "end": 1796,
+          "startDates": [
+            {
+              "year": 1640,
+              "source": {
+                "sourceKey": "wp-dutch-ceylon",
+                "sourceLocation": "infobox year_start: 1640"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1796,
+              "source": {
+                "sourceKey": "wp-dutch-ceylon",
+                "sourceLocation": "infobox year_end: 1796"
+              }
+            }
+          ],
+          "startEvent": "dutch-portuguese-war",
+          "endEvent": "british-capture-of-ceylon"
+        },
+        {
+          "name": "British Ceylon",
+          "start": 1796,
+          "end": 1948,
+          "startDates": [
+            {
+              "year": 1796,
+              "source": {
+                "sourceKey": "wp-british-ceylon",
+                "sourceLocation": "infobox year_start: 1796"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1948,
+              "source": {
+                "sourceKey": "wp-british-ceylon",
+                "sourceLocation": "infobox year_end: 1948"
+              }
+            }
+          ],
+          "startEvent": "british-capture-of-ceylon",
+          "endEvent": "ceylon-independence"
+        },
+        {
+          "name": "Dominion of Ceylon",
+          "start": 1948,
+          "end": 1972,
+          "startDates": [
+            {
+              "year": 1948,
+              "source": {
+                "sourceKey": "wp-dominion-of-ceylon",
+                "sourceLocation": "infobox life span: 1948–1972"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1972,
+              "source": {
+                "sourceKey": "wp-dominion-of-ceylon",
+                "sourceLocation": "infobox life span: 1948–1972"
+              }
+            }
+          ],
+          "startEvent": "ceylon-independence",
+          "endEvent": "sri-lanka-republic"
+        },
+        {
+          "name": "Democratic Socialist Republic of Sri Lanka",
+          "start": 1972,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1972,
+              "source": {
+                "sourceKey": "wp-sri-lanka",
+                "sourceLocation": "infobox: Republic (22 May 1972)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-sri-lanka",
+              "sourceLocation": "infobox established_event9: Current constitution, 7 September 1978 (current state)"
+            }
+          ],
+          "startEvent": "sri-lanka-republic"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "portuguese-empire",
+          "start": 1597,
+          "end": 1658,
+          "startDates": [
+            {
+              "year": 1597,
+              "source": {
+                "sourceKey": "wp-portuguese-ceylon",
+                "sourceLocation": "infobox year_start: 1597"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1658,
+              "source": {
+                "sourceKey": "wp-portuguese-ceylon",
+                "sourceLocation": "infobox year_end: 1658"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-portuguese-ceylon",
+              "sourceLocation": "lead: \"__NOTOC__ Portuguese Ceylon (; ; ) was the territory on Ceylon, modern-day Sri Lanka, controlled by the Portuguese Empire between 1597 and 1658.\""
+            }
+          ],
+          "startEvent": "death-of-dharmapala",
+          "endEvent": "dutch-portuguese-war"
+        },
+        {
+          "row": "dutch-empire",
+          "start": 1640,
+          "end": 1796,
+          "startDates": [
+            {
+              "year": 1640,
+              "source": {
+                "sourceKey": "wp-dutch-ceylon",
+                "sourceLocation": "infobox year_start: 1640"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1796,
+              "source": {
+                "sourceKey": "wp-dutch-ceylon",
+                "sourceLocation": "infobox year_end: 1796"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-portuguese-ceylon",
+              "sourceLocation": "lead: \"In the Dutch–Portuguese War, the Dutch conquered of most of Portugal's Asian colonies, including Ceylon, between 1638 and 1658.\""
+            }
+          ],
+          "startEvent": "dutch-portuguese-war",
+          "endEvent": "british-capture-of-ceylon"
+        },
+        {
+          "row": "british-empire",
+          "start": 1796,
+          "end": 1948,
+          "startDates": [
+            {
+              "year": 1796,
+              "source": {
+                "sourceKey": "wp-british-ceylon",
+                "sourceLocation": "infobox year_start: 1796"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1948,
+              "source": {
+                "sourceKey": "wp-british-ceylon",
+                "sourceLocation": "infobox year_end: 1948"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-british-ceylon",
+              "sourceLocation": "lead: \"British Ceylon refers to the imperial possessions of the United Kingdom in the island of Ceylon, present-day Sri Lanka, between 1796 and 4 February 1948.\""
+            }
+          ],
+          "startEvent": "british-capture-of-ceylon",
+          "endEvent": "ceylon-independence"
+        }
+      ]
+    },
+    {
+      "id": "timurid-empire",
+      "name": "Timurid Empire",
+      "color": "#3a8a8a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Timurid_Empire",
+      "span": {
+        "start": 1370,
+        "end": 1507,
+        "startDates": [
+          {
+            "year": 1370,
+            "source": {
+              "sourceKey": "wp-timurid-empire",
+              "sourceLocation": "infobox year_start: 1370"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1507,
+            "source": {
+              "sourceKey": "wp-timurid-empire",
+              "sourceLocation": "infobox year_end: 1507"
+            }
+          }
+        ],
+        "endEvent": "fall-of-herat"
+      }
+    },
+    {
+      "id": "aq-qoyunlu",
+      "name": "Aq Qoyunlu",
+      "color": "#c0c0a0",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Aq_Qoyunlu",
+      "span": {
+        "start": 1348,
+        "end": 1503,
+        "startDates": [
+          {
+            "year": 1348,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox year_start: 1348"
+            }
+          },
+          {
+            "year": 1378,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox life span: 1378–1508"
+            },
+            "note": "The infobox life span starts in 1378."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1503,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox year_end: Summer 1503"
+            }
+          },
+          {
+            "year": 1508,
+            "source": {
+              "sourceKey": "wp-aq-qoyunlu",
+              "sourceLocation": "infobox life span: 1378–1508"
+            },
+            "note": "The infobox life span ends in 1508."
+          }
+        ],
+        "endEvent": "battle-of-hamadan-1503"
+      }
+    },
+    {
+      "id": "hotak-dynasty",
+      "name": "Hotak dynasty",
+      "color": "#7a5a2a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Hotak_dynasty",
+      "span": {
+        "start": 1709,
+        "end": 1738,
+        "startDates": [
+          {
+            "year": 1709,
+            "source": {
+              "sourceKey": "wp-hotak-dynasty",
+              "sourceLocation": "infobox year_start: 1709"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1738,
+            "source": {
+              "sourceKey": "wp-hotak-dynasty",
+              "sourceLocation": "infobox year_end: 1738"
+            }
+          }
+        ],
+        "startEvent": "hotak-revolt",
+        "endEvent": "siege-of-kandahar-1738"
+      }
+    },
+    {
+      "id": "durrani-empire",
+      "name": "Durrani Empire",
+      "color": "#5a7a2a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Durrani_Empire",
+      "span": {
+        "start": 1747,
+        "end": 1863,
+        "startDates": [
+          {
+            "year": 1747,
+            "source": {
+              "sourceKey": "wp-durrani-empire",
+              "sourceLocation": "infobox year_start: 23 July 1747"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1863,
+            "source": {
+              "sourceKey": "wp-durrani-empire",
+              "sourceLocation": "infobox year_end: 9 June 1863"
+            }
+          }
+        ],
+        "startEvent": "durrani-empire-founded",
+        "endEvent": "fall-of-herat-1863"
+      },
+      "phases": [
+        {
+          "name": "Durrani Empire",
+          "start": 1747,
+          "end": 1823,
+          "startDates": [
+            {
+              "year": 1747,
+              "source": {
+                "sourceKey": "wp-durrani-empire",
+                "sourceLocation": "infobox year_start: 23 July 1747"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1823,
+              "source": {
+                "sourceKey": "wp-durrani-empire",
+                "sourceLocation": "infobox event3: Fall of Kabul, March 1823"
+              }
+            }
+          ],
+          "startEvent": "durrani-empire-founded",
+          "endEvent": "fall-of-kabul-1823"
+        },
+        {
+          "name": "Durrani Herat",
+          "start": 1793,
+          "end": 1863,
+          "startDates": [
+            {
+              "year": 1793,
+              "source": {
+                "sourceKey": "wp-durrani-empire",
+                "sourceLocation": "infobox event2: Civil War, 20 May 1793"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1863,
+              "source": {
+                "sourceKey": "wp-durrani-empire",
+                "sourceLocation": "infobox year_end: 9 June 1863"
+              }
+            }
+          ],
+          "endEvent": "fall-of-herat-1863"
+        },
+        {
+          "name": "Restoration of Shah Shuja",
+          "start": 1839,
+          "end": 1843,
+          "startDates": [
+            {
+              "year": 1839,
+              "source": {
+                "sourceKey": "wp-durrani-empire",
+                "sourceLocation": "infobox event4: Restoration, 7 August 1839"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1843,
+              "source": {
+                "sourceKey": "wp-durrani-empire",
+                "sourceLocation": "infobox event5: Restoration Collapse, April 1843"
+              }
+            }
+          ],
+          "startEvent": "first-anglo-afghan-war"
+        }
+      ]
+    },
+    {
+      "id": "delhi-sultanate",
+      "name": "Delhi Sultanate",
+      "color": "#2a6a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Delhi_Sultanate",
+      "phases": [
+        {
+          "name": "Mamluk dynasty",
+          "start": 1206,
+          "end": 1290,
+          "startDates": [
+            {
+              "year": 1206,
+              "source": {
+                "sourceKey": "wp-mamluk-dynasty-delhi",
+                "sourceLocation": "infobox year_start: 1206"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1290,
+              "source": {
+                "sourceKey": "wp-mamluk-dynasty-delhi",
+                "sourceLocation": "infobox year_end: 1290"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Khalji dynasty",
+          "start": 1290,
+          "end": 1320,
+          "startDates": [
+            {
+              "year": 1290,
+              "source": {
+                "sourceKey": "wp-khalji-dynasty",
+                "sourceLocation": "infobox year_start: 1290"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1320,
+              "source": {
+                "sourceKey": "wp-khalji-dynasty",
+                "sourceLocation": "infobox year_end: 1320"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Tughlaq dynasty",
+          "start": 1320,
+          "end": 1413,
+          "startDates": [
+            {
+              "year": 1320,
+              "source": {
+                "sourceKey": "wp-tughlaq-dynasty",
+                "sourceLocation": "infobox year_start: 1320"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1413,
+              "source": {
+                "sourceKey": "wp-tughlaq-dynasty",
+                "sourceLocation": "infobox year_end: 1413"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sayyid dynasty",
+          "start": 1414,
+          "end": 1451,
+          "startDates": [
+            {
+              "year": 1414,
+              "source": {
+                "sourceKey": "wp-sayyid-dynasty",
+                "sourceLocation": "infobox year_start: 1414"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1451,
+              "source": {
+                "sourceKey": "wp-sayyid-dynasty",
+                "sourceLocation": "infobox year_end: 1451"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lodi dynasty",
+          "start": 1451,
+          "end": 1526,
+          "startDates": [
+            {
+              "year": 1451,
+              "source": {
+                "sourceKey": "wp-lodi-dynasty",
+                "sourceLocation": "infobox year_start: 1451"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1526,
+              "source": {
+                "sourceKey": "wp-lodi-dynasty",
+                "sourceLocation": "infobox year_end: 1526"
+              }
+            }
+          ],
+          "endEvent": "panipat-1526"
+        }
+      ]
+    },
+    {
+      "id": "langah-sultanate",
+      "name": "Langah Sultanate (Multan)",
+      "color": "#8a7a4a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Langah_Sultanate",
+      "span": {
+        "start": 1445,
+        "end": 1530,
+        "startDates": [
+          {
+            "year": 1445,
+            "source": {
+              "sourceKey": "wp-langah-sultanate",
+              "sourceLocation": "infobox year_start: 1445"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1530,
+            "source": {
+              "sourceKey": "wp-langah-sultanate",
+              "sourceLocation": "infobox year_end: 1530"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gajapati-empire",
+      "name": "Gajapati Empire",
+      "color": "#c0a03a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Gajapati_Empire",
+      "span": {
+        "start": 1434,
+        "end": 1541,
+        "startDates": [
+          {
+            "year": 1434,
+            "source": {
+              "sourceKey": "wp-gajapati-empire",
+              "sourceLocation": "infobox year_start: 1434"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1541,
+            "source": {
+              "sourceKey": "wp-gajapati-empire",
+              "sourceLocation": "infobox year_end: 1541"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sur-empire",
+      "name": "Sur Empire",
+      "color": "#8a6a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Sur_Empire",
+      "span": {
+        "start": 1538,
+        "end": 1555,
+        "startDates": [
+          {
+            "year": 1538,
+            "source": {
+              "sourceKey": "wp-sur-empire",
+              "sourceLocation": "infobox year_start: 1538"
+            }
+          },
+          {
+            "year": 1540,
+            "source": {
+              "sourceKey": "wp-sur-empire",
+              "sourceLocation": "lead: \"The Sur Empire was an empire ruled by the Afghan-origin Sur dynasty in northern India for nearly 16 or 18 years, between 1538/1540 and 1556, with Sasaram (in mo\""
+            },
+            "note": "The lead gives 1538/1540 for the start."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1555,
+            "source": {
+              "sourceKey": "wp-sur-empire",
+              "sourceLocation": "infobox year_end: 1555"
+            }
+          },
+          {
+            "year": 1556,
+            "source": {
+              "sourceKey": "wp-sur-empire",
+              "sourceLocation": "lead: \"The Sur Empire was an empire ruled by the Afghan-origin Sur dynasty in northern India for nearly 16 or 18 years, between 1538/1540 and 1556, with Sasaram (in mo\""
+            },
+            "note": "The lead runs the empire to 1556."
+          }
+        ],
+        "endEvent": "battle-of-sirhind-1555"
+      }
+    },
+    {
+      "id": "bengal-sultanate",
+      "name": "Bengal Sultanate",
+      "color": "#2a8a4a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Bengal_Sultanate",
+      "span": [
+        {
+          "start": 1352,
+          "end": 1539,
+          "startDates": [
+            {
+              "year": 1352,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1352–1539"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1539,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1352–1539"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1554,
+          "end": 1576,
+          "startDates": [
+            {
+              "year": 1554,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1554–1576"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1576,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1554–1576"
+              }
+            }
+          ],
+          "endEvent": "battle-of-rajmahal"
+        }
+      ]
+    },
+    {
+      "id": "gujarat-sultanate",
+      "name": "Gujarat Sultanate",
+      "color": "#3a8a5a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Gujarat_Sultanate",
+      "span": {
+        "start": 1394,
+        "end": 1573,
+        "startDates": [
+          {
+            "year": 1394,
+            "source": {
+              "sourceKey": "wp-gujarat-sultanate",
+              "sourceLocation": "infobox year_start: 1394"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1573,
+            "source": {
+              "sourceKey": "wp-gujarat-sultanate",
+              "sourceLocation": "infobox year_end: 1573"
+            }
+          }
+        ],
+        "endEvent": "mughal-annexation-of-gujarat"
+      }
+    },
+    {
+      "id": "malwa-sultanate",
+      "name": "Malwa Sultanate",
+      "color": "#7a8a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Malwa_Sultanate",
+      "span": {
+        "start": 1401,
+        "end": 1562,
+        "startDates": [
+          {
+            "year": 1401,
+            "source": {
+              "sourceKey": "wp-malwa-sultanate",
+              "sourceLocation": "infobox year_start: 1401"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1562,
+            "source": {
+              "sourceKey": "wp-malwa-sultanate",
+              "sourceLocation": "infobox year_end: 1562"
+            }
+          }
+        ],
+        "endEvent": "mughal-conquest-of-malwa"
+      }
+    },
+    {
+      "id": "kashmir-sultanate",
+      "name": "Kashmir Sultanate",
+      "color": "#2a7a5a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Kashmir_Sultanate",
+      "span": [
+        {
+          "start": 1320,
+          "end": 1323,
+          "startDates": [
+            {
+              "year": 1320,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1320–1323"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1323,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1320–1323"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1339,
+          "end": 1589,
+          "startDates": [
+            {
+              "year": 1339,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1339–1589"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1589,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1339–1589"
+              }
+            },
+            {
+              "year": 1586,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox year_end: 14 October 1586"
+              },
+              "note": "The infobox year_end gives the fall of Srinagar to the Mughals in 1586; the Chaks surrendered in 1589."
+            }
+          ],
+          "endEvent": "mughal-conquest-of-kashmir"
+        }
+      ]
+    },
+    {
+      "id": "mewar",
+      "name": "Mewar",
+      "color": "#c0502a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mewar",
+      "span": [
+        {
+          "start": 566,
+          "end": 1303,
+          "startDates": [
+            {
+              "year": 566,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 566–1303"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1303,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 566–1303"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1326,
+          "end": 1948,
+          "startDates": [
+            {
+              "year": 1326,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 1326-1948"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1948,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 1326-1948"
+              }
+            }
+          ],
+          "endEvent": "mewar-accession"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1818,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1818,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "lead: \"Eventually, falling under Maratha Empire's influence and accepting British suzerainty in 1818, Mewar remained a princely state until it joined the Union of Indi\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "lead: \"Eventually, falling under Maratha Empire's influence and accepting British suzerainty in 1818, Mewar remained a princely state until it joined the Union of Indi\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-mewar",
+              "sourceLocation": "lead: \"Eventually, falling under Maratha Empire's influence and accepting British suzerainty in 1818, Mewar remained a princely state until it joined the Union of Indi\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khandesh-sultanate",
+      "name": "Khandesh Sultanate (Farooqui)",
+      "color": "#5a6a8a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Farooqui_dynasty",
+      "span": {
+        "start": 1382,
+        "end": 1601,
+        "startDates": [
+          {
+            "year": 1382,
+            "source": {
+              "sourceKey": "wp-farooqui-dynasty",
+              "sourceLocation": "infobox year_start: 1382"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1601,
+            "source": {
+              "sourceKey": "wp-farooqui-dynasty",
+              "sourceLocation": "infobox year_end: 1601"
+            }
+          }
+        ],
+        "endEvent": "mughal-annexation-of-khandesh"
+      }
+    },
+    {
+      "id": "ahom-kingdom",
+      "name": "Ahom kingdom",
+      "color": "#3a6a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Ahom_kingdom",
+      "span": {
+        "start": 1228,
+        "end": 1826,
+        "startDates": [
+          {
+            "year": 1228,
+            "source": {
+              "sourceKey": "wp-ahom-kingdom",
+              "sourceLocation": "infobox year_start: 1228"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1826,
+            "source": {
+              "sourceKey": "wp-ahom-kingdom",
+              "sourceLocation": "infobox year_end: 1826"
+            }
+          }
+        ],
+        "endEvent": "treaty-of-yandabo"
+      }
+    },
+    {
+      "id": "maratha-empire",
+      "name": "Maratha Empire",
+      "color": "#d0702a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Maratha_Empire",
+      "span": {
+        "start": 1674,
+        "end": 1818,
+        "startDates": [
+          {
+            "year": 1674,
+            "source": {
+              "sourceKey": "wp-maratha-empire",
+              "sourceLocation": "infobox year_start: 1674"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1818,
+            "source": {
+              "sourceKey": "wp-maratha-empire",
+              "sourceLocation": "infobox year_end: 1818"
+            }
+          }
+        ],
+        "startEvent": "coronation-of-shivaji",
+        "endEvent": "third-anglo-maratha-war"
+      }
+    },
+    {
+      "id": "sikh-empire",
+      "name": "Sikh Empire",
+      "color": "#c0902a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Sikh_Empire",
+      "phases": [
+        {
+          "name": "Sikh Confederacy",
+          "start": 1748,
+          "end": 1799,
+          "startDates": [
+            {
+              "year": 1748,
+              "source": {
+                "sourceKey": "wp-sikh-confederacy",
+                "sourceLocation": "infobox year_start: 1748"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1799,
+              "source": {
+                "sourceKey": "wp-sikh-confederacy",
+                "sourceLocation": "infobox year_end: 1799"
+              }
+            }
+          ],
+          "endEvent": "capture-of-lahore-1799"
+        },
+        {
+          "name": "Sikh Empire",
+          "start": 1799,
+          "end": 1849,
+          "startDates": [
+            {
+              "year": 1799,
+              "source": {
+                "sourceKey": "wp-sikh-empire",
+                "sourceLocation": "infobox year_start: 1799"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1849,
+              "source": {
+                "sourceKey": "wp-sikh-empire",
+                "sourceLocation": "infobox year_end: 1849"
+              }
+            }
+          ],
+          "startEvent": "capture-of-lahore-1799",
+          "endEvent": "second-anglo-sikh-war"
+        }
+      ]
+    },
+    {
+      "id": "oudh-state",
+      "name": "Oudh State",
+      "color": "#8a5a7a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Oudh_State",
+      "span": {
+        "start": 1722,
+        "end": 1858,
+        "startDates": [
+          {
+            "year": 1722,
+            "source": {
+              "sourceKey": "wp-oudh-state",
+              "sourceLocation": "infobox year_start: 1722"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1858,
+            "source": {
+              "sourceKey": "wp-oudh-state",
+              "sourceLocation": "infobox year_end: 1858"
+            }
+          },
+          {
+            "year": 1856,
+            "source": {
+              "sourceKey": "wp-oudh-state",
+              "sourceLocation": "infobox life_span: 1572–1856"
+            },
+            "note": "The same article gives this year too."
+          }
+        ],
+        "endEvent": "indian-rebellion"
+      }
+    },
+    {
+      "id": "kingdom-of-sikkim",
+      "name": "Kingdom of Sikkim",
+      "color": "#5a8a9a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Sikkim",
+      "span": {
+        "start": 1642,
+        "end": 1975,
+        "startDates": [
+          {
+            "year": 1642,
+            "source": {
+              "sourceKey": "wp-kingdom-of-sikkim",
+              "sourceLocation": "infobox year_start: 1642"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1975,
+            "source": {
+              "sourceKey": "wp-kingdom-of-sikkim",
+              "sourceLocation": "infobox year_end: 1975"
+            }
+          }
+        ],
+        "endEvent": "sikkim-merger"
+      }
+    },
+    {
+      "id": "kingdom-of-kumaon",
+      "name": "Kingdom of Kumaon",
+      "color": "#6a7a5a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kumaon",
+      "span": {
+        "start": 600,
+        "end": 1791,
+        "startDates": [
+          {
+            "year": 600,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kumaon",
+              "sourceLocation": "infobox year_start: 600"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1791,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kumaon",
+              "sourceLocation": "infobox year_end: 1791"
+            }
+          }
+        ],
+        "endEvent": "gorkha-annexation-of-kumaon"
+      }
+    },
+    {
+      "id": "bahmani-sultanate",
+      "name": "Bahmani Sultanate",
+      "color": "#2a5a4a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Bahmani_Kingdom",
+      "span": {
+        "start": 1347,
+        "end": 1527,
+        "startDates": [
+          {
+            "year": 1347,
+            "source": {
+              "sourceKey": "wp-bahmani-kingdom",
+              "sourceLocation": "infobox year_start: 1347"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1527,
+            "source": {
+              "sourceKey": "wp-bahmani-kingdom",
+              "sourceLocation": "infobox year_end: 1527"
+            }
+          }
+        ],
+        "endEvent": "bahmani-dissolved"
+      }
+    },
+    {
+      "id": "ahmadnagar-sultanate",
+      "name": "Ahmadnagar Sultanate",
+      "color": "#3a7a8a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Ahmadnagar_Sultanate",
+      "span": {
+        "start": 1490,
+        "end": 1636,
+        "startDates": [
+          {
+            "year": 1490,
+            "source": {
+              "sourceKey": "wp-ahmadnagar-sultanate",
+              "sourceLocation": "infobox year_start: 1490"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1636,
+            "source": {
+              "sourceKey": "wp-ahmadnagar-sultanate",
+              "sourceLocation": "infobox year_end: 1636"
+            }
+          }
+        ],
+        "startEvent": "deccan-revolts-1490",
+        "endEvent": "mughal-annexation-of-ahmadnagar"
+      }
+    },
+    {
+      "id": "bijapur-sultanate",
+      "name": "Bijapur Sultanate",
+      "color": "#3a5a6a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Bijapur_Sultanate",
+      "span": {
+        "start": 1490,
+        "end": 1686,
+        "startDates": [
+          {
+            "year": 1490,
+            "source": {
+              "sourceKey": "wp-bijapur-sultanate",
+              "sourceLocation": "infobox year_start: 1490"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1686,
+            "source": {
+              "sourceKey": "wp-bijapur-sultanate",
+              "sourceLocation": "infobox year_end: 1686"
+            }
+          }
+        ],
+        "startEvent": "deccan-revolts-1490",
+        "endEvent": "siege-of-bijapur"
+      },
+      "memberOf": [
+        {
+          "row": "mughal-empire",
+          "start": 1636,
+          "end": 1686,
+          "startDates": [
+            {
+              "year": 1636,
+              "source": {
+                "sourceKey": "wp-bijapur-sultanate",
+                "sourceLocation": "lead: \"Agreements and treaties imposed Mughal suzerainty on the Adil Shahs, by stages, until Bijapur's formal recognition of Mughal authority in 1636.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1686,
+              "source": {
+                "sourceKey": "wp-bijapur-sultanate",
+                "sourceLocation": "infobox year_end: 1686"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-bijapur-sultanate",
+              "sourceLocation": "lead: \"Agreements and treaties imposed Mughal suzerainty on the Adil Shahs, by stages, until Bijapur's formal recognition of Mughal authority in 1636.\""
+            }
+          ],
+          "endEvent": "siege-of-bijapur"
+        }
+      ]
+    },
+    {
+      "id": "golconda-sultanate",
+      "name": "Golconda Sultanate",
+      "color": "#8a7a4a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Golconda_Sultanate",
+      "span": {
+        "start": 1518,
+        "end": 1687,
+        "startDates": [
+          {
+            "year": 1518,
+            "source": {
+              "sourceKey": "wp-golconda-sultanate",
+              "sourceLocation": "infobox year_start: 1518"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1687,
+            "source": {
+              "sourceKey": "wp-golconda-sultanate",
+              "sourceLocation": "infobox year_end: 1687"
+            }
+          }
+        ],
+        "startEvent": "golconda-founded",
+        "endEvent": "siege-of-golconda"
+      },
+      "memberOf": [
+        {
+          "row": "mughal-empire",
+          "start": 1636,
+          "end": 1687,
+          "startDates": [
+            {
+              "year": 1636,
+              "source": {
+                "sourceKey": "wp-golconda-sultanate",
+                "sourceLocation": "lead: \"In 1636, Mughal emperor Shah Jahan forced the Qutb Shahis to recognise Mughal suzerainty and pay periodic tributes.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1687,
+              "source": {
+                "sourceKey": "wp-golconda-sultanate",
+                "sourceLocation": "infobox year_end: 1687"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-golconda-sultanate",
+              "sourceLocation": "lead: \"In 1636, Mughal emperor Shah Jahan forced the Qutb Shahis to recognise Mughal suzerainty and pay periodic tributes.\""
+            }
+          ],
+          "endEvent": "siege-of-golconda"
+        }
+      ]
+    },
+    {
+      "id": "berar-sultanate",
+      "name": "Berar Sultanate",
+      "color": "#6a4a6a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Berar_Sultanate",
+      "span": {
+        "start": 1490,
+        "end": 1574,
+        "startDates": [
+          {
+            "year": 1490,
+            "source": {
+              "sourceKey": "wp-berar-sultanate",
+              "sourceLocation": "infobox year_start: 1490"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1574,
+            "source": {
+              "sourceKey": "wp-berar-sultanate",
+              "sourceLocation": "infobox year_end: 1574"
+            }
+          }
+        ],
+        "startEvent": "deccan-revolts-1490",
+        "endEvent": "berar-annexed"
+      }
+    },
+    {
+      "id": "bidar-sultanate",
+      "name": "Bidar Sultanate",
+      "color": "#7a6a6a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Bidar_Sultanate",
+      "span": {
+        "start": 1492,
+        "end": 1619,
+        "startDates": [
+          {
+            "year": 1492,
+            "source": {
+              "sourceKey": "wp-bidar-sultanate",
+              "sourceLocation": "infobox year_start: 1492"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1619,
+            "source": {
+              "sourceKey": "wp-bidar-sultanate",
+              "sourceLocation": "infobox year_end: 1619"
+            }
+          }
+        ],
+        "endEvent": "bidar-annexed"
+      }
+    },
+    {
+      "id": "hyderabad-state",
+      "name": "Hyderabad State",
+      "color": "#7a3a5a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Hyderabad_State",
+      "span": {
+        "start": 1724,
+        "end": 1948,
+        "startDates": [
+          {
+            "year": 1724,
+            "source": {
+              "sourceKey": "wp-hyderabad-state",
+              "sourceLocation": "infobox year_start: 1724"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1948,
+            "source": {
+              "sourceKey": "wp-hyderabad-state",
+              "sourceLocation": "infobox year_end: 1948"
+            }
+          }
+        ],
+        "startEvent": "hyderabad-founded",
+        "endEvent": "annexation-of-hyderabad"
+      }
+    },
+    {
+      "id": "carnatic-sultanate",
+      "name": "Carnatic Sultanate",
+      "color": "#5a7a6a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Carnatic_Sultanate",
+      "span": {
+        "start": 1692,
+        "end": 1855,
+        "startDates": [
+          {
+            "year": 1692,
+            "source": {
+              "sourceKey": "wp-carnatic-sultanate",
+              "sourceLocation": "infobox year_start: 1692"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1855,
+            "source": {
+              "sourceKey": "wp-carnatic-sultanate",
+              "sourceLocation": "infobox year_end: 1855"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "vijayanagara-empire",
+      "name": "Vijayanagara Empire",
+      "color": "#c08a2a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Vijayanagara_Empire",
+      "span": {
+        "start": 1336,
+        "end": 1646,
+        "startDates": [
+          {
+            "year": 1336,
+            "source": {
+              "sourceKey": "wp-vijayanagara-empire",
+              "sourceLocation": "infobox year_start: 1336"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1646,
+            "source": {
+              "sourceKey": "wp-vijayanagara-empire",
+              "sourceLocation": "infobox year_end: 1646"
+            }
+          }
+        ],
+        "endEvent": "vijayanagara-end"
+      }
+    },
+    {
+      "id": "pandya-dynasty",
+      "name": "Pandyas",
+      "color": "#2a5a8a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Pandya_dynasty",
+      "span": {
+        "start": -500,
+        "end": 1618,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -500,
+            "source": {
+              "sourceKey": "wp-pandya-dynasty",
+              "sourceLocation": "infobox year_start: c.500 BCE"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1618,
+            "source": {
+              "sourceKey": "wp-pandya-dynasty",
+              "sourceLocation": "infobox year_end: 1618 CE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "kingdom-of-mysore",
+      "name": "Kingdom of Mysore",
+      "color": "#9a3a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mysore",
+      "span": {
+        "start": 1399,
+        "end": 1950,
+        "startDates": [
+          {
+            "year": 1399,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mysore",
+              "sourceLocation": "infobox year_start: 1399"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1950,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mysore",
+              "sourceLocation": "infobox year_end: 1950"
+            }
+          }
+        ],
+        "endEvent": "mysore-accession"
+      },
+      "phases": [
+        {
+          "name": "Sultanate of Hyder Ali and Tipu Sultan",
+          "start": 1761,
+          "end": 1799,
+          "startDates": [
+            {
+              "year": 1761,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"During the Muslim rule from 1761 to 1799, the kingdom became a sultanate under Hyder Ali and Tipu, often referring to it as Sultanat-e-Khudadad ().\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1799,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"During the Muslim rule from 1761 to 1799, the kingdom became a sultanate under Hyder Ali and Tipu, often referring to it as Sultanat-e-Khudadad ().\""
+              }
+            }
+          ],
+          "endEvent": "siege-of-seringapatam"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1799,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1799,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"While originally a feudal vassal under the Vijayanagara Empire, it became a princely state in the British Raj from 1799 to 1947, marked in-between by major poli\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"While originally a feudal vassal under the Vijayanagara Empire, it became a princely state in the British Raj from 1799 to 1947, marked in-between by major poli\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-mysore",
+              "sourceLocation": "lead: \"While originally a feudal vassal under the Vijayanagara Empire, it became a princely state in the British Raj from 1799 to 1947, marked in-between by major poli\""
+            }
+          ],
+          "startEvent": "siege-of-seringapatam"
+        }
+      ]
+    },
+    {
+      "id": "nayakas-of-keladi",
+      "name": "Nayakas of Keladi",
+      "color": "#6a4a2a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Nayakas_of_Keladi",
+      "span": {
+        "start": 1499,
+        "end": 1763,
+        "startDates": [
+          {
+            "year": 1499,
+            "source": {
+              "sourceKey": "wp-nayakas-of-keladi",
+              "sourceLocation": "infobox year_start: 1499"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1763,
+            "source": {
+              "sourceKey": "wp-nayakas-of-keladi",
+              "sourceLocation": "infobox year_end: 1763"
+            }
+          }
+        ],
+        "endEvent": "keladi-absorbed"
+      }
+    },
+    {
+      "id": "madurai-nayak-dynasty",
+      "name": "Madurai Nayak dynasty",
+      "color": "#8a3a6a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Madurai_Nayak_dynasty",
+      "span": {
+        "start": 1529,
+        "end": 1736,
+        "startDates": [
+          {
+            "year": 1529,
+            "source": {
+              "sourceKey": "wp-madurai-nayak-dynasty",
+              "sourceLocation": "infobox year_start: 1529"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1736,
+            "source": {
+              "sourceKey": "wp-madurai-nayak-dynasty",
+              "sourceLocation": "infobox year_end: 1736"
+            }
+          }
+        ],
+        "startEvent": "madurai-nayaks-founded",
+        "endEvent": "madurai-nayaks-end"
+      }
+    },
+    {
+      "id": "thanjavur-nayak-kingdom",
+      "name": "Thanjavur Nayak kingdom",
+      "color": "#3a5a8a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Thanjavur_Nayak_kingdom",
+      "span": {
+        "start": 1532,
+        "end": 1673,
+        "startDates": [
+          {
+            "year": 1532,
+            "source": {
+              "sourceKey": "wp-thanjavur-nayak-kingdom",
+              "sourceLocation": "infobox year_start: 1532"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1673,
+            "source": {
+              "sourceKey": "wp-thanjavur-nayak-kingdom",
+              "sourceLocation": "infobox year_end: 1673"
+            }
+          }
+        ],
+        "startEvent": "thanjavur-nayaks-founded",
+        "endEvent": "thanjavur-nayaks-end"
+      }
+    },
+    {
+      "id": "calicut-kingdom",
+      "name": "Calicut kingdom",
+      "color": "#4a7a8a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Calicut_kingdom",
+      "span": {
+        "start": 1124,
+        "end": 1806,
+        "startDates": [
+          {
+            "year": 1124,
+            "source": {
+              "sourceKey": "wp-calicut-kingdom",
+              "sourceLocation": "infobox year_start: 1124"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1806,
+            "source": {
+              "sourceKey": "wp-calicut-kingdom",
+              "sourceLocation": "infobox year_end: 1806"
+            }
+          }
+        ],
+        "endEvent": "calicut-to-company"
+      }
+    },
+    {
+      "id": "jaffna-kingdom",
+      "name": "Jaffna Kingdom",
+      "color": "#5a3a8a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Jaffna_kingdom",
+      "span": {
+        "start": 1215,
+        "end": 1619,
+        "startDates": [
+          {
+            "year": 1215,
+            "source": {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox year_start: 1215"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1619,
+            "source": {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox year_end: 1619"
+            }
+          }
+        ],
+        "endEvent": "portuguese-conquest-of-jaffna"
+      },
+      "memberOf": [
+        {
+          "row": "sri-lanka",
+          "start": 1450,
+          "end": 1467,
+          "startDates": [
+            {
+              "year": 1450,
+              "source": {
+                "sourceKey": "wp-jaffna-kingdom",
+                "sourceLocation": "infobox event3: Jaffna in the Kingdom of Kotte, 1450"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1467,
+              "source": {
+                "sourceKey": "wp-jaffna-kingdom",
+                "sourceLocation": "infobox event4: Aryacakravarti dynasty restored, 1467"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox event3: Jaffna in the Kingdom of Kotte, 1450"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-sitawaka",
+      "name": "Kingdom of Sitawaka",
+      "color": "#8a5a3a",
+      "parent": "southern-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Sitawaka",
+      "span": {
+        "start": 1521,
+        "end": 1594,
+        "startDates": [
+          {
+            "year": 1521,
+            "source": {
+              "sourceKey": "wp-kingdom-of-sitawaka",
+              "sourceLocation": "infobox year_start: 1521"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1594,
+            "source": {
+              "sourceKey": "wp-kingdom-of-sitawaka",
+              "sourceLocation": "infobox year_end: 1594"
+            }
+          },
+          {
+            "year": 1593,
+            "source": {
+              "sourceKey": "wp-kingdom-of-sitawaka",
+              "sourceLocation": "lead: \"Sitawaka disintegrated soon after the death of its last king Rajasinha I in 1593.\""
+            },
+            "note": "The lead dates Rajasinha I's death to 1593."
+          }
+        ],
+        "startEvent": "spoiling-of-vijayabahu",
+        "endEvent": "sitawaka-end"
+      }
     }
   ],
   "sources": {
@@ -16595,6 +19556,1134 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-emirate-of-afghanistan": {
+      "name": "Emirate of Afghanistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emirate_of_Afghanistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-afghanistan": {
+      "name": "Kingdom of Afghanistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Afghanistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-republic-of-afghanistan-1973-1978": {
+      "name": "Republic of Afghanistan (1973–1978) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_Afghanistan_(1973–1978)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-democratic-republic-of-afghanistan": {
+      "name": "Democratic Republic of Afghanistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Democratic_Republic_of_Afghanistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-islamic-state-of-afghanistan": {
+      "name": "Islamic State of Afghanistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Islamic_State_of_Afghanistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-islamic-emirate-of-afghanistan-1996-2001": {
+      "name": "Islamic Emirate of Afghanistan (1996–2001) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Islamic_Emirate_of_Afghanistan_(1996–2001)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-islamic-republic-of-afghanistan": {
+      "name": "Islamic Republic of Afghanistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Islamic_Republic_of_Afghanistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-afghanistan": {
+      "name": "Afghanistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Afghanistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-east-bengal": {
+      "name": "East Bengal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/East_Bengal",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-east-pakistan": {
+      "name": "East Pakistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/East_Pakistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bangladesh": {
+      "name": "Bangladesh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bangladesh",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bhutan": {
+      "name": "Bhutan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bhutan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-safavid-iran": {
+      "name": "Safavid Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Safavid_Iran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hotak-dynasty": {
+      "name": "Hotak dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hotak_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-afsharid-iran": {
+      "name": "Afsharid Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Afsharid_Iran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-zand-iran": {
+      "name": "Zand Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zand_Iran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-qajar-iran": {
+      "name": "Qajar Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qajar_Iran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-iran": {
+      "name": "Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Iran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pahlavi-iran": {
+      "name": "Pahlavi Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pahlavi_Iran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-maldives": {
+      "name": "Maldives (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maldives",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-the-maldives": {
+      "name": "History of the Maldives (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_Maldives",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-malla-dynasty-nepal": {
+      "name": "Malla dynasty (Nepal) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malla_dynasty_(Nepal)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gorkha-kingdom": {
+      "name": "Gorkha kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gorkha_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-nepal": {
+      "name": "Kingdom of Nepal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Nepal",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nepal": {
+      "name": "Nepal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nepal",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dominion-of-pakistan": {
+      "name": "Dominion of Pakistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dominion_of_Pakistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pakistan": {
+      "name": "Pakistan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pakistan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kotte": {
+      "name": "Kingdom of Kotte (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kotte",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sri-lanka": {
+      "name": "Sri Lanka (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sri_Lanka",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-portuguese-ceylon": {
+      "name": "Portuguese Ceylon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Portuguese_Ceylon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dutch-ceylon": {
+      "name": "Dutch Ceylon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dutch_Ceylon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-british-ceylon": {
+      "name": "British Ceylon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/British_Ceylon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dominion-of-ceylon": {
+      "name": "Dominion of Ceylon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dominion_of_Ceylon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-timurid-empire": {
+      "name": "Timurid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timurid_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-aq-qoyunlu": {
+      "name": "Aq Qoyunlu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aq_Qoyunlu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-durrani-empire": {
+      "name": "Durrani Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Durrani_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mamluk-dynasty-delhi": {
+      "name": "Mamluk dynasty (Delhi) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mamluk_dynasty_(Delhi)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khalji-dynasty": {
+      "name": "Khalji dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khalji_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tughlaq-dynasty": {
+      "name": "Tughlaq dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tughlaq_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sayyid-dynasty": {
+      "name": "Sayyid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sayyid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-lodi-dynasty": {
+      "name": "Lodi dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lodi_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-langah-sultanate": {
+      "name": "Langah Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Langah_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gajapati-empire": {
+      "name": "Gajapati Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gajapati_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sur-empire": {
+      "name": "Sur Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sur_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bengal-sultanate": {
+      "name": "Bengal Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bengal_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gujarat-sultanate": {
+      "name": "Gujarat Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gujarat_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-malwa-sultanate": {
+      "name": "Malwa Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malwa_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kashmir-sultanate": {
+      "name": "Kashmir Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kashmir_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-mewar": {
+      "name": "Kingdom of Mewar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mewar",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-farooqui-dynasty": {
+      "name": "Farooqui dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Farooqui_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ahom-kingdom": {
+      "name": "Ahom kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ahom_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-maratha-empire": {
+      "name": "Maratha Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maratha_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sikh-confederacy": {
+      "name": "Sikh Confederacy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sikh_Confederacy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sikh-empire": {
+      "name": "Sikh Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sikh_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-oudh-state": {
+      "name": "Oudh State (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oudh_State",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-sikkim": {
+      "name": "Kingdom of Sikkim (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Sikkim",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kumaon": {
+      "name": "Kingdom of Kumaon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kumaon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bahmani-kingdom": {
+      "name": "Bahmani Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bahmani_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ahmadnagar-sultanate": {
+      "name": "Ahmadnagar Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ahmadnagar_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bijapur-sultanate": {
+      "name": "Bijapur Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bijapur_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-golconda-sultanate": {
+      "name": "Golconda Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Golconda_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-berar-sultanate": {
+      "name": "Berar Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berar_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bidar-sultanate": {
+      "name": "Bidar Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bidar_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hyderabad-state": {
+      "name": "Hyderabad State (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hyderabad_State",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-carnatic-sultanate": {
+      "name": "Carnatic Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Carnatic_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vijayanagara-empire": {
+      "name": "Vijayanagara Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vijayanagara_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pandya-dynasty": {
+      "name": "Pandya dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pandya_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-mysore": {
+      "name": "Kingdom of Mysore (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mysore",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nayakas-of-keladi": {
+      "name": "Nayakas of Keladi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nayakas_of_Keladi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-madurai-nayak-dynasty": {
+      "name": "Madurai Nayak dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Madurai_Nayak_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-thanjavur-nayak-kingdom": {
+      "name": "Thanjavur Nayak kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thanjavur_Nayak_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-calicut-kingdom": {
+      "name": "Calicut kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Calicut_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jaffna-kingdom": {
+      "name": "Jaffna kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jaffna_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-sitawaka": {
+      "name": "Kingdom of Sitawaka (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Sitawaka",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-sharur": {
+      "name": "Battle of Sharur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Sharur",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-hamadan-1503": {
+      "name": "Battle of Hamadan (1503) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Hamadan_(1503)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-chaldiran": {
+      "name": "Battle of Chaldiran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Chaldiran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-gulnabad": {
+      "name": "Battle of Gulnabad (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gulnabad",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-isfahan": {
+      "name": "Siege of Isfahan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Isfahan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-damghan-1729": {
+      "name": "Battle of Damghan (1729) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Damghan_(1729)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nader-shah-s-invasion-of-india": {
+      "name": "Nader Shah's invasion of India (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nader_Shah's_invasion_of_India",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-persian-constitutional-revolution": {
+      "name": "Persian Constitutional Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Persian_Constitutional_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-anglo-soviet-invasion-of-iran": {
+      "name": "Anglo-Soviet invasion of Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anglo-Soviet_invasion_of_Iran",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1953-iranian-coup-d-tat": {
+      "name": "1953 Iranian coup d'état (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1953_Iranian_coup_d'état",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-iranian-revolution": {
+      "name": "Iranian Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Iranian_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-iran-iraq-war": {
+      "name": "Iran–Iraq War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Iran–Iraq_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-third-battle-of-panipat": {
+      "name": "Third Battle of Panipat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Third_Battle_of_Panipat",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-nowshera": {
+      "name": "Battle of Nowshera (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Nowshera",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-jamrud": {
+      "name": "Battle of Jamrud (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Jamrud",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-anglo-afghan-war": {
+      "name": "First Anglo-Afghan War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Anglo-Afghan_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-anglo-afghan-war": {
+      "name": "Second Anglo-Afghan War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Anglo-Afghan_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-third-anglo-afghan-war": {
+      "name": "Third Anglo-Afghan War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Third_Anglo-Afghan_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-anglo-afghan-treaty-of-1919": {
+      "name": "Anglo-Afghan Treaty of 1919 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anglo-Afghan_Treaty_of_1919",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1973-afghan-coup-d-tat": {
+      "name": "1973 Afghan coup d'état (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1973_Afghan_coup_d'état",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-saur-revolution": {
+      "name": "Saur Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saur_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-soviet-afghan-war": {
+      "name": "Soviet–Afghan War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Soviet–Afghan_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-fall-of-kabul-2021": {
+      "name": "Fall of Kabul (2021) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-india-pakistan-war-of-1947-1948": {
+      "name": "India–Pakistan war of 1947–1948 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/India–Pakistan_war_of_1947–1948",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1958-pakistani-military-coup": {
+      "name": "1958 Pakistani military coup (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1958_Pakistani_military_coup",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-india-pakistan-war-of-1965": {
+      "name": "India–Pakistan war of 1965 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/India–Pakistan_war_of_1965",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bangladesh-liberation-war": {
+      "name": "Bangladesh Liberation War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bangladesh_Liberation_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kargil-war": {
+      "name": "Kargil War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kargil_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-assassination-of-sheikh-mujibur-rahman": {
+      "name": "Assassination of Sheikh Mujibur Rahman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Assassination_of_Sheikh_Mujibur_Rahman",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-july-uprising": {
+      "name": "July Uprising (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/July_Uprising",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-kirtipur": {
+      "name": "Battle of Kirtipur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Kirtipur",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-anglo-nepalese-war": {
+      "name": "Anglo-Nepalese War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anglo-Nepalese_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-treaty-of-sugauli": {
+      "name": "Treaty of Sugauli (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Sugauli",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nepalese-civil-war": {
+      "name": "Nepalese Civil War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nepalese_Civil_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nepalese-royal-massacre": {
+      "name": "Nepalese royal massacre (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nepalese_royal_massacre",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-duar-war": {
+      "name": "Duar War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duar_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-treaty-of-punakha": {
+      "name": "Treaty of Punakha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Punakha",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-mulleriyawa": {
+      "name": "Battle of Mulleriyawa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mulleriyawa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-portuguese-conquest-of-the-jaffna-kingdom": {
+      "name": "Portuguese conquest of the Jaffna kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Portuguese_conquest_of_the_Jaffna_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-randeniwela": {
+      "name": "Battle of Randeniwela (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Randeniwela",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dutch-portuguese-war": {
+      "name": "Dutch–Portuguese War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dutch–Portuguese_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kandyan-convention": {
+      "name": "Kandyan Convention (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kandyan_Convention",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sri-lankan-civil-war": {
+      "name": "Sri Lankan civil war (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sri_Lankan_civil_war",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-khanwa": {
+      "name": "Battle of Khanwa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Khanwa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-chausa": {
+      "name": "Battle of Chausa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Chausa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-kannauj": {
+      "name": "Battle of Kannauj (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Kannauj",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-sirhind-1555": {
+      "name": "Battle of Sirhind (1555) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Sirhind_(1555)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-battle-of-panipat": {
+      "name": "Second Battle of Panipat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Battle_of_Panipat",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-rajmahal": {
+      "name": "Battle of Rajmahal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Rajmahal",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-diu": {
+      "name": "Battle of Diu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Diu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-gagron": {
+      "name": "Battle of Gagron (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gagron",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-chittorgarh-1567-1568": {
+      "name": "Siege of Chittorgarh (1567–1568) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Chittorgarh_(1567–1568)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-haldighati": {
+      "name": "Battle of Haldighati (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Haldighati",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-deccan-wars": {
+      "name": "Deccan wars (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Deccan_wars",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-third-anglo-maratha-war": {
+      "name": "Third Anglo-Maratha War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Third_Anglo-Maratha_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-anglo-sikh-war": {
+      "name": "First Anglo-Sikh War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Anglo-Sikh_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-anglo-sikh-war": {
+      "name": "Second Anglo-Sikh War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Anglo-Sikh_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-buxar": {
+      "name": "Battle of Buxar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Buxar",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-raichur": {
+      "name": "Battle of Raichur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Raichur",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-talikota": {
+      "name": "Battle of Talikota (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Talikota",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-bijapur": {
+      "name": "Siege of Bijapur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Bijapur",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-golconda": {
+      "name": "Siege of Golconda (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Golconda",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-arcot": {
+      "name": "Siege of Arcot (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Arcot",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-indian-annexation-of-hyderabad": {
+      "name": "Indian annexation of Hyderabad (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indian_annexation_of_Hyderabad",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-calicut-1503": {
+      "name": "Battle of Calicut (1503) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Calicut_(1503)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-cochin": {
+      "name": "Battle of Cochin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Cochin",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-seringapatam-1799": {
+      "name": "Siege of Seringapatam (1799) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Seringapatam_(1799)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -17080,7 +21169,8 @@
       "descr": "Babur defeats Ibrahim Lodi, the last Sultan of Delhi, and founds the Mughal Empire.",
       "start": 1526,
       "tracks": [
-        "mughal-empire"
+        "mughal-empire",
+        "delhi-sultanate"
       ],
       "sources": [
         {
@@ -17117,7 +21207,8 @@
       "tracks": [
         "india",
         "mughal-empire",
-        "british-empire"
+        "british-empire",
+        "oudh-state"
       ],
       "sources": [
         {
@@ -17134,7 +21225,9 @@
       "start": 1947,
       "tracks": [
         "india",
-        "british-empire"
+        "british-empire",
+        "pakistan",
+        "bangladesh"
       ],
       "sources": [
         {
@@ -19283,6 +23376,2503 @@
         {
           "sourceKey": "wp-2020-2021-belarusian-protests",
           "sourceLocation": "infobox date: 24 May 2020 – 25 March 2021 ()"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-sharur",
+      "title": "Battle of Sharur",
+      "descr": "Ismail defeats the Aq Qoyunlu and takes Tabriz, where he is crowned shah: the Safavid state begins.",
+      "start": 1501,
+      "tracks": [
+        "iran",
+        "aq-qoyunlu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-sharur",
+          "sourceLocation": "infobox date: 1501"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-hamadan-1503",
+      "title": "Battle of Hamadan",
+      "descr": "Ismail defeats the last Aq Qoyunlu ruler in Iran.",
+      "start": 1503,
+      "tracks": [
+        "aq-qoyunlu",
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-hamadan-1503",
+          "sourceLocation": "infobox date: June 21, 1503"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-chaldiran",
+      "title": "Battle of Chaldiran",
+      "descr": "The Ottomans defeat Shah Ismail; eastern Anatolia passes to the Ottomans.",
+      "start": 1514,
+      "tracks": [
+        "iran",
+        "ottoman-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-chaldiran",
+          "sourceLocation": "infobox date: 23 August 1514"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "hotak-revolt",
+      "title": "Hotak revolt in Kandahar",
+      "descr": "Mirwais Hotak rebels against the Safavid governor of Kandahar.",
+      "start": 1709,
+      "tracks": [
+        "hotak-dynasty",
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hotak-dynasty",
+          "sourceLocation": "infobox year_start: 1709"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-gulnabad",
+      "title": "Battle of Gulnabad",
+      "descr": "The Afghan army routs the Safavid army outside Isfahan.",
+      "start": 1722,
+      "tracks": [
+        "hotak-dynasty",
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-gulnabad",
+          "sourceLocation": "infobox date: Sunday, March 8, 1722"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-isfahan",
+      "title": "Siege of Isfahan",
+      "descr": "Isfahan falls to Mahmud Hotak after a seven-month siege; Shah Soltan Hoseyn abdicates.",
+      "start": 1722,
+      "tracks": [
+        "iran",
+        "hotak-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-isfahan",
+          "sourceLocation": "infobox date: 8 March – 23 October 1722"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-damghan",
+      "title": "Battle of Damghan",
+      "descr": "Nader, fighting for the Safavid heir, defeats Ashraf Hotak; the Afghans lose Iran.",
+      "start": 1729,
+      "tracks": [
+        "iran",
+        "hotak-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-damghan-1729",
+          "sourceLocation": "infobox date: 29 September – 5 October 1729"
+        }
+      ]
+    },
+    {
+      "uuid": "nader-crowned",
+      "title": "Nader Shah crowned",
+      "descr": "Nader deposes the last Safavid and is proclaimed shah.",
+      "start": 1736,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-afsharid-iran",
+          "sourceLocation": "infobox year_start: 1736"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "siege-of-kandahar-1738",
+      "title": "Siege of Kandahar",
+      "descr": "Nader Shah takes Kandahar from Hussain Hotak; Hotak rule ends.",
+      "start": 1738,
+      "tracks": [
+        "hotak-dynasty",
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hotak-dynasty",
+          "sourceLocation": "infobox year_end: 1738"
+        }
+      ]
+    },
+    {
+      "uuid": "nader-invasion-of-india",
+      "title": "Nader Shah's invasion of India",
+      "descr": "Nader Shah defeats the Mughals at Karnal and sacks Delhi.",
+      "start": 1738,
+      "end": 1739,
+      "tracks": [
+        "iran",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nader-shah-s-invasion-of-india",
+          "sourceLocation": "infobox date: 1738 – 1739"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "qajar-conquest-of-zand",
+      "title": "Qajar conquest of the Zands",
+      "descr": "Agha Mohammad Khan Qajar takes Kerman and executes Lotf Ali Khan, the last Zand ruler.",
+      "start": 1794,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-zand-iran",
+          "sourceLocation": "infobox year_end: 1794"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-turkmenchay",
+      "title": "Treaty of Turkmenchay",
+      "descr": "Iran cedes its remaining Caucasus khanates to Russia.",
+      "start": 1828,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qajar-iran",
+          "sourceLocation": "infobox event2: Treaty of Turkmenchay, 10 February 1828"
+        }
+      ]
+    },
+    {
+      "uuid": "persian-constitutional-revolution",
+      "title": "Persian Constitutional Revolution",
+      "descr": "A constitution and an elected Majles are won from the Qajar shah.",
+      "start": 1905,
+      "end": 1911,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-persian-constitutional-revolution",
+          "sourceLocation": "infobox date: 1905–1911"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "pahlavi-dynasty-founded",
+      "title": "Pahlavi dynasty founded",
+      "descr": "The Majles deposes the Qajars and proclaims Reza Khan shah.",
+      "start": 1925,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pahlavi-iran",
+          "sourceLocation": "infobox year_start: 1925"
+        }
+      ]
+    },
+    {
+      "uuid": "anglo-soviet-invasion-of-iran",
+      "title": "Anglo-Soviet invasion of Iran",
+      "descr": "British and Soviet forces occupy Iran; Reza Shah abdicates in favour of his son.",
+      "start": 1941,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-anglo-soviet-invasion-of-iran",
+          "sourceLocation": "infobox date: 25–31 August 1941"
+        }
+      ]
+    },
+    {
+      "uuid": "iranian-coup-1953",
+      "title": "1953 Iranian coup",
+      "descr": "Prime Minister Mosaddegh is overthrown; the Shah returns to power.",
+      "start": 1953,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1953-iranian-coup-d-tat",
+          "sourceLocation": "infobox date: 15–19 August 1953"
+        }
+      ]
+    },
+    {
+      "uuid": "iranian-revolution",
+      "title": "Iranian Revolution",
+      "descr": "The monarchy falls; an Islamic Republic is proclaimed under Khomeini.",
+      "start": 1978,
+      "end": 1979,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-iranian-revolution",
+          "sourceLocation": "infobox date: 7 January 1978 – 11 February 1979"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "iran-iraq-war",
+      "title": "Iran–Iraq War",
+      "descr": "Iraq invades Iran; eight years of war end in stalemate.",
+      "start": 1980,
+      "end": 1988,
+      "tracks": [
+        "iran"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-iran-iraq-war",
+          "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fall-of-samarkand-1501",
+      "title": "Fall of Samarkand",
+      "descr": "The Uzbeks take Samarkand from the Timurids.",
+      "start": 1501,
+      "tracks": [
+        "timurid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-timurid-empire",
+          "sourceLocation": "infobox event3: Fall of Samarkand, 1501"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-herat",
+      "title": "Fall of Herat",
+      "descr": "The Uzbeks take Herat, the last Timurid capital.",
+      "start": 1507,
+      "tracks": [
+        "timurid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-timurid-empire",
+          "sourceLocation": "infobox year_end: 1507"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "durrani-empire-founded",
+      "title": "Durrani Empire founded",
+      "descr": "Ahmad Shah Durrani founds an Afghan empire after Nader Shah's death.",
+      "start": 1747,
+      "tracks": [
+        "durrani-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-durrani-empire",
+          "sourceLocation": "infobox year_start: 23 July 1747"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "third-battle-of-panipat",
+      "title": "Third Battle of Panipat",
+      "descr": "Ahmad Shah Durrani defeats the Marathas north of Delhi.",
+      "start": 1761,
+      "tracks": [
+        "maratha-empire",
+        "durrani-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-third-battle-of-panipat",
+          "sourceLocation": "infobox date: 14 January 1761"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fall-of-kabul-1823",
+      "title": "Fall of Kabul",
+      "descr": "The Barakzai sardars take Kabul; the Sadozai empire ends and the Emirate begins.",
+      "start": 1823,
+      "tracks": [
+        "durrani-empire",
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-durrani-empire",
+          "sourceLocation": "infobox event3: Fall of Kabul, March 1823"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-nowshera",
+      "title": "Battle of Nowshera",
+      "descr": "The Sikhs defeat the Afghans and take the Peshawar valley.",
+      "start": 1823,
+      "tracks": [
+        "sikh-empire",
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-nowshera",
+          "sourceLocation": "infobox date: 14 March 1823"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-jamrud",
+      "title": "Battle of Jamrud",
+      "descr": "",
+      "start": 1837,
+      "tracks": [
+        "sikh-empire",
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-jamrud",
+          "sourceLocation": "infobox date: 30 April 1837"
+        }
+      ]
+    },
+    {
+      "uuid": "first-anglo-afghan-war",
+      "title": "First Anglo-Afghan War",
+      "descr": "The British restore Shah Shuja in Kabul; their army is destroyed in the retreat of 1842.",
+      "start": 1838,
+      "end": 1842,
+      "tracks": [
+        "afghanistan",
+        "durrani-empire",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-anglo-afghan-war",
+          "sourceLocation": "infobox date: 1 October 1838 – 12 October 1842"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fall-of-herat-1863",
+      "title": "Fall of Herat",
+      "descr": "Dost Mohammad Khan takes Herat, the last Durrani principality, and unites Afghanistan.",
+      "start": 1863,
+      "tracks": [
+        "durrani-empire",
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-durrani-empire",
+          "sourceLocation": "infobox year_end: 9 June 1863"
+        }
+      ]
+    },
+    {
+      "uuid": "second-anglo-afghan-war",
+      "title": "Second Anglo-Afghan War",
+      "descr": "",
+      "start": 1878,
+      "end": 1881,
+      "tracks": [
+        "afghanistan",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-second-anglo-afghan-war",
+          "sourceLocation": "infobox date: 21 November 1878 – 27 April 1881"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-gandamak",
+      "title": "Treaty of Gandamak",
+      "descr": "Britain takes control of Afghanistan's foreign affairs.",
+      "start": 1879,
+      "tracks": [
+        "afghanistan",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-emirate-of-afghanistan",
+          "sourceLocation": "infobox event4: Treaty of Gandamak, 24 May 1879"
+        }
+      ]
+    },
+    {
+      "uuid": "third-anglo-afghan-war",
+      "title": "Third Anglo-Afghan War",
+      "descr": "",
+      "start": 1919,
+      "tracks": [
+        "afghanistan",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-third-anglo-afghan-war",
+          "sourceLocation": "infobox date: 3 May – 8 August 1919"
+        }
+      ]
+    },
+    {
+      "uuid": "anglo-afghan-treaty-1919",
+      "title": "Anglo-Afghan Treaty of 1919",
+      "descr": "Britain recognises Afghanistan's full independence.",
+      "start": 1919,
+      "tracks": [
+        "afghanistan",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-anglo-afghan-treaty-of-1919",
+          "sourceLocation": "infobox date_signed: 8 August 1919"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "afghan-kingdom-1926",
+      "title": "Kingdom of Afghanistan proclaimed",
+      "descr": "Amanullah Khan takes the title of king.",
+      "start": 1926,
+      "tracks": [
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-afghanistan",
+          "sourceLocation": "infobox year_start: 1926"
+        }
+      ]
+    },
+    {
+      "uuid": "afghan-coup-1973",
+      "title": "1973 Afghan coup",
+      "descr": "Mohammad Daoud Khan overthrows King Zahir Shah and proclaims a republic.",
+      "start": 1973,
+      "tracks": [
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1973-afghan-coup-d-tat",
+          "sourceLocation": "infobox date: 17 July 1973"
+        }
+      ]
+    },
+    {
+      "uuid": "saur-revolution",
+      "title": "Saur Revolution",
+      "descr": "The communist PDPA kills Daoud Khan and seizes power.",
+      "start": 1978,
+      "tracks": [
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-saur-revolution",
+          "sourceLocation": "infobox date: 27–28 April 1978"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "soviet-afghan-war",
+      "title": "Soviet–Afghan War",
+      "descr": "Soviet forces fight the mujahideen for nine years and withdraw in 1989.",
+      "start": 1979,
+      "end": 1989,
+      "tracks": [
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-soviet-afghan-war",
+          "sourceLocation": "infobox date: 25 December 1979 – 15 February 1989"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "taliban-capture-kabul-1996",
+      "title": "Taliban take Kabul",
+      "descr": "The Taliban capture Kabul and proclaim their emirate.",
+      "start": 1996,
+      "tracks": [
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-islamic-emirate-of-afghanistan-1996-2001",
+          "sourceLocation": "infobox year_start: 1996"
+        }
+      ]
+    },
+    {
+      "uuid": "us-invasion-afghanistan",
+      "title": "United States invasion of Afghanistan",
+      "descr": "A US-led coalition and the Northern Alliance overthrow the Taliban.",
+      "start": 2001,
+      "tracks": [
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-islamic-emirate-of-afghanistan-1996-2001",
+          "sourceLocation": "infobox event2: Invasion begins, 7 October 2001"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fall-of-kabul-2021",
+      "title": "Fall of Kabul",
+      "descr": "The Taliban enter Kabul; the Islamic Republic collapses.",
+      "start": 2021,
+      "tracks": [
+        "afghanistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-fall-of-kabul-2021",
+          "sourceLocation": "infobox date: 15 August 2021"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "pakistan-republic",
+      "title": "Pakistan becomes a republic",
+      "descr": "The first constitution makes Pakistan an Islamic republic; East Bengal becomes East Pakistan.",
+      "start": 1956,
+      "tracks": [
+        "pakistan",
+        "bangladesh"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pakistan",
+          "sourceLocation": "infobox: Republic (23 March 1956)"
+        }
+      ]
+    },
+    {
+      "uuid": "india-pakistan-war-1947",
+      "title": "India–Pakistan war of 1947–1948",
+      "descr": "The first war over Kashmir.",
+      "start": 1947,
+      "end": 1949,
+      "tracks": [
+        "pakistan",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-india-pakistan-war-of-1947-1948",
+          "sourceLocation": "infobox date: 22 October 1947 – 1 January 1949"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "pakistan-coup-1958",
+      "title": "1958 Pakistani coup",
+      "descr": "Ayub Khan takes power.",
+      "start": 1958,
+      "tracks": [
+        "pakistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1958-pakistani-military-coup",
+          "sourceLocation": "infobox date: 27 October 1958"
+        }
+      ]
+    },
+    {
+      "uuid": "india-pakistan-war-1965",
+      "title": "India–Pakistan war of 1965",
+      "descr": "",
+      "start": 1965,
+      "tracks": [
+        "pakistan",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-india-pakistan-war-of-1965",
+          "sourceLocation": "infobox date: 5 August – 23 September 1965"
+        }
+      ]
+    },
+    {
+      "uuid": "bangladesh-liberation-war",
+      "title": "Bangladesh Liberation War",
+      "descr": "East Pakistan fights for independence; Pakistani forces surrender on 16 December 1971.",
+      "start": 1971,
+      "tracks": [
+        "bangladesh",
+        "pakistan",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bangladesh-liberation-war",
+          "sourceLocation": "infobox date: 26 March – 16 December 1971"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "pakistan-constitution-1973",
+      "title": "Constitution of Pakistan",
+      "descr": "The current constitution.",
+      "start": 1973,
+      "tracks": [
+        "pakistan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pakistan",
+          "sourceLocation": "infobox: Current constitution (14 August 1973)"
+        }
+      ]
+    },
+    {
+      "uuid": "kargil-war",
+      "title": "Kargil War",
+      "descr": "",
+      "start": 1999,
+      "tracks": [
+        "pakistan",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kargil-war",
+          "sourceLocation": "infobox date: 3 May – 26 July 1999"
+        }
+      ]
+    },
+    {
+      "uuid": "bangladesh-constitution-1972",
+      "title": "Constitution of Bangladesh",
+      "descr": "",
+      "start": 1972,
+      "tracks": [
+        "bangladesh"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bangladesh",
+          "sourceLocation": "infobox: Current constitution (16 December 1972)"
+        }
+      ]
+    },
+    {
+      "uuid": "assassination-of-mujib",
+      "title": "Assassination of Sheikh Mujibur Rahman",
+      "descr": "",
+      "start": 1975,
+      "tracks": [
+        "bangladesh"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-assassination-of-sheikh-mujibur-rahman",
+          "sourceLocation": "infobox date: 15 August 1975"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "july-uprising",
+      "title": "July Uprising",
+      "descr": "A mass uprising ousts Sheikh Hasina.",
+      "start": 2024,
+      "tracks": [
+        "bangladesh"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-july-uprising",
+          "sourceLocation": "infobox date: 6 June – 5 August 2024 ()"
+        }
+      ]
+    },
+    {
+      "uuid": "almora-capital",
+      "title": "Almora becomes the capital of Kumaon",
+      "descr": "",
+      "start": 1563,
+      "tracks": [
+        "kingdom-of-kumaon"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kumaon",
+          "sourceLocation": "lead: \"They shifted the capital from Kartikeyapura (Baijnath) to Champawat in the 12th century, and finally to Almora in 1563.\""
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-kirtipur",
+      "title": "Battle of Kirtipur",
+      "descr": "Gorkha takes Kirtipur in its conquest of the Kathmandu Valley.",
+      "start": 1767,
+      "tracks": [
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-kirtipur",
+          "sourceLocation": "infobox date: 1767"
+        }
+      ]
+    },
+    {
+      "uuid": "nepal-unification",
+      "title": "Unification of Nepal",
+      "descr": "Prithvi Narayan Shah conquers the Kathmandu Valley; Gorkha becomes the Kingdom of Nepal.",
+      "start": 1768,
+      "tracks": [
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-nepal",
+          "sourceLocation": "infobox year_start: 1768"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "gorkha-annexation-of-kumaon",
+      "title": "Nepal annexes Kumaon",
+      "descr": "",
+      "start": 1791,
+      "tracks": [
+        "kingdom-of-kumaon",
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kumaon",
+          "sourceLocation": "infobox year_end: 1791"
+        }
+      ]
+    },
+    {
+      "uuid": "nepalese-invasion-of-sikkim",
+      "title": "Nepalese invasion of Sikkim",
+      "descr": "",
+      "start": 1776,
+      "tracks": [
+        "kingdom-of-sikkim",
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-sikkim",
+          "sourceLocation": "infobox event3: Nepalese Invasion, 1776"
+        }
+      ]
+    },
+    {
+      "uuid": "anglo-nepalese-war",
+      "title": "Anglo-Nepalese War",
+      "descr": "",
+      "start": 1814,
+      "end": 1816,
+      "tracks": [
+        "nepal",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-anglo-nepalese-war",
+          "sourceLocation": "infobox date: 1 November 1814 – 4 March 1816"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "treaty-of-sugauli",
+      "title": "Treaty of Sugauli",
+      "descr": "Nepal cedes its western and southern conquests to the East India Company.",
+      "start": 1816,
+      "tracks": [
+        "nepal",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-treaty-of-sugauli",
+          "sourceLocation": "infobox date_signed: 4 March 1816"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-titalia",
+      "title": "Treaty of Titalia",
+      "descr": "",
+      "start": 1817,
+      "tracks": [
+        "kingdom-of-sikkim",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-sikkim",
+          "sourceLocation": "infobox event4: Treaty of Titalia signed, 1817"
+        }
+      ]
+    },
+    {
+      "uuid": "darjeeling-ceded",
+      "title": "Darjeeling given to British India",
+      "descr": "",
+      "start": 1835,
+      "tracks": [
+        "kingdom-of-sikkim",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-sikkim",
+          "sourceLocation": "infobox event5: Darjeeling given to British India, 1835"
+        }
+      ]
+    },
+    {
+      "uuid": "nepal-britain-treaty-1923",
+      "title": "Nepal–Britain Treaty",
+      "descr": "Britain recognises Nepal's independence.",
+      "start": 1923,
+      "tracks": [
+        "nepal",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nepal",
+          "sourceLocation": "infobox: Nepal–Britain Treaty of 1923 (21 December 1923)"
+        }
+      ]
+    },
+    {
+      "uuid": "nepalese-civil-war",
+      "title": "Nepalese Civil War",
+      "descr": "",
+      "start": 1996,
+      "end": 2006,
+      "tracks": [
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nepalese-civil-war",
+          "sourceLocation": "infobox date: 13 February 1996 – 21 November 2006"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "nepalese-royal-massacre",
+      "title": "Nepalese royal massacre",
+      "descr": "",
+      "start": 2001,
+      "tracks": [
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nepalese-royal-massacre",
+          "sourceLocation": "infobox date: 1 June 2001"
+        }
+      ]
+    },
+    {
+      "uuid": "nepal-republic",
+      "title": "Nepal becomes a republic",
+      "descr": "The monarchy is abolished.",
+      "start": 2008,
+      "tracks": [
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nepal",
+          "sourceLocation": "infobox: Federal Republic (28 May 2008)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "nepal-constitution-2015",
+      "title": "Constitution of Nepal",
+      "descr": "",
+      "start": 2015,
+      "tracks": [
+        "nepal"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nepal",
+          "sourceLocation": "infobox: Current constitution (20 September 2015)"
+        }
+      ]
+    },
+    {
+      "uuid": "sikkim-merger",
+      "title": "Sikkim merges with India",
+      "descr": "The monarchy is abolished and Sikkim becomes a state of India.",
+      "start": 1975,
+      "tracks": [
+        "kingdom-of-sikkim",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-sikkim",
+          "sourceLocation": "infobox year_end: 1975"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "bhutan-unification",
+      "title": "Unification of Bhutan",
+      "descr": "The Zhabdrung unifies Bhutan.",
+      "start": 1616,
+      "end": 1634,
+      "tracks": [
+        "bhutan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bhutan",
+          "sourceLocation": "infobox: Unification (1616–1634)"
+        }
+      ]
+    },
+    {
+      "uuid": "duar-war",
+      "title": "Duar War",
+      "descr": "",
+      "start": 1864,
+      "end": 1865,
+      "tracks": [
+        "bhutan",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-duar-war",
+          "sourceLocation": "infobox date: 1864–1865"
+        }
+      ]
+    },
+    {
+      "uuid": "wangchuk-dynasty",
+      "title": "Wangchuk dynasty",
+      "descr": "Ugyen Wangchuck is crowned the first hereditary king.",
+      "start": 1907,
+      "tracks": [
+        "bhutan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bhutan",
+          "sourceLocation": "infobox: Ascension of the Wangchuk dynasty (17 December 1907)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "treaty-of-punakha",
+      "title": "Treaty of Punakha",
+      "descr": "Britain takes charge of Bhutan's foreign relations.",
+      "start": 1910,
+      "tracks": [
+        "bhutan",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-treaty-of-punakha",
+          "sourceLocation": "infobox date_signed: 8 January 1910"
+        }
+      ]
+    },
+    {
+      "uuid": "india-bhutan-treaty-1949",
+      "title": "India–Bhutan treaty",
+      "descr": "",
+      "start": 1949,
+      "tracks": [
+        "bhutan",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bhutan",
+          "sourceLocation": "infobox: Bhutan–India treaty (8 August 1949)"
+        }
+      ]
+    },
+    {
+      "uuid": "bhutan-constitution-2008",
+      "title": "Bhutan becomes a constitutional monarchy",
+      "descr": "",
+      "start": 2008,
+      "tracks": [
+        "bhutan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bhutan",
+          "sourceLocation": "infobox: Constitutional monarchy (18 July 2008)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "maldives-protectorate",
+      "title": "Maldives becomes a British protectorate",
+      "descr": "",
+      "start": 1887,
+      "tracks": [
+        "maldives",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maldives",
+          "sourceLocation": "lead: \"From the mid-16th century, the region came under the increasing influence of European colonial powers, with the Maldives becoming a British protectorate in 1887\""
+        }
+      ]
+    },
+    {
+      "uuid": "maldives-independence",
+      "title": "Maldives independent",
+      "descr": "",
+      "start": 1965,
+      "tracks": [
+        "maldives",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maldives",
+          "sourceLocation": "infobox: Independence declared (26 July 1965)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "maldives-republic",
+      "title": "Maldives becomes a republic",
+      "descr": "",
+      "start": 1968,
+      "tracks": [
+        "maldives"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maldives",
+          "sourceLocation": "infobox: Second Republic (11 November 1968)"
+        }
+      ]
+    },
+    {
+      "uuid": "maldives-tsunami",
+      "title": "Indian Ocean tsunami",
+      "descr": "",
+      "start": 2004,
+      "tracks": [
+        "maldives",
+        "sri-lanka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maldives",
+          "sourceLocation": "section \"History > 21st century\": \"The Maldives were devastated by a tsunami on 26 December 2004, following the Indian Ocean earthquake.\""
+        }
+      ]
+    },
+    {
+      "uuid": "maldives-constitution-2008",
+      "title": "Constitution of the Maldives",
+      "descr": "The constitution opens the way to the first multi-party presidential election.",
+      "start": 2008,
+      "tracks": [
+        "maldives"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maldives",
+          "sourceLocation": "infobox: Current constitution (7 August 2008)"
+        }
+      ]
+    },
+    {
+      "uuid": "portuguese-arrival-ceylon",
+      "title": "Portuguese arrive in Ceylon",
+      "descr": "",
+      "start": 1505,
+      "tracks": [
+        "sri-lanka",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-portuguese-ceylon",
+          "sourceLocation": "infobox date_pre: 1505"
+        }
+      ]
+    },
+    {
+      "uuid": "spoiling-of-vijayabahu",
+      "title": "Spoiling of Vijayabahu",
+      "descr": "The Kingdom of Kotte is divided between three brothers.",
+      "start": 1521,
+      "tracks": [
+        "sri-lanka",
+        "kingdom-of-sitawaka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-sitawaka",
+          "sourceLocation": "infobox year_start: 1521"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-mulleriyawa",
+      "title": "Battle of Mulleriyawa",
+      "descr": "",
+      "start": 1559,
+      "tracks": [
+        "kingdom-of-sitawaka",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-mulleriyawa",
+          "sourceLocation": "infobox date: 1559"
+        }
+      ]
+    },
+    {
+      "uuid": "sitawaka-end",
+      "title": "Death of Rajasinha I of Sitawaka",
+      "descr": "",
+      "start": 1594,
+      "tracks": [
+        "kingdom-of-sitawaka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-sitawaka",
+          "sourceLocation": "infobox year_end: 1594"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-dharmapala",
+      "title": "Death of Dharmapala of Kotte",
+      "descr": "The last king of Kotte dies without an heir, having left his kingdom to the Portuguese crown.",
+      "start": 1597,
+      "tracks": [
+        "sri-lanka",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-portuguese-ceylon",
+          "sourceLocation": "infobox year_start: 1597"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "portuguese-conquest-of-jaffna",
+      "title": "Portuguese conquest of the Jaffna kingdom",
+      "descr": "Portuguese campaigns end the Jaffna kingdom in 1619.",
+      "start": 1560,
+      "end": 1621,
+      "tracks": [
+        "jaffna-kingdom",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-portuguese-conquest-of-the-jaffna-kingdom",
+          "sourceLocation": "infobox date: 1560 – 1621"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-randeniwela",
+      "title": "Battle of Randeniwela",
+      "descr": "Kandy destroys a Portuguese army.",
+      "start": 1630,
+      "tracks": [
+        "sri-lanka",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-randeniwela",
+          "sourceLocation": "infobox date: 25 August 1630"
+        }
+      ]
+    },
+    {
+      "uuid": "dutch-portuguese-war",
+      "title": "Dutch–Portuguese War",
+      "descr": "The Dutch take Portugal's Asian colonies, Ceylon among them (1638–58).",
+      "start": 1598,
+      "end": 1663,
+      "tracks": [
+        "sri-lanka",
+        "portuguese-empire",
+        "dutch-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-dutch-portuguese-war",
+          "sourceLocation": "infobox date: 1598–1663"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "british-capture-of-ceylon",
+      "title": "British capture Dutch Ceylon",
+      "descr": "",
+      "start": 1796,
+      "tracks": [
+        "sri-lanka",
+        "dutch-empire",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-british-ceylon",
+          "sourceLocation": "infobox year_start: 1796"
+        }
+      ]
+    },
+    {
+      "uuid": "kandyan-convention",
+      "title": "Kandyan Convention",
+      "descr": "The Kandyan chiefs cede the kingdom to the British Crown; the whole island is British.",
+      "start": 1815,
+      "tracks": [
+        "sri-lanka",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kandyan-convention",
+          "sourceLocation": "infobox date_signed: 2 March 1815"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ceylon-independence",
+      "title": "Ceylon independent",
+      "descr": "",
+      "start": 1948,
+      "tracks": [
+        "sri-lanka",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sri-lanka",
+          "sourceLocation": "infobox: Independence (4 February 1948)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "sri-lanka-republic",
+      "title": "Sri Lanka becomes a republic",
+      "descr": "Ceylon is renamed Sri Lanka.",
+      "start": 1972,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sri-lanka",
+          "sourceLocation": "infobox: Republic (22 May 1972)"
+        }
+      ]
+    },
+    {
+      "uuid": "sri-lankan-civil-war",
+      "title": "Sri Lankan civil war",
+      "descr": "The government fights the Liberation Tigers of Tamil Eelam; the war ends with the Tigers' defeat.",
+      "start": 1983,
+      "end": 2009,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sri-lankan-civil-war",
+          "sourceLocation": "infobox date: 23 July 1983 – 18 May 2009"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "langah-annexed",
+      "title": "Arghuns annex the Langah Sultanate",
+      "descr": "",
+      "start": 1528,
+      "tracks": [
+        "langah-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-langah-sultanate",
+          "sourceLocation": "lead: \"The Langah Sultanate was annexed in 1528 by the Arghun dynasty, followed shortly by the annexation of Multan by Mughal Empire in 1530.\""
+        }
+      ]
+    },
+    {
+      "uuid": "mughals-take-multan",
+      "title": "Mughals annex Multan",
+      "descr": "",
+      "start": 1530,
+      "tracks": [
+        "langah-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-langah-sultanate",
+          "sourceLocation": "lead: \"The Langah Sultanate was annexed in 1528 by the Arghun dynasty, followed shortly by the annexation of Multan by Mughal Empire in 1530.\""
+        }
+      ]
+    },
+    {
+      "uuid": "gajapati-end",
+      "title": "End of the Gajapati Empire",
+      "descr": "",
+      "start": 1541,
+      "tracks": [
+        "gajapati-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gajapati-empire",
+          "sourceLocation": "infobox year_end: 1541"
+        }
+      ]
+    },
+    {
+      "uuid": "pandya-end",
+      "title": "End of the Pandya dynasty",
+      "descr": "",
+      "start": 1618,
+      "tracks": [
+        "pandya-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pandya-dynasty",
+          "sourceLocation": "infobox year_end: 1618 CE"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-khanwa",
+      "title": "Battle of Khanwa",
+      "descr": "Babur defeats the Rajput confederacy led by Rana Sanga of Mewar.",
+      "start": 1527,
+      "tracks": [
+        "mughal-empire",
+        "mewar"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-khanwa",
+          "sourceLocation": "infobox date: 16 March 1527"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-chausa",
+      "title": "Battle of Chausa",
+      "descr": "",
+      "start": 1539,
+      "tracks": [
+        "sur-empire",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-chausa",
+          "sourceLocation": "infobox date: 26 June 1539"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-kannauj",
+      "title": "Battle of Kannauj",
+      "descr": "Sher Shah Suri drives Humayun out of India.",
+      "start": 1540,
+      "tracks": [
+        "sur-empire",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-kannauj",
+          "sourceLocation": "infobox date: 17 May 1540"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-sirhind-1555",
+      "title": "Battle of Sirhind",
+      "descr": "Humayun defeats Sikandar Shah Suri and recovers the Mughal throne.",
+      "start": 1555,
+      "tracks": [
+        "sur-empire",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-sirhind-1555",
+          "sourceLocation": "infobox date: 22 June 1555"
+        }
+      ]
+    },
+    {
+      "uuid": "second-battle-of-panipat",
+      "title": "Second Battle of Panipat",
+      "descr": "Akbar's army defeats Hemu, general of the Sur ruler Adil Shah.",
+      "start": 1556,
+      "tracks": [
+        "mughal-empire",
+        "sur-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-second-battle-of-panipat",
+          "sourceLocation": "infobox date: 5 November 1556"
+        }
+      ]
+    },
+    {
+      "uuid": "bengal-conquest-of-chittagong",
+      "title": "Bengal conquers Chittagong",
+      "descr": "",
+      "start": 1512,
+      "end": 1516,
+      "tracks": [
+        "bengal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bengal-sultanate",
+          "sourceLocation": "infobox event6: Conquest of Chittagong, 1512–1516"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-rajmahal",
+      "title": "Battle of Rajmahal",
+      "descr": "Akbar's army defeats the last Sultan of Bengal.",
+      "start": 1576,
+      "tracks": [
+        "bengal-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-rajmahal",
+          "sourceLocation": "infobox date: 12 July 1576"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-diu-1509",
+      "title": "Battle of Diu",
+      "descr": "The Portuguese defeat the fleets of Gujarat, the Mamluks and Calicut.",
+      "start": 1509,
+      "tracks": [
+        "gujarat-sultanate",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-diu",
+          "sourceLocation": "infobox date: 3 February 1509"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-gagron",
+      "title": "Battle of Gagron",
+      "descr": "",
+      "start": 1519,
+      "tracks": [
+        "malwa-sultanate",
+        "mewar"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-gagron",
+          "sourceLocation": "infobox date: 1519"
+        }
+      ]
+    },
+    {
+      "uuid": "gujarat-conquest-of-malwa",
+      "title": "Gujarat conquers Malwa",
+      "descr": "",
+      "start": 1531,
+      "tracks": [
+        "gujarat-sultanate",
+        "malwa-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox event5: Conquest of Malwa, 1531"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-bassein-1534",
+      "title": "Treaty of Bassein",
+      "descr": "Gujarat cedes Bassein and its dependencies to Portugal.",
+      "start": 1534,
+      "tracks": [
+        "gujarat-sultanate",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox event6: Treaty of Bassein, 1534"
+        }
+      ]
+    },
+    {
+      "uuid": "kashmir-mughal-interregnum",
+      "title": "Mughal interregnum in Kashmir",
+      "descr": "",
+      "start": 1540,
+      "end": 1551,
+      "tracks": [
+        "kashmir-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kashmir-sultanate",
+          "sourceLocation": "infobox event4: Mughal Interregnum, December 1540–October 1551"
+        }
+      ]
+    },
+    {
+      "uuid": "mughal-conquest-of-malwa",
+      "title": "Mughal conquest of Malwa",
+      "descr": "",
+      "start": 1562,
+      "tracks": [
+        "malwa-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-malwa-sultanate",
+          "sourceLocation": "infobox year_end: 1562"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-chittorgarh",
+      "title": "Siege of Chittorgarh",
+      "descr": "",
+      "start": 1567,
+      "end": 1568,
+      "tracks": [
+        "mewar",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-chittorgarh-1567-1568",
+          "sourceLocation": "infobox date: 1567 – 1568"
+        }
+      ]
+    },
+    {
+      "uuid": "mughal-annexation-of-gujarat",
+      "title": "Mughal annexation of Gujarat",
+      "descr": "",
+      "start": 1573,
+      "tracks": [
+        "gujarat-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox year_end: 1573"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-haldighati",
+      "title": "Battle of Haldighati",
+      "descr": "",
+      "start": 1576,
+      "tracks": [
+        "mewar",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-haldighati",
+          "sourceLocation": "infobox date: 18 June 1576"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "mughal-conquest-of-kashmir",
+      "title": "Mughal conquest of Kashmir",
+      "descr": "",
+      "start": 1585,
+      "end": 1589,
+      "tracks": [
+        "kashmir-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kashmir-sultanate",
+          "sourceLocation": "infobox event6: Mughal Invasion, 20 December 1585–8 August 1589"
+        }
+      ]
+    },
+    {
+      "uuid": "khandesh-succession-war",
+      "title": "Khandesh war of succession",
+      "descr": "",
+      "start": 1508,
+      "end": 1509,
+      "tracks": [
+        "khandesh-sultanate",
+        "gujarat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-farooqui-dynasty",
+          "sourceLocation": "infobox event2: Khandesh war of succession, 1508–1509"
+        }
+      ]
+    },
+    {
+      "uuid": "mughal-annexation-of-khandesh",
+      "title": "Mughal annexation of Khandesh",
+      "descr": "Asirgarh falls to Akbar on 17 January 1601.",
+      "start": 1601,
+      "tracks": [
+        "khandesh-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-farooqui-dynasty",
+          "sourceLocation": "infobox year_end: 1601"
+        }
+      ]
+    },
+    {
+      "uuid": "ahom-mughal-wars",
+      "title": "Ahom–Mughal wars",
+      "descr": "",
+      "start": 1615,
+      "end": 1682,
+      "tracks": [
+        "ahom-kingdom",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ahom-kingdom",
+          "sourceLocation": "infobox event3: Ahom–Mughal Wars, 1615–1682"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "moamoria-rebellion",
+      "title": "Moamoria rebellion",
+      "descr": "",
+      "start": 1769,
+      "tracks": [
+        "ahom-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ahom-kingdom",
+          "sourceLocation": "infobox event5: Moamaria rebellion, 1769"
+        }
+      ]
+    },
+    {
+      "uuid": "burmese-invasion-of-assam",
+      "title": "Burmese invasion of Assam",
+      "descr": "",
+      "start": 1817,
+      "tracks": [
+        "ahom-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ahom-kingdom",
+          "sourceLocation": "infobox event6: Burmese invasion of Assam, 1817"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-yandabo",
+      "title": "Treaty of Yandabo",
+      "descr": "Burma cedes Assam; the East India Company takes control of the Ahom kingdom.",
+      "start": 1826,
+      "tracks": [
+        "ahom-kingdom",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ahom-kingdom",
+          "sourceLocation": "infobox year_end: 1826"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "coronation-of-shivaji",
+      "title": "Coronation of Shivaji",
+      "descr": "",
+      "start": 1674,
+      "tracks": [
+        "maratha-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maratha-empire",
+          "sourceLocation": "infobox year_start: 1674"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "deccan-wars",
+      "title": "Deccan wars",
+      "descr": "Aurangzeb's long war against the Marathas, ended by his death in 1707.",
+      "start": 1681,
+      "end": 1707,
+      "tracks": [
+        "maratha-empire",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-deccan-wars",
+          "sourceLocation": "infobox date: 1681 – 1707"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "capture-of-lahore-1799",
+      "title": "Ranjit Singh captures Lahore",
+      "descr": "Ranjit Singh takes Lahore and begins uniting the Sikh misls into one state.",
+      "start": 1799,
+      "tracks": [
+        "sikh-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sikh-empire",
+          "sourceLocation": "infobox year_start: 1799"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "third-anglo-maratha-war",
+      "title": "Third Anglo-Maratha War",
+      "descr": "The East India Company destroys the Maratha Confederacy.",
+      "start": 1817,
+      "end": 1819,
+      "tracks": [
+        "maratha-empire",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-third-anglo-maratha-war",
+          "sourceLocation": "infobox date: 5 November 1817 – 9 April 1819"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "first-anglo-sikh-war",
+      "title": "First Anglo-Sikh War",
+      "descr": "",
+      "start": 1845,
+      "end": 1846,
+      "tracks": [
+        "sikh-empire",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-anglo-sikh-war",
+          "sourceLocation": "infobox date: 11 December 1845 – 9 March 1846"
+        }
+      ]
+    },
+    {
+      "uuid": "second-anglo-sikh-war",
+      "title": "Second Anglo-Sikh War",
+      "descr": "The Company defeats the Sikhs and annexes the Punjab.",
+      "start": 1848,
+      "end": 1849,
+      "tracks": [
+        "sikh-empire",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-second-anglo-sikh-war",
+          "sourceLocation": "infobox date: 18 April 1848 – 29 March 1849"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-buxar",
+      "title": "Battle of Buxar",
+      "descr": "The Company defeats the Nawabs of Bengal and Oudh and the Mughal emperor.",
+      "start": 1764,
+      "tracks": [
+        "oudh-state",
+        "mughal-empire",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-buxar",
+          "sourceLocation": "infobox date: 22–23 October 1764"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "annexation-of-oudh",
+      "title": "Annexation of Oudh",
+      "descr": "",
+      "start": 1856,
+      "tracks": [
+        "oudh-state",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-oudh-state",
+          "sourceLocation": "infobox event1: Annexation of Oudh, 1856"
+        }
+      ]
+    },
+    {
+      "uuid": "mewar-accession",
+      "title": "Mewar joins the Indian Union",
+      "descr": "",
+      "start": 1948,
+      "tracks": [
+        "mewar",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-mewar",
+          "sourceLocation": "infobox year_end: 18 April 1948"
+        }
+      ]
+    },
+    {
+      "uuid": "deccan-revolts-1490",
+      "title": "Bahmani governors break away",
+      "descr": "The governors of Bijapur, Ahmadnagar and Berar revolt; Bahmani power ends in all but name.",
+      "start": 1490,
+      "tracks": [
+        "bahmani-sultanate",
+        "ahmadnagar-sultanate",
+        "bijapur-sultanate",
+        "berar-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bahmani-kingdom",
+          "sourceLocation": "lead: \"The initial revolts of Yusuf Adil Shah, Malik Ahmad Nizam Shah I, and Fathullah Imad-ul-Mulk in 1490, and Qasim Barid I in 1492 saw the end of any real Bahmani \""
+        }
+      ]
+    },
+    {
+      "uuid": "golconda-founded",
+      "title": "Golconda Sultanate founded",
+      "descr": "",
+      "start": 1518,
+      "tracks": [
+        "golconda-sultanate",
+        "bahmani-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-golconda-sultanate",
+          "sourceLocation": "infobox year_start: 1518"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-raichur",
+      "title": "Battle of Raichur",
+      "descr": "",
+      "start": 1520,
+      "tracks": [
+        "vijayanagara-empire",
+        "bijapur-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-raichur",
+          "sourceLocation": "infobox date: 19 May 1520"
+        }
+      ]
+    },
+    {
+      "uuid": "bahmani-dissolved",
+      "title": "Bahmani Kingdom dissolved",
+      "descr": "",
+      "start": 1527,
+      "tracks": [
+        "bahmani-sultanate",
+        "bidar-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bahmani-kingdom",
+          "sourceLocation": "infobox year_end: 1527"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-talikota",
+      "title": "Battle of Talikota",
+      "descr": "The allied Deccan sultanates defeat Vijayanagara and sack its capital.",
+      "start": 1565,
+      "tracks": [
+        "vijayanagara-empire",
+        "ahmadnagar-sultanate",
+        "bijapur-sultanate",
+        "golconda-sultanate",
+        "bidar-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-talikota",
+          "sourceLocation": "infobox date: 23 January 1565"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "berar-annexed",
+      "title": "Ahmadnagar annexes Berar",
+      "descr": "",
+      "start": 1574,
+      "tracks": [
+        "berar-sultanate",
+        "ahmadnagar-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-berar-sultanate",
+          "sourceLocation": "infobox year_end: 1574"
+        }
+      ]
+    },
+    {
+      "uuid": "bidar-annexed",
+      "title": "Bijapur annexes Bidar",
+      "descr": "",
+      "start": 1619,
+      "tracks": [
+        "bidar-sultanate",
+        "bijapur-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bidar-sultanate",
+          "sourceLocation": "infobox year_end: 1619"
+        }
+      ]
+    },
+    {
+      "uuid": "mughal-annexation-of-ahmadnagar",
+      "title": "Mughal annexation of Ahmadnagar",
+      "descr": "",
+      "start": 1636,
+      "tracks": [
+        "ahmadnagar-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ahmadnagar-sultanate",
+          "sourceLocation": "infobox year_end: 1636"
+        }
+      ]
+    },
+    {
+      "uuid": "vijayanagara-end",
+      "title": "End of the Vijayanagara Empire",
+      "descr": "",
+      "start": 1646,
+      "tracks": [
+        "vijayanagara-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-vijayanagara-empire",
+          "sourceLocation": "lead: \"The empire survived until 1646, though its central authority diminished sharply following its defeat by allied Deccan Sultanates at the Battle of Talikota in 15\""
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-bijapur",
+      "title": "Siege of Bijapur",
+      "descr": "Aurangzeb conquers Bijapur.",
+      "start": 1685,
+      "end": 1686,
+      "tracks": [
+        "bijapur-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-bijapur",
+          "sourceLocation": "infobox date: 1685 – 1686"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-golconda",
+      "title": "Siege of Golconda",
+      "descr": "Aurangzeb takes Golconda.",
+      "start": 1687,
+      "tracks": [
+        "golconda-sultanate",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-golconda",
+          "sourceLocation": "infobox date: 1687 – 1687"
+        }
+      ]
+    },
+    {
+      "uuid": "hyderabad-founded",
+      "title": "Nizam of Hyderabad",
+      "descr": "The Mughal viceroy of the Deccan founds the Nizam's state.",
+      "start": 1724,
+      "tracks": [
+        "hyderabad-state",
+        "mughal-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hyderabad-state",
+          "sourceLocation": "infobox year_start: 1724"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-arcot",
+      "title": "Siege of Arcot",
+      "descr": "",
+      "start": 1751,
+      "tracks": [
+        "carnatic-sultanate",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-arcot",
+          "sourceLocation": "infobox date: 23 September – 14 November 1751"
+        }
+      ]
+    },
+    {
+      "uuid": "carnatic-treaty",
+      "title": "Carnatic Treaty",
+      "descr": "The Nawab hands the administration of the Carnatic to the East India Company.",
+      "start": 1801,
+      "tracks": [
+        "carnatic-sultanate",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-carnatic-sultanate",
+          "sourceLocation": "infobox event2: Carnatic Treaty, 26 July 1801"
+        }
+      ]
+    },
+    {
+      "uuid": "telangana-rebellion",
+      "title": "Telangana Rebellion",
+      "descr": "",
+      "start": 1946,
+      "tracks": [
+        "hyderabad-state"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hyderabad-state",
+          "sourceLocation": "infobox event1: Telangana Rebellion, 1946"
+        }
+      ]
+    },
+    {
+      "uuid": "annexation-of-hyderabad",
+      "title": "Indian annexation of Hyderabad",
+      "descr": "",
+      "start": 1948,
+      "tracks": [
+        "hyderabad-state",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-indian-annexation-of-hyderabad",
+          "sourceLocation": "infobox date: 13–18 September 1948"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-calicut-1503",
+      "title": "Battle of Calicut",
+      "descr": "",
+      "start": 1503,
+      "tracks": [
+        "calicut-kingdom",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-calicut-1503",
+          "sourceLocation": "infobox date: 5–6 January 1503"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-cochin-1504",
+      "title": "Battle of Cochin",
+      "descr": "",
+      "start": 1504,
+      "tracks": [
+        "calicut-kingdom",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-cochin",
+          "sourceLocation": "infobox date: 16 March – 3 July 1504"
+        }
+      ]
+    },
+    {
+      "uuid": "madurai-nayaks-founded",
+      "title": "Madurai Nayak dynasty founded",
+      "descr": "Viswanatha Nayak governs Madurai as a viceroy of Vijayanagara.",
+      "start": 1529,
+      "tracks": [
+        "madurai-nayak-dynasty",
+        "vijayanagara-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-madurai-nayak-dynasty",
+          "sourceLocation": "infobox year_start: 1529"
+        }
+      ]
+    },
+    {
+      "uuid": "thanjavur-nayaks-founded",
+      "title": "Thanjavur Nayak kingdom founded",
+      "descr": "",
+      "start": 1532,
+      "tracks": [
+        "thanjavur-nayak-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-thanjavur-nayak-kingdom",
+          "sourceLocation": "infobox year_start: 1532"
+        }
+      ]
+    },
+    {
+      "uuid": "keladi-coast-campaign",
+      "title": "Keladi takes the Portuguese coastal forts",
+      "descr": "Keladi captures Mangalore, Barkur, Basrur and Honnavar from the Portuguese.",
+      "start": 1653,
+      "tracks": [
+        "nayakas-of-keladi",
+        "portuguese-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nayakas-of-keladi",
+          "sourceLocation": "lead: \"He served as the Chief General and Dalavayi under Shivappa Nayaka of Keladi and led the 1653 campaigns that captured Mangalore, Barkur, Basrur and Honnavar from\""
+        }
+      ]
+    },
+    {
+      "uuid": "thanjavur-nayaks-end",
+      "title": "End of the Thanjavur Nayaks",
+      "descr": "",
+      "start": 1673,
+      "tracks": [
+        "thanjavur-nayak-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-thanjavur-nayak-kingdom",
+          "sourceLocation": "infobox year_end: 1673"
+        }
+      ]
+    },
+    {
+      "uuid": "madurai-nayaks-end",
+      "title": "End of the Madurai Nayaks",
+      "descr": "",
+      "start": 1736,
+      "tracks": [
+        "madurai-nayak-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-madurai-nayak-dynasty",
+          "sourceLocation": "infobox year_end: 1736"
+        }
+      ]
+    },
+    {
+      "uuid": "maratha-mysore-war",
+      "title": "Maratha–Mysore War",
+      "descr": "",
+      "start": 1759,
+      "end": 1787,
+      "tracks": [
+        "kingdom-of-mysore",
+        "maratha-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-mysore",
+          "sourceLocation": "infobox event3: Maratha–Mysore War, 1759–1787"
+        }
+      ]
+    },
+    {
+      "uuid": "keladi-absorbed",
+      "title": "Hyder Ali conquers Keladi",
+      "descr": "",
+      "start": 1763,
+      "tracks": [
+        "nayakas-of-keladi",
+        "kingdom-of-mysore"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nayakas-of-keladi",
+          "sourceLocation": "infobox year_end: 1763"
+        }
+      ]
+    },
+    {
+      "uuid": "mysorean-invasion-of-malabar",
+      "title": "Mysorean invasion of Malabar",
+      "descr": "",
+      "start": 1766,
+      "end": 1792,
+      "tracks": [
+        "calicut-kingdom",
+        "kingdom-of-mysore"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-calicut-kingdom",
+          "sourceLocation": "infobox event1: Mysorean invasion of Malabar, 1766-1792"
+        }
+      ]
+    },
+    {
+      "uuid": "anglo-mysore-wars",
+      "title": "Anglo-Mysore Wars",
+      "descr": "",
+      "start": 1767,
+      "end": 1799,
+      "tracks": [
+        "kingdom-of-mysore",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-mysore",
+          "sourceLocation": "infobox event2: Anglo-Mysore Wars, 1767–1799"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "siege-of-seringapatam",
+      "title": "Siege of Seringapatam",
+      "descr": "Tipu Sultan is killed; the Wodeyars are restored under British protection.",
+      "start": 1799,
+      "tracks": [
+        "kingdom-of-mysore",
+        "british-empire",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-seringapatam-1799",
+          "sourceLocation": "infobox date: 1799 – 1799"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "calicut-to-company",
+      "title": "Calicut passes to the East India Company",
+      "descr": "",
+      "start": 1806,
+      "tracks": [
+        "calicut-kingdom",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-calicut-kingdom",
+          "sourceLocation": "infobox year_end: 1806"
+        }
+      ]
+    },
+    {
+      "uuid": "mysore-accession",
+      "title": "Mysore joins India",
+      "descr": "",
+      "start": 1950,
+      "tracks": [
+        "kingdom-of-mysore",
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-mysore",
+          "sourceLocation": "infobox year_end: 1950"
         }
       ]
     }
