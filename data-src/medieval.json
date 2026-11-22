@@ -16239,6 +16239,410 @@
       ]
     },
     {
+      "id": "medri-bahri",
+      "name": "Medri Bahri",
+      "color": "#5a8a8a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Medri_Bahri",
+      "span": {
+        "start": 1150,
+        "end": 1890,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1150,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-medri-bahri",
+              "sourceLocation": "infobox year_start: Early 12th century"
+            },
+            "note": "The infobox says \"Early 12th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1890,
+            "source": {
+              "sourceKey": "wp-medri-bahri",
+              "sourceLocation": "infobox year_end: 1890"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-medri-bahri",
+              "sourceLocation": "infobox capital: Debarwa / Sa'azzaga / Addi Taolay / Asmara (from 1866)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-kaffa",
+      "name": "Kingdom of Kaffa",
+      "color": "#6a4a2a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kaffa",
+      "span": {
+        "start": 1390,
+        "end": 1897,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1390,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kaffa",
+              "sourceLocation": "infobox year_start: c.1390"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1897,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kaffa",
+              "sourceLocation": "infobox year_end: 1897"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kaffa",
+              "sourceLocation": "infobox capital: Bonga, Anderaccha"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-yamma",
+      "name": "Kingdom of Yamma (Janjero)",
+      "color": "#7a5a3a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Yamma",
+      "span": {
+        "start": 1450,
+        "end": 1894,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-kingdom-of-yamma",
+              "sourceLocation": "infobox year_start: c.15th century"
+            },
+            "note": "The infobox says \"c.15th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1894,
+            "source": {
+              "sourceKey": "wp-kingdom-of-yamma",
+              "sourceLocation": "infobox year_end: 1894"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-yamma",
+              "sourceLocation": "infobox capital: Fofa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-wolaita",
+      "name": "Kingdom of Wolaita",
+      "color": "#8a6a3a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Wolaita",
+      "span": {
+        "start": 1251,
+        "end": 1896,
+        "startDates": [
+          {
+            "year": 1251,
+            "source": {
+              "sourceKey": "wp-kingdom-of-wolaita",
+              "sourceLocation": "infobox year_start: (Traditionally) / c. 1251"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1896,
+            "source": {
+              "sourceKey": "wp-kingdom-of-wolaita",
+              "sourceLocation": "infobox year_end: 1896"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-wolaita",
+              "sourceLocation": "infobox capital: Lasho, Dalbo, Sodo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "majeerteen-sultanate",
+      "name": "Majeerteen Sultanate",
+      "color": "#4a6a9a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Majeerteen_Sultanate",
+      "span": {
+        "start": 1500,
+        "end": 1927,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1500,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-majeerteen-sultanate",
+              "sourceLocation": "infobox year_start: 15th-16th century"
+            },
+            "note": "The infobox says \"15th-16th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1927,
+            "source": {
+              "sourceKey": "wp-majeerteen-sultanate",
+              "sourceLocation": "infobox year_end: 1927"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-majeerteen-sultanate",
+              "sourceLocation": "infobox capital: Alula"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shilluk-kingdom",
+      "name": "Shilluk Kingdom",
+      "color": "#5a7a9a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Shilluk_Kingdom",
+      "span": {
+        "start": 1490,
+        "end": 1861,
+        "startDates": [
+          {
+            "year": 1490,
+            "source": {
+              "sourceKey": "wp-shilluk-kingdom",
+              "sourceLocation": "infobox year_start: 1490"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1861,
+            "source": {
+              "sourceKey": "wp-shilluk-kingdom",
+              "sourceLocation": "infobox year_end: 1861"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "east-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-shilluk-kingdom",
+              "sourceLocation": "infobox capital: Fashoda (from the late 17th century)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-karagwe",
+      "name": "Kingdom of Karagwe",
+      "color": "#7a7a3a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Karagwe",
+      "span": {
+        "start": 1450,
+        "end": 1963,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1450,
+            "source": {
+              "sourceKey": "wp-kingdom-of-karagwe",
+              "sourceLocation": "infobox year_start: c.1450"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1963,
+            "source": {
+              "sourceKey": "wp-kingdom-of-karagwe",
+              "sourceLocation": "infobox year_end: 6 December 1963"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "east-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-karagwe",
+              "sourceLocation": "infobox capital: Bweranyange"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "buganda",
+      "name": "Buganda",
+      "color": "#a08a2a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Buganda",
+      "span": [
+        {
+          "start": 1250,
+          "end": 1967,
+          "circa": true,
+          "startDates": [
+            {
+              "year": 1250,
+              "margin": 150,
+              "source": {
+                "sourceKey": "wp-buganda",
+                "sourceLocation": "infobox established_date1: 12th/13th/14th century"
+              },
+              "note": "The infobox says \"12th/13th/14th century\"."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1967,
+              "source": {
+                "sourceKey": "wp-buganda",
+                "sourceLocation": "infobox: Monarchy overthrown by Obote (17 September 1967)"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1993,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1993,
+              "source": {
+                "sourceKey": "wp-buganda",
+                "sourceLocation": "infobox: Monarchy restored (31 July 1993)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-buganda",
+              "sourceLocation": "infobox established_event5: Monarchy restored, 31 July 1993 (current state; a constitutional kingdom within Uganda)"
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "east-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-buganda",
+              "sourceLocation": "infobox capital: Mengo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ankole",
+      "name": "Ankole (Nkore)",
+      "color": "#9a6a2a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Ankole",
+      "span": {
+        "start": 1478,
+        "end": 1967,
+        "startDates": [
+          {
+            "year": 1478,
+            "source": {
+              "sourceKey": "wp-ankole",
+              "sourceLocation": "infobox year_start: 1478"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1967,
+            "source": {
+              "sourceKey": "wp-ankole",
+              "sourceLocation": "infobox year_end: 1967"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "east-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ankole",
+              "sourceLocation": "infobox capital: Mbarara"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "southern-africa-group",
       "name": "Southern Africa",
       "color": "#8a6a2a",
@@ -16412,6 +16816,90 @@
             {
               "sourceKey": "wp-mutapa-empire",
               "sourceLocation": "infobox capital: Various (incl. Zvongombe)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maravi",
+      "name": "Maravi",
+      "color": "#5a4a6a",
+      "parent": "southern-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Maravi",
+      "span": {
+        "start": 1450,
+        "end": 1860,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1450,
+            "source": {
+              "sourceKey": "wp-maravi",
+              "sourceLocation": "infobox year_start: pre-1450"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1860,
+            "source": {
+              "sourceKey": "wp-maravi",
+              "sourceLocation": "infobox year_end: 1860s"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "southern-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-maravi",
+              "sourceLocation": "infobox capital: Mankhamba"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "angoche-sultanate",
+      "name": "Angoche Sultanate",
+      "color": "#7a4a5a",
+      "parent": "southern-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Angoche_Sultanate",
+      "span": {
+        "start": 1485,
+        "end": 1910,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1485,
+            "source": {
+              "sourceKey": "wp-angoche-sultanate",
+              "sourceLocation": "infobox year_start: c. 1485"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1910,
+            "source": {
+              "sourceKey": "wp-angoche-sultanate",
+              "sourceLocation": "infobox year_end: 1910"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "southern-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-angoche-sultanate",
+              "sourceLocation": "infobox capital: Angoche Island"
             }
           ]
         }
@@ -21726,6 +22214,94 @@
     "wp-s-o-tom-and-pr-ncipe": {
       "name": "São Tomé and Príncipe (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/São_Tomé_and_Príncipe",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-medri-bahri": {
+      "name": "Medri Bahri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Medri_Bahri",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kaffa": {
+      "name": "Kingdom of Kaffa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kaffa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-yamma": {
+      "name": "Kingdom of Yamma (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Yamma",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-wolaita": {
+      "name": "Kingdom of Wolaita (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Wolaita",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-majeerteen-sultanate": {
+      "name": "Majeerteen Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Majeerteen_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-shilluk-kingdom": {
+      "name": "Shilluk Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shilluk_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-karagwe": {
+      "name": "Kingdom of Karagwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Karagwe",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-buganda": {
+      "name": "Buganda (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Buganda",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ankole": {
+      "name": "Ankole (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ankole",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-maravi": {
+      "name": "Maravi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maravi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-angoche-sultanate": {
+      "name": "Angoche Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Angoche_Sultanate",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -30823,6 +31399,51 @@
         {
           "sourceKey": "wp-waalo",
           "sourceLocation": "infobox event1: part of the Jolof Empire, c. 1350-1549 (de facto) / 1715 (de jure)"
+        }
+      ]
+    },
+    {
+      "uuid": "incorporation-of-makewanas-pre-maravi",
+      "title": "Incorporation of Makewana's Pre-Maravi",
+      "descr": "",
+      "start": 1450,
+      "tracks": [
+        "maravi"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maravi",
+          "sourceLocation": "infobox event1: Incorporation of Makewana's Pre-Maravi, pre-1450"
+        }
+      ]
+    },
+    {
+      "uuid": "kaphiti-and-lundu-break-away-south",
+      "title": "Kaphiti and Lundu break away south",
+      "descr": "",
+      "start": 1450,
+      "tracks": [
+        "maravi"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maravi",
+          "sourceLocation": "infobox event2: Kaphiti and Lundu break away south, pre-1450"
+        }
+      ]
+    },
+    {
+      "uuid": "undi-and-nyangu-settle-in-tete-province",
+      "title": "Undi and Nyangu settle in Tete Province",
+      "descr": "",
+      "start": 1450,
+      "tracks": [
+        "maravi"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maravi",
+          "sourceLocation": "infobox event3: Undi and Nyangu settle in Tete Province, post-1450"
         }
       ]
     }
