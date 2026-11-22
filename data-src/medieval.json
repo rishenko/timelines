@@ -3,7 +3,7 @@
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
-    "subtitle": "Europe, the Near East and North Africa, the steppe, Central, South and East Asia; pilot rows elsewhere; 650–1500",
+    "subtitle": "Europe, the Near East and North Africa, the steppe, Asia and Oceania; pilot rows elsewhere; 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
     "calendar": {
@@ -6181,7 +6181,7 @@
       ]
     },
     {
-      "id": "iran",
+      "id": "iran-iraq",
       "name": "Iran and Iraq",
       "color": "#a84a2a",
       "parent": "near-east"
@@ -6190,7 +6190,7 @@
       "id": "sasanian",
       "name": "Sasanian Empire",
       "color": "#a84a2a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Sasanian_Empire",
       "ids": {
         "wikidata": "Q83891"
@@ -6224,7 +6224,7 @@
       "id": "tahirid-dynasty",
       "name": "Tahirids",
       "color": "#6a4a2a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Tahirid_dynasty",
       "span": {
         "start": 821,
@@ -6265,7 +6265,7 @@
       "id": "samanid-empire",
       "name": "Samanid Empire",
       "color": "#3a6a9a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Samanid_Empire",
       "span": {
         "start": 819,
@@ -6307,7 +6307,7 @@
       "id": "saffarid-dynasty",
       "name": "Saffarids",
       "color": "#9a4a3a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Saffarid_dynasty",
       "span": {
         "start": 861,
@@ -6349,7 +6349,7 @@
       "id": "buyid-dynasty",
       "name": "Buyids",
       "color": "#4a8a7a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Buyid_dynasty",
       "span": {
         "start": 934,
@@ -6390,7 +6390,7 @@
       "id": "ghaznavid-empire",
       "name": "Ghaznavid Empire",
       "color": "#7a3a7a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Ghaznavid_Empire",
       "span": {
         "start": 977,
@@ -6432,7 +6432,7 @@
       "id": "seljuk-empire",
       "name": "Seljuk Empire",
       "color": "#2a6a5a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Seljuk_Empire",
       "span": {
         "start": 1037,
@@ -6475,7 +6475,7 @@
       "id": "ilkhanate",
       "name": "Ilkhanate",
       "color": "#5a5a9a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Ilkhanate",
       "span": {
         "start": 1256,
@@ -6548,7 +6548,7 @@
       "id": "jalayirid-sultanate",
       "name": "Jalayirids",
       "color": "#6a7a3a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Jalayirid_Sultanate",
       "span": {
         "start": 1335,
@@ -6589,7 +6589,7 @@
       "id": "qara-qoyunlu",
       "name": "Qara Qoyunlu",
       "color": "#2a2a5a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Qara_Qoyunlu",
       "span": {
         "start": 1374,
@@ -6630,7 +6630,7 @@
       "id": "aq-qoyunlu",
       "name": "Aq Qoyunlu",
       "color": "#c0c0a0",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Aq_Qoyunlu",
       "span": {
         "start": 1348,
@@ -6676,9 +6676,7 @@
             },
             "note": "The infobox life span ends in 1508."
           }
-        ],
-        "startEvent": "siege-of-trebizond",
-        "endEvent": "collapse-of-the-aq-qoyunlu-rule-in-iran"
+        ]
       },
       "memberships": [
         {
@@ -6697,7 +6695,7 @@
       "id": "timurid-empire",
       "name": "Timurid Empire",
       "color": "#3a8a8a",
-      "parent": "iran",
+      "parent": "iran-iraq",
       "url": "https://en.wikipedia.org/wiki/Timurid_Empire",
       "span": {
         "start": 1370,
@@ -6719,9 +6717,7 @@
               "sourceLocation": "infobox year_end: 1507"
             }
           }
-        ],
-        "startEvent": "establishment-of-timurid-empire",
-        "endEvent": "fall-of-herat"
+        ]
       },
       "memberships": [
         {
@@ -8773,6 +8769,14 @@
                 "sourceKey": "wp-kashmir-sultanate",
                 "sourceLocation": "infobox life span: 1339–1589"
               }
+            },
+            {
+              "year": 1586,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox year_end: 14 October 1586"
+              },
+              "note": "The infobox year_end gives the fall of Srinagar to the Mughals in 1586; the Chaks surrendered in 1589."
             }
           ]
         }
@@ -9208,8 +9212,7 @@
                 "sourceLocation": "infobox year_end: 1526"
               }
             }
-          ],
-          "endEvent": "first-battle-of-panipat"
+          ]
         }
       ],
       "memberships": [
@@ -9333,8 +9336,7 @@
               "sourceLocation": "infobox year_end: 1573"
             }
           }
-        ],
-        "startEvent": "declared-independence-from-delhi-sultanate"
+        ]
       },
       "memberships": [
         {
@@ -9816,8 +9818,7 @@
               "sourceLocation": "infobox year_end: 1574"
             }
           }
-        ],
-        "startEvent": "berar-sultanate-declares-independence"
+        ]
       },
       "memberships": [
         {
@@ -10266,8 +10267,7 @@
               "sourceLocation": "infobox year_end: 1619"
             }
           }
-        ],
-        "startEvent": "fall-of-the-polonnaruwa-kingdom-by-kalinga-maghas-invasion-o"
+        ]
       },
       "memberships": [
         {
@@ -10643,8 +10643,7 @@
               "sourceLocation": "infobox year_end: 1826"
             }
           }
-        ],
-        "startEvent": "ahom-kingdom-established-by-sukapha"
+        ]
       },
       "memberships": [
         {
@@ -11943,6 +11942,1387 @@
       ]
     },
     {
+      "id": "se-asia-oceania",
+      "name": "Southeast Asia and Oceania",
+      "color": "#2a8a7a"
+    },
+    {
+      "id": "mainland-se-asia",
+      "name": "Mainland Southeast Asia",
+      "color": "#3a8a5a",
+      "parent": "se-asia-oceania"
+    },
+    {
+      "id": "pyu",
+      "name": "Pyu city-states",
+      "color": "#8a6a3a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Pyu_city-states",
+      "ids": {
+        "wikidata": "Q1627675"
+      },
+      "span": {
+        "start": -199,
+        "end": 1050,
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-pyu",
+              "sourceLocation": "category \"World Heritage Sites in Myanmar\""
+            },
+            {
+              "sourceKey": "wp-pyu",
+              "sourceLocation": "category \"Tourist attractions in Myanmar\""
+            },
+            {
+              "sourceKey": "wp-pyu",
+              "sourceLocation": "category \"4th century in Burma\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chenla",
+      "name": "Chenla",
+      "color": "#3a6a5a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Chenla",
+      "ids": {
+        "wikidata": "Q1057118"
+      },
+      "span": {
+        "start": 550,
+        "end": 802
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-chenla",
+              "sourceLocation": "category \"Chenla\" (in \"Ancient Thailand\")"
+            },
+            {
+              "sourceKey": "wp-chenla",
+              "sourceLocation": "category \"Chenla\" (in \"Ancient Cambodia\")"
+            },
+            {
+              "sourceKey": "wp-chenla",
+              "sourceLocation": "category \"Chenla\" (in \"Ancient Vietnam\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "champa",
+      "name": "Champa (Lâm Ấp)",
+      "color": "#9a5a4a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Champa",
+      "ids": {
+        "wikidata": "Q216786"
+      },
+      "span": {
+        "start": 192,
+        "end": 1832
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-champa",
+              "sourceLocation": "category \"1832 in Vietnam\""
+            },
+            {
+              "sourceKey": "wp-champa",
+              "sourceLocation": "category \"19th-century disestablishments in Vietnam\""
+            },
+            {
+              "sourceKey": "wp-champa",
+              "sourceLocation": "category \"2nd-century establishments in Vietnam\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cambodia",
+      "name": "Cambodia (Khmer Empire)",
+      "color": "#a8603a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Khmer_Empire",
+      "phases": [
+        {
+          "name": "Khmer Empire",
+          "start": 802,
+          "end": 1431,
+          "startDates": [
+            {
+              "year": 802,
+              "source": {
+                "sourceKey": "wp-khmer-empire",
+                "sourceLocation": "infobox life span: 802–1431 AD"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1431,
+              "source": {
+                "sourceKey": "wp-khmer-empire",
+                "sourceLocation": "infobox date_end: 1431"
+              }
+            }
+          ],
+          "startEvent": "consecration-of-jayavarman-ii",
+          "endEvent": "fall-of-angkor"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-khmer-empire",
+              "sourceLocation": "infobox capital: Mahendraparvata / (early 9th century) / Hariharalaya / (mid 9th centur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pagan-kingdom",
+      "name": "Pagan Kingdom",
+      "color": "#c09a3a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Pagan_Kingdom",
+      "span": {
+        "start": 849,
+        "end": 1297,
+        "startDates": [
+          {
+            "year": 849,
+            "source": {
+              "sourceKey": "wp-pagan-kingdom",
+              "sourceLocation": "infobox year_start: 849"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1297,
+            "source": {
+              "sourceKey": "wp-pagan-kingdom",
+              "sourceLocation": "infobox year_end: 1297"
+            }
+          }
+        ],
+        "startEvent": "founding-of-kingdom",
+        "endEvent": "myinsaing-takeover"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-pagan-kingdom",
+              "sourceLocation": "infobox capital: Pagan (849–1287)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-ava",
+      "name": "Kingdom of Ava",
+      "color": "#8a6a3a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Ava",
+      "span": {
+        "start": 1365,
+        "end": 1555,
+        "startDates": [
+          {
+            "year": 1365,
+            "source": {
+              "sourceKey": "wp-kingdom-of-ava",
+              "sourceLocation": "infobox year_start: 1365"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1555,
+            "source": {
+              "sourceKey": "wp-kingdom-of-ava",
+              "sourceLocation": "infobox year_end: 1555"
+            }
+          }
+        ],
+        "startEvent": "kingdom-of-ava-founded"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-ava",
+              "sourceLocation": "infobox capital: Sagaing / Pinya / Ava"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanthawaddy-kingdom",
+      "name": "Hanthawaddy Kingdom",
+      "color": "#6a8a3a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Hanthawaddy_kingdom",
+      "span": {
+        "start": 1287,
+        "end": 1552,
+        "startDates": [
+          {
+            "year": 1287,
+            "source": {
+              "sourceKey": "wp-hanthawaddy-kingdom",
+              "sourceLocation": "infobox year_start: 1287"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1552,
+            "source": {
+              "sourceKey": "wp-hanthawaddy-kingdom",
+              "sourceLocation": "infobox year_end: 1552"
+            }
+          }
+        ],
+        "startEvent": "independence-from-pagan"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-hanthawaddy-kingdom",
+              "sourceLocation": "infobox capital: Martaban (1287–1364) / Donwun (1364–1369) / Pegu (1369–1538, 1550–1552"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sukhothai-kingdom",
+      "name": "Sukhothai Kingdom",
+      "color": "#3a6a9a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sukhothai_Kingdom",
+      "span": {
+        "start": 1238,
+        "end": 1438,
+        "startDates": [
+          {
+            "year": 1238,
+            "source": {
+              "sourceKey": "wp-sukhothai-kingdom",
+              "sourceLocation": "infobox life span: 1238–1438"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1438,
+            "source": {
+              "sourceKey": "wp-sukhothai-kingdom",
+              "sourceLocation": "infobox date_end: 1438"
+            }
+          }
+        ],
+        "startEvent": "sukhothai-kingdom-established",
+        "endEvent": "annexed-to-ayutthaya"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sukhothai-kingdom",
+              "sourceLocation": "infobox capital: Sukhothai (1238–1347) / Song Khwae (1347–1438)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thailand",
+      "name": "Thailand (Ayutthaya)",
+      "color": "#2a4a9a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Ayutthaya_Kingdom",
+      "phases": [
+        {
+          "name": "Ayutthaya Kingdom",
+          "start": 1351,
+          "end": 1767,
+          "startDates": [
+            {
+              "year": 1351,
+              "source": {
+                "sourceKey": "wp-ayutthaya-kingdom",
+                "sourceLocation": "infobox life span: 1351–1767"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1767,
+              "source": {
+                "sourceKey": "wp-ayutthaya-kingdom",
+                "sourceLocation": "infobox date_end: 7 April 1767"
+              }
+            }
+          ],
+          "startEvent": "kingdom-official-establishment"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-ayutthaya-kingdom",
+              "sourceLocation": "infobox capital: Ayutthaya (1351–1463, 1488–early 1680s, 1688–1767) / Phitsanulok (prin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lan-na",
+      "name": "Lan Na",
+      "color": "#7a3a6a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Lanna_Kingdom",
+      "span": {
+        "start": 1296,
+        "end": 1775,
+        "startDates": [
+          {
+            "year": 1296,
+            "source": {
+              "sourceKey": "wp-lanna-kingdom",
+              "sourceLocation": "infobox life span: 1296–1775"
+            }
+          },
+          {
+            "year": 1292,
+            "source": {
+              "sourceKey": "wp-lanna-kingdom",
+              "sourceLocation": "infobox date_start: 1292"
+            },
+            "note": "The same article gives this year too."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1775,
+            "source": {
+              "sourceKey": "wp-lanna-kingdom",
+              "sourceLocation": "infobox date_end: 15 January 1775"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-lanna-kingdom",
+              "sourceLocation": "infobox capital: Chiang Mai (1296-1775)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lan-xang",
+      "name": "Lan Xang",
+      "color": "#a83a5a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Lan_Xang",
+      "span": {
+        "start": 1353,
+        "end": 1707,
+        "startDates": [
+          {
+            "year": 1353,
+            "source": {
+              "sourceKey": "wp-lan-xang",
+              "sourceLocation": "infobox year_start: 1353"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1707,
+            "source": {
+              "sourceKey": "wp-lan-xang",
+              "sourceLocation": "infobox year_end: 1707"
+            }
+          }
+        ],
+        "startEvent": "lan-xang-founded"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-lan-xang",
+              "sourceLocation": "infobox capital: Luang Prabang (1353–1560) / Vientiane (1560–1707)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vietnam",
+      "name": "Vietnam (Đại Việt)",
+      "color": "#c0302a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Lê_dynasty",
+      "phases": [
+        {
+          "name": "Ngô dynasty",
+          "start": 939,
+          "end": 965,
+          "startDates": [
+            {
+              "year": 939,
+              "source": {
+                "sourceKey": "wp-ng-dynasty",
+                "sourceLocation": "infobox year_start: 939"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 965,
+              "source": {
+                "sourceKey": "wp-ng-dynasty",
+                "sourceLocation": "infobox year_end: 965"
+              }
+            }
+          ],
+          "startEvent": "ng-quy-n-founded-the-dynasty",
+          "endEvent": "anarchy-of-the-12-warlords"
+        },
+        {
+          "name": "Đinh dynasty",
+          "start": 968,
+          "end": 980,
+          "startDates": [
+            {
+              "year": 968,
+              "source": {
+                "sourceKey": "wp-inh-dynasty",
+                "sourceLocation": "infobox year_start: 968"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 980,
+              "source": {
+                "sourceKey": "wp-inh-dynasty",
+                "sourceLocation": "infobox year_end: 980"
+              }
+            }
+          ],
+          "startEvent": "inh-b-l-nh-ends-the-anarchy-of-the-12-warlords-and-establish",
+          "endEvent": "general-l-ho-n-succeeded-the-throne"
+        },
+        {
+          "name": "Early Lê dynasty",
+          "start": 980,
+          "end": 1009,
+          "startDates": [
+            {
+              "year": 980,
+              "source": {
+                "sourceKey": "wp-anterior-l-dynasty",
+                "sourceLocation": "infobox year_start: 980"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1009,
+              "source": {
+                "sourceKey": "wp-anterior-l-dynasty",
+                "sourceLocation": "infobox year_end: 1009"
+              }
+            }
+          ],
+          "startEvent": "general-l-ho-n-succeeded-the-throne",
+          "endEvent": "death-of-l-ng-a-tri-u"
+        },
+        {
+          "name": "Lý dynasty",
+          "start": 1009,
+          "end": 1225,
+          "startDates": [
+            {
+              "year": 1009,
+              "source": {
+                "sourceKey": "wp-l-dynasty",
+                "sourceLocation": "infobox year_start: 1009"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1225,
+              "source": {
+                "sourceKey": "wp-l-dynasty",
+                "sourceLocation": "infobox year_end: 1225"
+              }
+            }
+          ],
+          "startEvent": "coronation-of-l-c-ng-u-n",
+          "endEvent": "l-chi-u-ho-ng-abdicates-cedes-throne-to-tr-n-c-nh"
+        },
+        {
+          "name": "Trần dynasty",
+          "start": 1225,
+          "end": 1400,
+          "startDates": [
+            {
+              "year": 1225,
+              "source": {
+                "sourceKey": "wp-tr-n-dynasty",
+                "sourceLocation": "infobox year_start: 1225"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1400,
+              "source": {
+                "sourceKey": "wp-tr-n-dynasty",
+                "sourceLocation": "infobox year_end: 1400"
+              }
+            }
+          ],
+          "startEvent": "l-chi-u-ho-ng-abdicates-cedes-throne-to-tr-n-c-nh",
+          "endEvent": "tr-n-thi-u-ceded-the-throne-to-h-qu-ly"
+        },
+        {
+          "name": "Hồ dynasty",
+          "start": 1400,
+          "end": 1407,
+          "startDates": [
+            {
+              "year": 1400,
+              "source": {
+                "sourceKey": "wp-h-dynasty",
+                "sourceLocation": "infobox year_start: 1400"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1407,
+              "source": {
+                "sourceKey": "wp-h-dynasty",
+                "sourceLocation": "infobox year_end: 1407"
+              }
+            }
+          ],
+          "startEvent": "tr-n-thi-u-ceded-the-throne-to-h-qu-ly"
+        },
+        {
+          "name": "Later Lê dynasty",
+          "start": 1428,
+          "end": 1527,
+          "startDates": [
+            {
+              "year": 1428,
+              "source": {
+                "sourceKey": "wp-l-dynasty",
+                "sourceLocation": "infobox life span: 1428–1527"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1527,
+              "source": {
+                "sourceKey": "wp-l-dynasty",
+                "sourceLocation": "infobox life span: 1428–1527"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Later Lê dynasty (restored)",
+          "start": 1533,
+          "end": 1789,
+          "startDates": [
+            {
+              "year": 1533,
+              "source": {
+                "sourceKey": "wp-l-dynasty",
+                "sourceLocation": "infobox life span: 1533–1789"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1789,
+              "source": {
+                "sourceKey": "wp-l-dynasty",
+                "sourceLocation": "infobox life span: 1533–1789"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "red-river-delta",
+          "sources": [
+            {
+              "sourceKey": "wp-l-dynasty",
+              "sourceLocation": "infobox capital: Đông Kinh (1428–1527 and 1592–1789) / Tây Kinh (temp) (1543–1592)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maritime-se-asia",
+      "name": "Maritime Southeast Asia",
+      "color": "#3a7aa8",
+      "parent": "se-asia-oceania"
+    },
+    {
+      "id": "tarumanagara",
+      "name": "Tarumanagara",
+      "color": "#9a6a2a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Tarumanagara",
+      "ids": {
+        "wikidata": "Q2247225"
+      },
+      "span": {
+        "start": 358,
+        "end": 669,
+        "endDates": [
+          {
+            "year": 669,
+            "source": {
+              "sourceKey": "wp-tarumanagara",
+              "sourceLocation": "infobox (invasion by Sriwijaya)"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-tarumanagara",
+              "sourceLocation": "category \"Tarumanagara\" (in \"Hindu Buddhist states in Indonesia\")"
+            },
+            {
+              "sourceKey": "wp-tarumanagara",
+              "sourceLocation": "category \"Tarumanagara\" (in \"History of West Java\")"
+            },
+            {
+              "sourceKey": "wp-tarumanagara",
+              "sourceLocation": "category \"Tarumanagara\" (in \"Precolonial states of Indonesia\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bujang-valley",
+      "name": "Bujang Valley (Kedah)",
+      "color": "#8a5a3a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Bujang_Valley",
+      "ids": {
+        "wikidata": "Q3181128"
+      },
+      "span": {
+        "start": 110,
+        "end": 1350,
+        "startDates": [
+          {
+            "year": 110,
+            "source": {
+              "sourceKey": "wp-bujang",
+              "sourceLocation": "lead (Sungai Batu monument)"
+            }
+          },
+          {
+            "year": 450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-bujang",
+              "sourceLocation": "lead ('5th to 14th century CE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1350,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-bujang",
+              "sourceLocation": "lead ('5th to 14th century CE')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-bujang",
+              "sourceLocation": "category \"Archaeological sites in Malaysia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kutai",
+      "name": "Kutai (East Borneo)",
+      "color": "#5a5a8a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Kutai",
+      "ids": {
+        "wikidata": "Q1794655"
+      },
+      "span": {
+        "start": 399,
+        "end": 1635,
+        "startDates": [
+          {
+            "year": 399,
+            "source": {
+              "sourceKey": "wp-kutai",
+              "sourceLocation": "lead and Kutai Martapura Kingdom"
+            }
+          },
+          {
+            "year": 350,
+            "source": {
+              "sourceKey": "wp-kutai",
+              "sourceLocation": "History of Indonesia sidebar ('Kutai Kingdom 350–1605')"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-kutai",
+              "sourceLocation": "category \"Former countries in Borneo\""
+            },
+            {
+              "sourceKey": "wp-kutai",
+              "sourceLocation": "category \"Precolonial states of Indonesia\""
+            },
+            {
+              "sourceKey": "wp-kutai",
+              "sourceLocation": "category \"Hindu Buddhist states in Indonesia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sa-huynh-kalanay",
+      "name": "Sa Huỳnh–Kalanay trade sphere",
+      "color": "#3a7a7a",
+      "parent": "maritime-se-asia",
+      "span": {
+        "start": -499,
+        "end": 1500,
+        "startDates": [
+          {
+            "year": -499,
+            "source": {
+              "sourceKey": "wp-sa-huynh-classical",
+              "sourceLocation": "Trade network ('500 BC to AD 1500')"
+            }
+          },
+          {
+            "year": -399,
+            "source": {
+              "sourceKey": "wp-kalanay",
+              "sourceLocation": "lead (pottery 'dated 400 BC to AD 1500')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-kalanay",
+              "sourceLocation": "category \"Caves of the Philippines\""
+            },
+            {
+              "sourceKey": "wp-kalanay",
+              "sourceLocation": "category \"Archaeological sites in the Philippines\""
+            },
+            {
+              "sourceKey": "wp-kalanay",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "taiwan",
+          "sources": [
+            {
+              "sourceKey": "wp-prehistory-taiwan",
+              "sourceLocation": "category \"Prehistoric Taiwan\""
+            },
+            {
+              "sourceKey": "wp-prehistory-taiwan",
+              "sourceLocation": "category \"History of Taiwan by period\""
+            },
+            {
+              "sourceKey": "wp-prehistory-taiwan",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "srivijaya",
+      "name": "Srivijaya",
+      "color": "#c0702a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Srivijaya",
+      "span": {
+        "start": 671,
+        "end": 1025,
+        "startDates": [
+          {
+            "year": 671,
+            "source": {
+              "sourceKey": "wp-srivijaya",
+              "sourceLocation": "infobox year_start: c. 671"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1025,
+            "source": {
+              "sourceKey": "wp-srivijaya",
+              "sourceLocation": "infobox year_end: 1025"
+            }
+          }
+        ],
+        "startEvent": "founded",
+        "endEvent": "chola-invasion-of-srivijaya"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-srivijaya",
+              "sourceLocation": "infobox capital: Palembang295"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mataram-kingdom",
+      "name": "Mataram Kingdom",
+      "color": "#8a5a3a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Mataram_kingdom",
+      "span": {
+        "start": 716,
+        "end": 1017,
+        "startDates": [
+          {
+            "year": 716,
+            "source": {
+              "sourceKey": "wp-mataram-kingdom",
+              "sourceLocation": "infobox year_start: 716 AD"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1017,
+            "source": {
+              "sourceKey": "wp-mataram-kingdom",
+              "sourceLocation": "infobox year_end: 1017 AD"
+            }
+          }
+        ],
+        "startEvent": "sanjaya-ascends-the-throne",
+        "endEvent": "dharmawangsa-defeat-to-wurawari"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-mataram-kingdom",
+              "sourceLocation": "infobox capital: Medang / Poh Pitu / Tamwlang / Watugaluh / Wwatan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kediri-kingdom",
+      "name": "Kediri Kingdom",
+      "color": "#6a7a3a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Kediri_kingdom",
+      "span": {
+        "start": 1042,
+        "end": 1293,
+        "startDates": [
+          {
+            "year": 1042,
+            "source": {
+              "sourceKey": "wp-kediri-kingdom",
+              "sourceLocation": "infobox year_start: 1042"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1293,
+            "source": {
+              "sourceKey": "wp-kediri-kingdom",
+              "sourceLocation": "infobox year_end: 1293"
+            }
+          }
+        ],
+        "startEvent": "airlangga-divided-his-kingdom-into-janggala-and-panjalu",
+        "endEvent": "conquered-by-the-mongols-and-majapahit"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-kediri-kingdom",
+              "sourceLocation": "infobox capital: Dahanapūra (modern Kediri)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "singhasari",
+      "name": "Singhasari",
+      "color": "#5a5a8a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Singhasari",
+      "span": {
+        "start": 1222,
+        "end": 1292,
+        "startDates": [
+          {
+            "year": 1222,
+            "source": {
+              "sourceKey": "wp-singhasari",
+              "sourceLocation": "infobox year_start: 1222"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1292,
+            "source": {
+              "sourceKey": "wp-singhasari",
+              "sourceLocation": "infobox year_end: 1292"
+            }
+          }
+        ],
+        "startEvent": "kertajaya-defeat-to-ken-arok-of-singhasari",
+        "endEvent": "revival-of-the-kediri-by-jayakatwang"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-singhasari",
+              "sourceLocation": "infobox capital: Tumapel, later called Kutaraja Singhasari (modern outskirt Malang)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "majapahit",
+      "name": "Majapahit",
+      "color": "#a83a3a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Majapahit",
+      "span": {
+        "start": 1293,
+        "end": 1527,
+        "startDates": [
+          {
+            "year": 1293,
+            "source": {
+              "sourceKey": "wp-majapahit",
+              "sourceLocation": "infobox year_start: 1293"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1527,
+            "source": {
+              "sourceKey": "wp-majapahit",
+              "sourceLocation": "infobox year_end: 1527"
+            }
+          }
+        ],
+        "startEvent": "establishment-of-majapahit-after-the-mongol-invasion"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-majapahit",
+              "sourceLocation": "infobox capital: Majapahit (Trowulan)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "samudera-pasai-sultanate",
+      "name": "Samudera Pasai Sultanate",
+      "color": "#2a7a4a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Samudera_Pasai_Sultanate",
+      "span": {
+        "start": 1267,
+        "end": 1524,
+        "startDates": [
+          {
+            "year": 1267,
+            "source": {
+              "sourceKey": "wp-samudera-pasai-sultanate",
+              "sourceLocation": "infobox year_start: 1267"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1524,
+            "source": {
+              "sourceKey": "wp-samudera-pasai-sultanate",
+              "sourceLocation": "infobox year_end: 1524"
+            }
+          }
+        ],
+        "startEvent": "foundation",
+        "endEvent": "conquered-by-the-aceh-sultanate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-samudera-pasai-sultanate",
+              "sourceLocation": "infobox capital: Pasai"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "malacca-sultanate",
+      "name": "Malacca Sultanate",
+      "color": "#c0a03a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Malacca_Sultanate",
+      "span": {
+        "start": 1400,
+        "end": 1511,
+        "startDates": [
+          {
+            "year": 1400,
+            "source": {
+              "sourceKey": "wp-malacca-sultanate",
+              "sourceLocation": "infobox life span: c. 1400–1511/1528"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1511,
+            "source": {
+              "sourceKey": "wp-malacca-sultanate",
+              "sourceLocation": "infobox life span: c. 1400–1511/1528"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-malacca-sultanate",
+              "sourceLocation": "infobox capital: Malacca / (1400–1511) / Bintan / (1511–1526) / Kampar / (1526–1528)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-sulu",
+      "name": "Sultanate of Sulu",
+      "color": "#3a8a8a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Sulu",
+      "span": {
+        "start": 1457,
+        "end": 1915,
+        "startDates": [
+          {
+            "year": 1457,
+            "source": {
+              "sourceKey": "wp-sultanate-of-sulu",
+              "sourceLocation": "infobox year_start: c. 1457"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1915,
+            "source": {
+              "sourceKey": "wp-sultanate-of-sulu",
+              "sourceLocation": "infobox year_end: 1915"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-sulu",
+              "sourceLocation": "infobox capital: Buansa (1457–1878) / Maimbung (1878–1893) / Palawan (1893–1915)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brunei",
+      "name": "Brunei",
+      "color": "#d0c03a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Brunei_(1368–1888)",
+      "phases": [
+        {
+          "name": "Sultanate of Brunei",
+          "start": 1368,
+          "end": 1888,
+          "startDates": [
+            {
+              "year": 1368,
+              "source": {
+                "sourceKey": "wp-sultanate-of-brunei-1368-1888",
+                "sourceLocation": "infobox year_start: 1368"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1888,
+              "source": {
+                "sourceKey": "wp-sultanate-of-brunei-1368-1888",
+                "sourceLocation": "infobox year_end: 1888"
+              }
+            }
+          ],
+          "startEvent": "early-bruneian-conquests"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-brunei-1368-1888",
+              "sourceLocation": "infobox capital: Kota Batu (1368–1660) / Brunei Town, Kampong Ayer (1660–1920)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oceania-group",
+      "name": "Oceania",
+      "color": "#3a6a8a",
+      "parent": "se-asia-oceania"
+    },
+    {
+      "id": "pohnpei",
+      "name": "Pohnpei (Micronesia)",
+      "color": "#5a7a6a",
+      "parent": "oceania-group",
+      "url": "https://en.wikipedia.org/wiki/Nan_Madol",
+      "ids": {
+        "wikidata": "Q846967"
+      },
+      "span": {
+        "start": 1,
+        "end": 1628,
+        "startDates": [
+          {
+            "year": 1,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-nan-madol",
+              "sourceLocation": "Archaeology ('probably around AD 1')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "micronesia",
+          "sources": [
+            {
+              "sourceKey": "wp-nan-madol",
+              "sourceLocation": "category \"Archaeological sites in the Federated States of Micronesia\""
+            },
+            {
+              "sourceKey": "wp-nan-madol",
+              "sourceLocation": "category \"Buildings and structures on the National Register of Historic Places in the Federated States of Micronesia\""
+            },
+            {
+              "sourceKey": "wp-nan-madol",
+              "sourceLocation": "category \"Historic districts on the National Register of Historic Places in the Federated States of Micronesia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tonga",
+      "name": "Tonga",
+      "color": "#a8302a",
+      "parent": "oceania-group",
+      "url": "https://en.wikipedia.org/wiki/Tuʻi_Tonga_Empire",
+      "phases": [
+        {
+          "name": "Tuʻi Tonga Empire",
+          "start": 950,
+          "end": 1865,
+          "startDates": [
+            {
+              "year": 950,
+              "source": {
+                "sourceKey": "wp-tu-i-tonga-empire",
+                "sourceLocation": "infobox year_start: 950"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1865,
+              "source": {
+                "sourceKey": "wp-tu-i-tonga-empire",
+                "sourceLocation": "infobox year_end: 1865"
+              }
+            }
+          ],
+          "startEvent": "aho-eitu-brought-his-faction-to-samoa"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "polynesia",
+          "sources": [
+            {
+              "sourceKey": "wp-tu-i-tonga-empire",
+              "sourceLocation": "infobox capital: Toloa / Heketā / Muʻa"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "africa",
       "name": "Africa south of the Sahara",
       "color": "#9a5a2a"
@@ -12848,14 +14228,6 @@
         "wikipedia"
       ]
     },
-    "wp-revolutionary-serbia": {
-      "name": "Revolutionary Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-principality-of-serbia": {
       "name": "Principality of Serbia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
@@ -12867,6 +14239,14 @@
     "wp-serbia": {
       "name": "Serbia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -12904,17 +14284,17 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -13224,14 +14604,6 @@
         "wikipedia"
       ]
     },
-    "wp-garamantes-classical": {
-      "name": "Wikipedia: Garamantes",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-garamantes": {
       "name": "Wikipedia: Garamantes",
       "url": "https://en.wikipedia.org/wiki/Garamantes",
@@ -13239,6 +14611,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-17"
+    },
+    "wp-garamantes-classical": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-rustamid-dynasty": {
       "name": "Rustamid dynasty (Wikipedia)",
@@ -13552,14 +14932,6 @@
         "wikipedia"
       ]
     },
-    "wp-alchon": {
-      "name": "Wikipedia: Alchon Huns",
-      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-sagala": {
       "name": "Wikipedia: Sagala",
       "url": "https://en.wikipedia.org/wiki/Sagala",
@@ -13567,6 +14939,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-alchon": {
+      "name": "Wikipedia: Alchon Huns",
+      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-karkota-dynasty": {
       "name": "Karkota dynasty (Wikipedia)",
@@ -13872,14 +15252,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
@@ -13887,6 +15259,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -14024,9 +15404,9 @@
         "wikipedia"
       ]
     },
-    "wp-tibet-history": {
-      "name": "Wikipedia: History of Tibet",
-      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+    "wp-tibetan-empire": {
+      "name": "Wikipedia: Tibetan Empire",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
       "tags": [
         "wikipedia"
       ],
@@ -14040,9 +15420,9 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-tibetan-empire": {
-      "name": "Wikipedia: Tibetan Empire",
-      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
       "tags": [
         "wikipedia"
       ],
@@ -14195,6 +15575,278 @@
     "wp-ryukyu-kingdom": {
       "name": "Ryukyu Kingdom (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ryukyu_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pyu": {
+      "name": "Wikipedia: Pyu city-states",
+      "url": "https://en.wikipedia.org/wiki/Pyu_city-states",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-chenla": {
+      "name": "Wikipedia: Chenla",
+      "url": "https://en.wikipedia.org/wiki/Chenla",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-champa": {
+      "name": "Wikipedia: Champa",
+      "url": "https://en.wikipedia.org/wiki/Champa",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-khmer-empire": {
+      "name": "Khmer Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khmer_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pagan-kingdom": {
+      "name": "Pagan Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pagan_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-ava": {
+      "name": "Kingdom of Ava (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Ava",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hanthawaddy-kingdom": {
+      "name": "Hanthawaddy kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hanthawaddy_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sukhothai-kingdom": {
+      "name": "Sukhothai Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sukhothai_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ayutthaya-kingdom": {
+      "name": "Ayutthaya Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ayutthaya_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-lanna-kingdom": {
+      "name": "Lanna Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lanna_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-lan-xang": {
+      "name": "Lan Xang (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lan_Xang",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ng-dynasty": {
+      "name": "Ngô dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ngô_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-inh-dynasty": {
+      "name": "Đinh dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Đinh_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-anterior-l-dynasty": {
+      "name": "Anterior Lê dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anterior_Lê_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-l-dynasty": {
+      "name": "Lý dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lý_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tr-n-dynasty": {
+      "name": "Trần dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Trần_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-h-dynasty": {
+      "name": "Hồ dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hồ_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tarumanagara": {
+      "name": "Wikipedia: Tarumanagara",
+      "url": "https://en.wikipedia.org/wiki/Tarumanagara",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-bujang": {
+      "name": "Wikipedia: Bujang Valley",
+      "url": "https://en.wikipedia.org/wiki/Bujang_Valley",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kutai": {
+      "name": "Wikipedia: Kutai",
+      "url": "https://en.wikipedia.org/wiki/Kutai",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-prehistory-taiwan": {
+      "name": "Wikipedia: Prehistory of Taiwan",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kalanay": {
+      "name": "Wikipedia: Kalanay Cave",
+      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-sa-huynh-classical": {
+      "name": "Wikipedia: Sa Huỳnh culture",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-srivijaya": {
+      "name": "Srivijaya (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Srivijaya",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mataram-kingdom": {
+      "name": "Mataram kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mataram_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kediri-kingdom": {
+      "name": "Kediri kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kediri_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-singhasari": {
+      "name": "Singhasari (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Singhasari",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-majapahit": {
+      "name": "Majapahit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Majapahit",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-samudera-pasai-sultanate": {
+      "name": "Samudera Pasai Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samudera_Pasai_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-malacca-sultanate": {
+      "name": "Malacca Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malacca_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-sulu": {
+      "name": "Sultanate of Sulu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Sulu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-brunei-1368-1888": {
+      "name": "Sultanate of Brunei (1368–1888) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Brunei_(1368–1888)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nan-madol": {
+      "name": "Wikipedia: Nan Madol",
+      "url": "https://en.wikipedia.org/wiki/Nan_Madol",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tu-i-tonga-empire": {
+      "name": "Tuʻi Tonga Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tuʻi_Tonga_Empire",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -21076,6 +22728,1133 @@
         {
           "sourceKey": "wp-ryukyu-kingdom",
           "sourceLocation": "infobox event_start: Unification of Okinawa Island, 1429"
+        }
+      ]
+    },
+    {
+      "uuid": "consecration-of-jayavarman-ii",
+      "title": "Consecration of Jayavarman II",
+      "descr": "",
+      "start": 802,
+      "tracks": [
+        "cambodia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khmer-empire",
+          "sourceLocation": "infobox event_start: Consecration of Jayavarman II, 802"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-angkor",
+      "title": "Fall of Angkor",
+      "descr": "",
+      "start": 1431,
+      "tracks": [
+        "cambodia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khmer-empire",
+          "sourceLocation": "infobox event_end: Fall of Angkor, 1431"
+        }
+      ]
+    },
+    {
+      "uuid": "construction-of-angkor-wat",
+      "title": "Construction of Angkor Wat",
+      "descr": "",
+      "start": 1113,
+      "end": 1150,
+      "tracks": [
+        "cambodia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khmer-empire",
+          "sourceLocation": "infobox event1: Construction of Angkor&nbsp;Wat, 1113–1150"
+        }
+      ]
+    },
+    {
+      "uuid": "lan-xang-founded",
+      "title": "Lan Xang founded by Fa Ngum",
+      "descr": "",
+      "start": 1353,
+      "tracks": [
+        "cambodia",
+        "lan-xang"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khmer-empire",
+          "sourceLocation": "infobox event2: Lan Xang founded, 1353"
+        },
+        {
+          "sourceKey": "wp-lan-xang",
+          "sourceLocation": "infobox event_start: Founded by Fa Ngum, 1353"
+        }
+      ]
+    },
+    {
+      "uuid": "founding-of-kingdom",
+      "title": "Pagan Kingdom founded",
+      "descr": "",
+      "start": 849,
+      "tracks": [
+        "pagan-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pagan-kingdom",
+          "sourceLocation": "infobox event_start: Founding of kingdom, 23 December 849"
+        }
+      ]
+    },
+    {
+      "uuid": "myinsaing-takeover",
+      "title": "Myinsaing takeover",
+      "descr": "",
+      "start": 1297,
+      "tracks": [
+        "pagan-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pagan-kingdom",
+          "sourceLocation": "infobox event_end: Myinsaing takeover, 17 December 1297"
+        }
+      ]
+    },
+    {
+      "uuid": "creation-of-burmese-alphabet",
+      "title": "creation of Burmese alphabet",
+      "descr": "",
+      "start": 984,
+      "end": 1035,
+      "tracks": [
+        "pagan-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pagan-kingdom",
+          "sourceLocation": "infobox event1: creation of Burmese alphabet, 984 and 1035"
+        }
+      ]
+    },
+    {
+      "uuid": "pagan-kingdoms-expansion",
+      "title": "Pagan Kingdom's expansion",
+      "descr": "",
+      "start": 1050,
+      "tracks": [
+        "pagan-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pagan-kingdom",
+          "sourceLocation": "infobox event2: Pagan Kingdom's expansion, 1050s–60s"
+        }
+      ]
+    },
+    {
+      "uuid": "peak",
+      "title": "Pagan Kingdom at its peak",
+      "descr": "",
+      "start": 1174,
+      "end": 1250,
+      "tracks": [
+        "pagan-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pagan-kingdom",
+          "sourceLocation": "infobox event3: Peak, 1174–1250"
+        }
+      ]
+    },
+    {
+      "uuid": "first-mongol-invasion",
+      "title": "First Mongol invasion of Burma",
+      "descr": "",
+      "start": 1277,
+      "tracks": [
+        "pagan-kingdom",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pagan-kingdom",
+          "sourceLocation": "infobox event4: First Mongol invasion, 1277–87"
+        }
+      ]
+    },
+    {
+      "uuid": "kingdom-of-ava-founded",
+      "title": "Kingdom of Ava founded",
+      "descr": "",
+      "start": 1365,
+      "tracks": [
+        "kingdom-of-ava"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-ava",
+          "sourceLocation": "infobox event_start: Kingdom of Ava founded, 26 February 1365"
+        }
+      ]
+    },
+    {
+      "uuid": "saw-ommas-rebellion",
+      "title": "Saw Omma's rebellion",
+      "descr": "",
+      "start": 1367,
+      "tracks": [
+        "kingdom-of-ava"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-ava",
+          "sourceLocation": "infobox event1: Saw Omma's rebellion, September 1367"
+        }
+      ]
+    },
+    {
+      "uuid": "forty-years-war",
+      "title": "Forty Years' War",
+      "descr": "",
+      "start": 1385,
+      "end": 1424,
+      "tracks": [
+        "kingdom-of-ava",
+        "hanthawaddy-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-ava",
+          "sourceLocation": "infobox event2: Forty Years' War, 1385–1424"
+        },
+        {
+          "sourceKey": "wp-hanthawaddy-kingdom",
+          "sourceLocation": "infobox event2: Forty Years' War, 1385–1424"
+        }
+      ]
+    },
+    {
+      "uuid": "start-of-house-of-mohnyin",
+      "title": "Start of House of Mohnyin",
+      "descr": "",
+      "start": 1426,
+      "tracks": [
+        "kingdom-of-ava"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-ava",
+          "sourceLocation": "infobox event3: Start of House of Mohnyin, 16 May 1426"
+        }
+      ]
+    },
+    {
+      "uuid": "independence-from-pagan",
+      "title": "Independence from Pagan",
+      "descr": "",
+      "start": 1287,
+      "tracks": [
+        "hanthawaddy-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hanthawaddy-kingdom",
+          "sourceLocation": "infobox event_start: Independence from Pagan, 30 January 1287"
+        }
+      ]
+    },
+    {
+      "uuid": "vassal-of-sukhothai",
+      "title": "Vassal of Sukhothai",
+      "descr": "",
+      "start": 1287,
+      "tracks": [
+        "hanthawaddy-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hanthawaddy-kingdom",
+          "sourceLocation": "infobox event1: Vassal of Sukhothai, 1287–1298, 1307–1317, 1330"
+        }
+      ]
+    },
+    {
+      "uuid": "golden-age",
+      "title": "Hanthawaddy golden age",
+      "descr": "",
+      "start": 1426,
+      "end": 1534,
+      "tracks": [
+        "hanthawaddy-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hanthawaddy-kingdom",
+          "sourceLocation": "infobox event3: Golden Age, 1426–1534"
+        }
+      ]
+    },
+    {
+      "uuid": "sukhothai-kingdom-established",
+      "title": "Sukhothai Kingdom established",
+      "descr": "",
+      "start": 1238,
+      "tracks": [
+        "sukhothai-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sukhothai-kingdom",
+          "sourceLocation": "infobox event_start: Kingdom established, 1238"
+        }
+      ]
+    },
+    {
+      "uuid": "annexed-to-ayutthaya",
+      "title": "Annexed to Ayutthaya",
+      "descr": "",
+      "start": 1438,
+      "tracks": [
+        "sukhothai-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sukhothai-kingdom",
+          "sourceLocation": "infobox event_end: Annexed to Ayutthaya, 1438"
+        }
+      ]
+    },
+    {
+      "uuid": "tributary-of-ayutthaya",
+      "title": "Tributary of Ayutthaya",
+      "descr": "",
+      "start": 1378,
+      "end": 1438,
+      "tracks": [
+        "sukhothai-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sukhothai-kingdom",
+          "sourceLocation": "infobox event1: Tributary of Ayutthaya, 1378–1438"
+        }
+      ]
+    },
+    {
+      "uuid": "kingdom-official-establishment",
+      "title": "Ayutthaya Kingdom established",
+      "descr": "",
+      "start": 1351,
+      "tracks": [
+        "thailand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ayutthaya-kingdom",
+          "sourceLocation": "infobox event_start: Kingdom official establishment, 4 March 1351"
+        }
+      ]
+    },
+    {
+      "uuid": "lopburi-and-suphanburi-rivalry",
+      "title": "Lopburi and Suphanburi rivalry",
+      "descr": "",
+      "start": 1370,
+      "end": 1409,
+      "tracks": [
+        "thailand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ayutthaya-kingdom",
+          "sourceLocation": "infobox event1: Lopburi and Suphanburi rivalry, 1370–1409"
+        }
+      ]
+    },
+    {
+      "uuid": "union-with-the-northern-cities",
+      "title": "Union with the Northern Cities",
+      "descr": "",
+      "start": 1378,
+      "end": 1569,
+      "tracks": [
+        "thailand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ayutthaya-kingdom",
+          "sourceLocation": "infobox event2: Union with the Northern Cities, 1378–1569"
+        }
+      ]
+    },
+    {
+      "uuid": "founding-of-chiang-mai",
+      "title": "Founding of Chiang Mai",
+      "descr": "",
+      "start": 1296,
+      "tracks": [
+        "lan-na"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-lanna-kingdom",
+          "sourceLocation": "infobox event1: Founding of Chiang Mai, 1296"
+        }
+      ]
+    },
+    {
+      "uuid": "annexation-of-phayao",
+      "title": "Annexation of Phayao",
+      "descr": "",
+      "start": 1338,
+      "tracks": [
+        "lan-na"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-lanna-kingdom",
+          "sourceLocation": "infobox event2: Annexation of Phayao, 1338"
+        }
+      ]
+    },
+    {
+      "uuid": "war-with-ayutthaya",
+      "title": "War with Ayutthaya",
+      "descr": "",
+      "start": 1441,
+      "end": 1474,
+      "tracks": [
+        "lan-na"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-lanna-kingdom",
+          "sourceLocation": "infobox event3: War with Ayutthaya, 1441–1474"
+        }
+      ]
+    },
+    {
+      "uuid": "i-vi-t-lan-xang-war-1479-1484",
+      "title": "Đại Việt–Lan Xang War (1479–1484)",
+      "descr": "",
+      "start": 1479,
+      "end": 1484,
+      "tracks": [
+        "lan-xang"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-lan-xang",
+          "sourceLocation": "infobox event1: Đại Việt–Lan Xang War (1479–1484), 1479–1484"
+        }
+      ]
+    },
+    {
+      "uuid": "ng-quy-n-founded-the-dynasty",
+      "title": "Ngô Quyền founded the dynasty",
+      "descr": "",
+      "start": 939,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ng-dynasty",
+          "sourceLocation": "infobox event_start: Ngô Quyền founded the dynasty, February 1 939"
+        }
+      ]
+    },
+    {
+      "uuid": "anarchy-of-the-12-warlords",
+      "title": "Anarchy of the 12 Warlords",
+      "descr": "",
+      "start": 965,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ng-dynasty",
+          "sourceLocation": "infobox event_end: Anarchy of the 12 Warlords, 965"
+        }
+      ]
+    },
+    {
+      "uuid": "d-ng-tam-kha-seized-the-throne",
+      "title": "Dương Tam Kha seized the throne",
+      "descr": "",
+      "start": 944,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ng-dynasty",
+          "sourceLocation": "infobox event1: Dương Tam Kha seized the throne, 944"
+        }
+      ]
+    },
+    {
+      "uuid": "overthrow-of-d-ng-tam-kha-with-ng-x-ng-v-n-and-ng-x-ng-ng-p-",
+      "title": "Overthrow of Dương Tam Kha, with Ngô Xương Văn and Ngô Xương Ngập both declared as kings",
+      "descr": "",
+      "start": 950,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ng-dynasty",
+          "sourceLocation": "infobox event2: Overthrow of Dương Tam Kha, with Ngô Xương Văn and Ngô Xương Ngập both declared as kings, 950"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-ng-x-ng-ng-p",
+      "title": "Death of Ngô Xương Ngập",
+      "descr": "",
+      "start": 954,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ng-dynasty",
+          "sourceLocation": "infobox event3: Death of Ngô Xương Ngập, 954"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-ng-x-ng-v-n",
+      "title": "Death of Ngô Xương Văn",
+      "descr": "",
+      "start": 965,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ng-dynasty",
+          "sourceLocation": "infobox event4: Death of Ngô Xương Văn, 965"
+        }
+      ]
+    },
+    {
+      "uuid": "inh-b-l-nh-ends-the-anarchy-of-the-12-warlords-and-establish",
+      "title": "Đinh Bộ Lĩnh ends the Anarchy of the 12 Warlords and establishes dynasty",
+      "descr": "",
+      "start": 968,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-inh-dynasty",
+          "sourceLocation": "infobox event_start: Đinh Bộ Lĩnh ends the Anarchy of the 12 Warlords and establishes dynasty, 968"
+        }
+      ]
+    },
+    {
+      "uuid": "general-l-ho-n-succeeded-the-throne",
+      "title": "General Lê Hoàn succeeded the throne",
+      "descr": "",
+      "start": 980,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-inh-dynasty",
+          "sourceLocation": "infobox event_end: General Lê Hoàn succeeded the throne, 980"
+        },
+        {
+          "sourceKey": "wp-anterior-l-dynasty",
+          "sourceLocation": "infobox event_start: Empress Dương Vân Nga enthroned Lê Hoàn, 980"
+        }
+      ]
+    },
+    {
+      "uuid": "inh-b-l-nh-and-inh-li-n-assassinated",
+      "title": "Đinh Bộ Lĩnh and Đinh Liễn assassinated",
+      "descr": "",
+      "start": 979,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-inh-dynasty",
+          "sourceLocation": "infobox event1: Đinh Bộ Lĩnh and Đinh Liễn assassinated, 979"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-l-ng-a-tri-u",
+      "title": "Death of Lê Ngọa Triều",
+      "descr": "",
+      "start": 1009,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-anterior-l-dynasty",
+          "sourceLocation": "infobox event_end: Death of Lê Ngọa Triều, 1009"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-b-ch-ng-981",
+      "title": "Battle of Bạch Đằng (981)",
+      "descr": "",
+      "start": 980,
+      "end": 981,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-anterior-l-dynasty",
+          "sourceLocation": "infobox event1: Battle of Bạch Đằng (981), 980–981"
+        }
+      ]
+    },
+    {
+      "uuid": "l-ng-a-tri-u-murdered-and-stole-the-throne-from-l-trung-t-ng",
+      "title": "Lê Ngọa Triều murdered and stole the throne from Lê Trung Tông",
+      "descr": "",
+      "start": 1005,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-anterior-l-dynasty",
+          "sourceLocation": "infobox event2: Lê Ngọa Triều murdered and stole the throne from Lê Trung Tông, 1005"
+        }
+      ]
+    },
+    {
+      "uuid": "coronation-of-l-c-ng-u-n",
+      "title": "Coronation of Lý Công Uẩn",
+      "descr": "",
+      "start": 1009,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-l-dynasty",
+          "sourceLocation": "infobox event_start: Coronation of Lý Công Uẩn, 21 November 1009"
+        }
+      ]
+    },
+    {
+      "uuid": "l-chi-u-ho-ng-abdicates-cedes-throne-to-tr-n-c-nh",
+      "title": "Lý Chiêu Hoàng abdicates, cedes throne to Trần Cảnh",
+      "descr": "",
+      "start": 1225,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-l-dynasty",
+          "sourceLocation": "infobox event_end: Lý Chiêu Hoàng abdicates, cedes throne to Trần Cảnh, 1225"
+        },
+        {
+          "sourceKey": "wp-tr-n-dynasty",
+          "sourceLocation": "infobox event_start: Coronation of Trần Cảnh, January 10 1225"
+        }
+      ]
+    },
+    {
+      "uuid": "war-with-dali-kingdom",
+      "title": "War with Dali kingdom",
+      "descr": "",
+      "start": 1014,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-l-dynasty",
+          "sourceLocation": "infobox event1: War with Dali kingdom, 1014"
+        }
+      ]
+    },
+    {
+      "uuid": "l-thanh-t-ng-changes-the-state-name-from-i-c-vi-t-to-i-vi-t",
+      "title": "Lý Thánh Tông changes the state name from Đại Cồ Việt to Đại Việt",
+      "descr": "",
+      "start": 1054,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-l-dynasty",
+          "sourceLocation": "infobox event2: Lý Thánh Tông changes the state name from Đại Cồ Việt to Đại Việt, 1054"
+        }
+      ]
+    },
+    {
+      "uuid": "l-song-war",
+      "title": "Lý–Song War",
+      "descr": "",
+      "start": 1075,
+      "end": 1077,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-l-dynasty",
+          "sourceLocation": "infobox event3: Lý–Song War, 1075–1077"
+        }
+      ]
+    },
+    {
+      "uuid": "tr-n-thi-u-ceded-the-throne-to-h-qu-ly",
+      "title": "Trần Thiếu Đế ceded the throne to Hồ Quý Ly",
+      "descr": "",
+      "start": 1400,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tr-n-dynasty",
+          "sourceLocation": "infobox event_end: Trần Thiếu Đế ceded the throne to Hồ Quý Ly, March 23 1400"
+        }
+      ]
+    },
+    {
+      "uuid": "regent-of-tr-n-th-a-and-tr-n-th",
+      "title": "Regent of Trần Thừa and Trần Thủ Độ",
+      "descr": "",
+      "start": 1226,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tr-n-dynasty",
+          "sourceLocation": "infobox event1: Regent of Trần Thừa and Trần Thủ Độ, 1226"
+        }
+      ]
+    },
+    {
+      "uuid": "mongol-invasions-of-vietnam",
+      "title": "Mongol invasions of Vietnam",
+      "descr": "",
+      "start": 1258,
+      "tracks": [
+        "vietnam",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tr-n-dynasty",
+          "sourceLocation": "infobox event2: Mongol invasions of Vietnam, 1258, 1285 and 1287–88"
+        }
+      ]
+    },
+    {
+      "uuid": "coup-overthrown-of-d-ng-nh-t-l",
+      "title": "Coup overthrown of Dương Nhật Lễ",
+      "descr": "",
+      "start": 1370,
+      "tracks": [
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tr-n-dynasty",
+          "sourceLocation": "infobox event3: Coup overthrown of Dương Nhật Lễ, 1370"
+        }
+      ]
+    },
+    {
+      "uuid": "founded",
+      "title": "Srivijaya founded",
+      "descr": "",
+      "start": 671,
+      "tracks": [
+        "srivijaya"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-srivijaya",
+          "sourceLocation": "infobox event_start: Founded, c. 671"
+        }
+      ]
+    },
+    {
+      "uuid": "chola-invasion-of-srivijaya",
+      "title": "Chola invasion of Srivijaya",
+      "descr": "",
+      "start": 1025,
+      "tracks": [
+        "srivijaya"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-srivijaya",
+          "sourceLocation": "infobox event_end: Chola invasion of Srivijaya, 1025"
+        }
+      ]
+    },
+    {
+      "uuid": "conquest-of-kedah",
+      "title": "Conquest of Kedah",
+      "descr": "",
+      "start": 682,
+      "end": 685,
+      "tracks": [
+        "srivijaya"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-srivijaya",
+          "sourceLocation": "infobox event1: Conquest of Kedah, c. 682–685"
+        }
+      ]
+    },
+    {
+      "uuid": "mataram-srivijayan-wars",
+      "title": "Mataram–Srivijayan wars",
+      "descr": "",
+      "start": 937,
+      "end": 1016,
+      "tracks": [
+        "srivijaya"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-srivijaya",
+          "sourceLocation": "infobox event2: Mataram–Srivijayan wars, c. 937–1016"
+        }
+      ]
+    },
+    {
+      "uuid": "sanjaya-ascends-the-throne",
+      "title": "Sanjaya ascends the throne",
+      "descr": "",
+      "start": 716,
+      "tracks": [
+        "mataram-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mataram-kingdom",
+          "sourceLocation": "infobox event_start: Sanjaya ascends the throne, 716 AD"
+        }
+      ]
+    },
+    {
+      "uuid": "dharmawangsa-defeat-to-wurawari",
+      "title": "Dharmawangsa defeat to Wurawari",
+      "descr": "",
+      "start": 1017,
+      "tracks": [
+        "mataram-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mataram-kingdom",
+          "sourceLocation": "infobox event_end: Dharmawangsa defeat to Wurawari, 1017 AD"
+        }
+      ]
+    },
+    {
+      "uuid": "airlangga-divided-his-kingdom-into-janggala-and-panjalu",
+      "title": "Airlangga divided his kingdom into Janggala and Panjalu",
+      "descr": "",
+      "start": 1042,
+      "tracks": [
+        "kediri-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kediri-kingdom",
+          "sourceLocation": "infobox event_start: Airlangga divided his kingdom into Janggala and Panjalu, 1042"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-by-the-mongols-and-majapahit",
+      "title": "Conquered by the Mongols and Majapahit",
+      "descr": "",
+      "start": 1293,
+      "tracks": [
+        "kediri-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kediri-kingdom",
+          "sourceLocation": "infobox event_end: Conquered by the Mongols and Majapahit, 1293"
+        }
+      ]
+    },
+    {
+      "uuid": "janggala-conquered-by-jayabaya",
+      "title": "Janggala conquered by Jayabaya",
+      "descr": "",
+      "start": 1135,
+      "tracks": [
+        "kediri-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kediri-kingdom",
+          "sourceLocation": "infobox event1: Janggala conquered by Jayabaya, 1135"
+        }
+      ]
+    },
+    {
+      "uuid": "kakawin-bharatayuddha-finished-writing",
+      "title": "Kakawin Bharatayuddha finished writing",
+      "descr": "",
+      "start": 1157,
+      "tracks": [
+        "kediri-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kediri-kingdom",
+          "sourceLocation": "infobox event2: Kakawin Bharatayuddha finished writing, 1157"
+        }
+      ]
+    },
+    {
+      "uuid": "kertajaya-defeat-to-ken-arok-of-singhasari",
+      "title": "Kertajaya defeat to Ken Arok of Singhasari",
+      "descr": "",
+      "start": 1222,
+      "tracks": [
+        "kediri-kingdom",
+        "singhasari"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kediri-kingdom",
+          "sourceLocation": "infobox event3: Kertajaya defeat to Ken Arok of Singhasari, 1222"
+        },
+        {
+          "sourceKey": "wp-singhasari",
+          "sourceLocation": "infobox event_start: Battle of Genter, 1222"
+        }
+      ]
+    },
+    {
+      "uuid": "revival-of-the-kediri-by-jayakatwang",
+      "title": "Revival of the Kediri by Jayakatwang",
+      "descr": "",
+      "start": 1292,
+      "tracks": [
+        "kediri-kingdom",
+        "singhasari"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kediri-kingdom",
+          "sourceLocation": "infobox event4: Revival of the Kediri by Jayakatwang, 1292"
+        },
+        {
+          "sourceKey": "wp-singhasari",
+          "sourceLocation": "infobox event_end: Jayakatwang rebellion, 1292"
+        }
+      ]
+    },
+    {
+      "uuid": "establishment-of-majapahit-after-the-mongol-invasion",
+      "title": "Establishment of Majapahit after the Mongol invasion",
+      "descr": "",
+      "start": 1293,
+      "tracks": [
+        "majapahit"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-majapahit",
+          "sourceLocation": "infobox event_start: Establishment of Majapahit after the Mongol invasion, 1293"
+        }
+      ]
+    },
+    {
+      "uuid": "coronation-of-king-kertarajasa-jayawardhana",
+      "title": "Coronation of King Kertarajasa Jayawardhana",
+      "descr": "",
+      "start": 1293,
+      "tracks": [
+        "majapahit"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-majapahit",
+          "sourceLocation": "infobox event1: Coronation of King Kertarajasa Jayawardhana, 10 November 1293"
+        }
+      ]
+    },
+    {
+      "uuid": "palapa-oath",
+      "title": "Palapa oath",
+      "descr": "",
+      "start": 1334,
+      "end": 1336,
+      "tracks": [
+        "majapahit"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-majapahit",
+          "sourceLocation": "infobox event2: Palapa oath, 1334 or 1336"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-bubat",
+      "title": "Battle of Bubat",
+      "descr": "",
+      "start": 1357,
+      "tracks": [
+        "majapahit"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-majapahit",
+          "sourceLocation": "infobox event3: Battle of Bubat, 1357"
+        }
+      ]
+    },
+    {
+      "uuid": "regreg-war-majapahit-civil-war",
+      "title": "Regreg War (Majapahit civil war)",
+      "descr": "",
+      "start": 1404,
+      "end": 1406,
+      "tracks": [
+        "majapahit"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-majapahit",
+          "sourceLocation": "infobox event4: Regreg War (Majapahit civil war), 1404–1406"
+        }
+      ]
+    },
+    {
+      "uuid": "demak-majapahit-conflicts",
+      "title": "Demak–Majapahit conflicts",
+      "descr": "",
+      "start": 1478,
+      "end": 1527,
+      "tracks": [
+        "majapahit"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-majapahit",
+          "sourceLocation": "infobox event5: Demak–Majapahit conflicts, 1478–1527"
+        }
+      ]
+    },
+    {
+      "uuid": "foundation",
+      "title": "Samudera Pasai founded",
+      "descr": "",
+      "start": 1267,
+      "tracks": [
+        "samudera-pasai-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-samudera-pasai-sultanate",
+          "sourceLocation": "infobox event_start: Foundation, 1267"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-by-the-aceh-sultanate",
+      "title": "Conquered by the Aceh Sultanate",
+      "descr": "",
+      "start": 1524,
+      "tracks": [
+        "samudera-pasai-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-samudera-pasai-sultanate",
+          "sourceLocation": "infobox event_end: Conquered by the Aceh Sultanate, 1524"
+        }
+      ]
+    },
+    {
+      "uuid": "founding",
+      "title": "Malacca Sultanate founded",
+      "descr": "",
+      "start": 1400,
+      "tracks": [
+        "malacca-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-malacca-sultanate",
+          "sourceLocation": "infobox established_event1: Founding, c. 1400"
+        }
+      ]
+    },
+    {
+      "uuid": "early-bruneian-conquests",
+      "title": "Early Bruneian conquests",
+      "descr": "",
+      "start": 1368,
+      "tracks": [
+        "brunei"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-brunei-1368-1888",
+          "sourceLocation": "infobox event_start: Early Bruneian conquests, 1368"
+        }
+      ]
+    },
+    {
+      "uuid": "establishment-of-the-sultanate",
+      "title": "Establishment of the Sultanate",
+      "descr": "",
+      "start": 1402,
+      "tracks": [
+        "brunei"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-brunei-1368-1888",
+          "sourceLocation": "infobox event1: Establishment of the Sultanate, 1402"
+        }
+      ]
+    },
+    {
+      "uuid": "aho-eitu-brought-his-faction-to-samoa",
+      "title": "ʻAhoʻeitu brought his faction to Samoa",
+      "descr": "",
+      "start": 950,
+      "tracks": [
+        "tonga"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tu-i-tonga-empire",
+          "sourceLocation": "infobox event_start: ʻAhoʻeitu brought his faction to Samoa, 950"
         }
       ]
     }
