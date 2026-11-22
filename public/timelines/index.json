@@ -21,6 +21,26 @@
       },
       "defaultTheme": "parchment",
       "map": "../maps/ancient-classical.json"
+    },
+    {
+      "id": "modern-states",
+      "title": "Modern States",
+      "file": "modern-states.json",
+      "subtitle": "Pilot: France, the German lands and the South Slavs, 1700 to today",
+      "eventCount": 26,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      }
     }
   ]
 }

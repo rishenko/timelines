@@ -1,0 +1,2462 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "modern-states",
+    "title": "Modern States",
+    "subtitle": "Pilot: France, the German lands and the South Slavs, 1700 to today",
+    "description": "States from 1700 to today: their governments as phases, unions as their own rows, and which union each state was part of when.",
+    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field.",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false,
+      "aliases": {
+        "before": [
+          "BC"
+        ],
+        "after": [
+          "AD"
+        ]
+      }
+    },
+    "increments": [
+      1,
+      5,
+      10,
+      25,
+      50
+    ],
+    "defaultIncrement": 10,
+    "range": {
+      "start": 1700,
+      "end": 2026
+    }
+  },
+  "present": 2026,
+  "tracks": [
+    {
+      "id": "western-europe",
+      "name": "Western Europe",
+      "color": "#5a6f8f"
+    },
+    {
+      "id": "central-europe",
+      "name": "Central Europe",
+      "color": "#6f5a8f"
+    },
+    {
+      "id": "southeast-europe",
+      "name": "Southeastern Europe",
+      "color": "#8f6a4a"
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "color": "#3f62b0",
+      "parent": "western-europe",
+      "url": "https://en.wikipedia.org/wiki/France",
+      "phases": [
+        {
+          "name": "Kingdom of France",
+          "start": 987,
+          "end": 1791,
+          "startDates": [
+            {
+              "year": 987,
+              "source": {
+                "sourceKey": "wp-kingdom-of-france",
+                "sourceLocation": "infobox life span: 987–1792"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1791,
+              "source": {
+                "sourceKey": "wp-kingdom-of-france-1791-92",
+                "sourceLocation": "infobox year_start: 1791"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Constitutional monarchy",
+          "start": 1791,
+          "end": 1792,
+          "startDates": [
+            {
+              "year": 1791,
+              "source": {
+                "sourceKey": "wp-kingdom-of-france-1791-92",
+                "sourceLocation": "infobox year_start: 1791"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1792,
+              "source": {
+                "sourceKey": "wp-kingdom-of-france-1791-92",
+                "sourceLocation": "infobox year_end: 1792"
+              }
+            }
+          ],
+          "endEvent": "monarchy-abolished"
+        },
+        {
+          "name": "First Republic",
+          "start": 1792,
+          "end": 1804,
+          "startDates": [
+            {
+              "year": 1792,
+              "source": {
+                "sourceKey": "wp-french-first-republic",
+                "sourceLocation": "infobox year_start: 1792"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1804,
+              "source": {
+                "sourceKey": "wp-french-first-republic",
+                "sourceLocation": "infobox year_end: 1804"
+              }
+            }
+          ],
+          "startEvent": "monarchy-abolished",
+          "endEvent": "napoleon-crowned"
+        },
+        {
+          "name": "First Empire",
+          "start": 1804,
+          "end": 1814,
+          "startDates": [
+            {
+              "year": 1804,
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 1804 – 1814"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1814,
+              "source": {
+                "sourceKey": "wp-first-french-empire",
+                "sourceLocation": "infobox life span: 1804 – 1814"
+              }
+            }
+          ],
+          "startEvent": "napoleon-crowned"
+        },
+        {
+          "name": "Bourbon Restoration",
+          "start": 1815,
+          "end": 1830,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-bourbon-restoration-in-france",
+                "sourceLocation": "infobox year_start: 1815"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1830,
+              "source": {
+                "sourceKey": "wp-bourbon-restoration-in-france",
+                "sourceLocation": "infobox year_end: 1830"
+              }
+            }
+          ],
+          "endEvent": "july-revolution"
+        },
+        {
+          "name": "July Monarchy",
+          "start": 1830,
+          "end": 1848,
+          "startDates": [
+            {
+              "year": 1830,
+              "source": {
+                "sourceKey": "wp-july-monarchy",
+                "sourceLocation": "infobox year_start: 1830"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-july-monarchy",
+                "sourceLocation": "infobox year_end: 1848"
+              }
+            }
+          ],
+          "startEvent": "july-revolution"
+        },
+        {
+          "name": "Second Republic",
+          "start": 1848,
+          "end": 1852,
+          "startDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-french-second-republic",
+                "sourceLocation": "infobox year_start: 1848"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1852,
+              "source": {
+                "sourceKey": "wp-french-second-republic",
+                "sourceLocation": "infobox year_end: 1852"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Second Empire",
+          "start": 1852,
+          "end": 1870,
+          "startDates": [
+            {
+              "year": 1852,
+              "source": {
+                "sourceKey": "wp-second-french-empire",
+                "sourceLocation": "infobox year_start: 1852"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1870,
+              "source": {
+                "sourceKey": "wp-second-french-empire",
+                "sourceLocation": "infobox year_end: 1870"
+              }
+            }
+          ],
+          "endEvent": "franco-prussian-war"
+        },
+        {
+          "name": "Third Republic",
+          "start": 1870,
+          "end": 1940,
+          "startDates": [
+            {
+              "year": 1870,
+              "source": {
+                "sourceKey": "wp-french-third-republic",
+                "sourceLocation": "infobox year_start: 1870"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-french-third-republic",
+                "sourceLocation": "infobox year_end: 1940"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vichy France",
+          "start": 1940,
+          "end": 1944,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-vichy-france",
+                "sourceLocation": "infobox year_start: 1940"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-vichy-france",
+                "sourceLocation": "infobox year_end: 1944"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Free France",
+          "start": 1940,
+          "end": 1944,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-free-france",
+                "sourceLocation": "infobox year_start: 1940"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-free-france",
+                "sourceLocation": "infobox year_end: 1944"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Provisional Government",
+          "start": 1944,
+          "end": 1946,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-provisional-government-of-the-french-republic",
+                "sourceLocation": "infobox life span: 1944–1946"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1946,
+              "source": {
+                "sourceKey": "wp-provisional-government-of-the-french-republic",
+                "sourceLocation": "infobox life span: 1944–1946"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fourth Republic",
+          "start": 1946,
+          "end": 1958,
+          "startDates": [
+            {
+              "year": 1946,
+              "source": {
+                "sourceKey": "wp-french-fourth-republic",
+                "sourceLocation": "infobox year_start: 1946"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-french-fourth-republic",
+                "sourceLocation": "infobox year_end: 1958"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fifth Republic",
+          "start": 1958,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1958,
+              "source": {
+                "sourceKey": "wp-french-fifth-republic",
+                "sourceLocation": "infobox life span: 1958–present"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-french-fifth-republic",
+              "sourceLocation": "infobox life span: 1958–present"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hre",
+      "name": "Holy Roman Empire",
+      "color": "#8a6d3b",
+      "parent": "central-europe",
+      "url": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+      "span": {
+        "start": 962,
+        "end": 1806,
+        "startDates": [
+          {
+            "year": 962,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox date_start: 2 February 962"
+            }
+          },
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox life span: 800/962–1806"
+            },
+            "note": "Counted from Charlemagne's coronation by some historians."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1806,
+            "source": {
+              "sourceKey": "wp-holy-roman-empire",
+              "sourceLocation": "infobox date_end: 6 August 1806"
+            }
+          }
+        ],
+        "endEvent": "hre-dissolved"
+      }
+    },
+    {
+      "id": "german-confederation",
+      "name": "German Confederation",
+      "color": "#6b7f3a",
+      "parent": "central-europe",
+      "url": "https://en.wikipedia.org/wiki/German_Confederation",
+      "phases": [
+        {
+          "name": "German Confederation",
+          "start": 1815,
+          "end": 1848,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1815–1848"
+              }
+            },
+            {
+              "year": 1813,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox year_start: 1813 (German campaign)"
+              },
+              "note": "The infobox dates its start to the 1813 campaign."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1815–1848"
+              }
+            }
+          ],
+          "startEvent": "gc-founded",
+          "endEvent": "revolutions-1848"
+        },
+        {
+          "name": "German Empire of 1848–49",
+          "start": 1848,
+          "end": 1849,
+          "startDates": [
+            {
+              "year": 1848,
+              "source": {
+                "sourceKey": "wp-german-empire-1848-1849",
+                "sourceLocation": "infobox year_start: 1848"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1849,
+              "source": {
+                "sourceKey": "wp-german-empire-1848-1849",
+                "sourceLocation": "infobox year_end: 1849"
+              }
+            }
+          ],
+          "startEvent": "revolutions-1848"
+        },
+        {
+          "name": "German Confederation (restored)",
+          "start": 1850,
+          "end": 1866,
+          "startDates": [
+            {
+              "year": 1850,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1850–1866"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1866,
+              "source": {
+                "sourceKey": "wp-german-confederation",
+                "sourceLocation": "infobox life span: 1850–1866"
+              }
+            }
+          ],
+          "endEvent": "austro-prussian-war"
+        }
+      ]
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "color": "#b0563f",
+      "parent": "central-europe",
+      "url": "https://en.wikipedia.org/wiki/Germany",
+      "phases": [
+        {
+          "name": "North German Confederation",
+          "start": 1866,
+          "end": 1871,
+          "startDates": [
+            {
+              "year": 1866,
+              "source": {
+                "sourceKey": "wp-north-german-confederation",
+                "sourceLocation": "infobox year_start: 1866"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1871,
+              "source": {
+                "sourceKey": "wp-north-german-confederation",
+                "sourceLocation": "infobox year_end: 1871"
+              }
+            }
+          ],
+          "startEvent": "ngc-founded",
+          "endEvent": "german-empire-proclaimed"
+        },
+        {
+          "name": "German Empire",
+          "start": 1871,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1871,
+              "source": {
+                "sourceKey": "wp-german-empire",
+                "sourceLocation": "infobox date_start: 18 January 1871"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-german-empire",
+                "sourceLocation": "infobox date_end: 9 November 1918"
+              }
+            }
+          ],
+          "startEvent": "german-empire-proclaimed",
+          "endEvent": "german-revolution"
+        },
+        {
+          "name": "Weimar Republic",
+          "start": 1918,
+          "end": 1933,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-weimar-republic",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1933,
+              "source": {
+                "sourceKey": "wp-weimar-republic",
+                "sourceLocation": "infobox year_end: 1933"
+              }
+            }
+          ],
+          "startEvent": "german-revolution"
+        },
+        {
+          "name": "Nazi Germany",
+          "start": 1933,
+          "end": 1945,
+          "startDates": [
+            {
+              "year": 1933,
+              "source": {
+                "sourceKey": "wp-nazi-germany",
+                "sourceLocation": "infobox year_start: 1933"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-nazi-germany",
+                "sourceLocation": "infobox year_end: 1945"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Allied occupation",
+          "start": 1945,
+          "end": 1949,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allied-occupied-germany",
+                "sourceLocation": "infobox date_start: 5 June 1945"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-allied-occupied-germany",
+                "sourceLocation": "infobox date_end: 7 October 1949"
+              }
+            }
+          ]
+        },
+        {
+          "name": "West Germany",
+          "start": 1949,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox year_start: 1949"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox year_end: 1990(b)"
+              }
+            }
+          ],
+          "endEvent": "reunification"
+        },
+        {
+          "name": "East Germany",
+          "start": 1949,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-east-germany",
+                "sourceLocation": "infobox year_start: 1949"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-east-germany",
+                "sourceLocation": "infobox year_end: 1990"
+              }
+            }
+          ],
+          "endEvent": "reunification"
+        },
+        {
+          "name": "Federal Republic (reunified)",
+          "start": 1990,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox event_end: Reunification, 3 October 1990(b)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-germany",
+              "sourceLocation": "lead: \"In 962, the Kingdom of Germany formed the bulk of the Holy Roman Empire.\""
+            }
+          ],
+          "startEvent": "reunification"
+        }
+      ]
+    },
+    {
+      "id": "prussia",
+      "name": "Prussia",
+      "color": "#4a5a7a",
+      "parent": "central-europe",
+      "url": "https://en.wikipedia.org/wiki/Prussia",
+      "phases": [
+        {
+          "name": "Brandenburg–Prussia",
+          "start": 1618,
+          "end": 1701,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-brandenburg-prussia",
+                "sourceLocation": "infobox year_start: 1618"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1701,
+              "source": {
+                "sourceKey": "wp-brandenburg-prussia",
+                "sourceLocation": "infobox year_end: 1701"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kingdom of Prussia",
+          "start": 1701,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1701,
+              "source": {
+                "sourceKey": "wp-kingdom-of-prussia",
+                "sourceLocation": "infobox year_start: 1701"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-kingdom-of-prussia",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ],
+          "endEvent": "german-revolution"
+        },
+        {
+          "name": "Free State of Prussia",
+          "start": 1918,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-free-state-of-prussia",
+                "sourceLocation": "infobox year_start: 1918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-free-state-of-prussia",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "startEvent": "german-revolution"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "hre",
+          "start": 1618,
+          "end": 1806,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-brandenburg-prussia",
+                "sourceLocation": "infobox year_start: 1618"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1806,
+              "source": {
+                "sourceKey": "wp-kingdom-of-prussia",
+                "sourceLocation": "infobox event1: Dissolution of the Holy Roman Empire, 6 August 1806"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-brandenburg-prussia",
+              "sourceLocation": "lead: \"Legally, the personal union between Brandenburg and Prussia continued until the dissolution of the Holy Roman Empire in 1806.\""
+            }
+          ],
+          "endEvent": "hre-dissolved"
+        },
+        {
+          "row": "german-confederation",
+          "start": 1815,
+          "end": 1866,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-kingdom-of-prussia",
+                "sourceLocation": "infobox event2: Formation of German Confederation, 8 June 1815"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1866,
+              "source": {
+                "sourceKey": "wp-kingdom-of-prussia",
+                "sourceLocation": "infobox event4: North German Confederation Treaty, 18 August 1866"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-prussia",
+              "sourceLocation": "lead: \"Attempts to create a federation remained unsuccessful and the German Confederation collapsed in 1866 when the Austro-Prussian War ensued between its two most po\""
+            }
+          ],
+          "startEvent": "gc-founded",
+          "endEvent": "austro-prussian-war"
+        },
+        {
+          "row": "germany",
+          "start": 1866,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1866,
+              "source": {
+                "sourceKey": "wp-kingdom-of-prussia",
+                "sourceLocation": "infobox event4: North German Confederation Treaty, 18 August 1866"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-free-state-of-prussia",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-prussia",
+              "sourceLocation": "lead: \"It played a significant role in the unification of Germany in 1871 and was a major constituent of the German Empire until its dissolution in 1918.\""
+            },
+            {
+              "sourceKey": "wp-free-state-of-prussia",
+              "sourceLocation": "lead: \"The Free State of Prussia (, ) was one of the constituent states of the Weimar Republic from 1918 to 1933 and then the German Reich from 1933 to 1945.\""
+            }
+          ],
+          "startEvent": "ngc-founded"
+        }
+      ]
+    },
+    {
+      "id": "yugoslavia",
+      "name": "Yugoslavia",
+      "color": "#3a7f8f",
+      "parent": "southeast-europe",
+      "url": "https://en.wikipedia.org/wiki/Yugoslavia",
+      "phases": [
+        {
+          "name": "Kingdom of Yugoslavia",
+          "start": 1918,
+          "end": 1941,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-kingdom-of-yugoslavia",
+                "sourceLocation": "infobox life span: 1918–1941"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-kingdom-of-yugoslavia",
+                "sourceLocation": "infobox life span: 1918–1941"
+              }
+            }
+          ],
+          "startEvent": "yugoslavia-created",
+          "endEvent": "axis-invasion-yugoslavia"
+        },
+        {
+          "name": "Royal government-in-exile",
+          "start": 1941,
+          "end": 1945,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-yugoslav-government-in-exile",
+                "sourceLocation": "infobox life span: 1941–1945"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-yugoslav-government-in-exile",
+                "sourceLocation": "infobox life span: 1941–1945"
+              }
+            }
+          ],
+          "startEvent": "axis-invasion-yugoslavia"
+        },
+        {
+          "name": "Democratic Federal Yugoslavia",
+          "start": 1943,
+          "end": 1945,
+          "startDates": [
+            {
+              "year": 1943,
+              "source": {
+                "sourceKey": "wp-democratic-federal-yugoslavia",
+                "sourceLocation": "infobox year_start: 1943"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-democratic-federal-yugoslavia",
+                "sourceLocation": "infobox year_end: 1945"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Socialist Federal Republic",
+          "start": 1945,
+          "end": 1992,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-socialist-federal-republic-of-yugoslavia",
+                "sourceLocation": "infobox year_start: 1945"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-socialist-federal-republic-of-yugoslavia",
+                "sourceLocation": "infobox year_end: 1992"
+              }
+            }
+          ],
+          "endEvent": "fry-proclaimed"
+        }
+      ]
+    },
+    {
+      "id": "serbia-and-montenegro",
+      "name": "Serbia and Montenegro",
+      "color": "#5f6f9f",
+      "parent": "southeast-europe",
+      "url": "https://en.wikipedia.org/wiki/Serbia_and_Montenegro",
+      "phases": [
+        {
+          "name": "Federal Republic of Yugoslavia",
+          "start": 1992,
+          "end": 2003,
+          "startDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-serbia-and-montenegro",
+                "sourceLocation": "infobox year_start: 1992"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2003,
+              "source": {
+                "sourceKey": "wp-serbia-and-montenegro",
+                "sourceLocation": "infobox event5: State Union, 4 February 2003"
+              }
+            }
+          ],
+          "startEvent": "fry-proclaimed"
+        },
+        {
+          "name": "State Union of Serbia and Montenegro",
+          "start": 2003,
+          "end": 2006,
+          "startDates": [
+            {
+              "year": 2003,
+              "source": {
+                "sourceKey": "wp-serbia-and-montenegro",
+                "sourceLocation": "infobox event5: State Union, 4 February 2003"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2006,
+              "source": {
+                "sourceKey": "wp-serbia-and-montenegro",
+                "sourceLocation": "infobox year_end: 2006"
+              }
+            }
+          ],
+          "endEvent": "montenegro-independence"
+        }
+      ]
+    },
+    {
+      "id": "serbia",
+      "name": "Serbia",
+      "color": "#a03a3a",
+      "parent": "southeast-europe",
+      "url": "https://en.wikipedia.org/wiki/Serbia",
+      "span": [
+        {
+          "start": 1804,
+          "end": 1813,
+          "startDates": [
+            {
+              "year": 1804,
+              "source": {
+                "sourceKey": "wp-revolutionary-serbia",
+                "sourceLocation": "infobox year_start: 1804"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1813,
+              "source": {
+                "sourceKey": "wp-revolutionary-serbia",
+                "sourceLocation": "infobox year_end: 1813"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1815,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia",
+                "sourceLocation": "infobox year_start: 1815"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-serbia",
+              "sourceLocation": "infobox established_event9: Republic of Serbia, 2006"
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "name": "Revolutionary Serbia",
+          "start": 1804,
+          "end": 1813,
+          "startDates": [
+            {
+              "year": 1804,
+              "source": {
+                "sourceKey": "wp-revolutionary-serbia",
+                "sourceLocation": "infobox year_start: 1804"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1813,
+              "source": {
+                "sourceKey": "wp-revolutionary-serbia",
+                "sourceLocation": "infobox year_end: 1813"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Principality of Serbia",
+          "start": 1815,
+          "end": 1882,
+          "startDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia",
+                "sourceLocation": "infobox year_start: 1815"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1882,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia",
+                "sourceLocation": "infobox year_end: 1882"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kingdom of Serbia",
+          "start": 1882,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1882,
+              "source": {
+                "sourceKey": "wp-kingdom-of-serbia",
+                "sourceLocation": "infobox year_start: 1882"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-kingdom-of-serbia",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ],
+          "endEvent": "yugoslavia-created"
+        },
+        {
+          "name": "Military Commander in Serbia (German occupation)",
+          "start": 1941,
+          "end": 1944,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-territory-of-the-military-commander-in-serbia",
+                "sourceLocation": "infobox year_start: 1941"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-territory-of-the-military-commander-in-serbia",
+                "sourceLocation": "infobox year_end: 1944"
+              }
+            }
+          ],
+          "startEvent": "axis-invasion-yugoslavia"
+        },
+        {
+          "name": "Socialist Republic of Serbia",
+          "start": 1944,
+          "end": 1992,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-socialist-republic-of-serbia",
+                "sourceLocation": "infobox life span: 1944–1992"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-socialist-republic-of-serbia",
+                "sourceLocation": "infobox life span: 1944–1992"
+              }
+            },
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-socialist-republic-of-serbia",
+                "sourceLocation": "infobox year_end: 1990 (last constitution adopted)"
+              },
+              "note": "The infobox closes its dates at the 1990 constitution."
+            }
+          ],
+          "endEvent": "fry-proclaimed"
+        },
+        {
+          "name": "Republic of Serbia (in FR Yugoslavia)",
+          "start": 1992,
+          "end": 2006,
+          "startDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-republic-of-serbia-1992-2006",
+                "sourceLocation": "infobox life span: 1992–2006"
+              }
+            },
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-republic-of-serbia-1992-2006",
+                "sourceLocation": "infobox year_start: 1990 (constitution adopted)"
+              },
+              "note": "The infobox opens its dates at the 1990 constitution."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2006,
+              "source": {
+                "sourceKey": "wp-republic-of-serbia-1992-2006",
+                "sourceLocation": "infobox life span: 1992–2006"
+              }
+            }
+          ],
+          "startEvent": "fry-proclaimed",
+          "endEvent": "montenegro-independence"
+        },
+        {
+          "name": "Republic of Serbia",
+          "start": 2006,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 2006,
+              "source": {
+                "sourceKey": "wp-serbia",
+                "sourceLocation": "infobox: Republic of Serbia (2006)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-serbia",
+              "sourceLocation": "infobox established_event9: Republic of Serbia, 2006 (current state)"
+            }
+          ],
+          "startEvent": "montenegro-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "yugoslavia",
+          "start": 1918,
+          "end": 1992,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-serbia",
+                "sourceLocation": "infobox: Kingdom of Yugoslavia (1918)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-serbia",
+                "sourceLocation": "infobox: Serbia and Montenegro / (constituent state) (1992)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-serbia",
+              "sourceLocation": "infobox established_event6: Kingdom of Yugoslavia, 1918"
+            },
+            {
+              "sourceKey": "wp-serbia",
+              "sourceLocation": "infobox established_event7: Socialist Yugoslavia (constituent republic), 1945"
+            }
+          ],
+          "startEvent": "yugoslavia-created",
+          "endEvent": "fry-proclaimed"
+        },
+        {
+          "row": "serbia-and-montenegro",
+          "start": 1992,
+          "end": 2006,
+          "startDates": [
+            {
+              "year": 1992,
+              "source": {
+                "sourceKey": "wp-serbia",
+                "sourceLocation": "infobox: Serbia and Montenegro / (constituent state) (1992)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 2006,
+              "source": {
+                "sourceKey": "wp-serbia",
+                "sourceLocation": "infobox: Republic of Serbia (2006)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-serbia",
+              "sourceLocation": "infobox established_event8: Serbia and Montenegro (constituent state), 1992"
+            }
+          ],
+          "startEvent": "fry-proclaimed",
+          "endEvent": "montenegro-independence"
+        }
+      ]
+    },
+    {
+      "id": "croatia",
+      "name": "Croatia",
+      "color": "#c07a2a",
+      "parent": "southeast-europe",
+      "url": "https://en.wikipedia.org/wiki/Croatia",
+      "span": {
+        "start": 1527,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1527,
+            "source": {
+              "sourceKey": "wp-kingdom-of-croatia-habsburg",
+              "sourceLocation": "infobox year_start: 1527"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-croatia",
+            "sourceLocation": "infobox established_event8: Declaration of independence, 25 June 1991 (current state)"
+          }
+        ]
+      },
+      "phases": [
+        {
+          "name": "Kingdom of Croatia (Habsburg)",
+          "start": 1527,
+          "end": 1868,
+          "startDates": [
+            {
+              "year": 1527,
+              "source": {
+                "sourceKey": "wp-kingdom-of-croatia-habsburg",
+                "sourceLocation": "infobox year_start: 1527"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1868,
+              "source": {
+                "sourceKey": "wp-kingdom-of-croatia-habsburg",
+                "sourceLocation": "infobox year_end: 1868"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kingdom of Croatia-Slavonia",
+          "start": 1868,
+          "end": 1918,
+          "startDates": [
+            {
+              "year": 1868,
+              "source": {
+                "sourceKey": "wp-kingdom-of-croatia-slavonia",
+                "sourceLocation": "infobox year_start: 1868"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-kingdom-of-croatia-slavonia",
+                "sourceLocation": "infobox year_end: 1918"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Banovina of Croatia",
+          "start": 1939,
+          "end": 1941,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-banovina-of-croatia",
+                "sourceLocation": "infobox year_start: 1939"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-banovina-of-croatia",
+                "sourceLocation": "infobox year_end: 1941"
+              }
+            },
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-banovina-of-croatia",
+                "sourceLocation": "infobox life_span: 1939–1945"
+              },
+              "note": "The same article gives this year too."
+            }
+          ],
+          "endEvent": "axis-invasion-yugoslavia"
+        },
+        {
+          "name": "Independent State of Croatia (Axis puppet)",
+          "start": 1941,
+          "end": 1945,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-independent-state-of-croatia",
+                "sourceLocation": "infobox year_start: 1941"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-independent-state-of-croatia",
+                "sourceLocation": "infobox year_end: 1945"
+              }
+            }
+          ],
+          "startEvent": "axis-invasion-yugoslavia"
+        },
+        {
+          "name": "Socialist Republic of Croatia",
+          "start": 1943,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1943,
+              "source": {
+                "sourceKey": "wp-socialist-republic-of-croatia",
+                "sourceLocation": "infobox year_start: 1943"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-socialist-republic-of-croatia",
+                "sourceLocation": "infobox year_end: 1991"
+              }
+            }
+          ],
+          "endEvent": "croatia-independence"
+        },
+        {
+          "name": "Republic of Croatia",
+          "start": 1991,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-croatia",
+                "sourceLocation": "infobox: Declaration of independence (25 June 1991)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-croatia",
+              "sourceLocation": "infobox established_event8: Declaration of independence, 25 June 1991 (current state)"
+            }
+          ],
+          "startEvent": "croatia-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "yugoslavia",
+          "start": 1918,
+          "end": 1941,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-croatia",
+                "sourceLocation": "infobox: Creation of Yugoslavia (4 December 1918)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-independent-state-of-croatia",
+                "sourceLocation": "infobox year_start: 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-croatia",
+              "sourceLocation": "infobox established_event6: Creation of Yugoslavia, 4 December 1918"
+            }
+          ],
+          "startEvent": "yugoslavia-created",
+          "endEvent": "axis-invasion-yugoslavia"
+        },
+        {
+          "row": "yugoslavia",
+          "start": 1943,
+          "end": 1991,
+          "startDates": [
+            {
+              "year": 1943,
+              "source": {
+                "sourceKey": "wp-socialist-republic-of-croatia",
+                "sourceLocation": "infobox year_start: 1943"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1991,
+              "source": {
+                "sourceKey": "wp-croatia",
+                "sourceLocation": "infobox: Declaration of independence (25 June 1991)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-croatia",
+              "sourceLocation": "infobox established_event7: Socialist Republic of Croatia in Yugoslavia, 9 May 1944"
+            }
+          ],
+          "endEvent": "croatia-independence"
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "wp-kingdom-of-france": {
+      "name": "Kingdom of France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-france-1791-92": {
+      "name": "Kingdom of France (1791–92) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_France_(1791–92)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-first-republic": {
+      "name": "French First Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_First_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-first-french-empire": {
+      "name": "First French Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_French_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bourbon-restoration-in-france": {
+      "name": "Bourbon Restoration in France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bourbon_Restoration_in_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-july-monarchy": {
+      "name": "July Monarchy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/July_Monarchy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-second-republic": {
+      "name": "French Second Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Second_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-french-empire": {
+      "name": "Second French Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_French_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-third-republic": {
+      "name": "French Third Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Third_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vichy-france": {
+      "name": "Vichy France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vichy_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-free-france": {
+      "name": "Free France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Free_France",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-provisional-government-of-the-french-republic": {
+      "name": "Provisional Government of the French Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Provisional_Government_of_the_French_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-fourth-republic": {
+      "name": "French Fourth Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Fourth_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-french-fifth-republic": {
+      "name": "French Fifth Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/French_Fifth_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-holy-roman-empire": {
+      "name": "Holy Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-confederation": {
+      "name": "German Confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-empire-1848-1849": {
+      "name": "German Empire (1848–1849) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Empire_(1848–1849)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-north-german-confederation": {
+      "name": "North German Confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/North_German_Confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-empire": {
+      "name": "German Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-weimar-republic": {
+      "name": "Weimar Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Weimar_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nazi-germany": {
+      "name": "Nazi Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nazi_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-allied-occupied-germany": {
+      "name": "Allied-occupied Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Allied-occupied_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-west-germany": {
+      "name": "West Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/West_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-east-germany": {
+      "name": "East Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/East_Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-germany": {
+      "name": "Germany (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Germany",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-brandenburg-prussia": {
+      "name": "Brandenburg–Prussia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Brandenburg–Prussia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-prussia": {
+      "name": "Kingdom of Prussia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Prussia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-free-state-of-prussia": {
+      "name": "Free State of Prussia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Free_State_of_Prussia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-yugoslavia": {
+      "name": "Kingdom of Yugoslavia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Yugoslavia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-yugoslav-government-in-exile": {
+      "name": "Yugoslav government-in-exile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yugoslav_government-in-exile",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-democratic-federal-yugoslavia": {
+      "name": "Democratic Federal Yugoslavia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Democratic_Federal_Yugoslavia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-socialist-federal-republic-of-yugoslavia": {
+      "name": "Socialist Federal Republic of Yugoslavia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Socialist_Federal_Republic_of_Yugoslavia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-serbia-and-montenegro": {
+      "name": "Serbia and Montenegro (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbia_and_Montenegro",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-principality-of-serbia": {
+      "name": "Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-serbia": {
+      "name": "Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-serbia": {
+      "name": "Kingdom of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-territory-of-the-military-commander-in-serbia": {
+      "name": "Territory of the Military Commander in Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Territory_of_the_Military_Commander_in_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-socialist-republic-of-serbia": {
+      "name": "Socialist Republic of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Socialist_Republic_of_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-republic-of-serbia-1992-2006": {
+      "name": "Republic of Serbia (1992–2006) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_Serbia_(1992–2006)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-croatia-habsburg": {
+      "name": "Kingdom of Croatia (Habsburg) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Croatia_(Habsburg)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-croatia": {
+      "name": "Croatia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Croatia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-croatia-slavonia": {
+      "name": "Kingdom of Croatia-Slavonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Croatia-Slavonia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-banovina-of-croatia": {
+      "name": "Banovina of Croatia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Banovina_of_Croatia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-independent-state-of-croatia": {
+      "name": "Independent State of Croatia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Independent_State_of_Croatia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-socialist-republic-of-croatia": {
+      "name": "Socialist Republic of Croatia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Socialist_Republic_of_Croatia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-storming-of-the-bastille": {
+      "name": "Storming of the Bastille (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-algerian-war": {
+      "name": "Algerian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Algerian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-franco-prussian-war": {
+      "name": "Franco-Prussian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-world-war-i": {
+      "name": "World War I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-world-war-ii": {
+      "name": "World War II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-berlin-wall": {
+      "name": "Berlin Wall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berlin_Wall",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    }
+  },
+  "tags": {
+    "wikipedia": {
+      "name": "Wikipedia"
+    }
+  },
+  "events": [
+    {
+      "uuid": "bastille",
+      "title": "Storming of the Bastille",
+      "descr": "Parisians take the royal fortress-prison on 14 July: the Revolution reaches the streets.",
+      "start": 1789,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-storming-of-the-bastille",
+          "sourceLocation": "infobox date: 14 July 1789"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "monarchy-abolished",
+      "title": "French monarchy abolished",
+      "descr": "The National Convention abolishes the monarchy on 21 September 1792 and proclaims the Republic.",
+      "start": 1792,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-french-first-republic",
+          "sourceLocation": "infobox event_start: Abolition of the French monarchy, 21 September 1792"
+        }
+      ]
+    },
+    {
+      "uuid": "napoleon-crowned",
+      "title": "Coronation of Napoleon",
+      "descr": "",
+      "start": 1804,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-french-empire",
+          "sourceLocation": "infobox: coronation, 2 December 1804"
+        }
+      ]
+    },
+    {
+      "uuid": "hundred-days",
+      "title": "Hundred Days",
+      "descr": "Napoleon returns from Elba and rules again until Waterloo; months long, so shown as an event until dates can carry months.",
+      "start": 1815,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-first-french-empire",
+          "sourceLocation": "infobox life span: 20 March – 7 July 1815"
+        }
+      ]
+    },
+    {
+      "uuid": "july-revolution",
+      "title": "July Revolution",
+      "descr": "Charles X is overthrown; Louis Philippe becomes King of the French.",
+      "start": 1830,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-july-monarchy",
+          "sourceLocation": "infobox event_pre: July Revolution, 1830"
+        }
+      ]
+    },
+    {
+      "uuid": "algerian-war",
+      "title": "Algerian War",
+      "descr": "",
+      "start": 1954,
+      "end": 1962,
+      "tracks": [
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-algerian-war",
+          "sourceLocation": "infobox date: 1954–1962"
+        }
+      ]
+    },
+    {
+      "uuid": "hre-dissolved",
+      "title": "Dissolution of the Holy Roman Empire",
+      "descr": "Francis II lays down the imperial crown on 6 August 1806.",
+      "start": 1806,
+      "tracks": [
+        "hre",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "infobox event_end: Dissolution, 6 August 1806"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "gc-founded",
+      "title": "German Confederation founded",
+      "descr": "The Congress of Vienna creates a league of 39 German states.",
+      "start": 1815,
+      "tracks": [
+        "german-confederation",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-confederation",
+          "sourceLocation": "infobox event2: Constitution adopted, 8 June 1815"
+        }
+      ]
+    },
+    {
+      "uuid": "revolutions-1848",
+      "title": "German revolutions of 1848–49",
+      "descr": "The Frankfurt Parliament tries to unite Germany under a constitution and fails.",
+      "start": 1848,
+      "end": 1849,
+      "tracks": [
+        "german-confederation",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-confederation",
+          "sourceLocation": "infobox event4: German Revolutions, 13 March 1848"
+        }
+      ]
+    },
+    {
+      "uuid": "austro-prussian-war",
+      "title": "Austro-Prussian War",
+      "descr": "Prussia defeats Austria; the Peace of Prague dissolves the German Confederation.",
+      "start": 1866,
+      "tracks": [
+        "german-confederation",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-confederation",
+          "sourceLocation": "infobox event6: Austro-Prussian War, 14 June 1866"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ngc-founded",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "ngc-founded",
+      "title": "North German Confederation Treaty",
+      "descr": "",
+      "start": 1866,
+      "tracks": [
+        "germany",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-north-german-confederation",
+          "sourceLocation": "infobox event_start: Confederation Treaty, 18 August 1866"
+        }
+      ]
+    },
+    {
+      "uuid": "franco-prussian-war",
+      "title": "Franco-Prussian War",
+      "descr": "",
+      "start": 1870,
+      "end": 1871,
+      "tracks": [
+        "france",
+        "germany",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-franco-prussian-war",
+          "sourceLocation": "infobox date: 19 July 1870 – 28 January 1871"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "german-empire-proclaimed",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "german-empire-proclaimed",
+      "title": "German Empire proclaimed",
+      "descr": "Wilhelm I is proclaimed German Emperor at Versailles on 18 January 1871.",
+      "start": 1871,
+      "tracks": [
+        "germany",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-empire",
+          "sourceLocation": "infobox event_start: Unification, 18 January 1871"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ww1",
+      "title": "First World War",
+      "descr": "",
+      "start": 1914,
+      "end": 1918,
+      "tracks": [
+        "france",
+        "germany",
+        "serbia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-world-war-i",
+          "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "german-revolution",
+      "title": "German Revolution",
+      "descr": "Wilhelm II abdicates; a republic is proclaimed and the German monarchies fall.",
+      "start": 1918,
+      "tracks": [
+        "germany",
+        "prussia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-empire",
+          "sourceLocation": "infobox event_end: Abdication of Wilhelm II and republic proclaimed, 9 November 1918"
+        }
+      ]
+    },
+    {
+      "uuid": "ww2",
+      "title": "Second World War",
+      "descr": "",
+      "start": 1939,
+      "end": 1945,
+      "tracks": [
+        "france",
+        "germany",
+        "yugoslavia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-world-war-ii",
+          "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "berlin-wall",
+      "title": "Berlin Wall",
+      "descr": "Built from 13 August 1961; opened on 9 November 1989.",
+      "start": 1961,
+      "end": 1989,
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-berlin-wall",
+          "sourceLocation": "infobox: 13 August 1961 – 9 November 1989"
+        }
+      ]
+    },
+    {
+      "uuid": "reunification",
+      "title": "German reunification",
+      "descr": "",
+      "start": 1990,
+      "tracks": [
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-west-germany",
+          "sourceLocation": "infobox event_end: Reunification, 3 October 1990(b)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "serbian-revolution",
+      "title": "Serbian Revolution",
+      "descr": "Uprisings against Ottoman rule that end in an autonomous Principality of Serbia.",
+      "start": 1804,
+      "end": 1817,
+      "tracks": [
+        "serbia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-revolutionary-serbia",
+          "sourceLocation": "infobox year_start: 1804"
+        }
+      ]
+    },
+    {
+      "uuid": "yugoslavia-created",
+      "title": "Kingdom of Serbs, Croats and Slovenes created",
+      "descr": "Serbia and the South Slav lands of Austria-Hungary unite on 1 December 1918.",
+      "start": 1918,
+      "tracks": [
+        "yugoslavia",
+        "serbia",
+        "croatia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-yugoslavia",
+          "sourceLocation": "infobox event_start: Established, 1 December 1918"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "axis-invasion-yugoslavia",
+      "title": "Axis invasion of Yugoslavia",
+      "descr": "Germany, Italy and Hungary invade on 6 April 1941; the country is partitioned.",
+      "start": 1941,
+      "tracks": [
+        "yugoslavia",
+        "serbia",
+        "croatia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-yugoslavia",
+          "sourceLocation": "infobox event8: Axis invasion, 6 April 1941"
+        }
+      ]
+    },
+    {
+      "uuid": "croatia-independence",
+      "title": "Croatia declares independence",
+      "descr": "",
+      "start": 1991,
+      "tracks": [
+        "croatia",
+        "yugoslavia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-socialist-republic-of-croatia",
+          "sourceLocation": "infobox event_end: Independence declared, 25 June 1991"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "yugoslav-wars",
+      "title": "Yugoslav Wars",
+      "descr": "Wars of independence and ethnic conflict as Yugoslavia breaks up.",
+      "start": 1991,
+      "end": 2001,
+      "tracks": [
+        "yugoslavia",
+        "serbia",
+        "croatia",
+        "serbia-and-montenegro"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-socialist-federal-republic-of-yugoslavia",
+          "sourceLocation": "infobox event9: Start of the Yugoslav Wars, 27 June 1991"
+        }
+      ]
+    },
+    {
+      "uuid": "fry-proclaimed",
+      "title": "Federal Republic of Yugoslavia proclaimed",
+      "descr": "Serbia and Montenegro form a new federation on 27 April 1992; the socialist federation is gone.",
+      "start": 1992,
+      "tracks": [
+        "yugoslavia",
+        "serbia-and-montenegro",
+        "serbia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-socialist-federal-republic-of-yugoslavia",
+          "sourceLocation": "infobox event_end: Disintegrated (FR Yugoslavia is proclaimed by Serbia and Montenegro), 27 April 1992"
+        }
+      ]
+    },
+    {
+      "uuid": "kosovo-war",
+      "title": "Kosovo War",
+      "descr": "",
+      "start": 1998,
+      "end": 1999,
+      "tracks": [
+        "serbia-and-montenegro",
+        "serbia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-serbia-and-montenegro",
+          "sourceLocation": "infobox event2: Kosovo War, 1998–1999"
+        }
+      ]
+    },
+    {
+      "uuid": "montenegro-independence",
+      "title": "Montenegro independent; the State Union ends",
+      "descr": "Montenegro leaves on 3 June 2006; Serbia declares itself the successor on 5 June.",
+      "start": 2006,
+      "tracks": [
+        "serbia-and-montenegro",
+        "serbia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-serbia-and-montenegro",
+          "sourceLocation": "infobox event_end: Independence of Serbia, 5 June 2006"
+        }
+      ]
+    }
+  ]
+}
