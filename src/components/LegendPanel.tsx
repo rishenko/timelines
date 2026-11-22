@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import type { Dataset, DateClaim, LinkKind } from '../types.ts';
 import { formatYear } from '../lib/calendar.ts';
+import { hasDayZoom } from '../lib/subYear.ts';
 import { chronologyGroups } from '../lib/chronology.ts';
 import { spanStretches } from '../lib/lifespan.ts';
 
@@ -113,6 +114,8 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     shared: data.events.some((e) => e.tracks.length > 1),
   };
   const linkKinds = new Set<LinkKind>(data.events.flatMap((e) => (e.links ?? []).map((l) => l.kind)));
+  // a timeline dated in months and days (it offers a zoom step below a year) says "date" where others say "year"
+  const days = hasDayZoom(data.meta.increments);
   const circa = formatYear(cal.yearZero ? 1200 : -1199, cal, true);
   const era = formatYear(cal.yearZero ? 0 : 1, cal);
 
@@ -179,12 +182,14 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     {
       sample: <span className="lg-bar" />,
       title: 'Span',
-      text: 'An event lasting several years, from its first to its last year.',
+      text: days
+        ? 'An event with a start and an end date, drawn from the start of its first day (or month, or year) to the end of its last. Zoomed out, one too short to show as a bar is a diamond in its middle.'
+        : 'An event lasting several years, from its first to its last year.',
     },
     {
       sample: <span className="lg-diamond" />,
-      title: 'Single-year event',
-      text: 'An event dated to one year.',
+      title: days ? 'Single-date event' : 'Single-year event',
+      text: days ? 'An event dated to one day, month or year, in the middle of it.' : 'An event dated to one year.',
     },
     {
       sample: <span className="lg-text lg-key">Key event</span>,
@@ -216,7 +221,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       sample: <span className="lg-bar uncertain" />,
       show: has.ranges,
       title: 'Uncertain start and end',
-      text: 'The lighter, striped ends of a bar are the range of years the sources give for its start and end; the darker middle is the part they agree on. If the ranges overlap, the darker part shows the event’s dates under the selected dating system.',
+      text: `The lighter, striped ends of a bar are the range of ${days ? 'dates' : 'years'} the sources give for its start and end; the darker middle is the part they agree on. If the ranges overlap, the darker part shows the event’s dates under the selected dating system.`,
     },
     {
       sample: (
@@ -227,7 +232,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
       show: has.ranges,
       title: 'Uncertain single date',
-      text: 'The lighter, striped band behind a diamond is the range of years the sources give.',
+      text: `The lighter, striped band behind a diamond is the range of ${days ? 'dates' : 'years'} the sources give.`,
     },
     {
       sample: <span className="lg-text">{circa}</span>,
@@ -263,7 +268,9 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     {
       sample: <span className="lg-gap">⋯</span>,
       title: 'Compressed gap',
-      text: 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the years skipped. Turn off “Shorten gaps with no events” in Filters to see true distances.',
+      text: days
+        ? 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the time skipped (“120 yrs”, “4 months”); the tick after it gives the full date. Zoomed in below a year, the inside of an event’s bar is never squeezed. Turn off “Shorten gaps with no events” in Filters to see true distances.'
+        : 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the years skipped. Turn off “Shorten gaps with no events” in Filters to see true distances.',
     },
     {
       sample: (

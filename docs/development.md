@@ -30,6 +30,19 @@ SNAP_OUT=after.txt npm run dom-snapshot    # after it
 cmp before.txt after.txt                   # no output: nothing visible changed
 ```
 
+Markup can match while pixels don't (one text node or two shape a label differently), so compare screenshots too.
+`npm run zoom-shots` screenshots a timeline at each of its zoom steps, at a few center years, with rows as they open
+and with every row expanded, and diffs them pixel by pixel against an earlier set (writing a `.diff.png` beside each
+shot that differs). Serve the old code and the new on two ports (a `git worktree` of `main` for the old):
+
+```sh
+npm run zoom-shots -- --url http://localhost:4323/ --out shots/before                          # old code
+npm run zoom-shots -- --url http://localhost:4324/ --out shots/after --compare shots/before    # new code
+```
+
+`--timeline <id>` picks the timeline (bundled, or from the folders in `TIMELINES_LOCAL_DATA`), `--at "-3000|-500|300"`
+the center years and `--inc "10|50"` the zoom steps. Local timelines may change while you work: diff a frozen copy.
+
 ## Code map
 
 | Path | What |
