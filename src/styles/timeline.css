@@ -840,7 +840,8 @@
   min-width: 24px;
 }
 
-/* Event categories: a glyph for the main category's kind, before the title (and in Filters → Categories) */
+/* Event categories: a glyph for the main category's kind, before the title (and in Filters → Categories). It takes
+   its colour from the text it sits in (currentColor), so it dims with a muted label, and hiding the text hides it */
 .cat-glyph {
   display: inline-block;
   flex: none;
@@ -848,7 +849,6 @@
   height: 11px;
   margin-right: 4px;
   vertical-align: -1px;
-  color: var(--text);
 }
 .region-tree .cat-glyph {
   margin: 0 2px 0 4px;
