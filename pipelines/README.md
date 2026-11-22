@@ -86,7 +86,7 @@ Then, per topic:
 
 This writes `candidates.csv` (one row per date claim) and `report.md` to `pipelines/out/extract/<topic>/`:
 - every date has a v5 `locator` and a verbatim quote;
-- each row gets a suggested importance and, with `--categories DIR`, event categories;
+- each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
 Normaliser tests: `cd pipelines/extract && python3 -m unittest test_dates`.

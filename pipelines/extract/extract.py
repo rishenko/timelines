@@ -2,10 +2,10 @@
 The date/event extractor: a topic's dated events from the dump, as candidates for review (never timeline data).
 
     pipelines/extract/.venv/bin/python -I pipelines/extract/extract.py --topic ww1 --seed "World War I" [--seed …]
-        [--cap 4000] [--prose 40] [--categories DIR] [--tables FILE] [--data DIR] [--dump NAME]
+        [--cap 4000] [--prose 40] [--categories DIR | --no-categories] [--tables FILE] [--data DIR] [--dump NAME]
 
 Needs extract-<dump>.sqlite (build_index.py, then page_props.py). Writes pipelines/out/extract/<topic>/candidates.csv
-and report.md. --categories DIR imports event_categories.py from DIR (until it is on main, pipelines/common).
+and report.md. Event categories come from pipelines/common/event_categories.py.
 Candidates keep a stable `cand_id` (article + locator + dates), so review decisions in reviewed-<topic>.csv carry over
 to a later dump's run.
 """
@@ -75,9 +75,11 @@ def main():
         raise SystemExit(__doc__)
     cap, prose_cap = opt('--cap', 4000, int), opt('--prose', 40, int)
     T = Tables(opt('--tables') or os.path.join(settings.WIKIPEDIA, f'extract-{settings.DUMP_NAME}.sqlite'), settings.DUMP_NAME)
+    # event categories: the shared classifier in pipelines/common (--categories DIR imports another copy; --no-categories skips)
     classify = None
-    if opt('--categories'):
-        sys.path.insert(0, opt('--categories'))
+    if '--no-categories' not in ARGS:
+        if opt('--categories'):
+            sys.path.insert(0, opt('--categories'))
         import event_categories
         classify = event_categories.classify
     # the seeds' own links (route "link")
@@ -220,7 +222,7 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
           f'- Old Style flagged: {sum(r["span"]["old_style"] for r in rows)}. Circa: {sum(r["span"]["circa"] for r in rows)}.',
           f'- Event categories: ' + ('from event_categories.classify on each cluster\'s primary claim: '
                                      + ', '.join(f'{k} {v}' for k, v in Counter((r.get('category') or [("(none)",)])[0][0] for r in primary.values()).most_common(12))
-                                     if has_cat else 'not run (pass --categories).') + '.', '',
+                                     if has_cat else 'not run (--no-categories).') + '.', '',
           '## Top clusters (suggested importance 1)', '', '| Article | Dates | Kind | Inbound links | Category |', '|---|---|---|---|---|']
     for r in sorted((r for r in primary.values() if r['importance'] == 1), key=lambda r: -r['score'])[:60]:
         cat = (r.get('category') or [('',)])[0][0]
