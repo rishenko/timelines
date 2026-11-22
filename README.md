@@ -32,7 +32,7 @@ npm run build    # writes the site to dist/
 
 `dist/` is plain HTML, JavaScript and CSS with relative paths. Copy it to any static web server, in any folder.
 There is no backend or database: the site's timelines are JSON files in `dist/timelines/`, readers can add more from
-a link or a file, and readers' changes stay in their own browser. `npm run deploy` publishes `dist/` to GitHub Pages.
+a link or a file, and readers' changes stay in their own browser. The Deploy workflow (started by hand, from `main`) publishes it to GitHub Pages; see [development.md](docs/development.md#commands).
 
 The built site doesn't need to be built again to change its timelines: replace, add or remove files in
 `timelines/` on the server and update `timelines/index.json`, the site's list (see below).
