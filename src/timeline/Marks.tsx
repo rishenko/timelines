@@ -4,6 +4,8 @@ import { formatEventDates } from '../lib/years.ts';
 import { formatDate, formatYear } from '../lib/calendar.ts';
 import { isApprox, type ResolvedEvent } from '../lib/chronology.ts';
 import type { Mark } from './layout.ts';
+import { CategoryGlyph } from '../components/CategoryGlyph.tsx';
+import type { EventCategories } from '../state/categoryFilter.ts';
 
 const MARK_H = 22;
 const POINT_HALF = 7;
@@ -31,7 +33,14 @@ export function ClusterMark({
   events,
   related,
   onClick,
-}: Common & { events: ResolvedEvent[]; related: boolean; onClick: (midYear: number) => void }) {
+  namedCategory,
+}: Common & {
+  events: ResolvedEvent[];
+  related: boolean;
+  onClick: (midYear: number) => void;
+  /** The categories of the key event it names, if any: its glyph goes before the name. */
+  namedCategory?: EventCategories;
+}) {
   const line = (e: ResolvedEvent) => `${formatDate(e.start, e.startMonth, e.startDay, cal, isApprox(e))} · ${e.title}`;
   const keys = events.filter((e) => e.importance === 1);
   // key events head the tooltip's list, so a reader sees what matters before what was folded for space
@@ -43,7 +52,7 @@ export function ClusterMark({
   // the name starts with the pill's visible text (WCAG 2.5.3), then says what the rest are
   const others = keys.filter((e) => e !== named).map((e) => e.title);
   const label = named
-    ? `${named.title} +${events.length - 1}: a key event and ${events.length - 1} more, ${span}${others.length ? `; also key: ${others.join(', ')}` : ''}; zoom in`
+    ? `${named.title} +${events.length - 1}: a key event${namedCategory ? ` (${namedCategory.labels.join('; ')})` : ''} and ${events.length - 1} more, ${span}${others.length ? `; also key: ${others.join(', ')}` : ''}; zoom in`
     : `${events.length} more events, ${span}; zoom in`;
   return (
     <button
@@ -56,6 +65,7 @@ export function ClusterMark({
       onFocus={() => onStopFocus(m.key)}
       onClick={() => onClick(mid)}
     >
+      {named && namedCategory && <CategoryGlyph kind={namedCategory.kind} />}
       {named && <span className="key-name">{named.title}</span>}
       {named ? `+${events.length - 1}` : `+${events.length}`}
     </button>
@@ -66,6 +76,8 @@ interface EventMarkProps extends Common {
   event: ResolvedEvent;
   /** The event's rows, by name, for its accessible name. */
   trackNames: Map<string, string>;
+  /** Its categories: the main one's kind draws a glyph before the title; both are in the accessible name. */
+  category?: EventCategories;
   selected: boolean;
   related: boolean;
   /** Edit mode marks events the reader has changed. */
@@ -114,6 +126,7 @@ export const EventMark = memo(function EventMark(p: EventMarkProps) {
         dates,
         e.tracks.map((t) => p.trackNames.get(t) ?? t).join(' and '),
         e.importance === 1 ? 'key event' : '',
+        ...(p.category?.labels ?? []),
         uncertain ? 'uncertain date' : '',
       ]
         .filter(Boolean)
@@ -142,6 +155,7 @@ export const EventMark = memo(function EventMark(p: EventMarkProps) {
             : undefined
         }
       >
+        {p.category && <CategoryGlyph kind={p.category.kind} />}
         {e.title}
       </span>
     </button>

@@ -13,7 +13,7 @@ const cal: Calendar = { before: 'BCE', after: 'CE', yearZero: false };
 const ev = (uuid: string, start: number, key = false): ResolvedEvent =>
   ({ uuid, title: uuid, descr: '', start, tracks: ['row'], sources: [], ...(key ? { importance: 1 } : {}) }) as ResolvedEvent;
 
-function pill(events: ResolvedEvent[], keyEventId?: string) {
+function pill(events: ResolvedEvent[], keyEventId?: string, namedCategory?: { kind: string; labels: string[] }) {
   const mark: Mark = {
     key: 'row:cluster',
     kind: 'cluster',
@@ -29,7 +29,7 @@ function pill(events: ResolvedEvent[], keyEventId?: string) {
     cy: 0,
   };
   const { container } = render(
-    <ClusterMark mark={mark} laneTop={0} labelW={0} cal={cal} isTabStop={false} onStopFocus={() => {}} events={events} related={false} onClick={() => {}} />,
+    <ClusterMark mark={mark} laneTop={0} labelW={0} cal={cal} isTabStop={false} onStopFocus={() => {}} events={events} related={false} onClick={() => {}} namedCategory={namedCategory} />,
   );
   return container.querySelector('button')!;
 }
@@ -44,6 +44,12 @@ describe('ClusterMark', () => {
     );
     // key events head the tooltip's list
     expect(b.title.split('\n').slice(1).map((l) => l.split(' · ')[1])).toEqual(['Second World War (key event)', 'Stalingrad (key event)', 'Treaty']);
+  });
+
+  it('shows the named key event’s glyph, and its category in the accessible name', () => {
+    const b = pill([ev('Second World War', 1939, true), ev('Treaty', 1940)], 'Second World War', { kind: 'conflict', labels: ['Wars and battles: War'] });
+    expect(b.querySelector('.cat-glyph')?.getAttribute('data-kind')).toBe('conflict');
+    expect(b.getAttribute('aria-label')).toBe('Second World War +1: a key event (Wars and battles: War) and 1 more, 1939 CE to 1940 CE; zoom in');
   });
 
   it('is a plain count when it holds no key event', () => {

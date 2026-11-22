@@ -69,6 +69,8 @@ export interface LayoutOptions {
   headerPx?: Record<string, number>;
   /** Lanes drawn as a thin line with nothing in them (rows with nothing in view, when shown thin). */
   thin?: ReadonlySet<string>;
+  /** Events whose title starts with a category glyph, which widens the label by `glyphPx`. */
+  glyphs?: ReadonlySet<string>;
 }
 
 export const LAYOUT_DEFAULTS = {
@@ -81,6 +83,8 @@ export const LAYOUT_DEFAULTS = {
   gapPx: 8,
   maxRows: 5, // the Legend names this number ("more than five stacked lines", LegendPanel.tsx)
   clusterPx: 44,
+  /** A category glyph and its gap, before an event's title. */
+  glyphPx: 15,
   /** Widest a key event's name may run inside a "+N" pill before it is cut short. */
   clusterNamePx: 130,
   thinPx: 6,
@@ -136,6 +140,7 @@ export function layoutLanes(
   // Key events are placed first, then normal, then minor; each group in date order. When a row is
   // full, the events left over are the least important ones, and only those fold into "+N".
   const rank = (e: ResolvedEvent) => e.importance ?? 2;
+  const glyph = (e: ResolvedEvent) => (opts.glyphs?.has(e.uuid) ? o.glyphPx : 0);
   const sorted = [...events].sort((a, b) => rank(a) - rank(b) || compareEvents(a, b));
   // each track's events, as positions in `sorted`, so a lane looks only at its own members' events
   const byTrack = new Map<string, number[]>();
@@ -203,12 +208,12 @@ export function layoutLanes(
         }
         footprintStart = x0;
         // the label starts where the bar is solid
-        footprintEnd = Math.max(x1, x0 + (fadeIn ?? 0) + labelWidth(e.title, o, rank(e) === 1));
+        footprintEnd = Math.max(x1, x0 + (fadeIn ?? 0) + labelWidth(e.title, o, rank(e) === 1) + glyph(e));
       } else {
         // a single-date event sits in the middle of its year (or month, or day); a short span in its middle
         x0 = x1 = scale.x((at0(e) + (short ? at1(e, effectiveEnd(e, present)) : at1(e, undefined))) / 2);
         footprintStart = x0 - o.pointPx / 2;
-        footprintEnd = x0 + o.pointPx / 2 + labelWidth(e.title, o, rank(e) === 1);
+        footprintEnd = x0 + o.pointPx / 2 + labelWidth(e.title, o, rank(e) === 1) + glyph(e);
         if (sw || e.startDays) {
           whisker = e.startDays ? [scale.x(e.startDays.from), scale.x(e.startDays.to)] : [scale.x(sw![0]), scale.x(sw![1] + 1)];
           footprintStart = Math.min(footprintStart, whisker[0]);
@@ -248,13 +253,14 @@ export function layoutLanes(
     let current: Mark | null = null;
     overflow.sort((a, b) => a.x - b.x);
     // A pill that holds a key event names it (the earliest one), so it is wider by the name.
-    const nameW = (title: string) => Math.min(labelWidth(title, o, true), o.clusterNamePx);
+    // (plus its category glyph, when it has one)
+    const nameW = (id: string, title: string) => Math.min(labelWidth(title, o, true), o.clusterNamePx) + (opts.glyphs?.has(id) ? o.glyphPx : 0);
     for (const { id, x, key, title } of overflow) {
       if (current && x <= current.footprintEnd + o.gapPx) {
         current.eventIds!.push(id);
         if (key && !current.keyEventId) {
           current.keyEventId = id;
-          current.footprintEnd += nameW(title);
+          current.footprintEnd += nameW(id, title);
         }
         current.footprintEnd = Math.max(current.footprintEnd, x + o.clusterPx);
         continue;
@@ -270,7 +276,7 @@ export function layoutLanes(
         span: false,
         x0: x,
         x1: x,
-        footprintEnd: x + o.clusterPx + (key ? nameW(title) : 0),
+        footprintEnd: x + o.clusterPx + (key ? nameW(id, title) : 0),
         cy: top + head + o.lanePad + clusterRow * o.rowH + o.rowH / 2,
       };
       marks.push(current);

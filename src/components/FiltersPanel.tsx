@@ -33,6 +33,8 @@ interface Props {
   onEditSource: (key: string) => void;
   /** The Regions section (RegionFilter), on timelines whose rows have regions. */
   regions?: ReactNode;
+  /** The Categories section (the same tree for event categories), on timelines whose events have them. */
+  categories?: ReactNode;
 }
 
 const OPEN_KEY = 'timelines:filters-open';
@@ -217,6 +219,7 @@ export function FiltersPanel(p: Props) {
         </summary>
         <div className={`filters-group-body data-body${p.regions ? ' has-regions' : ''}`}>
           {p.regions}
+          {p.categories}
           <section className="tracks-filter">
             <h3>
               Rows

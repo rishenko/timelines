@@ -142,6 +142,29 @@ describe('sources', () => {
     expect(d.chronologies!.annals.source).toBeUndefined();
   });
 
+  it('deleting a source drops it from facet memberships, and drops a membership left citing nothing', () => {
+    const d0 = base();
+    d0.sources.atlas = { name: 'Atlas', tags: ['first'] };
+    d0.meta.facets = {
+      category: { name: 'Category', applies: 'events', values: { conflict: { name: 'Wars' }, siege: { name: 'Siege', broader: ['conflict'] } } },
+      region: { name: 'Region', values: { coast: { name: 'Coast' } } },
+    };
+    const annals = { sourceKey: 'annals', sourceLocation: '' };
+    const atlas = { sourceKey: 'atlas', sourceLocation: 'map 2' };
+    // a: one category cites only the deleted source, the other cites both
+    d0.events[0].memberships = [
+      { facet: 'category', value: 'siege', sources: [annals] },
+      { facet: 'category', value: 'conflict', sources: [annals, atlas] },
+    ];
+    // a row's region membership cites only the deleted source
+    d0.tracks[0].memberships = [{ facet: 'region', value: 'coast', sources: [annals] }];
+    expect(validateDataset(d0)).toEqual([]);
+    const d = removeSource(d0, 'annals');
+    expect(d.events[0].memberships).toEqual([{ facet: 'category', value: 'conflict', sources: [atlas] }]);
+    expect(d.tracks[0].memberships).toBeUndefined();
+    expect(validateDataset(d)).toEqual([]);
+  });
+
   it('a draft that deletes a source cited by claims survives a reload', () => {
     const published = claimed();
     const stored = JSON.parse(JSON.stringify(draftToStore(published, removeSource(published, 'chron'))));

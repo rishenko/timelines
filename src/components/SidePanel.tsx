@@ -1,4 +1,5 @@
 import type { Dispatch } from 'react';
+import type { EventCategories } from '../state/categoryFilter.ts';
 import { DetailPanel } from './DetailPanel.tsx';
 import { EventForm } from './EventForm.tsx';
 import { TrackForm } from './TrackForm.tsx';
@@ -31,6 +32,8 @@ interface Props {
   onCopyLink: (eventId: string) => void;
   /** The timeline's map file, if it has one (shown in event details). */
   mapUrl?: string;
+  /** Each event's categories, for the event panel's Category line. */
+  categoriesOf?: Map<string, EventCategories>;
 }
 
 /**
@@ -123,6 +126,7 @@ export function SidePanel(p: Props) {
       onSelect={p.onSelectAndFocus}
       onCopyLink={() => p.onCopyLink(selected.uuid)}
       mapUrl={p.mapUrl}
+      category={p.categoriesOf?.get(selected.uuid)}
       onEdit={() => setEditing({ kind: 'event', event: selected, isNew: false })}
       onDelete={() => {
         if (!window.confirm(`Delete "${selected.title}"?`)) return;

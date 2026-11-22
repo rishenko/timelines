@@ -7,6 +7,8 @@ import { allClaims, datingChronology, eventChronology, isApprox, type Claim, typ
 import { LINK_LABEL } from './linkLabels.ts';
 import { safeUrl } from '../lib/urls.ts';
 import { EventMap } from './EventMap.tsx';
+import { CategoryGlyph } from './CategoryGlyph.tsx';
+import type { EventCategories } from '../state/categoryFilter.ts';
 import { edgeKind, edgeName, successionIndex, type SuccessionEdge } from '../lib/succession.ts';
 
 interface Props {
@@ -26,6 +28,8 @@ interface Props {
   onCopyLink: () => void;
   /** The timeline's map file, when it has one: the panel then shows the event's rows on a map of its year. */
   mapUrl?: string;
+  /** Its categories, main first (a line under its rows). */
+  category?: EventCategories;
 }
 
 function Cite({ data, s }: { data: Dataset; s: SourceRef }) {
@@ -184,6 +188,12 @@ export function DetailPanel(p: Props) {
           </span>
         ))}
       </div>
+      {p.category && (
+        <p className="category-line small">
+          <CategoryGlyph kind={p.category.kind} />
+          <span className="muted">{p.category.labels.length > 1 ? 'Categories' : 'Category'}</span> {p.category.labels.join('; ')}
+        </p>
+      )}
       {e.descr && <p className="descr">{e.descr}</p>}
       {p.mapUrl && <EventMap url={p.mapUrl} tracks={e.tracks} start={r.start} end={r.end} data={data} />}
 
