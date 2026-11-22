@@ -2506,6 +2506,29 @@
           "startEvent": "lagos-colony"
         },
         {
+          "name": "Niger Coast Protectorate",
+          "start": 1884,
+          "end": 1900,
+          "startDates": [
+            {
+              "year": 1884,
+              "source": {
+                "sourceKey": "wp-niger-coast-protectorate",
+                "sourceLocation": "infobox year_start: 1884"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1900,
+              "source": {
+                "sourceKey": "wp-niger-coast-protectorate",
+                "sourceLocation": "infobox year_end: 1900"
+              }
+            }
+          ]
+        },
+        {
           "name": "Northern Nigeria Protectorate",
           "start": 1900,
           "end": 1914,
@@ -43238,37 +43261,6 @@
       ],
       "memberOf": [
         {
-          "row": "italy",
-          "start": 1936,
-          "end": 1941,
-          "startDates": [
-            {
-              "year": 1936,
-              "source": {
-                "sourceKey": "wp-italian-east-africa",
-                "sourceLocation": "infobox life span: 1936–1941"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": 1941,
-              "source": {
-                "sourceKey": "wp-italian-east-africa",
-                "sourceLocation": "infobox life span: 1936–1941"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-italian-east-africa",
-              "sourceLocation": "lead: \"Italian East Africa (, A.O.I.) was a colonial administrative entity of the Kingdom of Italy in the Horn of Africa that existed from 1936 to 1941.\""
-            }
-          ],
-          "startEvent": "second-italo-ethiopian-war",
-          "endEvent": "east-african-campaign-ww2"
-        },
-        {
           "row": "italian-east-africa",
           "start": 1936,
           "end": 1941,
@@ -51130,6 +51122,134 @@
       }
     },
     {
+      "id": "south-seas-mandate",
+      "name": "South Seas Mandate",
+      "color": "#8a5a6a",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/South_Seas_Mandate",
+      "span": {
+        "start": 1919,
+        "end": 1947,
+        "startDates": [
+          {
+            "year": 1919,
+            "source": {
+              "sourceKey": "wp-south-seas-mandate",
+              "sourceLocation": "infobox year_start: 1919"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1947,
+            "source": {
+              "sourceKey": "wp-south-seas-mandate",
+              "sourceLocation": "infobox year_end: 1947"
+            }
+          }
+        ],
+        "startEvent": "south-seas-mandate",
+        "endEvent": "ttpi-established"
+      },
+      "memberOf": [
+        {
+          "row": "japan",
+          "start": 1919,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_start: 1919"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-south-seas-mandate",
+              "sourceLocation": "infobox former country: South Seas Mandate, 1919–1947"
+            }
+          ],
+          "startEvent": "south-seas-mandate",
+          "endEvent": "ttpi-established"
+        }
+      ]
+    },
+    {
+      "id": "trust-territory-of-the-pacific-islands",
+      "name": "Trust Territory of the Pacific Islands",
+      "color": "#4a6a9a",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Trust_Territory_of_the_Pacific_Islands",
+      "span": {
+        "start": 1947,
+        "end": 1994,
+        "startDates": [
+          {
+            "year": 1947,
+            "source": {
+              "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+              "sourceLocation": "infobox year_start: 1947"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1994,
+            "source": {
+              "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+              "sourceLocation": "infobox year_end: 1994"
+            }
+          }
+        ],
+        "startEvent": "ttpi-established",
+        "endEvent": "palau-compact-of-free-association"
+      },
+      "memberOf": [
+        {
+          "row": "united-states",
+          "start": 1947,
+          "end": 1994,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1994,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_end: 1994"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+              "sourceLocation": "lead: \"The Trust Territory of the Pacific Islands (TTPI) was a United Nations trust territory in Micronesia administered by the United States from 1947 to 1994.\""
+            }
+          ],
+          "startEvent": "ttpi-established",
+          "endEvent": "palau-compact-of-free-association"
+        }
+      ]
+    },
+    {
       "id": "federated-states-of-micronesia",
       "name": "Federated States of Micronesia",
       "color": "#2a6a8a",
@@ -51322,13 +51442,44 @@
         {
           "row": "japan",
           "start": 1914,
-          "end": 1947,
+          "end": 1919,
           "startDates": [
             {
               "year": 1914,
               "source": {
                 "sourceKey": "wp-caroline-islands",
                 "sourceLocation": "section \"History > Japanese colony\": \"Japan invaded and occupied the islands in 1914 during World War I, as part of their campaign to take and occupy German colonial possessions.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_start: 1919"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-german-new-guinea",
+              "sourceLocation": "lead: \"Following the outbreak of World War I in 1914, Kaiser-Wilhelmsland and nearby islands fell to Australian forces, while Japan occupied most of the remaining Germ\""
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "south-seas-mandate"
+        },
+        {
+          "row": "south-seas-mandate",
+          "start": 1919,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_start: 1919"
               }
             }
           ],
@@ -51347,11 +51498,11 @@
               "sourceLocation": "infobox former country: South Seas Mandate, 1919–1947"
             }
           ],
-          "startEvent": "japan-occupies-german-micronesia",
+          "startEvent": "south-seas-mandate",
           "endEvent": "ttpi-established"
         },
         {
-          "row": "united-states",
+          "row": "trust-territory-of-the-pacific-islands",
           "start": 1947,
           "end": 1986,
           "startDates": [
@@ -51576,13 +51727,44 @@
         {
           "row": "japan",
           "start": 1914,
-          "end": 1947,
+          "end": 1919,
           "startDates": [
             {
               "year": 1914,
               "source": {
                 "sourceKey": "wp-history-of-palau",
                 "sourceLocation": "section \"Japanese mandate\": \"Under the terms of the Anglo-Japanese Alliance, the Empire of Japan declared war on the German Empire in 1914 and invaded German colonial empire in the Pacific \""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_start: 1919"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-german-new-guinea",
+              "sourceLocation": "lead: \"Following the outbreak of World War I in 1914, Kaiser-Wilhelmsland and nearby islands fell to Australian forces, while Japan occupied most of the remaining Germ\""
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "south-seas-mandate"
+        },
+        {
+          "row": "south-seas-mandate",
+          "start": 1919,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_start: 1919"
               }
             }
           ],
@@ -51601,11 +51783,11 @@
               "sourceLocation": "infobox former country: South Seas Mandate, 1919–1947"
             }
           ],
-          "startEvent": "japan-occupies-german-micronesia",
+          "startEvent": "south-seas-mandate",
           "endEvent": "ttpi-established"
         },
         {
-          "row": "united-states",
+          "row": "trust-territory-of-the-pacific-islands",
           "start": 1947,
           "end": 1994,
           "startDates": [
@@ -51783,13 +51965,44 @@
         {
           "row": "japan",
           "start": 1914,
-          "end": 1947,
+          "end": 1919,
           "startDates": [
             {
               "year": 1914,
               "source": {
                 "sourceKey": "wp-marshall-islands",
                 "sourceLocation": "lead: \"The Empire of Japan occupied the islands in the autumn of 1914 at the beginning of World War I.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_start: 1919"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-german-new-guinea",
+              "sourceLocation": "lead: \"Following the outbreak of World War I in 1914, Kaiser-Wilhelmsland and nearby islands fell to Australian forces, while Japan occupied most of the remaining Germ\""
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "south-seas-mandate"
+        },
+        {
+          "row": "south-seas-mandate",
+          "start": 1919,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1919,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_start: 1919"
               }
             }
           ],
@@ -51808,11 +52021,11 @@
               "sourceLocation": "infobox former country: South Seas Mandate, 1919–1947"
             }
           ],
-          "startEvent": "japan-occupies-german-micronesia",
+          "startEvent": "south-seas-mandate",
           "endEvent": "ttpi-established"
         },
         {
-          "row": "united-states",
+          "row": "trust-territory-of-the-pacific-islands",
           "start": 1947,
           "end": 1986,
           "startDates": [
@@ -53566,6 +53779,14 @@
     "wp-lagos-colony": {
       "name": "Lagos Colony (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Lagos_Colony",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-niger-coast-protectorate": {
+      "name": "Niger Coast Protectorate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Niger_Coast_Protectorate",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -67211,6 +67432,22 @@
         "wikipedia"
       ]
     },
+    "wp-south-seas-mandate": {
+      "name": "South Seas Mandate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/South_Seas_Mandate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-trust-territory-of-the-pacific-islands": {
+      "name": "Trust Territory of the Pacific Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Trust_Territory_of_the_Pacific_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-pohnpei": {
       "name": "Pohnpei (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Pohnpei",
@@ -67230,22 +67467,6 @@
     "wp-caroline-islands": {
       "name": "Caroline Islands (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Caroline_Islands",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-south-seas-mandate": {
-      "name": "South Seas Mandate (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/South_Seas_Mandate",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-trust-territory-of-the-pacific-islands": {
-      "name": "Trust Territory of the Pacific Islands (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Trust_Territory_of_the_Pacific_Islands",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -67662,6 +67883,94 @@
     "wp-franco-tahitian-war": {
       "name": "Franco-Tahitian War (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Franco-Tahitian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-the-holocaust": {
+      "name": "The Holocaust (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Holocaust",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-attack-on-pearl-harbor": {
+      "name": "Attack on Pearl Harbor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Attack_on_Pearl_Harbor",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-treaty-of-versailles": {
+      "name": "Treaty of Versailles (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Versailles",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-armenian-genocide": {
+      "name": "Armenian genocide (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Armenian_genocide",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-great-depression": {
+      "name": "Great Depression (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Depression",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-holodomor": {
+      "name": "Holodomor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holodomor",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-munich-agreement": {
+      "name": "Munich Agreement (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Munich_Agreement",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nanjing-massacre": {
+      "name": "Nanjing Massacre (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nanjing_Massacre",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-stalingrad": {
+      "name": "Battle of Stalingrad (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Stalingrad",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-normandy-landings": {
+      "name": "Normandy landings (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Normandy_landings",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-paris-peace-conference-1919-1920": {
+      "name": "Paris Peace Conference (1919–1920) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paris_Peace_Conference_(1919–1920)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -91233,7 +91542,8 @@
         "federated-states-of-micronesia",
         "palau",
         "marshall-islands",
-        "japan"
+        "japan",
+        "south-seas-mandate"
       ],
       "sources": [
         {
@@ -91269,7 +91579,9 @@
         "palau",
         "marshall-islands",
         "united-states",
-        "japan"
+        "japan",
+        "south-seas-mandate",
+        "trust-territory-of-the-pacific-islands"
       ],
       "sources": [
         {
@@ -91400,7 +91712,8 @@
       "start": 1994,
       "tracks": [
         "palau",
-        "united-states"
+        "united-states",
+        "trust-territory-of-the-pacific-islands"
       ],
       "sources": [
         {
@@ -91915,6 +92228,243 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "armenian-genocide",
+      "title": "Armenian genocide",
+      "descr": "During the First World War the Ottoman government massacres its Armenian subjects and sends them on death marches to the Syrian desert.",
+      "start": 1915,
+      "end": 1917,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-armenian-genocide",
+          "sourceLocation": "infobox date: 1915–1917"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww1",
+          "kind": "related"
+        }
+      ]
+    },
+    {
+      "uuid": "great-depression",
+      "title": "Great Depression",
+      "descr": "A worldwide economic collapse that begins with the Wall Street crash of October 1929; mass unemployment in Germany helps bring the Nazis to power.",
+      "start": 1929,
+      "end": 1939,
+      "tracks": [
+        "united-states",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-great-depression",
+          "sourceLocation": "infobox date: 1929–1939"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "holodomor",
+      "title": "Holodomor",
+      "descr": "A man-made famine in Soviet Ukraine, caused by forced collectivization and grain requisitions under Stalin; millions die.",
+      "start": 1932,
+      "end": 1933,
+      "tracks": [
+        "soviet-union",
+        "ukraine"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-holodomor",
+          "sourceLocation": "infobox period: 1932–1933"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "munich-agreement",
+      "title": "Munich Agreement",
+      "descr": "Britain, France and Italy let Germany annex the Sudetenland from Czechoslovakia, which was not invited; the high point of appeasement.",
+      "start": 1938,
+      "tracks": [
+        "germany",
+        "united-kingdom",
+        "france",
+        "italy",
+        "czechoslovakia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-munich-agreement",
+          "sourceLocation": "infobox date_signed: 30 September 1938"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "german-occupation-of-czechoslovakia",
+          "kind": "causes"
+        }
+      ]
+    },
+    {
+      "uuid": "nanjing-massacre",
+      "title": "Nanjing Massacre",
+      "descr": "After taking Nanjing, the Chinese capital, in December 1937, Japanese troops murder and rape civilians and prisoners of war for about six weeks.",
+      "start": 1937,
+      "end": 1938,
+      "tracks": [
+        "japan",
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nanjing-massacre",
+          "sourceLocation": "infobox date: From December 13, 1937, for six weeks (traditional historiography), atrocities i"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-stalingrad",
+      "title": "Battle of Stalingrad",
+      "descr": "The Soviet Red Army defeats the German siege of Stalingrad, a turning point of the war on the Eastern Front.",
+      "start": 1942,
+      "end": 1943,
+      "tracks": [
+        "germany",
+        "soviet-union"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-stalingrad",
+          "sourceLocation": "infobox date: 17 July 1942 – 2 February 1943"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "normandy-landings",
+      "title": "Normandy landings",
+      "descr": "On D-Day, 6 June 1944, Allied forces land in German-occupied France and open a second front in western Europe.",
+      "start": 1944,
+      "tracks": [
+        "united-states",
+        "united-kingdom",
+        "canada",
+        "germany",
+        "france"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-normandy-landings",
+          "sourceLocation": "infobox date: 6 June 1944"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "holocaust",
+      "title": "The Holocaust",
+      "descr": "Nazi Germany and its collaborators murder about six million European Jews, most of them in occupied Poland, along with millions of others they persecuted.",
+      "start": 1941,
+      "end": 1945,
+      "tracks": [
+        "germany",
+        "poland"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-the-holocaust",
+          "sourceLocation": "infobox date: 1941–1945"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-versailles",
+      "title": "Treaty of Versailles",
+      "descr": "Signed on 28 June 1919 at the Paris Peace Conference, where the victorious Allies set the terms for the defeated Central Powers; Germany loses territory and its colonies and must pay reparations.",
+      "start": 1919,
+      "tracks": [
+        "germany",
+        "france",
+        "united-kingdom",
+        "united-states",
+        "italy",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-treaty-of-versailles",
+          "sourceLocation": "infobox date_signed: 28 June 1919"
+        },
+        {
+          "sourceKey": "wp-paris-peace-conference-1919-1920",
+          "sourceLocation": "lead: \"The Paris Peace Conference was a set of formal and informal diplomatic meetings in 1919 and 1920 after the end of World War I, in which the victorious Allies se\""
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww1",
+          "kind": "succeeds"
+        }
+      ]
+    },
+    {
+      "uuid": "pearl-harbor",
+      "title": "Attack on Pearl Harbor",
+      "descr": "Japan strikes the US Pacific Fleet on 7 December 1941; the United States enters the Second World War.",
+      "start": 1941,
+      "tracks": [
+        "japan",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-attack-on-pearl-harbor",
+          "sourceLocation": "infobox date: 7 December 1941"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
     }
   ]
 }
