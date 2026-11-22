@@ -279,12 +279,13 @@ def apply(data, overrides_path, evidence_path=None):
             e['memberships'] = mine + rest
         else:
             e.pop('memberships', None)
-        evidence[e['uuid']] = [[v, ev] for v, ev in cats]
+        # a reviewed "no category" is marked, so only unreviewed events have an empty list (the review queue)
+        evidence[e['uuid']] = [[v, ev] for v, ev in cats] if cats or e['uuid'] not in overrides else [[None, 'reviewed: no category']]
     if evidence_path:
         os.makedirs(os.path.dirname(evidence_path), exist_ok=True)
         lines = [f'  {json.dumps(k, ensure_ascii=False)}: {json.dumps(v, ensure_ascii=False)}' for k, v in sorted(evidence.items())]
         head = {'timeline': data['meta']['id'], 'generator': 'pipelines/common/event_categories.py', 'overrides': os.path.relpath(overrides_path, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(evidence_path))))),
-                'note': 'Each event\'s categories, main first, with the evidence for each; "reviewed" = from the overrides file. An empty list: no category yet (review).'}
+                'note': 'Each event\'s categories, main first, with the evidence for each; "reviewed" = from the overrides file. An empty list: not reviewed yet (the review queue); [null, "reviewed: no category"]: reviewed, and none fits.'}
         open(evidence_path, 'w').write(json.dumps(head, indent=1, ensure_ascii=False)[:-2] + ',\n "events": {\n' + ',\n'.join(lines) + '\n }\n}\n')
     return counts
 
