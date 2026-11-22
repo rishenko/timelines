@@ -926,6 +926,22 @@
 .tl-lane-ages > * {
   pointer-events: auto;
 }
+/* a band line's name (two or more lines in a band), at the line's left end */
+.tl-age-line-name {
+  position: absolute;
+  z-index: 1;
+  height: 16px;
+  overflow: hidden;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 16px;
+  white-space: nowrap;
+  pointer-events: none;
+}
 /* the ↗ link to an age's article: a 24 px target over the start of the bar, before the age's name */
 .tl-age-link {
   position: absolute;

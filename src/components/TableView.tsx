@@ -564,14 +564,17 @@ function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
           </tr>
         </thead>
         <tbody>
-          {sorted.map(({ era, span }) => {
+          {sorted.map(({ era, span, lineName }) => {
             const d = spanInWords(span, cal, data.sources);
             return (
               <tr key={era.id}>
                 <th scope="row">
                   <LinkedName name={era.name} url={era.url} ids={era.ids} />
                 </th>
-                <td>{era.tracks?.length ? era.tracks.map((t) => rowName.get(t) ?? t).join(', ') : 'All regions'}</td>
+                <td>
+                  {era.tracks?.length ? era.tracks.map((t) => rowName.get(t) ?? t).join(', ') : 'All regions'}
+                  {lineName && `: ${lineName}`}
+                </td>
                 <td className="date">
                   {d.main}
                   {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}

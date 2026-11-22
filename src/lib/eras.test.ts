@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { agesInView, ageLines, placeAges, splitAges } from './eras.ts';
+import { agesInView, ageLines, groupLabel, placeAges, splitAges } from './eras.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset, Era } from '../types.ts';
 
@@ -86,5 +86,24 @@ describe('ages (meta.eras)', () => {
     const ages = placeAges(withEras([era('a', 0, 10, 'one', { tracks: ['r'] }), era('b', 50, 60, 'two', { tracks: ['r'] }), era('w', 0, 10)]), {});
     const shown = agesInView(ages, { y0: 45, y1: 70 });
     expect(shown.map((a) => [a.era.id, a.band, a.line])).toEqual([['b', 'r', 0]]);
+  });
+
+  it('names the lines of a band with two or more (from the group id), and leaves one-line bands and the strip unnamed', () => {
+    const ages = placeAges(
+      withEras([
+        era('w', 0, 90, 'world'),
+        era('nile', 0, 40, 'ages-nile-valley', { tracks: ['africa'] }),
+        era('aegean', 0, 60, 'ages-aegean', { tracks: ['europe'] }),
+        era('alps', 0, 60, 'ages-central-europe', { tracks: ['europe'] }),
+      ]),
+      {},
+    );
+    expect(ages.map((a) => [a.era.id, a.lineName])).toEqual([
+      ['w', undefined],
+      ['nile', undefined],
+      ['aegean', 'Aegean'],
+      ['alps', 'Central Europe'],
+    ]);
+    expect(groupLabel(undefined)).toBeUndefined();
   });
 });

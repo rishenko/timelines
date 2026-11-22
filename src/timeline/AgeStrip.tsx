@@ -13,6 +13,8 @@ const MIN_TARGET_PX = 24;
 const LINK_PX = 24;
 /** The bar's name is shifted right by this much when the ↗ link sits before it. */
 const LINK_INSET_PX = 18;
+/** A line name's width: about 6 px a letter at its 10 px size, plus padding (it's measured by nothing at render). */
+const lineNamePx = (name: string) => Math.ceil(name.length * 6 + 12);
 
 interface Props {
   ages: PlacedAge[];
@@ -53,9 +55,33 @@ type BarProps = Omit<Props, 'lines' | 'width'>;
  * are from the top of their container, `labelW` in from its left edge.
  */
 export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect }: BarProps) {
+  // a named line (a band with two or more): its name at the line's left end, kept on screen; the ages' names and links
+  // on that line start after it
+  const named = new Map<number, { name: string; x0: number }>();
+  for (const a of ages)
+    if (a.lineName) {
+      const x = scale.x(a.span.startWindow ? Math.min(a.span.startWindow[0], at0(a.span)) : at0(a.span));
+      const cur = named.get(a.line);
+      if (!cur || x < cur.x0) named.set(a.line, { name: a.lineName, x0: x });
+    }
   return (
     <>
-      {ages.map(({ era, span, line, drawEnd }) => {
+      {[...named].map(([line, { name, x0 }]) => {
+        const w = lineNamePx(name);
+        return (
+          <span
+            key={`line-${line}`}
+            className="tl-age-line-name"
+            aria-hidden="true"
+            style={{ left: labelW + Math.max(viewLeft, Math.max(scale.x(scale.domain[0]), x0) - w), top: line * AGE_LINE_PX + 4, width: w }}
+          >
+            {name}
+          </span>
+        );
+      })}
+      {ages.map(({ era, span, line, drawEnd, lineName }) => {
+        // on a named line, an age's name and link keep clear of the line's name
+        const left0 = lineName ? viewLeft + lineNamePx(lineName) : viewLeft;
         // an age may run past the timeline's ends (like a row): the chart cuts it there, with an open edge
         const lo = scale.x(scale.domain[0]);
         // with date claims it spans its whole uncertain range; the uncertain ends are drawn lighter and hatched
@@ -83,7 +109,7 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
         if (fadeIn) bar['--fade-in'] = `${Math.min(fadeIn, w)}px`;
         if (fadeOut) bar['--fade-out'] = `${Math.min(fadeOut, w)}px`;
         // the name stays readable while the age starts off to the left
-        const nameAt = Math.max(0, Math.min(viewLeft - x0, w - 80));
+        const nameAt = Math.max(0, Math.min(left0 - x0, w - 80));
         const url = safeUrl(era.url);
         const host = url && hostOf(url);
         // the link needs its own 24 px and leaves the bar's button at least 24 px of its own
@@ -91,6 +117,7 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
         const linkAt = Math.max(0, Math.min(nameAt, w - LINK_PX - MIN_TARGET_PX));
         const tip = [
           `${era.name}, ${dates.main}`,
+          lineName && `Region: ${lineName}`,
           ...dates.ranges,
           cut && 'Runs on past this timeline',
           from && `from ${from}`,
@@ -102,7 +129,7 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
               className="tl-age"
               style={style}
               title={tip.filter(Boolean).join('\n')}
-              aria-label={`${era.name}, ${dates.main}, age; centre the chart on it`}
+              aria-label={`${era.name}${lineName ? ` (${lineName})` : ''}, ${dates.main}, age; centre the chart on it`}
               onClick={() => onSelect((span.start + span.end) / 2)}
             >
               <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>

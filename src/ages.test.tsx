@@ -83,6 +83,23 @@ describe('ages', () => {
     expect(rows[1].textContent).toContain(`${d.tracks[0].name}, ${d.tracks[1].name}`);
   });
 
+  it('a band with two lines names each line, in the tooltip, the accessible name and the table', () => {
+    const d = withAges();
+    const row = d.tracks[0];
+    d.meta.eras![0].tracks = [row.id];
+    d.meta.eras![0].group = 'ages-salt-coast';
+    d.meta.eras![1].tracks = [row.id];
+    d.meta.eras![1].group = 'ages-weather-coast';
+    renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
+    const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
+    const b = within(band).getByRole('button', { name: /^Salt Years \(Salt Coast\), 20 L – 60 L, age/ });
+    expect(b.title).toContain('Region: Salt Coast');
+    expect([...band.querySelectorAll('.tl-age-line-name')].map((e) => e.textContent)).toEqual(['Salt Coast', 'Weather Coast']);
+    cleanup();
+    renderApp(`timeline=harbor-towns&view=table`, [d]);
+    expect(screen.getByRole('table', { name: /^Ages/ }).textContent).toContain(`${row.name}: Salt Coast`);
+  });
+
   it('a timeline without ages has no strip', () => {
     renderApp(`timeline=harbor-towns`, [plainTimeline()]);
     expect(screen.queryByRole('group', { name: 'Ages' })).toBeNull();
