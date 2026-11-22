@@ -14864,8 +14864,7 @@
               "sourceLocation": "infobox year_end: 1610"
             }
           }
-        ],
-        "startEvent": "conquest-of-sosso"
+        ]
       },
       "memberships": [
         {
@@ -14914,8 +14913,7 @@
             },
             "note": "The same article gives this year too."
           }
-        ],
-        "startEvent": "independence-from-mali-empire"
+        ]
       },
       "memberships": [
         {
@@ -15176,8 +15174,7 @@
               "sourceLocation": "infobox year_end: 1897"
             }
           }
-        ],
-        "startEvent": "oba-monarchy-replaces-ogiso-monarchy"
+        ]
       },
       "memberships": [
         {
@@ -15187,6 +15184,356 @@
             {
               "sourceKey": "wp-kingdom-of-benin",
               "sourceLocation": "infobox capital: Edo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oyo-empire",
+      "name": "Oyo Empire",
+      "color": "#9a5a3a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Oyo_Empire",
+      "span": {
+        "start": 1300,
+        "end": 1835,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-oyo-empire",
+              "sourceLocation": "section \"Pre-Imperial period (13th century–1535)\": \"The founding of Oyo is regarded as 1300, but this is only estimated through backtracking the chronology.\""
+            },
+            "note": "\"Only estimated through backtracking the chronology.\""
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1835,
+            "source": {
+              "sourceKey": "wp-ilorin",
+              "sourceLocation": "section \"History\": \"The Oyo Empire and its Borgawa allies marched against Ilorin circa 1835, trying to reclaim its former glory, but were decisively defeated; this marked the end o\""
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-oyo-empire",
+              "sourceLocation": "infobox capital: Oyo-Igboho (c. 1550–1615) / Oyo-Ile (c. 1300-1535/1615–1835)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-kano",
+      "name": "Kingdom of Kano",
+      "color": "#6a8a3a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kano",
+      "span": {
+        "start": 999,
+        "end": 1807,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 999,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kano",
+              "sourceLocation": "infobox year_start: c. 999"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1807,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kano",
+              "sourceLocation": "infobox year_end: 1807"
+            }
+          },
+          {
+            "year": 1805,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kano",
+              "sourceLocation": "lead: \"The Kingdom of Kano was a Hausa kingdom centred on the city of Kano in modern-day northern Nigeria that was established around 1000 CE, and endured until its co\""
+            },
+            "note": "The lead dates the conquest to 1805."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kano",
+              "sourceLocation": "infobox capital: Kano"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "waalo",
+      "name": "Waalo",
+      "color": "#3a6a6a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Waalo",
+      "span": {
+        "start": 1287,
+        "end": 1855,
+        "startDates": [
+          {
+            "year": 1287,
+            "source": {
+              "sourceKey": "wp-waalo",
+              "sourceLocation": "infobox year_start: 1287"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1855,
+            "source": {
+              "sourceKey": "wp-waalo",
+              "sourceLocation": "infobox year_end: 1855"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-waalo",
+              "sourceLocation": "infobox capital: Ndiourbel; / Ndiangué; / Nder"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "saloum",
+      "name": "Saloum",
+      "color": "#4a8a7a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Saloum",
+      "span": {
+        "start": 1494,
+        "end": 1867,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1494,
+            "source": {
+              "sourceKey": "wp-saloum",
+              "sourceLocation": "infobox date_start: c. 1494"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1867,
+            "source": {
+              "sourceKey": "wp-saloum",
+              "sourceLocation": "infobox event1: Annexation into French West Africa, 1867"
+            },
+            "note": "The infobox calls it \"Annexation into French West Africa\", which did not yet exist; the year ends the independent kingdom."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-saloum",
+              "sourceLocation": "infobox capital: Kahone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-agadez",
+      "name": "Sultanate of Agadez",
+      "color": "#9a6a4a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Agadez",
+      "span": {
+        "start": 1405,
+        "end": 1906,
+        "startDates": [
+          {
+            "year": 1405,
+            "source": {
+              "sourceKey": "wp-sultanate-of-agadez",
+              "sourceLocation": "infobox date_start: 1405"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1906,
+            "source": {
+              "sourceKey": "wp-sultanate-of-agadez",
+              "sourceLocation": "infobox event3: Incorporated into French West Africa, 1906"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "sahara",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-agadez",
+              "sourceLocation": "infobox capital: Agadez"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-ardra",
+      "name": "Kingdom of Ardra",
+      "color": "#8a4a6a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Ardra",
+      "span": {
+        "start": 1200,
+        "end": 1724,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1200,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-kingdom-of-ardra",
+              "sourceLocation": "infobox year_start: 12th/13th century"
+            },
+            "note": "The infobox says \"12th/13th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1724,
+            "source": {
+              "sourceKey": "wp-kingdom-of-ardra",
+              "sourceLocation": "infobox year_end: 1724"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-ardra",
+              "sourceLocation": "infobox capital: Allada"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghana",
+      "name": "Ghana",
+      "color": "#c0a02a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Ghana",
+      "phases": [
+        {
+          "name": "Portuguese Gold Coast",
+          "start": 1482,
+          "end": 1642,
+          "startDates": [
+            {
+              "year": 1482,
+              "source": {
+                "sourceKey": "wp-portuguese-gold-coast",
+                "sourceLocation": "infobox year_start: 1482"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1642,
+              "source": {
+                "sourceKey": "wp-portuguese-gold-coast",
+                "sourceLocation": "infobox year_end: 1642"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ghana",
+              "sourceLocation": "infobox capital: Accra"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cape-verde",
+      "name": "Cape Verde",
+      "color": "#3a6aba",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Cape_Verde",
+      "phases": [
+        {
+          "name": "Portuguese Cape Verde",
+          "start": 1462,
+          "end": 1975,
+          "startDates": [
+            {
+              "year": 1462,
+              "source": {
+                "sourceKey": "wp-portuguese-cape-verde",
+                "sourceLocation": "infobox year_start: 1462"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1975,
+              "source": {
+                "sourceKey": "wp-portuguese-cape-verde",
+                "sourceLocation": "infobox year_end: 1975"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-cape-verde",
+              "sourceLocation": "infobox capital: Praia"
             }
           ]
         }
@@ -15224,8 +15571,7 @@
               "sourceLocation": "infobox year_end: 1914"
             }
           }
-        ],
-        "startEvent": "conquest-of-kabunga"
+        ]
       },
       "memberships": [
         {
@@ -15235,6 +15581,227 @@
             {
               "sourceKey": "wp-kingdom-of-kongo",
               "sourceLocation": "infobox capital: São Salvador (today M'banza-Kongo, Angola)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tio-kingdom",
+      "name": "Tio Kingdom",
+      "color": "#5a7a6a",
+      "parent": "central-africa",
+      "url": "https://en.wikipedia.org/wiki/Tio_Kingdom",
+      "span": {
+        "start": 1350,
+        "end": 1880,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1350,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-tio-kingdom",
+              "sourceLocation": "infobox date_start: 14th century"
+            },
+            "note": "The infobox says \"14th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1880,
+            "source": {
+              "sourceKey": "wp-tio-kingdom",
+              "sourceLocation": "infobox date_end: 1880"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "africa",
+          "sources": [
+            {
+              "sourceKey": "wp-tio-kingdom",
+              "sourceLocation": "infobox capital: \"Mbe\" / (changed location often) / Mbé (c.1880)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mwene-muji",
+      "name": "Mwene Muji",
+      "color": "#6a7a5a",
+      "parent": "central-africa",
+      "url": "https://en.wikipedia.org/wiki/Mwene_Muji",
+      "span": {
+        "start": 1400,
+        "end": 1900,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1400,
+            "source": {
+              "sourceKey": "wp-mwene-muji",
+              "sourceLocation": "infobox year_start: c. 1400"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1900,
+            "source": {
+              "sourceKey": "wp-mwene-muji",
+              "sourceLocation": "infobox year_end: c. 1900"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "africa",
+          "sources": [
+            {
+              "sourceKey": "wp-mwene-muji",
+              "sourceLocation": "infobox capital: Mushie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-bamum",
+      "name": "Kingdom of Bamum",
+      "color": "#8a8a5a",
+      "parent": "central-africa",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Bamum",
+      "span": {
+        "start": 1394,
+        "end": 1923,
+        "startDates": [
+          {
+            "year": 1394,
+            "source": {
+              "sourceKey": "wp-kingdom-of-bamum",
+              "sourceLocation": "infobox date_start: 1394"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1923,
+            "source": {
+              "sourceKey": "wp-kingdom-of-bamum",
+              "sourceLocation": "infobox year_end: 1923"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-bamum",
+              "sourceLocation": "infobox capital: Fumban"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mbunda-kingdom",
+      "name": "Mbunda Kingdom",
+      "color": "#7a8a4a",
+      "parent": "central-africa",
+      "url": "https://en.wikipedia.org/wiki/Mbunda_Kingdom",
+      "span": {
+        "start": 1500,
+        "end": 1917,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1500,
+            "source": {
+              "sourceKey": "wp-mbunda-kingdom",
+              "sourceLocation": "infobox year_start: c. 1500"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1917,
+            "source": {
+              "sourceKey": "wp-mbunda-kingdom",
+              "sourceLocation": "infobox year_end: 1917"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "africa",
+          "sources": [
+            {
+              "sourceKey": "wp-mbunda-kingdom",
+              "sourceLocation": "infobox capital: Lumbala N'guimbo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sao-tome-and-principe",
+      "name": "São Tomé and Príncipe",
+      "color": "#2a8a8a",
+      "parent": "central-africa",
+      "url": "https://en.wikipedia.org/wiki/São_Tomé_and_Príncipe",
+      "phases": [
+        {
+          "name": "Portuguese São Tomé and Príncipe",
+          "start": 1485,
+          "end": 1975,
+          "startDates": [
+            {
+              "year": 1485,
+              "source": {
+                "sourceKey": "wp-portuguese-s-o-tom-and-pr-ncipe",
+                "sourceLocation": "infobox year_start: 1485"
+              }
+            },
+            {
+              "year": 1470,
+              "source": {
+                "sourceKey": "wp-portuguese-s-o-tom-and-pr-ncipe",
+                "sourceLocation": "lead: \"Portuguese São Tomé and Príncipe () was a colony of the Portuguese Empire from the discovery of the São Tomé and Príncipe islands in 1470 until 1975, when indep\""
+              },
+              "note": "The lead counts the colony from the discovery of the islands in 1470."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1975,
+              "source": {
+                "sourceKey": "wp-portuguese-s-o-tom-and-pr-ncipe",
+                "sourceLocation": "infobox year_end: 1975"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "africa",
+          "sources": [
+            {
+              "sourceKey": "wp-s-o-tom-and-pr-ncipe",
+              "sourceLocation": "infobox capital: São Tomé"
             }
           ]
         }
@@ -21023,6 +21590,142 @@
     "wp-dominican-republic": {
       "name": "Dominican Republic (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Dominican_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ilorin": {
+      "name": "Ilorin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ilorin",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-oyo-empire": {
+      "name": "Oyo Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oyo_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kano": {
+      "name": "Kingdom of Kano (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kano",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-waalo": {
+      "name": "Waalo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Waalo",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-saloum": {
+      "name": "Saloum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saloum",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-agadez": {
+      "name": "Sultanate of Agadez (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Agadez",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-ardra": {
+      "name": "Kingdom of Ardra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Ardra",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-portuguese-gold-coast": {
+      "name": "Portuguese Gold Coast (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Portuguese_Gold_Coast",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ghana": {
+      "name": "Ghana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghana",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-portuguese-cape-verde": {
+      "name": "Portuguese Cape Verde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Portuguese_Cape_Verde",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cape-verde": {
+      "name": "Cape Verde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cape_Verde",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tio-kingdom": {
+      "name": "Tio Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tio_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mwene-muji": {
+      "name": "Mwene Muji (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mwene_Muji",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-bamum": {
+      "name": "Kingdom of Bamum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Bamum",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mbunda-kingdom": {
+      "name": "Mbunda Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mbunda_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-portuguese-s-o-tom-and-pr-ncipe": {
+      "name": "Portuguese São Tomé and Príncipe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Portuguese_São_Tomé_and_Príncipe",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-s-o-tom-and-pr-ncipe": {
+      "name": "São Tomé and Príncipe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/São_Tomé_and_Príncipe",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -30043,6 +30746,83 @@
         {
           "sourceKey": "wp-aceh-sultanate",
           "sourceLocation": "infobox event1: Vassal of the Pedir Kingdom, 1497"
+        }
+      ]
+    },
+    {
+      "uuid": "construction-of-city-walls-begun",
+      "title": "Construction of city walls begun",
+      "descr": "",
+      "start": 1095,
+      "tracks": [
+        "kingdom-of-kano"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kano",
+          "sourceLocation": "infobox event1: Construction of city walls begun, c. 1095"
+        }
+      ]
+    },
+    {
+      "uuid": "arrival-of-wangarawa-and-introduction-of-islam",
+      "title": "Arrival of Wangarawa and introduction of Islam",
+      "descr": "",
+      "start": 1349,
+      "tracks": [
+        "kingdom-of-kano"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kano",
+          "sourceLocation": "infobox event2: Arrival of Wangarawa and introduction of Islam, c. 1349"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-santolo",
+      "title": "Battle of Santolo",
+      "descr": "",
+      "start": 1380,
+      "tracks": [
+        "kingdom-of-kano"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kano",
+          "sourceLocation": "infobox event3: Battle of Santolo, c. 1380"
+        }
+      ]
+    },
+    {
+      "uuid": "bornu-suzerainty-and-opening-of-trade-routes",
+      "title": "Bornu suzerainty and opening of trade routes",
+      "descr": "",
+      "start": 1438,
+      "tracks": [
+        "kingdom-of-kano",
+        "bornu-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kano",
+          "sourceLocation": "infobox event4: Bornu suzerainty and opening of trade routes, c. 1438"
+        }
+      ]
+    },
+    {
+      "uuid": "part-of-the-jolof-empire",
+      "title": "Waalo becomes part of the Jolof Empire",
+      "descr": "",
+      "start": 1350,
+      "tracks": [
+        "waalo",
+        "jolof-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-waalo",
+          "sourceLocation": "infobox event1: part of the Jolof Empire, c. 1350-1549 (de facto) / 1715 (de jure)"
         }
       ]
     }
