@@ -209,7 +209,15 @@ All of these have unit tests in `extract/test_dates.py`.
 - **`export_index` hangs.** `indexed_bzip2`'s `export_index` hung (0% CPU, a 0-byte index file) after a short run on this dump. That cost an hour of "slow" tests that were really hung.
   - Resuming no longer uses the index: the pass saves its JSON offset and skips back by decompressing (`wikidata.py`, a `PAUSE` file or SIGTERM to stop).
   - Close the `indexed_bzip2` file before exiting, or its threads abort Python ("Detected Python finalization from running rapidgzip thread").
-- **Kept:** items with an English article and a start (P580), end (P582), point in time (P585), inception (P571), dissolved (P576) or part-of (P361) claim, plus their P31 instance-of.
+- **Kept (schema 2, from 2026-11-22):** items with an English article and any of these, plus their P31 instance-of (P31 alone doesn't keep an item):
+  - dates: start (P580), end (P582), point in time (P585), inception (P571), dissolved (P576); for the science pass, time of discovery or invention (P575) and publication date (P577);
+  - links: part of (P361); for the row passes, head of government (P6), head of state (P35), office held by head of state/government (P1906/P1313), position held (P39), participant in (P1344), conflict (P607); for the science pass, discoverer or inventor (P61).
+  - Schema 1 (the paused first pass) had only the five dates and P361/P31. `wikidata.py` refuses to resume a schema-1 file; `--restart` rebuilds it.
+- **Who held an office when lives in qualifiers.** A polity's P35/P6 lists every head with P580/P582 *qualifiers* on each statement, and a person's P39 does the same for each office. Germany's P6 lists all eleven chancellors from Adenauer (1949-09-20 to 1963-10-11) on. `wikidata.py` keeps P580, P582 and P585 qualifiers on every link statement except P31, in `wd_qual`, joined to `wd_link` by the statement id (`sid`, set only when there are qualifiers). In the first 1 GiB, 4,094 of 5,340 P39 statements had time qualifiers.
+- **Two routes to a polity's rulers.** P35/P6 on the polity itself (complete for modern states), or P1906/P1313 → the office (France → President of France) → every person whose P39 names that office. The second route reaches historical monarchs, who are seldom listed on the state's own item. Not yet measured on Ancient or Medieval rows.
+- **Unknown and none values are skipped.** `somevalue` and `novalue` snaks (main or qualifier) carry no date or item and aren't stored (`wikidata._value`).
+- **`wd_join.dates` reads only the start and end props.** Before schema 2, every non-start prop counted as an end; P575/P577 would have shown up as false end dates.
+- **The new props in the first 1 GiB** (1 thread, 1 worker, 129 MiB/s): 10,869 items kept (schema 1's props alone keep 5,633); links P39 5,340, P1344 4,311, P361 3,287, P6 1,740, P1313 1,392, P607 1,250, P61 833, P35 137, P1906 46; dates P577 1,374, P575 646. The first GiB is country-heavy, so these rates won't hold for the whole dump; expect the full table file to grow by several times from the first pass's 230 MiB.
 - **Time values:**
   - Format: `"+1914-07-28T00:00:00Z"` with a `precision` (9 year, 10 month, 11 day) and a `calendarmodel` (Q1985727 Gregorian, Q1985786 Julian).
   - Month and day are `00` below their precision (`+1848-00-00`).

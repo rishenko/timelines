@@ -40,7 +40,8 @@ class WD:
         if not qid:
             return out
         for prop, t, prec, cal, rank in self.db.execute(
-                "SELECT prop, time, precision, calendar, rank FROM wd_claim WHERE qid=? AND rank != 'deprecated'", (qid,)):
+                "SELECT prop, time, precision, calendar, rank FROM wd_claim WHERE qid=? AND rank != 'deprecated'"
+                f" AND prop IN ({','.join('?' * len(START + END))})", (qid,) + START + END):
             if prec is None or prec < 9:
                 continue  # decades and coarser say nothing a year can be checked against
             v = wd_time(t, prec) + (prop, cal)
