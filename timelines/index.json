@@ -21,6 +21,26 @@
       },
       "defaultTheme": "parchment",
       "map": "../maps/ancient-classical.json"
+    },
+    {
+      "id": "modern-states",
+      "title": "Modern States",
+      "file": "modern-states.json",
+      "subtitle": "Every state in the world, 1500 to today",
+      "eventCount": 1452,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      }
     }
   ]
 }
