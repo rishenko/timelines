@@ -31,13 +31,15 @@ interface Props {
   /** The year the era changes (drawn as a stronger tick). */
   era: number;
   edgeLinks?: EdgeLink[];
+  /** How far the chart is scrolled sideways (content px): the row-label corner covers the years from here. */
+  viewLeft: number;
 }
 
 /** The sticky year ruler: the corner over the row labels, ticks, compressed gaps and links to neighbouring timelines. */
 /** The corner note's text: "No rows hidden", "1 row hidden", "12 rows hidden". */
 const hiddenLabel = (n: number) => (n === 0 ? 'No rows hidden' : `${n} ${n === 1 ? 'row' : 'rows'} hidden`);
 
-export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hiddenRows, onShowAllRows, ticks, gapStarts, gaps, era, edgeLinks }: Props) {
+export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hiddenRows, onShowAllRows, ticks, gapStarts, gaps, era, edgeLinks, viewLeft }: Props) {
   // below a year, the tick after a compressed gap gives its whole date: the month or year may have changed in the gap
   const gapEnds = increment < 1 ? new Set(gaps.map((g) => g.y1)) : undefined;
   // at week and day zoom that whole date is wider than a tick: the next tick's label is left out to make room
@@ -85,12 +87,14 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
           </span>
         </div>
       ))}
-      {edgeLinks?.map((l) => (
+      {/* a link scrolled under the sticky corner is left out: only a sliver of it would show beside the corner, a
+          target too small to tap and too close to the corner's button (WCAG 2.5.8) */}
+      {edgeLinks?.map((l) => ({ l, left: labelW + scale.x(l.year) + 4 })).filter(({ left }) => left >= viewLeft + labelW).map(({ l, left }) => (
         <a
           key={l.side + l.href}
           className={`tl-edge-link ${l.side}`}
           href={l.href}
-          style={{ left: labelW + scale.x(l.year) + 4 }}
+          style={{ left }}
           title={l.title}
         >
           {l.side === 'before' ? `← ${l.label}` : `${l.label} →`}

@@ -482,6 +482,7 @@ export function TimelineView(props: Props) {
           gaps={gaps}
           era={era}
           edgeLinks={props.edgeLinks}
+          viewLeft={view.left}
         />
 
         {/* arrow-key navigation for the controls inside (delegated here; each control is a button) */}

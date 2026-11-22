@@ -29,7 +29,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 12px;
-  /* over the links to neighbouring timelines (.tl-edge-link), which scroll under it like the ticks */
+  /* over the ticks, which scroll under it (links to neighbouring timelines, .tl-edge-link, are left out once they reach it) */
   z-index: 4;
 }
 .tl-corner {
