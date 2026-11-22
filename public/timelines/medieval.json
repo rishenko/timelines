@@ -3,7 +3,7 @@
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
-    "subtitle": "Europe, the Near East and North Africa, the steppe and Central Asia; pilot rows elsewhere; 650–1500",
+    "subtitle": "Europe, the Near East and North Africa, the steppe, Central and South Asia; pilot rows elsewhere; 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
     "calendar": {
@@ -8563,6 +8563,2104 @@
       ]
     },
     {
+      "id": "south-asia",
+      "name": "South Asia",
+      "color": "#c0702a"
+    },
+    {
+      "id": "northwest-india",
+      "name": "The northwest, Kashmir and Nepal",
+      "color": "#7a6a9a",
+      "parent": "south-asia"
+    },
+    {
+      "id": "alchon",
+      "name": "Alchon Huns",
+      "color": "#6a5a7a",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
+      "ids": {
+        "wikidata": "Q21050766"
+      },
+      "span": {
+        "start": 370,
+        "end": 670
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "indus-valley",
+          "sources": [
+            {
+              "sourceKey": "wp-alchon",
+              "sourceLocation": "infobox capital (Sagala)"
+            },
+            {
+              "sourceKey": "wp-sagala",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "karkota-dynasty",
+      "name": "Karkota dynasty (Kashmir)",
+      "color": "#5a7aa8",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Karkota_dynasty",
+      "span": {
+        "start": 625,
+        "end": 855,
+        "startDates": [
+          {
+            "year": 625,
+            "source": {
+              "sourceKey": "wp-karkota-dynasty",
+              "sourceLocation": "infobox year_start: 625"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 855,
+            "source": {
+              "sourceKey": "wp-karkota-dynasty",
+              "sourceLocation": "infobox year_end: 855"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-karkota-dynasty",
+              "sourceLocation": "infobox capital: Parihaspur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "utpala-dynasty",
+      "name": "Utpala dynasty (Kashmir)",
+      "color": "#4a6a98",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Utpala_dynasty",
+      "span": {
+        "start": 855,
+        "end": 1003,
+        "startDates": [
+          {
+            "year": 855,
+            "source": {
+              "sourceKey": "wp-utpala-dynasty",
+              "sourceLocation": "infobox year_start: 855"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1003,
+            "source": {
+              "sourceKey": "wp-utpala-dynasty",
+              "sourceLocation": "infobox year_end: 1003"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-utpala-dynasty",
+              "sourceLocation": "infobox capital: Avantipur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lohara-dynasty",
+      "name": "Lohara dynasty (Kashmir)",
+      "color": "#3a5a88",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Lohara_dynasty",
+      "span": {
+        "start": 1003,
+        "end": 1175,
+        "startDates": [
+          {
+            "year": 1003,
+            "source": {
+              "sourceKey": "wp-lohara-dynasty",
+              "sourceLocation": "infobox year_start: 1003"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1175,
+            "source": {
+              "sourceKey": "wp-lohara-dynasty",
+              "sourceLocation": "infobox year_end: 1175"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-lohara-dynasty",
+              "sourceLocation": "infobox capital: Srinagar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kashmir-sultanate",
+      "name": "Kashmir Sultanate",
+      "color": "#2a7a5a",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Kashmir_Sultanate",
+      "span": [
+        {
+          "start": 1320,
+          "end": 1323,
+          "startDates": [
+            {
+              "year": 1320,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1320–1323"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1323,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1320–1323"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1339,
+          "end": 1589,
+          "startDates": [
+            {
+              "year": 1339,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1339–1589"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1589,
+              "source": {
+                "sourceKey": "wp-kashmir-sultanate",
+                "sourceLocation": "infobox life span: 1339–1589"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-kashmir-sultanate",
+              "sourceLocation": "infobox capital: Srinagar (1320–1323; 1339–1343; 1354–1470; 1472–1529; 1530–1586) / Sik"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hindu-shahis",
+      "name": "Hindu Shahis",
+      "color": "#a86a3a",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Hindu_Shahis",
+      "span": {
+        "start": 822,
+        "end": 1026,
+        "startDates": [
+          {
+            "year": 822,
+            "source": {
+              "sourceKey": "wp-hindu-shahis",
+              "sourceLocation": "infobox year_start: c. 822"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1026,
+            "source": {
+              "sourceKey": "wp-hindu-shahis",
+              "sourceLocation": "infobox year_end: 1026"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gandhara",
+          "sources": [
+            {
+              "sourceKey": "wp-hindu-shahis",
+              "sourceLocation": "infobox capital: Kabul (822–870) / Udabhandapura (870–1001) / Nandana (1002–1014) / Lah"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghurid-dynasty",
+      "name": "Ghurids",
+      "color": "#6a8a3a",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Ghurid_dynasty",
+      "span": {
+        "start": 786,
+        "end": 1215,
+        "startDates": [
+          {
+            "year": 786,
+            "source": {
+              "sourceKey": "wp-ghurid-dynasty",
+              "sourceLocation": "infobox year_start: 786"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1215,
+            "source": {
+              "sourceKey": "wp-ghurid-dynasty",
+              "sourceLocation": "infobox year_end: 1215"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-ghurid-dynasty",
+              "sourceLocation": "infobox capital: Firozkoh / Herat / Ghazni (1170s–1215)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "langah-sultanate",
+      "name": "Langah Sultanate (Multan)",
+      "color": "#8a7a4a",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Langah_Sultanate",
+      "span": {
+        "start": 1445,
+        "end": 1530,
+        "startDates": [
+          {
+            "year": 1445,
+            "source": {
+              "sourceKey": "wp-langah-sultanate",
+              "sourceLocation": "infobox year_start: 1445"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1530,
+            "source": {
+              "sourceKey": "wp-langah-sultanate",
+              "sourceLocation": "infobox year_end: 1530"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "indus-valley",
+          "sources": [
+            {
+              "sourceKey": "wp-langah-sultanate",
+              "sourceLocation": "infobox capital: Multan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nepal",
+      "name": "Nepal",
+      "color": "#c03a4a",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Malla_dynasty_(Nepal)",
+      "phases": [
+        {
+          "name": "Malla dynasty",
+          "start": 1201,
+          "end": 1769,
+          "startDates": [
+            {
+              "year": 1201,
+              "source": {
+                "sourceKey": "wp-malla-dynasty-nepal",
+                "sourceLocation": "infobox year_start: c. 1201"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1769,
+              "source": {
+                "sourceKey": "wp-malla-dynasty-nepal",
+                "sourceLocation": "infobox year_end: 25 November 1769"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-malla-dynasty-nepal",
+              "sourceLocation": "infobox capital: Basantapur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "north-india",
+      "name": "Northern India",
+      "color": "#c08a3a",
+      "parent": "south-asia"
+    },
+    {
+      "id": "pratihara-dynasty",
+      "name": "Gurjara-Pratiharas",
+      "color": "#a8603a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Pratihara_dynasty",
+      "span": {
+        "start": 730,
+        "end": 1036,
+        "startDates": [
+          {
+            "year": 730,
+            "source": {
+              "sourceKey": "wp-pratihara-dynasty",
+              "sourceLocation": "infobox year_start: c. 730"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1036,
+            "source": {
+              "sourceKey": "wp-pratihara-dynasty",
+              "sourceLocation": "infobox year_end: 1036"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-pratihara-dynasty",
+              "sourceLocation": "infobox capital: Avanti / Kannauj"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chandela-empire",
+      "name": "Chandelas",
+      "color": "#8a5a7a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Chandela_Empire",
+      "span": {
+        "start": 831,
+        "end": 1315,
+        "startDates": [
+          {
+            "year": 831,
+            "source": {
+              "sourceKey": "wp-chandela-empire",
+              "sourceLocation": "infobox year_start: c. 831"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1315,
+            "source": {
+              "sourceKey": "wp-chandela-empire",
+              "sourceLocation": "infobox year_end: 1315"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-chandela-empire",
+              "sourceLocation": "infobox capital: Khajuraho / Kalanjara / Mahoba"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paramara-dynasty",
+      "name": "Paramaras",
+      "color": "#6a5a3a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Paramara_dynasty",
+      "span": {
+        "start": 948,
+        "end": 1305,
+        "startDates": [
+          {
+            "year": 948,
+            "source": {
+              "sourceKey": "wp-paramara-dynasty",
+              "sourceLocation": "infobox year_start: 948"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1305,
+            "source": {
+              "sourceKey": "wp-paramara-dynasty",
+              "sourceLocation": "infobox year_end: 1305"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-paramara-dynasty",
+              "sourceLocation": "infobox capital: Dhar / Mandu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delhi-sultanate",
+      "name": "Delhi Sultanate",
+      "color": "#2a6a3a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Delhi_Sultanate",
+      "phases": [
+        {
+          "name": "Mamluk dynasty",
+          "start": 1206,
+          "end": 1290,
+          "startDates": [
+            {
+              "year": 1206,
+              "source": {
+                "sourceKey": "wp-mamluk-dynasty-delhi",
+                "sourceLocation": "infobox year_start: 1206"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1290,
+              "source": {
+                "sourceKey": "wp-mamluk-dynasty-delhi",
+                "sourceLocation": "infobox year_end: 1290"
+              }
+            }
+          ],
+          "endEvent": "khalji-revolution"
+        },
+        {
+          "name": "Khalji dynasty",
+          "start": 1290,
+          "end": 1320,
+          "startDates": [
+            {
+              "year": 1290,
+              "source": {
+                "sourceKey": "wp-khalji-dynasty",
+                "sourceLocation": "infobox year_start: 1290"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1320,
+              "source": {
+                "sourceKey": "wp-khalji-dynasty",
+                "sourceLocation": "infobox year_end: 1320"
+              }
+            }
+          ],
+          "startEvent": "khalji-revolution"
+        },
+        {
+          "name": "Tughlaq dynasty",
+          "start": 1320,
+          "end": 1413,
+          "startDates": [
+            {
+              "year": 1320,
+              "source": {
+                "sourceKey": "wp-tughlaq-dynasty",
+                "sourceLocation": "infobox year_start: 1320"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1413,
+              "source": {
+                "sourceKey": "wp-tughlaq-dynasty",
+                "sourceLocation": "infobox year_end: 1413"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sayyid dynasty",
+          "start": 1414,
+          "end": 1451,
+          "startDates": [
+            {
+              "year": 1414,
+              "source": {
+                "sourceKey": "wp-sayyid-dynasty",
+                "sourceLocation": "infobox year_start: 1414"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1451,
+              "source": {
+                "sourceKey": "wp-sayyid-dynasty",
+                "sourceLocation": "infobox year_end: 1451"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lodi dynasty",
+          "start": 1451,
+          "end": 1526,
+          "startDates": [
+            {
+              "year": 1451,
+              "source": {
+                "sourceKey": "wp-lodi-dynasty",
+                "sourceLocation": "infobox year_start: 1451"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1526,
+              "source": {
+                "sourceKey": "wp-lodi-dynasty",
+                "sourceLocation": "infobox year_end: 1526"
+              }
+            }
+          ],
+          "endEvent": "first-battle-of-panipat"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-delhi-sultanate",
+              "sourceLocation": "infobox capital: Lahore (1206–1210) / Badayun (1210–1214) / Delhi (1214–1327; 1334–1506"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jaunpur-sultanate",
+      "name": "Jaunpur Sultanate",
+      "color": "#5a8a8a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Jaunpur_Sultanate",
+      "span": {
+        "start": 1394,
+        "end": 1494,
+        "startDates": [
+          {
+            "year": 1394,
+            "source": {
+              "sourceKey": "wp-jaunpur-sultanate",
+              "sourceLocation": "infobox year_start: 1394"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1494,
+            "source": {
+              "sourceKey": "wp-jaunpur-sultanate",
+              "sourceLocation": "infobox year_end: 1494"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-jaunpur-sultanate",
+              "sourceLocation": "infobox capital: Jaunpur (1394–1493) / Kahalgaon (capital-in-exile) (1494–1505)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "malwa-sultanate",
+      "name": "Malwa Sultanate",
+      "color": "#7a8a3a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Malwa_Sultanate",
+      "span": {
+        "start": 1401,
+        "end": 1562,
+        "startDates": [
+          {
+            "year": 1401,
+            "source": {
+              "sourceKey": "wp-malwa-sultanate",
+              "sourceLocation": "infobox year_start: 1401"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1562,
+            "source": {
+              "sourceKey": "wp-malwa-sultanate",
+              "sourceLocation": "infobox year_end: 1562"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-malwa-sultanate",
+              "sourceLocation": "infobox capital: Dhar (1401–1406) / Mandu (1406–1562)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gujarat-sultanate",
+      "name": "Gujarat Sultanate",
+      "color": "#3a8a5a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Gujarat_Sultanate",
+      "span": {
+        "start": 1394,
+        "end": 1573,
+        "startDates": [
+          {
+            "year": 1394,
+            "source": {
+              "sourceKey": "wp-gujarat-sultanate",
+              "sourceLocation": "infobox year_start: 1394"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1573,
+            "source": {
+              "sourceKey": "wp-gujarat-sultanate",
+              "sourceLocation": "infobox year_end: 1573"
+            }
+          }
+        ],
+        "startEvent": "declared-independence-from-delhi-sultanate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "indus-valley",
+          "sources": [
+            {
+              "sourceKey": "wp-gujarat-sultanate",
+              "sourceLocation": "infobox capital: Anhilwad Patan (1407–1411) / Ahmedabad (1411–1484, 1535–1573) / Champa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mewar",
+      "name": "Mewar",
+      "color": "#c0502a",
+      "parent": "north-india",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mewar",
+      "span": [
+        {
+          "start": 566,
+          "end": 1303,
+          "startDates": [
+            {
+              "year": 566,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 566–1303"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1303,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 566–1303"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1326,
+          "end": 1948,
+          "startDates": [
+            {
+              "year": 1326,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 1326-1948"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1948,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mewar",
+                "sourceLocation": "infobox life span: 1326-1948"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "indus-valley",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-mewar",
+              "sourceLocation": "infobox capital: Nagda / (c. 734–948) / Ahar / (948–1213) / Chittor / (1213–1567) / Uda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deccan-group",
+      "name": "The Deccan",
+      "color": "#8a6a4a",
+      "parent": "south-asia"
+    },
+    {
+      "id": "rashtrakuta-empire",
+      "name": "Rashtrakutas",
+      "color": "#a84a4a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Rashtrakuta_Empire",
+      "span": {
+        "start": 753,
+        "end": 982,
+        "startDates": [
+          {
+            "year": 753,
+            "source": {
+              "sourceKey": "wp-rashtrakuta-empire",
+              "sourceLocation": "infobox year_start: 753"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 982,
+            "source": {
+              "sourceKey": "wp-rashtrakuta-empire",
+              "sourceLocation": "infobox year_end: 982"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-rashtrakuta-empire",
+              "sourceLocation": "infobox capital: Manyakheta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eastern-chalukyas",
+      "name": "Eastern Chalukyas",
+      "color": "#8a7a5a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Chalukyas",
+      "span": {
+        "start": 624,
+        "end": 1189,
+        "startDates": [
+          {
+            "year": 624,
+            "source": {
+              "sourceKey": "wp-eastern-chalukyas",
+              "sourceLocation": "infobox year_start: 624"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1189,
+            "source": {
+              "sourceKey": "wp-eastern-chalukyas",
+              "sourceLocation": "infobox year_end: 1189"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-eastern-chalukyas",
+              "sourceLocation": "infobox capital: Pitapuram / Vengi / Rajamahendravaram"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "western-chalukya-empire",
+      "name": "Western Chalukyas",
+      "color": "#6a7a5a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Western_Chalukya_Empire",
+      "span": {
+        "start": 957,
+        "end": 1184,
+        "startDates": [
+          {
+            "year": 957,
+            "source": {
+              "sourceKey": "wp-western-chalukya-empire",
+              "sourceLocation": "infobox year_start: 957"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1184,
+            "source": {
+              "sourceKey": "wp-western-chalukya-empire",
+              "sourceLocation": "infobox year_end: 1184"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-western-chalukya-empire",
+              "sourceLocation": "infobox capital: Manyakheta / Basavakalyan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seuna-dynasty",
+      "name": "Seunas (Yadavas)",
+      "color": "#9a6a2a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Seuna_dynasty",
+      "span": {
+        "start": 850,
+        "end": 1317,
+        "startDates": [
+          {
+            "year": 850,
+            "source": {
+              "sourceKey": "wp-seuna-dynasty",
+              "sourceLocation": "infobox year_start: c. 850–1187 (as feudatories) / c. 1187"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1317,
+            "source": {
+              "sourceKey": "wp-seuna-dynasty",
+              "sourceLocation": "infobox year_end: 1317 (as sovereign power)"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-seuna-dynasty",
+              "sourceLocation": "infobox capital: Nashik / Ahmednagar / Devagiri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kakatiya-dynasty",
+      "name": "Kakatiyas",
+      "color": "#4a7a6a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Kakatiya_dynasty",
+      "span": {
+        "start": 1163,
+        "end": 1323,
+        "startDates": [
+          {
+            "year": 1163,
+            "source": {
+              "sourceKey": "wp-kakatiya-dynasty",
+              "sourceLocation": "infobox year_start: 1163"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1323,
+            "source": {
+              "sourceKey": "wp-kakatiya-dynasty",
+              "sourceLocation": "infobox year_end: 1323"
+            }
+          }
+        ],
+        "endEvent": "siege-of-warangal-end-of-the-kakatiyas"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-kakatiya-dynasty",
+              "sourceLocation": "infobox capital: Orugallu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bahmani-sultanate",
+      "name": "Bahmani Sultanate",
+      "color": "#2a5a4a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Bahmani_Kingdom",
+      "span": {
+        "start": 1347,
+        "end": 1527,
+        "startDates": [
+          {
+            "year": 1347,
+            "source": {
+              "sourceKey": "wp-bahmani-kingdom",
+              "sourceLocation": "infobox year_start: 1347"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1527,
+            "source": {
+              "sourceKey": "wp-bahmani-kingdom",
+              "sourceLocation": "infobox year_end: 1527"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-bahmani-kingdom",
+              "sourceLocation": "infobox capital: Gulbarga (1347–1425) / Bidar (1425–1527)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khandesh-sultanate",
+      "name": "Khandesh Sultanate (Farooqui)",
+      "color": "#5a6a8a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Farooqui_dynasty",
+      "span": {
+        "start": 1382,
+        "end": 1601,
+        "startDates": [
+          {
+            "year": 1382,
+            "source": {
+              "sourceKey": "wp-farooqui-dynasty",
+              "sourceLocation": "infobox year_start: 1382"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1601,
+            "source": {
+              "sourceKey": "wp-farooqui-dynasty",
+              "sourceLocation": "infobox year_end: 1601"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-farooqui-dynasty",
+              "sourceLocation": "infobox capital: Thalner / Asirgarh / Burhanpur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ahmadnagar-sultanate",
+      "name": "Ahmadnagar Sultanate",
+      "color": "#3a7a8a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Ahmadnagar_Sultanate",
+      "span": {
+        "start": 1490,
+        "end": 1636,
+        "startDates": [
+          {
+            "year": 1490,
+            "source": {
+              "sourceKey": "wp-ahmadnagar-sultanate",
+              "sourceLocation": "infobox year_start: 1490"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1636,
+            "source": {
+              "sourceKey": "wp-ahmadnagar-sultanate",
+              "sourceLocation": "infobox year_end: 1636"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-ahmadnagar-sultanate",
+              "sourceLocation": "infobox capital: Junnar (1490–1494; 1610) / Ahmednagar (1494–1600) / Daulatabad (1499–1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bijapur-sultanate",
+      "name": "Bijapur Sultanate",
+      "color": "#3a5a6a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Bijapur_Sultanate",
+      "span": {
+        "start": 1490,
+        "end": 1686,
+        "startDates": [
+          {
+            "year": 1490,
+            "source": {
+              "sourceKey": "wp-bijapur-sultanate",
+              "sourceLocation": "infobox year_start: 1490"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1686,
+            "source": {
+              "sourceKey": "wp-bijapur-sultanate",
+              "sourceLocation": "infobox year_end: 1686"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-bijapur-sultanate",
+              "sourceLocation": "infobox capital: Bijapur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "berar-sultanate",
+      "name": "Berar Sultanate",
+      "color": "#6a4a6a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Berar_Sultanate",
+      "span": {
+        "start": 1490,
+        "end": 1574,
+        "startDates": [
+          {
+            "year": 1490,
+            "source": {
+              "sourceKey": "wp-berar-sultanate",
+              "sourceLocation": "infobox year_start: 1490"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1574,
+            "source": {
+              "sourceKey": "wp-berar-sultanate",
+              "sourceLocation": "infobox year_end: 1574"
+            }
+          }
+        ],
+        "startEvent": "berar-sultanate-declares-independence"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-berar-sultanate",
+              "sourceLocation": "infobox capital: Ellichpur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bidar-sultanate",
+      "name": "Bidar Sultanate",
+      "color": "#7a6a6a",
+      "parent": "deccan-group",
+      "url": "https://en.wikipedia.org/wiki/Bidar_Sultanate",
+      "span": {
+        "start": 1492,
+        "end": 1619,
+        "startDates": [
+          {
+            "year": 1492,
+            "source": {
+              "sourceKey": "wp-bidar-sultanate",
+              "sourceLocation": "infobox year_start: 1492"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1619,
+            "source": {
+              "sourceKey": "wp-bidar-sultanate",
+              "sourceLocation": "infobox year_end: 1619"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "deccan",
+          "sources": [
+            {
+              "sourceKey": "wp-bidar-sultanate",
+              "sourceLocation": "infobox capital: Bidar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "south-india-group",
+      "name": "South India and Sri Lanka",
+      "color": "#3a7a5a",
+      "parent": "south-asia"
+    },
+    {
+      "id": "pallava",
+      "name": "Pallava dynasty",
+      "color": "#4a8a7a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
+      "ids": {
+        "wikidata": "Q466803"
+      },
+      "span": {
+        "start": 275,
+        "end": 897
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-pallava",
+              "sourceLocation": "infobox capital (Kanchipuram)"
+            },
+            {
+              "sourceKey": "wp-kanchipuram",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chola-empire",
+      "name": "Chola Empire",
+      "color": "#a83a2a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Chola_Empire",
+      "span": {
+        "start": 848,
+        "end": 1279,
+        "startDates": [
+          {
+            "year": 848,
+            "source": {
+              "sourceKey": "wp-chola-empire",
+              "sourceLocation": "infobox year_start: 848"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1279,
+            "source": {
+              "sourceKey": "wp-chola-empire",
+              "sourceLocation": "infobox year_end: 1279"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-chola-empire",
+              "sourceLocation": "infobox capital: Pazhaiyaarai, Thanjavur, Gangaikonda Cholapuram"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pandya-dynasty",
+      "name": "Pandyas",
+      "color": "#2a5a8a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Pandya_dynasty",
+      "span": {
+        "start": -500,
+        "end": 1618,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -500,
+            "source": {
+              "sourceKey": "wp-pandya-dynasty",
+              "sourceLocation": "infobox year_start: c.500 BCE"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1618,
+            "source": {
+              "sourceKey": "wp-pandya-dynasty",
+              "sourceLocation": "infobox year_end: 1618 CE"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-pandya-dynasty",
+              "sourceLocation": "infobox capital: Korkai (port, early historic) / Madurai (till 1335 CE) / Tenkasi (1422"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoysala-empire",
+      "name": "Hoysalas",
+      "color": "#8a3a6a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Hoysala_Kingdom",
+      "span": {
+        "start": 950,
+        "end": 1346,
+        "startDates": [
+          {
+            "year": 950,
+            "source": {
+              "sourceKey": "wp-hoysala-kingdom",
+              "sourceLocation": "infobox year_start: 950"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1346,
+            "source": {
+              "sourceKey": "wp-hoysala-kingdom",
+              "sourceLocation": "infobox year_end: 1346"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-hoysala-kingdom",
+              "sourceLocation": "infobox capital: Sosevur(Angadi) (1026–1048) / Belur (1048–1062) / Halebidu (1062–1300)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vijayanagara-empire",
+      "name": "Vijayanagara Empire",
+      "color": "#c08a2a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Vijayanagara_Empire",
+      "span": {
+        "start": 1336,
+        "end": 1646,
+        "startDates": [
+          {
+            "year": 1336,
+            "source": {
+              "sourceKey": "wp-vijayanagara-empire",
+              "sourceLocation": "infobox year_start: 1336"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1646,
+            "source": {
+              "sourceKey": "wp-vijayanagara-empire",
+              "sourceLocation": "infobox year_end: 1646"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-vijayanagara-empire",
+              "sourceLocation": "infobox capital: Vijayanagara (1336–1565) / Penukonda (1565–1592) / Chandragiri (1592–1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anuradhapura",
+      "name": "Anuradhapura kingdom",
+      "color": "#8a6a9a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "ids": {
+        "wikidata": "Q1965597"
+      },
+      "span": {
+        "start": -436,
+        "end": 1017,
+        "startDates": [
+          {
+            "year": -436,
+            "source": {
+              "sourceKey": "wp-anuradhapura",
+              "sourceLocation": "lead and infobox"
+            }
+          },
+          {
+            "year": -376,
+            "source": {
+              "sourceKey": "wp-anuradhapura",
+              "sourceLocation": "The city of Anuradhapura (made capital)"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "sri-lanka",
+          "sources": [
+            {
+              "sourceKey": "wp-row-anuradhapura",
+              "sourceLocation": "category \"4th-century BC establishments in Sri Lanka\""
+            },
+            {
+              "sourceKey": "wp-row-anuradhapura",
+              "sourceLocation": "category \"Kingdoms of Sri Lanka\""
+            },
+            {
+              "sourceKey": "wp-row-anuradhapura",
+              "sourceLocation": "category \"11th-century disestablishments in Sri Lanka\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sri-lanka",
+      "name": "Sri Lanka",
+      "color": "#a85a2a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kotte",
+      "phases": [
+        {
+          "name": "Kingdom of Polonnaruwa",
+          "start": 1055,
+          "end": 1232,
+          "startDates": [
+            {
+              "year": 1055,
+              "source": {
+                "sourceKey": "wp-kingdom-of-polonnaruwa",
+                "sourceLocation": "infobox year_start: 1055"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1232,
+              "source": {
+                "sourceKey": "wp-kingdom-of-polonnaruwa",
+                "sourceLocation": "infobox year_end: 1232"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kingdom of Dambadeniya",
+          "start": 1220,
+          "end": 1345,
+          "startDates": [
+            {
+              "year": 1220,
+              "source": {
+                "sourceKey": "wp-kingdom-of-dambadeniya",
+                "sourceLocation": "infobox year_start: 1220"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1345,
+              "source": {
+                "sourceKey": "wp-kingdom-of-dambadeniya",
+                "sourceLocation": "infobox year_end: 1345"
+              }
+            }
+          ],
+          "startEvent": "fall-of-polonnaruwa",
+          "endEvent": "capital-moved-to-gampola"
+        },
+        {
+          "name": "Kingdom of Gampola",
+          "start": 1341,
+          "end": 1408,
+          "startDates": [
+            {
+              "year": 1341,
+              "source": {
+                "sourceKey": "wp-kingdom-of-gampola",
+                "sourceLocation": "infobox year_start: 1341"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1408,
+              "source": {
+                "sourceKey": "wp-kingdom-of-gampola",
+                "sourceLocation": "infobox year_end: 1408"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kingdom of Kotte",
+          "start": 1412,
+          "end": 1597,
+          "startDates": [
+            {
+              "year": 1412,
+              "source": {
+                "sourceKey": "wp-kingdom-of-kotte",
+                "sourceLocation": "infobox year_start: 1412"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1597,
+              "source": {
+                "sourceKey": "wp-kingdom-of-kotte",
+                "sourceLocation": "infobox year_end: 1597"
+              }
+            }
+          ],
+          "startEvent": "capital-moved-from-gampola"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "sri-lanka",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kotte",
+              "sourceLocation": "infobox capital: Kotte"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jaffna-kingdom",
+      "name": "Jaffna Kingdom",
+      "color": "#5a3a8a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Jaffna_kingdom",
+      "span": {
+        "start": 1215,
+        "end": 1619,
+        "startDates": [
+          {
+            "year": 1215,
+            "source": {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox year_start: 1215"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1619,
+            "source": {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox year_end: 1619"
+            }
+          }
+        ],
+        "startEvent": "fall-of-the-polonnaruwa-kingdom-by-kalinga-maghas-invasion-o"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "sri-lanka",
+          "sources": [
+            {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox capital: Nallur"
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "sri-lanka",
+          "start": 1450,
+          "end": 1467,
+          "startDates": [
+            {
+              "year": 1450,
+              "source": {
+                "sourceKey": "wp-jaffna-kingdom",
+                "sourceLocation": "infobox event3: Jaffna in the Kingdom of Kotte, 1450"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1467,
+              "source": {
+                "sourceKey": "wp-jaffna-kingdom",
+                "sourceLocation": "infobox event4: Aryacakravarti dynasty restored, 1467"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox event3: Jaffna in the Kingdom of Kotte, 1450"
+            }
+          ],
+          "startEvent": "jaffna-in-the-kingdom-of-kotte",
+          "endEvent": "aryacakravarti-dynasty-restored"
+        }
+      ]
+    },
+    {
+      "id": "east-india",
+      "name": "Bengal, Odisha and Assam",
+      "color": "#4a8a6a",
+      "parent": "south-asia"
+    },
+    {
+      "id": "pala-empire",
+      "name": "Pala Empire",
+      "color": "#8a5a2a",
+      "parent": "east-india",
+      "url": "https://en.wikipedia.org/wiki/Pala_Empire",
+      "span": {
+        "start": 750,
+        "end": 1161,
+        "startDates": [
+          {
+            "year": 750,
+            "source": {
+              "sourceKey": "wp-pala-empire",
+              "sourceLocation": "infobox year_start: 750"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1161,
+            "source": {
+              "sourceKey": "wp-pala-empire",
+              "sourceLocation": "infobox year_end: 1161"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-pala-empire",
+              "sourceLocation": "infobox capital: Mahipal, Murshidabad / Various / (9th century – 1161)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sena-dynasty",
+      "name": "Senas",
+      "color": "#6a4a2a",
+      "parent": "east-india",
+      "url": "https://en.wikipedia.org/wiki/Sena_dynasty",
+      "span": {
+        "start": 1070,
+        "end": 1230,
+        "startDates": [
+          {
+            "year": 1070,
+            "source": {
+              "sourceKey": "wp-sena-dynasty",
+              "sourceLocation": "infobox year_start: 1070"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1230,
+            "source": {
+              "sourceKey": "wp-sena-dynasty",
+              "sourceLocation": "infobox year_end: 1230"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-sena-dynasty",
+              "sourceLocation": "infobox capital: Gauda, Bikrampur, Nabadwip, Lakhnauti"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bengal-sultanate",
+      "name": "Bengal Sultanate",
+      "color": "#2a8a4a",
+      "parent": "east-india",
+      "url": "https://en.wikipedia.org/wiki/Bengal_Sultanate",
+      "span": [
+        {
+          "start": 1352,
+          "end": 1539,
+          "startDates": [
+            {
+              "year": 1352,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1352–1539"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1539,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1352–1539"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1554,
+          "end": 1576,
+          "startDates": [
+            {
+              "year": 1554,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1554–1576"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1576,
+              "source": {
+                "sourceKey": "wp-bengal-sultanate",
+                "sourceLocation": "infobox life span: 1554–1576"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-bengal-sultanate",
+              "sourceLocation": "infobox capital: Pandua / (1352–1390, 1410-1433) / Sonargaon / (1390–1410) / Gaur / (14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eastern-ganga-dynasty",
+      "name": "Eastern Gangas",
+      "color": "#a86a5a",
+      "parent": "east-india",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Ganga_dynasty",
+      "phases": [
+        {
+          "name": "Eastern Gangas of Kalinga",
+          "start": 493,
+          "end": 1077,
+          "startDates": [
+            {
+              "year": 493,
+              "source": {
+                "sourceKey": "wp-eastern-ganga-dynasty",
+                "sourceLocation": "infobox life span: 493–1077 AD (Kalinga)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1077,
+              "source": {
+                "sourceKey": "wp-eastern-ganga-dynasty",
+                "sourceLocation": "infobox life span: 493–1077 AD (Kalinga)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Eastern Gangas of Trikalinga",
+          "start": 1077,
+          "end": 1436,
+          "startDates": [
+            {
+              "year": 1077,
+              "source": {
+                "sourceKey": "wp-eastern-ganga-dynasty",
+                "sourceLocation": "infobox life span: 1077–1436 AD (Trikalinga)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1436,
+              "source": {
+                "sourceKey": "wp-eastern-ganga-dynasty",
+                "sourceLocation": "infobox life span: 1077–1436 AD (Trikalinga)"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-eastern-ganga-dynasty",
+              "sourceLocation": "infobox capital: Kalinganagara / / Dantapura / Kataka / Paralakhemundi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gajapati-empire",
+      "name": "Gajapati Empire",
+      "color": "#c0a03a",
+      "parent": "east-india",
+      "url": "https://en.wikipedia.org/wiki/Gajapati_Empire",
+      "span": {
+        "start": 1434,
+        "end": 1541,
+        "startDates": [
+          {
+            "year": 1434,
+            "source": {
+              "sourceKey": "wp-gajapati-empire",
+              "sourceLocation": "infobox year_start: 1434"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1541,
+            "source": {
+              "sourceKey": "wp-gajapati-empire",
+              "sourceLocation": "infobox year_end: 1541"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-gajapati-empire",
+              "sourceLocation": "infobox capital: Kataka"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kamarupa",
+      "name": "Kamarupa",
+      "color": "#5a7a3a",
+      "parent": "east-india",
+      "url": "https://en.wikipedia.org/wiki/Kamarupa",
+      "span": {
+        "start": 350,
+        "end": 1140,
+        "startDates": [
+          {
+            "year": 350,
+            "source": {
+              "sourceKey": "wp-kamarupa",
+              "sourceLocation": "infobox year_start: 350"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1140,
+            "source": {
+              "sourceKey": "wp-kamarupa",
+              "sourceLocation": "infobox year_end: 1140"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-kamarupa",
+              "sourceLocation": "infobox capital: Pragjyotishpura / Haruppeswara / Durjaya"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ahom-kingdom",
+      "name": "Ahom kingdom",
+      "color": "#3a6a3a",
+      "parent": "east-india",
+      "url": "https://en.wikipedia.org/wiki/Ahom_kingdom",
+      "span": {
+        "start": 1228,
+        "end": 1826,
+        "startDates": [
+          {
+            "year": 1228,
+            "source": {
+              "sourceKey": "wp-ahom-kingdom",
+              "sourceLocation": "infobox year_start: 1228"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1826,
+            "source": {
+              "sourceKey": "wp-ahom-kingdom",
+              "sourceLocation": "infobox year_end: 1826"
+            }
+          }
+        ],
+        "startEvent": "ahom-kingdom-established-by-sukapha"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-ahom-kingdom",
+              "sourceLocation": "infobox capital: Charaideo / (1253–1397) / Charagua / (1397–?) / Bakata / Garhgaon / (1"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "east-asia",
       "name": "East Asia",
       "color": "#b0302f"
@@ -9369,14 +11467,6 @@
         "wikipedia"
       ]
     },
-    "wp-cividale-del-friuli": {
-      "name": "Wikipedia: Cividale del Friuli",
-      "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-lombards": {
       "name": "Wikipedia: Kingdom of the Lombards",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
@@ -9384,6 +11474,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-cividale-del-friuli": {
+      "name": "Wikipedia: Cividale del Friuli",
+      "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-kingdom-of-the-lombards": {
       "name": "Kingdom of the Lombards (Wikipedia)",
@@ -9641,14 +11739,6 @@
         "wikipedia"
       ]
     },
-    "wp-roman-britain": {
-      "name": "Wikipedia: Roman Britain",
-      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-row-anglo-saxons": {
       "name": "Wikipedia: History of Anglo-Saxon England",
       "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
@@ -9656,6 +11746,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-roman-britain": {
+      "name": "Wikipedia: Roman Britain",
+      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-history-of-anglo-saxon-england": {
       "name": "History of Anglo-Saxon England (Wikipedia)",
@@ -9801,9 +11899,9 @@
         "wikipedia"
       ]
     },
-    "wp-serbia": {
-      "name": "Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Serbia",
+    "wp-principality-of-serbia": {
+      "name": "Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -9817,9 +11915,9 @@
         "wikipedia"
       ]
     },
-    "wp-principality-of-serbia": {
-      "name": "Principality of Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
+    "wp-serbia": {
+      "name": "Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -9857,17 +11955,17 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -10492,6 +12590,438 @@
     "wp-nogai-horde": {
       "name": "Nogai Horde (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Nogai_Horde",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-alchon": {
+      "name": "Wikipedia: Alchon Huns",
+      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-sagala": {
+      "name": "Wikipedia: Sagala",
+      "url": "https://en.wikipedia.org/wiki/Sagala",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
+    },
+    "wp-karkota-dynasty": {
+      "name": "Karkota dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Karkota_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-utpala-dynasty": {
+      "name": "Utpala dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Utpala_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-lohara-dynasty": {
+      "name": "Lohara dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lohara_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kashmir-sultanate": {
+      "name": "Kashmir Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kashmir_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hindu-shahis": {
+      "name": "Hindu Shahis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hindu_Shahis",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ghurid-dynasty": {
+      "name": "Ghurid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghurid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-langah-sultanate": {
+      "name": "Langah Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Langah_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-malla-dynasty-nepal": {
+      "name": "Malla dynasty (Nepal) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malla_dynasty_(Nepal)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pratihara-dynasty": {
+      "name": "Pratihara dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pratihara_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-chandela-empire": {
+      "name": "Chandela Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chandela_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-paramara-dynasty": {
+      "name": "Paramara dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paramara_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mamluk-dynasty-delhi": {
+      "name": "Mamluk dynasty (Delhi) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mamluk_dynasty_(Delhi)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khalji-dynasty": {
+      "name": "Khalji dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khalji_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tughlaq-dynasty": {
+      "name": "Tughlaq dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tughlaq_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sayyid-dynasty": {
+      "name": "Sayyid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sayyid_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-lodi-dynasty": {
+      "name": "Lodi dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lodi_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-delhi-sultanate": {
+      "name": "Delhi Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Delhi_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jaunpur-sultanate": {
+      "name": "Jaunpur Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jaunpur_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-malwa-sultanate": {
+      "name": "Malwa Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malwa_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gujarat-sultanate": {
+      "name": "Gujarat Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gujarat_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-mewar": {
+      "name": "Kingdom of Mewar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mewar",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-rashtrakuta-empire": {
+      "name": "Rashtrakuta Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rashtrakuta_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-eastern-chalukyas": {
+      "name": "Eastern Chalukyas (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Chalukyas",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-western-chalukya-empire": {
+      "name": "Western Chalukya Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Western_Chalukya_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-seuna-dynasty": {
+      "name": "Seuna dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seuna_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kakatiya-dynasty": {
+      "name": "Kakatiya dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kakatiya_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bahmani-kingdom": {
+      "name": "Bahmani Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bahmani_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-farooqui-dynasty": {
+      "name": "Farooqui dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Farooqui_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ahmadnagar-sultanate": {
+      "name": "Ahmadnagar Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ahmadnagar_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bijapur-sultanate": {
+      "name": "Bijapur Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bijapur_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-berar-sultanate": {
+      "name": "Berar Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berar_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bidar-sultanate": {
+      "name": "Bidar Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bidar_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kanchipuram": {
+      "name": "Wikipedia: Kanchipuram",
+      "url": "https://en.wikipedia.org/wiki/Kanchipuram",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
+    },
+    "wp-pallava": {
+      "name": "Wikipedia: Pallava dynasty",
+      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-chola-empire": {
+      "name": "Chola Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chola_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pandya-dynasty": {
+      "name": "Pandya dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pandya_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hoysala-kingdom": {
+      "name": "Hoysala Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hoysala_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vijayanagara-empire": {
+      "name": "Vijayanagara Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vijayanagara_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-row-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
+    },
+    "wp-kingdom-of-polonnaruwa": {
+      "name": "Kingdom of Polonnaruwa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Polonnaruwa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-dambadeniya": {
+      "name": "Kingdom of Dambadeniya (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Dambadeniya",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-gampola": {
+      "name": "Kingdom of Gampola (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Gampola",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kotte": {
+      "name": "Kingdom of Kotte (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kotte",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jaffna-kingdom": {
+      "name": "Jaffna kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jaffna_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pala-empire": {
+      "name": "Pala Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pala_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sena-dynasty": {
+      "name": "Sena dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sena_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bengal-sultanate": {
+      "name": "Bengal Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bengal_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-eastern-ganga-dynasty": {
+      "name": "Eastern Ganga dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Ganga_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gajapati-empire": {
+      "name": "Gajapati Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gajapati_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kamarupa": {
+      "name": "Kamarupa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kamarupa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ahom-kingdom": {
+      "name": "Ahom kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ahom_kingdom",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -16055,6 +18585,756 @@
         {
           "sourceKey": "wp-khanate-of-sibir",
           "sourceLocation": "infobox event_start: Ibak Khan establishes Chimgi-Tura as an independent khanate, 1468"
+        }
+      ]
+    },
+    {
+      "uuid": "lohara-interruption",
+      "title": "Lohara Interruption",
+      "descr": "",
+      "start": 1323,
+      "end": 1339,
+      "tracks": [
+        "kashmir-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kashmir-sultanate",
+          "sourceLocation": "infobox event1: Lohara Interruption, 1323–1339"
+        }
+      ]
+    },
+    {
+      "uuid": "shah-mir-lohara-war",
+      "title": "Shah Mir–Lohara War",
+      "descr": "",
+      "start": 1338,
+      "end": 1339,
+      "tracks": [
+        "kashmir-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kashmir-sultanate",
+          "sourceLocation": "infobox event2: Shah Mir–Lohara War, 1338–1339"
+        }
+      ]
+    },
+    {
+      "uuid": "kashmir-civil-war",
+      "title": "Kashmir Civil War",
+      "descr": "",
+      "start": 1419,
+      "end": 1420,
+      "tracks": [
+        "kashmir-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kashmir-sultanate",
+          "sourceLocation": "infobox event3: Kashmir Civil War, December 1419–July 1420"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-peshawar",
+      "title": "Battle of Peshawar",
+      "descr": "",
+      "start": 1001,
+      "tracks": [
+        "hindu-shahis"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hindu-shahis",
+          "sourceLocation": "infobox event1: Battle of Peshawar, 27 November 1001"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-chach",
+      "title": "Battle of Chach",
+      "descr": "",
+      "start": 1008,
+      "tracks": [
+        "hindu-shahis"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hindu-shahis",
+          "sourceLocation": "infobox event2: Battle of Chach, 31 December 1008"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-nandana",
+      "title": "Battle of Nandana",
+      "descr": "",
+      "start": 1014,
+      "tracks": [
+        "hindu-shahis"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hindu-shahis",
+          "sourceLocation": "infobox event3: Battle of Nandana, March 1014"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-river-tausi",
+      "title": "Battle of River Tausi",
+      "descr": "",
+      "start": 1014,
+      "tracks": [
+        "hindu-shahis"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hindu-shahis",
+          "sourceLocation": "infobox event4: Battle of River Tausi, March 1014"
+        }
+      ]
+    },
+    {
+      "uuid": "annexed-by-the-ghaznavids",
+      "title": "Annexed by the Ghaznavids",
+      "descr": "",
+      "start": 1026,
+      "tracks": [
+        "hindu-shahis"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hindu-shahis",
+          "sourceLocation": "infobox event5: Annexed by the Ghaznavids, 1026"
+        }
+      ]
+    },
+    {
+      "uuid": "conquest-of-kannauj-by-mahmud-of-ghazni",
+      "title": "Conquest of Kannauj by Mahmud of Ghazni",
+      "descr": "",
+      "start": 1018,
+      "tracks": [
+        "pratihara-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-pratihara-dynasty",
+          "sourceLocation": "infobox event2: Conquest of Kannauj by Mahmud of Ghazni, 1018"
+        }
+      ]
+    },
+    {
+      "uuid": "khalji-revolution",
+      "title": "Khalji Revolution",
+      "descr": "",
+      "start": 1290,
+      "tracks": [
+        "delhi-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khalji-dynasty",
+          "sourceLocation": "infobox event_start: Khalji Revolution, 13 June 1290"
+        },
+        {
+          "sourceKey": "wp-delhi-sultanate",
+          "sourceLocation": "infobox event1: Khalji Revolution, 1 February – 13 June 1290"
+        }
+      ]
+    },
+    {
+      "uuid": "first-battle-of-panipat",
+      "title": "First Battle of Panipat",
+      "descr": "",
+      "start": 1526,
+      "tracks": [
+        "delhi-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-lodi-dynasty",
+          "sourceLocation": "infobox event_end: First Battle of Panipat, 21 April 1526"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "lodi-sharqi-war",
+      "title": "Lodi–Sharqi War",
+      "descr": "",
+      "start": 1452,
+      "end": 1500,
+      "tracks": [
+        "delhi-sultanate",
+        "jaunpur-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-lodi-dynasty",
+          "sourceLocation": "infobox event1: Lodi–Sharqi War, 1452–1500"
+        },
+        {
+          "sourceKey": "wp-jaunpur-sultanate",
+          "sourceLocation": "infobox event1: Lodi–Sharqi War, 1452–1500"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-lahrawat",
+      "title": "Battle of Lahrawat",
+      "descr": "",
+      "start": 1320,
+      "tracks": [
+        "delhi-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-delhi-sultanate",
+          "sourceLocation": "infobox event2: Battle of Lahrawat, 6 September 1320"
+        }
+      ]
+    },
+    {
+      "uuid": "sack-of-delhi",
+      "title": "Sack of Delhi",
+      "descr": "",
+      "start": 1398,
+      "tracks": [
+        "delhi-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-delhi-sultanate",
+          "sourceLocation": "infobox event3: Sack of Delhi, 17–20 December 1398"
+        }
+      ]
+    },
+    {
+      "uuid": "muzaffar-shahs-invasion-of-malwa",
+      "title": "Muzaffar Shah's invasion of Malwa",
+      "descr": "",
+      "start": 1407,
+      "tracks": [
+        "malwa-sultanate",
+        "gujarat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-malwa-sultanate",
+          "sourceLocation": "infobox event1: Muzaffar Shah's invasion of Malwa, 1407"
+        },
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox event1: Invasion of Malwa, 1407"
+        }
+      ]
+    },
+    {
+      "uuid": "kalpi-war",
+      "title": "Kalpi War",
+      "descr": "",
+      "start": 1413,
+      "end": 1444,
+      "tracks": [
+        "malwa-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-malwa-sultanate",
+          "sourceLocation": "infobox event2: Kalpi War, 1413–1444"
+        }
+      ]
+    },
+    {
+      "uuid": "malwa-bahmani-wars",
+      "title": "Malwa–Bahmani Wars",
+      "descr": "",
+      "start": 1425,
+      "end": 1466,
+      "tracks": [
+        "malwa-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-malwa-sultanate",
+          "sourceLocation": "infobox event3: Malwa–Bahmani Wars, 1425–1466"
+        }
+      ]
+    },
+    {
+      "uuid": "declared-independence-from-delhi-sultanate",
+      "title": "Declared independence from Delhi Sultanate",
+      "descr": "",
+      "start": 1394,
+      "tracks": [
+        "gujarat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox event_start: Declared independence from Delhi Sultanate, 1394"
+        }
+      ]
+    },
+    {
+      "uuid": "konkan-war",
+      "title": "Konkan War",
+      "descr": "",
+      "start": 1429,
+      "end": 1431,
+      "tracks": [
+        "gujarat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox event2: Konkan War, 1429–1431"
+        }
+      ]
+    },
+    {
+      "uuid": "conquest-of-junagadh",
+      "title": "Conquest of Junagadh",
+      "descr": "",
+      "start": 1467,
+      "end": 1470,
+      "tracks": [
+        "gujarat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox event3: Conquest of Junagadh, 1467–1470"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-champaner",
+      "title": "Siege of Champaner",
+      "descr": "",
+      "start": 1483,
+      "end": 1484,
+      "tracks": [
+        "gujarat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gujarat-sultanate",
+          "sourceLocation": "infobox event4: Siege of Champaner, 1483–1484"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-warangal-end-of-the-kakatiyas",
+      "title": "Siege of Warangal; end of the Kakatiyas",
+      "descr": "",
+      "start": 1323,
+      "tracks": [
+        "kakatiya-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kakatiya-dynasty",
+          "sourceLocation": "infobox event_end: Siege of Warangal, 9 November 1323"
+        }
+      ]
+    },
+    {
+      "uuid": "gujarat-sultanates-campaign-in-khandesh",
+      "title": "Gujarat Sultanate's campaign in Khandesh",
+      "descr": "",
+      "start": 1498,
+      "end": 1500,
+      "tracks": [
+        "khandesh-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-farooqui-dynasty",
+          "sourceLocation": "infobox event1: Gujarat Sultanate's campaign, 1498–1500"
+        }
+      ]
+    },
+    {
+      "uuid": "berar-sultanate-declares-independence",
+      "title": "Berar Sultanate declares independence",
+      "descr": "",
+      "start": 1490,
+      "tracks": [
+        "berar-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-berar-sultanate",
+          "sourceLocation": "infobox event_start: Independence, 1490"
+        }
+      ]
+    },
+    {
+      "uuid": "empire-at-its-greatest-extent",
+      "title": "Chola Empire at its greatest extent",
+      "descr": "",
+      "start": 1030,
+      "tracks": [
+        "chola-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chola-empire",
+          "sourceLocation": "infobox event1: Empire at its greatest extent, 1030"
+        }
+      ]
+    },
+    {
+      "uuid": "earliest-records-of-vijayanagara",
+      "title": "Earliest records of Vijayanagara",
+      "descr": "",
+      "start": 1343,
+      "tracks": [
+        "vijayanagara-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-vijayanagara-empire",
+          "sourceLocation": "infobox event1: Earliest records, 1343"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-polonnaruwa",
+      "title": "Fall of Polonnaruwa",
+      "descr": "",
+      "start": 1220,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-dambadeniya",
+          "sourceLocation": "infobox event_start: Fall of Polonnaruwa, 1220"
+        }
+      ]
+    },
+    {
+      "uuid": "capital-moved-to-gampola",
+      "title": "Capital moved to Gampola",
+      "descr": "",
+      "start": 1345,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-dambadeniya",
+          "sourceLocation": "infobox event_end: Capital moved to Gampola, 1345"
+        }
+      ]
+    },
+    {
+      "uuid": "capital-moved-from-gampola",
+      "title": "Capital moved from Gampola",
+      "descr": "",
+      "start": 1412,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kotte",
+          "sourceLocation": "infobox event_start: Capital moved from Gampola, 1412"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-the-polonnaruwa-kingdom-by-kalinga-maghas-invasion-o",
+      "title": "Fall of the Polonnaruwa kingdom by Kalinga Magha's invasion of Sri Lanka",
+      "descr": "",
+      "start": 1215,
+      "tracks": [
+        "jaffna-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jaffna-kingdom",
+          "sourceLocation": "infobox event_start: Fall of the Polonnaruwa kingdom by Kalinga Magha's invasion of Sri Lanka, 1215"
+        }
+      ]
+    },
+    {
+      "uuid": "pandyas-installed-aryacakravarti",
+      "title": "Pandyas installed Aryacakravarti",
+      "descr": "",
+      "start": 1277,
+      "tracks": [
+        "jaffna-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jaffna-kingdom",
+          "sourceLocation": "infobox event1: Pandyas installed Aryacakravarti, 1277"
+        }
+      ]
+    },
+    {
+      "uuid": "independence-from-pandya-dynasty",
+      "title": "Independence from Pandya dynasty",
+      "descr": "",
+      "start": 1323,
+      "tracks": [
+        "jaffna-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jaffna-kingdom",
+          "sourceLocation": "infobox event2: Independence from Pandya dynasty, 1323"
+        }
+      ]
+    },
+    {
+      "uuid": "jaffna-in-the-kingdom-of-kotte",
+      "title": "Jaffna in the Kingdom of Kotte",
+      "descr": "",
+      "start": 1450,
+      "tracks": [
+        "jaffna-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jaffna-kingdom",
+          "sourceLocation": "infobox event3: Jaffna in the Kingdom of Kotte, 1450"
+        }
+      ]
+    },
+    {
+      "uuid": "aryacakravarti-dynasty-restored",
+      "title": "Aryacakravarti dynasty restored",
+      "descr": "",
+      "start": 1467,
+      "tracks": [
+        "jaffna-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jaffna-kingdom",
+          "sourceLocation": "infobox event4: Aryacakravarti dynasty restored, 1467"
+        }
+      ]
+    },
+    {
+      "uuid": "sena-revolution",
+      "title": "Sena Revolution",
+      "descr": "",
+      "start": 1070,
+      "end": 1179,
+      "tracks": [
+        "sena-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sena-dynasty",
+          "sourceLocation": "infobox event1: Sena Revolution, 1070–1179"
+        }
+      ]
+    },
+    {
+      "uuid": "sena-gahadavala-conflicts",
+      "title": "Sena-Gahadavala Conflicts",
+      "descr": "",
+      "start": 1155,
+      "end": 1206,
+      "tracks": [
+        "sena-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sena-dynasty",
+          "sourceLocation": "infobox event2: Sena-Gahadavala Conflicts, 1155–1206"
+        }
+      ]
+    },
+    {
+      "uuid": "ghurid-conquest-of-bengal",
+      "title": "Ghurid conquest of Bengal",
+      "descr": "",
+      "start": 1205,
+      "tracks": [
+        "sena-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sena-dynasty",
+          "sourceLocation": "infobox event3: Ghurid conquest of Bengal, 1205"
+        }
+      ]
+    },
+    {
+      "uuid": "independence-from-delhi",
+      "title": "Independence from Delhi",
+      "descr": "",
+      "start": 1353,
+      "end": 1359,
+      "tracks": [
+        "bengal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bengal-sultanate",
+          "sourceLocation": "infobox event1: Independence from Delhi, 1353–1359"
+        }
+      ]
+    },
+    {
+      "uuid": "raja-ganeshas-rebellion",
+      "title": "Raja Ganesha's rebellion",
+      "descr": "",
+      "start": 1414,
+      "tracks": [
+        "bengal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bengal-sultanate",
+          "sourceLocation": "infobox event2: Raja Ganesha's rebellion, 1414"
+        }
+      ]
+    },
+    {
+      "uuid": "bengal-jaunpur-war",
+      "title": "Bengal–Jaunpur War",
+      "descr": "",
+      "start": 1415,
+      "end": 1420,
+      "tracks": [
+        "bengal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bengal-sultanate",
+          "sourceLocation": "infobox event3: Bengal–Jaunpur War, 1415–1420"
+        }
+      ]
+    },
+    {
+      "uuid": "intervention-in-arakan",
+      "title": "Intervention in Arakan",
+      "descr": "",
+      "start": 1429,
+      "end": 1430,
+      "tracks": [
+        "bengal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bengal-sultanate",
+          "sourceLocation": "infobox event4: Intervention in Arakan, 1429–1430"
+        }
+      ]
+    },
+    {
+      "uuid": "bengal-kamata-war",
+      "title": "Bengal–Kamata War",
+      "descr": "",
+      "start": 1498,
+      "tracks": [
+        "bengal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bengal-sultanate",
+          "sourceLocation": "infobox event5: Bengal–Kamata War, 1498"
+        }
+      ]
+    },
+    {
+      "uuid": "malwese-invasion-of-the-eastern-ganga-realm",
+      "title": "Malwese invasion of the Eastern Ganga realm",
+      "descr": "",
+      "start": 1422,
+      "tracks": [
+        "eastern-ganga-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-eastern-ganga-dynasty",
+          "sourceLocation": "infobox event2: Malwese invasion, c. 1422"
+        }
+      ]
+    },
+    {
+      "uuid": "sharqi-invasions-of-the-eastern-ganga-realm",
+      "title": "Sharqi invasions of the Eastern Ganga realm",
+      "descr": "",
+      "start": 1444,
+      "tracks": [
+        "eastern-ganga-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-eastern-ganga-dynasty",
+          "sourceLocation": "infobox event3: Sharqi invasions, c. 1444"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-devarakonda",
+      "title": "Battle of Devarakonda",
+      "descr": "",
+      "start": 1458,
+      "tracks": [
+        "gajapati-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gajapati-empire",
+          "sourceLocation": "infobox event1: Battle of Devarakonda, 1458"
+        }
+      ]
+    },
+    {
+      "uuid": "gajapati-invasion-of-bidar",
+      "title": "Gajapati invasion of Bidar",
+      "descr": "",
+      "start": 1461,
+      "tracks": [
+        "gajapati-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gajapati-empire",
+          "sourceLocation": "infobox event2: Gajapati invasion of Bidar, 1461"
+        }
+      ]
+    },
+    {
+      "uuid": "ahom-kingdom-established-by-sukapha",
+      "title": "Ahom kingdom established by Sukapha",
+      "descr": "",
+      "start": 1228,
+      "tracks": [
+        "ahom-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ahom-kingdom",
+          "sourceLocation": "infobox event_start: Established by Sukapha, 1228"
+        }
+      ]
+    },
+    {
+      "uuid": "re-organization-under-king-suhungmung",
+      "title": "Re-organization under King Suhungmung",
+      "descr": "",
+      "start": 1497,
+      "tracks": [
+        "ahom-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ahom-kingdom",
+          "sourceLocation": "infobox event1: Re-organization under King Suhungmung, 1497"
         }
       ]
     }
