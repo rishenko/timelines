@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "meta": {
     "id": "ancient-classical",
     "title": "Ancient and Classical World",
@@ -902,7 +902,80 @@
           }
         }
       }
-    }
+    },
+    "eras": [
+      {
+        "id": "axial-age",
+        "name": "Axial Age",
+        "group": "world",
+        "start": -749,
+        "end": -249,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -749,
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "From \"about the 8th\" century BCE."
+          }
+        ],
+        "endDates": [
+          {
+            "year": -249,
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "To the 3rd century BCE."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-axial-age",
+            "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+          }
+        ]
+      },
+      {
+        "id": "pax-romana",
+        "name": "Pax Romana",
+        "group": "roman-world",
+        "start": -26,
+        "end": 180,
+        "startDates": [
+          {
+            "year": -26,
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 180,
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+          },
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+          }
+        ]
+      }
+    ]
   },
   "tracks": [
     {
@@ -913,6 +986,984 @@
       "ids": {
         "wikidata": "Q15"
       }
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt and Nubia",
+      "color": "#b8871b",
+      "chronology": "shaw",
+      "parent": "africa",
+      "url": "https://en.wikipedia.org/wiki/Egypt",
+      "ids": {
+        "wikidata": "Q79"
+      }
+    },
+    {
+      "id": "nabta",
+      "name": "Nabta Playa (Western Desert)",
+      "color": "#b09060",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Nabta_Playa",
+      "ids": {
+        "wikidata": "Q1535226"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-nabta",
+              "sourceLocation": "category \"Archaeological sites in Egypt\""
+            },
+            {
+              "sourceKey": "wp-nabta",
+              "sourceLocation": "category \"Kingdom of Kush\""
+            },
+            {
+              "sourceKey": "wp-nabta",
+              "sourceLocation": "category \"Prehistoric Egypt\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "nubian-meroitic",
+          "sources": [
+            {
+              "sourceKey": "wp-nabta",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "kingdom-of-kush",
+          "sources": [
+            {
+              "sourceKey": "wp-nabta",
+              "sourceLocation": "category \"Kingdom of Kush\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lower-egypt-neolithic",
+      "name": "Lower Egypt Neolithic (Faiyum A, Merimde)",
+      "color": "#a08050",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
+      "ids": {
+        "wikidata": "Q208520"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-prehistoric-egypt",
+              "sourceLocation": "category \"Prehistoric Egypt\""
+            },
+            {
+              "sourceKey": "wp-prehistoric-egypt",
+              "sourceLocation": "first sentence"
+            },
+            {
+              "sourceKey": "wp-prehistoric-egypt",
+              "sourceLocation": "infobox capital"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upper-egypt-predynastic",
+      "name": "Upper Egypt (Badarian, Naqada I)",
+      "color": "#c09050",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
+      "ids": {
+        "wikidata": "Q208520"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-prehistoric-egypt",
+              "sourceLocation": "category \"Prehistoric Egypt\""
+            },
+            {
+              "sourceKey": "wp-prehistoric-egypt",
+              "sourceLocation": "first sentence"
+            },
+            {
+              "sourceKey": "wp-prehistoric-egypt",
+              "sourceLocation": "infobox capital"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pharaonic-egypt",
+      "name": "Pharaonic Egypt",
+      "color": "#d4a72c",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
+      "ids": {
+        "wikidata": "Q11768"
+      },
+      "phases": [
+        {
+          "name": "Late Predynastic (Dynasty 0)",
+          "start": -3299,
+          "end": -3149,
+          "circa": true
+        },
+        {
+          "name": "Early Dynastic Period",
+          "start": -2999,
+          "end": -2685,
+          "startDates": [
+            {
+              "year": -2999,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
+              }
+            },
+            {
+              "year": -3149,
+              "source": {
+                "sourceKey": "wp-anc-egypt",
+                "sourceLocation": "lead and infobox ('conventional Egyptian chronology')"
+              }
+            },
+            {
+              "year": -2899,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
+              }
+            },
+            {
+              "year": -3099,
+              "margin": 100,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "wp-egypt-chron",
+                "sourceLocation": "table, C14 column, Dynasty 1"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -2685,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2589,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
+              }
+            }
+          ],
+          "circa": true
+        },
+        {
+          "name": "Old Kingdom",
+          "start": -2685,
+          "end": -2180,
+          "startDates": [
+            {
+              "year": -2685,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2591,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2649,
+              "margin": 50,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "wp-egypt-chron",
+                "sourceLocation": "table, C14 column, Dynasty 3"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -2180,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -2117,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "First Intermediate Period",
+          "start": -2180,
+          "end": -2054,
+          "startDates": [
+            {
+              "year": -2180,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "wp-fip",
+                "sourceLocation": "infobox"
+              }
+            },
+            {
+              "year": -2117,
+              "margin": 25,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "end of Dynasty 6 (via Wikipedia: Egyptian chronology)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Middle Kingdom",
+          "start": -2054,
+          "end": -1649,
+          "circa": true
+        },
+        {
+          "name": "Second Intermediate Period",
+          "start": -1649,
+          "end": -1549,
+          "endDates": [
+            {
+              "year": -1549,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1538,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1556,
+              "margin": 13,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "ramsey-2010",
+                "sourceLocation": "New Kingdom 'placed between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
+              }
+            }
+          ],
+          "circa": true
+        },
+        {
+          "name": "New Kingdom",
+          "start": -1549,
+          "end": -1068,
+          "startDates": [
+            {
+              "year": -1549,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1538,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1556,
+              "margin": 13,
+              "chronology": "egypt-c14",
+              "source": {
+                "sourceKey": "ramsey-2010",
+                "sourceLocation": "'between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
+              }
+            },
+            {
+              "year": -1569,
+              "source": {
+                "sourceKey": "wp-new-kingdom",
+                "sourceLocation": "infobox ('Rise c. 1570 BC')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1068,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1076,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Third Intermediate Period",
+          "start": -1068,
+          "end": -663,
+          "startDates": [
+            {
+              "year": -1068,
+              "chronology": "shaw",
+              "source": {
+                "sourceKey": "shaw-2000",
+                "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
+              }
+            },
+            {
+              "year": -1075,
+              "chronology": "hornung",
+              "source": {
+                "sourceKey": "hornung-2006",
+                "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Late Period",
+          "start": -663,
+          "end": -331
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-anc-egypt",
+              "sourceLocation": "category \"Ancient Egypt\""
+            },
+            {
+              "sourceKey": "wp-anc-egypt",
+              "sourceLocation": "category \"History of Egypt by period\""
+            },
+            {
+              "sourceKey": "wp-anc-egypt",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "egyptian",
+          "sources": [
+            {
+              "sourceKey": "wp-anc-egypt",
+              "sourceLocation": "infobox common_languages: \"Egyptian language\""
+            },
+            {
+              "sourceKey": "wp-anc-egypt",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "ancient-peoples",
+          "sources": [
+            {
+              "sourceKey": "wp-anc-egypt",
+              "sourceLocation": "category \"Ancient peoples\""
+            }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "ancient-egypt",
+          "sources": [
+            {
+              "sourceKey": "wp-anc-egypt",
+              "sourceLocation": "category \"Ancient Egypt\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nubia",
+      "name": "Kush and Nubia",
+      "color": "#a0603a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Nubia",
+      "ids": {
+        "wikidata": "Q135028"
+      }
+    },
+    {
+      "id": "a-group",
+      "name": "A-Group culture",
+      "color": "#b07a4a",
+      "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/A-Group_culture",
+      "ids": {
+        "wikidata": "Q277797"
+      },
+      "span": {
+        "start": -3499,
+        "end": -2899,
+        "startDates": [
+          {
+            "year": -3500,
+            "margin": 499,
+            "source": {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "lead ('from the 4th millennium BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2899,
+            "source": {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "lead ('fell 200 years later c. 2900 BC')"
+            }
+          },
+          {
+            "year": -3099,
+            "source": {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "History > B-Group ('came to an end around 3100 BC')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "category \"History of Nubia\""
+            },
+            {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "category \"Archaeological cultures in Egypt\""
+            },
+            {
+              "sourceKey": "wp-a-group",
+              "sourceLocation": "category \"Archaeological cultures in Sudan\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c-group",
+      "name": "C-Group culture (Lower Nubia)",
+      "color": "#9a7a5a",
+      "parent": "nubia",
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kerma culture\" (in \"Archaeology of Sudan\")"
+            },
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kerma culture\" (in \"History of Nubia\")"
+            },
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kerma culture\" (in \"Kingdom of Kush\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kerma",
+      "name": "Kerma",
+      "color": "#8a4a2a",
+      "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Kerma_culture",
+      "ids": {
+        "wikidata": "Q1739282"
+      },
+      "span": {
+        "start": -2499,
+        "end": -1499,
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kerma culture\" (in \"Archaeology of Sudan\")"
+            },
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kerma culture\" (in \"History of Nubia\")"
+            },
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kerma culture\" (in \"Kingdom of Kush\")"
+            }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "kingdom-of-kush",
+          "sources": [
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kingdom of Kush\""
+            },
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "category \"Kerma culture\" (in \"Kingdom of Kush\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kush",
+      "name": "Kingdom of Kush (Napata, Meroë)",
+      "color": "#b0502a",
+      "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+      "ids": {
+        "wikidata": "Q241790"
+      },
+      "span": {
+        "start": -779,
+        "end": 350,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -779,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "infobox (Established)"
+            }
+          },
+          {
+            "year": -1069,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "Formation ('Kush became an independent kingdom' around 1070 BC)"
+            }
+          },
+          {
+            "year": -999,
+            "source": {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "Formation ('began to emerge around 1000 BC')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 350,
+            "source": {
+              "sourceKey": "wp-kush-classical",
+              "sourceLocation": "infobox (disestablished)"
+            }
+          },
+          {
+            "year": 350,
+            "source": {
+              "sourceKey": "wp-meroe-classical",
+              "sourceLocation": "Fourth Meroitic Period"
+            }
+          },
+          {
+            "year": 330,
+            "source": {
+              "sourceKey": "wp-kush-classical",
+              "sourceLocation": "infobox (Axumite capture of Meroë)"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-kush-classical",
+              "sourceLocation": "category \"Kingdom of Kush\""
+            },
+            {
+              "sourceKey": "wp-kush-classical",
+              "sourceLocation": "first sentence"
+            },
+            {
+              "sourceKey": "wp-kush-classical",
+              "sourceLocation": "infobox capital (Kerma)"
+            },
+            {
+              "sourceKey": "wp-kerma-2",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "civilization",
+          "value": "kingdom-of-kush",
+          "sources": [
+            {
+              "sourceKey": "wp-kush-classical",
+              "sourceLocation": "category \"Kingdom of Kush\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nobatia",
+      "name": "Nobatia",
+      "color": "#a06a3a",
+      "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Nobatia",
+      "ids": {
+        "wikidata": "Q568523"
+      },
+      "span": {
+        "start": 400,
+        "end": 631,
+        "endDates": [
+          {
+            "year": 631,
+            "margin": 11,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "Early period ('presumably during the 620s, but before 642')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-nobatia",
+              "sourceLocation": "category \"History of Nubia\""
+            },
+            {
+              "sourceKey": "wp-nobatia",
+              "sourceLocation": "category \"Christianity in Sudan\""
+            },
+            {
+              "sourceKey": "wp-nobatia",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [
+            {
+              "sourceKey": "wp-nobatia",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "nubian-meroitic",
+          "sources": [
+            {
+              "sourceKey": "wp-nobatia",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makuria",
+      "name": "Makuria",
+      "color": "#7a4a3a",
+      "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Makuria",
+      "ids": {
+        "wikidata": "Q829356"
+      },
+      "span": {
+        "start": 450,
+        "end": 1475,
+        "startDates": [
+          {
+            "year": 450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('5th century')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1475,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('late 15th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"Makuria\" (in \"History of Nubia\")"
+            },
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"Makuria\" (in \"Christianity in Sudan\")"
+            },
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"History of Nubia\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "nubian-meroitic",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            },
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "semitic",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "egyptian",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alodia",
+      "name": "Alodia",
+      "color": "#9a5a4a",
+      "parent": "nubia",
+      "url": "https://en.wikipedia.org/wiki/Alodia",
+      "ids": {
+        "wikidata": "Q449639"
+      },
+      "span": {
+        "start": 550,
+        "end": 1500,
+        "startDates": [
+          {
+            "year": 550,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "infobox ('6th century')"
+            }
+          },
+          {
+            "year": 550,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "Origins ('completed by the mid-6th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "category \"History of Nubia\""
+            },
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "category \"Christianity in Sudan\""
+            },
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        },
+        {
+          "facet": "people",
+          "value": "indo-european-greek",
+          "sources": [
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "infobox common_languages: \"NubianMeroitic (possibly still spoken) Greek (liturgical) Others\""
+            },
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ptolemaic-roman-egypt",
+      "name": "Ptolemaic and Roman Egypt",
+      "color": "#a8844a",
+      "parent": "egypt",
+      "phases": [
+        {
+          "name": "Ptolemaic Egypt",
+          "start": -304,
+          "end": -29,
+          "startDates": [
+            {
+              "year": -304,
+              "source": {
+                "sourceKey": "wp-ptolemaic",
+                "sourceLocation": "lead and infobox"
+              }
+            },
+            {
+              "year": -303,
+              "source": {
+                "sourceKey": "wp-ptolemaic",
+                "sourceLocation": "Notes, note 1 (some scholars)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Roman and Byzantine Egypt",
+          "start": -29,
+          "end": 641
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-ptolemaic",
+              "sourceLocation": "category \"Ptolemaic Kingdom\" (in \"1st millennium BC in Egypt\")"
+            },
+            {
+              "sourceKey": "wp-ptolemaic",
+              "sourceLocation": "category \"Ptolemaic Kingdom\" (in \"Ancient Egypt\")"
+            },
+            {
+              "sourceKey": "wp-ptolemaic",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "north-africa",
@@ -5554,984 +6605,6 @@
       "ids": {
         "wikidata": "Q269678"
       }
-    },
-    {
-      "id": "egypt",
-      "name": "Egypt and Nubia",
-      "color": "#b8871b",
-      "chronology": "shaw",
-      "parent": "near-east",
-      "url": "https://en.wikipedia.org/wiki/Egypt",
-      "ids": {
-        "wikidata": "Q79"
-      }
-    },
-    {
-      "id": "nabta",
-      "name": "Nabta Playa (Western Desert)",
-      "color": "#b09060",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Nabta_Playa",
-      "ids": {
-        "wikidata": "Q1535226"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-nabta",
-              "sourceLocation": "category \"Archaeological sites in Egypt\""
-            },
-            {
-              "sourceKey": "wp-nabta",
-              "sourceLocation": "category \"Kingdom of Kush\""
-            },
-            {
-              "sourceKey": "wp-nabta",
-              "sourceLocation": "category \"Prehistoric Egypt\""
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "nubian-meroitic",
-          "sources": [
-            {
-              "sourceKey": "wp-nabta",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "civilization",
-          "value": "kingdom-of-kush",
-          "sources": [
-            {
-              "sourceKey": "wp-nabta",
-              "sourceLocation": "category \"Kingdom of Kush\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "lower-egypt-neolithic",
-      "name": "Lower Egypt Neolithic (Faiyum A, Merimde)",
-      "color": "#a08050",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
-      "ids": {
-        "wikidata": "Q208520"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-prehistoric-egypt",
-              "sourceLocation": "category \"Prehistoric Egypt\""
-            },
-            {
-              "sourceKey": "wp-prehistoric-egypt",
-              "sourceLocation": "first sentence"
-            },
-            {
-              "sourceKey": "wp-prehistoric-egypt",
-              "sourceLocation": "infobox capital"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "upper-egypt-predynastic",
-      "name": "Upper Egypt (Badarian, Naqada I)",
-      "color": "#c09050",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
-      "ids": {
-        "wikidata": "Q208520"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-prehistoric-egypt",
-              "sourceLocation": "category \"Prehistoric Egypt\""
-            },
-            {
-              "sourceKey": "wp-prehistoric-egypt",
-              "sourceLocation": "first sentence"
-            },
-            {
-              "sourceKey": "wp-prehistoric-egypt",
-              "sourceLocation": "infobox capital"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "pharaonic-egypt",
-      "name": "Pharaonic Egypt",
-      "color": "#d4a72c",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
-      "ids": {
-        "wikidata": "Q11768"
-      },
-      "phases": [
-        {
-          "name": "Late Predynastic (Dynasty 0)",
-          "start": -3299,
-          "end": -3149,
-          "circa": true
-        },
-        {
-          "name": "Early Dynastic Period",
-          "start": -2999,
-          "end": -2685,
-          "startDates": [
-            {
-              "year": -2999,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
-              }
-            },
-            {
-              "year": -3149,
-              "source": {
-                "sourceKey": "wp-anc-egypt",
-                "sourceLocation": "lead and infobox ('conventional Egyptian chronology')"
-              }
-            },
-            {
-              "year": -2899,
-              "margin": 25,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "Dynasty 1 (via Wikipedia: Egyptian chronology, table)"
-              }
-            },
-            {
-              "year": -3099,
-              "margin": 100,
-              "chronology": "egypt-c14",
-              "source": {
-                "sourceKey": "wp-egypt-chron",
-                "sourceLocation": "table, C14 column, Dynasty 1"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": -2685,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -2589,
-              "margin": 25,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "Dynasty 2 (via Wikipedia: Egyptian chronology)"
-              }
-            }
-          ],
-          "circa": true
-        },
-        {
-          "name": "Old Kingdom",
-          "start": -2685,
-          "end": -2180,
-          "startDates": [
-            {
-              "year": -2685,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -2591,
-              "margin": 25,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "Dynasty 3 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -2649,
-              "margin": 50,
-              "chronology": "egypt-c14",
-              "source": {
-                "sourceKey": "wp-egypt-chron",
-                "sourceLocation": "table, C14 column, Dynasty 3"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": -2180,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -2117,
-              "margin": 25,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "Dynasty 6 (via Wikipedia: Egyptian chronology)"
-              }
-            }
-          ]
-        },
-        {
-          "name": "First Intermediate Period",
-          "start": -2180,
-          "end": -2054,
-          "startDates": [
-            {
-              "year": -2180,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "wp-fip",
-                "sourceLocation": "infobox"
-              }
-            },
-            {
-              "year": -2117,
-              "margin": 25,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "end of Dynasty 6 (via Wikipedia: Egyptian chronology)"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Middle Kingdom",
-          "start": -2054,
-          "end": -1649,
-          "circa": true
-        },
-        {
-          "name": "Second Intermediate Period",
-          "start": -1649,
-          "end": -1549,
-          "endDates": [
-            {
-              "year": -1549,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -1538,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "start of Dynasty 18 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -1556,
-              "margin": 13,
-              "chronology": "egypt-c14",
-              "source": {
-                "sourceKey": "ramsey-2010",
-                "sourceLocation": "New Kingdom 'placed between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
-              }
-            }
-          ],
-          "circa": true
-        },
-        {
-          "name": "New Kingdom",
-          "start": -1549,
-          "end": -1068,
-          "startDates": [
-            {
-              "year": -1549,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -1538,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "Dynasty 18 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -1556,
-              "margin": 13,
-              "chronology": "egypt-c14",
-              "source": {
-                "sourceKey": "ramsey-2010",
-                "sourceLocation": "'between 1570 and 1544 BC' (via Wikipedia: New Kingdom of Egypt, lead)"
-              }
-            },
-            {
-              "year": -1569,
-              "source": {
-                "sourceKey": "wp-new-kingdom",
-                "sourceLocation": "infobox ('Rise c. 1570 BC')"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": -1068,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -1076,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "end of Dynasty 20 (via Wikipedia: Egyptian chronology)"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Third Intermediate Period",
-          "start": -1068,
-          "end": -663,
-          "startDates": [
-            {
-              "year": -1068,
-              "chronology": "shaw",
-              "source": {
-                "sourceKey": "shaw-2000",
-                "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
-              }
-            },
-            {
-              "year": -1075,
-              "chronology": "hornung",
-              "source": {
-                "sourceKey": "hornung-2006",
-                "sourceLocation": "Dynasty 21 (via Wikipedia: Egyptian chronology)"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Late Period",
-          "start": -663,
-          "end": -331
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "category \"Ancient Egypt\""
-            },
-            {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "category \"History of Egypt by period\""
-            },
-            {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "egyptian",
-          "sources": [
-            {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "infobox common_languages: \"Egyptian language\""
-            },
-            {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "ancient-peoples",
-          "sources": [
-            {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "category \"Ancient peoples\""
-            }
-          ]
-        },
-        {
-          "facet": "civilization",
-          "value": "ancient-egypt",
-          "sources": [
-            {
-              "sourceKey": "wp-anc-egypt",
-              "sourceLocation": "category \"Ancient Egypt\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nubia",
-      "name": "Kush and Nubia",
-      "color": "#a0603a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Nubia",
-      "ids": {
-        "wikidata": "Q135028"
-      }
-    },
-    {
-      "id": "a-group",
-      "name": "A-Group culture",
-      "color": "#b07a4a",
-      "parent": "nubia",
-      "url": "https://en.wikipedia.org/wiki/A-Group_culture",
-      "ids": {
-        "wikidata": "Q277797"
-      },
-      "span": {
-        "start": -3499,
-        "end": -2899,
-        "startDates": [
-          {
-            "year": -3500,
-            "margin": 499,
-            "source": {
-              "sourceKey": "wp-a-group",
-              "sourceLocation": "lead ('from the 4th millennium BC')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2899,
-            "source": {
-              "sourceKey": "wp-a-group",
-              "sourceLocation": "lead ('fell 200 years later c. 2900 BC')"
-            }
-          },
-          {
-            "year": -3099,
-            "source": {
-              "sourceKey": "wp-a-group",
-              "sourceLocation": "History > B-Group ('came to an end around 3100 BC')"
-            }
-          }
-        ],
-        "circa": true
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-a-group",
-              "sourceLocation": "category \"History of Nubia\""
-            },
-            {
-              "sourceKey": "wp-a-group",
-              "sourceLocation": "category \"Archaeological cultures in Egypt\""
-            },
-            {
-              "sourceKey": "wp-a-group",
-              "sourceLocation": "category \"Archaeological cultures in Sudan\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "c-group",
-      "name": "C-Group culture (Lower Nubia)",
-      "color": "#9a7a5a",
-      "parent": "nubia",
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kerma culture\" (in \"Archaeology of Sudan\")"
-            },
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kerma culture\" (in \"History of Nubia\")"
-            },
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kerma culture\" (in \"Kingdom of Kush\")"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "kerma",
-      "name": "Kerma",
-      "color": "#8a4a2a",
-      "parent": "nubia",
-      "url": "https://en.wikipedia.org/wiki/Kerma_culture",
-      "ids": {
-        "wikidata": "Q1739282"
-      },
-      "span": {
-        "start": -2499,
-        "end": -1499,
-        "circa": true
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kerma culture\" (in \"Archaeology of Sudan\")"
-            },
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kerma culture\" (in \"History of Nubia\")"
-            },
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kerma culture\" (in \"Kingdom of Kush\")"
-            }
-          ]
-        },
-        {
-          "facet": "civilization",
-          "value": "kingdom-of-kush",
-          "sources": [
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kingdom of Kush\""
-            },
-            {
-              "sourceKey": "wp-kerma",
-              "sourceLocation": "category \"Kerma culture\" (in \"Kingdom of Kush\")"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "kush",
-      "name": "Kingdom of Kush (Napata, Meroë)",
-      "color": "#b0502a",
-      "parent": "nubia",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
-      "ids": {
-        "wikidata": "Q241790"
-      },
-      "span": {
-        "start": -779,
-        "end": 350,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -779,
-            "source": {
-              "sourceKey": "wp-kush",
-              "sourceLocation": "infobox (Established)"
-            }
-          },
-          {
-            "year": -1069,
-            "source": {
-              "sourceKey": "wp-kush",
-              "sourceLocation": "Formation ('Kush became an independent kingdom' around 1070 BC)"
-            }
-          },
-          {
-            "year": -999,
-            "source": {
-              "sourceKey": "wp-kush",
-              "sourceLocation": "Formation ('began to emerge around 1000 BC')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 350,
-            "source": {
-              "sourceKey": "wp-kush-classical",
-              "sourceLocation": "infobox (disestablished)"
-            }
-          },
-          {
-            "year": 350,
-            "source": {
-              "sourceKey": "wp-meroe-classical",
-              "sourceLocation": "Fourth Meroitic Period"
-            }
-          },
-          {
-            "year": 330,
-            "source": {
-              "sourceKey": "wp-kush-classical",
-              "sourceLocation": "infobox (Axumite capture of Meroë)"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-kush-classical",
-              "sourceLocation": "category \"Kingdom of Kush\""
-            },
-            {
-              "sourceKey": "wp-kush-classical",
-              "sourceLocation": "first sentence"
-            },
-            {
-              "sourceKey": "wp-kush-classical",
-              "sourceLocation": "infobox capital (Kerma)"
-            },
-            {
-              "sourceKey": "wp-kerma-2",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "civilization",
-          "value": "kingdom-of-kush",
-          "sources": [
-            {
-              "sourceKey": "wp-kush-classical",
-              "sourceLocation": "category \"Kingdom of Kush\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nobatia",
-      "name": "Nobatia",
-      "color": "#a06a3a",
-      "parent": "nubia",
-      "url": "https://en.wikipedia.org/wiki/Nobatia",
-      "ids": {
-        "wikidata": "Q568523"
-      },
-      "span": {
-        "start": 400,
-        "end": 631,
-        "endDates": [
-          {
-            "year": 631,
-            "margin": 11,
-            "source": {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "Early period ('presumably during the 620s, but before 642')"
-            }
-          }
-        ],
-        "circa": true
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-nobatia",
-              "sourceLocation": "category \"History of Nubia\""
-            },
-            {
-              "sourceKey": "wp-nobatia",
-              "sourceLocation": "category \"Christianity in Sudan\""
-            },
-            {
-              "sourceKey": "wp-nobatia",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "indo-european-greek",
-          "sources": [
-            {
-              "sourceKey": "wp-nobatia",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "nubian-meroitic",
-          "sources": [
-            {
-              "sourceKey": "wp-nobatia",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "makuria",
-      "name": "Makuria",
-      "color": "#7a4a3a",
-      "parent": "nubia",
-      "url": "https://en.wikipedia.org/wiki/Makuria",
-      "ids": {
-        "wikidata": "Q829356"
-      },
-      "span": {
-        "start": 450,
-        "end": 1475,
-        "startDates": [
-          {
-            "year": 450,
-            "margin": 50,
-            "source": {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox ('5th century')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1475,
-            "margin": 25,
-            "source": {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox ('late 15th century')"
-            }
-          }
-        ],
-        "circa": true
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "category \"Makuria\" (in \"History of Nubia\")"
-            },
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "category \"Makuria\" (in \"Christianity in Sudan\")"
-            },
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "category \"History of Nubia\""
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "nubian-meroitic",
-          "sources": [
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
-            },
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "semitic",
-          "sources": [
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "indo-european-greek",
-          "sources": [
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "egyptian",
-          "sources": [
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox common_languages: \"Nubian  Greek (ecclesiastical)Coptic (until 11th century)Arabic (diplomacy & tra\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "alodia",
-      "name": "Alodia",
-      "color": "#9a5a4a",
-      "parent": "nubia",
-      "url": "https://en.wikipedia.org/wiki/Alodia",
-      "ids": {
-        "wikidata": "Q449639"
-      },
-      "span": {
-        "start": 550,
-        "end": 1500,
-        "startDates": [
-          {
-            "year": 550,
-            "margin": 50,
-            "source": {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "infobox ('6th century')"
-            }
-          },
-          {
-            "year": 550,
-            "source": {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "Origins ('completed by the mid-6th century')"
-            }
-          }
-        ],
-        "circa": true
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "category \"History of Nubia\""
-            },
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "category \"Christianity in Sudan\""
-            },
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        },
-        {
-          "facet": "people",
-          "value": "indo-european-greek",
-          "sources": [
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "infobox common_languages: \"NubianMeroitic (possibly still spoken) Greek (liturgical) Others\""
-            },
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ptolemaic-roman-egypt",
-      "name": "Ptolemaic and Roman Egypt",
-      "color": "#a8844a",
-      "parent": "egypt",
-      "phases": [
-        {
-          "name": "Ptolemaic Egypt",
-          "start": -304,
-          "end": -29,
-          "startDates": [
-            {
-              "year": -304,
-              "source": {
-                "sourceKey": "wp-ptolemaic",
-                "sourceLocation": "lead and infobox"
-              }
-            },
-            {
-              "year": -303,
-              "source": {
-                "sourceKey": "wp-ptolemaic",
-                "sourceLocation": "Notes, note 1 (some scholars)"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Roman and Byzantine Egypt",
-          "start": -29,
-          "end": 641
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-ptolemaic",
-              "sourceLocation": "category \"Ptolemaic Kingdom\" (in \"1st millennium BC in Egypt\")"
-            },
-            {
-              "sourceKey": "wp-ptolemaic",
-              "sourceLocation": "category \"Ptolemaic Kingdom\" (in \"Ancient Egypt\")"
-            },
-            {
-              "sourceKey": "wp-ptolemaic",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        }
-      ]
     },
     {
       "id": "levant",
@@ -20894,12 +20967,12 @@
       "accessed": "2026-11-17"
     },
     "wp-peloponnesian-war": {
-      "name": "Wikipedia: Peloponnesian War",
+      "name": "Peloponnesian War (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Peloponnesian_War",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
-      ],
-      "accessed": "2026-11-17"
+      ]
     },
     "wp-philip-ii": {
       "name": "Wikipedia: Philip II of Macedon",
@@ -26204,6 +26277,30 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-athens-in-the-5th-century-bc": {
+      "name": "Athens in the 5th century BC (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athens_in_the_5th_century_BC",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-axial-age": {
+      "name": "Axial Age (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Axial_Age",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pax-romana": {
+      "name": "Pax Romana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pax_Romana",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -31821,6 +31918,19 @@
           "sourceKey": "wp-phoenicia",
           "sourceLocation": "infobox"
         }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-phoenicia",
+              "sourceLocation": "infobox"
+            }
+          ]
+        }
       ]
     },
     {
@@ -32561,6 +32671,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-dilmun",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -35688,7 +35810,18 @@
           }
         }
       ],
+      "importance": 1,
       "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-talaiotic",
+              "sourceLocation": "Funerary spaces ('maximum splendor … from 850-800 BCE to 500 BCE') and The Talayot"
+            }
+          ]
+        },
         {
           "facet": "category",
           "value": "horizon",
@@ -36841,6 +36974,19 @@
             "sourceKey": "wp-kerma",
             "sourceLocation": "lead ('latest phase, lasting from about 1700 to 1500 BC')"
           }
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "lead, Site and periodisation and Classic Kerma"
+            }
+          ]
         }
       ],
       "circa": true
@@ -40149,6 +40295,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-sheba",
+              "sourceLocation": "lead, Era of the mukarribs, Era of the kings and Sources"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -42320,7 +42478,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [
             {
               "sourceKey": "wp-gobekli",
@@ -43871,7 +44029,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [
             {
               "sourceKey": "wp-jiahu",
@@ -49353,6 +49511,19 @@
         {
           "sourceKey": "wp-roman-empire",
           "sourceLocation": "infobox and lead"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-roman-empire",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
         }
       ]
     },
@@ -56551,6 +56722,29 @@
           "sourceKey": "wp-monte-alban",
           "sourceLocation": "Site history"
         }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "lead and History > Period III"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "place",
+          "sources": [
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "lead and History > Period III"
+            }
+          ]
+        }
       ]
     },
     {
@@ -56599,6 +56793,19 @@
         {
           "sourceKey": "wp-tikal",
           "sourceLocation": "Preclassic"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-el-mirador-classical",
+              "sourceLocation": "History"
+            }
+          ]
         }
       ]
     },
@@ -60670,6 +60877,77 @@
             {
               "sourceKey": "wp-suiko",
               "sourceLocation": "lead, infobox and Biography"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "golden-age-of-athens",
+      "title": "Golden Age of Athens",
+      "descr": "After the Persian invasion is defeated, Athens leads the Delian League and turns it into an empire whose treasury pays for the Acropolis. Under Pericles the city is home to the playwrights Aeschylus, Sophocles and Euripides, the historians Herodotus and Thucydides, and the philosophers Socrates and Plato.",
+      "start": -477,
+      "end": -403,
+      "tracks": [
+        "greece"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"After peace was made with Persia in the mid-5th century BC, what started as an Athenian-led alliance of independent city-states, had become an Athenian empire s\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"With the empire's funds, military dominance and its political fortunes guided by statesman and orator Pericles, Athens produced some of the most influential and\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"The playwrights Aeschylus, Sophocles and Euripides all lived and worked in 5th-century BC Athens, as did the historians Herodotus and Thucydides, the physician \""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -477,
+          "source": {
+            "sourceKey": "wp-athens-in-the-5th-century-bc",
+            "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -403,
+          "source": {
+            "sourceKey": "wp-athens-in-the-5th-century-bc",
+            "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\""
+          }
+        },
+        {
+          "year": -403,
+          "source": {
+            "sourceKey": "wp-peloponnesian-war",
+            "sourceLocation": "infobox date: 4 April 431 – 25 April 404 BC"
+          },
+          "note": "Athens' defeat in the Peloponnesian War ends the age."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-athens-in-the-5th-century-bc",
+              "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
             }
           ]
         }
