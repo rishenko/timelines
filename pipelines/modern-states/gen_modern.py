@@ -429,11 +429,14 @@ def build(repo, module_names=None):
             mod.link_phases(me, by_id)
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
+    # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
+    import event_categories
+    full = tuple(module_names) == MODULES
+    REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')
     order = ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']
     data = {k: data[k] for k in order}
     out = os.path.join(repo, 'data-src', 'modern-states.json')
     json.dump(data, open(out, 'w'), indent=2, ensure_ascii=False)
-    full = tuple(module_names) == MODULES
     write_manifest(data, module_names, os.path.join(repo, 'data-src', 'provenance', 'modern-states.json') if full
                    else os.path.join(OUT, f'provenance-modern-states-{module_names[-1]}.json'))
     os.makedirs(OUT, exist_ok=True)
