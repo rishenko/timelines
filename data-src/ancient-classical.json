@@ -226,6 +226,11 @@
           "law": { "name": "Laws", "broader": ["society"] },
           "culture": { "name": "Culture and learning", "broader": ["society"] },
           "economy": { "name": "Economy", "broader": ["society"] },
+          "golden-age": { "name": "Golden age or high point", "broader": ["society"] },
+          "science": { "name": "Science and technology" },
+          "discovery": { "name": "Discovery", "broader": ["science"] },
+          "invention": { "name": "Invention", "broader": ["science"] },
+          "work": { "name": "Landmark work", "broader": ["science"] },
           "archaeology": { "name": "Archaeology" },
           "horizon": { "name": "Culture or period", "broader": ["archaeology"] },
           "site": { "name": "Site", "broader": ["archaeology"] },
@@ -13143,10 +13148,7 @@
         { "year": "1719 BCE", "source": { "sourceKey": "wp-kultepe", "sourceLocation": "Archaeology (table)" } }
       ],
       "importance": 3,
-      "memberships": [
-        { "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-kultepe", "sourceLocation": "Archaeology" }] },
-        { "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-kultepe", "sourceLocation": "Archaeology" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-kultepe", "sourceLocation": "Archaeology" }] }]
     },
     {
       "uuid": "anitta",
@@ -13631,12 +13633,12 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "dissolved",
+          "value": "disaster",
           "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History (Manning et al. 2023, Nature 614)" }]
         },
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "dissolved",
           "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History (Manning et al. 2023, Nature 614)" }]
         }
       ]
@@ -13795,7 +13797,7 @@
       ],
       "links": [{ "to": "hyksos", "kind": "conquers" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-kadesh", "sourceLocation": "Background ('around 1550 BC')" }] }]
+      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-kadesh", "sourceLocation": "Background ('around 1550 BC')" }] }]
     },
     {
       "uuid": "ahmose-reign",
@@ -14600,11 +14602,6 @@
           "facet": "category",
           "value": "succession",
           "sources": [{ "sourceKey": "wp-fall-babylon", "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)" }]
-        },
-        {
-          "facet": "category",
-          "value": "siege",
-          "sources": [{ "sourceKey": "wp-fall-babylon", "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)" }]
         }
       ]
     },
@@ -14775,7 +14772,7 @@
       "tracks": ["assyria", "babylonia"],
       "descr": "Ashurbanipal's brother, king of Babylon, rebels. He dies when Babylon falls after a siege in 648 BCE.",
       "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "lead" }],
-      "memberships": [{ "facet": "category", "value": "siege", "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "lead" }] }]
+      "memberships": [{ "facet": "category", "value": "revolt", "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "tyre-founded",
@@ -15224,7 +15221,7 @@
       "descr": "The Kot Dijian (Early Harappan) phase, before the Harappan phase; the settlement is enclosed with massive mud-brick walls.",
       "sources": [{ "sourceKey": "wp-harappa", "sourceLocation": "excavators' chronology" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-harappa", "sourceLocation": "excavators' chronology" }] }]
+      "memberships": [{ "facet": "category", "value": "horizon", "sources": [{ "sourceKey": "wp-harappa", "sourceLocation": "excavators' chronology" }] }]
     },
     {
       "uuid": "indus-script",
@@ -15390,10 +15387,7 @@
         { "year": "1191 BCE", "source": { "sourceKey": "wp-shang", "sourceLocation": "infobox" } },
         { "year": "1197 BCE", "margin": 10, "source": { "sourceKey": "wp-oracle-bone", "sourceLocation": "radiocarbon" } }
       ],
-      "memberships": [
-        { "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-shang", "sourceLocation": "infobox" }] },
-        { "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-shang", "sourceLocation": "infobox" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-shang", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "oracle-bones",
@@ -15901,10 +15895,7 @@
         { "year": "594 BCE", "source": { "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments ('In 594/3 BC')" } },
         { "year": "593 BCE", "source": { "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments" } }
       ],
-      "memberships": [
-        { "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments" }] },
-        { "facet": "category", "value": "archaeology", "sources": [{ "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-archaic-greece", "sourceLocation": "Political developments" }] }]
     },
     {
       "uuid": "cleisthenes",
@@ -17872,10 +17863,7 @@
       "tracks": ["diauehi", "urartu", "lchashen"],
       "descr": "Menua (810–785 BC) had conquered part of Diauehi; Argishti I defeats King Utupursi and annexes his possessions. His crossing of the Araxes begins the decline of the Lchashen–Metsamor culture.",
       "sources": [{ "sourceKey": "wp-diauehi", "sourceLocation": "Urartu period" }, { "sourceKey": "wp-lchashen", "sourceLocation": "Later history" }],
-      "memberships": [
-        { "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-diauehi", "sourceLocation": "Urartu period" }] },
-        { "facet": "category", "value": "archaeology", "sources": [{ "sourceKey": "wp-diauehi", "sourceLocation": "Urartu period" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-diauehi", "sourceLocation": "Urartu period" }] }]
     },
     {
       "uuid": "colchis-cimmerians",
@@ -18273,10 +18261,7 @@
         { "sourceKey": "wp-saqqaq", "sourceLocation": "Genetics" },
         { "sourceKey": "wp-dorset", "sourceLocation": "Genetics" }
       ],
-      "memberships": [
-        { "facet": "category", "value": "colony", "sources": [{ "sourceKey": "wp-pre-dorset", "sourceLocation": "Genetics" }] },
-        { "facet": "category", "value": "archaeology", "sources": [{ "sourceKey": "wp-pre-dorset", "sourceLocation": "Genetics" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "colony", "sources": [{ "sourceKey": "wp-pre-dorset", "sourceLocation": "Genetics" }] }]
     },
     {
       "uuid": "saqqaq",
@@ -18401,10 +18386,7 @@
         }
       ],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-san-jose-mogote", "sourceLocation": "lead and Monument 3" }] },
-        { "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-san-jose-mogote", "sourceLocation": "lead and Monument 3" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-san-jose-mogote", "sourceLocation": "lead and Monument 3" }] }]
     },
     {
       "uuid": "monte-alban",
@@ -18900,10 +18882,7 @@
       "tracks": ["ppnb"],
       "descr": "Approximately 8,200 years before the present. At ’Ain Ghazal the population drops sharply after 6500 BC, a decline its page links to this event.",
       "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "Extent" }, { "sourceKey": "wp-ain-ghazal", "sourceLocation": "Background" }],
-      "memberships": [
-        { "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "Extent" }] },
-        { "facet": "category", "value": "archaeology", "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "Extent" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "archaeology", "sources": [{ "sourceKey": "wp-ppnb", "sourceLocation": "Extent" }] }]
     },
     {
       "uuid": "ghassulian",
@@ -18937,11 +18916,6 @@
         {
           "facet": "category",
           "value": "city-founded",
-          "sources": [{ "sourceKey": "wp-gobekli", "sourceLocation": "infobox, lead, Dawn of village life and Chronology" }]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
           "sources": [{ "sourceKey": "wp-gobekli", "sourceLocation": "infobox, lead, Dawn of village life and Chronology" }]
         }
       ]
@@ -19353,13 +19327,7 @@
       ],
       "links": [{ "to": "catalhoyuk", "kind": "related" }],
       "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "city-founded",
-          "sources": [{ "sourceKey": "wp-neolithic-europe", "sourceLocation": "lead and Archaeology" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "horizon", "sources": [{ "sourceKey": "wp-neolithic-europe", "sourceLocation": "lead and Archaeology" }] }]
     },
     {
       "uuid": "starcevo",
@@ -19528,11 +19496,6 @@
         {
           "facet": "category",
           "value": "city-founded",
-          "sources": [{ "sourceKey": "wp-jiahu", "sourceLocation": "infobox, lead, Inscriptions, Agriculture and Pottery and alcohol production" }]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
           "sources": [{ "sourceKey": "wp-jiahu", "sourceLocation": "infobox, lead, Inscriptions, Agriculture and Pottery and alcohol production" }]
         }
       ]
@@ -20655,7 +20618,7 @@
       "tracks": ["greece"],
       "descr": "According to Herodotus. Thales (c. 626/623 – c. 548/545 BC) was one of the Seven Sages.",
       "sources": [{ "sourceKey": "wp-thales", "sourceLocation": "lead and Life" }],
-      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-thales", "sourceLocation": "lead and Life" }] }]
+      "memberships": [{ "facet": "category", "value": "discovery", "sources": [{ "sourceKey": "wp-thales", "sourceLocation": "lead and Life" }] }]
     },
     {
       "uuid": "pythagoras",
@@ -20863,7 +20826,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "battle",
           "sources": [{ "sourceKey": "wp-arameans", "sourceLocation": "Etymology and Under Neo-Assyrian rule" }]
         }
       ]
@@ -21348,10 +21311,7 @@
       "descr": "He dies at the age of 32, between the evenings of 10 and 11 June 323 BCE; fighting between his generals starts almost immediately.",
       "sources": [{ "sourceKey": "wp-death-alexander", "sourceLocation": "lead" }, { "sourceKey": "wp-diadochi", "sourceLocation": "lead" }],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-death-alexander", "sourceLocation": "lead" }] },
-        { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-death-alexander", "sourceLocation": "lead" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-death-alexander", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "diadochi",
@@ -21530,10 +21490,7 @@
       "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }],
       "links": [{ "to": "second-punic-war", "kind": "related" }],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "dissolved", "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }] },
-        { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "dissolved", "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "carrhae",
@@ -22291,7 +22248,7 @@
       "tracks": ["gupta"],
       "descr": "Mathematician-astronomer of the Gupta era. He states he was 23 years old in 3600 Kali Yuga, 499 CE. His Aryabhatiya is translated into Arabic c. 820 CE.",
       "sources": [{ "sourceKey": "wp-aryabhata", "sourceLocation": "lead, infobox and Biography" }],
-      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-aryabhata", "sourceLocation": "lead, infobox and Biography" }] }]
+      "memberships": [{ "facet": "category", "value": "work", "sources": [{ "sourceKey": "wp-aryabhata", "sourceLocation": "lead, infobox and Biography" }] }]
     },
     {
       "uuid": "harsha",
@@ -22416,7 +22373,7 @@
       "descr": "A eunuch official at the court in Luoyang, he substantially improves the papermaking process; earlier forms of paper have existed since the 3rd century BCE.",
       "sources": [{ "sourceKey": "wp-cai-lun", "sourceLocation": "lead" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-cai-lun", "sourceLocation": "lead" }] }]
+      "memberships": [{ "facet": "category", "value": "invention", "sources": [{ "sourceKey": "wp-cai-lun", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "yellow-turbans",
@@ -22438,10 +22395,7 @@
         { "sourceKey": "wp-red-cliffs", "sourceLocation": "infobox, lead and Background" },
         { "sourceKey": "wp-three-kingdoms", "sourceLocation": "infobox" }
       ],
-      "memberships": [
-        { "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-red-cliffs", "sourceLocation": "infobox, lead and Background" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-red-cliffs", "sourceLocation": "infobox, lead and Background" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-red-cliffs", "sourceLocation": "infobox, lead and Background" }] }]
     },
     {
       "uuid": "han-ends",
@@ -22464,10 +22418,7 @@
       "tracks": ["jin-china", "three-kingdoms-china"],
       "descr": "The Western Jin, established in 266 as successor to Cao Wei, conquers Eastern Wu, ending the Three Kingdoms period. Shu Han had fallen to Wei in 263.",
       "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-three-kingdoms", "sourceLocation": "lead" }],
-      "memberships": [
-        { "facet": "category", "value": "union", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "union", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "eight-princes",
@@ -22479,7 +22430,7 @@
       "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }],
       "memberships": [
         { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }] }
+        { "facet": "category", "value": "revolt", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }] }
       ]
     },
     {
@@ -22492,10 +22443,7 @@
       "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }],
       "links": [{ "to": "eight-princes", "kind": "related" }],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "jin-defeats-former-qin",
@@ -22504,10 +22452,7 @@
       "tracks": ["jin-china", "sixteen-kingdoms"],
       "descr": "A devastating defeat for the Former Qin, which from 376 to 383 had unified all of northern and northwest China and Sichuan.",
       "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }],
-      "memberships": [
-        { "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-jin", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "northern-wei-unifies",
@@ -22516,10 +22461,7 @@
       "tracks": ["northern-dynasties", "sixteen-kingdoms"],
       "descr": "The unification of northern China ends the Sixteen Kingdoms period. The Northern Wei, established on 20 February 386, rules from Pingcheng from 398 until it moves its capital to Luoyang on 25 October 493.",
       "sources": [{ "sourceKey": "wp-northern-wei", "sourceLocation": "infobox and lead" }, { "sourceKey": "wp-sixteen-kingdoms", "sourceLocation": "lead" }],
-      "memberships": [
-        { "facet": "category", "value": "union", "sources": [{ "sourceKey": "wp-northern-wei", "sourceLocation": "infobox and lead" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-northern-wei", "sourceLocation": "infobox and lead" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "union", "sources": [{ "sourceKey": "wp-northern-wei", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "sui-reunifies",
@@ -22610,10 +22552,7 @@
         { "sourceKey": "wp-silla", "sourceLocation": "infobox" }
       ],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "gwanggaeto",
@@ -22675,10 +22614,7 @@
         { "sourceKey": "wp-silla", "sourceLocation": "lead" },
         { "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }
       ],
-      "memberships": [
-        { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-goguryeo", "sourceLocation": "infobox" }] },
-        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-goguryeo", "sourceLocation": "infobox" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-goguryeo", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "yamato-kingship",
@@ -23090,7 +23026,7 @@
         { "year": "46 BCE", "source": { "sourceKey": "wp-jugurthine", "sourceLocation": "lead" } },
         { "year": "25 BCE", "source": { "sourceKey": "wp-numidia", "sourceLocation": "infobox" } }
       ],
-      "memberships": [{ "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-jugurthine", "sourceLocation": "lead" }] }]
+      "memberships": [{ "facet": "category", "value": "annexation", "sources": [{ "sourceKey": "wp-jugurthine", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "juba-ii",
@@ -23243,10 +23179,7 @@
         { "sourceKey": "wp-napata-classical", "sourceLocation": "lead and Late Napatan" }
       ],
       "links": [{ "to": "augustus", "kind": "related" }],
-      "memberships": [
-        { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-meroe-classical", "sourceLocation": "Conflict with Rome" }] },
-        { "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-meroe-classical", "sourceLocation": "Conflict with Rome" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-meroe-classical", "sourceLocation": "Conflict with Rome" }] }]
     },
     {
       "uuid": "nero-meroe",
@@ -23603,10 +23536,7 @@
         { "sourceKey": "wp-galatians", "sourceLocation": "History" },
         { "sourceKey": "wp-la-tene-classical", "sourceLocation": "History and Periodization map" }
       ],
-      "memberships": [
-        { "facet": "category", "value": "invasion", "sources": [{ "sourceKey": "wp-galatians", "sourceLocation": "History" }] },
-        { "facet": "category", "value": "archaeology", "sources": [{ "sourceKey": "wp-galatians", "sourceLocation": "History" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "invasion", "sources": [{ "sourceKey": "wp-galatians", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "galatians-anatolia",
@@ -23652,10 +23582,7 @@
         { "sourceKey": "wp-gallic-wars", "sourceLocation": "Background > Military" },
         { "sourceKey": "wp-la-tene-classical", "sourceLocation": "History" }
       ],
-      "memberships": [
-        { "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-gallic-wars", "sourceLocation": "Background > Military" }] },
-        { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-gallic-wars", "sourceLocation": "Background > Military" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-gallic-wars", "sourceLocation": "Background > Military" }] }]
     },
     {
       "uuid": "cimbrian-war",
@@ -23734,10 +23661,7 @@
         { "year": "84 CE", "source": { "sourceKey": "wp-roman-britain", "sourceLocation": "lead" } },
         { "year": "83 CE", "source": { "sourceKey": "wp-boudican-revolt", "sourceLocation": "campaignbox (AD 83)" } }
       ],
-      "memberships": [
-        { "facet": "category", "value": "revolt", "sources": [{ "sourceKey": "wp-roman-britain", "sourceLocation": "lead" }] },
-        { "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-roman-britain", "sourceLocation": "lead" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-roman-britain", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "hadrians-wall",
@@ -23999,10 +23923,7 @@
       "sources": [{ "sourceKey": "wp-theodoric", "sourceLocation": "infobox, lead and body" }, { "sourceKey": "wp-gothic-war", "sourceLocation": "Background" }],
       "links": [{ "to": "theodoric-italy", "kind": "related" }],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-theodoric", "sourceLocation": "infobox, lead and body" }] },
-        { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-theodoric", "sourceLocation": "infobox, lead and body" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-theodoric", "sourceLocation": "infobox, lead and body" }] }]
     },
     {
       "uuid": "gothic-war",
@@ -24252,13 +24173,6 @@
       "sources": [
         { "sourceKey": "wp-teotihuacan", "sourceLocation": "lead and History > Period III" },
         { "sourceKey": "wp-monte-alban", "sourceLocation": "Site history" }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "city-founded",
-          "sources": [{ "sourceKey": "wp-teotihuacan", "sourceLocation": "lead and History > Period III" }]
-        }
       ]
     },
     {
@@ -24920,7 +24834,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "discovery",
           "sources": [{ "sourceKey": "wp-zu-chongzhi", "sourceLocation": "lead, Life and works and Mathematics" }]
         }
       ]
@@ -25334,7 +25248,7 @@
       "descr": "Radiocarbon dating shows human activity at Nan Madol from around AD 80–200; the earliest settlement on Pohnpei was probably around AD 1. Islet building starts by the 8th or 9th century, and the megaliths around 1180.",
       "sources": [{ "sourceKey": "wp-nan-madol", "sourceLocation": "History and Archaeology" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-nan-madol", "sourceLocation": "History and Archaeology" }] }]
+      "memberships": [{ "facet": "category", "value": "horizon", "sources": [{ "sourceKey": "wp-nan-madol", "sourceLocation": "History and Archaeology" }] }]
     },
     {
       "uuid": "torres-strait-culture",
@@ -25712,7 +25626,7 @@
       "descr": "In the summer of 376 a massive number of Goths arrive on the Danube; the Thervings are probably allowed to cross at or near Durostorum. The Gothic War that follows lasts until 382.",
       "sources": [{ "sourceKey": "wp-gothic-war-376", "sourceLocation": "infobox and Background" }],
       "links": [{ "to": "adrianople", "kind": "related" }],
-      "memberships": [{ "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-gothic-war-376", "sourceLocation": "infobox and Background" }] }]
+      "memberships": [{ "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-gothic-war-376", "sourceLocation": "infobox and Background" }] }]
     },
     {
       "uuid": "hengist-horsa",

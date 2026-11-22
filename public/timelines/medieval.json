@@ -656,6 +656,33 @@
               "society"
             ]
           },
+          "golden-age": {
+            "name": "Golden age or high point",
+            "broader": [
+              "society"
+            ]
+          },
+          "science": {
+            "name": "Science and technology"
+          },
+          "discovery": {
+            "name": "Discovery",
+            "broader": [
+              "science"
+            ]
+          },
+          "invention": {
+            "name": "Invention",
+            "broader": [
+              "science"
+            ]
+          },
+          "work": {
+            "name": "Landmark work",
+            "broader": [
+              "science"
+            ]
+          },
           "archaeology": {
             "name": "Archaeology"
           },
@@ -23796,16 +23823,6 @@
         }
       ],
       "memberships": [
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-tang-dynasty",
-              "sourceLocation": "infobox event_end: Abdication in favour of Later Liang, June 1, 907"
-            }
-          ]
-        },
         {
           "facet": "category",
           "value": "dissolved",
