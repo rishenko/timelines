@@ -133,6 +133,15 @@ export function layoutLanes(
   // full, the events left over are the least important ones, and only those fold into "+N".
   const rank = (e: ResolvedEvent) => e.importance ?? 2;
   const sorted = [...events].sort((a, b) => rank(a) - rank(b) || compareEvents(a, b));
+  // each track's events, as positions in `sorted`, so a lane looks only at its own members' events
+  const byTrack = new Map<string, number[]>();
+  sorted.forEach((e, i) => {
+    for (const t of new Set(e.tracks)) {
+      const list = byTrack.get(t);
+      if (list) list.push(i);
+      else byTrack.set(t, [i]);
+    }
+  });
   const out: LaneLayout[] = [];
   let top = 0;
 
@@ -143,15 +152,19 @@ export function layoutLanes(
       continue;
     }
     const head = opts.headerPx?.[lane.id] ?? 0;
-    const members = new Set(lane.members);
+    // the lane's events in `sorted` order (an event on several members counts once)
+    const mine =
+      lane.members.length === 1
+        ? (byTrack.get(lane.members[0]) ?? [])
+        : [...new Set(lane.members.flatMap((m) => byTrack.get(m) ?? []))].sort((a, b) => a - b);
     // Occupied [start, end] footprints per sub-row. Events aren't placed in date order, so a row
     // can have gaps that a later-placed event fills.
     const rowSpans: [number, number][][] = [];
     const marks: Mark[] = [];
     const maxRows = expanded[lane.id] ? Infinity : o.maxRows;
     const overflow: { id: string; x: number }[] = [];
-    for (const e of sorted) {
-      if (!e.tracks.some((t) => members.has(t))) continue;
+    for (const i of mine) {
+      const e = sorted[i];
       // a span given in months or days too short to draw as a bar at this zoom is drawn as a point, in its middle
       const short = isSpan(e) && hasDays(e) && scale.x(at1(e, effectiveEnd(e, present))) - scale.x(at0(e)) < o.pointPx;
       const span = isSpan(e) && !short;
