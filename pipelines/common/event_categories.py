@@ -61,14 +61,14 @@ TEXT_RULES = [
     (R(r'\bsack(s|ed)?\b|\bsacking\b|\b(destroy|destroys|destroyed|burns?|burned|burnt|razes?|razed)\b'), 'sack'),
     (R(r'\bbattle\b'), 'battle'),
     # small-scale violence within a war or insurgency (Kevin, 2026-11-22: Easter Rising pilot)
-    (R(r'\b(ambush\w*|raids?|raided|attack(s|ed)?|skirmish\w*|snipers?|sniping|bomb(s|ed|ing)?|grenades?|shot dead|shooting|fired on|opened fire|gunfight|booby[- ]trap\w*|killed|killing)\b'), 'attack'),
+    (R(r'\b(ambush\w*|raids?|raided|attack(s|ed)?|skirmish\w*|snipers?|sniping|bomb(s|ed|ing)?|grenades?|shot dead|shooting|fired on|opened fire|gunfight|booby[- ]trap\w*|killed|killing|shot|shoots|(fatally|mortally) wounded|firing|sweeps? of)\b'), 'attack'),
     # arrests, internment, curfews, prisoners executed, kidnappings, reprisals (Kevin, 2026-11-22)
-    (R(r'\b(arrest\w*|abduct\w*|interned|internment|kidnap\w*|reprisals?|curfew|martial law|deport\w*|purges?|crackdown|hanged|prisoners?\b.*\bexecuted)\b'), 'repression'),
+    (R(r'\b(arrest\w*|abduct\w*|interned|internment|kidnap\w*|reprisals?|curfew|martial law|deport\w*|purges?|crackdown|hanged|prisoners?\b.*\bexecuted|execution of|shoots dead a prisoner|prisoners? (is |are |was |were )?shot)\b'), 'repression'),
     (R(r'\bcivil war\b'), 'civil-war'),
     (R(r'\brevolution\b'), 'revolution'),
     (R(r'\b(revolts?|rebellion|uprising|insurrection|mutiny|rising|riots?)\b|storming'), 'revolt'),
     (R(r'\bcoups?\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|kills (the )?(last|king|queen|emperor|ruler|sultan|caliph|pharaoh|shah|khan)\b|(?-i:^([A-Z]\S*\s){0,2}[A-Z]\S*) (executed|beheaded|killed|assassinated)\b|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
-    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
+    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|elected (\w+ ){0,2}(president|prime minister|king|chancellor|taoiseach|premier|pope|emperor|doge)|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
     (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector|pharaoh|augustus|shah|tsar|negus|basileus)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
     (R(r'\b(invasions?|invades?|campaigns?|expeditions?|crusades?|offensives?|interventions?)\b'), 'invasion'),
@@ -90,12 +90,12 @@ TEXT_RULES = [
     (R(r'\b(conquests?|conquers?|conquered|reconquest|subjugat\w*|lost to)\b'), 'conquest'),
     (R(r'\b(becomes an? (\w+ ){0,2}province|annex\w*|incorporat\w*|reintegrat\w*|reincorporat\w*|bec[oa]me?s? (\w+ )?part of)\b'), 'annexation'),
     (R(r'\b(cedes?|ceded|cession|sold|purchase|transferred to|passes to|given to|returned to|handed (over )?to|restored to|acquir\w*)\b'), 'cession'),
-    (R(r'\babandon\w*|\bwithdraw\w*|\bwithdrew\b'), 'territory'),
+    (R(r'\babandon\w*|\bwithdraw\w*|\bwithdrew\b|\btroops (leave|left)\b|\bevacuat\w*'), 'territory'),
     (R(r'\b(colon(y|ies)|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
     (R(r'\b(renamed?|renames|drops the name|(state|kingdom|dynastic|dynasty|country)(\'s)? name|changes? the (state )?name|(becomes )?an? (\w+ ){0,2}(republic|associated state|dominion|confederation|constitutional monarchy|one-party state|royal province)|republic restored|democracy restored|restores democracy|transition to democracy|multi-?party|(first|second|third|fourth|fifth) republic|dominion of|royal province|one-party state|constitution|constitutional|self-govern\w*|responsible government)\b'), 'reform'),
     (R(r'\b(becomes a (\w+ )?state|found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
     (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
-    (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet)\b'), 'law'),
+    (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet|bill (is |was )?passed|bill comes into (effect|force)|act (comes into (effect|force)|is passed|was passed)|comes into (effect|force))\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
     (R(r'\b(trade|coinage|currency|market|tax)\b'), 'economy'),
     (R(r'\b(level [IVX]+|stratum|tombs?|graveyards?|cemetery|palace|hoard)\b'), 'site'),
@@ -244,6 +244,9 @@ def classify(e, ds, wp=None):
     if um and any(um.group(2).lower() in (t['name'].lower(), t['id'].replace('-', ' ')) for t in own_rows):
         hits.append((um.start(), 'vassalage', um.group(0)))
         hits.sort(key=lambda h: h[0])
+    # "shoots dead a prisoner": a killing of a prisoner is repression, not an attack
+    rep_at = {st for st, v, _ in hits if v == 'repression'}
+    hits = [h for h in hits if not (h[1] == 'attack' and h[0] in rep_at)]
     # "Creation of the Burmese alphabet", "founding of the university": the thing founded is a script, a school or a
     # church, not a state, unless the title also names a state
     society_obj = any(top(v) == 'society' for _, v, _ in hits) and not STATE_NOUN.search(title)
