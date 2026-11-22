@@ -2,7 +2,7 @@ import type { Calendar, Track } from '../types.ts';
 import { spanDates } from '../lib/lifespan.ts';
 import { isApprox, type ResolvedSpan } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
-import { at0, at1 } from '../lib/subYear.ts';
+import { certainFrom, certainTo, drawnFrom, drawnTo } from '../lib/subYear.ts';
 import type { PhaseCell } from './layout.ts';
 import { successionTip } from '../lib/succession.ts';
 
@@ -11,10 +11,12 @@ import { successionTip } from '../lib/succession.ts';
  * the stretches its sources leave uncertain at each end (drawn fading in and out).
  */
 function bandBox(scale: Scale, s: ResolvedSpan) {
-  const x0 = scale.x(Math.min(at0(s), s.startWindow?.[0] ?? s.start));
-  const x1 = scale.x(Math.max(at1(s), (s.endWindow?.[1] ?? s.end) + 1));
-  const fadeIn = s.startWindow ? scale.x(s.startWindow[1]) - x0 : 0;
-  const fadeOut = s.endWindow ? x1 - scale.x(s.endWindow[0] + 1) : 0;
+  const x0 = scale.x(drawnFrom(s));
+  const x1 = scale.x(drawnTo(s));
+  const c0 = certainFrom(s);
+  const c1 = certainTo(s);
+  const fadeIn = c0 !== undefined ? scale.x(c0) - x0 : 0;
+  const fadeOut = c1 !== undefined ? x1 - scale.x(c1) : 0;
   return { x0, x1, fadeIn, fadeOut };
 }
 

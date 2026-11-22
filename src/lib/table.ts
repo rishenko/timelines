@@ -1,7 +1,8 @@
 import type { Calendar, Dataset, SourceRef, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan, Window } from './chronology.ts';
+import type { DayWindow } from './subYear.ts';
 import { datingChronology, isApprox } from './chronology.ts';
-import { formatYear } from './calendar.ts';
+import { formatDate, formatYear } from './calendar.ts';
 import { compareEvents, formatEventDates } from './years.ts';
 import { trackIndex, trackPath, treeOrder } from './tracks.ts';
 import { spanDates } from './lifespan.ts';
@@ -54,6 +55,8 @@ export function tableSections(tracks: Track[], events: ResolvedEvent[]): TableSe
 }
 
 const range = (w: Window, cal: Calendar) => `${formatYear(w[0], cal)} and ${formatYear(w[1], cal)}`;
+/** A spread in months or days in words: "17 July 1942 CE and 23 August 1942 CE". */
+const dayRange = (w: DayWindow, cal: Calendar) => `${formatDate(w.lo.year, w.lo.month, w.lo.day, cal)} and ${formatDate(w.hi.year, w.hi.month, w.hi.day, cal)}`;
 
 /**
  * An event's dates in words: the best estimate (under the reader's chosen chronology), then the range the cited
@@ -64,9 +67,12 @@ export function datesInWords(e: ResolvedEvent, cal: Calendar): { main: string; r
   const ranges: string[] = [];
   const single = e.end === undefined || e.end === e.start;
   if (single && e.startWindow) ranges.push(`the sources put it between ${range(e.startWindow, cal)}`);
+  else if (single && e.startDays) ranges.push(`the sources put it between ${dayRange(e.startDays, cal)}`);
   else {
     if (e.startWindow) ranges.push(`start between ${range(e.startWindow, cal)}`);
+    if (e.startDays) ranges.push(`start between ${dayRange(e.startDays, cal)}`);
     if (e.endWindow) ranges.push(`end between ${range(e.endWindow, cal)}`);
+    if (e.endDays) ranges.push(`end between ${dayRange(e.endDays, cal)}`);
   }
   return { main, ranges };
 }
@@ -186,7 +192,9 @@ export function spanInWords(s: ResolvedSpan, cal: Calendar, sources?: Dataset['s
   const main = spanDates(s, cal, approx);
   const ranges: string[] = [];
   if (s.startWindow) ranges.push(`start between ${range(s.startWindow, cal)}`);
+  if (s.startDays) ranges.push(`start between ${dayRange(s.startDays, cal)}`);
   if (s.endWindow) ranges.push(`end between ${range(s.endWindow, cal)}`);
+  if (s.endDays) ranges.push(`end between ${dayRange(s.endDays, cal)}`);
   if (sources && s.ongoing && s.ongoingSources?.length) ranges.push(`still going per ${citationsInWords(s.ongoingSources, sources)}`);
   return { main, ranges };
 }

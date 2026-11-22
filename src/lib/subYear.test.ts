@@ -2,6 +2,10 @@ import { describe, expect, it } from 'vitest';
 import {
   at0,
   at1,
+  certainFrom,
+  dayWindow,
+  drawnFrom,
+  drawnTo,
   centerParam,
   dayOf,
   durationText,
@@ -21,6 +25,8 @@ import { formatEventDates, isSpan } from './years.ts';
 import type { TimelineEvent } from '../types.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import { validateDataset } from '../data/validate.ts';
+import { isApprox, resolveEvents } from './chronology.ts';
+import { datesInWords } from './table.ts';
 
 const ev = (o: Partial<TimelineEvent>): TimelineEvent => ({ uuid: 'e', title: 'E', descr: '', start: 1916, tracks: ['t'], sources: [], ...o });
 
@@ -175,5 +181,56 @@ describe('validating months and days', () => {
     expect(validateDataset(d).filter((x) => x.includes('startEvent'))).toEqual([]);
     d.tracks[0].phases![1] = { ...phase, start: 70, startMonth: 8, startDay: 18, startEvent: e.uuid };
     expect(validateDataset(d).join()).toMatch(/within a day of the edge/);
+  });
+});
+
+describe('spreads in months or days (day windows)', () => {
+  const stalingrad = ev({
+    start: 1942, startMonth: 7, startDay: 17, end: 1943, endMonth: 2, endDay: 2,
+    startDates: [{ year: 1942, month: 7, day: 17 }, { year: 1942, month: 8, day: 23 }],
+  });
+  it('spans the claims from the earliest start to the latest, certain from the latest start', () => {
+    const w = dayWindow({ year: 1942, month: 7, day: 17 }, stalingrad.startDates, 'start')!;
+    expect(w.from).toBe(startAt(1942, 7, 17));
+    expect(w.solid).toBe(startAt(1942, 8, 23));
+    expect(w.to).toBe(endAt(1942, 8, 23));
+    expect(w.lo).toEqual({ year: 1942, month: 7, day: 17 });
+    expect(w.hi).toEqual({ year: 1942, month: 8, day: 23 });
+  });
+  it('gives none when claims agree, lack a month, carry a margin, or follow another dating system', () => {
+    const best = { year: 1942, month: 7, day: 17 };
+    expect(dayWindow(best, [{ year: 1942, month: 7, day: 17 }], 'start')).toBeUndefined();
+    expect(dayWindow(best, [{ year: 1943 }], 'start')).toBeUndefined();
+    expect(dayWindow(best, [{ year: 1942, month: 8, margin: 1 }], 'start')).toBeUndefined();
+    expect(dayWindow(best, [{ year: 1942, month: 8, chronology: 'other' }], 'start')).toBeUndefined();
+  });
+  it('replaces the year window on resolved events and reads as approximate', () => {
+    const d = plainTimeline();
+    d.events = [stalingrad];
+    const [r] = resolveEvents(d, {});
+    expect(r.startDays?.solid).toBe(startAt(1942, 8, 23));
+    expect(r.startWindow).toBeUndefined();
+    expect(isApprox(r)).toBe(true);
+    expect(drawnFrom(r)).toBe(startAt(1942, 7, 17));
+    expect(certainFrom(r)).toBe(startAt(1942, 8, 23));
+    expect(datesInWords(r, BCE_CE).ranges).toEqual(['start between 17 July 1942 CE and 23 August 1942 CE']);
+  });
+  it('leaves year windows exactly as before', () => {
+    const d = plainTimeline();
+    d.events = [ev({ start: -1594, startDates: [{ year: -1594 }, { year: -1530 }] })];
+    const [r] = resolveEvents(d, {});
+    expect(r.startWindow).toEqual([-1594, -1530]);
+    expect(r.startDays).toBeUndefined();
+    expect(drawnFrom(r)).toBe(-1594);
+    expect(certainFrom(r)).toBe(-1530);
+  });
+});
+
+describe('extent of a bar given in days', () => {
+  it('ends at the end of its end day, not of its end year', () => {
+    const e = ev({ start: 1942, startMonth: 7, startDay: 17, end: 1943, endMonth: 2, endDay: 2 });
+    expect(drawnFrom(e)).toBe(startAt(1942, 7, 17));
+    expect(drawnTo(e)).toBe(startAt(1943, 2, 3));
+    expect(drawnTo(ev({ start: 1942, end: 1943 }))).toBe(1944);
   });
 });

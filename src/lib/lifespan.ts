@@ -53,6 +53,7 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
         cur.startMonth = p.startMonth;
         cur.startDay = p.startDay;
         cur.startWindow = p.startWindow;
+        cur.startDays = p.startDays;
         cur.startCirca = p.circa;
         cur.startEvent = p.startEvent;
       } else if (p.startWindow && p.startWindow[0] < lo(cur)) cur.startWindow = [p.startWindow[0], cur.startWindow?.[1] ?? cur.start];
@@ -61,6 +62,7 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
         cur.endMonth = p.endMonth;
         cur.endDay = p.endDay;
         cur.endWindow = p.endWindow;
+        cur.endDays = p.endDays;
         cur.endCirca = p.circa;
         cur.ongoing = p.ongoing;
         cur.ongoingSources = p.ongoingSources;
@@ -74,6 +76,8 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
         startDay: p.startDay,
         endMonth: p.endMonth,
         endDay: p.endDay,
+        startDays: p.startDays,
+        endDays: p.endDays,
         startWindow: p.startWindow,
         endWindow: p.endWindow,
         startCirca: p.circa,
@@ -87,6 +91,8 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
   return out.map(({ startCirca, endCirca, ...s }) => {
     const r: ResolvedSpan = { start: s.start, end: s.end, derived: true };
     for (const k of ['startMonth', 'startDay', 'endMonth', 'endDay'] as const) if (s[k]) r[k] = s[k];
+    if (s.startDays) r.startDays = s.startDays;
+    if (s.endDays) r.endDays = s.endDays;
     if (s.startWindow) r.startWindow = s.startWindow;
     if (s.endWindow) r.endWindow = s.endWindow;
     if (startCirca || endCirca) r.circa = true;

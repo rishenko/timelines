@@ -207,3 +207,68 @@ export function centerParam(y: number): string {
   const { year, month, day } = dayOf(y);
   return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 }
+
+/**
+ * The spread of a date whose sources disagree within months or days (every claim gives a month): positions, not
+ * years. `from` is where the earliest date starts and `to` where the latest ends; `solid` is the latest start (for a
+ * start: the bar is certain from there) or the earliest end (for an end: certain up to there). `lo`/`hi` are the
+ * earliest and latest dates, for text.
+ */
+export interface DayWindow {
+  from: number;
+  solid: number;
+  to: number;
+  lo: { year: number; month: number; day?: number };
+  hi: { year: number; month: number; day?: number };
+}
+
+type DatedValue = { year: number; month?: number; day?: number; margin?: number; chronology?: string };
+
+/**
+ * A date's spread in months or days, from its best estimate and its sources' claims: only when every value gives a
+ * month, none has a ± margin in years, and they don't all agree. Claims under another dating system are left out.
+ */
+export function dayWindow(best: DatedValue, claims: DatedValue[] | undefined, side: 'start' | 'end'): DayWindow | undefined {
+  const own = (claims ?? []).filter((c) => !c.chronology);
+  const vals = [best, ...own];
+  if (vals.length < 2 || vals.some((v) => !v.month || v.margin)) return undefined;
+  const starts = vals.map((v) => startAt(v.year, v.month, v.day));
+  const ends = vals.map((v) => endAt(v.year, v.month, v.day));
+  const iLo = starts.indexOf(Math.min(...starts));
+  const iHi = ends.indexOf(Math.max(...ends));
+  const part = (v: DatedValue) => ({ year: v.year, month: v.month!, ...(v.day ? { day: v.day } : {}) });
+  const w = {
+    from: starts[iLo],
+    to: ends[iHi],
+    solid: side === 'start' ? Math.max(...starts) : Math.min(...ends),
+    lo: part(vals[iLo]),
+    hi: part(vals[iHi]),
+  };
+  return (side === 'start' ? w.solid > w.from : w.solid < w.to) ? w : undefined;
+}
+
+/** Anything drawn from a start to an end, with the uncertainty its sources leave at each end. */
+type Drawn = {
+  start: number;
+  end?: number;
+  startMonth?: number;
+  startDay?: number;
+  endMonth?: number;
+  endDay?: number;
+  startWindow?: [number, number];
+  endWindow?: [number, number];
+  startDays?: DayWindow;
+  endDays?: DayWindow;
+};
+
+/** Where it is drawn from: its start, or the earliest date its sources allow. */
+export const drawnFrom = (o: Drawn) => Math.min(at0(o), o.startWindow?.[0] ?? Infinity, o.startDays?.from ?? Infinity);
+
+/** Where it is drawn to (exclusive): the end of its end date, or of the latest end its sources allow. `end` overrides the end year (ongoing). */
+export const drawnTo = (o: Drawn, end = o.end ?? o.start) => Math.max(at1(o, end), o.endWindow ? o.endWindow[1] + 1 : -Infinity, o.endDays?.to ?? -Infinity);
+
+/** Where its start is certain (the latest start its sources allow), if they leave it uncertain. */
+export const certainFrom = (o: Drawn) => (o.startDays ? o.startDays.solid : o.startWindow ? o.startWindow[1] : undefined);
+
+/** Where its end is certain up to (the earliest end), if they leave it uncertain. */
+export const certainTo = (o: Drawn) => (o.endDays ? o.endDays.solid : o.endWindow ? o.endWindow[0] + 1 : undefined);

@@ -3,7 +3,7 @@ import { compareEvents, effectiveEnd, isSpan } from '../lib/years.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
 import { childrenMap } from '../lib/tracks.ts';
-import { at0, at1, hasDays, startAt } from '../lib/subYear.ts';
+import { at0, at1, certainFrom, certainTo, drawnFrom, drawnTo, hasDays, startAt } from '../lib/subYear.ts';
 
 export interface LaneDef {
   id: string;
@@ -163,25 +163,26 @@ export function layoutLanes(
       let fadeOut: number | undefined;
       let whisker: [number, number] | undefined;
       const sw = e.startWindow;
-      const ew = e.endWindow;
       if (span) {
         const end = effectiveEnd(e, present);
         // an uncertain bar spans its whole window; the uncertain parts are drawn lighter
-        x0 = scale.x(Math.min(at0(e), sw?.[0] ?? at0(e)));
+        x0 = scale.x(drawnFrom(e));
         // the end date is inclusive: the bar runs to the end of that year (or month, or day)
-        x1 = Math.max(scale.x(Math.max(at1(e, end), (ew?.[1] ?? end) + 1)), x0 + o.minBarPx);
-        if (sw || ew) {
+        x1 = Math.max(scale.x(drawnTo(e, end)), x0 + o.minBarPx);
+        const c0 = certainFrom(e);
+        const c1 = certainTo(e);
+        if (c0 !== undefined || c1 !== undefined) {
           // The darker middle runs from the latest possible start to the earliest possible end.
           // When the ranges overlap (e.g. a 42-year reign with a 120-year chronology spread) there is
           // no certain middle, so it shows the event's own dates under the selected chronology instead.
-          let solid0 = sw ? scale.x(sw[1]) : x0;
-          let solid1 = ew ? scale.x(ew[0] + 1) : x1;
+          let solid0 = c0 !== undefined ? scale.x(c0) : x0;
+          let solid1 = c1 !== undefined ? scale.x(c1) : x1;
           if (solid1 <= solid0) {
             solid0 = scale.x(at0(e));
             solid1 = scale.x(at1(e, end));
           }
-          if (sw) fadeIn = Math.max(0, solid0 - x0);
-          if (ew) fadeOut = Math.max(0, x1 - solid1);
+          if (c0 !== undefined) fadeIn = Math.max(0, solid0 - x0);
+          if (c1 !== undefined) fadeOut = Math.max(0, x1 - solid1);
         }
         footprintStart = x0;
         // the label starts where the bar is solid
@@ -191,8 +192,8 @@ export function layoutLanes(
         x0 = x1 = scale.x((at0(e) + (short ? at1(e, effectiveEnd(e, present)) : at1(e, undefined))) / 2);
         footprintStart = x0 - o.pointPx / 2;
         footprintEnd = x0 + o.pointPx / 2 + labelWidth(e.title, o, rank(e) === 1);
-        if (sw) {
-          whisker = [scale.x(sw[0]), scale.x(sw[1] + 1)];
+        if (sw || e.startDays) {
+          whisker = e.startDays ? [scale.x(e.startDays.from), scale.x(e.startDays.to)] : [scale.x(sw![0]), scale.x(sw![1] + 1)];
           footprintStart = Math.min(footprintStart, whisker[0]);
           footprintEnd = Math.max(footprintEnd, whisker[1]);
         }
@@ -296,8 +297,8 @@ export function placeOnLines<T extends ResolvedPhase>(trackId: string, list: T[]
     const placed: T & PlacedPhase = {
       ...p,
       level: fromLevel + line,
-      nameFrom: Math.min(at0(p), p.startWindow?.[0] ?? p.start),
-      nameTo: Math.max(at1(p), (p.endWindow?.[1] ?? p.end) + 1),
+      nameFrom: drawnFrom(p),
+      nameTo: drawnTo(p),
     };
     // the band before on this line reaches into this one (through its uncertain end, or by ending in the year this
     // one starts): split the name strip at this phase's start
@@ -423,7 +424,7 @@ export function layoutPhaseStrips(
   const within = (p: PlacedPhase): [number, number] | null => {
     if (!lifespan) return [-Infinity, Infinity];
     const s = lifespan.find((s) => Math.min(s.start, s.startWindow?.[0] ?? s.start) <= p.end && Math.max(s.end, s.endWindow?.[1] ?? s.end) >= p.start);
-    return s ? [x(Math.min(at0(s), s.startWindow?.[0] ?? s.start)), x(Math.max(at1(s), (s.endWindow?.[1] ?? s.end) + 1))] : null;
+    return s ? [x(drawnFrom(s)), x(drawnTo(s))] : null;
   };
   const levels = placed.length ? Math.max(...placed.map((p) => p.level)) + 1 : 0;
   const byLine: PlacedPhase[][] = Array.from({ length: levels }, () => []);
@@ -476,19 +477,21 @@ export function layoutPhaseStrips(
     line.forEach((p, i) => {
       const next = line[i + 1];
       const prev = line[i - 1];
-      let x0 = x(Math.min(at0(p), p.startWindow?.[0] ?? p.start));
-      let x1 = x(Math.max(at1(p), (p.endWindow?.[1] ?? p.end) + 1));
+      let x0 = x(drawnFrom(p));
+      let x1 = x(drawnTo(p));
       const startX = x(at0(p));
-      let fadeIn = p.startWindow ? x(p.startWindow[1]) - x0 : 0;
-      let fadeOut = p.endWindow ? x1 - x(p.endWindow[0] + 1) : 0;
+      const c0 = certainFrom(p);
+      const c1 = certainTo(p);
+      let fadeIn = c0 !== undefined ? x(c0) - x0 : 0;
+      let fadeOut = c1 !== undefined ? x1 - x(c1) : 0;
       // where two phases' bands on a line run into each other (an uncertain end or start, or a shared boundary
       // year), they meet at the later one's start, as their names do; a change is then drawn once, by its start line
       const abuts = !!next && at0(next) <= at1(p);
       if (next && x(at0(next)) < x1) {
         x1 = Math.max(x(at0(next)), startX);
-        fadeOut = p.endWindow ? Math.min(fadeOut, x1 - x(p.endWindow[0] + 1)) : 0;
+        fadeOut = c1 !== undefined ? Math.min(fadeOut, x1 - x(c1)) : 0;
       }
-      if (prev && x0 < startX && x(Math.max(at1(prev), (prev.endWindow?.[1] ?? prev.end) + 1)) > x0) {
+      if (prev && x0 < startX && x(drawnTo(prev)) > x0) {
         x0 = startX;
         fadeIn = 0;
       }

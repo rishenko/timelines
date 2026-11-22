@@ -1,3 +1,4 @@
+import { dayWindow, type DayWindow } from './subYear.ts';
 import type { Chronology, DateClaim, DateDays, Dataset, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { trackIndex, trackPath } from './tracks.ts';
 import { datasetPresent } from './years.ts';
@@ -26,6 +27,9 @@ export interface ResolvedEvent extends TimelineEvent {
   /** Earliest and latest plausible start, when the data gives a range. */
   startWindow?: Window;
   endWindow?: Window;
+  /** The spread when sources disagree within months or days (every claim gives a month); then no year window. */
+  startDays?: DayWindow;
+  endDays?: DayWindow;
 }
 
 export interface ResolvedSpan extends DateDays {
@@ -44,6 +48,8 @@ export interface ResolvedSpan extends DateDays {
   endEvent?: string;
   startWindow?: Window;
   endWindow?: Window;
+  startDays?: DayWindow;
+  endDays?: DayWindow;
 }
 
 /** A row's phase (Track.phases), resolved like a lifespan. */
@@ -55,8 +61,8 @@ export interface ResolvedPhase extends ResolvedSpan {
  * Whether dates read as approximate ("c."): marked circa, or given a range by their sources. Both ends of an event,
  * lifespan or phase read the same way, everywhere they are shown.
  */
-export function isApprox(d: { circa?: boolean; startWindow?: Window; endWindow?: Window }): boolean {
-  return !!(d.circa || d.startWindow || d.endWindow);
+export function isApprox(d: { circa?: boolean; startWindow?: Window; endWindow?: Window; startDays?: DayWindow; endDays?: DayWindow }): boolean {
+  return !!(d.circa || d.startWindow || d.endWindow || d.startDays || d.endDays);
 }
 
 export function chronologyGroups(ds: Dataset): Map<string, { id: string; c: Chronology }[]> {
@@ -174,6 +180,7 @@ export function resolveEvents(ds: Dataset, selection: ChronologySelection): Reso
       out.end = Math.max(en.year, s.year);
       if (en.window) out.endWindow = en.window;
     }
+    attachDayWindows(out, e, !!e.circa);
     return out;
   });
 }
@@ -189,6 +196,7 @@ export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selec
     if (span.circa) out.circa = true;
     if (span.ongoingSources?.length) out.ongoingSources = span.ongoingSources;
     if (span.startEvent) out.startEvent = span.startEvent;
+    attachDayWindows(out, span, !!span.circa);
     return out;
   }
   const e = resolveDate(ds, span.end, span.endDates, chron, selection, !!span.circa);
@@ -198,5 +206,32 @@ export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selec
   if (span.circa) out.circa = true;
   if (span.startEvent) out.startEvent = span.startEvent;
   if (span.endEvent) out.endEvent = span.endEvent;
+  attachDayWindows(out, span, !!span.circa);
   return out;
+}
+
+/**
+ * Spreads in months or days (subYear.dayWindow) for a date left where its sources put it (no dating system moved it,
+ * no circa fade): they replace the year windows, which can't show them.
+ */
+function attachDayWindows(
+  out: { start: number; end?: number; startWindow?: Window; endWindow?: Window; startDays?: DayWindow; endDays?: DayWindow },
+  src: DateDays & { start: number; end?: number; startDates?: DateClaim[]; endDates?: DateClaim[] },
+  circa: boolean,
+) {
+  if (circa) return;
+  if (out.start === src.start && src.startMonth) {
+    const w = dayWindow({ year: src.start, month: src.startMonth, day: src.startDay }, src.startDates, 'start');
+    if (w) {
+      out.startDays = w;
+      delete out.startWindow;
+    }
+  }
+  if (src.end !== undefined && out.end === src.end && src.endMonth) {
+    const w = dayWindow({ year: src.end, month: src.endMonth, day: src.endDay }, src.endDates, 'end');
+    if (w) {
+      out.endDays = w;
+      delete out.endWindow;
+    }
+  }
 }

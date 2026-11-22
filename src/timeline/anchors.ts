@@ -21,12 +21,16 @@ export function anchorsFor(
     if (fine) out.push(at1(e, e.end === undefined && !e.ongoing ? undefined : end));
     if (e.startWindow) out.push(...e.startWindow);
     if (e.endWindow) out.push(...e.endWindow);
+    if (e.startDays) out.push(e.startDays.from, e.startDays.solid);
+    if (e.endDays) out.push(e.endDays.solid, e.endDays.to);
   }
   for (const s of spans) {
     out.push(at0(s), startAt(s.end, s.endMonth, s.endDay));
     if (fine) out.push(at1(s));
     if (s.startWindow) out.push(...s.startWindow);
     if (s.endWindow) out.push(...s.endWindow);
+    if (s.startDays) out.push(s.startDays.from, s.startDays.solid);
+    if (s.endDays) out.push(s.endDays.solid, s.endDays.to);
   }
   return range ? out.map((y) => Math.min(Math.max(y, range.start), range.end)) : out;
 }

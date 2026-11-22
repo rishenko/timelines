@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react';
 import type { Dataset, SourceRef, TimelineEvent } from '../types.ts';
 import { compareEvents, formatEventDates } from '../lib/years.ts';
-import { formatYear } from '../lib/calendar.ts';
+import { formatDate, formatYear } from '../lib/calendar.ts';
+import { durationText, type DayWindow } from '../lib/subYear.ts';
 import { allClaims, datingChronology, eventChronology, isApprox, type Claim, type ResolvedEvent, type Window } from '../lib/chronology.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 import { safeUrl } from '../lib/urls.ts';
@@ -70,9 +71,9 @@ function SuccessionList({ data, label, edges }: { data: Dataset; label: string; 
   );
 }
 
-function ClaimRows({ data, claims, label, window }: { data: Dataset; claims: Claim[]; label: string; window?: Window }) {
+function ClaimRows({ data, claims, label, window, days }: { data: Dataset; claims: Claim[]; label: string; window?: Window; days?: DayWindow }) {
   const cal = data.meta.calendar;
-  if (!claims.length && !window) return null;
+  if (!claims.length && !window && !days) return null;
   return (
     <div className="claim-group">
       <h4>
@@ -83,12 +84,19 @@ function ClaimRows({ data, claims, label, window }: { data: Dataset; claims: Cla
             · range {formatYear(window[0], cal)} – {formatYear(window[1], cal)} ({window[1] - window[0]} yrs)
           </span>
         )}
+        {days && (
+          <span className="muted">
+            {' '}
+            · range {formatDate(days.lo.year, days.lo.month, days.lo.day, cal)} – {formatDate(days.hi.year, days.hi.month, days.hi.day, cal)} (
+            {durationText({ start: days.lo.year, startMonth: days.lo.month, startDay: days.lo.day, end: days.hi.year, endMonth: days.hi.month, endDay: days.hi.day })})
+          </span>
+        )}
       </h4>
       <ul className="claims-list">
         {claims.map((c, i) => (
           <li key={i}>
             <strong>
-              {formatYear(c.year, cal)}
+              {formatDate(c.year, c.month, c.day, cal)}
               {c.margin ? ` ± ${c.margin}` : ''}
             </strong>
             {c.chronology && <span className="chron"> {data.chronologies?.[c.chronology]?.name ?? c.chronology}</span>}
@@ -145,7 +153,7 @@ export function DetailPanel(p: Props) {
   const approx = isApprox(r);
   const moved = r.start !== e.start || (r.end ?? r.start) !== (e.end ?? e.start);
   const succession = useMemo(() => successionIndex(data.tracks), [data.tracks]).get(e.uuid);
-  const hasDating = startClaims.length > 0 || endClaims.length > 0 || r.startWindow || r.endWindow || chronology;
+  const hasDating = startClaims.length > 0 || endClaims.length > 0 || r.startWindow || r.endWindow || r.startDays || r.endDays || chronology;
 
   return (
     // Escape anywhere in the panel closes it
@@ -202,8 +210,8 @@ export function DetailPanel(p: Props) {
               .
             </p>
           )}
-          <ClaimRows data={data} claims={startClaims} label={e.end !== undefined ? 'Start' : 'Date'} window={r.startWindow} />
-          {e.end !== undefined && <ClaimRows data={data} claims={endClaims} label="End" window={r.endWindow} />}
+          <ClaimRows data={data} claims={startClaims} label={e.end !== undefined ? 'Start' : 'Date'} window={r.startWindow} days={r.startDays} />
+          {e.end !== undefined && <ClaimRows data={data} claims={endClaims} label="End" window={r.endWindow} days={r.endDays} />}
           {e.circa && !startClaims.length && <p className="muted small">Approximate; no source gives a margin.</p>}
         </section>
       )}
