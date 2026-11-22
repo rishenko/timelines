@@ -45,6 +45,7 @@
     ],
     "hideRowsOutOfView": true,
     "range": { "start": "10050 BCE", "end": "650 CE" },
+    "continues": [{ "timeline": "medieval", "at": "650 CE", "side": "after" }],
     "facets": {
       "geography": {
         "name": "Region",
@@ -2180,7 +2181,20 @@
       "parent": "rome",
       "url": "https://en.wikipedia.org/wiki/Byzantine_Empire",
       "ids": { "wikidata": "Q12544" },
-      "span": { "start": "395 CE", "end": "1453 CE" },
+      "span": {
+        "start": "395 CE",
+        "end": "1453 CE",
+        "endDates": [
+          {
+            "year": "1453 CE",
+            "source": {
+              "sourceKey": "wp-row-eastern-roman",
+              "sourceLocation": "lead ('The fall of Constantinople to the Ottomans in 1453 brought the empire to an end.')"
+            }
+          },
+          { "year": "1453 CE", "source": { "sourceKey": "wp-row-eastern-roman", "sourceLocation": "infobox life span (330–1453)" } }
+        ]
+      },
       "memberships": [
         {
           "facet": "geography",
@@ -9018,7 +9032,13 @@
       "span": {
         "start": "c. 1 CE",
         "end": "1628 CE",
-        "startDates": [{ "year": "1 CE", "margin": 50, "source": { "sourceKey": "wp-nan-madol", "sourceLocation": "Archaeology ('probably around AD 1')" } }]
+        "startDates": [{ "year": "1 CE", "margin": 50, "source": { "sourceKey": "wp-nan-madol", "sourceLocation": "Archaeology ('probably around AD 1')" } }],
+        "endDates": [
+          {
+            "year": "1628 CE",
+            "source": { "sourceKey": "wp-nan-madol", "sourceLocation": "lead ('Nan Madol was the capital of the Saudeleur dynasty until about 1628.')" }
+          }
+        ]
       },
       "memberships": [
         {

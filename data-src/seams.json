@@ -1,0 +1,30 @@
+{
+  "about": "Timelines whose seams scripts/seam-check.ts compares, and rows that are phases on the other side.",
+  "timelines": [
+    "ancient-classical",
+    "medieval",
+    "modern-states"
+  ],
+  "pairs": [
+    {
+      "timeline": "ancient-classical",
+      "row": "tang",
+      "phasesIn": "medieval",
+      "phasesOf": "china",
+      "phases": [
+        "Tang dynasty",
+        "Wu Zhou",
+        "Tang dynasty (restored)"
+      ]
+    },
+    {
+      "timeline": "ancient-classical",
+      "row": "asuka",
+      "phasesIn": "medieval",
+      "phasesOf": "japan",
+      "phases": [
+        "Asuka period"
+      ]
+    }
+  ]
+}
