@@ -19020,7 +19020,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [{ "sourceKey": "wp-gobekli", "sourceLocation": "infobox, lead, Dawn of village life and Chronology" }]
         }
       ]
@@ -19600,7 +19600,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [{ "sourceKey": "wp-jiahu", "sourceLocation": "infobox, lead, Inscriptions, Agriculture and Pottery and alcohol production" }]
         }
       ]

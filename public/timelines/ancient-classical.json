@@ -42478,7 +42478,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [
             {
               "sourceKey": "wp-gobekli",
@@ -44029,7 +44029,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [
             {
               "sourceKey": "wp-jiahu",
