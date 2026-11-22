@@ -53,6 +53,15 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     compiled: 'public/timelines/modern-states.json',
     scripts: [],
   },
+  {
+    // generated: data-src/medieval.json is written by pipelines/medieval/gen_medieval.py (pipelines/README.md),
+    // not by hand or by content scripts; listed so `data:build` and CI check its compiled file
+    short: 'medieval',
+    id: 'medieval',
+    source: 'data-src/medieval.json',
+    compiled: 'public/timelines/medieval.json',
+    scripts: [],
+  },
 ];
 
 /** A timeline by short name or id; throws with the list of names when there is none. */
