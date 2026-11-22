@@ -412,7 +412,9 @@ export function validateDataset(d: unknown): string[] {
       if (!Array.isArray(era.sources) || !era.sources.length) errors.push(`${label} cites no source.`);
       else for (const r of era.sources) if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
       if (!checkSpan(label, era, era.chronology)) continue;
-      if (m.range && (era.start < m.range.start || (era.ongoing ? false : era.end! > m.range.end)))
+      // an era may run past the range, as rows do (one crossing a seam keeps its own dates in both timelines); it
+      // must overlap it
+      if (m.range && (era.start > m.range.end || (!era.ongoing && era.end! < m.range.start)))
         errors.push(`${label} lies outside meta.range (${yr(m.range.start)} – ${yr(m.range.end)}).`);
     }
     const groups = new Map<string, typeof eras>();

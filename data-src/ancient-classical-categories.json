@@ -226,6 +226,33 @@
      "society"
     ]
    },
+   "golden-age": {
+    "name": "Golden age or high point",
+    "broader": [
+     "society"
+    ]
+   },
+   "science": {
+    "name": "Science and technology"
+   },
+   "discovery": {
+    "name": "Discovery",
+    "broader": [
+     "science"
+    ]
+   },
+   "invention": {
+    "name": "Invention",
+    "broader": [
+     "science"
+    ]
+   },
+   "work": {
+    "name": "Landmark work",
+    "broader": [
+     "science"
+    ]
+   },
    "archaeology": {
     "name": "Archaeology"
    },
@@ -282,7 +309,7 @@
    "archaeology"
   ],
   "ahmose-expels-hyksos": [
-   "battle"
+   "conquest"
   ],
   "ahmose-reign": [
    "succession"
@@ -331,8 +358,7 @@
    "siege"
   ],
   "alexander-dies": [
-   "succession",
-   "war"
+   "succession"
   ],
   "alexander-getae": [
    "attack"
@@ -376,8 +402,7 @@
    "siege"
   ],
   "argishti-diauehi": [
-   "conflict",
-   "archaeology"
+   "conflict"
   ],
   "arkaim": [
    "colony",
@@ -387,7 +412,7 @@
    "religion"
   ],
   "aryabhata": [
-   "culture"
+   "work"
   ],
   "arzhan-1": [
    "site"
@@ -543,8 +568,7 @@
    "revolt"
   ],
   "brennus-greece": [
-   "invasion",
-   "archaeology"
+   "invasion"
   ],
   "bronze-age-collapse": [
    "dissolved"
@@ -583,7 +607,7 @@
    "coup"
   ],
   "cai-lun-paper": [
-   "culture"
+   "invention"
   ],
   "calakmul-palenque": [
    "sack"
@@ -610,8 +634,7 @@
    "battle"
   ],
   "carthage-destroyed": [
-   "dissolved",
-   "war"
+   "dissolved"
   ],
   "carthage-founded": [
    "founded"
@@ -856,8 +879,8 @@
    "founded"
   ],
   "drought-1198": [
-   "dissolved",
-   "city-founded"
+   "disaster",
+   "dissolved"
   ],
   "drought-4200": [
    "disaster"
@@ -900,7 +923,7 @@
   ],
   "eight-princes": [
    "war",
-   "civil-war"
+   "revolt"
   ],
   "el-mirador": [
    "site"
@@ -923,7 +946,6 @@
    "treaty"
   ],
   "event-8-2-ka": [
-   "city-founded",
    "archaeology"
   ],
   "exile-return": [
@@ -962,7 +984,7 @@
    "sack"
   ],
   "farming-greece": [
-   "city-founded"
+   "horizon"
   ],
   "faxian": [
    "religion"
@@ -1047,22 +1069,19 @@
    "horizon"
   ],
   "gobekli-tepe": [
-   "city-founded",
-   "archaeology"
+   "city-founded"
   ],
   "gobero": [
    "site"
   ],
   "goguryeo-buddhism": [
-   "religion",
-   "civil-war"
+   "religion"
   ],
   "goguryeo-sui-war": [
    "war"
   ],
   "goguryeo-tang-war": [
-   "war",
-   "civil-war"
+   "war"
   ],
   "gojoseon-falls": [
    "conquest"
@@ -1077,7 +1096,7 @@
    "war"
   ],
   "goths-danube": [
-   "conflict"
+   "war"
   ],
   "grand-canal": [
    "economy"
@@ -1327,8 +1346,7 @@
    "archaeology"
   ],
   "jiahu": [
-   "city-founded",
-   "archaeology"
+   "city-founded"
   ],
   "jiangling-sacked": [
    "sack"
@@ -1337,16 +1355,13 @@
    "founded"
   ],
   "jin-defeats-former-qin": [
-   "conflict",
-   "civil-war"
+   "conflict"
   ],
   "jin-moves-south": [
-   "sack",
-   "civil-war"
+   "sack"
   ],
   "jin-reunifies": [
-   "union",
-   "civil-war"
+   "union"
   ],
   "jokhang": [
    "religion"
@@ -1383,8 +1398,7 @@
    "war"
   ],
   "kanesh-karum-ib": [
-   "economy",
-   "city-founded"
+   "economy"
   ],
   "kanesh-karum-ii": [
    "colony",
@@ -1459,7 +1473,7 @@
    "find"
   ],
   "kot-diji": [
-   "city-founded"
+   "horizon"
   ],
   "kotosh-pottery": [
    "find"
@@ -1483,8 +1497,7 @@
    "independence"
   ],
   "kush-rome-war": [
-   "war",
-   "city-founded"
+   "war"
   ],
   "kushan-founded": [
    "union"
@@ -1780,7 +1793,6 @@
    "find"
   ],
   "mons-graupius": [
-   "revolt",
    "battle"
   ],
   "monte-alban": [
@@ -1822,8 +1834,7 @@
    "annexation"
   ],
   "nabonidus": [
-   "succession",
-   "siege"
+   "succession"
   ],
   "nabonidus-tayma": [
    "invasion"
@@ -1917,8 +1928,7 @@
    "founded"
   ],
   "northern-wei-unifies": [
-   "union",
-   "civil-war"
+   "union"
   ],
   "northern-zhou-founded": [
    "founded"
@@ -1933,7 +1943,7 @@
    "war"
   ],
   "numidia-province": [
-   "war"
+   "annexation"
   ],
   "nuraghi": [
    "site"
@@ -1992,8 +2002,7 @@
    "founded"
   ],
   "paleo-eskimo": [
-   "colony",
-   "archaeology"
+   "colony"
   ],
   "palmyra": [
    "siege"
@@ -2106,7 +2115,7 @@
    "archaeology"
   ],
   "pohnpei-settled": [
-   "city-founded"
+   "horizon"
   ],
   "portugal-dolmens": [
    "site"
@@ -2186,8 +2195,7 @@
    "city-founded"
   ],
   "red-cliffs": [
-   "battle",
-   "civil-war"
+   "battle"
   ],
   "red-river-rice": [
    "horizon"
@@ -2354,7 +2362,7 @@
    "annexation"
   ],
   "shamash-shum-ukin": [
-   "siege"
+   "revolt"
   ],
   "shamshi-adad": [
    "conquest"
@@ -2430,8 +2438,7 @@
    "succession"
   ],
   "solon": [
-   "law",
-   "archaeology"
+   "law"
   ],
   "sondani": [
    "conflict"
@@ -2592,9 +2599,6 @@
   "teotihuacan-burned": [
    "sack"
   ],
-  "teotihuacan-peak": [
-   "city-founded"
-  ],
   "teouma": [
    "site"
   ],
@@ -2612,14 +2616,13 @@
    "battle"
   ],
   "thales-eclipse": [
-   "culture"
+   "discovery"
   ],
   "thapsus": [
    "battle"
   ],
   "theodoric": [
-   "succession",
-   "war"
+   "succession"
   ],
   "theodoric-italy": [
    "conquest"
@@ -2673,11 +2676,10 @@
    "horizon"
   ],
   "tp1-arameans": [
-   "invasion"
+   "battle"
   ],
   "transalpine-gaul": [
-   "conquest",
-   "war"
+   "conquest"
   ],
   "troy-vi": [
    "sack"
@@ -2846,8 +2848,7 @@
    "site"
   ],
   "wu-ding": [
-   "succession",
-   "culture"
+   "succession"
   ],
   "wu-mingche-captured": [
    "conquest"
@@ -2932,8 +2933,7 @@
    "vassalage"
   ],
   "zapotec-writing": [
-   "find",
-   "city-founded"
+   "find"
   ],
   "zhang-qian": [
    "diplomacy"
@@ -2954,7 +2954,7 @@
    "religion"
   ],
   "zu-chongzhi": [
-   "culture"
+   "discovery"
   ]
  }
 }

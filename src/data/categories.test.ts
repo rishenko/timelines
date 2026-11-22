@@ -6,13 +6,13 @@ import { readFileSync } from 'node:fs';
 import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
 import type { Dataset } from '../types.ts';
 
-const KINDS = ['rule', 'statehood', 'territory', 'place', 'conflict', 'unrest', 'diplomacy', 'society', 'archaeology'];
+const KINDS = ['rule', 'statehood', 'territory', 'place', 'conflict', 'unrest', 'diplomacy', 'society', 'science', 'archaeology'];
 
 describe.each(SOURCE_TIMELINES.map((t) => [t.short, t.compiled]))('event categories in %s', (_, file) => {
   const ds = JSON.parse(readFileSync(file, 'utf8')) as Dataset;
   const facet = ds.meta.facets?.category;
 
-  it.runIf(!!facet)('the facet has the nine kinds, and every sub-kind sits in one of them', () => {
+  it.runIf(!!facet)('the facet has the ten kinds, and every sub-kind sits in one of them', () => {
     const values = facet!.values;
     expect(Object.keys(values).filter((v) => !values[v].broader)).toEqual(KINDS);
     for (const [v, val] of Object.entries(values)) if (val.broader) expect(KINDS, v).toEqual(expect.arrayContaining(val.broader));

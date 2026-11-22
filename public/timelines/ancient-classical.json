@@ -852,6 +852,33 @@
               "society"
             ]
           },
+          "golden-age": {
+            "name": "Golden age or high point",
+            "broader": [
+              "society"
+            ]
+          },
+          "science": {
+            "name": "Science and technology"
+          },
+          "discovery": {
+            "name": "Discovery",
+            "broader": [
+              "science"
+            ]
+          },
+          "invention": {
+            "name": "Invention",
+            "broader": [
+              "science"
+            ]
+          },
+          "work": {
+            "name": "Landmark work",
+            "broader": [
+              "science"
+            ]
+          },
           "archaeology": {
             "name": "Archaeology"
           },
@@ -27161,16 +27188,6 @@
               "sourceLocation": "Archaeology"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-kultepe",
-              "sourceLocation": "Archaeology"
-            }
-          ]
         }
       ]
     },
@@ -28506,7 +28523,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "dissolved",
+          "value": "disaster",
           "sources": [
             {
               "sourceKey": "wp-hattusa",
@@ -28516,7 +28533,7 @@
         },
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "dissolved",
           "sources": [
             {
               "sourceKey": "wp-hattusa",
@@ -28905,7 +28922,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "battle",
+          "value": "conquest",
           "sources": [
             {
               "sourceKey": "wp-kadesh",
@@ -30973,16 +30990,6 @@
               "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "siege",
-          "sources": [
-            {
-              "sourceKey": "wp-fall-babylon",
-              "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)"
-            }
-          ]
         }
       ]
     },
@@ -31379,7 +31386,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "siege",
+          "value": "revolt",
           "sources": [
             {
               "sourceKey": "wp-ashurbanipal",
@@ -32648,7 +32655,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "horizon",
           "sources": [
             {
               "sourceKey": "wp-harappa",
@@ -33099,16 +33106,6 @@
         {
           "facet": "category",
           "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-shang",
-              "sourceLocation": "infobox"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-shang",
@@ -34507,16 +34504,6 @@
         {
           "facet": "category",
           "value": "law",
-          "sources": [
-            {
-              "sourceKey": "wp-archaic-greece",
-              "sourceLocation": "Political developments"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
           "sources": [
             {
               "sourceKey": "wp-archaic-greece",
@@ -39792,16 +39779,6 @@
               "sourceLocation": "Urartu period"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
-          "sources": [
-            {
-              "sourceKey": "wp-diauehi",
-              "sourceLocation": "Urartu period"
-            }
-          ]
         }
       ]
     },
@@ -40828,16 +40805,6 @@
               "sourceLocation": "Genetics"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
-          "sources": [
-            {
-              "sourceKey": "wp-pre-dorset",
-              "sourceLocation": "Genetics"
-            }
-          ]
         }
       ],
       "circa": true
@@ -41102,16 +41069,6 @@
         {
           "facet": "category",
           "value": "find",
-          "sources": [
-            {
-              "sourceKey": "wp-san-jose-mogote",
-              "sourceLocation": "lead and Monument 3"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "city-founded",
           "sources": [
             {
               "sourceKey": "wp-san-jose-mogote",
@@ -42300,16 +42257,6 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-ppnb",
-              "sourceLocation": "Extent"
-            }
-          ]
-        },
-        {
-          "facet": "category",
           "value": "archaeology",
           "sources": [
             {
@@ -42374,16 +42321,6 @@
         {
           "facet": "category",
           "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-gobekli",
-              "sourceLocation": "infobox, lead, Dawn of village life and Chronology"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
           "sources": [
             {
               "sourceKey": "wp-gobekli",
@@ -43445,7 +43382,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "horizon",
           "sources": [
             {
               "sourceKey": "wp-neolithic-europe",
@@ -43935,16 +43872,6 @@
         {
           "facet": "category",
           "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-jiahu",
-              "sourceLocation": "infobox, lead, Inscriptions, Agriculture and Pottery and alcohol production"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
           "sources": [
             {
               "sourceKey": "wp-jiahu",
@@ -46740,7 +46667,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "discovery",
           "sources": [
             {
               "sourceKey": "wp-thales",
@@ -47334,7 +47261,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "battle",
           "sources": [
             {
               "sourceKey": "wp-arameans",
@@ -48782,16 +48709,6 @@
               "sourceLocation": "lead"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-death-alexander",
-              "sourceLocation": "lead"
-            }
-          ]
         }
       ]
     },
@@ -49284,16 +49201,6 @@
         {
           "facet": "category",
           "value": "dissolved",
-          "sources": [
-            {
-              "sourceKey": "wp-punic-wars",
-              "sourceLocation": "lead"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
           "sources": [
             {
               "sourceKey": "wp-punic-wars",
@@ -51344,7 +51251,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "work",
           "sources": [
             {
               "sourceKey": "wp-aryabhata",
@@ -51683,7 +51590,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "invention",
           "sources": [
             {
               "sourceKey": "wp-cai-lun",
@@ -51744,16 +51651,6 @@
         {
           "facet": "category",
           "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-red-cliffs",
-              "sourceLocation": "infobox, lead and Background"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
           "sources": [
             {
               "sourceKey": "wp-red-cliffs",
@@ -51841,16 +51738,6 @@
               "sourceLocation": "lead and infobox"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-jin",
-              "sourceLocation": "lead and infobox"
-            }
-          ]
         }
       ]
     },
@@ -51886,7 +51773,7 @@
         },
         {
           "facet": "category",
-          "value": "civil-war",
+          "value": "revolt",
           "sources": [
             {
               "sourceKey": "wp-jin",
@@ -51933,16 +51820,6 @@
               "sourceLocation": "lead and infobox"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-jin",
-              "sourceLocation": "lead and infobox"
-            }
-          ]
         }
       ]
     },
@@ -51975,16 +51852,6 @@
               "sourceLocation": "lead"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-jin",
-              "sourceLocation": "lead"
-            }
-          ]
         }
       ]
     },
@@ -52011,16 +51878,6 @@
         {
           "facet": "category",
           "value": "union",
-          "sources": [
-            {
-              "sourceKey": "wp-northern-wei",
-              "sourceLocation": "infobox and lead"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
           "sources": [
             {
               "sourceKey": "wp-northern-wei",
@@ -52298,16 +52155,6 @@
               "sourceLocation": "lead"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-three-kingdoms-korea",
-              "sourceLocation": "lead"
-            }
-          ]
         }
       ]
     },
@@ -52465,16 +52312,6 @@
         {
           "facet": "category",
           "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-goguryeo",
-              "sourceLocation": "infobox"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
           "sources": [
             {
               "sourceKey": "wp-goguryeo",
@@ -53601,7 +53438,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "war",
+          "value": "annexation",
           "sources": [
             {
               "sourceKey": "wp-jugurthine",
@@ -54016,16 +53853,6 @@
         {
           "facet": "category",
           "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-meroe-classical",
-              "sourceLocation": "Conflict with Rome"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "city-founded",
           "sources": [
             {
               "sourceKey": "wp-meroe-classical",
@@ -55036,16 +54863,6 @@
               "sourceLocation": "History"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
-          "sources": [
-            {
-              "sourceKey": "wp-galatians",
-              "sourceLocation": "History"
-            }
-          ]
         }
       ]
     },
@@ -55180,16 +54997,6 @@
         {
           "facet": "category",
           "value": "conquest",
-          "sources": [
-            {
-              "sourceKey": "wp-gallic-wars",
-              "sourceLocation": "Background > Military"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
           "sources": [
             {
               "sourceKey": "wp-gallic-wars",
@@ -55413,16 +55220,6 @@
         }
       ],
       "memberships": [
-        {
-          "facet": "category",
-          "value": "revolt",
-          "sources": [
-            {
-              "sourceKey": "wp-roman-britain",
-              "sourceLocation": "lead"
-            }
-          ]
-        },
         {
           "facet": "category",
           "value": "battle",
@@ -56064,16 +55861,6 @@
         {
           "facet": "category",
           "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-theodoric",
-              "sourceLocation": "infobox, lead and body"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
           "sources": [
             {
               "sourceKey": "wp-theodoric",
@@ -56763,18 +56550,6 @@
         {
           "sourceKey": "wp-monte-alban",
           "sourceLocation": "Site history"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-teotihuacan",
-              "sourceLocation": "lead and History > Period III"
-            }
-          ]
         }
       ]
     },
@@ -58474,7 +58249,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "discovery",
           "sources": [
             {
               "sourceKey": "wp-zu-chongzhi",
@@ -59471,7 +59246,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "horizon",
           "sources": [
             {
               "sourceKey": "wp-nan-madol",
@@ -60373,7 +60148,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "conflict",
+          "value": "war",
           "sources": [
             {
               "sourceKey": "wp-gothic-war-376",

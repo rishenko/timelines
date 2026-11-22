@@ -134,7 +134,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `color` | no | `#rrggbb`. |
 | `chronology` | no | The dating system its dates follow. |
 
-An era must lie within `meta.range` when the timeline has one.
+An era must overlap `meta.range` when the timeline has one; it may run past it, as rows do, so an era that crosses a seam keeps its own dates in both timelines.
 
 The app draws eras as **ages** in a strip under the ruler: one line per `group` (in the order groups first appear),
 lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
@@ -352,8 +352,8 @@ source on; the example timeline's Serath shows this with "The coast". Together, 
 events and facet values form a graph: events link rows, memberships link rows to values, and `broader` links values.
 
 **Event categories.** Events join the values of a facet whose `applies` is `"events"` the same way. The Wikipedia-sourced
-timelines share one such facet, `category`: nine kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
-`unrest`, `diplomacy`, `society`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
+timelines share one such facet, `category`: ten kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
+`unrest`, `diplomacy`, `society`, `science`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
 `conflict`). An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
 article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed
 corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
@@ -506,7 +506,7 @@ A file that breaks any of these is refused, with a message naming the problem.
   phase of that name on the row that contains it.
 - A facet's `applies` is `tracks`, `events` or `both`, and every row's or event's membership is in a facet that applies
   to it. A row's `kind` is `polity`, `person` or `theme`.
-- Eras have unique ids, a name and at least one known source, are dated like phases, lie within `meta.range` when set,
+- Eras have unique ids, a name and at least one known source, are dated like phases, overlap `meta.range` when set,
   and don't overlap others in their group.
 - A source's `dump` looks like `enwiki-20261101`; a `revision` is a positive whole number on a source with a `url`. A
   `locator` has a known `kind` and that kind's fields only.
