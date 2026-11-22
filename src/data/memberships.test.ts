@@ -42,7 +42,9 @@ describe('the memberships plan', () => {
   const data: Dataset = JSON.parse(readFileSync('public/timelines/ancient-classical.json', 'utf8'));
 
   it('is what the bundled timeline holds', () => {
-    expect(data.meta.facets).toEqual(plan.facets);
+    // the event categories plan (categoriesPlan.test.ts) adds the `category` facet beside this plan's facets
+    const { category: _category, ...facets } = data.meta.facets ?? {};
+    expect(facets).toEqual(plan.facets);
     for (const t of data.tracks) expect(t.memberships ?? []).toEqual(plan.rows[t.id] ?? []);
   });
 

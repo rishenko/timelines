@@ -109,7 +109,7 @@ scripts. `npm run data` takes its short name (`ancient-classical`) or `all`:
 
 ```sh
 npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ (also npm run data:build)
-npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and row links; refresh docs/<short>-key-events.md (also npm run importance)
+npm run data -- importance <timeline|all>   # apply the plans (importance, row links, memberships, event categories); refresh docs/<short>-key-events.md (also npm run importance)
 npm run data -- format <timeline|all>       # re-format a source file (also npm run format:src for all)
 npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order (npm run row-order: Ancient, --best)
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
@@ -117,6 +117,15 @@ npm run data -- run-all <timeline> --check  # report whether the scripts reprodu
 npm run data -- ids --check                 # fail on ids lost since origin/main without a redirect (CI runs it)
 npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
+
+**Event categories** come from a plan, `data-src/ancient-classical-categories.json` (the `category` facet and each
+event's categories, main first), which `importance` applies (`scripts/lib/categories.ts`). The plan is written by
+`pipelines/ancient/categories.py`, which runs the shared classifier (`pipelines/common/event_categories.py`, as the
+generators do) with the reviewed overrides in `pipelines/ancient/categories.json`, and writes the evidence for each
+event to `data-src/provenance/ancient-classical-categories.json`. It needs the Wikipedia dump
+([pipelines/README.md](../pipelines/README.md)); the build and CI need only the plan. After a change to the classifier
+or the overrides: rerun it, then `npm run data -- importance ancient-classical` and `npm run categories:proof --
+ancient-classical`.
 
 The site's list, `timelines/index.json`, isn't committed: `scripts/lib/timeline-index-plugin.ts` makes it from the
 files in `public/timelines/` (the dev server on each request, the build into `dist/timelines/`), in the order
