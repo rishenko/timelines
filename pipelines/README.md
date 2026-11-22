@@ -8,6 +8,7 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
 |---|---|---|
 | `modern-states/` | `data-src/modern-states.json`, plus `data-src/provenance/modern-states.json` and `modern-states-categories.json` | `gen_modern.py` |
 | `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) and `medieval-categories.json` | `gen_medieval.py` |
+| `ancient/` | event categories only, for Ancient and Classical (its source file is kept by `scripts/`): `data-src/ancient-classical-categories.json`, the plan the build applies, and `data-src/provenance/ancient-classical-categories.json` | `categories.py` |
 | `common/` | shared code: the dump reader, the infobox extractor, and the claim and citation helpers | (none) |
 
 ## Inputs

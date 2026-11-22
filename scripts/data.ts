@@ -26,6 +26,7 @@ import { SOURCE_TIMELINES, sourceTimeline, type SourceTimeline } from './lib/tim
 import { timelineIndexText } from './lib/timeline-index.ts';
 import { applyRowLinks } from './lib/row-links.ts';
 import { applyMemberships } from './lib/memberships.ts';
+import { applyCategories } from './lib/categories.ts';
 import { idsCommand } from './lib/ids-check.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
@@ -48,7 +49,7 @@ function index() {
 }
 
 /**
- * Applies the timeline's plans to the source file (in place): importance, row links, then memberships. Returns the importance
+ * Applies the timeline's plans to the source file (in place): importance, row links, memberships, then event categories. Returns the importance
  * counts. A timeline without plans is left alone.
  */
 function applyPlan(t: SourceTimeline) {
@@ -56,7 +57,8 @@ function applyPlan(t: SourceTimeline) {
   if (t.importance) applyImportancePlan(d.events, JSON.parse(readFileSync(t.importance, 'utf8')));
   if (t.rowLinks) applyRowLinks(d.tracks, JSON.parse(readFileSync(t.rowLinks, 'utf8')));
   if (t.memberships) applyMemberships(d, JSON.parse(readFileSync(t.memberships, 'utf8')));
-  if (t.importance || t.rowLinks || t.memberships) writeSource(t.source, d);
+  if (t.categories) applyCategories(d, JSON.parse(readFileSync(t.categories, 'utf8')));
+  if (t.importance || t.rowLinks || t.memberships || t.categories) writeSource(t.source, d);
   return importanceCounts(d.events);
 }
 
