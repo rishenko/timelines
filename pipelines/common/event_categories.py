@@ -25,13 +25,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # ---- the vocabulary: 9 top-level ids (stable), each with a short list of sub-kinds ----
 VOCAB = {
     'rule': ('Rulers', {'succession': 'Succession', 'coup': 'Coup or deposition', 'title': 'New title'}),
-    'statehood': ('Statehood', {'founded': 'State founded', 'independence': 'Independence', 'union': 'Union', 'dissolved': 'State ends'}),
+    'statehood': ('Statehood', {'founded': 'State founded', 'independence': 'Independence', 'union': 'Union', 'dissolved': 'State ends', 'reform': 'New name, form or constitution'}),
     'territory': ('Territory', {'conquest': 'Conquest', 'annexation': 'Annexation', 'cession': 'Cession', 'colony': 'Colony'}),
     'place': ('Cities and places', {'city-founded': 'City founded', 'sack': 'Sack or fall', 'capital-moved': 'Capital moved', 'disaster': 'Disaster'}),
-    'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign'}),
+    'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign', 'atrocity': 'Massacre or genocide'}),
     'unrest': ('Revolts', {'revolt': 'Revolt', 'revolution': 'Revolution', 'civil-war': 'Civil war'}),
     'diplomacy': ('Diplomacy', {'treaty': 'Treaty', 'alliance': 'Alliance or bloc', 'vassalage': 'Vassalage'}),
-    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Law and reform', 'culture': 'Culture and learning', 'economy': 'Economy'}),
+    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'culture': 'Culture and learning', 'economy': 'Economy'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
 }
 PARENT = {sub: top for top, (_, subs) in VOCAB.items() for sub in subs}
@@ -50,20 +50,22 @@ def facet():
 # ---- title and description rules: (pattern, value), most specific first; value is a sub-kind or a top level ----
 R = lambda p: re.compile(p, re.I)
 TEXT_RULES = [
+    (R(r'\b(massacres?|genocide|holocaust|pogroms?|ethnic cleansing|atrocit\w*)\b'), 'atrocity'),
     (R(r'\bsiege\b|\bbesieg'), 'siege'),
     (R(r'\bsack(s|ed)?\b|\bsacking\b|\b(destroy|destroys|destroyed|burn|burns|burned|razed?)\b.*\b(city|town|capital)\b'), 'sack'),
     (R(r'\bbattle\b'), 'battle'),
     (R(r'\bcivil war\b'), 'civil-war'),
     (R(r'\brevolution\b'), 'revolution'),
     (R(r'\b(revolt|rebellion|uprising|insurrection|mutiny|rising|riots?)\b|storming'), 'revolt'),
-    (R(r'\bcoup\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|seiz\w* the throne|stole the throne)\b'), 'coup'),
-    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|rules|reigns?|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
+    (R(r'\bcoup\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
+    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
     (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
     (R(r'\b(invasions?|invades?|campaigns?|expeditions?|raids?|crusades?|offensives?|interventions?)\b'), 'invasion'),
+    (R(r'\b(defeat(s|ed)?)\b'), 'conflict'),
     (R(r'\b(treaty|peace of|accords?|agreement|concordat|convention)\b'), 'treaty'),
     (R(r'\b(alliance|pact|joins?|admitted|league|federat\w*)\b'), 'alliance'),
-    (R(r'\b(tributary|vassal|protectorate|suzerainty|homage|client|submits|submission)\b'), 'vassalage'),
+    (R(r'\b(tributary|vassal\w*|protectorate|suzerainty|homage|client|submits|submission)\b'), 'vassalage'),
     (R(r'\b(breaks? (away|from)|secedes?|secession|leaves|self-rule|autonomy)\b'), 'independence'),
     (R(r'\brecogni[sz]\w*'), 'diplomacy'),
     (R(r'\bindependen\w*\b'), 'independence'),
@@ -72,16 +74,17 @@ TEXT_RULES = [
     (R(r'\b(found(s|ed|ing|ation) of [A-Z][a-z]+$|founds? the city|city (is )?founded)\b'), 'city-founded'),
     (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b|\bmoved? (the )?seat\b|\bdesignated (as )?(the )?capital\b'), 'capital-moved'),
     (R(r'\b(earthquake|plague|famine|flood|eruption|epidemic|fire of)\b'), 'disaster'),
-    (R(r'\b(fall of|falls?|captures?|captured|take|takes|took|retakes|recaptures?|defeated|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
+    (R(r'\b(fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
     (R(r'\bpartition\w*|\bsplit\b|\bdivided\b'), 'territory'),
-    (R(r'\b(conquest|conquers?|conquered|reconquest|subjugat\w*|lost to)\b'), 'conquest'),
-    (R(r'\b(annex\w*|incorporat\w*)\b'), 'annexation'),
+    (R(r'\b(conquests?|conquers?|conquered|reconquest|subjugat\w*|lost to)\b'), 'conquest'),
+    (R(r'\b(annex\w*|incorporat\w*|bec[oa]me?s? (\w+ )?part of)\b'), 'annexation'),
     (R(r'\b(cedes?|ceded|cession|sold|purchase|transferred to|passes to|given to|returned to|handed (over )?to|restored to|acquir\w*)\b'), 'cession'),
     (R(r'\babandon\w*'), 'territory'),
     (R(r'\b(colony|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
+    (R(r'\b(renamed?|renames|becomes a (\w+ ){0,2}(republic|dominion|confederation|constitutional monarchy|one-party state|royal province)|republic restored|dominion of|royal province|one-party state|constitution|constitutional|self-govern\w*|responsible government)\b'), 'reform'),
     (R(r'\b(found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
     (R(r'\b(convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
-    (R(r'\b(law|code|edict|reform\w*|constitution\w*|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet)\b'), 'law'),
+    (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet)\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
     (R(r'\b(trade|coinage|currency|market|tax)\b'), 'economy'),
     (R(r'\b(level [IVX]+|stratum|tombs?|graveyards?|cemetery|palace|hoard)\b'), 'site'),
@@ -120,7 +123,7 @@ top = lambda v: PARENT.get(v, v)
 # kinds a description may decide on its own (descriptions say "founded" and "end of" about many things)
 DESCR_OK = {'conflict', 'unrest', 'place', 'diplomacy'}
 # words that are a title's head noun when they end it ("Reform War"); others at the end are verbs or objects
-HEAD_NOUNS = {'war', 'wars', 'rebellion', 'revolution', 'revolt', 'uprising', 'coup', 'siege', 'battle', 'campaign', 'invasion', 'conquest', 'treaty', 'massacre', 'mutiny'}
+HEAD_NOUNS = {'massacre', 'genocide', 'war', 'wars', 'rebellion', 'revolution', 'revolt', 'uprising', 'coup', 'siege', 'battle', 'campaign', 'invasion', 'conquest', 'treaty', 'massacre', 'mutiny'}
 # generic sub-kinds a more specific one of the same top level replaces
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
@@ -218,6 +221,9 @@ def classify(e, ds, wp=None):
     # a sub-kind beats its own top level from weaker evidence (infobox "military conflict" + title "Siege of" = siege)
     out = []
     for v, ev in found:
+        # a new constitution is a reform of the state; "law" beside it repeats it ("Constitution Act")
+        if v == 'law' and out and out[0][0] == 'reform':
+            continue
         # an infobox's bare "conflict" adds nothing to a revolt or a coup, which are fights already
         if v == 'conflict' and out and top(out[0][0]) in ('unrest', 'rule') and 'infobox' in ev:
             continue
