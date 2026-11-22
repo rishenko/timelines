@@ -719,6 +719,9 @@
   "cishan": [
    "horizon"
   ],
+  "classic-kerma": [
+   "golden-age"
+  ],
   "classic-tichitt": [
    "city-founded"
   ],
@@ -832,6 +835,9 @@
   "diadochi": [
    "war"
   ],
+  "dilmun-height": [
+   "golden-age"
+  ],
   "dilmun-last": [
    "find"
   ],
@@ -927,6 +933,9 @@
   ],
   "el-mirador": [
    "site"
+  ],
+  "el-mirador-height": [
+   "golden-age"
   ],
   "emperor-wu-han": [
    "succession"
@@ -1086,6 +1095,9 @@
   "gojoseon-falls": [
    "conquest"
   ],
+  "golden-age-of-athens": [
+   "golden-age"
+  ],
   "gonghe": [
    "succession"
   ],
@@ -1244,6 +1256,9 @@
   ],
   "himiko": [
    "succession"
+  ],
+  "hiram-i": [
+   "golden-age"
   ],
   "hittite-marriage": [
    "alliance"
@@ -2232,6 +2247,9 @@
    "economy",
    "archaeology"
   ],
+  "saba-height": [
+   "golden-age"
+  ],
   "sack-of-babylon": [
    "sack"
   ],
@@ -2554,6 +2572,7 @@
    "find"
   ],
   "talaiotic-peak": [
+   "golden-age",
    "horizon"
   ],
   "tanaju": [
@@ -2598,6 +2617,10 @@
   ],
   "teotihuacan-burned": [
    "sack"
+  ],
+  "teotihuacan-peak": [
+   "golden-age",
+   "place"
   ],
   "teouma": [
    "site"
@@ -2677,6 +2700,9 @@
   ],
   "tp1-arameans": [
    "battle"
+  ],
+  "trajan-extent": [
+   "golden-age"
   ],
   "transalpine-gaul": [
    "conquest"

@@ -902,7 +902,80 @@
           }
         }
       }
-    }
+    },
+    "eras": [
+      {
+        "id": "axial-age",
+        "name": "Axial Age",
+        "group": "world",
+        "start": -749,
+        "end": -249,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -749,
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "From \"about the 8th\" century BCE."
+          }
+        ],
+        "endDates": [
+          {
+            "year": -249,
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "To the 3rd century BCE."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-axial-age",
+            "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+          }
+        ]
+      },
+      {
+        "id": "pax-romana",
+        "name": "Pax Romana",
+        "group": "roman-world",
+        "start": -26,
+        "end": 180,
+        "startDates": [
+          {
+            "year": -26,
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 180,
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+          },
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+          }
+        ]
+      }
+    ]
   },
   "tracks": [
     {
@@ -20894,12 +20967,12 @@
       "accessed": "2026-11-17"
     },
     "wp-peloponnesian-war": {
-      "name": "Wikipedia: Peloponnesian War",
+      "name": "Peloponnesian War (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Peloponnesian_War",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
-      ],
-      "accessed": "2026-11-17"
+      ]
     },
     "wp-philip-ii": {
       "name": "Wikipedia: Philip II of Macedon",
@@ -26204,6 +26277,30 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-athens-in-the-5th-century-bc": {
+      "name": "Athens in the 5th century BC (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athens_in_the_5th_century_BC",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-axial-age": {
+      "name": "Axial Age (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Axial_Age",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pax-romana": {
+      "name": "Pax Romana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pax_Romana",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -31821,6 +31918,19 @@
           "sourceKey": "wp-phoenicia",
           "sourceLocation": "infobox"
         }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-phoenicia",
+              "sourceLocation": "infobox"
+            }
+          ]
+        }
       ]
     },
     {
@@ -32561,6 +32671,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-dilmun",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -35688,7 +35810,18 @@
           }
         }
       ],
+      "importance": 1,
       "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-talaiotic",
+              "sourceLocation": "Funerary spaces ('maximum splendor … from 850-800 BCE to 500 BCE') and The Talayot"
+            }
+          ]
+        },
         {
           "facet": "category",
           "value": "horizon",
@@ -36841,6 +36974,19 @@
             "sourceKey": "wp-kerma",
             "sourceLocation": "lead ('latest phase, lasting from about 1700 to 1500 BC')"
           }
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "lead, Site and periodisation and Classic Kerma"
+            }
+          ]
         }
       ],
       "circa": true
@@ -40149,6 +40295,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-sheba",
+              "sourceLocation": "lead, Era of the mukarribs, Era of the kings and Sources"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -49354,6 +49512,19 @@
           "sourceKey": "wp-roman-empire",
           "sourceLocation": "infobox and lead"
         }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-roman-empire",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
+        }
       ]
     },
     {
@@ -56551,6 +56722,29 @@
           "sourceKey": "wp-monte-alban",
           "sourceLocation": "Site history"
         }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "lead and History > Period III"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "place",
+          "sources": [
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "lead and History > Period III"
+            }
+          ]
+        }
       ]
     },
     {
@@ -56599,6 +56793,19 @@
         {
           "sourceKey": "wp-tikal",
           "sourceLocation": "Preclassic"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-el-mirador-classical",
+              "sourceLocation": "History"
+            }
+          ]
         }
       ]
     },
@@ -60670,6 +60877,65 @@
             {
               "sourceKey": "wp-suiko",
               "sourceLocation": "lead, infobox and Biography"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "golden-age-of-athens",
+      "title": "Golden Age of Athens",
+      "descr": "",
+      "start": -477,
+      "end": -403,
+      "tracks": [
+        "greece"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -477,
+          "source": {
+            "sourceKey": "wp-athens-in-the-5th-century-bc",
+            "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -403,
+          "source": {
+            "sourceKey": "wp-athens-in-the-5th-century-bc",
+            "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\""
+          }
+        },
+        {
+          "year": -403,
+          "source": {
+            "sourceKey": "wp-peloponnesian-war",
+            "sourceLocation": "infobox date: 4 April 431 – 25 April 404 BC"
+          },
+          "note": "Athens' defeat in the Peloponnesian War ends the age."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-athens-in-the-5th-century-bc",
+              "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
             }
           ]
         }
