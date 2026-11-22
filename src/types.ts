@@ -41,8 +41,8 @@ export interface TimelineMeta {
   /** Track ids that start collapsed. */
   collapsed?: string[];
   /**
-   * Start with rows that have nothing near the view hidden (readers can turn it off in Filters). For timelines with
-   * many rows that come and go over a long period.
+   * Start with rows that have nothing near the view hidden (readers can turn it off in Filters). On unless this is
+   * `false`.
    */
   hideRowsOutOfView?: boolean;
   /**

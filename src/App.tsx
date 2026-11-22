@@ -259,7 +259,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       view,
       hideOutOfView,
       thinRows,
-      hideOutOfViewDefault: !!published.meta.hideRowsOutOfView,
+      hideOutOfViewDefault: published.meta.hideRowsOutOfView !== false,
       regions: regions.picked,
       set: comparison.active ? comparison.rows : [],
       order: comparison.order,

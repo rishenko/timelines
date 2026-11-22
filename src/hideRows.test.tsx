@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
-// "Hide rows with nothing in view": on by default where the timeline asks for it (the combined timeline), off
-// elsewhere; the link and the Filters panel switch it; headers count the hidden rows and can show them.
+// "Hide rows with nothing in view": on by default (a timeline can turn it off with meta.hideRowsOutOfView: false);
+// the link and the Filters panel switch it; headers count the hidden rows and can show them.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { act, cleanup, fireEvent, screen, waitFor } from '@testing-library/react';
 import { renderApp, SITE_DATASETS } from './test/app.tsx';
@@ -106,17 +106,30 @@ describe('hide rows with nothing in view', () => {
     expect(c.querySelector('.tl-lane.thin.peek')).toBeNull();
   });
 
-  it('is off elsewhere unless the link turns it on', async () => {
-    // the same timeline, without meta.hideRowsOutOfView
+  it('is on by default, even without meta.hideRowsOutOfView, and a link saying rows=all still wins', async () => {
     const plain = structuredClone(SITE_DATASETS[0]) as Dataset;
     delete plain.meta.hideRowsOutOfView;
     let c = renderApp('timeline=ancient-classical&inc=100&at=-2000', [plain]).container;
+    expandAll(c);
+    await waitFor(() => expect(hiddenButtons(c).length).toBeGreaterThan(0));
+    expect(filtersCheckbox().checked).toBe(true);
+    cleanup();
+    c = renderApp('timeline=ancient-classical&inc=100&at=-2000&rows=all', [plain]).container;
+    expandAll(c);
+    expect(hiddenButtons(c)).toEqual([]);
+    expect(filtersCheckbox().checked).toBe(false);
+  });
+
+  it('is off where the timeline says hideRowsOutOfView: false, unless the link turns it on', async () => {
+    const off = structuredClone(SITE_DATASETS[0]) as Dataset;
+    off.meta.hideRowsOutOfView = false;
+    let c = renderApp('timeline=ancient-classical&inc=100&at=-2000', [off]).container;
     expandAll(c);
     expect(hiddenButtons(c)).toEqual([]);
     expect(c.querySelector('.rows-hidden')).toBeNull();
     expect(filtersCheckbox().checked).toBe(false);
     cleanup();
-    c = renderApp('timeline=ancient-classical&inc=100&at=-2000&rows=active', [plain]).container;
+    c = renderApp('timeline=ancient-classical&inc=100&at=-2000&rows=active', [off]).container;
     expandAll(c);
     await waitFor(() => expect(hiddenButtons(c).length).toBeGreaterThan(0));
   });
