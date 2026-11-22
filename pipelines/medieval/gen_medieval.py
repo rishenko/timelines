@@ -443,7 +443,7 @@ def events():
 def build(repo):
     anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
     data = {
-        'schemaVersion': 5,  # v5 (schema PR #41) only adds optional fields
+        'schemaVersion': 6,  # v6 only adds Era.url and Era.ids
         'meta': {
             'id': 'medieval', 'title': 'Medieval World', 'subtitle': 'Europe, Africa, Asia, Oceania and the Americas, 650–1500',
             'description': 'Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.',
