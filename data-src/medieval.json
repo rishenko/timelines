@@ -3,7 +3,7 @@
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
-    "subtitle": "Europe, the Near East and North Africa, the steppe, Central and South Asia; pilot rows elsewhere; 650–1500",
+    "subtitle": "Europe, the Near East and North Africa, the steppe, Central, South and East Asia; pilot rows elsewhere; 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
     "calendar": {
@@ -5080,14 +5080,6 @@
                 "sourceKey": "wp-grand-principality-of-moscow",
                 "sourceLocation": "infobox year_end: 1547"
               }
-            },
-            {
-              "year": 1478,
-              "source": {
-                "sourceKey": "wp-grand-principality-of-moscow",
-                "sourceLocation": "infobox life span: 1263–1478/1547"
-              },
-              "note": "The infobox also ends it in 1478."
             }
           ]
         }
@@ -7471,34 +7463,37 @@
       ]
     },
     {
-      "id": "northern-yuan",
-      "name": "Northern Yuan",
+      "id": "mongolia",
+      "name": "Mongolia",
       "color": "#7a5a9a",
       "parent": "eastern-steppe",
       "url": "https://en.wikipedia.org/wiki/Northern_Yuan",
-      "span": {
-        "start": 1368,
-        "end": 1635,
-        "startDates": [
-          {
-            "year": 1368,
-            "source": {
-              "sourceKey": "wp-northern-yuan",
-              "sourceLocation": "infobox year_start: 1368"
+      "phases": [
+        {
+          "name": "Northern Yuan",
+          "start": 1368,
+          "end": 1635,
+          "startDates": [
+            {
+              "year": 1368,
+              "source": {
+                "sourceKey": "wp-northern-yuan",
+                "sourceLocation": "infobox year_start: 1368"
+              }
             }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1635,
-            "source": {
-              "sourceKey": "wp-northern-yuan",
-              "sourceLocation": "infobox year_end: 1635"
+          ],
+          "endDates": [
+            {
+              "year": 1635,
+              "source": {
+                "sourceKey": "wp-northern-yuan",
+                "sourceLocation": "infobox year_end: 1635"
+              }
             }
-          }
-        ],
-        "startEvent": "fall-of-dadu"
-      },
+          ],
+          "startEvent": "fall-of-dadu"
+        }
+      ],
       "memberships": [
         {
           "facet": "geography",
@@ -8052,6 +8047,13 @@
                 "sourceKey": "wp-kazakh-khanate",
                 "sourceLocation": "infobox year_end: 1780"
               }
+            },
+            {
+              "year": 1822,
+              "source": {
+                "sourceKey": "wp-kazakhstan",
+                "sourceLocation": "infobox: Abolition of the khanate (3 August 1822)"
+              }
             }
           ],
           "startEvent": "janibeg-and-kerei-found-the-kazakh-khanate"
@@ -8302,8 +8304,7 @@
               "sourceLocation": "infobox year_end: 1502"
             }
           }
-        ],
-        "endEvent": "sarai-sacked"
+        ]
       },
       "memberOf": [
         {
@@ -8381,8 +8382,7 @@
               "sourceLocation": "infobox year_end: 1552"
             }
           }
-        ],
-        "startEvent": "elevation-of-ulugh-muhammad"
+        ]
       },
       "memberships": [
         {
@@ -8505,8 +8505,7 @@
               "sourceLocation": "infobox year_end: 1598"
             }
           }
-        ],
-        "startEvent": "ibak-khan-establishes-chimgi-tura-as-an-independent-khanate"
+        ]
       },
       "memberships": [
         {
@@ -10666,10 +10665,16 @@
       "color": "#b0302f"
     },
     {
+      "id": "china-group",
+      "name": "China and its neighbours",
+      "color": "#b0302f",
+      "parent": "east-asia"
+    },
+    {
       "id": "china",
       "name": "China",
       "color": "#b0302f",
-      "parent": "east-asia",
+      "parent": "china-group",
       "url": "https://en.wikipedia.org/wiki/China",
       "ids": {
         "wikidata": "Q148"
@@ -10988,6 +10993,950 @@
             {
               "sourceKey": "wp-tang-dynasty",
               "sourceLocation": "lead: \"The Tang dynasty was an imperial dynasty of China that ruled from 618 to 907, with an interregnum between 690 and 705.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liao-dynasty",
+      "name": "Liao dynasty (Khitan)",
+      "color": "#5a6a9a",
+      "parent": "china-group",
+      "url": "https://en.wikipedia.org/wiki/Liao_dynasty",
+      "span": {
+        "start": 916,
+        "end": 1125,
+        "startDates": [
+          {
+            "year": 916,
+            "source": {
+              "sourceKey": "wp-liao-dynasty",
+              "sourceLocation": "infobox year_start: 916"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1125,
+            "source": {
+              "sourceKey": "wp-liao-dynasty",
+              "sourceLocation": "infobox year_end: 1125"
+            }
+          }
+        ],
+        "startEvent": "abaoji-assumes-the-title-of-emperor",
+        "endEvent": "fall-of-liao-dynasty"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "northeast-china",
+          "sources": [
+            {
+              "sourceKey": "wp-liao-dynasty",
+              "sourceLocation": "infobox capital: Shangjing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "western-xia",
+      "name": "Western Xia",
+      "color": "#8a6a3a",
+      "parent": "china-group",
+      "url": "https://en.wikipedia.org/wiki/Western_Xia",
+      "span": {
+        "start": 1038,
+        "end": 1227,
+        "startDates": [
+          {
+            "year": 1038,
+            "source": {
+              "sourceKey": "wp-western-xia",
+              "sourceLocation": "infobox year_start: 1038"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1227,
+            "source": {
+              "sourceKey": "wp-western-xia",
+              "sourceLocation": "infobox year_end: 1227 AD"
+            }
+          }
+        ],
+        "startEvent": "dynasty-established-by-emperor-jingzong",
+        "endEvent": "destruction-by-the-mongol-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "china",
+          "sources": [
+            {
+              "sourceKey": "wp-western-xia",
+              "sourceLocation": "infobox capital: Xingqing (modern Yinchuan)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jin-dynasty",
+      "name": "Jin dynasty (Jurchen)",
+      "color": "#3a7a6a",
+      "parent": "china-group",
+      "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(1115–1234)",
+      "span": {
+        "start": 1115,
+        "end": 1234,
+        "startDates": [
+          {
+            "year": 1115,
+            "source": {
+              "sourceKey": "wp-jin-dynasty-1115-1234",
+              "sourceLocation": "infobox year_start: 1115"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1234,
+            "source": {
+              "sourceKey": "wp-jin-dynasty-1115-1234",
+              "sourceLocation": "infobox year_end: 1234"
+            }
+          }
+        ],
+        "startEvent": "emergence-of-jin-dynasty",
+        "endEvent": "fall-of-caizhou-to-the-mongol-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "northeast-china",
+          "sources": [
+            {
+              "sourceKey": "wp-jin-dynasty-1115-1234",
+              "sourceLocation": "infobox capital: Huiningfu (1122–1153) / Zhongdu (1153–1214) / Kaifeng (1214–1233) / Ca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nanzhao",
+      "name": "Nanzhao",
+      "color": "#8a4a6a",
+      "parent": "china-group",
+      "url": "https://en.wikipedia.org/wiki/Nanzhao",
+      "span": {
+        "start": 738,
+        "end": 902,
+        "startDates": [
+          {
+            "year": 738,
+            "source": {
+              "sourceKey": "wp-nanzhao",
+              "sourceLocation": "infobox year_start: 738"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 902,
+            "source": {
+              "sourceKey": "wp-nanzhao",
+              "sourceLocation": "infobox year_end: 902"
+            }
+          }
+        ],
+        "startEvent": "nanzhao-established",
+        "endEvent": "nanzhao-overthrown"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "china",
+          "sources": [
+            {
+              "sourceKey": "wp-nanzhao",
+              "sourceLocation": "infobox capital: Taihe (before 779) / Yangjumie (after 779) / (both in present-day Dali"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dali-kingdom",
+      "name": "Dali Kingdom",
+      "color": "#6a3a5a",
+      "parent": "china-group",
+      "url": "https://en.wikipedia.org/wiki/Dali_Kingdom",
+      "span": {
+        "start": 937,
+        "end": 1253,
+        "startDates": [
+          {
+            "year": 937,
+            "source": {
+              "sourceKey": "wp-dali-kingdom",
+              "sourceLocation": "infobox life span: 937–1094, 1096–1253"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1253,
+            "source": {
+              "sourceKey": "wp-dali-kingdom",
+              "sourceLocation": "infobox life span: 937–1094, 1096–1253"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "china",
+          "sources": [
+            {
+              "sourceKey": "wp-dali-kingdom",
+              "sourceLocation": "infobox capital: Yangjumie (in present-day Dali Town, Yunnan)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tibet-group",
+      "name": "Tibet",
+      "color": "#a87a3a",
+      "parent": "east-asia"
+    },
+    {
+      "id": "yarlung",
+      "name": "Yarlung kings and the Tibetan Empire",
+      "color": "#8a3a4a",
+      "parent": "tibet-group",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+      "ids": {
+        "wikidata": "Q2431480"
+      },
+      "span": {
+        "start": -126,
+        "end": 842,
+        "startDates": [
+          {
+            "year": -126,
+            "source": {
+              "sourceKey": "wp-yarlung",
+              "sourceLocation": "lead ('127 BCE … according to traditional Tibetan historiography')"
+            }
+          },
+          {
+            "year": -126,
+            "source": {
+              "sourceKey": "wp-tibetan-empire",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": -413,
+            "source": {
+              "sourceKey": "wp-tibet-history",
+              "sourceLocation": "Nyatri Tsenpo"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 842,
+            "source": {
+              "sourceKey": "wp-yarlung",
+              "sourceLocation": "lead"
+            }
+          },
+          {
+            "year": 848,
+            "source": {
+              "sourceKey": "wp-tibetan-empire",
+              "sourceLocation": "infobox (842/848)"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "tibetan-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-tibetan-empire",
+              "sourceLocation": "category \"Tibetan Empire\" (in \"Former kingdoms in Tibet\")"
+            },
+            {
+              "sourceKey": "wp-tibetan-empire",
+              "sourceLocation": "category \"Former kingdoms in Tibet\""
+            },
+            {
+              "sourceKey": "wp-tibetan-empire",
+              "sourceLocation": "category \"7th-century establishments in Tibet\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tuyuhun",
+      "name": "Tuyuhun (Qinghai)",
+      "color": "#5a6a5a",
+      "parent": "tibet-group",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+      "ids": {
+        "wikidata": "Q1196201"
+      },
+      "span": {
+        "start": 284,
+        "end": 670,
+        "endDates": [
+          {
+            "year": 670,
+            "source": {
+              "sourceKey": "wp-tuyuhun",
+              "sourceLocation": "infobox"
+            }
+          },
+          {
+            "year": 663,
+            "source": {
+              "sourceKey": "wp-tibetan-empire",
+              "sourceLocation": "History > Mangsong Mangtsen"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "tibetan-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-tuyuhun",
+              "sourceLocation": "category \"Former kingdoms in Tibet\""
+            },
+            {
+              "sourceKey": "wp-tuyuhun",
+              "sourceLocation": "infobox capital"
+            },
+            {
+              "sourceKey": "wp-tuyuhun",
+              "sourceLocation": "infobox capital (Gonghe County)"
+            },
+            {
+              "sourceKey": "wp-gonghe-county",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tibet-under-yuan-rule",
+      "name": "Tibet under Yuan rule (Sakya)",
+      "color": "#c09a5a",
+      "parent": "tibet-group",
+      "url": "https://en.wikipedia.org/wiki/Tibet_under_Yuan_rule",
+      "span": {
+        "start": 1270,
+        "end": 1354,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1270,
+            "source": {
+              "sourceKey": "wp-tibet-under-yuan-rule",
+              "sourceLocation": "infobox year_start: c. 1270"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1354,
+            "source": {
+              "sourceKey": "wp-tibet-under-yuan-rule",
+              "sourceLocation": "infobox year_end: 1354"
+            }
+          }
+        ]
+      },
+      "memberOf": [
+        {
+          "row": "china",
+          "start": 1270,
+          "end": 1354,
+          "circa": true,
+          "startDates": [
+            {
+              "year": 1270,
+              "source": {
+                "sourceKey": "wp-tibet-under-yuan-rule",
+                "sourceLocation": "infobox year_start: c. 1270"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1354,
+              "source": {
+                "sourceKey": "wp-tibet-under-yuan-rule",
+                "sourceLocation": "infobox year_end: 1354"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-tibet-under-yuan-rule",
+              "sourceLocation": "lead: \"Tibet under Yuan rule refers to the Mongol-led Yuan dynasty's rule over Tibet from approximately 1270 to 1354.\""
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "tibetan-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-tibet-under-yuan-rule",
+              "sourceLocation": "infobox capital: Drigung Gompa (1240–1264) / Sakya Monastery (1268–1354)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phagmodrupa-dynasty",
+      "name": "Phagmodrupa dynasty",
+      "color": "#9a5a3a",
+      "parent": "tibet-group",
+      "url": "https://en.wikipedia.org/wiki/Phagmodrupa_dynasty",
+      "span": {
+        "start": 1354,
+        "end": 1618,
+        "startDates": [
+          {
+            "year": 1354,
+            "source": {
+              "sourceKey": "wp-phagmodrupa-dynasty",
+              "sourceLocation": "infobox year_start: 1354"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1618,
+            "source": {
+              "sourceKey": "wp-phagmodrupa-dynasty",
+              "sourceLocation": "infobox year_end: 1618"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "tibetan-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-phagmodrupa-dynasty",
+              "sourceLocation": "infobox capital: Nêdong"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rinpungpa",
+      "name": "Rinpungpa",
+      "color": "#7a4a3a",
+      "parent": "tibet-group",
+      "url": "https://en.wikipedia.org/wiki/Rinpungpa",
+      "span": {
+        "start": 1435,
+        "end": 1565,
+        "startDates": [
+          {
+            "year": 1435,
+            "source": {
+              "sourceKey": "wp-rinpungpa",
+              "sourceLocation": "infobox year_start: 1435"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1565,
+            "source": {
+              "sourceKey": "wp-rinpungpa",
+              "sourceLocation": "infobox year_end: 1565"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "tibetan-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-rinpungpa",
+              "sourceLocation": "infobox capital: Shigatse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea-group",
+      "name": "Korea",
+      "color": "#3a6aa8",
+      "parent": "east-asia"
+    },
+    {
+      "id": "goguryeo",
+      "name": "Goguryeo",
+      "color": "#7a4a5a",
+      "parent": "korea-group",
+      "url": "https://en.wikipedia.org/wiki/Goguryeo",
+      "ids": {
+        "wikidata": "Q28370"
+      },
+      "span": {
+        "start": -36,
+        "end": 668,
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "korea",
+          "sources": [
+            {
+              "sourceKey": "wp-goguryeo",
+              "sourceLocation": "category \"Goguryeo\" (in \"History of Korea\")"
+            },
+            {
+              "sourceKey": "wp-goguryeo",
+              "sourceLocation": "category \"Goguryeo\" (in \"Three Kingdoms of Korea\")"
+            },
+            {
+              "sourceKey": "wp-goguryeo",
+              "sourceLocation": "category \"Goguryeo\" (in \"Dynasties of Korea\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baekje",
+      "name": "Baekje (Paekche)",
+      "color": "#5a7a5a",
+      "parent": "korea-group",
+      "url": "https://en.wikipedia.org/wiki/Paekche",
+      "ids": {
+        "wikidata": "Q28428"
+      },
+      "span": {
+        "start": -17,
+        "end": 660
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "korea",
+          "sources": [
+            {
+              "sourceKey": "wp-row-baekje",
+              "sourceLocation": "category \"Paekche\" (in \"History of Korea\")"
+            },
+            {
+              "sourceKey": "wp-row-baekje",
+              "sourceLocation": "category \"Paekche\" (in \"Three Kingdoms of Korea\")"
+            },
+            {
+              "sourceKey": "wp-row-baekje",
+              "sourceLocation": "category \"Paekche\" (in \"History of South Korea\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "silla",
+      "name": "Silla",
+      "color": "#9a7a3a",
+      "parent": "korea-group",
+      "url": "https://en.wikipedia.org/wiki/Silla",
+      "ids": {
+        "wikidata": "Q28456"
+      },
+      "span": {
+        "start": -56,
+        "end": 935
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "korea",
+          "sources": [
+            {
+              "sourceKey": "wp-silla",
+              "sourceLocation": "category \"Silla\" (in \"History of Korea\")"
+            },
+            {
+              "sourceKey": "wp-silla",
+              "sourceLocation": "category \"Silla\" (in \"Three Kingdoms of Korea\")"
+            },
+            {
+              "sourceKey": "wp-silla",
+              "sourceLocation": "category \"Silla\" (in \"Dynasties of Korea\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "balhae",
+      "name": "Balhae",
+      "color": "#5a8aa8",
+      "parent": "korea-group",
+      "url": "https://en.wikipedia.org/wiki/Parhae",
+      "span": {
+        "start": 698,
+        "end": 926,
+        "startDates": [
+          {
+            "year": 698,
+            "source": {
+              "sourceKey": "wp-parhae",
+              "sourceLocation": "infobox year_start: 698"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 926,
+            "source": {
+              "sourceKey": "wp-parhae",
+              "sourceLocation": "infobox year_end: 926"
+            }
+          }
+        ],
+        "startEvent": "establishment-in-tianmenling",
+        "endEvent": "fall-of-sang-gyeong"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "northeast-china",
+          "sources": [
+            {
+              "sourceKey": "wp-parhae",
+              "sourceLocation": "infobox capital: Dongmo Mountain / (698–742) / Central capital / (742–756) / Upper capi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "name": "Korea",
+      "color": "#2a4a8a",
+      "parent": "korea-group",
+      "url": "https://en.wikipedia.org/wiki/Joseon",
+      "phases": [
+        {
+          "name": "Goryeo",
+          "start": 918,
+          "end": 1392,
+          "startDates": [
+            {
+              "year": 918,
+              "source": {
+                "sourceKey": "wp-goryeo",
+                "sourceLocation": "infobox year_start: 918"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1392,
+              "source": {
+                "sourceKey": "wp-goryeo",
+                "sourceLocation": "infobox year_end: 1392"
+              }
+            }
+          ],
+          "startEvent": "coronation-of-taejo",
+          "endEvent": "abdication-of-gongyang"
+        },
+        {
+          "name": "Joseon",
+          "start": 1392,
+          "end": 1897,
+          "startDates": [
+            {
+              "year": 1392,
+              "source": {
+                "sourceKey": "wp-joseon",
+                "sourceLocation": "infobox year_start: 1392"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1897,
+              "source": {
+                "sourceKey": "wp-joseon",
+                "sourceLocation": "infobox year_end: 1897"
+              }
+            }
+          ],
+          "startEvent": "enthronement-of-taejo"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "korea",
+          "sources": [
+            {
+              "sourceKey": "wp-joseon",
+              "sourceLocation": "infobox capital: Main: / Hanseong / (now Seoul) (1394–1399/1405–1897) / Temporary: / Ka"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japan-group",
+      "name": "Japan",
+      "color": "#c03a3a",
+      "parent": "east-asia"
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "color": "#c0302a",
+      "parent": "japan-group",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_shogunate",
+      "phases": [
+        {
+          "name": "Asuka period",
+          "start": 538,
+          "end": 710,
+          "startDates": [
+            {
+              "year": 538,
+              "source": {
+                "sourceKey": "wp-asuka-period",
+                "sourceLocation": "lead: \"The was a period in the history of Japan lasting from 538 to 710, although its beginning could be said to overlap with the preceding Kofun period.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 710,
+              "source": {
+                "sourceKey": "wp-asuka-period",
+                "sourceLocation": "lead: \"The was a period in the history of Japan lasting from 538 to 710, although its beginning could be said to overlap with the preceding Kofun period.\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Nara period",
+          "start": 710,
+          "end": 794,
+          "startDates": [
+            {
+              "year": 710,
+              "source": {
+                "sourceKey": "wp-nara-period",
+                "sourceLocation": "lead: \"The of the history of Japan covers the years from 710 to 794.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 794,
+              "source": {
+                "sourceKey": "wp-nara-period",
+                "sourceLocation": "lead: \"The of the history of Japan covers the years from 710 to 794.\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Heian period",
+          "start": 794,
+          "end": 1185,
+          "startDates": [
+            {
+              "year": 794,
+              "source": {
+                "sourceKey": "wp-heian-period",
+                "sourceLocation": "lead: \"The is the last division of classical Japanese history, running from 794 to 1185.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1185,
+              "source": {
+                "sourceKey": "wp-heian-period",
+                "sourceLocation": "lead: \"The is the last division of classical Japanese history, running from 794 to 1185.\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kamakura shogunate",
+          "start": 1185,
+          "end": 1333,
+          "startDates": [
+            {
+              "year": 1185,
+              "source": {
+                "sourceKey": "wp-kamakura-period",
+                "sourceLocation": "lead: \"Later, the prevailing theory was that the year was 1185, when Yoritomo established the , which controlled military and police power in various regions, and the \""
+              },
+              "note": "The prevailing view; the shogunate was formally established in 1192."
+            },
+            {
+              "year": 1192,
+              "source": {
+                "sourceKey": "wp-kamakura-shogunate",
+                "sourceLocation": "infobox year_start: 1192"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1333,
+              "source": {
+                "sourceKey": "wp-kamakura-shogunate",
+                "sourceLocation": "infobox year_end: 1333"
+              }
+            }
+          ],
+          "endEvent": "siege-of-kamakura"
+        },
+        {
+          "name": "Kenmu Restoration",
+          "start": 1333,
+          "end": 1336,
+          "startDates": [
+            {
+              "year": 1333,
+              "source": {
+                "sourceKey": "wp-kenmu-restoration",
+                "sourceLocation": "infobox year_start: 1333"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1336,
+              "source": {
+                "sourceKey": "wp-kenmu-restoration",
+                "sourceLocation": "infobox year_end: 1336"
+              }
+            }
+          ],
+          "startEvent": "genk-war-begins",
+          "endEvent": "ashikaga-takauji-captures-kyoto"
+        },
+        {
+          "name": "Ashikaga (Muromachi) shogunate",
+          "start": 1336,
+          "end": 1573,
+          "startDates": [
+            {
+              "year": 1336,
+              "source": {
+                "sourceKey": "wp-ashikaga-shogunate",
+                "sourceLocation": "infobox year_start: 1336"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1573,
+              "source": {
+                "sourceKey": "wp-ashikaga-shogunate",
+                "sourceLocation": "infobox year_end: 1573"
+              }
+            }
+          ],
+          "startEvent": "ashikaga-takauji-captures-kyoto"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "japan",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-shogunate",
+              "sourceLocation": "infobox capital: Heian-kyō"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ryukyu-kingdom",
+      "name": "Ryukyu Kingdom",
+      "color": "#3a8aa8",
+      "parent": "japan-group",
+      "url": "https://en.wikipedia.org/wiki/Ryukyu_Kingdom",
+      "span": {
+        "start": 1429,
+        "end": 1879,
+        "startDates": [
+          {
+            "year": 1429,
+            "source": {
+              "sourceKey": "wp-ryukyu-kingdom",
+              "sourceLocation": "infobox year_start: 1429"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1879,
+            "source": {
+              "sourceKey": "wp-ryukyu-kingdom",
+              "sourceLocation": "infobox year_end: 1879"
+            }
+          }
+        ],
+        "startEvent": "unification-of-okinawa-island"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "japan",
+          "sources": [
+            {
+              "sourceKey": "wp-ryukyu-kingdom",
+              "sourceLocation": "infobox capital: Shuri"
             }
           ]
         }
@@ -11467,14 +12416,6 @@
         "wikipedia"
       ]
     },
-    "wp-lombards": {
-      "name": "Wikipedia: Kingdom of the Lombards",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-cividale-del-friuli": {
       "name": "Wikipedia: Cividale del Friuli",
       "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
@@ -11482,6 +12423,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-lombards": {
+      "name": "Wikipedia: Kingdom of the Lombards",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-kingdom-of-the-lombards": {
       "name": "Kingdom of the Lombards (Wikipedia)",
@@ -11739,14 +12688,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anglo-saxons": {
-      "name": "Wikipedia: History of Anglo-Saxon England",
-      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-roman-britain": {
       "name": "Wikipedia: Roman Britain",
       "url": "https://en.wikipedia.org/wiki/Roman_Britain",
@@ -11754,6 +12695,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anglo-saxons": {
+      "name": "Wikipedia: History of Anglo-Saxon England",
+      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-history-of-anglo-saxon-england": {
       "name": "History of Anglo-Saxon England (Wikipedia)",
@@ -11899,17 +12848,17 @@
         "wikipedia"
       ]
     },
-    "wp-principality-of-serbia": {
-      "name": "Principality of Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-revolutionary-serbia": {
-      "name": "Revolutionary Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+    "wp-principality-of-serbia": {
+      "name": "Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -12275,14 +13224,6 @@
         "wikipedia"
       ]
     },
-    "wp-garamantes": {
-      "name": "Wikipedia: Garamantes",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-17"
-    },
     "wp-garamantes-classical": {
       "name": "Wikipedia: Garamantes",
       "url": "https://en.wikipedia.org/wiki/Garamantes",
@@ -12290,6 +13231,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-garamantes": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
     },
     "wp-rustamid-dynasty": {
       "name": "Rustamid dynasty (Wikipedia)",
@@ -12419,6 +13368,14 @@
         "wikipedia"
       ]
     },
+    "wp-navekat": {
+      "name": "Wikipedia: Navekat",
+      "url": "https://en.wikipedia.org/wiki/Navekat",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
+    },
     "wp-western-turkic": {
       "name": "Wikipedia: Western Turkic Khaganate",
       "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
@@ -12434,14 +13391,6 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
-    },
-    "wp-navekat": {
-      "name": "Wikipedia: Navekat",
-      "url": "https://en.wikipedia.org/wiki/Navekat",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
     },
     "wp-t-rgesh": {
       "name": "Türgesh (Wikipedia)",
@@ -12590,6 +13539,14 @@
     "wp-nogai-horde": {
       "name": "Nogai Horde (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Nogai_Horde",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kazakhstan": {
+      "name": "Kazakhstan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kazakhstan",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -12867,14 +13824,6 @@
         "wikipedia"
       ]
     },
-    "wp-kanchipuram": {
-      "name": "Wikipedia: Kanchipuram",
-      "url": "https://en.wikipedia.org/wiki/Kanchipuram",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-pallava": {
       "name": "Wikipedia: Pallava dynasty",
       "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
@@ -12882,6 +13831,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-kanchipuram": {
+      "name": "Wikipedia: Kanchipuram",
+      "url": "https://en.wikipedia.org/wiki/Kanchipuram",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-chola-empire": {
       "name": "Chola Empire (Wikipedia)",
@@ -12915,14 +13872,6 @@
         "wikipedia"
       ]
     },
-    "wp-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-row-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
@@ -12930,6 +13879,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -13022,6 +13979,222 @@
     "wp-ahom-kingdom": {
       "name": "Ahom kingdom (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ahom_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-liao-dynasty": {
+      "name": "Liao dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Liao_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-western-xia": {
+      "name": "Western Xia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Western_Xia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jin-dynasty-1115-1234": {
+      "name": "Jin dynasty (1115–1234) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(1115–1234)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nanzhao": {
+      "name": "Nanzhao (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nanzhao",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dali-kingdom": {
+      "name": "Dali Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dali_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-yarlung": {
+      "name": "Wikipedia: Yarlung dynasty",
+      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tibetan-empire": {
+      "name": "Wikipedia: Tibetan Empire",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tuyuhun": {
+      "name": "Wikipedia: Tuyuhun",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-gonghe-county": {
+      "name": "Wikipedia: Gonghe County",
+      "url": "https://en.wikipedia.org/wiki/Gonghe_County",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
+    },
+    "wp-tibet-under-yuan-rule": {
+      "name": "Tibet under Yuan rule (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tibet_under_Yuan_rule",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-phagmodrupa-dynasty": {
+      "name": "Phagmodrupa dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Phagmodrupa_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-rinpungpa": {
+      "name": "Rinpungpa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rinpungpa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-goguryeo": {
+      "name": "Wikipedia: Goguryeo",
+      "url": "https://en.wikipedia.org/wiki/Goguryeo",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-row-baekje": {
+      "name": "Wikipedia: Paekche",
+      "url": "https://en.wikipedia.org/wiki/Paekche",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
+    },
+    "wp-silla": {
+      "name": "Wikipedia: Silla",
+      "url": "https://en.wikipedia.org/wiki/Silla",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-parhae": {
+      "name": "Parhae (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Parhae",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-goryeo": {
+      "name": "Goryeo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Goryeo",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-joseon": {
+      "name": "Joseon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Joseon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-asuka-period": {
+      "name": "Asuka period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Asuka_period",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nara-period": {
+      "name": "Nara period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nara_period",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-heian-period": {
+      "name": "Heian period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Heian_period",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kamakura-period": {
+      "name": "Kamakura period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kamakura_period",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kamakura-shogunate": {
+      "name": "Kamakura shogunate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kamakura_shogunate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kenmu-restoration": {
+      "name": "Kenmu Restoration (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kenmu_Restoration",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ashikaga-shogunate": {
+      "name": "Ashikaga shogunate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_shogunate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ryukyu-kingdom": {
+      "name": "Ryukyu Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ryukyu_Kingdom",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -13699,12 +14872,17 @@
       "descr": "",
       "start": 1005,
       "tracks": [
-        "china"
+        "china",
+        "liao-dynasty"
       ],
       "sources": [
         {
           "sourceKey": "wp-song-dynasty",
           "sourceLocation": "infobox event1: Signing of the Chanyuan Treaty with Liao, 1005"
+        },
+        {
+          "sourceKey": "wp-liao-dynasty",
+          "sourceLocation": "infobox event2: Signing of the Chanyuan Treaty with Song, 1005"
         }
       ]
     },
@@ -13714,7 +14892,8 @@
       "descr": "The Song loses the north to the Jurchen-led Jin dynasty; the Southern Song period begins.",
       "start": 1127,
       "tracks": [
-        "china"
+        "china",
+        "jin-dynasty"
       ],
       "sources": [
         {
@@ -13725,7 +14904,8 @@
           "sourceKey": "wp-song-dynasty",
           "sourceLocation": "lead: \"The Southern Song (; 1127–1279) comprised the period following the loss of control over the northern half of Song territory to the Jurchen-led Jin dynasty in th\""
         }
-      ]
+      ],
+      "importance": 1
     },
     {
       "uuid": "fall-of-linan",
@@ -13794,7 +14974,7 @@
       "tracks": [
         "china",
         "mongol-empire",
-        "northern-yuan"
+        "mongolia"
       ],
       "sources": [
         {
@@ -13804,10 +14984,6 @@
         {
           "sourceKey": "wp-mongol-empire",
           "sourceLocation": "lead: \"Next, the Yuan dynasty lost control of the Tibetan Plateau and China proper in 1354 and 1368, respectively, and collapsed after its capital Dadu was taken over \""
-        },
-        {
-          "sourceKey": "wp-northern-yuan",
-          "sourceLocation": "infobox event_start: Fall of Dadu to Ming forces, September 1368"
         }
       ],
       "importance": 1
@@ -14962,7 +16138,8 @@
       "start": 1241,
       "end": 1242,
       "tracks": [
-        "hungary"
+        "hungary",
+        "mongol-empire"
       ],
       "sources": [
         {
@@ -16724,7 +17901,8 @@
       "start": 1237,
       "end": 1241,
       "tracks": [
-        "kievan-rus"
+        "kievan-rus",
+        "mongol-empire"
       ],
       "sources": [
         {
@@ -18138,7 +19316,7 @@
       "descr": "",
       "start": 1388,
       "tracks": [
-        "northern-yuan"
+        "mongolia"
       ],
       "sources": [
         {
@@ -18154,7 +19332,7 @@
       "start": 1483,
       "end": 1510,
       "tracks": [
-        "northern-yuan"
+        "mongolia"
       ],
       "sources": [
         {
@@ -18200,7 +19378,7 @@
       "start": 1453,
       "tracks": [
         "four-oirat",
-        "northern-yuan"
+        "mongolia"
       ],
       "sources": [
         {
@@ -18246,7 +19424,8 @@
       "start": 1219,
       "end": 1221,
       "tracks": [
-        "khwarazmian-empire"
+        "khwarazmian-empire",
+        "mongol-empire"
       ],
       "sources": [
         {
@@ -18276,12 +19455,17 @@
       "descr": "",
       "start": 1124,
       "tracks": [
-        "qara-khitai"
+        "qara-khitai",
+        "liao-dynasty"
       ],
       "sources": [
         {
           "sourceKey": "wp-qara-khitai",
           "sourceLocation": "infobox event_start: Yelü Dashi proclaims himself king, 1124"
+        },
+        {
+          "sourceKey": "wp-liao-dynasty",
+          "sourceLocation": "infobox event4: Western Liao established, 1124"
         }
       ]
     },
@@ -18306,12 +19490,22 @@
       "descr": "",
       "start": 1125,
       "tracks": [
-        "qara-khitai"
+        "qara-khitai",
+        "liao-dynasty",
+        "jin-dynasty"
       ],
       "sources": [
         {
           "sourceKey": "wp-qara-khitai",
           "sourceLocation": "infobox event1: Fall of Liao dynasty, 1125"
+        },
+        {
+          "sourceKey": "wp-liao-dynasty",
+          "sourceLocation": "infobox event_end: Emperor Tianzuo captured by Jin, 1125"
+        },
+        {
+          "sourceKey": "wp-jin-dynasty-1115-1234",
+          "sourceLocation": "infobox event1: Destruction of the Liao dynasty, 26 March 1125"
         }
       ]
     },
@@ -18533,7 +19727,8 @@
       "descr": "",
       "start": 1240,
       "tracks": [
-        "volga-bulgaria"
+        "volga-bulgaria",
+        "mongol-empire"
       ],
       "sources": [
         {
@@ -19335,6 +20530,552 @@
         {
           "sourceKey": "wp-ahom-kingdom",
           "sourceLocation": "infobox event1: Re-organization under King Suhungmung, 1497"
+        }
+      ]
+    },
+    {
+      "uuid": "abaoji-assumes-the-title-of-emperor",
+      "title": "Abaoji assumes the title of Emperor",
+      "descr": "",
+      "start": 916,
+      "tracks": [
+        "liao-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-liao-dynasty",
+          "sourceLocation": "infobox event_start: Abaoji assumes the title of Emperor, 916"
+        }
+      ]
+    },
+    {
+      "uuid": "great-liao-adopted-as-a-dynastic-name",
+      "title": "\"Great Liao\" adopted as a dynastic name",
+      "descr": "",
+      "start": 947,
+      "tracks": [
+        "liao-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-liao-dynasty",
+          "sourceLocation": "infobox event1: \"Great Liao\" adopted as a dynastic name, 947"
+        }
+      ]
+    },
+    {
+      "uuid": "emergence-of-jin-dynasty",
+      "title": "Emergence of Jin dynasty",
+      "descr": "",
+      "start": 1114,
+      "end": 1115,
+      "tracks": [
+        "liao-dynasty",
+        "jin-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-liao-dynasty",
+          "sourceLocation": "infobox event3: Emergence of Jin dynasty, 1114–1115"
+        },
+        {
+          "sourceKey": "wp-jin-dynasty-1115-1234",
+          "sourceLocation": "infobox event_start: Founded by Aguda, 28 January 1115"
+        }
+      ]
+    },
+    {
+      "uuid": "dynasty-established-by-emperor-jingzong",
+      "title": "Dynasty established by Emperor Jingzong",
+      "descr": "",
+      "start": 1038,
+      "tracks": [
+        "western-xia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-western-xia",
+          "sourceLocation": "infobox event_start: Dynasty established by Emperor Jingzong, 1038"
+        }
+      ]
+    },
+    {
+      "uuid": "destruction-by-the-mongol-empire",
+      "title": "Mongol destruction of Western Xia",
+      "descr": "",
+      "start": 1227,
+      "tracks": [
+        "western-xia",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-western-xia",
+          "sourceLocation": "infobox event_end: Destruction by the Mongol Empire, 1227 AD"
+        }
+      ]
+    },
+    {
+      "uuid": "subjugation-by-the-mongol-empire",
+      "title": "Western Xia submits to the Mongol Empire",
+      "descr": "",
+      "start": 1210,
+      "tracks": [
+        "western-xia",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-western-xia",
+          "sourceLocation": "infobox event1: Subjugation by the Mongol Empire, 1210"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-caizhou-to-the-mongol-empire",
+      "title": "Fall of Caizhou to the Mongol Empire",
+      "descr": "",
+      "start": 1234,
+      "tracks": [
+        "jin-dynasty",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jin-dynasty-1115-1234",
+          "sourceLocation": "infobox event_end: Fall of Caizhou to the Mongol Empire, 9 February 1234"
+        }
+      ]
+    },
+    {
+      "uuid": "capture-of-bianliang-from-the-northern-song",
+      "title": "Capture of Bianliang from the Northern Song",
+      "descr": "",
+      "start": 1127,
+      "tracks": [
+        "jin-dynasty"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jin-dynasty-1115-1234",
+          "sourceLocation": "infobox event2: Capture of Bianliang from the Northern Song, 9 January 1127"
+        }
+      ]
+    },
+    {
+      "uuid": "mongol-invasion-of-the-jin",
+      "title": "Mongol invasion of the Jin",
+      "descr": "",
+      "start": 1211,
+      "tracks": [
+        "jin-dynasty",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jin-dynasty-1115-1234",
+          "sourceLocation": "infobox event3: Mongol invasion, 1211"
+        }
+      ]
+    },
+    {
+      "uuid": "nanzhao-established",
+      "title": "Nanzhao established",
+      "descr": "",
+      "start": 738,
+      "tracks": [
+        "nanzhao"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nanzhao",
+          "sourceLocation": "infobox event_start: Established, 738"
+        }
+      ]
+    },
+    {
+      "uuid": "nanzhao-overthrown",
+      "title": "Nanzhao overthrown",
+      "descr": "",
+      "start": 902,
+      "tracks": [
+        "nanzhao"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nanzhao",
+          "sourceLocation": "infobox event_end: Overthrown, 902"
+        }
+      ]
+    },
+    {
+      "uuid": "coup-detat-by-gao-shengtai",
+      "title": "Coup d'etat by Gao Shengtai",
+      "descr": "",
+      "start": 1094,
+      "tracks": [
+        "dali-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-dali-kingdom",
+          "sourceLocation": "infobox event1: Coup d'etat by Gao Shengtai, 1094"
+        }
+      ]
+    },
+    {
+      "uuid": "dali-kingdom-re-established",
+      "title": "Dali Kingdom re-established",
+      "descr": "",
+      "start": 1096,
+      "tracks": [
+        "dali-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-dali-kingdom",
+          "sourceLocation": "infobox event2: Reestablished, 1096"
+        }
+      ]
+    },
+    {
+      "uuid": "establishment-in-tianmenling",
+      "title": "Establishment in Tianmenling",
+      "descr": "",
+      "start": 698,
+      "tracks": [
+        "balhae"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-parhae",
+          "sourceLocation": "infobox event_start: Establishment in Tianmenling, 698"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-sang-gyeong",
+      "title": "Fall of Sang-gyeong",
+      "descr": "",
+      "start": 926,
+      "tracks": [
+        "balhae"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-parhae",
+          "sourceLocation": "infobox event_end: Fall of Sang-gyeong, 14 January 926"
+        }
+      ]
+    },
+    {
+      "uuid": "parhae-as-a-kingdom-name",
+      "title": "\"Parhae\" as a kingdom name",
+      "descr": "",
+      "start": 713,
+      "tracks": [
+        "balhae"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-parhae",
+          "sourceLocation": "infobox event1: \"Parhae\" as a kingdom name, 713"
+        }
+      ]
+    },
+    {
+      "uuid": "coronation-of-taejo",
+      "title": "Coronation of Taejo",
+      "descr": "",
+      "start": 918,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event_start: Coronation of Taejo, 25 July 918"
+        }
+      ]
+    },
+    {
+      "uuid": "abdication-of-gongyang",
+      "title": "Abdication of Gongyang",
+      "descr": "",
+      "start": 1392,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event_end: Abdication of Gongyang, 12 July 1392"
+        }
+      ]
+    },
+    {
+      "uuid": "unification-of-the-later-three-kingdoms",
+      "title": "Unification of the Later Three Kingdoms",
+      "descr": "",
+      "start": 936,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event1: Unification of the Later Three Kingdoms, 936"
+        }
+      ]
+    },
+    {
+      "uuid": "goryeo-khitan-war",
+      "title": "Goryeo–Khitan War",
+      "descr": "",
+      "start": 993,
+      "end": 1019,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event2: Goryeo–Khitan War, 993–1019"
+        }
+      ]
+    },
+    {
+      "uuid": "goryeo-jurchen-war",
+      "title": "Goryeo–Jurchen War",
+      "descr": "",
+      "start": 1104,
+      "end": 1109,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event3: Goryeo–Jurchen War, 1104–1109"
+        }
+      ]
+    },
+    {
+      "uuid": "goryeo-military-dictatorship",
+      "title": "Goryeo military dictatorship",
+      "descr": "",
+      "start": 1170,
+      "end": 1270,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event4: Military dictatorship, 1170–1270"
+        }
+      ]
+    },
+    {
+      "uuid": "mongol-invasions-of-korea",
+      "title": "Mongol invasions of Korea",
+      "descr": "",
+      "start": 1231,
+      "end": 1259,
+      "tracks": [
+        "korea",
+        "mongol-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event5: Mongol invasions, 1231–1259"
+        }
+      ]
+    },
+    {
+      "uuid": "son-in-law-state-of-the-yuan-dynasty",
+      "title": "\"Son-in-law state\" of the Yuan dynasty",
+      "descr": "",
+      "start": 1270,
+      "end": 1356,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goryeo",
+          "sourceLocation": "infobox event6: \"Son-in-law state\" of the Yuan dynasty, 1270–1356"
+        }
+      ]
+    },
+    {
+      "uuid": "enthronement-of-taejo",
+      "title": "Enthronement of Taejo",
+      "descr": "",
+      "start": 1392,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-joseon",
+          "sourceLocation": "infobox event_start: Enthronement of Taejo, August 5, 1392"
+        }
+      ]
+    },
+    {
+      "uuid": "country-renamed-from-goryeo-to-joseon",
+      "title": "Country renamed from Goryeo to Joseon",
+      "descr": "",
+      "start": 1393,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-joseon",
+          "sourceLocation": "infobox event1: Country renamed from Goryeo to Joseon, March 28, 1393"
+        }
+      ]
+    },
+    {
+      "uuid": "promulgation-of-the-korean-alphabet",
+      "title": "Promulgation of the Korean alphabet",
+      "descr": "",
+      "start": 1446,
+      "tracks": [
+        "korea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-joseon",
+          "sourceLocation": "infobox event2: Promulgation of the Korean alphabet, October 9, 1446"
+        }
+      ]
+    },
+    {
+      "uuid": "siege-of-kamakura",
+      "title": "Siege of Kamakura",
+      "descr": "",
+      "start": 1333,
+      "tracks": [
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kamakura-shogunate",
+          "sourceLocation": "infobox event_end: Siege of Kamakura, May 18, 1333"
+        },
+        {
+          "sourceKey": "wp-kenmu-restoration",
+          "sourceLocation": "infobox event1: Siege of Kamakura, May 18, 1333"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-dan-no-ura",
+      "title": "Battle of Dan-no-ura",
+      "descr": "",
+      "start": 1185,
+      "tracks": [
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kamakura-shogunate",
+          "sourceLocation": "infobox event1: Battle of Dan-no-ura, April 25, 1185"
+        }
+      ]
+    },
+    {
+      "uuid": "h-j-regency-established",
+      "title": "Hōjō regency established",
+      "descr": "",
+      "start": 1203,
+      "tracks": [
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kamakura-shogunate",
+          "sourceLocation": "infobox event2: Hōjō regency established, 1203"
+        }
+      ]
+    },
+    {
+      "uuid": "genk-war-begins",
+      "title": "Genkō War begins",
+      "descr": "",
+      "start": 1333,
+      "tracks": [
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kenmu-restoration",
+          "sourceLocation": "infobox event_start: Genkō War begins, 1333"
+        }
+      ]
+    },
+    {
+      "uuid": "ashikaga-takauji-captures-kyoto",
+      "title": "Ashikaga Takauji captures Kyoto",
+      "descr": "",
+      "start": 1336,
+      "tracks": [
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kenmu-restoration",
+          "sourceLocation": "infobox event_end: Ashikaga Takauji captures Kyoto, February 23 1336"
+        }
+      ]
+    },
+    {
+      "uuid": "surrender-of-emperor-go-kameyama",
+      "title": "Surrender of Emperor Go-Kameyama",
+      "descr": "",
+      "start": 1392,
+      "tracks": [
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-shogunate",
+          "sourceLocation": "infobox event1: Surrender of Emperor Go-Kameyama, 15 October 1392"
+        }
+      ]
+    },
+    {
+      "uuid": "nin-war",
+      "title": "Ōnin War",
+      "descr": "",
+      "start": 1467,
+      "end": 1477,
+      "tracks": [
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-shogunate",
+          "sourceLocation": "infobox event2: Ōnin War, 1467–1477"
+        }
+      ]
+    },
+    {
+      "uuid": "unification-of-okinawa-island",
+      "title": "Unification of Okinawa Island",
+      "descr": "",
+      "start": 1429,
+      "tracks": [
+        "ryukyu-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ryukyu-kingdom",
+          "sourceLocation": "infobox event_start: Unification of Okinawa Island, 1429"
         }
       ]
     }
