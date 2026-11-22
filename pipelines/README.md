@@ -7,7 +7,7 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
 | Folder | Builds | Entry point |
 |---|---|---|
 | `modern-states/` | `data-src/modern-states.json`, plus `data-src/provenance/modern-states.json` and `modern-states-categories.json` | `gen_modern.py` |
-| `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) | `gen_medieval.py` |
+| `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) and `medieval-categories.json` | `gen_medieval.py` |
 | `common/` | shared code: the dump reader, the infobox extractor, and the claim and citation helpers | (none) |
 
 ## Inputs

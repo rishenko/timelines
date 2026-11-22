@@ -538,6 +538,9 @@ def build(repo):
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
         data['tags']['cliopatria'] = {'name': 'Cliopatria'}
+    # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
+    import event_categories
+    REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "medieval-categories.json"))}')
     data = {k: data[k] for k in ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']}
     out = os.path.join(repo, 'data-src', 'medieval.json')
     json.dump(data, open(out, 'w'), indent=2, ensure_ascii=False)
