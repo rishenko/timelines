@@ -28,7 +28,7 @@ Both settings live in `common/settings.py`. Set them in the environment, or pass
 |---|---|---|---|
 | `TIMELINES_DATA` | `--data DIR` | `~/data` | folder whose `wikipedia/` holds the dump and index |
 | `TIMELINES_WP_DUMP` | `--dump NAME` | `enwiki-20261101` | which dump to read |
-| `TIMELINES_CONNECTIONS_CLAIMS` | (none) | `timelines-analysis/2026-11-22-connections/connections-claims.json` in the data folder | the claims file `modern-states/blocs.py` reads |
+| `TIMELINES_CONNECTIONS_CLAIMS` | (none) | `modern-states/connections/connections-claims.json` | the claims file `modern-states/blocs.py` reads |
 
 ## Running
 
@@ -48,6 +48,15 @@ Then run the generator and compile its output:
 - After a code change, `git diff --exit-code data-src/` proves the change didn't move any data.
 
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.
+
+## Connections claims (the Cold War blocs)
+
+`modern-states/blocs.py` builds the bloc rows from `modern-states/connections/connections-claims.json`, which is committed. To rebuild the claims (a new dump, or new hand claims in `claims_data.py`):
+
+    pipelines/.venv/bin/python -I pipelines/modern-states/connections/fetch.py          # caches the pages in pipelines/out/connections-cache/
+    pipelines/.venv/bin/python -I pipelines/modern-states/connections/build_claims.py   # rewrites the claims file; exits 1 on any problem
+
+`build_claims.py` checks every quote word for word against the cached page and maps each member to a Modern States row, using Modern States at a fixed commit (`MS_REV`) so the claims don't depend on the rows they produce. Its report goes to `pipelines/out/connections-report.txt`. Then rerun `gen_modern.py`.
 
 ## Provenance manifests
 

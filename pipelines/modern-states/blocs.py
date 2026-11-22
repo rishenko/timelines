@@ -19,12 +19,10 @@ import json
 import os
 from collections import OrderedDict
 
-import settings  # noqa: E402
 
-# Education's claims file, outside the repo until its data PR decides where it lives: TIMELINES_CONNECTIONS_CLAIMS,
-# else its research folder under the data folder (settings.py)
+# The claims file next to this module (connections/build_claims.py writes it); TIMELINES_CONNECTIONS_CLAIMS overrides it
 CLAIMS = os.environ.get('TIMELINES_CONNECTIONS_CLAIMS',
-                        os.path.join(settings.DATA, 'timelines-analysis', '2026-11-22-connections', 'connections-claims.json'))
+                        os.path.join(os.path.dirname(os.path.abspath(__file__)), 'connections', 'connections-claims.json'))
 BLOCS = ('nato', 'warsaw-pact', 'comecon', 'seato', 'cento', 'non-aligned-movement')
 GROUPS = [{'id': 'connections', 'name': 'Connections', 'color': '#6a6a7a'}]
 
