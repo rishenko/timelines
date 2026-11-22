@@ -81,7 +81,7 @@ TEXT_RULES = [
     (R(r'\b(cedes?|ceded|cession|sold|purchase|transferred to|passes to|given to|returned to|handed (over )?to|restored to|acquir\w*)\b'), 'cession'),
     (R(r'\babandon\w*'), 'territory'),
     (R(r'\b(colony|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
-    (R(r'\b(renamed?|renames|drops the name|(becomes )?an? (\w+ ){0,2}(republic|associated state|dominion|confederation|constitutional monarchy|one-party state|royal province)|republic restored|democracy restored|restores democracy|transition to democracy|multi-?party|(first|second|third|fourth|fifth) republic|dominion of|royal province|one-party state|constitution|constitutional|self-govern\w*|responsible government)\b'), 'reform'),
+    (R(r'\b(renamed?|renames|drops the name|(state|kingdom|dynastic|dynasty|country)(\'s)? name|changes? the (state )?name|(becomes )?an? (\w+ ){0,2}(republic|associated state|dominion|confederation|constitutional monarchy|one-party state|royal province)|republic restored|democracy restored|restores democracy|transition to democracy|multi-?party|(first|second|third|fourth|fifth) republic|dominion of|royal province|one-party state|constitution|constitutional|self-govern\w*|responsible government)\b'), 'reform'),
     (R(r'\b(found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
     (R(r'\b(convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
     (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet)\b'), 'law'),
@@ -237,12 +237,14 @@ def classify(e, ds, wp=None):
 
 
 def check(values, where):
-    """Up to two known values with different top levels; raises on anything else (a bad override fails the run)."""
+    """Up to two known values, not a sub-kind beside its own kind; raises on anything else (a bad override fails the run)."""
     for v in values:
         if v not in VOCAB and v not in PARENT:
             raise ValueError(f'{where}: unknown category "{v}"')
-    if len(values) > 2 or len({top(v) for v in values}) != len(values):
-        raise ValueError(f'{where}: at most two categories, with different top levels: {values}')
+    # two sub-kinds of one kind are fine (Statute of Westminster: reform, then independence; Kevin, 2026-11-22); a value
+    # beside its own kind repeats it
+    if len(values) > 2 or len(set(values)) != len(values) or any(top(v) == w for v in values for w in values if v != w):
+        raise ValueError(f'{where}: at most two different categories, and not a sub-kind beside its own kind: {values}')
 
 
 def apply(data, overrides_path, evidence_path=None):
