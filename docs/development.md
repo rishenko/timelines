@@ -119,14 +119,26 @@ npm run data -- ids --check                 # fail on ids lost since origin/main
 npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
 
-**Event categories** come from a plan, `data-src/ancient-classical-categories.json` (the `category` facet and each
-event's categories, main first), which `importance` applies (`scripts/lib/categories.ts`). The plan is written by
-`pipelines/ancient/categories.py`, which runs the shared classifier (`pipelines/common/event_categories.py`, as the
+**Golden ages and eras** come from a plan, `data-src/ancient-classical-periods.json` (`meta.eras` and the golden-age
+events), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval
+and Modern States generators read too. **Event categories** come from another plan,
+`data-src/ancient-classical-categories.json` (the `category` facet and each event's categories, main first), written by
+`pipelines/ancient/categories.py`: it runs the shared classifier (`pipelines/common/event_categories.py`, as the
 generators do) with the reviewed overrides in `pipelines/ancient/categories.json`, and writes the evidence for each
-event to `data-src/provenance/ancient-classical-categories.json`. It needs the Wikipedia dump
-([pipelines/README.md](../pipelines/README.md)); the build and CI need only the plan. After a change to the classifier
-or the overrides: rerun it, then `npm run data -- importance ancient-classical` and `npm run categories:proof --
-ancient-classical`.
+event to `data-src/provenance/ancient-classical-categories.json`. `importance` applies the plans in this order: periods
+(so the others can name its events), importance, row links, memberships, categories (`scripts/lib/periods.ts`,
+`scripts/lib/categories.ts`). Both Python steps need the Wikipedia dump ([pipelines/README.md](../pipelines/README.md));
+the build and CI need only the plans. After a change to `periods.json`, the classifier or the overrides, rerun in this
+order, since each step reads what the one before wrote:
+
+```sh
+pipelines/.venv/bin/python -I pipelines/ancient/periods.py
+npm run data -- importance ancient-classical
+pipelines/.venv/bin/python -I pipelines/ancient/categories.py
+npm run data -- importance ancient-classical
+pipelines/.venv/bin/python -I pipelines/medieval/gen_medieval.py   # it reads Ancient's compiled file at the 650 seam
+npm run categories:proof -- ancient-classical
+```
 
 The site's list, `timelines/index.json`, isn't committed: `scripts/lib/timeline-index-plugin.ts` makes it from the
 files in `public/timelines/` (the dev server on each request, the build into `dist/timelines/`), in the order

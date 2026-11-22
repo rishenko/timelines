@@ -38,6 +38,307 @@
         "side": "before"
       }
     ],
+    "eras": [
+      {
+        "id": "timurid-renaissance",
+        "name": "Timurid Renaissance",
+        "group": "steppe-persianate",
+        "start": 1375,
+        "end": 1525,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1375,
+            "source": {
+              "sourceKey": "wp-timurid-renaissance",
+              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+            },
+            "margin": 25,
+            "note": "The late 14th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1525,
+            "source": {
+              "sourceKey": "wp-timurid-renaissance",
+              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+            },
+            "margin": 25,
+            "note": "The early 16th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-timurid-renaissance",
+            "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+          }
+        ]
+      },
+      {
+        "id": "renaissance",
+        "name": "Renaissance",
+        "group": "europe-thought",
+        "start": 1400,
+        "end": 1600,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1400,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "From the 15th century."
+          },
+          {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "More broadly, from the 14th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1600,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "To the end of the 16th century."
+          },
+          {
+            "year": 1700,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "More broadly, to the 17th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-renaissance",
+            "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+          }
+        ]
+      },
+      {
+        "id": "age-of-discovery",
+        "name": "Age of Discovery",
+        "group": "europe-expansion",
+        "start": 1415,
+        "end": 1650,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1415,
+            "source": {
+              "sourceKey": "wp-age-of-discovery",
+              "sourceLocation": "infobox start: Early 15th century"
+            },
+            "margin": 25,
+            "note": "The early 15th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1650,
+            "source": {
+              "sourceKey": "wp-age-of-discovery",
+              "sourceLocation": "infobox end: Mid-17th century"
+            },
+            "margin": 25,
+            "note": "The mid-17th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-age-of-discovery",
+            "sourceLocation": "infobox start: Early 15th century"
+          },
+          {
+            "sourceKey": "wp-age-of-discovery",
+            "sourceLocation": "infobox end: Mid-17th century"
+          }
+        ]
+      },
+      {
+        "id": "scientific-revolution",
+        "name": "Scientific Revolution",
+        "group": "europe-science",
+        "start": 1543,
+        "end": 1687,
+        "startDates": [
+          {
+            "year": 1543,
+            "source": {
+              "sourceKey": "wp-scientific-revolution",
+              "sourceLocation": "lead: \"While the period is frequently said to have begun in 1543 with the printings of De humani corporis fabrica (On the Workings of the Human Body) by Andreas Vesali\""
+            }
+          },
+          {
+            "year": 1572,
+            "source": {
+              "sourceKey": "wp-scientific-revolution",
+              "sourceLocation": "infobox start: 1543 or 1572"
+            },
+            "note": "The infobox gives 1543 or 1572."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1687,
+            "source": {
+              "sourceKey": "wp-scientific-revolution",
+              "sourceLocation": "lead: \"The period culminated with the publication of the Philosophiæ Naturalis Principia Mathematica in 1687 by Isaac Newton.\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-scientific-revolution",
+            "sourceLocation": "lead: \"While the period is frequently said to have begun in 1543 with the printings of De humani corporis fabrica (On the Workings of the Human Body) by Andreas Vesali\""
+          },
+          {
+            "sourceKey": "wp-scientific-revolution",
+            "sourceLocation": "lead: \"The period culminated with the publication of the Philosophiæ Naturalis Principia Mathematica in 1687 by Isaac Newton.\""
+          }
+        ]
+      },
+      {
+        "id": "age-of-enlightenment",
+        "name": "Enlightenment",
+        "group": "europe-thought",
+        "start": 1687,
+        "end": 1789,
+        "startDates": [
+          {
+            "year": 1687,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "infobox start: 1687"
+            }
+          },
+          {
+            "year": 1637,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "lead: \"The dating of the period of the beginning of the Enlightenment can be attributed to the publication of Descartes' Discourse on the Method in 1637, with his meth\""
+            },
+            "note": "Descartes' Discourse on the Method."
+          },
+          {
+            "year": 1715,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "lead: \"European historians traditionally dated its beginning with the death of Louis XIV of France in 1715 and its end with the outbreak of the French Revolution in 17\""
+            },
+            "note": "The traditional start."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1789,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "infobox end: 1789"
+            }
+          },
+          {
+            "year": 1804,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "lead: \"Many historians now date the end of the Enlightenment as the start of the 19th century, with the latest proposed year being the death of Immanuel Kant in 1804.\""
+            },
+            "note": "The latest proposed end."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-age-of-enlightenment",
+            "sourceLocation": "infobox start: 1687"
+          },
+          {
+            "sourceKey": "wp-age-of-enlightenment",
+            "sourceLocation": "infobox end: 1789"
+          }
+        ]
+      },
+      {
+        "id": "industrial-revolution",
+        "name": "Industrial Revolution",
+        "group": "europe-science",
+        "start": 1760,
+        "end": 1840,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1760,
+            "source": {
+              "sourceKey": "wp-industrial-revolution",
+              "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1840,
+            "source": {
+              "sourceKey": "wp-industrial-revolution",
+              "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-industrial-revolution",
+            "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
+          }
+        ]
+      },
+      {
+        "id": "belle-epoque",
+        "name": "Belle Époque",
+        "group": "europe-thought",
+        "start": 1871,
+        "end": 1914,
+        "startDates": [
+          {
+            "year": 1871,
+            "source": {
+              "sourceKey": "wp-belle-poque",
+              "sourceLocation": "infobox start: 1871"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1914,
+            "source": {
+              "sourceKey": "wp-belle-poque",
+              "sourceLocation": "infobox end: 1914"
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-belle-poque",
+            "sourceLocation": "infobox start: 1871"
+          },
+          {
+            "sourceKey": "wp-belle-poque",
+            "sourceLocation": "infobox end: 1914"
+          }
+        ]
+      }
+    ],
     "facets": {
       "category": {
         "name": "Category",
@@ -72981,6 +73282,86 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-timurid-renaissance": {
+      "name": "Timurid Renaissance (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timurid_Renaissance",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-renaissance": {
+      "name": "Renaissance (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Renaissance",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-age-of-discovery": {
+      "name": "Age of Discovery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Age_of_Discovery",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-scientific-revolution": {
+      "name": "Scientific Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Scientific_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-age-of-enlightenment": {
+      "name": "Age of Enlightenment (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Age_of_Enlightenment",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-industrial-revolution": {
+      "name": "Industrial Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Industrial_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-belle-poque": {
+      "name": "Belle Époque (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Belle_Époque",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-polish-golden-age": {
+      "name": "Polish Golden Age (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Polish_Golden_Age",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-elizabethan-era": {
+      "name": "Elizabethan era (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Elizabethan_era",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dutch-golden-age": {
+      "name": "Dutch Golden Age (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -119287,6 +119668,161 @@
             {
               "sourceKey": "wp-non-aligned-movement",
               "sourceLocation": "Africa: # {{flag|South Sudan}} (2024)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "polish-golden-age",
+      "title": "Polish Golden Age",
+      "descr": "",
+      "start": 1475,
+      "end": 1650,
+      "circa": true,
+      "tracks": [
+        "poland",
+        "polish-lithuanian-commonwealth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-polish-golden-age",
+          "sourceLocation": "lead: \"The Polish Golden Age (Polish: Złoty Wiek Polski ) was the Renaissance period in the Kingdom of Poland and subsequently in the Polish–Lithuanian Commonwealth, w\""
+        },
+        {
+          "sourceKey": "wp-polish-golden-age",
+          "sourceLocation": "lead: \"Historians argue that the Polish Golden Age ended by the mid-17th century, when Poland was ravaged by the Khmelnytsky Uprising (1648–57) and by the Swedish and \""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1475,
+          "source": {
+            "sourceKey": "wp-polish-golden-age",
+            "sourceLocation": "lead: \"The Polish Golden Age (Polish: Złoty Wiek Polski ) was the Renaissance period in the Kingdom of Poland and subsequently in the Polish–Lithuanian Commonwealth, w\""
+          },
+          "margin": 25,
+          "note": "The late 15th century."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1650,
+          "source": {
+            "sourceKey": "wp-polish-golden-age",
+            "sourceLocation": "lead: \"Historians argue that the Polish Golden Age ended by the mid-17th century, when Poland was ravaged by the Khmelnytsky Uprising (1648–57) and by the Swedish and \""
+          },
+          "margin": 10,
+          "note": "\"By the mid-17th century\": the Khmelnytsky Uprising (1648–57) and the Deluge."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-polish-golden-age",
+              "sourceLocation": "lead: \"The Polish Golden Age (Polish: Złoty Wiek Polski ) was the Renaissance period in the Kingdom of Poland and subsequently in the Polish–Lithuanian Commonwealth, w\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "elizabethan-era",
+      "title": "Elizabethan era",
+      "descr": "",
+      "start": 1558,
+      "end": 1603,
+      "tracks": [
+        "united-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-elizabethan-era",
+          "sourceLocation": "infobox start: 1558"
+        },
+        {
+          "sourceKey": "wp-elizabethan-era",
+          "sourceLocation": "infobox end: 1603"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1558,
+          "source": {
+            "sourceKey": "wp-elizabethan-era",
+            "sourceLocation": "infobox start: 1558"
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1603,
+          "source": {
+            "sourceKey": "wp-elizabethan-era",
+            "sourceLocation": "infobox end: 1603"
+          }
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-elizabethan-era",
+              "sourceLocation": "infobox start: 1558"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "dutch-golden-age",
+      "title": "Dutch Golden Age",
+      "descr": "",
+      "start": 1588,
+      "end": 1672,
+      "tracks": [
+        "netherlands"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-dutch-golden-age",
+          "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1588,
+          "source": {
+            "sourceKey": "wp-dutch-golden-age",
+            "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1672,
+          "source": {
+            "sourceKey": "wp-dutch-golden-age",
+            "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
+          }
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-dutch-golden-age",
+              "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
             }
           ]
         }

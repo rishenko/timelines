@@ -86,7 +86,8 @@ describe('the region filter', () => {
   it('the table view follows it', () => {
     renderApp(OPEN + '&regions=japan&view=table');
     const headings = screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent);
-    expect(headings).toEqual(['East & Southeast Asia']);
+    // the Ages table (meta.eras) stays: ages run across regions, so the region filter leaves them alone
+    expect(headings).toEqual(['Ages', 'East & Southeast Asia']);
   });
 
   it('is off in edit mode, where every row must be reachable', () => {
