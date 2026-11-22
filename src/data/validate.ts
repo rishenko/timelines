@@ -1,3 +1,4 @@
+import { migrate, SCHEMA_VERSION } from './migrate.ts';
 import { at0, at1, daysInMonth, endAt, MONTH_NAMES, startAt, SUB_YEAR } from '../lib/subYear.ts';
 import { LINK_KINDS, type DateClaim, type Dataset, type DateDays, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronology } from '../lib/chronology.ts';
@@ -16,8 +17,10 @@ export const ID_RE = /^[A-Za-z0-9-]+$/;
 export function validateDataset(d: unknown): string[] {
   const errors: string[] = [];
   if (!d || typeof d !== 'object') return ['Dataset is not an object.'];
-  const ds = d as Dataset;
-  if (ds.schemaVersion !== 3) errors.push(`Unsupported schemaVersion: ${String(ds.schemaVersion)}.`);
+  // a file of an older version is checked as it reads once lifted to the current one
+  const ds = migrate(d) as Dataset;
+  if (ds.schemaVersion !== SCHEMA_VERSION)
+    errors.push(`Unsupported schemaVersion: ${String(ds.schemaVersion)} (this app reads versions 3 to ${SCHEMA_VERSION}).`);
   if (ds.present !== undefined && !Number.isInteger(ds.present)) errors.push('present must be an integer year.');
   if (!ds.meta || typeof ds.meta !== 'object') errors.push('meta must be an object.');
   if (!Array.isArray(ds.tracks)) errors.push('tracks must be an array.');
@@ -393,5 +396,5 @@ export function validateDataset(d: unknown): string[] {
 export function assertDataset(d: unknown): Dataset {
   const errors = validateDataset(d);
   if (errors.length) throw new Error(`Invalid timeline data:\n- ${errors.join('\n- ')}`);
-  return d as Dataset;
+  return migrate(d) as Dataset;
 }

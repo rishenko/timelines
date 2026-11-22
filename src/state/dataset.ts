@@ -1,3 +1,4 @@
+import { migrate } from '../data/migrate.ts';
 import { useEffect, useReducer, useState } from 'react';
 import type { Dataset, Source, TimelineEvent, Track } from '../types.ts';
 import * as edits from './edits.ts';
@@ -157,13 +158,15 @@ export function parseUpload(text: string): { dataset?: Dataset; errors: string[]
     return { errors: [`Not valid JSON: ${(e as Error).message}`] };
   }
   const errors = validateDataset(json);
-  return errors.length ? { errors } : { dataset: json as Dataset, errors: [] };
+  // a file saved by an older version of the app is lifted to the current one (data/migrate.ts)
+  return errors.length ? { errors } : { dataset: migrate(json) as Dataset, errors: [] };
 }
 
 export function downloadDataset(data: Dataset, final: boolean) {
+  const current = migrate(data);
   const out: Dataset = final
-    ? { ...data, events: data.events.map(({ edited: _edited, ...rest }) => rest) }
-    : data;
+    ? { ...current, events: current.events.map(({ edited: _edited, ...rest }) => rest) }
+    : current;
   const blob = new Blob([JSON.stringify(out, null, 2) + '\n'], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');

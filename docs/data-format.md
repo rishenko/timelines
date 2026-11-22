@@ -1,4 +1,4 @@
-# Timeline data format (schema v3)
+# Timeline data format (schema v4)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -66,7 +66,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | Always `3`. |
+| `schemaVersion` | yes | `4`. Files of version `3` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -402,7 +402,7 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 3.
+- The required fields above are present; `schemaVersion` is 4, or 3 (lifted to 4 when loaded).
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
   `"day"`.
@@ -516,3 +516,15 @@ each `memberOf` entry too. A "c." on a start sets `circa`. `start`, `end` and cl
 [month and day fields](#months-and-days). Era labels and their `aliases` come from the file's own
 calendar. Numbers pass through unchanged. `data-src/ancient-classical.json` is a full example.
 
+## Versions
+
+The app writes the current version and reads older ones, lifting them step by step when a file is loaded, uploaded,
+fetched from a link, restored from the library or compiled (`src/data/migrate.ts`). An older app given a newer file
+says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
+
+| Version | What changed |
+|---|---|
+| 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
+| 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |
+
+A new version adds a step to `migrate.ts` (with a test), a row here, and bumps `SCHEMA_VERSION`.

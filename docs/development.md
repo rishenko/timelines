@@ -49,7 +49,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 |---|---|
 | `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
 | `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` and `?collection=<url>` links, update checks for timelines from links, the reader's own timelines, the welcome page |
-| `src/types.ts` | The schema v3 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
+| `src/types.ts` | The schema v4 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
 | `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
 | `src/data/` | The validator, and row proximity checks for the included timelines (`proximity.ts`) |
 | `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks |

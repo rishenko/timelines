@@ -280,7 +280,8 @@ export interface TimelineEvent extends DateDays {
 }
 
 export interface Dataset {
-  schemaVersion: 3;
+  /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
+  schemaVersion: 4;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest

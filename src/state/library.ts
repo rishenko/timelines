@@ -1,3 +1,4 @@
+import { migrate } from '../data/migrate.ts';
 import type { Dataset } from '../types.ts';
 import { parseUpload, draftKey } from './dataset.ts';
 import { uniqueId } from './edits.ts';
@@ -26,7 +27,8 @@ export function loadLibrary(store: Store = defaultStore()): LibraryEntry[] {
   try {
     const raw = store.getItem(LIBRARY_KEY);
     const list = raw ? (JSON.parse(raw) as LibraryEntry[]) : [];
-    return Array.isArray(list) ? list.filter((e) => e?.dataset?.meta?.id) : [];
+    // timelines saved by an older version of the app are lifted to the current one (data/migrate.ts)
+    return Array.isArray(list) ? list.filter((e) => e?.dataset?.meta?.id).map((e) => ({ ...e, dataset: migrate(e.dataset) })) : [];
   } catch {
     return [];
   }

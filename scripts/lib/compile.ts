@@ -7,12 +7,15 @@
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
 import { parseFullDate } from '../../src/lib/calendar.ts';
 import { validateDataset } from '../../src/data/validate.ts';
+import { migrate } from '../../src/data/migrate.ts';
 import type { Calendar } from '../../src/types.ts';
 
 type Obj = Record<string, unknown>;
 
 /** The compiled dataset (as plain JSON) and every problem found; write it only when `errors` is empty. */
 export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } }): { dataset: Obj; errors: string[] } {
+  // a source file of an older version compiles to the current one (src/data/migrate.ts)
+  raw = migrate(raw);
   const cal = raw.meta.calendar;
   const problems: string[] = [];
 
