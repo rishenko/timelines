@@ -729,6 +729,9 @@
 .has-focus .tl-mark.cluster:not(.related) {
   border-color: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, transparent);
 }
+.has-focus .tl-connections .link:not(.on) {
+  opacity: 0.25;
+}
 
 
 /* Comparison sets: the compare button on each row label, and the row's region beside its name in a set */

@@ -17,8 +17,9 @@ interface Props {
  * Draws the threads that tie the timeline together:
  * - a vertical connector through every lane the selected event appears in, its "+N" pills included (only the selected
  *   event's: a shared event otherwise reads as one by its diamond's border);
- * - curved arrows for explicit event links (causes / part-of / succeeds / conquers / related), only for the focused
- *   (pointed-at or selected) event and the events linked to it.
+ * - curved arrows for explicit event links (causes / part-of / succeeds / conquers / related), always. A link ends only
+ *   at events drawn as their own mark: an event gathered into a "+N" pill gets its arrows only while it, or the event
+ *   at the other end, is focused (pointed at or selected).
  */
 export function ConnectionLayer({ left, width, height, marksByEvent, eventsById, selectedId, related, inView }: Props) {
   let thread: React.ReactNode = null;
@@ -42,9 +43,9 @@ export function ConnectionLayer({ left, width, height, marksByEvent, eventsById,
   for (const [id, e] of eventsById) {
     for (const l of e.links ?? []) {
       const focused = !!related && related.has(id) && related.has(l.to);
-      if (!focused) continue;
-      const from = marksByEvent.get(id);
-      const to = marksByEvent.get(l.to);
+      const reachable = (ms: Mark[] | undefined) => (focused ? ms : ms?.filter((m) => m.kind === 'event'));
+      const from = reachable(marksByEvent.get(id));
+      const to = reachable(marksByEvent.get(l.to));
       if (!from?.length || !to?.length) continue;
       // pick the closest pair of marks so the arrow takes the shortest vertical path
       let best: [Mark, Mark] = [from[0], to[0]];

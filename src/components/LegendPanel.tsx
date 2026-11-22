@@ -273,7 +273,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
         </span>
       ),
       title: 'Highlight',
-      text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. Arrows to and from it show while it is pointed at or selected; the thread joining a shared event’s rows shows while it is selected.',
+      text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. The thread joining a shared event’s rows shows while it is selected.',
     },
   ];
 

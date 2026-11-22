@@ -39,8 +39,10 @@ function draw(related: Set<string> | null) {
 }
 
 describe('ConnectionLayer', () => {
-  it('draws arrows only while one end is focused, "+N" pills included', () => {
-    expect(draw(null)).toEqual([]);
+  it('draws arrows always, and to "+N" pills only while one end is focused', () => {
+    const plain = draw(null);
+    expect(plain).toHaveLength(1);
+    expect(plain[0]).toMatch(/ 40$/);
     const focused = draw(new Set(['a', 'b', 'c']));
     expect(focused).toHaveLength(2);
     expect(focused.some((d) => d?.endsWith(' 70'))).toBe(true);

@@ -80,8 +80,8 @@ be `http(s)` addresses or relative paths.
 - **Uncertain dates** drawn as hatched ranges, worked out from what each source says. Alternative dating systems
   (such as Mesopotamia's High, Middle and Low chronologies) that readers can switch between in the **Dating** menu.
 - **Events** on one row or several (joined by a thread when selected), with a start and end, or ongoing to the timeline's "now".
-- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows while an event is pointed
-  at or selected, and the line joining a shared event's rows while it is selected.
+- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows, and the line joining a
+  shared event's rows while it is selected.
 - **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N". A row's
   "show all" button unfolds its "+N" groups.
 - **Event details:** the dates each source gives, the sources with page or section, the connections, a map, and a
