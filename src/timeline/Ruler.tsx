@@ -79,7 +79,10 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
       ))}
       {gaps.map((g) => (
         <div key={g.y0} className="tl-gap-label" style={{ left: labelW + g.x0, width: g.x1 - g.x0 }}>
-          <span title={`${increment < 1 ? `${tickLabel(g.y0, increment, cal, true)} – ${tickLabel(g.y1, increment, cal, true)}` : `${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)}`} compressed`}>{gapLength(g.y0, g.y1)}</span>
+          <span title={`${increment < 1 ? `${tickLabel(g.y0, increment, cal, true)} – ${tickLabel(g.y1, increment, cal, true)}` : `${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)}`} compressed`}>
+            {/* whole years exactly as before ("N yrs" as two text nodes, which the browser shapes differently from one) */}
+            {Number.isInteger(g.y1 - g.y0) ? <>{g.y1 - g.y0} yrs</> : gapLength(g.y0, g.y1)}
+          </span>
         </div>
       ))}
       {edgeLinks?.map((l) => (

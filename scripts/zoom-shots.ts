@@ -4,12 +4,13 @@
 //   node scripts/zoom-shots.ts --url http://localhost:4323/ --out shots/before [--timeline ancient-classical]
 //        [--at "-3000|-500|300"] [--inc "10|50"] [--width 1800] [--height 1400] [--compare shots/before]
 //        [--browser chrome]
-// Without --inc it takes the timeline's own zoom steps (meta.increments, read from public/timelines/<id>.json).
+// Without --inc it takes the timeline's own zoom steps (meta.increments, read from public/timelines/<id>.json, or from
+// the folders in TIMELINES_LOCAL_DATA).
 // --compare writes <name>.diff.png beside each shot that differs and prints a table of differing pixels;
 // exits with 1 if any shot differs.
 // npm run zoom-shots -- <same flags>
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { delimiter, join } from 'node:path';
 import { chromium, type Page } from 'playwright-core';
 
 const args = process.argv.slice(2);
@@ -21,8 +22,15 @@ if (!out) {
   process.exit(1);
 }
 const id = opt('--timeline') ?? 'ancient-classical';
-const meta = JSON.parse(readFileSync(`public/timelines/${id}.json`, 'utf8')).meta;
-const incs = opt('--inc')?.split('|') ?? (meta.increments as (number | string)[]).map(String);
+// the timeline's file: a bundled one, else one in the folders of TIMELINES_LOCAL_DATA (see scripts/lib/local-data.ts)
+const file = [`public/timelines/${id}.json`, ...(process.env.TIMELINES_LOCAL_DATA ?? '').split(delimiter).filter(Boolean).map((d) => join(d, `${id}.json`))].find(
+  (f) => existsSync(f),
+);
+const incs = opt('--inc')?.split('|') ?? (file ? (JSON.parse(readFileSync(file, 'utf8')).meta.increments as (number | string)[]).map(String) : []);
+if (!incs.length) {
+  console.error(`No zoom steps: ${id} not found (give --inc)`);
+  process.exit(1);
+}
 const ats = (opt('--at') ?? '-3000|-500|300').split('|');
 const width = Number(opt('--width') ?? 1800);
 const height = Number(opt('--height') ?? 1400);
