@@ -1,5 +1,6 @@
 """
-Wave 7 of the Medieval World timeline: Africa south of the Sahara. Uses med_europe's helpers and event registry
+Wave 7 of the Medieval World timeline: Africa south of the Sahara (Egypt and the Maghreb, also under Africa, come
+from med_near_east). Uses med_europe's helpers and event registry
 (med_europe.build must run first); see med_europe's docstring for how rows, events, regions and the 1500 seam work.
 
 Where an infobox gives only a century ("11th century"), the claim is the middle of that century with a margin of 50
