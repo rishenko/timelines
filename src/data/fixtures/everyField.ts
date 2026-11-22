@@ -55,6 +55,7 @@ export const everyField = {
       theme: { name: 'Theme', applies: 'events', values: { trade: { name: 'Trade' } } },
     },
     continues: [{ timeline: 'harbor-towns', at: 300, side: 'after' }],
+    eraGroups: { 'harbor-ages': { name: 'Harbor ages' } },
     range: { start: -100, end: 300 },
     eras: [
       {

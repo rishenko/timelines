@@ -69,9 +69,19 @@ export interface TimelineMeta {
    * same years.
    */
   eras?: Era[];
+  /**
+   * Display names for era groups, by group id (`{ "ages-aegean": { "name": "Aegean" } }`): a group's ages are
+   * labelled with its name, or with the id when it has none. Each key names a `group` some era has.
+   */
+  eraGroups?: Record<string, EraGroup>;
 }
 
 /** A named period across all rows (TimelineMeta.eras). */
+/** How a group of eras is shown (meta.eraGroups). */
+export interface EraGroup {
+  name: string;
+}
+
 export interface Era extends TrackSpan {
   /** Letters, digits and dashes; unique among the timeline's eras. */
   id: string;
