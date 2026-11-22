@@ -17,10 +17,9 @@ Tick what this change affects and update it here; leave the rest unticked. Reade
 
 ## Checks
 
-- [ ] `npm run pr:check` passes (add `-- --timeline <id>` for a UI change); its lines are pasted below
 - [ ] Tests, lint and build pass; `npm run data:compare` for data changes
 - [ ] UI change: `npm run a11y:report` summary line pasted below. Don't commit `docs/wcag-report.md`: the maintainers
   refresh it after each batch of merges.
 - [ ] UI change: screenshots before and after
 
-<!-- npm run pr:check output (its a11y line is the report summary) -->
+<!-- a11y report summary, e.g. "Failing: 0 (ancient-classical, 34 views)" -->
