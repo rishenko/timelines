@@ -534,6 +534,9 @@ def build(repo):
             if ref not in e['sources']:
                 e['sources'].append(ref)
     data['events'] = me.PILOT_EVENTS + [e for e in europe.EVENTS.values() if e not in me.PILOT_EVENTS]
+    # golden ages and eras (pipelines/common/periods.py from periods.json): before the sources, which they cite
+    import periods
+    REPORT.append(f'periods: {periods.apply(data, "medieval")}')
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:

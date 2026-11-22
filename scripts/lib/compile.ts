@@ -3,7 +3,7 @@
 // In the source file, any year may be written for people instead of as a stored integer:
 //   "start": "c. 2334 BCE", "end": "2154 BCE", "year": "1651 BCE", "until": "1400 BCE"
 // They are converted with the timeline's own calendar (so "1450 BCE" becomes -1449, because BCE/CE has no
-// year 0). A "c." on an event's, lifespan stretch's or phase's start sets `circa`. Integers pass through unchanged. The result
+// year 0). A "c." on an event's, lifespan stretch's, phase's or era's start sets `circa`. Integers pass through unchanged. The result
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
 import { parseFullDate } from '../../src/lib/calendar.ts';
 import { validateDataset } from '../../src/data/validate.ts';
@@ -67,6 +67,8 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
       // edge links to neighbouring timelines: "at" may be written as a readable year too
       ...(m.continues ? { continues: (m.continues as Obj[]).map((c, i) => ({ ...c, at: year(c.at, `meta.continues[${i}]`).year })) } : {}),
       ...(range ? { range: { start: year(range.start, 'meta.range start').year, end: year(range.end, 'meta.range end').year } } : {}),
+      // eras are dated like phases
+      ...(Array.isArray(m.eras) ? { eras: (m.eras as Obj[]).map((e) => dated(e, `era ${e.id}`)) } : {}),
     },
     chronologies: raw.chronologies
       ? Object.fromEntries(
