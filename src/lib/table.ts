@@ -1,7 +1,8 @@
 import type { Calendar, Dataset, SourceRef, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan, Window } from './chronology.ts';
+import type { DayWindow } from './subYear.ts';
 import { datingChronology, isApprox } from './chronology.ts';
-import { formatYear } from './calendar.ts';
+import { formatDate, formatYear } from './calendar.ts';
 import { compareEvents, formatEventDates } from './years.ts';
 import { trackIndex, trackPath, treeOrder } from './tracks.ts';
 import { spanDates } from './lifespan.ts';
@@ -54,6 +55,8 @@ export function tableSections(tracks: Track[], events: ResolvedEvent[]): TableSe
 }
 
 const range = (w: Window, cal: Calendar) => `${formatYear(w[0], cal)} and ${formatYear(w[1], cal)}`;
+/** A spread in months or days in words: "17 July 1942 CE and 23 August 1942 CE". */
+const dayRange = (w: DayWindow, cal: Calendar) => `${formatDate(w.lo.year, w.lo.month, w.lo.day, cal)} and ${formatDate(w.hi.year, w.hi.month, w.hi.day, cal)}`;
 
 /**
  * An event's dates in words: the best estimate (under the reader's chosen chronology), then the range the cited
@@ -64,9 +67,12 @@ export function datesInWords(e: ResolvedEvent, cal: Calendar): { main: string; r
   const ranges: string[] = [];
   const single = e.end === undefined || e.end === e.start;
   if (single && e.startWindow) ranges.push(`the sources put it between ${range(e.startWindow, cal)}`);
+  else if (single && e.startDays) ranges.push(`the sources put it between ${dayRange(e.startDays, cal)}`);
   else {
     if (e.startWindow) ranges.push(`start between ${range(e.startWindow, cal)}`);
+    if (e.startDays) ranges.push(`start between ${dayRange(e.startDays, cal)}`);
     if (e.endWindow) ranges.push(`end between ${range(e.endWindow, cal)}`);
+    if (e.endDays) ranges.push(`end between ${dayRange(e.endDays, cal)}`);
   }
   return { main, ranges };
 }
@@ -85,9 +91,14 @@ const csvCell = (v: string | number | undefined) => {
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
 
+/** A date as "1916-07-01", "1916-07" or "1916" (astronomical year: -1594 is 1595 BCE). */
+const isoDate = (y: number, m?: number, d?: number) =>
+  `${y}${m ? `-${String(m).padStart(2, '0')}` : ''}${m && d ? `-${String(d).padStart(2, '0')}` : ''}`;
+
 /**
  * The events as CSV, one row per event (not per section), in date order. Years come twice: as read ("c. 1595 BCE")
- * and as stored astronomical numbers (-1594), so spreadsheets can sort and compute with them.
+ * and as stored astronomical numbers (-1594), so spreadsheets can sort and compute with them. The last two columns
+ * give the full dates ("1916-07-01", "1916-07", "1916"), for timelines dated in months and days.
  */
 export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
   const cal = data.meta.calendar;
@@ -96,6 +107,8 @@ export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
   const head = [
     'id', 'title', 'dates', 'start_year', 'end_year', 'start_earliest', 'start_latest', 'end_earliest', 'end_latest',
     'approximate', 'chronology', 'rows', 'rows_wikidata', 'importance', 'sources', 'description',
+    // added for dates in months and days, at the end so existing columns keep their places
+    'start_date', 'end_date',
   ];
   const lines = [head.join(',')];
   for (const e of [...events].sort(compareEvents)) {
@@ -109,10 +122,10 @@ export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
         formatEventDates(e, cal, isApprox(e)),
         e.start,
         e.end,
-        e.startWindow?.[0],
-        e.startWindow?.[1],
-        e.endWindow?.[0],
-        e.endWindow?.[1],
+        e.startWindow?.[0] ?? e.startDays?.lo.year,
+        e.startWindow?.[1] ?? e.startDays?.hi.year,
+        e.endWindow?.[0] ?? e.endDays?.lo.year,
+        e.endWindow?.[1] ?? e.endDays?.hi.year,
         isApprox(e) ? 'yes' : 'no',
         chronologyName(data, e),
         e.tracks.map((t) => names.get(t) ?? t).join('; '),
@@ -121,6 +134,8 @@ export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
         e.importance === 1 ? 'key' : e.importance === 3 ? 'minor' : 'normal',
         sources,
         e.descr,
+        isoDate(e.start, e.startMonth, e.startDay),
+        e.end !== undefined ? isoDate(e.end, e.endMonth, e.endDay) : undefined,
       ]
         .map(csvCell)
         .join(','),
@@ -186,7 +201,9 @@ export function spanInWords(s: ResolvedSpan, cal: Calendar, sources?: Dataset['s
   const main = spanDates(s, cal, approx);
   const ranges: string[] = [];
   if (s.startWindow) ranges.push(`start between ${range(s.startWindow, cal)}`);
+  if (s.startDays) ranges.push(`start between ${dayRange(s.startDays, cal)}`);
   if (s.endWindow) ranges.push(`end between ${range(s.endWindow, cal)}`);
+  if (s.endDays) ranges.push(`end between ${dayRange(s.endDays, cal)}`);
   if (sources && s.ongoing && s.ongoingSources?.length) ranges.push(`still going per ${citationsInWords(s.ongoingSources, sources)}`);
   return { main, ranges };
 }

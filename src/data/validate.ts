@@ -1,9 +1,11 @@
-import { LINK_KINDS, type DateClaim, type Dataset, type TrackSpan } from '../types.ts';
+import { migrate, SCHEMA_VERSION } from './migrate.ts';
+import { at0, at1, daysInMonth, endAt, MONTH_NAMES, startAt, SUB_YEAR } from '../lib/subYear.ts';
+import { LINK_KINDS, type DateClaim, type Dataset, type DateDays, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronology } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
 import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
-import { datasetPresent } from '../lib/years.ts';
-import { formatYear } from '../lib/calendar.ts';
+import { datasetPresent, formatEventDates } from '../lib/years.ts';
+import { formatDate, formatYear } from '../lib/calendar.ts';
 import { bestLifespan, withinLifespan } from '../lib/memberOf.ts';
 
 // v1 data has a few hand-typed ids that are not strict hex UUIDs; they are live deep links, so accept any URL-safe id.
@@ -15,8 +17,10 @@ export const ID_RE = /^[A-Za-z0-9-]+$/;
 export function validateDataset(d: unknown): string[] {
   const errors: string[] = [];
   if (!d || typeof d !== 'object') return ['Dataset is not an object.'];
-  const ds = d as Dataset;
-  if (ds.schemaVersion !== 3) errors.push(`Unsupported schemaVersion: ${String(ds.schemaVersion)}.`);
+  // a file of an older version is checked as it reads once lifted to the current one
+  const ds = migrate(d) as Dataset;
+  if (ds.schemaVersion !== SCHEMA_VERSION)
+    errors.push(`Unsupported schemaVersion: ${String(ds.schemaVersion)} (this app reads versions 3 to ${SCHEMA_VERSION}).`);
   if (ds.present !== undefined && !Number.isInteger(ds.present)) errors.push('present must be an integer year.');
   if (!ds.meta || typeof ds.meta !== 'object') errors.push('meta must be an object.');
   if (!Array.isArray(ds.tracks)) errors.push('tracks must be an array.');
@@ -30,8 +34,8 @@ export function validateDataset(d: unknown): string[] {
   if (!m.title) errors.push('meta.title is required.');
   if (!m.calendar || !m.calendar.before || !m.calendar.after || typeof m.calendar.yearZero !== 'boolean')
     errors.push('meta.calendar needs before, after and yearZero.');
-  if (!Array.isArray(m.increments) || m.increments.length === 0 || m.increments.some((i) => !(Number.isInteger(i) && i > 0)))
-    errors.push('meta.increments must be a list of positive whole numbers.');
+  if (!Array.isArray(m.increments) || m.increments.length === 0 || m.increments.some((i) => (typeof i === 'string' ? !(i in SUB_YEAR) : !(Number.isInteger(i) && i > 0))))
+    errors.push('meta.increments must be a list of positive whole numbers, or quarter, month, week or day.');
   else if (!m.increments.includes(m.defaultIncrement)) errors.push('meta.defaultIncrement must be one of meta.increments.');
   if (m.circaFade !== undefined && !(m.circaFade >= 0)) errors.push('meta.circaFade must be zero or more.');
   if (m.hideRowsOutOfView !== undefined && typeof m.hideRowsOutOfView !== 'boolean') errors.push('meta.hideRowsOutOfView must be true or false.');
@@ -120,6 +124,7 @@ export function validateDataset(d: unknown): string[] {
     }
     for (const c of claims) {
       if (!Number.isInteger(c.year)) errors.push(`${label}: a date claim has a non-integer year.`);
+      checkDay(`${label} (date claim)`, c.year, c.month, c.day);
       if (c.margin !== undefined && !(c.margin >= 0)) errors.push(`${label}: a date claim has a negative margin.`);
       checkChronology(`${label} (date claim)`, c.chronology);
       if (c.source && !ds.sources[c.source.sourceKey]) errors.push(`${label}: a date claim cites unknown source "${c.source.sourceKey}".`);
@@ -160,6 +165,27 @@ export function validateDataset(d: unknown): string[] {
   }
   if (errors.length) return errors;
 
+  /** A month (1–12) and day (needs a month; must exist in that month) given with a year, if any. */
+  const checkDay = (label: string, year: number, month: unknown, day: unknown) => {
+    if (month === undefined) {
+      if (day !== undefined) errors.push(`${label} has a day but no month.`);
+      return;
+    }
+    if (!(Number.isInteger(month) && (month as number) >= 1 && (month as number) <= 12)) errors.push(`${label}: the month must be 1–12.`);
+    else if (day !== undefined && !(Number.isInteger(day) && (day as number) >= 1 && Number.isInteger(year) && (day as number) <= daysInMonth(year, month as number)))
+      errors.push(`${label}: ${String(day)} ${MONTH_NAMES[(month as number) - 1]} doesn't exist in that year.`);
+  };
+  /** The months and days of a start and end, and that the end date isn't before the start date. */
+  const checkDays = (label: string, o: DateDays & { start: number; end?: number }) => {
+    checkDay(`${label} start`, o.start, o.startMonth, o.startDay);
+    if (o.end === undefined) {
+      if (o.endMonth !== undefined || o.endDay !== undefined) errors.push(`${label} has an end month or day but no end year.`);
+      return;
+    }
+    checkDay(`${label} end`, o.end, o.endMonth, o.endDay);
+    if (o.end === o.start && o.startMonth && o.endMonth && at1(o) <= at0(o)) errors.push(`${label} ends before it starts.`);
+  };
+
   /** A lifespan stretch or a phase: a start, and an end or `ongoing` (not both). Returns whether its years are usable. */
   const checkSpan = (label: string, s: TrackSpan, chron: string | undefined): boolean => {
     if (!s || typeof s !== 'object') {
@@ -191,6 +217,7 @@ export function validateDataset(d: unknown): string[] {
       errors.push(`${label} ends before it starts.`);
       ok = false;
     }
+    checkDays(label, s);
     checkClaims(`${label} start`, s.start, s.startDates, chron);
     if (!s.ongoing && s.end !== undefined) checkClaims(`${label} end`, s.end, s.endDates, chron);
     return ok;
@@ -287,6 +314,7 @@ export function validateDataset(d: unknown): string[] {
       if (!Number.isInteger(e.end)) errors.push(`${label} has a non-integer end year.`);
       else if (e.end < e.start) errors.push(`${label} ends (${e.end}) before it starts (${e.start}).`);
     }
+    checkDays(label, e);
     if (e.importance !== undefined && ![1, 2, 3].includes(e.importance))
       errors.push(`${label}: importance must be 1 (key), 2 (normal) or 3 (minor).`);
     const tracksOk = Array.isArray(e.tracks) && e.tracks.length > 0;
@@ -332,6 +360,21 @@ export function validateDataset(d: unknown): string[] {
         if (!Number.isInteger(y) || !Number.isInteger(e.start)) continue;
         const from = e.start;
         const to = e.ongoing ? present : (e.end ?? e.start);
+        // an edge and an event both given in months or days must meet within one of the edge's units (a day, or a
+        // month), so a row that changes hands several times in a year can't name the wrong change
+        const em = side === 'start' ? s.startMonth : s.endMonth;
+        const ed = side === 'start' ? s.startDay : s.endDay;
+        if (em && e.startMonth) {
+          const unit = ed ? 1 / 365 : 1 / 12;
+          const edge0 = startAt(y!, em, ed) - unit;
+          const edge1 = endAt(y!, em, ed) + unit;
+          const to1 = e.ongoing ? present + 1 : at1(e);
+          if (edge1 <= at0(e) || edge0 >= to1)
+            errors.push(
+              `${label} ${side === 'start' ? 'starts' : 'ends'} on ${formatDate(y!, em, ed, m.calendar)}, but its ${field} "${e.title}" is dated ${formatEventDates(e, m.calendar)}: the event must fall within a ${ed ? 'day' : 'month'} of the edge it begins or ends.`,
+            );
+          continue;
+        }
         if (y! < from - GAP_TOLERANCE || y! > to + GAP_TOLERANCE)
           errors.push(
             `${label} ${side === 'start' ? 'starts' : 'ends'} in ${yr(y!)}, but its ${field} "${e.title}" is dated ${yr(from)}${to !== from ? ` – ${yr(to)}` : ''}: the event must fall within a year of the edge it begins or ends.`,
@@ -353,5 +396,5 @@ export function validateDataset(d: unknown): string[] {
 export function assertDataset(d: unknown): Dataset {
   const errors = validateDataset(d);
   if (errors.length) throw new Error(`Invalid timeline data:\n- ${errors.join('\n- ')}`);
-  return d as Dataset;
+  return migrate(d) as Dataset;
 }

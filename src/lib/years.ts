@@ -1,5 +1,6 @@
 import type { Calendar, TimelineEvent } from '../types.ts';
-import { formatYear } from './calendar.ts';
+import { formatDate } from './calendar.ts';
+import { at0, at1, durationText, endAt, hasDays } from './subYear.ts';
 
 /** Number of years between two stored years (astronomical numbering makes this plain subtraction). */
 export function yearsBetween(a: number, b: number): number {
@@ -12,17 +13,17 @@ export function effectiveEnd(e: TimelineEvent, present: number): number {
   return e.end ?? e.start;
 }
 
+/** Whether an event is a stretch of time rather than one date: ongoing, or ending after its start date's year (or month, or day) is out. */
 export function isSpan(e: TimelineEvent): boolean {
-  return !!e.ongoing || (e.end !== undefined && e.end > e.start);
+  return !!e.ongoing || (e.end !== undefined && (e.end > e.start || (hasDays(e) && at1(e) > endAt(e.start, e.startMonth, e.startDay))));
 }
 
 /** "c. 1595 BCE", "1792 BCE – 1750 BCE (42 yrs)", "4560 AE – ongoing". */
 export function formatEventDates(e: TimelineEvent, cal: Calendar, approx = !!e.circa): string {
-  const start = formatYear(e.start, cal, approx);
+  const start = formatDate(e.start, e.startMonth, e.startDay, cal, approx);
   if (e.ongoing) return `${start} – ongoing`;
-  if (e.end !== undefined && e.end !== e.start) {
-    const span = yearsBetween(e.start, e.end);
-    return `${start} – ${formatYear(e.end, cal, approx)} (${approx ? 'c. ' : ''}${span} yr${span === 1 ? '' : 's'})`;
+  if (e.end !== undefined && isSpan(e)) {
+    return `${start} – ${formatDate(e.end, e.endMonth, e.endDay, cal, approx)} (${durationText({ ...e, end: e.end }, approx)})`;
   }
   return start;
 }
@@ -30,6 +31,7 @@ export function formatEventDates(e: TimelineEvent, cal: Calendar, approx = !!e.c
 export function compareEvents(a: TimelineEvent, b: TimelineEvent): number {
   return (
     a.start - b.start ||
+    at0(a) - at0(b) ||
     (a.order ?? 999) - (b.order ?? 999) ||
     a.title.localeCompare(b.title)
   );

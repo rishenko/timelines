@@ -2,6 +2,7 @@ import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useRef, useSta
 import type { FocusRequest } from '../state/focus.ts';
 import type { LaneLayout, Mark } from './layout.ts';
 import type { Scale } from './scale.ts';
+import { roundCenter } from '../lib/subYear.ts';
 
 interface Options {
   /** The scrolling element (the whole chart). */
@@ -80,9 +81,16 @@ export function useViewport(o: Options) {
   /** When the last focus request scrolled; a selection made with it shouldn't re-scroll and cut it short. */
   const focusedAtRef = useRef(-Infinity);
   const [flashLane, setFlashLane] = useState<string | null>(null);
-  const scrollToFocus = useEffectEvent((f: FocusRequest) => {
+  const scrollToFocus = useEffectEvent((f: FocusRequest, tries = 0) => {
     const el = scrollerRef.current;
     if (!el) return;
+    // a request made with a zoom change can arrive before the (deferred) redraw widens the chart; scrolling then
+    // would stop at the old width's end, so wait for the new width (a few frames at most)
+    // (scrollWidth lags the canvas's new width in the browser; it is 0 where nothing is laid out, as in tests)
+    if (el.scrollWidth > 0 && el.scrollWidth + 1 < labelW + scale.width && tries < 30) {
+      requestAnimationFrame(() => scrollToFocus(f, tries + 1));
+      return;
+    }
     const vw = el.clientWidth - labelW;
     let left = scale.x(f.year) - vw / 2;
     if (f.range) {
@@ -91,7 +99,7 @@ export function useViewport(o: Options) {
       left = x1 - x0 <= vw * 0.85 ? (x0 + x1) / 2 - vw / 2 : x0 - vw * 0.08;
     }
     left = Math.max(0, left);
-    centerYearRef.current = Math.round(scale.yearAt(left + vw / 2));
+    centerYearRef.current = roundCenter(scale.yearAt(left + vw / 2), scale.increment);
     let top = el.scrollTop;
     const lane = f.trackId
       ? o.lanes.find((l) => l.lane.id === f.trackId) ?? o.lanes.find((l) => l.lane.members.includes(f.trackId!))
@@ -151,7 +159,7 @@ export function useViewport(o: Options) {
       if (!el) return;
       setView(el.scrollLeft, el.clientWidth);
       setRows(el);
-      const y = Math.round(scale.yearAt(el.scrollLeft + (el.clientWidth - labelW) / 2));
+      const y = roundCenter(scale.yearAt(el.scrollLeft + (el.clientWidth - labelW) / 2), scale.increment);
       centerYearRef.current = y;
       onCenterYearChange(y);
     });

@@ -13,6 +13,8 @@ import { useChronology } from './state/useChronology.ts';
 import { useRegionFilter } from './state/regionFilter.ts';
 import { useComparison } from './state/comparison.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
+import { incrementSpoken, incrementYears, SUB_YEAR } from './lib/subYear.ts';
+import { tooWideSteps } from './timeline/width.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
 import { TimelinePicker } from './components/TimelinePicker.tsx';
@@ -138,6 +140,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
 
   // ---- view settings ----
+  // zoom steps in years per tick (steps below a year are named in the data: "month", "day")
+  const increments = useMemo(() => meta.increments.map(incrementYears), [meta.increments]);
   const [increment, setIncrement] = useState(initialUrl.increment);
   const [compress, setCompress] = useState(initialUrl.compress);
   // rows with nothing near the view are hidden (Filters); not while editing, where every row must be reachable
@@ -152,7 +156,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const [announcedIncrement, setAnnouncedIncrement] = useState(increment);
   if (increment !== announcedIncrement) {
     setAnnouncedIncrement(increment);
-    setAnnouncement(`Zoom: ${increment} years per tick`);
+    setAnnouncement(`Zoom: ${incrementSpoken(increment)}`);
   }
   const comparisonSays = comparison.active
     ? `Comparing ${comparison.ordered.length} ${comparison.ordered.length === 1 ? 'row' : 'rows'}${comparison.order === 'related' ? ', related rows together' : comparison.order === 'start' ? ', by start date' : ''}`
@@ -200,15 +204,24 @@ export default function App({ published: opened, library: libraryEntry, site, no
    * False if there is no further step that way.
    */
   const zoomStep = (dir: 1 | -1, year?: number): boolean => {
-    const next = stepIncrement(meta.increments, increment, dir);
+    const next = stepIncrement(drawable, increment, dir);
     if (next === undefined) return false;
     setIncrement(next);
     if (year !== undefined) focusOn({ year });
     return true;
   };
 
+  // zoom steps below a year too wide to draw for this timeline (day zoom over centuries): disabled, and left if on one
+  const tooWide = useMemo(
+    () =>
+      tooWideSteps(increments, visibleEvents, present, [...spans.values()].flat(), { compress, calendar: cal, range: meta.range }),
+    [increments, visibleEvents, present, spans, compress, cal, meta.range],
+  );
+  const drawable = useMemo(() => increments.filter((i) => !tooWide.has(i)), [increments, tooWide]);
+  if (tooWide.has(increment) && drawable.length) setIncrement(drawable.find((i) => i > increment) ?? drawable[drawable.length - 1]);
+
   // At a timeline's coarsest zoom, draw only its key events (plus the selected one), if it marks any.
-  const keyOnly = useMemo(() => keyEventsOnly(meta.increments, increment, data.events), [meta.increments, increment, data.events]);
+  const keyOnly = useMemo(() => keyEventsOnly(increments, increment, data.events), [increments, increment, data.events]);
   const drawnEvents = useMemo(
     () => (keyOnly ? visibleEvents.filter((e) => e.importance === 1 || e.uuid === selectedId) : visibleEvents),
     [keyOnly, visibleEvents, selectedId],
@@ -351,7 +364,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
             }}
           />
         }
-        increments={meta.increments}
+        increments={increments}
+        tooWide={tooWide}
         increment={increment}
         onIncrement={setIncrement}
         dating={
@@ -379,14 +393,17 @@ export default function App({ published: opened, library: libraryEntry, site, no
             index={search.index}
             placeholder="Row, event or year…"
             example={formatYear(cal.yearZero ? 4500 : -1273, cal)}
-            parseYear={search.parseYear}
-            formatYear={search.formatYear}
+            parseDate={search.parseDate}
             describeYears={search.describeYears}
             hiddenReason={search.hiddenReason}
             onPick={search.onPick}
-            onYear={(y) => {
-              focusOn({ year: y });
-              setAnnouncement(`Went to ${formatYear(y, cal)}`);
+            onYear={(d) => {
+              // a month or day zooms in to show it, where the timeline has such a step and the view is coarser:
+              // a month to month zoom, a day to week zoom (the day and its neighbours)
+              const want = d.unit === 'month' ? SUB_YEAR.month : d.unit === 'day' ? SUB_YEAR.week : undefined;
+              if (want !== undefined && drawable.includes(want) && increment > want) setIncrement(want);
+              focusOn({ year: d.at });
+              setAnnouncement(`Went to ${d.label}`);
             }}
           />
         }

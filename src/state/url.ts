@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { parseYear } from '../lib/calendar.ts';
+import { parseFullDate, parseYear } from '../lib/calendar.ts';
+import { centerParam, incrementParam, incrementYears, startAt } from '../lib/subYear.ts';
 import type { LibraryEntry } from './library.ts';
 import type { Dataset } from '../types.ts';
 import { parseRegions } from '../lib/regions.ts';
@@ -16,11 +17,11 @@ import { regionFacetId } from './regionFilter.ts';
 export function readUrl(published: Dataset) {
   const q = new URLSearchParams(window.location.search);
   const { increments, defaultIncrement, calendar } = published.meta;
-  const inc = Number(q.get('inc'));
+  const inc = incrementYears(q.get('inc') ?? '');
   const at = q.get('at');
   return {
-    increment: increments.includes(inc) ? inc : defaultIncrement,
-    at: at !== null ? parseYear(at, calendar) : null,
+    increment: increments.map(incrementYears).includes(inc) ? inc : incrementYears(defaultIncrement),
+    at: at !== null ? parseCenter(at, calendar) : null,
     compress: q.get('compress') !== '0',
     /** Hide rows with nothing in view: from the link if it says, else the timeline's default. */
     hideOutOfView: ['active', 'thin'].includes(q.get('rows') ?? '') ? true : q.get('rows') === 'all' ? false : published.meta.hideRowsOutOfView !== false,
@@ -34,6 +35,14 @@ export function readUrl(published: Dataset) {
     order: parseOrder(q.get('order')),
     selected: decodeURIComponent(window.location.hash.slice(1)) || null,
   };
+}
+
+/** The center in a link: a year ("1594", "-1594", "1594 BCE"), or a day below a year's zoom ("1916-07-01"). */
+function parseCenter(at: string, cal: Dataset['meta']['calendar']): number | null {
+  const y = parseYear(at, cal);
+  if (y !== null) return y;
+  const d = parseFullDate(at, cal);
+  return d ? startAt(d.year, d.month, d.day) : null;
 }
 
 /** Opens another timeline (a full page load, so it starts from its own defaults and draft). */
@@ -87,8 +96,8 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
     timer.current = window.setTimeout(() => {
       const q = new URLSearchParams();
       q.set('timeline', timelineId);
-      q.set('inc', String(increment));
-      q.set('at', String(centerRef.current));
+      q.set('inc', incrementParam(increment));
+      q.set('at', centerParam(centerRef.current));
       if (!compress) q.set('compress', '0');
       if (hideOutOfView !== hideOutOfViewDefault || (hideOutOfView && thinRows))
         q.set('rows', !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active');

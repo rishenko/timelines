@@ -19,7 +19,7 @@ import { draftToStore, restoreDraft } from './dataset.ts';
 import { spanStretches } from '../lib/lifespan.ts';
 
 const base = (): Dataset => ({
-  schemaVersion: 3,
+  schemaVersion: 4,
   meta: {
     id: 'test',
     title: 'Test',

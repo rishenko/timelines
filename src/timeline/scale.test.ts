@@ -59,3 +59,15 @@ describe('buildScale', () => {
     });
   }
 });
+
+describe('kept stretches below a year (days and months)', () => {
+  it('never compresses the inside of a kept stretch, however long', () => {
+    const day = 1 / 365.2425;
+    const somme: [number, number] = [1916 + 182 / 366, 1916 + 323 / 366];
+    const without = buildScale([somme[0], somme[1]], { increment: day });
+    const withKeep = buildScale([somme[0], somme[1]], { increment: day, keep: [somme] });
+    expect(without.gaps().length).toBe(1);
+    expect(withKeep.gaps()).toEqual([]);
+    expect(withKeep.x(somme[1]) - withKeep.x(somme[0])).toBeCloseTo((somme[1] - somme[0]) * (80 / day), 6);
+  });
+});

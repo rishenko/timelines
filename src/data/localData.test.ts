@@ -6,7 +6,8 @@ import { describe, expect, it } from 'vitest';
 import { localTimelineFiles } from '../../scripts/lib/local-data.ts';
 import { defaultSelection, resolveEvents } from '../lib/chronology.ts';
 import { presentYear } from '../lib/years.ts';
-import { anchorsFor } from '../timeline/anchors.ts';
+import { anchorsFor, keptStretches } from '../timeline/anchors.ts';
+import { incrementYears } from '../lib/subYear.ts';
 import { buildLanes, layoutLanes } from '../timeline/layout.ts';
 import { buildScale } from '../timeline/scale.ts';
 import type { Dataset } from '../types.ts';
@@ -28,8 +29,9 @@ describe.skipIf(!files.length)('local datasets', () => {
       const events = resolveEvents(ds, defaultSelection(ds));
       expect(events.length).toBe(ds.events.length);
       const present = ds.present ?? presentYear(ds.events);
-      for (const inc of ds.meta.increments ?? [10]) {
-        const scale = buildScale(anchorsFor(events, present), { increment: inc });
+      for (const step of ds.meta.increments ?? [10]) {
+        const inc = incrementYears(step);
+        const scale = buildScale(anchorsFor(events, present, [], undefined, inc < 1), { increment: inc, keep: inc < 1 ? keptStretches(events, present) : undefined });
         const { lanes } = layoutLanes(buildLanes(ds.tracks, {}, {}), events, scale, present);
         for (const l of lanes) {
           const byRow = new Map<number, typeof l.marks>();

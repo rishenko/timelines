@@ -29,7 +29,7 @@ describe('TrackForm phases', () => {
     expect(onSave.mock.calls[0][0].phases).toEqual(quay.phases);
   });
 
-  it('adds a phase and stores the list in date order', async () => {
+  it('adds phases and stores them in the order written, not by date', async () => {
     const onSave = open({ id: 'france', name: 'France', color: '#123456' });
     fireEvent.click(screen.getByText('+ Add a phase'));
     fireEvent.click(screen.getByText('+ Add a phase'));
@@ -45,8 +45,8 @@ describe('TrackForm phases', () => {
     fireEvent.click(screen.getByText('Save track'));
     await waitFor(() => expect(onSave).toHaveBeenCalled());
     expect(onSave.mock.calls[0][0].phases).toEqual([
-      { name: 'July Monarchy', start: 4830, end: 4848, circa: true },
       { name: 'Second Republic', start: 4848, end: 4852 },
+      { name: 'July Monarchy', start: 4830, end: 4848, circa: true },
     ]);
   });
 

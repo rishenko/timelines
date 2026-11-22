@@ -5,7 +5,8 @@ import { newProblems, nextTrackColor, slug, trackDeletion, uniqueId, upsertTrack
 import { ClaimList, ProblemList } from './ClaimList.tsx';
 import { claimsFromValues, toClaimValues, type ClaimFields, type ClaimValues } from '../lib/claims.ts';
 import { isDescendant, trackDepth } from '../lib/tracks.ts';
-import { formatYear, parseDate } from '../lib/calendar.ts';
+import { formatDate, formatYear, parseFullDate } from '../lib/calendar.ts';
+import { at0, at1, hasDayZoom } from '../lib/subYear.ts';
 import { errorProps, FieldError } from './FieldError.tsx';
 import { isSafeUrl } from '../lib/urls.ts';
 import { resolveLifespan, spanDates, spanStretches } from '../lib/lifespan.ts';
@@ -45,8 +46,8 @@ interface PhaseValues {
 
 const toPhaseValues = (p: TrackPhase, cal: Calendar): PhaseValues => ({
   name: p.name,
-  start: formatYear(p.start, cal, p.circa),
-  end: p.end === undefined ? '' : formatYear(p.end, cal, p.circa),
+  start: formatDate(p.start, p.startMonth, p.startDay, cal, p.circa),
+  end: p.end === undefined ? '' : formatDate(p.end, p.endMonth, p.endDay, cal, p.circa),
   ongoing: !!p.ongoing,
   startDates: (p.startDates ?? []).map((c) => toClaimValues(c, cal)),
   endDates: (p.endDates ?? []).map((c) => toClaimValues(c, cal)),
@@ -54,6 +55,20 @@ const toPhaseValues = (p: TrackPhase, cal: Calendar): PhaseValues => ({
   ...(p.startEvent ? { startEvent: p.startEvent } : {}),
   ...(p.endEvent ? { endEvent: p.endEvent } : {}),
 });
+
+type Typed = { year: number; month?: number; day?: number };
+
+/** A typed date's month and day onto a stretch or phase (a date typed as a year alone has none). */
+function withDays<T extends TrackSpan>(o: T, s: Typed, e: Typed | null): T {
+  if (s.month) o.startMonth = s.month;
+  if (s.day) o.startDay = s.day;
+  if (e?.month) o.endMonth = e.month;
+  if (e?.day) o.endDay = e.day;
+  return o;
+}
+
+/** Whether a typed end comes before its start (each date covers its year, month or day). */
+const endsBefore = (s: Typed, e: Typed) => at1({ start: e.year, startMonth: e.month, startDay: e.day }) <= at0({ start: s.year, startMonth: s.month, startDay: s.day });
 
 interface Props {
   /** Track being edited, or null to create one. */
@@ -89,8 +104,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       url: initial?.url ?? '',
       wikidata: initial?.ids?.wikidata ?? '',
       chronology: initial?.chronology ?? '',
-      spanStart: first ? fmt(first.start, first.circa) : '',
-      spanEnd: first?.end !== undefined ? fmt(first.end, first.circa) : '',
+      spanStart: first ? formatDate(first.start, first.startMonth, first.startDay, cal, first.circa) : '',
+      spanEnd: first?.end !== undefined ? formatDate(first.end, first.endMonth, first.endDay, cal, first.circa) : '',
       spanOngoing: !!first?.ongoing,
       pinLast: !!initial?.pinLast,
       startDates: (first?.startDates ?? []).map((c) => toClaimValues(c, cal)),
@@ -143,12 +158,12 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (v.pinLast) t.pinLast = true;
     let firstStretch: TrackSpan | undefined;
     if (v.spanStart.trim() || (!v.spanOngoing && v.spanEnd.trim())) {
-      const s = parseDate(v.spanStart, cal);
-      const e = v.spanOngoing ? null : parseDate(v.spanEnd, cal);
+      const s = parseFullDate(v.spanStart, cal);
+      const e = v.spanOngoing ? null : parseFullDate(v.spanEnd, cal);
       if (!s) return setError('spanStart', { message: `Write a year like "${example}".` }, { shouldFocus: true });
       if (!v.spanOngoing && !e) return setError('spanEnd', { message: `Write a year like "${example}", or tick "Still going".` }, { shouldFocus: true });
-      if (e && e.year < s.year) return setError('spanEnd', { message: 'The end is before the start.' }, { shouldFocus: true });
-      firstStretch = e ? { start: s.year, end: e.year } : { start: s.year, ongoing: true };
+      if (e && endsBefore(s, e)) return setError('spanEnd', { message: 'The end is before the start.' }, { shouldFocus: true });
+      firstStretch = withDays(e ? { start: s.year, end: e.year } : { start: s.year, ongoing: true }, s, e);
       if (s.circa || e?.circa) firstStretch.circa = true;
       const startDates = claimsFromValues(v.startDates, cal);
       const endDates = e ? claimsFromValues(v.endDates, cal) : undefined;
@@ -165,12 +180,12 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     const phases: TrackPhase[] = [];
     for (const [i, p] of v.phases.entries()) {
       if (!p.name.trim()) return setError(`phases.${i}.name`, { message: 'Give the phase a name.' }, { shouldFocus: true });
-      const s = parseDate(p.start, cal);
-      const e = p.ongoing ? null : parseDate(p.end, cal);
+      const s = parseFullDate(p.start, cal);
+      const e = p.ongoing ? null : parseFullDate(p.end, cal);
       if (!s) return setError(`phases.${i}.start`, { message: `Write a year like "${example}".` }, { shouldFocus: true });
       if (!p.ongoing && !e) return setError(`phases.${i}.end`, { message: `Write a year like "${example}", or tick "Still going".` }, { shouldFocus: true });
-      if (e && e.year < s.year) return setError(`phases.${i}.end`, { message: 'The end is before the start.' }, { shouldFocus: true });
-      const phase: TrackPhase = e ? { name: p.name.trim(), start: s.year, end: e.year } : { name: p.name.trim(), start: s.year, ongoing: true };
+      if (e && endsBefore(s, e)) return setError(`phases.${i}.end`, { message: 'The end is before the start.' }, { shouldFocus: true });
+      const phase: TrackPhase = withDays(e ? { name: p.name.trim(), start: s.year, end: e.year } : { name: p.name.trim(), start: s.year, ongoing: true }, s, e);
       if (s.circa || e?.circa) phase.circa = true;
       const startDates = claimsFromValues(p.startDates, cal);
       const endDates = e ? claimsFromValues(p.endDates, cal) : undefined;
@@ -181,8 +196,9 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       if (e && p.endEvent) phase.endEvent = p.endEvent;
       phases.push(phase);
     }
-    // stored in date order, whatever order they were typed in
-    if (phases.length) t.phases = phases.sort((a, b) => a.start - b.start || (a.end ?? Infinity) - (b.end ?? Infinity));
+    // kept in the order they were written: a row that groups others lists each one's phases together (the chart
+    // sorts them by date)
+    if (phases.length) t.phases = phases;
     // memberships in other rows, and category memberships (regions, peoples), aren't edited here yet: kept as they were
     if (initial?.memberOf?.length) t.memberOf = initial.memberOf;
     if (initial?.memberships?.length) t.memberships = initial.memberships;
@@ -274,9 +290,9 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
               What each source says the start and end are. The shaded ends of the lifespan show the range they give.
             </p>
             <h4>Start</h4>
-            <ClaimList name="startDates" control={control} register={register} data={data} owner="row" />
+            <ClaimList name="startDates" control={control} register={register} data={data} owner="row" days={hasDayZoom(data.meta.increments)} />
             <h4>End</h4>
-            <ClaimList name="endDates" control={control} register={register} data={data} owner="row" />
+            <ClaimList name="endDates" control={control} register={register} data={data} owner="row" days={hasDayZoom(data.meta.increments)} />
           </details>
         </fieldset>
 
@@ -403,9 +419,9 @@ function PhaseList({
               <summary>Dated claims{f.startDates.length + f.endDates.length ? ` (${f.startDates.length + f.endDates.length})` : ''}</summary>
               <p className="muted small">What each source says this phase's start and end are.</p>
               <h4>Start</h4>
-              <ClaimList name={`phases.${i}.startDates`} control={control} register={register} data={data} owner="row" />
+              <ClaimList name={`phases.${i}.startDates`} control={control} register={register} data={data} owner="row" days={hasDayZoom(data.meta.increments)} />
               <h4>End</h4>
-              <ClaimList name={`phases.${i}.endDates`} control={control} register={register} data={data} owner="row" />
+              <ClaimList name={`phases.${i}.endDates`} control={control} register={register} data={data} owner="row" days={hasDayZoom(data.meta.increments)} />
             </details>
           </div>
         );

@@ -9,9 +9,10 @@ import {
   type TimelineEvent,
 } from '../types.ts';
 import { compareEvents } from '../lib/years.ts';
+import { at0, at1, hasDayZoom } from '../lib/subYear.ts';
 import { childrenMap } from '../lib/tracks.ts';
 import { formatYear, fromStored, toStored, type EraSide } from '../lib/calendar.ts';
-import { ClaimList, EraSelect, ProblemList } from './ClaimList.tsx';
+import { ClaimList, DayFields, EraSelect, ProblemList } from './ClaimList.tsx';
 import { claimsFromValues, toClaimValues, type ClaimFields } from '../lib/claims.ts';
 import { eventChronology } from '../lib/chronology.ts';
 import { customTags, newProblems, nextTrackColor, uniqueId, upsertEvent } from '../state/edits.ts';
@@ -25,9 +26,14 @@ interface FormValues extends ClaimFields {
   descr: string;
   startYear: number;
   startEra: EraSide;
+  /** Month (1–12) and day as typed, or '' (asked only where the timeline is dated in months and days). */
+  startMonth: string;
+  startDay: string;
   hasEnd: boolean;
   endYear: number;
   endEra: EraSide;
+  endMonth: string;
+  endDay: string;
   ongoing: boolean;
   circa: boolean;
   chronology: string;
@@ -38,6 +44,9 @@ interface FormValues extends ClaimFields {
   links: EventLink[];
 }
 
+/** Whether an event's end is its start's own date (same year, month and day as given). */
+const sameDate = (e: TimelineEvent) => e.end === e.start && e.endMonth === e.startMonth && e.endDay === e.startDay;
+
 function toForm(e: TimelineEvent, cal: Calendar): FormValues {
   const s = fromStored(e.start, cal);
   const end = fromStored(e.end ?? e.start, cal);
@@ -47,9 +56,13 @@ function toForm(e: TimelineEvent, cal: Calendar): FormValues {
     descr: e.descr,
     startYear: s.year,
     startEra: s.era,
-    hasEnd: e.end !== undefined && e.end !== e.start,
+    startMonth: e.startMonth ? String(e.startMonth) : '',
+    startDay: e.startDay ? String(e.startDay) : '',
+    hasEnd: e.end !== undefined && !sameDate(e),
     endYear: end.year,
     endEra: end.era,
+    endMonth: e.endMonth ? String(e.endMonth) : '',
+    endDay: e.endDay ? String(e.endDay) : '',
     ongoing: !!e.ongoing,
     circa: !!e.circa,
     chronology: e.chronology ?? '',
@@ -73,10 +86,22 @@ function fromForm(v: FormValues, cal: Calendar): TimelineEvent {
     tracks: [...new Set(v.tracks)],
     sources: v.sources.filter((s) => s.sourceKey),
   };
+  const sm = Number(v.startMonth);
+  if (sm >= 1) {
+    e.startMonth = sm;
+    if (Number(v.startDay) >= 1) e.startDay = Number(v.startDay);
+  }
   if (v.ongoing) e.ongoing = true;
   else if (v.hasEnd) {
     const end = toStored(Number(v.endYear), v.endEra, cal);
-    if (end !== start) e.end = end;
+    const withEnd: TimelineEvent = { ...e, end };
+    const em = Number(v.endMonth);
+    if (em >= 1) {
+      withEnd.endMonth = em;
+      if (Number(v.endDay) >= 1) withEnd.endDay = Number(v.endDay);
+    }
+    // an end on the start's own date (year, or month and day) is no end; any other is kept (and checked on save)
+    if (!sameDate(withEnd)) Object.assign(e, withEnd);
   }
   if (v.circa) e.circa = true;
   if (v.chronology) e.chronology = v.chronology;
@@ -103,6 +128,8 @@ interface Props {
 
 export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrack, onCreateSource }: Props) {
   const cal = data.meta.calendar;
+  // months and days are asked for where the timeline is dated in them (or this event already is)
+  const days = hasDayZoom(data.meta.increments) || !!(initial.startMonth || initial.endMonth);
   const [newTrack, setNewTrack] = useState<{ name: string; color: string; parent: string } | null>(null);
   const [newSource, setNewSource] = useState<{ name: string; url: string } | null>(null);
   /** What saving would break (e.g. the start outside its date claims); shown above the buttons. */
@@ -184,8 +211,8 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
       setError('tracks', { message: 'Pick at least one track.' }, { shouldFocus: true });
       return;
     }
-    if (e.end !== undefined && e.end < e.start) {
-      setError('endYear', { message: 'End year is before the start year.' }, { shouldFocus: true });
+    if (e.end !== undefined && (e.end < e.start || at1(e) <= at0(e))) {
+      setError('endYear', { message: e.end < e.start ? 'End year is before the start year.' : 'The end date is before the start date.' }, { shouldFocus: true });
       return;
     }
     const found = newProblems(data, upsertEvent(data, e));
@@ -217,9 +244,10 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               {...register('startYear', { required: true, valueAsNumber: true, min: 0 })}
             />
             <EraSelect cal={cal} label="Start era" reg={register('startEra')} />
+            {days && <DayFields label="Start" month={register('startMonth')} day={register('startDay')} />}
           </div>
           <label className="check">
-            <input type="checkbox" {...register('hasEnd')} disabled={ongoing} /> Spans multiple years
+            <input type="checkbox" {...register('hasEnd')} disabled={ongoing} /> {days ? 'Has an end date' : 'Spans multiple years'}
           </label>
           <label className="check">
             <input type="checkbox" {...register('ongoing')} /> Ongoing (runs to the present)
@@ -229,6 +257,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               <label htmlFor="ev-end">End</label>
               <input id="ev-end" type="number" min={0} {...register('endYear', { valueAsNumber: true, min: 0 })} {...errorProps('ev-end', errors.endYear)} />
               <EraSelect cal={cal} label="End era" reg={register('endEra')} />
+              {days && <DayFields label="End" month={register('endMonth')} day={register('endDay')} />}
             </div>
           )}
           <FieldError id="ev-end" error={errors.endYear} />
@@ -275,11 +304,11 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
             </>
           )}
           <h4>Start</h4>
-          <ClaimList name="startDates" control={control} register={register} data={data} />
+          <ClaimList name="startDates" control={control} register={register} data={data} days={days} />
           {hasEnd && !ongoing && (
             <>
               <h4>End</h4>
-              <ClaimList name="endDates" control={control} register={register} data={data} />
+              <ClaimList name="endDates" control={control} register={register} data={data} days={days} />
             </>
           )}
         </fieldset>

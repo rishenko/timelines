@@ -12,7 +12,7 @@
  */
 
 import type { Calendar } from '../types.ts';
-import { tickFloor, ticksBetween, YEAR_ZERO_CALENDAR } from '../lib/calendar.ts';
+import { nextTick, tickFloor, ticksBetween, YEAR_ZERO_CALENDAR } from '../lib/calendar.ts';
 
 export interface Segment {
   kind: 'linear' | 'gap';
@@ -36,6 +36,8 @@ export interface ScaleOptions {
   padTicks?: number;
   /** Ticks fall on round displayed years of this calendar. Defaults to one with a year 0. */
   calendar?: Calendar;
+  /** Stretches never compressed, whatever their length (below a year's zoom: the days inside event bars). */
+  keep?: [number, number][];
 }
 
 export interface Scale {
@@ -63,14 +65,21 @@ export function buildScale(anchors: number[], opts: ScaleOptions): Scale {
 
   const pts = anchors.length ? [...anchors].sort((a, b) => a - b) : [0];
 
-  // Tick-aligned covered intervals around each anchor.
-  const cells = pts.map((a): [number, number] => {
+  // Tick-aligned covered intervals around each anchor (and each kept stretch, from its first tick to its last).
+  const cells = [...pts.map((a): [number, number] => [a, a]), ...(opts.keep ?? [])].sort((p, q) => p[0] - q[0]).map(([a, b]): [number, number] => {
     const c = tickFloor(a, inc, cal);
-    return [c - pad * inc, c + inc + pad * inc];
+    if (inc >= 1) return [c - pad * inc, tickFloor(b, inc, cal) + inc + pad * inc];
+    // below a year ticks aren't evenly spaced (months differ): step from tick to tick so the cell edges, and so the
+    // compressed gaps between cells, fall on ticks
+    let lo = c;
+    for (let i = 0; i < pad; i++) lo = tickFloor(lo - 1e-6, inc, cal);
+    let hi = nextTick(tickFloor(b, inc, cal), inc, cal);
+    for (let i = 0; i < pad; i++) hi = nextTick(hi, inc, cal);
+    return [lo, hi];
   });
 
   // Merge intervals; holes no longer than gapMinTicks stay linear.
-  const mergeSlack = compress ? gapMinTicks * inc : Infinity;
+  const mergeSlack = compress ? gapMinTicks * inc * (inc < 1 ? 1.1 : 1) : Infinity;
   const covered: [number, number][] = [];
   for (const [a, b] of cells) {
     const last = covered[covered.length - 1];

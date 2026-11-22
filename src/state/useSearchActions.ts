@@ -3,7 +3,9 @@ import { buildIndex, trackRange, type SearchEntry } from '../lib/search.ts';
 import { ancestorIds } from '../lib/tracks.ts';
 import { spanDates } from '../lib/lifespan.ts';
 import { compareEvents, formatEventDates } from '../lib/years.ts';
-import { formatYear, parseYear } from '../lib/calendar.ts';
+import { formatDate, formatYear, parseFullDate, parseYear } from '../lib/calendar.ts';
+import { endAt, startAt } from '../lib/subYear.ts';
+import type { SearchDate } from '../components/SearchBox.tsx';
 import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { isOn, type Filters } from './filters.ts';
 import type { Notify } from './toast.ts';
@@ -37,8 +39,15 @@ export function useSearchActions(o: {
     (entry: SearchEntry) => phases.get(entry.trackId)?.[Number(entry.id.split('#').pop())],
     [phases],
   );
-  const parseSearchYear = useCallback((text: string) => parseYear(text, cal), [cal]);
-  const formatSearchYear = useCallback((y: number) => formatYear(y, cal), [cal]);
+  // a year as always ("1274 BCE"), or a date given in months or days ("July 1916", "1 July 1916", "1916-07-01")
+  const parseSearchDate = useCallback((text: string): SearchDate | null => {
+    const y = parseYear(text, cal);
+    if (y !== null) return { at: y, label: formatYear(y, cal), unit: 'year' };
+    const d = parseFullDate(text, cal);
+    if (!d?.month) return null;
+    // centered on the middle of its month or day, so the view's center reads as that date
+    return { at: (startAt(d.year, d.month, d.day) + endAt(d.year, d.month, d.day)) / 2, label: formatDate(d.year, d.month, d.day, cal), unit: d.day ? 'day' : 'month' };
+  }, [cal]);
   const describeYears = useCallback(
     (entry: SearchEntry) => {
       if (entry.kind === 'event') {
@@ -107,5 +116,5 @@ export function useSearchActions(o: {
       );
   };
 
-  return { index, parseYear: parseSearchYear, formatYear: formatSearchYear, describeYears, hiddenReason, onPick };
+  return { index, parseDate: parseSearchDate, describeYears, hiddenReason, onPick };
 }

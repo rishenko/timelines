@@ -7,6 +7,8 @@
  * -5500 as 5500 BE. Use lib/calendar.ts to convert to and from display form.
  */
 
+import type { SubYearUnit } from './lib/subYear.ts';
+
 export interface Calendar {
   /** Label for years before the epoch, e.g. "BCE" or "BE". */
   before: string;
@@ -29,9 +31,12 @@ export interface TimelineMeta {
   /** Image shown beside the credits (URL, relative to the site root). */
   creditsImage?: string;
   calendar: Calendar;
-  /** Years-per-tick choices offered in the toolbar, finest first. */
-  increments: number[];
-  defaultIncrement: number;
+  /**
+   * Years-per-tick choices offered in the toolbar, finest first. Steps below a year are named: "quarter", "month",
+   * "week", "day" (lib/subYear.ts); a timeline offers them only if it lists them.
+   */
+  increments: (number | SubYearUnit)[];
+  defaultIncrement: number | SubYearUnit;
   /** Theme preset used when the reader hasn't picked one. */
   defaultTheme?: string;
   /** Tag applied to sources created in the editor (e.g. "homebrew"). */
@@ -70,7 +75,7 @@ export interface TimelineEdgeLink {
  * A date range on a track: a stretch of the lifespan of a civilization, period or faction, or a phase. It has an
  * `end`, or is `ongoing` (still going: runs to the dataset's present).
  */
-export interface TrackSpan {
+export interface TrackSpan extends DateDays {
   start: number;
   /** Last year, inclusive. Absent when `ongoing`. */
   end?: number;
@@ -207,9 +212,23 @@ export interface Chronology {
   derive?: { from: string; offset: number; until?: number };
 }
 
+/**
+ * The month and day of a start and end date, when known (1-based; a day needs a month). Without them a date is its
+ * whole year (or month). See lib/subYear.ts.
+ */
+export interface DateDays {
+  startMonth?: number;
+  startDay?: number;
+  endMonth?: number;
+  endDay?: number;
+}
+
 /** One attested value for a date: what a source says, under which chronology, with what margin. */
 export interface DateClaim {
   year: number;
+  /** The month and day the source gives, when it gives them. */
+  month?: number;
+  day?: number;
   /** ± years, as stated by the source (e.g. a radiocarbon margin). */
   margin?: number;
   chronology?: string;
@@ -227,7 +246,7 @@ export interface EventLink {
   kind: LinkKind;
 }
 
-export interface TimelineEvent {
+export interface TimelineEvent extends DateDays {
   uuid: string;
   title: string;
   descr: string;
@@ -261,7 +280,8 @@ export interface TimelineEvent {
 }
 
 export interface Dataset {
-  schemaVersion: 3;
+  /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
+  schemaVersion: 4;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest

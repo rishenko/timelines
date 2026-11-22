@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import type { Calendar } from '../types.ts';
 import { formatEventDates } from '../lib/years.ts';
-import { formatYear } from '../lib/calendar.ts';
+import { formatDate, formatYear } from '../lib/calendar.ts';
 import { isApprox, type ResolvedEvent } from '../lib/chronology.ts';
 import type { Mark } from './layout.ts';
 
@@ -31,7 +31,7 @@ export function ClusterMark({
   related,
   onClick,
 }: Common & { events: ResolvedEvent[]; related: boolean; onClick: (midYear: number) => void }) {
-  const titles = events.map((e) => `${formatYear(e.start, cal, isApprox(e))} · ${e.title}`);
+  const titles = events.map((e) => `${formatDate(e.start, e.startMonth, e.startDay, cal, isApprox(e))} · ${e.title}`);
   const years = events.map((e) => e.start);
   const mid = (Math.min(...years) + Math.max(...years)) / 2;
   return (

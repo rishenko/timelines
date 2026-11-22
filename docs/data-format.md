@@ -1,4 +1,4 @@
-# Timeline data format (schema v3)
+# Timeline data format (schema v4)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -31,11 +31,54 @@ Every year in the file is a whole number, counted with a **year 0**:
 This makes subtraction give the right number of years in every calendar. You never have to convert
 by hand if you write the file in the [readable format](#writing-dates-as-text) and compile it.
 
+### Months and days
+
+Any date may also give a month, or a month and a day: a year alone is still a complete date. Each date is a stretch
+of time, its year, month or day, so a year-only date covers its whole year exactly as it always has.
+
+| Where | Fields |
+|---|---|
+| events, lifespan stretches, phases, `memberOf` entries | `startMonth`, `startDay`, `endMonth`, `endDay` (beside `start` and `end`) |
+| date claims | `month`, `day` (beside `year`) |
+
+```json
+{ "uuid": "somme", "title": "Battle of the Somme", "start": 1916, "startMonth": 7, "startDay": 1,
+  "end": 1916, "endMonth": 11, "endDay": 18 }
+```
+
+- Months are 1–12; a day needs a month and must exist in it (leap years counted). Positions use Gregorian month
+  lengths.
+- **New Style dates from 1582.** The app doesn't convert between calendars, so every month and day from 15 October
+  1582 on is Gregorian, as most sources give them for the modern era:
+  - When a source gives both styles ("26 October [8 November] 1917"), record the Gregorian one and say so in
+    `sourceLocation` ("N.S.; O.S. 26 October").
+  - When a source gives only an Old Style (Julian) date, as for Russia before 1918, Britain and its colonies before
+    1752 and much of Protestant Europe between 1582 and 1700, convert it before recording it: add 10 days for 1582–1699
+    (from 1 March 1700 in the Julian count, 11 days; from 1 March 1800, 12; from 1 March 1900, 13), and record the
+    source's own date in the claim's `note` ("1 February 1918 O.S."). A conversion in the build script, marked `O.S.`
+    in the text date, is planned for when a timeline first needs it.
+  - Before 1582 dates are Julian everywhere; record them as the sources give them, unconverted (the proleptic
+    Gregorian difference is not wanted there), and say so in the timeline's credits.
+- **Invented calendars** use the same twelve months for now: a setting with other months can give years only, until
+  `calendar` can describe its months.
+- An end date is inclusive, like an end year: the bar runs to the end of that day (or month, or year). An event whose
+  end is its start's own date is a single date.
+- A year-only end that meets a start given in days in the same year (Weimar's "1933" and Nazi Germany's 30 January
+  1933) ends at that start: the two share one strip line. An overlap given in days takes a second line, as rival
+  phases do.
+- To show them, a timeline offers zoom steps below a year in `meta.increments`: `"quarter"`, `"month"`, `"week"`,
+  `"day"` (the ruler then labels months, or days: weeks fall on the 1st, 8th, 15th and 22nd). Zoomed out, dates in
+  months and days are drawn where they fall within their years. At zooms below a year, empty stretches still fold into
+  gap breaks, but the days inside an event bar never do.
+- Search reads "July 1916", "1 July 1916" and "1916-07-01"; the table and CSV (`start_date`, `end_date`) give full
+  dates; the editor asks for months and days where the timeline has a zoom step below a year.
+- Dating systems ([chronologies](#chronologies)) shift whole years; a month and day ride along.
+
 ## Top level
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | Always `3`. |
+| `schemaVersion` | yes | `4`. Files of version `3` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -55,14 +98,14 @@ by hand if you write the file in the [readable format](#writing-dates-as-text) a
 | `credits` | no | Footer text: credits, licences, disclaimers. |
 | `creditsImage` | no | Image beside the credits. Use a full `https://` address for timelines hosted elsewhere. |
 | `calendar` | yes | See [calendar](#calendar). |
-| `increments` | yes | Years-per-tick choices for the toolbar, finest first, e.g. `[10, 50, 100, 500]`. |
+| `increments` | yes | Years-per-tick choices for the toolbar, finest first, e.g. `[10, 50, 100, 500]`. Steps below a year are named: `"quarter"`, `"month"`, `"week"`, `"day"`, e.g. `["day", "week", "month", 1, 5, 10]` ([months and days](#months-and-days)). A step whose chart would be too wide to draw (day zoom over centuries) is disabled. |
 | `defaultIncrement` | yes | The one selected when the timeline opens; must be in `increments`. |
 | `defaultTheme` | no | `"dark"`, `"light"`, `"parchment"` or `"contrast"`. Used until the reader picks their own theme. |
 | `customSourceTag` | no | Tag id given to sources readers create in edit mode (e.g. `"homebrew"`), so others can filter them. |
 | `circaFade` | no | Years of uncertainty drawn either side of a `circa` date that has no other range. Default `0`. |
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
 | `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). The app's region filter (Filters → Regions) uses the first facet; comparison sets are planned. |
-| `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). For timelines with many rows that come and go. Default `false`. |
+| `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
 | `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
 
@@ -111,7 +154,9 @@ are left blank:
 **Worked out from phases.** A row with [phases](#tracks) and no `span` gets its lifespan from them: shaded where its
 phases are, blank in the gaps between them. A gap means the row **didn't exist** then (a state partitioned away and
 later restored). Phases that overlap, touch, or lie a year apart make one stretch, and a phase's uncertain edges count,
-so a change of government is never a gap. Type a lifespan only when it says something the phases don't:
+so a change of government is never a gap. Where the dates that meet give [months or days](#months-and-days), the
+step is a month or a day: phases ending on 4 July and starting on 18 August of one year leave a gap; ending on 4 July
+and starting on 5 July, they don't. Type a lifespan only when it says something the phases don't:
 
 - the row **carried on through a gap** between its phases (a state whose rulers for those years aren't recorded as a
   phase): type one stretch across the gap;
@@ -169,7 +214,9 @@ by its `uuid`:
 ]
 ```
 
-- The event must exist and be dated within a year of the edge (its start to its end, or to `present` if ongoing). An
+- The event must exist and be dated within a year of the edge (its start to its end, or to `present` if ongoing). When
+  the edge and the event both give a month, it must fall within a month of the edge (within a day, if the edge gives
+  a day), so a row that changes hands several times in a year can't name the wrong change. An
   ongoing stretch or phase has no `endEvent`. Name an event only when its sources say it began or ended that phase.
 - A lifespan worked out from phases takes its first phase's `startEvent` and last phase's `endEvent`.
 - The event's detail panel lists what it **ended** and **began** (row, phase or lifespan, year). The lifespan's or
@@ -201,9 +248,10 @@ optional `startEvent`/`endEvent`), with the `sources` that place the row there (
   are filled cells), with the same begin and end lines, arrow when `ongoing`, name placement and thin line when zoomed
   out as a phase. Memberships that overlap take a line each. Display only: its tooltip names both rows, the years and
   the events that began and ended it.
-- Dates are whole years, so a row that changes hands several times within one year can't be shown yet: a membership
-  that starts and ends in the same year has no width, and one that ends in the year the next starts shares its line.
-  Record such changes as events until dates can be given in months and days.
+- A row that changes hands several times within one year needs its memberships dated in
+  [months and days](#months-and-days): given in whole years, a membership that starts and ends in the same year
+  covers that whole year, and one that ends in the year the next starts shares its line. Contested days, when two
+  rows held it at once, are two memberships that overlap.
 - The union's row lists its members with their years: in the tooltips of its name and lifespan, and in the table
   view's rows table ("Members (3): …"), which also lists each row's memberships with their sources. The event panel's
   "Began and ended" includes memberships that name the event.
@@ -319,6 +367,7 @@ a **date claim**:
 | Field | Required | What |
 |---|---|---|
 | `year` | yes | Stored year the source gives. |
+| `month`, `day` | no | The month and day the source gives, if it gives them ([months and days](#months-and-days)). |
 | `margin` | no | ± years, if the source states one. A range such as "1627–1600" is a year of 1614 with margin 14. |
 | `chronology` | no | The dating system this value belongs to. |
 | `source` | no | Where it comes from. Strongly recommended. |
@@ -328,7 +377,9 @@ a **date claim**:
 `year + margin`, adds any values [derived from another chronology](#chronologies), and includes the best
 estimate itself (± `circaFade` if `circa` is set). The range runs from the earliest to the latest of
 these. If they all agree, there's no range and the date is drawn sharp. Margins are never typed
-directly onto a date; they come only from claims.
+directly onto a date; they come only from claims. When the best estimate and every claim give a month (and none has a
+margin or another dating system), the range runs in months or days instead: from the earliest date to the latest
+(Stalingrad began on 17 July or 23 August 1942).
 
 **How it's drawn.** A bar covers the full range. Its start and end ranges are a lighter tint of the row
 color, and the part between them (the latest possible start to the earliest possible end) is the normal
@@ -365,10 +416,13 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 3.
+- The required fields above are present; `schemaVersion` is 4, or 3 (lifted to 4 when loaded).
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
-- `defaultIncrement` is one of `increments`, which are positive whole numbers.
-- Every year is a whole number; an `end` is not before its `start`, for events, lifespans and phases.
+- `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
+  `"day"`.
+- Every year is a whole number; an `end` is not before its `start`, for events, lifespans and phases (compared on full
+  dates where months and days are given). A month is 1–12; a day has a month and exists in it; an end month or day
+  has an end year.
 - A lifespan stretch or phase has an `end` or `"ongoing": true`, not both. A lifespan given as a list has at least one
   stretch, in date order, without overlaps; only the last can be ongoing. A typed lifespan contains all of the row's
   phases.
@@ -379,8 +433,8 @@ A file that breaks any of these is refused, with a message naming the problem.
 - A derived chronology derives from one in the same group, by a whole number of years.
 - Margins are zero or more. Each best estimate lies within the range of its own claims.
 - `endDates` only appear on events, stretches and phases that have an `end`. Events don't link to themselves.
-- A `startEvent` or `endEvent` names an existing event dated within a year of that edge; an ongoing stretch, phase or
-  membership has no `endEvent`.
+- A `startEvent` or `endEvent` names an existing event dated within a year of that edge (within a month or a day when
+  both give them); an ongoing stretch, phase or membership has no `endEvent`.
 - A `memberOf` entry names an existing row other than the row itself or its sub-rows, is dated like a phase, lies
   within both rows' lifespans (best estimates), and cites at least one known source.
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
@@ -470,6 +524,21 @@ node scripts/build-dataset.ts data-src/my-timeline.json public/timelines/my-time
 ```
 
 Text dates are accepted for `start`, `end`, claim `year` and `derive.until`, on each stretch of a lifespan list and
-each `memberOf` entry too. A "c." on a start sets `circa`. Era labels and their `aliases` come from the file's own
+each `memberOf` entry too. A "c." on a start sets `circa`. `start`, `end` and claim `year` may give a month and day:
+`"28 June 1914"`, `"June 1914"`, `"Sept 1916"` (three letters or more), `"c. July 1916"`, `"15 March 44 BCE"`, or
+`"1914-06-28"` (an ISO date; its year is the stored year, so `-0043-03-15` is 44 BCE). They compile to the
+[month and day fields](#months-and-days). Era labels and their `aliases` come from the file's own
 calendar. Numbers pass through unchanged. `data-src/ancient-classical.json` is a full example.
 
+## Versions
+
+The app writes the current version and reads older ones, lifting them step by step when a file is loaded, uploaded,
+fetched from a link, restored from the library or compiled (`src/data/migrate.ts`). An older app given a newer file
+says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
+
+| Version | What changed |
+|---|---|
+| 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
+| 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |
+
+A new version adds a step to `migrate.ts` (with a test), a row here, and bumps `SCHEMA_VERSION`.

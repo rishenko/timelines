@@ -2,7 +2,7 @@ import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRe
 import type { Dataset } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
-import { anchorsFor } from './anchors.ts';
+import { anchorsFor, keptStretches } from './anchors.ts';
 import { buildLanes, layoutLanes, layoutPhaseStrips, placeMemberships, placePhases, type Mark } from './layout.ts';
 import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
 import { mergeStretches } from '../lib/lifespan.ts';
@@ -200,7 +200,13 @@ export function TimelineView(props: Props) {
     return out;
   }, [allLanes, spans, phases, memberOf]);
   const scale = useMemo(
-    () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
+    () =>
+      buildScale(anchorsFor(events, present, laneSpans, data.meta.range, increment < 1), {
+        increment,
+        compress,
+        calendar: cal,
+        keep: increment < 1 ? keptStretches(events, present, data.meta.range) : undefined,
+      }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
   // a folded row's background is one lifespan: when it or any row folded into it existed, in its own colour (its

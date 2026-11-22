@@ -1,5 +1,6 @@
 // The guided tour's steps (components/Tour.tsx draws them): what each step says and which element it points at.
 import type { Dataset } from '../types.ts';
+import { hasDayZoom } from './subYear.ts';
 
 export interface TourStep {
   /** CSS selector of the element the step points at; none for a centered card. */
@@ -15,6 +16,7 @@ export interface TourStep {
  * the timeline uses get a step (no Dating step without alternative chronologies, …).
  */
 export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: boolean }): TourStep[] {
+  const days = hasDayZoom(data.meta.increments);
   const steps: (TourStep | false)[] = [
     {
       title: `Welcome to ${data.meta.title}`,
@@ -78,9 +80,10 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
       text: 'Scholars date some regions differently. Dating switches a region to another chronology, and its events move to match.',
     },
     {
-      target: '[aria-label="Years per tick"]',
+      // the zoom group is named "Zoom: time per tick" on a timeline with steps below a year (components/Toolbar.tsx)
+      target: days ? '[aria-label="Zoom: time per tick"]' : '[aria-label="Years per tick"]',
       title: 'Zoom and move',
-      text: 'Pick how many years each tick of the ruler covers. Scroll or drag sideways to move through time; on a touch screen, pinch to zoom. When rows are about to come or go as you move, or a change is still being drawn, a spinning ring shows in the chart’s top-right corner until it is done.',
+      text: `${days ? 'Pick how much time each tick of the ruler covers, from years down to months, weeks or days: zoomed in, a date given as a year alone spans its whole year.' : 'Pick how many years each tick of the ruler covers.'} Scroll or drag sideways to move through time; on a touch screen, pinch to zoom. When rows are about to come or go as you move, or a change is still being drawn, a spinning ring shows in the chart’s top-right corner until it is done.`,
     },
     o.hasSubRows && {
       target: '[aria-label="Rows"]',

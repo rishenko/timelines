@@ -20,7 +20,7 @@ const src = { sourceKey: 'wp', sourceLocation: '' };
 
 function fixture(events: TimelineEvent[]): Dataset {
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     meta: { id: 't', title: 'T', calendar: BCE_CE, increments: [100], defaultIncrement: 100, circaFade: 25 },
     tracks: [
       { id: 'meso', name: 'Mesopotamia', color: '#000', chronology: 'middle' },
@@ -155,7 +155,7 @@ describe('approximate dates', () => {
   });
   it('a resolved lifespan or phase keeps its circa flag, so both its ends read "c."', () => {
     const ds: Dataset = {
-      schemaVersion: 3,
+      schemaVersion: 4,
       meta: { id: 't', title: 'T', calendar: BCE_CE, increments: [10], defaultIncrement: 10 },
       tracks: [{ id: 'r', name: 'R', color: '#888' }],
       sources: {},

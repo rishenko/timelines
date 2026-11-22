@@ -1,5 +1,6 @@
 import type { Calendar } from '../types.ts';
-import { formatYear, isMajorTick } from '../lib/calendar.ts';
+import { formatYear, isMajorTick, tickLabel } from '../lib/calendar.ts';
+import { gapLength, incrementLabel } from '../lib/subYear.ts';
 import type { Scale, Segment } from './scale.ts';
 
 /** A link to a neighbouring timeline (meta.continues), drawn on the ruler at the year where the two meet. */
@@ -37,6 +38,10 @@ interface Props {
 const hiddenLabel = (n: number) => (n === 0 ? 'No rows hidden' : `${n} ${n === 1 ? 'row' : 'rows'} hidden`);
 
 export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hiddenRows, onShowAllRows, ticks, gapStarts, gaps, era, edgeLinks }: Props) {
+  // below a year, the tick after a compressed gap gives its whole date: the month or year may have changed in the gap
+  const gapEnds = increment < 1 ? new Set(gaps.map((g) => g.y1)) : undefined;
+  // at week and day zoom that whole date is wider than a tick: the next tick's label is left out to make room
+  const crowded = new Set(increment < 1 / 13 ? ticks.filter((_, i) => i > 0 && gapEnds!.has(ticks[i - 1])) : []);
   return (
     <div className="tl-ruler" style={{ width }}>
       <div className="tl-corner" style={{ width: labelW }}>
@@ -55,7 +60,7 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
             </button>
           )}
         </div>
-        <small>{increment} yr / tick</small>
+        <small>{incrementLabel(increment)} / tick</small>
         {keyEventsOnly && (
           <small className="key-only" title="At the widest zoom only key events are drawn; zoom in to see them all">
             Key events only
@@ -69,12 +74,15 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
           aria-hidden="true"
           style={{ left: labelW + scale.x(t) }}
         >
-          {!gapStarts.has(t) && <span>{formatYear(t, cal)}</span>}
+          {!gapStarts.has(t) && !crowded.has(t) && <span>{tickLabel(t, increment, cal, gapEnds?.has(t))}</span>}
         </div>
       ))}
       {gaps.map((g) => (
         <div key={g.y0} className="tl-gap-label" style={{ left: labelW + g.x0, width: g.x1 - g.x0 }}>
-          <span title={`${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)} compressed`}>{g.y1 - g.y0} yrs</span>
+          <span title={`${increment < 1 ? `${tickLabel(g.y0, increment, cal, true)} – ${tickLabel(g.y1, increment, cal, true)}` : `${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)}`} compressed`}>
+            {/* whole years exactly as before ("N yrs" as two text nodes, which the browser shapes differently from one) */}
+            {Number.isInteger(g.y1 - g.y0) ? <>{g.y1 - g.y0} yrs</> : gapLength(g.y0, g.y1)}
+          </span>
         </div>
       ))}
       {edgeLinks?.map((l) => (

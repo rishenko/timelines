@@ -1,3 +1,4 @@
+import { incrementButton, incrementName } from '../lib/subYear.ts';
 import type { ReactNode } from 'react';
 import type { PanelName } from '../state/panels.ts';
 import type { View } from '../state/url.ts';
@@ -9,6 +10,8 @@ interface Props {
   view: View;
   onView: (v: View) => void;
   increments: number[];
+  /** Zoom steps too wide to draw for this timeline (shown, but disabled). */
+  tooWide?: Set<number>;
   increment: number;
   onIncrement: (inc: number) => void;
   /** The Dating button and its panel (DatingMenu). */
@@ -69,19 +72,20 @@ export function Toolbar(p: Props) {
       {p.dating}
       {p.view === 'timeline' && (
         <>
-          <div className="group" role="group" aria-label="Years per tick">
+          <div className="group" role="group" aria-label={p.increments.some((i) => i < 1) ? 'Zoom: time per tick' : 'Years per tick'}>
             {p.increments.map((inc) => (
               // numbers only, to keep the toolbar on one row; the unit is in the ruler corner ("500 yr / tick"), the
               // tooltip and the accessible name
               <button
                 key={inc}
                 className={`seg ${p.increment === inc ? 'on' : ''}`}
-                aria-label={`${inc} years per tick`}
+                aria-label={incrementName(inc)}
                 aria-pressed={p.increment === inc}
-                title={`${inc} years per tick`}
+                disabled={p.tooWide?.has(inc)}
+                title={p.tooWide?.has(inc) ? `${incrementName(inc)} (too wide to draw for this timeline)` : incrementName(inc)}
                 onClick={() => p.onIncrement(inc)}
               >
-                {inc}
+                {incrementButton(inc)}
               </button>
             ))}
           </div>

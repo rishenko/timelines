@@ -1,4 +1,5 @@
-import type { Calendar, Dataset, RowMembership, SourceRef, Track } from '../types.ts';
+import type { Calendar, Dataset, DateDays, RowMembership, SourceRef, Track } from '../types.ts';
+import { hasDays, monthShort } from './subYear.ts';
 import { resolveSpan, type ChronologySelection, type ResolvedSpan } from './chronology.ts';
 import { fromStored, formatYear } from './calendar.ts';
 import { mergeStretches, spanStretches, stretchEnd } from './lifespan.ts';
@@ -51,8 +52,9 @@ export function membersByUnion(memberships: Map<string, ResolvedMembership[]>): 
  * A membership's years, short: "1922–91" (the end's century left out when both share it), "1517–1914",
  * "c. 2400 BCE–2200 BCE", "since 1991" when it is still going.
  */
-export function shortYears(s: { start: number; end: number; ongoing?: boolean }, cal: Calendar, approx = false): string {
+export function shortYears(s: { start: number; end: number; ongoing?: boolean } & DateDays, cal: Calendar, approx = false): string {
   const c = approx ? 'c. ' : '';
+  if (hasDays(s)) return shortDates(s, cal, c);
   const a = fromStored(s.start, cal);
   if (s.ongoing) return `since ${c}${a.era === 'after' ? a.year : formatYear(s.start, cal)}`;
   const b = fromStored(s.end, cal);
@@ -62,6 +64,23 @@ export function shortYears(s: { start: number; end: number; ongoing?: boolean },
     return `${c}${a.year}–${sameCentury ? String(b.year).slice(-2) : b.year}`;
   }
   return `${c}${formatYear(s.start, cal)}–${formatYear(s.end, cal)}`;
+}
+
+/**
+ * A stretch given in months or days, short: "3 Mar–14 Jun 3080", "Mar 3080–Feb 3081", "since 3 Mar 3080"; the year
+ * once when both ends share it.
+ */
+function shortDates(s: { start: number; end: number; ongoing?: boolean } & DateDays, cal: Calendar, c: string): string {
+  const year = (y: number) => {
+    const d = fromStored(y, cal);
+    return d.era === 'after' ? String(d.year) : formatYear(y, cal);
+  };
+  const part = (m?: number, d?: number) => (m ? `${d ? `${d} ` : ''}${monthShort(m)}` : '');
+  const a = part(s.startMonth, s.startDay);
+  if (s.ongoing) return `since ${c}${a ? `${a} ` : ''}${year(s.start)}`;
+  const b = part(s.endMonth, s.endDay);
+  if (s.start === s.end && a && b) return `${c}${a}–${b} ${year(s.end)}`;
+  return `${c}${a ? `${a} ` : ''}${year(s.start)}–${b ? `${b} ` : ''}${year(s.end)}`;
 }
 
 /** The name a membership's strip shows: "in Soviet Union, 1922–91". */

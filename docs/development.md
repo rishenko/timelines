@@ -30,13 +30,26 @@ SNAP_OUT=after.txt npm run dom-snapshot    # after it
 cmp before.txt after.txt                   # no output: nothing visible changed
 ```
 
+Markup can match while pixels don't (one text node or two shape a label differently), so compare screenshots too.
+`npm run zoom-shots` screenshots a timeline at each of its zoom steps, at a few center years, with rows as they open
+and with every row expanded, and diffs them pixel by pixel against an earlier set (writing a `.diff.png` beside each
+shot that differs). Serve the old code and the new on two ports (a `git worktree` of `main` for the old):
+
+```sh
+npm run zoom-shots -- --url http://localhost:4323/ --out shots/before                          # old code
+npm run zoom-shots -- --url http://localhost:4324/ --out shots/after --compare shots/before    # new code
+```
+
+`--timeline <id>` picks the timeline (bundled, or from the folders in `TIMELINES_LOCAL_DATA`), `--at "-3000|-500|300"`
+the center years and `--inc "10|50"` the zoom steps. Local timelines may change while you work: diff a frozen copy.
+
 ## Code map
 
 | Path | What |
 |---|---|
 | `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
 | `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` and `?collection=<url>` links, update checks for timelines from links, the reader's own timelines, the welcome page |
-| `src/types.ts` | The schema v3 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
+| `src/types.ts` | The schema v4 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
 | `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
 | `src/data/` | The validator, and row proximity checks for the included timelines (`proximity.ts`) |
 | `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks |
