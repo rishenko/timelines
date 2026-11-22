@@ -721,7 +721,7 @@
  * Unrelated events step back while one is selected: their marks fade, but their labels only turn muted, so they stay
  * readable (4.5:1 on the row bands too) and can still be clicked.
  */
-.has-focus .tl-mark:not(.related) > :not(.label) {
+.has-focus .tl-mark:not(.related) > :not(.label, .key-name) {
   opacity: 0.28;
 }
 .has-focus .tl-mark:not(.related) .label,

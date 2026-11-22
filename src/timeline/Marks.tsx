@@ -19,7 +19,8 @@ interface Common {
   onStopFocus: (key: string) => void;
 }
 
-/** A "+N" badge for events that didn't fit in a crowded lane. Clicking zooms in on them (or shows the lane in full). */
+/** A "+N" badge for events that didn't fit in a crowded lane. Clicking zooms in on them (or shows the lane in full).
+ * When it holds a key event it names the earliest one ("Second World War +3"), so a headline event never hides. */
 export function ClusterMark({
   mark: m,
   laneTop,
@@ -31,21 +32,32 @@ export function ClusterMark({
   related,
   onClick,
 }: Common & { events: ResolvedEvent[]; related: boolean; onClick: (midYear: number) => void }) {
-  const titles = events.map((e) => `${formatDate(e.start, e.startMonth, e.startDay, cal, isApprox(e))} · ${e.title}`);
+  const line = (e: ResolvedEvent) => `${formatDate(e.start, e.startMonth, e.startDay, cal, isApprox(e))} · ${e.title}`;
+  const keys = events.filter((e) => e.importance === 1);
+  // key events head the tooltip's list, so a reader sees what matters before what was folded for space
+  const titles = [...keys.map((e) => `${line(e)} (key event)`), ...events.filter((e) => e.importance !== 1).map(line)];
   const years = events.map((e) => e.start);
   const mid = (Math.min(...years) + Math.max(...years)) / 2;
+  const named = m.keyEventId ? events.find((e) => e.uuid === m.keyEventId) : undefined;
+  const span = `${formatYear(Math.min(...years), cal)} to ${formatYear(Math.max(...years), cal)}`;
+  // the name starts with the pill's visible text (WCAG 2.5.3), then says what the rest are
+  const others = keys.filter((e) => e !== named).map((e) => e.title);
+  const label = named
+    ? `${named.title} +${events.length - 1}: a key event and ${events.length - 1} more, ${span}${others.length ? `; also key: ${others.join(', ')}` : ''}; zoom in`
+    : `${events.length} more events, ${span}; zoom in`;
   return (
     <button
-      className={`tl-mark cluster ${related ? 'related' : ''}`}
+      className={`tl-mark cluster ${named ? 'has-key' : ''} ${related ? 'related' : ''}`}
       style={{ left: labelW + m.x0 - POINT_HALF, top: m.cy - laneTop - MARK_H / 2 }}
       title={`${events.length} more events (click to zoom in):\n${titles.join('\n')}`}
-      aria-label={`${events.length} more events, ${formatYear(Math.min(...years), cal)} to ${formatYear(Math.max(...years), cal)}; zoom in`}
+      aria-label={label}
       data-stop={m.key}
       tabIndex={isTabStop ? 0 : -1}
       onFocus={() => onStopFocus(m.key)}
       onClick={() => onClick(mid)}
     >
-      +{events.length}
+      {named && <span className="key-name">{named.title}</span>}
+      {named ? `+${events.length - 1}` : `+${events.length}`}
     </button>
   );
 }
