@@ -434,7 +434,19 @@
     "range": {
       "start": 650,
       "end": 1500
-    }
+    },
+    "continues": [
+      {
+        "timeline": "ancient-classical",
+        "at": 650,
+        "side": "before"
+      },
+      {
+        "timeline": "modern-states",
+        "at": 1500,
+        "side": "after"
+      }
+    ]
   },
   "present": 2026,
   "tracks": [
@@ -18041,14 +18053,6 @@
         "wikipedia"
       ]
     },
-    "wp-lombards": {
-      "name": "Wikipedia: Kingdom of the Lombards",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-cividale-del-friuli": {
       "name": "Wikipedia: Cividale del Friuli",
       "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
@@ -18056,6 +18060,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-lombards": {
+      "name": "Wikipedia: Kingdom of the Lombards",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-kingdom-of-the-lombards": {
       "name": "Kingdom of the Lombards (Wikipedia)",
@@ -18313,14 +18325,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anglo-saxons": {
-      "name": "Wikipedia: History of Anglo-Saxon England",
-      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-roman-britain": {
       "name": "Wikipedia: Roman Britain",
       "url": "https://en.wikipedia.org/wiki/Roman_Britain",
@@ -18328,6 +18332,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anglo-saxons": {
+      "name": "Wikipedia: History of Anglo-Saxon England",
+      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-history-of-anglo-saxon-england": {
       "name": "History of Anglo-Saxon England (Wikipedia)",
@@ -18529,17 +18541,17 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -18849,14 +18861,6 @@
         "wikipedia"
       ]
     },
-    "wp-garamantes": {
-      "name": "Wikipedia: Garamantes",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-17"
-    },
     "wp-garamantes-classical": {
       "name": "Wikipedia: Garamantes",
       "url": "https://en.wikipedia.org/wiki/Garamantes",
@@ -18864,6 +18868,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-garamantes": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
     },
     "wp-rustamid-dynasty": {
       "name": "Rustamid dynasty (Wikipedia)",
@@ -19017,14 +19029,6 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-eastern-turkic": {
-      "name": "Wikipedia: Eastern Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-navekat": {
       "name": "Wikipedia: Navekat",
       "url": "https://en.wikipedia.org/wiki/Navekat",
@@ -19032,6 +19036,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-eastern-turkic": {
+      "name": "Wikipedia: Eastern Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-t-rgesh": {
       "name": "Türgesh (Wikipedia)",
@@ -19201,14 +19213,6 @@
         "wikipedia"
       ]
     },
-    "wp-sagala": {
-      "name": "Wikipedia: Sagala",
-      "url": "https://en.wikipedia.org/wiki/Sagala",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-alchon": {
       "name": "Wikipedia: Alchon Huns",
       "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
@@ -19216,6 +19220,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-sagala": {
+      "name": "Wikipedia: Sagala",
+      "url": "https://en.wikipedia.org/wiki/Sagala",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-karkota-dynasty": {
       "name": "Karkota dynasty (Wikipedia)",
@@ -19473,14 +19485,6 @@
         "wikipedia"
       ]
     },
-    "wp-kanchipuram": {
-      "name": "Wikipedia: Kanchipuram",
-      "url": "https://en.wikipedia.org/wiki/Kanchipuram",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-pallava": {
       "name": "Wikipedia: Pallava dynasty",
       "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
@@ -19488,6 +19492,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-kanchipuram": {
+      "name": "Wikipedia: Kanchipuram",
+      "url": "https://en.wikipedia.org/wiki/Kanchipuram",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-chola-empire": {
       "name": "Chola Empire (Wikipedia)",
@@ -19521,14 +19533,6 @@
         "wikipedia"
       ]
     },
-    "wp-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-row-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
@@ -19536,6 +19540,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -19673,17 +19685,17 @@
         "wikipedia"
       ]
     },
-    "wp-tibet-history": {
-      "name": "Wikipedia: History of Tibet",
-      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+    "wp-yarlung": {
+      "name": "Wikipedia: Yarlung dynasty",
+      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-yarlung": {
-      "name": "Wikipedia: Yarlung dynasty",
-      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
       "tags": [
         "wikipedia"
       ],
@@ -20402,17 +20414,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-monte-alban": {
-      "name": "Wikipedia: Monte Albán",
-      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
+    "wp-zapotec": {
+      "name": "Wikipedia: Zapotec civilization",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-zapotec": {
-      "name": "Wikipedia: Zapotec civilization",
-      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
+    "wp-monte-alban": {
+      "name": "Wikipedia: Monte Albán",
+      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
       "tags": [
         "wikipedia"
       ],
@@ -20538,17 +20550,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-nazca-lines": {
-      "name": "Wikipedia: Nazca Lines",
-      "url": "https://en.wikipedia.org/wiki/Nazca_Lines",
+    "wp-nazca": {
+      "name": "Wikipedia: Nazca culture",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-nazca": {
-      "name": "Wikipedia: Nazca culture",
-      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
+    "wp-nazca-lines": {
+      "name": "Wikipedia: Nazca Lines",
+      "url": "https://en.wikipedia.org/wiki/Nazca_Lines",
       "tags": [
         "wikipedia"
       ],
