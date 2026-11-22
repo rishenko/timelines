@@ -18485,17 +18485,17 @@
         "wikipedia"
       ]
     },
-    "wp-revolutionary-serbia": {
-      "name": "Revolutionary Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+    "wp-principality-of-serbia": {
+      "name": "Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-principality-of-serbia": {
-      "name": "Principality of Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -18861,14 +18861,6 @@
         "wikipedia"
       ]
     },
-    "wp-garamantes-classical": {
-      "name": "Wikipedia: Garamantes",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-garamantes": {
       "name": "Wikipedia: Garamantes",
       "url": "https://en.wikipedia.org/wiki/Garamantes",
@@ -18876,6 +18868,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-17"
+    },
+    "wp-garamantes-classical": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-rustamid-dynasty": {
       "name": "Rustamid dynasty (Wikipedia)",
@@ -18965,17 +18965,17 @@
         "wikipedia"
       ]
     },
-    "wp-ottoman-egypt": {
-      "name": "Ottoman Egypt (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ottoman_Egypt",
+    "wp-egypt": {
+      "name": "Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Egypt",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-egypt": {
-      "name": "Egypt (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Egypt",
+    "wp-ottoman-egypt": {
+      "name": "Ottoman Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ottoman_Egypt",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -19021,9 +19021,9 @@
         "wikipedia"
       ]
     },
-    "wp-western-turkic": {
-      "name": "Wikipedia: Western Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+    "wp-eastern-turkic": {
+      "name": "Wikipedia: Eastern Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
@@ -19037,9 +19037,9 @@
       ],
       "accessed": "2026-11-20"
     },
-    "wp-eastern-turkic": {
-      "name": "Wikipedia: Eastern Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+    "wp-western-turkic": {
+      "name": "Wikipedia: Western Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
@@ -19485,14 +19485,6 @@
         "wikipedia"
       ]
     },
-    "wp-pallava": {
-      "name": "Wikipedia: Pallava dynasty",
-      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-kanchipuram": {
       "name": "Wikipedia: Kanchipuram",
       "url": "https://en.wikipedia.org/wiki/Kanchipuram",
@@ -19500,6 +19492,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-pallava": {
+      "name": "Wikipedia: Pallava dynasty",
+      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-chola-empire": {
       "name": "Chola Empire (Wikipedia)",
@@ -19533,14 +19533,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
@@ -19548,6 +19540,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -19685,14 +19685,6 @@
         "wikipedia"
       ]
     },
-    "wp-yarlung": {
-      "name": "Wikipedia: Yarlung dynasty",
-      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-tibet-history": {
       "name": "Wikipedia: History of Tibet",
       "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
@@ -19709,9 +19701,9 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-tuyuhun": {
-      "name": "Wikipedia: Tuyuhun",
-      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+    "wp-yarlung": {
+      "name": "Wikipedia: Yarlung dynasty",
+      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
       "tags": [
         "wikipedia"
       ],
@@ -19724,6 +19716,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-tuyuhun": {
+      "name": "Wikipedia: Tuyuhun",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-tibet-under-yuan-rule": {
       "name": "Tibet under Yuan rule (Wikipedia)",
@@ -20021,14 +20021,6 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-sa-huynh-classical": {
-      "name": "Wikipedia: Sa Huỳnh culture",
-      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-kalanay": {
       "name": "Wikipedia: Kalanay Cave",
       "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
@@ -20040,6 +20032,14 @@
     "wp-prehistory-taiwan": {
       "name": "Wikipedia: Prehistory of Taiwan",
       "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-sa-huynh-classical": {
+      "name": "Wikipedia: Sa Huỳnh culture",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
       "tags": [
         "wikipedia"
       ],
@@ -20262,17 +20262,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-savanna-pn": {
-      "name": "Wikipedia: Savanna Pastoral Neolithic",
-      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
+    "wp-pastoral-neolithic": {
+      "name": "Wikipedia: Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-pastoral-neolithic": {
-      "name": "Wikipedia: Pastoral Neolithic",
-      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
+    "wp-savanna-pn": {
+      "name": "Wikipedia: Savanna Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
       "tags": [
         "wikipedia"
       ],
@@ -20414,17 +20414,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-zapotec": {
-      "name": "Wikipedia: Zapotec civilization",
-      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
+    "wp-monte-alban": {
+      "name": "Wikipedia: Monte Albán",
+      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-monte-alban": {
-      "name": "Wikipedia: Monte Albán",
-      "url": "https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n",
+    "wp-zapotec": {
+      "name": "Wikipedia: Zapotec civilization",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization",
       "tags": [
         "wikipedia"
       ],
@@ -20734,17 +20734,17 @@
         "wikipedia"
       ]
     },
-    "wp-oman": {
-      "name": "Oman (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Oman",
+    "wp-imamate-of-oman": {
+      "name": "Imamate of Oman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Imamate_of_Oman",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-imamate-of-oman": {
-      "name": "Imamate of Oman (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Imamate_of_Oman",
+    "wp-oman": {
+      "name": "Oman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oman",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
