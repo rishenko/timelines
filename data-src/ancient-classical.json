@@ -211,10 +211,12 @@
           "siege": { "name": "Siege", "broader": ["conflict"] },
           "invasion": { "name": "Invasion or campaign", "broader": ["conflict"] },
           "atrocity": { "name": "Massacre or genocide", "broader": ["conflict"] },
+          "attack": { "name": "Attack, ambush or raid", "broader": ["conflict"] },
           "unrest": { "name": "Revolts" },
           "revolt": { "name": "Revolt", "broader": ["unrest"] },
           "revolution": { "name": "Revolution", "broader": ["unrest"] },
           "civil-war": { "name": "Civil war", "broader": ["unrest"] },
+          "repression": { "name": "Arrests and repression", "broader": ["unrest"] },
           "diplomacy": { "name": "Diplomacy" },
           "treaty": { "name": "Treaty", "broader": ["diplomacy"] },
           "alliance": { "name": "Alliance or bloc", "broader": ["diplomacy"] },
@@ -13015,7 +13017,8 @@
         { "year": "2004 BCE", "chronology": "middle", "source": { "sourceKey": "wp-ur3", "sourceLocation": "lead ('destroyed around 2004 BC')" } },
         { "year": "1940 BCE", "chronology": "low", "source": { "sourceKey": "wp-ur3", "sourceLocation": "lead (low chronology end of Ur III)" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-ur3", "sourceLocation": "lead; The Fall of Ur" }] }]
     },
     {
       "uuid": "sumu-abum",
@@ -13170,7 +13173,7 @@
       "tracks": ["anatolia"],
       "descr": "A burnt layer at Hattusa is credited to Anitta, who cursed anyone who would resettle the site. The Hittite kings later made it their capital.",
       "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History ('around 1700 BC')" }],
-      "memberships": [{ "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History ('around 1700 BC')" }] }]
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History ('around 1700 BC')" }] }]
     },
     {
       "uuid": "hattusili-i",
@@ -13213,6 +13216,11 @@
         {
           "facet": "category",
           "value": "site",
+          "sources": [{ "sourceKey": "wp-hattusili1", "sourceLocation": "Reign (Yener 2021, p. 579, middle chronology)" }]
+        },
+        {
+          "facet": "category",
+          "value": "sack",
           "sources": [{ "sourceKey": "wp-hattusili1", "sourceLocation": "Reign (Yener 2021, p. 579, middle chronology)" }]
         }
       ]
@@ -13461,7 +13469,14 @@
       "chronology": "shaw",
       "descr": "Ramesses II marries Ḫattušili III's daughter Maathorneferure in his 34th year.",
       "sources": [{ "sourceKey": "wp-hittite-kings", "sourceLocation": "New kingdom ('1246 BC (Year 34)'; Bryce 2005)" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "alliance",
+          "sources": [{ "sourceKey": "wp-hittite-kings", "sourceLocation": "New kingdom ('1246 BC (Year 34)'; Bryce 2005)" }]
+        }
+      ]
     },
     {
       "uuid": "tudhaliya-iv",
@@ -13544,7 +13559,7 @@
       "importance": 1,
       "memberships": [
         { "facet": "category", "value": "territory", "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History; infobox" }] },
-        { "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History; infobox" }] }
+        { "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-hattusa", "sourceLocation": "History; infobox" }] }
       ]
     },
     {
@@ -13562,6 +13577,13 @@
         { "year": "1180 BCE", "source": { "sourceKey": "wp-hattusa", "sourceLocation": "infobox (end of Hattusa, after which the states arose)" } },
         { "year": "1200 BCE", "source": { "sourceKey": "wp-neo-hittite", "sourceLocation": "'12th century BCE' (start of the century)" } },
         { "year": "1101 BCE", "source": { "sourceKey": "wp-neo-hittite", "sourceLocation": "'12th century BCE' (end of the century)" } }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [{ "sourceKey": "wp-neo-hittite", "sourceLocation": "Late Bronze Age – Early Iron Age transition ('12th century BCE')" }]
+        }
       ]
     },
     {
@@ -13575,7 +13597,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "sack",
           "sources": [{ "sourceKey": "wp-troy", "sourceLocation": "Troy VI (Jablonka 2011; Bryce 2006, pp. 64–66)" }]
         }
       ]
@@ -13591,7 +13613,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "sack",
           "sources": [{ "sourceKey": "wp-troy", "sourceLocation": "Troy VIIa (Jablonka 2011, 2012; Bryce 2006, p. 59)" }]
         }
       ]
@@ -13648,7 +13670,8 @@
       "endDates": [
         { "year": "2649 BCE", "source": { "sourceKey": "wp-old-kingdom", "sourceLocation": "infobox" } },
         { "year": "2625 BCE", "source": { "sourceKey": "wp-old-kingdom", "sourceLocation": "'sometime between 2691 and 2625 BC'" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-old-kingdom", "sourceLocation": "Rise of the Old Kingdom" }] }]
     },
     {
       "uuid": "khufu",
@@ -13695,7 +13718,14 @@
           "source": { "sourceKey": "hornung-2006", "sourceLocation": "via Wikipedia: Khufu, infobox note 'Proposed dates' ('2509–2483 BC (26 years)')" }
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [{ "sourceKey": "wp-old-kingdom", "sourceLocation": "Height of the Old Kingdom ('Khufu (2589–2566 BC)')" }]
+        }
+      ]
     },
     {
       "uuid": "mentuhotep-ii",
@@ -13904,7 +13934,14 @@
         { "sourceKey": "wp-new-kingdom", "sourceLocation": "infobox (Amarna capital c. 1352–1336 BC)" },
         { "sourceKey": "wp-amarna", "sourceLocation": "lead; Chronology" }
       ],
-      "links": [{ "to": "akhenaten", "kind": "part-of" }]
+      "links": [{ "to": "akhenaten", "kind": "part-of" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [{ "sourceKey": "wp-new-kingdom", "sourceLocation": "infobox (Amarna capital c. 1352–1336 BC)" }]
+        }
+      ]
     },
     {
       "uuid": "tutankhamun",
@@ -14268,6 +14305,11 @@
           "facet": "category",
           "value": "site",
           "sources": [{ "sourceKey": "wp-knossos", "sourceLocation": "lead ('conventionally dated to about 1350 BC')" }]
+        },
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [{ "sourceKey": "wp-knossos", "sourceLocation": "lead ('conventionally dated to about 1350 BC')" }]
         }
       ]
     },
@@ -14305,7 +14347,7 @@
       "links": [{ "to": "bronze-age-collapse", "kind": "part-of" }],
       "memberships": [
         { "facet": "category", "value": "site", "sources": [{ "sourceKey": "wp-nestor", "sourceLocation": "lead" }] },
-        { "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-nestor", "sourceLocation": "lead" }] }
+        { "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-nestor", "sourceLocation": "lead" }] }
       ]
     },
     {
@@ -14352,7 +14394,14 @@
       "end": "609 BCE",
       "tracks": ["assyria"],
       "descr": "From the accession of Adad-nirari II, Assyria grows into the largest empire the world had yet seen, ruling from Assur, then Nimrud and Nineveh.",
-      "sources": [{ "sourceKey": "wp-neo-assyria", "sourceLocation": "lead; infobox ('911 BCE–609 BCE')" }]
+      "sources": [{ "sourceKey": "wp-neo-assyria", "sourceLocation": "lead; infobox ('911 BCE–609 BCE')" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [{ "sourceKey": "wp-neo-assyria", "sourceLocation": "lead; infobox ('911 BCE–609 BCE')" }]
+        }
+      ]
     },
     {
       "uuid": "sennacherib-babylon",
@@ -14365,6 +14414,11 @@
         { "sourceKey": "wp-neo-assyria", "sourceLocation": "Sargon II and Sennacherib" }
       ],
       "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [{ "sourceKey": "wp-fall-babylon", "sourceLocation": "hatnote ('siege of Babylon (689 BCE)')" }]
+        },
         {
           "facet": "category",
           "value": "siege",
@@ -14531,7 +14585,7 @@
         { "year": "549 BCE", "source": { "sourceKey": "wp-fall-babylon", "sourceLocation": "'550/549 BC'" } }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "siege", "sources": [{ "sourceKey": "wp-fall-babylon", "sourceLocation": "Conditions ('550/549 BC')" }] }]
+      "memberships": [{ "facet": "category", "value": "revolt", "sources": [{ "sourceKey": "wp-fall-babylon", "sourceLocation": "Conditions ('550/549 BC')" }] }]
     },
     {
       "uuid": "nabonidus",
@@ -14623,7 +14677,14 @@
         { "sourceKey": "wp-old-assyria", "sourceLocation": "infobox (Subjugation under Mitanni c. 1430–1360 BC)" },
         { "sourceKey": "wp-middle-assyria", "sourceLocation": "Formation and rise" }
       ],
-      "links": [{ "to": "ashur-uballit", "kind": "causes" }]
+      "links": [{ "to": "ashur-uballit", "kind": "causes" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [{ "sourceKey": "wp-old-assyria", "sourceLocation": "infobox (Subjugation under Mitanni c. 1430–1360 BC)" }]
+        }
+      ]
     },
     {
       "uuid": "tukulti-ninurta",
@@ -14660,7 +14721,14 @@
       "start": "879 BCE",
       "tracks": ["assyria"],
       "descr": "Nimrud remains the capital until 706 BCE.",
-      "sources": [{ "sourceKey": "wp-assyria", "sourceLocation": "infobox (capitals: Nimrud 879–706 BC)" }]
+      "sources": [{ "sourceKey": "wp-assyria", "sourceLocation": "infobox (capitals: Nimrud 879–706 BC)" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "capital-moved",
+          "sources": [{ "sourceKey": "wp-assyria", "sourceLocation": "infobox (capitals: Nimrud 879–706 BC)" }]
+        }
+      ]
     },
     {
       "uuid": "tiglath-pileser-iii",
@@ -14771,7 +14839,8 @@
         { "year": "2300 BCE", "chronology": "middle", "source": { "sourceKey": "wp-ebla", "sourceLocation": "First destruction" } },
         { "year": "2400 BCE", "source": { "sourceKey": "wp-ebla", "sourceLocation": "First destruction (Pettinato, later view)" } },
         { "year": "2500 BCE", "source": { "sourceKey": "wp-ebla", "sourceLocation": "First destruction (Pettinato, earlier view)" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-ebla", "sourceLocation": "First destruction" }] }]
     },
     {
       "uuid": "ebla-mursili",
@@ -14780,7 +14849,8 @@
       "tracks": ["ebla", "hittites"],
       "descr": "The Hittite king ends the third kingdom of Ebla in about 1600 BCE.",
       "sources": [{ "sourceKey": "wp-ebla", "sourceLocation": "lead" }],
-      "links": [{ "to": "mursili-aleppo", "kind": "related" }]
+      "links": [{ "to": "mursili-aleppo", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "dissolved", "sources": [{ "sourceKey": "wp-ebla", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "ugaritic-alphabet",
@@ -14817,7 +14887,8 @@
         { "year": "1190 BCE", "source": { "sourceKey": "wp-ugarit", "sourceLocation": "destruction infobox" } }
       ],
       "links": [{ "to": "bronze-age-collapse", "kind": "part-of" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-ugarit", "sourceLocation": "infobox and History" }] }]
     },
     {
       "uuid": "phoenician-alphabet",
@@ -14860,7 +14931,8 @@
       "tracks": ["phoenicia", "babylonia"],
       "descr": "Tyre comes under Babylonian rule.",
       "sources": [{ "sourceKey": "wp-tyre", "sourceLocation": "History" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "vassalage", "sources": [{ "sourceKey": "wp-tyre", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "siege-of-tyre",
@@ -14899,7 +14971,8 @@
       "end": "587 BCE",
       "tracks": ["israel-judah"],
       "descr": "The southern kingdom, ruled by the House of David from Jerusalem, from Rehoboam to Zedekiah.",
-      "sources": [{ "sourceKey": "wp-judah", "sourceLocation": "infobox" }]
+      "sources": [{ "sourceKey": "wp-judah", "sourceLocation": "infobox" }],
+      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-judah", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "fall-of-samaria",
@@ -14940,7 +15013,7 @@
         { "year": "604 BCE", "source": { "sourceKey": "wp-philistines", "sourceLocation": "lead" } },
         { "year": "603 BCE", "source": { "sourceKey": "wp-philistines", "sourceLocation": "History ('In 604/603 BC')" } }
       ],
-      "memberships": [{ "facet": "category", "value": "revolt", "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "lead and History" }] }]
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-philistines", "sourceLocation": "lead and History" }] }]
     },
     {
       "uuid": "hazael",
@@ -15001,7 +15074,8 @@
       "tracks": ["elam"],
       "descr": "An Elamite complex about 30 km southeast of Susa. Construction was sometime in the 14th or 13th century BCE; 1250 is the conventional date.",
       "sources": [{ "sourceKey": "wp-chogha-zanbil", "sourceLocation": "lead and History" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-chogha-zanbil", "sourceLocation": "lead and History" }] }]
     },
     {
       "uuid": "susa-sacked",
@@ -15219,7 +15293,8 @@
       "end": "2279 BCE",
       "tracks": ["akkad", "harappan", "dilmun"],
       "descr": "Sargon of Akkad mentions ships from Meluhha, Magan and Dilmun. Most scholars identify Meluhha with the Indus Valley.",
-      "sources": [{ "sourceKey": "wp-meluhha", "sourceLocation": "lead and Sargon of Akkad" }]
+      "sources": [{ "sourceKey": "wp-meluhha", "sourceLocation": "lead and Sargon of Akkad" }],
+      "memberships": [{ "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-meluhha", "sourceLocation": "lead and Sargon of Akkad" }] }]
     },
     {
       "uuid": "indus-seal-susa",
@@ -15282,7 +15357,8 @@
       "tracks": ["shang", "erlitou"],
       "descr": "Near Erlitou. The Xia–Shang–Zhou Chronology Project treats it as the founding of the Shang.",
       "sources": [{ "sourceKey": "wp-erlitou", "sourceLocation": "Phases" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "city-founded", "sources": [{ "sourceKey": "wp-erlitou", "sourceLocation": "Phases" }] }]
     },
     {
       "uuid": "yin-capital",
@@ -15290,7 +15366,8 @@
       "start": "c. 1400 BCE",
       "tracks": ["shang"],
       "descr": "The page dates this to the beginning of the 14th century BCE. Yin serves twelve kings until the Zhou conquest.",
-      "sources": [{ "sourceKey": "wp-anyang", "sourceLocation": "History" }]
+      "sources": [{ "sourceKey": "wp-anyang", "sourceLocation": "History" }],
+      "memberships": [{ "facet": "category", "value": "capital-moved", "sources": [{ "sourceKey": "wp-anyang", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "wu-ding",
@@ -15794,7 +15871,8 @@
         { "year": "776 BCE", "source": { "sourceKey": "wp-olympics", "sourceLocation": "lead (traditional)" } },
         { "year": "765 BCE", "source": { "sourceKey": "wp-olympics", "sourceLocation": "History > Olympiad calendar" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-olympics", "sourceLocation": "lead and History" }] }]
     },
     {
       "uuid": "greek-colonisation",
@@ -15846,10 +15924,7 @@
         }
       ],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-classical-greece", "sourceLocation": "5th century BC" }] },
-        { "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-classical-greece", "sourceLocation": "5th century BC" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "reform", "sources": [{ "sourceKey": "wp-classical-greece", "sourceLocation": "5th century BC" }] }]
     },
     {
       "uuid": "marathon",
@@ -15923,7 +15998,8 @@
       "tracks": ["macedon"],
       "descr": "Pella remains the capital until the kingdom ends in 168 BCE.",
       "sources": [{ "sourceKey": "wp-macedon", "sourceLocation": "infobox (capitals)" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "capital-moved", "sources": [{ "sourceKey": "wp-macedon", "sourceLocation": "infobox (capitals)" }] }]
     },
     {
       "uuid": "midas",
@@ -15952,7 +16028,8 @@
         { "year": "695 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Eusebius (death of Midas)" } },
         { "year": "676 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Julius Africanus (death of Midas)" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "dissolved", "sources": [{ "sourceKey": "wp-phrygia", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "gyges-killed",
@@ -15962,7 +16039,10 @@
       "descr": "The third Cimmerian attack on Lydia.",
       "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "Mermnad Empire > Gyges" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "Mermnad Empire > Gyges" }] }]
+      "memberships": [
+        { "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "Mermnad Empire > Gyges" }] },
+        { "facet": "category", "value": "attack", "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "Mermnad Empire > Gyges" }] }
+      ]
     },
     {
       "uuid": "lydian-coins",
@@ -15975,7 +16055,14 @@
         { "year": "700 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "lead ('around the 7th century BC'): start of century" } },
         { "year": "601 BCE", "source": { "sourceKey": "wp-lydia", "sourceLocation": "lead: end of century" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [{ "sourceKey": "wp-lydia", "sourceLocation": "lead ('dated to around the 7th century BC')" }]
+        }
+      ]
     },
     {
       "uuid": "croesus",
@@ -16041,7 +16128,14 @@
       "end": "672 BCE",
       "tracks": ["cyprus", "assyria"],
       "descr": "Esarhaddon's prism lists ten city-kingdoms of Cyprus. Assyrian rule ends with the fall of the Neo-Assyrian Empire (609 BCE).",
-      "sources": [{ "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Assyrian conquest and the ten city-kingdoms" }]
+      "sources": [{ "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Assyrian conquest and the ten city-kingdoms" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [{ "sourceKey": "wp-cyprus-ancient", "sourceLocation": "Assyrian conquest and the ten city-kingdoms" }]
+        }
+      ]
     },
     {
       "uuid": "cyprus-egypt",
@@ -16196,7 +16290,8 @@
       "tracks": ["magna-graecia"],
       "descr": "The Greek city of Sybaris, with an estimated population of 300,000 to 500,000 from 600 to 510 BCE, is destroyed.",
       "sources": [{ "sourceKey": "wp-magna-graecia", "sourceLocation": "lead and History" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-magna-graecia", "sourceLocation": "lead and History" }] }]
     },
     {
       "uuid": "sicilian-expedition",
@@ -16544,7 +16639,8 @@
       "tracks": ["scythians", "medes"],
       "descr": "The Scythians retreat into the Pontic steppe.",
       "sources": [{ "sourceKey": "wp-scythians", "sourceLocation": "infobox (History)" }, { "sourceKey": "wp-madyes", "sourceLocation": "lead and Aftermath" }],
-      "links": [{ "to": "madyes", "kind": "succeeds" }]
+      "links": [{ "to": "madyes", "kind": "succeeds" }],
+      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-scythians", "sourceLocation": "infobox (History)" }] }]
     },
     {
       "uuid": "darius-scythia",
@@ -16738,7 +16834,10 @@
         { "year": "1500 BCE", "margin": 6, "source": { "sourceKey": "wp-thutmose-i", "sourceLocation": "infobox (reign, low chronology)" } }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-kerma", "sourceLocation": "Late Kerma and Egyptian conquest" }] }]
+      "memberships": [
+        { "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-kerma", "sourceLocation": "Late Kerma and Egyptian conquest" }] },
+        { "facet": "category", "value": "dissolved", "sources": [{ "sourceKey": "wp-kerma", "sourceLocation": "Late Kerma and Egyptian conquest" }] }
+      ]
     },
     {
       "uuid": "kush-independent",
@@ -16758,7 +16857,14 @@
       "descr": "",
       "sources": [{ "sourceKey": "wp-kush", "sourceLocation": "Formation ('between 800 and 760 BC')" }],
       "startDates": [{ "year": "780 BCE", "margin": 20, "source": { "sourceKey": "wp-kush", "sourceLocation": "Formation" } }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [{ "sourceKey": "wp-kush", "sourceLocation": "Formation ('between 800 and 760 BC')" }]
+        }
+      ]
     },
     {
       "uuid": "piye-conquers-egypt",
@@ -16823,7 +16929,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "capital-moved",
           "sources": [{ "sourceKey": "wp-kush", "sourceLocation": "infobox and Meroitic period ('possibly c. 591 BC')" }]
         }
       ]
@@ -16843,14 +16949,10 @@
         }
       ],
       "memberships": [
+        { "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-punt", "sourceLocation": "lead and Egyptian expeditions to Punt" }] },
         {
           "facet": "category",
           "value": "invasion",
-          "sources": [{ "sourceKey": "wp-punt", "sourceLocation": "lead and Egyptian expeditions to Punt" }]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
           "sources": [{ "sourceKey": "wp-punt", "sourceLocation": "lead and Egyptian expeditions to Punt" }]
         }
       ]
@@ -16872,7 +16974,8 @@
       "end": "650 BCE",
       "tracks": ["dmt"],
       "descr": "A contemporary of the Sabaean ruler Karib'il Watar. Dʿmt was an Ethio-Sabaean kingdom, its capital may have been Yeha, where the temple of Ilmuqah still stands.",
-      "sources": [{ "sourceKey": "wp-dmt", "sourceLocation": "lead, History and Known rulers" }]
+      "sources": [{ "sourceKey": "wp-dmt", "sourceLocation": "lead, History and Known rulers" }],
+      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-dmt", "sourceLocation": "lead, History and Known rulers" }] }]
     },
     {
       "uuid": "tichitt-millet",
@@ -16961,7 +17064,8 @@
       "startDates": [
         { "year": "500 BCE", "source": { "sourceKey": "wp-garamantes", "sourceLocation": "History ('5th century BC'): start of century" } },
         { "year": "401 BCE", "source": { "sourceKey": "wp-garamantes", "sourceLocation": "History: end of century" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-garamantes", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "rigveda",
@@ -16981,7 +17085,8 @@
         { "year": "1200 BCE", "source": { "sourceKey": "wp-rigveda", "sourceLocation": "lead (wider approximation)" } }
       ],
       "links": [{ "to": "indo-aryan-migrations", "kind": "related" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-rigveda", "sourceLocation": "infobox, lead and Dating" }] }]
     },
     {
       "uuid": "vedic-ganges",
@@ -17004,7 +17109,8 @@
         { "sourceKey": "wp-mahajanapadas", "sourceLocation": "infobox, lead and Overview" },
         { "sourceKey": "wp-vedic", "sourceLocation": "Mahajanapadas" }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "union", "sources": [{ "sourceKey": "wp-mahajanapadas", "sourceLocation": "infobox, lead and Overview" }] }]
     },
     {
       "uuid": "achaemenid-indus",
@@ -17062,7 +17168,8 @@
         { "year": "527 BCE", "source": { "sourceKey": "wp-mahavira", "sourceLocation": "infobox (Śvetāmbara)" } },
         { "year": "510 BCE", "source": { "sourceKey": "wp-mahavira", "sourceLocation": "infobox (Digambara)" } },
         { "year": "477 BCE", "source": { "sourceKey": "wp-mahavira", "sourceLocation": "Dating ('some historians')" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-mahavira", "sourceLocation": "infobox, lead and Dating" }] }]
     },
     {
       "uuid": "buddha",
@@ -17087,7 +17194,14 @@
         { "year": "486 BCE", "source": { "sourceKey": "wp-buddha", "sourceLocation": "Dating (long chronology)" } },
         { "year": "368 BCE", "source": { "sourceKey": "wp-buddha", "sourceLocation": "Dating (short chronology)" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [{ "sourceKey": "wp-buddha", "sourceLocation": "infobox, Dating and Historical person" }]
+        }
+      ]
     },
     {
       "uuid": "nanda",
@@ -17338,6 +17452,13 @@
             "sourceKey": "wp-prehistory-taiwan",
             "sourceLocation": "Neolithic ('Nephrite from Taiwan began to appear in the northern Philippines between 1850 and 1350 BC')"
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [{ "sourceKey": "wp-prehistory-philippines", "sourceLocation": "Neolithic Austronesian migrations (Maritime Jade Road)" }]
         }
       ]
     },
@@ -17774,7 +17895,8 @@
       "descr": "Greek colonies are established in the 6th century BC.",
       "sources": [{ "sourceKey": "wp-colchian", "sourceLocation": "Geography and periodization" }],
       "startDates": [{ "year": "550 BCE", "margin": 50, "source": { "sourceKey": "wp-colchian", "sourceLocation": "Geography ('in the 6th century BC')" } }],
-      "links": [{ "to": "greek-colonisation", "kind": "part-of" }]
+      "links": [{ "to": "greek-colonisation", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "colony", "sources": [{ "sourceKey": "wp-colchian", "sourceLocation": "Geography and periodization" }] }]
     },
     {
       "uuid": "hafit",
@@ -17842,7 +17964,8 @@
         { "year": "2100 BCE", "source": { "sourceKey": "wp-magan", "sourceLocation": "Commerce ('trade resumed ... (c. 2100 BC)')" } },
         { "year": "2105 BCE", "margin": 8, "source": { "sourceKey": "wp-magan", "sourceLocation": "Ur III period (Ur-Nammu, 2113–2096 BCE)" } }
       ],
-      "links": [{ "to": "ur-nammu", "kind": "related" }]
+      "links": [{ "to": "ur-nammu", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-magan", "sourceLocation": "Ur III period and Commerce" }] }]
     },
     {
       "uuid": "wadi-suq",
@@ -17874,7 +17997,14 @@
         { "year": "750 BCE", "margin": 50, "source": { "sourceKey": "wp-marib-dam", "sourceLocation": "Ancient dam ('about the 8th century BC')" } },
         { "year": "1725 BCE", "margin": 25, "source": { "sourceKey": "wp-marib-dam", "sourceLocation": "infobox and Construction (tentative)" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [{ "sourceKey": "wp-marib-dam", "sourceLocation": "lead, Ancient dam and Construction" }]
+        }
+      ]
     },
     {
       "uuid": "saba-height",
@@ -17926,7 +18056,8 @@
           "margin": 50,
           "source": { "sourceKey": "wp-qataban", "sourceLocation": "Kingdom ('by the late 7th or early 6th century BCE')" }
         }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-qataban", "sourceLocation": "Prehistory and Kingdom" }] }]
     },
     {
       "uuid": "tayma-egypt",
@@ -17934,7 +18065,8 @@
       "start": "c. 1186 BCE",
       "tracks": ["north-arabia", "pharaonic-egypt"],
       "descr": "An inscription at Tayma was commissioned by Ramesses III (r. 1186–1155 BC). Monumental architecture disappears from Tayma by the end of the Early Iron Age (12th–9th centuries BC).",
-      "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Under Egyptian hegemony" }]
+      "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Under Egyptian hegemony" }],
+      "memberships": [{ "facet": "category", "value": "vassalage", "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Under Egyptian hegemony" }] }]
     },
     {
       "uuid": "tayma-assyria",
@@ -17943,7 +18075,8 @@
       "tracks": ["north-arabia", "assyria"],
       "descr": "From the 8th century BC Tayma is under the Assyrian Empire, as under Tiglath-Pileser III (744–727 BC); an inscription of Sennacherib (705–681 BC) records gifts of the people of Tema.",
       "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Mesopotamian hegemony" }],
-      "links": [{ "to": "tiglath-pileser-iii", "kind": "related" }]
+      "links": [{ "to": "tiglath-pileser-iii", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "vassalage", "sources": [{ "sourceKey": "wp-tayma", "sourceLocation": "Mesopotamian hegemony" }] }]
     },
     {
       "uuid": "nabonidus-tayma",
@@ -17965,7 +18098,8 @@
       "startDates": [
         { "year": "450 BCE", "margin": 50, "source": { "sourceKey": "wp-lihyan", "sourceLocation": "infobox ('Established 5th century BC')" } },
         { "year": "550 BCE", "margin": 50, "source": { "sourceKey": "wp-lihyan", "sourceLocation": "Timeline (Winnett)" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-lihyan", "sourceLocation": "infobox, lead and Timeline" }] }]
     },
     {
       "uuid": "trypillia-megasites",
@@ -18076,7 +18210,14 @@
       "start": "335 BCE",
       "tracks": ["getae", "macedon"],
       "descr": "On the lower Danube. Herodotus first used the name Getae; the Dacians were influenced by the Scythians and by the La Tène Celts who arrived in the 4th century BC.",
-      "sources": [{ "sourceKey": "wp-dacians", "sourceLocation": "lead, Name and Origins and ethnogenesis" }]
+      "sources": [{ "sourceKey": "wp-dacians", "sourceLocation": "lead, Name and Origins and ethnogenesis" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "attack",
+          "sources": [{ "sourceKey": "wp-dacians", "sourceLocation": "lead, Name and Origins and ethnogenesis" }]
+        }
+      ]
     },
     {
       "uuid": "old-copper",
@@ -18536,7 +18677,19 @@
       "start": "414 BCE",
       "tracks": ["yarlung"],
       "descr": "Some Tibetan texts give 126 BC, others 414 BC. Tibetan texts name the kingdom of Zhangzhung (c. 500 BC–625 AD) as the precursor of later Tibetan kingdoms.",
-      "sources": [{ "sourceKey": "wp-tibet-history", "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo" }]
+      "sources": [{ "sourceKey": "wp-tibet-history", "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [{ "sourceKey": "wp-tibet-history", "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo" }]
+        },
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [{ "sourceKey": "wp-tibet-history", "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo" }]
+        }
+      ]
     },
     {
       "uuid": "gandhara-graves",
@@ -18620,7 +18773,8 @@
       "start": "c. 2050 BCE",
       "tracks": ["sahara"],
       "descr": "A major environmental change accompanied by the collapse of ancient civilizations and severe drought in Africa, Asia and the Middle East; some count this step (the 4.2-kiloyear event) as the true end of the humid period. Nile discharge decreases noticeably.",
-      "sources": [{ "sourceKey": "wp-humid-period", "sourceLocation": "End and Chronology" }]
+      "sources": [{ "sourceKey": "wp-humid-period", "sourceLocation": "End and Chronology" }],
+      "memberships": [{ "facet": "category", "value": "disaster", "sources": [{ "sourceKey": "wp-humid-period", "sourceLocation": "End and Chronology" }] }]
     },
     {
       "uuid": "herding-turkana",
@@ -20320,7 +20474,8 @@
       "tracks": ["sumer"],
       "descr": "King of Lagash and Girsu, described by one study as the first social reformer in history, though there is no solid evidence for a single \"reform of Urukagina\".",
       "sources": [{ "sourceKey": "wp-urukagina", "sourceLocation": "infobox, lead and Reforms" }],
-      "links": [{ "to": "lugalzagesi", "kind": "related" }]
+      "links": [{ "to": "lugalzagesi", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-urukagina", "sourceLocation": "infobox, lead and Reforms" }] }]
     },
     {
       "uuid": "gudea",
@@ -20337,6 +20492,13 @@
       "endDates": [
         { "year": "2124 BCE", "source": { "sourceKey": "wp-gudea", "sourceLocation": "infobox" } },
         { "year": "2115 BCE", "margin": 5, "source": { "sourceKey": "wp-gudea", "sourceLocation": "lead" } }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [{ "sourceKey": "wp-gudea", "sourceLocation": "infobox, lead, Sources and Chronology" }]
+        }
       ]
     },
     {
@@ -20346,7 +20508,8 @@
       "tracks": ["babylonia"],
       "descr": "The world’s oldest surviving narrative literature. Sumerian Gilgamesh poems may date to the Third Dynasty of Ur (c. 2100 BCE); the Standard Babylonian version was compiled by Sîn-lēqi-unninni between 1300 and 1000 BCE.",
       "sources": [{ "sourceKey": "wp-gilgamesh", "sourceLocation": "infobox, lead and Versions" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-gilgamesh", "sourceLocation": "infobox, lead and Versions" }] }]
     },
     {
       "uuid": "tushratta",
@@ -20356,7 +20519,8 @@
       "tracks": ["mitanni"],
       "descr": "King of Mitanni at the end of the reign of Amenhotep III, to whom he wrote letters.",
       "sources": [{ "sourceKey": "wp-tushratta", "sourceLocation": "infobox and lead" }],
-      "links": [{ "to": "amarna-letters", "kind": "related" }, { "to": "suppiluliuma-i", "kind": "related" }]
+      "links": [{ "to": "amarna-letters", "kind": "related" }, { "to": "suppiluliuma-i", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-tushratta", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "hazor-burned",
@@ -20366,13 +20530,7 @@
       "descr": "A stratum from around 1200 BCE (13th century) shows catastrophic fire and a scorched palace; the cause is disputed. Hazor had been a major city since the Middle Bronze Age (around 1750 BCE).",
       "sources": [{ "sourceKey": "wp-tel-hazor", "sourceLocation": "lead and Biblical archaeology" }],
       "startDates": [{ "year": "1250 BCE", "margin": 50, "source": { "sourceKey": "wp-tel-hazor", "sourceLocation": "Biblical archaeology ('13th century BCE')" } }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "city-founded",
-          "sources": [{ "sourceKey": "wp-tel-hazor", "sourceLocation": "lead and Biblical archaeology" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-tel-hazor", "sourceLocation": "lead and Biblical archaeology" }] }]
     },
     {
       "uuid": "hazor-732",
@@ -20400,7 +20558,14 @@
       "descr": "More than 30,000 clay tablets and fragments from the 7th century BCE, among them the Epic of Gilgamesh. Nineveh is destroyed in 612 BCE.",
       "sources": [{ "sourceKey": "wp-ashurbanipal-library", "sourceLocation": "lead, Contents and Discovery" }],
       "links": [{ "to": "ashurbanipal", "kind": "part-of" }, { "to": "gilgamesh", "kind": "related" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [{ "sourceKey": "wp-ashurbanipal-library", "sourceLocation": "lead, Contents and Discovery" }]
+        }
+      ]
     },
     {
       "uuid": "exile-return",
@@ -20419,7 +20584,8 @@
       "tracks": ["persia"],
       "descr": "An Achaemenid royal inscription in the name of Cyrus the Great, made after the Persian conquest of Babylon; the British Museum dates it between 539 and 530 BC.",
       "sources": [{ "sourceKey": "wp-cyrus-cylinder", "sourceLocation": "infobox, lead and Description" }],
-      "links": [{ "to": "cyrus-takes-babylon", "kind": "part-of" }]
+      "links": [{ "to": "cyrus-takes-babylon", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-cyrus-cylinder", "sourceLocation": "infobox, lead and Description" }] }]
     },
     {
       "uuid": "persepolis",
@@ -20433,7 +20599,14 @@
         { "year": "519 BCE", "source": { "sourceKey": "wp-persepolis", "sourceLocation": "Construction (stairway)" } }
       ],
       "links": [{ "to": "darius-i", "kind": "part-of" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "city-founded",
+          "sources": [{ "sourceKey": "wp-persepolis", "sourceLocation": "infobox, lead and Construction" }]
+        }
+      ]
     },
     {
       "uuid": "zoroaster",
@@ -20445,7 +20618,8 @@
       "startDates": [
         { "year": "1000 BCE", "margin": 500, "source": { "sourceKey": "wp-zoroaster", "sourceLocation": "Date (many scholars)" } },
         { "year": "612 BCE", "margin": 12, "source": { "sourceKey": "wp-zoroaster", "sourceLocation": "infobox (traditional birth)" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-zoroaster", "sourceLocation": "infobox, lead and Date" }] }]
     },
     {
       "uuid": "homer",
@@ -20461,7 +20635,8 @@
           "source": { "sourceKey": "wp-homer", "sourceLocation": "lead ('the late eighth or early seventh century BC')" }
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-homer", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "hesiod",
@@ -20470,7 +20645,8 @@
       "tracks": ["greece"],
       "descr": "Hesiod is generally thought to have been active between 750 and 650 BC; Works and Days describes the five Ages of Man.",
       "sources": [{ "sourceKey": "wp-hesiod", "sourceLocation": "infobox, lead and Dating" }],
-      "startDates": [{ "year": "700 BCE", "margin": 50, "source": { "sourceKey": "wp-hesiod", "sourceLocation": "infobox and lead" } }]
+      "startDates": [{ "year": "700 BCE", "margin": 50, "source": { "sourceKey": "wp-hesiod", "sourceLocation": "infobox and lead" } }],
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-hesiod", "sourceLocation": "infobox, lead and Dating" }] }]
     },
     {
       "uuid": "thales-eclipse",
@@ -20478,7 +20654,8 @@
       "start": "585 BCE",
       "tracks": ["greece"],
       "descr": "According to Herodotus. Thales (c. 626/623 – c. 548/545 BC) was one of the Seven Sages.",
-      "sources": [{ "sourceKey": "wp-thales", "sourceLocation": "lead and Life" }]
+      "sources": [{ "sourceKey": "wp-thales", "sourceLocation": "lead and Life" }],
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-thales", "sourceLocation": "lead and Life" }] }]
     },
     {
       "uuid": "pythagoras",
@@ -20550,10 +20727,7 @@
       "descr": "Aristotle studies there for twenty years (367–347 BC); the school lasts until 83 BC.",
       "sources": [{ "sourceKey": "wp-academy", "sourceLocation": "lead and Plato’s Academy" }],
       "importance": 1,
-      "memberships": [
-        { "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-academy", "sourceLocation": "lead and Plato’s Academy" }] },
-        { "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-academy", "sourceLocation": "lead and Plato’s Academy" }] }
-      ]
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-academy", "sourceLocation": "lead and Plato’s Academy" }] }]
     },
     {
       "uuid": "lyceum",
@@ -20596,7 +20770,8 @@
       "tracks": ["zhou"],
       "descr": "Traditionally the paragon of Chinese sages; his teachings, Confucianism, emphasise personal and governmental morality.",
       "sources": [{ "sourceKey": "wp-confucius", "sourceLocation": "infobox and lead" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-confucius", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "laozi",
@@ -20609,7 +20784,8 @@
         { "year": "551 BCE", "margin": 49, "source": { "sourceKey": "wp-laozi", "sourceLocation": "infobox ('trad. 6th century BC')" } },
         { "year": "351 BCE", "margin": 49, "source": { "sourceKey": "wp-laozi", "sourceLocation": "infobox ('sometimes dated 4th century BC')" } }
       ],
-      "links": [{ "to": "confucius", "kind": "related" }]
+      "links": [{ "to": "confucius", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-laozi", "sourceLocation": "infobox, lead and Identity" }] }]
     },
     {
       "uuid": "sun-tzu",
@@ -20639,7 +20815,14 @@
       "tracks": ["zhou"],
       "descr": "Confucianism, Taoism, Mohism, Legalism and others flourish in the late Spring and Autumn and Warring States periods; their ideas profoundly influence East Asian culture.",
       "sources": [{ "sourceKey": "wp-hundred-schools", "sourceLocation": "lead, Confucianism, Taoism, Mohism and Legalism" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [{ "sourceKey": "wp-hundred-schools", "sourceLocation": "lead, Confucianism, Taoism, Mohism and Legalism" }]
+        }
+      ]
     },
     {
       "uuid": "shang-yang",
@@ -20661,7 +20844,8 @@
       "startDates": [
         { "year": "501 BCE", "margin": 99, "source": { "sourceKey": "wp-panini", "sourceLocation": "infobox ('6th–5th century BCE')" } },
         { "year": "351 BCE", "margin": 49, "source": { "sourceKey": "wp-panini", "sourceLocation": "infobox ('4th century BCE')" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-panini", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "tp1-arameans",
@@ -20692,7 +20876,8 @@
       "descr": "West Semitic-speaking tribes arrive from the Levant: the earliest waves are Suteans and Arameans, followed a century or so later by the Kaldu (Chaldeans).",
       "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "lead and Ancient Chaldeans" }],
       "startDates": [{ "year": "1100 BCE", "source": { "sourceKey": "wp-chaldea", "sourceLocation": "Ancient Chaldeans ('appeared in Babylonia, c. 1100 BC')" } }],
-      "links": [{ "to": "chaldeans-attested", "kind": "related" }]
+      "links": [{ "to": "chaldeans-attested", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "colony", "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "lead and Ancient Chaldeans" }] }]
     },
     {
       "uuid": "aramean-states",
@@ -20756,7 +20941,8 @@
       "descr": "Imperial Aramaic becomes the empire's common language under Tiglath-Pileser III; it stays a lingua franca under the Neo-Babylonian and Achaemenid empires.",
       "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "Language" }, { "sourceKey": "wp-arameans", "sourceLocation": "lead" }],
       "startDates": [{ "year": "750 BCE", "margin": 10, "source": { "sourceKey": "wp-chaldea", "sourceLocation": "Language ('in the mid-8th century BC')" } }],
-      "links": [{ "to": "tiglath-pileser-iii", "kind": "part-of" }]
+      "links": [{ "to": "tiglath-pileser-iii", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "Language" }] }]
     },
     {
       "uuid": "chaldeans-attested",
@@ -20849,7 +21035,14 @@
       "descr": "By 1725 BC Hurrians are found in parts of northern Syria such as Alalakh; those entering at the end of the 17th century BC bring important political and cultural changes. The Hurrian entity of Mitanni first rises to power before 1550 BC.",
       "sources": [{ "sourceKey": "wp-hurrians", "sourceLocation": "Middle Bronze Age and Late Bronze Age" }],
       "startDates": [{ "year": "1725 BCE", "source": { "sourceKey": "wp-hurrians", "sourceLocation": "Middle Bronze Age ('By 1725 BC')" } }],
-      "links": [{ "to": "mitanni-kirta", "kind": "causes" }]
+      "links": [{ "to": "mitanni-kirta", "kind": "causes" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [{ "sourceKey": "wp-hurrians", "sourceLocation": "Middle Bronze Age and Late Bronze Age" }]
+        }
+      ]
     },
     {
       "uuid": "urkesh-abandoned",
@@ -20882,7 +21075,7 @@
       "tracks": ["kaska", "hittites"],
       "descr": "They appear in prayers from the reign of Hantili II; Tudhaliya II's third campaign is against the Kaskas, and Arnuwanda I prays for the return of Nerik and tries to buy off some Kaska with tribute.",
       "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "History" }],
-      "memberships": [{ "facet": "category", "value": "invasion", "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "History" }] }]
+      "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "kaska-burn-hattusa",
@@ -20900,7 +21093,7 @@
         }
       ],
       "links": [{ "to": "suppiluliuma-i", "kind": "related" }],
-      "memberships": [{ "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "History" }] }]
+      "memberships": [{ "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-kaskians", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "kaska-sack-hattusa",
@@ -20921,7 +21114,7 @@
       "descr": "The Eastern Mushki, who moved into Hatti around the time the Hittite Empire collapsed, join the Urumu and the Kaska (Apishlu) in an attempt on Alzi and Puruhuzzi; Ashur-Dan I pushes them back and subjugates them.",
       "sources": [{ "sourceKey": "wp-mushki", "sourceLocation": "Eastern Mushki" }, { "sourceKey": "wp-kaskians", "sourceLocation": "History" }],
       "startDates": [{ "year": "1160 BCE", "source": { "sourceKey": "wp-mushki", "sourceLocation": "Eastern Mushki ('in about 1160 BC')" } }],
-      "memberships": [{ "facet": "category", "value": "alliance", "sources": [{ "sourceKey": "wp-mushki", "sourceLocation": "Eastern Mushki" }] }]
+      "memberships": [{ "facet": "category", "value": "attack", "sources": [{ "sourceKey": "wp-mushki", "sourceLocation": "Eastern Mushki" }] }]
     },
     {
       "uuid": "mushki-tp1",
@@ -20941,7 +21134,8 @@
           "source": { "sourceKey": "wp-tp1", "sourceLocation": "Reign ('first campaign was against the Phrygians (Mushku) in 1112 BC')" }
         }
       ],
-      "links": [{ "to": "tiglath-pileser-i", "kind": "part-of" }]
+      "links": [{ "to": "tiglath-pileser-i", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-mushki", "sourceLocation": "Eastern Mushki" }] }]
     },
     {
       "uuid": "mita-sargon",
@@ -20960,7 +21154,14 @@
       "tracks": ["qedarites", "assyria"],
       "descr": "With Rezin of Damascus, Menahem of Israel and Hiram II of Tyre, she acknowledges Assyrian hegemony: the first explicit mention of the Qedarites by name.",
       "sources": [{ "sourceKey": "wp-qedarites", "sourceLocation": "infobox and Neo-Assyrian period" }],
-      "links": [{ "to": "tiglath-pileser-iii", "kind": "part-of" }]
+      "links": [{ "to": "tiglath-pileser-iii", "kind": "part-of" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [{ "sourceKey": "wp-qedarites", "sourceLocation": "infobox and Neo-Assyrian period" }]
+        }
+      ]
     },
     {
       "uuid": "samsi-revolt",
@@ -21013,7 +21214,7 @@
       "tracks": ["rong-di", "zhou"],
       "descr": "Under King Li. His successor King Xuan (827–782 BCE) sends Qin against the Western Rong, who submit and cede territory, and Jin against the Northern Rong.",
       "sources": [{ "sourceKey": "wp-xirong", "sourceLocation": "Timeline" }],
-      "memberships": [{ "facet": "category", "value": "invasion", "sources": [{ "sourceKey": "wp-xirong", "sourceLocation": "Timeline" }] }]
+      "memberships": [{ "facet": "category", "value": "attack", "sources": [{ "sourceKey": "wp-xirong", "sourceLocation": "Timeline" }] }]
     },
     {
       "uuid": "quanrong-haojing",
@@ -21134,7 +21335,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "attack",
           "sources": [{ "sourceKey": "wp-shasu", "sourceLocation": "History, Late Bronze Age and Shasu of Yhw" }]
         }
       ]
@@ -21202,7 +21403,8 @@
         { "year": "304 BCE", "source": { "sourceKey": "wp-ptolemaic", "sourceLocation": "Notes, note 1 (some scholars)" } }
       ],
       "links": [{ "to": "diadochi", "kind": "part-of" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "title", "sources": [{ "sourceKey": "wp-ptolemaic", "sourceLocation": "lead, infobox and Establishment" }] }]
     },
     {
       "uuid": "library-alexandria",
@@ -21219,7 +21421,14 @@
           "source": { "sourceKey": "wp-library-alexandria", "sourceLocation": "Founding (Letter of Aristeas: Ptolemy I)" }
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [{ "sourceKey": "wp-library-alexandria", "sourceLocation": "infobox, lead and Founding" }]
+        }
+      ]
     },
     {
       "uuid": "greco-bactria",
@@ -21252,7 +21461,10 @@
       "tracks": ["west-med"],
       "descr": "One of the greatest mathematicians of all time (c. 287 – c. 212 BC), he designed war machines to defend Syracuse and was killed by a Roman soldier.",
       "sources": [{ "sourceKey": "wp-archimedes", "sourceLocation": "infobox, lead and Biography" }],
-      "memberships": [{ "facet": "category", "value": "siege", "sources": [{ "sourceKey": "wp-archimedes", "sourceLocation": "infobox, lead and Biography" }] }]
+      "memberships": [
+        { "facet": "category", "value": "coup", "sources": [{ "sourceKey": "wp-archimedes", "sourceLocation": "infobox, lead and Biography" }] },
+        { "facet": "category", "value": "siege", "sources": [{ "sourceKey": "wp-archimedes", "sourceLocation": "infobox, lead and Biography" }] }
+      ]
     },
     {
       "uuid": "rosetta-stone",
@@ -21260,7 +21472,11 @@
       "start": "196 BCE",
       "tracks": ["ptolemaic-roman-egypt"],
       "descr": "A decree issued at Memphis on behalf of Ptolemy V Epiphanes on 27 March 196 BC.",
-      "sources": [{ "sourceKey": "wp-rosetta", "sourceLocation": "infobox, lead and Memphis" }]
+      "sources": [{ "sourceKey": "wp-rosetta", "sourceLocation": "infobox, lead and Memphis" }],
+      "memberships": [
+        { "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-rosetta", "sourceLocation": "infobox, lead and Memphis" }] },
+        { "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-rosetta", "sourceLocation": "infobox, lead and Memphis" }] }
+      ]
     },
     {
       "uuid": "pydna",
@@ -21314,7 +21530,10 @@
       "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }],
       "links": [{ "to": "second-punic-war", "kind": "related" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }] }]
+      "memberships": [
+        { "facet": "category", "value": "dissolved", "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }] },
+        { "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-punic-wars", "sourceLocation": "lead" }] }
+      ]
     },
     {
       "uuid": "carrhae",
@@ -21365,7 +21584,8 @@
         { "sourceKey": "wp-roman-republic-classical", "sourceLocation": "lead and infobox" }
       ],
       "links": [{ "to": "actium", "kind": "related" }, { "to": "caesar-assassinated", "kind": "related" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "title", "sources": [{ "sourceKey": "wp-augustus", "sourceLocation": "infobox, lead and Name" }] }]
     },
     {
       "uuid": "trajan-extent",
@@ -21396,7 +21616,8 @@
       "end": "324 CE",
       "tracks": ["rome-republic-empire"],
       "descr": "Diocletian divides imperial rule between two augusti and two caesares; the system lasts until c. 324.",
-      "sources": [{ "sourceKey": "wp-tetrarchy", "sourceLocation": "lead" }]
+      "sources": [{ "sourceKey": "wp-tetrarchy", "sourceLocation": "lead" }],
+      "memberships": [{ "facet": "category", "value": "reform", "sources": [{ "sourceKey": "wp-tetrarchy", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "edict-milan",
@@ -21553,7 +21774,8 @@
       "tracks": ["parthia"],
       "descr": "Centred in ancient Iran; Mithridates I (r. c. 171–132 BC) greatly expands it by seizing Media and Mesopotamia from the Seleucids.",
       "sources": [{ "sourceKey": "wp-parthia", "sourceLocation": "lead and infobox" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-parthia", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "maccabees",
@@ -21594,7 +21816,8 @@
         { "year": "30 CE", "source": { "sourceKey": "wp-crucifixion", "sourceLocation": "infobox" } },
         { "year": "33 CE", "source": { "sourceKey": "wp-crucifixion", "sourceLocation": "infobox" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-crucifixion", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "jerusalem-70",
@@ -21605,8 +21828,8 @@
       "sources": [{ "sourceKey": "wp-siege-jerusalem-70", "sourceLocation": "infobox and lead" }],
       "importance": 1,
       "memberships": [
-        { "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-siege-jerusalem-70", "sourceLocation": "infobox and lead" }] },
-        { "facet": "category", "value": "invasion", "sources": [{ "sourceKey": "wp-siege-jerusalem-70", "sourceLocation": "infobox and lead" }] }
+        { "facet": "category", "value": "sack", "sources": [{ "sourceKey": "wp-siege-jerusalem-70", "sourceLocation": "infobox and lead" }] },
+        { "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-siege-jerusalem-70", "sourceLocation": "infobox and lead" }] }
       ]
     },
     {
@@ -21672,6 +21895,13 @@
       "startDates": [
         { "year": "301 CE", "source": { "sourceKey": "wp-armenia-christian", "sourceLocation": "lead (traditional)" } },
         { "year": "314 CE", "source": { "sourceKey": "wp-armenia-christian", "sourceLocation": "Date and causes (many modern scholars)" } }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [{ "sourceKey": "wp-armenia-christian", "sourceLocation": "lead and Date and causes" }]
+        }
       ]
     },
     {
@@ -21706,7 +21936,8 @@
       "tracks": ["early-islam"],
       "descr": "Its date equates to 16 July 622; the year is the epoch of the Islamic calendar.",
       "sources": [{ "sourceKey": "wp-hijrah", "sourceLocation": "lead and Note 3" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-hijrah", "sourceLocation": "lead and Note 3" }] }]
     },
     {
       "uuid": "yarmuk",
@@ -21820,7 +22051,8 @@
       "tracks": ["anuradhapura"],
       "descr": "Theravada Buddhism is introduced during the reign of King Devanampiya Tissa.",
       "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "shunga-coup",
@@ -21833,7 +22065,8 @@
         { "year": "185 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "infobox" } },
         { "year": "187 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "lead" } },
         { "year": "184 BCE", "source": { "sourceKey": "wp-shunga", "sourceLocation": "Origins" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "coup", "sources": [{ "sourceKey": "wp-maurya", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "indo-greek-founded",
@@ -21871,7 +22104,11 @@
       "end": "60 BCE",
       "tracks": ["indo-scythian"],
       "descr": "The first rulers of the Indo-Scythian kingdom are Maues (c. 85–60 BCE) and Vonones (c. 75–65 BCE).",
-      "sources": [{ "sourceKey": "wp-indo-scythians", "sourceLocation": "lead and infobox" }]
+      "sources": [{ "sourceKey": "wp-indo-scythians", "sourceLocation": "lead and infobox" }],
+      "memberships": [
+        { "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-indo-scythians", "sourceLocation": "lead and infobox" }] },
+        { "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-indo-scythians", "sourceLocation": "lead and infobox" }] }
+      ]
     },
     {
       "uuid": "kushan-founded",
@@ -21889,7 +22126,14 @@
       "start": "90 CE",
       "tracks": ["kushan", "china"],
       "descr": "Ban Chao fights battles near Khotan with a Kushan army of 70,000 men.",
-      "sources": [{ "sourceKey": "wp-kanishka", "sourceLocation": "Conquests in India and Central Asia" }]
+      "sources": [{ "sourceKey": "wp-kanishka", "sourceLocation": "Conquests in India and Central Asia" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-kanishka", "sourceLocation": "Conquests in India and Central Asia" }]
+        }
+      ]
     },
     {
       "uuid": "kanishka",
@@ -22036,7 +22280,8 @@
       "startDates": [
         { "year": "470 CE", "margin": 10, "source": { "sourceKey": "wp-ajanta", "sourceLocation": "lead (460–480, later scholarship)" } },
         { "year": "525 CE", "margin": 125, "source": { "sourceKey": "wp-ajanta", "sourceLocation": "lead (400–650, older accounts)" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-ajanta", "sourceLocation": "lead, History and map caption" }] }]
     },
     {
       "uuid": "aryabhata",
@@ -22045,7 +22290,8 @@
       "end": "550 CE",
       "tracks": ["gupta"],
       "descr": "Mathematician-astronomer of the Gupta era. He states he was 23 years old in 3600 Kali Yuga, 499 CE. His Aryabhatiya is translated into Arabic c. 820 CE.",
-      "sources": [{ "sourceKey": "wp-aryabhata", "sourceLocation": "lead, infobox and Biography" }]
+      "sources": [{ "sourceKey": "wp-aryabhata", "sourceLocation": "lead, infobox and Biography" }],
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-aryabhata", "sourceLocation": "lead, infobox and Biography" }] }]
     },
     {
       "uuid": "harsha",
@@ -22071,7 +22317,8 @@
       "descr": "The Tang Chinese emperor Tang Taizong sends Wang Xuance to India.",
       "sources": [{ "sourceKey": "wp-harsha", "sourceLocation": "Reign" }],
       "links": [{ "to": "harsha", "kind": "related" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "diplomacy", "sources": [{ "sourceKey": "wp-harsha", "sourceLocation": "Reign" }] }]
     },
     {
       "uuid": "qin-unification",
@@ -22134,7 +22381,8 @@
       "tracks": ["han"],
       "descr": "Emperor Wu dispatches his envoy Zhang Qian into the Western Regions.",
       "sources": [{ "sourceKey": "wp-emperor-wu-han", "sourceLocation": "lead" }],
-      "links": [{ "to": "emperor-wu-han", "kind": "part-of" }]
+      "links": [{ "to": "emperor-wu-han", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "diplomacy", "sources": [{ "sourceKey": "wp-emperor-wu-han", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "shiji",
@@ -22147,7 +22395,8 @@
         { "year": "94 BCE", "source": { "sourceKey": "wp-sima-qian", "sourceLocation": "As Han court official (probably around 94 BC)" } },
         { "year": "91 BCE", "source": { "sourceKey": "wp-sima-qian", "sourceLocation": "As Han court official (before 91 BC)" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-sima-qian", "sourceLocation": "lead and As Han court official" }] }]
     },
     {
       "uuid": "xin-interregnum",
@@ -22156,7 +22405,8 @@
       "end": "23 CE",
       "tracks": ["han"],
       "descr": "Between the Western Han (202 BC – 9 AD) and the Eastern Han (25–220 AD).",
-      "sources": [{ "sourceKey": "wp-han", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-han", "sourceLocation": "infobox and lead" }],
+      "memberships": [{ "facet": "category", "value": "coup", "sources": [{ "sourceKey": "wp-han", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "cai-lun-paper",
@@ -22165,7 +22415,8 @@
       "tracks": ["han"],
       "descr": "A eunuch official at the court in Luoyang, he substantially improves the papermaking process; earlier forms of paper have existed since the 3rd century BCE.",
       "sources": [{ "sourceKey": "wp-cai-lun", "sourceLocation": "lead" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-cai-lun", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "yellow-turbans",
@@ -22287,7 +22538,8 @@
       "tracks": ["sui"],
       "descr": "The network is expanded and completed by Emperor Yang of Sui; its oldest sections date to the early 5th century BC.",
       "sources": [{ "sourceKey": "wp-grand-canal", "sourceLocation": "lead" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-grand-canal", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "tang-founded",
@@ -22315,7 +22567,8 @@
       "start": "194 BCE",
       "tracks": ["gojoseon"],
       "descr": "The ruling dynasty of Old Chosŏn is overthrown by Wiman. Tradition places the founding by Tan’gun in 2333 BCE, a date the page calls mythological.",
-      "sources": [{ "sourceKey": "wp-gojoseon-classical", "sourceLocation": "lead and infobox" }]
+      "sources": [{ "sourceKey": "wp-gojoseon-classical", "sourceLocation": "lead and infobox" }],
+      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-gojoseon-classical", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "gojoseon-falls",
@@ -22357,7 +22610,10 @@
         { "sourceKey": "wp-silla", "sourceLocation": "infobox" }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }] }]
+      "memberships": [
+        { "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }] },
+        { "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-three-kingdoms-korea", "sourceLocation": "lead" }] }
+      ]
     },
     {
       "uuid": "gwanggaeto",
@@ -22394,7 +22650,8 @@
       "tracks": ["silla"],
       "descr": "Buddhism becomes Silla’s state and official religion from 527.",
       "sources": [{ "sourceKey": "wp-silla", "sourceLocation": "infobox" }],
-      "links": [{ "to": "goguryeo-buddhism", "kind": "related" }]
+      "links": [{ "to": "goguryeo-buddhism", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-silla", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "goguryeo-sui-war",
@@ -22613,7 +22870,14 @@
       "tracks": ["first-turkic", "eastern-roman"],
       "descr": "First contact is believed to have happened in 563; a Turkic embassy arrives in 568, and in 569 an embassy led by Zemarchus follows.",
       "sources": [{ "sourceKey": "wp-first-turkic", "sourceLocation": "History > Relations with the Byzantine Empire" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "diplomacy",
+          "sources": [{ "sourceKey": "wp-first-turkic", "sourceLocation": "History > Relations with the Byzantine Empire" }]
+        }
+      ]
     },
     {
       "uuid": "turkic-split",
@@ -22626,7 +22890,7 @@
         { "sourceKey": "wp-first-turkic", "sourceLocation": "infobox and lead" },
         { "sourceKey": "wp-eastern-turkic", "sourceLocation": "History > East-West split and Independence" }
       ],
-      "memberships": [{ "facet": "category", "value": "civil-war", "sources": [{ "sourceKey": "wp-first-turkic", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "territory", "sources": [{ "sourceKey": "wp-first-turkic", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "tang-conquers-eastern-turks",
@@ -22670,7 +22934,13 @@
         { "sourceKey": "wp-first-turkic", "sourceLocation": "History > Western expansion" },
         { "sourceKey": "wp-hephthalites", "sourceLocation": "infobox and lead" }
       ],
-      "memberships": [{ "facet": "category", "value": "conflict", "sources": [{ "sourceKey": "wp-first-turkic", "sourceLocation": "History > Western expansion" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "dissolved",
+          "sources": [{ "sourceKey": "wp-first-turkic", "sourceLocation": "History > Western expansion" }]
+        }
+      ]
     },
     {
       "uuid": "alans-caucasus",
@@ -22697,7 +22967,8 @@
       "descr": "By 370 the Huns have arrived on the Volga, causing the westward movement of Goths and Alans; in 376 the Goths cross the Danube. By 430 the Huns have a vast but short-lived empire on the Danubian frontier.",
       "sources": [{ "sourceKey": "wp-huns", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-attila", "sourceLocation": "Early life and background" }],
       "links": [{ "to": "adrianople", "kind": "causes" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "invasion", "sources": [{ "sourceKey": "wp-huns", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "attila",
@@ -22745,7 +23016,8 @@
       "start": "567 CE",
       "tracks": ["avars"],
       "descr": "The Pannonian Avars enter the historical scene in the mid-6th century; their khaganate is established in 567 and lasts until 822.",
-      "sources": [{ "sourceKey": "wp-avars", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-avars", "sourceLocation": "infobox and lead" }],
+      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-avars", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "avar-byzantine-wars",
@@ -23025,7 +23297,7 @@
       "tracks": ["nobatia"],
       "descr": "The first known king of Nobatia claims to have driven the Blemmyes into the Eastern Desert; the capital is set at Pachoras (Faras). The last known Meroitic inscription, of the Blemmye king Kharamadoye at Kalabsha, dates to AD 410/450.",
       "sources": [{ "sourceKey": "wp-nobatia", "sourceLocation": "infobox, lead and History" }, { "sourceKey": "wp-meroitic-script", "sourceLocation": "lead" }],
-      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-nobatia", "sourceLocation": "infobox, lead and History" }] }]
+      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-nobatia", "sourceLocation": "infobox, lead and History" }] }]
     },
     {
       "uuid": "dongola",
@@ -23111,6 +23383,13 @@
       "startDates": [
         { "year": "55 CE", "margin": 15, "source": { "sourceKey": "wp-periplus", "sourceLocation": "Date and authorship (Hill, Casson: AD 40–70)" } },
         { "year": "60 CE", "source": { "sourceKey": "wp-periplus", "sourceLocation": "lead (Schoff and Agius: 'around AD 60')" } }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [{ "sourceKey": "wp-periplus", "sourceLocation": "lead, Date and authorship, and Aksum section" }]
+        }
       ]
     },
     {
@@ -23127,6 +23406,13 @@
         { "year": "270 CE", "source": { "sourceKey": "wp-aksum-currency", "sourceLocation": "lead and Pre-Christian period ('around 270')" } },
         { "year": "290 CE", "margin": 20, "source": { "sourceKey": "wp-aksum", "sourceLocation": "lead (Endybis, 270–310)" } },
         { "year": "231 CE", "margin": 4, "source": { "sourceKey": "wp-aksum-currency", "sourceLocation": "Endybis caption (227–235 AD)" } }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [{ "sourceKey": "wp-aksum-currency", "sourceLocation": "lead, Pre-Christian period and Kings" }]
+        }
       ]
     },
     {
@@ -23169,7 +23455,8 @@
         }
       ],
       "links": [{ "to": "ezana", "kind": "part-of" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-aksum", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "axum-stelae",
@@ -23179,7 +23466,8 @@
       "descr": "The Obelisk of Axum is probably carved and erected during the 4th century AD; the last stele raised in Axum is probably King Ezana’s Stele.",
       "sources": [{ "sourceKey": "wp-obelisk-axum", "sourceLocation": "infobox and History" }],
       "startDates": [{ "year": "350 CE", "margin": 50, "source": { "sourceKey": "wp-obelisk-axum", "sourceLocation": "History ('during the 4th century AD')" } }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-obelisk-axum", "sourceLocation": "infobox and History" }] }]
     },
     {
       "uuid": "kaleb",
@@ -23458,7 +23746,14 @@
       "tracks": ["roman-britain", "rome-republic-empire"],
       "descr": "Begun in AD 122, in the reign of Hadrian; most of it takes six years to build, by some 15,000 soldiers of three legions. The turf Antonine Wall follows in AD 142.",
       "sources": [{ "sourceKey": "wp-hadrians-wall", "sourceLocation": "infobox, lead and Construction" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "territory",
+          "sources": [{ "sourceKey": "wp-hadrians-wall", "sourceLocation": "infobox, lead and Construction" }]
+        }
+      ]
     },
     {
       "uuid": "end-roman-britain",
@@ -23660,7 +23955,8 @@
       "start": "589 CE",
       "tracks": ["visigoths"],
       "descr": "Under Reccared (586–601) Catholic Christianity becomes the official religion of the kingdom. The Visigothic Code is completed in 654.",
-      "sources": [{ "sourceKey": "wp-visigothic-kingdom", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-visigothic-kingdom", "sourceLocation": "infobox and lead" }],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-visigothic-kingdom", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "spania-expelled",
@@ -23763,7 +24059,8 @@
       "descr": "He converts to Nicene Christianity rather than Arianism.",
       "sources": [{ "sourceKey": "wp-clovis", "sourceLocation": "lead" }, { "sourceKey": "wp-merovingians", "sourceLocation": "lead" }],
       "startDates": [{ "year": "502 CE", "margin": 4, "source": { "sourceKey": "wp-clovis", "sourceLocation": "lead ('between 498 and 506')" } }],
-      "links": [{ "to": "clovis", "kind": "part-of" }]
+      "links": [{ "to": "clovis", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-clovis", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "vouille",
@@ -23807,7 +24104,8 @@
       "tracks": ["slavs"],
       "descr": "The first written use of the name “Slavs” dates to the 6th century; Jordanes describes them in his Getica (c. 551).",
       "sources": [{ "sourceKey": "wp-early-slavs", "sourceLocation": "lead and Origins" }, { "sourceKey": "wp-goths", "sourceLocation": "Prehistory" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-early-slavs", "sourceLocation": "lead and Origins" }] }]
     },
     {
       "uuid": "slavs-expand",
@@ -23822,7 +24120,8 @@
           "margin": 50,
           "source": { "sourceKey": "wp-early-slavs", "sourceLocation": "lead ('Between the sixth and seventh centuries')" }
         }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "colony", "sources": [{ "sourceKey": "wp-early-slavs", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "olmec-decline",
@@ -23928,7 +24227,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "sack",
           "sources": [{ "sourceKey": "wp-cuicuilco", "sourceLocation": "lead, History and End of the culture" }]
         }
       ]
@@ -24183,7 +24482,8 @@
         { "year": "600 CE", "source": { "sourceKey": "wp-wari", "sourceLocation": "History" } },
         { "year": "650 CE", "source": { "sourceKey": "wp-nazca", "sourceLocation": "Arts > Pottery" } },
         { "year": "650 CE", "source": { "sourceKey": "wp-lima-culture", "sourceLocation": "Pachacamac" } }
-      ]
+      ],
+      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-wari", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "hohokam-pioneer",
@@ -24346,7 +24646,8 @@
       "tracks": ["funan", "rome-republic-empire"],
       "descr": "Funan’s port yields Roman gold medallions from the reign of Antoninus Pius and possibly Marcus Aurelius; Chinese texts claim the Romans first landed in the region before going on into China to conduct diplomacy in 166.",
       "sources": [{ "sourceKey": "wp-oc-eo", "sourceLocation": "lead and Remains" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-oc-eo", "sourceLocation": "lead and Remains" }] }]
     },
     {
       "uuid": "chenla-conquers-funan",
@@ -24399,7 +24700,8 @@
         { "year": "638 CE", "source": { "sourceKey": "wp-pyu", "sourceLocation": "infobox (22 March 638)" } },
         { "year": "640 CE", "source": { "sourceKey": "wp-sri-ksetra", "sourceLocation": "infobox (21 March 640)" } }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-pyu", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "tuyuhun-founded",
@@ -24408,7 +24710,8 @@
       "tracks": ["tuyuhun"],
       "descr": "Established by subjugating the Qiang; the people of Murong Shegui cross the Yellow River between 307 and 313, and Tuyuhun dies in 317.",
       "sources": [{ "sourceKey": "wp-tuyuhun", "sourceLocation": "infobox and History" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-tuyuhun", "sourceLocation": "infobox and History" }] }]
     },
     {
       "uuid": "namri-songtsen",
@@ -24480,7 +24783,8 @@
         { "year": "641 CE", "source": { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History ('She arrived a year later')" } }
       ],
       "links": [{ "to": "songtsen-gampo", "kind": "part-of" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "alliance", "sources": [{ "sourceKey": "wp-wencheng", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "jokhang",
@@ -24493,7 +24797,8 @@
         { "year": "640 CE", "source": { "sourceKey": "wp-jokhang", "sourceLocation": "lead ('built in c.640')" } },
         { "year": "652 CE", "source": { "sourceKey": "wp-jokhang", "sourceLocation": "infobox and History (oldest part built in 652)" } }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-jokhang", "sourceLocation": "infobox, lead and History" }] }]
     },
     {
       "uuid": "zhangzhung-conquered",
@@ -24511,7 +24816,8 @@
         { "year": "625 CE", "source": { "sourceKey": "wp-zhangzhung", "sourceLocation": "infobox" } },
         { "year": "634 CE", "source": { "sourceKey": "wp-zhangzhung", "sourceLocation": "Conquest (Tang Annals)" } }
       ],
-      "links": [{ "to": "songtsen-gampo", "kind": "part-of" }]
+      "links": [{ "to": "songtsen-gampo", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "conquest", "sources": [{ "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Songtsen Gampo" }] }]
     },
     {
       "uuid": "lantingji",
@@ -24520,7 +24826,8 @@
       "tracks": ["jin-china"],
       "descr": "On 22 April 353 Wang Xizhi hosts 41 friends, relatives and pupils at the Orchid Pavilion on Mount Kuaiji; they compose 41 poems, and his preface, the Lantingji xu, becomes the most famous calligraphic work attributed to him.",
       "sources": [{ "sourceKey": "wp-wang-xizhi", "sourceLocation": "lead and Orchid Pavilion" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-wang-xizhi", "sourceLocation": "lead and Orchid Pavilion" }] }]
     },
     {
       "uuid": "mogao",
@@ -24533,7 +24840,8 @@
         { "year": "366 CE", "source": { "sourceKey": "wp-mogao", "sourceLocation": "lead and History (Fokan Ji)" } },
         { "year": "353 CE", "source": { "sourceKey": "wp-mogao", "sourceLocation": "History (Shazhou Tujing)" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-mogao", "sourceLocation": "lead and History" }] }]
     },
     {
       "uuid": "faxian",
@@ -24553,7 +24861,14 @@
       "end": "413 CE",
       "tracks": ["sixteen-kingdoms"],
       "descr": "Born in Kucha in 344 and captured by a warlord in 386, he is brought to Chang’an in 401 under the Later Qin; within a dozen years his translation bureau renders about thirty-five sutras in 294 scrolls. He dies in 413.",
-      "sources": [{ "sourceKey": "wp-kumarajiva", "sourceLocation": "infobox, lead, Early life, Capture and Arrival" }]
+      "sources": [{ "sourceKey": "wp-kumarajiva", "sourceLocation": "infobox, lead, Early life, Capture and Arrival" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [{ "sourceKey": "wp-kumarajiva", "sourceLocation": "infobox, lead, Early life, Capture and Arrival" }]
+        }
+      ]
     },
     {
       "uuid": "tao-yuanming",
@@ -24562,7 +24877,14 @@
       "tracks": ["jin-china"],
       "descr": "The poet (365–427; born 352 by one argument) resigns after some eighty days as magistrate of Pengze and spends the last 22 years of his life on his farmstead.",
       "sources": [{ "sourceKey": "wp-tao-yuanming", "sourceLocation": "infobox, Year of birth, Government stints and Return to the fields" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [{ "sourceKey": "wp-tao-yuanming", "sourceLocation": "infobox, Year of birth, Government stints and Return to the fields" }]
+        }
+      ]
     },
     {
       "uuid": "liu-song-founded",
@@ -24594,7 +24916,14 @@
       "end": "465 CE",
       "tracks": ["southern-dynasties"],
       "descr": "At Louxian he compiles the Daming calendar (introduced in 465, with a year of 365.24281481 days) and calculates π as between 3.1415926 and 3.1415927, a precision not surpassed for nearly 900 years.",
-      "sources": [{ "sourceKey": "wp-zu-chongzhi", "sourceLocation": "lead, Life and works and Mathematics" }]
+      "sources": [{ "sourceKey": "wp-zu-chongzhi", "sourceLocation": "lead, Life and works and Mathematics" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [{ "sourceKey": "wp-zu-chongzhi", "sourceLocation": "lead, Life and works and Mathematics" }]
+        }
+      ]
     },
     {
       "uuid": "southern-qi-founded",
@@ -24704,7 +25033,8 @@
       "end": "494 CE",
       "tracks": ["northern-dynasties"],
       "descr": "Near Pingcheng (Datong) the first period of carving ends in 465; a second phase under imperial supervision runs from around 471 to 494, when the court moves to Luoyang. Private patronage continues until 525.",
-      "sources": [{ "sourceKey": "wp-yungang", "sourceLocation": "lead and History" }]
+      "sources": [{ "sourceKey": "wp-yungang", "sourceLocation": "lead and History" }],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-yungang", "sourceLocation": "lead and History" }] }]
     },
     {
       "uuid": "longmen",
@@ -24717,7 +25047,8 @@
         { "year": "493 CE", "source": { "sourceKey": "wp-longmen", "sourceLocation": "lead and History" } },
         { "year": "478 CE", "source": { "sourceKey": "wp-longmen", "sourceLocation": "Guyangdong (earliest carving)" } }
       ],
-      "links": [{ "to": "xiaowen-reforms", "kind": "related" }]
+      "links": [{ "to": "xiaowen-reforms", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-longmen", "sourceLocation": "lead, History and Binyang" }] }]
     },
     {
       "uuid": "six-garrisons",
@@ -24740,7 +25071,8 @@
         { "sourceKey": "wp-eastern-wei", "sourceLocation": "infobox and History" },
         { "sourceKey": "wp-western-wei", "sourceLocation": "infobox" }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "territory", "sources": [{ "sourceKey": "wp-yuwen-tai", "sourceLocation": "lead and Alliance with Xiaowu" }] }]
     },
     {
       "uuid": "shayuan",
@@ -24817,7 +25149,14 @@
         { "year": "629 CE", "source": { "sourceKey": "wp-xuanzang", "sourceLocation": "Dates ('Most sources … 629 CE')" } },
         { "year": "627 CE", "source": { "sourceKey": "wp-xuanzang", "sourceLocation": "Dates ('either 627 or 629')" } }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [{ "sourceKey": "wp-xuanzang", "sourceLocation": "lead, Dates, Return to China and Original works" }]
+        }
+      ]
     },
     {
       "uuid": "lingling-o",
@@ -24876,7 +25215,8 @@
       "tracks": ["tarumanagara"],
       "descr": "The monk stays on the island of Ye-po-ti, most probably western Java, for six months, from December 412 until May 413.",
       "sources": [{ "sourceKey": "wp-tarumanagara", "sourceLocation": "Historiography" }],
-      "links": [{ "to": "faxian", "kind": "part-of" }]
+      "links": [{ "to": "faxian", "kind": "part-of" }],
+      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-tarumanagara", "sourceLocation": "Historiography" }] }]
     },
     {
       "uuid": "purnawarman",
@@ -25180,6 +25520,18 @@
       "endDates": [
         { "year": "232 CE", "source": { "sourceKey": "wp-vasudeva-i", "sourceLocation": "infobox and lead" } },
         { "year": "230 CE", "source": { "sourceKey": "wp-vasudeva-i", "sourceLocation": "Kushan table ('c. 190 – 230')" } }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-vasudeva-i",
+              "sourceLocation": "short description, infobox, lead, Contacts with China and Sassanid invasion in the northwest"
+            }
+          ]
+        }
       ]
     },
     {
@@ -25326,7 +25678,8 @@
       "descr": "Forced to surrender at Alesia in September 52 BC, Vercingetorix is imprisoned in Rome for six years and executed after Caesar’s triumph in 46 BC.",
       "sources": [{ "sourceKey": "wp-vercingetorix", "sourceLocation": "lead and infobox" }],
       "links": [{ "to": "alesia", "kind": "related" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "coup", "sources": [{ "sourceKey": "wp-vercingetorix", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "germanicus-germania",
@@ -25372,7 +25725,14 @@
         { "year": "449 CE", "source": { "sourceKey": "wp-hengist-horsa", "sourceLocation": "Anglo-Saxon Chronicle" } },
         { "year": "447 CE", "source": { "sourceKey": "wp-hengist-horsa", "sourceLocation": "History of the Britons" } }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [{ "sourceKey": "wp-hengist-horsa", "sourceLocation": "Anglo-Saxon Chronicle, History of the Britons and Ecclesiastical History" }]
+        }
+      ]
     },
     {
       "uuid": "badon",
@@ -25412,7 +25772,19 @@
       "startDates": [{ "year": "575 CE", "margin": 1, "source": { "sourceKey": "wp-rule-of-dukes", "sourceLocation": "lead ('574/5–584/5')" } }],
       "endDates": [{ "year": "585 CE", "margin": 1, "source": { "sourceKey": "wp-rule-of-dukes", "sourceLocation": "lead ('574/5–584/5')" } }],
       "links": [{ "to": "lombards-italy", "kind": "related" }],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-rule-of-dukes",
+              "sourceLocation": "lead, Political context, Description by Paul the Deacon and Origo Gentis Langobardorum"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "dos-pilas-founded",
@@ -25483,7 +25855,8 @@
         { "year": "623 CE", "source": { "sourceKey": "wp-bhrikuti", "sourceLocation": "Life ('before 624 CE')" } },
         { "year": "632 CE", "source": { "sourceKey": "wp-bhrikuti", "sourceLocation": "Life (Acharya Kirti Tulku Lobsang Tenzin: 'in 632')" } }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [{ "facet": "category", "value": "alliance", "sources": [{ "sourceKey": "wp-bhrikuti", "sourceLocation": "lead, infobox and Life" }] }]
     },
     {
       "uuid": "chen-north-573",
@@ -25555,7 +25928,8 @@
       "tracks": ["asuka"],
       "descr": "Suiko ascends the throne after an assassination in 592 (15 January 593 by the Gregorian calendar, 8 December 592 by the lunar) and reigns until her death in 628. Prince Shōtoku is regent from 593 to 621.",
       "sources": [{ "sourceKey": "wp-suiko", "sourceLocation": "lead, infobox and Biography" }],
-      "links": [{ "to": "seventeen-article", "kind": "related" }]
+      "links": [{ "to": "seventeen-article", "kind": "related" }],
+      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-suiko", "sourceLocation": "lead, infobox and Biography" }] }]
     }
   ]
 }

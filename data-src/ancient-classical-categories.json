@@ -145,6 +145,12 @@
      "conflict"
     ]
    },
+   "attack": {
+    "name": "Attack, ambush or raid",
+    "broader": [
+     "conflict"
+    ]
+   },
    "unrest": {
     "name": "Revolts"
    },
@@ -162,6 +168,12 @@
    },
    "civil-war": {
     "name": "Civil war",
+    "broader": [
+     "unrest"
+    ]
+   },
+   "repression": {
+    "name": "Arrests and repression",
     "broader": [
      "unrest"
     ]
@@ -251,7 +263,6 @@
    "conquest"
   ],
   "academy": [
-   "founded",
    "culture"
   ],
   "achaemenid-indus": [
@@ -279,8 +290,17 @@
   "ain-ghazal": [
    "city-founded"
   ],
+  "ajanta": [
+   "religion"
+  ],
   "akhenaten": [
    "succession"
+  ],
+  "aksum-christian": [
+   "religion"
+  ],
+  "aksum-coins": [
+   "economy"
   ],
   "aksum-himyar": [
    "conquest"
@@ -289,13 +309,17 @@
    "war"
   ],
   "alalakh-vii": [
-   "site"
+   "site",
+   "sack"
   ],
   "alalia": [
    "battle"
   ],
   "alans-caucasus": [
    "find"
+  ],
+  "alara": [
+   "succession"
   ],
   "alaric": [
    "sack"
@@ -310,11 +334,17 @@
    "succession",
    "war"
   ],
+  "alexander-getae": [
+   "attack"
+  ],
   "almendres": [
    "site"
   ],
   "altai-mountains": [
    "war"
+  ],
+  "amarna-letters": [
+   "find"
   ],
   "animal-domestication": [
    "archaeology"
@@ -323,7 +353,7 @@
    "succession"
   ],
   "anitta-hattusa": [
-   "city-founded"
+   "sack"
   ],
   "anuradhapura": [
    "colony"
@@ -335,10 +365,14 @@
    "conquest",
    "invasion"
   ],
+  "aramaic-lingua-franca": [
+   "culture"
+  ],
   "aramean-states": [
    "conquest"
   ],
   "archimedes": [
+   "coup",
    "siege"
   ],
   "argishti-diauehi": [
@@ -348,6 +382,12 @@
   "arkaim": [
    "colony",
    "city-founded"
+  ],
+  "armenia-christian": [
+   "religion"
+  ],
+  "aryabhata": [
+   "culture"
   ],
   "arzhan-1": [
    "site"
@@ -367,6 +407,9 @@
   "ashurbanipal": [
    "succession"
   ],
+  "ashurbanipal-library": [
+   "sack"
+  ],
   "asikli": [
    "colony",
    "city-founded"
@@ -376,6 +419,9 @@
   ],
   "assyria-egypt": [
    "invasion"
+  ],
+  "assyria-mitanni-vassal": [
+   "vassalage"
   ],
   "ateas-killed": [
    "conflict"
@@ -389,11 +435,20 @@
   "au-lac-founded": [
    "founded"
   ],
+  "augustus": [
+   "title"
+  ],
   "austronesians-indonesia": [
    "horizon"
   ],
   "avar-byzantine-wars": [
    "war"
+  ],
+  "avar-khaganate": [
+   "founded"
+  ],
+  "axum-stelae": [
+   "culture"
   ],
   "babylon-invades-egypt": [
    "invasion"
@@ -415,6 +470,9 @@
   ],
   "balbus-garamantes": [
    "invasion"
+  ],
+  "ban-chao-khotan": [
+   "battle"
   ],
   "ban-chiang-bronze": [
    "find"
@@ -466,6 +524,9 @@
    "find",
    "city-founded"
   ],
+  "bhrikuti": [
+   "alliance"
+  ],
   "bimbisara": [
    "succession"
   ],
@@ -488,7 +549,13 @@
   "bronze-age-collapse": [
    "dissolved"
   ],
+  "buddha": [
+   "religion"
+  ],
   "buddhism-japan": [
+   "religion"
+  ],
+  "buddhism-sri-lanka": [
    "religion"
   ],
   "budj-bim": [
@@ -515,6 +582,9 @@
   "caesar-assassinated": [
    "coup"
   ],
+  "cai-lun-paper": [
+   "culture"
+  ],
   "calakmul-palenque": [
    "sack"
   ],
@@ -540,6 +610,7 @@
    "battle"
   ],
   "carthage-destroyed": [
+   "dissolved",
    "war"
   ],
   "carthage-founded": [
@@ -607,6 +678,9 @@
    "colony",
    "city-founded"
   ],
+  "chogha-zanbil": [
+   "religion"
+  ],
   "cholula-pyramid": [
    "site"
   ],
@@ -629,14 +703,16 @@
    "invasion"
   ],
   "cleisthenes": [
-   "law",
-   "battle"
+   "reform"
   ],
   "clotaire-reunites": [
    "union"
   ],
   "clovis": [
    "union"
+  ],
+  "clovis-baptism": [
+   "religion"
   ],
   "code-hammurabi": [
    "law"
@@ -646,6 +722,12 @@
   ],
   "colchis-consolidates": [
    "horizon"
+  ],
+  "colchis-greeks": [
+   "colony"
+  ],
+  "confucius": [
+   "culture"
   ],
   "constantinople": [
    "city-founded"
@@ -658,6 +740,9 @@
   ],
   "croesus": [
    "succession"
+  ],
+  "crucifixion": [
+   "religion"
   ],
   "cueva-manos": [
    "site"
@@ -674,6 +759,9 @@
   "cyprus-persia": [
    "conquest"
   ],
+  "cyprus-ten-kingdoms": [
+   "vassalage"
+  ],
   "cyprus-thutmose": [
    "conquest"
   ],
@@ -681,8 +769,11 @@
    "founded",
    "city-founded"
   ],
+  "cyrus-cylinder": [
+   "find"
+  ],
   "cyrus-revolt": [
-   "siege"
+   "revolt"
   ],
   "cyrus-takes-babylon": [
    "conquest",
@@ -737,6 +828,12 @@
   "djenne-settled": [
    "colony"
   ],
+  "djoser": [
+   "culture"
+  ],
+  "dmt-first-king": [
+   "succession"
+  ],
   "doggerland": [
    "revolt"
   ],
@@ -762,6 +859,9 @@
    "dissolved",
    "city-founded"
   ],
+  "drought-4200": [
+   "disaster"
+  ],
   "dufuna-canoe": [
    "find"
   ],
@@ -782,6 +882,12 @@
   ],
   "ebla-archives": [
    "find"
+  ],
+  "ebla-first-destruction": [
+   "sack"
+  ],
+  "ebla-mursili": [
+   "dissolved"
   ],
   "ebla-settled": [
    "colony"
@@ -849,6 +955,9 @@
   "fall-of-sardis": [
    "conquest"
   ],
+  "fall-of-ur": [
+   "sack"
+  ],
   "fall-west": [
    "sack"
   ],
@@ -856,6 +965,9 @@
    "city-founded"
   ],
   "faxian": [
+   "religion"
+  ],
+  "faxian-java": [
    "religion"
   ],
   "feathered-serpent": [
@@ -866,6 +978,9 @@
   ],
   "first-chariots": [
    "find"
+  ],
+  "first-olympiad": [
+   "culture"
   ],
   "first-palaces": [
    "site"
@@ -922,6 +1037,9 @@
   "ghassulian": [
    "archaeology"
   ],
+  "gilgamesh": [
+   "culture"
+  ],
   "glazkov": [
    "horizon"
   ],
@@ -936,6 +1054,7 @@
    "site"
   ],
   "goguryeo-buddhism": [
+   "religion",
    "civil-war"
   ],
   "goguryeo-sui-war": [
@@ -960,6 +1079,9 @@
   "goths-danube": [
    "conflict"
   ],
+  "grand-canal": [
+   "economy"
+  ],
   "greco-bactria": [
    "independence"
   ],
@@ -981,6 +1103,9 @@
   "gregorian-mission": [
    "religion"
   ],
+  "gudea": [
+   "succession"
+  ],
   "gupta-hunnic-wars": [
    "war"
   ],
@@ -991,7 +1116,11 @@
    "invasion"
   ],
   "gyges-killed": [
-   "sack"
+   "sack",
+   "attack"
+  ],
+  "hadrians-wall": [
+   "territory"
   ],
   "hafit": [
    "site"
@@ -1042,7 +1171,7 @@
   ],
   "hattusa-abandoned": [
    "territory",
-   "city-founded"
+   "sack"
   ],
   "hattusili-i": [
    "succession",
@@ -1059,13 +1188,16 @@
    "city-founded"
   ],
   "hazor-burned": [
-   "city-founded"
+   "sack"
   ],
   "hemudu": [
    "site"
   ],
+  "hengist-horsa": [
+   "colony"
+  ],
   "hephthalites-destroyed": [
-   "conflict"
+   "dissolved"
   ],
   "hephthalites-rise": [
    "conflict"
@@ -1079,14 +1211,29 @@
   "herodotus": [
    "war"
   ],
+  "herodotus-garamantes": [
+   "find"
+  ],
+  "hesiod": [
+   "culture"
+  ],
+  "hijrah": [
+   "religion"
+  ],
   "himera": [
    "battle"
   ],
   "himiko": [
    "succession"
   ],
+  "hittite-marriage": [
+   "alliance"
+  ],
   "hohokam-pioneer": [
    "site"
+  ],
+  "homer": [
+   "culture"
   ],
   "hongshan": [
    "find"
@@ -1106,8 +1253,17 @@
   "huaca-prieta": [
    "site"
   ],
+  "hundred-schools": [
+   "culture"
+  ],
   "hung-kings": [
    "founded"
+  ],
+  "huns-arrive": [
+   "invasion"
+  ],
+  "hurrians-alalakh": [
+   "colony"
   ],
   "hyksos": [
    "invasion"
@@ -1164,8 +1320,8 @@
    "siege"
   ],
   "jerusalem-70": [
-   "religion",
-   "invasion"
+   "sack",
+   "religion"
   ],
   "jeulmun": [
    "archaeology"
@@ -1192,8 +1348,14 @@
    "union",
    "civil-war"
   ],
+  "jokhang": [
+   "religion"
+  ],
   "jomon-peach": [
    "disaster"
+  ],
+  "jordanes-slavs": [
+   "find"
   ],
   "juba-ii": [
    "vassalage"
@@ -1213,6 +1375,9 @@
   "kaleb": [
    "succession",
    "invasion"
+  ],
+  "kalhu-capital": [
+   "capital-moved"
   ],
   "kalinga-war": [
    "war"
@@ -1241,10 +1406,10 @@
    "horizon"
   ],
   "kaska-burn-hattusa": [
-   "conflict"
+   "sack"
   ],
   "kaska-first": [
-   "invasion"
+   "find"
   ],
   "kaska-sack-hattusa": [
    "sack"
@@ -1253,10 +1418,14 @@
    "coup"
   ],
   "kerma-destroyed": [
-   "conquest"
+   "conquest",
+   "dissolved"
   ],
   "kerma-invades-egypt": [
    "invasion"
+  ],
+  "khufu": [
+   "culture"
   ],
   "kidarite-kingdom": [
    "invasion"
@@ -1266,6 +1435,9 @@
   ],
   "kingdom-israel": [
    "capital-moved"
+  ],
+  "kingdom-judah": [
+   "founded"
   ],
   "kintampo": [
    "horizon"
@@ -1277,7 +1449,8 @@
    "site"
   ],
   "knossos-destroyed": [
-   "site"
+   "site",
+   "sack"
   ],
   "koban-bronze": [
    "horizon"
@@ -1299,6 +1472,9 @@
   ],
   "kuk-drainage": [
    "site"
+  ],
+  "kumarajiva": [
+   "religion"
   ],
   "kura-araxes-spread": [
    "horizon"
@@ -1341,6 +1517,12 @@
   "lahuradewa": [
    "find"
   ],
+  "lantingji": [
+   "culture"
+  ],
+  "laozi": [
+   "religion"
+  ],
   "lapita-bismarck": [
    "horizon"
   ],
@@ -1375,8 +1557,14 @@
   "liangzhu-collapse": [
    "horizon"
   ],
+  "library-alexandria": [
+   "sack"
+  ],
   "libu-invasion": [
    "invasion"
+  ],
+  "lihyan": [
+   "founded"
   ],
   "linear-a": [
    "culture"
@@ -1405,6 +1593,9 @@
   "long-pause": [
    "colony"
   ],
+  "longmen": [
+   "religion"
+  ],
   "lothal": [
    "city-founded"
   ],
@@ -1413,6 +1604,9 @@
   ],
   "lyceum": [
    "founded"
+  ],
+  "lydian-coins": [
+   "economy"
   ],
   "maccabees": [
    "revolt"
@@ -1423,8 +1617,17 @@
   "magan-akkad": [
    "invasion"
   ],
+  "magan-ur3": [
+   "economy"
+  ],
   "maglemosian": [
    "horizon"
+  ],
+  "mahajanapadas": [
+   "union"
+  ],
+  "mahavira": [
+   "religion"
   ],
   "maize-domesticated": [
    "find"
@@ -1456,8 +1659,18 @@
   "marianas-settled": [
    "colony"
   ],
+  "marib-dam": [
+   "economy"
+  ],
+  "maritime-jade-road": [
+   "economy"
+  ],
   "masinissa-numidia": [
    "war"
+  ],
+  "maues": [
+   "succession",
+   "founded"
   ],
   "mauretania-annexed": [
    "annexation"
@@ -1498,6 +1711,9 @@
   "meluhha-last": [
    "find"
   ],
+  "meluhha-sargon": [
+   "economy"
+  ],
   "menander": [
    "invasion"
   ],
@@ -1524,7 +1740,7 @@
    "succession"
   ],
   "meroe-capital": [
-   "city-founded"
+   "capital-moved"
   ],
   "meroe-falls": [
    "conquest",
@@ -1553,6 +1769,9 @@
   ],
   "modu-xiongnu": [
    "founded"
+  ],
+  "mogao": [
+   "religion"
   ],
   "mohenjo-daro": [
    "city-founded"
@@ -1584,7 +1803,10 @@
    "succession"
   ],
   "mushki-alzi": [
-   "alliance"
+   "attack"
+  ],
+  "mushki-tp1": [
+   "conflict"
   ],
   "muwatalli-ii": [
    "succession"
@@ -1663,6 +1885,12 @@
   "nedao": [
    "battle"
   ],
+  "neo-assyrian": [
+   "founded"
+  ],
+  "neo-hittite": [
+   "founded"
+  ],
   "nero-meroe": [
    "invasion",
    "city-founded"
@@ -1709,6 +1937,13 @@
   ],
   "nuraghi": [
    "site"
+  ],
+  "nyatri-tsenpo": [
+   "succession",
+   "founded"
+  ],
+  "oc-eo-rome": [
+   "economy"
   ],
   "odrysian-founded": [
    "founded"
@@ -1769,6 +2004,9 @@
   "pampa-grande": [
    "site"
   ],
+  "panini": [
+   "culture"
+  ],
   "paracas": [
    "archaeology"
   ],
@@ -1777,6 +2015,9 @@
   ],
   "parthenon": [
    "alliance"
+  ],
+  "parthia-founded": [
+   "founded"
   ],
   "pastoral-art": [
    "culture"
@@ -1789,6 +2030,9 @@
   ],
   "peiligang": [
    "horizon"
+  ],
+  "pella": [
+   "capital-moved"
   ],
   "peloponnesian-war": [
    "war"
@@ -1806,8 +2050,14 @@
   "pericles": [
    "disaster"
   ],
+  "periplus": [
+   "economy"
+  ],
   "peroz-hephthalites": [
    "war"
+  ],
+  "persepolis": [
+   "city-founded"
   ],
   "persia-falls": [
    "conquest"
@@ -1825,13 +2075,16 @@
    "find"
   ],
   "philistia-destroyed": [
-   "revolt"
+   "sack"
   ],
   "philistines-settle": [
    "colony"
   ],
   "phoenician-alphabet": [
    "culture"
+  ],
+  "phrygia-falls": [
+   "dissolved"
   ],
   "piye-conquers-egypt": [
    "conquest"
@@ -1878,6 +2131,9 @@
    "union",
    "succession"
   ],
+  "ptolemy-pharaoh": [
+   "title"
+  ],
   "punt": [
    "invasion"
   ],
@@ -1890,7 +2146,7 @@
   ],
   "pylos-burns": [
    "site",
-   "culture"
+   "sack"
   ],
   "pyramid-of-the-sun": [
    "site"
@@ -1898,11 +2154,17 @@
   "pythagoras": [
    "founded"
   ],
+  "pyu-calendar": [
+   "culture"
+  ],
   "qadisiyyah": [
    "battle"
   ],
   "qarqar": [
    "battle"
+  ],
+  "qataban-timna": [
+   "founded"
   ],
   "qedarites-babylon-revolt": [
    "revolt",
@@ -1933,6 +2195,9 @@
   "rhine-crossing": [
    "battle"
   ],
+  "rigveda": [
+   "religion"
+  ],
   "roman-republic-founded": [
    "coup"
   ],
@@ -1940,13 +2205,20 @@
    "find"
   ],
   "rong-raids-zhou": [
-   "invasion"
+   "attack"
+  ],
+  "rosetta-stone": [
+   "law",
+   "find"
   ],
   "round-head-art": [
    "culture"
   ],
   "royal-tombs-ur": [
    "site"
+  ],
+  "rule-of-dukes": [
+   "succession"
   ],
   "sa-huynh-trade": [
    "economy",
@@ -1963,8 +2235,8 @@
    "siege"
   ],
   "sahure-punt": [
-   "invasion",
-   "archaeology"
+   "find",
+   "invasion"
   ],
   "saladoid": [
    "horizon"
@@ -2044,6 +2316,9 @@
   "scythian-assyrian-alliance": [
    "alliance"
   ],
+  "scythians-expelled": [
+   "conquest"
+  ],
   "second-punic-war": [
    "war"
   ],
@@ -2054,6 +2329,7 @@
    "conquest"
   ],
   "sennacherib-babylon": [
+   "sack",
    "siege"
   ],
   "sennacherib-qedarites": [
@@ -2087,7 +2363,7 @@
    "law"
   ],
   "shasu-yhw": [
-   "invasion"
+   "attack"
   ],
   "shayuan": [
    "battle"
@@ -2099,6 +2375,9 @@
   "shengavit": [
    "colony"
   ],
+  "shiji": [
+   "culture"
+  ],
   "shoshenq": [
    "founded"
   ],
@@ -2107,6 +2386,9 @@
   ],
   "shulgi": [
    "succession"
+  ],
+  "shunga-coup": [
+   "coup"
   ],
   "shupria-conquered": [
    "conquest"
@@ -2127,7 +2409,10 @@
    "succession"
   ],
   "silko": [
-   "culture"
+   "conquest"
+  ],
+  "silla-buddhism": [
+   "religion"
   ],
   "six-garrisons": [
    "revolt"
@@ -2137,6 +2422,9 @@
   ],
   "slab-grave": [
    "horizon"
+  ],
+  "slavs-expand": [
+   "colony"
   ],
   "socrates": [
    "succession"
@@ -2209,6 +2497,9 @@
   "sui-reunifies": [
    "union"
   ],
+  "suiko": [
+   "succession"
+  ],
   "sumu-abum": [
    "find"
   ],
@@ -2229,6 +2520,12 @@
    "city-founded"
   ],
   "susa-sacked": [
+   "sack"
+  ],
+  "suteans-arameans-babylonia": [
+   "colony"
+  ],
+  "sybaris": [
    "sack"
   ],
   "syracuse-founded": [
@@ -2270,8 +2567,17 @@
   "tanshihuai": [
    "union"
   ],
+  "tao-yuanming": [
+   "culture"
+  ],
   "tartessos-orientalizing": [
    "horizon"
+  ],
+  "tayma-assyria": [
+   "vassalage"
+  ],
+  "tayma-egypt": [
+   "vassalage"
   ],
   "telepinu": [
    "founded"
@@ -2299,8 +2605,14 @@
    "horizon",
    "dissolved"
   ],
+  "tetrarchy": [
+   "reform"
+  ],
   "teutoburg": [
    "battle"
+  ],
+  "thales-eclipse": [
+   "culture"
   ],
   "thapsus": [
    "battle"
@@ -2368,10 +2680,10 @@
    "war"
   ],
   "troy-vi": [
-   "city-founded"
+   "sack"
   ],
   "troy-viia": [
-   "city-founded"
+   "sack"
   ],
   "trung-sisters": [
    "revolt"
@@ -2385,17 +2697,32 @@
   "tukulti-ninurta": [
    "succession"
   ],
+  "turk-byzantine-embassies": [
+   "diplomacy"
+  ],
   "turkic-split": [
-   "civil-war"
+   "territory"
+  ],
+  "tushratta": [
+   "succession"
   ],
   "tutankhamun": [
    "succession"
+  ],
+  "tuyuhun-founded": [
+   "founded"
+  ],
+  "tyre-babylon": [
+   "vassalage"
   ],
   "tyre-founded": [
    "founded"
   ],
   "ubirr": [
    "site"
+  ],
+  "ugarit-destroyed": [
+   "sack"
   ],
   "ugaritic-alphabet": [
    "culture"
@@ -2421,6 +2748,9 @@
   ],
   "uruk-expansion": [
    "archaeology"
+  ],
+  "urukagina": [
+   "succession"
   ],
   "usatove": [
    "horizon"
@@ -2452,11 +2782,17 @@
   "varna": [
    "find"
   ],
+  "vasudeva-i": [
+   "vassalage"
+  ],
   "vedic-ganges": [
    "horizon"
   ],
   "vercellae": [
    "battle"
+  ],
+  "vercingetorix-executed": [
+   "coup"
   ],
   "vima-kadphises": [
    "succession"
@@ -2467,11 +2803,20 @@
   "visigoths-aquitaine": [
    "colony"
   ],
+  "visigoths-catholic": [
+   "religion"
+  ],
   "vouille": [
    "battle"
   ],
   "wadi-suq": [
    "archaeology"
+  ],
+  "wang-xuance": [
+   "diplomacy"
+  ],
+  "wari-expansion": [
+   "conquest"
   ],
   "warring-states": [
    "civil-war"
@@ -2482,11 +2827,20 @@
   "wehringen": [
    "site"
   ],
+  "wei-splits": [
+   "territory"
+  ],
+  "wencheng": [
+   "alliance"
+  ],
   "western-satraps-end": [
    "conflict"
   ],
   "wilton": [
    "horizon"
+  ],
+  "wiman": [
+   "conquest"
   ],
   "windover": [
    "site"
@@ -2501,6 +2855,9 @@
   "xiaowen-reforms": [
    "law"
   ],
+  "xin-interregnum": [
+   "coup"
+  ],
   "xinglongwa": [
    "find"
   ],
@@ -2509,10 +2866,13 @@
    "war"
   ],
   "xitle": [
-   "disaster"
+   "sack"
   ],
   "xuanwu-gate": [
    "battle"
+  ],
+  "xuanzang": [
+   "religion"
   ],
   "yamato-kingship": [
    "archaeology"
@@ -2535,6 +2895,9 @@
   "yangshao": [
    "find"
   ],
+  "yanshi": [
+   "city-founded"
+  ],
   "yarmuk": [
    "battle"
   ],
@@ -2543,6 +2906,9 @@
   ],
   "yellow-turbans": [
    "revolt"
+  ],
+  "yin-capital": [
+   "capital-moved"
   ],
   "ymyyakhtakh": [
    "horizon"
@@ -2559,9 +2925,21 @@
   "yuknoom-cheen": [
    "succession"
   ],
+  "yungang": [
+   "religion"
+  ],
+  "zabibe-tribute": [
+   "vassalage"
+  ],
   "zapotec-writing": [
    "find",
    "city-founded"
+  ],
+  "zhang-qian": [
+   "diplomacy"
+  ],
+  "zhangzhung-conquered": [
+   "conquest"
   ],
   "zhongshan": [
    "war"
@@ -2571,6 +2949,12 @@
   ],
   "zhou-east": [
    "capital-moved"
+  ],
+  "zoroaster": [
+   "religion"
+  ],
+  "zu-chongzhi": [
+   "culture"
   ]
  }
 }

@@ -771,6 +771,12 @@
               "conflict"
             ]
           },
+          "attack": {
+            "name": "Attack, ambush or raid",
+            "broader": [
+              "conflict"
+            ]
+          },
           "unrest": {
             "name": "Revolts"
           },
@@ -788,6 +794,12 @@
           },
           "civil-war": {
             "name": "Civil war",
+            "broader": [
+              "unrest"
+            ]
+          },
+          "repression": {
+            "name": "Arrests and repression",
             "broader": [
               "unrest"
             ]
@@ -26763,6 +26775,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-ur3",
+              "sourceLocation": "lead; The Fall of Ur"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -27229,7 +27253,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-hattusa",
@@ -27361,6 +27385,16 @@
         {
           "facet": "category",
           "value": "site",
+          "sources": [
+            {
+              "sourceKey": "wp-hattusili1",
+              "sourceLocation": "Reign (Yener 2021, p. 579, middle chronology)"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-hattusili1",
@@ -28044,7 +28078,19 @@
           "sourceLocation": "New kingdom ('1246 BC (Year 34)'; Bryce 2005)"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "alliance",
+          "sources": [
+            {
+              "sourceKey": "wp-hittite-kings",
+              "sourceLocation": "New kingdom ('1246 BC (Year 34)'; Bryce 2005)"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "tudhaliya-iv",
@@ -28305,7 +28351,7 @@
         },
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-hattusa",
@@ -28358,6 +28404,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-neo-hittite",
+              "sourceLocation": "Late Bronze Age – Early Iron Age transition ('12th century BCE')"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -28378,7 +28436,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-troy",
@@ -28412,7 +28470,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-troy",
@@ -28566,6 +28624,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-old-kingdom",
+              "sourceLocation": "Rise of the Old Kingdom"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -28636,7 +28706,19 @@
           }
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-old-kingdom",
+              "sourceLocation": "Height of the Old Kingdom ('Khufu (2589–2566 BC)')"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "mentuhotep-ii",
@@ -29218,6 +29300,18 @@
         {
           "to": "akhenaten",
           "kind": "part-of"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [
+            {
+              "sourceKey": "wp-new-kingdom",
+              "sourceLocation": "infobox (Amarna capital c. 1352–1336 BC)"
+            }
+          ]
         }
       ],
       "circa": true
@@ -30172,6 +30266,16 @@
               "sourceLocation": "lead ('conventionally dated to about 1350 BC')"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-knossos",
+              "sourceLocation": "lead ('conventionally dated to about 1350 BC')"
+            }
+          ]
         }
       ],
       "circa": true
@@ -30268,7 +30372,7 @@
         },
         {
           "facet": "category",
-          "value": "culture",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-nestor",
@@ -30385,6 +30489,18 @@
           "sourceKey": "wp-neo-assyria",
           "sourceLocation": "lead; infobox ('911 BCE–609 BCE')"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-neo-assyria",
+              "sourceLocation": "lead; infobox ('911 BCE–609 BCE')"
+            }
+          ]
+        }
       ]
     },
     {
@@ -30407,6 +30523,16 @@
         }
       ],
       "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-fall-babylon",
+              "sourceLocation": "hatnote ('siege of Babylon (689 BCE)')"
+            }
+          ]
+        },
         {
           "facet": "category",
           "value": "siege",
@@ -30812,7 +30938,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "siege",
+          "value": "revolt",
           "sources": [
             {
               "sourceKey": "wp-fall-babylon",
@@ -31047,6 +31173,18 @@
           "kind": "causes"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-old-assyria",
+              "sourceLocation": "infobox (Subjugation under Mitanni c. 1430–1360 BC)"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -31122,6 +31260,18 @@
         {
           "sourceKey": "wp-assyria",
           "sourceLocation": "infobox (capitals: Nimrud 879–706 BC)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "capital-moved",
+          "sources": [
+            {
+              "sourceKey": "wp-assyria",
+              "sourceLocation": "infobox (capitals: Nimrud 879–706 BC)"
+            }
+          ]
         }
       ]
     },
@@ -31425,6 +31575,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-ebla",
+              "sourceLocation": "First destruction"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -31446,6 +31608,18 @@
         {
           "to": "mursili-aleppo",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "dissolved",
+          "sources": [
+            {
+              "sourceKey": "wp-ebla",
+              "sourceLocation": "lead"
+            }
+          ]
         }
       ],
       "circa": true
@@ -31561,6 +31735,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-ugarit",
+              "sourceLocation": "infobox and History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -31674,7 +31860,19 @@
           "sourceLocation": "History"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-tyre",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "siege-of-tyre",
@@ -31781,6 +31979,18 @@
         {
           "sourceKey": "wp-judah",
           "sourceLocation": "infobox"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-judah",
+              "sourceLocation": "infobox"
+            }
+          ]
         }
       ],
       "circa": true
@@ -31890,7 +32100,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "revolt",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-philistines",
@@ -32079,6 +32289,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-chogha-zanbil",
+              "sourceLocation": "lead and History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -32605,6 +32827,18 @@
           "sourceLocation": "lead and Sargon of Akkad"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-meluhha",
+              "sourceLocation": "lead and Sargon of Akkad"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -32758,6 +32992,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "city-founded",
+          "sources": [
+            {
+              "sourceKey": "wp-erlitou",
+              "sourceLocation": "Phases"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -32772,6 +33018,18 @@
         {
           "sourceKey": "wp-anyang",
           "sourceLocation": "History"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "capital-moved",
+          "sources": [
+            {
+              "sourceKey": "wp-anyang",
+              "sourceLocation": "History"
+            }
+          ]
         }
       ],
       "circa": true
@@ -34171,7 +34429,19 @@
           }
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-olympics",
+              "sourceLocation": "lead and History"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "greek-colonisation",
@@ -34294,17 +34564,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
-          "sources": [
-            {
-              "sourceKey": "wp-classical-greece",
-              "sourceLocation": "5th century BC"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "battle",
+          "value": "reform",
           "sources": [
             {
               "sourceKey": "wp-classical-greece",
@@ -34522,7 +34782,19 @@
           "sourceLocation": "infobox (capitals)"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "capital-moved",
+          "sources": [
+            {
+              "sourceKey": "wp-macedon",
+              "sourceLocation": "infobox (capitals)"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "midas",
@@ -34623,6 +34895,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "dissolved",
+          "sources": [
+            {
+              "sourceKey": "wp-phrygia",
+              "sourceLocation": "infobox"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -34645,6 +34929,16 @@
         {
           "facet": "category",
           "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-lydia",
+              "sourceLocation": "Mermnad Empire > Gyges"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "attack",
           "sources": [
             {
               "sourceKey": "wp-lydia",
@@ -34685,6 +34979,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-lydia",
+              "sourceLocation": "lead ('dated to around the 7th century BC')"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -34869,6 +35175,18 @@
         {
           "sourceKey": "wp-cyprus-ancient",
           "sourceLocation": "Assyrian conquest and the ten city-kingdoms"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-cyprus-ancient",
+              "sourceLocation": "Assyrian conquest and the ten city-kingdoms"
+            }
+          ]
         }
       ]
     },
@@ -35260,6 +35578,18 @@
         }
       ],
       "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-magna-graecia",
+              "sourceLocation": "lead and History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -36161,6 +36491,18 @@
           "kind": "succeeds"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-scythians",
+              "sourceLocation": "infobox (History)"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -36626,6 +36968,16 @@
               "sourceLocation": "Late Kerma and Egyptian conquest"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "dissolved",
+          "sources": [
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "Late Kerma and Egyptian conquest"
+            }
+          ]
         }
       ],
       "circa": true
@@ -36685,6 +37037,18 @@
         }
       ],
       "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-kush",
+              "sourceLocation": "Formation ('between 800 and 760 BC')"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -36847,7 +37211,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "capital-moved",
           "sources": [
             {
               "sourceKey": "wp-kush",
@@ -36886,7 +37250,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "find",
           "sources": [
             {
               "sourceKey": "wp-punt",
@@ -36896,7 +37260,7 @@
         },
         {
           "facet": "category",
-          "value": "archaeology",
+          "value": "invasion",
           "sources": [
             {
               "sourceKey": "wp-punt",
@@ -36950,6 +37314,18 @@
         {
           "sourceKey": "wp-dmt",
           "sourceLocation": "lead, History and Known rulers"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-dmt",
+              "sourceLocation": "lead, History and Known rulers"
+            }
+          ]
         }
       ],
       "circa": true
@@ -37191,6 +37567,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [
+            {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -37258,6 +37646,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-rigveda",
+              "sourceLocation": "infobox, lead and Dating"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -37310,6 +37710,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "union",
+          "sources": [
+            {
+              "sourceKey": "wp-mahajanapadas",
+              "sourceLocation": "infobox, lead and Overview"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -37486,6 +37898,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-mahavira",
+              "sourceLocation": "infobox, lead and Dating"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -37564,6 +37988,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-buddha",
+              "sourceLocation": "infobox, Dating and Historical person"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -38250,6 +38686,18 @@
             "sourceKey": "wp-prehistory-taiwan",
             "sourceLocation": "Neolithic ('Nephrite from Taiwan began to appear in the northern Philippines between 1850 and 1350 BC')"
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-prehistory-philippines",
+              "sourceLocation": "Neolithic Austronesian migrations (Maritime Jade Road)"
+            }
+          ]
         }
       ],
       "circa": true
@@ -39417,6 +39865,18 @@
           "kind": "part-of"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-colchian",
+              "sourceLocation": "Geography and periodization"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -39582,6 +40042,18 @@
           "kind": "related"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-magan",
+              "sourceLocation": "Ur III period and Commerce"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -39650,6 +40122,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-marib-dam",
+              "sourceLocation": "lead, Ancient dam and Construction"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -39748,6 +40232,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-qataban",
+              "sourceLocation": "Prehistory and Kingdom"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -39763,6 +40259,18 @@
         {
           "sourceKey": "wp-tayma",
           "sourceLocation": "Under Egyptian hegemony"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-tayma",
+              "sourceLocation": "Under Egyptian hegemony"
+            }
+          ]
         }
       ],
       "circa": true
@@ -39786,6 +40294,18 @@
         {
           "to": "tiglath-pileser-iii",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-tayma",
+              "sourceLocation": "Mesopotamian hegemony"
+            }
+          ]
         }
       ],
       "circa": true
@@ -39859,6 +40379,18 @@
             "sourceKey": "wp-lihyan",
             "sourceLocation": "Timeline (Winnett)"
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-lihyan",
+              "sourceLocation": "infobox, lead and Timeline"
+            }
+          ]
         }
       ],
       "circa": true
@@ -40160,6 +40692,18 @@
         {
           "sourceKey": "wp-dacians",
           "sourceLocation": "lead, Name and Origins and ethnogenesis"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "attack",
+          "sources": [
+            {
+              "sourceKey": "wp-dacians",
+              "sourceLocation": "lead, Name and Origins and ethnogenesis"
+            }
+          ]
         }
       ]
     },
@@ -41191,6 +41735,28 @@
           "sourceKey": "wp-tibet-history",
           "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-tibet-history",
+              "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-tibet-history",
+              "sourceLocation": "lead, Zhangzhung and Nyatri Tsenpo"
+            }
+          ]
+        }
       ]
     },
     {
@@ -41413,6 +41979,18 @@
         {
           "sourceKey": "wp-humid-period",
           "sourceLocation": "End and Chronology"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "disaster",
+          "sources": [
+            {
+              "sourceKey": "wp-humid-period",
+              "sourceLocation": "End and Chronology"
+            }
+          ]
         }
       ],
       "circa": true
@@ -45633,6 +46211,18 @@
           "kind": "related"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-urukagina",
+              "sourceLocation": "infobox, lead and Reforms"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -45684,6 +46274,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-gudea",
+              "sourceLocation": "infobox, lead, Sources and Chronology"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -45701,6 +46303,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-gilgamesh",
+              "sourceLocation": "infobox, lead and Versions"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -45726,6 +46340,18 @@
         {
           "to": "suppiluliuma-i",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-tushratta",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
         }
       ],
       "circa": true
@@ -45757,7 +46383,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-tel-hazor",
@@ -45837,7 +46463,19 @@
           "kind": "related"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-ashurbanipal-library",
+              "sourceLocation": "lead, Contents and Discovery"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "exile-return",
@@ -45897,6 +46535,18 @@
           "kind": "part-of"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [
+            {
+              "sourceKey": "wp-cyrus-cylinder",
+              "sourceLocation": "infobox, lead and Description"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -45936,6 +46586,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "city-founded",
+          "sources": [
+            {
+              "sourceKey": "wp-persepolis",
+              "sourceLocation": "infobox, lead and Construction"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -45970,6 +46632,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-zoroaster",
+              "sourceLocation": "infobox, lead and Date"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -45997,6 +46671,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-homer",
+              "sourceLocation": "lead"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -46023,6 +46709,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-hesiod",
+              "sourceLocation": "infobox, lead and Dating"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -46037,6 +46735,18 @@
         {
           "sourceKey": "wp-thales",
           "sourceLocation": "lead and Life"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-thales",
+              "sourceLocation": "lead and Life"
+            }
+          ]
         }
       ]
     },
@@ -46229,16 +46939,6 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "founded",
-          "sources": [
-            {
-              "sourceKey": "wp-academy",
-              "sourceLocation": "lead and Plato’s Academy"
-            }
-          ]
-        },
-        {
-          "facet": "category",
           "value": "culture",
           "sources": [
             {
@@ -46366,6 +47066,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-confucius",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -46404,6 +47116,18 @@
         {
           "to": "confucius",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-laozi",
+              "sourceLocation": "infobox, lead and Identity"
+            }
+          ]
         }
       ],
       "circa": true
@@ -46481,6 +47205,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-hundred-schools",
+              "sourceLocation": "lead, Confucianism, Taoism, Mohism and Legalism"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -46541,6 +47277,18 @@
             "sourceKey": "wp-panini",
             "sourceLocation": "infobox ('4th century BCE')"
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-panini",
+              "sourceLocation": "infobox"
+            }
+          ]
         }
       ],
       "circa": true
@@ -46625,6 +47373,18 @@
         {
           "to": "chaldeans-attested",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-chaldea",
+              "sourceLocation": "lead and Ancient Chaldeans"
+            }
+          ]
         }
       ],
       "circa": true
@@ -46813,6 +47573,18 @@
         {
           "to": "tiglath-pileser-iii",
           "kind": "part-of"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-chaldea",
+              "sourceLocation": "Language"
+            }
+          ]
         }
       ],
       "circa": true
@@ -47091,6 +47863,18 @@
           "kind": "causes"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-hurrians",
+              "sourceLocation": "Middle Bronze Age and Late Bronze Age"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -47194,7 +47978,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "find",
           "sources": [
             {
               "sourceKey": "wp-kaskians",
@@ -47240,7 +48024,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "conflict",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-kaskians",
@@ -47327,7 +48111,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "alliance",
+          "value": "attack",
           "sources": [
             {
               "sourceKey": "wp-mushki",
@@ -47381,6 +48165,18 @@
         {
           "to": "tiglath-pileser-i",
           "kind": "part-of"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conflict",
+          "sources": [
+            {
+              "sourceKey": "wp-mushki",
+              "sourceLocation": "Eastern Mushki"
+            }
+          ]
         }
       ],
       "circa": true
@@ -47438,6 +48234,18 @@
         {
           "to": "tiglath-pileser-iii",
           "kind": "part-of"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-qedarites",
+              "sourceLocation": "infobox and Neo-Assyrian period"
+            }
+          ]
         }
       ]
     },
@@ -47598,7 +48406,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "attack",
           "sources": [
             {
               "sourceKey": "wp-xirong",
@@ -47933,7 +48741,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "attack",
           "sources": [
             {
               "sourceKey": "wp-shasu",
@@ -48131,7 +48939,19 @@
           "kind": "part-of"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "title",
+          "sources": [
+            {
+              "sourceKey": "wp-ptolemaic",
+              "sourceLocation": "lead, infobox and Establishment"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "library-alexandria",
@@ -48166,6 +48986,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "sack",
+          "sources": [
+            {
+              "sourceKey": "wp-library-alexandria",
+              "sourceLocation": "infobox, lead and Founding"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -48237,6 +49069,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-archimedes",
+              "sourceLocation": "infobox, lead and Biography"
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "siege",
           "sources": [
             {
@@ -48260,6 +49102,28 @@
         {
           "sourceKey": "wp-rosetta",
           "sourceLocation": "infobox, lead and Memphis"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "law",
+          "sources": [
+            {
+              "sourceKey": "wp-rosetta",
+              "sourceLocation": "infobox, lead and Memphis"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [
+            {
+              "sourceKey": "wp-rosetta",
+              "sourceLocation": "infobox, lead and Memphis"
+            }
+          ]
         }
       ]
     },
@@ -48419,6 +49283,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "dissolved",
+          "sources": [
+            {
+              "sourceKey": "wp-punic-wars",
+              "sourceLocation": "lead"
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "war",
           "sources": [
             {
@@ -48546,7 +49420,19 @@
           "kind": "related"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "title",
+          "sources": [
+            {
+              "sourceKey": "wp-augustus",
+              "sourceLocation": "infobox, lead and Name"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "trajan-extent",
@@ -48620,6 +49506,18 @@
         {
           "sourceKey": "wp-tetrarchy",
           "sourceLocation": "lead"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-tetrarchy",
+              "sourceLocation": "lead"
+            }
+          ]
         }
       ]
     },
@@ -48940,7 +49838,19 @@
           "sourceLocation": "lead and infobox"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-parthia",
+              "sourceLocation": "lead and infobox"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "maccabees",
@@ -49062,6 +49972,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-crucifixion",
+              "sourceLocation": "infobox"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -49083,7 +50005,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "religion",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-siege-jerusalem-70",
@@ -49093,7 +50015,7 @@
         },
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "religion",
           "sources": [
             {
               "sourceKey": "wp-siege-jerusalem-70",
@@ -49293,6 +50215,18 @@
             "sourceLocation": "Date and causes (many modern scholars)"
           }
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-armenia-christian",
+              "sourceLocation": "lead and Date and causes"
+            }
+          ]
+        }
       ]
     },
     {
@@ -49367,7 +50301,19 @@
           "sourceLocation": "lead and Note 3"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-hijrah",
+              "sourceLocation": "lead and Note 3"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "yarmuk",
@@ -49721,7 +50667,19 @@
           "sourceLocation": "infobox and lead"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-anuradhapura",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "shunga-coup",
@@ -49763,6 +50721,18 @@
             "sourceKey": "wp-shunga",
             "sourceLocation": "Origins"
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-maurya",
+              "sourceLocation": "infobox"
+            }
+          ]
         }
       ]
     },
@@ -49855,6 +50825,28 @@
           "sourceLocation": "lead and infobox"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-indo-scythians",
+              "sourceLocation": "lead and infobox"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-indo-scythians",
+              "sourceLocation": "lead and infobox"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -49899,6 +50891,18 @@
         {
           "sourceKey": "wp-kanishka",
           "sourceLocation": "Conquests in India and Central Asia"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-kanishka",
+              "sourceLocation": "Conquests in India and Central Asia"
+            }
+          ]
         }
       ]
     },
@@ -50308,6 +51312,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ajanta",
+              "sourceLocation": "lead, History and map caption"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -50323,6 +51339,18 @@
         {
           "sourceKey": "wp-aryabhata",
           "sourceLocation": "lead, infobox and Biography"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-aryabhata",
+              "sourceLocation": "lead, infobox and Biography"
+            }
+          ]
         }
       ]
     },
@@ -50375,7 +51403,19 @@
           "kind": "related"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "diplomacy",
+          "sources": [
+            {
+              "sourceKey": "wp-harsha",
+              "sourceLocation": "Reign"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "qin-unification",
@@ -50538,6 +51578,18 @@
           "to": "emperor-wu-han",
           "kind": "part-of"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "diplomacy",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-wu-han",
+              "sourceLocation": "lead"
+            }
+          ]
+        }
       ]
     },
     {
@@ -50571,6 +51623,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-sima-qian",
+              "sourceLocation": "lead and As Han court official"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -50586,6 +51650,18 @@
         {
           "sourceKey": "wp-han",
           "sourceLocation": "infobox and lead"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-han",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
         }
       ]
     },
@@ -50603,7 +51679,19 @@
           "sourceLocation": "lead"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-cai-lun",
+              "sourceLocation": "lead"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "yellow-turbans",
@@ -50985,7 +52073,19 @@
           "sourceLocation": "lead"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-grand-canal",
+              "sourceLocation": "lead"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "tang-founded",
@@ -51069,6 +52169,18 @@
         {
           "sourceKey": "wp-gojoseon-classical",
           "sourceLocation": "lead and infobox"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-gojoseon-classical",
+              "sourceLocation": "lead and infobox"
+            }
+          ]
         }
       ]
     },
@@ -51179,6 +52291,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-three-kingdoms-korea",
+              "sourceLocation": "lead"
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "civil-war",
           "sources": [
             {
@@ -51266,6 +52388,18 @@
         {
           "to": "goguryeo-buddhism",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-silla",
+              "sourceLocation": "infobox"
+            }
+          ]
         }
       ]
     },
@@ -51864,7 +52998,19 @@
           "sourceLocation": "History > Relations with the Byzantine Empire"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "diplomacy",
+          "sources": [
+            {
+              "sourceKey": "wp-first-turkic",
+              "sourceLocation": "History > Relations with the Byzantine Empire"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "turkic-split",
@@ -51890,7 +53036,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "civil-war",
+          "value": "territory",
           "sources": [
             {
               "sourceKey": "wp-first-turkic",
@@ -52012,7 +53158,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "conflict",
+          "value": "dissolved",
           "sources": [
             {
               "sourceKey": "wp-first-turkic",
@@ -52077,6 +53223,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-huns",
+              "sourceLocation": "lead and infobox"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -52224,6 +53382,18 @@
         {
           "sourceKey": "wp-avars",
           "sourceLocation": "infobox and lead"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-avars",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
         }
       ]
     },
@@ -53007,7 +54177,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "conquest",
           "sources": [
             {
               "sourceKey": "wp-nobatia",
@@ -53274,6 +54444,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-periplus",
+              "sourceLocation": "lead, Date and authorship, and Aksum section"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -53317,6 +54499,18 @@
             "sourceKey": "wp-aksum-currency",
             "sourceLocation": "Endybis caption (227–235 AD)"
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-aksum-currency",
+              "sourceLocation": "lead, Pre-Christian period and Kings"
+            }
+          ]
         }
       ],
       "circa": true
@@ -53435,6 +54629,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-aksum",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -53462,6 +54668,18 @@
         }
       ],
       "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-obelisk-axum",
+              "sourceLocation": "infobox and History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -54232,7 +55450,19 @@
           "sourceLocation": "infobox, lead and Construction"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "territory",
+          "sources": [
+            {
+              "sourceKey": "wp-hadrians-wall",
+              "sourceLocation": "infobox, lead and Construction"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "end-roman-britain",
@@ -54718,6 +55948,18 @@
           "sourceKey": "wp-visigothic-kingdom",
           "sourceLocation": "infobox and lead"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-visigothic-kingdom",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
+        }
       ]
     },
     {
@@ -55003,6 +56245,18 @@
           "kind": "part-of"
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-clovis",
+              "sourceLocation": "lead"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -55121,7 +56375,19 @@
           "sourceLocation": "Prehistory"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [
+            {
+              "sourceKey": "wp-early-slavs",
+              "sourceLocation": "lead and Origins"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "slavs-expand",
@@ -55145,6 +56411,18 @@
             "sourceKey": "wp-early-slavs",
             "sourceLocation": "lead ('Between the sixth and seventh centuries')"
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-early-slavs",
+              "sourceLocation": "lead"
+            }
+          ]
         }
       ],
       "circa": true
@@ -55428,7 +56706,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "sack",
           "sources": [
             {
               "sourceKey": "wp-cuicuilco",
@@ -56058,6 +57336,18 @@
           }
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-wari",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -56427,7 +57717,19 @@
           "sourceLocation": "lead and Remains"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-oc-eo",
+              "sourceLocation": "lead and Remains"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "chenla-conquers-funan",
@@ -56555,7 +57857,19 @@
           }
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-pyu",
+              "sourceLocation": "infobox"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "tuyuhun-founded",
@@ -56571,7 +57885,19 @@
           "sourceLocation": "infobox and History"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-tuyuhun",
+              "sourceLocation": "infobox and History"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "namri-songtsen",
@@ -56778,7 +58104,19 @@
           "kind": "part-of"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "alliance",
+          "sources": [
+            {
+              "sourceKey": "wp-wencheng",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "jokhang",
@@ -56815,6 +58153,18 @@
         }
       ],
       "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-jokhang",
+              "sourceLocation": "infobox, lead and History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -56871,6 +58221,18 @@
           "to": "songtsen-gampo",
           "kind": "part-of"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-tibetan-empire",
+              "sourceLocation": "History > Songtsen Gampo"
+            }
+          ]
+        }
       ]
     },
     {
@@ -56887,7 +58249,19 @@
           "sourceLocation": "lead and Orchid Pavilion"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-wang-xizhi",
+              "sourceLocation": "lead and Orchid Pavilion"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "mogao",
@@ -56919,7 +58293,19 @@
           }
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-mogao",
+              "sourceLocation": "lead and History"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "faxian",
@@ -56966,6 +58352,18 @@
           "sourceKey": "wp-kumarajiva",
           "sourceLocation": "infobox, lead, Early life, Capture and Arrival"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-kumarajiva",
+              "sourceLocation": "infobox, lead, Early life, Capture and Arrival"
+            }
+          ]
+        }
       ]
     },
     {
@@ -56982,7 +58380,19 @@
           "sourceLocation": "infobox, Year of birth, Government stints and Return to the fields"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-tao-yuanming",
+              "sourceLocation": "infobox, Year of birth, Government stints and Return to the fields"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "liu-song-founded",
@@ -57059,6 +58469,18 @@
         {
           "sourceKey": "wp-zu-chongzhi",
           "sourceLocation": "lead, Life and works and Mathematics"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-zu-chongzhi",
+              "sourceLocation": "lead, Life and works and Mathematics"
+            }
+          ]
         }
       ]
     },
@@ -57290,6 +58712,18 @@
           "sourceKey": "wp-yungang",
           "sourceLocation": "lead and History"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-yungang",
+              "sourceLocation": "lead and History"
+            }
+          ]
+        }
       ]
     },
     {
@@ -57326,6 +58760,18 @@
         {
           "to": "xiaowen-reforms",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-longmen",
+              "sourceLocation": "lead, History and Binyang"
+            }
+          ]
         }
       ]
     },
@@ -57379,7 +58825,19 @@
           "sourceLocation": "infobox"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "territory",
+          "sources": [
+            {
+              "sourceKey": "wp-yuwen-tai",
+              "sourceLocation": "lead and Alliance with Xiaowu"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "shayuan",
@@ -57583,7 +59041,19 @@
           }
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-xuanzang",
+              "sourceLocation": "lead, Dates, Return to China and Original works"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "lingling-o",
@@ -57712,6 +59182,18 @@
         {
           "to": "faxian",
           "kind": "part-of"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-tarumanagara",
+              "sourceLocation": "Historiography"
+            }
+          ]
         }
       ]
     },
@@ -58453,6 +59935,18 @@
             "sourceLocation": "Kushan table ('c. 190 – 230')"
           }
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-vasudeva-i",
+              "sourceLocation": "short description, infobox, lead, Contacts with China and Sassanid invasion in the northwest"
+            }
+          ]
+        }
       ]
     },
     {
@@ -58774,7 +60268,19 @@
           "kind": "related"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-vercingetorix",
+              "sourceLocation": "lead and infobox"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "germanicus-germania",
@@ -58907,7 +60413,19 @@
           }
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-hengist-horsa",
+              "sourceLocation": "Anglo-Saxon Chronicle, History of the Britons and Ecclesiastical History"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "badon",
@@ -59016,7 +60534,19 @@
           "kind": "related"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-rule-of-dukes",
+              "sourceLocation": "lead, Political context, Description by Paul the Deacon and Origo Gentis Langobardorum"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "dos-pilas-founded",
@@ -59184,6 +60714,18 @@
         }
       ],
       "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "alliance",
+          "sources": [
+            {
+              "sourceKey": "wp-bhrikuti",
+              "sourceLocation": "lead, infobox and Life"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -59343,6 +60885,18 @@
         {
           "to": "seventeen-article",
           "kind": "related"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-suiko",
+              "sourceLocation": "lead, infobox and Biography"
+            }
+          ]
         }
       ]
     }
