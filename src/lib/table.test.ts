@@ -15,7 +15,8 @@ describe('tableSections', () => {
 
   it('groups events by region, under their top-level group, in row order', () => {
     const egypt = sections.find((s) => s.track.id === 'egypt')!;
-    expect(egypt.group?.id).toBe('near-east');
+    expect(egypt.group?.id).toBe('africa');
+    expect(sections.find((s) => s.track.id === 'levant')!.group?.id).toBe('near-east');
     const ids = sections.map((s) => s.track.id);
     expect(ids.indexOf('egypt')).toBeLessThan(ids.indexOf('anatolia'));
   });

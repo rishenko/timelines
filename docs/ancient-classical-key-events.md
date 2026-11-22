@@ -8,6 +8,41 @@ Totals: 277 key, 513 normal, 94 minor (884 events).
 
 ## Africa
 
+### Egypt and Nubia
+
+18 key, 41 normal, 7 minor.
+
+**Key**
+
+- Nabta Playa stone circle (c. 4800 BCE; Nabta Playa (Western Desert)) `nabta-circle`
+- Badarian culture: the earliest farming in Upper Egypt (c. 4400 BCE–4000 BCE; Upper Egypt (Badarian, Naqada I)) `badarian`
+- Narmer unifies Egypt (c. 3100 BCE; Egypt and Nubia, Pharaonic Egypt) `narmer`
+- Khufu builds the Great Pyramid (2589 BCE–2566 BCE; Pharaonic Egypt) `khufu`
+- Mentuhotep II reunites Egypt (2055 BCE; Pharaonic Egypt) `mentuhotep-ii`
+- Classic Kerma: the kingdom at its peak (c. 1750 BCE–1500 BCE; Kerma) `classic-kerma`
+- Ahmose I expels the Hyksos (c. 1550 BCE; Pharaonic Egypt) `ahmose-expels-hyksos`
+- Thutmose I conquers Kush and destroys Kerma (c. 1504 BCE; Kerma, Pharaonic Egypt) `kerma-destroyed`
+- Reign of Akhenaten (c. 1353 BCE–1336 BCE; Pharaonic Egypt) `akhenaten`
+- Reign of Ramesses II (1279 BCE–1213 BCE; Pharaonic Egypt) `ramesses-ii`
+- Kush becomes independent, centred at Napata (c. 1070 BCE; Kingdom of Kush (Napata, Meroë), Pharaonic Egypt) `kush-independent`
+- Piye conquers Egypt (c. 727 BCE; Kingdom of Kush (Napata, Meroë), Pharaonic Egypt) `piye-conquers-egypt`
+- Kush moves its capital to Meroë (c. 591 BCE; Kingdom of Kush (Napata, Meroë)) `meroe-capital`
+- Battle of Pelusium: Persia conquers Egypt (525 BCE; Pharaonic Egypt, Achaemenid Persia) `pelusium`
+- Ptolemy I becomes pharaoh: the Ptolemaic Kingdom (305 BCE; Ptolemaic and Roman Egypt) `ptolemy-pharaoh`
+- The Library of Alexandria (c. 285 BCE; Ptolemaic and Roman Egypt) `library-alexandria`
+- Aksum takes Meroë: the end of Kush (330 CE–350 CE; Kingdom of Kush (Napata, Meroë), Kingdom of Aksum) `meroe-falls`
+- The Arab conquest of Egypt (639 CE–642 CE; Ptolemaic and Roman Egypt, Early Islam) `arab-conquest-egypt`
+
+**Minor**
+
+- Senusret III's funerary boat dated (1887 BCE) `senusret-boat`
+- Egyptian annals mention Tanaju (Danaans?) (c. 1437 BCE) `tanaju`
+- Ramesses II marries a daughter of Ḫattušili III (1246 BCE) `hittite-marriage`
+- Alara, first Kushite king known by name (c. 780 BCE) `alara`
+- Nero’s expedition reaches Meroë (61 CE) `nero-meroe`
+- Dongola founded (c. 500 CE) `dongola`
+- The temple at Philae is closed (535 CE–538 CE) `philae-closed`
+
 ### North Africa
 
 6 key, 17 normal, 3 minor.
@@ -168,41 +203,6 @@ Totals: 277 key, 513 normal, 94 minor (884 events).
 - Macedon moves its capital from Aigai to Pella (399 BCE) `pella`
 
 ## Ancient Near East
-
-### Egypt and Nubia
-
-18 key, 41 normal, 7 minor.
-
-**Key**
-
-- Nabta Playa stone circle (c. 4800 BCE; Nabta Playa (Western Desert)) `nabta-circle`
-- Badarian culture: the earliest farming in Upper Egypt (c. 4400 BCE–4000 BCE; Upper Egypt (Badarian, Naqada I)) `badarian`
-- Narmer unifies Egypt (c. 3100 BCE; Egypt and Nubia, Pharaonic Egypt) `narmer`
-- Khufu builds the Great Pyramid (2589 BCE–2566 BCE; Pharaonic Egypt) `khufu`
-- Mentuhotep II reunites Egypt (2055 BCE; Pharaonic Egypt) `mentuhotep-ii`
-- Classic Kerma: the kingdom at its peak (c. 1750 BCE–1500 BCE; Kerma) `classic-kerma`
-- Ahmose I expels the Hyksos (c. 1550 BCE; Pharaonic Egypt) `ahmose-expels-hyksos`
-- Thutmose I conquers Kush and destroys Kerma (c. 1504 BCE; Kerma, Pharaonic Egypt) `kerma-destroyed`
-- Reign of Akhenaten (c. 1353 BCE–1336 BCE; Pharaonic Egypt) `akhenaten`
-- Reign of Ramesses II (1279 BCE–1213 BCE; Pharaonic Egypt) `ramesses-ii`
-- Kush becomes independent, centred at Napata (c. 1070 BCE; Kingdom of Kush (Napata, Meroë), Pharaonic Egypt) `kush-independent`
-- Piye conquers Egypt (c. 727 BCE; Kingdom of Kush (Napata, Meroë), Pharaonic Egypt) `piye-conquers-egypt`
-- Kush moves its capital to Meroë (c. 591 BCE; Kingdom of Kush (Napata, Meroë)) `meroe-capital`
-- Battle of Pelusium: Persia conquers Egypt (525 BCE; Pharaonic Egypt, Achaemenid Persia) `pelusium`
-- Ptolemy I becomes pharaoh: the Ptolemaic Kingdom (305 BCE; Ptolemaic and Roman Egypt) `ptolemy-pharaoh`
-- The Library of Alexandria (c. 285 BCE; Ptolemaic and Roman Egypt) `library-alexandria`
-- Aksum takes Meroë: the end of Kush (330 CE–350 CE; Kingdom of Kush (Napata, Meroë), Kingdom of Aksum) `meroe-falls`
-- The Arab conquest of Egypt (639 CE–642 CE; Ptolemaic and Roman Egypt, Early Islam) `arab-conquest-egypt`
-
-**Minor**
-
-- Senusret III's funerary boat dated (1887 BCE) `senusret-boat`
-- Egyptian annals mention Tanaju (Danaans?) (c. 1437 BCE) `tanaju`
-- Ramesses II marries a daughter of Ḫattušili III (1246 BCE) `hittite-marriage`
-- Alara, first Kushite king known by name (c. 780 BCE) `alara`
-- Nero’s expedition reaches Meroë (61 CE) `nero-meroe`
-- Dongola founded (c. 500 CE) `dongola`
-- The temple at Philae is closed (535 CE–538 CE) `philae-closed`
 
 ### Levant
 

@@ -1,5 +1,6 @@
 """
-Wave 2 of the Medieval World timeline: the Near East and North Africa. Uses med_europe's helpers and event registry
+Wave 2 of the Medieval World timeline: the Near East, plus Egypt and the Maghreb, which sit under Africa (Kevin,
+2026-11-22: "Egypt belongs in Africa"; gen_medieval places them first among Africa's regions). Uses med_europe's helpers and event registry
 (med_europe.build must run first): phases and lifespans cite infobox fields, infobox events from 650-1500 become
 cited events, the union-event rule applies, region memberships cite the infobox capital, and rows crossing 1500 take
 Modern States' phases and typed lifespans (med_europe.modern_sync, from their committed build).
@@ -53,13 +54,13 @@ def build(mod, repo):
         R.append(t)
         return t
 
-    def grp(id_, name, color):
-        R.append({'id': id_, 'name': name, 'color': color, 'parent': 'near-east'})
+    def grp(id_, name, color, parent='near-east'):
+        R.append({'id': id_, 'name': name, 'color': color, 'parent': parent})
 
     R.append(M.PILOT_ROWS['caliphate'])
 
     # ----- Egypt and Nubia -----
-    grp('egypt', 'Egypt and Nubia', '#b08a3a')
+    grp('egypt', 'Egypt and Nubia', '#b08a3a', parent='africa')
     for id_, name, title in (('tulunids', 'Tulunids', 'Tulunid dynasty'), ('ikhshidid-dynasty', 'Ikhshidids', 'Ikhshidid dynasty'),
                              ('fatimid-caliphate', 'Fatimid Caliphate', 'Fatimid Caliphate'), ('ayyubid-dynasty', 'Ayyubids', 'Ayyubid Sultanate'),
                              ('mamluk-sultanate', 'Mamluk Sultanate', 'Mamluk Sultanate')):
@@ -129,7 +130,7 @@ def build(mod, repo):
     row('rasulid-dynasty', 'Rasulids (Yemen)', 'arabia', 'Rasulid dynasty', 'arabia', '#2a7a7a', span=S('Rasulid dynasty', track='rasulid-dynasty'))
 
     # ----- The Maghreb -----
-    grp('maghreb', 'The Maghreb', '#8a5a3a')
+    grp('maghreb', 'The Maghreb', '#8a5a3a', parent='africa')
     R.append(X.ancient_row(anc, 'garamantes', 'maghreb'))
     for id_, name, title, color in (('rustamid-dynasty', 'Rustamids', 'Rustamid dynasty', '#6a8a5a'),
                                     ('aghlabid-dynasty', 'Aghlabids', 'Aghlabid dynasty', '#8a7a2a')):

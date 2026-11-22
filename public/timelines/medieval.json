@@ -5719,7 +5719,7 @@
     },
     {
       "id": "near-east",
-      "name": "Near East and North Africa",
+      "name": "Near East",
       "color": "#a8732f"
     },
     {
@@ -5866,348 +5866,6 @@
             {
               "sourceKey": "wp-abbasid-caliphate",
               "sourceLocation": "lead: \"They ruled as caliphs from their base in Iraq until 1258, with Baghdad as their capital for most of their history.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "egypt",
-      "name": "Egypt and Nubia",
-      "color": "#b08a3a",
-      "parent": "near-east",
-      "span": {
-        "start": 1517,
-        "ongoing": true,
-        "startDates": [
-          {
-            "year": 1517,
-            "source": {
-              "sourceKey": "wp-ottoman-egypt",
-              "sourceLocation": "infobox year_start: 1517"
-            }
-          }
-        ],
-        "ongoingSources": [
-          {
-            "sourceKey": "wp-egypt",
-            "sourceLocation": "infobox established_event4: Current constitution, 18 January 2014 (current state)"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tulunids",
-      "name": "Tulunids",
-      "color": "#8a6a2a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Tulunids",
-      "span": {
-        "start": 868,
-        "end": 905,
-        "startDates": [
-          {
-            "year": 868,
-            "source": {
-              "sourceKey": "wp-tulunids",
-              "sourceLocation": "infobox year_start: 868"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 905,
-            "source": {
-              "sourceKey": "wp-tulunids",
-              "sourceLocation": "infobox year_end: 905"
-            }
-          }
-        ],
-        "endEvent": "abbasid-reconquest"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-tulunids",
-              "sourceLocation": "infobox capital: Al-Qata'i"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ikhshidid-dynasty",
-      "name": "Ikhshidids",
-      "color": "#7a7a3a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Ikhshidid_dynasty",
-      "span": {
-        "start": 935,
-        "end": 969,
-        "startDates": [
-          {
-            "year": 935,
-            "source": {
-              "sourceKey": "wp-ikhshidid-dynasty",
-              "sourceLocation": "infobox year_start: 935"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 969,
-            "source": {
-              "sourceKey": "wp-ikhshidid-dynasty",
-              "sourceLocation": "infobox year_end: 969"
-            }
-          }
-        ],
-        "endEvent": "fatimid-conquest-of-egypt-and-foundation-of-cairo"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-ikhshidid-dynasty",
-              "sourceLocation": "infobox capital: Fustat"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "fatimid-caliphate",
-      "name": "Fatimid Caliphate",
-      "color": "#2a8a4a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Fatimid_Caliphate",
-      "span": {
-        "start": 909,
-        "end": 1171,
-        "startDates": [
-          {
-            "year": 909,
-            "source": {
-              "sourceKey": "wp-fatimid-caliphate",
-              "sourceLocation": "infobox year_start: 909"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1171,
-            "source": {
-              "sourceKey": "wp-fatimid-caliphate",
-              "sourceLocation": "infobox year_end: 1171"
-            }
-          }
-        ],
-        "startEvent": "fatimids-overthrow-the-aghlabids",
-        "endEvent": "saladin-abolishes-the-fatimid-caliphate"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-fatimid-caliphate",
-              "sourceLocation": "infobox capital: Raqqada (909–921) / Mahdia (921–948) / al-Mansuriya (948–973) / Cairo "
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ayyubid-dynasty",
-      "name": "Ayyubids",
-      "color": "#c09a2a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Ayyubid_dynasty",
-      "span": {
-        "start": 1171,
-        "end": 1260,
-        "startDates": [
-          {
-            "year": 1171,
-            "source": {
-              "sourceKey": "wp-ayyubid-dynasty",
-              "sourceLocation": "infobox year_start: 1171"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1260,
-            "source": {
-              "sourceKey": "wp-ayyubid-dynasty",
-              "sourceLocation": "infobox year_end: 1260a"
-            }
-          }
-        ],
-        "startEvent": "saladin-abolishes-the-fatimid-caliphate"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-ayyubid-dynasty",
-              "sourceLocation": "infobox capital: Cairo (1171–1174; 1218–1250) / Damascus (1174–1218) / Aleppo (1250–126"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "mamluk-sultanate",
-      "name": "Mamluk Sultanate",
-      "color": "#a85a2a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Mamluk_Sultanate",
-      "span": {
-        "start": 1250,
-        "end": 1517,
-        "startDates": [
-          {
-            "year": 1250,
-            "source": {
-              "sourceKey": "wp-mamluk-sultanate",
-              "sourceLocation": "infobox year_start: 1250"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1517,
-            "source": {
-              "sourceKey": "wp-mamluk-sultanate",
-              "sourceLocation": "infobox year_end: 1517"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-mamluk-sultanate",
-              "sourceLocation": "infobox capital: Cairo"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "makuria",
-      "name": "Makuria",
-      "color": "#7a4a3a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Makuria",
-      "ids": {
-        "wikidata": "Q829356"
-      },
-      "span": {
-        "start": 450,
-        "end": 1475,
-        "startDates": [
-          {
-            "year": 450,
-            "margin": 50,
-            "source": {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox ('5th century')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1475,
-            "margin": 25,
-            "source": {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "infobox ('late 15th century')"
-            }
-          }
-        ],
-        "circa": true
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "category \"Makuria\" (in \"History of Nubia\")"
-            },
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "category \"Makuria\" (in \"Christianity in Sudan\")"
-            },
-            {
-              "sourceKey": "wp-makuria",
-              "sourceLocation": "category \"History of Nubia\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "alodia",
-      "name": "Alodia",
-      "color": "#9a5a4a",
-      "parent": "egypt",
-      "url": "https://en.wikipedia.org/wiki/Alodia",
-      "ids": {
-        "wikidata": "Q449639"
-      },
-      "span": {
-        "start": 550,
-        "end": 1500,
-        "startDates": [
-          {
-            "year": 550,
-            "margin": 50,
-            "source": {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "infobox ('6th century')"
-            }
-          },
-          {
-            "year": 550,
-            "source": {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "Origins ('completed by the mid-6th century')"
-            }
-          }
-        ],
-        "circa": true
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "nile",
-          "sources": [
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "category \"History of Nubia\""
-            },
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "category \"Christianity in Sudan\""
-            },
-            {
-              "sourceKey": "wp-alodia",
-              "sourceLocation": "first sentence"
             }
           ]
         }
@@ -7776,505 +7434,6 @@
             {
               "sourceKey": "wp-kathiri",
               "sourceLocation": "infobox capital: Seiyun"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "maghreb",
-      "name": "The Maghreb",
-      "color": "#8a5a3a",
-      "parent": "near-east"
-    },
-    {
-      "id": "garamantes",
-      "name": "Garamantes (Fezzan)",
-      "color": "#a07a5a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "ids": {
-        "wikidata": "Q839034"
-      },
-      "span": {
-        "start": -999,
-        "end": 675,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -999,
-            "source": {
-              "sourceKey": "wp-garamantes",
-              "sourceLocation": "lead ('at least as early as 1000 BC')"
-            }
-          },
-          {
-            "year": -599,
-            "source": {
-              "sourceKey": "wp-garamantes",
-              "sourceLocation": "Origin and prehistory ('From the 6th century BCE … a powerful polity')"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 675,
-            "margin": 25,
-            "source": {
-              "sourceKey": "wp-garamantes-classical",
-              "sourceLocation": "lead ('late 7th century AD')"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-garamantes-classical",
-              "sourceLocation": "category \"Ancient Libya\""
-            },
-            {
-              "sourceKey": "wp-garamantes-classical",
-              "sourceLocation": "category \"Ancient Libyans\""
-            },
-            {
-              "sourceKey": "wp-garamantes-classical",
-              "sourceLocation": "category \"History of Fezzan\""
-            }
-          ]
-        },
-        {
-          "facet": "geography",
-          "value": "sahara",
-          "sources": [
-            {
-              "sourceKey": "wp-garamantes-classical",
-              "sourceLocation": "category \"History of the Sahara\""
-            },
-            {
-              "sourceKey": "wp-garamantes-classical",
-              "sourceLocation": "first sentence"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "rustamid-dynasty",
-      "name": "Rustamids",
-      "color": "#6a8a5a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Rustamid_dynasty",
-      "span": {
-        "start": 777,
-        "end": 909,
-        "startDates": [
-          {
-            "year": 777,
-            "source": {
-              "sourceKey": "wp-rustamid-dynasty",
-              "sourceLocation": "infobox year_start: 777"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 909,
-            "source": {
-              "sourceKey": "wp-rustamid-dynasty",
-              "sourceLocation": "infobox year_end: 909"
-            }
-          }
-        ],
-        "endEvent": "capture-of-tahert"
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-rustamid-dynasty",
-              "sourceLocation": "infobox capital: Tahert"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aghlabid-dynasty",
-      "name": "Aghlabids",
-      "color": "#8a7a2a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Aghlabid_dynasty",
-      "span": {
-        "start": 800,
-        "end": 909,
-        "startDates": [
-          {
-            "year": 800,
-            "source": {
-              "sourceKey": "wp-aghlabid-dynasty",
-              "sourceLocation": "infobox year_start: 800"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 909,
-            "source": {
-              "sourceKey": "wp-aghlabid-dynasty",
-              "sourceLocation": "infobox year_end: 909"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-aghlabid-dynasty",
-              "sourceLocation": "infobox capital: Kairouan, with royal court at: / al-Abbasiyya (800–876) / Raqqada (876"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "morocco",
-      "name": "Morocco",
-      "color": "#a8302a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Morocco",
-      "phases": [
-        {
-          "name": "Idrisid dynasty",
-          "start": 788,
-          "end": 974,
-          "startDates": [
-            {
-              "year": 788,
-              "source": {
-                "sourceKey": "wp-morocco",
-                "sourceLocation": "infobox established_event2: Idrisid Dynasty, 788"
-              }
-            },
-            {
-              "year": 788,
-              "source": {
-                "sourceKey": "wp-idrisid-dynasty",
-                "sourceLocation": "infobox year_start: 788"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": 974,
-              "source": {
-                "sourceKey": "wp-idrisid-dynasty",
-                "sourceLocation": "infobox year_end: 974"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Almoravid dynasty",
-          "start": 1040,
-          "end": 1147,
-          "startDates": [
-            {
-              "year": 1040,
-              "source": {
-                "sourceKey": "wp-morocco",
-                "sourceLocation": "infobox established_event3: Almoravid Dynasty, 1040"
-              }
-            },
-            {
-              "year": 1050,
-              "source": {
-                "sourceKey": "wp-almoravid-dynasty",
-                "sourceLocation": "infobox year_start: 1050s"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": 1147,
-              "source": {
-                "sourceKey": "wp-almoravid-dynasty",
-                "sourceLocation": "infobox year_end: 1147"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Almohad Caliphate",
-          "start": 1121,
-          "end": 1269,
-          "startDates": [
-            {
-              "year": 1121,
-              "source": {
-                "sourceKey": "wp-morocco",
-                "sourceLocation": "infobox established_event4: Almohad Dynasty, 1121"
-              }
-            },
-            {
-              "year": 1121,
-              "source": {
-                "sourceKey": "wp-almohad-caliphate",
-                "sourceLocation": "infobox year_start: 1121"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": 1269,
-              "source": {
-                "sourceKey": "wp-almohad-caliphate",
-                "sourceLocation": "infobox year_end: 1269"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Marinid Sultanate",
-          "start": 1244,
-          "end": 1465,
-          "startDates": [
-            {
-              "year": 1244,
-              "source": {
-                "sourceKey": "wp-morocco",
-                "sourceLocation": "infobox established_event5: Marinid Dynasty, 1244"
-              }
-            },
-            {
-              "year": 1244,
-              "source": {
-                "sourceKey": "wp-marinid-dynasty",
-                "sourceLocation": "infobox year_start: 1244"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": 1465,
-              "source": {
-                "sourceKey": "wp-marinid-dynasty",
-                "sourceLocation": "infobox year_end: 1465"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Wattasid dynasty",
-          "start": 1472,
-          "end": 1554,
-          "startDates": [
-            {
-              "year": 1472,
-              "source": {
-                "sourceKey": "wp-morocco",
-                "sourceLocation": "infobox established_event6: Wattasid Dynasty, 1472"
-              }
-            },
-            {
-              "year": 1472,
-              "source": {
-                "sourceKey": "wp-wattasid-dynasty",
-                "sourceLocation": "infobox year_start: 1472"
-              }
-            }
-          ],
-          "endDates": [
-            {
-              "year": 1554,
-              "source": {
-                "sourceKey": "wp-wattasid-dynasty",
-                "sourceLocation": "infobox year_end: 1554"
-              }
-            }
-          ]
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-morocco",
-              "sourceLocation": "infobox capital: Rabat"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "zirid-dynasty",
-      "name": "Zirids",
-      "color": "#4a6a8a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Zirid_dynasty",
-      "span": {
-        "start": 972,
-        "end": 1148,
-        "startDates": [
-          {
-            "year": 972,
-            "source": {
-              "sourceKey": "wp-zirid-dynasty",
-              "sourceLocation": "infobox year_start: 972"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1148,
-            "source": {
-              "sourceKey": "wp-zirid-dynasty",
-              "sourceLocation": "infobox year_end: 1148"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-zirid-dynasty",
-              "sourceLocation": "infobox capital: 'Ashir / (936–1014) / al-Mansuriyya / (972–1057) / Mahdia / (1057–1148"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "hafsid-tunisia",
-      "name": "Hafsids (Tunisia)",
-      "color": "#c0702a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Hafsid_dynasty",
-      "span": {
-        "start": 1229,
-        "end": 1574,
-        "startDates": [
-          {
-            "year": 1229,
-            "source": {
-              "sourceKey": "wp-hafsid-dynasty",
-              "sourceLocation": "infobox year_start: 1229"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1574,
-            "source": {
-              "sourceKey": "wp-hafsid-dynasty",
-              "sourceLocation": "infobox year_end: 1574"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-hafsid-dynasty",
-              "sourceLocation": "infobox capital: Tunis"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "zayyanid-tlemcen",
-      "name": "Zayyanids (Tlemcen)",
-      "color": "#5a3a6a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen",
-      "span": {
-        "start": 1235,
-        "end": 1556,
-        "startDates": [
-          {
-            "year": 1235,
-            "source": {
-              "sourceKey": "wp-kingdom-of-tlemcen",
-              "sourceLocation": "infobox year_start: 1235"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1556,
-            "source": {
-              "sourceKey": "wp-kingdom-of-tlemcen",
-              "sourceLocation": "infobox year_end: 1556"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-kingdom-of-tlemcen",
-              "sourceLocation": "infobox capital: Tlemcen"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "sultanate-of-tuggurt",
-      "name": "Sultanate of Tuggurt",
-      "color": "#8a6a4a",
-      "parent": "maghreb",
-      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Tuggurt",
-      "span": {
-        "start": 1414,
-        "end": 1881,
-        "startDates": [
-          {
-            "year": 1414,
-            "source": {
-              "sourceKey": "wp-sultanate-of-tuggurt",
-              "sourceLocation": "infobox year_start: 1414"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1881,
-            "source": {
-              "sourceKey": "wp-sultanate-of-tuggurt",
-              "sourceLocation": "infobox year_end: 1881"
-            }
-          }
-        ]
-      },
-      "memberships": [
-        {
-          "facet": "geography",
-          "value": "north-africa",
-          "sources": [
-            {
-              "sourceKey": "wp-sultanate-of-tuggurt",
-              "sourceLocation": "infobox capital: Tuggurt"
             }
           ]
         }
@@ -15157,8 +14316,849 @@
     },
     {
       "id": "africa",
-      "name": "Africa south of the Sahara",
+      "name": "Africa",
       "color": "#9a5a2a"
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt and Nubia",
+      "color": "#b08a3a",
+      "parent": "africa",
+      "span": {
+        "start": 1517,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1517,
+            "source": {
+              "sourceKey": "wp-ottoman-egypt",
+              "sourceLocation": "infobox year_start: 1517"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-egypt",
+            "sourceLocation": "infobox established_event4: Current constitution, 18 January 2014 (current state)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tulunids",
+      "name": "Tulunids",
+      "color": "#8a6a2a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Tulunids",
+      "span": {
+        "start": 868,
+        "end": 905,
+        "startDates": [
+          {
+            "year": 868,
+            "source": {
+              "sourceKey": "wp-tulunids",
+              "sourceLocation": "infobox year_start: 868"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 905,
+            "source": {
+              "sourceKey": "wp-tulunids",
+              "sourceLocation": "infobox year_end: 905"
+            }
+          }
+        ],
+        "endEvent": "abbasid-reconquest"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-tulunids",
+              "sourceLocation": "infobox capital: Al-Qata'i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ikhshidid-dynasty",
+      "name": "Ikhshidids",
+      "color": "#7a7a3a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Ikhshidid_dynasty",
+      "span": {
+        "start": 935,
+        "end": 969,
+        "startDates": [
+          {
+            "year": 935,
+            "source": {
+              "sourceKey": "wp-ikhshidid-dynasty",
+              "sourceLocation": "infobox year_start: 935"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 969,
+            "source": {
+              "sourceKey": "wp-ikhshidid-dynasty",
+              "sourceLocation": "infobox year_end: 969"
+            }
+          }
+        ],
+        "endEvent": "fatimid-conquest-of-egypt-and-foundation-of-cairo"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-ikhshidid-dynasty",
+              "sourceLocation": "infobox capital: Fustat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fatimid-caliphate",
+      "name": "Fatimid Caliphate",
+      "color": "#2a8a4a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Fatimid_Caliphate",
+      "span": {
+        "start": 909,
+        "end": 1171,
+        "startDates": [
+          {
+            "year": 909,
+            "source": {
+              "sourceKey": "wp-fatimid-caliphate",
+              "sourceLocation": "infobox year_start: 909"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1171,
+            "source": {
+              "sourceKey": "wp-fatimid-caliphate",
+              "sourceLocation": "infobox year_end: 1171"
+            }
+          }
+        ],
+        "startEvent": "fatimids-overthrow-the-aghlabids",
+        "endEvent": "saladin-abolishes-the-fatimid-caliphate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-fatimid-caliphate",
+              "sourceLocation": "infobox capital: Raqqada (909–921) / Mahdia (921–948) / al-Mansuriya (948–973) / Cairo "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ayyubid-dynasty",
+      "name": "Ayyubids",
+      "color": "#c09a2a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Ayyubid_dynasty",
+      "span": {
+        "start": 1171,
+        "end": 1260,
+        "startDates": [
+          {
+            "year": 1171,
+            "source": {
+              "sourceKey": "wp-ayyubid-dynasty",
+              "sourceLocation": "infobox year_start: 1171"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1260,
+            "source": {
+              "sourceKey": "wp-ayyubid-dynasty",
+              "sourceLocation": "infobox year_end: 1260a"
+            }
+          }
+        ],
+        "startEvent": "saladin-abolishes-the-fatimid-caliphate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-ayyubid-dynasty",
+              "sourceLocation": "infobox capital: Cairo (1171–1174; 1218–1250) / Damascus (1174–1218) / Aleppo (1250–126"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mamluk-sultanate",
+      "name": "Mamluk Sultanate",
+      "color": "#a85a2a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Mamluk_Sultanate",
+      "span": {
+        "start": 1250,
+        "end": 1517,
+        "startDates": [
+          {
+            "year": 1250,
+            "source": {
+              "sourceKey": "wp-mamluk-sultanate",
+              "sourceLocation": "infobox year_start: 1250"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1517,
+            "source": {
+              "sourceKey": "wp-mamluk-sultanate",
+              "sourceLocation": "infobox year_end: 1517"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-mamluk-sultanate",
+              "sourceLocation": "infobox capital: Cairo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makuria",
+      "name": "Makuria",
+      "color": "#7a4a3a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Makuria",
+      "ids": {
+        "wikidata": "Q829356"
+      },
+      "span": {
+        "start": 450,
+        "end": 1475,
+        "startDates": [
+          {
+            "year": 450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('5th century')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1475,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "infobox ('late 15th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"Makuria\" (in \"History of Nubia\")"
+            },
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"Makuria\" (in \"Christianity in Sudan\")"
+            },
+            {
+              "sourceKey": "wp-makuria",
+              "sourceLocation": "category \"History of Nubia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alodia",
+      "name": "Alodia",
+      "color": "#9a5a4a",
+      "parent": "egypt",
+      "url": "https://en.wikipedia.org/wiki/Alodia",
+      "ids": {
+        "wikidata": "Q449639"
+      },
+      "span": {
+        "start": 550,
+        "end": 1500,
+        "startDates": [
+          {
+            "year": 550,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "infobox ('6th century')"
+            }
+          },
+          {
+            "year": 550,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "Origins ('completed by the mid-6th century')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "category \"History of Nubia\""
+            },
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "category \"Christianity in Sudan\""
+            },
+            {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maghreb",
+      "name": "The Maghreb",
+      "color": "#8a5a3a",
+      "parent": "africa"
+    },
+    {
+      "id": "garamantes",
+      "name": "Garamantes (Fezzan)",
+      "color": "#a07a5a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "ids": {
+        "wikidata": "Q839034"
+      },
+      "span": {
+        "start": -999,
+        "end": 675,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -999,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "lead ('at least as early as 1000 BC')"
+            }
+          },
+          {
+            "year": -599,
+            "source": {
+              "sourceKey": "wp-garamantes",
+              "sourceLocation": "Origin and prehistory ('From the 6th century BCE … a powerful polity')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 675,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "lead ('late 7th century AD')"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"Ancient Libya\""
+            },
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"Ancient Libyans\""
+            },
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"History of Fezzan\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "sahara",
+          "sources": [
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "category \"History of the Sahara\""
+            },
+            {
+              "sourceKey": "wp-garamantes-classical",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rustamid-dynasty",
+      "name": "Rustamids",
+      "color": "#6a8a5a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Rustamid_dynasty",
+      "span": {
+        "start": 777,
+        "end": 909,
+        "startDates": [
+          {
+            "year": 777,
+            "source": {
+              "sourceKey": "wp-rustamid-dynasty",
+              "sourceLocation": "infobox year_start: 777"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 909,
+            "source": {
+              "sourceKey": "wp-rustamid-dynasty",
+              "sourceLocation": "infobox year_end: 909"
+            }
+          }
+        ],
+        "endEvent": "capture-of-tahert"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-rustamid-dynasty",
+              "sourceLocation": "infobox capital: Tahert"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aghlabid-dynasty",
+      "name": "Aghlabids",
+      "color": "#8a7a2a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Aghlabid_dynasty",
+      "span": {
+        "start": 800,
+        "end": 909,
+        "startDates": [
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-aghlabid-dynasty",
+              "sourceLocation": "infobox year_start: 800"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 909,
+            "source": {
+              "sourceKey": "wp-aghlabid-dynasty",
+              "sourceLocation": "infobox year_end: 909"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-aghlabid-dynasty",
+              "sourceLocation": "infobox capital: Kairouan, with royal court at: / al-Abbasiyya (800–876) / Raqqada (876"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morocco",
+      "name": "Morocco",
+      "color": "#a8302a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Morocco",
+      "phases": [
+        {
+          "name": "Idrisid dynasty",
+          "start": 788,
+          "end": 974,
+          "startDates": [
+            {
+              "year": 788,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event2: Idrisid Dynasty, 788"
+              }
+            },
+            {
+              "year": 788,
+              "source": {
+                "sourceKey": "wp-idrisid-dynasty",
+                "sourceLocation": "infobox year_start: 788"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 974,
+              "source": {
+                "sourceKey": "wp-idrisid-dynasty",
+                "sourceLocation": "infobox year_end: 974"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Almoravid dynasty",
+          "start": 1040,
+          "end": 1147,
+          "startDates": [
+            {
+              "year": 1040,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event3: Almoravid Dynasty, 1040"
+              }
+            },
+            {
+              "year": 1050,
+              "source": {
+                "sourceKey": "wp-almoravid-dynasty",
+                "sourceLocation": "infobox year_start: 1050s"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1147,
+              "source": {
+                "sourceKey": "wp-almoravid-dynasty",
+                "sourceLocation": "infobox year_end: 1147"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Almohad Caliphate",
+          "start": 1121,
+          "end": 1269,
+          "startDates": [
+            {
+              "year": 1121,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event4: Almohad Dynasty, 1121"
+              }
+            },
+            {
+              "year": 1121,
+              "source": {
+                "sourceKey": "wp-almohad-caliphate",
+                "sourceLocation": "infobox year_start: 1121"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1269,
+              "source": {
+                "sourceKey": "wp-almohad-caliphate",
+                "sourceLocation": "infobox year_end: 1269"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Marinid Sultanate",
+          "start": 1244,
+          "end": 1465,
+          "startDates": [
+            {
+              "year": 1244,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event5: Marinid Dynasty, 1244"
+              }
+            },
+            {
+              "year": 1244,
+              "source": {
+                "sourceKey": "wp-marinid-dynasty",
+                "sourceLocation": "infobox year_start: 1244"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1465,
+              "source": {
+                "sourceKey": "wp-marinid-dynasty",
+                "sourceLocation": "infobox year_end: 1465"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Wattasid dynasty",
+          "start": 1472,
+          "end": 1554,
+          "startDates": [
+            {
+              "year": 1472,
+              "source": {
+                "sourceKey": "wp-morocco",
+                "sourceLocation": "infobox established_event6: Wattasid Dynasty, 1472"
+              }
+            },
+            {
+              "year": 1472,
+              "source": {
+                "sourceKey": "wp-wattasid-dynasty",
+                "sourceLocation": "infobox year_start: 1472"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1554,
+              "source": {
+                "sourceKey": "wp-wattasid-dynasty",
+                "sourceLocation": "infobox year_end: 1554"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-morocco",
+              "sourceLocation": "infobox capital: Rabat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zirid-dynasty",
+      "name": "Zirids",
+      "color": "#4a6a8a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Zirid_dynasty",
+      "span": {
+        "start": 972,
+        "end": 1148,
+        "startDates": [
+          {
+            "year": 972,
+            "source": {
+              "sourceKey": "wp-zirid-dynasty",
+              "sourceLocation": "infobox year_start: 972"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1148,
+            "source": {
+              "sourceKey": "wp-zirid-dynasty",
+              "sourceLocation": "infobox year_end: 1148"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-zirid-dynasty",
+              "sourceLocation": "infobox capital: 'Ashir / (936–1014) / al-Mansuriyya / (972–1057) / Mahdia / (1057–1148"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hafsid-tunisia",
+      "name": "Hafsids (Tunisia)",
+      "color": "#c0702a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Hafsid_dynasty",
+      "span": {
+        "start": 1229,
+        "end": 1574,
+        "startDates": [
+          {
+            "year": 1229,
+            "source": {
+              "sourceKey": "wp-hafsid-dynasty",
+              "sourceLocation": "infobox year_start: 1229"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1574,
+            "source": {
+              "sourceKey": "wp-hafsid-dynasty",
+              "sourceLocation": "infobox year_end: 1574"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-hafsid-dynasty",
+              "sourceLocation": "infobox capital: Tunis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zayyanid-tlemcen",
+      "name": "Zayyanids (Tlemcen)",
+      "color": "#5a3a6a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen",
+      "span": {
+        "start": 1235,
+        "end": 1556,
+        "startDates": [
+          {
+            "year": 1235,
+            "source": {
+              "sourceKey": "wp-kingdom-of-tlemcen",
+              "sourceLocation": "infobox year_start: 1235"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1556,
+            "source": {
+              "sourceKey": "wp-kingdom-of-tlemcen",
+              "sourceLocation": "infobox year_end: 1556"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-tlemcen",
+              "sourceLocation": "infobox capital: Tlemcen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-tuggurt",
+      "name": "Sultanate of Tuggurt",
+      "color": "#8a6a4a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Tuggurt",
+      "span": {
+        "start": 1414,
+        "end": 1881,
+        "startDates": [
+          {
+            "year": 1414,
+            "source": {
+              "sourceKey": "wp-sultanate-of-tuggurt",
+              "sourceLocation": "infobox year_start: 1414"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1881,
+            "source": {
+              "sourceKey": "wp-sultanate-of-tuggurt",
+              "sourceLocation": "infobox year_end: 1881"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-tuggurt",
+              "sourceLocation": "infobox capital: Tuggurt"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "west-africa-group",
