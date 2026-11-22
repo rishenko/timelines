@@ -16029,6 +16029,193 @@
       ]
     },
     {
+      "id": "mississippian-culture",
+      "name": "Mississippian culture (Cahokia)",
+      "color": "#7a5a3a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Mississippian_period_(archaeology)",
+      "span": {
+        "start": 1000,
+        "end": 1600,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-cahokia",
+              "sourceLocation": "lead: \"Cahokia was the largest and most influential urban settlement of the Mississippian culture, which developed advanced societies across much of what is now the Ce\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1600,
+            "source": {
+              "sourceKey": "wp-mississippian-period-archaeology",
+              "sourceLocation": "lead: \"The Late Mississippian period (1400–1600) was marked by less elaborate, but territorially larger paramount chiefdoms.\""
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "eastern-woodlands",
+          "sources": [
+            {
+              "sourceKey": "wp-mississippian-period-archaeology",
+              "sourceLocation": "lead: \"Founded in 1050, the city of Cahokia likely had a population of at least 22,400 at its peak around 1124.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ancestral-puebloans",
+      "name": "Ancestral Puebloans",
+      "color": "#a87a4a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Ancestral_Puebloans",
+      "span": {
+        "start": -1149,
+        "end": 1350,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -1149,
+            "source": {
+              "sourceKey": "wp-ancestral-puebloans",
+              "sourceLocation": "lead: \"The current agreement, based on terminology defined by the Pecos Classification, suggests their emergence around the 12th century BCE, during the archaeological\""
+            },
+            "margin": 50,
+            "note": "The lead: \"emergence around the 12th century BCE\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1350,
+            "source": {
+              "sourceKey": "wp-ancestral-puebloans",
+              "sourceLocation": "section \"Cultural characteristics\": \"The Ancestral Puebloan culture is perhaps best known for the stone and earth dwellings its people built along cliff walls, particularly during the Pueblo II and Pueblo III eras, fr\""
+            },
+            "note": "Last dated: the Pueblo II and III eras, about 900 to 1350."
+          },
+          {
+            "year": 1500,
+            "note": "No record after 1350 in the article; the end fades to the range end (1500)."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "oasisamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-ancestral-puebloans",
+              "sourceLocation": "lead: \"The current agreement, based on terminology defined by the Pecos Classification, suggests their emergence around the 12th century BCE, during the archaeological\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thule-people",
+      "name": "Thule",
+      "color": "#5a8aa8",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Thule_people",
+      "span": {
+        "start": 1000,
+        "end": 1650,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1000,
+            "source": {
+              "sourceKey": "wp-thule-people",
+              "sourceLocation": "lead: \"They developed in coastal Alaska by 1000 CE and expanded eastward across northern Canada, reaching Greenland by the 13th century.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1650,
+            "source": {
+              "sourceKey": "wp-thule-people",
+              "sourceLocation": "lead: \"Compounded by the already disruptive effects of the \"Little Ice Age\" (1650–1850), the Thule communities broke apart, and the people became known as the Eskimo (\""
+            },
+            "note": "The communities broke apart during the Little Ice Age (1650–1850)."
+          },
+          {
+            "year": 1850,
+            "source": {
+              "sourceKey": "wp-thule-people",
+              "sourceLocation": "lead: \"Compounded by the already disruptive effects of the \"Little Ice Age\" (1650–1850), the Thule communities broke apart, and the people became known as the Eskimo (\""
+            },
+            "note": "The Little Ice Age ends in 1850."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "na-arctic",
+          "sources": [
+            {
+              "sourceKey": "wp-thule-people",
+              "sourceLocation": "lead: \"They developed in coastal Alaska by 1000 CE and expanded eastward across northern Canada, reaching Greenland by the 13th century.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taino",
+      "name": "Taíno",
+      "color": "#3a8a8a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Taíno",
+      "span": {
+        "start": 850,
+        "end": 1514,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 850,
+            "source": {
+              "sourceKey": "wp-ta-no",
+              "sourceLocation": "section \"Present > DNA studies\": \"In 2018, a DNA study mapped the genome of a tooth belonging to an 8th- to 10th–century \"ancient Taíno\" woman from the Bahamas.\""
+            },
+            "margin": 50,
+            "note": "An \"8th- to 10th–century \"ancient Taíno\"\" woman (DNA studies)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1514,
+            "source": {
+              "sourceKey": "wp-ta-no",
+              "sourceLocation": "section \"Present > Dominican Republic\": \"Census records from 1514 reveal that 40% of Spanish men on Hispaniola had Taíno wives.\""
+            },
+            "note": "Last dated mention in the article; Modern States carries the row on."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caribbean",
+          "sources": [
+            {
+              "sourceKey": "wp-ta-no",
+              "sourceLocation": "lead: \"Granberry and Vescelius (2004) recognise two varieties of the Taino language: \"Classical Taino\", spoken in Puerto Rico and most of Hispaniola, and \"Ciboney Tain\""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "mesoamerica",
       "name": "Mesoamerica",
       "color": "#a8603a",
@@ -16609,7 +16796,7 @@
           }
         ],
         "startEvent": "foundation-1325",
-        "endEvent": "destruction-due-to-the-spanish-conquest-of-mexico"
+        "endEvent": "spanish-conquest-of-the-aztec-empire"
       },
       "memberships": [
         {
@@ -16805,6 +16992,99 @@
           ],
           "startEvent": "triple-alliance-formed",
           "endEvent": "spanish-conquest-of-the-aztec-empire"
+        }
+      ]
+    },
+    {
+      "id": "chichen-itza",
+      "name": "Chichén Itzá",
+      "color": "#c09a5a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Chichen_Itza",
+      "span": {
+        "start": 600,
+        "end": 1200,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 600,
+            "source": {
+              "sourceKey": "wp-chichen-itza",
+              "sourceLocation": "lead: \"Chichen Itza was a major focal point in the Northern Maya Lowlands from the Late Classic (c. 600–900 AD) through the Terminal Classic (c. 800–900 AD) and into t\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1200,
+            "source": {
+              "sourceKey": "wp-chichen-itza",
+              "sourceLocation": "lead: \"Chichen Itza was a major focal point in the Northern Maya Lowlands from the Late Classic (c. 600–900 AD) through the Terminal Classic (c. 800–900 AD) and into t\""
+            },
+            "note": "Last dated: the early Postclassic, c. 900–1200 AD."
+          },
+          {
+            "year": 1500,
+            "note": "No record after 1200 in the article; the end fades to the range end (1500)."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-chichen-itza",
+              "sourceLocation": "lead: \"Chichen Itza was a major focal point in the Northern Maya Lowlands from the Late Classic (c. 600–900 AD) through the Terminal Classic (c. 800–900 AD) and into t\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixtec-culture",
+      "name": "Mixtecs",
+      "color": "#8a5a3a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Mixtec_culture",
+      "span": {
+        "start": -1149,
+        "end": 1520,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -1149,
+            "source": {
+              "sourceKey": "wp-mixtec-culture",
+              "sourceLocation": "lead: \"It had its first manifestations in the Mesoamerican Middle Preclassic period (12th century BC – 10th century BC) and ended with the Spanish conquest in the firs\""
+            },
+            "margin": 50,
+            "note": "The lead: \"Middle Preclassic period (12th century BC – 10th century BC)\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1520,
+            "source": {
+              "sourceKey": "wp-mixtec-culture",
+              "sourceLocation": "lead: \"It had its first manifestations in the Mesoamerican Middle Preclassic period (12th century BC – 10th century BC) and ended with the Spanish conquest in the firs\""
+            },
+            "margin": 10,
+            "note": "The lead: \"ended with the Spanish conquest in the first decades of the 16th century\"."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-mixtec-culture",
+              "sourceLocation": "lead: \"It had its first manifestations in the Mesoamerican Middle Preclassic period (12th century BC – 10th century BC) and ended with the Spanish conquest in the firs\""
+            }
+          ]
         }
       ]
     },
@@ -17278,6 +17558,58 @@
             {
               "sourceKey": "wp-inca-empire",
               "sourceLocation": "infobox capital: Cusco"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chachapoya-culture",
+      "name": "Chachapoya",
+      "color": "#6a7a4a",
+      "parent": "south-america",
+      "url": "https://en.wikipedia.org/wiki/Chachapoya_culture",
+      "span": {
+        "start": 800,
+        "end": 1470,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 800,
+            "source": {
+              "sourceKey": "wp-chachapoya-culture",
+              "sourceLocation": "section \"History\": \"The Cachapoya Culture started around the year 800 and continued until the conquest by the Inca in about 1470, though some elements of the Cachapoya continued until the Spanish conq\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1470,
+            "source": {
+              "sourceKey": "wp-chachapoya-culture",
+              "sourceLocation": "section \"History\": \"The Cachapoya Culture started around the year 800 and continued until the conquest by the Inca in about 1470, though some elements of the Cachapoya continued until the Spanish conq\""
+            },
+            "note": "Conquered by the Inca in about 1470."
+          },
+          {
+            "year": 1550,
+            "source": {
+              "sourceKey": "wp-chachapoya-culture",
+              "sourceLocation": "section \"History\": \"The Cachapoya Culture started around the year 800 and continued until the conquest by the Inca in about 1470, though some elements of the Cachapoya continued until the Spanish conq\""
+            },
+            "margin": 50,
+            "note": "Some elements continued until the Spanish conquest of the Inca \"in the 1500s\"."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-chachapoya-culture",
+              "sourceLocation": "article"
             }
           ]
         }
@@ -17981,14 +18313,6 @@
         "wikipedia"
       ]
     },
-    "wp-roman-britain": {
-      "name": "Wikipedia: Roman Britain",
-      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-row-anglo-saxons": {
       "name": "Wikipedia: History of Anglo-Saxon England",
       "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
@@ -17996,6 +18320,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-roman-britain": {
+      "name": "Wikipedia: Roman Britain",
+      "url": "https://en.wikipedia.org/wiki/Roman_Britain",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-history-of-anglo-saxon-england": {
       "name": "History of Anglo-Saxon England (Wikipedia)",
@@ -18141,6 +18473,14 @@
         "wikipedia"
       ]
     },
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-principality-of-serbia": {
       "name": "Principality of Serbia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
@@ -18152,14 +18492,6 @@
     "wp-serbia": {
       "name": "Serbia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Serbia",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-revolutionary-serbia": {
-      "name": "Revolutionary Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -18621,17 +18953,17 @@
         "wikipedia"
       ]
     },
-    "wp-egypt": {
-      "name": "Egypt (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Egypt",
+    "wp-ottoman-egypt": {
+      "name": "Ottoman Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ottoman_Egypt",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-ottoman-egypt": {
-      "name": "Ottoman Egypt (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ottoman_Egypt",
+    "wp-egypt": {
+      "name": "Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Egypt",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -18685,14 +19017,6 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-navekat": {
-      "name": "Wikipedia: Navekat",
-      "url": "https://en.wikipedia.org/wiki/Navekat",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-eastern-turkic": {
       "name": "Wikipedia: Eastern Turkic Khaganate",
       "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
@@ -18700,6 +19024,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-navekat": {
+      "name": "Wikipedia: Navekat",
+      "url": "https://en.wikipedia.org/wiki/Navekat",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-t-rgesh": {
       "name": "Türgesh (Wikipedia)",
@@ -18869,14 +19201,6 @@
         "wikipedia"
       ]
     },
-    "wp-alchon": {
-      "name": "Wikipedia: Alchon Huns",
-      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-sagala": {
       "name": "Wikipedia: Sagala",
       "url": "https://en.wikipedia.org/wiki/Sagala",
@@ -18884,6 +19208,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-alchon": {
+      "name": "Wikipedia: Alchon Huns",
+      "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-karkota-dynasty": {
       "name": "Karkota dynasty (Wikipedia)",
@@ -19189,14 +19521,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
@@ -19204,6 +19528,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -19341,6 +19673,14 @@
         "wikipedia"
       ]
     },
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
     "wp-yarlung": {
       "name": "Wikipedia: Yarlung dynasty",
       "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
@@ -19357,9 +19697,9 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-tibet-history": {
-      "name": "Wikipedia: History of Tibet",
-      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+    "wp-tuyuhun": {
+      "name": "Wikipedia: Tuyuhun",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
       "tags": [
         "wikipedia"
       ],
@@ -19372,14 +19712,6 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
-    },
-    "wp-tuyuhun": {
-      "name": "Wikipedia: Tuyuhun",
-      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
     },
     "wp-tibet-under-yuan-rule": {
       "name": "Tibet under Yuan rule (Wikipedia)",
@@ -19685,17 +20017,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-prehistory-taiwan": {
-      "name": "Wikipedia: Prehistory of Taiwan",
-      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+    "wp-kalanay": {
+      "name": "Wikipedia: Kalanay Cave",
+      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-kalanay": {
-      "name": "Wikipedia: Kalanay Cave",
-      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
+    "wp-prehistory-taiwan": {
+      "name": "Wikipedia: Prehistory of Taiwan",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
       "tags": [
         "wikipedia"
       ],
@@ -19918,17 +20250,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-pastoral-neolithic": {
-      "name": "Wikipedia: Pastoral Neolithic",
-      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
+    "wp-savanna-pn": {
+      "name": "Wikipedia: Savanna Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-savanna-pn": {
-      "name": "Wikipedia: Savanna Pastoral Neolithic",
-      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
+    "wp-pastoral-neolithic": {
+      "name": "Wikipedia: Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
       "tags": [
         "wikipedia"
       ],
@@ -20273,6 +20605,70 @@
     "wp-inca-empire": {
       "name": "Inca Empire (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Inca_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-chichen-itza": {
+      "name": "Chichen Itza (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chichen_Itza",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mixtec-culture": {
+      "name": "Mixtec culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mixtec_culture",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cahokia": {
+      "name": "Cahokia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cahokia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mississippian-period-archaeology": {
+      "name": "Mississippian period (archaeology) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mississippian_period_(archaeology)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ancestral-puebloans": {
+      "name": "Ancestral Puebloans (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancestral_Puebloans",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-thule-people": {
+      "name": "Thule people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thule_people",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ta-no": {
+      "name": "Taíno (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taíno",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-chachapoya-culture": {
+      "name": "Chachapoya culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chachapoya_culture",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -29038,6 +29434,10 @@
           "sourceLocation": "infobox event_end: Spanish conquest, 13 August 1521"
         },
         {
+          "sourceKey": "wp-tenochtitlan",
+          "sourceLocation": "infobox event_end: Destruction due to the Spanish conquest of Mexico, 1521"
+        },
+        {
           "sourceKey": "wp-tetzcoco-altepetl",
           "sourceLocation": "infobox event_end: Spanish conquest of the Aztec Empire, 1521"
         },
@@ -29087,21 +29487,6 @@
         {
           "sourceKey": "wp-tenochtitlan",
           "sourceLocation": "infobox event_start: Foundation, 1325"
-        }
-      ]
-    },
-    {
-      "uuid": "destruction-due-to-the-spanish-conquest-of-mexico",
-      "title": "Destruction due to the Spanish conquest of Mexico",
-      "descr": "",
-      "start": 1521,
-      "tracks": [
-        "tenochtitlan"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-tenochtitlan",
-          "sourceLocation": "infobox event_end: Destruction due to the Spanish conquest of Mexico, 1521"
         }
       ]
     },
@@ -29180,6 +29565,54 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "cahokia-founded",
+      "title": "Cahokia founded",
+      "descr": "",
+      "start": 1050,
+      "circa": true,
+      "tracks": [
+        "mississippian-culture"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mississippian-period-archaeology",
+          "sourceLocation": "lead: \"Founded in 1050, the city of Cahokia likely had a population of at least 22,400 at its peak around 1124.\""
+        }
+      ]
+    },
+    {
+      "uuid": "cahokia-at-its-peak",
+      "title": "Cahokia at its peak",
+      "descr": "",
+      "start": 1124,
+      "circa": true,
+      "tracks": [
+        "mississippian-culture"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mississippian-period-archaeology",
+          "sourceLocation": "lead: \"Founded in 1050, the city of Cahokia likely had a population of at least 22,400 at its peak around 1124.\""
+        }
+      ]
+    },
+    {
+      "uuid": "exodus-from-cahokia",
+      "title": "Exodus of half the Cahokians",
+      "descr": "",
+      "start": 1275,
+      "circa": true,
+      "tracks": [
+        "mississippian-culture"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mississippian-period-archaeology",
+          "sourceLocation": "lead: \"These developments resulted in an exodus of some 50% of Cahokians at the time to the Nashville area (likely ancestral to the Koasati people), that region peakin\""
+        }
+      ]
     },
     {
       "uuid": "st-georges-night-uprising",
