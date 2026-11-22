@@ -114,6 +114,16 @@ describe('layoutLanes', () => {
     expect(plain.footprintEnd - plain.x0).toBe(44);
   });
 
+  it('makes room for a category glyph before a title, on marks and on a pill that names a key event', () => {
+    const lanes = buildLanes(tracks, {}, {});
+    const one = (opts: Parameters<typeof layoutLanes>[4]) => layoutLanes(lanes, [ev('a', 50, ['guild'])], scale, 100, opts).lanes.find((l) => l.lane.id === 'guild')!.marks[0];
+    expect(one({ glyphs: new Set(['a']) }).footprintEnd - one({}).footprintEnd).toBe(15);
+    const key = (id: string, start: number) => ({ ...ev(id, start, ['guild']), importance: 1 as const });
+    const pill = (glyphs?: Set<string>) =>
+      layoutLanes(lanes, [key('shown', 49), key('folded', 50)], scale, 100, { maxRows: 1, glyphs }).lanes.find((l) => l.lane.id === 'guild')!.marks.find((m) => m.kind === 'cluster')!;
+    expect(pill(new Set(['folded'])).footprintEnd - pill().footprintEnd).toBe(15);
+  });
+
   it('fills gaps in a row left by events placed earlier', () => {
     // the key event sits at the right; a normal event placed after it still fits to its left in row 0
     const events = [{ ...ev('key', 80, ['guild']), importance: 1 as const }, ev('early', 5, ['guild'])];

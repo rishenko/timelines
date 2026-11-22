@@ -65,6 +65,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/subYear.ts` | Months and days: zoom steps below a year, date positions, `inc`/`at` in links |
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
+| `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -208,6 +209,22 @@ the regions inside each (`broader`); rows with sub-rows stay while any row below
 while one of its sources is switched on (so tags cited to hidden spoiler sources give nothing away). The result is laid
 over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
 without knowing about regions. Off in edit mode. The link carries `&regions=`.
+
+### Category filter
+
+Filters → Data filters → Categories reuses the Regions tree (`RegionFilter.tsx` with a heading, a noun and help text)
+on the timeline's first facet whose `applies` is `"events"` (`categoryFacetId` in `src/lib/categories.ts`; state in
+`src/state/categoryFilter.ts`). Kinds and sub-kinds with no events on the timeline are left out. An event shows if
+either of its categories is ticked or sits inside a ticked kind; an event with no category always shows; the same
+source rule as regions applies. The result is one more test in `visibleEvents` (`App.tsx`), so the chart, table and
+search follow it. Off in edit mode. The link carries `&cat=`.
+
+Each event's main kind draws a glyph before its title (`CategoryGlyph.tsx`, one shape per kind; the layout reserves its
+width through `glyphs`), and on a "+N" pill that names a key event. Both categories are in the event's accessible
+name, the table's Category column (sortable, and in the CSV) and the event's details. The event editor picks a main
+and a second category; a new one cites the event's first source, so the picker waits until the event has one.
+Deleting a source drops it from facet memberships (`recite` in `src/state/edits.ts`), and a membership left citing
+nothing goes too.
 
 Each row's own regions and the sources placing it there (`rowRegionList`) show in the table view's rows tables (a
 Regions column; rows with regions but no lifespan are listed too) and in the row name's tooltip in the chart

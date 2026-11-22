@@ -1,4 +1,6 @@
-import type { ReactNode } from 'react';
+import { useMemo, type ReactNode } from 'react';
+import { CategoryGlyph, hasGlyph } from './CategoryGlyph.tsx';
+import { categoryFacetId, eventCategories, topOf } from '../lib/categories.ts';
 import type { Dataset, DateClaim, LinkKind } from '../types.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { hasDayZoom } from '../lib/subYear.ts';
@@ -91,6 +93,14 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
   const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
+  // the kinds of event this timeline's events belong to (main categories), in the facet's order, those with a glyph
+  const catFacetId = categoryFacetId(data);
+  const catFacet = catFacetId ? data.meta.facets![catFacetId] : undefined;
+  const kinds = useMemo(() => {
+    if (!catFacet || !catFacetId) return [];
+    const used = new Set(data.events.flatMap((e) => eventCategories(e, catFacetId, catFacet, () => true).slice(0, 1).map((v) => topOf(v, catFacet))));
+    return Object.keys(catFacet.values).filter((k) => used.has(k) && hasGlyph(k));
+  }, [data.events, catFacet, catFacetId]);
   const hasChronologies = [...chronologyGroups(data)].some(([, list]) => list.length > 1);
   // only explain what this timeline actually uses
   const has = {
@@ -196,6 +206,30 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       show: data.events.some((e) => e.importance === 1),
       title: 'Key event',
       text: 'Bold labels mark the events that matter most. In a crowded or collapsed row they are placed first, so they stay visible; at the widest zoom only key events are drawn.',
+    },
+    {
+      sample: (
+        <span className="lg-glyphs">
+          {kinds.slice(0, 3).map((k) => (
+            <CategoryGlyph key={k} kind={k} />
+          ))}
+        </span>
+      ),
+      show: kinds.length > 0,
+      title: 'Kind of event',
+      text: (
+        <>
+          A shape before an event’s title says what kind of event it was (its main category; the event’s details name
+          both, if it has two). Filters → Categories shows only the kinds you tick.
+          <ul className="lg-glyph-list">
+            {kinds.map((k) => (
+              <li key={k}>
+                <CategoryGlyph kind={k} /> {catFacet!.values[k]?.name ?? k}
+              </li>
+            ))}
+          </ul>
+        </>
+      ),
     },
     {
       sample: <span className="lg-cluster">+3</span>,
