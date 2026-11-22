@@ -197,7 +197,9 @@ All of these have unit tests in `extract/test_dates.py`.
 
 ## Wikidata JSON
 
-- **One stream, read in parallel.** `wikidata-20261116-all.json.bz2` is 95.7 GiB of a **single** bz2 stream (about 10:1, so about 970 GiB of JSON), so pbzip2 doesn't help. `indexed_bzip2` decompresses it at about 600 MiB/s on 3 threads (`extract/wikidata.py`).
+- **One stream, read in parallel.** `wikidata-20261116-all.json.bz2` is 95.7 GiB of a **single** bz2 stream, so pbzip2 doesn't help. `indexed_bzip2` decompresses it at about 600 MiB/s on 3 threads (`extract/wikidata.py`).
+- **It is much bigger unpacked than the ratio suggests.** I first guessed about 10:1 (970 GiB). The first full pass was paused at **1,696 GiB of JSON (118.6 million lines) and hadn't ended**, so the ratio is at least 18:1. Budget about 2 TiB and 2+ hours at 266 MiB/s; the item count (about 120 million entities) is a better progress guide than bytes.
+- **First pass, paused 2026-11-22 at 1,696 GiB** (108.8 min, 266 MiB/s, 2 threads + 2 workers): 1,456,469 items kept; claims P571 733,194, P585 422,967, P580 143,832, P582 116,785, P576 85,841; links P31 1,787,181, P361 450,351. The table file is 230 MiB. Indexes are built only at the end.
 - **Framing (checked):** a `[` line, then one entity per line with a trailing comma, then `]`.
   - Lines are big: the first items are country-sized (Q31 is over 300 KB).
   - The first 1 GiB held only 25,496 entities.
