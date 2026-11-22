@@ -346,6 +346,12 @@ on in Filters, so a value cited only to a spoiler source (`hiddenByDefault`) sta
 source on; the example timeline's Serath shows this with "The coast". Together, rows,
 events and facet values form a graph: events link rows, memberships link rows to values, and `broader` links values.
 
+**Event categories.** Events join the values of a facet whose `applies` is `"events"` the same way. The Wikipedia-sourced
+timelines share one such facet, `category`: nine kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
+`unrest`, `diplomacy`, `society`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
+`conflict`). An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
+article the event is dated from. The app doesn't show them yet.
+
 ## sources and tags
 
 `sources` is an object keyed by source id:

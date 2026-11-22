@@ -1,0 +1,266 @@
+{
+ "_note": "Reviewed event categories for Modern States (pipelines/common/event_categories.py): {\"<event uuid>\": [main, second]}; [] = no category. Wins over the classifier. Batches 1 and 2 approved by Kevin 2026-11-22.",
+ "afars-and-issas-renamed": [
+  "reform"
+ ],
+ "almora-capital": [
+  "capital-moved"
+ ],
+ "anglo-french-joint-naval-commission": [
+  "treaty"
+ ],
+ "apartheid": [
+  "law"
+ ],
+ "associated-statehood-1967": [
+  "reform"
+ ],
+ "bahrain-protected": [
+  "vassalage"
+ ],
+ "berlin-wall": [
+  "place"
+ ],
+ "bolivia-constitution-2009": [
+  "reform"
+ ],
+ "cambodian-genocide": [
+  "atrocity"
+ ],
+ "canadian-confederation": [
+  "union"
+ ],
+ "chad-rallies-to-free-france": [
+  "alliance"
+ ],
+ "compromise-1867": [
+  "union",
+  "treaty"
+ ],
+ "cyprus-crisis-1963": [
+  "unrest"
+ ],
+ "darfur-independence-1898": [
+  "independence"
+ ],
+ "democratic-republic-of-madagascar": [
+  "reform"
+ ],
+ "division-of-korea": [
+  "territory"
+ ],
+ "dominica-moves-to-windward-islands": [
+  "colony"
+ ],
+ "dominion-of-new-zealand": [
+  "reform"
+ ],
+ "ellice-islands-referendum": [
+  "reform"
+ ],
+ "first-government-junta-chile": [
+  "revolution",
+  "independence"
+ ],
+ "gilbert-and-ellice-separation": [
+  "reform"
+ ],
+ "gna-established": [
+  "revolution",
+  "founded"
+ ],
+ "gpra-proclaimed": [
+  "founded"
+ ],
+ "granadine-confederation": [
+  "reform"
+ ],
+ "great-depression": [
+  "economy"
+ ],
+ "great-trek": [
+  "colony"
+ ],
+ "griqualand-west-british": [
+  "annexation"
+ ],
+ "habesh-eyalet-created": [
+  "conquest",
+  "founded"
+ ],
+ "hadhramaut-protection-1888": [
+  "vassalage"
+ ],
+ "haitian-republic-1859": [
+  "coup"
+ ],
+ "hamdullahi-destroyed": [
+  "sack",
+  "conquest"
+ ],
+ "holocaust": [
+  "atrocity"
+ ],
+ "hyderabad-founded": [
+  "founded"
+ ],
+ "ifni-retroceded": [
+  "cession"
+ ],
+ "india-republic": [
+  "reform"
+ ],
+ "iraqi-mamluks": [
+  "succession"
+ ],
+ "israeli-withdrawal-lebanon": [
+  "territory"
+ ],
+ "kong-burned": [
+  "sack"
+ ],
+ "kuku-holds-algiers": [
+  "conquest"
+ ],
+ "kurdistan-disestablished": [
+  "dissolved",
+  "conquest"
+ ],
+ "kuwait-sheikhdom": [
+  "independence"
+ ],
+ "los-altos-reincorporated": [
+  "annexation"
+ ],
+ "lozi-restoration": [
+  "founded"
+ ],
+ "meiji-restoration": [
+  "revolution",
+  "rule"
+ ],
+ "msiri-killed": [
+  "coup",
+  "conquest"
+ ],
+ "national-delimitation": [
+  "territory"
+ ],
+ "nauru-phosphate-mining": [
+  "economy"
+ ],
+ "nepalese-royal-massacre": [
+  "atrocity",
+  "succession"
+ ],
+ "new-france-royal-province": [
+  "reform"
+ ],
+ "new-hebrides-condominium": [
+  "colony",
+  "treaty"
+ ],
+ "newfoundland-dominion": [
+  "reform"
+ ],
+ "ottoman-direct-rule-tripoli": [
+  "annexation"
+ ],
+ "ottoman-return-yemen": [
+  "conquest"
+ ],
+ "palau-compact-of-free-association": [
+  "independence",
+  "alliance"
+ ],
+ "panama-canal": [
+  "economy"
+ ],
+ "paulet-affair": [
+  "conquest"
+ ],
+ "peruvian-congress-1822": [
+  "reform"
+ ],
+ "portuguese-court-to-brazil": [
+  "capital-moved"
+ ],
+ "prague-spring": [
+  "reform",
+  "invasion"
+ ],
+ "rabih-deposes-kobur": [
+  "coup"
+ ],
+ "saudi-oil": [
+  "economy"
+ ],
+ "seychelles-separated": [
+  "reform"
+ ],
+ "songhai-sacks-niani": [
+  "sack",
+  "invasion"
+ ],
+ "spoiling-of-vijayabahu": [
+  "territory",
+  "succession"
+ ],
+ "statute-of-westminster": [
+  "reform",
+  "independence"
+ ],
+ "stellaland-goshen-unite": [
+  "union"
+ ],
+ "suez-canal-opened": [
+  "economy"
+ ],
+ "swaziland-high-commission-territory": [
+  "colony"
+ ],
+ "swaziland-under-sar": [
+  "vassalage"
+ ],
+ "tasmania-self-government": [
+  "reform"
+ ],
+ "tlemcen-spaniards": [
+  "war"
+ ],
+ "tonga-protected-state": [
+  "vassalage"
+ ],
+ "ttpi-established": [
+  "colony"
+ ],
+ "uganda-kingdoms-restored": [
+  "founded"
+ ],
+ "uk-pba-founded": [
+  "union"
+ ],
+ "umar-tall-jihad": [
+  "war",
+  "religion"
+ ],
+ "untac": [
+  "diplomacy"
+ ],
+ "upper-volta-restored": [
+  "founded"
+ ],
+ "us-nuclear-tests-marshall-islands": [
+  "disaster"
+ ],
+ "venezuela-1953": [
+  "reform"
+ ],
+ "zanzibar-partition": [
+  "territory",
+  "succession"
+ ],
+ "zemene-mesafint": [
+  "rule"
+ ]
+}
