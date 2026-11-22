@@ -16054,8 +16054,8 @@
           {
             "year": 1000,
             "source": {
-              "sourceKey": "wp-cahokia",
-              "sourceLocation": "lead: \"Cahokia was the largest and most influential urban settlement of the Mississippian culture, which developed advanced societies across much of what is now the Ce\""
+              "sourceKey": "wp-mississippian-period-archaeology",
+              "sourceLocation": "section heading: Early Mississippian period (c. 1000)"
             }
           }
         ],
@@ -16065,7 +16065,8 @@
             "source": {
               "sourceKey": "wp-mississippian-period-archaeology",
               "sourceLocation": "lead: \"The Late Mississippian period (1400–1600) was marked by less elaborate, but territorially larger paramount chiefdoms.\""
-            }
+            },
+            "note": "The sources give no end; the row stops at the last dated mention and fades after it."
           }
         ]
       },
@@ -16157,7 +16158,7 @@
               "sourceKey": "wp-thule-people",
               "sourceLocation": "lead: \"Compounded by the already disruptive effects of the \"Little Ice Age\" (1650–1850), the Thule communities broke apart, and the people became known as the Eskimo (\""
             },
-            "note": "The communities broke apart during the Little Ice Age (1650–1850)."
+            "note": "The communities broke apart during the Little Ice Age (1650–1850); its start is taken."
           },
           {
             "year": 1850,
@@ -16165,7 +16166,7 @@
               "sourceKey": "wp-thule-people",
               "sourceLocation": "lead: \"Compounded by the already disruptive effects of the \"Little Ice Age\" (1650–1850), the Thule communities broke apart, and the people became known as the Eskimo (\""
             },
-            "note": "The Little Ice Age ends in 1850."
+            "note": "The end of the Little Ice Age."
           }
         ]
       },
@@ -16199,8 +16200,7 @@
               "sourceKey": "wp-ta-no",
               "sourceLocation": "section \"Present > DNA studies\": \"In 2018, a DNA study mapped the genome of a tooth belonging to an 8th- to 10th–century \"ancient Taíno\" woman from the Bahamas.\""
             },
-            "margin": 50,
-            "note": "An \"8th- to 10th–century \"ancient Taíno\"\" woman (DNA studies)."
+            "margin": 50
           }
         ],
         "endDates": [
@@ -16210,7 +16210,7 @@
               "sourceKey": "wp-ta-no",
               "sourceLocation": "section \"Present > Dominican Republic\": \"Census records from 1514 reveal that 40% of Spanish men on Hispaniola had Taíno wives.\""
             },
-            "note": "Last dated mention in the article; Modern States carries the row on."
+            "note": "The sources give no end; the row stops at the last dated mention and fades after it."
           }
         ]
       },
@@ -16222,6 +16222,50 @@
             {
               "sourceKey": "wp-ta-no",
               "sourceLocation": "lead: \"Granberry and Vescelius (2004) recognise two varieties of the Taino language: \"Classical Taino\", spoken in Puerto Rico and most of Hispaniola, and \"Ciboney Tain\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dominican-republic",
+      "name": "Dominican Republic",
+      "color": "#2a3a8a",
+      "parent": "north-america",
+      "url": "https://en.wikipedia.org/wiki/Dominican_Republic",
+      "phases": [
+        {
+          "name": "Captaincy General of Santo Domingo",
+          "start": 1492,
+          "end": 1795,
+          "startDates": [
+            {
+              "year": 1492,
+              "source": {
+                "sourceKey": "wp-captaincy-general-of-santo-domingo",
+                "sourceLocation": "infobox life span: 1492–1821"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1795,
+              "source": {
+                "sourceKey": "wp-captaincy-general-of-santo-domingo",
+                "sourceLocation": "infobox event1: Santo Domingo annexed to France, 22 July 1795"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caribbean",
+          "sources": [
+            {
+              "sourceKey": "wp-dominican-republic",
+              "sourceLocation": "infobox capital: Santo Domingo"
             }
           ]
         }
@@ -16636,8 +16680,7 @@
               "sourceLocation": "infobox year_end: 1524"
             }
           }
-        ],
-        "endEvent": "end-of-the-k-iche-kingdom-of-q-umarkaj"
+        ]
       },
       "memberships": [
         {
@@ -16678,8 +16721,7 @@
               "sourceLocation": "infobox year_end: 1530"
             }
           }
-        ],
-        "endEvent": "conquered-by-new-spain"
+        ]
       },
       "memberships": [
         {
@@ -16720,9 +16762,7 @@
               "sourceLocation": "infobox year_end: 1520"
             }
           }
-        ],
-        "startEvent": "tlaxcaltec-migration-to-central-mexico",
-        "endEvent": "spanish-conquest-of-the-aztec-empire"
+        ]
       },
       "memberships": [
         {
@@ -16763,9 +16803,7 @@
               "sourceLocation": "infobox year_end: 1521"
             }
           }
-        ],
-        "startEvent": "triple-alliance-formed",
-        "endEvent": "spanish-conquest-of-the-aztec-empire"
+        ]
       },
       "memberships": [
         {
@@ -16806,9 +16844,7 @@
               "sourceLocation": "infobox year_end: 1521"
             }
           }
-        ],
-        "startEvent": "foundation-1325",
-        "endEvent": "spanish-conquest-of-the-aztec-empire"
+        ]
       },
       "memberships": [
         {
@@ -16882,8 +16918,7 @@
               "sourceLocation": "infobox year_end: 1521"
             }
           }
-        ],
-        "endEvent": "spanish-conquest-of-the-aztec-empire"
+        ]
       },
       "memberships": [
         {
@@ -16957,9 +16992,7 @@
               "sourceLocation": "infobox year_end: 1521"
             }
           }
-        ],
-        "startEvent": "triple-alliance-formed",
-        "endEvent": "spanish-conquest-of-the-aztec-empire"
+        ]
       },
       "memberships": [
         {
@@ -17071,8 +17104,7 @@
               "sourceKey": "wp-mixtec-culture",
               "sourceLocation": "lead: \"It had its first manifestations in the Mesoamerican Middle Preclassic period (12th century BC – 10th century BC) and ended with the Spanish conquest in the firs\""
             },
-            "margin": 50,
-            "note": "The lead: \"Middle Preclassic period (12th century BC – 10th century BC)\"."
+            "margin": 50
           }
         ],
         "endDates": [
@@ -17082,8 +17114,7 @@
               "sourceKey": "wp-mixtec-culture",
               "sourceLocation": "lead: \"It had its first manifestations in the Mesoamerican Middle Preclassic period (12th century BC – 10th century BC) and ended with the Spanish conquest in the firs\""
             },
-            "margin": 10,
-            "note": "The lead: \"ended with the Spanish conquest in the first decades of the 16th century\"."
+            "margin": 10
           }
         ]
       },
@@ -17095,6 +17126,47 @@
             {
               "sourceKey": "wp-mixtec-culture",
               "sourceLocation": "lead: \"It had its first manifestations in the Mesoamerican Middle Preclassic period (12th century BC – 10th century BC) and ended with the Spanish conquest in the firs\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peten-itza-kingdom",
+      "name": "Petén Itza kingdom",
+      "color": "#4a7a2a",
+      "parent": "mesoamerica",
+      "url": "https://en.wikipedia.org/wiki/Peten_Itza_kingdom",
+      "span": {
+        "start": 1194,
+        "end": 1697,
+        "startDates": [
+          {
+            "year": 1194,
+            "source": {
+              "sourceKey": "wp-peten-itza-kingdom",
+              "sourceLocation": "infobox year_start: 1194"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1697,
+            "source": {
+              "sourceKey": "wp-peten-itza-kingdom",
+              "sourceLocation": "infobox year_end: 1697"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maya-region",
+          "sources": [
+            {
+              "sourceKey": "wp-peten-itza-kingdom",
+              "sourceLocation": "infobox capital: Nojpetén"
             }
           ]
         }
@@ -17549,14 +17621,6 @@
                 "sourceKey": "wp-inca-empire",
                 "sourceLocation": "infobox year_end: 1533/1572"
               }
-            },
-            {
-              "year": 1572,
-              "source": {
-                "sourceKey": "wp-inca-empire",
-                "sourceLocation": "infobox year_end: 1533/1572"
-              },
-              "note": "The infobox gives 1533 or 1572."
             }
           ],
           "startEvent": "pachacuti-creates-tawantinsuyu"
@@ -17573,7 +17637,29 @@
             }
           ]
         }
-      ]
+      ],
+      "span": {
+        "start": 1200,
+        "end": 1572,
+        "startDates": [
+          {
+            "year": 1200,
+            "source": {
+              "sourceKey": "wp-kingdom-of-cusco",
+              "sourceLocation": "infobox year_start: c. 1200"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1572,
+            "source": {
+              "sourceKey": "wp-inca-empire",
+              "sourceLocation": "infobox date_post: 1572"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "chachapoya-culture",
@@ -20913,6 +20999,30 @@
     "wp-sultanate-of-maguindanao": {
       "name": "Sultanate of Maguindanao (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Sultanate_of_Maguindanao",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-peten-itza-kingdom": {
+      "name": "Peten Itza kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Peten_Itza_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-captaincy-general-of-santo-domingo": {
+      "name": "Captaincy General of Santo Domingo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Captaincy_General_of_Santo_Domingo",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dominican-republic": {
+      "name": "Dominican Republic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dominican_Republic",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
