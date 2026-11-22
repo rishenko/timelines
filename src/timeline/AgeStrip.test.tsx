@@ -40,8 +40,8 @@ describe('the Ages strip', () => {
       { id: 'gone', name: 'Before Time', start: -300, end: -200, sources: cite },
     ]);
     expect(buttons).toHaveLength(1);
-    expect(buttons[0].classList.contains('cut-start')).toBe(true);
-    expect(buttons[0].classList.contains('cut-end')).toBe(false);
+    expect(buttons[0].querySelector('.bar')!.classList.contains('cut-start')).toBe(true);
+    expect(buttons[0].querySelector('.bar')!.classList.contains('cut-end')).toBe(false);
     expect(buttons[0].title).toContain('Runs on past this timeline');
   });
 
@@ -49,8 +49,15 @@ describe('the Ages strip', () => {
     const [b] = strip([
       { id: 'salt', name: 'Salt Years', start: 20, end: 60, startDates: [{ year: 10, source: cite[0] }, { year: 30, source: cite[0] }], sources: cite },
     ]);
-    expect(b.classList.contains('uncertain')).toBe(true);
+    const bar = b.querySelector<HTMLElement>('.bar')!;
+    expect(bar.classList.contains('uncertain')).toBe(true);
     // from 10 L (the start's earliest) to 30 L at 8 px a year
-    expect(b.style.getPropertyValue('--fade-in')).toBe('160px');
+    expect(bar.style.getPropertyValue('--fade-in')).toBe('160px');
+  });
+
+  it('keeps a short age’s target at least 24 px wide, its bar at the age’s own width', () => {
+    const [b] = strip([{ id: 'blip', name: 'Blip', start: 20, end: 20, sources: cite }]);
+    expect(parseFloat(b.style.width)).toBe(24);
+    expect(parseFloat(b.querySelector<HTMLElement>('.bar')!.style.width)).toBe(8);
   });
 });

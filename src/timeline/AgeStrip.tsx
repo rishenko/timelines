@@ -4,7 +4,9 @@ import { at0, at1 } from '../lib/subYear.ts';
 import { citationsInWords, spanInWords } from '../lib/table.ts';
 import type { Scale } from './scale.ts';
 
-export const AGE_LINE_PX = 18;
+/** One line of the strip: a 24 px target (WCAG 2.5.8) around a 15 px bar. */
+export const AGE_LINE_PX = 24;
+const MIN_TARGET_PX = 24;
 
 interface Props {
   ages: PlacedAge[];
@@ -28,7 +30,7 @@ interface Props {
 export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, onSelect }: Props) {
   if (!ages.length) return null;
   return (
-    <div className="tl-ages" style={{ width, height: 4 + lines * AGE_LINE_PX }} role="group" aria-label="Ages">
+    <div className="tl-ages" style={{ width, height: lines * AGE_LINE_PX }} role="group" aria-label="Ages">
       <div className="tl-ages-corner" style={{ width: labelW }}>
         Ages
       </div>
@@ -48,21 +50,28 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
         const fadeOut = ew ? Math.max(0, Math.min(raw1, scale.width) - scale.x(ew[0] + 1)) : 0;
         const dates = spanInWords(span, cal, sources);
         const from = citationsInWords(era.sources, sources);
-        const style = { left: labelW + x0, width: x1 - x0, top: 2 + line * AGE_LINE_PX } as React.CSSProperties & Record<string, string | number>;
-        if (era.color) style['--age-color'] = era.color;
-        if (fadeIn) style['--fade-in'] = `${Math.min(fadeIn, x1 - x0)}px`;
-        if (fadeOut) style['--fade-out'] = `${Math.min(fadeOut, x1 - x0)}px`;
+        // the button is the target (at least 24 px each way); the bar inside it is drawn to the age's own width
+        const target = Math.max(x1 - x0, MIN_TARGET_PX);
+        const style = { left: labelW + x0 - (target - (x1 - x0)) / 2, width: target, top: line * AGE_LINE_PX } as React.CSSProperties;
+        const bar = { left: (target - (x1 - x0)) / 2, width: x1 - x0 } as React.CSSProperties & Record<string, string | number>;
+        if (era.color) bar['--age-color'] = era.color;
+        if (fadeIn) bar['--fade-in'] = `${Math.min(fadeIn, x1 - x0)}px`;
+        if (fadeOut) bar['--fade-out'] = `${Math.min(fadeOut, x1 - x0)}px`;
         return (
           <button
             key={era.id}
-            className={`tl-age${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`}
+            className="tl-age"
             style={style}
             title={[`${era.name}, ${dates.main}`, ...dates.ranges, cut && 'Runs on past this timeline', from && `from ${from}`].filter(Boolean).join('\n')}
             aria-label={`${era.name}, ${dates.main}, age; centre the chart on it`}
             onClick={() => onSelect((span.start + span.end) / 2)}
           >
-            {/* the name stays readable while the age starts off to the left */}
-            <span style={{ left: Math.max(0, Math.min(viewLeft - x0, x1 - x0 - 80)) }}>{era.name}</span>
+            <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>
+              {/* the name stays readable while the age starts off to the left */}
+              <span className="name" style={{ left: Math.max(0, Math.min(viewLeft - x0, x1 - x0 - 80)) }}>
+                {era.name}
+              </span>
+            </span>
           </button>
         );
       })}
