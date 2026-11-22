@@ -138,7 +138,7 @@ export function trackDeletion(d: Dataset, id: string): TrackDeletion {
   const orphaned = using.filter((e) => e.tracks.length === 1).length;
   return {
     blocked: children.length
-      ? `It has sub-tracks (${children.map((c) => c.name).join(', ')}). Delete or move those first.`
+      ? `It has sub-rows (${children.map((c) => c.name).join(', ')}). Delete or move those first.`
       : undefined,
     orphaned,
     shared: using.length - orphaned,

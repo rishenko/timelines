@@ -391,7 +391,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
         search={
           <SearchBox
             index={search.index}
-            placeholder="Row, event or year…"
+            placeholder="Row, event or date…"
             example={formatYear(cal.yearZero ? 4500 : -1273, cal)}
             parseDate={search.parseDate}
             describeYears={search.describeYears}

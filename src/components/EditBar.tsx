@@ -26,7 +26,7 @@ export function EditBar(p: Props) {
         </button>
         <span className="sep" />
         <button onClick={p.onAddEvent}>+ Event</button>
-        <button onClick={p.onAddTrack}>+ Track</button>
+        <button onClick={p.onAddTrack}>+ Row</button>
         <button onClick={p.onAddSource}>+ Source</button>
         <span className="sep" />
         <button onClick={() => p.onDownload(false)}>Download in-progress</button>
@@ -50,10 +50,10 @@ export function EditBar(p: Props) {
         )}
       </div>
       <span className="muted small hint-wide">
-        Double-click an empty spot in a lane (or hold a finger there on a touch screen) to add an event there; use the lane
-        buttons to edit, reorder or add sub-tracks. Edits stay in this browser until you discard them.
+        Double-click an empty spot in a row (or hold a finger there on a touch screen) to add an event there; use the row
+        buttons to edit, reorder or add sub-rows. Edits stay in this browser until you discard them.
       </span>
-      <span className="muted hint-narrow">Hold a finger on an empty spot in a lane to add an event. Edits stay in this browser.</span>
+      <span className="muted hint-narrow">Hold a finger on an empty spot in a row to add an event. Edits stay in this browser.</span>
     </div>
   );
 }

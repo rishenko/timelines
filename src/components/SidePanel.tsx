@@ -50,7 +50,7 @@ export function SidePanel(p: Props) {
         onCancel={() => setEditing(null)}
         onCreateTrack={(t) => {
           dispatch({ type: 'upsertTrack', track: t });
-          notify(`Track "${t.name}" created.`);
+          notify(`Row "${t.name}" created.`);
         }}
         onCreateSource={(key, src) => {
           dispatch({ type: 'upsertSource', key, source: src });
@@ -76,14 +76,14 @@ export function SidePanel(p: Props) {
         onSave={(t, previousId) => {
           dispatch({ type: 'upsertTrack', track: t, previousId });
           setEditing(null);
-          notify(previousId ? 'Track saved.' : `Track "${t.name}" created.`);
+          notify(previousId ? 'Row saved.' : `Row "${t.name}" created.`);
         }}
         onDelete={(id) => {
           const sel = selectedId ? data.events.find((e) => e.uuid === selectedId) : undefined;
           if (sel && sel.tracks.every((t) => t === id)) setSelectedId(null);
           dispatch({ type: 'removeTrack', id });
           setEditing(null);
-          notify('Track deleted.');
+          notify('Row deleted.');
         }}
       />
     );

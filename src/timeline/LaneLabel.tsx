@@ -110,7 +110,7 @@ export function LaneLabel({ lane, regionTip, tag, compare, labelW, overflow, exp
           <button className="icon small" aria-label={`Move ${name} down`} title="Move down" onClick={() => on.onMoveTrack(1)}>
             ↓
           </button>
-          <button className="icon small" aria-label={`Add a sub-track under ${name}`} title={`Add a sub-track under ${name}`} onClick={on.onAddSubTrack}>
+          <button className="icon small" aria-label={`Add a sub-row under ${name}`} title={`Add a sub-row under ${name}`} onClick={on.onAddSubTrack}>
             +
           </button>
         </span>
@@ -123,7 +123,7 @@ export function LaneLabel({ lane, regionTip, tag, compare, labelW, overflow, exp
           data-stop={overflowKey}
           tabIndex={rovingKey === overflowKey ? 0 : -1}
           onFocus={() => onStopFocus(overflowKey)}
-          title={expanded ? 'Limit rows (fold crowded events into +N badges)' : `Show all rows (${overflow} events folded)`}
+          title={expanded ? 'Fold crowded events into +N again' : `Show all lines (${overflow} events folded)`}
           onClick={on.onToggleExpanded}
         >
           {expanded ? '⇡' : '⇣'}
@@ -151,7 +151,7 @@ export function LaneLabel({ lane, regionTip, tag, compare, labelW, overflow, exp
           data-stop={foldKey}
           tabIndex={rovingKey === foldKey ? 0 : -1}
           onFocus={() => onStopFocus(foldKey)}
-          title={lane.collapsed ? 'Expand sub-tracks' : 'Collapse sub-tracks into this lane'}
+          title={lane.collapsed ? 'Expand sub-rows' : 'Collapse sub-rows into this row'}
           onClick={on.onToggleCollapsed}
         >
           {lane.collapsed ? '▸' : '▾'}

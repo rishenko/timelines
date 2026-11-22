@@ -47,7 +47,7 @@ for (const [id, sel, queries] of cases) {
     c = open(`timeline=${id}#${sel}`);
     snap(`${id} #${sel} detail`, c);
     // search results (their dates)
-    const input = c.querySelector<HTMLInputElement>('input[placeholder="Row, event or year…"]')!;
+    const input = c.querySelector<HTMLInputElement>('input[placeholder="Row, event or date…"]')!;
     for (const q of queries) {
       act(() => fireEvent.change(input, { target: { value: q } }));
       snap(`${id} #${sel} search ${q}`, c.querySelector('[role="listbox"]')?.parentElement ?? c);

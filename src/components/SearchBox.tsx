@@ -126,7 +126,7 @@ export function SearchBox(props: Props) {
         aria-controls={listId}
         aria-activedescendant={showList && options.length ? optId(active) : undefined}
         placeholder={props.placeholder}
-        title={`Find a civilization, region or event, or type a year${props.example ? ` (e.g. ${props.example})` : ''}. Press / to search from anywhere.`}
+        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. Press / to search from anywhere.`}
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);

@@ -26,9 +26,9 @@ beforeEach(() => localStorage.setItem('timelines:legend-seen', '1'));
 
 const OPEN = 'timeline=ancient-classical&inc=100&at=-1400&rows=all';
 const openFilters = () => {
-  if (!screen.queryByRole('list', { name: 'Tracks' })) act(() => fireEvent.click(screen.getByRole('button', { name: /^Filters/ })));
+  if (!screen.queryByRole('list', { name: 'Rows' })) act(() => fireEvent.click(screen.getByRole('button', { name: /^Filters/ })));
 };
-const tracks = () => (openFilters(), screen.getByRole('list', { name: 'Tracks' }));
+const tracks = () => (openFilters(), screen.getByRole('list', { name: 'Rows' }));
 const sources = () => (openFilters(), screen.getByRole('list', { name: 'Sources' }));
 const box = (list: HTMLElement, name: string) => within(list).getByRole('checkbox', { name: new RegExp(`^${name}`) }) as HTMLInputElement;
 const laneIds = (c: Element) => [...c.querySelectorAll<HTMLElement>('.tl-lane[data-lane]')].map((l) => l.dataset.lane!);
@@ -76,20 +76,20 @@ describe('Filters → Tracks and Sources', () => {
     expect(box(sources(), 'Other sources')).toBeTruthy();
   });
 
-  it('splits into Visual filters and Data filters, both open on wide screens, and remembers the reader\'s choice', () => {
+  it('splits into Display and Data filters, both open on wide screens, and remembers the reader\'s choice', () => {
     renderApp(OPEN);
     openFilters();
     const visual = document.querySelector<HTMLDetailsElement>('details.filters-group.visual')!;
     const dataSection = document.querySelector<HTMLDetailsElement>('details.filters-group.data')!;
     expect(visual.open && dataSection.open).toBe(true);
     expect(within(visual).getByRole('checkbox', { name: 'Hide rows with nothing in view' })).toBeTruthy();
-    expect(within(dataSection).getByRole('list', { name: 'Tracks' })).toBeTruthy();
+    expect(within(dataSection).getByRole('list', { name: 'Rows' })).toBeTruthy();
     visual.open = false;
     act(() => fireEvent(visual, new Event('toggle')));
     expect(JSON.parse(localStorage.getItem('timelines:filters-open')!)).toEqual({ visual: false, data: true });
   });
 
-  it('on a phone, starts with Visual filters folded', () => {
+  it('on a phone, starts with Display folded', () => {
     const was = window.matchMedia;
     window.matchMedia = ((q: string) => ({ matches: q.includes('max-width'), media: q, addEventListener() {}, removeEventListener() {} })) as never;
     try {

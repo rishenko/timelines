@@ -93,12 +93,12 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     {
       target: '[data-tour="filters"]',
       title: 'Filters',
-      text: 'Filters changes what the chart shows: shorten gaps with no events, show the arrows between all connected events, hide rows with nothing in view, show only some regions, and hide rows and sources you don’t need.',
+      text: 'Filters changes what the chart shows. Rows with nothing in view are hidden as you move: show them all again, or draw them as thin lines. Shorten long gaps with no events, show only some regions, and hide rows and sources you don’t need.',
     },
     {
       target: '.toolbar .search',
       title: 'Search',
-      text: 'Find a row, an event or a year, and go straight to it. In the chart, / moves here.',
+      text: 'Find a row, a phase, an event or a date, and go straight to it. In the chart, / moves here.',
     },
     {
       target: '[data-tour="legend"]',
