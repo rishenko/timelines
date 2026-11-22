@@ -77,7 +77,7 @@ export const LAYOUT_DEFAULTS = {
   charPx: 6.6,
   maxLabelPx: 240,
   gapPx: 8,
-  maxRows: 5,
+  maxRows: 5, // the Legend names this number ("more than five stacked lines", LegendPanel.tsx)
   clusterPx: 44,
   thinPx: 6,
 };

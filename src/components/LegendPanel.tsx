@@ -174,7 +174,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     {
       sample: <span className="lg-row-more">⇣</span>,
       title: 'Crowded rows',
-      text: 'When a row has more than four stacked lines of events, ⇣ shows them all.',
+      text: 'When a row has more than five stacked lines of events, ⇣ shows them all.',
     },
   ];
 
