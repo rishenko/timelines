@@ -1,5 +1,9 @@
 # Timelines
 
+> [!NOTE]
+> **Under heavy development.** The app and its timeline data are being built and processed right now: features,
+> rows, events, categories and dates change often. Check back regularly.
+
 A web app for horizontal swimlane timelines, historical or fictional. Each timeline is one JSON file with its own
 rows, calendar, zoom steps and sources. The app is a static site: build it once, serve it from any web server, and
 give it your own timelines.
@@ -67,8 +71,11 @@ The three link to each other where they meet, at 650 and 1500.
   folded under broader ones. Each row's regions cite their sources, shown in the table view and the row name's
   tooltip.
 - **Kinds of event:** a shape before each event's title says what kind it was (rulers, statehood, territory, cities
-  and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology). Filters → Data filters →
+  and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and technology).
+  Filters → Data filters →
   Categories shows only the kinds you tick; the table and an event's details name its categories.
+- **Ages:** periods across the whole timeline, such as the Islamic Golden Age or the Enlightenment, in a strip under
+  the ruler; click one to centre the chart on it.
 - **Comparison sets:** pick rows from anywhere (the + on a row's label, the "Add a row" box, or "Compare these rows"
   under a region filter) and see them side by side: as picked, related rows together, or by start date.
 - **Hidden rows:** rows with nothing near the years on screen are hidden as you move (or drawn as thin lines), so a

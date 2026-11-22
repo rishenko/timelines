@@ -8,8 +8,8 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
 |---|---|---|
 | `modern-states/` | `data-src/modern-states.json`, plus `data-src/provenance/modern-states.json` and `modern-states-categories.json` | `gen_modern.py` |
 | `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) and `medieval-categories.json` | `gen_medieval.py` |
-| `ancient/` | event categories only, for Ancient and Classical (its source file is kept by `scripts/`): `data-src/ancient-classical-categories.json`, the plan the build applies, and `data-src/provenance/ancient-classical-categories.json` | `categories.py` |
-| `common/` | shared code: the dump reader, the infobox extractor, and the claim and citation helpers | (none) |
+| `ancient/` | event categories, golden ages and eras for Ancient and Classical (its source file is kept by `scripts/`): the plans the build applies, `data-src/ancient-classical-categories.json` and `ancient-classical-periods.json`, and `data-src/provenance/ancient-classical-categories.json` | `categories.py`, `periods.py` |
+| `common/` | shared code: the dump reader, the infobox extractor, the claim and citation helpers, the whole-article sentence finder (`wp_sections.py`), the event classifier, and golden ages and eras (`periods.json`, hand-kept: each date names the sentence, infobox parameter or short description that gives it; `periods.py` checks it against the dump) | (none) |
 | `extract/` | candidates for review (not timeline data): a topic's dated events, in `pipelines/out/extract/<topic>/` | `extract.py` |
 
 **Before you parse a dump, read [PARSING-NOTES.md](PARSING-NOTES.md):** what the dumps get wrong, and what the code does about it.

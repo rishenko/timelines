@@ -427,6 +427,11 @@ def build(repo, module_names=None):
     for mod in modules:
         if hasattr(mod, 'link_phases'):
             mod.link_phases(me, by_id)
+    # golden ages and eras (pipelines/common/periods.py from periods.json): before the sources, which they cite; a
+    # partial run (some modules) leaves them out, since their rows may be missing
+    if tuple(module_names) == MODULES:
+        import periods
+        REPORT.append(f'periods: {periods.apply(data, "modern-states")}')
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence

@@ -74,6 +74,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
+| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, and the strip under the ruler |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -91,7 +92,8 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
 | `src/state/library.ts`, `useLibraryActions.ts` | The reader's own timelines: opening, uploading, updating, sharing |
 | `src/state/collections.ts` | Shared lists (`?collection=`): reading, saving and removing them; `listTimelines` in `timelines.ts` merges them into the picker |
-| `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
+| `src/state/url.ts` | Reading the opening URL and keeping it in step with the view (thin wrappers over `viewState.ts`) |
+| `src/state/viewState.ts`, `viewMigrate.ts`, `links.fixtures.json` | The view as a link (schema step D): `ViewState`, `parseView`/`serializeView`/`resolveView`, link versions (`v`), the fixed parameter order, the skipped-ids notice; frozen real links with the state each must parse to (entries are only ever added) |
 | `src/state/` (others) | Filters, theme, chronology choices, focus requests, folded rows, zoom steps, panels, toasts, search actions |
 | `src/components/` | Toolbar, panels (Filters, Legend, Customize, Dating), detail panel and editors, search box, table view, tour |
 | `src/index.css`, `src/styles/` | Styles, one file per area (chart, side panel, legend, table view, phones…), imported by `index.css` in cascade order |
@@ -118,14 +120,26 @@ npm run data -- ids --check                 # fail on ids lost since origin/main
 npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
 
-**Event categories** come from a plan, `data-src/ancient-classical-categories.json` (the `category` facet and each
-event's categories, main first), which `importance` applies (`scripts/lib/categories.ts`). The plan is written by
-`pipelines/ancient/categories.py`, which runs the shared classifier (`pipelines/common/event_categories.py`, as the
+**Golden ages and eras** come from a plan, `data-src/ancient-classical-periods.json` (`meta.eras` and the golden-age
+events), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval
+and Modern States generators read too. **Event categories** come from another plan,
+`data-src/ancient-classical-categories.json` (the `category` facet and each event's categories, main first), written by
+`pipelines/ancient/categories.py`: it runs the shared classifier (`pipelines/common/event_categories.py`, as the
 generators do) with the reviewed overrides in `pipelines/ancient/categories.json`, and writes the evidence for each
-event to `data-src/provenance/ancient-classical-categories.json`. It needs the Wikipedia dump
-([pipelines/README.md](../pipelines/README.md)); the build and CI need only the plan. After a change to the classifier
-or the overrides: rerun it, then `npm run data -- importance ancient-classical` and `npm run categories:proof --
-ancient-classical`.
+event to `data-src/provenance/ancient-classical-categories.json`. `importance` applies the plans in this order: periods
+(so the others can name its events), importance, row links, memberships, categories (`scripts/lib/periods.ts`,
+`scripts/lib/categories.ts`). Both Python steps need the Wikipedia dump ([pipelines/README.md](../pipelines/README.md));
+the build and CI need only the plans. After a change to `periods.json`, the classifier or the overrides, rerun in this
+order, since each step reads what the one before wrote:
+
+```sh
+pipelines/.venv/bin/python -I pipelines/ancient/periods.py
+npm run data -- importance ancient-classical
+pipelines/.venv/bin/python -I pipelines/ancient/categories.py
+npm run data -- importance ancient-classical
+pipelines/.venv/bin/python -I pipelines/medieval/gen_medieval.py   # it reads Ancient's compiled file at the 650 seam
+npm run categories:proof -- ancient-classical
+```
 
 The site's list, `timelines/index.json`, isn't committed: `scripts/lib/timeline-index-plugin.ts` makes it from the
 files in `public/timelines/` (the dev server on each request, the build into `dist/timelines/`), in the order
@@ -226,6 +240,15 @@ the regions inside each (`broader`); rows with sub-rows stay while any row below
 while one of its sources is switched on (so tags cited to hidden spoiler sources give nothing away). The result is laid
 over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
 without knowing about regions. Off in edit mode. The link carries `&regions=`.
+
+### Ages strip
+
+`meta.eras` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`) in a sticky strip under the
+ruler. `placeAges` resolves each under the reader's Dating choice (`resolveSpan` with the era's own `chronology`) and
+gives each `group` a line; `agesInView` drops lines with no age in the settled year window the chart already keeps
+for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
+hatching; ends past the chart are cut with a dashed edge. Clicking an age asks `App.tsx` to centre on it
+(`focusOn`, the zoom unchanged). The table view's Ages table is its accessible equivalent.
 
 ### Category filter
 

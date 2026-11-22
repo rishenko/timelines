@@ -9,7 +9,13 @@ import medieval from '../public/timelines/medieval.json';
 import modern from '../public/timelines/modern-states.json';
 import type { Dataset } from './types.ts';
 
-const renderApp = (q: string) => render(q, [...SITE_DATASETS, medieval as unknown as Dataset, modern as unknown as Dataset]);
+// "Cahokia at its peak" stands for an event with no category: the test's copy drops its categories, so it doesn't
+// depend on which real event happens to have none (the data gives this one society / golden-age)
+const NONE = 'cahokia-at-its-peak';
+const med = structuredClone(medieval) as unknown as Dataset;
+const none = med.events.find((e) => e.uuid === NONE)!;
+none.memberships = none.memberships?.filter((m) => m.facet !== 'category');
+const renderApp = (q: string) => render(q, [...SITE_DATASETS, med, modern as unknown as Dataset]);
 
 afterEach(() => {
   cleanup();
@@ -30,7 +36,7 @@ beforeAll(() => {
 });
 beforeEach(() => localStorage.setItem('timelines:legend-seen', '1'));
 
-// Medieval's Mississippian row: Cahokia founded (statehood), at its peak (no category), the exodus (a place)
+// Medieval's Mississippian row: Cahokia founded (statehood), at its peak (no category, see NONE), the exodus (a place)
 const OPEN = 'timeline=medieval&inc=50&at=1200&rows=all';
 const shown = (c: Element, id: string) => !!c.querySelector(`.tl-mark[data-event-id="${id}"]`);
 const filtersButton = () => screen.getByRole('button', { name: /^Filters/ });

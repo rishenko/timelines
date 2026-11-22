@@ -852,6 +852,33 @@
               "society"
             ]
           },
+          "golden-age": {
+            "name": "Golden age or high point",
+            "broader": [
+              "society"
+            ]
+          },
+          "science": {
+            "name": "Science and technology"
+          },
+          "discovery": {
+            "name": "Discovery",
+            "broader": [
+              "science"
+            ]
+          },
+          "invention": {
+            "name": "Invention",
+            "broader": [
+              "science"
+            ]
+          },
+          "work": {
+            "name": "Landmark work",
+            "broader": [
+              "science"
+            ]
+          },
           "archaeology": {
             "name": "Archaeology"
           },
@@ -875,7 +902,80 @@
           }
         }
       }
-    }
+    },
+    "eras": [
+      {
+        "id": "axial-age",
+        "name": "Axial Age",
+        "group": "world",
+        "start": -749,
+        "end": -249,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -749,
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "From \"about the 8th\" century BCE."
+          }
+        ],
+        "endDates": [
+          {
+            "year": -249,
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "To the 3rd century BCE."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-axial-age",
+            "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+          }
+        ]
+      },
+      {
+        "id": "pax-romana",
+        "name": "Pax Romana",
+        "group": "roman-world",
+        "start": -26,
+        "end": 180,
+        "startDates": [
+          {
+            "year": -26,
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 180,
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+          },
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+          }
+        ]
+      }
+    ]
   },
   "tracks": [
     {
@@ -20867,12 +20967,12 @@
       "accessed": "2026-11-17"
     },
     "wp-peloponnesian-war": {
-      "name": "Wikipedia: Peloponnesian War",
+      "name": "Peloponnesian War (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Peloponnesian_War",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
-      ],
-      "accessed": "2026-11-17"
+      ]
     },
     "wp-philip-ii": {
       "name": "Wikipedia: Philip II of Macedon",
@@ -26177,6 +26277,30 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-athens-in-the-5th-century-bc": {
+      "name": "Athens in the 5th century BC (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athens_in_the_5th_century_BC",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-axial-age": {
+      "name": "Axial Age (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Axial_Age",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pax-romana": {
+      "name": "Pax Romana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pax_Romana",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -27155,16 +27279,6 @@
         {
           "facet": "category",
           "value": "economy",
-          "sources": [
-            {
-              "sourceKey": "wp-kultepe",
-              "sourceLocation": "Archaeology"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "city-founded",
           "sources": [
             {
               "sourceKey": "wp-kultepe",
@@ -28506,7 +28620,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "dissolved",
+          "value": "disaster",
           "sources": [
             {
               "sourceKey": "wp-hattusa",
@@ -28516,7 +28630,7 @@
         },
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "dissolved",
           "sources": [
             {
               "sourceKey": "wp-hattusa",
@@ -28905,7 +29019,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "battle",
+          "value": "conquest",
           "sources": [
             {
               "sourceKey": "wp-kadesh",
@@ -30973,16 +31087,6 @@
               "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "siege",
-          "sources": [
-            {
-              "sourceKey": "wp-fall-babylon",
-              "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)"
-            }
-          ]
         }
       ]
     },
@@ -31379,7 +31483,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "siege",
+          "value": "revolt",
           "sources": [
             {
               "sourceKey": "wp-ashurbanipal",
@@ -31813,6 +31917,19 @@
         {
           "sourceKey": "wp-phoenicia",
           "sourceLocation": "infobox"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-phoenicia",
+              "sourceLocation": "infobox"
+            }
+          ]
         }
       ]
     },
@@ -32554,6 +32671,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-dilmun",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -32648,7 +32777,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "horizon",
           "sources": [
             {
               "sourceKey": "wp-harappa",
@@ -33099,16 +33228,6 @@
         {
           "facet": "category",
           "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-shang",
-              "sourceLocation": "infobox"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-shang",
@@ -34513,16 +34632,6 @@
               "sourceLocation": "Political developments"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
-          "sources": [
-            {
-              "sourceKey": "wp-archaic-greece",
-              "sourceLocation": "Political developments"
-            }
-          ]
         }
       ]
     },
@@ -35701,7 +35810,18 @@
           }
         }
       ],
+      "importance": 1,
       "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-talaiotic",
+              "sourceLocation": "Funerary spaces ('maximum splendor … from 850-800 BCE to 500 BCE') and The Talayot"
+            }
+          ]
+        },
         {
           "facet": "category",
           "value": "horizon",
@@ -36854,6 +36974,19 @@
             "sourceKey": "wp-kerma",
             "sourceLocation": "lead ('latest phase, lasting from about 1700 to 1500 BC')"
           }
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-kerma",
+              "sourceLocation": "lead, Site and periodisation and Classic Kerma"
+            }
+          ]
         }
       ],
       "circa": true
@@ -39792,16 +39925,6 @@
               "sourceLocation": "Urartu period"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
-          "sources": [
-            {
-              "sourceKey": "wp-diauehi",
-              "sourceLocation": "Urartu period"
-            }
-          ]
         }
       ]
     },
@@ -40172,6 +40295,18 @@
         }
       ],
       "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-sheba",
+              "sourceLocation": "lead, Era of the mukarribs, Era of the kings and Sources"
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -40828,16 +40963,6 @@
               "sourceLocation": "Genetics"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
-          "sources": [
-            {
-              "sourceKey": "wp-pre-dorset",
-              "sourceLocation": "Genetics"
-            }
-          ]
         }
       ],
       "circa": true
@@ -41102,16 +41227,6 @@
         {
           "facet": "category",
           "value": "find",
-          "sources": [
-            {
-              "sourceKey": "wp-san-jose-mogote",
-              "sourceLocation": "lead and Monument 3"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "city-founded",
           "sources": [
             {
               "sourceKey": "wp-san-jose-mogote",
@@ -42300,16 +42415,6 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-ppnb",
-              "sourceLocation": "Extent"
-            }
-          ]
-        },
-        {
-          "facet": "category",
           "value": "archaeology",
           "sources": [
             {
@@ -42373,17 +42478,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-gobekli",
-              "sourceLocation": "infobox, lead, Dawn of village life and Chronology"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
+          "value": "site",
           "sources": [
             {
               "sourceKey": "wp-gobekli",
@@ -43445,7 +43540,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "horizon",
           "sources": [
             {
               "sourceKey": "wp-neolithic-europe",
@@ -43934,17 +44029,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
-          "sources": [
-            {
-              "sourceKey": "wp-jiahu",
-              "sourceLocation": "infobox, lead, Inscriptions, Agriculture and Pottery and alcohol production"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
+          "value": "site",
           "sources": [
             {
               "sourceKey": "wp-jiahu",
@@ -46740,7 +46825,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "discovery",
           "sources": [
             {
               "sourceKey": "wp-thales",
@@ -47334,7 +47419,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "battle",
           "sources": [
             {
               "sourceKey": "wp-arameans",
@@ -48782,16 +48867,6 @@
               "sourceLocation": "lead"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-death-alexander",
-              "sourceLocation": "lead"
-            }
-          ]
         }
       ]
     },
@@ -49290,16 +49365,6 @@
               "sourceLocation": "lead"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-punic-wars",
-              "sourceLocation": "lead"
-            }
-          ]
         }
       ]
     },
@@ -49446,6 +49511,19 @@
         {
           "sourceKey": "wp-roman-empire",
           "sourceLocation": "infobox and lead"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-roman-empire",
+              "sourceLocation": "infobox and lead"
+            }
+          ]
         }
       ]
     },
@@ -51344,7 +51422,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "work",
           "sources": [
             {
               "sourceKey": "wp-aryabhata",
@@ -51683,7 +51761,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "invention",
           "sources": [
             {
               "sourceKey": "wp-cai-lun",
@@ -51744,16 +51822,6 @@
         {
           "facet": "category",
           "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-red-cliffs",
-              "sourceLocation": "infobox, lead and Background"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
           "sources": [
             {
               "sourceKey": "wp-red-cliffs",
@@ -51841,16 +51909,6 @@
               "sourceLocation": "lead and infobox"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-jin",
-              "sourceLocation": "lead and infobox"
-            }
-          ]
         }
       ]
     },
@@ -51886,7 +51944,7 @@
         },
         {
           "facet": "category",
-          "value": "civil-war",
+          "value": "revolt",
           "sources": [
             {
               "sourceKey": "wp-jin",
@@ -51933,16 +51991,6 @@
               "sourceLocation": "lead and infobox"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-jin",
-              "sourceLocation": "lead and infobox"
-            }
-          ]
         }
       ]
     },
@@ -51975,16 +52023,6 @@
               "sourceLocation": "lead"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-jin",
-              "sourceLocation": "lead"
-            }
-          ]
         }
       ]
     },
@@ -52011,16 +52049,6 @@
         {
           "facet": "category",
           "value": "union",
-          "sources": [
-            {
-              "sourceKey": "wp-northern-wei",
-              "sourceLocation": "infobox and lead"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
           "sources": [
             {
               "sourceKey": "wp-northern-wei",
@@ -52298,16 +52326,6 @@
               "sourceLocation": "lead"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-three-kingdoms-korea",
-              "sourceLocation": "lead"
-            }
-          ]
         }
       ]
     },
@@ -52465,16 +52483,6 @@
         {
           "facet": "category",
           "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-goguryeo",
-              "sourceLocation": "infobox"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
           "sources": [
             {
               "sourceKey": "wp-goguryeo",
@@ -53601,7 +53609,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "war",
+          "value": "annexation",
           "sources": [
             {
               "sourceKey": "wp-jugurthine",
@@ -54016,16 +54024,6 @@
         {
           "facet": "category",
           "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-meroe-classical",
-              "sourceLocation": "Conflict with Rome"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "city-founded",
           "sources": [
             {
               "sourceKey": "wp-meroe-classical",
@@ -55036,16 +55034,6 @@
               "sourceLocation": "History"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "archaeology",
-          "sources": [
-            {
-              "sourceKey": "wp-galatians",
-              "sourceLocation": "History"
-            }
-          ]
         }
       ]
     },
@@ -55180,16 +55168,6 @@
         {
           "facet": "category",
           "value": "conquest",
-          "sources": [
-            {
-              "sourceKey": "wp-gallic-wars",
-              "sourceLocation": "Background > Military"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
           "sources": [
             {
               "sourceKey": "wp-gallic-wars",
@@ -55413,16 +55391,6 @@
         }
       ],
       "memberships": [
-        {
-          "facet": "category",
-          "value": "revolt",
-          "sources": [
-            {
-              "sourceKey": "wp-roman-britain",
-              "sourceLocation": "lead"
-            }
-          ]
-        },
         {
           "facet": "category",
           "value": "battle",
@@ -56064,16 +56032,6 @@
         {
           "facet": "category",
           "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-theodoric",
-              "sourceLocation": "infobox, lead and body"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
           "sources": [
             {
               "sourceKey": "wp-theodoric",
@@ -56765,10 +56723,21 @@
           "sourceLocation": "Site history"
         }
       ],
+      "importance": 1,
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-teotihuacan",
+              "sourceLocation": "lead and History > Period III"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "place",
           "sources": [
             {
               "sourceKey": "wp-teotihuacan",
@@ -56824,6 +56793,19 @@
         {
           "sourceKey": "wp-tikal",
           "sourceLocation": "Preclassic"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-el-mirador-classical",
+              "sourceLocation": "History"
+            }
+          ]
         }
       ]
     },
@@ -58474,7 +58456,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "culture",
+          "value": "discovery",
           "sources": [
             {
               "sourceKey": "wp-zu-chongzhi",
@@ -59471,7 +59453,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "horizon",
           "sources": [
             {
               "sourceKey": "wp-nan-madol",
@@ -60373,7 +60355,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "conflict",
+          "value": "war",
           "sources": [
             {
               "sourceKey": "wp-gothic-war-376",
@@ -60895,6 +60877,77 @@
             {
               "sourceKey": "wp-suiko",
               "sourceLocation": "lead, infobox and Biography"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "golden-age-of-athens",
+      "title": "Golden Age of Athens",
+      "descr": "After the Persian invasion is defeated, Athens leads the Delian League and turns it into an empire whose treasury pays for the Acropolis. Under Pericles the city is home to the playwrights Aeschylus, Sophocles and Euripides, the historians Herodotus and Thucydides, and the philosophers Socrates and Plato.",
+      "start": -477,
+      "end": -403,
+      "tracks": [
+        "greece"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"After peace was made with Persia in the mid-5th century BC, what started as an Athenian-led alliance of independent city-states, had become an Athenian empire s\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"With the empire's funds, military dominance and its political fortunes guided by statesman and orator Pericles, Athens produced some of the most influential and\""
+        },
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"The playwrights Aeschylus, Sophocles and Euripides all lived and worked in 5th-century BC Athens, as did the historians Herodotus and Thucydides, the physician \""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -477,
+          "source": {
+            "sourceKey": "wp-athens-in-the-5th-century-bc",
+            "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": -403,
+          "source": {
+            "sourceKey": "wp-athens-in-the-5th-century-bc",
+            "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\""
+          }
+        },
+        {
+          "year": -403,
+          "source": {
+            "sourceKey": "wp-peloponnesian-war",
+            "sourceLocation": "infobox date: 4 April 431 – 25 April 404 BC"
+          },
+          "note": "Athens' defeat in the Peloponnesian War ends the age."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-athens-in-the-5th-century-bc",
+              "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
             }
           ]
         }

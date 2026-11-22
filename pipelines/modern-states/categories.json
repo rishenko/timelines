@@ -55,6 +55,12 @@
  "dominion-of-new-zealand": [
   "reform"
  ],
+ "dutch-golden-age": [
+  "golden-age"
+ ],
+ "elizabethan-era": [
+  "golden-age"
+ ],
  "ellice-islands-referendum": [
   "reform"
  ],
@@ -185,6 +191,9 @@
  "peruvian-congress-1822": [
   "reform"
  ],
+ "polish-golden-age": [
+  "golden-age"
+ ],
  "portuguese-court-to-brazil": [
   "capital-moved"
  ],
@@ -236,6 +245,9 @@
  ],
  "ttpi-established": [
   "colony"
+ ],
+ "tunisian-coup-1987": [
+  "coup"
  ],
  "uganda-kingdoms-restored": [
   "founded"

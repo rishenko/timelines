@@ -5,14 +5,13 @@ Uses wp_states' own prose cleaning (_prose, sentences) so the text matches what 
 missing and AI-flagged articles. Reference sections (See also, Notes...) are skipped.
 
 sentences_of(title) -> [(where, text)] with where = 'lead' or the section path ('History > Decline').
-CLI: python -I med_sections.py <title> [needle]   prints the sentences (those containing needle, if given).
+CLI: python -I pipelines/common/wp_sections.py <title> [needle]   prints the sentences (those containing needle, if given).
 """
 import os
 import sys
 from functools import lru_cache
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'common'))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import mwparserfromhell as mw  # noqa: E402
 import wp_states as W  # noqa: E402
 from wp_states import wp_dump  # noqa: E402

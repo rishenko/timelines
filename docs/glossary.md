@@ -20,7 +20,7 @@ gives them.
 | **folded events (+N)** | Events that didn't fit in a crowded row, shown as "+N"; one holding a key event names it. | badge, cluster, group, pill |
 | **line** | One of the stacked lines of events within a row ("Show all lines"). | row (inside a row) |
 | **category** | What kind of event it was: a **kind** or one of its **sub-kinds**. An event has up to two, the main one first (the file's `memberships` in the events facet). Filters → Categories filters by them. | type, tag, region |
-| **kind** | One of the nine top-level categories (rulers, statehood, territory, cities and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology), each drawn as a **shape** before an event's title. | type, class |
+| **kind** | One of the ten top-level categories (rulers, statehood, territory, cities and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and technology), each drawn as a **shape** before an event's title. | type, class |
 | **sub-kind** | A narrower category within a kind (a siege within wars and battles). | subcategory, subtype |
 | **shape** | The small mark before an event's title that shows its main category's kind; the Legend lists them. | glyph, icon (in app text) |
 | **shared event** | One event on several rows, joined by a thread while selected. | |
@@ -30,6 +30,7 @@ gives them.
 | **c.** (circa) | An approximate date. | |
 | **dating system** | One of several absolute datings of a region that scholars disagree on, chosen in the **Dating** menu. In the file: `chronologies`. | calendar, chronology (in app text) |
 | **calendar** | The era names a timeline counts years in (BCE/CE or its own), and whether it has a year 0. | |
+| **age** | A named period across the whole timeline, such as the Islamic Golden Age, drawn in the **Ages** strip under the ruler. In the file: `meta.eras`. | era, period |
 | **era line** | The line on the chart where one era name gives way to the next (BCE to CE, or the timeline's own). | |
 | **ruler** | The strip of years along the top of the chart. | time axis (only to say what it is) |
 | **zoom step** | How much time each tick of the ruler covers (years, or a quarter, month, week or day). | scale, increment (in app text) |
@@ -40,5 +41,3 @@ gives them.
 | **table view** | Events and rows as a sortable table, with CSV download. | list view, spreadsheet |
 | **Legend** | The key to every symbol, colour and line the open timeline uses. | key |
 
-Not settled yet: a reader-facing word for `meta.eras` (periods that run across every row). They aren't drawn yet;
-choose the word when they are, and keep it apart from **era line** and **phase**.

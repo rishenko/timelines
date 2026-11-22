@@ -73,8 +73,8 @@ def basis_ref(title, needle):
     for o in body.get('section_openers', []):
         if needle in o['text']:
             return G.ref(title, f'section "{o["section"]}": "{o["text"][:160]}"')
-    # Kevin (2026-11-22): any sentence of a section, cited by section (med_sections reads the whole article)
-    from med_sections import find
+    # Kevin (2026-11-22): any sentence of a section, cited by section (wp_sections reads the whole article)
+    from wp_sections import find
     hit = find(G.art(title)['title'], needle)
     if hit:
         where, text = hit
@@ -497,7 +497,7 @@ def build(repo):
     for uuid, (year, art, needle, note) in body_year.items():
         e = europe.EVENTS[uuid]
         old, info_ref = e['start'], e['sources'][0]
-        from med_sections import find
+        from wp_sections import find
         hit = find(G.art(art)['title'], needle)
         if not hit:
             raise SystemExit(f'{uuid}: no sentence with {needle!r} in {art}')
@@ -534,6 +534,9 @@ def build(repo):
             if ref not in e['sources']:
                 e['sources'].append(ref)
     data['events'] = me.PILOT_EVENTS + [e for e in europe.EVENTS.values() if e not in me.PILOT_EVENTS]
+    # golden ages and eras (pipelines/common/periods.py from periods.json): before the sources, which they cite
+    import periods
+    REPORT.append(f'periods: {periods.apply(data, "medieval")}')
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:

@@ -840,7 +840,8 @@
   min-width: 24px;
 }
 
-/* Event categories: a glyph for the main category's kind, before the title (and in Filters → Categories) */
+/* Event categories: a glyph for the main category's kind, before the title (and in Filters → Categories). It takes
+   its colour from the text it sits in (currentColor), so it dims with a muted label, and hiding the text hides it */
 .cat-glyph {
   display: inline-block;
   flex: none;
@@ -848,11 +849,113 @@
   height: 11px;
   margin-right: 4px;
   vertical-align: -1px;
-  color: var(--text);
 }
 .region-tree .cat-glyph {
   margin: 0 2px 0 4px;
 }
 .tl-mark.cluster .cat-glyph {
   margin-right: 0;
+}
+
+/* Ages (meta.eras): a strip under the ruler, one line per group; it stays on screen like the ruler */
+.tl-ages {
+  position: sticky;
+  top: 44px;
+  z-index: 4;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line-2);
+}
+.tl-ages-corner {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  padding: 2px 12px;
+  background: var(--bg-2);
+  border-right: 1px solid var(--line-2);
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.tl-age {
+  /* the target: transparent, 24 px tall; the bar inside it is what's drawn */
+  position: absolute;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+}
+.tl-age .bar {
+  position: absolute;
+  top: 4px;
+  height: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  border-radius: 3px;
+  background: var(--bg-3);
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 14px;
+  text-align: left;
+}
+.tl-age .bar.colored {
+  border-color: color-mix(in srgb, var(--age-color) 70%, var(--line-2));
+  background: color-mix(in srgb, var(--age-color) 22%, var(--bg-2));
+}
+.tl-age:hover .bar,
+.tl-age:focus-visible .bar {
+  border-color: var(--text);
+}
+.tl-age .name {
+  position: absolute;
+  top: 0;
+  padding: 0 5px;
+  white-space: nowrap;
+}
+/* an age that runs on past the timeline's ends: the cut side is open */
+.tl-age .bar.cut-start {
+  border-left-style: dashed;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tl-age .bar.cut-end {
+  border-right-style: dashed;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* an age with date claims: its uncertain ends lighter and hatched, as on bars (WCAG 1.4.1) */
+.tl-age .bar.uncertain {
+  --age-solid: var(--bg-3);
+  --age-range: color-mix(in srgb, var(--bg-3) 40%, transparent);
+  background: linear-gradient(
+    to right,
+    var(--age-range) 0 var(--fade-in, 0px),
+    var(--age-solid) var(--fade-in, 0px) calc(100% - var(--fade-out, 0px)),
+    var(--age-range) calc(100% - var(--fade-out, 0px)) 100%
+  );
+}
+.tl-age .bar.uncertain.colored {
+  --age-solid: color-mix(in srgb, var(--age-color) 22%, var(--bg-2));
+  --age-range: color-mix(in srgb, var(--age-color) 8%, var(--bg-2));
+}
+.tl-age .bar.uncertain::before,
+.tl-age .bar.uncertain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--text) 28%, transparent) 0 1.5px, transparent 1.5px 5px);
+  pointer-events: none;
+}
+.tl-age .bar.uncertain::before {
+  left: 0;
+  width: var(--fade-in, 0px);
+}
+.tl-age .bar.uncertain::after {
+  right: 0;
+  width: var(--fade-out, 0px);
 }

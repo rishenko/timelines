@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import type { PlacedAge } from '../lib/eras.ts';
 import { CategoryGlyph } from './CategoryGlyph.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import type { Dataset, Track } from '../types.ts';
@@ -45,6 +46,8 @@ interface Props {
   visibleTracks: Record<string, boolean>;
   /** Each row's regions with their sources, on timelines with regions (a Regions column in the rows tables). */
   regionsOf?: Map<string, RowRegion[]>;
+  /** The timeline's ages (meta.eras) under the reader's Dating choice: an Ages table first, the chart's strip in words. */
+  ages?: PlacedAge[];
   /** Each event's categories, on timelines whose events have them (a Category column, and a sort by it). */
   categoriesOf?: Map<string, EventCategories>;
 }
@@ -171,6 +174,8 @@ export function TableView(p: Props) {
           Download CSV
         </button>
       </div>
+
+      {p.ages && p.ages.length > 0 && <AgesTable ages={p.ages} data={data} />}
 
       {sections.map((s) => {
         const groupHeading = grouped && s.group && s.group.id !== lastGroup ? s.group : undefined;
@@ -528,5 +533,41 @@ function RowsTable({
         })}
       </tbody>
     </table>
+  );
+}
+
+/** Ages (meta.eras): periods across the whole timeline, as the chart's strip under the ruler shows them, in words. */
+function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
+  const cal = data.meta.calendar;
+  const sorted = [...ages].sort((a, b) => a.span.start - b.span.start || a.era.name.localeCompare(b.era.name));
+  return (
+    <section>
+      <h2 tabIndex={-1}>Ages</h2>
+      <table className="ages-table">
+        <caption>Ages: periods across the whole timeline</caption>
+        <thead>
+          <tr>
+            <th scope="col">Age</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Sources</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map(({ era, span }) => {
+            const d = spanInWords(span, cal, data.sources);
+            return (
+              <tr key={era.id}>
+                <th scope="row">{era.name}</th>
+                <td className="date">
+                  {d.main}
+                  {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}
+                </td>
+                <td className="sources">{citationsInWords(era.sources, data.sources)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
   );
 }
