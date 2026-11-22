@@ -27,7 +27,7 @@ ARGS = settings.take_flags(sys.argv[1:])
 
 import wp_dump as wp  # noqa: E402
 import extractors as X  # noqa: E402
-from topics import WINDOW_AFTER, Tables, article_set  # noqa: E402
+from topics import LIST_TITLE, WINDOW_AFTER, Tables, article_set  # noqa: E402
 
 KIND_WEIGHT = {'infobox': 5, 'table': 4, 'lead': 3, 'heading': 2, 'prose': 1}
 WIKI = 'https://en.wikipedia.org/wiki/'
@@ -99,7 +99,7 @@ def main():
             continue
         plains = X.plain_texts(p['text'])
         found = []
-        if 'list' in a['routes'] or 'seed' in a['routes']:
+        if 'list' in a['routes'] or 'seed' in a['routes'] or LIST_TITLE.search(title):  # timelines reached by any route
             found += list(X.tables_and_lists(p['text']))
         if T.event_like(a['page_id'], a['box']):
             found += list(X.infobox(T.fields(a['page_id'])))

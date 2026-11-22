@@ -40,6 +40,7 @@ Unless noted, numbers come from enwiki-20261101 and the extractor's WW1 pilot (2
 - Pages carrying `{{AI-generated…}}`, `{{LLM-generated…}}` or `{{AI-written…}}` are refused as sources (`wp_dump.ai_flagged`, also in `build_index.AI_FLAG`).
 - There are 11,104 such pages in the dump, and 4 turned up in the WW1 set: Battle of Orlau-Frankenau, Battle of Bughaila, Baghdad and White flag.
 - They are listed in the `page` table with `ai_flag=1` and nothing else is stored.
+- **Some flags cover one section only** (`{{AI-generated|section|…}}`): Austro-Prussian War, Magyarization, White flag. Kevin's rule skips the whole page anyway. In the 1848 pilot, 3 of the 4 flagged pages hit were section flags, and all were real.
 
 ## Infoboxes
 
@@ -66,6 +67,8 @@ Unless noted, numbers come from enwiki-20261101 and the extractor's WW1 pilot (2
 **Piped links in predecessor/successor fields:** `Target{{!}}label` means the target is the part before `{{!}}` (`wp_states`, `PRED` handling).
 
 **An article's end used as another phase's start** (Egypt's 1971 renaming, taken from the UAR's end) must not pick up that article's other *start* years as extra claims (`common/wp_claims.claims`).
+
+**Values cut short.** The side tables store at most 2,000 characters of a field. A long `{{efn}}` footnote then loses its closing braces, and its years leak into the dates: American Civil War's `date` gave 313 and 2001, which let it into the 1848 topic. `dates.clean` drops an unclosed template or `<ref>` through to the end of the value.
 
 **Infobox versus body.**
 - Infobox and body often disagree. In the WW1 pilot, 368 of about 1,300 clusters had an infobox start that matched none of the lead's dates (`report.md` lists them). Many of those are the lead naming other dates, not real conflicts.
@@ -116,13 +119,20 @@ All of these have unit tests in `extract/test_dates.py`.
 
 **Years in section headings.**
 - Timeline pages give `| January 2` under `==1915==` (Timeline of World War I).
+- Some use month subheadings (`=== January 1919 ===` under `==1919==`), and a dated bullet whose events sit on the deeper bullets below it (`*21 January:` then `**Soloheadbeg ambush: …`; Timeline of the Irish War of Independence).
+  - `extractors.heading_year` reads a year or month-and-year heading and carries it into the subsections until a heading that isn't a date.
+  - The nested bullets take the pending date.
+  - On that page, rows went from 0 to 941.
+- Appending the heading's year needs two forms: "12 August" + " 1922", but US order "August 24 – 26" + ", 1914". Both are tried and the more precise result is kept (`tables_and_lists.dated`).
 - A row's date with no year takes its heading's year, only when the heading is exactly a year and the cell names a month (`extractors.tables_and_lists`). The year is appended as `, 1915`, so day ranges still parse.
 - "Post-1920" is not a year heading: it once dated the caliphate's 1924 abolition to 1920.
 
 ## Text: lead, sections, sentences
 
 **Sentences.**
-- Text is split after `.!?` followed by a capital (`extractors.SENT`). Section text is cleaned first: templates, tables, and file and category links are removed (`extractors._strip_templates`).
+- Text is split after `.!?` followed by a capital (`extractors.SENT`), but not after abbreviations, initials or regnal citations (`extractors.sentences`, `ABBREV`).
+  - Examples: "On May 15, 1918, the U.S." (Bisbee Deportation), "Gen. Allenby", "J. R. Smith", "10 & 11 Geo. 5" (Government of Ireland Act 1920).
+  - The cost: "…in the U.S. They were…" stays one sentence, which is still a verbatim quote. Section text is cleaned first: templates, tables, and file and category links are removed (`extractors._strip_templates`).
 - Medieval reads whole articles by section (`medieval/med_sections.py`). A list joined into one "sentence" with " / " is quoted by the item that holds the phrase (`gen_medieval`).
 
 **Quotes must be found again.**
@@ -140,6 +150,8 @@ All of these have unit tests in `extract/test_dates.py`.
 - **Statistics tables:** rows without a text cell (casualty and strength tables) are skipped (`WORDS`).
 - **Event cell:** the longest text cell. Theatre columns ("Eastern") are shorter.
 - **Bullet lines:** `* 28 June 1914: …` and `* 1848 – …` are read as dated rows. The subject is the line's first link that isn't a date.
+- **Bibliographies read as dated rows:** "Coogan, Tim Pat (2001). 1916: The Easter Rising" made Tim Pat Coogan and the National Library of Ireland top Easter Rising clusters. Back-matter sections (References, Further reading, Bibliography…) are skipped for tables and lists too (`extractors.BACK_MATTER`).
+- **Timeline pages arrive by any route:** Timeline of the Irish War of Independence came by campaignbox, not by the list route. Any page titled like a timeline or event list gets its tables read (`extract.py`, `LIST_TITLE`).
 - **Known gaps:** `rowspan` dates (a date cell shared by several rows) and nested tables aren't read.
 
 ## Categories
@@ -160,8 +172,21 @@ All of these have unit tests in `extract/test_dates.py`.
 
 ## Timeline and list pages
 
+- Match case-insensitively: "Timeline of the revolutions of 1848" doesn't capitalise the seed's "Revolutions".
 - Match the seed as a whole name: `LIKE '%World War I%'` also matches "World War II" and pulled in 20 WW2 weapon and division lists (`topics`, `whole`).
 - Keep only timelines and lists of events (battles, operations, campaigns, treaties…): `topics.LIST_TITLE`.
+
+## Topic membership (`extract/topics.py`)
+
+- **Seeds mention other events** (comparisons, legacy). The 1848 article links American Civil War, French Revolution, Arab Spring and Revolutions of 1989.
+  - The category and link routes keep only articles whose infobox dates (or, without them, the years in their title) touch the topic window: the seeds' own dates, a year before and five after (`overlaps`, `WINDOW_AFTER`).
+  - 1848: 20 left out, e.g. French Revolution, Kraków Uprising, Second Schleswig War.
+- **Events without an infobox** (March Revolution, Vienna Uprising, Hecker uprising) count as events when their title names one ("uprising", "revolution", "battle", "treaty"…; `EVENT_TITLE`).
+  - The seed's own name is removed first, so "World War I cryptography" doesn't pass on "war".
+  - Titles about many events or about things are kept out: lists, histories, effects, orders of battle, camps, stamps (`NOT_EVENT_TITLE`).
+  - **False positives:** in WW1, 189 of 1,324 articles had no infobox, and about 1 in 5 of those aren't single events (World war, Imperial War Cabinet, Aviation in World War I; the seed's other name "First World War" isn't stripped).
+- **Coverage, 1848:** 13 of the 16 expected events that have their own article were found. Misses: Frankfurt National Assembly (legislature infobox), Roman Republic (1849–1850) (country infobox), Chartism (a movement, no event title).
+- **Easter Rising:** its campaignbox (Irish independence) covers 1912–1923, so 73 of 82 articles are the wider war. The window sorts the 596 rows outside 1915–1921 last.
 
 ## page_props SQL
 

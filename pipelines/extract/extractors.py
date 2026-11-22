@@ -14,13 +14,16 @@ import re
 
 from dates import clean, spans
 
+# end sections that list sources, not events
+BACK_MATTER = {'see also', 'references', 'notes', 'further reading', 'external links', 'bibliography', 'sources', 'citations',
+               'footnotes', 'works cited', 'primary sources', 'secondary sources', 'notes and references', 'literature'}
 KIND_RANK = {'infobox': 0, 'table': 1, 'lead': 2, 'heading': 3, 'prose': 4}
 # infobox fields that date the article's own subject (others, e.g. `year` on a ship, are left out)
 EVENT_FIELDS = re.compile(r'^(date|dates|start_?date|end_?date|date_?start|date_?end|signed|effective|year_?start|year_?end|'
                           r'date_?event\d*|established|founded|formation|dissolved|abolished|begin|end|start|finish)$')
 SENT = re.compile(r'(?<=[.!?])\s+(?=[A-Z0-9"\'(])')
 # a full stop after these is not a sentence end: "the U.S. Army", "Gen. Allenby", "St. Petersburg", "J. Smith"
-ABBREV = re.compile(r'(?:\b(?:[A-Z]\.){1,3}|\b(?:Mr|Mrs|Ms|Dr|St|Ste|Mt|Ft|Gen|Col|Lt|Capt|Cmdr|Maj|Adm|Sgt|Cpl|Pvt|Gov|Sen|Rep|'
+ABBREV = re.compile(r'(?:\b(?:[A-Z]\.){1,3}|\b(?:Geo|Vict|Edw|Will|Wm|Eliz|Hen|Car|Jac|Mr|Mrs|Ms|Dr|St|Ste|Mt|Ft|Gen|Col|Lt|Capt|Cmdr|Maj|Adm|Sgt|Cpl|Pvt|Gov|Sen|Rep|'
                     r'Rev|Hon|Pres|Prof|Sr|Jr|No|Nos|Vol|vs|etc|approx|ca|cf|Co|Corp|Inc|Ltd|Bros|Jan|Feb|Mar|Apr|Jun|Jul|'
                     r'Aug|Sep|Sept|Oct|Nov|Dec|e\.g|i\.e|op|cit|ibid|pp|p|fl|r|d|b|c)\.)$')
 
@@ -82,7 +85,7 @@ def lead_and_prose(text):
     body = _strip_templates(text)
     body = re.sub(r'\[\[(?:File|Image|Category)\s*:[^\[\]]*(?:\[\[[^\]]*\]\][^\[\]]*)*\]\]', '', body, flags=re.I)
     for i, (head, sec) in enumerate(_sections(body)):
-        if head.lower() in ('see also', 'references', 'notes', 'further reading', 'external links', 'bibliography', 'sources', 'citations'):
+        if head.lower() in BACK_MATTER:
             continue
         plain = clean(sec)
         for sent in sentences(plain):
@@ -102,33 +105,61 @@ def lead_and_prose(text):
                        'locator': {'kind': 'section', 'heading': head}}
 
 
+def heading_year(head):
+    """The year a heading dates its section by: "1915", "January 1919"; None for anything else ("Post-1920")."""
+    if re.fullmatch(r'\s*\d{3,4}\s*', head):
+        return head.strip()
+    sp = spans(head)
+    if len(head.split()) <= 3 and len(sp) == 1 and not sp[0]['end'] and sp[0]['precision'] in ('month', 'year'):
+        return str(sp[0]['start'][0])
+    return None
+
+
 def tables_and_lists(text):
-    """Dated rows: wikitable rows whose first cells hold a date, and bullet lines that start with one. A row's date
-    without a year ("January 2") takes the year of its section heading ("== 1915 ==", as timeline pages write them)."""
+    """Dated rows: wikitable rows whose first cells hold a date, and bullet lines that start with one.
+    - A row's date without a year ("January 2") takes the year of its section heading ("== 1915 ==", "=== January 1919
+      ==="), carried into the subsections below it until a heading that isn't a date.
+    - A dated bullet with nothing after it ("*21 January:") dates the deeper bullets under it ("**Soloheadbeg ambush: …")."""
+    year = None
     for head, sec in _sections(text):
-        hy = re.fullmatch(r'\s*(\d{3,4})\s*', head)  # a heading that is just a year ("Post-1920" is not)
-        year = hy.group(1) if hy else None
+        if head.lower() in BACK_MATTER:
+            continue  # bibliographies: "Coogan, Tim Pat (2001). 1916: The Easter Rising" is a book, not an event
+        if head:
+            year = heading_year(head)
 
         def dated(cell):
             sp = spans(cell)
             if not sp and year and MONTH_WORD.search(clean(cell)):
-                sp = spans(f'{clean(cell)}, {year}')
+                # "12 August" + " 1922"; "August 24 – 26" + ", 1914" (US order needs the comma): keep the more precise
+                tries = [spans(f'{clean(cell)} {year}'), spans(f'{clean(cell)}, {year}')]
+                rank = lambda t: (bool(t), t and t[0]['precision'] == 'day', t and bool(t[0]['end']))
+                sp = max(tries, key=rank)
                 for x in sp:
                     x['year_from_heading'] = True
             return sp
 
-        # bullet lines: "* 28 June 1914: Assassination of …" / "* '''1848''' – …"
-        for line in re.findall(r'^\*+\s*(.+)$', sec, re.M):
-            plain = clean(line)
-            m = re.match(r'(.{4,60}?)\s*(?::|–|—|-)\s+(.{8,})$', plain)
-            if not m:
+        # bullet lines: "* 28 June 1914: Assassination of …", "* 1848 – …", or "*21 January:" then "**…"
+        pending = None  # (depth, spans) of a dated bullet whose events are the deeper bullets under it
+        for line in sec.split('\n'):
+            b = re.match(r'^(\*+)\s*(.*)$', line)
+            if not b:
+                if line.strip():
+                    pending = None
                 continue
-            sp = dated(m.group(1))
-            if not sp:
-                continue
-            # the row's subject: its first link whose label isn't a date
-            link = next((x for x in LINK1.finditer(line) if not spans(x.group(1))), None)
-            yield from _row(sp, m.group(2), plain, head, link)
+            depth, body = len(b.group(1)), b.group(2)
+            plain = clean(body)
+            link = next((x for x in LINK1.finditer(body) if not spans(x.group(1))), None)  # the row's subject
+            m = re.match(r'(.{3,60}?)\s*(?::|–|—|-)\s*(.*)$', plain)
+            sp = dated(m.group(1)) if m else []
+            if sp and len(m.group(2)) >= 8:
+                pending = None
+                yield from _row(sp, m.group(2), plain, head, link)
+            elif sp:
+                pending = (depth, sp)
+            elif pending and depth > pending[0] and len(plain) >= 8:
+                yield from _row(pending[1], plain, plain, head, link)
+            else:
+                pending = None
         # tables: |- rows, cells split by || or newline |
         for tbl in re.findall(r'\{\|.*?\|\}', sec, re.S):
             for row in re.split(r'\n\|-[^\n]*', tbl)[1:]:

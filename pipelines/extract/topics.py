@@ -36,6 +36,11 @@ NOT_EVENT_BOX = re.compile(r'country|former country|state|empire|kingdom|settlem
 EVENT_TITLE = re.compile(r'\b(uprising|revolution|revolt|rebellion|insurrection|riots?|massacre|war|battle|siege|treaty|'
                          r'armistice|campaign|offensive|coup|mutiny|strike|days|crisis|incident|affair|congress|conference|'
                          r'declaration|proclamation|occupation|invasion|landing|raid|expedition|evacuation|deportation)\b', re.I)
+# titles about many events or about things: lists, histories, effects, orders of battle, camps, stamps, committees
+NOT_EVENT_TITLE = re.compile(r'^(list|lists|history|historiography|economic|economy|effects?|impact|bibliography|timeline|'
+                             r'outline|index|glossary)\b|order of battle|\b(camps?|stamps?|committee|cryptography|aces|'
+                             r'memorials?|museums?|medals?|awards?|songs?|poems?|films?|novels?|literature|art|propaganda)\b',
+                             re.I)
 DATE_FIELDS = ('date', 'dates', 'start_date', 'end_date', 'date_start', 'date_end', 'signed', 'effective')
 
 
@@ -46,6 +51,7 @@ class Tables:
         if meta.get('dump') != dump:
             raise SystemExit(f'{path} was built from {meta.get("dump")}, not {dump}: rerun build_index.py')
         self.meta = meta
+        self.seed_titles = []
         self.has_qid = bool(self.db.execute("SELECT 1 FROM sqlite_master WHERE name='qid'").fetchone())
 
     def one(self, sql, *a):
@@ -80,8 +86,13 @@ class Tables:
             return False
         if box and EVENT_BOX.search(box):
             return True
-        if not box and title and EVENT_TITLE.search(title):  # no infobox: "March Revolution", "Vienna Uprising"
-            return True
+        if not box and title and not NOT_EVENT_TITLE.search(title):
+            # no infobox: "March Revolution", "Vienna Uprising"; the seed's own name doesn't count ("World War I cryptography")
+            rest = title
+            for s in self.seed_titles:
+                rest = re.sub(re.escape(s), ' ', rest, flags=re.I)
+            if EVENT_TITLE.search(rest):
+                return True
         q = 'SELECT 1 FROM infobox_field WHERE page_id=? AND field IN (%s) LIMIT 1' % ','.join('?' * len(DATE_FIELDS))
         return bool(self.one(q, page_id, *DATE_FIELDS))
 
@@ -127,6 +138,7 @@ def article_set(T, seeds, seed_links, cap=4000):
     lo, hi = (min(years), max(years)) if years else (None, None)
 
     win = (lo - 1, hi + WINDOW_AFTER) if lo is not None else None
+    T.seed_titles = seed_titles
 
     def overlaps(pid, title):
         """An article's infobox dates, else the years in its title, touch the topic's window (or nothing says otherwise)."""
