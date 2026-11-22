@@ -189,3 +189,19 @@ describe('TrackForm page link and Wikidata id', () => {
     expect(onSave).not.toHaveBeenCalled();
   });
 });
+
+describe('TrackForm category memberships', () => {
+  it("keeps a row's facet memberships (regions, peoples) when it saves", async () => {
+    const sourceKey = Object.keys(data.sources)[0];
+    const withFacets = {
+      ...data,
+      meta: { ...data.meta, facets: { geography: { name: 'Region', values: { coast: { name: 'Coast' } } } } },
+    };
+    const row: Track = { ...quay, memberships: [{ facet: 'geography', value: 'coast', sources: [{ sourceKey, sourceLocation: 'lead' }] }] };
+    const onSave = vi.fn();
+    render(<TrackForm initial={row} data={{ ...withFacets, tracks: withFacets.tracks.map((t) => (t.id === row.id ? row : t)) }} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0].memberships).toEqual(row.memberships);
+  });
+});

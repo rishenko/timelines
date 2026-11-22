@@ -183,8 +183,9 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     }
     // stored in date order, whatever order they were typed in
     if (phases.length) t.phases = phases.sort((a, b) => a.start - b.start || (a.end ?? Infinity) - (b.end ?? Infinity));
-    // memberships in other rows aren't edited here yet: kept as they were
+    // memberships in other rows, and category memberships (regions, peoples), aren't edited here yet: kept as they were
     if (initial?.memberOf?.length) t.memberOf = initial.memberOf;
+    if (initial?.memberships?.length) t.memberships = initial.memberships;
     const found = newProblems(data, upsertTrack(data, t, initial?.id));
     setProblems(found);
     if (!found.length) onSave(t, initial?.id);
