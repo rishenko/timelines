@@ -541,14 +541,15 @@ export function TimelineView(props: Props) {
               aria-label={lane.track.name}
               data-lane={lane.id}
             >
-              {/* each stretch of a lifespan is its own band; the gaps between them stay blank. A still-going one shows
-                  an arrow on its top edge, unless a still-going phase on screen already shows one in its strip */}
+              {/* each stretch of a lifespan is its own band; the gaps between them stay blank. A still-going one (or one
+                  that runs on past the end of the chart) shows an arrow on its top edge, unless a phase on screen
+                  already shows one in its strip */}
               {laneLifespans.get(lane.id)?.map((s, i) => (
                 <SpanBand
                   key={`span-${i}`}
                   track={lane.track}
                   span={s}
-                  cue={!laneStrips.get(lane.id)?.cells.some((c) => c.phase.ongoing && c.x0 < view.left + view.width - labelW && c.x1 > view.left)}
+                  cue={!laneStrips.get(lane.id)?.cells.some((c) => (c.phase.ongoing || c.x1 > scale.width) && c.x0 < view.left + view.width - labelW && Math.min(c.x1, scale.width) > view.left)}
                   title={lane.collapsed ? `${lane.track.name} and the rows folded into it` : undefined}
                   members={unionTips.get(lane.id)}
                   {...band}
