@@ -90,14 +90,14 @@
     {
      "year": "9750 BCE",
      "source": {
-      "sourceKey": "periodo-p0ckt9x",
+      "sourceKey": "periodo-p0ckt9xjf45",
       "sourceLocation": "period \"Neolithic\", start \"9750 BCE\" (p0ckt9xjf45)"
      }
     },
     {
      "year": "8300 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm292q3s",
       "sourceLocation": "period \"Pre-Pottery Neolithic\", start \"8,300 BCE\" (p0dkm292q3s)"
      },
      "note": "NEAEHL's Pre-Pottery Neolithic starts later."
@@ -107,7 +107,7 @@
     {
      "year": "4500 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm29sd62",
       "sourceLocation": "period \"Pottery Neolithic\", end \"4,500 BCE\" (p0dkm29sd62)"
      },
      "note": "The end of NEAEHL's Pottery Neolithic."
@@ -115,11 +115,11 @@
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0ckt9x",
+     "sourceKey": "periodo-p0ckt9xjf45",
      "sourceLocation": "period \"Neolithic\", start \"9750 BCE\" (p0ckt9xjf45)"
     },
     {
-     "sourceKey": "periodo-p0dkm29",
+     "sourceKey": "periodo-p0dkm29sd62",
      "sourceLocation": "period \"Pottery Neolithic\", end \"4,500 BCE\" (p0dkm29sd62)"
     }
    ],
@@ -141,7 +141,7 @@
     {
      "year": "4500 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm29j944",
       "sourceLocation": "period \"Chalcolithic\", start \"4,500 BCE\" (p0dkm29j944)"
      }
     }
@@ -150,18 +150,18 @@
     {
      "year": "3300 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm29j944",
       "sourceLocation": "period \"Chalcolithic\", end \"3,300 BCE\" (p0dkm29j944)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0dkm29",
+     "sourceKey": "periodo-p0dkm29j944",
      "sourceLocation": "period \"Chalcolithic\", start \"4,500 BCE\" (p0dkm29j944)"
     },
     {
-     "sourceKey": "periodo-p0dkm29",
+     "sourceKey": "periodo-p0dkm29j944",
      "sourceLocation": "period \"Chalcolithic\", end \"3,300 BCE\" (p0dkm29j944)"
     }
    ],
@@ -183,14 +183,14 @@
     {
      "year": "3300 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm29gmkt",
       "sourceLocation": "period \"Bronze Age\", start \"3300 BCE\" (p0dkm29gmkt)"
      }
     },
     {
      "year": "3500 BCE",
      "source": {
-      "sourceKey": "periodo-p0hsq83",
+      "sourceKey": "periodo-p0hsq83z6ms",
       "sourceLocation": "period \"Bronze Age\", start \"3500 BCE\" (p0hsq83z6ms)"
      }
     }
@@ -199,18 +199,18 @@
     {
      "year": "1200 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm29gmkt",
       "sourceLocation": "period \"Bronze Age\", end \"1200 BCE\" (p0dkm29gmkt)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0dkm29",
+     "sourceKey": "periodo-p0dkm29gmkt",
      "sourceLocation": "period \"Bronze Age\", start \"3300 BCE\" (p0dkm29gmkt)"
     },
     {
-     "sourceKey": "periodo-p0dkm29",
+     "sourceKey": "periodo-p0dkm29gmkt",
      "sourceLocation": "period \"Bronze Age\", end \"1200 BCE\" (p0dkm29gmkt)"
     }
    ],
@@ -232,7 +232,7 @@
     {
      "year": "1200 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm29kmvv",
       "sourceLocation": "period \"Iron Age\", start \"1200 BCE\" (p0dkm29kmvv)"
      }
     }
@@ -241,25 +241,25 @@
     {
      "year": "586 BCE",
      "source": {
-      "sourceKey": "periodo-p0dkm29",
+      "sourceKey": "periodo-p0dkm29kmvv",
       "sourceLocation": "period \"Iron Age\", end \"586 BCE\" (p0dkm29kmvv)"
      }
     },
     {
      "year": "330 BCE",
      "source": {
-      "sourceKey": "periodo-p0m64td",
+      "sourceKey": "periodo-p0m64td6gpk",
       "sourceLocation": "period \"Iron Age\", end \"-330\" (p0m64td6gpk)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0dkm29",
+     "sourceKey": "periodo-p0dkm29kmvv",
      "sourceLocation": "period \"Iron Age\", start \"1200 BCE\" (p0dkm29kmvv)"
     },
     {
-     "sourceKey": "periodo-p0dkm29",
+     "sourceKey": "periodo-p0dkm29kmvv",
      "sourceLocation": "period \"Iron Age\", end \"586 BCE\" (p0dkm29kmvv)"
     }
    ],
@@ -281,7 +281,7 @@
     {
      "year": "5600 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqtpn3m",
       "sourceLocation": "period \"Early Neolithic\", start \"-5600\" (p0wctqtpn3m)"
      }
     }
@@ -290,7 +290,7 @@
     {
      "year": "4500 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqthbgf",
       "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
      },
      "note": "AMCR's Early Neolithic ends 4701 BC; the age runs on to its Eneolithic."
@@ -298,18 +298,18 @@
     {
      "year": "4701 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqtpn3m",
       "sourceLocation": "period \"Early Neolithic\", end \"-4701\" (p0wctqtpn3m)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqtpn3m",
      "sourceLocation": "period \"Early Neolithic\", start \"-5600\" (p0wctqtpn3m)"
     },
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqthbgf",
      "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
     }
    ],
@@ -331,14 +331,14 @@
     {
      "year": "4500 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqthbgf",
       "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
      }
     },
     {
      "year": "4250 BCE",
      "source": {
-      "sourceKey": "periodo-p0qhb66",
+      "sourceKey": "periodo-p0qhb66f8kc",
       "sourceLocation": "period \"Copper Age\", start \"6250 BP (2000)\" (p0qhb66f8kc)"
      },
      "note": "ARIADNE's Copper Age (Austria)."
@@ -348,18 +348,18 @@
     {
      "year": "2301 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqthbgf",
       "sourceLocation": "period \"Eneolithic\", end \"-2301\" (p0wctqthbgf)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqthbgf",
      "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
     },
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqthbgf",
      "sourceLocation": "period \"Eneolithic\", end \"-2301\" (p0wctqthbgf)"
     }
    ],
@@ -381,14 +381,14 @@
     {
      "year": "2300 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqtcsjh",
       "sourceLocation": "period \"Bronze Age\", start \"-2300\" (p0wctqtcsjh)"
      }
     },
     {
      "year": "2200 BCE",
      "source": {
-      "sourceKey": "periodo-p0qhb66",
+      "sourceKey": "periodo-p0qhb66wrsn",
       "sourceLocation": "period \"Bronze Age\", start \"4200 BP (2000)\" (p0qhb66wrsn)"
      },
      "note": "ARIADNE's Bronze Age (Austria)."
@@ -398,7 +398,7 @@
     {
      "year": "800 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqtbqvf",
       "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
      },
      "note": "Where AMCR's Hallstatt–La Tène begins; its Bronze Age runs to 751 BC."
@@ -406,18 +406,18 @@
     {
      "year": "751 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqtcsjh",
       "sourceLocation": "period \"Bronze Age\", end \"-751\" (p0wctqtcsjh)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqtcsjh",
      "sourceLocation": "period \"Bronze Age\", start \"-2300\" (p0wctqtcsjh)"
     },
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqtbqvf",
      "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
     }
    ],
@@ -439,7 +439,7 @@
     {
      "year": "800 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqtbqvf",
       "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
      },
      "note": "AMCR's Hallstatt and La Tène periods."
@@ -449,18 +449,18 @@
     {
      "year": "31 BCE",
      "source": {
-      "sourceKey": "periodo-p0wctqt",
+      "sourceKey": "periodo-p0wctqtbqvf",
       "sourceLocation": "period \"Hallstatt–La Tène Period\", end \"-31\" (p0wctqtbqvf)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqtbqvf",
      "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
     },
     {
-     "sourceKey": "periodo-p0wctqt",
+     "sourceKey": "periodo-p0wctqtbqvf",
      "sourceLocation": "period \"Hallstatt–La Tène Period\", end \"-31\" (p0wctqtbqvf)"
     }
    ],
@@ -482,7 +482,7 @@
     {
      "year": "6500 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qj3x2t",
       "sourceLocation": "period \"Neolithic\", start \"6500 BC\" (p0ds9qj3x2t)"
      }
     }
@@ -491,7 +491,7 @@
     {
      "year": "3200 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qj3x2t",
       "sourceLocation": "period \"Neolithic\", end \"3200/3000 BC\" (p0ds9qj3x2t)"
      },
      "note": "The BSA gives 3200/3000 BC."
@@ -499,11 +499,11 @@
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0ds9qj",
+     "sourceKey": "periodo-p0ds9qj3x2t",
      "sourceLocation": "period \"Neolithic\", start \"6500 BC\" (p0ds9qj3x2t)"
     },
     {
-     "sourceKey": "periodo-p0ds9qj",
+     "sourceKey": "periodo-p0ds9qj3x2t",
      "sourceLocation": "period \"Neolithic\", end \"3200/3000 BC\" (p0ds9qj3x2t)"
     }
    ],
@@ -525,7 +525,7 @@
     {
      "year": "3200 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qjq7b2",
       "sourceLocation": "period \"Bronze Age\", start \"3200 BC\" (p0ds9qjq7b2)"
      }
     }
@@ -534,7 +534,7 @@
     {
      "year": "1100 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qjrvwn",
       "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
      },
      "note": "Where the BSA's Early Iron Age begins; its Bronze Age runs to 1050 BC."
@@ -542,18 +542,18 @@
     {
      "year": "1050 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qjq7b2",
       "sourceLocation": "period \"Bronze Age\", end \"1050 BC\" (p0ds9qjq7b2)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0ds9qj",
+     "sourceKey": "periodo-p0ds9qjq7b2",
      "sourceLocation": "period \"Bronze Age\", start \"3200 BC\" (p0ds9qjq7b2)"
     },
     {
-     "sourceKey": "periodo-p0ds9qj",
+     "sourceKey": "periodo-p0ds9qjrvwn",
      "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
     }
    ],
@@ -575,7 +575,7 @@
     {
      "year": "1100 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qjrvwn",
       "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
      }
     }
@@ -584,18 +584,18 @@
     {
      "year": "700 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qjrvwn",
       "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0ds9qj",
+     "sourceKey": "periodo-p0ds9qjrvwn",
      "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
     },
     {
-     "sourceKey": "periodo-p0ds9qj",
+     "sourceKey": "periodo-p0ds9qjrvwn",
      "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
     }
    ],
@@ -617,7 +617,7 @@
     {
      "year": "700 BCE",
      "source": {
-      "sourceKey": "periodo-p0ds9qj",
+      "sourceKey": "periodo-p0ds9qjrvwn",
       "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
      },
      "note": "Where the BSA's Early Iron Age ends."
@@ -643,7 +643,7 @@
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0ds9qj",
+     "sourceKey": "periodo-p0ds9qjrvwn",
      "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
     },
     {
@@ -932,7 +932,7 @@
     {
      "year": "4000 BCE",
      "source": {
-      "sourceKey": "periodo-p064v7m",
+      "sourceKey": "periodo-p064v7m2kbt",
       "sourceLocation": "period \"Late Archaic\", start \"4000 BC\" (p064v7m2kbt)"
      }
     }
@@ -941,24 +941,28 @@
     {
      "year": "2000 BCE",
      "source": {
-      "sourceKey": "periodo-p064v7m",
+      "sourceKey": "periodo-p064v7m2kbt",
       "sourceLocation": "period \"Late Archaic\", end \"2000 BC\" (p064v7m2kbt)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p064v7m",
+     "sourceKey": "periodo-p064v7m2kbt",
      "sourceLocation": "period \"Late Archaic\", start \"4000 BC\" (p064v7m2kbt)"
     },
     {
-     "sourceKey": "periodo-p064v7m",
+     "sourceKey": "periodo-p064v7m2kbt",
      "sourceLocation": "period \"Late Archaic\", end \"2000 BC\" (p064v7m2kbt)"
     }
    ],
    "tracks": [
     "americas"
-   ]
+   ],
+   "url": "https://en.wikipedia.org/wiki/Archaic_period_in_Mesoamerica",
+   "ids": {
+    "wikidata": "Q55622876"
+   }
   },
   {
    "id": "mesoamerica-formative",
@@ -971,7 +975,7 @@
     {
      "year": "1200 BCE",
      "source": {
-      "sourceKey": "periodo-p064v7m",
+      "sourceKey": "periodo-p064v7mj95d",
       "sourceLocation": "period \"Early Formative\", start \"CA. 1200 BC\" (p064v7mj95d)"
      },
      "note": "The Oxford handbook's Early Formative, \"ca. 1200 BC\"."
@@ -989,24 +993,28 @@
     {
      "year": 250,
      "source": {
-      "sourceKey": "periodo-p064v7m",
+      "sourceKey": "periodo-p064v7m6cvm",
       "sourceLocation": "period \"Formative period\", end \"250 AD\" (p064v7m6cvm)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p064v7m",
+     "sourceKey": "periodo-p064v7mj95d",
      "sourceLocation": "period \"Early Formative\", start \"CA. 1200 BC\" (p064v7mj95d)"
     },
     {
-     "sourceKey": "periodo-p064v7m",
+     "sourceKey": "periodo-p064v7m6cvm",
      "sourceLocation": "period \"Formative period\", end \"250 AD\" (p064v7m6cvm)"
     }
    ],
    "tracks": [
     "americas"
-   ]
+   ],
+   "url": "https://en.wikipedia.org/wiki/Mesoamerican_Preclassic_period",
+   "ids": {
+    "wikidata": "Q3063552"
+   }
   },
   {
    "id": "mesoamerica-classic",
@@ -1056,7 +1064,7 @@
     {
      "year": "6000 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zw52w",
       "sourceLocation": "period \"Neolithic\", start \"6000 BCE\" (p0qk76zw52w)"
      }
     }
@@ -1065,18 +1073,18 @@
     {
      "year": "4500 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zw52w",
       "sourceLocation": "period \"Neolithic\", end \"4500 BCE\" (p0qk76zw52w)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zw52w",
      "sourceLocation": "period \"Neolithic\", start \"6000 BCE\" (p0qk76zw52w)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zw52w",
      "sourceLocation": "period \"Neolithic\", end \"4500 BCE\" (p0qk76zw52w)"
     }
    ],
@@ -1098,7 +1106,7 @@
     {
      "year": "4500 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zvrnc",
       "sourceLocation": "period \"Predynastic\", start \"4500 BCE\" (p0qk76zvrnc)"
      }
     }
@@ -1107,18 +1115,18 @@
     {
      "year": "2950 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zvrnc",
       "sourceLocation": "period \"Predynastic\", end \"2950 BCE\" (p0qk76zvrnc)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zvrnc",
      "sourceLocation": "period \"Predynastic\", start \"4500 BCE\" (p0qk76zvrnc)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zvrnc",
      "sourceLocation": "period \"Predynastic\", end \"2950 BCE\" (p0qk76zvrnc)"
     }
    ],
@@ -1140,7 +1148,7 @@
     {
      "year": "2950 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zkc72",
       "sourceLocation": "period \"Early Dynastic\", start \"2950 BCE\" (p0qk76zkc72)"
      }
     }
@@ -1149,18 +1157,18 @@
     {
      "year": "2670 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zkc72",
       "sourceLocation": "period \"Early Dynastic\", end \"2670 BCE\" (p0qk76zkc72)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zkc72",
      "sourceLocation": "period \"Early Dynastic\", start \"2950 BCE\" (p0qk76zkc72)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zkc72",
      "sourceLocation": "period \"Early Dynastic\", end \"2670 BCE\" (p0qk76zkc72)"
     }
    ],
@@ -1182,7 +1190,7 @@
     {
      "year": "2670 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76z92f9",
       "sourceLocation": "period \"Old Kingdom\", start \"2670 BCE\" (p0qk76z92f9)"
      }
     }
@@ -1191,18 +1199,18 @@
     {
      "year": "2168 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76z92f9",
       "sourceLocation": "period \"Old Kingdom\", end \"2168 BCE\" (p0qk76z92f9)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76z92f9",
      "sourceLocation": "period \"Old Kingdom\", start \"2670 BCE\" (p0qk76z92f9)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76z92f9",
      "sourceLocation": "period \"Old Kingdom\", end \"2168 BCE\" (p0qk76z92f9)"
     }
    ],
@@ -1224,7 +1232,7 @@
     {
      "year": "2168 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zqqr2",
       "sourceLocation": "period \"First Intermediate Period\", start \"2168 BCE\" (p0qk76zqqr2)"
      }
     }
@@ -1233,18 +1241,18 @@
     {
      "year": "2040 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zqqr2",
       "sourceLocation": "period \"First Intermediate Period\", end \"2040 BCE\" (p0qk76zqqr2)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zqqr2",
      "sourceLocation": "period \"First Intermediate Period\", start \"2168 BCE\" (p0qk76zqqr2)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zqqr2",
      "sourceLocation": "period \"First Intermediate Period\", end \"2040 BCE\" (p0qk76zqqr2)"
     }
    ],
@@ -1266,7 +1274,7 @@
     {
      "year": "2040 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zkb23",
       "sourceLocation": "period \"Middle Kingdom\", start \"2040 BCE\" (p0qk76zkb23)"
      }
     }
@@ -1275,18 +1283,18 @@
     {
      "year": "1640 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zkb23",
       "sourceLocation": "period \"Middle Kingdom\", end \"1640 BCE\" (p0qk76zkb23)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zkb23",
      "sourceLocation": "period \"Middle Kingdom\", start \"2040 BCE\" (p0qk76zkb23)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zkb23",
      "sourceLocation": "period \"Middle Kingdom\", end \"1640 BCE\" (p0qk76zkb23)"
     }
    ],
@@ -1308,7 +1316,7 @@
     {
      "year": "1640 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zxgwt",
       "sourceLocation": "period \"Second Intermediate Period\", start \"1640 BCE\" (p0qk76zxgwt)"
      }
     }
@@ -1317,18 +1325,18 @@
     {
      "year": "1548 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zxgwt",
       "sourceLocation": "period \"Second Intermediate Period\", end \"1548 BCE\" (p0qk76zxgwt)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zxgwt",
      "sourceLocation": "period \"Second Intermediate Period\", start \"1640 BCE\" (p0qk76zxgwt)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zxgwt",
      "sourceLocation": "period \"Second Intermediate Period\", end \"1548 BCE\" (p0qk76zxgwt)"
     }
    ],
@@ -1350,7 +1358,7 @@
     {
      "year": "1548 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zvjkw",
       "sourceLocation": "period \"New Kingdom\", start \"1548 BCE\" (p0qk76zvjkw)"
      }
     }
@@ -1359,18 +1367,18 @@
     {
      "year": "1086 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zvjkw",
       "sourceLocation": "period \"New Kingdom\", end \"1086 BCE\" (p0qk76zvjkw)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zvjkw",
      "sourceLocation": "period \"New Kingdom\", start \"1548 BCE\" (p0qk76zvjkw)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zvjkw",
      "sourceLocation": "period \"New Kingdom\", end \"1086 BCE\" (p0qk76zvjkw)"
     }
    ],
@@ -1392,7 +1400,7 @@
     {
      "year": "1086 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zpmnv",
       "sourceLocation": "period \"Third Intermediate Period\", start \"1086 BCE\" (p0qk76zpmnv)"
      }
     }
@@ -1401,18 +1409,18 @@
     {
      "year": "664 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zpmnv",
       "sourceLocation": "period \"Third Intermediate Period\", end \"664 BCE\" (p0qk76zpmnv)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zpmnv",
      "sourceLocation": "period \"Third Intermediate Period\", start \"1086 BCE\" (p0qk76zpmnv)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zpmnv",
      "sourceLocation": "period \"Third Intermediate Period\", end \"664 BCE\" (p0qk76zpmnv)"
     }
    ],
@@ -1434,7 +1442,7 @@
     {
      "year": "664 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zh6n2",
       "sourceLocation": "period \"Late Period\", start \"664 BCE\" (p0qk76zh6n2)"
      }
     }
@@ -1443,18 +1451,18 @@
     {
      "year": "332 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zh6n2",
       "sourceLocation": "period \"Late Period\", end \"332 BCE\" (p0qk76zh6n2)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zh6n2",
      "sourceLocation": "period \"Late Period\", start \"664 BCE\" (p0qk76zh6n2)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zh6n2",
      "sourceLocation": "period \"Late Period\", end \"332 BCE\" (p0qk76zh6n2)"
     }
    ],
@@ -1476,7 +1484,7 @@
     {
      "year": "332 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76z756b",
       "sourceLocation": "period \"Macedonian\", start \"332 BCE\" (p0qk76z756b)"
      }
     }
@@ -1485,18 +1493,18 @@
     {
      "year": "304 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76z756b",
       "sourceLocation": "period \"Macedonian\", end \"304 BCE\" (p0qk76z756b)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76z756b",
      "sourceLocation": "period \"Macedonian\", start \"332 BCE\" (p0qk76z756b)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76z756b",
      "sourceLocation": "period \"Macedonian\", end \"304 BCE\" (p0qk76z756b)"
     }
    ],
@@ -1514,7 +1522,7 @@
     {
      "year": "304 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zn9c9",
       "sourceLocation": "period \"Ptolemaic\", start \"304 BCE\" (p0qk76zn9c9)"
      }
     }
@@ -1523,18 +1531,18 @@
     {
      "year": "30 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zn9c9",
       "sourceLocation": "period \"Ptolemaic\", end \"30 BCE\" (p0qk76zn9c9)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zn9c9",
      "sourceLocation": "period \"Ptolemaic\", start \"304 BCE\" (p0qk76zn9c9)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zn9c9",
      "sourceLocation": "period \"Ptolemaic\", end \"30 BCE\" (p0qk76zn9c9)"
     }
    ],
@@ -1556,7 +1564,7 @@
     {
      "year": "30 BCE",
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zbv62",
       "sourceLocation": "period \"Roman\", start \"30 BCE\" (p0qk76zbv62)"
      }
     }
@@ -1565,18 +1573,18 @@
     {
      "year": 394,
      "source": {
-      "sourceKey": "periodo-p0qk76z",
+      "sourceKey": "periodo-p0qk76zbv62",
       "sourceLocation": "period \"Roman\", end \"394 CE\" (p0qk76zbv62)"
      }
     }
    ],
    "sources": [
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zbv62",
      "sourceLocation": "period \"Roman\", start \"30 BCE\" (p0qk76zbv62)"
     },
     {
-     "sourceKey": "periodo-p0qk76z",
+     "sourceKey": "periodo-p0qk76zbv62",
      "sourceLocation": "period \"Roman\", end \"394 CE\" (p0qk76zbv62)"
     }
    ],
@@ -1651,73 +1659,265 @@
   }
  ],
  "sources": {
-  "periodo-p064v7m": {
-   "name": "The Oxford handbook of Mesoamerican archeology (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p064v7m",
+  "periodo-p064v7m2kbt": {
+   "name": "The Oxford handbook of Mesoamerican archeology: Late Archaic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p064v7m2kbt",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0ckt9x": {
-   "name": "Levantine Chronology (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0ckt9x",
+  "periodo-p064v7m6cvm": {
+   "name": "The Oxford handbook of Mesoamerican archeology: Formative period (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p064v7m6cvm",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0dkm29": {
-   "name": "The new encyclopedia of archaeological excavations in the Holy Land 4 [Petra - Ziqim]. (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0dkm29",
+  "periodo-p064v7mj95d": {
+   "name": "The Oxford handbook of Mesoamerican archeology: Early Formative (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p064v7mj95d",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0ds9qj": {
-   "name": "The British School at Athens: archaeological periods of Greece (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0ds9qj",
+  "periodo-p0ckt9xjf45": {
+   "name": "Levantine Chronology: Neolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0ckt9xjf45",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0hsq83": {
-   "name": "The archaeology of society in the Holy Land (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0hsq83",
+  "periodo-p0dkm292q3s": {
+   "name": "The new encyclopedia of archaeological excavations in the Holy Land 4 [Petra - Ziqim].: Pre-Pottery Neolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0dkm292q3s",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0m64td": {
-   "name": "EAMENA Database (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0m64td",
+  "periodo-p0dkm29gmkt": {
+   "name": "The new encyclopedia of archaeological excavations in the Holy Land 4 [Petra - Ziqim].: Bronze Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0dkm29gmkt",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0qhb66": {
-   "name": "ARIADNE Data Collection (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0qhb66",
+  "periodo-p0dkm29j944": {
+   "name": "The new encyclopedia of archaeological excavations in the Holy Land 4 [Petra - Ziqim].: Chalcolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0dkm29j944",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0qk76z": {
-   "name": "UCLA Encyclopedia of Egyptology (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0qk76z",
+  "periodo-p0dkm29kmvv": {
+   "name": "The new encyclopedia of archaeological excavations in the Holy Land 4 [Petra - Ziqim].: Iron Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0dkm29kmvv",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
    ]
   },
-  "periodo-p0wctqt": {
-   "name": "AMCR Periods Vocabulary (PeriodO)",
-   "url": "http://n2t.net/ark:/99152/p0wctqt",
+  "periodo-p0dkm29sd62": {
+   "name": "The new encyclopedia of archaeological excavations in the Holy Land 4 [Petra - Ziqim].: Pottery Neolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0dkm29sd62",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0ds9qj3x2t": {
+   "name": "The British School at Athens: archaeological periods of Greece: Neolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0ds9qj3x2t",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0ds9qjq7b2": {
+   "name": "The British School at Athens: archaeological periods of Greece: Bronze Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0ds9qjq7b2",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0ds9qjrvwn": {
+   "name": "The British School at Athens: archaeological periods of Greece: Early Iron Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0ds9qjrvwn",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0hsq83z6ms": {
+   "name": "The archaeology of society in the Holy Land: Bronze Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0hsq83z6ms",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0m64td6gpk": {
+   "name": "EAMENA Database: Iron Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0m64td6gpk",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qhb66f8kc": {
+   "name": "ARIADNE Data Collection: Copper Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qhb66f8kc",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qhb66wrsn": {
+   "name": "ARIADNE Data Collection: Bronze Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qhb66wrsn",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76z756b": {
+   "name": "UCLA Encyclopedia of Egyptology: Macedonian (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76z756b",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76z92f9": {
+   "name": "UCLA Encyclopedia of Egyptology: Old Kingdom (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76z92f9",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zbv62": {
+   "name": "UCLA Encyclopedia of Egyptology: Roman (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zbv62",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zh6n2": {
+   "name": "UCLA Encyclopedia of Egyptology: Late Period (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zh6n2",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zkb23": {
+   "name": "UCLA Encyclopedia of Egyptology: Middle Kingdom (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zkb23",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zkc72": {
+   "name": "UCLA Encyclopedia of Egyptology: Early Dynastic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zkc72",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zn9c9": {
+   "name": "UCLA Encyclopedia of Egyptology: Ptolemaic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zn9c9",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zpmnv": {
+   "name": "UCLA Encyclopedia of Egyptology: Third Intermediate Period (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zpmnv",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zqqr2": {
+   "name": "UCLA Encyclopedia of Egyptology: First Intermediate Period (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zqqr2",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zvjkw": {
+   "name": "UCLA Encyclopedia of Egyptology: New Kingdom (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zvjkw",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zvrnc": {
+   "name": "UCLA Encyclopedia of Egyptology: Predynastic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zvrnc",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zw52w": {
+   "name": "UCLA Encyclopedia of Egyptology: Neolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zw52w",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0qk76zxgwt": {
+   "name": "UCLA Encyclopedia of Egyptology: Second Intermediate Period (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0qk76zxgwt",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0wctqtbqvf": {
+   "name": "AMCR Periods Vocabulary: Hallstatt–La Tène Period (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0wctqtbqvf",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0wctqtcsjh": {
+   "name": "AMCR Periods Vocabulary: Bronze Age (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0wctqtcsjh",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0wctqthbgf": {
+   "name": "AMCR Periods Vocabulary: Eneolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0wctqthbgf",
+   "accessed": "2026-11-21",
+   "tags": [
+    "periodo"
+   ]
+  },
+  "periodo-p0wctqtpn3m": {
+   "name": "AMCR Periods Vocabulary: Early Neolithic (PeriodO)",
+   "url": "http://n2t.net/ark:/99152/p0wctqtpn3m",
    "accessed": "2026-11-21",
    "tags": [
     "periodo"
@@ -1794,6 +1994,29 @@
    "tags": [
     "wikipedia"
    ]
+  }
+ },
+ "eraGroups": {
+  "ages-near-east": {
+   "name": "Near East"
+  },
+  "ages-central-europe": {
+   "name": "Central Europe"
+  },
+  "ages-aegean": {
+   "name": "Aegean and Mediterranean"
+  },
+  "ages-south-asia": {
+   "name": "South Asia"
+  },
+  "ages-china": {
+   "name": "China"
+  },
+  "ages-mesoamerica": {
+   "name": "Mesoamerica"
+  },
+  "ages-nile-valley": {
+   "name": "Nile Valley"
   }
  },
  "tags": {

@@ -111,6 +111,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
 | `eras` | no | Named periods across the whole timeline or one region (the Bronze Age, the Age of Revolutions, the Old Kingdom). See [eras](#eras). Readers see them as ages, in a strip under the ruler or on their region's band. |
+| `eraGroups` | no | Display names for era groups, by group id: `{ "ages-aegean": { "name": "Aegean" } }`. When a row's band has two or more lines, each line is labelled with its group's `name` (or, without one, a name made from the id: `ages-central-europe` → "Central Europe"). Each key must be a `group` some era has. |
 | `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
 
 ### eras
@@ -666,7 +667,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 | Version | What changed |
 |---|---|
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |
-| 7 | An era's `tracks` (the rows an age belongs to, such as a region). Additive: a version 6 file is read as it is. |
+| 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. |
 | 5 | Facets on events (`applies`, event `memberships`), [`meta.eras`](#eras), row `kind`, events' `ongoingSources`, sources' `dump` and `revision`, source `locator`s, the `phase` of a [`memberOf`](#dated-memberships-memberof) entry, and `redirects`. Additive: a version 4 file is read as it is. |
 | 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
 | 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |

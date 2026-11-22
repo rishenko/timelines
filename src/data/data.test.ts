@@ -67,6 +67,7 @@ describe('compileSource', () => {
   it('converts readable years in meta.eras, as in phases', () => {
     const raw = JSON.parse(readFileSync('data-src/ancient-classical.json', 'utf8'));
     const source = { sourceKey: Object.keys(raw.sources)[0], sourceLocation: 'lead' };
+    delete raw.meta.eraGroups; // names the real eras' groups, which this test replaces
     raw.meta.eras = [{ id: 'test-era', name: 'Test era', start: 'c. 27 BCE', end: 180, startDates: [{ year: '27 BCE', source }], sources: [source] }];
     const { dataset, errors } = compileSource(raw);
     expect(errors).toEqual([]);

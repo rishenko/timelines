@@ -106,4 +106,10 @@ describe('ages (meta.eras)', () => {
     ]);
     expect(groupLabel(undefined)).toBeUndefined();
   });
+
+  it('takes a line’s name from meta.eraGroups when it has one', () => {
+    const d = withEras([era('aegean', 0, 60, 'ages-aegean', { tracks: ['europe'] }), era('alps', 0, 60, 'ages-central-europe', { tracks: ['europe'] })]);
+    d.meta.eraGroups = { 'ages-aegean': { name: 'Aegean and Mediterranean' } };
+    expect(placeAges(d, {}).map((a) => a.lineName)).toEqual(['Aegean and Mediterranean', 'Central Europe']);
+  });
 });

@@ -17,7 +17,7 @@ export interface PlacedAge {
   line: number;
   /** The row whose band it's drawn on; absent: the Ages strip. An age in several rows is placed once in each. */
   band?: string;
-  /** In a band with two or more lines: its line's name (its group's), shown at the line's left end. */
+  /** In a band with two or more lines: its line's name (its group's, from meta.eraGroups), at the line's left end. */
   lineName?: string;
   /** Where its bar ends when it shares its end year with the next age on its line: that age's start. */
   drawEnd?: number;
@@ -40,7 +40,7 @@ export function placeAges(ds: Dataset, selection: ChronologySelection): PlacedAg
   // a band with two or more lines names each (Europe's Aegean and Central Europe lines); one line needs no name
   for (const band of lines.keys()) {
     if (!band || lines.get(band)!.size < 2) continue;
-    for (const a of placed) if (a.band === band) a.lineName = groupLabel(a.era.group);
+    for (const a of placed) if (a.band === band) a.lineName = (a.era.group && ds.meta.eraGroups?.[a.era.group]?.name) || groupLabel(a.era.group);
   }
   const key = (a: PlacedAge) => `${a.band ?? ''}\n${a.line}`;
   for (const k of new Set(placed.map(key))) {
@@ -55,8 +55,8 @@ export function placeAges(ds: Dataset, selection: ChronologySelection): PlacedAg
 }
 
 /**
- * A line's name, from its group id: "ages-central-europe" → "Central Europe" (a leading "ages-" dropped, words
- * capitalized).
+ * A line's name when meta.eraGroups gives none, from its group id: "ages-central-europe" → "Central Europe" (a leading
+ * "ages-" dropped, words capitalized).
  */
 export function groupLabel(group: string | undefined): string | undefined {
   if (!group) return undefined;
