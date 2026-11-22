@@ -1,13 +1,16 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vitest/config'
 import { localDataPlugin } from './scripts/lib/local-data-plugin.ts'
+import { timelineIndexPlugin } from './scripts/lib/timeline-index-plugin.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
   // GitHub Pages serves the site from /<repo-name>/
   base: './',
-  // localDataPlugin: dev server only, and only when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts)
-  plugins: [react(), localDataPlugin()],
+  // localDataPlugin: dev server only, and only when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts); it adds
+  // the local timelines to the site's list, so it comes before timelineIndexPlugin, which makes the list
+  // (timelines/index.json) from public/timelines
+  plugins: [react(), localDataPlugin(), timelineIndexPlugin()],
   test: {
     environment: 'node',
     // the UI tests render whole timelines in jsdom: several take 1.5–5.5 s on a fast machine, more on a busy CI runner,

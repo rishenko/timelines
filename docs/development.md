@@ -23,8 +23,8 @@ bundle. It runs only when started by hand, and only from `main`: Actions → Dep
 means nothing untracked in a local clone can end up on the site.
 
 CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
-build, `run-all --check` for each included timeline, and a check that the files in `public/timelines/` (with
-`index.json`) and the key-event lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
+build, `run-all --check` for each included timeline, and a check that the files in `public/timelines/` and the
+key-event lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
 and `npm run data -- importance <timeline>`, and commit the result.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
@@ -94,14 +94,19 @@ and compiled into `public/timelines/ancient-classical.json`. `scripts/lib/timeli
 scripts. `npm run data` takes its short name (`ancient-classical`) or `all`:
 
 ```sh
-npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ and rewrite index.json (also npm run data:build)
+npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ (also npm run data:build)
 npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and row links; refresh docs/<short>-key-events.md (also npm run importance)
 npm run data -- format <timeline|all>       # re-format a source file
 npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
 npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing (also npm run data:check)
-npm run data -- index                       # rewrite public/timelines/index.json, the site's list, from the files there
+npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
+
+The site's list, `timelines/index.json`, isn't committed: `scripts/lib/timeline-index-plugin.ts` makes it from the
+files in `public/timelines/` (the dev server on each request, the build into `dist/timelines/`), in the order
+`data-src/site-timelines.json` gives (timeline ids; files it doesn't name come last, by file name). A new timeline
+needs only its file, plus its id in `site-timelines.json` to place it.
 
 The timeline began on 2026-11-20 as the merge of two earlier ones, Ancient Civilizations and The Classical World. Their
 source files, plans and content scripts, and the merge itself, are in `archive/` (see its README); they are not built
@@ -222,7 +227,7 @@ carries `&set=` and `&order=` while the set is shown. Off in edit mode.
 ## Event maps
 
 Opening an event shows its rows on a map (`src/components/EventMap.tsx`, data helpers in `src/map/mapData.ts`). The
-map file is `public/maps/<timeline id>.json`; `npm run data -- index` points the timeline's `index.json` entry at it
+map file is `public/maps/<timeline id>.json`; the site's list points the timeline's `index.json` entry at it
 (`map`), and the app loads it the first time a reader opens an event (only for the site's own timelines).
 
 ```sh

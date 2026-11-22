@@ -1,11 +1,12 @@
 // One command for the data work on every timeline built from data-src/ (the table is scripts/lib/timelines.ts).
 //
-//   npm run data -- build <timeline|all>         compile data-src/<file> → public/timelines/<file>, then `index`
+//   npm run data -- build <timeline|all>         compile data-src/<file> → public/timelines/<file>
 //   npm run data -- importance <timeline|all>    apply the importance and row-link plans, compile, refresh docs/<short>-key-events.md
 //   npm run data -- format <timeline|all>        re-format the source file in the repo's compact style
 //   npm run data -- row-order <timeline> [args]  how close related rows sit (args as for scripts/row-order.ts)
 //   npm run data -- run-all <timeline> [--check] replay every content script in order, then `importance`
-//   npm run data -- index                        rewrite public/timelines/index.json from the files there
+//   npm run data -- index                        print the site's list of timelines (timelines/index.json, made at
+//                                                build time from public/timelines and data-src/site-timelines.json)
 //
 // <timeline> is a short name or an id (both ancient-classical for the bundled timeline). `npm run data:build`,
 // `npm run importance` and `npm run data:check` are aliases for the common cases.
@@ -19,7 +20,7 @@ import { compileSource, compiledText } from './lib/compile.ts';
 import { applyImportancePlan, importanceCounts, keyEventsMarkdown } from './lib/importance.ts';
 import { readSource, writeSource } from './lib/source-format.ts';
 import { SOURCE_TIMELINES, sourceTimeline, type SourceTimeline } from './lib/timelines.ts';
-import { TIMELINES_DIR, writeTimelineIndex } from './lib/timeline-index.ts';
+import { timelineIndexText } from './lib/timeline-index.ts';
 import { applyRowLinks } from './lib/row-links.ts';
 import { applyMemberships } from './lib/memberships.ts';
 
@@ -32,14 +33,14 @@ function build(t: SourceTimeline) {
   writeFileSync(t.compiled, compiledText(dataset));
   const n = (k: string) => (dataset[k] as unknown[]).length;
   console.log(`${t.short}: wrote ${t.compiled} (${n('tracks')} tracks, ${n('events')} events)`);
-  index();
   return dataset;
 }
 
-/** Rewrites the site's list of timelines from the files in public/timelines. */
+/** Prints the site's list of timelines as the build will make it, and notes on files it leaves out. */
 function index() {
-  for (const note of writeTimelineIndex()) console.log(`index: ${note}`);
-  console.log(`index: wrote ${TIMELINES_DIR}/index.json`);
+  const { text, notes } = timelineIndexText();
+  process.stdout.write(text);
+  for (const note of notes) console.error(`index: ${note}`);
 }
 
 /**

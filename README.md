@@ -44,8 +44,9 @@ small fictional kingdom, and see [docs/data-format.md](docs/data-format.md) for 
 
 There are four ways to get a timeline into the app:
 
-1. **Put it on your site.** Add the file to `public/timelines/` and run `npm run data -- index`, which lists every
-   file there in `public/timelines/index.json` (the next build copies both into `dist/timelines/`). On a site
+1. **Put it on your site.** Add the file to `public/timelines/`: the dev server and the build list every file there
+   in `timelines/index.json` (the build writes both into `dist/timelines/`). To place it in the list (the first
+   opens by default), add its `meta.id` to `data-src/site-timelines.json`; files not named there come last. On a site
    that is already built, copy the file into its `timelines/` folder and add an entry to `timelines/index.json` by
    hand: `{ "id": "<the file's meta.id>", "title": "…", "file": "my-timeline.json" }`. The first entry opens by
    default; remove the included timeline by deleting its file and entry. A site with no timelines at all

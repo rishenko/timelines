@@ -5,7 +5,7 @@
 export interface SourceTimeline {
   /** The short name used in commands: `npm run data -- build <short>`. */
   short: string;
-  /** meta.id, as in ?timeline= and public/timelines/index.json. */
+  /** meta.id, as in ?timeline=, the site's list (timelines/index.json) and data-src/site-timelines.json. */
   id: string;
   /** Readable source file, edited by hand and by the scripts below. */
   source: string;

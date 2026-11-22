@@ -13,7 +13,7 @@ import { TrackForm } from './TrackForm.tsx';
 import { localTimelineFiles } from '../../scripts/lib/local-data.ts';
 import { migrate } from '../data/migrate.ts';
 import type { Dataset, Track } from '../types.ts';
-import index from '../../public/timelines/index.json';
+import { timelineIndex } from '../../scripts/lib/timeline-index.ts';
 import { everyField } from '../data/fixtures/everyField.ts';
 
 afterEach(cleanup);
@@ -45,8 +45,8 @@ function sample<T>(items: T[]): T[] {
   });
 }
 
-// every bundled timeline (public/timelines/index.json), then the local ones
-const bundled = (index as { timelines: { id: string; file: string }[] }).timelines.map(
+// every bundled timeline (the site's list, timelines/index.json), then the local ones
+const bundled = timelineIndex().timelines.map(
   (t): [string, Dataset] => [t.id, migrate(JSON.parse(readFileSync(`public/timelines/${t.file}`, 'utf8'))) as Dataset],
 );
 const timelines: [string, Dataset][] = [
