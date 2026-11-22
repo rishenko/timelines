@@ -541,4 +541,15 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 | 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
 | 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |
 
-A new version adds a step to `migrate.ts` (with a test), a row here, and bumps `SCHEMA_VERSION`.
+A new version adds a step to `migrate.ts`, a row here, and bumps `SCHEMA_VERSION`. Each version has a test file in
+`src/data/fixtures/`, checked by `src/data/schemaVersions.test.ts`:
+
+- `everyField.ts` sets every field of the current version somewhere. The build fails when a field is added to
+  `src/types.ts` and not set there, and the editor round-trip test saves all of it.
+- It is written out as `v<version>.json`. Once a version is released its file never changes (the test checks a hash),
+  and `v<version>.lifted.json` records what it becomes in the current version.
+- Lifting a file twice gives the same result as lifting it once, for the fixtures and every timeline.
+
+A change is additive when every file of the old version is a valid file of the new one, with the same meaning; it
+needs only a new number. Renaming, removing or re-meaning a field, making one required, or refusing something that
+used to load is a breaking change, and its step must carry every value forward.
