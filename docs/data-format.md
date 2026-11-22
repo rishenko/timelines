@@ -564,8 +564,18 @@ a page that asks readers to add a timeline.
   (`&regions=anatolia,nile`), a comparison set (`&set=<row ids>&order=related|start`) and ticked event categories
   (`&cat=conflict,siege`). Row and source toggles and
   dating choices aren't in the link yet.
+- **Open on a span of years:** `&from=1914&to=1918` (years or full dates, read like `at`) opens on the finest zoom at
+  which the span fits the screen, centred on it. It overrides `inc` and `at`, and the link keeps it until the reader
+  scrolls or zooms. Only one of the two, or `from` not before `to`, is ignored.
+- **Link versions:** the app writes `v=1` first, then the view in a fixed order (`from`, `to` or `inc`, `at`; `view`,
+  `compress`, `rows`, `regions`, `set`, `order`, `cat`), lists in a fixed order (regions and categories as the
+  timeline lists them, a comparison set as picked), commas unescaped, and only what differs from how the timeline
+  opens. Links without `v` (made before) open as they always did. A link from a newer version of the app opens with a
+  notice and applies what it can; a link naming rows, events, regions or categories the timeline doesn't have opens
+  without them and says how many, once.
 - **Rename or remove ids with care:** links name rows, events, regions and categories by id. Add the old id to `redirects` (see
-  [keeping ids stable](#keeping-ids-stable)) and old links keep working.
+  [keeping ids stable](#keeping-ids-stable)) and old links keep working; a link naming an id redirected to `null` says
+  it was removed from this timeline.
 - **Update** by replacing the file at the same link. Readers get the new version the next time they open the
   timeline (the app checks the link for a few seconds, then opens the saved copy if it can't reach it), or with
   **Update** in Customize → Timelines. Edits a reader made are kept on top of the new version.
