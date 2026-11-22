@@ -423,6 +423,10 @@ def build(repo, module_names=None):
         if hasattr(mod, 'extra_memberships'):
             for rid, ms in mod.extra_memberships(me).items():
                 by_id[rid].setdefault('memberOf', []).extend(ms)
+    # then a module may adjust its memberships against every row's phases: link_phases(M, by_id)
+    for mod in modules:
+        if hasattr(mod, 'link_phases'):
+            mod.link_phases(me, by_id)
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     order = ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']

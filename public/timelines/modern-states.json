@@ -927,16 +927,25 @@
       "memberOf": [
         {
           "row": "nato",
+          "phase": "West Germany",
           "start": 1955,
-          "ongoing": true,
+          "end": 1990,
           "startDates": [
             {
               "year": 1955,
               "source": {
                 "sourceKey": "wp-member-states-of-nato",
                 "sourceLocation": "List of member states: Germany | Accession 6 May 1955"
-              },
-              "note": "West Germany joined in 1955; reunified Germany kept the membership in 1990. East and West Germany are phases of one row here, so this row also shows East Germany in the Warsaw Pact and Comecon."
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox event_end: Reunification, 3 October 1990(b)"
+              }
             }
           ],
           "sources": [
@@ -945,10 +954,33 @@
               "sourceLocation": "List of member states: Germany | Accession 6 May 1955"
             }
           ],
-          "startEvent": "nato-admits-1955"
+          "startEvent": "nato-admits-1955",
+          "endEvent": "reunification"
+        },
+        {
+          "row": "nato",
+          "start": 1990,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1990,
+              "source": {
+                "sourceKey": "wp-west-germany",
+                "sourceLocation": "infobox event_end: Reunification, 3 October 1990(b)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-member-states-of-nato",
+              "sourceLocation": "List of member states: Germany | Accession 6 May 1955"
+            }
+          ],
+          "startEvent": "reunification"
         },
         {
           "row": "warsaw-pact",
+          "phase": "East Germany",
           "start": 1955,
           "end": 1990,
           "startDates": [
@@ -957,8 +989,7 @@
               "source": {
                 "sourceKey": "wp-warsaw-pact",
                 "sourceLocation": "text: \"On 14 May 1955, the USSR and seven other Eastern European countries\""
-              },
-              "note": "East Germany was the member. East and West Germany are phases of one row here, so this row also shows West Germany in NATO from 1955."
+              }
             }
           ],
           "endDates": [
@@ -981,6 +1012,7 @@
         },
         {
           "row": "comecon",
+          "phase": "East Germany",
           "start": 1950,
           "end": 1990,
           "startDates": [
@@ -989,8 +1021,7 @@
               "source": {
                 "sourceKey": "wp-comecon",
                 "sourceLocation": "text: \"its foundation was publicly announced on 25 January; Albania joined a month later and East Germany in 1950.\""
-              },
-              "note": "East Germany was the member. East and West Germany are phases of one row here, so this row also shows West Germany in NATO from 1955."
+              }
             }
           ],
           "endDates": [
@@ -20845,14 +20876,47 @@
         },
         {
           "row": "non-aligned-movement",
+          "phase": "Kingdom of Yemen (North)",
           "start": 1961,
-          "end": 1990,
+          "end": 1962,
           "startDates": [
             {
               "year": 1961,
               "source": {
                 "sourceKey": "wp-non-aligned-movement",
                 "sourceLocation": "Former members: # {{flag|North Yemen}} (1961–1990)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1962,
+              "source": {
+                "sourceKey": "wp-yemen-arab-republic",
+                "sourceLocation": "infobox year_start: 1962"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-non-aligned-movement",
+              "sourceLocation": "Former members: # {{flag|North Yemen}} (1961–1990)"
+            }
+          ],
+          "startEvent": "nam-founded",
+          "endEvent": "north-yemen-civil-war"
+        },
+        {
+          "row": "non-aligned-movement",
+          "phase": "Yemen Arab Republic (North)",
+          "start": 1962,
+          "end": 1990,
+          "startDates": [
+            {
+              "year": 1962,
+              "source": {
+                "sourceKey": "wp-yemen-arab-republic",
+                "sourceLocation": "infobox year_start: 1962"
               }
             }
           ],
@@ -20871,10 +20935,12 @@
               "sourceLocation": "Former members: # {{flag|North Yemen}} (1961–1990)"
             }
           ],
-          "startEvent": "nam-founded"
+          "startEvent": "north-yemen-civil-war",
+          "endEvent": "yemeni-unification"
         },
         {
           "row": "non-aligned-movement",
+          "phase": "People's Democratic Republic of Yemen (South)",
           "start": 1970,
           "end": 1990,
           "startDates": [
@@ -20901,7 +20967,8 @@
               "sourceLocation": "Former members: # {{flag|South Yemen}} (1970–1990)"
             }
           ],
-          "startEvent": "non-aligned-movement-admits-1970"
+          "startEvent": "non-aligned-movement-admits-1970",
+          "endEvent": "yemeni-unification"
         }
       ]
     },
