@@ -5,7 +5,7 @@
 // They are converted with the timeline's own calendar (so "1450 BCE" becomes -1449, because BCE/CE has no
 // year 0). A "c." on an event's, lifespan stretch's or phase's start sets `circa`. Integers pass through unchanged. The result
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
-import { parseDate } from '../../src/lib/calendar.ts';
+import { parseFullDate } from '../../src/lib/calendar.ts';
 import { validateDataset } from '../../src/data/validate.ts';
 import type { Calendar } from '../../src/types.ts';
 
@@ -16,9 +16,9 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
   const cal = raw.meta.calendar;
   const problems: string[] = [];
 
-  const year = (v: unknown, where: string): { year: number; circa: boolean } => {
+  const year = (v: unknown, where: string): { year: number; month?: number; day?: number; circa: boolean } => {
     if (typeof v === 'number') return { year: v, circa: false };
-    const d = typeof v === 'string' ? parseDate(v, cal) : null;
+    const d = typeof v === 'string' ? parseFullDate(v, cal) : null;
     if (!d) {
       problems.push(`${where}: can't read the year ${JSON.stringify(v)}`);
       return { year: 0, circa: false };
@@ -27,17 +27,26 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
   };
 
   const claims = (list: unknown, where: string) =>
-    Array.isArray(list) ? list.map((c: Obj, i) => ({ ...c, year: year(c.year, `${where}[${i}]`).year })) : list;
+    Array.isArray(list)
+      ? list.map((c: Obj, i) => {
+          const d = year(c.year, `${where}[${i}]`);
+          return { ...c, year: d.year, ...(d.month ? { month: d.month } : {}), ...(d.day ? { day: d.day } : {}) };
+        })
+      : list;
 
   /** Converts start/end (+ claims) on an event or a lifespan. */
   const dated = (o: Obj, where: string): Obj => {
     const out: Obj = { ...o };
     const s = year(o.start, `${where} start`);
     out.start = s.year;
+    if (s.month) out.startMonth = s.month;
+    if (s.day) out.startDay = s.day;
     let circa = s.circa;
     if (o.end !== undefined) {
       const e = year(o.end, `${where} end`);
       out.end = e.year;
+      if (e.month) out.endMonth = e.month;
+      if (e.day) out.endDay = e.day;
       circa ||= e.circa;
     }
     if (circa) out.circa = true;
@@ -75,6 +84,8 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
           }
         : {}),
       ...(Array.isArray(t.phases) ? { phases: (t.phases as Obj[]).map((p) => dated(p, `track ${t.id} phase ${p.name}`)) } : {}),
+      // a membership in another row is dated like a phase
+      ...(Array.isArray(t.memberOf) ? { memberOf: (t.memberOf as Obj[]).map((m) => dated(m, `track ${t.id} membership in ${m.row}`)) } : {}),
     })),
     events: (raw.events as Obj[]).map((e) => dated(e, `event ${e.uuid}`)),
   };

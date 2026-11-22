@@ -3,6 +3,7 @@ import { compareEvents, effectiveEnd, isSpan } from '../lib/years.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
 import { childrenMap } from '../lib/tracks.ts';
+import { at0, at1, hasDays, startAt } from '../lib/subYear.ts';
 
 export interface LaneDef {
   id: string;
@@ -151,7 +152,9 @@ export function layoutLanes(
     const overflow: { id: string; x: number }[] = [];
     for (const e of sorted) {
       if (!e.tracks.some((t) => members.has(t))) continue;
-      const span = isSpan(e);
+      // a span given in months or days too short to draw as a bar at this zoom is drawn as a point, in its middle
+      const short = isSpan(e) && hasDays(e) && scale.x(at1(e, effectiveEnd(e, present))) - scale.x(at0(e)) < o.pointPx;
+      const span = isSpan(e) && !short;
       let x0: number;
       let x1: number;
       let footprintStart: number;
@@ -164,9 +167,9 @@ export function layoutLanes(
       if (span) {
         const end = effectiveEnd(e, present);
         // an uncertain bar spans its whole window; the uncertain parts are drawn lighter
-        x0 = scale.x(Math.min(e.start, sw?.[0] ?? e.start));
-        // end year is inclusive: the bar runs to the end of that year
-        x1 = Math.max(scale.x(Math.max(end, ew?.[1] ?? end) + 1), x0 + o.minBarPx);
+        x0 = scale.x(Math.min(at0(e), sw?.[0] ?? at0(e)));
+        // the end date is inclusive: the bar runs to the end of that year (or month, or day)
+        x1 = Math.max(scale.x(Math.max(at1(e, end), (ew?.[1] ?? end) + 1)), x0 + o.minBarPx);
         if (sw || ew) {
           // The darker middle runs from the latest possible start to the earliest possible end.
           // When the ranges overlap (e.g. a 42-year reign with a 120-year chronology spread) there is
@@ -174,8 +177,8 @@ export function layoutLanes(
           let solid0 = sw ? scale.x(sw[1]) : x0;
           let solid1 = ew ? scale.x(ew[0] + 1) : x1;
           if (solid1 <= solid0) {
-            solid0 = scale.x(e.start);
-            solid1 = scale.x(end + 1);
+            solid0 = scale.x(at0(e));
+            solid1 = scale.x(at1(e, end));
           }
           if (sw) fadeIn = Math.max(0, solid0 - x0);
           if (ew) fadeOut = Math.max(0, x1 - solid1);
@@ -184,8 +187,8 @@ export function layoutLanes(
         // the label starts where the bar is solid
         footprintEnd = Math.max(x1, x0 + (fadeIn ?? 0) + labelWidth(e.title, o, rank(e) === 1));
       } else {
-        // a single-year event sits in the middle of its year
-        x0 = x1 = scale.x(e.start + 0.5);
+        // a single-date event sits in the middle of its year (or month, or day); a short span in its middle
+        x0 = x1 = scale.x((at0(e) + (short ? at1(e, effectiveEnd(e, present)) : at1(e, undefined))) / 2);
         footprintStart = x0 - o.pointPx / 2;
         footprintEnd = x0 + o.pointPx / 2 + labelWidth(e.title, o, rank(e) === 1);
         if (sw) {
@@ -282,25 +285,26 @@ export interface PlacedPhase extends ResolvedPhase {
  */
 export function placeOnLines<T extends ResolvedPhase>(trackId: string, list: T[], fromLevel = 0): (T & PlacedPhase)[] {
   const all = list.map((p) => ({ ...p, trackId }));
-  all.sort((a, b) => a.start - b.start);
+  all.sort((a, b) => at0(a) - at0(b));
   const lineEnds: number[] = [];
   const lastOnLine: PlacedPhase[] = [];
   return all.map((p) => {
-    let line = lineEnds.findIndex((end) => end <= p.start);
+    // (a part may share a line with one ending on the day, month or year it starts)
+    let line = lineEnds.findIndex((end) => end <= at0(p));
     if (line < 0) line = lineEnds.length;
-    lineEnds[line] = p.end;
+    lineEnds[line] = startAt(p.end, p.endMonth, p.endDay);
     const placed: T & PlacedPhase = {
       ...p,
       level: fromLevel + line,
-      nameFrom: Math.min(p.start, p.startWindow?.[0] ?? p.start),
-      nameTo: Math.max(p.end, p.endWindow?.[1] ?? p.end) + 1,
+      nameFrom: Math.min(at0(p), p.startWindow?.[0] ?? p.start),
+      nameTo: Math.max(at1(p), (p.endWindow?.[1] ?? p.end) + 1),
     };
     // the band before on this line reaches into this one (through its uncertain end, or by ending in the year this
     // one starts): split the name strip at this phase's start
     const prev = lastOnLine[line];
     if (prev && prev.nameTo > placed.nameFrom) {
-      prev.nameTo = Math.max(prev.nameFrom, p.start);
-      placed.nameFrom = Math.max(placed.nameFrom, p.start);
+      prev.nameTo = Math.max(prev.nameFrom, at0(p));
+      placed.nameFrom = Math.max(placed.nameFrom, at0(p));
     }
     lastOnLine[line] = placed;
     return placed;
@@ -419,18 +423,18 @@ export function layoutPhaseStrips(
   const within = (p: PlacedPhase): [number, number] | null => {
     if (!lifespan) return [-Infinity, Infinity];
     const s = lifespan.find((s) => Math.min(s.start, s.startWindow?.[0] ?? s.start) <= p.end && Math.max(s.end, s.endWindow?.[1] ?? s.end) >= p.start);
-    return s ? [x(Math.min(s.start, s.startWindow?.[0] ?? s.start)), x(Math.max(s.end, s.endWindow?.[1] ?? s.end) + 1)] : null;
+    return s ? [x(Math.min(at0(s), s.startWindow?.[0] ?? s.start)), x(Math.max(at1(s), (s.endWindow?.[1] ?? s.end) + 1))] : null;
   };
   const levels = placed.length ? Math.max(...placed.map((p) => p.level)) + 1 : 0;
   const byLine: PlacedPhase[][] = Array.from({ length: levels }, () => []);
   for (const p of placed) byLine[p.level].push(p);
   const names = new Map<PlacedPhase, PhaseCell['name']>();
   for (const line of byLine) {
-    line.sort((a, b) => a.start - b.start);
+    line.sort((a, b) => at0(a) - at0(b));
     // names inside their phases, where at least a few letters fit (each in its own stretch: see placePhases), from
     // the line that marks the phase's start, so the line never runs through its name
     for (const p of line) {
-      const from = x(Math.max(p.nameFrom, p.start));
+      const from = x(Math.max(p.nameFrom, at0(p)));
       if (x(p.nameTo) - from >= o.minNamePx) names.set(p, { x0: from, x1: x(p.nameTo), outside: false });
     }
     // a line with no room for names stays thin; on a line with names, a phase too short for its own gets it in the
@@ -438,7 +442,7 @@ export function layoutPhaseStrips(
     // which would read as that phase's name). A membership's line is mostly blank strip, so a short membership gets
     // its name beside it even when no name fits inside (the line is thin only when there's no room for any).
     if (!line.some((p) => names.get(p) || p.member !== undefined)) continue;
-    const boxes = () => line.flatMap((q) => [[x(q.start), x(q.end + 1)], ...(names.get(q) ? [[names.get(q)!.x0, names.get(q)!.x1]] : [])]);
+    const boxes = () => line.flatMap((q) => [[x(at0(q)), x(at1(q))], ...(names.get(q) ? [[names.get(q)!.x0, names.get(q)!.x1]] : [])]);
     const free = (x0: number, x1: number) => boxes().every(([b0, b1]) => b1 <= x0 || b0 >= x1);
     line.forEach((p, i) => {
       if (names.get(p)) return;
@@ -446,16 +450,16 @@ export function layoutPhaseStrips(
       if (!room) return;
       const want = stripNameWidth(p.name, o) + o.pointerPx;
       const enough = Math.min(o.minNamePx, want);
-      const end = x(p.end + 1);
+      const end = x(at1(p));
       const next = line[i + 1];
-      const afterTo = Math.min(end + want, next ? x(next.start) - o.gapPx : Infinity, room[1]);
+      const afterTo = Math.min(end + want, next ? x(at0(next)) - o.gapPx : Infinity, room[1]);
       if (afterTo - end >= enough && free(end, afterTo)) {
         names.set(p, { x0: end, x1: afterTo, outside: 'after' });
         return;
       }
-      const start = x(p.start);
+      const start = x(at0(p));
       const prev = line[i - 1];
-      const beforeFrom = Math.max(start - want, prev ? x(prev.end + 1) + o.gapPx : -Infinity, room[0]);
+      const beforeFrom = Math.max(start - want, prev ? x(at1(prev)) + o.gapPx : -Infinity, room[0]);
       if (start - beforeFrom >= enough && free(beforeFrom, start)) names.set(p, { x0: beforeFrom, x1: start, outside: 'before' });
     });
   }
@@ -472,19 +476,19 @@ export function layoutPhaseStrips(
     line.forEach((p, i) => {
       const next = line[i + 1];
       const prev = line[i - 1];
-      let x0 = x(Math.min(p.start, p.startWindow?.[0] ?? p.start));
-      let x1 = x(Math.max(p.end, p.endWindow?.[1] ?? p.end) + 1);
-      const startX = x(p.start);
+      let x0 = x(Math.min(at0(p), p.startWindow?.[0] ?? p.start));
+      let x1 = x(Math.max(at1(p), (p.endWindow?.[1] ?? p.end) + 1));
+      const startX = x(at0(p));
       let fadeIn = p.startWindow ? x(p.startWindow[1]) - x0 : 0;
       let fadeOut = p.endWindow ? x1 - x(p.endWindow[0] + 1) : 0;
       // where two phases' bands on a line run into each other (an uncertain end or start, or a shared boundary
       // year), they meet at the later one's start, as their names do; a change is then drawn once, by its start line
-      const abuts = !!next && next.start <= p.end + 1;
-      if (next && x(next.start) < x1) {
-        x1 = Math.max(x(next.start), startX);
+      const abuts = !!next && at0(next) <= at1(p);
+      if (next && x(at0(next)) < x1) {
+        x1 = Math.max(x(at0(next)), startX);
         fadeOut = p.endWindow ? Math.min(fadeOut, x1 - x(p.endWindow[0] + 1)) : 0;
       }
-      if (prev && x0 < startX && x(Math.max(prev.end, prev.endWindow?.[1] ?? prev.end) + 1) > x0) {
+      if (prev && x0 < startX && x(Math.max(at1(prev), (prev.endWindow?.[1] ?? prev.end) + 1)) > x0) {
         x0 = startX;
         fadeIn = 0;
       }
@@ -497,10 +501,10 @@ export function layoutPhaseStrips(
         fadeIn: Math.max(0, fadeIn),
         fadeOut: Math.max(0, fadeOut),
         startX,
-        endX: p.ongoing || abuts ? null : Math.min(x(p.end + 1), x1),
+        endX: p.ongoing || abuts ? null : Math.min(x(at1(p)), x1),
         name: names.get(p) ?? null,
       });
     });
-  cells.sort((a, b) => a.phase.start - b.phase.start || a.phase.level - b.phase.level);
+  cells.sort((a, b) => at0(a.phase) - at0(b.phase) || a.phase.level - b.phase.level);
   return { cells, lines, height: top };
 }

@@ -1,4 +1,5 @@
 import { effectiveEnd } from '../lib/years.ts';
+import { at0, at1, startAt } from '../lib/subYear.ts';
 import type { ResolvedEvent, ResolvedSpan } from '../lib/chronology.ts';
 
 /** Years that must stay uncompressed on the axis: every event start and end, the edges of their error windows, and track lifespans. */
@@ -9,17 +10,21 @@ export function anchorsFor(
   present: number,
   spans: ResolvedSpan[] = [],
   range?: { start: number; end: number },
+  /** Zoomed in below a year: the ends of dates (the end of a year, month or day) are kept uncompressed too. */
+  fine = false,
 ): number[] {
   const out: number[] = [];
   for (const e of events) {
-    out.push(e.start);
+    out.push(at0(e));
     const end = effectiveEnd(e, present);
-    if (end !== e.start) out.push(end);
+    if (end !== e.start || e.endMonth) out.push(startAt(end, e.endMonth, e.endDay));
+    if (fine) out.push(at1(e, e.end === undefined && !e.ongoing ? undefined : end));
     if (e.startWindow) out.push(...e.startWindow);
     if (e.endWindow) out.push(...e.endWindow);
   }
   for (const s of spans) {
-    out.push(s.start, s.end);
+    out.push(at0(s), startAt(s.end, s.endMonth, s.endDay));
+    if (fine) out.push(at1(s));
     if (s.startWindow) out.push(...s.startWindow);
     if (s.endWindow) out.push(...s.endWindow);
   }

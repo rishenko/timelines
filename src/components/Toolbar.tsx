@@ -1,3 +1,4 @@
+import { incrementButton, incrementSpoken } from '../lib/subYear.ts';
 import type { ReactNode } from 'react';
 import type { PanelName } from '../state/panels.ts';
 import type { View } from '../state/url.ts';
@@ -76,12 +77,12 @@ export function Toolbar(p: Props) {
               <button
                 key={inc}
                 className={`seg ${p.increment === inc ? 'on' : ''}`}
-                aria-label={`${inc} years per tick`}
+                aria-label={incrementSpoken(inc)}
                 aria-pressed={p.increment === inc}
-                title={`${inc} years per tick`}
+                title={incrementSpoken(inc)}
                 onClick={() => p.onIncrement(inc)}
               >
-                {inc}
+                {incrementButton(inc)}
               </button>
             ))}
           </div>

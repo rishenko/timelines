@@ -1,6 +1,6 @@
-import type { Calendar, Dataset, Track, TrackSpan } from '../types.ts';
+import type { Calendar, Dataset, DateDays, Track, TrackSpan } from '../types.ts';
 import { resolveSpan, type ChronologySelection, type ResolvedPhase, type ResolvedSpan } from './chronology.ts';
-import { formatYear } from './calendar.ts';
+import { formatDate } from './calendar.ts';
 
 /**
  * A row's lifespan (Track.span): typed as one stretch or a list of stretches, or, when the row has phases and no
@@ -50,12 +50,16 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
     if (cur && lo(p) - hi(cur) <= GAP_TOLERANCE) {
       if (p.start < cur.start) {
         cur.start = p.start;
+        cur.startMonth = p.startMonth;
+        cur.startDay = p.startDay;
         cur.startWindow = p.startWindow;
         cur.startCirca = p.circa;
         cur.startEvent = p.startEvent;
       } else if (p.startWindow && p.startWindow[0] < lo(cur)) cur.startWindow = [p.startWindow[0], cur.startWindow?.[1] ?? cur.start];
       if (p.end > cur.end || (p.end === cur.end && p.ongoing)) {
         cur.end = p.end;
+        cur.endMonth = p.endMonth;
+        cur.endDay = p.endDay;
         cur.endWindow = p.endWindow;
         cur.endCirca = p.circa;
         cur.ongoing = p.ongoing;
@@ -66,6 +70,10 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
       out.push({
         start: p.start,
         end: p.end,
+        startMonth: p.startMonth,
+        startDay: p.startDay,
+        endMonth: p.endMonth,
+        endDay: p.endDay,
         startWindow: p.startWindow,
         endWindow: p.endWindow,
         startCirca: p.circa,
@@ -78,6 +86,7 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
   }
   return out.map(({ startCirca, endCirca, ...s }) => {
     const r: ResolvedSpan = { start: s.start, end: s.end, derived: true };
+    for (const k of ['startMonth', 'startDay', 'endMonth', 'endDay'] as const) if (s[k]) r[k] = s[k];
     if (s.startWindow) r.startWindow = s.startWindow;
     if (s.endWindow) r.endWindow = s.endWindow;
     if (startCirca || endCirca) r.circa = true;
@@ -110,6 +119,6 @@ export function stretchHull(list: { start: number; end: number }[] | undefined):
 }
 
 /** "1918 – 1940", "c. 1650 BCE – c. 1190 BCE", "1991 – ongoing". */
-export function spanDates(s: { start: number; end: number; ongoing?: boolean }, cal: Calendar, approx: boolean): string {
-  return `${formatYear(s.start, cal, approx)} – ${s.ongoing ? 'ongoing' : formatYear(s.end, cal, approx)}`;
+export function spanDates(s: { start: number; end: number; ongoing?: boolean } & DateDays, cal: Calendar, approx: boolean): string {
+  return `${formatDate(s.start, s.startMonth, s.startDay, cal, approx)} – ${s.ongoing ? 'ongoing' : formatDate(s.end, s.endMonth, s.endDay, cal, approx)}`;
 }

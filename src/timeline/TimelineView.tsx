@@ -200,7 +200,7 @@ export function TimelineView(props: Props) {
     return out;
   }, [allLanes, spans, phases, memberOf]);
   const scale = useMemo(
-    () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
+    () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range, increment < 1), { increment, compress, calendar: cal }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
   // a folded row's background is one lifespan: when it or any row folded into it existed, in its own colour (its

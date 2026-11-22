@@ -1,4 +1,4 @@
-import type { Chronology, DateClaim, Dataset, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
+import type { Chronology, DateClaim, DateDays, Dataset, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { trackIndex, trackPath } from './tracks.ts';
 import { datasetPresent } from './years.ts';
 
@@ -28,7 +28,7 @@ export interface ResolvedEvent extends TimelineEvent {
   endWindow?: Window;
 }
 
-export interface ResolvedSpan {
+export interface ResolvedSpan extends DateDays {
   start: number;
   end: number;
   /** The span's dates are marked approximate (TrackSpan.circa). */
@@ -184,6 +184,8 @@ export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selec
   if (span.ongoing || span.end === undefined) {
     // still going: runs to the present, which no dating system moves
     const out: ResolvedSpan = { start: s.year, end: Math.max(datasetPresent(ds), s.year), startWindow: s.window, ongoing: true };
+    if (span.startMonth) out.startMonth = span.startMonth;
+    if (span.startDay) out.startDay = span.startDay;
     if (span.circa) out.circa = true;
     if (span.ongoingSources?.length) out.ongoingSources = span.ongoingSources;
     if (span.startEvent) out.startEvent = span.startEvent;
@@ -191,6 +193,8 @@ export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selec
   }
   const e = resolveDate(ds, span.end, span.endDates, chron, selection, !!span.circa);
   const out: ResolvedSpan = { start: s.year, end: Math.max(e.year, s.year), startWindow: s.window, endWindow: e.window };
+  // months and days ride along with the year when a dating system shifts it
+  for (const k of ['startMonth', 'startDay', 'endMonth', 'endDay'] as const) if (span[k]) out[k] = span[k];
   if (span.circa) out.circa = true;
   if (span.startEvent) out.startEvent = span.startEvent;
   if (span.endEvent) out.endEvent = span.endEvent;

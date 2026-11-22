@@ -41,6 +41,38 @@
           ]
         }
       }
+    },
+    {
+      "id": "poc-days-border",
+      "title": "POC: days and months (Tamsin Reach)",
+      "file": "poc-days-border.json",
+      "subtitle": "Invented test timeline: a border world changing hands several times in one year. Not for release.",
+      "eventCount": 1,
+      "calendar": {
+        "before": "BR",
+        "after": "AR",
+        "yearZero": true
+      }
+    },
+    {
+      "id": "poc-days-ww",
+      "title": "POC: days and months (World Wars)",
+      "file": "poc-days-ww.json",
+      "subtitle": "Test timeline for dates in months and days. Not for release.",
+      "eventCount": 16,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      }
     }
   ]
 }

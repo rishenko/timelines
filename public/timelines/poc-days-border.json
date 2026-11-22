@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 3,
+  "meta": {
+    "id": "poc-days-border",
+    "title": "POC: days and months (Tamsin Reach)",
+    "subtitle": "Invented test timeline: a border world changing hands several times in one year. Not for release.",
+    "calendar": {
+      "before": "BR",
+      "after": "AR",
+      "yearZero": true
+    },
+    "increments": [
+      "day",
+      "week",
+      "month",
+      "quarter",
+      1,
+      5,
+      10,
+      50
+    ],
+    "defaultIncrement": 5,
+    "circaFade": 0
+  },
+  "present": 470,
+  "tracks": [
+    {
+      "id": "coalition",
+      "name": "The Coalition",
+      "color": "#3a5a8f",
+      "span": {
+        "start": 120,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 120,
+            "source": {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "founding"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "poc-notes",
+            "sourceLocation": "still standing"
+          }
+        ]
+      }
+    },
+    {
+      "id": "clans-of-varn",
+      "name": "The Clans of Varn",
+      "color": "#3f7a3a",
+      "span": {
+        "start": 300,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 300,
+            "source": {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "arrival"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "poc-notes",
+            "sourceLocation": "still standing"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tamsin-reach",
+      "name": "Tamsin Reach",
+      "color": "#8f6a3a",
+      "span": {
+        "start": 386,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 386,
+            "source": {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "first entry"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "poc-notes",
+            "sourceLocation": "last entry"
+          }
+        ]
+      },
+      "memberOf": [
+        {
+          "row": "clans-of-varn",
+          "start": 386,
+          "startDates": [
+            {
+              "year": 386,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "account A: 7 October"
+              },
+              "month": 10,
+              "day": 7
+            },
+            {
+              "year": 386,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "account B: 1 October"
+              },
+              "month": 10,
+              "day": 1
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "holder from 7 October 386"
+            }
+          ],
+          "end": 393,
+          "endDates": [
+            {
+              "year": 393,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder until 30 December 393"
+              },
+              "month": 12,
+              "day": 30
+            }
+          ],
+          "startEvent": "varn-take-tamsin",
+          "startMonth": 10,
+          "startDay": 7,
+          "endMonth": 12,
+          "endDay": 30
+        },
+        {
+          "row": "coalition",
+          "start": 393,
+          "startDates": [
+            {
+              "year": 393,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder from 31 December 393"
+              },
+              "month": 12,
+              "day": 31
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "holder from 31 December 393"
+            }
+          ],
+          "end": 398,
+          "endDates": [
+            {
+              "year": 398,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder until 21 August 398"
+              },
+              "month": 8,
+              "day": 21
+            }
+          ],
+          "startMonth": 12,
+          "startDay": 31,
+          "endMonth": 8,
+          "endDay": 21
+        },
+        {
+          "row": "clans-of-varn",
+          "start": 398,
+          "startDates": [
+            {
+              "year": 398,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder from 3 July 398"
+              },
+              "month": 7,
+              "day": 3
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "holder from 3 July 398"
+            }
+          ],
+          "end": 398,
+          "endDates": [
+            {
+              "year": 398,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder until 4 July 398"
+              },
+              "month": 7,
+              "day": 4
+            }
+          ],
+          "startMonth": 7,
+          "startDay": 3,
+          "endMonth": 7,
+          "endDay": 4
+        },
+        {
+          "row": "clans-of-varn",
+          "start": 398,
+          "startDates": [
+            {
+              "year": 398,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder from 18 August 398"
+              },
+              "month": 8,
+              "day": 18
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "holder from 18 August 398"
+            }
+          ],
+          "end": 398,
+          "endDates": [
+            {
+              "year": 398,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder until 2 December 398"
+              },
+              "month": 12,
+              "day": 2
+            }
+          ],
+          "startMonth": 8,
+          "startDay": 18,
+          "endMonth": 12,
+          "endDay": 2
+        },
+        {
+          "row": "coalition",
+          "start": 398,
+          "startDates": [
+            {
+              "year": 398,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder from 2 December 398"
+              },
+              "month": 12,
+              "day": 2
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "holder from 2 December 398"
+            }
+          ],
+          "end": 448,
+          "endDates": [
+            {
+              "year": 448,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder until 19 May 448"
+              },
+              "month": 5,
+              "day": 19
+            }
+          ],
+          "startMonth": 12,
+          "startDay": 2,
+          "endMonth": 5,
+          "endDay": 19
+        },
+        {
+          "row": "clans-of-varn",
+          "start": 448,
+          "startDates": [
+            {
+              "year": 448,
+              "source": {
+                "sourceKey": "poc-notes",
+                "sourceLocation": "holder from 20 May 448"
+              },
+              "month": 5,
+              "day": 20
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "holder from 20 May 448"
+            }
+          ],
+          "ongoing": true,
+          "ongoingSources": [
+            {
+              "sourceKey": "poc-notes",
+              "sourceLocation": "last entry"
+            }
+          ],
+          "startMonth": 5,
+          "startDay": 20
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "poc-notes": {
+      "name": "Invented for the days-and-months POC",
+      "tags": [
+        "test"
+      ]
+    }
+  },
+  "tags": {
+    "test": {
+      "name": "Test data"
+    }
+  },
+  "events": [
+    {
+      "uuid": "varn-take-tamsin",
+      "title": "The Clans of Varn take Tamsin Reach",
+      "start": 386,
+      "tracks": [
+        "tamsin-reach",
+        "clans-of-varn"
+      ],
+      "importance": 1,
+      "descr": "Invented test event.",
+      "sources": [
+        {
+          "sourceKey": "poc-notes",
+          "sourceLocation": "account A: 7 October"
+        }
+      ],
+      "startMonth": 10,
+      "startDay": 7
+    }
+  ]
+}

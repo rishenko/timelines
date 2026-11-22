@@ -32,7 +32,8 @@
     "reflow": "node scripts/reflow.ts",
     "targets": "node scripts/targets.ts",
     "perf:scroll": "node scripts/profile-scroll.ts",
-    "a11y:report": "node scripts/a11y-report.ts"
+    "a11y:report": "node scripts/a11y-report.ts",
+    "zoom-shots": "node scripts/zoom-shots.ts"
   },
   "dependencies": {
     "react": "^19.3.1",
