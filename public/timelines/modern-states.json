@@ -30,7 +30,14 @@
     "range": {
       "start": 1500,
       "end": 2026
-    }
+    },
+    "continues": [
+      {
+        "timeline": "medieval",
+        "at": 1500,
+        "side": "before"
+      }
+    ]
   },
   "present": 2026,
   "tracks": [
