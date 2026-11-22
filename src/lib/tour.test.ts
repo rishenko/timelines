@@ -25,6 +25,7 @@ describe('guided tour', () => {
       'Rows',
       'Events',
       'Lifespans',
+      'Phases',
       'Timelines',
       'Timeline or table',
       'Dating',
@@ -44,5 +45,33 @@ describe('guided tour', () => {
     // a row with phases has a lifespan worked out from them, so take the phases away too
     const noSpans = { ...plain, tracks: plain.tracks.map(({ span: _span, phases: _phases, ...t }) => t) } as Dataset;
     expect(tourSteps(noSpans, { hasDating: false, hasSubRows: false }).map((s) => s.title)).not.toContain('Lifespans');
+  });
+
+  it('explains phases after lifespans, and memberships only when a row has one', () => {
+    const plain = plainTimeline();
+    const titles = tourSteps(plain, { hasDating: false, hasSubRows: false }).map((s) => s.title);
+    expect(titles.indexOf('Phases')).toBe(titles.indexOf('Lifespans') + 1);
+    expect(titles).not.toContain('Memberships');
+    const noPhases = { ...plain, tracks: plain.tracks.map(({ phases: _p, ...t }) => t) } as Dataset;
+    expect(tourSteps(noPhases, { hasDating: false, hasSubRows: false }).map((s) => s.title)).not.toContain('Phases');
+
+    const member = {
+      ...plain,
+      tracks: plain.tracks.map((t) => (t.id === 'saltmarsh' ? { ...t, memberOf: [{ row: 'quay', start: 0, end: 50, sources: [] }] } : t)),
+    } as Dataset;
+    const steps = tourSteps(member, { hasDating: false, hasSubRows: false });
+    expect(steps.map((s) => s.title).indexOf('Memberships')).toBe(steps.map((s) => s.title).indexOf('Phases') + 1);
+    expect(steps.find((s) => s.title === 'Memberships')?.target).toBe('.tl-phase.member');
+  });
+
+  it('mentions a second strip only when phases overlap', () => {
+    const plain = plainTimeline();
+    const text = (d: Dataset) => tourSteps(d, { hasDating: false, hasSubRows: false }).find((s) => s.title === 'Phases')!.text;
+    expect(text(plain)).not.toMatch(/second strip/);
+    const rival = {
+      ...plain,
+      tracks: plain.tracks.map((t) => (t.id === 'quay' ? { ...t, phases: [...t.phases!, { name: 'Rival Council', start: 100, end: 120 }] } : t)),
+    } as Dataset;
+    expect(text(rival)).toMatch(/second strip/);
   });
 });
