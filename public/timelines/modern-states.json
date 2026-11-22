@@ -1719,7 +1719,8 @@
             "source": {
               "sourceKey": "wp-dutch-colonial-empire",
               "sourceLocation": "infobox year_end: 1962"
-            }
+            },
+            "note": "The infobox ends the empire in 1962, when Dutch New Guinea passed to UN administration."
           }
         ]
       }
@@ -2411,25 +2412,6 @@
       "color": "#1f7a5a",
       "parent": "central-america",
       "url": "https://en.wikipedia.org/wiki/Mexico",
-      "span": {
-        "start": 1521,
-        "ongoing": true,
-        "startDates": [
-          {
-            "year": 1521,
-            "source": {
-              "sourceKey": "wp-new-spain",
-              "sourceLocation": "infobox year_start: 1521"
-            }
-          }
-        ],
-        "ongoingSources": [
-          {
-            "sourceKey": "wp-mexico",
-            "sourceLocation": "infobox established_event6: Current constitution, 5 February 1917 (current state)"
-          }
-        ]
-      },
       "phases": [
         {
           "name": "New Spain",
@@ -2643,6 +2625,32 @@
             }
           ],
           "endEvent": "mexican-revolution"
+        },
+        {
+          "name": "Revolution",
+          "start": 1910,
+          "end": 1917,
+          "startDates": [
+            {
+              "year": 1910,
+              "source": {
+                "sourceKey": "wp-mexican-revolution",
+                "sourceLocation": "infobox date: 20 November 1910 – 1 December 1920"
+              },
+              "note": "Madero calls for an armed uprising against Díaz (Plan of San Luis Potosí)."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-mexico",
+                "sourceLocation": "infobox: Current constitution (5 February 1917)"
+              }
+            }
+          ],
+          "startEvent": "mexican-revolution",
+          "endEvent": "constitution-1917"
         },
         {
           "name": "United Mexican States",
@@ -3298,14 +3306,6 @@
         "wikipedia"
       ]
     },
-    "wp-mexico": {
-      "name": "Mexico (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mexico",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-first-mexican-empire": {
       "name": "First Mexican Empire (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/First_Mexican_Empire",
@@ -3370,6 +3370,22 @@
         "wikipedia"
       ]
     },
+    "wp-mexican-revolution": {
+      "name": "Mexican Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mexican_Revolution",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mexico": {
+      "name": "Mexico (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mexico",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-first-battle-of-panipat": {
       "name": "First Battle of Panipat (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/First_Battle_of_Panipat",
@@ -3429,14 +3445,6 @@
     "wp-second-french-intervention-in-mexico": {
       "name": "Second French intervention in Mexico (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Second_French_intervention_in_Mexico",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-mexican-revolution": {
-      "name": "Mexican Revolution (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mexican_Revolution",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
