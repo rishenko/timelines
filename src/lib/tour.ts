@@ -40,10 +40,26 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
       title: 'Lifespans',
       text:
         'The shaded band behind a row shows when that civilization, period or faction existed, so the shading starts where it begins. Soft edges mean its start or end is uncertain.' +
-        (data.tracks.some((t) => t.phases?.length) ? ' A row’s phases (its governments, dynasties or eras) sit in a thin strip along its top.' : '') +
         (data.tracks.some((t) => (Array.isArray(t.span) ? t.span : t.span ? [t.span] : []).some((s) => s.ongoing) || t.phases?.some((p) => p.ongoing))
           ? ' An arrow at the end means it is still going.'
           : ''),
+    },
+    data.tracks.some((t) => t.phases?.length) && {
+      target: '.tl-phase:not(.member)',
+      widest: true,
+      title: 'Phases',
+      text:
+        'A row’s phases (its governments, dynasties or eras) sit in a thin strip along its top, with a line where each begins and ends.' +
+        (hasOverlappingPhases(data) ? ' Phases that overlap, such as rival governments in a civil war, take a second strip.' : '') +
+        (data.tracks.some((t) => t.phases?.some((p) => p.startEvent || p.endEvent))
+          ? ' Point at a phase for its dates and the events that began and ended it.'
+          : ' Point at a phase for its dates.'),
+    },
+    data.tracks.some((t) => t.memberOf?.length) && {
+      target: '.tl-phase.member',
+      widest: true,
+      title: 'Memberships',
+      text: 'A row that belonged to another row for a while, such as a republic in a union, gets one more strip under its phases: “in” the union’s name and years, in the union’s colour, with a dashed underline. The union is its own row; point at its name to see its members.',
     },
     // the toolbar, left to right
     {
@@ -93,4 +109,18 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     },
   ];
   return steps.filter((x): x is TourStep => !!x);
+}
+
+/** Whether any row has two phases at once (rival governments), which the chart puts on a second strip. */
+function hasOverlappingPhases(data: Dataset): boolean {
+  return data.tracks.some((t) => {
+    let reach = -Infinity; // the latest end among the phases so far
+    return [...(t.phases ?? [])]
+      .sort((a, b) => a.start - b.start)
+      .some((p) => {
+        const overlaps = p.start < reach;
+        reach = Math.max(reach, p.ongoing ? Infinity : (p.end ?? p.start));
+        return overlaps;
+      });
+  });
 }

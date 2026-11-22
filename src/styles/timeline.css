@@ -99,8 +99,11 @@
   top: 0;
   bottom: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* on the year labels' line */
   justify-content: center;
+  padding-bottom: 6px;
+  box-sizing: border-box;
+  overflow: hidden; /* never past the ruler onto the first row */
   background: repeating-linear-gradient(135deg, transparent 0 5px, var(--hatch) 5px 10px);
 }
 .tl-gap-label span {
@@ -109,8 +112,6 @@
   white-space: nowrap;
   background: var(--bg-2);
   padding: 0 2px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
 }
 
 .tl-lanes {
@@ -136,6 +137,14 @@
   z-index: 1;
   pointer-events: none;
   border-left: 2px solid color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.tl-gaps {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 .tl-gap-band {
   position: absolute;
