@@ -4,7 +4,9 @@
 // row holding the chart's Tab stop is always drawn, and the arrow keys reach rows far off screen.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { act, cleanup, fireEvent } from '@testing-library/react';
-import { renderApp } from './test/app.tsx';
+import { renderApp, SITE_DATASETS } from './test/app.tsx';
+import { childrenMap } from './lib/tracks.ts';
+import type { Dataset } from './types.ts';
 
 const SCREEN_H = 900;
 
@@ -95,9 +97,22 @@ describe('rows far off screen', () => {
 
 describe('a chart a few screens tall', () => {
   it('draws every row (leaving rows out would only add work as it scrolls)', () => {
-    // the opening view hides rows with nothing in view: a few dozen rows
-    const { container: c } = renderApp('timeline=ancient-classical&inc=100&at=-500');
-    expect(parseFloat(c.querySelector<HTMLElement>('.tl-lanes')!.style.height)).toBeLessThan(SCREEN_H * 6);
+    // the bundled timeline cut to its first three regions, so the chart is a few screens tall whatever the full data
+    // grows to (the full timeline is over six screens, where rows far off screen are left out)
+    const full = SITE_DATASETS[0];
+    const kids = childrenMap(full.tracks);
+    const keep = new Set<string>();
+    const add = (id: string) => (keep.add(id), (kids.get(id) ?? []).forEach((k) => add(k.id)));
+    (kids.get(undefined) ?? []).slice(0, 3).forEach((t) => add(t.id));
+    const small: Dataset = {
+      ...full,
+      tracks: full.tracks.filter((t) => keep.has(t.id)),
+      events: full.events.filter((e) => e.tracks.every((t) => keep.has(t))),
+    };
+    const { container: c } = renderApp('timeline=ancient-classical&inc=100&at=-500', [small]);
+    const h = parseFloat(c.querySelector<HTMLElement>('.tl-lanes')!.style.height);
+    expect(h).toBeGreaterThan(SCREEN_H * 2);
+    expect(h).toBeLessThan(SCREEN_H * 6);
     expect(c.querySelectorAll('.tl-rows-skipped').length).toBe(0);
   });
 });

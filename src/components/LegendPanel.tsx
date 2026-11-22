@@ -16,6 +16,8 @@ interface Props {
   onClose: () => void;
   /** Starts the guided tour; the button is left out without it. */
   onTour?: () => void;
+  /** Events on the period lane (golden ages, long society spans): the Legend explains the line when there are any. */
+  periodLane?: ReadonlySet<string>;
 }
 
 interface Item {
@@ -89,7 +91,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
   );
 }
 
-export function LegendPanel({ data, onClose, onTour }: Props) {
+export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
   const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
@@ -230,6 +232,12 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
           </ul>
         </>
       ),
+    },
+    {
+      sample: <span className="lg-period" />,
+      show: !!periodLane?.size,
+      title: 'Golden ages and long spans',
+      text: 'A row’s golden ages, and spans of 25 years or more in religion, law, culture or the economy, sit on a line of their own just under its phases, above its other events. They cross its rulers, so they are kept apart from what happened within them.',
     },
     {
       sample: <span className="lg-cluster">+3</span>,
