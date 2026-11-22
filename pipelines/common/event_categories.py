@@ -31,7 +31,7 @@ VOCAB = {
     'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign', 'atrocity': 'Massacre or genocide', 'attack': 'Attack, ambush or raid'}),
     'unrest': ('Revolts', {'revolt': 'Revolt', 'revolution': 'Revolution', 'civil-war': 'Civil war', 'repression': 'Arrests and repression'}),
     'diplomacy': ('Diplomacy', {'treaty': 'Treaty', 'alliance': 'Alliance or bloc', 'vassalage': 'Vassalage'}),
-    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'culture': 'Culture and learning', 'economy': 'Economy'}),
+    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'culture': 'Culture and learning', 'economy': 'Economy', 'golden-age': 'Golden age or high point'}),
     'science': ('Science and technology', {'discovery': 'Discovery', 'invention': 'Invention', 'work': 'Landmark work'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
 }
