@@ -29,7 +29,9 @@ EVENT_BOX = re.compile(r'military conflict|civil conflict|revolution|protest|reb
 # states, places, people, organisations and things: their date fields date the subject, not an event
 NOT_EVENT_BOX = re.compile(r'country|former country|state|empire|kingdom|settlement|city|place|person|royalty|officeholder|'
                            r'monarch|military person|military unit|military branch|armed forces|organi[sz]ation|company|'
-                           r'political party|ship|aircraft|weapon|building|museum|book|film|newspaper', re.I)
+                           r'political party|ship|aircraft|weapon|building|museum|book|film|newspaper|biography|cricketer|'
+                           r'sportsperson|football|player|athlete|artist|writer|scientist|award|decoration|medal|order|'
+                           r'holiday|memorial|cemetery', re.I)
 DATE_FIELDS = ('date', 'dates', 'start_date', 'end_date', 'date_start', 'date_end', 'signed', 'effective')
 
 

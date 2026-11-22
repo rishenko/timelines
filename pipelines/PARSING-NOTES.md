@@ -53,6 +53,7 @@ Unless noted, numbers come from enwiki-20261101 and the extractor's WW1 pilot (2
 - State infoboxes use `life_span`, `year_start`/`year_end`, `date_start`/`date_end`, `event_start`/`event_end`, `eventN`/`date_eventN`, `established_*` (`common/wp_states.DATED`).
 - A state's, person's or organisation's date fields date the subject, not an event. `topics.NOT_EVENT_BOX` keeps country, settlement, person, military unit, ship… out of the "event-like" test.
   - Without it, the WW1 link route pulled in Holy Roman Empire and British Army.
+  - The category route also pulled in people, awards and holidays (Harry Lee (cricketer), Commemorative Medal for the Italo-Austrian War, Veterans Day), so biography, sportsperson, award, medal and holiday infoboxes are excluded too.
 
 **One field, several dates.**
 - `date = End of 1917 (1st battle), June 1918 (2nd battle) and October 1918 (3rd battle)` (Battle of Monte Grappa) gives three spans, all kept as candidates.
@@ -97,7 +98,7 @@ All of these have unit tests in `extract/test_dates.py`.
 **Link labels:** `[[Skirmish at Joncherey|2 August 1914]]` reads its label.
 
 **Counts that look like years.** This was the biggest source of false dates.
-- **Rate:** in the first WW1 run, 2,847 of 13,907 candidates (20%) had a "year" before 1000. After the fixes below, 69 of 11,517 (0.6%).
+- **Rate:** in the first WW1 run, 2,847 of 13,907 candidates (20%) had a "year" before 1000. After the fixes below, 66 of 11,069 (0.6%).
 - **Thousands, decimals, percentages, compounds and clock times** are masked first (`dates.QUANTITY`): "1,423 casualties", "38.7%", "a 150-person posse", "06:00".
 - **A bare number is a year only after a year word** ("in", "since", "by", "until", "during"…; `YEAR_BEFORE`), or before punctuation, a dash or an era.
   - Weak words ("of", "the", "and") allow only four-digit years (`YEAR_BEFORE_4`): "of 1848" yes, "of the 369 seats" no.
@@ -128,7 +129,9 @@ All of these have unit tests in `extract/test_dates.py`.
 - Every candidate's quote is checked to occur verbatim in the cleaned page (`extractors.check_quote`).
 - Table rows are quoted by their event cell, not the joined row: joined cells never occur in the page, and that cost 9,328 false drops in the first run.
 
-**Prose volume.** Prose gives most candidates (about 7,200 of 11,500 for WW1). It is capped at 40 per article (`--prose`) and needs a day or month date: bare years in body sentences are too noisy.
+**Galleries.** `<gallery>` blocks put file names and captions into sentences ("The British Naval Campaign in the Baltic, 1918-1919 Q19369.jpg", British campaign in the Baltic). They're removed before splitting (`extractors._strip_templates`).
+
+**Prose volume.** Prose gives most candidates (6,940 of 11,069 for WW1). It is capped at 40 per article (`--prose`) and needs a day or month date: bare years in body sentences are too noisy.
 
 ## Tables and lists
 

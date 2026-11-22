@@ -34,6 +34,7 @@ def _strip_templates(text):
         text = re.sub(r'\{\{(?!\s*(?:start date|end date|start and end dates|oldstyledate|circa|c\.|snd|ndash|mdash|nowrap)\b)[^{}]*\}\}',
                       '', text, flags=re.I)
     text = re.sub(r'\{\|.*?\|\}', '', text, flags=re.S)  # tables (read by the table extractor)
+    text = re.sub(r'<gallery[^>]*>.*?</gallery>', '', text, flags=re.S | re.I)  # image galleries: file names and captions
     return text
 
 
