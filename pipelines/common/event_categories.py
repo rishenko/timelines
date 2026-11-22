@@ -28,8 +28,8 @@ VOCAB = {
     'statehood': ('Statehood', {'founded': 'State founded', 'independence': 'Independence', 'union': 'Union', 'dissolved': 'State ends', 'reform': 'New name, form or constitution'}),
     'territory': ('Territory', {'conquest': 'Conquest', 'annexation': 'Annexation', 'cession': 'Cession', 'colony': 'Colony'}),
     'place': ('Cities and places', {'city-founded': 'City founded', 'sack': 'Sack or fall', 'capital-moved': 'Capital moved', 'disaster': 'Disaster'}),
-    'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign', 'atrocity': 'Massacre or genocide'}),
-    'unrest': ('Revolts', {'revolt': 'Revolt', 'revolution': 'Revolution', 'civil-war': 'Civil war'}),
+    'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign', 'atrocity': 'Massacre or genocide', 'attack': 'Attack, ambush or raid'}),
+    'unrest': ('Revolts', {'revolt': 'Revolt', 'revolution': 'Revolution', 'civil-war': 'Civil war', 'repression': 'Arrests and repression'}),
     'diplomacy': ('Diplomacy', {'treaty': 'Treaty', 'alliance': 'Alliance or bloc', 'vassalage': 'Vassalage'}),
     'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'culture': 'Culture and learning', 'economy': 'Economy'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
@@ -52,30 +52,34 @@ R = lambda p: re.compile(p, re.I)
 TEXT_RULES = [
     (R(r'\b(massacres?|genocide|holocaust|pogroms?|ethnic cleansing|atrocit\w*)\b'), 'atrocity'),
     (R(r'\bsiege\b|\bbesieg'), 'siege'),
-    (R(r'\bsack(s|ed)?\b|\bsacking\b|\b(destroy|destroys|destroyed|burn|burns|burned|razed?)\b.*\b(city|town|capital)\b'), 'sack'),
+    (R(r'\bsack(s|ed)?\b|\bsacking\b|\b(destroy|destroys|destroyed|burns?|burned|burnt|razes?|razed)\b'), 'sack'),
     (R(r'\bbattle\b'), 'battle'),
+    # small-scale violence within a war or insurgency (Kevin, 2026-11-22: Easter Rising pilot)
+    (R(r'\b(ambush\w*|raids?|raided|attack(s|ed)?|skirmish\w*|snipers?|sniping|bomb(s|ed|ing)?|grenades?|shot dead|shooting|fired on|opened fire|gunfight|booby[- ]trap\w*|killed|killing)\b'), 'attack'),
+    # arrests, internment, curfews, prisoners executed, kidnappings, reprisals (Kevin, 2026-11-22)
+    (R(r'\b(arrest\w*|abduct\w*|interned|internment|kidnap\w*|reprisals?|curfew|martial law|deport\w*|purges?|crackdown|hanged|prisoners?\b.*\bexecuted)\b'), 'repression'),
     (R(r'\bcivil war\b'), 'civil-war'),
     (R(r'\brevolution\b'), 'revolution'),
     (R(r'\b(revolt|rebellion|uprising|insurrection|mutiny|rising|riots?)\b|storming'), 'revolt'),
-    (R(r'\bcoups?\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
-    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
-    (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector)\b'), 'title'),
+    (R(r'\bcoups?\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|kills (the )?(last|king|queen|emperor|ruler|sultan|caliph|pharaoh|shah|khan)\b|(?-i:^([A-Z]\S*\s){0,2}[A-Z]\S*) (executed|beheaded|killed|assassinated)\b|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
+    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
+    (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector|pharaoh|augustus|shah|tsar|negus|basileus)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
-    (R(r'\b(invasions?|invades?|campaigns?|expeditions?|raids?|crusades?|offensives?|interventions?)\b'), 'invasion'),
+    (R(r'\b(invasions?|invades?|campaigns?|expeditions?|crusades?|offensives?|interventions?)\b'), 'invasion'),
     (R(r'\b(defeat(s|ed)?)\b'), 'conflict'),
-    (R(r'\b(treaty|peace of|accords?|agreements?|compact|concordat|convention)\b'), 'treaty'),
-    (R(r'\b(alliance|pact|joins?|free association|admitted|league|federat\w*)\b'), 'alliance'),
-    (R(r'\b(tributary|vassal\w*|protectorate|suzerainty|homage|client|submits|submission)\b'), 'vassalage'),
-    (R(r'\b(breaks? (away|from)|secedes?|secession|leaves|self-rule|autonomy)\b'), 'independence'),
+    (R(r'\b((?<!anti-)(?<!pro-)treaty|peace of|accords?|agreements?|compact|concordat|convention)\b'), 'treaty'),
+    (R(r'\b(alliance|pact|joins?|free association|marries|married|marriage|admitted|league|federat\w*)\b'), 'alliance'),
+    (R(r'\b(tributary|tribute|hegemony|under (\w+ ){1,2}(rule|control|suzerainty)|controls|vassal\w*|protectorate|suzerainty|homage|client|submits|submission)\b'), 'vassalage'),
+    (R(r'\b(throws? off|threw off|breaks? (away|from)|secedes?|secession|leaves|self-rule|autonomy)\b'), 'independence'),
     (R(r'\brecogni[sz]\w*'), 'diplomacy'),
     (R(r'\bindependen\w*\b'), 'independence'),
     (R(r'\b(unif\w*|reunit\w*|united(?! (states|kingdom|provinces|arab|nations|netherlands))|unites?|reunif\w*|union|merges?|merged|amalgamation)\b'), 'union'),
     (R(r'\b(dissolved|dissolution|abolished|collapse[sd]?|ends|end of|extinct)\b'), 'dissolved'),
     (R(r'\b(found(s|ed|ing|ation) of [A-Z][a-z]+$|founds? the city|city (is )?founded)\b'), 'city-founded'),
-    (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b|\bmoved? (the )?seat\b|\bdesignated (as )?(the )?capital\b'), 'capital-moved'),
+    (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b|\bmoves? (\w+ ){0,2}capital\b|\bmakes (\w+ ){1,2}(the|its) capital\b|\bmoved? (the )?seat\b|\bdesignated (as )?(the )?capital\b'), 'capital-moved'),
     (R(r'\b(earthquake|plague|famine|flood|eruption|epidemic|fire of|disaster|explosion|nuclear tests?|tsunami|cyclone|hurricane)\b'), 'disaster'),
-    (R(r'\b(fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
-    (R(r'\bpartition\w*|\bsplit\b|\bdivided\b'), 'territory'),
+    (R(r'\b(overruns?|overran|seiz\w*(?! (the throne|power))|fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
+    (R(r'\bpartition\w*|\bsplits?\b|\bdivided\b'), 'territory'),
     (R(r'\b(conquests?|conquers?|conquered|reconquest|subjugat\w*|lost to)\b'), 'conquest'),
     (R(r'\b(annex\w*|incorporat\w*|reintegrat\w*|reincorporat\w*|bec[oa]me?s? (\w+ )?part of)\b'), 'annexation'),
     (R(r'\b(cedes?|ceded|cession|sold|purchase|transferred to|passes to|given to|returned to|handed (over )?to|restored to|acquir\w*)\b'), 'cession'),
@@ -83,12 +87,12 @@ TEXT_RULES = [
     (R(r'\b(colony|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
     (R(r'\b(renamed?|renames|drops the name|(state|kingdom|dynastic|dynasty|country)(\'s)? name|changes? the (state )?name|(becomes )?an? (\w+ ){0,2}(republic|associated state|dominion|confederation|constitutional monarchy|one-party state|royal province)|republic restored|democracy restored|restores democracy|transition to democracy|multi-?party|(first|second|third|fourth|fifth) republic|dominion of|royal province|one-party state|constitution|constitutional|self-govern\w*|responsible government)\b'), 'reform'),
     (R(r'\b(found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
-    (R(r'\b(convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
+    (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
     (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet)\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
     (R(r'\b(trade|coinage|currency|market|tax)\b'), 'economy'),
     (R(r'\b(level [IVX]+|stratum|tombs?|graveyards?|cemetery|palace|hoard)\b'), 'site'),
-    (R(r'\b(earliest|tablets?|pottery|inscriptions?|first known)\b'), 'find'),
+    (R(r'\b(earliest|tablets?|pottery|inscriptions?|first known|(first|last) (appear\w*|mention\w*|record\w*|attest\w*))\b'), 'find'),
     (R(r'\b(culture|horizon|farmers|hunter-\w+|neolithic|phase [IVX]+)\b'), 'horizon'),
 ]
 
@@ -124,8 +128,9 @@ top = lambda v: PARENT.get(v, v)
 DESCR_OK = {'conflict', 'unrest', 'place', 'diplomacy'}
 # words that are a title's head noun when they end it ("Reform War"); others at the end are verbs or objects
 HEAD_NOUNS = {'massacre', 'genocide', 'war', 'wars', 'rebellion', 'revolution', 'revolt', 'uprising', 'coup', 'siege', 'battle', 'campaign', 'invasion', 'conquest', 'treaty', 'massacre', 'mutiny'}
+PREHISTORIC = re.compile(r'\b(neolithic|mesolithic|palaeolithic|paleolithic|chalcolithic|bronze age|iron age)\b', re.I)
 # words that make a founding a state's founding
-STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|khanate|emirate|principality|duchy|county|march|dynasty|confederation|federation|colony|protectorate|order)\b', re.I)
+STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|khanate|emirate|principality|duchy|county of|march of|dynasty|confederation|federation|colony|protectorate|order of)\b', re.I)
 # generic sub-kinds a more specific one of the same top level replaces
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
@@ -205,6 +210,15 @@ def classify(e, ds, wp=None):
         hits.sort(key=lambda h: 0 if h[2].lower().split()[-1] == head and h[0] > 0 else 1)
     # "dynasty" as an object ("Alliance with the Almoravid dynasty", "Fall of Liao dynasty") says nothing about a succession
     obj = lambda start, w: w.lower() == 'dynasty' and re.search(r'\b(of|from|with|by|the)\s+(\S+\s+){0,2}$', title[:start], re.I)
+    # "Cimmerians destroy the kingdom of Phrygia": destroying a state ends it; destroying a city sacks it
+    own_rows = [t for t in ds['tracks'] if t['id'] in e.get('tracks', [])]
+    def destroyed_state(w, st):
+        rest = title[st + len(w):].lower()
+        return bool(STATE_NOUN.search(rest)) or any(t['name'].lower() in rest for t in own_rows if len(t['name']) > 3)
+    hits = [(st, 'dissolved' if v == 'sack' and re.match(r'(destroy|raze|burn)', w, re.I) and destroyed_state(w, st) else v, w) for st, v, w in hits]
+    # "Sanganakallu Neolithic settlement": a prehistoric settlement is a site, not a colony
+    if PREHISTORIC.search(title):
+        hits = [(st, 'site' if v == 'colony' else v, w) for st, v, w in hits]
     # "Creation of the Burmese alphabet", "founding of the university": the thing founded is a script, a school or a
     # church, not a state, unless the title also names a state
     society_obj = any(top(v) == 'society' for _, v, _ in hits) and not STATE_NOUN.search(title)
@@ -227,6 +241,9 @@ def classify(e, ds, wp=None):
     # a sub-kind beats its own top level from weaker evidence (infobox "military conflict" + title "Siege of" = siege)
     out = []
     for v, ev in found:
+        # a ruler killed is a coup; "attack" beside it repeats the killing
+        if v == 'attack' and out and out[0][0] == 'coup':
+            continue
         # a new constitution is a reform of the state; "law" beside it repeats it ("Constitution Act")
         if v == 'law' and out and out[0][0] == 'reform':
             continue
