@@ -2,6 +2,7 @@
   "name": "timelines",
   "private": true,
   "version": "0.0.0",
+  "license": "MIT",
   "homepage": "https://rishenko.github.io/timelines",
   "type": "module",
   "scripts": {
