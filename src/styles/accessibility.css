@@ -53,8 +53,11 @@
   flex-shrink: 0;
 }
 @media (max-width: 640px) {
+  /* a 24 px target (WCAG 2.5.8): the note sits close below the side panels' last fields */
   .legal-toggle {
-    display: inline;
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
   }
 }
 
