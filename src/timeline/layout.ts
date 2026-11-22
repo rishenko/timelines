@@ -71,6 +71,8 @@ export interface LayoutOptions {
   thin?: ReadonlySet<string>;
   /** Events whose title starts with a category glyph, which widens the label by `glyphPx`. */
   glyphs?: ReadonlySet<string>;
+  /** Events drawn on the period lane: their own line(s) directly under the row's phases, above its other events. */
+  periodLane?: ReadonlySet<string>;
 }
 
 export const LAYOUT_DEFAULTS = {
@@ -169,11 +171,15 @@ export function layoutLanes(
     // Occupied [start, end] footprints per sub-row. Events aren't placed in date order, so a row
     // can have gaps that a later-placed event fills.
     const rowSpans: [number, number][][] = [];
+    // the period lane (golden ages, long society spans): its own lines first, never folded into "+N"
+    const periodSpans: [number, number][][] = [];
     const marks: Mark[] = [];
     const maxRows = expanded[lane.id] ? Infinity : o.maxRows;
     const overflow: { id: string; x: number; key: boolean; title: string }[] = [];
-    for (const i of mine) {
+    const inPeriod = (i: number) => !!opts.periodLane?.has(sorted[i].uuid);
+    for (const i of opts.periodLane ? [...mine.filter(inPeriod), ...mine.filter((i) => !inPeriod(i))] : mine) {
       const e = sorted[i];
+      const period = inPeriod(i);
       // a span given in months or days too short to draw as a bar at this zoom is drawn as a point, in its middle
       const short = isSpan(e) && hasDays(e) && scale.x(at1(e, effectiveEnd(e, present))) - scale.x(at0(e)) < o.pointPx;
       const span = isSpan(e) && !short;
@@ -222,16 +228,19 @@ export function layoutLanes(
       }
       const fits = (spans: [number, number][]) =>
         spans.every(([s, en]) => en + o.gapPx <= footprintStart || footprintEnd + o.gapPx <= s);
-      let row = rowSpans.findIndex(fits);
-      if (row === -1 && rowSpans.length >= maxRows) {
+      const lines = period ? periodSpans : rowSpans;
+      let row = lines.findIndex(fits);
+      if (row === -1 && !period && rowSpans.length >= maxRows) {
         overflow.push({ id: e.uuid, x: x0, key: rank(e) === 1, title: e.title });
         continue;
       }
       if (row === -1) {
-        row = rowSpans.length;
-        rowSpans.push([]);
+        row = lines.length;
+        lines.push([]);
       }
-      rowSpans[row].push([footprintStart, footprintEnd]);
+      lines[row].push([footprintStart, footprintEnd]);
+      // period events come first, so the period lines are all known by the time other events are placed below them
+      if (!period) row += periodSpans.length;
       marks.push({
         key: `${lane.id}:${e.uuid}`,
         kind: 'event',
@@ -249,7 +258,7 @@ export function layoutLanes(
       });
     }
     // Fold overflow into cluster badges on an extra row, merging badges that would touch.
-    const clusterRow = rowSpans.length;
+    const clusterRow = periodSpans.length + rowSpans.length;
     let current: Mark | null = null;
     overflow.sort((a, b) => a.x - b.x);
     // A pill that holds a key event names it (the earliest one), so it is wider by the name.
@@ -281,7 +290,7 @@ export function layoutLanes(
       };
       marks.push(current);
     }
-    const rows = Math.max(1, rowSpans.length + (overflow.length ? 1 : 0));
+    const rows = Math.max(1, periodSpans.length + rowSpans.length + (overflow.length ? 1 : 0));
     const height = head + rows * o.rowH + o.lanePad * 2;
     out.push({ lane, top, height, rows, marks, overflow: overflow.length });
     top += height;
