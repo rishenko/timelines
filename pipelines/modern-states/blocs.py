@@ -12,8 +12,11 @@ Events: each bloc's founding (on the bloc and its founders) and dissolution (on 
 each admission round its sources date (NATO's member table, Comecon's member table, CENTO's timeline, the NAM's
 member lists) as one event on the bloc and the joining rows, named as those memberships' startEvent.
 
-Split states: East and West Germany are overlapping phases of one row (`germany`), so that row is in NATO and the
-Warsaw Pact at once from 1955 to 1990. The claims say so in a note until schema v5 adds `phase` on memberOf.
+Split states (backlog 1, 2026-11-22, Dev C): a membership held while its row has rival phases names the phase that
+held it (`memberOf.phase`, schema v5): West Germany in NATO, East Germany in the Warsaw Pact and Comecon, North and
+South Yemen in the Non-Aligned Movement. A membership whose holder changed while it ran is split where the new holder's
+phase begins, dated by that phase's own start claim and event (HANDOVER). link_phases does this after every row is built,
+since the phases live in other modules.
 """
 import json
 import os
@@ -65,14 +68,18 @@ SKIP = {('non-aligned-movement', 'Palestine'): 'member from 1976, when the pales
                                               'a seat held before the State of Palestine (1988), like SWAPO\'s'}
 # East Germany left the Warsaw Pact and Comecon by reunification: that event ends both memberships.
 SHARED = {'reunification': ['warsaw-pact', 'comecon']}
-SPLIT_NOTE = {
-    ('nato', 'germany'): 'West Germany joined in 1955; reunified Germany kept the membership in 1990. East and West Germany are '
-                         'phases of one row here, so this row also shows East Germany in the Warsaw Pact and Comecon.',
-    ('warsaw-pact', 'germany'): 'East Germany was the member. East and West Germany are phases of one row here, so this row also '
-                                'shows West Germany in NATO from 1955.',
-    ('comecon', 'germany'): 'East Germany was the member. East and West Germany are phases of one row here, so this row also '
-                            'shows West Germany in NATO from 1955.',
+# Memberships whose holder changed while they ran: (bloc, row, first year) -> the phase that took the seat over. The
+# split falls where that phase starts, dated by its own start claim and started by its startEvent. Keyed by the
+# membership's first year: if a new dump moves that year, the run fails with "add a HANDOVER"; update the key here.
+HANDOVER = {
+    ('nato', 'germany', 1955): 'Federal Republic (reunified)',  # West Germany's seat, kept by reunified Germany
+    ('non-aligned-movement', 'yemen', 1961): 'Yemen Arab Republic (North)',  # North Yemen: the 1962 revolution
 }
+# Split states: rows whose rival phases are separate states, so each bloc membership names the one that held it. Other
+# rows' overlapping phases (a junta inside a kingdom, rival governments in a civil war) are listed in the report only.
+SPLIT_ROWS = {'germany', 'yemen', 'vietnam'}
+# Rows whose claims notes only explained the missing phase (the phase now says it): those notes are dropped.
+PHASED_NOTES = {'germany'}
 
 
 def _claims():
@@ -188,8 +195,8 @@ def extra_memberships(M):
         for m in e['memberships']:
             if (rid, m['member']) in SKIP:
                 continue
-            note = SPLIT_NOTE.get((rid, m['row']))
-            if not note and m.get('note') and 'no accession cell' not in m['note']:
+            note = None
+            if m['row'] not in PHASED_NOTES and m.get('note') and 'no accession cell' not in m['note']:
                 note = m['note']
             sc = _claim(M, m['from'], m['fromSource'], note)
             kw = {'startEvent': FOUNDING[rid][0] if _founder(rid, e, m) else _round_id(rid, m['from'])}
@@ -202,5 +209,66 @@ def extra_memberships(M):
                 elif m['row'] == 'germany' and m['to'] == 1990:
                     kw['endEvent'] = 'reunification'
                 ms = M.member(rid, sc, ec, sources=[_ref(M, m['fromSource'])], **kw)
+            ms['_bloc'] = (rid, m['phaseAtStart'])  # read and removed by link_phases
             out.setdefault(m['row'], []).append(ms)
     return out
+
+
+def _end(p, present):
+    return present if p.get('ongoing') else p['end']
+
+
+def _with_phase(ms, name):
+    """The membership with `phase` placed after `row`, where the format lists it."""
+    return {k: v for k, v in [('row', ms['row']), ('phase', name)] + [(k, v) for k, v in ms.items() if k != 'row']}
+
+
+def link_phases(M, by_id):
+    """Name the holding phase on bloc memberships held while the row had rival phases, splitting at HANDOVER.
+    Fails the run if such a membership outlasts its phase without a HANDOVER."""
+    for tid, t in by_id.items():
+        out = []
+        for ms in t.get('memberOf', []):
+            if '_bloc' not in ms:
+                out.append(ms)
+                continue
+            rid, first = ms.pop('_bloc')
+            if not t.get('phases') or not first:
+                out.append(ms)
+                continue
+            pieces = [(ms, first)]
+            dest = HANDOVER.get((rid, tid, ms['start']))
+            if dest:
+                d = next((p for p in t['phases'] if p['name'] == dest), None)
+                if not d:
+                    raise SystemExit(f'blocs: HANDOVER {(rid, tid, ms["start"])} names phase "{dest}", which {tid} lacks')
+                a = {k: v for k, v in ms.items() if k not in ('ongoing', 'endDates', 'endEvent')}
+                a['end'] = d['start']
+                a = {k: a[k] for k in ['row', 'start', 'end', 'startDates'] if k in a} | \
+                    {'endDates': [dict(c) for c in d['startDates']]} | {k: a[k] for k in a if k not in ('row', 'start', 'end', 'startDates')}
+                a['endEvent'] = d['startEvent']
+                b = dict(ms, start=d['start'], startDates=[dict(c) for c in d['startDates']], startEvent=d['startEvent'])
+                pieces = [(a, first), (b, dest)]
+                M.REPORT.append(f'  split {tid} in {rid} at {d["start"]}: {first} {a["start"]}–{a["end"]}, then {dest}')
+            for p, name in pieces:
+                pend = _end(p, M.PRESENT)
+                ph = [x for x in t['phases'] if x['name'] == name and x['start'] <= p['start'] <= _end(x, M.PRESENT)]
+                if len(ph) != 1:
+                    raise SystemExit(f'blocs: {tid} in {rid} from {p["start"]}: no single phase "{name}" holds its start')
+                ph = ph[0]
+                # rivals: other phases alongside the holding phase while it held the membership (successors don't count)
+                lo, hi = max(p['start'], ph['start']), min(pend, _end(ph, M.PRESENT))
+                rivals = [x['name'] for x in t['phases'] if x is not ph and x['start'] < hi and _end(x, M.PRESENT) > lo]
+                if rivals and tid not in SPLIT_ROWS:
+                    M.REPORT.append(f'    (not a split state) {tid} in {rid} {p["start"]}–{pend} under {name}, beside {", ".join(rivals)}')
+                elif rivals:
+                    if pend > _end(ph, M.PRESENT):
+                        raise SystemExit(f'blocs: {tid} in {rid} {p["start"]}–{pend} outlasts its phase "{name}" beside '
+                                         f'{", ".join(rivals)}; add a HANDOVER')
+                    if not p.get('ongoing') and 'endEvent' not in p and p['end'] == _end(ph, M.PRESENT) and ph.get('endEvent'):
+                        p['endEvent'] = ph['endEvent']
+                    p = _with_phase(p, name)
+                    M.REPORT.append(f'    {tid} in {rid} {p["start"]}–{pend}: phase {name} (rivals: {", ".join(rivals)})')
+                out.append(p)
+        if 'memberOf' in t:
+            t['memberOf'] = out
