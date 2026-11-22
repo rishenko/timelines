@@ -109,7 +109,11 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
     }, 250);
   }, [timelineId, increment, compress, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order]);
-  useEffect(writeUrl, [writeUrl]);
+  useEffect(() => {
+    writeUrl();
+    // a write still waiting when the app closes is dropped (in tests, the page is gone by then)
+    return () => clearTimeout(timer.current);
+  }, [writeUrl]);
   const onCenterYearChange = useCallback(
     (y: number) => {
       centerRef.current = y;
