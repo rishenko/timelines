@@ -4,8 +4,7 @@
 // row form once dropped category memberships); this catches it for every field the data uses, now and later.
 // Runs the bundled timelines, and the local ones when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts).
 // By default enough rows and events that every field path the data uses is saved at least once (seconds);
-// ROUNDTRIP=all opens every one (minutes). Phase order is compared by date: the row editor stores phases in date
-// order, and the order they are written in has no meaning (the chart sorts them).
+// ROUNDTRIP=all opens every one (minutes).
 import { readFileSync } from 'node:fs';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
@@ -14,7 +13,6 @@ import { TrackForm } from './TrackForm.tsx';
 import { localTimelineFiles } from '../../scripts/lib/local-data.ts';
 import { migrate } from '../data/migrate.ts';
 import type { Dataset, Track } from '../types.ts';
-import { at0 } from '../lib/subYear.ts';
 import index from '../../public/timelines/index.json';
 
 afterEach(cleanup);
@@ -61,6 +59,23 @@ async function submit(button: string, onSave: ReturnType<typeof vi.fn>) {
   return onSave.mock.calls[0]?.[0];
 }
 
+// rows that group others list each one's phases together, out of date order; saving must keep that order
+describe('row editor keeps phases in the order they were written', () => {
+  const modern = timelines.find(([id]) => id === 'modern-states')![1];
+  for (const id of ['yemen', 'philippines', 'united-states']) {
+    it(id, async () => {
+      const t = modern.tracks.find((x) => x.id === id)!;
+      const starts = t.phases!.map((p) => p.start);
+      expect(starts).not.toEqual([...starts].sort((a, b) => a - b));
+      const onSave = vi.fn();
+      render(<TrackForm initial={t} data={modern} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
+      const saved = (await submit('Save track', onSave)) as Track;
+      expect(saved.phases!.map((p) => p.start)).toEqual(starts);
+      expect(saved.phases).toEqual(t.phases);
+    });
+  }
+});
+
 describe('editor round trip: saving unchanged keeps every field', () => {
   for (const [name, data] of timelines) {
     it(`${name}: every event`, async () => {
@@ -86,7 +101,7 @@ describe('editor round trip: saving unchanged keeps every field', () => {
         render(<TrackForm initial={t} data={data} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
         const saved = await submit('Save track', onSave);
         try {
-          expect(saved).toEqual(byDate(t));
+          expect(saved).toEqual(t);
         } catch {
           lost.push(`${t.id}: ${saved ? JSON.stringify(diff(t, saved)) : 'not saved'}`);
         }
@@ -96,9 +111,6 @@ describe('editor round trip: saving unchanged keeps every field', () => {
     }, 600_000);
   }
 });
-
-/** A row with its phases in date order (stable: phases starting together keep their order). */
-const byDate = (t: Track): Track => (t.phases ? { ...t, phases: [...t.phases].sort((a, b) => at0(a) - at0(b)) } : t);
 
 /** The top-level fields that differ, as [before, after]. */
 function diff(a: object, b: object): Record<string, [unknown, unknown]> {

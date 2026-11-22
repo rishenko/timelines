@@ -196,9 +196,9 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       if (e && p.endEvent) phase.endEvent = p.endEvent;
       phases.push(phase);
     }
-    // stored in date order, whatever order they were typed in
-    // (phases starting together keep the order they were written in: the sort is stable)
-    if (phases.length) t.phases = phases.sort((a, b) => at0(a) - at0(b));
+    // kept in the order they were written: a row that groups others lists each one's phases together (the chart
+    // sorts them by date)
+    if (phases.length) t.phases = phases;
     // memberships in other rows, and category memberships (regions, peoples), aren't edited here yet: kept as they were
     if (initial?.memberOf?.length) t.memberOf = initial.memberOf;
     if (initial?.memberships?.length) t.memberships = initial.memberships;
