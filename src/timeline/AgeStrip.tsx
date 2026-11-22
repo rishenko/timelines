@@ -1,12 +1,18 @@
+import { Fragment } from 'react';
 import type { Calendar, Dataset } from '../types.ts';
 import type { PlacedAge } from '../lib/eras.ts';
 import { at0, at1 } from '../lib/subYear.ts';
+import { hostOf, safeUrl } from '../lib/urls.ts';
 import { citationsInWords, spanInWords } from '../lib/table.ts';
 import type { Scale } from './scale.ts';
 
 /** One line of the strip: a 24 px target (WCAG 2.5.8) around a 15 px bar. */
 export const AGE_LINE_PX = 24;
 const MIN_TARGET_PX = 24;
+/** The ↗ link to an age's article: a 24 px target at the start of the age's name. */
+const LINK_PX = 24;
+/** The bar's name is shifted right by this much when the ↗ link sits before it. */
+const LINK_INSET_PX = 18;
 
 interface Props {
   ages: PlacedAge[];
@@ -25,7 +31,8 @@ interface Props {
 /**
  * Ages (meta.eras) in a strip under the ruler, one line per group: periods across the whole timeline, such as the
  * Islamic Golden Age. Each is a button: its name, a tooltip with its dates and sources, and a click centres the chart on
- * it. It stays on screen as the chart scrolls down, like the ruler.
+ * it. An age with a page (`url`) has a ↗ link to it just before its name, when its bar has room for both (two 24 px
+ * targets); otherwise the Ages table links it. It stays on screen as the chart scrolls down, like the ruler.
  */
 export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, onSelect }: Props) {
   if (!ages.length) return null;
@@ -51,28 +58,57 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
         const dates = spanInWords(span, cal, sources);
         const from = citationsInWords(era.sources, sources);
         // the button is the target (at least 24 px each way); the bar inside it is drawn to the age's own width
-        const target = Math.max(x1 - x0, MIN_TARGET_PX);
-        const style = { left: labelW + x0 - (target - (x1 - x0)) / 2, width: target, top: line * AGE_LINE_PX } as React.CSSProperties;
-        const bar = { left: (target - (x1 - x0)) / 2, width: x1 - x0 } as React.CSSProperties & Record<string, string | number>;
+        const w = x1 - x0;
+        const target = Math.max(w, MIN_TARGET_PX);
+        const left = labelW + x0 - (target - w) / 2;
+        const style = { left, width: target, top: line * AGE_LINE_PX } as React.CSSProperties;
+        const bar = { left: (target - w) / 2, width: w } as React.CSSProperties & Record<string, string | number>;
         if (era.color) bar['--age-color'] = era.color;
-        if (fadeIn) bar['--fade-in'] = `${Math.min(fadeIn, x1 - x0)}px`;
-        if (fadeOut) bar['--fade-out'] = `${Math.min(fadeOut, x1 - x0)}px`;
+        if (fadeIn) bar['--fade-in'] = `${Math.min(fadeIn, w)}px`;
+        if (fadeOut) bar['--fade-out'] = `${Math.min(fadeOut, w)}px`;
+        // the name stays readable while the age starts off to the left
+        const nameAt = Math.max(0, Math.min(viewLeft - x0, w - 80));
+        const url = safeUrl(era.url);
+        const host = url && hostOf(url);
+        // the link needs its own 24 px and leaves the bar's button at least 24 px of its own
+        const linked = url && w >= LINK_PX + MIN_TARGET_PX;
+        const linkAt = Math.max(0, Math.min(nameAt, w - LINK_PX - MIN_TARGET_PX));
+        const tip = [
+          `${era.name}, ${dates.main}`,
+          ...dates.ranges,
+          cut && 'Runs on past this timeline',
+          from && `from ${from}`,
+          url && (linked ? `↗ opens its article on ${host}` : `Its article on ${host}: zoom in, or see the Ages table`),
+        ];
         return (
-          <button
-            key={era.id}
-            className="tl-age"
-            style={style}
-            title={[`${era.name}, ${dates.main}`, ...dates.ranges, cut && 'Runs on past this timeline', from && `from ${from}`].filter(Boolean).join('\n')}
-            aria-label={`${era.name}, ${dates.main}, age; centre the chart on it`}
-            onClick={() => onSelect((span.start + span.end) / 2)}
-          >
-            <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>
-              {/* the name stays readable while the age starts off to the left */}
-              <span className="name" style={{ left: Math.max(0, Math.min(viewLeft - x0, x1 - x0 - 80)) }}>
-                {era.name}
+          <Fragment key={era.id}>
+            <button
+              className="tl-age"
+              style={style}
+              title={tip.filter(Boolean).join('\n')}
+              aria-label={`${era.name}, ${dates.main}, age; centre the chart on it`}
+              onClick={() => onSelect((span.start + span.end) / 2)}
+            >
+              <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>
+                <span className="name" style={{ left: linked ? linkAt : nameAt, paddingLeft: linked ? LINK_INSET_PX + 5 : undefined }}>
+                  {era.name}
+                </span>
               </span>
-            </span>
-          </button>
+            </button>
+            {linked && (
+              <a
+                className="tl-age-link"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ left: left + (target - w) / 2 + linkAt, top: line * AGE_LINE_PX, width: LINK_PX }}
+                title={`${era.name}: ${host} (opens in a new tab)`}
+                aria-label={`${era.name}: article on ${host} (opens in a new tab)`}
+              >
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </Fragment>
         );
       })}
     </div>

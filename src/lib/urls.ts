@@ -9,3 +9,12 @@ export function isSafeUrl(u: string): boolean {
 export function safeUrl(u: string | undefined): string | undefined {
   return u && isSafeUrl(u) ? u : undefined;
 }
+
+/** The site a link goes to, for its tooltip and accessible name ("en.wikipedia.org"). */
+export function hostOf(url: string): string {
+  try {
+    return new URL(url, (globalThis as { location?: { href: string } }).location?.href ?? 'http://localhost/').hostname;
+  } catch {
+    return url;
+  }
+}

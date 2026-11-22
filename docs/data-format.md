@@ -1,4 +1,4 @@
-# Timeline data format (schema v5)
+# Timeline data format (schema v6)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -80,7 +80,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `5`. Files of versions `3` and `4` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `6`. Files of versions `3` to `5` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -133,13 +133,16 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `group` | no | Eras that divide the same years one way share a group, and don't overlap within it. Another group (a region's own periods) is an alternative division of the same years. |
 | `color` | no | `#rrggbb`. |
 | `chronology` | no | The dating system its dates follow. |
+| `url` | no | A page about the age, such as its Wikipedia article: readers can open it from the age. It isn't a date source; `sources` are. |
+| `ids` | no | The age's identifiers in other datasets, as a row's: `{ "wikidata": "Q…" }`. |
 
 An era must overlap `meta.range` when the timeline has one; it may run past it, as rows do, so an era that crosses a seam keeps its own dates in both timelines.
 
 The app draws eras as **ages** in a strip under the ruler: one line per `group` (in the order groups first appear),
 lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
 a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
-clicking it centres the chart on it. The table view lists them in an Ages table.
+clicking it centres the chart on it. An age with a `url` has a ↗ link to that page just before its name (when its bar
+has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`.
 
 ### calendar
 
@@ -359,6 +362,8 @@ article the event is dated from. Modern States and Medieval World get them from 
 corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
 shape before the event's title, names both categories in the table and the event's details, and filters by them
 (Filters → Categories; an event with no category always shows). The editor picks them, citing the event's first source.
+A golden age, or a society event lasting 25 years or more, is drawn on a line of its own just under its row's phases
+(see `docs/development.md`, "Period lane").
 
 ## sources and tags
 
@@ -482,7 +487,7 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 5, or 3 or 4 (lifted to 5 when loaded).
+- The required fields above are present; `schemaVersion` is 6, or 3 to 5 (lifted to 6 when loaded).
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
   `"day"`.
@@ -655,6 +660,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 
 | Version | What changed |
 |---|---|
+| 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |
 | 5 | Facets on events (`applies`, event `memberships`), [`meta.eras`](#eras), row `kind`, events' `ongoingSources`, sources' `dump` and `revision`, source `locator`s, the `phase` of a [`memberOf`](#dated-memberships-memberof) entry, and `redirects`. Additive: a version 4 file is read as it is. |
 | 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
 | 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |

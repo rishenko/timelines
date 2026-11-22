@@ -74,6 +74,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
+| `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, and the strip under the ruler |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
@@ -175,7 +176,7 @@ matches `data-src/`. Medieval World reads Modern States' committed build at the 
 compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
 
 To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
-them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
+them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or `meta.eras`; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (rows, eras and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
 `pipelines/README.md` covers the inputs, the settings and how to rerun.
 
 ## Row links
@@ -241,6 +242,17 @@ while one of its sources is switched on (so tags cited to hidden spoiler sources
 over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
 without knowing about regions. Off in edit mode. The link carries `&regions=`.
 
+### Period lane
+
+Golden ages and long society spans apply to a whole civilization or country and can span rulers, so each row draws
+them on a line of their own directly under its phases, above its other events (Kevin, 2026-11-22).
+`periodLaneIds` (`src/lib/periodLane.ts`) picks the events: a golden age (`golden-age`) as the main or second
+category; or a society kind (religion, law, culture, economy) as the **main** category over 25 years or more, except
+a person's lifetime ("Life of …"). `src/data/period-lane.json` then includes or excludes events by id, per timeline;
+a test fails if it names an id its timeline doesn't have. The layout (`layoutLanes`'s `periodLane`) places these
+events first, on their own line(s); the other events pack below them, and the row cap and "+N" folding count only
+those lines. Key-event and "+N" behaviour and the category shapes are unchanged.
+
 ### Ages strip
 
 `meta.eras` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`) in a sticky strip under the
@@ -248,7 +260,10 @@ ruler. `placeAges` resolves each under the reader's Dating choice (`resolveSpan`
 gives each `group` a line; `agesInView` drops lines with no age in the settled year window the chart already keeps
 for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
 hatching; ends past the chart are cut with a dashed edge. Clicking an age asks `App.tsx` to centre on it
-(`focusOn`, the zoom unchanged). The table view's Ages table is its accessible equivalent.
+(`focusOn`, the zoom unchanged). An age with a `url` gets a ↗ link (`a.tl-age-link`) over the start of its bar, before
+its name and moving with it, when the bar has room for two 24 px targets (the link and the rest of the button);
+narrower ages leave it to the Ages table. The table view's Ages table is the strip's accessible equivalent; its names
+link the way row names do (`LinkedName` in `TableView.tsx`).
 
 ### Category filter
 

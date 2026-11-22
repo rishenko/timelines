@@ -113,3 +113,15 @@ dynasties, Northern dynasties.
 `npm run data:compare` (new: `scripts/compare-resolved.ts`) checked the change against the file before it: under each of
 the seven Dating choices, every row's lifespan, phases and memberships and every event is drawn the same, apart from
 the Mycenaean end and the three phases that took claims.
+
+## Egypt and Nubia under Africa (22 November 2026)
+
+At the author's call ("Egypt belongs in Africa"), `scripts/ancient-classical/egypt-in-africa.ts` moves the row
+`egypt` (Egypt and Nubia, with all its sub-rows, Nubia's included) from the Ancient Near East to Africa, as Africa's
+first region, before North Africa, the Horn and sub-Saharan Africa. Ids, chronologies and the order inside Egypt stay
+as they were, and neither group carries a chronology, so no date moves. The earlier note in `ancient-sources.md` that
+"Egypt belongs to the Ancient Near East" records the old grouping. Medieval World made the same move (its Egypt and
+Maghreb groups, under a group now called "Africa"; the other is now "Near East").
+
+`npm run fields:proof -- ancient-classical --allow 'tracks.egypt.parent,tracks order'` passes: only `egypt`'s parent
+and the 14 rows of its subtree's place changed.

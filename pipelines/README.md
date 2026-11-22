@@ -49,6 +49,7 @@ Then run the generator and compile its output:
 
 `git diff data-src/` should then show nothing. Two more checks:
 - `npm run data:compare -- <before.json> <after.json>` compares two compiled files as the app draws them.
+- `npm run fields:proof -- <timeline> --allow '<pattern>,…'` proves that only the named fields (or row order) changed since a git revision.
 - After a code change, `git diff --exit-code data-src/` proves the change didn't move any data.
 
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.

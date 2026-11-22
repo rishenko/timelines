@@ -16,6 +16,8 @@ interface Props {
   onClose: () => void;
   /** Starts the guided tour; the button is left out without it. */
   onTour?: () => void;
+  /** Events on the period lane (golden ages, long society spans): the Legend explains the line when there are any. */
+  periodLane?: ReadonlySet<string>;
 }
 
 interface Item {
@@ -89,7 +91,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
   );
 }
 
-export function LegendPanel({ data, onClose, onTour }: Props) {
+export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
   const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
@@ -232,6 +234,12 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
     },
     {
+      sample: <span className="lg-period" />,
+      show: !!periodLane?.size,
+      title: 'Golden ages and long spans',
+      text: 'A row’s golden ages, and spans of 25 years or more in religion, law, culture or the economy, sit on a line of their own just under its phases, above its other events. They cross its rulers, so they are kept apart from what happened within them.',
+    },
+    {
       sample: <span className="lg-cluster">+3</span>,
       title: 'Folded events',
       text: 'Events that didn’t fit in a crowded row, usually the minor ones. If key events fold too, the +N names the earliest one and has a solid edge, as in “Second World War +3”. Click to zoom in on them.',
@@ -255,7 +263,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       sample: <span className="lg-age">Age</span>,
       show: !!data.meta.eras?.length,
       title: 'Age',
-      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age to centre the chart on it.',
+      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age to centre the chart on it; its ↗, when it has one, opens its article.',
     },
     {
       sample: <span className="lg-bar uncertain" />,

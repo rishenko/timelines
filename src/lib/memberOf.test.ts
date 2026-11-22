@@ -11,7 +11,7 @@ const cite = [{ sourceKey: 'wp', sourceLocation: 'infobox' }];
 /** A union (1922–1991) with a parent group, and two members: one with phases, one with a typed lifespan. */
 function union(memberOf: Partial<RowMembership>[] = [], on = 'ukraine'): Dataset {
   const d: Dataset = {
-    schemaVersion: 5,
+    schemaVersion: 6,
     meta: { id: 't', title: 'T', calendar: CE, increments: [10], defaultIncrement: 10 },
     present: 2026,
     tracks: [

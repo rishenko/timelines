@@ -259,7 +259,7 @@ def tracks():
                      region('western-europe', lead(HRE, 'much of Central Europe and Western Europe')),
                      region('italy', lead(HRE, 'three constituent kingdoms'))]),
 
-        group('near-east', 'Near East and North Africa', '#a8732f'),
+        group('near-east', 'Near East', '#a8732f'),
         row('caliphate', 'Caliphate', '#2f7d4f', 'near-east', 'Caliphate',
             phases=[
                 phase('Rashidun Caliphate', F(RAS, 'year_start', 'start'), F(RAS, 'year_end', 'end'), endEvent='ali-assassinated'),
@@ -310,7 +310,7 @@ def tracks():
             ],
             regions=[region('china', lead(TANG, 'imperial dynasty of China'))]),
 
-        group('africa', 'Africa south of the Sahara', '#9a5a2a'),
+        group('africa', 'Africa', '#9a5a2a'),
         row('mali-empire', 'Mali Empire', '#c08a2a', 'africa', MALI,
             span=stretch(F(MALI, 'year_start', 'start'), F(MALI, 'year_end', 'end'), circa=True, startEvent='conquest-of-sosso'),
             regions=[region('west-africa', lead(MALI, 'an empire in West Africa'))]),
@@ -443,7 +443,7 @@ def events():
 def build(repo):
     anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
     data = {
-        'schemaVersion': 5,  # v5 (schema PR #41) only adds optional fields
+        'schemaVersion': 6,  # v6 only adds Era.url and Era.ids
         'meta': {
             'id': 'medieval', 'title': 'Medieval World', 'subtitle': 'Europe, Africa, Asia, Oceania and the Americas, 650–1500',
             'description': 'Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.',
@@ -467,6 +467,17 @@ def build(repo):
     rows, evs = europe.build(me, repo)
     import med_near_east as near_east
     rows2 = near_east.build(me, repo)
+    # Egypt and the Maghreb are built with the Near East but sit under Africa, as its first regions
+    # (rows2 lists each parent before its children, so one pass collects their subtrees)
+    in_africa = {'africa'}
+    rows2_africa, rows2_near_east = [], []
+    for t in rows2:
+        if t.get('parent') in in_africa:
+            in_africa.add(t['id'])
+            rows2_africa.append(t)
+        else:
+            rows2_near_east.append(t)
+    rows2 = rows2_near_east
     by_id = {t['id']: t for t in pilot}
     import med_steppe as steppe
     rows3 = steppe.build(me, repo)
@@ -481,7 +492,7 @@ def build(repo):
     import med_americas as americas
     rows8 = americas.build(me, repo)
     data['tracks'] = [by_id['europe']] + rows + [by_id['near-east']] + rows2 + [by_id['steppe']] + rows3 + rows4 + \
-        [by_id['east-asia']] + rows5 + rows6 + [by_id['africa']] + rows7 + rows8 + \
+        [by_id['east-asia']] + rows5 + rows6 + [by_id['africa']] + rows2_africa + rows7 + rows8 + \
         [t for t in pilot if t['id'] not in ('europe', 'eastern-roman', 'hre', 'near-east', 'caliphate', 'steppe', 'mongol-empire',
                                              'golden-horde', 'east-asia', 'china', 'africa', 'mali-empire')]
     import med_catchup as catchup
