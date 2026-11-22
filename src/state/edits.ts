@@ -1,4 +1,4 @@
-import type { Dataset, DateClaim, RowMembership, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
+import type { Dataset, DateClaim, Membership, RowMembership, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { validateDataset } from '../data/validate.ts';
 import { spanStretches } from '../lib/lifespan.ts';
 
@@ -193,15 +193,29 @@ function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'eve
   const claims = (list: DateClaim[] | undefined) => list?.map(claim);
   const cites = (list: DateClaim[] | undefined) => !!list?.some((c) => c.source?.sourceKey === from);
 
+  // facet memberships (an event's categories, a row's regions) keep their other citations; one left citing nothing
+  // is dropped, since a membership must cite a source
+  const facetCites = (list: Membership[] | undefined) => !!list?.some((m) => m.sources.some((r) => r.sourceKey === from));
+  const refacet = (list: Membership[]): Membership[] =>
+    list.flatMap((m) => {
+      const sources = m.sources.flatMap((r) => ref(r) ?? []);
+      return sources.length ? [{ ...m, sources }] : [];
+    });
+  const withMemberships = <T extends { memberships?: Membership[] }>(x: T): T => {
+    if (!x.memberships) return x;
+    const { memberships: _old, ...rest } = x;
+    const kept = refacet(x.memberships);
+    return (kept.length ? { ...rest, memberships: kept } : rest) as T;
+  };
   const events = d.events.map((e) =>
-    e.sources.some((s) => s.sourceKey === from) || cites(e.startDates) || cites(e.endDates)
-      ? {
+    e.sources.some((s) => s.sourceKey === from) || cites(e.startDates) || cites(e.endDates) || facetCites(e.memberships)
+      ? withMemberships({
           ...e,
           sources: e.sources.flatMap((s) => ref(s) ?? []),
           ...(e.startDates ? { startDates: claims(e.startDates) } : {}),
           ...(e.endDates ? { endDates: claims(e.endDates) } : {}),
           edited: true,
-        }
+        })
       : e,
   );
   const spanCites = (s: TrackSpan | undefined) =>
@@ -226,15 +240,15 @@ function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'eve
     return sources.length ? [{ ...respan(m), sources }] : [];
   };
   const tracks = d.tracks.map((t) => {
-    if (!(spanStretches(t.span).some(spanCites) || t.phases?.some(spanCites) || t.memberOf?.some(memberCites))) return t;
+    if (!(spanStretches(t.span).some(spanCites) || t.phases?.some(spanCites) || t.memberOf?.some(memberCites) || facetCites(t.memberships))) return t;
     const { memberOf: _old, ...rest } = t;
     const memberOf = t.memberOf?.flatMap(remember);
-    return {
+    return withMemberships({
       ...rest,
       ...(t.span ? { span: Array.isArray(t.span) ? t.span.map(respan) : respan(t.span) } : {}),
       ...(t.phases ? { phases: t.phases.map(respan) } : {}),
       ...(memberOf?.length ? { memberOf } : {}),
-    };
+    });
   });
   const chronologies = d.chronologies
     ? Object.fromEntries(

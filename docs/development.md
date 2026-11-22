@@ -9,6 +9,8 @@ those; the scripts in `scripts/` are TypeScript run directly by Node).
 npm install
 npm run dev            # http://localhost:5173
 npm test               # vitest
+npm run test:watch     # vitest, rerunning on each change
+npm run docs:check     # the code's file fields and npm scripts are all documented (CI runs it)
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run preview        # serve dist/ locally
@@ -27,7 +29,13 @@ build, `run-all --check` for each included timeline, and a check that the files 
 key-event lists in `docs/` are what `data-src/` compiles to. If that check fails, run `npm run data -- build <timeline>`
 and `npm run data -- importance <timeline>`, and commit the result. Last comes the id-stability check
 (`npm run data -- ids --check`): no id that a link can name may disappear from a compiled timeline without an entry in
-its `redirects` ([data-format.md](data-format.md#keeping-ids-stable)).
+its `redirects` ([data-format.md](data-format.md#keeping-ids-stable)). The docs check (`npm run docs:check`) fails
+when a field of the file format in `src/types.ts` isn't named in [data-format.md](data-format.md), as `field` or as a
+key in an example, or when an npm script isn't named on this page.
+
+**Pull requests** update the docs and app text they affect, in the same pull request: the template
+(`.github/pull_request_template.md`) lists what to check. Reader-facing words follow the
+[glossary](glossary.md).
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
@@ -65,6 +73,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/subYear.ts` | Months and days: zoom steps below a year, date positions, `inc`/`at` in links |
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
+| `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -100,14 +109,23 @@ scripts. `npm run data` takes its short name (`ancient-classical`) or `all`:
 
 ```sh
 npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ (also npm run data:build)
-npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and row links; refresh docs/<short>-key-events.md (also npm run importance)
+npm run data -- importance <timeline|all>   # apply the plans (importance, row links, memberships, event categories); refresh docs/<short>-key-events.md (also npm run importance)
 npm run data -- format <timeline|all>       # re-format a source file (also npm run format:src for all)
-npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
+npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order (npm run row-order: Ancient, --best)
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
 npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing (also npm run data:check)
 npm run data -- ids --check                 # fail on ids lost since origin/main without a redirect (CI runs it)
 npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
+
+**Event categories** come from a plan, `data-src/ancient-classical-categories.json` (the `category` facet and each
+event's categories, main first), which `importance` applies (`scripts/lib/categories.ts`). The plan is written by
+`pipelines/ancient/categories.py`, which runs the shared classifier (`pipelines/common/event_categories.py`, as the
+generators do) with the reviewed overrides in `pipelines/ancient/categories.json`, and writes the evidence for each
+event to `data-src/provenance/ancient-classical-categories.json`. It needs the Wikipedia dump
+([pipelines/README.md](../pipelines/README.md)); the build and CI need only the plan. After a change to the classifier
+or the overrides: rerun it, then `npm run data -- importance ancient-classical` and `npm run categories:proof --
+ancient-classical`.
 
 The site's list, `timelines/index.json`, isn't committed: `scripts/lib/timeline-index-plugin.ts` makes it from the
 files in `public/timelines/` (the dev server on each request, the build into `dist/timelines/`), in the order
@@ -143,7 +161,8 @@ matches `data-src/`. Medieval World reads Modern States' committed build at the 
 compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
 
 To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
-them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. `pipelines/README.md` covers the inputs, the settings and how to rerun.
+them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
+`pipelines/README.md` covers the inputs, the settings and how to rerun.
 
 ## Row links
 
@@ -207,6 +226,22 @@ the regions inside each (`broader`); rows with sub-rows stay while any row below
 while one of its sources is switched on (so tags cited to hidden spoiler sources give nothing away). The result is laid
 over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
 without knowing about regions. Off in edit mode. The link carries `&regions=`.
+
+### Category filter
+
+Filters → Data filters → Categories reuses the Regions tree (`RegionFilter.tsx` with a heading, a noun and help text)
+on the timeline's first facet whose `applies` is `"events"` (`categoryFacetId` in `src/lib/categories.ts`; state in
+`src/state/categoryFilter.ts`). Kinds and sub-kinds with no events on the timeline are left out. An event shows if
+either of its categories is ticked or sits inside a ticked kind; an event with no category always shows; the same
+source rule as regions applies. The result is one more test in `visibleEvents` (`App.tsx`), so the chart, table and
+search follow it. Off in edit mode. The link carries `&cat=`.
+
+Each event's main kind draws a glyph before its title (`CategoryGlyph.tsx`, one shape per kind; the layout reserves its
+width through `glyphs`), and on a "+N" pill that names a key event. Both categories are in the event's accessible
+name, the table's Category column (sortable, and in the CSV) and the event's details. The event editor picks a main
+and a second category; a new one cites the event's first source, so the picker waits until the event has one.
+Deleting a source drops it from facet memberships (`recite` in `src/state/edits.ts`), and a membership left citing
+nothing goes too.
 
 Each row's own regions and the sources placing it there (`rowRegionList`) show in the table view's rows tables (a
 Regions column; rows with regions but no lifespan are listed too) and in the row name's tooltip in the chart
@@ -324,7 +359,9 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
   person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
-  It isn't in CI (about 10 minutes): run it after a major UI change or a batch of UI changes, before merging, and
-  commit the new report. Commit a report run on the default timeline (Ancient), so reports stay comparable; the report
-  names its timeline and any view it couldn't open there (Dating, on a timeline with one dating system).
+  It isn't in CI (about 10 minutes): run it after a UI change, before asking for review, and paste its summary line
+  ("Failing: 0", the number of views) in the pull request. **Pull requests don't commit `wcag-report.md`**: it would
+  conflict with every other UI change. The maintainers commit a fresh report, run on the default timeline (Ancient) so
+  reports stay comparable, after each batch of merges. The report names its timeline and any view it couldn't open
+  there (Dating, on a timeline with one dating system).
 - Plan and status: [feature-audit.md](feature-audit.md), item 23.

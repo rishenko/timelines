@@ -350,7 +350,10 @@ events and facet values form a graph: events link rows, memberships link rows to
 timelines share one such facet, `category`: nine kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
 `unrest`, `diplomacy`, `society`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
 `conflict`). An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
-article the event is dated from. The app doesn't show them yet.
+article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed
+corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
+shape before the event's title, names both categories in the table and the event's details, and filters by them
+(Filters → Categories; an event with no category always shows). The editor picks them, citing the event's first source.
 
 ## sources and tags
 
@@ -404,6 +407,7 @@ The editor keeps a locator while the reference is unchanged, and drops it when t
 | `importance` | no | `1` key, `2` normal (default), `3` minor. Key events have bold labels. A crowded or collapsed row places key events first and folds minor ones into "+N" first, so a reader scanning collapsed regions still sees the headline events. A "+N" that holds a key event names the earliest one ("Second World War +3"). |
 | `links` | no | Connections to other events: `[{ "to": "<event uuid>", "kind": "causes" }]`. |
 | `memberships` | no | The facet values the event belongs to, cited like a row's [memberships](#memberships). Only facets whose `applies` is `"events"` or `"both"`. Kept by the editor; not drawn or filtered yet. |
+| `edited` | no | Set by edit mode on events the reader added or changed; **Download in-progress** keeps it and **Download final** removes it. Don't write it by hand. |
 
 Link kinds: `causes` (leads to), `part-of`, `succeeds`, `conquers`, `related`. All but `related` draw
 as arrows.
@@ -552,9 +556,10 @@ a page that asks readers to add a timeline.
   Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. Below a year, `inc` names
   the step and `at` is a date: `&inc=month&at=1916-07-01`. The link also carries
   the reader's view: `&view=table`, `&compress=0`, `&rows=all|active|thin` (hidden rows), ticked regions
-  (`&regions=anatolia,nile`) and a comparison set (`&set=<row ids>&order=related|start`). Row and source toggles and
+  (`&regions=anatolia,nile`), a comparison set (`&set=<row ids>&order=related|start`) and ticked event categories
+  (`&cat=conflict,siege`). Row and source toggles and
   dating choices aren't in the link yet.
-- **Rename or remove ids with care:** links name rows, events and regions by id. Add the old id to `redirects` (see
+- **Rename or remove ids with care:** links name rows, events, regions and categories by id. Add the old id to `redirects` (see
   [keeping ids stable](#keeping-ids-stable)) and old links keep working.
 - **Update** by replacing the file at the same link. Readers get the new version the next time they open the
   timeline (the app checks the link for a few seconds, then opens the saved copy if it can't reach it), or with

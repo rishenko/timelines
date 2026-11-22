@@ -66,6 +66,9 @@ The three link to each other where they meet, at 650 and 1500.
 - **Regions:** Filters → Data filters → Regions shows only the rows in the regions you tick, with narrower regions
   folded under broader ones. Each row's regions cite their sources, shown in the table view and the row name's
   tooltip.
+- **Kinds of event:** a shape before each event's title says what kind it was (rulers, statehood, territory, cities
+  and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology). Filters → Data filters →
+  Categories shows only the kinds you tick; the table and an event's details name its categories.
 - **Comparison sets:** pick rows from anywhere (the + on a row's label, the "Add a row" box, or "Compare these rows"
   under a region filter) and see them side by side: as picked, related rows together, or by start date.
 - **Hidden rows:** rows with nothing near the years on screen are hidden as you move (or drawn as thin lines), so a
@@ -138,6 +141,7 @@ Setup, commands, the code map, the data tooling and the checks are in [docs/deve
 | [docs/data-format.md](docs/data-format.md) | The timeline file format, the rules it must pass, and how to share a timeline |
 | [docs/examples/example-timeline.json](docs/examples/example-timeline.json) | A complete example to copy |
 | [docs/development.md](docs/development.md) | Setup, commands, code map, data tooling and checks |
+| [docs/glossary.md](docs/glossary.md) | The words the app and the docs use for what a reader sees |
 | [pipelines/README.md](pipelines/README.md) | The generators that build Medieval World and Modern States from a Wikipedia dump |
 | [docs/ancient-classical-sources.md](docs/ancient-classical-sources.md) | How Ancient and Classical was made from two earlier timelines, and the changes since |
 | [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where its dates come from, and the judgment calls |

@@ -17,6 +17,11 @@ export interface SourceTimeline {
   rowLinks?: string;
   /** Category memberships plan: facets, and each row's memberships with their sources (scripts/lib/memberships.ts). */
   memberships?: string;
+  /**
+   * Event categories plan: the `category` facet and each event's categories (scripts/lib/categories.ts), written by
+   * pipelines/ancient/categories.py from the shared classifier and reviewed overrides.
+   */
+  categories?: string;
   /** Generated review list of key and minor events; written only for a timeline with an importance plan. */
   keyEvents?: string;
   /**
@@ -41,6 +46,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     importance: 'data-src/ancient-classical-importance.json',
     rowLinks: 'data-src/ancient-classical-row-links.json',
     memberships: 'data-src/ancient-classical-memberships.json',
+    categories: 'data-src/ancient-classical-categories.json',
     keyEvents: 'docs/ancient-classical-key-events.md',
     scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign', 'derived-lifespans']),
   },

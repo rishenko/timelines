@@ -30,6 +30,8 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm test
+      # Every file field in src/types.ts is in docs/data-format.md, and every npm script in docs/development.md
+      - run: npm run docs:check
       - run: npm run build
 
       # The content scripts must reproduce the source file exactly

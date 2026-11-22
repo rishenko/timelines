@@ -100,7 +100,7 @@ const isoDate = (y: number, m?: number, d?: number) =>
  * and as stored astronomical numbers (-1594), so spreadsheets can sort and compute with them. The last two columns
  * give the full dates ("1916-07-01", "1916-07", "1916"), for timelines dated in months and days.
  */
-export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
+export function eventsCsv(data: Dataset, events: ResolvedEvent[], categories?: Map<string, { labels: string[] }>): string {
   const cal = data.meta.calendar;
   const names = new Map(data.tracks.map((t) => [t.id, t.name]));
   const qids = new Map(data.tracks.map((t) => [t.id, t.ids?.wikidata ?? '']));
@@ -109,6 +109,8 @@ export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
     'approximate', 'chronology', 'rows', 'rows_wikidata', 'importance', 'sources', 'description',
     // added for dates in months and days, at the end so existing columns keep their places
     'start_date', 'end_date',
+    // event categories, main first, on timelines whose events have them
+    ...(categories ? ['categories'] : []),
   ];
   const lines = [head.join(',')];
   for (const e of [...events].sort(compareEvents)) {
@@ -136,6 +138,7 @@ export function eventsCsv(data: Dataset, events: ResolvedEvent[]): string {
         e.descr,
         isoDate(e.start, e.startMonth, e.startDay),
         e.end !== undefined ? isoDate(e.end, e.endMonth, e.endDay) : undefined,
+        ...(categories ? [categories.get(e.uuid)?.labels.join('; ')] : []),
       ]
         .map(csvCell)
         .join(','),
