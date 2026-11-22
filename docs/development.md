@@ -9,6 +9,8 @@ those; the scripts in `scripts/` are TypeScript run directly by Node).
 npm install
 npm run dev            # http://localhost:5173
 npm test               # vitest
+npm run test:watch     # vitest, rerunning on each change
+npm run docs:check     # the code's file fields and npm scripts are all documented (CI runs it)
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run preview        # serve dist/ locally
@@ -27,7 +29,13 @@ build, `run-all --check` for each included timeline, and a check that the files 
 key-event lists in `docs/` are what `data-src/` compiles to. If that check fails, run `npm run data -- build <timeline>`
 and `npm run data -- importance <timeline>`, and commit the result. Last comes the id-stability check
 (`npm run data -- ids --check`): no id that a link can name may disappear from a compiled timeline without an entry in
-its `redirects` ([data-format.md](data-format.md#keeping-ids-stable)).
+its `redirects` ([data-format.md](data-format.md#keeping-ids-stable)). The docs check (`npm run docs:check`) fails
+when a field of the file format in `src/types.ts` isn't named in [data-format.md](data-format.md), as `field` or as a
+key in an example, or when an npm script isn't named on this page.
+
+**Pull requests** update the docs and app text they affect, in the same pull request: the template
+(`.github/pull_request_template.md`) lists what to check. Reader-facing words follow the
+[glossary](glossary.md).
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
@@ -102,7 +110,7 @@ scripts. `npm run data` takes its short name (`ancient-classical`) or `all`:
 npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ (also npm run data:build)
 npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and row links; refresh docs/<short>-key-events.md (also npm run importance)
 npm run data -- format <timeline|all>       # re-format a source file (also npm run format:src for all)
-npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
+npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order (npm run row-order: Ancient, --best)
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
 npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing (also npm run data:check)
 npm run data -- ids --check                 # fail on ids lost since origin/main without a redirect (CI runs it)
@@ -324,7 +332,9 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
   person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
-  It isn't in CI (about 10 minutes): run it after a major UI change or a batch of UI changes, before merging, and
-  commit the new report. Commit a report run on the default timeline (Ancient), so reports stay comparable; the report
-  names its timeline and any view it couldn't open there (Dating, on a timeline with one dating system).
+  It isn't in CI (about 10 minutes): run it after a UI change, before asking for review, and paste its summary line
+  ("Failing: 0", the number of views) in the pull request. **Pull requests don't commit `wcag-report.md`**: it would
+  conflict with every other UI change. The maintainers commit a fresh report, run on the default timeline (Ancient) so
+  reports stay comparable, after each batch of merges. The report names its timeline and any view it couldn't open
+  there (Dating, on a timeline with one dating system).
 - Plan and status: [feature-audit.md](feature-audit.md), item 23.

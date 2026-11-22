@@ -404,6 +404,7 @@ The editor keeps a locator while the reference is unchanged, and drops it when t
 | `importance` | no | `1` key, `2` normal (default), `3` minor. Key events have bold labels. A crowded or collapsed row places key events first and folds minor ones into "+N" first, so a reader scanning collapsed regions still sees the headline events. A "+N" that holds a key event names the earliest one ("Second World War +3"). |
 | `links` | no | Connections to other events: `[{ "to": "<event uuid>", "kind": "causes" }]`. |
 | `memberships` | no | The facet values the event belongs to, cited like a row's [memberships](#memberships). Only facets whose `applies` is `"events"` or `"both"`. Kept by the editor; not drawn or filtered yet. |
+| `edited` | no | Set by edit mode on events the reader added or changed; **Download in-progress** keeps it and **Download final** removes it. Don't write it by hand. |
 
 Link kinds: `causes` (leads to), `part-of`, `succeeds`, `conquers`, `related`. All but `related` draw
 as arrows.
