@@ -20,7 +20,19 @@ function bandBox(scale: Scale, s: ResolvedSpan) {
   return { x0, x1, fadeIn, fadeOut };
 }
 
-const bandStyle = (labelW: number, b: ReturnType<typeof bandBox>, color: string) =>
+/**
+ * A drawn extent cut to the chart: from its start (content px 0) to the end of the ruler (`width`), so nothing a row
+ * draws runs on past either end of the ruler into the empty space beside it. The fades lose what was cut, and
+ * `continues` says the extent ran on past the chart's end (it ends there in an arrow, like a still-going one).
+ */
+function clipToChart(b: { x0: number; x1: number; fadeIn: number; fadeOut: number }, width: number) {
+  const x0 = Math.max(b.x0, 0);
+  const x1 = Math.min(b.x1, width);
+  // x1 < x0: wholly outside the chart (not drawn); x1 == x0 is a cell cut to nothing by the next phase, still drawn
+  return { x0, x1, fadeIn: Math.max(0, b.fadeIn - (x0 - b.x0)), fadeOut: Math.max(0, b.fadeOut - (b.x1 - x1)), continues: b.x1 > width };
+}
+
+const bandStyle = (labelW: number, b: Omit<ReturnType<typeof bandBox>, 'continues'>, color: string) =>
   ({
     left: labelW + b.x0,
     width: b.x1 - b.x0,
@@ -59,8 +71,8 @@ export function SpanBand({
   members,
   eventTitle = noTitle,
 }: Common & { track: Track; span: ResolvedSpan; cue?: boolean; title?: string; members?: string }) {
-  const b = bandBox(scale, span);
-  if (!inView(b.x0, b.x1)) return null;
+  const b = clipToChart(bandBox(scale, span), scale.width);
+  if (b.x1 < b.x0 || !inView(b.x0, b.x1)) return null;
   const approx = isApprox(span);
   return (
     <div
@@ -68,7 +80,7 @@ export function SpanBand({
       style={bandStyle(labelW, b, track.color)}
       title={`${title ?? track.name}: ${spanDates(span, cal, approx)}${span.derived && !title ? ' (from its phases)' : ''}${title ? '' : successionTip(span, eventTitle)}${members ? `\n${members}` : ''}`}
     >
-      {span.ongoing && cue && (
+      {(span.ongoing || b.continues) && cue && (
         <div className="tl-ongoing-run">
           <span className="tl-ongoing span-cue" />
         </div>
@@ -80,7 +92,8 @@ export function SpanBand({
 /**
  * A phase in its row's strip (see layoutPhaseStrips): a tinted cell (alternating shades on its line, fading across
  * uncertain edges), a line where it begins and another where it ends (unless the next phase begins there), an arrow
- * instead of an end when it is still going, and its name where it fits. Display only: hovering it shows its name and
+ * instead of an end when it is still going (or runs on past the end of the chart, where it is cut: clipToChart), and
+ * its name where it fits. Display only: hovering it shows its name and
  * dates, and clicks go through to the row.
  * A membership in another row (PlacedPhase.member) is drawn the same way on its own line, in the union's colour, as a
  * dashed outline rather than a filled cell, with its name ("in Soviet Union, 1922–91") in ordinary type.
@@ -94,40 +107,46 @@ export function PhaseStripCell({
   eventTitle = noTitle,
   memberName,
   unionName,
-}: Omit<Common, 'scale'> & { cell: PhaseCell; color: string; memberName?: string; unionName?: string }) {
+  scale,
+}: Common & { cell: PhaseCell; color: string; memberName?: string; unionName?: string }) {
   const p = c.phase;
-  if (!inView(c.x0, c.x1)) return null;
+  const b = clipToChart(c, scale.width);
+  if (b.x1 < b.x0 || !inView(b.x0, b.x1)) return null;
+  const arrow = p.ongoing || b.continues;
+  // a name beside or inside the phase keeps to the chart too; too little of it left, and the tooltip names the phase
+  const name = c.name && { ...c.name, x0: Math.max(c.name.x0, 0), x1: Math.min(c.name.x1, scale.width) };
+  const showName = name && name.x1 - name.x0 >= 24 ? name : null;
   const member = p.member !== undefined;
   const tip = `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}`;
   return (
     <div
-      className={`tl-phase${member ? ' member' : c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${c.name?.outside ? ' has-outside' : ''}`}
+      className={`tl-phase${member ? ' member' : c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${showName?.outside ? ' has-outside' : ''}`}
       style={
         {
-          left: labelW + c.x0,
-          width: c.x1 - c.x0,
+          left: labelW + b.x0,
+          width: b.x1 - b.x0,
           top: c.line.top,
           height: c.line.height,
           '--track-color': color,
-          '--fade-in': `${c.fadeIn}px`,
-          '--fade-out': `${c.fadeOut}px`,
+          '--fade-in': `${b.fadeIn}px`,
+          '--fade-out': `${b.fadeOut}px`,
         } as React.CSSProperties
       }
     >
       <div className="tl-phase-fill" title={tip} />
-      {c.startX >= c.x0 && <div className="tl-phase-edge" style={{ left: c.startX - c.x0 }} />}
-      {c.endX !== null && <div className="tl-phase-edge end" style={{ left: c.endX - c.x0 }} />}
-      {p.ongoing && (
+      {c.startX >= b.x0 && c.startX <= b.x1 && <div className="tl-phase-edge" style={{ left: c.startX - b.x0 }} />}
+      {c.endX !== null && c.endX >= b.x0 && c.endX <= b.x1 && <div className="tl-phase-edge end" style={{ left: c.endX - b.x0 }} />}
+      {arrow && (
         <div className="tl-ongoing-run">
           <span className="tl-ongoing" />
         </div>
       )}
-      {c.name && (
-        <div className={`tl-phase-names${c.name.outside ? ` outside ${c.name.outside}` : ''}`} style={{ left: c.name.x0 - c.x0, width: c.name.x1 - c.name.x0 }}>
+      {showName && (
+        <div className={`tl-phase-names${showName.outside ? ` outside ${showName.outside}` : ''}`} style={{ left: showName.x0 - b.x0, width: showName.x1 - showName.x0 }}>
           {/* (a still-going phase's name keeps clear of its arrow at the right of the view) */}
           <span
             className="tl-phase-name"
-            style={{ left: labelW, maxWidth: c.name.x1 - c.name.x0, marginRight: p.ongoing && !c.name.outside ? 12 : 0 }}
+            style={{ left: labelW, maxWidth: showName.x1 - showName.x0, marginRight: arrow && !showName.outside ? 12 : 0 }}
             title={tip}
           >
             {member ? <MemberName name={p.name} /> : p.name}
