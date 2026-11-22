@@ -28,7 +28,7 @@ key-event lists in `docs/` are what `data-src/` compiles to. If that last check 
 and `npm run data -- importance <timeline>`, and commit the result.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
-`npm run dom-snapshot` renders both included timelines in many states (zooms, every row expanded, the table, the
+`npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
 detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:
 
 ```sh
@@ -58,8 +58,11 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` and `?collection=<url>` links, update checks for timelines from links, the reader's own timelines, the welcome page |
 | `src/types.ts` | The schema v4 types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …) |
 | `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
-| `src/data/` | The validator, and row proximity checks for the included timelines (`proximity.ts`) |
+| `src/data/` | The validator (`validate.ts`), schema versions and migration (`migrate.ts`), the site's list format (`timelineIndex.ts`), and row proximity checks (`proximity.ts`) |
 | `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks |
+| `src/lib/subYear.ts` | Months and days: zoom steps below a year, date positions, `inc`/`at` in links |
+| `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
+| `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -87,16 +90,16 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 Stored years are astronomical (there is always a year 0), so subtraction gives durations in every calendar; only
 display depends on the calendar. See [data-format.md](data-format.md#years).
 
-## Building the included timeline
+## Building Ancient and Classical
 
-The included timeline is written in `data-src/ancient-classical.json` with readable dates (`"start": "c. 1595 BCE"`)
+Ancient and Classical is written in `data-src/ancient-classical.json` with readable dates (`"start": "c. 1595 BCE"`)
 and compiled into `public/timelines/ancient-classical.json`. `scripts/lib/timelines.ts` lists it with its files and
 scripts. `npm run data` takes its short name (`ancient-classical`) or `all`:
 
 ```sh
 npm run data -- build <timeline|all>        # compile data-src/ → public/timelines/ (also npm run data:build)
 npm run data -- importance <timeline|all>   # apply data-src/<short>-importance.json and row links; refresh docs/<short>-key-events.md (also npm run importance)
-npm run data -- format <timeline|all>       # re-format a source file
+npm run data -- format <timeline|all>       # re-format a source file (also npm run format:src for all)
 npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
 npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing (also npm run data:check)
@@ -127,12 +130,17 @@ npm run audit:batches -- <data-src file> <out dir>   # group descriptions by cit
 
 ### Timelines generated from Wikipedia
 
-`data-src/modern-states.json` is not hand-written. `pipelines/modern-states/gen_modern.py` builds it from an offline
-English Wikipedia dump, citing each date's infobox field or sentence, and writes its provenance manifest to
-`data-src/provenance/`. Edit the generator, not the file, then rerun it, compile with
-`npm run data -- build modern-states`, and check `git diff data-src/ public/timelines/`. It is in
-`scripts/lib/timelines.ts` (with no content scripts), so CI and the data tests check that its compiled file matches
-`data-src/`. `pipelines/README.md` covers the inputs, the settings and how to rerun.
+`data-src/modern-states.json` and `data-src/medieval.json` are not hand-written. `pipelines/modern-states/gen_modern.py`
+and `pipelines/medieval/gen_medieval.py` build them from an offline English Wikipedia dump, citing each date's infobox
+field or sentence, and write their provenance manifests to `data-src/provenance/`. Edit the generator, not the file,
+then rerun it, compile with `npm run data -- build <timeline>`, and check `git diff data-src/ public/timelines/`. Both
+are in `scripts/lib/timelines.ts` (with no content scripts), so CI and the data tests check that each compiled file
+matches `data-src/`. Medieval World reads Modern States' committed build at the commit named in
+`pipelines/medieval/med_europe.py` (`MODERN_COMMIT`), so the rows that cross 1500 match; `npm run seam-check`
+compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
+
+To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
+them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. `pipelines/README.md` covers the inputs, the settings and how to rerun.
 
 ## Row links
 
@@ -160,7 +168,7 @@ AI-generated-text template). Rules used for the included timelines:
 
 `docs/<short>-row-links.md` lists every decision; the decision files used are in `scripts/archive/`.
 
-## Category memberships
+## Regions (facet memberships)
 
 Rows can belong to values of three facets, geography, people and civilization, each membership citing where its
 source says so (`meta.facets`, `memberships`; see [data-format.md](data-format.md#memberships)). The region filter
@@ -190,7 +198,7 @@ purpose (its sources name none).
 
 ### Region filter
 
-Filters → Regions (`src/components/RegionFilter.tsx`, rules in `src/lib/regions.ts`, state in
+Filters → Data filters → Regions (`src/components/RegionFilter.tsx`, rules in `src/lib/regions.ts`, state in
 `src/state/regionFilter.ts`) works on the timeline's first facet. A row shows if it is in any ticked region, counting
 the regions inside each (`broader`); rows with sub-rows stay while any row below them shows; a membership counts only
 while one of its sources is switched on (so tags cited to hidden spoiler sources give nothing away). The result is laid
@@ -203,7 +211,7 @@ Regions column; rows with regions but no lifespan are listed too) and in the row
 
 ### Filters panel
 
-`FiltersPanel.tsx` has two native `<details>` sections, Visual filters (chart options, hidden rows) and Data filters
+`FiltersPanel.tsx` has two native `<details>` sections, Display (chart options, hidden rows) and Data filters
 (Regions, Tracks, Sources, Source tags); both open on wide screens, Visual folded on phones, the reader's choice kept in
 `timelines:filters-open`. Tracks and Sources are `FilterTree`s (`src/components/FilterTree.tsx`): folding lists with a
 find box, where a group's checkbox switches everything below it (native indeterminate state when mixed). Tracks follow
@@ -313,6 +321,6 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
   person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
-  It isn't in CI (about 6 minutes): run it after a major UI change or a batch of UI changes, before merging, and
+  It isn't in CI (about 10 minutes): run it after a major UI change or a batch of UI changes, before merging, and
   commit the new report.
 - Plan and status: [feature-audit.md](feature-audit.md), item 23.

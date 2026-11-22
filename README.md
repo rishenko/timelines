@@ -1,162 +1,134 @@
 # Timelines
 
-A web app for horizontal swimlane timelines, fictional or historical. Each timeline is one JSON file with its own
-rows, calendar, zoom levels and sources. The app is a static site: build it once, serve it from any web server, and
-give it your own timeline data.
+A web app for horizontal swimlane timelines, historical or fictional. Each timeline is one JSON file with its own
+rows, calendar, zoom steps and sources. The app is a static site: build it once, serve it from any web server, and
+give it your own timelines.
 
 **Live site:** https://rishenko.github.io/timelines/
 
-## Included timeline
+## Included timelines
 
-**Ancient and Classical World**: from the first farmers to the rise of Islam, c. 9000 BCE – 650 CE, across Europe,
-Africa, the Near East, Asia, Oceania and the Americas. 883 events on 368 rows. It began as two timelines, Ancient
-Civilizations (c. 9000–330 BCE) and The Classical World (c. 500 BCE – 650 CE), merged into one in November 2026; they
-are kept in [archive/](archive/README.md).
+Every date cites the Wikipedia article it comes from; see [Data sources and AI use](#data-sources-and-ai-use).
 
-Every date cites the Wikipedia article it comes from. See [Data sources and AI use](#data-sources-and-ai-use).
+- **Ancient and Classical World**, c. 9000 BCE – 650 CE: from the first farmers to the rise of Islam, across Europe,
+  Africa, the Near East, Asia, Oceania and the Americas. 371 rows, 883 events.
+- **Medieval World**, 650–1500: realms with their dynasties as phases, and unions and empires as their own rows.
+  379 rows, 563 events.
+- **Modern States**, 1500 to today: every state in the world, with its governments as phases and its memberships in
+  unions and empires. 602 rows, 1,508 events.
 
-## Quick start
-
-Requires Node 22.22.2 or newer on the 22 line, or 24.15 or newer.
-
-```sh
-npm install
-npm run dev      # http://localhost:5173
-```
-
-## Host it
-
-```sh
-npm run build    # writes the site to dist/
-```
-
-`dist/` is plain HTML, JavaScript and CSS with relative paths. Copy it to any static web server, in any folder.
-There is no backend or database: the site's timelines are JSON files in `dist/timelines/`, readers can add more from
-a link or a file, and readers' changes stay in their own browser. The Deploy workflow (started by hand, from `main`) publishes it to GitHub Pages; see [development.md](docs/development.md#commands).
-
-The built site doesn't need to be built again to change its timelines: replace, add or remove files in
-`timelines/` on the server and update `timelines/index.json`, the site's list (see below).
-
-## Use your own timeline data
-
-A timeline is one JSON file. Copy [docs/examples/example-timeline.json](docs/examples/example-timeline.json), a
-small fictional kingdom, and see [docs/data-format.md](docs/data-format.md) for every field.
-
-There are four ways to get a timeline into the app:
-
-1. **Put it on your site.** Add the file to `public/timelines/`: the dev server and the build list every file there
-   in `timelines/index.json` (the build writes both into `dist/timelines/`). To place it in the list (the first
-   opens by default), add its `meta.id` to `data-src/site-timelines.json`; files not named there come last. On a site
-   that is already built, copy the file into its `timelines/` folder and add an entry to `timelines/index.json` by
-   hand: `{ "id": "<the file's meta.id>", "title": "…", "file": "my-timeline.json" }`. The first entry opens by
-   default; remove the included timeline by deleting its file and entry. A site with no timelines at all
-   opens on a page that asks readers to add one. See
-   [the site's list of timelines](docs/data-format.md#the-sites-list-of-timelines).
-2. **Link to it.** Host the file anywhere that lets other sites read it (GitHub raw files, GitHub Pages and gists
-   do) and open `<your site>/?data=<link to the file>`. Anyone with the link sees the same timeline.
-3. **Share a list of them.** A group can keep its own list of timelines, in the same format as `timelines/index.json`,
-   anywhere online, and share `<your site>/?collection=<link to the list>`. Each reader's picker then shows the
-   list's timelines next to the site's. See [shared lists](docs/data-format.md#shared-lists).
-4. **Add it in the browser.** Customize → Timelines → *Add from a file…*, or paste a link to a timeline or a list
-   there. Timelines added this way are saved in that browser only.
-
-You can also build or change a timeline in edit mode (Customize → Edit) and download the result as JSON.
-
-Every file is validated before it opens. Because timelines can come from anyone, links and images inside them must
-be `http(s)` addresses or relative paths.
+The three link to each other where they meet, at 650 and 1500.
 
 ## Features
 
-### Reading a timeline
+### Rows and time
 
-- **Rows** that nest to any depth and fold away, with lifespans, named phases (dynasties, governments) and an
-  optional image. *Expand all*, *Collapse all* and ↺ (back to the way the timeline opens) fold every row at once.
-- **Region filter:** Filters → Data filters → Regions shows only the rows in the regions you tick (broad regions with the narrower ones
-  folded under them). Each row's regions come from its sources, listed in the table view and the row name's tooltip;
-  the ticked regions go into the link (`&regions=anatolia,nile`).
+- **Rows** nest to any depth and expand or collapse; a collapsed row gathers its sub-rows' events. *Expand all*,
+  *Collapse all* and ↺ (back to the way the timeline opens) act on every row at once.
+- **Lifespans:** the shaded band behind a row shows when it existed, with soft edges where its start or end is
+  uncertain, gaps where it didn't exist, and an arrow when it is still going.
+- **Phases:** a row's governments, dynasties or eras, in a strip along its top. Rival phases that overlapped (two
+  governments in a civil war) take a second strip.
+- **Memberships:** a row that belonged to another row for a while (a republic in a union, a province in an empire)
+  shows "in" that row's name and years on one more strip; the union's row lists its members.
+- **Calendars:** BCE/CE, or your own era names, with or without a year 0.
+- **Days and months:** any date can give a month or a day. A timeline can offer zoom steps below a year (quarter,
+  month, week, day), and the ruler then labels months or days.
+- **The ruler and zoom:** pick the time each tick covers (buttons, `+`/`−`, or pinch), and scroll or drag through
+  time. At the widest zoom only key events are drawn.
+- **Shortened gaps:** long stretches with no events are squeezed, labelled with the time skipped (Filters → Display).
+- **Neighbouring timelines:** a timeline can link to the one before or after it, on the ruler where they meet.
+
+### Events and evidence
+
+- **Events** on one row or several, as a bar from start to end, or a diamond for a single date. An event on several
+  rows is joined by a thread while it is selected.
+- **Key and folded events:** key events have bold labels and are placed first in a crowded or collapsed row; events
+  that don't fit fold into "+N". A row's ⇣ button shows all its lines of events.
+- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows; pointing at or
+  selecting an event highlights what it is connected to.
+- **Uncertain dates:** each date records what every source says (its *date claims*), and the range they allow is
+  drawn as hatched, lighter ends. "c." marks an approximate date.
+- **Dating systems:** where scholars date a region differently (such as Mesopotamia's High, Middle and Low
+  chronologies), the **Dating** menu switches between them and the events move to match.
+- **Sources:** events, date claims and memberships cite their sources with a page or section; event details list
+  them, with the dates each source gives.
+- **Event details:** the description, dates, sources, connections, and what the event began or ended, with a *Copy
+  link* button.
+- **Maps** (Ancient and Classical): opening an event shows its rows on a map of its year: borders where a source has
+  them, else a pin and the map from the row's Wikipedia article.
+
+### Finding your way
+
+- **Search** rows, phases and events, or type a year or a date ("1 July 1916") to go there. `/` searches from
+  anywhere.
+- **Regions:** Filters → Data filters → Regions shows only the rows in the regions you tick, with narrower regions
+  folded under broader ones. Each row's regions cite their sources, shown in the table view and the row name's
+  tooltip.
 - **Comparison sets:** pick rows from anywhere (the + on a row's label, the "Add a row" box, or "Compare these rows"
-  under a region filter) and see them side by side, each with its region: as picked, related rows together, or by start
-  date. The set goes into the link (`&set=hittites,pharaonic-egypt&order=related`).
-- **Any calendar:** BCE/CE or your own era names, with or without a year 0.
-- **Uncertain dates** drawn as hatched ranges, worked out from what each source says. Alternative dating systems
-  (such as Mesopotamia's High, Middle and Low chronologies) that readers can switch between in the **Dating** menu.
-- **Events** on one row or several (joined by a thread when selected), with a start and end, or ongoing to the timeline's "now".
-- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows, and the line joining a
-  shared event's rows while it is selected.
-- **Key events** stay visible when you zoom out or fold a crowded row; minor events fold into "+N". A row's
-  "show all" button unfolds its "+N" groups.
-- **Event details:** the dates each source gives, the sources with page or section, the connections, a map, and a
-  *Copy link* button.
-- **Maps:** opening an event shows its rows on a map of its year: borders where a source has them, else a pin at
-  the row's location and the map from its Wikipedia article. Loaded only when an event is opened.
-- **Row links:** a row's name can link to a page about it; in the included timeline, its Wikipedia article. Rows can
-  also carry a Wikidata id, shown in the table view and the CSV download.
-- **Zoom** by years per tick (buttons, `+`/`−`, or pinch). Long empty stretches are shortened (Filters → Visual
-  filters → *Shorten gaps with no events*).
-- **Hide rows with nothing in view**, or draw them as thin lines, so a timeline with many short-lived rows stays
-  readable (Filters → Visual filters → Rows). The ruler corner says how many are hidden.
-- **A busy ring** in the chart's top-right corner while the rows are about to change after a sideways scroll, or while
-  a slow update (filters, regions, a comparison, dating) is drawn; the chart is marked busy for screen readers.
-- **Search** across rows, phases and events, or type a year to go there (`/` from anywhere).
-- **Filters** in two sections: *Visual filters* (how the chart draws: gaps, connections, hidden rows) and *Data
-  filters* (what it shows: regions, rows and sources as folding lists with a find box, source tags). While regions are
-  ticked, the rows and sources outside them are dimmed. A timeline can start with some sources hidden (to avoid
-  spoilers).
-- **Legend** that explains only what the open timeline uses, including the keyboard keys, and a one-minute
-  **guided tour**.
-- **Table view** of the same events and rows, with dates and sources in words, and a CSV download of the events
-  listed.
-- **Neighbouring timelines:** a timeline can link to the one before or after it, drawn on the ruler where they meet.
+  under a region filter) and see them side by side: as picked, related rows together, or by start date.
+- **Hidden rows:** rows with nothing near the years on screen are hidden as you move (or drawn as thin lines), so a
+  timeline with many short-lived rows stays readable. Filters → Display shows them all again; the ruler's corner says
+  how many are hidden.
+- **Filters:** *Display* (how the chart draws: shortened gaps, hidden rows) and *Data filters* (what it shows:
+  regions, rows and sources as folding lists with a find box, source tags). A timeline can start with some sources
+  hidden, to avoid spoilers.
+
+### Views
+
+- **The chart**, with a busy ring in its top-right corner while rows or a slow change are still being drawn.
+- **Table view:** the same events and rows with dates, ranges and sources in words, sortable by date or title, with
+  a CSV download of the events listed.
+- **Legend:** explains every symbol, colour, line and key the open timeline uses, and starts a one-minute **guided
+  tour**.
 - **Themes:** four presets and custom colours.
 - **Phones and tablets:** touch panning, pinch zoom and a compact toolbar.
-- **Links** that reopen a timeline at the same zoom, position, view, row settings and event.
 
 ### Your own timelines
 
-- **Open timelines** from a file, a link (`?data=`) or a shared list (`?collection=`); see
-  [Use your own timeline data](#use-your-own-timeline-data). Timelines and lists from a link are checked for a newer
-  version each time they open, and open from the saved copy when offline.
-- **Edit mode** (Customize → Edit): add and change events, rows, phases, sources and their dated claims; add an
-  event with *+ Event*, a double-click or a long press on an empty spot in a row. Edits are kept in the browser as
-  changes on top of the published timeline, so they carry over to a new version of it.
-- **Download** the result as JSON, *in progress* (your changes marked) or *final* (ready to publish), and upload a
-  JSON file to add it to your timelines.
+- **Open timelines** from a file, a link (`?data=`) or a shared list of timelines (`?collection=`). Timelines and
+  lists from a link are checked for a newer version each time they open, and open from the saved copy when offline. Customize →
+  Timelines copies the share link of a timeline or list opened from a link.
+- **Links** reopen a timeline at the same zoom, position, view, chart settings, regions, comparison set and event.
+- **Edit mode** (Customize → Edit): add and change events, rows, phases, sources and their date claims. Add an event
+  with *+ Event*, a double-click, or a long press on an empty spot in a row. Edits stay in the browser as changes on
+  top of the published timeline, so they carry over to its next version; *Discard local edits* goes back to it.
+- **Download** a timeline as JSON, *in progress* (your changes marked) or *final* (ready to publish).
 
 ### Accessibility
 
-Target: WCAG 2.2 AA. Done so far ([docs/feature-audit.md](docs/feature-audit.md), item 23):
+Target: WCAG 2.2 AA. Done: landmarks and a skip link; screen-reader names that carry each event's dates, rows and
+importance; the table view as a full alternative to the chart; keyboard control of the chart as one Tab stop (the
+Legend lists the keys); text contrast of at least 4.5:1, and marks, focus outlines and form fields of at least 3:1, in
+every theme preset; reflow down to 320 px and at 200% zoom; controls of at least 24 × 24 px; a button for every
+gesture; form errors tied to their fields; and less motion when the system asks for it. Not done yet: Windows high
+contrast (`forced-colors`) and testing with screen readers. Coverage per criterion:
+[docs/wcag-coverage.md](docs/wcag-coverage.md).
 
-- Landmarks, a skip link, and screen-reader names that carry each event's dates, rows and importance.
-- The table view as a full alternative to the chart.
-- Keyboard control of the chart as a single Tab stop:
+## Your own site and data
 
-  | Key | Does |
-  |---|---|
-  | ← → | Previous or next event in the row |
-  | ↑ ↓ | Nearest event in the row above or below |
-  | Home, End | First or last event in the row |
-  | PgUp, PgDn | About a screen earlier or later |
-  | + − | Zoom around the focused event |
-  | Enter | Open the event (Esc closes and returns to it), zoom into "+N", or fold a row |
-  | / | Search |
-  | ? | Open the legend's list of keys |
+`npm run build` writes the site to `dist/`: plain HTML, JavaScript and CSS with relative paths, for any static web
+server, in any folder. There is no backend: the site's timelines are JSON files in `dist/timelines/`, and readers'
+own timelines and edits stay in their browser.
 
-- Text contrast of at least 4.5:1 in every theme preset, a 2 px focus outline, hatching as a second cue for
-  uncertain dates, reflow down to 320 px wide and at 200% zoom, controls of at least 24 × 24 px, a button for every
-  gesture, form errors tied to their fields, and less motion when the system asks for it.
-- Not done yet: Windows high contrast (`forced-colors`), a 3:1 check of marks and focus outlines, and testing with
-  screen readers.
+A timeline is one JSON file. Copy [docs/examples/example-timeline.json](docs/examples/example-timeline.json), a small
+fictional kingdom, and see [docs/data-format.md](docs/data-format.md) for every field. To show it:
+
+1. **On your site:** add the file to `public/timelines/` before building, or to `timelines/` on a built site with an
+   entry in its `timelines/index.json` ([the site's list](docs/data-format.md#the-sites-list-of-timelines)).
+2. **By link:** host the file anywhere that lets other sites read it (GitHub raw files, GitHub Pages and gists do)
+   and share `<your site>/?data=<link to the file>`.
+3. **As a shared list:** a group keeps its own list of timelines online and shares
+   `<your site>/?collection=<link to the list>` ([shared lists](docs/data-format.md#shared-lists)).
+4. **In the browser:** Customize → Timelines → *Add from a file…*, or paste a link to a timeline or a list. These are
+   saved in that browser only.
+
+Every file is validated before it opens. Links and images inside a timeline must be `http(s)` addresses or relative
+paths.
 
 ## Development
 
-```sh
-npm test         # unit and component tests (vitest)
-npm run lint     # oxlint
-npm run build    # type-check and build
-```
-
-The code map, the scripts that build the included timeline, and the screenshot and contrast tools are described in
-[docs/development.md](docs/development.md).
+Setup, commands, the code map, the data tooling and the checks are in [docs/development.md](docs/development.md).
 
 ## Documentation
 
@@ -164,32 +136,41 @@ The code map, the scripts that build the included timeline, and the screenshot a
 |---|---|
 | [docs/data-format.md](docs/data-format.md) | The timeline file format, the rules it must pass, and how to share a timeline |
 | [docs/examples/example-timeline.json](docs/examples/example-timeline.json) | A complete example to copy |
-| [docs/development.md](docs/development.md) | Code map, commands and data tooling |
-| [docs/ancient-classical-sources.md](docs/ancient-classical-sources.md) | How the included timeline was made from two, and the changes since |
-| [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where its dates come from, and the judgment calls, as researched for the two original timelines |
-| [docs/ancient-classical-map.md](docs/ancient-classical-map.md) | Which rows the event maps can draw, and from what |
-| [docs/ancient-classical-key-events.md](docs/ancient-classical-key-events.md) | Which events are marked key or minor |
+| [docs/development.md](docs/development.md) | Setup, commands, code map, data tooling and checks |
+| [pipelines/README.md](pipelines/README.md) | The generators that build Medieval World and Modern States from a Wikipedia dump |
+| [docs/ancient-classical-sources.md](docs/ancient-classical-sources.md) | How Ancient and Classical was made from two earlier timelines, and the changes since |
+| [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where its dates come from, and the judgment calls |
+| [docs/ancient-classical-map.md](docs/ancient-classical-map.md) | Which rows its event maps can draw, and from what |
+| [docs/ancient-classical-key-events.md](docs/ancient-classical-key-events.md) | Which of its events are marked key or minor |
 | [archive/README.md](archive/README.md) | The two original timelines and the scripts that built them |
 | [docs/BACKLOG.md](docs/BACKLOG.md) | Planned work |
 | [docs/feature-audit.md](docs/feature-audit.md) | Features under consideration, including the accessibility plan |
-| [docs/wcag-coverage.md](docs/wcag-coverage.md), [docs/wcag-report.md](docs/wcag-report.md) | Which WCAG 2.2 AA criteria the automated checks cover, and the latest results (`npm run a11y:report`) |
+| [docs/wcag-coverage.md](docs/wcag-coverage.md), [docs/wcag-report.md](docs/wcag-report.md) | Which WCAG 2.2 AA criteria the automated checks cover, and the latest results |
 
 ## Data sources and AI use
 
 The code, tests and documentation were written with the help of an AI coding assistant
 ([Claude Code](https://claude.com/claude-code), Anthropic), directed and reviewed by the author.
 
-The included timeline was compiled with AI assistance. The assistant read the cited English Wikipedia
-articles (17–18 November 2026) and transcribed their dates; the descriptions are its own summaries. No date was
-invented: every year and margin comes from a cited page, and where pages disagree, every value is kept. Books and
-papers appear only where Wikipedia cites them, tagged **Cited via Wikipedia (not checked)**. It has not
-been reviewed by a specialist yet.
+The included timelines were compiled with AI assistance from English Wikipedia. No date was invented: every year and
+margin comes from a cited page, and where pages disagree, every value is kept. Pages carrying a notice that they
+contain AI-generated text are not used. None of the timelines has been reviewed by a specialist yet.
 
-The event maps draw borders from [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria)
-(Seshat Global History Databank, CC BY 4.0; simplified and cut to each row's lifespan) on land from
-[Natural Earth](https://www.naturalearthdata.com/) (public domain). Rows without borders in a year get the
-location from their Wikipedia article (or its infobox map, or Wikidata) and that article's map image, shown from
-Wikimedia Commons with its author and licence.
+- **Ancient and Classical World:** the assistant read the cited articles (17–18 November 2026) and transcribed their
+  dates; the descriptions are its own summaries. Books and papers appear only where Wikipedia cites them, tagged
+  **Cited via Wikipedia (not checked)**.
+- **Medieval World** and **Modern States:** built by the generators in [pipelines/](pipelines/README.md) from the
+  English Wikipedia dump of 1 November 2026. Each date cites the infobox field, heading or sentence it was read from,
+  and each build lists every article it read (`data-src/provenance/`). Medieval World's descriptions say only what
+  sentences in the cited articles say; events with no such sentence have none. Modern States' descriptions are the
+  assistant's own summaries.
+
+The Ancient and Classical event maps draw borders from
+[Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) (Seshat Global History Databank, CC BY 4.0;
+simplified and cut to each row's lifespan) on land from [Natural Earth](https://www.naturalearthdata.com/) (public
+domain). Rows without borders in a year get the location from their Wikipedia article (or its infobox map, or
+Wikidata) and that article's map image, shown from Wikimedia Commons with its author and licence. Medieval World also
+cites Cliopatria for one row's end (Srivijaya), as a second date claim beside its article's.
 
 ## License
 
