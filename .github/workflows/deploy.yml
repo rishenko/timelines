@@ -1,0 +1,65 @@
+# Publishes the site to GitHub Pages: builds main and pushes dist/ to the gh-pages branch, as `npm run deploy` does.
+# Started by hand only (Actions → Deploy → Run workflow, or `gh workflow run deploy.yml --ref main`), and only from
+# main. Every deploy needs Kevin's OK: the job waits in the "production" environment until he approves it
+# (Settings → Environments → production, Kevin as required reviewer).
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# one deploy at a time; a second waits instead of cancelling the first
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # waits for Kevin's approval before any step runs
+    environment: production
+    steps:
+      - name: Only from main
+        run: |
+          if [ "$GITHUB_REF" != refs/heads/main ]; then
+            echo "Deploys run only from main (this run is on $GITHUB_REF)" >&2
+            exit 1
+          fi
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # the same checks as CI, so a deploy never publishes a main that fails them
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+      - name: Publish dist/ to gh-pages
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx gh-pages -d dist \
+            -r "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            -u "github-actions[bot] <41898283+github-actions[bot]@users.noreply.github.com>" \
+            -m "Deploy ${GITHUB_SHA::7}"
+
+      # Pages takes a minute or two; wait until the live page loads this build's bundle (up to about five minutes)
+      - name: Check the live site serves this build
+        run: |
+          bundle=$(grep -o 'assets/index-[^"]*\.js' dist/index.html | head -1)
+          url="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+          echo "waiting for $url to serve $bundle"
+          for i in $(seq 1 30); do
+            if curl -fsS "${url}?nocache=$(date +%s)" | grep -q "$bundle"; then
+              echo "live: $bundle"
+              echo "Live at $url with \`$bundle\` (main ${GITHUB_SHA::7})" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "the live site doesn't serve $bundle yet" >&2
+          exit 1

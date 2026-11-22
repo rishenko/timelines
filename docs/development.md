@@ -12,8 +12,15 @@ npm test               # vitest
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run preview        # serve dist/ locally
-npm run deploy         # build and publish dist/ to GitHub Pages
+npm run deploy         # build and publish dist/ to GitHub Pages from this clone (the workflow below is the usual way)
 ```
+
+**Deploying.** `.github/workflows/deploy.yml` publishes the site: it builds `main` on GitHub, runs lint and the
+tests, pushes `dist/` to the `gh-pages` branch (as `npm run deploy` does) and waits until the live site serves the new
+bundle. It runs only when started by hand, and only from `main`: Actions → Deploy → Run workflow, or
+`gh workflow run deploy.yml --ref main` (then `gh run watch`). Every deploy needs Kevin's OK: the run waits in the
+`production` environment until he approves it in the Actions UI. Building on GitHub
+means nothing untracked in a local clone can end up on the site.
 
 CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
 build, `run-all --check` for each included timeline, and a check that the files in `public/timelines/` (with
