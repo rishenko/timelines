@@ -17,6 +17,7 @@
     "data:build": "node scripts/data.ts build all",
     "data:check": "node scripts/data.ts run-all ancient-classical --check",
     "data:compare": "node scripts/compare-resolved.ts",
+    "categories:proof": "node scripts/categories-proof.ts",
     "seam-check": "node scripts/seam-check.ts",
     "docs:check": "node scripts/docs-check.ts",
     "importance": "node scripts/data.ts importance all",
