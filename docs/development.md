@@ -92,7 +92,8 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/state/dataset.ts`, `edits.ts`, `draft.ts` | Dataset reducer and edit operations; drafts stored as the reader's changes |
 | `src/state/library.ts`, `useLibraryActions.ts` | The reader's own timelines: opening, uploading, updating, sharing |
 | `src/state/collections.ts` | Shared lists (`?collection=`): reading, saving and removing them; `listTimelines` in `timelines.ts` merges them into the picker |
-| `src/state/url.ts` | Reading the opening URL and keeping it in step with the view |
+| `src/state/url.ts` | Reading the opening URL and keeping it in step with the view (thin wrappers over `viewState.ts`) |
+| `src/state/viewState.ts`, `viewMigrate.ts`, `links.fixtures.json` | The view as a link (schema step D): `ViewState`, `parseView`/`serializeView`/`resolveView`, link versions (`v`), the fixed parameter order, the skipped-ids notice; frozen real links with the state each must parse to (entries are only ever added) |
 | `src/state/` (others) | Filters, theme, chronology choices, focus requests, folded rows, zoom steps, panels, toasts, search actions |
 | `src/components/` | Toolbar, panels (Filters, Legend, Customize, Dating), detail panel and editors, search box, table view, tour |
 | `src/index.css`, `src/styles/` | Styles, one file per area (chart, side panel, legend, table view, phones…), imported by `index.css` in cascade order |
