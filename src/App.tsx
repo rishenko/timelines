@@ -1,4 +1,5 @@
 import { useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { periodLaneIds } from './lib/periodLane.ts';
 import { placeAges } from './lib/eras.ts';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
@@ -79,6 +80,11 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const regions = useRegionFilter(data, initialUrl.regions, filters.sources, editMode);
   // ---- category filter: events outside the ticked categories are hidden (events with none always show) ----
   const categories = useCategoryFilter(data, initialUrl.cat, filters.sources, editMode);
+  // golden ages and long society spans: a line of their own under each row's phases
+  const periodLane = useMemo(
+    () => periodLaneIds(data, categories.facetId, categories.facet, categories.sourceOn),
+    [data, categories.facetId, categories.facet, categories.sourceOn],
+  );
   // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
   const comparison = useComparison(data, initialUrl, editMode);
   const rowsOn = useMemo(
@@ -632,6 +638,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           <TimelineView
             data={shownData}
             categories={categories.info}
+            periodLane={periodLane}
             events={shownEvents}
             eventsById={resolvedById}
             spans={shownSpans}

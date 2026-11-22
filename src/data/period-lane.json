@@ -1,0 +1,6 @@
+{
+  "_note": "Kevin's overrides for the period lane (src/lib/periodLane.ts), per timeline id: event uuids to put in the lane (include) or keep out of it (exclude), whatever the rule says.",
+  "ancient-classical": { "include": [], "exclude": [] },
+  "medieval": { "include": [], "exclude": [] },
+  "modern-states": { "include": [], "exclude": [] }
+}

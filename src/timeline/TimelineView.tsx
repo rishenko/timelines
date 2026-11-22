@@ -41,6 +41,8 @@ const PEEK_MS = 2500;
 
 interface Props {
   data: Dataset;
+  /** Events on the period lane: their own line(s) directly under each row's phases. */
+  periodLane?: ReadonlySet<string>;
   /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler. */
   ages?: PlacedAge[];
   /** Centre the chart on a year, keeping the zoom (an age was clicked). */
@@ -253,8 +255,8 @@ export function TimelineView(props: Props) {
     [props.categories],
   );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs }),
-    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs],
+    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane }),
+    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane],
   );
   const marksByEvent = useMemo(() => {
     const m = new Map<string, Mark[]>();
