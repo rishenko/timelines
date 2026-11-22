@@ -35,6 +35,8 @@ export interface SourceTimeline {
    * is `npm run data -- run-all <short> --check`).
    */
   scripts: string[];
+  /** The folder of the generator that writes the source file, for a generated timeline (pipelines/<name>). */
+  generator?: string;
 }
 
 // Each timeline's own content scripts live in scripts/<short>/. The combined timeline started on 2026-11-20 from
@@ -64,6 +66,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     source: 'data-src/modern-states.json',
     compiled: 'public/timelines/modern-states.json',
     scripts: [],
+    generator: 'pipelines/modern-states',
   },
   {
     // generated: data-src/medieval.json is written by pipelines/medieval/gen_medieval.py (pipelines/README.md),
@@ -73,6 +76,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     source: 'data-src/medieval.json',
     compiled: 'public/timelines/medieval.json',
     scripts: [],
+    generator: 'pipelines/medieval',
   },
 ];
 

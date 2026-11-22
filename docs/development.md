@@ -175,6 +175,8 @@ matches `data-src/`. Medieval World reads Modern States' committed build at the 
 `pipelines/medieval/med_europe.py` (`MODERN_COMMIT`), so the rows that cross 1500 match; `npm run seam-check`
 compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
 
+To see where a row sits and which file sets it before changing its parent or order, run `npm run data -- tree <timeline> <row> [--depth N] [--max N]`: the row's subtree in display order, each row's place among its siblings (`#2/6`), and "set in" the generator module or content script that defines it, "named in" one that only moves or edits it, or the source file for a row made by hand. It prints at most 20 lines.
+
 To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
 them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or `meta.eras`; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (rows, eras and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
 `pipelines/README.md` covers the inputs, the settings and how to rerun.

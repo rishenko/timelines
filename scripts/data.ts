@@ -10,6 +10,9 @@
 //                                                lost since <rev> (default origin/main) without a redirect (CI runs it)
 //   npm run data -- index                        print the site's list of timelines (timelines/index.json, made at
 //                                                build time from public/timelines and data-src/site-timelines.json)
+//   npm run data -- tree <timeline> <row> [--depth N] [--max N]
+//                                                a row's subtree: each row's place among its siblings and the file
+//                                                that sets it (generator module, content script or source file)
 //
 // <timeline> is a short name or an id (both ancient-classical for the bundled timeline). `npm run data:build`,
 // `npm run importance` and `npm run data:check` are aliases for the common cases.
@@ -27,11 +30,12 @@ import { timelineIndexText } from './lib/timeline-index.ts';
 import { applyRowLinks } from './lib/row-links.ts';
 import { applyMemberships } from './lib/memberships.ts';
 import { applyCategories } from './lib/categories.ts';
+import { originFinder, treeLines } from './lib/tree.ts';
 import { applyPeriods } from './lib/periods.ts';
 import { idsCommand } from './lib/ids-check.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
-const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], npm run data -- ids [--check] [--base <rev>] [<dir> ...], or npm run data -- index';
+const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], npm run data -- ids [--check] [--base <rev>] [<dir> ...], npm run data -- index, or npm run data -- tree <timeline> <row> [--depth N] [--max N]';
 
 function build(t: SourceTimeline) {
   const { dataset, errors } = compileSource(readSource(t.source));
@@ -136,6 +140,14 @@ try {
     case 'index':
       index();
       break;
+    case 'tree': {
+      const t = sourceTimeline(name);
+      const opt = (f: string) => (rest.includes(f) ? Number(rest[rest.indexOf(f) + 1]) : undefined);
+      const row = rest.find((a, i) => !a.startsWith('--') && !['--depth', '--max'].includes(rest[i - 1]));
+      const rows = (readSource(t.source) as { tracks: { id: string; name: string; parent?: string; kind?: string }[] }).tracks;
+      for (const line of treeLines(rows, row ?? '', { depth: opt('--depth'), max: opt('--max'), origin: originFinder(t) })) console.log(line);
+      break;
+    }
     default:
       console.error(USAGE);
       process.exitCode = 1;
