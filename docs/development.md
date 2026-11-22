@@ -143,7 +143,8 @@ matches `data-src/`. Medieval World reads Modern States' committed build at the 
 compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
 
 To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
-them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. `pipelines/README.md` covers the inputs, the settings and how to rerun.
+them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
+`pipelines/README.md` covers the inputs, the settings and how to rerun.
 
 ## Row links
 
