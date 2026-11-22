@@ -1,7 +1,7 @@
 import { migrate, SCHEMA_VERSION } from './migrate.ts';
 import { at0, at1, daysInMonth, endAt, MONTH_NAMES, startAt, SUB_YEAR } from '../lib/subYear.ts';
 import { LINK_KINDS, type DateClaim, type Dataset, type DateDays, type TrackSpan } from '../types.ts';
-import { allClaims, eventChronology, trackChronology } from '../lib/chronology.ts';
+import { allClaims, eventChronology, trackChronologies } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
 import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
 import { datasetPresent, formatEventDates } from '../lib/years.ts';
@@ -224,8 +224,9 @@ export function validateDataset(d: unknown): string[] {
   };
   const present = datasetPresent(ds);
   const yr = (y: number) => (m.calendar ? formatYear(y, m.calendar) : String(y));
+  const chronologyOf = trackChronologies(ds.tracks);
   for (const t of ds.tracks) {
-    const chron = trackChronology(ds.tracks, t.id);
+    const chron = chronologyOf(t.id);
     // the lifespan: one stretch, or a list of stretches in date order that don't overlap
     let stretches: TrackSpan[] | undefined;
     if (t.span !== undefined) {
@@ -289,7 +290,7 @@ export function validateDataset(d: unknown): string[] {
           if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
           else if (typeof r.sourceLocation !== 'string') errors.push(`${label}: a source needs a sourceLocation (may be "").`);
         }
-      if (!checkSpan(label, ms, trackChronology(ds.tracks, t.id)) || !union || ms.row === t.id) return;
+      if (!checkSpan(label, ms, chronologyOf(t.id)) || !union || ms.row === t.id) return;
       // within both rows' lifespans (best estimates): a member can't belong before it or the union existed
       const years = `${yr(ms.start)} – ${ms.ongoing ? 'ongoing' : yr(ms.end!)}`;
       if (!withinLifespan(ms, bestLifespan(t, present), present)) errors.push(`${label} (${years}) lies outside the lifespan of "${t.id}".`);
@@ -326,7 +327,7 @@ export function validateDataset(d: unknown): string[] {
         if (!ds.sources[s.sourceKey]) errors.push(`${label} references unknown source "${s.sourceKey}".`);
     checkChronology(label, e.chronology);
     if (tracksOk) {
-      const chron = eventChronology(ds, e);
+      const chron = eventChronology(ds, e, chronologyOf);
       checkClaims(`${label} start`, e.start, e.startDates, chron);
       if (e.end !== undefined) checkClaims(`${label} end`, e.end, e.endDates, chron);
       else if (e.endDates) errors.push(`${label} has end date claims but no end.`);
