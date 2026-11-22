@@ -162,18 +162,12 @@
   z-index: 1;
   overflow: visible;
 }
+/* the selected event's thread (only it has one) */
 .tl-connections .thread line {
-  stroke: color-mix(in srgb, var(--text) 30%, transparent);
-  stroke-width: 1.5;
-}
-.tl-connections .thread circle {
-  fill: color-mix(in srgb, var(--text) 45%, transparent);
-}
-.tl-connections .thread.on line {
   stroke: var(--focus);
   stroke-width: 2;
 }
-.tl-connections .thread.on circle {
+.tl-connections .thread circle {
   fill: var(--focus);
 }
 .tl-connections .link {
@@ -734,10 +728,6 @@
 }
 .has-focus .tl-mark.cluster:not(.related) {
   border-color: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, transparent);
-}
-.has-focus .tl-connections .thread:not(.on),
-.has-focus .tl-connections .link:not(.on) {
-  opacity: 0.25;
 }
 
 

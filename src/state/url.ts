@@ -7,7 +7,7 @@ import { parseOrder, parseSet, type SetOrder } from '../lib/sets.ts';
 import { regionFacetId } from './regionFilter.ts';
 
 /**
- * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&links=0&rows=all`; rows is all, active or thin;
+ * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&rows=all`; rows is all, active or thin;
  * the region filter as `&regions=anatolia,nile`; a comparison set as `&set=hittites,pharaonic-egypt&order=related`)
  * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link.
  */
@@ -22,7 +22,6 @@ export function readUrl(published: Dataset) {
     increment: increments.includes(inc) ? inc : defaultIncrement,
     at: at !== null ? parseYear(at, calendar) : null,
     compress: q.get('compress') !== '0',
-    links: q.get('links') !== '0',
     /** Hide rows with nothing in view: from the link if it says, else the timeline's default. */
     hideOutOfView: ['active', 'thin'].includes(q.get('rows') ?? '') ? true : q.get('rows') === 'all' ? false : !!published.meta.hideRowsOutOfView,
     /** Hidden rows drawn as thin lines rather than taken out. */
@@ -60,7 +59,6 @@ interface ViewState {
   timelineId: string;
   increment: number;
   compress: boolean;
-  showLinks: boolean;
   selectedId: string | null;
   hideOutOfView: boolean;
   thinRows: boolean;
@@ -78,7 +76,7 @@ interface ViewState {
  * kept in a ref rather than state: `onCenterYearChange` records it and schedules a write without re-rendering.
  */
 export function useUrlSync(view: ViewState, initialCenter: number) {
-  const { timelineId, increment, compress, showLinks, selectedId, view: mode, hideOutOfView, thinRows, hideOutOfViewDefault } = view;
+  const { timelineId, increment, compress, selectedId, view: mode, hideOutOfView, thinRows, hideOutOfViewDefault } = view;
   const regions = view.regions.join(',');
   const set = view.set.join(',');
   const order = view.order;
@@ -92,7 +90,6 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       q.set('inc', String(increment));
       q.set('at', String(centerRef.current));
       if (!compress) q.set('compress', '0');
-      if (!showLinks) q.set('links', '0');
       if (hideOutOfView !== hideOutOfViewDefault || (hideOutOfView && thinRows))
         q.set('rows', !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active');
       if (mode === 'table') q.set('view', 'table');
@@ -102,7 +99,7 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       const hash = selectedId ? `#${selectedId}` : '';
       window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
     }, 250);
-  }, [timelineId, increment, compress, showLinks, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order]);
+  }, [timelineId, increment, compress, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order]);
   useEffect(writeUrl, [writeUrl]);
   const onCenterYearChange = useCallback(
     (y: number) => {

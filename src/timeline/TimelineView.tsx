@@ -65,7 +65,6 @@ interface Props {
   onToggleCollapsed: (trackId: string) => void;
   increment: number;
   compress: boolean;
-  showLinks: boolean;
   present: number;
   selectedId: string | null;
   onSelect: (id: string | null) => void;
@@ -99,7 +98,7 @@ interface Props {
  * keyboard control in useRovingFocus, row packing in ./layout.ts.
  */
 export function TimelineView(props: Props) {
-  const { data, events, eventsById, spans, phases, visibleTracks, collapsed, increment, compress, showLinks, present, selectedId, onSelect, editMode } =
+  const { data, events, eventsById, spans, phases, visibleTracks, collapsed, increment, compress, present, selectedId, onSelect, editMode } =
     props;
   const cal = data.meta.calendar;
   const trackById = useMemo(() => trackIndex(data.tracks), [data.tracks]);
@@ -462,7 +461,7 @@ export function TimelineView(props: Props) {
             height={layout.height}
             marksByEvent={marksByEvent}
             eventsById={eventsById}
-            showLinks={showLinks}
+            selectedId={selectedId}
             related={related}
             inView={inView}
           />

@@ -140,7 +140,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // ---- view settings ----
   const [increment, setIncrement] = useState(initialUrl.increment);
   const [compress, setCompress] = useState(initialUrl.compress);
-  const [showLinks, setShowLinks] = useState(initialUrl.links);
   // rows with nothing near the view are hidden (Filters); not while editing, where every row must be reachable
   const [hideOutOfView, setHideOutOfView] = useState(initialUrl.hideOutOfView);
   // ...taken out, or drawn as thin lines in their place
@@ -256,7 +255,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
       timelineId: published.meta.id,
       increment,
       compress,
-      showLinks,
       selectedId,
       view,
       hideOutOfView,
@@ -312,7 +310,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const shownRows = useDeferredValue(rowsOn);
   const shownCollapsed = useDeferredValue(collapsed);
   const shownCompress = useDeferredValue(compress);
-  const shownLinks = useDeferredValue(showLinks);
   const shownHide = useDeferredValue(hideOutOfView && !editMode);
   const shownThin = useDeferredValue(thinRows);
   const busy =
@@ -325,7 +322,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
     shownRows !== rowsOn ||
     shownCollapsed !== collapsed ||
     shownCompress !== compress ||
-    shownLinks !== showLinks ||
     shownHide !== (hideOutOfView && !editMode) ||
     shownThin !== thinRows;
 
@@ -524,8 +520,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
           regionOpen={regionOpen}
           compress={compress}
           onCompress={setCompress}
-          showLinks={showLinks}
-          onShowLinks={setShowLinks}
           hideOutOfView={hideOutOfView}
           onHideOutOfView={switchHideOutOfView}
           thinRows={thinRows}
@@ -594,7 +588,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
             onToggleCollapsed={(id) => setCollapsed((c) => ({ ...c, [id]: !c[id] }))}
             increment={increment}
             compress={shownCompress}
-            showLinks={shownLinks}
             present={present}
             selectedId={selectedId}
             onSelect={(id) => {

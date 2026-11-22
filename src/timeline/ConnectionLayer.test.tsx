@@ -33,54 +33,38 @@ function draw(related: Set<string> | null) {
   const a = { ...ev('a', 'b'), links: [{ to: 'b', kind: 'causes' as const }, { to: 'c', kind: 'causes' as const }] };
   const eventsById = new Map<string, TimelineEvent>([['a', a], ['b', ev('b')], ['c', ev('c')]]);
   const { container } = render(
-    <ConnectionLayer left={0} width={200} height={100} marksByEvent={marksByEvent} eventsById={eventsById} showLinks related={related} inView={() => true} />,
+    <ConnectionLayer left={0} width={200} height={100} marksByEvent={marksByEvent} eventsById={eventsById} selectedId={null} related={related} inView={() => true} />,
   );
   return [...container.querySelectorAll('path.link')].map((p) => p.getAttribute('d'));
 }
 
 describe('ConnectionLayer', () => {
-  it('draws arrows to "+N" pills only while one end is focused', () => {
-    const plain = draw(null);
-    expect(plain).toHaveLength(1);
-    expect(plain[0]).toMatch(/ 40$/);
+  it('draws arrows only while one end is focused, "+N" pills included', () => {
+    expect(draw(null)).toEqual([]);
     const focused = draw(new Set(['a', 'b', 'c']));
     expect(focused).toHaveLength(2);
     expect(focused.some((d) => d?.endsWith(' 70'))).toBe(true);
   });
 
-  it('runs the vertical connector to "+N" pills only while the event is focused', () => {
+  it("draws only the selected event's thread, through its \"+N\" pills; none with nothing selected or on hover", () => {
     const marksByEvent = new Map<string, Mark[]>([
       ['a', [mark('a', 'event', 10, 10), mark('a', 'event', 10, 40), mark('a', 'cluster', 10, 90)]],
       ['b', [mark('b', 'event', 50, 10), mark('b', 'cluster', 50, 60)]],
     ]);
     const eventsById = new Map<string, TimelineEvent>([['a', ev('a')], ['b', ev('b')]]);
-    const lines = (related: Set<string> | null) => {
+    const lines = (selectedId: string | null, related: Set<string> | null = null) => {
       const { container } = render(
-        <ConnectionLayer left={0} width={200} height={100} marksByEvent={marksByEvent} eventsById={eventsById} showLinks related={related} inView={() => true} />,
+        <ConnectionLayer left={0} width={200} height={100} marksByEvent={marksByEvent} eventsById={eventsById} selectedId={selectedId} related={related} inView={() => true} />,
       );
       const out = [...container.querySelectorAll('.thread line')].map((l) => `${l.getAttribute('x1')}:${l.getAttribute('y1')}-${l.getAttribute('y2')}`);
       cleanup();
       return out;
     };
-    expect(lines(null)).toEqual(['10:10-40']);
-    expect(lines(new Set(['a', 'b']))).toEqual(['10:10-90', '50:10-60']);
-  });
-
-  it('with "Show all event connections" off, draws only the focused and related events\' connectors', () => {
-    const marksByEvent = new Map<string, Mark[]>([
-      ['a', [mark('a', 'event', 10, 10), mark('a', 'event', 10, 40)]],
-      ['b', [mark('b', 'event', 50, 10), mark('b', 'event', 50, 60)]],
-    ]);
-    const eventsById = new Map<string, TimelineEvent>([['a', ev('a')], ['b', ev('b')]]);
-    const xs = (related: Set<string> | null) => {
-      const { container } = render(
-        <ConnectionLayer left={0} width={200} height={100} marksByEvent={marksByEvent} eventsById={eventsById} showLinks={false} related={related} inView={() => true} />,
-      );
-      const out = [...container.querySelectorAll('.thread line')].map((l) => l.getAttribute('x1'));
-      cleanup();
-      return out;
-    };
-    expect(xs(null)).toEqual([]);
-    expect(xs(new Set(['b']))).toEqual(['50']);
+    expect(lines(null)).toEqual([]);
+    // pointing at b (focused, not selected) draws no thread
+    expect(lines(null, new Set(['b']))).toEqual([]);
+    expect(lines('a', new Set(['a']))).toEqual(['10:10-90']);
+    // selecting another event moves the thread to it
+    expect(lines('b', new Set(['b']))).toEqual(['50:10-60']);
   });
 });

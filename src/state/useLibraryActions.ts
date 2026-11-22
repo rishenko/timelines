@@ -139,7 +139,7 @@ export function useLibraryActions(opts: {
   const copyEventLink = async (eventId: string) => {
     // a URL timeline shares as ?data=…, so the link works in any browser; view settings ride along
     const q = new URLSearchParams(window.location.search);
-    const extra = ['inc', 'at', 'compress', 'links']
+    const extra = ['inc', 'at', 'compress']
       .filter((k) => q.has(k))
       .map((k) => `&${k}=${encodeURIComponent(q.get(k)!)}`)
       .join('');
