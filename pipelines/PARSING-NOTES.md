@@ -197,9 +197,24 @@ All of these have unit tests in `extract/test_dates.py`.
 
 ## Wikidata JSON
 
-(Planned; nothing read yet.)
-- `wikidata-20261116-all.json.bz2` is 95.7 GiB in a **single** bz2 stream, so pbzip2 doesn't help. It's read with `indexed_bzip2` (parallel) in the extractor's venv.
-- Expected, per Wikimedia's documentation (not yet checked against this file): one entity per line, framed by `[` and `]` lines, each line ending in a comma.
+- **One stream, read in parallel.** `wikidata-20261116-all.json.bz2` is 95.7 GiB of a **single** bz2 stream (about 10:1, so about 970 GiB of JSON), so pbzip2 doesn't help. `indexed_bzip2` decompresses it at about 600 MiB/s on 3 threads (`extract/wikidata.py`).
+- **Framing (checked):** a `[` line, then one entity per line with a trailing comma, then `]`.
+  - Lines are big: the first items are country-sized (Q31 is over 300 KB).
+  - The first 1 GiB held only 25,496 entities.
+- **Speed is in the parsing.** On one core, `json.loads` held the pass to about 110 MiB/s.
+  - A cheap byte filter first: the line contains `"enwiki"` and one of the wanted property ids.
+  - Then 2 parsing workers: about 175–250 MiB/s with about 3 cores busy (Kevin's cap is 4).
+- **`export_index` hangs.** `indexed_bzip2`'s `export_index` hung (0% CPU, a 0-byte index file) after a short run on this dump. That cost an hour of "slow" tests that were really hung.
+  - Resuming no longer uses the index: the pass saves its JSON offset and skips back by decompressing (`wikidata.py`, a `PAUSE` file or SIGTERM to stop).
+  - Close the `indexed_bzip2` file before exiting, or its threads abort Python ("Detected Python finalization from running rapidgzip thread").
+- **Kept:** items with an English article and a start (P580), end (P582), point in time (P585), inception (P571), dissolved (P576) or part-of (P361) claim, plus their P31 instance-of.
+- **Time values:**
+  - Format: `"+1914-07-28T00:00:00Z"` with a `precision` (9 year, 10 month, 11 day) and a `calendarmodel` (Q1985727 Gregorian, Q1985786 Julian).
+  - Month and day are `00` below their precision (`+1848-00-00`).
+  - `wd_join.wd_time` reads `-0044` as 44 BC, Wikidata's documented convention, not yet checked against a known BC item.
+- **Comparing with Wikipedia** (`wd_join.compare`):
+  - Only infobox dates (the article's own) are compared. A lead or table row may date something else: in a first try that compared every row, 74% "differed".
+  - A P585 point in time on a ranged event is often its end or a day inside (Battle of Lahti), so a P585 inside the range counts as agreement.
 
 ## Other sources' quirks already met
 
