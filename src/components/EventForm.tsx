@@ -13,7 +13,8 @@ import { at0, at1, hasDayZoom } from '../lib/subYear.ts';
 import { childrenMap } from '../lib/tracks.ts';
 import { formatYear, fromStored, toStored, type EraSide } from '../lib/calendar.ts';
 import { ClaimList, DayFields, EraSelect, ProblemList } from './ClaimList.tsx';
-import { claimsFromValues, toClaimValues, type ClaimFields } from '../lib/claims.ts';
+import { claimsFromValues, keepLocator, toClaimValues, type ClaimFields } from '../lib/claims.ts';
+import { citationsInWords } from '../lib/table.ts';
 import { eventChronology } from '../lib/chronology.ts';
 import { customTags, newProblems, nextTrackColor, uniqueId, upsertEvent } from '../state/edits.ts';
 import type { Source, Track } from '../types.ts';
@@ -76,7 +77,8 @@ function toForm(e: TimelineEvent, cal: Calendar): FormValues {
   };
 }
 
-function fromForm(v: FormValues, cal: Calendar): TimelineEvent {
+/** The event as saved: the form's fields, plus what the form shows but doesn't edit, kept from `initial`. */
+function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent): TimelineEvent {
   const start = toStored(Number(v.startYear), v.startEra, cal);
   const e: TimelineEvent = {
     uuid: v.uuid,
@@ -84,15 +86,18 @@ function fromForm(v: FormValues, cal: Calendar): TimelineEvent {
     descr: v.descr.trim(),
     start,
     tracks: [...new Set(v.tracks)],
-    sources: v.sources.filter((s) => s.sourceKey),
+    sources: v.sources.filter((s) => s.sourceKey).map((s) => keepLocator(s, initial.sources)),
   };
   const sm = Number(v.startMonth);
   if (sm >= 1) {
     e.startMonth = sm;
     if (Number(v.startDay) >= 1) e.startDay = Number(v.startDay);
   }
-  if (v.ongoing) e.ongoing = true;
-  else if (v.hasEnd) {
+  if (v.ongoing) {
+    e.ongoing = true;
+    // the sources saying it is still going aren't edited here: kept while it stays ongoing
+    if (initial.ongoingSources?.length) e.ongoingSources = initial.ongoingSources;
+  } else if (v.hasEnd) {
     const end = toStored(Number(v.endYear), v.endEra, cal);
     const withEnd: TimelineEvent = { ...e, end };
     const em = Number(v.endMonth);
@@ -113,6 +118,8 @@ function fromForm(v: FormValues, cal: Calendar): TimelineEvent {
   if (ends && e.end !== undefined) e.endDates = ends;
   const links = v.links.filter((l) => l.to && l.to !== v.uuid);
   if (links.length) e.links = links;
+  // its facet values (categories) aren't edited here yet: kept as they were
+  if (initial.memberships?.length) e.memberships = initial.memberships;
   return e;
 }
 
@@ -206,7 +213,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
     ));
 
   const submit = (v: FormValues) => {
-    const e = fromForm(v, cal);
+    const e = fromForm(v, cal, initial);
     if (e.tracks.length === 0) {
       setError('tracks', { message: 'Pick at least one track.' }, { shouldFocus: true });
       return;
@@ -252,6 +259,9 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
           <label className="check">
             <input type="checkbox" {...register('ongoing')} /> Ongoing (runs to the present)
           </label>
+          {ongoing && initial.ongoingSources?.length ? (
+            <p className="small">Still going per {citationsInWords(initial.ongoingSources, data.sources)} (kept; edit in the file)</p>
+          ) : null}
           {hasEnd && !ongoing && (
             <div className="year-row">
               <label htmlFor="ev-end">End</label>
@@ -453,6 +463,16 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
             Add connection
           </button>
         </fieldset>
+
+        {initial.memberships?.length ? (
+          <p className="small">
+            {initial.memberships.map((m) => {
+              const f = data.meta.facets?.[m.facet];
+              return `${f?.name ?? m.facet}: ${f?.values[m.value]?.name ?? m.value}`;
+            }).join('; ')}{' '}
+            (kept as they are; edit them in the file)
+          </p>
+        ) : null}
 
         <details>
           <summary>Id</summary>

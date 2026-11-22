@@ -1,4 +1,4 @@
-# Timeline data format (schema v4)
+# Timeline data format (schema v5)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -78,13 +78,14 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `4`. Files of version `3` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `5`. Files of versions `3` and `4` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
 | `tags` | yes | Labels for grouping sources, keyed by id. May be `{}`. |
 | `events` | yes | See [events](#events). |
 | `chronologies` | no | Alternative dating systems. See [chronologies](#chronologies). |
+| `redirects` | no | Ids the timeline no longer has, so links that name them still work: `{ "<old id>": "<new id>", "<removed id>": null }`. An old id maps to the row, event or era that replaced it, or to `null` when it was removed on purpose. Keys can't be ids the timeline has; targets must be. |
 | `present` | no | The setting's "now" (a stored year). Events, lifespans and phases marked `ongoing` run to it. Defaults to the latest year any event starts or ends in. |
 
 ## meta
@@ -104,10 +105,34 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `customSourceTag` | no | Tag id given to sources readers create in edit mode (e.g. `"homebrew"`), so others can filter them. |
 | `circaFade` | no | Years of uncertainty drawn either side of a `circa` date that has no other range. Default `0`. |
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
-| `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). The app's region filter (Filters → Regions) uses the first facet; comparison sets are planned. |
+| `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Regions) uses the first facet that rows belong to; comparison sets are planned. |
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
+| `eras` | no | Named periods across the whole timeline (the Bronze Age, the Age of Revolutions). See [eras](#eras). Not drawn yet. |
 | `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
+
+### eras
+
+`meta.eras` lists periods that run across every row, each dated like a [phase](#tracks) (`start`, `end` or `ongoing`,
+`circa`, months and days, [date claims](#date-claims-and-uncertain-dates), `startEvent`/`endEvent`) and cited:
+
+```json
+"eras": [
+  { "id": "late-bronze-age", "name": "Late Bronze Age", "group": "three-age", "start": -1549, "end": -1199,
+    "sources": [{ "sourceKey": "wp-bronze-age", "sourceLocation": "lead" }] }
+]
+```
+
+| Field | Required | What |
+|---|---|---|
+| `id` | yes | Letters, digits and dashes; unique among the eras. |
+| `name` | yes | |
+| `sources` | yes | At least one. |
+| `group` | no | Eras that divide the same years one way share a group, and don't overlap within it. Another group (a region's own periods) is an alternative division of the same years. |
+| `color` | no | `#rrggbb`. |
+| `chronology` | no | The dating system its dates follow. |
+
+An era must lie within `meta.range` when the timeline has one. The app checks eras but doesn't draw them yet.
 
 ### calendar
 
@@ -130,6 +155,7 @@ cost label width, so three or four levels is a practical ceiling rather than a r
 | `name` | yes | Row label. |
 | `color` | yes | `#rrggbb`. |
 | `parent` | no | Id of the row this one sits under. |
+| `kind` | no | What the row stands for: `"polity"` (a state, people, culture, faction or union: the default), `"person"`, or `"theme"` (a network, route, movement or trade, with no government of its own). |
 | `chronology` | no | Dating system for events on this row; sub-rows inherit it. See [chronologies](#chronologies). |
 | `span` | no | Lifespan: shaded across the row. One stretch, or a list of stretches. Leave it out on a row with phases to have it worked out from them. See below. |
 | `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
@@ -240,6 +266,12 @@ optional `startEvent`/`endEvent`), with the `sources` that place the row there (
 ]
 ```
 
+- **`phase`** (optional) names the phase of this row that held the membership, when the row has rival phases at the
+  time: one `germany` row with West and East Germany as phases was in NATO and in the Warsaw Pact at once, so each
+  membership says which (`"phase": "West Germany"`). The membership must lie within exactly one phase of that name
+  (a row may reuse a name; the dates pick which). Leave it out for a membership that outlasts the phase it began in,
+  since it belongs to the row: split a membership whose holder changed into two entries (Germany in NATO as West
+  Germany to 3 October 1990, then as Germany). The strip's name says it: "West Germany in NATO, 1955–90".
 - The row named must exist, and can't be the row itself or one of its own sub-rows. The membership's years (best
   estimates) must lie within one stretch of each row's lifespan (typed, or worked out from phases): a row can't belong
   to a union before either existed.
@@ -323,11 +355,25 @@ events and facet values form a graph: events link rows, memberships link rows to
 | `year` | no | Publication year, as text (`"2000"`, `"2nd ed. 2007"`). |
 | `url` | no | `https://` link. |
 | `accessed` | no | For web pages: the date it was read, `YYYY-MM-DD`. |
+| `dump` | no | The snapshot the values were read from, when not the live page: `"<wiki>-<YYYYMMDD>"`, e.g. `"enwiki-20261101"`. Kept apart from `accessed`, the date of reading. |
+| `revision` | no | The page revision read (a revision id), for a permanent link. Needs `url`. |
 | `hiddenByDefault` | no | Start with this source filtered out (spoilers). |
 
 `tags` is an object of `{ "name": "…" }`, keyed by tag id. Readers can toggle all sources with a tag at once.
 
-An event or claim cites a source with `{ "sourceKey": "<source id>", "sourceLocation": "p. 12" }`.
+An event or claim cites a source with `{ "sourceKey": "<source id>", "sourceLocation": "p. 12" }`. `sourceLocation`
+is what readers see. A generator may add a `locator`, the same place in a form scripts can find again (for a monthly
+refresh), beside it:
+
+| `locator.kind` | Fields |
+|---|---|
+| `"infobox"` | `field` (required), `value` |
+| `"lead"` | `quote` (required) |
+| `"section"` | `heading` (required), `quote` |
+| `"category"` | `name` (required) |
+| `"page"` | `page` (required) |
+
+The editor keeps a locator while the reference is unchanged, and drops it when the location's text is edited.
 
 ## events
 
@@ -339,6 +385,7 @@ An event or claim cites a source with `{ "sourceKey": "<source id>", "sourceLoca
 | `start` | yes | Best estimate of the start year (stored year). |
 | `end` | no | Last year, inclusive. Leave out for a single-year event. |
 | `ongoing` | no | Still going: runs to `present`. Use instead of `end`. |
+| `ongoingSources` | no | Sources saying it is still going (only when `ongoing`), as on a lifespan. |
 | `circa` | no | Approximate: shown with "c.". |
 | `tracks` | yes | One or more track ids. An event on several rows gets a thread connecting them while it is selected. |
 | `sources` | yes | Citations (may be `[]`). |
@@ -347,6 +394,7 @@ An event or claim cites a source with `{ "sourceKey": "<source id>", "sourceLoca
 | `order` | no | Order among events in the same year; lower comes first. |
 | `importance` | no | `1` key, `2` normal (default), `3` minor. Key events have bold labels. A crowded or collapsed row places key events first and folds minor ones into "+N" first, so a reader scanning collapsed regions still sees the headline events. |
 | `links` | no | Connections to other events: `[{ "to": "<event uuid>", "kind": "causes" }]`. |
+| `memberships` | no | The facet values the event belongs to, cited like a row's [memberships](#memberships). Only facets whose `applies` is `"events"` or `"both"`. Kept by the editor; not drawn or filtered yet. |
 
 Link kinds: `causes` (leads to), `part-of`, `succeeds`, `conquers`, `related`. All but `related` draw
 as arrows.
@@ -416,7 +464,7 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 4, or 3 (lifted to 4 when loaded).
+- The required fields above are present; `schemaVersion` is 5, or 3 or 4 (lifted to 5 when loaded).
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
   `"day"`.
@@ -436,7 +484,15 @@ A file that breaks any of these is refused, with a message naming the problem.
 - A `startEvent` or `endEvent` names an existing event dated within a year of that edge (within a month or a day when
   both give them); an ongoing stretch, phase or membership has no `endEvent`.
 - A `memberOf` entry names an existing row other than the row itself or its sub-rows, is dated like a phase, lies
-  within both rows' lifespans (best estimates), and cites at least one known source.
+  within both rows' lifespans (best estimates), and cites at least one known source. Its `phase`, if given, is one
+  phase of that name on the row that contains it.
+- A facet's `applies` is `tracks`, `events` or `both`, and every row's or event's membership is in a facet that applies
+  to it. A row's `kind` is `polity`, `person` or `theme`. An event's `ongoingSources` appear only when it is ongoing.
+- Eras have unique ids, a name and at least one known source, are dated like phases, lie within `meta.range` when set,
+  and don't overlap others in their group.
+- A source's `dump` looks like `enwiki-20261101`; a `revision` is a positive whole number on a source with a `url`. A
+  `locator` has a known `kind` and that kind's fields only.
+- `redirects` map ids the timeline doesn't have to ones it has, or to `null`.
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
   Timelines can come from anyone, so anything else (such as `javascript:`) is refused.
 
@@ -541,6 +597,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 
 | Version | What changed |
 |---|---|
+| 5 | Facets on events (`applies`, event `memberships`), [`meta.eras`](#eras), row `kind`, events' `ongoingSources`, sources' `dump` and `revision`, source `locator`s, the `phase` of a [`memberOf`](#dated-memberships-memberof) entry, and `redirects`. Additive: a version 4 file is read as it is. |
 | 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
 | 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |
 

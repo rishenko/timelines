@@ -13,6 +13,8 @@ import { mergeStretches, spanStretches, stretchEnd } from './lifespan.ts';
 export interface ResolvedMembership extends ResolvedSpan {
   /** The row it belonged to. */
   row: string;
+  /** The member row's phase that held it, when the data names one (RowMembership.phase). */
+  phase?: string;
   sources: SourceRef[];
 }
 
@@ -30,7 +32,9 @@ export function resolveMemberships(ds: Dataset, selection: ChronologySelection):
     if (!t.memberOf?.length) continue;
     out.set(
       t.id,
-      t.memberOf.map((m) => ({ ...resolveSpan(ds, t.id, m, selection), row: m.row, sources: m.sources })).sort((a, b) => a.start - b.start),
+      t.memberOf
+        .map((m) => ({ ...resolveSpan(ds, t.id, m, selection), row: m.row, ...(m.phase !== undefined ? { phase: m.phase } : {}), sources: m.sources }))
+        .sort((a, b) => a.start - b.start),
     );
   }
   return out;
@@ -83,15 +87,18 @@ function shortDates(s: { start: number; end: number; ongoing?: boolean } & DateD
   return `${c}${a ? `${a} ` : ''}${year(s.start)}–${b ? `${b} ` : ''}${year(s.end)}`;
 }
 
-/** The name a membership's strip shows: "in Soviet Union, 1922–91". */
+/**
+ * The name a membership's strip shows: "in Soviet Union, 1922–91"; with the phase that held it, "West Germany in NATO,
+ * 1955–90" (a row with rival phases at the time).
+ */
 export function membershipLabel(m: ResolvedMembership, unionName: string, cal: Calendar, approx = false): string {
-  return `in ${unionName}, ${shortYears(m, cal, approx)}`;
+  return `${m.phase ? `${m.phase} ` : ''}in ${unionName}, ${shortYears(m, cal, approx)}`;
 }
 
 /** A union's members in words, for its tooltips: "Members: Russia 1922–91, Ukraine 1922–91". Empty without members. */
 export function membersTip(members: UnionMember[] | undefined, nameOf: (id: string) => string, cal: Calendar): string {
   if (!members?.length) return '';
-  return `Members (${members.length}): ${members.map((u) => `${nameOf(u.member)} ${shortYears(u.membership, cal)}`).join(', ')}`;
+  return `Members (${members.length}): ${members.map((u) => `${nameOf(u.member)}${u.membership.phase ? ` (${u.membership.phase})` : ''} ${shortYears(u.membership, cal)}`).join(', ')}`;
 }
 
 /**

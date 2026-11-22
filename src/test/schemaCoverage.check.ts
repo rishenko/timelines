@@ -18,4 +18,4 @@ export const nested: Equal<UnsetPaths<{ s: TrackSpan[] }, { s: typeof spans }>, 
 
 // a record is checked through its values
 const sources = { a: { name: 'A', tags: [] as string[] } };
-export const records: Equal<UnsetPaths<Pick<Dataset, 'sources'>, { sources: typeof sources }>, `sources.*.${'url' | 'author' | 'year' | 'accessed' | 'hiddenByDefault'}`> = true;
+export const records: Equal<UnsetPaths<Pick<Dataset, 'sources'>, { sources: typeof sources }>, `sources.*.${'url' | 'author' | 'year' | 'accessed' | 'dump' | 'revision' | 'hiddenByDefault'}`> = true;

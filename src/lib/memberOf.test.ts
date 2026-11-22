@@ -11,7 +11,7 @@ const cite = [{ sourceKey: 'wp', sourceLocation: 'infobox' }];
 /** A union (1922–1991) with a parent group, and two members: one with phases, one with a typed lifespan. */
 function union(memberOf: Partial<RowMembership>[] = [], on = 'ukraine'): Dataset {
   const d: Dataset = {
-    schemaVersion: 4,
+    schemaVersion: 5,
     meta: { id: 't', title: 'T', calendar: CE, increments: [10], defaultIncrement: 10 },
     present: 2026,
     tracks: [
@@ -105,6 +105,12 @@ describe('resolving and naming memberships', () => {
     expect(shortYears({ start: 1991, end: 2026, ongoing: true }, CE)).toBe('since 1991');
     expect(shortYears({ start: -99, end: 50 }, CE, true)).toBe('c. 100 BCE–50 CE');
     expect(membershipLabel({ start: 1922, end: 1991, row: 'ussr', sources: [] }, 'Soviet Union', CE)).toBe('in Soviet Union, 1922–91');
+  });
+
+  it('names the phase that held a membership, on the strip and in the union\'s list of members', () => {
+    const west = { start: 1955, end: 1990, row: 'nato', phase: 'West Germany', sources: [] };
+    expect(membershipLabel(west, 'NATO', CE)).toBe('West Germany in NATO, 1955–90');
+    expect(membersTip([{ member: 'germany', membership: west }], () => 'Germany', CE)).toBe('Members (1): Germany (West Germany) 1955–90');
   });
 
   it('works out a lifespan from best estimates, as the validator reads it', () => {

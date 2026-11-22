@@ -8,7 +8,9 @@ import { isOn } from './filters.ts';
  * the timeline's first facet (geography in the bundled timeline; the people and civilization lists aren't settled).
  * Off in edit mode, where every row must be reachable.
  */
-export const regionFacetId = (data: Dataset): string | undefined => Object.keys(data.meta.facets ?? {})[0];
+/** The facet the region filter uses: the first one that rows belong to (facets for events only are skipped). */
+export const regionFacetId = (data: Dataset): string | undefined =>
+  Object.entries(data.meta.facets ?? {}).find(([, f]) => (f.applies ?? 'tracks') !== 'events')?.[0];
 
 export function useRegionFilter(data: Dataset, initial: string[], sources: Record<string, boolean>, editMode: boolean) {
   const [picked, setPicked] = useState<string[]>(initial);

@@ -5,39 +5,40 @@ import { parseUpload } from '../state/dataset.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import ancient from '../../public/timelines/ancient-classical.json';
 
-const asV3 = () => ({ ...plainTimeline(), schemaVersion: 3 });
+const asVersion = (v: number) => ({ ...plainTimeline(), schemaVersion: v });
 
 describe('schema versions', () => {
-  it('writes version 4 and reads 3 and 4', () => {
-    expect(SCHEMA_VERSION).toBe(4);
-    expect(canRead(3)).toBe(true);
-    expect(canRead(4)).toBe(true);
+  it('writes version 5 and reads 3 to 5', () => {
+    expect(SCHEMA_VERSION).toBe(5);
+    for (const v of [3, 4, 5]) expect(canRead(v)).toBe(true);
     expect(canRead(2)).toBe(false);
-    expect(canRead(5)).toBe(false);
-    expect(canRead('4')).toBe(false);
+    expect(canRead(6)).toBe(false);
+    expect(canRead('5')).toBe(false);
   });
 
-  it('lifts a version 3 file to 4 without changing anything else', () => {
-    const v3 = asV3();
-    const v4 = migrate(v3) as Record<string, unknown>;
-    expect(v4.schemaVersion).toBe(4);
-    expect({ ...v4, schemaVersion: 3 }).toEqual(v3);
-    // the input is left as it was
-    expect(v3.schemaVersion).toBe(3);
-  });
+  for (const v of [3, 4])
+    it(`lifts a version ${v} file to 5 without changing anything else`, () => {
+      const old = asVersion(v);
+      const lifted = migrate(old) as Record<string, unknown>;
+      expect(lifted.schemaVersion).toBe(5);
+      expect({ ...lifted, schemaVersion: v }).toEqual(old);
+      // the input is left as it was
+      expect(old.schemaVersion).toBe(v);
+    });
 
-  it('accepts a version 3 file, and refuses versions it can not read with a clear message', () => {
-    expect(validateDataset(asV3())).toEqual([]);
-    expect(validateDataset({ ...plainTimeline(), schemaVersion: 5 })[0]).toBe('Unsupported schemaVersion: 5 (this app reads versions 3 to 4).');
+  it('accepts older files, and refuses versions it can not read with a clear message', () => {
+    expect(validateDataset(asVersion(3))).toEqual([]);
+    expect(validateDataset(asVersion(4))).toEqual([]);
+    expect(validateDataset(asVersion(6))[0]).toBe('Unsupported schemaVersion: 6 (this app reads versions 3 to 5).');
   });
 
   it('lifts an uploaded version 3 file', () => {
-    const { dataset, errors } = parseUpload(JSON.stringify(asV3()));
+    const { dataset, errors } = parseUpload(JSON.stringify(asVersion(3)));
     expect(errors).toEqual([]);
-    expect(dataset?.schemaVersion).toBe(4);
+    expect(dataset?.schemaVersion).toBe(5);
   });
 
-  it('ships the bundled timeline as version 4', () => {
-    expect(ancient.schemaVersion).toBe(4);
+  it('ships the bundled timeline as version 5', () => {
+    expect(ancient.schemaVersion).toBe(5);
   });
 });

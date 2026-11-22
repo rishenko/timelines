@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useFieldArray, useForm, useWatch, type Control, type FieldErrors, type UseFormRegister } from 'react-hook-form';
-import type { Calendar, Dataset, SourceRef, Track, TrackPhase, TrackSpan } from '../types.ts';
+import type { Calendar, Dataset, SourceRef, Track, TrackKind, TrackPhase, TrackSpan } from '../types.ts';
 import { newProblems, nextTrackColor, slug, trackDeletion, uniqueId, upsertTrack } from '../state/edits.ts';
 import { ClaimList, ProblemList } from './ClaimList.tsx';
 import { claimsFromValues, toClaimValues, type ClaimFields, type ClaimValues } from '../lib/claims.ts';
@@ -18,6 +18,7 @@ interface FormValues extends ClaimFields {
   name: string;
   color: string;
   parent: string;
+  kind: TrackKind;
   image: string;
   url: string;
   wikidata: string;
@@ -100,6 +101,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       name: initial?.name ?? '',
       color: initial?.color ?? nextTrackColor(data.tracks),
       parent: initial?.parent ?? defaultParent ?? '',
+      kind: initial?.kind ?? 'polity',
       image: initial?.image ?? '',
       url: initial?.url ?? '',
       wikidata: initial?.ids?.wikidata ?? '',
@@ -126,7 +128,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       : undefined;
   // its memberships in other rows (Track.memberOf), read-only: "Soviet Union (1922 CE – 1991 CE)"
   const memberOfText = initial?.memberOf
-    ?.map((m) => `${data.tracks.find((t) => t.id === m.row)?.name ?? m.row} (${spanDates({ start: m.start, end: m.end ?? m.start, ongoing: m.ongoing }, cal, !!m.circa)})`)
+    ?.map((m) => `${data.tracks.find((t) => t.id === m.row)?.name ?? m.row} (${m.phase ? `as ${m.phase}, ` : ''}${spanDates({ start: m.start, end: m.end ?? m.start, ongoing: m.ongoing }, cal, !!m.circa)})`)
     .join(', ');
   const idValue = watch('id');
   const otherIds = data.tracks.filter((t) => t.id !== initial?.id).map((t) => t.id);
@@ -142,6 +144,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (otherIds.includes(id)) return setError('id', { message: `A track with id "${id}" already exists.` }, { shouldFocus: true });
     const t: Track = { id, name: v.name.trim(), color: v.color };
     if (v.parent) t.parent = v.parent;
+    // a polity is the default: written only when chosen over another kind, or if the row already said so
+    if (v.kind !== 'polity' || initial?.kind === 'polity') t.kind = v.kind;
     if (v.image.trim()) t.image = v.image.trim();
     const url = v.url.trim();
     if (url && !isSafeUrl(url))
@@ -250,6 +254,17 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
             </option>
           ))}
         </select>
+
+        <label htmlFor="tr-kind">Kind of row</label>
+        <select id="tr-kind" aria-describedby="tr-kind-help" {...register('kind')}>
+          <option value="polity">A state, people or group</option>
+          <option value="person">A person</option>
+          <option value="theme">A theme: a network, route or movement</option>
+        </select>
+        <p id="tr-kind-help" className="muted small">
+          Most rows are states, peoples or groups. A theme (the Silk Roads, the Reformation) has no government of its
+          own; its events are shared with the rows where they happened.
+        </p>
 
         <fieldset>
           <legend>Lifespan (optional)</legend>

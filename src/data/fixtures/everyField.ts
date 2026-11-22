@@ -9,9 +9,16 @@ import type { UnsetPaths } from '../../test/schemaCoverage.ts';
  * Adding a field to src/types.ts fails the build until it is set here. To see every unset field at once:
  * `npx tsc -p tsconfig.test.json --noEmit --noErrorTruncation`.
  */
-/** A source reference. */
-function ref(sourceLocation: string, sourceKey: 'ledger' | 'logbook' = 'ledger') {
-  return { sourceKey, sourceLocation };
+type Loc =
+  | { kind: 'infobox'; field: string; value?: string }
+  | { kind: 'lead'; quote: string }
+  | { kind: 'section'; heading: string; quote?: string }
+  | { kind: 'category'; name: string }
+  | { kind: 'page'; page: string };
+
+/** A source reference, with a locator (a page number unless given). */
+function ref(sourceLocation: string, sourceKey: 'ledger' | 'logbook' = 'ledger', locator?: Loc) {
+  return { sourceKey, sourceLocation, locator: locator ?? { kind: 'page' as const, page: sourceLocation.replace(/^p\. /, '') } };
 }
 
 /** A date claim with every field set. */
@@ -20,7 +27,7 @@ function claim(year: number, month: number, day: number, at: string) {
 }
 
 export const everyField = {
-  schemaVersion: 4,
+  schemaVersion: 5,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -39,14 +46,46 @@ export const everyField = {
     facets: {
       region: {
         name: 'Region',
+        applies: 'tracks',
         values: {
           coast: { name: 'The coast' },
           bay: { name: 'The bay', broader: ['coast'] },
         },
       },
+      theme: { name: 'Theme', applies: 'events', values: { trade: { name: 'Trade' } } },
     },
     continues: [{ timeline: 'harbor-towns', at: 300, side: 'after' }],
     range: { start: -100, end: 300 },
+    eras: [
+      {
+        id: 'age-of-piers',
+        name: 'The Age of Piers',
+        group: 'harbor-ages',
+        color: '#c8a24a',
+        chronology: 'court',
+        start: -40,
+        startMonth: 3,
+        startDay: 1,
+        end: 59,
+        endMonth: 12,
+        endDay: 31,
+        circa: true,
+        startDates: [claim(-40, 3, 1, 'p. 1')],
+        endDates: [claim(59, 12, 31, 'p. 9')],
+        startEvent: 'founding',
+        endEvent: 'council-falls',
+        sources: [ref('p. 50')],
+      },
+      {
+        id: 'age-of-leagues',
+        name: 'The Age of Leagues',
+        group: 'harbor-ages',
+        start: 60,
+        ongoing: true,
+        ongoingSources: [ref('p. 51')],
+        sources: [ref('p. 51')],
+      },
+    ],
   },
   present: 300,
   tags: { canon: { name: 'Canon' }, homebrew: { name: 'Homebrew' } },
@@ -58,6 +97,8 @@ export const everyField = {
       author: 'The Harbor Clerks',
       year: '2nd ed. 2007',
       accessed: '2026-11-01',
+      dump: 'enwiki-20261101',
+      revision: 1234567,
     },
     logbook: { name: "A Pilot's Logbook", tags: ['canon'], hiddenByDefault: true },
   },
@@ -67,7 +108,7 @@ export const everyField = {
       group: 'The North',
       default: true,
       description: 'The count kept at court.',
-      source: { sourceKey: 'ledger', sourceLocation: 'p. 2' },
+      source: ref('p. 2'),
     },
     temple: { name: 'Temple reckoning', group: 'The North', derive: { from: 'court', offset: -12, until: 200 } },
   },
@@ -78,6 +119,7 @@ export const everyField = {
       name: 'Quay Town',
       color: '#3f7ab8',
       parent: 'coast',
+      kind: 'polity',
       image: 'timelines/example/quay.svg',
       url: 'https://example.com/quay',
       ids: { wikidata: 'Q1' },
@@ -114,10 +156,11 @@ export const everyField = {
           startEvent: 'council-falls',
         },
       ],
-      memberships: [{ facet: 'region', value: 'bay', sources: [ref('p. 4')] }],
+      memberships: [{ facet: 'region', value: 'bay', sources: [ref('category "Bay towns"', 'ledger', { kind: 'category', name: 'Bay towns' })] }],
       memberOf: [
         {
           row: 'league',
+          phase: 'Second Council',
           start: 131,
           startMonth: 4,
           startDay: 2,
@@ -144,6 +187,7 @@ export const everyField = {
       ],
     },
     { id: 'bay-union', name: 'The Bay Union', color: '#8a5fb0', span: { start: 205, ongoing: true, ongoingSources: [ref('p. 43')] } },
+    { id: 'salt-road', name: 'The Salt Road', color: '#b07a3f', kind: 'theme', span: { start: 100, end: 250 } },
     { id: 'others', name: 'Other ports', color: '#7c8591', pinLast: true },
   ],
   events: [
@@ -186,11 +230,14 @@ export const everyField = {
       descr: 'The League keeps a watch on the bay that has never been stood down.',
       start: 150,
       ongoing: true,
+      ongoingSources: [ref('lead', 'ledger', { kind: 'lead', quote: 'the watch is kept to this day' })],
       tracks: ['league', 'others'],
-      sources: [ref('entry 50', 'logbook')],
+      sources: [ref('entry 50', 'logbook', { kind: 'section', heading: 'The watch', quote: 'never stood down' })],
+      memberships: [{ facet: 'theme', value: 'trade', sources: [ref('infobox purpose: trade', 'ledger', { kind: 'infobox', field: 'purpose', value: 'trade' })] }],
     },
     { uuid: 'league-ends', title: 'The League ends', descr: 'Its last council.', start: 200, startMonth: 8, startDay: 1, tracks: ['league'], sources: [ref('p. 30')] },
   ],
+  redirects: { 'old-quay': 'quay', 'lost-storm': null },
 } satisfies Dataset;
 
 type Unset = UnsetPaths<Dataset, typeof everyField>;

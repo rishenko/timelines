@@ -10,6 +10,8 @@ interface FormValues {
   year: string;
   url: string;
   accessed: string;
+  dump: string;
+  revision: string;
   tags: string[];
   newTag: string;
   hiddenByDefault: boolean;
@@ -41,6 +43,8 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
       year: initial?.year ?? '',
       url: initial?.url ?? '',
       accessed: initial?.accessed ?? '',
+      dump: initial?.dump ?? '',
+      revision: initial?.revision === undefined ? '' : String(initial.revision),
       tags: initial?.tags ?? customTags(data),
       newTag: '',
       hiddenByDefault: initial?.hiddenByDefault ?? false,
@@ -64,6 +68,14 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
     if (v.year.trim()) s.year = v.year.trim();
     if (v.url.trim()) s.url = v.url.trim();
     if (v.accessed.trim()) s.accessed = v.accessed.trim();
+    const dump = v.dump.trim();
+    if (dump && !/^[a-z]+wiki-\d{8}$/.test(dump))
+      return setError('dump', { message: 'Name the snapshot like "enwiki-20261101".' }, { shouldFocus: true });
+    if (dump) s.dump = dump;
+    const revision = v.revision.trim();
+    if (revision && !/^[1-9]\d*$/.test(revision)) return setError('revision', { message: 'A revision id is a whole number.' }, { shouldFocus: true });
+    if (revision && !s.url) return setError('revision', { message: 'Give the link too: a revision belongs to a page.' }, { shouldFocus: true });
+    if (revision) s.revision = Number(revision);
     if (v.hiddenByDefault) s.hiddenByDefault = true;
     onSave(key, s, sourceKey ?? undefined);
   };
@@ -109,6 +121,17 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
         <input id="src-url" type="url" placeholder="https://…" {...register('url')} />
         <label htmlFor="src-accessed">Read on (for web pages)</label>
         <input id="src-accessed" type="date" {...register('accessed')} />
+
+        <details open={initial?.dump || initial?.revision || errors.dump || errors.revision ? true : undefined}>
+          <summary>Snapshot read (optional)</summary>
+          <p className="muted small">For values read from a saved copy of a wiki rather than the live page.</p>
+          <label htmlFor="src-dump">Dump</label>
+          <input id="src-dump" placeholder="enwiki-20261101" {...register('dump')} {...errorProps('src-dump', errors.dump)} />
+          <FieldError id="src-dump" error={errors.dump} />
+          <label htmlFor="src-revision">Page revision id</label>
+          <input id="src-revision" inputMode="numeric" placeholder="1234567" {...register('revision')} {...errorProps('src-revision', errors.revision)} />
+          <FieldError id="src-revision" error={errors.revision} />
+        </details>
 
         <fieldset>
           <legend>Tags</legend>

@@ -23,6 +23,7 @@ const OLDEST = 3;
 /** Released versions' fixtures, by a hash of their content (whitespace and line endings don't count). */
 const FROZEN: Record<number, string> = {
   3: '427c0de1bbda87e37ff4c3cf6b1067e4fb0ebe4f512f67591c103f2d917bf4d8',
+  4: '298b4f4f7834a5cd0d91fe2ced248801dddbc167f911141f7c3721db4b44cbf0',
 };
 
 const dir = 'src/data/fixtures';
