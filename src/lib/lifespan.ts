@@ -1,12 +1,13 @@
 import type { Calendar, Dataset, DateDays, Track, TrackSpan } from '../types.ts';
 import { resolveSpan, type ChronologySelection, type ResolvedPhase, type ResolvedSpan } from './chronology.ts';
 import { formatDate } from './calendar.ts';
+import { drawnFrom, drawnTo } from './subYear.ts';
 
 /**
  * A row's lifespan (Track.span): typed as one stretch or a list of stretches, or, when the row has phases and no
  * typed span, worked out from its phases. A worked-out lifespan covers the phases and leaves the gaps between them
  * blank (the row didn't exist then); phases that overlap, touch, or lie within `GAP_TOLERANCE` years of each other
- * make one stretch.
+ * make one stretch (within a month or a day, for phases whose meeting dates give them).
  */
 
 /** Phases this many years apart (or closer) belong to one stretch of a worked-out lifespan. */
@@ -37,6 +38,18 @@ const lo = (s: ResolvedSpan) => Math.min(s.start, s.startWindow?.[0] ?? s.start)
 const hi = (s: ResolvedSpan) => Math.max(s.end, s.endWindow?.[1] ?? s.end);
 
 /**
+ * Whether a part continues the stretch before it: the gap between them is less than one unit, the unit being a year
+ * (GAP_TOLERANCE: a part starting the year after the last one ends continues it), or a month or a day when both of the
+ * dates that meet give one. Year-only parts join exactly as they always have.
+ */
+function joins(cur: ResolvedSpan, p: ResolvedSpan): boolean {
+  if (!(cur.endMonth && p.startMonth)) return lo(p) - hi(cur) <= GAP_TOLERANCE;
+  // (a gap at month precision is whole months, 28 days or more; at day precision whole days)
+  const unit = cur.endDay && p.startDay ? 1 / 366 : 27 / 366;
+  return drawnFrom(p) - drawnTo(cur) < unit - 1e-9;
+}
+
+/**
  * The stretches covered by resolved phases (or any dated parts): parts whose extents (with their uncertainty ranges)
  * overlap, touch or lie within GAP_TOLERANCE years of each other merge. Each stretch takes its start, start range and
  * circa (and the event that began it) from the part that starts earliest, and its end (with any sources saying it is
@@ -47,7 +60,7 @@ export function mergeStretches(parts: ResolvedSpan[]): ResolvedSpan[] {
   const out: (ResolvedSpan & { startCirca?: boolean; endCirca?: boolean })[] = [];
   for (const p of sorted) {
     const cur = out.at(-1);
-    if (cur && lo(p) - hi(cur) <= GAP_TOLERANCE) {
+    if (cur && joins(cur, p)) {
       if (p.start < cur.start) {
         cur.start = p.start;
         cur.startMonth = p.startMonth;

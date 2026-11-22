@@ -182,3 +182,22 @@ describe('citing that a lifespan or phase is still going (ongoingSources)', () =
     expect(validateDataset(removed).filter((e) => /ongoing/.test(e))).toEqual([]);
   });
 });
+
+describe('stretches of phases given in months and days', () => {
+  const part = (o: Partial<ResolvedSpan>): ResolvedSpan => ({ start: 0, end: 0, ...o });
+  it('joins year-only phases a year apart, as always', () => {
+    expect(mergeStretches([part({ start: 1900, end: 1922 }), part({ start: 1923, end: 1930 })])).toHaveLength(1);
+    expect(mergeStretches([part({ start: 1900, end: 1922 }), part({ start: 1924, end: 1930 })])).toHaveLength(2);
+  });
+  it('keeps a gap of weeks within one year when the dates give days', () => {
+    const a = part({ start: 398, startMonth: 1, startDay: 1, end: 398, endMonth: 7, endDay: 4 });
+    expect(mergeStretches([a, part({ start: 398, startMonth: 8, startDay: 18, end: 398, endMonth: 12, endDay: 2 })])).toHaveLength(2);
+    // the next day continues it
+    expect(mergeStretches([a, part({ start: 398, startMonth: 7, startDay: 5, end: 399 })])).toHaveLength(1);
+  });
+  it('joins months that follow each other, and not across an empty month', () => {
+    const a = part({ start: 1918, startMonth: 2, end: 1918, endMonth: 3 });
+    expect(mergeStretches([a, part({ start: 1918, startMonth: 4, end: 1918, endMonth: 6 })])).toHaveLength(1);
+    expect(mergeStretches([a, part({ start: 1918, startMonth: 5, end: 1918, endMonth: 6 })])).toHaveLength(2);
+  });
+});

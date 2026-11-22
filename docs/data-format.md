@@ -46,9 +46,21 @@ of time, its year, month or day, so a year-only date covers its whole year exact
   "end": 1916, "endMonth": 11, "endDay": 18 }
 ```
 
-- Months are 1–12; a day needs a month and must exist in it (leap years counted). Months and days are written as the
-  sources give them: there is no Julian/Gregorian conversion. When a source gives both styles (Russia, 1917), record
-  the Gregorian date and say so in `sourceLocation`. Positions use Gregorian month lengths.
+- Months are 1–12; a day needs a month and must exist in it (leap years counted). Positions use Gregorian month
+  lengths.
+- **New Style dates from 1582.** The app doesn't convert between calendars, so every month and day from 15 October
+  1582 on is Gregorian, as most sources give them for the modern era:
+  - When a source gives both styles ("26 October [8 November] 1917"), record the Gregorian one and say so in
+    `sourceLocation` ("N.S.; O.S. 26 October").
+  - When a source gives only an Old Style (Julian) date, as for Russia before 1918, Britain and its colonies before
+    1752 and much of Protestant Europe between 1582 and 1700, convert it before recording it: add 10 days for 1582–1699
+    (from 1 March 1700 in the Julian count, 11 days; from 1 March 1800, 12; from 1 March 1900, 13), and record the
+    source's own date in the claim's `note` ("1 February 1918 O.S."). A conversion in the build script, marked `O.S.`
+    in the text date, is planned for when a timeline first needs it.
+  - Before 1582 dates are Julian everywhere; record them as the sources give them, unconverted (the proleptic
+    Gregorian difference is not wanted there), and say so in the timeline's credits.
+- **Invented calendars** use the same twelve months for now: a setting with other months can give years only, until
+  `calendar` can describe its months.
 - An end date is inclusive, like an end year: the bar runs to the end of that day (or month, or year). An event whose
   end is its start's own date is a single date.
 - A year-only end that meets a start given in days in the same year (Weimar's "1933" and Nazi Germany's 30 January
@@ -142,7 +154,9 @@ are left blank:
 **Worked out from phases.** A row with [phases](#tracks) and no `span` gets its lifespan from them: shaded where its
 phases are, blank in the gaps between them. A gap means the row **didn't exist** then (a state partitioned away and
 later restored). Phases that overlap, touch, or lie a year apart make one stretch, and a phase's uncertain edges count,
-so a change of government is never a gap. Type a lifespan only when it says something the phases don't:
+so a change of government is never a gap. Where the dates that meet give [months or days](#months-and-days), the
+step is a month or a day: phases ending on 4 July and starting on 18 August of one year leave a gap; ending on 4 July
+and starting on 5 July, they don't. Type a lifespan only when it says something the phases don't:
 
 - the row **carried on through a gap** between its phases (a state whose rulers for those years aren't recorded as a
   phase): type one stretch across the gap;
