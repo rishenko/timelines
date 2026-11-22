@@ -43,6 +43,8 @@ describe('schema version 5 rules', () => {
     ['era without a source', (d) => (d.meta.eras![0].sources = []), /Era "The Age of Piers" cites no source/],
     ['era in an unknown row', (d) => (d.meta.eras![0].tracks = ['nowhere']), /Era "The Age of Piers" names unknown row "nowhere"/],
     ['era naming a row twice', (d) => (d.meta.eras![0].tracks = ['quay', 'quay']), /Era "The Age of Piers" names a row twice/],
+    ['era group name for no group', (d) => (d.meta.eraGroups = { 'no-such-group': { name: 'X' } }), /meta.eraGroups names "no-such-group", which no era has as its group/],
+    ['era group without a name', (d) => (d.meta.eraGroups = { 'harbor-ages': { name: ' ' } }), /meta.eraGroups "harbor-ages" has no name/],
     ['era with no rows listed', (d) => (d.meta.eras![0].tracks = []), /Era "The Age of Piers" tracks must be a non-empty list/],
     ['eras overlapping in a group', (d) => Object.assign(d.meta.eras![1], { start: 40, startDates: undefined }), /Eras "The Age of Piers" and "The Age of Leagues" overlap/],
     ['era outside the range', (d) => Object.assign(d.meta.eras![0], { start: -400, end: -300, startMonth: undefined, startDay: undefined, endMonth: undefined, endDay: undefined, startDates: undefined, endDates: undefined, startEvent: undefined, endEvent: undefined }), /Era "The Age of Piers" lies outside meta.range/],

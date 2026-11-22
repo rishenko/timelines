@@ -13,8 +13,8 @@
  *   optional and additive: a v4 file is a v5 file with a different number.
  * - 6: `Era.url` and `Era.ids` (an age's own article and Wikidata item). Additive: a v5 file is a v6 file with a
  *   different number.
- * - 7: `Era.tracks` (the rows an age belongs to, such as a region; drawn in their bands). Additive: a v6 file is a v7
- *   file with a different number.
+ * - 7: `Era.tracks` (the rows an age belongs to, such as a region; drawn in their bands) and `meta.eraGroups` (era
+ *   groups' display names). Additive: a v6 file is a v7 file with a different number.
  */
 
 export const SCHEMA_VERSION = 7;

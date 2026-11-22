@@ -446,6 +446,18 @@ export function validateDataset(d: unknown): string[] {
     }
   }
 
+  // era groups' display names: each key is a group some era has, each with a name
+  if (m.eraGroups !== undefined) {
+    if (!m.eraGroups || typeof m.eraGroups !== 'object' || Array.isArray(m.eraGroups)) errors.push('meta.eraGroups must be an object.');
+    else {
+      const used = new Set((Array.isArray(m.eras) ? m.eras : []).map((e) => e?.group).filter(Boolean));
+      for (const [id, g] of Object.entries(m.eraGroups)) {
+        if (!used.has(id)) errors.push(`meta.eraGroups names "${id}", which no era has as its group.`);
+        if (!g || typeof g.name !== 'string' || !g.name.trim()) errors.push(`meta.eraGroups "${id}" has no name.`);
+      }
+    }
+  }
+
   // redirects: ids the timeline no longer has, to the id that replaced them (or null: removed on purpose)
   if (ds.redirects !== undefined) {
     if (!ds.redirects || typeof ds.redirects !== 'object' || Array.isArray(ds.redirects)) errors.push('redirects must be an object.');

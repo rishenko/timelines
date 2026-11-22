@@ -68,6 +68,11 @@
         "side": "after"
       }
     ],
+    "eraGroups": {
+      "harbor-ages": {
+        "name": "Harbor ages"
+      }
+    },
     "range": {
       "start": -100,
       "end": 300
