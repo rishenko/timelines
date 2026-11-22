@@ -2,7 +2,7 @@
 // run vitest with one line per failure.
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdtempSync, readFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
+import { homedir, tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 
 export interface Run {
@@ -35,7 +35,7 @@ export function localData(): string | undefined {
   const roots = ['.', common.ok ? dirname(common.out.trim()) : '.'];
   for (const root of roots) {
     const file = resolve(root, 'local-data.local');
-    if (existsSync(file)) return readFileSync(file, 'utf8').split('\n')[0].trim() || undefined;
+    if (existsSync(file)) return readFileSync(file, 'utf8').split('\n')[0].trim().replace(/^~(?=\/|$)/, homedir()) || undefined;
   }
   return undefined;
 }
@@ -68,5 +68,7 @@ export function quietVitest(files: string[], env: NodeJS.ProcessEnv): { ok: bool
   }
   const skipped = j.numPendingTests + j.numTodoTests;
   const summary = `${j.numPassedTests} passed, ${j.numFailedTests} failed, ${skipped} skipped`;
+  // vitest can fail with no failed test (an unhandled error, a failed setup): say why
+  if (!r.ok && !failures.length) failures.push(`vitest exited with an error: ${lastLine(r.out).slice(0, 200)}`);
   return { ok: r.ok && !failures.length, summary, failures };
 }

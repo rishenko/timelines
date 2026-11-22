@@ -362,14 +362,14 @@ TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
   and the deployed site never include them.
 - Helpers: `scripts/lib/local-data.ts`. Nothing in this repo names a local dataset; keep it that way.
 - `npm run test:private` and `npm run pr:check` set the variable themselves when it isn't set: they read the first
-  line of `local-data.local` (ignored by git) at the root of this clone, or of the main clone a worktree belongs to.
+  line of `local-data.local` (ignored by git; a leading `~` is your home folder) at the root of this clone, or of the main clone a worktree belongs to.
 
 ## Before a pull request
 
 `npm run pr:check` runs the checks a reviewer expects, one line each, and exits with 1 if any fails:
 
 - **main:** the branch has `origin/main` merged in (it fetches first; `--no-fetch` skips that) and merges without
-  conflicts;
+  conflicts (`git merge-tree --write-tree` needs git 2.38 or later);
 - **tsc**, **lint** (errors fail; warnings are counted), **tests** (with your local timelines when they're set up), and
   **docs** (`docs:check`);
 - **compare:** `data:compare` for each compiled timeline the branch changes, against where it left main: the count of

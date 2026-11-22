@@ -95,14 +95,37 @@ for (const file of changed) {
 }
 
 // ---- a11y summary on one timeline ----
+const url = `http://localhost:${port}/`;
+async function answers(u: string): Promise<boolean> {
+  try {
+    await fetch(u, { signal: AbortSignal.timeout(1000) });
+    return true;
+  } catch {
+    return false;
+  }
+}
 if (timeline) {
   const build = run('npm', ['run', '-s', 'build']);
   if (!build.ok) line(false, 'a11y', `build failed: ${lastLine(build.out).slice(0, 160)}`);
+  else if (await answers(url)) line(false, 'a11y', `port ${port} is already in use: stop that server or pass --port <free port>`);
   else {
     const server = spawn('npx', ['vite', 'preview', '--port', port, '--strictPort'], { stdio: 'ignore', detached: true });
-    await new Promise((r) => setTimeout(r, 3000));
+    let exited = false;
+    server.on('exit', () => (exited = true));
+    // wait until this build answers (up to 30 s), so the report never audits another server
+    const deadline = Date.now() + 30_000;
+    while (!exited && Date.now() < deadline && !(await answers(url))) await new Promise((r) => setTimeout(r, 500));
+    if (exited || !(await answers(url))) {
+      line(false, 'a11y', `the preview server didn't start on port ${port}`);
+      try {
+        process.kill(-server.pid!);
+      } catch {
+        // already gone
+      }
+      process.exit(1);
+    }
     const out = join(tmp, 'wcag-report.md');
-    const a = run('node', ['scripts/a11y-report.ts', '--url', `http://localhost:${port}/`, '--timeline', timeline, '--out', out]);
+    const a = run('node', ['scripts/a11y-report.ts', '--url', url, '--timeline', timeline, '--out', out]);
     try {
       process.kill(-server.pid!);
     } catch {
