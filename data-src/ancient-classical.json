@@ -941,9 +941,7 @@
           { "sourceKey": "periodo-p064v7m2kbt", "sourceLocation": "period \"Late Archaic\", start \"4000 BC\" (p064v7m2kbt)" },
           { "sourceKey": "periodo-p064v7m2kbt", "sourceLocation": "period \"Late Archaic\", end \"2000 BC\" (p064v7m2kbt)" }
         ],
-        "tracks": ["americas"],
-        "url": "https://en.wikipedia.org/wiki/Archaic_period_in_Mesoamerica",
-        "ids": { "wikidata": "Q55622876" }
+        "tracks": ["americas"]
       },
       {
         "id": "mesoamerica-formative",

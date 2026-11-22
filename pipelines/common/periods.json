@@ -62,7 +62,7 @@
   {"id": "china-iron-age", "name": "Iron Age", "group": "ages-china", "timelines": ["ancient-classical"], "tracks": ["east-asia"], "circa": true, "link": "Iron Age",
    "start": [{"year": "900 BCE", "article": "Iron Age", "find": "c. 900 BC to 100 BC", "note": "Wikipedia only: a term \"used sometimes\" for China's transitional period."}],
    "end": [{"year": "100 BCE", "article": "Iron Age", "find": "c. 900 BC to 100 BC", "note": "Wikipedia only."}]},
-  {"id": "mesoamerica-late-archaic", "name": "Late Archaic", "group": "ages-mesoamerica", "timelines": ["ancient-classical"], "tracks": ["americas"], "link": "Archaic period in Mesoamerica",
+  {"id": "mesoamerica-late-archaic", "name": "Late Archaic", "group": "ages-mesoamerica", "timelines": ["ancient-classical"], "tracks": ["americas"],
    "start": [{"year": "4000 BCE", "periodo": "p064v7m2kbt"}],
    "end": [{"year": "2000 BCE", "periodo": "p064v7m2kbt"}]},
   {"id": "mesoamerica-formative", "name": "Formative", "group": "ages-mesoamerica", "timelines": ["ancient-classical"], "tracks": ["americas"], "circa": true, "link": "Mesoamerican Preclassic period",
