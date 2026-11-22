@@ -8,7 +8,8 @@ Every date in periods.json is a claim naming its article and where the article s
   {"infobox": "<param>"} a parameter of the article's first infobox (historical-era infoboxes too, which the
                          extractor doesn't read)
   {"short": true}        the article's short description
-The cited text must hold the year, or, for a claim read from centuries (it has a margin), the word "century". An
+A new event's description ("descr") restates sentences of the cited articles, listed as its "basis"
+([article, text]); each is found in the dump and cited after the date sources. The cited text must hold the year, or, for a claim read from centuries (it has a margin), the word "century". An
 article that is missing or AI-flagged stops the run (wp_claims.art). An entry with "circa": true is circa even
 without a margin ("around 1760").
 
@@ -57,15 +58,21 @@ def _short(title):
     return m.group(1).strip()
 
 
+def _sentence(article, needle):
+    """(text, location) of the article's first sentence holding `needle`: lead first, then sections in order."""
+    title = G.art(article)['title']
+    hit = find(title, needle)
+    if not hit:
+        raise SystemExit(f'{title}: no sentence with {needle!r}')
+    where, text = hit
+    return text, (f'lead: "{text[:160]}"' if where == 'lead' else f'section "{where}": "{text[:160]}"')
+
+
 def claim(c):
     """One date claim: {year, source, margin?, note?}, its cited text checked against the dump."""
     title = G.art(c['article'])['title']
     if 'find' in c:
-        hit = find(title, c['find'])
-        if not hit:
-            raise SystemExit(f'{title}: no sentence with {c["find"]!r}')
-        where, text = hit
-        loc = f'lead: "{text[:160]}"' if where == 'lead' else f'section "{where}": "{text[:160]}"'
+        text, loc = _sentence(c['article'], c['find'])
     elif 'infobox' in c:
         text = _infobox(title, c['infobox'])
         loc = f'infobox {c["infobox"]}: {text[:80]}'
@@ -112,6 +119,11 @@ def age(x):
     if d.get('circa'):
         e['circa'] = True
     e['tracks'] = x['tracks']
+    # a description cites the sentences it restates (its basis), after the date sources
+    for article, needle in x.get('basis', []):
+        r = G.ref(article, _sentence(article, needle)[1])
+        if r not in refs:
+            refs.append(r)
     e['sources'] = refs
     e['startDates'], e['endDates'] = d['startDates'], d['endDates']
     e['importance'] = 1

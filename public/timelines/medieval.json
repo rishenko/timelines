@@ -42268,7 +42268,7 @@
     {
       "uuid": "carolingian-renaissance",
       "title": "Carolingian Renaissance",
-      "descr": "",
+      "descr": "Under Charlemagne and Louis the Pious, court scholars such as Alcuin of York revive learning on Roman and Greek models: literature, writing, the arts, architecture, music and law grow, and Carolingian schools copy and edit the classics.",
       "start": 750,
       "end": 900,
       "circa": true,
@@ -42279,6 +42279,22 @@
         {
           "sourceKey": "wp-carolingian-renaissance",
           "sourceLocation": "lead: \"Charlemagne's reign led to an intellectual revival beginning in the 8th century and continuing throughout the 9th century, taking inspiration from ancient Roman\""
+        },
+        {
+          "sourceKey": "wp-carolingian-renaissance",
+          "sourceLocation": "lead: \"The movement occurred mostly during the reigns of Carolingian rulers Charlemagne and Louis the Pious.\""
+        },
+        {
+          "sourceKey": "wp-carolingian-renaissance",
+          "sourceLocation": "lead: \"It was supported by the scholars of the court, notably Alcuin of York.\""
+        },
+        {
+          "sourceKey": "wp-carolingian-renaissance",
+          "sourceLocation": "lead: \"The period saw an increase of literature, writing, visual arts, architecture, music, jurisprudence, liturgical reforms, and scriptural studies.\""
+        },
+        {
+          "sourceKey": "wp-carolingian-renaissance",
+          "sourceLocation": "lead: \"Carolingian schools were effective centers of education, and they served generations of scholars by producing editions and copies of the classics, both Christia\""
         }
       ],
       "startDates": [
@@ -42320,7 +42336,7 @@
     {
       "uuid": "macedonian-renaissance",
       "title": "Macedonian Renaissance",
-      "descr": "",
+      "descr": "Byzantine culture blossoms under the Macedonian dynasty after the upheavals of the 7th and 8th centuries. Scholars set out to organise and codify knowledge, as in the works of the scholar emperor Constantine VII.",
       "start": 867,
       "end": 1056,
       "tracks": [
@@ -42330,6 +42346,10 @@
         {
           "sourceKey": "wp-macedonian-renaissance",
           "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
+        },
+        {
+          "sourceKey": "wp-macedonian-renaissance",
+          "sourceLocation": "lead: \"The period is also known as the era of Byzantine encyclopedism because of attempts to systematically organize and codify knowledge, as exemplified by the works \""
         }
       ],
       "startDates": [
