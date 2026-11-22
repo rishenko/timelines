@@ -42,7 +42,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     rowLinks: 'data-src/ancient-classical-row-links.json',
     memberships: 'data-src/ancient-classical-memberships.json',
     keyEvents: 'docs/ancient-classical-key-events.md',
-    scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign']),
+    scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign', 'derived-lifespans']),
   },
 ];
 

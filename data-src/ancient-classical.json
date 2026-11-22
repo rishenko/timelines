@@ -2143,7 +2143,6 @@
       "parent": "rome",
       "url": "https://en.wikipedia.org/wiki/Ancient_Rome",
       "ids": { "wikidata": "Q1747689" },
-      "span": { "start": "c. 753 BCE", "end": "476 CE" },
       "phases": [
         { "name": "Roman Kingdom (traditional)", "start": "c. 753 BCE", "end": "509 BCE" },
         { "name": "Roman Republic", "start": "c. 509 BCE", "end": "27 BCE" },
@@ -2304,7 +2303,6 @@
       "parent": "aegean-bronze",
       "url": "https://en.wikipedia.org/wiki/Minoan_civilization",
       "ids": { "wikidata": "Q134178" },
-      "span": { "start": "c. 3100 BCE", "end": "1075 BCE" },
       "phases": [
         { "name": "Prepalatial (EM I–MM IA)", "start": "c. 3100 BCE", "end": "1925 BCE" },
         { "name": "Protopalatial (MM IB–II)", "start": "c. 1925 BCE", "end": "1750 BCE" },
@@ -2347,7 +2345,6 @@
       "parent": "aegean-bronze",
       "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
       "ids": { "wikidata": "Q181264" },
-      "span": { "start": "c. 1750 BCE", "end": "1050 BCE" },
       "phases": [
         { "name": "Early Mycenaean (Shaft Grave era)", "start": "c. 1750 BCE", "end": "1400 BCE" },
         {
@@ -2442,7 +2439,6 @@
       "parent": "aegean",
       "url": "https://en.wikipedia.org/wiki/Ancient_Greece",
       "ids": { "wikidata": "Q11772" },
-      "span": { "start": "c. 800 BCE", "end": "323 BCE" },
       "phases": [
         { "name": "Archaic period", "start": "c. 800 BCE", "end": "480 BCE" },
         {
@@ -2776,7 +2772,6 @@
       "parent": "egypt",
       "url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
       "ids": { "wikidata": "Q11768" },
-      "span": { "start": "c. 3300 BCE", "end": "332 BCE" },
       "phases": [
         { "name": "Late Predynastic (Dynasty 0)", "start": "c. 3300 BCE", "end": "3150 BCE" },
         {
@@ -3248,14 +3243,6 @@
       "name": "Ptolemaic and Roman Egypt",
       "color": "#a8844a",
       "parent": "egypt",
-      "span": {
-        "start": "305 BCE",
-        "end": "641 CE",
-        "startDates": [
-          { "year": "305 BCE", "source": { "sourceKey": "wp-ptolemaic", "sourceLocation": "lead and infobox" } },
-          { "year": "304 BCE", "source": { "sourceKey": "wp-ptolemaic", "sourceLocation": "Notes, note 1 (some scholars)" } }
-        ]
-      },
       "phases": [
         {
           "name": "Ptolemaic Egypt",
@@ -3387,7 +3374,6 @@
       "parent": "levant",
       "url": "https://en.wikipedia.org/wiki/Canaan",
       "ids": { "wikidata": "Q163329" },
-      "span": { "start": "c. 3500 BCE", "end": "1200 BCE" },
       "phases": [
         { "name": "Early Bronze Age", "start": "c. 3500 BCE", "end": "2000 BCE" },
         { "name": "Middle Bronze Age", "start": "c. 2000 BCE", "end": "1550 BCE" },
@@ -3893,18 +3879,18 @@
       "parent": "anatolia",
       "url": "https://en.wikipedia.org/wiki/Hittites",
       "ids": { "wikidata": "Q5406" },
-      "span": {
-        "start": "c. 1650 BCE",
-        "end": "1190 BCE",
-        "endDates": [
-          { "year": "1190 BCE", "source": { "sourceKey": "wp-hittites", "sourceLocation": "infobox (disestablished)" } },
-          { "year": "1180 BCE", "source": { "sourceKey": "wp-hattusa", "sourceLocation": "infobox ('Abandoned c. 1180 BC')" } }
-        ]
-      },
       "phases": [
         { "name": "Old Kingdom", "start": "c. 1650 BCE", "end": "1500 BCE" },
         { "name": "Middle Kingdom", "start": "c. 1500 BCE", "end": "1400 BCE" },
-        { "name": "New Kingdom (Empire)", "start": "c. 1400 BCE", "end": "1190 BCE" }
+        {
+          "name": "New Kingdom (Empire)",
+          "start": "c. 1400 BCE",
+          "end": "1190 BCE",
+          "endDates": [
+            { "year": "1190 BCE", "source": { "sourceKey": "wp-hittites", "sourceLocation": "infobox (disestablished)" } },
+            { "year": "1180 BCE", "source": { "sourceKey": "wp-hattusa", "sourceLocation": "infobox ('Abandoned c. 1180 BC')" } }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -4560,16 +4546,16 @@
       "parent": "mesopotamia",
       "url": "https://en.wikipedia.org/wiki/Assyria",
       "ids": { "wikidata": "Q41137" },
-      "span": {
-        "start": "c. 2600 BCE",
-        "end": "609 BCE",
-        "startDates": [
-          { "year": "2600 BCE", "source": { "sourceKey": "wp-assyria", "sourceLocation": "infobox (Foundation of Assur)" } },
-          { "year": "2500 BCE", "source": { "sourceKey": "wp-early-assyria", "sourceLocation": "Origins of Assur ('c. 2600 BC or c. 2500 BC')" } }
-        ]
-      },
       "phases": [
-        { "name": "Early Assyrian period", "start": "c. 2600 BCE", "end": "2025 BCE" },
+        {
+          "name": "Early Assyrian period",
+          "start": "c. 2600 BCE",
+          "end": "2025 BCE",
+          "startDates": [
+            { "year": "2600 BCE", "source": { "sourceKey": "wp-assyria", "sourceLocation": "infobox (Foundation of Assur)" } },
+            { "year": "2500 BCE", "source": { "sourceKey": "wp-early-assyria", "sourceLocation": "Origins of Assur ('c. 2600 BC or c. 2500 BC')" } }
+          ]
+        },
         { "name": "Old Assyrian period", "start": "c. 2025 BCE", "end": "1364 BCE" },
         { "name": "Middle Assyrian Empire", "start": "c. 1363 BCE", "end": "912 BCE" },
         { "name": "Neo-Assyrian Empire", "start": "911 BCE", "end": "609 BCE" }
@@ -6729,19 +6715,19 @@
       "parent": "indus",
       "url": "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation",
       "ids": { "wikidata": "Q42534" },
-      "span": {
-        "start": "c. 3300 BCE",
-        "end": "1300 BCE",
-        "startDates": [
-          { "year": "3300 BCE", "source": { "sourceKey": "wp-ivc", "sourceLocation": "lead and infobox" } },
-          {
-            "year": "3700 BCE",
-            "source": { "sourceKey": "wp-harappa", "sourceLocation": "Ravi Phase ('a 2025 study puts it as early as about 3700 BC')" }
-          }
-        ]
-      },
       "phases": [
-        { "name": "Early Harappan", "start": "c. 3300 BCE", "end": "2600 BCE" },
+        {
+          "name": "Early Harappan",
+          "start": "c. 3300 BCE",
+          "end": "2600 BCE",
+          "startDates": [
+            { "year": "3300 BCE", "source": { "sourceKey": "wp-ivc", "sourceLocation": "lead and infobox" } },
+            {
+              "year": "3700 BCE",
+              "source": { "sourceKey": "wp-harappa", "sourceLocation": "Ravi Phase ('a 2025 study puts it as early as about 3700 BC')" }
+            }
+          ]
+        },
         { "name": "Mature Harappan", "start": "c. 2600 BCE", "end": "1900 BCE" },
         { "name": "Late Harappan", "start": "c. 1900 BCE", "end": "1300 BCE" }
       ],
@@ -8036,15 +8022,6 @@
       "parent": "china",
       "url": "https://en.wikipedia.org/wiki/Zhou_dynasty",
       "ids": { "wikidata": "Q35216" },
-      "span": {
-        "start": "c. 1046 BCE",
-        "end": "256 BCE",
-        "startDates": [
-          { "year": "1046 BCE", "chronology": "xszcp", "source": { "sourceKey": "wp-zhou", "sourceLocation": "lead" } },
-          { "year": "1122 BCE", "chronology": "liu-xin", "source": { "sourceKey": "wp-muye", "sourceLocation": "Dating (Liu Xin)" } },
-          { "year": "1045 BCE", "source": { "sourceKey": "wp-zhou", "sourceLocation": "lead (Nivison and Shaughnessy)" } }
-        ]
-      },
       "phases": [
         {
           "name": "Western Zhou",
@@ -8174,7 +8151,6 @@
       "parent": "china",
       "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
       "ids": { "wikidata": "Q7352" },
-      "span": { "start": "266 CE", "end": "420 CE" },
       "phases": [
         {
           "name": "Western Jin",
@@ -8209,7 +8185,6 @@
       "parent": "china",
       "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
       "ids": { "wikidata": "Q49696" },
-      "span": { "start": "420 CE", "end": "589 CE" },
       "phases": [
         { "name": "Liu Song", "start": "420 CE", "end": "479 CE" },
         { "name": "Southern Qi", "start": "479 CE", "end": "502 CE" },
@@ -8255,7 +8230,6 @@
       "parent": "china",
       "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
       "ids": { "wikidata": "Q49696" },
-      "span": { "start": "386 CE", "end": "581 CE" },
       "phases": [
         { "name": "Northern Wei", "start": "386 CE", "end": "535 CE" },
         { "name": "Eastern Wei", "start": "534 CE", "end": "550 CE" },

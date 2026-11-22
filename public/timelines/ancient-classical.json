@@ -4230,11 +4230,6 @@
       "ids": {
         "wikidata": "Q1747689"
       },
-      "span": {
-        "start": -752,
-        "end": 476,
-        "circa": true
-      },
       "phases": [
         {
           "name": "Roman Kingdom (traditional)",
@@ -4543,11 +4538,6 @@
       "ids": {
         "wikidata": "Q134178"
       },
-      "span": {
-        "start": -3099,
-        "end": -1074,
-        "circa": true
-      },
       "phases": [
         {
           "name": "Prepalatial (EM I–MM IA)",
@@ -4640,11 +4630,6 @@
       "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
       "ids": {
         "wikidata": "Q181264"
-      },
-      "span": {
-        "start": -1749,
-        "end": -1049,
-        "circa": true
       },
       "phases": [
         {
@@ -4811,11 +4796,6 @@
       "url": "https://en.wikipedia.org/wiki/Ancient_Greece",
       "ids": {
         "wikidata": "Q11772"
-      },
-      "span": {
-        "start": -799,
-        "end": -322,
-        "circa": true
       },
       "phases": [
         {
@@ -5405,11 +5385,6 @@
       "url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
       "ids": {
         "wikidata": "Q11768"
-      },
-      "span": {
-        "start": -3299,
-        "end": -331,
-        "circa": true
       },
       "phases": [
         {
@@ -6210,26 +6185,6 @@
       "name": "Ptolemaic and Roman Egypt",
       "color": "#a8844a",
       "parent": "egypt",
-      "span": {
-        "start": -304,
-        "end": 641,
-        "startDates": [
-          {
-            "year": -304,
-            "source": {
-              "sourceKey": "wp-ptolemaic",
-              "sourceLocation": "lead and infobox"
-            }
-          },
-          {
-            "year": -303,
-            "source": {
-              "sourceKey": "wp-ptolemaic",
-              "sourceLocation": "Notes, note 1 (some scholars)"
-            }
-          }
-        ]
-      },
       "phases": [
         {
           "name": "Ptolemaic Egypt",
@@ -6499,11 +6454,6 @@
       "url": "https://en.wikipedia.org/wiki/Canaan",
       "ids": {
         "wikidata": "Q163329"
-      },
-      "span": {
-        "start": -3499,
-        "end": -1199,
-        "circa": true
       },
       "phases": [
         {
@@ -7500,27 +7450,6 @@
       "ids": {
         "wikidata": "Q5406"
       },
-      "span": {
-        "start": -1649,
-        "end": -1189,
-        "endDates": [
-          {
-            "year": -1189,
-            "source": {
-              "sourceKey": "wp-hittites",
-              "sourceLocation": "infobox (disestablished)"
-            }
-          },
-          {
-            "year": -1179,
-            "source": {
-              "sourceKey": "wp-hattusa",
-              "sourceLocation": "infobox ('Abandoned c. 1180 BC')"
-            }
-          }
-        ],
-        "circa": true
-      },
       "phases": [
         {
           "name": "Old Kingdom",
@@ -7538,6 +7467,22 @@
           "name": "New Kingdom (Empire)",
           "start": -1399,
           "end": -1189,
+          "endDates": [
+            {
+              "year": -1189,
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "infobox (disestablished)"
+              }
+            },
+            {
+              "year": -1179,
+              "source": {
+                "sourceKey": "wp-hattusa",
+                "sourceLocation": "infobox ('Abandoned c. 1180 BC')"
+              }
+            }
+          ],
           "circa": true
         }
       ],
@@ -8838,32 +8783,27 @@
       "ids": {
         "wikidata": "Q41137"
       },
-      "span": {
-        "start": -2599,
-        "end": -608,
-        "startDates": [
-          {
-            "year": -2599,
-            "source": {
-              "sourceKey": "wp-assyria",
-              "sourceLocation": "infobox (Foundation of Assur)"
-            }
-          },
-          {
-            "year": -2499,
-            "source": {
-              "sourceKey": "wp-early-assyria",
-              "sourceLocation": "Origins of Assur ('c. 2600 BC or c. 2500 BC')"
-            }
-          }
-        ],
-        "circa": true
-      },
       "phases": [
         {
           "name": "Early Assyrian period",
           "start": -2599,
           "end": -2024,
+          "startDates": [
+            {
+              "year": -2599,
+              "source": {
+                "sourceKey": "wp-assyria",
+                "sourceLocation": "infobox (Foundation of Assur)"
+              }
+            },
+            {
+              "year": -2499,
+              "source": {
+                "sourceKey": "wp-early-assyria",
+                "sourceLocation": "Origins of Assur ('c. 2600 BC or c. 2500 BC')"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -13055,32 +12995,27 @@
       "ids": {
         "wikidata": "Q42534"
       },
-      "span": {
-        "start": -3299,
-        "end": -1299,
-        "startDates": [
-          {
-            "year": -3299,
-            "source": {
-              "sourceKey": "wp-ivc",
-              "sourceLocation": "lead and infobox"
-            }
-          },
-          {
-            "year": -3699,
-            "source": {
-              "sourceKey": "wp-harappa",
-              "sourceLocation": "Ravi Phase ('a 2025 study puts it as early as about 3700 BC')"
-            }
-          }
-        ],
-        "circa": true
-      },
       "phases": [
         {
           "name": "Early Harappan",
           "start": -3299,
           "end": -2599,
+          "startDates": [
+            {
+              "year": -3299,
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead and infobox"
+              }
+            },
+            {
+              "year": -3699,
+              "source": {
+                "sourceKey": "wp-harappa",
+                "sourceLocation": "Ravi Phase ('a 2025 study puts it as early as about 3700 BC')"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -15457,36 +15392,6 @@
       "ids": {
         "wikidata": "Q35216"
       },
-      "span": {
-        "start": -1045,
-        "end": -255,
-        "startDates": [
-          {
-            "year": -1045,
-            "chronology": "xszcp",
-            "source": {
-              "sourceKey": "wp-zhou",
-              "sourceLocation": "lead"
-            }
-          },
-          {
-            "year": -1121,
-            "chronology": "liu-xin",
-            "source": {
-              "sourceKey": "wp-muye",
-              "sourceLocation": "Dating (Liu Xin)"
-            }
-          },
-          {
-            "year": -1044,
-            "source": {
-              "sourceKey": "wp-zhou",
-              "sourceLocation": "lead (Nivison and Shaughnessy)"
-            }
-          }
-        ],
-        "circa": true
-      },
       "phases": [
         {
           "name": "Western Zhou",
@@ -15752,10 +15657,6 @@
       "ids": {
         "wikidata": "Q7352"
       },
-      "span": {
-        "start": 266,
-        "end": 420
-      },
       "phases": [
         {
           "name": "Western Jin",
@@ -15829,10 +15730,6 @@
       "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
       "ids": {
         "wikidata": "Q49696"
-      },
-      "span": {
-        "start": 420,
-        "end": 589
       },
       "phases": [
         {
@@ -15919,10 +15816,6 @@
       "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
       "ids": {
         "wikidata": "Q49696"
-      },
-      "span": {
-        "start": 386,
-        "end": 581
       },
       "phases": [
         {

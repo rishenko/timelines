@@ -16,6 +16,7 @@
     "data": "node scripts/data.ts",
     "data:build": "node scripts/data.ts build all",
     "data:check": "node scripts/data.ts run-all ancient-classical --check",
+    "data:compare": "node scripts/compare-resolved.ts",
     "importance": "node scripts/data.ts importance all",
     "format:src": "node scripts/data.ts format all",
     "map:fetch": "node scripts/map/fetch-places.ts",

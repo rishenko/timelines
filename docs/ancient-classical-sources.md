@@ -90,3 +90,26 @@ shrank to one year. *Khufu* (read 20 November; no AI or translation notice) give
 "Proposed dates": "2589–2566 BC (23 years)" citing Shaw's *Oxford History of Ancient Egypt*, and "2509–2483 BC (26
 years)" citing Hornung, Krauss & Warburton. Both ends are now claims. The radiocarbon study gives only a start ("Khufu
 began his reign between 2629 and 2558 BC"), so under Radiocarbon only the start moves.
+
+## Lifespans worked out from phases (21 November 2026)
+
+`scripts/ancient-classical/derived-lifespans.ts`. Fourteen rows typed a lifespan that only repeated their phases (the
+first phase's start to the last phase's end), against the rule in [data-format.md](data-format.md) ("Lifespan, phases
+or a row?"). Their typed lifespans are gone, so the app works each one out from the phases: Rome, Minoan, Mycenaean,
+Greece, Pharaonic Egypt, Ptolemaic and Roman Egypt, Canaan, Hittites, Assyria, Harappan, Zhou, Jin, Southern
+dynasties, Northern dynasties.
+
+- **Claims moved, none dropped.** Where the lifespan held a claim its edge phase lacked, the claim moved to that
+  phase: Hittites' end (1190, *Hittites* infobox; 1180, *Hattusa* "Abandoned c. 1180 BC") to the New Kingdom,
+  Assyria's start (2600 and 2500, the founding of Assur) to the Early Assyrian period, and Harappan's start (3300, *Indus
+  Valley Civilisation*; 3700, *Harappa* Ravi Phase) to Early Harappan. Those phases now show the same uncertainty the
+  lifespan did.
+- **Mycenaean's end** was an uncited 1050 BCE. The worked-out end is the Postpalatial phase's: 1070 BCE (Knodell 2021,
+  1070/1040) under the High Aegean chronology, 1050 under the Low.
+- **Kept typed:** Babylonia, Macedon (310–305 BCE), Sumer (2350–2112 BCE) and Han (23–25 CE) carried on through a gap
+  between their phases; Elam's lifespan holds a start claim no phase can (Elam proper from 2700 BCE, after the
+  Proto-Elamite period).
+
+`npm run data:compare` (new: `scripts/compare-resolved.ts`) checked the change against the file before it: under each of
+the seven Dating choices, every row's lifespan, phases and memberships and every event is drawn the same, apart from
+the Mycenaean end and the three phases that took claims.
