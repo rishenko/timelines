@@ -31,6 +31,7 @@
     "contrast:ui": "node scripts/contrast-ui.ts",
     "reflow": "node scripts/reflow.ts",
     "targets": "node scripts/targets.ts",
+    "perf:scroll": "node scripts/profile-scroll.ts",
     "a11y:report": "node scripts/a11y-report.ts"
   },
   "dependencies": {

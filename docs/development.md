@@ -254,6 +254,13 @@ npm run a11y:report [-- --skip contrast]     # all of the above, axe in the brow
 npm run check:live -- --expect "some text"   # after deploying: wait for the live site and check it loads
 ```
 
+`npm run perf:scroll [-- --timeline modern-states --profile webkit --query "&rows=all" --runs 3 --out runs.jsonl]`
+scrolls the chart in a production build, vertically and sideways, and prints the median frame time per timeline,
+browser profile and direction, with the page's element count and rows drawn: WebKit as an iPad, and Chrome at 4× and
+6× CPU throttling (with script, layout and style totals). Run it after a change to the chart's rendering, on both
+the code before and after, on a quiet machine: other builds and test runs skew it, so note the load average it
+prints. WebKit is a one-time download: `npx playwright-core install webkit`.
+
 `reflow` and `targets` open the same views and panels, listed in `scripts/lib/ui-states.ts`. These use an installed
 browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewhere
 (`--browser` overrides).
