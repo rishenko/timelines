@@ -47,8 +47,6 @@ Then run the generator and compile its output:
 - `npm run data:compare -- <before.json> <after.json>` compares two compiled files as the app draws them.
 - After a code change, `git diff --exit-code data-src/` proves the change didn't move any data.
 
-`modern-states/blocs.py` (the Cold War blocs) is not in the default module list until its data is merged: add it on the command line to build it (`gen_modern.py . colonial,...,unit7,blocs`).
-
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.
 
 ## Provenance manifests

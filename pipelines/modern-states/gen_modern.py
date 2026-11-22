@@ -477,9 +477,7 @@ def write_manifest(data, module_names, path):
 
 # Region modules in build order. A wave agent runs: gen_modern.py <its worktree> colonial,europe,...,<its module>
 OUT = os.path.join(PIPELINES, 'out')
-# blocs (the Cold War blocs, Education) is built but not yet in data-src/modern-states.json: it joins MODULES when its
-# data PR merges, so a plain run reproduces the committed file. To see it: gen_modern.py . colonial,...,unit7,blocs
-MODULES = ('colonial', 'europe', 'post_soviet', 'south_asia', 'mena', 'east_asia', 'americas', 'africa_west', 'africa_east', 'oceania', 'unit7')
+MODULES = ('colonial', 'europe', 'post_soviet', 'south_asia', 'mena', 'east_asia', 'americas', 'africa_west', 'africa_east', 'oceania', 'unit7', 'blocs')
 
 if __name__ == '__main__':
     repo = ARGS[0] if ARGS else os.path.dirname(PIPELINES)
