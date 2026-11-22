@@ -45,6 +45,7 @@
     ],
     "hideRowsOutOfView": true,
     "range": { "start": "10050 BCE", "end": "650 CE" },
+    "continues": [{ "timeline": "medieval", "at": "650 CE", "side": "after" }],
     "facets": {
       "geography": {
         "name": "Region",

@@ -66,6 +66,13 @@
       "start": -10049,
       "end": 650
     },
+    "continues": [
+      {
+        "timeline": "medieval",
+        "at": 650,
+        "side": "after"
+      }
+    ],
     "facets": {
       "geography": {
         "name": "Region",
