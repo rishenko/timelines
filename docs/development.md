@@ -24,8 +24,10 @@ means nothing untracked in a local clone can end up on the site.
 
 CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
 build, `run-all --check` for each included timeline, and a check that the files in `public/timelines/` and the
-key-event lists in `docs/` are what `data-src/` compiles to. If that last check fails, run `npm run data -- build <timeline>`
-and `npm run data -- importance <timeline>`, and commit the result.
+key-event lists in `docs/` are what `data-src/` compiles to. If that check fails, run `npm run data -- build <timeline>`
+and `npm run data -- importance <timeline>`, and commit the result. Last comes the id-stability check
+(`npm run data -- ids --check`): no id that a link can name may disappear from a compiled timeline without an entry in
+its `redirects` ([data-format.md](data-format.md#keeping-ids-stable)).
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
@@ -103,6 +105,7 @@ npm run data -- format <timeline|all>       # re-format a source file (also npm 
 npm run data -- row-order <timeline>        # how close related rows sit; --best finds a passing order
 npm run data -- run-all <timeline>          # replay every content script in order, then importance
 npm run data -- run-all <timeline> --check  # report whether the scripts reproduce the source file; changes nothing (also npm run data:check)
+npm run data -- ids --check                 # fail on ids lost since origin/main without a redirect (CI runs it)
 npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
 

@@ -6,11 +6,13 @@ import type { Dataset } from '../types.ts';
 import { parseRegions } from '../lib/regions.ts';
 import { parseOrder, parseSet, type SetOrder } from '../lib/sets.ts';
 import { regionFacetId } from './regionFilter.ts';
+import { followRedirect, followRedirectList } from '../data/ids.ts';
 
 /**
  * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&rows=all`; rows is all, active or thin;
  * the region filter as `&regions=anatolia,nile`; a comparison set as `&set=hittites,pharaonic-egypt&order=related`)
- * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link.
+ * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link. Ids in a link follow the
+ * timeline's `redirects`, so a link made before a row or event was renamed still opens on it.
  */
 
 /** Reads the view settings the page was opened with, for the timeline it opened (see Boot). */
@@ -29,12 +31,18 @@ export function readUrl(published: Dataset) {
     thinRows: q.get('rows') === 'thin',
     view: (q.get('view') === 'table' ? 'table' : 'timeline') as View,
     /** Ticked regions of the region filter (values of the timeline's first facet). */
-    regions: parseRegions(q.get('regions'), published.meta.facets?.[regionFacetId(published) ?? '']),
+    regions: parseRegions(followRedirectList(published, q.get('regions')), published.meta.facets?.[regionFacetId(published) ?? '']),
     /** A comparison set to open on, and its order. */
-    set: parseSet(q.get('set'), published.tracks),
+    set: parseSet(followRedirectList(published, q.get('set')), published.tracks),
     order: parseOrder(q.get('order')),
-    selected: decodeURIComponent(window.location.hash.slice(1)) || null,
+    selected: selectedFromHash(published),
   };
+}
+
+/** The event selected in the link's hash, after its redirect (null when it was removed). */
+function selectedFromHash(published: Dataset): string | null {
+  const id = decodeURIComponent(window.location.hash.slice(1));
+  return id ? followRedirect(published, id) : null;
 }
 
 /** The center in a link: a year ("1594", "-1594", "1594 BCE"), or a day below a year's zoom ("1916-07-01"). */

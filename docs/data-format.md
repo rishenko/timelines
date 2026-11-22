@@ -87,7 +87,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `tags` | yes | Labels for grouping sources, keyed by id. May be `{}`. |
 | `events` | yes | See [events](#events). |
 | `chronologies` | no | Alternative dating systems. See [chronologies](#chronologies). |
-| `redirects` | no | Ids the timeline no longer has, so links that name them still work: `{ "<old id>": "<new id>", "<removed id>": null }`. An old id maps to the row, event or era that replaced it, or to `null` when it was removed on purpose. Keys can't be ids the timeline has; targets must be. |
+| `redirects` | no | Ids the timeline no longer has, so links that name them still work: `{ "<old id>": "<new id>", "<removed id>": null }`. An old id maps to the row, event or era that replaced it, or to `null` when it was removed on purpose. Keys can't be ids the timeline has; targets must be. See [keeping ids stable](#keeping-ids-stable). |
 | `present` | no | The setting's "now" (a stored year). Events, lifespans and phases marked `ongoing` run to it. Defaults to the latest year any event starts or ends in. |
 
 ## meta
@@ -495,7 +495,7 @@ A file that breaks any of these is refused, with a message naming the problem.
   and don't overlap others in their group.
 - A source's `dump` looks like `enwiki-20261101`; a `revision` is a positive whole number on a source with a `url`. A
   `locator` has a known `kind` and that kind's fields only.
-- `redirects` map ids the timeline doesn't have to ones it has, or to `null`.
+- `redirects` map ids the timeline doesn't have to rows, events or eras it has, or to `null`.
 - `present` is a whole year; `meta.circaFade` is zero or more; `meta.hideRowsOutOfView` is `true` or `false`;
   `meta.range` has whole years with `start` before `end`; each `meta.continues` entry has a timeline id, a whole-year
   `at` and a `side` of `"before"` or `"after"`.
@@ -548,9 +548,32 @@ a page that asks readers to add a timeline.
   the reader's view: `&view=table`, `&compress=0`, `&rows=all|active|thin` (hidden rows), ticked regions
   (`&regions=anatolia,nile`) and a comparison set (`&set=<row ids>&order=related|start`). Row and source toggles and
   dating choices aren't in the link yet.
+- **Rename or remove ids with care:** links name rows, events and regions by id. Add the old id to `redirects` (see
+  [keeping ids stable](#keeping-ids-stable)) and old links keep working.
 - **Update** by replacing the file at the same link. Readers get the new version the next time they open the
   timeline (the app checks the link for a few seconds, then opens the saved copy if it can't reach it), or with
   **Update** in Customize → Timelines. Edits a reader made are kept on top of the new version.
+
+## Keeping ids stable
+
+Links, saved views and handouts name rows, events, regions and the rest by id, so an id that disappears breaks
+them quietly: the link opens, minus that part of the view. `redirects` keeps them working:
+
+```json
+"redirects": { "kingdom-of-quay": "quay", "storm-of-131": null }
+```
+
+- **Renamed** row, event or era: map the old id to the new one. A link that names the old id opens on the new one.
+- **Removed on purpose:** map the old id to `null`. A link that names it skips it.
+- **Other ids** (facets, regions, sources, tags, chronologies) can only be mapped to `null`.
+- Redirects don't chain: a target can't itself be a key. When an id is renamed again, point the oldest id straight at
+  the newest.
+
+For the timelines in this repository, CI runs the id-stability check on every pull request:
+`npm run data -- ids --check` compares each compiled file in `public/timelines/` with the same file on `origin/main`,
+and fails on any id that disappeared without a redirect. It prints one line per lost id. Run it before opening a pull
+request that renames or removes anything. `--base <rev>` compares with another revision, and folder arguments check
+other folders of compiled timelines in any git repository.
 
 ## Shared lists
 
