@@ -2,6 +2,7 @@
  "_note": "Reviewed event categories for Medieval (pipelines/common/event_categories.py): {\"<event uuid>\": [main, second]}; [] = no category. Wins over the classifier. Kevin reviews in batches.",
  "_batch1": "Kevin, 2026-11-22: Workbench \"2026-11-22 Timelines event categories Medieval review batch 1\"",
  "_batch2_3": "Kevin, 2026-11-22: Workbench \"2026-11-22 Timelines event categories Medieval review batch 2\" and \"… batch 3\"; high points get no category ([])",
+ "adoption-of-islam-by-war-jabi": ["religion"],
  "adoption-of-old-bulgarian-as-a-national-language": ["culture"],
  "adud-al-dawla-becomes-the-supreme-ruler-of-the-buyid-dynasty": ["succession"],
  "black-stone-returned": ["religion"],

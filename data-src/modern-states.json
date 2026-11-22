@@ -184,6 +184,12 @@
               "conflict"
             ]
           },
+          "attack": {
+            "name": "Attack, ambush or raid",
+            "broader": [
+              "conflict"
+            ]
+          },
           "unrest": {
             "name": "Revolts"
           },
@@ -201,6 +207,12 @@
           },
           "civil-war": {
             "name": "Civil war",
+            "broader": [
+              "unrest"
+            ]
+          },
+          "repression": {
+            "name": "Arrests and repression",
             "broader": [
               "unrest"
             ]
@@ -93397,6 +93409,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "repression",
+          "sources": [
+            {
+              "sourceKey": "wp-philippines",
+              "sourceLocation": "lead: \"Since then, the country notably experienced a period of martial law from 1972 to 1981 under the dictatorship of Ferdinand Marcos and his subsequent overthrow by\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "law",
           "sources": [
             {
@@ -102363,7 +102385,17 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "conflict",
+          "value": "independence",
+          "sources": [
+            {
+              "sourceKey": "wp-dahomey",
+              "sourceLocation": "infobox event3: King Ghezo defeats the Oyo Empire and ends tributary status, 1823"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "vassalage",
           "sources": [
             {
               "sourceKey": "wp-dahomey",
@@ -105046,7 +105078,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "vassalage",
+          "value": "attack",
           "sources": [
             {
               "sourceKey": "wp-colonial-mauritania",
@@ -113324,7 +113356,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "invasion",
+          "value": "attack",
           "sources": [
             {
               "sourceKey": "wp-jameson-raid",
@@ -117399,7 +117431,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "battle",
+          "value": "attack",
           "sources": [
             {
               "sourceKey": "wp-attack-on-pearl-harbor",

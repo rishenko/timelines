@@ -575,6 +575,12 @@
               "conflict"
             ]
           },
+          "attack": {
+            "name": "Attack, ambush or raid",
+            "broader": [
+              "conflict"
+            ]
+          },
           "unrest": {
             "name": "Revolts"
           },
@@ -592,6 +598,12 @@
           },
           "civil-war": {
             "name": "Civil war",
+            "broader": [
+              "unrest"
+            ]
+          },
+          "repression": {
+            "name": "Arrests and repression",
             "broader": [
               "unrest"
             ]
@@ -24386,7 +24398,7 @@
         },
         {
           "facet": "category",
-          "value": "dissolved",
+          "value": "vassalage",
           "sources": [
             {
               "sourceKey": "wp-second-bulgarian-empire",
@@ -26767,6 +26779,16 @@
       ],
       "importance": 1,
       "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-civitas-schinesghe",
+              "sourceLocation": "infobox event_start: Baptism of Poland, c. 960"
+            }
+          ]
+        },
         {
           "facet": "category",
           "value": "founded",
@@ -33795,6 +33817,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-qara-khitai",
+              "sourceLocation": "infobox event_end: Kuchlug executed by Mongols, 1218"
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "dissolved",
           "sources": [
             {
@@ -37509,16 +37541,6 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "founded",
-          "sources": [
-            {
-              "sourceKey": "wp-pagan-kingdom",
-              "sourceLocation": "infobox event1: creation of Burmese alphabet, 984 and 1035"
-            }
-          ]
-        },
-        {
-          "facet": "category",
           "value": "culture",
           "sources": [
             {
@@ -39757,7 +39779,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "war",
+          "value": "religion",
           "sources": [
             {
               "sourceKey": "wp-takrur",
@@ -41212,16 +41234,6 @@
               "sourceLocation": "infobox event2: Landtag formed, 1419"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "founded",
-          "sources": [
-            {
-              "sourceKey": "wp-terra-mariana",
-              "sourceLocation": "infobox event2: Landtag formed, 1419"
-            }
-          ]
         }
       ]
     },
@@ -41689,6 +41701,16 @@
         {
           "facet": "category",
           "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kano",
+              "sourceLocation": "infobox event2: Arrival of Wangarawa and introduction of Islam, c. 1349"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "religion",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-kano",
