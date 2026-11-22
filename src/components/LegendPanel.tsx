@@ -234,7 +234,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     {
       sample: <span className="lg-cluster">+3</span>,
       title: 'Folded events',
-      text: 'Events that didn’t fit in a crowded row, usually the minor ones. If key events fold too, the badge names the earliest one and has a solid edge, as in “Second World War +3”. Click to zoom in on them.',
+      text: 'Events that didn’t fit in a crowded row, usually the minor ones. If key events fold too, the +N names the earliest one and has a solid edge, as in “Second World War +3”. Click to zoom in on them.',
     },
     {
       sample: (
