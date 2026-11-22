@@ -6,7 +6,7 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
 
 | Folder | Builds | Entry point |
 |---|---|---|
-| `modern-states/` | `data-src/modern-states.json`, plus `data-src/provenance/modern-states.json` | `gen_modern.py` |
+| `modern-states/` | `data-src/modern-states.json`, plus `data-src/provenance/modern-states.json` and `modern-states-categories.json` | `gen_modern.py` |
 | `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) | `gen_medieval.py` |
 | `common/` | shared code: the dump reader, the infobox extractor, and the claim and citation helpers | (none) |
 
@@ -57,6 +57,14 @@ Then run the generator and compile its output:
     pipelines/.venv/bin/python -I pipelines/modern-states/connections/build_claims.py   # rewrites the claims file; exits 1 on any problem
 
 `build_claims.py` checks every quote word for word against the cached page and maps each member to a Modern States row, using Modern States at a fixed commit (`MS_REV`) so the claims don't depend on the rows they produce. Its report goes to `pipelines/out/connections-report.txt`. Then rerun `gen_modern.py`.
+
+## Event categories
+
+`common/event_categories.py` holds the shared `category` facet and the classifier that gives each event up to two categories, main first (design: the event-categories proposal; the format is in `docs/data-format.md`, "Event categories"). The evidence, strongest first: the title (its head noun first), the event's own article (its categories, then its infobox type), the state infobox field the event was read from, and the description. Articles about a state, place or person are skipped.
+
+- **Reviewed overrides** win over the classifier: `modern-states/categories.json`, `{ "<event uuid>": ["<main>", "<second>"] }`, where an empty list means no category. A bad value fails the run.
+- **Evidence:** a full run writes `data-src/provenance/<id>-categories.json`, one line per event with its categories and what each rests on ("reviewed" for an override). Events with an empty list are the review queue.
+- **Pilot:** `pipelines/.venv/bin/python -I pipelines/common/event_categories.py --pilot 20 public/timelines/<id>.json` prints a sample as a table.
 
 ## Provenance manifests
 

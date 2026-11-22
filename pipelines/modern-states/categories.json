@@ -1,3 +1,212 @@
 {
- "_note": "Reviewed event categories for Modern States (pipelines/common/event_categories.py): {\"<event uuid>\": [main, second]}; [] = no category. Wins over the classifier. Kevin reviews in batches."
+ "_note": "Reviewed event categories for Modern States (pipelines/common/event_categories.py): {\"<event uuid>\": [main, second]}; [] = no category. Wins over the classifier. Batch 1 approved by Kevin 2026-11-22.",
+ "almora-capital": [
+  "capital-moved"
+ ],
+ "anglo-french-joint-naval-commission": [
+  "treaty"
+ ],
+ "apartheid": [
+  "law"
+ ],
+ "bahrain-protected": [
+  "vassalage"
+ ],
+ "canadian-confederation": [
+  "union"
+ ],
+ "chad-rallies-to-free-france": [
+  "alliance"
+ ],
+ "compromise-1867": [
+  "union",
+  "treaty"
+ ],
+ "darfur-independence-1898": [
+  "independence"
+ ],
+ "division-of-korea": [
+  "territory"
+ ],
+ "dominica-moves-to-windward-islands": [
+  "colony"
+ ],
+ "dominion-of-new-zealand": [
+  "reform"
+ ],
+ "first-government-junta-chile": [
+  "revolution",
+  "independence"
+ ],
+ "gna-established": [
+  "revolution",
+  "founded"
+ ],
+ "granadine-confederation": [
+  "reform"
+ ],
+ "great-depression": [
+  "economy"
+ ],
+ "great-trek": [
+  "colony"
+ ],
+ "griqualand-west-british": [
+  "annexation"
+ ],
+ "habesh-eyalet-created": [
+  "conquest",
+  "founded"
+ ],
+ "hadhramaut-protection-1888": [
+  "vassalage"
+ ],
+ "haitian-republic-1859": [
+  "coup"
+ ],
+ "hamdullahi-destroyed": [
+  "sack",
+  "conquest"
+ ],
+ "holocaust": [
+  "atrocity"
+ ],
+ "hyderabad-founded": [
+  "founded"
+ ],
+ "india-republic": [
+  "reform"
+ ],
+ "iraqi-mamluks": [
+  "succession"
+ ],
+ "kong-burned": [
+  "sack"
+ ],
+ "kuku-holds-algiers": [
+  "conquest"
+ ],
+ "kurdistan-disestablished": [
+  "dissolved",
+  "conquest"
+ ],
+ "kuwait-sheikhdom": [
+  "independence"
+ ],
+ "los-altos-reincorporated": [
+  "annexation"
+ ],
+ "lozi-restoration": [
+  "founded"
+ ],
+ "meiji-restoration": [
+  "revolution",
+  "rule"
+ ],
+ "msiri-killed": [
+  "coup",
+  "conquest"
+ ],
+ "national-delimitation": [
+  "territory"
+ ],
+ "nauru-phosphate-mining": [
+  "economy"
+ ],
+ "new-france-royal-province": [
+  "reform"
+ ],
+ "new-hebrides-condominium": [
+  "colony",
+  "treaty"
+ ],
+ "newfoundland-dominion": [
+  "reform"
+ ],
+ "ottoman-direct-rule-tripoli": [
+  "annexation"
+ ],
+ "ottoman-return-yemen": [
+  "conquest"
+ ],
+ "panama-canal": [
+  "economy"
+ ],
+ "paulet-affair": [
+  "conquest"
+ ],
+ "peruvian-congress-1822": [
+  "reform"
+ ],
+ "portuguese-court-to-brazil": [
+  "capital-moved"
+ ],
+ "rabih-deposes-kobur": [
+  "coup"
+ ],
+ "saudi-oil": [
+  "economy"
+ ],
+ "seychelles-separated": [
+  "reform"
+ ],
+ "songhai-sacks-niani": [
+  "sack",
+  "invasion"
+ ],
+ "spoiling-of-vijayabahu": [
+  "territory",
+  "succession"
+ ],
+ "statute-of-westminster": [
+  "reform",
+  "independence"
+ ],
+ "stellaland-goshen-unite": [
+  "union"
+ ],
+ "suez-canal-opened": [
+  "economy"
+ ],
+ "swaziland-high-commission-territory": [
+  "colony"
+ ],
+ "swaziland-under-sar": [
+  "vassalage"
+ ],
+ "tasmania-self-government": [
+  "reform"
+ ],
+ "tlemcen-spaniards": [
+  "war"
+ ],
+ "tonga-protected-state": [
+  "vassalage"
+ ],
+ "ttpi-established": [
+  "colony"
+ ],
+ "uk-pba-founded": [
+  "union"
+ ],
+ "umar-tall-jihad": [
+  "war",
+  "religion"
+ ],
+ "upper-volta-restored": [
+  "founded"
+ ],
+ "us-nuclear-tests-marshall-islands": [
+  "disaster"
+ ],
+ "venezuela-1953": [
+  "reform"
+ ],
+ "zanzibar-partition": [
+  "territory",
+  "succession"
+ ],
+ "zemene-mesafint": [
+  "rule"
+ ]
 }
