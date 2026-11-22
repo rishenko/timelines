@@ -73533,6 +73533,18 @@
           "sourceKey": "wp-berlin-wall",
           "sourceLocation": "infobox: 13 August 1961 – 9 November 1989"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "place",
+          "sources": [
+            {
+              "sourceKey": "wp-berlin-wall",
+              "sourceLocation": "infobox: 13 August 1961 – 9 November 1989"
+            }
+          ]
+        }
       ]
     },
     {
@@ -76510,7 +76522,29 @@
           "sourceLocation": "infobox date: 5 January – 21 August 1968 ()"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-prague-spring",
+              "sourceLocation": "infobox date: 5 January – 21 August 1968 ()"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-prague-spring",
+              "sourceLocation": "infobox date: 5 January – 21 August 1968 ()"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "revolutions-of-1989",
@@ -79594,6 +79628,16 @@
         {
           "facet": "category",
           "value": "atrocity",
+          "sources": [
+            {
+              "sourceKey": "wp-nepalese-royal-massacre",
+              "sourceLocation": "infobox date: 1 June 2001"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "succession",
           "sources": [
             {
               "sourceKey": "wp-nepalese-royal-massacre",
@@ -83096,6 +83140,18 @@
           "sourceKey": "wp-cyprus",
           "sourceLocation": "lead: \"The crisis of 1963–64 brought further intercommunal violence between the two communities, displaced more than 25,000 Turkish Cypriots into enclaves, and ended T\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "unrest",
+          "sources": [
+            {
+              "sourceKey": "wp-cyprus",
+              "sourceLocation": "lead: \"The crisis of 1963–64 brought further intercommunal violence between the two communities, displaced more than 25,000 Turkish Cypriots into enclaves, and ended T\""
+            }
+          ]
+        }
       ]
     },
     {
@@ -83835,6 +83891,18 @@
         {
           "sourceKey": "wp-lebanon",
           "sourceLocation": "infobox: Israeli troops withdrawn (24 May 2000)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "territory",
+          "sources": [
+            {
+              "sourceKey": "wp-lebanon",
+              "sourceLocation": "infobox: Israeli troops withdrawn (24 May 2000)"
+            }
+          ]
         }
       ]
     },
@@ -89294,6 +89362,18 @@
           "sourceKey": "wp-provisional-government-of-the-algerian-republic",
           "sourceLocation": "infobox year_start: 1958"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-provisional-government-of-the-algerian-republic",
+              "sourceLocation": "infobox year_start: 1958"
+            }
+          ]
+        }
       ]
     },
     {
@@ -89722,6 +89802,18 @@
         {
           "sourceKey": "wp-ifni",
           "sourceLocation": "infobox year_end: 1969"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "cession",
+          "sources": [
+            {
+              "sourceKey": "wp-ifni",
+              "sourceLocation": "infobox year_end: 1969"
+            }
+          ]
         }
       ]
     },
@@ -92092,16 +92184,6 @@
               "sourceLocation": "infobox date: 17 April 1975 – 7 January 1979 (3 years, 8 months and 20 days)"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "disaster",
-          "sources": [
-            {
-              "sourceKey": "wp-cambodian-genocide",
-              "sourceLocation": "infobox date: 17 April 1975 – 7 January 1979 (3 years, 8 months and 20 days)"
-            }
-          ]
         }
       ]
     },
@@ -92147,6 +92229,18 @@
         {
           "sourceKey": "wp-cambodia",
           "sourceLocation": "infobox: United Nations Administered Cambodia (28 February 1992)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "diplomacy",
+          "sources": [
+            {
+              "sourceKey": "wp-cambodia",
+              "sourceLocation": "infobox: United Nations Administered Cambodia (28 February 1992)"
+            }
+          ]
         }
       ]
     },
@@ -98104,7 +98198,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "alliance",
+          "value": "reform",
           "sources": [
             {
               "sourceKey": "wp-antigua-and-barbuda",
@@ -101512,6 +101606,18 @@
         {
           "sourceKey": "wp-bolivia",
           "sourceLocation": "infobox: Current constitution (7 February 2009)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-bolivia",
+              "sourceLocation": "infobox: Current constitution (7 February 2009)"
+            }
+          ]
         }
       ]
     },
@@ -109016,6 +109122,18 @@
           "sourceKey": "wp-french-territory-of-the-afars-and-the-issas",
           "sourceLocation": "infobox year_start: 1967"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-french-territory-of-the-afars-and-the-issas",
+              "sourceLocation": "infobox year_start: 1967"
+            }
+          ]
+        }
       ]
     },
     {
@@ -110333,6 +110451,18 @@
         {
           "sourceKey": "wp-buganda",
           "sourceLocation": "infobox: Monarchy restored (31 July 1993)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-buganda",
+              "sourceLocation": "infobox: Monarchy restored (31 July 1993)"
+            }
+          ]
         }
       ]
     },
@@ -111940,6 +112070,18 @@
         {
           "sourceKey": "wp-democratic-republic-of-madagascar",
           "sourceLocation": "infobox year_start: 1975"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-democratic-republic-of-madagascar",
+              "sourceLocation": "infobox year_start: 1975"
+            }
+          ]
         }
       ]
     },
@@ -115972,6 +116114,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "independence",
+          "sources": [
+            {
+              "sourceKey": "wp-palau",
+              "sourceLocation": "infobox: Compact of Free Association (1 October 1994)"
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "alliance",
           "sources": [
             {
@@ -116050,6 +116202,18 @@
           "sourceKey": "wp-tuvalu",
           "sourceLocation": "lead: \"A referendum was held in 1974 to determine whether the Gilbert Islands and Ellice Islands should each have their own administration.\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-tuvalu",
+              "sourceLocation": "lead: \"A referendum was held in 1974 to determine whether the Gilbert Islands and Ellice Islands should each have their own administration.\""
+            }
+          ]
+        }
       ]
     },
     {
@@ -116068,7 +116232,19 @@
           "sourceLocation": "infobox year_end: 1976"
         }
       ],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-gilbert-and-ellice-islands",
+              "sourceLocation": "infobox year_end: 1976"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "tuvalu-independence",
