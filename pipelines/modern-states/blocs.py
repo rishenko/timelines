@@ -69,7 +69,8 @@ SKIP = {('non-aligned-movement', 'Palestine'): 'member from 1976, when the pales
 # East Germany left the Warsaw Pact and Comecon by reunification: that event ends both memberships.
 SHARED = {'reunification': ['warsaw-pact', 'comecon']}
 # Memberships whose holder changed while they ran: (bloc, row, first year) -> the phase that took the seat over. The
-# split falls where that phase starts, dated by its own start claim and started by its startEvent.
+# split falls where that phase starts, dated by its own start claim and started by its startEvent. Keyed by the
+# membership's first year: if a new dump moves that year, the run fails with "add a HANDOVER"; update the key here.
 HANDOVER = {
     ('nato', 'germany', 1955): 'Federal Republic (reunified)',  # West Germany's seat, kept by reunified Germany
     ('non-aligned-movement', 'yemen', 1961): 'Yemen Arab Republic (North)',  # North Yemen: the 1962 revolution
@@ -238,7 +239,9 @@ def link_phases(M, by_id):
             pieces = [(ms, first)]
             dest = HANDOVER.get((rid, tid, ms['start']))
             if dest:
-                d = next(p for p in t['phases'] if p['name'] == dest)
+                d = next((p for p in t['phases'] if p['name'] == dest), None)
+                if not d:
+                    raise SystemExit(f'blocs: HANDOVER {(rid, tid, ms["start"])} names phase "{dest}", which {tid} lacks')
                 a = {k: v for k, v in ms.items() if k not in ('ongoing', 'endDates', 'endEvent')}
                 a['end'] = d['start']
                 a = {k: a[k] for k in ['row', 'start', 'end', 'startDates'] if k in a} | \
