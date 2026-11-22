@@ -38,6 +38,10 @@ def clean(raw):
 
 
 def _fmt(y, m=None, d=None):
+    if m is not None and not 1 <= m <= 12:  # a malformed template ({{start date|1914|0}}): keep the year only
+        m = d = None
+    if d is not None and not 1 <= d <= 31:
+        d = None
     out = []
     if d:
         out.append(str(d))
@@ -85,7 +89,17 @@ TOKEN = re.compile(
     r'|(?P<dash>–|—|−|-|\bto\b|\buntil\b|\btill\b|\bthrough\b)'
     r'|(?P<alt>/|\bor\b)'
     r'|(?P<comma>,)'
+    r'|(?P<word>[A-Za-z][A-Za-z\'’]*)'
     r'|(?P<sep>[^\s])', re.I)
+# words after which a bare number is a year ("in 1915", "since 1848"); elsewhere a bare number needs punctuation, a
+# dash or an era after it ("205 mutineers" and "153 seats" are counts)
+YEAR_BEFORE = {'in', 'since', 'by', 'until', 'till', 'from', 'during', 'early', 'late', 'mid', 'spring', 'summer', 'autumn',
+               'fall', 'winter', 'year', 'years', 'around', 'before', 'after', 'between', 'through', 'circa', 'c', 'ca',
+               'about', 'throughout'}
+# weaker: "of 1848", "the 1914 election", but also "of 235 seats": a year only with four digits
+YEAR_BEFORE_4 = {'of', 'the', 'and', 'to', 'for', 'on', 'end', 'beginning', 'start', 'middle'}
+# numbers that are never dates: clock times, thousands, decimals, percentages, compounds ("2,500-year", "38.7%", "150-person")
+QUANTITY = re.compile(r'\b\d{1,2}:\d{2}\b|\b\d{1,3}(?:,\d{3})+\b|\b\d+\.\d+\b|\b\d+\s?%|\b\d+-(?=[a-z])', re.I)
 
 
 def _tokens(text):
@@ -101,19 +115,15 @@ def _tokens(text):
             out.append(('num', int(m.group('num'))))
         elif kind == 'era':
             out.append(('era', 'bc' if m.group('era').upper().startswith('B') else 'ad'))
+        elif kind == 'word':
+            out.append(('word', m.group('word').lower()))
         elif kind == 'sep':
             ch = m.group('sep')
-            if ch.isalpha() or ch.isdigit() or ch in ';:()[]':
+            if ch in ';:()[].!?"#':
                 out.append(('sep', ch))
         else:
             out.append((kind, m.group(0)))
-    # words break atoms: collapse runs of letters into one separator
-    merged = []
-    for t in out:
-        if t[0] == 'sep' and merged and merged[-1][0] == 'sep':
-            continue
-        merged.append(t)
-    return merged
+    return out
 
 
 def _atom(toks, i):
@@ -128,32 +138,36 @@ def _atom(toks, i):
         a['century'] = v(); j += 1
     elif k() == 'num' and k(1) == 'month':  # 28 July [1914]
         a['d'], a['m'] = v(), v(1); j += 2
-        if k() == 'comma' and k(1) == 'num':
-            j += 1
         if k() == 'num' and v() > 31 or (k() == 'num' and k(1) == 'era'):
             a['y'] = v(); j += 1
         elif k() == 'num' and k(1) != 'month':
             a['y'] = v(); j += 1
-    elif k() == 'month':  # July [28,] [1914]
+    elif k() == 'month':  # July [28[,]] [1914]: after a month, a number up to 31 is a day, a larger one the year
         a['m'] = v(); j += 1
-        if k() == 'num' and v() <= 31 and (k(1) == 'comma' or (k(1) == 'num')):
+        if k() == 'num' and v() <= 31 and k(1) != 'era':
             a['d'] = v(); j += 1
             if k() == 'comma':
                 j += 1
-        if k() == 'num':
-            if a['d'] is None and v() <= 31 and k(1) not in ('era',) and (k(1) in ('dash', 'alt', None, 'sep', 'comma')):
-                # "July 28" with no year, or "June 1848"? a number <= 31 after a month with nothing after: a day
-                a['d'] = v(); j += 1
-            else:
-                a['y'] = v(); j += 1
-    elif k() == 'num' and v() <= 31 and k(1) == 'comma' and k(2) == 'num' and v(2) > 31:  # "…11–16, 1862": a day, then its year
-        a['d'], a['y'] = v(), v(2); j += 3
+        if k() == 'comma' and k(1) == 'num' and v(1) > 31:  # "July–August, 1914"
+            j += 1
+        if k() == 'num' and (v() > 31 or k(1) == 'era'):
+            a['y'] = v(); j += 1
+    elif k() == 'num' and v() <= 31 and k(1) == 'comma' and k(2) == 'num' and v(2) > 31 and i > 0 and toks[i - 1][0] in ('dash', 'alt'):
+        a['d'], a['y'] = v(), v(2); j += 3  # the right side of "February 11–16, 1862": a day, then its year
     elif k() == 'num':  # 1914, or a day before a dash ("24–29 April 1916"), resolved by the range
+        before = toks[i - 1] if i > 0 else None
+        after = k(1)
+        w = before[1].rstrip('.') if before is not None and before[0] in ('word', 'circa') else None
+        a['strong'] = w in YEAR_BEFORE  # "in 476 the…": a year even with a word after it
+        a['bare_ok'] = w in YEAR_BEFORE or (w in YEAR_BEFORE_4 and v() >= 1000) or \
+            before is not None and before[0] in ('dash', 'alt') or after in (None, 'comma', 'dash', 'alt', 'era', 'sep')
         a['y'] = v(); j += 1
     else:
         return None, i
     if k() == 'era':
         a['era'] = v(); j += 1
+    elif a['y'] is not None and a['y'] < 1000 and k() == 'word' and not a.get('strong'):
+        a['count'] = True  # "3 April 500 men", "16 July 16 Squadron": a number of things, not a year
     return a, j
 
 
@@ -161,6 +175,8 @@ def _resolve(left, right):
     """Give the left side of a range what it lacks from the right: month, year, era; "1914–18" -> 1918."""
     if left['century'] or right['century']:
         return
+    if right['m'] is None and right['d'] is None and right['y'] is not None and right['y'] <= 31 and left['d'] is not None:
+        right['d'], right['y'], right['m'] = right['y'], left['y'], left['m']  # "March 24 to 29": a day of the same month
     if left['m'] is None and left['d'] is None and left['y'] is not None and left['y'] <= 31 and right['m'] is not None and right['d'] is not None:
         left['d'], left['y'] = left['y'], None  # 24–29 April 1916
     if left['m'] is None and left['d'] is not None:
@@ -200,16 +216,18 @@ def _precision(v, a):
 
 def _ok(a, year_hint):
     """A bare number is a year only when it can't be anything else."""
+    if a.get('count'):
+        return False
     if a['century'] or a['m'] or a['d']:
         return a['y'] is not None or a['century'] is not None
     y = a['y']
     if y is None:
         return False
-    return bool(a['era']) or year_hint or a['circa'] or y >= 100
+    return bool(a['era']) or year_hint or (y >= 100 and a.get('bare_ok', True)) or (a['circa'] and a.get('bare_ok', True))
 
 
 def spans(raw, year_hint=False):
-    text = clean(raw)
+    text = QUANTITY.sub(' # ', clean(raw))
     old_style = bool(_OS.search(raw) or _OS.search(text))
     toks = [t for t in _tokens(text) if t[0] != 'os']
     out, i = [], 0

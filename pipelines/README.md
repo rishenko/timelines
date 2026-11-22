@@ -9,6 +9,9 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
 | `modern-states/` | `data-src/modern-states.json`, plus `data-src/provenance/modern-states.json` and `modern-states-categories.json` | `gen_modern.py` |
 | `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) | `gen_medieval.py` |
 | `common/` | shared code: the dump reader, the infobox extractor, and the claim and citation helpers | (none) |
+| `extract/` | candidates for review (not timeline data): a topic's dated events, in `pipelines/out/extract/<topic>/` | `extract.py` |
+
+**Before you parse a dump, read [PARSING-NOTES.md](PARSING-NOTES.md):** what the dumps get wrong, and what the code does about it.
 
 ## Inputs
 
@@ -65,6 +68,28 @@ Then run the generator and compile its output:
 - **Reviewed overrides** win over the classifier: `modern-states/categories.json`, `{ "<event uuid>": ["<main>", "<second>"] }`, where an empty list means no category. A bad value fails the run.
 - **Evidence:** a full run writes `data-src/provenance/<id>-categories.json`, one line per event with its categories and what each rests on ("reviewed" for an override). Events with an empty list are the review queue; a reviewed override of `[]` is written as `[[null, "reviewed: no category"]]`, so it leaves the queue.
 - **Pilot:** `pipelines/.venv/bin/python -I pipelines/common/event_categories.py --pilot 20 public/timelines/<id>.json` prints a sample as a table.
+
+## The date/event extractor (`extract/`)
+
+It pulls as many dated events as it can for a topic (a war, a revolution, an uprising) out of the dump, as candidates for review. Accepted rows feed a generator as cited claims. Design: Workbench note "2026-11-22 Timelines extractor design". It has its own environment:
+
+    python3.11 -m venv pipelines/extract/.venv && pipelines/extract/.venv/bin/pip install -r pipelines/extract/requirements.txt
+
+Once per dump, build the lookup tables (about 25 min on 8 cores, about 10 GB, next to `index.sqlite`), then load the Wikidata ids from the dump's `page_props.sql.gz`:
+
+    pipelines/extract/.venv/bin/python -I pipelines/extract/build_index.py --workers 8     # --sample 0.01 for a quick check
+    pipelines/extract/.venv/bin/python -I pipelines/extract/page_props.py
+
+Then, per topic:
+
+    pipelines/extract/.venv/bin/python -I pipelines/extract/extract.py --topic ww1 --seed "World War I"
+
+This writes `candidates.csv` (one row per date claim) and `report.md` to `pipelines/out/extract/<topic>/`:
+- every date has a v5 `locator` and a verbatim quote;
+- each row gets a suggested importance and, with `--categories DIR`, event categories;
+- `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
+
+Normaliser tests: `cd pipelines/extract && python3 -m unittest test_dates`.
 
 ## Provenance manifests
 

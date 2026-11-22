@@ -34,6 +34,12 @@ class Ranges(unittest.TestCase):
         s = one('Fort Donelson (February 11–16, 1862)')
         self.assertEqual((s['start'], s['end']), ((1862, 2, 11), (1862, 2, 16)))
 
+    def test_heading_year_forms(self):  # timeline pages: the year comes from the section heading, appended as ", 1914"
+        s = one('August 24 – 26, 1914')
+        self.assertEqual((s['start'], s['end']), ((1914, 8, 24), (1914, 8, 26)))
+        s = one('July–August, 1914')
+        self.assertEqual((s['start'], s['end']), ((1914, 7, None), (1914, 8, None)))
+
     def test_month_range(self):  # ✗
         s = one('June–July 1848')
         self.assertEqual((s['start'], s['end'], s['precision']), ((1848, 6, None), (1848, 7, None), 'month'))
@@ -68,6 +74,9 @@ class Templates(unittest.TestCase):
 
     def test_start_date_full(self):
         self.assertEqual(one('{{start date|1914|7|28|df=y}}')['start'], (1914, 7, 28))
+
+    def test_bad_month_in_template(self):
+        self.assertEqual(one('{{start date|1914|13|40}}')['start'], (1914, None, None))
 
     def test_start_and_end_dates(self):
         s = one('{{Start and end dates|1848|3|13|1849|8|13}}')
@@ -119,6 +128,39 @@ class Noise(unittest.TestCase):
     def test_range_end_without_year(self):
         s = one('3 March 1918 until May')
         self.assertEqual((s['start'], s['end']), ((1918, 3, 3), None))
+
+    def test_quantities_are_not_years(self):  # from the WW1 pilot
+        for q in ['the over 2,500-year presence of Armenians', 'more than 205 mutineers were tried by court-martial',
+                  'suffering a total of 1,423 casualties by the end of the war', 'up to 1,900 people lost their lives',
+                  'During the course of World War 1, 38.7% of eligible Australian men enlisted', 'The Unionists won 153 seats.',
+                  'a 150-person posse finally quelled the riot']:
+            self.assertEqual(spans(q), [], q)
+
+    def test_day_month_then_count(self):
+        s = spans('By the evening of 17 February, 432 mutineers had been captured.')
+        self.assertEqual(s, [])  # no year: the 432 is a count
+
+    def test_year_in_prose(self):
+        self.assertEqual(one('In 1915 the army moved east.')['start'], (1915, None, None))
+        self.assertEqual(one('The war ended (1918).')['start'], (1918, None, None))
+
+    def test_dual_calendar_slash(self):  # Julian/Gregorian written as one date
+        s = one('Following the armed incident at Țigani, on January 2/15, 1919, Romanian soldiers entered Zalău.')
+        self.assertEqual((s['start'], s['alts']), ((1919, 1, 2), [(1919, 1, 15)]))
+
+    def test_month_day_without_year(self):
+        self.assertEqual(spans('Rebels captured before January 23 were treated with more leniency'), [])
+        self.assertEqual(spans('At the hearings from March 24 to 29, his lawyers argued'), [])
+
+    def test_clock_time(self):
+        self.assertEqual(spans('sent a party ashore at around 06:00 to disable the wireless'), [])
+
+    def test_counts_after_weak_words_and_dates(self):
+        for q in ['Out of 235 seats, 33 were won by acclamation', 'it won only 118 of the 369 seats in the Hellenic Parliament',
+                  'By the end of 3 April 500 men had enlisted', 'On 16 July 16 Squadron joined 10 Squadron']:
+            self.assertEqual(spans(q), [], q)
+        self.assertEqual(one('the revolutions of 1848 spread')['start'], (1848, None, None))
+        self.assertEqual(one('In 476 the last emperor was deposed')['start'], (476, None, None))
 
     def test_year_hint(self):
         self.assertEqual(one('476', year_hint=True)['start'], (476, None, None))

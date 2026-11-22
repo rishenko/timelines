@@ -11,7 +11,12 @@ records the routes that reached it (a scoring input):
 import re
 import sqlite3
 
+from dates import spans
+
 CAT_DEPTH = 3
+BOX_OVERLAP = 0.3
+LIST_TITLE = re.compile(r'^timeline|timeline|^list of .*\b(battles|events|operations|offensives|campaigns|conflicts|treaties|'
+                        r'wars|engagements|naval battles|actions|revolutions|uprisings|massacres|declarations)\b', re.I)
 # category branches about people, things and memory, not events
 CAT_STOP = re.compile(r'\b(people|personnel|biograph|by nationality|recipients|soldiers|officers|generals|admirals|aviators|'
                       r'veterans|politicians|writers|poets|artists|ships|aircraft|weapons|equipment|units|formations|'
@@ -75,45 +80,77 @@ class Tables:
 
 def article_set(T, seeds, seed_links, cap=4000):
     """{title: {'page_id', 'box', 'routes': set, 'rev_id'}} plus a report of route counts and exclusions."""
-    out, excluded = {}, {'ai_flag': [], 'not_event': 0, 'cap': 0}
+    out, excluded = {}, {'ai_flag': [], 'not_event': 0, 'cap': 0, 'box_overlap': []}
 
     def add(title, route, need_event):
+        """The article's title (after a redirect) when it is in the set, else None."""
         p = T.page(title)
         if not p:
-            return False
+            return None
         pid, t, box, ai, rev = p
         if ai:
             if t not in excluded['ai_flag']:
                 excluded['ai_flag'].append(t)
-            return False
+            return None
         if t in out:
             out[t]['routes'].add(route)
-            return True
+            return t
         if need_event and not T.event_like(pid, box):
             excluded['not_event'] += 1
-            return False
+            return None
         if len(out) >= cap:
             excluded['cap'] += 1
-            return False
+            return None
         out[t] = {'page_id': pid, 'box': box, 'routes': {route}, 'rev_id': rev}
-        return True
+        return t
 
     seed_titles = []
     for s in seeds:
-        if add(s, 'seed', False):
-            seed_titles.append(T.page(s)[1])
-    # campaignboxes, depth 2
+        t = add(s, 'seed', False)
+        if t:
+            seed_titles.append(t)
+    # the seeds' own years (their infobox dates), for campaignbox names such as "Atlantic 1914–1918"
+    years = [sp['start'][0] for s in seed_titles for f in T.fields(out[s]['page_id']) if f[2] in DATE_FIELDS
+             for sp in spans(f[3]) for _ in [0]] + [sp['end'][0] for s in seed_titles for f in T.fields(out[s]['page_id'])
+                                                   if f[2] in DATE_FIELDS for sp in spans(f[3]) if sp['end']]
+    lo, hi = (min(years), max(years)) if years else (None, None)
+
+    def names_topic(box):
+        """A campaignbox named after a seed ("East African (World War I)"), or only for years within the seeds' dates."""
+        initials = [''.join(w[0] for w in s.split()) for s in seed_titles if len(s.split()) > 1]  # "WWI"
+        if any(re.search(r'(?<![\w])' + re.escape(s) + r'(?![\w])', box) for s in seed_titles + initials):
+            return True
+        ys = [int(y) for y in re.findall(r'\b(1\d{3}|20\d{2})\b', box)]
+        return bool(ys) and lo is not None and all(lo <= y <= hi for y in ys)
+
+    def names_carrier(box, carriers):
+        """A theatre's own box: "Campaignbox Sinai and Palestine" on the article "Sinai and Palestine campaign"."""
+        core = re.sub(r'^campaignbox\s+|\s+campaign$', '', box, flags=re.I).lower()
+        return len(core) > 3 and any(core in c.lower() for c in carriers)
+
+    # campaignboxes, depth 2: a member's other campaignboxes count only when they overlap the set (BOX_OVERLAP of their
+    # members already in it), so a battle's box for an older war doesn't pull that war in
     boxes, seen_boxes = set(), set()
     for s in seed_titles:
         boxes |= {b for (b,) in T.db.execute('SELECT template FROM campaignbox_use WHERE page_id=?', (out[s]['page_id'],))}
     for depth in (1, 2):
-        nxt = set()
+        nxt, carriers = set(), {}
         for b in sorted(boxes - seen_boxes):
             seen_boxes.add(b)
             for (tgt,) in T.db.execute('SELECT target FROM nav_member WHERE template=?', (b,)):
-                if add(tgt, 'campaignbox', False) and depth == 1:
-                    nxt |= {x for (x,) in T.db.execute('SELECT template FROM campaignbox_use WHERE page_id=?', (out[tgt]['page_id'],))}
-        boxes = nxt
+                t = add(tgt, 'campaignbox', False)
+                if t and depth == 1:
+                    for (x,) in T.db.execute('SELECT template FROM campaignbox_use WHERE page_id=?', (out[t]['page_id'],)):
+                        nxt.add(x)
+                        carriers.setdefault(x, []).append(t)
+        boxes = set()
+        for b in nxt - seen_boxes:
+            members = [t for (t,) in T.db.execute('SELECT target FROM nav_member WHERE template=?', (b,))]
+            inside = sum(1 for t in members if t in out)
+            if (members and inside / len(members) >= BOX_OVERLAP) or names_topic(b) or names_carrier(b, carriers.get(b, [])):
+                boxes.add(b)
+            else:
+                excluded['box_overlap'].append(b)
     # category tree: the seeds' eponymous categories
     cats, frontier = set(), [s for s in seed_titles if T.one('SELECT 1 FROM category WHERE name=? LIMIT 1', s)]
     for depth in range(CAT_DEPTH + 1):
@@ -128,14 +165,17 @@ def article_set(T, seeds, seed_links, cap=4000):
                 elif ns == 0:
                     add(title, 'category', True)
         frontier = nxt
-    # timeline and list pages naming a seed
+    # timeline pages, and lists of events, naming a seed as a whole name ("World War I", not "World War II")
     lists = []
     for s in seed_titles:
-        for (title,) in T.db.execute("SELECT title FROM page WHERE ns=0 AND redirect_to IS NULL AND ai_flag=0 AND "
-                                     "(title LIKE 'Timeline of %' OR title LIKE 'List of %' OR title LIKE '%timeline%') AND title LIKE ?",
+        whole = re.compile(r'(?<![\w])' + re.escape(s) + r'(?![\w])')
+        for (title,) in T.db.execute("SELECT title FROM page WHERE ns=0 AND redirect_to IS NULL AND ai_flag=0 AND title LIKE ?",
                                      (f'%{s}%',)):
-            if add(title, 'list', False):
-                lists.append(title)
+            if not whole.search(title) or not LIST_TITLE.search(title):
+                continue
+            t = add(title, 'list', False)
+            if t:
+                lists.append(t)
     # links from the seeds' text, event-like only
     for t in seed_links:
         add(t, 'link', True)

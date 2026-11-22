@@ -21,6 +21,9 @@ EVENT_FIELDS = re.compile(r'^(date|dates|start_?date|end_?date|date_?start|date_
 SENT = re.compile(r'(?<=[.!?])\s+(?=[A-Z0-9"\'(])')
 HEADING = re.compile(r'^(={2,6})\s*(.+?)\s*\1\s*$', re.M)
 LINK1 = re.compile(r'\[\[([^\]|#]+)')
+ATTRS = re.compile(r'^\s*(?:[a-z-]+\s*=\s*(?:"[^"]*"|\S+)\s*)+\|(?!\|)', re.I)  # cell attributes: align="right"|
+MONTH_WORD = re.compile(r'\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\b')
+WORDS = re.compile(r'[A-Za-z]{3,}.*[A-Za-z]{3,}')  # an event cell has words, not just numbers
 
 
 def _strip_templates(text):
@@ -84,15 +87,27 @@ def lead_and_prose(text):
 
 
 def tables_and_lists(text):
-    """Dated rows: wikitable rows whose first cells hold a date, and bullet lines that start with one."""
+    """Dated rows: wikitable rows whose first cells hold a date, and bullet lines that start with one. A row's date
+    without a year ("January 2") takes the year of its section heading ("== 1915 ==", as timeline pages write them)."""
     for head, sec in _sections(text):
+        hy = re.fullmatch(r'\s*(\d{3,4})\s*', head)  # a heading that is just a year ("Post-1920" is not)
+        year = hy.group(1) if hy else None
+
+        def dated(cell):
+            sp = spans(cell)
+            if not sp and year and MONTH_WORD.search(clean(cell)):
+                sp = spans(f'{clean(cell)}, {year}')
+                for x in sp:
+                    x['year_from_heading'] = True
+            return sp
+
         # bullet lines: "* 28 June 1914: Assassination of …" / "* '''1848''' – …"
         for line in re.findall(r'^\*+\s*(.+)$', sec, re.M):
             plain = clean(line)
             m = re.match(r'(.{4,60}?)\s*(?::|–|—|-)\s+(.{8,})$', plain)
             if not m:
                 continue
-            sp = spans(m.group(1))
+            sp = dated(m.group(1))
             if not sp:
                 continue
             # the row's subject: its first link whose label isn't a date
@@ -102,22 +117,26 @@ def tables_and_lists(text):
         for tbl in re.findall(r'\{\|.*?\|\}', sec, re.S):
             for row in re.split(r'\n\|-[^\n]*', tbl)[1:]:
                 cells = [c for c in re.split(r'\n[|!]|\|\||!!', '\n' + row.strip()) if c.strip()]
-                cells = [re.sub(r'^[^|\[\]{}]*?(?:style|scope|rowspan|colspan|class)=[^|]*\|', '', c).strip() for c in cells]
+                cells = [ATTRS.sub('', c).strip() for c in cells]
                 if len(cells) < 2:
                     continue
-                sp = spans(cells[0]) or (spans(cells[1]) if len(cells) > 2 else [])
+                sp = dated(cells[0]) or (dated(cells[1]) if len(cells) > 2 else [])
                 if not sp:
                     continue
-                event_cell = next((c for c in cells[1:] if not spans(c) and len(clean(c)) > 3), cells[-1])
+                texts = [c for c in cells[1:] if not spans(c) and WORDS.search(clean(c))]
+                event_cell = max(texts, key=lambda c: len(clean(c))) if texts else None  # the longest text cell
+                if event_cell is None:
+                    continue  # numbers only (casualty and strength tables)
                 plain = ' | '.join(clean(c) for c in cells if clean(c))
                 yield from _row(sp, clean(event_cell), plain, head, LINK1.search(event_cell))
 
 
 def _row(sp, event_text, plain, head, link):
+    """A dated row; its quote is the event's own text (found verbatim in the page), the location shows the whole row."""
     for s in sp[:1]:
-        yield {'kind': 'table', 'span': s, 'quote': plain[:300], 'title_suggestion': event_text[:160],
+        yield {'kind': 'table', 'span': s, 'quote': event_text[:300], 'title_suggestion': event_text[:160],
                'sourceLocation': f'{head or "list"}: {plain[:160]}',
-               'locator': {'kind': 'section', 'heading': head or '', 'quote': plain[:300]},
+               'locator': {'kind': 'section', 'heading': head or '', 'quote': event_text[:300]},
                'cluster': link.group(1).strip() if link else None}
 
 

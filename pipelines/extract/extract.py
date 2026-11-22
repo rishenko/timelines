@@ -141,7 +141,8 @@ def main():
         routes = (arts.get(r['cluster']) or arts.get(r['article']) or {}).get('routes', set())
         r['routes'] = sorted(routes)
         r['inlinks'] = inl[r['cluster']]
-        r['score'] = round(KIND_WEIGHT[r['kind']] + 3 * pct[r['cluster']] + ('campaignbox' in routes) + 0.5 * len(routes)
+        r['score'] = round(KIND_WEIGHT[r['kind']] + 4 * pct[r['cluster']] + 3 * ('seed' in routes) + ('campaignbox' in routes)
+                           + 0.5 * len(routes)
                            + 0.5 * len(r['also']) + (0.5 if r['span']['precision'] == 'day' else 0), 2)
     # suggested importance per cluster: its primary claim (best score) gets 1 (top 10%), 2 (next 30%) or 3; the rest 3
     primary = {}
@@ -168,7 +169,6 @@ def main():
                 r['category'] = primary[r['cluster']].get('category', [])
 
     qids = {r['page_id']: T.qid(r['page_id']) for r in rows}
-    sortable = lambda v: (v[0], v[1] or 0, v[2] or 0)  # month and day may be missing
     rows.sort(key=lambda r: (r['cluster'], sortable(r['span']['start']), X.KIND_RANK[r['kind']]))
     out = os.path.join(os.path.dirname(HERE), 'out', 'extract', topic)
     os.makedirs(out, exist_ok=True)
@@ -192,6 +192,11 @@ def main():
     print(f'{len(arts)} articles, {len(rows)} candidates ({len(primary)} clusters) -> {out}')
 
 
+def sortable(v):
+    """A date as a sort key (month and day may be missing)."""
+    return v[0], v[1] or 0, v[2] or 0
+
+
 def span_txt(s):
     t = iso(s['start']) + (f' – {iso(s["end"])}' if s['end'] else '')
     return ('c. ' if s['circa'] else '') + t + (' (O.S.)' if s['old_style'] else '')
@@ -206,7 +211,8 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
           f'- Campaignboxes ({len(rep["campaignboxes"])}): ' + ', '.join(rep['campaignboxes'][:40]) + (' …' if len(rep['campaignboxes']) > 40 else ''),
           f'- Categories walked: {rep["categories"]}. Timeline/list pages: ' + (', '.join(rep['lists'][:20]) or 'none') + '.',
           f'- Excluded: {len(rep["excluded"]["ai_flag"])} AI-flagged ({", ".join(rep["excluded"]["ai_flag"][:10]) or "none"}); '
-          f'{rep["excluded"]["not_event"]} not event-like (category and link routes); {rep["excluded"]["cap"]} over the cap.', '',
+          f'{rep["excluded"]["not_event"]} not event-like (category and link routes); {rep["excluded"]["cap"]} over the cap; '
+          f'campaignboxes left out for little overlap: {", ".join(rep["excluded"]["box_overlap"][:15]) or "none"}.', '',
           '## Candidates', '',
           f'- {len(rows)} candidates in {len(primary)} clusters (one per linked article). By kind: '
           + ', '.join(f'{k} {v}' for k, v in Counter(r['kind'] for r in rows).most_common()) + '.',
@@ -227,7 +233,7 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
             by[r['cluster']].setdefault(r['kind'], set()).add(r['span']['start'])
     for cl, d in sorted(by.items()):
         if 'infobox' in d and 'lead' in d and not (d['infobox'] & d['lead']):
-            conf.append(f'- {cl}: infobox {", ".join(iso(x) for x in sorted(d["infobox"]))}; lead {", ".join(iso(x) for x in sorted(d["lead"]))}')
+            conf.append(f'- {cl}: infobox {", ".join(iso(x) for x in sorted(d["infobox"], key=sortable))}; lead {", ".join(iso(x) for x in sorted(d["lead"], key=sortable))}')
     md += ['', f'## Infobox and lead disagree ({len(conf)})', ''] + (conf[:40] or ['- none'])
     sample = rows[::max(1, len(rows) // 20)][:20]
     md += ['', '## 20 sample rows (every nth)', '', '| Dates | Kind | Title | Source location |', '|---|---|---|---|']
