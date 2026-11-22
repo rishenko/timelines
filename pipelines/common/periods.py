@@ -8,9 +8,10 @@ Every date in periods.json is a claim naming its article and where the article s
   {"infobox": "<param>"} a parameter of the article's first infobox (historical-era infoboxes too, which the
                          extractor doesn't read)
   {"short": true}        the article's short description
-  {"periodo": "<id>"}    a PeriodO period (~/data/periodo/periodo.json): the claim's year must be the period's start
-                         (in a start claim) or stop (in an end claim); cited to its authority, by period label and id.
-                         Such a claim names no article.
+  {"periodo": "<id>"}    a PeriodO period (~/data/periodo/periodo.json): the claim's year is the period's start (in a
+                         start claim) or stop (in an end claim), or the edge "edge" names ("start"/"stop": an age that
+                         ends where the next source's period starts); checked against the edge's label, cited to the
+                         authority by period name, edge label and id. Such a claim names no article.
 A new event's description ("descr") restates sentences of the cited articles, listed as its "basis"
 ([article, text]); each is found in the dump and cited after the date sources. The cited text must hold the year, or, for a claim read from centuries (it has a margin), the word "century". An
 article that is missing or AI-flagged stops the run (wp_claims.art). An entry with "circa": true is circa even
@@ -92,27 +93,37 @@ def _periodo(pid):
     return PERIODO[pid]
 
 
-def _periodo_year(edge):
-    """A PeriodO start/stop as this data's readable year: ISO -2669 is "2670 BCE", 0394 is 394."""
-    y = edge.get('in', {}).get('year')
-    if y is None:
-        raise SystemExit(f'PeriodO: edge {edge} has no single year')
-    y = int(y)
-    return f'{1 - y} BCE' if y <= 0 else y
+def _astro(year):
+    """A claim's year ("2670 BCE" or 394) as an astronomical year (2670 BCE is -2669)."""
+    if isinstance(year, int):
+        return year
+    return 1 - int(re.sub(r'\D', '', year))
 
 
 def periodo_claim(c, side):
+    """A date read from a PeriodO period: its start, or (in an end claim) its stop, unless "edge" names the other.
+    Authorities write years two ways: in ISO years with a BC/BCE/AD label ("2670 BCE" is -2669), or as plain negative
+    BC years ("-2300", "4200 BP (2000)" is -2200). So the claim's year must appear in the edge's own label (its digits,
+    or for a BP label the year it works out to) and lie within a year of PeriodO's normalized year or range."""
     aid, a, per = _periodo(c['periodo'])
-    edge = per['start' if side == 'start' else 'stop']
-    if _periodo_year(edge) != c['year']:
-        raise SystemExit(f'PeriodO {c["periodo"]}: {side} is {edge.get("label")}, not {c["year"]}')
+    edge = per[c.get('edge', 'start' if side == 'start' else 'stop')]
+    label = edge.get('label', '')
+    y = _astro(c['year'])
+    span = edge.get('in', {})
+    lo, hi = (int(span['year']),) * 2 if 'year' in span else (int(span['earliestYear']), int(span['latestYear']))
+    digits = re.sub(r'\D', '', str(c['year']))
+    bp = re.match(r'\s*(\d+)\s*BP\s*\((\d+)\)', label)
+    in_label = digits in re.sub(r'(?<=\d),(?=\d{3})', '', label) or (bp and int(bp.group(2)) - int(bp.group(1)) == -int(digits))
+    if not in_label or not (lo - 1 <= y <= hi + 1):
+        raise SystemExit(f'PeriodO {c["periodo"]}: {side} edge is {label!r} ({lo}..{hi}), not {c["year"]}')
     key = f'periodo-{aid}'
     src = a['source']
     title = src.get('title') or (src.get('partOf') or {}).get('title')
     G.SOURCES.setdefault(key, {'name': f'{title} (PeriodO)', 'url': f'http://n2t.net/ark:/99152/{aid}', 'accessed': G.ACC,
                                'tags': ['periodo']})
-    label = (per.get('localizedLabels', {}).get('en') or [per.get('label', '')])[0]
-    out = {'year': c['year'], 'source': {'sourceKey': key, 'sourceLocation': f'period "{label}" ({edge.get("label")}), {c["periodo"]}'}}
+    name = (per.get('localizedLabels', {}).get('en') or [per.get('label', '')])[0]
+    word = 'start' if c.get('edge', 'start' if side == 'start' else 'stop') == 'start' else 'end'
+    out = {'year': c['year'], 'source': {'sourceKey': key, 'sourceLocation': f'period "{name}", {word} "{label}" ({c["periodo"]})'}}
     for k in ('margin', 'note'):
         if k in c:
             out[k] = c[k]
@@ -135,6 +146,7 @@ def claim(c, side='start'):
     else:
         raise SystemExit(f'{title}: a claim needs find, infobox or short')
     digits = re.sub(r'\D', '', str(c['year']))
+    text = re.sub(r'(?<=\d),(?=\d{3})', '', text)  # "7,000 BC" names 7000
     if 'margin' in c:
         if 'centur' not in text.lower() and digits not in text:
             raise SystemExit(f'{title}: {loc} names neither a century nor {c["year"]}')

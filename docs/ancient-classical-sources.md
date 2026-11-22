@@ -125,3 +125,27 @@ Maghreb groups, under a group now called "Africa"; the other is now "Near East")
 
 `npm run fields:proof -- ancient-classical --allow 'tracks.egypt.parent,tracks order'` passes: only `egypt`'s parent
 and the 14 rows of its subtree's place changed.
+
+## Regional ages and the Nile Valley (22 November 2026)
+
+Thirty-four ages in seven chains, in `pipelines/common/periods.json`, each chain its own `group` (one strip line). Each
+region starts at its Neolithic (the author's call), and its ages follow each other; neighbours may share a boundary
+year, as PeriodO's chains do. Sub-Saharan Africa has no line until a source gives its Iron Age an end.
+
+- **Nile Valley:** the UCLA Encyclopedia of Egyptology's 13 periods, Neolithic (6000 BCE) to Roman (394 CE), via PeriodO.
+- **Near East:** Levantine Chronology's Neolithic start (9750); NEAEHL's Pottery Neolithic end, Chalcolithic, Bronze and
+  Iron Ages (to 586), with *The Archaeology of Society in the Holy Land* (Bronze Age from 3500) and EAMENA (Iron Age to
+  330) as second claims.
+- **Central Europe:** AMCR (the Czech archaeological vocabulary): Early Neolithic from 5600, Eneolithic (shown as the
+  Copper Age), Bronze Age, Hallstatt and La Tène (shown as the Iron Age, to 31 BCE); ARIADNE (Austria) as second claims.
+  Where AMCR leaves a gap or an overlap, the earlier age ends where the next begins, and AMCR's own end is a second claim.
+- **Aegean, then the Mediterranean:** the British School at Athens's Neolithic, Bronze Age and Early Iron Age; then
+  Classical antiquity from the BSA's Early Iron Age end (700) to 476, with Wikipedia's "8th century BC" as a second claim.
+- **South Asia** and **China:** Wikipedia alone (the author's call; PeriodO has no ages for them), cited sentence by
+  sentence (*Neolithic*, *Bronze Age*, *Iron Age*) and noted as such.
+- **Mesoamerica:** the *Oxford Handbook of Mesoamerican Archaeology*'s Late Archaic and Formative (with Wikipedia's 2500
+  BCE as a second start); the Classic (250–900 CE) from Wikipedia, running past the timeline's end.
+
+PeriodO years are read from each period's own label, since authorities write them two ways (ISO years labelled "2670
+BCE", or plain negative BC years such as "-2300"). Every age links to its own Wikipedia article and carries that article's
+Wikidata id, except where none exists (the Macedonian Period; Mesoamerica's Late Archaic and Formative).
