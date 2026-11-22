@@ -38,28 +38,35 @@ jobs:
       - run: npm test
       - run: npm run build
 
+      # the commit the site was built from, for the live check below (and for anyone asking what is deployed)
+      - run: echo "$GITHUB_SHA" > dist/version.txt
+
+      # gh-pages takes the commit's author from git config (its -u option can't parse the bot's "[bot]" name and email)
       - name: Publish dist/ to gh-pages
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898283+github-actions[bot]@users.noreply.github.com"
           npx gh-pages -d dist \
             -r "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-            -u "github-actions[bot] <41898283+github-actions[bot]@users.noreply.github.com>" \
             -m "Deploy ${GITHUB_SHA::7}"
 
-      # Pages takes a minute or two; wait until the live page loads this build's bundle (up to about five minutes)
+      # Pages takes a minute or two; wait until the live site serves this build's version.txt (up to about five minutes).
+      # (The bundle name alone can't tell: a deploy that changes only data keeps the same bundle.)
       - name: Check the live site serves this build
         run: |
-          bundle=$(grep -o 'assets/index-[^"]*\.js' dist/index.html | head -1)
           url="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
-          echo "waiting for $url to serve $bundle"
+          bundle=$(grep -o 'assets/index-[^"]*\.js' dist/index.html | head -1)
+          echo "waiting for $url to serve version ${GITHUB_SHA::7}"
           for i in $(seq 1 30); do
-            if curl -fsS "${url}?nocache=$(date +%s)" | grep -q "$bundle"; then
-              echo "live: $bundle"
-              echo "Live at $url with \`$bundle\` (main ${GITHUB_SHA::7})" >> "$GITHUB_STEP_SUMMARY"
+            live=$(curl -fsS "${url}version.txt?nocache=$(date +%s)" || true)
+            if [ "$live" = "$GITHUB_SHA" ] && curl -fsS "${url}?nocache=$(date +%s)" | grep -q "$bundle"; then
+              echo "live: ${GITHUB_SHA::7}, $bundle"
+              echo "Live at $url: main ${GITHUB_SHA::7}, \`$bundle\`" >> "$GITHUB_STEP_SUMMARY"
               exit 0
             fi
             sleep 10
           done
-          echo "the live site doesn't serve $bundle yet" >&2
+          echo "the live site doesn't serve version ${GITHUB_SHA::7} yet (it has: ${live:-nothing})" >&2
           exit 1
