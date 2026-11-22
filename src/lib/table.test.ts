@@ -66,6 +66,15 @@ describe('eventsCsv', () => {
     expect(lines).toHaveLength(resolved.length + 1);
   });
 
+  it('ends with the full dates, after every earlier column', () => {
+    expect(lines[0].endsWith(',description,start_date,end_date')).toBe(true);
+    expect(lines.find((l) => l.startsWith('sack-of-babylon,'))!.endsWith(',-1594,')).toBe(true);
+    const d = { ...anc, events: [{ uuid: 'somme', title: 'Somme', descr: '', start: 1916, startMonth: 7, startDay: 1, end: 1916, endMonth: 11, endDay: 18, tracks: [anc.tracks[0].id], sources: [] }] };
+    const row = eventsCsv(d, d.events).trim().split('\n')[1];
+    expect(row.endsWith(',1916-07-01,1916-11-18')).toBe(true);
+    expect(row).toContain('1 July 1916 CE – 18 November 1916 CE (141 days)');
+  });
+
   it('gives stored years and the source range as numbers, and quotes cells with commas', () => {
     const row = lines.find((l) => l.startsWith('sack-of-babylon,'))!;
     expect(row).toContain(',-1594,');
