@@ -416,6 +416,13 @@ export function validateDataset(d: unknown): string[] {
       checkChronology(label, era.chronology);
       checkUrl(`${label} url`, era.url);
       checkIds(label, era.ids);
+      if (era.tracks !== undefined) {
+        if (!Array.isArray(era.tracks) || !era.tracks.length) errors.push(`${label} tracks must be a non-empty list of row ids.`);
+        else {
+          for (const t of era.tracks) if (!trackIds.has(t)) errors.push(`${label} names unknown row "${t}".`);
+          if (new Set(era.tracks).size !== era.tracks.length) errors.push(`${label} names a row twice.`);
+        }
+      }
       if (!Array.isArray(era.sources) || !era.sources.length) errors.push(`${label} cites no source.`);
       else for (const r of era.sources) if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
       if (!checkSpan(label, era, era.chronology)) continue;

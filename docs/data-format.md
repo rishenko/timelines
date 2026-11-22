@@ -1,4 +1,4 @@
-# Timeline data format (schema v6)
+# Timeline data format (schema v7)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -80,7 +80,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `6`. Files of versions `3` to `5` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `7`. Files of versions `3` to `6` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -135,6 +135,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `chronology` | no | The dating system its dates follow. |
 | `url` | no | A page about the age, such as its Wikipedia article: readers can open it from the age. It isn't a date source; `sources` are. |
 | `ids` | no | The age's identifiers in other datasets, as a row's: `{ "wikidata": "Q…" }`. |
+| `tracks` | no | The rows the age belongs to, usually region groups (`["africa"]`): each id names a row, once. The age is drawn in each of their bands. Left out, it spans the whole timeline and sits in the strip under the ruler. The rule that ages in one `group` don't overlap holds across bands, so give each region's chain its own `group`. |
 
 An era must overlap `meta.range` when the timeline has one; it may run past it, as rows do, so an era that crosses a seam keeps its own dates in both timelines.
 
@@ -487,7 +488,7 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 6, or 3 to 5 (lifted to 6 when loaded).
+- The required fields above are present; `schemaVersion` is 7, or 3 to 6 (lifted to 7 when loaded).
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
   `"day"`.
@@ -661,6 +662,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 | Version | What changed |
 |---|---|
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |
+| 7 | An era's `tracks` (the rows an age belongs to, such as a region). Additive: a version 6 file is read as it is. |
 | 5 | Facets on events (`applies`, event `memberships`), [`meta.eras`](#eras), row `kind`, events' `ongoingSources`, sources' `dump` and `revision`, source `locator`s, the `phase` of a [`memberOf`](#dated-memberships-memberof) entry, and `redirects`. Additive: a version 4 file is read as it is. |
 | 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
 | 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |
