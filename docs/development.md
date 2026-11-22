@@ -10,6 +10,9 @@ npm install
 npm run dev            # http://localhost:5173
 npm test               # vitest
 npm run test:watch     # vitest, rerunning on each change
+npm run test:quiet     # vitest, short: one summary line (passed, failed, skipped) and one line per failure
+npm run test:private   # the same with your local timelines (see "Local datasets")
+npm run pr:check       # every check before review, one line each (see "Before a pull request")
 npm run docs:check     # the code's file fields and npm scripts are all documented (CI runs it)
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
@@ -358,6 +361,24 @@ TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
   and any other file in the folders (row images, logos) is served under `/timelines/`. Builds, the preview server
   and the deployed site never include them.
 - Helpers: `scripts/lib/local-data.ts`. Nothing in this repo names a local dataset; keep it that way.
+- `npm run test:private` and `npm run pr:check` set the variable themselves when it isn't set: they read the first
+  line of `local-data.local` (ignored by git; a leading `~` is your home folder) at the root of this clone, or of the main clone a worktree belongs to.
+
+## Before a pull request
+
+`npm run pr:check` runs the checks a reviewer expects, one line each, and exits with 1 if any fails:
+
+- **main:** the branch has `origin/main` merged in (it fetches first; `--no-fetch` skips that) and merges without
+  conflicts (`git merge-tree --write-tree` needs git 2.38 or later);
+- **tsc**, **lint** (errors fail; warnings are counted), **tests** (with your local timelines when they're set up), and
+  **docs** (`docs:check`);
+- **compare:** `data:compare` for each compiled timeline the branch changes, against where it left main: the count of
+  differences (a data change is meant to have some; run `data:compare` to read them), failing only on an error;
+- **a11y**, with `--timeline <id>`: builds, serves on `--port` (default 4599), runs `a11y:report` on that timeline
+  into a temporary file (never `docs/wcag-report.md`) and prints its summary line.
+
+Paste its lines into the pull request's Checks section. Proofs it doesn't run (`fields:proof`,
+`categories:proof`, `seam-check`, a generator rerun) still go in the PR when the change calls for them.
 
 ## Checking the UI
 
