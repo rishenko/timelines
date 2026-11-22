@@ -13,7 +13,7 @@ import { TrackForm } from './TrackForm.tsx';
 import { localTimelineFiles } from '../../scripts/lib/local-data.ts';
 import { migrate } from '../data/migrate.ts';
 import type { Dataset } from '../types.ts';
-import ancient from '../../public/timelines/ancient-classical.json';
+import index from '../../public/timelines/index.json';
 
 afterEach(cleanup);
 
@@ -39,8 +39,12 @@ function sample<T>(items: T[]): T[] {
   });
 }
 
+// every bundled timeline (public/timelines/index.json), then the local ones
+const bundled = (index as { timelines: { id: string; file: string }[] }).timelines.map(
+  (t): [string, Dataset] => [t.id, migrate(JSON.parse(readFileSync(`public/timelines/${t.file}`, 'utf8'))) as Dataset],
+);
 const timelines: [string, Dataset][] = [
-  ['ancient-classical', ancient as unknown as Dataset],
+  ...bundled,
   ...localTimelineFiles().map((f): [string, Dataset] => [f.file, migrate(JSON.parse(readFileSync(f.path, 'utf8'))) as Dataset]),
 ];
 
