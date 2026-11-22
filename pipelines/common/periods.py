@@ -10,8 +10,8 @@ Every date in periods.json is a claim naming its article and where the article s
   {"short": true}        the article's short description
   {"periodo": "<id>"}    a PeriodO period (~/data/periodo/periodo.json): the claim's year is the period's start (in a
                          start claim) or stop (in an end claim), or the edge "edge" names ("start"/"stop": an age that
-                         ends where the next source's period starts); checked against the edge's label, cited to the
-                         authority by period name, edge label and id. Such a claim names no article.
+                         ends where the next source's period starts); checked against the edge's label, cited to that
+                         period's own PeriodO page, by period name, edge label and id. Such a claim names no article.
 A new event's description ("descr") restates sentences of the cited articles, listed as its "basis"
 ([article, text]); each is found in the dump and cited after the date sources. The cited text must hold the year, or, for a claim read from centuries (it has a margin), the word "century". An
 article that is missing or AI-flagged stops the run (wp_claims.art). An entry with "circa": true is circa even
@@ -116,12 +116,13 @@ def periodo_claim(c, side):
     in_label = digits in re.sub(r'(?<=\d),(?=\d{3})', '', label) or (bp and int(bp.group(2)) - int(bp.group(1)) == -int(digits))
     if not in_label or not (lo - 1 <= y <= hi + 1):
         raise SystemExit(f'PeriodO {c["periodo"]}: {side} edge is {label!r} ({lo}..{hi}), not {c["year"]}')
-    key = f'periodo-{aid}'
+    # one source per period, so each citation opens that period's own PeriodO page
+    key = f'periodo-{c["periodo"]}'
     src = a['source']
     title = src.get('title') or (src.get('partOf') or {}).get('title')
-    G.SOURCES.setdefault(key, {'name': f'{title} (PeriodO)', 'url': f'http://n2t.net/ark:/99152/{aid}', 'accessed': G.ACC,
-                               'tags': ['periodo']})
     name = (per.get('localizedLabels', {}).get('en') or [per.get('label', '')])[0]
+    G.SOURCES.setdefault(key, {'name': f'{title}: {name} (PeriodO)', 'url': f'http://n2t.net/ark:/99152/{c["periodo"]}',
+                               'accessed': G.ACC, 'tags': ['periodo']})
     word = 'start' if c.get('edge', 'start' if side == 'start' else 'stop') == 'start' else 'end'
     out = {'year': c['year'], 'source': {'sourceKey': key, 'sourceLocation': f'period "{name}", {word} "{label}" ({c["periodo"]})'}}
     for k in ('margin', 'note'):
@@ -225,8 +226,12 @@ def apply(data, timeline):
         raise SystemExit(f'{timeline}: an era cites PeriodO; set PERIODO_TAG in the generator\'s tags first')
     if eras:
         data['meta']['eras'] = eras
+        names = groups(p, eras)
+        if names:
+            data['meta']['eraGroups'] = names
     else:
         data['meta'].pop('eras', None)
+        data['meta'].pop('eraGroups', None)
     by = {e['uuid']: e for e in data['events']}
     new = [age(x) for x in p['ages'] if x['timeline'] == timeline]
     for e in new:
@@ -249,6 +254,12 @@ def apply(data, timeline):
     return {'eras': len(eras), 'new ages': len(new), 'key': len(p['key'].get(timeline, [])), 'redated': len(p['redate'].get(timeline, {}))}
 
 
+def groups(p, eras):
+    """meta.eraGroups for these eras: the names periods.json gives their groups (schema v7)."""
+    used = {e['group'] for e in eras}
+    return {g: v for g, v in p.get('groups', {}).items() if g in used}
+
+
 # The tag a PeriodO source carries; a timeline citing one must define it (validate refuses unknown tags)
 PERIODO_TAG = {'periodo': {'name': 'PeriodO'}}
 
@@ -263,6 +274,9 @@ def plan(timeline):
     events = [age(x) for x in p['ages'] if x['timeline'] == timeline]
     keys = sorted({r['sourceKey'] for x in eras + events for r in x['sources'] + [c['source'] for c in x['startDates'] + x['endDates']]})
     out = {'eras': eras, 'events': events, 'sources': {k: G.SOURCES[k] for k in keys}}
+    names = groups(p, eras)
+    if names:
+        out['eraGroups'] = names
     if any(k.startswith('periodo-') for k in keys):
         out['tags'] = PERIODO_TAG
     return out

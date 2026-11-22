@@ -148,4 +148,6 @@ year, as PeriodO's chains do. Sub-Saharan Africa has no line until a source give
 
 PeriodO years are read from each period's own label, since authorities write them two ways (ISO years labelled "2670
 BCE", or plain negative BC years such as "-2300"). Every age links to its own Wikipedia article and carries that article's
-Wikidata id, except where none exists (the Macedonian Period; Mesoamerica's Late Archaic and Formative).
+Wikidata id. The Macedonian Period has no article of its own, so it has no link. Each PeriodO citation is its own
+source, linking to the period's PeriodO page, so the Macedonian Period's dates still open their source. Ages show on
+their region's band (`tracks`), under the region names in `meta.eraGroups`.
