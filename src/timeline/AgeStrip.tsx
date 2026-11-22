@@ -1,10 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import type { Calendar, Dataset } from '../types.ts';
 import type { PlacedAge } from '../lib/eras.ts';
 import { at0, at1 } from '../lib/subYear.ts';
 import { hostOf, safeUrl } from '../lib/urls.ts';
 import { citationsInWords, spanInWords } from '../lib/table.ts';
 import type { Scale } from './scale.ts';
+import { SourceList } from '../components/SourceList.tsx';
 
 /** One line of the strip: a 24 px target (WCAG 2.5.8) around a 15 px bar. */
 export const AGE_LINE_PX = 24;
@@ -55,6 +56,32 @@ type BarProps = Omit<Props, 'lines' | 'width'>;
  * are from the top of their container, `labelW` in from its left edge.
  */
 export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect }: BarProps) {
+  // clicking an age (or Enter on it) opens its details: dates, region, its article and its sources as links, and a
+  // button to centre the chart on it. However narrow its bar, every age reaches its article and sources this way.
+  const [open, setOpen] = useState<{ age: PlacedAge; from: HTMLElement; x: number; y: number } | null>(null);
+  const pop = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = pop.current;
+    if (!open || !el) return;
+    // the popover API puts it in the top layer (over sticky rows and the strip); light dismiss and Escape close it
+    try {
+      if (!el.matches(':popover-open')) el.showPopover();
+    } catch {
+      // no popover API (jsdom): it's shown as a plain box
+    }
+    el.querySelector<HTMLElement>('a, button')?.focus();
+    const closed = (ev: Event) => {
+      if ((ev as ToggleEvent).newState !== 'closed') return;
+      if (!document.activeElement || document.activeElement === document.body || el.contains(document.activeElement)) open.from.focus();
+      setOpen(null);
+    };
+    el.addEventListener('toggle', closed);
+    return () => el.removeEventListener('toggle', closed);
+  }, [open]);
+  const close = () => {
+    if (pop.current?.hidePopover) pop.current.hidePopover();
+    else setOpen(null);
+  };
   // a named line (a band with two or more): its name at the line's left end, kept on screen; the ages' names and links
   // on that line start after it
   const named = new Map<number, { name: string; x0: number }>();
@@ -121,7 +148,8 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
           ...dates.ranges,
           cut && 'Runs on past this timeline',
           from && `from ${from}`,
-          url && (linked ? `↗ opens its article on ${host}` : `Its article on ${host}: zoom in, or see the Ages table`),
+          url && linked && `↗ opens its article on ${host}`,
+          'Click for its article and sources',
         ];
         return (
           <Fragment key={era.id}>
@@ -129,8 +157,14 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
               className="tl-age"
               style={style}
               title={tip.filter(Boolean).join('\n')}
-              aria-label={`${era.name}${lineName ? ` (${lineName})` : ''}, ${dates.main}, age; centre the chart on it`}
-              onClick={() => onSelect((span.start + span.end) / 2)}
+              aria-label={`${era.name}${lineName ? ` (${lineName})` : ''}, ${dates.main}, age: details, article and sources`}
+              aria-haspopup="dialog"
+              aria-expanded={open?.age.era.id === era.id}
+              onClick={(ev) => {
+                const r = ev.currentTarget.getBoundingClientRect();
+                // under the bar, where it was clicked (or, from the keyboard, its visible start)
+                setOpen({ age: ages.find((a) => a.era.id === era.id)!, from: ev.currentTarget, x: ev.clientX || Math.max(r.left, 8), y: r.bottom });
+              }}
             >
               <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>
                 <span className="name" style={{ left: linked ? linkAt : nameAt, paddingLeft: linked ? LINK_INSET_PX + 5 : undefined }}>
@@ -154,6 +188,49 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect 
           </Fragment>
         );
       })}
+      {open && (
+        <div
+          ref={pop}
+          popover="auto"
+          className="tl-age-pop"
+          role="dialog"
+          aria-label={open.age.era.name}
+          style={{ left: Math.max(8, Math.min(open.x, window.innerWidth - 328)), top: open.y + 4 }}
+        >
+          <AgeDetails age={open.age} cal={cal} sources={sources} onCentre={() => (onSelect((open.age.span.start + open.age.span.end) / 2), close())} />
+        </div>
+      )}
+    </>
+  );
+}
+
+/** An age's details in its popover: name, region, dates, its article, its sources as links, and centring on it. */
+function AgeDetails({ age, cal, sources, onCentre }: { age: PlacedAge; cal: Calendar; sources: Dataset['sources']; onCentre: () => void }) {
+  const { era, span, lineName } = age;
+  const dates = spanInWords(span, cal, sources);
+  const url = safeUrl(era.url);
+  return (
+    <>
+      <p className="title">
+        {era.name}
+        {lineName && <span className="muted"> · {lineName}</span>}
+      </p>
+      <p>
+        {dates.main}
+        {dates.ranges.length > 0 && <span className="muted small"> ({dates.ranges.join('; ')})</span>}
+      </p>
+      {url && (
+        <p>
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            Article on {hostOf(url)} ↗<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </p>
+      )}
+      <p className="muted small">Sources</p>
+      <SourceList refs={era.sources} sources={sources} />
+      <button type="button" onClick={onCentre}>
+        Centre the chart on it
+      </button>
     </>
   );
 }

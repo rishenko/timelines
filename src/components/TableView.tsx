@@ -20,6 +20,7 @@ import { compareEvents } from '../lib/years.ts';
 import { trackIndex, trackPath } from '../lib/tracks.ts';
 import type { RowRegion } from '../lib/regions.ts';
 import { safeUrl } from '../lib/urls.ts';
+import { SourceList } from './SourceList.tsx';
 import { isOn } from '../state/filters.ts';
 import { membersByUnion, type ResolvedMembership, type UnionMember } from '../lib/memberOf.ts';
 
@@ -252,25 +253,7 @@ export function TableView(p: Props) {
                         )}
                         <td className="rows">{e.tracks.map((t) => names.get(t) ?? t).join(', ')}</td>
                         <td className="sources">
-                          <ul>
-                            {e.sources.map((src, i) => {
-                              const source = data.sources[src.sourceKey];
-                              const href = safeUrl(source?.url);
-                              const name = source?.name ?? src.sourceKey;
-                              return (
-                                <li key={`${src.sourceKey}-${i}`}>
-                                  {href ? (
-                                    <a href={href} target="_blank" rel="noreferrer">
-                                      {name}
-                                    </a>
-                                  ) : (
-                                    name
-                                  )}
-                                  {src.sourceLocation && <span className="muted">, {src.sourceLocation}</span>}
-                                </li>
-                              );
-                            })}
-                          </ul>
+                          <SourceList refs={e.sources} sources={data.sources} />
                         </td>
                       </tr>
                     );
@@ -579,7 +562,9 @@ function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
                   {d.main}
                   {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}
                 </td>
-                <td className="sources">{citationsInWords(era.sources, data.sources)}</td>
+                <td className="sources">
+                  <SourceList refs={era.sources} sources={data.sources} />
+                </td>
               </tr>
             );
           })}

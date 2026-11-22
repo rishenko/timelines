@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render, within } from '@testing-library/react';
 import { AgeStrip } from './AgeStrip.tsx';
 import { placeAges } from '../lib/eras.ts';
 import { buildScale } from './scale.ts';
@@ -26,14 +26,38 @@ const strip = (eras: Era[], onSelect = vi.fn()) => [...render_(eras, onSelect).q
 const wiki = 'https://en.wikipedia.org/wiki/Salt_Years';
 
 describe('the Ages strip', () => {
-  it('names each age with its dates for screen readers, gives dates and sources in its tooltip, and centres on click', () => {
-    const onSelect = vi.fn();
-    const [b] = strip([{ id: 'salt', name: 'Salt Years', start: 20, end: 60, circa: true, sources: cite }], onSelect);
-    expect(b.getAttribute('aria-label')).toBe('Salt Years, c. 20 L – c. 60 L, age; centre the chart on it');
+  it('names each age with its dates for screen readers, gives dates and sources in its tooltip', () => {
+    const [b] = strip([{ id: 'salt', name: 'Salt Years', start: 20, end: 60, circa: true, sources: cite }]);
+    expect(b.getAttribute('aria-label')).toBe('Salt Years, c. 20 L – c. 60 L, age: details, article and sources');
+    expect(b.getAttribute('aria-haspopup')).toBe('dialog');
     expect(b.title).toContain('Salt Years, c. 20 L – c. 60 L');
     expect(b.title).toContain('from The Harbor Ledger');
+    expect(b.title).toContain('Click for its article and sources');
+  });
+
+  it('opens an age’s details on click: its article, its sources as links, and a button that centres the chart', () => {
+    const onSelect = vi.fn();
+    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 24, url: wiki, sources: cite }], onSelect);
+    const b = c.querySelector<HTMLButtonElement>('button.tl-age')!;
     fireEvent.click(b);
-    expect(onSelect).toHaveBeenCalledWith(40);
+    expect(b.getAttribute('aria-expanded')).toBe('true');
+    const pop = c.querySelector<HTMLElement>('[role="dialog"][aria-label="Salt Years"]')!;
+    expect(pop).toBeTruthy();
+    // (jsdom has no popover API, so it counts the box as hidden)
+    // a bar too narrow for the ↗ still reaches its article here
+    expect(within(pop).getByRole('link', { name: /^Article on en\.wikipedia\.org/, hidden: true }).getAttribute('href')).toBe(wiki);
+    expect(within(pop).getByText('The Harbor Ledger', { exact: false })).toBeTruthy();
+    fireEvent.click(within(pop).getByRole('button', { name: 'Centre the chart on it', hidden: true }));
+    expect(onSelect).toHaveBeenCalledWith(22);
+  });
+
+  it('links the sources in the details, the way out for an age with no article', () => {
+    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 60, sources: cite }]);
+    fireEvent.click(c.querySelector<HTMLButtonElement>('button.tl-age')!);
+    const pop = c.querySelector<HTMLElement>('[role="dialog"][aria-label="Salt Years"]')!;
+    expect(pop).toBeTruthy();
+    expect(within(pop).queryByRole('link', { name: /^Article/, hidden: true })).toBeNull();
+    expect(within(pop).getAllByRole('listitem', { hidden: true }).length).toBe(1);
   });
 
   it('cuts an age at the chart’s ends with an open edge, and leaves out one wholly outside', () => {
@@ -63,9 +87,8 @@ describe('the Ages strip', () => {
     expect(parseFloat(b.querySelector<HTMLElement>('.bar')!.style.width)).toBe(8);
   });
 
-  it('links an age with a page from a ↗ before its name, named for screen readers; the bar still centres', () => {
-    const onSelect = vi.fn();
-    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 60, url: wiki, sources: cite }], onSelect);
+  it('links an age with a page from a ↗ before its name, named for screen readers', () => {
+    const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 60, url: wiki, sources: cite }]);
     const a = c.querySelector<HTMLAnchorElement>('a.tl-age-link')!;
     expect(a.getAttribute('href')).toBe(wiki);
     expect(a.getAttribute('target')).toBe('_blank');
@@ -77,8 +100,6 @@ describe('the Ages strip', () => {
     const b = c.querySelector<HTMLButtonElement>('button.tl-age')!;
     expect(b.title).toContain('↗ opens its article on en.wikipedia.org');
     expect(parseFloat(b.querySelector<HTMLElement>('.name')!.style.paddingLeft)).toBeGreaterThanOrEqual(18);
-    fireEvent.click(b);
-    expect(onSelect).toHaveBeenCalledWith(40);
   });
 
   it('keeps the ↗ beside the name while the age starts off to the left', () => {
@@ -91,11 +112,11 @@ describe('the Ages strip', () => {
     expect(a.style.left).toBe(`${100 + x0 + 160}px`);
   });
 
-  it('leaves the ↗ off a bar too short for two 24 px targets, and points to the Ages table instead', () => {
+  it('leaves the ↗ off a bar too short for two 24 px targets (its details still link the article)', () => {
     // 20 L – 24 L is 40 px at 8 px a year
     const c = render_([{ id: 'salt', name: 'Salt Years', start: 20, end: 24, url: wiki, sources: cite }]);
     expect(c.querySelector('a.tl-age-link')).toBeNull();
-    expect(c.querySelector<HTMLButtonElement>('button.tl-age')!.title).toContain('zoom in, or see the Ages table');
+    expect(c.querySelector<HTMLButtonElement>('button.tl-age')!.title).not.toContain('↗');
   });
 
   it('has no link for an age without a page, or with an unsafe one', () => {
@@ -104,6 +125,6 @@ describe('the Ages strip', () => {
       { id: 'b', name: 'Bad', start: 100, end: 160, url: 'javascript:alert(1)', sources: cite },
     ]);
     expect(c.querySelector('a.tl-age-link')).toBeNull();
-    expect(c.querySelector<HTMLButtonElement>('button.tl-age')!.title).not.toContain('article');
+    expect(c.querySelector<HTMLButtonElement>('button.tl-age')!.title).not.toContain('↗');
   });
 });

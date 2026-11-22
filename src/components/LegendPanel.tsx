@@ -263,7 +263,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
       sample: <span className="lg-age">Age</span>,
       show: !!data.meta.eras?.length,
       title: 'Age',
-      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler; an age of one region, such as the Nile Valley’s Old Kingdom, sits on that region’s band instead. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age to centre the chart on it; its ↗, when it has one, opens its article.',
+      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler; an age of one region, such as the Nile Valley’s Old Kingdom, sits on that region’s band instead. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age for its article, its sources and a button that centres the chart on it; its ↗, on a wide bar, opens the article directly.',
     },
     {
       sample: <span className="lg-bar uncertain" />,

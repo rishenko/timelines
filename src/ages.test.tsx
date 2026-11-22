@@ -69,7 +69,7 @@ describe('ages', () => {
     const strip = screen.getByRole('group', { name: 'Ages' });
     expect(within(strip).queryByRole('button', { name: /^Salt Years/ })).toBeNull();
     const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
-    expect(within(band).getByRole('button', { name: /^Salt Years, 20 L – 60 L, age; centre the chart on it$/ })).toBeTruthy();
+    expect(within(band).getByRole('button', { name: /^Salt Years, 20 L – 60 L, age: details, article and sources$/ })).toBeTruthy();
   });
 
   it('the table names each age’s region, and lists an age in two rows once', () => {
