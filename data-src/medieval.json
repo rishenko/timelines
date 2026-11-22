@@ -14526,17 +14526,33 @@
       "span": {
         "start": 1,
         "end": 1628,
+        "circa": true,
         "startDates": [
           {
             "year": 1,
             "margin": 50,
             "source": {
               "sourceKey": "wp-nan-madol",
-              "sourceLocation": "Archaeology ('probably around AD 1')"
+              "sourceLocation": "section \"Archaeology\": \"The earliest settlement on Pohnpei was probably around AD 1 although radiocarbon dating shows human activity starting around AD 80–200.\""
             }
           }
         ],
-        "circa": true
+        "endDates": [
+          {
+            "year": 1628,
+            "source": {
+              "sourceKey": "wp-nan-madol",
+              "sourceLocation": "lead: \"Nan Madol was the capital of the Saudeleur dynasty until about 1628.\""
+            }
+          },
+          {
+            "year": 1628,
+            "source": {
+              "sourceKey": "wp-saudeleur-dynasty",
+              "sourceLocation": "infobox year_end: c. 1628"
+            }
+          }
+        ]
       },
       "memberships": [
         {
@@ -14599,6 +14615,57 @@
             {
               "sourceKey": "wp-tu-i-tonga-empire",
               "sourceLocation": "infobox capital: Toloa / Heketā / Muʻa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-easter-island",
+      "name": "Kingdom of Easter Island (Rapa Nui)",
+      "color": "#7a6a4a",
+      "parent": "oceania-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Easter_Island",
+      "span": {
+        "start": 350,
+        "end": 1888,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 350,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-kingdom-of-easter-island",
+              "sourceLocation": "infobox year_start: 300–400 CE"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1888,
+            "source": {
+              "sourceKey": "wp-kingdom-of-easter-island",
+              "sourceLocation": "infobox year_end: September 9, 1888"
+            }
+          },
+          {
+            "year": 1902,
+            "source": {
+              "sourceKey": "wp-kingdom-of-easter-island",
+              "sourceLocation": "infobox life_span: c. 4th century – 1888 / 1902"
+            },
+            "note": "The same article gives this year too."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "polynesia",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-easter-island",
+              "sourceLocation": "infobox capital: Anakena"
             }
           ]
         }
@@ -21291,6 +21358,14 @@
         "wikipedia"
       ]
     },
+    "wp-saudeleur-dynasty": {
+      "name": "Saudeleur dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saudeleur_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-djenne-djenno": {
       "name": "Wikipedia: Djenné-Djenno",
       "url": "https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno",
@@ -22302,6 +22377,14 @@
     "wp-angoche-sultanate": {
       "name": "Angoche Sultanate (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Angoche_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-easter-island": {
+      "name": "Kingdom of Easter Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Easter_Island",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
