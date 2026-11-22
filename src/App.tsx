@@ -125,7 +125,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
           `"${unreadableDraftKey(opened.meta.id)}".`
       : updatedUnderDraft
         ? 'The published timeline has been updated. Your local edits are kept on top of the new version.'
-        : (notice ?? null),
+        : // Boot's notice, then what the link names that this timeline can't open (one toast)
+          [notice, initialUrl.notice].filter(Boolean).join(' ') || null,
   );
 
   useEffect(() => {
@@ -287,13 +288,14 @@ export default function App({ published: opened, library: libraryEntry, site, no
       view,
       hideOutOfView,
       thinRows,
-      hideOutOfViewDefault: published.meta.hideRowsOutOfView !== false,
       regions: regions.picked,
       cat: categories.picked,
       set: comparison.active ? comparison.rows : [],
       order: comparison.order,
+      openedWindow: initialUrl.window,
     },
     initialCenter,
+    data,
   );
 
   const search = useSearchActions({
