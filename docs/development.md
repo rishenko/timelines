@@ -325,5 +325,6 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
   person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
   It isn't in CI (about 10 minutes): run it after a major UI change or a batch of UI changes, before merging, and
-  commit the new report.
+  commit the new report. Commit a report run on the default timeline (Ancient), so reports stay comparable; the report
+  names its timeline and any view it couldn't open there (Dating, on a timeline with one dating system).
 - Plan and status: [feature-audit.md](feature-audit.md), item 23.
