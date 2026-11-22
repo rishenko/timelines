@@ -67666,6 +67666,38 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-the-holocaust": {
+      "name": "The Holocaust (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Holocaust",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-attack-on-pearl-harbor": {
+      "name": "Attack on Pearl Harbor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Attack_on_Pearl_Harbor",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-treaty-of-versailles": {
+      "name": "Treaty of Versailles (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Versailles",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-paris-peace-conference-1919-1920": {
+      "name": "Paris Peace Conference (1919–1920) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paris_Peace_Conference_(1919–1920)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -91915,6 +91947,84 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "holocaust",
+      "title": "The Holocaust",
+      "descr": "Nazi Germany and its collaborators murder about six million European Jews, most of them in occupied Poland, along with millions of others they persecuted.",
+      "start": 1941,
+      "end": 1945,
+      "tracks": [
+        "germany",
+        "poland"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-the-holocaust",
+          "sourceLocation": "infobox date: 1941–1945"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-versailles",
+      "title": "Treaty of Versailles",
+      "descr": "Signed on 28 June 1919 at the Paris Peace Conference, where the victorious Allies set the terms for the defeated Central Powers; Germany loses territory and its colonies and must pay reparations.",
+      "start": 1919,
+      "tracks": [
+        "germany",
+        "france",
+        "united-kingdom",
+        "united-states",
+        "italy",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-treaty-of-versailles",
+          "sourceLocation": "infobox date_signed: 28 June 1919"
+        },
+        {
+          "sourceKey": "wp-paris-peace-conference-1919-1920",
+          "sourceLocation": "lead: \"The Paris Peace Conference was a set of formal and informal diplomatic meetings in 1919 and 1920 after the end of World War I, in which the victorious Allies se\""
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww1",
+          "kind": "succeeds"
+        }
+      ]
+    },
+    {
+      "uuid": "pearl-harbor",
+      "title": "Attack on Pearl Harbor",
+      "descr": "Japan strikes the US Pacific Fleet on 7 December 1941; the United States enters the Second World War.",
+      "start": 1941,
+      "tracks": [
+        "japan",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-attack-on-pearl-harbor",
+          "sourceLocation": "infobox date: 7 December 1941"
+        }
+      ],
+      "importance": 1,
+      "links": [
+        {
+          "to": "ww2",
+          "kind": "part-of"
+        }
+      ]
     }
   ]
 }
