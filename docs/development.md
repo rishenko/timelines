@@ -260,7 +260,10 @@ ruler. `placeAges` resolves each under the reader's Dating choice (`resolveSpan`
 gives each `group` a line; `agesInView` drops lines with no age in the settled year window the chart already keeps
 for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
 hatching; ends past the chart are cut with a dashed edge. Clicking an age asks `App.tsx` to centre on it
-(`focusOn`, the zoom unchanged). The table view's Ages table is its accessible equivalent.
+(`focusOn`, the zoom unchanged). An age with a `url` gets a ↗ link (`a.tl-age-link`) over the start of its bar, before
+its name and moving with it, when the bar has room for two 24 px targets (the link and the rest of the button);
+narrower ages leave it to the Ages table. The table view's Ages table is the strip's accessible equivalent; its names
+link the way row names do (`LinkedName` in `TableView.tsx`).
 
 ### Category filter
 

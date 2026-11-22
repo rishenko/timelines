@@ -48,6 +48,19 @@ describe('ages', () => {
     expect(rows[1].textContent).toContain('The Harbor Ledger');
   });
 
+  it('the table links an age with a page by its name, plus its Wikidata id; one without stays plain text', () => {
+    const d = withAges();
+    d.meta.eras![0].url = 'https://en.wikipedia.org/wiki/Salt_Years';
+    d.meta.eras![0].ids = { wikidata: 'Q123' };
+    renderApp(`timeline=harbor-towns&view=table`, [d]);
+    const table = screen.getByRole('table', { name: /^Ages/ });
+    const link = within(table).getByRole('link', { name: /^Salt Years\s*\(opens in a new tab\)$/ });
+    expect(link.getAttribute('href')).toBe('https://en.wikipedia.org/wiki/Salt_Years');
+    expect(link.getAttribute('target')).toBe('_blank');
+    expect(within(table).getByRole('link', { name: /^Wikidata\s*Q123\s*\(opens in a new tab\)$/ }).getAttribute('href')).toBe('https://www.wikidata.org/wiki/Q123');
+    expect(within(table).queryByRole('link', { name: /Long Calm/ })).toBeNull();
+  });
+
   it('a timeline without ages has no strip', () => {
     renderApp(`timeline=harbor-towns`, [plainTimeline()]);
     expect(screen.queryByRole('group', { name: 'Ages' })).toBeNull();
