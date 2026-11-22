@@ -97,7 +97,7 @@ class Tables:
         return bool(self.one(q, page_id, *DATE_FIELDS))
 
 
-def article_set(T, seeds, seed_links, cap=4000):
+def article_set(T, seeds, seed_links, cap=4000, wd=None):
     """{title: {'page_id', 'box', 'routes': set, 'rev_id'}} plus a report of route counts and exclusions."""
     out, excluded = {}, {'ai_flag': [], 'not_event': 0, 'cap': 0, 'box_overlap': [], 'out_of_window': []}
 
@@ -209,9 +209,15 @@ def article_set(T, seeds, seed_links, cap=4000):
             t = add(title, 'list', False)
             if t:
                 lists.append(t)
+    # Wikidata: items transitively `part of` a seed (P361), event-like and in the window like the category route
+    wd_found = 0
+    if wd is not None:
+        seed_q = [q for q in (T.qid(out[s]['page_id']) for s in seed_titles) if q]
+        for q, t in sorted(wd.part_of_closure(seed_q).items(), key=lambda x: x[1]):
+            wd_found += bool(add(t, 'wikidata', True))
     # links from the seeds' text, event-like only
     for t in seed_links:
         add(t, 'link', True)
     report = {'window': (lo, hi), 'categories': len(cats), 'campaignboxes': sorted(seen_boxes), 'lists': lists, 'excluded': excluded,
-              'routes': {r: sum(1 for v in out.values() if r in v['routes']) for r in ('seed', 'campaignbox', 'category', 'list', 'link')}}
+              'routes': {r: sum(1 for v in out.values() if r in v['routes']) for r in ('seed', 'campaignbox', 'category', 'list', 'wikidata', 'link')}}
     return out, report

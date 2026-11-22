@@ -27,7 +27,8 @@ ARGS = settings.take_flags(sys.argv[1:])
 
 import wp_dump as wp  # noqa: E402
 import extractors as X  # noqa: E402
-from topics import LIST_TITLE, WINDOW_AFTER, Tables, article_set  # noqa: E402
+from topics import LIST_TITLE, WINDOW_AFTER, Tables, article_set
+from wd_join import WD, compare  # noqa: E402  # noqa: E402
 
 KIND_WEIGHT = {'infobox': 5, 'table': 4, 'lead': 3, 'heading': 2, 'prose': 1}
 WIKI = 'https://en.wikipedia.org/wiki/'
@@ -88,7 +89,12 @@ def main():
         p = wp.page(s)
         if p:
             seed_links += [l.strip() for l in X.LINK1.findall(p['text']) if ':' not in l]
-    arts, rep = article_set(T, seeds, list(dict.fromkeys(seed_links)), cap=cap)
+    # Wikidata (wikidata.py): used only once its pass is complete
+    wd = WD.open(settings.DATA)
+    if wd and not wd.complete and '--wd-partial' not in ARGS:  # --wd-partial: test against a pass still running
+        print('Wikidata tables are incomplete (pass still running or paused): not used')
+        wd = None
+    arts, rep = article_set(T, seeds, list(dict.fromkeys(seed_links)), cap=cap, wd=wd)
 
     cands, dropped, flagged = [], Counter(), []
     for title in sorted(arts):
@@ -185,6 +191,23 @@ def main():
         y1 = (r['span']['end'] or r['span']['start'])[0]
         r['in_window'] = '' if not win else int(y1 >= win[0] and y0 <= win[1])
     qids = {r['page_id']: T.qid(r['page_id']) for r in rows}
+    # Wikidata cross-check on each row's cluster article (rows standing alone have no article to check)
+    wd_dates = {}
+    for r in rows:
+        if not wd:
+            r['wikidata'] = 'not loaded'
+        elif r.get('own'):
+            r['wikidata'] = 'no item (row stands alone)'
+        else:
+            if r['cluster'] not in wd_dates:
+                cp = T.page(r['cluster'])
+                q = T.qid(cp[0]) if cp else None
+                wd_dates[r['cluster']] = (q, wd.dates(q) if q else None)
+            q, d = wd_dates[r['cluster']]
+            res = 'no item' if not q else compare(r['span'], d)
+            # only the infobox gives the article's own dates; a lead or table row may date something else, so it is
+            # marked only when it matches
+            r['wikidata'] = res if r['kind'] == 'infobox' or res in ('agree', 'no item', 'no date') else 'not compared'
     rows.sort(key=lambda r: (r['in_window'] == 0, r['cluster'], sortable(r['span']['start']), X.KIND_RANK[r['kind']]))
     out = os.path.join(os.path.dirname(HERE), 'out', 'extract', topic)
     os.makedirs(out, exist_ok=True)
@@ -206,10 +229,10 @@ def main():
                     r['kind'], ';'.join(r['also']), r['sourceLocation'], json.dumps(r['locator'], ensure_ascii=False), r['quote'],
                     r['article'], r['page_id'], r['rev_id'], qids[r['page_id']] or '', ';'.join(r['routes']), r['inlinks'],
                     r['score'], r['importance'], cat[0][0] if cat else '', cat[1][0] if len(cat) > 1 else '',
-                    ' | '.join(x[1] for x in cat), 'none (Wikidata not loaded)', settings.DUMP_NAME])
+                    ' | '.join(x[1] for x in cat), r['wikidata'], settings.DUMP_NAME])
     for f in files.values():
         f.close()
-    report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, bool(classify))
+    report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, bool(classify), wd)
     print(f'{len(arts)} articles, {len(rows)} candidates ({len(primary)} clusters) -> {out}')
 
 
@@ -223,7 +246,7 @@ def span_txt(s):
     return ('c. ' if s['circa'] else '') + t + (' (O.S.)' if s['old_style'] else '')
 
 
-def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has_cat):
+def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has_cat, wd=None):
     md = [f'# Extractor candidates: {topic}', '',
           f'Seeds: {", ".join(seeds)}. Dump {T.meta["dump"]}; tables {T.meta["code_version"]}. '
           f'Candidates are for review, not timeline data. Columns: see pipelines/extract/extract.py.', '',
@@ -261,6 +284,23 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
         if 'infobox' in d and 'lead' in d and not (d['infobox'] & d['lead']):
             conf.append(f'- {cl}: infobox {", ".join(iso(x) for x in sorted(d["infobox"], key=sortable))}; lead {", ".join(iso(x) for x in sorted(d["lead"], key=sortable))}')
     md += ['', f'## Infobox and lead disagree ({len(conf)})', ''] + (conf[:40] or ['- none'])
+    if wd:
+        boxes = [r for r in rows if r['kind'] == 'infobox']
+        c = Counter('differs' if r['wikidata'].startswith('differs') else r['wikidata'] for r in boxes)
+        dated = c['agree'] + c['differs']
+        others = [r for r in rows if r['kind'] not in ('infobox', 'prose')]
+        jul = sum('Julian' in r['wikidata'] for r in boxes)
+        md += ['', f'## Wikidata ({wd.dump})', '',
+               f'- Infobox rows (the articles\' own dates, {len(boxes)}): {dated} have a Wikidata date for their article '
+               f'({dated / max(1, len(boxes)):.0%}); {c["agree"]} agree, {c["differs"]} differ ({c["differs"] / max(1, dated):.0%} of '
+               f'those with a date); {c["no date"]} items without a date; {c["no item"]} articles without an item.',
+               f'- Table, lead and heading rows ({len(others)}): {sum(r["wikidata"] == "agree" for r in others)} match a Wikidata date '
+               f'of their article (they may date something else, so a mismatch isn\'t counted).',
+               f'- Differences naming a Julian-calendar value: {jul}.',
+               f'- Articles found by the Wikidata part-of route: {rep["routes"].get("wikidata", 0)}.', '',
+               '| Article | Wikipedia | Wikidata |', '|---|---|---|']
+        for r in [r for r in boxes if r['wikidata'].startswith('differs')][:30]:
+            md.append(f'| {r["cluster"]} | {span_txt(r["span"])} | {r["wikidata"][9:].replace("|", "/")} |')
     sample = rows[::max(1, len(rows) // 20)][:20]
     md += ['', '## 20 sample rows (every nth)', '', '| Dates | Kind | Title | Source location |', '|---|---|---|---|']
     for r in sample:

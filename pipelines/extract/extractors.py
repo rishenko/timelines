@@ -178,10 +178,18 @@ def tables_and_lists(text):
                 yield from _row(sp, clean(event_cell), plain, head, LINK1.search(event_cell))
 
 
+def short_title(text):
+    """A row's lead phrase, for a title (and the classifier, which reads titles best): up to the first full stop,
+    semicolon, dash or comma after 25 characters, at most 90."""
+    m = re.search(r'^(.{25,90}?)(?:\. |; | – | — |, )', text)
+    t = m.group(1) if m else text[:90]
+    return t.rstrip(' .,;:')
+
+
 def _row(sp, event_text, plain, head, link):
     """A dated row; its quote is the event's own text (found verbatim in the page), the location shows the whole row."""
     for s in sp[:1]:
-        yield {'kind': 'table', 'span': s, 'quote': event_text[:300], 'title_suggestion': event_text[:160],
+        yield {'kind': 'table', 'span': s, 'quote': event_text[:300], 'title_suggestion': short_title(event_text),
                'sourceLocation': f'{head or "list"}: {plain[:160]}',
                'locator': {'kind': 'section', 'heading': head or '', 'quote': event_text[:300]},
                'cluster': link.group(1).strip() if link else None}
