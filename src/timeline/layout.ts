@@ -77,7 +77,7 @@ export const LAYOUT_DEFAULTS = {
   charPx: 6.6,
   maxLabelPx: 240,
   gapPx: 8,
-  maxRows: 4,
+  maxRows: 5,
   clusterPx: 44,
   thinPx: 6,
 };

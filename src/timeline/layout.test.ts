@@ -74,6 +74,15 @@ describe('layoutLanes', () => {
     expect(open.rows).toBe(6);
   });
 
+  it('by default holds five lines of events in a row before folding into "+N"', () => {
+    const lanes = buildLanes(tracks, {}, {});
+    const guild = (n: number) =>
+      layoutLanes(lanes, Array.from({ length: n }, (_, i) => ev(`e${i}`, 50, ['guild'])), scale, 100).lanes.find((l) => l.lane.id === 'guild')!;
+    expect(guild(5).overflow).toBe(0);
+    expect(guild(5).rows).toBe(5);
+    expect(guild(6).overflow).toBe(1);
+  });
+
   it('keeps key events visible and folds the least important ones first', () => {
     const events = [
       { ...ev('minor-early', 50, ['guild']), importance: 3 as const },
