@@ -3159,6 +3159,69 @@
       ]
     },
     {
+      "id": "wales",
+      "name": "Wales",
+      "color": "#b0303a",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Wales",
+      "phases": [
+        {
+          "name": "Principality of Wales (English Crown)",
+          "start": 1283,
+          "end": 1542,
+          "startDates": [
+            {
+              "year": 1283,
+              "source": {
+                "sourceKey": "wp-principality-of-wales",
+                "sourceLocation": "infobox life span: 1283–1542: possession of the English Crown"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1542,
+              "source": {
+                "sourceKey": "wp-principality-of-wales",
+                "sourceLocation": "infobox life span: 1283–1542: possession of the English Crown"
+              }
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "united-kingdom",
+          "start": 1283,
+          "end": 1542,
+          "startDates": [
+            {
+              "year": 1283,
+              "source": {
+                "sourceKey": "wp-principality-of-wales",
+                "sourceLocation": "infobox life span: 1283–1542: possession of the English Crown"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1542,
+              "source": {
+                "sourceKey": "wp-principality-of-wales",
+                "sourceLocation": "infobox life span: 1283–1542: possession of the English Crown"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-principality-of-wales",
+              "sourceLocation": "infobox life span: 1283–1542: possession of the English Crown"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ireland",
       "name": "Ireland",
       "color": "#2f8f4f",
@@ -3998,6 +4061,36 @@
         }
       ],
       "memberOf": [
+        {
+          "row": "polish-lithuanian-union",
+          "start": 1386,
+          "end": 1569,
+          "startDates": [
+            {
+              "year": 1386,
+              "source": {
+                "sourceKey": "wp-lithuania",
+                "sourceLocation": "infobox: Union with Poland (2 February 1386)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1569,
+              "source": {
+                "sourceKey": "wp-grand-duchy-of-lithuania",
+                "sourceLocation": "infobox event3: Union of Lublin, 1 July 1569"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-lithuania",
+              "sourceLocation": "infobox established_event4: Union with Poland, 1386"
+            }
+          ],
+          "endEvent": "union-of-lublin"
+        },
         {
           "row": "polish-lithuanian-commonwealth",
           "start": 1569,
@@ -5645,6 +5738,128 @@
             {
               "sourceKey": "wp-crown-of-aragon",
               "sourceLocation": "infobox event_start: Aragon–Barcelona Union, 1162"
+            }
+          ],
+          "endEvent": "war-of-the-spanish-succession"
+        }
+      ]
+    },
+    {
+      "id": "catalonia",
+      "name": "Principality of Catalonia",
+      "color": "#d0b030",
+      "parent": "southern-europe",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Catalonia",
+      "span": {
+        "start": 1173,
+        "end": 1714,
+        "startDates": [
+          {
+            "year": 1173,
+            "source": {
+              "sourceKey": "wp-principality-of-catalonia",
+              "sourceLocation": "infobox year_start: 1173"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1714,
+            "source": {
+              "sourceKey": "wp-principality-of-catalonia",
+              "sourceLocation": "infobox year_end: 1714"
+            }
+          }
+        ]
+      },
+      "memberOf": [
+        {
+          "row": "crown-of-aragon",
+          "start": 1173,
+          "end": 1707,
+          "startDates": [
+            {
+              "year": 1173,
+              "source": {
+                "sourceKey": "wp-principality-of-catalonia",
+                "sourceLocation": "infobox year_start: 1173"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1707,
+              "source": {
+                "sourceKey": "wp-crown-of-aragon",
+                "sourceLocation": "infobox year_end: 1707/1715"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-principality-of-catalonia",
+              "sourceLocation": "lead: \"In 1137, the County of Barcelona and the Kingdom of Aragon formed a dynastic union, later known as the Crown of Aragon; however, Aragon and Catalonia retained t\""
+            }
+          ],
+          "endEvent": "war-of-the-spanish-succession"
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-valencia",
+      "name": "Kingdom of Valencia",
+      "color": "#c08040",
+      "parent": "southern-europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Valencia",
+      "span": {
+        "start": 1238,
+        "end": 1707,
+        "startDates": [
+          {
+            "year": 1238,
+            "source": {
+              "sourceKey": "wp-kingdom-of-valencia",
+              "sourceLocation": "infobox year_start: 1238"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1707,
+            "source": {
+              "sourceKey": "wp-kingdom-of-valencia",
+              "sourceLocation": "infobox year_end: 1707"
+            }
+          }
+        ]
+      },
+      "memberOf": [
+        {
+          "row": "crown-of-aragon",
+          "start": 1238,
+          "end": 1707,
+          "startDates": [
+            {
+              "year": 1238,
+              "source": {
+                "sourceKey": "wp-kingdom-of-valencia",
+                "sourceLocation": "infobox year_start: 1238"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1707,
+              "source": {
+                "sourceKey": "wp-crown-of-aragon",
+                "sourceLocation": "infobox year_end: 1707/1715"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-valencia",
+              "sourceLocation": "lead: \"It was dissolved, alongside the other components of the old crown of Aragon, by Philip V of Spain in 1707, by means of the Nueva Planta decrees, as a result of \""
             }
           ],
           "endEvent": "war-of-the-spanish-succession"
@@ -8028,6 +8243,36 @@
       }
     },
     {
+      "id": "polish-lithuanian-union",
+      "name": "Polish–Lithuanian union",
+      "color": "#a05060",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/Polish–Lithuanian_union",
+      "span": {
+        "start": 1385,
+        "end": 1569,
+        "startDates": [
+          {
+            "year": 1385,
+            "source": {
+              "sourceKey": "wp-grand-duchy-of-lithuania",
+              "sourceLocation": "infobox event2: Union of Krewo, 14 August 1385"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1569,
+            "source": {
+              "sourceKey": "wp-grand-duchy-of-lithuania",
+              "sourceLocation": "infobox event3: Union of Lublin, 1 July 1569"
+            }
+          }
+        ],
+        "endEvent": "union-of-lublin"
+      }
+    },
+    {
       "id": "polish-lithuanian-commonwealth",
       "name": "Polish–Lithuanian Commonwealth",
       "color": "#a03050",
@@ -8276,6 +8521,36 @@
         }
       ],
       "memberOf": [
+        {
+          "row": "polish-lithuanian-union",
+          "start": 1385,
+          "end": 1569,
+          "startDates": [
+            {
+              "year": 1385,
+              "source": {
+                "sourceKey": "wp-grand-duchy-of-lithuania",
+                "sourceLocation": "infobox event2: Union of Krewo, 14 August 1385"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1569,
+              "source": {
+                "sourceKey": "wp-grand-duchy-of-lithuania",
+                "sourceLocation": "infobox event3: Union of Lublin, 1 July 1569"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-polish-lithuanian-commonwealth",
+              "sourceLocation": "lead: \"The two nations had previously been in a personal union since the Krewo Agreement of 1385 (Polish–Lithuanian union) and the subsequent marriage of Queen Jadwiga\""
+            }
+          ],
+          "endEvent": "union-of-lublin"
+        },
         {
           "row": "polish-lithuanian-commonwealth",
           "start": 1569,
@@ -10560,6 +10835,14 @@
         "wikipedia"
       ]
     },
+    "wp-principality-of-wales": {
+      "name": "Principality of Wales (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Wales",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-lordship-of-ireland": {
       "name": "Lordship of Ireland (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Lordship_of_Ireland",
@@ -11043,6 +11326,22 @@
     "wp-kingdom-of-aragon": {
       "name": "Kingdom of Aragon (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aragon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-principality-of-catalonia": {
+      "name": "Principality of Catalonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Catalonia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-valencia": {
+      "name": "Kingdom of Valencia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Valencia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -13234,6 +13533,7 @@
       "start": 1569,
       "tracks": [
         "polish-lithuanian-commonwealth",
+        "polish-lithuanian-union",
         "poland",
         "lithuania"
       ],
