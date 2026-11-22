@@ -180,10 +180,10 @@ def tables_and_lists(text):
 
 def short_title(text):
     """A row's lead phrase, for a title (and the classifier, which reads titles best): up to the first full stop,
-    semicolon or dash after 25 characters; else the whole words within 90. Commas don't end it: "Republican officer
+    semicolon or dash after 25 characters; else the whole words within 140 (90 cut many rows before their verb). Commas don't end it: "Republican officer
     Tom Barry, who had escaped, was recaptured" would lose its verb."""
-    m = re.search(r'^(.{25,90}?)(?:\. |; | – | — )', text)
-    t = m.group(1) if m else (text if len(text) <= 90 else text[:90].rsplit(' ', 1)[0])
+    m = re.search(r'^(.{25,140}?)(?:\. |; | – | — )', text)
+    t = m.group(1) if m else (text if len(text) <= 140 else text[:140].rsplit(' ', 1)[0])
     return t.rstrip(' .,;:')
 
 
