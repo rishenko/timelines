@@ -7,6 +7,9 @@ export interface ClaimValues {
   year: number;
   era: EraSide;
   margin: string;
+  /** Month (1–12) and day as typed, or '' (only shown where the timeline is dated in months and days). */
+  month?: string;
+  day?: string;
   chronology: string;
   sourceKey: string;
   sourceLocation: string;
@@ -25,6 +28,8 @@ export const toClaimValues = (c: DateClaim, cal: Calendar): ClaimValues => {
     year: d.year,
     era: d.era,
     margin: c.margin === undefined ? '' : String(c.margin),
+    month: c.month ? String(c.month) : '',
+    day: c.day ? String(c.day) : '',
     chronology: c.chronology ?? '',
     sourceKey: c.source?.sourceKey ?? '',
     sourceLocation: c.source?.sourceLocation ?? '',
@@ -36,6 +41,8 @@ export const fromClaimValues = (v: ClaimValues, cal: Calendar): DateClaim | null
   if (!Number.isFinite(Number(v.year))) return null;
   const c: DateClaim = { year: toStored(Number(v.year), v.era, cal) };
   if (v.margin.trim() !== '' && Number(v.margin) >= 0) c.margin = Number(v.margin);
+  if (Number(v.month) >= 1) c.month = Number(v.month);
+  if (c.month && Number(v.day) >= 1) c.day = Number(v.day);
   if (v.chronology) c.chronology = v.chronology;
   if (v.sourceKey) c.source = { sourceKey: v.sourceKey, sourceLocation: v.sourceLocation };
   if (v.note.trim()) c.note = v.note.trim();

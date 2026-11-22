@@ -272,3 +272,6 @@ export const certainFrom = (o: Drawn) => (o.startDays ? o.startDays.solid : o.st
 
 /** Where its end is certain up to (the earliest end), if they leave it uncertain. */
 export const certainTo = (o: Drawn) => (o.endDays ? o.endDays.solid : o.endWindow ? o.endWindow[0] + 1 : undefined);
+
+/** Whether a timeline is dated in months and days: it offers a zoom step below a year. Its editor then asks for them. */
+export const hasDayZoom = (increments: (number | string)[]) => increments.some((i) => incrementYears(i) < 1);
