@@ -8,7 +8,7 @@ import type { Dataset } from '../types.ts';
  */
 export function plainTimeline(): Dataset {
   return {
-    schemaVersion: 6,
+    schemaVersion: 7,
     meta: {
       id: 'harbor-towns',
       title: 'The Harbor Towns',

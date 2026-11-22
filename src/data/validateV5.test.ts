@@ -41,6 +41,9 @@ describe('schema version 5 rules', () => {
     // eras
     ['era id', (d) => (d.meta.eras![1].id = 'age-of-piers'), /Duplicate era id "age-of-piers"/],
     ['era without a source', (d) => (d.meta.eras![0].sources = []), /Era "The Age of Piers" cites no source/],
+    ['era in an unknown row', (d) => (d.meta.eras![0].tracks = ['nowhere']), /Era "The Age of Piers" names unknown row "nowhere"/],
+    ['era naming a row twice', (d) => (d.meta.eras![0].tracks = ['quay', 'quay']), /Era "The Age of Piers" names a row twice/],
+    ['era with no rows listed', (d) => (d.meta.eras![0].tracks = []), /Era "The Age of Piers" tracks must be a non-empty list/],
     ['eras overlapping in a group', (d) => Object.assign(d.meta.eras![1], { start: 40, startDates: undefined }), /Eras "The Age of Piers" and "The Age of Leagues" overlap/],
     ['era outside the range', (d) => Object.assign(d.meta.eras![0], { start: -400, end: -300, startMonth: undefined, startDay: undefined, endMonth: undefined, endDay: undefined, startDates: undefined, endDates: undefined, startEvent: undefined, endEvent: undefined }), /Era "The Age of Piers" lies outside meta.range/],
     ['era span rules', (d) => Object.assign(d.meta.eras![1], { end: 200 }), /Era "The Age of Leagues" has both an end and ongoing/],

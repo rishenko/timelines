@@ -85,6 +85,11 @@ export interface Era extends TrackSpan {
   url?: string;
   /** The age's identifiers in other datasets (as a row's). */
   ids?: TrackIds;
+  /**
+   * The rows the age belongs to, usually region groups (e.g. ["africa"]): it is drawn in each of their bands. Left
+   * out, the age spans the whole timeline and sits in the strip under the ruler.
+   */
+  tracks?: string[];
   sources: SourceRef[];
 }
 
@@ -347,7 +352,7 @@ export interface TimelineEvent extends DateDays {
 
 export interface Dataset {
   /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 6;
+  schemaVersion: 7;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest
