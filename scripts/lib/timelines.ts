@@ -22,6 +22,11 @@ export interface SourceTimeline {
    * pipelines/ancient/categories.py from the shared classifier and reviewed overrides.
    */
   categories?: string;
+  /**
+   * Golden ages and eras plan: meta.eras and golden-age events (scripts/lib/periods.ts), written by
+   * pipelines/ancient/periods.py from pipelines/common/periods.json. Applied first, so the other plans can name its events.
+   */
+  periods?: string;
   /** Generated review list of key and minor events; written only for a timeline with an importance plan. */
   keyEvents?: string;
   /**
@@ -47,6 +52,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     rowLinks: 'data-src/ancient-classical-row-links.json',
     memberships: 'data-src/ancient-classical-memberships.json',
     categories: 'data-src/ancient-classical-categories.json',
+    periods: 'data-src/ancient-classical-periods.json',
     keyEvents: 'docs/ancient-classical-key-events.md',
     scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign', 'derived-lifespans']),
   },

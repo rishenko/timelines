@@ -27,6 +27,7 @@ import { timelineIndexText } from './lib/timeline-index.ts';
 import { applyRowLinks } from './lib/row-links.ts';
 import { applyMemberships } from './lib/memberships.ts';
 import { applyCategories } from './lib/categories.ts';
+import { applyPeriods } from './lib/periods.ts';
 import { idsCommand } from './lib/ids-check.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
@@ -49,16 +50,17 @@ function index() {
 }
 
 /**
- * Applies the timeline's plans to the source file (in place): importance, row links, memberships, then event categories. Returns the importance
+ * Applies the timeline's plans to the source file (in place): golden ages and eras, importance, row links, memberships, then event categories. Returns the importance
  * counts. A timeline without plans is left alone.
  */
 function applyPlan(t: SourceTimeline) {
   const d = readSource(t.source);
+  if (t.periods) applyPeriods(d, JSON.parse(readFileSync(t.periods, 'utf8')));
   if (t.importance) applyImportancePlan(d.events, JSON.parse(readFileSync(t.importance, 'utf8')));
   if (t.rowLinks) applyRowLinks(d.tracks, JSON.parse(readFileSync(t.rowLinks, 'utf8')));
   if (t.memberships) applyMemberships(d, JSON.parse(readFileSync(t.memberships, 'utf8')));
   if (t.categories) applyCategories(d, JSON.parse(readFileSync(t.categories, 'utf8')));
-  if (t.importance || t.rowLinks || t.memberships || t.categories) writeSource(t.source, d);
+  if (t.periods || t.importance || t.rowLinks || t.memberships || t.categories) writeSource(t.source, d);
   return importanceCounts(d.events);
 }
 

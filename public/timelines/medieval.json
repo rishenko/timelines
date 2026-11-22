@@ -722,6 +722,217 @@
         "at": 1500,
         "side": "after"
       }
+    ],
+    "eras": [
+      {
+        "id": "islamic-golden-age",
+        "name": "Islamic Golden Age",
+        "group": "islamic-world",
+        "start": 786,
+        "end": 1258,
+        "startDates": [
+          {
+            "year": 786,
+            "source": {
+              "sourceKey": "wp-islamic-golden-age",
+              "sourceLocation": "lead: \"The period is understood to have begun during the reign of the Abbasid caliph Harun al-Rashid (786–809), with the establishment of the House of Wisdom in Baghda\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1258,
+            "source": {
+              "sourceKey": "wp-islamic-golden-age",
+              "sourceLocation": "lead: \"The period is said to have ended with the collapse of the Abbasid caliphate following the Mongol invasions and the Siege of Baghdad in 1258.\""
+            }
+          },
+          {
+            "year": 1350,
+            "source": {
+              "sourceKey": "wp-islamic-golden-age",
+              "sourceLocation": "lead: \"Select scholars extend the end of the golden age to around 1350, thereby including the Timurid Renaissance.\""
+            },
+            "note": "Some scholars extend it to around 1350."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-islamic-golden-age",
+            "sourceLocation": "lead: \"The period is understood to have begun during the reign of the Abbasid caliph Harun al-Rashid (786–809), with the establishment of the House of Wisdom in Baghda\""
+          },
+          {
+            "sourceKey": "wp-islamic-golden-age",
+            "sourceLocation": "lead: \"The period is said to have ended with the collapse of the Abbasid caliphate following the Mongol invasions and the Siege of Baghdad in 1258.\""
+          }
+        ]
+      },
+      {
+        "id": "pax-mongolica",
+        "name": "Pax Mongolica",
+        "group": "steppe-persianate",
+        "start": 1250,
+        "end": 1350,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1250,
+            "source": {
+              "sourceKey": "wp-pax-mongolica",
+              "sourceLocation": "lead: \"The Pax Mongolica (Latin for ), less often known as Pax Tatarica (), is a historiographical term modeled after the original phrase Pax Romana which describes th\""
+            },
+            "margin": 50,
+            "note": "The 13th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1350,
+            "source": {
+              "sourceKey": "wp-pax-mongolica",
+              "sourceLocation": "lead: \"The Pax Mongolica (Latin for ), less often known as Pax Tatarica (), is a historiographical term modeled after the original phrase Pax Romana which describes th\""
+            },
+            "margin": 50,
+            "note": "The 14th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-pax-mongolica",
+            "sourceLocation": "lead: \"The Pax Mongolica (Latin for ), less often known as Pax Tatarica (), is a historiographical term modeled after the original phrase Pax Romana which describes th\""
+          }
+        ]
+      },
+      {
+        "id": "timurid-renaissance",
+        "name": "Timurid Renaissance",
+        "group": "steppe-persianate",
+        "start": 1375,
+        "end": 1525,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1375,
+            "source": {
+              "sourceKey": "wp-timurid-renaissance",
+              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+            },
+            "margin": 25,
+            "note": "The late 14th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1525,
+            "source": {
+              "sourceKey": "wp-timurid-renaissance",
+              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+            },
+            "margin": 25,
+            "note": "The early 16th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-timurid-renaissance",
+            "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+          }
+        ]
+      },
+      {
+        "id": "renaissance",
+        "name": "Renaissance",
+        "group": "europe-thought",
+        "start": 1400,
+        "end": 1600,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1400,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "From the 15th century."
+          },
+          {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "More broadly, from the 14th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1600,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "To the end of the 16th century."
+          },
+          {
+            "year": 1700,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "More broadly, to the 17th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-renaissance",
+            "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+          }
+        ]
+      },
+      {
+        "id": "age-of-discovery",
+        "name": "Age of Discovery",
+        "group": "europe-expansion",
+        "start": 1415,
+        "end": 1650,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1415,
+            "source": {
+              "sourceKey": "wp-age-of-discovery",
+              "sourceLocation": "infobox start: Early 15th century"
+            },
+            "margin": 25,
+            "note": "The early 15th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1650,
+            "source": {
+              "sourceKey": "wp-age-of-discovery",
+              "sourceLocation": "infobox end: Mid-17th century"
+            },
+            "margin": 25,
+            "note": "The mid-17th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-age-of-discovery",
+            "sourceLocation": "infobox start: Early 15th century"
+          },
+          {
+            "sourceKey": "wp-age-of-discovery",
+            "sourceLocation": "infobox end: Mid-17th century"
+          }
+        ]
+      }
     ]
   },
   "present": 2026,
@@ -22662,6 +22873,62 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-islamic-golden-age": {
+      "name": "Islamic Golden Age (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Islamic_Golden_Age",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pax-mongolica": {
+      "name": "Pax Mongolica (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pax_Mongolica",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-timurid-renaissance": {
+      "name": "Timurid Renaissance (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timurid_Renaissance",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-renaissance": {
+      "name": "Renaissance (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Renaissance",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-age-of-discovery": {
+      "name": "Age of Discovery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Age_of_Discovery",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-carolingian-renaissance": {
+      "name": "Carolingian Renaissance (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Carolingian_Renaissance",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-macedonian-renaissance": {
+      "name": "Macedonian Renaissance (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Macedonian_Renaissance",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -31849,6 +32116,19 @@
           "sourceKey": "wp-kingdom-of-georgia",
           "sourceLocation": "section \"History > Golden age\": \"The unified monarchy maintained its precarious independence from the Byzantine and Seljuk empires throughout the 11th century, and flourished under David IV the\""
         }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-georgia",
+              "sourceLocation": "infobox event1: Georgian Golden Age, 1122–1226"
+            }
+          ]
+        }
       ]
     },
     {
@@ -37621,6 +37901,19 @@
           "sourceKey": "wp-pagan-kingdom",
           "sourceLocation": "section \"History > Pagan Empire > Zenith\": \"Pagan reached the height of political and administrative development during the reigns of Narapatisithu (Sithu II; r. 1174–1211) and Htilominlo (r. 1211–1235).\""
         }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-pagan-kingdom",
+              "sourceLocation": "infobox event3: Peak, 1174–1250"
+            }
+          ]
+        }
       ]
     },
     {
@@ -37864,6 +38157,19 @@
         {
           "sourceKey": "wp-hanthawaddy-kingdom",
           "sourceLocation": "infobox event3: Golden Age, 1426–1534"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-hanthawaddy-kingdom",
+              "sourceLocation": "infobox event3: Golden Age, 1426–1534"
+            }
+          ]
         }
       ]
     },
@@ -41143,7 +41449,7 @@
       "uuid": "cahokia-at-its-peak",
       "title": "Cahokia at its peak",
       "descr": "Cahokia reaches its peak, with a population of at least 22,400.",
-      "start": 1124,
+      "start": 1100,
       "circa": true,
       "tracks": [
         "mississippian-culture"
@@ -41152,6 +41458,50 @@
         {
           "sourceKey": "wp-mississippian-period-archaeology",
           "sourceLocation": "lead: \"Founded in 1050, the city of Cahokia likely had a population of at least 22,400 at its peak around 1124.\""
+        },
+        {
+          "sourceKey": "wp-cahokia",
+          "sourceLocation": "section \"History > Rise and peak (11th and 12th centuries)\": \"It was during the Stirling phase (1100–1200 CE) that Cahokia was at its height of political centralization.\""
+        }
+      ],
+      "importance": 1,
+      "end": 1200,
+      "startDates": [
+        {
+          "year": 1100,
+          "source": {
+            "sourceKey": "wp-cahokia",
+            "sourceLocation": "section \"History > Rise and peak (11th and 12th centuries)\": \"It was during the Stirling phase (1100–1200 CE) that Cahokia was at its height of political centralization.\""
+          }
+        },
+        {
+          "year": 1124,
+          "source": {
+            "sourceKey": "wp-mississippian-period-archaeology",
+            "sourceLocation": "lead: \"Founded in 1050, the city of Cahokia likely had a population of at least 22,400 at its peak around 1124.\""
+          },
+          "note": "The Mississippian culture article gives the peak as around 1124."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1200,
+          "source": {
+            "sourceKey": "wp-cahokia",
+            "sourceLocation": "section \"History > Rise and peak (11th and 12th centuries)\": \"It was during the Stirling phase (1100–1200 CE) that Cahokia was at its height of political centralization.\""
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-mississippian-period-archaeology",
+              "sourceLocation": "lead: \"Founded in 1050, the city of Cahokia likely had a population of at least 22,400 at its peak around 1124.\""
+            }
+          ]
         }
       ]
     },
@@ -41910,6 +42260,105 @@
             {
               "sourceKey": "wp-maravi",
               "sourceLocation": "infobox event3: Undi and Nyangu settle in Tete Province, post-1450"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "carolingian-renaissance",
+      "title": "Carolingian Renaissance",
+      "descr": "",
+      "start": 750,
+      "end": 900,
+      "circa": true,
+      "tracks": [
+        "carolingian-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-carolingian-renaissance",
+          "sourceLocation": "lead: \"Charlemagne's reign led to an intellectual revival beginning in the 8th century and continuing throughout the 9th century, taking inspiration from ancient Roman\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 750,
+          "source": {
+            "sourceKey": "wp-carolingian-renaissance",
+            "sourceLocation": "lead: \"Charlemagne's reign led to an intellectual revival beginning in the 8th century and continuing throughout the 9th century, taking inspiration from ancient Roman\""
+          },
+          "margin": 50,
+          "note": "The 8th century."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 900,
+          "source": {
+            "sourceKey": "wp-carolingian-renaissance",
+            "sourceLocation": "lead: \"Charlemagne's reign led to an intellectual revival beginning in the 8th century and continuing throughout the 9th century, taking inspiration from ancient Roman\""
+          },
+          "margin": 50,
+          "note": "\"Continuing throughout the 9th century\"."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-carolingian-renaissance",
+              "sourceLocation": "lead: \"Charlemagne's reign led to an intellectual revival beginning in the 8th century and continuing throughout the 9th century, taking inspiration from ancient Roman\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "macedonian-renaissance",
+      "title": "Macedonian Renaissance",
+      "descr": "",
+      "start": 867,
+      "end": 1056,
+      "tracks": [
+        "eastern-roman"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-macedonian-renaissance",
+          "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 867,
+          "source": {
+            "sourceKey": "wp-macedonian-renaissance",
+            "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1056,
+          "source": {
+            "sourceKey": "wp-macedonian-renaissance",
+            "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
+          }
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-macedonian-renaissance",
+              "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
             }
           ]
         }

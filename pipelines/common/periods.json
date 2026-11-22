@@ -1,0 +1,78 @@
+{
+ "_note": "Golden ages and eras (Kevin, 2026-11-22: golden ages within one state are key span events in society/golden-age; ages across states are timeline-wide eras). Hand-kept input, read by pipelines/common/periods.py: every date is a claim that names its article and where it says so (a sentence with `find`, an infobox parameter with `infobox`, or the short description with `short`), checked against the dump. A claim read from centuries carries a margin. Years after 0 CE are integers; earlier ones are written as Ancient's source writes them (\"27 BCE\"). Ages' categories come from each timeline's category overrides; Ancient's key events from its importance plan.",
+ "eras": [
+  {"id": "axial-age", "name": "Axial Age", "group": "world", "timelines": ["ancient-classical"],
+   "start": [{"year": "750 BCE", "article": "Axial Age", "find": "8th to the 3rd century BCE", "margin": 50, "note": "From \"about the 8th\" century BCE."}],
+   "end": [{"year": "250 BCE", "article": "Axial Age", "find": "8th to the 3rd century BCE", "margin": 50, "note": "To the 3rd century BCE."}]},
+  {"id": "pax-romana", "name": "Pax Romana", "group": "roman-world", "timelines": ["ancient-classical"],
+   "start": [{"year": "27 BCE", "article": "Pax Romana", "find": "in 27 BC"}],
+   "end": [{"year": 180, "article": "Pax Romana", "find": "180 AD"}]},
+  {"id": "islamic-golden-age", "name": "Islamic Golden Age", "group": "islamic-world", "timelines": ["medieval"],
+   "start": [{"year": 786, "article": "Islamic Golden Age", "find": "Harun al-Rashid (786–809)"}],
+   "end": [{"year": 1258, "article": "Islamic Golden Age", "find": "Siege of Baghdad in 1258"},
+           {"year": 1350, "article": "Islamic Golden Age", "find": "to around 1350", "note": "Some scholars extend it to around 1350."}]},
+  {"id": "pax-mongolica", "name": "Pax Mongolica", "group": "steppe-persianate", "timelines": ["medieval"],
+   "start": [{"year": 1250, "article": "Pax Mongolica", "find": "13th and 14th centuries", "margin": 50, "note": "The 13th century."}],
+   "end": [{"year": 1350, "article": "Pax Mongolica", "find": "13th and 14th centuries", "margin": 50, "note": "The 14th century."}]},
+  {"id": "timurid-renaissance", "name": "Timurid Renaissance", "group": "steppe-persianate", "timelines": ["medieval", "modern-states"],
+   "start": [{"year": 1375, "article": "Timurid Renaissance", "find": "late 14th to the early 16th", "margin": 25, "note": "The late 14th century."}],
+   "end": [{"year": 1525, "article": "Timurid Renaissance", "find": "late 14th to the early 16th", "margin": 25, "note": "The early 16th century."}]},
+  {"id": "renaissance", "name": "Renaissance", "group": "europe-thought", "timelines": ["medieval", "modern-states"],
+   "start": [{"year": 1400, "article": "Renaissance", "find": "15th and 16th centuries", "margin": 50, "note": "From the 15th century."},
+             {"year": 1300, "article": "Renaissance", "find": "15th and 16th centuries", "margin": 50, "note": "More broadly, from the 14th century."}],
+   "end": [{"year": 1600, "article": "Renaissance", "find": "15th and 16th centuries", "margin": 50, "note": "To the end of the 16th century."},
+           {"year": 1700, "article": "Renaissance", "find": "15th and 16th centuries", "margin": 50, "note": "More broadly, to the 17th century."}]},
+  {"id": "age-of-discovery", "name": "Age of Discovery", "group": "europe-expansion", "timelines": ["medieval", "modern-states"],
+   "start": [{"year": 1415, "article": "Age of Discovery", "infobox": "start", "margin": 25, "note": "The early 15th century."}],
+   "end": [{"year": 1650, "article": "Age of Discovery", "infobox": "end", "margin": 25, "note": "The mid-17th century."}]},
+  {"id": "scientific-revolution", "name": "Scientific Revolution", "group": "europe-science", "timelines": ["modern-states"],
+   "start": [{"year": 1543, "article": "Scientific Revolution", "find": "begun in 1543"},
+             {"year": 1572, "article": "Scientific Revolution", "infobox": "start", "note": "The infobox gives 1543 or 1572."}],
+   "end": [{"year": 1687, "article": "Scientific Revolution", "find": "in 1687 by Isaac Newton"}]},
+  {"id": "age-of-enlightenment", "name": "Enlightenment", "group": "europe-thought", "timelines": ["modern-states"],
+   "start": [{"year": 1687, "article": "Age of Enlightenment", "infobox": "start"},
+             {"year": 1637, "article": "Age of Enlightenment", "find": "in 1637", "note": "Descartes' Discourse on the Method."},
+             {"year": 1715, "article": "Age of Enlightenment", "find": "death of Louis XIV of France in 1715", "note": "The traditional start."}],
+   "end": [{"year": 1789, "article": "Age of Enlightenment", "infobox": "end"},
+           {"year": 1804, "article": "Age of Enlightenment", "find": "death of Immanuel Kant in 1804", "note": "The latest proposed end."}]},
+  {"id": "industrial-revolution", "name": "Industrial Revolution", "group": "europe-science", "timelines": ["modern-states"], "circa": true,
+   "start": [{"year": 1760, "article": "Industrial Revolution", "find": "around 1760"}],
+   "end": [{"year": 1840, "article": "Industrial Revolution", "find": "by about 1840"}]},
+  {"id": "belle-epoque", "name": "Belle Époque", "group": "europe-thought", "timelines": ["modern-states"],
+   "start": [{"year": 1871, "article": "Belle Époque", "infobox": "start"}],
+   "end": [{"year": 1914, "article": "Belle Époque", "infobox": "end"}]}
+ ],
+ "ages": [
+  {"uuid": "golden-age-of-athens", "title": "Golden Age of Athens", "timeline": "ancient-classical", "tracks": ["greece"],
+   "start": [{"year": "478 BCE", "article": "Athens in the 5th century BC", "find": "478 BC"}],
+   "end": [{"year": "404 BCE", "article": "Athens in the 5th century BC", "short": true},
+           {"year": "404 BCE", "article": "Peloponnesian War", "infobox": "date", "note": "Athens' defeat in the Peloponnesian War ends the age."}]},
+  {"uuid": "carolingian-renaissance", "title": "Carolingian Renaissance", "timeline": "medieval", "tracks": ["carolingian-empire"],
+   "start": [{"year": 750, "article": "Carolingian Renaissance", "find": "beginning in the 8th century", "margin": 50, "note": "The 8th century."}],
+   "end": [{"year": 900, "article": "Carolingian Renaissance", "find": "beginning in the 8th century", "margin": 50, "note": "\"Continuing throughout the 9th century\"."}]},
+  {"uuid": "macedonian-renaissance", "title": "Macedonian Renaissance", "timeline": "medieval", "tracks": ["eastern-roman"],
+   "start": [{"year": 867, "article": "Macedonian Renaissance", "find": "(867–1056)"}],
+   "end": [{"year": 1056, "article": "Macedonian Renaissance", "find": "(867–1056)"}]},
+  {"uuid": "polish-golden-age", "title": "Polish Golden Age", "timeline": "modern-states", "tracks": ["poland", "polish-lithuanian-commonwealth"],
+   "start": [{"year": 1475, "article": "Polish Golden Age", "find": "late 15th century", "margin": 25, "note": "The late 15th century."}],
+   "end": [{"year": 1650, "article": "Polish Golden Age", "find": "mid-17th century", "margin": 10, "note": "\"By the mid-17th century\": the Khmelnytsky Uprising (1648–57) and the Deluge."}]},
+  {"uuid": "elizabethan-era", "title": "Elizabethan era", "timeline": "modern-states", "tracks": ["united-kingdom"],
+   "start": [{"year": 1558, "article": "Elizabethan era", "infobox": "start"}],
+   "end": [{"year": 1603, "article": "Elizabethan era", "infobox": "end"}]},
+  {"uuid": "dutch-golden-age", "title": "Dutch Golden Age", "timeline": "modern-states", "tracks": ["netherlands"],
+   "start": [{"year": 1588, "article": "Dutch Golden Age", "find": "from 1588"}],
+   "end": [{"year": 1672, "article": "Dutch Golden Age", "find": "from 1588"}]}
+ ],
+ "key": {
+  "medieval": ["georgian-golden-age", "golden-age", "peak", "cahokia-at-its-peak"]
+ },
+ "redate": {
+  "medieval": {
+   "cahokia-at-its-peak": {
+    "start": [{"year": 1100, "article": "Cahokia", "find": "Stirling phase (1100–1200 CE)"},
+              {"year": 1124, "article": "Mississippian culture", "find": "at its peak around 1124", "note": "The Mississippian culture article gives the peak as around 1124."}],
+    "end": [{"year": 1200, "article": "Cahokia", "find": "Stirling phase (1100–1200 CE)"}]
+   }
+  }
+ }
+}

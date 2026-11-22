@@ -237,7 +237,80 @@
           "find": { "name": "Find or earliest record", "broader": ["archaeology"] }
         }
       }
-    }
+    },
+    "eras": [
+      {
+        "id": "axial-age",
+        "name": "Axial Age",
+        "group": "world",
+        "start": "750 BCE",
+        "end": "250 BCE",
+        "circa": true,
+        "startDates": [
+          {
+            "year": "750 BCE",
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "From \"about the 8th\" century BCE."
+          }
+        ],
+        "endDates": [
+          {
+            "year": "250 BCE",
+            "source": {
+              "sourceKey": "wp-axial-age",
+              "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+            },
+            "margin": 50,
+            "note": "To the 3rd century BCE."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-axial-age",
+            "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
+          }
+        ]
+      },
+      {
+        "id": "pax-romana",
+        "name": "Pax Romana",
+        "group": "roman-world",
+        "start": "27 BCE",
+        "end": 180,
+        "startDates": [
+          {
+            "year": "27 BCE",
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 180,
+            "source": {
+              "sourceKey": "wp-pax-romana",
+              "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Traditionally, the onset is understood to be the ascent of Augustus, who also founded the Roman principate, in 27 BC.\""
+          },
+          {
+            "sourceKey": "wp-pax-romana",
+            "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
+          }
+        ]
+      }
+    ]
   },
   "tracks": [
     { "id": "africa", "name": "Africa", "color": "#b8862a", "url": "https://en.wikipedia.org/wiki/Africa", "ids": { "wikidata": "Q15" } },
@@ -10834,10 +10907,10 @@
       "accessed": "2026-11-17"
     },
     "wp-peloponnesian-war": {
-      "name": "Wikipedia: Peloponnesian War",
+      "name": "Peloponnesian War (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Peloponnesian_War",
-      "tags": ["wikipedia"],
-      "accessed": "2026-11-17"
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
     },
     "wp-philip-ii": {
       "name": "Wikipedia: Philip II of Macedon",
@@ -12761,7 +12834,15 @@
       "accessed": "2026-11-20"
     },
     "wp-row-mound-builders": { "name": "Wikipedia: Mound Builders", "url": "https://en.wikipedia.org/wiki/Mound_Builders", "tags": ["wikipedia"], "accessed": "2026-11-20" },
-    "wp-row-mokaya": { "name": "Wikipedia: Mokaya", "url": "https://en.wikipedia.org/wiki/Mokaya", "tags": ["wikipedia"], "accessed": "2026-11-20" }
+    "wp-row-mokaya": { "name": "Wikipedia: Mokaya", "url": "https://en.wikipedia.org/wiki/Mokaya", "tags": ["wikipedia"], "accessed": "2026-11-20" },
+    "wp-athens-in-the-5th-century-bc": {
+      "name": "Athens in the 5th century BC (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athens_in_the_5th_century_BC",
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
+    },
+    "wp-axial-age": { "name": "Axial Age (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Axial_Age", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-pax-romana": { "name": "Pax Romana (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Pax_Romana", "accessed": "2026-11-21", "tags": ["wikipedia"] }
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" } },
   "chronologies": {
@@ -14909,7 +14990,9 @@
       "end": "936 BCE",
       "tracks": ["phoenicia"],
       "descr": "Tyre becomes the dominant city-state under Hiram I.",
-      "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "infobox" }]
+      "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "infobox" }],
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "golden-age", "sources": [{ "sourceKey": "wp-phoenicia", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "carthage-founded",
@@ -15180,7 +15263,8 @@
       "tracks": ["dilmun"],
       "descr": "A trading centre in the Persian Gulf (encompassing Bahrain), on a trade route between Mesopotamia and the Indus, prosperous in the first centuries of the 2nd millennium BCE, then declining from around 1720.",
       "sources": [{ "sourceKey": "wp-dilmun", "sourceLocation": "History" }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "golden-age", "sources": [{ "sourceKey": "wp-dilmun", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "dilmun-last",
@@ -16327,7 +16411,13 @@
       "descr": "The era of the talayots on Menorca and Mallorca. Decline sets in between 600 and 500 BCE, with the onset of Punic influence.",
       "sources": [{ "sourceKey": "wp-talaiotic", "sourceLocation": "Funerary spaces ('maximum splendor … from 850-800 BCE to 500 BCE') and The Talayot" }],
       "startDates": [{ "year": "825 BCE", "margin": 25, "source": { "sourceKey": "wp-talaiotic", "sourceLocation": "Funerary spaces" } }],
+      "importance": 1,
       "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [{ "sourceKey": "wp-talaiotic", "sourceLocation": "Funerary spaces ('maximum splendor … from 850-800 BCE to 500 BCE') and The Talayot" }]
+        },
         {
           "facet": "category",
           "value": "horizon",
@@ -16782,6 +16872,14 @@
       "startDates": [
         { "year": "1750 BCE", "source": { "sourceKey": "wp-kerma", "sourceLocation": "Site and periodisation" } },
         { "year": "1700 BCE", "source": { "sourceKey": "wp-kerma", "sourceLocation": "lead ('latest phase, lasting from about 1700 to 1500 BC')" } }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [{ "sourceKey": "wp-kerma", "sourceLocation": "lead, Site and periodisation and Classic Kerma" }]
+        }
       ]
     },
     {
@@ -18010,7 +18108,14 @@
         }
       ],
       "endDates": [{ "year": "550 BCE", "margin": 50, "source": { "sourceKey": "wp-sheba", "sourceLocation": "Era of the mukarribs" } }],
-      "importance": 1
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [{ "sourceKey": "wp-sheba", "sourceLocation": "lead, Era of the mukarribs, Era of the kings and Sources" }]
+        }
+      ]
     },
     {
       "uuid": "karibil-watar",
@@ -18915,7 +19020,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [{ "sourceKey": "wp-gobekli", "sourceLocation": "infobox, lead, Dawn of village life and Chronology" }]
         }
       ]
@@ -19495,7 +19600,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "city-founded",
+          "value": "site",
           "sources": [{ "sourceKey": "wp-jiahu", "sourceLocation": "infobox, lead, Inscriptions, Agriculture and Pottery and alcohol production" }]
         }
       ]
@@ -21550,7 +21655,9 @@
       "start": "117 CE",
       "tracks": ["rome-republic-empire"],
       "descr": "At the time of Trajan’s death (r. 98–117 AD) the empire covers some 5,000,000 km².",
-      "sources": [{ "sourceKey": "wp-roman-empire", "sourceLocation": "infobox and lead" }]
+      "sources": [{ "sourceKey": "wp-roman-empire", "sourceLocation": "infobox and lead" }],
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "golden-age", "sources": [{ "sourceKey": "wp-roman-empire", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "crisis-third-century",
@@ -24173,6 +24280,15 @@
       "sources": [
         { "sourceKey": "wp-teotihuacan", "sourceLocation": "lead and History > Period III" },
         { "sourceKey": "wp-monte-alban", "sourceLocation": "Site history" }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [{ "sourceKey": "wp-teotihuacan", "sourceLocation": "lead and History > Period III" }]
+        },
+        { "facet": "category", "value": "place", "sources": [{ "sourceKey": "wp-teotihuacan", "sourceLocation": "lead and History > Period III" }] }
       ]
     },
     {
@@ -24192,7 +24308,9 @@
       "end": "1 CE",
       "tracks": ["el-mirador"],
       "descr": "The city and its sister centres in the Mirador Basin thrive between 300 BC and the Common Era; major construction at Tikal begins around 400–300 BC.",
-      "sources": [{ "sourceKey": "wp-el-mirador-classical", "sourceLocation": "History" }, { "sourceKey": "wp-tikal", "sourceLocation": "Preclassic" }]
+      "sources": [{ "sourceKey": "wp-el-mirador-classical", "sourceLocation": "History" }, { "sourceKey": "wp-tikal", "sourceLocation": "Preclassic" }],
+      "importance": 1,
+      "memberships": [{ "facet": "category", "value": "golden-age", "sources": [{ "sourceKey": "wp-el-mirador-classical", "sourceLocation": "History" }] }]
     },
     {
       "uuid": "preclassic-collapse",
@@ -25844,6 +25962,54 @@
       "sources": [{ "sourceKey": "wp-suiko", "sourceLocation": "lead, infobox and Biography" }],
       "links": [{ "to": "seventeen-article", "kind": "related" }],
       "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-suiko", "sourceLocation": "lead, infobox and Biography" }] }]
+    },
+    {
+      "uuid": "golden-age-of-athens",
+      "title": "Golden Age of Athens",
+      "descr": "",
+      "start": "478 BCE",
+      "end": "404 BCE",
+      "tracks": ["greece"],
+      "sources": [
+        {
+          "sourceKey": "wp-athens-in-the-5th-century-bc",
+          "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+        },
+        { "sourceKey": "wp-athens-in-the-5th-century-bc", "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\"" }
+      ],
+      "startDates": [
+        {
+          "year": "478 BCE",
+          "source": {
+            "sourceKey": "wp-athens-in-the-5th-century-bc",
+            "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+          }
+        }
+      ],
+      "endDates": [
+        {
+          "year": "404 BCE",
+          "source": { "sourceKey": "wp-athens-in-the-5th-century-bc", "sourceLocation": "short description: \"Golden Age of Athens, 480–404 BCE\"" }
+        },
+        {
+          "year": "404 BCE",
+          "source": { "sourceKey": "wp-peloponnesian-war", "sourceLocation": "infobox date: 4 April 431 – 25 April 404 BC" },
+          "note": "Athens' defeat in the Peloponnesian War ends the age."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "golden-age",
+          "sources": [
+            {
+              "sourceKey": "wp-athens-in-the-5th-century-bc",
+              "sourceLocation": "lead: \"This era is traditionally heralded to having begun in 478 BC, after the defeat of the Persian invasion, when an Athenian-led coalition of city-states, known as \""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
