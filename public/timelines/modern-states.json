@@ -3,7 +3,7 @@
   "meta": {
     "id": "modern-states",
     "title": "Modern States",
-    "subtitle": "Every state in Europe, Asia, Africa and the Americas, 1500 to today",
+    "subtitle": "Every state in the world, 1500 to today",
     "description": "States from 1500 to today: their governments as phases, unions as their own rows, and which union each state was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field.",
     "calendar": {
@@ -173,6 +173,35 @@
       "name": "Southern Africa",
       "color": "#8a6a2a",
       "parent": "africa"
+    },
+    {
+      "id": "oceania",
+      "name": "Oceania",
+      "color": "#2a7a9a"
+    },
+    {
+      "id": "australia-and-new-zealand",
+      "name": "Australia and New Zealand",
+      "color": "#3a6a9a",
+      "parent": "oceania"
+    },
+    {
+      "id": "melanesia",
+      "name": "Melanesia",
+      "color": "#3a8a6a",
+      "parent": "oceania"
+    },
+    {
+      "id": "micronesia",
+      "name": "Micronesia",
+      "color": "#2a8a9a",
+      "parent": "oceania"
+    },
+    {
+      "id": "polynesia",
+      "name": "Polynesia",
+      "color": "#4a7aaa",
+      "parent": "oceania"
     },
     {
       "id": "france",
@@ -50046,6 +50075,2923 @@
           "endEvent": "eswatini-independence"
         }
       ]
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "color": "#2a5a9a",
+      "parent": "australia-and-new-zealand",
+      "url": "https://en.wikipedia.org/wiki/Australia",
+      "phases": [
+        {
+          "name": "Colony of New South Wales",
+          "start": 1788,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1788,
+              "source": {
+                "sourceKey": "wp-colony-of-new-south-wales",
+                "sourceLocation": "infobox year_start: 1788"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-colony-of-new-south-wales",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "startEvent": "first-fleet",
+          "endEvent": "federation-of-australia"
+        },
+        {
+          "name": "Van Diemen's Land",
+          "start": 1825,
+          "end": 1856,
+          "startDates": [
+            {
+              "year": 1825,
+              "source": {
+                "sourceKey": "wp-van-diemen-s-land",
+                "sourceLocation": "infobox year_start: 1825"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1856,
+              "source": {
+                "sourceKey": "wp-van-diemen-s-land",
+                "sourceLocation": "infobox year_end: 1856"
+              }
+            }
+          ],
+          "endEvent": "tasmania-self-government"
+        },
+        {
+          "name": "Colony of Tasmania",
+          "start": 1856,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1856,
+              "source": {
+                "sourceKey": "wp-colony-of-tasmania",
+                "sourceLocation": "infobox year_start: 1856"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-colony-of-tasmania",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "startEvent": "tasmania-self-government",
+          "endEvent": "federation-of-australia"
+        },
+        {
+          "name": "Colony of Western Australia",
+          "start": 1829,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1829,
+              "source": {
+                "sourceKey": "wp-history-of-western-australia",
+                "sourceLocation": "infobox year_start: 1829"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-history-of-western-australia",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "startEvent": "swan-river-colony-founded",
+          "endEvent": "federation-of-australia"
+        },
+        {
+          "name": "Colony of South Australia",
+          "start": 1836,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1836,
+              "source": {
+                "sourceKey": "wp-british-colonisation-of-south-australia",
+                "sourceLocation": "infobox year_start: 1836"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-british-colonisation-of-south-australia",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "endEvent": "federation-of-australia"
+        },
+        {
+          "name": "Colony of Victoria",
+          "start": 1851,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1851,
+              "source": {
+                "sourceKey": "wp-colony-of-victoria",
+                "sourceLocation": "infobox year_start: 1851"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-colony-of-victoria",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "endEvent": "federation-of-australia"
+        },
+        {
+          "name": "Colony of Queensland",
+          "start": 1859,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1859,
+              "source": {
+                "sourceKey": "wp-colony-of-queensland",
+                "sourceLocation": "infobox year_start: 1859"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-colony-of-queensland",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "endEvent": "federation-of-australia"
+        },
+        {
+          "name": "Commonwealth of Australia",
+          "start": 1901,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-australia",
+                "sourceLocation": "infobox: Federation (1 January 1901)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-australia",
+              "sourceLocation": "infobox established_event4: Australia Acts, 3 March 1986 (current state)"
+            }
+          ],
+          "startEvent": "federation-of-australia"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1788,
+          "end": 1942,
+          "startDates": [
+            {
+              "year": 1788,
+              "source": {
+                "sourceKey": "wp-colony-of-new-south-wales",
+                "sourceLocation": "infobox year_start: 1788"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1942,
+              "source": {
+                "sourceKey": "wp-australia",
+                "sourceLocation": "infobox: Statute of Westminster Adoption Act (9 October 1942)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-colony-of-new-south-wales",
+              "sourceLocation": "lead: \"The Colony of New South Wales was a self-governing Crown colony within the British Empire that existed from 7 February 1788 until 1 January 1901, when it federa\""
+            },
+            {
+              "sourceKey": "wp-australia",
+              "sourceLocation": "lead: \"This continued a process of increasing autonomy from the United Kingdom, highlighted by the Statute of Westminster Adoption Act 1942, and culminating in the Aus\""
+            }
+          ],
+          "startEvent": "first-fleet",
+          "endEvent": "statute-of-westminster-adoption-australia"
+        }
+      ]
+    },
+    {
+      "id": "new-zealand",
+      "name": "New Zealand",
+      "color": "#1a3a6a",
+      "parent": "australia-and-new-zealand",
+      "url": "https://en.wikipedia.org/wiki/New_Zealand",
+      "phases": [
+        {
+          "name": "United Tribes of New Zealand",
+          "start": 1835,
+          "end": 1840,
+          "startDates": [
+            {
+              "year": 1835,
+              "source": {
+                "sourceKey": "wp-united-tribes-of-new-zealand",
+                "sourceLocation": "infobox year_start: 1835"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1840,
+              "source": {
+                "sourceKey": "wp-united-tribes-of-new-zealand",
+                "sourceLocation": "infobox year_end: 1840"
+              }
+            }
+          ],
+          "startEvent": "nz-declaration-of-independence",
+          "endEvent": "treaty-of-waitangi"
+        },
+        {
+          "name": "Colony of New Zealand",
+          "start": 1841,
+          "end": 1907,
+          "startDates": [
+            {
+              "year": 1841,
+              "source": {
+                "sourceKey": "wp-colony-of-new-zealand",
+                "sourceLocation": "infobox year_start: 1841"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1907,
+              "source": {
+                "sourceKey": "wp-colony-of-new-zealand",
+                "sourceLocation": "infobox year_end: 1907"
+              }
+            }
+          ],
+          "startEvent": "colony-of-new-zealand-separated",
+          "endEvent": "dominion-of-new-zealand"
+        },
+        {
+          "name": "Dominion of New Zealand",
+          "start": 1907,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1907,
+              "source": {
+                "sourceKey": "wp-dominion-of-new-zealand",
+                "sourceLocation": "infobox life span: 1907–1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-dominion-of-new-zealand",
+                "sourceLocation": "infobox life span: 1907–1947"
+              }
+            }
+          ],
+          "startEvent": "dominion-of-new-zealand",
+          "endEvent": "statute-of-westminster-adoption-nz"
+        },
+        {
+          "name": "New Zealand",
+          "start": 1947,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-new-zealand",
+                "sourceLocation": "infobox: Statute of Westminster Adoption Act (25 November 1947)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-new-zealand",
+              "sourceLocation": "infobox established_event6: Constitution Act 1986, 1 January 1987 (current state)"
+            }
+          ],
+          "startEvent": "statute-of-westminster-adoption-nz"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1840,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1840,
+              "source": {
+                "sourceKey": "wp-new-zealand",
+                "sourceLocation": "infobox: Treaty of Waitangi (6 February 1840)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-new-zealand",
+                "sourceLocation": "infobox: Statute of Westminster Adoption Act (25 November 1947)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-colony-of-new-zealand",
+              "sourceLocation": "lead: \"The Colony of New Zealand was a colony of the United Kingdom from 1841 to 1907.\""
+            }
+          ],
+          "startEvent": "treaty-of-waitangi",
+          "endEvent": "statute-of-westminster-adoption-nz"
+        }
+      ]
+    },
+    {
+      "id": "fiji",
+      "name": "Fiji",
+      "color": "#3a8ac0",
+      "parent": "melanesia",
+      "url": "https://en.wikipedia.org/wiki/Fiji",
+      "phases": [
+        {
+          "name": "Kingdom of Fiji",
+          "start": 1871,
+          "end": 1874,
+          "startDates": [
+            {
+              "year": 1871,
+              "source": {
+                "sourceKey": "wp-kingdom-of-fiji",
+                "sourceLocation": "infobox year_start: 1871"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1874,
+              "source": {
+                "sourceKey": "wp-kingdom-of-fiji",
+                "sourceLocation": "infobox year_end: 1874"
+              }
+            }
+          ],
+          "startEvent": "kingdom-of-fiji-established",
+          "endEvent": "fiji-ceded-to-britain"
+        },
+        {
+          "name": "Colony of Fiji",
+          "start": 1874,
+          "end": 1970,
+          "startDates": [
+            {
+              "year": 1874,
+              "source": {
+                "sourceKey": "wp-colony-of-fiji",
+                "sourceLocation": "infobox year_start: 1874"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1970,
+              "source": {
+                "sourceKey": "wp-colony-of-fiji",
+                "sourceLocation": "infobox year_end: 1970"
+              }
+            }
+          ],
+          "startEvent": "fiji-ceded-to-britain",
+          "endEvent": "fiji-independence"
+        },
+        {
+          "name": "Dominion of Fiji",
+          "start": 1970,
+          "end": 1987,
+          "startDates": [
+            {
+              "year": 1970,
+              "source": {
+                "sourceKey": "wp-dominion-of-fiji",
+                "sourceLocation": "infobox year_start: 1970"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1987,
+              "source": {
+                "sourceKey": "wp-dominion-of-fiji",
+                "sourceLocation": "infobox year_end: 1987"
+              }
+            }
+          ],
+          "startEvent": "fiji-independence",
+          "endEvent": "fijian-coups-1987"
+        },
+        {
+          "name": "Republic of Fiji",
+          "start": 1987,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1987,
+              "source": {
+                "sourceKey": "wp-fiji",
+                "sourceLocation": "infobox: Republic (6 October 1987)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-fiji",
+              "sourceLocation": "infobox established_event3: Current constitution, 6 September 2013 (current state)"
+            }
+          ],
+          "startEvent": "fijian-coups-1987"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1874,
+          "end": 1970,
+          "startDates": [
+            {
+              "year": 1874,
+              "source": {
+                "sourceKey": "wp-colony-of-fiji",
+                "sourceLocation": "infobox year_start: 1874"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1970,
+              "source": {
+                "sourceKey": "wp-colony-of-fiji",
+                "sourceLocation": "infobox year_end: 1970"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-colony-of-fiji",
+              "sourceLocation": "lead: \"The Colony of Fiji was a Crown colony that existed from 1874 to 1970 in the territory of the present-day nation of Fiji.\""
+            }
+          ],
+          "startEvent": "fiji-ceded-to-britain",
+          "endEvent": "fiji-independence"
+        }
+      ]
+    },
+    {
+      "id": "papua-new-guinea",
+      "name": "Papua New Guinea",
+      "color": "#c03a2a",
+      "parent": "melanesia",
+      "url": "https://en.wikipedia.org/wiki/Papua_New_Guinea",
+      "phases": [
+        {
+          "name": "British New Guinea",
+          "start": 1884,
+          "end": 1902,
+          "startDates": [
+            {
+              "year": 1884,
+              "source": {
+                "sourceKey": "wp-british-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1902"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1902,
+              "source": {
+                "sourceKey": "wp-british-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1902"
+              }
+            }
+          ],
+          "startEvent": "british-new-guinea-protectorate",
+          "endEvent": "papua-transferred-to-australia"
+        },
+        {
+          "name": "Territory of Papua",
+          "start": 1902,
+          "end": 1949,
+          "startDates": [
+            {
+              "year": 1902,
+              "source": {
+                "sourceKey": "wp-territory-of-papua",
+                "sourceLocation": "infobox life span: 1902–1975"
+              }
+            },
+            {
+              "year": 1906,
+              "source": {
+                "sourceKey": "wp-territory-of-papua",
+                "sourceLocation": "lead: \"The Crown colony of British New Guinea was ceded to Australia in 1902 and formally organised as a separate territory in 1906.\""
+              },
+              "note": "The territory was formally organised in 1906."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-territory-of-papua-and-new-guinea",
+                "sourceLocation": "infobox year_start: 1949"
+              }
+            }
+          ],
+          "startEvent": "papua-transferred-to-australia",
+          "endEvent": "papua-new-guinea-administrative-union"
+        },
+        {
+          "name": "German New Guinea",
+          "start": 1884,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1884,
+              "source": {
+                "sourceKey": "wp-german-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1914"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-german-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1914"
+              }
+            }
+          ],
+          "startEvent": "german-new-guinea-established",
+          "endEvent": "australian-occupation-of-german-new-guinea"
+        },
+        {
+          "name": "Territory of New Guinea",
+          "start": 1914,
+          "end": 1949,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-territory-of-new-guinea",
+                "sourceLocation": "infobox year_start: 1914"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-territory-of-papua-and-new-guinea",
+                "sourceLocation": "infobox year_start: 1949"
+              }
+            }
+          ],
+          "startEvent": "australian-occupation-of-german-new-guinea",
+          "endEvent": "papua-new-guinea-administrative-union"
+        },
+        {
+          "name": "Territory of Papua and New Guinea",
+          "start": 1949,
+          "end": 1975,
+          "startDates": [
+            {
+              "year": 1949,
+              "source": {
+                "sourceKey": "wp-territory-of-papua-and-new-guinea",
+                "sourceLocation": "infobox year_start: 1949"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1975,
+              "source": {
+                "sourceKey": "wp-territory-of-papua-and-new-guinea",
+                "sourceLocation": "infobox year_end: 1975"
+              }
+            }
+          ],
+          "startEvent": "papua-new-guinea-administrative-union",
+          "endEvent": "png-independence"
+        },
+        {
+          "name": "Papua New Guinea",
+          "start": 1975,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1975,
+              "source": {
+                "sourceKey": "wp-papua-new-guinea",
+                "sourceLocation": "infobox: Independence (16 September 1975)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-papua-new-guinea",
+              "sourceLocation": "infobox established_event5: Independence, 16 September 1975 (current state)"
+            }
+          ],
+          "startEvent": "png-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1884,
+          "end": 1902,
+          "startDates": [
+            {
+              "year": 1884,
+              "source": {
+                "sourceKey": "wp-british-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1902"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1902,
+              "source": {
+                "sourceKey": "wp-british-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1902"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-british-new-guinea",
+              "sourceLocation": "lead: \"British New Guinea (BNG) was a protectorate and later Crown colony within the British Empire from 1884 to 1902.\""
+            }
+          ],
+          "startEvent": "british-new-guinea-protectorate",
+          "endEvent": "papua-transferred-to-australia"
+        },
+        {
+          "row": "germany",
+          "start": 1884,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1884,
+              "source": {
+                "sourceKey": "wp-german-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1914"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-german-new-guinea",
+                "sourceLocation": "infobox life span: 1884–1914"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-german-new-guinea",
+              "sourceLocation": "lead: \"The mainland part of the territory, called Kaiser-Wilhelmsland, became a German protectorate in 1884.\""
+            }
+          ],
+          "startEvent": "german-new-guinea-established",
+          "endEvent": "australian-occupation-of-german-new-guinea"
+        },
+        {
+          "row": "australia",
+          "start": 1902,
+          "end": 1975,
+          "startDates": [
+            {
+              "year": 1902,
+              "source": {
+                "sourceKey": "wp-territory-of-papua",
+                "sourceLocation": "infobox life span: 1902–1975"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1975,
+              "source": {
+                "sourceKey": "wp-papua-new-guinea",
+                "sourceLocation": "infobox: Independence (16 September 1975)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-territory-of-papua",
+              "sourceLocation": "lead: \"The Crown colony of British New Guinea was ceded to Australia in 1902 and formally organised as a separate territory in 1906.\""
+            },
+            {
+              "sourceKey": "wp-territory-of-new-guinea",
+              "sourceLocation": "lead: \"The Territory of New Guinea was an Australian-administered territory, first as a League of Nations mandate and then as a United Nations trust territory, in the \""
+            }
+          ],
+          "startEvent": "papua-transferred-to-australia",
+          "endEvent": "png-independence"
+        }
+      ]
+    },
+    {
+      "id": "republic-of-the-north-solomons",
+      "name": "Republic of the North Solomons",
+      "color": "#8a5a3a",
+      "parent": "melanesia",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_the_North_Solomons",
+      "span": {
+        "start": 1975,
+        "end": 1976,
+        "startDates": [
+          {
+            "year": 1975,
+            "source": {
+              "sourceKey": "wp-republic-of-the-north-solomons",
+              "sourceLocation": "infobox year_start: 1975"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1976,
+            "source": {
+              "sourceKey": "wp-republic-of-the-north-solomons",
+              "sourceLocation": "infobox year_end: 1976"
+            }
+          }
+        ],
+        "startEvent": "north-solomons-declared",
+        "endEvent": "north-solomons-reintegrated"
+      }
+    },
+    {
+      "id": "solomon-islands",
+      "name": "Solomon Islands",
+      "color": "#2a7a5a",
+      "parent": "melanesia",
+      "url": "https://en.wikipedia.org/wiki/Solomon_Islands",
+      "phases": [
+        {
+          "name": "British Solomon Islands Protectorate",
+          "start": 1893,
+          "end": 1978,
+          "startDates": [
+            {
+              "year": 1893,
+              "source": {
+                "sourceKey": "wp-british-solomon-islands",
+                "sourceLocation": "infobox year_start: 1893"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-british-solomon-islands",
+                "sourceLocation": "infobox year_end: 1978"
+              }
+            }
+          ],
+          "startEvent": "british-solomon-islands-protectorate",
+          "endEvent": "solomon-islands-independence"
+        },
+        {
+          "name": "Solomon Islands",
+          "start": 1978,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-solomon-islands",
+                "sourceLocation": "infobox: Declared (7 July 1978)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-solomon-islands",
+              "sourceLocation": "infobox established_event1: Declared, 7 July 1978 (current state)"
+            }
+          ],
+          "startEvent": "solomon-islands-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1893,
+          "end": 1978,
+          "startDates": [
+            {
+              "year": 1893,
+              "source": {
+                "sourceKey": "wp-british-solomon-islands",
+                "sourceLocation": "infobox year_start: 1893"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-british-solomon-islands",
+                "sourceLocation": "infobox year_end: 1978"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-british-solomon-islands",
+              "sourceLocation": "lead: \"The British Solomon Islands Protectorate (BSIP) was a British protectorate in the South Pacific from 1893 to 1978, comprising most of the present-day country of\""
+            }
+          ],
+          "startEvent": "british-solomon-islands-protectorate",
+          "endEvent": "solomon-islands-independence"
+        }
+      ]
+    },
+    {
+      "id": "vanuatu",
+      "name": "Vanuatu",
+      "color": "#c0902a",
+      "parent": "melanesia",
+      "url": "https://en.wikipedia.org/wiki/Vanuatu",
+      "phases": [
+        {
+          "name": "New Hebrides Condominium",
+          "start": 1906,
+          "end": 1980,
+          "startDates": [
+            {
+              "year": 1906,
+              "source": {
+                "sourceKey": "wp-new-hebrides",
+                "sourceLocation": "infobox year_start: 1906"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1980,
+              "source": {
+                "sourceKey": "wp-new-hebrides",
+                "sourceLocation": "infobox year_end: 1980"
+              }
+            }
+          ],
+          "startEvent": "new-hebrides-condominium",
+          "endEvent": "vanuatu-independence"
+        },
+        {
+          "name": "Republic of Vanuatu",
+          "start": 1980,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1980,
+              "source": {
+                "sourceKey": "wp-vanuatu",
+                "sourceLocation": "infobox: from the United Kingdom and France (30 July 1980)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-vanuatu",
+              "sourceLocation": "infobox established_event1: from the United Kingdom and France, 30 July 1980 (current state)"
+            }
+          ],
+          "startEvent": "vanuatu-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1906,
+          "end": 1980,
+          "startDates": [
+            {
+              "year": 1906,
+              "source": {
+                "sourceKey": "wp-new-hebrides",
+                "sourceLocation": "infobox year_start: 1906"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1980,
+              "source": {
+                "sourceKey": "wp-new-hebrides",
+                "sourceLocation": "infobox year_end: 1980"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-new-hebrides",
+              "sourceLocation": "lead: \"The New Hebrides Condominium (), which followed the governance of the islands under the Anglo-French Joint Naval Commission (1887–1889 and 1890–1906), lasted fr\""
+            }
+          ],
+          "startEvent": "new-hebrides-condominium",
+          "endEvent": "vanuatu-independence"
+        },
+        {
+          "row": "french-colonial-empire",
+          "start": 1906,
+          "end": 1980,
+          "startDates": [
+            {
+              "year": 1906,
+              "source": {
+                "sourceKey": "wp-new-hebrides",
+                "sourceLocation": "infobox year_start: 1906"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1980,
+              "source": {
+                "sourceKey": "wp-new-hebrides",
+                "sourceLocation": "infobox year_end: 1980"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-new-hebrides",
+              "sourceLocation": "lead: \"The New Hebrides Condominium (), which followed the governance of the islands under the Anglo-French Joint Naval Commission (1887–1889 and 1890–1906), lasted fr\""
+            }
+          ],
+          "startEvent": "new-hebrides-condominium",
+          "endEvent": "vanuatu-independence"
+        }
+      ]
+    },
+    {
+      "id": "pohnpei",
+      "name": "Pohnpei (Saudeleur dynasty)",
+      "color": "#5a7a6a",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Saudeleur_dynasty",
+      "span": {
+        "start": 1,
+        "end": 1628,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-nan-madol",
+              "sourceLocation": "section \"Archaeology\": \"The earliest settlement on Pohnpei was probably around AD 1 although radiocarbon dating shows human activity starting around AD 80–200.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1628,
+            "source": {
+              "sourceKey": "wp-nan-madol",
+              "sourceLocation": "lead: \"Nan Madol was the capital of the Saudeleur dynasty until about 1628.\""
+            }
+          },
+          {
+            "year": 1628,
+            "source": {
+              "sourceKey": "wp-saudeleur-dynasty",
+              "sourceLocation": "infobox year_end: c. 1628"
+            }
+          }
+        ],
+        "endEvent": "isokelekel-conquers-the-saudeleur"
+      }
+    },
+    {
+      "id": "federated-states-of-micronesia",
+      "name": "Federated States of Micronesia",
+      "color": "#2a6a8a",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Federated_States_of_Micronesia",
+      "phases": [
+        {
+          "name": "Spanish Carolines",
+          "start": 1886,
+          "end": 1899,
+          "startDates": [
+            {
+              "year": 1886,
+              "source": {
+                "sourceKey": "wp-pohnpei",
+                "sourceLocation": "section \"History > Spanish rule\": \"By 1886 the Spaniards claimed the Caroline Islands which were part of the Manila-based Spanish East Indies and began to exert political authority.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-history-of-the-federated-states-of-micronesia",
+                "sourceLocation": "section \"European colonisation\": \"Spain sold the islands to Germany in 1899 under the terms of the German–Spanish Treaty of that year.\""
+              }
+            }
+          ],
+          "endEvent": "german-spanish-treaty-1899"
+        },
+        {
+          "name": "German Carolines",
+          "start": 1899,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-history-of-the-federated-states-of-micronesia",
+                "sourceLocation": "section \"European colonisation\": \"Spain sold the islands to Germany in 1899 under the terms of the German–Spanish Treaty of that year.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-caroline-islands",
+                "sourceLocation": "section \"History > Japanese colony\": \"Japan invaded and occupied the islands in 1914 during World War I, as part of their campaign to take and occupy German colonial possessions.\""
+              }
+            }
+          ],
+          "startEvent": "german-spanish-treaty-1899",
+          "endEvent": "japan-occupies-german-micronesia"
+        },
+        {
+          "name": "Japanese rule (South Seas Mandate)",
+          "start": 1914,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-caroline-islands",
+                "sourceLocation": "section \"History > Japanese colony\": \"Japan invaded and occupied the islands in 1914 during World War I, as part of their campaign to take and occupy German colonial possessions.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "ttpi-established"
+        },
+        {
+          "name": "Trust Territory of the Pacific Islands",
+          "start": 1947,
+          "end": 1979,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-federated-states-of-micronesia",
+                "sourceLocation": "infobox: Republic proclaimed (May 10, 1979)"
+              }
+            }
+          ],
+          "startEvent": "ttpi-established",
+          "endEvent": "fsm-constitution"
+        },
+        {
+          "name": "Federated States of Micronesia",
+          "start": 1979,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-federated-states-of-micronesia",
+                "sourceLocation": "infobox: Republic proclaimed (May 10, 1979)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-federated-states-of-micronesia",
+              "sourceLocation": "infobox established_event2: Compact of Free Association, November 3, 1986 (current state)"
+            }
+          ],
+          "startEvent": "fsm-constitution"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "spanish-empire",
+          "start": 1886,
+          "end": 1899,
+          "startDates": [
+            {
+              "year": 1886,
+              "source": {
+                "sourceKey": "wp-pohnpei",
+                "sourceLocation": "section \"History > Spanish rule\": \"By 1886 the Spaniards claimed the Caroline Islands which were part of the Manila-based Spanish East Indies and began to exert political authority.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-history-of-the-federated-states-of-micronesia",
+                "sourceLocation": "section \"European colonisation\": \"Spain sold the islands to Germany in 1899 under the terms of the German–Spanish Treaty of that year.\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-pohnpei",
+              "sourceLocation": "section \"History > Spanish rule\": \"By 1886 the Spaniards claimed the Caroline Islands which were part of the Manila-based Spanish East Indies and began to exert political authority.\""
+            }
+          ],
+          "endEvent": "german-spanish-treaty-1899"
+        },
+        {
+          "row": "germany",
+          "start": 1899,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-history-of-the-federated-states-of-micronesia",
+                "sourceLocation": "section \"European colonisation\": \"Spain sold the islands to Germany in 1899 under the terms of the German–Spanish Treaty of that year.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-caroline-islands",
+                "sourceLocation": "section \"History > Japanese colony\": \"Japan invaded and occupied the islands in 1914 during World War I, as part of their campaign to take and occupy German colonial possessions.\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-german-new-guinea",
+              "sourceLocation": "lead: \"The Caroline Islands, Palau, and the Mariana Islands (except for Guam) were bought from Spain in 1899.\""
+            }
+          ],
+          "startEvent": "german-spanish-treaty-1899",
+          "endEvent": "japan-occupies-german-micronesia"
+        },
+        {
+          "row": "japan",
+          "start": 1914,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-caroline-islands",
+                "sourceLocation": "section \"History > Japanese colony\": \"Japan invaded and occupied the islands in 1914 during World War I, as part of their campaign to take and occupy German colonial possessions.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-south-seas-mandate",
+              "sourceLocation": "infobox former country: South Seas Mandate, 1919–1947"
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "ttpi-established"
+        },
+        {
+          "row": "united-states",
+          "start": 1947,
+          "end": 1986,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1986,
+              "source": {
+                "sourceKey": "wp-federated-states-of-micronesia",
+                "sourceLocation": "infobox: Compact of Free Association (November 3, 1986)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+              "sourceLocation": "lead: \"The Trust Territory of the Pacific Islands (TTPI) was a United Nations trust territory in Micronesia administered by the United States from 1947 to 1994.\""
+            }
+          ],
+          "startEvent": "ttpi-established",
+          "endEvent": "compact-of-free-association-1986"
+        }
+      ]
+    },
+    {
+      "id": "palau",
+      "name": "Palau",
+      "color": "#3a9ab0",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Palau",
+      "phases": [
+        {
+          "name": "Spanish Palau",
+          "start": 1885,
+          "end": 1899,
+          "startDates": [
+            {
+              "year": 1885,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "lead: \"The Palau islands were made part of the Spanish East Indies in 1885.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "lead: \"Following Spain's defeat in the Spanish–American War in 1898, the islands were sold to Germany in 1899 under the terms of the German–Spanish Treaty, where they \""
+              }
+            }
+          ],
+          "endEvent": "german-spanish-treaty-1899"
+        },
+        {
+          "name": "German Palau",
+          "start": 1899,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "lead: \"Following Spain's defeat in the Spanish–American War in 1898, the islands were sold to Germany in 1899 under the terms of the German–Spanish Treaty, where they \""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-palau",
+                "sourceLocation": "section \"Japanese mandate\": \"Under the terms of the Anglo-Japanese Alliance, the Empire of Japan declared war on the German Empire in 1914 and invaded German colonial empire in the Pacific \""
+              }
+            }
+          ],
+          "startEvent": "german-spanish-treaty-1899",
+          "endEvent": "japan-occupies-german-micronesia"
+        },
+        {
+          "name": "Japanese rule (South Seas Mandate)",
+          "start": 1914,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-palau",
+                "sourceLocation": "section \"Japanese mandate\": \"Under the terms of the Anglo-Japanese Alliance, the Empire of Japan declared war on the German Empire in 1914 and invaded German colonial empire in the Pacific \""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "ttpi-established"
+        },
+        {
+          "name": "Trust Territory of the Pacific Islands",
+          "start": 1947,
+          "end": 1981,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1981,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "infobox: Establishment of the Republic of Palau (1 January 1981)"
+              }
+            }
+          ],
+          "startEvent": "ttpi-established",
+          "endEvent": "republic-of-palau-established"
+        },
+        {
+          "name": "Republic of Palau",
+          "start": 1981,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1981,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "infobox: Establishment of the Republic of Palau (1 January 1981)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-palau",
+              "sourceLocation": "infobox established_event3: Compact of Free Association, 1 October 1994 (current state)"
+            }
+          ],
+          "startEvent": "republic-of-palau-established"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "spanish-empire",
+          "start": 1885,
+          "end": 1899,
+          "startDates": [
+            {
+              "year": 1885,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "lead: \"The Palau islands were made part of the Spanish East Indies in 1885.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "lead: \"Following Spain's defeat in the Spanish–American War in 1898, the islands were sold to Germany in 1899 under the terms of the German–Spanish Treaty, where they \""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-palau",
+              "sourceLocation": "lead: \"The Palau islands were made part of the Spanish East Indies in 1885.\""
+            }
+          ],
+          "endEvent": "german-spanish-treaty-1899"
+        },
+        {
+          "row": "germany",
+          "start": 1899,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "lead: \"Following Spain's defeat in the Spanish–American War in 1898, the islands were sold to Germany in 1899 under the terms of the German–Spanish Treaty, where they \""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-palau",
+                "sourceLocation": "section \"Japanese mandate\": \"Under the terms of the Anglo-Japanese Alliance, the Empire of Japan declared war on the German Empire in 1914 and invaded German colonial empire in the Pacific \""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-palau",
+              "sourceLocation": "lead: \"Following Spain's defeat in the Spanish–American War in 1898, the islands were sold to Germany in 1899 under the terms of the German–Spanish Treaty, where they \""
+            }
+          ],
+          "startEvent": "german-spanish-treaty-1899",
+          "endEvent": "japan-occupies-german-micronesia"
+        },
+        {
+          "row": "japan",
+          "start": 1914,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-palau",
+                "sourceLocation": "section \"Japanese mandate\": \"Under the terms of the Anglo-Japanese Alliance, the Empire of Japan declared war on the German Empire in 1914 and invaded German colonial empire in the Pacific \""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-south-seas-mandate",
+              "sourceLocation": "infobox former country: South Seas Mandate, 1919–1947"
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "ttpi-established"
+        },
+        {
+          "row": "united-states",
+          "start": 1947,
+          "end": 1994,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1994,
+              "source": {
+                "sourceKey": "wp-palau",
+                "sourceLocation": "infobox: Compact of Free Association (1 October 1994)"
+              }
+            },
+            {
+              "year": 1994,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_end: 1994"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+              "sourceLocation": "lead: \"The Trust Territory of the Pacific Islands (TTPI) was a United Nations trust territory in Micronesia administered by the United States from 1947 to 1994.\""
+            }
+          ],
+          "startEvent": "ttpi-established",
+          "endEvent": "palau-compact-of-free-association"
+        }
+      ]
+    },
+    {
+      "id": "marshall-islands",
+      "name": "Marshall Islands",
+      "color": "#2a5a8a",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Marshall_Islands",
+      "phases": [
+        {
+          "name": "German protectorate",
+          "start": 1885,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1885,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "lead: \"German copra traders dominated the economy in the 1870s and 1880s, and the German Empire annexed the Marshalls as a protectorate in 1885.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "lead: \"The Empire of Japan occupied the islands in the autumn of 1914 at the beginning of World War I.\""
+              }
+            }
+          ],
+          "startEvent": "german-protectorate-of-the-marshall-islands",
+          "endEvent": "japan-occupies-german-micronesia"
+        },
+        {
+          "name": "Japanese rule (South Seas Mandate)",
+          "start": 1914,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "lead: \"The Empire of Japan occupied the islands in the autumn of 1914 at the beginning of World War I.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "ttpi-established"
+        },
+        {
+          "name": "Trust Territory of the Pacific Islands",
+          "start": 1947,
+          "end": 1979,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "infobox: Self-government (May 1, 1979)"
+              }
+            }
+          ],
+          "startEvent": "ttpi-established",
+          "endEvent": "marshall-islands-self-government"
+        },
+        {
+          "name": "Republic of the Marshall Islands",
+          "start": 1979,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "infobox: Self-government (May 1, 1979)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-marshall-islands",
+              "sourceLocation": "infobox established_event2: Compact of Free Association, October 21, 1986 (current state)"
+            }
+          ],
+          "startEvent": "marshall-islands-self-government"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "germany",
+          "start": 1885,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1885,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "lead: \"German copra traders dominated the economy in the 1870s and 1880s, and the German Empire annexed the Marshalls as a protectorate in 1885.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "lead: \"The Empire of Japan occupied the islands in the autumn of 1914 at the beginning of World War I.\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-marshall-islands",
+              "sourceLocation": "lead: \"German copra traders dominated the economy in the 1870s and 1880s, and the German Empire annexed the Marshalls as a protectorate in 1885.\""
+            }
+          ],
+          "startEvent": "german-protectorate-of-the-marshall-islands",
+          "endEvent": "japan-occupies-german-micronesia"
+        },
+        {
+          "row": "japan",
+          "start": 1914,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "lead: \"The Empire of Japan occupied the islands in the autumn of 1914 at the beginning of World War I.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-south-seas-mandate",
+                "sourceLocation": "infobox year_end: 1947"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-south-seas-mandate",
+              "sourceLocation": "infobox former country: South Seas Mandate, 1919–1947"
+            }
+          ],
+          "startEvent": "japan-occupies-german-micronesia",
+          "endEvent": "ttpi-established"
+        },
+        {
+          "row": "united-states",
+          "start": 1947,
+          "end": 1986,
+          "startDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+                "sourceLocation": "infobox year_start: 1947"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1986,
+              "source": {
+                "sourceKey": "wp-marshall-islands",
+                "sourceLocation": "infobox: Compact of Free Association (October 21, 1986)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+              "sourceLocation": "lead: \"The Trust Territory of the Pacific Islands (TTPI) was a United Nations trust territory in Micronesia administered by the United States from 1947 to 1994.\""
+            }
+          ],
+          "startEvent": "ttpi-established",
+          "endEvent": "compact-of-free-association-1986"
+        }
+      ]
+    },
+    {
+      "id": "nauru",
+      "name": "Nauru",
+      "color": "#3a5aa0",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Nauru",
+      "phases": [
+        {
+          "name": "German Nauru",
+          "start": 1888,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1888,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "lead: \"The German Empire annexed the island in 1888, ending the Nauruan Civil War which had started a decade prior.\""
+              }
+            },
+            {
+              "year": 1886,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "section \"German protectorate\": \"In 1886 Germany was granted the island under the Anglo-German Declaration.\""
+              },
+              "note": "The Anglo-German Declaration granted the island to Germany in 1886."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "section \"World War I to World War II\": \"In 1914, following the outbreak of World War I, Nauru was captured by Australian troops, which held control until 1920.\""
+              }
+            }
+          ],
+          "startEvent": "german-annexation-of-nauru",
+          "endEvent": "ww1"
+        },
+        {
+          "name": "Australian administration",
+          "start": 1914,
+          "end": 1968,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "section \"World War I to World War II\": \"In 1914, following the outbreak of World War I, Nauru was captured by Australian troops, which held control until 1920.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1968,
+              "source": {
+                "sourceKey": "wp-nauru",
+                "sourceLocation": "infobox: Nauru Independence Act 1967 (31 January 1968)"
+              }
+            }
+          ],
+          "startEvent": "ww1",
+          "endEvent": "nauru-independence"
+        },
+        {
+          "name": "Japanese occupation",
+          "start": 1942,
+          "end": 1945,
+          "startDates": [
+            {
+              "year": 1942,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-nauru",
+                "sourceLocation": "infobox life span: 1942–1945"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-nauru",
+                "sourceLocation": "infobox life span: 1942–1945"
+              }
+            }
+          ],
+          "startEvent": "pacific-war",
+          "endEvent": "pacific-war"
+        },
+        {
+          "name": "Republic of Nauru",
+          "start": 1968,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1968,
+              "source": {
+                "sourceKey": "wp-nauru",
+                "sourceLocation": "infobox: Nauru Independence Act 1967 (31 January 1968)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-nauru",
+              "sourceLocation": "infobox established_event1: Nauru Independence Act 1967, 31 January 1968 (current state)"
+            }
+          ],
+          "startEvent": "nauru-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "germany",
+          "start": 1888,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1888,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "lead: \"The German Empire annexed the island in 1888, ending the Nauruan Civil War which had started a decade prior.\""
+              }
+            },
+            {
+              "year": 1886,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "section \"German protectorate\": \"In 1886 Germany was granted the island under the Anglo-German Declaration.\""
+              },
+              "note": "The Anglo-German Declaration granted the island to Germany in 1886."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "section \"World War I to World War II\": \"In 1914, following the outbreak of World War I, Nauru was captured by Australian troops, which held control until 1920.\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-history-of-nauru",
+              "sourceLocation": "lead: \"The German Empire annexed the island in 1888, ending the Nauruan Civil War which had started a decade prior.\""
+            }
+          ],
+          "startEvent": "german-annexation-of-nauru",
+          "endEvent": "ww1"
+        },
+        {
+          "row": "australia",
+          "start": 1914,
+          "end": 1968,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-history-of-nauru",
+                "sourceLocation": "section \"World War I to World War II\": \"In 1914, following the outbreak of World War I, Nauru was captured by Australian troops, which held control until 1920.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1968,
+              "source": {
+                "sourceKey": "wp-nauru",
+                "sourceLocation": "infobox: Nauru Independence Act 1967 (31 January 1968)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-nauru",
+              "sourceLocation": "lead: \"Nauru gained its independence from Australia in 1968.\""
+            },
+            {
+              "sourceKey": "wp-history-of-nauru",
+              "sourceLocation": "section \"World War I to World War II\": \"In 1914, following the outbreak of World War I, Nauru was captured by Australian troops, which held control until 1920.\""
+            }
+          ],
+          "startEvent": "ww1",
+          "endEvent": "nauru-independence"
+        },
+        {
+          "row": "japan",
+          "start": 1942,
+          "end": 1945,
+          "startDates": [
+            {
+              "year": 1942,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-nauru",
+                "sourceLocation": "infobox life span: 1942–1945"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-nauru",
+                "sourceLocation": "infobox life span: 1942–1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-japanese-occupation-of-nauru",
+              "sourceLocation": "lead: \"The Japanese occupation of Nauru was the period of three years (26 August 1942 – 13 September 1945) during which Nauru, a Pacific island which at that time was \""
+            }
+          ],
+          "startEvent": "pacific-war",
+          "endEvent": "pacific-war"
+        }
+      ]
+    },
+    {
+      "id": "gilbert-and-ellice-islands",
+      "name": "Gilbert and Ellice Islands",
+      "color": "#5a8a9a",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Gilbert_and_Ellice_Islands",
+      "span": {
+        "start": 1892,
+        "end": 1976,
+        "startDates": [
+          {
+            "year": 1892,
+            "source": {
+              "sourceKey": "wp-gilbert-and-ellice-islands",
+              "sourceLocation": "infobox year_start: 1892"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1976,
+            "source": {
+              "sourceKey": "wp-gilbert-and-ellice-islands",
+              "sourceLocation": "infobox year_end: 1976"
+            }
+          }
+        ],
+        "startEvent": "gilbert-and-ellice-protectorate",
+        "endEvent": "gilbert-and-ellice-separation"
+      },
+      "phases": [
+        {
+          "name": "Japanese occupation of the Gilbert Islands",
+          "start": 1941,
+          "end": 1943,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-the-gilbert-islands",
+                "sourceLocation": "infobox life span: 1941–1943"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1943,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-the-gilbert-islands",
+                "sourceLocation": "infobox life span: 1941–1943"
+              }
+            }
+          ],
+          "startEvent": "pacific-war",
+          "endEvent": "battle-of-tarawa"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1892,
+          "end": 1976,
+          "startDates": [
+            {
+              "year": 1892,
+              "source": {
+                "sourceKey": "wp-gilbert-and-ellice-islands",
+                "sourceLocation": "infobox year_start: 1892"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1976,
+              "source": {
+                "sourceKey": "wp-gilbert-and-ellice-islands",
+                "sourceLocation": "infobox year_end: 1976"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-gilbert-and-ellice-islands",
+              "sourceLocation": "lead: \"The Gilbert and Ellice Islands was a British territory in the southern Pacific Ocean from 1892 to 1976, comprising the present-day independent countries of Kiri\""
+            }
+          ],
+          "startEvent": "gilbert-and-ellice-protectorate",
+          "endEvent": "gilbert-and-ellice-separation"
+        },
+        {
+          "row": "japan",
+          "start": 1941,
+          "end": 1943,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-the-gilbert-islands",
+                "sourceLocation": "infobox life span: 1941–1943"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1943,
+              "source": {
+                "sourceKey": "wp-japanese-occupation-of-the-gilbert-islands",
+                "sourceLocation": "infobox life span: 1941–1943"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-japanese-occupation-of-the-gilbert-islands",
+              "sourceLocation": "lead: \"From 1941 to 1943, Imperial Japanese Navy forces occupied the islands, and from 1942 until 1945 Ocean Island which was home to the headquarters of the Gilbert a\""
+            }
+          ],
+          "startEvent": "pacific-war",
+          "endEvent": "battle-of-tarawa"
+        }
+      ]
+    },
+    {
+      "id": "kiribati",
+      "name": "Kiribati",
+      "color": "#c04a2a",
+      "parent": "micronesia",
+      "url": "https://en.wikipedia.org/wiki/Kiribati",
+      "phases": [
+        {
+          "name": "Colony of the Gilbert Islands",
+          "start": 1976,
+          "end": 1979,
+          "startDates": [
+            {
+              "year": 1976,
+              "source": {
+                "sourceKey": "wp-gilbert-islands",
+                "sourceLocation": "infobox year_start: 1976"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-gilbert-islands",
+                "sourceLocation": "infobox year_end: 1979"
+              }
+            }
+          ],
+          "startEvent": "gilbert-and-ellice-separation",
+          "endEvent": "kiribati-independence"
+        },
+        {
+          "name": "Republic of Kiribati",
+          "start": 1979,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-kiribati",
+                "sourceLocation": "infobox: Granted (12 July 1979)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-kiribati",
+              "sourceLocation": "infobox established_event2: Treaty of Tarawa, 20 September 1979 (current state)"
+            }
+          ],
+          "startEvent": "kiribati-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1976,
+          "end": 1979,
+          "startDates": [
+            {
+              "year": 1976,
+              "source": {
+                "sourceKey": "wp-gilbert-islands",
+                "sourceLocation": "infobox year_start: 1976"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1979,
+              "source": {
+                "sourceKey": "wp-kiribati",
+                "sourceLocation": "infobox: Granted (12 July 1979)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kiribati",
+              "sourceLocation": "lead: \"This annexation was ended in 1979, when Kiribati gained its independence from the United Kingdom, becoming a sovereign state in 1979.\""
+            }
+          ],
+          "startEvent": "gilbert-and-ellice-separation",
+          "endEvent": "kiribati-independence"
+        }
+      ]
+    },
+    {
+      "id": "tuvalu",
+      "name": "Tuvalu",
+      "color": "#3a9aca",
+      "parent": "polynesia",
+      "url": "https://en.wikipedia.org/wiki/Tuvalu",
+      "phases": [
+        {
+          "name": "Colony of Tuvalu",
+          "start": 1976,
+          "end": 1978,
+          "startDates": [
+            {
+              "year": 1976,
+              "source": {
+                "sourceKey": "wp-tuvalu",
+                "sourceLocation": "lead: \"As a result, the Gilbert and Ellice Islands colony legally ceased to exist on 1 October 1975; on 1 January 1976, the old administration was officially separated\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-tuvalu",
+                "sourceLocation": "infobox: from the United Kingdom (1 October 1978)"
+              }
+            }
+          ],
+          "startEvent": "gilbert-and-ellice-separation",
+          "endEvent": "tuvalu-independence"
+        },
+        {
+          "name": "Tuvalu",
+          "start": 1978,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-tuvalu",
+                "sourceLocation": "infobox: from the United Kingdom (1 October 1978)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-tuvalu",
+              "sourceLocation": "infobox established_event1: from the United Kingdom, 1 October 1978 (current state)"
+            }
+          ],
+          "startEvent": "tuvalu-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1976,
+          "end": 1978,
+          "startDates": [
+            {
+              "year": 1976,
+              "source": {
+                "sourceKey": "wp-tuvalu",
+                "sourceLocation": "lead: \"As a result, the Gilbert and Ellice Islands colony legally ceased to exist on 1 October 1975; on 1 January 1976, the old administration was officially separated\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1978,
+              "source": {
+                "sourceKey": "wp-tuvalu",
+                "sourceLocation": "infobox: from the United Kingdom (1 October 1978)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-tuvalu",
+              "sourceLocation": "lead: \"As a result, the Gilbert and Ellice Islands colony legally ceased to exist on 1 October 1975; on 1 January 1976, the old administration was officially separated\""
+            }
+          ],
+          "startEvent": "gilbert-and-ellice-separation",
+          "endEvent": "tuvalu-independence"
+        }
+      ]
+    },
+    {
+      "id": "tonga",
+      "name": "Tonga",
+      "color": "#a8302a",
+      "parent": "polynesia",
+      "url": "https://en.wikipedia.org/wiki/Tonga",
+      "phases": [
+        {
+          "name": "Tuʻi Tonga Empire",
+          "start": 950,
+          "end": 1865,
+          "startDates": [
+            {
+              "year": 950,
+              "source": {
+                "sourceKey": "wp-tu-i-tonga-empire",
+                "sourceLocation": "infobox year_start: 950"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1865,
+              "source": {
+                "sourceKey": "wp-tu-i-tonga-empire",
+                "sourceLocation": "infobox year_end: 1865"
+              }
+            }
+          ],
+          "endEvent": "tui-tonga-title-abolished"
+        },
+        {
+          "name": "Kingdom of Tonga (Tupou dynasty)",
+          "start": 1845,
+          "end": 1900,
+          "startDates": [
+            {
+              "year": 1845,
+              "source": {
+                "sourceKey": "wp-tonga",
+                "sourceLocation": "infobox: Unification (c. 1845)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1900,
+              "source": {
+                "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+                "sourceLocation": "infobox year_start: 1900"
+              }
+            }
+          ],
+          "startEvent": "tonga-unified",
+          "endEvent": "tonga-protected-state"
+        },
+        {
+          "name": "British protected state",
+          "start": 1900,
+          "end": 1970,
+          "startDates": [
+            {
+              "year": 1900,
+              "source": {
+                "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+                "sourceLocation": "infobox year_start: 1900"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1970,
+              "source": {
+                "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+                "sourceLocation": "infobox year_end: 1970"
+              }
+            }
+          ],
+          "startEvent": "tonga-protected-state",
+          "endEvent": "tonga-protection-ends"
+        },
+        {
+          "name": "Kingdom of Tonga",
+          "start": 1970,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1970,
+              "source": {
+                "sourceKey": "wp-tonga",
+                "sourceLocation": "infobox: Independence from the United Kingdom (4 June 1970)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-tonga",
+              "sourceLocation": "infobox established_event3: Independence from the United Kingdom, 4 June 1970 (current state)"
+            }
+          ],
+          "startEvent": "tonga-protection-ends"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1900,
+          "end": 1970,
+          "startDates": [
+            {
+              "year": 1900,
+              "source": {
+                "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+                "sourceLocation": "infobox year_start: 1900"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1970,
+              "source": {
+                "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+                "sourceLocation": "infobox year_end: 1970"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+              "sourceLocation": "lead: \"The Kingdom of Tonga was a protected state of the United Kingdom from 1900 to 1970, when its protectorate status was removed.\""
+            }
+          ],
+          "startEvent": "tonga-protected-state",
+          "endEvent": "tonga-protection-ends"
+        }
+      ]
+    },
+    {
+      "id": "samoa",
+      "name": "Samoa",
+      "color": "#2a4a9a",
+      "parent": "polynesia",
+      "url": "https://en.wikipedia.org/wiki/Samoa",
+      "phases": [
+        {
+          "name": "Kingdom of Samoa",
+          "start": 1873,
+          "end": 1900,
+          "startDates": [
+            {
+              "year": 1873,
+              "source": {
+                "sourceKey": "wp-kingdom-of-samoa",
+                "sourceLocation": "infobox life span: 1873–1900"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1900,
+              "source": {
+                "sourceKey": "wp-kingdom-of-samoa",
+                "sourceLocation": "infobox life span: 1873–1900"
+              }
+            }
+          ],
+          "endEvent": "tripartite-convention-1899"
+        },
+        {
+          "name": "German Samoa",
+          "start": 1900,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1900,
+              "source": {
+                "sourceKey": "wp-german-samoa",
+                "sourceLocation": "infobox year_start: 1900"
+              }
+            },
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-samoa",
+                "sourceLocation": "lead: \"The country became a colony of the German Empire in 1899 after the Tripartite Convention, and was known as German Samoa.\""
+              },
+              "note": "The Samoa article dates the colony from the 1899 convention."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-german-samoa",
+                "sourceLocation": "infobox life span: 1900–1914"
+              }
+            },
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-german-samoa",
+                "sourceLocation": "infobox year_end: 1920"
+              },
+              "note": "The infobox ends German Samoa with the League mandate of 1920."
+            }
+          ],
+          "startEvent": "tripartite-convention-1899",
+          "endEvent": "occupation-of-german-samoa"
+        },
+        {
+          "name": "Western Samoa (New Zealand)",
+          "start": 1914,
+          "end": 1962,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-territory-of-western-samoa",
+                "sourceLocation": "infobox event_pre: Occupation, 30 August 1914"
+              }
+            },
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-territory-of-western-samoa",
+                "sourceLocation": "infobox year_start: 1920"
+              },
+              "note": "The civil administration (the League mandate) dates from 1920."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1962,
+              "source": {
+                "sourceKey": "wp-territory-of-western-samoa",
+                "sourceLocation": "infobox year_end: 1962"
+              }
+            }
+          ],
+          "startEvent": "occupation-of-german-samoa",
+          "endEvent": "samoan-independence"
+        },
+        {
+          "name": "Independent State of Samoa",
+          "start": 1962,
+          "ongoing": true,
+          "startDates": [
+            {
+              "year": 1962,
+              "source": {
+                "sourceKey": "wp-samoa",
+                "sourceLocation": "infobox: Western Samoa Act 1961 (1 January 1962)"
+              }
+            }
+          ],
+          "ongoingSources": [
+            {
+              "sourceKey": "wp-samoa",
+              "sourceLocation": "infobox established_event7: Western Samoa Act 1961, 1 January 1962 (current state)"
+            }
+          ],
+          "startEvent": "samoan-independence"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "germany",
+          "start": 1900,
+          "end": 1914,
+          "startDates": [
+            {
+              "year": 1900,
+              "source": {
+                "sourceKey": "wp-german-samoa",
+                "sourceLocation": "infobox year_start: 1900"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-german-samoa",
+                "sourceLocation": "infobox life span: 1900–1914"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-german-samoa",
+              "sourceLocation": "lead: \"German Samoa, officially the Kingdom of Samoa (; ), was a German protectorate from 1900 to 1920, consisting of the islands of Upolu, Savaiʻi, Apolima and Manono\""
+            }
+          ],
+          "startEvent": "tripartite-convention-1899",
+          "endEvent": "occupation-of-german-samoa"
+        },
+        {
+          "row": "new-zealand",
+          "start": 1914,
+          "end": 1962,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-territory-of-western-samoa",
+                "sourceLocation": "infobox event_pre: Occupation, 30 August 1914"
+              }
+            },
+            {
+              "year": 1920,
+              "source": {
+                "sourceKey": "wp-territory-of-western-samoa",
+                "sourceLocation": "infobox year_start: 1920"
+              },
+              "note": "The civil administration (the League mandate) dates from 1920."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1962,
+              "source": {
+                "sourceKey": "wp-territory-of-western-samoa",
+                "sourceLocation": "infobox year_end: 1962"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-territory-of-western-samoa",
+              "sourceLocation": "lead: \"The Territory of Western Samoa was the civil administration of Western Samoa by New Zealand between 1920 and Samoan independence in 1962.\""
+            }
+          ],
+          "startEvent": "occupation-of-german-samoa",
+          "endEvent": "samoan-independence"
+        }
+      ]
+    },
+    {
+      "id": "hawaiian-kingdom",
+      "name": "Hawaiian Kingdom",
+      "color": "#c06a2a",
+      "parent": "polynesia",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_Kingdom",
+      "phases": [
+        {
+          "name": "Hawaiian Kingdom",
+          "start": 1795,
+          "end": 1893,
+          "startDates": [
+            {
+              "year": 1795,
+              "source": {
+                "sourceKey": "wp-hawaiian-kingdom",
+                "sourceLocation": "infobox year_start: 1795"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1893,
+              "source": {
+                "sourceKey": "wp-hawaiian-kingdom",
+                "sourceLocation": "infobox year_end: 1893"
+              }
+            }
+          ],
+          "startEvent": "battle-of-nuuanu",
+          "endEvent": "overthrow-of-the-hawaiian-kingdom"
+        },
+        {
+          "name": "Provisional Government",
+          "start": 1893,
+          "end": 1894,
+          "startDates": [
+            {
+              "year": 1893,
+              "source": {
+                "sourceKey": "wp-provisional-government-of-hawaii",
+                "sourceLocation": "infobox year_start: 1893"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1894,
+              "source": {
+                "sourceKey": "wp-provisional-government-of-hawaii",
+                "sourceLocation": "infobox year_end: 1894"
+              }
+            }
+          ],
+          "startEvent": "overthrow-of-the-hawaiian-kingdom",
+          "endEvent": "republic-of-hawaii-proclaimed"
+        },
+        {
+          "name": "Republic of Hawaii",
+          "start": 1894,
+          "end": 1898,
+          "startDates": [
+            {
+              "year": 1894,
+              "source": {
+                "sourceKey": "wp-republic-of-hawaii",
+                "sourceLocation": "infobox year_start: 1894"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1898,
+              "source": {
+                "sourceKey": "wp-republic-of-hawaii",
+                "sourceLocation": "infobox year_end: 1898"
+              }
+            }
+          ],
+          "startEvent": "republic-of-hawaii-proclaimed",
+          "endEvent": "annexation-of-hawaii"
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-tahiti",
+      "name": "Kingdom of Tahiti",
+      "color": "#a03a6a",
+      "parent": "polynesia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tahiti",
+      "span": {
+        "start": 1788,
+        "end": 1880,
+        "startDates": [
+          {
+            "year": 1788,
+            "source": {
+              "sourceKey": "wp-kingdom-of-tahiti",
+              "sourceLocation": "infobox year_start: 1788/91"
+            }
+          },
+          {
+            "year": 1791,
+            "source": {
+              "sourceKey": "wp-kingdom-of-tahiti",
+              "sourceLocation": "infobox year_start: 1788/91"
+            },
+            "note": "The infobox gives 1788 or 1791 for the founding."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1880,
+            "source": {
+              "sourceKey": "wp-kingdom-of-tahiti",
+              "sourceLocation": "infobox year_end: 1880"
+            }
+          }
+        ],
+        "endEvent": "tahiti-annexed-by-france"
+      },
+      "memberOf": [
+        {
+          "row": "french-colonial-empire",
+          "start": 1842,
+          "end": 1880,
+          "startDates": [
+            {
+              "year": 1842,
+              "source": {
+                "sourceKey": "wp-kingdom-of-tahiti",
+                "sourceLocation": "infobox event2: Establishment of the French protectorate, 9 September 1842"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1880,
+              "source": {
+                "sourceKey": "wp-kingdom-of-tahiti",
+                "sourceLocation": "infobox year_end: 1880"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-tahiti",
+              "sourceLocation": "lead: \"Tahiti and its dependencies transformed into French protectorates in 1842 and largely annexed as a colony of France in 1880 after Pomare V was convinced to give\""
+            }
+          ],
+          "startEvent": "tahiti-french-protectorate",
+          "endEvent": "tahiti-annexed-by-france"
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-rarotonga",
+      "name": "Rarotonga (Cook Islands Federation)",
+      "color": "#6a5a9a",
+      "parent": "polynesia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Rarotonga",
+      "phases": [
+        {
+          "name": "Kingdom of Rarotonga",
+          "start": 1858,
+          "end": 1891,
+          "startDates": [
+            {
+              "year": 1858,
+              "source": {
+                "sourceKey": "wp-kingdom-of-rarotonga",
+                "sourceLocation": "infobox year_start: 1858"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1891,
+              "source": {
+                "sourceKey": "wp-cook-islands-federation",
+                "sourceLocation": "infobox year_start: 1891"
+              }
+            },
+            {
+              "year": 1893,
+              "source": {
+                "sourceKey": "wp-kingdom-of-rarotonga",
+                "sourceLocation": "infobox year_end: 1893"
+              },
+              "note": "The Kingdom of Rarotonga article dates the renaming to the Cook Islands Federation to 1893."
+            }
+          ],
+          "endEvent": "cook-islands-federation-created"
+        },
+        {
+          "name": "Cook Islands Federation",
+          "start": 1891,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1891,
+              "source": {
+                "sourceKey": "wp-cook-islands-federation",
+                "sourceLocation": "infobox year_start: 1891"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-cook-islands-federation",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "startEvent": "cook-islands-federation-created",
+          "endEvent": "cook-islands-annexed-by-new-zealand"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "british-empire",
+          "start": 1888,
+          "end": 1901,
+          "startDates": [
+            {
+              "year": 1888,
+              "source": {
+                "sourceKey": "wp-kingdom-of-rarotonga",
+                "sourceLocation": "infobox event1: Protectorate, 1888"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1901,
+              "source": {
+                "sourceKey": "wp-cook-islands-federation",
+                "sourceLocation": "infobox year_end: 1901"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-rarotonga",
+              "sourceLocation": "lead: \"In 1888 it became a protectorate of the United Kingdom at its own request.\""
+            }
+          ],
+          "startEvent": "rarotonga-protectorate",
+          "endEvent": "cook-islands-annexed-by-new-zealand"
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-easter-island",
+      "name": "Kingdom of Easter Island (Rapa Nui)",
+      "color": "#7a6a4a",
+      "parent": "polynesia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Easter_Island",
+      "span": {
+        "start": 350,
+        "end": 1888,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 350,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-kingdom-of-easter-island",
+              "sourceLocation": "infobox year_start: 300–400 CE"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1888,
+            "source": {
+              "sourceKey": "wp-kingdom-of-easter-island",
+              "sourceLocation": "infobox year_end: September 9, 1888"
+            }
+          },
+          {
+            "year": 1902,
+            "source": {
+              "sourceKey": "wp-kingdom-of-easter-island",
+              "sourceLocation": "infobox life_span: c. 4th century – 1888 / 1902"
+            },
+            "note": "The same article gives this year too."
+          }
+        ],
+        "endEvent": "chilean-annexation-of-easter-island"
+      }
     }
   ],
   "sources": {
@@ -64032,6 +66978,694 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-colony-of-new-south-wales": {
+      "name": "Colony of New South Wales (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Colony_of_New_South_Wales",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-van-diemen-s-land": {
+      "name": "Van Diemen's Land (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Van_Diemen's_Land",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-colony-of-tasmania": {
+      "name": "Colony of Tasmania (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Colony_of_Tasmania",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-western-australia": {
+      "name": "History of Western Australia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Western_Australia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-british-colonisation-of-south-australia": {
+      "name": "British colonisation of South Australia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/British_colonisation_of_South_Australia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-colony-of-victoria": {
+      "name": "Colony of Victoria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Colony_of_Victoria",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-colony-of-queensland": {
+      "name": "Colony of Queensland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Colony_of_Queensland",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-australia": {
+      "name": "Australia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Australia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-united-tribes-of-new-zealand": {
+      "name": "United Tribes of New Zealand (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/United_Tribes_of_New_Zealand",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-colony-of-new-zealand": {
+      "name": "Colony of New Zealand (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Colony_of_New_Zealand",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dominion-of-new-zealand": {
+      "name": "Dominion of New Zealand (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dominion_of_New_Zealand",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-new-zealand": {
+      "name": "New Zealand (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/New_Zealand",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-fiji": {
+      "name": "Kingdom of Fiji (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Fiji",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-colony-of-fiji": {
+      "name": "Colony of Fiji (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Colony_of_Fiji",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dominion-of-fiji": {
+      "name": "Dominion of Fiji (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dominion_of_Fiji",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-fiji": {
+      "name": "Fiji (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fiji",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-territory-of-papua-and-new-guinea": {
+      "name": "Territory of Papua and New Guinea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Territory_of_Papua_and_New_Guinea",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-british-new-guinea": {
+      "name": "British New Guinea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/British_New_Guinea",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-territory-of-papua": {
+      "name": "Territory of Papua (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Territory_of_Papua",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-new-guinea": {
+      "name": "German New Guinea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_New_Guinea",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-territory-of-new-guinea": {
+      "name": "Territory of New Guinea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Territory_of_New_Guinea",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-papua-new-guinea": {
+      "name": "Papua New Guinea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Papua_New_Guinea",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-republic-of-the-north-solomons": {
+      "name": "Republic of the North Solomons (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_the_North_Solomons",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-british-solomon-islands": {
+      "name": "British Solomon Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/British_Solomon_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-solomon-islands": {
+      "name": "Solomon Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Solomon_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-new-hebrides": {
+      "name": "New Hebrides (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/New_Hebrides",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vanuatu": {
+      "name": "Vanuatu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vanuatu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nan-madol": {
+      "name": "Nan Madol (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nan_Madol",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-saudeleur-dynasty": {
+      "name": "Saudeleur dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saudeleur_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pohnpei": {
+      "name": "Pohnpei (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pohnpei",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-the-federated-states-of-micronesia": {
+      "name": "History of the Federated States of Micronesia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_Federated_States_of_Micronesia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-caroline-islands": {
+      "name": "Caroline Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Caroline_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-south-seas-mandate": {
+      "name": "South Seas Mandate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/South_Seas_Mandate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-trust-territory-of-the-pacific-islands": {
+      "name": "Trust Territory of the Pacific Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Trust_Territory_of_the_Pacific_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-federated-states-of-micronesia": {
+      "name": "Federated States of Micronesia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Federated_States_of_Micronesia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-palau": {
+      "name": "Palau (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Palau",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-palau": {
+      "name": "History of Palau (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Palau",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-marshall-islands": {
+      "name": "Marshall Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marshall_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-nauru": {
+      "name": "History of Nauru (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Nauru",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nauru": {
+      "name": "Nauru (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nauru",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-japanese-occupation-of-nauru": {
+      "name": "Japanese occupation of Nauru (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Japanese_occupation_of_Nauru",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gilbert-and-ellice-islands": {
+      "name": "Gilbert and Ellice Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gilbert_and_Ellice_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-japanese-occupation-of-the-gilbert-islands": {
+      "name": "Japanese occupation of the Gilbert Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Japanese_occupation_of_the_Gilbert_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gilbert-islands": {
+      "name": "Gilbert Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gilbert_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kiribati": {
+      "name": "Kiribati (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kiribati",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tuvalu": {
+      "name": "Tuvalu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tuvalu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tu-i-tonga-empire": {
+      "name": "Tuʻi Tonga Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tuʻi_Tonga_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tonga": {
+      "name": "Tonga (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tonga",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-tonga-1900-1970": {
+      "name": "Kingdom of Tonga (1900–1970) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tonga_(1900–1970)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-samoa": {
+      "name": "German Samoa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German_Samoa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-territory-of-western-samoa": {
+      "name": "Territory of Western Samoa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Territory_of_Western_Samoa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-samoa": {
+      "name": "Kingdom of Samoa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Samoa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-samoa": {
+      "name": "Samoa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samoa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hawaiian-kingdom": {
+      "name": "Hawaiian Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-provisional-government-of-hawaii": {
+      "name": "Provisional Government of Hawaii (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Provisional_Government_of_Hawaii",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-republic-of-hawaii": {
+      "name": "Republic of Hawaii (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_Hawaii",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-tahiti": {
+      "name": "Kingdom of Tahiti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tahiti",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-rarotonga": {
+      "name": "Kingdom of Rarotonga (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Rarotonga",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cook-islands-federation": {
+      "name": "Cook Islands Federation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cook_Islands_Federation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-easter-island": {
+      "name": "Kingdom of Easter Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Easter_Island",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-australian-frontier-wars": {
+      "name": "Australian frontier wars (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Australian_frontier_wars",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-swan-river-colony": {
+      "name": "Swan River Colony (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Swan_River_Colony",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gallipoli-campaign": {
+      "name": "Gallipoli campaign (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gallipoli_campaign",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kokoda-track-campaign": {
+      "name": "Kokoda Track campaign (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kokoda_Track_campaign",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-treaty-of-waitangi": {
+      "name": "Treaty of Waitangi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Waitangi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-new-zealand-wars": {
+      "name": "New Zealand Wars (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/New_Zealand_Wars",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1987-fijian-coups-d-tat": {
+      "name": "1987 Fijian coups d'état (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1987_Fijian_coups_d'état",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2000-fijian-coup-d-tat": {
+      "name": "2000 Fijian coup d'état (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2000_Fijian_coup_d'état",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2006-fijian-coup-d-tat": {
+      "name": "2006 Fijian coup d'état (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2006_Fijian_coup_d'état",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-australian-occupation-of-german-new-guinea": {
+      "name": "Australian occupation of German New Guinea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Australian_occupation_of_German_New_Guinea",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bougainville-conflict": {
+      "name": "Bougainville conflict (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bougainville_conflict",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-guadalcanal-campaign": {
+      "name": "Guadalcanal campaign (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Guadalcanal_campaign",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-regional-assistance-mission-to-solomon-islands": {
+      "name": "Regional Assistance Mission to Solomon Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Regional_Assistance_Mission_to_Solomon_Islands",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2021-solomon-islands-unrest": {
+      "name": "2021 Solomon Islands unrest (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2021_Solomon_Islands_unrest",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-coconut-war": {
+      "name": "Coconut War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coconut_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-german-spanish-treaty-1899": {
+      "name": "German–Spanish Treaty (1899) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/German–Spanish_Treaty_(1899)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-tarawa": {
+      "name": "Battle of Tarawa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Tarawa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-castle-bravo": {
+      "name": "Castle Bravo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Castle_Bravo",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2006-nuku-alofa-riots": {
+      "name": "2006 Nukuʻalofa riots (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2006_Nukuʻalofa_riots",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-samoan-civil-war": {
+      "name": "Samoan Civil War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samoan_Civil_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-samoan-civil-war": {
+      "name": "Second Samoan Civil War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Samoan_Civil_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tripartite-convention": {
+      "name": "Tripartite Convention (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tripartite_Convention",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-occupation-of-german-samoa": {
+      "name": "Occupation of German Samoa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Occupation_of_German_Samoa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-nu-uanu": {
+      "name": "Battle of Nuʻuanu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Nuʻuanu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-overthrow-of-the-hawaiian-kingdom": {
+      "name": "Overthrow of the Hawaiian Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Overthrow_of_the_Hawaiian_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-franco-tahitian-war": {
+      "name": "Franco-Tahitian War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Franco-Tahitian_War",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -64292,7 +67926,10 @@
         "united-states",
         "brazil",
         "german-east-africa",
-        "south-africa"
+        "south-africa",
+        "australia",
+        "new-zealand",
+        "nauru"
       ],
       "sources": [
         {
@@ -64351,7 +67988,10 @@
         "mexico",
         "ethiopia",
         "italian-east-africa",
-        "south-africa"
+        "south-africa",
+        "australia",
+        "new-zealand",
+        "tonga"
       ],
       "sources": [
         {
@@ -74016,7 +77656,11 @@
         "thailand",
         "philippines",
         "british-empire",
-        "dutch-empire"
+        "dutch-empire",
+        "australia",
+        "new-zealand",
+        "nauru",
+        "gilbert-and-ellice-islands"
       ],
       "sources": [
         {
@@ -86809,6 +90453,1468 @@
           "sourceLocation": "infobox: Renaming (19 April 2018)"
         }
       ]
+    },
+    {
+      "uuid": "first-fleet",
+      "title": "First Fleet founds New South Wales",
+      "descr": "The penal colony at Sydney Cove begins British settlement of Australia.",
+      "start": 1788,
+      "tracks": [
+        "australia",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-colony-of-new-south-wales",
+          "sourceLocation": "infobox year_start: 1788"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "australian-frontier-wars",
+      "title": "Australian frontier wars",
+      "descr": "Conflicts between Aboriginal and Torres Strait Islander peoples and the settlers.",
+      "start": 1788,
+      "end": 1900,
+      "tracks": [
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-australian-frontier-wars",
+          "sourceLocation": "infobox date: 1788–1934;Coates table below, 1788–1900"
+        }
+      ]
+    },
+    {
+      "uuid": "tasmania-self-government",
+      "title": "Van Diemen's Land becomes Tasmania",
+      "descr": "The colony is renamed and gains responsible government.",
+      "start": 1856,
+      "tracks": [
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-van-diemen-s-land",
+          "sourceLocation": "infobox year_end: 1856"
+        }
+      ]
+    },
+    {
+      "uuid": "swan-river-colony-founded",
+      "title": "Swan River Colony founded",
+      "descr": "",
+      "start": 1829,
+      "tracks": [
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-swan-river-colony",
+          "sourceLocation": "infobox year_start: 17 June 1829"
+        }
+      ]
+    },
+    {
+      "uuid": "federation-of-australia",
+      "title": "Federation of Australia",
+      "descr": "The six colonies federate as the Commonwealth of Australia on 1 January 1901.",
+      "start": 1901,
+      "tracks": [
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-australia",
+          "sourceLocation": "infobox: Federation (1 January 1901)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "gallipoli-campaign",
+      "title": "Gallipoli campaign",
+      "descr": "",
+      "start": 1915,
+      "end": 1916,
+      "tracks": [
+        "australia",
+        "new-zealand",
+        "ottoman-empire",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gallipoli-campaign",
+          "sourceLocation": "infobox date: 19 February 1915 – 9 January 1916"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "balfour-declaration-1926",
+      "title": "Balfour Declaration",
+      "descr": "The dominions are declared equal in status with the United Kingdom.",
+      "start": 1926,
+      "tracks": [
+        "australia",
+        "new-zealand",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-australia",
+          "sourceLocation": "infobox: Balfour Declaration (15 November 1926)"
+        }
+      ]
+    },
+    {
+      "uuid": "statute-of-westminster-adoption-australia",
+      "title": "Statute of Westminster Adoption Act (Australia)",
+      "descr": "",
+      "start": 1942,
+      "tracks": [
+        "australia",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-australia",
+          "sourceLocation": "infobox: Statute of Westminster Adoption Act (9 October 1942)"
+        }
+      ]
+    },
+    {
+      "uuid": "kokoda-track-campaign",
+      "title": "Kokoda Track campaign",
+      "descr": "",
+      "start": 1942,
+      "tracks": [
+        "australia",
+        "papua-new-guinea",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kokoda-track-campaign",
+          "sourceLocation": "infobox date: 21 July – 16 November 1942"
+        }
+      ]
+    },
+    {
+      "uuid": "australia-act-1986",
+      "title": "Australia Act",
+      "descr": "The last constitutional links with the United Kingdom are cut.",
+      "start": 1986,
+      "tracks": [
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-australia",
+          "sourceLocation": "infobox: Australia Acts (3 March 1986)"
+        }
+      ]
+    },
+    {
+      "uuid": "nz-declaration-of-independence",
+      "title": "Declaration of Independence of New Zealand",
+      "descr": "Northern Māori chiefs proclaim the United Tribes of New Zealand.",
+      "start": 1835,
+      "tracks": [
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-united-tribes-of-new-zealand",
+          "sourceLocation": "infobox year_start: 1835"
+        }
+      ]
+    },
+    {
+      "uuid": "treaty-of-waitangi",
+      "title": "Treaty of Waitangi",
+      "descr": "Māori chiefs and the Crown sign the treaty on 6 February 1840.",
+      "start": 1840,
+      "tracks": [
+        "new-zealand",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-treaty-of-waitangi",
+          "sourceLocation": "infobox date_signed: 6 February 1840"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "colony-of-new-zealand-separated",
+      "title": "Colony of New Zealand separated from New South Wales",
+      "descr": "",
+      "start": 1841,
+      "tracks": [
+        "new-zealand",
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-colony-of-new-zealand",
+          "sourceLocation": "infobox year_start: 1841"
+        }
+      ]
+    },
+    {
+      "uuid": "new-zealand-wars",
+      "title": "New Zealand Wars",
+      "descr": "",
+      "start": 1845,
+      "end": 1872,
+      "tracks": [
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-new-zealand-wars",
+          "sourceLocation": "infobox date: 1845–1872"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "dominion-of-new-zealand",
+      "title": "New Zealand becomes a dominion",
+      "descr": "",
+      "start": 1907,
+      "tracks": [
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-dominion-of-new-zealand",
+          "sourceLocation": "infobox year_start: 1907"
+        }
+      ]
+    },
+    {
+      "uuid": "statute-of-westminster-adoption-nz",
+      "title": "Statute of Westminster Adoption Act (New Zealand)",
+      "descr": "",
+      "start": 1947,
+      "tracks": [
+        "new-zealand",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-new-zealand",
+          "sourceLocation": "infobox: Statute of Westminster Adoption Act (25 November 1947)"
+        }
+      ]
+    },
+    {
+      "uuid": "nz-constitution-act-1986",
+      "title": "Constitution Act 1986",
+      "descr": "",
+      "start": 1987,
+      "tracks": [
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-new-zealand",
+          "sourceLocation": "infobox: Constitution Act 1986 (1 January 1987)"
+        }
+      ]
+    },
+    {
+      "uuid": "kingdom-of-fiji-established",
+      "title": "Kingdom of Fiji established",
+      "descr": "Seru Epenisa Cakobau becomes king of a united Fiji.",
+      "start": 1871,
+      "tracks": [
+        "fiji"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-fiji",
+          "sourceLocation": "infobox year_start: 1871"
+        }
+      ]
+    },
+    {
+      "uuid": "fiji-ceded-to-britain",
+      "title": "Fiji ceded to Britain",
+      "descr": "",
+      "start": 1874,
+      "tracks": [
+        "fiji",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-colony-of-fiji",
+          "sourceLocation": "infobox year_start: 1874"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fiji-independence",
+      "title": "Fijian independence",
+      "descr": "",
+      "start": 1970,
+      "tracks": [
+        "fiji",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-fiji",
+          "sourceLocation": "infobox: Independence (10 October 1970)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "fijian-coups-1987",
+      "title": "Fijian coups of 1987",
+      "descr": "Two military coups; the military government declares a republic.",
+      "start": 1987,
+      "tracks": [
+        "fiji"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1987-fijian-coups-d-tat",
+          "sourceLocation": "infobox date: 14 May 1987 (first coup)"
+        }
+      ]
+    },
+    {
+      "uuid": "fijian-coup-2000",
+      "title": "Fijian coup of 2000",
+      "descr": "",
+      "start": 2000,
+      "end": 2001,
+      "tracks": [
+        "fiji"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-2000-fijian-coup-d-tat",
+          "sourceLocation": "infobox date: 19 May 2000 – 1 March 2001"
+        }
+      ]
+    },
+    {
+      "uuid": "fijian-coup-2006",
+      "title": "Fijian coup of 2006",
+      "descr": "Frank Bainimarama seizes power.",
+      "start": 2006,
+      "tracks": [
+        "fiji"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-2006-fijian-coup-d-tat",
+          "sourceLocation": "infobox date: 5 December 2006"
+        }
+      ]
+    },
+    {
+      "uuid": "british-new-guinea-protectorate",
+      "title": "British protectorate over south-east New Guinea",
+      "descr": "",
+      "start": 1884,
+      "tracks": [
+        "papua-new-guinea",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-british-new-guinea",
+          "sourceLocation": "infobox: Protectorate proclaimed (21 October 1884)"
+        }
+      ]
+    },
+    {
+      "uuid": "german-new-guinea-established",
+      "title": "German New Guinea established",
+      "descr": "",
+      "start": 1884,
+      "tracks": [
+        "papua-new-guinea",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-new-guinea",
+          "sourceLocation": "infobox year_start: 1884"
+        }
+      ]
+    },
+    {
+      "uuid": "papua-transferred-to-australia",
+      "title": "British New Guinea transferred to Australia",
+      "descr": "",
+      "start": 1902,
+      "tracks": [
+        "papua-new-guinea",
+        "australia",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-british-new-guinea",
+          "sourceLocation": "infobox: Transfer to Australia (18 March 1902)"
+        }
+      ]
+    },
+    {
+      "uuid": "australian-occupation-of-german-new-guinea",
+      "title": "Australian occupation of German New Guinea",
+      "descr": "",
+      "start": 1914,
+      "tracks": [
+        "papua-new-guinea",
+        "australia",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-australian-occupation-of-german-new-guinea",
+          "sourceLocation": "infobox date: 9 September – 21 October 1914"
+        }
+      ]
+    },
+    {
+      "uuid": "papua-new-guinea-administrative-union",
+      "title": "Papua and New Guinea united",
+      "descr": "",
+      "start": 1949,
+      "tracks": [
+        "papua-new-guinea",
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-territory-of-papua-and-new-guinea",
+          "sourceLocation": "infobox year_start: 1949"
+        }
+      ]
+    },
+    {
+      "uuid": "png-independence",
+      "title": "Papua New Guinean independence",
+      "descr": "",
+      "start": 1975,
+      "tracks": [
+        "papua-new-guinea",
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-papua-new-guinea",
+          "sourceLocation": "infobox: Independence (16 September 1975)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "north-solomons-declared",
+      "title": "Republic of the North Solomons declared",
+      "descr": "Bougainville declares independence from Papua New Guinea.",
+      "start": 1975,
+      "tracks": [
+        "republic-of-the-north-solomons",
+        "papua-new-guinea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-republic-of-the-north-solomons",
+          "sourceLocation": "infobox year_start: 1975"
+        }
+      ]
+    },
+    {
+      "uuid": "north-solomons-reintegrated",
+      "title": "North Solomons reintegrated into Papua New Guinea",
+      "descr": "",
+      "start": 1976,
+      "tracks": [
+        "republic-of-the-north-solomons",
+        "papua-new-guinea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-republic-of-the-north-solomons",
+          "sourceLocation": "infobox event1: Reintegrated into Papua New Guinea as \"North Solomons Province\", 9 August 1976"
+        }
+      ]
+    },
+    {
+      "uuid": "bougainville-civil-war",
+      "title": "Bougainville Civil War",
+      "descr": "",
+      "start": 1988,
+      "end": 1998,
+      "tracks": [
+        "papua-new-guinea"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bougainville-conflict",
+          "sourceLocation": "infobox date: 1 December 1988 – 20 April 1998"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "british-solomon-islands-protectorate",
+      "title": "British Solomon Islands Protectorate declared",
+      "descr": "",
+      "start": 1893,
+      "tracks": [
+        "solomon-islands",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-british-solomon-islands",
+          "sourceLocation": "infobox year_start: 1893"
+        }
+      ]
+    },
+    {
+      "uuid": "guadalcanal-campaign",
+      "title": "Guadalcanal campaign",
+      "descr": "",
+      "start": 1942,
+      "end": 1943,
+      "tracks": [
+        "solomon-islands",
+        "united-states",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-guadalcanal-campaign",
+          "sourceLocation": "infobox date: 7 August 1942 – 9 February 1943"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "solomon-islands-independence",
+      "title": "Solomon Islands independence",
+      "descr": "",
+      "start": 1978,
+      "tracks": [
+        "solomon-islands",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-solomon-islands",
+          "sourceLocation": "infobox: Declared (7 July 1978)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "ramsi",
+      "title": "Regional Assistance Mission to Solomon Islands",
+      "descr": "An Australian-led intervention after years of ethnic violence.",
+      "start": 2003,
+      "end": 2017,
+      "tracks": [
+        "solomon-islands",
+        "australia",
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-regional-assistance-mission-to-solomon-islands",
+          "sourceLocation": "infobox date: 24 July 2003 – 30 June 2017"
+        }
+      ]
+    },
+    {
+      "uuid": "solomon-islands-unrest-2021",
+      "title": "Solomon Islands unrest",
+      "descr": "",
+      "start": 2021,
+      "tracks": [
+        "solomon-islands"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-2021-solomon-islands-unrest",
+          "sourceLocation": "infobox date: 24–27 November 2021"
+        }
+      ]
+    },
+    {
+      "uuid": "anglo-french-joint-naval-commission",
+      "title": "Anglo-French Joint Naval Commission",
+      "descr": "Britain and France begin joint supervision of the New Hebrides.",
+      "start": 1887,
+      "tracks": [
+        "vanuatu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-new-hebrides",
+          "sourceLocation": "lead: \"The New Hebrides Condominium (), which followed the governance of the islands under the Anglo-French Joint Naval Commission (1887–1889 and 1890–1906), lasted fr\""
+        }
+      ]
+    },
+    {
+      "uuid": "new-hebrides-condominium",
+      "title": "New Hebrides Condominium",
+      "descr": "Britain and France agree to rule the islands jointly.",
+      "start": 1906,
+      "tracks": [
+        "vanuatu",
+        "british-empire",
+        "french-colonial-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-new-hebrides",
+          "sourceLocation": "infobox year_start: 1906"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "coconut-war",
+      "title": "Coconut War",
+      "descr": "A secession on Espiritu Santo is put down around independence.",
+      "start": 1980,
+      "tracks": [
+        "vanuatu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-coconut-war",
+          "sourceLocation": "infobox date: August 1980"
+        }
+      ]
+    },
+    {
+      "uuid": "vanuatu-independence",
+      "title": "Vanuatu independence",
+      "descr": "",
+      "start": 1980,
+      "tracks": [
+        "vanuatu",
+        "british-empire",
+        "french-colonial-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-vanuatu",
+          "sourceLocation": "infobox: from the United Kingdom and France (30 July 1980)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "isokelekel-conquers-the-saudeleur",
+      "title": "Isokelekel conquers the Saudeleur",
+      "descr": "The Saudeleur dynasty falls; the Nahnmwarki era begins on Pohnpei.",
+      "start": 1628,
+      "tracks": [
+        "pohnpei"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-saudeleur-dynasty",
+          "sourceLocation": "infobox year_end: c. 1628"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "german-protectorate-of-the-marshall-islands",
+      "title": "German protectorate of the Marshall Islands",
+      "descr": "",
+      "start": 1885,
+      "tracks": [
+        "marshall-islands",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-marshall-islands",
+          "sourceLocation": "lead: \"German copra traders dominated the economy in the 1870s and 1880s, and the German Empire annexed the Marshalls as a protectorate in 1885.\""
+        }
+      ]
+    },
+    {
+      "uuid": "german-annexation-of-nauru",
+      "title": "German annexation of Nauru",
+      "descr": "The annexation ends the Nauruan Civil War.",
+      "start": 1888,
+      "tracks": [
+        "nauru",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-history-of-nauru",
+          "sourceLocation": "lead: \"The German Empire annexed the island in 1888, ending the Nauruan Civil War which had started a decade prior.\""
+        }
+      ]
+    },
+    {
+      "uuid": "german-spanish-treaty-1899",
+      "title": "German–Spanish Treaty",
+      "descr": "Spain sells the Caroline, Palau and Northern Mariana Islands to Germany.",
+      "start": 1899,
+      "tracks": [
+        "federated-states-of-micronesia",
+        "palau",
+        "germany",
+        "spanish-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-spanish-treaty-1899",
+          "sourceLocation": "infobox date_signed: 12 February 1899"
+        }
+      ]
+    },
+    {
+      "uuid": "nauru-phosphate-mining",
+      "title": "Phosphate mining begins on Nauru",
+      "descr": "",
+      "start": 1900,
+      "tracks": [
+        "nauru"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nauru",
+          "sourceLocation": "lead: \"Nauru is a phosphate-rock island with rich deposits near the surface, as a result of which most of its interior was profitably but destructively strip-mined for\""
+        }
+      ]
+    },
+    {
+      "uuid": "japan-occupies-german-micronesia",
+      "title": "Japan occupies German Micronesia",
+      "descr": "",
+      "start": 1914,
+      "tracks": [
+        "federated-states-of-micronesia",
+        "palau",
+        "marshall-islands",
+        "japan",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-german-new-guinea",
+          "sourceLocation": "infobox event3: Japanese occupation, 29 September 1914"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "south-seas-mandate",
+      "title": "South Seas Mandate",
+      "descr": "The Treaty of Versailles gives Japan a League of Nations mandate over Germany's former Micronesian islands.",
+      "start": 1919,
+      "tracks": [
+        "federated-states-of-micronesia",
+        "palau",
+        "marshall-islands",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-south-seas-mandate",
+          "sourceLocation": "infobox year_start: 1919"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-tarawa",
+      "title": "Battle of Tarawa",
+      "descr": "",
+      "start": 1943,
+      "tracks": [
+        "gilbert-and-ellice-islands",
+        "united-states",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-tarawa",
+          "sourceLocation": "infobox date: 20–23 November 1943 (4 days)"
+        }
+      ]
+    },
+    {
+      "uuid": "ttpi-established",
+      "title": "Trust Territory of the Pacific Islands",
+      "descr": "The United States takes over the former Japanese mandate as a UN trust territory.",
+      "start": 1947,
+      "tracks": [
+        "federated-states-of-micronesia",
+        "palau",
+        "marshall-islands",
+        "united-states",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-trust-territory-of-the-pacific-islands",
+          "sourceLocation": "infobox year_start: 1947"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "us-nuclear-tests-marshall-islands",
+      "title": "US nuclear tests in the Marshall Islands",
+      "descr": "67 nuclear tests at Bikini and Enewetak atolls.",
+      "start": 1946,
+      "end": 1958,
+      "tracks": [
+        "marshall-islands",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-marshall-islands",
+          "sourceLocation": "lead: \"Between 1946 and 1958, the United States conducted 67 nuclear tests at Bikini Atoll and Enewetak Atoll.\""
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "castle-bravo",
+      "title": "Castle Bravo",
+      "descr": "The largest US nuclear test contaminates Rongelap and other atolls.",
+      "start": 1954,
+      "tracks": [
+        "marshall-islands",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-castle-bravo",
+          "sourceLocation": "infobox date: 1 March 1954"
+        }
+      ]
+    },
+    {
+      "uuid": "nauru-independence",
+      "title": "Nauruan independence",
+      "descr": "",
+      "start": 1968,
+      "tracks": [
+        "nauru",
+        "australia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nauru",
+          "sourceLocation": "infobox: Nauru Independence Act 1967 (31 January 1968)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "marshall-islands-self-government",
+      "title": "Marshall Islands self-government",
+      "descr": "",
+      "start": 1979,
+      "tracks": [
+        "marshall-islands"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-marshall-islands",
+          "sourceLocation": "infobox: Self-government (May 1, 1979)"
+        }
+      ]
+    },
+    {
+      "uuid": "fsm-constitution",
+      "title": "Federated States of Micronesia constitution",
+      "descr": "",
+      "start": 1979,
+      "tracks": [
+        "federated-states-of-micronesia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-federated-states-of-micronesia",
+          "sourceLocation": "infobox: Republic proclaimed (May 10, 1979)"
+        }
+      ]
+    },
+    {
+      "uuid": "republic-of-palau-established",
+      "title": "Republic of Palau established",
+      "descr": "",
+      "start": 1981,
+      "tracks": [
+        "palau"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-palau",
+          "sourceLocation": "infobox: Establishment of the Republic of Palau (1 January 1981)"
+        }
+      ]
+    },
+    {
+      "uuid": "compact-of-free-association-1986",
+      "title": "Compact of Free Association",
+      "descr": "Micronesia and the Marshall Islands become sovereign in free association with the United States.",
+      "start": 1986,
+      "tracks": [
+        "federated-states-of-micronesia",
+        "marshall-islands",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-federated-states-of-micronesia",
+          "sourceLocation": "infobox: Compact of Free Association (November 3, 1986)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "palau-compact-of-free-association",
+      "title": "Palau in free association",
+      "descr": "The last part of the Trust Territory becomes independent.",
+      "start": 1994,
+      "tracks": [
+        "palau",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-palau",
+          "sourceLocation": "infobox: Compact of Free Association (1 October 1994)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "gilbert-and-ellice-protectorate",
+      "title": "Gilbert and Ellice Islands protectorate",
+      "descr": "",
+      "start": 1892,
+      "tracks": [
+        "gilbert-and-ellice-islands",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gilbert-and-ellice-islands",
+          "sourceLocation": "infobox year_start: 1892"
+        }
+      ]
+    },
+    {
+      "uuid": "gilbert-and-ellice-crown-colony",
+      "title": "Gilbert and Ellice Islands Colony",
+      "descr": "",
+      "start": 1916,
+      "tracks": [
+        "gilbert-and-ellice-islands"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gilbert-and-ellice-islands",
+          "sourceLocation": "infobox event1: Colony, 12 January 1916"
+        }
+      ]
+    },
+    {
+      "uuid": "ellice-islands-referendum",
+      "title": "Ellice Islands separation referendum",
+      "descr": "",
+      "start": 1974,
+      "tracks": [
+        "gilbert-and-ellice-islands"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tuvalu",
+          "sourceLocation": "lead: \"A referendum was held in 1974 to determine whether the Gilbert Islands and Ellice Islands should each have their own administration.\""
+        }
+      ]
+    },
+    {
+      "uuid": "gilbert-and-ellice-separation",
+      "title": "Gilbert and Ellice Islands separated",
+      "descr": "",
+      "start": 1976,
+      "tracks": [
+        "gilbert-and-ellice-islands",
+        "kiribati",
+        "tuvalu"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-gilbert-and-ellice-islands",
+          "sourceLocation": "infobox year_end: 1976"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "tuvalu-independence",
+      "title": "Tuvaluan independence",
+      "descr": "",
+      "start": 1978,
+      "tracks": [
+        "tuvalu",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tuvalu",
+          "sourceLocation": "infobox: from the United Kingdom (1 October 1978)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "kiribati-independence",
+      "title": "Kiribati independence",
+      "descr": "",
+      "start": 1979,
+      "tracks": [
+        "kiribati",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kiribati",
+          "sourceLocation": "infobox: Granted (12 July 1979)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "tonga-unified",
+      "title": "Tonga unified",
+      "descr": "George Tupou I unites Tonga.",
+      "start": 1845,
+      "tracks": [
+        "tonga"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tonga",
+          "sourceLocation": "infobox: Unification (c. 1845)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "tui-tonga-title-abolished",
+      "title": "Tuʻi Tonga title abolished",
+      "descr": "",
+      "start": 1865,
+      "tracks": [
+        "tonga"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tu-i-tonga-empire",
+          "sourceLocation": "infobox year_end: 1865"
+        }
+      ]
+    },
+    {
+      "uuid": "tonga-protected-state",
+      "title": "Tonga becomes a British protected state",
+      "descr": "",
+      "start": 1900,
+      "tracks": [
+        "tonga",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+          "sourceLocation": "infobox year_start: 1900"
+        }
+      ]
+    },
+    {
+      "uuid": "tonga-protection-ends",
+      "title": "Tonga's protected status ends",
+      "descr": "",
+      "start": 1970,
+      "tracks": [
+        "tonga",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tonga-1900-1970",
+          "sourceLocation": "infobox year_end: 1970"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "nukualofa-riots-2006",
+      "title": "Nukuʻalofa riots",
+      "descr": "",
+      "start": 2006,
+      "tracks": [
+        "tonga"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-2006-nuku-alofa-riots",
+          "sourceLocation": "infobox date: 16 November 2006"
+        }
+      ]
+    },
+    {
+      "uuid": "kingdom-of-samoa-founded",
+      "title": "Kingdom of Samoa founded",
+      "descr": "",
+      "start": 1873,
+      "tracks": [
+        "samoa"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-samoa",
+          "sourceLocation": "infobox: Kingdom founded (1873)"
+        }
+      ]
+    },
+    {
+      "uuid": "first-samoan-civil-war",
+      "title": "First Samoan Civil War",
+      "descr": "",
+      "start": 1886,
+      "end": 1894,
+      "tracks": [
+        "samoa",
+        "germany",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-samoan-civil-war",
+          "sourceLocation": "infobox date: 1886–1894"
+        }
+      ]
+    },
+    {
+      "uuid": "second-samoan-civil-war",
+      "title": "Second Samoan Civil War",
+      "descr": "",
+      "start": 1898,
+      "end": 1899,
+      "tracks": [
+        "samoa",
+        "germany",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-second-samoan-civil-war",
+          "sourceLocation": "infobox date: 1898–1899"
+        }
+      ]
+    },
+    {
+      "uuid": "tripartite-convention-1899",
+      "title": "Tripartite Convention",
+      "descr": "Samoa is partitioned between Germany and the United States.",
+      "start": 1899,
+      "tracks": [
+        "samoa",
+        "germany",
+        "united-states",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tripartite-convention",
+          "sourceLocation": "infobox date_signed: 2 December 1899"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "occupation-of-german-samoa",
+      "title": "Occupation of German Samoa",
+      "descr": "",
+      "start": 1914,
+      "tracks": [
+        "samoa",
+        "new-zealand",
+        "germany"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-occupation-of-german-samoa",
+          "sourceLocation": "infobox date: 29–30 August 1914"
+        }
+      ]
+    },
+    {
+      "uuid": "samoan-independence",
+      "title": "Samoan independence",
+      "descr": "",
+      "start": 1962,
+      "tracks": [
+        "samoa",
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-samoa",
+          "sourceLocation": "infobox: Western Samoa Act 1961 (1 January 1962)"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-nuuanu",
+      "title": "Battle of Nuʻuanu",
+      "descr": "Kamehameha I conquers Oʻahu.",
+      "start": 1795,
+      "tracks": [
+        "hawaiian-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-nu-uanu",
+          "sourceLocation": "infobox date: May 1795"
+        }
+      ]
+    },
+    {
+      "uuid": "hawaii-unified",
+      "title": "Hawaiian Islands unified",
+      "descr": "Kauaʻi and Niʻihau join the kingdom.",
+      "start": 1810,
+      "tracks": [
+        "hawaiian-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hawaiian-kingdom",
+          "sourceLocation": "infobox event1: Unification of Hawaii, March/April 1810"
+        }
+      ]
+    },
+    {
+      "uuid": "paulet-affair",
+      "title": "Paulet affair",
+      "descr": "A British captain occupies the islands for five months.",
+      "start": 1843,
+      "tracks": [
+        "hawaiian-kingdom",
+        "united-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hawaiian-kingdom",
+          "sourceLocation": "infobox event3: Partial occupation by the United Kingdom, February 25 – July 31, 1843"
+        }
+      ]
+    },
+    {
+      "uuid": "overthrow-of-the-hawaiian-kingdom",
+      "title": "Overthrow of the Hawaiian Kingdom",
+      "descr": "",
+      "start": 1893,
+      "tracks": [
+        "hawaiian-kingdom",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-overthrow-of-the-hawaiian-kingdom",
+          "sourceLocation": "infobox date: 17 January 1893"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "republic-of-hawaii-proclaimed",
+      "title": "Republic of Hawaii proclaimed",
+      "descr": "",
+      "start": 1894,
+      "tracks": [
+        "hawaiian-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-provisional-government-of-hawaii",
+          "sourceLocation": "infobox year_end: 1894"
+        }
+      ]
+    },
+    {
+      "uuid": "annexation-of-hawaii",
+      "title": "Annexation of Hawaii",
+      "descr": "",
+      "start": 1898,
+      "tracks": [
+        "hawaiian-kingdom",
+        "united-states"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-republic-of-hawaii",
+          "sourceLocation": "infobox year_end: 1898"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "battle-of-te-feipi",
+      "title": "Battle of Te Feipī",
+      "descr": "Pōmare II consolidates his rule.",
+      "start": 1815,
+      "tracks": [
+        "kingdom-of-tahiti"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tahiti",
+          "sourceLocation": "infobox event1: Consolidated power after Battle of Te Feipī, 12 November 1815"
+        }
+      ]
+    },
+    {
+      "uuid": "tahiti-french-protectorate",
+      "title": "French protectorate over Tahiti",
+      "descr": "",
+      "start": 1842,
+      "tracks": [
+        "kingdom-of-tahiti",
+        "french-colonial-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tahiti",
+          "sourceLocation": "infobox event2: Establishment of the French protectorate, 9 September 1842"
+        }
+      ]
+    },
+    {
+      "uuid": "franco-tahitian-war",
+      "title": "Franco-Tahitian War",
+      "descr": "",
+      "start": 1844,
+      "end": 1847,
+      "tracks": [
+        "kingdom-of-tahiti",
+        "french-colonial-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-franco-tahitian-war",
+          "sourceLocation": "infobox date: 1844–1847"
+        }
+      ]
+    },
+    {
+      "uuid": "tahiti-annexed-by-france",
+      "title": "Tahiti annexed by France",
+      "descr": "",
+      "start": 1880,
+      "tracks": [
+        "kingdom-of-tahiti",
+        "french-colonial-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-tahiti",
+          "sourceLocation": "infobox year_end: 1880"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "rarotonga-protectorate",
+      "title": "Rarotonga becomes a British protectorate",
+      "descr": "",
+      "start": 1888,
+      "tracks": [
+        "kingdom-of-rarotonga",
+        "british-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-rarotonga",
+          "sourceLocation": "infobox event1: Protectorate, 1888"
+        }
+      ]
+    },
+    {
+      "uuid": "cook-islands-federation-created",
+      "title": "Cook Islands Federation created",
+      "descr": "",
+      "start": 1891,
+      "tracks": [
+        "kingdom-of-rarotonga"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-cook-islands-federation",
+          "sourceLocation": "infobox year_start: 1891"
+        }
+      ]
+    },
+    {
+      "uuid": "cook-islands-annexed-by-new-zealand",
+      "title": "Cook Islands annexed by New Zealand",
+      "descr": "",
+      "start": 1901,
+      "tracks": [
+        "kingdom-of-rarotonga",
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-cook-islands-federation",
+          "sourceLocation": "infobox year_end: 1901"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "chilean-annexation-of-easter-island",
+      "title": "Chilean annexation of Easter Island",
+      "descr": "",
+      "start": 1888,
+      "tracks": [
+        "kingdom-of-easter-island",
+        "chile"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-easter-island",
+          "sourceLocation": "infobox year_end: September 9, 1888"
+        }
+      ],
+      "importance": 1
     }
   ]
 }
