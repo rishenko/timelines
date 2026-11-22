@@ -24,6 +24,8 @@ export interface Mark {
   eventId: string;
   /** Clustered event ids (cluster marks only). */
   eventIds?: string[];
+  /** Cluster marks only: the earliest key event folded into it, which the pill names. */
+  keyEventId?: string;
   laneId: string;
   row: number;
   span: boolean;
@@ -79,6 +81,8 @@ export const LAYOUT_DEFAULTS = {
   gapPx: 8,
   maxRows: 5, // the Legend names this number ("more than five stacked lines", LegendPanel.tsx)
   clusterPx: 44,
+  /** Widest a key event's name may run inside a "+N" pill before it is cut short. */
+  clusterNamePx: 130,
   thinPx: 6,
 };
 
@@ -162,7 +166,7 @@ export function layoutLanes(
     const rowSpans: [number, number][][] = [];
     const marks: Mark[] = [];
     const maxRows = expanded[lane.id] ? Infinity : o.maxRows;
-    const overflow: { id: string; x: number }[] = [];
+    const overflow: { id: string; x: number; key: boolean; title: string }[] = [];
     for (const i of mine) {
       const e = sorted[i];
       // a span given in months or days too short to draw as a bar at this zoom is drawn as a point, in its middle
@@ -215,7 +219,7 @@ export function layoutLanes(
         spans.every(([s, en]) => en + o.gapPx <= footprintStart || footprintEnd + o.gapPx <= s);
       let row = rowSpans.findIndex(fits);
       if (row === -1 && rowSpans.length >= maxRows) {
-        overflow.push({ id: e.uuid, x: x0 });
+        overflow.push({ id: e.uuid, x: x0, key: rank(e) === 1, title: e.title });
         continue;
       }
       if (row === -1) {
@@ -243,9 +247,15 @@ export function layoutLanes(
     const clusterRow = rowSpans.length;
     let current: Mark | null = null;
     overflow.sort((a, b) => a.x - b.x);
-    for (const { id, x } of overflow) {
+    // A pill that holds a key event names it (the earliest one), so it is wider by the name.
+    const nameW = (title: string) => Math.min(labelWidth(title, o, true), o.clusterNamePx);
+    for (const { id, x, key, title } of overflow) {
       if (current && x <= current.footprintEnd + o.gapPx) {
         current.eventIds!.push(id);
+        if (key && !current.keyEventId) {
+          current.keyEventId = id;
+          current.footprintEnd += nameW(title);
+        }
         current.footprintEnd = Math.max(current.footprintEnd, x + o.clusterPx);
         continue;
       }
@@ -254,12 +264,13 @@ export function layoutLanes(
         kind: 'cluster',
         eventId: id,
         eventIds: [id],
+        ...(key ? { keyEventId: id } : {}),
         laneId: lane.id,
         row: clusterRow,
         span: false,
         x0: x,
         x1: x,
-        footprintEnd: x + o.clusterPx,
+        footprintEnd: x + o.clusterPx + (key ? nameW(title) : 0),
         cy: top + head + o.lanePad + clusterRow * o.rowH + o.rowH / 2,
       };
       marks.push(current);

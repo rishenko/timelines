@@ -75,7 +75,7 @@
 :root[data-mode='light'] [style*='--track-color'] {
   --track-ink: color-mix(in srgb, var(--track-color) 68%, var(--text));
 }
-:root[data-mode='light'] .has-focus .tl-mark:not(.related) > :not(.label) {
+:root[data-mode='light'] .has-focus .tl-mark:not(.related) > :not(.label, .key-name) {
   opacity: 0.4;
 }
 /* Dark themes: light text stays readable on a stronger bar fill, and 30% looks washed out on a dark background */

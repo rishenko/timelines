@@ -44,7 +44,8 @@ The three link to each other where they meet, at 650 and 1500.
 - **Events** on one row or several, as a bar from start to end, or a diamond for a single date. An event on several
   rows is joined by a thread while it is selected.
 - **Key and folded events:** key events have bold labels and are placed first in a crowded or collapsed row; events
-  that don't fit fold into "+N". A row's ⇣ button shows all its lines of events.
+  that don't fit fold into "+N". A "+N" that holds a key event names it ("Second World War +3"). A row's ⇣ button
+  shows all its lines of events.
 - **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows; pointing at or
   selecting an event highlights what it is connected to.
 - **Uncertain dates:** each date records what every source says (its *date claims*), and the range they allow is

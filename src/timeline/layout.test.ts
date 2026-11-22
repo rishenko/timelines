@@ -96,6 +96,24 @@ describe('layoutLanes', () => {
     expect(lane.marks.find((m) => m.kind === 'cluster')!.eventIds).toEqual(['minor-early']);
   });
 
+  it('names the earliest key event a "+N" pill holds, and makes room for its name', () => {
+    // three key events at the same year overflow a one-row lane: the ones left over fold together
+    const key = (id: string, start: number) => ({ ...ev(id, start, ['guild']), importance: 1 as const });
+    const events = [key('shown', 49), key('late-key', 52), key('early-key', 50), ev('normal', 51, ['guild'])];
+    const lane = layoutLanes(buildLanes(tracks, {}, {}), events, scale, 100, { maxRows: 1 }).lanes.find((l) => l.lane.id === 'guild')!;
+    const pill = lane.marks.find((m) => m.kind === 'cluster')!;
+    expect(pill.eventIds).toEqual(['early-key', 'normal', 'late-key']);
+    expect(pill.keyEventId).toBe('early-key');
+    expect(pill.footprintEnd - pill.x0).toBeGreaterThan(44);
+
+    // a pill with no key event has no name and keeps its usual width
+    const plain = layoutLanes(buildLanes(tracks, {}, {}), [ev('a', 50, ['guild']), ev('b', 50, ['guild'])], scale, 100, { maxRows: 1 })
+      .lanes.find((l) => l.lane.id === 'guild')!
+      .marks.find((m) => m.kind === 'cluster')!;
+    expect(plain.keyEventId).toBeUndefined();
+    expect(plain.footprintEnd - plain.x0).toBe(44);
+  });
+
   it('fills gaps in a row left by events placed earlier', () => {
     // the key event sits at the right; a normal event placed after it still fits to its left in row 0
     const events = [{ ...ev('key', 80, ['guild']), importance: 1 as const }, ev('early', 5, ['guild'])];

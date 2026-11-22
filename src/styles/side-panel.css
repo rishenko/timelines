@@ -205,3 +205,17 @@
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, var(--bg-3));
 }
 
+/* a pill that holds a key event: solid edge, and the event's name before the count */
+.tl-mark.cluster.has-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-style: solid;
+  white-space: nowrap;
+}
+.tl-mark.cluster .key-name {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
