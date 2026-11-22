@@ -8,6 +8,9 @@ Every date in periods.json is a claim naming its article and where the article s
   {"infobox": "<param>"} a parameter of the article's first infobox (historical-era infoboxes too, which the
                          extractor doesn't read)
   {"short": true}        the article's short description
+  {"periodo": "<id>"}    a PeriodO period (~/data/periodo/periodo.json): the claim's year must be the period's start
+                         (in a start claim) or stop (in an end claim); cited to its authority, by period label and id.
+                         Such a claim names no article.
 A new event's description ("descr") restates sentences of the cited articles, listed as its "basis"
 ([article, text]); each is found in the dump and cited after the date sources. The cited text must hold the year, or, for a claim read from centuries (it has a margin), the word "century". An
 article that is missing or AI-flagged stops the run (wp_claims.art). An entry with "circa": true is circa even
@@ -18,6 +21,10 @@ without a margin ("around 1760").
                          them. Existing events change here, as generator input, and never by hand in data-src.
   plan(timeline)         Ancient and Classical has no generator: pipelines/ancient/periods.py writes this as
                          data-src/ancient-classical-periods.json, which the build applies (scripts/lib/periods.ts).
+
+An era links to a page about it (Era.url, schema v6) and carries its Wikidata id (Era.ids): the article named by its
+"link" (its own article, given outright; none means no url). The id comes from the extract DB of the same dump (its qid table, from the
+dump's page_props), so the build stays offline and matches the dump.
 
 An era that crosses a seam (the Timurid Renaissance at 1500) is one entry here, read by both generators, so its id and
 dates match in both timelines by construction (src/data/eras.test.ts checks it).
@@ -34,6 +41,8 @@ import wp_claims as G  # noqa: E402
 import wp_dump  # noqa: E402
 import wp_states as W  # noqa: E402
 from wp_sections import find  # noqa: E402
+import settings  # noqa: E402
+import sqlite3  # noqa: E402
 
 INPUT = os.path.join(HERE, 'periods.json')
 
@@ -68,8 +77,52 @@ def _sentence(article, needle):
     return text, (f'lead: "{text[:160]}"' if where == 'lead' else f'section "{where}": "{text[:160]}"')
 
 
-def claim(c):
-    """One date claim: {year, source, margin?, note?}, its cited text checked against the dump."""
+PERIODO = {}
+
+
+def _periodo(pid):
+    """(authority id, authority, period) for a PeriodO period id."""
+    if not PERIODO:
+        d = json.load(open(os.path.join(settings.DATA, 'periodo', 'periodo.json'), encoding='utf-8'))
+        for aid, a in d['authorities'].items():
+            for k, per in a.get('periods', {}).items():
+                PERIODO[k] = (aid, a, per)
+    if pid not in PERIODO:
+        raise SystemExit(f'PeriodO: no period {pid}')
+    return PERIODO[pid]
+
+
+def _periodo_year(edge):
+    """A PeriodO start/stop as this data's readable year: ISO -2669 is "2670 BCE", 0394 is 394."""
+    y = edge.get('in', {}).get('year')
+    if y is None:
+        raise SystemExit(f'PeriodO: edge {edge} has no single year')
+    y = int(y)
+    return f'{1 - y} BCE' if y <= 0 else y
+
+
+def periodo_claim(c, side):
+    aid, a, per = _periodo(c['periodo'])
+    edge = per['start' if side == 'start' else 'stop']
+    if _periodo_year(edge) != c['year']:
+        raise SystemExit(f'PeriodO {c["periodo"]}: {side} is {edge.get("label")}, not {c["year"]}')
+    key = f'periodo-{aid}'
+    src = a['source']
+    title = src.get('title') or (src.get('partOf') or {}).get('title')
+    G.SOURCES.setdefault(key, {'name': f'{title} (PeriodO)', 'url': f'http://n2t.net/ark:/99152/{aid}', 'accessed': G.ACC,
+                               'tags': ['periodo']})
+    label = (per.get('localizedLabels', {}).get('en') or [per.get('label', '')])[0]
+    out = {'year': c['year'], 'source': {'sourceKey': key, 'sourceLocation': f'period "{label}" ({edge.get("label")}), {c["periodo"]}'}}
+    for k in ('margin', 'note'):
+        if k in c:
+            out[k] = c[k]
+    return out
+
+
+def claim(c, side='start'):
+    """One date claim: {year, source, margin?, note?}, its cited text checked against the dump (or PeriodO)."""
+    if 'periodo' in c:
+        return periodo_claim(c, side)
     title = G.art(c['article'])['title']
     if 'find' in c:
         text, loc = _sentence(c['article'], c['find'])
@@ -96,7 +149,7 @@ def claim(c):
 
 def _dated(x):
     """start, end, circa, startDates, endDates and the sources they cite (each once), from x's claims."""
-    sd, ed = [claim(c) for c in x['start']], [claim(c) for c in x['end']]
+    sd, ed = [claim(c, 'start') for c in x['start']], [claim(c, 'end') for c in x['end']]
     d = {'start': sd[0]['year'], 'end': ed[0]['year']}
     if x.get('circa') or 'margin' in x['start'][0] or 'margin' in x['end'][0]:
         d['circa'] = True
@@ -108,9 +161,29 @@ def _dated(x):
     return d, refs
 
 
+QID = {}
+
+
+def qid(title):
+    """The Wikidata id of an article, from the extract DB of the dump being read (None if it has none)."""
+    if not QID:
+        QID['db'] = sqlite3.connect(f'file:{settings.WIKIPEDIA}/extract-{settings.DUMP_NAME}.sqlite?mode=ro', uri=True)
+    row = QID['db'].execute('select q.qid from page p join qid q using(page_id) where p.title = ? and p.ns = 0', (title,)).fetchone()
+    return row[0] if row else None
+
+
 def era(x):
     d, refs = _dated(x)
-    return {'id': x['id'], 'name': x['name'], 'group': x['group'], **d, 'sources': refs}
+    e = {'id': x['id'], 'name': x['name'], 'group': x['group'], **d, 'sources': refs}
+    # the age's own article only, named outright: never a dynasty or ruler page a date claim happens to cite
+    link = x.get('link')
+    if link:
+        title = G.art(link)['title']
+        e['url'] = G.WP + title.replace(' ', '_')
+        q = qid(title)
+        if q:
+            e['ids'] = {'wikidata': q}
+    return e
 
 
 def age(x):
@@ -134,6 +207,8 @@ def apply(data, timeline):
     """Eras, new golden-age events, key marks and new dates for a generated timeline (in place). Returns counts."""
     p = load()
     eras = [era(x) for x in p['eras'] if timeline in x['timelines']]
+    if any(r['sourceKey'].startswith('periodo-') for x in eras for r in x['sources']):
+        raise SystemExit(f'{timeline}: an era cites PeriodO; set PERIODO_TAG in the generator\'s tags first')
     if eras:
         data['meta']['eras'] = eras
     else:
@@ -160,12 +235,20 @@ def apply(data, timeline):
     return {'eras': len(eras), 'new ages': len(new), 'key': len(p['key'].get(timeline, [])), 'redated': len(p['redate'].get(timeline, {}))}
 
 
+# The tag a PeriodO source carries; a timeline citing one must define it (validate refuses unknown tags)
+PERIODO_TAG = {'periodo': {'name': 'PeriodO'}}
+
+
 def plan(timeline):
-    """For a timeline without a generator: {eras, events, sources}, the sources being those the eras and events cite."""
+    """For a timeline without a generator: {eras, events, sources, tags}, the sources being those the eras and events
+    cite, and tags those of the sources that the timeline may not define yet (PeriodO's)."""
     p = load()
     if p['key'].get(timeline) or p['redate'].get(timeline):
         raise SystemExit(f'periods.json: {timeline} has no generator; put its key events in its importance plan')
     eras = [era(x) for x in p['eras'] if timeline in x['timelines']]
     events = [age(x) for x in p['ages'] if x['timeline'] == timeline]
     keys = sorted({r['sourceKey'] for x in eras + events for r in x['sources'] + [c['source'] for c in x['startDates'] + x['endDates']]})
-    return {'eras': eras, 'events': events, 'sources': {k: G.SOURCES[k] for k in keys}}
+    out = {'eras': eras, 'events': events, 'sources': {k: G.SOURCES[k] for k in keys}}
+    if any(k.startswith('periodo-') for k in keys):
+        out['tags'] = PERIODO_TAG
+    return out

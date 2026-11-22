@@ -34,14 +34,16 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
       <div className="tl-ages-corner" style={{ width: labelW }}>
         Ages
       </div>
-      {ages.map(({ era, span, line }) => {
+      {ages.map(({ era, span, line, drawEnd }) => {
         // an age may run past the timeline's ends (like a row): the chart cuts it there, with an open edge
         const lo = scale.x(scale.domain[0]);
         // with date claims it spans its whole uncertain range; the uncertain ends are drawn lighter and hatched
         const sw = span.startWindow;
         const ew = span.endWindow;
         const raw0 = scale.x(sw ? Math.min(sw[0], at0(span)) : at0(span));
-        const raw1 = scale.x(ew ? Math.max(ew[1] + 1, at1(span, span.end)) : at1(span, span.end));
+        // an age that shares its end year with the next on its line stops where that one starts
+        const end = drawEnd ?? at1(span, span.end);
+        const raw1 = scale.x(ew ? Math.max(ew[1] + 1, end) : end);
         if (raw1 <= lo || raw0 >= scale.width) return null;
         const x0 = Math.max(raw0, lo);
         const x1 = Math.max(Math.min(raw1, scale.width), x0 + 6);

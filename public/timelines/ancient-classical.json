@@ -938,7 +938,11 @@
             "sourceKey": "wp-axial-age",
             "sourceLocation": "lead: \"It refers to broad changes in religious and philosophical thought that occurred in a variety of locations from about the 8th to the 3rd century BCE.\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Axial_Age",
+        "ids": {
+          "wikidata": "Q340742"
+        }
       },
       {
         "id": "pax-romana",
@@ -973,7 +977,209 @@
             "sourceKey": "wp-pax-romana",
             "sourceLocation": "lead: \"Conversely, the end of the era is considered as 180 AD with the death of Marcus Aurelius, the last of the \"Five Good Emperors\".\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Pax_Romana",
+        "ids": {
+          "wikidata": "Q75207"
+        }
+      },
+      {
+        "id": "china-neolithic",
+        "name": "Neolithic (China)",
+        "group": "east-asia",
+        "start": -9499,
+        "end": -1999,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -9499,
+            "source": {
+              "sourceKey": "wp-neolithic",
+              "sourceLocation": "section \"Periods by region > South and East Asia\": \"In East Asia, the earliest sites include the Nanzhuangtou culture around 9500–9000 BC, Pengtoushan culture around 7500–6100 BC, and Peiligang culture around 700\""
+            },
+            "note": "Wikipedia only (no PeriodO period for China): the earliest East Asian site it names, Nanzhuangtou (in China), around 9500–9000 BC."
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1999,
+            "source": {
+              "sourceKey": "wp-neolithic",
+              "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
+            },
+            "note": "Wikipedia only: until the rise of the Erlitou culture."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-neolithic",
+            "sourceLocation": "section \"Periods by region > South and East Asia\": \"In East Asia, the earliest sites include the Nanzhuangtou culture around 9500–9000 BC, Pengtoushan culture around 7500–6100 BC, and Peiligang culture around 700\""
+          },
+          {
+            "sourceKey": "wp-neolithic",
+            "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Neolithic",
+        "ids": {
+          "wikidata": "Q36422"
+        }
+      },
+      {
+        "id": "nile-early-dynastic",
+        "name": "Early Dynastic Period",
+        "group": "nile-valley",
+        "start": -2949,
+        "end": -2669,
+        "startDates": [
+          {
+            "year": -2949,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"Early Dynastic\" (2950 BCE), p0qk76zkc72"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2669,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"Early Dynastic\" (2670 BCE), p0qk76zkc72"
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"Early Dynastic\" (2950 BCE), p0qk76zkc72"
+          },
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"Early Dynastic\" (2670 BCE), p0qk76zkc72"
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Early_Dynastic_Period_of_Egypt",
+        "ids": {
+          "wikidata": "Q187979"
+        }
+      },
+      {
+        "id": "nile-old-kingdom",
+        "name": "Old Kingdom",
+        "group": "nile-valley",
+        "start": -2669,
+        "end": -2167,
+        "startDates": [
+          {
+            "year": -2669,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"Old Kingdom\" (2670 BCE), p0qk76z92f9"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2167,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"Old Kingdom\" (2168 BCE), p0qk76z92f9"
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"Old Kingdom\" (2670 BCE), p0qk76z92f9"
+          },
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"Old Kingdom\" (2168 BCE), p0qk76z92f9"
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Old_Kingdom_of_Egypt",
+        "ids": {
+          "wikidata": "Q177819"
+        }
+      },
+      {
+        "id": "nile-first-intermediate",
+        "name": "First Intermediate Period",
+        "group": "nile-valley",
+        "start": -2167,
+        "end": -2039,
+        "startDates": [
+          {
+            "year": -2167,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"First Intermediate Period\" (2168 BCE), p0qk76zqqr2"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2039,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"First Intermediate Period\" (2040 BCE), p0qk76zqqr2"
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"First Intermediate Period\" (2168 BCE), p0qk76zqqr2"
+          },
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"First Intermediate Period\" (2040 BCE), p0qk76zqqr2"
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/First_Intermediate_Period_of_Egypt",
+        "ids": {
+          "wikidata": "Q232211"
+        }
+      },
+      {
+        "id": "nile-middle-kingdom",
+        "name": "Middle Kingdom",
+        "group": "nile-valley",
+        "start": -2039,
+        "end": -1639,
+        "startDates": [
+          {
+            "year": -2039,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"Middle Kingdom\" (2040 BCE), p0qk76zkb23"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1639,
+            "source": {
+              "sourceKey": "periodo-p0qk76z",
+              "sourceLocation": "period \"Middle Kingdom\" (1640 BCE), p0qk76zkb23"
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"Middle Kingdom\" (2040 BCE), p0qk76zkb23"
+          },
+          {
+            "sourceKey": "periodo-p0qk76z",
+            "sourceLocation": "period \"Middle Kingdom\" (1640 BCE), p0qk76zkb23"
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Middle_Kingdom_of_Egypt",
+        "ids": {
+          "wikidata": "Q191324"
+        }
       }
     ]
   },
@@ -26301,6 +26507,22 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "periodo-p0qk76z": {
+      "name": "UCLA Encyclopedia of Egyptology (PeriodO)",
+      "url": "http://n2t.net/ark:/99152/p0qk76z",
+      "accessed": "2026-11-21",
+      "tags": [
+        "periodo"
+      ]
+    },
+    "wp-neolithic": {
+      "name": "Neolithic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Neolithic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -26309,6 +26531,9 @@
     },
     "cited-via-wikipedia": {
       "name": "Cited via Wikipedia (not checked)"
+    },
+    "periodo": {
+      "name": "PeriodO"
     }
   },
   "chronologies": {

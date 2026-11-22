@@ -12,11 +12,14 @@ export interface PeriodsPlan {
   events: Json[];
   /** The sources the eras and events cite, by key. */
   sources: Record<string, Json>;
+  /** Tags those sources carry that the timeline may not define yet (PeriodO's), by id. */
+  tags?: Record<string, Json>;
 }
 
-/** Puts the plan in the source file (in place): the sources, meta.eras (none: removed), and each event, replaced in place or added at the end. */
+/** Puts the plan in the source file (in place): the sources and their tags, meta.eras (none: removed), and each event, replaced in place or added at the end. */
 export function applyPeriods(d: Json, plan: PeriodsPlan) {
   for (const [k, s] of Object.entries(plan.sources)) d.sources[k] = s;
+  if (plan.tags) d.tags = { ...d.tags, ...plan.tags };
   const { eras: _old, ...meta } = d.meta;
   d.meta = plan.eras.length ? { ...meta, eras: plan.eras } : meta;
   for (const e of plan.events) {

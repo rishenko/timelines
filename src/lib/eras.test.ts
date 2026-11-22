@@ -31,6 +31,16 @@ describe('ages (meta.eras)', () => {
     expect(ageLines(ages)).toBe(3);
   });
 
+  it('draws an age that shares its end year with the next on its line to that one’s start, and no other', () => {
+    const ages = placeAges(withEras([era('old', 0, 50, 'nile'), era('middle', 50, 90, 'nile'), era('gap', 92, 99, 'nile'), era('other', 90, 95, 'trade')]), {});
+    expect(ages.map((a) => [a.era.id, a.drawEnd])).toEqual([
+      ['old', 50],
+      ['middle', undefined],
+      ['gap', undefined],
+      ['other', undefined],
+    ]);
+  });
+
   it('dates each age under the reader’s Dating choice, with its uncertain ends', () => {
     const [a] = placeAges(withEras([era('salt', 0, 50, undefined, { startDates: [{ year: -10, source: cite[0] }, { year: 5, source: cite[0] }] })]), {});
     expect(a.span.start).toBe(0);
