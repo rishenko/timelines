@@ -222,6 +222,25 @@ npm run map:build    # → public/maps/ancient-classical.json and docs/ancient-c
   without borders that year get a pin and their map image.
 - The plan's optional `rows` list limits the build to those rows (used for the pilot).
 
+## Local datasets
+
+Timelines kept outside this repo (your own, or private ones) can join the tests and the dev server, so changes are
+checked against more varied data than the timeline the site ships. Set `TIMELINES_LOCAL_DATA` to one or more
+folders, separated like `PATH` (`:` on macOS and Linux, `;` on Windows):
+
+```sh
+TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm test
+TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
+```
+
+- Every `*.json` directly in a listed folder with a `schemaVersion` is a compiled timeline.
+- **Tests** (`src/data/localData.test.ts`): each local timeline must be valid, resolve all its events, and lay out
+  with no overlapping marks at each of its zoom steps. Skipped when the variable isn't set, as in CI.
+- **Dev server** (`scripts/lib/local-data-plugin.ts`): the local timelines are added to the end of the title menu,
+  and any other file in the folders (row images, logos) is served under `/timelines/`. Builds, the preview server
+  and the deployed site never include them.
+- Helpers: `scripts/lib/local-data.ts`. Nothing in this repo names a local dataset; keep it that way.
+
 ## Checking the UI
 
 ```sh
