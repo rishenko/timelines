@@ -580,6 +580,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             spans={shownSpans}
             phases={shownPhases}
             memberOf={shownMemberOf}
+            allTracks={data.tracks}
             visibleTracks={shownRows}
             regionsOf={regions.regionsOf}
           />
@@ -591,6 +592,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             spans={shownSpans}
             phases={shownPhases}
             memberOf={shownMemberOf}
+            allTracks={data.tracks}
             visibleTracks={shownRows}
             busy={busy}
             regionTips={regions.regionTips}

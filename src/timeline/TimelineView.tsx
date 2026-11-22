@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import type { Dataset } from '../types.ts';
+import type { Dataset, Track } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor, keptStretches } from './anchors.ts';
@@ -48,6 +48,11 @@ interface Props {
   phases: Map<string, ResolvedPhase[]>;
   /** Each row's dated memberships in other rows (Track.memberOf): one more strip line each, after its phases. */
   memberOf?: Map<string, ResolvedMembership[]>;
+  /**
+   * Every row of the timeline, when `data` holds only some of them (a comparison): memberships name and colour their
+   * union, and a union's tooltip its members, from these, so a union outside the set still reads "in NATO".
+   */
+  allTracks?: Track[];
   visibleTracks: Record<string, boolean>;
   /** Each row's regions as tooltip text for its label ("Regions: Anatolia (Near East) — from Wikipedia: Hittites"). */
   regionTips?: Map<string, string>;
@@ -107,6 +112,8 @@ export function TimelineView(props: Props) {
     props;
   const cal = data.meta.calendar;
   const trackById = useMemo(() => trackIndex(data.tracks), [data.tracks]);
+  /** Rows outside the shown set too, for memberships' unions and members (see allTracks). */
+  const anyRow = useMemo(() => (props.allTracks ? trackIndex(props.allTracks) : trackById), [props.allTracks, trackById]);
   const trackNames = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
   const labelW = useLabelWidth();
   const scrollerRef = useRef<HTMLDivElement>(null);
@@ -174,18 +181,18 @@ export function TimelineView(props: Props) {
         lanes.map((l) => {
           const own = placePhases(l.id, phases);
           const lines = own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0;
-          const label = (m: ResolvedMembership) => membershipLabel(m, trackById.get(m.row)?.name ?? m.row, cal, isApprox(m));
+          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row)?.name ?? m.row, cal, isApprox(m));
           return [l.id, [...own, ...placeMemberships(l.id, memberOf.get(l.id) ?? [], lines, label)]];
         }),
       ),
-    [lanes, phases, memberOf, trackById, cal],
+    [lanes, phases, memberOf, anyRow, cal],
   );
   // a union's row says who its members were, and when (its name's and lifespan's tooltips)
   const unionTips = useMemo(() => {
     const out = new Map<string, string>();
-    for (const [id, list] of membersByUnion(memberOf)) out.set(id, membersTip(list, (m) => trackById.get(m)?.name ?? m, cal));
+    for (const [id, list] of membersByUnion(memberOf)) out.set(id, membersTip(list, (m) => anyRow.get(m)?.name ?? m, cal));
     return out;
-  }, [memberOf, trackById, cal]);
+  }, [memberOf, anyRow, cal]);
   const laneSpans = useMemo(() => {
     // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap;
     // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler; so do rows
@@ -559,9 +566,9 @@ export function TimelineView(props: Props) {
                 <PhaseStripCell
                   key={`phase-${i}`}
                   cell={c}
-                  color={(trackById.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
+                  color={(anyRow.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
                   memberName={lane.track.name}
-                  unionName={c.phase.member && (trackById.get(c.phase.member)?.name ?? c.phase.member)}
+                  unionName={c.phase.member && (anyRow.get(c.phase.member)?.name ?? c.phase.member)}
                   {...band}
                 />
               ))}

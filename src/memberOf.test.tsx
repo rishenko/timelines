@@ -95,4 +95,21 @@ describe('dated memberships', () => {
     expect(row('saltmarsh').textContent).toContain('in The Harbor League: 95 L – 150 L');
     expect(row('league').textContent).toContain('Members (2): Quay Town (60 L – 179 L), Saltmarsh (95 L – 150 L)');
   });
+
+  it('names and colours unions and members outside a comparison set from the whole timeline', () => {
+    // the union isn't in the set: its member's strip still reads "in The Harbor League", in the League's colour
+    const { container: c } = open('inc=50&at=100&set=quay');
+    const member = c.querySelector<HTMLElement>('[data-lane="quay"] .tl-phase.member')!;
+    expect(member.style.getPropertyValue('--track-color')).toBe('#b33a3a');
+    expect(member.textContent).toContain('in The Harbor League');
+    cleanup();
+    // the members aren't in the set: the union's tooltip still names them
+    const { container: u } = open('inc=50&at=100&set=league');
+    expect(u.querySelector('[data-lane="league"] .tl-lane-label .name')!.getAttribute('title')).toContain('Members (2): Quay Town 60–179, Saltmarsh 95–150');
+    cleanup();
+    // and the table view's rows table
+    const { container: t } = open('view=table&set=league');
+    const row = [...t.querySelectorAll('table.rows-table tr')].find((tr) => tr.querySelector('th[data-row-id="league"]'))!;
+    expect(row.textContent).toContain('Members (2): Quay Town (60 L – 179 L), Saltmarsh (95 L – 150 L)');
+  });
 });

@@ -37,6 +37,8 @@ interface Props {
   phases: Map<string, ResolvedPhase[]>;
   /** Rows' dated memberships in other rows (Track.memberOf): a Memberships column in the rows tables when any row has one. */
   memberOf?: Map<string, ResolvedMembership[]>;
+  /** Every row of the timeline, when `data` holds only some (a comparison): memberships name their unions and members from these. */
+  allTracks?: Track[];
   /** Filters' row switches: a row hidden there (or under a hidden row) is left out. */
   visibleTracks: Record<string, boolean>;
   /** Each row's regions with their sources, on timelines with regions (a Regions column in the rows tables). */
@@ -173,7 +175,7 @@ export function TableView(p: Props) {
                 )
               </span>
             </HeadingTag>
-            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} regionsOf={regionsOf} memberOf={memberOf} onSelect={p.onSelect} />}
+            {s.rows.length > 0 && <RowsTable rows={s.rows} data={data} allTracks={p.allTracks} regionsOf={regionsOf} memberOf={memberOf} onSelect={p.onSelect} />}
             {s.events.length > 0 && (
               <table className="events-table">
                 <caption>Events</caption>
@@ -359,17 +361,20 @@ function MembershipCell({
   own,
   members,
   data,
+  allTracks,
   titles,
   onSelect,
 }: {
   own: ResolvedMembership[];
   members: UnionMember[];
   data: Dataset;
+  /** Rows outside the shown set too, for the unions' and members' names. */
+  allTracks?: Track[];
   titles: Map<string, string>;
   onSelect: (id: string) => void;
 }) {
   const cal = data.meta.calendar;
-  const name = (id: string) => data.tracks.find((t) => t.id === id)?.name ?? id;
+  const name = (id: string) => (allTracks ?? data.tracks).find((t) => t.id === id)?.name ?? id;
   if (!own.length && !members.length) return <span className="muted">None</span>;
   return (
     <>
@@ -406,12 +411,14 @@ function MembershipCell({
 function RowsTable({
   rows,
   data,
+  allTracks,
   regionsOf,
   memberOf,
   onSelect,
 }: {
   rows: TableRow[];
   data: Dataset;
+  allTracks?: Track[];
   regionsOf?: Map<string, RowRegion[]>;
   memberOf?: Map<string, ResolvedMembership[]>;
   onSelect: (id: string) => void;
@@ -478,7 +485,7 @@ function RowsTable({
               </td>
               {memberOf && (
                 <td>
-                  <MembershipCell own={memberOf.get(r.track.id) ?? []} members={unions?.get(r.track.id) ?? []} data={data} titles={titles} onSelect={onSelect} />
+                  <MembershipCell own={memberOf.get(r.track.id) ?? []} members={unions?.get(r.track.id) ?? []} data={data} allTracks={allTracks} titles={titles} onSelect={onSelect} />
                 </td>
               )}
               {regionsOf && (
