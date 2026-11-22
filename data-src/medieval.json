@@ -3,7 +3,7 @@
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
-    "subtitle": "Europe, the Near East and North Africa, the steppe, Asia and Oceania; pilot rows elsewhere; 650–1500",
+    "subtitle": "Europe, Africa, Asia and Oceania, 650–1500 (the Americas to come)",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
     "calendar": {
@@ -12867,6 +12867,14 @@
               "sourceKey": "wp-srivijaya",
               "sourceLocation": "infobox year_end: 1025"
             }
+          },
+          {
+            "year": 1293,
+            "source": {
+              "sourceKey": "cliopatria",
+              "sourceLocation": "polity \"Srivijaya\": 674–1293"
+            },
+            "note": "Historians describe a long decline after the Chola raids of 1025 (the article: \"may have disintegrated after 1025\"); Cliopatria draws Srivijaya to 1293."
           }
         ],
         "startEvent": "founded",
@@ -13328,10 +13336,238 @@
       "color": "#9a5a2a"
     },
     {
+      "id": "west-africa-group",
+      "name": "West Africa",
+      "color": "#c08a2a",
+      "parent": "africa"
+    },
+    {
+      "id": "djenne-djenno",
+      "name": "Djenné-Djenno",
+      "color": "#a07850",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno",
+      "ids": {
+        "wikidata": "Q607668"
+      },
+      "span": {
+        "start": -249,
+        "end": 1400
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-djenne-djenno",
+              "sourceLocation": "category \"Djenné\" (in \"Wikipedia categories named after populated places in Mali\")"
+            },
+            {
+              "sourceKey": "wp-djenne-djenno",
+              "sourceLocation": "category \"Former populated places in Mali\""
+            },
+            {
+              "sourceKey": "wp-djenne-djenno",
+              "sourceLocation": "category \"Archaeological sites in Mali\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "sahara",
+          "sources": [
+            {
+              "sourceKey": "wp-djenne-djenno",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghana-empire",
+      "name": "Ghana Empire",
+      "color": "#a86a2a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Ghana_Empire",
+      "span": {
+        "start": 300,
+        "end": 1250,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 300,
+            "source": {
+              "sourceKey": "wp-ghana-empire",
+              "sourceLocation": "infobox year_start: c. 300"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1250,
+            "margin": 10,
+            "source": {
+              "sourceKey": "wp-ghana-empire",
+              "sourceLocation": "infobox year_end: c. mid-13th century"
+            },
+            "note": "The infobox says \"c. mid-13th century\"."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ghana-empire",
+              "sourceLocation": "infobox capital: Koumbi Saleh (likely a later capital)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-gao",
+      "name": "Kingdom of Gao",
+      "color": "#7a5a3a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Gao_Empire",
+      "span": {
+        "start": 650,
+        "end": 1285,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 650,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-gao-empire",
+              "sourceLocation": "infobox year_start: c. 7th century"
+            },
+            "note": "The infobox says \"c. 7th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1285,
+            "margin": 15,
+            "source": {
+              "sourceKey": "wp-gao-empire",
+              "sourceLocation": "infobox year_end: Late 1200s"
+            },
+            "note": "The infobox says \"Late 1200s\"."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-gao-empire",
+              "sourceLocation": "infobox capital: Gao"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takrur",
+      "name": "Takrur",
+      "color": "#5a7a3a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Takrur",
+      "span": {
+        "start": 850,
+        "end": 1456,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 850,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-takrur",
+              "sourceLocation": "infobox year_start: 9th century"
+            },
+            "note": "The infobox says \"9th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1456,
+            "source": {
+              "sourceKey": "wp-takrur",
+              "sourceLocation": "infobox year_end: 1456"
+            }
+          }
+        ],
+        "endEvent": "conquered-by-jolof-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-takrur",
+              "sourceLocation": "infobox capital: Tumbere Jiinge (Dya'ogo, Manna dynasties), Taaga (Laam Taga), Hoorewen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sosso-empire",
+      "name": "Sosso Empire",
+      "color": "#8a3a2a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Sosso_Empire",
+      "span": {
+        "start": 1200,
+        "end": 1235,
+        "startDates": [
+          {
+            "year": 1200,
+            "source": {
+              "sourceKey": "wp-sosso-empire",
+              "sourceLocation": "infobox year_start: c. 1200"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1235,
+            "source": {
+              "sourceKey": "wp-sosso-empire",
+              "sourceLocation": "infobox year_end: c. 1235"
+            }
+          }
+        ],
+        "startEvent": "capture-of-wagadu",
+        "endEvent": "conquest-of-sosso"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-sosso-empire",
+              "sourceLocation": "infobox capital: Sosso"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "mali-empire",
       "name": "Mali Empire",
       "color": "#c08a2a",
-      "parent": "africa",
+      "parent": "west-africa-group",
       "url": "https://en.wikipedia.org/wiki/Mali_Empire",
       "span": {
         "start": 1235,
@@ -13365,6 +13601,976 @@
             {
               "sourceKey": "wp-mali-empire",
               "sourceLocation": "lead: \"The Mali Empire was an empire in West Africa from c. 1235 to 1610.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "songhai-empire",
+      "name": "Songhai Empire",
+      "color": "#c0a03a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Songhai_Empire",
+      "span": {
+        "start": 1430,
+        "end": 1599,
+        "startDates": [
+          {
+            "year": 1430,
+            "source": {
+              "sourceKey": "wp-songhai-empire",
+              "sourceLocation": "infobox year_start: c. 1430s"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1599,
+            "source": {
+              "sourceKey": "wp-songhai-empire",
+              "sourceLocation": "infobox year_end: 1599"
+            }
+          },
+          {
+            "year": 1591,
+            "source": {
+              "sourceKey": "wp-songhai-empire",
+              "sourceLocation": "infobox life_span: c. 1430s–1591"
+            },
+            "note": "The same article gives this year too."
+          }
+        ],
+        "startEvent": "independence-from-mali-empire"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-songhai-empire",
+              "sourceLocation": "infobox capital: Gao"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jolof-empire",
+      "name": "Jolof Empire",
+      "color": "#3a7a5a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Jolof_Empire",
+      "span": {
+        "start": 1360,
+        "end": 1549,
+        "startDates": [
+          {
+            "year": 1360,
+            "source": {
+              "sourceKey": "wp-jolof-empire",
+              "sourceLocation": "infobox year_start: c. 1360"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1549,
+            "source": {
+              "sourceKey": "wp-jolof-empire",
+              "sourceLocation": "infobox year_end: 1549"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-jolof-empire",
+              "sourceLocation": "infobox capital: Ouarkhokh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mossi-kingdoms",
+      "name": "Mossi Kingdoms",
+      "color": "#8a6a5a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Mossi_Kingdoms",
+      "span": {
+        "start": 1050,
+        "end": 1896,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1050,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-mossi-kingdoms",
+              "sourceLocation": "infobox year_start: 11th century"
+            },
+            "note": "The infobox says \"11th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1896,
+            "source": {
+              "sourceKey": "wp-mossi-kingdoms",
+              "sourceLocation": "infobox year_end: 1896"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-mossi-kingdoms",
+              "sourceLocation": "infobox capital: Multiple capitals"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bornu-empire",
+      "name": "Kanem–Bornu",
+      "color": "#6a4a8a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kanem–Bornu_Empire",
+      "phases": [
+        {
+          "name": "Kanem",
+          "start": 700,
+          "end": 1380,
+          "circa": true,
+          "startDates": [
+            {
+              "year": 700,
+              "source": {
+                "sourceKey": "wp-kanem-bornu-empire",
+                "sourceLocation": "section \"Medieval period (c. 700–1472)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1380,
+              "source": {
+                "sourceKey": "wp-kanem-bornu-empire",
+                "sourceLocation": "section \"Conversion to Islam (c. 1000–1380)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Era of Instability",
+          "start": 1380,
+          "end": 1472,
+          "startDates": [
+            {
+              "year": 1380,
+              "source": {
+                "sourceKey": "wp-kanem-bornu-empire",
+                "sourceLocation": "section \"Era of Instability (c. 1380–1472)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1472,
+              "source": {
+                "sourceKey": "wp-kanem-bornu-empire",
+                "sourceLocation": "section \"Era of Instability (c. 1380–1472)\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bornu",
+          "start": 1472,
+          "end": 1893,
+          "startDates": [
+            {
+              "year": 1472,
+              "source": {
+                "sourceKey": "wp-kanem-bornu-empire",
+                "sourceLocation": "section \"Modern period (1472–1893)\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1893,
+              "source": {
+                "sourceKey": "wp-kanem-bornu-empire",
+                "sourceLocation": "section \"Modern period (1472–1893)\""
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "sahara",
+          "sources": [
+            {
+              "sourceKey": "wp-kanem-bornu-empire",
+              "sourceLocation": "infobox capital: Njimi / (c. 700–1380) / None / (c. 1380–1472) / Ngazargamu / (c. 1472–"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-nri",
+      "name": "Kingdom of Nri",
+      "color": "#4a8a6a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Nri",
+      "span": {
+        "start": 950,
+        "end": 1911,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-kingdom-of-nri",
+              "sourceLocation": "infobox year_start: c. 10th century (traditional chronology)"
+            },
+            "note": "The infobox says \"c. 10th century (traditional chronology)\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1911,
+            "source": {
+              "sourceKey": "wp-kingdom-of-nri",
+              "sourceLocation": "infobox year_end: 1911"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-nri",
+              "sourceLocation": "infobox capital: Agukwu-Nri, present-day Anaocha"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-benin",
+      "name": "Kingdom of Benin",
+      "color": "#a83a3a",
+      "parent": "west-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Benin",
+      "span": {
+        "start": 1180,
+        "end": 1897,
+        "startDates": [
+          {
+            "year": 1180,
+            "source": {
+              "sourceKey": "wp-kingdom-of-benin",
+              "sourceLocation": "infobox year_start: 1180"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1897,
+            "source": {
+              "sourceKey": "wp-kingdom-of-benin",
+              "sourceLocation": "infobox year_end: 1897"
+            }
+          }
+        ],
+        "startEvent": "oba-monarchy-replaces-ogiso-monarchy"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-benin",
+              "sourceLocation": "infobox capital: Edo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "central-africa",
+      "name": "Central Africa",
+      "color": "#5a8a3a",
+      "parent": "africa"
+    },
+    {
+      "id": "kingdom-of-kongo",
+      "name": "Kingdom of Kongo",
+      "color": "#3a5a9a",
+      "parent": "central-africa",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kongo",
+      "span": {
+        "start": 1390,
+        "end": 1914,
+        "startDates": [
+          {
+            "year": 1390,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kongo",
+              "sourceLocation": "infobox year_start: 1390"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1914,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kongo",
+              "sourceLocation": "infobox year_end: 1914"
+            }
+          }
+        ],
+        "startEvent": "conquest-of-kabunga"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kongo",
+              "sourceLocation": "infobox capital: São Salvador (today M'banza-Kongo, Angola)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "horn-east-africa",
+      "name": "The Horn and East Africa",
+      "color": "#7a5a3a",
+      "parent": "africa"
+    },
+    {
+      "id": "aksum",
+      "name": "Kingdom of Aksum",
+      "color": "#5a7a4a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+      "ids": {
+        "wikidata": "Q139377"
+      },
+      "span": {
+        "start": 50,
+        "end": 960,
+        "startDates": [
+          {
+            "year": 50,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-aksum",
+              "sourceLocation": "infobox and lead ('1st century')"
+            }
+          },
+          {
+            "year": -149,
+            "source": {
+              "sourceKey": "wp-dmt-classical",
+              "sourceLocation": "lead ('possibly around 150 BC')"
+            }
+          },
+          {
+            "year": -149,
+            "source": {
+              "sourceKey": "wp-aksum",
+              "sourceLocation": "Eritrea history sidebar ('c. 150 BC–AD 960')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-aksum",
+              "sourceLocation": "category \"Kingdom of Aksum\" (in \"History of Ethiopia by period\")"
+            },
+            {
+              "sourceKey": "wp-aksum",
+              "sourceLocation": "category \"Kingdom of Aksum\" (in \"History of Christianity in Ethiopia\")"
+            },
+            {
+              "sourceKey": "wp-aksum",
+              "sourceLocation": "category \"Political history of Eritrea\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pastoral-neolithic",
+      "name": "East African herders (Pastoral Neolithic)",
+      "color": "#8a6a4a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
+      "ids": {
+        "wikidata": "Q18208239"
+      },
+      "span": {
+        "start": -3049,
+        "end": 750,
+        "startDates": [
+          {
+            "year": -3049,
+            "source": {
+              "sourceKey": "wp-pastoral-neolithic",
+              "sourceLocation": "lead ('5000 BP')"
+            }
+          },
+          {
+            "year": -2999,
+            "source": {
+              "sourceKey": "wp-savanna-pn",
+              "sourceLocation": "Overview ('c. 3,000 BC-700 AD')"
+            }
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "east-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-savanna-pn",
+              "sourceLocation": "first sentence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ethiopia",
+      "name": "Ethiopia",
+      "color": "#2a7a3a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Empire",
+      "phases": [
+        {
+          "name": "Zagwe dynasty",
+          "start": 1137,
+          "end": 1270,
+          "startDates": [
+            {
+              "year": 1137,
+              "source": {
+                "sourceKey": "wp-zagwe-dynasty",
+                "sourceLocation": "infobox year_start: 1137"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1270,
+              "source": {
+                "sourceKey": "wp-zagwe-dynasty",
+                "sourceLocation": "infobox year_end: 1270"
+              }
+            }
+          ],
+          "endEvent": "battle-of-ansata"
+        },
+        {
+          "name": "Ethiopian Empire (Solomonic)",
+          "start": 1270,
+          "end": 1974,
+          "startDates": [
+            {
+              "year": 1270,
+              "source": {
+                "sourceKey": "wp-ethiopian-empire",
+                "sourceLocation": "infobox year_start: 1270"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1974,
+              "source": {
+                "sourceKey": "wp-ethiopian-empire",
+                "sourceLocation": "infobox life span: 1270–1974"
+              }
+            }
+          ],
+          "startEvent": "ascension-of-yekuno-amlak"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ethiopian-empire",
+              "sourceLocation": "infobox capital: None (1270–1635) / Gondar (1635–1855) / Debre Tabor (1855–1881) / Meke"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-shewa",
+      "name": "Sultanate of Shewa",
+      "color": "#6a8a3a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Shewa",
+      "span": {
+        "start": 896,
+        "end": 1286,
+        "startDates": [
+          {
+            "year": 896,
+            "source": {
+              "sourceKey": "wp-sultanate-of-shewa",
+              "sourceLocation": "infobox year_start: 896"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1286,
+            "source": {
+              "sourceKey": "wp-sultanate-of-shewa",
+              "sourceLocation": "infobox year_end: 1286"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-shewa",
+              "sourceLocation": "infobox capital: Walalah"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ifat-sultanate",
+      "name": "Ifat Sultanate",
+      "color": "#4a6a3a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Ifat",
+      "span": {
+        "start": 1275,
+        "end": 1403,
+        "startDates": [
+          {
+            "year": 1275,
+            "source": {
+              "sourceKey": "wp-sultanate-of-ifat",
+              "sourceLocation": "infobox year_start: 1275"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1403,
+            "source": {
+              "sourceKey": "wp-sultanate-of-ifat",
+              "sourceLocation": "infobox year_end: 1403"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-ifat",
+              "sourceLocation": "infobox capital: Wafāt (1275–1387) / Zeila (1387–1403)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adal-sultanate",
+      "name": "Adal Sultanate",
+      "color": "#2a5a5a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Adal_Sultanate",
+      "span": {
+        "start": 1415,
+        "end": 1577,
+        "startDates": [
+          {
+            "year": 1415,
+            "source": {
+              "sourceKey": "wp-adal-sultanate",
+              "sourceLocation": "infobox year_start: 1415"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1577,
+            "source": {
+              "sourceKey": "wp-adal-sultanate",
+              "sourceLocation": "infobox year_end: 1577"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-adal-sultanate",
+              "sourceLocation": "infobox capital: Dakkar (1415–1520) / Harar (1520–1577) / Aussa (1577)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ajuran-sultanate",
+      "name": "Ajuran Sultanate",
+      "color": "#3a8a8a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Ajuran_Sultanate",
+      "span": {
+        "start": 1250,
+        "end": 1695,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1250,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-ajuran-sultanate",
+              "sourceLocation": "infobox year_start: 13th century"
+            },
+            "note": "The infobox says \"13th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1695,
+            "source": {
+              "sourceKey": "wp-ajuran-sultanate",
+              "sourceLocation": "infobox year_end: 1695"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ajuran-sultanate",
+              "sourceLocation": "infobox capital: Mareeg (initially) / Qelafo / Merca / Mogadishu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-mogadishu",
+      "name": "Sultanate of Mogadishu",
+      "color": "#5a5a8a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Mogadishu",
+      "span": {
+        "start": 950,
+        "end": 1550,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 950,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-sultanate-of-mogadishu",
+              "sourceLocation": "infobox year_start: 10th century"
+            },
+            "note": "The infobox says \"10th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1550,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-sultanate-of-mogadishu",
+              "sourceLocation": "infobox year_end: 16th century"
+            },
+            "note": "The infobox says \"16th century\"."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-mogadishu",
+              "sourceLocation": "infobox capital: Mogadishu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kilwa-sultanate",
+      "name": "Kilwa Sultanate",
+      "color": "#a86a4a",
+      "parent": "horn-east-africa",
+      "url": "https://en.wikipedia.org/wiki/Kilwa_Sultanate",
+      "span": {
+        "start": 957,
+        "end": 1513,
+        "startDates": [
+          {
+            "year": 957,
+            "source": {
+              "sourceKey": "wp-kilwa-sultanate",
+              "sourceLocation": "infobox year_start: 957"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1513,
+            "source": {
+              "sourceKey": "wp-kilwa-sultanate",
+              "sourceLocation": "infobox year_end: 1513"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "east-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kilwa-sultanate",
+              "sourceLocation": "infobox capital: Kilwa Kisiwani"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "southern-africa-group",
+      "name": "Southern Africa",
+      "color": "#8a6a2a",
+      "parent": "africa"
+    },
+    {
+      "id": "kingdom-of-mapungubwe",
+      "name": "Kingdom of Mapungubwe",
+      "color": "#9a7a3a",
+      "parent": "southern-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mapungubwe",
+      "span": {
+        "start": 1220,
+        "end": 1300,
+        "startDates": [
+          {
+            "year": 1220,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mapungubwe",
+              "sourceLocation": "infobox year_start: c. 1220"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mapungubwe",
+              "sourceLocation": "infobox year_end: c. 1300"
+            }
+          }
+        ],
+        "endEvent": "mapungubwe-hill-abandoned"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "southern-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-mapungubwe",
+              "sourceLocation": "infobox capital: Mapungubwe Hill"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-zimbabwe",
+      "name": "Kingdom of Zimbabwe (Great Zimbabwe)",
+      "color": "#7a6a4a",
+      "parent": "southern-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Great_Zimbabwe",
+      "span": {
+        "start": 1250,
+        "end": 1600,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1250,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-kingdom-of-great-zimbabwe",
+              "sourceLocation": "infobox year_start: 13th century"
+            },
+            "note": "The infobox says \"13th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1600,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-kingdom-of-great-zimbabwe",
+              "sourceLocation": "infobox year_end: 16th/17th century"
+            },
+            "note": "The infobox says \"16th/17th century\"."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "southern-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-great-zimbabwe",
+              "sourceLocation": "infobox capital: Great Zimbabwe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-butua",
+      "name": "Kingdom of Butua",
+      "color": "#5a4a3a",
+      "parent": "southern-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Butua",
+      "span": {
+        "start": 1425,
+        "end": 1683,
+        "startDates": [
+          {
+            "year": 1425,
+            "source": {
+              "sourceKey": "wp-kingdom-of-butua",
+              "sourceLocation": "infobox year_start: c. 1425"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1683,
+            "source": {
+              "sourceKey": "wp-kingdom-of-butua",
+              "sourceLocation": "infobox year_end: c. 1683"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "southern-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-butua",
+              "sourceLocation": "infobox capital: Khami"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mutapa",
+      "name": "Kingdom of Mutapa",
+      "color": "#a85a3a",
+      "parent": "southern-africa-group",
+      "url": "https://en.wikipedia.org/wiki/Mutapa_Empire",
+      "span": {
+        "start": 1450,
+        "end": 1884,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-mutapa-empire",
+              "sourceLocation": "infobox year_start: 15th century"
+            },
+            "note": "The infobox says \"15th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1884,
+            "source": {
+              "sourceKey": "wp-mutapa-empire",
+              "sourceLocation": "infobox year_end: 1884"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "southern-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-mutapa-empire",
+              "sourceLocation": "infobox capital: Various (incl. Zvongombe)"
             }
           ]
         }
@@ -14228,6 +15434,14 @@
         "wikipedia"
       ]
     },
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-principality-of-serbia": {
       "name": "Principality of Serbia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
@@ -14239,14 +15453,6 @@
     "wp-serbia": {
       "name": "Serbia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Serbia",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-revolutionary-serbia": {
-      "name": "Revolutionary Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -14284,17 +15490,17 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -14756,17 +15962,17 @@
       ],
       "accessed": "2026-11-20"
     },
-    "wp-western-turkic": {
-      "name": "Wikipedia: Western Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+    "wp-eastern-turkic": {
+      "name": "Wikipedia: Eastern Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-eastern-turkic": {
-      "name": "Wikipedia: Eastern Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+    "wp-western-turkic": {
+      "name": "Wikipedia: Western Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
@@ -15204,14 +16410,6 @@
         "wikipedia"
       ]
     },
-    "wp-pallava": {
-      "name": "Wikipedia: Pallava dynasty",
-      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-kanchipuram": {
       "name": "Wikipedia: Kanchipuram",
       "url": "https://en.wikipedia.org/wiki/Kanchipuram",
@@ -15219,6 +16417,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-pallava": {
+      "name": "Wikipedia: Pallava dynasty",
+      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-chola-empire": {
       "name": "Chola Empire (Wikipedia)",
@@ -15252,14 +16458,6 @@
         "wikipedia"
       ]
     },
-    "wp-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-row-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
@@ -15267,6 +16465,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -15404,14 +16610,6 @@
         "wikipedia"
       ]
     },
-    "wp-tibetan-empire": {
-      "name": "Wikipedia: Tibetan Empire",
-      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-yarlung": {
       "name": "Wikipedia: Yarlung dynasty",
       "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
@@ -15423,6 +16621,14 @@
     "wp-tibet-history": {
       "name": "Wikipedia: History of Tibet",
       "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-tibetan-empire": {
+      "name": "Wikipedia: Tibetan Empire",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
       "tags": [
         "wikipedia"
       ],
@@ -15740,6 +16946,14 @@
       ],
       "accessed": "2026-11-18"
     },
+    "wp-sa-huynh-classical": {
+      "name": "Wikipedia: Sa Huỳnh culture",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
     "wp-prehistory-taiwan": {
       "name": "Wikipedia: Prehistory of Taiwan",
       "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
@@ -15751,14 +16965,6 @@
     "wp-kalanay": {
       "name": "Wikipedia: Kalanay Cave",
       "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
-    "wp-sa-huynh-classical": {
-      "name": "Wikipedia: Sa Huỳnh culture",
-      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
       "tags": [
         "wikipedia"
       ],
@@ -15851,11 +17057,247 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "cliopatria": {
+      "name": "Cliopatria (Seshat Global History Databank), v0.2.1",
+      "author": "Seshat Global History Databank",
+      "url": "https://github.com/Seshat-Global-History-Databank/cliopatria",
+      "accessed": "2026-11-21",
+      "tags": [
+        "cliopatria"
+      ]
+    },
+    "wp-djenne-djenno": {
+      "name": "Wikipedia: Djenné-Djenno",
+      "url": "https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-ghana-empire": {
+      "name": "Ghana Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghana_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-gao-empire": {
+      "name": "Gao Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gao_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-takrur": {
+      "name": "Takrur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Takrur",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sosso-empire": {
+      "name": "Sosso Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sosso_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-songhai-empire": {
+      "name": "Songhai Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Songhai_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jolof-empire": {
+      "name": "Jolof Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jolof_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mossi-kingdoms": {
+      "name": "Mossi Kingdoms (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mossi_Kingdoms",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kanem-bornu-empire": {
+      "name": "Kanem–Bornu Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kanem–Bornu_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-nri": {
+      "name": "Kingdom of Nri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Nri",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-benin": {
+      "name": "Kingdom of Benin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Benin",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kongo": {
+      "name": "Kingdom of Kongo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kongo",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dmt-classical": {
+      "name": "Wikipedia: Dʿmt",
+      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-aksum": {
+      "name": "Wikipedia: Kingdom of Aksum",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-savanna-pn": {
+      "name": "Wikipedia: Savanna Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-pastoral-neolithic": {
+      "name": "Wikipedia: Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-zagwe-dynasty": {
+      "name": "Zagwe dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zagwe_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ethiopian-empire": {
+      "name": "Ethiopian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-shewa": {
+      "name": "Sultanate of Shewa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Shewa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-ifat": {
+      "name": "Sultanate of Ifat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Ifat",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-adal-sultanate": {
+      "name": "Adal Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adal_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ajuran-sultanate": {
+      "name": "Ajuran Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ajuran_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-mogadishu": {
+      "name": "Sultanate of Mogadishu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Mogadishu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kilwa-sultanate": {
+      "name": "Kilwa Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kilwa_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-mapungubwe": {
+      "name": "Kingdom of Mapungubwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mapungubwe",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-great-zimbabwe": {
+      "name": "Kingdom of Great Zimbabwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Great_Zimbabwe",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-butua": {
+      "name": "Kingdom of Butua (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Butua",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mutapa-empire": {
+      "name": "Mutapa Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mutapa_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
     "wikipedia": {
       "name": "Wikipedia"
+    },
+    "cliopatria": {
+      "name": "Cliopatria"
     }
   },
   "events": [
@@ -16357,7 +17799,8 @@
       "start": 1235,
       "circa": true,
       "tracks": [
-        "mali-empire"
+        "mali-empire",
+        "sosso-empire"
       ],
       "sources": [
         {
@@ -16367,6 +17810,10 @@
         {
           "sourceKey": "wp-mali-empire",
           "sourceLocation": "infobox event_start: Conquest of Sosso; year_start: c. 1235"
+        },
+        {
+          "sourceKey": "wp-sosso-empire",
+          "sourceLocation": "infobox event_end: Battle of Kirina, c. 1235"
         }
       ],
       "importance": 1
@@ -23855,6 +25302,363 @@
         {
           "sourceKey": "wp-tu-i-tonga-empire",
           "sourceLocation": "infobox event_start: ʻAhoʻeitu brought his faction to Samoa, 950"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-by-jolof-empire",
+      "title": "Conquered by Jolof Empire",
+      "descr": "",
+      "start": 1456,
+      "tracks": [
+        "takrur",
+        "jolof-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-takrur",
+          "sourceLocation": "infobox event_end: Conquered by Jolof Empire, 1456"
+        }
+      ]
+    },
+    {
+      "uuid": "adoption-of-islam-by-war-jabi",
+      "title": "Adoption of Islam by War Jabi",
+      "descr": "",
+      "start": 1030,
+      "tracks": [
+        "takrur"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-takrur",
+          "sourceLocation": "infobox event2: Adoption of Islam by War Jabi, 1030s"
+        }
+      ]
+    },
+    {
+      "uuid": "alliance-with-the-almoravid-dynasty",
+      "title": "Alliance with the Almoravid Dynasty",
+      "descr": "",
+      "start": 1050,
+      "tracks": [
+        "takrur"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-takrur",
+          "sourceLocation": "infobox event3: Alliance with the Almoravid Dynasty, c. 1050s"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-tabfarilla",
+      "title": "Battle of Tabfarilla",
+      "descr": "",
+      "start": 1056,
+      "tracks": [
+        "takrur"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-takrur",
+          "sourceLocation": "infobox event4: Battle of Tabfarilla, 21 March 1056"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-sagrajas",
+      "title": "Battle of sagrajas",
+      "descr": "",
+      "start": 1086,
+      "tracks": [
+        "takrur"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-takrur",
+          "sourceLocation": "infobox event5: Battle of sagrajas, 1086"
+        }
+      ]
+    },
+    {
+      "uuid": "conquered-and-vassalized-by-mali-empire",
+      "title": "Conquered and vassalized by Mali Empire",
+      "descr": "",
+      "start": 1285,
+      "tracks": [
+        "takrur",
+        "mali-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-takrur",
+          "sourceLocation": "infobox event6: Conquered and vassalized by Mali Empire, c. 1285"
+        }
+      ]
+    },
+    {
+      "uuid": "capture-of-wagadu",
+      "title": "Capture of Wagadu",
+      "descr": "",
+      "start": 1200,
+      "tracks": [
+        "sosso-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sosso-empire",
+          "sourceLocation": "infobox event_start: Capture of Wagadu, c. 1200"
+        }
+      ]
+    },
+    {
+      "uuid": "independence-from-mali-empire",
+      "title": "Independence from Mali Empire",
+      "descr": "",
+      "start": 1430,
+      "tracks": [
+        "songhai-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-songhai-empire",
+          "sourceLocation": "infobox event_start: Independence from Mali Empire, c. 1430s"
+        }
+      ]
+    },
+    {
+      "uuid": "sonni-dynasty-begins",
+      "title": "Sonni dynasty begins",
+      "descr": "",
+      "start": 1468,
+      "tracks": [
+        "songhai-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-songhai-empire",
+          "sourceLocation": "infobox event1: Sonni dynasty begins, 1468"
+        }
+      ]
+    },
+    {
+      "uuid": "askiya-dynasty-begins",
+      "title": "Askiya dynasty begins",
+      "descr": "",
+      "start": 1493,
+      "tracks": [
+        "songhai-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-songhai-empire",
+          "sourceLocation": "infobox event2: Askiya dynasty begins, 1493"
+        }
+      ]
+    },
+    {
+      "uuid": "loss-of-kanem-to-the-bilala-re-centered-in-bornu",
+      "title": "Loss of Kanem to the Bilala, re-centered in Bornu",
+      "descr": "",
+      "start": 1380,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kanem-bornu-empire",
+          "sourceLocation": "infobox event2: Loss of Kanem to the Bilala, re-centered in Bornu, c. 1380"
+        }
+      ]
+    },
+    {
+      "uuid": "oba-monarchy-replaces-ogiso-monarchy",
+      "title": "Oba monarchy replaces Ogiso monarchy",
+      "descr": "",
+      "start": 1180,
+      "tracks": [
+        "kingdom-of-benin"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-benin",
+          "sourceLocation": "infobox event_start: Oba monarchy replaces Ogiso monarchy, 1180"
+        }
+      ]
+    },
+    {
+      "uuid": "conquest-of-kabunga",
+      "title": "Conquest of Kabunga",
+      "descr": "",
+      "start": 1390,
+      "tracks": [
+        "kingdom-of-kongo"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kongo",
+          "sourceLocation": "infobox event_start: Conquest of Kabunga, 1390"
+        }
+      ]
+    },
+    {
+      "uuid": "christianisation",
+      "title": "Christianisation of Kongo",
+      "descr": "",
+      "start": 1491,
+      "tracks": [
+        "kingdom-of-kongo"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kongo",
+          "sourceLocation": "infobox event1: Christianisation, 3 May 1491"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-ansata",
+      "title": "Battle of Ansata",
+      "descr": "",
+      "start": 1270,
+      "tracks": [
+        "ethiopia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-zagwe-dynasty",
+          "sourceLocation": "infobox event_end: Battle of Ansata, 1270"
+        }
+      ]
+    },
+    {
+      "uuid": "ascension-of-yekuno-amlak",
+      "title": "Ascension of Yekuno Amlak",
+      "descr": "",
+      "start": 1270,
+      "tracks": [
+        "ethiopia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ethiopian-empire",
+          "sourceLocation": "infobox event_start: Ascension of Yekuno Amlak, 1270"
+        }
+      ]
+    },
+    {
+      "uuid": "conquests-of-amda-seyon-i",
+      "title": "Conquests of Amda Seyon I",
+      "descr": "",
+      "start": 1314,
+      "end": 1344,
+      "tracks": [
+        "ethiopia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ethiopian-empire",
+          "sourceLocation": "infobox event1: Conquests of Amda Seyon I, 1314–1344"
+        }
+      ]
+    },
+    {
+      "uuid": "shewa-conquered-by-ifat",
+      "title": "Shewa conquered by Ifat",
+      "descr": "",
+      "start": 1278,
+      "end": 1285,
+      "tracks": [
+        "sultanate-of-shewa"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-shewa",
+          "sourceLocation": "infobox event1: Shewa conquered by Ifat, 1278–1285"
+        }
+      ]
+    },
+    {
+      "uuid": "sultanate-of-shewa-annexed-by-ifat",
+      "title": "Sultanate of Shewa annexed by Ifat",
+      "descr": "",
+      "start": 1285,
+      "tracks": [
+        "sultanate-of-shewa",
+        "ifat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-shewa",
+          "sourceLocation": "infobox event2: Sultanate of Shewa annexed by Ifat, 1285"
+        }
+      ]
+    },
+    {
+      "uuid": "sabr-ad-din-iii-returns-from-exile-in-yemen",
+      "title": "Sabr ad-Din III returns from exile in Yemen",
+      "descr": "",
+      "start": 1415,
+      "tracks": [
+        "adal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-adal-sultanate",
+          "sourceLocation": "infobox event1: Sabr ad-Din III returns from exile in Yemen, 1415"
+        }
+      ]
+    },
+    {
+      "uuid": "war-with-yeshaq-i",
+      "title": "War with Yeshaq I",
+      "descr": "",
+      "start": 1415,
+      "end": 1429,
+      "tracks": [
+        "adal-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-adal-sultanate",
+          "sourceLocation": "infobox event2: War with Yeshaq I, 1415–1429"
+        }
+      ]
+    },
+    {
+      "uuid": "mapungubwe-hill-abandoned",
+      "title": "Fall of Mapungubwe, rise of Great Zimbabwe",
+      "descr": "",
+      "start": 1300,
+      "tracks": [
+        "kingdom-of-mapungubwe",
+        "kingdom-of-zimbabwe"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-mapungubwe",
+          "sourceLocation": "infobox event_end: Mapungubwe Hill abandoned, c. 1300"
+        },
+        {
+          "sourceKey": "wp-kingdom-of-great-zimbabwe",
+          "sourceLocation": "infobox event1: Fall of Mapungubwe, rise of Great Zimbabwe, c. 1300"
+        }
+      ]
+    },
+    {
+      "uuid": "nyatsimba-mutota-leaves-to-establish-the-kingdom-of-mutapa",
+      "title": "Nyatsimba Mutota leaves to establish the Kingdom of Mutapa",
+      "descr": "",
+      "start": 1450,
+      "tracks": [
+        "kingdom-of-zimbabwe",
+        "mutapa"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-great-zimbabwe",
+          "sourceLocation": "infobox event2: Nyatsimba Mutota leaves to establish the Kingdom of Mutapa, c. 1450"
         }
       ]
     }

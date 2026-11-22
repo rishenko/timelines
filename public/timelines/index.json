@@ -26,8 +26,8 @@
       "id": "medieval",
       "title": "Medieval World",
       "file": "medieval.json",
-      "subtitle": "Europe, the Near East and North Africa, the steppe, Asia and Oceania; pilot rows elsewhere; 650–1500",
-      "eventCount": 497,
+      "subtitle": "Europe, Africa, Asia and Oceania, 650–1500 (the Americas to come)",
+      "eventCount": 520,
       "calendar": {
         "before": "BCE",
         "after": "CE",
