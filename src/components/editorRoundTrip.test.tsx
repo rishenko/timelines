@@ -2,7 +2,7 @@
 // Every row and every event of every timeline, opened in the editor and saved without changes, comes back exactly
 // as it was. The forms copy fields one by one, so a field they don't know would be dropped silently on save (as the
 // row form once dropped category memberships); this catches it for every field the data uses, now and later.
-// Runs the bundled timelines, and the local ones when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts).
+// Runs the schema's every-field fixture (src/data/fixtures/everyField.ts), the bundled timelines, and the local ones when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts).
 // By default enough rows and events that every field path the data uses is saved at least once (seconds);
 // ROUNDTRIP=all opens every one (about 40 minutes).
 import { readFileSync } from 'node:fs';
@@ -14,6 +14,7 @@ import { localTimelineFiles } from '../../scripts/lib/local-data.ts';
 import { migrate } from '../data/migrate.ts';
 import type { Dataset, Track } from '../types.ts';
 import index from '../../public/timelines/index.json';
+import { everyField } from '../data/fixtures/everyField.ts';
 
 afterEach(cleanup);
 
@@ -50,8 +51,11 @@ const bundled = (index as { timelines: { id: string; file: string }[] }).timelin
 );
 const timelines: [string, Dataset][] = [
   ...bundled,
+  ['every-field fixture', everyField as Dataset],
   ...localTimelineFiles().map((f): [string, Dataset] => [f.file, migrate(JSON.parse(readFileSync(f.path, 'utf8'))) as Dataset]),
 ];
+
+const withoutEdited = ({ edited: _edited, ...e }: Dataset['events'][number]) => e;
 
 /** Submits the open form and waits for its save handler (or its problems). */
 async function submit(button: string, onSave: ReturnType<typeof vi.fn>) {
@@ -87,7 +91,8 @@ describe('editor round trip: saving unchanged keeps every field', () => {
         render(<EventForm initial={e} isNew={false} data={data} onSave={onSave} onCancel={() => {}} onCreateTrack={() => {}} onCreateSource={() => {}} />);
         const saved = await submit('Save changes', onSave);
         try {
-          expect(saved).toEqual(e);
+          // `edited` is set by the save itself (state/edits.ts), not by the form
+          expect(saved).toEqual(withoutEdited(e));
         } catch {
           lost.push(`${e.uuid}: ${saved ? JSON.stringify(diff(e, saved)) : 'not saved'}`);
         }
