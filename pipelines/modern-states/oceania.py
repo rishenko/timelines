@@ -15,12 +15,13 @@ Rules applied (data-format.md and Kevin's decisions, 2026-11-21):
 - Colonial rule is a phase plus a dated membership in the empire: British, French and Spanish rule in british-empire,
   french-colonial-empire and spanish-empire; German rule (German New Guinea, German Samoa, the Marshall Islands
   protectorate, Nauru) in `germany`; the Australian and New Zealand mandates and trust territories in `australia` and
-  `new-zealand`; the US Trust Territory of the Pacific Islands in `united-states`; the South Seas Mandate and the
-  wartime occupations (Nauru, the Gilbert Islands) in `japan`. The New Hebrides Condominium is a phase of vanuatu
+  `new-zealand`; the US Trust Territory of the Pacific Islands and the South Seas Mandate in their own rows (below);
+  Japan's 1914–19 occupation of Micronesia and the wartime occupations (Nauru, the Gilbert Islands) in `japan`. The New Hebrides Condominium is a phase of vanuatu
   with memberships in both british-empire and french-colonial-empire.
 - The Gilbert and Ellice Islands split into two states: its own row, joined to kiribati and tuvalu by the separation
-  event. The US Trust Territory and the South Seas Mandate also covered several of today's states, but the lead's
-  brief (2026-11-21) makes them memberships of united-states and japan, so they are phases on each state's row.
+  event. The US Trust Territory and the South Seas Mandate also covered several of today's states: they were first
+  phases plus memberships of united-states and japan (the lead's brief, 2026-11-21); since 2026-11-22 (Kevin) each is
+  its own row, a member of united-states or japan, and the states are its members, as with Italian East Africa.
 - The Federated States of Micronesia take the id federated-states-of-micronesia: `micronesia` is the subregion group
   the lead asked for (2026-11-21), and ids are unique.
 - Rows crossing 1500 match the Medieval World timeline: `tonga` (its first phase is the Tuʻi Tonga Empire, 950–1865,
@@ -231,12 +232,27 @@ def tracks(M):
     def jap_mandate(start_claims):
         return phase('Japanese rule (South Seas Mandate)', start_claims, E1(ssm), startEvent=jap_mic, endEvent='ttpi-established')
 
+    # The South Seas Mandate and the Trust Territory are rows (follow-up, Kevin 2026-11-22): each covered several of
+    # today's states, as Italian East Africa did (africa_east.py). The states keep their phases; their memberships are
+    # in the two rows, which are members of japan and united-states. Japan's wartime occupation (1914) until the
+    # mandate (1919) stays a membership of japan.
+    ssm_src = G.ref(ssm, 'infobox former country: South Seas Mandate, 1919–1947')
+    ttpi_src = lead(ttpi, 'administered by the United States from 1947 to 1994')
+    T.append(row('south-seas-mandate', 'South Seas Mandate', '#8a5a6a', MIC, ssm,
+                 span_=span(stretch(None, S1(ssm), E1(ssm), startEvent='south-seas-mandate', endEvent='ttpi-established')),
+                 memberOf=[member('japan', S1(ssm), E1(ssm), sources=[ssm_src], startEvent='south-seas-mandate', endEvent='ttpi-established')]))
+    T.append(row('trust-territory-of-the-pacific-islands', 'Trust Territory of the Pacific Islands', '#4a6a9a', MIC, ttpi,
+                 span_=span(stretch(None, S1(ttpi), E1(ttpi), startEvent='ttpi-established', endEvent='palau-compact-of-free-association')),
+                 memberOf=[member('united-states', S1(ttpi), E1(ttpi), sources=[ttpi_src], startEvent='ttpi-established',
+                                  endEvent='palau-compact-of-free-association')]))
+
     def jap_member(start_claims):
-        return member('japan', start_claims, E1(ssm), sources=[G.ref(ssm, 'infobox former country: South Seas Mandate, 1919–1947')],
-                      startEvent=jap_mic, endEvent='ttpi-established')
+        return [member('japan', start_claims, S1(ssm), sources=[lead('German New Guinea', 'Japan occupied most of the remaining German possessions')],
+                       startEvent=jap_mic, endEvent='south-seas-mandate'),
+                member('south-seas-mandate', S1(ssm), E1(ssm), sources=[ssm_src], startEvent='south-seas-mandate', endEvent='ttpi-established')]
 
     def us_member(end_claims, endEvent):
-        return member('united-states', S1(ttpi), end_claims, sources=[lead(ttpi, 'administered by the United States from 1947 to 1994')],
+        return member('trust-territory-of-the-pacific-islands', S1(ttpi), end_claims, sources=[ttpi_src],
                       startEvent='ttpi-established', endEvent=endEvent)
 
     fsm, hfsm, ci = 'Federated States of Micronesia', 'History of the Federated States of Micronesia', 'Caroline Islands'
@@ -254,7 +270,7 @@ def tracks(M):
                endEvent='german-spanish-treaty-1899'),
         member('germany', fsm_sold, fsm_japan, sources=[lead(gng, 'The Caroline Islands, Palau, and the Mariana Islands')],
                startEvent='german-spanish-treaty-1899', endEvent=jap_mic),
-        jap_member(fsm_japan),
+        *jap_member(fsm_japan),
         us_member(est(fsm, 2), 'compact-of-free-association-1986'),
     ]))
 
@@ -273,7 +289,7 @@ def tracks(M):
                endEvent='german-spanish-treaty-1899'),
         member('germany', pw_sold, pw_japan, sources=[lead(pw, 'administered as part of German New Guinea')],
                startEvent='german-spanish-treaty-1899', endEvent=jap_mic),
-        jap_member(pw_japan),
+        *jap_member(pw_japan),
         us_member(est(pw, 3) + E1(ttpi), 'palau-compact-of-free-association'),
     ]))
 
@@ -288,7 +304,7 @@ def tracks(M):
     ], memberOf=[
         member('germany', mh_de, mh_japan, sources=[lead(mh, 'annexed the Marshalls as a protectorate in 1885')],
                startEvent='german-protectorate-of-the-marshall-islands', endEvent=jap_mic),
-        jap_member(mh_japan),
+        *jap_member(mh_japan),
         us_member(est(mh, 2), 'compact-of-free-association-1986'),
     ]))
 
@@ -518,10 +534,11 @@ def events(M):
             descr='Spain sells the Caroline, Palau and Northern Mariana Islands to Germany.'),
         lev('nauru-phosphate-mining', 'Phosphate mining begins on Nauru', 'Nauru', 'strip-mined for about a century starting in 1900', 1900, ['nauru']),
         iev('japan-occupies-german-micronesia', 'Japan occupies German Micronesia', 'German New Guinea', 3, mic3 + ['japan', 'germany'], importance=1),
-        fev('south-seas-mandate', 'South Seas Mandate', 'South Seas Mandate', 'year_start', mic3 + ['japan'],
+        fev('south-seas-mandate', 'South Seas Mandate', 'South Seas Mandate', 'year_start', mic3 + ['japan', 'south-seas-mandate'],
             descr='The Treaty of Versailles gives Japan a League of Nations mandate over Germany\'s former Micronesian islands.'),
         wev('battle-of-tarawa', 'Battle of Tarawa', 'Battle of Tarawa', ['gilbert-and-ellice-islands', 'united-states', 'japan']),
-        fev('ttpi-established', 'Trust Territory of the Pacific Islands', 'Trust Territory of the Pacific Islands', 'year_start', mic3 + ['united-states', 'japan'],
+        fev('ttpi-established', 'Trust Territory of the Pacific Islands', 'Trust Territory of the Pacific Islands', 'year_start',
+            mic3 + ['united-states', 'japan', 'south-seas-mandate', 'trust-territory-of-the-pacific-islands'],
             importance=1, descr='The United States takes over the former Japanese mandate as a UN trust territory.'),
         lev('us-nuclear-tests-marshall-islands', 'US nuclear tests in the Marshall Islands', 'Marshall Islands', 'Between 1946 and 1958', 1946,
             ['marshall-islands', 'united-states'], end=1958, importance=1, descr='67 nuclear tests at Bikini and Enewetak atolls.'),
@@ -533,7 +550,7 @@ def events(M):
         fev('republic-of-palau-established', 'Republic of Palau established', 'Palau', 'established_date2', ['palau']),
         fev('compact-of-free-association-1986', 'Compact of Free Association', 'Federated States of Micronesia', 'established_date2',
             ['federated-states-of-micronesia', 'marshall-islands', 'united-states'], importance=1, descr='Micronesia and the Marshall Islands become sovereign in free association with the United States.'),
-        fev('palau-compact-of-free-association', 'Palau in free association', 'Palau', 'established_date3', ['palau', 'united-states'], importance=1,
+        fev('palau-compact-of-free-association', 'Palau in free association', 'Palau', 'established_date3', ['palau', 'united-states', 'trust-territory-of-the-pacific-islands'], importance=1,
             descr='The last part of the Trust Territory becomes independent.'),
         # ---------- Kiribati and Tuvalu ----------
         fev('gilbert-and-ellice-protectorate', 'Gilbert and Ellice Islands protectorate', 'Gilbert and Ellice Islands', 'year_start',

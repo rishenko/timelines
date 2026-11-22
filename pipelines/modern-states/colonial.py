@@ -91,6 +91,10 @@ def tracks(M):
     lc, cn, fn, md = 'Lagos Colony', 'Colonial Nigeria', 'Federation of Nigeria', 'Military dictatorship in Nigeria'
     T.append(row('nigeria', 'Nigeria', '#2a8a4a', 'western-africa', 'Nigeria', phases=[
         phase('Lagos Colony', F(lc, 'year_start', 'start'), F(lc, 'year_end', 'end'), startEvent='lagos-colony'),
+        # the Oil Rivers Protectorate (1884), renamed Niger Coast in 1893, became the Southern Nigeria Protectorate in 1900
+        # (follow-up, Kevin 2026-11-22)
+        phase('Niger Coast Protectorate', F('Niger Coast Protectorate', 'year_start', 'start'),
+              F('Niger Coast Protectorate', 'year_end', 'end')),
         # the two protectorates ran side by side until amalgamation: parallel phases
         phase('Northern Nigeria Protectorate', F('Northern Nigeria Protectorate', 'year_start', 'start'),
               F('Northern Nigeria Protectorate', 'year_end', 'end'), endEvent='amalgamation'),

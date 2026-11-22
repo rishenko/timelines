@@ -18,7 +18,7 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
   - `medieval/clio-years.json`, a summary of [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) v0.2.1. `medieval/clio_years.py` rebuilds it from the release's GeoJSON.
   - `medieval/descriptions.json`, the event descriptions.
   - The repo's own `public/timelines/ancient-classical.json`.
-  - Modern States' committed build at `bfbd2ae`, read with `git show` (the seam at 1500).
+  - Modern States' committed build at `e585724`, read with `git show` (the seam at 1500).
 
 ## Settings
 
@@ -28,6 +28,7 @@ Both settings live in `common/settings.py`. Set them in the environment, or pass
 |---|---|---|---|
 | `TIMELINES_DATA` | `--data DIR` | `~/data` | folder whose `wikipedia/` holds the dump and index |
 | `TIMELINES_WP_DUMP` | `--dump NAME` | `enwiki-20261101` | which dump to read |
+| `TIMELINES_CONNECTIONS_CLAIMS` | (none) | `timelines-analysis/2026-11-22-connections/connections-claims.json` in the data folder | the claims file `modern-states/blocs.py` reads |
 
 ## Running
 
@@ -45,6 +46,8 @@ Then run the generator and compile its output:
 `git diff data-src/` should then show nothing. Two more checks:
 - `npm run data:compare -- <before.json> <after.json>` compares two compiled files as the app draws them.
 - After a code change, `git diff --exit-code data-src/` proves the change didn't move any data.
+
+`modern-states/blocs.py` (the Cold War blocs) is not in the default module list until its data is merged: add it on the command line to build it (`gen_modern.py . colonial,...,unit7,blocs`).
 
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.
 

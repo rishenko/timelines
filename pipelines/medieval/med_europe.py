@@ -354,9 +354,10 @@ def ancient_row(anc, id_, parent):
 
 # ---------- the 1500 seam: Modern States owns what spans it ----------
 
-# Modern States' committed build, read from git (never their working copy): wave 8, commit bfbd2ae on main.
+# Modern States' committed build, read from git (never their working copy): commit e585724 on main
+# (after #32).
 # To sync with a later Modern States build, change the commit and rerun.
-MODERN_COMMIT = 'bfbd2ae'
+MODERN_COMMIT = 'e585724'
 
 
 @functools.lru_cache(maxsize=None)
@@ -367,6 +368,8 @@ def modern_seam_bytes():
 
 def modern_seam():
     return json.loads(modern_seam_bytes())
+
+
 NEEDS = []  # rows whose typed lifespan in Modern States can't hold Medieval's phases
 
 

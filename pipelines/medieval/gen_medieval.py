@@ -78,6 +78,8 @@ def basis_ref(title, needle):
     hit = find(G.art(title)['title'], needle)
     if hit:
         where, text = hit
+        if ' / ' in text:  # a list joined into one "sentence": quote the item that holds the phrase
+            text = next((p for p in text.split(' / ') if needle in p), text).strip()
         return G.ref(title, f'lead: "{text[:160]}"' if where == 'lead' else f'section "{where}": "{text[:160]}"')
     raise SystemExit(f'{title}: no sentence with {needle!r}')
 
@@ -441,7 +443,7 @@ def events():
 def build(repo):
     anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
     data = {
-        'schemaVersion': 3,
+        'schemaVersion': 4,  # v4 (PR #30) only adds fields
         'meta': {
             'id': 'medieval', 'title': 'Medieval World', 'subtitle': 'Europe, Africa, Asia, Oceania and the Americas, 650–1500',
             'description': 'Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.',
@@ -484,6 +486,42 @@ def build(repo):
                                              'golden-horde', 'east-asia', 'china', 'africa', 'mali-empire')]
     import med_catchup as catchup
     data['tracks'] = catchup.build(me, data['tracks'])
+    # Infobox vs body (Kevin, 2026-11-22): where an article's infobox and its own body give different years for an
+    # event, use the body's year (citing the sentence, which must name it) and keep the infobox year as a noted claim.
+    body_year = {
+        'treaty-of-zamora': (1143, 'Kingdom of Portugal', 'through the Treaty of Zamora',
+                             'The infobox gives 5 October 1139; the article body gives 5 October 1143.'),
+        'genk-war-begins': (1331, 'Kenmu Restoration', 'Go-Daigo launched the Genkō War in 1331',
+                            'The infobox gives 1333; the article lead gives 1331.'),
+    }
+    for uuid, (year, art, needle, note) in body_year.items():
+        e = europe.EVENTS[uuid]
+        old, info_ref = e['start'], e['sources'][0]
+        from med_sections import find
+        hit = find(G.art(art)['title'], needle)
+        if not hit:
+            raise SystemExit(f'{uuid}: no sentence with {needle!r} in {art}')
+        where, text = hit
+        part = next(p for p in text.split(' / ') if needle in p).strip()  # a list item, not the whole list
+        if str(year) not in part:
+            raise SystemExit(f'{uuid}: the body sentence does not name {year}')
+        ref = G.ref(art, f'lead: "{part}"' if where == 'lead' else f'section "{where}": "{part}"')
+        e['start'] = year
+        e['startDates'] = [{'year': year, 'source': ref}, {'year': old, 'source': info_ref, 'note': note}]
+        if ref not in e['sources']:
+            e['sources'].append(ref)
+        REPORT.append(f'body year: {uuid} {old} -> {year} ({art})')
+    # An event moved to its body year no longer marks a phase edge it was linked to by the infobox year: unlink it
+    def unlink(t):
+        span = t.get('span') or []
+        for part in (span if isinstance(span, list) else [span]) + t.get('phases', []) + t.get('memberOf', []):
+            for k, edge in (('startEvent', 'start'), ('endEvent', 'end')):
+                u = part.get(k)
+                if u in body_year and isinstance(part.get(edge), int) and abs(part[edge] - body_year[u][0]) > 1:
+                    del part[k]
+                    REPORT.append(f'body year: {t["id"]} {part.get("name", "lifespan")} {k} {u} unlinked ({edge} {part[edge]})')
+    for t in data['tracks']:
+        unlink(t)
     # Descriptions (Kevin: one pass after the last wave; descriptions.json holds the text and the sentences it rests on)
     descs = json.load(open(os.path.join(HERE, 'descriptions.json')))['events']
     for uuid, dd in descs.items():

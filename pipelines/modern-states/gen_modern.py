@@ -12,6 +12,7 @@ PILOT (2026-11-21): France, Holy Roman Empire, German Confederation, Germany, Pr
 Serbia and Montenegro, Serbia, Croatia. COLONIAL PILOT (2026-11-21): colonial.py (start year moved to 1500).
 WAVE 1 (2026-11-21): europe.py; group rows in groups.py. WAVE 2 (2026-11-21): post_soviet.py.
 UNIT 7 (2026-11-22): unit7.py, key events of 1900–1945 for history courses, on existing rows.
+BLOCS (2026-11-22, Education): blocs.py, the Cold War blocs as union rows in a Connections group, with memberOf on members.
 
 Usage (from the repo, see pipelines/README.md):
        python -I pipelines/modern-states/gen_modern.py [repo] [module,module,...] [--data DIR] [--dump NAME]
@@ -387,7 +388,7 @@ def events():
 def build(repo, module_names=None):
     module_names = module_names or MODULES
     data = {
-        'schemaVersion': 3,
+        'schemaVersion': 4,  # v4 (days and months, PR #30): v3 data is valid v4
         'meta': {
             'id': 'modern-states', 'title': 'Modern States', 'subtitle': 'Every state in the world, 1500 to today',
             'description': 'States from 1500 to today: their governments as phases, unions as their own rows, and which union each state was part of when.',
@@ -476,9 +477,9 @@ def write_manifest(data, module_names, path):
 
 # Region modules in build order. A wave agent runs: gen_modern.py <its worktree> colonial,europe,...,<its module>
 OUT = os.path.join(PIPELINES, 'out')
-# unit7 (key events of 1900-1945) is built but not yet in data-src/modern-states.json: it joins MODULES when its
-# events are merged, so a plain run reproduces the committed file. To see them: gen_modern.py . colonial,...,oceania,unit7
-MODULES = ('colonial', 'europe', 'post_soviet', 'south_asia', 'mena', 'east_asia', 'americas', 'africa_west', 'africa_east', 'oceania')
+# blocs (the Cold War blocs, Education) is built but not yet in data-src/modern-states.json: it joins MODULES when its
+# data PR merges, so a plain run reproduces the committed file. To see it: gen_modern.py . colonial,...,unit7,blocs
+MODULES = ('colonial', 'europe', 'post_soviet', 'south_asia', 'mena', 'east_asia', 'americas', 'africa_west', 'africa_east', 'oceania', 'unit7')
 
 if __name__ == '__main__':
     repo = ARGS[0] if ARGS else os.path.dirname(PIPELINES)

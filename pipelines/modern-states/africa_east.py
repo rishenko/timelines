@@ -14,7 +14,8 @@ Rules applied (data-format.md and Kevin's decisions, 2026-11-21):
 - Unions are their own rows: the Federation of Rhodesia and Nyasaland. Tanzania is the union of Tanganyika and
   Zanzibar; Tanganyika's governments are its phases, and Zanzibar (which keeps a government of its own) is a row with
   an ongoing membership of tanzania. Somalia is the union of 1960; Somaliland has a membership of somalia 1960–91.
-- Ethiopia's 1936–41 occupation is a rival phase plus memberships of italy and italian-east-africa. Cape Colony,
+- Ethiopia's 1936–41 occupation is a rival phase plus a membership of italian-east-africa (itself a member of italy;
+  the direct membership of italy was dropped 2026-11-22). Cape Colony,
   Natal, the Transvaal and Orange River colonies and British Bechuanaland are parallel phases of south-africa with
   memberships in british-empire; South West Africa is a phase of namibia with a membership of south-africa.
 - The Boer republics, the Griqua states, the Zulu, Mthethwa and Ndwandwe kingdoms, the four nominally independent
@@ -227,9 +228,8 @@ def tracks(M):
         phase('Transitional Government', est(eth, 11), est(eth, 12), startEvent='fall-of-addis-ababa-1991', endEvent='ethiopian-constitution-1995'),
         phase('Federal Democratic Republic', est(eth, 12), ongoing=cur(eth, 12), startEvent='ethiopian-constitution-1995'),
     ], memberOf=[
-        member('italy', F(iea, 'seg0.start', 'start'), F(iea, 'seg0.end', 'end'),
-               sources=[lead(iea, 'colonial administrative entity of the Kingdom of Italy')],
-               startEvent='second-italo-ethiopian-war', endEvent='east-african-campaign-ww2'),
+        # only Italian East Africa (Kevin, 2026-11-22): it was a member of italy, so a direct membership of italy too
+        # counted the occupation twice
         member('italian-east-africa', F(iea, 'seg0.start', 'start'), F(iea, 'seg0.end', 'end'),
                sources=[lead(iea, 'It encompassed Italian Somaliland, Italian Eritrea')],
                startEvent='second-italo-ethiopian-war', endEvent='east-african-campaign-ww2'),
