@@ -27,6 +27,11 @@ const SETTLE_MS = 200;
  * just before their years do and don't flicker at the edges. */
 const ROW_MARGIN = 0.25;
 const NO_MEMBERSHIPS = new Map<string, ResolvedMembership[]>();
+/** Rows are drawn this far above and below the screen (in screen heights), so they're in place before they scroll in. */
+const ROWS_ABOVE = 1;
+const ROWS_BELOW = 2.5;
+/** A chart at most this many screens tall draws every row: leaving rows out would only add work as it scrolls. */
+const DRAW_ALL_SCREENS = 6;
 /** How long a thin line's name stays up after a click or tap. */
 const PEEK_MS = 2500;
 
@@ -243,7 +248,7 @@ export function TimelineView(props: Props) {
     return s;
   }, [focusId, eventsById]);
 
-  const { view, centerYearRef, flashLane, onScroll } = useViewport({
+  const { view, rows, centerYearRef, flashLane, onScroll } = useViewport({
     scrollerRef,
     lanesRef,
     scale,
@@ -359,6 +364,35 @@ export function TimelineView(props: Props) {
     onSearchKey: props.onSearchKey,
   });
 
+  // On a chart more than six screens tall, only render rows near the viewport (a screen above, two and a half below),
+  // plus the rows that must stay: the one holding the chart's Tab stop (so Tab and the arrow keys always reach it), the
+  // selected event's, a focus request's and the one being highlighted. The rows left out are replaced by empty space
+  // of the same height.
+  const pinnedLanes = useMemo(() => {
+    const ids = new Set(keep);
+    if (flashLane) ids.add(flashLane);
+    if (rovingKey) {
+      const id = rovingKey.startsWith('label:')
+        ? rovingKey.slice('label:'.length, rovingKey.lastIndexOf(':'))
+        : layout.lanes.find((l) => l.marks.some((m) => m.key === rovingKey))?.lane.id;
+      if (id) ids.add(id);
+    }
+    return ids;
+  }, [keep, flashLane, rovingKey, layout]);
+  const drawnLanes = useMemo(() => {
+    const y0 = rows.top - rows.height * ROWS_ABOVE;
+    const y1 = rows.top + rows.height * (1 + ROWS_BELOW);
+    const windowed = rows.height > 0 && layout.height > rows.height * DRAW_ALL_SCREENS;
+    const out: { l: (typeof layout.lanes)[number]; index: number; skipped: number }[] = [];
+    let bottom = 0;
+    layout.lanes.forEach((l, index) => {
+      if (windowed && !(l.top + l.height > y0 && l.top < y1) && !pinnedLanes.has(l.lane.id)) return;
+      out.push({ l, index, skipped: l.top - bottom });
+      bottom = l.top + l.height;
+    });
+    return { lanes: out, skippedBelow: layout.height - bottom };
+  }, [layout, rows, pinnedLanes]);
+
   // Only render what is near the viewport (one screen either side).
   const lo = view.left - view.width;
   const hi = view.left + view.width * 2;
@@ -466,7 +500,8 @@ export function TimelineView(props: Props) {
             inView={inView}
           />
 
-          {layout.lanes.map(({ lane, height, marks, top, overflow }) =>
+          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => [
+            skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />,
             shown.thin.has(lane.id) ? (
               // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering the
               // line, or clicking or tapping it, shows its name in the name column. Mouse/touch only: keyboard and
@@ -474,7 +509,7 @@ export function TimelineView(props: Props) {
               // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
               <div
                 key={lane.id}
-                className={`tl-lane thin${lane.depth ? ' nested' : ''}${groupColor.has(lane.id) ? ' in-group' : ''}${peekLane === lane.id ? ' peek' : ''}`}
+                className={`tl-lane thin${index % 2 ? ' stripe' : ''}${lane.depth ? ' nested' : ''}${groupColor.has(lane.id) ? ' in-group' : ''}${peekLane === lane.id ? ' peek' : ''}`}
                 onClick={() => setPeekLane((p) => (p === lane.id ? null : lane.id))}
                 style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
                 aria-hidden="true"
@@ -489,7 +524,7 @@ export function TimelineView(props: Props) {
             // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <div
               key={lane.id}
-              className={`tl-lane${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${flashLane === lane.id ? ' flash' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
+              className={`tl-lane${index % 2 ? ' stripe' : ''}${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${flashLane === lane.id ? ' flash' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
               style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
               onDoubleClick={onLaneDoubleClick(lane.id)}
               onPointerDown={onLanePointerDown(lane.id)}
@@ -585,7 +620,8 @@ export function TimelineView(props: Props) {
                       selected={selectedId === m.eventId}
                       related={!!related?.has(m.eventId)}
                       showEdited={editMode}
-                      viewLeft={view.left}
+                      // clamped to the bar: only a bar crossing the left edge has a new value as the chart scrolls
+                      viewLeft={m.span ? Math.min(Math.max(view.left, m.x0), m.x1) : 0}
                       onHover={setHoverId}
                       onSelect={onSelect}
                     />
@@ -593,6 +629,9 @@ export function TimelineView(props: Props) {
                 )}
             </div>
             ),
+          ])}
+          {editMode && drawnLanes.skippedBelow > 0 && (
+            <div className="tl-rows-skipped" style={{ height: drawnLanes.skippedBelow }} aria-hidden="true" />
           )}
           {editMode && (
             <div className="tl-add-lane">

@@ -46,9 +46,9 @@ cmp before.txt after.txt                   # no output: nothing visible changed
 | `src/lib/years.ts`, `urls.ts`, `theme.ts`, `claims.ts` | Date text; URL safety for untrusted timelines; theme presets; date claims as form fields |
 | `src/timeline/scale.ts` | Piecewise-linear year→pixel scale with gap compression |
 | `src/timeline/layout.ts` | Lanes from the row tree; row packing, `+N` clusters, phases |
-| `src/timeline/TimelineView.tsx` | The chart: lanes from the row tree, windowed rendering; composes the pieces below |
+| `src/timeline/TimelineView.tsx` | The chart: lanes from the row tree, windowed rendering (rows a screen above to 2.5 below, plus the rows holding the Tab stop or selection; marks a screen either side); composes the pieces below |
 | `src/timeline/Ruler.tsx`, `Bands.tsx`, `LaneLabel.tsx`, `Marks.tsx` | The year ruler; lifespan and phase bands; row labels and their buttons; event and `+N` marks |
-| `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen |
+| `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen; the view's stretch for drawing (a vertical scroll re-renders only every half screen) |
 | `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys) and its movement rules |
 | `src/timeline/gestures.ts` | Pinch zoom and long press |
 | `src/timeline/rowsInView.ts` | Which rows have nothing near the view ("Hide rows with nothing in view") |

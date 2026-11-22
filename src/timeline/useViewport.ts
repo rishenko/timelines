@@ -19,14 +19,39 @@ interface Options {
 }
 
 /**
+ * The rows to draw, as a vertical stretch of the chart (px from its top): `top` is the scroll position rounded down to
+ * a step of half a screen, `height` the screen's height. A height of 0 means not measured yet (or no layout, as in
+ * tests): every row is drawn.
+ */
+export interface RowBand {
+  top: number;
+  height: number;
+}
+const NO_BAND: RowBand = { top: 0, height: 0 };
+
+/**
  * The chart's scroll position. Keeps the center year fixed when the scale changes (zoom, compression, filters),
  * scrolls to focus requests (search, links, zoom) and briefly highlights the row they name, keeps a newly selected
  * event on screen, and reports the center year as the reader scrolls.
- * Returns the visible stretch (`view`, content px), the center year, the row to highlight, and the scroll handler.
+ * Returns the visible stretch (`view`, content px), the rows' stretch (`rows`), the center year, the row to highlight, and the scroll handler.
  */
 export function useViewport(o: Options) {
   const { scrollerRef, lanesRef, scale, labelW } = o;
-  const [view, setView] = useState({ left: 0, width: 1200 });
+  const [view, setViewState] = useState({ left: 0, width: 1200 });
+  /** Only a sideways move or a resize changes the view: a vertical scroll keeps the same object, so it doesn't re-render. */
+  const setView = useCallback(
+    (left: number, width: number) => setViewState((v) => (v.left === left && v.width === width ? v : { left, width })),
+    [],
+  );
+  const [rows, setRowsState] = useState<RowBand>(NO_BAND);
+  /** The vertical stretch to draw rows for, in steps of half a screen: it changes a few times per screen scrolled. */
+  const setRows = useCallback((el: HTMLElement) => {
+    const height = el.clientHeight;
+    if (!height) return;
+    const step = Math.max(100, Math.round(height / 2));
+    const top = Math.floor(el.scrollTop / step) * step;
+    setRowsState((r) => (r.top === top && r.height === height ? r : { top, height }));
+  }, []);
   const centerYearRef = useRef(o.initialCenterYear);
 
   const centerOn = useCallback(
@@ -44,8 +69,11 @@ export function useViewport(o: Options) {
   useLayoutEffect(() => {
     centerOn(centerYearRef.current);
     const el = scrollerRef.current;
-    if (el) setView({ left: el.scrollLeft, width: el.clientWidth });
-  }, [centerOn, scrollerRef]);
+    if (el) {
+      setView(el.scrollLeft, el.clientWidth);
+      setRows(el);
+    }
+  }, [centerOn, scrollerRef, setView, setRows]);
 
   // A focus request (search, links, zoom): scroll to its years and, if it names a row, to that row. Rows it
   // unfolds are already in this render's layout, since the request arrives in the same update.
@@ -121,7 +149,8 @@ export function useViewport(o: Options) {
     rafRef.current = requestAnimationFrame(() => {
       const el = scrollerRef.current;
       if (!el) return;
-      setView({ left: el.scrollLeft, width: el.clientWidth });
+      setView(el.scrollLeft, el.clientWidth);
+      setRows(el);
       const y = Math.round(scale.yearAt(el.scrollLeft + (el.clientWidth - labelW) / 2));
       centerYearRef.current = y;
       onCenterYearChange(y);
@@ -131,11 +160,14 @@ export function useViewport(o: Options) {
   useEffect(() => {
     const onResize = () => {
       const el = scrollerRef.current;
-      if (el) setView({ left: el.scrollLeft, width: el.clientWidth });
+      if (el) {
+        setView(el.scrollLeft, el.clientWidth);
+        setRows(el);
+      }
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, [scrollerRef]);
+  }, [scrollerRef, setView, setRows]);
 
-  return { view, centerYearRef, flashLane, onScroll };
+  return { view, rows, centerYearRef, flashLane, onScroll };
 }

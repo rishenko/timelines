@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type RefObject } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.ts';
 import type { LaneLayout } from './layout.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
@@ -81,9 +81,14 @@ export function useRovingFocus(o: Options) {
     setActive(stopInfo(key));
     focusPending.current = true;
   };
-  const onStopFocus = (key: string) => {
-    if (active?.key !== key) setActive(stopInfo(key));
-  };
+  // the same function on every render, so memoised marks don't re-render for it (it reads the latest grid and stop)
+  const latest = useRef({ active, stopInfo });
+  useLayoutEffect(() => {
+    latest.current = { active, stopInfo };
+  });
+  const onStopFocus = useCallback((key: string) => {
+    if (latest.current.active?.key !== key) setActive(latest.current.stopInfo(key));
+  }, []);
   // after a key moved focus: focus the control and keep it in sight, clear of the sticky labels and ruler
   useEffect(() => {
     if (!focusPending.current || !rovingKey) return;

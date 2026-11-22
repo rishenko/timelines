@@ -203,7 +203,9 @@
   position: relative;
   border-bottom: 1px solid var(--line);
 }
-.tl-lane:nth-child(even of .tl-lane) {
+/* every other row, counted over all rows, drawn or not (rows far off screen aren't drawn). Same specificity as the
+   :nth-child(even of .tl-lane) it replaces, so it still wins over .tl-lane.nested below. */
+.tl-lanes > .tl-lane.stripe {
   background: color-mix(in srgb, var(--text) 2%, transparent);
 }
 .tl-lane.nested {

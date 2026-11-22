@@ -93,8 +93,25 @@ const label = (name: string) =>
     .locator('.tl-lane-label')
     .filter({ has: page.locator('.name', { hasText: new RegExp(`^${escapeRe(name)}( \\(opens in a new tab\\))?$`) }) })
     .first();
-for (const name of opt('--expand')?.split('|') ?? []) {
+// the chart draws only the rows near the screen: scroll down a screen at a time until the row's label is drawn
+const findLabel = async (name: string) => {
   const l = label(name);
+  if (await l.count()) return l;
+  await page.evaluate(() => (document.querySelector('.tl-scroller')!.scrollTop = 0));
+  for (let i = 0; i < 1000 && !(await l.count()); i++) {
+    const moved = await page.evaluate(() => {
+      const el = document.querySelector('.tl-scroller')!;
+      const before = el.scrollTop;
+      el.scrollTop += el.clientHeight;
+      return el.scrollTop !== before;
+    });
+    await page.waitForTimeout(60);
+    if (!moved) break;
+  }
+  return l;
+};
+for (const name of opt('--expand')?.split('|') ?? []) {
+  const l = await findLabel(name);
   await l.scrollIntoViewIfNeeded();
   const btn = l.locator('button[title="Expand sub-tracks"]');
   if (await btn.count()) await btn.first().click();
@@ -103,7 +120,7 @@ for (const name of opt('--expand')?.split('|') ?? []) {
 }
 const target = opt('--scroll-to');
 if (target) {
-  await label(target).evaluate((el) => {
+  await (await findLabel(target)).evaluate((el) => {
     el.scrollIntoView({ block: 'start' });
     let s = el.parentElement;
     while (s && s.scrollHeight <= s.clientHeight + 5) s = s.parentElement;
@@ -116,7 +133,7 @@ if (target) {
 // the lane's bottom edge), as a touch screen would; in edit mode this opens a new event there.
 const pressRow = opt('--long-press');
 if (pressRow) {
-  const l = label(pressRow);
+  const l = await findLabel(pressRow);
   const labelBox = await l.boundingBox();
   const laneBox = await l.locator('xpath=..').boundingBox();
   if (!labelBox || !laneBox) problems.push(`--long-press: no row "${pressRow}"`);
