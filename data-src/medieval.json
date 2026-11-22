@@ -3,7 +3,7 @@
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
-    "subtitle": "Europe, the Near East and North Africa; pilot rows elsewhere; 650–1500",
+    "subtitle": "Europe, the Near East and North Africa, the steppe and Central Asia; pilot rows elsewhere; 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
     "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
     "calendar": {
@@ -2499,8 +2499,7 @@
               "sourceLocation": "infobox event3: Union of Lublin, 1 July 1569"
             }
           }
-        ],
-        "startEvent": "union-of-krewo"
+        ]
       },
       "memberships": [
         {
@@ -3546,8 +3545,7 @@
               "sourceLocation": "infobox year_end: 1714"
             }
           }
-        ],
-        "startEvent": "legal-definition-of-catalonia"
+        ]
       },
       "memberOf": [
         {
@@ -3619,8 +3617,7 @@
               "sourceLocation": "infobox year_end: 1707"
             }
           }
-        ],
-        "startEvent": "conquest-of-the-kingdom-of-valencia"
+        ]
       },
       "memberOf": [
         {
@@ -7302,10 +7299,139 @@
       "color": "#7a6a9a"
     },
     {
+      "id": "eastern-steppe",
+      "name": "Mongolia and the eastern steppe",
+      "color": "#4a5a8a",
+      "parent": "steppe"
+    },
+    {
+      "id": "second-turkic-khaganate",
+      "name": "Second Turkic Khaganate",
+      "color": "#6a7aa8",
+      "parent": "eastern-steppe",
+      "url": "https://en.wikipedia.org/wiki/Second_Turkic_Khaganate",
+      "span": {
+        "start": 682,
+        "end": 744,
+        "startDates": [
+          {
+            "year": 682,
+            "source": {
+              "sourceKey": "wp-second-turkic-khaganate",
+              "sourceLocation": "infobox year_start: 682"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 744,
+            "source": {
+              "sourceKey": "wp-second-turkic-khaganate",
+              "sourceLocation": "infobox year_end: 744"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mongolian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-second-turkic-khaganate",
+              "sourceLocation": "infobox capital: Otuken (summer camp) / Yarγan yurtï (winter camp)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uyghur-khaganate",
+      "name": "Uyghur Khaganate",
+      "color": "#3a8a7a",
+      "parent": "eastern-steppe",
+      "url": "https://en.wikipedia.org/wiki/Uyghur_Khaganate",
+      "span": {
+        "start": 744,
+        "end": 840,
+        "startDates": [
+          {
+            "year": 744,
+            "source": {
+              "sourceKey": "wp-uyghur-khaganate",
+              "sourceLocation": "infobox year_start: 744"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 840,
+            "source": {
+              "sourceKey": "wp-uyghur-khaganate",
+              "sourceLocation": "infobox year_end: 840"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mongolian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-uyghur-khaganate",
+              "sourceLocation": "infobox capital: Ötüken / Ordu-Baliq (later)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ganzhou-uyghur-kingdom",
+      "name": "Ganzhou Uyghur Kingdom",
+      "color": "#5a9a8a",
+      "parent": "eastern-steppe",
+      "url": "https://en.wikipedia.org/wiki/Ganzhou_Uyghur_Kingdom",
+      "span": {
+        "start": 894,
+        "end": 1036,
+        "startDates": [
+          {
+            "year": 894,
+            "source": {
+              "sourceKey": "wp-ganzhou-uyghur-kingdom",
+              "sourceLocation": "infobox year_start: 894"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1036,
+            "source": {
+              "sourceKey": "wp-ganzhou-uyghur-kingdom",
+              "sourceLocation": "infobox year_end: 1036"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "china",
+          "sources": [
+            {
+              "sourceKey": "wp-ganzhou-uyghur-kingdom",
+              "sourceLocation": "infobox capital: Ganzhou (Zhangye)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "mongol-empire",
       "name": "Mongol Empire",
       "color": "#4a5a8a",
-      "parent": "steppe",
+      "parent": "eastern-steppe",
       "url": "https://en.wikipedia.org/wiki/Mongol_Empire",
       "span": {
         "start": 1206,
@@ -7345,10 +7471,815 @@
       ]
     },
     {
+      "id": "northern-yuan",
+      "name": "Northern Yuan",
+      "color": "#7a5a9a",
+      "parent": "eastern-steppe",
+      "url": "https://en.wikipedia.org/wiki/Northern_Yuan",
+      "span": {
+        "start": 1368,
+        "end": 1635,
+        "startDates": [
+          {
+            "year": 1368,
+            "source": {
+              "sourceKey": "wp-northern-yuan",
+              "sourceLocation": "infobox year_start: 1368"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1635,
+            "source": {
+              "sourceKey": "wp-northern-yuan",
+              "sourceLocation": "infobox year_end: 1635"
+            }
+          }
+        ],
+        "startEvent": "fall-of-dadu"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mongolian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-northern-yuan",
+              "sourceLocation": "infobox capital: Shangdu (1368–1369) / Yingchang (1369–1370) / Karakorum (1371–1388)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "four-oirat",
+      "name": "Four Oirat",
+      "color": "#9a7a3a",
+      "parent": "eastern-steppe",
+      "url": "https://en.wikipedia.org/wiki/Oirat_Confederation",
+      "span": {
+        "start": 1399,
+        "end": 1634,
+        "startDates": [
+          {
+            "year": 1399,
+            "source": {
+              "sourceKey": "wp-oirat-confederation",
+              "sourceLocation": "infobox year_start: 1399"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1634,
+            "source": {
+              "sourceKey": "wp-oirat-confederation",
+              "sourceLocation": "infobox year_end: 1634"
+            }
+          }
+        ],
+        "startEvent": "m-ngke-temur-places-himself-at-the-head-of-the-oirats"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mongolian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-oirat-confederation",
+              "sourceLocation": "article"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "central-asia-steppe",
+      "name": "Central Asia",
+      "color": "#3a8a8a",
+      "parent": "steppe"
+    },
+    {
+      "id": "western-turkic",
+      "name": "Western Turkic Khaganate",
+      "color": "#2a5a7a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+      "ids": {
+        "wikidata": "Q874357"
+      },
+      "span": {
+        "start": 581,
+        "end": 657,
+        "startDates": [
+          {
+            "year": 581,
+            "source": {
+              "sourceKey": "wp-western-turkic",
+              "sourceLocation": "infobox"
+            }
+          },
+          {
+            "year": 603,
+            "source": {
+              "sourceKey": "wp-eastern-turkic",
+              "sourceLocation": "navbox (603–742)"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-western-turkic",
+              "sourceLocation": "category \"Western Turkic Khaganate\" (in \"Former countries in Central Asia\")"
+            },
+            {
+              "sourceKey": "wp-western-turkic",
+              "sourceLocation": "infobox capital (Navekat)"
+            },
+            {
+              "sourceKey": "wp-navekat",
+              "sourceLocation": "category \"Archaeological sites in Kyrgyzstan\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turgesh",
+      "name": "Türgesh",
+      "color": "#8a8a3a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Türgesh",
+      "span": {
+        "start": 699,
+        "end": 766,
+        "startDates": [
+          {
+            "year": 699,
+            "source": {
+              "sourceKey": "wp-t-rgesh",
+              "sourceLocation": "infobox year_start: 699"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 766,
+            "source": {
+              "sourceKey": "wp-t-rgesh",
+              "sourceLocation": "infobox year_end: 766"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "kazakh-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-t-rgesh",
+              "sourceLocation": "infobox capital: Taraz / Suyab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kimek-kipchak-confederation",
+      "name": "Kimek–Kipchak confederation",
+      "color": "#6a6a4a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Kimak–Kipchak_confederation",
+      "span": {
+        "start": 880,
+        "end": 1035,
+        "startDates": [
+          {
+            "year": 880,
+            "source": {
+              "sourceKey": "wp-kimak-kipchak-confederation",
+              "sourceLocation": "infobox year_start: 880"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1035,
+            "source": {
+              "sourceKey": "wp-kimak-kipchak-confederation",
+              "sourceLocation": "infobox year_end: 1035"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "kazakh-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-kimak-kipchak-confederation",
+              "sourceLocation": "infobox capital: Khakan-Kimak (in winter), Imakia (in summer)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kara-khanid-khanate",
+      "name": "Kara-Khanid Khanate",
+      "color": "#2a6a4a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Kara-Khanid_Khanate",
+      "span": {
+        "start": 840,
+        "end": 1212,
+        "startDates": [
+          {
+            "year": 840,
+            "source": {
+              "sourceKey": "wp-kara-khanid-khanate",
+              "sourceLocation": "infobox year_start: 840"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1212,
+            "source": {
+              "sourceKey": "wp-kara-khanid-khanate",
+              "sourceLocation": "infobox year_end: 1212"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-kara-khanid-khanate",
+              "sourceLocation": "infobox capital: Balasagun (942–1130) / Kashgar (1130–1211) / Samarkand (1040–1212)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-khotan",
+      "name": "Kingdom of Khotan",
+      "color": "#a87a4a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Khotan",
+      "span": {
+        "start": -300,
+        "end": 1006,
+        "circa": true,
+        "startDates": [
+          {
+            "year": -300,
+            "source": {
+              "sourceKey": "wp-kingdom-of-khotan",
+              "sourceLocation": "infobox year_start: c. 300 BC"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1006,
+            "source": {
+              "sourceKey": "wp-kingdom-of-khotan",
+              "sourceLocation": "infobox year_end: 1006"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-khotan",
+              "sourceLocation": "infobox capital: Hotan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khwarazmian-empire",
+      "name": "Khwarazmian Empire",
+      "color": "#8a4a6a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Khwarazmian_Empire",
+      "span": {
+        "start": 1077,
+        "end": 1231,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1077,
+            "source": {
+              "sourceKey": "wp-khwarazmian-empire",
+              "sourceLocation": "infobox year_start: c. 1077"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1231,
+            "source": {
+              "sourceKey": "wp-khwarazmian-empire",
+              "sourceLocation": "infobox year_end: 1231"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-khwarazmian-empire",
+              "sourceLocation": "infobox capital: Gurganj (1077–1212) / Samarkand (1212–1220) / Ghazni (1220–1221) / Tab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qara-khitai",
+      "name": "Qara Khitai",
+      "color": "#4a4a8a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Qara_Khitai",
+      "span": {
+        "start": 1124,
+        "end": 1218,
+        "startDates": [
+          {
+            "year": 1124,
+            "source": {
+              "sourceKey": "wp-qara-khitai",
+              "sourceLocation": "infobox year_start: 1124"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1218,
+            "source": {
+              "sourceKey": "wp-qara-khitai",
+              "sourceLocation": "infobox year_end: 1218"
+            }
+          }
+        ],
+        "startEvent": "yelu-dashi-proclaims-himself-king-qara-khitai-founded",
+        "endEvent": "kuchlug-executed-by-the-mongols-end-of-qara-khitai"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-qara-khitai",
+              "sourceLocation": "infobox capital: Balasagun"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chagatai-khanate",
+      "name": "Chagatai Khanate",
+      "color": "#5a7a3a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Chagatai_Khanate",
+      "phases": [
+        {
+          "name": "Chagatai Khanate",
+          "start": 1227,
+          "end": 1347,
+          "startDates": [
+            {
+              "year": 1227,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "infobox date_start: 1227"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1347,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "infobox life span: 1227–1347 (whole)"
+              }
+            }
+          ],
+          "startEvent": "chagatai-khan-inherits-part-of-the-mongol-empire"
+        },
+        {
+          "name": "Western Chagatai Khanate",
+          "start": 1347,
+          "end": 1403,
+          "startDates": [
+            {
+              "year": 1347,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "infobox life span: 1347–1403 (western)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1403,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "infobox life span: 1347–1403 (western)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Eastern Chagatai Khanate (Moghulistan)",
+          "start": 1347,
+          "end": 1462,
+          "startDates": [
+            {
+              "year": 1347,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "infobox life span: 1347–1462 (eastern)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1462,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "infobox life span: 1347–1462 (eastern)"
+              }
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "mongol-empire",
+          "start": 1227,
+          "end": 1259,
+          "startDates": [
+            {
+              "year": 1227,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "infobox date_start: 1227"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1259,
+              "source": {
+                "sourceKey": "wp-chagatai-khanate",
+                "sourceLocation": "lead: \"With the division of the Mongol Empire after 1259, it became a functionally separate khanate.\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-chagatai-khanate",
+              "sourceLocation": "lead: \"With the division of the Mongol Empire after 1259, it became a functionally separate khanate.\""
+            }
+          ],
+          "endEvent": "mongke-dies"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-chagatai-khanate",
+              "sourceLocation": "infobox capital: Almaliq, Qarshi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uzbek-khanate",
+      "name": "Uzbek Khanate",
+      "color": "#3a6a9a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Uzbek_Khanate",
+      "span": {
+        "start": 1428,
+        "end": 1471,
+        "startDates": [
+          {
+            "year": 1428,
+            "source": {
+              "sourceKey": "wp-uzbek-khanate",
+              "sourceLocation": "infobox year_start: 1428"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1471,
+            "source": {
+              "sourceKey": "wp-uzbek-khanate",
+              "sourceLocation": "infobox year_end: 1471"
+            }
+          }
+        ],
+        "startEvent": "abul-khayr-becomes-the-uzbek-khan"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "kazakh-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-uzbek-khanate",
+              "sourceLocation": "infobox capital: Chimgi-Tura (1428–1446) / Sighnaq (1446–1469) / Iasy (1469–1471)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kazakhstan",
+      "name": "Kazakhstan",
+      "color": "#2a8ac0",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Kazakh_Khanate",
+      "phases": [
+        {
+          "name": "Kazakh Khanate",
+          "start": 1465,
+          "end": 1780,
+          "startDates": [
+            {
+              "year": 1465,
+              "source": {
+                "sourceKey": "wp-kazakh-khanate",
+                "sourceLocation": "infobox year_start: 1465"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1780,
+              "source": {
+                "sourceKey": "wp-kazakh-khanate",
+                "sourceLocation": "infobox year_end: 1780"
+              }
+            }
+          ],
+          "startEvent": "janibeg-and-kerei-found-the-kazakh-khanate"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "kazakh-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-kazakh-khanate",
+              "sourceLocation": "infobox capital: Saraishyq (1508–1511/1513) / Turkistan (1599–1781) / Tashkent (1759–17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "western-steppe",
+      "name": "The western steppe and the Volga",
+      "color": "#8a6a3a",
+      "parent": "steppe"
+    },
+    {
+      "id": "avars",
+      "name": "Avar Khaganate (Pannonian Avars)",
+      "color": "#5a4a6a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Pannonian_Avars",
+      "ids": {
+        "wikidata": "Q68962"
+      },
+      "span": {
+        "start": 567,
+        "end": 822
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "balkans",
+          "sources": [
+            {
+              "sourceKey": "wp-avars",
+              "sourceLocation": "category \"Medieval history of Bulgaria\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khazars",
+      "name": "Khazars",
+      "color": "#5a8a5a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Khazars",
+      "span": {
+        "start": 650,
+        "end": 969,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 650,
+            "source": {
+              "sourceKey": "wp-khazars",
+              "sourceLocation": "infobox year_start: c. 650"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 969,
+            "source": {
+              "sourceKey": "wp-khazars",
+              "sourceLocation": "infobox year_end: 969"
+            }
+          }
+        ],
+        "endEvent": "sviatoslav-sacks-atil-end-of-the-khazar-khaganate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "pontic-caspian-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-khazars",
+              "sourceLocation": "infobox capital: Balanjar (c. 650 – c. 720) / Samandar (720–750) / Atil (750 – c. 965–9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volga-bulgaria",
+      "name": "Volga Bulgaria",
+      "color": "#3a7a3a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Volga_Bulgaria",
+      "span": {
+        "start": 885,
+        "end": 1240,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 885,
+            "source": {
+              "sourceKey": "wp-volga-bulgaria",
+              "sourceLocation": "infobox year_start: late 9th century"
+            },
+            "margin": 15,
+            "note": "The infobox says \"late 9th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1240,
+            "source": {
+              "sourceKey": "wp-volga-bulgaria",
+              "sourceLocation": "infobox year_end: 1240s"
+            }
+          }
+        ],
+        "endEvent": "mongol-conquest-of-volga-bulgaria"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "eastern-europe",
+          "sources": [
+            {
+              "sourceKey": "wp-volga-bulgaria",
+              "sourceLocation": "infobox capital: Bolghar / Bilär"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pechenegs",
+      "name": "Pechenegs",
+      "color": "#8a5a3a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Pechenegs",
+      "span": {
+        "start": 889,
+        "end": 1091,
+        "startDates": [
+          {
+            "year": 889,
+            "source": {
+              "sourceKey": "wp-pechenegs",
+              "sourceLocation": "infobox year_start: 889"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1091,
+            "source": {
+              "sourceKey": "wp-pechenegs",
+              "sourceLocation": "infobox year_end: 1091"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "pontic-caspian-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-pechenegs",
+              "sourceLocation": "article"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cumania",
+      "name": "Cumania",
+      "color": "#9a7a5a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Cumania",
+      "span": {
+        "start": 950,
+        "end": 1241,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 950,
+            "source": {
+              "sourceKey": "wp-cumania",
+              "sourceLocation": "infobox year_start: 10th century"
+            },
+            "margin": 50,
+            "note": "The infobox says \"10th century\"."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1241,
+            "source": {
+              "sourceKey": "wp-cumania",
+              "sourceLocation": "infobox year_end: 1241"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "pontic-caspian-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-cumania",
+              "sourceLocation": "infobox capital: Sarai"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "golden-horde",
       "name": "Golden Horde",
       "color": "#b08a2a",
-      "parent": "steppe",
+      "parent": "western-steppe",
       "url": "https://en.wikipedia.org/wiki/Golden_Horde",
       "span": {
         "start": 1225,
@@ -7419,6 +8350,213 @@
             {
               "sourceKey": "wp-mongol-empire",
               "sourceLocation": "lead: \"The Golden Horde had broken into competing khanates by the end of the 15th century, and its rule on Eastern Europe is traditionally considered to have ended in \""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kazan-khanate",
+      "name": "Khanate of Kazan",
+      "color": "#2a5a3a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Kazan",
+      "span": {
+        "start": 1438,
+        "end": 1552,
+        "startDates": [
+          {
+            "year": 1438,
+            "source": {
+              "sourceKey": "wp-khanate-of-kazan",
+              "sourceLocation": "infobox year_start: 1438"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1552,
+            "source": {
+              "sourceKey": "wp-khanate-of-kazan",
+              "sourceLocation": "infobox year_end: 1552"
+            }
+          }
+        ],
+        "startEvent": "elevation-of-ulugh-muhammad"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "eastern-europe",
+          "sources": [
+            {
+              "sourceKey": "wp-khanate-of-kazan",
+              "sourceLocation": "infobox capital: Kazan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crimean-khanate",
+      "name": "Crimean Khanate",
+      "color": "#3a6aa8",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Crimean_Khanate",
+      "span": {
+        "start": 1441,
+        "end": 1783,
+        "startDates": [
+          {
+            "year": 1441,
+            "source": {
+              "sourceKey": "wp-crimean-khanate",
+              "sourceLocation": "infobox year_start: 1441"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1783,
+            "source": {
+              "sourceKey": "wp-crimean-khanate",
+              "sourceLocation": "infobox year_end: 1783"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "pontic-caspian-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-crimean-khanate",
+              "sourceLocation": "infobox capital: Orda-i muazzam Kirkyir / Eski Qırım / Bağçasaray"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "astrakhan-khanate",
+      "name": "Astrakhan Khanate",
+      "color": "#6a8aa8",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Astrakhan_Khanate",
+      "span": {
+        "start": 1466,
+        "end": 1556,
+        "startDates": [
+          {
+            "year": 1466,
+            "source": {
+              "sourceKey": "wp-astrakhan-khanate",
+              "sourceLocation": "infobox year_start: 1466"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1556,
+            "source": {
+              "sourceKey": "wp-astrakhan-khanate",
+              "sourceLocation": "infobox year_end: 1556"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "pontic-caspian-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-astrakhan-khanate",
+              "sourceLocation": "infobox capital: Astrakhan (Xacitarxan)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khanate-of-sibir",
+      "name": "Khanate of Sibir",
+      "color": "#5a5a5a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Sibir",
+      "span": {
+        "start": 1468,
+        "end": 1598,
+        "startDates": [
+          {
+            "year": 1468,
+            "source": {
+              "sourceKey": "wp-khanate-of-sibir",
+              "sourceLocation": "infobox year_start: 1468"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1598,
+            "source": {
+              "sourceKey": "wp-khanate-of-sibir",
+              "sourceLocation": "infobox year_end: 1598"
+            }
+          }
+        ],
+        "startEvent": "ibak-khan-establishes-chimgi-tura-as-an-independent-khanate"
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "siberia",
+          "sources": [
+            {
+              "sourceKey": "wp-khanate-of-sibir",
+              "sourceLocation": "infobox capital: Chimgi-Tura, Qashliq"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nogai-horde",
+      "name": "Nogai Horde",
+      "color": "#a85a5a",
+      "parent": "western-steppe",
+      "url": "https://en.wikipedia.org/wiki/Nogai_Horde",
+      "span": {
+        "start": 1480,
+        "end": 1634,
+        "startDates": [
+          {
+            "year": 1480,
+            "source": {
+              "sourceKey": "wp-nogai-horde",
+              "sourceLocation": "infobox year_start: 1480"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1634,
+            "source": {
+              "sourceKey": "wp-nogai-horde",
+              "sourceLocation": "infobox year_end: 1634"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "pontic-caspian-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-nogai-horde",
+              "sourceLocation": "infobox capital: Saray-Jük"
             }
           ]
         }
@@ -8231,14 +9369,6 @@
         "wikipedia"
       ]
     },
-    "wp-lombards": {
-      "name": "Wikipedia: Kingdom of the Lombards",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-cividale-del-friuli": {
       "name": "Wikipedia: Cividale del Friuli",
       "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
@@ -8246,6 +9376,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-lombards": {
+      "name": "Wikipedia: Kingdom of the Lombards",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-kingdom-of-the-lombards": {
       "name": "Kingdom of the Lombards (Wikipedia)",
@@ -8663,17 +9801,17 @@
         "wikipedia"
       ]
     },
-    "wp-revolutionary-serbia": {
-      "name": "Revolutionary Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+    "wp-serbia": {
+      "name": "Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-serbia": {
-      "name": "Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Serbia",
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -8719,17 +9857,17 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -9039,14 +10177,6 @@
         "wikipedia"
       ]
     },
-    "wp-garamantes-classical": {
-      "name": "Wikipedia: Garamantes",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-garamantes": {
       "name": "Wikipedia: Garamantes",
       "url": "https://en.wikipedia.org/wiki/Garamantes",
@@ -9054,6 +10184,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-17"
+    },
+    "wp-garamantes-classical": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-rustamid-dynasty": {
       "name": "Rustamid dynasty (Wikipedia)",
@@ -9138,6 +10276,222 @@
     "wp-kingdom-of-tlemcen": {
       "name": "Kingdom of Tlemcen (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-turkic-khaganate": {
+      "name": "Second Turkic Khaganate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Turkic_Khaganate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-uyghur-khaganate": {
+      "name": "Uyghur Khaganate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Uyghur_Khaganate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ganzhou-uyghur-kingdom": {
+      "name": "Ganzhou Uyghur Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ganzhou_Uyghur_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-northern-yuan": {
+      "name": "Northern Yuan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Northern_Yuan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-oirat-confederation": {
+      "name": "Oirat Confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oirat_Confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-western-turkic": {
+      "name": "Wikipedia: Western Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-eastern-turkic": {
+      "name": "Wikipedia: Eastern Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-navekat": {
+      "name": "Wikipedia: Navekat",
+      "url": "https://en.wikipedia.org/wiki/Navekat",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
+    },
+    "wp-t-rgesh": {
+      "name": "Türgesh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Türgesh",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kimak-kipchak-confederation": {
+      "name": "Kimak–Kipchak confederation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kimak–Kipchak_confederation",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kara-khanid-khanate": {
+      "name": "Kara-Khanid Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kara-Khanid_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-khotan": {
+      "name": "Kingdom of Khotan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Khotan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khwarazmian-empire": {
+      "name": "Khwarazmian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khwarazmian_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-qara-khitai": {
+      "name": "Qara Khitai (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qara_Khitai",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-chagatai-khanate": {
+      "name": "Chagatai Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chagatai_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-uzbek-khanate": {
+      "name": "Uzbek Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Uzbek_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kazakh-khanate": {
+      "name": "Kazakh Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kazakh_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-avars": {
+      "name": "Wikipedia: Pannonian Avars",
+      "url": "https://en.wikipedia.org/wiki/Pannonian_Avars",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-khazars": {
+      "name": "Khazars (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khazars",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-volga-bulgaria": {
+      "name": "Volga Bulgaria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Volga_Bulgaria",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-pechenegs": {
+      "name": "Pechenegs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pechenegs",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cumania": {
+      "name": "Cumania (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cumania",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khanate-of-kazan": {
+      "name": "Khanate of Kazan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Kazan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-crimean-khanate": {
+      "name": "Crimean Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Crimean_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-astrakhan-khanate": {
+      "name": "Astrakhan Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Astrakhan_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-khanate-of-sibir": {
+      "name": "Khanate of Sibir (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khanate_of_Sibir",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nogai-horde": {
+      "name": "Nogai Horde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nogai_Horde",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -9539,7 +10893,8 @@
       "tracks": [
         "mongol-empire",
         "golden-horde",
-        "ilkhanate"
+        "ilkhanate",
+        "chagatai-khanate"
       ],
       "sources": [
         {
@@ -9908,7 +11263,8 @@
       "start": 1368,
       "tracks": [
         "china",
-        "mongol-empire"
+        "mongol-empire",
+        "northern-yuan"
       ],
       "sources": [
         {
@@ -9918,6 +11274,10 @@
         {
           "sourceKey": "wp-mongol-empire",
           "sourceLocation": "lead: \"Next, the Yuan dynasty lost control of the Tibetan Plateau and China proper in 1354 and 1368, respectively, and collapsed after its capital Dadu was taken over \""
+        },
+        {
+          "sourceKey": "wp-northern-yuan",
+          "sourceLocation": "infobox event_start: Fall of Dadu to Ming forces, September 1368"
         }
       ],
       "importance": 1
@@ -14239,6 +15599,462 @@
         {
           "sourceKey": "wp-kingdom-of-tlemcen",
           "sourceLocation": "infobox event7: Zayyanid capture of Fez, 1411"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-uskhal-khan-t-gus-temur",
+      "title": "Death of Uskhal Khan Tögüs Temür",
+      "descr": "",
+      "start": 1388,
+      "tracks": [
+        "northern-yuan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-northern-yuan",
+          "sourceLocation": "infobox event1: Death of Uskhal Khan Tögüs Temür, 1388"
+        }
+      ]
+    },
+    {
+      "uuid": "dayan-khan-reunites-the-mongol-nation",
+      "title": "Dayan Khan reunites the Mongol nation",
+      "descr": "",
+      "start": 1483,
+      "end": 1510,
+      "tracks": [
+        "northern-yuan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-northern-yuan",
+          "sourceLocation": "infobox event2: Dayan Khan reunites the Mongol nation, 1483–1510"
+        }
+      ]
+    },
+    {
+      "uuid": "m-ngke-temur-places-himself-at-the-head-of-the-oirats",
+      "title": "Möngke-Temür places himself at the head of the Oirats",
+      "descr": "",
+      "start": 1399,
+      "tracks": [
+        "four-oirat"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-oirat-confederation",
+          "sourceLocation": "infobox event_start: Möngke-Temür places himself at the head of the Oirats, 1399"
+        }
+      ]
+    },
+    {
+      "uuid": "oirats-overthrow-a-genghisid-khagan",
+      "title": "Oirats overthrow a Genghisid Khagan",
+      "descr": "",
+      "start": 1399,
+      "tracks": [
+        "four-oirat"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-oirat-confederation",
+          "sourceLocation": "infobox event1: Oirats overthrow a Genghisid Khagan, 1399"
+        }
+      ]
+    },
+    {
+      "uuid": "esen-taishi-becomes-northern-yuan-khagan",
+      "title": "Esen Taishi becomes Northern Yuan Khagan",
+      "descr": "",
+      "start": 1453,
+      "tracks": [
+        "four-oirat",
+        "northern-yuan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-oirat-confederation",
+          "sourceLocation": "infobox event2: Esen Taishi becomes Northern Yuan Khagan, 1453–54"
+        }
+      ]
+    },
+    {
+      "uuid": "tibet-invades-and-conquers-khotan",
+      "title": "Tibet invades and conquers Khotan",
+      "descr": "",
+      "start": 670,
+      "tracks": [
+        "kingdom-of-khotan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-khotan",
+          "sourceLocation": "infobox event2: Tibet invades and conquers Khotan, 670"
+        }
+      ]
+    },
+    {
+      "uuid": "khotan-held-by-the-muslim-y-suf-qadr-kh-n",
+      "title": "Khotan held by the Muslim, Yūsuf Qadr Khān",
+      "descr": "",
+      "start": 1006,
+      "tracks": [
+        "kingdom-of-khotan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-khotan",
+          "sourceLocation": "infobox event3: Khotan held by the Muslim, Yūsuf Qadr Khān, 1006"
+        }
+      ]
+    },
+    {
+      "uuid": "mongol-invasion-of-the-khwarazmian-empire",
+      "title": "Mongol invasion of the Khwarazmian Empire",
+      "descr": "",
+      "start": 1219,
+      "end": 1221,
+      "tracks": [
+        "khwarazmian-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khwarazmian-empire",
+          "sourceLocation": "infobox event1: Mongol invasion of the Khwarazmian Empire, 1219–1221"
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-yass-emen",
+      "title": "Battle of Yassıçemen",
+      "descr": "",
+      "start": 1230,
+      "tracks": [
+        "khwarazmian-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khwarazmian-empire",
+          "sourceLocation": "infobox event2: Battle of Yassıçemen, 1230"
+        }
+      ]
+    },
+    {
+      "uuid": "yelu-dashi-proclaims-himself-king-qara-khitai-founded",
+      "title": "Yelü Dashi proclaims himself king; Qara Khitai founded",
+      "descr": "",
+      "start": 1124,
+      "tracks": [
+        "qara-khitai"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qara-khitai",
+          "sourceLocation": "infobox event_start: Yelü Dashi proclaims himself king, 1124"
+        }
+      ]
+    },
+    {
+      "uuid": "kuchlug-executed-by-the-mongols-end-of-qara-khitai",
+      "title": "Kuchlug executed by the Mongols; end of Qara Khitai",
+      "descr": "",
+      "start": 1218,
+      "tracks": [
+        "qara-khitai"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qara-khitai",
+          "sourceLocation": "infobox event_end: Kuchlug executed by Mongols, 1218"
+        }
+      ]
+    },
+    {
+      "uuid": "fall-of-liao-dynasty",
+      "title": "Fall of Liao dynasty",
+      "descr": "",
+      "start": 1125,
+      "tracks": [
+        "qara-khitai"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qara-khitai",
+          "sourceLocation": "infobox event1: Fall of Liao dynasty, 1125"
+        }
+      ]
+    },
+    {
+      "uuid": "yelu-dashi-adopts-the-titles-of-emperor-and-gurkhan",
+      "title": "Yelü Dashi adopts the titles of Emperor and Gurkhan",
+      "descr": "",
+      "start": 1132,
+      "tracks": [
+        "qara-khitai"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qara-khitai",
+          "sourceLocation": "infobox event2: Yelü Dashi adopts the titles of Emperor and Gurkhan, 1132"
+        }
+      ]
+    },
+    {
+      "uuid": "yelu-dashi-captures-balasagun-and-establishes-capital",
+      "title": "Yelü Dashi captures Balasagun and establishes capital",
+      "descr": "",
+      "start": 1134,
+      "tracks": [
+        "qara-khitai"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qara-khitai",
+          "sourceLocation": "infobox event3: Yelü Dashi captures Balasagun and establishes capital, 1134"
+        }
+      ]
+    },
+    {
+      "uuid": "kuchlug-usurps-power",
+      "title": "Kuchlug usurps power",
+      "descr": "",
+      "start": 1211,
+      "tracks": [
+        "qara-khitai"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-qara-khitai",
+          "sourceLocation": "infobox event4: Kuchlug usurps power, 1211"
+        }
+      ]
+    },
+    {
+      "uuid": "chagatai-khan-inherits-part-of-the-mongol-empire",
+      "title": "Chagatai Khan inherits part of the Mongol Empire",
+      "descr": "",
+      "start": 1227,
+      "tracks": [
+        "chagatai-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chagatai-khanate",
+          "sourceLocation": "infobox event_start: Chagatai Khan inherited part of Mongol Empire, 1227"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-chagatai",
+      "title": "Death of Chagatai",
+      "descr": "",
+      "start": 1242,
+      "tracks": [
+        "chagatai-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chagatai-khanate",
+          "sourceLocation": "infobox event1: Death of Chagatai, 1242"
+        }
+      ]
+    },
+    {
+      "uuid": "chagatai-khanate-split-between-west-and-east-moghulistan",
+      "title": "Chagatai Khanate split between west and east (Moghulistan)",
+      "descr": "",
+      "start": 1340,
+      "tracks": [
+        "chagatai-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chagatai-khanate",
+          "sourceLocation": "infobox event2: Chagatai Khanate split between west and east (Moghulistan), 1340s"
+        }
+      ]
+    },
+    {
+      "uuid": "western-portion-annexed-by-timur",
+      "title": "Western portion annexed by Timur",
+      "descr": "",
+      "start": 1363,
+      "tracks": [
+        "chagatai-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chagatai-khanate",
+          "sourceLocation": "infobox event3: Western portion annexed by Timur, 1363"
+        }
+      ]
+    },
+    {
+      "uuid": "moghulistan-split-into-the-yarkent-khanate-in-the-west-and-t",
+      "title": "Moghulistan split into the Yarkent Khanate in the west and the Turpan Khanate in the east",
+      "descr": "",
+      "start": 1487,
+      "tracks": [
+        "chagatai-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-chagatai-khanate",
+          "sourceLocation": "infobox event4: Moghulistan split into the Yarkent Khanate in the west and the Turpan Khanate in the east, 1487"
+        }
+      ]
+    },
+    {
+      "uuid": "abul-khayr-becomes-the-uzbek-khan",
+      "title": "Abu'l-Khayr becomes the Uzbek Khan",
+      "descr": "",
+      "start": 1428,
+      "tracks": [
+        "uzbek-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-uzbek-khanate",
+          "sourceLocation": "infobox event_start: Abu'l-Khayr becomes the Uzbek Khan, 1428"
+        }
+      ]
+    },
+    {
+      "uuid": "abul-khayr-defeats-hajji-muhammad",
+      "title": "Abu'l-Khayr defeats Hajji Muhammad",
+      "descr": "",
+      "start": 1428,
+      "tracks": [
+        "uzbek-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-uzbek-khanate",
+          "sourceLocation": "infobox event1: Abu'l-Khayr defeats Hajji Muhammad, 1428"
+        }
+      ]
+    },
+    {
+      "uuid": "shaybanids-invade-transoxiana",
+      "title": "Shaybanids invade Transoxiana",
+      "descr": "",
+      "start": 1446,
+      "tracks": [
+        "uzbek-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-uzbek-khanate",
+          "sourceLocation": "infobox event2: Shaybanids invade Transoxiana, 1446"
+        }
+      ]
+    },
+    {
+      "uuid": "janibeg-and-kerei-found-the-kazakh-khanate",
+      "title": "Janibeg and Kerei found the Kazakh Khanate",
+      "descr": "",
+      "start": 1466,
+      "tracks": [
+        "uzbek-khanate",
+        "kazakhstan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-uzbek-khanate",
+          "sourceLocation": "infobox event3: Janibeg and Kerei found the Kazakh Khanate, 1466"
+        }
+      ]
+    },
+    {
+      "uuid": "death-of-abul-khayr",
+      "title": "Death of Abu'l-Khayr",
+      "descr": "",
+      "start": 1468,
+      "tracks": [
+        "uzbek-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-uzbek-khanate",
+          "sourceLocation": "infobox event4: Death of Abu'l-Khayr, 1468"
+        }
+      ]
+    },
+    {
+      "uuid": "sviatoslav-sacks-atil-end-of-the-khazar-khaganate",
+      "title": "Sviatoslav sacks Atil; end of the Khazar Khaganate",
+      "descr": "",
+      "start": 969,
+      "tracks": [
+        "khazars"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khazars",
+          "sourceLocation": "infobox event_end: Sviatoslav's sacking and razing of Atil, 969"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "mongol-conquest-of-volga-bulgaria",
+      "title": "Mongol conquest of Volga Bulgaria",
+      "descr": "",
+      "start": 1240,
+      "tracks": [
+        "volga-bulgaria"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-volga-bulgaria",
+          "sourceLocation": "infobox event_end: Conquered by the Mongols, 1240s"
+        }
+      ],
+      "importance": 1
+    },
+    {
+      "uuid": "conversion-to-islam",
+      "title": "Conversion to Islam",
+      "descr": "",
+      "start": 922,
+      "tracks": [
+        "volga-bulgaria"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-volga-bulgaria",
+          "sourceLocation": "infobox event1: Conversion to Islam, 922"
+        }
+      ]
+    },
+    {
+      "uuid": "elevation-of-ulugh-muhammad",
+      "title": "Elevation of Ulugh Muhammad",
+      "descr": "",
+      "start": 1438,
+      "tracks": [
+        "kazan-khanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khanate-of-kazan",
+          "sourceLocation": "infobox event_start: Elevation of Ulugh Muhammad, 1438"
+        }
+      ]
+    },
+    {
+      "uuid": "ibak-khan-establishes-chimgi-tura-as-an-independent-khanate",
+      "title": "Ibak Khan establishes Chimgi-Tura as an independent khanate",
+      "descr": "",
+      "start": 1468,
+      "tracks": [
+        "khanate-of-sibir"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-khanate-of-sibir",
+          "sourceLocation": "infobox event_start: Ibak Khan establishes Chimgi-Tura as an independent khanate, 1468"
         }
       ]
     }
