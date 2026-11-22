@@ -21,7 +21,9 @@ beforeAll(() => {
     disconnect() {}
   } as never;
   Object.defineProperty(HTMLElement.prototype, 'clientWidth', { configurable: true, get: () => 1600 });
-  Object.defineProperty(HTMLElement.prototype, 'clientHeight', { configurable: true, get: () => 900 });
+  // a screen tall enough that the chart draws every row (it leaves out rows far off screen): these tests count and
+  // find rows anywhere in the chart
+  Object.defineProperty(HTMLElement.prototype, 'clientHeight', { configurable: true, get: () => 100_000 });
 });
 beforeEach(() => localStorage.setItem('timelines:legend-seen', '1'));
 

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Calendar } from '../types.ts';
 import { formatEventDates } from '../lib/years.ts';
 import { formatYear } from '../lib/calendar.ts';
@@ -57,14 +58,16 @@ interface EventMarkProps extends Common {
   related: boolean;
   /** Edit mode marks events the reader has changed. */
   showEdited: boolean;
-  /** Left edge of the viewport in content px: a long bar keeps its title on screen when it starts off to the left. */
+  /** Left edge of the viewport in content px: a long bar keeps its title on screen when it starts off to the left.
+   * Values outside the bar draw the same as its nearest end. */
   viewLeft: number;
   onHover: (id: string | null) => void;
   onSelect: (id: string) => void;
 }
 
-/** One event: a bar (with a date range) or a diamond (a single year), with its title beside it. */
-export function EventMark(p: EventMarkProps) {
+/** One event: a bar (with a date range) or a diamond (a single year), with its title beside it. Memoised: scrolling
+ * re-renders the chart every frame, and most marks don't change. */
+export const EventMark = memo(function EventMark(p: EventMarkProps) {
   const { mark: m, event: e, laneTop, labelW, cal } = p;
   const uncertain = !!(m.fadeIn || m.fadeOut || m.whisker);
   const dates = formatEventDates(e, cal, isApprox(e));
@@ -131,4 +134,4 @@ export function EventMark(p: EventMarkProps) {
       </span>
     </button>
   );
-}
+});
