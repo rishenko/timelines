@@ -11,14 +11,17 @@
  * - 5: facets on events (`Facet.applies`, `TimelineEvent.memberships`), `meta.eras`, `Track.kind`, events'
  *   `ongoingSources`, `Source.dump` and `revision`, `SourceRef.locator`, `RowMembership.phase` and `redirects`. All
  *   optional and additive: a v4 file is a v5 file with a different number.
+ * - 6: `Era.url` and `Era.ids` (an age's own article and Wikidata item). Additive: a v5 file is a v6 file with a
+ *   different number.
  */
 
-export const SCHEMA_VERSION = 5;
+export const SCHEMA_VERSION = 6;
 
 /** Each step lifts a file from its version to the next. */
 const STEPS: Record<number, (d: Record<string, unknown>) => Record<string, unknown>> = {
   3: (d) => ({ ...d, schemaVersion: 4 }),
   4: (d) => ({ ...d, schemaVersion: 5 }),
+  5: (d) => ({ ...d, schemaVersion: 6 }),
 };
 
 /** Whether a file of this version can be read (it is current, or can be lifted to it). */
