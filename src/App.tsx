@@ -14,6 +14,7 @@ import { useRegionFilter } from './state/regionFilter.ts';
 import { useComparison } from './state/comparison.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { incrementSpoken, incrementYears } from './lib/subYear.ts';
+import { tooWideSteps } from './timeline/width.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
 import { TimelinePicker } from './components/TimelinePicker.tsx';
@@ -203,12 +204,21 @@ export default function App({ published: opened, library: libraryEntry, site, no
    * False if there is no further step that way.
    */
   const zoomStep = (dir: 1 | -1, year?: number): boolean => {
-    const next = stepIncrement(increments, increment, dir);
+    const next = stepIncrement(drawable, increment, dir);
     if (next === undefined) return false;
     setIncrement(next);
     if (year !== undefined) focusOn({ year });
     return true;
   };
+
+  // zoom steps below a year too wide to draw for this timeline (day zoom over centuries): disabled, and left if on one
+  const tooWide = useMemo(
+    () =>
+      tooWideSteps(increments, visibleEvents, present, [...spans.values()].flat(), { compress, calendar: cal, range: meta.range }),
+    [increments, visibleEvents, present, spans, compress, cal, meta.range],
+  );
+  const drawable = useMemo(() => increments.filter((i) => !tooWide.has(i)), [increments, tooWide]);
+  if (tooWide.has(increment) && drawable.length) setIncrement(drawable.find((i) => i > increment) ?? drawable[drawable.length - 1]);
 
   // At a timeline's coarsest zoom, draw only its key events (plus the selected one), if it marks any.
   const keyOnly = useMemo(() => keyEventsOnly(increments, increment, data.events), [increments, increment, data.events]);
@@ -355,6 +365,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           />
         }
         increments={increments}
+        tooWide={tooWide}
         increment={increment}
         onIncrement={setIncrement}
         dating={

@@ -10,6 +10,8 @@ interface Props {
   view: View;
   onView: (v: View) => void;
   increments: number[];
+  /** Zoom steps too wide to draw for this timeline (shown, but disabled). */
+  tooWide?: Set<number>;
   increment: number;
   onIncrement: (inc: number) => void;
   /** The Dating button and its panel (DatingMenu). */
@@ -79,7 +81,8 @@ export function Toolbar(p: Props) {
                 className={`seg ${p.increment === inc ? 'on' : ''}`}
                 aria-label={incrementSpoken(inc)}
                 aria-pressed={p.increment === inc}
-                title={incrementSpoken(inc)}
+                disabled={p.tooWide?.has(inc)}
+                title={p.tooWide?.has(inc) ? `${incrementSpoken(inc)}: too wide to draw for this timeline` : incrementSpoken(inc)}
                 onClick={() => p.onIncrement(inc)}
               >
                 {incrementButton(inc)}
