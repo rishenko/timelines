@@ -76,14 +76,15 @@ describe('event categories', () => {
     expect(parseCategories('conflict', undefined)).toEqual([]);
   });
 
-  it('works on the bundled Modern States: every event with a category is under one of the nine kinds', () => {
+  it('works on the bundled Modern States: every event with a category is under one of the kinds', () => {
     const ds = modern as unknown as Dataset;
     const id = categoryFacetId(ds)!;
     const f = ds.meta.facets![id];
     const tree = categoryTree(ds.events, id, f, on);
-    expect(tree).toHaveLength(9);
-    const withCats = ds.events.filter((e) => eventCategories(e, id, f, on).length).length;
     const all = new Set(Object.keys(f.values).filter((v) => !f.values[v].broader));
+    // one root per kind in the facet (ten since science was added)
+    expect(tree.map((n) => n.id)).toEqual([...all]);
+    const withCats = ds.events.filter((e) => eventCategories(e, id, f, on).length).length;
     expect(ds.events.filter((e) => inPickedCategories(e, id, f, all, on)).length).toBe(ds.events.length);
     expect(withCats).toBeGreaterThan(1000);
   });

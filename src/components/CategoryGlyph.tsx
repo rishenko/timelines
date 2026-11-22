@@ -1,11 +1,12 @@
 /**
- * One small glyph per kind of event (the nine top-level categories), told apart by shape: colour already means the
+ * One small glyph per kind of event (the top-level categories), told apart by shape: colour already means the
  * row (WCAG 1.4.1). Drawn in the text colour, hidden from screen readers: the event's accessible name says its
  * category in words. Kinds a reader's own timeline adds have no glyph.
  */
 
 /** The glyphs: Rulers a disc, Statehood a square, Territory a triangle, Cities and places a house, Wars and battles a
- * cross, Revolts a star, Diplomacy a ring, Religion, law and culture a hexagon, Archaeology a half-disc. */
+ * cross, Revolts a star, Diplomacy a ring, Religion, law and culture a hexagon, Archaeology a half-disc, Science and
+ * technology a flask (a narrow neck on a wide base, so it doesn't read as Territory's triangle). */
 const SHAPES: Record<string, React.ReactNode> = {
   rule: <circle cx="6" cy="6" r="4.6" />,
   statehood: <rect x="1.6" y="1.6" width="8.8" height="8.8" />,
@@ -16,6 +17,7 @@ const SHAPES: Record<string, React.ReactNode> = {
   diplomacy: <circle cx="6" cy="6" r="4" fill="none" stroke="currentColor" strokeWidth="1.8" />,
   society: <path d="M6 .9 10.5 3.5v5L6 11.1 1.5 8.5v-5Z" />,
   archaeology: <path d="M1.2 8.5a4.8 4.8 0 0 1 9.6 0Z" />,
+  science: <path d="M4.2 .8h3.6v1.4h-.7v2.5l3.9 5.8c.4.6 0 1.4-.7 1.4H1.7c-.7 0-1.1-.8-.7-1.4l3.9-5.8V2.2h-.7Z" />,
 };
 
 export const hasGlyph = (kind: string) => Object.hasOwn(SHAPES, kind);

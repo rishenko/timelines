@@ -31,7 +31,8 @@ VOCAB = {
     'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign', 'atrocity': 'Massacre or genocide', 'attack': 'Attack, ambush or raid'}),
     'unrest': ('Revolts', {'revolt': 'Revolt', 'revolution': 'Revolution', 'civil-war': 'Civil war', 'repression': 'Arrests and repression'}),
     'diplomacy': ('Diplomacy', {'treaty': 'Treaty', 'alliance': 'Alliance or bloc', 'vassalage': 'Vassalage'}),
-    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'culture': 'Culture and learning', 'economy': 'Economy'}),
+    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'culture': 'Culture and learning', 'economy': 'Economy', 'golden-age': 'Golden age or high point'}),
+    'science': ('Science and technology', {'discovery': 'Discovery', 'invention': 'Invention', 'work': 'Landmark work'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
 }
 PARENT = {sub: top for top, (_, subs) in VOCAB.items() for sub in subs}
@@ -50,6 +51,11 @@ def facet():
 # ---- title and description rules: (pattern, value), most specific first; value is a sub-kind or a top level ----
 R = lambda p: re.compile(p, re.I)
 TEXT_RULES = [
+    # science (Kevin, 2026-11-22): a fact found, a device made, a landmark treatise. Resources found are economy, and a
+    # modern find of an ancient thing is archaeology (the guards in classify)
+    (R(r'\b(discover(s|ed|y|ies)?|theorem|laws? of (motion|planetary|gravit\w*|thermo\w*)|heliocentri\w*|proves|calculates?|measures? the|vaccin\w*|penicillin|calculus|predicts (an? )?(solar |lunar )?eclipse|value of π|\bπ\b)\b'), 'discovery'),
+    (R(r'\b(invent\w*|invention|patent\w*|printing press|movable type|telescope|microscope|steam engine|gunpowder|papermaking|compass|telegraph|first (flight|railway|steam\w*))\b'), 'invention'),
+    (R(r'\b(treatise|principia|almagest|euclid\W?s elements|encyclop\w*|canon of medicine|de revolutionibus|aryabhatiya)\b'), 'work'),
     (R(r'\b(massacres?|genocide|holocaust|pogroms?|ethnic cleansing|atrocit\w*)\b'), 'atrocity'),
     (R(r'\bsiege\b|\bbesieg'), 'siege'),
     (R(r'\bsack(s|ed)?\b|\bsacking\b|\b(destroy|destroys|destroyed|burns?|burned|burnt|razes?|razed)\b'), 'sack'),
@@ -60,15 +66,16 @@ TEXT_RULES = [
     (R(r'\b(arrest\w*|abduct\w*|interned|internment|kidnap\w*|reprisals?|curfew|martial law|deport\w*|purges?|crackdown|hanged|prisoners?\b.*\bexecuted)\b'), 'repression'),
     (R(r'\bcivil war\b'), 'civil-war'),
     (R(r'\brevolution\b'), 'revolution'),
-    (R(r'\b(revolt|rebellion|uprising|insurrection|mutiny|rising|riots?)\b|storming'), 'revolt'),
+    (R(r'\b(revolts?|rebellion|uprising|insurrection|mutiny|rising|riots?)\b|storming'), 'revolt'),
     (R(r'\bcoups?\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|kills (the )?(last|king|queen|emperor|ruler|sultan|caliph|pharaoh|shah|khan)\b|(?-i:^([A-Z]\S*\s){0,2}[A-Z]\S*) (executed|beheaded|killed|assassinated)\b|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
     (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
     (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector|pharaoh|augustus|shah|tsar|negus|basileus)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
     (R(r'\b(invasions?|invades?|campaigns?|expeditions?|crusades?|offensives?|interventions?)\b'), 'invasion'),
     (R(r'\b(defeat(s|ed)?)\b'), 'conflict'),
+    (R(r'\b(fights?|fought)\b'), 'battle'),
     (R(r'\b((?<!anti-)(?<!pro-)treaty|peace of|accords?|agreements?|compact|concordat|convention)\b'), 'treaty'),
-    (R(r'\b(alliance|pact|joins?|free association|marries|married|marriage|admitted|league|federat\w*)\b'), 'alliance'),
+    (R(r'\b(embass\w*|envoys?|sends (\w+ ){1,3}to|sent to|alliance|pact|joins?|free association|marries|married|marriage|admitted|league|federat\w*)\b'), 'alliance'),
     (R(r'\b(tributary|tribute|hegemony|under (\w+ ){1,2}(rule|control|suzerainty)|controls|vassal\w*|protectorate|suzerainty|homage|client|submits|submission)\b'), 'vassalage'),
     (R(r'\b(throws? off|threw off|breaks? (away|from)|secedes?|secession|leaves|self-rule|autonomy)\b'), 'independence'),
     (R(r'\brecogni[sz]\w*'), 'diplomacy'),
@@ -77,16 +84,16 @@ TEXT_RULES = [
     (R(r'\b(dissolved|dissolution|abolished|collapse[sd]?|ends|end of|extinct)\b'), 'dissolved'),
     (R(r'\b(found(s|ed|ing|ation) of [A-Z][a-z]+$|founds? the city|city (is )?founded)\b'), 'city-founded'),
     (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b|\bmoves? (\w+ ){0,2}capital\b|\bmakes (\w+ ){1,2}(the|its) capital\b|\bmoved? (the )?seat\b|\bdesignated (as )?(the )?capital\b'), 'capital-moved'),
-    (R(r'\b(earthquake|plague|famine|flood|eruption|epidemic|fire of|disaster|explosion|nuclear tests?|tsunami|cyclone|hurricane)\b'), 'disaster'),
-    (R(r'\b(overruns?|overran|seiz\w*(?! (the throne|power))|fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
+    (R(r'\b(earthquake|plague|famine|flood|eruption|epidemic|fire of|disaster|explosion|drought|nuclear tests?|tsunami|cyclone|hurricane)\b'), 'disaster'),
+    (R(r'\b(drives? out|drove out|expels?|overruns?|overran|seiz\w*(?! (the throne|power))|fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
     (R(r'\bpartition\w*|\bsplits?\b|\bdivided\b'), 'territory'),
     (R(r'\b(conquests?|conquers?|conquered|reconquest|subjugat\w*|lost to)\b'), 'conquest'),
-    (R(r'\b(annex\w*|incorporat\w*|reintegrat\w*|reincorporat\w*|bec[oa]me?s? (\w+ )?part of)\b'), 'annexation'),
+    (R(r'\b(becomes an? (\w+ ){0,2}province|annex\w*|incorporat\w*|reintegrat\w*|reincorporat\w*|bec[oa]me?s? (\w+ )?part of)\b'), 'annexation'),
     (R(r'\b(cedes?|ceded|cession|sold|purchase|transferred to|passes to|given to|returned to|handed (over )?to|restored to|acquir\w*)\b'), 'cession'),
-    (R(r'\babandon\w*'), 'territory'),
-    (R(r'\b(colony|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
+    (R(r'\babandon\w*|\bwithdraw\w*|\bwithdrew\b'), 'territory'),
+    (R(r'\b(colon(y|ies)|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
     (R(r'\b(renamed?|renames|drops the name|(state|kingdom|dynastic|dynasty|country)(\'s)? name|changes? the (state )?name|(becomes )?an? (\w+ ){0,2}(republic|associated state|dominion|confederation|constitutional monarchy|one-party state|royal province)|republic restored|democracy restored|restores democracy|transition to democracy|multi-?party|(first|second|third|fourth|fifth) republic|dominion of|royal province|one-party state|constitution|constitutional|self-govern\w*|responsible government)\b'), 'reform'),
-    (R(r'\b(found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
+    (R(r'\b(becomes a (\w+ )?state|found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
     (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
     (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet)\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
@@ -108,6 +115,8 @@ INFOBOX = [
     (R(r'^(legislation|constitution|document)$'), 'law'),
 ]
 CATEGORY = [
+    (R(r'\b(scientific|astronomical|mathematical|chemical) discoveries\b|\bdiscoveries by\b'), 'discovery'),
+    (R(r'\b(mathematics|astronomy|physics|chemistry|medical|science|scientific|engineering) (books|texts|works|treatises)\b'), 'work'),
     (R(r'^sieges\b|\bsieges (of|involving)\b'), 'siege'),
     (R(r'^battles\b|\bbattles (of|involving)\b'), 'battle'),
     (R(r'\bcoups? d.état\b|military coups'), 'coup'),
@@ -129,6 +138,7 @@ DESCR_OK = {'conflict', 'unrest', 'place', 'diplomacy'}
 # words that are a title's head noun when they end it ("Reform War"); others at the end are verbs or objects
 HEAD_NOUNS = {'massacre', 'genocide', 'war', 'wars', 'rebellion', 'revolution', 'revolt', 'uprising', 'coup', 'siege', 'battle', 'campaign', 'invasion', 'conquest', 'treaty', 'massacre', 'mutiny'}
 PREHISTORIC = re.compile(r'\b(neolithic|mesolithic|palaeolithic|paleolithic|chalcolithic|bronze age|iron age)\b', re.I)
+STOPWORDS = {'with', 'from', 'into', 'over', 'under', 'against', 'during', 'after', 'before', 'first', 'second', 'third', 'great', 'king', 'kingdom', 'empire', 'battle', 'siege', 'treaty', 'war', 'wars'}
 # words that make a founding a state's founding
 STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|khanate|emirate|principality|duchy|county of|march of|dynasty|confederation|federation|colony|protectorate|order of)\b', re.I)
 # generic sub-kinds a more specific one of the same top level replaces
@@ -168,7 +178,8 @@ def article_evidence(title, wp):
 
 
 def own_articles(e, ds):
-    """Titles of articles that may be the event's own: cited Wikipedia sources, then the event's title."""
+    """Articles that may be the event's own, with whether each shares a word with the event's title: cited Wikipedia
+    sources, then the event's title."""
     titles = []
     for ref in e.get('sources', []):
         s = ds['sources'].get(ref.get('sourceKey'), {})
@@ -178,7 +189,11 @@ def own_articles(e, ds):
     titles.append(e['title'])
     # a state's article (the row's own) describes the state, not the event: skip articles named like a row
     rows = {t['name'].lower() for t in ds['tracks']}
-    return [t for t in dict.fromkeys(titles) if t.lower() not in rows]
+    # a cited article about another event ("Fall of Babylon" cited by "Cyrus revolts against Astyages") isn't this
+    # event's own: it must share a significant word with the event's title
+    words = lambda x: {w for w in re.findall(r'\w{4,}', x.lower()) if w not in STOPWORDS}
+    mine = words(e['title'])
+    return [(t, t == e['title'] or bool(words(t) & mine)) for t in dict.fromkeys(titles) if t.lower() not in rows]
 
 
 def classify(e, ds, wp=None):
@@ -219,13 +234,28 @@ def classify(e, ds, wp=None):
     # "Sanganakallu Neolithic settlement": a prehistoric settlement is a site, not a colony
     if PREHISTORIC.search(title):
         hits = [(st, 'site' if v == 'colony' else v, w) for st, v, w in hits]
+    # science guards: "discovered" with a resource is economy; with earliest/site/find it is a modern find (archaeology)
+    if re.search(r'\b(oil|gold|diamonds?|silver|mines?|coal)\b', title, re.I):
+        hits = [(st, 'economy' if v == 'discovery' else v, w) for st, v, w in hits]
+    if re.search(r'\b(earliest|site|remains|finds?)\b', title, re.I):
+        hits = [(st, 'find' if v == 'discovery' else v, w) for st, v, w in hits]
+    # "Assyria under Mitanni": under one of the event's rows, without "rule", is vassalage
+    um = re.search(r'\bunder (the )?([A-Z][\w-]+( [A-Z][\w-]+)?)', title)
+    if um and any(um.group(2).lower() in (t['name'].lower(), t['id'].replace('-', ' ')) for t in own_rows):
+        hits.append((um.start(), 'vassalage', um.group(0)))
+        hits.sort(key=lambda h: h[0])
     # "Creation of the Burmese alphabet", "founding of the university": the thing founded is a script, a school or a
     # church, not a state, unless the title also names a state
     society_obj = any(top(v) == 'society' for _, v, _ in hits) and not STATE_NOUN.search(title)
     found += [(v, f'title: "{w}"') for st, v, w in hits
               if not (m and w.lower() in ('fall of', 'falls')) and not obj(st, w) and not (society_obj and v == 'founded')]
     if wp:
-        art = [x for t in own_articles(e, ds) for x in article_evidence(t, wp)]
+        # an article that shares no word with the event is context, not the event: it may only place it in a culture
+        pairs = [(x, related) for t, related in own_articles(e, ds) for x in article_evidence(t, wp)]
+        art = [x for x, related in pairs if related]
+        # with nothing else to go on, an unrelated article may still place the event in an archaeological culture
+        if not found and not art:
+            art = [x for x, related in pairs if top(x[0]) == 'archaeology']
         # categories name sub-kinds; the infobox only the broad kind ("military conflict" also covers revolts)
         found += [x for x in art if 'category' in x[1]] + [x for x in art if 'infobox' in x[1]]
     for ref in e.get('sources', []):

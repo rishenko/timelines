@@ -265,6 +265,33 @@
               "society"
             ]
           },
+          "golden-age": {
+            "name": "Golden age or high point",
+            "broader": [
+              "society"
+            ]
+          },
+          "science": {
+            "name": "Science and technology"
+          },
+          "discovery": {
+            "name": "Discovery",
+            "broader": [
+              "science"
+            ]
+          },
+          "invention": {
+            "name": "Invention",
+            "broader": [
+              "science"
+            ]
+          },
+          "work": {
+            "name": "Landmark work",
+            "broader": [
+              "science"
+            ]
+          },
           "archaeology": {
             "name": "Archaeology"
           },
@@ -83936,7 +83963,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "revolution",
+          "value": "territory",
           "sources": [
             {
               "sourceKey": "wp-lebanon",
@@ -88862,7 +88889,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "revolution",
+          "value": "coup",
           "sources": [
             {
               "sourceKey": "wp-1987-tunisian-coup-d-tat",
@@ -88919,16 +88946,6 @@
         {
           "facet": "category",
           "value": "coup",
-          "sources": [
-            {
-              "sourceKey": "wp-2021-tunisian-self-coup",
-              "sourceLocation": "infobox date: 25 July 2021"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "unrest",
           "sources": [
             {
               "sourceKey": "wp-2021-tunisian-self-coup",
@@ -97326,16 +97343,6 @@
               "sourceLocation": "infobox year_start: 1916"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-military-government-of-santo-domingo",
-              "sourceLocation": "infobox year_start: 1916"
-            }
-          ]
         }
       ]
     },
@@ -97357,7 +97364,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "war",
+          "value": "territory",
           "sources": [
             {
               "sourceKey": "wp-military-government-of-santo-domingo",
@@ -106730,7 +106737,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "alliance",
+          "value": "founded",
           "sources": [
             {
               "sourceKey": "wp-cameroon",
@@ -118137,16 +118144,6 @@
               "sourceLocation": "infobox formation: 8 September 1954"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "alliance",
-          "sources": [
-            {
-              "sourceKey": "wp-southeast-asia-treaty-organization",
-              "sourceLocation": "infobox formation: 8 September 1954"
-            }
-          ]
         }
       ]
     },
@@ -118176,16 +118173,6 @@
         {
           "facet": "category",
           "value": "dissolved",
-          "sources": [
-            {
-              "sourceKey": "wp-southeast-asia-treaty-organization",
-              "sourceLocation": "infobox dissolved: 30 June 1977"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "alliance",
           "sources": [
             {
               "sourceKey": "wp-southeast-asia-treaty-organization",
@@ -118278,16 +118265,6 @@
         {
           "facet": "category",
           "value": "dissolved",
-          "sources": [
-            {
-              "sourceKey": "wp-central-treaty-organization",
-              "sourceLocation": "infobox dissolved: 16 March 1979"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "treaty",
           "sources": [
             {
               "sourceKey": "wp-central-treaty-organization",

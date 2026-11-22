@@ -42,7 +42,7 @@ describe('schema version 5 rules', () => {
     ['era id', (d) => (d.meta.eras![1].id = 'age-of-piers'), /Duplicate era id "age-of-piers"/],
     ['era without a source', (d) => (d.meta.eras![0].sources = []), /Era "The Age of Piers" cites no source/],
     ['eras overlapping in a group', (d) => Object.assign(d.meta.eras![1], { start: 40, startDates: undefined }), /Eras "The Age of Piers" and "The Age of Leagues" overlap/],
-    ['era outside the range', (d) => Object.assign(d.meta.eras![0], { start: -200, startMonth: undefined, startDay: undefined, startDates: undefined, startEvent: undefined }), /Era "The Age of Piers" lies outside meta.range/],
+    ['era outside the range', (d) => Object.assign(d.meta.eras![0], { start: -400, end: -300, startMonth: undefined, startDay: undefined, endMonth: undefined, endDay: undefined, startDates: undefined, endDates: undefined, startEvent: undefined, endEvent: undefined }), /Era "The Age of Piers" lies outside meta.range/],
     ['era span rules', (d) => Object.assign(d.meta.eras![1], { end: 200 }), /Era "The Age of Leagues" has both an end and ongoing/],
     ['era startEvent', (d) => (d.meta.eras![0].startEvent = 'long-watch'), /Era "The Age of Piers" starts in .*, but its startEvent "The Long Watch"/],
     // the phase that held a membership
@@ -57,6 +57,11 @@ describe('schema version 5 rules', () => {
       const found = problems(edit);
       expect(found.some((p) => message.test(p)), found.join('\n') || '(no problems)').toBe(true);
     });
+
+  it('accepts an era that runs past meta.range, as long as it overlaps it', () => {
+    // a seam era keeps its own dates in both timelines (the Timurid Renaissance, c. 1375–1525, across 1500)
+    expect(problems((d) => Object.assign(d.meta.eras![0], { start: -150, startMonth: undefined, startDay: undefined, startDates: undefined, startEvent: undefined }))).toEqual([]);
+  });
 
   it('accepts a redirect to an era, and one removed on purpose', () => {
     expect(problems((d) => (d.redirects = { 'old-age': 'age-of-piers', gone: null }))).toEqual([]);

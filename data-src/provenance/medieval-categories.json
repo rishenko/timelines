@@ -511,7 +511,7 @@
   "sultanate-of-shewa-annexed-by-ifat": [["annexation", "title: \"annexed\""]],
   "surrender-of-emperor-go-kameyama": [["conquest", "title: \"Surrender\""]],
   "sviatoslav-sacks-atil-end-of-the-khazar-khaganate": [["sack", "title: \"sacks\""], ["dissolved", "title: \"end of\""]],
-  "tang-abdicates": [["civil-war", "article \"Five Dynasties and Ten Kingdoms period\": category \"Civil wars in China\""], ["dissolved", "infobox field: event_end"]],
+  "tang-abdicates": [["dissolved", "infobox field: event_end"]],
   "teutonic-takeover-of-danzig-gda-sk": [["conquest", "title: \"takeover\""], ["siege", "article \"Teutonic takeover of Danzig (Gdańsk)\": category \"Sieges of Gdańsk\""]],
   "theme-bulgaria-established-in-byzantine-empire": [["dissolved", "title: \"established\"; infobox field: event_end"]],
   "third-crusade": [["invasion", "title: \"Crusade\""]],
