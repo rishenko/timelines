@@ -712,8 +712,12 @@
   outline: 2px solid var(--focus);
   outline-offset: 1px;
 }
+/* the row band behind a mark is tinted with the row's colour, which the focus colour alone can blend into (under
+   3:1 on some rows, as with row labels): a ring of the text colour inside the outline keeps it visible on any band */
 .tl-mark:focus-visible {
-  outline: 1px dashed var(--focus);
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--text);
 }
 
 /*
