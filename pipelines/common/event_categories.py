@@ -56,9 +56,9 @@ TEXT_RULES = [
     (R(r'\bcivil war\b'), 'civil-war'),
     (R(r'\brevolution\b'), 'revolution'),
     (R(r'\b(revolt|rebellion|uprising|insurrection|mutiny|rising|riots?)\b|storming'), 'revolt'),
-    (R(r'\bcoup\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*)\b'), 'coup'),
+    (R(r'\bcoup\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|seiz\w* the throne|stole the throne)\b'), 'coup'),
     (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|rules|reigns?|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
-    (R(r'\b(assumes|takes|adopts) the title\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b'), 'title'),
+    (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
     (R(r'\b(invasions?|invades?|campaigns?|expeditions?|raids?|crusades?|offensives?|interventions?)\b'), 'invasion'),
     (R(r'\b(treaty|peace of|accords?|agreement|concordat|convention)\b'), 'treaty'),
@@ -67,21 +67,21 @@ TEXT_RULES = [
     (R(r'\b(breaks? (away|from)|secedes?|secession|leaves|self-rule|autonomy)\b'), 'independence'),
     (R(r'\brecogni[sz]\w*'), 'diplomacy'),
     (R(r'\bindependen\w*\b'), 'independence'),
-    (R(r'\b(unif\w*|united(?! (states|kingdom|provinces|arab|nations|netherlands))|unites|reunif\w*|union|merges?|merged|amalgamation)\b'), 'union'),
+    (R(r'\b(unif\w*|reunit\w*|united(?! (states|kingdom|provinces|arab|nations|netherlands))|unites|reunif\w*|union|merges?|merged|amalgamation)\b'), 'union'),
     (R(r'\b(dissolved|dissolution|abolished|collapse[sd]?|ends|end of|extinct)\b'), 'dissolved'),
     (R(r'\b(found(s|ed|ing|ation) of [A-Z][a-z]+$|founds? the city|city (is )?founded)\b'), 'city-founded'),
-    (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b'), 'capital-moved'),
+    (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b|\bmoved? (the )?seat\b|\bdesignated (as )?(the )?capital\b'), 'capital-moved'),
     (R(r'\b(earthquake|plague|famine|flood|eruption|epidemic|fire of)\b'), 'disaster'),
     (R(r'\b(fall of|falls?|captures?|captured|take|takes|took|retakes|recaptures?|defeated|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
-    (R(r'\bpartition\w*'), 'territory'),
+    (R(r'\bpartition\w*|\bsplit\b|\bdivided\b'), 'territory'),
     (R(r'\b(conquest|conquers?|conquered|reconquest|subjugat\w*|lost to)\b'), 'conquest'),
-    (R(r'\b(annex\w*|incorporated)\b'), 'annexation'),
-    (R(r'\b(cedes?|ceded|cession|sold|purchase|transferred to|passes to|given to|returned to|handed (over )?to|restored to)\b'), 'cession'),
+    (R(r'\b(annex\w*|incorporat\w*)\b'), 'annexation'),
+    (R(r'\b(cedes?|ceded|cession|sold|purchase|transferred to|passes to|given to|returned to|handed (over )?to|restored to|acquir\w*)\b'), 'cession'),
     (R(r'\babandon\w*'), 'territory'),
     (R(r'\b(colony|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
-    (R(r'\b(founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
-    (R(r'\b(convert\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
-    (R(r'\b(law|code|edict|reform\w*|constitution|charter|bull\b|abolition|abolishes|act)\b'), 'law'),
+    (R(r'\b(found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
+    (R(r'\b(convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
+    (R(r'\b(law|code|edict|reform\w*|constitution\w*|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet)\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
     (R(r'\b(trade|coinage|currency|market|tax)\b'), 'economy'),
     (R(r'\b(level [IVX]+|stratum|tombs?|graveyards?|cemetery|palace|hoard)\b'), 'site'),
@@ -198,7 +198,9 @@ def classify(e, ds, wp=None):
     head = core.split()[-1].lower() if core else ''
     if head in HEAD_NOUNS:
         hits.sort(key=lambda h: 0 if h[2].lower().split()[-1] == head and h[0] > 0 else 1)
-    found += [(v, f'title: "{w}"') for _, v, w in hits if not (m and w.lower() in ('fall of', 'falls'))]
+    # "dynasty" as an object ("Alliance with the Almoravid dynasty", "Fall of Liao dynasty") says nothing about a succession
+    obj = lambda start, w: w.lower() == 'dynasty' and re.search(r'\b(of|from|with|by|the)\s+(\S+\s+){0,2}$', title[:start], re.I)
+    found += [(v, f'title: "{w}"') for st, v, w in hits if not (m and w.lower() in ('fall of', 'falls')) and not obj(st, w)]
     if wp:
         art = [x for t in own_articles(e, ds) for x in article_evidence(t, wp)]
         # categories name sub-kinds; the infobox only the broad kind ("military conflict" also covers revolts)
