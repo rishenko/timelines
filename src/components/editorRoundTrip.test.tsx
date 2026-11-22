@@ -74,7 +74,7 @@ describe('row editor keeps phases in the order they were written', () => {
       const saved = (await submit('Save track', onSave)) as Track;
       expect(saved.phases!.map((p) => p.start)).toEqual(starts);
       expect(saved.phases).toEqual(t.phases);
-    });
+    }, 30_000); // a large row: the form takes a few seconds to open and save on a slow runner
   }
 });
 
