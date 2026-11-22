@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { periodByRule, periodLaneIds, PERIOD_MIN_YEARS } from './periodLane.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset, Facet, TimelineEvent } from '../types.ts';
+import { readFileSync } from 'node:fs';
+import list from '../data/period-lane.json';
 
 const facet: Facet = {
   name: 'Category',
@@ -48,5 +50,15 @@ describe('the period lane’s rule', () => {
     const on = () => true;
     expect([...periodLaneIds(d, 'category', facet, on, {})]).toEqual(['golden']);
     expect([...periodLaneIds(d, 'category', facet, on, { [d.meta.id]: { exclude: ['golden'], include: ['plain'] } })]).toEqual(['plain']);
+  });
+});
+
+describe('src/data/period-lane.json', () => {
+  it('names only events its timelines have', () => {
+    for (const [id, o] of Object.entries(list).filter(([k]) => !k.startsWith('_')) as [string, { include: string[]; exclude: string[] }][]) {
+      const ds: Dataset = JSON.parse(readFileSync(`public/timelines/${id}.json`, 'utf8'));
+      const uuids = new Set(ds.events.map((e) => e.uuid));
+      expect([...o.include, ...o.exclude].filter((u) => !uuids.has(u))).toEqual([]);
+    }
   });
 });

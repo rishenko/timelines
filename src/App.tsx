@@ -510,6 +510,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       {panels.open.legend && (
         <LegendPanel
           data={data}
+          periodLane={periodLane}
           onClose={() => panels.show('legend', false)}
           onTour={() => {
             panels.show('legend', false);

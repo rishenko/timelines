@@ -1,6 +1,25 @@
 {
   "_note": "Kevin's overrides for the period lane (src/lib/periodLane.ts), per timeline id: event uuids to put in the lane (include) or keep out of it (exclude), whatever the rule says.",
-  "ancient-classical": { "include": [], "exclude": [] },
-  "medieval": { "include": [], "exclude": [] },
-  "modern-states": { "include": [], "exclude": [] }
+  "_kevin": "Kevin, 2026-11-22: exclusions after reviewing the Workbench note \"2026-11-22 Timelines period lane review\".",
+  "ancient-classical": {
+    "include": [],
+    "exclude": [
+      "djoser",
+      "indus-seal-susa",
+      "meluhha-sargon",
+      "kanesh-karum-ib",
+      "trajan-extent"
+    ]
+  },
+  "medieval": {
+    "include": [],
+    "exclude": [
+      "creation-of-burmese-alphabet",
+      "construction-of-angkor-wat"
+    ]
+  },
+  "modern-states": {
+    "include": [],
+    "exclude": []
+  }
 }

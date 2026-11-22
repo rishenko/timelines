@@ -359,6 +359,8 @@ article the event is dated from. Modern States and Medieval World get them from 
 corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
 shape before the event's title, names both categories in the table and the event's details, and filters by them
 (Filters → Categories; an event with no category always shows). The editor picks them, citing the event's first source.
+A golden age, or a society event lasting 25 years or more, is drawn on a line of its own just under its row's phases
+(see `docs/development.md`, "Period lane").
 
 ## sources and tags
 

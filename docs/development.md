@@ -74,6 +74,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
+| `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, and the strip under the ruler |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
@@ -240,6 +241,17 @@ the regions inside each (`broader`); rows with sub-rows stay while any row below
 while one of its sources is switched on (so tags cited to hidden spoiler sources give nothing away). The result is laid
 over the reader's own row toggles (`rowsOn` in `App.tsx`), so the chart, table, search and event visibility follow it
 without knowing about regions. Off in edit mode. The link carries `&regions=`.
+
+### Period lane
+
+Golden ages and long society spans apply to a whole civilization or country and can span rulers, so each row draws
+them on a line of their own directly under its phases, above its other events (Kevin, 2026-11-22).
+`periodLaneIds` (`src/lib/periodLane.ts`) picks the events: a golden age (`golden-age`) as the main or second
+category; or a society kind (religion, law, culture, economy) as the **main** category over 25 years or more, except
+a person's lifetime ("Life of …"). `src/data/period-lane.json` then includes or excludes events by id, per timeline;
+a test fails if it names an id its timeline doesn't have. The layout (`layoutLanes`'s `periodLane`) places these
+events first, on their own line(s); the other events pack below them, and the row cap and "+N" folding count only
+those lines. Key-event and "+N" behaviour and the category shapes are unchanged.
 
 ### Ages strip
 
