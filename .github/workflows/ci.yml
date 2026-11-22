@@ -35,7 +35,8 @@ jobs:
       # The content scripts must reproduce the source file exactly
       - run: npm run data:check
 
-      # The included timeline, its list (index.json) and key-event list must be what data-src/ compiles to
+      # The included timelines (Ancient and Classical, Modern States), their list (index.json) and key-event list
+      # must be what data-src/ compiles to
       - name: Compiled timeline matches data-src/
         run: |
           npm run data:build
