@@ -232,6 +232,19 @@ All of these have unit tests in `extract/test_dates.py`.
   - Only infobox dates (the article's own) are compared. A lead or table row may date something else: in a first try that compared every row, 74% "differed".
   - A P585 point in time on a ranged event is often its end or a day inside (Battle of Lahti), so a P585 inside the range counts as agreement.
 
+- **Pilot reruns with the complete schema-2 tables (2026-11-22).** Infobox rows only (the articles' own dates); a P585 inside the range counts as agreement.
+
+  | Pilot | Infobox rows | Have a Wikidata date | Agree | Differ | Julian | Part-of route found | New articles (before → after) |
+  |---|---|---|---|---|---|---|---|
+  | WW1 | 1,115 | 986 (88%) | 805 | 181 (18%) | 1 | 729 | 84 (1,324 → 1,408; rows 11,726 → 12,163) |
+  | 1848 | 120 | 102 (85%) | 84 | 18 (18%) | 0 | 46 | 0 |
+  | Easter Rising | 47 | 41 (87%) | 38 | 3 (7%) | 0 | 2 | 0 |
+
+  - "Part-of route found" counts every article that route reaches; most were already found by links or categories, so only WW1 gained new ones.
+  - Every article had a Wikidata item (QIDs from page_props); 6–13% of items carry no date of the five kinds.
+  - **Many differences are one day apart:** a night action (Action of 14/15 February 1918: Wikipedia 02-14, Wikidata P585 02-15), a putsch dated the day after (1918 Liechtenstein putsch), or an end two days off (African theatre). Others are real: 1914–1915 Muslim revolts in Albania start 1914-05 in Wikidata against 1914-11 in the infobox. Read them as review flags; the cited source stays the Wikipedia quote.
+  - Julian values are rare in these topics (1 in WW1, likely Russian), so a calendar conversion isn't worth building yet.
+
 ## Other sources' quirks already met
 
 - **NATO members table** (enwiki-20261101): no accession cell for Italy, the United States, Lithuania, Slovakia or Slovenia. They're cited from prose instead (`modern-states/connections/claims_data.py`, `NATO_FALLBACK`).
