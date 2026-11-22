@@ -317,3 +317,11 @@
   font-size: 10.5px;
   font-weight: 600;
 }
+/* the period lane's sample: a phase strip above, the line of long spans just under it */
+.lg-period {
+  display: inline-block;
+  width: 44px;
+  height: 16px;
+  border-top: 4px solid var(--line-2);
+  background: linear-gradient(to bottom, transparent 3px, var(--bg-3) 3px 10px, transparent 10px);
+}

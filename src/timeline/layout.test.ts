@@ -124,6 +124,22 @@ describe('layoutLanes', () => {
     expect(pill(new Set(['folded'])).footprintEnd - pill().footprintEnd).toBe(15);
   });
 
+  it('puts period-lane events on lines of their own first, the other events below, never folded', () => {
+    const lanes = buildLanes(tracks, {}, {});
+    const events = [ev('normal', 50, ['guild']), ev('age', 30, ['guild'], 70), ev('normal2', 51, ['guild'])];
+    const lane = layoutLanes(lanes, events, scale, 100, { periodLane: new Set(['age']), maxRows: 1 }).lanes.find((l) => l.lane.id === 'guild')!;
+    const row = (id: string) => lane.marks.find((m) => m.eventId === id)?.row;
+    expect(row('age')).toBe(0);
+    expect(row('normal')).toBe(1);
+    // the normal lines keep their own cap: the second normal event folds, the period line doesn't count
+    expect(lane.marks.find((m) => m.kind === 'cluster')?.eventIds).toEqual(['normal2']);
+    expect(lane.rows).toBe(3);
+    // without the lane, the same events pack as before
+    const plain = layoutLanes(lanes, events, scale, 100, { maxRows: 1 }).lanes.find((l) => l.lane.id === 'guild')!;
+    expect(plain.marks.find((m) => m.eventId === 'age')?.row).toBe(0);
+    expect(plain.rows).toBe(2);
+  });
+
   it('fills gaps in a row left by events placed earlier', () => {
     // the key event sits at the right; a normal event placed after it still fits to its left in row 0
     const events = [{ ...ev('key', 80, ['guild']), importance: 1 as const }, ev('early', 5, ['guild'])];

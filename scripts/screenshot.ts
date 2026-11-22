@@ -124,7 +124,9 @@ if (target) {
     el.scrollIntoView({ block: 'start' });
     let s = el.parentElement;
     while (s && s.scrollHeight <= s.clientHeight + 5) s = s.parentElement;
-    if (s) s.scrollTop -= 60; // clear the sticky axis header
+    // clear the sticky header above the rows: the ruler, and the Ages strip when the timeline has ages
+    const header = document.querySelector<HTMLElement>('.tl-lanes')?.offsetTop ?? 44;
+    if (s) s.scrollTop -= header + 16;
   });
   await page.waitForTimeout(300);
 }
