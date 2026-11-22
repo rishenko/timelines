@@ -1,0 +1,241 @@
+"""
+The date/event extractor: a topic's dated events from the dump, as candidates for review (never timeline data).
+
+    pipelines/extract/.venv/bin/python -I pipelines/extract/extract.py --topic ww1 --seed "World War I" [--seed …]
+        [--cap 4000] [--prose 40] [--categories DIR] [--tables FILE] [--data DIR] [--dump NAME]
+
+Needs extract-<dump>.sqlite (build_index.py, then page_props.py). Writes pipelines/out/extract/<topic>/candidates.csv
+and report.md. --categories DIR imports event_categories.py from DIR (until it is on main, pipelines/common).
+Candidates keep a stable `cand_id` (article + locator + dates), so review decisions in reviewed-<topic>.csv carry over
+to a later dump's run.
+"""
+import csv
+import hashlib
+import json
+import math
+import os
+import re
+import sys
+from collections import Counter, defaultdict
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(HERE, '..', 'common'))
+import settings  # noqa: E402
+
+ARGS = settings.take_flags(sys.argv[1:])
+
+import wp_dump as wp  # noqa: E402
+import extractors as X  # noqa: E402
+from topics import Tables, article_set  # noqa: E402
+
+KIND_WEIGHT = {'infobox': 5, 'table': 4, 'lead': 3, 'heading': 2, 'prose': 1}
+WIKI = 'https://en.wikipedia.org/wiki/'
+
+
+def opt(name, default=None, cast=str, many=False):
+    vals = [ARGS[i + 1] for i, a in enumerate(ARGS) if a == name]
+    if many:
+        return vals
+    return cast(vals[-1]) if vals else default
+
+
+def iso(v):
+    if not v:
+        return ''
+    y, m, d = v
+    s = f'{y:05d}' if y < 0 else f'{y:04d}'
+    return s + (f'-{m:02d}' if m else '') + (f'-{d:02d}' if d else '')
+
+
+def cand_id(article, locator, s):
+    key = json.dumps([article, locator, s['start'], s['end']], ensure_ascii=False, sort_keys=True)
+    return hashlib.sha1(key.encode()).hexdigest()[:12]
+
+
+class WpShim:
+    """What event_categories needs from wp_dump, from the side tables: the infobox type and the categories."""
+    def __init__(self, T):
+        self.T = T
+
+    def page(self, title):
+        p = self.T.page(title)
+        if not p:
+            return None
+        text = (f'{{{{Infobox {p[2]}}}}}\n' if p[2] else '') + ''.join(f'[[Category:{c}]]' for c in self.T.categories(p[0]))
+        return {'title': p[1], 'text': text}
+
+    ai_flagged = staticmethod(lambda text: False)  # flagged pages never reach the classifier
+    categories = staticmethod(wp.categories)
+
+
+def main():
+    topic, seeds = opt('--topic'), opt('--seed', many=True)
+    if not topic or not seeds:
+        raise SystemExit(__doc__)
+    cap, prose_cap = opt('--cap', 4000, int), opt('--prose', 40, int)
+    T = Tables(opt('--tables') or os.path.join(settings.WIKIPEDIA, f'extract-{settings.DUMP_NAME}.sqlite'), settings.DUMP_NAME)
+    classify = None
+    if opt('--categories'):
+        sys.path.insert(0, opt('--categories'))
+        import event_categories
+        classify = event_categories.classify
+    # the seeds' own links (route "link")
+    seed_links = []
+    for s in seeds:
+        p = wp.page(s)
+        if p:
+            seed_links += [l.strip() for l in X.LINK1.findall(p['text']) if ':' not in l]
+    arts, rep = article_set(T, seeds, list(dict.fromkeys(seed_links)), cap=cap)
+
+    cands, dropped, flagged = [], Counter(), []
+    for title in sorted(arts):
+        a = arts[title]
+        p = wp.page(title)
+        if not p or wp.ai_flagged(p['text']):
+            flagged.append(title)
+            continue
+        plains = X.plain_texts(p['text'])
+        found = []
+        if 'list' in a['routes'] or 'seed' in a['routes']:
+            found += list(X.tables_and_lists(p['text']))
+        if T.event_like(a['page_id'], a['box']):
+            found += list(X.infobox(T.fields(a['page_id'])))
+        n_prose = 0
+        for c in X.lead_and_prose(p['text']):
+            if c['kind'] == 'prose':
+                n_prose += 1
+                if n_prose > prose_cap:
+                    dropped['prose cap'] += 1
+                    continue
+            found.append(c)
+        for c in found:
+            if not X.check_quote(c, plains):
+                dropped['quote not found'] += 1
+                continue
+            c['article'], c['page_id'], c['rev_id'] = title, a['page_id'], a['rev_id']
+            cl = c.get('cluster')
+            cp = T.page(cl) if cl else None
+            c['cluster'] = cp[1] if cp else title
+            cands.append(c)
+
+    # dedupe: one candidate per (cluster, start, end), keeping the most precise kind; the rest count as confirmations
+    best = {}
+    for c in cands:
+        k = (c['cluster'], c['span']['start'], c['span']['end'])
+        c['also'] = []
+        if k not in best:
+            best[k] = c
+        else:
+            b = best[k]
+            hi, lo = (c, b) if X.KIND_RANK[c['kind']] < X.KIND_RANK[b['kind']] else (b, c)
+            hi['also'] = sorted(set(b['also'] + c['also'] + [lo['kind']]))
+            best[k] = hi
+    rows = list(best.values())
+
+    # scores: kind, inbound links of the cluster's article (percentile in the topic), campaignbox, routes, confirmations
+    inl = {cl: T.inlinks(cl) for cl in {r['cluster'] for r in rows}}
+    order = sorted(inl, key=lambda t: inl[t])
+    pct = {t: i / max(1, len(order) - 1) for i, t in enumerate(order)}
+    for r in rows:
+        routes = (arts.get(r['cluster']) or arts.get(r['article']) or {}).get('routes', set())
+        r['routes'] = sorted(routes)
+        r['inlinks'] = inl[r['cluster']]
+        r['score'] = round(KIND_WEIGHT[r['kind']] + 3 * pct[r['cluster']] + ('campaignbox' in routes) + 0.5 * len(routes)
+                           + 0.5 * len(r['also']) + (0.5 if r['span']['precision'] == 'day' else 0), 2)
+    # suggested importance per cluster: its primary claim (best score) gets 1 (top 10%), 2 (next 30%) or 3; the rest 3
+    primary = {}
+    for r in rows:
+        if r['cluster'] not in primary or r['score'] > primary[r['cluster']]['score']:
+            primary[r['cluster']] = r
+    ranked = sorted(primary.values(), key=lambda r: -r['score'])
+    for i, r in enumerate(ranked):
+        r['importance'] = 1 if i < len(ranked) * 0.1 else 2 if i < len(ranked) * 0.4 else 3
+    for r in rows:
+        r.setdefault('importance', 3)
+        r['primary'] = r is primary[r['cluster']]
+
+    # event categories, from the Architect's classifier, on each cluster's primary claim
+    if classify:
+        shim = WpShim(T)
+        for r in primary.values():
+            e = {'title': r['cluster'], 'descr': r['quote'][:300], 'tracks': [], 'sources': [{'sourceKey': 'wp', 'sourceLocation': r['sourceLocation']}]}
+            ds = {'sources': {'wp': {'url': WIKI + r['cluster'].replace(' ', '_')}}, 'tracks': []}
+            got = classify(e, ds, shim)
+            r['category'] = got
+        for r in rows:
+            if not r['primary']:
+                r['category'] = primary[r['cluster']].get('category', [])
+
+    qids = {r['page_id']: T.qid(r['page_id']) for r in rows}
+    sortable = lambda v: (v[0], v[1] or 0, v[2] or 0)  # month and day may be missing
+    rows.sort(key=lambda r: (r['cluster'], sortable(r['span']['start']), X.KIND_RANK[r['kind']]))
+    out = os.path.join(os.path.dirname(HERE), 'out', 'extract', topic)
+    os.makedirs(out, exist_ok=True)
+    cols = ['cand_id', 'topic', 'cluster', 'primary', 'title_suggestion', 'start', 'end', 'alts', 'precision', 'circa', 'old_style',
+            'kind', 'also', 'sourceLocation', 'locator', 'quote', 'article', 'page_id', 'rev_id', 'qid', 'routes', 'inlinks',
+            'score', 'importance_suggested', 'category_main', 'category_second', 'category_evidence', 'wikidata', 'dump']
+    with open(os.path.join(out, 'candidates.csv'), 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(cols)
+        for r in rows:
+            s, cat = r['span'], r.get('category') or []
+            title = r.get('title_suggestion') or (f'{r["article"]}: {r["quote"]}' if r['kind'] == 'heading' else
+                                                   r['quote'][:160] if r['kind'] == 'prose' else r['article'])
+            w.writerow([cand_id(r['article'], r['locator'], s), topic, r['cluster'], int(r['primary']), title, iso(s['start']),
+                        iso(s['end']), ';'.join(iso(a) for a in s['alts']), s['precision'], int(s['circa']), int(s['old_style']),
+                        r['kind'], ';'.join(r['also']), r['sourceLocation'], json.dumps(r['locator'], ensure_ascii=False), r['quote'],
+                        r['article'], r['page_id'], r['rev_id'], qids[r['page_id']] or '', ';'.join(r['routes']), r['inlinks'],
+                        r['score'], r['importance'], cat[0][0] if cat else '', cat[1][0] if len(cat) > 1 else '',
+                        ' | '.join(x[1] for x in cat), 'none (Wikidata not loaded)', settings.DUMP_NAME])
+    report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, bool(classify))
+    print(f'{len(arts)} articles, {len(rows)} candidates ({len(primary)} clusters) -> {out}')
+
+
+def span_txt(s):
+    t = iso(s['start']) + (f' – {iso(s["end"])}' if s['end'] else '')
+    return ('c. ' if s['circa'] else '') + t + (' (O.S.)' if s['old_style'] else '')
+
+
+def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has_cat):
+    md = [f'# Extractor candidates: {topic}', '',
+          f'Seeds: {", ".join(seeds)}. Dump {T.meta["dump"]}; tables {T.meta["code_version"]}. '
+          f'Candidates are for review, not timeline data. Columns: see pipelines/extract/extract.py.', '',
+          '## Article set', '',
+          f'- {len(arts)} articles. By route: ' + ', '.join(f'{k} {v}' for k, v in rep['routes'].items()) + '.',
+          f'- Campaignboxes ({len(rep["campaignboxes"])}): ' + ', '.join(rep['campaignboxes'][:40]) + (' …' if len(rep['campaignboxes']) > 40 else ''),
+          f'- Categories walked: {rep["categories"]}. Timeline/list pages: ' + (', '.join(rep['lists'][:20]) or 'none') + '.',
+          f'- Excluded: {len(rep["excluded"]["ai_flag"])} AI-flagged ({", ".join(rep["excluded"]["ai_flag"][:10]) or "none"}); '
+          f'{rep["excluded"]["not_event"]} not event-like (category and link routes); {rep["excluded"]["cap"]} over the cap.', '',
+          '## Candidates', '',
+          f'- {len(rows)} candidates in {len(primary)} clusters (one per linked article). By kind: '
+          + ', '.join(f'{k} {v}' for k, v in Counter(r['kind'] for r in rows).most_common()) + '.',
+          f'- Dropped: ' + (', '.join(f'{v} {k}' for k, v in dropped.items()) or 'none') + '.',
+          f'- Old Style flagged: {sum(r["span"]["old_style"] for r in rows)}. Circa: {sum(r["span"]["circa"] for r in rows)}.',
+          f'- Event categories: ' + ('from event_categories.classify on each cluster\'s primary claim: '
+                                     + ', '.join(f'{k} {v}' for k, v in Counter((r.get('category') or [("(none)",)])[0][0] for r in primary.values()).most_common(12))
+                                     if has_cat else 'not run (pass --categories).') + '.', '',
+          '## Top clusters (suggested importance 1)', '', '| Article | Dates | Kind | Inbound links | Category |', '|---|---|---|---|---|']
+    for r in sorted((r for r in primary.values() if r['importance'] == 1), key=lambda r: -r['score'])[:60]:
+        cat = (r.get('category') or [('',)])[0][0]
+        md.append(f'| {r["cluster"]} | {span_txt(r["span"])} | {r["kind"]} | {r["inlinks"]} | {cat} |')
+    # conflicts: a cluster whose infobox and lead give different starts
+    conf = []
+    by = defaultdict(dict)
+    for r in rows:
+        if r['kind'] in ('infobox', 'lead') and r['span']['precision'] in ('day', 'month'):
+            by[r['cluster']].setdefault(r['kind'], set()).add(r['span']['start'])
+    for cl, d in sorted(by.items()):
+        if 'infobox' in d and 'lead' in d and not (d['infobox'] & d['lead']):
+            conf.append(f'- {cl}: infobox {", ".join(iso(x) for x in sorted(d["infobox"]))}; lead {", ".join(iso(x) for x in sorted(d["lead"]))}')
+    md += ['', f'## Infobox and lead disagree ({len(conf)})', ''] + (conf[:40] or ['- none'])
+    sample = rows[::max(1, len(rows) // 20)][:20]
+    md += ['', '## 20 sample rows (every nth)', '', '| Dates | Kind | Title | Source location |', '|---|---|---|---|']
+    for r in sample:
+        t = (r.get('title_suggestion') or r['article']).replace('|', '/')
+        md.append(f'| {span_txt(r["span"])} | {r["kind"]} | {t[:70]} | {r["sourceLocation"][:90].replace("|", "/")} |')
+    open(os.path.join(out, 'report.md'), 'w').write('\n'.join(md) + '\n')
+
+
+if __name__ == '__main__':
+    main()
