@@ -8,13 +8,17 @@
  * - 3: the format before dates in months and days.
  * - 4: dates may give months and days; `meta.increments` may name steps below a year. Additive: a v3 file is a v4
  *   file with a different number.
+ * - 5: facets on events (`Facet.applies`, `TimelineEvent.memberships`), `meta.eras`, `Track.kind`, events'
+ *   `ongoingSources`, `Source.dump` and `revision`, `SourceRef.locator`, `RowMembership.phase` and `redirects`. All
+ *   optional and additive: a v4 file is a v5 file with a different number.
  */
 
-export const SCHEMA_VERSION = 4;
+export const SCHEMA_VERSION = 5;
 
 /** Each step lifts a file from its version to the next. */
 const STEPS: Record<number, (d: Record<string, unknown>) => Record<string, unknown>> = {
   3: (d) => ({ ...d, schemaVersion: 4 }),
+  4: (d) => ({ ...d, schemaVersion: 5 }),
 };
 
 /** Whether a file of this version can be read (it is current, or can be lifted to it). */

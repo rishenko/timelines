@@ -1,5 +1,6 @@
 /**
- * Schema v3: a generic timeline (fictional or historical).
+ * The timeline format: a generic timeline (fictional or historical). Its version is `Dataset.schemaVersion`; older
+ * files are lifted to it when loaded (data/migrate.ts; changes in docs/data-format.md, "Versions").
  *
  * Years are stored as integers in astronomical numbering: there is always a
  * year 0 internally. A calendar without a year zero (BCE/CE) displays stored 0
@@ -62,6 +63,25 @@ export interface TimelineMeta {
   continues?: TimelineEdgeLink[];
   /** The period the timeline is about (stored years). The ruler doesn't extend past it, even for rows that do. */
   range?: { start: number; end: number };
+  /**
+   * Named periods across the whole timeline (the Bronze Age, the Age of Revolutions), each dated like a phase and
+   * cited. Eras in one `group` follow each other without overlapping; groups are alternative ways of dividing the
+   * same years.
+   */
+  eras?: Era[];
+}
+
+/** A named period across all rows (TimelineMeta.eras). */
+export interface Era extends TrackSpan {
+  /** Letters, digits and dashes; unique among the timeline's eras. */
+  id: string;
+  name: string;
+  /** Eras that divide the same years one way share a group (e.g. "three-age"); one group if left out. */
+  group?: string;
+  color?: string;
+  /** The chronology its dates follow. */
+  chronology?: string;
+  sources: SourceRef[];
 }
 
 export interface TimelineEdgeLink {
@@ -92,10 +112,20 @@ export interface TrackSpan extends DateDays {
   endEvent?: string;
 }
 
+/**
+ * What a row stands for: a polity (a state, people, culture, faction or union: the default), a person, or a theme (a
+ * network, route, movement or trade, which has no government of its own).
+ */
+export type TrackKind = 'polity' | 'person' | 'theme';
+
+export const TRACK_KINDS: TrackKind[] = ['polity', 'person', 'theme'];
+
 export interface Track {
   id: string;
   name: string;
   color: string;
+  /** What the row stands for; a polity if left out. */
+  kind?: TrackKind;
   /** Parent track id. Rows nest to any depth (e.g. group → region → civilization → period). */
   parent?: string;
   /** Image URL shown in the lane label (relative to the site root, or absolute). */
@@ -136,14 +166,25 @@ export interface Track {
 export interface RowMembership extends TrackSpan {
   /** The row it belonged to (a track id): a union, empire or alliance with its own row. */
   row: string;
+  /**
+   * The phase of this row that held the membership (a phase name), when the row has rival phases at the time: West
+   * Germany in NATO, East Germany in the Warsaw Pact, both phases of one row. The membership lies within that phase.
+   */
+  phase?: string;
   sources: SourceRef[];
 }
 
-/** A way to group rows (meta.facets): its name and values. */
+/** A way to group rows or events (meta.facets): its name and values. */
 export interface Facet {
   name: string;
   values: Record<string, FacetValue>;
+  /** What may belong to its values: rows (the default), events, or both. */
+  applies?: FacetApplies;
 }
+
+export type FacetApplies = 'tracks' | 'events' | 'both';
+
+export const FACET_APPLIES: FacetApplies[] = ['tracks', 'events', 'both'];
 
 /** A facet value, e.g. the region "Aegean". */
 export interface FacetValue {
@@ -152,7 +193,7 @@ export interface FacetValue {
   broader?: string[];
 }
 
-/** A row's membership in a facet value, with its evidence, e.g. the Hittites in Anatolia per their article. */
+/** A row's or event's membership in a facet value, with its evidence, e.g. the Hittites in Anatolia per their article. */
 export interface Membership {
   facet: string;
   value: string;
@@ -179,6 +220,10 @@ export interface Source {
   year?: string;
   /** For web pages: the date the page was read (YYYY-MM-DD). */
   accessed?: string;
+  /** The snapshot the values were read from, as `<wiki>-<YYYYMMDD>` (e.g. "enwiki-20261101"), when not the live page. */
+  dump?: string;
+  /** The page revision read (a revision id, for a permanent link); needs `url`. */
+  revision?: number;
   /** Hidden by default to avoid spoilers (campaign modules). */
   hiddenByDefault?: boolean;
 }
@@ -189,8 +234,21 @@ export interface Tag {
 
 export interface SourceRef {
   sourceKey: string;
+  /** Where in the source, as readers see it ("p. 12", "infobox year_start: 1920"). */
   sourceLocation: string;
+  /** The same place in a form scripts can read (optional; written by generators beside the text). */
+  locator?: Locator;
 }
+
+/** A place in a source that scripts can find again (SourceRef.locator). */
+export type Locator =
+  | { kind: 'infobox'; field: string; value?: string }
+  | { kind: 'lead'; quote: string }
+  | { kind: 'section'; heading: string; quote?: string }
+  | { kind: 'category'; name: string }
+  | { kind: 'page'; page: string };
+
+export const LOCATOR_KINDS: Locator['kind'][] = ['infobox', 'lead', 'section', 'category', 'page'];
 
 /**
  * A named dating system, e.g. the Mesopotamian Middle Chronology.
@@ -256,6 +314,8 @@ export interface TimelineEvent extends DateDays {
   end?: number;
   /** Still going as of the dataset's present. Overrides `end`. */
   ongoing?: boolean;
+  /** Sources saying it is still going (only when `ongoing`), as on a lifespan. */
+  ongoingSources?: SourceRef[];
   /** Ordering among events that start in the same year; lower comes first. */
   order?: number;
   /**
@@ -274,6 +334,8 @@ export interface TimelineEvent extends DateDays {
   endDates?: DateClaim[];
   tracks: string[];
   sources: SourceRef[];
+  /** The facet values this event belongs to (facets that apply to events), each with its sources. */
+  memberships?: Membership[];
   links?: EventLink[];
   /** Set by edit mode; stripped from "final" downloads. */
   edited?: boolean;
@@ -281,7 +343,7 @@ export interface TimelineEvent extends DateDays {
 
 export interface Dataset {
   /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 4;
+  schemaVersion: 5;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest
@@ -293,4 +355,9 @@ export interface Dataset {
   tags: Record<string, Tag>;
   chronologies?: Record<string, Chronology>;
   events: TimelineEvent[];
+  /**
+   * Ids this timeline no longer has (rows, events, eras), each mapped to the id that replaced it, or to null when it was
+   * removed on purpose. Links and saved views that name an old id follow it.
+   */
+  redirects?: Record<string, string | null>;
 }

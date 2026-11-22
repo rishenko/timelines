@@ -5,8 +5,9 @@
  *
  * `UnsetPaths<Schema, typeof data>` is the union of the unset fields' paths (`"tracks.span.ongoingSources"`), or
  * `never`. A field counts as set when any item at that place sets it, so fields that exclude each other (`end` and
- * `ongoing`) can be set on different items. Records (`sources`, `meta.facets`) are checked through their values; in a
- * union of object types every member's fields must be set somewhere. The data must be typed by inference (an object
+ * `ongoing`) can be set on different items. Records (`sources`, `meta.facets`) are checked through their values. In a
+ * union of object types (the kinds of `SourceRef.locator`) only the fields they share are required at each place, so
+ * one item can stand for the union; that each member appears somewhere is the fixture test's job. The data must be typed by inference (an object
  * literal with `satisfies Dataset`), not annotated as `Dataset`, or every field counts as set.
  */
 
@@ -28,12 +29,15 @@ type RecordValues<D> = D extends unknown ? Elem<NonNullable<D[keyof D]>> : never
 type Join<At extends string, K extends string> = At extends '' ? K : `${At}.${K}`;
 
 export type UnsetPaths<S, D, At extends string = ''> =
-  Objects<S> extends infer M
-    ? M extends object
+  // not distributed: a union of object types is checked as one type (its shared fields)
+  [Objects<S>] extends [infer M]
+    ? [M] extends [never]
+      ? never
+      : [M] extends [object]
       ? string extends keyof M
         ? UnsetPaths<M[string & keyof M], RecordValues<D>, Join<At, '*'>>
         : {
             [K in keyof M & string]-?: K extends SetKeys<D> ? UnsetPaths<M[K], ValuesAt<D, K>, Join<At, K>> : Join<At, K>;
           }[keyof M & string]
-      : never
+        : never
     : never;

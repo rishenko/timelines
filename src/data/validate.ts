@@ -1,6 +1,6 @@
 import { migrate, SCHEMA_VERSION } from './migrate.ts';
 import { at0, at1, daysInMonth, endAt, MONTH_NAMES, startAt, SUB_YEAR } from '../lib/subYear.ts';
-import { LINK_KINDS, type DateClaim, type Dataset, type DateDays, type TrackSpan } from '../types.ts';
+import { FACET_APPLIES, LINK_KINDS, LOCATOR_KINDS, TRACK_KINDS, type DateClaim, type Dataset, type DateDays, type Membership, type SourceRef, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronologies } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
 import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
@@ -65,7 +65,43 @@ export function validateDataset(d: unknown): string[] {
         errors.push(`Track "${t.id}" ids.wikidata must be a Wikidata item id such as "Q11768".`);
     }
   }
-  for (const [k, s] of Object.entries(ds.sources)) checkUrl(`Source "${k}" url`, s.url);
+  for (const [k, s] of Object.entries(ds.sources)) {
+    checkUrl(`Source "${k}" url`, s.url);
+    if (s.dump !== undefined && !(typeof s.dump === 'string' && /^[a-z]+wiki-\d{8}$/.test(s.dump)))
+      errors.push(`Source "${k}" dump must name a snapshot like "enwiki-20261101".`);
+    if (s.revision !== undefined) {
+      if (!(Number.isInteger(s.revision) && s.revision > 0)) errors.push(`Source "${k}" revision must be a page revision id (a positive whole number).`);
+      else if (!s.url) errors.push(`Source "${k}" has a revision but no url.`);
+    }
+  }
+
+  // locators: the machine-readable form of a place in a source, wherever a source is cited
+  const forEachRef = (v: unknown, at: string, fn: (r: SourceRef, at: string) => void) => {
+    if (Array.isArray(v)) v.forEach((x, i) => forEachRef(x, `${at}[${i}]`, fn));
+    else if (v && typeof v === 'object') {
+      if ('sourceKey' in v) fn(v as SourceRef, at);
+      else for (const [k, x] of Object.entries(v)) forEachRef(x, at ? `${at}.${k}` : k, fn);
+    }
+  };
+  const LOCATOR_FIELDS: Record<string, { need: string[]; may: string[] }> = {
+    infobox: { need: ['field'], may: ['value'] },
+    lead: { need: ['quote'], may: [] },
+    section: { need: ['heading'], may: ['quote'] },
+    category: { need: ['name'], may: [] },
+    page: { need: ['page'], may: [] },
+  };
+  forEachRef({ meta: ds.meta, tracks: ds.tracks, chronologies: ds.chronologies, events: ds.events }, '', (r, at) => {
+    if (r.locator === undefined) return;
+    const l = r.locator as unknown as Record<string, unknown>;
+    if (!l || typeof l !== 'object' || !LOCATOR_KINDS.includes(l.kind as never)) {
+      errors.push(`${at}: locator kind must be one of ${LOCATOR_KINDS.join(', ')}.`);
+      return;
+    }
+    const { need, may } = LOCATOR_FIELDS[l.kind as string];
+    for (const f of need) if (typeof l[f] !== 'string' || !(l[f] as string).trim()) errors.push(`${at}: a ${String(l.kind)} locator needs ${f}.`);
+    for (const f of may) if (l[f] !== undefined && typeof l[f] !== 'string') errors.push(`${at}: locator ${f} must be text.`);
+    for (const f of Object.keys(l)) if (f !== 'kind' && !need.includes(f) && !may.includes(f)) errors.push(`${at}: a ${String(l.kind)} locator has no field "${f}".`);
+  });
 
   // facets (ways to group rows) and the rows' memberships in their values
   const facets = m.facets ?? {};
@@ -75,6 +111,7 @@ export function validateDataset(d: unknown): string[] {
     if (!f?.name) errors.push(`Facet "${fid}" has no name.`);
     const values = f?.values ?? {};
     if (!f?.values || typeof f.values !== 'object') errors.push(`Facet "${fid}" needs values.`);
+    if (f?.applies !== undefined && !FACET_APPLIES.includes(f.applies)) errors.push(`Facet "${fid}" applies must be tracks, events or both.`);
     for (const [vid, v] of Object.entries(values)) {
       if (!ID_RE.test(vid)) errors.push(`Facet "${fid}" value id "${vid}" must be letters, digits and dashes.`);
       if (!v?.name) errors.push(`Facet "${fid}" value "${vid}" has no name.`);
@@ -85,20 +122,25 @@ export function validateDataset(d: unknown): string[] {
       seen.has(vid) || (values[vid]?.broader ?? []).some((b) => loops(b, new Set([...seen, vid])));
     for (const vid of Object.keys(values)) if ((values[vid]?.broader ?? []).some((b) => loops(b, new Set([vid])))) errors.push(`Facet "${fid}" value "${vid}" is inside itself through broader values.`);
   }
-  for (const t of ds.tracks) {
-    if (t.memberships === undefined) continue;
-    if (!Array.isArray(t.memberships)) {
-      errors.push(`Track "${t.id}" memberships must be a list.`);
-      continue;
+  /** Memberships in facet values, of a row or an event: known values of facets that apply to it, each cited. */
+  const checkMemberships = (label: string, list: Membership[] | undefined, of: 'tracks' | 'events') => {
+    if (list === undefined) return;
+    if (!Array.isArray(list)) {
+      errors.push(`${label} memberships must be a list.`);
+      return;
     }
-    for (const ms of t.memberships) {
+    for (const ms of list) {
       const f = facets[ms?.facet];
-      if (!f) errors.push(`Track "${t.id}" has a membership in unknown facet "${ms?.facet}".`);
-      else if (!f.values?.[ms.value]) errors.push(`Track "${t.id}" has a membership in unknown ${ms.facet} value "${ms.value}".`);
-      if (!Array.isArray(ms?.sources) || !ms.sources.length) errors.push(`Track "${t.id}" membership ${ms?.facet}/${ms?.value} cites no source.`);
-      else for (const s of ms.sources) if (!ds.sources[s?.sourceKey]) errors.push(`Track "${t.id}" membership ${ms.facet}/${ms.value} cites unknown source "${s?.sourceKey}".`);
+      if (!f) errors.push(`${label} has a membership in unknown facet "${ms?.facet}".`);
+      else if (!f.values?.[ms.value]) errors.push(`${label} has a membership in unknown ${ms.facet} value "${ms.value}".`);
+      else if (![of, 'both'].includes(f.applies ?? 'tracks'))
+        errors.push(`${label} has a membership in facet "${ms.facet}", which applies to ${f.applies ?? 'tracks'} only (set its applies to "both" to use it here).`);
+      if (!Array.isArray(ms?.sources) || !ms.sources.length) errors.push(`${label} membership ${ms?.facet}/${ms?.value} cites no source.`);
+      else for (const s of ms.sources) if (!ds.sources[s?.sourceKey]) errors.push(`${label} membership ${ms.facet}/${ms.value} cites unknown source "${s?.sourceKey}".`);
     }
-  }
+  };
+  for (const t of ds.tracks) checkMemberships(`Track "${t.id}"`, t.memberships, 'tracks');
+  for (const e of ds.events) checkMemberships(`Event "${e.title || e.uuid}"`, e.memberships, 'events');
 
   const chronologies = ds.chronologies ?? {};
   for (const [id, c] of Object.entries(chronologies)) {
@@ -143,6 +185,7 @@ export function validateDataset(d: unknown): string[] {
     else if (trackIds.has(t.id)) errors.push(`Duplicate track id "${t.id}".`);
     trackIds.add(t.id);
     if (!t.name) errors.push(`Track "${t.id}" has no name.`);
+    if (t.kind !== undefined && !TRACK_KINDS.includes(t.kind)) errors.push(`Track "${t.id}" kind must be polity, person or theme.`);
     checkChronology(`Track "${t.id}"`, t.chronology);
   }
   const byId = new Map(ds.tracks.map((t) => [t.id, t]));
@@ -186,6 +229,18 @@ export function validateDataset(d: unknown): string[] {
     if (o.end === o.start && o.startMonth && o.endMonth && at1(o) <= at0(o)) errors.push(`${label} ends before it starts.`);
   };
 
+  /** Sources saying something is still going: only on something ongoing, each a known source with a location. */
+  const checkOngoingSources = (label: string, s: { ongoing?: boolean; ongoingSources?: SourceRef[] }) => {
+    if (s.ongoingSources === undefined) return;
+    if (!s.ongoing) errors.push(`${label} has ongoingSources but isn't ongoing: cite its end in endDates instead.`);
+    if (!Array.isArray(s.ongoingSources)) errors.push(`${label}: ongoingSources must be a list.`);
+    else
+      for (const r of s.ongoingSources) {
+        if (!ds.sources[r?.sourceKey]) errors.push(`${label}: ongoingSources cites unknown source "${r?.sourceKey}".`);
+        else if (typeof r.sourceLocation !== 'string') errors.push(`${label}: an ongoingSources entry needs a sourceLocation (may be "").`);
+      }
+  };
+
   /** A lifespan stretch or a phase: a start, and an end or `ongoing` (not both). Returns whether its years are usable. */
   const checkSpan = (label: string, s: TrackSpan, chron: string | undefined): boolean => {
     if (!s || typeof s !== 'object') {
@@ -198,15 +253,7 @@ export function validateDataset(d: unknown): string[] {
       errors.push(`${label} needs an integer start.`);
       ok = false;
     }
-    if (s.ongoingSources !== undefined) {
-      if (!s.ongoing) errors.push(`${label} has ongoingSources but isn't ongoing: cite its end in endDates instead.`);
-      if (!Array.isArray(s.ongoingSources)) errors.push(`${label}: ongoingSources must be a list.`);
-      else
-        for (const r of s.ongoingSources) {
-          if (!ds.sources[r?.sourceKey]) errors.push(`${label}: ongoingSources cites unknown source "${r?.sourceKey}".`);
-          else if (typeof r.sourceLocation !== 'string') errors.push(`${label}: an ongoingSources entry needs a sourceLocation (may be "").`);
-        }
-    }
+    checkOngoingSources(label, s);
     if (s.ongoing) {
       if (s.end !== undefined) errors.push(`${label} has both an end and ongoing: use one.`);
       if (s.endDates) errors.push(`${label} is ongoing, so it can't have end date claims.`);
@@ -263,6 +310,10 @@ export function validateDataset(d: unknown): string[] {
     });
   }
 
+  /** Whether a span contains another (best estimates, on full dates where months and days are given). */
+  const contains = (outer: TrackSpan, inner: TrackSpan) =>
+    at0(outer) <= at0(inner) && (outer.ongoing || (!inner.ongoing && at1(outer) >= at1(inner)));
+
   // dated memberships: the row a row belonged to for a stretch of years (a republic in a union)
   const isDescendant = (id: string, of: string): boolean => {
     for (let p = byId.get(id)?.parent; p !== undefined; p = byId.get(p)?.parent) if (p === of) return true;
@@ -295,6 +346,13 @@ export function validateDataset(d: unknown): string[] {
       const years = `${yr(ms.start)} – ${ms.ongoing ? 'ongoing' : yr(ms.end!)}`;
       if (!withinLifespan(ms, bestLifespan(t, present), present)) errors.push(`${label} (${years}) lies outside the lifespan of "${t.id}".`);
       if (!withinLifespan(ms, bestLifespan(union, present), present)) errors.push(`${label} (${years}) lies outside the lifespan of "${ms.row}".`);
+      // the phase that held it: one phase of that name on this row, containing the membership
+      if (ms.phase !== undefined) {
+        const named = typeof ms.phase === 'string' ? (t.phases ?? []).filter((p) => p.name === ms.phase) : [];
+        if (!named.length) errors.push(`${label} names phase "${String(ms.phase)}", which "${t.id}" doesn't have.`);
+        else if (named.filter((p) => contains(p, ms)).length !== 1)
+          errors.push(`${label} (${years}) doesn't lie within ${named.length > 1 ? 'exactly one of the phases named' : 'its phase'} "${ms.phase}". Leave phase out for a membership that outlasts the phase.`);
+      }
     });
   }
 
@@ -316,6 +374,7 @@ export function validateDataset(d: unknown): string[] {
       else if (e.end < e.start) errors.push(`${label} ends (${e.end}) before it starts (${e.start}).`);
     }
     checkDays(label, e);
+    checkOngoingSources(label, e);
     if (e.importance !== undefined && ![1, 2, 3].includes(e.importance))
       errors.push(`${label}: importance must be 1 (key), 2 (normal) or 3 (minor).`);
     const tracksOk = Array.isArray(e.tracks) && e.tracks.length > 0;
@@ -334,54 +393,105 @@ export function validateDataset(d: unknown): string[] {
     }
   }
 
-  // succession: the events that began and ended lifespan stretches and phases
-  const eventsById = new Map(ds.events.map((e) => [e.uuid, e]));
-  for (const t of ds.tracks) {
-    const stretches = spanStretches(t.span);
-    const parts = [
-      ...stretches.map((s, i) => ({ s, label: `Track "${t.id}" lifespan${stretches.length > 1 ? ` stretch ${i + 1}` : ''}` })),
-      ...(Array.isArray(t.phases) ? t.phases : []).map((p, i) => ({ s: p, label: `Track "${t.id}" phase "${p.name || i + 1}"` })),
-      ...(Array.isArray(t.memberOf) ? t.memberOf : []).flatMap((m, i) => (m && typeof m === 'object' ? [{ s: m, label: `Track "${t.id}" membership ${i + 1} (in "${m.row}")` }] : [])),
-    ];
-    for (const { s, label } of parts)
-      for (const side of ['start', 'end'] as const) {
-        const id = side === 'start' ? s.startEvent : s.endEvent;
-        if (id === undefined) continue;
-        const field = `${side}Event`;
-        const e = typeof id === 'string' ? eventsById.get(id) : undefined;
-        if (!e) {
-          errors.push(`${label} ${field} names unknown event "${String(id)}".`);
-          continue;
-        }
-        if (side === 'end' && s.ongoing) {
-          errors.push(`${label} is ongoing, so it has no end for an endEvent.`);
-          continue;
-        }
-        const y = side === 'start' ? s.start : s.end;
-        if (!Number.isInteger(y) || !Number.isInteger(e.start)) continue;
-        const from = e.start;
-        const to = e.ongoing ? present : (e.end ?? e.start);
-        // an edge and an event both given in months or days must meet within one of the edge's units (a day, or a
-        // month), so a row that changes hands several times in a year can't name the wrong change
-        const em = side === 'start' ? s.startMonth : s.endMonth;
-        const ed = side === 'start' ? s.startDay : s.endDay;
-        if (em && e.startMonth) {
-          const unit = ed ? 1 / 365 : 1 / 12;
-          const edge0 = startAt(y!, em, ed) - unit;
-          const edge1 = endAt(y!, em, ed) + unit;
-          const to1 = e.ongoing ? present + 1 : at1(e);
-          if (edge1 <= at0(e) || edge0 >= to1)
-            errors.push(
-              `${label} ${side === 'start' ? 'starts' : 'ends'} on ${formatDate(y!, em, ed, m.calendar)}, but its ${field} "${e.title}" is dated ${formatEventDates(e, m.calendar)}: the event must fall within a ${ed ? 'day' : 'month'} of the edge it begins or ends.`,
-            );
-          continue;
-        }
-        if (y! < from - GAP_TOLERANCE || y! > to + GAP_TOLERANCE)
-          errors.push(
-            `${label} ${side === 'start' ? 'starts' : 'ends'} in ${yr(y!)}, but its ${field} "${e.title}" is dated ${yr(from)}${to !== from ? ` – ${yr(to)}` : ''}: the event must fall within a year of the edge it begins or ends.`,
-          );
+  // eras: periods across all rows, dated like phases and cited; in one group they follow each other
+  const eras = m.eras ?? [];
+  const eraIds = new Set<string>();
+  if (m.eras !== undefined && !Array.isArray(m.eras)) errors.push('meta.eras must be a list.');
+  else {
+    for (const [i, era] of eras.entries()) {
+      const label = `Era "${era?.name || era?.id || i + 1}"`;
+      if (!era || typeof era !== 'object') {
+        errors.push(`${label} must be an object.`);
+        continue;
       }
+      if (!era.id || !ID_RE.test(era.id)) errors.push(`${label} needs an id of letters, digits and dashes.`);
+      else if (eraIds.has(era.id)) errors.push(`Duplicate era id "${era.id}".`);
+      eraIds.add(era.id);
+      if (!era.name) errors.push(`${label} has no name.`);
+      checkChronology(label, era.chronology);
+      if (!Array.isArray(era.sources) || !era.sources.length) errors.push(`${label} cites no source.`);
+      else for (const r of era.sources) if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
+      if (!checkSpan(label, era, era.chronology)) continue;
+      if (m.range && (era.start < m.range.start || (era.ongoing ? false : era.end! > m.range.end)))
+        errors.push(`${label} lies outside meta.range (${yr(m.range.start)} – ${yr(m.range.end)}).`);
+    }
+    const groups = new Map<string, typeof eras>();
+    for (const era of eras) if (era && Number.isInteger(era.start)) groups.set(era.group ?? '', [...(groups.get(era.group ?? '') ?? []), era]);
+    for (const list of groups.values()) {
+      const sorted = [...list].sort((a, b) => at0(a) - at0(b));
+      for (let i = 1; i < sorted.length; i++) {
+        const prev = sorted[i - 1];
+        if (prev.ongoing || at1(prev) > at0(sorted[i]))
+          errors.push(`Eras "${prev.name}" and "${sorted[i].name}" overlap: eras in one group follow each other (put alternatives in another group).`);
+      }
+    }
   }
+
+  // redirects: ids the timeline no longer has, to the id that replaced them (or null: removed on purpose)
+  if (ds.redirects !== undefined) {
+    if (!ds.redirects || typeof ds.redirects !== 'object' || Array.isArray(ds.redirects)) errors.push('redirects must be an object.');
+    else {
+      const live = new Set([...trackIds, ...uuids, ...eraIds]);
+      for (const [from, to] of Object.entries(ds.redirects)) {
+        if (!ID_RE.test(from)) errors.push(`Redirect "${from}" must be letters, digits and dashes.`);
+        else if (live.has(from)) errors.push(`Redirect "${from}" names an id the timeline still has.`);
+        if (to !== null && !(typeof to === 'string' && live.has(to))) errors.push(`Redirect "${from}" points to "${String(to)}", which isn't a row, event or era of this timeline (use null for a removed id).`);
+      }
+    }
+  }
+
+  // succession: the events that began and ended lifespan stretches, phases, memberships and eras
+  const eventsById = new Map(ds.events.map((e) => [e.uuid, e]));
+  /** Every dated part that can name the events that began and ended it: lifespans, phases, memberships, eras. */
+  const parts: { s: TrackSpan; label: string }[] = [
+    ...ds.tracks.flatMap((t) => {
+      const stretches = spanStretches(t.span);
+      return [
+        ...stretches.map((s, i) => ({ s, label: `Track "${t.id}" lifespan${stretches.length > 1 ? ` stretch ${i + 1}` : ''}` })),
+        ...(Array.isArray(t.phases) ? t.phases : []).map((p, i) => ({ s: p, label: `Track "${t.id}" phase "${p.name || i + 1}"` })),
+        ...(Array.isArray(t.memberOf) ? t.memberOf : []).flatMap((m, i) => (m && typeof m === 'object' ? [{ s: m, label: `Track "${t.id}" membership ${i + 1} (in "${m.row}")` }] : [])),
+      ];
+    }),
+    ...eras.flatMap((era, i) => (era && typeof era === 'object' ? [{ s: era as TrackSpan, label: `Era "${era.name || i + 1}"` }] : [])),
+  ];
+  for (const { s, label } of parts)
+    for (const side of ['start', 'end'] as const) {
+      const id = side === 'start' ? s.startEvent : s.endEvent;
+      if (id === undefined) continue;
+      const field = `${side}Event`;
+      const e = typeof id === 'string' ? eventsById.get(id) : undefined;
+      if (!e) {
+        errors.push(`${label} ${field} names unknown event "${String(id)}".`);
+        continue;
+      }
+      if (side === 'end' && s.ongoing) {
+        errors.push(`${label} is ongoing, so it has no end for an endEvent.`);
+        continue;
+      }
+      const y = side === 'start' ? s.start : s.end;
+      if (!Number.isInteger(y) || !Number.isInteger(e.start)) continue;
+      const from = e.start;
+      const to = e.ongoing ? present : (e.end ?? e.start);
+      // an edge and an event both given in months or days must meet within one of the edge's units (a day, or a
+      // month), so a row that changes hands several times in a year can't name the wrong change
+      const em = side === 'start' ? s.startMonth : s.endMonth;
+      const ed = side === 'start' ? s.startDay : s.endDay;
+      if (em && e.startMonth) {
+        const unit = ed ? 1 / 365 : 1 / 12;
+        const edge0 = startAt(y!, em, ed) - unit;
+        const edge1 = endAt(y!, em, ed) + unit;
+        const to1 = e.ongoing ? present + 1 : at1(e);
+        if (edge1 <= at0(e) || edge0 >= to1)
+          errors.push(
+            `${label} ${side === 'start' ? 'starts' : 'ends'} on ${formatDate(y!, em, ed, m.calendar)}, but its ${field} "${e.title}" is dated ${formatEventDates(e, m.calendar)}: the event must fall within a ${ed ? 'day' : 'month'} of the edge it begins or ends.`,
+          );
+        continue;
+      }
+      if (y! < from - GAP_TOLERANCE || y! > to + GAP_TOLERANCE)
+        errors.push(
+          `${label} ${side === 'start' ? 'starts' : 'ends'} in ${yr(y!)}, but its ${field} "${e.title}" is dated ${yr(from)}${to !== from ? ` – ${yr(to)}` : ''}: the event must fall within a year of the edge it begins or ends.`,
+        );
+    }
 
   for (const e of ds.events) {
     for (const l of e.links ?? []) {
