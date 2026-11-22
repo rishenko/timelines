@@ -141,7 +141,8 @@ An era must overlap `meta.range` when the timeline has one; it may run past it, 
 The app draws eras as **ages** in a strip under the ruler: one line per `group` (in the order groups first appear),
 lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
 a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
-clicking it centres the chart on it. The table view lists them in an Ages table.
+clicking it centres the chart on it. An age with a `url` has a ↗ link to that page just before its name (when its bar
+has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`.
 
 ### calendar
 

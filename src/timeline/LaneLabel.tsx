@@ -1,4 +1,4 @@
-import { safeUrl } from '../lib/urls.ts';
+import { hostOf, safeUrl } from '../lib/urls.ts';
 import { labelStopKey } from './keyboard.ts';
 import type { LaneDef } from './layout.ts';
 
@@ -29,15 +29,6 @@ interface Props {
   revealed?: boolean;
   onToggleRevealed?: () => void;
 }
-
-/** The site a link goes to, for its tooltip ("en.wikipedia.org"). */
-const hostOf = (url: string) => {
-  try {
-    return new URL(url, window.location.href).hostname;
-  } catch {
-    return url;
-  }
-};
 
 /**
  * The row's label, sticky at the left: name (a link to the row's page, when it has one), logo, edit buttons in edit

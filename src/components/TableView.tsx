@@ -290,19 +290,19 @@ export function TableView(p: Props) {
  * A section's rows with what the chart draws on their bars: the lifespan (shaded) and the phases (named periods),
  * each with its dates and the ranges its sources allow, in words.
  */
-/** A row's name, linked to its page (Track.url) when it has one, and its Wikidata id. */
-function RowName({ track }: { track: Track }) {
-  const url = safeUrl(track.url);
-  const qid = track.ids?.wikidata;
+/** A name linked to its page (a row's or an age's `url`) when it has one, then its Wikidata id. */
+function LinkedName({ name, url: raw, ids }: { name: string; url?: string; ids?: Track['ids'] }) {
+  const url = safeUrl(raw);
+  const qid = ids?.wikidata;
   return (
     <>
       {url ? (
         <a href={url} target="_blank" rel="noopener noreferrer">
-          {track.name}
+          {name}
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
       ) : (
-        track.name
+        name
       )}
       {qid && (
         <>
@@ -318,7 +318,11 @@ function RowName({ track }: { track: Track }) {
   );
 }
 
-/** A row's regions, each with the regions containing it and the sources placing the row there (as events cite them). */
+/** A row's name, linked to its page (Track.url) when it has one, and its Wikidata id. */
+function RowName({ track }: { track: Track }) {
+  return <LinkedName name={track.name} url={track.url} ids={track.ids} />;
+}
+
 function RegionCell({ regions }: { regions: RowRegion[] }) {
   if (!regions.length) return <span className="muted">None</span>;
   return (
@@ -557,7 +561,9 @@ function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
             const d = spanInWords(span, cal, data.sources);
             return (
               <tr key={era.id}>
-                <th scope="row">{era.name}</th>
+                <th scope="row">
+                  <LinkedName name={era.name} url={era.url} ids={era.ids} />
+                </th>
                 <td className="date">
                   {d.main}
                   {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}
