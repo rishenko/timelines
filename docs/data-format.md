@@ -1,4 +1,4 @@
-# Timeline data format (schema v5)
+# Timeline data format (schema v6)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
