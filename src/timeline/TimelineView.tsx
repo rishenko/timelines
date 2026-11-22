@@ -445,6 +445,10 @@ export function TimelineView(props: Props) {
             {visibleTicks.map((t) => (
               <div key={t} className="tl-gridline" style={{ left: scale.x(t) }} />
             ))}
+          </div>
+          {/* gap breaks have their own layer, over the rows' backgrounds and spans (which cover the grid), under the
+              marks, so every row shows them */}
+          <div className="tl-gaps" style={{ left: labelW }}>
             {gaps.map((g) => (
               <div key={g.y0} className="tl-gap-band" style={{ left: g.x0, width: g.x1 - g.x0 }} />
             ))}

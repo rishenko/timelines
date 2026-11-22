@@ -74,7 +74,7 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
       ))}
       {gaps.map((g) => (
         <div key={g.y0} className="tl-gap-label" style={{ left: labelW + g.x0, width: g.x1 - g.x0 }}>
-          <span title={`${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)} compressed`}>⋯ {g.y1 - g.y0} yrs ⋯</span>
+          <span title={`${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)} compressed`}>{g.y1 - g.y0} yrs</span>
         </div>
       ))}
       {edgeLinks?.map((l) => (
