@@ -782,6 +782,29 @@
       "url": "https://en.wikipedia.org/wiki/Prussia",
       "phases": [
         {
+          "name": "Margraviate of Brandenburg",
+          "start": 1157,
+          "end": 1618,
+          "startDates": [
+            {
+              "year": 1157,
+              "source": {
+                "sourceKey": "wp-margraviate-of-brandenburg",
+                "sourceLocation": "infobox year_start: 1157"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-margraviate-of-brandenburg",
+                "sourceLocation": "infobox event2: Brandenburg-Prussia, 27 August 1618"
+              }
+            }
+          ]
+        },
+        {
           "name": "Brandenburg–Prussia",
           "start": 1618,
           "end": 1701,
@@ -856,14 +879,14 @@
       "memberOf": [
         {
           "row": "hre",
-          "start": 1618,
+          "start": 1157,
           "end": 1806,
           "startDates": [
             {
-              "year": 1618,
+              "year": 1157,
               "source": {
-                "sourceKey": "wp-brandenburg-prussia",
-                "sourceLocation": "infobox year_start: 1618"
+                "sourceKey": "wp-margraviate-of-brandenburg",
+                "sourceLocation": "infobox year_start: 1157"
               }
             }
           ],
@@ -1120,6 +1143,94 @@
       "parent": "southern-europe",
       "url": "https://en.wikipedia.org/wiki/Serbia",
       "span": [
+        {
+          "start": 780,
+          "end": 960,
+          "startDates": [
+            {
+              "year": 780,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia-early-medieval",
+                "sourceLocation": "infobox year_start: 780"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 960,
+              "source": {
+                "sourceKey": "wp-principality-of-serbia-early-medieval",
+                "sourceLocation": "infobox year_end: 960"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1091,
+          "end": 1371,
+          "startDates": [
+            {
+              "year": 1091,
+              "source": {
+                "sourceKey": "wp-grand-principality-of-serbia",
+                "sourceLocation": "infobox year_start: 1091"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1371,
+              "source": {
+                "sourceKey": "wp-serbian-empire",
+                "sourceLocation": "infobox year_end: 1371"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1402,
+          "end": 1442,
+          "startDates": [
+            {
+              "year": 1402,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1402–1442"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1442,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1402–1442"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1444,
+          "end": 1459,
+          "startDates": [
+            {
+              "year": 1444,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1444–1459"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1459,
+              "source": {
+                "sourceKey": "wp-serbian-despotate",
+                "sourceLocation": "infobox life span: 1444–1459"
+              }
+            }
+          ]
+        },
         {
           "start": 1804,
           "end": 1813,
@@ -1450,15 +1561,17 @@
       "parent": "southern-europe",
       "url": "https://en.wikipedia.org/wiki/Croatia",
       "span": {
-        "start": 1527,
+        "start": 700,
         "ongoing": true,
+        "circa": true,
         "startDates": [
           {
-            "year": 1527,
+            "year": 700,
             "source": {
-              "sourceKey": "wp-kingdom-of-croatia-habsburg",
-              "sourceLocation": "infobox year_start: 1527"
-            }
+              "sourceKey": "wp-duchy-of-croatia",
+              "sourceLocation": "infobox year_start: 7th/8th century"
+            },
+            "note": "The infobox gives \"7th/8th century\"; 700 as in the Medieval World timeline."
           }
         ],
         "ongoingSources": [
@@ -1469,6 +1582,30 @@
         ]
       },
       "phases": [
+        {
+          "name": "Kingdom of Croatia (in union with Hungary)",
+          "start": 1102,
+          "end": 1526,
+          "startDates": [
+            {
+              "year": 1102,
+              "source": {
+                "sourceKey": "wp-croatia-in-personal-union-with-hungary",
+                "sourceLocation": "infobox year_start: 1102"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1526,
+              "source": {
+                "sourceKey": "wp-croatia-in-personal-union-with-hungary",
+                "sourceLocation": "infobox year_end: 1526"
+              }
+            }
+          ],
+          "endEvent": "battle-of-mohacs"
+        },
         {
           "name": "Kingdom of Croatia (Habsburg)",
           "start": 1527,
@@ -4971,6 +5108,35 @@
       }
     },
     {
+      "id": "duchy-of-burgundy",
+      "name": "Duchy of Burgundy",
+      "color": "#8a3a5a",
+      "parent": "western-europe",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Burgundy",
+      "span": {
+        "start": 918,
+        "end": 1790,
+        "startDates": [
+          {
+            "year": 918,
+            "source": {
+              "sourceKey": "wp-duchy-of-burgundy",
+              "sourceLocation": "infobox year_start: c. 918"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1790,
+            "source": {
+              "sourceKey": "wp-duchy-of-burgundy",
+              "sourceLocation": "infobox year_end: 1790"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "confederation-of-the-rhine",
       "name": "Confederation of the Rhine",
       "color": "#7a8a3a",
@@ -5424,6 +5590,68 @@
       ]
     },
     {
+      "id": "aragon",
+      "name": "Kingdom of Aragon",
+      "color": "#c0702a",
+      "parent": "southern-europe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aragon",
+      "span": {
+        "start": 1035,
+        "end": 1707,
+        "startDates": [
+          {
+            "year": 1035,
+            "source": {
+              "sourceKey": "wp-kingdom-of-aragon",
+              "sourceLocation": "infobox year_start: 1035"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1707,
+            "source": {
+              "sourceKey": "wp-kingdom-of-aragon",
+              "sourceLocation": "infobox year_end: 1707"
+            }
+          }
+        ],
+        "endEvent": "war-of-the-spanish-succession"
+      },
+      "memberOf": [
+        {
+          "row": "crown-of-aragon",
+          "start": 1162,
+          "end": 1707,
+          "startDates": [
+            {
+              "year": 1162,
+              "source": {
+                "sourceKey": "wp-crown-of-aragon",
+                "sourceLocation": "infobox year_start: 1162"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1707,
+              "source": {
+                "sourceKey": "wp-kingdom-of-aragon",
+                "sourceLocation": "infobox year_end: 1707"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-crown-of-aragon",
+              "sourceLocation": "infobox event_start: Aragon–Barcelona Union, 1162"
+            }
+          ],
+          "endEvent": "war-of-the-spanish-succession"
+        }
+      ]
+    },
+    {
       "id": "iberian-union",
       "name": "Iberian Union",
       "color": "#9a6a3a",
@@ -5634,26 +5862,65 @@
       ]
     },
     {
-      "id": "italy",
-      "name": "Italy",
-      "color": "#2a9a5a",
+      "id": "savoy",
+      "name": "Savoy",
+      "color": "#5a7a9a",
       "parent": "southern-europe",
-      "url": "https://en.wikipedia.org/wiki/Italy",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Savoy",
       "phases": [
         {
           "name": "Duchy of Savoy",
           "start": 1416,
-          "end": 1720,
+          "end": 1792,
           "startDates": [
             {
               "year": 1416,
               "source": {
                 "sourceKey": "wp-duchy-of-savoy",
-                "sourceLocation": "infobox year_start: 1416"
+                "sourceLocation": "infobox life span: 1416–1792"
               }
             }
           ],
           "endDates": [
+            {
+              "year": 1792,
+              "source": {
+                "sourceKey": "wp-duchy-of-savoy",
+                "sourceLocation": "infobox life span: 1416–1792"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Duchy of Savoy (restored)",
+          "start": 1814,
+          "end": 1847,
+          "startDates": [
+            {
+              "year": 1814,
+              "source": {
+                "sourceKey": "wp-duchy-of-savoy",
+                "sourceLocation": "infobox life span: 1814–1847"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1847,
+              "source": {
+                "sourceKey": "wp-duchy-of-savoy",
+                "sourceLocation": "infobox life span: 1814–1847"
+              }
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "italy",
+          "start": 1720,
+          "end": 1792,
+          "startDates": [
             {
               "year": 1720,
               "source": {
@@ -5661,8 +5928,61 @@
                 "sourceLocation": "lead: \"In 1720, the island and its kingdom were ceded by the Habsburg and Bourbon claimants from the Spanish throne to the Duke of Savoy, Victor Amadeus II.\""
               }
             }
+          ],
+          "endDates": [
+            {
+              "year": 1792,
+              "source": {
+                "sourceKey": "wp-duchy-of-savoy",
+                "sourceLocation": "infobox life span: 1416–1792"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-sardinia",
+              "sourceLocation": "lead: \"The kingdom's history can be divided into two distinct phases, one as part of the Aragonese and Spanish crowns (1324–1720) and one as a possession of the Savoya\""
+            }
           ]
         },
+        {
+          "row": "italy",
+          "start": 1814,
+          "end": 1847,
+          "startDates": [
+            {
+              "year": 1814,
+              "source": {
+                "sourceKey": "wp-duchy-of-savoy",
+                "sourceLocation": "infobox life span: 1814–1847"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1847,
+              "source": {
+                "sourceKey": "wp-duchy-of-savoy",
+                "sourceLocation": "infobox life span: 1814–1847"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-sardinia",
+              "sourceLocation": "lead: \"The Congress of Vienna (1814–1815), which restructured Europe after Napoleon's defeat, returned to Savoy its mainland possessions and augmented them with Liguri\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "color": "#2a9a5a",
+      "parent": "southern-europe",
+      "url": "https://en.wikipedia.org/wiki/Italy",
+      "phases": [
         {
           "name": "Kingdom of Sardinia",
           "start": 1720,
@@ -6101,33 +6421,36 @@
     },
     {
       "id": "sicily",
-      "name": "Kingdom of Sicily",
+      "name": "Sicily",
       "color": "#6a9a4a",
       "parent": "southern-europe",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_Sicily",
-      "span": {
-        "start": 1130,
-        "end": 1816,
-        "startDates": [
-          {
-            "year": 1130,
-            "source": {
-              "sourceKey": "wp-kingdom-of-sicily",
-              "sourceLocation": "infobox year_start: 1130"
+      "phases": [
+        {
+          "name": "Kingdom of Sicily",
+          "start": 1130,
+          "end": 1816,
+          "startDates": [
+            {
+              "year": 1130,
+              "source": {
+                "sourceKey": "wp-kingdom-of-sicily",
+                "sourceLocation": "infobox year_start: 1130"
+              }
             }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1816,
-            "source": {
-              "sourceKey": "wp-kingdom-of-sicily",
-              "sourceLocation": "infobox year_end: 1816"
+          ],
+          "endDates": [
+            {
+              "year": 1816,
+              "source": {
+                "sourceKey": "wp-kingdom-of-sicily",
+                "sourceLocation": "infobox year_end: 1816"
+              }
             }
-          }
-        ],
-        "endEvent": "two-sicilies"
-      }
+          ],
+          "endEvent": "two-sicilies"
+        }
+      ]
     },
     {
       "id": "ragusa",
@@ -7085,14 +7408,14 @@
       "parent": "southern-europe",
       "url": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina",
       "span": {
-        "start": 1580,
+        "start": 1154,
         "ongoing": true,
         "startDates": [
           {
-            "year": 1580,
+            "year": 1154,
             "source": {
-              "sourceKey": "wp-bosnia-eyalet",
-              "sourceLocation": "infobox year_start: 1580"
+              "sourceKey": "wp-banate-of-bosnia",
+              "sourceLocation": "infobox year_start: 1154"
             }
           }
         ],
@@ -7258,14 +7581,14 @@
       "memberOf": [
         {
           "row": "ottoman-empire",
-          "start": 1580,
+          "start": 1463,
           "end": 1908,
           "startDates": [
             {
-              "year": 1580,
+              "year": 1463,
               "source": {
-                "sourceKey": "wp-bosnia-eyalet",
-                "sourceLocation": "infobox year_start: 1580"
+                "sourceKey": "wp-bosnia-and-herzegovina",
+                "sourceLocation": "infobox: Ottoman conquest (1463)"
               }
             }
           ],
@@ -7676,6 +7999,35 @@
       ]
     },
     {
+      "id": "teutonic-order",
+      "name": "State of the Teutonic Order",
+      "color": "#4a4a4a",
+      "parent": "eastern-europe",
+      "url": "https://en.wikipedia.org/wiki/State_of_the_Teutonic_Order",
+      "span": {
+        "start": 1226,
+        "end": 1561,
+        "startDates": [
+          {
+            "year": 1226,
+            "source": {
+              "sourceKey": "wp-state-of-the-teutonic-order",
+              "sourceLocation": "infobox year_start: 1226"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1561,
+            "source": {
+              "sourceKey": "wp-state-of-the-teutonic-order",
+              "sourceLocation": "infobox year_end: 1561"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "polish-lithuanian-commonwealth",
       "name": "Polish–Lithuanian Commonwealth",
       "color": "#a03050",
@@ -7964,14 +8316,14 @@
       "parent": "eastern-europe",
       "url": "https://en.wikipedia.org/wiki/Hungary",
       "span": {
-        "start": 1000,
+        "start": 895,
         "ongoing": true,
         "startDates": [
           {
-            "year": 1000,
+            "year": 895,
             "source": {
-              "sourceKey": "wp-kingdom-of-hungary",
-              "sourceLocation": "infobox year_start: 1000"
+              "sourceKey": "wp-principality-of-hungary",
+              "sourceLocation": "infobox life span: c. 895–1000"
             }
           }
         ],
@@ -8438,14 +8790,14 @@
       "parent": "eastern-europe",
       "url": "https://en.wikipedia.org/wiki/Czech_Republic",
       "span": {
-        "start": 1198,
+        "start": 870,
         "ongoing": true,
         "startDates": [
           {
-            "year": 1198,
+            "year": 870,
             "source": {
-              "sourceKey": "wp-kingdom-of-bohemia",
-              "sourceLocation": "infobox year_start: 1198"
+              "sourceKey": "wp-duchy-of-bohemia",
+              "sourceLocation": "infobox year_start: c. 870"
             }
           }
         ],
@@ -9536,6 +9888,14 @@
         "wikipedia"
       ]
     },
+    "wp-margraviate-of-brandenburg": {
+      "name": "Margraviate of Brandenburg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Margraviate_of_Brandenburg",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-brandenburg-prussia": {
       "name": "Brandenburg–Prussia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Brandenburg–Prussia",
@@ -9600,6 +9960,38 @@
         "wikipedia"
       ]
     },
+    "wp-principality-of-serbia-early-medieval": {
+      "name": "Principality of Serbia (early medieval) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia_(early_medieval)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-grand-principality-of-serbia": {
+      "name": "Grand Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Principality_of_Serbia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-serbian-empire": {
+      "name": "Serbian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbian_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-serbian-despotate": {
+      "name": "Serbian Despotate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbian_Despotate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-revolutionary-serbia": {
       "name": "Revolutionary Serbia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
@@ -9656,9 +10048,9 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-croatia-habsburg": {
-      "name": "Kingdom of Croatia (Habsburg) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Croatia_(Habsburg)",
+    "wp-duchy-of-croatia": {
+      "name": "Duchy of Croatia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Croatia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -9667,6 +10059,22 @@
     "wp-croatia": {
       "name": "Croatia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Croatia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-croatia-in-personal-union-with-hungary": {
+      "name": "Croatia in personal union with Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Croatia_in_personal_union_with_Hungary",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-croatia-habsburg": {
+      "name": "Kingdom of Croatia (Habsburg) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Croatia_(Habsburg)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -10536,6 +10944,14 @@
         "wikipedia"
       ]
     },
+    "wp-duchy-of-burgundy": {
+      "name": "Duchy of Burgundy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Burgundy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-crown-of-castile": {
       "name": "Crown of Castile (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Crown_of_Castile",
@@ -10619,6 +11035,14 @@
     "wp-kingdom-of-navarre": {
       "name": "Kingdom of Navarre (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_Navarre",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-aragon": {
+      "name": "Kingdom of Aragon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aragon",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -11016,9 +11440,9 @@
         "wikipedia"
       ]
     },
-    "wp-bosnia-eyalet": {
-      "name": "Bosnia Eyalet (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Bosnia_Eyalet",
+    "wp-banate-of-bosnia": {
+      "name": "Banate of Bosnia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Banate_of_Bosnia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -11027,6 +11451,14 @@
     "wp-bosnia-and-herzegovina": {
       "name": "Bosnia and Herzegovina (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bosnia-eyalet": {
+      "name": "Bosnia Eyalet (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bosnia_Eyalet",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -11112,6 +11544,14 @@
         "wikipedia"
       ]
     },
+    "wp-state-of-the-teutonic-order": {
+      "name": "State of the Teutonic Order (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/State_of_the_Teutonic_Order",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-crown-of-the-kingdom-of-poland": {
       "name": "Crown of the Kingdom of Poland (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Crown_of_the_Kingdom_of_Poland",
@@ -11184,9 +11624,9 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-principality-of-hungary": {
+      "name": "Principality of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -11195,6 +11635,14 @@
     "wp-hungary": {
       "name": "Hungary (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Hungary",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -11280,9 +11728,9 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-bohemia": {
-      "name": "Kingdom of Bohemia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Bohemia",
+    "wp-duchy-of-bohemia": {
+      "name": "Duchy of Bohemia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duchy_of_Bohemia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -11291,6 +11739,14 @@
     "wp-czech-republic": {
       "name": "Czech Republic (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Czech_Republic",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-bohemia": {
+      "name": "Kingdom of Bohemia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Bohemia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -13451,6 +13907,7 @@
       "start": 1526,
       "tracks": [
         "hungary",
+        "croatia",
         "ottoman-empire",
         "habsburg-monarchy"
       ],
