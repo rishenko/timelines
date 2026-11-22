@@ -138,6 +138,7 @@ Setup, commands, the code map, the data tooling and the checks are in [docs/deve
 | [docs/data-format.md](docs/data-format.md) | The timeline file format, the rules it must pass, and how to share a timeline |
 | [docs/examples/example-timeline.json](docs/examples/example-timeline.json) | A complete example to copy |
 | [docs/development.md](docs/development.md) | Setup, commands, code map, data tooling and checks |
+| [docs/glossary.md](docs/glossary.md) | The words the app and the docs use for what a reader sees |
 | [pipelines/README.md](pipelines/README.md) | The generators that build Medieval World and Modern States from a Wikipedia dump |
 | [docs/ancient-classical-sources.md](docs/ancient-classical-sources.md) | How Ancient and Classical was made from two earlier timelines, and the changes since |
 | [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where its dates come from, and the judgment calls |
