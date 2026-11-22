@@ -76,8 +76,8 @@ The three link to each other where they meet, at 650 and 1500.
   Categories shows only the kinds you tick; the table and an event's details name its categories. Golden ages and long spans in
   religion, law, culture or the economy sit on a line of their own just under each row's phases.
 - **Ages:** periods across the whole timeline, such as the Islamic Golden Age or the Enlightenment, in a strip under
-  the ruler, and a region's own ages (the Nile Valley's Old Kingdom) on that region's band; click one for its article
-  and its sources (its ↗, on a wide bar, opens the article directly).
+  the ruler, and a region's own ages (the Nile Valley's Old Kingdom) on that region's band; click one for its details,
+  article and sources in the side panel (its ↗, on a wide bar, opens the article directly).
 - **Comparison sets:** pick rows from anywhere (the + on a row's label, the "Add a row" box, or "Compare these rows"
   under a region filter) and see them side by side: as picked, related rows together, or by start date.
 - **Hidden rows:** rows with nothing near the years on screen are hidden as you move (or drawn as thin lines), so a

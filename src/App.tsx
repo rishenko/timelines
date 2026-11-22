@@ -214,6 +214,18 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const [selectedId, setSelectedId] = useState<string | null>(() =>
     initialUrl.selected && data.events.some((e) => e.uuid === initialUrl.selected) ? initialUrl.selected : null,
   );
+  // an age's details (clicked in the strip or a band): one panel at a time, so opening it closes an event's and the
+  // other way round
+  const [selectedAgeId, setSelectedAgeId] = useState<string | null>(null);
+  const [lastSelectedId, setLastSelectedId] = useState(selectedId);
+  if (selectedId !== lastSelectedId) {
+    setLastSelectedId(selectedId);
+    if (selectedId) setSelectedAgeId(null);
+  }
+  const openAge = (id: string) => {
+    setSelectedId(null);
+    setSelectedAgeId(id);
+  };
   const selectAndFocus = (id: string) => {
     const e = resolvedById.get(id);
     if (!e) return;
@@ -333,7 +345,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
     setHideOutOfView(on);
     setAnnouncement(on ? 'Rows with nothing in view are hidden' : 'All rows shown');
   };
-  const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId));
+  const selectedAge = selectedAgeId ? ages.find((a) => a.era.id === selectedAgeId) : undefined;
+  const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId)) || !!selectedAge;
 
   // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
   // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
@@ -678,6 +691,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
             onCenterYearChange={onCenterYearChange}
             onZoomIn={(year) => zoomStep(1, year)}
             ages={ages}
+            selectedAgeId={selectedAgeId}
+            onOpenAge={openAge}
             onPinchZoom={(dir) => void zoomStep(dir)}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}
@@ -703,6 +718,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
           onCopyLink={(id) => void library.copyEventLink(id)}
           mapUrl={mapUrl}
           categoriesOf={categories.info}
+          selectedAge={selectedAge}
+          onCloseAge={() => setSelectedAgeId(null)}
         />
       </main>
 

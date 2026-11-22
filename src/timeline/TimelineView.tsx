@@ -45,6 +45,9 @@ interface Props {
   periodLane?: ReadonlySet<string>;
   /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler, and bands on the rows they name. */
   ages?: PlacedAge[];
+  /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
+  selectedAgeId?: string | null;
+  onOpenAge?: (id: string) => void;
   /** Each event's categories (its main kind draws a glyph; both are in its accessible name). */
   categories?: Map<string, EventCategories>;
   /** Visible events, re-plotted under the selected chronologies. */
@@ -516,6 +519,8 @@ export function TimelineView(props: Props) {
             viewLeft={view.left}
             cal={cal}
             sources={props.data.sources}
+            selectedId={props.selectedAgeId}
+            onOpen={props.onOpenAge}
           />
         )}
 
@@ -626,6 +631,8 @@ export function TimelineView(props: Props) {
                     viewLeft={view.left}
                     cal={cal}
                     sources={props.data.sources}
+                    selectedId={props.selectedAgeId}
+                    onOpen={props.onOpenAge}
                   />
                 </div>
               )}

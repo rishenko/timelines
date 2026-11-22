@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // Ages (meta.eras) in the app: the strip under the ruler in the chart, and the Ages table in the table view.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { cleanup, screen, within } from '@testing-library/react';
+import { cleanup, fireEvent, screen, within } from '@testing-library/react';
 import { renderApp } from './test/app.tsx';
 import { plainTimeline } from './test/fixtures.ts';
 
@@ -98,6 +98,23 @@ describe('ages', () => {
     cleanup();
     renderApp(`timeline=harbor-towns&view=table`, [d]);
     expect(screen.getByRole('table', { name: /^Ages/ }).textContent).toContain(`${row.name}: Salt Coast`);
+  });
+
+  it('clicking an age opens its details in the side panel: region, article and sources as links; Escape closes it', () => {
+    const d = withAges();
+    const row = d.tracks[0];
+    d.meta.eras![0].tracks = [row.id];
+    d.meta.eras![0].url = 'https://en.wikipedia.org/wiki/Salt_Years';
+    renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
+    const b = within(screen.getByRole('group', { name: `Ages in ${row.name}` })).getByRole('button', { name: /^Salt Years/ });
+    fireEvent.click(b);
+    expect(b.getAttribute('aria-pressed')).toBe('true');
+    const panel = screen.getByRole('complementary', { name: 'Salt Years' });
+    expect(within(panel).getByText(row.name)).toBeTruthy();
+    expect(within(panel).getByRole('link', { name: /^Article on en\.wikipedia\.org/ }).getAttribute('href')).toBe('https://en.wikipedia.org/wiki/Salt_Years');
+    expect(within(panel).getByRole('heading', { name: 'Sources' })).toBeTruthy();
+    fireEvent.keyDown(panel, { key: 'Escape' });
+    expect(screen.queryByRole('complementary', { name: 'Salt Years' })).toBeNull();
   });
 
   it('a timeline without ages has no strip', () => {

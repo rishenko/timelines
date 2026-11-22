@@ -1,11 +1,10 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment } from 'react';
 import type { Calendar, Dataset } from '../types.ts';
 import type { PlacedAge } from '../lib/eras.ts';
 import { at0, at1 } from '../lib/subYear.ts';
 import { hostOf, safeUrl } from '../lib/urls.ts';
 import { citationsInWords, spanInWords } from '../lib/table.ts';
 import type { Scale } from './scale.ts';
-import { SourceList } from '../components/SourceList.tsx';
 
 /** One line of the strip: a 24 px target (WCAG 2.5.8) around a 15 px bar. */
 export const AGE_LINE_PX = 24;
@@ -27,6 +26,9 @@ interface Props {
   viewLeft: number;
   cal: Calendar;
   sources: Dataset['sources'];
+  /** The age whose details are open (drawn selected), and opening an age's details in the side panel. */
+  selectedId?: string | null;
+  onOpen?: (id: string) => void;
 }
 
 /**
@@ -35,14 +37,14 @@ interface Props {
  * it. An age with a page (`url`) has a ↗ link to it just before its name, when its bar has room for both (two 24 px
  * targets); otherwise the Ages table links it. It stays on screen as the chart scrolls down, like the ruler.
  */
-export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources }: Props) {
+export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, selectedId, onOpen }: Props) {
   if (!ages.length) return null;
   return (
     <div className="tl-ages" style={{ width, height: lines * AGE_LINE_PX }} role="group" aria-label="Ages">
       <div className="tl-ages-corner" style={{ width: labelW }}>
         Ages
       </div>
-      <AgeBars ages={ages} scale={scale} labelW={labelW} viewLeft={viewLeft} cal={cal} sources={sources} />
+      <AgeBars ages={ages} scale={scale} labelW={labelW} viewLeft={viewLeft} cal={cal} sources={sources} selectedId={selectedId} onOpen={onOpen} />
     </div>
   );
 }
@@ -53,29 +55,9 @@ type BarProps = Omit<Props, 'lines' | 'width'>;
  * The ages' buttons (and ↗ links), placed by their line: shared by the Ages strip and the rows' age bands. Positions
  * are from the top of their container, `labelW` in from its left edge.
  */
-export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources }: BarProps) {
-  // clicking an age (or Enter on it) opens its details: dates, region, its article and its sources as links. However
-  // narrow its bar, every age reaches its article and sources this way; it never moves the chart.
-  const [open, setOpen] = useState<{ age: PlacedAge; from: HTMLElement; x: number; y: number } | null>(null);
-  const pop = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = pop.current;
-    if (!open || !el) return;
-    // the popover API puts it in the top layer (over sticky rows and the strip); light dismiss and Escape close it
-    try {
-      if (!el.matches(':popover-open')) el.showPopover();
-    } catch {
-      // no popover API (jsdom): it's shown as a plain box
-    }
-    el.querySelector<HTMLElement>('a')?.focus();
-    const closed = (ev: Event) => {
-      if ((ev as ToggleEvent).newState !== 'closed') return;
-      if (!document.activeElement || document.activeElement === document.body || el.contains(document.activeElement)) open.from.focus();
-      setOpen(null);
-    };
-    el.addEventListener('toggle', closed);
-    return () => el.removeEventListener('toggle', closed);
-  }, [open]);
+export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, selectedId, onOpen }: BarProps) {
+  // clicking an age (or Enter on it) opens its details in the side panel, as an event's do: dates, region, its article
+  // and its sources as links. However narrow its bar, every age reaches them this way; it never moves the chart.
   // a named line (a band with two or more): its name at the line's left end, kept on screen; the ages' names and links
   // on that line start after it
   const named = new Map<number, { name: string; x0: number }>();
@@ -143,22 +125,18 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources }: BarProp
           cut && 'Runs on past this timeline',
           from && `from ${from}`,
           url && linked && `↗ opens its article on ${host}`,
-          'Click for its article and sources',
+          'Click for its article and sources in the panel',
         ];
         return (
           <Fragment key={era.id}>
             <button
-              className="tl-age"
+              className={`tl-age${selectedId === era.id ? ' selected' : ''}`}
               style={style}
               title={tip.filter(Boolean).join('\n')}
               aria-label={`${era.name}${lineName ? ` (${lineName})` : ''}, ${dates.main}, age: details, article and sources`}
-              aria-haspopup="dialog"
-              aria-expanded={open?.age.era.id === era.id}
-              onClick={(ev) => {
-                const r = ev.currentTarget.getBoundingClientRect();
-                // under the bar, where it was clicked (or, from the keyboard, its visible start)
-                setOpen({ age: ages.find((a) => a.era.id === era.id)!, from: ev.currentTarget, x: ev.clientX || Math.max(r.left, 8), y: r.bottom });
-              }}
+              aria-pressed={selectedId === era.id}
+              data-age-id={era.id}
+              onClick={() => onOpen?.(era.id)}
             >
               <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>
                 <span className="name" style={{ left: linked ? linkAt : nameAt, paddingLeft: linked ? LINK_INSET_PX + 5 : undefined }}>
@@ -182,46 +160,6 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources }: BarProp
           </Fragment>
         );
       })}
-      {open && (
-        <div
-          ref={pop}
-          popover="auto"
-          className="tl-age-pop"
-          role="dialog"
-          aria-label={open.age.era.name}
-          style={{ left: Math.max(8, Math.min(open.x, window.innerWidth - 328)), top: open.y + 4 }}
-        >
-          <AgeDetails age={open.age} cal={cal} sources={sources} />
-        </div>
-      )}
-    </>
-  );
-}
-
-/** An age's details in its popover: name, region, dates, its article and its sources as links. */
-function AgeDetails({ age, cal, sources }: { age: PlacedAge; cal: Calendar; sources: Dataset['sources'] }) {
-  const { era, span, lineName } = age;
-  const dates = spanInWords(span, cal, sources);
-  const url = safeUrl(era.url);
-  return (
-    <>
-      <p className="title">
-        {era.name}
-        {lineName && <span className="muted"> · {lineName}</span>}
-      </p>
-      <p>
-        {dates.main}
-        {dates.ranges.length > 0 && <span className="muted small"> ({dates.ranges.join('; ')})</span>}
-      </p>
-      {url && (
-        <p>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            Article on {hostOf(url)} ↗<span className="sr-only"> (opens in a new tab)</span>
-          </a>
-        </p>
-      )}
-      <p className="muted small">Sources</p>
-      <SourceList refs={era.sources} sources={sources} />
     </>
   );
 }
