@@ -116,9 +116,16 @@ def main():
                 dropped['quote not found'] += 1
                 continue
             c['article'], c['page_id'], c['rev_id'] = title, a['page_id'], a['rev_id']
+            # a row groups under the article it links only when that article is an event; a row whose link is a
+            # person or organisation ("Sinn Féin", "Irish Volunteers") stands alone, named by its own text
             cl = c.get('cluster')
             cp = T.page(cl) if cl else None
-            c['cluster'] = cp[1] if cp else title
+            if c['kind'] != 'table':
+                c['cluster'], c['own'] = title, False
+            elif cp and T.event_like(cp[0], cp[2], cp[1]):
+                c['cluster'], c['own'] = cp[1], False
+            else:
+                c['cluster'], c['own'] = f'{title}: {c["title_suggestion"][:100]}', True
             cands.append(c)
 
     # dedupe: one candidate per (cluster, start, end), keeping the most precise kind; the rest count as confirmations
@@ -162,7 +169,7 @@ def main():
     if classify:
         shim = WpShim(T)
         for r in primary.values():
-            e = {'title': r['cluster'], 'descr': r['quote'][:300], 'tracks': [], 'sources': [{'sourceKey': 'wp', 'sourceLocation': r['sourceLocation']}]}
+            e = {'title': r['title_suggestion'] if r.get('own') else r['cluster'], 'descr': r['quote'][:300], 'tracks': [], 'sources': [{'sourceKey': 'wp', 'sourceLocation': r['sourceLocation']}]}
             ds = {'sources': {'wp': {'url': WIKI + r['cluster'].replace(' ', '_')}}, 'tracks': []}
             got = classify(e, ds, shim)
             r['category'] = got

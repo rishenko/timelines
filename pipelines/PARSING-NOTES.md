@@ -185,6 +185,8 @@ All of these have unit tests in `extract/test_dates.py`.
   - The seed's own name is removed first, so "World War I cryptography" doesn't pass on "war".
   - Titles about many events or about things are kept out: lists, histories, effects, orders of battle, camps, stamps (`NOT_EVENT_TITLE`).
   - **False positives:** in WW1, 189 of 1,324 articles had no infobox, and about 1 in 5 of those aren't single events (World war, Imperial War Cabinet, Aviation in World War I; the seed's other name "First World War" isn't stripped).
+- **Clusters for timeline rows:** a row groups under the article it links only when that article is an event. Otherwise it stands alone, named by its own text, because many rows link a person or organisation first ("Sinn Féin", "Irish Volunteers" in Timeline of the Irish War of Independence).
+  - The cost: those rows are classified from their text alone, and the shared classifier has no rules for ambushes, killings, raids or arrests. 599 of the Easter Rising's 1,101 clusters got no category.
 - **Coverage, 1848:** 13 of the 16 expected events that have their own article were found. Misses: Frankfurt National Assembly (legislature infobox), Roman Republic (1849–1850) (country infobox), Chartism (a movement, no event title).
 - **Easter Rising:** its campaignbox (Irish independence) covers 1912–1923, so 73 of 82 articles are the wider war. The window sorts the 596 rows outside 1915–1921 last.
 
