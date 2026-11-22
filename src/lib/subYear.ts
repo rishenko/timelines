@@ -52,6 +52,14 @@ export function incrementButton(inc: number): string {
   return u ? { quarter: '3 mo', month: 'Month', week: 'Week', day: 'Day' }[u] : String(inc);
 }
 
+/**
+ * A zoom step button's accessible name: as spoken for a number ("10 years per tick", which begins with its visible
+ * "10"); below a year, its visible name first ("Day: 1 day per tick"), so speech input can say what it sees (2.5.3).
+ */
+export function incrementName(inc: number): string {
+  return subYearUnit(inc) ? `${incrementButton(inc)}: ${incrementSpoken(inc)}` : incrementSpoken(inc);
+}
+
 /** A zoom step's name in links (?inc=): its unit name below a year, else its number. */
 export function incrementParam(inc: number): string {
   return subYearUnit(inc) ?? String(inc);

@@ -147,7 +147,12 @@ export function SearchBox(props: Props) {
           // keep focus in the input so a click picks instead of blurring and closing first
           onMouseDown={(e) => e.preventDefault()}
         >
-          {options.length === 0 && <li className="search-empty muted">No rows or events match.</li>}
+          {/* an option that can't be picked, so the listbox holds only options (an empty list's message included) */}
+          {options.length === 0 && (
+            <li role="option" aria-disabled="true" aria-selected="false" className="search-empty muted">
+              No rows or events match.
+            </li>
+          )}
           {options.map((o, i) => {
             const head = o.kind === 'entry' && o.entry.kind !== lastKind ? HEADS[o.entry.kind] : null;
             if (o.kind === 'entry') lastKind = o.entry.kind;

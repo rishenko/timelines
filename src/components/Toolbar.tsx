@@ -1,4 +1,4 @@
-import { incrementButton, incrementSpoken } from '../lib/subYear.ts';
+import { incrementButton, incrementName } from '../lib/subYear.ts';
 import type { ReactNode } from 'react';
 import type { PanelName } from '../state/panels.ts';
 import type { View } from '../state/url.ts';
@@ -72,17 +72,17 @@ export function Toolbar(p: Props) {
       {p.dating}
       {p.view === 'timeline' && (
         <>
-          <div className="group" role="group" aria-label="Years per tick">
+          <div className="group" role="group" aria-label={p.increments.some((i) => i < 1) ? 'Zoom: time per tick' : 'Years per tick'}>
             {p.increments.map((inc) => (
               // numbers only, to keep the toolbar on one row; the unit is in the ruler corner ("500 yr / tick"), the
               // tooltip and the accessible name
               <button
                 key={inc}
                 className={`seg ${p.increment === inc ? 'on' : ''}`}
-                aria-label={incrementSpoken(inc)}
+                aria-label={incrementName(inc)}
                 aria-pressed={p.increment === inc}
                 disabled={p.tooWide?.has(inc)}
-                title={p.tooWide?.has(inc) ? `${incrementSpoken(inc)}: too wide to draw for this timeline` : incrementSpoken(inc)}
+                title={p.tooWide?.has(inc) ? `${incrementName(inc)} (too wide to draw for this timeline)` : incrementName(inc)}
                 onClick={() => p.onIncrement(inc)}
               >
                 {incrementButton(inc)}
