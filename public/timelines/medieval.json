@@ -37509,16 +37509,6 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "founded",
-          "sources": [
-            {
-              "sourceKey": "wp-pagan-kingdom",
-              "sourceLocation": "infobox event1: creation of Burmese alphabet, 984 and 1035"
-            }
-          ]
-        },
-        {
-          "facet": "category",
           "value": "culture",
           "sources": [
             {
@@ -41206,16 +41196,6 @@
         {
           "facet": "category",
           "value": "law",
-          "sources": [
-            {
-              "sourceKey": "wp-terra-mariana",
-              "sourceLocation": "infobox event2: Landtag formed, 1419"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "founded",
           "sources": [
             {
               "sourceKey": "wp-terra-mariana",
