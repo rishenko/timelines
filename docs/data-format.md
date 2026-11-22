@@ -442,7 +442,9 @@ A file that breaks any of these is refused, with a message naming the problem.
 
 ## The site's list of timelines
 
-A site lists its own timelines in `timelines/index.json`, next to the files (in this repo, `public/timelines/`).
+A site lists its own timelines in `timelines/index.json`, next to the files. (This repo makes it at build time from
+the files in `public/timelines/`, in the order `data-src/site-timelines.json` gives; see
+[development.md](development.md#building-the-included-timeline).)
 The app reads the list when a page opens and loads only the timeline being opened, so a site can change its
 timelines by changing these files, without building the app again.
 
@@ -466,8 +468,9 @@ timelines by changing these files, without building the app again.
 | `defaultTheme` | no | The timeline's `meta.defaultTheme`. |
 | `map` | no | The timeline's map file, relative to `index.json` (see [development.md](development.md#event-maps)). Used only in the site's own `timelines/index.json`, not in shared lists. |
 
-The first entry opens by default. `npm run data -- index` writes the list from the files in `public/timelines/`,
-filling in every optional field from the files themselves and keeping the order and any `https://` entries. Entries
+The first entry opens by default. In this repo the build writes the list from the files in `public/timelines/`,
+filling in every optional field from the files themselves; `data-src/site-timelines.json` gives the order (timeline
+ids) and any entries for timelines on other sites (`https://` files); `npm run data -- index` prints it. Entries
 with a missing or unsafe `id`, `title` or `file` are skipped. A site without the file, or with an empty list, opens on
 a page that asks readers to add a timeline.
 

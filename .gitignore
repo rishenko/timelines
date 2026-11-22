@@ -25,3 +25,6 @@ dist-ssr
 
 # Map build downloads (scripts/map/build-map.ts)
 .cache
+
+# The site's list of timelines: made by the dev server and the build (scripts/lib/timeline-index-plugin.ts)
+public/timelines/index.json

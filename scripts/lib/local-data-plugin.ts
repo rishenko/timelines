@@ -1,10 +1,10 @@
 // Dev server only: serves the local datasets (see local-data.ts) under /timelines/ and adds them to the end of the
-// timeline list, so `npm run dev` shows them next to the bundled timelines. Builds and the deployed site never
-// include them.
+// timeline list, so `npm run dev` shows them next to the bundled timelines. It answers timelines/index.json itself,
+// so it comes before timeline-index-plugin.ts in vite.config.ts. Builds and the deployed site never include them.
 import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
 import type { Plugin } from 'vite';
-import { parseTimelineIndex, summarize } from '../../src/data/timelineIndex.ts';
+import { summarize } from '../../src/data/timelineIndex.ts';
+import { timelineIndex } from './timeline-index.ts';
 import type { Dataset } from '../../src/types.ts';
 import { localAsset, localDataDirs, localTimelineFiles } from './local-data.ts';
 
@@ -21,8 +21,7 @@ export function localDataPlugin(): Plugin {
         const m = /^\/timelines\/(.+)$/.exec(path);
         if (!m) return next();
         if (m[1] === 'index.json') {
-          const bundled = parseTimelineIndex(JSON.parse(readFileSync(join(server.config.root, 'public/timelines/index.json'), 'utf8')));
-          const entries = [...bundled.entries];
+          const entries = timelineIndex().timelines;
           for (const f of localTimelineFiles(dirs)) {
             const data = JSON.parse(readFileSync(f.path, 'utf8')) as Dataset;
             const { id, title, ...rest } = summarize(data);

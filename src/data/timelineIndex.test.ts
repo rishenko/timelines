@@ -50,7 +50,7 @@ describe('the site index (timelines/index.json)', () => {
   });
 });
 
-describe('writing the index (npm run data -- index)', () => {
+describe('making the index (timelines/index.json, at build time)', () => {
   let dir = '';
   afterEach(() => dir && rmSync(dir, { recursive: true, force: true }));
   const timeline = (id: string, title: string): Dataset => {
@@ -59,35 +59,44 @@ describe('writing the index (npm run data -- index)', () => {
   };
   const write = (file: string, d: unknown) => writeFileSync(join(dir, file), JSON.stringify(d));
 
-  it('keeps the order, refreshes listed files, adds new ones, drops missing ones and keeps remote entries', () => {
+  it('orders by site-timelines.json, makes entries from the files, adds unlisted files and keeps remote entries', () => {
     dir = mkdtempSync(join(tmpdir(), 'timelines-'));
     write('b.json', timeline('b', 'B'));
     write('c.json', timeline('c', 'C'));
-    write('index.json', {
-      timelines: [
-        { id: 'b', title: 'Old title', file: 'b.json', eventCount: 99 },
-        { id: 'gone', title: 'Gone', file: 'gone.json' },
-        { id: 'far', title: 'Far', file: 'https://example.org/far.json' },
-      ],
-    });
-    const { text, notes } = timelineIndexText(dir);
+    write('a.json', timeline('a', 'A'));
+    const order = `${dir}-order.json`;
+    writeFileSync(order, JSON.stringify({
+      timelines: ['c', 'gone', { id: 'far', title: 'Far', file: 'https://example.org/far.json' }, { id: 'near', title: 'Near', file: 'near.json' }, 'b'],
+    }));
+    const { text, notes } = timelineIndexText(dir, order);
+    rmSync(order);
     const list = JSON.parse(text).timelines;
-    expect(list.map((e: { id: string }) => e.id)).toEqual(['b', 'far', 'c']);
-    expect(list[0]).toEqual({ file: 'b.json', ...summarize(timeline('b', 'B')) });
-    expect(list[0].eventCount).toBe(plainTimeline().events.length);
-    expect(notes).toEqual(['dropped gone: gone.json is gone']);
+    expect(list.map((e: { id: string }) => e.id)).toEqual(['c', 'far', 'b', 'a']);
+    expect(list[2]).toEqual({ file: 'b.json', ...summarize(timeline('b', 'B')) });
+    expect(list[2].eventCount).toBe(plainTimeline().events.length);
+    expect(notes).toEqual([`${order}: near left out: list a file in public/timelines by its id`, 'dropped gone: no timeline file with that id']);
+  });
+
+  it('without an order file, lists the files by name', () => {
+    dir = mkdtempSync(join(tmpdir(), 'timelines-'));
+    write('b.json', timeline('b', 'B'));
+    write('a.json', timeline('a', 'A'));
+    expect(JSON.parse(timelineIndexText(dir, join(dir, 'none.json')).text).timelines.map((e: { id: string }) => e.id)).toEqual(['a', 'b']);
   });
 
   it('leaves out files that are not valid timelines', () => {
     dir = mkdtempSync(join(tmpdir(), 'timelines-'));
     write('a.json', timeline('a', 'A'));
     write('broken.json', { schemaVersion: 3 });
-    const { text, notes } = timelineIndexText(dir);
+    const { text, notes } = timelineIndexText(dir, join(dir, 'none.json'));
     expect(JSON.parse(text).timelines.map((e: { id: string }) => e.id)).toEqual(['a']);
     expect(notes[0]).toMatch(/^broken\.json left out/);
   });
 
-  it('the site index in public/timelines is up to date', () => {
-    expect(readFileSync('public/timelines/index.json', 'utf8')).toBe(timelineIndexText('public/timelines').text);
+  it("the site's list names every bundled timeline in data-src/site-timelines.json, and leaves none out", () => {
+    const { text, notes } = timelineIndexText();
+    expect(notes).toEqual([]);
+    const order = JSON.parse(readFileSync('data-src/site-timelines.json', 'utf8')).timelines;
+    expect(JSON.parse(text).timelines.map((e: { id: string }) => e.id)).toEqual(order);
   });
 });

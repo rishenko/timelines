@@ -13,7 +13,7 @@ import { ID_RE } from './validate.ts';
  *
  * The first entry opens by default. `file` is a path relative to index.json, or a full http(s) address (the server
  * must let other sites read it). Everything but `id`, `title` and `file` is optional: it lets the picker and links
- * show more before the timeline itself is loaded. `npm run data -- index` writes it for the files in public/timelines.
+ * show more before the timeline itself is loaded. The build makes it from the files in public/timelines (scripts/lib/timeline-index.ts).
  */
 export interface TimelineIndexEntry {
   /** The timeline's meta.id (used in ?timeline= links and browser storage). Must match the file. */
@@ -29,8 +29,8 @@ export interface TimelineIndexEntry {
   defaultTheme?: string;
   /**
    * The timeline's map file (borders, locations and map images per row; see src/map/mapData.ts), relative to
-   * index.json. Used only for the site's own timelines. `npm run data -- index` adds it when public/maps/<id>.json
-   * exists.
+   * index.json. Used only for the site's own timelines. The site's list (scripts/lib/timeline-index.ts) adds it when
+   * public/maps/<id>.json exists.
    */
   map?: string;
 }
@@ -47,7 +47,7 @@ export const INDEX_PATH = 'timelines/index.json';
 /** What the picker and links need to know about a timeline, without its events. */
 export type TimelineSummary = Omit<TimelineIndexEntry, 'file'>;
 
-/** A loaded timeline's summary (its index entry, as `npm run data -- index` writes it). */
+/** A loaded timeline's summary (its index entry, as the site's list has it). */
 export function summarize(d: Dataset): TimelineSummary {
   const m = d.meta;
   return {
