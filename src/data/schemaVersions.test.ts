@@ -15,7 +15,7 @@ import { canRead, migrate, SCHEMA_VERSION } from './migrate.ts';
 import { validateDataset } from './validate.ts';
 import { everyField } from './fixtures/everyField.ts';
 import { localTimelineFiles } from '../../scripts/lib/local-data.ts';
-import index from '../../public/timelines/index.json';
+import { timelineIndex } from '../../scripts/lib/timeline-index.ts';
 
 /** The oldest version the app reads. */
 const OLDEST = 3;
@@ -42,7 +42,7 @@ function deepFreeze<T>(v: T): T {
 }
 
 const timelines: [string, unknown][] = [
-  ...(index as { timelines: { id: string; file: string }[] }).timelines.map((t): [string, unknown] => [
+  ...timelineIndex().timelines.map((t): [string, unknown] => [
     t.id,
     JSON.parse(readFileSync(`public/timelines/${t.file}`, 'utf8')),
   ]),
