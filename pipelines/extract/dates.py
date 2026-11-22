@@ -32,6 +32,9 @@ def clean(raw):
     s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}', ' – ', s, flags=re.I)
     s = re.sub(r'\{\{\s*(?:circa|c\.|ca)\s*\|?\s*', '{{c-mark|', s, flags=re.I)
     s = _templates(s)
+    # an unclosed template or ref runs to the end (a field value cut short, as the side tables store at most 2,000
+    # characters): drop it, so a long footnote's years don't leak in
+    s = re.sub(r'\{\{.*$|<ref[^>]*>.*$', '', s, flags=re.S | re.I)
     s = re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]*)\]\]', r'\1', s)
     s = re.sub(r"'{2,}", '', s)
     return re.sub(r'\s+', ' ', s).strip()

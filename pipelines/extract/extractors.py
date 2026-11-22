@@ -19,6 +19,21 @@ KIND_RANK = {'infobox': 0, 'table': 1, 'lead': 2, 'heading': 3, 'prose': 4}
 EVENT_FIELDS = re.compile(r'^(date|dates|start_?date|end_?date|date_?start|date_?end|signed|effective|year_?start|year_?end|'
                           r'date_?event\d*|established|founded|formation|dissolved|abolished|begin|end|start|finish)$')
 SENT = re.compile(r'(?<=[.!?])\s+(?=[A-Z0-9"\'(])')
+# a full stop after these is not a sentence end: "the U.S. Army", "Gen. Allenby", "St. Petersburg", "J. Smith"
+ABBREV = re.compile(r'(?:\b(?:[A-Z]\.){1,3}|\b(?:Mr|Mrs|Ms|Dr|St|Ste|Mt|Ft|Gen|Col|Lt|Capt|Cmdr|Maj|Adm|Sgt|Cpl|Pvt|Gov|Sen|Rep|'
+                    r'Rev|Hon|Pres|Prof|Sr|Jr|No|Nos|Vol|vs|etc|approx|ca|cf|Co|Corp|Inc|Ltd|Bros|Jan|Feb|Mar|Apr|Jun|Jul|'
+                    r'Aug|Sep|Sept|Oct|Nov|Dec|e\.g|i\.e|op|cit|ibid|pp|p|fl|r|d|b|c)\.)$')
+
+
+def sentences(text):
+    """Sentences of plain text, not split after abbreviations or initials."""
+    out = []
+    for part in SENT.split(text):
+        if out and ABBREV.search(out[-1]):
+            out[-1] += ' ' + part
+        else:
+            out.append(part)
+    return out
 HEADING = re.compile(r'^(={2,6})\s*(.+?)\s*\1\s*$', re.M)
 LINK1 = re.compile(r'\[\[([^\]|#]+)')
 ATTRS = re.compile(r'^\s*(?:[a-z-]+\s*=\s*(?:"[^"]*"|\S+)\s*)+\|(?!\|)', re.I)  # cell attributes: align="right"|
@@ -70,7 +85,7 @@ def lead_and_prose(text):
         if head.lower() in ('see also', 'references', 'notes', 'further reading', 'external links', 'bibliography', 'sources', 'citations'):
             continue
         plain = clean(sec)
-        for sent in SENT.split(plain):
+        for sent in sentences(plain):
             if len(sent) < 20 or len(sent) > 600:
                 continue
             sp = _dated(spans(sent), need_month=(i > 0))

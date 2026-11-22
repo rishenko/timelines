@@ -14,6 +14,7 @@ import sqlite3
 from dates import spans
 
 CAT_DEPTH = 3
+WINDOW_AFTER = 5  # years after the seeds' last date still in the topic (peace treaties, aftermath)
 BOX_OVERLAP = 0.3
 LIST_TITLE = re.compile(r'^timeline|timeline|^list of .*\b(battles|events|operations|offensives|campaigns|conflicts|treaties|'
                         r'wars|engagements|naval battles|actions|revolutions|uprisings|massacres|declarations)\b', re.I)
@@ -32,6 +33,9 @@ NOT_EVENT_BOX = re.compile(r'country|former country|state|empire|kingdom|settlem
                            r'political party|ship|aircraft|weapon|building|museum|book|film|newspaper|biography|cricketer|'
                            r'sportsperson|football|player|athlete|artist|writer|scientist|award|decoration|medal|order|'
                            r'holiday|memorial|cemetery', re.I)
+EVENT_TITLE = re.compile(r'\b(uprising|revolution|revolt|rebellion|insurrection|riots?|massacre|war|battle|siege|treaty|'
+                         r'armistice|campaign|offensive|coup|mutiny|strike|days|crisis|incident|affair|congress|conference|'
+                         r'declaration|proclamation|occupation|invasion|landing|raid|expedition|evacuation|deportation)\b', re.I)
 DATE_FIELDS = ('date', 'dates', 'start_date', 'end_date', 'date_start', 'date_end', 'signed', 'effective')
 
 
@@ -71,10 +75,12 @@ class Tables:
         r = self.one('SELECT qid FROM qid WHERE page_id=?', page_id)
         return r and r[0]
 
-    def event_like(self, page_id, box):
+    def event_like(self, page_id, box, title=None):
         if box and NOT_EVENT_BOX.search(box):
             return False
         if box and EVENT_BOX.search(box):
+            return True
+        if not box and title and EVENT_TITLE.search(title):  # no infobox: "March Revolution", "Vienna Uprising"
             return True
         q = 'SELECT 1 FROM infobox_field WHERE page_id=? AND field IN (%s) LIMIT 1' % ','.join('?' * len(DATE_FIELDS))
         return bool(self.one(q, page_id, *DATE_FIELDS))
@@ -82,7 +88,7 @@ class Tables:
 
 def article_set(T, seeds, seed_links, cap=4000):
     """{title: {'page_id', 'box', 'routes': set, 'rev_id'}} plus a report of route counts and exclusions."""
-    out, excluded = {}, {'ai_flag': [], 'not_event': 0, 'cap': 0, 'box_overlap': []}
+    out, excluded = {}, {'ai_flag': [], 'not_event': 0, 'cap': 0, 'box_overlap': [], 'out_of_window': []}
 
     def add(title, route, need_event):
         """The article's title (after a redirect) when it is in the set, else None."""
@@ -97,8 +103,11 @@ def article_set(T, seeds, seed_links, cap=4000):
         if t in out:
             out[t]['routes'].add(route)
             return t
-        if need_event and not T.event_like(pid, box):
+        if need_event and not T.event_like(pid, box, t):
             excluded['not_event'] += 1
+            return None
+        if need_event and not overlaps(pid, t):
+            excluded['out_of_window'].append(t)
             return None
         if len(out) >= cap:
             excluded['cap'] += 1
@@ -117,6 +126,16 @@ def article_set(T, seeds, seed_links, cap=4000):
                                                    if f[2] in DATE_FIELDS for sp in spans(f[3]) if sp['end']]
     lo, hi = (min(years), max(years)) if years else (None, None)
 
+    win = (lo - 1, hi + WINDOW_AFTER) if lo is not None else None
+
+    def overlaps(pid, title):
+        """An article's infobox dates, else the years in its title, touch the topic's window (or nothing says otherwise)."""
+        if not win:
+            return True
+        ys = [y for f in T.fields(pid) if f[2] in DATE_FIELDS for sp in spans(f[3])
+              for y in (sp['start'][0], (sp['end'] or sp['start'])[0])]
+        ys = ys or [int(y) for y in re.findall(r'\b(1\d{3}|20\d{2})\b', title)]
+        return not ys or (max(ys) >= win[0] and min(ys) <= win[1])
     def names_topic(box):
         """A campaignbox named after a seed ("East African (World War I)"), or only for years within the seeds' dates."""
         initials = [''.join(w[0] for w in s.split()) for s in seed_titles if len(s.split()) > 1]  # "WWI"
@@ -170,7 +189,7 @@ def article_set(T, seeds, seed_links, cap=4000):
     # timeline pages, and lists of events, naming a seed as a whole name ("World War I", not "World War II")
     lists = []
     for s in seed_titles:
-        whole = re.compile(r'(?<![\w])' + re.escape(s) + r'(?![\w])')
+        whole = re.compile(r'(?<![\w])' + re.escape(s) + r'(?![\w])', re.I)
         for (title,) in T.db.execute("SELECT title FROM page WHERE ns=0 AND redirect_to IS NULL AND ai_flag=0 AND title LIKE ?",
                                      (f'%{s}%',)):
             if not whole.search(title) or not LIST_TITLE.search(title):
@@ -181,6 +200,6 @@ def article_set(T, seeds, seed_links, cap=4000):
     # links from the seeds' text, event-like only
     for t in seed_links:
         add(t, 'link', True)
-    report = {'categories': len(cats), 'campaignboxes': sorted(seen_boxes), 'lists': lists, 'excluded': excluded,
+    report = {'window': (lo, hi), 'categories': len(cats), 'campaignboxes': sorted(seen_boxes), 'lists': lists, 'excluded': excluded,
               'routes': {r: sum(1 for v in out.values() if r in v['routes']) for r in ('seed', 'campaignbox', 'category', 'list', 'link')}}
     return out, report

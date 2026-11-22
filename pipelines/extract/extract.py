@@ -27,7 +27,7 @@ ARGS = settings.take_flags(sys.argv[1:])
 
 import wp_dump as wp  # noqa: E402
 import extractors as X  # noqa: E402
-from topics import Tables, article_set  # noqa: E402
+from topics import WINDOW_AFTER, Tables, article_set  # noqa: E402
 
 KIND_WEIGHT = {'infobox': 5, 'table': 4, 'lead': 3, 'heading': 2, 'prose': 1}
 WIKI = 'https://en.wikipedia.org/wiki/'
@@ -170,26 +170,38 @@ def main():
             if not r['primary']:
                 r['category'] = primary[r['cluster']].get('category', [])
 
+    # the topic's window: the seeds' own dates, a year before to five after (aftermath treaties); outside rows sort last
+    lo, hi = rep['window']
+    win = (lo - 1, hi + WINDOW_AFTER) if lo is not None else None
+    for r in rows:
+        y0 = r['span']['start'][0]
+        y1 = (r['span']['end'] or r['span']['start'])[0]
+        r['in_window'] = '' if not win else int(y1 >= win[0] and y0 <= win[1])
     qids = {r['page_id']: T.qid(r['page_id']) for r in rows}
-    rows.sort(key=lambda r: (r['cluster'], sortable(r['span']['start']), X.KIND_RANK[r['kind']]))
+    rows.sort(key=lambda r: (r['in_window'] == 0, r['cluster'], sortable(r['span']['start']), X.KIND_RANK[r['kind']]))
     out = os.path.join(os.path.dirname(HERE), 'out', 'extract', topic)
     os.makedirs(out, exist_ok=True)
-    cols = ['cand_id', 'topic', 'cluster', 'primary', 'title_suggestion', 'start', 'end', 'alts', 'precision', 'circa', 'old_style',
+    cols = ['cand_id', 'topic', 'cluster', 'primary', 'title_suggestion', 'start', 'end', 'in_window', 'alts', 'precision', 'circa', 'old_style',
             'kind', 'also', 'sourceLocation', 'locator', 'quote', 'article', 'page_id', 'rev_id', 'qid', 'routes', 'inlinks',
             'score', 'importance_suggested', 'category_main', 'category_second', 'category_evidence', 'wikidata', 'dump']
-    with open(os.path.join(out, 'candidates.csv'), 'w', newline='') as f:
-        w = csv.writer(f)
-        w.writerow(cols)
-        for r in rows:
-            s, cat = r['span'], r.get('category') or []
-            title = r.get('title_suggestion') or (f'{r["article"]}: {r["quote"]}' if r['kind'] == 'heading' else
-                                                   r['quote'][:160] if r['kind'] == 'prose' else r['article'])
-            w.writerow([cand_id(r['article'], r['locator'], s), topic, r['cluster'], int(r['primary']), title, iso(s['start']),
-                        iso(s['end']), ';'.join(iso(a) for a in s['alts']), s['precision'], int(s['circa']), int(s['old_style']),
-                        r['kind'], ';'.join(r['also']), r['sourceLocation'], json.dumps(r['locator'], ensure_ascii=False), r['quote'],
-                        r['article'], r['page_id'], r['rev_id'], qids[r['page_id']] or '', ';'.join(r['routes']), r['inlinks'],
-                        r['score'], r['importance'], cat[0][0] if cat else '', cat[1][0] if len(cat) > 1 else '',
-                        ' | '.join(x[1] for x in cat), 'none (Wikidata not loaded)', settings.DUMP_NAME])
+    # prose rows go to their own file (Kevin, 2026-11-22): review starts with infobox, table, lead and heading rows
+    files = {name: open(os.path.join(out, name), 'w', newline='') for name in ('candidates.csv', 'candidates-prose.csv')}
+    writers = {name: csv.writer(f) for name, f in files.items()}
+    for wr in writers.values():
+        wr.writerow(cols)
+    for r in rows:
+        w = writers['candidates-prose.csv' if r['kind'] == 'prose' else 'candidates.csv']
+        s, cat = r['span'], r.get('category') or []
+        title = r.get('title_suggestion') or (f'{r["article"]}: {r["quote"]}' if r['kind'] == 'heading' else
+                                               r['quote'][:160] if r['kind'] == 'prose' else r['article'])
+        w.writerow([cand_id(r['article'], r['locator'], s), topic, r['cluster'], int(r['primary']), title, iso(s['start']),
+                    iso(s['end']), r['in_window'], ';'.join(iso(a) for a in s['alts']), s['precision'], int(s['circa']), int(s['old_style']),
+                    r['kind'], ';'.join(r['also']), r['sourceLocation'], json.dumps(r['locator'], ensure_ascii=False), r['quote'],
+                    r['article'], r['page_id'], r['rev_id'], qids[r['page_id']] or '', ';'.join(r['routes']), r['inlinks'],
+                    r['score'], r['importance'], cat[0][0] if cat else '', cat[1][0] if len(cat) > 1 else '',
+                    ' | '.join(x[1] for x in cat), 'none (Wikidata not loaded)', settings.DUMP_NAME])
+    for f in files.values():
+        f.close()
     report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, bool(classify))
     print(f'{len(arts)} articles, {len(rows)} candidates ({len(primary)} clusters) -> {out}')
 
@@ -213,12 +225,17 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
           f'- Campaignboxes ({len(rep["campaignboxes"])}): ' + ', '.join(rep['campaignboxes'][:40]) + (' …' if len(rep['campaignboxes']) > 40 else ''),
           f'- Categories walked: {rep["categories"]}. Timeline/list pages: ' + (', '.join(rep['lists'][:20]) or 'none') + '.',
           f'- Excluded: {len(rep["excluded"]["ai_flag"])} AI-flagged ({", ".join(rep["excluded"]["ai_flag"][:10]) or "none"}); '
-          f'{rep["excluded"]["not_event"]} not event-like (category and link routes); {rep["excluded"]["cap"]} over the cap; '
+          f'{rep["excluded"]["not_event"]} not event-like (category and link routes); {len(rep["excluded"]["out_of_window"])} with dates outside the window ({", ".join(rep["excluded"]["out_of_window"][:8])}); {rep["excluded"]["cap"]} over the cap; '
           f'campaignboxes left out for little overlap: {", ".join(rep["excluded"]["box_overlap"][:15]) or "none"}.', '',
           '## Candidates', '',
           f'- {len(rows)} candidates in {len(primary)} clusters (one per linked article). By kind: '
           + ', '.join(f'{k} {v}' for k, v in Counter(r['kind'] for r in rows).most_common()) + '.',
           f'- Dropped: ' + (', '.join(f'{v} {k}' for k, v in dropped.items()) or 'none') + '.',
+          f'- Files: candidates.csv {sum(r["kind"] != "prose" for r in rows)} rows (infobox, table, lead, heading); '
+          f'candidates-prose.csv {sum(r["kind"] == "prose" for r in rows)}.',
+          f'- Topic window: ' + (f'{rep["window"][0] - 1}–{rep["window"][1] + WINDOW_AFTER} (the seeds\' dates, a year before, '
+                                 f'{WINDOW_AFTER} after); outside it: {sum(r["in_window"] == 0 for r in rows)} rows, sorted last.'
+                                 if rep['window'][0] is not None else 'none (the seeds have no infobox dates).'),
           f'- Old Style flagged: {sum(r["span"]["old_style"] for r in rows)}. Circa: {sum(r["span"]["circa"] for r in rows)}.',
           f'- Event categories: ' + ('from event_categories.classify on each cluster\'s primary claim: '
                                      + ', '.join(f'{k} {v}' for k, v in Counter((r.get('category') or [("(none)",)])[0][0] for r in primary.values()).most_common(12))

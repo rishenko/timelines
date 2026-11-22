@@ -119,6 +119,10 @@ class Noise(unittest.TestCase):
         s = one('12 January 1848<ref name="x">Smith 2001, p. 4</ref><!-- note 1999 --> – 4 October 1849')
         self.assertEqual((s['start'], s['end']), ((1848, 1, 12), (1849, 10, 4)))
 
+    def test_cut_off_footnote(self):  # American Civil War's infobox date, cut at 2,000 characters in the side tables
+        s = one('April 12, 1861 – May 26, 1865 {{efn|name=End2|Among the many other dates, in 313 and 2001 and')
+        self.assertEqual((s['start'], s['end']), ((1861, 4, 12), (1865, 5, 26)))
+
     def test_small_bare_number_is_not_a_year(self):
         self.assertEqual(spans('42 killed'), [])
 
