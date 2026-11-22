@@ -199,6 +199,12 @@ All of these have unit tests in `extract/test_dates.py`.
 
 - **One stream, read in parallel.** `wikidata-20261116-all.json.bz2` is 95.7 GiB of a **single** bz2 stream, so pbzip2 doesn't help. `indexed_bzip2` decompresses it at about 600 MiB/s on 3 threads (`extract/wikidata.py`).
 - **It is much bigger unpacked than the ratio suggests.** I first guessed about 10:1 (970 GiB). The first full pass was paused at **1,696 GiB of JSON (118.6 million lines) and hadn't ended**, so the ratio is at least 18:1. Budget about 2 TiB and 2+ hours at 266 MiB/s; the item count (about 120 million entities) is a better progress guide than bytes.
+- **Full pass, schema 2, 2026-11-22: complete.** 1,723 GiB of JSON (18:1 over the 95.7 GiB bz2), **122,308,975 lines**, 119.7 min at 246 MiB/s (2 threads + 2 workers, nice 15). It kept 2,635,917 items; the table file is 889 MiB with 5 indexes.
+  - Claims: P571 736,552, P577 630,959, P585 432,227, P580 146,326, P582 118,692, P576 86,263, P575 42,914.
+  - Links: P31 3,001,300, P39 792,267, P1344 632,090, P361 455,598, P607 130,117, P1313 62,736, P61 50,639, P6 47,126, P35 2,285, P1906 595.
+  - Qualifiers: P580 567,654, P582 467,403, P585 14,673.
+  - Checks: Q361 (WW1) 1914-07-28 to 1918-11-11; Germany has 11 heads of government and 15 heads of state, all with start dates (`wd_status.py`).
+  - P35 is thin (2,285): most polities' heads are reachable only through the office route (P1906 → P39).
 - **First pass, paused 2026-11-22 at 1,696 GiB** (108.8 min, 266 MiB/s, 2 threads + 2 workers): 1,456,469 items kept; claims P571 733,194, P585 422,967, P580 143,832, P582 116,785, P576 85,841; links P31 1,787,181, P361 450,351. The table file is 230 MiB. Indexes are built only at the end.
 - **Framing (checked):** a `[` line, then one entity per line with a trailing comma, then `]`.
   - Lines are big: the first items are country-sized (Q31 is over 300 KB).
