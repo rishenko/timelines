@@ -38,3 +38,11 @@ it('a circa lifespan reads "c." on both ends', () => {
   const r = results('Wilton culture').find((t) => t.includes('Wilton'));
   expect(r).toMatch(/c\. \d+ BCE – c\. \d+ (BCE|CE)/);
 });
+
+it('offers a typed year as before, and a date given in months or days', () => {
+  expect(results('1274 BCE')[0]).toBe('Go to 1274 BCE');
+  expect(results('15 March 44 BCE')[0]).toBe('Go to 15 March 44 BCE');
+  expect(results('July 1916')[0]).toBe('Go to July 1916 CE');
+  expect(results('1916-07-01')[0]).toBe('Go to 1 July 1916 CE');
+  expect(results('31 February 1916').some((t) => t.startsWith('Go to'))).toBe(false);
+});

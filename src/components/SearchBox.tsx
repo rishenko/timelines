@@ -6,20 +6,26 @@ interface Props {
   placeholder: string;
   /** A year written the way this timeline writes years, for the tooltip (e.g. "1274 BCE"). */
   example?: string;
-  /** A year typed as text ("1274 BCE"), or null. */
-  parseYear: (text: string) => number | null;
-  formatYear: (year: number) => string;
+  /** A year or date typed as text ("1274 BCE", "July 1916", "1 July 1916"), or null. */
+  parseDate: (text: string) => SearchDate | null;
   /** Dates shown beside a result, e.g. "c. 1650 – 1180 BCE". */
   describeYears: (entry: SearchEntry) => string;
   /** Why a result is not drawn right now (e.g. hidden by Filters), or null. */
   hiddenReason: (entry: SearchEntry) => string | null;
   onPick: (entry: SearchEntry) => void;
-  onYear: (year: number) => void;
+  onYear: (date: SearchDate) => void;
+}
+
+/** A date typed in the search: where it is on the axis, how it reads, and how precise it is. */
+export interface SearchDate {
+  at: number;
+  label: string;
+  unit: 'year' | 'month' | 'day';
 }
 
 const HEADS = { track: 'Rows', phase: 'Phases', event: 'Events' } as const;
 
-type Option = { kind: 'year'; year: number } | { kind: 'entry'; entry: SearchEntry; hidden: string | null };
+type Option = { kind: 'year'; date: SearchDate } | { kind: 'entry'; entry: SearchEntry; hidden: string | null };
 
 /** The search field's id: "/" in the chart moves to it (src/timeline/useRovingFocus.ts). */
 export const SEARCH_INPUT_ID = 'timeline-search';
@@ -30,7 +36,7 @@ export const SEARCH_INPUT_ID = 'timeline-search';
  * Press "/" in the chart to move to it. Only there: a page-wide one-key shortcut can't be turned off (WCAG 2.1.4).
  */
 export function SearchBox(props: Props) {
-  const { index, parseYear, hiddenReason } = props;
+  const { index, parseDate, hiddenReason } = props;
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
@@ -41,14 +47,14 @@ export function SearchBox(props: Props) {
 
   const options = useMemo<Option[]>(() => {
     if (!query.trim()) return [];
-    const year = parseYear(query);
+    const date = parseDate(query);
     const hits = search(index, query).map((h) => ({ kind: 'entry' as const, entry: h.entry, hidden: hiddenReason(h.entry) }));
     // rows first, then phases, then events, each keeping its ranking
     const rows = hits.filter((h) => h.entry.kind === 'track');
     const phases = hits.filter((h) => h.entry.kind === 'phase');
     const evs = hits.filter((h) => h.entry.kind === 'event');
-    return [...(year !== null ? [{ kind: 'year' as const, year }] : []), ...rows, ...phases, ...evs];
-  }, [query, index, parseYear, hiddenReason]);
+    return [...(date !== null ? [{ kind: 'year' as const, date }] : []), ...rows, ...phases, ...evs];
+  }, [query, index, parseDate, hiddenReason]);
 
 
 
@@ -79,7 +85,7 @@ export function SearchBox(props: Props) {
 
   const choose = (o: Option | undefined) => {
     if (!o) return;
-    if (o.kind === 'year') props.onYear(o.year);
+    if (o.kind === 'year') props.onYear(o.date);
     else props.onPick(o.entry);
     setQuery('');
     setOpen(false);
@@ -164,7 +170,7 @@ export function SearchBox(props: Props) {
                 onClick={() => choose(o)}
               >
                 {o.kind === 'year' ? (
-                  <span className="search-title">Go to {props.formatYear(o.year)}</span>
+                  <span className="search-title">Go to {o.date.label}</span>
                 ) : (
                   <>
                     <span className="search-title">

@@ -13,7 +13,7 @@ import { useChronology } from './state/useChronology.ts';
 import { useRegionFilter } from './state/regionFilter.ts';
 import { useComparison } from './state/comparison.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
-import { incrementSpoken, incrementYears } from './lib/subYear.ts';
+import { incrementSpoken, incrementYears, SUB_YEAR } from './lib/subYear.ts';
 import { tooWideSteps } from './timeline/width.ts';
 import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
 import { Toolbar } from './components/Toolbar.tsx';
@@ -393,14 +393,17 @@ export default function App({ published: opened, library: libraryEntry, site, no
             index={search.index}
             placeholder="Row, event or year…"
             example={formatYear(cal.yearZero ? 4500 : -1273, cal)}
-            parseYear={search.parseYear}
-            formatYear={search.formatYear}
+            parseDate={search.parseDate}
             describeYears={search.describeYears}
             hiddenReason={search.hiddenReason}
             onPick={search.onPick}
-            onYear={(y) => {
-              focusOn({ year: y });
-              setAnnouncement(`Went to ${formatYear(y, cal)}`);
+            onYear={(d) => {
+              // a month or day zooms in to show it, where the timeline has such a step and the view is coarser:
+              // a month to month zoom, a day to week zoom (the day and its neighbours)
+              const want = d.unit === 'month' ? SUB_YEAR.month : d.unit === 'day' ? SUB_YEAR.week : undefined;
+              if (want !== undefined && drawable.includes(want) && increment > want) setIncrement(want);
+              focusOn({ year: d.at });
+              setAnnouncement(`Went to ${d.label}`);
             }}
           />
         }

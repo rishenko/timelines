@@ -81,9 +81,15 @@ export function useViewport(o: Options) {
   /** When the last focus request scrolled; a selection made with it shouldn't re-scroll and cut it short. */
   const focusedAtRef = useRef(-Infinity);
   const [flashLane, setFlashLane] = useState<string | null>(null);
-  const scrollToFocus = useEffectEvent((f: FocusRequest) => {
+  const scrollToFocus = useEffectEvent((f: FocusRequest, tries = 0) => {
     const el = scrollerRef.current;
     if (!el) return;
+    // a request made with a zoom change can arrive before the (deferred) redraw widens the chart; scrolling then
+    // would stop at the old width's end, so wait for the new width (a few frames at most)
+    if (el.scrollWidth + 1 < labelW + scale.width && tries < 30) {
+      requestAnimationFrame(() => scrollToFocus(f, tries + 1));
+      return;
+    }
     const vw = el.clientWidth - labelW;
     let left = scale.x(f.year) - vw / 2;
     if (f.range) {
