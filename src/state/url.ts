@@ -23,7 +23,7 @@ export function readUrl(published: Dataset) {
     at: at !== null ? parseYear(at, calendar) : null,
     compress: q.get('compress') !== '0',
     /** Hide rows with nothing in view: from the link if it says, else the timeline's default. */
-    hideOutOfView: ['active', 'thin'].includes(q.get('rows') ?? '') ? true : q.get('rows') === 'all' ? false : !!published.meta.hideRowsOutOfView,
+    hideOutOfView: ['active', 'thin'].includes(q.get('rows') ?? '') ? true : q.get('rows') === 'all' ? false : published.meta.hideRowsOutOfView !== false,
     /** Hidden rows drawn as thin lines rather than taken out. */
     thinRows: q.get('rows') === 'thin',
     view: (q.get('view') === 'table' ? 'table' : 'timeline') as View,
