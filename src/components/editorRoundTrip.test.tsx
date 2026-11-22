@@ -75,7 +75,7 @@ describe('row editor keeps phases in the order they were written', () => {
       expect(starts).not.toEqual([...starts].sort((a, b) => a - b));
       const onSave = vi.fn();
       render(<TrackForm initial={t} data={modern} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
-      const saved = (await submit('Save track', onSave)) as Track;
+      const saved = (await submit('Save row', onSave)) as Track;
       expect(saved.phases!.map((p) => p.start)).toEqual(starts);
       expect(saved.phases).toEqual(t.phases);
     });
@@ -106,7 +106,7 @@ describe('editor round trip: saving unchanged keeps every field', () => {
       for (const t of sample(data.tracks)) {
         const onSave = vi.fn();
         render(<TrackForm initial={t} data={data} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
-        const saved = await submit('Save track', onSave);
+        const saved = await submit('Save row', onSave);
         try {
           expect(saved).toEqual(t);
         } catch {

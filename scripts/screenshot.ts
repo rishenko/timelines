@@ -113,7 +113,7 @@ const findLabel = async (name: string) => {
 for (const name of opt('--expand')?.split('|') ?? []) {
   const l = await findLabel(name);
   await l.scrollIntoViewIfNeeded();
-  const btn = l.locator('button[title="Expand sub-tracks"]');
+  const btn = l.locator('button[title="Expand sub-rows"]');
   if (await btn.count()) await btn.first().click();
   else problems.push(`--expand: "${name}" has no collapsed sub-rows`);
   await page.waitForTimeout(300);

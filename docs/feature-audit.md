@@ -220,6 +220,9 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
     Ides of March, a battle's day) need a finer unit: a day-based time value, month and week ruler scales, partial
     dates ("March 44 BCE"), and a "today" marker. It's the prerequisite for any business or personal use, and it helps
     the later historical periods too.
+    Done 22 November 2026 (schema v4, PR #30): months and days on any date and claim, zoom steps below a year
+    (quarter, month, week, day), partial dates, and search, the table and CSV in full dates. Not yet: a "today"
+    marker.
 29. **Business and personal timelines (L, after 28).** The model already fits a deal or project: rows are accounts,
     deals or people; events are meetings and emails; phases are pipeline stages (prospect → qualified → proposal →
     closed); `ongoing` marks open deals. Missing beyond day dates: import from a calendar (ICS) or a CRM export
@@ -240,7 +243,7 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
 2. Versioned releases with a DOI, and the changelog (7, 8).
 3. Review status and source kinds (2, 4), then the books review itself (5).
 4. Table view, CSV export and keyboard access (20, 9, 23): one piece of work serving three needs. Done, except
-   23 d (marks at 3:1, `forced-colors`) and g (manual testing).
+   23 d (`forced-colors`) and g (manual testing).
 5. One-sided bounds and claim basis (12, first step; 15).
 6. External ids and period assertions (13, 14).
 7. The large items when wanted: relative dating and synchronisms, radiocarbon curves, the map (12, 16, 22).

@@ -188,7 +188,7 @@
 
 .filters-panel {
   display: grid;
-  /* Visual filters (chart and rows) beside Data filters (regions, tracks, sources, tags) */
+  /* Display (chart and rows) beside Data filters (regions, rows, sources, tags) */
   grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
   align-items: start;
   gap: 18px;

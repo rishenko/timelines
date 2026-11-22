@@ -84,9 +84,9 @@ describe('tracks', () => {
     expect(validateDataset(d)).toEqual([]);
   });
 
-  it('refuses to delete a track with sub-tracks', () => {
+  it('refuses to delete a track with sub-rows', () => {
     const d = upsertTrack(base(), { id: 'child', name: 'C', color: '#000', parent: 'guild' });
-    expect(trackDeletion(d, 'guild').blocked).toMatch(/sub-tracks/);
+    expect(trackDeletion(d, 'guild').blocked).toMatch(/sub-rows/);
     expect(removeTrack(d, 'guild')).toBe(d);
   });
 });

@@ -62,7 +62,7 @@ describe('month and day fields', () => {
     fireEvent.change(screen.getByLabelText('Phase name'), { target: { value: 'Weimar' } });
     fireEvent.change(screen.getByLabelText('Phase start'), { target: { value: '9 November 70 L' } });
     fireEvent.change(screen.getByLabelText('Phase end'), { target: { value: 'March 85 L' } });
-    fireEvent.click(screen.getByText('Save track'));
+    fireEvent.click(screen.getByText('Save row'));
     await waitFor(() => expect(onSave).toHaveBeenCalled());
     expect(onSave.mock.calls[0][0].phases[0]).toMatchObject({ start: 70, startMonth: 11, startDay: 9, end: 85, endMonth: 3 });
   });

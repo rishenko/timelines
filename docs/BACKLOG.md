@@ -59,13 +59,6 @@ Let several people contribute to one timeline instead of trading JSON files. Que
 accounts, storage (hosted database vs. git-backed data with pull requests), conflicts and review, keeping community
 additions separate from the published data, moderation and consent.
 
-### Beyond 650 CE
-
-Extending the end date affects every region; existing regions would need content up to the new end. Candidates from
-the original plan that fall after 650: Srivijaya, the Sailendra and Borobudur, Majapahit, Angkor, Ghana, Mali, Great
-Zimbabwe, the Mississippians, the Mongols, and the settlement of Hawaiʻi, Aotearoa/New Zealand and Rapa Nui. A
-separate later timeline, linked by `meta.continues`, would keep each one readable.
-
 ## Done
 
 - The app: per-timeline settings (calendar, zoom levels, theme, credits), rows that nest to any depth, lifespans and
@@ -80,10 +73,18 @@ separate later timeline, linked by `meta.continues`, would keep each one readabl
   item 19), a busy ring while rows or a slow update are being drawn, and Filters in two sections (Visual and Data
   filters) with folding Tracks and Sources lists.
 - Accessibility parts a–f (foundations, table view, keyboard control, visual, touch targets, edit forms), except
-  `forced-colors` and the 3:1 check of marks in part d; see [feature-audit.md](feature-audit.md), item 23.
+  `forced-colors` in part d (marks, focus outlines and fields at 3:1 were done on 20 November with
+  `npm run contrast:ui`); see [feature-audit.md](feature-audit.md), item 23.
 - Ancient Civilizations (c. 9000–330 BCE) and The Classical World (c. 500 BCE – 650 CE), each with a description
   audit, merged on 2026-11-20 into one timeline, Ancient and Classical World (the originals are in `archive/`), whose
   scripts reproduce its source file exactly (`npm run data:check`).
-- Hosting on GitHub Pages (`npm run deploy`).
+- Hosting on GitHub Pages: `npm run deploy`, and since PR #35 the Deploy workflow, started by hand from `main`.
 - "Dated by …" only where the reader's choice in the Dating menu can move the event (`datingChronology`); every
   dating option moves at least one event, lifespan or phase, so all are kept.
+- Later in November 2026: two more timelines, **Modern States** (1500 to today) and **Medieval World** (650–1500),
+  built by generators in `pipelines/` and linked to Ancient and Classical and each other by `meta.continues` (the
+  "Beyond 650 CE" plan); days and months (schema v4, zoom steps below a year); rows with nothing in view hidden by
+  default; lifespans worked out from phases, `ongoing`, dated memberships (`memberOf`) and the events that began and
+  ended them; local datasets in the tests and dev server; the MIT and CC BY 4.0 licences; a chart that draws only the
+  rows near the screen; the site's list made at build time; the Deploy workflow. The "show all connections" switch
+  was dropped: threads show for the selected event only.

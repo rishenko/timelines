@@ -22,7 +22,7 @@ export type ThemeKey = keyof ThemeColors;
 
 export const THEME_FIELDS: { key: ThemeKey; label: string; hint: string }[] = [
   { key: 'bg', label: 'Background', hint: 'Timeline and page background' },
-  { key: 'panel', label: 'Panels', hint: 'Toolbar, side panel, lane labels, ruler' },
+  { key: 'panel', label: 'Panels', hint: 'Toolbar, side panel, row labels, ruler' },
   { key: 'control', label: 'Controls', hint: 'Buttons and inputs' },
   { key: 'line', label: 'Borders', hint: 'Lane dividers and outlines' },
   { key: 'text', label: 'Text', hint: 'Main text' },

@@ -130,9 +130,9 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
       title: 'Rows',
       text: has.nesting
-        ? 'Each row is a track: a region, people, faction or period. Rows nest to any depth. ▾ folds a row’s sub-rows into it; ▸ opens them again. ' +
+        ? 'Each row is a region, people, faction or period. Rows nest to any depth. ▾ folds a row’s sub-rows into it; ▸ opens them again. ' +
           'With “Hide rows with nothing in view” (Filters), a +N beside a row counts the sub-rows hidden for having nothing near the years on screen (taken out, or thin lines in their place); it shows them.'
-        : 'Each row is a track: a region, people, faction or period.',
+        : 'Each row is a region, people, faction or period.',
     },
     {
       sample: <span className="lg-lifespan" />,
@@ -267,7 +267,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
     },
     {
       sample: <span className="lg-gap">⋯</span>,
-      title: 'Compressed gap',
+      title: 'Shortened gap',
       text: days
         ? 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the time skipped (“120 yrs”, “4 months”); the tick after it gives the full date. Zoomed in below a year, the inside of an event’s bar is never squeezed. Turn off “Shorten gaps with no events” in Filters to see true distances.'
         : 'A long stretch with no events, squeezed so the timeline stays short. Its label gives the years skipped. Turn off “Shorten gaps with no events” in Filters to see true distances.',
@@ -281,6 +281,21 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
       title: 'Highlight',
       text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. The thread joining a shared event’s rows shows while it is selected.',
+    },
+    {
+      show: !!data.meta.continues?.length,
+      sample: <span className="lg-edge">Next →</span>,
+      title: 'Neighbouring timeline',
+      text: 'Where this timeline meets the one before or after it, a link on the ruler opens that timeline at the same year.',
+    },
+    {
+      sample: (
+        <span className="lg-busy">
+          <span className="ring" />
+        </span>
+      ),
+      title: 'Updating',
+      text: 'A ring in the chart’s top-right corner while rows are about to come or go after you move through time, or while a change is still being drawn.',
     },
   ];
 
@@ -306,7 +321,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
         <Section title="Keyboard" items={KEYS} />
       </div>
       <p className="muted small">
-        Click any event for its description, dates, sources and connections. Use the year buttons to zoom, Filters to hide
+        Click any event for its description, dates, sources and connections. Use the zoom buttons to zoom, Filters to hide
         rows or sources, and Customize to change the colors, edit the timeline, or open others.
       </p>
     </div>

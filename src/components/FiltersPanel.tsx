@@ -22,7 +22,6 @@ interface Props {
   /** Long stretches with no events are squeezed into gap breaks. */
   compress: boolean;
   onCompress: (on: boolean) => void;
-  /** Arrows between every pair of connected events, and the lines joining a shared event's rows, not only the selected one's. */
   /** Rows with nothing near the view are hidden. */
   hideOutOfView: boolean;
   onHideOutOfView: (on: boolean) => void;
@@ -183,12 +182,12 @@ export function FiltersPanel(p: Props) {
     <div className="filters-panel">
       <details className="filters-group visual" open={open.visual} onToggle={(e) => setOpen('visual', e.currentTarget.open)}>
         <summary>
-          <span className="filters-title">Visual filters</span> <span className="muted small">how the chart draws</span>
+          <span className="filters-title">Display</span> <span className="muted small">how the chart draws</span>
         </summary>
         <div className="filters-group-body">
           <section>
             <h3>Chart</h3>
-            <label className="check" title="Collapse long stretches with no events">
+            <label className="check" title="Shorten long stretches with no events">
               <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Shorten gaps with no events
             </label>
             <h3>Rows</h3>
@@ -220,7 +219,7 @@ export function FiltersPanel(p: Props) {
           {p.regions}
           <section className="tracks-filter">
             <h3>
-              Tracks
+              Rows
               <span className="bulk">
                 <button onClick={() => p.setAllTracks(true)}>all</button>
                 <button onClick={() => p.setAllTracks(false)}>none</button>
@@ -233,7 +232,7 @@ export function FiltersPanel(p: Props) {
             )}
             <FilterTree
               nodes={trackNodes}
-              label="Tracks"
+              label="Rows"
               noun="row"
               isOn={(id) => isOn(filters.tracks, id)}
               setMany={p.setTracks}

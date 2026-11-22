@@ -246,6 +246,32 @@
   border-left: 1px dashed var(--line-2);
   border-right: 1px dashed var(--line-2);
 }
+.lg-edge {
+  padding: 1px 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 18%, var(--bg-2));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 10px;
+}
+/* the chart's busy ring, standing still (.tl-busy in timeline.css) */
+.lg-busy {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--text);
+}
+.lg-busy .ring {
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 3px solid color-mix(in srgb, var(--bg) 30%, transparent);
+  border-top-color: var(--bg);
+}
 .lg-link .link {
   fill: none;
   stroke: color-mix(in srgb, var(--link) 70%, transparent);

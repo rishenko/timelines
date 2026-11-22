@@ -141,7 +141,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
   const submit = (v: FormValues) => {
     const id = v.id ? slug(v.id) : uniqueId(v.name, otherIds);
     if (!id) return setError('id', { message: 'Id is required.' }, { shouldFocus: true });
-    if (otherIds.includes(id)) return setError('id', { message: `A track with id "${id}" already exists.` }, { shouldFocus: true });
+    if (otherIds.includes(id)) return setError('id', { message: `A row with id "${id}" already exists.` }, { shouldFocus: true });
     const t: Track = { id, name: v.name.trim(), color: v.color };
     if (v.parent) t.parent = v.parent;
     // a polity is the default: written only when chosen over another kind, or if the row already said so
@@ -218,23 +218,23 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       window.alert(`Can't delete "${initial.name}". ${info.blocked}`);
       return;
     }
-    const parts = [`Delete the track "${initial.name}"?`];
-    if (info.orphaned) parts.push(`${info.orphaned} event(s) belong only to this track and will be deleted too.`);
-    if (info.shared) parts.push(`${info.shared} event(s) shared with other tracks will just lose this one.`);
+    const parts = [`Delete the row "${initial.name}"?`];
+    if (info.orphaned) parts.push(`${info.orphaned} event(s) belong only to this row and will be deleted too.`);
+    if (info.shared) parts.push(`${info.shared} event(s) shared with other rows will just lose this one.`);
     if (window.confirm(parts.join('\n\n'))) onDelete(initial.id);
   };
 
   return (
     <aside className="side-panel editor">
       <header>
-        <h2>{isNew ? 'New track' : `Edit track: ${initial.name}`}</h2>
+        <h2>{isNew ? 'New row' : `Edit row: ${initial.name}`}</h2>
         <button className="icon" onClick={onCancel} aria-label="Cancel" title="Cancel">
           ✕
         </button>
       </header>
       <p className="muted">
-        Each track is a row on the timeline: a faction, a nation, a civilization, a dynasty. Tracks nest to any depth
-        (e.g. region → civilization → period), and a parent can be collapsed to fold its sub-tracks in.
+        Each row is one thing on the timeline: a faction, a nation, a civilization, a dynasty. Rows nest to any depth
+        (e.g. region → civilization → period), and a parent can be collapsed to fold its sub-rows in.
       </p>
       <form onSubmit={handleSubmit(submit)}>
         <label htmlFor="tr-name">Name</label>
@@ -246,7 +246,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
 
         <label htmlFor="tr-parent">Parent</label>
         <select id="tr-parent" {...register('parent')}>
-          <option value="">(none: a top-level track)</option>
+          <option value="">(none: a top-level row)</option>
           {parents.map((t) => (
             <option key={t.id} value={t.id}>
               {'— '.repeat(trackDepth(data.tracks, t.id))}
@@ -347,16 +347,16 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
           <summary>Id: {previewId || '…'}</summary>
           <p className="muted small">
             Used in the data file and links. Leave blank to derive it from the name. Changing it updates every event
-            on this track.
+            on this row.
           </p>
-          <input aria-label="Track id" placeholder={previewId} {...register('id')} {...errorProps('tr-id', errors.id)} />
+          <input aria-label="Row id" placeholder={previewId} {...register('id')} {...errorProps('tr-id', errors.id)} />
           <FieldError id="tr-id" error={errors.id} />
         </details>
 
         <ProblemList problems={problems} />
         <footer>
           <button type="submit" className="primary">
-            {isNew ? 'Create track' : 'Save track'}
+            {isNew ? 'Create row' : 'Save row'}
           </button>
           <button type="button" onClick={onCancel}>
             Cancel

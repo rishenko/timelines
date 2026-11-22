@@ -215,7 +215,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
   const submit = (v: FormValues) => {
     const e = fromForm(v, cal, initial);
     if (e.tracks.length === 0) {
-      setError('tracks', { message: 'Pick at least one track.' }, { shouldFocus: true });
+      setError('tracks', { message: 'Pick at least one row.' }, { shouldFocus: true });
       return;
     }
     if (e.end !== undefined && (e.end < e.start || at1(e) <= at0(e))) {
@@ -303,7 +303,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               <label htmlFor="ev-chron">Chronology</label>
               <select id="ev-chron" {...register('chronology')}>
                 <option value="">
-                  {inherited ? `(from its track: ${data.chronologies?.[inherited]?.name ?? inherited})` : '(none)'}
+                  {inherited ? `(from its row: ${data.chronologies?.[inherited]?.name ?? inherited})` : '(none)'}
                 </option>
                 {chronologies.map(([id, c]) => (
                   <option key={id} value={id}>
@@ -327,31 +327,31 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
         <textarea id="ev-descr" rows={5} {...register('descr')} />
 
         <fieldset {...errorProps('ev-tracks', errors.tracks)}>
-          <legend>Tracks</legend>
+          <legend>Rows</legend>
           <div className="track-checks">{trackTree(undefined, 0)}</div>
           <FieldError id="ev-tracks" error={errors.tracks} />
           {newTrack ? (
             <div className="quick-create">
               <input
-                aria-label="New track name"
-                placeholder="Track name"
+                aria-label="New row name"
+                placeholder="Row name"
                 value={newTrack.name}
                 autoFocus
                 onChange={(e) => setNewTrack({ ...newTrack, name: e.target.value })}
                 onKeyDown={enterTo(createTrack)}
               />
               <input
-                aria-label="New track color"
+                aria-label="New row color"
                 type="color"
                 value={newTrack.color}
                 onChange={(e) => setNewTrack({ ...newTrack, color: e.target.value })}
               />
               <select
-                aria-label="New track parent"
+                aria-label="New row parent"
                 value={newTrack.parent}
                 onChange={(e) => setNewTrack({ ...newTrack, parent: e.target.value })}
               >
-                <option value="">Top-level track</option>
+                <option value="">Top-level row</option>
                 {data.tracks
                   .map((t) => (
                     <option key={t.id} value={t.id}>
@@ -371,7 +371,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               type="button"
               onClick={() => setNewTrack({ name: '', color: nextTrackColor(data.tracks), parent: '' })}
             >
-              + New track
+              + New row
             </button>
           )}
         </fieldset>

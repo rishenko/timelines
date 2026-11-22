@@ -4,7 +4,9 @@ A timeline is **one JSON file**. It holds the timeline's settings, rows, dating 
 events. Images are the only things kept outside it; the file links to them.
 
 A complete, valid example to copy: [`examples/example-timeline.json`](examples/example-timeline.json),
-a small fictional kingdom with its own calendar. It uses nearly every feature described here.
+a small fictional kingdom with its own calendar. It uses most of the features described here; not shown in it are
+`memberOf`, `ongoingSources`, `startEvent`/`endEvent`, months and days, `continues`, `ids` and lifespans given as a
+list.
 
 ## Make your own timeline
 
@@ -105,7 +107,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `customSourceTag` | no | Tag id given to sources readers create in edit mode (e.g. `"homebrew"`), so others can filter them. |
 | `circaFade` | no | Years of uncertainty drawn either side of a `circa` date that has no other range. Default `0`. |
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
-| `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Regions) uses the first facet that rows belong to; comparison sets are planned. |
+| `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Data filters → Regions) uses the first facet that rows belong to, and comparison sets show each row's broad region from it. |
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
 | `eras` | no | Named periods across the whole timeline (the Bronze Age, the Age of Revolutions). See [eras](#eras). Not drawn yet. |
@@ -328,7 +330,8 @@ for filtering. `memberOf` names another **row**, for a stretch of years, and is 
 ### memberships
 
 **`memberships`**: the facet values a row belongs to (see [`meta.facets`](#meta)), each with the sources that place
-it there, cited like date claims:
+it there, cited like date claims. Readers see the first facet's values as the row's **regions**; the app uses
+"membership" only for [`memberOf`](#dated-memberships-memberof).
 
 ```json
 "memberships": [
@@ -487,12 +490,17 @@ A file that breaks any of these is refused, with a message naming the problem.
   within both rows' lifespans (best estimates), and cites at least one known source. Its `phase`, if given, is one
   phase of that name on the row that contains it.
 - A facet's `applies` is `tracks`, `events` or `both`, and every row's or event's membership is in a facet that applies
-  to it. A row's `kind` is `polity`, `person` or `theme`. An event's `ongoingSources` appear only when it is ongoing.
+  to it. A row's `kind` is `polity`, `person` or `theme`.
 - Eras have unique ids, a name and at least one known source, are dated like phases, lie within `meta.range` when set,
   and don't overlap others in their group.
 - A source's `dump` looks like `enwiki-20261101`; a `revision` is a positive whole number on a source with a `url`. A
   `locator` has a known `kind` and that kind's fields only.
 - `redirects` map ids the timeline doesn't have to ones it has, or to `null`.
+- `present` is a whole year; `meta.circaFade` is zero or more; `meta.hideRowsOutOfView` is `true` or `false`;
+  `meta.range` has whole years with `start` before `end`; each `meta.continues` entry has a timeline id, a whole-year
+  `at` and a `side` of `"before"` or `"after"`.
+- `ongoingSources` appear only on an ongoing event, stretch or phase, and each cites a known source.
+- A row's `ids.wikidata` is a Wikidata item id (`Q` and digits).
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
   Timelines can come from anyone, so anything else (such as `javascript:`) is refused.
 
@@ -535,7 +543,8 @@ a page that asks readers to add a timeline.
 - **Host the file** anywhere that allows other sites to read it (CORS). GitHub raw files, GitHub Pages
   and gists do. A GitHub page link (`github.com/…/blob/…`) is converted to the raw file automatically.
 - **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser.
-  Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. The link also carries
+  Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. Below a year, `inc` names
+  the step and `at` is a date: `&inc=month&at=1916-07-01`. The link also carries
   the reader's view: `&view=table`, `&compress=0`, `&rows=all|active|thin` (hidden rows), ticked regions
   (`&regions=anatolia,nile`) and a comparison set (`&set=<row ids>&order=related|start`). Row and source toggles and
   dating choices aren't in the link yet.
