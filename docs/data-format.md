@@ -292,7 +292,7 @@ An event or claim cites a source with `{ "sourceKey": "<source id>", "sourceLoca
 | `end` | no | Last year, inclusive. Leave out for a single-year event. |
 | `ongoing` | no | Still going: runs to `present`. Use instead of `end`. |
 | `circa` | no | Approximate: shown with "c.". |
-| `tracks` | yes | One or more track ids. An event on several rows gets a thread connecting them. |
+| `tracks` | yes | One or more track ids. An event on several rows gets a thread connecting them while it is selected. |
 | `sources` | yes | Citations (may be `[]`). |
 | `startDates`, `endDates` | no | [Date claims](#date-claims-and-uncertain-dates): what each source says the date is. |
 | `chronology` | no | Overrides the chronology the event would get from its first track. |
@@ -423,7 +423,7 @@ a page that asks readers to add a timeline.
   and gists do. A GitHub page link (`github.com/…/blob/…`) is converted to the raw file automatically.
 - **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser.
   Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. The link also carries
-  the reader's view: `&view=table`, `&compress=0`, `&links=0`, `&rows=all|active|thin` (hidden rows), ticked regions
+  the reader's view: `&view=table`, `&compress=0`, `&rows=all|active|thin` (hidden rows), ticked regions
   (`&regions=anatolia,nile`) and a comparison set (`&set=<row ids>&order=related|start`). Row and source toggles and
   dating choices aren't in the link yet.
 - **Update** by replacing the file at the same link. Readers get the new version the next time they open the

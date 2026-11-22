@@ -207,7 +207,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
       show: has.shared,
       title: 'Shared event',
-      text: 'An event that involves several rows appears in each one, its marks outlined, and joined by a vertical thread (with “Show all event connections” off, only while it is selected).',
+      text: 'An event that involves several rows appears in each one, its marks outlined, and joined by a vertical thread while it is selected.',
     },
   ];
 
@@ -273,7 +273,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
         </span>
       ),
       title: 'Highlight',
-      text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. Arrows and threads always show for the selected event; “Show all event connections” in Filters shows them all.',
+      text: 'Pointing at or selecting an event highlights everything connected to it and dims the rest. The thread joining a shared event’s rows shows while it is selected.',
     },
   ];
 

@@ -23,8 +23,6 @@ interface Props {
   compress: boolean;
   onCompress: (on: boolean) => void;
   /** Arrows between every pair of connected events, and the lines joining a shared event's rows, not only the selected one's. */
-  showLinks: boolean;
-  onShowLinks: (on: boolean) => void;
   /** Rows with nothing near the view are hidden. */
   hideOutOfView: boolean;
   onHideOutOfView: (on: boolean) => void;
@@ -192,9 +190,6 @@ export function FiltersPanel(p: Props) {
             <h3>Chart</h3>
             <label className="check" title="Collapse long stretches with no events">
               <input type="checkbox" checked={p.compress} onChange={(e) => p.onCompress(e.target.checked)} /> Shorten gaps with no events
-            </label>
-            <label className="check" title="Arrows between connected events, and the lines joining a shared event’s rows; off, only the selected event’s show">
-              <input type="checkbox" checked={p.showLinks} onChange={(e) => p.onShowLinks(e.target.checked)} /> Show all event connections
             </label>
             <h3>Rows</h3>
             <label className="check">

@@ -7,39 +7,35 @@ interface Props {
   height: number;
   marksByEvent: Map<string, Mark[]>;
   eventsById: Map<string, TimelineEvent>;
-  showLinks: boolean;
+  /** The selected event (clicked, or chosen from the keyboard): the only one whose rows are joined by a thread. */
+  selectedId: string | null;
   related: Set<string> | null;
   inView: (x0: number, x1: number) => boolean;
 }
 
 /**
  * Draws the threads that tie the timeline together:
- * - a vertical connector through every lane a multi-track event appears in (through its "+N" pills only while focused);
- * - curved arrows for explicit event links (causes / part-of / succeeds / conquers / related).
- * With showLinks off, both show only for the focused event and those related to it (a shared event still reads as
- * one by its diamond's border). Links always show for the focused event, even when showLinks is off. Otherwise a link ends only at events drawn as
- * their own mark: an event gathered into a "+N" pill gets its arrows only while it, or the event at the other end, is focused.
+ * - a vertical connector through every lane the selected event appears in, its "+N" pills included (only the selected
+ *   event's: a shared event otherwise reads as one by its diamond's border);
+ * - curved arrows for explicit event links (causes / part-of / succeeds / conquers / related), always. A link ends only
+ *   at events drawn as their own mark: an event gathered into a "+N" pill gets its arrows only while it, or the event
+ *   at the other end, is focused (pointed at or selected).
  */
-export function ConnectionLayer({ left, width, height, marksByEvent, eventsById, showLinks, related, inView }: Props) {
-  const threads: React.ReactNode[] = [];
-  for (const [id, all] of marksByEvent) {
-    const on = related?.has(id);
-    if (!showLinks && !on) continue;
-    // the line reaches "+N" cluster pills only while the event is focused, like the link arrows below
-    const marks = on ? all : all.filter((m) => m.kind === 'event');
-    if (marks.length < 2) continue;
+export function ConnectionLayer({ left, width, height, marksByEvent, eventsById, selectedId, related, inView }: Props) {
+  let thread: React.ReactNode = null;
+  const marks = selectedId ? marksByEvent.get(selectedId) : undefined;
+  if (marks && marks.length > 1 && inView(marks[0].x0, marks[0].x0)) {
     const x = marks[0].x0;
-    if (!inView(x, x)) continue;
     const ys = marks.map((m) => m.cy).sort((a, b) => a - b);
     // no dot on "+N" cluster pills
     const dots = marks.filter((m) => m.kind === 'event').map((m) => m.cy);
-    threads.push(
-      <g key={id} className={`thread ${on ? 'on' : ''}`}>
+    thread = (
+      <g key={selectedId} className="thread">
         <line x1={x} x2={x} y1={ys[0]} y2={ys[ys.length - 1]} />
         {dots.map((y) => (
           <circle key={y} cx={x} cy={y} r={3} />
         ))}
-      </g>,
+      </g>
     );
   }
 
@@ -47,7 +43,6 @@ export function ConnectionLayer({ left, width, height, marksByEvent, eventsById,
   for (const [id, e] of eventsById) {
     for (const l of e.links ?? []) {
       const focused = !!related && related.has(id) && related.has(l.to);
-      if (!showLinks && !focused) continue;
       const reachable = (ms: Mark[] | undefined) => (focused ? ms : ms?.filter((m) => m.kind === 'event'));
       const from = reachable(marksByEvent.get(id));
       const to = reachable(marksByEvent.get(l.to));
@@ -82,7 +77,7 @@ export function ConnectionLayer({ left, width, height, marksByEvent, eventsById,
           </marker>
         ))}
       </defs>
-      {threads}
+      {thread}
       {links}
     </svg>
   );
