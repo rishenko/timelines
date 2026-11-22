@@ -187,6 +187,8 @@ def qid(title):
 def era(x):
     d, refs = _dated(x)
     e = {'id': x['id'], 'name': x['name'], 'group': x['group'], **d, 'sources': refs}
+    if x.get('tracks'):
+        e['tracks'] = x['tracks']  # schema v7: the region rows whose bands show the age (none: the top strip)
     # the age's own article only, named outright: never a dynasty or ruler page a date claim happens to cite
     link = x.get('link')
     if link:
