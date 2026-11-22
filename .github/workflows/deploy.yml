@@ -1,6 +1,7 @@
 # Publishes the site to GitHub Pages: builds main and pushes dist/ to the gh-pages branch, as `npm run deploy` does.
 # Started by hand only (Actions → Deploy → Run workflow, or `gh workflow run deploy.yml --ref main`), and only from
-# main. Every deploy needs Kevin's OK: start it only when he has given it.
+# main. Every deploy needs Kevin's OK: the job waits in the "production" environment until he approves it
+# (Settings → Environments → production, Kevin as required reviewer).
 name: Deploy
 
 on:
@@ -17,6 +18,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # waits for Kevin's approval before any step runs
+    environment: production
     steps:
       - name: Only from main
         run: |
