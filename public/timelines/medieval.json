@@ -8003,7 +8003,26 @@
             }
           ]
         }
-      ]
+      ],
+      "span": {
+        "start": 1368,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1368,
+            "source": {
+              "sourceKey": "wp-northern-yuan",
+              "sourceLocation": "infobox year_start: 1368"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-mongolia",
+            "sourceLocation": "infobox established_event7: Current constitution, 12 February 1992 (current state)"
+          }
+        ]
+      }
     },
     {
       "id": "four-oirat",
@@ -8031,8 +8050,7 @@
               "sourceLocation": "infobox year_end: 1634"
             }
           }
-        ],
-        "startEvent": "m-ngke-temur-places-himself-at-the-head-of-the-oirats"
+        ]
       },
       "memberships": [
         {
@@ -8565,6 +8583,48 @@
             {
               "sourceKey": "wp-kazakh-khanate",
               "sourceLocation": "infobox capital: Saraishyq (1508–1511/1513) / Turkistan (1599–1781) / Tashkent (1759–17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turpan-khanate",
+      "name": "Turpan Khanate",
+      "color": "#7a8a4a",
+      "parent": "central-asia-steppe",
+      "url": "https://en.wikipedia.org/wiki/Turpan_Khanate",
+      "span": {
+        "start": 1487,
+        "end": 1660,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1487,
+            "source": {
+              "sourceKey": "wp-turpan-khanate",
+              "sourceLocation": "infobox year_start: 1487"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1660,
+            "source": {
+              "sourceKey": "wp-turpan-khanate",
+              "sourceLocation": "infobox year_end: 1660?"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-turpan-khanate",
+              "sourceLocation": "infobox capital: Turpan"
             }
           ]
         }
@@ -12637,8 +12697,7 @@
               "sourceLocation": "infobox year_end: 1879"
             }
           }
-        ],
-        "startEvent": "unification-of-okinawa-island"
+        ]
       },
       "memberships": [
         {
@@ -12744,7 +12803,25 @@
       },
       "span": {
         "start": 192,
-        "end": 1832
+        "end": 1832,
+        "startDates": [
+          {
+            "year": 192,
+            "source": {
+              "sourceKey": "wp-champa",
+              "sourceLocation": "infobox life span: 192–1832 AD"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1832,
+            "source": {
+              "sourceKey": "wp-champa",
+              "sourceLocation": "infobox life span: 192–1832 AD"
+            }
+          }
+        ]
       },
       "memberships": [
         {
@@ -12798,6 +12875,29 @@
           ],
           "startEvent": "consecration-of-jayavarman-ii",
           "endEvent": "fall-of-angkor"
+        },
+        {
+          "name": "Post-Angkor period",
+          "start": 1431,
+          "end": 1863,
+          "startDates": [
+            {
+              "year": 1431,
+              "source": {
+                "sourceKey": "wp-post-angkor-period",
+                "sourceLocation": "infobox life span: 1431–1863"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1863,
+              "source": {
+                "sourceKey": "wp-post-angkor-period",
+                "sourceLocation": "infobox life span: 1431–1863"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -12882,8 +12982,7 @@
               "sourceLocation": "infobox year_end: 1555"
             }
           }
-        ],
-        "startEvent": "kingdom-of-ava-founded"
+        ]
       },
       "memberships": [
         {
@@ -12924,8 +13023,7 @@
               "sourceLocation": "infobox year_end: 1552"
             }
           }
-        ],
-        "startEvent": "independence-from-pagan"
+        ]
       },
       "memberships": [
         {
@@ -13103,8 +13201,7 @@
               "sourceLocation": "infobox year_end: 1707"
             }
           }
-        ],
-        "startEvent": "lan-xang-founded"
+        ]
       },
       "memberships": [
         {
@@ -13336,6 +13433,88 @@
       ]
     },
     {
+      "id": "mrauk-u",
+      "name": "Kingdom of Mrauk U (Arakan)",
+      "color": "#5a6a9a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mrauk_U",
+      "span": {
+        "start": 1430,
+        "end": 1785,
+        "startDates": [
+          {
+            "year": 1430,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mrauk-u",
+              "sourceLocation": "infobox year_start: 1430"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1785,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mrauk-u",
+              "sourceLocation": "infobox year_end: 1785"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-mrauk-u",
+              "sourceLocation": "infobox capital: Launggyet (1429–1430) / Mrauk U (1430–1785)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prome-kingdom",
+      "name": "Prome kingdom",
+      "color": "#9a6a6a",
+      "parent": "mainland-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Prome_kingdom",
+      "span": {
+        "start": 1482,
+        "end": 1542,
+        "startDates": [
+          {
+            "year": 1482,
+            "source": {
+              "sourceKey": "wp-prome-kingdom",
+              "sourceLocation": "infobox year_start: 1482"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1542,
+            "source": {
+              "sourceKey": "wp-prome-kingdom",
+              "sourceLocation": "infobox year_end: 1542"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mainland-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-prome-kingdom",
+              "sourceLocation": "infobox capital: Prome (Pyay)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "maritime-se-asia",
       "name": "Maritime Southeast Asia",
       "color": "#3a7aa8",
@@ -13456,14 +13635,16 @@
             "year": 399,
             "source": {
               "sourceKey": "wp-kutai",
-              "sourceLocation": "lead and Kutai Martapura Kingdom"
+              "sourceLocation": "lead: \"The Kutai Martadipura Kingdom (399–1635) was the earliest Hindu kingdom in the East Indies.\""
             }
-          },
+          }
+        ],
+        "endDates": [
           {
-            "year": 350,
+            "year": 1635,
             "source": {
               "sourceKey": "wp-kutai",
-              "sourceLocation": "History of Indonesia sidebar ('Kutai Kingdom 350–1605')"
+              "sourceLocation": "lead: \"The Kutai Martadipura Kingdom (399–1635) was the earliest Hindu kingdom in the East Indies.\""
             }
           }
         ]
@@ -13760,8 +13941,7 @@
               "sourceLocation": "infobox year_end: 1527"
             }
           }
-        ],
-        "startEvent": "establishment-of-majapahit-after-the-mongol-invasion"
+        ]
       },
       "memberships": [
         {
@@ -13802,9 +13982,7 @@
               "sourceLocation": "infobox year_end: 1524"
             }
           }
-        ],
-        "startEvent": "foundation",
-        "endEvent": "conquered-by-the-aceh-sultanate"
+        ]
       },
       "memberships": [
         {
@@ -13941,6 +14119,378 @@
             {
               "sourceKey": "wp-sultanate-of-brunei-1368-1888",
               "sourceLocation": "infobox capital: Kota Batu (1368–1660) / Brunei Town, Kampong Ayer (1660–1920)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "patani-kingdom",
+      "name": "Patani Kingdom",
+      "color": "#4a8a5a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Patani_Kingdom",
+      "span": {
+        "start": 1400,
+        "end": 1902,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1400,
+            "source": {
+              "sourceKey": "wp-patani-kingdom",
+              "sourceLocation": "infobox year_start: c. 1400"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1902,
+            "source": {
+              "sourceKey": "wp-patani-kingdom",
+              "sourceLocation": "infobox year_end: 1902"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-patani-kingdom",
+              "sourceLocation": "infobox capital: Pattani"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tondo",
+      "name": "Tondo",
+      "color": "#7a6a3a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Tondo_(historical_polity)",
+      "span": {
+        "start": 900,
+        "end": 1589,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 900,
+            "source": {
+              "sourceKey": "wp-tondo-historical-polity",
+              "sourceLocation": "infobox year_start: before 900"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1589,
+            "source": {
+              "sourceKey": "wp-tondo-historical-polity",
+              "sourceLocation": "infobox year_end: 1589"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-tondo-historical-polity",
+              "sourceLocation": "infobox capital: Tondo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maynila",
+      "name": "Maynila",
+      "color": "#6a7a4a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Maynila_(historical_polity)",
+      "span": {
+        "start": 1500,
+        "end": 1571,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1500,
+            "source": {
+              "sourceKey": "wp-maynila-historical-polity",
+              "sourceLocation": "infobox year_start: c. 1500"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1571,
+            "source": {
+              "sourceKey": "wp-maynila-historical-polity",
+              "sourceLocation": "infobox year_end: 1571"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-maynila-historical-polity",
+              "sourceLocation": "infobox capital: Manila"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sunda-kingdom",
+      "name": "Sunda Kingdom",
+      "color": "#5a8a4a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sunda_Kingdom",
+      "span": {
+        "start": 932,
+        "end": 1579,
+        "startDates": [
+          {
+            "year": 932,
+            "source": {
+              "sourceKey": "wp-sunda-kingdom",
+              "sourceLocation": "infobox year_start: 932 AD"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1579,
+            "source": {
+              "sourceKey": "wp-sunda-kingdom",
+              "sourceLocation": "infobox year_end: 1579"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sunda-kingdom",
+              "sourceLocation": "infobox capital: Pakuan Pajajaran / Kawali"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-cirebon",
+      "name": "Sultanate of Cirebon",
+      "color": "#4a7a4a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Cirebon",
+      "span": {
+        "start": 1445,
+        "end": 1677,
+        "startDates": [
+          {
+            "year": 1445,
+            "source": {
+              "sourceKey": "wp-sultanate-of-cirebon",
+              "sourceLocation": "infobox year_start: 1445"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1677,
+            "source": {
+              "sourceKey": "wp-sultanate-of-cirebon",
+              "sourceLocation": "infobox year_end: 1677"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-cirebon",
+              "sourceLocation": "infobox capital: Cirebon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aceh-sultanate",
+      "name": "Aceh Sultanate",
+      "color": "#2a7a4a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Aceh_Sultanate",
+      "span": {
+        "start": 1480,
+        "end": 1904,
+        "startDates": [
+          {
+            "year": 1480,
+            "source": {
+              "sourceKey": "wp-aceh-sultanate",
+              "sourceLocation": "infobox life span: 1480–1904"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1904,
+            "source": {
+              "sourceKey": "wp-aceh-sultanate",
+              "sourceLocation": "infobox life span: 1480–1904"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-aceh-sultanate",
+              "sourceLocation": "infobox capital: Kutaraja or Bandar Aceh Darussalam (modern Banda Aceh) / (1496–1874) /"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-ternate",
+      "name": "Sultanate of Ternate",
+      "color": "#3a6a5a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Ternate",
+      "span": {
+        "start": 1486,
+        "end": 1914,
+        "startDates": [
+          {
+            "year": 1486,
+            "source": {
+              "sourceKey": "wp-sultanate-of-ternate",
+              "sourceLocation": "infobox year_start: 1486"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1914,
+            "source": {
+              "sourceKey": "wp-sultanate-of-ternate",
+              "sourceLocation": "infobox year_end: 1914"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-ternate",
+              "sourceLocation": "infobox capital: TernateGammalammo (royal capital 1575-1606)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-gowa",
+      "name": "Sultanate of Gowa",
+      "color": "#5a4a6a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Gowa",
+      "span": {
+        "start": 1320,
+        "end": 1957,
+        "startDates": [
+          {
+            "year": 1320,
+            "source": {
+              "sourceKey": "wp-sultanate-of-gowa",
+              "sourceLocation": "infobox year_start: 1320"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1957,
+            "source": {
+              "sourceKey": "wp-sultanate-of-gowa",
+              "sourceLocation": "infobox year_end: 1957"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-gowa",
+              "sourceLocation": "infobox capital: Tamalate / (1320–1548) / Somba Opu / (1548–1670) / Kalegowa / (1670–16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-maguindanao",
+      "name": "Sultanate of Maguindanao",
+      "color": "#4a6a6a",
+      "parent": "maritime-se-asia",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Maguindanao",
+      "span": {
+        "start": 1515,
+        "end": 1899,
+        "startDates": [
+          {
+            "year": 1515,
+            "source": {
+              "sourceKey": "wp-sultanate-of-maguindanao",
+              "sourceLocation": "infobox year_start: 1515"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1899,
+            "source": {
+              "sourceKey": "wp-sultanate-of-maguindanao",
+              "sourceLocation": "infobox year_end: 1899 or 1926"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "maritime-sea",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-maguindanao",
+              "sourceLocation": "infobox capital: Tubok (1515–1543) / Selangan (1543–1619; 1701–1711) / Ramitan (1619–16"
             }
           ]
         }
@@ -17159,14 +17709,6 @@
         "wikipedia"
       ]
     },
-    "wp-cividale-del-friuli": {
-      "name": "Wikipedia: Cividale del Friuli",
-      "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-lombards": {
       "name": "Wikipedia: Kingdom of the Lombards",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
@@ -17174,6 +17716,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-cividale-del-friuli": {
+      "name": "Wikipedia: Cividale del Friuli",
+      "url": "https://en.wikipedia.org/wiki/Cividale_del_Friuli",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-kingdom-of-the-lombards": {
       "name": "Kingdom of the Lombards (Wikipedia)",
@@ -17431,14 +17981,6 @@
         "wikipedia"
       ]
     },
-    "wp-row-anglo-saxons": {
-      "name": "Wikipedia: History of Anglo-Saxon England",
-      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-roman-britain": {
       "name": "Wikipedia: Roman Britain",
       "url": "https://en.wikipedia.org/wiki/Roman_Britain",
@@ -17446,6 +17988,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-row-anglo-saxons": {
+      "name": "Wikipedia: History of Anglo-Saxon England",
+      "url": "https://en.wikipedia.org/wiki/History_of_Anglo-Saxon_England",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-history-of-anglo-saxon-england": {
       "name": "History of Anglo-Saxon England (Wikipedia)",
@@ -17591,9 +18141,9 @@
         "wikipedia"
       ]
     },
-    "wp-revolutionary-serbia": {
-      "name": "Revolutionary Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
+    "wp-principality-of-serbia": {
+      "name": "Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -17607,9 +18157,9 @@
         "wikipedia"
       ]
     },
-    "wp-principality-of-serbia": {
-      "name": "Principality of Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
+    "wp-revolutionary-serbia": {
+      "name": "Revolutionary Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Revolutionary_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -17647,17 +18197,17 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -17967,14 +18517,6 @@
         "wikipedia"
       ]
     },
-    "wp-garamantes-classical": {
-      "name": "Wikipedia: Garamantes",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-garamantes": {
       "name": "Wikipedia: Garamantes",
       "url": "https://en.wikipedia.org/wiki/Garamantes",
@@ -17982,6 +18524,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-17"
+    },
+    "wp-garamantes-classical": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-rustamid-dynasty": {
       "name": "Rustamid dynasty (Wikipedia)",
@@ -18127,9 +18677,9 @@
         "wikipedia"
       ]
     },
-    "wp-eastern-turkic": {
-      "name": "Wikipedia: Eastern Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+    "wp-western-turkic": {
+      "name": "Wikipedia: Western Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
@@ -18143,9 +18693,9 @@
       ],
       "accessed": "2026-11-20"
     },
-    "wp-western-turkic": {
-      "name": "Wikipedia: Western Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
+    "wp-eastern-turkic": {
+      "name": "Wikipedia: Eastern Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
@@ -18303,6 +18853,14 @@
         "wikipedia"
       ]
     },
+    "wp-mongolia": {
+      "name": "Mongolia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongolia",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-kazakhstan": {
       "name": "Kazakhstan (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Kazakhstan",
@@ -18311,14 +18869,6 @@
         "wikipedia"
       ]
     },
-    "wp-sagala": {
-      "name": "Wikipedia: Sagala",
-      "url": "https://en.wikipedia.org/wiki/Sagala",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-alchon": {
       "name": "Wikipedia: Alchon Huns",
       "url": "https://en.wikipedia.org/wiki/Alchon_Huns",
@@ -18326,6 +18876,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-sagala": {
+      "name": "Wikipedia: Sagala",
+      "url": "https://en.wikipedia.org/wiki/Sagala",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-karkota-dynasty": {
       "name": "Karkota dynasty (Wikipedia)",
@@ -18783,9 +19341,9 @@
         "wikipedia"
       ]
     },
-    "wp-tibet-history": {
-      "name": "Wikipedia: History of Tibet",
-      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+    "wp-yarlung": {
+      "name": "Wikipedia: Yarlung dynasty",
+      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
       "tags": [
         "wikipedia"
       ],
@@ -18799,17 +19357,9 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-yarlung": {
-      "name": "Wikipedia: Yarlung dynasty",
-      "url": "https://en.wikipedia.org/wiki/Yarlung_dynasty",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
-    "wp-tuyuhun": {
-      "name": "Wikipedia: Tuyuhun",
-      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
       "tags": [
         "wikipedia"
       ],
@@ -18822,6 +19372,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-tuyuhun": {
+      "name": "Wikipedia: Tuyuhun",
+      "url": "https://en.wikipedia.org/wiki/Tuyuhun",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-tibet-under-yuan-rule": {
       "name": "Tibet under Yuan rule (Wikipedia)",
@@ -19119,14 +19677,6 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-kalanay": {
-      "name": "Wikipedia: Kalanay Cave",
-      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-sa-huynh-classical": {
       "name": "Wikipedia: Sa Huỳnh culture",
       "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
@@ -19138,6 +19688,14 @@
     "wp-prehistory-taiwan": {
       "name": "Wikipedia: Prehistory of Taiwan",
       "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
+    "wp-kalanay": {
+      "name": "Wikipedia: Kalanay Cave",
+      "url": "https://en.wikipedia.org/wiki/Kalanay_Cave",
       "tags": [
         "wikipedia"
       ],
@@ -19238,6 +19796,14 @@
       "accessed": "2026-11-21",
       "tags": [
         "cliopatria"
+      ]
+    },
+    "wp-post-angkor-period": {
+      "name": "Post-Angkor period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Post-Angkor_period",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
       ]
     },
     "wp-djenne-djenno": {
@@ -19352,17 +19918,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-savanna-pn": {
-      "name": "Wikipedia: Savanna Pastoral Neolithic",
-      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
+    "wp-pastoral-neolithic": {
+      "name": "Wikipedia: Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-pastoral-neolithic": {
-      "name": "Wikipedia: Pastoral Neolithic",
-      "url": "https://en.wikipedia.org/wiki/Pastoral_Neolithic",
+    "wp-savanna-pn": {
+      "name": "Wikipedia: Savanna Pastoral Neolithic",
+      "url": "https://en.wikipedia.org/wiki/Savanna_Pastoral_Neolithic",
       "tags": [
         "wikipedia"
       ],
@@ -19760,17 +20326,17 @@
         "wikipedia"
       ]
     },
-    "wp-imamate-of-oman": {
-      "name": "Imamate of Oman (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Imamate_of_Oman",
+    "wp-oman": {
+      "name": "Oman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oman",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-oman": {
-      "name": "Oman (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Oman",
+    "wp-imamate-of-oman": {
+      "name": "Imamate of Oman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Imamate_of_Oman",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -19843,6 +20409,102 @@
     "wp-nayakas-of-keladi": {
       "name": "Nayakas of Keladi (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Nayakas_of_Keladi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-turpan-khanate": {
+      "name": "Turpan Khanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Turpan_Khanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-mrauk-u": {
+      "name": "Kingdom of Mrauk U (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mrauk_U",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-prome-kingdom": {
+      "name": "Prome kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Prome_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-patani-kingdom": {
+      "name": "Patani Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Patani_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tondo-historical-polity": {
+      "name": "Tondo (historical polity) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tondo_(historical_polity)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-maynila-historical-polity": {
+      "name": "Maynila (historical polity) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maynila_(historical_polity)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sunda-kingdom": {
+      "name": "Sunda Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sunda_Kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-cirebon": {
+      "name": "Sultanate of Cirebon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Cirebon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-aceh-sultanate": {
+      "name": "Aceh Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aceh_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-ternate": {
+      "name": "Sultanate of Ternate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Ternate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-gowa": {
+      "name": "Sultanate of Gowa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Gowa",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-maguindanao": {
+      "name": "Sultanate of Maguindanao (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Maguindanao",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -28654,6 +29316,98 @@
         {
           "sourceKey": "wp-kingdom-of-kumaon",
           "sourceLocation": "infobox event3: Reunification of Kumaon by Chand dynasty, 1450"
+        }
+      ]
+    },
+    {
+      "uuid": "vassal-of-bengal-sultanate",
+      "title": "Vassal of Bengal Sultanate",
+      "descr": "",
+      "start": 1429,
+      "end": 1437,
+      "tracks": [
+        "mrauk-u"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-mrauk-u",
+          "sourceLocation": "infobox event1: Vassal of Bengal Sultanate, 1429–1437"
+        }
+      ]
+    },
+    {
+      "uuid": "conquest-of-chittagong",
+      "title": "Conquest of Chittagong",
+      "descr": "",
+      "start": 1459,
+      "tracks": [
+        "mrauk-u"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-mrauk-u",
+          "sourceLocation": "infobox event2: Conquest of Chittagong, 1459"
+        }
+      ]
+    },
+    {
+      "uuid": "various-proposed-dates-for-the-founding-of-the-neighboring-r",
+      "title": "Various proposed dates for the founding of the neighboring Rajahnate of Maynila range as early as the 1200s (see Battle of Manila (1258) and (1365)) to the 1500s (see Battle of Manila (1500))",
+      "descr": "",
+      "start": 1200,
+      "end": 1500,
+      "tracks": [
+        "tondo"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tondo-historical-polity",
+          "sourceLocation": "infobox event1: Various proposed dates for the founding of the neighboring Rajahnate of Maynila range as early as the 1200s (see Battle of Manila (1258) and (1365)) to the 1500s (see Battle of Manila (1500)), c. 1200s to c. 1500s"
+        }
+      ]
+    },
+    {
+      "uuid": "establishment-of-regular-trade-relations-with-the-ming-dynas",
+      "title": "Establishment of regular trade relations with the Ming dynasty",
+      "descr": "",
+      "start": 1373,
+      "tracks": [
+        "tondo"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tondo-historical-polity",
+          "sourceLocation": "infobox event2: Establishment of regular trade relations with the Ming dynasty, 1373"
+        }
+      ]
+    },
+    {
+      "uuid": "cirebon-independence-from-sunda-kingdom",
+      "title": "Cirebon Independence from Sunda Kingdom",
+      "descr": "",
+      "start": 1479,
+      "tracks": [
+        "sultanate-of-cirebon"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sultanate-of-cirebon",
+          "sourceLocation": "infobox event1: Cirebon Independence from Sunda Kingdom, 1479"
+        }
+      ]
+    },
+    {
+      "uuid": "vassal-of-the-pedir-kingdom",
+      "title": "Vassal of the Pedir Kingdom",
+      "descr": "",
+      "start": 1497,
+      "tracks": [
+        "aceh-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-aceh-sultanate",
+          "sourceLocation": "infobox event1: Vassal of the Pedir Kingdom, 1497"
         }
       ]
     }
