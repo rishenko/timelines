@@ -297,3 +297,15 @@
   fill: color-mix(in srgb, var(--danger) 85%, transparent);
 }
 
+.lg-glyphs {
+  display: inline-flex;
+  gap: 3px;
+}
+.lg-glyph-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11em, 1fr));
+  gap: 2px 12px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}

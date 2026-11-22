@@ -721,7 +721,7 @@
  * Unrelated events step back while one is selected: their marks fade, but their labels only turn muted, so they stay
  * readable (4.5:1 on the row bands too) and can still be clicked.
  */
-.has-focus .tl-mark:not(.related) > :not(.label, .key-name) {
+.has-focus .tl-mark:not(.related) > :not(.label, .key-name, .cat-glyph) {
   opacity: 0.28;
 }
 .has-focus .tl-mark:not(.related) .label,
@@ -838,4 +838,21 @@
 /* the row name keeps a 24 px wide hit area beside the compare and fold buttons on narrow labels (WCAG 2.5.8) */
 .tl-lane-label .name {
   min-width: 24px;
+}
+
+/* Event categories: a glyph for the main category's kind, before the title (and in Filters → Categories) */
+.cat-glyph {
+  display: inline-block;
+  flex: none;
+  width: 11px;
+  height: 11px;
+  margin-right: 4px;
+  vertical-align: -1px;
+  color: var(--text);
+}
+.region-tree .cat-glyph {
+  margin: 0 2px 0 4px;
+}
+.tl-mark.cluster .cat-glyph {
+  margin-right: 0;
 }

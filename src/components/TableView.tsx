@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { CategoryGlyph } from './CategoryGlyph.tsx';
+import type { EventCategories } from '../state/categoryFilter.ts';
 import type { Dataset, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import type { FocusRequest } from '../state/focus.ts';
@@ -20,7 +22,7 @@ import { safeUrl } from '../lib/urls.ts';
 import { isOn } from '../state/filters.ts';
 import { membersByUnion, type ResolvedMembership, type UnionMember } from '../lib/memberOf.ts';
 
-type Sort = 'date' | 'date-desc' | 'title';
+type Sort = 'date' | 'date-desc' | 'title' | 'category';
 
 interface Props {
   data: Dataset;
@@ -43,12 +45,21 @@ interface Props {
   visibleTracks: Record<string, boolean>;
   /** Each row's regions with their sources, on timelines with regions (a Regions column in the rows tables). */
   regionsOf?: Map<string, RowRegion[]>;
+  /** Each event's categories, on timelines whose events have them (a Category column, and a sort by it). */
+  categoriesOf?: Map<string, EventCategories>;
 }
 
-const SORTS: Record<Sort, { label: string; compare: (a: ResolvedEvent, b: ResolvedEvent) => number }> = {
+const SORTS: Record<Exclude<Sort, 'category'>, { label: string; compare: (a: ResolvedEvent, b: ResolvedEvent) => number }> = {
   date: { label: 'Date, earliest first', compare: compareEvents },
   'date-desc': { label: 'Date, latest first', compare: (a, b) => compareEvents(b, a) },
   title: { label: 'Title, A to Z', compare: (a, b) => a.title.localeCompare(b.title) },
+};
+
+/** Category, A to Z by the main one's words, then by date; events with no category last. */
+const byCategory = (of: Map<string, EventCategories>) => (a: ResolvedEvent, b: ResolvedEvent) => {
+  const x = of.get(a.uuid)?.labels[0];
+  const y = of.get(b.uuid)?.labels[0];
+  return (x === y ? 0 : x === undefined ? 1 : y === undefined ? -1 : x.localeCompare(y)) || compareEvents(a, b);
 };
 
 /**
@@ -71,6 +82,7 @@ export function TableView(p: Props) {
     return (id: string) => trackPath(id, byId).every((t) => isOn(tracksOn, t.id));
   }, [p.visibleTracks, byId]);
   const regionsOf = p.regionsOf;
+  const cats = p.categoriesOf?.size ? p.categoriesOf : undefined;
   const memberOf = p.memberOf?.size ? p.memberOf : undefined;
   // rows with regions are listed too, so every row's regions can be read here
   const hasRegions = useMemo(() => (regionsOf ? (id: string) => !!regionsOf.get(id)?.length : undefined), [regionsOf]);
@@ -81,7 +93,7 @@ export function TableView(p: Props) {
   // regions when the timeline has them (Ancient, Classical); else its top-level rows
   const unit = bySection.some((s) => s.group) ? 'region' : 'row';
   const sections: FullSection[] = useMemo(() => {
-    const cmp = SORTS[sort].compare;
+    const cmp = sort === 'category' ? byCategory(p.categoriesOf ?? new Map()) : SORTS[sort].compare;
     if (!grouped)
       return [
         {
@@ -91,7 +103,7 @@ export function TableView(p: Props) {
         },
       ];
     return bySection.map((s) => ({ ...s, events: [...s.events].sort(cmp) }));
-  }, [grouped, sort, bySection, p.events, data.tracks, p.spans, p.phases, visible, hasRegions]);
+  }, [grouped, sort, bySection, p.events, data.tracks, p.spans, p.phases, visible, hasRegions, p.categoriesOf]);
 
   // Opened from a link to an event (#kadesh): scroll to it, as the chart does. Focus stays put on page load.
   useEffect(() => {
@@ -124,7 +136,7 @@ export function TableView(p: Props) {
   }, [p.focus]);
 
   const downloadCsv = () => {
-    const blob = new Blob([eventsCsv(data, p.events)], { type: 'text/csv;charset=utf-8' });
+    const blob = new Blob([eventsCsv(data, p.events, cats)], { type: 'text/csv;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = `${data.meta.id}-events.csv`;
@@ -152,6 +164,7 @@ export function TableView(p: Props) {
                 {s.label}
               </option>
             ))}
+            {cats && <option value="category">Category, A to Z</option>}
           </select>
         </label>
         <button onClick={downloadCsv} title="Save the events listed here as a spreadsheet (CSV)">
@@ -187,6 +200,11 @@ export function TableView(p: Props) {
                     <th scope="col" aria-sort={sort === 'title' ? 'ascending' : undefined}>
                       Event
                     </th>
+                    {cats && (
+                      <th scope="col" aria-sort={sort === 'category' ? 'ascending' : undefined}>
+                        Category
+                      </th>
+                    )}
                     <th scope="col">Rows</th>
                     <th scope="col">Sources</th>
                   </tr>
@@ -215,6 +233,18 @@ export function TableView(p: Props) {
                           {e.importance === 1 && <span className="key-badge">Key event</span>}
                           {e.descr && <p className="small">{e.descr}</p>}
                         </td>
+                        {cats && (
+                          <td className="category">
+                            {cats.get(e.uuid) ? (
+                              <>
+                                <CategoryGlyph kind={cats.get(e.uuid)!.kind} />
+                                {cats.get(e.uuid)!.labels.join('; ')}
+                              </>
+                            ) : (
+                              <span className="muted">None</span>
+                            )}
+                          </td>
+                        )}
                         <td className="rows">{e.tracks.map((t) => names.get(t) ?? t).join(', ')}</td>
                         <td className="sources">
                           <ul>

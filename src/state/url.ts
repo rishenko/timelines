@@ -4,6 +4,7 @@ import { centerParam, incrementParam, incrementYears, startAt } from '../lib/sub
 import type { LibraryEntry } from './library.ts';
 import type { Dataset } from '../types.ts';
 import { parseRegions } from '../lib/regions.ts';
+import { categoryFacetId, parseCategories } from '../lib/categories.ts';
 import { parseOrder, parseSet, type SetOrder } from '../lib/sets.ts';
 import { regionFacetId } from './regionFilter.ts';
 import { followRedirect, followRedirectList } from '../data/ids.ts';
@@ -34,6 +35,8 @@ export function readUrl(published: Dataset) {
     regions: parseRegions(followRedirectList(published, q.get('regions')), published.meta.facets?.[regionFacetId(published) ?? '']),
     /** A comparison set to open on, and its order. */
     set: parseSet(followRedirectList(published, q.get('set')), published.tracks),
+    /** Ticked categories of the category filter (`?cat=conflict,siege`; none = every category). */
+    cat: parseCategories(followRedirectList(published, q.get('cat')), published.meta.facets?.[categoryFacetId(published) ?? '']),
     order: parseOrder(q.get('order')),
     selected: selectedFromHash(published),
   };
@@ -86,6 +89,8 @@ interface ViewState {
   /** The comparison set while it is shown (empty otherwise), and its order. */
   set: string[];
   order: SetOrder;
+  /** Ticked categories of the category filter. */
+  cat: string[];
 }
 
 /**
@@ -97,6 +102,7 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
   const regions = view.regions.join(',');
   const set = view.set.join(',');
   const order = view.order;
+  const cat = view.cat.join(',');
   const centerRef = useRef(initialCenter);
   const timer = useRef(0);
   const writeUrl = useCallback(() => {
@@ -113,10 +119,11 @@ export function useUrlSync(view: ViewState, initialCenter: number) {
       if (regions) q.set('regions', regions);
       if (set) q.set('set', set);
       if (set && order !== 'picked') q.set('order', order);
+      if (cat) q.set('cat', cat);
       const hash = selectedId ? `#${selectedId}` : '';
       window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
     }, 250);
-  }, [timelineId, increment, compress, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order]);
+  }, [timelineId, increment, compress, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order, cat]);
   useEffect(() => {
     writeUrl();
     // a write still waiting when the app closes is dropped (in tests, the page is gone by then)

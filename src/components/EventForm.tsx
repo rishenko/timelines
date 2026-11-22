@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useFieldArray, useForm } from 'react-hook-form';
+import { useFieldArray, useForm, type FieldErrors, type UseFormRegister } from 'react-hook-form';
 import {
   LINK_KINDS,
   type Calendar,
@@ -13,11 +13,12 @@ import { at0, at1, hasDayZoom } from '../lib/subYear.ts';
 import { childrenMap } from '../lib/tracks.ts';
 import { formatYear, fromStored, toStored, type EraSide } from '../lib/calendar.ts';
 import { ClaimList, DayFields, EraSelect, ProblemList } from './ClaimList.tsx';
+import { categoryFacetId, topOf } from '../lib/categories.ts';
 import { claimsFromValues, keepLocator, toClaimValues, type ClaimFields } from '../lib/claims.ts';
 import { citationsInWords } from '../lib/table.ts';
 import { eventChronology } from '../lib/chronology.ts';
 import { customTags, newProblems, nextTrackColor, uniqueId, upsertEvent } from '../state/edits.ts';
-import type { Source, Track } from '../types.ts';
+import type { Facet, Source, Track } from '../types.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 import { errorProps, FieldError } from './FieldError.tsx';
 
@@ -43,12 +44,16 @@ interface FormValues extends ClaimFields {
   tracks: string[];
   sources: SourceRef[];
   links: EventLink[];
+  /** Its categories (the events facet), main and second; '' for none. */
+  cat1: string;
+  cat2: string;
 }
 
 /** Whether an event's end is its start's own date (same year, month and day as given). */
 const sameDate = (e: TimelineEvent) => e.end === e.start && e.endMonth === e.startMonth && e.endDay === e.startDay;
 
-function toForm(e: TimelineEvent, cal: Calendar): FormValues {
+function toForm(e: TimelineEvent, cal: Calendar, catFacet?: string): FormValues {
+  const cats = (e.memberships ?? []).filter((m) => m.facet === catFacet).map((m) => m.value);
   const s = fromStored(e.start, cal);
   const end = fromStored(e.end ?? e.start, cal);
   return {
@@ -74,11 +79,13 @@ function toForm(e: TimelineEvent, cal: Calendar): FormValues {
     links: (e.links ?? []).map((x) => ({ ...x })),
     startDates: (e.startDates ?? []).map((c) => toClaimValues(c, cal)),
     endDates: (e.endDates ?? []).map((c) => toClaimValues(c, cal)),
+    cat1: cats[0] ?? '',
+    cat2: cats[1] ?? '',
   };
 }
 
 /** The event as saved: the form's fields, plus what the form shows but doesn't edit, kept from `initial`. */
-function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent): TimelineEvent {
+function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent, catFacet?: string): TimelineEvent {
   const start = toStored(Number(v.startYear), v.startEra, cal);
   const e: TimelineEvent = {
     uuid: v.uuid,
@@ -118,8 +125,18 @@ function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent): Timelin
   if (ends && e.end !== undefined) e.endDates = ends;
   const links = v.links.filter((l) => l.to && l.to !== v.uuid);
   if (links.length) e.links = links;
-  // its facet values (categories) aren't edited here yet: kept as they were
-  if (initial.memberships?.length) e.memberships = initial.memberships;
+  // its categories, main first: an unchanged one keeps its membership and sources, a new one cites the event's first
+  // source (the form allows a category only once the event has one); memberships in other facets are kept as they were
+  const was = (initial.memberships ?? []).filter((m) => m.facet === catFacet);
+  const cats = catFacet ? [...new Set([v.cat1, v.cat2].filter(Boolean))] : [];
+  const first = e.sources[0];
+  const mine = cats.flatMap((value) => {
+    const kept = was.find((m) => m.value === value);
+    if (kept) return [kept];
+    return first ? [{ facet: catFacet!, value, sources: [{ ...first }] }] : [];
+  });
+  const memberships = [...mine, ...(initial.memberships ?? []).filter((m) => m.facet !== catFacet)];
+  if (memberships.length) e.memberships = memberships;
   return e;
 }
 
@@ -135,6 +152,8 @@ interface Props {
 
 export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrack, onCreateSource }: Props) {
   const cal = data.meta.calendar;
+  const catFacet = categoryFacetId(data);
+  const facet = catFacet ? data.meta.facets![catFacet] : undefined;
   // months and days are asked for where the timeline is dated in them (or this event already is)
   const days = hasDayZoom(data.meta.increments) || !!(initial.startMonth || initial.endMonth);
   const [newTrack, setNewTrack] = useState<{ name: string; color: string; parent: string } | null>(null);
@@ -151,7 +170,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
     getValues,
     clearErrors,
     formState: { errors },
-  } = useForm<FormValues>({ defaultValues: toForm(initial, cal) });
+  } = useForm<FormValues>({ defaultValues: toForm(initial, cal, catFacet) });
 
   const checkedTracks = (): string[] => {
     const v = getValues('tracks') as unknown;
@@ -213,7 +232,12 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
     ));
 
   const submit = (v: FormValues) => {
-    const e = fromForm(v, cal, initial);
+    const e = fromForm(v, cal, initial, catFacet);
+    // a sub-kind beside its own kind says the same thing twice (a siege is already a war-and-battle)
+    if (facet && v.cat1 && v.cat2 && (topOf(v.cat1, facet) === v.cat2 || topOf(v.cat2, facet) === v.cat1)) {
+      setError('cat2', { message: 'Pick a second category of another kind, or a different sub-kind: this one is already part of the main one.' }, { shouldFocus: true });
+      return;
+    }
     if (e.tracks.length === 0) {
       setError('tracks', { message: 'Pick at least one row.' }, { shouldFocus: true });
       return;
@@ -290,6 +314,9 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               <option value="3">Minor</option>
             </select>
           </div>
+          {facet && (
+            <CategoryFields facet={facet} register={register} errors={errors} hasSource={(watch('sources') ?? []).some((x) => x.sourceKey)} />
+          )}
         </fieldset>
 
         <fieldset>
@@ -464,9 +491,9 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
           </button>
         </fieldset>
 
-        {initial.memberships?.length ? (
+        {initial.memberships?.some((m) => m.facet !== catFacet) ? (
           <p className="small">
-            {initial.memberships.map((m) => {
+            {initial.memberships.filter((m) => m.facet !== catFacet).map((m) => {
               const f = data.meta.facets?.[m.facet];
               return `${f?.name ?? m.facet}: ${f?.values[m.value]?.name ?? m.value}`;
             }).join('; ')}{' '}
@@ -490,5 +517,60 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
         </footer>
       </form>
     </aside>
+  );
+}
+
+/** The event's categories: main and second, each a kind or one of its sub-kinds (grouped under the kind). */
+function CategoryFields({
+  facet,
+  register,
+  errors,
+  hasSource,
+}: {
+  facet: Facet;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+  hasSource: boolean;
+}) {
+  const kinds = Object.entries(facet.values).filter(([, v]) => !v.broader?.length);
+  const subs = (kind: string) => Object.entries(facet.values).filter(([, v]) => v.broader?.[0] === kind);
+  const options = (
+    <>
+      <option value="">(none)</option>
+      {kinds.map(([id, v]) => (
+        <optgroup key={id} label={v.name}>
+          <option value={id}>{v.name} (any)</option>
+          {subs(id).map(([sid, sv]) => (
+            <option key={sid} value={sid}>
+              {sv.name}
+            </option>
+          ))}
+        </optgroup>
+      ))}
+    </>
+  );
+  return (
+    <>
+      <div className="year-row">
+        <label htmlFor="ev-cat1" title="What kind of event it was; the main one draws its glyph">
+          Category
+        </label>
+        <select id="ev-cat1" disabled={!hasSource} aria-describedby={hasSource ? undefined : 'ev-cat-hint'} {...register('cat1')}>
+          {options}
+        </select>
+      </div>
+      <div className="year-row">
+        <label htmlFor="ev-cat2">Second category</label>
+        <select id="ev-cat2" disabled={!hasSource} {...register('cat2')} {...errorProps('ev-cat2', errors.cat2)}>
+          {options}
+        </select>
+      </div>
+      <FieldError id="ev-cat2" error={errors.cat2} />
+      {!hasSource && (
+        <p id="ev-cat-hint" className="muted small">
+          Add a source first: a category cites the event’s source.
+        </p>
+      )}
+    </>
   );
 }

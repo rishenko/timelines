@@ -17,6 +17,8 @@ import { Ruler, type EdgeLink } from './Ruler.tsx';
 import { PhaseStripCell, SpanBand } from './Bands.tsx';
 import { LaneLabel } from './LaneLabel.tsx';
 import { ClusterMark, EventMark } from './Marks.tsx';
+import type { EventCategories } from '../state/categoryFilter.ts';
+import { hasGlyph } from '../components/CategoryGlyph.tsx';
 import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
 
 /** Room after the last year, so the last labels aren't cut off. */
@@ -37,6 +39,8 @@ const PEEK_MS = 2500;
 
 interface Props {
   data: Dataset;
+  /** Each event's categories (its main kind draws a glyph; both are in its accessible name). */
+  categories?: Map<string, EventCategories>;
   /** Visible events, re-plotted under the selected chronologies. */
   events: ResolvedEvent[];
   /** All events (resolved), for connections and cluster titles. */
@@ -235,9 +239,14 @@ export function TimelineView(props: Props) {
     [lanePhases, scale, laneLifespans],
   );
   const headerPx = useMemo(() => Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height])), [laneStrips]);
+  // events drawn with a category glyph before their title: their labels are that much wider
+  const glyphs = useMemo(
+    () => new Set([...(props.categories ?? [])].filter(([, c]) => hasGlyph(c.kind)).map(([id]) => id)),
+    [props.categories],
+  );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin }),
-    [lanes, events, scale, present, expanded, headerPx, shown.thin],
+    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs }),
+    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs],
   );
   const marksByEvent = useMemo(() => {
     const m = new Map<string, Mark[]>();
@@ -617,6 +626,7 @@ export function TimelineView(props: Props) {
                       onStopFocus={onStopFocus}
                       events={m.eventIds!.map((id) => eventsById.get(id)!)}
                       related={m.eventIds!.some((id) => related?.has(id))}
+                      namedCategory={m.keyEventId ? props.categories?.get(m.keyEventId) : undefined}
                       onClick={(mid) => {
                         if (!props.onZoomIn(mid)) setExpanded((x) => ({ ...x, [lane.id]: true }));
                       }}
@@ -632,6 +642,7 @@ export function TimelineView(props: Props) {
                       isTabStop={m.key === rovingKey}
                       onStopFocus={onStopFocus}
                       trackNames={trackNames}
+                      category={props.categories?.get(m.eventId)}
                       selected={selectedId === m.eventId}
                       related={!!related?.has(m.eventId)}
                       showEdited={editMode}

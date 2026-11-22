@@ -16,6 +16,14 @@ interface Props {
   onMakeSet?: () => void;
   /** A comparison set is shown, so the region filter doesn't apply for now. */
   paused?: boolean;
+  /** The same tree for another facet (Filters → Categories): its heading, what it counts, and its help line. */
+  heading?: string;
+  noun?: [string, string];
+  help?: string;
+  /** The ▸ button's name for a value's narrower values (default "the regions in Near East"). */
+  foldName?: (name: string) => string;
+  /** Before each value's name (a category's glyph). */
+  icon?: (id: string) => React.ReactNode;
 }
 
 /**
@@ -23,7 +31,7 @@ interface Props {
  * each with a checkbox and its row count. Ticking a region includes the regions inside it, which show as ticked and
  * can't be unticked on their own.
  */
-export function RegionFilter({ tree, picked, containing, editMode, onToggle, onClear, rowCount, onMakeSet, paused }: Props) {
+export function RegionFilter({ tree, picked, containing, editMode, onToggle, onClear, rowCount, onMakeSet, paused, heading = 'Regions', noun = ['row', 'rows'], help, foldName, icon }: Props) {
   // open the branches holding a ticked region, so the reader sees what is ticked
   const [open, setOpen] = useState<Set<string>>(() => new Set(picked.flatMap((id) => [...containing(id)])));
   const flip = (id: string) =>
@@ -37,7 +45,7 @@ export function RegionFilter({ tree, picked, containing, editMode, onToggle, onC
   const node = (n: RegionNode, insideTicked?: string) => {
     const ticked = pickedSet.has(n.id);
     const isOpen = open.has(n.id);
-    const label = `${n.name} (${n.rows} ${n.rows === 1 ? 'row' : 'rows'})`;
+    const label = `${n.name} (${n.rows} ${n.rows === 1 ? noun[0] : noun[1]})`;
     return (
       <li key={n.id}>
         <span className="region-line">
@@ -45,8 +53,8 @@ export function RegionFilter({ tree, picked, containing, editMode, onToggle, onC
             <button
               className="icon small fold"
               aria-expanded={isOpen}
-              aria-label={`${isOpen ? 'Hide' : 'Show'} the regions in ${n.name}`}
-              title={`${isOpen ? 'Hide' : 'Show'} the regions in ${n.name}`}
+              aria-label={`${isOpen ? 'Hide' : 'Show'} ${foldName?.(n.name) ?? `the regions in ${n.name}`}`}
+              title={`${isOpen ? 'Hide' : 'Show'} ${foldName?.(n.name) ?? `the regions in ${n.name}`}`}
               onClick={() => flip(n.id)}
             >
               {isOpen ? '▾' : '▸'}
@@ -61,6 +69,7 @@ export function RegionFilter({ tree, picked, containing, editMode, onToggle, onC
               disabled={editMode || !!insideTicked}
               onChange={() => onToggle(n.id)}
             />
+            {icon?.(n.id)}
             <span>{label}</span>
           </label>
         </span>
@@ -72,14 +81,14 @@ export function RegionFilter({ tree, picked, containing, editMode, onToggle, onC
   return (
     <section className="region-filter">
       <h3>
-        Regions
+        {heading}
         {picked.length > 0 && !editMode && (
           <span className="bulk">
             <button onClick={onClear}>clear</button>
           </span>
         )}
       </h3>
-      <ul className="region-tree" aria-label="Regions">
+      <ul className="region-tree" aria-label={heading}>
         {tree.map((n) => node(n))}
       </ul>
       {onMakeSet && !!rowCount && (
@@ -88,7 +97,7 @@ export function RegionFilter({ tree, picked, containing, editMode, onToggle, onC
         </button>
       )}
       <p className="muted small">
-        Tick regions to show only their rows. Each row’s regions come from its sources; ▸ opens the regions inside one.
+        {help ?? 'Tick regions to show only their rows. Each row’s regions come from its sources; ▸ opens the regions inside one.'}
         {editMode && ' Off while editing, so every row can be reached.'}
         {paused && !editMode && ' Paused while a comparison is shown.'}
       </p>

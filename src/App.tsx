@@ -11,6 +11,7 @@ import { useLibraryActions } from './state/useLibraryActions.ts';
 import { useSearchActions } from './state/useSearchActions.ts';
 import { useChronology } from './state/useChronology.ts';
 import { useRegionFilter } from './state/regionFilter.ts';
+import { useCategoryFilter } from './state/categoryFilter.ts';
 import { useComparison } from './state/comparison.ts';
 import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
 import { incrementSpoken, incrementYears, SUB_YEAR } from './lib/subYear.ts';
@@ -24,6 +25,7 @@ import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
 import { RegionFilter } from './components/RegionFilter.tsx';
+import { CategoryGlyph } from './components/CategoryGlyph.tsx';
 import { ComparisonBar } from './components/ComparisonBar.tsx';
 import { ThemePanel } from './components/ThemePanel.tsx';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
@@ -74,6 +76,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const [editMode, setEditMode] = useState(false);
   // ---- region filter: rows outside the ticked regions are hidden, on top of the reader's own row toggles ----
   const regions = useRegionFilter(data, initialUrl.regions, filters.sources, editMode);
+  // ---- category filter: events outside the ticked categories are hidden (events with none always show) ----
+  const categories = useCategoryFilter(data, initialUrl.cat, filters.sources, editMode);
   // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
   const comparison = useComparison(data, initialUrl, editMode);
   const rowsOn = useMemo(
@@ -136,7 +140,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
   const chron = useChronology(data);
   const { resolved, resolvedById, spans, phases, memberOf } = chron;
-  const visibleEvents = useMemo(() => resolved.filter((e) => isEventVisible(e, shownFilters)), [resolved, shownFilters]);
+  const visibleEvents = useMemo(
+    () => resolved.filter((e) => isEventVisible(e, shownFilters) && categories.shows(e)),
+    [resolved, shownFilters, categories.shows],
+  );
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
 
   // ---- view settings ----
@@ -172,6 +179,11 @@ export default function App({ published: opened, library: libraryEntry, site, no
   if (regions.picked !== announcedRegions) {
     setAnnouncedRegions(regions.picked);
     setAnnouncement(regions.names.length ? `Showing rows in ${regions.names.join(', ')}` : 'Region filter off: all rows');
+  }
+  const [announcedCategories, setAnnouncedCategories] = useState(categories.picked);
+  if (categories.picked !== announcedCategories) {
+    setAnnouncedCategories(categories.picked);
+    setAnnouncement(categories.names.length ? `Showing events in ${categories.names.join(', ')}` : 'Category filter off: all events');
   }
 
   // ---- folded rows ----
@@ -274,6 +286,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       thinRows,
       hideOutOfViewDefault: published.meta.hideRowsOutOfView !== false,
       regions: regions.picked,
+      cat: categories.picked,
       set: comparison.active ? comparison.rows : [],
       order: comparison.order,
     },
@@ -410,11 +423,16 @@ export default function App({ published: opened, library: libraryEntry, site, no
         panels={panels.open}
         onTogglePanel={panels.toggle}
         filtersNote={
-          comparison.active
-            ? 'comparison'
-            : regions.active
-              ? `${regions.picked.length} ${regions.picked.length === 1 ? 'region' : 'regions'}`
-              : undefined
+          [
+            comparison.active
+              ? 'comparison'
+              : regions.active
+                ? `${regions.picked.length} ${regions.picked.length === 1 ? 'region' : 'regions'}`
+                : '',
+            categories.active ? `${categories.picked.length} ${categories.picked.length === 1 ? 'category' : 'categories'}` : '',
+          ]
+            .filter(Boolean)
+            .join(' · ') || undefined
         }
       />
 
@@ -562,6 +580,27 @@ export default function App({ published: opened, library: libraryEntry, site, no
               />
             )
           }
+          categories={
+            categories.tree.length > 0 && (
+              <RegionFilter
+                heading="Categories"
+                noun={['event', 'events']}
+                tree={categories.tree}
+                picked={categories.picked}
+                containing={categories.containing}
+                editMode={editMode}
+                onToggle={categories.toggle}
+                onClear={categories.clear}
+                icon={(id) => (categories.facet?.values[id]?.broader ? null : <CategoryGlyph kind={id} />)}
+                foldName={(name) => `the sub-kinds of ${name}`}
+                help={
+                  'Tick kinds of event to show only their events; ▸ opens a kind’s sub-kinds. An event shows if either of ' +
+                  'its categories is ticked. Events with no category always show.' +
+                  (editMode ? ' Off while editing, so every event can be reached.' : '')
+                }
+              />
+            )
+          }
         />
       )}
 
@@ -583,10 +622,12 @@ export default function App({ published: opened, library: libraryEntry, site, no
             allTracks={data.tracks}
             visibleTracks={shownRows}
             regionsOf={regions.regionsOf}
+            categoriesOf={categories.info}
           />
         ) : (
           <TimelineView
             data={shownData}
+            categories={categories.info}
             events={shownEvents}
             eventsById={resolvedById}
             spans={shownSpans}
@@ -646,6 +687,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           onSelectAndFocus={selectAndFocus}
           onCopyLink={(id) => void library.copyEventLink(id)}
           mapUrl={mapUrl}
+          categoriesOf={categories.info}
         />
       </main>
 

@@ -12,13 +12,17 @@ gives them.
 | **lifespan** | When a row existed, cited, with uncertain edges and gaps. | era, period |
 | **phase** | A named government, dynasty or period within one row, drawn in a strip along its top. Phases can overlap. | era |
 | **membership** | A row's dated place in another row (`memberOf`), such as a member state in a union. | (not for regions) |
-| **region** | Where a row is placed for filtering and comparison (the file's `memberships` in the regions facet). | membership, category |
+| **region** | Where a row is placed for filtering and comparison (the file's `memberships` in the regions facet). | membership, category (that's for events) |
 | **still going** | A row or event that continues to the timeline's present (`ongoing`). | open-ended |
 | **present** | The timeline's own "now", where things still going end. | today |
 | **event** | Something that happened, on one row or several: a **bar** from start to end, or a **diamond** for a single date. | item, milestone |
 | **key event** | An event that matters most (`importance: 1`): bold, placed first in crowded rows, the only ones at the widest zoom. | milestone, highlight |
 | **folded events (+N)** | Events that didn't fit in a crowded row, shown as "+N"; one holding a key event names it. | badge, cluster, group, pill |
 | **line** | One of the stacked lines of events within a row ("Show all lines"). | row (inside a row) |
+| **category** | What kind of event it was: a **kind** or one of its **sub-kinds**. An event has up to two, the main one first (the file's `memberships` in the events facet). Filters → Categories filters by them. | type, tag, region |
+| **kind** | One of the nine top-level categories (rulers, statehood, territory, cities and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology), each drawn as a **shape** before an event's title. | type, class |
+| **sub-kind** | A narrower category within a kind (a siege within wars and battles). | subcategory, subtype |
+| **shape** | The small mark before an event's title that shows its main category's kind; the Legend lists them. | glyph, icon (in app text) |
 | **shared event** | One event on several rows, joined by a thread while selected. | |
 | **connection** | A historical link between events: leads to, part of, succeeds, conquers, related. | dependency |
 | **uncertain date** | The range of dates the sources allow, from disagreeing date claims and their margins. | |
