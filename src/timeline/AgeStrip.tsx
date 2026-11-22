@@ -41,6 +41,20 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
       <div className="tl-ages-corner" style={{ width: labelW }}>
         Ages
       </div>
+      <AgeBars ages={ages} scale={scale} labelW={labelW} viewLeft={viewLeft} cal={cal} sources={sources} onSelect={onSelect} />
+    </div>
+  );
+}
+
+type BarProps = Omit<Props, 'lines' | 'width'>;
+
+/**
+ * The ages' buttons (and ↗ links), placed by their line: shared by the Ages strip and the rows' age bands. Positions
+ * are from the top of their container, `labelW` in from its left edge.
+ */
+export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, onSelect }: BarProps) {
+  return (
+    <>
       {ages.map(({ era, span, line, drawEnd }) => {
         // an age may run past the timeline's ends (like a row): the chart cuts it there, with an open edge
         const lo = scale.x(scale.domain[0]);
@@ -113,6 +127,6 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
           </Fragment>
         );
       })}
-    </div>
+    </>
   );
 }

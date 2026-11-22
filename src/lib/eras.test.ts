@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { agesInView, ageLines, placeAges } from './eras.ts';
+import { agesInView, ageLines, placeAges, splitAges } from './eras.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset, Era } from '../types.ts';
 
@@ -52,5 +52,39 @@ describe('ages (meta.eras)', () => {
     const shown = agesInView(ages, { y0: 190, y1: 300 });
     expect(shown.map((a) => [a.era.id, a.line])).toEqual([['silver', 0]]);
     expect(agesInView(ages, null)).toBe(ages);
+  });
+
+  it('places an age with tracks on each row it names, with lines numbered per row; the strip keeps the rest', () => {
+    const ages = placeAges(
+      withEras([
+        era('world', 0, 90, 'world'),
+        era('nile-1', 0, 40, 'nile', { tracks: ['africa'] }),
+        era('nile-2', 40, 90, 'nile', { tracks: ['africa'] }),
+        era('aegean', 0, 60, 'aegean', { tracks: ['europe'] }),
+        era('alps', 0, 60, 'alps', { tracks: ['europe'] }),
+        era('both', 10, 20, 'shared', { tracks: ['africa', 'europe'] }),
+      ]),
+      {},
+    );
+    const { strip, bands } = splitAges(ages);
+    expect(strip.map((a) => [a.era.id, a.line])).toEqual([['world', 0]]);
+    expect(bands.get('africa')!.map((a) => [a.era.id, a.line])).toEqual([
+      ['nile-1', 0],
+      ['nile-2', 0],
+      ['both', 1],
+    ]);
+    expect(bands.get('europe')!.map((a) => [a.era.id, a.line])).toEqual([
+      ['aegean', 0],
+      ['alps', 1],
+      ['both', 2],
+    ]);
+    // the shared boundary year is handled within each row's line
+    expect(bands.get('africa')![0].drawEnd).toBe(40);
+  });
+
+  it('closes up each row’s band separately when lines leave the years in view', () => {
+    const ages = placeAges(withEras([era('a', 0, 10, 'one', { tracks: ['r'] }), era('b', 50, 60, 'two', { tracks: ['r'] }), era('w', 0, 10)]), {});
+    const shown = agesInView(ages, { y0: 45, y1: 70 });
+    expect(shown.map((a) => [a.era.id, a.band, a.line])).toEqual([['b', 'r', 0]]);
   });
 });

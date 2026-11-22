@@ -61,6 +61,28 @@ describe('ages', () => {
     expect(within(table).queryByRole('link', { name: /Long Calm/ })).toBeNull();
   });
 
+  it('an age placed in a row is drawn on that row’s band, not in the strip, with the same button', () => {
+    const d = withAges();
+    const row = d.tracks[0];
+    d.meta.eras![0].tracks = [row.id];
+    renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
+    const strip = screen.getByRole('group', { name: 'Ages' });
+    expect(within(strip).queryByRole('button', { name: /^Salt Years/ })).toBeNull();
+    const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
+    expect(within(band).getByRole('button', { name: /^Salt Years, 20 L – 60 L, age; centre the chart on it$/ })).toBeTruthy();
+  });
+
+  it('the table names each age’s region, and lists an age in two rows once', () => {
+    const d = withAges();
+    d.meta.eras![0].tracks = [d.tracks[0].id, d.tracks[1].id];
+    renderApp(`timeline=harbor-towns&view=table`, [d]);
+    const table = screen.getByRole('table', { name: /^Ages/ });
+    const rows = within(table).getAllByRole('row').slice(1);
+    expect(rows).toHaveLength(2);
+    expect(rows[0].textContent).toContain('All regions');
+    expect(rows[1].textContent).toContain(`${d.tracks[0].name}, ${d.tracks[1].name}`);
+  });
+
   it('a timeline without ages has no strip', () => {
     renderApp(`timeline=harbor-towns`, [plainTimeline()]);
     expect(screen.queryByRole('group', { name: 'Ages' })).toBeNull();

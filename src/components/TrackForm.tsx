@@ -221,6 +221,9 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     const parts = [`Delete the row "${initial.name}"?`];
     if (info.orphaned) parts.push(`${info.orphaned} event(s) belong only to this row and will be deleted too.`);
     if (info.shared) parts.push(`${info.shared} event(s) shared with other rows will just lose this one.`);
+    if (info.agesToStrip.length)
+      parts.push(`${info.agesToStrip.length === 1 ? 'This age moves' : 'These ages move'} to the Ages strip at the top: ${info.agesToStrip.join(', ')}.`);
+    if (info.agesShared.length) parts.push(`Shown in other rows too, so staying there: ${info.agesShared.join(', ')}.`);
     if (window.confirm(parts.join('\n\n'))) onDelete(initial.id);
   };
 

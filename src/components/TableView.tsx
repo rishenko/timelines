@@ -540,18 +540,25 @@ function RowsTable({
   );
 }
 
-/** Ages (meta.eras): periods across the whole timeline, as the chart's strip under the ruler shows them, in words. */
+/**
+ * Ages (meta.eras), as the chart's strip under the ruler and the rows' age bands show them, in words, each with the
+ * region (the rows) it belongs to.
+ */
 function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
   const cal = data.meta.calendar;
-  const sorted = [...ages].sort((a, b) => a.span.start - b.span.start || a.era.name.localeCompare(b.era.name));
+  const rowName = new Map(data.tracks.map((t) => [t.id, t.name]));
+  // an age placed in several rows is one row of the table
+  const once = [...new Map(ages.map((a) => [a.era.id, a])).values()];
+  const sorted = once.sort((a, b) => a.span.start - b.span.start || a.era.name.localeCompare(b.era.name));
   return (
     <section>
       <h2 tabIndex={-1}>Ages</h2>
       <table className="ages-table">
-        <caption>Ages: periods across the whole timeline</caption>
+        <caption>Ages: periods across the whole timeline or one region</caption>
         <thead>
           <tr>
             <th scope="col">Age</th>
+            <th scope="col">Region</th>
             <th scope="col">Dates</th>
             <th scope="col">Sources</th>
           </tr>
@@ -564,6 +571,7 @@ function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
                 <th scope="row">
                   <LinkedName name={era.name} url={era.url} ids={era.ids} />
                 </th>
+                <td>{era.tracks?.length ? era.tracks.map((t) => rowName.get(t) ?? t).join(', ') : 'All regions'}</td>
                 <td className="date">
                   {d.main}
                   {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}
