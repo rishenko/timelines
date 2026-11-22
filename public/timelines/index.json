@@ -21,6 +21,26 @@
       },
       "defaultTheme": "parchment",
       "map": "../maps/ancient-classical.json"
+    },
+    {
+      "id": "medieval",
+      "title": "Medieval World",
+      "file": "medieval.json",
+      "subtitle": "Pilot: Byzantium, the Caliphate, the Holy Roman Empire, the Mongols, Mali and China, 650–1500",
+      "eventCount": 42,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      }
     }
   ]
 }
