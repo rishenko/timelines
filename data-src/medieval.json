@@ -4876,6 +4876,47 @@
       ]
     },
     {
+      "id": "terra-mariana",
+      "name": "Terra Mariana (Livonian Confederation)",
+      "color": "#6a6a7a",
+      "parent": "northern-europe",
+      "url": "https://en.wikipedia.org/wiki/Terra_Mariana",
+      "span": {
+        "start": 1207,
+        "end": 1561,
+        "startDates": [
+          {
+            "year": 1207,
+            "source": {
+              "sourceKey": "wp-terra-mariana",
+              "sourceLocation": "infobox year_start: 1207"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1561,
+            "source": {
+              "sourceKey": "wp-terra-mariana",
+              "sourceLocation": "infobox year_end: 1561"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "northern-europe",
+          "sources": [
+            {
+              "sourceKey": "wp-terra-mariana",
+              "sourceLocation": "infobox capital: Riga / (de facto) / Walk / (from 1435)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "eastern-europe",
       "name": "Eastern Europe",
       "color": "#6a5a8a",
@@ -6197,6 +6238,211 @@
       ]
     },
     {
+      "id": "kartli",
+      "name": "Kingdom of Kartli",
+      "color": "#a04a4a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kartli",
+      "span": {
+        "start": 1478,
+        "end": 1762,
+        "startDates": [
+          {
+            "year": 1478,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kartli",
+              "sourceLocation": "infobox year_start: 1478"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1762,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kartli",
+              "sourceLocation": "infobox year_end: 1762"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caucasus",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kartli",
+              "sourceLocation": "infobox capital: Tbilisi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kakheti",
+      "name": "Kingdom of Kakheti",
+      "color": "#8a3a5a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kakheti",
+      "span": {
+        "start": 1466,
+        "end": 1762,
+        "startDates": [
+          {
+            "year": 1466,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kakheti",
+              "sourceLocation": "infobox year_start: 1466"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1762,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kakheti",
+              "sourceLocation": "infobox year_end: 1762"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caucasus",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kakheti",
+              "sourceLocation": "infobox capital: Gremi (1466–1664) / Telavi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "imereti",
+      "name": "Kingdom of Imereti",
+      "color": "#7a4a6a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Imereti",
+      "span": {
+        "start": 1463,
+        "end": 1810,
+        "startDates": [
+          {
+            "year": 1463,
+            "source": {
+              "sourceKey": "wp-kingdom-of-imereti",
+              "sourceLocation": "infobox year_start: 1463"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1810,
+            "source": {
+              "sourceKey": "wp-kingdom-of-imereti",
+              "sourceLocation": "infobox year_end: 1810"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "caucasus",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-imereti",
+              "sourceLocation": "infobox capital: Kutaisi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beylik-of-dulkadir",
+      "name": "Beylik of Dulkadir",
+      "color": "#8a5a3a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Beylik_of_Dulkadir",
+      "span": {
+        "start": 1337,
+        "end": 1522,
+        "startDates": [
+          {
+            "year": 1337,
+            "source": {
+              "sourceKey": "wp-beylik-of-dulkadir",
+              "sourceLocation": "infobox year_start: 1337"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1522,
+            "source": {
+              "sourceKey": "wp-beylik-of-dulkadir",
+              "sourceLocation": "infobox year_end: 1522"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            {
+              "sourceKey": "wp-beylik-of-dulkadir",
+              "sourceLocation": "infobox capital: Elbistan (1337–1507) / Marash (1507–1522)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ramadanid-emirate",
+      "name": "Ramadanid Emirate",
+      "color": "#9a6a4a",
+      "parent": "anatolia",
+      "url": "https://en.wikipedia.org/wiki/Ramadanid_Emirate",
+      "span": {
+        "start": 1352,
+        "end": 1608,
+        "startDates": [
+          {
+            "year": 1352,
+            "source": {
+              "sourceKey": "wp-ramadanid-emirate",
+              "sourceLocation": "infobox year_start: 1352"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1608,
+            "source": {
+              "sourceKey": "wp-ramadanid-emirate",
+              "sourceLocation": "infobox year_end: 1608"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "anatolia",
+          "sources": [
+            {
+              "sourceKey": "wp-ramadanid-emirate",
+              "sourceLocation": "infobox capital: Adana"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "iran-iraq",
       "name": "Iran and Iraq",
       "color": "#a84a2a",
@@ -6831,6 +7077,214 @@
       ]
     },
     {
+      "id": "oman",
+      "name": "Oman",
+      "color": "#c0402a",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Oman",
+      "phases": [
+        {
+          "name": "Imamate of Oman",
+          "start": 749,
+          "end": 1959,
+          "startDates": [
+            {
+              "year": 749,
+              "source": {
+                "sourceKey": "wp-imamate-of-oman",
+                "sourceLocation": "infobox year_start: 749"
+              }
+            },
+            {
+              "year": 751,
+              "source": {
+                "sourceKey": "wp-oman",
+                "sourceLocation": "infobox: Imamate established (751)"
+              },
+              "note": "The Oman article dates the imamate from 751."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1959,
+              "source": {
+                "sourceKey": "wp-imamate-of-oman",
+                "sourceLocation": "infobox year_end: 1959"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-oman",
+              "sourceLocation": "infobox capital: Muscat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sharifate-of-mecca",
+      "name": "Sharifate of Mecca",
+      "color": "#5a8a2a",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Sharifate_of_Mecca",
+      "span": {
+        "start": 967,
+        "end": 1916,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 967,
+            "source": {
+              "sourceKey": "wp-sharifate-of-mecca",
+              "sourceLocation": "infobox life span: 967–1916"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1916,
+            "source": {
+              "sourceKey": "wp-sharifate-of-mecca",
+              "sourceLocation": "infobox life span: 967–1916"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-sharifate-of-mecca",
+              "sourceLocation": "infobox capital: Mecca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tahirid-sultanate",
+      "name": "Tahirid Sultanate",
+      "color": "#a05a4a",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Tahirid_Sultanate",
+      "span": {
+        "start": 1454,
+        "end": 1517,
+        "startDates": [
+          {
+            "year": 1454,
+            "source": {
+              "sourceKey": "wp-tahirid-sultanate",
+              "sourceLocation": "infobox year_start: 1454"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1517,
+            "source": {
+              "sourceKey": "wp-tahirid-sultanate",
+              "sourceLocation": "infobox year_end: 1517"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-tahirid-sultanate",
+              "sourceLocation": "infobox capital: Zabid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kathiri",
+      "name": "Kathiri Sultanate",
+      "color": "#9a6a3a",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Kathiri",
+      "span": [
+        {
+          "start": 1395,
+          "end": 1730,
+          "startDates": [
+            {
+              "year": 1395,
+              "source": {
+                "sourceKey": "wp-kathiri",
+                "sourceLocation": "infobox: First Kathiri state established (1395)"
+              }
+            },
+            {
+              "year": 1379,
+              "source": {
+                "sourceKey": "wp-kathiri",
+                "sourceLocation": "lead: \"It was established in 1379 and ruled Hadhramaut from Dhofar in the east to Sharura in the Empty Quarter in the north and Ain Bamabd in the south.\""
+              },
+              "note": "The lead dates its founding to 1379."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1730,
+              "source": {
+                "sourceKey": "wp-kathiri",
+                "sourceLocation": "infobox: Fall of the first Kathiri state (1730)"
+              }
+            }
+          ]
+        },
+        {
+          "start": 1803,
+          "end": 1967,
+          "startDates": [
+            {
+              "year": 1803,
+              "source": {
+                "sourceKey": "wp-kathiri",
+                "sourceLocation": "infobox: Second Kathiri state established (1803)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1967,
+              "source": {
+                "sourceKey": "wp-kathiri",
+                "sourceLocation": "infobox: Incorporation into South Yemen (30 November 1967)"
+              }
+            }
+          ]
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-kathiri",
+              "sourceLocation": "infobox capital: Seiyun"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "maghreb",
       "name": "The Maghreb",
       "color": "#8a5a3a",
@@ -7283,6 +7737,47 @@
             {
               "sourceKey": "wp-kingdom-of-tlemcen",
               "sourceLocation": "infobox capital: Tlemcen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sultanate-of-tuggurt",
+      "name": "Sultanate of Tuggurt",
+      "color": "#8a6a4a",
+      "parent": "maghreb",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Tuggurt",
+      "span": {
+        "start": 1414,
+        "end": 1881,
+        "startDates": [
+          {
+            "year": 1414,
+            "source": {
+              "sourceKey": "wp-sultanate-of-tuggurt",
+              "sourceLocation": "infobox year_start: 1414"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1881,
+            "source": {
+              "sourceKey": "wp-sultanate-of-tuggurt",
+              "sourceLocation": "infobox year_end: 1881"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "north-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-sultanate-of-tuggurt",
+              "sourceLocation": "infobox capital: Tuggurt"
             }
           ]
         }
@@ -8969,6 +9464,47 @@
       ]
     },
     {
+      "id": "kingdom-of-kumaon",
+      "name": "Kingdom of Kumaon",
+      "color": "#6a7a5a",
+      "parent": "northwest-india",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kumaon",
+      "span": {
+        "start": 600,
+        "end": 1791,
+        "startDates": [
+          {
+            "year": 600,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kumaon",
+              "sourceLocation": "infobox year_start: 600"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1791,
+            "source": {
+              "sourceKey": "wp-kingdom-of-kumaon",
+              "sourceLocation": "infobox year_end: 1791"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kumaon",
+              "sourceLocation": "infobox capital: Baijnath (600–1200) / Champawat (1200–1563) / Almora (1563–1791)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "north-india",
       "name": "Northern India",
       "color": "#c08a3a",
@@ -10319,6 +10855,175 @@
           ],
           "startEvent": "jaffna-in-the-kingdom-of-kotte",
           "endEvent": "aryacakravarti-dynasty-restored"
+        }
+      ]
+    },
+    {
+      "id": "maldives",
+      "name": "Maldives",
+      "color": "#2a8ab0",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Maldives",
+      "span": {
+        "start": 1153,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1153,
+            "source": {
+              "sourceKey": "wp-maldives",
+              "sourceLocation": "section \"History > Islamic period\": \"The importance of the Arabs as traders in the Indian Ocean by the 12th century may partly explain why the last Buddhist king of Maldives, Dhovemi, converted to \""
+            }
+          },
+          {
+            "year": 1193,
+            "source": {
+              "sourceKey": "wp-maldives",
+              "sourceLocation": "section \"History > Islamic period\": \"The importance of the Arabs as traders in the Indian Ocean by the 12th century may partly explain why the last Buddhist king of Maldives, Dhovemi, converted to \""
+            },
+            "note": "The article gives 1193 as the other date for the conversion."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-maldives",
+            "sourceLocation": "infobox established_event3: Current constitution, 7 August 2008 (current state)"
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-maldives",
+              "sourceLocation": "infobox capital: Malé"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calicut-kingdom",
+      "name": "Calicut kingdom",
+      "color": "#4a7a8a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Calicut_kingdom",
+      "span": {
+        "start": 1124,
+        "end": 1806,
+        "startDates": [
+          {
+            "year": 1124,
+            "source": {
+              "sourceKey": "wp-calicut-kingdom",
+              "sourceLocation": "infobox year_start: 1124"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1806,
+            "source": {
+              "sourceKey": "wp-calicut-kingdom",
+              "sourceLocation": "infobox year_end: 1806"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-calicut-kingdom",
+              "sourceLocation": "infobox capital: Calicut"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kingdom-of-mysore",
+      "name": "Kingdom of Mysore",
+      "color": "#9a3a3a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mysore",
+      "span": {
+        "start": 1399,
+        "end": 1950,
+        "startDates": [
+          {
+            "year": 1399,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mysore",
+              "sourceLocation": "infobox year_start: 1399"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1950,
+            "source": {
+              "sourceKey": "wp-kingdom-of-mysore",
+              "sourceLocation": "infobox year_end: 1950"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-mysore",
+              "sourceLocation": "infobox capital: Mysore, Srirangapatna, Bangalore"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nayakas-of-keladi",
+      "name": "Nayakas of Keladi",
+      "color": "#6a4a2a",
+      "parent": "south-india-group",
+      "url": "https://en.wikipedia.org/wiki/Nayakas_of_Keladi",
+      "span": {
+        "start": 1499,
+        "end": 1763,
+        "startDates": [
+          {
+            "year": 1499,
+            "source": {
+              "sourceKey": "wp-nayakas-of-keladi",
+              "sourceLocation": "infobox year_start: 1499"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1763,
+            "source": {
+              "sourceKey": "wp-nayakas-of-keladi",
+              "sourceLocation": "infobox year_end: 1763"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-india",
+          "sources": [
+            {
+              "sourceKey": "wp-nayakas-of-keladi",
+              "sourceLocation": "infobox capital: Keladi, Ikkeri, Bidanur"
+            }
+          ]
         }
       ]
     },
@@ -16894,17 +17599,17 @@
         "wikipedia"
       ]
     },
-    "wp-principality-of-serbia": {
-      "name": "Principality of Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
+    "wp-serbia": {
+      "name": "Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-serbia": {
-      "name": "Serbia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Serbia",
+    "wp-principality-of-serbia": {
+      "name": "Principality of Serbia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Principality_of_Serbia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -16942,17 +17647,17 @@
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary-1526-1867": {
-      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
+    "wp-kingdom-of-hungary": {
+      "name": "Kingdom of Hungary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-kingdom-of-hungary": {
-      "name": "Kingdom of Hungary (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "wp-kingdom-of-hungary-1526-1867": {
+      "name": "Kingdom of Hungary (1526–1867) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary_(1526–1867)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -17262,14 +17967,6 @@
         "wikipedia"
       ]
     },
-    "wp-garamantes": {
-      "name": "Wikipedia: Garamantes",
-      "url": "https://en.wikipedia.org/wiki/Garamantes",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-17"
-    },
     "wp-garamantes-classical": {
       "name": "Wikipedia: Garamantes",
       "url": "https://en.wikipedia.org/wiki/Garamantes",
@@ -17277,6 +17974,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-garamantes": {
+      "name": "Wikipedia: Garamantes",
+      "url": "https://en.wikipedia.org/wiki/Garamantes",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-17"
     },
     "wp-rustamid-dynasty": {
       "name": "Rustamid dynasty (Wikipedia)",
@@ -17422,6 +18127,14 @@
         "wikipedia"
       ]
     },
+    "wp-eastern-turkic": {
+      "name": "Wikipedia: Eastern Turkic Khaganate",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
+    },
     "wp-navekat": {
       "name": "Wikipedia: Navekat",
       "url": "https://en.wikipedia.org/wiki/Navekat",
@@ -17433,14 +18146,6 @@
     "wp-western-turkic": {
       "name": "Wikipedia: Western Turkic Khaganate",
       "url": "https://en.wikipedia.org/wiki/Western_Turkic_Khaganate",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
-    "wp-eastern-turkic": {
-      "name": "Wikipedia: Eastern Turkic Khaganate",
-      "url": "https://en.wikipedia.org/wiki/Eastern_Turkic_Khaganate",
       "tags": [
         "wikipedia"
       ],
@@ -17878,14 +18583,6 @@
         "wikipedia"
       ]
     },
-    "wp-pallava": {
-      "name": "Wikipedia: Pallava dynasty",
-      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-kanchipuram": {
       "name": "Wikipedia: Kanchipuram",
       "url": "https://en.wikipedia.org/wiki/Kanchipuram",
@@ -17893,6 +18590,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-pallava": {
+      "name": "Wikipedia: Pallava dynasty",
+      "url": "https://en.wikipedia.org/wiki/Pallava_dynasty",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-chola-empire": {
       "name": "Chola Empire (Wikipedia)",
@@ -17926,14 +18631,6 @@
         "wikipedia"
       ]
     },
-    "wp-anuradhapura": {
-      "name": "Wikipedia: Anuradhapura kingdom",
-      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-18"
-    },
     "wp-row-anuradhapura": {
       "name": "Wikipedia: Anuradhapura kingdom",
       "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom",
@@ -17941,6 +18638,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-20"
+    },
+    "wp-anuradhapura": {
+      "name": "Wikipedia: Anuradhapura kingdom",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_Kingdom",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-18"
     },
     "wp-kingdom-of-polonnaruwa": {
       "name": "Kingdom of Polonnaruwa (Wikipedia)",
@@ -18078,17 +18783,17 @@
         "wikipedia"
       ]
     },
-    "wp-tibetan-empire": {
-      "name": "Wikipedia: Tibetan Empire",
-      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+    "wp-tibet-history": {
+      "name": "Wikipedia: History of Tibet",
+      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-tibet-history": {
-      "name": "Wikipedia: History of Tibet",
-      "url": "https://en.wikipedia.org/wiki/History_of_Tibet",
+    "wp-tibetan-empire": {
+      "name": "Wikipedia: Tibetan Empire",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire",
       "tags": [
         "wikipedia"
       ],
@@ -18102,14 +18807,6 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-gonghe-county": {
-      "name": "Wikipedia: Gonghe County",
-      "url": "https://en.wikipedia.org/wiki/Gonghe_County",
-      "tags": [
-        "wikipedia"
-      ],
-      "accessed": "2026-11-20"
-    },
     "wp-tuyuhun": {
       "name": "Wikipedia: Tuyuhun",
       "url": "https://en.wikipedia.org/wiki/Tuyuhun",
@@ -18117,6 +18814,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-18"
+    },
+    "wp-gonghe-county": {
+      "name": "Wikipedia: Gonghe County",
+      "url": "https://en.wikipedia.org/wiki/Gonghe_County",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-20"
     },
     "wp-tibet-under-yuan-rule": {
       "name": "Tibet under Yuan rule (Wikipedia)",
@@ -18422,17 +19127,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-prehistory-taiwan": {
-      "name": "Wikipedia: Prehistory of Taiwan",
-      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
+    "wp-sa-huynh-classical": {
+      "name": "Wikipedia: Sa Huỳnh culture",
+      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-sa-huynh-classical": {
-      "name": "Wikipedia: Sa Huỳnh culture",
-      "url": "https://en.wikipedia.org/wiki/Sa_Hu%E1%BB%B3nh_culture",
+    "wp-prehistory-taiwan": {
+      "name": "Wikipedia: Prehistory of Taiwan",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Taiwan",
       "tags": [
         "wikipedia"
       ],
@@ -18631,17 +19336,17 @@
         "wikipedia"
       ]
     },
-    "wp-dmt-classical": {
-      "name": "Wikipedia: Dʿmt",
-      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
+    "wp-aksum": {
+      "name": "Wikipedia: Kingdom of Aksum",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-aksum": {
-      "name": "Wikipedia: Kingdom of Aksum",
-      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+    "wp-dmt-classical": {
+      "name": "Wikipedia: Dʿmt",
+      "url": "https://en.wikipedia.org/wiki/D%CA%BFmt",
       "tags": [
         "wikipedia"
       ],
@@ -18935,17 +19640,17 @@
       ],
       "accessed": "2026-11-18"
     },
-    "wp-nazca": {
-      "name": "Wikipedia: Nazca culture",
-      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
+    "wp-nazca-lines": {
+      "name": "Wikipedia: Nazca Lines",
+      "url": "https://en.wikipedia.org/wiki/Nazca_Lines",
       "tags": [
         "wikipedia"
       ],
       "accessed": "2026-11-18"
     },
-    "wp-nazca-lines": {
-      "name": "Wikipedia: Nazca Lines",
-      "url": "https://en.wikipedia.org/wiki/Nazca_Lines",
+    "wp-nazca": {
+      "name": "Wikipedia: Nazca culture",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture",
       "tags": [
         "wikipedia"
       ],
@@ -19002,6 +19707,142 @@
     "wp-inca-empire": {
       "name": "Inca Empire (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Inca_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-terra-mariana": {
+      "name": "Terra Mariana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Terra_Mariana",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kartli": {
+      "name": "Kingdom of Kartli (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kartli",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kakheti": {
+      "name": "Kingdom of Kakheti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kakheti",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-imereti": {
+      "name": "Kingdom of Imereti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Imereti",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-beylik-of-dulkadir": {
+      "name": "Beylik of Dulkadir (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beylik_of_Dulkadir",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ramadanid-emirate": {
+      "name": "Ramadanid Emirate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ramadanid_Emirate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-imamate-of-oman": {
+      "name": "Imamate of Oman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Imamate_of_Oman",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-oman": {
+      "name": "Oman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oman",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sharifate-of-mecca": {
+      "name": "Sharifate of Mecca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sharifate_of_Mecca",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tahirid-sultanate": {
+      "name": "Tahirid Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tahirid_Sultanate",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kathiri": {
+      "name": "Kathiri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kathiri",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sultanate-of-tuggurt": {
+      "name": "Sultanate of Tuggurt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sultanate_of_Tuggurt",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-kumaon": {
+      "name": "Kingdom of Kumaon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kumaon",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-maldives": {
+      "name": "Maldives (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maldives",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-calicut-kingdom": {
+      "name": "Calicut kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Calicut_kingdom",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-mysore": {
+      "name": "Kingdom of Mysore (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mysore",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nayakas-of-keladi": {
+      "name": "Nayakas of Keladi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nayakas_of_Keladi",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -27677,6 +28518,144 @@
         }
       ],
       "importance": 1
+    },
+    {
+      "uuid": "st-georges-night-uprising",
+      "title": "St. George's Night Uprising",
+      "descr": "",
+      "start": 1343,
+      "end": 1344,
+      "tracks": [
+        "terra-mariana"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-terra-mariana",
+          "sourceLocation": "infobox event1: St. George's Night Uprising, 1343–1344"
+        }
+      ]
+    },
+    {
+      "uuid": "landtag-formed",
+      "title": "Landtag formed",
+      "descr": "",
+      "start": 1419,
+      "tracks": [
+        "terra-mariana"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-terra-mariana",
+          "sourceLocation": "infobox event2: Landtag formed, 1419"
+        }
+      ]
+    },
+    {
+      "uuid": "confederation-agreement",
+      "title": "Confederation Agreement",
+      "descr": "",
+      "start": 1435,
+      "tracks": [
+        "terra-mariana"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-terra-mariana",
+          "sourceLocation": "infobox event3: Confederation Agreement, 4 December 1435"
+        }
+      ]
+    },
+    {
+      "uuid": "georgia-kartli-recognizes-independence",
+      "title": "Georgia (Kartli) recognizes independence",
+      "descr": "",
+      "start": 1490,
+      "tracks": [
+        "kakheti",
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kakheti",
+          "sourceLocation": "infobox event1: Georgia (Kartli) recognizes independence, 1490"
+        }
+      ]
+    },
+    {
+      "uuid": "independence-from-georgia",
+      "title": "Independence from Georgia",
+      "descr": "",
+      "start": 1490,
+      "tracks": [
+        "imereti",
+        "georgia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-imereti",
+          "sourceLocation": "infobox event3: Independence from Georgia, 1490"
+        }
+      ]
+    },
+    {
+      "uuid": "imamate-established",
+      "title": "Imamate established",
+      "descr": "",
+      "start": 751,
+      "tracks": [
+        "oman"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-oman",
+          "sourceLocation": "infobox established_event3: Imamate established, 751"
+        }
+      ]
+    },
+    {
+      "uuid": "nabhani-dynasty",
+      "title": "Nabhani dynasty rules Oman",
+      "descr": "",
+      "start": 1154,
+      "tracks": [
+        "oman"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-oman",
+          "sourceLocation": "infobox established_event4: Nabhani dynasty, 1154"
+        }
+      ]
+    },
+    {
+      "uuid": "first-kathiri-state-established",
+      "title": "First Kathiri state established",
+      "descr": "",
+      "start": 1395,
+      "tracks": [
+        "kathiri"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kathiri",
+          "sourceLocation": "infobox established_event1: First Kathiri state established, 1395"
+        }
+      ]
+    },
+    {
+      "uuid": "reunification-of-kumaon-by-chand-dynasty",
+      "title": "Reunification of Kumaon by Chand dynasty",
+      "descr": "",
+      "start": 1450,
+      "tracks": [
+        "kingdom-of-kumaon"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-kumaon",
+          "sourceLocation": "infobox event3: Reunification of Kumaon by Chand dynasty, 1450"
+        }
+      ]
     }
   ]
 }
