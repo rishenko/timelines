@@ -23,6 +23,26 @@
       "map": "../maps/ancient-classical.json"
     },
     {
+      "id": "medieval",
+      "title": "Medieval World",
+      "file": "medieval.json",
+      "subtitle": "Europe, Africa, Asia, Oceania and the Americas, 650–1500",
+      "eventCount": 563,
+      "calendar": {
+        "before": "BCE",
+        "after": "CE",
+        "yearZero": false,
+        "aliases": {
+          "before": [
+            "BC"
+          ],
+          "after": [
+            "AD"
+          ]
+        }
+      }
+    },
+    {
       "id": "modern-states",
       "title": "Modern States",
       "file": "modern-states.json",
