@@ -26,8 +26,8 @@
       "id": "medieval",
       "title": "Medieval World",
       "file": "medieval.json",
-      "subtitle": "Pilot: Byzantium, the Caliphate, the Holy Roman Empire, the Mongols, Mali and China, 650–1500",
-      "eventCount": 42,
+      "subtitle": "Wave 1: Europe; pilot rows elsewhere; 650–1500",
+      "eventCount": 226,
       "calendar": {
         "before": "BCE",
         "after": "CE",
