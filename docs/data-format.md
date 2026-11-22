@@ -350,7 +350,8 @@ events and facet values form a graph: events link rows, memberships link rows to
 timelines share one such facet, `category`: nine kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
 `unrest`, `diplomacy`, `society`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
 `conflict`). An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
-article the event is dated from. The app doesn't show them yet.
+article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed
+corrections in each generator's `categories.json` (`pipelines/README.md`). The app doesn't show them yet.
 
 ## sources and tags
 

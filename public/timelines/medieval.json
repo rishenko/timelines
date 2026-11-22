@@ -23038,6 +23038,18 @@
           "sourceKey": "wp-umayyad-caliphate",
           "sourceLocation": "lead: \"His eldest son and successor Abd al-Malik ibn Marwan restored Umayyad control over the Caliphate after defeating the Zubayrids in 692.\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "civil-war",
+          "sources": [
+            {
+              "sourceKey": "wp-umayyad-caliphate",
+              "sourceLocation": "infobox event2: Abd al-Malik wins the Second Fitna, 692"
+            }
+          ]
+        }
       ]
     },
     {
@@ -24608,6 +24620,18 @@
           "sourceKey": "wp-serbian-empire",
           "sourceLocation": "infobox event2: Nobility conflict, 1369"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "civil-war",
+          "sources": [
+            {
+              "sourceKey": "wp-serbian-empire",
+              "sourceLocation": "infobox event2: Nobility conflict, 1369"
+            }
+          ]
+        }
       ]
     },
     {
@@ -25082,16 +25106,6 @@
               "sourceLocation": "infobox event_end: Tvrtko I crowned King of Bosnia, 26 October 1377"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "dissolved",
-          "sources": [
-            {
-              "sourceKey": "wp-banate-of-bosnia",
-              "sourceLocation": "infobox event_end: Tvrtko I crowned King of Bosnia, 26 October 1377"
-            }
-          ]
         }
       ]
     },
@@ -25504,6 +25518,18 @@
           "sourceKey": "wp-empire-of-trebizond",
           "sourceLocation": "infobox event3: Permanent loss of Sinope, 1265"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-empire-of-trebizond",
+              "sourceLocation": "infobox event3: Permanent loss of Sinope, 1265"
+            }
+          ]
+        }
       ]
     },
     {
@@ -25825,6 +25851,18 @@
           "sourceKey": "wp-duchy-of-bohemia",
           "sourceLocation": "lead: \"While the lands were occupied by the Polish king Bolesław I and internal struggles shook the Přemyslid dynasty, Duke Vladivoj received Bohemia as a fief from th\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-duchy-of-bohemia",
+              "sourceLocation": "infobox event2: State of the Holy Roman Empire, 1002"
+            }
+          ]
+        }
       ]
     },
     {
@@ -25932,6 +25970,18 @@
         {
           "sourceKey": "wp-kingdom-of-bohemia",
           "sourceLocation": "section \"History > 14th century (\"Golden Age\")\": \"The next year he issued the Golden Bull of 1356, defining and codifying the process of election to the Imperial throne, with the Bohemian king among the seven e\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "title",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-bohemia",
+              "sourceLocation": "infobox event4: King confirmed Elector, 25 December 1356"
+            }
+          ]
         }
       ]
     },
@@ -26464,6 +26514,18 @@
         {
           "sourceKey": "wp-kingdom-of-hungary-1000-1301",
           "sourceLocation": "infobox event4: Resettlement of Cumans and Jasz people, 1238–1239"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-hungary-1000-1301",
+              "sourceLocation": "infobox event4: Resettlement of Cumans and Jasz people, 1238–1239"
+            }
+          ]
         }
       ]
     },
@@ -27167,6 +27229,18 @@
         {
           "sourceKey": "wp-papal-states",
           "sourceLocation": "section \"History > Donation of Pepin\": \"Some later claimed that in 781, Charlemagne extended the regions over which the pope would be temporal sovereign: the Duchy of Rome, Ravenna, the Duchy of the P\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "cession",
+          "sources": [
+            {
+              "sourceKey": "wp-papal-states",
+              "sourceLocation": "infobox event1: Codification, 781"
+            }
+          ]
         }
       ]
     },
@@ -27951,6 +28025,18 @@
           "sourceKey": "wp-county-of-savoy",
           "sourceLocation": "infobox event2: Emp. Henry VII acknowledged Imperial immediacy, 1331"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "title",
+          "sources": [
+            {
+              "sourceKey": "wp-county-of-savoy",
+              "sourceLocation": "infobox event2: Emp. Henry VII acknowledged Imperial immediacy, 1331"
+            }
+          ]
+        }
       ]
     },
     {
@@ -28177,6 +28263,18 @@
         {
           "sourceKey": "wp-kingdom-of-asturias",
           "sourceLocation": "infobox event1: Monarchy becomes hereditary, 842"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-asturias",
+              "sourceLocation": "infobox event1: Monarchy becomes hereditary, 842"
+            }
+          ]
         }
       ]
     },
@@ -29169,6 +29267,18 @@
         {
           "sourceKey": "wp-duchy-of-burgundy",
           "sourceLocation": "infobox event4: Order of the Golden Fleece, 1430"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-duchy-of-burgundy",
+              "sourceLocation": "infobox event4: Order of the Golden Fleece, 1430"
+            }
+          ]
         }
       ]
     },
@@ -31069,6 +31179,18 @@
           "sourceKey": "wp-hamdanid-dynasty",
           "sourceLocation": "infobox event1: Husayn ibn Hamdan establishes himself as leader of Al-Jazira for the Abbasids., 895"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-hamdanid-dynasty",
+              "sourceLocation": "infobox event1: Husayn ibn Hamdan establishes himself as leader of Al-Jazira for the Abbasids., 895"
+            }
+          ]
+        }
       ]
     },
     {
@@ -31083,6 +31205,18 @@
         {
           "sourceKey": "wp-hamdanid-dynasty",
           "sourceLocation": "infobox event2: Sayf al-Dawla establishes himself in Aleppo after successfully countering the Ikhshidids of Egypt., 944"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-hamdanid-dynasty",
+              "sourceLocation": "infobox event2: Sayf al-Dawla establishes himself in Aleppo after successfully countering the Ikhshidids of Egypt., 944"
+            }
+          ]
         }
       ]
     },
@@ -32849,6 +32983,18 @@
           "sourceKey": "wp-qarmatians",
           "sourceLocation": "section \"History > Qarmatian Revolution\": \"They held the Black Stone for ransom, and the Abbasids paid a huge sum for its return in 952.\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-qarmatians",
+              "sourceLocation": "infobox event3: Black Stone returned, 952"
+            }
+          ]
+        }
       ]
     },
     {
@@ -33248,6 +33394,18 @@
           "sourceKey": "wp-kingdom-of-tlemcen",
           "sourceLocation": "section \"Chronology of events\": \"1352–1359: 2nd period of Marinid occupation\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-tlemcen",
+              "sourceLocation": "infobox event6: Second Marinid rule, 1352-1359"
+            }
+          ]
+        }
       ]
     },
     {
@@ -33489,6 +33647,18 @@
         {
           "sourceKey": "wp-kingdom-of-khotan",
           "sourceLocation": "lead: \"This largely Buddhist kingdom existed for over a thousand years until it was conquered by the Muslim Kara-Khanid Khanate in 1006, during the Islamization and Tu\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-khotan",
+              "sourceLocation": "infobox event3: Khotan held by the Muslim, Yūsuf Qadr Khān, 1006"
+            }
+          ]
         }
       ]
     },
@@ -34291,6 +34461,18 @@
         {
           "sourceKey": "wp-kashmir-sultanate",
           "sourceLocation": "infobox event1: Lohara Interruption, 1323–1339"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-kashmir-sultanate",
+              "sourceLocation": "infobox event1: Lohara Interruption, 1323–1339"
+            }
+          ]
         }
       ]
     },
@@ -35286,6 +35468,28 @@
           "sourceKey": "wp-jaffna-kingdom",
           "sourceLocation": "infobox event1: Pandyas installed Aryacakravarti, 1277"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox event1: Pandyas installed Aryacakravarti, 1277"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "vassalage",
+          "sources": [
+            {
+              "sourceKey": "wp-jaffna-kingdom",
+              "sourceLocation": "infobox event1: Pandyas installed Aryacakravarti, 1277"
+            }
+          ]
+        }
       ]
     },
     {
@@ -35776,6 +35980,18 @@
           "sourceKey": "wp-ahom-kingdom",
           "sourceLocation": "infobox event1: Re-organization under King Suhungmung, 1497"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-ahom-kingdom",
+              "sourceLocation": "infobox event1: Re-organization under King Suhungmung, 1497"
+            }
+          ]
+        }
       ]
     },
     {
@@ -35839,6 +36055,18 @@
         {
           "sourceKey": "wp-liao-dynasty",
           "sourceLocation": "section \"Names\": \"In 938 or 947 Abaoji's successor, Emperor Taizong of Liao, officially renamed the dynasty as Great Liao ().\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-liao-dynasty",
+              "sourceLocation": "infobox event1: \"Great Liao\" adopted as a dynastic name, 947"
+            }
+          ]
         }
       ]
     },
@@ -36336,6 +36564,18 @@
           "sourceKey": "wp-parhae",
           "sourceLocation": "section \"Name\": \"In 713, the Tang dynasty bestowed the ruler of Jin with the noble title \"Prince of Commandery of Bohai (Parhae)\" (渤海郡王).\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-parhae",
+              "sourceLocation": "infobox event1: \"Parhae\" as a kingdom name, 713"
+            }
+          ]
+        }
       ]
     },
     {
@@ -36522,6 +36762,18 @@
         {
           "sourceKey": "wp-goryeo",
           "sourceLocation": "section \"History > Military regime\": \"Beginning in 1170, the government of Goryeo was de facto controlled by a succession of powerful families from the warrior class, most notably the Ch'oe family, \""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-goryeo",
+              "sourceLocation": "infobox event4: Military dictatorship, 1170–1270"
+            }
+          ]
         }
       ]
     },
@@ -37298,6 +37550,18 @@
           "sourceKey": "wp-pagan-kingdom",
           "sourceLocation": "lead: \"Over the next two hundred years, the small principality gradually grew to absorb its surrounding regions until the 1050s and 1060s when King Anawrahta founded t\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "conquest",
+          "sources": [
+            {
+              "sourceKey": "wp-pagan-kingdom",
+              "sourceLocation": "infobox event2: Pagan Kingdom's expansion, 1050s–60s"
+            }
+          ]
+        }
       ]
     },
     {
@@ -37471,6 +37735,18 @@
         {
           "sourceKey": "wp-kingdom-of-ava",
           "sourceLocation": "infobox event3: Start of House of Mohnyin, 16 May 1426"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-ava",
+              "sourceLocation": "infobox event3: Start of House of Mohnyin, 16 May 1426"
+            }
+          ]
         }
       ]
     },
@@ -37716,6 +37992,18 @@
         {
           "sourceKey": "wp-ayutthaya-kingdom",
           "sourceLocation": "section \"History > The founding of 1351\": \"Ramesuan lost Ayutthaya to Borommarachathirat in 1370 but recovered it from Thong Lan in 1388, bringing Ayutthaya and Lavo under one ruler.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-ayutthaya-kingdom",
+              "sourceLocation": "infobox event1: Lopburi and Suphanburi rivalry, 1370–1409"
+            }
+          ]
         }
       ]
     },
@@ -38404,6 +38692,18 @@
           "sourceKey": "wp-l-dynasty",
           "sourceLocation": "section \"History > Golden era\": \"One of the big events of the Lý dynasty is changing the name of the country from Đại Cồ Việt (大瞿越) to Đại Việt (大越) in 1054 under the reign of Lý Thánh Tông.\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reform",
+          "sources": [
+            {
+              "sourceKey": "wp-l-dynasty",
+              "sourceLocation": "infobox event2: Lý Thánh Tông changes the state name from Đại Cồ Việt to Đại Việt, 1054"
+            }
+          ]
+        }
       ]
     },
     {
@@ -38495,6 +38795,18 @@
         {
           "sourceKey": "wp-tr-n-dynasty",
           "sourceLocation": "infobox event1: Regent of Trần Thừa and Trần Thủ Độ, 1226"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "coup",
+          "sources": [
+            {
+              "sourceKey": "wp-tr-n-dynasty",
+              "sourceLocation": "infobox event1: Regent of Trần Thừa and Trần Thủ Độ, 1226"
+            }
+          ]
         }
       ]
     },
@@ -38879,6 +39191,18 @@
           "sourceKey": "wp-kediri-kingdom",
           "sourceLocation": "infobox event2: Kakawin Bharatayuddha finished writing, 1157"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-kediri-kingdom",
+              "sourceLocation": "infobox event2: Kakawin Bharatayuddha finished writing, 1157"
+            }
+          ]
+        }
       ]
     },
     {
@@ -39056,6 +39380,18 @@
         {
           "sourceKey": "wp-majapahit",
           "sourceLocation": "infobox event2: Palapa oath, 1334 or 1336"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "territory",
+          "sources": [
+            {
+              "sourceKey": "wp-majapahit",
+              "sourceLocation": "infobox event2: Palapa oath, 1334 or 1336"
+            }
+          ]
         }
       ]
     },
@@ -39997,6 +40333,18 @@
           "sourceKey": "wp-adal-sultanate",
           "sourceLocation": "section \"History > Rise of the Sultanate\": \"In 1415, Sabr ad-Din III, the eldest son of Sa'ad ad-Din II, would return to Adal from his exile in Arabia to restore his father's throne.\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-adal-sultanate",
+              "sourceLocation": "infobox event1: Sabr ad-Din III returns from exile in Yemen, 1415"
+            }
+          ]
+        }
       ]
     },
     {
@@ -40532,6 +40880,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "city-founded",
+          "sources": [
+            {
+              "sourceKey": "wp-tenochtitlan",
+              "sourceLocation": "infobox event_start: Foundation, 1325"
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "founded",
           "sources": [
             {
@@ -40771,6 +41129,18 @@
         {
           "sourceKey": "wp-mississippian-period-archaeology",
           "sourceLocation": "lead: \"These developments resulted in an exodus of some 50% of Cahokians at the time to the Nashville area (likely ancestral to the Koasati people), that region peakin\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "place",
+          "sources": [
+            {
+              "sourceKey": "wp-mississippian-period-archaeology",
+              "sourceLocation": "lead: \"These developments resulted in an exodus of some 50% of Cahokians at the time to the Nashville area (likely ancestral to the Koasati people), that region peakin\""
+            }
+          ]
         }
       ]
     },
@@ -41286,6 +41656,18 @@
         {
           "sourceKey": "wp-kingdom-of-kano",
           "sourceLocation": "infobox event1: Construction of city walls begun, c. 1095"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "place",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-kano",
+              "sourceLocation": "infobox event1: Construction of city walls begun, c. 1095"
+            }
+          ]
         }
       ]
     },

@@ -62,8 +62,9 @@ Then run the generator and compile its output:
 
 `common/event_categories.py` holds the shared `category` facet and the classifier that gives each event up to two categories, main first (design: the event-categories proposal; the format is in `docs/data-format.md`, "Event categories"). The evidence, strongest first: the title (its head noun first), the event's own article (its categories, then its infobox type), the state infobox field the event was read from, and the description. Articles about a state, place or person are skipped.
 
-- **Reviewed overrides** win over the classifier: `modern-states/categories.json`, `{ "<event uuid>": ["<main>", "<second>"] }`, where an empty list means no category. A bad value fails the run.
+- **Reviewed overrides** win over the classifier: `modern-states/categories.json` and `medieval/categories.json`, `{ "<event uuid>": ["<main>", "<second>"] }`, where an empty list means no category. A bad value fails the run.
 - **Evidence:** a full run writes `data-src/provenance/<id>-categories.json`, one line per event with its categories and what each rests on ("reviewed" for an override). Events with an empty list are the review queue; a reviewed override of `[]` is written as `[[null, "reviewed: no category"]]`, so it leaves the queue.
+- **Proof:** after a rerun, `npm run categories:proof -- <timeline>` shows that nothing but the categories changed since `origin/main`.
 - **Pilot:** `pipelines/.venv/bin/python -I pipelines/common/event_categories.py --pilot 20 public/timelines/<id>.json` prints a sample as a table.
 
 ## Provenance manifests
