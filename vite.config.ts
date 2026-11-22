@@ -10,5 +10,8 @@ export default defineConfig({
   plugins: [react(), localDataPlugin()],
   test: {
     environment: 'node',
+    // the UI tests render whole timelines in jsdom: several take 1.5–5.5 s on a fast machine, more on a busy CI runner,
+    // so vitest's default 5 s fails them now and then. Only a hung test waits this long.
+    testTimeout: 30_000,
   },
 })
