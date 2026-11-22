@@ -3,8 +3,8 @@
 Branch `poc-base`. Five POCs try different answers to two questions on the same test rows:
 
 1. **Lifespans and phases:** how they differ, when to use each, and what happens when several overlap.
-2. **Unions and splits:** how to show a state that contains others (the USSR, the United Arab Republic, the
-   Federated Commonwealth) and one that breaks up into several (the USSR in 1991, the Lyran secession of 3057).
+2. **Unions and splits:** how to show a state that contains others (the USSR, the United Arab Republic) and one
+   that breaks up into several (the USSR in 1991).
 
 Each POC is a branch. The coordinator (the main session) reviews every POC against the scoring sheet below and
 shows Kevin one comparison per wave. Kevin picks.
@@ -19,7 +19,7 @@ into its own shape and changes nothing else about them: same rows, dates, source
 |---|---|---|
 | `poc-ancient.json` | Babylonia, Mycenaean Greece (copied from the ancient timeline) | A gap between phases where the state carried on (Babylonia 1155–626 BCE); a lifespan that has drifted from its phases (Mycenae: 1050 vs 1070 BCE); dating systems (Middle/High/Low, Aegean High/Low) |
 | `poc-modern.json` | France, Germany, Poland; Soviet Union, Russia, Ukraine, Estonia; Egypt, Syria, United Arab Republic | Gaps where the state didn't exist (Poland 1795–1807, 1915–18; Estonia before 1918); rival governments (Vichy and Free France; Poland's government-in-exile and People's Republic; East and West Germany); unions (USSR; UAR, shown three times); a split (USSR 1991); a state interrupted by a union (Second Syrian Republic 1950–58, 1961–63); still-existing states (typed as ending 2026); a phase of a few months (Hundred Days 1815) |
-| `poc-battletech.json` | Federated Suns, Lyran Commonwealth, Federated Commonwealth | A union shown three times (own row, a phase on each member, the same events on all three); a split (Lyran secession 3057; FedCom name dropped 3067); a civil war across the union; still-existing realms (typed as ending 3152) |
+| (a fictional test set) | kept private | A union, a split and a civil war across the union in an invented setting |
 
 Dates in `poc-modern.json` come from Wikipedia infoboxes through the extractor in
 `~/data/timelines-analysis/2026-11-21-modern/` (`wp_states.py`), each claim citing its field; the generator is
@@ -70,8 +70,7 @@ Waves: 1 and 2 in parallel; then 5 and 3 (both from 2); then 4 (from 3).
 5. That the UAR joined Egypt and Syria in 1958–61 (and Egypt kept the name to 1971), without seeing it three times —
    `modern-uar-1954-1974`
 6. That Russia, Ukraine and Estonia came out of the USSR in 1991, and which event did it — `modern-1981-2001`
-7. That the Federated Commonwealth joined the Federated Suns and the Lyran Commonwealth, and how it split —
-   `bt-3000-3100`
+7. (fictional test set, kept private)
 8. Which states are still going today — `modern-1981-2001`, `bt-3000-3100`
 9. A phase of a few months (Hundred Days 1815) or a year (Ukrainian State 1918) — `modern-1760-1850`,
    `modern-1900-2000`
@@ -92,6 +91,5 @@ Baseline (`poc-base`, today's format):
 ```
 file                 rows  lifespans  phases  date values  repeated dates  repeated phases  phases copying a row  events  event-row links
 poc-ancient.json     4     2          7       123          3               0                0                     38      38
-poc-battletech.json  4     3          13      65           6               1                2                     14      26
 poc-modern.json      13    10         66      341          20              0                2                     19      33
 ```

@@ -64,27 +64,6 @@
       "defaultTheme": "parchment"
     },
     {
-      "id": "poc-battletech",
-      "title": "POC: BattleTech",
-      "file": "poc-battletech.json",
-      "subtitle": "test set (baseline format)",
-      "eventCount": 14,
-      "calendar": {
-        "before": "BCE",
-        "after": "CE",
-        "yearZero": false,
-        "aliases": {
-          "before": [
-            "BC"
-          ],
-          "after": [
-            "AD"
-          ]
-        }
-      },
-      "defaultTheme": "dark"
-    },
-    {
       "id": "poc-modern",
       "title": "POC: modern states",
       "file": "poc-modern.json",

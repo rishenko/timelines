@@ -12,7 +12,7 @@ out=${2:?out dir}
 mkdir -p "$out" public/timelines/_poc-folded
 base="http://localhost:$port"
 
-for f in poc-ancient poc-modern poc-battletech; do
+for f in poc-ancient poc-modern; do
   node -e '
     const fs = require("fs");
     const d = JSON.parse(fs.readFileSync(`public/timelines/${process.argv[1]}.json`, "utf8"));
@@ -31,8 +31,6 @@ views=(
   "modern-1900-2000|poc-modern|5|1950"
   "modern-uar-1954-1974|poc-modern|1|1964"
   "modern-1981-2001|poc-modern|1|1991"
-  "bt-overview|poc-battletech|50|2735"
-  "bt-3000-3100|poc-battletech|5|3050"
 )
 shot() { # url, file: up to 3 tries (the dev server may reload just after the folded copies are written)
   for try in 1 2 3; do

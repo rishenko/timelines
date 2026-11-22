@@ -5,13 +5,13 @@ Five proofs of concept, built 2026-11-21 by background agents in waves and revie
 ## The questions
 
 1. **Lifespans vs phases:** how they differ, when to use each, and what happens when several overlap.
-2. **Unions and splits:** a state that contains others (USSR, United Arab Republic, Federated Commonwealth) and one that breaks into several (USSR 1991, Lyran secession 3057).
+2. **Unions and splits:** a state that contains others (USSR, United Arab Republic) and one that breaks into several (USSR 1991).
 
 ## Test set (branch `poc-base`)
 
 - **Ancient:** Babylonia (carried on through a gap), Mycenaean Greece (lifespan drifted from its phases).
 - **Modern:** France, Germany, Poland; Soviet Union, Russia, Ukraine, Estonia; Egypt, Syria, United Arab Republic. Dates from Wikipedia infoboxes through `wp_states.py` (each claim cites its field; AI-flagged pages refused).
-- **BattleTech:** Federated Suns, Lyran Commonwealth, Federated Commonwealth (Sarna).
+- **Fictional:** a union and its two members in an invented setting (kept private).
 - Tools: `npm run poc:shots -- <port> <dir>` (same 9 views, plus folded), `npm run poc:metrics` (entry effort).
 
 ## The POCs
@@ -36,7 +36,7 @@ Five proofs of concept, built 2026-11-21 by background agents in waves and revie
 | A4 Rival governments | partly | yes/partly | partly | partly | partly | partly | partly |
 | A5 UAR joined Egypt and Syria | no | partly | no | partly | partly | partly | **yes** |
 | A6 USSR split | partly | yes | partly | yes | yes | yes | yes |
-| A7 Federated Commonwealth | partly | partly | partly | partly | partly | partly | **yes** |
+| A7 Fictional union | partly | partly | partly | partly | partly | partly | **yes** |
 | A8 Still going | no | partly | partly (text) | yes (arrows) | partly | yes | yes |
 | A9 Very short phases | partly | partly | partly | yes | partly | yes | yes |
 | A10 Folded groups | partly | no | partly | partly | partly | partly | partly |
@@ -53,14 +53,14 @@ Entry effort (date values typed / typed twice / union copies, all three files): 
 ## Kevin's calls (2026-11-21)
 
 - Mycenae: no typed lifespan; it follows its phases.
-- Egypt 1958–71 and Syria's gaps: they existed, so they type a lifespan (same rule as Babylonia). The prep agent applied the same rule to the Federated Suns and Lyran Commonwealth (accepted unless Kevin says otherwise).
+- Egypt 1958–71 and Syria's gaps: they existed, so they type a lifespan (same rule as Babylonia). The prep agent applied the same rule to the fictional union's members (accepted unless Kevin says otherwise).
 - Ottoman suzerainty over the Khedivate: a membership, not a rival phase (built in POC 4).
-- Fictional test: BattleTech, Sarna as source of truth.
+- Fictional test set: kept private.
 
 ## Open items
 
 - **Kevin's pick.**
-- POC 4 follow-ups (small): Syria's Ottoman provinces (Damascus Eyalet, Syria Vilayet) are phases but are the same kind of province as Egypt's, so they should become memberships too; wording "in Soviet Union" vs "in the Soviet Union"; Estonia's German occupation 1941–44 as a gap in its membership; one BattleTech phase name at 4.45:1 in dark ("FIRST PRINCES", needs 4.5; may be older); the track editor shows memberships read-only (no editing yet).
+- POC 4 follow-ups (small): Syria's Ottoman provinces (Damascus Eyalet, Syria Vilayet) are phases but are the same kind of province as Egypt's, so they should become memberships too; wording "in Soviet Union" vs "in the Soviet Union"; Estonia's German occupation 1941–44 as a gap in its membership; one fictional phase name at 4.45:1 in dark (needs 4.5; may be older); the track editor shows memberships read-only (no editing yet).
 - Reported by POC 4, unverified on main: the track editor drops a row's facet `memberships` (regions) when saving.
 - **Focus rings** on event marks (≈2.3–2.8:1) and "+N" pills (≈2.3–2.4:1) fail 3:1 in light and parchment; almost certainly already on `main`. Separate card.
 - POC 5: Vichy (and other phases with no room either side) is named only in its tooltip at 5 years per tick.
