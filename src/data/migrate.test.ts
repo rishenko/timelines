@@ -13,7 +13,7 @@ describe('schema versions', () => {
     for (const v of [3, 4, 5, 6, 7]) expect(canRead(v)).toBe(true);
     expect(canRead(2)).toBe(false);
     expect(canRead(8)).toBe(false);
-    expect(canRead('6')).toBe(false);
+    expect(canRead('7')).toBe(false);
   });
 
   for (const v of [3, 4, 5, 6])
@@ -30,6 +30,7 @@ describe('schema versions', () => {
     expect(validateDataset(asVersion(3))).toEqual([]);
     expect(validateDataset(asVersion(4))).toEqual([]);
     expect(validateDataset(asVersion(5))).toEqual([]);
+    expect(validateDataset(asVersion(6))).toEqual([]);
     expect(validateDataset(asVersion(8))[0]).toBe('Unsupported schemaVersion: 8 (this app reads versions 3 to 7).');
   });
 
@@ -39,7 +40,7 @@ describe('schema versions', () => {
     expect(dataset?.schemaVersion).toBe(7);
   });
 
-  it('ships the bundled timeline as version 6', () => {
+  it('ships the bundled timeline as version 7', () => {
     expect(ancient.schemaVersion).toBe(7);
   });
 });
