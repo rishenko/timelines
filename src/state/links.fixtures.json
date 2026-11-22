@@ -1,0 +1,574 @@
+[
+ {
+  "name": "docs: zoom and position",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&inc=100&at=-1500",
+  "state": {
+   "window": {
+    "inc": 100,
+    "at": -1499
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "docs: a day below a year (a timeline without sub-year steps keeps its default zoom)",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&inc=month&at=1916-07-01",
+  "state": {
+   "window": {
+    "at": 1916.4972677595629
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "docs: table, gaps off, all rows",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&view=table&compress=0&rows=all",
+  "state": {
+   "view": "table",
+   "compress": false,
+   "rows": "all"
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "docs: regions",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&regions=anatolia,nile",
+  "state": {
+   "regions": [
+    "anatolia",
+    "nile"
+   ]
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "docs: comparison set, related order",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&set=hittites,pharaonic-egypt&order=related",
+  "state": {
+   "set": {
+    "ids": [
+     "hittites",
+     "pharaonic-egypt"
+    ],
+    "order": "related"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "docs: categories",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&cat=conflict,siege",
+  "state": {
+   "cat": [
+    "conflict",
+    "siege"
+   ]
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "docs: v1 window",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1914&to=1918",
+  "state": {
+   "window": {
+    "from": 1914,
+    "to": 1918
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "app: thin rows and a selected event",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&inc=500&at=-2000&rows=thin#sargon-reign",
+  "state": {
+   "window": {
+    "inc": 500,
+    "at": -1999
+   },
+   "rows": "thin",
+   "selected": "sargon-reign"
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "app: encoded commas (URLSearchParams before v1)",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&inc=100&at=-1400&regions=nile%2Canatolia",
+  "state": {
+   "window": {
+    "inc": 100,
+    "at": -1399
+   },
+   "regions": [
+    "anatolia",
+    "nile"
+   ]
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "app: set in picked order, start order",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&inc=10&at=1900&set=japan,china&order=start",
+  "state": {
+   "window": {
+    "inc": 10,
+    "at": 1900
+   },
+   "set": {
+    "ids": [
+     "japan",
+     "china"
+    ],
+    "order": "start"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "app: categories in ticked order (written in facet order since v1)",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&inc=10&at=1900&cat=siege,rule",
+  "state": {
+   "window": {
+    "inc": 10,
+    "at": 1900
+   },
+   "cat": [
+    "rule",
+    "siege"
+   ]
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "AP World unit 1: The Global Tapestry",
+  "timeline": "medieval",
+  "link": "?timeline=medieval&v=1&from=1200&to=1450&set=china,japan,korea,mamluk-sultanate,delhi-sultanate,ottoman-empire,vijayanagara-empire,cambodia,majapahit,mali-empire,ethiopia,kingdom-of-zimbabwe,kilwa-sultanate,aztec-empire,inca-empire,mississippian-culture,eastern-roman,france,hre",
+  "state": {
+   "window": {
+    "from": 1200,
+    "to": 1450
+   },
+   "set": {
+    "ids": [
+     "china",
+     "japan",
+     "korea",
+     "mamluk-sultanate",
+     "delhi-sultanate",
+     "ottoman-empire",
+     "vijayanagara-empire",
+     "cambodia",
+     "majapahit",
+     "mali-empire",
+     "ethiopia",
+     "kingdom-of-zimbabwe",
+     "kilwa-sultanate",
+     "aztec-empire",
+     "inca-empire",
+     "mississippian-culture",
+     "eastern-roman",
+     "france",
+     "hre"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 2: Networks of Exchange",
+  "timeline": "medieval",
+  "link": "?timeline=medieval&v=1&from=1200&to=1450&set=mongol-empire,golden-horde,ilkhanate,chagatai-khanate,china,timurid-empire,mamluk-sultanate,venice,genoa,mali-empire,kilwa-sultanate,malacca-sultanate,majapahit,delhi-sultanate",
+  "state": {
+   "window": {
+    "from": 1200,
+    "to": 1450
+   },
+   "set": {
+    "ids": [
+     "mongol-empire",
+     "golden-horde",
+     "ilkhanate",
+     "chagatai-khanate",
+     "china",
+     "timurid-empire",
+     "mamluk-sultanate",
+     "venice",
+     "genoa",
+     "mali-empire",
+     "kilwa-sultanate",
+     "malacca-sultanate",
+     "majapahit",
+     "delhi-sultanate"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 3: Land-Based Empires",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1450&to=1750&set=ottoman-empire,iran,mughal-empire,china,japan,russia,habsburg-monarchy,songhai-empire",
+  "state": {
+   "window": {
+    "from": 1450,
+    "to": 1750
+   },
+   "set": {
+    "ids": [
+     "ottoman-empire",
+     "iran",
+     "mughal-empire",
+     "china",
+     "japan",
+     "russia",
+     "habsburg-monarchy",
+     "songhai-empire"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 4: Transoceanic Interconnections",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1450&to=1750&set=portuguese-empire,spanish-empire,dutch-empire,british-empire,french-colonial-empire,aztec-empire,inca-empire,viceroyalty-of-peru,brazil,new-france,kingdom-of-kongo,kingdom-of-ndongo,asante-empire,kingdom-of-dahomey,mughal-empire,china,japan,philippines",
+  "state": {
+   "window": {
+    "from": 1450,
+    "to": 1750
+   },
+   "set": {
+    "ids": [
+     "portuguese-empire",
+     "spanish-empire",
+     "dutch-empire",
+     "british-empire",
+     "french-colonial-empire",
+     "aztec-empire",
+     "inca-empire",
+     "viceroyalty-of-peru",
+     "brazil",
+     "new-france",
+     "kingdom-of-kongo",
+     "kingdom-of-ndongo",
+     "asante-empire",
+     "kingdom-of-dahomey",
+     "mughal-empire",
+     "china",
+     "japan",
+     "philippines"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 5: Revolutions",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1750&to=1900&set=united-states,france,haiti,mexico,gran-colombia,brazil,argentina,united-kingdom,prussia,italy,ottoman-empire,russia,china,japan,india",
+  "state": {
+   "window": {
+    "from": 1750,
+    "to": 1900
+   },
+   "set": {
+    "ids": [
+     "united-states",
+     "france",
+     "haiti",
+     "mexico",
+     "gran-colombia",
+     "brazil",
+     "argentina",
+     "united-kingdom",
+     "prussia",
+     "italy",
+     "ottoman-empire",
+     "russia",
+     "china",
+     "japan",
+     "india"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 6: Consequences of Industrialization",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1750&to=1900&set=united-kingdom,british-empire,french-colonial-empire,germany,belgium,united-states,japan,china,india,egypt,ottoman-empire,ethiopia,zulu-kingdom,south-africa,mahdist-state,hawaiian-kingdom,thailand",
+  "state": {
+   "window": {
+    "from": 1750,
+    "to": 1900
+   },
+   "set": {
+    "ids": [
+     "united-kingdom",
+     "british-empire",
+     "french-colonial-empire",
+     "germany",
+     "belgium",
+     "united-states",
+     "japan",
+     "china",
+     "india",
+     "egypt",
+     "ottoman-empire",
+     "ethiopia",
+     "zulu-kingdom",
+     "south-africa",
+     "mahdist-state",
+     "hawaiian-kingdom",
+     "thailand"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 7: Global Conflict",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1900&to=1945&set=united-kingdom,france,germany,habsburg-monarchy,italy,ottoman-empire,russia,soviet-union,united-states,japan,china,mexico,ethiopia,poland",
+  "state": {
+   "window": {
+    "from": 1900,
+    "to": 1945
+   },
+   "set": {
+    "ids": [
+     "united-kingdom",
+     "france",
+     "germany",
+     "habsburg-monarchy",
+     "italy",
+     "ottoman-empire",
+     "russia",
+     "soviet-union",
+     "united-states",
+     "japan",
+     "china",
+     "mexico",
+     "ethiopia",
+     "poland"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 8: Cold War and Decolonization",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1945&to=1991&set=united-states,soviet-union,china,germany,north-korea,south-korea,vietnam,cuba,hungary,czechoslovakia,afghanistan,india,pakistan,indonesia,egypt,israel,ghana,kenya,algeria,dr-congo,angola,mozambique,south-africa",
+  "state": {
+   "window": {
+    "from": 1945,
+    "to": 1991
+   },
+   "set": {
+    "ids": [
+     "united-states",
+     "soviet-union",
+     "china",
+     "germany",
+     "north-korea",
+     "south-korea",
+     "vietnam",
+     "cuba",
+     "hungary",
+     "czechoslovakia",
+     "afghanistan",
+     "india",
+     "pakistan",
+     "indonesia",
+     "egypt",
+     "israel",
+     "ghana",
+     "kenya",
+     "algeria",
+     "dr-congo",
+     "angola",
+     "mozambique",
+     "south-africa"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "AP World unit 9: Globalization",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&v=1&from=1980&to=2020&set=united-states,china,soviet-union,russia,germany,yugoslavia,bosnia-and-herzegovina,ukraine,iraq,afghanistan,syria,rwanda,south-africa,india,brazil,south-korea",
+  "state": {
+   "window": {
+    "from": 1980,
+    "to": 2020
+   },
+   "set": {
+    "ids": [
+     "united-states",
+     "china",
+     "soviet-union",
+     "russia",
+     "germany",
+     "yugoslavia",
+     "bosnia-and-herzegovina",
+     "ukraine",
+     "iraq",
+     "afghanistan",
+     "syria",
+     "rwanda",
+     "south-africa",
+     "india",
+     "brazil",
+     "south-korea"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 1
+ },
+ {
+  "name": "saved-views (a018e4f)",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&inc=100&at=-1400&rows=all&unfold=anatolia,egypt&hide=hittites&dating=low",
+  "state": {
+   "window": {
+    "inc": 100,
+    "at": -1399
+   },
+   "rows": "all"
+  },
+  "skipped": [],
+  "unknownParams": [
+   "unfold",
+   "hide",
+   "dating"
+  ],
+  "version": 0
+ },
+ {
+  "name": "a newer version",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&v=2&inc=100&at=-1500",
+  "state": {
+   "window": {
+    "inc": 100,
+    "at": -1499
+   }
+  },
+  "skipped": [],
+  "unknownParams": [],
+  "version": 2
+ },
+ {
+  "name": "an unknown id",
+  "timeline": "ancient-classical",
+  "link": "?timeline=ancient-classical&set=hittites,atlantis#no-such-event",
+  "state": {
+   "set": {
+    "ids": [
+     "hittites"
+    ],
+    "order": "picked"
+   }
+  },
+  "skipped": [
+   {
+    "param": "set",
+    "id": "atlantis",
+    "reason": "unknown"
+   },
+   {
+    "param": "#",
+    "id": "no-such-event",
+    "reason": "unknown"
+   }
+  ],
+  "unknownParams": [],
+  "version": 0
+ },
+ {
+  "name": "a window that can’t be used falls back to at/inc",
+  "timeline": "modern-states",
+  "link": "?timeline=modern-states&from=1918&to=1914&inc=10&at=1916",
+  "state": {
+   "window": {
+    "inc": 10,
+    "at": 1916
+   }
+  },
+  "skipped": [
+   {
+    "param": "from",
+    "id": "1918",
+    "reason": "invalid"
+   },
+   {
+    "param": "to",
+    "id": "1914",
+    "reason": "invalid"
+   }
+  ],
+  "unknownParams": [],
+  "version": 0
+ }
+]

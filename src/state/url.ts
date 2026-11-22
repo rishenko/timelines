@@ -1,59 +1,25 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { parseFullDate, parseYear } from '../lib/calendar.ts';
-import { centerParam, incrementParam, incrementYears, startAt } from '../lib/subYear.ts';
 import type { LibraryEntry } from './library.ts';
 import type { Dataset } from '../types.ts';
-import { parseRegions } from '../lib/regions.ts';
-import { categoryFacetId, parseCategories } from '../lib/categories.ts';
-import { parseOrder, parseSet, type SetOrder } from '../lib/sets.ts';
-import { regionFacetId } from './regionFilter.ts';
-import { followRedirect, followRedirectList } from '../data/ids.ts';
+import type { SetOrder } from '../lib/sets.ts';
+import { linkNotice, parseView, resolveView, serializeHash, serializeView, type ViewState } from './viewState.ts';
+import { LABEL_W, LABEL_W_NARROW } from '../timeline/gestures.ts';
 
 /**
- * The address bar. View settings live in the query string (`?timeline=…&inc=100&at=-1594&compress=0&rows=all`; rows is all, active or thin;
- * the region filter as `&regions=anatolia,nile`; a comparison set as `&set=hittites,pharaonic-egypt&order=related`)
- * and the selected event in the hash (`#sack-of-babylon`), so any view can be shared as a link. Ids in a link follow the
- * timeline's `redirects`, so a link made before a row or event was renamed still opens on it.
+ * The address bar: the timeline (`?timeline=`, `?data=` or `?collection=`), then the view as a link (`v=1&inc=100&at=…`,
+ * see viewState.ts for the format, its order and its versions), then the selected event in the hash
+ * (`#sack-of-babylon`). Any view can be shared as a link, and links made before v1 (no `v`) open as they always did.
+ * Ids in a link follow the timeline's `redirects`, so a link made before a row or event was renamed still opens on it;
+ * ones the timeline doesn't have are skipped, and `notice` says so once.
  */
 
-/** Reads the view settings the page was opened with, for the timeline it opened (see Boot). */
+/** Reads the view the page was opened with, for the timeline it opened (see Boot): the defaults filled in. */
 export function readUrl(published: Dataset) {
-  const q = new URLSearchParams(window.location.search);
-  const { increments, defaultIncrement, calendar } = published.meta;
-  const inc = incrementYears(q.get('inc') ?? '');
-  const at = q.get('at');
-  return {
-    increment: increments.map(incrementYears).includes(inc) ? inc : incrementYears(defaultIncrement),
-    at: at !== null ? parseCenter(at, calendar) : null,
-    compress: q.get('compress') !== '0',
-    /** Hide rows with nothing in view: from the link if it says, else the timeline's default. */
-    hideOutOfView: ['active', 'thin'].includes(q.get('rows') ?? '') ? true : q.get('rows') === 'all' ? false : published.meta.hideRowsOutOfView !== false,
-    /** Hidden rows drawn as thin lines rather than taken out. */
-    thinRows: q.get('rows') === 'thin',
-    view: (q.get('view') === 'table' ? 'table' : 'timeline') as View,
-    /** Ticked regions of the region filter (values of the timeline's first facet). */
-    regions: parseRegions(followRedirectList(published, q.get('regions')), published.meta.facets?.[regionFacetId(published) ?? '']),
-    /** A comparison set to open on, and its order. */
-    set: parseSet(followRedirectList(published, q.get('set')), published.tracks),
-    /** Ticked categories of the category filter (`?cat=conflict,siege`; none = every category). */
-    cat: parseCategories(followRedirectList(published, q.get('cat')), published.meta.facets?.[categoryFacetId(published) ?? '']),
-    order: parseOrder(q.get('order')),
-    selected: selectedFromHash(published),
-  };
-}
-
-/** The event selected in the link's hash, after its redirect (null when it was removed). */
-function selectedFromHash(published: Dataset): string | null {
-  const id = decodeURIComponent(window.location.hash.slice(1));
-  return id ? followRedirect(published, id) : null;
-}
-
-/** The center in a link: a year ("1594", "-1594", "1594 BCE"), or a day below a year's zoom ("1916-07-01"). */
-function parseCenter(at: string, cal: Dataset['meta']['calendar']): number | null {
-  const y = parseYear(at, cal);
-  if (y !== null) return y;
-  const d = parseFullDate(at, cal);
-  return d ? startAt(d.year, d.month, d.day) : null;
+  const parsed = parseView(window.location.search, window.location.hash, published);
+  // the chart hasn't been measured yet: its width is estimated from the window, less the row labels
+  const narrow = !!window.matchMedia?.('(max-width: 640px)').matches;
+  const width = Math.max(200, (window.innerWidth || 1200) - (narrow ? LABEL_W_NARROW : LABEL_W));
+  return { ...resolveView(parsed.state, published, width), notice: linkNotice(parsed) };
 }
 
 /** Opens another timeline (a full page load, so it starts from its own defaults and draft). */
@@ -74,7 +40,7 @@ export function shareSearch(id: string, library?: LibraryEntry): string {
 /** Timeline (the chart) or table (the same events as tables: the accessible equivalent). */
 export type View = 'timeline' | 'table';
 
-interface ViewState {
+interface UrlView {
   view: View;
   timelineId: string;
   increment: number;
@@ -82,8 +48,6 @@ interface ViewState {
   selectedId: string | null;
   hideOutOfView: boolean;
   thinRows: boolean;
-  /** The timeline's default for hideOutOfView: the link says rows= only when the reader changed it. */
-  hideOutOfViewDefault: boolean;
   /** Ticked regions of the region filter. */
   regions: string[];
   /** The comparison set while it is shown (empty otherwise), and its order. */
@@ -91,39 +55,42 @@ interface ViewState {
   order: SetOrder;
   /** Ticked categories of the category filter. */
   cat: string[];
+  /** The end-year window the page was opened with (`from`/`to`): kept in the link until the reader scrolls or zooms. */
+  openedWindow: { from: number; to: number } | null;
 }
 
 /**
  * Keeps the address bar in step with the view, debounced. The center year changes on every scroll, so it is
  * kept in a ref rather than state: `onCenterYearChange` records it and schedules a write without re-rendering.
  */
-export function useUrlSync(view: ViewState, initialCenter: number) {
-  const { timelineId, increment, compress, selectedId, view: mode, hideOutOfView, thinRows, hideOutOfViewDefault } = view;
-  const regions = view.regions.join(',');
-  const set = view.set.join(',');
-  const order = view.order;
-  const cat = view.cat.join(',');
+export function useUrlSync(v: UrlView, initialCenter: number, ds: Dataset) {
   const centerRef = useRef(initialCenter);
+  // the opened from/to stays in the link until the zoom changes or the centre moves half a tick from where it was put
+  const keepWindow = useRef(v.openedWindow ? { ...v.openedWindow, increment: v.increment, center: initialCenter } : null);
   const timer = useRef(0);
+  const regions = v.regions.join(',');
+  const set = v.set.join(',');
+  const cat = v.cat.join(',');
+  const { timelineId, increment, compress, selectedId, view: mode, hideOutOfView, thinRows, order } = v;
   const writeUrl = useCallback(() => {
     clearTimeout(timer.current);
     timer.current = window.setTimeout(() => {
-      const q = new URLSearchParams();
-      q.set('timeline', timelineId);
-      q.set('inc', incrementParam(increment));
-      q.set('at', centerParam(centerRef.current));
-      if (!compress) q.set('compress', '0');
-      if (hideOutOfView !== hideOutOfViewDefault || (hideOutOfView && thinRows))
-        q.set('rows', !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active');
-      if (mode === 'table') q.set('view', 'table');
-      if (regions) q.set('regions', regions);
-      if (set) q.set('set', set);
-      if (set && order !== 'picked') q.set('order', order);
-      if (cat) q.set('cat', cat);
-      const hash = selectedId ? `#${selectedId}` : '';
-      window.history.replaceState(null, '', `${window.location.pathname}?${q}${hash}`);
+      const k = keepWindow.current;
+      if (k && (k.increment !== increment || Math.abs(centerRef.current - k.center) > increment / 2)) keepWindow.current = null;
+      const state: ViewState = {
+        window: keepWindow.current ? { from: keepWindow.current.from, to: keepWindow.current.to } : { inc: increment, at: centerRef.current },
+        ...(mode === 'table' ? { view: 'table' as const } : {}),
+        ...(compress ? {} : { compress: false as const }),
+        rows: !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active',
+        ...(regions ? { regions: regions.split(',') } : {}),
+        ...(set ? { set: { ids: set.split(','), order } } : {}),
+        ...(cat ? { cat: cat.split(',') } : {}),
+        ...(selectedId ? { selected: selectedId } : {}),
+      };
+      const query = `timeline=${encodeURIComponent(timelineId)}&${serializeView(state, ds)}`;
+      window.history.replaceState(null, '', `${window.location.pathname}?${query}${serializeHash(state)}`);
     }, 250);
-  }, [timelineId, increment, compress, selectedId, mode, hideOutOfView, thinRows, hideOutOfViewDefault, regions, set, order, cat]);
+  }, [timelineId, increment, compress, selectedId, mode, hideOutOfView, thinRows, regions, set, order, cat, ds]);
   useEffect(() => {
     writeUrl();
     // a write still waiting when the app closes is dropped (in tests, the page is gone by then)
