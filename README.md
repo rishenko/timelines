@@ -192,5 +192,6 @@ Wikimedia Commons with its author and licence.
 
 ## License
 
-GPL v3. Wikipedia text is CC BY-SA; the included timeline quotes only dates and short phrases, and link each
-article. By [rishenko](https://github.com/rishenko).
+Code: [MIT](LICENSE). Timeline data and maps: [CC BY 4.0](LICENSE-DATA.md), except third-party material that keeps
+its own licence (listed in `LICENSE-DATA.md` and in each file's credits). Wikipedia text is CC BY-SA; the timelines
+quote only dates and short phrases, and link each article. By [rishenko](https://github.com/rishenko).

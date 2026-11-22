@@ -238,6 +238,10 @@ for filtering. `memberOf` names another **row**, for a stretch of years, and is 
   An event on several rows draws a thread joining them. Name it as the `endEvent` of what it ended and the
   `startEvent` of what it began (see [succession](#succession-startevent-endevent)). Add `links` between such events
   where one leads to another (a union's founding `causes` a war; a restored name `succeeds` a civil war).
+- **Events during a union** stay on the union's row. An event goes on a member's row as well only when it began or
+  ended that member's membership or one of its phases, or when the member acted as itself (its own war, its own
+  revolution). A union's coronation or its civil war is the union's; a member that seceded in that war gets the
+  secession. This keeps member rows from repeating the union's history.
 - **Still-existing things** are `ongoing`, never typed as ending at the present year; cite that they still exist in
   `ongoingSources`.
 
