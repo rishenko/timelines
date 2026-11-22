@@ -1,16 +1,24 @@
 # Pipelines: the generators behind the Wikipedia-sourced timelines
 
+**Edit generators here, in the repo.** The working copies they came from (outside the repo) are frozen as a record and no longer edited.
+
 Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from an offline copy of English Wikipedia. Every date in the output cites the infobox field, lead sentence or section heading it was read from, and the helpers check that the cited text really holds the year. Rerunning a generator on the same dump reproduces the committed file byte for byte.
 
 | Folder | Builds | Entry point |
 |---|---|---|
 | `modern-states/` | `data-src/modern-states.json`, plus `data-src/provenance/modern-states.json` | `gen_modern.py` |
+| `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) | `gen_medieval.py` |
 | `common/` | shared code: the dump reader, the infobox extractor, and the claim and citation helpers | (none) |
 
 ## Inputs
 
 - **The Wikipedia dump:** `enwiki-20261101-pages-articles-multistream.xml.bz2` and its `-index.txt.bz2`, from [dumps.wikimedia.org](https://dumps.wikimedia.org/enwiki/), in `$TIMELINES_DATA/wikipedia/`. Every committed timeline was built from this dump. The two files together are about 25 GB.
 - **The title index:** `index.sqlite` in the same folder (about 2 GB), built once per dump by `python3 -I pipelines/common/wp_index_db.py` (about 80 s).
+- **Medieval only:**
+  - `medieval/clio-years.json`, a summary of [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) v0.2.1. `medieval/clio_years.py` rebuilds it from the release's GeoJSON.
+  - `medieval/descriptions.json`, the event descriptions.
+  - The repo's own `public/timelines/ancient-classical.json`.
+  - Modern States' committed build at `bfbd2ae`, read with `git show` (the seam at 1500).
 
 ## Settings
 
@@ -31,6 +39,7 @@ You need Python 3.11. Install once, from the repo root:
 Then run the generator and compile its output:
 
     pipelines/.venv/bin/python -I pipelines/modern-states/gen_modern.py      # about 4 minutes
+    pipelines/.venv/bin/python -I pipelines/medieval/gen_medieval.py         # about 1 minute
     npm run data -- build modern-states
 
 `git diff data-src/` should then show nothing. Two more checks:
@@ -54,4 +63,5 @@ A cited field that changed or disappeared fails the run, or shows in the diff, d
 
 ## Licences
 
+- Cliopatria (Seshat Global History Databank) is CC BY 4.0, credited as a source wherever a date comes from it.
 - Article text stays in the dump. Only years, field names and short quoted sentences appear in the output, cited to their articles (CC BY-SA 4.0).

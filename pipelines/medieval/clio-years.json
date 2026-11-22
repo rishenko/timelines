@@ -1,0 +1,13113 @@
+{
+"Sumerian City-States": {
+"from": -3400,
+"to": -1761,
+"wikipedia": [
+"History of Sumer"
+],
+"type": "POLITY"
+},
+"Elam": {
+"from": -3200,
+"to": -601,
+"wikipedia": [
+"Elam"
+],
+"type": "POLITY"
+},
+"Early Dynastic Period of Egypt": {
+"from": -3000,
+"to": -2501,
+"wikipedia": [
+"Early Dynastic Period (Egypt)"
+],
+"type": "POLITY"
+},
+"Indus Valley Civilization": {
+"from": -3000,
+"to": -1701,
+"wikipedia": [
+"Indus Valley Civilisation"
+],
+"type": "POLITY"
+},
+"Old Kingdom of Egypt": {
+"from": -2500,
+"to": -2201,
+"wikipedia": [
+"Old Kingdom of Egypt"
+],
+"type": "POLITY"
+},
+"Akkadian Empire": {
+"from": -2300,
+"to": -2101,
+"wikipedia": [
+"Akkadian Empire"
+],
+"type": "POLITY"
+},
+"Lower Egypt": {
+"from": -2200,
+"to": -2001,
+"wikipedia": [
+"First Intermediate Period of Egypt",
+"Old Kingdom of Egypt"
+],
+"type": "POLITY"
+},
+"Upper Egypt": {
+"from": -2200,
+"to": -2001,
+"wikipedia": [
+"First Intermediate Period of Egypt",
+"Old Kingdom of Egypt"
+],
+"type": "POLITY"
+},
+"Gutian Dynasty": {
+"from": -2100,
+"to": -2001,
+"wikipedia": [
+"Gutian rule in Mesopotamia"
+],
+"type": "POLITY"
+},
+"Middle Kingdom of Egypt": {
+"from": -2000,
+"to": -1601,
+"wikipedia": [
+"Middle Kingdom of Egypt"
+],
+"type": "POLITY"
+},
+"Assyria": {
+"from": -1800,
+"to": -901,
+"wikipedia": [
+"Assyria"
+],
+"type": "POLITY"
+},
+"Hyksos": {
+"from": -1800,
+"to": -1401,
+"wikipedia": [
+"Hyksos"
+],
+"type": "POLITY"
+},
+"Babylonia": {
+"from": -1800,
+"to": -601,
+"wikipedia": [
+"Babylonia"
+],
+"type": "POLITY"
+},
+"First Sealand Dynasty": {
+"from": -1700,
+"to": -1401,
+"wikipedia": [
+"First Sealand dynasty"
+],
+"type": "POLITY"
+},
+"Fifteenth Dynasty of Egypt": {
+"from": -1600,
+"to": -1501,
+"wikipedia": [
+"Fifteenth Dynasty of Egypt"
+],
+"type": "POLITY"
+},
+"Seventeenth Dynasty of Egypt": {
+"from": -1600,
+"to": -1501,
+"wikipedia": [
+"Seventeenth Dynasty of Egypt"
+],
+"type": "POLITY"
+},
+"Sixteenth Dynasty of Egypt": {
+"from": -1600,
+"to": -1501,
+"wikipedia": [
+"Sixteenth Dynasty of Egypt"
+],
+"type": "POLITY"
+},
+"Minoan civilization": {
+"from": -1600,
+"to": -1401,
+"wikipedia": [
+"Minoan civilization"
+],
+"type": "POLITY"
+},
+"Hittites": {
+"from": -1600,
+"to": -1151,
+"wikipedia": [
+"Hittites"
+],
+"type": "POLITY"
+},
+"Shang Dynasty": {
+"from": -1600,
+"to": -1001,
+"wikipedia": [
+"Shang dynasty"
+],
+"type": "POLITY"
+},
+"Mitanni": {
+"from": -1500,
+"to": -1241,
+"wikipedia": [
+"Mitanni"
+],
+"type": "POLITY"
+},
+"Mycenaean Greece": {
+"from": -1500,
+"to": -1101,
+"wikipedia": [
+"Mycenaean Greece"
+],
+"type": "POLITY"
+},
+"New Kingdom of Egypt": {
+"from": -1500,
+"to": -801,
+"wikipedia": [
+"New Kingdom of Egypt"
+],
+"type": "POLITY"
+},
+"(Alliance between Elam and Babylonia)": {
+"from": -1300,
+"to": -1151,
+"wikipedia": [
+"Elam"
+],
+"type": "RELATION"
+},
+"Neo-Hittite states": {
+"from": -1150,
+"to": -801,
+"wikipedia": [
+"Neo-Hittite states"
+],
+"type": "POLITY"
+},
+"Phoenicia": {
+"from": -1150,
+"to": -501,
+"wikipedia": [
+"Phoenicia"
+],
+"type": "POLITY"
+},
+"(Phoenician Empire)": {
+"from": -1150,
+"to": -501,
+"wikipedia": [
+"Phoenicia"
+],
+"type": "POLITY"
+},
+"Philistia": {
+"from": -1150,
+"to": -701,
+"wikipedia": [
+"Philistia"
+],
+"type": "POLITY"
+},
+"Greek Dark Ages": {
+"from": -1100,
+"to": -801,
+"wikipedia": [
+"Greek Dark Ages"
+],
+"type": "POLITY"
+},
+"Zhou Dynasty": {
+"from": -1000,
+"to": -751,
+"wikipedia": [
+"Zhou dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Israel": {
+"from": -1000,
+"to": -701,
+"wikipedia": [
+"Kingdom of Israel (united monarchy)"
+],
+"type": "POLITY"
+},
+"Kingdom of Kush": {
+"from": -1000,
+"to": 346,
+"wikipedia": [
+"Kingdom of Kush"
+],
+"type": "POLITY"
+},
+"Kingdom of Judah": {
+"from": -900,
+"to": -701,
+"wikipedia": [
+"Kingdom of Judah"
+],
+"type": "POLITY"
+},
+"Tabal Kingdom": {
+"from": -900,
+"to": -701,
+"wikipedia": [
+"Tabal (state)"
+],
+"type": "POLITY"
+},
+"Neo-Assyrian Empire": {
+"from": -900,
+"to": -601,
+"wikipedia": [
+"Neo-Assyrian Empire"
+],
+"type": "POLITY"
+},
+"Phrygia": {
+"from": -900,
+"to": -676,
+"wikipedia": [
+"Phrygia"
+],
+"type": "POLITY"
+},
+"Kingdom of Urartu": {
+"from": -800,
+"to": -551,
+"wikipedia": [
+"Urartu"
+],
+"type": "POLITY"
+},
+"Sabaeans": {
+"from": -800,
+"to": 282,
+"wikipedia": [
+"Sabaeans"
+],
+"type": "POLITY"
+},
+"Greek City-States": {
+"from": -800,
+"to": 83,
+"wikipedia": [
+"Polis"
+],
+"type": "POLITY"
+},
+"Twenty-third Dynasty of Egypt": {
+"from": -800,
+"to": -701,
+"wikipedia": [
+"Twenty-third Dynasty of Egypt"
+],
+"type": "POLITY"
+},
+"Twenty-second Dynasty of Egypt": {
+"from": -800,
+"to": -701,
+"wikipedia": [
+"Twenty-second Dynasty of Egypt"
+],
+"type": "POLITY"
+},
+"Jin": {
+"from": -750,
+"to": -405,
+"wikipedia": [
+"Jin (Chinese state)"
+],
+"type": "POLITY"
+},
+"Chu": {
+"from": -750,
+"to": -224,
+"wikipedia": [
+"Chu (state)"
+],
+"type": "POLITY"
+},
+"Qin": {
+"from": -750,
+"to": -219,
+"wikipedia": [
+"Qin (state)"
+],
+"type": "POLITY"
+},
+"Etruscans": {
+"from": -750,
+"to": -265,
+"wikipedia": [
+"Etruscan civilization"
+],
+"type": "POLITY"
+},
+"(Spring and Autumn States)": {
+"from": -750,
+"to": -481,
+"wikipedia": [
+"Spring and Autumn Period"
+],
+"type": "POLITY"
+},
+"Roman Kingdom": {
+"from": -750,
+"to": -481,
+"wikipedia": [
+"Roman Kingdom"
+],
+"type": "POLITY"
+},
+"Qi": {
+"from": -750,
+"to": -204,
+"wikipedia": [
+"Qi (state)"
+],
+"type": "POLITY"
+},
+"Song": {
+"from": -750,
+"to": -285,
+"wikipedia": [
+"Song (state)"
+],
+"type": "POLITY"
+},
+"Teng": {
+"from": -750,
+"to": -451,
+"wikipedia": [
+"Teng (state)"
+],
+"type": "POLITY"
+},
+"Chen": {
+"from": -750,
+"to": -451,
+"wikipedia": [
+"Chen (state)"
+],
+"type": "POLITY"
+},
+"Wey": {
+"from": -750,
+"to": -248,
+"wikipedia": [
+"Wey (state)"
+],
+"type": "POLITY"
+},
+"Cao": {
+"from": -750,
+"to": -451,
+"wikipedia": [
+"Cao (state)"
+],
+"type": "POLITY"
+},
+"Lu": {
+"from": -750,
+"to": -248,
+"wikipedia": [
+"Lu (state)"
+],
+"type": "POLITY"
+},
+"Zheng": {
+"from": -750,
+"to": -367,
+"wikipedia": [
+"Zheng (state)"
+],
+"type": "POLITY"
+},
+"Cai": {
+"from": -750,
+"to": -451,
+"wikipedia": [
+"Cai (state)"
+],
+"type": "POLITY"
+},
+"Zhu": {
+"from": -750,
+"to": -405,
+"wikipedia": [
+"Zhu (state)"
+],
+"type": "POLITY"
+},
+"Yan": {
+"from": -750,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms",
+"Yan (state)"
+],
+"type": "POLITY"
+},
+"Later Zhou": {
+"from": -750,
+"to": 960,
+"wikipedia": [
+"Later Zhou"
+],
+"type": "POLITY"
+},
+"Xu": {
+"from": -750,
+"to": -285,
+"wikipedia": [
+"Xu (state)"
+],
+"type": "POLITY"
+},
+"Wu": {
+"from": -750,
+"to": -451,
+"wikipedia": [
+"Wu (state)"
+],
+"type": "POLITY"
+},
+"Phoenician Colonies": {
+"from": -700,
+"to": -616,
+"wikipedia": [
+"Colonies in antiquity"
+],
+"type": "POLITY"
+},
+"Hadhramaut": {
+"from": -700,
+"to": 305,
+"wikipedia": [
+"Hadhramaut"
+],
+"type": "POLITY"
+},
+"Lydia": {
+"from": -700,
+"to": -541,
+"wikipedia": [
+"Lydia"
+],
+"type": "POLITY"
+},
+"(Macedonian Empire)": {
+"from": -675,
+"to": -292,
+"wikipedia": [
+"Macedonia (ancient kingdom)"
+],
+"type": "POLITY"
+},
+"Macedonian Empire": {
+"from": -675,
+"to": -292,
+"wikipedia": [
+"Macedonia (ancient kingdom)"
+],
+"type": "POLITY"
+},
+"Olmec Civilization": {
+"from": -650,
+"to": -351,
+"wikipedia": [
+"Olmecs"
+],
+"type": "POLITY"
+},
+"Scythia": {
+"from": -650,
+"to": -224,
+"wikipedia": [
+"Scythians"
+],
+"type": "POLITY"
+},
+"Carthage": {
+"from": -650,
+"to": -145,
+"wikipedia": [
+"Ancient Carthage"
+],
+"type": "POLITY"
+},
+"Assyrian Egypt": {
+"from": -650,
+"to": -616,
+"wikipedia": [
+"Assyrian conquest of Egypt"
+],
+"type": "POLITY"
+},
+"Twenty-sixth Dynasty of Egypt": {
+"from": -615,
+"to": -501,
+"wikipedia": [
+"Twenty-sixth Dynasty of Egypt"
+],
+"type": "POLITY"
+},
+"Median Kingdom": {
+"from": -615,
+"to": -551,
+"wikipedia": [
+"Median dynasty"
+],
+"type": "POLITY"
+},
+"Janapada of Avanti": {
+"from": -600,
+"to": -405,
+"wikipedia": [
+"Avanti (region)"
+],
+"type": "POLITY"
+},
+"Janapada of Anga": {
+"from": -600,
+"to": -501,
+"wikipedia": [
+"Anga"
+],
+"type": "POLITY"
+},
+"(Mahajanapadas)": {
+"from": -600,
+"to": -351,
+"wikipedia": [
+"Mahajanapadas"
+],
+"type": "POLITY"
+},
+"Neo-Babylonian Empire": {
+"from": -600,
+"to": -531,
+"wikipedia": [
+"Neo-Babylonian Empire"
+],
+"type": "POLITY"
+},
+"Janapada of Magadha": {
+"from": -600,
+"to": -501,
+"wikipedia": [
+"Magadha"
+],
+"type": "POLITY"
+},
+"Janapada of Malla": {
+"from": -600,
+"to": -451,
+"wikipedia": [
+"Malla (tribe)"
+],
+"type": "POLITY"
+},
+"Janapada of Aśmaka": {
+"from": -600,
+"to": -351,
+"wikipedia": [
+"Asmaka"
+],
+"type": "POLITY"
+},
+"Janapada of Vajji": {
+"from": -600,
+"to": -481,
+"wikipedia": [
+"Vajjika League"
+],
+"type": "POLITY"
+},
+"Janapada of Cedī": {
+"from": -600,
+"to": -451,
+"wikipedia": [
+"Cedī (tribe)"
+],
+"type": "POLITY"
+},
+"Janapada of Kuru": {
+"from": -600,
+"to": -405,
+"wikipedia": [
+"Kuru Kingdom"
+],
+"type": "POLITY"
+},
+"Janapada of Kosala": {
+"from": -600,
+"to": -451,
+"wikipedia": [
+"Kosala"
+],
+"type": "POLITY"
+},
+"Janapada of Matsya": {
+"from": -600,
+"to": -405,
+"wikipedia": [
+"Matsya (tribe)"
+],
+"type": "POLITY"
+},
+"Janapada of Surasena": {
+"from": -600,
+"to": -405,
+"wikipedia": [
+"Surasena"
+],
+"type": "POLITY"
+},
+"Janapada of Pañcāla": {
+"from": -600,
+"to": -405,
+"wikipedia": [
+"Pañcāla"
+],
+"type": "POLITY"
+},
+"Janapada of Vatsa": {
+"from": -600,
+"to": -451,
+"wikipedia": [
+"Vatsa"
+],
+"type": "POLITY"
+},
+"Janapada of Gandhāra": {
+"from": -600,
+"to": -501,
+"wikipedia": [
+"Gandhāra (kingdom)"
+],
+"type": "POLITY"
+},
+"Janapada of Kāśī": {
+"from": -600,
+"to": -451,
+"wikipedia": [
+"Kāśī (kingdom)"
+],
+"type": "POLITY"
+},
+"Janapada of Kamboja": {
+"from": -600,
+"to": -501,
+"wikipedia": [
+"Kambojas"
+],
+"type": "POLITY"
+},
+"Peloponnesian League": {
+"from": -550,
+"to": -338,
+"wikipedia": [
+"Peloponnesian League"
+],
+"type": "POLITY"
+},
+"Achaemenid Empire": {
+"from": -550,
+"to": -327,
+"wikipedia": [
+"Achaemenid Empire"
+],
+"type": "POLITY"
+},
+"Yue": {
+"from": -500,
+"to": -334,
+"wikipedia": [
+"Yue (state)"
+],
+"type": "POLITY"
+},
+"Roman Republic": {
+"from": -500,
+"to": -32,
+"wikipedia": [
+"Roman Republic"
+],
+"type": "POLITY"
+},
+"Zapotec Civilization": {
+"from": -500,
+"to": 895,
+"wikipedia": [
+"Zapotec civilization"
+],
+"type": "POLITY"
+},
+"Magadha - Haryanka dynasty": {
+"from": -500,
+"to": -405,
+"wikipedia": [
+"Haryanka dynasty"
+],
+"type": "POLITY"
+},
+"(Warring States China)": {
+"from": -480,
+"to": -219,
+"wikipedia": [
+"Warring States Period"
+],
+"type": "POLITY"
+},
+"Mahajanapadas": {
+"from": -480,
+"to": -451,
+"wikipedia": [
+"Mahajanapadas"
+],
+"type": "POLITY"
+},
+"Odrysian Kingdom": {
+"from": -450,
+"to": -338,
+"wikipedia": [
+"Odrysian kingdom"
+],
+"type": "POLITY"
+},
+"Yuezhi": {
+"from": -404,
+"to": 42,
+"wikipedia": [
+"Yuezhi"
+],
+"type": "POLITY"
+},
+"Zhao": {
+"from": -404,
+"to": -226,
+"wikipedia": [
+"Zhao (state)"
+],
+"type": "POLITY"
+},
+"Magadha - Shaishunaga dynasty": {
+"from": -404,
+"to": -334,
+"wikipedia": [
+"Shaishunaga dynasty"
+],
+"type": "POLITY"
+},
+"Cimmerian Bosporus": {
+"from": -404,
+"to": 372,
+"wikipedia": [
+"Bosporan Kingdom"
+],
+"type": "POLITY"
+},
+"Wei": {
+"from": -404,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms",
+"Wei (state)"
+],
+"type": "POLITY"
+},
+"Han": {
+"from": -404,
+"to": -203,
+"wikipedia": [
+"Han (state)"
+],
+"type": "POLITY"
+},
+"Thirtieth Dynasty of Egypt": {
+"from": -383,
+"to": -338,
+"wikipedia": [
+"Thirtieth Dynasty of Egypt"
+],
+"type": "POLITY"
+},
+"Minaeans": {
+"from": -383,
+"to": -26,
+"wikipedia": [
+"Minaeans"
+],
+"type": "POLITY"
+},
+"Second Athenian League": {
+"from": -366,
+"to": -338,
+"wikipedia": [
+"Second Athenian League"
+],
+"type": "POLITY"
+},
+"Sacred Band of Thebes": {
+"from": -366,
+"to": -351,
+"wikipedia": [
+"Thebes, Greece"
+],
+"type": "POLITY"
+},
+"Zhongshan": {
+"from": -366,
+"to": -292,
+"wikipedia": [
+"Zhongshan"
+],
+"type": "POLITY"
+},
+"Thebans": {
+"from": -350,
+"to": -338,
+"wikipedia": [
+"Theban"
+],
+"type": "POLITY"
+},
+"Qataban": {
+"from": -350,
+"to": 183,
+"wikipedia": [
+"Qataban"
+],
+"type": "POLITY"
+},
+"Minyue": {
+"from": -333,
+"to": -111,
+"wikipedia": [
+"Minyue"
+],
+"type": "POLITY"
+},
+"Nanda Empire": {
+"from": -333,
+"to": -319,
+"wikipedia": [
+"Nanda Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Bithynia": {
+"from": -333,
+"to": -67,
+"wikipedia": [
+"Kingdom of Bithynia"
+],
+"type": "POLITY"
+},
+"Ptolemaic Kingdom": {
+"from": -331,
+"to": -28,
+"wikipedia": [
+"Ptolemaic Kingdom"
+],
+"type": "POLITY"
+},
+"Cyrenaica": {
+"from": -331,
+"to": -92,
+"wikipedia": [
+"Cyrenaica"
+],
+"type": "POLITY"
+},
+"Kingdom of Armenia": {
+"from": -326,
+"to": 646,
+"wikipedia": [
+"Kingdom of Armenia (antiquity)"
+],
+"type": "POLITY"
+},
+"Laomedon": {
+"from": -323,
+"to": -319,
+"wikipedia": [
+"Laomedon of Mytilene"
+],
+"type": "POLITY"
+},
+"Athenian Coalition": {
+"from": -323,
+"to": -257,
+"wikipedia": [
+"Peloponnesian War"
+],
+"type": "POLITY"
+},
+"Kingdom of Lysimachus": {
+"from": -323,
+"to": -282,
+"wikipedia": [
+"Lysimachian Empire"
+],
+"type": "POLITY"
+},
+"Perdiccas": {
+"from": -323,
+"to": -319,
+"wikipedia": [
+"Perdiccas"
+],
+"type": "POLITY"
+},
+"Maurya Empire": {
+"from": -318,
+"to": -171,
+"wikipedia": [
+"Maurya Empire"
+],
+"type": "POLITY"
+},
+"Seleucid Empire": {
+"from": -318,
+"to": -64,
+"wikipedia": [
+"Seleucid dynasty"
+],
+"type": "POLITY"
+},
+"Kalinga": {
+"from": -318,
+"to": -171,
+"wikipedia": [
+"Kalinga"
+],
+"type": "POLITY"
+},
+"Polyperchon": {
+"from": -318,
+"to": -316,
+"wikipedia": [
+"Polyperchon"
+],
+"type": "POLITY"
+},
+"Atropatene": {
+"from": -307,
+"to": -165,
+"wikipedia": [
+"Atropatene"
+],
+"type": "POLITY"
+},
+"Colchis": {
+"from": -301,
+"to": -231,
+"wikipedia": [
+"Colchis"
+],
+"type": "POLITY"
+},
+"Early Cheras": {
+"from": -291,
+"to": 305,
+"wikipedia": [
+"Chera dynasty"
+],
+"type": "POLITY"
+},
+"Early Pandyas": {
+"from": -291,
+"to": 305,
+"wikipedia": [
+"Early Pandyas"
+],
+"type": "POLITY"
+},
+"Anurādhapura": {
+"from": -291,
+"to": 1017,
+"wikipedia": [
+"Anurādhapura"
+],
+"type": "POLITY"
+},
+"Early Cholas": {
+"from": -291,
+"to": 305,
+"wikipedia": [
+"Early Cholas"
+],
+"type": "POLITY"
+},
+"Antigonid Dynasty": {
+"from": -291,
+"to": -278,
+"wikipedia": [
+"Antigonid dynasty"
+],
+"type": "POLITY"
+},
+"Aetolian League": {
+"from": -284,
+"to": -189,
+"wikipedia": [
+"Aetolian League"
+],
+"type": "POLITY"
+},
+"Kingdom of Pontus": {
+"from": -281,
+"to": 67,
+"wikipedia": [
+"Kingdom of Pontus"
+],
+"type": "POLITY"
+},
+"Achaean League": {
+"from": -279,
+"to": -145,
+"wikipedia": [
+"Achaean League"
+],
+"type": "POLITY"
+},
+"Paphlagonia": {
+"from": -279,
+"to": -127,
+"wikipedia": [
+"Paphlagonia"
+],
+"type": "POLITY"
+},
+"Galatia": {
+"from": -279,
+"to": -26,
+"wikipedia": [
+"Galatia"
+],
+"type": "POLITY"
+},
+"Kingdom of Pergamon": {
+"from": -279,
+"to": -127,
+"wikipedia": [
+"Kingdom of Pergamon"
+],
+"type": "POLITY"
+},
+"Antigonid Macedonia": {
+"from": -277,
+"to": -165,
+"wikipedia": [
+"Antigonid dynasty"
+],
+"type": "POLITY"
+},
+"Greek Colonies": {
+"from": -271,
+"to": -226,
+"wikipedia": [
+"Greek colonisation"
+],
+"type": "POLITY"
+},
+"Mamertines": {
+"from": -271,
+"to": -257,
+"wikipedia": [
+"Mamertines"
+],
+"type": "POLITY"
+},
+"Âu Lạc": {
+"from": -256,
+"to": -207,
+"wikipedia": [
+"Âu Lạc"
+],
+"type": "POLITY"
+},
+"Kingdom of Sophene": {
+"from": -256,
+"to": 113,
+"wikipedia": [
+"Kingdom of Sophene"
+],
+"type": "POLITY"
+},
+"Illyrian Kingdom": {
+"from": -256,
+"to": -226,
+"wikipedia": [
+"Illyrian kingdom"
+],
+"type": "POLITY"
+},
+"Greco-Bactrian Kingdom": {
+"from": -247,
+"to": -127,
+"wikipedia": [
+"Greco-Bactrian Kingdom"
+],
+"type": "POLITY"
+},
+"Mayan City-States": {
+"from": -247,
+"to": 849,
+"wikipedia": [
+"Maya civilization"
+],
+"type": "POLITY"
+},
+"Parthian Empire": {
+"from": -239,
+"to": 237,
+"wikipedia": [
+"Parthian Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Cappadocia": {
+"from": -239,
+"to": 22,
+"wikipedia": [
+"Kingdom of Cappadocia"
+],
+"type": "POLITY"
+},
+"Satavahana Dynasty": {
+"from": -225,
+"to": 223,
+"wikipedia": [
+"Satavahana dynasty"
+],
+"type": "POLITY"
+},
+"Qin Dynasty": {
+"from": -218,
+"to": -209,
+"wikipedia": [
+"Qin dynasty"
+],
+"type": "POLITY"
+},
+"Mauretania": {
+"from": -212,
+"to": 42,
+"wikipedia": [
+"Mauretania"
+],
+"type": "POLITY"
+},
+"Western Chu": {
+"from": -208,
+"to": -203,
+"wikipedia": [
+"Chu-Han Contention"
+],
+"type": "POLITY"
+},
+"(Eighteen Kingdoms)": {
+"from": -208,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Xiongnu": {
+"from": -208,
+"to": 153,
+"wikipedia": [
+"Xiongnu"
+],
+"type": "POLITY"
+},
+"Zhai": {
+"from": -208,
+"to": -204,
+"wikipedia": [
+"Qin dynasty"
+],
+"type": "POLITY"
+},
+"Dai": {
+"from": -208,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Jibei": {
+"from": -208,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Jiujiang": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Henan": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Hán": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Linjiang": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Chang-shan": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Nanyue": {
+"from": -206,
+"to": -111,
+"wikipedia": [
+"Nanyue"
+],
+"type": "POLITY"
+},
+"Sai": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Liaodong": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Jiaodong": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Yong": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"Yin": {
+"from": -206,
+"to": -204,
+"wikipedia": [
+"Eighteen Kingdoms"
+],
+"type": "POLITY"
+},
+"(Allegiance of Seleucid Empire to Roman Republic)": {
+"from": -203,
+"to": -189,
+"wikipedia": [
+"Seleucid dynasty"
+],
+"type": "RELATION"
+},
+"Han Dynasty": {
+"from": -202,
+"to": 237,
+"wikipedia": [
+"Han dynasty"
+],
+"type": "POLITY"
+},
+"Gojoseon": {
+"from": -197,
+"to": -92,
+"wikipedia": [
+"Gojoseon"
+],
+"type": "POLITY"
+},
+"Ankhwennefer": {
+"from": -197,
+"to": -171,
+"wikipedia": [
+"Ankhwennefer (pharaoh)"
+],
+"type": "POLITY"
+},
+"Korean Jin": {
+"from": -197,
+"to": -92,
+"wikipedia": [
+"Jin (Korean state)"
+],
+"type": "POLITY"
+},
+"Kingdom of Numidia": {
+"from": -197,
+"to": -47,
+"wikipedia": [
+"Jugurtha"
+],
+"type": "POLITY"
+},
+"Rhodes": {
+"from": -188,
+"to": -165,
+"wikipedia": [
+"Rhodes"
+],
+"type": "POLITY"
+},
+"Mahameghavahana Dynasty": {
+"from": -170,
+"to": -165,
+"wikipedia": [
+"Mahameghavahana dynasty"
+],
+"type": "POLITY"
+},
+"Molossians": {
+"from": -170,
+"to": -165,
+"wikipedia": [
+"Molossians"
+],
+"type": "POLITY"
+},
+"Wusun": {
+"from": -170,
+"to": 450,
+"wikipedia": [
+"Wusun"
+],
+"type": "POLITY"
+},
+"Shunga Empire": {
+"from": -170,
+"to": -67,
+"wikipedia": [
+"Shunga Empire"
+],
+"type": "POLITY"
+},
+"Nabataeans": {
+"from": -164,
+"to": 105,
+"wikipedia": [
+"Nabataeans"
+],
+"type": "POLITY"
+},
+"Indo-Scythians": {
+"from": -144,
+"to": 282,
+"wikipedia": [
+"Indo-Scythians"
+],
+"type": "POLITY"
+},
+"Judea": {
+"from": -144,
+"to": 5,
+"wikipedia": [
+"Judea"
+],
+"type": "POLITY"
+},
+"Indo-Greeks": {
+"from": -126,
+"to": 13,
+"wikipedia": [
+"Indo-Greek Kingdom"
+],
+"type": "POLITY"
+},
+"Himyarite Kingdom": {
+"from": -110,
+"to": 601,
+"wikipedia": [
+"Himyarite Kingdom"
+],
+"type": "POLITY"
+},
+"Great Yuan": {
+"from": -110,
+"to": 50,
+"wikipedia": [
+"Yuan dynasty"
+],
+"type": "POLITY"
+},
+"Byeonhan": {
+"from": -91,
+"to": 566,
+"wikipedia": [
+"Byeonhan confederacy"
+],
+"type": "POLITY"
+},
+"Dongye": {
+"from": -91,
+"to": 391,
+"wikipedia": [
+"Dongye"
+],
+"type": "POLITY"
+},
+"Italian City-States": {
+"from": -91,
+"to": -88,
+"wikipedia": [
+"Italian city-states"
+],
+"type": "POLITY"
+},
+"Jinhan": {
+"from": -91,
+"to": 377,
+"wikipedia": [
+"Jinhan confederacy"
+],
+"type": "POLITY"
+},
+"Mahan": {
+"from": -91,
+"to": 346,
+"wikipedia": [
+"Mahan"
+],
+"type": "POLITY"
+},
+"Thracian Kingdom": {
+"from": -87,
+"to": 50,
+"wikipedia": [
+"Thracian kingdom"
+],
+"type": "POLITY"
+},
+"Kanva Dynasty": {
+"from": -66,
+"to": -28,
+"wikipedia": [
+"Kanva dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Osroene": {
+"from": -63,
+"to": 214,
+"wikipedia": [
+"Osroene"
+],
+"type": "POLITY"
+},
+"Caucasian Iberia": {
+"from": -63,
+"to": 533,
+"wikipedia": [
+"Kingdom of Iberia"
+],
+"type": "POLITY"
+},
+"Caucasian Albania": {
+"from": -63,
+"to": 509,
+"wikipedia": [
+"Caucasian Albania"
+],
+"type": "POLITY"
+},
+"Kingdom of Gordyene": {
+"from": -63,
+"to": 259,
+"wikipedia": [
+"Corduene"
+],
+"type": "POLITY"
+},
+"Kingdom of Commagene": {
+"from": -63,
+"to": 77,
+"wikipedia": [
+"Commagene"
+],
+"type": "POLITY"
+},
+"Lazica": {
+"from": -63,
+"to": 545,
+"wikipedia": [
+"Lazica"
+],
+"type": "POLITY"
+},
+"Kingdom of Adiabene": {
+"from": -63,
+"to": 370,
+"wikipedia": [
+"Adiabene"
+],
+"type": "POLITY"
+},
+"(Alliance between Han Dynasty and Xiongnu)": {
+"from": -50,
+"to": 105,
+"wikipedia": [
+"Han dynasty"
+],
+"type": "RELATION"
+},
+"Teotihuacan": {
+"from": -50,
+"to": 704,
+"wikipedia": [
+"Teotihuacan"
+],
+"type": "POLITY"
+},
+"Kingdom of Axum": {
+"from": -50,
+"to": 946,
+"wikipedia": [
+"Kingdom of Aksum"
+],
+"type": "POLITY"
+},
+"Goguryeo": {
+"from": -36,
+"to": 681,
+"wikipedia": [
+"Goguryeo"
+],
+"type": "POLITY"
+},
+"Dong-okjeo": {
+"from": -36,
+"to": 153,
+"wikipedia": [
+"Okjeo"
+],
+"type": "POLITY"
+},
+"Roman Empire": {
+"from": -31,
+"to": 394,
+"wikipedia": [
+"Roman Empire"
+],
+"type": "POLITY"
+},
+"Indo-Parthians": {
+"from": 1,
+"to": 90,
+"wikipedia": [
+"Indo-Parthian Kingdom"
+],
+"type": "POLITY"
+},
+"Xin Dynasty": {
+"from": 6,
+"to": 29,
+"wikipedia": [
+"Xin dynasty"
+],
+"type": "POLITY"
+},
+"Goths": {
+"from": 30,
+"to": 206,
+"wikipedia": [
+"Goths"
+],
+"type": "POLITY"
+},
+"Kushan Empire": {
+"from": 43,
+"to": 237,
+"wikipedia": [
+"Kushan Empire"
+],
+"type": "POLITY"
+},
+"Western Satraps": {
+"from": 43,
+"to": 489,
+"wikipedia": [
+"Western Satraps"
+],
+"type": "POLITY"
+},
+"Trưng sisters": {
+"from": 43,
+"to": 50,
+"wikipedia": [
+"Trưng sisters"
+],
+"type": "POLITY"
+},
+"Funan": {
+"from": 51,
+"to": 640,
+"wikipedia": [
+"Funan"
+],
+"type": "POLITY"
+},
+"Southern Xiongnu": {
+"from": 51,
+"to": 105,
+"wikipedia": [
+"Xiongnu"
+],
+"type": "POLITY"
+},
+"Xianbei": {
+"from": 60,
+"to": 237,
+"wikipedia": [
+"Xianbei"
+],
+"type": "POLITY"
+},
+"Pyu City-States": {
+"from": 84,
+"to": 1045,
+"wikipedia": [
+"Pyu city-states"
+],
+"type": "POLITY"
+},
+"Huns": {
+"from": 106,
+"to": 425,
+"wikipedia": [
+"Huns"
+],
+"type": "POLITY"
+},
+"Protectorate of the Western Regions": {
+"from": 117,
+"to": 601,
+"wikipedia": [
+"Protectorate of the Western Regions"
+],
+"type": "POLITY"
+},
+"Burgundians": {
+"from": 154,
+"to": 409,
+"wikipedia": [
+"Burgundians"
+],
+"type": "POLITY"
+},
+"Norse": {
+"from": 161,
+"to": 499,
+"wikipedia": [
+"Norse"
+],
+"type": "POLITY"
+},
+"Cao Cao": {
+"from": 197,
+"to": 223,
+"wikipedia": [
+"Cao Cao"
+],
+"type": "POLITY"
+},
+"Chámpa": {
+"from": 207,
+"to": 1652,
+"wikipedia": [
+"Champa"
+],
+"type": "POLITY"
+},
+"Gothia": {
+"from": 207,
+"to": 382,
+"wikipedia": [
+"Gothia"
+],
+"type": "POLITY"
+},
+"Eastern Wu": {
+"from": 207,
+"to": 282,
+"wikipedia": [
+"Eastern Wu"
+],
+"type": "POLITY"
+},
+"Sasanian Empire": {
+"from": 215,
+"to": 643,
+"wikipedia": [
+"Sasanian Empire"
+],
+"type": "POLITY"
+},
+"Shu Han": {
+"from": 224,
+"to": 262,
+"wikipedia": [
+"Shu Han"
+],
+"type": "POLITY"
+},
+"Cao Wei": {
+"from": 224,
+"to": 264,
+"wikipedia": [
+"Cao Wei"
+],
+"type": "POLITY"
+},
+"Eastern Kushans": {
+"from": 238,
+"to": 346,
+"wikipedia": [
+"Kushan Empire"
+],
+"type": "POLITY"
+},
+"Ripuarian Franks": {
+"from": 238,
+"to": 509,
+"wikipedia": [
+"Ripuarian Franks"
+],
+"type": "POLITY"
+},
+"Western Kushans": {
+"from": 238,
+"to": 259,
+"wikipedia": [
+"Kushan Empire"
+],
+"type": "POLITY"
+},
+"Vakataka Kingdom": {
+"from": 260,
+"to": 554,
+"wikipedia": [
+"Vakataka dynasty"
+],
+"type": "POLITY"
+},
+"Indo-Sasanian Empire": {
+"from": 260,
+"to": 357,
+"wikipedia": [
+"Kushano-Sasanian Kingdom"
+],
+"type": "POLITY"
+},
+"Gallic Empire": {
+"from": 261,
+"to": 282,
+"wikipedia": [
+"Gallic Empire"
+],
+"type": "POLITY"
+},
+"Palmyrene Empire": {
+"from": 261,
+"to": 269,
+"wikipedia": [
+"Palmyrene Empire"
+],
+"type": "POLITY"
+},
+"Tamna": {
+"from": 263,
+"to": 1278,
+"wikipedia": [
+"Tamna"
+],
+"type": "POLITY"
+},
+"Western Jin": {
+"from": 265,
+"to": 425,
+"wikipedia": [
+"Jin dynasty (266-420)"
+],
+"type": "POLITY"
+},
+"Lakhmid Kingdom": {
+"from": 270,
+"to": 633,
+"wikipedia": [
+"Lakhmid kingdom"
+],
+"type": "POLITY"
+},
+"Saxons": {
+"from": 283,
+"to": 799,
+"wikipedia": [
+"Saxons"
+],
+"type": "POLITY"
+},
+"Late Pallava Empire": {
+"from": 283,
+"to": 805,
+"wikipedia": [
+"Pallava dynasty"
+],
+"type": "POLITY"
+},
+"Tuyuhun": {
+"from": 287,
+"to": 665,
+"wikipedia": [
+"Tuyuhun"
+],
+"type": "POLITY"
+},
+"Yaudheya Republic": {
+"from": 306,
+"to": 377,
+"wikipedia": [
+"Yaudheya"
+],
+"type": "POLITY"
+},
+"Cheng Han": {
+"from": 306,
+"to": 346,
+"wikipedia": [
+"Cheng-Han"
+],
+"type": "POLITY"
+},
+"Former Zhao": {
+"from": 306,
+"to": 336,
+"wikipedia": [
+"Han-Zhao"
+],
+"type": "POLITY"
+},
+"Former Liang": {
+"from": 324,
+"to": 377,
+"wikipedia": [
+"Former Liang"
+],
+"type": "POLITY"
+},
+"(Alliance between Gupta Empire and Vakataka Kingdom)": {
+"from": 324,
+"to": 554,
+"wikipedia": [
+"Gupta Empire"
+],
+"type": "RELATION"
+},
+"Gupta Empire": {
+"from": 324,
+"to": 554,
+"wikipedia": [
+"Gupta Empire"
+],
+"type": "POLITY"
+},
+"Vandals": {
+"from": 337,
+"to": 438,
+"wikipedia": [
+"Vandals"
+],
+"type": "POLITY"
+},
+"Former Yan": {
+"from": 337,
+"to": 370,
+"wikipedia": [
+"Former Yan"
+],
+"type": "POLITY"
+},
+"Later Zhao": {
+"from": 337,
+"to": 352,
+"wikipedia": [
+"Later Zhao"
+],
+"type": "POLITY"
+},
+"Alodia": {
+"from": 347,
+"to": 1506,
+"wikipedia": [
+"Alodia"
+],
+"type": "POLITY"
+},
+"Makuria": {
+"from": 347,
+"to": 1414,
+"wikipedia": [
+"Makuria"
+],
+"type": "POLITY"
+},
+"Nobatia": {
+"from": 347,
+"to": 655,
+"wikipedia": [
+"Nobatia"
+],
+"type": "POLITY"
+},
+"Baekje": {
+"from": 347,
+"to": 660,
+"wikipedia": [
+"Baekje"
+],
+"type": "POLITY"
+},
+"Kadamba Empire": {
+"from": 353,
+"to": 554,
+"wikipedia": [
+"Kadamba Empire"
+],
+"type": "POLITY"
+},
+"Kalabhra Dynasty": {
+"from": 353,
+"to": 601,
+"wikipedia": [
+"Kalabhra dynasty"
+],
+"type": "POLITY"
+},
+"Former Qin": {
+"from": 353,
+"to": 393,
+"wikipedia": [
+"Former Qin"
+],
+"type": "POLITY"
+},
+"Kamarupa Kingdom": {
+"from": 353,
+"to": 1138,
+"wikipedia": [
+"Kamarupa"
+],
+"type": "POLITY"
+},
+"Kidarites": {
+"from": 358,
+"to": 450,
+"wikipedia": [
+"Kidarites"
+],
+"type": "POLITY"
+},
+"Salian Franks": {
+"from": 358,
+"to": 509,
+"wikipedia": [
+"Salian Franks"
+],
+"type": "POLITY"
+},
+"Tarumanagara": {
+"from": 367,
+"to": 673,
+"wikipedia": [
+"Tarumanagara"
+],
+"type": "POLITY"
+},
+"Silla": {
+"from": 378,
+"to": 681,
+"wikipedia": [
+"Silla"
+],
+"type": "POLITY"
+},
+"Western Qin": {
+"from": 387,
+"to": 438,
+"wikipedia": [
+"Western Qin"
+],
+"type": "POLITY"
+},
+"Northern Wei": {
+"from": 387,
+"to": 533,
+"wikipedia": [
+"Northern Wei"
+],
+"type": "POLITY"
+},
+"Western Yan": {
+"from": 387,
+"to": 393,
+"wikipedia": [
+"Western Yan"
+],
+"type": "POLITY"
+},
+"Angles": {
+"from": 387,
+"to": 479,
+"wikipedia": [
+"Angles"
+],
+"type": "POLITY"
+},
+"Later Liang": {
+"from": 387,
+"to": 406,
+"wikipedia": [
+"Later Liang (Sixteen Kingdoms)"
+],
+"type": "POLITY"
+},
+"Later Yan": {
+"from": 387,
+"to": 409,
+"wikipedia": [
+"Later Yan"
+],
+"type": "POLITY"
+},
+"Later Qin": {
+"from": 387,
+"to": 416,
+"wikipedia": [
+"Later Qin"
+],
+"type": "POLITY"
+},
+"Xionites": {
+"from": 387,
+"to": 401,
+"wikipedia": [
+"Xionites"
+],
+"type": "POLITY"
+},
+"(Allegiance of Kidarites to Sasanian Empire)": {
+"from": 390,
+"to": 450,
+"wikipedia": [
+"Kidarites"
+],
+"type": "RELATION"
+},
+"Eastern Roman Empire": {
+"from": 395,
+"to": 632,
+"wikipedia": [
+"Byzantine Empire"
+],
+"type": "POLITY"
+},
+"Western Roman Empire": {
+"from": 395,
+"to": 475,
+"wikipedia": [
+"Western Roman Empire"
+],
+"type": "POLITY"
+},
+"Visigoths": {
+"from": 396,
+"to": 425,
+"wikipedia": [
+"Visigoths"
+],
+"type": "POLITY"
+},
+"Northern Liang": {
+"from": 397,
+"to": 440,
+"wikipedia": [
+"Northern Liang"
+],
+"type": "POLITY"
+},
+"Southern Liang": {
+"from": 397,
+"to": 413,
+"wikipedia": [
+"Liang dynasty"
+],
+"type": "POLITY"
+},
+"Southern Yan": {
+"from": 402,
+"to": 409,
+"wikipedia": [
+"Southern Yan"
+],
+"type": "POLITY"
+},
+"Rouran Khaganate": {
+"from": 402,
+"to": 554,
+"wikipedia": [
+"Rouran Khaganate"
+],
+"type": "POLITY"
+},
+"(Alliance between Northern Wei and Rouran Khaganate)": {
+"from": 402,
+"to": 533,
+"wikipedia": [
+"Northern Wei"
+],
+"type": "RELATION"
+},
+"Western Liang": {
+"from": 407,
+"to": 409,
+"wikipedia": [
+"Western Liang (Sixteen Kingdoms)"
+],
+"type": "POLITY"
+},
+"Northern Yan": {
+"from": 410,
+"to": 438,
+"wikipedia": [
+"Northern Yan"
+],
+"type": "POLITY"
+},
+"Xia": {
+"from": 410,
+"to": 438,
+"wikipedia": [
+"Xia"
+],
+"type": "POLITY"
+},
+"White Huns": {
+"from": 410,
+"to": 560,
+"wikipedia": [
+"White Huns"
+],
+"type": "POLITY"
+},
+"(Alliance between White Huns and Sasanian Empire)": {
+"from": 410,
+"to": 489,
+"wikipedia": [
+"White Huns"
+],
+"type": "RELATION"
+},
+"Burgundian Kingdom": {
+"from": 414,
+"to": 660,
+"wikipedia": [
+"Kingdom of the Burgundians"
+],
+"type": "POLITY"
+},
+"Kingdom of the Suebi": {
+"from": 414,
+"to": 586,
+"wikipedia": [
+"Kingdom of the Suebi"
+],
+"type": "POLITY"
+},
+"Alans": {
+"from": 414,
+"to": 438,
+"wikipedia": [
+"Alans"
+],
+"type": "POLITY"
+},
+"(Alliance between Western Roman Empire and Visigothic Kingdom)": {
+"from": 426,
+"to": 475,
+"wikipedia": [
+"Western Roman Empire"
+],
+"type": "RELATION"
+},
+"Hunnic Empire": {
+"from": 426,
+"to": 673,
+"wikipedia": [
+"Huns"
+],
+"type": "POLITY"
+},
+"Liu Song Dynasty": {
+"from": 426,
+"to": 479,
+"wikipedia": [
+"Liu Song dynasty"
+],
+"type": "POLITY"
+},
+"Visigothic Kingdom": {
+"from": 426,
+"to": 723,
+"wikipedia": [
+"Visigothic Kingdom"
+],
+"type": "POLITY"
+},
+"(Brythonic Kingdoms)": {
+"from": 439,
+"to": 1284,
+"wikipedia": [
+"Celtic Britons"
+],
+"type": "POLITY"
+},
+"Brythons": {
+"from": 439,
+"to": 1235,
+"wikipedia": [
+"Celtic Britons"
+],
+"type": "POLITY"
+},
+"Vandal Kingdom": {
+"from": 439,
+"to": 533,
+"wikipedia": [
+"Vandal Kingdom"
+],
+"type": "POLITY"
+},
+"Anglo-Saxon England": {
+"from": 441,
+"to": 533,
+"wikipedia": [
+"History of Anglo-Saxon England"
+],
+"type": "POLITY"
+},
+"(Anglo-Saxon England)": {
+"from": 441,
+"to": 935,
+"wikipedia": [
+"History of Anglo-Saxon England"
+],
+"type": "POLITY"
+},
+"Rugiland": {
+"from": 455,
+"to": 489,
+"wikipedia": [
+"Rugiland"
+],
+"type": "POLITY"
+},
+"Ostrogoths": {
+"from": 455,
+"to": 499,
+"wikipedia": [
+"Ostrogoths"
+],
+"type": "POLITY"
+},
+"(Kingdom of the Franks)": {
+"from": 462,
+"to": 849,
+"wikipedia": [
+"Francia"
+],
+"type": "POLITY"
+},
+"Kingdom of Alamannia": {
+"from": 462,
+"to": 731,
+"wikipedia": [
+"Alamannia"
+],
+"type": "POLITY"
+},
+"(Merovingian Empire)": {
+"from": 462,
+"to": 717,
+"wikipedia": [
+"Francia"
+],
+"type": "POLITY"
+},
+"Kingdom of the Franks": {
+"from": 462,
+"to": 849,
+"wikipedia": [
+"Francia"
+],
+"type": "POLITY"
+},
+"Thuringian states": {
+"from": 469,
+"to": 475,
+"wikipedia": [
+"Thuringian states"
+],
+"type": "POLITY"
+},
+"Maitraka Dynasty": {
+"from": 476,
+"to": 731,
+"wikipedia": [
+"Maitraka dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Thuringia": {
+"from": 476,
+"to": 533,
+"wikipedia": [
+"Basina of Thuringia"
+],
+"type": "POLITY"
+},
+"Kingdom of Soissons": {
+"from": 476,
+"to": 489,
+"wikipedia": [
+"Kingdom of Soissons"
+],
+"type": "POLITY"
+},
+"Lombards": {
+"from": 480,
+"to": 586,
+"wikipedia": [
+"Lombards"
+],
+"type": "POLITY"
+},
+"Southern Qi": {
+"from": 480,
+"to": 509,
+"wikipedia": [
+"Southern Qi"
+],
+"type": "POLITY"
+},
+"Kingdom of Kent": {
+"from": 490,
+"to": 762,
+"wikipedia": [
+"Kingdom of Kent"
+],
+"type": "POLITY"
+},
+"Kingdom of Sussex": {
+"from": 490,
+"to": 771,
+"wikipedia": [
+"Kingdom of Sussex"
+],
+"type": "POLITY"
+},
+"(Alliance between Ostrogothic Kingdom and Visigothic Kingdom)": {
+"from": 500,
+"to": 554,
+"wikipedia": [
+"Ostrogothic Kingdom"
+],
+"type": "RELATION"
+},
+"(Allegiance of Ostrogothic Kingdom to Eastern Roman Empire)": {
+"from": 500,
+"to": 554,
+"wikipedia": [
+"Ostrogothic Kingdom"
+],
+"type": "RELATION"
+},
+"Ostrogothic Kingdom": {
+"from": 500,
+"to": 560,
+"wikipedia": [
+"Ostrogothic Kingdom"
+],
+"type": "POLITY"
+},
+"Scandinavian minor kingdoms": {
+"from": 500,
+"to": 1002,
+"wikipedia": [
+"Vendel Period",
+"Viking Age"
+],
+"type": "POLITY"
+},
+"Liang Dynasty": {
+"from": 510,
+"to": 560,
+"wikipedia": [
+"Liang dynasty"
+],
+"type": "POLITY"
+},
+"Ghassanids": {
+"from": 510,
+"to": 633,
+"wikipedia": [
+"Ghassanids"
+],
+"type": "POLITY"
+},
+"Kingdom of the Gepids": {
+"from": 510,
+"to": 566,
+"wikipedia": [
+"Gepids"
+],
+"type": "POLITY"
+},
+"Wihtgar": {
+"from": 523,
+"to": 691,
+"wikipedia": [
+"Wihtwara"
+],
+"type": "POLITY"
+},
+"Eastern Wei": {
+"from": 534,
+"to": 554,
+"wikipedia": [
+"Eastern Wei"
+],
+"type": "POLITY"
+},
+"Western Wei": {
+"from": 534,
+"to": 560,
+"wikipedia": [
+"Western Wei"
+],
+"type": "POLITY"
+},
+"Kingdom of East Anglia": {
+"from": 534,
+"to": 869,
+"wikipedia": [
+"Kingdom of East Anglia"
+],
+"type": "POLITY"
+},
+"Kingdom of Deira": {
+"from": 534,
+"to": 633,
+"wikipedia": [
+"Deira"
+],
+"type": "POLITY"
+},
+"Kingdom of Wessex": {
+"from": 534,
+"to": 935,
+"wikipedia": [
+"Wessex"
+],
+"type": "POLITY"
+},
+"Kingdom of Mercia": {
+"from": 534,
+"to": 925,
+"wikipedia": [
+"Mercia"
+],
+"type": "POLITY"
+},
+"Kingdom of Essex": {
+"from": 534,
+"to": 665,
+"wikipedia": [
+"Kingdom of Essex"
+],
+"type": "POLITY"
+},
+"Kingdom of Lindsey": {
+"from": 534,
+"to": 625,
+"wikipedia": [
+"Kingdom of Lindsey"
+],
+"type": "POLITY"
+},
+"Kingdom of Gwent": {
+"from": 540,
+"to": 1055,
+"wikipedia": [
+"Kingdom of Gwent"
+],
+"type": "POLITY"
+},
+"Asuka Japan": {
+"from": 540,
+"to": 709,
+"wikipedia": [
+"Asuka period"
+],
+"type": "POLITY"
+},
+"Kingdom of Brycheiniog": {
+"from": 540,
+"to": 1084,
+"wikipedia": [
+"Brycheiniog"
+],
+"type": "POLITY"
+},
+"Kingdom of Gwynedd": {
+"from": 540,
+"to": 1284,
+"wikipedia": [
+"Kingdom of Gwynedd"
+],
+"type": "POLITY"
+},
+"Kingdom of Powys": {
+"from": 540,
+"to": 1168,
+"wikipedia": [
+"Kingdom of Powys"
+],
+"type": "POLITY"
+},
+"Kingdom of Morgannwg": {
+"from": 540,
+"to": 1055,
+"wikipedia": [
+"Kingdom of Morgannwg"
+],
+"type": "POLITY"
+},
+"Dál Riata": {
+"from": 540,
+"to": 899,
+"wikipedia": [
+"Dál Riata"
+],
+"type": "POLITY"
+},
+"Bavarians": {
+"from": 540,
+"to": 787,
+"wikipedia": [
+"Bavarians"
+],
+"type": "POLITY"
+},
+"Early Lý Dynasty": {
+"from": 546,
+"to": 601,
+"wikipedia": [
+"Early Lý dynasty"
+],
+"type": "POLITY"
+},
+"Classic Veracruz Culture": {
+"from": 555,
+"to": 1235,
+"wikipedia": [
+"Classic Veracruz culture"
+],
+"type": "POLITY"
+},
+"Yenisei Kyrgyz": {
+"from": 555,
+"to": 1219,
+"wikipedia": [
+"Yenisei Kyrgyz"
+],
+"type": "POLITY"
+},
+"Northern Qi": {
+"from": 555,
+"to": 576,
+"wikipedia": [
+"Northern Qi"
+],
+"type": "POLITY"
+},
+"Chalukya Dynasty": {
+"from": 555,
+"to": 756,
+"wikipedia": [
+"Chalukya dynasty"
+],
+"type": "POLITY"
+},
+"Chenla": {
+"from": 555,
+"to": 717,
+"wikipedia": [
+"Chenla"
+],
+"type": "POLITY"
+},
+"Maukhari Dynasty": {
+"from": 555,
+"to": 611,
+"wikipedia": [
+"Maukhari dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Bernicia": {
+"from": 555,
+"to": 633,
+"wikipedia": [
+"Bernicia"
+],
+"type": "POLITY"
+},
+"Göktürk Khaganate": {
+"from": 555,
+"to": 586,
+"wikipedia": [
+"First Turkic Khaganate"
+],
+"type": "POLITY"
+},
+"(Chenla)": {
+"from": 555,
+"to": 717,
+"wikipedia": [
+"Chenla"
+],
+"type": "POLITY"
+},
+"Avar Khaganate": {
+"from": 561,
+"to": 805,
+"wikipedia": [
+"Pannonian Avars"
+],
+"type": "POLITY"
+},
+"Turk Shahis": {
+"from": 561,
+"to": 874,
+"wikipedia": [
+"Kabul Shahi"
+],
+"type": "POLITY"
+},
+"Chen Dynasty": {
+"from": 561,
+"to": 591,
+"wikipedia": [
+"Chen dynasty"
+],
+"type": "POLITY"
+},
+"Northern Zhou": {
+"from": 561,
+"to": 586,
+"wikipedia": [
+"Northern Zhou"
+],
+"type": "POLITY"
+},
+"Later Western Liang": {
+"from": 561,
+"to": 586,
+"wikipedia": [
+"Western Liang (555–587)"
+],
+"type": "POLITY"
+},
+"Georgia": {
+"from": 567,
+"to": 2024,
+"wikipedia": [
+"Georgia"
+],
+"type": "POLITY"
+},
+"Duchy of Thuringia": {
+"from": 567,
+"to": 723,
+"wikipedia": [
+"Duchy of Thuringia"
+],
+"type": "POLITY"
+},
+"Duchy of Tuscia": {
+"from": 577,
+"to": 586,
+"wikipedia": [
+"Duchy of Tuscia"
+],
+"type": "POLITY"
+},
+"Duchy of Benevento": {
+"from": 577,
+"to": 1084,
+"wikipedia": [
+"Duchy of Benevento"
+],
+"type": "POLITY"
+},
+"Duchy of Spoleto": {
+"from": 577,
+"to": 898,
+"wikipedia": [
+"Duchy of Spoleto"
+],
+"type": "POLITY"
+},
+"Hwicce": {
+"from": 577,
+"to": 627,
+"wikipedia": [
+"Hwicce"
+],
+"type": "POLITY"
+},
+"Kingdom of Italy": {
+"from": 587,
+"to": 1946,
+"wikipedia": [
+"Kingdom of Italy"
+],
+"type": "POLITY"
+},
+"Eastern Göktürks": {
+"from": 587,
+"to": 632,
+"wikipedia": [
+"Göktürks"
+],
+"type": "POLITY"
+},
+"Sui Dynasty": {
+"from": 587,
+"to": 627,
+"wikipedia": [
+"Sui dynasty"
+],
+"type": "POLITY"
+},
+"Breton Kingdoms": {
+"from": 587,
+"to": 824,
+"wikipedia": [
+"Bretons"
+],
+"type": "POLITY"
+},
+"Western Göktürks": {
+"from": 587,
+"to": 660,
+"wikipedia": [
+"Göktürks"
+],
+"type": "POLITY"
+},
+"Karkota Dynasty": {
+"from": 592,
+"to": 859,
+"wikipedia": [
+"Karkota dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Dunoting": {
+"from": 592,
+"to": 625,
+"wikipedia": [
+"Dunoding"
+],
+"type": "POLITY"
+},
+"Pandya Dynasty": {
+"from": 592,
+"to": 921,
+"wikipedia": [
+"Pandya dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Rheged": {
+"from": 592,
+"to": 646,
+"wikipedia": [
+"Rheged"
+],
+"type": "POLITY"
+},
+"Gauda Kingdom": {
+"from": 602,
+"to": 611,
+"wikipedia": [
+"Gauda Kingdom"
+],
+"type": "POLITY"
+},
+"Dumnonia": {
+"from": 602,
+"to": 709,
+"wikipedia": [
+"Dumnonia"
+],
+"type": "POLITY"
+},
+"Magna Frisia": {
+"from": 602,
+"to": 771,
+"wikipedia": [
+"Frisian Kingdom"
+],
+"type": "POLITY"
+},
+"Frisia Kingdom": {
+"from": 612,
+"to": 717,
+"wikipedia": [
+"Frisia"
+],
+"type": "POLITY"
+},
+"Kingdom of Northumbria": {
+"from": 612,
+"to": 935,
+"wikipedia": [
+"Northumbria"
+],
+"type": "POLITY"
+},
+"Harsha's Empire": {
+"from": 612,
+"to": 655,
+"wikipedia": [
+"Harsha"
+],
+"type": "POLITY"
+},
+"Tibetan Empire": {
+"from": 623,
+"to": 849,
+"wikipedia": [
+"Tibetan Empire"
+],
+"type": "POLITY"
+},
+"Tang Dynasty": {
+"from": 623,
+"to": 910,
+"wikipedia": [
+"Tang dynasty"
+],
+"type": "POLITY"
+},
+"Samo's Empire": {
+"from": 623,
+"to": 660,
+"wikipedia": [
+"Samo's Empire"
+],
+"type": "POLITY"
+},
+"Gao Kaidao": {
+"from": 623,
+"to": 625,
+"wikipedia": [
+"Gao Kaidao"
+],
+"type": "POLITY"
+},
+"Kashmir": {
+"from": 626,
+"to": 1343,
+"wikipedia": [
+"Kashmir"
+],
+"type": "POLITY"
+},
+"Aquitaine": {
+"from": 629,
+"to": 895,
+"wikipedia": [
+"Aquitaine"
+],
+"type": "POLITY"
+},
+"Khazaria": {
+"from": 630,
+"to": 979,
+"wikipedia": [
+"Khazars"
+],
+"type": "POLITY"
+},
+"Rashidun Caliphate": {
+"from": 633,
+"to": 665,
+"wikipedia": [
+"Rashidun Caliphate"
+],
+"type": "POLITY"
+},
+"Byzantine Empire": {
+"from": 633,
+"to": 1474,
+"wikipedia": [
+"Byzantine Empire"
+],
+"type": "POLITY"
+},
+"Old Great Bulgaria": {
+"from": 633,
+"to": 681,
+"wikipedia": [
+"Old Great Bulgaria"
+],
+"type": "POLITY"
+},
+"(Alliance between Sasanian Empire and Byzantine Empire)": {
+"from": 633,
+"to": 643,
+"wikipedia": [
+"Sasanian Empire"
+],
+"type": "RELATION"
+},
+"(Alliance between Byzantine Empire and Khazaria)": {
+"from": 633,
+"to": 869,
+"wikipedia": [
+"Byzantine Empire"
+],
+"type": "RELATION"
+},
+"Balasagan": {
+"from": 638,
+"to": 646,
+"wikipedia": [
+"Balasagan"
+],
+"type": "POLITY"
+},
+"Kingdom of Lazica": {
+"from": 638,
+"to": 777,
+"wikipedia": [
+"Lazica"
+],
+"type": "POLITY"
+},
+"Lavo Kingdom": {
+"from": 638,
+"to": 1394,
+"wikipedia": [
+"Lavo Kingdom"
+],
+"type": "POLITY"
+},
+"Dabuyid Dynasty": {
+"from": 644,
+"to": 756,
+"wikipedia": [
+"Dabuyid dynasty"
+],
+"type": "POLITY"
+},
+"Strathclyde": {
+"from": 644,
+"to": 1033,
+"wikipedia": [
+"Strathclyde"
+],
+"type": "POLITY"
+},
+"Khadga Dynasty": {
+"from": 656,
+"to": 704,
+"wikipedia": [
+"Khadga Dynasty"
+],
+"type": "POLITY"
+},
+"Umayyad Caliphate": {
+"from": 656,
+"to": 756,
+"wikipedia": [
+"Umayyad Caliphate"
+],
+"type": "POLITY"
+},
+"Haripuñjaya": {
+"from": 661,
+"to": 1293,
+"wikipedia": [
+"Haripuñjaya"
+],
+"type": "POLITY"
+},
+"Carantania": {
+"from": 661,
+"to": 749,
+"wikipedia": [
+"Carantania"
+],
+"type": "POLITY"
+},
+"Turks": {
+"from": 666,
+"to": 756,
+"wikipedia": [
+"Turk"
+],
+"type": "POLITY"
+},
+"Sunda Kingdom": {
+"from": 674,
+"to": 1578,
+"wikipedia": [
+"Sunda Kingdom"
+],
+"type": "POLITY"
+},
+"Srivijaya": {
+"from": 674,
+"to": 1293,
+"wikipedia": [
+"Srivijaya"
+],
+"type": "POLITY"
+},
+"Volga Bulgaria": {
+"from": 674,
+"to": 1235,
+"wikipedia": [
+"Volga Bulgaria"
+],
+"type": "POLITY"
+},
+"Galuh Kingdom": {
+"from": 674,
+"to": 1481,
+"wikipedia": [
+"Galuh Kingdom"
+],
+"type": "POLITY"
+},
+"Unified Silla": {
+"from": 682,
+"to": 935,
+"wikipedia": [
+"Unified Silla"
+],
+"type": "POLITY"
+},
+"Principality of Iberia": {
+"from": 682,
+"to": 740,
+"wikipedia": [
+"Principality of Iberia"
+],
+"type": "POLITY"
+},
+"First Bulgarian Empire": {
+"from": 682,
+"to": 1017,
+"wikipedia": [
+"First Bulgarian Empire"
+],
+"type": "POLITY"
+},
+"Türgesh": {
+"from": 692,
+"to": 749,
+"wikipedia": [
+"Türgesh"
+],
+"type": "POLITY"
+},
+"Cyprus Condominium": {
+"from": 692,
+"to": 959,
+"wikipedia": [
+"Cyprus"
+],
+"type": "POLITY"
+},
+"Balhae": {
+"from": 705,
+"to": 925,
+"wikipedia": [
+"Balhae"
+],
+"type": "POLITY"
+},
+"Republic of Venice": {
+"from": 705,
+"to": 1796,
+"wikipedia": [
+"Republic of Venice"
+],
+"type": "POLITY"
+},
+"Nara Japan": {
+"from": 710,
+"to": 792,
+"wikipedia": [
+"Nara period"
+],
+"type": "POLITY"
+},
+"Cornwall": {
+"from": 710,
+"to": 946,
+"wikipedia": [
+"Cornwall"
+],
+"type": "POLITY"
+},
+"Merovingian Empire": {
+"from": 710,
+"to": 717,
+"wikipedia": [
+"Francia"
+],
+"type": "POLITY"
+},
+"Water Chenla": {
+"from": 718,
+"to": 805,
+"wikipedia": [
+"Chenla"
+],
+"type": "POLITY"
+},
+"Land Chenla": {
+"from": 718,
+"to": 805,
+"wikipedia": [
+"Chenla"
+],
+"type": "POLITY"
+},
+"Carolingian Empire": {
+"from": 718,
+"to": 723,
+"wikipedia": [
+"Francia"
+],
+"type": "POLITY"
+},
+"(Carolingian Empire)": {
+"from": 718,
+"to": 989,
+"wikipedia": [
+"Francia",
+"West Francia"
+],
+"type": "POLITY"
+},
+"Kingdom of Asturias": {
+"from": 724,
+"to": 925,
+"wikipedia": [
+"Kingdom of Asturias"
+],
+"type": "POLITY"
+},
+"Kingdom of Neustria": {
+"from": 724,
+"to": 731,
+"wikipedia": [
+"Neustria"
+],
+"type": "POLITY"
+},
+"Kannauj-Varman Dynasty": {
+"from": 732,
+"to": 771,
+"wikipedia": [
+"Kannauj"
+],
+"type": "POLITY"
+},
+"Gurjara-Pratihara Dynasty": {
+"from": 732,
+"to": 1039,
+"wikipedia": [
+"Gurjara-Pratihara dynasty"
+],
+"type": "POLITY"
+},
+"Mataram Kingdom": {
+"from": 741,
+"to": 1009,
+"wikipedia": [
+"Mataram Kingdom"
+],
+"type": "POLITY"
+},
+"Nanzhao": {
+"from": 741,
+"to": 910,
+"wikipedia": [
+"Nanzhao"
+],
+"type": "POLITY"
+},
+"Duchy of Croatia": {
+"from": 741,
+"to": 925,
+"wikipedia": [
+"Duchy of Croatia"
+],
+"type": "POLITY"
+},
+"Oghuz Turks": {
+"from": 750,
+"to": 1055,
+"wikipedia": [
+"Oghuz Khagan"
+],
+"type": "POLITY"
+},
+"Pala Empire": {
+"from": 750,
+"to": 1168,
+"wikipedia": [
+"Pala Empire"
+],
+"type": "POLITY"
+},
+"Uyghur Khaganate": {
+"from": 750,
+"to": 849,
+"wikipedia": [
+"Uyghur Khaganate"
+],
+"type": "POLITY"
+},
+"Emirate of Nekor": {
+"from": 750,
+"to": 1027,
+"wikipedia": [
+"Emirate of Nekor"
+],
+"type": "POLITY"
+},
+"Abbasid Caliphate": {
+"from": 750,
+"to": 1259,
+"wikipedia": [
+"Abbasid Caliphate"
+],
+"type": "POLITY"
+},
+"Kimek-Kipchak confederation": {
+"from": 750,
+"to": 1235,
+"wikipedia": [
+"Kimek-Kipchak confederation"
+],
+"type": "POLITY"
+},
+"Fihrids": {
+"from": 750,
+"to": 756,
+"wikipedia": [
+"Fihrids"
+],
+"type": "POLITY"
+},
+"Kharijites": {
+"from": 751,
+"to": 762,
+"wikipedia": [
+"Kharijites"
+],
+"type": "POLITY"
+},
+"Rashtrakuta Dynasty": {
+"from": 755,
+"to": 989,
+"wikipedia": [
+"Rashtrakuta dynasty"
+],
+"type": "POLITY"
+},
+"Papal States": {
+"from": 755,
+"to": 1870,
+"wikipedia": [
+"Papal States"
+],
+"type": "POLITY"
+},
+"(Allegiance of Papal States to Byzantine Empire)": {
+"from": 755,
+"to": 869,
+"wikipedia": [
+"Foreign relations of the Byzantine Empire"
+],
+"type": "RELATION"
+},
+"Emirate of Córdoba": {
+"from": 757,
+"to": 935,
+"wikipedia": [
+"Emirate of Córdoba"
+],
+"type": "POLITY"
+},
+"Duchy of Naples": {
+"from": 763,
+"to": 1138,
+"wikipedia": [
+"Duchy of Naples"
+],
+"type": "POLITY"
+},
+"Principality of Serbia": {
+"from": 768,
+"to": 961,
+"wikipedia": [
+"Principality of Serbia"
+],
+"type": "POLITY"
+},
+"Duchy of Gascony": {
+"from": 768,
+"to": 1065,
+"wikipedia": [
+"Duchy of Gascony"
+],
+"type": "POLITY"
+},
+"Rustamid dynasty": {
+"from": 778,
+"to": 910,
+"wikipedia": [
+"Rustamid dynasty"
+],
+"type": "POLITY"
+},
+"Frisia": {
+"from": 783,
+"to": 787,
+"wikipedia": [
+"Frisia"
+],
+"type": "POLITY"
+},
+"Obotrites": {
+"from": 793,
+"to": 946,
+"wikipedia": [
+"Obotrites"
+],
+"type": "POLITY"
+},
+"Viking settlements": {
+"from": 793,
+"to": 1332,
+"wikipedia": [
+"Vikings"
+],
+"type": "POLITY"
+},
+"Frisians": {
+"from": 793,
+"to": 799,
+"wikipedia": [
+"Frisians"
+],
+"type": "POLITY"
+},
+"Qarlugs": {
+"from": 793,
+"to": 849,
+"wikipedia": [
+"Mongol invasion of Central Asia"
+],
+"type": "POLITY"
+},
+"Idrisids": {
+"from": 793,
+"to": 979,
+"wikipedia": [
+"Idrisid dynasty"
+],
+"type": "POLITY"
+},
+"Ghana Empire": {
+"from": 793,
+"to": 1201,
+"wikipedia": [
+"Ghana Empire"
+],
+"type": "POLITY"
+},
+"Barghawata Conference": {
+"from": 793,
+"to": 1065,
+"wikipedia": [
+"Casablanca"
+],
+"type": "POLITY"
+},
+"Heian Japan": {
+"from": 793,
+"to": 1187,
+"wikipedia": [
+"Heian period"
+],
+"type": "POLITY"
+},
+"Aghlabid Dynasty": {
+"from": 800,
+"to": 910,
+"wikipedia": [
+"Aghlabids"
+],
+"type": "POLITY"
+},
+"Khmer Empire": {
+"from": 800,
+"to": 1867,
+"wikipedia": [
+"Khmer Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of the Iberians": {
+"from": 814,
+"to": 999,
+"wikipedia": [
+"Kingdom of the Iberians"
+],
+"type": "POLITY"
+},
+"Great Moravia": {
+"from": 814,
+"to": 910,
+"wikipedia": [
+"Great Moravia"
+],
+"type": "POLITY"
+},
+"Principality of Nitra": {
+"from": 814,
+"to": 839,
+"wikipedia": [
+"Principality of Nitra"
+],
+"type": "POLITY"
+},
+"Kingdom of Pamplona": {
+"from": 825,
+"to": 865,
+"wikipedia": [
+"Kingdom of Navarre"
+],
+"type": "POLITY"
+},
+"Kingdom of Brittany": {
+"from": 825,
+"to": 921,
+"wikipedia": [
+"Kingdom of Brittany"
+],
+"type": "POLITY"
+},
+"Shirvan": {
+"from": 825,
+"to": 1539,
+"wikipedia": [
+"Shirvan"
+],
+"type": "POLITY"
+},
+"Kingdom of Sobrarbe": {
+"from": 825,
+"to": 829,
+"wikipedia": [
+"Kingdom of Sobrarbe"
+],
+"type": "POLITY"
+},
+"Emirate of Crete": {
+"from": 830,
+"to": 960,
+"wikipedia": [
+"Emirate of Crete"
+],
+"type": "POLITY"
+},
+"County of Aragon": {
+"from": 830,
+"to": 921,
+"wikipedia": [
+"County of Aragon"
+],
+"type": "POLITY"
+},
+"Magyars": {
+"from": 840,
+"to": 910,
+"wikipedia": [
+"Hungarians"
+],
+"type": "POLITY"
+},
+"Principality of Salerno": {
+"from": 840,
+"to": 1084,
+"wikipedia": [
+"Principality of Salerno"
+],
+"type": "POLITY"
+},
+"Principality of Capua": {
+"from": 840,
+"to": 1065,
+"wikipedia": [
+"Principality of Capua"
+],
+"type": "POLITY"
+},
+"Kara-Khanids": {
+"from": 850,
+"to": 1045,
+"wikipedia": [
+"Kara-Khanid Khanate"
+],
+"type": "POLITY"
+},
+"Middle Franks": {
+"from": 850,
+"to": 899,
+"wikipedia": [
+"Lotharingia"
+],
+"type": "POLITY"
+},
+"Pagan Kingdom": {
+"from": 850,
+"to": 1293,
+"wikipedia": [
+"Pagan Kingdom"
+],
+"type": "POLITY"
+},
+"West Franks": {
+"from": 850,
+"to": 989,
+"wikipedia": [
+"West Francia"
+],
+"type": "POLITY"
+},
+"Chola Empire": {
+"from": 850,
+"to": 1259,
+"wikipedia": [
+"Chola Empire"
+],
+"type": "POLITY"
+},
+"Puebloans - Chaco Regional System": {
+"from": 850,
+"to": 1151,
+"wikipedia": [
+"Ancestral Puebloans"
+],
+"type": "POLITY"
+},
+"East Franks": {
+"from": 850,
+"to": 910,
+"wikipedia": [
+"East Francia"
+],
+"type": "POLITY"
+},
+"(Allegiance of East Franks to Carolingian Empire)": {
+"from": 850,
+"to": 921,
+"wikipedia": [
+"East Francia"
+],
+"type": "RELATION"
+},
+"Later Mayan City-States": {
+"from": 850,
+"to": 1546,
+"wikipedia": [
+"Maya civilization"
+],
+"type": "POLITY"
+},
+"Tibetans": {
+"from": 850,
+"to": 1259,
+"wikipedia": [
+"Tibetan people"
+],
+"type": "POLITY"
+},
+"Emirate of Sicily": {
+"from": 850,
+"to": 1093,
+"wikipedia": [
+"Emirate of Sicily"
+],
+"type": "POLITY"
+},
+"Lower Burgundy": {
+"from": 860,
+"to": 925,
+"wikipedia": [
+"Lower Burgundy"
+],
+"type": "POLITY"
+},
+"Ganzhou Kingdom": {
+"from": 860,
+"to": 1039,
+"wikipedia": [
+"Ganzhou Uyghur Kingdom"
+],
+"type": "POLITY"
+},
+"Saffarid Dynasty": {
+"from": 860,
+"to": 899,
+"wikipedia": [
+"Saffarid dynasty"
+],
+"type": "POLITY"
+},
+"Qocho Kingdom": {
+"from": 860,
+"to": 1138,
+"wikipedia": [
+"Qocho"
+],
+"type": "POLITY"
+},
+"Sind-Habbari Dynasty": {
+"from": 860,
+"to": 1201,
+"wikipedia": [
+"Habbari dynasty"
+],
+"type": "POLITY"
+},
+"Giudicato of Cagliari": {
+"from": 866,
+"to": 1187,
+"wikipedia": [
+"Judicate of Cagliari"
+],
+"type": "POLITY"
+},
+"Ziyadid dynasty": {
+"from": 866,
+"to": 1138,
+"wikipedia": [
+"Ziyadid dynasty"
+],
+"type": "POLITY"
+},
+"Giudicato of Gallura": {
+"from": 866,
+"to": 1209,
+"wikipedia": [
+"Judicate of Gallura"
+],
+"type": "POLITY"
+},
+"Zaydi Alid dynasties": {
+"from": 866,
+"to": 935,
+"wikipedia": [
+"Alid dynasties of northern Iran"
+],
+"type": "POLITY"
+},
+"Giudicato of Logudoro": {
+"from": 866,
+"to": 1259,
+"wikipedia": [
+"Judicate of Logudoro"
+],
+"type": "POLITY"
+},
+"Old Kingdom of Norway": {
+"from": 866,
+"to": 1401,
+"wikipedia": [
+"Norway"
+],
+"type": "POLITY"
+},
+"Giudicato of Arborea": {
+"from": 866,
+"to": 1421,
+"wikipedia": [
+"Judicate of Arborea"
+],
+"type": "POLITY"
+},
+"(Allegiance of Ziyadid dynasty to Abbasid Caliphate)": {
+"from": 866,
+"to": 946,
+"wikipedia": [
+"Ziyadid dynasty"
+],
+"type": "RELATION"
+},
+"County of Ribagorza": {
+"from": 866,
+"to": 1084,
+"wikipedia": [
+"County of Ribagorza"
+],
+"type": "POLITY"
+},
+"County of Urgell": {
+"from": 870,
+"to": 1808,
+"wikipedia": [
+"County of Urgell"
+],
+"type": "POLITY"
+},
+"Toltec": {
+"from": 875,
+"to": 1187,
+"wikipedia": [
+"Toltec"
+],
+"type": "POLITY"
+},
+"Tulunids": {
+"from": 875,
+"to": 910,
+"wikipedia": [
+"Tulunids"
+],
+"type": "POLITY"
+},
+"County of Pallars": {
+"from": 875,
+"to": 1014,
+"wikipedia": [
+"County of Pallars"
+],
+"type": "POLITY"
+},
+"Danelaw": {
+"from": 878,
+"to": 959,
+"wikipedia": [
+"Danelaw"
+],
+"type": "POLITY"
+},
+"Kingdom of Seisyllwg": {
+"from": 878,
+"to": 959,
+"wikipedia": [
+"Seisyllwg"
+],
+"type": "POLITY"
+},
+"Rus'": {
+"from": 880,
+"to": 881,
+"wikipedia": [
+"Rus"
+],
+"type": "POLITY"
+},
+"Kievan Rus'": {
+"from": 882,
+"to": 1240,
+"wikipedia": [
+"Kievan Rus'"
+],
+"type": "POLITY"
+},
+"Bagratid Armenia": {
+"from": 886,
+"to": 1045,
+"wikipedia": [
+"Bagratid Armenia"
+],
+"type": "POLITY"
+},
+"Samanid Empire": {
+"from": 886,
+"to": 999,
+"wikipedia": [
+"Samanid Empire"
+],
+"type": "POLITY"
+},
+"(Alliance between Samanid Empire and Ziyadid dynasty)": {
+"from": 886,
+"to": 999,
+"wikipedia": [
+"Samanid Empire"
+],
+"type": "RELATION"
+},
+"Upper Burgundy": {
+"from": 887,
+"to": 959,
+"wikipedia": [
+"Upper Burgundy"
+],
+"type": "POLITY"
+},
+"Kingdom of Khotan": {
+"from": 888,
+"to": 1009,
+"wikipedia": [
+"Kingdom of Khotan"
+],
+"type": "POLITY"
+},
+"Hubaekje": {
+"from": 892,
+"to": 935,
+"wikipedia": [
+"Later Baekje"
+],
+"type": "POLITY"
+},
+"Duchy of Bohemia": {
+"from": 896,
+"to": 1002,
+"wikipedia": [
+"Duchy of Bohemia"
+],
+"type": "POLITY"
+},
+"County of Rosellón": {
+"from": 896,
+"to": 1176,
+"wikipedia": [
+"Roussillon"
+],
+"type": "POLITY"
+},
+"Sajid Dynasty": {
+"from": 898,
+"to": 935,
+"wikipedia": [
+"Sajid dynasty"
+],
+"type": "POLITY"
+},
+"County of Besalú": {
+"from": 898,
+"to": 989,
+"wikipedia": [
+"County of Besalú"
+],
+"type": "POLITY"
+},
+"County of Berga": {
+"from": 898,
+"to": 1235,
+"wikipedia": [
+"Berga"
+],
+"type": "POLITY"
+},
+"Nitra": {
+"from": 898,
+"to": 910,
+"wikipedia": [
+"Nitra"
+],
+"type": "POLITY"
+},
+"County of Barcelona": {
+"from": 898,
+"to": 1168,
+"wikipedia": [
+"Girona"
+],
+"type": "POLITY"
+},
+"Qarmatians": {
+"from": 899,
+"to": 1071,
+"wikipedia": [
+"Qarmatians"
+],
+"type": "POLITY"
+},
+"Kingdom of Alba": {
+"from": 900,
+"to": 1293,
+"wikipedia": [
+"Kingdom of Alba"
+],
+"type": "POLITY"
+},
+"Principality of Hungary": {
+"from": 900,
+"to": 999,
+"wikipedia": [
+"Principality of Hungary"
+],
+"type": "POLITY"
+},
+"Chandra Dynasty": {
+"from": 900,
+"to": 1055,
+"wikipedia": [
+"Chandra dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Lower Burgundy": {
+"from": 900,
+"to": 935,
+"wikipedia": [
+"Lower Burgundy"
+],
+"type": "POLITY"
+},
+"Yan Kingdom": {
+"from": 911,
+"to": 921,
+"wikipedia": [
+"Yan (Five Dynasties period)"
+],
+"type": "POLITY"
+},
+"Min": {
+"from": 911,
+"to": 946,
+"wikipedia": [
+"Min"
+],
+"type": "POLITY"
+},
+"Later Jin": {
+"from": 911,
+"to": 946,
+"wikipedia": [
+"Later Jin (Five Dynasties)"
+],
+"type": "POLITY"
+},
+"Southern Han": {
+"from": 911,
+"to": 979,
+"wikipedia": [
+"Southern Han"
+],
+"type": "POLITY"
+},
+"Fatimid Caliphate": {
+"from": 911,
+"to": 1176,
+"wikipedia": [
+"Fatimid Caliphate"
+],
+"type": "POLITY"
+},
+"(Five Dynasties and Ten Kingdoms)": {
+"from": 911,
+"to": 979,
+"wikipedia": [
+"Five Dynasties and Ten Kingdoms period"
+],
+"type": "POLITY"
+},
+"Kingdom of León": {
+"from": 911,
+"to": 1235,
+"wikipedia": [
+"Kingdom of León"
+],
+"type": "POLITY"
+},
+"Liao Dynasty": {
+"from": 911,
+"to": 1125,
+"wikipedia": [
+"Liao dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Galicia": {
+"from": 911,
+"to": 1125,
+"wikipedia": [
+"Kingdom of Galicia"
+],
+"type": "POLITY"
+},
+"Former Shu": {
+"from": 911,
+"to": 925,
+"wikipedia": [
+"Former Shu"
+],
+"type": "POLITY"
+},
+"Later Liang Dynasty": {
+"from": 911,
+"to": 925,
+"wikipedia": [
+"Later Liang (Five Dynasties)"
+],
+"type": "POLITY"
+},
+"Kingdom of Germany": {
+"from": 911,
+"to": 961,
+"wikipedia": [
+"Kingdom of Germany"
+],
+"type": "POLITY"
+},
+"Taebong": {
+"from": 911,
+"to": 921,
+"wikipedia": [
+"Taebong"
+],
+"type": "POLITY"
+},
+"Wuyue": {
+"from": 911,
+"to": 979,
+"wikipedia": [
+"Wuyue"
+],
+"type": "POLITY"
+},
+"Kingdom of Vaspurakan": {
+"from": 911,
+"to": 1027,
+"wikipedia": [
+"Kingdom of Vaspurakan"
+],
+"type": "POLITY"
+},
+"Chimor": {
+"from": 911,
+"to": 1187,
+"wikipedia": [
+"Chimor"
+],
+"type": "POLITY"
+},
+"Southern Chu": {
+"from": 911,
+"to": 959,
+"wikipedia": [
+"Ma Chu"
+],
+"type": "POLITY"
+},
+"Southern Wu": {
+"from": 911,
+"to": 959,
+"wikipedia": [
+"Southern Wu"
+],
+"type": "POLITY"
+},
+"Qi Kingdom": {
+"from": 911,
+"to": 925,
+"wikipedia": [
+"Qi (Li Maozhen's state)"
+],
+"type": "POLITY"
+},
+"Early Balinese Kingdoms": {
+"from": 922,
+"to": 1343,
+"wikipedia": [
+"Bali Kingdom"
+],
+"type": "POLITY"
+},
+"Duchy of Normandy": {
+"from": 922,
+"to": 1071,
+"wikipedia": [
+"Duchy of Normandy"
+],
+"type": "POLITY"
+},
+"(Holy Roman Empire)": {
+"from": 922,
+"to": 1806,
+"wikipedia": [
+"Holy Roman Empire"
+],
+"type": "POLITY"
+},
+"Former Jin": {
+"from": 922,
+"to": 925,
+"wikipedia": [
+"Jin (Later Tang precursor)"
+],
+"type": "POLITY"
+},
+"Upper Burgundy and Italy": {
+"from": 922,
+"to": 925,
+"wikipedia": [
+"Upper Burgundy"
+],
+"type": "POLITY"
+},
+"Goryeo": {
+"from": 922,
+"to": 1394,
+"wikipedia": [
+"Goryeo"
+],
+"type": "POLITY"
+},
+"Kingdom of Croatia": {
+"from": 926,
+"to": 1098,
+"wikipedia": [
+"Kingdom of Croatia (925–1102)"
+],
+"type": "POLITY"
+},
+"Jingnan": {
+"from": 926,
+"to": 969,
+"wikipedia": [
+"Jingnan"
+],
+"type": "POLITY"
+},
+"Later Tang": {
+"from": 926,
+"to": 935,
+"wikipedia": [
+"Later Tang"
+],
+"type": "POLITY"
+},
+"Caliphate of Córdoba": {
+"from": 936,
+"to": 1071,
+"wikipedia": [
+"Caliphate of Córdoba"
+],
+"type": "POLITY"
+},
+"(Kingdom of England)": {
+"from": 936,
+"to": 1708,
+"wikipedia": [
+"Kingdom of England"
+],
+"type": "POLITY"
+},
+"Icelandic Commonwealth": {
+"from": 936,
+"to": 1271,
+"wikipedia": [
+"Icelandic Commonwealth"
+],
+"type": "POLITY"
+},
+"Kingdom of England": {
+"from": 936,
+"to": 1708,
+"wikipedia": [
+"Kingdom of England"
+],
+"type": "POLITY"
+},
+"Kingdom of Arles": {
+"from": 936,
+"to": 1384,
+"wikipedia": [
+"Kingdom of Arles"
+],
+"type": "POLITY"
+},
+"(Kingdom of Denmark)": {
+"from": 936,
+"to": 1406,
+"wikipedia": [
+"Danish Realm"
+],
+"type": "POLITY"
+},
+"Hamdanid Emirates": {
+"from": 936,
+"to": 1259,
+"wikipedia": [
+"Hamdanid dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Denmark": {
+"from": 936,
+"to": 1406,
+"wikipedia": [
+"Danish Realm"
+],
+"type": "POLITY"
+},
+"Ziyarid dynasty": {
+"from": 936,
+"to": 979,
+"wikipedia": [
+"Ziyarid dynasty"
+],
+"type": "POLITY"
+},
+"Later Shu": {
+"from": 936,
+"to": 969,
+"wikipedia": [
+"Later Shu"
+],
+"type": "POLITY"
+},
+"Buyid Dynasty": {
+"from": 936,
+"to": 1055,
+"wikipedia": [
+"Buyid dynasty"
+],
+"type": "POLITY"
+},
+"Ngô Dynasty": {
+"from": 947,
+"to": 1406,
+"wikipedia": [
+"Ngô dynasty"
+],
+"type": "POLITY"
+},
+"Zagwe dynasty": {
+"from": 947,
+"to": 1271,
+"wikipedia": [
+"Zagwe kingdom"
+],
+"type": "POLITY"
+},
+"Kingdom of Dali": {
+"from": 947,
+"to": 1259,
+"wikipedia": [
+"Dali Kingdom"
+],
+"type": "POLITY"
+},
+"Jaemtland": {
+"from": 947,
+"to": 1187,
+"wikipedia": [
+"Jämtland"
+],
+"type": "POLITY"
+},
+"Abbasid Caliphate/Buyid Dynasty": {
+"from": 947,
+"to": 969,
+"wikipedia": [
+"Abbasid Caliphate"
+],
+"type": "POLITY"
+},
+"Duchy of Brittany": {
+"from": 947,
+"to": 1491,
+"wikipedia": [
+"Duchy of Brittany"
+],
+"type": "POLITY"
+},
+"Later Han": {
+"from": 947,
+"to": 959,
+"wikipedia": [
+"Later Han"
+],
+"type": "POLITY"
+},
+"Chaulukya Dynasty": {
+"from": 947,
+"to": 1249,
+"wikipedia": [
+"Chaulukya dynasty"
+],
+"type": "POLITY"
+},
+"Southern Tang": {
+"from": 960,
+"to": 979,
+"wikipedia": [
+"Southern Tang"
+],
+"type": "POLITY"
+},
+"Northern Han": {
+"from": 960,
+"to": 979,
+"wikipedia": [
+"Northern Han"
+],
+"type": "POLITY"
+},
+"Republic of Amalfi": {
+"from": 960,
+"to": 1033,
+"wikipedia": [
+"Duchy of Amalfi"
+],
+"type": "POLITY"
+},
+"Chandela Kingdom": {
+"from": 960,
+"to": 1313,
+"wikipedia": [
+"Chandelas of Jejakabhukti"
+],
+"type": "POLITY"
+},
+"Utpala Dynasty": {
+"from": 960,
+"to": 1002,
+"wikipedia": [
+"Utpala dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Castile": {
+"from": 961,
+"to": 1235,
+"wikipedia": [
+"Kingdom of Castile"
+],
+"type": "POLITY"
+},
+"Northern Song": {
+"from": 961,
+"to": 1138,
+"wikipedia": [
+"Song dynasty"
+],
+"type": "POLITY"
+},
+"Ghaznavid Empire": {
+"from": 962,
+"to": 1209,
+"wikipedia": [
+"Ghaznavids"
+],
+"type": "POLITY"
+},
+"Kingdom of Poland": {
+"from": 962,
+"to": 1449,
+"wikipedia": [
+"Kingdom of Poland"
+],
+"type": "POLITY"
+},
+"Holy Roman Empire": {
+"from": 962,
+"to": 1621,
+"wikipedia": [
+"Holy Roman Empire"
+],
+"type": "POLITY"
+},
+"(Kingdom of Poland)": {
+"from": 962,
+"to": 1449,
+"wikipedia": [
+"Kingdom of Poland"
+],
+"type": "POLITY"
+},
+"Western Chalukya Empire": {
+"from": 980,
+"to": 1187,
+"wikipedia": [
+"Western Chalukya Empire"
+],
+"type": "POLITY"
+},
+"Paramara Dynasty": {
+"from": 980,
+"to": 1235,
+"wikipedia": [
+"Paramara dynasty"
+],
+"type": "POLITY"
+},
+"Chauhan Dynasty": {
+"from": 980,
+"to": 1201,
+"wikipedia": [
+"Chauhan Dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Sweden": {
+"from": 980,
+"to": 2024,
+"wikipedia": [
+"Sweden"
+],
+"type": "POLITY"
+},
+"County of Toulouse": {
+"from": 990,
+"to": 1249,
+"wikipedia": [
+"County of Toulouse"
+],
+"type": "POLITY"
+},
+"County of Blôis": {
+"from": 990,
+"to": 1401,
+"wikipedia": [
+"County of Blois"
+],
+"type": "POLITY"
+},
+"County of Vexin": {
+"from": 990,
+"to": 1084,
+"wikipedia": [
+"Vexin"
+],
+"type": "POLITY"
+},
+"(Allegiance of Duchy of Aquitaine to Kingdom of France)": {
+"from": 990,
+"to": 1138,
+"wikipedia": [
+"Duchy of Aquitaine"
+],
+"type": "RELATION"
+},
+"County of Flanders": {
+"from": 990,
+"to": 1384,
+"wikipedia": [
+"County of Flanders"
+],
+"type": "POLITY"
+},
+"Western Xia": {
+"from": 990,
+"to": 1226,
+"wikipedia": [
+"Western Xia"
+],
+"type": "POLITY"
+},
+"Seljuk Dynasty": {
+"from": 990,
+"to": 1039,
+"wikipedia": [
+"Seljuk dynasty"
+],
+"type": "POLITY"
+},
+"County of Maine": {
+"from": 990,
+"to": 1481,
+"wikipedia": [
+"Maine (province)"
+],
+"type": "POLITY"
+},
+"County of Vermandois": {
+"from": 990,
+"to": 1215,
+"wikipedia": [
+"Vermandois"
+],
+"type": "POLITY"
+},
+"County of Rouergue": {
+"from": 990,
+"to": 1065,
+"wikipedia": [
+"Rouergue"
+],
+"type": "POLITY"
+},
+"(Kingdom of France)": {
+"from": 990,
+"to": 1791,
+"wikipedia": [
+"Kingdom of France"
+],
+"type": "POLITY"
+},
+"County of Champagne": {
+"from": 990,
+"to": 1284,
+"wikipedia": [
+"County of Champagne"
+],
+"type": "POLITY"
+},
+"County of Anjou": {
+"from": 990,
+"to": 1332,
+"wikipedia": [
+"County of Anjou"
+],
+"type": "POLITY"
+},
+"Duchy of Aquitaine": {
+"from": 990,
+"to": 1439,
+"wikipedia": [
+"Duchy of Aquitaine"
+],
+"type": "POLITY"
+},
+"County of Osona": {
+"from": 990,
+"to": 1110,
+"wikipedia": [
+"County of Osona"
+],
+"type": "POLITY"
+},
+"Kingdom of France": {
+"from": 990,
+"to": 1791,
+"wikipedia": [
+"Kingdom of France"
+],
+"type": "POLITY"
+},
+"County of Ampuria": {
+"from": 1000,
+"to": 1414,
+"wikipedia": [
+"County of Empúries"
+],
+"type": "POLITY"
+},
+"Kingdom of Hungary": {
+"from": 1000,
+"to": 1546,
+"wikipedia": [
+"Kingdom of Hungary"
+],
+"type": "POLITY"
+},
+"Duchy of Burgundy": {
+"from": 1003,
+"to": 1481,
+"wikipedia": [
+"Duchy of Burgundy"
+],
+"type": "POLITY"
+},
+"Lohara Dynasty": {
+"from": 1003,
+"to": 1259,
+"wikipedia": [
+"Lohara dynasty"
+],
+"type": "POLITY"
+},
+"Taifa of Valencia": {
+"from": 1010,
+"to": 1249,
+"wikipedia": [
+"Taifa of Valencia"
+],
+"type": "POLITY"
+},
+"(Taifas of Iberia)": {
+"from": 1010,
+"to": 1249,
+"wikipedia": [
+"Taifa"
+],
+"type": "POLITY"
+},
+"Kingdom of Georgia": {
+"from": 1010,
+"to": 1802,
+"wikipedia": [
+"Kingdom of Georgia"
+],
+"type": "POLITY"
+},
+"Taifa of Alpuente": {
+"from": 1010,
+"to": 1110,
+"wikipedia": [
+"Taifa of Alpuente"
+],
+"type": "POLITY"
+},
+"Taifa of Toledo": {
+"from": 1010,
+"to": 1093,
+"wikipedia": [
+"Taifa of Toledo"
+],
+"type": "POLITY"
+},
+"Republic of Pisa": {
+"from": 1010,
+"to": 1401,
+"wikipedia": [
+"Republic of Pisa"
+],
+"type": "POLITY"
+},
+"Taifa of Dénia": {
+"from": 1010,
+"to": 1249,
+"wikipedia": [
+"Taifa of Dénia"
+],
+"type": "POLITY"
+},
+"Taifa of Badajoz": {
+"from": 1010,
+"to": 1151,
+"wikipedia": [
+"Taifa of Badajoz"
+],
+"type": "POLITY"
+},
+"Taifa of Tortosa": {
+"from": 1010,
+"to": 1110,
+"wikipedia": [
+"Taifa of Tortosa"
+],
+"type": "POLITY"
+},
+"County of Nevers": {
+"from": 1010,
+"to": 1520,
+"wikipedia": [
+"County of Nevers"
+],
+"type": "POLITY"
+},
+"Republic of Genoa": {
+"from": 1010,
+"to": 1795,
+"wikipedia": [
+"Republic of Genoa"
+],
+"type": "POLITY"
+},
+"Taifa of Arcos": {
+"from": 1015,
+"to": 1071,
+"wikipedia": [
+"Taifa of Arcos"
+],
+"type": "POLITY"
+},
+"Taifa of Albarracín": {
+"from": 1015,
+"to": 1110,
+"wikipedia": [
+"Taifa of Albarracín"
+],
+"type": "POLITY"
+},
+"Taifa of Almería": {
+"from": 1015,
+"to": 1249,
+"wikipedia": [
+"Taifa of Almería"
+],
+"type": "POLITY"
+},
+"Taifa of Zaragoza": {
+"from": 1015,
+"to": 1110,
+"wikipedia": [
+"Taifa of Zaragoza"
+],
+"type": "POLITY"
+},
+"Taifa of Morón": {
+"from": 1015,
+"to": 1065,
+"wikipedia": [
+"Taifa of Morón"
+],
+"type": "POLITY"
+},
+"Taifa of Saltés and Huelva": {
+"from": 1015,
+"to": 1151,
+"wikipedia": [
+"Taifa of Saltés and Huelva"
+],
+"type": "POLITY"
+},
+"Taifa of Niebla": {
+"from": 1015,
+"to": 1249,
+"wikipedia": [
+"Taifa of Niebla"
+],
+"type": "POLITY"
+},
+"Taifa of Murcia": {
+"from": 1015,
+"to": 1249,
+"wikipedia": [
+"Taifa of Murcia"
+],
+"type": "POLITY"
+},
+"Kingdom of Aragon": {
+"from": 1015,
+"to": 1168,
+"wikipedia": [
+"Kingdom of Aragon"
+],
+"type": "POLITY"
+},
+"Taifa of Carmona": {
+"from": 1015,
+"to": 1151,
+"wikipedia": [
+"Taifa of Carmona"
+],
+"type": "POLITY"
+},
+"Taifa of Granada": {
+"from": 1015,
+"to": 1093,
+"wikipedia": [
+"Taifa of Granada"
+],
+"type": "POLITY"
+},
+"Taifa of Santa Maria do Algarve": {
+"from": 1018,
+"to": 1055,
+"wikipedia": [
+"Taifa of Santa Maria do Algarve"
+],
+"type": "POLITY"
+},
+"North Sea Empire": {
+"from": 1018,
+"to": 1039,
+"wikipedia": [
+"North Sea Empire"
+],
+"type": "POLITY"
+},
+"Hammadid Dynasty": {
+"from": 1018,
+"to": 1151,
+"wikipedia": [
+"Hammadid dynasty"
+],
+"type": "POLITY"
+},
+"Taifa of Algeciras": {
+"from": 1028,
+"to": 1168,
+"wikipedia": [
+"Taifa of Algeciras"
+],
+"type": "POLITY"
+},
+"Taifa of Seville": {
+"from": 1028,
+"to": 1093,
+"wikipedia": [
+"Taifa of Seville"
+],
+"type": "POLITY"
+},
+"Kahuripan": {
+"from": 1028,
+"to": 1045,
+"wikipedia": [
+"Kahuripan"
+],
+"type": "POLITY"
+},
+"Norman Italy": {
+"from": 1034,
+"to": 1138,
+"wikipedia": [
+"Norman conquest of southern Italy"
+],
+"type": "POLITY"
+},
+"Taifa of Silves": {
+"from": 1040,
+"to": 1168,
+"wikipedia": [
+"Taifa of Silves"
+],
+"type": "POLITY"
+},
+"County of Pallars Jussà": {
+"from": 1040,
+"to": 1191,
+"wikipedia": [
+"Pallars Jussà"
+],
+"type": "POLITY"
+},
+"County of Pallars Sobirà": {
+"from": 1040,
+"to": 1201,
+"wikipedia": [
+"Pallars Sobirà"
+],
+"type": "POLITY"
+},
+"Denmark-England": {
+"from": 1040,
+"to": 1045,
+"wikipedia": [
+"Danish attacks on Norman England"
+],
+"type": "POLITY"
+},
+"Great Seljuk Empire": {
+"from": 1040,
+"to": 1201,
+"wikipedia": [
+"Seljuk Empire"
+],
+"type": "POLITY"
+},
+"Takrur": {
+"from": 1040,
+"to": 1235,
+"wikipedia": [
+"Takrur"
+],
+"type": "POLITY"
+},
+"Taifa of Ronda": {
+"from": 1040,
+"to": 1065,
+"wikipedia": [
+"Taifa of Ronda"
+],
+"type": "POLITY"
+},
+"Kingdom of Janggala": {
+"from": 1046,
+"to": 1138,
+"wikipedia": [
+"Janggala"
+],
+"type": "POLITY"
+},
+"Eastern Kara-Khanids": {
+"from": 1046,
+"to": 1138,
+"wikipedia": [
+"Kara-Khanid Khanate"
+],
+"type": "POLITY"
+},
+"Norway-Denmark": {
+"from": 1046,
+"to": 1055,
+"wikipedia": [
+"Denmark-Norway"
+],
+"type": "POLITY"
+},
+"Western Karakhanid Khanate": {
+"from": 1046,
+"to": 1084,
+"wikipedia": [
+"Kara-Khanid Khanate"
+],
+"type": "POLITY"
+},
+"Kediri Kingdom": {
+"from": 1046,
+"to": 1226,
+"wikipedia": [
+"Kediri Kingdom"
+],
+"type": "POLITY"
+},
+"Zirid dynasty": {
+"from": 1056,
+"to": 1151,
+"wikipedia": [
+"Zirid dynasty"
+],
+"type": "POLITY"
+},
+"Sulayhid Dynasty": {
+"from": 1056,
+"to": 1065,
+"wikipedia": [
+"Sulayhid dynasty"
+],
+"type": "POLITY"
+},
+"Halych-Volhynia occupation": {
+"from": 1056,
+"to": 1240,
+"wikipedia": [
+"Kingdom of Galicia-Volhynia"
+],
+"type": "POLITY"
+},
+"Principality of Volhynia": {
+"from": 1056,
+"to": 1201,
+"wikipedia": [
+"Principality of Volhynia"
+],
+"type": "POLITY"
+},
+"Principality of Kiev": {
+"from": 1056,
+"to": 1240,
+"wikipedia": [
+"Principality of Kiev"
+],
+"type": "POLITY"
+},
+"Great Principality of Duklja": {
+"from": 1056,
+"to": 1071,
+"wikipedia": [
+"Duklja"
+],
+"type": "POLITY"
+},
+"Almoravid Dynasty": {
+"from": 1056,
+"to": 1205,
+"wikipedia": [
+"Almoravid dynasty"
+],
+"type": "POLITY"
+},
+"Principality of Rostov-Suzdal": {
+"from": 1056,
+"to": 1240,
+"wikipedia": [
+"Vladimir-Suzdal"
+],
+"type": "POLITY"
+},
+"Principality of Chernigov": {
+"from": 1056,
+"to": 1240,
+"wikipedia": [
+"Principality of Chernigov"
+],
+"type": "POLITY"
+},
+"Principality of Peremyshl": {
+"from": 1056,
+"to": 1146,
+"wikipedia": [
+"Principality of Peremyshl"
+],
+"type": "POLITY"
+},
+"Principality of Pereyaslavl": {
+"from": 1056,
+"to": 1240,
+"wikipedia": [
+"Principality of Pereyaslavl"
+],
+"type": "POLITY"
+},
+"Eastern Ganga Kingdom": {
+"from": 1056,
+"to": 1351,
+"wikipedia": [
+"Eastern Ganga dynasty"
+],
+"type": "POLITY"
+},
+"Principality of Smolensk": {
+"from": 1056,
+"to": 1406,
+"wikipedia": [
+"Principality of Smolensk"
+],
+"type": "POLITY"
+},
+"Cuman-Kipchak Confederation": {
+"from": 1056,
+"to": 1065,
+"wikipedia": [
+"Cumania"
+],
+"type": "POLITY"
+},
+"Principality of Polotsky": {
+"from": 1056,
+"to": 1249,
+"wikipedia": [
+"Polotsk"
+],
+"type": "POLITY"
+},
+"Novgorod Republic": {
+"from": 1056,
+"to": 1481,
+"wikipedia": [
+"Novgorod Republic"
+],
+"type": "POLITY"
+},
+"Najahid Dynasty": {
+"from": 1066,
+"to": 1168,
+"wikipedia": [
+"Najahid dynasty"
+],
+"type": "POLITY"
+},
+"Taifa of Ceuta": {
+"from": 1066,
+"to": 1084,
+"wikipedia": [
+"Taifa of Ceuta"
+],
+"type": "POLITY"
+},
+"Sena Dynasty": {
+"from": 1072,
+"to": 1235,
+"wikipedia": [
+"Sena Dynasty"
+],
+"type": "POLITY"
+},
+"Uyunid Emirate": {
+"from": 1072,
+"to": 1235,
+"wikipedia": [
+"Uyunid dynasty"
+],
+"type": "POLITY"
+},
+"Norman England": {
+"from": 1072,
+"to": 1168,
+"wikipedia": [
+"Norman Conquest"
+],
+"type": "POLITY"
+},
+"Kingdom of Polonnaruwa": {
+"from": 1072,
+"to": 1259,
+"wikipedia": [
+"Kingdom of Polonnaruwa"
+],
+"type": "POLITY"
+},
+"Empire of Kanem": {
+"from": 1072,
+"to": 1384,
+"wikipedia": [
+"Kanem-Bornu Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Duklja": {
+"from": 1072,
+"to": 1138,
+"wikipedia": [
+"Duklja"
+],
+"type": "POLITY"
+},
+"Norse Greenland": {
+"from": 1072,
+"to": 1384,
+"wikipedia": [
+"Norse colonization of North America"
+],
+"type": "POLITY"
+},
+"Gahadavala Dynasty": {
+"from": 1085,
+"to": 1201,
+"wikipedia": [
+"Gahadavala dynasty"
+],
+"type": "POLITY"
+},
+"Zurayid dynasty": {
+"from": 1085,
+"to": 1176,
+"wikipedia": [
+"Zurayids"
+],
+"type": "POLITY"
+},
+"Kingdom of the Isles": {
+"from": 1085,
+"to": 1176,
+"wikipedia": [
+"Kingdom of the Isles"
+],
+"type": "POLITY"
+},
+"Principality of Terebovlia": {
+"from": 1085,
+"to": 1146,
+"wikipedia": [
+"Principality of Terebovlia"
+],
+"type": "POLITY"
+},
+"Sultanate of Rum": {
+"from": 1094,
+"to": 1313,
+"wikipedia": [
+"Sultanate of Rum"
+],
+"type": "POLITY"
+},
+"Danishmendids": {
+"from": 1094,
+"to": 1187,
+"wikipedia": [
+"Danishmendids"
+],
+"type": "POLITY"
+},
+"Khwarezmid Dynasty": {
+"from": 1094,
+"to": 1201,
+"wikipedia": [
+"Anushtegin dynasty"
+],
+"type": "POLITY"
+},
+"Northern Fujiwara": {
+"from": 1094,
+"to": 1191,
+"wikipedia": [
+"Northern Fujiwara"
+],
+"type": "POLITY"
+},
+"Grand Principality of Serbia": {
+"from": 1094,
+"to": 1168,
+"wikipedia": [
+"Grand Principality of Serbia"
+],
+"type": "POLITY"
+},
+"Principality of Ryazan": {
+"from": 1094,
+"to": 1240,
+"wikipedia": [
+"Principality of Ryazan"
+],
+"type": "POLITY"
+},
+"County of Edessa": {
+"from": 1099,
+"to": 1151,
+"wikipedia": [
+"County of Edessa"
+],
+"type": "POLITY"
+},
+"Armenian Kingdom of Cilicia": {
+"from": 1099,
+"to": 1374,
+"wikipedia": [
+"Armenian Kingdom of Cilicia"
+],
+"type": "POLITY"
+},
+"Kingdom of Jerusalem": {
+"from": 1099,
+"to": 1293,
+"wikipedia": [
+"Kingdom of Jerusalem"
+],
+"type": "POLITY"
+},
+"Principality of Antioch": {
+"from": 1099,
+"to": 1271,
+"wikipedia": [
+"Principality of Antioch"
+],
+"type": "POLITY"
+},
+"Principality of Koknese": {
+"from": 1111,
+"to": 1209,
+"wikipedia": [
+"Principality of Koknese"
+],
+"type": "POLITY"
+},
+"Principality of Drutsk": {
+"from": 1111,
+"to": 1249,
+"wikipedia": [
+"Principality of Drutsk"
+],
+"type": "POLITY"
+},
+"Hoysala Kingdom": {
+"from": 1111,
+"to": 1351,
+"wikipedia": [
+"Hoysala Kingdom"
+],
+"type": "POLITY"
+},
+"County of Tripoli": {
+"from": 1111,
+"to": 1293,
+"wikipedia": [
+"County of Tripoli"
+],
+"type": "POLITY"
+},
+"Principality of Minsk": {
+"from": 1111,
+"to": 1313,
+"wikipedia": [
+"Principality of Minsk"
+],
+"type": "POLITY"
+},
+"Principality of Jersika": {
+"from": 1111,
+"to": 1215,
+"wikipedia": [
+"Principality of Jersika"
+],
+"type": "POLITY"
+},
+"Principality of Vitebsk": {
+"from": 1111,
+"to": 1187,
+"wikipedia": [
+"Principality of Vitebsk"
+],
+"type": "POLITY"
+},
+"Kara-Khitans": {
+"from": 1126,
+"to": 1219,
+"wikipedia": [
+"Qara Khitai"
+],
+"type": "POLITY"
+},
+"Great Jin": {
+"from": 1126,
+"to": 1235,
+"wikipedia": [
+"Jin dynasty (1115-1234)"
+],
+"type": "POLITY"
+},
+"(Allegiance of Goryeo to Great Jin)": {
+"from": 1126,
+"to": 1235,
+"wikipedia": [
+"Goryeo"
+],
+"type": "RELATION"
+},
+"(Vassalage of Western Xia to Great Jin)": {
+"from": 1126,
+"to": 1226,
+"wikipedia": [
+"Western Xia"
+],
+"type": "RELATION"
+},
+"Angevins": {
+"from": 1126,
+"to": 1146,
+"wikipedia": [
+"Angevin"
+],
+"type": "POLITY"
+},
+"(Duchies of Poland)": {
+"from": 1139,
+"to": 1304,
+"wikipedia": [
+"Testament of Bolesław III Wrymouth"
+],
+"type": "POLITY"
+},
+"Duchy of Silesia": {
+"from": 1139,
+"to": 1304,
+"wikipedia": [
+"Duchy of Silesia"
+],
+"type": "POLITY"
+},
+"Southern Song": {
+"from": 1139,
+"to": 1278,
+"wikipedia": [
+"Song dynasty"
+],
+"type": "POLITY"
+},
+"County of Portugal": {
+"from": 1139,
+"to": 1146,
+"wikipedia": [
+"County of Portugal"
+],
+"type": "POLITY"
+},
+"Zengid dynasty": {
+"from": 1139,
+"to": 1259,
+"wikipedia": [
+"Zengid dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Navarre": {
+"from": 1139,
+"to": 1428,
+"wikipedia": [
+"Kingdom of Navarre"
+],
+"type": "POLITY"
+},
+"Duchy of Łęczyca": {
+"from": 1139,
+"to": 1146,
+"wikipedia": [
+"Łęczyca Voivodeship"
+],
+"type": "POLITY"
+},
+"(Allegiance of Southern Song to Great Jin)": {
+"from": 1139,
+"to": 1235,
+"wikipedia": [
+"Song dynasty"
+],
+"type": "RELATION"
+},
+"Pomerania": {
+"from": 1139,
+"to": 1187,
+"wikipedia": [
+"Pomerania"
+],
+"type": "POLITY"
+},
+"Kingdom of Sicily": {
+"from": 1139,
+"to": 1384,
+"wikipedia": [
+"Kingdom of Sicily"
+],
+"type": "POLITY"
+},
+"Duchy of Greater Poland": {
+"from": 1139,
+"to": 1304,
+"wikipedia": [
+"Duchy of Greater Poland"
+],
+"type": "POLITY"
+},
+"Duchy of Sandomierz": {
+"from": 1139,
+"to": 1304,
+"wikipedia": [
+"Duchy of Sandomierz"
+],
+"type": "POLITY"
+},
+"Duchy of Masovia": {
+"from": 1139,
+"to": 1351,
+"wikipedia": [
+"Duchy of Masovia"
+],
+"type": "POLITY"
+},
+"Sultanate of Kedah": {
+"from": 1139,
+"to": 1910,
+"wikipedia": [
+"Kedah Sultanate"
+],
+"type": "POLITY"
+},
+"Almohad Caliphate": {
+"from": 1139,
+"to": 1343,
+"wikipedia": [
+"Almohad Caliphate"
+],
+"type": "POLITY"
+},
+"Angevin Empire": {
+"from": 1147,
+"to": 1209,
+"wikipedia": [
+"Angevin Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Portugal": {
+"from": 1147,
+"to": 1911,
+"wikipedia": [
+"Kingdom of Portugal"
+],
+"type": "POLITY"
+},
+"Taifa of Tejada": {
+"from": 1147,
+"to": 1151,
+"wikipedia": [
+"Taifa of Tejada"
+],
+"type": "POLITY"
+},
+"Taifa of Córdoba": {
+"from": 1147,
+"to": 1249,
+"wikipedia": [
+"Taifa of Córdoba"
+],
+"type": "POLITY"
+},
+"Principality of Halych": {
+"from": 1147,
+"to": 1201,
+"wikipedia": [
+"Principality of Halych"
+],
+"type": "POLITY"
+},
+"Kingdom of Africa": {
+"from": 1152,
+"to": 1168,
+"wikipedia": [
+"Kingdom of Africa"
+],
+"type": "POLITY"
+},
+"Ghurid Dynasty": {
+"from": 1152,
+"to": 1209,
+"wikipedia": [
+"Ghurid dynasty"
+],
+"type": "POLITY"
+},
+"Puebloans - Aztec Regional System": {
+"from": 1152,
+"to": 1304,
+"wikipedia": [
+"Ancestral Puebloans"
+],
+"type": "POLITY"
+},
+"Nabhani Dynasty": {
+"from": 1169,
+"to": 1176,
+"wikipedia": [
+"Nabhani dynasty"
+],
+"type": "POLITY"
+},
+"Duchy of Wrocław": {
+"from": 1169,
+"to": 1201,
+"wikipedia": [
+"Duchy of Wrocław"
+],
+"type": "POLITY"
+},
+"Mahdids": {
+"from": 1169,
+"to": 1506,
+"wikipedia": [
+"Mahdids"
+],
+"type": "POLITY"
+},
+"Kingdom of Powys Wenwynwyn": {
+"from": 1169,
+"to": 1209,
+"wikipedia": [
+"Powys Wenwynwyn"
+],
+"type": "POLITY"
+},
+"Kingdom of Powys Fadog": {
+"from": 1169,
+"to": 1215,
+"wikipedia": [
+"Powys Fadog"
+],
+"type": "POLITY"
+},
+"Crown of Aragon": {
+"from": 1169,
+"to": 1515,
+"wikipedia": [
+"Crown of Aragon"
+],
+"type": "POLITY"
+},
+"Duchy of Opole": {
+"from": 1177,
+"to": 1304,
+"wikipedia": [
+"Duchy of Opole"
+],
+"type": "POLITY"
+},
+"Kingdom of Mann": {
+"from": 1177,
+"to": 1271,
+"wikipedia": [
+"Kingdom of the Isles"
+],
+"type": "POLITY"
+},
+"Ayyubid Sultanate": {
+"from": 1177,
+"to": 1249,
+"wikipedia": [
+"Ayyubid dynasty"
+],
+"type": "POLITY"
+},
+"Kakatiya Dynasty": {
+"from": 1177,
+"to": 1325,
+"wikipedia": [
+"Kakatiya dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Serbia": {
+"from": 1188,
+"to": 1884,
+"wikipedia": [
+"Kingdom of Serbia"
+],
+"type": "POLITY"
+},
+"Second Bulgarian Empire": {
+"from": 1188,
+"to": 1394,
+"wikipedia": [
+"Second Bulgarian Empire"
+],
+"type": "POLITY"
+},
+"Shunten Dynasty": {
+"from": 1188,
+"to": 1313,
+"wikipedia": [
+"Shunten dynasty"
+],
+"type": "POLITY"
+},
+"Banate of Bosnia": {
+"from": 1188,
+"to": 1384,
+"wikipedia": [
+"Banate of Bosnia"
+],
+"type": "POLITY"
+},
+"Principality of Turov and Pinsk": {
+"from": 1188,
+"to": 1240,
+"wikipedia": [
+"Principality of Turov"
+],
+"type": "POLITY"
+},
+"Kamakura Shogunate": {
+"from": 1188,
+"to": 1332,
+"wikipedia": [
+"Kamakura shogunate"
+],
+"type": "POLITY"
+},
+"Yadava Dynasty": {
+"from": 1188,
+"to": 1325,
+"wikipedia": [
+"Yadava Dynasty"
+],
+"type": "POLITY"
+},
+"Duchy of Kuyavia": {
+"from": 1188,
+"to": 1205,
+"wikipedia": [
+"Duchy of Kuyavia"
+],
+"type": "POLITY"
+},
+"Chimu Empire": {
+"from": 1188,
+"to": 1481,
+"wikipedia": [
+"Chimor"
+],
+"type": "POLITY"
+},
+"County of Boulogne": {
+"from": 1188,
+"to": 1259,
+"wikipedia": [
+"County of Boulogne"
+],
+"type": "POLITY"
+},
+"Kingdom of Cyprus": {
+"from": 1192,
+"to": 1491,
+"wikipedia": [
+"Kingdom of Cyprus"
+],
+"type": "POLITY"
+},
+"Kathmandu": {
+"from": 1202,
+"to": 1761,
+"wikipedia": [
+"Kathmandu"
+],
+"type": "POLITY"
+},
+"(Vassalage of Kingdom of Bohemia to Holy Roman Empire)": {
+"from": 1202,
+"to": 1452,
+"wikipedia": [
+"Kingdom of Bohemia"
+],
+"type": "RELATION"
+},
+"(Allegiance of Ayyubid Sultanate to Abbasid Caliphate)": {
+"from": 1202,
+"to": 1249,
+"wikipedia": [
+"Ayyubid dynasty"
+],
+"type": "RELATION"
+},
+"Texcoco": {
+"from": 1202,
+"to": 1428,
+"wikipedia": [
+"Texcoco"
+],
+"type": "POLITY"
+},
+"(Kingdom of Bohemia)": {
+"from": 1202,
+"to": 1528,
+"wikipedia": [
+"Kingdom of Bohemia"
+],
+"type": "POLITY"
+},
+"Principality of Galicia-Volhynia": {
+"from": 1202,
+"to": 1240,
+"wikipedia": [
+"Kingdom of Galicia-Volhynia"
+],
+"type": "POLITY"
+},
+"Livonian Brothers of the Sword": {
+"from": 1202,
+"to": 1240,
+"wikipedia": [
+"Livonian Brothers of the Sword"
+],
+"type": "POLITY"
+},
+"Sosso Empire": {
+"from": 1202,
+"to": 1235,
+"wikipedia": [
+"Sosso Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Bohemia": {
+"from": 1202,
+"to": 1528,
+"wikipedia": [
+"Kingdom of Bohemia"
+],
+"type": "POLITY"
+},
+"Khwarezmid Empire": {
+"from": 1202,
+"to": 1235,
+"wikipedia": [
+"Khwarazmian Empire"
+],
+"type": "POLITY"
+},
+"Namayan": {
+"from": 1202,
+"to": 1571,
+"wikipedia": [
+"Namayan"
+],
+"type": "POLITY"
+},
+"(Allegiance of Sultanate of Rum to Abbasid Caliphate)": {
+"from": 1202,
+"to": 1249,
+"wikipedia": [
+"Sultanate of Rum"
+],
+"type": "RELATION"
+},
+"Despotate of Epirus": {
+"from": 1206,
+"to": 1481,
+"wikipedia": [
+"Despotate of Epirus"
+],
+"type": "POLITY"
+},
+"Latin Empire": {
+"from": 1206,
+"to": 1278,
+"wikipedia": [
+"Latin Empire"
+],
+"type": "POLITY"
+},
+"Negroponte": {
+"from": 1206,
+"to": 1209,
+"wikipedia": [
+"Negroponte"
+],
+"type": "POLITY"
+},
+"Mongol Empire": {
+"from": 1206,
+"to": 1293,
+"wikipedia": [
+"Mongol Empire"
+],
+"type": "POLITY"
+},
+"County of Armagnac": {
+"from": 1206,
+"to": 1496,
+"wikipedia": [
+"County of Armagnac"
+],
+"type": "POLITY"
+},
+"County of Périgord": {
+"from": 1206,
+"to": 1481,
+"wikipedia": [
+"County of Périgord"
+],
+"type": "POLITY"
+},
+"County of Poitou": {
+"from": 1206,
+"to": 1249,
+"wikipedia": [
+"County of Poitou"
+],
+"type": "POLITY"
+},
+"Principality of Achaea": {
+"from": 1206,
+"to": 1439,
+"wikipedia": [
+"Principality of Achaea"
+],
+"type": "POLITY"
+},
+"County of Auvergne": {
+"from": 1206,
+"to": 1501,
+"wikipedia": [
+"Auvergne"
+],
+"type": "POLITY"
+},
+"Duchy of Athens": {
+"from": 1206,
+"to": 1313,
+"wikipedia": [
+"Duchy of Athens"
+],
+"type": "POLITY"
+},
+"Empire of Trebizond": {
+"from": 1206,
+"to": 1462,
+"wikipedia": [
+"Empire of Trebizond"
+],
+"type": "POLITY"
+},
+"Nicaean Empire": {
+"from": 1206,
+"to": 1278,
+"wikipedia": [
+"Empire of Nicaea"
+],
+"type": "POLITY"
+},
+"Kingdom of Thessalonica": {
+"from": 1206,
+"to": 1226,
+"wikipedia": [
+"Kingdom of Thessalonica"
+],
+"type": "POLITY"
+},
+"Domain of Rhodes": {
+"from": 1206,
+"to": 1249,
+"wikipedia": [
+"Rhodes"
+],
+"type": "POLITY"
+},
+"County of Touraine": {
+"from": 1206,
+"to": 1491,
+"wikipedia": [
+"Touraine"
+],
+"type": "POLITY"
+},
+"(Delhi Sultanate)": {
+"from": 1210,
+"to": 1528,
+"wikipedia": [
+"Delhi Sultanate"
+],
+"type": "POLITY"
+},
+"Duchy of the Archipelago": {
+"from": 1210,
+"to": 1313,
+"wikipedia": [
+"Duchy of the Archipelago"
+],
+"type": "POLITY"
+},
+"Duchy of Kalisz": {
+"from": 1210,
+"to": 1219,
+"wikipedia": [
+"Duchy of Kalisz"
+],
+"type": "POLITY"
+},
+"Mamluk Dynasty": {
+"from": 1210,
+"to": 1293,
+"wikipedia": [
+"Mamluk dynasty (Delhi)"
+],
+"type": "POLITY"
+},
+"(Allegiance of Delhi Sultanate to Abbasid Caliphate)": {
+"from": 1210,
+"to": 1259,
+"wikipedia": [
+"Delhi Sultanate"
+],
+"type": "RELATION"
+},
+"Pandya Empire": {
+"from": 1216,
+"to": 1325,
+"wikipedia": [
+"Pandya Empire"
+],
+"type": "POLITY"
+},
+"(Personal union of Holy Roman Empire with Kingdom of Sicily)": {
+"from": 1216,
+"to": 1259,
+"wikipedia": [
+"Frederick II, Holy Roman Emperor"
+],
+"type": "RELATION"
+},
+"Grand Duchy of Lithuania": {
+"from": 1220,
+"to": 1449,
+"wikipedia": [
+"Grand Duchy of Lithuania"
+],
+"type": "POLITY"
+},
+"Singhasari": {
+"from": 1227,
+"to": 1293,
+"wikipedia": [
+"Singhasari"
+],
+"type": "POLITY"
+},
+"Teutonic Order": {
+"from": 1236,
+"to": 1525,
+"wikipedia": [
+"Teutonic Order"
+],
+"type": "POLITY"
+},
+"Rasulid Dynasty": {
+"from": 1236,
+"to": 1458,
+"wikipedia": [
+"Rasulid dynasty"
+],
+"type": "POLITY"
+},
+"County of Foix": {
+"from": 1236,
+"to": 1555,
+"wikipedia": [
+"County of Foix"
+],
+"type": "POLITY"
+},
+"Mali Empire": {
+"from": 1236,
+"to": 1611,
+"wikipedia": [
+"Mali Empire"
+],
+"type": "POLITY"
+},
+"Empire of Thessalonica": {
+"from": 1236,
+"to": 1249,
+"wikipedia": [
+"Empire of Thessalonica"
+],
+"type": "POLITY"
+},
+"Hafsid Dynasty": {
+"from": 1236,
+"to": 1571,
+"wikipedia": [
+"Hafsid dynasty"
+],
+"type": "POLITY"
+},
+"Zayyanid dynasty": {
+"from": 1236,
+"to": 1555,
+"wikipedia": [
+"Kingdom of Tlemcen",
+"Zayyanid dynasty"
+],
+"type": "POLITY"
+},
+"Ceylon": {
+"from": 1236,
+"to": 1506,
+"wikipedia": [
+"Sri Lanka"
+],
+"type": "POLITY"
+},
+"Kingdom of Dambadeniya": {
+"from": 1236,
+"to": 1293,
+"wikipedia": [
+"Kingdom of Dambadeniya"
+],
+"type": "POLITY"
+},
+"Crown of Castile": {
+"from": 1236,
+"to": 1515,
+"wikipedia": [
+"Crown of Castile"
+],
+"type": "POLITY"
+},
+"Mamluk Sultanate": {
+"from": 1241,
+"to": 1518,
+"wikipedia": [
+"Mamluk Sultanate"
+],
+"type": "POLITY"
+},
+"County of Artois": {
+"from": 1241,
+"to": 1332,
+"wikipedia": [
+"County of Artois"
+],
+"type": "POLITY"
+},
+"Sukhothai Kingdom": {
+"from": 1241,
+"to": 1458,
+"wikipedia": [
+"Sukhothai Kingdom"
+],
+"type": "POLITY"
+},
+"Emirate of Granada": {
+"from": 1241,
+"to": 1491,
+"wikipedia": [
+"Emirate of Granada"
+],
+"type": "POLITY"
+},
+"Capetian House of Anjou": {
+"from": 1250,
+"to": 1384,
+"wikipedia": [
+"Capetian House of Anjou"
+],
+"type": "POLITY"
+},
+"Duchy of Głogów": {
+"from": 1250,
+"to": 1313,
+"wikipedia": [
+"Duchy of Głogów"
+],
+"type": "POLITY"
+},
+"Marinid Sultanate": {
+"from": 1250,
+"to": 1467,
+"wikipedia": [
+"Marinid Sultanate"
+],
+"type": "POLITY"
+},
+"County of Holland": {
+"from": 1260,
+"to": 1362,
+"wikipedia": [
+"County of Holland"
+],
+"type": "POLITY"
+},
+"Republic of Florence": {
+"from": 1260,
+"to": 1737,
+"wikipedia": [
+"Republic of Florence"
+],
+"type": "POLITY"
+},
+"House of Luxembourg": {
+"from": 1260,
+"to": 1414,
+"wikipedia": [
+"House of Luxembourg"
+],
+"type": "POLITY"
+},
+"Margraviate of Brandenburg": {
+"from": 1260,
+"to": 1414,
+"wikipedia": [
+"Margraviate of Brandenburg"
+],
+"type": "POLITY"
+},
+"Duchy of Styria": {
+"from": 1260,
+"to": 1501,
+"wikipedia": [
+"Duchy of Styria"
+],
+"type": "POLITY"
+},
+"County of Savoy": {
+"from": 1260,
+"to": 1539,
+"wikipedia": [
+"County of Savoy"
+],
+"type": "POLITY"
+},
+"House of Hohenstaufen": {
+"from": 1260,
+"to": 1271,
+"wikipedia": [
+"Hohenstaufen"
+],
+"type": "POLITY"
+},
+"Dauphiné": {
+"from": 1260,
+"to": 1351,
+"wikipedia": [
+"Dauphiné"
+],
+"type": "POLITY"
+},
+"House of Wittelsbach": {
+"from": 1260,
+"to": 1332,
+"wikipedia": [
+"House of Wittelsbach"
+],
+"type": "POLITY"
+},
+"County of Brabant": {
+"from": 1260,
+"to": 1430,
+"wikipedia": [
+"Landgraviate of Brabant"
+],
+"type": "POLITY"
+},
+"House of Habsburg": {
+"from": 1260,
+"to": 1515,
+"wikipedia": [
+"House of Habsburg"
+],
+"type": "POLITY"
+},
+"Bahrani Dynasty": {
+"from": 1260,
+"to": 1520,
+"wikipedia": [
+"Al-Ahsa Oasis"
+],
+"type": "POLITY"
+},
+"Principality of Orange": {
+"from": 1260,
+"to": 1571,
+"wikipedia": [
+"Principality of Orange"
+],
+"type": "POLITY"
+},
+"Duchy of Bavaria": {
+"from": 1260,
+"to": 1805,
+"wikipedia": [
+"Duchy of Bavaria"
+],
+"type": "POLITY"
+},
+"House of Ascania": {
+"from": 1260,
+"to": 1486,
+"wikipedia": [
+"House of Ascania"
+],
+"type": "POLITY"
+},
+"Patriarchate of Aquileia": {
+"from": 1260,
+"to": 1449,
+"wikipedia": [
+"Patriarchate of Aquileia"
+],
+"type": "POLITY"
+},
+"Holy Roman Empire Minor States": {
+"from": 1260,
+"to": 1806,
+"wikipedia": [
+"Holy Roman Empire"
+],
+"type": "POLITY"
+},
+"Thessaly": {
+"from": 1272,
+"to": 1332,
+"wikipedia": [
+"Thessaly"
+],
+"type": "POLITY"
+},
+"House of Anjou-Sicily": {
+"from": 1272,
+"to": 1384,
+"wikipedia": [
+"Capetian House of Anjou"
+],
+"type": "POLITY"
+},
+"Samudera Pasai Sultanate": {
+"from": 1272,
+"to": 1520,
+"wikipedia": [
+"Samudera Pasai Sultanate"
+],
+"type": "POLITY"
+},
+"Ethiopian Empire": {
+"from": 1272,
+"to": 1935,
+"wikipedia": [
+"Ethiopian Empire"
+],
+"type": "POLITY"
+},
+"Comtat Venaissin": {
+"from": 1272,
+"to": 1790,
+"wikipedia": [
+"Comtat Venaissin"
+],
+"type": "POLITY"
+},
+"Kingdom of Majorca": {
+"from": 1279,
+"to": 1343,
+"wikipedia": [
+"Kingdom of Majorca"
+],
+"type": "POLITY"
+},
+"Duchies of Poland": {
+"from": 1279,
+"to": 1304,
+"wikipedia": [
+"Testament of Bolesław III Wrymouth"
+],
+"type": "POLITY"
+},
+"Duchy of Jawor": {
+"from": 1279,
+"to": 1313,
+"wikipedia": [
+"Duchy of Jawor"
+],
+"type": "POLITY"
+},
+"Duchy of Legnica": {
+"from": 1279,
+"to": 1313,
+"wikipedia": [
+"Duchy of Legnica"
+],
+"type": "POLITY"
+},
+"Grand Duchy of Kraków": {
+"from": 1279,
+"to": 1293,
+"wikipedia": [
+"Grand Duchy of Kraków"
+],
+"type": "POLITY"
+},
+"Kampili Kingdom": {
+"from": 1285,
+"to": 1332,
+"wikipedia": [
+"Kampili Kingdom"
+],
+"type": "POLITY"
+},
+"Pskov Republic": {
+"from": 1285,
+"to": 1511,
+"wikipedia": [
+"Pskov Republic"
+],
+"type": "POLITY"
+},
+"Kingdom of Syrmia": {
+"from": 1285,
+"to": 1325,
+"wikipedia": [
+"Syrmia"
+],
+"type": "POLITY"
+},
+"Ifat Sultanate": {
+"from": 1285,
+"to": 1414,
+"wikipedia": [
+"Sultanate of Ifat"
+],
+"type": "POLITY"
+},
+"Duchy of Racibórz": {
+"from": 1285,
+"to": 1304,
+"wikipedia": [
+"Duchy of Racibórz"
+],
+"type": "POLITY"
+},
+"Kingdom of Naples": {
+"from": 1285,
+"to": 1501,
+"wikipedia": [
+"Kingdom of Naples"
+],
+"type": "POLITY"
+},
+"Duchy of Bytom": {
+"from": 1285,
+"to": 1304,
+"wikipedia": [
+"Duchy of Bytom"
+],
+"type": "POLITY"
+},
+"Cuzco": {
+"from": 1294,
+"to": 1439,
+"wikipedia": [
+"Cusco"
+],
+"type": "POLITY"
+},
+"(Allegiance of Golden Horde to Yuan Dynasty)": {
+"from": 1294,
+"to": 1362,
+"wikipedia": [
+"Golden Horde"
+],
+"type": "RELATION"
+},
+"Malaya": {
+"from": 1294,
+"to": 1351,
+"wikipedia": [
+"Malaya"
+],
+"type": "POLITY"
+},
+"Nizhny Novgorod": {
+"from": 1294,
+"to": 1394,
+"wikipedia": [
+"Nizhny Novgorod"
+],
+"type": "POLITY"
+},
+"Yuan Dynasty": {
+"from": 1294,
+"to": 1374,
+"wikipedia": [
+"Yuan dynasty"
+],
+"type": "POLITY"
+},
+"Khalji Dynasty": {
+"from": 1294,
+"to": 1325,
+"wikipedia": [
+"Khalji dynasty"
+],
+"type": "POLITY"
+},
+"Grand Principality of Moscow": {
+"from": 1294,
+"to": 1546,
+"wikipedia": [
+"Principality of Moscow"
+],
+"type": "POLITY"
+},
+"Kingdom of Scotland": {
+"from": 1294,
+"to": 1608,
+"wikipedia": [
+"Kingdom of Scotland"
+],
+"type": "POLITY"
+},
+"Principality of Pinsk": {
+"from": 1294,
+"to": 1325,
+"wikipedia": [
+"Principality of Turov"
+],
+"type": "POLITY"
+},
+"Majapahit": {
+"from": 1294,
+"to": 1518,
+"wikipedia": [
+"Majapahit"
+],
+"type": "POLITY"
+},
+"Principality of Vladimir-Suzdal": {
+"from": 1294,
+"to": 1486,
+"wikipedia": [
+"Vladimir-Suzdal"
+],
+"type": "POLITY"
+},
+"Shan States": {
+"from": 1294,
+"to": 1563,
+"wikipedia": [
+"Shan States"
+],
+"type": "POLITY"
+},
+"Ilkhanate": {
+"from": 1294,
+"to": 1343,
+"wikipedia": [
+"Ilkhanate"
+],
+"type": "POLITY"
+},
+"Hanthawaddy Kingdom": {
+"from": 1294,
+"to": 1546,
+"wikipedia": [
+"Hanthawaddy Kingdom"
+],
+"type": "POLITY"
+},
+"Swiss Confederation": {
+"from": 1294,
+"to": 2024,
+"wikipedia": [
+"Switzerland"
+],
+"type": "POLITY"
+},
+"Phayao Kingdom": {
+"from": 1294,
+"to": 1343,
+"wikipedia": [
+"Phayao Kingdom"
+],
+"type": "POLITY"
+},
+"(Allegiance of Ilkhanate to Yuan Dynasty)": {
+"from": 1294,
+"to": 1343,
+"wikipedia": [
+"Ilkhanate"
+],
+"type": "RELATION"
+},
+"Myinsaing Kingdom": {
+"from": 1294,
+"to": 1313,
+"wikipedia": [
+"Myinsaing Kingdom"
+],
+"type": "POLITY"
+},
+"Lan Na Kingdom": {
+"from": 1294,
+"to": 1563,
+"wikipedia": [
+"Lan Na"
+],
+"type": "POLITY"
+},
+"Principality of Beloozero": {
+"from": 1294,
+"to": 1343,
+"wikipedia": [
+"Principality of Beloozero"
+],
+"type": "POLITY"
+},
+"Chagatai Khanate": {
+"from": 1294,
+"to": 1462,
+"wikipedia": [
+"Chagatai Khanate"
+],
+"type": "POLITY"
+},
+"Golden Horde": {
+"from": 1294,
+"to": 1695,
+"wikipedia": [
+"Golden Horde"
+],
+"type": "POLITY"
+},
+"Galicia-Volhynia": {
+"from": 1294,
+"to": 1351,
+"wikipedia": [
+"Kingdom of Galicia-Volhynia"
+],
+"type": "POLITY"
+},
+"Principality of Turov": {
+"from": 1294,
+"to": 1325,
+"wikipedia": [
+"Principality of Turov"
+],
+"type": "POLITY"
+},
+"(Allegiance of Chagatai Khanate to Yuan Dynasty)": {
+"from": 1294,
+"to": 1374,
+"wikipedia": [
+"Chagatai Khanate"
+],
+"type": "RELATION"
+},
+"Tver": {
+"from": 1294,
+"to": 1486,
+"wikipedia": [
+"Tver"
+],
+"type": "POLITY"
+},
+"(Personal union of Kingdom of Bohemia with Kingdom of Poland)": {
+"from": 1305,
+"to": 1313,
+"wikipedia": [
+"Wenceslaus II of Bohemia"
+],
+"type": "RELATION"
+},
+"Beylik of Aydin": {
+"from": 1305,
+"to": 1428,
+"wikipedia": [
+"Aydinids"
+],
+"type": "POLITY"
+},
+"Beylik of Karasi": {
+"from": 1305,
+"to": 1343,
+"wikipedia": [
+"Karasids"
+],
+"type": "POLITY"
+},
+"Beylik of Hamid": {
+"from": 1305,
+"to": 1343,
+"wikipedia": [
+"Hamidids"
+],
+"type": "POLITY"
+},
+"Beylik of Sinop": {
+"from": 1305,
+"to": 1332,
+"wikipedia": [
+"Candar dynasty"
+],
+"type": "POLITY"
+},
+"Eshrefids": {
+"from": 1305,
+"to": 1325,
+"wikipedia": [
+"Eshrefids"
+],
+"type": "POLITY"
+},
+"Germiyanids": {
+"from": 1305,
+"to": 1439,
+"wikipedia": [
+"Germiyanids"
+],
+"type": "POLITY"
+},
+"Kingdom of Singapura": {
+"from": 1305,
+"to": 1401,
+"wikipedia": [
+"Kingdom of Singapura"
+],
+"type": "POLITY"
+},
+"Michoacán": {
+"from": 1305,
+"to": 1533,
+"wikipedia": [
+"Michoacán"
+],
+"type": "POLITY"
+},
+"Kastamonu": {
+"from": 1305,
+"to": 1343,
+"wikipedia": [
+"Kastamonu"
+],
+"type": "POLITY"
+},
+"Beylik of Menteshe": {
+"from": 1305,
+"to": 1414,
+"wikipedia": [
+"Menteshe"
+],
+"type": "POLITY"
+},
+"Beylik of Isfendiyar": {
+"from": 1305,
+"to": 1462,
+"wikipedia": [
+"Candar dynasty"
+],
+"type": "POLITY"
+},
+"Ahi Republic": {
+"from": 1305,
+"to": 1362,
+"wikipedia": [
+"Ahis"
+],
+"type": "POLITY"
+},
+"Ottoman Empire": {
+"from": 1305,
+"to": 1923,
+"wikipedia": [
+"Ottoman Empire"
+],
+"type": "POLITY"
+},
+"(Allegiance of Teutonic Order to Holy Roman Empire)": {
+"from": 1305,
+"to": 1401,
+"wikipedia": [
+"Teutonic Order"
+],
+"type": "RELATION"
+},
+"Beylik of Karaman": {
+"from": 1305,
+"to": 1467,
+"wikipedia": [
+"Karamanids"
+],
+"type": "POLITY"
+},
+"Principality of Wallachia": {
+"from": 1314,
+"to": 1858,
+"wikipedia": [
+"Wallachia"
+],
+"type": "POLITY"
+},
+"Beylik of Saruhan": {
+"from": 1314,
+"to": 1414,
+"wikipedia": [
+"Sarukhanids"
+],
+"type": "POLITY"
+},
+"Nanzan": {
+"from": 1314,
+"to": 1401,
+"wikipedia": [
+"Nanzan"
+],
+"type": "POLITY"
+},
+"Chüzan": {
+"from": 1314,
+"to": 1428,
+"wikipedia": [
+"Chūzan"
+],
+"type": "POLITY"
+},
+"Hokuzan": {
+"from": 1314,
+"to": 1421,
+"wikipedia": [
+"Hokuzan"
+],
+"type": "POLITY"
+},
+"Catalan Company": {
+"from": 1314,
+"to": 1362,
+"wikipedia": [
+"Catalan Company"
+],
+"type": "POLITY"
+},
+"Jaffna kingdom": {
+"from": 1314,
+"to": 1594,
+"wikipedia": [
+"Jaffna kingdom"
+],
+"type": "POLITY"
+},
+"Kingdom of Pinya": {
+"from": 1314,
+"to": 1374,
+"wikipedia": [
+"Pinya Kingdom"
+],
+"type": "POLITY"
+},
+"Tenochtitlan": {
+"from": 1326,
+"to": 1428,
+"wikipedia": [
+"Tenochtitlan"
+],
+"type": "POLITY"
+},
+"Sagaing Kingdom": {
+"from": 1326,
+"to": 1374,
+"wikipedia": [
+"Sagaing Kingdom"
+],
+"type": "POLITY"
+},
+"Tughlaq Dynasty": {
+"from": 1326,
+"to": 1414,
+"wikipedia": [
+"Tughlaq dynasty"
+],
+"type": "POLITY"
+},
+"Beylik of Teke": {
+"from": 1326,
+"to": 1428,
+"wikipedia": [
+"Beylik of Teke"
+],
+"type": "POLITY"
+},
+"(Allegiance of Swiss Confederation to Holy Roman Empire)": {
+"from": 1326,
+"to": 1458,
+"wikipedia": [
+"Switzerland"
+],
+"type": "RELATION"
+},
+"Earldom of Ulster": {
+"from": 1326,
+"to": 1332,
+"wikipedia": [
+"Earldom of Ulster"
+],
+"type": "POLITY"
+},
+"(Personal union of Kingdom of Sweden with Old Kingdom of Norway)": {
+"from": 1326,
+"to": 1362,
+"wikipedia": [
+"Magnus Eriksson"
+],
+"type": "RELATION"
+},
+"Earldom of Desmond": {
+"from": 1333,
+"to": 1458,
+"wikipedia": [
+"Earl of Desmond"
+],
+"type": "POLITY"
+},
+"Kenmu Restoration": {
+"from": 1333,
+"to": 1343,
+"wikipedia": [
+"Kenmu Restoration"
+],
+"type": "POLITY"
+},
+"Principality of Theodoro": {
+"from": 1333,
+"to": 1474,
+"wikipedia": [
+"Principality of Theodoro"
+],
+"type": "POLITY"
+},
+"Free County of Burgundy": {
+"from": 1333,
+"to": 1384,
+"wikipedia": [
+"County of Burgundy"
+],
+"type": "POLITY"
+},
+"Danish Magnates": {
+"from": 1333,
+"to": 1351,
+"wikipedia": [
+"Christopher II of Denmark"
+],
+"type": "POLITY"
+},
+"House of Bourbon": {
+"from": 1333,
+"to": 1594,
+"wikipedia": [
+"House of Bourbon"
+],
+"type": "POLITY"
+},
+"Electorate of Trier": {
+"from": 1333,
+"to": 1618,
+"wikipedia": [
+"Electorate of Trier"
+],
+"type": "POLITY"
+},
+"Principality of Valona": {
+"from": 1333,
+"to": 1374,
+"wikipedia": [
+"Principality of Valona"
+],
+"type": "POLITY"
+},
+"Kartids": {
+"from": 1344,
+"to": 1384,
+"wikipedia": [
+"Kart dynasty"
+],
+"type": "POLITY"
+},
+"Sarbadars": {
+"from": 1344,
+"to": 1394,
+"wikipedia": [
+"Sarbadars"
+],
+"type": "POLITY"
+},
+"Kashmiri Sultanate": {
+"from": 1344,
+"to": 1587,
+"wikipedia": [
+"Kashmir Sultanate"
+],
+"type": "POLITY"
+},
+"Isle of Man": {
+"from": 1344,
+"to": 1401,
+"wikipedia": [
+"Isle of Man"
+],
+"type": "POLITY"
+},
+"Injuids": {
+"from": 1344,
+"to": 1362,
+"wikipedia": [
+"Injuids"
+],
+"type": "POLITY"
+},
+"Chobanids": {
+"from": 1344,
+"to": 1362,
+"wikipedia": [
+"Chobanids"
+],
+"type": "POLITY"
+},
+"Sultanate of Bengal": {
+"from": 1344,
+"to": 1533,
+"wikipedia": [
+"Bengal Sultanate"
+],
+"type": "POLITY"
+},
+"Sind-Samma Dynasty": {
+"from": 1344,
+"to": 1525,
+"wikipedia": [
+"Samma dynasty"
+],
+"type": "POLITY"
+},
+"Ashikaga Shogunate": {
+"from": 1344,
+"to": 1571,
+"wikipedia": [
+"Ashikaga shogunate"
+],
+"type": "POLITY"
+},
+"Commune of the Zealots": {
+"from": 1344,
+"to": 1351,
+"wikipedia": [
+"Thessaloniki"
+],
+"type": "POLITY"
+},
+"Vijayanagara Empire": {
+"from": 1344,
+"to": 1571,
+"wikipedia": [
+"Vijayanagara Empire"
+],
+"type": "POLITY"
+},
+"Jalayirid Sultanate": {
+"from": 1344,
+"to": 1401,
+"wikipedia": [
+"Jalayirid Sultanate"
+],
+"type": "POLITY"
+},
+"Beylik of Dulkadir": {
+"from": 1344,
+"to": 1515,
+"wikipedia": [
+"Beylik of Dulkadir"
+],
+"type": "POLITY"
+},
+"Muzaffarids": {
+"from": 1344,
+"to": 1394,
+"wikipedia": [
+"Muzaffarids"
+],
+"type": "POLITY"
+},
+"Serbian Empire": {
+"from": 1352,
+"to": 1458,
+"wikipedia": [
+"Serbian Empire"
+],
+"type": "POLITY"
+},
+"Ayutthaya Kingdom": {
+"from": 1352,
+"to": 1768,
+"wikipedia": [
+"Ayutthaya Kingdom"
+],
+"type": "POLITY"
+},
+"Bahmani Sultanate": {
+"from": 1352,
+"to": 1491,
+"wikipedia": [
+"Bahmani Sultanate"
+],
+"type": "POLITY"
+},
+"Principality of Moldavia": {
+"from": 1363,
+"to": 1858,
+"wikipedia": [
+"Moldavia"
+],
+"type": "POLITY"
+},
+"Sultanate of Brunei": {
+"from": 1363,
+"to": 2024,
+"wikipedia": [
+"Bruneian Sultanate (1368-1888)"
+],
+"type": "POLITY"
+},
+"Electorate of Saxony": {
+"from": 1363,
+"to": 1805,
+"wikipedia": [
+"Electorate of Saxony"
+],
+"type": "POLITY"
+},
+"House of Tocco": {
+"from": 1363,
+"to": 1414,
+"wikipedia": [
+"County Palatine of Cephalonia and Zakynthos"
+],
+"type": "POLITY"
+},
+"(Personal union of Old Kingdom of Norway with Kingdom of Sweden)": {
+"from": 1363,
+"to": 1374,
+"wikipedia": [
+"Haakon VI"
+],
+"type": "RELATION"
+},
+"House of Valois-Anjou": {
+"from": 1363,
+"to": 1486,
+"wikipedia": [
+"House of Valois-Anjou"
+],
+"type": "POLITY"
+},
+"Tibet": {
+"from": 1363,
+"to": 1952,
+"wikipedia": [
+"History of Tibet",
+"Tibet"
+],
+"type": "POLITY"
+},
+"Despotate of Vidin": {
+"from": 1363,
+"to": 1401,
+"wikipedia": [
+"Tsardom of Vidin"
+],
+"type": "POLITY"
+},
+"White Horde": {
+"from": 1363,
+"to": 1384,
+"wikipedia": [
+"White Horde"
+],
+"type": "POLITY"
+},
+"Blue Horde": {
+"from": 1363,
+"to": 1449,
+"wikipedia": [
+"Blue Horde"
+],
+"type": "POLITY"
+},
+"Despotate of Dobruja": {
+"from": 1363,
+"to": 1394,
+"wikipedia": [
+"Despotate of Dobruja"
+],
+"type": "POLITY"
+},
+"Lan Xang": {
+"from": 1363,
+"to": 1708,
+"wikipedia": [
+"Lan Xang"
+],
+"type": "POLITY"
+},
+"Tondo": {
+"from": 1375,
+"to": 1571,
+"wikipedia": [
+"Tondo (historical polity)"
+],
+"type": "POLITY"
+},
+"Ava Kingdom": {
+"from": 1375,
+"to": 1528,
+"wikipedia": [
+"Kingdom of Ava"
+],
+"type": "POLITY"
+},
+"Ming Dynasty": {
+"from": 1375,
+"to": 1644,
+"wikipedia": [
+"Ming dynasty"
+],
+"type": "POLITY"
+},
+"Northern Yuan": {
+"from": 1375,
+"to": 1439,
+"wikipedia": [
+"Northern Yuan"
+],
+"type": "POLITY"
+},
+"Serbian Despots": {
+"from": 1375,
+"to": 1421,
+"wikipedia": [
+"Serbian Despotate"
+],
+"type": "POLITY"
+},
+"Timurid Empire": {
+"from": 1375,
+"to": 1528,
+"wikipedia": [
+"Timurid Empire"
+],
+"type": "POLITY"
+},
+"Qara Qoyunlu": {
+"from": 1375,
+"to": 1467,
+"wikipedia": [
+"Qara Qoyunlu"
+],
+"type": "POLITY"
+},
+"Despotate of Arta": {
+"from": 1375,
+"to": 1421,
+"wikipedia": [
+"Despotate of Arta"
+],
+"type": "POLITY"
+},
+"Albanian Principalities": {
+"from": 1375,
+"to": 1421,
+"wikipedia": [
+"Albanian principalities"
+],
+"type": "POLITY"
+},
+"(Personal union of Kingdom of Poland with Kingdom of Hungary)": {
+"from": 1375,
+"to": 1384,
+"wikipedia": [
+"Union of Hungary and Poland"
+],
+"type": "RELATION"
+},
+"(Allegiance of Jalayirid Sultanate to Timurid Empire)": {
+"from": 1375,
+"to": 1394,
+"wikipedia": [
+"Jalayirid Sultanate"
+],
+"type": "RELATION"
+},
+"County of Béarn": {
+"from": 1385,
+"to": 1452,
+"wikipedia": [
+"Béarn"
+],
+"type": "POLITY"
+},
+"Margraviate of Moravia": {
+"from": 1385,
+"to": 1414,
+"wikipedia": [
+"Margraviate of Moravia"
+],
+"type": "POLITY"
+},
+"(Vassalage of Jaffna kingdom to Vijayanagara Empire)": {
+"from": 1385,
+"to": 1501,
+"wikipedia": [
+"Jaffna kingdom"
+],
+"type": "RELATION"
+},
+"Kingdom of Bosnia": {
+"from": 1385,
+"to": 1481,
+"wikipedia": [
+"Kingdom of Bosnia"
+],
+"type": "POLITY"
+},
+"Bornu Empire": {
+"from": 1385,
+"to": 1894,
+"wikipedia": [
+"Kanem-Bornu Empire"
+],
+"type": "POLITY"
+},
+"Republic of Ragusa": {
+"from": 1385,
+"to": 1808,
+"wikipedia": [
+"Republic of Ragusa"
+],
+"type": "POLITY"
+},
+"(Personal union of Kingdom of Denmark with Old Kingdom of Norway)": {
+"from": 1385,
+"to": 1401,
+"wikipedia": [
+"Margaret I of Denmark"
+],
+"type": "RELATION"
+},
+"Ramadanid Emirate": {
+"from": 1385,
+"to": 1515,
+"wikipedia": [
+"Ramadanid Emirate"
+],
+"type": "POLITY"
+},
+"(Alliance between Golden Horde and Timurid Empire)": {
+"from": 1385,
+"to": 1401,
+"wikipedia": [
+"Golden Horde"
+],
+"type": "RELATION"
+},
+"(Vassalage of Kingdom of Georgia to Timurid Empire)": {
+"from": 1395,
+"to": 1406,
+"wikipedia": [
+"Kingdom of Georgia"
+],
+"type": "RELATION"
+},
+"Joseon": {
+"from": 1395,
+"to": 1897,
+"wikipedia": [
+"Joseon"
+],
+"type": "POLITY"
+},
+"Jaunpur Sultanate": {
+"from": 1395,
+"to": 1481,
+"wikipedia": [
+"Jaunpur Sultanate"
+],
+"type": "POLITY"
+},
+"(Personal union of Kingdom of Denmark with Kingdom of Sweden)": {
+"from": 1395,
+"to": 1401,
+"wikipedia": [
+"Margaret I of Denmark"
+],
+"type": "RELATION"
+},
+"(Polish-Lithuania Kingdom)": {
+"from": 1395,
+"to": 1449,
+"wikipedia": [
+"Jagiellonian dynasty"
+],
+"type": "POLITY"
+},
+"Principality of Valona and Kanina": {
+"from": 1395,
+"to": 1421,
+"wikipedia": [
+"Principality of Valona"
+],
+"type": "POLITY"
+},
+"(Allegiance of Joseon to Ming Dynasty)": {
+"from": 1395,
+"to": 1571,
+"wikipedia": [
+"Joseon"
+],
+"type": "RELATION"
+},
+"(Kalmar Union)": {
+"from": 1402,
+"to": 1525,
+"wikipedia": [
+"Kalmar Union"
+],
+"type": "POLITY"
+},
+"Four Oirats": {
+"from": 1402,
+"to": 1474,
+"wikipedia": [
+"Oirat Confederation"
+],
+"type": "POLITY"
+},
+"Duchy of Milan": {
+"from": 1402,
+"to": 1539,
+"wikipedia": [
+"Duchy of Milan"
+],
+"type": "POLITY"
+},
+"Kalmar Union": {
+"from": 1402,
+"to": 1525,
+"wikipedia": [
+"Kalmar Union"
+],
+"type": "POLITY"
+},
+"Aq Qoyunlu": {
+"from": 1407,
+"to": 1511,
+"wikipedia": [
+"Aq Qoyunlu"
+],
+"type": "POLITY"
+},
+"(Vassalage of Qara Qoyunlu to Timurid Empire)": {
+"from": 1407,
+"to": 1467,
+"wikipedia": [
+"Qara Qoyunlu"
+],
+"type": "RELATION"
+},
+"Sayyid Dynasty": {
+"from": 1415,
+"to": 1452,
+"wikipedia": [
+"Sayyid dynasty"
+],
+"type": "POLITY"
+},
+"Hashemite Arab Federation": {
+"from": 1415,
+"to": 1439,
+"wikipedia": [
+"Arab Iraq"
+],
+"type": "POLITY"
+},
+"Adal Sultanate": {
+"from": 1415,
+"to": 1546,
+"wikipedia": [
+"Adal Sultanate"
+],
+"type": "POLITY"
+},
+"Makuria Kingdom": {
+"from": 1415,
+"to": 1518,
+"wikipedia": [
+"Makuria"
+],
+"type": "POLITY"
+},
+"(Personal union of Kingdom of Hungary with Kingdom of Bohemia)": {
+"from": 1422,
+"to": 1528,
+"wikipedia": [
+"Louis II of Hungary",
+"Sigismund, Holy Roman Emperor"
+],
+"type": "RELATION"
+},
+"Electorate of Brandenburg": {
+"from": 1422,
+"to": 1618,
+"wikipedia": [
+"Margraviate of Brandenburg"
+],
+"type": "POLITY"
+},
+"Livonian Conference": {
+"from": 1422,
+"to": 1563,
+"wikipedia": [
+"Livonian language"
+],
+"type": "POLITY"
+},
+"(Vassalage of Electorate of Brandenburg to Holy Roman Empire)": {
+"from": 1422,
+"to": 1458,
+"wikipedia": [
+"Margraviate of Brandenburg"
+],
+"type": "RELATION"
+},
+"Lê Dynasty": {
+"from": 1429,
+"to": 1571,
+"wikipedia": [
+"Lê dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Mrauk U": {
+"from": 1429,
+"to": 1787,
+"wikipedia": [
+"Kingdom of Mrauk U"
+],
+"type": "POLITY"
+},
+"Ryukyu Kingdom": {
+"from": 1429,
+"to": 1520,
+"wikipedia": [
+"Ryukyu Kingdom"
+],
+"type": "POLITY"
+},
+"Khanate of Sibir": {
+"from": 1429,
+"to": 1587,
+"wikipedia": [
+"Khanate of Sibir"
+],
+"type": "POLITY"
+},
+"Duchy of Luxembourg": {
+"from": 1429,
+"to": 1449,
+"wikipedia": [
+"Duchy of Luxembourg"
+],
+"type": "POLITY"
+},
+"Aztec Triple Alliance": {
+"from": 1429,
+"to": 1520,
+"wikipedia": [
+"Aztec Empire"
+],
+"type": "POLITY"
+},
+"Duchy of Lorraine": {
+"from": 1431,
+"to": 1768,
+"wikipedia": [
+"Duchy of Lorraine"
+],
+"type": "POLITY"
+},
+"Inca Empire": {
+"from": 1440,
+"to": 1571,
+"wikipedia": [
+"Inca Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Kongo": {
+"from": 1440,
+"to": 1669,
+"wikipedia": [
+"Kingdom of Kongo"
+],
+"type": "POLITY"
+},
+"(Personal union of Polish-Lithuania Kingdom with Kingdom of Hungary)": {
+"from": 1440,
+"to": 1449,
+"wikipedia": [
+"Union of Hungary and Poland"
+],
+"type": "RELATION"
+},
+"Khanate of Kazan": {
+"from": 1440,
+"to": 1551,
+"wikipedia": [
+"Khanate of Kazan"
+],
+"type": "POLITY"
+},
+"Crimean Khanate": {
+"from": 1450,
+"to": 1782,
+"wikipedia": [
+"Crimean Khanate"
+],
+"type": "POLITY"
+},
+"Nogai Horde": {
+"from": 1450,
+"to": 1563,
+"wikipedia": [
+"Nogai Horde"
+],
+"type": "POLITY"
+},
+"House of Jagiellon": {
+"from": 1450,
+"to": 1571,
+"wikipedia": [
+"Jagiellonian dynasty"
+],
+"type": "POLITY"
+},
+"Ambrosian Republic": {
+"from": 1450,
+"to": 1452,
+"wikipedia": [
+"Golden Ambrosian Republic"
+],
+"type": "POLITY"
+},
+"House of Oldenburg": {
+"from": 1450,
+"to": 1458,
+"wikipedia": [
+"House of Oldenburg"
+],
+"type": "POLITY"
+},
+"Haudenosaunee": {
+"from": 1450,
+"to": 1782,
+"wikipedia": [
+"Iroquois"
+],
+"type": "POLITY"
+},
+"Ryazan": {
+"from": 1453,
+"to": 1520,
+"wikipedia": [
+"Ryazan"
+],
+"type": "POLITY"
+},
+"Qasim Khanate": {
+"from": 1453,
+"to": 1551,
+"wikipedia": [
+"Qasim Khanate"
+],
+"type": "POLITY"
+},
+"Lodi Dynasty": {
+"from": 1453,
+"to": 1528,
+"wikipedia": [
+"Lodi dynasty"
+],
+"type": "POLITY"
+},
+"Duchy of Saint Sava": {
+"from": 1453,
+"to": 1474,
+"wikipedia": [
+"Duchy of Saint Sava"
+],
+"type": "POLITY"
+},
+"(Habsburg Monarchy)": {
+"from": 1459,
+"to": 1805,
+"wikipedia": [
+"Habsburg Austria",
+"Habsburg monarchy"
+],
+"type": "POLITY"
+},
+"Sultanate of Sulu": {
+"from": 1459,
+"to": 1879,
+"wikipedia": [
+"Sultanate of Sulu"
+],
+"type": "POLITY"
+},
+"Tahirid Sultanate": {
+"from": 1459,
+"to": 1515,
+"wikipedia": [
+"Tahirid dynasty"
+],
+"type": "POLITY"
+},
+"Sultanate of Palembang": {
+"from": 1459,
+"to": 1821,
+"wikipedia": [
+"Palembang Sultanate"
+],
+"type": "POLITY"
+},
+"Sultanate of Malacca": {
+"from": 1459,
+"to": 1861,
+"wikipedia": [
+"Malacca Sultanate"
+],
+"type": "POLITY"
+},
+"Moghulistan": {
+"from": 1463,
+"to": 1518,
+"wikipedia": [
+"Moghulistan"
+],
+"type": "POLITY"
+},
+"Songhai Empire": {
+"from": 1463,
+"to": 1608,
+"wikipedia": [
+"Songhai Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Kartli": {
+"from": 1463,
+"to": 1705,
+"wikipedia": [
+"Kingdom of Kartli"
+],
+"type": "POLITY"
+},
+"East Turkestan": {
+"from": 1463,
+"to": 1474,
+"wikipedia": [
+"East Turkestan"
+],
+"type": "POLITY"
+},
+"Kingdom of Imereti": {
+"from": 1468,
+"to": 1810,
+"wikipedia": [
+"Kingdom of Imereti"
+],
+"type": "POLITY"
+},
+"Principality of Abkhazia": {
+"from": 1468,
+"to": 1829,
+"wikipedia": [
+"Principality of Abkhazia"
+],
+"type": "POLITY"
+},
+"Samtskhe-Saatabago": {
+"from": 1468,
+"to": 1506,
+"wikipedia": [
+"Samtskhe-Saatabago"
+],
+"type": "POLITY"
+},
+"Astrakhan Khanate": {
+"from": 1468,
+"to": 1768,
+"wikipedia": [
+"Astrakhan Khanate"
+],
+"type": "POLITY"
+},
+"Kazakh Khanate": {
+"from": 1468,
+"to": 1847,
+"wikipedia": [
+"Kazakh Khanate"
+],
+"type": "POLITY"
+},
+"Warring States Japan": {
+"from": 1468,
+"to": 1601,
+"wikipedia": [
+"Azuchi-Momoyama period",
+"Sengoku period"
+],
+"type": "POLITY"
+},
+"Principality of Mingrelia": {
+"from": 1468,
+"to": 1810,
+"wikipedia": [
+"Principality of Mingrelia"
+],
+"type": "POLITY"
+},
+"Mongol Khanate": {
+"from": 1468,
+"to": 1635,
+"wikipedia": [
+"Mongol khanate"
+],
+"type": "POLITY"
+},
+"Kingdom of Kakheti": {
+"from": 1468,
+"to": 1762,
+"wikipedia": [
+"Kingdom of Kakheti"
+],
+"type": "POLITY"
+},
+"Wattasid dynasty": {
+"from": 1468,
+"to": 1555,
+"wikipedia": [
+"Wattasid dynasty"
+],
+"type": "POLITY"
+},
+"Principality of Guria": {
+"from": 1468,
+"to": 1829,
+"wikipedia": [
+"Principality of Guria"
+],
+"type": "POLITY"
+},
+"(Personal union of Crown of Aragon with Crown of Castile)": {
+"from": 1475,
+"to": 1515,
+"wikipedia": [
+"Catholic Monarchs of Spain"
+],
+"type": "RELATION"
+},
+"Demak Sultanate": {
+"from": 1475,
+"to": 1551,
+"wikipedia": [
+"Demak Sultanate"
+],
+"type": "POLITY"
+},
+"Kapisa": {
+"from": 1475,
+"to": 1506,
+"wikipedia": [
+"Kapisa"
+],
+"type": "POLITY"
+},
+"Prome Kingdom": {
+"from": 1482,
+"to": 1546,
+"wikipedia": [
+"Prome Kingdom"
+],
+"type": "POLITY"
+},
+"Sultanate of Cirebon": {
+"from": 1482,
+"to": 1676,
+"wikipedia": [
+"Sultanate of Cirebon"
+],
+"type": "POLITY"
+},
+"Habsburg Monarchy": {
+"from": 1487,
+"to": 1805,
+"wikipedia": [
+"Habsburg Austria",
+"Habsburg monarchy"
+],
+"type": "POLITY"
+},
+"Ahmadnagar Sultanate": {
+"from": 1492,
+"to": 1652,
+"wikipedia": [
+"Ahmadnagar Sultanate"
+],
+"type": "POLITY"
+},
+"Berar Sultanate": {
+"from": 1492,
+"to": 1578,
+"wikipedia": [
+"Berar Sultanate"
+],
+"type": "POLITY"
+},
+"Bijapur Sultanate": {
+"from": 1492,
+"to": 1686,
+"wikipedia": [
+"Adil Shahi dynasty"
+],
+"type": "POLITY"
+},
+"(Personal union of Kingdom of Bohemia with Kingdom of Hungary)": {
+"from": 1492,
+"to": 1518,
+"wikipedia": [
+"Vladislaus II of Hungary"
+],
+"type": "RELATION"
+},
+"Eastern Chagatai Khanate": {
+"from": 1492,
+"to": 1511,
+"wikipedia": [
+"Moghulistan"
+],
+"type": "POLITY"
+},
+"Bidar Sultanate": {
+"from": 1492,
+"to": 1618,
+"wikipedia": [
+"Bidar Sultanate"
+],
+"type": "POLITY"
+},
+"Shaybanids": {
+"from": 1497,
+"to": 1511,
+"wikipedia": [
+"Shaybanids"
+],
+"type": "POLITY"
+},
+"Rajahnate of Cebu": {
+"from": 1497,
+"to": 1571,
+"wikipedia": [
+"Cebu (historical polity)"
+],
+"type": "POLITY"
+},
+"(Portuguese Empire)": {
+"from": 1502,
+"to": 1910,
+"wikipedia": [
+"Portuguese Empire"
+],
+"type": "POLITY"
+},
+"Portuguese Empire": {
+"from": 1502,
+"to": 1823,
+"wikipedia": [
+"Portuguese Empire"
+],
+"type": "POLITY"
+},
+"Safavid Dynasty": {
+"from": 1502,
+"to": 1737,
+"wikipedia": [
+"Safavid dynasty"
+],
+"type": "POLITY"
+},
+"First Toungoo Empire": {
+"from": 1502,
+"to": 1756,
+"wikipedia": [
+"First Toungoo Empire"
+],
+"type": "POLITY"
+},
+"Portuguese Ceylon": {
+"from": 1507,
+"to": 1686,
+"wikipedia": [
+"Portuguese Ceylon"
+],
+"type": "POLITY"
+},
+"Funj Sultanate": {
+"from": 1507,
+"to": 1821,
+"wikipedia": [
+"Funj Sultanate"
+],
+"type": "POLITY"
+},
+"Portuguese Africa": {
+"from": 1507,
+"to": 1581,
+"wikipedia": [
+"Portuguese Africa"
+],
+"type": "POLITY"
+},
+"Sultanate of Gowa": {
+"from": 1512,
+"to": 1669,
+"wikipedia": [
+"Sultanate of Gowa"
+],
+"type": "POLITY"
+},
+"Khanate of Khiva": {
+"from": 1512,
+"to": 1919,
+"wikipedia": [
+"Khanate of Khiva"
+],
+"type": "POLITY"
+},
+"Sultanate of Bone": {
+"from": 1512,
+"to": 1858,
+"wikipedia": [
+"Sultan"
+],
+"type": "POLITY"
+},
+"Spanish Empire": {
+"from": 1516,
+"to": 1879,
+"wikipedia": [
+"History of Spain (1808–1874)",
+"Spanish Empire"
+],
+"type": "POLITY"
+},
+"Sultanate of Aceh": {
+"from": 1516,
+"to": 1959,
+"wikipedia": [
+"Aceh Sultanate"
+],
+"type": "POLITY"
+},
+"Kingdom of Spain": {
+"from": 1516,
+"to": 2024,
+"wikipedia": [
+"Spain"
+],
+"type": "POLITY"
+},
+"(Spanish Empire)": {
+"from": 1516,
+"to": 1931,
+"wikipedia": [
+"History of Spain (1808–1874)",
+"Spanish Empire"
+],
+"type": "POLITY"
+},
+"Khanate of Bukhara": {
+"from": 1516,
+"to": 1787,
+"wikipedia": [
+"Khanate of Bukhara"
+],
+"type": "POLITY"
+},
+"Blambangan Kingdom": {
+"from": 1519,
+"to": 1743,
+"wikipedia": [
+"Blambangan Kingdom"
+],
+"type": "POLITY"
+},
+"Golconda Sultanate": {
+"from": 1519,
+"to": 1686,
+"wikipedia": [
+"Qutb Shahi dynasty"
+],
+"type": "POLITY"
+},
+"(Personal union of Spanish Empire with Habsburg Monarchy)": {
+"from": 1519,
+"to": 1563,
+"wikipedia": [
+"Charles V, Holy Roman Emperor"
+],
+"type": "RELATION"
+},
+"Eastern Moghulistan": {
+"from": 1519,
+"to": 1686,
+"wikipedia": [
+"Moghulistan"
+],
+"type": "POLITY"
+},
+"Balinese Kingdom": {
+"from": 1519,
+"to": 1686,
+"wikipedia": [
+"Bali Kingdom"
+],
+"type": "POLITY"
+},
+"Western Moghulistan": {
+"from": 1519,
+"to": 1635,
+"wikipedia": [
+"Moghulistan"
+],
+"type": "POLITY"
+},
+"Sultanate of Maguindanao": {
+"from": 1521,
+"to": 1852,
+"wikipedia": [
+"Sultanate of Maguindanao"
+],
+"type": "POLITY"
+},
+"Maynila": {
+"from": 1521,
+"to": 1599,
+"wikipedia": [
+"Maynila (historical polity)"
+],
+"type": "POLITY"
+},
+"Denmark-Norway": {
+"from": 1526,
+"to": 1940,
+"wikipedia": [
+"Denmark-Norway"
+],
+"type": "POLITY"
+},
+"Sultanate of Banjar": {
+"from": 1526,
+"to": 1859,
+"wikipedia": [
+"Sultanate of Banjar"
+],
+"type": "POLITY"
+},
+"Duchy of Prussia": {
+"from": 1526,
+"to": 1618,
+"wikipedia": [
+"Duchy of Prussia"
+],
+"type": "POLITY"
+},
+"Nayaks of Madurai": {
+"from": 1529,
+"to": 1737,
+"wikipedia": [
+"Madurai Nayak dynasty"
+],
+"type": "POLITY"
+},
+"Sultanate of Banten": {
+"from": 1529,
+"to": 1808,
+"wikipedia": [
+"Banten Sultanate"
+],
+"type": "POLITY"
+},
+"Mughal Empire": {
+"from": 1529,
+"to": 1858,
+"wikipedia": [
+"Mughal Empire"
+],
+"type": "POLITY"
+},
+"Đại Việt": {
+"from": 1529,
+"to": 1833,
+"wikipedia": [
+"Mạc dynasty",
+"Đại Việt"
+],
+"type": "POLITY"
+},
+"Sultanate of Perak": {
+"from": 1529,
+"to": 1876,
+"wikipedia": [
+"Sultan of Perak"
+],
+"type": "POLITY"
+},
+"Sultanate of Johor": {
+"from": 1529,
+"to": 1884,
+"wikipedia": [
+"Johor Sultanate"
+],
+"type": "POLITY"
+},
+"Eastern Hungarian Kingdom": {
+"from": 1529,
+"to": 1571,
+"wikipedia": [
+"Eastern Hungarian Kingdom"
+],
+"type": "POLITY"
+},
+"Nayaks of Thanjavur": {
+"from": 1534,
+"to": 1676,
+"wikipedia": [
+"Thanjavur Nayak kingdom"
+],
+"type": "POLITY"
+},
+"Hussain Shahi Dynasty": {
+"from": 1534,
+"to": 1539,
+"wikipedia": [
+"Hussain Shahi dynasty"
+],
+"type": "POLITY"
+},
+"Sur Empire": {
+"from": 1540,
+"to": 1594,
+"wikipedia": [
+"Sur Empire"
+],
+"type": "POLITY"
+},
+"Tümed": {
+"from": 1547,
+"to": 1699,
+"wikipedia": [
+"Tumed"
+],
+"type": "POLITY"
+},
+"Itza Mayans": {
+"from": 1547,
+"to": 1699,
+"wikipedia": [
+"Itza people"
+],
+"type": "POLITY"
+},
+"Tsardom of Russia": {
+"from": 1547,
+"to": 1720,
+"wikipedia": [
+"Tsardom of Russia"
+],
+"type": "POLITY"
+},
+"Sultanate of Harar": {
+"from": 1547,
+"to": 1578,
+"wikipedia": [
+"Adal Sultanate"
+],
+"type": "POLITY"
+},
+"Don Cossacks": {
+"from": 1552,
+"to": 1641,
+"wikipedia": [
+"Don Cossacks"
+],
+"type": "POLITY"
+},
+"France Antarctique": {
+"from": 1556,
+"to": 1571,
+"wikipedia": [
+"France Antarctique"
+],
+"type": "POLITY"
+},
+"Saadi Sultanate": {
+"from": 1556,
+"to": 1740,
+"wikipedia": [
+"Saadi Sultanate"
+],
+"type": "POLITY"
+},
+"(Alliance between Papal States and Spanish Empire)": {
+"from": 1564,
+"to": 1611,
+"wikipedia": [
+"Papal States"
+],
+"type": "RELATION"
+},
+"Small Horde": {
+"from": 1564,
+"to": 1737,
+"wikipedia": [
+"Nogai Horde"
+],
+"type": "POLITY"
+},
+"Portuguese Colonies": {
+"from": 1564,
+"to": 1910,
+"wikipedia": [
+"Portuguese Empire"
+],
+"type": "POLITY"
+},
+"House of Savoy": {
+"from": 1564,
+"to": 1720,
+"wikipedia": [
+"House of Savoy"
+],
+"type": "POLITY"
+},
+"Kingdom of Mysore": {
+"from": 1572,
+"to": 1799,
+"wikipedia": [
+"Kingdom of Mysore"
+],
+"type": "POLITY"
+},
+"Trịnh lords": {
+"from": 1572,
+"to": 1787,
+"wikipedia": [
+"Trịnh lords"
+],
+"type": "POLITY"
+},
+"Kingdom of Pajana": {
+"from": 1572,
+"to": 1587,
+"wikipedia": [
+"Lontara script"
+],
+"type": "POLITY"
+},
+"Nguyễn lords": {
+"from": 1572,
+"to": 1775,
+"wikipedia": [
+"Nguyễn lords"
+],
+"type": "POLITY"
+},
+"Principality of Transylvania": {
+"from": 1572,
+"to": 1695,
+"wikipedia": [
+"Principality of Transylvania (1570-1711)"
+],
+"type": "POLITY"
+},
+"Polish-Lithuanian Commonwealth": {
+"from": 1572,
+"to": 1793,
+"wikipedia": [
+"Polish-Lithuanian Commonwealth"
+],
+"type": "POLITY"
+},
+"Patani Kingdom": {
+"from": 1572,
+"to": 1690,
+"wikipedia": [
+"Patani Kingdom"
+],
+"type": "POLITY"
+},
+"Union of Utrecht": {
+"from": 1579,
+"to": 1581,
+"wikipedia": [
+"Union of Utrecht"
+],
+"type": "POLITY"
+},
+"Iberian Union": {
+"from": 1582,
+"to": 1639,
+"wikipedia": [
+"Iberian Union"
+],
+"type": "POLITY"
+},
+"(Dutch Republic)": {
+"from": 1582,
+"to": 1795,
+"wikipedia": [
+"Dutch Republic"
+],
+"type": "POLITY"
+},
+"Dutch Republic": {
+"from": 1582,
+"to": 1795,
+"wikipedia": [
+"Dutch Republic"
+],
+"type": "POLITY"
+},
+"Khoshut Khanate": {
+"from": 1582,
+"to": 1695,
+"wikipedia": [
+"Khoshut Khanate"
+],
+"type": "POLITY"
+},
+"Mataram Sultanate": {
+"from": 1588,
+"to": 1743,
+"wikipedia": [
+"Mataram Sultanate"
+],
+"type": "POLITY"
+},
+"Gorkha Kingdom": {
+"from": 1588,
+"to": 1787,
+"wikipedia": [
+"Gorkha Kingdom"
+],
+"type": "POLITY"
+},
+"Jesuit Reducciones": {
+"from": 1595,
+"to": 1768,
+"wikipedia": [
+"Jesuit missions among the Guaraní"
+],
+"type": "POLITY"
+},
+"Nalyvaiko Uprising": {
+"from": 1595,
+"to": 1599,
+"wikipedia": [
+"Nalyvaiko Uprising"
+],
+"type": "POLITY"
+},
+"Tokugawa Shogunate": {
+"from": 1600,
+"to": 1869,
+"wikipedia": [
+"Tokugawa shogunate"
+],
+"type": "POLITY"
+},
+"Lan Na": {
+"from": 1600,
+"to": 1761,
+"wikipedia": [
+"Lan Na"
+],
+"type": "POLITY"
+},
+"New France": {
+"from": 1609,
+"to": 1791,
+"wikipedia": [
+"New France"
+],
+"type": "POLITY"
+},
+"Oyo Empire": {
+"from": 1609,
+"to": 1835,
+"wikipedia": [
+"Oyo Empire"
+],
+"type": "POLITY"
+},
+"Sultanate of Darfur": {
+"from": 1609,
+"to": 1876,
+"wikipedia": [
+"Sultanate of Darfur"
+],
+"type": "POLITY"
+},
+"English Colonial Empire": {
+"from": 1609,
+"to": 1779,
+"wikipedia": [
+"English overseas possessions"
+],
+"type": "POLITY"
+},
+"Dzungar Khanate": {
+"from": 1609,
+"to": 1756,
+"wikipedia": [
+"Dzungar Khanate"
+],
+"type": "POLITY"
+},
+"Swedish Empire": {
+"from": 1612,
+"to": 1814,
+"wikipedia": [
+"Swedish Empire"
+],
+"type": "POLITY"
+},
+"Brandenburg-Prussia": {
+"from": 1619,
+"to": 1720,
+"wikipedia": [
+"Brandenburg-Prussia"
+],
+"type": "POLITY"
+},
+"Sultanate of Sukadana": {
+"from": 1619,
+"to": 1833,
+"wikipedia": [
+"Tanjungpura Kingdom"
+],
+"type": "POLITY"
+},
+"Sultanate of Sambas": {
+"from": 1619,
+"to": 1821,
+"wikipedia": [
+"Sultanate of Sambas"
+],
+"type": "POLITY"
+},
+"Sultanate of Mempawah": {
+"from": 1619,
+"to": 1827,
+"wikipedia": [
+"Mempawah Kingdom"
+],
+"type": "POLITY"
+},
+"Later Jin Dynasty": {
+"from": 1619,
+"to": 1644,
+"wikipedia": [
+"Later Jin (1616-1636)"
+],
+"type": "POLITY"
+},
+"Oirat Confederation": {
+"from": 1619,
+"to": 1676,
+"wikipedia": [
+"Oirat Confederation"
+],
+"type": "POLITY"
+},
+"New Netherland": {
+"from": 1622,
+"to": 1802,
+"wikipedia": [
+"New Netherland"
+],
+"type": "POLITY"
+},
+"Huguenots": {
+"from": 1622,
+"to": 1631,
+"wikipedia": [
+"Huguenots"
+],
+"type": "POLITY"
+},
+"Sultanate of Bima": {
+"from": 1626,
+"to": 1889,
+"wikipedia": [
+"Bima Sultanate"
+],
+"type": "POLITY"
+},
+"Yarubid dynasty": {
+"from": 1626,
+"to": 1743,
+"wikipedia": [
+"Ya'rubids"
+],
+"type": "POLITY"
+},
+"Li Zicheng": {
+"from": 1632,
+"to": 1644,
+"wikipedia": [
+"Li Zicheng"
+],
+"type": "POLITY"
+},
+"Kalmyk Khanate": {
+"from": 1632,
+"to": 1771,
+"wikipedia": [
+"Kalmyk Khanate"
+],
+"type": "POLITY"
+},
+"Kingdom of Bhutan": {
+"from": 1636,
+"to": 2024,
+"wikipedia": [
+"Bhutan"
+],
+"type": "POLITY"
+},
+"Qasimids": {
+"from": 1636,
+"to": 1802,
+"wikipedia": [
+"Rassid dynasty"
+],
+"type": "POLITY"
+},
+"Wadai Empire": {
+"from": 1636,
+"to": 1910,
+"wikipedia": [
+"Wadai Empire"
+],
+"type": "POLITY"
+},
+"New Sweden": {
+"from": 1640,
+"to": 1658,
+"wikipedia": [
+"New Sweden"
+],
+"type": "POLITY"
+},
+"Catalonia": {
+"from": 1640,
+"to": 1641,
+"wikipedia": [
+"Catalonia"
+],
+"type": "POLITY"
+},
+"Principality of Monaco": {
+"from": 1642,
+"to": 2024,
+"wikipedia": [
+"Monaco"
+],
+"type": "POLITY"
+},
+"Irish Catholic Confederation": {
+"from": 1642,
+"to": 1652,
+"wikipedia": [
+"Confederate Ireland"
+],
+"type": "POLITY"
+},
+"Southern Ming": {
+"from": 1645,
+"to": 1682,
+"wikipedia": [
+"Southern Ming"
+],
+"type": "POLITY"
+},
+"Commonwealth of England": {
+"from": 1645,
+"to": 1661,
+"wikipedia": [
+"Commonwealth of England"
+],
+"type": "POLITY"
+},
+"Qing Dynasty": {
+"from": 1645,
+"to": 1911,
+"wikipedia": [
+"Qing dynasty"
+],
+"type": "POLITY"
+},
+"Kutai Kingdom": {
+"from": 1648,
+"to": 1733,
+"wikipedia": [
+"Kutai"
+],
+"type": "POLITY"
+},
+"Dutch Cape Colony": {
+"from": 1653,
+"to": 1795,
+"wikipedia": [
+"Dutch Cape Coast"
+],
+"type": "POLITY"
+},
+"Dutch Gold Coast": {
+"from": 1653,
+"to": 1872,
+"wikipedia": [
+"Dutch Gold Coast"
+],
+"type": "POLITY"
+},
+"Danish Gold Coast": {
+"from": 1659,
+"to": 1852,
+"wikipedia": [
+"Danish Gold Coast"
+],
+"type": "POLITY"
+},
+"Zaporozhian Cossacks": {
+"from": 1662,
+"to": 1774,
+"wikipedia": [
+"Zaporozhian Cossacks"
+],
+"type": "POLITY"
+},
+"Sloboda Ukraine": {
+"from": 1670,
+"to": 1768,
+"wikipedia": [
+"Sloboda Ukraine"
+],
+"type": "POLITY"
+},
+"Morocco": {
+"from": 1670,
+"to": 2024,
+"wikipedia": [
+"Morocco"
+],
+"type": "POLITY"
+},
+"Sultanate of Jambi": {
+"from": 1670,
+"to": 1904,
+"wikipedia": [
+"Jambi Sultanate"
+],
+"type": "POLITY"
+},
+"French India": {
+"from": 1673,
+"to": 1847,
+"wikipedia": [
+"French India"
+],
+"type": "POLITY"
+},
+"Maratha Empire": {
+"from": 1677,
+"to": 1845,
+"wikipedia": [
+"Maratha Empire"
+],
+"type": "POLITY"
+},
+"Thanjavur Maratha Kingdom": {
+"from": 1677,
+"to": 1799,
+"wikipedia": [
+"Thanjavur Maratha Kingdom"
+],
+"type": "POLITY"
+},
+"Principality of Upper Hungary": {
+"from": 1683,
+"to": 1686,
+"wikipedia": [
+"Principality of Upper Hungary"
+],
+"type": "POLITY"
+},
+"Dutch Ceylon": {
+"from": 1687,
+"to": 1795,
+"wikipedia": [
+"Dutch Ceylon"
+],
+"type": "POLITY"
+},
+"Bali": {
+"from": 1687,
+"to": 1907,
+"wikipedia": [
+"Bali"
+],
+"type": "POLITY"
+},
+"Cambodia": {
+"from": 1700,
+"to": 1802,
+"wikipedia": [
+"Cambodia Middle Period"
+],
+"type": "POLITY"
+},
+"Kingdom of Prussia": {
+"from": 1702,
+"to": 1863,
+"wikipedia": [
+"Kingdom of Prussia"
+],
+"type": "POLITY"
+},
+"Pro-Habsburg Spain": {
+"from": 1702,
+"to": 1708,
+"wikipedia": [
+"Habsburg Spain"
+],
+"type": "POLITY"
+},
+"Ashanti Empire": {
+"from": 1702,
+"to": 1897,
+"wikipedia": [
+"Ashanti Empire"
+],
+"type": "POLITY"
+},
+"(British Empire)": {
+"from": 1706,
+"to": 1999,
+"wikipedia": [
+"British Empire"
+],
+"type": "POLITY"
+},
+"British Colonial Empire": {
+"from": 1706,
+"to": 1999,
+"wikipedia": [
+"British Empire"
+],
+"type": "POLITY"
+},
+"Regency of Algiers": {
+"from": 1706,
+"to": 1845,
+"wikipedia": [
+"Regency of Algiers"
+],
+"type": "POLITY"
+},
+"Pro-Swedish Poland": {
+"from": 1706,
+"to": 1712,
+"wikipedia": [
+"Swedish invasion of Poland (1701-1706)"
+],
+"type": "POLITY"
+},
+"Beylik of Tunis": {
+"from": 1706,
+"to": 1884,
+"wikipedia": [
+"Beylik of Tunis"
+],
+"type": "POLITY"
+},
+"Kingdom of Great Britain": {
+"from": 1709,
+"to": 2024,
+"wikipedia": [
+"Great Britain"
+],
+"type": "POLITY"
+},
+"Vientiane": {
+"from": 1709,
+"to": 1827,
+"wikipedia": [
+"Vientiane"
+],
+"type": "POLITY"
+},
+"Hotaki Dynasty": {
+"from": 1709,
+"to": 1737,
+"wikipedia": [
+"Hotak dynasty"
+],
+"type": "POLITY"
+},
+"Sikhs": {
+"from": 1709,
+"to": 1717,
+"wikipedia": [
+"Sikhs"
+],
+"type": "POLITY"
+},
+"Kingdom of Champasak": {
+"from": 1709,
+"to": 1894,
+"wikipedia": [
+"Champasak"
+],
+"type": "POLITY"
+},
+"Kingdom of Luang Phrabang": {
+"from": 1709,
+"to": 1894,
+"wikipedia": [
+"Luang Prabang"
+],
+"type": "POLITY"
+},
+"Electorate of Hanover": {
+"from": 1709,
+"to": 1802,
+"wikipedia": [
+"Electorate of Hanover"
+],
+"type": "POLITY"
+},
+"Khanate of Kokand": {
+"from": 1709,
+"to": 1876,
+"wikipedia": [
+"Khanate of Kokand"
+],
+"type": "POLITY"
+},
+"Kingdom of Lunda": {
+"from": 1709,
+"to": 1889,
+"wikipedia": [
+"Kingdom of Lunda"
+],
+"type": "POLITY"
+},
+"Karamanli Dynasty": {
+"from": 1713,
+"to": 1839,
+"wikipedia": [
+"Karamanli dynasty"
+],
+"type": "POLITY"
+},
+"Carnatic Sultanate": {
+"from": 1713,
+"to": 1802,
+"wikipedia": [
+"Carnatic Sultanate"
+],
+"type": "POLITY"
+},
+"Bamana Empire": {
+"from": 1713,
+"to": 1821,
+"wikipedia": [
+"Bamana Empire"
+],
+"type": "POLITY"
+},
+"Nawabs of Bengal": {
+"from": 1718,
+"to": 1761,
+"wikipedia": [
+"Nawabs of Bengal"
+],
+"type": "POLITY"
+},
+"Kingdom of Sardinia": {
+"from": 1721,
+"to": 1861,
+"wikipedia": [
+"Kingdom of Sardinia (1720-1861)"
+],
+"type": "POLITY"
+},
+"Principality of Svaneti": {
+"from": 1721,
+"to": 1833,
+"wikipedia": [
+"Principality of Svaneti"
+],
+"type": "POLITY"
+},
+"Russian Empire": {
+"from": 1721,
+"to": 1916,
+"wikipedia": [
+"Russian Empire"
+],
+"type": "POLITY"
+},
+"Principality of Liechtenstein": {
+"from": 1721,
+"to": 1814,
+"wikipedia": [
+"Liechtenstein"
+],
+"type": "POLITY"
+},
+"Nawab of Awadh": {
+"from": 1727,
+"to": 1802,
+"wikipedia": [
+"Nawab of Awadh"
+],
+"type": "POLITY"
+},
+"Sultanate of Terengganu": {
+"from": 1727,
+"to": 1904,
+"wikipedia": [
+"Sultan of Terengganu"
+],
+"type": "POLITY"
+},
+"Hyderabad State": {
+"from": 1727,
+"to": 1947,
+"wikipedia": [
+"Hyderabad State"
+],
+"type": "POLITY"
+},
+"Greenland": {
+"from": 1734,
+"to": 1940,
+"wikipedia": [
+"Greenland"
+],
+"type": "POLITY"
+},
+"Duchy of Courland": {
+"from": 1734,
+"to": 1793,
+"wikipedia": [
+"Duchy of Courland and Semigallia"
+],
+"type": "POLITY"
+},
+"Sultanate of Kutai Kartanegara": {
+"from": 1734,
+"to": 1845,
+"wikipedia": [
+"Kutai"
+],
+"type": "POLITY"
+},
+"Kingdom of Bulungan": {
+"from": 1734,
+"to": 1747,
+"wikipedia": [
+"Sultanate of Bulungan"
+],
+"type": "POLITY"
+},
+"Afsharid Iran": {
+"from": 1734,
+"to": 1756,
+"wikipedia": [
+"Afsharid Iran"
+],
+"type": "POLITY"
+},
+"Konbaung Dynasty": {
+"from": 1741,
+"to": 1819,
+"wikipedia": [
+"Konbaung dynasty"
+],
+"type": "POLITY"
+},
+"Sultanate of Oman": {
+"from": 1744,
+"to": 2024,
+"wikipedia": [
+"Oman"
+],
+"type": "POLITY"
+},
+"Sultanate of Selangor": {
+"from": 1744,
+"to": 1876,
+"wikipedia": [
+"Sultan of Selangor"
+],
+"type": "POLITY"
+},
+"Emirate of Diriyah": {
+"from": 1744,
+"to": 1819,
+"wikipedia": [
+"Emirate of Diriyah"
+],
+"type": "POLITY"
+},
+"Sultan of Yogyakarta": {
+"from": 1744,
+"to": 1829,
+"wikipedia": [
+"Hamengkubuwono"
+],
+"type": "POLITY"
+},
+"Surakarta Sunanate": {
+"from": 1744,
+"to": 1829,
+"wikipedia": [
+"Surakarta Sunanate"
+],
+"type": "POLITY"
+},
+"Khanates of the Caucasus": {
+"from": 1748,
+"to": 1796,
+"wikipedia": [
+"Khanates of the Caucasus"
+],
+"type": "POLITY"
+},
+"Durrani Empire": {
+"from": 1748,
+"to": 1827,
+"wikipedia": [
+"Durrani Empire"
+],
+"type": "POLITY"
+},
+"Zand Dynasty": {
+"from": 1748,
+"to": 1793,
+"wikipedia": [
+"Zand dynasty"
+],
+"type": "POLITY"
+},
+"Corsican Republic": {
+"from": 1757,
+"to": 1768,
+"wikipedia": [
+"Corsican Republic"
+],
+"type": "POLITY"
+},
+"Kuwait": {
+"from": 1757,
+"to": 2024,
+"wikipedia": [
+"Kuwait"
+],
+"type": "POLITY"
+},
+"Bahrain": {
+"from": 1757,
+"to": 1845,
+"wikipedia": [
+"Bahrain"
+],
+"type": "POLITY"
+},
+"Danish India": {
+"from": 1757,
+"to": 1808,
+"wikipedia": [
+"Danish India"
+],
+"type": "POLITY"
+},
+"British Empire": {
+"from": 1757,
+"to": 1858,
+"wikipedia": [
+"British Empire"
+],
+"type": "POLITY"
+},
+"Kelantan": {
+"from": 1762,
+"to": 1904,
+"wikipedia": [
+"Kelantan"
+],
+"type": "POLITY"
+},
+"Kingdom of Naples (Napoleonic)": {
+"from": 1762,
+"to": 1814,
+"wikipedia": [
+"Kingdom of Naples (Napoleonic)"
+],
+"type": "POLITY"
+},
+"Sikh Confederacy": {
+"from": 1762,
+"to": 1806,
+"wikipedia": [
+"Misl"
+],
+"type": "POLITY"
+},
+"Thonburi Kingdom": {
+"from": 1769,
+"to": 1782,
+"wikipedia": [
+"Thonburi Kingdom"
+],
+"type": "POLITY"
+},
+"Pontianak Kadriyah Sultanate": {
+"from": 1772,
+"to": 1827,
+"wikipedia": [
+"Pontianak Sultanate"
+],
+"type": "POLITY"
+},
+"Tây Sơn dynasty": {
+"from": 1775,
+"to": 1802,
+"wikipedia": [
+"Tây Sơn dynasty"
+],
+"type": "POLITY"
+},
+"Negeri Sembilan": {
+"from": 1775,
+"to": 1894,
+"wikipedia": [
+"Negeri Sembilan"
+],
+"type": "POLITY"
+},
+"Chiangmai": {
+"from": 1775,
+"to": 1884,
+"wikipedia": [
+"Chiang Mai"
+],
+"type": "POLITY"
+},
+"Nepal": {
+"from": 1775,
+"to": 2024,
+"wikipedia": [
+"Nepal"
+],
+"type": "POLITY"
+},
+"United States of America": {
+"from": 1776,
+"to": 2024,
+"wikipedia": [
+"United States"
+],
+"type": "POLITY"
+},
+"Vermont Republic": {
+"from": 1783,
+"to": 1790,
+"wikipedia": [
+"Vermont Republic"
+],
+"type": "POLITY"
+},
+"House of Khalifa": {
+"from": 1783,
+"to": 1894,
+"wikipedia": [
+"House of Khalifa"
+],
+"type": "POLITY"
+},
+"Rattanakosin Kingdom": {
+"from": 1783,
+"to": 1931,
+"wikipedia": [
+"Rattanakosin Kingdom (1782–1932)"
+],
+"type": "POLITY"
+},
+"Emirate of Bukhara": {
+"from": 1788,
+"to": 1919,
+"wikipedia": [
+"Emirate of Bukhara"
+],
+"type": "POLITY"
+},
+"Qajar Dynasty": {
+"from": 1788,
+"to": 1923,
+"wikipedia": [
+"Qajar dynasty"
+],
+"type": "POLITY"
+},
+"Freetown Colony": {
+"from": 1788,
+"to": 1796,
+"wikipedia": [
+"Freetown"
+],
+"type": "POLITY"
+},
+"French Colony of Guiana": {
+"from": 1791,
+"to": 1791,
+"wikipedia": [
+"French Guiana"
+],
+"type": "POLITY"
+},
+"Kingdom of Hawaï'i": {
+"from": 1791,
+"to": 1894,
+"wikipedia": [
+"Hawaiian Kingdom"
+],
+"type": "POLITY"
+},
+"(French First Republic)": {
+"from": 1791,
+"to": 1795,
+"wikipedia": [
+"French First Republic"
+],
+"type": "POLITY"
+},
+"Nguyễn dynasty": {
+"from": 1791,
+"to": 1884,
+"wikipedia": [
+"Nguyen dynasty"
+],
+"type": "POLITY"
+},
+"French First Republic": {
+"from": 1792,
+"to": 1795,
+"wikipedia": [
+"French First Republic"
+],
+"type": "POLITY"
+},
+"Haiti": {
+"from": 1792,
+"to": 1802,
+"wikipedia": [
+"Haiti"
+],
+"type": "POLITY"
+},
+"Merina Kingdom": {
+"from": 1792,
+"to": 1897,
+"wikipedia": [
+"Merina Kingdom"
+],
+"type": "POLITY"
+},
+"British Cape Colony": {
+"from": 1796,
+"to": 1884,
+"wikipedia": [
+"Cape Colony"
+],
+"type": "POLITY"
+},
+"Batavian Republic": {
+"from": 1796,
+"to": 1810,
+"wikipedia": [
+"Batavian Republic"
+],
+"type": "POLITY"
+},
+"(Batavian Republic)": {
+"from": 1796,
+"to": 1810,
+"wikipedia": [
+"Batavian Republic"
+],
+"type": "POLITY"
+},
+"(French Directory)": {
+"from": 1796,
+"to": 1799,
+"wikipedia": [
+"French Directory"
+],
+"type": "POLITY"
+},
+"British Ceylon": {
+"from": 1796,
+"to": 1814,
+"wikipedia": [
+"British Ceylon"
+],
+"type": "POLITY"
+},
+"French Directory": {
+"from": 1796,
+"to": 1799,
+"wikipedia": [
+"French Directory"
+],
+"type": "POLITY"
+},
+"Ligurian Republic": {
+"from": 1797,
+"to": 1814,
+"wikipedia": [
+"Ligurian Republic"
+],
+"type": "POLITY"
+},
+"Grand Duchy of Tuscany": {
+"from": 1797,
+"to": 1848,
+"wikipedia": [
+"Grand Duchy of Tuscany"
+],
+"type": "POLITY"
+},
+"Cisalpine Republic": {
+"from": 1797,
+"to": 1799,
+"wikipedia": [
+"Cisalpine Republic"
+],
+"type": "POLITY"
+},
+"Republic of San Marino": {
+"from": 1797,
+"to": 1799,
+"wikipedia": [
+"San Marino"
+],
+"type": "POLITY"
+},
+"Helvetic Republic": {
+"from": 1799,
+"to": 1814,
+"wikipedia": [
+"Helvetic Republic"
+],
+"type": "POLITY"
+},
+"Revolutionary Roman Republic": {
+"from": 1799,
+"to": 1799,
+"wikipedia": [
+"Roman Republic (1798-1799)"
+],
+"type": "POLITY"
+},
+"Sikh Empire": {
+"from": 1799,
+"to": 1848,
+"wikipedia": [
+"Sikh Empire"
+],
+"type": "POLITY"
+},
+"Cispadane Republic": {
+"from": 1800,
+"to": 1802,
+"wikipedia": [
+"Cispadane Republic"
+],
+"type": "POLITY"
+},
+"(French Consulate)": {
+"from": 1800,
+"to": 1804,
+"wikipedia": [
+"French Consulate"
+],
+"type": "POLITY"
+},
+"Septinsular Republic": {
+"from": 1800,
+"to": 1819,
+"wikipedia": [
+"Septinsular Republic"
+],
+"type": "POLITY"
+},
+"Dutch East Indies": {
+"from": 1800,
+"to": 1949,
+"wikipedia": [
+"Dutch East Indies"
+],
+"type": "POLITY"
+},
+"French Louisiana": {
+"from": 1800,
+"to": 1804,
+"wikipedia": [
+"French Louisiana"
+],
+"type": "POLITY"
+},
+"French Consulate": {
+"from": 1800,
+"to": 1804,
+"wikipedia": [
+"French Consulate"
+],
+"type": "POLITY"
+},
+"Napoleonic Batavia Republic": {
+"from": 1803,
+"to": 1805,
+"wikipedia": [
+"Dutch Cape Colony"
+],
+"type": "POLITY"
+},
+"Electorate of Württemberg": {
+"from": 1803,
+"to": 1805,
+"wikipedia": [
+"Electorate of Württemberg"
+],
+"type": "POLITY"
+},
+"Kingdom of Hanover": {
+"from": 1803,
+"to": 1865,
+"wikipedia": [
+"Kingdom of Hanover"
+],
+"type": "POLITY"
+},
+"Electorate of Hesse": {
+"from": 1803,
+"to": 1867,
+"wikipedia": [
+"Electorate of Hesse"
+],
+"type": "POLITY"
+},
+"Electorate of Salzburg": {
+"from": 1803,
+"to": 1805,
+"wikipedia": [
+"Electorate of Salzburg"
+],
+"type": "POLITY"
+},
+"Kingdom of Etruria": {
+"from": 1803,
+"to": 1806,
+"wikipedia": [
+"Kingdom of Etruria"
+],
+"type": "POLITY"
+},
+"Electorate of Baden": {
+"from": 1803,
+"to": 1805,
+"wikipedia": [
+"Electorate of Baden"
+],
+"type": "POLITY"
+},
+"Italian Republic": {
+"from": 1803,
+"to": 1813,
+"wikipedia": [
+"Italy"
+],
+"type": "POLITY"
+},
+"Empire of Haiti": {
+"from": 1805,
+"to": 1915,
+"wikipedia": [
+"First Empire of Haiti"
+],
+"type": "POLITY"
+},
+"Muhammad Ali dynasty": {
+"from": 1805,
+"to": 1865,
+"wikipedia": [
+"History of Egypt under the Muhammad Ali dynasty"
+],
+"type": "POLITY"
+},
+"First French colonial empire": {
+"from": 1805,
+"to": 1814,
+"wikipedia": [
+"French colonial empire "
+],
+"type": "POLITY"
+},
+"Sokoto Caliphate": {
+"from": 1805,
+"to": 1904,
+"wikipedia": [
+"Sokoto Caliphate"
+],
+"type": "POLITY"
+},
+"(First French Empire)": {
+"from": 1805,
+"to": 1814,
+"wikipedia": [
+"First French Empire"
+],
+"type": "POLITY"
+},
+"Serbs": {
+"from": 1805,
+"to": 1915,
+"wikipedia": [
+"Serbs"
+],
+"type": "POLITY"
+},
+"First French Empire": {
+"from": 1805,
+"to": 1814,
+"wikipedia": [
+"First French Empire"
+],
+"type": "POLITY"
+},
+"Duchy of Nassau": {
+"from": 1806,
+"to": 1865,
+"wikipedia": [
+"Duchy of Nassau"
+],
+"type": "POLITY"
+},
+"Saxe-Altenburg": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Saxe-Altenburg"
+],
+"type": "POLITY"
+},
+"Grand Duchy of Baden": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Grand Duchy of Baden"
+],
+"type": "POLITY"
+},
+"Austrian Empire": {
+"from": 1806,
+"to": 1867,
+"wikipedia": [
+"Austrian Empire"
+],
+"type": "POLITY"
+},
+"Free City of Bremen": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"History of Bremen (city)"
+],
+"type": "POLITY"
+},
+"Duchy of Oldenburg": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Duchy of Oldenburg"
+],
+"type": "POLITY"
+},
+"Free City of Lübeck": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Free City of Lübeck"
+],
+"type": "POLITY"
+},
+"Principality of Regensberg": {
+"from": 1806,
+"to": 1813,
+"wikipedia": [
+"Principality of Regensburg"
+],
+"type": "POLITY"
+},
+"Principality of Waldeck and Pyrmont": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Principality of Waldeck and Pyrmont"
+],
+"type": "POLITY"
+},
+"Kingdom of Württemberg": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Kingdom of Württemberg"
+],
+"type": "POLITY"
+},
+"Principality of Lippe": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Principality of Lippe"
+],
+"type": "POLITY"
+},
+"Kingdom of Bavaria": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Kingdom of Bavaria"
+],
+"type": "POLITY"
+},
+"Grand Duchy of Würzburg": {
+"from": 1806,
+"to": 1814,
+"wikipedia": [
+"Grand Duchy of Würzburg"
+],
+"type": "POLITY"
+},
+"Principality of Reuss-Gera": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Principality of Reuss-Gera"
+],
+"type": "POLITY"
+},
+"Duchy of Mecklenburg": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Duchy of Mecklenburg"
+],
+"type": "POLITY"
+},
+"Grand Duchy of Hesse": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Grand Duchy of Hesse"
+],
+"type": "POLITY"
+},
+"Grand Duchy of Saxe-Weimar-Eisenach": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Saxe-Weimar-Eisenach"
+],
+"type": "POLITY"
+},
+"Principality of Hohenzollern-Sigmaringen": {
+"from": 1806,
+"to": 1852,
+"wikipedia": [
+"Hohenzollern-Sigmaringen"
+],
+"type": "POLITY"
+},
+"Duchy of Anhalt": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Duchy of Anhalt"
+],
+"type": "POLITY"
+},
+"Kingdom of Saxony": {
+"from": 1806,
+"to": 1870,
+"wikipedia": [
+"Kingdom of Saxony"
+],
+"type": "POLITY"
+},
+"Grand Duchy of Berg": {
+"from": 1806,
+"to": 1827,
+"wikipedia": [
+"Grand Duchy of Berg"
+],
+"type": "POLITY"
+},
+"Duchy of Warsaw": {
+"from": 1809,
+"to": 1813,
+"wikipedia": [
+"Duchy of Warsaw"
+],
+"type": "POLITY"
+},
+"Free City of Danzig": {
+"from": 1809,
+"to": 1939,
+"wikipedia": [
+"Free City of Danzig"
+],
+"type": "POLITY"
+},
+"Kingdom of Westphalia": {
+"from": 1809,
+"to": 1813,
+"wikipedia": [
+"Kingdom of Westphalia"
+],
+"type": "POLITY"
+},
+"Confederation of the Rhine": {
+"from": 1809,
+"to": 1814,
+"wikipedia": [
+"Confederation of the Rhine"
+],
+"type": "POLITY"
+},
+"New Granada": {
+"from": 1811,
+"to": 1821,
+"wikipedia": [
+"New Granada"
+],
+"type": "POLITY"
+},
+"Republic of Venezuela": {
+"from": 1811,
+"to": 1814,
+"wikipedia": [
+"Venezuela"
+],
+"type": "POLITY"
+},
+"Mexicans": {
+"from": 1811,
+"to": 1819,
+"wikipedia": [
+"Mexicans"
+],
+"type": "POLITY"
+},
+"(Allegiance of Kingdom of Hawaï'i to British Empire)": {
+"from": 1811,
+"to": 1819,
+"wikipedia": [
+"Hawaiian Kingdom"
+],
+"type": "RELATION"
+},
+"(Netherlands)": {
+"from": 1811,
+"to": 2024,
+"wikipedia": [
+"Netherlands"
+],
+"type": "POLITY"
+},
+"Paraguay": {
+"from": 1811,
+"to": 2024,
+"wikipedia": [
+"Paraguay"
+],
+"type": "POLITY"
+},
+"Río de la Plata": {
+"from": 1811,
+"to": 1833,
+"wikipedia": [
+"Río de la Plata"
+],
+"type": "POLITY"
+},
+"Bessarabia": {
+"from": 1812,
+"to": 1813,
+"wikipedia": [
+"Bessarabia"
+],
+"type": "POLITY"
+},
+"Guayaquil Junta": {
+"from": 1812,
+"to": 1813,
+"wikipedia": [
+"Ecuadorian War of Independence"
+],
+"type": "POLITY"
+},
+"Republic of Chile": {
+"from": 1812,
+"to": 2024,
+"wikipedia": [
+"Chile"
+],
+"type": "POLITY"
+},
+"Omani Slave Coast": {
+"from": 1814,
+"to": 1855,
+"wikipedia": [
+"Omanis"
+],
+"type": "POLITY"
+},
+"Cundinamarca": {
+"from": 1814,
+"to": 1814,
+"wikipedia": [
+"Cundinamarca"
+],
+"type": "POLITY"
+},
+"Imamate of Yemen": {
+"from": 1814,
+"to": 1872,
+"wikipedia": [
+"Imams of Yemen"
+],
+"type": "POLITY"
+},
+"Federal League": {
+"from": 1814,
+"to": 1819,
+"wikipedia": [
+"Federal League (1815-1820)"
+],
+"type": "POLITY"
+},
+"Free City of Hamburg": {
+"from": 1814,
+"to": 1870,
+"wikipedia": [
+"Hamburg"
+],
+"type": "POLITY"
+},
+"Sovereign Principality of the United Netherlands": {
+"from": 1814,
+"to": 1814,
+"wikipedia": [
+"Sovereign Principality of the United Netherlands"
+],
+"type": "POLITY"
+},
+"Duchy of Brunswick": {
+"from": 1814,
+"to": 1870,
+"wikipedia": [
+"Duchy of Brunswick"
+],
+"type": "POLITY"
+},
+"Kingdom of Norway": {
+"from": 1814,
+"to": 2024,
+"wikipedia": [
+"Norway"
+],
+"type": "POLITY"
+},
+"Netherlands": {
+"from": 1815,
+"to": 2024,
+"wikipedia": [
+"Netherlands"
+],
+"type": "POLITY"
+},
+"Kingdom of Monaco": {
+"from": 1815,
+"to": 1939,
+"wikipedia": [
+"Monaco"
+],
+"type": "POLITY"
+},
+"Bourbon Kingdom of France": {
+"from": 1815,
+"to": 1847,
+"wikipedia": [
+"Bourbon Restoration in France"
+],
+"type": "POLITY"
+},
+"Free City of Krakow": {
+"from": 1815,
+"to": 1845,
+"wikipedia": [
+"Free City of Cracow"
+],
+"type": "POLITY"
+},
+"Duchy of Parma and Piacenza": {
+"from": 1815,
+"to": 1859,
+"wikipedia": [
+"Duchy of Parma and Piacenza"
+],
+"type": "POLITY"
+},
+"Kingdom of the Two Sicilies": {
+"from": 1815,
+"to": 1860,
+"wikipedia": [
+"Kingdom of the Two Sicilies"
+],
+"type": "POLITY"
+},
+"(Bourbon Kingdom of France)": {
+"from": 1815,
+"to": 1848,
+"wikipedia": [
+"Bourbon Restoration in France"
+],
+"type": "POLITY"
+},
+"United Kingdoms of Sweden and Norway": {
+"from": 1815,
+"to": 1904,
+"wikipedia": [
+"Union between Sweden and Norway"
+],
+"type": "POLITY"
+},
+"Duchy of Modena and Reggio": {
+"from": 1815,
+"to": 1859,
+"wikipedia": [
+"Duchy of Modena and Reggio"
+],
+"type": "POLITY"
+},
+"German Confederation": {
+"from": 1815,
+"to": 1867,
+"wikipedia": [
+"German Confederation"
+],
+"type": "POLITY"
+},
+"Netherlands Antilles": {
+"from": 1815,
+"to": 2024,
+"wikipedia": [
+"Netherlands Antilles"
+],
+"type": "POLITY"
+},
+"Principality of Andorra": {
+"from": 1815,
+"to": 2024,
+"wikipedia": [
+"Andorra"
+],
+"type": "POLITY"
+},
+"Principality of Schwarzburg-Sonderhausen": {
+"from": 1820,
+"to": 1870,
+"wikipedia": [
+"House of Schwarzburg"
+],
+"type": "POLITY"
+},
+"Talpur Dynasty": {
+"from": 1820,
+"to": 1894,
+"wikipedia": [
+"Talpur dynasty"
+],
+"type": "POLITY"
+},
+"Saxe-Meiningen": {
+"from": 1820,
+"to": 1870,
+"wikipedia": [
+"Saxe-Meiningen"
+],
+"type": "POLITY"
+},
+"Massina Empire": {
+"from": 1820,
+"to": 1861,
+"wikipedia": [
+"Massina Empire"
+],
+"type": "POLITY"
+},
+"Zululand": {
+"from": 1820,
+"to": 1897,
+"wikipedia": [
+"Zululand"
+],
+"type": "POLITY"
+},
+"Burma": {
+"from": 1820,
+"to": 1989,
+"wikipedia": [
+"Myanmar"
+],
+"type": "POLITY"
+},
+"Principality of Lichtenberg": {
+"from": 1820,
+"to": 1827,
+"wikipedia": [
+"Principality of Lichtenberg"
+],
+"type": "POLITY"
+},
+"Trucial States": {
+"from": 1820,
+"to": 1894,
+"wikipedia": [
+"Trucial States"
+],
+"type": "POLITY"
+},
+"Qatar Dynasty": {
+"from": 1820,
+"to": 1904,
+"wikipedia": [
+"Qatar"
+],
+"type": "POLITY"
+},
+"Free City of Frankfurt": {
+"from": 1820,
+"to": 1865,
+"wikipedia": [
+"Free City of Frankfurt"
+],
+"type": "POLITY"
+},
+"Riau-Lingga Sultanate": {
+"from": 1820,
+"to": 1856,
+"wikipedia": [
+"Riau-Lingga Sultanate"
+],
+"type": "POLITY"
+},
+"Empire of Brazil": {
+"from": 1822,
+"to": 1889,
+"wikipedia": [
+"Empire of Brazil"
+],
+"type": "POLITY"
+},
+"Gran Colombia": {
+"from": 1822,
+"to": 1833,
+"wikipedia": [
+"Gran Colombia"
+],
+"type": "POLITY"
+},
+"First Mexican Empire": {
+"from": 1822,
+"to": 1823,
+"wikipedia": [
+"First Mexican Empire"
+],
+"type": "POLITY"
+},
+"First Hellenic Republic": {
+"from": 1822,
+"to": 1940,
+"wikipedia": [
+"First Hellenic Republic"
+],
+"type": "POLITY"
+},
+"Republic of Peru": {
+"from": 1822,
+"to": 2024,
+"wikipedia": [
+"Peru"
+],
+"type": "POLITY"
+},
+"United Provinces of Central America": {
+"from": 1824,
+"to": 1839,
+"wikipedia": [
+"Federal Republic of Central America"
+],
+"type": "POLITY"
+},
+"Emirate of Nejd": {
+"from": 1824,
+"to": 1925,
+"wikipedia": [
+"Emirate of Nejd"
+],
+"type": "POLITY"
+},
+"Federated Republic of Mexico": {
+"from": 1824,
+"to": 1865,
+"wikipedia": [
+"First Mexican Republic"
+],
+"type": "POLITY"
+},
+"Bolivia": {
+"from": 1825,
+"to": 2024,
+"wikipedia": [
+"Bolivia"
+],
+"type": "POLITY"
+},
+"Emirate of Jabal Shammar": {
+"from": 1825,
+"to": 1921,
+"wikipedia": [
+"Emirate of Jabal Shammar"
+],
+"type": "POLITY"
+},
+"Emirate of Afghanistan": {
+"from": 1828,
+"to": 1925,
+"wikipedia": [
+"Emirate of Afghanistan"
+],
+"type": "POLITY"
+},
+"Caucasian Imamate": {
+"from": 1828,
+"to": 1858,
+"wikipedia": [
+"Caucasian Imamate"
+],
+"type": "POLITY"
+},
+"Oriental Republic of Uruguay": {
+"from": 1828,
+"to": 2024,
+"wikipedia": [
+"Uruguay"
+],
+"type": "POLITY"
+},
+"Poles": {
+"from": 1830,
+"to": 1833,
+"wikipedia": [
+"Polish people"
+],
+"type": "POLITY"
+},
+"Sultanate of Sambaliung": {
+"from": 1830,
+"to": 1848,
+"wikipedia": [
+"id.wikipedia.org/wiki/Kesultanan_Sambaliung"
+],
+"type": "POLITY"
+},
+"Kingdom of Belgium": {
+"from": 1830,
+"to": 2024,
+"wikipedia": [
+"Belgium"
+],
+"type": "POLITY"
+},
+"French Algeria": {
+"from": 1830,
+"to": 1847,
+"wikipedia": [
+"French Algeria"
+],
+"type": "POLITY"
+},
+"Venezuela": {
+"from": 1834,
+"to": 2024,
+"wikipedia": [
+"Venezuela"
+],
+"type": "POLITY"
+},
+"Republic of New Granada": {
+"from": 1834,
+"to": 1858,
+"wikipedia": [
+"Republic of New Granada"
+],
+"type": "POLITY"
+},
+"Republic of Ecuador": {
+"from": 1834,
+"to": 2024,
+"wikipedia": [
+"Ecuador"
+],
+"type": "POLITY"
+},
+"Argentine Confederation": {
+"from": 1834,
+"to": 1929,
+"wikipedia": [
+"Argentine Confederation"
+],
+"type": "POLITY"
+},
+"Peru-Bolivian Confederation": {
+"from": 1836,
+"to": 1839,
+"wikipedia": [
+"Peru-Bolivian Confederation"
+],
+"type": "POLITY"
+},
+"Centralist Mexico": {
+"from": 1836,
+"to": 1847,
+"wikipedia": [
+"Centralist Republic of Mexico"
+],
+"type": "POLITY"
+},
+"Riograndense Republic": {
+"from": 1836,
+"to": 1845,
+"wikipedia": [
+"Riograndense Republic"
+],
+"type": "POLITY"
+},
+"Republic of Texas": {
+"from": 1836,
+"to": 1845,
+"wikipedia": [
+"Republic of Texas"
+],
+"type": "POLITY"
+},
+"Saxe-Coburg and Gotha": {
+"from": 1836,
+"to": 1839,
+"wikipedia": [
+"Saxe-Coburg and Gotha"
+],
+"type": "POLITY"
+},
+"Durrani Dynasty": {
+"from": 1840,
+"to": 1845,
+"wikipedia": [
+"Durrani dynasty"
+],
+"type": "POLITY"
+},
+"Honduras": {
+"from": 1840,
+"to": 2024,
+"wikipedia": [
+"Honduras"
+],
+"type": "POLITY"
+},
+"Republic of the Rio Grande": {
+"from": 1840,
+"to": 1841,
+"wikipedia": [
+"Republic of the Rio Grande"
+],
+"type": "POLITY"
+},
+"Republic of Costa Rica": {
+"from": 1840,
+"to": 2024,
+"wikipedia": [
+"Costa Rica"
+],
+"type": "POLITY"
+},
+"Guatemala": {
+"from": 1840,
+"to": 2024,
+"wikipedia": [
+"Guatemala"
+],
+"type": "POLITY"
+},
+"Natalia Republic": {
+"from": 1840,
+"to": 1910,
+"wikipedia": [
+"Natalia Republic"
+],
+"type": "POLITY"
+},
+"Ottoman Tripolitania": {
+"from": 1840,
+"to": 1911,
+"wikipedia": [
+"Ottoman Tripolitania"
+],
+"type": "POLITY"
+},
+"Republic of Nicaragua": {
+"from": 1840,
+"to": 2024,
+"wikipedia": [
+"Nicaragua"
+],
+"type": "POLITY"
+},
+"Republic of El Salvador": {
+"from": 1840,
+"to": 2024,
+"wikipedia": [
+"El Salvador"
+],
+"type": "POLITY"
+},
+"Los Altos": {
+"from": 1840,
+"to": 1841,
+"wikipedia": [
+"Los Altos (state)"
+],
+"type": "POLITY"
+},
+"Kingdom of Sarawak": {
+"from": 1842,
+"to": 1946,
+"wikipedia": [
+"Raj of Sarawak"
+],
+"type": "POLITY"
+},
+"Kedah-Perlis District": {
+"from": 1842,
+"to": 1910,
+"wikipedia": [
+"Perlis"
+],
+"type": "POLITY"
+},
+"Kashmir and Jammu": {
+"from": 1846,
+"to": 1947,
+"wikipedia": [
+"Jammu and Kashmir (princely state)"
+],
+"type": "POLITY"
+},
+"Dominican Republic": {
+"from": 1846,
+"to": 2024,
+"wikipedia": [
+"Dominican Republic"
+],
+"type": "POLITY"
+},
+"California Republic": {
+"from": 1846,
+"to": 1847,
+"wikipedia": [
+"California Republic"
+],
+"type": "POLITY"
+},
+"French Africa": {
+"from": 1846,
+"to": 1957,
+"wikipedia": [
+"French Africa"
+],
+"type": "POLITY"
+},
+"Republic of Liberia": {
+"from": 1848,
+"to": 2024,
+"wikipedia": [
+"Liberia"
+],
+"type": "POLITY"
+},
+"(French Second Republic)": {
+"from": 1848,
+"to": 1852,
+"wikipedia": [
+"French Second Republic"
+],
+"type": "POLITY"
+},
+"Italian Nationalists": {
+"from": 1848,
+"to": 1848,
+"wikipedia": [
+"Italian nationalism"
+],
+"type": "POLITY"
+},
+"French Second Republic": {
+"from": 1848,
+"to": 1852,
+"wikipedia": [
+"French Second Republic"
+],
+"type": "POLITY"
+},
+"Duchy of Holstein": {
+"from": 1848,
+"to": 1852,
+"wikipedia": [
+"Duchy of Holstein"
+],
+"type": "POLITY"
+},
+"Republic of Baden": {
+"from": 1849,
+"to": 1852,
+"wikipedia": [
+"Republic of Baden"
+],
+"type": "POLITY"
+},
+"Hungarian Nationalists": {
+"from": 1849,
+"to": 1957,
+"wikipedia": [
+"Austria-Hungary"
+],
+"type": "POLITY"
+},
+"Pahang Sultanate": {
+"from": 1853,
+"to": 1889,
+"wikipedia": [
+"Pahang Sultanate"
+],
+"type": "POLITY"
+},
+"(Second French Empire)": {
+"from": 1853,
+"to": 1870,
+"wikipedia": [
+"Second French Empire"
+],
+"type": "POLITY"
+},
+"Republic of Baja California": {
+"from": 1853,
+"to": 1856,
+"wikipedia": [
+"Republic of Baja California"
+],
+"type": "POLITY"
+},
+"Montenegro": {
+"from": 1853,
+"to": 2024,
+"wikipedia": [
+"Montenegro"
+],
+"type": "POLITY"
+},
+"Taiping Heavenly Kingdom": {
+"from": 1853,
+"to": 1864,
+"wikipedia": [
+"Taiping Heavenly Kingdom"
+],
+"type": "POLITY"
+},
+"Mosquito Kingdom": {
+"from": 1853,
+"to": 1859,
+"wikipedia": [
+"Mosquito Coast"
+],
+"type": "POLITY"
+},
+"State of Buenos Aires": {
+"from": 1853,
+"to": 1860,
+"wikipedia": [
+"State of Buenos Aires"
+],
+"type": "POLITY"
+},
+"Second French Empire": {
+"from": 1853,
+"to": 1870,
+"wikipedia": [
+"Second French Empire"
+],
+"type": "POLITY"
+},
+"Majeerteen Sultanate": {
+"from": 1856,
+"to": 1889,
+"wikipedia": [
+"Majeerteen Sultanate"
+],
+"type": "POLITY"
+},
+"Free Orange State": {
+"from": 1856,
+"to": 1899,
+"wikipedia": [
+"Orange Free State"
+],
+"type": "POLITY"
+},
+"South African Republic": {
+"from": 1856,
+"to": 1899,
+"wikipedia": [
+"South African Republic"
+],
+"type": "POLITY"
+},
+"New Caledonia": {
+"from": 1856,
+"to": 1859,
+"wikipedia": [
+"New Caledonia"
+],
+"type": "POLITY"
+},
+"People's Republic of Zanzibar": {
+"from": 1856,
+"to": 1889,
+"wikipedia": [
+"People's Republic of Zanzibar"
+],
+"type": "POLITY"
+},
+"Panthay Rebellion": {
+"from": 1856,
+"to": 1872,
+"wikipedia": [
+"Panthay Rebellion"
+],
+"type": "POLITY"
+},
+"United Principalities of Moldavia and Wallachia": {
+"from": 1859,
+"to": 1916,
+"wikipedia": [
+"United Principalities of Moldavia and Wallachia"
+],
+"type": "POLITY"
+},
+"British Raj": {
+"from": 1859,
+"to": 1947,
+"wikipedia": [
+"British Raj"
+],
+"type": "POLITY"
+},
+"Granadine Confederation": {
+"from": 1859,
+"to": 1862,
+"wikipedia": [
+"Granadine Confederation"
+],
+"type": "POLITY"
+},
+"French Indochina": {
+"from": 1860,
+"to": 1957,
+"wikipedia": [
+"French Indochina"
+],
+"type": "POLITY"
+},
+"Confederate States of America": {
+"from": 1861,
+"to": 1865,
+"wikipedia": [
+"Confederate States of America"
+],
+"type": "POLITY"
+},
+"United States of Colombia": {
+"from": 1863,
+"to": 1865,
+"wikipedia": [
+"United States of Colombia"
+],
+"type": "POLITY"
+},
+"Mexican Monarchists": {
+"from": 1864,
+"to": 1864,
+"wikipedia": [
+"Conservative Party (Mexico)"
+],
+"type": "POLITY"
+},
+"Second Mexican Empire": {
+"from": 1865,
+"to": 1867,
+"wikipedia": [
+"Second Mexican Empire"
+],
+"type": "POLITY"
+},
+"Khedivate of Egypt": {
+"from": 1866,
+"to": 1884,
+"wikipedia": [
+"Khedivate of Egypt"
+],
+"type": "POLITY"
+},
+"Republic of Colombia": {
+"from": 1866,
+"to": 2024,
+"wikipedia": [
+"Colombia"
+],
+"type": "POLITY"
+},
+"Austria-Hungary": {
+"from": 1868,
+"to": 1918,
+"wikipedia": [
+"Austria-Hungary"
+],
+"type": "POLITY"
+},
+"Kamerun": {
+"from": 1868,
+"to": 1870,
+"wikipedia": [
+"Kamerun"
+],
+"type": "POLITY"
+},
+"Empire of Japan": {
+"from": 1868,
+"to": 1945,
+"wikipedia": [
+"Empire of Japan"
+],
+"type": "POLITY"
+},
+"North German Confederation": {
+"from": 1868,
+"to": 1870,
+"wikipedia": [
+"North German Confederation"
+],
+"type": "POLITY"
+},
+"Mexico": {
+"from": 1868,
+"to": 2024,
+"wikipedia": [
+"Mexico"
+],
+"type": "POLITY"
+},
+"German Africa": {
+"from": 1871,
+"to": 1918,
+"wikipedia": [
+"German colonization of Africa"
+],
+"type": "POLITY"
+},
+"French Third Republic": {
+"from": 1871,
+"to": 1939,
+"wikipedia": [
+"French Third Republic"
+],
+"type": "POLITY"
+},
+"(French Third Republic)": {
+"from": 1871,
+"to": 1939,
+"wikipedia": [
+"French Third Republic"
+],
+"type": "POLITY"
+},
+"German Empire": {
+"from": 1871,
+"to": 1919,
+"wikipedia": [
+"German Empire"
+],
+"type": "POLITY"
+},
+"Kingdom of Fiji": {
+"from": 1871,
+"to": 1876,
+"wikipedia": [
+"Kingdom of Fiji"
+],
+"type": "POLITY"
+},
+"British Gold Coast": {
+"from": 1873,
+"to": 1960,
+"wikipedia": [
+"Gold Coast (British colony)"
+],
+"type": "POLITY"
+},
+"First Spanish Republic": {
+"from": 1873,
+"to": 1876,
+"wikipedia": [
+"First Spanish Republic"
+],
+"type": "POLITY"
+},
+"Sultanate of Hobyo": {
+"from": 1880,
+"to": 1894,
+"wikipedia": [
+"Sultanate of Hobyo"
+],
+"type": "POLITY"
+},
+"Principality of Bulgaria": {
+"from": 1880,
+"to": 1944,
+"wikipedia": [
+"Principality of Bulgaria"
+],
+"type": "POLITY"
+},
+"Nieuwe Republiek": {
+"from": 1885,
+"to": 1889,
+"wikipedia": [
+"Nieuwe Republiek"
+],
+"type": "POLITY"
+},
+"Swaziland": {
+"from": 1885,
+"to": 1907,
+"wikipedia": [
+"Eswatini"
+],
+"type": "POLITY"
+},
+"British Africa": {
+"from": 1885,
+"to": 1960,
+"wikipedia": [
+"Scramble for Africa"
+],
+"type": "POLITY"
+},
+"Italian Africa": {
+"from": 1890,
+"to": 1943,
+"wikipedia": [
+"Italian Empire"
+],
+"type": "POLITY"
+},
+"New Hebrides": {
+"from": 1890,
+"to": 1982,
+"wikipedia": [
+"New Hebrides"
+],
+"type": "POLITY"
+},
+"Luxembourg": {
+"from": 1890,
+"to": 2024,
+"wikipedia": [
+"Luxembourg"
+],
+"type": "POLITY"
+},
+"Brazilian Republic": {
+"from": 1890,
+"to": 1966,
+"wikipedia": [
+"Brazil"
+],
+"type": "POLITY"
+},
+"Belgian Congo": {
+"from": 1890,
+"to": 1962,
+"wikipedia": [
+"Belgian Congo"
+],
+"type": "POLITY"
+},
+"Mahdist State": {
+"from": 1890,
+"to": 1899,
+"wikipedia": [
+"Mahdist State"
+],
+"type": "POLITY"
+},
+"Cuban Nationalists": {
+"from": 1895,
+"to": 1899,
+"wikipedia": [
+"Fidel Castro"
+],
+"type": "POLITY"
+},
+"Republic of Hawai'i": {
+"from": 1895,
+"to": 1897,
+"wikipedia": [
+"Republic of Hawaii"
+],
+"type": "POLITY"
+},
+"Korean Empire": {
+"from": 1898,
+"to": 1910,
+"wikipedia": [
+"Korean Empire"
+],
+"type": "POLITY"
+},
+"Cretan State": {
+"from": 1898,
+"to": 1907,
+"wikipedia": [
+"Cretan State"
+],
+"type": "POLITY"
+},
+"Sultanate of Muscat and Oman": {
+"from": 1900,
+"to": 1946,
+"wikipedia": [
+"Muscat and Oman"
+],
+"type": "POLITY"
+},
+"Commonwealth of Australia": {
+"from": 1905,
+"to": 2024,
+"wikipedia": [
+"Australia"
+],
+"type": "POLITY"
+},
+"Republic of Cuba": {
+"from": 1905,
+"to": 1959,
+"wikipedia": [
+"Cuba"
+],
+"type": "POLITY"
+},
+"Republic of Panama": {
+"from": 1905,
+"to": 2024,
+"wikipedia": [
+"Panama"
+],
+"type": "POLITY"
+},
+"Portuguese Republic": {
+"from": 1911,
+"to": 1925,
+"wikipedia": [
+"Portugal"
+],
+"type": "POLITY"
+},
+"Maderistas": {
+"from": 1911,
+"to": 1911,
+"wikipedia": [
+"List of factions in the Mexican Revolution"
+],
+"type": "POLITY"
+},
+"Tangier International Zone": {
+"from": 1912,
+"to": 1957,
+"wikipedia": [
+"Tangier International Zone"
+],
+"type": "POLITY"
+},
+"Republic of Uryankhay": {
+"from": 1912,
+"to": 1913,
+"wikipedia": [
+"Uryankhay Republic"
+],
+"type": "POLITY"
+},
+"Republic of China": {
+"from": 1912,
+"to": 2024,
+"wikipedia": [
+"Republic of China (1912-1949)"
+],
+"type": "POLITY"
+},
+"Great Mongol State": {
+"from": 1912,
+"to": 1925,
+"wikipedia": [
+"Yuan dynasty"
+],
+"type": "POLITY"
+},
+"Albania": {
+"from": 1912,
+"to": 1945,
+"wikipedia": [
+"Albania"
+],
+"type": "POLITY"
+},
+"Qatar": {
+"from": 1913,
+"to": 1915,
+"wikipedia": [
+"Qatar"
+],
+"type": "POLITY"
+},
+"Imamate of Oman": {
+"from": 1913,
+"to": 1919,
+"wikipedia": [
+"Imamate of Oman"
+],
+"type": "POLITY"
+},
+"Kingdom of Hejaz": {
+"from": 1916,
+"to": 1925,
+"wikipedia": [
+"Kingdom of Hejaz"
+],
+"type": "POLITY"
+},
+"Empire of China": {
+"from": 1916,
+"to": 1916,
+"wikipedia": [
+"Empire of China (1915–1916)"
+],
+"type": "POLITY"
+},
+"Russian Republic": {
+"from": 1917,
+"to": 1919,
+"wikipedia": [
+"Russian Republic"
+],
+"type": "POLITY"
+},
+"Kuomintang": {
+"from": 1917,
+"to": 1929,
+"wikipedia": [
+"Kuomintang"
+],
+"type": "POLITY"
+},
+"Asir": {
+"from": 1917,
+"to": 1923,
+"wikipedia": [
+"Asir Province"
+],
+"type": "POLITY"
+},
+"Azerbaijan Democratic Republic": {
+"from": 1918,
+"to": 1919,
+"wikipedia": [
+"Azerbaijan"
+],
+"type": "POLITY"
+},
+"Armenia": {
+"from": 1918,
+"to": 1919,
+"wikipedia": [
+"Armenia"
+],
+"type": "POLITY"
+},
+"Republic of Finland": {
+"from": 1918,
+"to": 2024,
+"wikipedia": [
+"Finland"
+],
+"type": "POLITY"
+},
+"Serbia": {
+"from": 1918,
+"to": 1918,
+"wikipedia": [
+"Serbia"
+],
+"type": "POLITY"
+},
+"Polish Armed Forces": {
+"from": 1918,
+"to": 1918,
+"wikipedia": [
+"Polish Land Forces"
+],
+"type": "POLITY"
+},
+"Kingdom of Iceland": {
+"from": 1918,
+"to": 1939,
+"wikipedia": [
+"Kingdom of Iceland"
+],
+"type": "POLITY"
+},
+"Czechoslovakia": {
+"from": 1919,
+"to": 1991,
+"wikipedia": [
+"Czechoslovakia"
+],
+"type": "POLITY"
+},
+"Hungarian Republic": {
+"from": 1919,
+"to": 1943,
+"wikipedia": [
+"Hungary"
+],
+"type": "POLITY"
+},
+"Kingdom of Romania": {
+"from": 1919,
+"to": 1947,
+"wikipedia": [
+"Kingdom of Romania"
+],
+"type": "POLITY"
+},
+"North Yemen": {
+"from": 1919,
+"to": 1989,
+"wikipedia": [
+"North Yemen"
+],
+"type": "POLITY"
+},
+"Kingdom of Lithuania": {
+"from": 1919,
+"to": 1939,
+"wikipedia": [
+"Kingdom of Lithuania"
+],
+"type": "POLITY"
+},
+"Ukrainian People's Republic": {
+"from": 1919,
+"to": 1919,
+"wikipedia": [
+"Ukrainian State"
+],
+"type": "POLITY"
+},
+"Yugoslavia": {
+"from": 1919,
+"to": 1945,
+"wikipedia": [
+"Yugoslavia"
+],
+"type": "POLITY"
+},
+"Estonia": {
+"from": 1919,
+"to": 1939,
+"wikipedia": [
+"Estonia"
+],
+"type": "POLITY"
+},
+"Second Polish Republic": {
+"from": 1919,
+"to": 1939,
+"wikipedia": [
+"Second Polish Republic"
+],
+"type": "POLITY"
+},
+"Republic of Austria": {
+"from": 1919,
+"to": 1937,
+"wikipedia": [
+"Austria"
+],
+"type": "POLITY"
+},
+"Weimar Republic": {
+"from": 1920,
+"to": 1935,
+"wikipedia": [
+"Weimar Republic"
+],
+"type": "POLITY"
+},
+"Republic of Latvia": {
+"from": 1920,
+"to": 2024,
+"wikipedia": [
+"Latvia"
+],
+"type": "POLITY"
+},
+"Republics of the Soviet Union": {
+"from": 1920,
+"to": 1921,
+"wikipedia": [
+"Republics of the Soviet Union"
+],
+"type": "POLITY"
+},
+"French Mandate for Syria and Lebanon": {
+"from": 1920,
+"to": 1945,
+"wikipedia": [
+"Mandate for Syria and the Lebanon"
+],
+"type": "POLITY"
+},
+"Union of Soviet Socialist Republics": {
+"from": 1922,
+"to": 1991,
+"wikipedia": [
+"Soviet Union"
+],
+"type": "POLITY"
+},
+"Kingdom of Egypt": {
+"from": 1922,
+"to": 1952,
+"wikipedia": [
+"Kingdom of Egypt"
+],
+"type": "POLITY"
+},
+"Republic of the Rif": {
+"from": 1922,
+"to": 1925,
+"wikipedia": [
+"Republic of the Rif"
+],
+"type": "POLITY"
+},
+"Irish Free State": {
+"from": 1922,
+"to": 1937,
+"wikipedia": [
+"Irish Free State"
+],
+"type": "POLITY"
+},
+"Provisional Priamurye Government": {
+"from": 1922,
+"to": 1923,
+"wikipedia": [
+"Provisional Priamurye Government"
+],
+"type": "POLITY"
+},
+"Republic of Turkey": {
+"from": 1924,
+"to": 2024,
+"wikipedia": [
+"Turkey"
+],
+"type": "POLITY"
+},
+"Pahlavi Dynasty": {
+"from": 1924,
+"to": 1978,
+"wikipedia": [
+"Pahlavi dynasty"
+],
+"type": "POLITY"
+},
+"Kingdom of Afghanistan": {
+"from": 1926,
+"to": 1972,
+"wikipedia": [
+"Kingdom of Afghanistan"
+],
+"type": "POLITY"
+},
+"Mongolian People's Republic": {
+"from": 1926,
+"to": 1991,
+"wikipedia": [
+"Mongolian People's Republic"
+],
+"type": "POLITY"
+},
+"Kingdom of Hejaz and Nejd": {
+"from": 1926,
+"to": 1935,
+"wikipedia": [
+"Kingdom of Hejaz and Nejd"
+],
+"type": "POLITY"
+},
+"Estado Novo": {
+"from": 1926,
+"to": 2024,
+"wikipedia": [
+"Estado Novo (Portugal)"
+],
+"type": "POLITY"
+},
+"Chinese Communists": {
+"from": 1928,
+"to": 1931,
+"wikipedia": [
+"Chinese Communist Party"
+],
+"type": "POLITY"
+},
+"Argentine Republic": {
+"from": 1930,
+"to": 2024,
+"wikipedia": [
+"Argentina"
+],
+"type": "POLITY"
+},
+"Anti-Kuomintang Coalition": {
+"from": 1930,
+"to": 1931,
+"wikipedia": [
+"Central Plains War"
+],
+"type": "POLITY"
+},
+"South Africa": {
+"from": 1932,
+"to": 2024,
+"wikipedia": [
+"South Africa"
+],
+"type": "POLITY"
+},
+"Canada": {
+"from": 1932,
+"to": 2024,
+"wikipedia": [
+"Canada"
+],
+"type": "POLITY"
+},
+"Kingdom of Thailand": {
+"from": 1932,
+"to": 2024,
+"wikipedia": [
+"Thailand"
+],
+"type": "POLITY"
+},
+"Kingdom of Iraq": {
+"from": 1932,
+"to": 1957,
+"wikipedia": [
+"Kingdom of Iraq"
+],
+"type": "POLITY"
+},
+"Second Spanish Republic": {
+"from": 1932,
+"to": 1938,
+"wikipedia": [
+"Second Spanish Republic"
+],
+"type": "POLITY"
+},
+"Unitary State of Brazil": {
+"from": 1932,
+"to": 1945,
+"wikipedia": [
+"Brazil"
+],
+"type": "POLITY"
+},
+"Communist Party of China": {
+"from": 1932,
+"to": 1949,
+"wikipedia": [
+"Chinese Communist Party"
+],
+"type": "POLITY"
+},
+"Kingdom of Saudi Arabia": {
+"from": 1936,
+"to": 2024,
+"wikipedia": [
+"Saudi Arabia"
+],
+"type": "POLITY"
+},
+"Spanish Nationalists": {
+"from": 1936,
+"to": 1938,
+"wikipedia": [
+"Nationalist faction (Spanish Civil War)"
+],
+"type": "POLITY"
+},
+"Nazi Germany": {
+"from": 1936,
+"to": 1944,
+"wikipedia": [
+"Nazi Germany"
+],
+"type": "POLITY"
+},
+"Republic of Haiti": {
+"from": 1936,
+"to": 2024,
+"wikipedia": [
+"Haiti"
+],
+"type": "POLITY"
+},
+"Éire": {
+"from": 1938,
+"to": 2024,
+"wikipedia": [
+"Éire"
+],
+"type": "POLITY"
+},
+"Francoist Spain": {
+"from": 1939,
+"to": 1975,
+"wikipedia": [
+"Francoist Spain"
+],
+"type": "POLITY"
+},
+"Free French": {
+"from": 1940,
+"to": 1944,
+"wikipedia": [
+"Free France"
+],
+"type": "POLITY"
+},
+"(Vichy France)": {
+"from": 1940,
+"to": 1944,
+"wikipedia": [
+"Vichy France"
+],
+"type": "POLITY"
+},
+"Vichy France": {
+"from": 1940,
+"to": 1943,
+"wikipedia": [
+"Vichy France"
+],
+"type": "POLITY"
+},
+"Independent State of Croatia": {
+"from": 1941,
+"to": 1944,
+"wikipedia": [
+"Independent State of Croatia"
+],
+"type": "POLITY"
+},
+"Ethiopia": {
+"from": 1942,
+"to": 2024,
+"wikipedia": [
+"Ethiopia"
+],
+"type": "POLITY"
+},
+"Yugoslav Partisans": {
+"from": 1944,
+"to": 1944,
+"wikipedia": [
+"Yugoslav Partisans"
+],
+"type": "POLITY"
+},
+"Lebanon": {
+"from": 1944,
+"to": 2024,
+"wikipedia": [
+"Lebanon"
+],
+"type": "POLITY"
+},
+"Kingdom of Greece": {
+"from": 1945,
+"to": 1966,
+"wikipedia": [
+"Kingdom of Greece"
+],
+"type": "POLITY"
+},
+"French Fourth Republic": {
+"from": 1945,
+"to": 1957,
+"wikipedia": [
+"French Fourth Republic"
+],
+"type": "POLITY"
+},
+"(French Fourth Republic)": {
+"from": 1945,
+"to": 1957,
+"wikipedia": [
+"French Fourth Republic"
+],
+"type": "POLITY"
+},
+"East Turkestan Republic": {
+"from": 1945,
+"to": 1949,
+"wikipedia": [
+"East Turkestan"
+],
+"type": "POLITY"
+},
+"Denmark": {
+"from": 1945,
+"to": 2024,
+"wikipedia": [
+"Denmark"
+],
+"type": "POLITY"
+},
+"People's Socialist Republic of Albania": {
+"from": 1946,
+"to": 1990,
+"wikipedia": [
+"People's Socialist Republic of Albania"
+],
+"type": "POLITY"
+},
+"Socialist Federal Republic of Yugoslavia": {
+"from": 1946,
+"to": 1991,
+"wikipedia": [
+"Socialist Federal Republic of Yugoslavia"
+],
+"type": "POLITY"
+},
+"Republic of Italy": {
+"from": 1946,
+"to": 2024,
+"wikipedia": [
+"Italy"
+],
+"type": "POLITY"
+},
+"Republic of Indonesia": {
+"from": 1946,
+"to": 2024,
+"wikipedia": [
+"Indonesia"
+],
+"type": "POLITY"
+},
+"Papua New Guinea": {
+"from": 1946,
+"to": 2024,
+"wikipedia": [
+"Papua New Guinea"
+],
+"type": "POLITY"
+},
+"Republic of Iceland": {
+"from": 1946,
+"to": 2024,
+"wikipedia": [
+"Iceland"
+],
+"type": "POLITY"
+},
+"Second Republic of Austria": {
+"from": 1946,
+"to": 2024,
+"wikipedia": [
+"History of Austria"
+],
+"type": "POLITY"
+},
+"Second Syrian Republic": {
+"from": 1946,
+"to": 1957,
+"wikipedia": [
+"Second Syrian Republic"
+],
+"type": "POLITY"
+},
+"Kingdom of Bulgaria": {
+"from": 1947,
+"to": 1947,
+"wikipedia": [
+"Kingdom of Bulgaria"
+],
+"type": "POLITY"
+},
+"Republic of India": {
+"from": 1947,
+"to": 2024,
+"wikipedia": [
+"India"
+],
+"type": "POLITY"
+},
+"Republic of the Philippines": {
+"from": 1947,
+"to": 2024,
+"wikipedia": [
+"Philippines"
+],
+"type": "POLITY"
+},
+"Islamic Republic of Pakistan": {
+"from": 1947,
+"to": 2024,
+"wikipedia": [
+"Pakistan"
+],
+"type": "POLITY"
+},
+"Qatar Protectorate": {
+"from": 1947,
+"to": 1955,
+"wikipedia": [
+"History of Qatar"
+],
+"type": "POLITY"
+},
+"Kingdom of Jordan": {
+"from": 1947,
+"to": 2024,
+"wikipedia": [
+"Jordan"
+],
+"type": "POLITY"
+},
+"Hungary": {
+"from": 1947,
+"to": 2024,
+"wikipedia": [
+"Hungary"
+],
+"type": "POLITY"
+},
+"New Zealand": {
+"from": 1948,
+"to": 2024,
+"wikipedia": [
+"New Zealand"
+],
+"type": "POLITY"
+},
+"People's Republic of Bulgaria": {
+"from": 1948,
+"to": 1990,
+"wikipedia": [
+"People's Republic of Bulgaria"
+],
+"type": "POLITY"
+},
+"Democratic People's Republic of Korea": {
+"from": 1948,
+"to": 2024,
+"wikipedia": [
+"North Korea"
+],
+"type": "POLITY"
+},
+"Republic of Korea": {
+"from": 1948,
+"to": 2024,
+"wikipedia": [
+"South Korea"
+],
+"type": "POLITY"
+},
+"Sri Lanka": {
+"from": 1948,
+"to": 2024,
+"wikipedia": [
+"Sri Lanka"
+],
+"type": "POLITY"
+},
+"Socialist Republic of Romania": {
+"from": 1948,
+"to": 1989,
+"wikipedia": [
+"Socialist Republic of Romania"
+],
+"type": "POLITY"
+},
+"Palestinians": {
+"from": 1948,
+"to": 1948,
+"wikipedia": [
+"Palestinians"
+],
+"type": "POLITY"
+},
+"State of Israel": {
+"from": 1948,
+"to": 2024,
+"wikipedia": [
+"Israel"
+],
+"type": "POLITY"
+},
+"German Democratic Republic": {
+"from": 1949,
+"to": 1990,
+"wikipedia": [
+"East Germany"
+],
+"type": "POLITY"
+},
+"People's Republic of China": {
+"from": 1950,
+"to": 2024,
+"wikipedia": [
+"China"
+],
+"type": "POLITY"
+},
+"Federal Republic of Germany": {
+"from": 1950,
+"to": 1990,
+"wikipedia": [
+"West Germany"
+],
+"type": "POLITY"
+},
+"Hungarian People's Republic": {
+"from": 1950,
+"to": 1989,
+"wikipedia": [
+"Hungarian People's Republic"
+],
+"type": "POLITY"
+},
+"Republic of Poland": {
+"from": 1953,
+"to": 2024,
+"wikipedia": [
+"Poland"
+],
+"type": "POLITY"
+},
+"Japan": {
+"from": 1953,
+"to": 2024,
+"wikipedia": [
+"Japan"
+],
+"type": "POLITY"
+},
+"Republic of Egypt": {
+"from": 1953,
+"to": 1957,
+"wikipedia": [
+"Egypt"
+],
+"type": "POLITY"
+},
+"Kingdom of Libya": {
+"from": 1953,
+"to": 1968,
+"wikipedia": [
+"Kingdom of Libya"
+],
+"type": "POLITY"
+},
+"Republic of Vietnam": {
+"from": 1956,
+"to": 1975,
+"wikipedia": [
+"South Vietnam"
+],
+"type": "POLITY"
+},
+"Kingdom of Laos": {
+"from": 1956,
+"to": 1975,
+"wikipedia": [
+"Kingdom of Laos"
+],
+"type": "POLITY"
+},
+"Republic of Tunisia": {
+"from": 1956,
+"to": 2024,
+"wikipedia": [
+"Tunisia"
+],
+"type": "POLITY"
+},
+"Kingdom of Cambodia": {
+"from": 1956,
+"to": 2024,
+"wikipedia": [
+"Cambodia"
+],
+"type": "POLITY"
+},
+"Democratic Republic of Vietnam": {
+"from": 1956,
+"to": 1975,
+"wikipedia": [
+"North Vietnam"
+],
+"type": "POLITY"
+},
+"Republic of Sudan": {
+"from": 1956,
+"to": 2024,
+"wikipedia": [
+"Sudan"
+],
+"type": "POLITY"
+},
+"Ghana": {
+"from": 1958,
+"to": 2024,
+"wikipedia": [
+"Ghana"
+],
+"type": "POLITY"
+},
+"United Arab Republic": {
+"from": 1958,
+"to": 1972,
+"wikipedia": [
+"United Arab Republic"
+],
+"type": "POLITY"
+},
+"Cuban Communists": {
+"from": 1958,
+"to": 1959,
+"wikipedia": [
+"Communist Party of Cuba"
+],
+"type": "POLITY"
+},
+"Arab Federation": {
+"from": 1958,
+"to": 1959,
+"wikipedia": [
+"Arab Federation"
+],
+"type": "POLITY"
+},
+"French Fifth Republic": {
+"from": 1958,
+"to": 2024,
+"wikipedia": [
+"French Fifth Republic"
+],
+"type": "POLITY"
+},
+"Federation of Malaya": {
+"from": 1958,
+"to": 1962,
+"wikipedia": [
+"Federation of Malaya"
+],
+"type": "POLITY"
+},
+"Madagascar": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Madagascar"
+],
+"type": "POLITY"
+},
+"Mali Federation": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Mali Federation"
+],
+"type": "POLITY"
+},
+"Guinea": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Guinea"
+],
+"type": "POLITY"
+},
+"Togo": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Togo"
+],
+"type": "POLITY"
+},
+"Federal Republic of Somalia": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Somalia"
+],
+"type": "POLITY"
+},
+"Democratic Republic of the Congo": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Democratic Republic of the Congo"
+],
+"type": "POLITY"
+},
+"Iraqi Republic": {
+"from": 1960,
+"to": 2005,
+"wikipedia": [
+"Iraq"
+],
+"type": "POLITY"
+},
+"Communist Cuba": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Cuba"
+],
+"type": "POLITY"
+},
+"Republic of Cameroon": {
+"from": 1960,
+"to": 2024,
+"wikipedia": [
+"Cameroon"
+],
+"type": "POLITY"
+},
+"Republic of the Congo": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Republic of the Congo"
+],
+"type": "POLITY"
+},
+"Gabon": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Gabon"
+],
+"type": "POLITY"
+},
+"Republic of Syria": {
+"from": 1961,
+"to": 1962,
+"wikipedia": [
+"Syria"
+],
+"type": "POLITY"
+},
+"Tanzania": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Tanzania"
+],
+"type": "POLITY"
+},
+"State of Kuwait": {
+"from": 1961,
+"to": 1989,
+"wikipedia": [
+"Kuwait"
+],
+"type": "POLITY"
+},
+"Sierra Leone": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Sierra Leone"
+],
+"type": "POLITY"
+},
+"British East Africa": {
+"from": 1961,
+"to": 1972,
+"wikipedia": [
+"East Africa Protectorate"
+],
+"type": "POLITY"
+},
+"Central African Republic": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Central African Republic"
+],
+"type": "POLITY"
+},
+"Republic of Côte d'Ivoire": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Ivory Coast"
+],
+"type": "POLITY"
+},
+"Republic of Senegal": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Senegal"
+],
+"type": "POLITY"
+},
+"Republic of Chad": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Chad"
+],
+"type": "POLITY"
+},
+"Republic of Cyprus": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Cyprus"
+],
+"type": "POLITY"
+},
+"Republic of Benin": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Benin"
+],
+"type": "POLITY"
+},
+"Federal Republic of Nigeria": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Nigeria"
+],
+"type": "POLITY"
+},
+"Mauritania": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Mauritania"
+],
+"type": "POLITY"
+},
+"Burkina Faso": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Burkina Faso"
+],
+"type": "POLITY"
+},
+"Republic of the Niger": {
+"from": 1961,
+"to": 2024,
+"wikipedia": [
+"Niger"
+],
+"type": "POLITY"
+},
+"Republic of Kenya": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Kenya"
+],
+"type": "POLITY"
+},
+"Republic of Rwanda": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Rwanda"
+],
+"type": "POLITY"
+},
+"Jamaica": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Jamaica"
+],
+"type": "POLITY"
+},
+"Republic of Trinidad and Tobago": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Trinidad and Tobago"
+],
+"type": "POLITY"
+},
+"People's Democratic Republic of Algeria": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Algeria"
+],
+"type": "POLITY"
+},
+"Ba'athist Syria": {
+"from": 1963,
+"to": 1966,
+"wikipedia": [
+"Syria"
+],
+"type": "POLITY"
+},
+"Malaysia": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Malaysia"
+],
+"type": "POLITY"
+},
+"Republic of Uganda": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Uganda"
+],
+"type": "POLITY"
+},
+"Republic of Burundi": {
+"from": 1963,
+"to": 2024,
+"wikipedia": [
+"Burundi"
+],
+"type": "POLITY"
+},
+"Sultanate of Zanzibar": {
+"from": 1963,
+"to": 1966,
+"wikipedia": [
+"Sultanate of Zanzibar"
+],
+"type": "POLITY"
+},
+"Malawi": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Malawi"
+],
+"type": "POLITY"
+},
+"Federated Republic of Brazil": {
+"from": 1967,
+"to": 1986,
+"wikipedia": [
+"Brazil"
+],
+"type": "POLITY"
+},
+"Lesotho": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Lesotho"
+],
+"type": "POLITY"
+},
+"Guyana": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Guyana"
+],
+"type": "POLITY"
+},
+"Arab Socialist Ba'ath Party": {
+"from": 1967,
+"to": 1972,
+"wikipedia": [
+"Arab Socialist Ba'ath Party - Syria Region"
+],
+"type": "POLITY"
+},
+"Zambia": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Zambia"
+],
+"type": "POLITY"
+},
+"Republic of The Gambia": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"The Gambia"
+],
+"type": "POLITY"
+},
+"Barbados": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Barbados"
+],
+"type": "POLITY"
+},
+"Rhodesia": {
+"from": 1967,
+"to": 1978,
+"wikipedia": [
+"Rhodesia"
+],
+"type": "POLITY"
+},
+"Malta": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Malta"
+],
+"type": "POLITY"
+},
+"Greek junta": {
+"from": 1967,
+"to": 1975,
+"wikipedia": [
+"Greek junta"
+],
+"type": "POLITY"
+},
+"Republic of Singapore": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Singapore"
+],
+"type": "POLITY"
+},
+"Saint Kitts": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Saint Kitts"
+],
+"type": "POLITY"
+},
+"Antigua and Barbuda": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Antigua and Barbuda"
+],
+"type": "POLITY"
+},
+"Republic of Botswana": {
+"from": 1967,
+"to": 2024,
+"wikipedia": [
+"Botswana"
+],
+"type": "POLITY"
+},
+"Libyan Arab Republic": {
+"from": 1969,
+"to": 2013,
+"wikipedia": [
+"History of Libya under Muammar Gaddafi"
+],
+"type": "POLITY"
+},
+"Mauritius": {
+"from": 1969,
+"to": 2024,
+"wikipedia": [
+"Mauritius"
+],
+"type": "POLITY"
+},
+"People's Democratic Republic of Yemen": {
+"from": 1969,
+"to": 1989,
+"wikipedia": [
+"South Yemen"
+],
+"type": "POLITY"
+},
+"Saint Vincent": {
+"from": 1969,
+"to": 2024,
+"wikipedia": [
+"Saint Vincent and the Grenadines"
+],
+"type": "POLITY"
+},
+"Eswatini": {
+"from": 1969,
+"to": 2024,
+"wikipedia": [
+"Eswatini"
+],
+"type": "POLITY"
+},
+"Equatorial Guinea": {
+"from": 1969,
+"to": 2024,
+"wikipedia": [
+"Equatorial Guinea"
+],
+"type": "POLITY"
+},
+"Commonwealth of The Bahamas": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"The Bahamas"
+],
+"type": "POLITY"
+},
+"Republic of Guinea-Bissau": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"Guinea-Bissau"
+],
+"type": "POLITY"
+},
+"Arab Republic of Egypt": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"Egypt"
+],
+"type": "POLITY"
+},
+"Kingdom of Bahrain": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"Bahrain"
+],
+"type": "POLITY"
+},
+"Syria": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"Syria"
+],
+"type": "POLITY"
+},
+"Republic of Fiji": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"Fiji"
+],
+"type": "POLITY"
+},
+"Republic of Afghanistan": {
+"from": 1973,
+"to": 1978,
+"wikipedia": [
+"Republic of Afghanistan (1973–1978)"
+],
+"type": "POLITY"
+},
+"People's Republic of Bangladesh": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"Bangladesh"
+],
+"type": "POLITY"
+},
+"State of Qatar": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"Qatar"
+],
+"type": "POLITY"
+},
+"United Arab Emirates": {
+"from": 1973,
+"to": 2024,
+"wikipedia": [
+"United Arab Emirates"
+],
+"type": "POLITY"
+},
+"Zaire": {
+"from": 1973,
+"to": 1995,
+"wikipedia": [
+"Zaire"
+],
+"type": "POLITY"
+},
+"Seychelles": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Seychelles"
+],
+"type": "POLITY"
+},
+"Turkish Republic of Northern Cyprus": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Northern Cyprus"
+],
+"type": "POLITY"
+},
+"Socialist Republic of Vietnam": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Vietnam"
+],
+"type": "POLITY"
+},
+"Third Hellenic Republic": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Third Hellenic Republic"
+],
+"type": "POLITY"
+},
+"People's Republic of Angola": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Angola"
+],
+"type": "POLITY"
+},
+"Mozambique": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Mozambique"
+],
+"type": "POLITY"
+},
+"Republic of Cabo Verde": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Cape Verde"
+],
+"type": "POLITY"
+},
+"Khmer Rouge": {
+"from": 1976,
+"to": 1978,
+"wikipedia": [
+"Khmer Rouge"
+],
+"type": "POLITY"
+},
+"Grenada": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Grenada"
+],
+"type": "POLITY"
+},
+"Republic of Suriname": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Suriname"
+],
+"type": "POLITY"
+},
+"São Tomé and Príncipe": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"São Tomé and Príncipe"
+],
+"type": "POLITY"
+},
+"Communist Laos": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Laos"
+],
+"type": "POLITY"
+},
+"Portugal": {
+"from": 1976,
+"to": 2024,
+"wikipedia": [
+"Portugal"
+],
+"type": "POLITY"
+},
+"People's Republic of Kampuchea": {
+"from": 1979,
+"to": 1995,
+"wikipedia": [
+"People's Republic of Kampuchea"
+],
+"type": "POLITY"
+},
+"Commonwealth of Dominica": {
+"from": 1979,
+"to": 2024,
+"wikipedia": [
+"Dominica"
+],
+"type": "POLITY"
+},
+"Zimbabwe Rhodesia": {
+"from": 1979,
+"to": 1982,
+"wikipedia": [
+"Zimbabwe Rhodesia"
+],
+"type": "POLITY"
+},
+"Saint Lucia": {
+"from": 1979,
+"to": 2024,
+"wikipedia": [
+"Saint Lucia"
+],
+"type": "POLITY"
+},
+"Islamic Republic of Iran": {
+"from": 1979,
+"to": 2024,
+"wikipedia": [
+"Iran"
+],
+"type": "POLITY"
+},
+"Solomon Islands": {
+"from": 1979,
+"to": 2024,
+"wikipedia": [
+"Solomon Islands"
+],
+"type": "POLITY"
+},
+"Afghanistan": {
+"from": 1979,
+"to": 2024,
+"wikipedia": [
+"Afghanistan"
+],
+"type": "POLITY"
+},
+"Republic of Djibouti": {
+"from": 1979,
+"to": 2024,
+"wikipedia": [
+"Djibouti"
+],
+"type": "POLITY"
+},
+"Republic of Zimbabwe": {
+"from": 1983,
+"to": 2024,
+"wikipedia": [
+"Zimbabwe"
+],
+"type": "POLITY"
+},
+"Vanuatu": {
+"from": 1983,
+"to": 2024,
+"wikipedia": [
+"Vanuatu"
+],
+"type": "POLITY"
+},
+"Belize": {
+"from": 1983,
+"to": 2024,
+"wikipedia": [
+"Belize"
+],
+"type": "POLITY"
+},
+"Micronesia": {
+"from": 1987,
+"to": 2024,
+"wikipedia": [
+"Micronesia"
+],
+"type": "POLITY"
+},
+"Mujahideen": {
+"from": 1987,
+"to": 2024,
+"wikipedia": [
+"Mujahideen"
+],
+"type": "POLITY"
+},
+"Republic of Brazil": {
+"from": 1987,
+"to": 2024,
+"wikipedia": [
+"Brazil"
+],
+"type": "POLITY"
+},
+"Romania": {
+"from": 1990,
+"to": 2024,
+"wikipedia": [
+"Romania"
+],
+"type": "POLITY"
+},
+"Republic of Yemen": {
+"from": 1990,
+"to": 2024,
+"wikipedia": [
+"Yemen"
+],
+"type": "POLITY"
+},
+"Republic of Lithuania": {
+"from": 1990,
+"to": 2024,
+"wikipedia": [
+"Lithuania"
+],
+"type": "POLITY"
+},
+"Namibia": {
+"from": 1990,
+"to": 2024,
+"wikipedia": [
+"Namibia"
+],
+"type": "POLITY"
+},
+"Union of Myanmar": {
+"from": 1990,
+"to": 2024,
+"wikipedia": [
+"Myanmar"
+],
+"type": "POLITY"
+},
+"Federated Republic of Germany": {
+"from": 1991,
+"to": 2024,
+"wikipedia": [
+"Germany"
+],
+"type": "POLITY"
+},
+"Republic of Albania": {
+"from": 1991,
+"to": 2024,
+"wikipedia": [
+"Albania"
+],
+"type": "POLITY"
+},
+"Republic of Bulgaria": {
+"from": 1991,
+"to": 2024,
+"wikipedia": [
+"Bulgaria"
+],
+"type": "POLITY"
+},
+"Republic of Tajikistan": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Tajikistan"
+],
+"type": "POLITY"
+},
+"Kazakhstan": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Kazakhstan"
+],
+"type": "POLITY"
+},
+"Republic of Croatia": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Croatia"
+],
+"type": "POLITY"
+},
+"Chechen Republic": {
+"from": 1992,
+"to": 2005,
+"wikipedia": [
+"Chechnya"
+],
+"type": "POLITY"
+},
+"Republic of Armenia": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Armenia"
+],
+"type": "POLITY"
+},
+"Serbia-Montenegro": {
+"from": 1992,
+"to": 2005,
+"wikipedia": [
+"Serbia and Montenegro"
+],
+"type": "POLITY"
+},
+"Republic of Slovenia": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Slovenia"
+],
+"type": "POLITY"
+},
+"Russian-occupied territories": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Russian-occupied territories"
+],
+"type": "POLITY"
+},
+"Mongolia": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Mongolia"
+],
+"type": "POLITY"
+},
+"Republic of Belarus": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Belarus"
+],
+"type": "POLITY"
+},
+"Kyrgyzstan": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Kyrgyzstan"
+],
+"type": "POLITY"
+},
+"Slovakia": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Slovakia"
+],
+"type": "POLITY"
+},
+"Republic of Azerbaijan": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Azerbaijan"
+],
+"type": "POLITY"
+},
+"Bosnia and Herzegovina": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Bosnia and Herzegovina"
+],
+"type": "POLITY"
+},
+"Czech Republic": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Czech Republic"
+],
+"type": "POLITY"
+},
+"Former Yugoslav Republic of Macedonia": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"North Macedonia"
+],
+"type": "POLITY"
+},
+"State of Eritrea": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Eritrea"
+],
+"type": "POLITY"
+},
+"Republic of Uzbekistan": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Uzbekistan"
+],
+"type": "POLITY"
+},
+"(Russian Federation)": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Russia"
+],
+"type": "POLITY"
+},
+"Republic of Estonia": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Estonia"
+],
+"type": "POLITY"
+},
+"Republic of Moldova": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Moldova"
+],
+"type": "POLITY"
+},
+"Ukraine": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Ukraine"
+],
+"type": "POLITY"
+},
+"Russian Federation": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Russia"
+],
+"type": "POLITY"
+},
+"Turkmenistan": {
+"from": 1992,
+"to": 2024,
+"wikipedia": [
+"Turkmenistan"
+],
+"type": "POLITY"
+},
+"Taliban": {
+"from": 1996,
+"to": 2005,
+"wikipedia": [
+"Taliban"
+],
+"type": "POLITY"
+},
+"Palau": {
+"from": 1996,
+"to": 2024,
+"wikipedia": [
+"Palau"
+],
+"type": "POLITY"
+},
+"Kosovo": {
+"from": 2000,
+"to": 2024,
+"wikipedia": [
+"Kosovo"
+],
+"type": "POLITY"
+},
+"(Commonwealth of Nations)": {
+"from": 2000,
+"to": 2024,
+"wikipedia": [
+"Commonwealth of Nations"
+],
+"type": "POLITY"
+},
+"British Overseas Territories": {
+"from": 2000,
+"to": 2024,
+"wikipedia": [
+"British Overseas Territories"
+],
+"type": "POLITY"
+},
+"Republic of Serbia": {
+"from": 2006,
+"to": 2024,
+"wikipedia": [
+"Serbia"
+],
+"type": "POLITY"
+},
+"East Timor": {
+"from": 2006,
+"to": 2024,
+"wikipedia": [
+"East Timor"
+],
+"type": "POLITY"
+},
+"State of Libya": {
+"from": 2014,
+"to": 2024,
+"wikipedia": [
+"Libya"
+],
+"type": "POLITY"
+},
+"South Sudan": {
+"from": 2014,
+"to": 2024,
+"wikipedia": [
+"South Sudan"
+],
+"type": "POLITY"
+},
+"Gaza/Hamas": {
+"from": 2014,
+"to": 2024,
+"wikipedia": [
+"Governance of the Gaza Strip"
+],
+"type": "POLITY"
+},
+"Republic of Iraq": {
+"from": 2014,
+"to": 2024,
+"wikipedia": [
+"Iraq"
+],
+"type": "POLITY"
+}
+}
