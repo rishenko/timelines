@@ -9,6 +9,7 @@ import { relatedRegions, relatedSiblings, proximityParents, allowedDistance } fr
 import type { Dataset } from '../types.ts';
 import { compileSource, compiledText } from '../../scripts/lib/compile.ts';
 import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
+import { spanStretches } from '../lib/lifespan.ts';
 
 const shipped: [string, Dataset][] = [['ancient-classical', combined as unknown as Dataset]];
 
@@ -34,7 +35,7 @@ describe('shipped timelines', () => {
         expect(e.sources.length, e.title).toBeGreaterThan(0);
         for (const c of [...(e.startDates ?? []), ...(e.endDates ?? [])]) expect(c.source, e.title).toBeDefined();
       }
-      for (const t of ds.tracks) for (const c of [...(t.span?.startDates ?? []), ...(t.span?.endDates ?? [])])
+      for (const t of ds.tracks) for (const c of spanStretches(t.span).flatMap((s) => [...(s.startDates ?? []), ...(s.endDates ?? [])]))
         expect(c.source, t.id).toBeDefined();
     });
 
@@ -112,7 +113,7 @@ describe('documented example (docs/examples/example-timeline.json)', () => {
   it('shows the features the format doc describes', () => {
     expect(ds.meta.calendar.yearZero).toBe(false);
     expect(ds.tracks.some((t) => t.parent && ds.tracks.find((p) => p.id === t.parent)?.parent)).toBe(true); // 3 levels
-    expect(ds.tracks.some((t) => t.span?.startDates)).toBe(true);
+    expect(ds.tracks.some((t) => spanStretches(t.span).some((s) => s.startDates))).toBe(true);
     expect(ds.tracks.some((t) => t.pinLast)).toBe(true);
     expect(ds.events.some((e) => e.ongoing)).toBe(true);
     expect(ds.events.some((e) => e.circa)).toBe(true);

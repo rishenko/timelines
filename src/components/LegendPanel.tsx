@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { Dataset, DateClaim, LinkKind } from '../types.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { chronologyGroups } from '../lib/chronology.ts';
+import { spanStretches } from '../lib/lifespan.ts';
 
 /** Claims that give a range of years: a margin, or sources that disagree. Claims that all agree draw no range. */
 const spreads = (claims: DateClaim[] | undefined) =>
@@ -93,15 +94,19 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
   // only explain what this timeline actually uses
   const has = {
     nesting: data.tracks.some((t) => t.parent),
-    lifespans: data.tracks.some((t) => t.span),
+    // typed, or worked out from phases
+    lifespans: data.tracks.some((t) => t.span || t.phases?.length),
     phases: data.tracks.some((t) => t.phases?.length),
+    memberOf: data.tracks.some((t) => t.memberOf?.length),
+    ongoing: data.tracks.some(
+      (t) => spanStretches(t.span).some((s) => s.ongoing) || !!t.phases?.some((p) => p.ongoing) || !!t.memberOf?.some((m) => m.ongoing),
+    ),
     ranges:
       hasChronologies ||
       data.events.some((e) => spreads(e.startDates) || spreads(e.endDates)) ||
       data.tracks.some(
         (t) =>
-          spreads(t.span?.startDates) ||
-          spreads(t.span?.endDates) ||
+          spanStretches(t.span).some((s) => spreads(s.startDates) || spreads(s.endDates)) ||
           !!t.phases?.some((ph) => spreads(ph.startDates) || spreads(ph.endDates)),
       ),
     circa: data.events.some((e) => e.circa),
@@ -130,7 +135,7 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       sample: <span className="lg-lifespan" />,
       show: has.lifespans,
       title: 'Lifespan',
-      text: 'The shaded band behind a row shows when that civilization, period or faction existed. Soft edges mean its start or end is uncertain.',
+      text: 'The shaded band behind a row shows when that civilization, period or faction existed; it is the only thing that colours the row. A row with phases is shaded where they are, so a blank gap between them is a time it didn’t exist. Soft edges mean its start or end is uncertain.',
     },
     {
       sample: (
@@ -141,7 +146,27 @@ export function LegendPanel({ data, onClose, onTour }: Props) {
       ),
       show: has.phases,
       title: 'Phases',
-      text: 'Some rows change hands over time: a new government, dynasty or era. A line marks each change, the name runs along the top of the row, and alternating shades tell neighbouring phases apart. Two names stacked over the same years are rivals that overlapped, as in a civil war. Soft edges mean the change can only be dated to a range.',
+      text: 'Some rows change hands over time: a new government, dynasty or era. Each phase is a cell in a thin strip at the top of the row, with a line where it begins and one where it ends; alternating shades tell neighbours apart. Rivals that overlapped, as in a civil war, take a second strip. A blank stretch of strip under a shaded row means it carried on without a phase of its own. A name that doesn’t fit sits beside its phase with a pointer (◂ or ▸), or shows when you point at the phase; zoomed far out, a strip is a thin line without names.',
+    },
+    {
+      sample: (
+        <span className="lg-member">
+          <span>in Union</span>
+        </span>
+      ),
+      show: has.memberOf,
+      title: 'Membership',
+      text: 'A row that belonged to another row for a while, such as a republic in a union, gets one more strip under its phases for each membership: the union’s name and years (“in Soviet Union, 1922–91”) in the union’s colour, with a dashed underline. The union is its own row; pointing at its name or lifespan lists its members.',
+    },
+    {
+      sample: (
+        <span className="lg-ongoing">
+          <span />
+        </span>
+      ),
+      show: has.ongoing,
+      title: 'Still going',
+      text: 'A phase or lifespan that is still going runs to the present and ends in an arrow instead of a line. While its end is off screen, the arrow waits at the right edge of the chart.',
     },
     {
       sample: <span className="lg-row-more">⇣</span>,

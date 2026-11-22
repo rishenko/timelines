@@ -1,18 +1,20 @@
-import { useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Dataset } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor } from './anchors.ts';
-import { buildLanes, layoutLanes, placePhases, type Mark } from './layout.ts';
+import { buildLanes, layoutLanes, layoutPhaseStrips, placeMemberships, placePhases, type Mark } from './layout.ts';
+import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
+import { mergeStretches } from '../lib/lifespan.ts';
 import { eraStart } from '../lib/calendar.ts';
-import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
+import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { rootOf, trackIndex } from '../lib/tracks.ts';
 import { useLabelWidth, useLongPress, usePinchSteps } from './gestures.ts';
 import { useViewport } from './useViewport.ts';
 import { useRovingFocus } from './useRovingFocus.ts';
 import { Ruler, type EdgeLink } from './Ruler.tsx';
-import { PHASE_H, PhaseBand, SpanBand } from './Bands.tsx';
+import { PhaseStripCell, SpanBand } from './Bands.tsx';
 import { LaneLabel } from './LaneLabel.tsx';
 import { ClusterMark, EventMark } from './Marks.tsx';
 import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
@@ -24,6 +26,7 @@ const SETTLE_MS = 200;
 /** A row counts as in view with something this close to either edge (a share of the view's width), so rows arrive
  * just before their years do and don't flicker at the edges. */
 const ROW_MARGIN = 0.25;
+const NO_MEMBERSHIPS = new Map<string, ResolvedMembership[]>();
 /** How long a thin line's name stays up after a click or tap. */
 const PEEK_MS = 2500;
 
@@ -34,9 +37,12 @@ interface Props {
   /** All events (resolved), for connections and cluster titles. */
   eventsById: Map<string, ResolvedEvent>;
   /** Track lifespans (resolved), shaded behind each lane. */
-  spans: Map<string, ResolvedSpan>;
+  /** Each row's lifespan stretches (typed, or worked out from its phases). */
+  spans: Map<string, ResolvedSpan[]>;
   /** Track phases (resolved): named periods drawn on the row's own bar. */
   phases: Map<string, ResolvedPhase[]>;
+  /** Each row's dated memberships in other rows (Track.memberOf): one more strip line each, after its phases. */
+  memberOf?: Map<string, ResolvedMembership[]>;
   visibleTracks: Record<string, boolean>;
   /** Each row's regions as tooltip text for its label ("Regions: Anatolia (Near East) — from Wikipedia: Hittites"). */
   regionTips?: Map<string, string>;
@@ -155,13 +161,27 @@ export function TimelineView(props: Props) {
     }
     return out;
   }, [data.tracks, trackById]);
-  const lanePhases = useMemo(() => new Map(lanes.map((l) => [l.id, placePhases(l.id, phases)])), [lanes, phases]);
-  // a lane with phases gets a strip at the top for their names, one line per level
-  const headerPx = useMemo(() => {
-    const out: Record<string, number> = {};
-    for (const [id, list] of lanePhases) if (list.length) out[id] = (Math.max(...list.map((p) => p.level)) + 1) * PHASE_H;
+  const memberOf = props.memberOf ?? NO_MEMBERSHIPS;
+  // a lane's strip lines: its phases, then one line per membership in another row ("in Soviet Union, 1922–91"), drawn
+  // in the union's colour
+  const lanePhases = useMemo(
+    () =>
+      new Map(
+        lanes.map((l) => {
+          const own = placePhases(l.id, phases);
+          const lines = own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0;
+          const label = (m: ResolvedMembership) => membershipLabel(m, trackById.get(m.row)?.name ?? m.row, cal, isApprox(m));
+          return [l.id, [...own, ...placeMemberships(l.id, memberOf.get(l.id) ?? [], lines, label)]];
+        }),
+      ),
+    [lanes, phases, memberOf, trackById, cal],
+  );
+  // a union's row says who its members were, and when (its name's and lifespan's tooltips)
+  const unionTips = useMemo(() => {
+    const out = new Map<string, string>();
+    for (const [id, list] of membersByUnion(memberOf)) out.set(id, membersTip(list, (m) => trackById.get(m)?.name ?? m, cal));
     return out;
-  }, [lanePhases]);
+  }, [memberOf, trackById, cal]);
   const laneSpans = useMemo(() => {
     // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap;
     // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler; so do rows
@@ -169,16 +189,35 @@ export function TimelineView(props: Props) {
     const out: ResolvedSpan[] = [];
     for (const l of allLanes)
       for (const id of l.members) {
-        const s = spans.get(id);
-        if (s) out.push(s);
+        out.push(...(spans.get(id) ?? []));
         out.push(...(phases.get(id) ?? []));
+        out.push(...(memberOf.get(id) ?? []));
       }
     return out;
-  }, [allLanes, spans, phases]);
+  }, [allLanes, spans, phases, memberOf]);
   const scale = useMemo(
     () => buildScale(anchorsFor(events, present, laneSpans, data.meta.range), { increment, compress, calendar: cal }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
+  // a folded row's background is one lifespan: when it or any row folded into it existed, in its own colour (its
+  // sub-rows' bands overlaid in their colours would stack into shades that mean nothing)
+  const laneLifespans = useMemo(
+    () =>
+      new Map(
+        lanes.map((l) => [
+          l.id,
+          l.collapsed ? mergeStretches(l.members.flatMap((id) => spans.get(id) ?? [])) : (spans.get(l.id) ?? []),
+        ]),
+      ),
+    [lanes, spans],
+  );
+  // a lane with phases gets their strips at the top, one line per level: tall enough for names where any fit at this
+  // zoom, thin where none do
+  const laneStrips = useMemo(
+    () => new Map([...lanePhases].filter(([, list]) => list.length).map(([id, list]) => [id, layoutPhaseStrips(list, scale.x, {}, laneLifespans.get(id))])),
+    [lanePhases, scale, laneLifespans],
+  );
+  const headerPx = useMemo(() => Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height])), [laneStrips]);
   const layout = useMemo(
     () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin }),
     [lanes, events, scale, present, expanded, headerPx, shown.thin],
@@ -333,11 +372,13 @@ export function TimelineView(props: Props) {
   const gapStarts = useMemo(() => new Set(scale.gaps().map((g) => g.y0)), [scale]);
   const canvasW = labelW + scale.width + END_PAD;
   const era = eraStart(cal);
-  const band = { scale, cal, labelW, inView };
+  const eventTitles = useMemo(() => new Map(data.events.map((e) => [e.uuid, e.title])), [data.events]);
+  const eventTitle = useCallback((id: string) => eventTitles.get(id), [eventTitles]);
+  const band = { scale, cal, labelW, inView, eventTitle };
 
   // Adding an event in edit mode: double-click an empty spot in a lane, or on touch screens hold a finger there.
   const isEmptySpot = (target: EventTarget, lane: Element) =>
-    target === lane || (target as HTMLElement).classList.contains('tl-span');
+    target === lane || (target as HTMLElement).classList.contains('tl-span') || (target as HTMLElement).classList.contains('tl-phase-fill');
   const createAt = (trackId: string, lane: Element, clientX: number) => {
     const contentX = clientX - lane.getBoundingClientRect().left - labelW;
     props.onCreateAt(trackId, Math.floor(scale.yearAt(contentX)));
@@ -456,16 +497,32 @@ export function TimelineView(props: Props) {
               aria-label={lane.track.name}
               data-lane={lane.id}
             >
-              {lane.members.map((id) => {
-                const s = spans.get(id);
-                return s ? <SpanBand key={`span-${id}`} track={trackById.get(id)!} span={s} {...band} /> : null;
-              })}
-              {lanePhases.get(lane.id)?.map((p, i) => (
-                <PhaseBand key={`phase-${p.trackId}-${i}`} phase={p} color={trackById.get(p.trackId)!.color} alt={i % 2 === 1} {...band} />
+              {/* each stretch of a lifespan is its own band; the gaps between them stay blank. A still-going one shows
+                  an arrow on its top edge, unless a still-going phase on screen already shows one in its strip */}
+              {laneLifespans.get(lane.id)?.map((s, i) => (
+                <SpanBand
+                  key={`span-${i}`}
+                  track={lane.track}
+                  span={s}
+                  cue={!laneStrips.get(lane.id)?.cells.some((c) => c.phase.ongoing && c.x0 < view.left + view.width - labelW && c.x1 > view.left)}
+                  title={lane.collapsed ? `${lane.track.name} and the rows folded into it` : undefined}
+                  members={unionTips.get(lane.id)}
+                  {...band}
+                />
+              ))}
+              {laneStrips.get(lane.id)?.cells.map((c, i) => (
+                <PhaseStripCell
+                  key={`phase-${i}`}
+                  cell={c}
+                  color={(trackById.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
+                  memberName={lane.track.name}
+                  unionName={c.phase.member && (trackById.get(c.phase.member)?.name ?? c.phase.member)}
+                  {...band}
+                />
               ))}
               <LaneLabel
                 lane={lane}
-                regionTip={props.regionTips?.get(lane.id)}
+                regionTip={[props.regionTips?.get(lane.id), unionTips.get(lane.id)].filter(Boolean).join('\n') || undefined}
                 tag={props.rowTags?.get(lane.id)}
                 compare={
                   props.onToggleCompare && !editMode

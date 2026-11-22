@@ -42,7 +42,7 @@ by hand if you write the file in the [readable format](#writing-dates-as-text) a
 | `tags` | yes | Labels for grouping sources, keyed by id. May be `{}`. |
 | `events` | yes | See [events](#events). |
 | `chronologies` | no | Alternative dating systems. See [chronologies](#chronologies). |
-| `present` | no | The setting's "now" (a stored year). Events marked `ongoing` run to it. Defaults to the latest year any event starts or ends in. |
+| `present` | no | The setting's "now" (a stored year). Events, lifespans and phases marked `ongoing` run to it. Defaults to the latest year any event starts or ends in. |
 
 ## meta
 
@@ -88,19 +88,55 @@ cost label width, so three or four levels is a practical ceiling rather than a r
 | `color` | yes | `#rrggbb`. |
 | `parent` | no | Id of the row this one sits under. |
 | `chronology` | no | Dating system for events on this row; sub-rows inherit it. See [chronologies](#chronologies). |
-| `span` | no | Lifespan: shaded across the row. See below. |
+| `span` | no | Lifespan: shaded across the row. One stretch, or a list of stretches. Leave it out on a row with phases to have it worked out from them. See below. |
 | `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
+| `memberOf` | no | Other rows this row belonged to for a stretch of years (a republic in a union). See [memberOf](#dated-memberships-memberof). |
 | `image` | no | Small image in the row label (`https://…` or a path on the app's own site). |
 | `url` | no | A page about the row, such as its Wikipedia article (`https://…` or a path on the app's own site). The row's name links to it, in the chart and the table view. |
 | `ids` | no | The row's identifiers in other datasets: `{ "wikidata": "Q11768" }` (a Wikidata item id). Shown in the table view and the CSV download. |
 | `pinLast` | no | Keep at the bottom, e.g. "Other peoples" or "Other powers". Rows added in the editor go above it. |
 
-**`span`** (lifespan): `{ "start": …, "end": …, "circa": true }`, plus optional `startDates` and
-`endDates` [date claims](#date-claims-and-uncertain-dates). Uncertain ends are drawn the same way as on events.
+**`span`** (lifespan): when the row existed. A stretch is `{ "start": …, "end": …, "circa": true }`, plus optional
+`startDates` and `endDates` [date claims](#date-claims-and-uncertain-dates). Uncertain ends are drawn the same way as
+on events. A row that existed, stopped and came back types a **list of stretches** in date order; the gaps between them
+are left blank:
+
+```json
+"span": [
+  { "start": 0, "end": 288 },
+  { "start": 310, "ongoing": true }
+]
+```
+
+**Worked out from phases.** A row with [phases](#tracks) and no `span` gets its lifespan from them: shaded where its
+phases are, blank in the gaps between them. A gap means the row **didn't exist** then (a state partitioned away and
+later restored). Phases that overlap, touch, or lie a year apart make one stretch, and a phase's uncertain edges count,
+so a change of government is never a gap. Type a lifespan only when it says something the phases don't:
+
+- the row **carried on through a gap** between its phases (a state whose rulers for those years aren't recorded as a
+  phase): type one stretch across the gap;
+- the row has no phases.
+
+A typed lifespan must contain all of the row's phases (their best estimates); a file where it doesn't is refused,
+naming the row and the phase. In the table view, a lifespan worked out from phases says "From its phases".
+
+**`ongoing`**: `"ongoing": true` instead of `end`, on a lifespan stretch or a phase, means it is still going: it runs to
+the timeline's [`present`](#top-level), as an ongoing event does. Use it for a state that still exists rather than
+typing the present year as its end. Only the last stretch of a lifespan can be ongoing. An ongoing stretch or phase has
+no end claims; it ends in an arrow on the chart, and its tooltip, the table view and search say "– ongoing".
+
+**`ongoingSources`**: the sources that say an ongoing stretch or phase is still going, cited like events' `sources`. It
+takes the place of end claims, so only an ongoing stretch or phase may have it; the table view lists them ("still going
+per …"), and a lifespan worked out from phases takes them from its ongoing phase:
+
+```json
+{ "name": "Fifth Republic", "start": 1958, "ongoing": true,
+  "ongoingSources": [{ "sourceKey": "wp-french-fifth-republic", "sourceLocation": "infobox life span: 1958–present" }] }
+```
 
 **`phases`**: a list of named periods within the row, for a state that changed hands over time without becoming a
 different row: France's kingdoms, republics and empires, a dynasty's reigns, or a faction's councils in a fictional
-timeline. Each phase is dated like a lifespan, with a name:
+timeline. Each phase is dated like a lifespan stretch (it may be `ongoing`), with a name:
 
 ```json
 "phases": [
@@ -109,11 +145,101 @@ timeline. Each phase is dated like a lifespan, with a name:
 ]
 ```
 
-A line marks where each phase begins, and its name runs along a strip at the top of the row. The name stays in view
-while you scroll. Neighbouring phases alternate shades, and a gap between phases is left blank. Phases may overlap,
-as rival governments do in a civil war; an overlapping phase's name goes on a second line. Events stay on the row
-itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
+Each phase is drawn as a cell in a thin strip at the top of the row, under the lifespan's edge (the lifespan is the
+only thing that shades the row itself). A line marks where each phase begins and where it ends, unless the next phase
+begins there; neighbouring phases alternate shades, and a gap between phases leaves the strip blank. The name stays in
+view while you scroll; a phase too short for its name has it beside the phase in the blank strip, with a pointer, when
+there is room (else its tooltip names it). Zoomed out so far that no name fits, a strip is a thin line. Phases may
+overlap, as rival governments do in a civil war; an overlapping phase goes on a second strip. A still-going phase
+(`ongoing`) ends in an arrow, kept at the right edge of the chart while its end is off screen; a still-going lifespan
+shows the same arrow on its top edge. A folded row shows only its own phases, over one lifespan: the years when it or
+any row folded into it existed. Events stay on the row itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
 order. Search finds phases by name.
+
+### Succession: `startEvent`, `endEvent`
+
+A lifespan stretch, a phase or a [membership](#dated-memberships-memberof) may name the event that began or ended it,
+by its `uuid`:
+
+```json
+"span": { "start": 1922, "end": 1991, "startEvent": "ussr-founded", "endEvent": "ussr-dissolved" },
+"phases": [
+  { "name": "Ukrainian SSR", "start": 1919, "end": 1991, "endEvent": "ussr-dissolved" },
+  { "name": "Ukraine (independent)", "start": 1991, "ongoing": true, "startEvent": "ussr-dissolved" }
+]
+```
+
+- The event must exist and be dated within a year of the edge (its start to its end, or to `present` if ongoing). An
+  ongoing stretch or phase has no `endEvent`. Name an event only when its sources say it began or ended that phase.
+- A lifespan worked out from phases takes its first phase's `startEvent` and last phase's `endEvent`.
+- The event's detail panel lists what it **ended** and **began** (row, phase or lifespan, year). The lifespan's or
+  phase's tooltip on the chart names its events ("Began with: …", "Ended with: …"), and the table view's rows table
+  lists them under its dates, each a button that opens the event.
+- The chart draws nothing extra for them: an event on several rows already draws a thread joining them.
+
+### Dated memberships: `memberOf`
+
+A row may belong to another row for a stretch of years: a republic in a union, a province in an empire, a realm in an
+alliance. Each membership names the row it belonged to and is dated like a phase (`start`, `end` or `ongoing`, `circa`,
+`startDates`/`endDates` [date claims](#date-claims-and-uncertain-dates), so it follows the Dating menu too, and
+optional `startEvent`/`endEvent`), with the `sources` that place the row there (at least one):
+
+```json
+"memberOf": [
+  { "row": "soviet-union", "start": 1922, "end": 1991,
+    "startDates": [{ "year": 1922, "source": { "sourceKey": "wp-ukrainian-ssr", "sourceLocation": "infobox date_start: 30 December 1922" } }],
+    "sources": [{ "sourceKey": "wp-ukrainian-ssr", "sourceLocation": "infobox event_start: USSR created" }],
+    "startEvent": "ussr-founded", "endEvent": "ussr-dissolved" }
+]
+```
+
+- The row named must exist, and can't be the row itself or one of its own sub-rows. The membership's years (best
+  estimates) must lie within one stretch of each row's lifespan (typed, or worked out from phases): a row can't belong
+  to a union before either existed.
+- On the chart, each membership is **one more strip line** on the member's row, under its phase strips: the union's
+  name and years ("in Soviet Union, 1922–91") in the union's colour, as a faint cell with a dashed underline (phases
+  are filled cells), with the same begin and end lines, arrow when `ongoing`, name placement and thin line when zoomed
+  out as a phase. Memberships that overlap take a line each. Display only: its tooltip names both rows, the years and
+  the events that began and ended it.
+- Dates are whole years, so a row that changes hands several times within one year can't be shown yet: a membership
+  that starts and ends in the same year has no width, and one that ends in the year the next starts shares its line.
+  Record such changes as events until dates can be given in months and days.
+- The union's row lists its members with their years: in the tooltips of its name and lifespan, and in the table
+  view's rows table ("Members (3): …"), which also lists each row's memberships with their sources. The event panel's
+  "Began and ended" includes memberships that name the event.
+- Renaming a row in the editor updates the memberships that name it; deleting it drops them. The track editor shows a
+  row's memberships but doesn't edit them yet (it keeps them as they are).
+
+**Not the same as [`memberships`](#memberships):** those place a row in facet values (regions, peoples), undated and
+for filtering. `memberOf` names another **row**, for a stretch of years, and is drawn.
+
+### Lifespan, phases or a row?
+
+- **A row** is one thing: a state, people or faction with its own identity. Something that existed alongside it, or
+  that contained it, is a different thing and gets its own row.
+- **Phases** are the names and governments the same thing had over time. A row with only one period needs no phase
+  that repeats its name and dates: type them as its lifespan instead.
+- **The lifespan** is when the row existed. Leave it out on a row with phases: it is worked out from them. Type one
+  only when the row carried on through a gap between its phases (or has no phases); cite its start like its first
+  phase's start, and make it `ongoing` if the row still exists.
+- **A gap between phases** means the row didn't exist then (Poland after the partitions), unless its typed lifespan
+  covers the gap: then it carried on without a phase of its own (Babylonia after the Kassites; a member while it was
+  inside a union).
+- **Overlapping phases** are rival or parallel governments of the same row: Vichy and Free France, East and West
+  Germany, a government-in-exile and the one at home. **Overlapping rows** are distinct things that existed at the
+  same time.
+- **Unions** (a state made of others: the Soviet Union, the United Arab Republic) are their own rows, **never phases on
+  their members**. A member keeps only its own phases (the Ukrainian SSR is Ukraine's own government, so it's a
+  phase; "Soviet Union" on Ukraine's row would be a copy) and records the union as a
+  [membership](#dated-memberships-memberof) (`memberOf`), which draws "in Soviet Union, 1922–91" on its row. The same
+  goes for a province of an empire (Egypt in the Ottoman Empire) or a realm in an alliance. A member that carried on
+  inside the union without a phase of its own types a lifespan across those years (Egypt 1958–71, Syria 1958–61).
+- **Mergers and splits** are one event placed on every row involved: the union and each member that joins or leaves.
+  An event on several rows draws a thread joining them. Name it as the `endEvent` of what it ended and the
+  `startEvent` of what it began (see [succession](#succession-startevent-endevent)). Add `links` between such events
+  where one leads to another (a union's founding `causes` a war; a restored name `succeeds` a civil war).
+- **Still-existing things** are `ongoing`, never typed as ending at the present year; cite that they still exist in
+  `ongoingSources`.
 
 ### memberships
 
@@ -238,14 +364,21 @@ A file that breaks any of these is refused, with a message naming the problem.
 - The required fields above are present; `schemaVersion` is 3.
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers.
-- Every year is a whole number; an `end` is not before its `start`, for events and lifespans.
+- Every year is a whole number; an `end` is not before its `start`, for events, lifespans and phases.
+- A lifespan stretch or phase has an `end` or `"ongoing": true`, not both. A lifespan given as a list has at least one
+  stretch, in date order, without overlaps; only the last can be ongoing. A typed lifespan contains all of the row's
+  phases.
 - Every referenced track, parent, source, tag, chronology and linked event exists.
 - No row is its own ancestor (rows may nest to any depth).
 - Facet and value ids use letters, digits and dashes; every `broader` value exists and none contains itself.
   Every membership names a known facet and value and cites at least one known source.
 - A derived chronology derives from one in the same group, by a whole number of years.
 - Margins are zero or more. Each best estimate lies within the range of its own claims.
-- `endDates` only appear on events that have an `end`. Events don't link to themselves.
+- `endDates` only appear on events, stretches and phases that have an `end`. Events don't link to themselves.
+- A `startEvent` or `endEvent` names an existing event dated within a year of that edge; an ongoing stretch, phase or
+  membership has no `endEvent`.
+- A `memberOf` entry names an existing row other than the row itself or its sub-rows, is dated like a phase, lies
+  within both rows' lifespans (best estimates), and cites at least one known source.
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
   Timelines can come from anyone, so anything else (such as `javascript:`) is refused.
 
@@ -332,7 +465,7 @@ compile it with the build script, which converts and validates them:
 node scripts/build-dataset.ts data-src/my-timeline.json public/timelines/my-timeline.json
 ```
 
-Text dates are accepted for `start`, `end`, claim `year` and `derive.until`. A "c." on a start sets
-`circa`. Era labels and their `aliases` come from the file's own calendar. Numbers pass through
-unchanged. `data-src/ancient-classical.json` is a full example.
+Text dates are accepted for `start`, `end`, claim `year` and `derive.until`, on each stretch of a lifespan list and
+each `memberOf` entry too. A "c." on a start sets `circa`. Era labels and their `aliases` come from the file's own
+calendar. Numbers pass through unchanged. `data-src/ancient-classical.json` is a full example.
 

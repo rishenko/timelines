@@ -66,13 +66,25 @@ export interface TimelineEdgeLink {
   side: 'before' | 'after';
 }
 
-/** A date range on a track: the lifespan of a civilization, period or faction. */
+/**
+ * A date range on a track: a stretch of the lifespan of a civilization, period or faction, or a phase. It has an
+ * `end`, or is `ongoing` (still going: runs to the dataset's present).
+ */
 export interface TrackSpan {
   start: number;
-  end: number;
+  /** Last year, inclusive. Absent when `ongoing`. */
+  end?: number;
+  /** Still going as of the dataset's present. Use instead of `end`. */
+  ongoing?: boolean;
+  /** Sources saying it is still going (only when `ongoing`): an ongoing stretch's counterpart to `endDates`. */
+  ongoingSources?: SourceRef[];
   circa?: boolean;
   startDates?: DateClaim[];
   endDates?: DateClaim[];
+  /** The event that began it (an event uuid): the event lists it as started. */
+  startEvent?: string;
+  /** The event that ended it (an event uuid; not on an ongoing stretch or phase). */
+  endEvent?: string;
 }
 
 export interface Track {
@@ -91,8 +103,12 @@ export interface Track {
   pinLast?: boolean;
   /** Default chronology for events on this track; children inherit it. */
   chronology?: string;
-  /** Shaded across the lane: when this track existed. */
-  span?: TrackSpan;
+  /**
+   * Shaded across the lane: when this track existed. One stretch, or a list of stretches in date order with gaps
+   * between them (gaps: the row didn't exist then). Must contain all of the row's phases. Without it, a row with
+   * phases gets its lifespan worked out from them (lib/lifespan.ts).
+   */
+  span?: TrackSpan | TrackSpan[];
   /**
    * Named periods within the row, drawn on its own bar: successive governments of one state (France's kingdoms,
    * republics and empires), dynasties, eras. A line marks each change and the name sits along
@@ -101,6 +117,21 @@ export interface Track {
   phases?: TrackPhase[];
   /** The facet values this row belongs to (meta.facets), each with the sources that place it there. */
   memberships?: Membership[];
+  /**
+   * Other rows this row belonged to for a stretch of years (a republic in the Soviet Union 1922–1991), each dated like
+   * a phase and with its sources. Different from `memberships` (facet values such as regions, undated).
+   */
+  memberOf?: RowMembership[];
+}
+
+/**
+ * A row's membership in another row (Track.memberOf) for a stretch of years: dated like a phase (date claims, an end
+ * or `ongoing`, the events that began and ended it), naming the row it belonged to and citing at least one source.
+ */
+export interface RowMembership extends TrackSpan {
+  /** The row it belonged to (a track id): a union, empire or alliance with its own row. */
+  row: string;
+  sources: SourceRef[];
 }
 
 /** A way to group rows (meta.facets): its name and values. */

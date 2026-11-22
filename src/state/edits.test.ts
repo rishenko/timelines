@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Dataset } from '../types.ts';
 import {
   moveTrack,
+  removeEvent,
   newProblems,
   upsertEvent,
   nextTrackColor,
@@ -15,6 +16,7 @@ import {
 } from './edits.ts';
 import { validateDataset } from '../data/validate.ts';
 import { draftToStore, restoreDraft } from './dataset.ts';
+import { spanStretches } from '../lib/lifespan.ts';
 
 const base = (): Dataset => ({
   schemaVersion: 3,
@@ -125,7 +127,7 @@ describe('sources', () => {
     const d = upsertSource(claimed(), 'annals-src', { name: 'Chronicle', tags: ['first'] }, 'chron');
     expect(validateDataset(d)).toEqual([]);
     expect(d.events[1].startDates![0].source!.sourceKey).toBe('annals-src');
-    expect(d.tracks[1].span!.endDates![0].source!.sourceKey).toBe('annals-src');
+    expect(spanStretches(d.tracks[1].span)[0].endDates![0].source!.sourceKey).toBe('annals-src');
     expect(d.chronologies!.annals.source!.sourceKey).toBe('annals-src');
     expect(d.events[1].edited).toBe(true);
   });
@@ -136,7 +138,7 @@ describe('sources', () => {
     const d = removeSource(before, 'chron');
     expect(validateDataset(d)).toEqual([]);
     expect(d.events[1].startDates).toEqual([{ year: 2, margin: 1 }]);
-    expect(d.tracks[1].span!.endDates).toEqual([{ year: 5 }]);
+    expect(spanStretches(d.tracks[1].span)[0].endDates).toEqual([{ year: 5 }]);
     expect(d.chronologies!.annals.source).toBeUndefined();
   });
 
@@ -163,5 +165,48 @@ describe('checking an edit before saving', () => {
     const d = base();
     const t = { ...d.tracks[1], span: { start: 0, end: 10, startDates: [{ year: 100 }] } };
     expect(newProblems(d, upsertTrack(d, t, t.id)).join()).toContain('lifespan start');
+  });
+});
+
+describe('memberships in other rows (memberOf)', () => {
+  /** The guild belongs to the North for years 1–5, the membership begun by event "a" and cited to the annals. */
+  const withMembership = (): Dataset => {
+    const d = base();
+    d.tracks = d.tracks.map((t) => (t.id === 'north' ? { ...t, span: { start: 0, end: 10 } } : t));
+    d.tracks = d.tracks.map((t) =>
+      t.id === 'guild'
+        ? { ...t, span: { start: 0, end: 10 }, memberOf: [{ row: 'north', start: 1, end: 5, startEvent: 'a', sources: [{ sourceKey: 'annals', sourceLocation: 'p. 1' }] }] }
+        : t,
+    );
+    expect(validateDataset(d)).toEqual([]);
+    return d;
+  };
+  const guild = (d: Dataset) => d.tracks.find((t) => t.id === 'guild')!;
+
+  it('renaming a row updates the memberships that name it', () => {
+    const d = upsertTrack(withMembership(), { ...withMembership().tracks[0], id: 'northlands' }, 'north');
+    expect(guild(d).memberOf!.map((m) => m.row)).toEqual(['northlands']);
+    expect(validateDataset(d)).toEqual([]);
+  });
+
+  it('removing a row drops the memberships in it (and the field, when none are left)', () => {
+    const d = removeTrack(withMembership(), 'north');
+    expect(guild(d)).not.toHaveProperty('memberOf');
+    expect(validateDataset(d)).toEqual([]);
+  });
+
+  it('removing an event drops it from the memberships it began or ended', () => {
+    const d = removeEvent(withMembership(), 'a');
+    expect(guild(d).memberOf![0]).not.toHaveProperty('startEvent');
+    expect(validateDataset(d)).toEqual([]);
+  });
+
+  it('renaming a source rewrites a membership’s citations; removing its only source drops the membership', () => {
+    const renamed = upsertSource(withMembership(), 'chronicle', { name: 'Annals', tags: ['first'] }, 'annals');
+    expect(guild(renamed).memberOf![0].sources).toEqual([{ sourceKey: 'chronicle', sourceLocation: 'p. 1' }]);
+    expect(validateDataset(renamed)).toEqual([]);
+    const removed = removeSource(withMembership(), 'annals');
+    expect(guild(removed)).not.toHaveProperty('memberOf');
+    expect(validateDataset(removed)).toEqual([]);
   });
 });

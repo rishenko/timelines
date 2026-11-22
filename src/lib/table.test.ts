@@ -4,6 +4,7 @@ import { defaultSelection, resolveEvents, resolveSpan } from './chronology.ts';
 import combined from '../../public/timelines/ancient-classical.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
+import { resolveLifespan } from './lifespan.ts';
 
 const anc = combined as Dataset;
 const resolved = resolveEvents(anc, defaultSelection(anc));
@@ -76,7 +77,7 @@ describe('eventsCsv', () => {
 
 describe('rows in the table', () => {
   const sel = defaultSelection(anc);
-  const spans = new Map(anc.tracks.filter((t) => t.span).map((t) => [t.id, resolveSpan(anc, t.id, t.span!, sel)]));
+  const spans = new Map(anc.tracks.filter((t) => t.span || t.phases?.length).map((t) => [t.id, resolveLifespan(anc, t, sel)]));
   const phases = new Map(
     anc.tracks
       .filter((t) => t.phases?.length)

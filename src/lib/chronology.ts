@@ -1,5 +1,6 @@
-import type { Chronology, DateClaim, Dataset, TimelineEvent, Track, TrackSpan } from '../types.ts';
+import type { Chronology, DateClaim, Dataset, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { trackIndex, trackPath } from './tracks.ts';
+import { datasetPresent } from './years.ts';
 
 /**
  * Chronologies, date claims and error margins.
@@ -32,6 +33,15 @@ export interface ResolvedSpan {
   end: number;
   /** The span's dates are marked approximate (TrackSpan.circa). */
   circa?: boolean;
+  /** Still going: `end` is the dataset's present. */
+  ongoing?: boolean;
+  /** The sources saying it is still going (TrackSpan.ongoingSources). */
+  ongoingSources?: SourceRef[];
+  /** A lifespan stretch worked out from the row's phases rather than typed. */
+  derived?: boolean;
+  /** The events that began and ended it (TrackSpan.startEvent, endEvent). */
+  startEvent?: string;
+  endEvent?: string;
   startWindow?: Window;
   endWindow?: Window;
 }
@@ -171,8 +181,18 @@ export function resolveEvents(ds: Dataset, selection: ChronologySelection): Reso
 export function resolveSpan(ds: Dataset, trackId: string, span: TrackSpan, selection: ChronologySelection): ResolvedSpan {
   const chron = trackChronology(ds.tracks, trackId);
   const s = resolveDate(ds, span.start, span.startDates, chron, selection, !!span.circa);
+  if (span.ongoing || span.end === undefined) {
+    // still going: runs to the present, which no dating system moves
+    const out: ResolvedSpan = { start: s.year, end: Math.max(datasetPresent(ds), s.year), startWindow: s.window, ongoing: true };
+    if (span.circa) out.circa = true;
+    if (span.ongoingSources?.length) out.ongoingSources = span.ongoingSources;
+    if (span.startEvent) out.startEvent = span.startEvent;
+    return out;
+  }
   const e = resolveDate(ds, span.end, span.endDates, chron, selection, !!span.circa);
   const out: ResolvedSpan = { start: s.year, end: Math.max(e.year, s.year), startWindow: s.window, endWindow: e.window };
   if (span.circa) out.circa = true;
+  if (span.startEvent) out.startEvent = span.startEvent;
+  if (span.endEvent) out.endEvent = span.endEvent;
   return out;
 }

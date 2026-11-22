@@ -34,11 +34,16 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
       title: 'Events',
       text: 'A bar is an event that lasted years; a diamond is one dated to a single year. Lighter ends show the range of dates the sources give. Click an event for its dates, sources and connections; “+N” gathers events too close to show apart.',
     },
-    data.tracks.some((t) => t.span) && {
+    data.tracks.some((t) => t.span || t.phases?.length) && {
       target: '.tl-span',
       widest: true,
       title: 'Lifespans',
-      text: 'The shaded band behind a row shows when that civilization, period or faction existed, so the shading starts where it begins. Soft edges mean its start or end is uncertain.',
+      text:
+        'The shaded band behind a row shows when that civilization, period or faction existed, so the shading starts where it begins. Soft edges mean its start or end is uncertain.' +
+        (data.tracks.some((t) => t.phases?.length) ? ' A row’s phases (its governments, dynasties or eras) sit in a thin strip along its top.' : '') +
+        (data.tracks.some((t) => (Array.isArray(t.span) ? t.span : t.span ? [t.span] : []).some((s) => s.ongoing) || t.phases?.some((p) => p.ongoing))
+          ? ' An arrow at the end means it is still going.'
+          : ''),
     },
     // the toolbar, left to right
     {

@@ -1,6 +1,6 @@
 import type { Track } from '../types.ts';
 import { compareEvents, effectiveEnd, isSpan } from '../lib/years.ts';
-import type { ResolvedEvent, ResolvedPhase } from '../lib/chronology.ts';
+import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
 import { childrenMap } from '../lib/tracks.ts';
 
@@ -267,38 +267,240 @@ export interface PlacedPhase extends ResolvedPhase {
    */
   nameFrom: number;
   nameTo: number;
+  /**
+   * Set on a membership (Track.memberOf) laid out as one more strip line: the row it was a membership in. Its `name`
+   * is the strip's text ("in Soviet Union, 1922–91").
+   */
+  member?: string;
 }
 
 /**
- * A row's own phases, each on the first name line it fits. A folded row shows only its own: gathering its sub-rows'
- * phases onto it mixed unrelated periods (every civilization's dynasties on one strip).
- * Overlap is judged on the best dates, not the uncertainty windows: periods whose uncertain edges merely touch
- * (Egypt's Old Kingdom and First Intermediate Period) share a line; only periods that overlap outright (rival
+ * Dated parts of a row (phases, or memberships), each on the first strip line it fits, counting lines from
+ * `fromLevel`. Overlap is judged on the best dates, not the uncertainty windows: periods whose uncertain edges merely
+ * touch (Egypt's Old Kingdom and First Intermediate Period) share a line; only periods that overlap outright (rival
  * governments) take the next one.
  */
-export function placePhases(trackId: string, phases: Map<string, ResolvedPhase[]>): PlacedPhase[] {
-  const all = (phases.get(trackId) ?? []).map((p) => ({ ...p, trackId }));
+export function placeOnLines<T extends ResolvedPhase>(trackId: string, list: T[], fromLevel = 0): (T & PlacedPhase)[] {
+  const all = list.map((p) => ({ ...p, trackId }));
   all.sort((a, b) => a.start - b.start);
   const lineEnds: number[] = [];
   const lastOnLine: PlacedPhase[] = [];
   return all.map((p) => {
-    let level = lineEnds.findIndex((end) => end <= p.start);
-    if (level < 0) level = lineEnds.length;
-    lineEnds[level] = p.end;
-    const placed: PlacedPhase = {
+    let line = lineEnds.findIndex((end) => end <= p.start);
+    if (line < 0) line = lineEnds.length;
+    lineEnds[line] = p.end;
+    const placed: T & PlacedPhase = {
       ...p,
-      level,
+      level: fromLevel + line,
       nameFrom: Math.min(p.start, p.startWindow?.[0] ?? p.start),
       nameTo: Math.max(p.end, p.endWindow?.[1] ?? p.end) + 1,
     };
     // the band before on this line reaches into this one (through its uncertain end, or by ending in the year this
     // one starts): split the name strip at this phase's start
-    const prev = lastOnLine[level];
+    const prev = lastOnLine[line];
     if (prev && prev.nameTo > placed.nameFrom) {
       prev.nameTo = Math.max(prev.nameFrom, p.start);
       placed.nameFrom = Math.max(placed.nameFrom, p.start);
     }
-    lastOnLine[level] = placed;
+    lastOnLine[line] = placed;
     return placed;
   });
+}
+
+/**
+ * A row's own phases, each on the first name line it fits (see placeOnLines). A folded row shows only its own:
+ * gathering its sub-rows' phases onto it mixed unrelated periods (every civilization's dynasties on one strip).
+ */
+export function placePhases(trackId: string, phases: Map<string, ResolvedPhase[]>): PlacedPhase[] {
+  return placeOnLines(trackId, phases.get(trackId) ?? []);
+}
+
+/**
+ * A row's memberships in other rows (Track.memberOf) as strip lines after its phases' lines: `fromLevel` is the
+ * number of phase lines. Each is named by `label` (the union's name and years); memberships that overlap (a row in
+ * two unions at once) take a line each, as rival phases do.
+ */
+export function placeMemberships<M extends ResolvedSpan & { row: string }>(
+  trackId: string,
+  memberships: M[],
+  fromLevel: number,
+  label: (m: M) => string,
+): PlacedPhase[] {
+  return placeOnLines(
+    trackId,
+    memberships.map((m) => ({ ...m, name: label(m), member: m.row })),
+    fromLevel,
+  );
+}
+
+/**
+ * Phase strips: each line of a row's phases (see placePhases) is a thin strip at the top of the lane, under the
+ * lifespan's edge. A strip line is tall enough for names when at least one of its phases gets a name at this zoom;
+ * otherwise it is drawn thin (zoomed out, the row loses no height to names it can't show). The lines stack in level
+ * order; a row's memberships (placeMemberships) stack after its phases' lines the same way.
+ */
+export const STRIP_DEFAULTS = {
+  /** A strip line with names: 2 px of space above, then a 14 px strip. */
+  namedPx: 16,
+  /** A strip line without names (zoomed out): 2 px of space, then a 6 px strip. */
+  thinPx: 8,
+  /** The narrowest room for a name inside its phase (about five capitals, plus padding). */
+  minNamePx: 70,
+  /** Estimated width of one character of a phase name (10.5 px bold capitals), and the name's padding. */
+  charPx: 7,
+  namePadPx: 14,
+  /** The pointer beside a name placed outside its phase. */
+  pointerPx: 12,
+  /** Space between two names on a line. */
+  gapPx: 4,
+};
+
+export interface StripLine {
+  /** From the top of the lane, px. */
+  top: number;
+  height: number;
+  /** Whether names are shown on this line (else it is drawn thin). */
+  named: boolean;
+}
+
+export interface PhaseCell {
+  phase: PlacedPhase;
+  /** Its strip line. */
+  line: StripLine;
+  /** Every other phase on a line takes the stronger shade, so neighbours read apart. */
+  alt: boolean;
+  /** The drawn extent, content px: uncertain edges included, cut where the next phase on its line begins. */
+  x0: number;
+  x1: number;
+  /** px faded in and out at each end (uncertain dates). */
+  fadeIn: number;
+  fadeOut: number;
+  /** Where the phase begins (best date), content px. */
+  startX: number;
+  /**
+   * Where it ends (best date), content px; null when the next phase on the line begins there (its start line marks
+   * the change) or when it is still going (drawn as an open, arrowed end instead).
+   */
+  endX: number | null;
+  /**
+   * Where its name goes, content px. Inside: the name sticks within this stretch while scrolling. Outside: a phase
+   * too short for its name gets it in the blank strip just after its end (or else just before its start), pointing
+   * at it; never over another phase, and never over years where the row didn't exist (outside its lifespan).
+   * Null: no name at this zoom (the cell's tooltip still names it).
+   */
+  name: { x0: number; x1: number; outside: false | 'after' | 'before' } | null;
+}
+
+export interface PhaseStrips {
+  cells: PhaseCell[];
+  lines: StripLine[];
+  /** Total height of the lines, px: the room at the top of the lane. */
+  height: number;
+}
+
+/** Estimated width of a phase name drawn in the strip. */
+export function stripNameWidth(name: string, o = STRIP_DEFAULTS): number {
+  return name.length * o.charPx + o.namePadPx;
+}
+
+/**
+ * Lays a row's placed phases out as strip lines at a zoom (x maps a year to content px). `lifespan` is the row's
+ * lifespan stretches as drawn (a folded row's merged one): a name placed beside its phase stays within the stretch
+ * the phase lies in, so it never sits over years where the row didn't exist. Left out, names aren't bounded by it.
+ */
+export function layoutPhaseStrips(
+  placed: PlacedPhase[],
+  x: (year: number) => number,
+  opts: Partial<typeof STRIP_DEFAULTS> = {},
+  lifespan?: readonly ResolvedSpan[],
+): PhaseStrips {
+  const o = { ...STRIP_DEFAULTS, ...opts };
+  /** The drawn extent (uncertain ends included), content px, of the lifespan stretch a phase lies in. */
+  const within = (p: PlacedPhase): [number, number] | null => {
+    if (!lifespan) return [-Infinity, Infinity];
+    const s = lifespan.find((s) => Math.min(s.start, s.startWindow?.[0] ?? s.start) <= p.end && Math.max(s.end, s.endWindow?.[1] ?? s.end) >= p.start);
+    return s ? [x(Math.min(s.start, s.startWindow?.[0] ?? s.start)), x(Math.max(s.end, s.endWindow?.[1] ?? s.end) + 1)] : null;
+  };
+  const levels = placed.length ? Math.max(...placed.map((p) => p.level)) + 1 : 0;
+  const byLine: PlacedPhase[][] = Array.from({ length: levels }, () => []);
+  for (const p of placed) byLine[p.level].push(p);
+  const names = new Map<PlacedPhase, PhaseCell['name']>();
+  for (const line of byLine) {
+    line.sort((a, b) => a.start - b.start);
+    // names inside their phases, where at least a few letters fit (each in its own stretch: see placePhases), from
+    // the line that marks the phase's start, so the line never runs through its name
+    for (const p of line) {
+      const from = x(Math.max(p.nameFrom, p.start));
+      if (x(p.nameTo) - from >= o.minNamePx) names.set(p, { x0: from, x1: x(p.nameTo), outside: false });
+    }
+    // a line with no room for names stays thin; on a line with names, a phase too short for its own gets it in the
+    // blank strip beside it, pointing at it: after its end, else before its start (never over another phase or name,
+    // which would read as that phase's name). A membership's line is mostly blank strip, so a short membership gets
+    // its name beside it even when no name fits inside (the line is thin only when there's no room for any).
+    if (!line.some((p) => names.get(p) || p.member !== undefined)) continue;
+    const boxes = () => line.flatMap((q) => [[x(q.start), x(q.end + 1)], ...(names.get(q) ? [[names.get(q)!.x0, names.get(q)!.x1]] : [])]);
+    const free = (x0: number, x1: number) => boxes().every(([b0, b1]) => b1 <= x0 || b0 >= x1);
+    line.forEach((p, i) => {
+      if (names.get(p)) return;
+      const room = within(p);
+      if (!room) return;
+      const want = stripNameWidth(p.name, o) + o.pointerPx;
+      const enough = Math.min(o.minNamePx, want);
+      const end = x(p.end + 1);
+      const next = line[i + 1];
+      const afterTo = Math.min(end + want, next ? x(next.start) - o.gapPx : Infinity, room[1]);
+      if (afterTo - end >= enough && free(end, afterTo)) {
+        names.set(p, { x0: end, x1: afterTo, outside: 'after' });
+        return;
+      }
+      const start = x(p.start);
+      const prev = line[i - 1];
+      const beforeFrom = Math.max(start - want, prev ? x(prev.end + 1) + o.gapPx : -Infinity, room[0]);
+      if (start - beforeFrom >= enough && free(beforeFrom, start)) names.set(p, { x0: beforeFrom, x1: start, outside: 'before' });
+    });
+  }
+  const lines: StripLine[] = [];
+  let top = 0;
+  for (const line of byLine) {
+    const named = line.some((p) => names.get(p));
+    const height = named ? o.namedPx : o.thinPx;
+    lines.push({ top, height, named });
+    top += height;
+  }
+  const cells: PhaseCell[] = [];
+  for (const line of byLine)
+    line.forEach((p, i) => {
+      const next = line[i + 1];
+      const prev = line[i - 1];
+      let x0 = x(Math.min(p.start, p.startWindow?.[0] ?? p.start));
+      let x1 = x(Math.max(p.end, p.endWindow?.[1] ?? p.end) + 1);
+      const startX = x(p.start);
+      let fadeIn = p.startWindow ? x(p.startWindow[1]) - x0 : 0;
+      let fadeOut = p.endWindow ? x1 - x(p.endWindow[0] + 1) : 0;
+      // where two phases' bands on a line run into each other (an uncertain end or start, or a shared boundary
+      // year), they meet at the later one's start, as their names do; a change is then drawn once, by its start line
+      const abuts = !!next && next.start <= p.end + 1;
+      if (next && x(next.start) < x1) {
+        x1 = Math.max(x(next.start), startX);
+        fadeOut = p.endWindow ? Math.min(fadeOut, x1 - x(p.endWindow[0] + 1)) : 0;
+      }
+      if (prev && x0 < startX && x(Math.max(prev.end, prev.endWindow?.[1] ?? prev.end) + 1) > x0) {
+        x0 = startX;
+        fadeIn = 0;
+      }
+      cells.push({
+        phase: p,
+        line: lines[p.level],
+        alt: i % 2 === 1,
+        x0,
+        x1,
+        fadeIn: Math.max(0, fadeIn),
+        fadeOut: Math.max(0, fadeOut),
+        startX,
+        endX: p.ongoing || abuts ? null : Math.min(x(p.end + 1), x1),
+        name: names.get(p) ?? null,
+      });
+    });
+  cells.sort((a, b) => a.phase.start - b.phase.start || a.phase.level - b.phase.level);
+  return { cells, lines, height: top };
 }

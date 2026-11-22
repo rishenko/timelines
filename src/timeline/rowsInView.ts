@@ -26,7 +26,7 @@ function extent(s: { start: number; end: number; startWindow?: [number, number];
 export function activeLanes(
   lanes: LaneDef[],
   events: ResolvedEvent[],
-  spans: Map<string, ResolvedSpan>,
+  spans: Map<string, ResolvedSpan[]>,
   phases: Map<string, ResolvedPhase[]>,
   present: number,
   w: YearWindow,
@@ -36,7 +36,7 @@ export function activeLanes(
     const [a, b] = extent({ ...e, end: effectiveEnd(e, present) });
     if (overlaps(a, b, w)) for (const t of e.tracks) activeRows.add(t);
   }
-  for (const [id, s] of spans) if (overlaps(...extent(s), w)) activeRows.add(id);
+  for (const [id, list] of spans) if (list.some((s) => overlaps(...extent(s), w))) activeRows.add(id);
   for (const [id, list] of phases) if (list.some((p) => overlaps(...extent(p), w))) activeRows.add(id);
   return new Set(lanes.filter((l) => l.members.some((m) => activeRows.has(m))).map((l) => l.id));
 }

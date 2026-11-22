@@ -1,6 +1,10 @@
 import { LINK_KINDS, type DateClaim, type Dataset, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronology } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
+import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
+import { datasetPresent } from '../lib/years.ts';
+import { formatYear } from '../lib/calendar.ts';
+import { bestLifespan, withinLifespan } from '../lib/memberOf.ts';
 
 // v1 data has a few hand-typed ids that are not strict hex UUIDs; they are live deep links, so accept any URL-safe id.
 export const ID_RE = /^[A-Za-z0-9-]+$/;
@@ -156,15 +160,63 @@ export function validateDataset(d: unknown): string[] {
   }
   if (errors.length) return errors;
 
-  const checkSpan = (label: string, s: TrackSpan, chron: string | undefined) => {
-    if (!Number.isInteger(s.start) || !Number.isInteger(s.end)) errors.push(`${label} needs integer start and end.`);
-    else if (s.end < s.start) errors.push(`${label} ends before it starts.`);
+  /** A lifespan stretch or a phase: a start, and an end or `ongoing` (not both). Returns whether its years are usable. */
+  const checkSpan = (label: string, s: TrackSpan, chron: string | undefined): boolean => {
+    if (!s || typeof s !== 'object') {
+      errors.push(`${label} must be an object with a start and an end.`);
+      return false;
+    }
+    let ok = true;
+    if (s.ongoing !== undefined && s.ongoing !== true) errors.push(`${label}: ongoing must be true or left out.`);
+    if (!Number.isInteger(s.start)) {
+      errors.push(`${label} needs an integer start.`);
+      ok = false;
+    }
+    if (s.ongoingSources !== undefined) {
+      if (!s.ongoing) errors.push(`${label} has ongoingSources but isn't ongoing: cite its end in endDates instead.`);
+      if (!Array.isArray(s.ongoingSources)) errors.push(`${label}: ongoingSources must be a list.`);
+      else
+        for (const r of s.ongoingSources) {
+          if (!ds.sources[r?.sourceKey]) errors.push(`${label}: ongoingSources cites unknown source "${r?.sourceKey}".`);
+          else if (typeof r.sourceLocation !== 'string') errors.push(`${label}: an ongoingSources entry needs a sourceLocation (may be "").`);
+        }
+    }
+    if (s.ongoing) {
+      if (s.end !== undefined) errors.push(`${label} has both an end and ongoing: use one.`);
+      if (s.endDates) errors.push(`${label} is ongoing, so it can't have end date claims.`);
+    } else if (!Number.isInteger(s.end)) {
+      errors.push(`${label} needs an integer end (or ongoing: true).`);
+      ok = false;
+    } else if (ok && s.end! < s.start) {
+      errors.push(`${label} ends before it starts.`);
+      ok = false;
+    }
     checkClaims(`${label} start`, s.start, s.startDates, chron);
-    checkClaims(`${label} end`, s.end, s.endDates, chron);
+    if (!s.ongoing && s.end !== undefined) checkClaims(`${label} end`, s.end, s.endDates, chron);
+    return ok;
   };
+  const present = datasetPresent(ds);
+  const yr = (y: number) => (m.calendar ? formatYear(y, m.calendar) : String(y));
   for (const t of ds.tracks) {
     const chron = trackChronology(ds.tracks, t.id);
-    if (t.span) checkSpan(`Track "${t.id}" lifespan`, t.span, chron);
+    // the lifespan: one stretch, or a list of stretches in date order that don't overlap
+    let stretches: TrackSpan[] | undefined;
+    if (t.span !== undefined) {
+      const list = spanStretches(t.span);
+      const many = Array.isArray(t.span);
+      if (!list.length) errors.push(`Track "${t.id}" lifespan is an empty list: leave it out instead.`);
+      const ok = list.map((s, i) => checkSpan(`Track "${t.id}" lifespan${many ? ` stretch ${i + 1}` : ''}`, s, chron));
+      if (ok.every(Boolean)) {
+        stretches = list;
+        list.forEach((s, i) => {
+          if (i === 0) return;
+          const prev = list[i - 1];
+          if (prev.ongoing) errors.push(`Track "${t.id}" lifespan stretch ${i} is ongoing, so it must be the last.`);
+          else if (s.start <= prev.end!)
+            errors.push(`Track "${t.id}" lifespan stretch ${i + 1} starts (${yr(s.start)}) before stretch ${i} ends (${yr(prev.end!)}): list stretches in date order, with a gap between them.`);
+        });
+      }
+    }
     if (t.phases === undefined) continue;
     if (!Array.isArray(t.phases)) {
       errors.push(`Track "${t.id}" phases must be a list.`);
@@ -172,7 +224,49 @@ export function validateDataset(d: unknown): string[] {
     }
     t.phases.forEach((p, i) => {
       if (!p.name) errors.push(`Track "${t.id}" phase ${i + 1} has no name.`);
-      checkSpan(`Track "${t.id}" phase "${p.name || i + 1}"`, p, chron);
+      const label = `Track "${t.id}" phase "${p.name || i + 1}"`;
+      if (!checkSpan(label, p, chron) || !stretches) return;
+      // a typed lifespan says when the row existed, so it must cover every phase (best estimates)
+      const end = stretchEnd(p, present);
+      if (!stretches.some((s) => s.start <= p.start && stretchEnd(s, present) >= end))
+        errors.push(
+          `Track "${t.id}" lifespan doesn't contain its phase "${p.name || i + 1}" (${yr(p.start)} – ${p.ongoing ? 'ongoing' : yr(end)}). A typed lifespan must cover all of the row's phases; leave it out to have it worked out from them.`,
+        );
+    });
+  }
+
+  // dated memberships: the row a row belonged to for a stretch of years (a republic in a union)
+  const isDescendant = (id: string, of: string): boolean => {
+    for (let p = byId.get(id)?.parent; p !== undefined; p = byId.get(p)?.parent) if (p === of) return true;
+    return false;
+  };
+  for (const t of ds.tracks) {
+    if (t.memberOf === undefined) continue;
+    if (!Array.isArray(t.memberOf)) {
+      errors.push(`Track "${t.id}" memberOf must be a list.`);
+      continue;
+    }
+    t.memberOf.forEach((ms, i) => {
+      const union = byId.get(ms?.row);
+      const label = `Track "${t.id}" membership ${i + 1}${union ? ` (in "${ms.row}")` : ''}`;
+      if (!ms || typeof ms !== 'object') {
+        errors.push(`${label} must be an object with a row, a start and an end.`);
+        return;
+      }
+      if (!union) errors.push(`${label} names unknown row "${String(ms.row)}".`);
+      else if (ms.row === t.id) errors.push(`${label} names the row itself.`);
+      else if (isDescendant(ms.row, t.id)) errors.push(`${label} names "${ms.row}", which sits under it: a row can't belong to its own sub-row.`);
+      if (!Array.isArray(ms.sources) || !ms.sources.length) errors.push(`${label} cites no source.`);
+      else
+        for (const r of ms.sources) {
+          if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
+          else if (typeof r.sourceLocation !== 'string') errors.push(`${label}: a source needs a sourceLocation (may be "").`);
+        }
+      if (!checkSpan(label, ms, trackChronology(ds.tracks, t.id)) || !union || ms.row === t.id) return;
+      // within both rows' lifespans (best estimates): a member can't belong before it or the union existed
+      const years = `${yr(ms.start)} – ${ms.ongoing ? 'ongoing' : yr(ms.end!)}`;
+      if (!withinLifespan(ms, bestLifespan(t, present), present)) errors.push(`${label} (${years}) lies outside the lifespan of "${t.id}".`);
+      if (!withinLifespan(ms, bestLifespan(union, present), present)) errors.push(`${label} (${years}) lies outside the lifespan of "${ms.row}".`);
     });
   }
 
@@ -209,6 +303,40 @@ export function validateDataset(d: unknown): string[] {
       if (e.end !== undefined) checkClaims(`${label} end`, e.end, e.endDates, chron);
       else if (e.endDates) errors.push(`${label} has end date claims but no end.`);
     }
+  }
+
+  // succession: the events that began and ended lifespan stretches and phases
+  const eventsById = new Map(ds.events.map((e) => [e.uuid, e]));
+  for (const t of ds.tracks) {
+    const stretches = spanStretches(t.span);
+    const parts = [
+      ...stretches.map((s, i) => ({ s, label: `Track "${t.id}" lifespan${stretches.length > 1 ? ` stretch ${i + 1}` : ''}` })),
+      ...(Array.isArray(t.phases) ? t.phases : []).map((p, i) => ({ s: p, label: `Track "${t.id}" phase "${p.name || i + 1}"` })),
+      ...(Array.isArray(t.memberOf) ? t.memberOf : []).flatMap((m, i) => (m && typeof m === 'object' ? [{ s: m, label: `Track "${t.id}" membership ${i + 1} (in "${m.row}")` }] : [])),
+    ];
+    for (const { s, label } of parts)
+      for (const side of ['start', 'end'] as const) {
+        const id = side === 'start' ? s.startEvent : s.endEvent;
+        if (id === undefined) continue;
+        const field = `${side}Event`;
+        const e = typeof id === 'string' ? eventsById.get(id) : undefined;
+        if (!e) {
+          errors.push(`${label} ${field} names unknown event "${String(id)}".`);
+          continue;
+        }
+        if (side === 'end' && s.ongoing) {
+          errors.push(`${label} is ongoing, so it has no end for an endEvent.`);
+          continue;
+        }
+        const y = side === 'start' ? s.start : s.end;
+        if (!Number.isInteger(y) || !Number.isInteger(e.start)) continue;
+        const from = e.start;
+        const to = e.ongoing ? present : (e.end ?? e.start);
+        if (y! < from - GAP_TOLERANCE || y! > to + GAP_TOLERANCE)
+          errors.push(
+            `${label} ${side === 'start' ? 'starts' : 'ends'} in ${yr(y!)}, but its ${field} "${e.title}" is dated ${yr(from)}${to !== from ? ` – ${yr(to)}` : ''}: the event must fall within a year of the edge it begins or ends.`,
+          );
+      }
   }
 
   for (const e of ds.events) {

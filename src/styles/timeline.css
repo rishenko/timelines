@@ -293,20 +293,22 @@
   z-index: 0;
 }
 .tl-lane.collapsed .tl-span {
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 8%, transparent);
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, transparent);
 }
-/* phases (Track.phases): named periods on a row's own bar, e.g. successive governments */
+/* phases (Track.phases): named periods on a row, each in a strip at the top of the row (TimelineView's
+   layoutPhaseStrips), one strip line per level, under the lifespan's top edge. Only the lifespan colours the row's
+   background; a phase is a cell in its strip, with a line where it begins and another where it ends. Display only. */
 .tl-phase {
+  --strip-line: color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
   position: absolute;
-  top: 0;
-  bottom: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 .tl-phase-fill {
   position: absolute;
-  inset: 0;
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 7%, transparent);
+  inset: 2px 0 0;
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 22%, transparent);
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, transparent);
   mask-image: linear-gradient(
     to right,
     transparent 0,
@@ -314,27 +316,93 @@
     #000 calc(100% - var(--fade-out, 0px)),
     transparent 100%
   );
+  pointer-events: auto; /* its tooltip names the phase; clicks still reach the row (TimelineView's isEmptySpot) */
 }
 .tl-phase.alt .tl-phase-fill {
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 16%, transparent);
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 40%, transparent);
 }
+/* a membership in another row (Track.memberOf), on its own strip line after the phases: in the union's colour (set as
+   --track-color), a faint cell with a dashed underline instead of a filled one, so it never reads as a phase of the
+   row; begins and ends with the same lines as a phase. Its name is in ordinary type, not capitals. */
+.tl-phase.member .tl-phase-fill {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, transparent);
+  box-shadow: none;
+  border-bottom: 2px dashed var(--strip-line);
+}
+.tl-phase.member .tl-phase-name {
+  font-size: 11px;
+  line-height: 12px; /* clear of the dashed underline */
+  vertical-align: top;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+}
+/* a membership's name keeps its years when it doesn't fit: the union's name is cut short instead */
+.tl-phase.member .tl-phase-name,
+.tl-phase.member .tl-phase-names.outside .tl-phase-name {
+  display: inline-flex;
+  align-items: center;
+}
+.tl-phase.member .tl-phase-name .union {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tl-phase.member .tl-phase-name .years {
+  flex: none;
+  white-space: pre;
+}
+/* where a phase begins and ends: a 2 px line the height of its strip, in a colour that stands out 3:1 from the row */
 .tl-phase-edge {
   position: absolute;
-  top: 0;
+  top: 2px;
   bottom: 0;
-  width: 0;
-  border-left: 2px solid color-mix(in srgb, var(--track-ink, var(--track-color)) 70%, transparent);
+  width: 2px;
+  background: var(--strip-line);
 }
-/* a phase name's own stretch of its band (PlacedPhase.nameFrom/nameTo): the name sticks inside it */
+.tl-phase-edge.end {
+  margin-left: -2px;
+}
+/* still going: the strip (or a lifespan's top edge) ends in an arrow, kept at the right of the view while the end
+   is off screen */
+.tl-ongoing-run {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+.tl-ongoing {
+  position: sticky;
+  right: 0;
+  flex: none;
+  width: 9px;
+  margin-top: 2px;
+  background: var(--strip-line);
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 0 calc(100% - 2px), calc(100% - 3.5px) 50%, 0 2px);
+}
+.tl-phase .tl-ongoing {
+  width: 10px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.tl-span .tl-ongoing.span-cue {
+  --strip-line: color-mix(in srgb, var(--track-ink, var(--track-color)) 45%, var(--text));
+  align-self: flex-start;
+  height: 10px;
+  margin-top: -2px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+/* a phase name's own stretch of the strip (PhaseCell.name): the name sticks inside it */
 .tl-phase-names {
   position: absolute;
-  top: 0;
+  top: 2px;
   bottom: 0;
 }
 .tl-phase-name {
   position: sticky;
   display: inline-block;
-  padding: 1px 6px 0 7px;
+  padding: 0 6px 0 7px;
   font-size: 10.5px;
   line-height: 14px;
   font-weight: 600;
@@ -343,9 +411,40 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 25%, var(--text));
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 20%, var(--text));
   pointer-events: auto;
   cursor: default;
+}
+/* a phase too short for its name has it in the blank strip beside it, with a pointer at the phase */
+.tl-phase-names.outside .tl-phase-name {
+  position: static;
+  max-width: 100%;
+  padding: 0 3px;
+}
+.tl-phase-names.outside.before {
+  text-align: right;
+}
+.tl-phase-names.outside .tl-phase-name::before,
+.tl-phase-names.outside .tl-phase-name::after {
+  display: inline-block;
+  width: 6px;
+  height: 8px;
+  vertical-align: -0.5px;
+  background: var(--strip-line);
+}
+.tl-phase-names.outside.after .tl-phase-name::before {
+  content: '';
+  margin-right: 4px;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+.tl-phase-names.outside.before .tl-phase-name::after {
+  content: '';
+  margin-left: 4px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+/* its name runs over the phases after it on the line, so it is drawn above them */
+.tl-phase.has-outside {
+  z-index: 2;
 }
 .tl-lane-label {
   position: sticky;

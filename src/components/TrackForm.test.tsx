@@ -64,6 +64,61 @@ describe('TrackForm phases', () => {
   });
 });
 
+describe('TrackForm lifespans', () => {
+  it('shows a lifespan worked out from the phases, and saves no span for it', async () => {
+    const onSave = open(quay);
+    const text = (re: RegExp) => screen.getByText((_, el) => el?.tagName === 'P' && re.test(el.textContent ?? ''));
+    // its end is uncertain (two claims), so both ends read "c."
+    expect(text(/^Worked out from its phases: c\. 40 BL – c\. 260 L$/)).toBeTruthy();
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0].span).toBeUndefined();
+  });
+
+  it('saves an ongoing phase and lifespan without an end', async () => {
+    const onSave = open({ id: 'x', name: 'X', color: '#123456' });
+    fireEvent.change(screen.getByLabelText('Lifespan start'), { target: { value: '10 L' } });
+    fireEvent.click(screen.getByLabelText('Still going (runs to the present)'));
+    fireEvent.click(screen.getByText('+ Add a phase'));
+    fireEvent.change(screen.getByLabelText('Phase name'), { target: { value: 'Now' } });
+    fireEvent.change(screen.getByLabelText('Phase start'), { target: { value: '12 L' } });
+    fireEvent.click(screen.getByLabelText('Still going'));
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0].span).toEqual({ start: 10, ongoing: true });
+    expect(onSave.mock.calls[0][0].phases).toEqual([{ name: 'Now', start: 12, ongoing: true }]);
+  });
+
+  it('keeps the sources saying a phase or lifespan is still going, and shows them', async () => {
+    const cite = [{ sourceKey: 'ledger', sourceLocation: 'p. 40' }];
+    const onSave = open({ id: 'x', name: 'X', color: '#123456', span: { start: 10, ongoing: true, ongoingSources: cite }, phases: [{ name: 'Now', start: 12, ongoing: true, ongoingSources: cite }] });
+    expect(screen.getAllByText('Still going per The Harbor Ledger (p. 40) (kept; edit in the file)')).toHaveLength(2);
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0].span).toEqual({ start: 10, ongoing: true, ongoingSources: cite });
+    expect(onSave.mock.calls[0][0].phases).toEqual([{ name: 'Now', start: 12, ongoing: true, ongoingSources: cite }]);
+  });
+
+  it('drops them when the phase gets an end', async () => {
+    const cite = [{ sourceKey: 'ledger', sourceLocation: 'p. 40' }];
+    const onSave = open({ id: 'x', name: 'X', color: '#123456', phases: [{ name: 'Now', start: 12, ongoing: true, ongoingSources: cite }] });
+    fireEvent.click(screen.getByLabelText('Still going'));
+    fireEvent.change(screen.getByLabelText('Phase end'), { target: { value: '20 L' } });
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0].phases).toEqual([{ name: 'Now', start: 12, end: 20 }]);
+  });
+
+  it('edits the first stretch of a lifespan with gaps and keeps the others', async () => {
+    const onSave = open({ id: 'x', name: 'X', color: '#123456', span: [{ start: 0, end: 10 }, { start: 20, ongoing: true }] });
+    expect(screen.getByText((_, el) => el?.tagName === 'P' && /Later stretches, kept as they are.*: 20 L – ongoing$/.test(el.textContent ?? ''))).toBeTruthy();
+    fireEvent.change(screen.getByLabelText('Lifespan end'), { target: { value: '12 L' } });
+    fireEvent.click(screen.getByText('Save track'));
+    await waitFor(() => expect(onSave).toHaveBeenCalled());
+    expect(onSave.mock.calls[0][0].span).toEqual([{ start: 0, end: 12 }, { start: 20, ongoing: true }]);
+  });
+});
+
 describe('TrackForm accessibility', () => {
   it('ties an error to its field and moves focus there', async () => {
     open({ id: 'x', name: 'X', color: '#123456' });
