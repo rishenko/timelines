@@ -83,10 +83,24 @@ export function trackChronology(tracks: Track[], id: string): string | undefined
   return trackPath(id, trackIndex(tracks)).findLast((t) => t.chronology)?.chronology;
 }
 
-export function eventChronology(ds: Dataset, e: TimelineEvent): string | undefined {
+/**
+ * `trackChronology` for many tracks of one list: indexes the list once, so a caller that asks for every track (or
+ * every event's tracks) does linear work, not tracks × tracks. Build it where the list is fixed; it doesn't see later
+ * changes to the list.
+ */
+export function trackChronologies(tracks: Track[]): (id: string) => string | undefined {
+  const byId = trackIndex(tracks);
+  const memo = new Map<string, string | undefined>();
+  return (id) => {
+    if (!memo.has(id)) memo.set(id, trackPath(id, byId).findLast((t) => t.chronology)?.chronology);
+    return memo.get(id);
+  };
+}
+
+export function eventChronology(ds: Dataset, e: TimelineEvent, chronologyOf?: (id: string) => string | undefined): string | undefined {
   if (e.chronology) return e.chronology;
   for (const t of e.tracks) {
-    const c = trackChronology(ds.tracks, t);
+    const c = chronologyOf ? chronologyOf(t) : trackChronology(ds.tracks, t);
     if (c) return c;
   }
   return undefined;
@@ -170,8 +184,9 @@ function resolveDate(
 /** Events with dates re-plotted under the selected chronologies, and their error windows attached. */
 export function resolveEvents(ds: Dataset, selection: ChronologySelection): ResolvedEvent[] {
   if (!ds.chronologies && !ds.events.some((e) => e.circa || e.startDates || e.endDates)) return ds.events;
+  const chronologyOf = trackChronologies(ds.tracks);
   return ds.events.map((e) => {
-    const chron = eventChronology(ds, e);
+    const chron = eventChronology(ds, e, chronologyOf);
     const s = resolveDate(ds, e.start, e.startDates, chron, selection, !!e.circa);
     const out: ResolvedEvent = { ...e, start: s.year };
     if (s.window) out.startWindow = s.window;
