@@ -21,7 +21,7 @@ Few public timeline tools go this far. The main gaps are in trust, citation and 
 
 The data is compiled with AI assistance from Wikipedia, and scholars will judge it on that before anything else.
 
-1. **About this data page (S).** A reader-facing page with the method: Wikipedia-only sourcing, books cited
+1. **About this data page (S), done 23 November 2026** (`?page=about`, from the footer; it shows the data version). A reader-facing page with the method: the sources and what each supplies, books cited
    "via Wikipedia (not checked)", margins derived from claims, the LLM-banner rule, AI-assisted compilation, known
    gaps and the chronology table. Today this is only in `docs/`, which readers never see, and in a two-line footer.
 2. **Review status per event and row (M).** A field such as `review: unchecked | checked-against-source |

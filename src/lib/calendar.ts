@@ -102,6 +102,31 @@ export function formatEditDate(y: number, month: number | undefined, day: number
   return `${circa ? 'c. ' : ''}${month ? `${day ? `${day} ` : ''}${MONTH_NAMES[month - 1]} ` : ''}${when}`;
 }
 
+/**
+ * Deep time: a length as an editor shows it, every digit kept: "24 kyr", "0.5 Myr" is "500 kyr", "1.25 Gyr", and
+ * under 10,000 years the years ("9,600 yrs"). `parseSpan` reads it back exactly.
+ */
+export function formatEditSpan(yrs: number): string {
+  if (!Number.isInteger(yrs) || yrs < 1e4) return `${yrs.toLocaleString('en')} ${yrs === 1 ? 'yr' : 'yrs'}`;
+  if (yrs >= 1e9) return `${exactDec(yrs, 9)} Gyr`;
+  if (yrs >= 1e6) return `${exactDec(yrs, 6)} Myr`;
+  return `${exactDec(yrs, 3)} kyr`;
+}
+
+const SPAN_POW: Record<string, number> = { ga: 9, gyr: 9, ma: 6, myr: 6, ka: 3, kyr: 3 };
+
+/**
+ * A length of time: "24 kyr", "0.5 Myr", "500 ka", "1.25 Gyr", "9,600 yrs", "9600 years", or a bare number of years
+ * ("24000"). Whole years, read exactly by digits. Null if it can't be read.
+ */
+export function parseSpan(input: string): number | null {
+  const m = /^\s*(\d[\d,]*(?:\.\d+)?)\s*(ga|gyr|ma|myr|ka|kyr|yrs?|years?)?\s*$/i.exec(input);
+  if (!m) return null;
+  const u = m[2]?.toLowerCase();
+  const pow = u && SPAN_POW[u] !== undefined ? SPAN_POW[u] : 0;
+  return scaledInt(m[1], pow);
+}
+
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /**
@@ -126,7 +151,8 @@ export function parseDate(input: string, cal: Calendar): { year: number; circa: 
 const AGO_POW: Record<string, number> = { ga: 9, ma: 6, ka: 3 };
 
 /**
- * Deep time (`calendar.beforePresent` only): reads what `formatAgo` writes, and a margin. "4.567 Ga", "66 Ma",
+ * Deep time (`calendar.beforePresent` only): reads what `formatAgo` writes, and a margin ("66 Ma ± 500 ka"; a ± beside
+ * a date with its own unit needs its own unit too, since "66 Ma ± 500" could mean 500 Ma). "4.567 Ga", "66 Ma",
  * "11.7 ka BP", "c. 2.6 Ma", "9,600 years BP", "9,600 years ago", "present", "50 years after present", and
  * "251.902 ± 0.024 Ma" (or "+/-"; the margin in the same unit). Exact by digits, rounded to a whole stored year. Null for
  * anything else, or on a calendar without `beforePresent`.
@@ -136,11 +162,14 @@ export function parseAgo(input: string, cal: Calendar): { year: number; circa: b
   if (!bp) return null;
   const num = String.raw`(\d[\d,]*(?:\.\d+)?)`;
   const c = String.raw`^\s*(c\.?|ca\.?|circa)?\s*`;
-  const unit = new RegExp(`${c}${num}\\s*(?:(?:±|\\+/-)\\s*${num}\\s*)?(ga|ma|ka)(?:\\s*bp)?\\s*$`, 'i').exec(input);
-  if (unit) {
-    const pow = AGO_POW[unit[4].toLowerCase()];
-    const out: { year: number; circa: boolean; margin?: number } = { year: bp.present - scaledInt(unit[2], pow), circa: !!unit[1] };
-    if (unit[3] !== undefined) out.margin = scaledInt(unit[3], pow);
+  // "66 Ma", "251.902 ± 0.024 Ma" (one unit for both), "66 Ma ± 500 ka" (each its own); "BP" after either unit
+  const u = String.raw`(ga|ma|ka)(?:\s*bp)?`;
+  const unit = new RegExp(`${c}${num}\\s*(?:${u})?\\s*(?:(?:±|\\+/-)\\s*${num}\\s*(?:${u})?)?\\s*$`, 'i').exec(input);
+  // a date with its own unit and a ± with none ("66 Ma ± 500") is ambiguous (500 Ma?), so it isn't read
+  if (unit && (unit[3] || unit[5]) && !(unit[3] && unit[4] !== undefined && !unit[5])) {
+    const datePow = AGO_POW[(unit[3] ?? unit[5]).toLowerCase()];
+    const out: { year: number; circa: boolean; margin?: number } = { year: bp.present - scaledInt(unit[2], datePow), circa: !!unit[1] };
+    if (unit[4] !== undefined) out.margin = scaledInt(unit[4], AGO_POW[(unit[5] ?? unit[3]).toLowerCase()]);
     return out;
   }
   const years = new RegExp(`${c}${num}\\s*years?\\s+(bp|ago|after\\s+present)\\s*$`, 'i').exec(input);
