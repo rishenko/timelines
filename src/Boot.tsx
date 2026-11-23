@@ -17,6 +17,7 @@ import { parseUpload } from './state/dataset.ts';
 import { goToTimeline } from './state/url.ts';
 import { applyTheme, loadTheme, rememberThemeHint } from './lib/theme.ts';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
+import { About } from './components/About.tsx';
 
 type Phase =
   | { kind: 'loading' }
@@ -53,7 +54,10 @@ export function Boot({
   navigate?: (url: string) => void;
 }) {
   const [phase, setPhase] = useState<Phase>({ kind: 'loading' });
+  /** ?page=about is the About this data page: no timeline loads behind it. */
+  const about = new URLSearchParams(window.location.search).get('page') === 'about';
   useEffect(() => {
+    if (about) return;
     let cancelled = false;
     openPage(fetchImpl, navigate).then(
       (p) => !cancelled && setPhase(p),
@@ -62,8 +66,9 @@ export function Boot({
     return () => {
       cancelled = true;
     };
-  }, [fetchImpl, navigate]);
+  }, [fetchImpl, navigate, about]);
 
+  if (about) return <About />;
   if (phase.kind === 'ready')
     return <App published={phase.published} library={phase.library} site={phase.site} notice={phase.notice} />;
   if (phase.kind === 'welcome') return <Welcome site={phase.site} fetchImpl={fetchImpl} />;
@@ -192,7 +197,7 @@ function Welcome({ site, fetchImpl }: { site: TimelineIndexEntry[]; fetchImpl: t
       <p>
         This site has no timelines of its own yet. Open one from a link (a timeline file or a list of them), or add a timeline file from your computer. See{' '}
         <a href="https://github.com/rishenko/timelines/blob/main/docs/data-format.md">the timeline format</a> to make your
-        own.
+        own. <a href="?page=about">About this data</a>.
       </p>
       <TimelinesPanel
         timelines={[]}

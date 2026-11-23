@@ -1,0 +1,35 @@
+/* About this data (components/About.tsx): a plain reading page in the theme's colours. */
+.about {
+  /* main is a flex row in the app shell (app-shell.css); this page is one column */
+  display: block;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+}
+.about h1 {
+  margin: 0.5rem 0 0.75rem;
+}
+.about h2 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.15rem;
+}
+.about .lead {
+  font-size: 1.05rem;
+}
+.about ul {
+  padding-left: 1.25rem;
+}
+.about li {
+  margin: 0.5rem 0;
+}
+
+/* the footer's link to it (components/Credits.tsx): a 24 px target at the footer's end */
+.legal-about {
+  margin-left: auto;
+  padding: 4px 6px;
+  white-space: nowrap;
+  color: var(--link);
+}
