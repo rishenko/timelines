@@ -170,5 +170,25 @@ class Noise(unittest.TestCase):
         self.assertEqual(one('476', year_hint=True)['start'], (476, None, None))
 
 
+
+class Wraps(unittest.TestCase):
+    def test_awrap(self):  # Henry II of France: reign = 31 March 1547 – {{awrap|10 July 1559}}
+        from dates import spans
+        self.assertEqual(spans('31 March 1547 – {{awrap|10 July 1559}}')[0]['end'], (1559, 7, 10))
+
+    def test_break_after_dash_and_wraps(self):  # Joanna of Castile, Charles IV of Spain, Alfonso XIII
+        self.assertEqual(spans('26 November 1504 – <br/> 12 April 1555')[0]['end'], (1555, 4, 12))
+        self.assertEqual(spans('14 December 1788 – {{avoid wrap| 19 March 1808}}')[0]['end'], (1808, 3, 19))
+        s = spans('{{start and end date|1886|05|17|1931|04|14|df=y}}')[0]
+        self.assertEqual((s['start'], s['end']), ((1886, 5, 17), (1931, 4, 14)))
+
+    def test_old_style_day_in_parentheses(self):  # Peter II of Russia
+        s = spans('17 (6) May 1727 &ndash; 30 (19) January 1730')
+        self.assertEqual((s[0]['start'], s[0]['end'], s[0]['old_style'], len(s)), ((1727, 5, 17), (1730, 1, 30), True, 1))
+
+    def test_gregorian_to_julian_template(self):  # Alexis of Russia
+        s = spans('{{Gregorian to Julian|23 July 1645}} – {{Gregorian to Julian|8 February 1676}}')
+        self.assertEqual((s[0]['start'], s[0]['end'], s[0]['old_style']), ((1645, 7, 23), (1676, 2, 8), True))
+
 if __name__ == '__main__':
     unittest.main()

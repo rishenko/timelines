@@ -9,7 +9,8 @@ Date normaliser for the extractor: turns the wikitext of an infobox field, a tab
   "1914–18", "44–42 BC"; the left side takes the missing month, year or era from the right.
 - Alternatives ("11 November 1918/13 November 1918", "1453 or 1454") go to `alts` beside the end (or start) they follow.
 - Templates: {{Start date|1914|7|28}}, {{End date}}, {{Start and end dates|y|m|d|y|m|d}}, {{OldStyleDate|…}}, {{circa}}.
-- Old Style: "O.S.", "Old Style", "Julian", {{OldStyleDate}} set `old_style`; dates are kept as written, never converted.
+- Old Style: "O.S.", "Old Style", "Julian", {{OldStyleDate}}, {{Gregorian to Julian}} and "17 (6) May" set `old_style`;
+  dates are kept as written, never converted.
   A bracketed Old Style twin ("[O.S. 23 February]") is dropped and only flags the span.
 - year_hint: the field holds years (year_start, year_end): a bare 1–4 digit number is a year.
 """
@@ -18,6 +19,8 @@ import re
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 MONTH = {m: i + 1 for i, m in enumerate(MONTHS)} | {m[:3]: i + 1 for i, m in enumerate(MONTHS)} | {'sept': 9}
 
+# "17 (6) May 1727" (Peter II of Russia): the New Style day with its Old Style twin in parentheses
+_OS_DAY = re.compile(r'\b(\d{1,2})\s*\((\d{1,2})\)(?=\s+[A-Z][a-z]+)')
 _OS = re.compile(r'\bO\.\s?S\.|\bOld Style\b|\bJulian\b|\{\{\s*OldStyleDate', re.I)
 
 
@@ -26,6 +29,7 @@ def clean(raw):
     s = raw
     s = re.sub(r'<!--.*?-->', '', s, flags=re.S)
     s = re.sub(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>', '', s, flags=re.S | re.I)
+    s = re.sub(r'([–—-]|&ndash;)\s*<br\s*/?>', r'\1 ', s, flags=re.I)  # a break right after a dash continues the range (Joanna of Castile)
     s = re.sub(r'<br\s*/?>', ' ; ', s, flags=re.I)
     s = re.sub(r'<[^>]+>', '', s)
     s = s.replace('&nbsp;', ' ').replace('&ndash;', '–').replace('&mdash;', '—').replace('&minus;', '−')
@@ -66,13 +70,16 @@ def _templates(s):
         if n in ('start date', 'end date', 'start date and age', 'end date and age', 'birth date', 'death date', 'dts',
                  'start-date', 'end-date', 'date') and nums:
             return _fmt(*nums[:3])
-        if n == 'start and end dates' and nums:
+        if n in ('start and end dates', 'start and end date') and nums:
             a, b = nums[:3], nums[3:6]
             return _fmt(*a) + (' – ' + _fmt(*b) if b else '')
         if n == 'oldstyledate' and parts:
             # {{OldStyleDate|8 March|1917|23 February}}: the New Style date as written, flagged Old Style
             return f'{parts[0]} {parts[1] if len(parts) > 1 else ""} (O.S.)'
-        if n in ('nowrap', 'nobr', 'small', 'abbr', 'lang') and parts:
+        if n in ('gregorian to julian', 'julian to gregorian') and parts:
+            # {{Gregorian to Julian|23 July 1645}} (Alexis of Russia): the date as written, which shows both styles
+            return f'{parts[0]} (O.S.)'
+        if n in ('nowrap', 'nobr', 'awrap', 'avoid wrap', 'small', 'abbr', 'lang') and parts:
             return parts[-1] if n == 'lang' else parts[0]
         return ' '
     prev = None
@@ -231,7 +238,8 @@ def _ok(a, year_hint):
 
 def spans(raw, year_hint=False):
     text = QUANTITY.sub(' # ', clean(raw))
-    old_style = bool(_OS.search(raw) or _OS.search(text))
+    old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
+    text = _OS_DAY.sub(r'\1', text)
     toks = [t for t in _tokens(text) if t[0] != 'os']
     out, i = [], 0
     while i < len(toks):
