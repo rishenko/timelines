@@ -61,6 +61,22 @@
           ]
         }
       }
+    },
+    {
+      "id": "earth-life",
+      "title": "Earth and Life",
+      "file": "earth-life.json",
+      "subtitle": "Deep time: the geological eons, eras and periods, and the Phanerozoic extinctions",
+      "eventCount": 6,
+      "calendar": {
+        "before": "BP",
+        "after": "AP",
+        "yearZero": true,
+        "beforePresent": {
+          "present": 1950,
+          "circaShare": 0.01
+        }
+      }
     }
   ]
 }
