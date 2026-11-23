@@ -1,17 +1,19 @@
 // The sample view plugin (docs/plugins.md): events per century as bars, and the events of a picked century as a list.
 // A plain ES module with no build step and no imports: it gets an element and a snapshot, and answers through
 // ctx.select / ctx.showOnTimeline. It inherits the page's theme through CSS variables (--text, --muted, --accent…).
-// The bars can be narrower than a 24 px target, so the century list beside them (a <select>) does the same job at
-// full size (WCAG 2.5.8's "equivalent" exception).
+// Each bar is a 24 px-wide target the height of the chart (its visible bar is drawn inside it); the row of bars scrolls
+// sideways on its own when the view is narrow (a chart: WCAG 1.4.10's two-dimensional exception), and the century list
+// beside them (a <select>) does the same job without scrolling.
 
 const css = `
 .cv { padding: 16px 20px; color: var(--text); font: 14px/1.4 system-ui, sans-serif; overflow: auto; box-sizing: border-box; }
 .cv h2 { margin: 0 0 4px; font-size: 16px; }
 .cv .muted { color: var(--muted); }
-.cv .bars { display: flex; align-items: flex-end; gap: 2px; height: 220px; margin: 16px 0 4px; border-bottom: 1px solid var(--line-2, #666); }
-.cv .bar { flex: 1 1 0; min-width: 6px; background: color-mix(in srgb, var(--accent, #c80) 55%, transparent); border: 0; padding: 0; cursor: pointer; border-radius: 2px 2px 0 0; }
-.cv .bar:hover, .cv .bar[aria-pressed="true"] { background: var(--accent, #c80); }
-.cv .bar:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.cv .bars { display: flex; align-items: stretch; gap: 2px; height: 220px; margin: 16px 0 4px; border-bottom: 1px solid var(--line-2, #666); overflow-x: auto; }
+.cv .bar { position: relative; flex: 0 0 24px; min-width: 24px; background: none; border: 0; padding: 0; cursor: pointer; }
+.cv .bar::after { content: ''; position: absolute; left: 3px; right: 3px; bottom: 0; height: var(--h, 0); background: color-mix(in srgb, var(--accent, #c80) 55%, transparent); border-radius: 2px 2px 0 0; }
+.cv .bar:hover::after, .cv .bar[aria-pressed="true"]::after { background: var(--accent, #c80); }
+.cv .bar:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .cv .axis { display: flex; justify-content: space-between; font-size: 12px; }
 .cv ul { list-style: none; padding: 0; margin: 12px 0 0; columns: 2 320px; }
 .cv li { break-inside: avoid; margin: 0 0 4px; }
@@ -73,7 +75,7 @@ export default {
         const b = document.createElement('button');
         b.className = 'bar';
         b.dataset.key = `bar${c}`;
-        b.style.height = `${Math.max(n ? 3 : 0, (n / max) * 100)}%`;
+        b.style.setProperty('--h', `${Math.max(n ? 3 : 0, (n / max) * 100)}%`);
         const label = `${range(c)}: ${n} event${n === 1 ? '' : 's'}`;
         b.title = label;
         b.setAttribute('aria-label', label);
