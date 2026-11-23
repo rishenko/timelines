@@ -4,7 +4,7 @@ import type { PlacedAge } from '../lib/eras.ts';
 import { at0, at1 } from '../lib/subYear.ts';
 import { hostOf, safeUrl } from '../lib/urls.ts';
 import { citationsInWords, spanInWords } from '../lib/table.ts';
-import type { Scale } from './scale.ts';
+import type { Scale, Segment } from './scale.ts';
 
 /** One line of the strip: a 24 px target (WCAG 2.5.8) around a 15 px bar. */
 export const AGE_LINE_PX = 24;
@@ -29,6 +29,8 @@ interface Props {
   /** The age whose details are open (drawn selected), and opening an age's details in the side panel. */
   selectedId?: string | null;
   onOpen?: (id: string) => void;
+  /** Shortened gaps: their hatched band runs through the strip as it does through the rows (Kevin, 2026-11-23). */
+  gaps?: Segment[];
 }
 
 /**
@@ -37,7 +39,7 @@ interface Props {
  * it. An age with a page (`url`) has a ↗ link to it just before its name, when its bar has room for both (two 24 px
  * targets); otherwise the Ages table links it. It stays on screen as the chart scrolls down, like the ruler.
  */
-export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, selectedId, onOpen }: Props) {
+export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, selectedId, onOpen, gaps }: Props) {
   if (!ages.length) return null;
   return (
     <div className="tl-ages" style={{ width, height: lines * AGE_LINE_PX }} role="group" aria-label="Ages">
@@ -45,6 +47,14 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
         Ages
       </div>
       <AgeBars ages={ages} scale={scale} labelW={labelW} viewLeft={viewLeft} cal={cal} sources={sources} selectedId={selectedId} onOpen={onOpen} />
+      {/* over the ages' bars (so a bar crossing a gap shows the break), under the sticky corner; clicks pass through */}
+      {!!gaps?.length && (
+        <div className="tl-gaps tl-ages-gaps" style={{ left: labelW }} aria-hidden="true">
+          {gaps.map((g) => (
+            <div key={g.y0} className="tl-gap-band" style={{ left: g.x0, width: g.x1 - g.x0 }} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -2,6 +2,8 @@
 //
 // In the source file, any year may be written for people instead of as a stored integer:
 //   "start": "c. 2334 BCE", "end": "2154 BCE", "year": "1651 BCE", "until": "1400 BCE"
+// On a deep-time calendar (`calendar.beforePresent`) they may be written "4.567 Ga", "66 Ma", "11.7 ka BP", and a date
+// claim's year may carry its margin: "251.902 ± 0.024 Ma" (the claim's `margin` is then 24,000 years).
 // They are converted with the timeline's own calendar (so "1450 BCE" becomes -1449, because BCE/CE has no
 // year 0). A "c." on an event's, lifespan stretch's, phase's or context span's start sets `circa`. Integers pass through unchanged. The result
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
@@ -19,21 +21,31 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
   const cal = raw.meta.calendar;
   const problems: string[] = [];
 
-  const year = (v: unknown, where: string): { year: number; month?: number; day?: number; circa: boolean } => {
+  // `allowMargin`: only a date claim may give a ± ("251.902 ± 0.024 Ma"); it becomes the claim's `margin`
+  const year = (v: unknown, where: string, allowMargin = false): { year: number; month?: number; day?: number; circa: boolean; margin?: number } => {
     if (typeof v === 'number') return { year: v, circa: false };
     const d = typeof v === 'string' ? parseFullDate(v, cal) : null;
     if (!d) {
       problems.push(`${where}: can't read the year ${JSON.stringify(v)}`);
       return { year: 0, circa: false };
     }
+    if (d.margin !== undefined && !allowMargin) problems.push(`${where}: a ± belongs in a date claim (startDates/endDates), not here: ${JSON.stringify(v)}`);
     return d;
   };
 
   const claims = (list: unknown, where: string) =>
     Array.isArray(list)
       ? list.map((c: Obj, i) => {
-          const d = year(c.year, `${where}[${i}]`);
-          return { ...c, year: d.year, ...(d.month ? { month: d.month } : {}), ...(d.day ? { day: d.day } : {}) };
+          const d = year(c.year, `${where}[${i}]`, true);
+          if (d.margin !== undefined && c.margin !== undefined && c.margin !== d.margin)
+            problems.push(`${where}[${i}]: the year's ± (${d.margin}) and margin (${String(c.margin)}) disagree`);
+          return {
+            ...c,
+            year: d.year,
+            ...(d.month ? { month: d.month } : {}),
+            ...(d.day ? { day: d.day } : {}),
+            ...(d.margin !== undefined && c.margin === undefined ? { margin: d.margin } : {}),
+          };
         })
       : list;
 

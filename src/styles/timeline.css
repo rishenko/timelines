@@ -947,6 +947,10 @@
   background: var(--bg-2);
   border-bottom: 1px solid var(--line-2);
 }
+/* the shortened gaps' band through the strip: over the ages' bars, under the sticky corner (z-index 1) */
+.tl-ages-gaps {
+  z-index: 0;
+}
 .tl-ages-corner {
   position: sticky;
   left: 0;
