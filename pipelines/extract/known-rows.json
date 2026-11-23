@@ -1,0 +1,160 @@
+{
+  "note": "Rows whose reigns must come out right after any rulers rerun (known_rows.py). include: persons that must be on the row; exclude: persons that must not be; titles: every title on the row starts with one of these; min/max: reign count. A trap is a row that once got another polity's rulers (Filipe de Brito, Governor of Syriam, on Syria).",
+  "known_issues": [
+    {
+      "timeline": "modern-states",
+      "row": "dominican-republic",
+      "exclude": [
+        "Alexandre Pétion"
+      ],
+      "why": "Haiti's president 1807-1818, before Haitian rule of Santo Domingo; placed by an 'office: President of Haiti' route that the from-another-row rule does not catch yet"
+    },
+    {
+      "timeline": "modern-states",
+      "row": "united-states",
+      "exclude": [
+        "Alexander Andreyevich Baranov"
+      ],
+      "why": "manager of Russian America (Alaska) before the purchase, not a head of the United States"
+    }
+  ],
+  "rows": [
+    {
+      "timeline": "modern-states",
+      "row": "united-states",
+      "min": 57,
+      "include": [
+        "George Washington",
+        "Abraham Lincoln",
+        "Joe Biden"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "papal-states",
+      "min": 54,
+      "include": [
+        "Pope Alexander VI",
+        "Pope Pius III"
+      ],
+      "titles": [
+        "Pontificate of"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "syria",
+      "min": 30,
+      "include": [
+        "Faisal I",
+        "Hafez al-Assad",
+        "Bashar al-Assad"
+      ],
+      "exclude": [
+        "Filipe de Brito e Nicote"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "germany",
+      "min": 20,
+      "include": [
+        "Wilhelm I"
+      ],
+      "titles": [
+        "Reign of",
+        "Presidency of",
+        "Acting presidency of",
+        "Tenure of",
+        "Regency of"
+      ],
+      "exclude_title_words": [
+        "Bundesrat"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "niger",
+      "include": [
+        "Hamani Diori",
+        "Seyni Kountché"
+      ],
+      "exclude": [
+        "Nnamdi Azikiwe",
+        "Muhammadu Buhari"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "nigeria",
+      "include": [
+        "Nnamdi Azikiwe"
+      ],
+      "exclude": [
+        "Hamani Diori",
+        "Mamadou Tandja"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "sudan",
+      "exclude": [
+        "Salva Kiir"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "south-sudan",
+      "include": [
+        "Salva Kiir"
+      ],
+      "exclude": [
+        "Omar al-Bashir"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "france",
+      "min": 50,
+      "include": [
+        "Napoleon",
+        "Louis XIV"
+      ]
+    },
+    {
+      "timeline": "ancient-classical",
+      "row": "rome-republic-empire",
+      "min": 110,
+      "include": [
+        "Augustus",
+        "Nero",
+        "Hadrian"
+      ]
+    },
+    {
+      "timeline": "ancient-classical",
+      "row": "assyria",
+      "min": 55,
+      "include": [
+        "Sennacherib",
+        "Ashurnasirpal II"
+      ]
+    },
+    {
+      "timeline": "medieval",
+      "row": "bulgaria",
+      "include": [
+        "Boris I of Bulgaria",
+        "Ivan Vladislav of Bulgaria"
+      ]
+    },
+    {
+      "timeline": "medieval",
+      "row": "spain",
+      "min": 50,
+      "include": [
+        "Ferdinand III of Castile"
+      ]
+    }
+  ]
+}

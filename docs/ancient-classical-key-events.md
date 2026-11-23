@@ -196,7 +196,7 @@ Totals: 267 key, 1068 normal, 341 minor (1676 events).
 - Reign of Volusianus (c. 251 CE–253 CE) `reign-volusianus-rome-republic-empire`
 - Reign of Aemilianus (c. 253 CE) `reign-aemilianus-rome-republic-empire`
 - Reign of Valerian (emperor) (253 CE–260 CE) `reign-valerian-emperor-rome-republic-empire`
-- Reign of Valerian II (256 CE–258 CE) `reign-valerian-ii-rome-republic-empire`
+- Tenure of Valerian II (256 CE–258 CE) `reign-valerian-ii-rome-republic-empire`
 - Reign of Saloninus (258 CE–260 CE) `reign-saloninus-rome-republic-empire`
 - Reign of Macrianus Major (259 CE–261 CE) `reign-macrianus-major-rome-republic-empire`
 - Reign of Claudius Gothicus (268 CE–270 CE) `reign-claudius-gothicus-rome-republic-empire`
@@ -262,7 +262,7 @@ Totals: 267 key, 1068 normal, 341 minor (1676 events).
 - Reign of Leontius (usurper) (484 CE–488 CE) `reign-leontius-usurper-eastern-roman`
 - Reign of Justin I (518 CE–527 CE) `reign-justin-i-eastern-roman`
 - Reign of Euphemia (empress) (518 CE–524 CE) `reign-euphemia-empress-eastern-roman`
-- Reign of Theodora (wife of Justinian I) (527 CE–548 CE) `reign-theodora-wife-of-justinian-i-eastern-roman`
+- Tenure of Theodora (wife of Justinian I) (527 CE–548 CE) `reign-theodora-wife-of-justinian-i-eastern-roman`
 - Reign of Sophia (empress) (565 CE–578 CE) `reign-sophia-empress-eastern-roman`
 - Reign of Justin II (565 CE–578 CE) `reign-justin-ii-eastern-roman`
 - Reign of Tiberius II Constantine (574 CE–578 CE) `reign-tiberius-ii-constantine-eastern-roman`
@@ -271,7 +271,7 @@ Totals: 267 key, 1068 normal, 341 minor (1676 events).
 - Reign of Theodosius (son of Maurice) (590 CE–602 CE) `reign-theodosius-son-of-maurice-eastern-roman`
 - Reign of Fabia Eudokia (610 CE–612 CE) `reign-fabia-eudokia-eastern-roman`
 - Reign of Martina (empress) (613 CE–641 CE) `reign-martina-empress-eastern-roman`
-- Reign of Martinus (son of Heraclius) (c. 639 CE–641 CE) `reign-martinus-son-of-heraclius-eastern-roman`
+- Tenure of Martinus (son of Heraclius) (c. 639 CE–641 CE) `reign-martinus-son-of-heraclius-eastern-roman`
 - Reign of Gregoria (641 CE) `reign-gregoria-eastern-roman`
 - Reign of Heraclius Constantine (641 CE) `reign-heraclius-constantine-eastern-roman`
 - Reign of David (son of Heraclius) (641 CE) `reign-david-son-of-heraclius-eastern-roman`
@@ -497,7 +497,7 @@ Totals: 267 key, 1068 normal, 341 minor (1676 events).
 - Reign of Diodotus Tryphon (142 BCE–138 BCE) `reign-diodotus-tryphon-seleucid`
 - Reign of Antiochus VII Sidetes (138 BCE–129 BCE) `reign-antiochus-vii-sidetes-seleucid`
 - Reign of Alexander II Zabinas (128 BCE–123 BCE) `reign-alexander-ii-zabinas-seleucid`
-- Reign of Seleucus V Philometor (126 BCE–125 BCE) `reign-seleucus-v-philometor-seleucid`
+- Regency of Seleucus V Philometor (126 BCE–125 BCE) `reign-seleucus-v-philometor-seleucid`
 - Reign of Cleopatra IV (114 BCE–112 BCE) `reign-cleopatra-iv-seleucid`
 - Reign of Demetrius III Eucaerus (96 BCE–87 BCE) `reign-demetrius-iii-eucaerus-seleucid`
 - Reign of Seleucus VI Epiphanes (96 BCE–94 BCE) `reign-seleucus-vi-epiphanes-seleucid`
@@ -632,8 +632,8 @@ Totals: 267 key, 1068 normal, 341 minor (1676 events).
 - Kot Diji phase (c. 2800 BCE–2600 BCE) `kot-diji`
 - Mehrgarh abandoned (c. 2500 BCE) `mehrgarh-abandoned`
 - Indus seal impression at Susa (c. 2400 BCE–2100 BCE) `indus-seal-susa`
-- Reign of Devavarman (Maurya) (195 BCE) `reign-devavarman-maurya-maurya`
-- Reign of Shatadhanvan (187 BCE) `reign-shatadhanvan-maurya`
+- Reign of Devavarman (Maurya) (c. 202 BCE–195 BCE) `reign-devavarman-maurya-maurya`
+- Reign of Shatadhanvan (c. 195 BCE–187 BCE) `reign-shatadhanvan-maurya`
 - Reign of Lanja Tissa (119 BCE–109 BCE) `reign-lanja-tissa-anuradhapura`
 - Reign of Khallata Naga (109 BCE–103 BCE) `reign-khallata-naga-anuradhapura`
 - Naneghat inscription of Satakarni I (70 BCE–60 BCE) `naneghat`

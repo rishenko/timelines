@@ -38,6 +38,50 @@ NAME_SKIP = {'the', 'of', 'king', 'queen', 'emperor', 'empress', 'sultan', 'shah
 
 REIGN_WORDS = re.compile(r'\b(reign|reigns|rule|rules|ruled|presidency|pontificate|regency|term|tenure)\b')
 
+NON_HEAD = re.compile(r'\b(bundesrat|senate|chamber|house of|parliament|assembly|congress|supreme court|constitutional court|'
+                      r'reichstag|landtag|ministry|kgb|navy|command|pioneer|mayor|vice|deputy|speaker|committee|senator|commissar)\b'
+                      r'|^(full )?member\b|^list\b', re.I)
+MONARCH = re.compile(r'\b(king|queen|emperor|empress|sultan|sultana|khan|khagan|qaghan|shah|shahanshah|tsar|czar|emir|caliph|'
+                     r'prince|princess|duke|archduke|doge|basileus|mansa|sapa inca|tlatoani|imam|lord|count|raja|rajah|maharaja|'
+                     r'pharaoh|negus|sovereign|monarch|ruler|voivode|hetman|grand master|chief|bey|dey|sheikh|sharif|nawab|nizam|'
+                     r'zamindar|shogun|shōgun|tairō|kampaku|sessho|daimyo|despot|exarch|mikado|tenno|datu|sultanate|margrave|landgrave|elector|doge|stadtholder|khedive|mwami|'
+                     r'susuhunan|tayiji|hakim|wali|wāli|ao o le malo|mehtar|rana|peshwa|protector)\b', re.I)
+ACTING = re.compile(r'^(acting|interim|provisional)\b|\(acting\)', re.I)
+
+
+def office_noun(office):
+    """The word for a term, from the office's class: "Presidency", "Pontificate", "Regency", "Reign"; None when the
+    office is none of those (listed for review). An acting or interim holder gets "Acting …"."""
+    if not office:
+        return 'Reign', False
+    o = office.lower()
+    if re.search(r'\bpresident|presidium|presidency', o):
+        noun = 'Presidency'
+    elif re.search(r'\b(pope|bishop of rome|pontiff)\b', o):
+        noun = 'Pontificate'
+    elif re.search(r'\bregent\b|\bregency\b', o):
+        noun = 'Regency'
+    elif MONARCH.search(o):
+        noun = 'Reign'
+    else:
+        return 'Tenure', True
+    return ('Acting ' + noun.lower() if ACTING.search(office) else noun), False
+
+
+def partial_name_match(office, row_name):
+    """True when a row word is in the office label only inside another word ("Syria" in "Governor of Syriam"); a
+    plural or adjective ending (Vandal/Vandals, Latvia/Latvian) is the same word."""
+    ws = [w for w in re.findall(r'[^\W\d_]{3,}', row_name.lower()) if w not in RU.GENERIC]
+    o = office.lower()
+    hit = False
+    for w in ws:
+        if re.search(r'\b' + re.escape(w) + r'(s|n|ns|ic|ian)?\b', o):
+            return False
+        if w in o:
+            hit = True
+    return hit
+
+
 
 def flag(name, default=None):
     return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
@@ -93,6 +137,8 @@ def main():
         for t in e['tracks']:
             by_row.setdefault(t, []).append(e)
 
+    nouns, swapped = Counter(), []
+    names = {t['id']: t['name'] for t in ds['tracks']}
     keep, review, dropped, matched, skipped = [], {}, Counter(), set(), {}
     for r in placed:
         ev = ev_by[r['uuid']]
@@ -109,7 +155,40 @@ def main():
             ev.update(RU.date_fields('end', last))
             yrs = last[0] - first[0]
             ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(first)} to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
+        if r['office'] and NON_HEAD.search(r['office']):
+            dropped['office is not head of state'] += 1
+            skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
+                                   'cited': r['cited'] or r['person'], 'toCheck': ['not imported, office is not head of state: ' + r['office']]}
+            continue
+        if r['office'] and 'list:' not in r['route'] and partial_name_match(r['office'], names[r['row']]):
+            dropped['row matched by part of a word'] += 1
+            skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
+                                   'cited': r['cited'] or r['person'], 'toCheck': ['not imported, row matched by part of a word: ' + r['office']]}
+            continue
         # read the quote again, for what the bulk run left out (review of #113): "c.", a BC end year, century-only dates
+        pair = [x for x in RU.dates.spans(r['quote'])]
+        bare = re.fullmatch(r'\s*(c\.?|ca\.?)?\s*(\d{1,4})\s*[| ]\s*(\d{1,4})\s*(BCE|BC|CE|AD|A\.D\.)?\s*', r['quote'])
+        if bare and len(pair) < 2:
+            # two bare years ("1816 1828", "c. 320|297 BCE"): the parser keeps only the second
+            sign = -1 if (bare.group(4) or '').startswith('BC') else 1
+            pair = [{'start': (sign * int(bare.group(2)), None, None), 'circa': bool(bare.group(1))},
+                    {'start': (sign * int(bare.group(3)), None, None), 'circa': False}]
+        if (ev.get('end') is None and len(pair) == 2 and not re.search(r'[–—-]|\bto\b|\buntil\b', RU.dates.clean(r['quote']))
+                and pair[1]['start'][0] == RU.hist(ev['start'])):
+            # "1816 1828" or "c. 320|297 BCE" (a template's two parameters): the pair is start and end, and the bulk run
+            # took the second date as a start without an end (Shaka, Chandragupta Maurya, Elizabeth II on 6 realms)
+            a0, b0 = pair[0]['start'], pair[1]['start']
+            if a0[0] > 0 and b0[0] < 0 and a0[0] >= -b0[0]:
+                a0 = (-a0[0],) + tuple(a0[1:])  # the era is on the second date only
+            if RU.days(a0) < RU.days(b0):
+                ev = {k: v for k, v in ev.items() if not k.startswith(('start', 'end'))}
+                ev.update(RU.date_fields('start', a0))
+                ev.update(RU.date_fields('end', b0))
+                yrs = b0[0] - a0[0]
+                ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(a0)} to {RU.fmt(b0)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
+                if pair[0]['circa']:
+                    ev['circa'] = True
+                swapped.append(r['person'])
         sp = [x for x in RU.dates.spans(r['quote']) if x['start'][0] == RU.hist(ev['start'])]
         sp = sp[0] if sp else None
         if sp and sp['precision'] == 'century':
@@ -162,6 +241,11 @@ def main():
         if ev.get('end') is None and not ev.get('ongoing'):
             # no end: the generator counted the years to the end of its window, so the length is not known
             ev = dict(ev, descr=re.sub(r' \(\d+ years\)\.$', '.', ev['descr']))
+        noun, unclear = office_noun(r['office'])
+        ev = dict(ev, title=f"{noun} of {r['person']}")
+        nouns[noun] += 1
+        if unclear:
+            why = why + ['office noun unclear (shown as "Tenure of"): ' + r['office']]
         # stable ids: the person and the row, so a rerun that finds one more reign doesn't renumber the others
         uid = f"reign-{RU.slug(r['person'])}-{r['row']}"
         if uid in review:  # the same person twice on a row (two reigns): the later one also names its start year
@@ -184,7 +268,7 @@ def main():
     json.dump(out, open(path, 'w'), indent=1, ensure_ascii=False)
     open(path, 'a').write('\n')
     print(f"{timeline}: {len(keep)} reigns, {sum(1 for v in review.values() if v['toCheck'])} to check; dropped "
-          f"{dict(dropped)}; pinned matched {len(matched & pinned)} of {len(pinned)}"
+          f"{dict(dropped)}; two-date quotes {len(swapped)}; titles {dict(nouns)}; pinned matched {len(matched & pinned)} of {len(pinned)}"
           + (f" (unmatched: {', '.join(sorted(pinned - matched))})" if pinned - matched else '') + f" -> {path}")
 
 

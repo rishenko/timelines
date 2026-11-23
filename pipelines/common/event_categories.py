@@ -68,7 +68,7 @@ TEXT_RULES = [
     (R(r'\brevolution\b'), 'revolution'),
     (R(r'\b(revolts?|rebellion|uprising|insurrection|mutin\w*|rising|riots?)\b|storming'), 'revolt'),
     (R(r'\bcoups?\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|kills (the )?(last|king|queen|emperor|ruler|sultan|caliph|pharaoh|shah|khan)\b|(?-i:^([A-Z]\S*\s){0,2}[A-Z]\S*) (executed|beheaded|killed|assassinated)\b|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
-    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|elected (\w+ ){0,2}(president|prime minister|king|chancellor|taoiseach|premier|pope|emperor|doge)|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
+    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|tenure of|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|elected (\w+ ){0,2}(president|prime minister|king|chancellor|taoiseach|premier|pope|emperor|doge)|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
     (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector|pharaoh|augustus|shah|tsar|negus|basileus)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
     (R(r'\b(landings?|invasions?|invades?|campaigns?|expeditions?|crusades?|offensives?|interventions?)\b'), 'invasion'),
@@ -147,7 +147,7 @@ STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|k
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
 # a ruler's or office-holder's time in office, at the start of a title
-REIGN = re.compile(r'^(?:the )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
+REIGN = re.compile(r'^(?:the )?(?:(?:acting|interim|provisional) )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
 # a sourced gap in rule, as a span (Kevin, 2026-11-23: its own sub-kind, drawn on the reign line)
 INTERREGNUM = re.compile(r'\binterregnum\b|\btime of troubles\b', re.I)
 REIGN_ANY = re.compile(r"\brules\b|\b(?:first|second|third|fourth) reign\b|\bregency$", re.I)

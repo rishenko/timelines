@@ -30660,17 +30660,13 @@
     {
       "uuid": "reign-hiempsal-i-numidia",
       "title": "Reign of Hiempsal I",
-      "start": -116,
       "tracks": ["numidia"],
-      "descr": "Rules as head of state of Numidia from 117 BCE.",
+      "descr": "Rules as head of state of Numidia from 118 BCE to 117 BCE.",
       "sources": [{ "sourceKey": "wp-hiempsal-i", "sourceLocation": "infobox reign: c. 118|117 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-hiempsal-i", "sourceLocation": "infobox reign: c. 118|117 BCE" }]
-        }
-      ]
+      "start": -117,
+      "end": -116,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-hiempsal-i", "sourceLocation": "infobox reign: c. 118|117 BCE" }] }]
     },
     {
       "uuid": "reign-hiempsal-ii-numidia",
@@ -30691,11 +30687,13 @@
     {
       "uuid": "reign-masteabar-numidia",
       "title": "Reign of Masteabar",
-      "start": -80,
       "tracks": ["numidia"],
-      "descr": "Rules as head of state of Numidia from 81 BCE.",
+      "descr": "Rules as head of state of Numidia from 88 BCE to 81 BCE (7 years).",
       "sources": [{ "sourceKey": "wp-masteabar", "sourceLocation": "infobox reign: c. 88|81 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-masteabar", "sourceLocation": "infobox reign: c. 88|81 BC" }] }]
+      "start": -87,
+      "end": -80,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-masteabar", "sourceLocation": "infobox reign: c. 88|81 BC" }] }]
     },
     {
       "uuid": "reign-hiarbas-king-numidia",
@@ -32221,7 +32219,7 @@
     },
     {
       "uuid": "reign-valerian-ii-rome-republic-empire",
-      "title": "Reign of Valerian II",
+      "title": "Tenure of Valerian II",
       "start": 256,
       "end": 258,
       "tracks": ["rome-republic-empire"],
@@ -33970,7 +33968,7 @@
     },
     {
       "uuid": "reign-theodora-wife-of-justinian-i-eastern-roman",
-      "title": "Reign of Theodora (wife of Justinian I)",
+      "title": "Tenure of Theodora (wife of Justinian I)",
       "start": 527,
       "startMonth": 4,
       "startDay": 1,
@@ -34166,7 +34164,7 @@
     },
     {
       "uuid": "reign-martinus-son-of-heraclius-eastern-roman",
-      "title": "Reign of Martinus (son of Heraclius)",
+      "title": "Tenure of Martinus (son of Heraclius)",
       "start": 639,
       "end": 641,
       "endMonth": 9,
@@ -35109,11 +35107,13 @@
     {
       "uuid": "reign-pekahiah-israel-judah",
       "title": "Reign of Pekahiah",
-      "start": -739,
       "tracks": ["israel-judah"],
-      "descr": "Rules as head of state of Israel and Judah from 740 BCE.",
+      "descr": "Rules as head of state of Israel and Judah from 742 BCE to 740 BCE (2 years).",
       "sources": [{ "sourceKey": "wp-pekahiah", "sourceLocation": "infobox reign: c. 742|740 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-pekahiah", "sourceLocation": "infobox reign: c. 742|740 BC" }] }]
+      "start": -741,
+      "end": -739,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-pekahiah", "sourceLocation": "infobox reign: c. 742|740 BC" }] }]
     },
     {
       "uuid": "reign-jotham-israel-judah",
@@ -35136,11 +35136,13 @@
     {
       "uuid": "reign-pekah-israel-judah",
       "title": "Reign of Pekah",
-      "start": -731,
       "tracks": ["israel-judah"],
-      "descr": "Rules as head of state of Israel and Judah from 732 BCE.",
+      "descr": "Rules as head of state of Israel and Judah from 740 BCE to 732 BCE (8 years).",
       "sources": [{ "sourceKey": "wp-pekah", "sourceLocation": "infobox reign: c. 740|732 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-pekah", "sourceLocation": "infobox reign: c. 740|732 BC" }] }]
+      "start": -739,
+      "end": -731,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-pekah", "sourceLocation": "infobox reign: c. 740|732 BC" }] }]
     },
     {
       "uuid": "reign-ahaz-israel-judah",
@@ -35303,7 +35305,7 @@
     },
     {
       "uuid": "reign-herod-archelaus-judea",
-      "title": "Reign of Herod Archelaus",
+      "title": "Tenure of Herod Archelaus",
       "start": -3,
       "end": 6,
       "tracks": ["judea"],
@@ -36305,7 +36307,7 @@
     },
     {
       "uuid": "reign-s-n-umu-l-ir-assyria",
-      "title": "Reign of Sîn-šumu-līšir",
+      "title": "Tenure of Sîn-šumu-līšir",
       "start": -625,
       "tracks": ["assyria"],
       "descr": "Rules as head of state of Assyria from 626 BCE.",
@@ -37635,7 +37637,7 @@
     },
     {
       "uuid": "reign-seleucus-v-philometor-seleucid",
-      "title": "Reign of Seleucus V Philometor",
+      "title": "Regency of Seleucus V Philometor",
       "start": -125,
       "end": -124,
       "tracks": ["seleucid"],
@@ -38752,7 +38754,7 @@
     },
     {
       "uuid": "reign-modu-chanyu-xiongnu",
-      "title": "Reign of Modu Chanyu",
+      "title": "Tenure of Modu Chanyu",
       "start": -208,
       "end": -173,
       "tracks": ["xiongnu"],
@@ -38894,7 +38896,7 @@
     },
     {
       "uuid": "reign-tanshihuai-xianbei",
-      "title": "Reign of Tanshihuai",
+      "title": "Tenure of Tanshihuai",
       "start": 156,
       "end": 181,
       "tracks": ["xianbei"],
@@ -38931,7 +38933,7 @@
     },
     {
       "uuid": "reign-ist-mi-first-turkic",
-      "title": "Reign of Istämi",
+      "title": "Tenure of Istämi",
       "start": 552,
       "end": 575,
       "tracks": ["first-turkic"],
@@ -39048,7 +39050,7 @@
     },
     {
       "uuid": "reign-octar-huns",
-      "title": "Reign of Octar",
+      "title": "Tenure of Octar",
       "start": 420,
       "end": 430,
       "tracks": ["huns"],
@@ -39070,7 +39072,7 @@
     },
     {
       "uuid": "reign-bleda-huns",
-      "title": "Reign of Bleda",
+      "title": "Tenure of Bleda",
       "start": 434,
       "end": 445,
       "tracks": ["huns"],
@@ -39117,32 +39119,24 @@
     {
       "uuid": "reign-shishunaga-magadha",
       "title": "Reign of Shishunaga",
-      "start": -394,
       "tracks": ["magadha"],
-      "descr": "Rules as head of state of Magadha from 395 BCE.",
+      "descr": "Rules as head of state of Magadha from 413 BCE to 395 BCE (18 years).",
       "sources": [{ "sourceKey": "wp-shishunaga", "sourceLocation": "infobox reign: c. 413|395 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-shishunaga", "sourceLocation": "infobox reign: c. 413|395 BCE" }]
-        }
-      ]
+      "start": -412,
+      "end": -394,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-shishunaga", "sourceLocation": "infobox reign: c. 413|395 BCE" }] }]
     },
     {
       "uuid": "reign-kalashoka-magadha",
       "title": "Reign of Kalashoka",
-      "start": -366,
       "tracks": ["magadha"],
-      "descr": "Rules as head of state of Magadha from 367 BCE.",
+      "descr": "Rules as head of state of Magadha from 395 BCE to 367 BCE (28 years).",
       "sources": [{ "sourceKey": "wp-kalashoka", "sourceLocation": "infobox reign: c. 395|367 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-kalashoka", "sourceLocation": "infobox reign: c. 395|367 BCE" }]
-        }
-      ]
+      "start": -394,
+      "end": -366,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-kalashoka", "sourceLocation": "infobox reign: c. 395|367 BCE" }] }]
     },
     {
       "uuid": "reign-mahanandin-magadha",
@@ -39169,44 +39163,38 @@
     {
       "uuid": "reign-bindusara-magadha",
       "title": "Reign of Bindusara",
-      "start": -272,
       "tracks": ["magadha"],
-      "descr": "Rules as head of state of Magadha from 273 BCE.",
+      "descr": "Rules as head of state of Magadha from 297 BCE to 273 BCE (24 years).",
       "sources": [{ "sourceKey": "wp-bindusara", "sourceLocation": "infobox reign: c. 297|273 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-bindusara", "sourceLocation": "infobox reign: c. 297|273 BCE" }]
-        }
-      ]
+      "start": -296,
+      "end": -272,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bindusara", "sourceLocation": "infobox reign: c. 297|273 BCE" }] }]
     },
     {
       "uuid": "reign-shalishuka-magadha",
       "title": "Reign of Shalishuka",
-      "start": -201,
       "tracks": ["magadha"],
-      "descr": "Rules as head of state of Magadha from 202 BCE.",
+      "descr": "Rules as head of state of Magadha from 215 BCE to 202 BCE (13 years).",
       "sources": [{ "sourceKey": "wp-shalishuka", "sourceLocation": "infobox reign: c. 215|202 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-shalishuka", "sourceLocation": "infobox reign: c. 215|202 BCE" }]
-        }
-      ]
+      "start": -214,
+      "end": -201,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-shalishuka", "sourceLocation": "infobox reign: c. 215|202 BCE" }] }]
     },
     {
       "uuid": "reign-devavarman-maurya-magadha",
       "title": "Reign of Devavarman (Maurya)",
-      "start": -194,
       "tracks": ["magadha"],
-      "descr": "Rules as head of state of Magadha from 195 BCE.",
+      "descr": "Rules as head of state of Magadha from 202 BCE to 195 BCE (7 years).",
       "sources": [{ "sourceKey": "wp-devavarman-maurya", "sourceLocation": "infobox reign: c. 202|195 BCE" }],
+      "start": -201,
+      "end": -194,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-devavarman-maurya", "sourceLocation": "infobox reign: c. 202|195 BCE" }]
         }
       ]
@@ -39214,17 +39202,13 @@
     {
       "uuid": "reign-shatadhanvan-magadha",
       "title": "Reign of Shatadhanvan",
-      "start": -186,
       "tracks": ["magadha"],
-      "descr": "Rules as head of state of Magadha from 187 BCE.",
+      "descr": "Rules as head of state of Magadha from 195 BCE to 187 BCE (8 years).",
       "sources": [{ "sourceKey": "wp-shatadhanvan", "sourceLocation": "infobox reign: c. 195|187 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-shatadhanvan", "sourceLocation": "infobox reign: c. 195|187 BCE" }]
-        }
-      ]
+      "start": -194,
+      "end": -186,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-shatadhanvan", "sourceLocation": "infobox reign: c. 195|187 BCE" }] }]
     },
     {
       "uuid": "reign-brihadratha-maurya-magadha",
@@ -39244,14 +39228,16 @@
     {
       "uuid": "reign-pushyamitra-shunga-magadha",
       "title": "Reign of Pushyamitra Shunga",
-      "start": -148,
       "tracks": ["magadha"],
-      "descr": "Rules as head of state of Magadha from 149 BCE.",
+      "descr": "Rules as head of state of Magadha from 185 BCE to 149 BCE (36 years).",
       "sources": [{ "sourceKey": "wp-pushyamitra-shunga", "sourceLocation": "infobox reign: c. 185|149 BCE" }],
+      "start": -184,
+      "end": -148,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-pushyamitra-shunga", "sourceLocation": "infobox reign: c. 185|149 BCE" }]
         }
       ]
@@ -39312,14 +39298,16 @@
     {
       "uuid": "reign-chandragupta-maurya-maurya",
       "title": "Reign of Chandragupta Maurya",
-      "start": -296,
       "tracks": ["maurya"],
-      "descr": "Rules as head of state of Maurya Empire from 297 BCE.",
+      "descr": "Rules as head of state of Maurya Empire from 320 BCE to 297 BCE (23 years).",
       "sources": [{ "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "infobox reign: c. 320|297 BCE" }],
+      "start": -319,
+      "end": -296,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "infobox reign: c. 320|297 BCE" }]
         }
       ]
@@ -39327,29 +39315,27 @@
     {
       "uuid": "reign-bindusara-maurya",
       "title": "Reign of Bindusara",
-      "start": -272,
       "tracks": ["maurya"],
-      "descr": "Rules as head of state of Maurya Empire from 273 BCE.",
+      "descr": "Rules as head of state of Maurya Empire from 297 BCE to 273 BCE (24 years).",
       "sources": [{ "sourceKey": "wp-bindusara", "sourceLocation": "infobox reign: c. 297|273 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-bindusara", "sourceLocation": "infobox reign: c. 297|273 BCE" }]
-        }
-      ]
+      "start": -296,
+      "end": -272,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bindusara", "sourceLocation": "infobox reign: c. 297|273 BCE" }] }]
     },
     {
       "uuid": "reign-dasharatha-maurya-maurya",
       "title": "Reign of Dasharatha Maurya",
-      "start": -223,
       "tracks": ["maurya"],
-      "descr": "Rules as head of state of Maurya Empire from 224 BCE.",
+      "descr": "Rules as head of state of Maurya Empire from 232 BCE to 224 BCE (8 years).",
       "sources": [{ "sourceKey": "wp-dasharatha-maurya", "sourceLocation": "infobox reign: c. 232|224 BCE" }],
+      "start": -231,
+      "end": -223,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-dasharatha-maurya", "sourceLocation": "infobox reign: c. 232|224 BCE" }]
         }
       ]
@@ -39357,39 +39343,39 @@
     {
       "uuid": "reign-samprati-maurya",
       "title": "Reign of Samprati",
-      "start": -214,
       "tracks": ["maurya"],
-      "descr": "Rules as head of state of Maurya Empire from 215 BCE.",
+      "descr": "Rules as head of state of Maurya Empire from 224 BCE to 215 BCE (9 years).",
       "sources": [{ "sourceKey": "wp-samprati", "sourceLocation": "infobox reign: c. 224|215 BCE" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-samprati", "sourceLocation": "infobox reign: c. 224|215 BCE" }] }]
+      "start": -223,
+      "end": -214,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-samprati", "sourceLocation": "infobox reign: c. 224|215 BCE" }] }]
     },
     {
       "uuid": "reign-shalishuka-maurya",
       "title": "Reign of Shalishuka",
-      "start": -201,
       "tracks": ["maurya"],
-      "descr": "Rules as head of state of Maurya Empire from 202 BCE.",
+      "descr": "Rules as head of state of Maurya Empire from 215 BCE to 202 BCE (13 years).",
       "sources": [{ "sourceKey": "wp-shalishuka", "sourceLocation": "infobox reign: c. 215|202 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-shalishuka", "sourceLocation": "infobox reign: c. 215|202 BCE" }]
-        }
-      ]
+      "start": -214,
+      "end": -201,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-shalishuka", "sourceLocation": "infobox reign: c. 215|202 BCE" }] }]
     },
     {
       "uuid": "reign-devavarman-maurya-maurya",
       "title": "Reign of Devavarman (Maurya)",
-      "start": -194,
       "tracks": ["maurya"],
-      "descr": "Rules as head of state of Maurya Empire from 195 BCE.",
+      "descr": "Rules as head of state of Maurya Empire from 202 BCE to 195 BCE (7 years).",
       "sources": [{ "sourceKey": "wp-devavarman-maurya", "sourceLocation": "infobox reign: c. 202|195 BCE" }],
+      "start": -201,
+      "end": -194,
+      "circa": true,
       "importance": 3,
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-devavarman-maurya", "sourceLocation": "infobox reign: c. 202|195 BCE" }]
         }
       ]
@@ -39397,18 +39383,14 @@
     {
       "uuid": "reign-shatadhanvan-maurya",
       "title": "Reign of Shatadhanvan",
-      "start": -186,
       "tracks": ["maurya"],
-      "descr": "Rules as head of state of Maurya Empire from 187 BCE.",
+      "descr": "Rules as head of state of Maurya Empire from 195 BCE to 187 BCE (8 years).",
       "sources": [{ "sourceKey": "wp-shatadhanvan", "sourceLocation": "infobox reign: c. 195|187 BCE" }],
+      "start": -194,
+      "end": -186,
+      "circa": true,
       "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-shatadhanvan", "sourceLocation": "infobox reign: c. 195|187 BCE" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-shatadhanvan", "sourceLocation": "infobox reign: c. 195|187 BCE" }] }]
     },
     {
       "uuid": "reign-brihadratha-maurya-maurya",
@@ -39428,17 +39410,13 @@
     {
       "uuid": "reign-vasumitra-shunga",
       "title": "Reign of Vasumitra",
-      "start": -123,
       "tracks": ["shunga"],
-      "descr": "Rules as head of state of Shunga Empire from 124 BCE.",
+      "descr": "Rules as head of state of Shunga Empire from 131 BCE to 124 BCE (7 years).",
       "sources": [{ "sourceKey": "wp-vasumitra", "sourceLocation": "infobox reign: c. 131|124 BCE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-vasumitra", "sourceLocation": "infobox reign: c. 131|124 BCE" }]
-        }
-      ]
+      "start": -130,
+      "end": -123,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-vasumitra", "sourceLocation": "infobox reign: c. 131|124 BCE" }] }]
     },
     {
       "uuid": "reign-ghatotkacha-king-gupta",
@@ -39460,17 +39438,13 @@
     {
       "uuid": "reign-chandragupta-i-gupta",
       "title": "Reign of Chandragupta I",
-      "start": 335,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 335.",
+      "descr": "Rules as head of state of Gupta Empire from 319 to 335 (16 years).",
       "sources": [{ "sourceKey": "wp-chandragupta-i", "sourceLocation": "infobox reign: c. 319|335" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-chandragupta-i", "sourceLocation": "infobox reign: c. 319|335" }]
-        }
-      ]
+      "start": 319,
+      "end": 335,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-chandragupta-i", "sourceLocation": "infobox reign: c. 319|335" }] }]
     },
     {
       "uuid": "reign-ramagupta-gupta",
@@ -39485,99 +39459,83 @@
     {
       "uuid": "reign-kumaragupta-i-gupta",
       "title": "Reign of Kumaragupta I",
-      "start": 455,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 455.",
+      "descr": "Rules as head of state of Gupta Empire from 415 to 455 (40 years).",
       "sources": [{ "sourceKey": "wp-kumaragupta-i", "sourceLocation": "infobox reign: c. 415|455 CE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-kumaragupta-i", "sourceLocation": "infobox reign: c. 415|455 CE" }]
-        }
-      ]
+      "start": 415,
+      "end": 455,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-kumaragupta-i", "sourceLocation": "infobox reign: c. 415|455 CE" }] }]
     },
     {
       "uuid": "reign-skandagupta-gupta",
       "title": "Reign of Skandagupta",
-      "start": 467,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 467.",
+      "descr": "Rules as head of state of Gupta Empire from 455 to 467 (12 years).",
       "sources": [{ "sourceKey": "wp-skandagupta", "sourceLocation": "infobox reign: c. 455|467" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-skandagupta", "sourceLocation": "infobox reign: c. 455|467" }] }]
+      "start": 455,
+      "end": 467,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-skandagupta", "sourceLocation": "infobox reign: c. 455|467" }] }]
     },
     {
       "uuid": "reign-purugupta-gupta",
       "title": "Reign of Purugupta",
-      "start": 473,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 473.",
+      "descr": "Rules as head of state of Gupta Empire from 467 to 473 (6 years).",
       "sources": [{ "sourceKey": "wp-purugupta", "sourceLocation": "infobox reign: c. 467|473" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-purugupta", "sourceLocation": "infobox reign: c. 467|473" }] }]
+      "start": 467,
+      "end": 473,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-purugupta", "sourceLocation": "infobox reign: c. 467|473" }] }]
     },
     {
       "uuid": "reign-kumaragupta-ii-gupta",
       "title": "Reign of Kumaragupta II",
-      "start": 476,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 476.",
+      "descr": "Rules as head of state of Gupta Empire from 473 to 476 (3 years).",
       "sources": [{ "sourceKey": "wp-kumaragupta-ii", "sourceLocation": "infobox reign: c. 473|476 CE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-kumaragupta-ii", "sourceLocation": "infobox reign: c. 473|476 CE" }]
-        }
-      ]
+      "start": 473,
+      "end": 476,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-kumaragupta-ii", "sourceLocation": "infobox reign: c. 473|476 CE" }] }]
     },
     {
       "uuid": "reign-budhagupta-gupta",
       "title": "Reign of Budhagupta",
-      "start": 495,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 495.",
+      "descr": "Rules as head of state of Gupta Empire from 476 to 495 (19 years).",
       "sources": [{ "sourceKey": "wp-budhagupta", "sourceLocation": "infobox reign: c. 476|495 CE" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-budhagupta", "sourceLocation": "infobox reign: c. 476|495 CE" }]
-        }
-      ]
+      "start": 476,
+      "end": 495,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-budhagupta", "sourceLocation": "infobox reign: c. 476|495 CE" }] }]
     },
     {
       "uuid": "reign-narasimhagupta-gupta",
       "title": "Reign of Narasimhagupta",
-      "start": 530,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 530.",
+      "descr": "Rules as head of state of Gupta Empire from 495 to 530 (35 years).",
       "sources": [{ "sourceKey": "wp-narasimhagupta", "sourceLocation": "infobox reign: c. 495|530" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-narasimhagupta", "sourceLocation": "infobox reign: c. 495|530" }]
-        }
-      ]
+      "start": 495,
+      "end": 530,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-narasimhagupta", "sourceLocation": "infobox reign: c. 495|530" }] }]
     },
     {
       "uuid": "reign-kumaragupta-iii-gupta",
       "title": "Reign of Kumaragupta III",
-      "start": 540,
       "tracks": ["gupta"],
-      "descr": "Rules as head of state of Gupta Empire from 540.",
+      "descr": "Rules as head of state of Gupta Empire from 530 to 540 (10 years).",
       "sources": [{ "sourceKey": "wp-kumaragupta-iii", "sourceLocation": "infobox reign: c. 530|540" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-kumaragupta-iii", "sourceLocation": "infobox reign: c. 530|540" }]
-        }
-      ]
+      "start": 530,
+      "end": 540,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-kumaragupta-iii", "sourceLocation": "infobox reign: c. 530|540" }] }]
     },
     {
       "uuid": "reign-harsha-harsha-kannauj",
-      "title": "Reign of Harsha",
+      "title": "Tenure of Harsha",
       "start": 606,
       "startMonth": 4,
       "end": 647,
@@ -39703,11 +39661,13 @@
     {
       "uuid": "reign-ellalan-anuradhapura",
       "title": "Reign of Ellalan",
-      "start": -160,
       "tracks": ["anuradhapura"],
-      "descr": "Rules as head of state of Anuradhapura kingdom from 161 BCE.",
+      "descr": "Rules as head of state of Anuradhapura kingdom from 205 BCE to 161 BCE (44 years).",
       "sources": [{ "sourceKey": "wp-ellalan", "sourceLocation": "infobox reign: c. 205|161 BCE" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ellalan", "sourceLocation": "infobox reign: c. 205|161 BCE" }] }]
+      "start": -204,
+      "end": -160,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ellalan", "sourceLocation": "infobox reign: c. 205|161 BCE" }] }]
     },
     {
       "uuid": "reign-saddha-tissa-of-anuradhapura-anuradhapura",
@@ -39921,11 +39881,13 @@
     {
       "uuid": "reign-gajabahu-i-anuradhapura",
       "title": "Reign of Gajabahu I",
-      "start": 135,
       "tracks": ["anuradhapura"],
-      "descr": "Rules as head of state of Anuradhapura kingdom from 135.",
+      "descr": "Rules as head of state of Anuradhapura kingdom from 113 to 135 (22 years).",
       "sources": [{ "sourceKey": "wp-gajabahu-i", "sourceLocation": "infobox reign: c. 113|135" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-gajabahu-i", "sourceLocation": "infobox reign: c. 113|135" }] }]
+      "start": 113,
+      "end": 135,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-gajabahu-i", "sourceLocation": "infobox reign: c. 113|135" }] }]
     },
     {
       "uuid": "reign-mahallaka-naga-anuradhapura",

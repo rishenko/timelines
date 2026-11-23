@@ -153,7 +153,7 @@
   },
   {
    "uuid": "reign-mizizios-eastern-roman",
-   "title": "Reign of Mizizios",
+   "title": "Tenure of Mizizios",
    "start": 668,
    "startMonth": 7,
    "startDay": 15,
@@ -276,11 +276,10 @@
   {
    "uuid": "reign-eudokia-wife-of-justinian-ii-eastern-roman",
    "title": "Reign of Eudokia (wife of Justinian II)",
-   "start": 695,
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 695.",
+   "descr": "Rules as head of state of Byzantine Empire from 685 to 695 (10 years).",
    "sources": [
     {
      "sourceKey": "wp-eudokia-wife-of-justinian-ii",
@@ -298,7 +297,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 685,
+   "end": 695,
+   "circa": true
   },
   {
    "uuid": "reign-tiberius-iii-eastern-roman",
@@ -733,11 +735,10 @@
   {
    "uuid": "reign-eudokia-wife-of-constantine-v-eastern-roman",
    "title": "Reign of Eudokia (wife of Constantine V)",
-   "start": 775,
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 775.",
+   "descr": "Rules as head of state of Byzantine Empire from 751 to 775 (24 years).",
    "sources": [
     {
      "sourceKey": "wp-eudokia-wife-of-constantine-v",
@@ -755,7 +756,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 751,
+   "end": 775,
+   "circa": true
   },
   {
    "uuid": "reign-leo-iv-the-khazar-eastern-roman",
@@ -1265,7 +1269,7 @@
   },
   {
    "uuid": "reign-thomas-the-slav-eastern-roman",
-   "title": "Reign of Thomas the Slav",
+   "title": "Tenure of Thomas the Slav",
    "start": 820,
    "startMonth": 12,
    "end": 823,
@@ -1453,7 +1457,7 @@
   },
   {
    "uuid": "reign-bardas-eastern-roman",
-   "title": "Reign of Bardas",
+   "title": "Tenure of Bardas",
    "start": 862,
    "startMonth": 4,
    "startDay": 22,
@@ -2688,7 +2692,7 @@
   },
   {
    "uuid": "reign-isaac-komnenos-brother-of-alexios-i-eastern-roman",
-   "title": "Reign of Isaac Komnenos (brother of Alexios I)",
+   "title": "Tenure of Isaac Komnenos (brother of Alexios I)",
    "start": 1081,
    "startMonth": 4,
    "end": 1102,
@@ -6816,7 +6820,7 @@
   },
   {
    "uuid": "reign-john-corvinus-croatia",
-   "title": "Reign of John Corvinus",
+   "title": "Tenure of John Corvinus",
    "start": 1495,
    "end": 1498,
    "tracks": [
@@ -6873,7 +6877,7 @@
   },
   {
    "uuid": "reign-stephen-ii-ban-of-bosnia-bosnia-and-herzegovina",
-   "title": "Reign of Stephen II, Ban of Bosnia",
+   "title": "Tenure of Stephen II, Ban of Bosnia",
    "start": 1322,
    "end": 1353,
    "tracks": [
@@ -6901,7 +6905,7 @@
   },
   {
    "uuid": "reign-vladislav-of-bosnia-bosnia-and-herzegovina",
-   "title": "Reign of Vladislav of Bosnia",
+   "title": "Tenure of Vladislav of Bosnia",
    "start": 1353,
    "end": 1354,
    "tracks": [
@@ -14614,7 +14618,7 @@
   },
   {
    "uuid": "reign-john-hunyadi-hungary",
-   "title": "Presidency of John Hunyadi",
+   "title": "Reign of John Hunyadi",
    "start": 1453,
    "startMonth": 1,
    "startDay": 30,
@@ -14884,7 +14888,7 @@
   },
   {
    "uuid": "reign-maria-dobroniega-of-kiev-poland",
-   "title": "Reign of Maria Dobroniega of Kiev",
+   "title": "Tenure of Maria Dobroniega of Kiev",
    "start": 1040,
    "end": 1058,
    "tracks": [
@@ -15083,7 +15087,7 @@
   },
   {
    "uuid": "reign-helena-of-znojmo-poland",
-   "title": "Reign of Helena of Znojmo",
+   "title": "Tenure of Helena of Znojmo",
    "start": 1177,
    "end": 1194,
    "tracks": [
@@ -16303,7 +16307,7 @@
   },
   {
    "uuid": "reign-heinrich-von-hohenlohe-teutonic-order",
-   "title": "Presidency of Heinrich von Hohenlohe",
+   "title": "Reign of Heinrich von Hohenlohe",
    "start": 1244,
    "end": 1249,
    "endMonth": 7,
@@ -16806,7 +16810,7 @@
   },
   {
    "uuid": "reign-pope-stephen-ii-papal-states",
-   "title": "Presidency of Pope Stephen II",
+   "title": "Pontificate of Pope Stephen II",
    "start": 752,
    "startMonth": 3,
    "startDay": 26,
@@ -16838,7 +16842,7 @@
   },
   {
    "uuid": "reign-paolo-lucio-anafesto-venice",
-   "title": "Presidency of Paolo Lucio Anafesto",
+   "title": "Reign of Paolo Lucio Anafesto",
    "start": 697,
    "end": 717,
    "tracks": [
@@ -16866,7 +16870,7 @@
   },
   {
    "uuid": "reign-marcello-tegalliano-venice",
-   "title": "Presidency of Marcello Tegalliano",
+   "title": "Reign of Marcello Tegalliano",
    "start": 717,
    "end": 726,
    "tracks": [
@@ -16895,7 +16899,7 @@
   },
   {
    "uuid": "reign-orso-ipato-venice",
-   "title": "Presidency of Orso Ipato",
+   "title": "Reign of Orso Ipato",
    "start": 726,
    "end": 737,
    "tracks": [
@@ -16923,7 +16927,7 @@
   },
   {
    "uuid": "reign-teodato-ipato-venice",
-   "title": "Presidency of Teodato Ipato",
+   "title": "Reign of Teodato Ipato",
    "start": 742,
    "end": 755,
    "tracks": [
@@ -16951,7 +16955,7 @@
   },
   {
    "uuid": "reign-galla-gaulo-venice",
-   "title": "Presidency of Galla Gaulo",
+   "title": "Reign of Galla Gaulo",
    "start": 755,
    "end": 756,
    "tracks": [
@@ -16980,7 +16984,7 @@
   },
   {
    "uuid": "reign-domenico-monegario-venice",
-   "title": "Presidency of Domenico Monegario",
+   "title": "Reign of Domenico Monegario",
    "start": 756,
    "end": 764,
    "tracks": [
@@ -17009,7 +17013,7 @@
   },
   {
    "uuid": "reign-maurizio-galbaio-venice",
-   "title": "Presidency of Maurizio Galbaio",
+   "title": "Reign of Maurizio Galbaio",
    "start": 764,
    "end": 787,
    "tracks": [
@@ -17037,7 +17041,7 @@
   },
   {
    "uuid": "reign-giovanni-galbaio-venice",
-   "title": "Presidency of Giovanni Galbaio",
+   "title": "Reign of Giovanni Galbaio",
    "start": 787,
    "end": 804,
    "tracks": [
@@ -17065,7 +17069,7 @@
   },
   {
    "uuid": "reign-obelerio-degli-antenori-venice",
-   "title": "Presidency of Obelerio degli Antenori",
+   "title": "Reign of Obelerio degli Antenori",
    "start": 804,
    "end": 811,
    "tracks": [
@@ -17094,7 +17098,7 @@
   },
   {
    "uuid": "reign-agnello-participazio-venice",
-   "title": "Presidency of Agnello Participazio",
+   "title": "Reign of Agnello Participazio",
    "start": 811,
    "end": 827,
    "tracks": [
@@ -17122,7 +17126,7 @@
   },
   {
    "uuid": "reign-giustiniano-participazio-venice",
-   "title": "Presidency of Giustiniano Participazio",
+   "title": "Reign of Giustiniano Participazio",
    "start": 827,
    "end": 829,
    "tracks": [
@@ -17151,7 +17155,7 @@
   },
   {
    "uuid": "reign-giovanni-i-participazio-venice",
-   "title": "Presidency of Giovanni I Participazio",
+   "title": "Reign of Giovanni I Participazio",
    "start": 829,
    "end": 836,
    "tracks": [
@@ -17180,7 +17184,7 @@
   },
   {
    "uuid": "reign-pietro-tradonico-venice",
-   "title": "Presidency of Pietro Tradonico",
+   "title": "Reign of Pietro Tradonico",
    "start": 836,
    "end": 864,
    "tracks": [
@@ -17265,7 +17269,7 @@
   },
   {
    "uuid": "reign-pietro-ii-candiano-venice",
-   "title": "Presidency of Pietro II Candiano",
+   "title": "Reign of Pietro II Candiano",
    "start": 932,
    "end": 939,
    "tracks": [
@@ -17294,7 +17298,7 @@
   },
   {
    "uuid": "reign-pietro-participazio-venice",
-   "title": "Presidency of Pietro Participazio",
+   "title": "Reign of Pietro Participazio",
    "start": 939,
    "end": 942,
    "tracks": [
@@ -17323,7 +17327,7 @@
   },
   {
    "uuid": "reign-pietro-iii-candiano-venice",
-   "title": "Presidency of Pietro III Candiano",
+   "title": "Reign of Pietro III Candiano",
    "start": 942,
    "end": 959,
    "tracks": [
@@ -17351,7 +17355,7 @@
   },
   {
    "uuid": "reign-pietro-iv-candiano-venice",
-   "title": "Presidency of Pietro IV Candiano",
+   "title": "Reign of Pietro IV Candiano",
    "start": 959,
    "end": 976,
    "tracks": [
@@ -17408,7 +17412,7 @@
   },
   {
    "uuid": "reign-vitale-candiano-venice",
-   "title": "Presidency of Vitale Candiano",
+   "title": "Reign of Vitale Candiano",
    "start": 978,
    "end": 979,
    "tracks": [
@@ -17437,7 +17441,7 @@
   },
   {
    "uuid": "reign-tribuno-memmo-venice",
-   "title": "Presidency of Tribuno Memmo",
+   "title": "Reign of Tribuno Memmo",
    "start": 979,
    "end": 991,
    "tracks": [
@@ -17665,7 +17669,7 @@
   },
   {
    "uuid": "reign-vitale-i-michiel-venice",
-   "title": "Presidency of Vitale I Michiel",
+   "title": "Reign of Vitale I Michiel",
    "start": 1095,
    "end": 1102,
    "tracks": [
@@ -17694,7 +17698,7 @@
   },
   {
    "uuid": "reign-ordelafo-faliero-venice",
-   "title": "Presidency of Ordelafo Faliero",
+   "title": "Reign of Ordelafo Faliero",
    "start": 1102,
    "end": 1117,
    "tracks": [
@@ -17722,7 +17726,7 @@
   },
   {
    "uuid": "reign-domenico-michiel-venice",
-   "title": "Presidency of Domenico Michiel",
+   "title": "Reign of Domenico Michiel",
    "start": 1116,
    "end": 1129,
    "tracks": [
@@ -17750,7 +17754,7 @@
   },
   {
    "uuid": "reign-pietro-polani-venice",
-   "title": "Presidency of Pietro Polani",
+   "title": "Reign of Pietro Polani",
    "start": 1130,
    "end": 1148,
    "tracks": [
@@ -17778,7 +17782,7 @@
   },
   {
    "uuid": "reign-domenico-morosini-venice",
-   "title": "Presidency of Domenico Morosini",
+   "title": "Reign of Domenico Morosini",
    "start": 1148,
    "end": 1155,
    "endMonth": 2,
@@ -17839,7 +17843,7 @@
   },
   {
    "uuid": "reign-sebastiano-ziani-venice",
-   "title": "Presidency of Sebastiano Ziani",
+   "title": "Reign of Sebastiano Ziani",
    "start": 1172,
    "end": 1178,
    "tracks": [
@@ -17868,7 +17872,7 @@
   },
   {
    "uuid": "reign-orio-mastropiero-venice",
-   "title": "Presidency of Orio Mastropiero",
+   "title": "Reign of Orio Mastropiero",
    "start": 1178,
    "end": 1192,
    "tracks": [
@@ -17896,7 +17900,7 @@
   },
   {
    "uuid": "reign-pietro-ziani-venice",
-   "title": "Presidency of Pietro Ziani",
+   "title": "Reign of Pietro Ziani",
    "start": 1205,
    "end": 1229,
    "tracks": [
@@ -17924,7 +17928,7 @@
   },
   {
    "uuid": "reign-marino-morosini-venice",
-   "title": "Presidency of Marino Morosini",
+   "title": "Reign of Marino Morosini",
    "start": 1249,
    "end": 1253,
    "tracks": [
@@ -17953,7 +17957,7 @@
   },
   {
    "uuid": "reign-reniero-zeno-venice",
-   "title": "Presidency of Reniero Zeno",
+   "title": "Reign of Reniero Zeno",
    "start": 1253,
    "end": 1268,
    "tracks": [
@@ -17981,7 +17985,7 @@
   },
   {
    "uuid": "reign-lorenzo-tiepolo-venice",
-   "title": "Presidency of Lorenzo Tiepolo",
+   "title": "Reign of Lorenzo Tiepolo",
    "start": 1268,
    "end": 1275,
    "tracks": [
@@ -18010,7 +18014,7 @@
   },
   {
    "uuid": "reign-jacopo-contarini-venice",
-   "title": "Presidency of Jacopo Contarini",
+   "title": "Reign of Jacopo Contarini",
    "start": 1275,
    "end": 1280,
    "tracks": [
@@ -18039,7 +18043,7 @@
   },
   {
    "uuid": "reign-giovanni-dandolo-venice",
-   "title": "Presidency of Giovanni Dandolo",
+   "title": "Reign of Giovanni Dandolo",
    "start": 1280,
    "end": 1289,
    "tracks": [
@@ -18068,7 +18072,7 @@
   },
   {
    "uuid": "reign-pietro-gradenigo-venice",
-   "title": "Presidency of Pietro Gradenigo",
+   "title": "Reign of Pietro Gradenigo",
    "start": 1289,
    "end": 1311,
    "tracks": [
@@ -18096,7 +18100,7 @@
   },
   {
    "uuid": "reign-marino-zorzi-venice",
-   "title": "Presidency of Marino Zorzi",
+   "title": "Reign of Marino Zorzi",
    "start": 1311,
    "end": 1312,
    "tracks": [
@@ -18125,7 +18129,7 @@
   },
   {
    "uuid": "reign-giovanni-soranzo-venice",
-   "title": "Presidency of Giovanni Soranzo",
+   "title": "Reign of Giovanni Soranzo",
    "start": 1312,
    "end": 1328,
    "tracks": [
@@ -18153,7 +18157,7 @@
   },
   {
    "uuid": "reign-francesco-dandolo-venice",
-   "title": "Presidency of Francesco Dandolo",
+   "title": "Reign of Francesco Dandolo",
    "start": 1329,
    "end": 1339,
    "tracks": [
@@ -18181,7 +18185,7 @@
   },
   {
    "uuid": "reign-bartolomeo-gradenigo-venice",
-   "title": "Presidency of Bartolomeo Gradenigo",
+   "title": "Reign of Bartolomeo Gradenigo",
    "start": 1339,
    "startMonth": 11,
    "startDay": 7,
@@ -18214,7 +18218,7 @@
   },
   {
    "uuid": "reign-andrea-dandolo-venice",
-   "title": "Presidency of Andrea Dandolo",
+   "title": "Reign of Andrea Dandolo",
    "start": 1343,
    "end": 1354,
    "endMonth": 9,
@@ -18244,7 +18248,7 @@
   },
   {
    "uuid": "reign-marino-faliero-venice",
-   "title": "Presidency of Marino Faliero",
+   "title": "Reign of Marino Faliero",
    "start": 1354,
    "startMonth": 9,
    "startDay": 11,
@@ -18277,7 +18281,7 @@
   },
   {
    "uuid": "reign-giovanni-gradenigo-venice",
-   "title": "Presidency of Giovanni Gradenigo",
+   "title": "Reign of Giovanni Gradenigo",
    "start": 1355,
    "end": 1356,
    "tracks": [
@@ -18306,7 +18310,7 @@
   },
   {
    "uuid": "reign-giovanni-dolfin-venice",
-   "title": "Presidency of Giovanni Dolfin",
+   "title": "Reign of Giovanni Dolfin",
    "start": 1356,
    "end": 1361,
    "tracks": [
@@ -18335,7 +18339,7 @@
   },
   {
    "uuid": "reign-lorenzo-celsi-venice",
-   "title": "Presidency of Lorenzo Celsi",
+   "title": "Reign of Lorenzo Celsi",
    "start": 1361,
    "end": 1365,
    "tracks": [
@@ -18364,7 +18368,7 @@
   },
   {
    "uuid": "reign-marco-cornaro-venice",
-   "title": "Presidency of Marco Cornaro",
+   "title": "Reign of Marco Cornaro",
    "start": 1365,
    "startMonth": 7,
    "startDay": 21,
@@ -18397,7 +18401,7 @@
   },
   {
    "uuid": "reign-andrea-contarini-venice",
-   "title": "Presidency of Andrea Contarini",
+   "title": "Reign of Andrea Contarini",
    "start": 1367,
    "end": 1382,
    "tracks": [
@@ -18425,7 +18429,7 @@
   },
   {
    "uuid": "reign-antonio-venier-venice",
-   "title": "Presidency of Antonio Venier",
+   "title": "Reign of Antonio Venier",
    "start": 1382,
    "end": 1400,
    "tracks": [
@@ -18453,7 +18457,7 @@
   },
   {
    "uuid": "reign-michele-steno-venice",
-   "title": "Presidency of Michele Steno",
+   "title": "Reign of Michele Steno",
    "start": 1400,
    "end": 1413,
    "tracks": [
@@ -18481,7 +18485,7 @@
   },
   {
    "uuid": "reign-tommaso-mocenigo-venice",
-   "title": "Presidency of Tommaso Mocenigo",
+   "title": "Reign of Tommaso Mocenigo",
    "start": 1414,
    "end": 1423,
    "tracks": [
@@ -18542,7 +18546,7 @@
   },
   {
    "uuid": "reign-pasquale-malipiero-venice",
-   "title": "Presidency of Pasquale Malipiero",
+   "title": "Reign of Pasquale Malipiero",
    "start": 1457,
    "end": 1462,
    "tracks": [
@@ -18571,7 +18575,7 @@
   },
   {
    "uuid": "reign-cristoforo-moro-venice",
-   "title": "Presidency of Cristoforo Moro",
+   "title": "Reign of Cristoforo Moro",
    "start": 1462,
    "end": 1471,
    "tracks": [
@@ -18599,7 +18603,7 @@
   },
   {
    "uuid": "reign-nicol-tron-venice",
-   "title": "Presidency of Nicolò Tron",
+   "title": "Reign of Nicolò Tron",
    "start": 1471,
    "end": 1473,
    "tracks": [
@@ -18628,7 +18632,7 @@
   },
   {
    "uuid": "reign-nicol-marcello-venice",
-   "title": "Presidency of Nicolò Marcello",
+   "title": "Reign of Nicolò Marcello",
    "start": 1473,
    "startMonth": 8,
    "startDay": 13,
@@ -18661,7 +18665,7 @@
   },
   {
    "uuid": "reign-pietro-mocenigo-venice",
-   "title": "Presidency of Pietro Mocenigo",
+   "title": "Reign of Pietro Mocenigo",
    "start": 1474,
    "startMonth": 12,
    "startDay": 14,
@@ -18694,7 +18698,7 @@
   },
   {
    "uuid": "reign-andrea-vendramin-venice",
-   "title": "Presidency of Andrea Vendramin",
+   "title": "Reign of Andrea Vendramin",
    "start": 1476,
    "end": 1478,
    "tracks": [
@@ -18723,7 +18727,7 @@
   },
   {
    "uuid": "reign-giovanni-mocenigo-venice",
-   "title": "Presidency of Giovanni Mocenigo",
+   "title": "Reign of Giovanni Mocenigo",
    "start": 1478,
    "end": 1485,
    "tracks": [
@@ -18752,7 +18756,7 @@
   },
   {
    "uuid": "reign-marco-barbarigo-venice",
-   "title": "Presidency of Marco Barbarigo",
+   "title": "Reign of Marco Barbarigo",
    "start": 1485,
    "end": 1486,
    "tracks": [
@@ -18781,7 +18785,7 @@
   },
   {
    "uuid": "reign-agostino-barbarigo-venice",
-   "title": "Presidency of Agostino Barbarigo",
+   "title": "Reign of Agostino Barbarigo",
    "start": 1486,
    "end": 1501,
    "tracks": [
@@ -19907,7 +19911,7 @@
   },
   {
    "uuid": "reign-ludovico-sforza-milan",
-   "title": "Reign of Ludovico Sforza",
+   "title": "Regency of Ludovico Sforza",
    "start": 1480,
    "startMonth": 10,
    "startDay": 7,
@@ -20036,7 +20040,7 @@
   },
   {
    "uuid": "reign-agnes-of-aquitaine-countess-of-savoy-savoy",
-   "title": "Reign of Agnes of Aquitaine, Countess of Savoy",
+   "title": "Tenure of Agnes of Aquitaine, Countess of Savoy",
    "start": 1064,
    "end": 1078,
    "tracks": [
@@ -20176,7 +20180,7 @@
   },
   {
    "uuid": "reign-yolande-palaeologina-of-montferrat-savoy",
-   "title": "Reign of Yolande Palaeologina of Montferrat",
+   "title": "Tenure of Yolande Palaeologina of Montferrat",
    "start": 1330,
    "startMonth": 5,
    "startDay": 1,
@@ -23974,7 +23978,7 @@
   },
   {
    "uuid": "reign-theresa-countess-of-portugal-portugal",
-   "title": "Reign of Theresa, Countess of Portugal",
+   "title": "Tenure of Theresa, Countess of Portugal",
    "start": 1096,
    "end": 1128,
    "endMonth": 6,
@@ -27703,7 +27707,7 @@
   },
   {
    "uuid": "reign-empress-matilda-united-kingdom",
-   "title": "Reign of Empress Matilda",
+   "title": "Tenure of Empress Matilda",
    "start": 1141,
    "startMonth": 4,
    "startDay": 8,
@@ -31456,11 +31460,10 @@
   {
    "uuid": "reign-inge-the-elder-norway",
    "title": "Reign of Inge the Elder",
-   "start": 1110,
    "tracks": [
     "norway"
    ],
-   "descr": "Rules as head of state of Norway from 1110.",
+   "descr": "Rules as head of state of Norway from 1080 to 1110 (30 years).",
    "sources": [
     {
      "sourceKey": "wp-inge-the-elder",
@@ -31478,7 +31481,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 1080,
+   "end": 1110,
+   "circa": true
   },
   {
    "uuid": "reign-harald-gille-norway",
@@ -32969,11 +32975,10 @@
   {
    "uuid": "reign-inge-the-elder-sweden",
    "title": "Reign of Inge the Elder",
-   "start": 1110,
    "tracks": [
     "sweden"
    ],
-   "descr": "Rules as head of state of Sweden from 1110.",
+   "descr": "Rules as head of state of Sweden from 1080 to 1110 (30 years).",
    "sources": [
     {
      "sourceKey": "wp-inge-the-elder",
@@ -32991,7 +32996,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 1080,
+   "end": 1110,
+   "circa": true
   },
   {
    "uuid": "reign-inge-the-younger-sweden",
@@ -36010,7 +36018,7 @@
   },
   {
    "uuid": "reign-bajkam-caliphate",
-   "title": "Presidency of Bajkam",
+   "title": "Tenure of Bajkam",
    "start": 938,
    "startMonth": 9,
    "end": 941,
@@ -36075,7 +36083,7 @@
   },
   {
    "uuid": "reign-tuzun-amir-al-umara-caliphate",
-   "title": "Presidency of Tuzun (amir al-umara)",
+   "title": "Tenure of Tuzun (amir al-umara)",
    "start": 943,
    "startMonth": 5,
    "startDay": 31,
@@ -36865,7 +36873,7 @@
   },
   {
    "uuid": "reign-al-musta-sim-cairo-caliphate",
-   "title": "Reign of Al-Musta'sim (Cairo)",
+   "title": "Tenure of Al-Musta'sim (Cairo)",
    "start": 1386,
    "startMonth": 11,
    "startDay": 21,
@@ -36897,7 +36905,7 @@
   },
   {
    "uuid": "reign-al-mutawakkil-i-caliphate-1389",
-   "title": "Reign of Al-Mutawakkil I",
+   "title": "Tenure of Al-Mutawakkil I",
    "start": 1389,
    "end": 1406,
    "endMonth": 1,
@@ -37350,7 +37358,7 @@
   },
   {
    "uuid": "reign-conrad-of-montferrat-kingdom-of-jerusalem",
-   "title": "Reign of Conrad of Montferrat",
+   "title": "Tenure of Conrad of Montferrat",
    "start": 1191,
    "end": 1192,
    "tracks": [
@@ -39692,7 +39700,7 @@
   },
   {
    "uuid": "reign-zayn-al-din-qaraja-beylik-of-dulkadir",
-   "title": "Reign of Zayn al-Din Qaraja",
+   "title": "Tenure of Zayn al-Din Qaraja",
    "start": 1337,
    "end": 1353,
    "tracks": [
@@ -39720,7 +39728,7 @@
   },
   {
    "uuid": "reign-ahmed-of-ramadan-ramadanid-emirate",
-   "title": "Reign of Ahmed of Ramadan",
+   "title": "Tenure of Ahmed of Ramadan",
    "start": 1383,
    "tracks": [
     "ramadanid-emirate"
@@ -39748,7 +39756,7 @@
   },
   {
    "uuid": "reign-ibrahim-ii-of-ramadan-ramadanid-emirate",
-   "title": "Reign of Ibrahim II of Ramadan",
+   "title": "Tenure of Ibrahim II of Ramadan",
    "start": 1417,
    "end": 1418,
    "tracks": [
@@ -39776,7 +39784,7 @@
   },
   {
    "uuid": "reign-g-y-sedd-n-halil-bey-ramadanid-emirate",
-   "title": "Reign of Gıyâseddîn Halil Bey",
+   "title": "Tenure of Gıyâseddîn Halil Bey",
    "start": 1485,
    "end": 1511,
    "tracks": [
@@ -39863,7 +39871,7 @@
   },
   {
    "uuid": "reign-ya-qub-ibn-al-layth-al-saffar-saffarid-dynasty",
-   "title": "Reign of Ya'qub ibn al-Layth al-Saffar",
+   "title": "Tenure of Ya'qub ibn al-Layth al-Saffar",
    "start": 861,
    "end": 879,
    "tracks": [
@@ -39891,7 +39899,7 @@
   },
   {
    "uuid": "reign-khalaf-ibn-ahmad-saffarid-dynasty",
-   "title": "Reign of Khalaf ibn Ahmad",
+   "title": "Tenure of Khalaf ibn Ahmad",
    "start": 963,
    "end": 1002,
    "tracks": [
@@ -39919,7 +39927,7 @@
   },
   {
    "uuid": "reign-imad-al-dawla-buyid-dynasty",
-   "title": "Reign of Imad al-Dawla",
+   "title": "Tenure of Imad al-Dawla",
    "start": 934,
    "end": 949,
    "tracks": [
@@ -39975,7 +39983,7 @@
   },
   {
    "uuid": "reign-sabuktigin-ghaznavid-empire",
-   "title": "Reign of Sabuktigin",
+   "title": "Tenure of Sabuktigin",
    "start": 977,
    "end": 997,
    "tracks": [
@@ -40530,7 +40538,7 @@
   },
   {
    "uuid": "reign-hulegu-khan-ilkhanate",
-   "title": "Reign of Hulegu Khan",
+   "title": "Tenure of Hulegu Khan",
    "start": 1256,
    "end": 1265,
    "endMonth": 2,
@@ -41030,7 +41038,7 @@
   },
   {
    "uuid": "reign-t-regene-khatun-mongol-empire",
-   "title": "Reign of Töregene Khatun",
+   "title": "Tenure of Töregene Khatun",
    "start": 1241,
    "end": 1246,
    "tracks": [
@@ -41667,7 +41675,7 @@
   },
   {
    "uuid": "reign-atsiz-khwarazmian-empire",
-   "title": "Reign of Atsiz",
+   "title": "Tenure of Atsiz",
    "start": 1127,
    "end": 1156,
    "endMonth": 7,
@@ -41697,7 +41705,7 @@
   },
   {
    "uuid": "reign-il-arslan-khwarazmian-empire",
-   "title": "Reign of Il-Arslan",
+   "title": "Tenure of Il-Arslan",
    "start": 1156,
    "startMonth": 8,
    "startDay": 22,
@@ -41792,7 +41800,7 @@
   },
   {
    "uuid": "reign-jalal-al-din-mangburni-khwarazmian-empire",
-   "title": "Reign of Jalal al-Din Mangburni",
+   "title": "Tenure of Jalal al-Din Mangburni",
    "start": 1220,
    "startMonth": 12,
    "end": 1231,
@@ -41823,7 +41831,7 @@
   },
   {
    "uuid": "reign-xiao-tabuyan-qara-khitai",
-   "title": "Reign of Xiao Tabuyan",
+   "title": "Regency of Xiao Tabuyan",
    "start": 1143,
    "end": 1150,
    "tracks": [
@@ -41880,7 +41888,7 @@
   },
   {
    "uuid": "reign-yel-pusuwan-qara-khitai",
-   "title": "Reign of Yelü Pusuwan",
+   "title": "Regency of Yelü Pusuwan",
    "start": 1163,
    "end": 1177,
    "tracks": [
@@ -44260,7 +44268,7 @@
   },
   {
    "uuid": "reign-khizr-khan-delhi-sultanate",
-   "title": "Reign of Khizr Khan",
+   "title": "Tenure of Khizr Khan",
    "start": 1414,
    "startMonth": 5,
    "startDay": 28,
@@ -44483,7 +44491,7 @@
   },
   {
    "uuid": "reign-hammir-singh-mewar",
-   "title": "Reign of Hammir Singh",
+   "title": "Tenure of Hammir Singh",
    "start": 1326,
    "end": 1364,
    "tracks": [
@@ -44540,11 +44548,10 @@
   {
    "uuid": "reign-dantidurga-rashtrakuta-empire",
    "title": "Reign of Dantidurga",
-   "start": 756,
    "tracks": [
     "rashtrakuta-empire"
    ],
-   "descr": "Rules as head of state of Rashtrakutas from 756.",
+   "descr": "Rules as head of state of Rashtrakutas from 753 to 756 (3 years).",
    "sources": [
     {
      "sourceKey": "wp-dantidurga",
@@ -44562,7 +44569,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 753,
+   "end": 756,
+   "circa": true
   },
   {
    "uuid": "reign-ala-ud-din-bahman-shah-bahmani-sultanate",
@@ -44722,11 +44732,10 @@
   {
    "uuid": "reign-vijayalaya-chola-chola-empire",
    "title": "Reign of Vijayalaya Chola",
-   "start": 871,
    "tracks": [
     "chola-empire"
    ],
-   "descr": "Rules as head of state of Chola Empire from 871.",
+   "descr": "Rules as head of state of Chola Empire from 850 to 871 (21 years).",
    "sources": [
     {
      "sourceKey": "wp-vijayalaya-chola",
@@ -44744,7 +44753,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 850,
+   "end": 871,
+   "circa": true
   },
   {
    "uuid": "reign-rajendra-iii-chola-empire",
@@ -45031,11 +45043,10 @@
   {
    "uuid": "reign-veera-vijaya-bukka-raya-vijayanagara-empire",
    "title": "Reign of Veera Vijaya Bukka Raya",
-   "start": 1424,
    "tracks": [
     "vijayanagara-empire"
    ],
-   "descr": "Rules as head of state of Vijayanagara Empire from 1424.",
+   "descr": "Rules as head of state of Vijayanagara Empire from 1423 to 1424.",
    "sources": [
     {
      "sourceKey": "wp-veera-vijaya-bukka-raya",
@@ -45053,7 +45064,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 1423,
+   "end": 1424,
+   "circa": true
   },
   {
    "uuid": "reign-mallikarjuna-raya-vijayanagara-empire",
@@ -45175,11 +45189,10 @@
   {
    "uuid": "reign-saluva-narasimha-deva-raya-vijayanagara-empire",
    "title": "Reign of Saluva Narasimha Deva Raya",
-   "start": 1491,
    "tracks": [
     "vijayanagara-empire"
    ],
-   "descr": "Rules as head of state of Vijayanagara Empire from 1491.",
+   "descr": "Rules as head of state of Vijayanagara Empire from 1485 to 1491 (6 years).",
    "sources": [
     {
      "sourceKey": "wp-saluva-narasimha-deva-raya",
@@ -45198,7 +45211,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 1485,
+   "end": 1491,
+   "circa": true
   },
   {
    "uuid": "reign-thimma-bhupala-vijayanagara-empire",
@@ -47706,7 +47722,7 @@
   },
   {
    "uuid": "reign-bhuvanekabahu-vi-jaffna-kingdom",
-   "title": "Reign of Bhuvanekabahu VI",
+   "title": "Tenure of Bhuvanekabahu VI",
    "start": 1450,
    "end": 1467,
    "tracks": [
@@ -49349,7 +49365,7 @@
   },
   {
    "uuid": "reign-wang-yanjun-china",
-   "title": "Reign of Wang Yanjun",
+   "title": "Tenure of Wang Yanjun",
    "start": 927,
    "startMonth": 1,
    "startDay": 14,
@@ -49447,7 +49463,7 @@
   },
   {
    "uuid": "reign-wang-yanjun-china-928",
-   "title": "Reign of Wang Yanjun",
+   "title": "Tenure of Wang Yanjun",
    "start": 928,
    "startMonth": 8,
    "startDay": 13,
@@ -57852,11 +57868,10 @@
   {
    "uuid": "reign-thong-lan-thailand",
    "title": "Reign of Thong Lan",
-   "start": 1388,
    "tracks": [
     "thailand"
    ],
-   "descr": "Rules as head of state of Thailand (Ayutthaya) from 1388.",
+   "descr": "Rules as head of state of Thailand (Ayutthaya) from 750 to 1388 (638 years).",
    "sources": [
     {
      "sourceKey": "wp-thong-lan",
@@ -57874,7 +57889,9 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 750,
+   "end": 1388
   },
   {
    "uuid": "reign-ramrachathirat-thailand",
@@ -59938,11 +59955,10 @@
   {
    "uuid": "reign-sulayman-of-mali-mali-empire",
    "title": "Reign of Sulayman of Mali",
-   "start": 1359,
    "tracks": [
     "mali-empire"
    ],
-   "descr": "Rules as head of state of Mali Empire from 1359.",
+   "descr": "Rules as head of state of Mali Empire from 1340 to 1359 (19 years).",
    "sources": [
     {
      "sourceKey": "wp-sulayman-of-mali",
@@ -59960,7 +59976,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 1340,
+   "end": 1359,
+   "circa": true
   },
   {
    "uuid": "reign-kassa-mansa-mali-empire",
@@ -60109,11 +60128,10 @@
   {
    "uuid": "reign-maghan-iii-mali-empire",
    "title": "Reign of Maghan III",
-   "start": 1415,
    "tracks": [
     "mali-empire"
    ],
-   "descr": "Rules as head of state of Mali Empire from 1415.",
+   "descr": "Rules as head of state of Mali Empire from 1390 to 1415 (25 years).",
    "sources": [
     {
      "sourceKey": "wp-maghan-iii",
@@ -60131,7 +60149,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 1390,
+   "end": 1415,
+   "circa": true
   },
   {
    "uuid": "reign-uli-ii-mali-empire",
@@ -60309,7 +60330,7 @@
   },
   {
    "uuid": "reign-jo-o-i-of-kongo-kingdom-of-kongo",
-   "title": "Reign of João I of Kongo",
+   "title": "Tenure of João I of Kongo",
    "start": 1470,
    "end": 1509,
    "tracks": [
@@ -60365,7 +60386,7 @@
   },
   {
    "uuid": "reign-nchare-yen-kingdom-of-bamum",
-   "title": "Presidency of Nchare Yen",
+   "title": "Tenure of Nchare Yen",
    "start": 1394,
    "end": 1418,
    "tracks": [
@@ -61105,7 +61126,7 @@
   },
   {
    "uuid": "reign-tari-curi-purepecha-empire",
-   "title": "Reign of Tariácuri",
+   "title": "Tenure of Tariácuri",
    "start": 1350,
    "end": 1390,
    "tracks": [
@@ -61418,7 +61439,7 @@
   },
   {
    "uuid": "reign-meicuchuca-muisca-confederation",
-   "title": "Reign of Meicuchuca",
+   "title": "Tenure of Meicuchuca",
    "start": 1450,
    "end": 1470,
    "tracks": [
@@ -61474,7 +61495,7 @@
   },
   {
    "uuid": "reign-saguamanchica-muisca-confederation",
-   "title": "Reign of Saguamanchica",
+   "title": "Tenure of Saguamanchica",
    "start": 1470,
    "end": 1490,
    "tracks": [
@@ -61559,7 +61580,7 @@
   },
   {
    "uuid": "reign-nemequene-muisca-confederation",
-   "title": "Reign of Nemequene",
+   "title": "Tenure of Nemequene",
    "start": 1490,
    "end": 1514,
    "tracks": [
@@ -75764,7 +75785,9 @@
    "qid": "Q559582",
    "route": "office: Byzantine emperor; polity: Byzantine Empire",
    "cited": "Mizizios",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Usurper of the Byzantine Empire"
+   ]
   },
   "reign-constantine-iv-eastern-roman": {
    "row": "eastern-roman",
@@ -75800,9 +75823,7 @@
    "qid": "Q4988446",
    "route": "list: List of Roman and Byzantine empresses",
    "cited": "Eudokia (wife of Justinian II)",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-tiberius-iii-eastern-roman": {
    "row": "eastern-roman",
@@ -75930,9 +75951,7 @@
    "qid": "Q4947274",
    "route": "list: List of Roman and Byzantine empresses",
    "cited": "Eudokia (wife of Constantine V)",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-leo-iv-the-khazar-eastern-roman": {
    "row": "eastern-roman",
@@ -76072,7 +76091,9 @@
    "qid": "Q313838",
    "route": "list: List of Byzantine emperors",
    "cited": "Thomas the Slav",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Usurper of the Byzantine empire"
+   ]
   },
   "reign-michael-ii-eastern-roman": {
    "row": "eastern-roman",
@@ -76120,7 +76141,9 @@
    "qid": "Q712594",
    "route": "list: List of Byzantine emperors",
    "cited": "Bardas",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Caesar of the Byzantine Empire"
+   ]
   },
   "reign-basil-i-eastern-roman": {
    "row": "eastern-roman",
@@ -76446,7 +76469,9 @@
    "qid": "Q246434",
    "route": "list: List of Roman and Byzantine empresses",
    "cited": "Isaac Komnenos (brother of Alexios I)",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Sebastokrator of the Byzantine Empire"
+   ]
   },
   "reign-alexios-i-komnenos-eastern-roman": {
    "row": "eastern-roman",
@@ -77560,7 +77585,9 @@
    "qid": "Q166466",
    "route": "list: List of Hungarian monarchs",
    "cited": "John Corvinus",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Ban of Croatia"
+   ]
   },
   "reign-paul-i-ubi-of-bribir-bosnia-and-herzegovina": {
    "row": "bosnia-and-herzegovina",
@@ -77576,7 +77603,9 @@
    "qid": "Q965795",
    "route": "list: List of rulers of medieval Bosnia",
    "cited": "Stephen II, Ban of Bosnia",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Ban of Bosnia"
+   ]
   },
   "reign-vladislav-of-bosnia-bosnia-and-herzegovina": {
    "row": "bosnia-and-herzegovina",
@@ -77584,7 +77613,9 @@
    "qid": "Q2750878",
    "route": "list: List of rulers of medieval Bosnia",
    "cited": "Vladislav of Bosnia",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Ban of Bosnia (de facto)"
+   ]
   },
   "reign-hrvoje-vuk-i-hrvatini-bosnia-and-herzegovina": {
    "row": "bosnia-and-herzegovina",
@@ -79690,7 +79721,9 @@
    "qid": "Q263296",
    "route": "list: List of Polish monarchs; list: List of heads of state of Poland; polity: Crown of the Kingdom of Poland",
    "cited": "Maria Dobroniega of Kiev",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Duchess consort of Poland"
+   ]
   },
   "reign-casimir-i-the-restorer-poland": {
    "row": "poland",
@@ -79746,7 +79779,9 @@
    "qid": "Q2128810",
    "route": "list: List of Polish monarchs; list: List of heads of state of Poland; polity: Crown of the Kingdom of Poland",
    "cited": "Helena of Znojmo",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): High Duchess consort of Poland"
+   ]
   },
   "reign-henry-the-bearded-poland": {
    "row": "poland",
@@ -81112,7 +81147,9 @@
    "qid": "Q2827037",
    "route": "list: Counts and dukes of Savoy",
    "cited": "Agnes of Aquitaine, Countess of Savoy",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Countess of Savoy"
+   ]
   },
   "reign-amadeus-iii-of-savoy-savoy": {
    "row": "savoy",
@@ -81152,7 +81189,9 @@
    "qid": "Q4013809",
    "route": "list: Counts and dukes of Savoy",
    "cited": "Yolande Palaeologina of Montferrat",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Countess of Savoy"
+   ]
   },
   "reign-amadeus-vii-of-savoy-savoy": {
    "row": "savoy",
@@ -82162,7 +82201,9 @@
    "qid": "Q237987",
    "route": "list: List of Portuguese monarchs; list: List of Portuguese royal consorts; list: List of heads of state of Portugal",
    "cited": "Theresa, Countess of Portugal",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Countess of Portugal"
+   ]
   },
   "reign-henry-count-of-portugal-portugal": {
    "row": "portugal",
@@ -83120,7 +83161,9 @@
    "qid": "Q150872",
    "route": "list: List of English monarchs",
    "cited": "Empress Matilda",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Lady of the English"
+   ]
   },
   "reign-henry-ii-of-england-united-kingdom": {
    "row": "united-kingdom",
@@ -84126,9 +84169,7 @@
    "qid": "Q375309",
    "route": "list: List of monarchs of Sweden",
    "cited": "Inge the Elder",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-harald-gille-norway": {
    "row": "norway",
@@ -84540,9 +84581,7 @@
    "qid": "Q375309",
    "route": "list: List of legendary kings of Sweden; list: List of monarchs of Sweden; polity: Sweden",
    "cited": "Inge the Elder",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-inge-the-younger-sweden": {
    "row": "sweden",
@@ -85366,7 +85405,9 @@
    "qid": "Q4848894",
    "route": "list: List of Abbasid caliphs",
    "cited": "Bajkam",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): amir al-umara of the Abbasid Caliphate"
+   ]
   },
   "reign-al-muttaqi-caliphate": {
    "row": "caliphate",
@@ -85382,7 +85423,9 @@
    "qid": "Q16760620",
    "route": "list: List of Abbasid caliphs",
    "cited": "Tuzun (amir al-umara)",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): amir al-umara of the Abbasid Caliphate"
+   ]
   },
   "reign-al-mustakfi-caliphate": {
    "row": "caliphate",
@@ -85586,7 +85629,9 @@
    "qid": "Q210635",
    "route": "list: List of Abbasid caliphs; polity: Abbasid Caliphate",
    "cited": "Al-Musta'sim (Cairo)",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): (second period)"
+   ]
   },
   "reign-al-mutawakkil-i-caliphate-1389": {
    "row": "caliphate",
@@ -85594,7 +85639,9 @@
    "qid": "Q198038",
    "route": "list: List of Abbasid caliphs; polity: Abbasid Caliphate",
    "cited": "Al-Mutawakkil I",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): (third period)"
+   ]
   },
   "reign-al-musta-in-egypt-caliphate": {
    "row": "caliphate",
@@ -85714,7 +85761,9 @@
    "qid": "Q169329",
    "route": "list: List of queens of Jerusalem; office: Monarch of Jerusalem",
    "cited": "Conrad of Montferrat",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Marquis of Montferrat"
+   ]
   },
   "reign-henry-ii-of-champagne-kingdom-of-jerusalem": {
    "row": "kingdom-of-jerusalem",
@@ -86368,7 +86417,9 @@
    "qid": "Q4822624",
    "route": "polity: Beylik of Dulkadir",
    "cited": "Zayn al-Din Qaraja",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Beg of Dulkadir"
+   ]
   },
   "reign-ahmed-of-ramadan-ramadanid-emirate": {
    "row": "ramadanid-emirate",
@@ -86377,7 +86428,8 @@
    "route": "polity: Ramadanid Emirate",
    "cited": "Ahmed of Ramadan",
    "toCheck": [
-    "end read from the quote's second date"
+    "end read from the quote's second date",
+    "office noun unclear (shown as \"Tenure of\"): Beg of Ramadan"
    ]
   },
   "reign-ibrahim-ii-of-ramadan-ramadanid-emirate": {
@@ -86387,7 +86439,8 @@
    "route": "polity: Ramadanid Emirate",
    "cited": "Ibrahim II of Ramadan",
    "toCheck": [
-    "Wikidata differs: 1416 – 1418"
+    "Wikidata differs: 1416 – 1418",
+    "office noun unclear (shown as \"Tenure of\"): Beg of Ramadan"
    ]
   },
   "reign-g-y-sedd-n-halil-bey-ramadanid-emirate": {
@@ -86397,7 +86450,8 @@
    "route": "polity: Ramadanid Emirate",
    "cited": "Gıyâseddîn Halil Bey",
    "toCheck": [
-    "Wikidata differs: 1485 – 1510"
+    "Wikidata differs: 1485 – 1510",
+    "office noun unclear (shown as \"Tenure of\"): Beylik of Ramadan"
    ]
   },
   "reign-yazdegerd-iii-sasanian": {
@@ -86424,7 +86478,9 @@
    "qid": "Q45261",
    "route": "polity: Saffarid dynasty",
    "cited": "Ya'qub ibn al-Layth al-Saffar",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Amir of the Saffarid dynasty"
+   ]
   },
   "reign-khalaf-ibn-ahmad-saffarid-dynasty": {
    "row": "saffarid-dynasty",
@@ -86432,7 +86488,9 @@
    "qid": "Q4562131",
    "route": "polity: Saffarid dynasty",
    "cited": "Khalaf ibn Ahmad",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Amir of the Saffarid dynasty"
+   ]
   },
   "reign-imad-al-dawla-buyid-dynasty": {
    "row": "buyid-dynasty",
@@ -86440,7 +86498,9 @@
    "qid": "Q912259",
    "route": "polity: Buyid dynasty",
    "cited": "Imad al-Dawla",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Amir of the Buyid amirate of Fars"
+   ]
   },
   "reign-abu-mansur-fulad-sutun-buyid-dynasty": {
    "row": "buyid-dynasty",
@@ -86456,7 +86516,9 @@
    "qid": "Q32853",
    "route": "polity: Ghaznavid Empire",
    "cited": "Sabuktigin",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Amir of Ghazna"
+   ]
   },
   "reign-khusrau-malik-ghaznavid-empire": {
    "row": "ghaznavid-empire",
@@ -86600,7 +86662,9 @@
    "qid": "Q177320",
    "route": "polity: Ilkhanate",
    "cited": "Hulegu Khan",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Ilkhan"
+   ]
   },
   "reign-qara-yusuf-qara-qoyunlu": {
    "row": "qara-qoyunlu",
@@ -86736,7 +86800,9 @@
    "qid": "Q1072396",
    "route": "list: List of Mongol rulers",
    "cited": "Töregene Khatun",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Khatun of Mongols"
+   ]
   },
   "reign-g-y-k-khan-mongol-empire": {
    "row": "mongol-empire",
@@ -86898,7 +86964,9 @@
    "qid": "Q889571",
    "route": "polity: Khwarazmian Empire",
    "cited": "Atsiz",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Khwarazmshah"
+   ]
   },
   "reign-il-arslan-khwarazmian-empire": {
    "row": "khwarazmian-empire",
@@ -86906,7 +86974,9 @@
    "qid": "Q2629418",
    "route": "polity: Khwarazmian Empire",
    "cited": "Il-Arslan",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Khwarazmshah"
+   ]
   },
   "reign-ala-al-din-tekish-khwarazmian-empire": {
    "row": "khwarazmian-empire",
@@ -86930,7 +87000,9 @@
    "qid": "Q559416",
    "route": "polity: Khwarazmian Empire",
    "cited": "Jalal al-Din Mangburni",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Khwarazmshah"
+   ]
   },
   "reign-xiao-tabuyan-qara-khitai": {
    "row": "qara-khitai",
@@ -87610,7 +87682,9 @@
    "qid": "Q2741754",
    "route": "list: List of sultans of Delhi; polity: Sayyid dynasty",
    "cited": "Khizr Khan",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Rayat-i-Ala of Delhi"
+   ]
   },
   "reign-mubarak-shah-ii-delhi-sultanate": {
    "row": "delhi-sultanate",
@@ -87668,7 +87742,9 @@
    "qid": "Q12449459",
    "route": "polity: Kingdom of Mewar",
    "cited": "Hammir Singh",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Maharana of Mewar"
+   ]
   },
   "reign-rana-kumbha-mewar": {
    "row": "mewar",
@@ -87684,9 +87760,7 @@
    "qid": "Q3764262",
    "route": "polity: Rashtrakuta Empire",
    "cited": "Dantidurga",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-ala-ud-din-bahman-shah-bahmani-sultanate": {
    "row": "bahmani-sultanate",
@@ -87734,9 +87808,7 @@
    "qid": "Q7929271",
    "route": "polity: Chola Empire",
    "cited": "Vijayalaya Chola",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-rajendra-iii-chola-empire": {
    "row": "chola-empire",
@@ -87816,9 +87888,7 @@
    "qid": "Q1444558",
    "route": "list: List of Vijayanagara emperors",
    "cited": "Veera Vijaya Bukka Raya",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-mallikarjuna-raya-vijayanagara-empire": {
    "row": "vijayanagara-empire",
@@ -87860,9 +87930,7 @@
    "qid": "Q1452391",
    "route": "list: List of Vijayanagara emperors; polity: Vijayanagara Empire",
    "cited": "Saluva Narasimha Deva Raya",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-thimma-bhupala-vijayanagara-empire": {
    "row": "vijayanagara-empire",
@@ -88622,7 +88690,9 @@
    "qid": "Q4902303",
    "route": "list: List of Jaffna monarchs; polity: Jaffna kingdom",
    "cited": "Bhuvanekabahu VI",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Chieftain of Jaffna of Kingdom of Kotte"
+   ]
   },
   "reign-kanakasooriya-cinkaiariyan-jaffna-kingdom-1467": {
    "row": "jaffna-kingdom",
@@ -89052,7 +89122,9 @@
    "qid": "Q2109927",
    "route": "list: List of Chinese empresses and queens; list: List of Chinese monarchs; office: Emperor of China",
    "cited": "Wang Yanjun",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Jiedushi of Weiwu Circuit ; ( )"
+   ]
   },
   "reign-yang-pu-china": {
    "row": "china",
@@ -89078,7 +89150,9 @@
    "qid": "Q2109927",
    "route": "list: List of Chinese empresses and queens; list: List of Chinese monarchs; office: Emperor of China",
    "cited": "Wang Yanjun",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Jiedushi of Weiwu Circuit ; ( )"
+   ]
   },
   "reign-li-conghou-china": {
    "row": "china",
@@ -91314,9 +91388,7 @@
    "qid": "Q883010",
    "route": "list: List of Thai monarchs; office: King of Thailand",
    "cited": "Thong Lan",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-ramrachathirat-thailand": {
    "row": "thailand",
@@ -91894,9 +91966,7 @@
    "qid": "Q3028531",
    "route": "list: Keita dynasty; polity: Mali Empire",
    "cited": "Sulayman of Mali",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-kassa-mansa-mali-empire": {
    "row": "mali-empire",
@@ -91946,9 +92016,7 @@
    "qid": "Q12496067",
    "route": "list: Keita dynasty; polity: Mali Empire",
    "cited": "Maghan III",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-uli-ii-mali-empire": {
    "row": "mali-empire",
@@ -92009,7 +92077,8 @@
    "route": "list: List of rulers of Kongo; polity: Kingdom of Kongo",
    "cited": "João I of Kongo",
    "toCheck": [
-    "Wikidata differs: 1470 – 1506"
+    "Wikidata differs: 1470 – 1506",
+    "office noun unclear (shown as \"Tenure of\"): Manikongo of the Kingdom of Kongo"
    ]
   },
   "reign-nkuwu-a-ntinu-of-kongo-kingdom-of-kongo": {
@@ -92028,7 +92097,9 @@
    "qid": "Q49875581",
    "route": "list: List of rulers of the Bamum; polity: Kingdom of Bamum",
    "cited": "Nchare Yen",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Mfon of the Bamun"
+   ]
   },
   "reign-dil-na-od-aksum": {
    "row": "aksum",
@@ -92231,7 +92302,8 @@
    "route": "polity: Purépecha Empire",
    "cited": "Tariácuri",
    "toCheck": [
-    "Wikidata differs: 1350 – 1408"
+    "Wikidata differs: 1350 – 1408",
+    "office noun unclear (shown as \"Tenure of\"): Cazonci of the Purépecha Empire"
    ]
   },
   "reign-tenoch-tenochtitlan": {
@@ -92320,7 +92392,9 @@
    "qid": "Q10992698",
    "route": "polity: Muisca Confederations (political units)",
    "cited": "Meicuchuca",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Zipa of Bacatá"
+   ]
   },
   "reign-hunzah-a-muisca-confederation": {
    "row": "muisca-confederation",
@@ -92338,7 +92412,9 @@
    "qid": "Q10950082",
    "route": "polity: Muisca Confederations (political units)",
    "cited": "Saguamanchica",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Zipa of Bacatá"
+   ]
   },
   "reign-michu-muisca-confederation": {
    "row": "muisca-confederation",
@@ -92362,7 +92438,9 @@
    "qid": "Q6039756",
    "route": "polity: Muisca Confederations (political units)",
    "cited": "Nemequene",
-   "toCheck": []
+   "toCheck": [
+    "office noun unclear (shown as \"Tenure of\"): Zipa of Bacatá"
+   ]
   },
   "reign-manco-c-pac-inca-empire": {
    "row": "inca-empire",
