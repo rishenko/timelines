@@ -32,7 +32,7 @@ import wp_dump as wp  # noqa: E402
 from dates import iso  # noqa: E402
 from topics import Tables  # noqa: E402
 from wd_join import WD, compare  # noqa: E402
-from rulers import hist, title_of  # noqa: E402
+from rulers import hist, stems, title_of  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 WIKI = 'https://en.wikipedia.org/wiki/'
@@ -158,13 +158,17 @@ def main():
                               circa=int(c['span']['circa']), category_main=cat[0][0] if cat else '',
                               category_second=cat[1][0] if len(cat) > 1 else '', box=box or '', sourceLocation=c['sourceLocation'],
                               routes='; '.join(sorted(a['routes'])), inlinks=T.inlinks(title), wikidata=res, flags='; '.join(flags)))
-        # suggested importance: ~1 per PER_YEARS years of the row's span get 2, by inbound links; the rest 3
+        # suggested importance: ~1 per PER_YEARS years of the row's span get 2, by inbound links, tripled when the title
+        # names the row ("Second Italo-Ethiopian War" over "Korean War" on Ethiopia); the rest 3
         top = math.ceil(max(1, r1 - r0) / PER_YEARS)
-        for i, c in enumerate(sorted(cands, key=lambda c: -c['inlinks'])):
+        own = stems({w.lower() for n in names if n for w in re.findall(r'[A-Za-z]{4,}', n)})
+        for c in cands:
+            c['names_row'] = int(any(st in c['article'].lower() for st in own))
+        for i, c in enumerate(sorted(cands, key=lambda c: -c['inlinks'] * (3 if c['names_row'] else 1))):
             c['importance_suggested'] = 2 if i < top else 3
         rows += sorted(cands, key=lambda c: c['start'])
 
-    cols = ['row', 'article', 'qid', 'start', 'end', 'precision', 'circa', 'category_main', 'category_second', 'importance_suggested',
+    cols = ['row', 'article', 'qid', 'start', 'end', 'precision', 'circa', 'category_main', 'category_second', 'importance_suggested', 'names_row',
             'inlinks', 'box', 'sourceLocation', 'wikidata', 'routes', 'flags']
     with open(os.path.join(out, 'conflicts.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
