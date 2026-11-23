@@ -233,7 +233,10 @@ def classify(e, ds, wp=None):
     rs = re.match(r'(.+?)\s+rules\b', title)
     if rs and not ruler_is_person(rs.group(1), ds):
         rm = REIGN.match(title)
-    if rm and (e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])):
+    # a span: a later end, in years or, within one year, in months and days (a 1848 presidency of four months)
+    end_later = e.get('end') is not None and (e['end'] != e['start'] or
+                                              (e.get('endMonth'), e.get('endDay')) != (e.get('startMonth'), e.get('startDay')))
+    if rm and (e.get('ongoing') or end_later):
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))
     # "Fall of X": a state ending when X is one of the timeline's rows, else a city falling
     m = re.match(r'(?:the )?fall of (?:the )?([^,;(]+)', title, re.I)

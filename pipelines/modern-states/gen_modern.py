@@ -434,9 +434,14 @@ def build(repo, module_names=None):
         REPORT.append(f'periods: {periods.apply(data, "modern-states")}')
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
+    full = tuple(module_names) == MODULES
+    # reigns (pipelines/common/reigns.py): the frozen rulers pass, on a full run only (a partial run lacks their rows);
+    # before the categories, so the classifier sees them
+    if full:
+        import reigns
+        REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "modern-states-reigns.json"))}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
-    full = tuple(module_names) == MODULES
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')
     order = ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']
     data = {k: data[k] for k in order}
