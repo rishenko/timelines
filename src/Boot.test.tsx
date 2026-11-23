@@ -70,7 +70,11 @@ describe('Boot', () => {
 
   it("paints the timeline's own theme from the site's list before its file arrives, and remembers it", async () => {
     let release = () => {};
-    const s = server(siteFiles());
+    // a theme other than the app's default (dark), so painting it proves the site's list was read
+    const files = siteFiles();
+    files['timelines/index.json'] = { timelines: SITE.map((t, i) => (i === 0 ? { ...t, defaultTheme: 'parchment' } : t)) };
+    files['timelines/ancient-classical.json'] = { ...SITE_DATASETS[0], meta: { ...SITE_DATASETS[0].meta, defaultTheme: 'parchment' } };
+    const s = server(files);
     const slow = (async (url: string, init?: RequestInit) => {
       if (url.endsWith('ancient-classical.json')) await new Promise<void>((r) => (release = r));
       return s.fetchImpl(url, init);
@@ -79,12 +83,15 @@ describe('Boot', () => {
     document.documentElement.style.removeProperty('--bg');
     open('timeline=ancient-classical', slow);
     for (let i = 0; i < 50 && !bg(); i++) await new Promise((r) => setTimeout(r, 10));
-    expect(SITE[0].defaultTheme).toBe('parchment');
     expect(bg()).toBe(PRESETS.parchment.colors.bg);
     expect(screen.queryByRole('region')).toBeNull(); // the file hasn't loaded yet
     release();
     expect(await screen.findByRole('region', { name: 'Timeline: Ancient and Classical World' })).toBeTruthy();
     expect(themeHint('ancient-classical')).toBe('parchment');
+  });
+
+  it('ships Ancient and Classical with the dark theme by default', () => {
+    expect(SITE[0].defaultTheme).toBe('dark');
   });
 
   it('opens the first site timeline for an unknown or missing id', async () => {

@@ -388,7 +388,7 @@ def events():
 def build(repo, module_names=None):
     module_names = module_names or MODULES
     data = {
-        'schemaVersion': 6,  # v6 only adds Era.url and Era.ids; v5 data is valid v6
+        'schemaVersion': 7,  # v7 only adds Era.tracks; v6 data is valid v7
         'meta': {
             'id': 'modern-states', 'title': 'Modern States', 'subtitle': 'Every state in the world, 1500 to today',
             'description': 'States from 1500 to today: their governments as phases, unions as their own rows, and which union each state was part of when.',

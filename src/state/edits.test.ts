@@ -1,3 +1,4 @@
+import { everyField } from '../data/fixtures/everyField.ts';
 import { describe, expect, it } from 'vitest';
 import type { Dataset } from '../types.ts';
 import {
@@ -19,7 +20,7 @@ import { draftToStore, restoreDraft } from './dataset.ts';
 import { spanStretches } from '../lib/lifespan.ts';
 
 const base = (): Dataset => ({
-  schemaVersion: 6,
+  schemaVersion: 7,
   meta: {
     id: 'test',
     title: 'Test',
@@ -76,7 +77,7 @@ describe('tracks', () => {
 
   it('deletes a track, its single-track events, and links to them', () => {
     const d0 = base();
-    expect(trackDeletion(d0, 'guild')).toEqual({ blocked: undefined, orphaned: 1, shared: 1 });
+    expect(trackDeletion(d0, 'guild')).toEqual({ blocked: undefined, orphaned: 1, shared: 1, agesToStrip: [], agesShared: [] });
     const d = removeTrack(d0, 'guild');
     expect(d.events.map((e) => e.uuid)).toEqual(['b']);
     expect(d.events[0].tracks).toEqual(['north']);
@@ -231,5 +232,31 @@ describe('memberships in other rows (memberOf)', () => {
     const removed = removeSource(withMembership(), 'annals');
     expect(guild(removed)).not.toHaveProperty('memberOf');
     expect(validateDataset(removed)).toEqual([]);
+  });
+});
+
+describe('ages placed in rows (Era.tracks) follow row edits', () => {
+  const quayAge = (d: Dataset) => d.meta.eras!.find((a) => a.id === 'age-of-piers')!;
+  it('renaming a row renames it in the ages placed there', () => {
+    const d0 = structuredClone(everyField) as Dataset;
+    const quay = d0.tracks.find((t) => t.id === 'quay')!;
+    expect(quayAge(upsertTrack(d0, { ...quay, id: 'quay-town' }, 'quay')).tracks).toEqual(['quay-town']);
+  });
+  it('removing a row drops it from the ages placed there, and an age left with none spans the timeline', () => {
+    const d0 = structuredClone(everyField) as Dataset;
+    const leaf = d0.tracks.find((t) => t.id !== 'quay' && !d0.tracks.some((c) => c.parent === t.id))!;
+    d0.meta.eras![0].tracks = [leaf.id];
+    expect('tracks' in quayAge(removeTrack(d0, leaf.id))).toBe(false);
+    d0.meta.eras![0].tracks = [leaf.id, 'quay'];
+    expect(quayAge(removeTrack(d0, leaf.id)).tracks).toEqual(['quay']);
+  });
+  it('the delete warning names the ages that move to the strip, and those that stay in other rows', () => {
+    const d0 = structuredClone(everyField) as Dataset;
+    const leaf = d0.tracks.find((t) => t.id !== 'quay' && !d0.tracks.some((c) => c.parent === t.id))!;
+    const name = d0.meta.eras![0].name;
+    d0.meta.eras![0].tracks = [leaf.id];
+    expect(trackDeletion(d0, leaf.id)).toMatchObject({ agesToStrip: [name], agesShared: [] });
+    d0.meta.eras![0].tracks = [leaf.id, 'quay'];
+    expect(trackDeletion(d0, leaf.id)).toMatchObject({ agesToStrip: [], agesShared: [name] });
   });
 });

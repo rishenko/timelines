@@ -41,6 +41,11 @@ describe('schema version 5 rules', () => {
     // eras
     ['era id', (d) => (d.meta.eras![1].id = 'age-of-piers'), /Duplicate era id "age-of-piers"/],
     ['era without a source', (d) => (d.meta.eras![0].sources = []), /Era "The Age of Piers" cites no source/],
+    ['era in an unknown row', (d) => (d.meta.eras![0].tracks = ['nowhere']), /Era "The Age of Piers" names unknown row "nowhere"/],
+    ['era naming a row twice', (d) => (d.meta.eras![0].tracks = ['quay', 'quay']), /Era "The Age of Piers" names a row twice/],
+    ['era group name for no group', (d) => (d.meta.eraGroups = { 'no-such-group': { name: 'X' } }), /meta.eraGroups names "no-such-group", which no era has as its group/],
+    ['era group without a name', (d) => (d.meta.eraGroups = { 'harbor-ages': { name: ' ' } }), /meta.eraGroups "harbor-ages" has no name/],
+    ['era with no rows listed', (d) => (d.meta.eras![0].tracks = []), /Era "The Age of Piers" tracks must be a non-empty list/],
     ['eras overlapping in a group', (d) => Object.assign(d.meta.eras![1], { start: 40, startDates: undefined }), /Eras "The Age of Piers" and "The Age of Leagues" overlap/],
     ['era outside the range', (d) => Object.assign(d.meta.eras![0], { start: -400, end: -300, startMonth: undefined, startDay: undefined, endMonth: undefined, endDay: undefined, startDates: undefined, endDates: undefined, startEvent: undefined, endEvent: undefined }), /Era "The Age of Piers" lies outside meta.range/],
     ['era span rules', (d) => Object.assign(d.meta.eras![1], { end: 200 }), /Era "The Age of Leagues" has both an end and ongoing/],
@@ -57,6 +62,22 @@ describe('schema version 5 rules', () => {
       const found = problems(edit);
       expect(found.some((p) => message.test(p)), found.join('\n') || '(no problems)').toBe(true);
     });
+
+  describe('neighbouring eras in a group', () => {
+    // The Age of Piers ends the year (or day) the Age of Leagues starts, 60
+    const end = (e: Record<string, unknown>) => (d: Dataset) =>
+      Object.assign(d.meta.eras![0], { endMonth: undefined, endDay: undefined, endDates: undefined, endEvent: undefined, ...e });
+    const overlap = /Eras "The Age of Piers" and "The Age of Leagues" overlap/;
+    it('may share a boundary year when both ends there are year-only, as PeriodO chains are written', () => {
+      expect(problems(end({ end: 60 }))).toEqual([]);
+    });
+    it('may not overlap by a year', () => {
+      expect(problems(end({ end: 61 })).some((p) => overlap.test(p))).toBe(true);
+    });
+    it('may not share the year when an end there gives a month or day', () => {
+      expect(problems(end({ end: 60, endMonth: 12, endDay: 31 })).some((p) => overlap.test(p))).toBe(true);
+    });
+  });
 
   it('accepts an era that runs past meta.range, as long as it overlaps it', () => {
     // a seam era keeps its own dates in both timelines (the Timurid Renaissance, c. 1375–1525, across 1500)

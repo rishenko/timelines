@@ -13,6 +13,8 @@ const MIN_TARGET_PX = 24;
 const LINK_PX = 24;
 /** The bar's name is shifted right by this much when the ↗ link sits before it. */
 const LINK_INSET_PX = 18;
+/** A line name's width: about 6 px a letter at its 10 px size, plus padding (it's measured by nothing at render). */
+const lineNamePx = (name: string) => Math.ceil(name.length * 6 + 12);
 
 interface Props {
   ages: PlacedAge[];
@@ -24,8 +26,9 @@ interface Props {
   viewLeft: number;
   cal: Calendar;
   sources: Dataset['sources'];
-  /** Centre the chart on this year (the zoom stays). */
-  onSelect: (year: number) => void;
+  /** The age whose details are open (drawn selected), and opening an age's details in the side panel. */
+  selectedId?: string | null;
+  onOpen?: (id: string) => void;
 }
 
 /**
@@ -34,21 +37,63 @@ interface Props {
  * it. An age with a page (`url`) has a ↗ link to it just before its name, when its bar has room for both (two 24 px
  * targets); otherwise the Ages table links it. It stays on screen as the chart scrolls down, like the ruler.
  */
-export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, onSelect }: Props) {
+export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, selectedId, onOpen }: Props) {
   if (!ages.length) return null;
   return (
     <div className="tl-ages" style={{ width, height: lines * AGE_LINE_PX }} role="group" aria-label="Ages">
       <div className="tl-ages-corner" style={{ width: labelW }}>
         Ages
       </div>
-      {ages.map(({ era, span, line }) => {
+      <AgeBars ages={ages} scale={scale} labelW={labelW} viewLeft={viewLeft} cal={cal} sources={sources} selectedId={selectedId} onOpen={onOpen} />
+    </div>
+  );
+}
+
+type BarProps = Omit<Props, 'lines' | 'width'>;
+
+/**
+ * The ages' buttons (and ↗ links), placed by their line: shared by the Ages strip and the rows' age bands. Positions
+ * are from the top of their container, `labelW` in from its left edge.
+ */
+export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, selectedId, onOpen }: BarProps) {
+  // clicking an age (or Enter on it) opens its details in the side panel, as an event's do: dates, region, its article
+  // and its sources as links. However narrow its bar, every age reaches them this way; it never moves the chart.
+  // a named line (a band with two or more): its name at the line's left end, kept on screen; the ages' names and links
+  // on that line start after it
+  const named = new Map<number, { name: string; x0: number }>();
+  for (const a of ages)
+    if (a.lineName) {
+      const x = scale.x(a.span.startWindow ? Math.min(a.span.startWindow[0], at0(a.span)) : at0(a.span));
+      const cur = named.get(a.line);
+      if (!cur || x < cur.x0) named.set(a.line, { name: a.lineName, x0: x });
+    }
+  return (
+    <>
+      {[...named].map(([line, { name, x0 }]) => {
+        const w = lineNamePx(name);
+        return (
+          <span
+            key={`line-${line}`}
+            className="tl-age-line-name"
+            aria-hidden="true"
+            style={{ left: labelW + Math.max(viewLeft, Math.max(scale.x(scale.domain[0]), x0) - w), top: line * AGE_LINE_PX + 4, width: w }}
+          >
+            {name}
+          </span>
+        );
+      })}
+      {ages.map(({ era, span, line, drawEnd, lineName }) => {
+        // on a named line, an age's name and link keep clear of the line's name
+        const left0 = lineName ? viewLeft + lineNamePx(lineName) : viewLeft;
         // an age may run past the timeline's ends (like a row): the chart cuts it there, with an open edge
         const lo = scale.x(scale.domain[0]);
         // with date claims it spans its whole uncertain range; the uncertain ends are drawn lighter and hatched
         const sw = span.startWindow;
         const ew = span.endWindow;
         const raw0 = scale.x(sw ? Math.min(sw[0], at0(span)) : at0(span));
-        const raw1 = scale.x(ew ? Math.max(ew[1] + 1, at1(span, span.end)) : at1(span, span.end));
+        // an age that shares its end year with the next on its line stops where that one starts
+        const end = drawEnd ?? at1(span, span.end);
+        const raw1 = scale.x(ew ? Math.max(ew[1] + 1, end) : end);
         if (raw1 <= lo || raw0 >= scale.width) return null;
         const x0 = Math.max(raw0, lo);
         const x1 = Math.max(Math.min(raw1, scale.width), x0 + 6);
@@ -67,7 +112,7 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
         if (fadeIn) bar['--fade-in'] = `${Math.min(fadeIn, w)}px`;
         if (fadeOut) bar['--fade-out'] = `${Math.min(fadeOut, w)}px`;
         // the name stays readable while the age starts off to the left
-        const nameAt = Math.max(0, Math.min(viewLeft - x0, w - 80));
+        const nameAt = Math.max(0, Math.min(left0 - x0, w - 80));
         const url = safeUrl(era.url);
         const host = url && hostOf(url);
         // the link needs its own 24 px and leaves the bar's button at least 24 px of its own
@@ -75,19 +120,23 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
         const linkAt = Math.max(0, Math.min(nameAt, w - LINK_PX - MIN_TARGET_PX));
         const tip = [
           `${era.name}, ${dates.main}`,
+          lineName && `Region: ${lineName}`,
           ...dates.ranges,
           cut && 'Runs on past this timeline',
           from && `from ${from}`,
-          url && (linked ? `↗ opens its article on ${host}` : `Its article on ${host}: zoom in, or see the Ages table`),
+          url && linked && `↗ opens its article on ${host}`,
+          'Click for its article and sources in the panel',
         ];
         return (
           <Fragment key={era.id}>
             <button
-              className="tl-age"
+              className={`tl-age${selectedId === era.id ? ' selected' : ''}`}
               style={style}
               title={tip.filter(Boolean).join('\n')}
-              aria-label={`${era.name}, ${dates.main}, age; centre the chart on it`}
-              onClick={() => onSelect((span.start + span.end) / 2)}
+              aria-label={`${era.name}${lineName ? ` (${lineName})` : ''}, ${dates.main}, age: details, article and sources`}
+              aria-pressed={selectedId === era.id}
+              data-age-id={era.id}
+              onClick={() => onOpen?.(era.id)}
             >
               <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>
                 <span className="name" style={{ left: linked ? linkAt : nameAt, paddingLeft: linked ? LINK_INSET_PX + 5 : undefined }}>
@@ -111,6 +160,6 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
           </Fragment>
         );
       })}
-    </div>
+    </>
   );
 }

@@ -102,6 +102,9 @@ export function upsertTrack(d: Dataset, track: Track, previousId?: string): Data
       e.tracks.includes(previousId) ? { ...e, tracks: e.tracks.map((t) => (t === previousId ? track.id : t)) } : e,
     );
     tracks = tracks.map((t) => (t.parent === previousId ? { ...t, parent: track.id } : t));
+    // ages placed in the renamed row follow it
+    if (d.meta.eras?.some((a) => a.tracks?.includes(previousId)))
+      d = { ...d, meta: { ...d.meta, eras: d.meta.eras.map((a) => (a.tracks?.includes(previousId) ? { ...a, tracks: a.tracks.map((t) => (t === previousId ? track.id : t)) } : a)) } };
     // memberships in the renamed row follow it
     tracks = tracks.map((t) =>
       t.memberOf?.some((m) => m.row === previousId) ? { ...t, memberOf: t.memberOf.map((m) => (m.row === previousId ? { ...m, row: track.id } : m)) } : t,
@@ -130,6 +133,10 @@ export interface TrackDeletion {
   orphaned: number;
   /** Events that also belong to other tracks; they just lose this one. */
   shared: number;
+  /** Ages (by name) placed only in this row: they move to the Ages strip at the top. */
+  agesToStrip: string[];
+  /** Ages placed in this row and others: they stay in the others. */
+  agesShared: string[];
 }
 
 export function trackDeletion(d: Dataset, id: string): TrackDeletion {
@@ -142,6 +149,8 @@ export function trackDeletion(d: Dataset, id: string): TrackDeletion {
       : undefined,
     orphaned,
     shared: using.length - orphaned,
+    agesToStrip: (d.meta.eras ?? []).filter((a) => a.tracks?.length === 1 && a.tracks[0] === id).map((a) => a.name),
+    agesShared: (d.meta.eras ?? []).filter((a) => (a.tracks?.length ?? 0) > 1 && a.tracks!.includes(id)).map((a) => a.name),
   };
 }
 
@@ -171,7 +180,19 @@ export function removeTrack(d: Dataset, id: string): Dataset {
       const { memberOf: _dropped, ...rest } = t;
       return memberOf.length ? { ...t, memberOf } : rest;
     });
-  return { ...d, tracks: dropEdgeEvents(tracks, removed), events };
+  // ages placed in the removed row lose it (an age left with none spans the whole timeline)
+  const meta = d.meta.eras?.some((a) => a.tracks?.includes(id))
+    ? {
+        ...d.meta,
+        eras: d.meta.eras.map((a) => {
+          if (!a.tracks?.includes(id)) return a;
+          const rest = a.tracks.filter((t) => t !== id);
+          const { tracks: _dropped, ...era } = a;
+          return rest.length ? { ...a, tracks: rest } : era;
+        }),
+      }
+    : d.meta;
+  return { ...d, meta, tracks: dropEdgeEvents(tracks, removed), events };
 }
 
 /**

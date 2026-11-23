@@ -416,6 +416,13 @@ export function validateDataset(d: unknown): string[] {
       checkChronology(label, era.chronology);
       checkUrl(`${label} url`, era.url);
       checkIds(label, era.ids);
+      if (era.tracks !== undefined) {
+        if (!Array.isArray(era.tracks) || !era.tracks.length) errors.push(`${label} tracks must be a non-empty list of row ids.`);
+        else {
+          for (const t of era.tracks) if (!trackIds.has(t)) errors.push(`${label} names unknown row "${t}".`);
+          if (new Set(era.tracks).size !== era.tracks.length) errors.push(`${label} names a row twice.`);
+        }
+      }
       if (!Array.isArray(era.sources) || !era.sources.length) errors.push(`${label} cites no source.`);
       else for (const r of era.sources) if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
       if (!checkSpan(label, era, era.chronology)) continue;
@@ -430,8 +437,23 @@ export function validateDataset(d: unknown): string[] {
       const sorted = [...list].sort((a, b) => at0(a) - at0(b));
       for (let i = 1; i < sorted.length; i++) {
         const prev = sorted[i - 1];
-        if (prev.ongoing || at1(prev) > at0(sorted[i]))
+        const next = sorted[i];
+        // neighbours may share a boundary year, as PeriodO's chains do, when both ends there are year-only
+        const touch = prev.end === next.start && !prev.endMonth && !prev.endDay && !next.startMonth && !next.startDay;
+        if (prev.ongoing || (at1(prev) > at0(next) && !touch))
           errors.push(`Eras "${prev.name}" and "${sorted[i].name}" overlap: eras in one group follow each other (put alternatives in another group).`);
+      }
+    }
+  }
+
+  // era groups' display names: each key is a group some era has, each with a name
+  if (m.eraGroups !== undefined) {
+    if (!m.eraGroups || typeof m.eraGroups !== 'object' || Array.isArray(m.eraGroups)) errors.push('meta.eraGroups must be an object.');
+    else {
+      const used = new Set((Array.isArray(m.eras) ? m.eras : []).map((e) => e?.group).filter(Boolean));
+      for (const [id, g] of Object.entries(m.eraGroups)) {
+        if (!used.has(id)) errors.push(`meta.eraGroups names "${id}", which no era has as its group.`);
+        if (!g || typeof g.name !== 'string' || !g.name.trim()) errors.push(`meta.eraGroups "${id}" has no name.`);
       }
     }
   }

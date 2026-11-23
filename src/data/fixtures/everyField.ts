@@ -27,7 +27,7 @@ function claim(year: number, month: number, day: number, at: string) {
 }
 
 export const everyField = {
-  schemaVersion: 6,
+  schemaVersion: 7,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -55,6 +55,7 @@ export const everyField = {
       theme: { name: 'Theme', applies: 'events', values: { trade: { name: 'Trade' } } },
     },
     continues: [{ timeline: 'harbor-towns', at: 300, side: 'after' }],
+    eraGroups: { 'harbor-ages': { name: 'Harbor ages' } },
     range: { start: -100, end: 300 },
     eras: [
       {
@@ -62,6 +63,7 @@ export const everyField = {
         name: 'The Age of Piers',
         url: 'https://example.com/age-of-piers',
         ids: { wikidata: 'Q4242' },
+        tracks: ['quay'],
         group: 'harbor-ages',
         color: '#c8a24a',
         chronology: 'court',

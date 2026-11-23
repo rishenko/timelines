@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 6,
+  "schemaVersion": 7,
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
@@ -765,7 +765,11 @@
             "sourceKey": "wp-islamic-golden-age",
             "sourceLocation": "lead: \"The period is said to have ended with the collapse of the Abbasid caliphate following the Mongol invasions and the Siege of Baghdad in 1258.\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Islamic_Golden_Age",
+        "ids": {
+          "wikidata": "Q745799"
+        }
       },
       {
         "id": "pax-mongolica",
@@ -801,7 +805,11 @@
             "sourceKey": "wp-pax-mongolica",
             "sourceLocation": "lead: \"The Pax Mongolica (Latin for ), less often known as Pax Tatarica (), is a historiographical term modeled after the original phrase Pax Romana which describes th\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Pax_Mongolica",
+        "ids": {
+          "wikidata": "Q1473258"
+        }
       },
       {
         "id": "timurid-renaissance",
@@ -837,7 +845,11 @@
             "sourceKey": "wp-timurid-renaissance",
             "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Timurid_Renaissance",
+        "ids": {
+          "wikidata": "Q3424763"
+        }
       },
       {
         "id": "renaissance",
@@ -891,7 +903,11 @@
             "sourceKey": "wp-renaissance",
             "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Renaissance",
+        "ids": {
+          "wikidata": "Q4692"
+        }
       },
       {
         "id": "age-of-discovery",
@@ -931,7 +947,11 @@
             "sourceKey": "wp-age-of-discovery",
             "sourceLocation": "infobox end: Mid-17th century"
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Age_of_Discovery",
+        "ids": {
+          "wikidata": "Q133641"
+        }
       }
     ]
   },

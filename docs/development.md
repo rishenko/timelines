@@ -75,7 +75,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
-| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, and the strip under the ruler |
+| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, the strip under the ruler, and the rows' age bands (`AgeBars`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -259,11 +259,20 @@ those lines. Key-event and "+N" behaviour and the category shapes are unchanged.
 ruler. `placeAges` resolves each under the reader's Dating choice (`resolveSpan` with the era's own `chronology`) and
 gives each `group` a line; `agesInView` drops lines with no age in the settled year window the chart already keeps
 for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
-hatching; ends past the chart are cut with a dashed edge. Clicking an age asks `App.tsx` to centre on it
-(`focusOn`, the zoom unchanged). An age with a `url` gets a ↗ link (`a.tl-age-link`) over the start of its bar, before
+hatching; ends past the chart are cut with a dashed edge. Clicking an age (or Enter) opens its details
+in the side panel, as an event's do (`AgePanel`, in `DetailsFrame`, the frame it shares with `DetailPanel`: focus moves
+to the title, Escape or ✕ closes it and focus returns to the bar via `data-age-id`): dates, region, its article and
+Wikidata id, and its sources as links. One panel at a time: `App.tsx` closes an age's details when an event is
+selected, and the other way round. Ages never move the chart (Kevin: centring adds cognitive overhead). An age with a `url` gets a ↗ link (`a.tl-age-link`) over the start of its bar, before
 its name and moving with it, when the bar has room for two 24 px targets (the link and the rest of the button);
-narrower ages leave it to the Ages table. The table view's Ages table is the strip's accessible equivalent; its names
+narrower ages leave it to the side panel. The table view's Ages table is the strip's accessible equivalent; its names
 link the way row names do (`LinkedName` in `TableView.tsx`).
+
+Ages with `tracks` aren't in the strip: `placeAges` places such an age once per row it names (`band`), numbering
+lines per row, and `splitAges` separates the strip's from each row's. `TimelineView` adds each row's band height to
+its `headerPx` (after its phase strips) and draws the band (`.tl-lane-ages`) with the same `AgeBars` as the strip;
+double-clicks and long presses there don't add events. A row that's filtered out takes its ages with it (the table
+still lists them). `trackDeletion` names the ages that would move to the strip, for the delete warning.
 
 ### Category filter
 

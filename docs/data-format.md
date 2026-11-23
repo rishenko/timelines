@@ -1,4 +1,4 @@
-# Timeline data format (schema v6)
+# Timeline data format (schema v7)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -80,7 +80,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `6`. Files of versions `3` to `5` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `7`. Files of versions `3` to `6` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -110,7 +110,8 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Data filters → Regions) uses the first facet that rows belong to, and comparison sets show each row's broad region from it. |
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
-| `eras` | no | Named periods across the whole timeline (the Bronze Age, the Age of Revolutions). See [eras](#eras). Readers see them as ages, in a strip under the ruler. |
+| `eras` | no | Named periods across the whole timeline or one region (the Bronze Age, the Age of Revolutions, the Old Kingdom). See [eras](#eras). Readers see them as ages, in a strip under the ruler or on their region's band. |
+| `eraGroups` | no | Display names for era groups, by group id: `{ "ages-aegean": { "name": "Aegean" } }`. A row's band labels each line with its group's `name`, even a band's only line; without one, a band with two or more lines makes a name from the id (`ages-central-europe` → "Central Europe") and a one-line band stays unlabelled. Each key must be a `group` some era has. |
 | `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
 
 ### eras
@@ -130,19 +131,24 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `id` | yes | Letters, digits and dashes; unique among the eras. |
 | `name` | yes | |
 | `sources` | yes | At least one. |
-| `group` | no | Eras that divide the same years one way share a group, and don't overlap within it. Another group (a region's own periods) is an alternative division of the same years. |
+| `group` | no | Eras that divide the same years one way share a group, and follow each other within it; neighbours may share a boundary year, as PeriodO's chains do (both ends there year-only), and are drawn meeting at the later one's start. Another group (a region's own periods) is an alternative division of the same years. |
 | `color` | no | `#rrggbb`. |
 | `chronology` | no | The dating system its dates follow. |
 | `url` | no | A page about the age, such as its Wikipedia article: readers can open it from the age. It isn't a date source; `sources` are. |
 | `ids` | no | The age's identifiers in other datasets, as a row's: `{ "wikidata": "Q…" }`. |
+| `tracks` | no | The rows the age belongs to, usually region groups (`["africa"]`): each id names a row, once. The age is drawn in each of their bands. Left out, it spans the whole timeline and sits in the strip under the ruler. The rule that ages in one `group` don't overlap holds across bands, so give each region's chain its own `group`. |
 
 An era must overlap `meta.range` when the timeline has one; it may run past it, as rows do, so an era that crosses a seam keeps its own dates in both timelines.
 
-The app draws eras as **ages** in a strip under the ruler: one line per `group` (in the order groups first appear),
+The app draws eras as **ages**: those without `tracks` in a strip under the ruler, the rest on a band at the top of
+each row they name (a region's title band, under any phase strips), with the same buttons and links. Each strip or band
+has one line per `group` (in the order groups first appear there),
 lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
 a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
-clicking it centres the chart on it. An age with a `url` has a ↗ link to that page just before its name (when its bar
-has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`.
+clicking it opens its details: its dates, its article (`url`) and its sources as links, so every age reaches its
+article and sources however narrow its bar. Ages never move the chart. An age with a `url` has a ↗ link to that page just before its name (when its bar
+has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`, and names its region (its rows, or "All
+regions"). Deleting a row in edit mode names the ages that move to the strip.
 
 ### calendar
 
@@ -487,7 +493,7 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 6, or 3 to 5 (lifted to 6 when loaded).
+- The required fields above are present; `schemaVersion` is 7, or 3 to 6 (lifted to 7 when loaded).
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
   `"day"`.
@@ -661,6 +667,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 | Version | What changed |
 |---|---|
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |
+| 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. |
 | 5 | Facets on events (`applies`, event `memberships`), [`meta.eras`](#eras), row `kind`, events' `ongoingSources`, sources' `dump` and `revision`, source `locator`s, the `phase` of a [`memberOf`](#dated-memberships-memberof) entry, and `redirects`. Additive: a version 4 file is read as it is. |
 | 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
 | 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |
