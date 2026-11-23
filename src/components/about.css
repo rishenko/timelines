@@ -29,7 +29,10 @@
 /* the footer's link to it (components/Credits.tsx): a 24 px target at the footer's end */
 .legal-about {
   margin-left: auto;
-  padding: 4px 6px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 6px;
   white-space: nowrap;
   color: var(--link);
 }
