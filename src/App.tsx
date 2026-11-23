@@ -150,7 +150,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
   const chron = useChronology(data);
-  // ages (meta.eras) under the reader's Dating choice, on their lines
+  // ages (context spans of kind age) under the reader's Dating choice, on their lines
   const ages = useMemo(() => placeAges(data, chron.selection), [data, chron.selection]);
   const { resolved, resolvedById, spans, phases, memberOf } = chron;
   const visibleEvents = useMemo(

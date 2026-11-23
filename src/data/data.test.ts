@@ -64,14 +64,16 @@ describe('shipped timelines', () => {
 });
 
 describe('compileSource', () => {
-  it('converts readable years in meta.eras, as in phases', () => {
+  it('converts readable years in context spans (a v7 source file’s meta.eras), as in phases', () => {
     const raw = JSON.parse(readFileSync('data-src/ancient-classical.json', 'utf8'));
     const source = { sourceKey: Object.keys(raw.sources)[0], sourceLocation: 'lead' };
     delete raw.meta.eraGroups; // names the real eras' groups, which this test replaces
     raw.meta.eras = [{ id: 'test-era', name: 'Test era', start: 'c. 27 BCE', end: 180, startDates: [{ year: '27 BCE', source }], sources: [source] }];
     const { dataset, errors } = compileSource(raw);
     expect(errors).toEqual([]);
-    const era = (dataset.meta as { eras: Record<string, unknown>[] }).eras[0];
+    // the source file is v7: its eras compile to the timeline's context spans (v8)
+    const era = (dataset.meta as { context: Record<string, unknown>[] }).context[0];
+    expect(era.kind).toBe('age');
     expect([era.start, era.end, era.circa]).toEqual([-26, 180, true]);
     expect((era.startDates as { year: number }[])[0].year).toBe(-26);
   });

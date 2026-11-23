@@ -9,13 +9,13 @@ import { Cite, DetailsFrame } from './DetailPanel.tsx';
  * clicking an age in the strip or a band (or Enter on it); it never moves the chart.
  */
 export function AgePanel({ age, data, onClose }: { age: PlacedAge; data: Dataset; onClose: () => void }) {
-  const { era, span, lineName } = age;
+  const { era, span, lineName, band } = age;
   const dates = spanInWords(span, data.meta.calendar, data.sources);
   const url = safeUrl(era.url);
   const qid = era.ids?.wikidata;
-  // the band's line name, or (a one-line band, unlabelled in the chart) its group's name: "Africa · Nile Valley"
-  const groupName = lineName ?? (era.tracks?.length && era.group ? data.meta.eraGroups?.[era.group]?.name : undefined);
-  const rows = (era.tracks ?? []).map((id) => data.tracks.find((t) => t.id === id)).filter((t) => !!t);
+  // the band's line name, or (a one-line band, unlabelled in the chart) its line's name: "Africa · Nile Valley"
+  const groupName = lineName ?? (band && era.line ? data.meta.lines?.[era.line]?.name : undefined);
+  const rows = band ? data.tracks.filter((t) => t.id === band) : [];
   return (
     <DetailsFrame openKey={`age:${era.id}`} dates={dates.main} title={era.name} returnTo={`[data-age-id="${CSS.escape(era.id)}"]`} onClose={onClose}>
       <div className="track-chips">

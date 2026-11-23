@@ -3,7 +3,7 @@
 // In the source file, any year may be written for people instead of as a stored integer:
 //   "start": "c. 2334 BCE", "end": "2154 BCE", "year": "1651 BCE", "until": "1400 BCE"
 // They are converted with the timeline's own calendar (so "1450 BCE" becomes -1449, because BCE/CE has no
-// year 0). A "c." on an event's, lifespan stretch's, phase's or era's start sets `circa`. Integers pass through unchanged. The result
+// year 0). A "c." on an event's, lifespan stretch's, phase's or context span's start sets `circa`. Integers pass through unchanged. The result
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
 import { parseFullDate } from '../../src/lib/calendar.ts';
 import { validateDataset } from '../../src/data/validate.ts';
@@ -67,8 +67,8 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
       // edge links to neighbouring timelines: "at" may be written as a readable year too
       ...(m.continues ? { continues: (m.continues as Obj[]).map((c, i) => ({ ...c, at: year(c.at, `meta.continues[${i}]`).year })) } : {}),
       ...(range ? { range: { start: year(range.start, 'meta.range start').year, end: year(range.end, 'meta.range end').year } } : {}),
-      // eras are dated like phases
-      ...(Array.isArray(m.eras) ? { eras: (m.eras as Obj[]).map((e) => dated(e, `era ${e.id}`)) } : {}),
+      // context spans (ages and the like) are dated like phases
+      ...(Array.isArray(m.context) ? { context: (m.context as Obj[]).map((e) => dated(e, `context ${e.id}`)) } : {}),
     },
     chronologies: raw.chronologies
       ? Object.fromEntries(
@@ -91,6 +91,7 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
       ...(Array.isArray(t.phases) ? { phases: (t.phases as Obj[]).map((p) => dated(p, `track ${t.id} phase ${p.name}`)) } : {}),
       // a membership in another row is dated like a phase
       ...(Array.isArray(t.memberOf) ? { memberOf: (t.memberOf as Obj[]).map((m) => dated(m, `track ${t.id} membership in ${m.row}`)) } : {}),
+      ...(Array.isArray(t.context) ? { context: (t.context as Obj[]).map((e) => dated(e, `track ${t.id} context ${e.id}`)) } : {}),
     })),
     events: (raw.events as Obj[]).map((e) => dated(e, `event ${e.uuid}`)),
   };

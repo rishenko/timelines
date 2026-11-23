@@ -1,9 +1,9 @@
 // @vitest-environment jsdom
-// Ages (meta.eras) in the app: the strip under the ruler in the chart, and the Ages table in the table view.
+// Ages (context spans of kind `age`) in the app: the strip under the ruler in the chart, and the Ages table in the table view.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { cleanup, fireEvent, screen, within } from '@testing-library/react';
 import { renderApp } from './test/app.tsx';
-import { plainTimeline } from './test/fixtures.ts';
+import { age, placeAge, plainTimeline } from './test/fixtures.ts';
 
 afterEach(() => {
   cleanup();
@@ -25,9 +25,9 @@ beforeEach(() => localStorage.setItem('timelines:legend-seen', '1'));
 
 const withAges = () => {
   const d = plainTimeline();
-  d.meta.eras = [
-    { id: 'salt-years', name: 'Salt Years', group: 'trade', start: 20, end: 60, sources: [{ sourceKey: 'ledger', sourceLocation: 'p. 3' }] },
-    { id: 'long-calm', name: 'Long Calm', group: 'weather', start: 0, end: 30, circa: true, sources: [{ sourceKey: 'logbook', sourceLocation: '' }] },
+  d.meta.context = [
+    { id: 'salt-years', kind: 'age', name: 'Salt Years', line: 'trade', start: 20, end: 60, sources: [{ sourceKey: 'ledger', sourceLocation: 'p. 3' }] },
+    { id: 'long-calm', kind: 'age', name: 'Long Calm', line: 'weather', start: 0, end: 30, circa: true, sources: [{ sourceKey: 'logbook', sourceLocation: '' }] },
   ];
   return d;
 };
@@ -50,8 +50,8 @@ describe('ages', () => {
 
   it('the table links an age with a page by its name, plus its Wikidata id; one without stays plain text', () => {
     const d = withAges();
-    d.meta.eras![0].url = 'https://en.wikipedia.org/wiki/Salt_Years';
-    d.meta.eras![0].ids = { wikidata: 'Q123' };
+    age(d, 'salt-years').url = 'https://en.wikipedia.org/wiki/Salt_Years';
+    age(d, 'salt-years').ids = { wikidata: 'Q123' };
     renderApp(`timeline=harbor-towns&view=table`, [d]);
     const table = screen.getByRole('table', { name: /^Ages/ });
     const link = within(table).getByRole('link', { name: /^Salt Years\s*\(opens in a new tab\)$/ });
@@ -64,7 +64,7 @@ describe('ages', () => {
   it('an age placed in a row is drawn on that row’s band, not in the strip, with the same button', () => {
     const d = withAges();
     const row = d.tracks[0];
-    d.meta.eras![0].tracks = [row.id];
+    placeAge(d, 'salt-years', row.id);
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
     const strip = screen.getByRole('group', { name: 'Ages' });
     expect(within(strip).queryByRole('button', { name: /^Salt Years/ })).toBeNull();
@@ -72,24 +72,22 @@ describe('ages', () => {
     expect(within(band).getByRole('button', { name: /^Salt Years, 20 L – 60 L, age: details, article and sources$/ })).toBeTruthy();
   });
 
-  it('the table names each age’s region, and lists an age in two rows once', () => {
+  it('the table names each age’s region: its row, or all regions', () => {
     const d = withAges();
-    d.meta.eras![0].tracks = [d.tracks[0].id, d.tracks[1].id];
+    placeAge(d, 'salt-years', d.tracks[1].id);
     renderApp(`timeline=harbor-towns&view=table`, [d]);
     const table = screen.getByRole('table', { name: /^Ages/ });
     const rows = within(table).getAllByRole('row').slice(1);
     expect(rows).toHaveLength(2);
     expect(rows[0].textContent).toContain('All regions');
-    expect(rows[1].textContent).toContain(`${d.tracks[0].name}, ${d.tracks[1].name}`);
+    expect(rows[1].textContent).toContain(d.tracks[1].name);
   });
 
   it('a band with two lines names each line, in the tooltip, the accessible name and the table', () => {
     const d = withAges();
     const row = d.tracks[0];
-    d.meta.eras![0].tracks = [row.id];
-    d.meta.eras![0].group = 'ages-salt-coast';
-    d.meta.eras![1].tracks = [row.id];
-    d.meta.eras![1].group = 'ages-weather-coast';
+    placeAge(d, 'salt-years', row.id).line = 'ages-salt-coast';
+    placeAge(d, 'long-calm', row.id).line = 'ages-weather-coast';
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
     const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
     const b = within(band).getByRole('button', { name: /^Salt Years \(Salt Coast\), 20 L – 60 L, age/ });
@@ -103,10 +101,10 @@ describe('ages', () => {
   it('clicking an age opens its details in the side panel: region, article and sources as links; Escape closes it', () => {
     const d = withAges();
     const row = d.tracks[0];
-    d.meta.eras![0].tracks = [row.id];
-    d.meta.eras![0].url = 'https://en.wikipedia.org/wiki/Salt_Years';
-    d.meta.eras![0].group = 'ages-salt';
-    d.meta.eraGroups = { 'ages-salt': { name: 'Salt Coast' } };
+    const salt = placeAge(d, 'salt-years', row.id);
+    salt.url = 'https://en.wikipedia.org/wiki/Salt_Years';
+    salt.line = 'ages-salt';
+    d.meta.lines = { 'ages-salt': { name: 'Salt Coast' } };
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
     const b = within(screen.getByRole('group', { name: `Ages in ${row.name}` })).getByRole('button', { name: /^Salt Years/ });
     fireEvent.click(b);

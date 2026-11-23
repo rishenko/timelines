@@ -22,7 +22,8 @@ export function datasetIds(ds: Dataset): IdRef[] {
   const out: IdRef[] = [];
   for (const t of ds.tracks ?? []) out.push({ kind: 'row', id: t.id });
   for (const e of ds.events ?? []) out.push({ kind: 'event', id: e.uuid });
-  for (const era of ds.meta?.eras ?? []) out.push({ kind: 'era', id: era.id });
+  // context spans (ages and the like, schema v8), on the timeline and on its rows; links name them as eras
+  for (const era of [...(ds.meta?.context ?? []), ...(ds.tracks ?? []).flatMap((t) => t.context ?? [])]) out.push({ kind: 'era', id: era.id });
   for (const [f, facet] of Object.entries(ds.meta?.facets ?? {})) {
     out.push({ kind: 'facet', id: f });
     for (const v of Object.keys(facet.values ?? {})) out.push({ kind: 'region', id: v, facet: f });

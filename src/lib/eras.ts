@@ -1,51 +1,58 @@
-import type { Dataset, Era } from '../types.ts';
+import type { ContextSpan, Dataset } from '../types.ts';
 import { resolveSpan, type ChronologySelection, type ResolvedSpan } from './chronology.ts';
 import { at0 } from './subYear.ts';
 
 /**
- * Ages (meta.eras): named periods, drawn in a strip under the ruler when they cross regions, or on the band of each row
- * they name in `tracks` (a region's title band, e.g. the Nile Valley's ages on Africa). Each is dated like a phase,
- * under the reader's Dating choice (an age may name its own `chronology`). Ages in one `group` follow each other
- * (validate refuses overlaps there), so each group gets one line of its strip or band, in the order groups first appear.
+ * Ages: context spans of kind `age` (schema v8). The timeline's own (meta.context) are drawn in a strip under the
+ * ruler; a group's or row's own (Track.context) on its band (a region's title band, e.g. the Nile Valley's ages on
+ * Africa). Each is dated like a phase, under the reader's Dating choice (an age may name its own `chronology`). Ages
+ * on one `line` follow each other (validate refuses overlaps there), so each line gets one line of its strip or band,
+ * in the order lines first appear.
  * Neighbours may share a boundary year (both ends year-only, as PeriodO's chains are written); the earlier one is then
  * drawn to the later one's start, so the two meet on the line instead of overlapping by that year.
  */
 export interface PlacedAge {
-  era: Era;
+  /** The context span (kind `age`). */
+  era: ContextSpan;
   span: ResolvedSpan;
-  /** Its line in the strip or band (its group's). */
+  /** Its line in the strip or band (its `line`'s). */
   line: number;
-  /** The row whose band it's drawn on; absent: the Ages strip. An age in several rows is placed once in each. */
+  /** The row whose band it's drawn on (the track whose `context` holds it); absent: the Ages strip. */
   band?: string;
-  /** Its line's name, at the line's left end: its group's from meta.eraGroups, or (a band with two or more lines) one made from the group id. */
+  /** Its line's name, at the line's left end: from meta.lines, or (a band with two or more lines) one made from the line id. */
   lineName?: string;
   /** Where its bar ends when it shares its end year with the next age on its line: that age's start. */
   drawEnd?: number;
 }
 
 export function placeAges(ds: Dataset, selection: ChronologySelection): PlacedAge[] {
-  // lines are numbered per strip or band, by group, in the order groups first appear there
+  // lines are numbered per strip or band, by line id, in the order lines first appear there
   const lines = new Map<string, Map<string, number>>();
   const lineOf = (band: string, g: string) => {
     const m = lines.get(band) ?? lines.set(band, new Map()).get(band)!;
     if (!m.has(g)) m.set(g, m.size);
     return m.get(g)!;
   };
-  const placed: PlacedAge[] = (ds.meta.eras ?? []).flatMap((era) => {
-    const span = resolveSpan(ds, '', era, selection, era.chronology);
-    const g = era.group ?? '';
-    const bands = era.tracks?.length ? era.tracks : [undefined];
-    return bands.map((band) => ({ era, span, line: lineOf(band ?? '', g), ...(band ? { band } : {}) }));
-  });
-  // a band's lines are named from meta.eraGroups, even a band's only line ("Nile Valley" on Africa: the band's name
-  // alone doesn't say which Africa the ages are); a band with two or more lines names the rest from their group ids
+  const nodes: [string | undefined, ContextSpan[] | undefined][] = [[undefined, ds.meta.context], ...ds.tracks.map((t): [string, ContextSpan[] | undefined] => [t.id, t.context])];
+  const placed: PlacedAge[] = nodes.flatMap(([band, list]) =>
+    (list ?? [])
+      .filter((era) => era.kind === 'age')
+      .map((era) => ({
+        era,
+        span: resolveSpan(ds, '', era, selection, era.chronology),
+        line: lineOf(band ?? '', era.line ?? ''),
+        ...(band ? { band } : {}),
+      })),
+  );
+  // a band's lines are named from meta.lines, even a band's only line ("Nile Valley" on Africa: the band's name alone
+  // doesn't say which Africa the ages are); a band with two or more lines names the rest from their line ids
   for (const band of lines.keys()) {
     if (!band) continue;
     const several = lines.get(band)!.size > 1;
     for (const a of placed) {
       if (a.band !== band) continue;
-      const named = a.era.group && ds.meta.eraGroups?.[a.era.group]?.name;
-      if (named || several) a.lineName = named || groupLabel(a.era.group);
+      const named = a.era.line && ds.meta.lines?.[a.era.line]?.name;
+      if (named || several) a.lineName = named || groupLabel(a.era.line);
     }
   }
   const key = (a: PlacedAge) => `${a.band ?? ''}\n${a.line}`;
@@ -61,7 +68,7 @@ export function placeAges(ds: Dataset, selection: ChronologySelection): PlacedAg
 }
 
 /**
- * A line's name when meta.eraGroups gives none, from its group id: "ages-central-europe" → "Central Europe" (a leading
+ * A line's name when meta.lines gives none, from its line id: "ages-central-europe" → "Central Europe" (a leading
  * "ages-" dropped, words capitalized).
  */
 export function groupLabel(group: string | undefined): string | undefined {

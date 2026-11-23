@@ -869,7 +869,7 @@
   margin-right: 0;
 }
 
-/* Ages (meta.eras): a strip under the ruler, one line per group; it stays on screen like the ruler */
+/* Ages (context spans of kind age): a strip under the ruler, one line per line id; it stays on screen like the ruler */
 .tl-ages {
   position: sticky;
   top: 44px;

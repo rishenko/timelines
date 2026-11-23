@@ -32,7 +32,7 @@ interface Props {
 }
 
 /**
- * Ages (meta.eras) in a strip under the ruler, one line per group: periods across the whole timeline, such as the
+ * Ages (the timeline's context spans of kind age) in a strip under the ruler, one line per `line`: periods across the whole timeline, such as the
  * Islamic Golden Age. Each is a button: its name, a tooltip with its dates and sources, and a click centres the chart on
  * it. An age with a page (`url`) has a ↗ link to it just before its name, when its bar has room for both (two 24 px
  * targets); otherwise the Ages table links it. It stays on screen as the chart scrolls down, like the ruler.
@@ -51,8 +51,8 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
 
 type BarProps = Omit<Props, 'lines' | 'width'>;
 
-/** A strip or band line, kept across renders: its band and group (its number changes as empty lines close up). */
-const lineKey = (a: PlacedAge) => `${a.band ?? ''}\n${a.era.group ?? ''}\n${a.lineName ?? ''}`;
+/** A strip or band line, kept across renders: its band and line id (its number changes as empty lines close up). */
+const lineKey = (a: PlacedAge) => `${a.band ?? ''}\n${a.era.line ?? ''}\n${a.lineName ?? ''}`;
 
 /**
  * The ages' buttons (and ↗ links), placed by their line: shared by the Ages strip and the rows' age bands. Positions

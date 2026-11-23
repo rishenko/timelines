@@ -28,7 +28,6 @@ function renameRow(d: Dataset, from: string, to: string) {
     for (const m of t.memberOf ?? []) m.row = fix(m.row);
   }
   for (const e of d.events) e.tracks = e.tracks.map(fix);
-  for (const a of d.meta.eras ?? []) if (a.tracks) a.tracks = a.tracks.map(fix);
 }
 
 describe('ids a link can name', () => {
@@ -70,7 +69,8 @@ describe('the id-stability check', () => {
 
   it('checks eras, facets, regions, sources, tags and chronologies too', () => {
     const r = lost((d) => {
-      d.meta.eras = d.meta.eras!.filter((e) => e.id !== 'age-of-piers');
+      const quay = d.tracks.find((t) => t.context?.some((e) => e.id === 'age-of-piers'))!;
+      quay.context = quay.context!.filter((e) => e.id !== 'age-of-piers');
       delete d.meta.facets!.theme;
       delete d.meta.facets!.region.values.bay;
       delete d.sources.logbook;
