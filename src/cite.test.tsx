@@ -2,7 +2,7 @@
 // The event panel's "Cite this event" and "Report a problem" (docs/feature-audit.md items 6 and 3): a timeline the site
 // doesn't ship (here a fixture, like a reader's own) gets a citation but no link to the public repo's issues.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { cleanup, screen, within } from '@testing-library/react';
+import { cleanup, fireEvent, screen, within } from '@testing-library/react';
 import { renderApp } from './test/app.tsx';
 import { plainTimeline } from './test/fixtures.ts';
 
@@ -33,5 +33,16 @@ describe('the event panel: cite and report', () => {
     const buttons = within(panel).getAllByRole('button', { hidden: true }).map((b) => b.textContent);
     expect(buttons).toEqual(expect.arrayContaining(['Copy the Chicago citation', 'Copy the BibTeX entry']));
     expect(within(panel).queryByRole('link', { name: /^Report a problem/ })).toBeNull();
+  });
+});
+
+describe('cite this timeline', () => {
+  it('focuses the title button before the dialog opens, so closing it returns focus there (the menu item unmounts)', () => {
+    renderApp('timeline=harbor-towns', [plainTimeline()]);
+    const title = document.querySelector<HTMLButtonElement>('button.timeline-picker')!;
+    fireEvent.click(title);
+    fireEvent.click(screen.getByRole('button', { name: 'Cite this timeline…' }));
+    expect(document.activeElement).toBe(title);
+    expect(document.querySelector('dialog.cite-dialog h2')?.textContent).toBe('Cite “The Harbor Towns”');
   });
 });

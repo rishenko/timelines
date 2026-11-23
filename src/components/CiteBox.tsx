@@ -22,7 +22,7 @@ export function CiteBox({ cite }: { cite: Citation }) {
         {copied === 'bibtex' ? 'Copied' : 'Copy'}
         <span className="sr-only"> the BibTeX entry</span>
       </button>
-      <p className="muted cite-note">The data version is the commit this site was built from; it changes when the data does.</p>
+      <p className="muted cite-note">The data version is the commit this site was built from; it changes with every update to the site.</p>
     </div>
   );
 }

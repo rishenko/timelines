@@ -110,6 +110,8 @@ export function TimelinePicker({ timelines, currentId, title, subtitle, onManage
               className="linklike"
               onClick={() => {
                 setOpen(false);
+                // focus the title button first: the dialog returns focus to it on close (this item unmounts)
+                buttonRef.current?.focus();
                 onCite();
               }}
             >

@@ -21,12 +21,15 @@ const BUNDLED = new Set<string>(siteTimelines.timelines);
 export const isBundled = (id: string) => BUNDLED.has(id);
 
 const accessedOn = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-const isoDay = (d: Date) => d.toISOString().slice(0, 10);
+/** The local day as YYYY-MM-DD (the same day as `accessedOn`, not UTC's). */
+const isoDay = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const versionText = () => `data version ${DATA_VERSION.sha}${DATA_VERSION.date ? ` (${DATA_VERSION.date})` : ''}`;
 /** A BibTeX key: letters and digits only. */
 const bibKey = (...parts: string[]) => parts.join('-').replace(/[^A-Za-z0-9-]+/g, '').slice(0, 60);
-/** BibTeX text: braces and backslashes escaped, so a title can't break the entry. */
-const bib = (s: string) => s.replace(/[\\{}]/g, (c) => `\\${c}`);
+/** BibTeX text: braces, backslashes and the TeX specials & % # _ $ escaped, so a title can't break the entry or a
+ * LaTeX build (the `url` field is left as it is). */
+const bib = (s: string) => s.replace(/[\\{}&%#_$]/g, (c) => (c === '\\' ? '\\textbackslash{}' : `\\${c}`));
 
 export interface Citation {
   chicago: string;
@@ -73,9 +76,16 @@ export function citeEvent(ds: Dataset, e: TimelineEvent, url: string, now = new 
 /** A new GitHub issue about an event, pre-filled with what identifies it; null for a timeline this site doesn't ship. */
 export function reportUrl(ds: Dataset, e: TimelineEvent, url: string): string | null {
   if (!isBundled(ds.meta.id)) return null;
-  const sources = e.sources.map((s) => {
-    const src = ds.sources[s.sourceKey];
-    return `- ${src?.name ?? s.sourceKey}${s.sourceLocation ? ` (${s.sourceLocation})` : ''}${src?.url ? `: ${src.url}` : ''}`;
+  // one line per source, its locators joined: an event citing one article 22 times stays one line
+  const locators = new Map<string, string[]>();
+  for (const s of e.sources) {
+    const l = locators.get(s.sourceKey) ?? [];
+    if (s.sourceLocation && !l.includes(s.sourceLocation)) l.push(s.sourceLocation);
+    locators.set(s.sourceKey, l);
+  }
+  const sources = [...locators].map(([key, l]) => {
+    const src = ds.sources[key];
+    return `- ${src?.name ?? key}${l.length ? ` (${l.join('; ')})` : ''}${src?.url ? `: ${src.url}` : ''}`;
   });
   const body = [
     `**Timeline:** ${ds.meta.title} (\`${ds.meta.id}\`)`,
@@ -90,6 +100,6 @@ export function reportUrl(ds: Dataset, e: TimelineEvent, url: string): string | 
     "**What's wrong** (a date, a description, a source, a missing event…), and where you read otherwise:",
     '',
   ].join('\n');
-  const q = new URLSearchParams({ title: `${ds.meta.title}: ${e.title}`, body, labels: 'data' });
+  const q = new URLSearchParams({ title: `${ds.meta.title}: ${e.title}`, body });
   return `${REPO}/issues/new?${q.toString()}`;
 }
