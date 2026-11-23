@@ -167,7 +167,7 @@ left out of the Tab order; the details link the article).
 ## tracks
 
 Each track is a row. Rows nest to **any depth** (e.g. group → region → civilization → period); each
-level indents one step. A parent row can be collapsed so its sub-rows' events fold into it. Deep trees
+level indents one step, and a faint guide line per level (with an elbow to the row's name) shows how deep a row sits. A parent row can be collapsed so its sub-rows' events fold into it. Deep trees
 cost label width, so three or four levels is a practical ceiling rather than a rule.
 
 | Field | Required | What |
