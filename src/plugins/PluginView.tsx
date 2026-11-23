@@ -25,7 +25,6 @@ export function PluginView({ plugin, ctx }: { plugin: ViewPlugin; ctx: ViewConte
       view.current = null;
     };
     // mount once per plugin; later snapshots go through update
-    // mount once per plugin; later snapshots go through update
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [plugin]);
   useEffect(() => {

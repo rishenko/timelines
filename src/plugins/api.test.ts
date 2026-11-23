@@ -7,7 +7,7 @@ describe('pluginUrl: only .js files in the site’s own plugins/ folder', () => 
   it.each([
     ['plugins/centuries.js', 'https://example.github.io/timelines/plugins/centuries.js'],
     ['/plugins/centuries.js', 'https://example.github.io/timelines/plugins/centuries.js'],
-    ['plugins/sub/view.js', 'https://example.github.io/timelines/plugins/sub/view.js'],
+    ['plugins/my-view-2.js', 'https://example.github.io/timelines/plugins/my-view-2.js'],
   ])('%s loads', (param, href) => {
     expect(pluginUrl(param, BASE)?.href).toBe(href);
   });
@@ -18,6 +18,9 @@ describe('pluginUrl: only .js files in the site’s own plugins/ folder', () => 
     ['a step out of the folder', 'plugins/../assets/index.js'],
     ['an encoded step out', 'plugins/%2e%2e/x.js'],
     ['a file beside the app', 'x.js'],
+    ['a sub-folder', 'plugins/sub/view.js'],
+    ['an encoded slash', 'plugins/..%2fevil.js'],
+    ['a name outside a-z, 0-9 and -', 'plugins/My_View.js'],
     ['a query string', 'plugins/x.js?v=2'],
     ['a fragment', 'plugins/x.js#y'],
     ['not a .js file', 'plugins/x.css'],

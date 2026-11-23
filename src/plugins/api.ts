@@ -68,7 +68,9 @@ export function pluginUrl(param: string | null, base = document.baseURI): URL | 
     // the site's plugins folder, beside the app (the site is served from a sub-path on GitHub Pages)
     const dir = new URL('plugins/', base);
     const u = new URL(param.replace(/^\//, ''), new URL('.', base));
-    return u.origin === dir.origin && u.pathname.startsWith(dir.pathname) && u.pathname.endsWith('.js') && !u.search && !u.hash ? u : null;
+    // only plugins/<slug>.js: no sub-folders, no encoded separators
+    const file = u.pathname.startsWith(dir.pathname) ? u.pathname.slice(dir.pathname.length) : '';
+    return u.origin === dir.origin && /^[a-z0-9-]+\.js$/.test(file) && !u.search && !u.hash ? u : null;
   } catch {
     return null;
   }

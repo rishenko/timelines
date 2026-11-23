@@ -12,8 +12,8 @@ century to list its events, and an event opens the usual details panel.
 
 ## Where plugins can come from
 
-Only from this site's own `plugins/` folder (`public/plugins/` in the repo): a `.js` file with no query string or
-fragment. The app refuses anything else, such as another site, a `../` step out of the folder, or a `data:` or
+Only from this site's own `plugins/` folder (`public/plugins/` in the repo): a file named `<id>.js` directly in it
+(lowercase letters, digits and `-`; no sub-folders), with no query string or fragment. The app refuses anything else, such as another site, a `../` step out of the folder, or a `data:` or
 `javascript:` link, and the reader sees a notice saying so.
 
 A plugin runs in the page with the same access as the app's own code. It could read the reader's library and
@@ -69,7 +69,7 @@ A frozen object. Treat it as read-only. A new one comes to `update` whenever wha
 | `select(uuid)` | Opens an event's details in the side panel (`null` closes it). |
 | `showOnTimeline(year)` | Switches to the chart, centred on a year. |
 
-Read the snapshot, never the timeline file. The snapshot already has the filters, dating and migrations applied,
+Read the snapshot, never the timeline file, and never change it: the freeze is shallow, so `data` is the app's own object. The snapshot already has the filters, dating and migrations applied,
 so a plugin doesn't need to repeat them, and later schema changes reach plugins through one place.
 
 ### Looks
@@ -87,7 +87,7 @@ Three versions are independent:
 - **Data schema** (`schema: [min, max]`). A plugin sees the migrated timeline, so in practice that's the current
   schema. The range protects against a schema change that drops or renames a field the plugin reads. When the schema
   goes up, check each plugin and widen its range.
-- **The link** (`plugin=`). It's kept when the app rewrites the address, so a copied link reopens the plugin. It isn't
+- **The link** (`plugin=`). It's kept when the app rewrites the address, so a copied link reopens the plugin's view. It isn't
   yet part of the versioned view link (`v=`), and saved views don't record it.
 
 ## Accessibility
