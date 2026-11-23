@@ -1,0 +1,1383 @@
+{
+ "_note": "Draft list of notable leaders, with a quota per world region (Kevin, 2026-11-23: cover the world). `start`/`end` are the years of the leader's main period in power or leadership (negative = BCE); `role` the kind of leader (a movement, general or statesman may hold no office on a timeline row); `own` the name or title in their own tradition and `ownTokens` forms that show the data uses it (empty: nothing distinct to check); `match` a case-insensitive regex tried against event titles. Written from general knowledge, no page cited.",
+ "leaders": [
+  {
+   "id": "hatshepsut",
+   "name": "Hatshepsut",
+   "start": -1479,
+   "end": -1458,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Maatkare Hatshepsut (pharaoh)",
+   "ownTokens": [
+    "Maatkare"
+   ],
+   "match": "Hatshepsut"
+  },
+  {
+   "id": "thutmose3",
+   "name": "Thutmose III",
+   "start": -1479,
+   "end": -1425,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Menkheperre Djehutymes",
+   "ownTokens": [
+    "Menkheperre"
+   ],
+   "match": "Thutmos[ei]s? III"
+  },
+  {
+   "id": "akhenaten",
+   "name": "Akhenaten",
+   "start": -1353,
+   "end": -1336,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Akhenaten (Amenhotep IV)",
+   "ownTokens": [],
+   "match": "Akhenaten"
+  },
+  {
+   "id": "ramesses2",
+   "name": "Ramesses II",
+   "start": -1279,
+   "end": -1213,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Usermaatre Setepenre Ramesses",
+   "ownTokens": [],
+   "match": "Rames+es II"
+  },
+  {
+   "id": "piye",
+   "name": "Piye of Kush",
+   "start": -744,
+   "end": -714,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Piankhy; Piye (Meroitic: Pyie)",
+   "ownTokens": [],
+   "match": "Piye|Piankhy"
+  },
+  {
+   "id": "hannibal",
+   "name": "Hannibal Barca",
+   "start": -221,
+   "end": -183,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "general",
+   "own": "Hannibal (Ḥanibaʿal) of Carthage",
+   "ownTokens": [],
+   "match": "Hannibal"
+  },
+  {
+   "id": "cleopatra7",
+   "name": "Cleopatra VII",
+   "start": -51,
+   "end": -30,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Cleopatra Philopator",
+   "ownTokens": [],
+   "match": "Cleopatra( VII)?\\b"
+  },
+  {
+   "id": "ezana",
+   "name": "Ezana of Aksum",
+   "start": 320,
+   "end": 360,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "ʿĒzānā, nəgusä nägäst",
+   "ownTokens": [],
+   "match": "Ezana"
+  },
+  {
+   "id": "lalibela",
+   "name": "Lalibela",
+   "start": 1181,
+   "end": 1221,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Gebre Mesqel Lalibela",
+   "ownTokens": [],
+   "match": "Lalibela"
+  },
+  {
+   "id": "sundiata",
+   "name": "Sundiata Keita",
+   "start": 1235,
+   "end": 1255,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Sunjata Keita; Mari Djata",
+   "ownTokens": [
+    "Sunjata"
+   ],
+   "match": "Sundiata|Sunjata"
+  },
+  {
+   "id": "mansa-musa",
+   "name": "Mansa Musa",
+   "start": 1312,
+   "end": 1337,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Kankan Musa (mansa = ruler)",
+   "ownTokens": [
+    "Kankan"
+   ],
+   "match": "Mansa Musa|Kankan Musa"
+  },
+  {
+   "id": "askia",
+   "name": "Askia Muhammad I",
+   "start": 1493,
+   "end": 1528,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Askia Muhammad Ture",
+   "ownTokens": [
+    "Ture"
+   ],
+   "match": "Askia"
+  },
+  {
+   "id": "nzinga",
+   "name": "Nzinga of Ndongo and Matamba",
+   "start": 1624,
+   "end": 1663,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Njinga a Mbande",
+   "ownTokens": [
+    "Mbande"
+   ],
+   "match": "Nzinga|Njinga"
+  },
+  {
+   "id": "shaka",
+   "name": "Shaka kaSenzangakhona",
+   "start": 1816,
+   "end": 1828,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Shaka kaSenzangakhona (Zulu)",
+   "ownTokens": [
+    "kaSenzangakhona"
+   ],
+   "match": "Shaka|Chaka"
+  },
+  {
+   "id": "samori",
+   "name": "Samori Touré",
+   "start": 1870,
+   "end": 1898,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Samori Touré (Almamy)",
+   "ownTokens": [],
+   "match": "Samori|Samory"
+  },
+  {
+   "id": "menelik2",
+   "name": "Menelik II",
+   "start": 1889,
+   "end": 1913,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Menilek II, Niguse Negest",
+   "ownTokens": [
+    "Menilek"
+   ],
+   "match": "Menelik|Menilek"
+  },
+  {
+   "id": "haile-selassie",
+   "name": "Haile Selassie",
+   "start": 1930,
+   "end": 1974,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "monarch",
+   "own": "Haile Selassie (Ras Tafari Makonnen)",
+   "ownTokens": [
+    "Tafari"
+   ],
+   "match": "Haile Selassie"
+  },
+  {
+   "id": "nasser",
+   "name": "Gamal Abdel Nasser",
+   "start": 1956,
+   "end": 1970,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "head of state",
+   "own": "Gamal Abdel Nasser (جمال عبد الناصر)",
+   "ownTokens": [],
+   "match": "Nasser"
+  },
+  {
+   "id": "nkrumah",
+   "name": "Kwame Nkrumah",
+   "start": 1957,
+   "end": 1966,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "head of state",
+   "own": "Kwame Nkrumah",
+   "ownTokens": [],
+   "match": "Nkrumah"
+  },
+  {
+   "id": "mandela",
+   "name": "Nelson Mandela",
+   "start": 1994,
+   "end": 1999,
+   "region": "Africa (with Egypt and North Africa)",
+   "role": "head of state",
+   "own": "Nelson Rolihlahla Mandela (Madiba)",
+   "ownTokens": [
+    "Madiba"
+   ],
+   "match": "Mandela"
+  },
+  {
+   "id": "sargon",
+   "name": "Sargon of Akkad",
+   "start": -2334,
+   "end": -2279,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Sharru-kin (Sargon)",
+   "ownTokens": [],
+   "match": "Sargon"
+  },
+  {
+   "id": "hammurabi",
+   "name": "Hammurabi",
+   "start": -1792,
+   "end": -1750,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Hammurabi (Ammurapi)",
+   "ownTokens": [],
+   "match": "Hammurabi"
+  },
+  {
+   "id": "nebuchadnezzar2",
+   "name": "Nebuchadnezzar II",
+   "start": -605,
+   "end": -562,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Nabû-kudurri-uṣur",
+   "ownTokens": [
+    "Nabu-kudurri"
+   ],
+   "match": "Nebuchadn?e[sz]zar II"
+  },
+  {
+   "id": "cyrus",
+   "name": "Cyrus the Great",
+   "start": -559,
+   "end": -530,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Kūruš (Cyrus II)",
+   "ownTokens": [],
+   "match": "Cyrus"
+  },
+  {
+   "id": "darius1",
+   "name": "Darius I",
+   "start": -522,
+   "end": -486,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Dārayavauš",
+   "ownTokens": [],
+   "match": "Darius I|Darius the Great"
+  },
+  {
+   "id": "shapur1",
+   "name": "Shapur I",
+   "start": 240,
+   "end": 270,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Šābuhr, šāhān šāh",
+   "ownTokens": [],
+   "match": "Shapur I"
+  },
+  {
+   "id": "muhammad",
+   "name": "Muhammad",
+   "start": 610,
+   "end": 632,
+   "region": "West Asia",
+   "role": "founder",
+   "own": "Muḥammad ibn ʿAbd Allāh",
+   "ownTokens": [],
+   "match": "Muhammad"
+  },
+  {
+   "id": "umar",
+   "name": "Umar ibn al-Khattab",
+   "start": 634,
+   "end": 644,
+   "region": "West Asia",
+   "role": "head of state",
+   "own": "ʿUmar ibn al-Khaṭṭāb (amir al-mu'minin)",
+   "ownTokens": [],
+   "match": "Umar"
+  },
+  {
+   "id": "harun",
+   "name": "Harun al-Rashid",
+   "start": 786,
+   "end": 809,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Hārūn al-Rashīd (caliph)",
+   "ownTokens": [],
+   "match": "Harun al-Rashid|Harun"
+  },
+  {
+   "id": "alp-arslan",
+   "name": "Alp Arslan",
+   "start": 1063,
+   "end": 1072,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Alp Arslan (Seljuk sultan)",
+   "ownTokens": [],
+   "match": "Alp Arslan"
+  },
+  {
+   "id": "saladin",
+   "name": "Saladin",
+   "start": 1174,
+   "end": 1193,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Ṣalāḥ ad-Dīn Yūsuf ibn Ayyūb",
+   "ownTokens": [
+    "Salah ad-Din"
+   ],
+   "match": "Saladin|Salah"
+  },
+  {
+   "id": "mehmed2",
+   "name": "Mehmed II",
+   "start": 1444,
+   "end": 1481,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Mehmed II (Fatih Sultan Mehmed)",
+   "ownTokens": [
+    "Fatih"
+   ],
+   "match": "Mehmed II|Mehmet II"
+  },
+  {
+   "id": "suleiman",
+   "name": "Suleiman the Magnificent",
+   "start": 1520,
+   "end": 1566,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "Süleyman (Kanuni, \"the Lawgiver\")",
+   "ownTokens": [
+    "Kanuni"
+   ],
+   "match": "Suleiman the Magnificent|Suleiman I|S[uü]leyman"
+  },
+  {
+   "id": "abbas1",
+   "name": "Shah Abbas I",
+   "start": 1588,
+   "end": 1629,
+   "region": "West Asia",
+   "role": "monarch",
+   "own": "ʿAbbās-e Bozorg",
+   "ownTokens": [],
+   "match": "Abbas I|Abbas the Great"
+  },
+  {
+   "id": "ataturk",
+   "name": "Mustafa Kemal Atatürk",
+   "start": 1923,
+   "end": 1938,
+   "region": "West Asia",
+   "role": "head of state",
+   "own": "Mustafa Kemal Atatürk",
+   "ownTokens": [],
+   "match": "Atat[uü]rk|Mustafa Kemal"
+  },
+  {
+   "id": "khomeini",
+   "name": "Ruhollah Khomeini",
+   "start": 1979,
+   "end": 1989,
+   "region": "West Asia",
+   "role": "head of state",
+   "own": "Ruhollah Khomeini (Supreme Leader)",
+   "ownTokens": [],
+   "match": "Khomeini"
+  },
+  {
+   "id": "harsha",
+   "name": "Harsha (Harshavardhana)",
+   "start": 606,
+   "end": 647,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Harshavardhana (Siladitya)",
+   "ownTokens": [
+    "Siladitya"
+   ],
+   "match": "Harsha"
+  },
+  {
+   "id": "krishnadevaraya",
+   "name": "Krishnadevaraya of Vijayanagara",
+   "start": 1509,
+   "end": 1529,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Sri Krishnadevaraya (Andhra Bhoja)",
+   "ownTokens": [],
+   "match": "Krishnadevaraya|Krishna Deva Raya"
+  },
+  {
+   "id": "jinnah",
+   "name": "Muhammad Ali Jinnah",
+   "start": 1947,
+   "end": 1948,
+   "region": "South Asia",
+   "role": "head of state",
+   "own": "Muhammad Ali Jinnah (Quaid-e-Azam)",
+   "ownTokens": [
+    "Quaid"
+   ],
+   "match": "Jinnah"
+  },
+  {
+   "id": "indira-gandhi",
+   "name": "Indira Gandhi",
+   "start": 1966,
+   "end": 1984,
+   "region": "South Asia",
+   "role": "head of government",
+   "own": "Indira Gandhi",
+   "ownTokens": [],
+   "match": "Indira Gandhi"
+  },
+  {
+   "id": "chandragupta",
+   "name": "Chandragupta Maurya",
+   "start": -322,
+   "end": -298,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Chandragupta (Candragupta Maurya)",
+   "ownTokens": [],
+   "match": "Chandragupta Maurya|Chandragupta I?\\b"
+  },
+  {
+   "id": "ashoka",
+   "name": "Ashoka",
+   "start": -268,
+   "end": -232,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Devanampiya Piyadasi (in his edicts); Aśoka",
+   "ownTokens": [
+    "Piyadasi"
+   ],
+   "match": "Ashoka"
+  },
+  {
+   "id": "samudragupta",
+   "name": "Samudragupta",
+   "start": 335,
+   "end": 375,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Samudragupta (Parakramanka)",
+   "ownTokens": [],
+   "match": "Samudragupta"
+  },
+  {
+   "id": "rajaraja",
+   "name": "Rajaraja I (Chola)",
+   "start": 985,
+   "end": 1014,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Rajaraja Chola (Arulmozhivarman)",
+   "ownTokens": [],
+   "match": "Rajaraja|Raja Raja"
+  },
+  {
+   "id": "akbar",
+   "name": "Akbar",
+   "start": 1556,
+   "end": 1605,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Jalal-ud-din Muhammad Akbar",
+   "ownTokens": [],
+   "match": "Akbar\\b(?! II)"
+  },
+  {
+   "id": "shivaji",
+   "name": "Shivaji",
+   "start": 1674,
+   "end": 1680,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Chhatrapati Shivaji Bhosale",
+   "ownTokens": [
+    "Chhatrapati"
+   ],
+   "match": "Shivaji"
+  },
+  {
+   "id": "aurangzeb",
+   "name": "Aurangzeb",
+   "start": 1658,
+   "end": 1707,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Muhi-ud-Din Muhammad Aurangzeb Alamgir",
+   "ownTokens": [
+    "Alamgir"
+   ],
+   "match": "Aurangzeb|Alamgir"
+  },
+  {
+   "id": "tipu",
+   "name": "Tipu Sultan",
+   "start": 1782,
+   "end": 1799,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Tipu Sultan (Sher-e-Mysore)",
+   "ownTokens": [],
+   "match": "Tipu"
+  },
+  {
+   "id": "ranjit-singh",
+   "name": "Ranjit Singh",
+   "start": 1801,
+   "end": 1839,
+   "region": "South Asia",
+   "role": "monarch",
+   "own": "Maharaja Ranjit Singh (Sher-e-Punjab)",
+   "ownTokens": [
+    "Maharaja"
+   ],
+   "match": "Ranjit Singh"
+  },
+  {
+   "id": "gandhi",
+   "name": "Mohandas K. Gandhi",
+   "start": 1915,
+   "end": 1948,
+   "region": "South Asia",
+   "role": "movement",
+   "own": "Mohandas Karamchand Gandhi (Mahatma, Bapu)",
+   "ownTokens": [],
+   "match": "Gandhi"
+  },
+  {
+   "id": "nehru",
+   "name": "Jawaharlal Nehru",
+   "start": 1947,
+   "end": 1964,
+   "region": "South Asia",
+   "role": "head of government",
+   "own": "Jawaharlal Nehru (Pandit)",
+   "ownTokens": [],
+   "match": "Nehru"
+  },
+  {
+   "id": "qin-shi-huang",
+   "name": "Qin Shi Huang",
+   "start": -221,
+   "end": -210,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Ying Zheng (嬴政), Shi Huangdi",
+   "ownTokens": [
+    "Ying Zheng"
+   ],
+   "match": "Qin Shi Huang|Shi Huangdi"
+  },
+  {
+   "id": "han-wudi",
+   "name": "Emperor Wu of Han",
+   "start": -141,
+   "end": -87,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Han Wudi (Liu Che)",
+   "ownTokens": [
+    "Wudi"
+   ],
+   "match": "Emperor Wu of Han|Han Wudi|Wu of Han"
+  },
+  {
+   "id": "taizong-tang",
+   "name": "Emperor Taizong of Tang",
+   "start": 626,
+   "end": 649,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Li Shimin (李世民)",
+   "ownTokens": [
+    "Li Shimin"
+   ],
+   "match": "Taizong"
+  },
+  {
+   "id": "wu-zetian",
+   "name": "Wu Zetian",
+   "start": 690,
+   "end": 705,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Wu Zhao (武曌), Wu Zetian",
+   "ownTokens": [
+    "Wu Zhao"
+   ],
+   "match": "Wu Zetian"
+  },
+  {
+   "id": "yoritomo",
+   "name": "Minamoto no Yoritomo",
+   "start": 1185,
+   "end": 1199,
+   "region": "East Asia",
+   "role": "shogun",
+   "own": "源頼朝 Minamoto no Yoritomo (first shogun)",
+   "ownTokens": [],
+   "match": "Yoritomo"
+  },
+  {
+   "id": "hongwu",
+   "name": "Hongwu Emperor",
+   "start": 1368,
+   "end": 1398,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Zhu Yuanzhang (朱元璋)",
+   "ownTokens": [
+    "Zhu Yuanzhang"
+   ],
+   "match": "Hongwu"
+  },
+  {
+   "id": "yongle",
+   "name": "Yongle Emperor",
+   "start": 1402,
+   "end": 1424,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Zhu Di (朱棣)",
+   "ownTokens": [
+    "Zhu Di"
+   ],
+   "match": "Yongle"
+  },
+  {
+   "id": "sejong",
+   "name": "King Sejong the Great",
+   "start": 1418,
+   "end": 1450,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Sejong (世宗; Yi Do)",
+   "ownTokens": [],
+   "match": "Sejong"
+  },
+  {
+   "id": "ieyasu",
+   "name": "Tokugawa Ieyasu",
+   "start": 1603,
+   "end": 1616,
+   "region": "East Asia",
+   "role": "shogun",
+   "own": "徳川家康 Tokugawa Ieyasu",
+   "ownTokens": [],
+   "match": "Ieyasu"
+  },
+  {
+   "id": "kangxi",
+   "name": "Kangxi Emperor",
+   "start": 1661,
+   "end": 1722,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Xuanye (玄燁); Manchu: Elhe Taifin",
+   "ownTokens": [
+    "Xuanye"
+   ],
+   "match": "Kangxi"
+  },
+  {
+   "id": "qianlong",
+   "name": "Qianlong Emperor",
+   "start": 1735,
+   "end": 1796,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Hongli (弘曆)",
+   "ownTokens": [
+    "Hongli"
+   ],
+   "match": "Qianlong"
+  },
+  {
+   "id": "cixi",
+   "name": "Empress Dowager Cixi",
+   "start": 1861,
+   "end": 1908,
+   "region": "East Asia",
+   "role": "regent",
+   "own": "Cixi (慈禧太后)",
+   "ownTokens": [],
+   "match": "Cixi|Tzu-hsi"
+  },
+  {
+   "id": "meiji",
+   "name": "Emperor Meiji",
+   "start": 1867,
+   "end": 1912,
+   "region": "East Asia",
+   "role": "monarch",
+   "own": "Mutsuhito (睦仁), Meiji Tenno",
+   "ownTokens": [
+    "Mutsuhito"
+   ],
+   "match": "Meiji"
+  },
+  {
+   "id": "sun-yat-sen",
+   "name": "Sun Yat-sen",
+   "start": 1912,
+   "end": 1925,
+   "region": "East Asia",
+   "role": "head of state",
+   "own": "Sun Zhongshan (孫中山)",
+   "ownTokens": [
+    "Zhongshan"
+   ],
+   "match": "Sun Yat-sen|Sun Zhongshan"
+  },
+  {
+   "id": "mao",
+   "name": "Mao Zedong",
+   "start": 1949,
+   "end": 1976,
+   "region": "East Asia",
+   "role": "head of state",
+   "own": "Mao Zedong (毛泽东; Chairman)",
+   "ownTokens": [],
+   "match": "Mao"
+  },
+  {
+   "id": "deng",
+   "name": "Deng Xiaoping",
+   "start": 1978,
+   "end": 1992,
+   "region": "East Asia",
+   "role": "head of state",
+   "own": "Deng Xiaoping (邓小平)",
+   "ownTokens": [],
+   "match": "Deng Xiaoping"
+  },
+  {
+   "id": "jayavarman2",
+   "name": "Jayavarman II",
+   "start": 802,
+   "end": 835,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Jayavarman II (founder of Angkor)",
+   "ownTokens": [],
+   "match": "Jayavarman II\\b"
+  },
+  {
+   "id": "anawrahta",
+   "name": "Anawrahta",
+   "start": 1044,
+   "end": 1077,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Anawrahta (Aniruddha)",
+   "ownTokens": [
+    "Aniruddha"
+   ],
+   "match": "Anawrahta"
+  },
+  {
+   "id": "suryavarman2",
+   "name": "Suryavarman II",
+   "start": 1113,
+   "end": 1150,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Suryavarman II (Angkor Wat)",
+   "ownTokens": [],
+   "match": "Suryavarman II"
+  },
+  {
+   "id": "jayavarman7",
+   "name": "Jayavarman VII",
+   "start": 1181,
+   "end": 1218,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Jayavarman VII",
+   "ownTokens": [],
+   "match": "Jayavarman VII"
+  },
+  {
+   "id": "gajah-mada",
+   "name": "Gajah Mada",
+   "start": 1331,
+   "end": 1364,
+   "region": "Southeast Asia and Oceania",
+   "role": "statesman",
+   "own": "Gajah Mada (Majapahit mahapatih)",
+   "ownTokens": [],
+   "match": "Gajah Mada"
+  },
+  {
+   "id": "le-loi",
+   "name": "Lê Lợi",
+   "start": 1428,
+   "end": 1433,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Lê Thái Tổ (黎利)",
+   "ownTokens": [
+    "Th[aá]i T[oổ]"
+   ],
+   "match": "L[eê] L[oợ]i|Le Loi"
+  },
+  {
+   "id": "bayinnaung",
+   "name": "Bayinnaung",
+   "start": 1551,
+   "end": 1581,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Bayinnaung (Burma)",
+   "ownTokens": [],
+   "match": "Bayinnaung"
+  },
+  {
+   "id": "kamehameha",
+   "name": "Kamehameha I",
+   "start": 1795,
+   "end": 1819,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Kamehameha (Pai'ea)",
+   "ownTokens": [],
+   "match": "Kamehameha(?! (II|III|IV|V)\\b)"
+  },
+  {
+   "id": "chulalongkorn",
+   "name": "King Chulalongkorn (Rama V)",
+   "start": 1868,
+   "end": 1910,
+   "region": "Southeast Asia and Oceania",
+   "role": "monarch",
+   "own": "Chulalongkorn (Rama V of Siam)",
+   "ownTokens": [],
+   "match": "Chulalongkorn|Rama V"
+  },
+  {
+   "id": "ho-chi-minh",
+   "name": "Ho Chi Minh",
+   "start": 1945,
+   "end": 1969,
+   "region": "Southeast Asia and Oceania",
+   "role": "head of state",
+   "own": "Hồ Chí Minh",
+   "ownTokens": [
+    "Hồ Chí Minh"
+   ],
+   "match": "Ho Chi Minh|Hồ Chí Minh"
+  },
+  {
+   "id": "sukarno",
+   "name": "Sukarno",
+   "start": 1945,
+   "end": 1967,
+   "region": "Southeast Asia and Oceania",
+   "role": "head of state",
+   "own": "Sukarno (Bung Karno)",
+   "ownTokens": [],
+   "match": "Sukarno|Soekarno"
+  },
+  {
+   "id": "modu",
+   "name": "Modu Chanyu (Xiongnu)",
+   "start": -209,
+   "end": -174,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Modu / Maodun (Chinese form)",
+   "ownTokens": [],
+   "match": "Modu|Maodun|Xiongnu"
+  },
+  {
+   "id": "kanishka",
+   "name": "Kanishka (Kushan)",
+   "start": 127,
+   "end": 150,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Kanishka",
+   "ownTokens": [],
+   "match": "Kanishka"
+  },
+  {
+   "id": "attila",
+   "name": "Attila the Hun",
+   "start": 434,
+   "end": 453,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Attila (Hunnic ruler)",
+   "ownTokens": [],
+   "match": "Attila"
+  },
+  {
+   "id": "bumin",
+   "name": "Bumin Qaghan (Göktürk)",
+   "start": 552,
+   "end": 553,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Bumin Qaghan / Illig Qaghan",
+   "ownTokens": [],
+   "match": "Bumin|Istemi|G[oö]kt[uü]rk"
+  },
+  {
+   "id": "genghis",
+   "name": "Genghis Khan",
+   "start": 1206,
+   "end": 1227,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Chinggis Khaan (Temüjin)",
+   "ownTokens": [
+    "Chinggis"
+   ],
+   "match": "Genghis|Chinggis|Tem[uü]jin"
+  },
+  {
+   "id": "kublai",
+   "name": "Kublai Khan",
+   "start": 1260,
+   "end": 1294,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Khubilai (Setsen Khan)",
+   "ownTokens": [
+    "Khubilai"
+   ],
+   "match": "Kublai|Khubilai"
+  },
+  {
+   "id": "timur",
+   "name": "Timur (Tamerlane)",
+   "start": 1370,
+   "end": 1405,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Temür (Amir Timur); 'Tamerlane' is an exonym",
+   "ownTokens": [
+    "Temur"
+   ],
+   "match": "Timur|Tamerlane|Tamerlan"
+  },
+  {
+   "id": "babur",
+   "name": "Babur",
+   "start": 1526,
+   "end": 1530,
+   "region": "Central Asia and the steppe",
+   "role": "monarch",
+   "own": "Zahir-ud-din Muhammad Babur",
+   "ownTokens": [],
+   "match": "Babur"
+  },
+  {
+   "id": "pakal",
+   "name": "K'inich Janaab' Pakal (Palenque)",
+   "start": 615,
+   "end": 683,
+   "region": "The Americas",
+   "role": "monarch",
+   "own": "K'inich Janaab' Pakal",
+   "ownTokens": [],
+   "match": "Pakal|K.inich Janaab"
+  },
+  {
+   "id": "pachacuti",
+   "name": "Pachacuti Inca Yupanqui",
+   "start": 1438,
+   "end": 1471,
+   "region": "The Americas",
+   "role": "monarch",
+   "own": "Pachakutiq (Sapa Inka)",
+   "ownTokens": [
+    "Pachakuti"
+   ],
+   "match": "Pachacuti|Pachakuti"
+  },
+  {
+   "id": "moctezuma2",
+   "name": "Moctezuma II",
+   "start": 1502,
+   "end": 1520,
+   "region": "The Americas",
+   "role": "monarch",
+   "own": "Motecuhzoma Xocoyotzin (huey tlatoani)",
+   "ownTokens": [
+    "Motecuhzoma"
+   ],
+   "match": "Moctezuma|Montezuma"
+  },
+  {
+   "id": "atahualpa",
+   "name": "Atahualpa",
+   "start": 1532,
+   "end": 1533,
+   "region": "The Americas",
+   "role": "monarch",
+   "own": "Atawallpa (Sapa Inka)",
+   "ownTokens": [
+    "Atawallpa"
+   ],
+   "match": "Atahualpa"
+  },
+  {
+   "id": "toussaint",
+   "name": "Toussaint Louverture",
+   "start": 1791,
+   "end": 1802,
+   "region": "The Americas",
+   "role": "general",
+   "own": "Toussaint Louverture",
+   "ownTokens": [],
+   "match": "Toussaint|Louverture"
+  },
+  {
+   "id": "dessalines",
+   "name": "Jean-Jacques Dessalines",
+   "start": 1804,
+   "end": 1806,
+   "region": "The Americas",
+   "role": "head of state",
+   "own": "Jean-Jacques Dessalines (Jacques I)",
+   "ownTokens": [],
+   "match": "Dessalines"
+  },
+  {
+   "id": "washington",
+   "name": "George Washington",
+   "start": 1789,
+   "end": 1797,
+   "region": "The Americas",
+   "role": "head of state",
+   "own": "George Washington",
+   "ownTokens": [],
+   "match": "George Washington"
+  },
+  {
+   "id": "bolivar",
+   "name": "Simón Bolívar",
+   "start": 1819,
+   "end": 1830,
+   "region": "The Americas",
+   "role": "head of state",
+   "own": "Simón Bolívar (El Libertador)",
+   "ownTokens": [],
+   "match": "Bol[ií]var"
+  },
+  {
+   "id": "juarez",
+   "name": "Benito Juárez",
+   "start": 1858,
+   "end": 1872,
+   "region": "The Americas",
+   "role": "head of state",
+   "own": "Benito Juárez (Zapotec)",
+   "ownTokens": [],
+   "match": "Ju[aá]rez"
+  },
+  {
+   "id": "lincoln",
+   "name": "Abraham Lincoln",
+   "start": 1861,
+   "end": 1865,
+   "region": "The Americas",
+   "role": "head of state",
+   "own": "Abraham Lincoln",
+   "ownTokens": [],
+   "match": "Lincoln"
+  },
+  {
+   "id": "fdr",
+   "name": "Franklin D. Roosevelt",
+   "start": 1933,
+   "end": 1945,
+   "region": "The Americas",
+   "role": "head of state",
+   "own": "Franklin D. Roosevelt",
+   "ownTokens": [],
+   "match": "Franklin D\\. Roosevelt|Franklin Roosevelt"
+  },
+  {
+   "id": "castro",
+   "name": "Fidel Castro",
+   "start": 1959,
+   "end": 2008,
+   "region": "The Americas",
+   "role": "head of state",
+   "own": "Fidel Castro",
+   "ownTokens": [],
+   "match": "Fidel Castro|Castro Ruz"
+  },
+  {
+   "id": "pericles",
+   "name": "Pericles",
+   "start": -461,
+   "end": -429,
+   "region": "Europe",
+   "role": "statesman",
+   "own": "Periklēs (Athens)",
+   "ownTokens": [],
+   "match": "Pericles"
+  },
+  {
+   "id": "alexander",
+   "name": "Alexander the Great",
+   "start": -336,
+   "end": -323,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Alexandros III of Macedon",
+   "ownTokens": [],
+   "match": "Alexander the Great|Alexander III"
+  },
+  {
+   "id": "julius-caesar",
+   "name": "Julius Caesar",
+   "start": -49,
+   "end": -44,
+   "region": "Europe",
+   "role": "dictator",
+   "own": "Gaius Iulius Caesar",
+   "ownTokens": [],
+   "match": "Caesar"
+  },
+  {
+   "id": "augustus",
+   "name": "Augustus",
+   "start": -27,
+   "end": 14,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Imperator Caesar Augustus",
+   "ownTokens": [],
+   "match": "Augustus\\b(?! (II|III))"
+  },
+  {
+   "id": "constantine",
+   "name": "Constantine the Great",
+   "start": 306,
+   "end": 337,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Flavius Valerius Constantinus",
+   "ownTokens": [],
+   "match": "Constantine I|Constantine the Great"
+  },
+  {
+   "id": "justinian",
+   "name": "Justinian I",
+   "start": 527,
+   "end": 565,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Iustinianus (Ioustinianos)",
+   "ownTokens": [],
+   "match": "Justinian"
+  },
+  {
+   "id": "charlemagne",
+   "name": "Charlemagne",
+   "start": 768,
+   "end": 814,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Karl der Große / Charles the Great",
+   "ownTokens": [
+    "Karl"
+   ],
+   "match": "Charlemagne"
+  },
+  {
+   "id": "william1",
+   "name": "William the Conqueror",
+   "start": 1066,
+   "end": 1087,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Guillaume le Conquérant",
+   "ownTokens": [],
+   "match": "William I|William the Conqueror"
+  },
+  {
+   "id": "elizabeth1",
+   "name": "Elizabeth I",
+   "start": 1558,
+   "end": 1603,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Elizabeth I",
+   "ownTokens": [],
+   "match": "Elizabeth I\\b"
+  },
+  {
+   "id": "louis14",
+   "name": "Louis XIV",
+   "start": 1643,
+   "end": 1715,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Louis XIV (Sun King)",
+   "ownTokens": [],
+   "match": "Louis XIV"
+  },
+  {
+   "id": "peter1",
+   "name": "Peter the Great",
+   "start": 1682,
+   "end": 1725,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Pyotr I Alekseyevich",
+   "ownTokens": [],
+   "match": "Peter the Great|Peter I\\b"
+  },
+  {
+   "id": "catherine2",
+   "name": "Catherine the Great",
+   "start": 1762,
+   "end": 1796,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Yekaterina II",
+   "ownTokens": [],
+   "match": "Catherine the Great|Catherine II"
+  },
+  {
+   "id": "napoleon",
+   "name": "Napoleon I",
+   "start": 1804,
+   "end": 1815,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Napoléon Bonaparte",
+   "ownTokens": [],
+   "match": "Napoleon\\b(?! (II|III))"
+  },
+  {
+   "id": "victoria",
+   "name": "Queen Victoria",
+   "start": 1837,
+   "end": 1901,
+   "region": "Europe",
+   "role": "monarch",
+   "own": "Victoria",
+   "ownTokens": [],
+   "match": "Victoria\\b"
+  },
+  {
+   "id": "bismarck",
+   "name": "Otto von Bismarck",
+   "start": 1862,
+   "end": 1890,
+   "region": "Europe",
+   "role": "head of government",
+   "own": "Otto von Bismarck",
+   "ownTokens": [],
+   "match": "Bismarck"
+  },
+  {
+   "id": "lenin",
+   "name": "Vladimir Lenin",
+   "start": 1917,
+   "end": 1924,
+   "region": "Europe",
+   "role": "head of government",
+   "own": "Vladimir Ilyich Lenin",
+   "ownTokens": [],
+   "match": "Lenin"
+  },
+  {
+   "id": "stalin",
+   "name": "Joseph Stalin",
+   "start": 1924,
+   "end": 1953,
+   "region": "Europe",
+   "role": "head of government",
+   "own": "Iosif Dzhugashvili (Stalin)",
+   "ownTokens": [],
+   "match": "Stalin"
+  },
+  {
+   "id": "hitler",
+   "name": "Adolf Hitler",
+   "start": 1933,
+   "end": 1945,
+   "region": "Europe",
+   "role": "head of state",
+   "own": "Adolf Hitler (Führer)",
+   "ownTokens": [],
+   "match": "Hitler"
+  },
+  {
+   "id": "churchill",
+   "name": "Winston Churchill",
+   "start": 1940,
+   "end": 1945,
+   "region": "Europe",
+   "role": "head of government",
+   "own": "Winston Churchill",
+   "ownTokens": [],
+   "match": "Churchill"
+  },
+  {
+   "id": "gorbachev",
+   "name": "Mikhail Gorbachev",
+   "start": 1985,
+   "end": 1991,
+   "region": "Europe",
+   "role": "head of state",
+   "own": "Mikhail Gorbachev",
+   "ownTokens": [],
+   "match": "Gorbachev"
+  }
+ ]
+}
