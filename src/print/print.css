@@ -70,6 +70,16 @@
   box-shadow: 0 4px 14px var(--shadow);
   white-space: nowrap;
 }
+/* on a narrow screen the toolbar can put Export anywhere along the row, and a list anchored to it can run past the
+   window's edge (WCAG 1.4.10; the reflow check saw it 22 px off at 320 px in the plugin view). Fixed, with no top, the
+   list keeps its place below the button and takes its left edge from the window instead. */
+@media (max-width: 640px) {
+  .export-items {
+    position: fixed;
+    top: auto;
+    left: 8px;
+  }
+}
 .export-items button {
   text-align: left;
   min-height: 24px;
