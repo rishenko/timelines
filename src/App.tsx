@@ -6,6 +6,7 @@ import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
 import { isEventVisible, useFilters } from './state/filters.ts';
 import { useTheme } from './state/theme.ts';
+import { withCvdColors } from './lib/cvdPalette.ts';
 import { useToast } from './state/toast.ts';
 import { usePanels } from './state/panels.ts';
 import { goToTimeline, readUrl, useUrlSync, type View } from './state/url.ts';
@@ -381,7 +382,10 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
   // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
   // Zoom stays immediate: its scroll anchoring needs the new scale at once.
-  const shownData = useDeferredValue(viewData);
+  // the Colour-blind safe preset draws rows in a CVD-safe palette (display only; off while editing, so an edit never
+  // saves the palette's colours)
+  const chartData = useMemo(() => withCvdColors(viewData, theme.preset === 'cvd' && !editMode), [viewData, theme.preset, editMode]);
+  const shownData = useDeferredValue(chartData);
   const shownEvents = useDeferredValue(drawnEvents);
   const shownListEvents = useDeferredValue(visibleEvents);
   const shownSpans = useDeferredValue(spans);
@@ -416,7 +420,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const shownHide = useDeferredValue(hideOutOfView && !editMode);
   const shownThin = useDeferredValue(thinRows);
   const busy =
-    shownData !== viewData ||
+    shownData !== chartData ||
     shownEvents !== drawnEvents ||
     shownListEvents !== visibleEvents ||
     shownSpans !== spans ||

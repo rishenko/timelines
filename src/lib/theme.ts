@@ -99,6 +99,24 @@ export const PRESETS: Record<string, { label: string; colors: ThemeColors }> = {
       ok: '#3f6e26',
     },
   },
+  // Colour-blind safe: Okabe-Ito UI colours on Dark. No red/green pair carries meaning: danger is vermillion, success
+  // bluish green, links sky blue. theme-panel.css adds heavier mark edges, and lib/cvdPalette.ts redraws row colours.
+  cvd: {
+    label: 'Colour-blind safe',
+    colors: {
+      bg: '#0f1216',
+      panel: '#171b22',
+      control: '#1f242c',
+      line: '#3a424e',
+      text: '#eef1f4',
+      muted: '#a3adba',
+      accent: '#e69f00',
+      focus: '#f0e442',
+      link: '#56b4e9',
+      danger: '#d55e00',
+      ok: '#009e73',
+    },
+  },
   contrast: {
     label: 'High contrast',
     colors: {

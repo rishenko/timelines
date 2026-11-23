@@ -106,3 +106,18 @@
 :root[data-preset='parchment'] .tl-lane {
   border-bottom-color: color-mix(in srgb, var(--line) 70%, var(--text));
 }
+
+/* Colour-blind safe: row colours come from the data, so colour alone can't tell rows apart. Marks get a heavier edge
+   in the row's colour moved toward the text, and labels and phase names stay the main cue. */
+:root[data-preset='cvd'] :is(.tl-mark, .lg-bar, .lg-band) {
+  --mark-edge: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, var(--text));
+}
+:root[data-preset='cvd'] .tl-mark.span .bar,
+:root[data-preset='cvd'] .tl-mark.point .diamond {
+  border-width: 1.5px;
+}
+/* rows in the CVD palette (lib/cvdPalette.ts): a stronger lifespan tint, so neighbouring rows differ by more than a
+   faint wash */
+:root[data-preset='cvd'] .tl-span {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 22%, transparent);
+}
