@@ -143,8 +143,9 @@ A context span must overlap `meta.range` when the timeline has one; it may run p
 crosses a seam keeps its own dates in both timelines. Version 7 files' `meta.eras` load as context spans of kind `age`:
 an era with `tracks` moves to that row's `context` (see [versions](#versions)).
 
-The app draws spans of kind `age` as **ages**: the timeline's own in a strip under the ruler, a row's on a band at the
-top of that row (a region's title band, under any phase strips), with the same buttons and links. Each strip or band
+The app draws spans of kind `age` as **ages**: the timeline's own in a strip under the ruler, a row's as lines of that
+row's strip, above its phases (on a region, its title band), a step lighter than its phases; a click or Enter opens
+an age's details, article and sources. Each strip or band
 has one line per `line` (in the order lines first appear there),
 lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
 a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
