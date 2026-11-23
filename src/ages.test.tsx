@@ -109,7 +109,12 @@ describe('ages', () => {
     salt.line = 'ages-salt';
     d.meta.lines = { 'ages-salt': { name: 'Salt Coast' } };
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
-    const b = within(screen.getByRole('group', { name: row.name })).getByRole('button', { name: /^Salt Years/ });
+    const lane = screen.getByRole('group', { name: row.name });
+    // its ↗ article link sits before its name in the strip (a mouse target; the keyboard reaches it in the panel)
+    const link = within(lane).getByRole('link', { name: /^Salt Years: article on en\.wikipedia\.org/ });
+    expect(link.getAttribute('href')).toBe('https://en.wikipedia.org/wiki/Salt_Years');
+    expect(link.tabIndex).toBe(-1);
+    const b = within(lane).getByRole('button', { name: /^Salt Years/ });
     fireEvent.click(b);
     expect(b.getAttribute('aria-pressed')).toBe('true');
     const panel = screen.getByRole('complementary', { name: 'Salt Years' });

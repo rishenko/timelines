@@ -341,6 +341,8 @@ export interface PlacedPhase extends ResolvedPhase {
   kind?: string;
   /** A context span's line name (a region's age line, e.g. "Nile Valley"): in its tooltip and accessible name. */
   lineName?: string;
+  /** A context span's article (an age's `url`): a ↗ link before its name in the strip. */
+  url?: string;
 }
 
 /** The width of a strip line's name (a region's age line, "Nile Valley"), drawn at the chart's left edge. */

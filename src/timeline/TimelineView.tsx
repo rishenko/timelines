@@ -215,7 +215,7 @@ export function TimelineView(props: Props) {
             own.push(
               ...placeOnLines(
                 l.id,
-                ages.filter((a) => a.line === line).map((a) => ({ ...a.span, name: a.era.name, kind: a.era.kind, lineName: a.lineName, ref: ageRef(a.era.id) })),
+                ages.filter((a) => a.line === line).map((a) => ({ ...a.span, name: a.era.name, kind: a.era.kind, lineName: a.lineName, url: a.era.url, ref: ageRef(a.era.id) })),
                 next(),
               ),
             );

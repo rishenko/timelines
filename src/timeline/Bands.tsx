@@ -6,6 +6,7 @@ import { certainFrom, certainTo, drawnFrom, drawnTo } from '../lib/subYear.ts';
 import { stripLineNamePx, type PhaseCell } from './layout.ts';
 import { successionTip } from '../lib/succession.ts';
 import { stripStopKey } from './keyboard.ts';
+import { hostOf, safeUrl } from '../lib/urls.ts';
 
 /**
  * Where a lifespan or phase sits, in content px: from the earliest possible start to the latest possible end, with
@@ -137,6 +138,9 @@ export function PhaseStripCell({
   // a context cell (an age) that shows no name, or is under 10 px, draws no edges and no alternate fill, so a run of
   // them reads as one plain stripe (its tooltip and the side panel still name each); phases are drawn as before
   const plain = !!p.kind && (b.x1 - b.x0 < 10 || !showName);
+  // an age's article: a ↗ link just before its name (as on the age bars, #77). The mouse reaches it here; the keyboard
+  // reaches the same link in the age's side panel (Enter on the cell), so the link itself isn't a stop
+  const url = p.kind && showName && !showName.outside ? safeUrl(p.url) : undefined;
   const tip = `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}${p.lineName ? `\nRegion: ${p.lineName}` : ''}`;
   const key = p.ref && onOpen ? stripStopKey(p.ref) : undefined;
   const keys = key
@@ -198,6 +202,20 @@ export function PhaseStripCell({
             }}
             title={tip}
           >
+            {url && (
+              <a
+                className="tl-strip-link"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={-1}
+                title={`${p.name}: ${hostOf(url)} (opens in a new tab)`}
+                aria-label={`${p.name}: article on ${hostOf(url)} (opens in a new tab)`}
+                onClick={(ev) => ev.stopPropagation()}
+              >
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
             {member ? <MemberName name={p.name} /> : p.name}
           </span>
         </div>

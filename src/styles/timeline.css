@@ -351,6 +351,16 @@
   letter-spacing: 0;
   text-transform: none;
 }
+/* an age's ↗ article link, before its name in the strip (the side panel links it too) */
+.tl-strip-link {
+  margin-right: 4px;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+.tl-strip-link:hover {
+  text-decoration: underline;
+}
 /* a named age line's name (a region's line, "Nile Valley"), held at the chart's left edge over the line's cells; the
    ages' names stick just right of it (Bands.tsx) */
 .tl-strip-line {
