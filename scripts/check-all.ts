@@ -5,8 +5,8 @@
 // base: origin/main (for the id and categories checks). Names are the first word of each line it prints (tsc, lint,
 // test, docs, data, seams, categories:<timeline>, ids). --schema-bump (a PR that raises the schema version): checks
 // each timeline with fields:proof (fields:<timeline>) instead of categories:proof, which flags the version line;
-// fields:proof lifts both sides to the current schema, so only a change beyond the version number fails. Set TIMELINES_LOCAL_DATA to include the private timelines in
-// the tests. CI also checks that public/timelines/ is what data-src/ compiles to; that rewrites files, so it isn't here
+// fields:proof lifts both sides to the current schema, so only a change beyond the version number fails.
+// Set TIMELINES_LOCAL_DATA to include the private timelines in the tests. CI also checks that public/timelines/ is what data-src/ compiles to; that rewrites files, so it isn't here
 // (npm run data:build && npm run importance && git diff --exit-code -- public/timelines docs).
 import { spawnSync } from 'node:child_process';
 import { SOURCE_TIMELINES } from './lib/timelines.ts';

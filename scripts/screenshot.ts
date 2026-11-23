@@ -9,7 +9,9 @@
 // --expand opens collapsed rows by their label (in order, so a group can be opened before its regions);
 // --scroll-to scrolls the timeline so that row sits near the top. Names are separated by "|".
 // --row <id> does the same by the row's id (as in the data file), expanding its collapsed ancestors first; use it for a
-// new or deeply nested row, or a name that appears twice. It runs after --expand and instead of --scroll-to.
+// new or deeply nested row, or a name that appears twice. It runs after --expand and instead of --scroll-to. It sees only
+// the rows of the timeline files the page loaded (the open timeline, and any it loaded with it): a neighbouring
+// timeline's row reports "no row" until that timeline is open.
 // --storage puts a file into localStorage before the page loads (repeatable), e.g. a saved edit-mode draft.
 // --measure prints the size and position of every element a CSS selector matches (e.g. to see what makes the
 // toolbar wrap), measured just before the screenshot.
@@ -23,7 +25,7 @@ const args = process.argv.slice(2);
 const valued = /^--(width|height|expand|scroll-to|row|storage|click|pinch|long-press|measure|browser)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
-  console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
+  console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"] [--row <id>]');
   process.exit(1);
 }
 const opt = (flag: string) => (args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined);
@@ -148,15 +150,16 @@ if (target || rowId) {
   const l = rowId ? await find(page.locator(`.tl-lane-label[data-row="${rowId}"]`).first()) : await findLabel(target!);
   if (rowId && !(await l.count())) {
     if (loaded.some((ts) => ts.some((t) => t.id === rowId))) problems.push(`--row: row "${rowId}" isn't drawn (hidden by a filter?)`);
+  } else {
+    await l.evaluate((el) => {
+      el.scrollIntoView({ block: 'start' });
+      let s = el.parentElement;
+      while (s && s.scrollHeight <= s.clientHeight + 5) s = s.parentElement;
+      // clear the sticky header above the rows: the ruler, and the Ages strip when the timeline has ages
+      const header = document.querySelector<HTMLElement>('.tl-lanes')?.offsetTop ?? 44;
+      if (s) s.scrollTop -= header + 16;
+    });
   }
-  else await l.evaluate((el) => {
-    el.scrollIntoView({ block: 'start' });
-    let s = el.parentElement;
-    while (s && s.scrollHeight <= s.clientHeight + 5) s = s.parentElement;
-    // clear the sticky header above the rows: the ruler, and the Ages strip when the timeline has ages
-    const header = document.querySelector<HTMLElement>('.tl-lanes')?.offsetTop ?? 44;
-    if (s) s.scrollTop -= header + 16;
-  });
   await page.waitForTimeout(300);
 }
 
