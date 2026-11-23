@@ -116,7 +116,8 @@ async function checkMarks(page: Page): Promise<Finding[]> {
     const area = {
       left: document.querySelector('.tl-lane-label')?.getBoundingClientRect().right ?? s.left,
       right: s.right,
-      top: document.querySelector('.tl-ruler')?.getBoundingClientRect().bottom ?? s.top,
+      // below the sticky headers (the ruler, and the ages strip under it): text scrolled under them isn't visible
+      top: Math.max(s.top, ...[...document.querySelectorAll('.tl-ruler, .tl-ages')].map((e) => e.getBoundingClientRect().bottom)),
       bottom: s.bottom,
     };
     return [...document.querySelectorAll<HTMLElement>('.tl-mark .diamond, .tl-mark .bar, .tl-mark.cluster')].flatMap((el) => {
