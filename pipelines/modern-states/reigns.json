@@ -102307,38 +102307,6 @@
    ]
   },
   {
-   "uuid": "reign-alexander-andreyevich-baranov-united-states",
-   "title": "Tenure of Alexander Andreyevich Baranov",
-   "start": 1799,
-   "startMonth": 7,
-   "startDay": 9,
-   "end": 1818,
-   "endMonth": 1,
-   "endDay": 11,
-   "tracks": [
-    "united-states"
-   ],
-   "descr": "Holds office as head of state of United States from 9 July 1799 to 11 January 1818 (19 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-alexander-andreyevich-baranov",
-     "sourceLocation": "infobox term_start: 9 July 1799 – 11 January 1818"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-alexander-andreyevich-baranov",
-       "sourceLocation": "infobox term_start: 9 July 1799 – 11 January 1818"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-thomas-jefferson-united-states",
    "title": "Presidency of Thomas Jefferson",
    "start": 1801,
@@ -118079,38 +118047,6 @@
    ]
   },
   {
-   "uuid": "reign-alexandre-p-tion-dominican-republic",
-   "title": "Presidency of Alexandre Pétion",
-   "start": 1807,
-   "startMonth": 3,
-   "startDay": 10,
-   "end": 1818,
-   "endMonth": 3,
-   "endDay": 29,
-   "tracks": [
-    "dominican-republic"
-   ],
-   "descr": "Holds office as head of state of Dominican Republic from 10 March 1807 to 29 March 1818 (11 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-alexandre-p-tion",
-     "sourceLocation": "infobox term_start: 10 March 1807 – 29 March 1818"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-alexandre-p-tion",
-       "sourceLocation": "infobox term_start: 10 March 1807 – 29 March 1818"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-jean-pierre-boyer-dominican-republic",
    "title": "Presidency of Jean-Pierre Boyer",
    "start": 1818,
@@ -118203,138 +118139,6 @@
       {
        "sourceKey": "wp-tom-s-bobadilla",
        "sourceLocation": "infobox term_start: 1 March 1844 – 9 June 1844"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-philippe-guerrier-dominican-republic",
-   "title": "Presidency of Philippe Guerrier",
-   "start": 1844,
-   "startMonth": 5,
-   "startDay": 3,
-   "end": 1845,
-   "endMonth": 4,
-   "endDay": 15,
-   "tracks": [
-    "dominican-republic"
-   ],
-   "descr": "Holds office as head of state of Dominican Republic from 3 May 1844 to 15 April 1845.",
-   "sources": [
-    {
-     "sourceKey": "wp-philippe-guerrier",
-     "sourceLocation": "infobox term_start: May 3, 1844 – April 15, 1845"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-philippe-guerrier",
-       "sourceLocation": "infobox term_start: May 3, 1844 – April 15, 1845"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-jean-louis-pierrot-dominican-republic",
-   "title": "Presidency of Jean-Louis Pierrot",
-   "start": 1845,
-   "startMonth": 4,
-   "startDay": 16,
-   "end": 1846,
-   "endMonth": 3,
-   "endDay": 1,
-   "tracks": [
-    "dominican-republic"
-   ],
-   "descr": "Holds office as head of state of Dominican Republic from 16 April 1845 to 1 March 1846.",
-   "sources": [
-    {
-     "sourceKey": "wp-jean-louis-pierrot",
-     "sourceLocation": "infobox term_start: 16 April 1845 – 1 March 1846"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-jean-louis-pierrot",
-       "sourceLocation": "infobox term_start: 16 April 1845 – 1 March 1846"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-jean-baptiste-rich-dominican-republic",
-   "title": "Presidency of Jean-Baptiste Riché",
-   "start": 1846,
-   "startMonth": 3,
-   "startDay": 1,
-   "end": 1847,
-   "endMonth": 2,
-   "endDay": 27,
-   "tracks": [
-    "dominican-republic"
-   ],
-   "descr": "Holds office as head of state of Dominican Republic from 1 March 1846 to 27 February 1847.",
-   "sources": [
-    {
-     "sourceKey": "wp-jean-baptiste-rich",
-     "sourceLocation": "infobox term_start: March 1, 1846 – February 27, 1847"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-jean-baptiste-rich",
-       "sourceLocation": "infobox term_start: March 1, 1846 – February 27, 1847"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-faustin-soulouque-dominican-republic",
-   "title": "Presidency of Faustin Soulouque",
-   "start": 1847,
-   "startMonth": 3,
-   "startDay": 1,
-   "end": 1849,
-   "endMonth": 8,
-   "endDay": 26,
-   "tracks": [
-    "dominican-republic"
-   ],
-   "descr": "Rules as head of state of Dominican Republic from 1 March 1847 to 26 August 1849 (2 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-faustin-soulouque",
-     "sourceLocation": "infobox reign1: 1 March 1847 – 26 August 1849"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-faustin-soulouque",
-       "sourceLocation": "infobox reign1: 1 March 1847 – 26 August 1849"
       }
      ]
     }
@@ -170084,6 +169888,16 @@
     "not imported, office is not head of state: List of kings of Cambodia"
    ]
   },
+  "reign-alexander-andreyevich-baranov": {
+   "row": "united-states",
+   "person": "Alexander Andreyevich Baranov",
+   "qid": "Q440782",
+   "route": "polity: Russian colonization of North America",
+   "cited": "Alexander Andreyevich Baranov",
+   "toCheck": [
+    "not imported, wrong row: chief manager of Russian America (Alaska) before the purchase, not a head of the United States"
+   ]
+  },
   "reign-juan-vicente-villacorta": {
    "row": "federal-republic-of-central-america",
    "person": "Juan Vicente Villacorta",
@@ -170102,6 +169916,56 @@
    "cited": "Dean Barrow",
    "toCheck": [
     "not imported, office is not head of state: Member of the Belize House of Representatives ; for Queen's Square"
+   ]
+  },
+  "reign-alexandre-p-tion-2": {
+   "row": "dominican-republic",
+   "person": "Alexandre Pétion",
+   "qid": "Q353464",
+   "route": "office: President of Haiti",
+   "cited": "Alexandre Pétion",
+   "toCheck": [
+    "not imported, wrong row: President of Haiti 1807-1818, before Haiti ruled Santo Domingo (1822-1844)"
+   ]
+  },
+  "reign-philippe-guerrier-2": {
+   "row": "dominican-republic",
+   "person": "Philippe Guerrier",
+   "qid": "Q886231",
+   "route": "office: President of Haiti",
+   "cited": "Philippe Guerrier",
+   "toCheck": [
+    "not imported, wrong row: President of Haiti 1844-1845, after the Dominican Republic's independence"
+   ]
+  },
+  "reign-jean-louis-pierrot-2": {
+   "row": "dominican-republic",
+   "person": "Jean-Louis Pierrot",
+   "qid": "Q864786",
+   "route": "office: President of Haiti",
+   "cited": "Jean-Louis Pierrot",
+   "toCheck": [
+    "not imported, wrong row: President of Haiti 1845-1846, after the Dominican Republic's independence"
+   ]
+  },
+  "reign-jean-baptiste-rich-2": {
+   "row": "dominican-republic",
+   "person": "Jean-Baptiste Riché",
+   "qid": "Q616264",
+   "route": "office: President of Haiti",
+   "cited": "Jean-Baptiste Riché",
+   "toCheck": [
+    "not imported, wrong row: President of Haiti 1846-1847, after the Dominican Republic's independence"
+   ]
+  },
+  "reign-faustin-soulouque-2": {
+   "row": "dominican-republic",
+   "person": "Faustin Soulouque",
+   "qid": "Q560853",
+   "route": "list: List of monarchs of Haiti; office: President of Haiti",
+   "cited": "Faustin Soulouque",
+   "toCheck": [
+    "not imported, wrong row: President of Haiti 1847-1859, after the Dominican Republic's independence"
    ]
   },
   "reign-manuel-costas-arce": {
@@ -172035,14 +171899,6 @@
   "wp-alessandro-rossi-captain-regent": {
    "name": "Alessandro Rossi (Captain Regent) (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Alessandro_Rossi_(Captain_Regent)",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-alexander-andreyevich-baranov": {
-   "name": "Alexander Andreyevich Baranov (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Alexander_Andreyevich_Baranov",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -230548,16 +230404,6 @@
    "cited": "Andrew Jackson",
    "toCheck": []
   },
-  "reign-alexander-andreyevich-baranov-united-states": {
-   "row": "united-states",
-   "person": "Alexander Andreyevich Baranov",
-   "qid": "Q440782",
-   "route": "polity: Russian colonization of North America",
-   "cited": "Alexander Andreyevich Baranov",
-   "toCheck": [
-    "office noun unclear (shown as \"Tenure of\"): 1st Governor of Russian America"
-   ]
-  },
   "reign-thomas-jefferson-united-states": {
    "row": "united-states",
    "person": "Thomas Jefferson",
@@ -234518,16 +234364,6 @@
    "cited": "Jovenel Moïse",
    "toCheck": []
   },
-  "reign-alexandre-p-tion-dominican-republic": {
-   "row": "dominican-republic",
-   "person": "Alexandre Pétion",
-   "qid": "Q353464",
-   "route": "office: President of Haiti",
-   "cited": "Alexandre Pétion",
-   "toCheck": [
-    "Wikidata differs: 9 March 1806 – 29 March 1818"
-   ]
-  },
   "reign-jean-pierre-boyer-dominican-republic": {
    "row": "dominican-republic",
    "person": "Jean-Pierre Boyer",
@@ -234550,38 +234386,6 @@
    "qid": "Q3530964",
    "route": "list: List of presidents of the Dominican Republic; office: President of the Dominican Republic; polity: Dominican Republic",
    "cited": "Tomás Bobadilla",
-   "toCheck": []
-  },
-  "reign-philippe-guerrier-dominican-republic": {
-   "row": "dominican-republic",
-   "person": "Philippe Guerrier",
-   "qid": "Q886231",
-   "route": "office: President of Haiti",
-   "cited": "Philippe Guerrier",
-   "toCheck": []
-  },
-  "reign-jean-louis-pierrot-dominican-republic": {
-   "row": "dominican-republic",
-   "person": "Jean-Louis Pierrot",
-   "qid": "Q864786",
-   "route": "office: President of Haiti",
-   "cited": "Jean-Louis Pierrot",
-   "toCheck": []
-  },
-  "reign-jean-baptiste-rich-dominican-republic": {
-   "row": "dominican-republic",
-   "person": "Jean-Baptiste Riché",
-   "qid": "Q616264",
-   "route": "office: President of Haiti",
-   "cited": "Jean-Baptiste Riché",
-   "toCheck": []
-  },
-  "reign-faustin-soulouque-dominican-republic": {
-   "row": "dominican-republic",
-   "person": "Faustin Soulouque",
-   "qid": "Q560853",
-   "route": "list: List of monarchs of Haiti; office: President of Haiti",
-   "cited": "Faustin Soulouque",
    "toCheck": []
   },
   "reign-manuel-jimenes-dominican-republic": {

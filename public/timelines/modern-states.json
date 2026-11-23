@@ -75263,14 +75263,6 @@
         "wikipedia"
       ]
     },
-    "wp-alexander-andreyevich-baranov": {
-      "name": "Alexander Andreyevich Baranov (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Alexander_Andreyevich_Baranov",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-alexander-ankvab": {
       "name": "Alexander Ankvab (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Alexander_Ankvab",
@@ -256248,38 +256240,6 @@
       ]
     },
     {
-      "uuid": "reign-alexander-andreyevich-baranov-united-states",
-      "title": "Tenure of Alexander Andreyevich Baranov",
-      "start": 1799,
-      "startMonth": 7,
-      "startDay": 9,
-      "end": 1818,
-      "endMonth": 1,
-      "endDay": 11,
-      "tracks": [
-        "united-states"
-      ],
-      "descr": "Holds office as head of state of United States from 9 July 1799 to 11 January 1818 (19 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-alexander-andreyevich-baranov",
-          "sourceLocation": "infobox term_start: 9 July 1799 – 11 January 1818"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-alexander-andreyevich-baranov",
-              "sourceLocation": "infobox term_start: 9 July 1799 – 11 January 1818"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-thomas-jefferson-united-states",
       "title": "Presidency of Thomas Jefferson",
       "start": 1801,
@@ -272018,38 +271978,6 @@
       ]
     },
     {
-      "uuid": "reign-alexandre-p-tion-dominican-republic",
-      "title": "Presidency of Alexandre Pétion",
-      "start": 1807,
-      "startMonth": 3,
-      "startDay": 10,
-      "end": 1818,
-      "endMonth": 3,
-      "endDay": 29,
-      "tracks": [
-        "dominican-republic"
-      ],
-      "descr": "Holds office as head of state of Dominican Republic from 10 March 1807 to 29 March 1818 (11 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-alexandre-p-tion",
-          "sourceLocation": "infobox term_start: 10 March 1807 – 29 March 1818"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-alexandre-p-tion",
-              "sourceLocation": "infobox term_start: 10 March 1807 – 29 March 1818"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-jean-pierre-boyer-dominican-republic",
       "title": "Presidency of Jean-Pierre Boyer",
       "start": 1818,
@@ -272142,148 +272070,6 @@
             {
               "sourceKey": "wp-tom-s-bobadilla",
               "sourceLocation": "infobox term_start: 1 March 1844 – 9 June 1844"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-philippe-guerrier-dominican-republic",
-      "title": "Presidency of Philippe Guerrier",
-      "start": 1844,
-      "startMonth": 5,
-      "startDay": 3,
-      "end": 1845,
-      "endMonth": 4,
-      "endDay": 15,
-      "tracks": [
-        "dominican-republic"
-      ],
-      "descr": "Holds office as head of state of Dominican Republic from 3 May 1844 to 15 April 1845.",
-      "sources": [
-        {
-          "sourceKey": "wp-philippe-guerrier",
-          "sourceLocation": "infobox term_start: May 3, 1844 – April 15, 1845"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-philippe-guerrier",
-              "sourceLocation": "infobox term_start: May 3, 1844 – April 15, 1845"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-jean-louis-pierrot-dominican-republic",
-      "title": "Presidency of Jean-Louis Pierrot",
-      "start": 1845,
-      "startMonth": 4,
-      "startDay": 16,
-      "end": 1846,
-      "endMonth": 3,
-      "endDay": 1,
-      "tracks": [
-        "dominican-republic"
-      ],
-      "descr": "Holds office as head of state of Dominican Republic from 16 April 1845 to 1 March 1846.",
-      "sources": [
-        {
-          "sourceKey": "wp-jean-louis-pierrot",
-          "sourceLocation": "infobox term_start: 16 April 1845 – 1 March 1846"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-jean-louis-pierrot",
-              "sourceLocation": "infobox term_start: 16 April 1845 – 1 March 1846"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-jean-baptiste-rich-dominican-republic",
-      "title": "Presidency of Jean-Baptiste Riché",
-      "start": 1846,
-      "startMonth": 3,
-      "startDay": 1,
-      "end": 1847,
-      "endMonth": 2,
-      "endDay": 27,
-      "tracks": [
-        "dominican-republic"
-      ],
-      "descr": "Holds office as head of state of Dominican Republic from 1 March 1846 to 27 February 1847.",
-      "sources": [
-        {
-          "sourceKey": "wp-jean-baptiste-rich",
-          "sourceLocation": "infobox term_start: March 1, 1846 – February 27, 1847"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-jean-baptiste-rich",
-              "sourceLocation": "infobox term_start: March 1, 1846 – February 27, 1847"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "religion",
-          "sources": [
-            {
-              "sourceKey": "wp-jean-baptiste-rich",
-              "sourceLocation": "infobox term_start: March 1, 1846 – February 27, 1847"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-faustin-soulouque-dominican-republic",
-      "title": "Presidency of Faustin Soulouque",
-      "start": 1847,
-      "startMonth": 3,
-      "startDay": 1,
-      "end": 1849,
-      "endMonth": 8,
-      "endDay": 26,
-      "tracks": [
-        "dominican-republic"
-      ],
-      "descr": "Rules as head of state of Dominican Republic from 1 March 1847 to 26 August 1849 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-faustin-soulouque",
-          "sourceLocation": "infobox reign1: 1 March 1847 – 26 August 1849"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-faustin-soulouque",
-              "sourceLocation": "infobox reign1: 1 March 1847 – 26 August 1849"
             }
           ]
         }
