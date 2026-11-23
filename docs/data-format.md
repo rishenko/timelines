@@ -144,11 +144,11 @@ crosses a seam keeps its own dates in both timelines. Version 7 files' `meta.era
 an era with `tracks` moves to that row's `context` (see [versions](#versions)).
 
 The app draws spans of kind `age` as **ages**: the timeline's own in a strip under the ruler, a row's as lines of that
-row's strip, above its phases (on a region, its title band), a step lighter than its phases; a click or Enter opens
-an age's details, article and sources. Each strip or band
-has one line per `line` (in the order lines first appear there),
-lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
-a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
+row's strip, above its phases (on a region, its title band), a step lighter than its phases; a click or Enter opens an
+age's details, article and sources. The Ages strip, and each row's ages, have one line per `line` (in the order lines
+first appear there), named when the line has a name; lines with no age in the years in view are left out. In the Ages
+strip, uncertain ends are hatched, an end past the timeline's range is cut with a dashed edge, and `color`, when set,
+tints the age. Each age's tooltip and accessible name give its dates and sources;
 clicking it opens its details: its dates, its article (`url`) and its sources as links, so every age reaches its
 article and sources however narrow its bar. Ages never move the chart. An age with a `url` has a ↗ link to that page just before its name (when its bar
 has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`, and names its region (its row, or "All
