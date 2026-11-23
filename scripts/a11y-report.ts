@@ -116,7 +116,7 @@ async function runAxe(): Promise<{ rules: Map<string, RuleResult>; views: string
         continue;
       }
       await page.addScriptTag({ content: axeSource });
-      type Res = { id: string; help: string; tags: string[]; nodes: { html: string }[] };
+      type Res = { id: string; help: string; tags: string[]; nodes: { html: string; target: unknown[]; failureSummary?: string }[] };
       const r = (await page.evaluate(
         (tags) =>
           (window as unknown as { axe: { run: (c: unknown, o: unknown) => Promise<unknown> } }).axe.run(document, {
@@ -143,6 +143,12 @@ async function runAxe(): Promise<{ rules: Map<string, RuleResult>; views: string
       }
       const bad = r.violations.length;
       console.log(`${bad ? 'FAIL' : 'ok  '}  axe ${view}${bad ? `: ${r.violations.map((v) => v.id).join(', ')}` : ''}`);
+      // each failing element: its selector and axe's first reason, so a regression needs no hand-written axe script
+      for (const x of r.violations)
+        for (const n of x.nodes) {
+          const why = n.failureSummary?.split('\n').find((l) => l.trim() && !/^Fix (any|all)/.test(l))?.trim() ?? x.help;
+          console.log(`        ${x.id}  ${n.target.join(' >>> ')}  ${why}`);
+        }
     }
   }
   await browser.close();
