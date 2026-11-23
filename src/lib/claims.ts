@@ -1,11 +1,15 @@
 // Date claims in edit forms: the form's text fields for a claim, and converting them to and from stored claims.
 // Shared by the event form and the track form (components/ClaimList.tsx draws the fields).
 import type { Calendar, DateClaim, Locator, SourceRef } from '../types.ts';
-import { fromStored, toStored, type EraSide } from './calendar.ts';
+import { formatEditDate, formatEditSpan, fromStored, parseFullDate, parseSpan, toStored, type EraSide } from './calendar.ts';
+import { beforePresent } from './beforePresent.ts';
 
 export interface ClaimValues {
   year: number;
   era: EraSide;
+  /** Deep time (`calendar.beforePresent`): the date as text ("251.902 Ma", "66 Ma ± 500 ka"), in place of year + era. */
+  when?: string;
+  /** Years; in deep time a length with its unit ("24 kyr", "0.5 Myr"). */
   margin: string;
   /** Month (1–12) and day as typed, or '' (only shown where the timeline is dated in months and days). */
   month?: string;
@@ -27,10 +31,12 @@ export interface ClaimFields {
 
 export const toClaimValues = (c: DateClaim, cal: Calendar): ClaimValues => {
   const d = fromStored(c.year, cal);
+  const bp = !!beforePresent(cal);
   return {
     year: d.year,
     era: d.era,
-    margin: c.margin === undefined ? '' : String(c.margin),
+    ...(bp ? { when: formatEditDate(c.year, undefined, undefined, cal) } : {}),
+    margin: c.margin === undefined ? '' : bp ? formatEditSpan(c.margin) : String(c.margin),
     month: c.month ? String(c.month) : '',
     day: c.day ? String(c.day) : '',
     chronology: c.chronology ?? '',
@@ -54,10 +60,26 @@ export function keepLocator(r: SourceRef, before: SourceRef[] | undefined): Sour
   return same ? { ...rest, locator } : rest;
 }
 
+/** Deep time: why a claim's date or margin can't be read, or null (ClaimList shows it, and saving waits). */
+export const deepWhenError = (text: string | undefined, cal: Calendar): string | null =>
+  beforePresent(cal) && !parseFullDate(text ?? '', cal) ? 'Write a date like "66 Ma", "11.7 ka BP" or "251.902 ± 0.024 Ma".' : null;
+export const deepMarginError = (text: string | undefined, cal: Calendar): string | null =>
+  beforePresent(cal) && (text ?? '').trim() !== '' && parseSpan(text ?? '') === null ? 'Write a length like "24 kyr", "0.5 Myr" or "9,600 yrs".' : null;
+
 export const fromClaimValues = (v: ClaimValues, cal: Calendar): DateClaim | null => {
-  if (!Number.isFinite(Number(v.year))) return null;
-  const c: DateClaim = { year: toStored(Number(v.year), v.era, cal) };
-  if (v.margin.trim() !== '' && Number(v.margin) >= 0) c.margin = Number(v.margin);
+  let c: DateClaim;
+  if (beforePresent(cal)) {
+    const d = parseFullDate(v.when ?? '', cal);
+    if (!d) return null;
+    c = { year: d.year };
+    // the margin field wins; else a ± written with the date ("66 Ma ± 500 ka")
+    const m = v.margin.trim() !== '' ? parseSpan(v.margin) : (d.margin ?? null);
+    if (m !== null) c.margin = m;
+  } else {
+    if (!Number.isFinite(Number(v.year))) return null;
+    c = { year: toStored(Number(v.year), v.era, cal) };
+    if (v.margin.trim() !== '' && Number(v.margin) >= 0) c.margin = Number(v.margin);
+  }
   if (Number(v.month) >= 1) c.month = Number(v.month);
   if (c.month && Number(v.day) >= 1) c.day = Number(v.day);
   if (v.chronology) c.chronology = v.chronology;

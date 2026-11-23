@@ -11,10 +11,11 @@ import {
 import { compareEvents } from '../lib/years.ts';
 import { at0, at1, hasDayZoom } from '../lib/subYear.ts';
 import { childrenMap } from '../lib/tracks.ts';
-import { formatYear, fromStored, toStored, type EraSide } from '../lib/calendar.ts';
+import { formatEditDate, formatYear, fromStored, parseFullDate, toStored, type EraSide } from '../lib/calendar.ts';
+import { beforePresent } from '../lib/beforePresent.ts';
 import { ClaimList, DayFields, EraSelect, ProblemList } from './ClaimList.tsx';
 import { categoryFacetId, topOf } from '../lib/categories.ts';
-import { claimsFromValues, keepLocator, toClaimValues, type ClaimFields } from '../lib/claims.ts';
+import { claimsFromValues, deepWhenError, keepLocator, toClaimValues, type ClaimFields } from '../lib/claims.ts';
 import { citationsInWords } from '../lib/table.ts';
 import { eventChronology } from '../lib/chronology.ts';
 import { customTags, newProblems, nextTrackColor, uniqueId, upsertEvent } from '../state/edits.ts';
@@ -28,6 +29,9 @@ interface FormValues extends ClaimFields {
   descr: string;
   startYear: number;
   startEra: EraSide;
+  /** Deep time (`calendar.beforePresent`): the start as text ("66 Ma"), in place of year and era. */
+  startWhen: string;
+  endWhen: string;
   /** Month (1–12) and day as typed, or '' (asked only where the timeline is dated in months and days). */
   startMonth: string;
   startDay: string;
@@ -62,6 +66,8 @@ function toForm(e: TimelineEvent, cal: Calendar, catFacet?: string): FormValues 
     descr: e.descr,
     startYear: s.year,
     startEra: s.era,
+    startWhen: formatEditDate(e.start, undefined, undefined, cal),
+    endWhen: formatEditDate(e.end ?? e.start, undefined, undefined, cal),
     startMonth: e.startMonth ? String(e.startMonth) : '',
     startDay: e.startDay ? String(e.startDay) : '',
     hasEnd: e.end !== undefined && !sameDate(e),
@@ -86,7 +92,8 @@ function toForm(e: TimelineEvent, cal: Calendar, catFacet?: string): FormValues 
 
 /** The event as saved: the form's fields, plus what the form shows but doesn't edit, kept from `initial`. */
 function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent, catFacet?: string): TimelineEvent {
-  const start = toStored(Number(v.startYear), v.startEra, cal);
+  const deep = !!beforePresent(cal);
+  const start = deep ? (parseFullDate(v.startWhen, cal)?.year ?? 0) : toStored(Number(v.startYear), v.startEra, cal);
   const e: TimelineEvent = {
     uuid: v.uuid,
     title: v.title.trim(),
@@ -105,7 +112,7 @@ function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent, catFacet
     // the sources saying it is still going aren't edited here: kept while it stays ongoing
     if (initial.ongoingSources?.length) e.ongoingSources = initial.ongoingSources;
   } else if (v.hasEnd) {
-    const end = toStored(Number(v.endYear), v.endEra, cal);
+    const end = deep ? (parseFullDate(v.endWhen, cal)?.year ?? start) : toStored(Number(v.endYear), v.endEra, cal);
     const withEnd: TimelineEvent = { ...e, end };
     const em = Number(v.endMonth);
     if (em >= 1) {
@@ -152,6 +159,7 @@ interface Props {
 
 export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrack, onCreateSource }: Props) {
   const cal = data.meta.calendar;
+  const deep = !!beforePresent(cal);
   const catFacet = categoryFacetId(data);
   const facet = catFacet ? data.meta.facets![catFacet] : undefined;
   // months and days are asked for where the timeline is dated in them (or this event already is)
@@ -243,7 +251,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
       return;
     }
     if (e.end !== undefined && (e.end < e.start || at1(e) <= at0(e))) {
-      setError('endYear', { message: e.end < e.start ? 'End year is before the start year.' : 'The end date is before the start date.' }, { shouldFocus: true });
+      setError(deep ? 'endWhen' : 'endYear', { message: e.end < e.start ? 'End year is before the start year.' : 'The end date is before the start date.' }, { shouldFocus: true });
       return;
     }
     const found = newProblems(data, upsertEvent(data, e));
@@ -268,15 +276,22 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
           <legend>When</legend>
           <div className="year-row">
             <label htmlFor="ev-start">Start</label>
-            <input
-              id="ev-start"
-              type="number"
-              min={0}
-              {...register('startYear', { required: true, valueAsNumber: true, min: 0 })}
-            />
-            <EraSelect cal={cal} label="Start era" reg={register('startEra')} />
+            {deep ? (
+              <input
+                id="ev-start"
+                placeholder="66 Ma"
+                {...register('startWhen', { validate: (t) => deepWhenError(t, cal) ?? true })}
+                {...errorProps('ev-start', errors.startWhen)}
+              />
+            ) : (
+              <>
+                <input id="ev-start" type="number" min={0} {...register('startYear', { required: true, valueAsNumber: true, min: 0 })} />
+                <EraSelect cal={cal} label="Start era" reg={register('startEra')} />
+              </>
+            )}
             {days && <DayFields label="Start" month={register('startMonth')} day={register('startDay')} />}
           </div>
+          <FieldError id="ev-start" error={errors.startWhen} />
           <label className="check">
             <input type="checkbox" {...register('hasEnd')} disabled={ongoing} /> {days ? 'Has an end date' : 'Spans multiple years'}
           </label>
@@ -289,12 +304,23 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
           {hasEnd && !ongoing && (
             <div className="year-row">
               <label htmlFor="ev-end">End</label>
-              <input id="ev-end" type="number" min={0} {...register('endYear', { valueAsNumber: true, min: 0 })} {...errorProps('ev-end', errors.endYear)} />
-              <EraSelect cal={cal} label="End era" reg={register('endEra')} />
+              {deep ? (
+                <input
+                  id="ev-end"
+                  placeholder="65 Ma"
+                  {...register('endWhen', { validate: (t) => deepWhenError(t, cal) ?? true })}
+                  {...errorProps('ev-end', errors.endWhen ?? errors.endYear)}
+                />
+              ) : (
+                <>
+                  <input id="ev-end" type="number" min={0} {...register('endYear', { valueAsNumber: true, min: 0 })} {...errorProps('ev-end', errors.endYear)} />
+                  <EraSelect cal={cal} label="End era" reg={register('endEra')} />
+                </>
+              )}
               {days && <DayFields label="End" month={register('endMonth')} day={register('endDay')} />}
             </div>
           )}
-          <FieldError id="ev-end" error={errors.endYear} />
+          <FieldError id="ev-end" error={errors.endWhen ?? errors.endYear} />
           <label className="check" title="Shown as c. and drawn with soft edges">
             <input type="checkbox" {...register('circa')} /> Approximate ("c.")
           </label>
