@@ -1,0 +1,335 @@
+{
+ "_note": "Hand-transcribed from the ICS International Chronostratigraphic Chart v2026/06 (eons, eras and periods; stages and series are not used). Each boundary keeps the text the chart prints; verify_ics.py checks every printed figure against the PDF text and the order against the units. Colours were sampled from the chart's own fills. The chart says: \"Numerical ages are subject to ongoing revision and do not define units in the Phanerozoic and the Ediacaran; only GSSPs do.\"",
+ "chart": {
+  "version": "v 2026/06",
+  "file": "ChronostratChart2026-06.pdf",
+  "url": "https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf",
+  "copyright": "(c) International Commission on Stratigraphy, June 2026",
+  "cite": "Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated). The ICS international chronostratigraphic chart this decade. Episodes 48: 105-115",
+  "read": "2026-11-23"
+ },
+ "boundaries": {
+  "hadean-base": "4567",
+  "archean-base": "4031 ± 3",
+  "paleoarchean-base": "3600",
+  "mesoarchean-base": "3200",
+  "neoarchean-base": "2800",
+  "proterozoic-base": "2500",
+  "rhyacian-base": "2300",
+  "orosirian-base": "2050",
+  "statherian-base": "1800",
+  "calymmian-base": "1600",
+  "ectasian-base": "1400",
+  "stenian-base": "1200",
+  "tonian-base": "1000",
+  "cryogenian-base": "~ 720",
+  "ediacaran-base": "~ 635",
+  "phanerozoic-base": "538.8 ±0.6",
+  "ordovician-base": "486.85 ±1.5",
+  "silurian-base": "443.1 ±0.9",
+  "devonian-base": "419.62 ±1.36",
+  "carboniferous-base": "358.86 ±0.19",
+  "permian-base": "298.9 ±0.15",
+  "triassic-base": "251.902 ±0.024",
+  "jurassic-base": "201.4 ±0.2",
+  "cretaceous-base": "143.1 ±0.6",
+  "paleogene-base": "66.00",
+  "neogene-base": "23.04",
+  "quaternary-base": "2.58",
+  "present": "present"
+ },
+ "units": [
+  {
+   "id": "hadean",
+   "name": "Hadean",
+   "rank": "eon",
+   "color": "#b30f8e",
+   "base": "hadean-base",
+   "top": "archean-base"
+  },
+  {
+   "id": "archean",
+   "name": "Archean",
+   "rank": "eon",
+   "color": "#ec008c",
+   "base": "archean-base",
+   "top": "proterozoic-base"
+  },
+  {
+   "id": "proterozoic",
+   "name": "Proterozoic",
+   "rank": "eon",
+   "color": "#f03a74",
+   "base": "proterozoic-base",
+   "top": "phanerozoic-base"
+  },
+  {
+   "id": "phanerozoic",
+   "name": "Phanerozoic",
+   "rank": "eon",
+   "color": "#99deee",
+   "base": "phanerozoic-base",
+   "top": "present"
+  },
+  {
+   "id": "eoarchean",
+   "name": "Eoarchean",
+   "rank": "era",
+   "color": "#d9058d",
+   "base": "archean-base",
+   "top": "paleoarchean-base"
+  },
+  {
+   "id": "paleoarchean",
+   "name": "Paleoarchean",
+   "rank": "era",
+   "color": "#f140a9",
+   "base": "paleoarchean-base",
+   "top": "mesoarchean-base"
+  },
+  {
+   "id": "mesoarchean",
+   "name": "Mesoarchean",
+   "rank": "era",
+   "color": "#f467b2",
+   "base": "mesoarchean-base",
+   "top": "neoarchean-base"
+  },
+  {
+   "id": "neoarchean",
+   "name": "Neoarchean",
+   "rank": "era",
+   "color": "#f799c7",
+   "base": "neoarchean-base",
+   "top": "proterozoic-base"
+  },
+  {
+   "id": "paleoproterozoic",
+   "name": "Paleoproterozoic",
+   "rank": "era",
+   "color": "#f1457e",
+   "base": "proterozoic-base",
+   "top": "calymmian-base"
+  },
+  {
+   "id": "mesoproterozoic",
+   "name": "Mesoproterozoic",
+   "rank": "era",
+   "color": "#f9b269",
+   "base": "calymmian-base",
+   "top": "tonian-base"
+  },
+  {
+   "id": "neoproterozoic",
+   "name": "Neoproterozoic",
+   "rank": "era",
+   "color": "#fab24a",
+   "base": "tonian-base",
+   "top": "phanerozoic-base"
+  },
+  {
+   "id": "paleozoic",
+   "name": "Paleozoic",
+   "rank": "era",
+   "color": "#9ac79c",
+   "base": "phanerozoic-base",
+   "top": "triassic-base"
+  },
+  {
+   "id": "mesozoic",
+   "name": "Mesozoic",
+   "rank": "era",
+   "color": "#66cdec",
+   "base": "triassic-base",
+   "top": "paleogene-base"
+  },
+  {
+   "id": "cenozoic",
+   "name": "Cenozoic",
+   "rank": "era",
+   "color": "#f2ef1d",
+   "base": "paleogene-base",
+   "top": "present"
+  },
+  {
+   "id": "siderian",
+   "name": "Siderian",
+   "rank": "period",
+   "color": "#f25089",
+   "base": "proterozoic-base",
+   "top": "rhyacian-base"
+  },
+  {
+   "id": "rhyacian",
+   "name": "Rhyacian",
+   "rank": "period",
+   "color": "#f35c95",
+   "base": "rhyacian-base",
+   "top": "orosirian-base"
+  },
+  {
+   "id": "orosirian",
+   "name": "Orosirian",
+   "rank": "period",
+   "color": "#f468a1",
+   "base": "orosirian-base",
+   "top": "statherian-base"
+  },
+  {
+   "id": "statherian",
+   "name": "Statherian",
+   "rank": "period",
+   "color": "#f574af",
+   "base": "statherian-base",
+   "top": "calymmian-base"
+  },
+  {
+   "id": "calymmian",
+   "name": "Calymmian",
+   "rank": "period",
+   "color": "#fabe80",
+   "base": "calymmian-base",
+   "top": "ectasian-base"
+  },
+  {
+   "id": "ectasian",
+   "name": "Ectasian",
+   "rank": "period",
+   "color": "#fbca8e",
+   "base": "ectasian-base",
+   "top": "stenian-base"
+  },
+  {
+   "id": "stenian",
+   "name": "Stenian",
+   "rank": "period",
+   "color": "#fcd69c",
+   "base": "stenian-base",
+   "top": "tonian-base"
+  },
+  {
+   "id": "tonian",
+   "name": "Tonian",
+   "rank": "period",
+   "color": "#fabd55",
+   "base": "tonian-base",
+   "top": "cryogenian-base"
+  },
+  {
+   "id": "cryogenian",
+   "name": "Cryogenian",
+   "rank": "period",
+   "color": "#fbc961",
+   "base": "cryogenian-base",
+   "top": "ediacaran-base"
+  },
+  {
+   "id": "ediacaran",
+   "name": "Ediacaran",
+   "rank": "period",
+   "color": "#fcd56e",
+   "base": "ediacaran-base",
+   "top": "phanerozoic-base"
+  },
+  {
+   "id": "cambrian",
+   "name": "Cambrian",
+   "rank": "period",
+   "color": "#83ad6a",
+   "base": "phanerozoic-base",
+   "top": "ordovician-base"
+  },
+  {
+   "id": "ordovician",
+   "name": "Ordovician",
+   "rank": "period",
+   "color": "#00a990",
+   "base": "ordovician-base",
+   "top": "silurian-base"
+  },
+  {
+   "id": "silurian",
+   "name": "Silurian",
+   "rank": "period",
+   "color": "#b3e4c2",
+   "base": "silurian-base",
+   "top": "devonian-base"
+  },
+  {
+   "id": "devonian",
+   "name": "Devonian",
+   "rank": "period",
+   "color": "#ca9547",
+   "base": "devonian-base",
+   "top": "carboniferous-base"
+  },
+  {
+   "id": "carboniferous",
+   "name": "Carboniferous",
+   "rank": "period",
+   "color": "#69b2b0",
+   "base": "carboniferous-base",
+   "top": "permian-base"
+  },
+  {
+   "id": "permian",
+   "name": "Permian",
+   "rank": "period",
+   "color": "#e74d40",
+   "base": "permian-base",
+   "top": "triassic-base"
+  },
+  {
+   "id": "triassic",
+   "name": "Triassic",
+   "rank": "period",
+   "color": "#8a3ea4",
+   "base": "triassic-base",
+   "top": "jurassic-base"
+  },
+  {
+   "id": "jurassic",
+   "name": "Jurassic",
+   "rank": "period",
+   "color": "#33bde9",
+   "base": "jurassic-base",
+   "top": "cretaceous-base"
+  },
+  {
+   "id": "cretaceous",
+   "name": "Cretaceous",
+   "rank": "period",
+   "color": "#80ce5c",
+   "base": "cretaceous-base",
+   "top": "paleogene-base"
+  },
+  {
+   "id": "paleogene",
+   "name": "Paleogene",
+   "rank": "period",
+   "color": "#f89b5c",
+   "base": "paleogene-base",
+   "top": "neogene-base"
+  },
+  {
+   "id": "neogene",
+   "name": "Neogene",
+   "rank": "period",
+   "color": "#fddd1c",
+   "base": "neogene-base",
+   "top": "quaternary-base"
+  },
+  {
+   "id": "quaternary",
+   "name": "Quaternary",
+   "rank": "period",
+   "color": "#fff880",
+   "base": "quaternary-base",
+   "top": "present"
+  }
+ ],
+ "stage_boundaries": {
+  "hirnantian-base": "445.2 ±0.9",
+  "famennian-base": "372.15 ±0.46"
+ }
+}
