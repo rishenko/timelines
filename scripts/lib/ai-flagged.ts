@@ -29,6 +29,20 @@ export function wikiTitle(url: string): string | null {
   return t ? t[0].toUpperCase() + t.slice(1) : null;
 }
 
+/** A link found in prose, without the sentence's closing punctuation or a parenthesis it sits in ("(see …)."); a
+ * title's own parentheses ("Callisto_(mythology)") are balanced, so they stay. */
+export function trimProse(url: string): string {
+  let u = url;
+  for (;;) {
+    const next = u.replace(/[.,;:!?]+$/, '');
+    const open = (next.match(/\(/g) ?? []).length;
+    const close = (next.match(/\)/g) ?? []).length;
+    const trimmed = next.endsWith(')') && close > open ? next.slice(0, -1) : next;
+    if (trimmed === u) return u;
+    u = trimmed;
+  }
+}
+
 export interface FlaggedCite {
   file: string;
   /** Where in the file, as a JSON path (events[12].sources[0].url). */
@@ -44,7 +58,7 @@ export function flaggedCitations(titles: Set<string>, dir = 'data-src'): Flagged
       // a whole-string link as it is; a link inside prose without the sentence's closing punctuation
       const links = /^https?:\/\/\S+$/.test(v)
         ? [v]
-        : (v.match(/https?:\/\/en\.(?:m\.)?wikipedia\.org\/[^\s"'<>\]]+/g) ?? []).map((u) => u.replace(/[.,;:!?]+$/, ''));
+        : (v.match(/https?:\/\/en\.(?:m\.)?wikipedia\.org\/[^\s"'<>\]]+/g) ?? []).map(trimProse);
       for (const url of links) {
         const title = wikiTitle(url);
         if (title && titles.has(title)) out.push({ file, at, title });

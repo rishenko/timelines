@@ -13,13 +13,14 @@
 //   node scripts/contrast.ts [--url http://localhost:4317/] [--timeline ancient-classical]...
 //        [--preset parchment|dark|light|contrast]... [--state rest|focus]... [--width 1700] [--height 1000]
 //        [--zoom 100] [--quick] [--details] [--browser chrome|msedge]
-// Defaults: Ancient, every preset, both states, the whole chart (see --quick). --details lists each failing element; without it,
-// failures are grouped by kind (the worst one shown). Exits with 1 if any check fails.
+// Defaults: Ancient only, every preset, both states, the whole chart (see --quick). --details lists each failing
+// element; without it,// failures are grouped by kind (the worst one shown). Exits with 1 if any check fails.
 // Run `npm run build` and `npx vite preview --port 4317` first. Microsoft Edge on Windows, Google Chrome elsewhere.
 // Only what's drawn is checked. The timeline draws the events within about a screen of the view, so this scrolls
 // through the whole chart a screen at a time and checks each one (screens overlap by more than a label's width, and a
 // label is only checked where it's wholly on screen). --quick checks the opening view only (the a11y report's run);
-// a theme or colour change needs the sweep at a fine --zoom on every timeline, since the opening view passed a retune
+// a theme or colour change needs the sweep at a fine --zoom on every timeline (one --timeline each, with that
+// timeline's own zoom step), since the opening view passed a retune
 // that broke labels further along (#90). --sweep is still accepted (it's the default).
 // The colours are the served build's own: the page is opened with only the preset's name saved, so the app loads that
 // preset's current colours (theme.ts sanitize). A main baseline run from a PR's worktree therefore tests main's
@@ -97,7 +98,16 @@ for (const timeline of timelines) {
         await page.waitForTimeout(400);
       }
       if (zoom) {
-        await page.locator('button', { hasText: new RegExp('^\\s*' + zoom + '\\s*$') }).first().click();
+        // a timeline without that zoom step is skipped (each timeline has its own steps)
+        const step = page.locator('button', { hasText: new RegExp('^\\s*' + zoom + '\\s*$') }).first();
+        if (!(await step.count())) {
+          console.log(`skip  ${timeline} / ${preset} / ${state}: no "${zoom}" zoom step on this timeline`);
+          await page.close();
+          checked--;
+          skipped++;
+          continue;
+        }
+        await step.click();
         await page.waitForTimeout(600);
       }
       await page.addScriptTag({ content: axeSource });
