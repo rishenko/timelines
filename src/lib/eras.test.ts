@@ -112,4 +112,13 @@ describe('ages (meta.eras)', () => {
     d.meta.eraGroups = { 'ages-aegean': { name: 'Aegean and Mediterranean' } };
     expect(placeAges(d, {}).map((a) => a.lineName)).toEqual(['Aegean and Mediterranean', 'Central Europe']);
   });
+
+  it('names a one-line band’s line when meta.eraGroups names its group, and not otherwise', () => {
+    const d = withEras([era('old', 0, 40, 'ages-nile-valley', { tracks: ['africa'] }), era('han', 0, 40, 'ages-china', { tracks: ['east-asia'] })]);
+    d.meta.eraGroups = { 'ages-nile-valley': { name: 'Nile Valley' } };
+    expect(placeAges(d, {}).map((a) => [a.era.id, a.lineName])).toEqual([
+      ['old', 'Nile Valley'],
+      ['han', undefined],
+    ]);
+  });
 });

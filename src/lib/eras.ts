@@ -17,7 +17,7 @@ export interface PlacedAge {
   line: number;
   /** The row whose band it's drawn on; absent: the Ages strip. An age in several rows is placed once in each. */
   band?: string;
-  /** In a band with two or more lines: its line's name (its group's, from meta.eraGroups), at the line's left end. */
+  /** Its line's name, at the line's left end: its group's from meta.eraGroups, or (a band with two or more lines) one made from the group id. */
   lineName?: string;
   /** Where its bar ends when it shares its end year with the next age on its line: that age's start. */
   drawEnd?: number;
@@ -37,10 +37,16 @@ export function placeAges(ds: Dataset, selection: ChronologySelection): PlacedAg
     const bands = era.tracks?.length ? era.tracks : [undefined];
     return bands.map((band) => ({ era, span, line: lineOf(band ?? '', g), ...(band ? { band } : {}) }));
   });
-  // a band with two or more lines names each (Europe's Aegean and Central Europe lines); one line needs no name
+  // a band's lines are named from meta.eraGroups, even a band's only line ("Nile Valley" on Africa: the band's name
+  // alone doesn't say which Africa the ages are); a band with two or more lines names the rest from their group ids
   for (const band of lines.keys()) {
-    if (!band || lines.get(band)!.size < 2) continue;
-    for (const a of placed) if (a.band === band) a.lineName = (a.era.group && ds.meta.eraGroups?.[a.era.group]?.name) || groupLabel(a.era.group);
+    if (!band) continue;
+    const several = lines.get(band)!.size > 1;
+    for (const a of placed) {
+      if (a.band !== band) continue;
+      const named = a.era.group && ds.meta.eraGroups?.[a.era.group]?.name;
+      if (named || several) a.lineName = named || groupLabel(a.era.group);
+    }
   }
   const key = (a: PlacedAge) => `${a.band ?? ''}\n${a.line}`;
   for (const k of new Set(placed.map(key))) {
