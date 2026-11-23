@@ -922,6 +922,8 @@
   left: 0;
   right: 0;
   pointer-events: none;
+  /* a thin rule between the age lines and the row's events below */
+  border-bottom: 1px solid var(--rule);
 }
 .tl-lane-ages > * {
   pointer-events: auto;
