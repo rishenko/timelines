@@ -2665,6 +2665,39 @@
           "name": "Late Predynastic (Dynasty 0)",
           "start": -3299,
           "end": -3149,
+          "startDates": [
+            {
+              "year": -3324,
+              "source": {
+                "sourceKey": "wp-protodynastic",
+                "sourceLocation": "lead: Depending on the sources, it is dated ('approximately from 3325 to 3000 BC')"
+              },
+              "note": "The stored c. 3300 BCE is an estimate inside the cited spread (3350–3200 BCE); no source gives 3300 itself."
+            },
+            {
+              "year": -3349,
+              "source": {
+                "sourceKey": "wp-protodynastic",
+                "sourceLocation": "lead: Depending on the sources, it is dated ('from c. 3350 BC to c. 2920 BC')"
+              }
+            },
+            {
+              "year": -3199,
+              "source": {
+                "sourceKey": "wp-protodynastic",
+                "sourceLocation": "lead: Depending on the sources, it is dated ('or from 3200 to 3000 BC')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -3149,
+              "source": {
+                "sourceKey": "wp-early-dynastic-egypt",
+                "sourceLocation": "lead: 'the era of ancient Egypt that immediately follows the unification of Upper and Lower Egypt in c. 3150 BC'"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -2807,6 +2840,31 @@
           "name": "Middle Kingdom",
           "start": -2054,
           "end": -1649,
+          "startDates": [
+            {
+              "year": -2054,
+              "source": {
+                "sourceKey": "wp-middle-kingdom",
+                "sourceLocation": "Political history > Reunification under Mentuhotep II: 'The struggle was to be concluded by Mentuhotep II, who ascended the Theban throne in 2055 BC.'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1649,
+              "source": {
+                "sourceKey": "wp-middle-kingdom",
+                "sourceLocation": "lead: 'Some scholars also include the Thirteenth Dynasty of Egypt wholly into this period, in which case' 'the Middle Kingdom would end around 1650 BC'"
+              }
+            },
+            {
+              "year": -1699,
+              "source": {
+                "sourceKey": "wp-middle-kingdom",
+                "sourceLocation": "lead: 'Some scholars also include the Thirteenth Dynasty of Egypt wholly into this period, in which case' 'while others only include it until Merneferre Ay around 1700 BC'"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -2925,7 +2983,25 @@
         {
           "name": "Late Period",
           "start": -663,
-          "end": -331
+          "end": -331,
+          "startDates": [
+            {
+              "year": -663,
+              "source": {
+                "sourceKey": "wp-late-period",
+                "sourceLocation": "lead: 'The Late Period existed from 664 BC until 332 BC'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -331,
+              "source": {
+                "sourceKey": "wp-late-period",
+                "sourceLocation": "lead: 'The Late Period existed from 664 BC until 332 BC'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -3484,7 +3560,34 @@
         {
           "name": "Roman and Byzantine Egypt",
           "start": -29,
-          "end": 641
+          "end": 641,
+          "startDates": [
+            {
+              "year": -29,
+              "source": {
+                "sourceKey": "wp-roman-egypt",
+                "sourceLocation": "History > Early Roman Egypt: 'The province was established in 30 BC after Octavian (the future Roman emperor Augustus) defeated his rival Mark Antony'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 641,
+              "margin": 2,
+              "source": {
+                "sourceKey": "wp-arab-egypt",
+                "sourceLocation": "lead: 'The Arab conquest of Egypt … took place between 639 and 642 AD.'"
+              },
+              "note": "The stored 641 CE is an estimate inside the cited spread (639–642); no source gives 641 itself."
+            },
+            {
+              "year": 642,
+              "source": {
+                "sourceKey": "wp-roman-egypt",
+                "sourceLocation": "lead: 'Egypt ceased to be a part of the Roman Empire in 642, when it became part of the Rashidun Caliphate following the Muslim conquest of Egypt.'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -7112,18 +7215,114 @@
           "name": "Roman Kingdom (traditional)",
           "start": -752,
           "end": -508,
+          "startDates": [
+            {
+              "year": -752,
+              "source": {
+                "sourceKey": "wp-roman-kingdom",
+                "sourceLocation": "lead: 'According to tradition, the Roman Kingdom began with the city's founding c. 753 BC'"
+              }
+            },
+            {
+              "year": -752,
+              "source": {
+                "sourceKey": "wp-row-rome-republic-empire",
+                "sourceLocation": "lead: 'It encompasses the Roman Kingdom (753–509 BC), the Roman Republic (509–27 BC), and the Roman Empire (27 BC – 476 AD)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -508,
+              "source": {
+                "sourceKey": "wp-roman-kingdom",
+                "sourceLocation": "lead: '…and ended with the overthrow of the kings and the establishment of the Roman Republic c. 509 BC.'"
+              }
+            },
+            {
+              "year": -508,
+              "source": {
+                "sourceKey": "wp-row-rome-republic-empire",
+                "sourceLocation": "lead: 'It encompasses the Roman Kingdom (753–509 BC), the Roman Republic (509–27 BC), and the Roman Empire (27 BC – 476 AD)'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Roman Republic",
           "start": -508,
           "end": -26,
+          "startDates": [
+            {
+              "year": -508,
+              "source": {
+                "sourceKey": "wp-roman-republic",
+                "sourceLocation": "lead: 'beginning with the overthrow of the Roman Kingdom (traditionally dated to 509 BC)'"
+              }
+            },
+            {
+              "year": -508,
+              "source": {
+                "sourceKey": "wp-row-rome-republic-empire",
+                "sourceLocation": "lead: 'It encompasses the Roman Kingdom (753–509 BC), the Roman Republic (509–27 BC), and the Roman Empire (27 BC – 476 AD)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -26,
+              "source": {
+                "sourceKey": "wp-roman-republic",
+                "sourceLocation": "lead: 'and ending in 27 BC with the establishment of the Roman Empire following the War of Actium'"
+              }
+            },
+            {
+              "year": -26,
+              "source": {
+                "sourceKey": "wp-row-rome-republic-empire",
+                "sourceLocation": "lead: 'It encompasses the Roman Kingdom (753–509 BC), the Roman Republic (509–27 BC), and the Roman Empire (27 BC – 476 AD)'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Roman Empire (and the Western Empire)",
           "start": -26,
-          "end": 476
+          "end": 476,
+          "startDates": [
+            {
+              "year": -26,
+              "source": {
+                "sourceKey": "wp-roman-empire",
+                "sourceLocation": "lead: 'In 27 BC, the Roman Senate granted Octavian overarching military power (imperium) and the new title of Augustus, marking his accession as the first Roman emperor.'"
+              }
+            },
+            {
+              "year": -26,
+              "source": {
+                "sourceKey": "wp-row-rome-republic-empire",
+                "sourceLocation": "lead: 'It encompasses the Roman Kingdom (753–509 BC), the Roman Republic (509–27 BC), and the Roman Empire (27 BC – 476 AD)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 476,
+              "source": {
+                "sourceKey": "wp-roman-empire",
+                "sourceLocation": "lead: 'The Western Roman Empire collapsed in 476 AD'"
+              }
+            },
+            {
+              "year": 476,
+              "source": {
+                "sourceKey": "wp-row-rome-republic-empire",
+                "sourceLocation": "lead: 'It encompasses the Roman Kingdom (753–509 BC), the Roman Republic (509–27 BC), and the Roman Empire (27 BC – 476 AD)'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -7436,30 +7635,146 @@
           "name": "Prepalatial (EM I–MM IA)",
           "start": -3099,
           "end": -1924,
+          "startDates": [
+            {
+              "year": -3099,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, EM I '3100–2650 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'EM I (c. 3100-2650 BC) is marked by the appearance of the first painted ceramics.')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1924,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, MM IA '2100–1925 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'During MM IA (c. 2100-1925 BC), populations increased dramatically')"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Protopalatial (MM IB–II)",
           "start": -1924,
           "end": -1749,
+          "startDates": [
+            {
+              "year": -1924,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, MM IB '1925–1875 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'During MM IB (c. 1925-1875 BC), the first palaces were built at these sites')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1749,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, MM II '1875–1750 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'MM II (c. 1875–1750 BC) saw the development of the Minoan writing systems')"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Neopalatial (MM III–LM IB)",
           "start": -1749,
           "end": -1469,
+          "startDates": [
+            {
+              "year": -1749,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, MM III '1750–1700 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'MM III (c. 1750–1700 BC) marks the beginning of the Neopalatial period.')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1469,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, LM IB '1625–1470 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'Late Minoan IB (c. 1625-1470 BC) ended with severe destructions throughout the island, marking the end of Neopalatial society.')"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Monopalatial (LM II)",
           "start": -1469,
           "end": -1419,
+          "startDates": [
+            {
+              "year": -1469,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, LM II '1470–1420 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'Late Minoan II (c. 1470-1420 BC) is sparsely represented in the archaeological record')"
+              }
+            },
+            {
+              "year": -1469,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "hallager-2012",
+                "sourceLocation": "(via Wikipedia: Minoan chronology, Minoan history > Late Minoan: LM II 'c. 1470–1420 BC': 'It marks the beginning of the Monopalatial period, as the palace at Knossos was the only one remaining in use.')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1419,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, LM II '1470–1420 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'Late Minoan II (c. 1470-1420 BC) is sparsely represented in the archaeological record')"
+              }
+            },
+            {
+              "year": -1419,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "hallager-2012",
+                "sourceLocation": "(via Wikipedia: Minoan chronology, Minoan history > Late Minoan: LM II 'c. 1470–1420 BC'; LM III follows)"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Postpalatial (LM III)",
           "start": -1419,
           "end": -1074,
+          "startDates": [
+            {
+              "year": -1419,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, LM IIIA '1420–1330 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'Late Minoan III (c. 1420-1075 BC) shows profound social and political changes.')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1074,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "manning-2012",
+                "sourceLocation": "Minoan chronology table, LM IIIC '1200–1075 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'Late Minoan III (c. 1420-1075 BC) shows profound social and political changes.')"
+              }
+            }
+          ],
           "circa": true
         }
       ],
@@ -7529,6 +7844,26 @@
           "name": "Early Mycenaean (Shaft Grave era)",
           "start": -1749,
           "end": -1399,
+          "startDates": [
+            {
+              "year": -1749,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "Early Mycenaean 'c. 1750–1400 BC' (via Wikipedia: Mycenaean Greece, Chronology: 'divides the whole Mycenaean time into three cultural periods: Early Mycenaean (c. 1750–1400 BC)')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1399,
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "Early Mycenaean 'c. 1750–1400 BC' (via Wikipedia: Mycenaean Greece, Chronology: 'divides the whole Mycenaean time into three cultural periods: Early Mycenaean (c. 1750–1400 BC)')"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -7695,6 +8030,24 @@
           "name": "Archaic period",
           "start": -799,
           "end": -479,
+          "startDates": [
+            {
+              "year": -799,
+              "source": {
+                "sourceKey": "wp-archaic-greece",
+                "sourceLocation": "lead: 'Archaic Greece was the period in Greek history lasting from c. 800 BC to the second Persian invasion of Greece in 480 BC'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -479,
+              "source": {
+                "sourceKey": "wp-archaic-greece",
+                "sourceLocation": "lead: 'Archaic Greece was the period in Greek history lasting from c. 800 BC to the second Persian invasion of Greece in 480 BC'"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -8375,18 +8728,72 @@
           "name": "Early Bronze Age",
           "start": -3499,
           "end": -1999,
+          "startDates": [
+            {
+              "year": -3499,
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '3500–2000 BC (Early Bronze): prior to written records in the area'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1999,
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '3500–2000 BC (Early Bronze)'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Middle Bronze Age",
           "start": -1999,
           "end": -1549,
+          "startDates": [
+            {
+              "year": -1999,
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '2000–1550 BC (Middle Bronze): city-states'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1549,
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '2000–1550 BC (Middle Bronze)'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Late Bronze Age",
           "start": -1549,
           "end": -1199,
+          "startDates": [
+            {
+              "year": -1549,
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '1550–1200 BC (Late Bronze): Egyptian hegemony'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '1550–1200 BC (Late Bronze)'"
+              }
+            }
+          ],
           "circa": true
         }
       ],
@@ -9370,12 +9777,62 @@
           "name": "Old Kingdom",
           "start": -1649,
           "end": -1499,
+          "startDates": [
+            {
+              "year": -1649,
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "lead: 'and an empire centered on their capital, Hattusa (around 1650 BC)'"
+              }
+            },
+            {
+              "year": -1649,
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "Law: 'The tablets and monuments date from the Old Hittite Kingdom (1650–1500 BC)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1499,
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Middle Kingdom: 'The last monarch of the Old Kingdom, Telepinu, reigned until about 1500 BC.'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Middle Kingdom",
           "start": -1499,
           "end": -1399,
+          "startDates": [
+            {
+              "year": -1499,
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Middle Kingdom: 'Telepinu's reign marked the end of the \"Old Kingdom\" and the beginning of the lengthy weak phase known as the \"Middle Kingdom\".' (Telepinu 'until about 1500 BC')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1399,
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Old Kingdom: 'Only in the later period from 1400 BC until 1200 BC did the Hittite kingship become more centralized and powerful.'"
+              }
+            },
+            {
+              "year": -1429,
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Middle Kingdom: 'It segues into the \"Hittite Empire period\" proper, which dates from the reign of Tudhaliya I from c. 1430 BC.'"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -10725,18 +11182,73 @@
           "name": "Old Assyrian period",
           "start": -2024,
           "end": -1363,
+          "startDates": [
+            {
+              "year": -2024,
+              "source": {
+                "sourceKey": "wp-old-assyria",
+                "sourceLocation": "lead: 'covering the history of the city of Assur from its rise as an independent city-state under Puzur-Ashur I c. 2025 BC'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1363,
+              "source": {
+                "sourceKey": "wp-old-assyria",
+                "sourceLocation": "lead: '…to the foundation of a larger Assyrian territorial state after the accession of Ashur-uballit I c. 1363 BC'"
+              },
+              "note": "The year before Ashur-uballit I’s accession, c. 1363 BC, when the Middle Assyrian Empire begins."
+            }
+          ],
           "circa": true
         },
         {
           "name": "Middle Assyrian Empire",
           "start": -1362,
           "end": -911,
+          "startDates": [
+            {
+              "year": -1362,
+              "source": {
+                "sourceKey": "wp-middle-assyria",
+                "sourceLocation": "lead: 'The Middle Assyrian Empire was the third stage of Assyrian history, covering the history of Assyria' 'from the accession of Ashur-uballit I c. 1363 BC'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -911,
+              "source": {
+                "sourceKey": "wp-middle-assyria",
+                "sourceLocation": "lead: 'The Middle Assyrian Empire was the third stage of Assyrian history, covering the history of Assyria' 'to the death of Ashur-dan II in 912 BC'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Neo-Assyrian Empire",
           "start": -910,
-          "end": -608
+          "end": -608,
+          "startDates": [
+            {
+              "year": -910,
+              "source": {
+                "sourceKey": "wp-neo-assyria",
+                "sourceLocation": "lead: 'Beginning with the accession of Adad-nirari II in 911 BCE, the Neo-Assyrian Empire grew to dominate the ancient Near East'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -608,
+              "source": {
+                "sourceKey": "wp-neo-assyria",
+                "sourceLocation": "History > Collapse and fall of the empire: 'Aššur-uballiṭ's rule at Harran lasted until late 610 or early 609 BCE, when the city was captured by the Babylonians and the Medes.'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -11098,7 +11610,25 @@
         {
           "name": "Neo-Babylonian Empire",
           "start": -625,
-          "end": -538
+          "end": -538,
+          "startDates": [
+            {
+              "year": -625,
+              "source": {
+                "sourceKey": "wp-neo-bab",
+                "sourceLocation": "History > Foundation and the fall of Assyria: 'In November 626 BC, Nabopolassar was crowned King of Babylon'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -538,
+              "source": {
+                "sourceKey": "wp-neo-bab",
+                "sourceLocation": "lead: 'the Neo-Babylonian Empire was conquered by the Achaemenid Persian Empire in 539 BC'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -12243,12 +12773,48 @@
           "name": "Old Elamite",
           "start": -2699,
           "end": -1499,
+          "startDates": [
+            {
+              "year": -2699,
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "History (list of periods): 'Old Elamite period: c. 2700 – c. 1500 BC (earliest documents until the Sukkalmah Dynasty)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1499,
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "History (list of periods): 'Old Elamite period: c. 2700 – c. 1500 BC'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Middle Elamite",
           "start": -1499,
           "end": -1099,
+          "startDates": [
+            {
+              "year": -1499,
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "History (list of periods): 'Middle Elamite period: c. 1500 – c. 1100 BC (Anzanite dynasty until the Babylonian invasion of Susa)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1099,
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "History (list of periods): 'Middle Elamite period: c. 1500 – c. 1100 BC'"
+              }
+            }
+          ],
           "circa": true
         },
         {
@@ -14937,12 +15503,48 @@
           "name": "Mature Harappan",
           "start": -2599,
           "end": -1899,
+          "startDates": [
+            {
+              "year": -2599,
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1899,
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE'"
+              }
+            }
+          ],
           "circa": true
         },
         {
           "name": "Late Harappan",
           "start": -1899,
           "end": -1299,
+          "startDates": [
+            {
+              "year": -1899,
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE' (the late phase follows the mature form)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1299,
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE'"
+              }
+            }
+          ],
           "circa": true
         }
       ],
@@ -17342,7 +17944,39 @@
         {
           "name": "Eastern Zhou",
           "start": -770,
-          "end": -255
+          "end": -255,
+          "startDates": [
+            {
+              "year": -770,
+              "source": {
+                "sourceKey": "wp-zhou",
+                "sourceLocation": "lead: 'Even as Zhou suzerainty became increasingly ceremonial over the following Eastern Zhou period (771–256 BC)'"
+              }
+            },
+            {
+              "year": -769,
+              "source": {
+                "sourceKey": "wp-eastern-zhou",
+                "sourceLocation": "lead: 'The Eastern Zhou (c. 770–256 BC) is a period in Chinese history comprising the latter half of the Zhou dynasty'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -255,
+              "source": {
+                "sourceKey": "wp-zhou",
+                "sourceLocation": "lead: 'Even as Zhou suzerainty became increasingly ceremonial over the following Eastern Zhou period (771–256 BC)'"
+              }
+            },
+            {
+              "year": -255,
+              "source": {
+                "sourceKey": "wp-eastern-zhou",
+                "sourceLocation": "lead: 'The Eastern Zhou (c. 770–256 BC)'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -17650,22 +18284,150 @@
         {
           "name": "Liu Song",
           "start": 420,
-          "end": 479
+          "end": 479,
+          "startDates": [
+            {
+              "year": 420,
+              "source": {
+                "sourceKey": "wp-liu-song",
+                "sourceLocation": "History > Campaigns of Liu Yu: 'Finally, in 420, Sima Dewen abdicated in favour of Liu Yu, who declared himself the ruler of the new Song dynasty.'"
+              }
+            },
+            {
+              "year": 420,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 479,
+              "source": {
+                "sourceKey": "wp-liu-song",
+                "sourceLocation": "Fall of Liu Song: 'In 479, Xiao took the throne himself and declared himself Emperor of Qi, ending Liu Song.'"
+              }
+            },
+            {
+              "year": 479,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ]
         },
         {
           "name": "Southern Qi",
           "start": 479,
-          "end": 502
+          "end": 502,
+          "startDates": [
+            {
+              "year": 479,
+              "source": {
+                "sourceKey": "wp-southern-qi",
+                "sourceLocation": "History: 'The dynasty began in 479, when Xiao Daocheng forced the Emperor Shun of Liu Song into yielding the throne to him'"
+              }
+            },
+            {
+              "year": 479,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 502,
+              "source": {
+                "sourceKey": "wp-liang-dynasty",
+                "sourceLocation": "Rule: 'The Liang dynasty began when Xiao Yan, a Southern Qi royal and general usurped the throne of Emperor He in 502.'"
+              }
+            },
+            {
+              "year": 502,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ]
         },
         {
           "name": "Liang",
           "start": 502,
-          "end": 557
+          "end": 557,
+          "startDates": [
+            {
+              "year": 502,
+              "source": {
+                "sourceKey": "wp-liang-dynasty",
+                "sourceLocation": "Rule: 'The Liang dynasty began when Xiao Yan, a Southern Qi royal and general usurped the throne of Emperor He in 502.'"
+              }
+            },
+            {
+              "year": 502,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 557,
+              "source": {
+                "sourceKey": "wp-liang-dynasty",
+                "sourceLocation": "Rule: 'In 557, Chen Baxian established the new powerful Chen dynasty.'"
+              }
+            },
+            {
+              "year": 557,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ]
         },
         {
           "name": "Chen",
           "start": 557,
-          "end": 589
+          "end": 589,
+          "startDates": [
+            {
+              "year": 557,
+              "source": {
+                "sourceKey": "wp-chen-dynasty",
+                "sourceLocation": "History > Founding and expansion: Chen Baxian: 'In 557, Chen Baxian a former high-ranked Liang general, took the initiative to establish a new empire in Southern China: the Chen dynasty.'"
+              }
+            },
+            {
+              "year": 557,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 589,
+              "source": {
+                "sourceKey": "wp-chen-dynasty",
+                "sourceLocation": "lead: 'It was conquered by the Sui dynasty in 589 AD, marking an end to the Northern and Southern dynasties period in Chinese history.'"
+              }
+            },
+            {
+              "year": 589,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Southern dynasties: 'The Jin were succeeded by a series of short-lived dynasties: Liu Song (420–479), Southern Qi (479–502), Liang (502–557) and Chen (557–589).'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -17736,12 +18498,48 @@
         {
           "name": "Northern Wei",
           "start": 386,
-          "end": 535
+          "end": 535,
+          "startDates": [
+            {
+              "year": 386,
+              "source": {
+                "sourceKey": "wp-northern-wei",
+                "sourceLocation": "lead: 'The first of the Northern dynasties, it ruled northern China from 386 to 535 AD'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 535,
+              "source": {
+                "sourceKey": "wp-northern-wei",
+                "sourceLocation": "lead: 'The first of the Northern dynasties, it ruled northern China from 386 to 535 AD'"
+              }
+            }
+          ]
         },
         {
           "name": "Eastern Wei",
           "start": 534,
-          "end": 550
+          "end": 550,
+          "startDates": [
+            {
+              "year": 534,
+              "source": {
+                "sourceKey": "wp-eastern-wei",
+                "sourceLocation": "lead: 'the Eastern Wei ruled the eastern part of northern China from 534 to 550 AD.'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 550,
+              "source": {
+                "sourceKey": "wp-eastern-wei",
+                "sourceLocation": "History: 'but in 550 Gao Yang deposed Yuan Shanjian and founded his dynasty, the Northern Qi.'"
+              }
+            }
+          ]
         },
         {
           "name": "Western Wei",
@@ -17767,12 +18565,55 @@
         {
           "name": "Northern Qi",
           "start": 550,
-          "end": 577
+          "end": 577,
+          "startDates": [
+            {
+              "year": 550,
+              "source": {
+                "sourceKey": "wp-northern-qi",
+                "sourceLocation": "lead: 'It ruled the eastern part of northern China from 550 to 577 AD.'"
+              }
+            },
+            {
+              "year": 551,
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Northern dynasties > Northern Qi (550–577) and Northern Zhou (557–581): 'establishing the Northern Qi dynasty (551–577)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 577,
+              "source": {
+                "sourceKey": "wp-northern-qi",
+                "sourceLocation": "lead: 'and was eventually conquered by the Xianbei-led Northern Zhou dynasty in 577 AD.'"
+              }
+            }
+          ]
         },
         {
           "name": "Northern Zhou",
           "start": 557,
-          "end": 581
+          "end": 581,
+          "startDates": [
+            {
+              "year": 557,
+              "source": {
+                "sourceKey": "wp-northern-zhou",
+                "sourceLocation": "lead: 'known in historiography as the Northern Zhou, was a Xianbei-led dynasty of China … that lasted from 557 to 581 AD'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 581,
+              "source": {
+                "sourceKey": "wp-northern-zhou",
+                "sourceLocation": "History > Transit to Sui: 'On 4 March 581, Emperor Jing of Northern Zhou abdicated the throne in favor of Yang Jian'"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -28219,6 +29060,46 @@
       "accessed": "2026-11-21",
       "tags": [
         "periodo"
+      ]
+    },
+    "wp-protodynastic": {
+      "name": "Wikipedia: Protodynastic Period of Egypt",
+      "url": "https://en.wikipedia.org/wiki/Protodynastic_Period_of_Egypt",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-22"
+    },
+    "wp-early-dynastic-egypt": {
+      "name": "Wikipedia: Early Dynastic Period (Egypt)",
+      "url": "https://en.wikipedia.org/wiki/Early_Dynastic_Period_(Egypt)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-22"
+    },
+    "wp-roman-egypt": {
+      "name": "Wikipedia: Egypt (Roman province)",
+      "url": "https://en.wikipedia.org/wiki/Egypt_(Roman_province)",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-22"
+    },
+    "wp-eastern-zhou": {
+      "name": "Wikipedia: Eastern Zhou",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Zhou",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-22"
+    },
+    "hallager-2012": {
+      "name": "Crete, in The Oxford Handbook of the Bronze Age Aegean",
+      "author": "Hallager, Erik",
+      "year": "2012",
+      "tags": [
+        "cited-via-wikipedia"
       ]
     }
   },

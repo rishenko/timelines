@@ -16,7 +16,8 @@
 //
 // run-all rebuilds the timeline's additions from the scripts, in the order the table gives. Every script is an
 // upsert, so on an up-to-date source file it should change nothing. --check proves that: it replays everything,
-// reports any difference, and puts the source file back as it was (exit code 1 if anything changed).
+// reports any difference, and puts the source file back as it was (exit code 1 if anything changed). A phase with no
+// date claims fails it too (every date cites its source); a plain run-all only warns about one.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { compileSource, compiledText } from './lib/compile.ts';
@@ -85,6 +86,12 @@ function runScript(file: string) {
   console.log(`  ${file}: ${lines.length === 1 ? lines[0] : `${lines.length} lines of output`}`);
 }
 
+/** Phases with neither start nor end claims, as "row / phase name". */
+function uncitedPhases(d: { tracks: { id: string; phases?: { name: string; startDates?: unknown[]; endDates?: unknown[] }[] }[] }) {
+  return d.tracks.flatMap((t) =>
+    (t.phases ?? []).filter((p) => !p.startDates?.length && !p.endDates?.length).map((p) => `${t.id} / ${p.name}`));
+}
+
 function runAll(t: SourceTimeline, check: boolean) {
   const before = readFileSync(t.source, 'utf8');
   try {
@@ -98,6 +105,13 @@ function runAll(t: SourceTimeline, check: boolean) {
       const b = after.split('\n');
       const i = a.findIndex((line, k) => line !== b[k]);
       console.log(`${t.short}: the source file changed (first difference at line ${i + 1}):\n- ${a[i]}\n+ ${b[i]}`);
+      if (check) process.exitCode = 1;
+    }
+    const uncited = uncitedPhases(readSource(t.source));
+    if (uncited.length) {
+      const shown = uncited.slice(0, 5).join('; ');
+      const label = check ? 'error' : 'warning';
+      console.log(`${t.short}: ${label}: ${uncited.length} phases have no date claims (${shown}${uncited.length > 5 ? '; …' : ''})`);
       if (check) process.exitCode = 1;
     }
     if (!check) importance(t);
