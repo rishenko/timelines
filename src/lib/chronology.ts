@@ -2,6 +2,7 @@ import { dayWindow, type DayWindow } from './subYear.ts';
 import type { Chronology, DateClaim, DateDays, Dataset, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { trackIndex, trackPath } from './tracks.ts';
 import { datasetPresent } from './years.ts';
+import { beforePresent, circaShare } from './beforePresent.ts';
 
 /**
  * Chronologies, date claims and error margins.
@@ -154,6 +155,22 @@ export function yearUnder(best: number, claims: Claim[], chron: string | undefin
   return hit ? hit.year : best;
 }
 
+/**
+ * How far a "c." date fades either side, in years. Usually `meta.circaFade`. In deep time with
+ * `calendar.beforePresent.circaShare`, that share of the date's age instead ("c. 66 Ma" at 0.01: ±0.66 Ma), so one
+ * setting suits 66 Ma and 11.7 ka. Floor: `meta.circaFade` (default 0), so a date near the present still fades by at
+ * least that. Ceiling: the age, so a fade never reaches past the present (the share alone stays under half the age, since
+ * the validator caps `circaShare` at 0.5; only the floor can reach the cap).
+ */
+export function circaFadeAt(ds: Pick<Dataset, 'meta'>, best: number): number {
+  const floor = ds.meta.circaFade ?? 0;
+  const share = circaShare(ds.meta.calendar);
+  const bp = beforePresent(ds.meta.calendar);
+  if (share === null || !bp) return floor;
+  const age = Math.abs(bp.present - best);
+  return Math.min(age, Math.max(floor, share * age));
+}
+
 /** Earliest–latest plausible year from the claims, the best estimate, and a circa fade. Undefined when there's no spread. */
 export function dateWindow(claims: DateClaim[], best: number, circaFade = 0): Window | undefined {
   let lo = best - circaFade;
@@ -177,7 +194,7 @@ function resolveDate(
   const all = allClaims(ds, best, claims, chron);
   const group = chron ? ds.chronologies?.[chron]?.group : undefined;
   const year = yearUnder(best, all, chron, group ? selection[group] : undefined);
-  const fade = circa ? (ds.meta.circaFade ?? 0) : 0;
+  const fade = circa ? circaFadeAt(ds, best) : 0;
   return { year, window: dateWindow(all, best, fade) };
 }
 

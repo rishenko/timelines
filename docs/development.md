@@ -78,7 +78,8 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/types.ts` | The format's types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …), at the current schema version (`SCHEMA_VERSION`; history in data-format.md, "Versions") |
 | `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
 | `src/data/` | The validator (`validate.ts`), schema versions and migration (`migrate.ts`), the site's list format (`timelineIndex.ts`), and row proximity checks (`proximity.ts`) |
-| `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks |
+| `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks; deep time (`formatAgo`, `parseAgo`, ticks on round ages) |
+| `src/lib/beforePresent.ts` | Reads `calendar.beforePresent` (deep time); the "c." fade from `circaShare` is `circaFadeAt` in `chronology.ts` |
 | `src/lib/subYear.ts` | Months and days: zoom steps below a year, date positions, `inc`/`at` in links |
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |

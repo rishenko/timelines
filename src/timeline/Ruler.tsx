@@ -1,6 +1,7 @@
 import type { Calendar } from '../types.ts';
 import { formatYear, isMajorTick, tickLabel } from '../lib/calendar.ts';
-import { gapLength, incrementLabel } from '../lib/subYear.ts';
+import { formatSpan, gapLength, incrementLabel } from '../lib/subYear.ts';
+import { beforePresent } from '../lib/beforePresent.ts';
 import type { Scale, Segment } from './scale.ts';
 
 /** A link to a neighbouring timeline (meta.continues), drawn on the ruler at the year where the two meet. */
@@ -83,7 +84,8 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
         <div key={g.y0} className="tl-gap-label" style={{ left: labelW + g.x0, width: g.x1 - g.x0 }}>
           <span title={`${increment < 1 ? `${tickLabel(g.y0, increment, cal, true)} – ${tickLabel(g.y1, increment, cal, true)}` : `${formatYear(g.y0, cal)} – ${formatYear(g.y1, cal)}`} compressed`}>
             {/* whole years exactly as before ("N yrs" as two text nodes, which the browser shapes differently from one) */}
-            {Number.isInteger(g.y1 - g.y0) ? <>{g.y1 - g.y0} yrs</> : gapLength(g.y0, g.y1)}
+            {/* deep time: short lengths ("540 Myr") */}
+            {beforePresent(cal) ? formatSpan(g.y1 - g.y0) : Number.isInteger(g.y1 - g.y0) ? <>{g.y1 - g.y0} yrs</> : gapLength(g.y0, g.y1)}
           </span>
         </div>
       ))}

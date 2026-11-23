@@ -34,30 +34,59 @@ export function subYearUnit(inc: number): SubYearUnit | undefined {
   return (Object.keys(SUB_YEAR) as SubYearUnit[]).find((u) => Math.abs(SUB_YEAR[u] - inc) < 1e-12);
 }
 
-/** "10 yr", "1 month", "1 week": a zoom step, short. */
-export function incrementLabel(inc: number): string {
-  const u = subYearUnit(inc);
-  return u ? (u === 'quarter' ? '3 months' : `1 ${u}`) : `${inc} yr`;
+const dec = (v: number) => String(Number(v.toFixed(3)));
+
+/**
+ * A length of 10,000 years or more, short: "100 Myr", "1 Gyr", "50 kyr" (deep time's zoom steps; lengths in Myr, dates
+ * in Ma, as geologists write them: Kevin, 2026-11-23). Null below that, so the other timelines' steps are unchanged.
+ */
+export function shortYears(n: number): string | null {
+  // the unit from the rounded value, so 999,999,999 years is "1 Gyr", not "1000 Myr"
+  const at = (pow: number) => Number((n / 10 ** pow).toFixed(3));
+  if (at(3) < 10) return null;
+  return at(9) >= 1 ? `${dec(n / 1e9)} Gyr` : at(6) >= 1 ? `${dec(n / 1e6)} Myr` : `${dec(n / 1e3)} kyr`;
 }
 
-/** "10 years per tick", "1 month per tick": a zoom step, spoken. */
+/** Spoken: "100 million years", "50 thousand years", "10 years". */
+function spokenYears(n: number): string {
+  const at = (pow: number) => Number((n / 10 ** pow).toFixed(3));
+  if (n < 1e4) return `${n} years`;
+  return at(9) >= 1 ? `${dec(n / 1e9)} billion years` : at(6) >= 1 ? `${dec(n / 1e6)} million years` : `${dec(n / 1e3)} thousand years`;
+}
+
+/** Deep time: a shortened gap's length, "4.4 Gyr", "540 Myr", "11.7 kyr", under 10,000 years "9,600 yrs". */
+export function formatSpan(yrs: number): string {
+  const s = shortYears(yrs);
+  if (s) return s;
+  const n = Math.round(yrs);
+  return `${n.toLocaleString('en')} ${n === 1 ? 'yr' : 'yrs'}`;
+}
+
+/** "10 yr", "1 month", "1 week", "100 Myr": a zoom step, short. */
+export function incrementLabel(inc: number): string {
+  const u = subYearUnit(inc);
+  return u ? (u === 'quarter' ? '3 months' : `1 ${u}`) : (shortYears(inc) ?? `${inc} yr`);
+}
+
+/** "10 years per tick", "1 month per tick", "100 million years per tick": a zoom step, spoken. */
 export function incrementSpoken(inc: number): string {
   const u = subYearUnit(inc);
-  return u ? `${u === 'quarter' ? '3 months' : `1 ${u}`} per tick` : `${inc} years per tick`;
+  return u ? `${u === 'quarter' ? '3 months' : `1 ${u}`} per tick` : `${spokenYears(inc)} per tick`;
 }
 
 /** A zoom step's toolbar button: the number, or the unit's short name below a year. */
 export function incrementButton(inc: number): string {
   const u = subYearUnit(inc);
-  return u ? { quarter: '3 mo', month: 'Month', week: 'Week', day: 'Day' }[u] : String(inc);
+  return u ? { quarter: '3 mo', month: 'Month', week: 'Week', day: 'Day' }[u] : (shortYears(inc) ?? String(inc));
 }
 
 /**
  * A zoom step button's accessible name: as spoken for a number ("10 years per tick", which begins with its visible
- * "10"); below a year, its visible name first ("Day: 1 day per tick"), so speech input can say what it sees (2.5.3).
+ * "10"); below a year, and in deep time, its visible name first ("Day: 1 day per tick", "100 Myr: 100 million years per
+ * tick"), so speech input can say what it sees (2.5.3).
  */
 export function incrementName(inc: number): string {
-  return subYearUnit(inc) ? `${incrementButton(inc)}: ${incrementSpoken(inc)}` : incrementSpoken(inc);
+  return subYearUnit(inc) || shortYears(inc) ? `${incrementButton(inc)}: ${incrementSpoken(inc)}` : incrementSpoken(inc);
 }
 
 /** A zoom step's name in links (?inc=): its unit name below a year, else its number. */
