@@ -25,6 +25,12 @@ describe('print ruler', () => {
     expect(printTicks(-4.5e9, 0, bce).length).toBeLessThanOrEqual(12);
   });
 
+  it('a span that is not a number of years gives step 1, never an endless search', () => {
+    expect(tickStep(NaN)).toBe(1);
+    expect(tickStep(Infinity)).toBe(1);
+    expect(tickStep(0)).toBe(1);
+  });
+
   it('keeps the familiar steps', () => {
     expect(tickStep(300)).toBe(25);
     expect(tickStep(3000)).toBe(250);

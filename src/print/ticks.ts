@@ -5,6 +5,7 @@ import type { Calendar } from '../types.ts';
 
 /** At most 12 ticks: today's steps up to 5,000 years, then 1, 2 or 5 × 10ⁿ, with no limit (deep time). */
 export function tickStep(years: number): number {
+  if (!Number.isFinite(years) || years <= 0) return 1;
   for (const s of [1, 2, 5, 10, 25, 50, 100, 250, 500, 1000, 2000, 5000]) if (years / s <= 12) return s;
   for (let m = 10_000; ; m *= 10) for (const k of [1, 2, 5]) if (years / (k * m) <= 12) return k * m;
 }
