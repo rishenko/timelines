@@ -36,6 +36,8 @@ interface Options {
   onSearchKey?: () => void;
   /** Each label has a compare button (comparison sets). */
   compare?: boolean;
+  /** A lane's phase strip lines, each its cells' stop keys and left edges (content px): grid lines above its events. */
+  stripLines?: (lane: LaneLayout) => { key: string; x: number }[][];
 }
 
 /**
@@ -54,8 +56,8 @@ export function useRovingFocus(o: Options) {
         ...(l.overflow > 0 || expanded[l.lane.id] ? [labelStopKey(l.lane.id, 'overflow')] : []),
         ...(l.lane.hasChildren ? [labelStopKey(l.lane.id, 'fold')] : []),
         ...(o.inactiveBelow?.get(l.lane.id) ? [labelStopKey(l.lane.id, 'hidden')] : []),
-      ]),
-    [lanes, expanded, o.inactiveBelow, o.compare],
+      ], o.stripLines),
+    [lanes, expanded, o.inactiveBelow, o.compare, o.stripLines],
   );
   /** The control that holds the chart's one Tab stop, with what it held (to find it again after a zoom or fold). */
   const [active, setActive] = useState<{ key: string; laneId: string; eventIds: string[] } | null>(null);
@@ -74,8 +76,10 @@ export function useRovingFocus(o: Options) {
     if (again) return again;
     const sel = selectedId ? stops.find((st) => !st.label && st.eventIds.includes(selectedId)) : undefined;
     if (sel) return sel.key;
-    // else the first event at or after the left edge of the view, top to bottom
-    return (stops.find((st) => !st.label && st.x >= view.left) ?? stops.find((st) => !st.label) ?? stops[0])?.key ?? null;
+    // else the first event at or after the left edge of the view, top to bottom (never a phase strip cell: Tab lands on
+    // events, as before strip cells could be reached)
+    const event = (st: (typeof stops)[number]) => !st.label && !st.strip;
+    return (stops.find((st) => event(st) && st.x >= view.left) ?? stops.find(event) ?? stops.find((st) => !st.strip) ?? stops[0])?.key ?? null;
   }, [grid, active, selectedId, view.left]);
   const goTo = (key: string) => {
     setActive(stopInfo(key));

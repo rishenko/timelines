@@ -23,6 +23,7 @@ import { Toolbar } from './components/Toolbar.tsx';
 import { TimelinePicker } from './components/TimelinePicker.tsx';
 import { EditBar } from './components/EditBar.tsx';
 import { SidePanel, type Editing } from './components/SidePanel.tsx';
+import type { SelectedPhase } from './components/PhasePanel.tsx';
 import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
@@ -44,6 +45,8 @@ import type { TimelineIndexEntry } from './data/timelineIndex.ts';
 import { indexUrl } from './state/timelines.ts';
 import type { LibraryEntry } from './state/library.ts';
 import type { Dataset } from './types.ts';
+import type { ResolvedPhase } from './lib/chronology.ts';
+import type { ResolvedMembership } from './lib/memberOf.ts';
 
 /**
  * The app shell: owns the open timeline's state (data and draft, chronology choices, zoom, folded rows, selection,
@@ -217,14 +220,25 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // an age's details (clicked in the strip or a band): one panel at a time, so opening it closes an event's and the
   // other way round
   const [selectedAgeId, setSelectedAgeId] = useState<string | null>(null);
+  // likewise a row's phase or membership (Enter on its strip cell), by its PlacedPhase.ref
+  const [selectedPhaseRef, setSelectedPhaseRef] = useState<string | null>(null);
   const [lastSelectedId, setLastSelectedId] = useState(selectedId);
   if (selectedId !== lastSelectedId) {
     setLastSelectedId(selectedId);
-    if (selectedId) setSelectedAgeId(null);
+    if (selectedId) {
+      setSelectedAgeId(null);
+      setSelectedPhaseRef(null);
+    }
   }
   const openAge = (id: string) => {
     setSelectedId(null);
+    setSelectedPhaseRef(null);
     setSelectedAgeId(id);
+  };
+  const openPhase = (ref: string) => {
+    setSelectedId(null);
+    setSelectedAgeId(null);
+    setSelectedPhaseRef(ref);
   };
   const selectAndFocus = (id: string) => {
     const e = resolvedById.get(id);
@@ -346,7 +360,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
     setAnnouncement(on ? 'Rows with nothing in view are hidden' : 'All rows shown');
   };
   const selectedAge = selectedAgeId ? ages.find((a) => a.era.id === selectedAgeId) : undefined;
-  const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId)) || !!selectedAge;
+  const selectedPhase = useMemo(() => findPhase(data, phases, memberOf, selectedPhaseRef), [data, phases, memberOf, selectedPhaseRef]);
+  const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId)) || !!selectedAge || !!selectedPhase;
 
   // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
   // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
@@ -693,6 +708,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
             ages={ages}
             selectedAgeId={selectedAgeId}
             onOpenAge={openAge}
+            selectedPhaseRef={selectedPhaseRef}
+            onOpenPhase={openPhase}
             onPinchZoom={(dir) => void zoomStep(dir)}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}
@@ -720,6 +737,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
           categoriesOf={categories.info}
           selectedAge={selectedAge}
           onCloseAge={() => setSelectedAgeId(null)}
+          selectedPhase={selectedPhase}
+          onClosePhase={() => setSelectedPhaseRef(null)}
         />
       </main>
 
@@ -735,4 +754,34 @@ export default function App({ published: opened, library: libraryEntry, site, no
       </div>
     </div>
   );
+}
+
+/**
+ * The phase or membership a strip cell's ref names (PlacedPhase.ref: phaseRef, memberRef), as stored and as resolved
+ * under the selected chronologies; undefined when it is gone (the row or phase was edited away).
+ */
+function findPhase(
+  data: Dataset,
+  phases: Map<string, ResolvedPhase[]>,
+  memberOf: Map<string, ResolvedMembership[]>,
+  ref: string | null,
+): SelectedPhase | undefined {
+  if (!ref) return undefined;
+  const [kind, trackId, ...rest] = ref.split(':');
+  const track = data.tracks.find((t) => t.id === trackId);
+  if (!track) return undefined;
+  if (kind === 'phase') {
+    const i = Number(rest[0]);
+    const stored = track.phases?.[i];
+    const resolved = phases.get(trackId)?.[i];
+    return stored && resolved ? { ref, track, name: stored.name, stored, resolved } : undefined;
+  }
+  const start = Number(rest.at(-1));
+  const row = rest.slice(0, -1).join(':');
+  const same = (memberOf.get(trackId) ?? []).filter((m) => m.row === row);
+  const at = same.findIndex((m) => m.start === start);
+  // stored memberships in the same union, in the order they were resolved (by start)
+  const stored = (track.memberOf ?? []).filter((m) => m.row === row).sort((a, b) => a.start - b.start)[at];
+  const union = data.tracks.find((t) => t.id === row);
+  return at >= 0 && stored ? { ref, track, name: union?.name ?? row, union, stored, resolved: same[at] } : undefined;
 }

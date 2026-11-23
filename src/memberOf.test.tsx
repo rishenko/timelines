@@ -67,7 +67,7 @@ describe('dated memberships', () => {
     expect(member).not.toBeNull();
     expect(member.style.getPropertyValue('--track-color')).toBe('#b33a3a'); // the League's colour
     expect(member.querySelector('.tl-phase-fill')!.getAttribute('title')).toMatch(/^Quay Town in The Harbor League: 60 L – 179 L/);
-    // below the phase lines, and display only (no buttons or links in the strip)
+    // below the phase lines, with nothing focusable inside it (the cell itself is a keyboard stop: phaseKeyboard.test)
     const phaseTops = [...quay.querySelectorAll<HTMLElement>('.tl-phase:not(.member)')].map((p) => parseFloat(p.style.top));
     expect(parseFloat(member.style.top)).toBeGreaterThan(Math.max(...phaseTops));
     expect(member.querySelector('button, a, [tabindex]')).toBeNull();
