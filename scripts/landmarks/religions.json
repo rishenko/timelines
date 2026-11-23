@@ -102,7 +102,7 @@
    "expect": [
     "society"
    ],
-   "match": "Ashoka|Third (Buddhist )?Council|Mahinda"
+   "match": "Third (Buddhist )?Council|Mahinda|Ashoka.*(Buddh|missionar|dhamma|dharma)"
   },
   {
    "id": "mani",
@@ -126,7 +126,7 @@
    "expect": [
     "society"
    ],
-   "match": "Jesus|Crucifixion|Christian|Paul"
+   "match": "Jesus|Crucifixion|Pentecost|Paul the Apostle|Christianity (begins|emerges)"
   },
   {
    "id": "buddhism-china",
@@ -163,7 +163,7 @@
     "society",
     "rule"
    ],
-   "match": "Edict of Milan|Constantine"
+   "match": "Edict of Milan|Constantine.*(Christian|convert|Milvian)"
   },
   {
    "id": "aksum-christian",
@@ -199,7 +199,7 @@
    "expect": [
     "society"
    ],
-   "match": "Muhammad|Quran|Qur.an|Islam"
+   "match": "first revelation|revelation.*(Hira|Muhammad)|Cave of Hira"
   },
   {
    "id": "hijra",
@@ -223,7 +223,7 @@
    "expect": [
     "society"
    ],
-   "match": "Uthman|Qur.an|Quran"
+   "match": "Qur.an|Quran|Uthmanic|codex"
   },
   {
    "id": "karbala",
@@ -261,7 +261,7 @@
    "expect": [
     "society"
    ],
-   "match": "Tibet|Songtsen|Padmasambhava"
+   "match": "Buddhism.*Tibet|Tibet.*Buddhis|Padmasambhava|Samye"
   },
   {
    "id": "shinto-kojiki",
@@ -311,7 +311,7 @@
    "expect": [
     "society"
    ],
-   "match": "Clovis"
+   "match": "Clovis.*(baptis|baptiz|convert|Catholic)|baptism of Clovis"
   },
   {
    "id": "rus-baptism",
@@ -383,7 +383,7 @@
    "expect": [
     "society"
    ],
-   "match": "Theravada|Anawrahta|Pagan.*Buddh"
+   "match": "Theravada|Pagan.*Buddh|Buddh.*Pagan|Shin Arahan"
   },
   {
    "id": "pasai-islam",
@@ -420,7 +420,7 @@
    "expect": [
     "society"
    ],
-   "match": "Luther|Reformation|Ninety-five"
+   "match": "Luther|Ninety-five|95 Theses|Protestant Reformation"
   },
   {
    "id": "guru-nanak",

@@ -11,7 +11,7 @@
 //   whose reign event is below importance 1: the list is a check that the data's ranking puts them high, not a ranking
 //   to copy into it (Kevin, 2026-11-23).
 import { readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve, sep } from 'node:path';
 
 const args = process.argv.slice(2);
 const opt = (flag: string) => (args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined);
@@ -135,8 +135,9 @@ function checkItem(item: Item): Result {
   for (const l of data)
     for (const e of l.events) {
       if (!re.test(e.title)) continue;
-      const end = e.end ?? e.start;
-      const inside = Math.abs(e.start - item.year) <= item.tol || (e.start <= item.year + item.tol && end >= item.year - item.tol);
+      // the event starts or ends within the tolerance of the item's year (a long event that merely spans the year, such as
+      // Apartheid for "the end of apartheid", doesn't count)
+      const inside = Math.abs(e.start - item.year) <= item.tol || (e.end !== undefined && Math.abs(e.end - item.year) <= item.tol);
       (inside ? near : far).push({ l, e });
     }
   const score = (h: { e: Ev }) => (h.e.importance === 1 ? 0 : 1000) + Math.abs(h.e.start - item.year);
@@ -155,7 +156,7 @@ function checkItem(item: Item): Result {
     if (!has) flags.push(`no claim for the traditional date ${fmtYear(item.traditional)}`);
   }
   const track = hit.e.tracks?.[0];
-  return { item, status: 'present', hit, flags, where: track ? `${hit.l.label} · ${hit.l.tracks.get(track)?.name ?? track}` : hit.l.label, others: near.slice(1, 3).map((h) => `${h.l.label}: ${h.e.title}`) };
+  return { item, status: 'present', hit, flags, where: `${hit.e.title} (${hit.e.start < 0 ? `${-hit.e.start} BCE` : hit.e.start}) · ${hit.l.label}${track ? ` · ${hit.l.tracks.get(track)?.name ?? track}` : ''}`, others: near.slice(1, 3).map((h) => `${h.l.label}: ${h.e.title}`) };
 }
 
 // ---- report ----
@@ -181,7 +182,7 @@ for (const [name, items] of lists) {
   say(`## ${name[0].toUpperCase()}${name.slice(1)} (${items.length})`);
   say();
   const extra = name === 'religions' ? ' Type |' : name === 'documents' ? ' Date of |' : '';
-  say(`| # | Item | Year | Region | Status | Where | Category | Imp. | Flags |${extra}`);
+  say(`| # | Item | Year | Region | Status | Matched event (timeline · row) | Category | Imp. | Flags |${extra}`);
   say(`|---|---|---|---|---|---|---|---|---|${extra ? '---|' : ''}`);
   results.forEach((r, i) => {
     tally.total++;
@@ -345,6 +346,11 @@ say();
 say(`${tally.total} items across ${bySection.length + (leaders.length ? 1 : 0)} lists: ${tally.present} present (${tally.flagged} of them with a flag: importance, category or dates), ${tally.differs} elsewhere or named only (the title matches an event at another date, or no reign event), ${tally.absent} absent.`);
 
 const text = out.join('\n') + '\n';
+for (const f of [opt('--out'), opt('--json')])
+  if (f && /(^|[\\/])(public|data-src)[\\/]/.test(resolve(f).replace(resolve('.') + sep, ''))) {
+    console.error(`landmarks-check: won't write ${f}: the report must not go under public/ or data-src/ (the check changes no data)`);
+    process.exit(2);
+  }
 if (opt('--out')) writeFileSync(opt('--out')!, text);
 else process.stdout.write(text);
 if (opt('--json')) writeFileSync(opt('--json')!, JSON.stringify({ tally }, null, 1));

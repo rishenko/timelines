@@ -22,7 +22,7 @@
     "society",
     "archaeology"
    ],
-   "match": "agricultur|farming|Neolithic|domesticat"
+   "match": "domesticat|first farm|beginning of agriculture|Neolithic Revolution"
   },
   {
    "id": "writing",
@@ -34,7 +34,7 @@
     "science",
     "society"
    ],
-   "match": "writing|cuneiform"
+   "match": "cuneiform|proto-cuneiform|invention of writing|earliest writing"
   },
   {
    "id": "akkad",
@@ -138,7 +138,7 @@
    "expect": [
     "society"
    ],
-   "match": "Hijra|Hegira|Muhammad"
+   "match": "Hijra|Hegira"
   },
   {
    "id": "arab-conquests",
@@ -162,7 +162,7 @@
     "unrest",
     "statehood"
    ],
-   "match": "Abbasid|Baghdad"
+   "match": "Abbasid Revolution|Abbasid.*(overthrow|caliphate (begins|founded))|Founding of Baghdad"
   },
   {
    "id": "manzikert",
@@ -184,7 +184,7 @@
    "expect": [
     "conflict"
    ],
-   "match": "Hattin|Saladin"
+   "match": "Hattin|Saladin (takes|retakes|captures) Jerusalem"
   },
   {
    "id": "baghdad-sacked",
@@ -208,7 +208,7 @@
     "conflict",
     "statehood"
    ],
-   "match": "Constantinople"
+   "match": "Constantinople.*(fall|captur|conquer)|Fall of Constantinople"
   },
   {
    "id": "chaldiran",
@@ -241,7 +241,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Israel"
+   "match": "State of Israel|Israel declares|Israeli Declaration"
   },
   {
    "id": "iran-revolution",
@@ -322,7 +322,7 @@
     "conflict",
     "statehood"
    ],
-   "match": "Almoravid|Ghana"
+   "match": "Almoravid.*(Ghana|conquer|captur)|Ghana.*(Almoravid|conquer|fall|end)"
   },
   {
    "id": "lalibela",
@@ -402,7 +402,7 @@
     "statehood",
     "rule"
    ],
-   "match": "Songhai|Askia"
+   "match": "Askia"
   },
   {
    "id": "tondibi",
@@ -426,7 +426,7 @@
     "society",
     "economy"
    ],
-   "match": "slave trade|slavery"
+   "match": "Atlantic slave trade|transatlantic slave"
   },
   {
    "id": "mfecane",
@@ -438,7 +438,7 @@
     "statehood",
     "conflict"
    ],
-   "match": "Shaka|Zulu|Mfecane"
+   "match": "Shaka|Mfecane|Zulu Kingdom"
   },
   {
    "id": "adwa",
@@ -472,7 +472,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Ghana"
+   "match": "Independence of Ghana|Ghana.*independence"
   },
   {
    "id": "africa-1960",
@@ -483,7 +483,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Year of Africa|decoloni[sz]ation|independence"
+   "match": "Year of Africa|decoloni[sz]ation of Africa|Belgian Congo.*independen|Independence of the Congo"
   },
   {
    "id": "apartheid-ends",
@@ -495,7 +495,7 @@
     "statehood",
     "society"
    ],
-   "match": "apartheid|Mandela"
+   "match": "end of apartheid|Mandela (elected|president)|1994 (general )?election"
   },
   {
    "id": "rwanda",
@@ -649,12 +649,12 @@
    "id": "shang",
    "name": "Shang dynasty founded",
    "year": -1600,
-   "tol": 250,
+   "tol": 120,
    "region": "East Asia",
    "expect": [
     "statehood"
    ],
-   "match": "Shang"
+   "match": "Shang (dynasty|state)|Tang of Shang"
   },
   {
    "id": "confucius",
@@ -711,7 +711,7 @@
    "expect": [
     "science"
    ],
-   "match": "Cai Lun|paper"
+   "match": "Cai Lun|papermaking|invention of paper"
   },
   {
    "id": "tang",
@@ -722,7 +722,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Tang"
+   "match": "Tang (dynasty|Empire)|Li Yuan|Gaozu of Tang"
   },
   {
    "id": "silla",
@@ -778,7 +778,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Yuan|Kublai"
+   "match": "Yuan (dynasty|Empire)|Great Yuan|Kublai"
   },
   {
    "id": "ming",
@@ -789,7 +789,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Ming"
+   "match": "Ming (dynasty|Empire)|Hongwu|Zhu Yuanzhang"
   },
   {
    "id": "zheng-he",
@@ -949,7 +949,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Jayavarman II|Angkor|Khmer Empire"
+   "match": "Jayavarman II|Angkor.*found"
   },
   {
    "id": "bach-dang",
@@ -961,7 +961,7 @@
     "statehood",
     "conflict"
    ],
-   "match": "B[aạ]ch [DĐ][aằ]ng|Ng[oô] Quy[eề]n|Vietnam"
+   "match": "B[aạ]ch [DĐ][aằ]ng|Ng[oô] Quy[eề]n"
   },
   {
    "id": "pagan",
@@ -995,7 +995,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Majapahit"
+   "match": "Majapahit.*(found|establish|begins|rise)|found.*Majapahit"
   },
   {
    "id": "aotearoa",
@@ -1019,7 +1019,7 @@
     "place",
     "statehood"
    ],
-   "match": "Melaka|Malacca"
+   "match": "Malacca.*(found|establish)|Melaka.*found"
   },
   {
    "id": "philippines-spanish",
@@ -1030,7 +1030,7 @@
    "expect": [
     "territory"
    ],
-   "match": "Philippines|Legazpi|Manila"
+   "match": "colonisation of the Philippines|colonization of the Philippines|Legazpi"
   },
   {
    "id": "waitangi",
@@ -1052,7 +1052,7 @@
    "expect": [
     "statehood"
    ],
-   "match": "Indonesia"
+   "match": "Indonesia.*(independence|proclam)|Proclamation of Indonesian"
   },
   {
    "id": "vietnam-war",
@@ -1197,13 +1197,13 @@
    "id": "tikal",
    "name": "Classic Maya cities (Tikal)",
    "year": 250,
-   "tol": 100,
+   "tol": 150,
    "region": "The Americas",
    "expect": [
     "statehood",
     "place"
    ],
-   "match": "Tikal|Maya"
+   "match": "Tikal"
   },
   {
    "id": "cahokia",
@@ -1238,7 +1238,7 @@
     "territory",
     "statehood"
    ],
-   "match": "Pachacuti|Inca"
+   "match": "Pachacuti"
   },
   {
    "id": "columbus",
@@ -1286,7 +1286,7 @@
     "statehood",
     "unrest"
    ],
-   "match": "Independence|American Revolution"
+   "match": "Declaration of Independence"
   },
   {
    "id": "haiti",
@@ -1391,7 +1391,7 @@
     "statehood",
     "rule"
    ],
-   "match": "Augustus|Roman Empire"
+   "match": "Octavian becomes Augustus|Augustus.*(Roman Empire|princeps)|Roman Empire.*(begins|founded)"
   },
   {
    "id": "edict-milan",
@@ -1403,7 +1403,7 @@
     "society",
     "rule"
    ],
-   "match": "Edict of Milan|Constantine"
+   "match": "Edict of Milan|Constantine.*(Christian|convert|Milvian)"
   },
   {
    "id": "rome-falls",
@@ -1459,7 +1459,7 @@
    "expect": [
     "science"
    ],
-   "match": "Gutenberg|printing"
+   "match": "Gutenberg|movable type"
   },
   {
    "id": "luther",
@@ -1470,7 +1470,7 @@
    "expect": [
     "society"
    ],
-   "match": "Luther|Reformation|Ninety-five|95 Theses"
+   "match": "Luther|Ninety-five|95 Theses|Protestant Reformation"
   },
   {
    "id": "westphalia",
@@ -1492,7 +1492,7 @@
    "expect": [
     "science"
    ],
-   "match": "Principia|Newton"
+   "match": "Principia|Newton.*(Principia|laws of motion)"
   },
   {
    "id": "bastille",
@@ -1615,7 +1615,7 @@
    "expect": [
     "society"
    ],
-   "match": "abolition|Slavery Abolition"
+   "match": "Slavery Abolition|abolition of slavery"
   },
   {
    "id": "moon-landing",

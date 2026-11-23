@@ -12,7 +12,7 @@
    ],
    "dateOf": "promulgated",
    "dateNote": "oldest known law code; tablets copied centuries later",
-   "match": "Ur-Nammu"
+   "match": "Code of Ur-Nammu|Ur-Nammu.*(code|law)"
   },
   {
    "id": "hammurabi-code",
@@ -93,7 +93,7 @@
    ],
    "dateOf": "compiled",
    "dateNote": "revelation 610–632; the codex c. 650",
-   "match": "Qur.an|Quran|Uthman"
+   "match": "Qur.an|Quran|Uthmanic|codex"
   },
   {
    "id": "medina-constitution",
@@ -107,7 +107,7 @@
    ],
    "dateOf": "promulgated",
    "dateNote": "early; its text is preserved by later writers",
-   "match": "Constitution of Medina|Medina"
+   "match": "Constitution of Medina"
   },
   {
    "id": "shahnameh",
@@ -241,7 +241,7 @@
    ],
    "dateOf": "written",
    "dateNote": "",
-   "match": "Timbuktu|Sankore|Ahmad Baba"
+   "match": "Sankore|Ahmad Baba|Timbuktu manuscripts"
   },
   {
    "id": "liberia-independence",
@@ -309,7 +309,7 @@
    ],
    "dateOf": "composed",
    "dateNote": "c. 200 BCE–200 CE",
-   "match": "Manu"
+   "match": "Manusmriti|Laws of Manu|Manu Smriti"
   },
   {
    "id": "kamasutra",
@@ -335,7 +335,7 @@
    ],
    "dateOf": "composed",
    "dateNote": "",
-   "match": "Aryabhata"
+   "match": "Aryabhatiya"
   },
   {
    "id": "ain-i-akbari",
@@ -389,7 +389,7 @@
    ],
    "dateOf": "composed",
    "dateNote": "date debated",
-   "match": "Art of War|Sun Tzu|Sunzi"
+   "match": "Art of War"
   },
   {
    "id": "analects",
@@ -442,7 +442,7 @@
    ],
    "dateOf": "promulgated",
    "dateNote": "attributed to Prince Shotoku",
-   "match": "Seventeen|Shotoku|Sh[oō]toku"
+   "match": "Seventeen-article|Seventeen Article"
   },
   {
    "id": "tang-code",
@@ -576,7 +576,7 @@
    ],
    "dateOf": "composed",
    "dateNote": "",
-   "match": "Kakawin|Ramayana"
+   "match": "Kakawin Ramayana|Ramayana Kakawin"
   },
   {
    "id": "nagarakretagama",
@@ -681,7 +681,7 @@
    ],
    "dateOf": "written",
    "dateNote": "",
-   "match": "Babur-?nama|Baburnama|Babur"
+   "match": "Babur-?nama|Baburnama"
   },
   {
    "id": "dresden-codex",
@@ -709,7 +709,7 @@
    ],
    "dateOf": "oral",
    "dateNote": "oral; date debated (c. 1100–1600)",
-   "match": "Great Law of Peace|Haudenosaunee|Iroquois"
+   "match": "Great Law of Peace|Haudenosaunee Confederacy (founded|formed)|Iroquois Confederacy (founded|formed)"
   },
   {
    "id": "popol-vuh",
@@ -896,7 +896,7 @@
    ],
    "dateOf": "published",
    "dateNote": "",
-   "match": "Origin of Species|Darwin"
+   "match": "Origin of Species"
   },
   {
    "id": "udhr",
@@ -910,7 +910,7 @@
    ],
    "dateOf": "adopted",
    "dateNote": "",
-   "match": "Universal Declaration|Human Rights"
+   "match": "Universal Declaration of Human Rights"
   },
   {
    "id": "un-charter",
