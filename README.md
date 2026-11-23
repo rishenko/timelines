@@ -35,7 +35,9 @@ The three link to each other where they meet, at 650 and 1500.
   governments in a civil war) take a second strip.
 - **Memberships:** a row that belonged to another row for a while (a republic in a union, a province in an empire)
   shows "in" that row's name and years on one more strip; the union's row lists its members.
-- **Calendars:** BCE/CE, or your own era names, with or without a year 0.
+- **Calendars:** BCE/CE, or your own era names, with or without a year 0. **Deep time:** a timeline can show years
+  before present ("4.567 Ga", "66 Ma", "11.7 ka BP"), with zoom steps and gaps in Myr, a ruler that ends at the present,
+  and dates typed the same way in search.
 - **Days and months:** any date can give a month or a day. A timeline can offer zoom steps below a year (quarter,
   month, week, day), and the ruler then labels months or days.
 - **The ruler and zoom:** pick the time each tick covers (buttons, `+`/`−`, or pinch), and scroll or drag through

@@ -5,7 +5,7 @@ import { newProblems, nextTrackColor, slug, trackDeletion, uniqueId, upsertTrack
 import { ClaimList, ProblemList } from './ClaimList.tsx';
 import { claimsFromValues, toClaimValues, type ClaimFields, type ClaimValues } from '../lib/claims.ts';
 import { isDescendant, trackDepth } from '../lib/tracks.ts';
-import { formatDate, formatYear, parseFullDate } from '../lib/calendar.ts';
+import { formatEditDate, formatYear, parseFullDate } from '../lib/calendar.ts';
 import { at0, at1, hasDayZoom } from '../lib/subYear.ts';
 import { errorProps, FieldError } from './FieldError.tsx';
 import { isSafeUrl } from '../lib/urls.ts';
@@ -47,8 +47,8 @@ interface PhaseValues {
 
 const toPhaseValues = (p: TrackPhase, cal: Calendar): PhaseValues => ({
   name: p.name,
-  start: formatDate(p.start, p.startMonth, p.startDay, cal, p.circa),
-  end: p.end === undefined ? '' : formatDate(p.end, p.endMonth, p.endDay, cal, p.circa),
+  start: formatEditDate(p.start, p.startMonth, p.startDay, cal, p.circa),
+  end: p.end === undefined ? '' : formatEditDate(p.end, p.endMonth, p.endDay, cal, p.circa),
   ongoing: !!p.ongoing,
   startDates: (p.startDates ?? []).map((c) => toClaimValues(c, cal)),
   endDates: (p.endDates ?? []).map((c) => toClaimValues(c, cal)),
@@ -106,8 +106,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
       url: initial?.url ?? '',
       wikidata: initial?.ids?.wikidata ?? '',
       chronology: initial?.chronology ?? '',
-      spanStart: first ? formatDate(first.start, first.startMonth, first.startDay, cal, first.circa) : '',
-      spanEnd: first?.end !== undefined ? formatDate(first.end, first.endMonth, first.endDay, cal, first.circa) : '',
+      spanStart: first ? formatEditDate(first.start, first.startMonth, first.startDay, cal, first.circa) : '',
+      spanEnd: first?.end !== undefined ? formatEditDate(first.end, first.endMonth, first.endDay, cal, first.circa) : '',
       spanOngoing: !!first?.ongoing,
       pinLast: !!initial?.pinLast,
       startDates: (first?.startDates ?? []).map((c) => toClaimValues(c, cal)),
