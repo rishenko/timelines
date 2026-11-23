@@ -1432,7 +1432,37 @@
       "url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
       "ids": { "wikidata": "Q11768" },
       "phases": [
-        { "name": "Late Predynastic (Dynasty 0)", "start": "c. 3300 BCE", "end": "3150 BCE" },
+        {
+          "name": "Late Predynastic (Dynasty 0)",
+          "start": "c. 3300 BCE",
+          "end": "3150 BCE",
+          "startDates": [
+            {
+              "year": "3325 BCE",
+              "source": {
+                "sourceKey": "wp-protodynastic",
+                "sourceLocation": "lead: Depending on the sources, it is dated ('approximately from 3325 to 3000 BC')"
+              }
+            },
+            {
+              "year": "3350 BCE",
+              "source": { "sourceKey": "wp-protodynastic", "sourceLocation": "lead: Depending on the sources, it is dated ('from c. 3350 BC to c. 2920 BC')" }
+            },
+            {
+              "year": "3200 BCE",
+              "source": { "sourceKey": "wp-protodynastic", "sourceLocation": "lead: Depending on the sources, it is dated ('or from 3200 to 3000 BC')" }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "3150 BCE",
+              "source": {
+                "sourceKey": "wp-early-dynastic-egypt",
+                "sourceLocation": "lead: 'the era of ancient Egypt that immediately follows the unification of Upper and Lower Egypt in c. 3150 BC'"
+              }
+            }
+          ]
+        },
         {
           "name": "Early Dynastic Period",
           "start": "c. 3000 BCE",
@@ -1525,7 +1555,36 @@
             }
           ]
         },
-        { "name": "Middle Kingdom", "start": "c. 2055 BCE", "end": "1650 BCE" },
+        {
+          "name": "Middle Kingdom",
+          "start": "c. 2055 BCE",
+          "end": "1650 BCE",
+          "startDates": [
+            {
+              "year": "2055 BCE",
+              "source": {
+                "sourceKey": "wp-middle-kingdom",
+                "sourceLocation": "Political history > Reunification under Mentuhotep II: 'The struggle was to be concluded by Mentuhotep II, who ascended the Theban throne in 2055 BC.'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1650 BCE",
+              "source": {
+                "sourceKey": "wp-middle-kingdom",
+                "sourceLocation": "lead: 'Some scholars also include the Thirteenth Dynasty of Egypt wholly into this period, in which case' 'the Middle Kingdom would end around 1650 BC'"
+              }
+            },
+            {
+              "year": "1700 BCE",
+              "source": {
+                "sourceKey": "wp-middle-kingdom",
+                "sourceLocation": "lead: 'Some scholars also include the Thirteenth Dynasty of Egypt wholly into this period, in which case' 'while others only include it until Merneferre Ay around 1700 BC'"
+              }
+            }
+          ]
+        },
         {
           "name": "Second Intermediate Period",
           "start": "c. 1650 BCE",
@@ -1605,7 +1664,23 @@
             }
           ]
         },
-        { "name": "Late Period", "start": "664 BCE", "end": "332 BCE" }
+        {
+          "name": "Late Period",
+          "start": "664 BCE",
+          "end": "332 BCE",
+          "startDates": [
+            {
+              "year": "664 BCE",
+              "source": { "sourceKey": "wp-late-period", "sourceLocation": "lead: 'The Late Period existed from 664 BC until 332 BC'" }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "332 BCE",
+              "source": { "sourceKey": "wp-late-period", "sourceLocation": "lead: 'The Late Period existed from 664 BC until 332 BC'" }
+            }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -1912,7 +1987,34 @@
             { "year": "304 BCE", "source": { "sourceKey": "wp-ptolemaic", "sourceLocation": "Notes, note 1 (some scholars)" } }
           ]
         },
-        { "name": "Roman and Byzantine Egypt", "start": "30 BCE", "end": "641 CE" }
+        {
+          "name": "Roman and Byzantine Egypt",
+          "start": "30 BCE",
+          "end": "641 CE",
+          "startDates": [
+            {
+              "year": "30 BCE",
+              "source": {
+                "sourceKey": "wp-roman-egypt",
+                "sourceLocation": "History > Early Roman Egypt: 'The province was established in 30 BC after Octavian (the future Roman emperor Augustus) defeated his rival Mark Antony'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "641 CE",
+              "margin": 2,
+              "source": { "sourceKey": "wp-arab-egypt", "sourceLocation": "lead: 'The Arab conquest of Egypt … took place between 639 and 642 AD.'" }
+            },
+            {
+              "year": "642 CE",
+              "source": {
+                "sourceKey": "wp-roman-egypt",
+                "sourceLocation": "lead: 'Egypt ceased to be a part of the Roman Empire in 642, when it became part of the Rashidun Caliphate following the Muslim conquest of Egypt.'"
+              }
+            }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -4251,6 +4353,14 @@
                 "sourceKey": "manning-2012",
                 "sourceLocation": "Minoan chronology table, LM II '1470–1420 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'Late Minoan II (c. 1470-1420 BC) is sparsely represented in the archaeological record')"
               }
+            },
+            {
+              "year": "1470 BCE",
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "hallager-2012",
+                "sourceLocation": "(via Wikipedia: Minoan chronology, Minoan history > Late Minoan: LM II 'c. 1470–1420 BC': 'It marks the beginning of the Monopalatial period, as the palace at Knossos was the only one remaining in use.')"
+              }
             }
           ],
           "endDates": [
@@ -4260,6 +4370,14 @@
               "source": {
                 "sourceKey": "manning-2012",
                 "sourceLocation": "Minoan chronology table, LM II '1470–1420 BC' (via Wikipedia: Minoan civilization, Chronology and history: 'Late Minoan II (c. 1470-1420 BC) is sparsely represented in the archaeological record')"
+              }
+            },
+            {
+              "year": "1420 BCE",
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "hallager-2012",
+                "sourceLocation": "(via Wikipedia: Minoan chronology, Minoan history > Late Minoan: LM II 'c. 1470–1420 BC'; LM III follows)"
               }
             }
           ]
@@ -4326,7 +4444,31 @@
       "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece",
       "ids": { "wikidata": "Q181264" },
       "phases": [
-        { "name": "Early Mycenaean (Shaft Grave era)", "start": "c. 1750 BCE", "end": "1400 BCE" },
+        {
+          "name": "Early Mycenaean (Shaft Grave era)",
+          "start": "c. 1750 BCE",
+          "end": "1400 BCE",
+          "startDates": [
+            {
+              "year": "1750 BCE",
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "Early Mycenaean 'c. 1750–1400 BC' (via Wikipedia: Mycenaean Greece, Chronology: 'divides the whole Mycenaean time into three cultural periods: Early Mycenaean (c. 1750–1400 BC)')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1400 BCE",
+              "chronology": "aegean-high",
+              "source": {
+                "sourceKey": "knodell-2021",
+                "sourceLocation": "Early Mycenaean 'c. 1750–1400 BC' (via Wikipedia: Mycenaean Greece, Chronology: 'divides the whole Mycenaean time into three cultural periods: Early Mycenaean (c. 1750–1400 BC)')"
+              }
+            }
+          ]
+        },
         {
           "name": "Palatial (LH IIIA–IIIB)",
           "start": "1420 BCE",
@@ -4420,7 +4562,29 @@
       "url": "https://en.wikipedia.org/wiki/Ancient_Greece",
       "ids": { "wikidata": "Q11772" },
       "phases": [
-        { "name": "Archaic period", "start": "c. 800 BCE", "end": "480 BCE" },
+        {
+          "name": "Archaic period",
+          "start": "c. 800 BCE",
+          "end": "480 BCE",
+          "startDates": [
+            {
+              "year": "800 BCE",
+              "source": {
+                "sourceKey": "wp-archaic-greece",
+                "sourceLocation": "lead: 'Archaic Greece was the period in Greek history lasting from c. 800 BC to the second Persian invasion of Greece in 480 BC'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "480 BCE",
+              "source": {
+                "sourceKey": "wp-archaic-greece",
+                "sourceLocation": "lead: 'Archaic Greece was the period in Greek history lasting from c. 800 BC to the second Persian invasion of Greece in 480 BC'"
+              }
+            }
+          ]
+        },
         {
           "name": "Classical period",
           "start": "c. 480 BCE",
@@ -4781,9 +4945,66 @@
       "url": "https://en.wikipedia.org/wiki/Canaan",
       "ids": { "wikidata": "Q163329" },
       "phases": [
-        { "name": "Early Bronze Age", "start": "c. 3500 BCE", "end": "2000 BCE" },
-        { "name": "Middle Bronze Age", "start": "c. 2000 BCE", "end": "1550 BCE" },
-        { "name": "Late Bronze Age", "start": "c. 1550 BCE", "end": "1200 BCE" }
+        {
+          "name": "Early Bronze Age",
+          "start": "c. 3500 BCE",
+          "end": "2000 BCE",
+          "startDates": [
+            {
+              "year": "3500 BCE",
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '3500–2000 BC (Early Bronze): prior to written records in the area'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "2000 BCE",
+              "source": { "sourceKey": "wp-canaan", "sourceLocation": "History and archaeology > Overview (one periodisation): '3500–2000 BC (Early Bronze)'" }
+            }
+          ]
+        },
+        {
+          "name": "Middle Bronze Age",
+          "start": "c. 2000 BCE",
+          "end": "1550 BCE",
+          "startDates": [
+            {
+              "year": "2000 BCE",
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '2000–1550 BC (Middle Bronze): city-states'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1550 BCE",
+              "source": { "sourceKey": "wp-canaan", "sourceLocation": "History and archaeology > Overview (one periodisation): '2000–1550 BC (Middle Bronze)'" }
+            }
+          ]
+        },
+        {
+          "name": "Late Bronze Age",
+          "start": "c. 1550 BCE",
+          "end": "1200 BCE",
+          "startDates": [
+            {
+              "year": "1550 BCE",
+              "source": {
+                "sourceKey": "wp-canaan",
+                "sourceLocation": "History and archaeology > Overview (one periodisation): '1550–1200 BC (Late Bronze): Egyptian hegemony'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1200 BCE",
+              "source": { "sourceKey": "wp-canaan", "sourceLocation": "History and archaeology > Overview (one periodisation): '1550–1200 BC (Late Bronze)'" }
+            }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -5286,8 +5507,60 @@
       "url": "https://en.wikipedia.org/wiki/Hittites",
       "ids": { "wikidata": "Q5406" },
       "phases": [
-        { "name": "Old Kingdom", "start": "c. 1650 BCE", "end": "1500 BCE" },
-        { "name": "Middle Kingdom", "start": "c. 1500 BCE", "end": "1400 BCE" },
+        {
+          "name": "Old Kingdom",
+          "start": "c. 1650 BCE",
+          "end": "1500 BCE",
+          "startDates": [
+            {
+              "year": "1650 BCE",
+              "source": { "sourceKey": "wp-hittites", "sourceLocation": "lead: 'and an empire centered on their capital, Hattusa (around 1650 BC)'" }
+            },
+            {
+              "year": "1650 BCE",
+              "source": { "sourceKey": "wp-hittites", "sourceLocation": "Law: 'The tablets and monuments date from the Old Hittite Kingdom (1650–1500 BC)'" }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1500 BCE",
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Middle Kingdom: 'The last monarch of the Old Kingdom, Telepinu, reigned until about 1500 BC.'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Middle Kingdom",
+          "start": "c. 1500 BCE",
+          "end": "1400 BCE",
+          "startDates": [
+            {
+              "year": "1500 BCE",
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Middle Kingdom: 'Telepinu's reign marked the end of the \"Old Kingdom\" and the beginning of the lengthy weak phase known as the \"Middle Kingdom\".' (Telepinu 'until about 1500 BC')"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1400 BCE",
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Old Kingdom: 'Only in the later period from 1400 BC until 1200 BC did the Hittite kingship become more centralized and powerful.'"
+              }
+            },
+            {
+              "year": "1430 BCE",
+              "source": {
+                "sourceKey": "wp-hittites",
+                "sourceLocation": "History > Middle Kingdom: 'It segues into the \"Hittite Empire period\" proper, which dates from the reign of Tudhaliya I from c. 1430 BC.'"
+              }
+            }
+          ]
+        },
         {
           "name": "New Kingdom (Empire)",
           "start": "c. 1400 BCE",
@@ -5962,9 +6235,76 @@
             { "year": "2500 BCE", "source": { "sourceKey": "wp-early-assyria", "sourceLocation": "Origins of Assur ('c. 2600 BC or c. 2500 BC')" } }
           ]
         },
-        { "name": "Old Assyrian period", "start": "c. 2025 BCE", "end": "1364 BCE" },
-        { "name": "Middle Assyrian Empire", "start": "c. 1363 BCE", "end": "912 BCE" },
-        { "name": "Neo-Assyrian Empire", "start": "911 BCE", "end": "609 BCE" }
+        {
+          "name": "Old Assyrian period",
+          "start": "c. 2025 BCE",
+          "end": "1364 BCE",
+          "startDates": [
+            {
+              "year": "2025 BCE",
+              "source": {
+                "sourceKey": "wp-old-assyria",
+                "sourceLocation": "lead: 'covering the history of the city of Assur from its rise as an independent city-state under Puzur-Ashur I c. 2025 BC'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1364 BCE",
+              "source": {
+                "sourceKey": "wp-old-assyria",
+                "sourceLocation": "lead: '…to the foundation of a larger Assyrian territorial state after the accession of Ashur-uballit I c. 1363 BC'"
+              },
+              "note": "The year before Ashur-uballit I’s accession, c. 1363 BC, when the Middle Assyrian Empire begins."
+            }
+          ]
+        },
+        {
+          "name": "Middle Assyrian Empire",
+          "start": "c. 1363 BCE",
+          "end": "912 BCE",
+          "startDates": [
+            {
+              "year": "1363 BCE",
+              "source": {
+                "sourceKey": "wp-middle-assyria",
+                "sourceLocation": "lead: 'The Middle Assyrian Empire was the third stage of Assyrian history, covering the history of Assyria' 'from the accession of Ashur-uballit I c. 1363 BC'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "912 BCE",
+              "source": {
+                "sourceKey": "wp-middle-assyria",
+                "sourceLocation": "lead: 'The Middle Assyrian Empire was the third stage of Assyrian history, covering the history of Assyria' 'to the death of Ashur-dan II in 912 BC'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Neo-Assyrian Empire",
+          "start": "911 BCE",
+          "end": "609 BCE",
+          "startDates": [
+            {
+              "year": "911 BCE",
+              "source": {
+                "sourceKey": "wp-neo-assyria",
+                "sourceLocation": "lead: 'Beginning with the accession of Adad-nirari II in 911 BCE, the Neo-Assyrian Empire grew to dominate the ancient Near East'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "609 BCE",
+              "source": {
+                "sourceKey": "wp-neo-assyria",
+                "sourceLocation": "History > Collapse and fall of the empire: 'Aššur-uballiṭ's rule at Harran lasted until late 610 or early 609 BCE, when the city was captured by the Babylonians and the Medes.'"
+              }
+            }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -6129,7 +6469,29 @@
             { "year": "1531 BCE", "chronology": "low", "source": { "sourceKey": "wp-kassites", "sourceLocation": "lead (short chronology)" } }
           ]
         },
-        { "name": "Neo-Babylonian Empire", "start": "626 BCE", "end": "539 BCE" }
+        {
+          "name": "Neo-Babylonian Empire",
+          "start": "626 BCE",
+          "end": "539 BCE",
+          "startDates": [
+            {
+              "year": "626 BCE",
+              "source": {
+                "sourceKey": "wp-neo-bab",
+                "sourceLocation": "History > Foundation and the fall of Assyria: 'In November 626 BC, Nabopolassar was crowned King of Babylon'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "539 BCE",
+              "source": {
+                "sourceKey": "wp-neo-bab",
+                "sourceLocation": "lead: 'the Neo-Babylonian Empire was conquered by the Achaemenid Persian Empire in 539 BC'"
+              }
+            }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -6733,8 +7095,46 @@
             { "year": "3100 BCE", "source": { "sourceKey": "wp-proto-elamite", "sourceLocation": "lead ('c. 3100 BC to 2700 BC')" } }
           ]
         },
-        { "name": "Old Elamite", "start": "c. 2700 BCE", "end": "1500 BCE" },
-        { "name": "Middle Elamite", "start": "c. 1500 BCE", "end": "1100 BCE" },
+        {
+          "name": "Old Elamite",
+          "start": "c. 2700 BCE",
+          "end": "1500 BCE",
+          "startDates": [
+            {
+              "year": "2700 BCE",
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "History (list of periods): 'Old Elamite period: c. 2700 – c. 1500 BC (earliest documents until the Sukkalmah Dynasty)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1500 BCE",
+              "source": { "sourceKey": "wp-elam", "sourceLocation": "History (list of periods): 'Old Elamite period: c. 2700 – c. 1500 BC'" }
+            }
+          ]
+        },
+        {
+          "name": "Middle Elamite",
+          "start": "c. 1500 BCE",
+          "end": "1100 BCE",
+          "startDates": [
+            {
+              "year": "1500 BCE",
+              "source": {
+                "sourceKey": "wp-elam",
+                "sourceLocation": "History (list of periods): 'Middle Elamite period: c. 1500 – c. 1100 BC (Anzanite dynasty until the Babylonian invasion of Susa)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1100 BCE",
+              "source": { "sourceKey": "wp-elam", "sourceLocation": "History (list of periods): 'Middle Elamite period: c. 1500 – c. 1100 BC'" }
+            }
+          ]
+        },
         {
           "name": "Neo-Elamite",
           "start": "c. 1100 BCE",
@@ -8134,8 +8534,52 @@
             }
           ]
         },
-        { "name": "Mature Harappan", "start": "c. 2600 BCE", "end": "1900 BCE" },
-        { "name": "Late Harappan", "start": "c. 1900 BCE", "end": "1300 BCE" }
+        {
+          "name": "Mature Harappan",
+          "start": "c. 2600 BCE",
+          "end": "1900 BCE",
+          "startDates": [
+            {
+              "year": "2600 BCE",
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1900 BCE",
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Late Harappan",
+          "start": "c. 1900 BCE",
+          "end": "1300 BCE",
+          "startDates": [
+            {
+              "year": "1900 BCE",
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE' (the late phase follows the mature form)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "1300 BCE",
+              "source": {
+                "sourceKey": "wp-ivc",
+                "sourceLocation": "lead: 'lasting from 3300 BCE to 1300 BCE, and in its mature form from 2600 BCE to 1900 BCE'"
+              }
+            }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -9439,7 +9883,37 @@
             { "year": "1045 BCE", "source": { "sourceKey": "wp-zhou", "sourceLocation": "lead (Nivison and Shaughnessy)" } }
           ]
         },
-        { "name": "Eastern Zhou", "start": "771 BCE", "end": "256 BCE" }
+        {
+          "name": "Eastern Zhou",
+          "start": "771 BCE",
+          "end": "256 BCE",
+          "startDates": [
+            {
+              "year": "771 BCE",
+              "source": {
+                "sourceKey": "wp-zhou",
+                "sourceLocation": "lead: 'Even as Zhou suzerainty became increasingly ceremonial over the following Eastern Zhou period (771–256 BC)'"
+              }
+            },
+            {
+              "year": "770 BCE",
+              "source": {
+                "sourceKey": "wp-eastern-zhou",
+                "sourceLocation": "lead: 'The Eastern Zhou (c. 770–256 BC) is a period in Chinese history comprising the latter half of the Zhou dynasty'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "256 BCE",
+              "source": {
+                "sourceKey": "wp-zhou",
+                "sourceLocation": "lead: 'Even as Zhou suzerainty became increasingly ceremonial over the following Eastern Zhou period (771–256 BC)'"
+              }
+            },
+            { "year": "256 BCE", "source": { "sourceKey": "wp-eastern-zhou", "sourceLocation": "lead: 'The Eastern Zhou (c. 770–256 BC)'" } }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -9778,8 +10252,52 @@
       "url": "https://en.wikipedia.org/wiki/Northern_and_Southern_dynasties",
       "ids": { "wikidata": "Q49696" },
       "phases": [
-        { "name": "Northern Wei", "start": "386 CE", "end": "535 CE" },
-        { "name": "Eastern Wei", "start": "534 CE", "end": "550 CE" },
+        {
+          "name": "Northern Wei",
+          "start": "386 CE",
+          "end": "535 CE",
+          "startDates": [
+            {
+              "year": "386 CE",
+              "source": {
+                "sourceKey": "wp-northern-wei",
+                "sourceLocation": "lead: 'The first of the Northern dynasties, it ruled northern China from 386 to 535 AD'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "535 CE",
+              "source": {
+                "sourceKey": "wp-northern-wei",
+                "sourceLocation": "lead: 'The first of the Northern dynasties, it ruled northern China from 386 to 535 AD'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Eastern Wei",
+          "start": "534 CE",
+          "end": "550 CE",
+          "startDates": [
+            {
+              "year": "534 CE",
+              "source": {
+                "sourceKey": "wp-eastern-wei",
+                "sourceLocation": "lead: 'the Eastern Wei ruled the eastern part of northern China from 534 to 550 AD.'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "550 CE",
+              "source": {
+                "sourceKey": "wp-eastern-wei",
+                "sourceLocation": "History: 'but in 550 Gao Yang deposed Yuan Shanjian and founded his dynasty, the Northern Qi.'"
+              }
+            }
+          ]
+        },
         {
           "name": "Western Wei",
           "start": "535 CE",
@@ -9789,8 +10307,56 @@
             { "year": "534 CE", "source": { "sourceKey": "wp-western-wei", "sourceLocation": "infobox (8 November 534, start of the division)" } }
           ]
         },
-        { "name": "Northern Qi", "start": "550 CE", "end": "577 CE" },
-        { "name": "Northern Zhou", "start": "557 CE", "end": "581 CE" }
+        {
+          "name": "Northern Qi",
+          "start": "550 CE",
+          "end": "577 CE",
+          "startDates": [
+            {
+              "year": "550 CE",
+              "source": { "sourceKey": "wp-northern-qi", "sourceLocation": "lead: 'It ruled the eastern part of northern China from 550 to 577 AD.'" }
+            },
+            {
+              "year": "551 CE",
+              "source": {
+                "sourceKey": "wp-row-southern-dynasties",
+                "sourceLocation": "Northern dynasties > Northern Qi (550–577) and Northern Zhou (557–581): 'establishing the Northern Qi dynasty (551–577)'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "577 CE",
+              "source": {
+                "sourceKey": "wp-northern-qi",
+                "sourceLocation": "lead: 'and was eventually conquered by the Xianbei-led Northern Zhou dynasty in 577 AD.'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Northern Zhou",
+          "start": "557 CE",
+          "end": "581 CE",
+          "startDates": [
+            {
+              "year": "557 CE",
+              "source": {
+                "sourceKey": "wp-northern-zhou",
+                "sourceLocation": "lead: 'known in historiography as the Northern Zhou, was a Xianbei-led dynasty of China … that lasted from 557 to 581 AD'"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": "581 CE",
+              "source": {
+                "sourceKey": "wp-northern-zhou",
+                "sourceLocation": "History > Transit to Sui: 'On 4 March 581, Emperor Jing of Northern Zhou abdicated the throne in favor of Yang Jian'"
+              }
+            }
+          ]
+        }
       ],
       "memberships": [
         {
@@ -14483,7 +15049,27 @@
       "url": "http://n2t.net/ark:/99152/p0wctqtpn3m",
       "accessed": "2026-11-21",
       "tags": ["periodo"]
-    }
+    },
+    "wp-protodynastic": {
+      "name": "Wikipedia: Protodynastic Period of Egypt",
+      "url": "https://en.wikipedia.org/wiki/Protodynastic_Period_of_Egypt",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-22"
+    },
+    "wp-early-dynastic-egypt": {
+      "name": "Wikipedia: Early Dynastic Period (Egypt)",
+      "url": "https://en.wikipedia.org/wiki/Early_Dynastic_Period_(Egypt)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-22"
+    },
+    "wp-roman-egypt": {
+      "name": "Wikipedia: Egypt (Roman province)",
+      "url": "https://en.wikipedia.org/wiki/Egypt_(Roman_province)",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-22"
+    },
+    "wp-eastern-zhou": { "name": "Wikipedia: Eastern Zhou", "url": "https://en.wikipedia.org/wiki/Eastern_Zhou", "tags": ["wikipedia"], "accessed": "2026-11-22" },
+    "hallager-2012": { "name": "Crete, in The Oxford Handbook of the Bronze Age Aegean", "author": "Hallager, Erik", "year": "2012", "tags": ["cited-via-wikipedia"] }
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" }, "periodo": { "name": "PeriodO" } },
   "chronologies": {
