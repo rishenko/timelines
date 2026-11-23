@@ -152,7 +152,8 @@ source files, plans and content scripts, and the merge itself, are in `archive/`
 or tested. Changes since then are re-runnable scripts in `scripts/ancient-classical/`, built on
 `scripts/lib/dataset-edit.ts` (insert or replace by id), run in the order listed in `scripts/lib/timelines.ts`; add a
 new one there. The scripts must reproduce the source file exactly (`npm run data:check`, also run in CI), so any of them
-can be edited and re-run; keep it that way. Content that no script defines lives only in the source file, and can be
+can be edited and re-run; keep it that way. It also warns about phases with no date claims (24 in Ancient, hand-entered
+before claims were required; `phase-claims.ts` cites them). Content that no script defines lives only in the source file, and can be
 edited there directly. `scripts/archive/` keeps one-off edits that have already been applied, as templates.
 
 Other data tools:
