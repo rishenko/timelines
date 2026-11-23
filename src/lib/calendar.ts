@@ -74,9 +74,11 @@ export function formatAgo(ago: number, present: number, exact = false): string {
   const bp = present === 1950;
   // `exact` (the editors): every digit, so the text reads back as the same year ("251.902137 Ma")
   const d = (pow: number) => (exact && Number.isInteger(ago) ? exactDec(ago, pow) : dec(ago / 10 ** pow));
-  if (ago >= 1e9) return `${d(9)} Ga`;
-  if (ago >= 1e6) return `${d(6)} Ma`;
-  if (ago >= 1e4) return `${d(3)} ka${bp ? ' BP' : ''}`;
+  // the unit from the value as written, so 999,999,999 years is "1 Ga", not "1000 Ma"
+  const at = (pow: number) => (exact ? ago / 10 ** pow : Number((ago / 10 ** pow).toFixed(3)));
+  if (at(9) >= 1) return `${d(9)} Ga`;
+  if (at(6) >= 1) return `${d(6)} Ma`;
+  if (at(3) >= 10) return `${d(3)} ka${bp ? ' BP' : ''}`;
   if (ago === 0) return 'present';
   if (ago < 0) return `${(-ago).toLocaleString('en')} ${ago === -1 ? 'year' : 'years'} after present`;
   return `${ago.toLocaleString('en')} ${ago === 1 ? 'year' : 'years'} ${bp ? 'BP' : 'ago'}`;

@@ -25,6 +25,17 @@ describe('formatting', () => {
     expect(formatYear(2000, BP)).toBe('50 years after present');
   });
 
+  it('the unit comes from the rounded value: no "1000 Ma" or "1000 Myr"', () => {
+    expect(formatYear(ago(999_999_999), BP)).toBe('1 Ga');
+    expect(formatYear(ago(999_999), BP)).toBe('1 Ma');
+    expect(formatYear(ago(9_999_999), BP)).toBe('10 Ma');
+    expect(formatSpan(999_999_999)).toBe('1 Gyr');
+    expect(formatSpan(999_999)).toBe('1 Myr');
+    // the editors' exact text keeps the digits in the smaller unit, so it still reads back as the same year
+    expect(formatEditDate(ago(999_999_999), undefined, undefined, BP)).toBe('999.999999 Ma');
+    expect(parseYear('999.999999 Ma', BP)).toBe(ago(999_999_999));
+  });
+
   it('a present other than 1950 says "ka" and "years ago"', () => {
     expect(formatAgo(11_700, 0)).toBe('11.7 ka');
     expect(formatAgo(1, 0)).toBe('1 year ago');
@@ -133,6 +144,9 @@ describe('proportional circa', () => {
     expect(circaFadeAt(ds(BP), ago(66_000_000))).toBeCloseTo(660_000);
     expect(circaFadeAt(ds(BP), ago(11_700))).toBeCloseTo(117);
     expect(circaFadeAt(ds(BP, 50), ago(1_000))).toBe(50);
+    // the floor never reaches past the present: a 50-year-BP date with circaFade 100 fades by 50
+    expect(circaFadeAt(ds(BP, 100), ago(50))).toBe(50);
+    expect(circaFadeAt(ds(BP, 100), 1950)).toBe(0);
     const half = { ...BP, beforePresent: { present: 1950, circaShare: 0.5 } };
     expect(ago(1000) + circaFadeAt(ds(half), ago(1000))).toBeLessThanOrEqual(1950);
   });

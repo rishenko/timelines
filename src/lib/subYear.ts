@@ -41,13 +41,17 @@ const dec = (v: number) => String(Number(v.toFixed(3)));
  * in Ma, as geologists write them: Kevin, 2026-11-23). Null below that, so the other timelines' steps are unchanged.
  */
 export function shortYears(n: number): string | null {
-  if (n < 1e4) return null;
-  return n >= 1e9 ? `${dec(n / 1e9)} Gyr` : n >= 1e6 ? `${dec(n / 1e6)} Myr` : `${dec(n / 1e3)} kyr`;
+  // the unit from the rounded value, so 999,999,999 years is "1 Gyr", not "1000 Myr"
+  const at = (pow: number) => Number((n / 10 ** pow).toFixed(3));
+  if (at(3) < 10) return null;
+  return at(9) >= 1 ? `${dec(n / 1e9)} Gyr` : at(6) >= 1 ? `${dec(n / 1e6)} Myr` : `${dec(n / 1e3)} kyr`;
 }
 
 /** Spoken: "100 million years", "50 thousand years", "10 years". */
 function spokenYears(n: number): string {
-  return n >= 1e9 ? `${dec(n / 1e9)} billion years` : n >= 1e6 ? `${dec(n / 1e6)} million years` : n >= 1e4 ? `${dec(n / 1e3)} thousand years` : `${n} years`;
+  const at = (pow: number) => Number((n / 10 ** pow).toFixed(3));
+  if (n < 1e4) return `${n} years`;
+  return at(9) >= 1 ? `${dec(n / 1e9)} billion years` : at(6) >= 1 ? `${dec(n / 1e6)} million years` : `${dec(n / 1e3)} thousand years`;
 }
 
 /** Deep time: a shortened gap's length, "4.4 Gyr", "540 Myr", "11.7 kyr", under 10,000 years "9,600 yrs". */

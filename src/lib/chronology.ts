@@ -159,14 +159,16 @@ export function yearUnder(best: number, claims: Claim[], chron: string | undefin
  * How far a "c." date fades either side, in years. Usually `meta.circaFade`. In deep time with
  * `calendar.beforePresent.circaShare`, that share of the date's age instead ("c. 66 Ma" at 0.01: ±0.66 Ma), so one
  * setting suits 66 Ma and 11.7 ka. Floor: `meta.circaFade` (default 0), so a date near the present still fades by at
- * least that. Ceiling: half the age (the validator caps `circaShare` at 0.5), so a fade never reaches past the present.
+ * least that. Ceiling: the age, so a fade never reaches past the present (the share alone stays under half the age, since
+ * the validator caps `circaShare` at 0.5; only the floor can reach the cap).
  */
 export function circaFadeAt(ds: Pick<Dataset, 'meta'>, best: number): number {
   const floor = ds.meta.circaFade ?? 0;
   const share = circaShare(ds.meta.calendar);
   const bp = beforePresent(ds.meta.calendar);
   if (share === null || !bp) return floor;
-  return Math.max(floor, share * Math.abs(bp.present - best));
+  const age = Math.abs(bp.present - best);
+  return Math.min(age, Math.max(floor, share * age));
 }
 
 /** Earliest–latest plausible year from the claims, the best estimate, and a circa fade. Undefined when there's no spread. */
