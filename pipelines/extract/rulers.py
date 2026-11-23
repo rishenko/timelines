@@ -294,8 +294,17 @@ def pick(spans, terms, words):
     return None
 
 
+def hist(v):
+    """A timeline file's year (an astronomical number, or readable text such as "c. 3300 BCE" / "650 CE") as the
+    historical year this script works in (1 BC = -1)."""
+    if isinstance(v, str):
+        n = int(re.sub(r'\D', '', v))
+        return -n if re.search(r'\b(BCE|BC)\b', v) else n
+    return v - 1 if v is not None and v <= 0 else v
+
+
 def date_fields(prefix, t):
-    d = {prefix: t[0]}
+    d = {prefix: dates.astro(t[0])}  # the timelines store astronomical years (44 BC -> -43)
     if t[1]:
         d[prefix + 'Month'] = t[1]
     if t[2]:
@@ -315,7 +324,7 @@ def fmt(t):
 
 def run(timeline, row_ids, src):
     ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
-    w0, w1 = ds['meta']['range']['start'], ds['meta']['range']['end']
+    w0, w1 = hist(ds['meta']['range']['start']), hist(ds['meta']['range']['end'])
     tracks = {t['id']: t for t in ds['tracks']}
     existing = {e['title'].lower(): e['uuid'] for e in ds['events']}
     rows, events, sources = [], {}, {}
@@ -328,14 +337,15 @@ def run(timeline, row_ids, src):
             for d in p.get('startDates', []) + p.get('endDates', []):
                 t = title_of(ds['sources'].get(d['source']['sourceKey'], {}).get('url'))
                 titles.append(t)
-                phase_win.setdefault(t, []).append((p['start'], p.get('end', w1)))
+                phase_win.setdefault(t, []).append((hist(p['start']), hist(p.get('end', w1))))
         phase_win[titles[0]] = None
         titles = [t for t in dict.fromkeys(titles) if t]
         polities = [q for q in (src.qid(t) for t in titles) if q]
         polity_win = {src.qid(t): w for t, w in phase_win.items() if t and src.qid(t)}
         # phases, else the lifespan: one stretch or a list of stretches (Mughal Empire: the 1540–1555 interregnum)
-        stretches = tr.get('phases') or (tr['span'] if isinstance(tr.get('span'), list) else [tr['span']])
-        spans = [(p['start'], p.get('end', w1)) for p in stretches]
+        span = tr.get('span') or {'start': w0, 'end': w1}  # a row with neither: the timeline's window
+        stretches = tr.get('phases') or (span if isinstance(span, list) else [span])
+        spans = [(hist(p['start']), hist(p.get('end', w1))) for p in stretches]
         r0, r1 = max(w0, min(s for s, _ in spans)), min(w1, max(e for _, e in spans))
         words = {w.lower() for w in [tr['name']] + [p['name'] for p in tr.get('phases', [])] for w in re.findall(r'[A-Z][a-z]{3,}', w)}
         found = []
@@ -354,7 +364,7 @@ def run(timeline, row_ids, src):
         # title ("President of the Republic of China" -> the Republic of China phase, 1912-1949), else to the whole row
         for o in src.offices_of(list(ruled), words):
             ot = (src.title(o) or '').lower()
-            polity_win[('office', o)] = [(p['start'], p.get('end', w1)) for p in tr.get('phases', []) if p['name'].lower() in ot] or None
+            polity_win[('office', o)] = [(hist(p['start']), hist(p.get('end', w1))) for p in tr.get('phases', []) if p['name'].lower() in ot] or None
         for person, terms in src.holders([k[1] for k in polity_win if isinstance(k, tuple)]).items():
             ruled.setdefault(person, []).extend(t for t in terms if t not in ruled[person])
             via.setdefault(person, set()).update(('office', t[-1].split(' ', 1)[1]) for t in terms)
@@ -453,8 +463,11 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
         n = 2
         while uid in events and events[uid]['tracks'] != [rid]:
             uid, n = f"reign-{slug(r['person'])}-{n}", n + 1
-        if uid in events:  # the same person twice on this row (two reigns): number the later one
-            uid = f"{uid}-{r['st'][0]}"
+        if uid in events:  # the same person again on this row (two or more reigns): the later one gets its year
+            base, n = f"{uid}-{abs(dates.astro(r['st'][0]))}", 2
+            uid = base
+            while uid in events:
+                uid, n = f"{base}-{n}", n + 1
         key = 'wp-' + slug(r['person'])
         sources[key] = {'name': f"{r['person']} (Wikipedia)", 'url': WP + r['person'].replace(' ', '_'), 'accessed': ACC,
                         'tags': ['wikipedia']}
