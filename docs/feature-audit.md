@@ -51,7 +51,10 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
 10. **Bibliography view (M).** A panel listing every source with the events and claims that cite it, filterable and
     exportable (CSL-JSON for Zotero). It's the natural way to check a source's influence on the data.
 11. **Figure export (M).** Save the current view as SVG or PNG (and print to PDF) with a caption that cites the data
-    version, for papers, slides and teaching.
+    version, for papers, slides and teaching. Done 23 November 2026, in part: the toolbar's Export saves the view
+    (the years and rows on screen) as PNG or SVG, with the title, the years, a legend, the sources line and the link;
+    the browser's own Print (⌘P) prints the same view on one landscape page fitted to the paper. Not yet: a caption
+    with the data version, and print options (all rows, or the whole timeline at the view's scale).
 
 ## 3. Dating model
 
