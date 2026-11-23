@@ -33,7 +33,7 @@ interface Item {
 }
 
 /** Arrowheads for the link samples (own ids, so the legend works without the timeline's SVG). */
-function LinkSample({ kind }: { kind: 'causes' | 'part-of' | 'succeeds' | 'conquers' | 'related' }) {
+function LinkSample({ kind }: { kind: LinkKind }) {
   return (
     <svg className="lg-link" width="64" height="16" aria-hidden>
       <defs>
@@ -44,7 +44,7 @@ function LinkSample({ kind }: { kind: 'causes' | 'part-of' | 'succeeds' | 'conqu
       <path
         d="M 2 12 C 22 12, 40 4, 60 4"
         className={`link ${kind}`}
-        markerEnd={kind === 'related' ? undefined : `url(#lg-arrow-${kind})`}
+        markerEnd={kind === 'related' || kind === 'with' ? undefined : `url(#lg-arrow-${kind})`}
       />
     </svg>
   );
@@ -246,7 +246,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
       sample: <span className="lg-reign" />,
       show: !!reignLane?.size,
       title: 'Reigns',
-      text: 'A row’s rulers, such as “Reign of Ramesses II”, come first among its events, one after another on the top line; overlapping reigns, or names that would collide, go on a second line. A gap means no reign is recorded there yet. Zoomed out, reigns that don’t fit fold into the row’s “+N”.',
+      text: 'A row’s rulers, such as “Reign of Ramesses II”, come first among its events, one after another on the top line; overlapping reigns, or names that would collide, go on a second line. A gap means no reign is recorded there yet; a sourced interregnum (“Ottoman Interregnum”) is drawn in its gap. Zoomed out, reigns that don’t fit fold into the row’s “+N”.',
     },
     {
       sample: <span className="lg-period" />,
@@ -319,6 +319,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
     { show: linkKinds.has('part-of'), sample: <LinkSample kind="part-of" />, title: 'Part of', text: 'An event within a larger one.' },
     { show: linkKinds.has('succeeds'), sample: <LinkSample kind="succeeds" />, title: 'Succeeds', text: 'Comes after and replaces another.' },
     { show: linkKinds.has('conquers'), sample: <LinkSample kind="conquers" />, title: 'Conquers', text: 'One power conquers another.' },
+    { show: linkKinds.has('with'), sample: <LinkSample kind="with" />, title: 'With', text: 'Together, with no direction: co-rulers, or allies acting as one.' },
     { show: linkKinds.has('related'), sample: <LinkSample kind="related" />, title: 'Related', text: 'Connected, with no direction.' },
   ];
 

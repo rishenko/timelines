@@ -19,6 +19,22 @@ export interface Calendar {
   yearZero: boolean;
   /** Extra spellings accepted when parsing, e.g. { before: ["BC"], after: ["AD"] }. */
   aliases?: { before?: string[]; after?: string[] };
+  /**
+   * Deep time (schema v9): years are shown as time before `present` ("4.567 Ga", "66 Ma", "11.7 ka BP") instead of
+   * with the era labels, which still name stored years in the file. Read it through lib/beforePresent.ts.
+   */
+  beforePresent?: BeforePresent;
+}
+
+/** A calendar's before-present display (schema v9). */
+export interface BeforePresent {
+  /** The stored year that is "present", e.g. 1950 (geology's and radiocarbon's BP). */
+  present: number;
+  /**
+   * An uncited "c." fades by this share of its age (0.01: 1 %), instead of `meta.circaFade` years, which can't suit
+   * both 66 Ma and 11.7 ka. Absent: `circaFade` as usual.
+   */
+  circaShare?: number;
 }
 
 export interface TimelineMeta {
@@ -323,9 +339,13 @@ export interface DateClaim {
   note?: string;
 }
 
-export type LinkKind = 'causes' | 'part-of' | 'related' | 'succeeds' | 'conquers';
+/**
+ * How two events connect. `with` (schema v9) is symmetric, as `related` is: the two acted together, e.g. co-rulers'
+ * reigns (Wikidata P1706, "together with"). It's stored once, on either event.
+ */
+export type LinkKind = 'causes' | 'part-of' | 'related' | 'succeeds' | 'conquers' | 'with';
 
-export const LINK_KINDS: LinkKind[] = ['causes', 'part-of', 'related', 'succeeds', 'conquers'];
+export const LINK_KINDS: LinkKind[] = ['causes', 'part-of', 'related', 'succeeds', 'conquers', 'with'];
 
 export interface EventLink {
   /** uuid of the target event */
@@ -372,7 +392,7 @@ export interface TimelineEvent extends DateDays {
 
 export interface Dataset {
   /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 8;
+  schemaVersion: 9;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest

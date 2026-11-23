@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 8,
+  "schemaVersion": 9,
   "meta": {
     "id": "ancient-classical",
     "title": "Ancient and Classical World",
@@ -641,6 +641,12 @@
           },
           "reign": {
             "name": "Reign or term",
+            "broader": [
+              "rule"
+            ]
+          },
+          "interregnum": {
+            "name": "Interregnum",
             "broader": [
               "rule"
             ]
@@ -11808,6 +11814,41 @@
           ]
         }
       ]
+    },
+    {
+      "id": "minaeans",
+      "name": "Ma'in (Minaeans)",
+      "color": "#b8905a",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Ma'in",
+      "ids": {
+        "wikidata": "Q1177379"
+      },
+      "span": {
+        "start": -749,
+        "end": 50,
+        "startDates": [
+          {
+            "year": -750,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-main",
+              "sourceLocation": "lead ('appears in the historical record in the 8th century BCE')"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 51,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-main",
+              "sourceLocation": "lead ('the most popular hypothesis places its demise in the 1st century CE')"
+            }
+          }
+        ],
+        "circa": true
+      }
     },
     {
       "id": "north-arabia",
@@ -29053,6 +29094,14 @@
       "tags": [
         "cited-via-wikipedia"
       ]
+    },
+    "wp-main": {
+      "name": "Wikipedia: Ma'in",
+      "url": "https://en.wikipedia.org/wiki/Ma%27in",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
     }
   },
   "tags": {
@@ -63697,6 +63746,158 @@
           ]
         }
       ]
+    },
+    {
+      "uuid": "minaeans-kingdom",
+      "title": "Ma'in becomes a kingdom",
+      "start": -612,
+      "tracks": [
+        "minaeans"
+      ],
+      "descr": "Ma'in, a city-state in the town of Qarnawu in the Jawf, grows into a kingdom: peace with Saba and Saba's defeat of the Nashshan kingdom let the Minaeans extend their power over nearby territories. Inscriptions from the Temple of Shaqab al-Manaṣṣa name many of its kings. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
+      "sources": [
+        {
+          "sourceKey": "wp-main",
+          "sourceLocation": "lead and History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -612,
+          "margin": 12,
+          "source": {
+            "sourceKey": "wp-main",
+            "sourceLocation": "lead ('transition from a city-state to kingdom in the last quarter of the 7th century BCE')"
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "title",
+          "sources": [
+            {
+              "sourceKey": "wp-main",
+              "sourceLocation": "lead and History"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "minaeans-yathill",
+      "title": "Ma'in breaks with Saba and joins Yathill",
+      "start": -599,
+      "tracks": [
+        "minaeans"
+      ],
+      "descr": "The alliance with Saba breaks down. Ma'in forms a confederation with Yathill (Baraqish) and makes alliances with other South Arabian kingdoms, the basis of its later frankincense trade. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
+      "sources": [
+        {
+          "sourceKey": "wp-main",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -599,
+          "margin": 25,
+          "source": {
+            "sourceKey": "wp-main",
+            "sourceLocation": "History ('As the seventh century BCE closed, and the sixth century BCE opened, the alliance with Saba broke down')"
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "alliance",
+          "sources": [
+            {
+              "sourceKey": "wp-main",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "minaeans-nashshan",
+      "title": "Ma'in absorbs Nashshan",
+      "start": -449,
+      "tracks": [
+        "minaeans"
+      ],
+      "descr": "Nashshan, the most important city of the Jawf valley, comes under the Kingdom of Ma'in, and Ma'in's pantheon replaces its own; Nashshan restores its old gods when Ma'in falls. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
+      "sources": [
+        {
+          "sourceKey": "wp-main",
+          "sourceLocation": "History"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -450,
+          "margin": 149,
+          "source": {
+            "sourceKey": "wp-main",
+            "sourceLocation": "History ('absorbed under the dominion of the Kingdom of Ma'in between the 6th and 4th centuries BC')"
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "annexation",
+          "sources": [
+            {
+              "sourceKey": "wp-main",
+              "sourceLocation": "History"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "minaeans-trade",
+      "title": "Minaean caravans outdo Saba's trade",
+      "start": -499,
+      "tracks": [
+        "minaeans"
+      ],
+      "descr": "By the middle of the 1st millennium BCE, Ma'in's trade in aromatics surpasses Saba's, and it takes over the caravan route along the Red Sea. Its caravans reach Egypt, the Levant, Mesopotamia and Greece; about seventy Minaic inscriptions mark its trading communities abroad, most at al-Ula, and one at Delos records an altar to its god Wadd. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
+      "sources": [
+        {
+          "sourceKey": "wp-main",
+          "sourceLocation": "History and International trade"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -499,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-main",
+            "sourceLocation": "International trade ('The Ma'in trade surpassed that of the Saba by the mid-1st millennium BCE')"
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [
+            {
+              "sourceKey": "wp-main",
+              "sourceLocation": "History and International trade"
+            }
+          ]
+        }
+      ],
+      "circa": true
     }
   ]
 }

@@ -449,6 +449,12 @@
               "rule"
             ]
           },
+          "interregnum": {
+            "name": "Interregnum",
+            "broader": [
+              "rule"
+            ]
+          },
           "coup": {
             "name": "Coup or deposition",
             "broader": [
@@ -26946,7 +26952,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "interregnum",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1301-1526",
@@ -31931,7 +31937,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "interregnum",
           "sources": [
             {
               "sourceKey": "wp-ottoman-empire",
@@ -32175,7 +32181,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "interregnum",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-georgia",

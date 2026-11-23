@@ -15,10 +15,6 @@
   data:check` refuses any link in `data-src/` to a flagged page, using `data-src/ai-flagged-pages.txt`; rerun
   `pipelines/extract/ai_flagged.py` with each dump (see `pipelines/README.md`, "A new dump") and the check names what
   to remove.
-- **Ma'in (Minaeans):** left out because its banner cites the LLM *translation* guideline. To be used (a delegated
-  call, 2026-11-23; Dev A), once a re-check shows the page carries no AI/LLM-text banner, only the translation notice.
-  The event's description then says: "One cited page, Wikipedia's *Ma'in*, carries a notice asking for text translated
-  from the <language> article."
 
 ### More content
 
@@ -64,6 +60,9 @@ additions separate from the published data, moderation and consent.
 
 ## Done
 
+- **Ma'in (Minaeans), 23 November 2026:** re-read (dump and live page): only the Arabic translation notice, no
+  AI/LLM-text banner. Used on Ancient as a row under Arabia with four events, each disclosing the notice in its
+  description (`scripts/ancient-classical/main-minaeans.ts`; docs/ancient-sources.md, "Ma'in").
 - 23 November 2026 (#87–#101): schema v8, context lines (ages on `meta.context` and a row's `context`), with
   regional ages drawn as lines of their row's strip; reigns as their own sub-kind, laid out first in a row (the reign
   lane, two lines at most); view plugins from the site's `plugins/` folder; the Parchment retune and a Colour-blind
