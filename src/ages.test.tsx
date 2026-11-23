@@ -125,6 +125,19 @@ describe('ages', () => {
     expect(screen.queryByRole('complementary', { name: 'Salt Years' })).toBeNull();
   });
 
+  it('from the keyboard: Enter on an age cell opens its panel, with its article link', () => {
+    const d = withAges();
+    const row = d.tracks[0];
+    const salt = placeAge(d, 'salt-years', row.id);
+    salt.url = 'https://en.wikipedia.org/wiki/Salt_Years';
+    renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
+    const cell = within(screen.getByRole('group', { name: row.name })).getByRole('button', { name: /^Salt Years/ });
+    expect(cell.getAttribute('data-stop')).toBe('strip:age:salt-years');
+    fireEvent.keyDown(cell, { key: 'Enter' });
+    const panel = screen.getByRole('complementary', { name: 'Salt Years' });
+    expect(within(panel).getByRole('link', { name: /^Article on en\.wikipedia\.org/ })).toBeTruthy();
+  });
+
   it('a timeline without ages has no strip', () => {
     renderApp(`timeline=harbor-towns`, [plainTimeline()]);
     expect(screen.queryByRole('group', { name: 'Ages' })).toBeNull();
