@@ -93,7 +93,7 @@ This writes `candidates.csv` (one row per date claim) and `report.md` to `pipeli
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
-Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`.
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`.
 
 ## Wikidata (`extract/wikidata.py`)
 
