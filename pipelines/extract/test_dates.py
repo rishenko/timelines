@@ -190,5 +190,36 @@ class Wraps(unittest.TestCase):
         s = spans('{{Gregorian to Julian|23 July 1645}} – {{Gregorian to Julian|8 February 1676}}')
         self.assertEqual((s[0]['start'], s[0]['end'], s[0]['old_style']), ((1645, 7, 23), (1676, 2, 8), True))
 
+class EraBeforeYear(unittest.TestCase):  # "AD 1" parsed to nothing before the #56 review
+    def test_ad_before_the_year(self):
+        self.assertEqual(one('AD 1')['start'], (1, None, None))
+        self.assertEqual(one('AD 43')['start'], (43, None, None))
+        self.assertEqual(one('in AD 476 the')['start'], (476, None, None))
+
+    def test_ad_inside_a_full_date(self):
+        self.assertEqual(one('14 March AD 1066')['start'], (1066, 3, 14))
+        self.assertEqual(one('March AD 1066')['start'], (1066, 3, None))
+
+    def test_ad_ranges(self):
+        s = one('AD 9–14')
+        self.assertEqual((s['start'], s['end']), ((9, None, None), (14, None, None)))
+        s = one('44 BC – AD 14')
+        self.assertEqual((s['start'], s['end']), ((-44, None, None), (14, None, None)))
+
+
+class AstronomicalOutput(unittest.TestCase):
+    """Internal years are historical (44 BC = -44); what's written out is astronomical, as the timelines store it."""
+    def test_astro(self):
+        from dates import astro
+        self.assertEqual([astro(y) for y in (-44, -1, 1, 1914)], [-43, 0, 1, 1914])
+
+    def test_written_iso(self):
+        from extract import iso
+        self.assertEqual(iso(one('15 March 44 BC')['start']), '-0043-03-15')
+        self.assertEqual(iso(one('44 BC')['start']), '-0043')
+        self.assertEqual(iso(one('1 BC')['start']), '0000')
+        self.assertEqual(iso(one('AD 1')['start']), '0001')
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -89,6 +89,7 @@ Then, per topic:
 
 This writes `candidates.csv` (one row per date claim) and `report.md` to `pipelines/out/extract/<topic>/`:
 - every date has a v5 `locator` and a verbatim quote;
+- years are written astronomically, as the timelines store them: "15 March 44 BC" is `-0043-03-15`, and 1 BC is `0000` ([PARSING-NOTES.md](PARSING-NOTES.md#date-strings-extractdatespy));
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
@@ -96,7 +97,7 @@ Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract &
 
 ## Wikidata (`extract/wikidata.py`)
 
-One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-all.json.bz2`, about 97 GiB, a single bz2 stream) keeps, for items with an English Wikipedia article, their time claims (inception, dissolution, point in time, start and end, discovery, publication), the links the row passes need (instance of, part of, heads of state and government, positions held, conflicts, discoverer) and those links' start and end qualifiers. It writes `wikidata/wikidata-<date>.sqlite` (about 0.9 GiB) and takes about 2 hours on 4 cores:
+One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-all.json.bz2`, about 97 GiB, a single bz2 stream; which dump: `TIMELINES_WD_DUMP`, default `wikidata-20261116`) keeps, for items with an English Wikipedia article, their time claims (inception, dissolution, point in time, start and end, discovery, publication), the links the row passes need (instance of, part of, heads of state and government, positions held, conflicts, discoverer) and those links' start and end qualifiers. It writes `wikidata/wikidata-<date>.sqlite` (about 0.9 GiB) and takes about 2 hours on 4 cores:
 
     nohup pipelines/extract/.venv/bin/python -I -u pipelines/extract/wikidata.py > $TIMELINES_DATA/wikidata/pass.log 2>&1 &
 

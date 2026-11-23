@@ -32,5 +32,12 @@ class Compare(unittest.TestCase):
         self.assertTrue(compare(s, {'start': [(1912, 10, 8, 'P580', G)], 'end': [(1913, 7, 18, 'P582', G)]}).startswith('differs: end'))
 
 
+    def test_bce_written_astronomical(self):  # Wikidata's "-0044" is 44 BC; the comparison text gives the stored -43
+        s = {'start': (-44, 3, 14), 'end': None}
+        got = compare(s, {'start': [(*wd_time('-0044-03-15T00:00:00Z', 11), 'P585', G)], 'end': []})
+        self.assertIn('-43-3-15', got)
+        self.assertNotIn('-44', got)
+
+
 if __name__ == '__main__':
     unittest.main()
