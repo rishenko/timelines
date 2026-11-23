@@ -235,6 +235,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
     setSelectedPhaseRef(null);
     setSelectedAgeId(id);
   };
+  // refs are indexes into a row's phases and memberships, which the editors can reorder or delete: an editor opening
+  // closes a phase's details
+  if (editing && selectedPhaseRef) setSelectedPhaseRef(null);
   const openPhase = (ref: string) => {
     setSelectedId(null);
     setSelectedAgeId(null);
@@ -776,12 +779,9 @@ function findPhase(
     const resolved = phases.get(trackId)?.[i];
     return stored && resolved ? { ref, track, name: stored.name, stored, resolved } : undefined;
   }
-  const start = Number(rest.at(-1));
-  const row = rest.slice(0, -1).join(':');
-  const same = (memberOf.get(trackId) ?? []).filter((m) => m.row === row);
-  const at = same.findIndex((m) => m.start === start);
-  // stored memberships in the same union, in the order they were resolved (by start)
-  const stored = (track.memberOf ?? []).filter((m) => m.row === row).sort((a, b) => a.start - b.start)[at];
-  const union = data.tracks.find((t) => t.id === row);
-  return at >= 0 && stored ? { ref, track, name: union?.name ?? row, union, stored, resolved: same[at] } : undefined;
+  const i = Number(rest[0]);
+  const stored = track.memberOf?.[i];
+  const resolved = memberOf.get(trackId)?.find((m) => m.index === i);
+  const union = stored && data.tracks.find((t) => t.id === stored.row);
+  return stored && resolved ? { ref, track, name: union?.name ?? stored.row, union, stored, resolved } : undefined;
 }

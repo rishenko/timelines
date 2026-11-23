@@ -274,7 +274,7 @@ and line name, since line numbers change as empty lines close up): ←/→ and H
 links are `tabIndex=-1` (the details panel links the article). Phase strip cells join the chart's own grid instead
 (`buildGrid`'s `stripLines`: one grid line per strip line, above the lane's events), so the chart stays one Tab stop
 and the Tab stop never starts on a strip cell (`Stop.strip`). Each `PlacedPhase` carries a `ref` (`phaseRef`:
-row and index in `Track.phases`; `memberRef`: row, union and resolved start), which is the cell's `data-phase-ref`, its
+row and index in `Track.phases`; `memberRef`: row and index in `Track.memberOf`, carried as `ResolvedMembership.index`; an editor opening closes the panel, since edits can reorder them), which is the cell's `data-phase-ref`, its
 stop key (`strip:<ref>`) and `App.tsx`'s `selectedPhaseRef`; Enter or Space on a cell opens `PhasePanel` (in
 `DetailsFrame`; `findPhase` in `App.tsx` maps the ref back to the stored and resolved phase). Clicks on a cell still go
 through to the row.

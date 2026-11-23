@@ -200,7 +200,7 @@ export function TimelineView(props: Props) {
           const own = placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })));
           const lines = own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0;
           const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row)?.name ?? m.row, cal, isApprox(m));
-          const ms = (memberOf.get(l.id) ?? []).map((m) => ({ ...m, ref: memberRef(l.id, m.row, m.start) }));
+          const ms = (memberOf.get(l.id) ?? []).map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
           return [l.id, [...own, ...placeMemberships(l.id, ms, lines, label)]];
         }),
       ),

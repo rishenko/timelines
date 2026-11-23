@@ -3,7 +3,7 @@
 // the chart's keyboard grid, above the row's events. Up and Down reach it, Left/Right and Home/End walk it, and Enter
 // opens the phase's details in the side panel. The chart stays one Tab stop, which starts on an event.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { act, cleanup, fireEvent } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { renderApp, SITE } from './test/app.tsx';
 import { plainTimeline } from './test/fixtures.ts';
 import type { Dataset } from './types.ts';
@@ -117,6 +117,25 @@ describe('phase strips from the keyboard', () => {
     expect(panel.querySelector('#detail-title')!.textContent).toBe('Quay Town in The Harbor League');
     expect(panel.textContent).toContain('Membership of The Harbor League');
     expect(panel.textContent).toContain('p. 20');
+  });
+
+  it('keeps a membership’s ref by its place in Track.memberOf, and an editor opening closes a phase’s details', async () => {
+    const { container: c } = open();
+    const member = c.querySelector<HTMLElement>('[data-lane="quay"] .tl-phase.member')!;
+    expect(member.getAttribute('data-phase-ref')).toBe('member:quay:0');
+    member.focus();
+    await press('Enter');
+    expect(c.querySelector('#detail-title')!.textContent).toBe('Quay Town in The Harbor League');
+    // edit mode, then the row's editor: its phases may be reordered or deleted, so the details close
+    fireEvent.click(screen.getByRole('button', { name: /^Customize/ }));
+    fireEvent.click(screen.getByRole('tab', { name: 'Edit' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Turn on edit mode' }));
+    expect(c.querySelector('[data-lane="quay"] .tl-phase.member.selected')).not.toBeNull();
+    await act(async () => {
+      fireEvent.click(c.querySelector<HTMLElement>('[data-lane="quay"] button[title="Edit Quay Town"]')!);
+    });
+    expect(c.querySelector('[data-lane="quay"] .tl-phase.selected')).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Quay Town in The Harbor League' })).toBeNull();
   });
 
   it('selecting an event closes a phase’s details (one panel at a time)', async () => {

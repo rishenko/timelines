@@ -91,7 +91,7 @@ describe('resolving and naming memberships', () => {
     const d = union([{ endEvent: 'dissolved' }]);
     d.tracks.find((t) => t.id === 'estonia')!.memberOf = [{ row: 'ussr', start: 1940, end: 1991, sources: cite }];
     const m = resolveMemberships(d, defaultSelection(d));
-    expect(m.get('ukraine')).toEqual([{ start: 1922, end: 1991, row: 'ussr', sources: cite, endEvent: 'dissolved', startWindow: undefined, endWindow: undefined }]);
+    expect(m.get('ukraine')).toEqual([{ start: 1922, end: 1991, row: 'ussr', sources: cite, endEvent: 'dissolved', startWindow: undefined, endWindow: undefined, index: 0 }]);
     const members = membersByUnion(m).get('ussr')!;
     expect(members.map((u) => u.member)).toEqual(['ukraine', 'estonia']);
     expect(membersTip(members, (id) => d.tracks.find((t) => t.id === id)!.name, CE)).toBe('Members (2): Ukraine 1922–91, Estonia 1940–91');
@@ -104,11 +104,11 @@ describe('resolving and naming memberships', () => {
     expect(shortYears({ start: 1958, end: 1958 }, CE)).toBe('1958');
     expect(shortYears({ start: 1991, end: 2026, ongoing: true }, CE)).toBe('since 1991');
     expect(shortYears({ start: -99, end: 50 }, CE, true)).toBe('c. 100 BCE–50 CE');
-    expect(membershipLabel({ start: 1922, end: 1991, row: 'ussr', sources: [] }, 'Soviet Union', CE)).toBe('in Soviet Union, 1922–91');
+    expect(membershipLabel({ start: 1922, end: 1991, row: 'ussr', sources: [], index: 0 }, 'Soviet Union', CE)).toBe('in Soviet Union, 1922–91');
   });
 
   it('names the phase that held a membership, on the strip and in the union\'s list of members', () => {
-    const west = { start: 1955, end: 1990, row: 'nato', phase: 'West Germany', sources: [] };
+    const west = { start: 1955, end: 1990, row: 'nato', phase: 'West Germany', sources: [], index: 0 };
     expect(membershipLabel(west, 'NATO', CE)).toBe('West Germany in NATO, 1955–90');
     expect(membersTip([{ member: 'germany', membership: west }], () => 'Germany', CE)).toBe('Members (1): Germany (West Germany) 1955–90');
   });
