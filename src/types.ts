@@ -76,12 +76,12 @@ export interface TimelineMeta {
   eraGroups?: Record<string, EraGroup>;
 }
 
-/** A named period across all rows (TimelineMeta.eras). */
 /** How a group of eras is shown (meta.eraGroups). */
 export interface EraGroup {
   name: string;
 }
 
+/** A named period across the whole timeline, or the rows it names in `tracks` (TimelineMeta.eras). */
 export interface Era extends TrackSpan {
   /** Letters, digits and dashes; unique among the timeline's eras. */
   id: string;
