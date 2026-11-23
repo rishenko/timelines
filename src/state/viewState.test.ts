@@ -141,6 +141,35 @@ describe('resolveView and the from/to window', () => {
   });
 });
 
+describe('meta.compress: a timeline can open with shortened gaps off', () => {
+  const off = () => {
+    const d = plainTimeline();
+    d.meta.compress = false;
+    return d;
+  };
+  it('the default follows the timeline; a link\'s compress= wins either way', () => {
+    expect(resolveView({}, plainTimeline()).compress).toBe(true);
+    expect(resolveView({}, off()).compress).toBe(false);
+    expect(resolveView({ compress: true }, off()).compress).toBe(true);
+    expect(resolveView({ compress: false }, plainTimeline()).compress).toBe(false);
+  });
+
+  it('reads compress=0 and compress=1', () => {
+    const d = off();
+    expect(parseView('?timeline=x&v=1&compress=1', '', d).state.compress).toBe(true);
+    expect(parseView('?timeline=x&v=1&compress=0', '', d).state.compress).toBe(false);
+    expect(parseView('?timeline=x&v=1', '', d).state.compress).toBeUndefined();
+  });
+
+  it('writes only a choice that differs from the timeline\'s own default', () => {
+    const on = plainTimeline();
+    expect(serializeView({ compress: true }, on)).not.toContain('compress');
+    expect(serializeView({ compress: false }, on)).toContain('compress=0');
+    expect(serializeView({ compress: false }, off())).not.toContain('compress');
+    expect(serializeView({ compress: true }, off())).toContain('compress=1');
+  });
+});
+
 describe('the link notice', () => {
   it('one notice, counted by kind, with the removed ones said', () => {
     expect(

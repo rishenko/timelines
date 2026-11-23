@@ -38,6 +38,13 @@ function split(ds: Json): { rest: string; cats: Map<string, string> } {
 }
 
 let failed = false;
+// a timeline that is new in this branch has no earlier version to compare with: nothing to prove
+try {
+  execFileSync('git', ['cat-file', '-e', `${base}:${t.source}`], { stdio: 'ignore' });
+} catch {
+  console.log(`${t.source}: new since ${base}, so there is no earlier version to compare`);
+  process.exit(0);
+}
 for (const file of [t.source, t.compiled]) {
   const before = split(JSON.parse(execFileSync('git', ['show', `${base}:${file}`], { encoding: 'utf8', maxBuffer: 1 << 28 })));
   const after = split(JSON.parse(readFileSync(file, 'utf8')));
