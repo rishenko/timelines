@@ -217,7 +217,7 @@ disagree, every value is kept. Other sources are cited where they are used: the 
 [International Chronostratigraphic Chart](https://stratigraphy.org/chart) (v2026/06; © ICS, all rights reserved; cite:
 Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated), The ICS International Chronostratigraphic Chart
 this decade, Episodes 48: 105–115) for Earth and Life's boundary ages and colour codes (the numbers only: the chart's
-image and layout are not reproduced), with Burgess et al. (2014) for one extinction's dates; [PeriodO](https://perio.do/) period
+image and layout are not reproduced), with a peer-reviewed paper cited directly for one extinction's dates (Burgess, Bowring & Shen 2014, PNAS, from its abstract); [PeriodO](https://perio.do/) period
 definitions for the regional Ages lines in Ancient and Classical World, and Cliopatria for its map borders and for one
 Medieval World date claim (Srivijaya's end). Books and papers appear only where Wikipedia cites them. Pages carrying a
 notice that they contain AI-generated text are not used (a check refuses any link to a page on the list of flagged

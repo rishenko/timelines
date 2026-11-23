@@ -112,6 +112,11 @@ def build(repo):
         e_ma, e_pm, e_ap = figure(ics['boundaries'][u['top']])
         span = {'id': u['id'], 'kind': 'age', 'name': u['name'], 'line': lines[u['rank']], 'color': u['color'],
                 'start': stored(s_ma), 'end': stored(e_ma), 'sources': [ics_ref(f"{u['name']} (chart: {u['rank']}, base {ics['boundaries'][u['base']]})")]}
+        if u['top'] == 'present':
+            # the chart's youngest units run to the present: ongoing, not a closed end at 1950
+            del span['end']
+            span['ongoing'] = True
+            span['ongoingSources'] = [ics_ref('present: the youngest unit, the Meghalayan, runs to the present')]
         if s_ap or e_ap:
             span['circa'] = True
         for field, ma_text, pm_text, key in (('startDates', s_ma, s_pm, u['base']), ('endDates', e_ma, e_pm, u['top'])):

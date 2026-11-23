@@ -150,11 +150,17 @@
         "line": "ics-eon",
         "color": "#99deee",
         "start": -538798050,
-        "end": 1950,
         "sources": [
           {
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Phanerozoic (chart: eon, base 538.8 ±0.6)"
+          }
+        ],
+        "ongoing": true,
+        "ongoingSources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "present: the youngest unit, the Meghalayan, runs to the present"
           }
         ],
         "startDates": [
@@ -477,11 +483,17 @@
         "line": "ics-era",
         "color": "#f2ef1d",
         "start": -65998050,
-        "end": 1950,
         "sources": [
           {
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Cenozoic (chart: era, base 66.00)"
+          }
+        ],
+        "ongoing": true,
+        "ongoingSources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "present: the youngest unit, the Meghalayan, runs to the present"
           }
         ],
         "startDates": [
@@ -1215,11 +1227,17 @@
         "line": "ics-period",
         "color": "#fff880",
         "start": -2578050,
-        "end": 1950,
         "sources": [
           {
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Quaternary (chart: period, base 2.58)"
+          }
+        ],
+        "ongoing": true,
+        "ongoingSources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "present: the youngest unit, the Meghalayan, runs to the present"
           }
         ],
         "startDates": [
