@@ -219,3 +219,69 @@
   text-overflow: ellipsis;
   font-weight: 700;
 }
+/* "Cite this event" (and the timeline's citation dialog): Chicago and BibTeX, each with Copy */
+.cite-details {
+  margin: 12px 0 4px;
+}
+.cite-details > summary {
+  cursor: pointer;
+  min-height: 24px;
+  color: var(--link);
+  font-weight: 600;
+}
+.cite-box {
+  margin-top: 6px;
+}
+.cite-label {
+  margin: 10px 0 2px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.cite-text {
+  margin: 0 0 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+  background: var(--bg);
+  font-size: 12.5px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+pre.cite-text {
+  font: 12px/1.4 ui-monospace, monospace;
+}
+.cite-note {
+  margin-top: 8px;
+  font-size: 12px;
+}
+/* "Report a problem": a link that looks like the footer's buttons sit beside it */
+.side-panel footer .report {
+  align-self: center;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+}
+.cite-dialog {
+  max-width: min(640px, calc(100vw - 32px));
+  padding: 16px 20px;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: var(--bg-2);
+  color: var(--text);
+}
+.cite-dialog::backdrop {
+  background: color-mix(in srgb, #000 45%, transparent);
+}
+.cite-dialog h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+.cite-dialog form {
+  margin-top: 12px;
+  text-align: right;
+}

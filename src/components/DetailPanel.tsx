@@ -6,6 +6,8 @@ import { durationText, type DayWindow } from '../lib/subYear.ts';
 import { allClaims, datingChronology, eventChronology, isApprox, type Claim, type ResolvedEvent, type Window } from '../lib/chronology.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 import { safeUrl } from '../lib/urls.ts';
+import { citeEvent, reportUrl } from '../lib/cite.ts';
+import { CiteBox } from './CiteBox.tsx';
 import { EventMap } from './EventMap.tsx';
 import { CategoryGlyph } from './CategoryGlyph.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
@@ -26,6 +28,8 @@ interface Props {
   onEdit: () => void;
   onDelete: () => void;
   onCopyLink: () => void;
+  /** The event's link: what "Cite this" cites, and what a problem report names. */
+  link: string;
   /** The timeline's map file, when it has one: the panel then shows the event's rows on a map of its year. */
   mapUrl?: string;
   /** Its categories, main first (a line under its rows). */
@@ -195,6 +199,7 @@ export function DetailPanel(p: Props) {
   const all = [...outgoing, ...incoming].filter((l) => l.ev);
   const links = all.filter((l) => p.visibleIds.has(l.ev!.uuid)).sort((a, b) => compareEvents(a.ev!, b.ev!));
   const hiddenLinks = all.length - links.length;
+  const report = reportUrl(data, e, p.link);
 
   const chron = eventChronology(data, e);
   // named only when a choice in the Dating menu can move this event
@@ -294,8 +299,19 @@ export function DetailPanel(p: Props) {
         </ul>
       </section>
 
+      <details className="cite-details">
+        <summary>Cite this event</summary>
+        <CiteBox cite={citeEvent(data, e, p.link)} />
+      </details>
+
       <footer>
         <button onClick={p.onCopyLink}>Copy link</button>
+        {/* only the timelines this site ships: a reader's own or a local timeline never names itself in a public issue */}
+        {report && (
+          <a className="report" href={report} target="_blank" rel="noreferrer">
+            Report a problem<span className="sr-only"> with this event (opens a GitHub issue in a new tab)</span>
+          </a>
+        )}
         {p.editMode && (
           <>
             <button onClick={p.onEdit}>Edit</button>
