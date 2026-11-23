@@ -22,7 +22,7 @@ Every date cites the source it comes from (an English Wikipedia article, and in 
   unions and empires. 602 rows, 1,508 events.
 
 - **Earth and Life** (a pilot), 4.567 Ga to the present: the geological eons, eras and periods from the International
-  Commission on Stratigraphy's chart, and the five mass extinctions of the Phanerozoic. 2 rows, 6 events, 36 ages.
+  Commission on Stratigraphy's chart, and 24 events from the first life to the first Homo sapiens (the five Phanerozoic mass extinctions among them), each dated from at least one source outside Wikipedia where one could be found. 3 rows, 24 events, 36 ages.
 
 The first three link to each other where they meet, at 650 and 1500.
 
@@ -217,7 +217,7 @@ disagree, every value is kept. Other sources are cited where they are used: the 
 [International Chronostratigraphic Chart](https://stratigraphy.org/chart) (v2026/06; © ICS, all rights reserved; cite:
 Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated), The ICS International Chronostratigraphic Chart
 this decade, Episodes 48: 105–115) for Earth and Life's boundary ages and colour codes (the numbers only: the chart's
-image and layout are not reproduced), with a peer-reviewed paper cited directly for one extinction's dates (Burgess, Bowring & Shen 2014, PNAS, from its abstract); [PeriodO](https://perio.do/) period
+image and layout are not reproduced), with peer-reviewed papers cited directly for the dates of its events (from their abstracts, or for open-access papers their full text), and the [Smithsonian Institution's Human Origins Program](https://humanorigins.si.edu/) species pages for the human lineage's; [PeriodO](https://perio.do/) period
 definitions for the regional Ages lines in Ancient and Classical World, and Cliopatria for its map borders and for one
 Medieval World date claim (Srivijaya's end). Books and papers appear only where Wikipedia cites them. Pages carrying a
 notice that they contain AI-generated text are not used (a check refuses any link to a page on the list of flagged

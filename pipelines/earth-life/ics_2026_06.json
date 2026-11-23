@@ -330,6 +330,9 @@
  ],
  "stage_boundaries": {
   "hirnantian-base": "445.2 ±0.9",
-  "famennian-base": "372.15 ±0.46"
+  "famennian-base": "372.15 ±0.46",
+  "maastrichtian-base": "72.2 ±0.2",
+  "eifelian-base": "393.47 ±0.99",
+  "givetian-base": "387.95 ±1.04"
  }
 }
