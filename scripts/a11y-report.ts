@@ -14,7 +14,11 @@
 //
 //   node scripts/a11y-report.ts [--url http://localhost:4317/] [--timeline ancient-classical] [--width 1280]...
 //        [--skip axe|contrast|contrast-ui|reflow|targets|tests]... [--out docs/wcag-report.md] [--browser chrome|msedge]
-// Defaults: widths 390 and 1280. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1 if any
+//        [--state <name>]...
+// Defaults: widths 390 and 1280.
+// --state runs axe over the named views only (names as in scripts/lib/ui-states.ts, e.g. --state "plugin view"), for
+// a PR's own new states in about a minute. It skips the other checks (they don't use states) and prints the summary
+// without writing the report, unless --out is given. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1 if any
 // check fails.
 import { execFileSync, spawnSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
@@ -30,9 +34,22 @@ const one = (flag: string, def: string) => all(flag)[0] ?? def;
 const base = one('--url', 'http://localhost:4317/');
 const timeline = one('--timeline', 'ancient-classical');
 const widths = all('--width').length ? all('--width').map(Number) : [390, 1280];
-const skip = new Set(all('--skip'));
-const out = one('--out', 'docs/wcag-report.md');
+const onlyStates = all('--state');
+const skip = new Set(onlyStates.length ? [...all('--skip'), 'contrast', 'contrast-ui', 'reflow', 'targets', 'tests'] : all('--skip'));
+const out = all('--out')[0] ?? (onlyStates.length ? null : 'docs/wcag-report.md');
 const browserChannel = one('--browser', process.platform === 'win32' ? 'msedge' : 'chrome');
+
+/** The views to run axe over: all, or (--state) the named ones; an unknown name stops the run with the list. */
+function pickStates(states: ReturnType<typeof uiStates>) {
+  if (!onlyStates.length) return states;
+  const names = states.map((s) => s[0]);
+  const unknown = onlyStates.filter((n) => !names.includes(n));
+  if (unknown.length) {
+    console.error(`unknown state ${unknown.map((n) => `"${n}"`).join(', ')}; the states are: ${names.map((n) => `"${n}"`).join(', ')}`);
+    process.exit(2);
+  }
+  return states.filter((s) => onlyStates.includes(s[0]));
+}
 
 const MATRIX = 'docs/wcag-coverage.md';
 /** Test files with accessibility checks (the "tests" check). */
@@ -91,7 +108,7 @@ async function runAxe(): Promise<{ rules: Map<string, RuleResult>; views: string
   const skipped: string[] = [];
   const browser = await chromium.launch({ channel: browserChannel });
   for (const width of widths) {
-    for (const state of uiStates(base, timeline)) {
+    for (const state of pickStates(uiStates(base, timeline))) {
       const view = `${width}px ${state[0]}`;
       const page = await openState(browser, base, timeline, width, state);
       if (!page) {
@@ -142,7 +159,9 @@ interface CheckResult {
 
 function runScript(id: (typeof SCRIPT_CHECKS)[number]): CheckResult {
   console.log(`…     ${id}`);
-  const r = spawnSync('node', [`scripts/${id}.ts`, '--url', base, '--browser', browserChannel], { encoding: 'utf8' });
+  // contrast: the opening view only (--quick), as the report has always checked; a theme change runs the sweep itself
+  const extra = id === 'contrast' ? ['--quick'] : [];
+  const r = spawnSync('node', [`scripts/${id}.ts`, '--url', base, '--browser', browserChannel, ...extra], { encoding: 'utf8' });
   const lines = `${r.stdout}\n${r.stderr}`.split('\n');
   const failures = lines.filter((l) => /^(FAIL|\?)/.test(l)).map((l) => l.trim());
   const ok = r.status === 0;
@@ -277,9 +296,9 @@ md.push(
   'checks them.',
   '',
 );
-writeFileSync(out, md.join('\n'));
+if (out) writeFileSync(out, md.join('\n'));
 
 console.log('');
 console.log(`Applicable criteria: ${applicable.length}. Some automated check: ${automatedSome} (${pct(automatedSome, applicable.length)}). Exercised by this run: ${exercised.length}. Failing: ${failing.length}${failing.length ? ` (${failing.map((r) => r.c.sc).join(', ')})` : ''}.`);
-console.log(`Wrote ${out}`);
+console.log(out ? `Wrote ${out}` : `States: ${onlyStates.join(', ')} (report not written; --out to write it).`);
 process.exit(failing.length ? 1 : 0);
