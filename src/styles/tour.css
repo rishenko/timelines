@@ -21,7 +21,8 @@
   position: fixed;
   z-index: 61;
   width: 340px;
-  padding: 12px 14px 10px;
+  /* the bottom padding keeps the buttons 24 px clear of the chart marks under the card's edge (WCAG 2.5.8 spacing) */
+  padding: 12px 14px 26px;
   background: var(--bg-2);
   border: 1px solid var(--line-2);
   border-radius: 8px;
