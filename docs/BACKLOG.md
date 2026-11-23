@@ -15,8 +15,10 @@
   data:check` refuses any link in `data-src/` to a flagged page, using `data-src/ai-flagged-pages.txt`; rerun
   `pipelines/extract/ai_flagged.py` with each dump (see `pipelines/README.md`, "A new dump") and the check names what
   to remove.
-- **Ma'in (Minaeans):** its banner cites the LLM *translation* guideline, so it was left out; Kevin (2026-11-23):
-  use it, with the translation notice disclosed in the event's description (Dev A).
+- **Ma'in (Minaeans):** left out because its banner cites the LLM *translation* guideline. To be used (a delegated
+  call, 2026-11-23; Dev A), once a re-check shows the page carries no AI/LLM-text banner, only the translation notice.
+  The event's description then says: "One cited page, Wikipedia's *Ma'in*, carries a notice asking for text translated
+  from the <language> article."
 
 ### More content
 
