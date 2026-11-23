@@ -427,7 +427,8 @@ def run(timeline, row_ids, src):
             pg = page_of(src.title(person) or '')
             pw = None if not via.get(person) or not all(polity_win.get(q) for q in via[person]) else [w for q in via[person] for w in polity_win[q]]
             for k, raw in infobox_params(pg['text'] if pg else '').items():
-                if k.startswith('succession'):
+                # only a succession that names this row: Christian II's "King of Sweden" doesn't give Denmark Sweden's list
+                if k.startswith('succession') and any(st in dates.clean(raw).lower() for st in stems(words)):
                     for target in LINK.findall(raw):
                         lt = (page_of(target.strip()) or {}).get('title', '')
                         if lt.startswith('List of') and LIST_NOUN.search(lt.split(' of ')[1]):  # not "List of governors-general of Taiwan"
@@ -471,6 +472,9 @@ def run(timeline, row_ids, src):
                         and (x[0].startswith('reign') or RULER_WORD.search(x[2]))]
                 if not cand:
                     continue
+                # cross-check only against the offices that name the list's subject (Christian X as King of Iceland, not
+                # his Danish term); none: nothing to check against, rather than a false disagreement
+                terms = [t for t in terms if any(st in (src.title(t[-1].split(' ', 1)[1]) or '').lower() for st in need)]
             got = picks(cand, terms, words)
             dated = [t for t in terms if t[0]]
             if not got:
@@ -484,8 +488,10 @@ def run(timeline, row_ids, src):
             wins = None
             if via.get(person) and all(polity_win.get(q) for q in via[person]):
                 wins = [w for q in via[person] for w in polity_win[q]]
+            route = '; '.join(sorted(('list: ' + q[1]) if isinstance(q, tuple) and q[0] == 'list' else ('office: ' + (src.title(q[1]) or q[1]))
+                                     if isinstance(q, tuple) else ('row words' if q is None else 'polity: ' + (src.title(q) or q)) for q in via.get(person, ())))
             for field, s, succ, term in got:
-                place(rid, name, person, field, s, succ, term, terms, list(flags), r0, r1, wins, w1, src, rows, found)
+                place(rid, name, person, field, s, succ, term, terms, list(flags), r0, r1, wins, w1, src, rows, found, route)
         gathered.append((rid, r0, r1, found))
     # a reign found on two rows stays only where it falls inside the phase that led to it (Taiwan's presidents: the
     # Taiwan row's Republic of China phase, not the China row's 1912-1949 one); a reign outside its phase with no
@@ -509,7 +515,7 @@ def run(timeline, row_ids, src):
     return ds, rows, list(events.values()), sources, (w0, w1)
 
 
-def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w1, src, rows, found):
+def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w1, src, rows, found, route=''):
     """One reign span: flags, or a candidate for the row. `wins`: the phase spans that led to this ruler (None: the
     whole row)."""
     st, en = s['start'], s['end']
@@ -528,7 +534,7 @@ def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w
         return
     yrs = max(1, (year(en) or w1) - st[0])
     found.append(dict(row=rid, person=name, qid=person, st=st, en=en, field=field, quote=s['text'], succ=succ,
-                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase,
+                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase, route=route,
                       wd=f'{fmt(term[0])} – {fmt(term[1])}' if term else ''))
 
 
@@ -576,7 +582,7 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
         if title.lower() in existing:
             r['flags'].append(f"timeline already has {existing[title.lower()]}")
         rows.append(dict(row=rid, person=r['person'], qid=r['qid'], start=fmt(r['st']), end=fmt(r['en']), field=r['field'],
-                         quote=r['quote'], wd=r['wd'], importance=imp, flags='; '.join(r['flags']), uuid=uid, reign='yes'))
+                         quote=r['quote'], wd=r['wd'], importance=imp, flags='; '.join(r['flags']), uuid=uid, reign='yes', route=r['route'], office=r['succ']))
 
 
 def main():
@@ -587,7 +593,7 @@ def main():
     out = flag('--out') or os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
     os.makedirs(out, exist_ok=True)
     ds, rows, events, sources, win = run(timeline, row_ids, Sources(settings.DATA))
-    cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'quote', 'wd', 'flags', 'uuid']
+    cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'office', 'quote', 'wd', 'flags', 'route', 'uuid']
     with open(os.path.join(out, 'rulers.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
