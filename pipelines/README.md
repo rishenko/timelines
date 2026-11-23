@@ -10,6 +10,9 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
 | `medieval/` | `data-src/medieval.json`, plus `data-src/provenance/medieval.json` (the timeline arrives with its own merge) and `medieval-categories.json` | `gen_medieval.py` |
 | `ancient/` | event categories, golden ages and eras for Ancient and Classical (its source file is kept by `scripts/`): the plans the build applies, `data-src/ancient-classical-categories.json` and `ancient-classical-periods.json`, and `data-src/provenance/ancient-classical-categories.json` | `categories.py`, `periods.py` |
 | `common/` | shared code: the dump reader, the infobox extractor, the claim and citation helpers, the whole-article sentence finder (`wp_sections.py`), the event classifier, and golden ages and eras (`periods.json`, hand-kept: each date names the sentence, infobox parameter or short description that gives it; `periods.py` checks it against the dump) | (none) |
+| `extract/` | candidates for review (not timeline data): a topic's dated events, in `pipelines/out/extract/<topic>/` | `extract.py` |
+
+**Before you parse a dump, read [PARSING-NOTES.md](PARSING-NOTES.md):** what the dumps get wrong, and what the code does about it.
 
 ## Inputs
 
@@ -68,6 +71,42 @@ Then run the generator and compile its output:
 - **Evidence:** a full run writes `data-src/provenance/<id>-categories.json`, one line per event with its categories and what each rests on ("reviewed" for an override). Events with an empty list are the review queue; a reviewed override of `[]` is written as `[[null, "reviewed: no category"]]`, so it leaves the queue.
 - **Proof:** after a rerun, `npm run categories:proof -- <timeline>` shows that nothing but the categories changed since `origin/main`.
 - **Pilot:** `pipelines/.venv/bin/python -I pipelines/common/event_categories.py --pilot 20 public/timelines/<id>.json` prints a sample as a table.
+
+## The date/event extractor (`extract/`)
+
+It pulls as many dated events as it can for a topic (a war, a revolution, an uprising) out of the dump, as candidates for review. Accepted rows feed a generator as cited claims. Design: Workbench note "2026-11-22 Timelines extractor design". It has its own environment:
+
+    python3.11 -m venv pipelines/extract/.venv && pipelines/extract/.venv/bin/pip install -r pipelines/extract/requirements.txt
+
+Once per dump, build the lookup tables (about 25 min on 8 cores, about 10 GB, next to `index.sqlite`), then load the Wikidata ids from the dump's `page_props.sql.gz`:
+
+    pipelines/extract/.venv/bin/python -I pipelines/extract/build_index.py --workers 8     # --sample 0.01 for a quick check
+    pipelines/extract/.venv/bin/python -I pipelines/extract/page_props.py
+
+Then, per topic:
+
+    pipelines/extract/.venv/bin/python -I pipelines/extract/extract.py --topic ww1 --seed "World War I"
+
+This writes `candidates.csv` (one row per date claim) and `report.md` to `pipelines/out/extract/<topic>/`:
+- every date has a v5 `locator` and a verbatim quote;
+- years are written astronomically, as the timelines store them: "15 March 44 BC" is `-0043-03-15`, and 1 BC is `0000` ([PARSING-NOTES.md](PARSING-NOTES.md#date-strings-extractdatespy));
+- each row gets a suggested importance and event categories (from `common/event_categories.py`);
+- `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
+
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`.
+
+## Wikidata (`extract/wikidata.py`)
+
+One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-all.json.bz2`, about 97 GiB, a single bz2 stream; which dump: `TIMELINES_WD_DUMP`, default `wikidata-20261116`) keeps, for items with an English Wikipedia article, their time claims (inception, dissolution, point in time, start and end, discovery, publication), the links the row passes need (instance of, part of, heads of state and government, positions held, conflicts, discoverer) and those links' start and end qualifiers. It writes `wikidata/wikidata-<date>.sqlite` (about 0.9 GiB) and takes about 2 hours on 4 cores:
+
+    nohup pipelines/extract/.venv/bin/python -I -u pipelines/extract/wikidata.py > $TIMELINES_DATA/wikidata/pass.log 2>&1 &
+
+- `nohup` keeps it running after the shell that started it closes.
+- **Pause:** `touch $TIMELINES_DATA/wikidata/PAUSE` (or SIGTERM). It saves its offset; the next run skips back to it and goes on. `--restart` starts over and deletes the table file.
+- **Status:** `pipelines/extract/.venv/bin/python -I pipelines/extract/wd_status.py` (whether it's running, how far along, what the tables hold, two spot checks; safe while the pass runs).
+- Once the pass is complete, `extract.py` adds each candidate's Wikidata date and the comparison by itself; an unfinished table is ignored unless you pass `--wd-partial`.
+
+What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
 
 ## Provenance manifests
 

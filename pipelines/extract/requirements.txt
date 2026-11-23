@@ -1,0 +1,4 @@
+# The extractor's own environment (Kevin, 2026-11-22): Python 3.11.
+#   python3.11 -m venv pipelines/extract/.venv && pipelines/extract/.venv/bin/pip install -r pipelines/extract/requirements.txt
+mwparserfromhell==0.7.2
+indexed_bzip2==2.0.1   # parallel decompression of the single-stream Wikidata dump (wikidata.py, later)
