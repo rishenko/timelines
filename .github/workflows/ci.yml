@@ -36,6 +36,7 @@ jobs:
 
       # The content scripts must reproduce the source file exactly
       - run: npm run data:check
+      - run: npm run sources:check
 
       # The included timelines (Ancient and Classical, Modern States) and the key-event list must be what data-src/
       # compiles to

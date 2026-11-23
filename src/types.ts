@@ -68,6 +68,11 @@ export interface TimelineMeta {
    */
   hideRowsOutOfView?: boolean;
   /**
+   * Start with long stretches without events shortened ("compressed" gaps). On unless this is `false`; readers can
+   * turn it on or off in Filters, and a link's `compress=` wins. v10 (e.g. deep time, until it has events to fill it).
+   */
+  compress?: boolean;
+  /**
    * Ways to sort rows into categories besides the row tree (geography, people, civilization), each with its values.
    * Rows join values through Track.memberships. The region filter uses the first facet, and comparison sets show each row's broad region from it.
    */
@@ -392,7 +397,7 @@ export interface TimelineEvent extends DateDays {
 
 export interface Dataset {
   /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 9;
+  schemaVersion: 10;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest

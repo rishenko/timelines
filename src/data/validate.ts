@@ -46,6 +46,7 @@ export function validateDataset(d: unknown): string[] {
     if (share !== null && !(share > 0 && share <= 0.5)) errors.push('meta.calendar.beforePresent.circaShare must be more than 0 and at most 0.5.');
   }
   if (m.hideRowsOutOfView !== undefined && typeof m.hideRowsOutOfView !== 'boolean') errors.push('meta.hideRowsOutOfView must be true or false.');
+  if (m.compress !== undefined && typeof m.compress !== 'boolean') errors.push('meta.compress must be true or false.');
   if (m.range !== undefined && !(m.range && Number.isInteger(m.range.start) && Number.isInteger(m.range.end) && m.range.start < m.range.end))
     errors.push('meta.range needs whole-number years start < end.');
   if (m.continues !== undefined) {
