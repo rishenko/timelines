@@ -10,12 +10,13 @@
 - **Classical World description audit: check the judgment calls** in `docs/classical-sources.md` ("Description audit
   (18 November 2026)"): pages that disagree with themselves, and optional softenings. (*Polynesians* is settled:
   translation notices are fine and are mentioned in the event's description.)
-- **High/Low shifts at the 1400 BCE cut-off:** the Mesopotamian High and Low chronologies shift only dates before
-  1400 BCE, so an event that starts just before it and ends just after can shrink: Assyria's subjugation under Mitanni
-  (c. 1430–1360 BCE) becomes 1366–1360 BCE under Low. Decide whether a span's end should follow its start there.
-- **Re-check banners on cited pages now and then.** Wikipedia adds AI/LLM-text banners after the fact: *Norte Chico
-  civilization* had one by the 2026-11-18 audit, and everything taken from it was removed. Any audit or re-read should
-  report banners, and a flagged page's values come out.
+- **Re-check banners with each new dump.** Wikipedia adds AI/LLM-text banners after the fact: *Norte Chico
+  civilization* had one by the 2026-11-18 audit, and everything taken from it was removed. Since #93, `npm run
+  data:check` refuses any link in `data-src/` to a flagged page, using `data-src/ai-flagged-pages.txt`; rerun
+  `pipelines/extract/ai_flagged.py` with each dump (see `pipelines/README.md`, "A new dump") and the check names what
+  to remove.
+- **Ma'in (Minaeans):** its banner cites the LLM *translation* guideline, so it was left out; Kevin (2026-11-23):
+  use it, with the translation notice disclosed in the event's description (Dev A).
 
 ### More content
 
@@ -60,6 +61,18 @@ accounts, storage (hosted database vs. git-backed data with pull requests), conf
 additions separate from the published data, moderation and consent.
 
 ## Done
+
+- 23 November 2026 (#87–#101): schema v8, context lines (ages on `meta.context` and a row's `context`), with
+  regional ages drawn as lines of their row's strip; reigns as their own sub-kind, laid out first in a row (the reign
+  lane, two lines at most); view plugins from the site's `plugins/` folder; the Parchment retune and a Colour-blind
+  safe preset; nesting guides in row labels; the overview strip above the chart; the year cursor (Y) with its
+  "meanwhile" readout; phase names at 4.5:1 on bright rows in dark themes. Tooling: `npm run check:all`,
+  `a11y:report --state`, contrast sweeps over the whole chart from the served build, and the AI-flagged citation
+  check in `data:check`.
+- **Decided, no change (Kevin, 2026-11-23):** the High/Low shift at the 1400 BCE cut-off stays as it is. The
+  Mesopotamian chronologies shift only dates before 1400 BCE, so a span across it shrinks under Low (Assyria's
+  subjugation under Mitanni, c. 1430–1360 BCE, becomes 1366–1360 BCE): "leave it". *Xin dynasty* (translation
+  banner) stays unused: its years still come from the *Han dynasty* infobox.
 
 - The app: per-timeline settings (calendar, zoom levels, theme, credits), rows that nest to any depth, lifespans and
   phases, date claims with computed uncertainty ranges, switchable chronologies, connections between events, key and
