@@ -1,0 +1,76 @@
+/* Print (src/print/PrintView.tsx): the print layer is hidden on screen; when the browser prints (⌘P), it replaces the
+   app. Always white paper, whatever the theme. The page is an SVG laid out at A4 landscape's width, scaled to the
+   paper's width and, if the rows run long, down to its height (194 mm: A4 landscape less the margins; Letter is
+   taller), so it's one page on A4 or Letter with no settings. */
+.print-layer {
+  display: none;
+}
+@page {
+  size: landscape;
+  margin: 8mm;
+}
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+  body > #root {
+    display: none !important;
+  }
+  .print-layer {
+    display: block;
+  }
+  .print-page {
+    break-inside: avoid;
+  }
+  .print-page svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 194mm;
+  }
+}
+
+/* the toolbar's Export menu: a disclosure that looks like the toolbar's buttons, its items in a small dropdown */
+.export-menu {
+  position: relative;
+}
+.export-menu > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-3);
+  color: var(--text);
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+.export-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.export-menu > summary::after {
+  content: '▾';
+  margin-left: 6px;
+  font-size: 0.8em;
+}
+.export-items {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px var(--shadow);
+  white-space: nowrap;
+}
+.export-items button {
+  text-align: left;
+  min-height: 24px;
+}

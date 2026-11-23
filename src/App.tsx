@@ -1,4 +1,4 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { periodLaneIds } from './lib/periodLane.ts';
 import { reignLaneIds } from './lib/reignLane.ts';
 import { placeAges } from './lib/eras.ts';
@@ -52,6 +52,11 @@ import type { LibraryEntry } from './state/library.ts';
 import type { Dataset } from './types.ts';
 import type { ResolvedPhase } from './lib/chronology.ts';
 import type { ResolvedMembership } from './lib/memberOf.ts';
+import { createPortal, flushSync } from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import { PrintPages } from './print/PrintView.tsx';
+import { exportImage } from './print/export.ts';
+import './print/print.css';
 
 /**
  * The app shell: owns the open timeline's state (data and draft, chronology choices, zoom, folded rows, selection,
@@ -441,12 +446,64 @@ export default function App({ published: opened, library: libraryEntry, site, no
     shownHide !== (hideOutOfView && !editMode) ||
     shownThin !== thinRows;
 
+  // Print and Export: the view as it is on screen. The years in view come from the chart's width (80 px a tick, around
+  // the centre; approximate under stretched scales); the rows are those whose lane is on screen. Print mounts the print
+  // layer just before the browser lays out its page; Export draws the same view offscreen and downloads it.
+  const viewNow = () => {
+    const half = ((window.innerWidth - 220) / 80) * increment * 0.5;
+    const scroller = document.querySelector('.tl-scroller')?.getBoundingClientRect();
+    const rows = scroller
+      ? new Set(
+          [...document.querySelectorAll<HTMLElement>('.tl-lane[data-lane]:not(.thin)')]
+            .filter((el) => {
+              const r = el.getBoundingClientRect();
+              return r.bottom > scroller.top && r.top < scroller.bottom;
+            })
+            .map((el) => el.dataset.lane!),
+        )
+      : undefined;
+    // out to whole zoom steps, so the page's edges are round years
+    return { from: Math.floor((centerRef.current - half) / increment) * increment, to: Math.ceil((centerRef.current + half) / increment) * increment, rows };
+  };
+  const [printing, setPrinting] = useState<ReturnType<typeof viewNow> | null>(null);
+  const viewNowRef = useRef(viewNow);
+  useEffect(() => {
+    viewNowRef.current = viewNow;
+  });
+  useEffect(() => {
+    const before = () => flushSync(() => setPrinting(viewNowRef.current()));
+    const after = () => setPrinting(null);
+    window.addEventListener('beforeprint', before);
+    window.addEventListener('afterprint', after);
+    return () => {
+      window.removeEventListener('beforeprint', before);
+      window.removeEventListener('afterprint', after);
+    };
+  }, []);
+  const printProps = { data: viewData, events: visibleEvents, spans, phases, visibleTracks: rowsOn, collapsed, sourceNote: meta.credits };
+  const onExport = (kind: 'png' | 'svg') => {
+    const host = document.createElement('div');
+    const root = createRoot(host);
+    flushSync(() => root.render(<PrintPages {...printProps} {...viewNow()} figure />));
+    const svg = host.querySelector('svg');
+    if (svg) void exportImage(svg, meta.title, kind).then(() => setAnnouncement(`Saved an image of this view (${kind.toUpperCase()})`));
+    root.unmount();
+  };
+
   return (
     <div className="app">
+      {printing &&
+        createPortal(
+          <div className="print-layer">
+            <PrintPages {...printProps} {...printing} />
+          </div>,
+          document.body,
+        )}
       <a href="#timeline" className="skip-link">
         {view === 'table' ? 'Skip to the table' : 'Skip to the timeline'}
       </a>
       <Toolbar
+        onExport={view === 'timeline' ? onExport : undefined}
         view={view}
         pluginView={plugin ? { name: plugin.name, on: pluginOn, onShow: () => (setPluginOn(true), setAnnouncement(`${plugin.name} view`)) } : undefined}
         onView={(v) => {
