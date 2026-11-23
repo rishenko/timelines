@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { hostOf, safeUrl } from '../lib/urls.ts';
 import { labelStopKey } from './keyboard.ts';
 import type { LaneDef } from './layout.ts';
@@ -65,6 +66,15 @@ export function LaneLabel({ lane, regionTip, tag, compare, labelW, overflow, exp
   );
   return (
     <div className="tl-lane-label" style={{ width: labelW }}>
+      {lane.depth > 0 && (
+        // nesting guides: one vertical line per level, under the start of each ancestor's name (like an outline's indent
+        // guides), and an elbow from the innermost one to this row's name
+        <span className="nest-guides" aria-hidden="true">
+          {Array.from({ length: lane.depth }, (_, i) => (
+            <span key={i} className={`nest-guide${i === lane.depth - 1 ? ' last' : ''}`} style={{ '--i': i } as CSSProperties} />
+          ))}
+        </span>
+      )}
       <span className="chip" />
       {image && <img src={image} alt="" className="logo" />}
       {tag ? (
