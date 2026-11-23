@@ -20,6 +20,7 @@ to the top of a row's events. Every placed reign also has reign=yes in rulers.cs
 of the timeline with the events added (id <timeline>-rulers-pilot) for a local preview; it is never committed.
 """
 import csv
+import functools
 import json
 import math
 import os
@@ -52,6 +53,21 @@ NOT_HEAD = re.compile(r'\b(administration|chief of staff|deputy|vice|prime|premi
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
+# the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
+LIST_NOUNS = ('monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
+              'caliphs', 'khans', 'khagans', 'pharaohs', 'heads of state', 'presidents', 'grand dukes', 'grand princes',
+              'princes', 'dukes', 'emirs', 'beys', 'nawabs', 'maharajas', 'rajas', 'kings and queens', 'consuls', 'tyrants')
+# a list's people who aren't its rulers: consorts, regents, ministers, governors, deputies, claimants
+NOT_RULER = re.compile(r'\b(consort|regent|regency|vizier|wazir|heir|crown prince|pretender|titular|claimant|governor|'
+                       r'viceroy|vice|deputy|acting|chancellor|minister|commander|general|valide|haseki|mother|dowager|tsaritsa|tsarina|'
+                       r'disputed|head of the [\w ]*(house|family))\b', re.I)
+LIST_NOUN = re.compile(r'\b(' + '|'.join(LIST_NOUNS) + r')\b', re.I)
+# words too common to tie an office to a row ("Emperor of the Holy Roman Empire" isn't Mughal)
+GENERIC = {'empire', 'kingdom', 'dynasty', 'republic', 'state', 'states', 'sultanate', 'caliphate', 'principality',
+           'duchy', 'grand', 'united', 'federal', 'people', 'peoples', 'democratic', 'socialist', 'soviet', 'first',
+           'second', 'third', 'later', 'early', 'late', 'great', 'greater', 'northern', 'southern', 'eastern', 'western',
+           'upper', 'lower', 'free', 'royal', 'imperial', 'holy', 'new', 'old', 'restored', 'provisional', 'government',
+           'national', 'kingdoms', 'confederation', 'union', 'regime', 'puppet', 'rule', 'under', 'colony', 'colonial'}
 
 
 def to_gregorian(t):
@@ -139,6 +155,16 @@ def wp_reigns(params):
 
 # ---- Wikidata side ----
 
+@functools.lru_cache(maxsize=8192)
+def page_of(title):
+    return wp_dump.page(title)
+
+
+def stems(words):
+    """Distinctive row words, cut to a stem so "Ethiopian" matches "Emperor of Ethiopia"."""
+    return {w[:max(4, len(w) - 3)] for w in words if w not in GENERIC}
+
+
 class Sources:
     def __init__(self, data):
         self.wd = sqlite3.connect(f'file:{os.path.join(data, "wikidata", "wikidata-20261116.sqlite")}?mode=ro', uri=True)
@@ -164,6 +190,26 @@ class Sources:
              for qp, t, p, cal in self.wd.execute('SELECT qprop, time, precision, calendar FROM wd_qual WHERE sid=?', (sid,))
              if p and p >= 9} if sid else {}
         return q.get('P580', (None, None))[0], q.get('P582', (None, None))[0], q.get('P580', (None, None))[1], q.get('P582', (None, None))[1]
+
+    def p39_terms(self, person):
+        """Every position-held term of one person, to cross-check a reign found through a list page."""
+        return [self.terms(sid) + (f'P39 {office}',) for sid, office in
+                self.wd.execute("SELECT sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND qid=?", (person,))]
+
+    def list_pages(self, names):
+        """{list page title: name it was found by} for "List of <noun> of <name>" titles that exist (redirects followed)."""
+        cands = {}
+        for n in names:
+            for noun in LIST_NOUNS:
+                for t in (f'List of {noun} of {n}', f'List of {noun} of the {n}'):
+                    cands[t] = n
+        out = {}
+        keys = list(cands)
+        for i in range(0, len(keys), 500):
+            part = keys[i:i + 500]
+            for title, red in self.wp.execute(f"SELECT title, redirect_to FROM page WHERE ns=0 AND title IN ({','.join('?' * len(part))})", part):
+                out.setdefault((red or title).split('#')[0], cands[title])
+        return out
 
     def holders(self, offices):
         """{person qid: [terms]} of everyone whose position held (P39) names one of the offices."""
@@ -352,7 +398,7 @@ def run(timeline, row_ids, src):
         via = {}
         ruled = src.rulers(polities, via)
         for t in titles:  # Wikipedia's route: the state infoboxes' leader1, leader2… (Bourbon Restoration, July Monarchy)
-            pg = wp_dump.page(t)
+            pg = page_of(t)
             for k, raw in infobox_params(pg['text'] if pg else '').items():
                 if LEADER.match(k):
                     for target in LINK.findall(raw):
@@ -368,19 +414,64 @@ def run(timeline, row_ids, src):
         for person, terms in src.holders([k[1] for k in polity_win if isinstance(k, tuple)]).items():
             ruled.setdefault(person, []).extend(t for t in terms if t not in ruled[person])
             via.setdefault(person, set()).update(('office', t[-1].split(' ', 1)[1]) for t in terms)
+        # list pages: "List of <noun> of <row, phase or their article>", and the `succession` links of rulers already
+        # found ([[List of emperors of the Mughal Empire|Mughal emperor]] on Babur); a list found through a phase, or
+        # through a ruler kept to a phase, belongs to that phase
+        pnames = {p['name']: [(hist(p['start']), hist(p.get('end', w1)))] for p in tr.get('phases', [])}
+        lists, subject = {}, {}  # list title -> window; -> the name its office text must carry
+        for lt, n in src.list_pages([tr['name']] + list(pnames) + titles).items():
+            w = pnames.get(n) or phase_win.get(n)
+            lists[lt] = None if n in (tr['name'], titles[0]) or w is None else w
+            subject[lt] = n
+        for person in list(ruled):
+            pg = page_of(src.title(person) or '')
+            pw = None if not via.get(person) or not all(polity_win.get(q) for q in via[person]) else [w for q in via[person] for w in polity_win[q]]
+            for k, raw in infobox_params(pg['text'] if pg else '').items():
+                if k.startswith('succession'):
+                    for target in LINK.findall(raw):
+                        lt = (page_of(target.strip()) or {}).get('title', '')
+                        if lt.startswith('List of') and LIST_NOUN.search(lt.split(' of ')[1]):  # not "List of governors-general of Taiwan"
+                            lists[lt] = None if lists.get(lt, 0) is None or pw is None else (lists.get(lt) or []) + pw
+                            subject.setdefault(lt, target.split(' of ', 2)[-1] if target.count(' of ') >= 2 else tr['name'])
+        row_stems = stems(words)
+        list_only, list_stems = set(), {}
+        for lt, w in lists.items():
+            polity_win[('list', lt)] = w
+            list_stems.setdefault(lt, stems({x.lower() for x in re.findall(r'[A-Za-z]{4,}', subject.get(lt, tr['name']))}) or row_stems)
+            pg = page_of(lt)
+            for target in dict.fromkeys(LINK.findall(pg['text'] if pg else '')):
+                target = target.strip()
+                if ':' in target or target.startswith('List of') or re.match(r'^\d', target):
+                    continue
+                q = src.qid(target)
+                if not q:
+                    q = src.qid((page_of(target) or {}).get('title', ''))
+                if not q:
+                    continue
+                if q not in ruled:
+                    ruled[q] = src.p39_terms(q)
+                    list_only.add(q)
+                via.setdefault(q, set()).add(('list', lt))
         for person, terms in ruled.items():
             terms = merge_terms(list(dict.fromkeys(terms)))
             name = src.title(person)
             if not name:
                 continue
-            page = wp_dump.page(name)
+            page = page_of(name)
             flags = []
             if not page:
                 continue
             if wp_dump.ai_flagged(page['text']):
                 flags.append('AI-flagged article: not usable')
             # a span whose own office text is a non-head office (Franco as head of government) isn't a reign
-            got = picks([x for x in wp_reigns(infobox_params(page['text'])) if not NOT_HEAD.search(x[2])], terms, words)
+            cand = [x for x in wp_reigns(infobox_params(page['text'])) if not NOT_HEAD.search(x[2])]
+            if person in list_only:  # reached only through list pages: a ruler's office that names the list's subject
+                need = set().union(*(list_stems[q[1]] for q in via[person] if isinstance(q, tuple) and q[0] == 'list'))
+                cand = [x for x in cand if any(st in x[2].lower() for st in need) and not NOT_RULER.search(x[2])
+                        and (x[0].startswith('reign') or RULER_WORD.search(x[2]))]
+                if not cand:
+                    continue
+            got = picks(cand, terms, words)
             dated = [t for t in terms if t[0]]
             if not got:
                 if dated and any(overlap(t[0][0], year(t[1]), r0, r1) >= 0 for t in dated):
