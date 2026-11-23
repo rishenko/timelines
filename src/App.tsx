@@ -1,4 +1,4 @@
-import { useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { periodLaneIds } from './lib/periodLane.ts';
 import { placeAges } from './lib/eras.ts';
 import { TimelineView } from './timeline/TimelineView.tsx';
@@ -24,6 +24,9 @@ import { TimelinePicker } from './components/TimelinePicker.tsx';
 import { EditBar } from './components/EditBar.tsx';
 import { SidePanel, type Editing } from './components/SidePanel.tsx';
 import type { SelectedPhase } from './components/PhasePanel.tsx';
+import { pluginUrl, PLUGIN_API, type ViewContext } from './plugins/api.ts';
+import { PluginView } from './plugins/PluginView.tsx';
+import { usePlugin } from './plugins/usePlugin.ts';
 import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
@@ -127,6 +130,13 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const shownFilters = useMemo(() => ({ ...filters, tracks: rowsOn }), [filters, rowsOn]);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
+  // a view plugin: an ES module from this site's plugins/ folder (?plugin=plugins/<name>.js), shown as a third view
+  // after Timeline and Table (docs/plugins.md). Read once at load; a link naming one from anywhere else is refused.
+  const [pluginAt, pluginRefused] = useMemo(() => {
+    const raw = new URLSearchParams(window.location.search).get('plugin');
+    const at = pluginUrl(raw);
+    return [at, !!raw && !at] as const;
+  }, []);
   // on opening, readers with a saved draft hear if the published timeline changed underneath it
   const [toast, notify] = useToast(
     unreadableDraft
@@ -135,7 +145,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
       : updatedUnderDraft
         ? 'The published timeline has been updated. Your local edits are kept on top of the new version.'
         : // Boot's notice, then what the link names that this timeline can't open (one toast)
-          [notice, initialUrl.notice].filter(Boolean).join(' ') || null,
+          [notice, initialUrl.notice, pluginRefused && "This link names a view plugin from outside this site's plugins folder, so it wasn't loaded."]
+            .filter(Boolean)
+            .join(' ') || null,
   );
 
   useEffect(() => {
@@ -376,6 +388,29 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const shownPhases = useDeferredValue(phases);
   const shownMemberOf = useDeferredValue(memberOf);
   const shownRows = useDeferredValue(rowsOn);
+  const onPluginError = useCallback((why: string) => notify(`The view plugin didn't load: ${why}.`, 'error'), [notify]);
+  const plugin = usePlugin(pluginAt, data.schemaVersion, onPluginError);
+  const [pluginOn, setPluginOn] = useState(!!pluginAt);
+  const pluginCtx = useMemo<ViewContext | null>(
+    () =>
+      plugin
+        ? Object.freeze({
+            apiVersion: PLUGIN_API,
+            data: shownData,
+            events: shownListEvents,
+            spans: shownSpans,
+            selectedId,
+            formatYear: (y: number) => formatYear(y, cal),
+            select: (id: string | null) => setSelectedId(id),
+            showOnTimeline: (year: number) => {
+              setPluginOn(false);
+              setView('timeline');
+              focusOn({ year });
+            },
+          })
+        : null,
+    [plugin, shownData, shownListEvents, shownSpans, selectedId, cal, focusOn],
+  );
   const shownCollapsed = useDeferredValue(collapsed);
   const shownCompress = useDeferredValue(compress);
   const shownHide = useDeferredValue(hideOutOfView && !editMode);
@@ -400,7 +435,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
       </a>
       <Toolbar
         view={view}
+        pluginView={plugin ? { name: plugin.name, on: pluginOn, onShow: () => (setPluginOn(true), setAnnouncement(`${plugin.name} view`)) } : undefined}
         onView={(v) => {
+          setPluginOn(false);
           setView(v);
           setAnnouncement(v === 'table' ? 'Table view' : 'Timeline view');
           // back on the chart, bring the selected event into view
@@ -648,7 +685,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
       )}
 
       <main className={hasSidePanel ? 'with-panel' : ''}>
-        {view === 'table' ? (
+        {pluginOn && plugin && pluginCtx ? (
+          <PluginView plugin={plugin} ctx={pluginCtx} />
+        ) : view === 'table' ? (
           <TableView
             data={shownData}
             events={shownListEvents}

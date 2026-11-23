@@ -9,6 +9,8 @@ interface Props {
   /** Timeline (the chart) or table. The chart's own controls (zoom, rows) are hidden in table view. */
   view: View;
   onView: (v: View) => void;
+  /** A view plugin's button after Timeline and Table (docs/plugins.md), and whether its view is showing. */
+  pluginView?: { name: string; on: boolean; onShow: () => void };
   increments: number[];
   /** Zoom steps too wide to draw for this timeline (shown, but disabled). */
   tooWide?: Set<number>;
@@ -60,17 +62,27 @@ export function Toolbar(p: Props) {
         {(['timeline', 'table'] as const).map((v) => (
           <button
             key={v}
-            className={`seg ${p.view === v ? 'on' : ''}`}
-            aria-pressed={p.view === v}
+            className={`seg ${p.view === v && !p.pluginView?.on ? 'on' : ''}`}
+            aria-pressed={p.view === v && !p.pluginView?.on}
             onClick={() => p.onView(v)}
             title={v === 'table' ? 'The same events as tables, with dates and sources in words' : 'The events on a time axis'}
           >
             {v === 'timeline' ? 'Timeline' : 'Table'}
           </button>
         ))}
+        {p.pluginView && (
+          <button
+            className={`seg ${p.pluginView.on ? 'on' : ''}`}
+            aria-pressed={p.pluginView.on}
+            onClick={p.pluginView.onShow}
+            title={`${p.pluginView.name}: a view from a plugin`}
+          >
+            {p.pluginView.name}
+          </button>
+        )}
       </div>
       {p.dating}
-      {p.view === 'timeline' && (
+      {p.view === 'timeline' && !p.pluginView?.on && (
         <>
           <div className="group" role="group" aria-label={p.increments.some((i) => i < 1) ? 'Zoom: time per tick' : 'Years per tick'}>
             {p.increments.map((inc) => (

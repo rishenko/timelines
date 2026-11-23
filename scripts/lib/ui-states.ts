@@ -41,6 +41,13 @@ export function uiStates(base: string, timeline: string): UiState[] {
     ['search results', async (p) => (await p.locator('input[type=search], .search input').first().fill('egypt'), p.waitForTimeout(300))],
     ['event details', (p) => click(p, '.tl-mark:not(.cluster)')],
     ['table view', (p) => p.goto(timelineUrl(base, timeline, '&view=table'))],
+    // the sample view plugin (docs/plugins.md): its view, then with a century picked
+    ['plugin view', async (p) => (await p.goto(timelineUrl(base, timeline, '&plugin=plugins/centuries.js')), p.locator('.cv .bar').first().waitFor())],
+    ['plugin view, century picked', async (p) => {
+      await p.goto(timelineUrl(base, timeline, '&plugin=plugins/centuries.js'));
+      await p.locator('.cv .bar:not([disabled])').first().click();
+      await p.locator('.cv li button').first().waitFor();
+    }],
     ['edit mode', (p) => editMode(p)],
     ['event editor', async (p) => (await editMode(p), clickText(p, '+ Event'))],
     ['event editor with claims', async (p) => {
