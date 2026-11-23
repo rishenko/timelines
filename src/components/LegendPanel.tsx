@@ -18,6 +18,8 @@ interface Props {
   onTour?: () => void;
   /** Events on the period lane (golden ages, long society spans): the Legend explains the line when there are any. */
   periodLane?: ReadonlySet<string>;
+  /** Events on the reign lane: the Legend explains the line when there are any. */
+  reignLane?: ReadonlySet<string>;
 }
 
 interface Item {
@@ -92,7 +94,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
   );
 }
 
-export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
+export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Props) {
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
   const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
@@ -235,10 +237,16 @@ export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
       ),
     },
     {
+      sample: <span className="lg-reign" />,
+      show: !!reignLane?.size,
+      title: 'Reigns',
+      text: 'A row’s rulers, such as “Reign of Ramesses II”, come first among its events, one after another on its top line. Co-rulers and rival claimants stack onto a second line, and a gap between reigns is a time with no sourced ruler. Zoomed out, reigns that don’t fit fold into the row’s “+N”.',
+    },
+    {
       sample: <span className="lg-period" />,
       show: !!periodLane?.size,
       title: 'Golden ages and long spans',
-      text: 'A row’s golden ages, and spans of 25 years or more in religion, law, culture or the economy, sit on a line of their own just under its phases, above its other events. They cross its rulers, so they are kept apart from what happened within them.',
+      text: 'A row’s golden ages, and spans of 25 years or more in religion, law, culture or the economy, sit on a line of their own under its phases and reigns, above its other events. They cross its rulers, so they are kept apart from what happened within them.',
     },
     {
       sample: <span className="lg-cluster">+3</span>,

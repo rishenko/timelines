@@ -325,3 +325,13 @@
   border-top: 4px solid var(--line-2);
   background: linear-gradient(to bottom, transparent 3px, var(--bg-3) 3px 10px, transparent 10px);
 }
+/* the reign lane's sample: reigns one after another on one line, with a gap */
+.lg-reign {
+  display: inline-block;
+  width: 44px;
+  height: 16px;
+  background: linear-gradient(to right, var(--bg-3) 0 18px, transparent 18px 22px, var(--bg-3) 22px 34px, transparent 34px 38px, var(--bg-3) 38px);
+  background-size: 100% 7px;
+  background-position: 0 4px;
+  background-repeat: no-repeat;
+}
