@@ -92,7 +92,20 @@ This writes `candidates.csv` (one row per date claim) and `report.md` to `pipeli
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
-Normaliser tests: `cd pipelines/extract && python3 -m unittest test_dates`.
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`.
+
+## Wikidata (`extract/wikidata.py`)
+
+One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-all.json.bz2`, about 97 GiB, a single bz2 stream) keeps, for items with an English Wikipedia article, their time claims (inception, dissolution, point in time, start and end, discovery, publication), the links the row passes need (instance of, part of, heads of state and government, positions held, conflicts, discoverer) and those links' start and end qualifiers. It writes `wikidata/wikidata-<date>.sqlite` (about 0.9 GiB) and takes about 2 hours on 4 cores:
+
+    nohup pipelines/extract/.venv/bin/python -I -u pipelines/extract/wikidata.py > $TIMELINES_DATA/wikidata/pass.log 2>&1 &
+
+- `nohup` keeps it running after the shell that started it closes.
+- **Pause:** `touch $TIMELINES_DATA/wikidata/PAUSE` (or SIGTERM). It saves its offset; the next run skips back to it and goes on. `--restart` starts over and deletes the table file.
+- **Status:** `pipelines/extract/.venv/bin/python -I pipelines/extract/wd_status.py` (whether it's running, how far along, what the tables hold, two spot checks; safe while the pass runs).
+- Once the pass is complete, `extract.py` adds each candidate's Wikidata date and the comparison by itself; an unfinished table is ignored unless you pass `--wd-partial`.
+
+What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
 
 ## Provenance manifests
 
