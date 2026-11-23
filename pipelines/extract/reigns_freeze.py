@@ -172,7 +172,7 @@ def main():
             n = 2
             while uid in review:
                 uid, n = f"{base}-m{ev.get('startMonth') or 0}-{n}", n + 1
-        ev = dict(ev, uuid=uid)
+        ev = {k: v for k, v in dict(ev, uuid=uid).items() if not (k == 'importance' and v == 2)}  # 2 is the default
         keep.append(ev)
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}

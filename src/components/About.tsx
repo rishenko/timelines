@@ -57,7 +57,7 @@ export function About({ search = window.location.search, pathname = window.locat
           <strong>Natural Earth</strong>: the land on the event maps.
         </li>
         <li>
-          <strong>Wikidata</strong>: identifiers and, for some rows, a location for the map. Never a date.
+          <strong>Wikidata</strong>: identifiers, a location for the map on some rows, and the names of rulers to look up. Never a date: reign dates come from Wikipedia. Where Wikidata's term differs by more than a month, the reign is marked for checking, and an open Wikidata term marks a modern reign as ongoing.
         </li>
       </ul>
 
