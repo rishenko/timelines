@@ -206,6 +206,11 @@ class EraBeforeYear(unittest.TestCase):  # "AD 1" parsed to nothing before the #
         s = one('44 BC – AD 14')
         self.assertEqual((s['start'], s['end']), ((-44, None, None), (14, None, None)))
 
+    def test_spaced_tilde_range(self):
+        s = one('234 ~ November 286 A.D.')  # Goi of Baekje: a range, not day 234 of November 286
+        self.assertEqual((s['start'], s['end']), ((234, None, None), (286, 11, None)))
+        self.assertEqual(one('~1500')['start'], (1500, None, None))
+
 
 class AstronomicalOutput(unittest.TestCase):
     """Internal years are historical (44 BC = -44); what's written out is astronomical, as the timelines store it."""

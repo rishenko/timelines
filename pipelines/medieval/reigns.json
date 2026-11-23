@@ -283,7 +283,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 695 (805 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 695.",
    "sources": [
     {
      "sourceKey": "wp-eudokia-wife-of-justinian-ii",
@@ -466,7 +466,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 4 June 713 (787 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 4 June 713 to 715 (2 years).",
    "sources": [
     {
      "sourceKey": "wp-anastasius-ii-emperor",
@@ -527,7 +527,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 717 (783 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 717.",
    "sources": [
     {
      "sourceKey": "wp-basil-onomagoulos",
@@ -743,7 +743,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 775 (725 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 775.",
    "sources": [
     {
      "sourceKey": "wp-eudokia-wife-of-constantine-v",
@@ -1089,7 +1089,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 25 December 811 (689 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 25 December 811 to 11 July 813 (2 years).",
    "sources": [
     {
      "sourceKey": "wp-staurakios-son-of-michael-i",
@@ -2042,7 +2042,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 10 January 976 (524 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 10 January 976.",
    "sources": [
     {
      "sourceKey": "wp-basil-ii",
@@ -2061,10 +2061,7 @@
       }
      ]
     }
-   ],
-   "end": 976,
-   "endMonth": 1,
-   "endDay": 10
+   ]
   },
   {
    "uuid": "reign-constantine-viii",
@@ -2075,7 +2072,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 15 December 1025 (475 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 15 December 1025 to 11 November 1028 (3 years).",
    "sources": [
     {
      "sourceKey": "wp-constantine-viii",
@@ -2490,7 +2487,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 1068 (432 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 1068.",
    "sources": [
     {
      "sourceKey": "wp-andronikos-doukas-co-emperor",
@@ -2961,7 +2958,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 12 September 1185 (315 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 12 September 1185 to 8 April 1195 (10 years).",
    "sources": [
     {
      "sourceKey": "wp-isaac-ii-angelos",
@@ -3126,7 +3123,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 12 April 1204 (296 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 12 April 1204.",
    "sources": [
     {
      "sourceKey": "wp-constantine-laskaris",
@@ -3946,7 +3943,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Byzantine Empire from 6 January 1449 (51 years).",
+   "descr": "Rules as head of state of Byzantine Empire from 6 January 1449.",
    "sources": [
     {
      "sourceKey": "wp-constantine-xi-palaiologos",
@@ -4793,7 +4790,7 @@
    "tracks": [
     "serbia"
    ],
-   "descr": "Rules as head of state of Serbia from 1162 (338 years).",
+   "descr": "Rules as head of state of Serbia from 1162.",
    "sources": [
     {
      "sourceKey": "wp-belo",
@@ -10016,7 +10013,7 @@
    "tracks": [
     "great-moravia"
    ],
-   "descr": "Rules as head of state of Great Moravia from 846 (654 years).",
+   "descr": "Rules as head of state of Great Moravia from 846.",
    "sources": [
     {
      "sourceKey": "wp-mojmir-i-of-moravia",
@@ -10073,7 +10070,7 @@
    "tracks": [
     "great-moravia"
    ],
-   "descr": "Rules as head of state of Great Moravia from 871 (629 years).",
+   "descr": "Rules as head of state of Great Moravia from 871.",
    "sources": [
     {
      "sourceKey": "wp-slavomir-of-moravia",
@@ -13199,7 +13196,7 @@
    "tracks": [
     "hungary"
    ],
-   "descr": "Rules as head of state of Hungary from 997 (503 years).",
+   "descr": "Rules as head of state of Hungary from 997.",
    "sources": [
     {
      "sourceKey": "wp-g-za-grand-prince-of-the-hungarians",
@@ -15815,7 +15812,7 @@
    "tracks": [
     "lithuania"
    ],
-   "descr": "Rules as head of state of Lithuania from 1382 (118 years).",
+   "descr": "Rules as head of state of Lithuania from 1382.",
    "sources": [
     {
      "sourceKey": "wp-k-stutis",
@@ -15834,8 +15831,7 @@
       }
      ]
     }
-   ],
-   "end": 1382
+   ]
   },
   {
    "uuid": "reign-vytautas-the-great",
@@ -22271,7 +22267,7 @@
    "tracks": [
     "aragon"
    ],
-   "descr": "Rules as head of state of Kingdom of Aragon from 16 August 1157 (343 years).",
+   "descr": "Rules as head of state of Kingdom of Aragon from 16 August 1157.",
    "sources": [
     {
      "sourceKey": "wp-ramiro-ii-of-aragon",
@@ -22290,10 +22286,7 @@
       }
      ]
     }
-   ],
-   "end": 1157,
-   "endMonth": 8,
-   "endDay": 16
+   ]
   },
   {
    "uuid": "reign-alfonso-ii-of-aragon-2",
@@ -30199,7 +30192,7 @@
    "tracks": [
     "denmark"
    ],
-   "descr": "Rules as head of state of Denmark from 1396 (104 years).",
+   "descr": "Rules as head of state of Denmark from 1396 to 24 September 1439 (43 years).",
    "sources": [
     {
      "sourceKey": "wp-erik-of-pomerania",
@@ -31004,7 +30997,7 @@
    "tracks": [
     "norway"
    ],
-   "descr": "Rules as head of state of Norway from 1110 (390 years).",
+   "descr": "Rules as head of state of Norway from 1110.",
    "sources": [
     {
      "sourceKey": "wp-inge-the-elder",
@@ -31092,7 +31085,7 @@
    "tracks": [
     "norway"
    ],
-   "descr": "Rules as head of state of Norway from 1132 (368 years).",
+   "descr": "Rules as head of state of Norway from 1132.",
    "sources": [
     {
      "sourceKey": "wp-magnus-the-strong",
@@ -31422,7 +31415,7 @@
    "tracks": [
     "norway"
    ],
-   "descr": "Rules as head of state of Norway from 1177 (323 years).",
+   "descr": "Rules as head of state of Norway from 1177 to 9 March 1202 (25 years).",
    "sources": [
     {
      "sourceKey": "wp-sverre-of-norway",
@@ -32550,7 +32543,7 @@
    "tracks": [
     "sweden"
    ],
-   "descr": "Rules as head of state of Sweden from 1110 (390 years).",
+   "descr": "Rules as head of state of Sweden from 1110.",
    "sources": [
     {
      "sourceKey": "wp-inge-the-elder",
@@ -32607,7 +32600,7 @@
    "tracks": [
     "sweden"
    ],
-   "descr": "Rules as head of state of Sweden from 1132 (368 years).",
+   "descr": "Rules as head of state of Sweden from 1132.",
    "sources": [
     {
      "sourceKey": "wp-magnus-the-strong",
@@ -33267,7 +33260,7 @@
    "tracks": [
     "sweden"
    ],
-   "descr": "Rules as head of state of Sweden from 1396 (104 years).",
+   "descr": "Rules as head of state of Sweden from 1396 to 24 September 1439 (43 years).",
    "sources": [
     {
      "sourceKey": "wp-erik-of-pomerania",
@@ -35577,7 +35570,7 @@
    "tracks": [
     "caliphate"
    ],
-   "descr": "Rules as head of state of Caliphate from September 944 (556 years).",
+   "descr": "Rules as head of state of Caliphate from September 944 to 946 (2 years).",
    "sources": [
     {
      "sourceKey": "wp-al-mustakfi",
@@ -36960,7 +36953,7 @@
    "tracks": [
     "kingdom-of-jerusalem"
    ],
-   "descr": "Rules as head of state of Kingdom of Jerusalem from 1228 (272 years).",
+   "descr": "Rules as head of state of Kingdom of Jerusalem from 1228.",
    "sources": [
     {
      "sourceKey": "wp-frederick-ii-holy-roman-emperor",
@@ -36979,8 +36972,7 @@
       }
      ]
     }
-   ],
-   "end": 1228
+   ]
   },
   {
    "uuid": "reign-conradin-2",
@@ -39128,7 +39120,7 @@
    "tracks": [
     "ramadanid-emirate"
    ],
-   "descr": "Rules as head of state of Ramadanid Emirate from 1383 (117 years).",
+   "descr": "Rules as head of state of Ramadanid Emirate from 1383 to 1417 (34 years).",
    "sources": [
     {
      "sourceKey": "wp-ahmed-of-ramadan",
@@ -39248,7 +39240,7 @@
    "tracks": [
     "samanid-empire"
    ],
-   "descr": "Rules as head of state of Samanid Empire from 2 February 999 (501 years).",
+   "descr": "Rules as head of state of Samanid Empire from 2 February 999.",
    "sources": [
     {
      "sourceKey": "wp-abd-al-malik-ii-samanid-emir",
@@ -41785,7 +41777,7 @@
    "tracks": [
     "chagatai-khanate"
    ],
-   "descr": "Rules as head of state of Chagatai Khanate from 1358 (142 years).",
+   "descr": "Rules as head of state of Chagatai Khanate from 1358.",
    "sources": [
     {
      "sourceKey": "wp-shah-temur",
@@ -42454,7 +42446,7 @@
    "tracks": [
     "crimean-khanate"
    ],
-   "descr": "Rules as head of state of Crimean Khanate from 1456 (44 years).",
+   "descr": "Rules as head of state of Crimean Khanate from 1456.",
    "sources": [
     {
      "sourceKey": "wp-hayder-of-crimea",
@@ -43578,7 +43570,7 @@
    "tracks": [
     "rashtrakuta-empire"
    ],
-   "descr": "Rules as head of state of Rashtrakutas from 756 (744 years).",
+   "descr": "Rules as head of state of Rashtrakutas from 756.",
    "sources": [
     {
      "sourceKey": "wp-dantidurga",
@@ -43766,7 +43758,7 @@
    "tracks": [
     "chola-empire"
    ],
-   "descr": "Rules as head of state of Chola Empire from 871 (629 years).",
+   "descr": "Rules as head of state of Chola Empire from 871.",
    "sources": [
     {
      "sourceKey": "wp-vijayalaya-chola",
@@ -44081,7 +44073,7 @@
    "tracks": [
     "vijayanagara-empire"
    ],
-   "descr": "Rules as head of state of Vijayanagara Empire from 1424 (76 years).",
+   "descr": "Rules as head of state of Vijayanagara Empire from 1424.",
    "sources": [
     {
      "sourceKey": "wp-veera-vijaya-bukka-raya",
@@ -44171,7 +44163,7 @@
    "tracks": [
     "vijayanagara-empire"
    ],
-   "descr": "Rules as head of state of Vijayanagara Empire from 1485 (15 years).",
+   "descr": "Rules as head of state of Vijayanagara Empire from 1485.",
    "sources": [
     {
      "sourceKey": "wp-praudha-raya",
@@ -44228,7 +44220,7 @@
    "tracks": [
     "vijayanagara-empire"
    ],
-   "descr": "Rules as head of state of Vijayanagara Empire from 1491 (9 years).",
+   "descr": "Rules as head of state of Vijayanagara Empire from 1491.",
    "sources": [
     {
      "sourceKey": "wp-saluva-narasimha-deva-raya",
@@ -44256,7 +44248,7 @@
    "tracks": [
     "vijayanagara-empire"
    ],
-   "descr": "Rules as head of state of Vijayanagara Empire from 1491 (9 years).",
+   "descr": "Rules as head of state of Vijayanagara Empire from 1491.",
    "sources": [
     {
      "sourceKey": "wp-thimma-bhupala",
@@ -44458,7 +44450,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 691 (809 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 691.",
    "sources": [
     {
      "sourceKey": "wp-unhanagara-hatthadatha",
@@ -45385,7 +45377,7 @@
    "tracks": [
     "sri-lanka"
    ],
-   "descr": "Rules as head of state of Sri Lanka from 1187 (313 years).",
+   "descr": "Rules as head of state of Sri Lanka from 1187.",
    "sources": [
     {
      "sourceKey": "wp-mahinda-vi",
@@ -45442,7 +45434,7 @@
    "tracks": [
     "sri-lanka"
    ],
-   "descr": "Rules as head of state of Sri Lanka from 1196 (304 years).",
+   "descr": "Rules as head of state of Sri Lanka from 1196.",
    "sources": [
     {
      "sourceKey": "wp-vira-bahu-i",
@@ -45470,7 +45462,7 @@
    "tracks": [
     "sri-lanka"
    ],
-   "descr": "Rules as head of state of Sri Lanka from 1196 (304 years).",
+   "descr": "Rules as head of state of Sri Lanka from 1196.",
    "sources": [
     {
      "sourceKey": "wp-vikramabahu-ii",
@@ -45962,7 +45954,7 @@
    "tracks": [
     "sri-lanka"
    ],
-   "descr": "Rules as head of state of Sri Lanka from 1325 (175 years).",
+   "descr": "Rules as head of state of Sri Lanka from 1325.",
    "sources": [
     {
      "sourceKey": "wp-bhuvanekabahu-iii",
@@ -45990,7 +45982,7 @@
    "tracks": [
     "sri-lanka"
    ],
-   "descr": "Rules as head of state of Sri Lanka from 1325 (175 years).",
+   "descr": "Rules as head of state of Sri Lanka from 1325.",
    "sources": [
     {
      "sourceKey": "wp-parakramabahu-iv",
@@ -50202,7 +50194,7 @@
    "tracks": [
     "china"
    ],
-   "descr": "Rules as head of state of China from 9 February 1234 (266 years).",
+   "descr": "Rules as head of state of China from 9 February 1234.",
    "sources": [
     {
      "sourceKey": "wp-emperor-mo-of-jin",
@@ -51404,7 +51396,7 @@
    "tracks": [
     "jin-dynasty"
    ],
-   "descr": "Rules as head of state of Jin dynasty (Jurchen) from 9 February 1234 (266 years).",
+   "descr": "Rules as head of state of Jin dynasty (Jurchen) from 9 February 1234.",
    "sources": [
     {
      "sourceKey": "wp-emperor-mo-of-jin",
@@ -52246,7 +52238,7 @@
    "tracks": [
     "silla"
    ],
-   "descr": "Rules as head of state of Silla from 839 (661 years).",
+   "descr": "Rules as head of state of Silla from 839.",
    "sources": [
     {
      "sourceKey": "wp-sinmu-of-silla",
@@ -52421,7 +52413,7 @@
    "tracks": [
     "silla"
    ],
-   "descr": "Rules as head of state of Silla from 28 July 887 (613 years).",
+   "descr": "Rules as head of state of Silla from 28 July 887.",
    "sources": [
     {
      "sourceKey": "wp-jeonggang-of-silla",
@@ -52949,7 +52941,7 @@
    "tracks": [
     "japan"
    ],
-   "descr": "Rules as head of state of Japan from 672 (828 years).",
+   "descr": "Rules as head of state of Japan from 672.",
    "sources": [
     {
      "sourceKey": "wp-prince-tomo",
@@ -55181,7 +55173,7 @@
    "tracks": [
     "cambodia"
    ],
-   "descr": "Rules as head of state of Cambodia (Khmer Empire) from 803 (697 years).",
+   "descr": "Rules as head of state of Cambodia (Khmer Empire) from 803.",
    "sources": [
     {
      "sourceKey": "wp-jye-h-ry",
@@ -56384,7 +56376,7 @@
    "tracks": [
     "thailand"
    ],
-   "descr": "Rules as head of state of Thailand (Ayutthaya) from 1388 (112 years).",
+   "descr": "Rules as head of state of Thailand (Ayutthaya) from 1388.",
    "sources": [
     {
      "sourceKey": "wp-thong-lan",
@@ -56403,8 +56395,7 @@
       }
      ]
     }
-   ],
-   "end": 1388
+   ]
   },
   {
    "uuid": "reign-ramrachathirat",
@@ -56704,7 +56695,7 @@
    "tracks": [
     "lan-xang"
    ],
-   "descr": "Rules as head of state of Lan Xang from 1438 (62 years).",
+   "descr": "Rules as head of state of Lan Xang from 1438.",
    "sources": [
     {
      "sourceKey": "wp-nang-keo-phimpha",
@@ -57769,7 +57760,7 @@
    "tracks": [
     "fatimid-caliphate"
    ],
-   "descr": "Rules as head of state of Fatimid Caliphate from 13 June 1036 (464 years).",
+   "descr": "Rules as head of state of Fatimid Caliphate from 13 June 1036 to 29 December 1094 (58 years).",
    "sources": [
     {
      "sourceKey": "wp-al-mustansir-billah",
@@ -58252,7 +58243,7 @@
    "tracks": [
     "morocco"
    ],
-   "descr": "Rules as head of state of Morocco from 1147 (353 years).",
+   "descr": "Rules as head of state of Morocco from 1147.",
    "sources": [
     {
      "sourceKey": "wp-ishaq-ibn-ali",
@@ -58461,7 +58452,7 @@
    "tracks": [
     "mali-empire"
    ],
-   "descr": "Rules as head of state of Mali Empire from 1359 (141 years).",
+   "descr": "Rules as head of state of Mali Empire from 1359.",
    "sources": [
     {
      "sourceKey": "wp-sulayman-of-mali",
@@ -58489,7 +58480,7 @@
    "tracks": [
     "mali-empire"
    ],
-   "descr": "Rules as head of state of Mali Empire from 1360 (140 years).",
+   "descr": "Rules as head of state of Mali Empire from 1360.",
    "sources": [
     {
      "sourceKey": "wp-kassa-mansa",
@@ -58633,7 +58624,7 @@
    "tracks": [
     "mali-empire"
    ],
-   "descr": "Rules as head of state of Mali Empire from 1415 (85 years).",
+   "descr": "Rules as head of state of Mali Empire from 1415.",
    "sources": [
     {
      "sourceKey": "wp-maghan-iii",
@@ -58661,7 +58652,7 @@
    "tracks": [
     "mali-empire"
    ],
-   "descr": "Rules as head of state of Mali Empire from 1480 (20 years).",
+   "descr": "Rules as head of state of Mali Empire from 1480.",
    "sources": [
     {
      "sourceKey": "wp-uli-ii",
@@ -58780,7 +58771,7 @@
    "tracks": [
     "kingdom-of-kongo"
    ],
-   "descr": "Rules as head of state of Kingdom of Kongo from 1435 (65 years).",
+   "descr": "Rules as head of state of Kingdom of Kongo from 1435.",
    "sources": [
     {
      "sourceKey": "wp-quinanga-of-kongo",
@@ -58808,7 +58799,7 @@
    "tracks": [
     "kingdom-of-kongo"
    ],
-   "descr": "Rules as head of state of Kingdom of Kongo from 1470 (30 years).",
+   "descr": "Rules as head of state of Kingdom of Kongo from 1470.",
    "sources": [
     {
      "sourceKey": "wp-nkuwu-a-ntinu-of-kongo",
@@ -59320,7 +59311,7 @@
    "tracks": [
     "ethiopia"
    ],
-   "descr": "Rules as head of state of Ethiopia from 1468 (32 years).",
+   "descr": "Rules as head of state of Ethiopia from 1468.",
    "sources": [
     {
      "sourceKey": "wp-eleni-of-ethiopia",
@@ -59853,7 +59844,7 @@
    "tracks": [
     "muisca-confederation"
    ],
-   "descr": "Rules as head of state of Muisca Confederation from 1470 (30 years).",
+   "descr": "Rules as head of state of Muisca Confederation from 1470.",
    "sources": [
     {
      "sourceKey": "wp-hunzah-a",
@@ -74002,7 +73993,7 @@
    "route": "list: List of Byzantine emperors; office: Byzantine emperor; polity: Byzantine Empire",
    "cited": "Basil II",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-constantine-viii": {
@@ -77624,7 +77615,7 @@
    "route": "list: List of Lithuanian monarchs; list: List of heads of state of Lithuania; polity: Grand Duchy of Lithuania",
    "cited": "Kęstutis",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-vytautas-the-great": {
@@ -79344,7 +79335,7 @@
    "route": "list: List of Aragonese monarchs; polity: Kingdom of Aragon",
    "cited": "Ramiro II of Aragon",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-alfonso-ii-of-aragon-2": {
@@ -83176,7 +83167,7 @@
    "route": "list: List of queens of Jerusalem; office: Monarch of Jerusalem",
    "cited": "Frederick II, Holy Roman Emperor",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-conradin-2": {
@@ -88396,7 +88387,7 @@
    "route": "list: List of Thai monarchs; office: King of Thailand",
    "cited": "Thong Lan",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-ramrachathirat": {

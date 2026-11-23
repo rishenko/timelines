@@ -814,7 +814,7 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
         sources[key] = {'name': f"{page} (Wikipedia)", 'url': WP + page.replace(' ', '_'), 'accessed': ACC,
                         'tags': ['wikipedia']}
         loc = f"table row: {r['quote']}" if r.get('cite') else f"infobox {r['field']}: {r['quote']}"
-        yrs = (year(r['en']) or w1) - r['st'][0]
+        yrs = year(r['en']) - r['st'][0] if r['en'] else 0  # no end read: the length is unknown
         descr = (f"{'Holds office' if r['office'] else 'Rules'} as head of state of {tracks[rid]['name']}"
                  f" from {fmt(r['st'])}{' to ' + fmt(r['en']) if r['en'] else ''}"
                  f"{f' ({yrs} years)' if yrs >= 2 else ''}.")

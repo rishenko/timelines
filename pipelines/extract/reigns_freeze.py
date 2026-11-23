@@ -91,6 +91,19 @@ def main():
     keep, review, dropped, matched = [], {}, Counter(), set()
     for r in placed:
         ev = ev_by[r['uuid']]
+        if any((ev.get(k) or 0) > 31 for k in ('startDay', 'endDay')):
+            # a range the bulk run misread (fixed in dates.py since: "234 ~ November 286" was day 234 of November 286):
+            # read the dates again from the cited quote
+            pts = [p for p, _ in RU._points([r['quote']]) if p]
+            if len(pts) < 2 or RU.days(pts[-1]) <= RU.days(pts[0]):
+                dropped['misread date'] += 1
+                continue
+            first, last = pts[0], pts[-1]
+            ev = {k: v for k, v in ev.items() if not k.startswith(('start', 'end')) or k == 'startDates'}
+            ev.update(RU.date_fields('start', first))
+            ev.update(RU.date_fields('end', last))
+            yrs = last[0] - first[0]
+            ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(first)} to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
         if id(r) in other:
             dropped['ruled from another row'] += 1
             continue
@@ -104,8 +117,12 @@ def main():
             # the end in the cited quote itself, when its separator hid the range ("17 November 1558 ; 24 March 1603")
             pts = [p for p, _ in RU._points([r['quote']]) if p]
             last = pts[-1] if pts else None
-            if last and RU.days(last) > RU.days(pts[0]):
+            own = (RU.hist(ev['start']), ev.get('startMonth'), ev.get('startDay'))  # the event's own start
+            if last and RU.days(last) > RU.days(own):
                 ev = dict(ev, **RU.date_fields('end', last))
+                # the description was written without an end: add it, with the length
+                yrs = last[0] - own[0]
+                ev['descr'] = re.sub(r'( \(\d+ years\))?\.$', f" to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
                 why = why + ['end read from the quote\'s second date']
         if ev.get('end') is None:
             # no end read: an incumbent when Wikidata's term is open too; a lost end when Wikidata gives a term of
@@ -119,6 +136,9 @@ def main():
                 continue
             else:
                 why = why + ['no end read: shown as one year']
+        if ev.get('end') is None and not ev.get('ongoing'):
+            # no end: the generator counted the years to the end of its window, so the length is not known
+            ev = dict(ev, descr=re.sub(r' \(\d+ years\)\.$', '.', ev['descr']))
         keep.append(ev)
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}

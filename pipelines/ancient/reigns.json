@@ -38,7 +38,7 @@
    "tracks": [
     "egypt"
    ],
-   "descr": "Rules as head of state of Egypt and Nubia from 522 BCE (1172 years).",
+   "descr": "Rules as head of state of Egypt and Nubia from 522 BCE.",
    "sources": [
     {
      "sourceKey": "wp-bardiya",
@@ -97,7 +97,7 @@
    "tracks": [
     "egypt"
    ],
-   "descr": "Rules as head of state of Egypt and Nubia from 424 BCE (1074 years).",
+   "descr": "Rules as head of state of Egypt and Nubia from 424 BCE.",
    "sources": [
     {
      "sourceKey": "wp-xerxes-ii",
@@ -357,7 +357,7 @@
    "tracks": [
     "pharaonic-egypt"
    ],
-   "descr": "Rules as head of state of Pharaonic Egypt from 2690 BCE (3340 years).",
+   "descr": "Rules as head of state of Pharaonic Egypt from 2690 BCE.",
    "sources": [
     {
      "sourceKey": "wp-khasekhemwy",
@@ -385,7 +385,7 @@
    "tracks": [
     "pharaonic-egypt"
    ],
-   "descr": "Rules as head of state of Pharaonic Egypt from 2181 BCE (2831 years).",
+   "descr": "Rules as head of state of Pharaonic Egypt from 2181 BCE.",
    "sources": [
     {
      "sourceKey": "wp-menkare",
@@ -674,7 +674,7 @@
    "tracks": [
     "numidia"
    ],
-   "descr": "Rules as head of state of Numidia from 117 BCE (767 years).",
+   "descr": "Rules as head of state of Numidia from 117 BCE.",
    "sources": [
     {
      "sourceKey": "wp-hiempsal-i",
@@ -731,7 +731,7 @@
    "tracks": [
     "numidia"
    ],
-   "descr": "Rules as head of state of Numidia from 81 BCE (731 years).",
+   "descr": "Rules as head of state of Numidia from 81 BCE.",
    "sources": [
     {
      "sourceKey": "wp-masteabar",
@@ -1194,7 +1194,7 @@
    "tracks": [
     "aksum"
    ],
-   "descr": "Rules as head of state of Kingdom of Aksum from 585 (65 years).",
+   "descr": "Rules as head of state of Kingdom of Aksum from 585.",
    "sources": [
     {
      "sourceKey": "wp-ioel",
@@ -1338,7 +1338,7 @@
    "tracks": [
     "suebi"
    ],
-   "descr": "Rules as head of state of Kingdom of the Suebi from 585 (65 years).",
+   "descr": "Rules as head of state of Kingdom of the Suebi from 585.",
    "sources": [
     {
      "sourceKey": "wp-malaric",
@@ -2439,7 +2439,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 28 January 98 (552 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 28 January 98 to 9 August 117 (19 years).",
    "sources": [
     {
      "sourceKey": "wp-trajan",
@@ -2698,7 +2698,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 209 (441 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 209.",
    "sources": [
     {
      "sourceKey": "wp-geta-emperor",
@@ -2717,8 +2717,7 @@
       }
      ]
     }
-   ],
-   "end": 209
+   ]
   },
   {
    "uuid": "reign-macrinus",
@@ -3072,7 +3071,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 240 (410 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 240.",
    "sources": [
     {
      "sourceKey": "wp-sabinian-proconsul",
@@ -3160,7 +3159,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 248 (402 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 248.",
    "sources": [
     {
      "sourceKey": "wp-pacatian",
@@ -3188,7 +3187,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 248 (402 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 248 to 253 (5 years).",
    "sources": [
     {
      "sourceKey": "wp-silbannacus",
@@ -3217,7 +3216,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 249 (401 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 249.",
    "sources": [
     {
      "sourceKey": "wp-jotapian",
@@ -3549,7 +3548,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 260 (390 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 260.",
    "sources": [
     {
      "sourceKey": "wp-ingenuus",
@@ -3577,7 +3576,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 260 (390 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 260.",
    "sources": [
     {
      "sourceKey": "wp-saloninus",
@@ -3663,7 +3662,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 270 (380 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 270.",
    "sources": [
     {
      "sourceKey": "wp-quintillus",
@@ -3691,7 +3690,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 271 (379 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 271.",
    "sources": [
     {
      "sourceKey": "wp-septimius-usurper",
@@ -3812,7 +3811,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 280 (370 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 280.",
    "sources": [
     {
      "sourceKey": "wp-julius-saturninus",
@@ -3840,7 +3839,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 280 (370 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 280.",
    "sources": [
     {
      "sourceKey": "wp-bonosus-usurper",
@@ -4087,7 +4086,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 1 May 305 (345 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 1 May 305 to May 311 (6 years).",
    "sources": [
     {
      "sourceKey": "wp-galerius",
@@ -4217,7 +4216,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 11 November 308 (342 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 11 November 308.",
    "sources": [
     {
      "sourceKey": "wp-licinius",
@@ -4404,7 +4403,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 9 September 337 (313 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 9 September 337.",
    "sources": [
     {
      "sourceKey": "wp-constantius-ii",
@@ -4499,7 +4498,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from February 360 (290 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from February 360.",
    "sources": [
     {
      "sourceKey": "wp-julian-emperor",
@@ -5237,7 +5236,7 @@
    "tracks": [
     "rome-republic-empire"
    ],
-   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 19 November 461 (189 years).",
+   "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 19 November 461.",
    "sources": [
     {
      "sourceKey": "wp-libius-severus",
@@ -5427,7 +5426,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 17 January 395 (255 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 17 January 395.",
    "sources": [
     {
      "sourceKey": "wp-arcadius",
@@ -5446,10 +5445,7 @@
       }
      ]
     }
-   ],
-   "end": 395,
-   "endMonth": 1,
-   "endDay": 17
+   ]
   },
   {
    "uuid": "reign-aelia-eudoxia",
@@ -5520,7 +5516,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 408 (242 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 408.",
    "sources": [
     {
      "sourceKey": "wp-thermantia",
@@ -5550,7 +5546,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 1 May 408 (242 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 1 May 408.",
    "sources": [
     {
      "sourceKey": "wp-theodosius-ii",
@@ -5569,10 +5565,7 @@
       }
      ]
     }
-   ],
-   "end": 408,
-   "endMonth": 5,
-   "endDay": 1
+   ]
   },
   {
    "uuid": "reign-galla-placidia",
@@ -5581,7 +5574,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 421 (229 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 421.",
    "sources": [
     {
      "sourceKey": "wp-galla-placidia",
@@ -6059,7 +6052,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 24 June 474 (176 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 24 June 474.",
    "sources": [
     {
      "sourceKey": "wp-julius-nepos",
@@ -6553,7 +6546,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 13 August 582 (68 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 13 August 582.",
    "sources": [
     {
      "sourceKey": "wp-maurice-emperor",
@@ -6616,7 +6609,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 23 November 602 (48 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 23 November 602.",
    "sources": [
     {
      "sourceKey": "wp-phocas",
@@ -6765,7 +6758,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 641 (9 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 641.",
    "sources": [
     {
      "sourceKey": "wp-gregoria",
@@ -6890,7 +6883,7 @@
    "tracks": [
     "eastern-roman"
    ],
-   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from November 641 (9 years).",
+   "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from November 641.",
    "sources": [
     {
      "sourceKey": "wp-heraclonas",
@@ -7383,7 +7376,7 @@
    "tracks": [
     "macedon"
    ],
-   "descr": "Rules as head of state of Macedon from 359 BCE (1009 years).",
+   "descr": "Rules as head of state of Macedon from 359 BCE.",
    "sources": [
     {
      "sourceKey": "wp-amyntas-iv",
@@ -7527,7 +7520,7 @@
    "tracks": [
     "macedon"
    ],
-   "descr": "Rules as head of state of Macedon from 297 BCE (947 years).",
+   "descr": "Rules as head of state of Macedon from 297 BCE.",
    "sources": [
     {
      "sourceKey": "wp-philip-iv-of-macedon",
@@ -7642,7 +7635,7 @@
    "tracks": [
     "macedon"
    ],
-   "descr": "Rules as head of state of Macedon from 279 BCE (929 years).",
+   "descr": "Rules as head of state of Macedon from 279 BCE.",
    "sources": [
     {
      "sourceKey": "wp-meleager-king",
@@ -7670,7 +7663,7 @@
    "tracks": [
     "macedon"
    ],
-   "descr": "Rules as head of state of Macedon from 279 BCE (929 years).",
+   "descr": "Rules as head of state of Macedon from 279 BCE.",
    "sources": [
     {
      "sourceKey": "wp-antipater-etesias",
@@ -8075,7 +8068,7 @@
    "tracks": [
     "israel-judah"
    ],
-   "descr": "Rules as head of state of Israel and Judah from 885 BCE (1535 years).",
+   "descr": "Rules as head of state of Israel and Judah from 885 BCE.",
    "sources": [
     {
      "sourceKey": "wp-zimri-king",
@@ -8248,7 +8241,7 @@
    "tracks": [
     "israel-judah"
    ],
-   "descr": "Rules as head of state of Israel and Judah from 740 BCE (1390 years).",
+   "descr": "Rules as head of state of Israel and Judah from 740 BCE.",
    "sources": [
     {
      "sourceKey": "wp-pekahiah",
@@ -8305,7 +8298,7 @@
    "tracks": [
     "israel-judah"
    ],
-   "descr": "Rules as head of state of Israel and Judah from 732 BCE (1382 years).",
+   "descr": "Rules as head of state of Israel and Judah from 732 BCE.",
    "sources": [
     {
      "sourceKey": "wp-pekah",
@@ -8391,7 +8384,7 @@
    "tracks": [
     "israel-judah"
    ],
-   "descr": "Rules as head of state of Israel and Judah from 687 BCE (1337 years).",
+   "descr": "Rules as head of state of Israel and Judah from 687 BCE.",
    "sources": [
     {
      "sourceKey": "wp-hezekiah",
@@ -9351,7 +9344,7 @@
    "tracks": [
     "assyria"
    ],
-   "descr": "Rules as head of state of Assyria from 1735 BCE (2385 years).",
+   "descr": "Rules as head of state of Assyria from 1735 BCE.",
    "sources": [
     {
      "sourceKey": "wp-asinum",
@@ -9379,7 +9372,7 @@
    "tracks": [
     "assyria"
    ],
-   "descr": "Rules as head of state of Assyria from 1735 BCE (2385 years).",
+   "descr": "Rules as head of state of Assyria from 1735 BCE.",
    "sources": [
     {
      "sourceKey": "wp-puzur-sin",
@@ -9407,7 +9400,7 @@
    "tracks": [
     "assyria"
    ],
-   "descr": "Rules as head of state of Assyria from 1715 BCE (2365 years).",
+   "descr": "Rules as head of state of Assyria from 1715 BCE.",
    "sources": [
     {
      "sourceKey": "wp-ashur-dugul",
@@ -9435,7 +9428,7 @@
    "tracks": [
     "assyria"
    ],
-   "descr": "Rules as head of state of Assyria from 1700 BCE (2350 years).",
+   "descr": "Rules as head of state of Assyria from 1700 BCE.",
    "sources": [
     {
      "sourceKey": "wp-adasi-assyria",
@@ -9927,7 +9920,7 @@
    "tracks": [
     "assyria"
    ],
-   "descr": "Rules as head of state of Assyria from 1132 BCE (1782 years).",
+   "descr": "Rules as head of state of Assyria from 1132 BCE.",
    "sources": [
     {
      "sourceKey": "wp-ninurta-tukulti-ashur",
@@ -9955,7 +9948,7 @@
    "tracks": [
     "assyria"
    ],
-   "descr": "Rules as head of state of Assyria from 1132 BCE (1782 years).",
+   "descr": "Rules as head of state of Assyria from 1132 BCE.",
    "sources": [
     {
      "sourceKey": "wp-mutakkil-nusku",
@@ -10592,7 +10585,7 @@
    "tracks": [
     "assyria"
    ],
-   "descr": "Rules as head of state of Assyria from 626 BCE (1276 years).",
+   "descr": "Rules as head of state of Assyria from 626 BCE.",
    "sources": [
     {
      "sourceKey": "wp-s-n-umu-l-ir",
@@ -11499,7 +11492,7 @@
    "tracks": [
     "elam"
    ],
-   "descr": "Rules as head of state of Elam from 2350 BCE (3000 years).",
+   "descr": "Rules as head of state of Elam from 2350 BCE.",
    "sources": [
     {
      "sourceKey": "wp-hishep-ratep",
@@ -11759,7 +11752,7 @@
    "tracks": [
     "elam"
    ],
-   "descr": "Rules as head of state of Elam from 1400 BCE (2050 years).",
+   "descr": "Rules as head of state of Elam from 1400 BCE.",
    "sources": [
     {
      "sourceKey": "wp-inshushinak-shar-ili",
@@ -11787,7 +11780,7 @@
    "tracks": [
     "elam"
    ],
-   "descr": "Rules as head of state of Elam from 1370 BCE (2020 years).",
+   "descr": "Rules as head of state of Elam from 1370 BCE.",
    "sources": [
     {
      "sourceKey": "wp-humban-numena",
@@ -11815,7 +11808,7 @@
    "tracks": [
     "elam"
    ],
-   "descr": "Rules as head of state of Elam from 1300 BCE (1950 years).",
+   "descr": "Rules as head of state of Elam from 1300 BCE.",
    "sources": [
     {
      "sourceKey": "wp-untash-napirisha",
@@ -12076,7 +12069,7 @@
    "tracks": [
     "persia"
    ],
-   "descr": "Rules as head of state of Achaemenid Persia from 522 BCE (1172 years).",
+   "descr": "Rules as head of state of Achaemenid Persia from 522 BCE.",
    "sources": [
     {
      "sourceKey": "wp-bardiya",
@@ -12104,7 +12097,7 @@
    "tracks": [
     "persia"
    ],
-   "descr": "Rules as head of state of Achaemenid Persia from 522 BCE (1172 years).",
+   "descr": "Rules as head of state of Achaemenid Persia from 522 BCE.",
    "sources": [
     {
      "sourceKey": "wp-gaumata",
@@ -12223,7 +12216,7 @@
    "tracks": [
     "persia"
    ],
-   "descr": "Rules as head of state of Achaemenid Persia from 424 BCE (1074 years).",
+   "descr": "Rules as head of state of Achaemenid Persia from 424 BCE.",
    "sources": [
     {
      "sourceKey": "wp-xerxes-ii",
@@ -12550,7 +12543,7 @@
    "tracks": [
     "seleucid"
    ],
-   "descr": "Rules as head of state of Seleucid Empire from 223 BCE (873 years).",
+   "descr": "Rules as head of state of Seleucid Empire from 223 BCE.",
    "sources": [
     {
      "sourceKey": "wp-seleucus-iii-ceraunus",
@@ -13557,7 +13550,7 @@
    "tracks": [
     "sasanian"
    ],
-   "descr": "Rules as head of state of Sasanian Empire from 293 (357 years).",
+   "descr": "Rules as head of state of Sasanian Empire from 293.",
    "sources": [
     {
      "sourceKey": "wp-bahram-iii",
@@ -13643,7 +13636,7 @@
    "tracks": [
     "sasanian"
    ],
-   "descr": "Rules as head of state of Sasanian Empire from 309 (341 years).",
+   "descr": "Rules as head of state of Sasanian Empire from 309.",
    "sources": [
     {
      "sourceKey": "wp-adur-narseh",
@@ -13816,7 +13809,7 @@
    "tracks": [
     "sasanian"
    ],
-   "descr": "Rules as head of state of Sasanian Empire from 420 (230 years).",
+   "descr": "Rules as head of state of Sasanian Empire from 420.",
    "sources": [
     {
      "sourceKey": "wp-shapur-iv",
@@ -13844,7 +13837,7 @@
    "tracks": [
     "sasanian"
    ],
-   "descr": "Rules as head of state of Sasanian Empire from 420 (230 years).",
+   "descr": "Rules as head of state of Sasanian Empire from 420.",
    "sources": [
     {
      "sourceKey": "wp-khosrow-son-of-bahram-iv",
@@ -14078,7 +14071,7 @@
    "tracks": [
     "sasanian"
    ],
-   "descr": "Rules as head of state of Sasanian Empire from 590 (60 years).",
+   "descr": "Rules as head of state of Sasanian Empire from 590.",
    "sources": [
     {
      "sourceKey": "wp-khosrow-ii",
@@ -14137,7 +14130,7 @@
    "tracks": [
     "sasanian"
    ],
-   "descr": "Rules as head of state of Sasanian Empire from 25 February 628 (22 years).",
+   "descr": "Rules as head of state of Sasanian Empire from 25 February 628.",
    "sources": [
     {
      "sourceKey": "wp-kavad-ii",
@@ -14256,7 +14249,7 @@
    "tracks": [
     "sasanian"
    ],
-   "descr": "Rules as head of state of Sasanian Empire from 630 (20 years).",
+   "descr": "Rules as head of state of Sasanian Empire from 630.",
    "sources": [
     {
      "sourceKey": "wp-boran",
@@ -14609,7 +14602,7 @@
    "tracks": [
     "armenia"
    ],
-   "descr": "Rules as head of state of Armenia from 20 BCE (670 years).",
+   "descr": "Rules as head of state of Armenia from 20 BCE.",
    "sources": [
     {
      "sourceKey": "wp-artaxias-ii",
@@ -14724,7 +14717,7 @@
    "tracks": [
     "armenia"
    ],
-   "descr": "Rules as head of state of Armenia from 109 (541 years).",
+   "descr": "Rules as head of state of Armenia from 109.",
    "sources": [
     {
      "sourceKey": "wp-sanatruk",
@@ -15361,7 +15354,7 @@
    "tracks": [
     "scythians"
    ],
-   "descr": "Rules as head of state of Scythians from 658 BCE (1308 years).",
+   "descr": "Rules as head of state of Scythians from 658 BCE.",
    "sources": [
     {
      "sourceKey": "wp-bartatua",
@@ -15883,7 +15876,7 @@
    "tracks": [
     "first-turkic"
    ],
-   "descr": "Rules as head of state of First Turkic Khaganate (Göktürks) from 581 (69 years).",
+   "descr": "Rules as head of state of First Turkic Khaganate (Göktürks) from 581.",
    "sources": [
     {
      "sourceKey": "wp-amrak-khagan",
@@ -16230,7 +16223,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 413 BCE (1063 years).",
+   "descr": "Rules as head of state of Magadha from 413 BCE.",
    "sources": [
     {
      "sourceKey": "wp-n-gad-saka",
@@ -16258,7 +16251,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 395 BCE (1045 years).",
+   "descr": "Rules as head of state of Magadha from 395 BCE.",
    "sources": [
     {
      "sourceKey": "wp-shishunaga",
@@ -16286,7 +16279,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 367 BCE (1017 years).",
+   "descr": "Rules as head of state of Magadha from 367 BCE.",
    "sources": [
     {
      "sourceKey": "wp-kalashoka",
@@ -16343,7 +16336,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 273 BCE (923 years).",
+   "descr": "Rules as head of state of Magadha from 273 BCE.",
    "sources": [
     {
      "sourceKey": "wp-bindusara",
@@ -16371,7 +16364,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 202 BCE (852 years).",
+   "descr": "Rules as head of state of Magadha from 202 BCE.",
    "sources": [
     {
      "sourceKey": "wp-shalishuka",
@@ -16399,7 +16392,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 195 BCE (845 years).",
+   "descr": "Rules as head of state of Magadha from 195 BCE.",
    "sources": [
     {
      "sourceKey": "wp-devavarman-maurya",
@@ -16427,7 +16420,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 187 BCE (837 years).",
+   "descr": "Rules as head of state of Magadha from 187 BCE.",
    "sources": [
     {
      "sourceKey": "wp-shatadhanvan",
@@ -16455,7 +16448,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 185 BCE (835 years).",
+   "descr": "Rules as head of state of Magadha from 185 BCE.",
    "sources": [
     {
      "sourceKey": "wp-brihadratha-maurya",
@@ -16483,7 +16476,7 @@
    "tracks": [
     "magadha"
    ],
-   "descr": "Rules as head of state of Magadha from 149 BCE (799 years).",
+   "descr": "Rules as head of state of Magadha from 149 BCE.",
    "sources": [
     {
      "sourceKey": "wp-pushyamitra-shunga",
@@ -16569,7 +16562,7 @@
    "tracks": [
     "maurya"
    ],
-   "descr": "Rules as head of state of Maurya Empire from 297 BCE (947 years).",
+   "descr": "Rules as head of state of Maurya Empire from 297 BCE.",
    "sources": [
     {
      "sourceKey": "wp-chandragupta-maurya",
@@ -16597,7 +16590,7 @@
    "tracks": [
     "maurya"
    ],
-   "descr": "Rules as head of state of Maurya Empire from 273 BCE (923 years).",
+   "descr": "Rules as head of state of Maurya Empire from 273 BCE.",
    "sources": [
     {
      "sourceKey": "wp-bindusara",
@@ -16625,7 +16618,7 @@
    "tracks": [
     "maurya"
    ],
-   "descr": "Rules as head of state of Maurya Empire from 224 BCE (874 years).",
+   "descr": "Rules as head of state of Maurya Empire from 224 BCE.",
    "sources": [
     {
      "sourceKey": "wp-dasharatha-maurya",
@@ -16653,7 +16646,7 @@
    "tracks": [
     "maurya"
    ],
-   "descr": "Rules as head of state of Maurya Empire from 215 BCE (865 years).",
+   "descr": "Rules as head of state of Maurya Empire from 215 BCE.",
    "sources": [
     {
      "sourceKey": "wp-samprati",
@@ -16681,7 +16674,7 @@
    "tracks": [
     "maurya"
    ],
-   "descr": "Rules as head of state of Maurya Empire from 202 BCE (852 years).",
+   "descr": "Rules as head of state of Maurya Empire from 202 BCE.",
    "sources": [
     {
      "sourceKey": "wp-shalishuka",
@@ -16709,7 +16702,7 @@
    "tracks": [
     "maurya"
    ],
-   "descr": "Rules as head of state of Maurya Empire from 195 BCE (845 years).",
+   "descr": "Rules as head of state of Maurya Empire from 195 BCE.",
    "sources": [
     {
      "sourceKey": "wp-devavarman-maurya",
@@ -16737,7 +16730,7 @@
    "tracks": [
     "maurya"
    ],
-   "descr": "Rules as head of state of Maurya Empire from 187 BCE (837 years).",
+   "descr": "Rules as head of state of Maurya Empire from 187 BCE.",
    "sources": [
     {
      "sourceKey": "wp-shatadhanvan",
@@ -16765,7 +16758,7 @@
    "tracks": [
     "shunga"
    ],
-   "descr": "Rules as head of state of Shunga Empire from 124 BCE (774 years).",
+   "descr": "Rules as head of state of Shunga Empire from 124 BCE.",
    "sources": [
     {
      "sourceKey": "wp-vasumitra",
@@ -16851,7 +16844,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 335 (315 years).",
+   "descr": "Rules as head of state of Gupta Empire from 335.",
    "sources": [
     {
      "sourceKey": "wp-chandragupta-i",
@@ -16879,7 +16872,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 375 (275 years).",
+   "descr": "Rules as head of state of Gupta Empire from 375.",
    "sources": [
     {
      "sourceKey": "wp-ramagupta",
@@ -16907,7 +16900,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 455 (195 years).",
+   "descr": "Rules as head of state of Gupta Empire from 455.",
    "sources": [
     {
      "sourceKey": "wp-kumaragupta-i",
@@ -16935,7 +16928,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 467 (183 years).",
+   "descr": "Rules as head of state of Gupta Empire from 467.",
    "sources": [
     {
      "sourceKey": "wp-skandagupta",
@@ -16963,7 +16956,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 473 (177 years).",
+   "descr": "Rules as head of state of Gupta Empire from 473.",
    "sources": [
     {
      "sourceKey": "wp-purugupta",
@@ -16991,7 +16984,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 476 (174 years).",
+   "descr": "Rules as head of state of Gupta Empire from 476.",
    "sources": [
     {
      "sourceKey": "wp-kumaragupta-ii",
@@ -17019,7 +17012,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 495 (155 years).",
+   "descr": "Rules as head of state of Gupta Empire from 495.",
    "sources": [
     {
      "sourceKey": "wp-budhagupta",
@@ -17047,7 +17040,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 530 (120 years).",
+   "descr": "Rules as head of state of Gupta Empire from 530.",
    "sources": [
     {
      "sourceKey": "wp-narasimhagupta",
@@ -17075,7 +17068,7 @@
    "tracks": [
     "gupta"
    ],
-   "descr": "Rules as head of state of Gupta Empire from 540 (110 years).",
+   "descr": "Rules as head of state of Gupta Empire from 540.",
    "sources": [
     {
      "sourceKey": "wp-kumaragupta-iii",
@@ -17364,7 +17357,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 161 BCE (811 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 161 BCE.",
    "sources": [
     {
      "sourceKey": "wp-ellalan",
@@ -17450,7 +17443,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 119 BCE (769 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 119 BCE.",
    "sources": [
     {
      "sourceKey": "wp-thulatthana",
@@ -17652,7 +17645,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE (698 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
    "sources": [
     {
      "sourceKey": "wp-siva-i",
@@ -17680,7 +17673,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE (698 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
    "sources": [
     {
      "sourceKey": "wp-vatuka-of-anuradhapura",
@@ -17708,7 +17701,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE (698 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
    "sources": [
     {
      "sourceKey": "wp-darubhatika-tissa",
@@ -17736,7 +17729,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE (698 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
    "sources": [
     {
      "sourceKey": "wp-niliya-of-anuradhapura",
@@ -17851,7 +17844,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 135 (515 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 135.",
    "sources": [
     {
      "sourceKey": "wp-gajabahu-i",
@@ -18488,7 +18481,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 434 (216 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 434.",
    "sources": [
     {
      "sourceKey": "wp-soththisena",
@@ -18951,7 +18944,7 @@
    "tracks": [
     "anuradhapura"
    ],
-   "descr": "Rules as head of state of Anuradhapura kingdom from 608 (42 years).",
+   "descr": "Rules as head of state of Anuradhapura kingdom from 608 to 614 (6 years).",
    "sources": [
     {
      "sourceKey": "wp-sangha-tissa-ii",
@@ -18970,7 +18963,8 @@
       }
      ]
     }
-   ]
+   ],
+   "end": 614
   },
   {
    "uuid": "reign-silameghavanna",
@@ -19240,7 +19234,7 @@
    "tracks": [
     "tibet"
    ],
-   "descr": "Rules as head of state of Tibet from 127 BCE (777 years).",
+   "descr": "Rules as head of state of Tibet from 127 BCE.",
    "sources": [
     {
      "sourceKey": "wp-nyatri-tsenpo",
@@ -19355,7 +19349,7 @@
    "tracks": [
     "yarlung"
    ],
-   "descr": "Rules as head of state of Yarlung kings and the Tibetan Empire from 127 BCE (777 years).",
+   "descr": "Rules as head of state of Yarlung kings and the Tibetan Empire from 127 BCE.",
    "sources": [
     {
      "sourceKey": "wp-nyatri-tsenpo",
@@ -19441,7 +19435,7 @@
    "tracks": [
     "shang"
    ],
-   "descr": "Rules as head of state of Shang dynasty from 1587 BCE (2237 years).",
+   "descr": "Rules as head of state of Shang dynasty from 1587 BCE.",
    "sources": [
     {
      "sourceKey": "wp-bu-bing",
@@ -19498,7 +19492,7 @@
    "tracks": [
     "shang"
    ],
-   "descr": "Rules as head of state of Shang dynasty from 1184 BCE (1834 years).",
+   "descr": "Rules as head of state of Shang dynasty from 1184 BCE.",
    "sources": [
     {
      "sourceKey": "wp-zu-jia",
@@ -20448,13 +20442,10 @@
   {
    "uuid": "reign-goi-of-baekje",
    "title": "Reign of Goi of Baekje",
-   "start": 286,
-   "startMonth": 11,
-   "startDay": 234,
    "tracks": [
     "baekje"
    ],
-   "descr": "Rules as head of state of Baekje (Paekche) from 234 November 286 (364 years).",
+   "descr": "Rules as head of state of Baekje (Paekche) from 234 to November 286 (52 years).",
    "sources": [
     {
      "sourceKey": "wp-goi-of-baekje",
@@ -20473,7 +20464,10 @@
       }
      ]
     }
-   ]
+   ],
+   "start": 234,
+   "end": 286,
+   "endMonth": 11
   },
   {
    "uuid": "reign-bunseo-of-baekje",
@@ -27417,7 +27411,7 @@
    "route": "list: List of Roman consuls; list: List of Roman emperors; polity: Roman Empire",
    "cited": "Geta (emperor)",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-macrinus": {
@@ -28169,7 +28163,7 @@
    "route": "list: List of Byzantine emperors; list: List of Roman and Byzantine empresses; office: Byzantine emperor; polity: Byzantine Empire",
    "cited": "Arcadius",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-aelia-eudoxia": {
@@ -28205,7 +28199,7 @@
    "route": "list: List of Byzantine emperors; list: List of Roman and Byzantine empresses; office: Byzantine emperor; polity: Byzantine Empire",
    "cited": "Theodosius II",
    "toCheck": [
-    "end read from the quote's second date"
+    "no end read: shown as one year"
    ]
   },
   "reign-galla-placidia": {
@@ -32087,7 +32081,7 @@
    "route": "list: List of Sri Lankan monarchs; polity: Anuradhapura kingdom",
    "cited": "Sangha Tissa II",
    "toCheck": [
-    "no end read: shown as one year"
+    "end read from the quote's second date"
    ]
   },
   "reign-silameghavanna": {
@@ -32490,9 +32484,7 @@
    "qid": "Q497490",
    "route": "list: List of monarchs of Korea",
    "cited": "Goi of Baekje",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
+   "toCheck": []
   },
   "reign-bunseo-of-baekje": {
    "row": "baekje",
