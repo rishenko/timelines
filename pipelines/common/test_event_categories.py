@@ -7,7 +7,7 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import event_categories as ec  # noqa: E402
 
-DS = {'sources': {}, 'tracks': [{'id': 'egypt', 'name': 'Egypt'}, {'id': 'rome', 'name': 'Rome'},
+DS = {'sources': {}, 'tracks': [{'id': 'egypt', 'name': 'Egypt'}, {'id': 'rome', 'name': 'Rome', 'phases': [{'name': 'Roman Empire'}]},
                                {'id': 'huns', 'name': 'Huns'}, {'id': 'oman', 'name': 'Oman'}]}
 
 
@@ -28,6 +28,11 @@ class ReignRule(unittest.TestCase):
     def test_a_polity_ruling_is_not_a_reign(self):
         self.assertNotIn('reign', cats('Nabhani dynasty rules Oman', ['oman']))
         self.assertNotIn('reign', cats('The Ottoman Empire rules Egypt', ['egypt']))
+        for x in ('Duchy of Milan', 'Principality of Kyiv', 'Habsburg monarchy', 'Polish–Lithuanian Commonwealth', 'House of Habsburg'):
+            self.assertFalse(ec.ruler_is_person(x, DS), x)
+
+    def test_a_rows_phase_ruling_is_not_a_reign(self):
+        self.assertNotIn('reign', cats('Roman Empire rules Egypt', ['egypt']))
 
     def test_reign_of_is_still_a_reign_and_a_point_is_not(self):
         self.assertEqual(cats('Reign of Ramesses II', ['egypt'])[0], 'reign')
