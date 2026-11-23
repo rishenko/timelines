@@ -91,6 +91,8 @@ for (const id of shipped) {
   }
 }
 
+/** Text with every run of whitespace as one space (a name may wrap across lines). */
+const flat = (t: string) => t.replace(/\s+/g, ' ');
 const readmeSection = (() => {
   const md = read('README.md');
   const at = md.indexOf('## Data sources and AI use');
@@ -99,9 +101,16 @@ const readmeSection = (() => {
     return '';
   }
   const next = md.indexOf('\n## ', at + 1);
-  return md.slice(at, next < 0 ? undefined : next);
+  return flat(md.slice(at, next < 0 ? undefined : next));
 })();
-const about = read('src/components/About.tsx');
+// the About page's text: only its markup after `return (` (not comments or imports), with JSX's {' '} and line breaks
+// collapsed, so a name split over two lines still matches
+const about = (() => {
+  const src = read('src/components/About.tsx');
+  const at = src.indexOf('return (');
+  if (at < 0) gaps.push('src/components/About.tsx has no `return (`: the check reads the page from there');
+  return flat(src.slice(at < 0 ? 0 : at).replace(/\{' '\}/g, ' '));
+})();
 
 for (const [kind, where] of [...used].sort()) {
   const k = KINDS[kind];
@@ -115,8 +124,8 @@ for (const [kind, where] of [...used].sort()) {
 if (longQuotes) {
   const carveOut = (t: string) => /CC BY-SA/.test(t) && /source locators/.test(t);
   const missing = [
-    !carveOut(read('LICENSE-DATA.md')) && 'LICENSE-DATA.md',
-    !carveOut(read('README.md')) && 'README.md',
+    !carveOut(flat(read('LICENSE-DATA.md'))) && 'LICENSE-DATA.md',
+    !carveOut(flat(read('README.md'))) && 'README.md',
     !carveOut(about) && 'the About page',
   ].filter(Boolean);
   console.log(`${missing.length ? 'GAP ' : 'ok  '}  ${'quoted text'.padEnd(20)} ${longQuotes} locators quote ${QUOTE_WORDS}+ words (e.g. ${quoteExample})`);

@@ -14,7 +14,7 @@ npm run docs:check     # the code's file fields and npm scripts are all document
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
-npm run sources:check  # every kind of source the shipped data uses is named in the README and on the About page
+npm run sources:check  # every kind of source the shipped data uses is named in the README and on the About page (CI runs it)
 npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages from this clone (the workflow below is the usual way)
 ```
