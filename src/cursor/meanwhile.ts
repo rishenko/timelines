@@ -3,7 +3,8 @@
  * Per row: the reign in force (an event on the reign lane spanning the year), the phase, (a folded row) its sub-rows
  * alive that year, and up to `maxOngoing` other
  * events still going (spans covering the year, most important first). Plus the ages of the year (the Ages strip and
- * the rows' bands). Pure, so it's tested without the chart.
+ * the rows' bands). Pure, so it's tested without the chart. An event counts on its first row only, so one shared by
+ * several rows is missed while its first row is off screen.
  */
 import type { ResolvedEvent, ResolvedPhase } from '../lib/chronology.ts';
 import type { PlacedAge } from '../lib/eras.ts';

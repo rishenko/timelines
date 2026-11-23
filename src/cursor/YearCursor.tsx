@@ -64,10 +64,14 @@ export function CursorHead({ label, x, top, headH, keyboard, onStep, onClose }: 
   );
 }
 
-/** The readout band above the chart: always there, so the chart doesn't jump as the pointer comes and goes. */
-export function CursorBand({ m, label }: { m: Meanwhile | null; label: string | null }) {
+/**
+ * The readout band above the chart: always there, so the chart doesn't jump as the pointer comes and goes. It's a live
+ * region only when the reader placed the cursor with the keyboard: under the pointer it changes every frame, and a
+ * screen reader would read each change.
+ */
+export function CursorBand({ m, label, keyboard }: { m: Meanwhile | null; label: string | null; keyboard: boolean }) {
   return (
-    <div className="tl-cursor-band" aria-live="polite" aria-atomic="true">
+    <div className="tl-cursor-band" aria-live={keyboard ? 'polite' : 'off'} aria-atomic="true">
       {m && label ? (
         <>
           <span className="cur-year">{label}</span>

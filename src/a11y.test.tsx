@@ -213,6 +213,7 @@ describe('accessibility', () => {
       const { container } = open('ancient-classical');
       const band = container.querySelector('.tl-cursor-band')!;
       expect(band.textContent).toMatch(/^Point at the chart/);
+      expect(band.getAttribute('aria-live')).toBe('off'); // under the pointer it would read out every move
       const search = screen.getByRole('combobox', { name: /^Search rows and events/ });
       search.focus();
       await press('y');
@@ -224,6 +225,7 @@ describe('accessibility', () => {
       expect(document.activeElement).toBe(chip);
       const first = chip.getAttribute('aria-valuetext');
       expect(band.textContent!.startsWith(first!)).toBe(true);
+      expect(band.getAttribute('aria-live')).toBe('polite'); // placed with Y: the band is read out
       await press('ArrowRight');
       expect(chip.getAttribute('aria-valuetext')).not.toBe(first);
       await press('Escape');

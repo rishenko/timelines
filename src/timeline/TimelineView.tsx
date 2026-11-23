@@ -855,7 +855,7 @@ export function TimelineView(props: Props) {
     // then the chart
     <div className="tl-wrap">
       <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} view={view} scrollerRef={scrollerRef} />
-      <CursorBand m={cursorM} label={cursor ? formatYear(cursor.year, cal) : null} />
+      <CursorBand m={cursorM} label={cursor ? formatYear(cursor.year, cal) : null} keyboard={!!cursor?.keyboard} />
       {chart}
     </div>
   );
