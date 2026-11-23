@@ -15,11 +15,11 @@ give it your own timelines.
 Every date cites the Wikipedia article it comes from; see [Data sources and AI use](#data-sources-and-ai-use).
 
 - **Ancient and Classical World**, c. 9000 BCE – 650 CE: from the first farmers to the rise of Islam, across Europe,
-  Africa, the Near East, Asia, Oceania and the Americas. 371 rows, 883 events.
+  Africa, the Near East, Asia, Oceania and the Americas. 372 rows, 1,606 events, 718 of them reigns.
 - **Medieval World**, 650–1500: realms with their dynasties as phases, and unions and empires as their own rows.
-  379 rows, 563 events.
+  379 rows, 2,514 events, 1,949 of them reigns.
 - **Modern States**, 1500 to today: every state in the world, with its governments as phases and its memberships in
-  unions and empires. 602 rows, 1,508 events.
+  unions and empires. 602 rows, 6,822 events, 5,311 of them reigns.
 
 The three link to each other where they meet, at 650 and 1500.
 
