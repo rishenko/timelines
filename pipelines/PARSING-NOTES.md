@@ -258,7 +258,7 @@ All of these have unit tests in `extract/test_dates.py`.
 
 ## Ruler infoboxes (`extract/rulers.py`)
 
-The rulers pass's code is on branch `extract-rulers` (frozen until the context-lines bakeoff picks a design); the lessons below stay here because they apply to any parser of ruler infoboxes.
+The rulers pass's code is on branch `extract-rulers` (reigns are events with the category sub-kind `reign`; piloted, bulk not yet run); the lessons below stay here because they apply to any parser of ruler infoboxes.
 
 - **Fields:** monarchs use `reign`, `reign1`, `reign2`… with `succession`, `succession1`… naming the office; office holders use `term_start`/`term_end` (+ `office`). The extractor's lookup tables don't keep these (they aren't date fields), so `rulers.py` reads the ruler's page from the dump.
 - **Patterns fixed in `dates.py`** (tests in `test_dates.py`):
@@ -270,6 +270,10 @@ The rulers pass's code is on branch `extract-rulers` (frozen until the context-l
 - **Two reigns, one person:** Philip V of Spain (`reign1` 1700–1724, `reign2` 1724–1746). Napoleon's two are in one field, split by `<br>`. `rulers.picks` places every span that matches a Wikidata term or names the same office.
 - **Wrong span for the office:** Alain Poher's infobox has a 24-year Senate term beside his two acting presidencies. Pick the span closest to the Wikidata term, not the one overlapping it most, and drop spans whose office names a non-head office (`rulers.NOT_HEAD`: Senate, government, prime minister, staff…).
 - **Polities without office links:** Bourbon Restoration and July Monarchy have no P1906/P35, but their infoboxes list `leader1`, `leader2`…; Tsardom of Russia has neither, so one hop goes from rulers already found to offices named for the row ("Tsar of all Russia").
+- **Maintenance tags named like an infobox:** `{{Infobox too large|date=…}}` heads Kangxi Emperor's article, before the real `{{Infobox royalty`, so "the first infobox" had no `reign`. `rulers.infobox_params` skips `too large`/`needed`/`requested` (`MAINT_BOX`). Only 3 articles in enwiki-20261101 have it as their first box (`page.infobox_type = 'too large'`); `build_index.infobox_fields` reads up to 4 boxes, so their date fields are still indexed.
+- **P35 that names the office:** Republic of Venice's P35 is the item "Doge of Venice", not a person. A P35 target that is itself someone's P39 is treated as an office (its holders are the rulers): Venice went from 0 reigns to 31.
+- **Rulers belong to the phase that led to them (pilot 2, 2026-11-22).** Each ruler remembers the polity it came through (a phase's article, the row's own article, or an office named for the row; an office found by the row's words belongs to a phase whose name is in its title, "President of the Republic of China" → the Republic of China phase). A reign that two rows both reach is kept only on the row(s) where it falls inside that phase: Taiwan's presidents after 1949 hold the office of the Republic of China, a 1912–1949 phase of the China row, and land on the Taiwan row ("Republic of China (Taiwan)" phase). A reign outside its phase that no other row claims stays: Philip II reaches Spain only through the Crown of Castile phase (to 1516), whose office outlived it. Dropped copies are listed in `rulers.csv` ("outside its phase here; placed on …"). The rule needs the whole timeline in one run (`--rows all`); a run on one row of a split pair keeps both.
+- **Offices without an English article (known gap):** the Mughal Empire and the Ethiopian Empire have no P1906/P35, and their rulers' P39 office items (Akbar's, Haile Selassie's) have no enwiki title, so the one hop by the row's words can't read them. Mughal gets only Babur (via the infobox `leader`), Ethiopia nothing before 1936. Next route: the infobox `succession` link ("[[List of emperors of the Mughal Empire|Mughal emperor]]") → that list page's linked rulers, each dated by its own infobox.
 
 ## Other sources' quirks already met
 

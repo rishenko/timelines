@@ -49,6 +49,7 @@ RULER_WORD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|sha
 # offices that name a president but don't head the state ("President of the Senate of Spain")
 NOT_HEAD = re.compile(r'\b(administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|government|court|assembly|parliament|chamber|minister|duma|'
                       r'soviet of|bank|academy|committee|party|olympic|federation|society|university)', re.I)
+MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
 
@@ -100,9 +101,10 @@ def title_of(url):
 # ---- Wikipedia side ----
 
 def infobox_params(text):
-    """{field: raw} of the first infobox's top-level parameters (lowercased names)."""
+    """{field: raw} of the first infobox's top-level parameters (lowercased names). Maintenance tags named like an
+    infobox ({{Infobox too large}} on Kangxi Emperor) are skipped."""
     import mwparserfromhell
-    m = INFOBOX.search(text or '')
+    m = next((m for m in INFOBOX.finditer(text or '') if not MAINT_BOX.match(m.group(1))), None)
     if not m:
         return {}
     try:
@@ -184,19 +186,28 @@ class Sources:
                 out.add(o)
         return out
 
-    def rulers(self, polity_qids):
-        """{person qid: [(start, end, how)]} from P1906 offices' holders and the polities' own P35."""
+    def rulers(self, polity_qids, via):
+        """{person qid: [(start, end, how)]} from P1906 offices' holders and the polities' own P35. `via` gets
+        {person: {polity qids that led to them}}, so a reign can be kept to that polity's phase."""
         out = {}
         ph = ','.join('?' * len(polity_qids))
-        offices = [r[0] for r in self.wd.execute(f"SELECT DISTINCT target FROM wd_link WHERE prop='P1906' AND qid IN ({ph})", polity_qids)]
-        if offices:
-            oh = ','.join('?' * len(offices))
+        office_of = {}
+        for polity, office in self.wd.execute(f"SELECT DISTINCT qid, target FROM wd_link WHERE prop='P1906' AND qid IN ({ph})", polity_qids):
+            office_of.setdefault(office, set()).add(polity)
+        p35 = list(self.wd.execute(f"SELECT qid, target, sid FROM wd_link WHERE prop='P35' AND rank != 'deprecated' AND qid IN ({ph})", polity_qids))
+        for polity, target, sid in p35:  # a P35 that names the office, not a person (Republic of Venice: Doge of Venice)
+            if self.wd.execute("SELECT 1 FROM wd_link WHERE prop='P39' AND target=? LIMIT 1", (target,)).fetchone():
+                office_of.setdefault(target, set()).add(polity)
+        if office_of:
+            oh = ','.join('?' * len(office_of))
             for person, sid, office in self.wd.execute(
-                    f"SELECT qid, sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND target IN ({oh})", offices):
+                    f"SELECT qid, sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND target IN ({oh})", list(office_of)):
                 out.setdefault(person, []).append(self.terms(sid) + (f'P39 {office}',))
-        for polity, person, sid in self.wd.execute(
-                f"SELECT qid, target, sid FROM wd_link WHERE prop='P35' AND rank != 'deprecated' AND qid IN ({ph})", polity_qids):
-            out.setdefault(person, []).append(self.terms(sid) + (f'P35 of {polity}',))
+                via.setdefault(person, set()).update(office_of[office])
+        for polity, person, sid in p35:
+            if person not in office_of:
+                out.setdefault(person, []).append(self.terms(sid) + (f'P35 of {polity}',))
+                via.setdefault(person, set()).add(polity)
         return out
 
 
@@ -308,19 +319,28 @@ def run(timeline, row_ids, src):
     tracks = {t['id']: t for t in ds['tracks']}
     existing = {e['title'].lower(): e['uuid'] for e in ds['events']}
     rows, events, sources = [], {}, {}
+    gathered = []  # (rid, r0, r1, found): ranked after every row is gathered, so a reign two rows share is placed once
     for rid in row_ids:
         tr = tracks[rid]
         titles = [title_of(tr.get('url'))]
+        phase_win = {}  # title -> the phase spans it dates; the row's own article -> None (the whole row)
         for p in tr.get('phases', []):
             for d in p.get('startDates', []) + p.get('endDates', []):
-                titles.append(title_of(ds['sources'].get(d['source']['sourceKey'], {}).get('url')))
+                t = title_of(ds['sources'].get(d['source']['sourceKey'], {}).get('url'))
+                titles.append(t)
+                phase_win.setdefault(t, []).append((p['start'], p.get('end', w1)))
+        phase_win[titles[0]] = None
         titles = [t for t in dict.fromkeys(titles) if t]
         polities = [q for q in (src.qid(t) for t in titles) if q]
-        spans = [(p['start'], p.get('end', w1)) for p in tr.get('phases', [])] or [(tr['span']['start'], tr['span'].get('end', w1))]
+        polity_win = {src.qid(t): w for t, w in phase_win.items() if t and src.qid(t)}
+        # phases, else the lifespan: one stretch or a list of stretches (Mughal Empire: the 1540–1555 interregnum)
+        stretches = tr.get('phases') or (tr['span'] if isinstance(tr.get('span'), list) else [tr['span']])
+        spans = [(p['start'], p.get('end', w1)) for p in stretches]
         r0, r1 = max(w0, min(s for s, _ in spans)), min(w1, max(e for _, e in spans))
         words = {w.lower() for w in [tr['name']] + [p['name'] for p in tr.get('phases', [])] for w in re.findall(r'[A-Z][a-z]{3,}', w)}
         found = []
-        ruled = src.rulers(polities)
+        via = {}
+        ruled = src.rulers(polities, via)
         for t in titles:  # Wikipedia's route: the state infoboxes' leader1, leader2… (Bourbon Restoration, July Monarchy)
             pg = wp_dump.page(t)
             for k, raw in infobox_params(pg['text'] if pg else '').items():
@@ -329,8 +349,15 @@ def run(timeline, row_ids, src):
                         q = src.qid(target.strip())
                         if q:
                             ruled.setdefault(q, [])
-        for person, terms in src.holders(src.offices_of(list(ruled), words) - set()).items():
+                            via.setdefault(q, set()).add(src.qid(t))
+        # one hop by the row's words ("Tsar of all Russia"); such an office belongs to a phase whose name is in its
+        # title ("President of the Republic of China" -> the Republic of China phase, 1912-1949), else to the whole row
+        for o in src.offices_of(list(ruled), words):
+            ot = (src.title(o) or '').lower()
+            polity_win[('office', o)] = [(p['start'], p.get('end', w1)) for p in tr.get('phases', []) if p['name'].lower() in ot] or None
+        for person, terms in src.holders([k[1] for k in polity_win if isinstance(k, tuple)]).items():
             ruled.setdefault(person, []).extend(t for t in terms if t not in ruled[person])
+            via.setdefault(person, set()).update(('office', t[-1].split(' ', 1)[1]) for t in terms)
         for person, terms in ruled.items():
             terms = merge_terms(list(dict.fromkeys(terms)))
             name = src.title(person)
@@ -351,18 +378,43 @@ def run(timeline, row_ids, src):
                     rows.append(dict(row=rid, person=name, qid=person, start=fmt(t0), end=fmt(t1), field='', quote='',
                                      wd=f'{fmt(t0)} – {fmt(t1)}', importance='', flags='no Wikipedia reign: not placed'))
                 continue
+            # a ruler reached only through a phase's polity is kept to that phase (Taiwan's presidents hold the office
+            # of the Republic of China, which is a 1912–1949 phase of the China row)
+            wins = None
+            if via.get(person) and all(polity_win.get(q) for q in via[person]):
+                wins = [w for q in via[person] for w in polity_win[q]]
             for field, s, succ, term in got:
-                place(rid, name, person, field, s, succ, term, terms, list(flags), r0, r1, w1, src, rows, found)
-        # merge a person's back-to-back spans from the same field (a regency split in Wikidata gives two terms)
+                place(rid, name, person, field, s, succ, term, terms, list(flags), r0, r1, wins, w1, src, rows, found)
+        gathered.append((rid, r0, r1, found))
+    # a reign found on two rows stays only where it falls inside the phase that led to it (Taiwan's presidents: the
+    # Taiwan row's Republic of China phase, not the China row's 1912-1949 one); a reign outside its phase with no
+    # other row claiming it stays (Philip II reaches Spain through the Crown of Castile, whose office outlived the phase)
+    homes = {}
+    for _, _, _, found in gathered:
+        for r in found:
+            homes.setdefault((r['qid'], r['st']), []).append(r)
+    for same in homes.values():
+        if any(r['in_phase'] for r in same) and not all(r['in_phase'] for r in same):
+            for r in same:
+                r['drop'] = not r['in_phase']
+    for rid, r0, r1, found in gathered:
+        for r in found:
+            if r.get('drop'):
+                others = sorted({x['row'] for x in homes[(r['qid'], r['st'])] if x['in_phase']})
+                rows.append(dict(row=rid, person=r['person'], qid=r['qid'], start=fmt(r['st']), end=fmt(r['en']), field=r['field'],
+                                 quote=r['quote'], wd=r['wd'], importance='', flags=f"outside its phase here; placed on {', '.join(others)}"))
+        found[:] = [r for r in found if not r.get('drop')]
         finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1)
     return ds, rows, list(events.values()), sources, (w0, w1)
 
 
-def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, w1, src, rows, found):
-    """One reign span: flags, or a candidate for the row."""
+def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w1, src, rows, found):
+    """One reign span: flags, or a candidate for the row. `wins`: the phase spans that led to this ruler (None: the
+    whole row)."""
     st, en = s['start'], s['end']
     if overlap(st[0], year(en), r0, r1) < 0:
         return  # outside the row's span in this timeline's window
+    in_phase = wins is None or any(overlap(st[0], year(en), a, b) >= 0 for a, b in wins)
     if term and not agrees(st, en, term, terms):
         flags.append(f'Wikidata differs: {fmt(term[0])} – {fmt(term[1])}')
     if not term:
@@ -375,7 +427,7 @@ def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, w1, src
         return
     yrs = max(1, (year(en) or w1) - st[0])
     found.append(dict(row=rid, person=name, qid=person, st=st, en=en, field=field, quote=s['text'], succ=succ,
-                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags,
+                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase,
                       wd=f'{fmt(term[0])} – {fmt(term[1])}' if term else ''))
 
 
@@ -426,7 +478,9 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
 def main():
     timeline = flag('--timeline', 'modern-states')
     row_ids = flag('--rows', '').split(',')
-    out = os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
+    if row_ids == ['all']:  # every polity row: a row with its own article (groups have none)
+        row_ids = [t['id'] for t in json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))['tracks'] if t.get('url')]
+    out = flag('--out') or os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
     os.makedirs(out, exist_ok=True)
     ds, rows, events, sources, win = run(timeline, row_ids, Sources(settings.DATA))
     cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'quote', 'wd', 'flags', 'uuid']
