@@ -388,9 +388,12 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
   // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
   // Zoom stays immediate: its scroll anchoring needs the new scale at once.
-  // the Colour-blind safe preset draws rows in a CVD-safe palette (display only; off while editing, so an edit never
-  // saves the palette's colours)
-  const chartData = useMemo(() => withCvdColors(viewData, theme.preset === 'cvd' && !editMode), [viewData, theme.preset, editMode]);
+  // the Colour-blind safe preset draws rows in a CVD-safe palette: the chart, the table and every row chip (side panel,
+  // filters, legend), so a chip matches its row. Display only, and off while editing, so an edit never saves the
+  // palette's colours
+  const cvdOn = theme.preset === 'cvd' && !editMode && editing === null;
+  const chartData = useMemo(() => withCvdColors(viewData, cvdOn), [viewData, cvdOn]);
+  const displayData = useMemo(() => withCvdColors(data, cvdOn), [data, cvdOn]);
   const shownData = useDeferredValue(chartData);
   const shownEvents = useDeferredValue(drawnEvents);
   const shownListEvents = useDeferredValue(visibleEvents);
@@ -587,7 +590,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
       {panels.open.legend && (
         <LegendPanel
-          data={data}
+          data={displayData}
           periodLane={periodLane}
           reignLane={reignLane}
           onClose={() => panels.show('legend', false)}
@@ -633,7 +636,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
       {panels.open.filters && (
         <FiltersPanel
-          data={data}
+          data={displayData}
           filters={filters}
           isOn={isOn}
           toggleTrack={toggleTrack}
@@ -775,7 +778,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           />
         )}
         <SidePanel
-          data={data}
+          data={displayData}
           dispatch={dispatch}
           notify={notify}
           editing={editing}

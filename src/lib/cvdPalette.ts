@@ -5,6 +5,8 @@
  * that no row shares a colour with the 3 rows above it in display order, nor looks like the 2 rows above it to a
  * colour-blind reader (CONFUSABLE), and otherwise as close in hue as possible to
  * its own colour, so the timeline stays familiar. Display only: the data's colours are unchanged.
+ * Rows are spaced in the full display order (every track, collapsed and hidden ones too), so the colours stay put when
+ * rows fold, filter or scroll; the cost is that two rows adjacent on screen, with hidden rows between them, can match.
  */
 import type { Track } from '../types.ts';
 
