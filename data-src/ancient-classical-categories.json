@@ -13,6 +13,12 @@
      "rule"
     ]
    },
+   "reign": {
+    "name": "Reign or term",
+    "broader": [
+     "rule"
+    ]
+   },
    "coup": {
     "name": "Coup or deposition",
     "broader": [
@@ -312,7 +318,7 @@
    "conquest"
   ],
   "ahmose-reign": [
-   "succession"
+   "reign"
   ],
   "ain-ghazal": [
    "city-founded"
@@ -321,7 +327,7 @@
    "religion"
   ],
   "akhenaten": [
-   "succession"
+   "reign"
   ],
   "aksum-christian": [
    "religion"
@@ -376,7 +382,7 @@
    "archaeology"
   ],
   "anitta": [
-   "succession"
+   "reign"
   ],
   "anitta-hattusa": [
    "sack"
@@ -421,7 +427,7 @@
    "site"
   ],
   "ashoka": [
-   "succession"
+   "reign"
   ],
   "ashur-dan-ii-arameans": [
    "conquest"
@@ -430,7 +436,7 @@
    "conquest"
   ],
   "ashurbanipal": [
-   "succession"
+   "reign"
   ],
   "ashurbanipal-library": [
    "sack"
@@ -452,7 +458,7 @@
    "conflict"
   ],
   "attila": [
-   "succession"
+   "reign"
   ],
   "attila-italy": [
    "invasion"
@@ -553,7 +559,7 @@
    "alliance"
   ],
   "bimbisara": [
-   "succession"
+   "reign"
   ],
   "biskupin": [
    "colony"
@@ -667,7 +673,7 @@
    "succession"
   ],
   "chandragupta-ii": [
-   "succession"
+   "reign"
   ],
   "chandragupta-maurya": [
    "founded"
@@ -765,7 +771,7 @@
    "conflict"
   ],
   "croesus": [
-   "succession"
+   "reign"
   ],
   "crucifixion": [
    "religion"
@@ -809,7 +815,7 @@
    "war"
   ],
   "darius-i": [
-   "succession"
+   "reign"
   ],
   "darius-scythia": [
    "invasion"
@@ -938,7 +944,7 @@
    "golden-age"
   ],
   "emperor-wu-han": [
-   "succession"
+   "reign"
   ],
   "end-roman-britain": [
    "dissolved",
@@ -961,7 +967,7 @@
    "battle"
   ],
   "ezana": [
-   "succession"
+   "reign"
   ],
   "faiyum-a": [
    "find"
@@ -1099,7 +1105,7 @@
    "golden-age"
   ],
   "gonghe": [
-   "succession"
+   "reign"
   ],
   "goseck": [
    "site"
@@ -1172,7 +1178,7 @@
    "conquest"
   ],
   "hammurabi-reign": [
-   "succession"
+   "reign"
   ],
   "han-conquers-nanyue": [
    "conquest"
@@ -1198,21 +1204,21 @@
    "horizon"
   ],
   "hatshepsut": [
-   "succession"
+   "reign"
   ],
   "hattusa-abandoned": [
    "territory",
    "sack"
   ],
   "hattusili-i": [
-   "succession",
+   "reign",
    "capital-moved"
   ],
   "hattusili-iii": [
-   "succession"
+   "reign"
   ],
   "hazael": [
-   "succession"
+   "reign"
   ],
   "hazor-732": [
    "conquest",
@@ -1237,7 +1243,7 @@
    "horizon"
   ],
   "herod": [
-   "succession"
+   "reign"
   ],
   "herodotus": [
    "war"
@@ -1255,7 +1261,7 @@
    "battle"
   ],
   "himiko": [
-   "succession"
+   "reign"
   ],
   "hiram-i": [
    "golden-age"
@@ -1394,7 +1400,7 @@
    "war"
   ],
   "justinian": [
-   "succession"
+   "reign"
   ],
   "kadesh": [
    "battle"
@@ -1403,7 +1409,7 @@
    "find"
   ],
   "kaleb": [
-   "succession",
+   "reign",
    "invasion"
   ],
   "kalhu-capital": [
@@ -1420,7 +1426,7 @@
    "site"
   ],
   "kanishka": [
-   "succession"
+   "reign"
   ],
   "karahan-tepe": [
    "city-founded"
@@ -1755,7 +1761,7 @@
    "horizon"
   ],
   "merneptah": [
-   "succession",
+   "reign",
    "war"
   ],
   "merneptah-stele": [
@@ -1765,7 +1771,7 @@
    "conflict"
   ],
   "merodach-baladan-2": [
-   "succession"
+   "reign"
   ],
   "meroe-capital": [
    "capital-moved"
@@ -1784,10 +1790,10 @@
    "horizon"
   ],
   "midas": [
-   "succession"
+   "reign"
   ],
   "mihirakula": [
-   "succession"
+   "reign"
   ],
   "mita-sargon": [
    "alliance"
@@ -1827,7 +1833,7 @@
    "invasion"
   ],
   "mursili-i": [
-   "succession"
+   "reign"
   ],
   "mushki-alzi": [
    "attack"
@@ -1836,7 +1842,7 @@
    "conflict"
   ],
   "muwatalli-ii": [
-   "succession"
+   "reign"
   ],
   "muye": [
    "battle",
@@ -1849,7 +1855,7 @@
    "annexation"
   ],
   "nabonidus": [
-   "succession"
+   "reign"
   ],
   "nabonidus-tayma": [
    "invasion"
@@ -1888,7 +1894,7 @@
    "archaeology"
   ],
   "naram-sin": [
-   "succession"
+   "reign"
   ],
   "naram-sin-amorites": [
    "conflict"
@@ -1906,7 +1912,7 @@
    "find"
   ],
   "nebuchadnezzar": [
-   "succession"
+   "reign"
   ],
   "nedao": [
    "battle"
@@ -2008,7 +2014,7 @@
    "horizon"
   ],
   "pakal": [
-   "succession"
+   "reign"
   ],
   "palau-settled": [
    "colony"
@@ -2093,7 +2099,7 @@
    "religion"
   ],
   "philip-ii": [
-   "succession"
+   "reign"
   ],
   "philippines-metal": [
    "find"
@@ -2204,7 +2210,7 @@
    "sack"
   ],
   "ramesses-ii": [
-   "succession"
+   "reign"
   ],
   "ravi-phase": [
    "city-founded"
@@ -2289,7 +2295,7 @@
    "invasion"
   ],
   "samudragupta": [
-   "succession"
+   "reign"
   ],
   "san-jose-mogote": [
    "city-founded"
@@ -2320,7 +2326,7 @@
    "conquest"
   ],
   "sargon-reign": [
-   "succession"
+   "reign"
   ],
   "sasanian-egypt": [
    "conquest",
@@ -2411,7 +2417,7 @@
    "find"
   ],
   "shulgi": [
-   "succession"
+   "reign"
   ],
   "shunga-coup": [
    "coup"
@@ -2432,7 +2438,7 @@
    "conquest"
   ],
   "sigiriya": [
-   "succession"
+   "reign"
   ],
   "silko": [
    "conquest"
@@ -2535,10 +2541,10 @@
    "site"
   ],
   "suppiluliuma-i": [
-   "succession"
+   "reign"
   ],
   "suppiluliuma-ii": [
-   "succession"
+   "reign"
   ],
   "susa-founded": [
    "founded",
@@ -2560,7 +2566,7 @@
    "horizon"
   ],
   "taharqa": [
-   "succession"
+   "reign"
   ],
   "taika-reform": [
    "law"
@@ -2645,7 +2651,7 @@
    "battle"
   ],
   "theodoric": [
-   "succession"
+   "reign"
   ],
   "theodoric-italy": [
    "conquest"
@@ -2660,7 +2666,7 @@
    "battle"
   ],
   "thutmose-iii": [
-   "succession"
+   "reign"
   ],
   "tichitt-millet": [
    "city-founded"
@@ -2669,10 +2675,10 @@
    "conflict"
   ],
   "tiglath-pileser-i": [
-   "succession"
+   "reign"
   ],
   "tiglath-pileser-iii": [
-   "succession"
+   "reign"
   ],
   "tikal-defeated-562": [
    "conflict"
@@ -2690,7 +2696,7 @@
    "colony"
   ],
   "toramana": [
-   "succession"
+   "reign"
   ],
   "torres-strait": [
    "colony"
@@ -2720,10 +2726,10 @@
    "site"
   ],
   "tudhaliya-iv": [
-   "succession"
+   "reign"
   ],
   "tukulti-ninurta": [
-   "succession"
+   "reign"
   ],
   "turk-byzantine-embassies": [
    "diplomacy"
@@ -2735,7 +2741,7 @@
    "succession"
   ],
   "tutankhamun": [
-   "succession"
+   "reign"
   ],
   "tuyuhun-founded": [
    "founded"
@@ -2823,7 +2829,7 @@
    "coup"
   ],
   "vima-kadphises": [
-   "succession"
+   "reign"
   ],
   "vinca": [
    "horizon"
@@ -2874,7 +2880,7 @@
    "site"
   ],
   "wu-ding": [
-   "succession"
+   "reign"
   ],
   "wu-mingche-captured": [
    "conquest"
@@ -2941,7 +2947,7 @@
    "horizon"
   ],
   "yuanjia": [
-   "succession"
+   "reign"
   ],
   "yuezhi-defeated": [
    "conflict"
@@ -2950,7 +2956,7 @@
    "colony"
   ],
   "yuknoom-cheen": [
-   "succession"
+   "reign"
   ],
   "yungang": [
    "religion"

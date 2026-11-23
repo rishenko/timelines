@@ -443,6 +443,12 @@
               "rule"
             ]
           },
+          "reign": {
+            "name": "Reign or term",
+            "broader": [
+              "rule"
+            ]
+          },
           "coup": {
             "name": "Coup or deposition",
             "broader": [
