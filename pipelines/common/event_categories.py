@@ -22,12 +22,16 @@ from urllib.parse import unquote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# ---- the vocabulary: 9 top-level ids (stable), each with a short list of sub-kinds ----
+# ---- the vocabulary: top-level ids (stable), each with a short list of sub-kinds ----
 VOCAB = {
     'rule': ('Rulers', {'succession': 'Succession', 'reign': 'Reign or term', 'interregnum': 'Interregnum', 'coup': 'Coup or deposition', 'title': 'New title'}),
     'statehood': ('Statehood', {'founded': 'State founded', 'independence': 'Independence', 'union': 'Union', 'dissolved': 'State ends', 'reform': 'New name, form or constitution'}),
     'territory': ('Territory', {'conquest': 'Conquest', 'annexation': 'Annexation', 'cession': 'Cession', 'colony': 'Colony'}),
-    'place': ('Cities and places', {'city-founded': 'City founded', 'sack': 'Sack or fall', 'capital-moved': 'Capital moved', 'disaster': 'Disaster'}),
+    'place': ('Cities and places', {'city-founded': 'City founded', 'sack': 'Sack or fall', 'capital-moved': 'Capital moved'}),
+    # Disasters (Kevin, 2026-11-23): kind → cause → type, three levels (the only kind with three). Names follow the IRDR
+    # peril classification as EM-DAT uses it; DISASTER_TYPES below, and pipelines/common/disaster_classes.json for the
+    # IRDR family, EM-DAT key and Wikidata class of each value, with every place we merge or rename.
+    'disaster': ('Disasters', {'natural': 'Natural', 'human-caused': 'Human-caused'}),
     'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign', 'atrocity': 'Massacre or genocide', 'attack': 'Attack, ambush or raid'}),
     'unrest': ('Revolts', {'revolt': 'Revolt', 'revolution': 'Revolution', 'civil-war': 'Civil war', 'repression': 'Arrests and repression'}),
     'diplomacy': ('Diplomacy', {'treaty': 'Treaty', 'alliance': 'Alliance or bloc', 'vassalage': 'Vassalage'}),
@@ -35,7 +39,30 @@ VOCAB = {
     'science': ('Science and technology', {'discovery': 'Discovery', 'invention': 'Invention', 'work': 'Landmark work'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
 }
-PARENT = {sub: top for top, (_, subs) in VOCAB.items() for sub in subs}
+# Disaster types, under their cause: {id: (name, cause)}. A famine is human-caused only when policy or war caused it
+# (policy_famine); any other famine is "Drought or crop failure", as EM-DAT reclassified most famines as drought (2023).
+DISASTER_TYPES = {
+    'eruption': ('Volcanic activity', 'natural'),
+    'earthquake': ('Earthquake or tsunami', 'natural'),
+    'flood': ('Flood', 'natural'),
+    'storm': ('Storm', 'natural'),
+    'drought': ('Drought or crop failure', 'natural'),
+    'epidemic': ('Epidemic', 'natural'),
+    'famine': ('Famine', 'human-caused'),
+    'industrial': ('Industrial accident', 'human-caused'),
+    'accident': ('Accident or explosion', 'human-caused'),
+    'nuclear-test': ('Nuclear test', 'human-caused'),
+}
+PARENT = {sub: top for top, (_, subs) in VOCAB.items() for sub in subs} | {t: cause for t, (_, cause) in DISASTER_TYPES.items()}
+
+
+def ancestors(v):
+    """A value's broader values, nearest first (a type's cause, then its kind)."""
+    out = []
+    while v in PARENT and PARENT[v] not in out:
+        v = PARENT[v]
+        out.append(v)
+    return out
 
 
 def facet():
@@ -45,6 +72,8 @@ def facet():
         values[top] = {'name': name}
         for sub, sname in subs.items():
             values[sub] = {'name': sname, 'broader': [top]}
+    for t, (tname, cause) in DISASTER_TYPES.items():
+        values[t] = {'name': tname, 'broader': [cause]}
     return {'name': 'Category', 'applies': 'events', 'values': values}
 
 
@@ -86,7 +115,19 @@ TEXT_RULES = [
     (R(r'\b(dissolved|dissolution|abolished|collapse[sd]?|ends|end of|extinct)\b'), 'dissolved'),
     (R(r'\b(found(s|ed|ing|ation) of [A-Z][a-z]+$|founds? the city|city (is )?founded)\b'), 'city-founded'),
     (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b|\bmoves? (\w+ ){0,2}capital\b|\bmakes (\w+ ){1,2}(the|its) capital\b|\bmoved? (the )?seat\b|\bdesignated (as )?(the )?capital\b'), 'capital-moved'),
-    (R(r'\b(earthquake|plague|famine|flood|eruption|epidemic|fire of|disaster|explosion|drought|nuclear tests?|tsunami|cyclone|hurricane)\b'), 'disaster'),
+    # disasters: natural types, then human-caused ones; "an explosion in population" is neither; a bare "disaster" is the
+    # kind alone (its article's categories may say more)
+    (R(r'\b(eruptions?|erupts?|erupted|volcan\w*)\b'), 'eruption'),
+    (R(r'\b(earthquakes?|tsunamis?)\b'), 'earthquake'),
+    (R(r'\b(floods?|flooding|deluge)\b'), 'flood'),
+    (R(r'\b(cyclones?|hurricanes?|typhoons?|tornado(es)?|blizzards?|great storm)\b'), 'storm'),
+    (R(r'\bdroughts?\b'), 'drought'),
+    (R(r'\bfamines?\b'), 'famine'),
+    (R(r'\b(plagues?|epidemics?|pandemics?|pestilence|black death|smallpox|cholera)\b'), 'epidemic'),
+    (R(r'\bnuclear (weapons? )?tests?\b'), 'nuclear-test'),
+    (R(r'\b(nuclear (disaster|accident)|chemical (disaster|leak)|industrial (disaster|accident)|oil spill|mine disaster)\b'), 'industrial'),
+    (R(r'\b(great fire|fire of|explosion(?! (in|of) (the )?(population|growth|trade|art|culture))|shipwreck|train crash|air crash)\b'), 'accident'),
+    (R(r'\bdisaster\b'), 'disaster'),
     (R(r'\b(drives? out|drove out|expels?|overruns?|overran|seiz\w*(?! (the throne|power))|fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
     (R(r'\bpartition\w*|\bsplits?\b|\bdivided\b'), 'territory'),
     (R(r'\b(conquests?|conquers?|conquered|reconquest|subjugat\w*|lost to)\b'), 'conquest'),
@@ -110,7 +151,13 @@ INFOBOX = [
     (R(r'^(military conflict|military operation|battle)$'), 'conflict'),
     (R(r'^(civil conflict|revolution|protest|rebellion)$'), 'unrest'),
     (R(r'^(treaty|international agreement)$'), 'treaty'),
-    (R(r'^(earthquake|disaster|pandemic|epidemic|flood|fire)$'), 'disaster'),
+    (R(r'^earthquake$'), 'earthquake'),
+    (R(r'^(pandemic|epidemic|disease outbreak)$'), 'epidemic'),
+    (R(r'^flood$'), 'flood'),
+    (R(r'^famine$'), 'famine'),
+    (R(r'^(tropical cyclone|hurricane|storm|weather event)$'), 'storm'),
+    (R(r'^(eruption|volcanic eruption)$'), 'eruption'),
+    (R(r'^(disaster|fire)$'), 'disaster'),
     (R(r'^(archaeological site|ancient site|archaeological culture)$'), 'archaeology'),
     (R(r'^(writing system|script)$'), 'culture'),
     (R(r'^(religious building|christian leader|council)$'), 'religion'),
@@ -131,10 +178,20 @@ CATEGORY = [
     (R(r'\balliances\b'), 'alliance'),
     (R(r'\bpopulated places established in\b'), 'city-founded'),
     (R(r'\bannexation\b'), 'annexation'),
-    (R(r'\bearthquakes\b|\bplague\b|\bfamines\b'), 'disaster'),
+    # "Buildings destroyed by earthquakes" is about a building (the Mausoleum), not an earthquake
+    (R(r'(?<!destroyed by )\bearthquakes\b|\btsunamis\b'), 'earthquake'),
+    (R(r'\bvolcanic eruptions\b'), 'eruption'),
+    (R(r'^floods\b|\bfloods in\b'), 'flood'),
+    (R(r'\b(tropical cyclones|hurricanes|typhoons)\b'), 'storm'),
+    (R(r'\bdroughts\b'), 'drought'),
+    (R(r'\bfamines\b'), 'famine'),
+    (R(r'\b(plagues?|pandemics|epidemics)\b'), 'epidemic'),
+    (R(r'\bnuclear (weapons )?test(s|ing)?\b'), 'nuclear-test'),
+    (R(r'\b(nuclear accidents|industrial disasters|chemical disasters)\b'), 'industrial'),
 ]
 
-top = lambda v: PARENT.get(v, v)
+top = lambda v: (ancestors(v) or [v])[-1]
+NUCLEAR_TEST = R(r'\bnuclear (weapons )?test(s|ing)?\b')
 # kinds a description may decide on its own (descriptions say "founded" and "end of" about many things)
 DESCR_OK = {'conflict', 'unrest', 'place', 'diplomacy'}
 # words that are a title's head noun when they end it ("Reform War"); others at the end are verbs or objects
@@ -176,7 +233,13 @@ def article_evidence(title, wp):
     hit = box and first_match(INFOBOX, box)
     if hit:
         out.append((hit[0], f'article "{p["title"]}": infobox {box}'))
-    for c in wp.categories(p['text']):
+    cats = list(wp.categories(p['text']))
+    # a nuclear test (Castle Bravo) is one even when "Nuclear accidents and incidents" comes first among its categories
+    test = next((c for c in cats if NUCLEAR_TEST.search(c)), None)
+    if test:
+        out.append(('nuclear-test', f'article "{p["title"]}": category "{test}"'))
+        return out
+    for c in cats:
         h = first_match(CATEGORY, c)
         if h:
             out.append((h[0], f'article "{p["title"]}": category "{c}"'))
@@ -221,6 +284,29 @@ def ruler_is_person(x, ds):
     if any(name == p.get('name', '').lower() for t in ds['tracks'] for p in t.get('phases', [])):
         return False
     return not POLITY.search(x)
+
+
+# A famine caused mainly by policy or war is not a natural disaster (Kevin, 2026-11-23): it is Disasters › Human-caused ›
+# Famine; one classed as genocide (the Holodomor) also gets "Massacre or genocide" as its second category (other policy
+# famines, e.g. the Great Chinese Famine or Bengal 1943, are not genocide by default). Any other famine is natural:
+# "Drought or crop failure". Read from the event's title and its own articles' categories.
+POLICY_GENOCIDE = R(r'\bgenocides?\b|\bholodomor\b')
+POLICY_FAMINE = R(r'\b(man-made|great leap forward|famines? (caused|created) by|war crimes|blockades?|sieges?|world war|collectivi[sz]ation|requisition\w*)\b')
+
+
+def policy_famine(e, ds, wp):
+    """'genocide', 'policy' or None, from the event's title and its own articles' categories."""
+    texts = [e['title']]
+    if wp:
+        for t, related in own_articles(e, ds):
+            p = related and wp.page(t)
+            if p:
+                texts += list(wp.categories(p['text']))
+    if any(POLICY_GENOCIDE.search(x) for x in texts):
+        return 'genocide'
+    if any(POLICY_FAMINE.search(x) for x in texts):
+        return 'policy'
+    return None
 
 
 def classify(e, ds, wp=None):
@@ -313,6 +399,14 @@ def classify(e, ds, wp=None):
         hit = first_match([r for r in TEXT_RULES if top(r[1]) in DESCR_OK], e['descr'])
         if hit:
             found.append((hit[0], f'description: "{hit[1]}"'))
+    # a famine: human-caused when policy or war caused it (and genocide second when classed as one), else natural
+    if any(v == 'famine' for v, _ in found):
+        pf = policy_famine(e, ds, wp)
+        if pf is None:
+            found = [('drought', ev + '; no policy or war cause found') if v == 'famine' else (v, ev) for v, ev in found]
+        elif pf == 'genocide' and not any(v == 'atrocity' for v, _ in found):
+            i = next(i for i, (v, _) in enumerate(found) if v == 'famine')
+            found.insert(i + 1, ('atrocity', found[i][1] + '; a famine by policy, classed as genocide'))
     # a sub-kind beats its own top level from weaker evidence (infobox "military conflict" + title "Siege of" = siege)
     out = []
     for v, ev in found:
@@ -328,8 +422,9 @@ def classify(e, ds, wp=None):
         same = next((i for i, (w, _) in enumerate(out) if top(w) == top(v)), None)
         if same is None:
             out.append((v, ev))
-        elif (out[same][0] == top(v) or out[same][0] in WEAK) and v != top(v) and v not in WEAK:
-            # a sub-kind beats its top level, and a specific sub-kind beats a generic one ("declares independence")
+        elif (out[same][0] in ancestors(v) or out[same][0] in WEAK) and v != top(v) and v not in WEAK:
+            # a sub-kind beats its top level (or its cause, for a disaster type), and a specific sub-kind beats a generic
+            # one ("declares independence")
             out[same] = (v, out[same][1] + '; ' + ev)
     return out[:2]
 
@@ -341,8 +436,8 @@ def check(values, where):
             raise ValueError(f'{where}: unknown category "{v}"')
     # two sub-kinds of one kind are fine (Statute of Westminster: reform, then independence; Kevin, 2026-11-22); a value
     # beside its own kind repeats it
-    if len(values) > 2 or len(set(values)) != len(values) or any(top(v) == w for v in values for w in values if v != w):
-        raise ValueError(f'{where}: at most two different categories, and not a sub-kind beside its own kind: {values}')
+    if len(values) > 2 or len(set(values)) != len(values) or any(w in ancestors(v) for v in values for w in values if v != w):
+        raise ValueError(f'{where}: at most two different categories, and not a value beside one it is part of: {values}')
 
 
 def apply(data, overrides_path, evidence_path=None):

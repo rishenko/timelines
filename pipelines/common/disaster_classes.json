@@ -1,0 +1,23 @@
+{
+ "_note": "The Disasters category (Kevin, 2026-11-23): kind → cause → type, as in pipelines/common/event_categories.py (VOCAB 'disaster', DISASTER_TYPES). Names follow the IRDR peril classification as EM-DAT uses it: Integrated Research on Disaster Risk (2014), Peril classification and hazard glossary (IRDR DATA Publication No. 1); EM-DAT's classification tree as updated in September 2023 (https://doc.emdat.be/docs/data-structure-and-content/disaster-classification-system/, read 2026-11-23). 'emdat' gives the EM-DAT group > subgroup > type each value matches; 'note' says where we merge or rename. 'wikidata' is the matching Wikidata class (checked against Wikidata's labels, 2026-11-23). Facet values have no ids field, so the ids live here, not in the timelines.",
+ "disaster": { "name": "Disasters", "wikidata": ["Q3839081"], "emdat": "(the whole tree)" },
+ "natural": { "name": "Natural", "wikidata": ["Q8065"], "emdat": "Natural", "irdr": "the six natural families: geophysical, hydrological, meteorological, climatological, biological, extra-terrestrial" },
+ "human-caused": { "name": "Human-caused", "wikidata": ["Q118301709"], "emdat": "Technological",
+  "note": "Renamed: EM-DAT's 'Technological' group plus famines caused by policy or war (EM-DAT's former 'Complex' group, removed in 2023), and nuclear tests, which EM-DAT doesn't record." },
+ "eruption": { "name": "Volcanic activity", "cause": "natural", "irdr": "geophysical", "emdat": "Natural > Geophysical > Volcanic activity", "wikidata": ["Q7692360"],
+  "note": "The id stays 'eruption' (Kevin's word); the name is EM-DAT's type." },
+ "earthquake": { "name": "Earthquake or tsunami", "cause": "natural", "irdr": "geophysical", "emdat": "Natural > Geophysical > Earthquake (subtypes: Ground movement; Tsunami)", "wikidata": ["Q7944", "Q8070"],
+  "note": "Renamed: EM-DAT's 'Earthquake' type, named with its tsunami subtype so a reader finds tsunamis here (Kevin, 2026-11-23)." },
+ "flood": { "name": "Flood", "cause": "natural", "irdr": "hydrological", "emdat": "Natural > Hydrological > Flood", "wikidata": ["Q8068"] },
+ "storm": { "name": "Storm", "cause": "natural", "irdr": "meteorological", "emdat": "Natural > Meteorological > Storm (incl. Tropical cyclone, Tornado, Blizzard/Winter storm)", "wikidata": ["Q81054"] },
+ "drought": { "name": "Drought or crop failure", "cause": "natural", "irdr": "climatological", "emdat": "Natural > Climatological > Drought", "wikidata": ["Q43059"],
+  "note": "Renamed and merged: EM-DAT's 'Drought', plus famines with no policy or war cause (EM-DAT reclassified most famines as drought in 2023)." },
+ "epidemic": { "name": "Epidemic", "cause": "natural", "irdr": "biological", "emdat": "Natural > Biological > Epidemic", "wikidata": ["Q44512"] },
+ "famine": { "name": "Famine", "cause": "human-caused", "emdat": "none since 2023 (the former 'Complex' group; now an 'Associated disaster' tag)", "wikidata": ["Q168247"],
+  "note": "Only a famine caused mainly by policy or war (Kevin, 2026-11-23); one classed as genocide also carries 'Massacre or genocide'." },
+ "industrial": { "name": "Industrial accident", "cause": "human-caused", "emdat": "Technological > Industrial accident", "wikidata": ["Q68800046"] },
+ "accident": { "name": "Accident or explosion", "cause": "human-caused", "emdat": "Technological > Miscellaneous accident; Technological > Transport", "wikidata": ["Q171558", "Q179057"],
+  "note": "Merged: EM-DAT's 'Miscellaneous accident' (collapse, explosion, fire) and 'Transport' (air, rail, road, water)." },
+ "nuclear-test": { "name": "Nuclear test", "cause": "human-caused", "emdat": "none (EM-DAT records accidents, not tests; nearest: Industrial accident > Radiation)", "wikidata": ["Q210112"],
+  "note": "Added: no IRDR or EM-DAT class (Kevin, 2026-11-23)." }
+}
