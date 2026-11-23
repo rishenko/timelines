@@ -65,7 +65,8 @@ export function LaneLabel({ lane, regionTip, tag, compare, labelW, overflow, exp
     </span>
   );
   return (
-    <div className="tl-lane-label" style={{ width: labelW }}>
+    // data-row: the row's id, for scripts (screenshot.ts --row); nothing reads it in the app
+    <div className="tl-lane-label" data-row={lane.track.id} style={{ width: labelW }}>
       {lane.depth > 0 && (
         // nesting guides: one vertical line per level, under the start of each ancestor's name (like an outline's indent
         // guides), and an elbow from the innermost one to this row's name
