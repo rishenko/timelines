@@ -23,6 +23,9 @@ import { ClusterMark, EventMark } from './Marks.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import { hasGlyph } from '../components/CategoryGlyph.tsx';
 import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
+import { formatYear } from '../lib/calendar.ts';
+import { meanwhile } from '../cursor/meanwhile.ts';
+import { CursorBand, CursorHead, CursorLine } from '../cursor/YearCursor.tsx';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
@@ -424,6 +427,7 @@ export function TimelineView(props: Props) {
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,
     onSearchKey: props.onSearchKey,
+    onCursorKey: (y) => placeCursorByKey(y),
     stripLines,
   });
 
@@ -444,6 +448,47 @@ export function TimelineView(props: Props) {
     }
     return ids;
   }, [keep, flashLane, rovingKey, layout, stripStops]);
+  // The year cursor: the year under the pointer (or placed with Y), with the chart's geometry when it was set (where
+  // the chart is in the window, its sticky header's height, and which stretch of rows is on screen), so drawing it
+  // reads no refs. Pointer and scroll keep it current.
+  type Cursor = { year: number; keyboard: boolean; left: number; top: number; headH: number; rowsTop: number; rowsBottom: number };
+  const [cursor, setCursor] = useState<Cursor | null>(null);
+  const cursorFrame = useRef(0);
+  const cursorReturn = useRef<HTMLElement | null>(null);
+  const cursorAt = (year: number, keyboard: boolean): Cursor | null => {
+    const el = scrollerRef.current;
+    if (!el) return null;
+    const box = el.getBoundingClientRect();
+    const headH = lanesRef.current?.offsetTop ?? 0;
+    return { year, keyboard, left: box.left, top: box.top, headH, rowsTop: el.scrollTop, rowsBottom: el.scrollTop + el.clientHeight - headH };
+  };
+  const onCursorMove = (ev: React.PointerEvent) => {
+    if (ev.pointerType === 'touch' || cursor?.keyboard) return;
+    const { clientX } = ev;
+    cancelAnimationFrame(cursorFrame.current);
+    cursorFrame.current = requestAnimationFrame(() => {
+      const el = scrollerRef.current;
+      if (!el) return;
+      const x = clientX - el.getBoundingClientRect().left + el.scrollLeft - labelW;
+      setCursor(x < 0 || x > scale.width ? null : cursorAt(Math.round(scale.yearAt(x)), false));
+    });
+  };
+  const onCursorLeave = () => {
+    cancelAnimationFrame(cursorFrame.current);
+    setCursor((c) => (c?.keyboard ? c : null));
+  };
+  const onCursorScroll = () => setCursor((c) => (c ? cursorAt(c.year, c.keyboard) : c));
+  function placeCursorByKey(year: number) {
+    cursorReturn.current = document.activeElement as HTMLElement | null;
+    setCursor(cursorAt(Math.round(year), true));
+  }
+  const stepCursor = (dir: 1 | -1, fine: boolean) =>
+    setCursor((c) => (c ? cursorAt(c.year + dir * Math.max(1, Math.round(fine ? increment / 10 : increment)), true) : c));
+  const closeCursor = () => {
+    setCursor(null);
+    cursorReturn.current?.focus();
+  };
+
   const drawnLanes = useMemo(() => {
     const y0 = rows.top - rows.height * ROWS_ABOVE;
     const y1 = rows.top + rows.height * (1 + ROWS_BELOW);
@@ -492,7 +537,22 @@ export function TimelineView(props: Props) {
     press.start(x, ev.clientY, () => createAt(trackId, lane, x));
   };
 
-  return (
+  // what was going on at the cursor's year in the rows on screen, and where its line meets the window
+  const cursorM = useMemo(() => {
+    if (!cursor) return null;
+    const onScreen = layout.lanes.filter((l) => l.top + l.height > cursor.rowsTop && l.top < cursor.rowsBottom && !shown.thin.has(l.lane.id));
+    return meanwhile(
+      cursor.year,
+      onScreen.map(({ lane }) => ({ id: lane.id, name: lane.track.name, color: lane.track.color, depth: lane.depth, members: lane.members, memberNames: new Map(lane.members.map((m) => [m, anyRow.get(m)?.name ?? m])) })),
+      phases,
+      events,
+      props.reignLane ?? new Set(),
+      props.ages ?? [],
+      spans,
+    );
+  }, [cursor, layout.lanes, shown.thin, anyRow, phases, events, props.reignLane, props.ages, spans]);
+  const cursorX = cursor ? cursor.left + labelW + scale.x(cursor.year) - view.left : 0;
+  const chart = (
     // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
     // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <div
@@ -503,7 +563,12 @@ export function TimelineView(props: Props) {
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
       aria-busy={rowsPending || !!props.busy}
       ref={scrollerRef}
-      onScroll={onScroll}
+      onScroll={() => {
+        onScroll();
+        onCursorScroll();
+      }}
+      onPointerMove={onCursorMove}
+      onPointerLeave={onCursorLeave}
       {...pinch}
       onClick={(e) => {
         if (e.target === e.currentTarget) onSelect(null);
@@ -569,6 +634,7 @@ export function TimelineView(props: Props) {
           {/* the era line has its own layer, over the rows' backgrounds and spans (which cover the grid), under the marks */}
           {visibleTicks.includes(era) && <div className="tl-era-line" style={{ left: labelW + scale.x(era) }} />}
 
+          {cursor && <CursorLine x={labelW + scale.x(cursor.year)} height={layout.height} />}
           <ConnectionLayer
             left={labelW}
             width={scale.width + END_PAD}
@@ -753,6 +819,23 @@ export function TimelineView(props: Props) {
           )}
         </div>
       </div>
+      {cursor && cursorX >= cursor.left + labelW && cursorX <= cursor.left + view.width && (
+        <CursorHead
+          label={formatYear(cursor.year, cal)}
+          x={cursorX}
+          top={cursor.top}
+          headH={cursor.headH}
+          keyboard={cursor.keyboard}
+          onStep={stepCursor}
+          onClose={closeCursor}
+        />
+      )}
+    </div>
+  );
+  return (
+    <div className="tl-cursor-col">
+      <CursorBand m={cursorM} label={cursor ? formatYear(cursor.year, cal) : null} />
+      {chart}
     </div>
   );
 }

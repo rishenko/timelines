@@ -204,6 +204,34 @@ describe('accessibility', () => {
     });
   });
 
+  describe('year cursor', () => {
+    const press = async (key: string, opts: object = {}) =>
+      act(async () => {
+        fireEvent.keyDown(document.activeElement!, { key, ...opts });
+      });
+    it('Y on the chart places it and the band names the year; arrows step it; Escape returns focus (WCAG 2.1.4)', async () => {
+      const { container } = open('ancient-classical');
+      const band = container.querySelector('.tl-cursor-band')!;
+      expect(band.textContent).toMatch(/^Point at the chart/);
+      const search = screen.getByRole('combobox', { name: /^Search rows and events/ });
+      search.focus();
+      await press('y');
+      expect(container.querySelector('.tl-cursor-chip')).toBeNull(); // typing y in search does nothing
+      const mark = container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!;
+      mark.focus();
+      await press('y');
+      const chip = screen.getByRole('slider', { name: 'Year cursor' });
+      expect(document.activeElement).toBe(chip);
+      const first = chip.getAttribute('aria-valuetext');
+      expect(band.textContent!.startsWith(first!)).toBe(true);
+      await press('ArrowRight');
+      expect(chip.getAttribute('aria-valuetext')).not.toBe(first);
+      await press('Escape');
+      expect(container.querySelector('.tl-cursor-chip')).toBeNull();
+      expect(document.activeElement).toBe(mark);
+    });
+  });
+
   describe('timeline menu', () => {
     const title = 'Ancient and Classical World';
 

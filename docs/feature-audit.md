@@ -144,7 +144,7 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
        - ←/→: previous or next event in the row, by date. ↑/↓: the nearest event in the row above or below.
          Home/End: the first or last event in the row. PageUp/PageDown: scroll a screen.
        - +/−: zoom around the focused event. Enter: open it. On a row label, Enter or Space folds or unfolds the row.
-         `?`: list the shortcuts.
+         `?`: list the shortcuts. Y: the year cursor (23 November 2026), stepped with ←/→, put away with Esc.
        - The view scrolls to follow focus, and the focused event stays in the page even when it's off-screen.
     d. **Visual (S–M).**
        - Uncertainty gets a second cue besides the tint: hatching or end ticks, shown in the Legend. Done 18 November
