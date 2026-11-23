@@ -85,3 +85,47 @@ describe('the Ages strip', () => {
     expect(c.querySelector<HTMLButtonElement>('button.tl-age')!.title).not.toContain('↗');
   });
 });
+
+describe('the Ages strip from the keyboard', () => {
+  const eras: Era[] = [
+    { id: 'a', name: 'Ash', start: 0, end: 40, group: 'g1', sources: cite },
+    { id: 'b', name: 'Brine', start: 40, end: 90, group: 'g1', sources: cite },
+    { id: 'c', name: 'Coral', start: 90, end: 150, group: 'g1', sources: cite, url: wiki },
+    { id: 'd', name: 'Dune', start: 10, end: 120, group: 'g2', sources: cite },
+  ];
+  const stops = (c: HTMLElement) => [...c.querySelectorAll<HTMLElement>('[tabindex="0"]')].map((e) => e.dataset.ageId ?? e.tagName);
+
+  it('is one Tab stop per line, at the first age in view; ↗ links are left to the panel', () => {
+    const c = render_(eras);
+    expect(stops(c)).toEqual(['a', 'd']);
+    expect(c.querySelector('a.tl-age-link')!.getAttribute('tabindex')).toBe('-1');
+    // scrolled on: the stop is the first age at or after the view's left edge
+    expect(stops(render_(eras, 500))).toContain('c');
+  });
+
+  it('moves along a line with ←/→ and Home/End, and the stop follows focus', () => {
+    const c = render_(eras);
+    const btn = (id: string) => c.querySelector<HTMLButtonElement>(`button[data-age-id="${id}"]`)!;
+    btn('a').focus();
+    fireEvent.keyDown(btn('a'), { key: 'ArrowRight' });
+    expect(document.activeElement).toBe(btn('b'));
+    fireEvent.keyDown(btn('b'), { key: 'End' });
+    expect(document.activeElement).toBe(btn('c'));
+    // past the end it stays put; never jumps to another line
+    fireEvent.keyDown(btn('c'), { key: 'ArrowRight' });
+    expect(document.activeElement).toBe(btn('c'));
+    fireEvent.keyDown(btn('c'), { key: 'Home' });
+    expect(document.activeElement).toBe(btn('a'));
+    fireEvent.keyDown(btn('a'), { key: 'ArrowRight' });
+    expect(stops(c)).toEqual(['b', 'd']);
+  });
+
+  it('opens the focused age with Enter (a button: Enter clicks it)', () => {
+    const onOpen = vi.fn();
+    const c = render_(eras, 0, onOpen);
+    const b = c.querySelector<HTMLButtonElement>('button[data-age-id="d"]')!;
+    expect(b.tagName).toBe('BUTTON');
+    fireEvent.click(b);
+    expect(onOpen).toHaveBeenCalledWith('d');
+  });
+});

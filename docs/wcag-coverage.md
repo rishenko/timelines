@@ -78,7 +78,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 
 | SC | Level | Coverage | Run | Checks | Status |
 |---|---|---|---|---|---|
-| 2.1.1 Keyboard | A | Partial | tests | CI: axe `scrollable-region-focusable`; jsx-a11y `click-events-have-key-events` (each mouse-only handler names its key); tests: chart keys (`keyboard.test.ts`, `a11y.test.tsx`), Customize tabs, edit mode on and off. | Pass |
+| 2.1.1 Keyboard | A | Partial | tests | CI: axe `scrollable-region-focusable`; jsx-a11y `click-events-have-key-events` (each mouse-only handler names its key); tests: chart keys (`keyboard.test.ts`, `a11y.test.tsx`), phase strips and their details (`phaseKeyboard.test.tsx`), age lines (`AgeStrip.test.tsx`), Customize tabs, edit mode on and off. | Pass |
 | 2.1.2 No Keyboard Trap | A | Partial | tests | Tests: the chart is one Tab stop and Tab leaves it; Escape leaves the detail panel. No test tabs through every view. | Pass |
 | 2.1.4 Character Key Shortcuts | A | Partial | tests | The one-key shortcuts (`/`, `?`, `+`/`−`) act only while the chart has focus, which WCAG allows. Test: `/` moves to search from the chart and does nothing elsewhere. | Pass (fixed 20 Nov 2026; `/` used to work page-wide) |
 | 2.2.1 Timing Adjustable | A | Manual | — | Toasts disappear after 3.5 s, including error toasts (a failed upload, edits that can't be saved). They are also announced in the live region. | Not reviewed |
@@ -86,7 +86,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 | 2.3.1 Three Flashes or Below Threshold | A | Manual | — | Nothing flashes. | Pass (code) |
 | 2.4.1 Bypass Blocks | A | Automated (CI) | tests | Test: skip link to the timeline (or table) region; landmarks. | Pass |
 | 2.4.2 Page Titled | A | Automated (CI) | — | axe `document-title`; the title is the open timeline's. | Pass |
-| 2.4.3 Focus Order | A | Partial | tests | Tests: opening an event focuses the detail panel, Escape returns to the event; a search pick focuses its event; Customize tabs. | Pass |
+| 2.4.3 Focus Order | A | Partial | tests | Tests: opening an event focuses the detail panel, Escape returns to the event (and to a phase's strip cell); a search pick focuses its event; Customize tabs. | Pass |
 | 2.4.4 Link Purpose (In Context) | A | Partial | tests | CI: axe `link-name`; test: a row's linked name says it opens a new tab. | Pass |
 | 2.4.5 Multiple Ways | AA | N/A | — | One page (search and the table view exist anyway). | — |
 | 2.4.6 Headings and Labels | AA | Manual | — | Whether headings and labels describe their content. | Not reviewed |

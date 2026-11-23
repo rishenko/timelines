@@ -148,7 +148,9 @@ a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessib
 clicking it opens its details: its dates, its article (`url`) and its sources as links, so every age reaches its
 article and sources however narrow its bar. Ages never move the chart. An age with a `url` has a ↗ link to that page just before its name (when its bar
 has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`, and names its region (its rows, or "All
-regions"). Deleting a row in edit mode names the ages that move to the strip.
+regions"). Deleting a row in edit mode names the ages that move to the strip. From the keyboard, each line of the strip or
+a band is one Tab stop: ←/→ and Home/End move along it, and Enter opens the focused age's details (the ↗ links are
+left out of the Tab order; the details link the article).
 
 ### calendar
 
@@ -241,7 +243,9 @@ overlap, as rival governments do in a civil war; an overlapping phase goes on a 
 (`ongoing`) ends in an arrow, kept at the right edge of the chart while its end is off screen; a still-going lifespan
 shows the same arrow on its top edge. A folded row shows only its own phases, over one lifespan: the years when it or
 any row folded into it existed. Events stay on the row itself. In edit mode, the track editor lists a row's phases (name, dates, dated claims) and stores them in date
-order. Search finds phases by name.
+order. Search finds phases by name. From the keyboard, a row's strip lines are lines of the chart's keyboard grid, above
+its events: ↑/↓ reach them, ←/→ and Home/End walk a line, and Enter opens the phase's details in the side panel (its
+dates, each date's claims with their sources, the events that began and ended it).
 
 ### Succession: `startEvent`, `endEvent`
 
@@ -294,8 +298,9 @@ optional `startEvent`/`endEvent`), with the `sources` that place the row there (
 - On the chart, each membership is **one more strip line** on the member's row, under its phase strips: the union's
   name and years ("in Soviet Union, 1922–91") in the union's colour, as a faint cell with a dashed underline (phases
   are filled cells), with the same begin and end lines, arrow when `ongoing`, name placement and thin line when zoomed
-  out as a phase. Memberships that overlap take a line each. Display only: its tooltip names both rows, the years and
-  the events that began and ended it.
+  out as a phase. Memberships that overlap take a line each. Its tooltip names both rows, the years and the events
+  that began and ended it; from the keyboard it is reached like a phase, and Enter opens its details (dates, claims,
+  sources) in the side panel.
 - A row that changes hands several times within one year needs its memberships dated in
   [months and days](#months-and-days): given in whole years, a membership that starts and ends in the same year
   covers that whole year, and one that ends in the year the next starts shares its line. Contested days, when two

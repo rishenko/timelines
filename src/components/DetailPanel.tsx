@@ -75,7 +75,8 @@ function SuccessionList({ data, label, edges }: { data: Dataset; label: string; 
   );
 }
 
-function ClaimRows({ data, claims, label, window, days }: { data: Dataset; claims: Claim[]; label: string; window?: Window; days?: DayWindow }) {
+/** A date's claims (each source's year, with its margin and chronology), under a heading with its range. */
+export function ClaimRows({ data, claims, label, window, days }: { data: Dataset; claims: Claim[]; label: string; window?: Window; days?: DayWindow }) {
   const cal = data.meta.calendar;
   if (!claims.length && !window && !days) return null;
   return (

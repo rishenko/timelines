@@ -85,7 +85,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/timeline/TimelineView.tsx` | The chart: lanes from the row tree, windowed rendering (rows a screen above to 2.5 below, plus the rows holding the Tab stop or selection; marks a screen either side); composes the pieces below |
 | `src/timeline/Ruler.tsx`, `Bands.tsx`, `LaneLabel.tsx`, `Marks.tsx` | The year ruler; lifespan and phase bands; row labels and their buttons; event and `+N` marks |
 | `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen; the view's stretch for drawing (a vertical scroll re-renders only every half screen) |
-| `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys) and its movement rules |
+| `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys; phase strip lines are grid lines) and its movement rules |
 | `src/timeline/gestures.ts` | Pinch zoom and long press |
 | `src/timeline/rowsInView.ts` | Which rows have nothing near the view ("Hide rows with nothing in view") |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
@@ -268,6 +268,16 @@ selected, and the other way round. Ages never move the chart (Kevin: centring ad
 its name and moving with it, when the bar has room for two 24 px targets (the link and the rest of the button);
 narrower ages leave it to the side panel. The table view's Ages table is the strip's accessible equivalent; its names
 link the way row names do (`LinkedName` in `TableView.tsx`).
+
+**Keyboard on strips.** `AgeBars` gives each strip or band line one Tab stop (a roving tabindex, keyed by band, group
+and line name, since line numbers change as empty lines close up): ←/→ and Home/End move along the line, and the ↗
+links are `tabIndex=-1` (the details panel links the article). Phase strip cells join the chart's own grid instead
+(`buildGrid`'s `stripLines`: one grid line per strip line, above the lane's events), so the chart stays one Tab stop
+and the Tab stop never starts on a strip cell (`Stop.strip`). Each `PlacedPhase` carries a `ref` (`phaseRef`:
+row and index in `Track.phases`; `memberRef`: row and index in `Track.memberOf`, carried as `ResolvedMembership.index`; an editor opening closes the panel, since edits can reorder them), which is the cell's `data-phase-ref`, its
+stop key (`strip:<ref>`) and `App.tsx`'s `selectedPhaseRef`; Enter or Space on a cell opens `PhasePanel` (in
+`DetailsFrame`; `findPhase` in `App.tsx` maps the ref back to the stored and resolved phase). Clicks on a cell still go
+through to the row.
 
 Ages with `tracks` aren't in the strip: `placeAges` places such an age once per row it names (`band`), numbering
 lines per row, and `splitAges` separates the strip's from each row's. `TimelineView` adds each row's band height to

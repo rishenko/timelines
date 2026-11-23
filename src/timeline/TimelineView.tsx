@@ -5,7 +5,8 @@ import type { Dataset, Track } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor, keptStretches } from './anchors.ts';
-import { buildLanes, layoutLanes, layoutPhaseStrips, placeMemberships, placePhases, type Mark } from './layout.ts';
+import { buildLanes, layoutLanes, layoutPhaseStrips, memberRef, phaseRef, placeMemberships, placeOnLines, type LaneLayout, type Mark } from './layout.ts';
+import { stripStopKey } from './keyboard.ts';
 import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
 import { mergeStretches } from '../lib/lifespan.ts';
 import { eraStart } from '../lib/calendar.ts';
@@ -48,6 +49,9 @@ interface Props {
   /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
   selectedAgeId?: string | null;
   onOpenAge?: (id: string) => void;
+  /** The phase or membership whose details are open (its PlacedPhase.ref), and opening one (Enter on its strip cell). */
+  selectedPhaseRef?: string | null;
+  onOpenPhase?: (ref: string) => void;
   /** Each event's categories (its main kind draws a glyph; both are in its accessible name). */
   categories?: Map<string, EventCategories>;
   /** Visible events, re-plotted under the selected chronologies. */
@@ -192,10 +196,12 @@ export function TimelineView(props: Props) {
     () =>
       new Map(
         lanes.map((l) => {
-          const own = placePhases(l.id, phases);
+          // (each keeps a ref to what it stands for, so the keyboard and the side panel find it again)
+          const own = placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })));
           const lines = own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0;
           const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row)?.name ?? m.row, cal, isApprox(m));
-          return [l.id, [...own, ...placeMemberships(l.id, memberOf.get(l.id) ?? [], lines, label)]];
+          const ms = (memberOf.get(l.id) ?? []).map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
+          return [l.id, [...own, ...placeMemberships(l.id, ms, lines, label)]];
         }),
       ),
     [lanes, phases, memberOf, anyRow, cal],
@@ -384,6 +390,22 @@ export function TimelineView(props: Props) {
 
   // thin lines hold nothing to reach with the keyboard
   const navLanes = useMemo(() => layout.lanes.filter((l) => !shown.thin.has(l.lane.id)), [layout, shown.thin]);
+  // a row's phase strip lines are grid lines above its events: each drawn cell is a stop (only with a side panel to open)
+  const stripStops = useMemo(() => {
+    const out = new Map<string, { key: string; x: number }[][]>();
+    if (!props.onOpenPhase) return out;
+    for (const [id, st] of laneStrips) {
+      const lines = st.lines.map(() => [] as { key: string; x: number }[]);
+      for (const c of st.cells) {
+        const i = st.lines.indexOf(c.line);
+        if (!c.phase.ref || i < 0 || Math.min(c.x1, scale.width) < Math.max(c.x0, 0)) continue;
+        lines[i].push({ key: stripStopKey(c.phase.ref), x: Math.max(c.x0, 0) });
+      }
+      out.set(id, lines);
+    }
+    return out;
+  }, [laneStrips, scale, props.onOpenPhase]);
+  const stripLines = useCallback((l: LaneLayout) => stripStops.get(l.lane.id) ?? [], [stripStops]);
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
     expanded,
@@ -400,6 +422,7 @@ export function TimelineView(props: Props) {
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,
     onSearchKey: props.onSearchKey,
+    stripLines,
   });
 
   // On a chart more than six screens tall, only render rows near the viewport (a screen above, two and a half below),
@@ -412,11 +435,13 @@ export function TimelineView(props: Props) {
     if (rovingKey) {
       const id = rovingKey.startsWith('label:')
         ? rovingKey.slice('label:'.length, rovingKey.lastIndexOf(':'))
-        : layout.lanes.find((l) => l.marks.some((m) => m.key === rovingKey))?.lane.id;
+        : rovingKey.startsWith('strip:')
+          ? [...stripStops].find(([, lines]) => lines.some((line) => line.some((s) => s.key === rovingKey)))?.[0]
+          : layout.lanes.find((l) => l.marks.some((m) => m.key === rovingKey))?.lane.id;
       if (id) ids.add(id);
     }
     return ids;
-  }, [keep, flashLane, rovingKey, layout]);
+  }, [keep, flashLane, rovingKey, layout, stripStops]);
   const drawnLanes = useMemo(() => {
     const y0 = rows.top - rows.height * ROWS_ABOVE;
     const y1 = rows.top + rows.height * (1 + ROWS_BELOW);
@@ -609,6 +634,10 @@ export function TimelineView(props: Props) {
                   color={(anyRow.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
                   memberName={lane.track.name}
                   unionName={c.phase.member && (anyRow.get(c.phase.member)?.name ?? c.phase.member)}
+                  isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
+                  selected={!!c.phase.ref && c.phase.ref === props.selectedPhaseRef}
+                  onOpen={props.onOpenPhase}
+                  onStopFocus={onStopFocus}
                   {...band}
                 />
               ))}

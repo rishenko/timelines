@@ -18,6 +18,8 @@ export interface Stop {
   label: boolean;
   /** For an event mark, its event; for a cluster, the events folded into it. */
   eventIds: string[];
+  /** A cell of a row's phase strip (a phase or a membership): never where the Tab stop starts. */
+  strip?: boolean;
 }
 
 export interface StopLane {
@@ -30,9 +32,27 @@ export type Move = 'left' | 'right' | 'up' | 'down' | 'home' | 'end' | 'page-lef
 /** Keys of a lane label's controls (its name when it is a link, the compare button, then the fold and hidden-rows buttons), in the order shown. */
 export const labelStopKey = (laneId: string, which: 'link' | 'compare' | 'overflow' | 'fold' | 'hidden') => `label:${laneId}:${which}`;
 
-/** The navigation grid: each lane's label stops, then its marks sorted by time (left edge), top to bottom. */
-export function buildGrid(lanes: LaneLayout[], labelStops: (lane: LaneLayout) => string[]): StopLane[] {
-  return lanes.map((l) => ({
+/** A phase strip cell's stop key, from its PlacedPhase.ref. */
+export const stripStopKey = (ref: string) => `strip:${ref}`;
+
+/**
+ * The navigation grid: each lane's phase strip lines first (`stripLines`: one grid line per strip line, its cells in
+ * time order, as drawn at the top of the lane), then a line of its label stops and its marks sorted by time (left
+ * edge), top to bottom. So Up and Down pass through a row's strip lines on the way to its events.
+ */
+export function buildGrid(
+  lanes: LaneLayout[],
+  labelStops: (lane: LaneLayout) => string[],
+  stripLines?: (lane: LaneLayout) => { key: string; x: number }[][],
+): StopLane[] {
+  return lanes.flatMap((l) => [
+    ...(stripLines?.(l) ?? [])
+      .filter((line) => line.length)
+      .map((line) => ({
+        laneId: l.lane.id,
+        stops: [...line].sort((a, b) => a.x - b.x).map((c) => ({ key: c.key, x: c.x, label: false, eventIds: [], strip: true })),
+      })),
+    {
     laneId: l.lane.id,
     stops: [
       ...labelStops(l).map((key) => ({ key, x: -Infinity, label: true, eventIds: [] })),
@@ -40,7 +60,8 @@ export function buildGrid(lanes: LaneLayout[], labelStops: (lane: LaneLayout) =>
         .sort((a, b) => a.x0 - b.x0 || a.cy - b.cy)
         .map((m) => ({ key: m.key, x: m.x0, label: false, eventIds: m.kind === 'cluster' ? (m.eventIds ?? []) : [m.eventId] })),
     ],
-  }));
+    },
+  ]);
 }
 
 function locate(grid: StopLane[], key: string): { lane: number; index: number } | undefined {
