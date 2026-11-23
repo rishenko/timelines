@@ -357,7 +357,9 @@
 /* an age's ↗ article link, before its name in the strip (the side panel links it too) */
 .tl-strip-link {
   margin-right: 4px;
-  color: var(--text);
+  /* the name's own colour (currentColor): the contrast check hides a name by making it transparent, and a link with a
+     colour of its own would be measured as the name's background */
+  color: currentColor;
   font-weight: 700;
   text-decoration: none;
 }
