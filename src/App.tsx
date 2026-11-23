@@ -52,6 +52,8 @@ import type { LibraryEntry } from './state/library.ts';
 import type { Dataset } from './types.ts';
 import type { ResolvedPhase } from './lib/chronology.ts';
 import type { ResolvedMembership } from './lib/memberOf.ts';
+import { citeTimeline } from './lib/cite.ts';
+import { CiteDialog } from './components/CiteDialog.tsx';
 import { createPortal, flushSync } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import { PrintPages } from './print/PrintView.tsx';
@@ -150,6 +152,8 @@ export default function App({ published: opened, library: libraryEntry, site, no
     return [at, !!raw && !at] as const;
   }, []);
   // on opening, readers with a saved draft hear if the published timeline changed underneath it
+  // "Cite this timeline" (the title menu): its dialog is open
+  const [citing, setCiting] = useState(false);
   const [toast, notify] = useToast(
     unreadableDraft
       ? "Your saved edits to this timeline couldn't be opened. They are kept in this browser's storage as " +
@@ -527,6 +531,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
               setCustomizeTab('timelines');
               panels.show('customize', true);
             }}
+            onCite={() => setCiting(true)}
           />
         }
         increments={increments}
@@ -850,6 +855,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           visibleIds={visibleIds}
           onSelectAndFocus={selectAndFocus}
           onCopyLink={(id) => void library.copyEventLink(id)}
+          eventLink={library.eventLink}
           mapUrl={mapUrl}
           categoriesOf={categories.info}
           selectedAge={selectedAge}
@@ -860,6 +866,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       </main>
 
       <Credits text={meta.credits} image={meta.creditsImage} />
+      {citing && <CiteDialog title={meta.title} cite={citeTimeline(published, library.timelineLink())} onClose={() => setCiting(false)} />}
 
       {toast && (
         <div key={toast.n} className={`toast ${toast.kind}`} aria-hidden="true">

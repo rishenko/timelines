@@ -19,6 +19,7 @@ describe('About this data', () => {
       expect(screen.getByRole('heading', { name: h })).toBeTruthy();
     expect(screen.getByText(/flagged for AI-generated text/)).toBeTruthy();
     expect(screen.getByRole('link', { name: 'CC BY 4.0' })).toBeTruthy();
+    expect(screen.getByText(/Data version \S+.*the commit this site was built from/)).toBeTruthy();
   });
 
   it('links back to the timeline it was opened from', () => {

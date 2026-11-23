@@ -1,6 +1,5 @@
 import './about.css';
-
-const REPO_URL = 'https://github.com/rishenko/timelines';
+import { DATA_VERSION, REPO as REPO_URL } from '../lib/cite.ts';
 
 /** The address of the same page without ?page=about: back to the timeline the reader came from (or the default one). */
 export function backUrl(search: string, pathname: string): string {
@@ -25,6 +24,12 @@ export function About({ search = window.location.search, pathname = window.locat
       <p className="lead">
         The timelines were compiled with the help of an AI assistant, from English Wikipedia. Nothing here has been
         reviewed by a specialist yet. This page says how the data was made, so you can judge how far to trust it.
+      </p>
+
+      <p className="muted">
+        Data version {DATA_VERSION.sha}
+        {DATA_VERSION.date ? ` (${DATA_VERSION.date})` : ''}: the commit this site was built from. The data changes
+        between versions.
       </p>
 
       <h2>Method</h2>
@@ -88,9 +93,11 @@ export function About({ search = window.location.search, pathname = window.locat
 
       <h2>Report a problem or cite this</h2>
       <p>
-        Found an error? Report it at <a href={`${REPO_URL}/issues`}>the project’s issue tracker</a>, with the
-        event’s name and timeline. To cite a timeline or an event, use the data version above in your citation, so a
-        reader can tell which version you used: the data changes between releases.
+        Found an error? Each event’s details have a <em>Report a problem</em> link that opens a pre-filled issue on{' '}
+        <a href={`${REPO_URL}/issues`}>the project’s issue tracker</a> (you need a GitHub account), or open one there
+        yourself with the event’s name and timeline. To cite a timeline or an event, use its <em>Cite this</em>{' '}
+        button (the timeline menu, or the event’s details): the citation names the data version above, so a reader can
+        tell which version you used.
       </p>
       <p>
         The code, the generators and the full documentation are at <a href={REPO_URL}>github.com/rishenko/timelines</a>.

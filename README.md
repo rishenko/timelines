@@ -62,6 +62,9 @@ The three link to each other where they meet, at 650 and 1500.
   link* button.
 - **About this data:** the footer's link opens a page on how the timelines were made: Wikipedia-only sourcing, the
   rule against AI-flagged pages, known gaps and the licences.
+- **Cite this:** a timeline (title menu → *Cite this timeline…*) or an event (its details) gives a Chicago citation and
+  a BibTeX entry with the data version, the date accessed and the link. **Report a problem** on an event opens a
+  GitHub issue pre-filled with its timeline, id, dates and sources (on the timelines this site ships).
 - **Maps** (Ancient and Classical): opening an event shows its rows on a map of its year: borders where a source has
   them, else a pin and the map from the row's Wikipedia article.
 

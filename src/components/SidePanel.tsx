@@ -33,6 +33,8 @@ interface Props {
   /** Selects an event and scrolls to it (a link in the detail panel). */
   onSelectAndFocus: (id: string) => void;
   onCopyLink: (eventId: string) => void;
+  /** A link to an event (cited by "Cite this", and in a problem report). */
+  eventLink: (eventId: string) => string;
   /** The timeline's map file, if it has one (shown in event details). */
   mapUrl?: string;
   /** Each event's categories, for the event panel's Category line. */
@@ -136,6 +138,7 @@ export function SidePanel(p: Props) {
       onClose={() => setSelectedId(null)}
       onSelect={p.onSelectAndFocus}
       onCopyLink={() => p.onCopyLink(selected.uuid)}
+      link={p.eventLink(selected.uuid)}
       mapUrl={p.mapUrl}
       category={p.categoriesOf?.get(selected.uuid)}
       onEdit={() => setEditing({ kind: 'event', event: selected, isNew: false })}

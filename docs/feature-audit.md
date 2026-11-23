@@ -21,7 +21,7 @@ Few public timeline tools go this far. The main gaps are in trust, citation and 
 
 The data is compiled with AI assistance from Wikipedia, and scholars will judge it on that before anything else.
 
-1. **About this data page (S), done 23 November 2026** (`?page=about`, from the footer; the data version joins it with #109). A reader-facing page with the method: Wikipedia-only sourcing, books cited
+1. **About this data page (S), done 23 November 2026** (`?page=about`, from the footer; it shows the data version). A reader-facing page with the method: Wikipedia-only sourcing, books cited
    "via Wikipedia (not checked)", margins derived from claims, the LLM-banner rule, AI-assisted compilation, known
    gaps and the chronology table. Today this is only in `docs/`, which readers never see, and in a two-line footer.
 2. **Review status per event and row (M).** A field such as `review: unchecked | checked-against-source |
@@ -29,6 +29,8 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
    a specialist can't tell which parts are unchecked and has no reason to help review.
 3. **Report a problem (S).** A link on each event that opens a GitHub issue pre-filled with the event's id, title,
    dates and sources. This gives readers an errata channel without accounts.
+   Done 23 November 2026 (PR #109): *Report a problem* in an event's details, on the timelines this site ships, opens
+   a new issue with the timeline, the event's id, title and dates, its sources and the data version.
 4. **Primary and secondary sources (M).** A source `kind` (ancient text, inscription, excavation report,
    modern scholarship, encyclopedia), shown with the citation. A historian weighs "the Assyrian Eponym List" very
    differently from "Wikipedia".
@@ -40,6 +42,8 @@ The data is compiled with AI assistance from Wikipedia, and scholars will judge 
 
 6. **Cite this (S).** A button on the timeline and on each event that gives a formatted citation (Chicago, plus
    BibTeX or CSL-JSON) with the data version, the date accessed and the deep link.
+   Done 23 November 2026 (PR #109): Chicago and BibTeX, each with a Copy button, for the timeline (title menu) and each
+   event (its details); the data version is the build's commit and date. Not yet: CSL-JSON.
 7. **Versioned releases with a DOI (S–M).** Tag data releases and archive them on Zenodo through its GitHub
    integration, so each version gets a DOI and a fixed snapshot. Show the data version in the app. Today the data
    changes silently between deploys, so a citation can't say which version it used.
