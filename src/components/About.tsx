@@ -22,30 +22,51 @@ export function About({ search = window.location.search, pathname = window.locat
       </p>
       <h1>About this data</h1>
       <p className="lead">
-        The timelines were compiled with the help of an AI assistant, from English Wikipedia. Nothing here has been
-        reviewed by a specialist yet. This page says how the data was made, so you can judge how far to trust it.
+        The timelines were compiled with the help of an AI assistant. The aim is to find several highly reputable
+        sources and stick to them. This page says what each source supplies and how the data was made, so you can
+        judge how far to trust it.
       </p>
 
       <p className="muted">
         Data version {DATA_VERSION.sha}
-        {DATA_VERSION.date ? ` (${DATA_VERSION.date})` : ''}: the commit this site was built from. The data changes
-        between versions.
+        {DATA_VERSION.date ? ` (${DATA_VERSION.date})` : ''}: the commit this site was built from. It changes with
+        every update to the site.
       </p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>
+          <strong>English Wikipedia</strong>: nearly all the events, dates and rows. Each cites its article with the
+          section or sentence it was read from, and the date the page was read (Ancient and Classical World) or the
+          Wikipedia dump it came from (Medieval World and Modern States).
+        </li>
+        <li>
+          <strong>Books and papers</strong>, only where Wikipedia cites them, marked <em>Cited via Wikipedia (not
+          checked)</em>: they have not been checked against the books themselves.
+        </li>
+        <li>
+          <strong><a href="https://perio.do/">PeriodO</a></strong>: the period definitions behind the regional Ages
+          lines in Ancient and Classical World (for example the UCLA Encyclopedia of Egyptology for the Nile Valley).
+          South Asia and China use Wikipedia alone.
+        </li>
+        <li>
+          <strong>Cliopatria</strong> (Seshat Global History Databank): the map borders in Ancient and Classical
+          World, and one date claim in Medieval World (Srivijaya’s end, 1293), kept beside Wikipedia’s.
+        </li>
+        <li>
+          <strong>Natural Earth</strong>: the land on the event maps.
+        </li>
+        <li>
+          <strong>Wikidata</strong>: identifiers and, for some rows, a location for the map. Never a date.
+        </li>
+      </ul>
 
       <h2>Method</h2>
       <ul>
         <li>
-          <strong>Wikipedia only.</strong> Every date, row and event comes from an English Wikipedia article, and cites
-          it with the section or sentence it was read from and the date the page was read. No date was invented.
-        </li>
-        <li>
-          <strong>Books and papers</strong> appear only where Wikipedia cites them, and are marked{' '}
-          <em>Cited via Wikipedia (not checked)</em>. Nobody has checked them against the books themselves.
-        </li>
-        <li>
           <strong>Disagreeing sources stay disagreeing.</strong> When pages give different dates, each is kept as a
           date claim. The uncertain range you see on an event is worked out from those claims and their stated
-          margins, not typed in. Where scholars hold rival dating systems (Egypt, Mesopotamia, China), the{' '}
+          margins, not typed in. Where scholars hold rival dating systems (Egypt, Mesopotamia, the Aegean, China), the{' '}
           <em>Dating</em> menu switches between them.
         </li>
         <li>
@@ -55,28 +76,30 @@ export function About({ search = window.location.search, pathname = window.locat
           cites the infobox field, heading or sentence it came from, and each build lists every article it read.
         </li>
         <li>
-          <strong>Descriptions.</strong> In Medieval World they restate sentences from the cited articles, and an
-          event with no such sentence has none. In the other two they are the assistant’s own summaries.
+          <strong>Descriptions.</strong> Most Medieval World descriptions restate sentences from the cited articles, each
+          checked against its sentence, and an event with no such sentence has none; 35 early ones (the Byzantine
+          events) are the assistant’s own summaries. In Ancient and Classical World and Modern States they are the
+          assistant’s own summaries.
         </li>
       </ul>
 
       <h2>Pages we don’t use</h2>
       <p>
-        A Wikipedia page flagged for AI-generated text is never cited, linked or read, and the project’s checks refuse
-        any link to one. If a page we cite gains the flag, its data is removed. A page with a translation notice is
+        We don’t use a Wikipedia page flagged for AI-generated text, and a check refuses any link to a page on our list
+        of flagged pages. If a page we cite gains the flag, its data is removed. A page with a translation notice is
         allowed, and the event’s description says so.
       </p>
 
       <h2>Known gaps</h2>
       <ul>
-        <li>No specialist has reviewed any timeline. Treat the data as a well-cited starting point, not a final word.</li>
+        
         <li>
           Coverage follows Wikipedia’s: well-documented states and periods have more events than poorly documented
           ones, and Wikipedia itself can be wrong or one-sided.
         </li>
         <li>
-          Classifying events into categories and placing rows in regions are judgement calls made by rules and then
-          read through by the author; some are debatable.
+          Classifying events into categories and placing rows in regions are judgement calls made by rules; some are
+          debatable.
         </li>
       </ul>
 

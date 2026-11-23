@@ -15,7 +15,7 @@ describe('About this data', () => {
   it('covers method, the AI-flag rule, licences and how to report or cite', () => {
     render(<About search="?timeline=medieval&page=about" pathname="/" />);
     expect(screen.getByRole('heading', { level: 1, name: 'About this data' })).toBeTruthy();
-    for (const h of ['Method', 'Pages we don’t use', 'Known gaps', 'Licences', 'Report a problem or cite this'])
+    for (const h of ['Sources', 'Method', 'Pages we don’t use', 'Known gaps', 'Licences', 'Report a problem or cite this'])
       expect(screen.getByRole('heading', { name: h })).toBeTruthy();
     expect(screen.getByText(/flagged for AI-generated text/)).toBeTruthy();
     expect(screen.getByRole('link', { name: 'CC BY 4.0' })).toBeTruthy();
