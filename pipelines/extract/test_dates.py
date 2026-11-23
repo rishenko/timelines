@@ -211,6 +211,12 @@ class EraBeforeYear(unittest.TestCase):  # "AD 1" parsed to nothing before the #
         self.assertEqual((s['start'], s['end']), ((234, None, None), (286, 11, None)))
         self.assertEqual(one('~1500')['start'], (1500, None, None))
 
+    def test_bc_end_inherits_era(self):
+        s = one('331 BC – 321?')
+        self.assertEqual((s['start'], s['end']), ((-331, None, None), (-321, None, None)))
+        s = one('44 BC – AD 14')
+        self.assertEqual(s['end'], (14, None, None))
+
 
 class AstronomicalOutput(unittest.TestCase):
     """Internal years are historical (44 BC = -44); what's written out is astronomical, as the timelines store it."""

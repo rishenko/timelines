@@ -41,7 +41,7 @@ def apply(data, path, provenance=None):
     data['events'] += claims['events']
     if provenance:
         os.makedirs(os.path.dirname(provenance), exist_ok=True)
-        review = claims['review']
+        review = {**claims.get('skipped', {}), **claims['review']}  # skipped: century-only dates, not imported, listed
         lines = [f'  {json.dumps(u, ensure_ascii=False)}: {json.dumps(review[u], ensure_ascii=False)}' for u in sorted(review)]
         open(provenance, 'w').write('{\n' + ',\n'.join(lines) + '\n}\n')
     n = len(claims['events'])

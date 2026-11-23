@@ -36,7 +36,7 @@ plan['3'] = [...plan['3'], ...[...minor].filter((u) => !plan['3'].includes(u))];
 writeFileSync(PLAN, JSON.stringify(plan, null, 2) + '\n');
 
 // the record of what is left to check, one line per reign
-const review = claims.review as Record<string, unknown>;
+const review = { ...(claims.skipped ?? {}), ...claims.review } as Record<string, unknown>; // skipped: century-only, not imported
 const lines = Object.keys(review).sort().map((u) => `  ${JSON.stringify(u)}: ${JSON.stringify(review[u])}`);
 writeFileSync(PROVENANCE, '{\n' + lines.join(',\n') + '\n}\n');
 console.log(`${claims.events.length} reigns, ${Object.values(review).filter((r: any) => r.toCheck?.length).length} to check`);

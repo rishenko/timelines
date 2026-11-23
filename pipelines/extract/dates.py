@@ -228,6 +228,8 @@ def _resolve(left, right):
             right['y'] += 100
     if left['era'] is None and right['era'] == 'bc':
         left['era'] = 'bc'
+    if left['era'] == 'bc' and right['era'] is None and right['y'] is not None and left['y'] is not None and right['y'] < left['y']:
+        right['era'] = 'bc'  # "331 BC – 321": the later year is earlier by the numbers, so still BC (Mithrenes of Armenia)
 
 
 def _value(a):

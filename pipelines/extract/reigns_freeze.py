@@ -36,6 +36,9 @@ NAME_SKIP = {'the', 'of', 'king', 'queen', 'emperor', 'empress', 'sultan', 'shah
              'rules', 'ruler', 'presidency', 'president', 'von', 'van', 'de', 'del', 'da', 'di', 'la', 'le', 'and', 'ibn', 'bin'}
 
 
+REIGN_WORDS = re.compile(r'\b(reign|reigns|rule|rules|ruled|presidency|pontificate|regency|term|tenure)\b')
+
+
 def flag(name, default=None):
     return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
 
@@ -62,6 +65,8 @@ def existing_match(ev, person, by_row):
             if not any(re.search(r'\b' + re.escape(w) + r'\b', t) for w in ws):
                 continue
             b0, b1 = span(e)
+            if not REIGN_WORDS.search(t):
+                continue  # a war, coronation or kingdom that merely names the ruler ("Fall of the Assad regime"), not a reign
             shared = min(a1, b1) - max(a0, b0) + 1
             if shared >= 0.5 * min(a1 - a0 + 1, b1 - b0 + 1):
                 return e['uuid']
@@ -88,7 +93,7 @@ def main():
         for t in e['tracks']:
             by_row.setdefault(t, []).append(e)
 
-    keep, review, dropped, matched = [], {}, Counter(), set()
+    keep, review, dropped, matched, skipped = [], {}, Counter(), set(), {}
     for r in placed:
         ev = ev_by[r['uuid']]
         if any((ev.get(k) or 0) > 31 for k in ('startDay', 'endDay')):
@@ -104,6 +109,24 @@ def main():
             ev.update(RU.date_fields('end', last))
             yrs = last[0] - first[0]
             ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(first)} to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
+        # read the quote again, for what the bulk run left out (review of #113): "c.", a BC end year, century-only dates
+        sp = [x for x in RU.dates.spans(r['quote']) if x['start'][0] == RU.hist(ev['start'])]
+        sp = sp[0] if sp else None
+        if sp and sp['precision'] == 'century':
+            # "5th century" would draw as an exact 99-year reign: not imported, listed for review
+            dropped['century-only date'] += 1
+            skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
+                                   'cited': r['cited'] or r['person'], 'toCheck': ['century-only date, not imported: ' + r['quote']]}
+            continue
+        if sp:
+            ev = dict(ev)
+            if sp['circa']:
+                ev['circa'] = True
+            if sp['end'] and ev.get('end') is not None and ev['end'] > 0 > sp['end'][0]:
+                # "331 BC – 321?": the end year is BC too (the era was lost); rebuild the end and the description
+                ev.update(RU.date_fields('end', sp['end']))
+                yrs = sp['end'][0] - sp['start'][0]
+                ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(sp['start'])} to {RU.fmt(sp['end'])}" + (f' ({abs(yrs)} years)' if abs(yrs) >= 2 else '') + '.', ev['descr'])
         if id(r) in other:
             dropped['ruled from another row'] += 1
             continue
@@ -139,6 +162,17 @@ def main():
         if ev.get('end') is None and not ev.get('ongoing'):
             # no end: the generator counted the years to the end of its window, so the length is not known
             ev = dict(ev, descr=re.sub(r' \(\d+ years\)\.$', '.', ev['descr']))
+        # stable ids: the person and the row, so a rerun that finds one more reign doesn't renumber the others
+        uid = f"reign-{RU.slug(r['person'])}-{r['row']}"
+        if uid in review:  # the same person twice on a row (two reigns): the later one also names its start year
+            base = f"{uid}-{abs(RU.dates.astro(RU.hist(ev['start'])))}"
+            uid = base
+            if uid in review:  # two terms starting in the same year (Nauru, El Salvador): the month too
+                uid = f"{base}-m{ev.get('startMonth') or 0}"
+            n = 2
+            while uid in review:
+                uid, n = f"{base}-m{ev.get('startMonth') or 0}-{n}", n + 1
+        ev = dict(ev, uuid=uid)
         keep.append(ev)
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
@@ -146,7 +180,7 @@ def main():
         s['sourceKey'] for e in keep for m in e.get('memberships', []) for s in m.get('sources', [])}
     out = {'note': 'Frozen from a reviewed rulers bulk run by pipelines/extract/reigns_freeze.py; merged by '
                    'pipelines/common/reigns.py. Edit by re-freezing, not by hand.',
-           'events': keep, 'sources': {k: v for k, v in sorted(data['sources'].items()) if k in used}, 'review': review}
+           'events': keep, 'skipped': skipped, 'sources': {k: v for k, v in sorted(data['sources'].items()) if k in used}, 'review': review}
     json.dump(out, open(path, 'w'), indent=1, ensure_ascii=False)
     open(path, 'a').write('\n')
     print(f"{timeline}: {len(keep)} reigns, {sum(1 for v in review.values() if v['toCheck'])} to check; dropped "
