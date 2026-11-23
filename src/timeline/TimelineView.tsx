@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { OverviewStrip } from './OverviewStrip.tsx';
 import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
 import type { Dataset, Track } from '../types.ts';
@@ -521,8 +522,11 @@ export function TimelineView(props: Props) {
   };
 
   return (
-    // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
-    // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+    // the chart's column: the overview strip (a map of the whole timeline, the view outlined), then the chart
+    <div className="tl-wrap">
+    <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} view={view} scrollerRef={scrollerRef} />
+    {/* Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button. */}
+    {/* oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
     <div
       id="timeline"
       role="region"
@@ -770,6 +774,7 @@ export function TimelineView(props: Props) {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }
