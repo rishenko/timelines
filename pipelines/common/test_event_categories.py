@@ -1,4 +1,5 @@
-"""The reign rule's "X rules …" guard (#87 follow-up): only a person ruling, as a span, is a reign.
+"""The classifier's rules, on inline fixtures (no dump): the reign rule's "X rules …" guard (#87 follow-up); natural
+disasters and the man-made-famine rule (Kevin, 2026-11-23).
     python3 -I pipelines/common/test_event_categories.py"""
 import os
 import sys
@@ -49,6 +50,67 @@ class ReignRule(unittest.TestCase):
         self.assertTrue(ec.ruler_is_person('Kashyapa I', DS))
         self.assertFalse(ec.ruler_is_person('rome', DS))
         self.assertFalse(ec.ruler_is_person('Gupta Empire', DS))
+
+
+class Disasters(unittest.TestCase):
+    """Disasters › cause › type (Kevin, 2026-11-23; names after the IRDR/EM-DAT classification)."""
+    def test_three_levels(self):
+        self.assertEqual(ec.ancestors('eruption'), ['natural', 'disaster'])
+        self.assertEqual(ec.ancestors('famine'), ['human-caused', 'disaster'])
+        self.assertEqual(ec.top('nuclear-test'), 'disaster')
+        self.assertNotIn('disaster', ec.VOCAB['place'][1])
+
+    def test_each_natural_type_from_the_title(self):
+        self.assertEqual(cats('Thera (Minoan) eruption', ['egypt'])[0], 'eruption')
+        self.assertEqual(cats('Xitle erupts: Cuicuilco is buried', ['egypt'])[0], 'eruption')
+        self.assertEqual(cats('The Storegga Slide tsunami', ['egypt'])[0], 'earthquake')
+        self.assertEqual(cats('Lisbon earthquake', ['egypt'])[0], 'earthquake')
+        self.assertEqual(cats('Doggerland floods: Britain is cut off', ['egypt'])[0], 'flood')
+        self.assertEqual(cats('Great Bhola cyclone', ['egypt'])[0], 'storm')
+        self.assertEqual(cats('Severe drought coincides with the collapse', ['egypt'])[0], 'drought')
+        self.assertEqual(cats('The Plague of Justinian', ['egypt'])[0], 'epidemic')
+
+    def test_human_caused_types(self):
+        self.assertEqual(cats('Beirut port explosion', ['egypt'])[0], 'accident')
+        self.assertEqual(cats('Great Fire of London', ['egypt'])[0], 'accident')
+        self.assertEqual(cats('US nuclear tests in the Marshall Islands', ['egypt'])[0], 'nuclear-test')
+        self.assertEqual(cats('Bhopal industrial disaster', ['egypt'])[0], 'industrial')
+        self.assertEqual(cats('Chernobyl disaster', ['egypt'])[0], 'disaster')  # the kind alone; its article says more
+
+    def test_an_explosion_in_population_is_not_a_disaster(self):
+        e = {'title': 'Peaches reach Japan', 'descr': 'A period that saw an explosion in population.', 'tracks': ['egypt'], 'sources': [], 'start': 0}
+        self.assertNotIn('disaster', [ec.top(v) for v, _ in ec.classify(e, DS)])
+
+    def test_a_building_destroyed_by_earthquakes_is_not_an_earthquake(self):
+        self.assertIsNone(ec.first_match(ec.CATEGORY, 'Buildings and structures destroyed by earthquakes'))
+        self.assertEqual(ec.first_match(ec.CATEGORY, '1755 earthquakes')[0], 'earthquake')
+
+    def test_the_mapping_table_matches_the_vocabulary(self):
+        import json
+        table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'disaster_classes.json')))
+        values = {'disaster', *ec.VOCAB['disaster'][1], *ec.DISASTER_TYPES}
+        self.assertEqual({k for k in table if not k.startswith('_')}, values)
+        for k in values:
+            self.assertEqual(table[k]['name'], ec.facet()['values'][k]['name'], k)
+            self.assertTrue(all(q.startswith('Q') for q in table[k]['wikidata']), k)
+
+    def test_a_value_beside_one_it_is_part_of_is_refused(self):
+        with self.assertRaises(ValueError):
+            ec.check(['eruption', 'natural'], 'test')
+        ec.check(['famine', 'atrocity'], 'test')
+
+
+class Famines(unittest.TestCase):
+    """A famine caused mainly by policy or war is not a natural disaster (Kevin, 2026-11-23)."""
+    def test_a_genocide_famine_is_human_caused_with_genocide_second(self):
+        self.assertEqual(cats('Holodomor famine', ['egypt']), ['famine', 'atrocity'])
+
+    def test_a_policy_or_war_famine_is_human_caused(self):
+        self.assertEqual(cats('Famine of the Great Leap Forward', ['egypt'])[0], 'famine')
+        self.assertEqual(cats('Famine during the siege of Leningrad', ['egypt'])[0], 'famine')
+
+    def test_any_other_famine_is_natural_drought_or_crop_failure(self):
+        self.assertEqual(cats('Great Famine of 1315', ['egypt'])[0], 'drought')
 
 
 if __name__ == '__main__':
