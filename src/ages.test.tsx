@@ -105,12 +105,14 @@ describe('ages', () => {
     const row = d.tracks[0];
     d.meta.eras![0].tracks = [row.id];
     d.meta.eras![0].url = 'https://en.wikipedia.org/wiki/Salt_Years';
+    d.meta.eras![0].group = 'ages-salt';
+    d.meta.eraGroups = { 'ages-salt': { name: 'Salt Coast' } };
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
     const b = within(screen.getByRole('group', { name: `Ages in ${row.name}` })).getByRole('button', { name: /^Salt Years/ });
     fireEvent.click(b);
     expect(b.getAttribute('aria-pressed')).toBe('true');
     const panel = screen.getByRole('complementary', { name: 'Salt Years' });
-    expect(within(panel).getByText(row.name)).toBeTruthy();
+    expect(within(panel).getByText(`${row.name} · Salt Coast`)).toBeTruthy();
     expect(within(panel).getByRole('link', { name: /^Article on en\.wikipedia\.org/ }).getAttribute('href')).toBe('https://en.wikipedia.org/wiki/Salt_Years');
     expect(within(panel).getByRole('heading', { name: 'Sources' })).toBeTruthy();
     fireEvent.keyDown(panel, { key: 'Escape' });

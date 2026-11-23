@@ -13,6 +13,8 @@ export function AgePanel({ age, data, onClose }: { age: PlacedAge; data: Dataset
   const dates = spanInWords(span, data.meta.calendar, data.sources);
   const url = safeUrl(era.url);
   const qid = era.ids?.wikidata;
+  // the band's line name, or (a one-line band, unlabelled in the chart) its group's name: "Africa · Nile Valley"
+  const groupName = lineName ?? (era.tracks?.length && era.group ? data.meta.eraGroups?.[era.group]?.name : undefined);
   const rows = (era.tracks ?? []).map((id) => data.tracks.find((t) => t.id === id)).filter((t) => !!t);
   return (
     <DetailsFrame openKey={`age:${era.id}`} dates={dates.main} title={era.name} returnTo={`[data-age-id="${CSS.escape(era.id)}"]`} onClose={onClose}>
@@ -21,7 +23,7 @@ export function AgePanel({ age, data, onClose }: { age: PlacedAge; data: Dataset
           rows.map((t) => (
             <span key={t.id} className="track-chip" style={{ '--track-color': t.color } as React.CSSProperties}>
               {t.name}
-              {lineName && ` · ${lineName}`}
+              {groupName && ` · ${groupName}`}
             </span>
           ))
         ) : (
