@@ -69,6 +69,12 @@
     padding-left: calc(6px + var(--depth, 0) * 8px);
     font-size: 10.5px;
   }
+  /* nesting guides follow the narrow indent steps */
+  .tl-lane .tl-lane-label {
+    --guide-start: 6px;
+    --guide-step: 8px;
+    --guide-x: 2px;
+  }
   .tl-lane-label .logo {
     display: none;
   }

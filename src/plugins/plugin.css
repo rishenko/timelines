@@ -1,0 +1,10 @@
+/* a view plugin's area takes the main view's place and scrolls on its own, like the table view */
+.plugin-view {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+}
+.plugin-error {
+  margin: 12px 18px;
+  color: var(--danger, var(--text));
+}
