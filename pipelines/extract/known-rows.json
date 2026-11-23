@@ -1,23 +1,5 @@
 {
   "note": "Rows whose reigns must come out right after any rulers rerun (known_rows.py). include: persons that must be on the row; exclude: persons that must not be; titles: every title on the row starts with one of these; min/max: reign count. A trap is a row that once got another polity's rulers (Filipe de Brito, Governor of Syriam, on Syria).",
-  "known_issues": [
-    {
-      "timeline": "modern-states",
-      "row": "dominican-republic",
-      "exclude": [
-        "Alexandre Pétion"
-      ],
-      "why": "Haiti's president 1807-1818, before Haitian rule of Santo Domingo; placed by an 'office: President of Haiti' route that the from-another-row rule does not catch yet"
-    },
-    {
-      "timeline": "modern-states",
-      "row": "united-states",
-      "exclude": [
-        "Alexander Andreyevich Baranov"
-      ],
-      "why": "manager of Russian America (Alaska) before the purchase, not a head of the United States"
-    }
-  ],
   "rows": [
     {
       "timeline": "modern-states",
@@ -27,6 +9,9 @@
         "George Washington",
         "Abraham Lincoln",
         "Joe Biden"
+      ],
+      "exclude": [
+        "Alexander Andreyevich Baranov"
       ]
     },
     {
@@ -154,6 +139,17 @@
       "min": 50,
       "include": [
         "Ferdinand III of Castile"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "dominican-republic",
+      "exclude": [
+        "Alexandre Pétion",
+        "Faustin Soulouque"
+      ],
+      "include": [
+        "Rafael Trujillo"
       ]
     }
   ]

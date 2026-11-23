@@ -82,6 +82,8 @@ def partial_name_match(office, row_name):
     return hit
 
 
+EXCLUDED = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-excluded.json')))
+
 
 def flag(name, default=None):
     return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
@@ -155,6 +157,12 @@ def main():
             ev.update(RU.date_fields('end', last))
             yrs = last[0] - first[0]
             ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(first)} to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
+        why_out = EXCLUDED.get(timeline, {}).get(r['row'], {}).get(r['person'])
+        if why_out:
+            dropped['excluded by hand'] += 1
+            skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
+                                   'cited': r['cited'] or r['person'], 'toCheck': ['not imported, wrong row: ' + why_out]}
+            continue
         if r['office'] and NON_HEAD.search(r['office']):
             dropped['office is not head of state'] += 1
             skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],

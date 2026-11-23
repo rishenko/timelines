@@ -1,0 +1,15 @@
+{
+  "note": "Reigns the rulers pass finds on a row where they do not belong, left out by reigns_freeze.py and listed in the provenance file (skipped). Each is a reader-visible error found by hand; the cause is in the why.",
+  "modern-states": {
+    "dominican-republic": {
+      "Alexandre Pétion": "President of Haiti 1807-1818, before Haiti ruled Santo Domingo (1822-1844)",
+      "Philippe Guerrier": "President of Haiti 1844-1845, after the Dominican Republic's independence",
+      "Jean-Louis Pierrot": "President of Haiti 1845-1846, after the Dominican Republic's independence",
+      "Jean-Baptiste Riché": "President of Haiti 1846-1847, after the Dominican Republic's independence",
+      "Faustin Soulouque": "President of Haiti 1847-1859, after the Dominican Republic's independence"
+    },
+    "united-states": {
+      "Alexander Andreyevich Baranov": "chief manager of Russian America (Alaska) before the purchase, not a head of the United States"
+    }
+  }
+}
