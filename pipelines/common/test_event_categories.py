@@ -121,6 +121,22 @@ class Disasters(unittest.TestCase):
         ec.check(['famine', 'atrocity'], 'test')
 
 
+class FoundationalText(unittest.TestCase):
+    """A foundational text as itself (Kevin, 2026-11-23): codes, scriptures, charters, classics."""
+    def test_a_named_text_is_a_foundational_text(self):
+        for title in ['Code of Hammurabi', 'Magna Carta', 'The Analects compiled', 'Rigveda composed', 'Epic of Gilgamesh written down']:
+            self.assertEqual(cats(title, ['egypt'])[0], 'text', title)
+
+    def test_it_beats_laws_and_religion_in_its_own_kind(self):
+        self.assertNotIn('law', cats('Code of Hammurabi', ['egypt']))
+
+    def test_a_declaration_of_independence_keeps_its_statehood_main(self):
+        self.assertEqual(cats('Chilean Declaration of Independence', ['egypt']), ['independence', 'text'])
+
+    def test_a_plain_treaty_stays_a_treaty(self):
+        self.assertEqual(cats('Treaty of Paris', ['egypt']), ['treaty'])
+
+
 class Famines(unittest.TestCase):
     """A famine caused mainly by policy or war is not a natural disaster (Kevin, 2026-11-23)."""
     def test_a_genocide_famine_is_human_caused_with_genocide_second(self):
