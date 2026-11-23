@@ -97,6 +97,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen; the view's stretch for drawing (a vertical scroll re-renders only every half screen) |
 | `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys; phase strip lines are grid lines) and its movement rules |
 | `src/timeline/gestures.ts` | Pinch zoom and long press |
+| `src/cursor/meanwhile.ts`, `YearCursor.tsx` | The year cursor: a line at the year under the pointer (or placed with Y), its year chip, and the band above the chart saying what was going on then in the rows on screen (reign, phase, sub-rows, ongoing events, ages) |
 | `src/print/PrintView.tsx`, `export.ts`, `print.css` | Print and Export: the view (years and rows on screen) as an SVG page. Print is the browser's (⌘P): App mounts the layer on `beforeprint` and print.css fits it to one landscape page. Export saves it as PNG or SVG |
 | `src/timeline/rowsInView.ts` | Which rows have nothing near the view ("Hide rows with nothing in view") |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |

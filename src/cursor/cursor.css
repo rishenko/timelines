@@ -1,0 +1,72 @@
+/* The year cursor (src/cursor/YearCursor.tsx): the line, its top part and year chip, and the readout band. */
+.tl-cursor-line {
+  position: absolute;
+  top: 0;
+  width: 0;
+  border-left: 1px solid var(--accent);
+  z-index: 3;
+  pointer-events: none;
+}
+/* the line's top part, through the sticky ruler and Ages strip: over their bars, never taking their clicks */
+.tl-cursor-head {
+  position: fixed;
+  width: 0;
+  border-left: 1px solid var(--accent);
+  z-index: 39;
+  pointer-events: none;
+}
+.tl-cursor-chip {
+  position: fixed;
+  z-index: 40;
+  transform: translateX(-50%);
+  padding: 1px 6px;
+  background: var(--bg-2);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.tl-cursor-chip:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* the band sits in the chart's column (.tl-wrap, overview.css) between the overview strip and the chart */
+.tl-cursor-band {
+  flex: none;
+  height: 44px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 2px 14px;
+  padding: 4px 12px;
+  background: var(--bg-2);
+  color: var(--text);
+  font-size: 11.5px;
+  line-height: 17px;
+}
+.tl-cursor-band {
+  border-bottom: 1px solid var(--line);
+}
+.tl-cursor-band .cur-year {
+  font-weight: 700;
+  color: var(--accent);
+}
+.tl-cursor-band .cur-ages,
+.tl-cursor-band .cur-none {
+  color: var(--muted);
+}
+.tl-cursor-band .cur-row {
+  white-space: nowrap;
+  padding-left: 6px;
+  border-left: 3px solid var(--track-ink, var(--track-color));
+  color: var(--muted);
+}
+.tl-cursor-band .cur-row b {
+  color: var(--text);
+  font-weight: 600;
+}

@@ -68,6 +68,7 @@ const KEYS: Item[] = [
   { readSample: true, sample: kbd('+', '−'), title: 'Zoom', text: 'Zoom in or out around the focused event.' },
   { readSample: true, sample: kbd('Enter'), title: 'Open', text: 'Open the event’s or phase’s details (Esc closes them and comes back), zoom into a “+N” group, or fold a row.' },
   { readSample: true, sample: kbd('Tab'), title: 'Ages', text: 'Each line of the Ages strip, and of a row’s ages, is one stop: ← → and Home/End move along it, Enter opens the age’s details.' },
+  { readSample: true, sample: kbd('Y'), title: 'Year cursor', text: 'Put the year cursor on the focused event’s year: the band above the chart says what was going on then. ← → move it a step (Shift: a tenth of one), Esc puts it away.' },
   { readSample: true, sample: kbd('/'), title: 'Search', text: 'Move to the search box, to find a row, an event or a year.' },
   { readSample: true, sample: kbd('?'), title: 'This list', text: 'Opens the legend from the chart.' },
 ];
