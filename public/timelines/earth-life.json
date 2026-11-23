@@ -1,0 +1,1590 @@
+{
+  "schemaVersion": 9,
+  "meta": {
+    "id": "earth-life",
+    "title": "Earth and Life",
+    "subtitle": "Deep time: the geological eons, eras and periods, and the Phanerozoic extinctions",
+    "description": "The Earth's geological time scale from its formation, as the International Commission on Stratigraphy's eons, eras and periods, with the five Phanerozoic mass extinctions. A pilot: more events are to come.",
+    "credits": "Boundary ages and colours: the International Commission on Stratigraphy's International Chronostratigraphic Chart v2026/06 ((c) International Commission on Stratigraphy, June 2026; cite: Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated). The ICS international chronostratigraphic chart this decade. Episodes 48: 105-115), each boundary cited to the chart. Extinction dates also from the English Wikipedia articles (dump of 1 November 2026) and Burgess et al. (2014).",
+    "calendar": {
+      "before": "BP",
+      "after": "AP",
+      "yearZero": true,
+      "beforePresent": {
+        "present": 1950,
+        "circaShare": 0.01
+      }
+    },
+    "increments": [
+      100000,
+      1000000,
+      10000000,
+      100000000,
+      1000000000
+    ],
+    "defaultIncrement": 100000000,
+    "hideRowsOutOfView": false,
+    "range": {
+      "start": -4566998050,
+      "end": 1950
+    },
+    "lines": {
+      "ics-eon": {
+        "name": "Eons"
+      },
+      "ics-era": {
+        "name": "Eras"
+      },
+      "ics-period": {
+        "name": "Periods"
+      }
+    },
+    "context": [
+      {
+        "id": "hadean",
+        "kind": "age",
+        "name": "Hadean",
+        "line": "ics-eon",
+        "color": "#b30f8e",
+        "start": -4566998050,
+        "end": -4030998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Hadean (chart: eon, base 4567)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -4566998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Hadean base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -4030998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Archean base"
+            },
+            "margin": 3000000
+          }
+        ]
+      },
+      {
+        "id": "archean",
+        "kind": "age",
+        "name": "Archean",
+        "line": "ics-eon",
+        "color": "#ec008c",
+        "start": -4030998050,
+        "end": -2499998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Archean (chart: eon, base 4031 ± 3)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -4030998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Archean base"
+            },
+            "margin": 3000000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2499998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Proterozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "proterozoic",
+        "kind": "age",
+        "name": "Proterozoic",
+        "line": "ics-eon",
+        "color": "#f03a74",
+        "start": -2499998050,
+        "end": -538798050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Proterozoic (chart: eon, base 2500)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -2499998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Proterozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -538798050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Phanerozoic base"
+            },
+            "margin": 600000
+          }
+        ]
+      },
+      {
+        "id": "phanerozoic",
+        "kind": "age",
+        "name": "Phanerozoic",
+        "line": "ics-eon",
+        "color": "#99deee",
+        "start": -538798050,
+        "end": 1950,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Phanerozoic (chart: eon, base 538.8 ±0.6)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -538798050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Phanerozoic base"
+            },
+            "margin": 600000
+          }
+        ]
+      },
+      {
+        "id": "eoarchean",
+        "kind": "age",
+        "name": "Eoarchean",
+        "line": "ics-era",
+        "color": "#d9058d",
+        "start": -4030998050,
+        "end": -3599998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Eoarchean (chart: era, base 4031 ± 3)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -4030998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Archean base"
+            },
+            "margin": 3000000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -3599998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Paleoarchean base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "paleoarchean",
+        "kind": "age",
+        "name": "Paleoarchean",
+        "line": "ics-era",
+        "color": "#f140a9",
+        "start": -3599998050,
+        "end": -3199998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Paleoarchean (chart: era, base 3600)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -3599998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Paleoarchean base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -3199998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesoarchean base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "mesoarchean",
+        "kind": "age",
+        "name": "Mesoarchean",
+        "line": "ics-era",
+        "color": "#f467b2",
+        "start": -3199998050,
+        "end": -2799998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Mesoarchean (chart: era, base 3200)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -3199998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesoarchean base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2799998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neoarchean base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "neoarchean",
+        "kind": "age",
+        "name": "Neoarchean",
+        "line": "ics-era",
+        "color": "#f799c7",
+        "start": -2799998050,
+        "end": -2499998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Neoarchean (chart: era, base 2800)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -2799998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neoarchean base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2499998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Proterozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "paleoproterozoic",
+        "kind": "age",
+        "name": "Paleoproterozoic",
+        "line": "ics-era",
+        "color": "#f1457e",
+        "start": -2499998050,
+        "end": -1599998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Paleoproterozoic (chart: era, base 2500)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -2499998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Proterozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1599998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesoproterozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "mesoproterozoic",
+        "kind": "age",
+        "name": "Mesoproterozoic",
+        "line": "ics-era",
+        "color": "#f9b269",
+        "start": -1599998050,
+        "end": -999998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Mesoproterozoic (chart: era, base 1600)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -1599998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesoproterozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -999998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neoproterozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "neoproterozoic",
+        "kind": "age",
+        "name": "Neoproterozoic",
+        "line": "ics-era",
+        "color": "#fab24a",
+        "start": -999998050,
+        "end": -538798050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Neoproterozoic (chart: era, base 1000)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -999998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neoproterozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -538798050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Phanerozoic base"
+            },
+            "margin": 600000
+          }
+        ]
+      },
+      {
+        "id": "paleozoic",
+        "kind": "age",
+        "name": "Paleozoic",
+        "line": "ics-era",
+        "color": "#9ac79c",
+        "start": -538798050,
+        "end": -251900050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Paleozoic (chart: era, base 538.8 ±0.6)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -538798050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Phanerozoic base"
+            },
+            "margin": 600000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -251900050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesozoic base"
+            },
+            "margin": 24000
+          }
+        ]
+      },
+      {
+        "id": "mesozoic",
+        "kind": "age",
+        "name": "Mesozoic",
+        "line": "ics-era",
+        "color": "#66cdec",
+        "start": -251900050,
+        "end": -65998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Mesozoic (chart: era, base 251.902 ±0.024)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -251900050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesozoic base"
+            },
+            "margin": 24000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -65998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cenozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "cenozoic",
+        "kind": "age",
+        "name": "Cenozoic",
+        "line": "ics-era",
+        "color": "#f2ef1d",
+        "start": -65998050,
+        "end": 1950,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Cenozoic (chart: era, base 66.00)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -65998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cenozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "siderian",
+        "kind": "age",
+        "name": "Siderian",
+        "line": "ics-period",
+        "color": "#f25089",
+        "start": -2499998050,
+        "end": -2299998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Siderian (chart: period, base 2500)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -2499998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Proterozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2299998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Rhyacian base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "rhyacian",
+        "kind": "age",
+        "name": "Rhyacian",
+        "line": "ics-period",
+        "color": "#f35c95",
+        "start": -2299998050,
+        "end": -2049998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Rhyacian (chart: period, base 2300)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -2299998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Rhyacian base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2049998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Orosirian base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "orosirian",
+        "kind": "age",
+        "name": "Orosirian",
+        "line": "ics-period",
+        "color": "#f468a1",
+        "start": -2049998050,
+        "end": -1799998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Orosirian (chart: period, base 2050)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -2049998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Orosirian base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1799998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Statherian base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "statherian",
+        "kind": "age",
+        "name": "Statherian",
+        "line": "ics-period",
+        "color": "#f574af",
+        "start": -1799998050,
+        "end": -1599998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Statherian (chart: period, base 1800)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -1799998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Statherian base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1599998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesoproterozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "calymmian",
+        "kind": "age",
+        "name": "Calymmian",
+        "line": "ics-period",
+        "color": "#fabe80",
+        "start": -1599998050,
+        "end": -1399998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Calymmian (chart: period, base 1600)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -1599998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesoproterozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1399998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Ectasian base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ectasian",
+        "kind": "age",
+        "name": "Ectasian",
+        "line": "ics-period",
+        "color": "#fbca8e",
+        "start": -1399998050,
+        "end": -1199998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Ectasian (chart: period, base 1400)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -1399998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Ectasian base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -1199998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Stenian base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stenian",
+        "kind": "age",
+        "name": "Stenian",
+        "line": "ics-period",
+        "color": "#fcd69c",
+        "start": -1199998050,
+        "end": -999998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Stenian (chart: period, base 1200)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -1199998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Stenian base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -999998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neoproterozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tonian",
+        "kind": "age",
+        "name": "Tonian",
+        "line": "ics-period",
+        "color": "#fabd55",
+        "start": -999998050,
+        "end": -719998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Tonian (chart: period, base 1000)"
+          }
+        ],
+        "circa": true,
+        "startDates": [
+          {
+            "year": -999998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neoproterozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -719998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cryogenian base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "cryogenian",
+        "kind": "age",
+        "name": "Cryogenian",
+        "line": "ics-period",
+        "color": "#fbc961",
+        "start": -719998050,
+        "end": -634998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Cryogenian (chart: period, base ~ 720)"
+          }
+        ],
+        "circa": true,
+        "startDates": [
+          {
+            "year": -719998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cryogenian base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -634998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Ediacaran base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ediacaran",
+        "kind": "age",
+        "name": "Ediacaran",
+        "line": "ics-period",
+        "color": "#fcd56e",
+        "start": -634998050,
+        "end": -538798050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Ediacaran (chart: period, base ~ 635)"
+          }
+        ],
+        "circa": true,
+        "startDates": [
+          {
+            "year": -634998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Ediacaran base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -538798050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Phanerozoic base"
+            },
+            "margin": 600000
+          }
+        ]
+      },
+      {
+        "id": "cambrian",
+        "kind": "age",
+        "name": "Cambrian",
+        "line": "ics-period",
+        "color": "#83ad6a",
+        "start": -538798050,
+        "end": -486848050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Cambrian (chart: period, base 538.8 ±0.6)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -538798050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Phanerozoic base"
+            },
+            "margin": 600000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -486848050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Ordovician base"
+            },
+            "margin": 1500000
+          }
+        ]
+      },
+      {
+        "id": "ordovician",
+        "kind": "age",
+        "name": "Ordovician",
+        "line": "ics-period",
+        "color": "#00a990",
+        "start": -486848050,
+        "end": -443098050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Ordovician (chart: period, base 486.85 ±1.5)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -486848050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Ordovician base"
+            },
+            "margin": 1500000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -443098050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Silurian base"
+            },
+            "margin": 900000
+          }
+        ]
+      },
+      {
+        "id": "silurian",
+        "kind": "age",
+        "name": "Silurian",
+        "line": "ics-period",
+        "color": "#b3e4c2",
+        "start": -443098050,
+        "end": -419618050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Silurian (chart: period, base 443.1 ±0.9)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -443098050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Silurian base"
+            },
+            "margin": 900000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -419618050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Devonian base"
+            },
+            "margin": 1360000
+          }
+        ]
+      },
+      {
+        "id": "devonian",
+        "kind": "age",
+        "name": "Devonian",
+        "line": "ics-period",
+        "color": "#ca9547",
+        "start": -419618050,
+        "end": -358858050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Devonian (chart: period, base 419.62 ±1.36)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -419618050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Devonian base"
+            },
+            "margin": 1360000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -358858050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Carboniferous base"
+            },
+            "margin": 190000
+          }
+        ]
+      },
+      {
+        "id": "carboniferous",
+        "kind": "age",
+        "name": "Carboniferous",
+        "line": "ics-period",
+        "color": "#69b2b0",
+        "start": -358858050,
+        "end": -298898050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Carboniferous (chart: period, base 358.86 ±0.19)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -358858050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Carboniferous base"
+            },
+            "margin": 190000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -298898050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Permian base"
+            },
+            "margin": 150000
+          }
+        ]
+      },
+      {
+        "id": "permian",
+        "kind": "age",
+        "name": "Permian",
+        "line": "ics-period",
+        "color": "#e74d40",
+        "start": -298898050,
+        "end": -251900050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Permian (chart: period, base 298.9 ±0.15)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -298898050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Permian base"
+            },
+            "margin": 150000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -251900050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesozoic base"
+            },
+            "margin": 24000
+          }
+        ]
+      },
+      {
+        "id": "triassic",
+        "kind": "age",
+        "name": "Triassic",
+        "line": "ics-period",
+        "color": "#8a3ea4",
+        "start": -251900050,
+        "end": -201398050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Triassic (chart: period, base 251.902 ±0.024)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -251900050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Mesozoic base"
+            },
+            "margin": 24000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -201398050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Jurassic base"
+            },
+            "margin": 200000
+          }
+        ]
+      },
+      {
+        "id": "jurassic",
+        "kind": "age",
+        "name": "Jurassic",
+        "line": "ics-period",
+        "color": "#33bde9",
+        "start": -201398050,
+        "end": -143098050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Jurassic (chart: period, base 201.4 ±0.2)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -201398050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Jurassic base"
+            },
+            "margin": 200000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -143098050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cretaceous base"
+            },
+            "margin": 600000
+          }
+        ]
+      },
+      {
+        "id": "cretaceous",
+        "kind": "age",
+        "name": "Cretaceous",
+        "line": "ics-period",
+        "color": "#80ce5c",
+        "start": -143098050,
+        "end": -65998050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Cretaceous (chart: period, base 143.1 ±0.6)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -143098050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cretaceous base"
+            },
+            "margin": 600000
+          }
+        ],
+        "endDates": [
+          {
+            "year": -65998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cenozoic base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "paleogene",
+        "kind": "age",
+        "name": "Paleogene",
+        "line": "ics-period",
+        "color": "#f89b5c",
+        "start": -65998050,
+        "end": -23038050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Paleogene (chart: period, base 66.00)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -65998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cenozoic base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -23038050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neogene base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "neogene",
+        "kind": "age",
+        "name": "Neogene",
+        "line": "ics-period",
+        "color": "#fddd1c",
+        "start": -23038050,
+        "end": -2578050,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Neogene (chart: period, base 23.04)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -23038050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Neogene base"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": -2578050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Quaternary base"
+            }
+          }
+        ]
+      },
+      {
+        "id": "quaternary",
+        "kind": "age",
+        "name": "Quaternary",
+        "line": "ics-period",
+        "color": "#fff880",
+        "start": -2578050,
+        "end": 1950,
+        "sources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Quaternary (chart: period, base 2.58)"
+          }
+        ],
+        "startDates": [
+          {
+            "year": -2578050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Quaternary base"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "present": 1950,
+  "tracks": [
+    {
+      "id": "earth",
+      "name": "Earth",
+      "color": "#6b8fb3",
+      "kind": "theme",
+      "span": {
+        "start": -4566998050,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -4566998050,
+            "source": {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Hadean base"
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "present: the youngest unit, the Meghalayan, runs to the present"
+          }
+        ]
+      }
+    },
+    {
+      "id": "life",
+      "name": "Life",
+      "color": "#4f9d5d",
+      "kind": "theme"
+    }
+  ],
+  "sources": {
+    "ics-chart-2026-06": {
+      "name": "International Chronostratigraphic Chart v2026/06 (International Commission on Stratigraphy)",
+      "url": "https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf",
+      "author": "Cohen, Harper, Gibbard & Car",
+      "year": "2026",
+      "accessed": "2026-11-23",
+      "tags": [
+        "ics"
+      ]
+    },
+    "burgess-2014-pnas": {
+      "name": "Burgess, Bowring & Shen (2014), High-precision timeline for Earth's most severe extinction, PNAS 111: 3316–3321",
+      "url": "https://doi.org/10.1073/pnas.1317692111",
+      "author": "Burgess, Bowring & Shen",
+      "year": "2014",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-ordovician-silurian-extinction-events": {
+      "name": "Ordovician–Silurian extinction events (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ordovician–Silurian_extinction_events",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-late-devonian-extinction": {
+      "name": "Late Devonian extinction (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Late_Devonian_extinction",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-permian-triassic-extinction-event": {
+      "name": "Permian–Triassic extinction event (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Permian–Triassic_extinction_event",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-triassic-jurassic-extinction-event": {
+      "name": "Triassic–Jurassic extinction event (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Triassic–Jurassic_extinction_event",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cretaceous-paleogene-extinction-event": {
+      "name": "Cretaceous–Paleogene extinction event (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cretaceous–Paleogene_extinction_event",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    }
+  },
+  "tags": {
+    "wikipedia": {
+      "name": "Wikipedia"
+    },
+    "ics": {
+      "name": "International Commission on Stratigraphy"
+    },
+    "journal": {
+      "name": "Peer-reviewed journal"
+    }
+  },
+  "events": [
+    {
+      "uuid": "late-ordovician-extinction",
+      "title": "Late Ordovician mass extinction",
+      "descr": "The first of the \"big five\" mass extinctions: about 85% of marine species were lost, in pulses around the Hirnantian.",
+      "start": -445198050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ordovician-silurian-extinction-events",
+          "sourceLocation": "lead: \"…e\" major mass extinction events in Earth's history, occurring roughly 445 million years ago (Ma).\""
+        },
+        {
+          "sourceKey": "wp-ordovician-silurian-extinction-events",
+          "sourceLocation": "lead: \"…rval), known as LOMEI-1, began at the boundary between the Katian and Hirnantian stages of the Late Ordovician epoch.\""
+        },
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Hirnantian base"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -444998050,
+          "source": {
+            "sourceKey": "wp-ordovician-silurian-extinction-events",
+            "sourceLocation": "lead: \"…e\" major mass extinction events in Earth's history, occurring roughly 445 million years ago (Ma).\""
+          },
+          "note": "\"Roughly 445 million years ago\": a rounded figure."
+        },
+        {
+          "year": -445198050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Hirnantian base"
+          },
+          "margin": 900000,
+          "note": "The base of the Hirnantian, the age the article places the extinction in."
+        }
+      ]
+    },
+    {
+      "uuid": "kellwasser-extinction",
+      "title": "Late Devonian extinction (Kellwasser event)",
+      "descr": "A mass extinction at the Frasnian–Famennian boundary, thought to have followed global anoxia.",
+      "start": -372148050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-late-devonian-extinction",
+          "sourceLocation": "lead: \"…e Kellwasser event, was a mass extinction event which occurred around 372.15 million years ago, at the boundary between the Frasnian and Famennian ages of the Late Devoni…\""
+        },
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Famennian base"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -372148050,
+          "source": {
+            "sourceKey": "wp-late-devonian-extinction",
+            "sourceLocation": "lead: \"…e Kellwasser event, was a mass extinction event which occurred around 372.15 million years ago, at the boundary between the Frasnian and Famennian ages of the Late Devoni…\""
+          }
+        },
+        {
+          "year": -372148050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Famennian base"
+          },
+          "margin": 460000
+        }
+      ]
+    },
+    {
+      "uuid": "hangenberg-extinction",
+      "title": "Late Devonian extinction (Hangenberg event)",
+      "descr": "A second extinction, at the end of the Devonian, as the world passed into the Carboniferous.",
+      "start": -358858050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-late-devonian-extinction",
+          "sourceLocation": "lead: \"…s the end-Devonian extinction, occurred 13 million years later around 358.86 million years ago, bringing an end to the Famennian and Devonian, as the world transitioned i…\""
+        },
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Carboniferous base"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -358858050,
+          "source": {
+            "sourceKey": "wp-late-devonian-extinction",
+            "sourceLocation": "lead: \"…s the end-Devonian extinction, occurred 13 million years later around 358.86 million years ago, bringing an end to the Famennian and Devonian, as the world transitioned i…\""
+          }
+        },
+        {
+          "year": -358858050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Carboniferous base"
+          },
+          "margin": 190000
+        }
+      ]
+    },
+    {
+      "uuid": "end-permian-extinction",
+      "title": "End-Permian mass extinction",
+      "descr": "The most severe extinction of the Phanerozoic, at the Permian–Triassic boundary; the loss of most marine and many land species took about 60,000 years.",
+      "start": -251900050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-permian-triassic-extinction-event",
+          "sourceLocation": "lead: \"… marine extinction occurring in a 60,000-100,000 year interval around 251.902 million years ago (mya) marking the boundary between the Permian and Triassic periods.\""
+        },
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Triassic base"
+        },
+        {
+          "sourceKey": "burgess-2014-pnas",
+          "sourceLocation": "abstract"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -251900050,
+          "source": {
+            "sourceKey": "wp-permian-triassic-extinction-event",
+            "sourceLocation": "lead: \"… marine extinction occurring in a 60,000-100,000 year interval around 251.902 million years ago (mya) marking the boundary between the Permian and Triassic periods.\""
+          }
+        },
+        {
+          "year": -251900050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Triassic base"
+          },
+          "margin": 24000
+        },
+        {
+          "year": -251939050,
+          "source": {
+            "sourceKey": "wp-permian-triassic-extinction-event",
+            "sourceLocation": "section \"Dating\": \"The extinction occurred between 251.941 ± 0.037 and 251.880 ± 0.031 million years ago, a duration of 60 ± 48 thousand years.\""
+          },
+          "margin": 37000,
+          "note": "The start of the extinction interval the article gives (it runs to 251.880 ± 0.031 Ma)."
+        },
+        {
+          "year": -251939050,
+          "source": {
+            "sourceKey": "burgess-2014-pnas",
+            "sourceLocation": "abstract: \"between 251.941 ± 0.037 and 251.880 ± 0.031 Mya\""
+          },
+          "margin": 37000,
+          "note": "The start of the extinction interval; the interval ends at 251.880 ± 0.031 Ma."
+        }
+      ]
+    },
+    {
+      "uuid": "end-triassic-extinction",
+      "title": "End-Triassic mass extinction",
+      "descr": "An extinction at the Triassic–Jurassic boundary, linked to volcanism in the Central Atlantic Magmatic Province.",
+      "start": -201398050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-triassic-jurassic-extinction-event",
+          "sourceLocation": "lead: \"The Triassic–Jurassic (Tr-J) extinction event, often called the Triassic–Jurassic mass extinction (TJME) or end-Triassic extinction, marks the boundary between the Triass…\""
+        },
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Jurassic base"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -201398050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Jurassic base"
+          },
+          "margin": 200000
+        }
+      ]
+    },
+    {
+      "uuid": "cretaceous-paleogene-extinction",
+      "title": "Cretaceous–Paleogene extinction (K–Pg)",
+      "descr": "The extinction that ended the non-avian dinosaurs, at the Cretaceous–Paleogene boundary, following the Chicxulub impact.",
+      "start": -65998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-cretaceous-paleogene-extinction-event",
+          "sourceLocation": "section \"Causes > Deccan Traps\": \"Some geophysical models suggest that the Chicxulub impact 66.0 Mya could have triggered some of the largest Deccan eruptions, as well as eruptions at active volcano sites…\""
+        },
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Paleogene base"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -65998050,
+          "source": {
+            "sourceKey": "wp-cretaceous-paleogene-extinction-event",
+            "sourceLocation": "section \"Causes > Deccan Traps\": \"Some geophysical models suggest that the Chicxulub impact 66.0 Mya could have triggered some of the largest Deccan eruptions, as well as eruptions at active volcano sites…\""
+          },
+          "note": "The age the article gives for the Chicxulub impact."
+        },
+        {
+          "year": -65998050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Paleogene base"
+          }
+        },
+        {
+          "year": -65498050,
+          "source": {
+            "sourceKey": "wp-cretaceous-paleogene-extinction-event",
+            "sourceLocation": "lead: \"… (75%) of the plant and animal species on Earth which occurred around 65.5 million years ago.\""
+          },
+          "note": "The article's own lead gives this older figure."
+        }
+      ]
+    }
+  ]
+}
