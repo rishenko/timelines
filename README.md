@@ -60,6 +60,8 @@ The three link to each other where they meet, at 650 and 1500.
   them, with the dates each source gives.
 - **Event details:** the description, dates, sources, connections, and what the event began or ended, with a *Copy
   link* button.
+- **About this data:** the footer's link opens a page on how the timelines were made: Wikipedia-only sourcing, the
+  rule against AI-flagged pages, known gaps and the licences.
 - **Maps** (Ancient and Classical): opening an event shows its rows on a map of its year: borders where a source has
   them, else a pin and the map from the row's Wikipedia article.
 
