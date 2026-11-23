@@ -240,7 +240,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
       sample: <span className="lg-reign" />,
       show: !!reignLane?.size,
       title: 'Reigns',
-      text: 'A row’s rulers, such as “Reign of Ramesses II”, come first among its events, one after another on its top line. Co-rulers and rival claimants stack onto a second line, and a gap between reigns is a time with no sourced ruler. Zoomed out, reigns that don’t fit fold into the row’s “+N”.',
+      text: 'A row’s rulers, such as “Reign of Ramesses II”, come first among its events, one after another on the top line; overlapping reigns, or names that would collide, go on a second line. A gap means no reign is recorded there yet. Zoomed out, reigns that don’t fit fold into the row’s “+N”.',
     },
     {
       sample: <span className="lg-period" />,

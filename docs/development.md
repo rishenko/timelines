@@ -262,10 +262,10 @@ A row's reigns come first among its events, above the period lane (Kevin, 2026-1
 but keep them at the top relative to other events"). `reignLaneIds` (`src/lib/reignLane.ts`) picks events with the
 `reign` sub-kind as main or second category; the classifier (`pipelines/common/event_categories.py`) sets it for spans
 titled "Reign of …", "Presidency of …" and the like. `layoutLanes`'s `reignLane` places them before the period lane's
-events, on at most two lines of their own (`maxReignRows`): successive rulers on the first, co-rulers and rival
-claimants on the second. Reigns that don't fit fold into "+N" with the other events, so zoomed out (where each label
+events, on at most two lines of their own (`maxReignRows`): one after another on the first; overlapping reigns
+(co-rulers, rival claimants), or names that would collide, on the second. Reigns that don't fit fold into "+N" with the other events, so zoomed out (where each label
 is wider than its reign) the row looks as it did before; expanding the row lifts the cap. A reign that also qualifies
-for the period lane stays in the reign lane. Gaps between reigns stay empty.
+for the period lane stays in the reign lane. A gap means no reign is recorded there yet.
 
 ### Ages strip
 
