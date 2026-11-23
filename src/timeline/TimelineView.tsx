@@ -535,6 +535,8 @@ export function TimelineView(props: Props) {
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
       aria-busy={rowsPending || !!props.busy}
       ref={scrollerRef}
+      // the years in view (first, last), for Print and Export
+      data-view-years={`${scale.yearAt(view.left)},${scale.yearAt(Math.min(scale.width, view.left + Math.max(1, view.width - labelW)))}`}
       onScroll={onScroll}
       {...pinch}
       onClick={(e) => {

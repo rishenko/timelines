@@ -107,7 +107,8 @@ function layoutRows(p: Props, from: number, to: number, x: (y: number) => number
     if ((e.importance ?? 2) > minImp) continue;
     const end = e.end ?? e.start;
     if (end < from || e.start > to) continue;
-    for (const t of e.tracks.slice(0, 1).map(owner)) byTrack.set(t, [...(byTrack.get(t) ?? []), e]);
+    // on every row it names, as the chart draws it (once per row, even when two of its rows fold into one)
+    for (const t of new Set(e.tracks.map(owner))) byTrack.set(t, [...(byTrack.get(t) ?? []), e]);
   }
   const rows: RowLayout[] = [];
   const all = ordered(p.data.tracks, p.visibleTracks, p.collapsed).filter(({ t }) => !p.rows || p.rows.has(t.id));
@@ -117,7 +118,8 @@ function layoutRows(p: Props, from: number, to: number, x: (y: number) => number
     const phases = (p.phases.get(t.id) ?? []).filter((s) => s.end >= from && s.start <= to);
     const evs = (byTrack.get(t.id) ?? []).sort((a, b) => a.start - b.start || (a.importance ?? 2) - (b.importance ?? 2));
     if ((!spans.length && !phases.length && !evs.length) || (eventsOnly && !evs.length)) {
-      rows.push({ track: t, depth, spans: [], phases: [], items: [], folded: 0, height: 0 }); // kept only as a heading
+      // a row on screen prints even with nothing in the years (as on screen); otherwise it's kept only as a heading
+      rows.push({ track: t, depth, spans: [], phases: [], items: [], folded: 0, height: p.rows ? 15 : 0 });
       continue;
     }
     // events into lanes: each lane remembers where its last label ends
@@ -167,7 +169,8 @@ export function PrintPages(p: Props) {
   const dTo = display(p.to);
   // rows on screen print as they are, with or without events in the years; otherwise only rows with events
   const eventsOnly = !p.rows && (meta.hideRowsOutOfView ?? p.data.tracks.length > 150);
-  const minImp: number = 2;
+  // every event the chart draws (crowded ones fold into "+N more", as on screen)
+  const minImp: number = 3;
   const pageW = figure ? 1600 : (SHEET.w - 2 * MARGIN_MM) * PX_PER_MM;
   const sheetH = (SHEET.h - 2 * MARGIN_MM) * PX_PER_MM;
   const plotW = pageW - LABEL_W;

@@ -446,12 +446,12 @@ export default function App({ published: opened, library: libraryEntry, site, no
     shownHide !== (hideOutOfView && !editMode) ||
     shownThin !== thinRows;
 
-  // Print and Export: the view as it is on screen. The years in view come from the chart's width (80 px a tick, around
-  // the centre; approximate under stretched scales); the rows are those whose lane is on screen. Print mounts the print
-  // layer just before the browser lays out its page; Export draws the same view offscreen and downloads it.
+  // Print and Export: the view as it is on screen: the years in view (the chart puts them on its scroller), and the rows
+  // whose lane is on screen. Print mounts the print layer just before the browser lays out its page; Export draws the
+  // same view offscreen and downloads it.
   const viewNow = () => {
-    const half = ((window.innerWidth - 220) / 80) * increment * 0.5;
-    const scroller = document.querySelector('.tl-scroller')?.getBoundingClientRect();
+    const el = document.querySelector<HTMLElement>('.tl-scroller');
+    const scroller = el?.getBoundingClientRect();
     const rows = scroller
       ? new Set(
           [...document.querySelectorAll<HTMLElement>('.tl-lane[data-lane]:not(.thin)')]
@@ -462,8 +462,11 @@ export default function App({ published: opened, library: libraryEntry, site, no
             .map((el) => el.dataset.lane!),
         )
       : undefined;
-    // out to whole zoom steps, so the page's edges are round years
-    return { from: Math.floor((centerRef.current - half) / increment) * increment, to: Math.ceil((centerRef.current + half) / increment) * increment, rows };
+    const [from, to] = (el?.dataset.viewYears ?? '').split(',').map(Number);
+    if (Number.isFinite(from) && Number.isFinite(to) && to > from) return { from, to, rows };
+    // (no chart drawn yet) about a screen around the centre
+    const half = ((window.innerWidth - 220) / 80) * increment * 0.5;
+    return { from: centerRef.current - half, to: centerRef.current + half, rows };
   };
   const [printing, setPrinting] = useState<ReturnType<typeof viewNow> | null>(null);
   const viewNowRef = useRef(viewNow);
@@ -480,7 +483,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       window.removeEventListener('afterprint', after);
     };
   }, []);
-  const printProps = { data: viewData, events: visibleEvents, spans, phases, visibleTracks: rowsOn, collapsed, sourceNote: meta.credits };
+  const printProps = { data: viewData, events: drawnEvents, spans, phases, visibleTracks: rowsOn, collapsed, sourceNote: meta.credits };
   const onExport = (kind: 'png' | 'svg') => {
     const host = document.createElement('div');
     const root = createRoot(host);
