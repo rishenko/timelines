@@ -3,7 +3,7 @@ import type { Dataset } from '../types.ts';
 import { datasetReducer, type DatasetState } from './dataset.ts';
 
 const base = (): Dataset => ({
-  schemaVersion: 9,
+  schemaVersion: 10,
   meta: {
     id: 'test',
     title: 'Test',
