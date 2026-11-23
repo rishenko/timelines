@@ -254,6 +254,8 @@ All of these have unit tests in `extract/test_dates.py`.
 
 ## Ruler infoboxes (`extract/rulers.py`)
 
+The rulers pass's code is on branch `extract-rulers` (frozen until the context-lines bakeoff picks a design); the lessons below stay here because they apply to any parser of ruler infoboxes.
+
 - **Fields:** monarchs use `reign`, `reign1`, `reign2`… with `succession`, `succession1`… naming the office; office holders use `term_start`/`term_end` (+ `office`). The extractor's lookup tables don't keep these (they aren't date fields), so `rulers.py` reads the ruler's page from the dump.
 - **Patterns fixed in `dates.py`** (tests in `test_dates.py`):
   - `{{awrap|10 July 1559}}`, `{{avoid wrap| 19 March 1808}}` (Henry II, Charles IV of Spain);
