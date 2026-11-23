@@ -43,7 +43,8 @@ key in an example, or when an npm script isn't named on this page.
 `npm run check:all` runs, before you ask for review, everything CI checks except the compiled-files diff (it rewrites
 files), plus the type-check of app and scripts, `seam-check`, and `categories:proof` on every timeline against
 `--base` (default `origin/main`). It prints one line per check and the end of each failing one's output; `--skip` and
-`--only` take the names it prints.
+`--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
+`fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
@@ -465,7 +466,8 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
   purpose). Each mouse-only handler has a comment naming its keyboard equivalent.
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
-  person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
+  person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails;
+  under each failing view it prints every failing element's selector and axe's reason.
   It isn't in CI (about 10 minutes): run it after a UI change, before asking for review (`--state <name>` checks just
   the views a pull request adds, in about a minute, and writes no report), and paste its summary line
   ("Failing: 0", the number of views) in the pull request. **Pull requests don't commit `wcag-report.md`**: it would

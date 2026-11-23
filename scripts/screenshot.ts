@@ -1,13 +1,15 @@
 // Screenshots the app in an installed browser via playwright-core (no browser download needed): Microsoft Edge on
 // Windows, Google Chrome elsewhere; --browser msedge|chrome picks one.
 //   node scripts/screenshot.ts <url> <out.png> [--width 1800] [--height 1400] [--full] [--close-legend]
-//        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--storage key=file.json] [--click "Button|Other"]
+//        [--expand "Row name|Other row"] [--scroll-to "Row name"] [--row <row id>] [--storage key=file.json] [--click "Button|Other"]
 //        [--pinch in|out] [--long-press "Row name"] [--measure ".toolbar > *"] [--keys "Tab|ArrowRight"] [--browser chrome]
 // --close-legend closes the guided tour (it starts by itself on a first visit) and the legend.
 // --click presses buttons whose text contains each name (or whose tooltip is exactly it), in order, before --expand;
 // "=Name" matches the text exactly (so "=Edit" doesn't also match "Edit mode").
 // --expand opens collapsed rows by their label (in order, so a group can be opened before its regions);
 // --scroll-to scrolls the timeline so that row sits near the top. Names are separated by "|".
+// --row <id> does the same by the row's id (as in the data file), expanding its collapsed ancestors first; use it for a
+// new or deeply nested row, or a name that appears twice. It runs after --expand and instead of --scroll-to.
 // --storage puts a file into localStorage before the page loads (repeatable), e.g. a saved edit-mode draft.
 // --measure prints the size and position of every element a CSS selector matches (e.g. to see what makes the
 // toolbar wrap), measured just before the screenshot.
@@ -18,7 +20,7 @@ import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const args = process.argv.slice(2);
-const valued = /^--(width|height|expand|scroll-to|storage|click|pinch|long-press|measure|browser)$/;
+const valued = /^--(width|height|expand|scroll-to|row|storage|click|pinch|long-press|measure|browser)$/;
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.match(valued));
 if (!url || !out) {
   console.error('usage: node scripts/screenshot.ts <url> <out.png> [--width N] [--height N] [--full] [--close-legend] [--expand "A|B"] [--scroll-to "A"]');
@@ -40,6 +42,13 @@ const storage = args.flatMap((a, i) => (a === '--storage' ? [args[i + 1]] : []))
   return [kv.slice(0, at), readFileSync(kv.slice(at + 1), 'utf8')];
 });
 if (storage.length) await page.addInitScript((pairs) => pairs.forEach(([k, v]) => localStorage.setItem(k, v)), storage);
+// the timeline files the page loads (rows with their parents), for --row
+const loaded: { id: string; parent?: string }[][] = [];
+page.on('response', async (r) => {
+  if (!/\.json(\?|$)/.test(r.url()) || !r.ok()) return;
+  const body = await r.json().catch(() => null);
+  if (Array.isArray(body?.tracks)) loaded.push(body.tracks);
+});
 await page.goto(url);
 await page.waitForTimeout(2000);
 // --close-legend closes whatever opens by itself on a first visit: the guided tour (and the legend, if open)
@@ -94,8 +103,8 @@ const label = (name: string) =>
     .filter({ has: page.locator('.name', { hasText: new RegExp(`^${escapeRe(name)}( \\(opens in a new tab\\))?$`) }) })
     .first();
 // the chart draws only the rows near the screen: scroll down a screen at a time until the row's label is drawn
-const findLabel = async (name: string) => {
-  const l = label(name);
+const findLabel = async (name: string) => find(label(name));
+const find = async (l: ReturnType<typeof label>) => {
   if (await l.count()) return l;
   await page.evaluate(() => (document.querySelector('.tl-scroller')!.scrollTop = 0));
   for (let i = 0; i < 1000 && !(await l.count()); i++) {
@@ -118,9 +127,29 @@ for (const name of opt('--expand')?.split('|') ?? []) {
   else problems.push(`--expand: "${name}" has no collapsed sub-rows`);
   await page.waitForTimeout(300);
 }
+// --row <id>: open each collapsed ancestor, outermost first, then scroll to the row
+const rowId = opt('--row');
+if (rowId) {
+  const tracks = loaded.find((ts) => ts.some((t) => t.id === rowId));
+  const chain: string[] = [];
+  for (let t = tracks?.find((x) => x.id === rowId); t?.parent; t = tracks!.find((x) => x.id === t!.parent)) chain.unshift(t.parent);
+  if (!tracks) problems.push(`--row: no row "${rowId}" in the timeline files the page loaded`);
+  for (const id of chain) {
+    const l = await find(page.locator(`.tl-lane-label[data-row="${id}"]`).first());
+    const btn = l.locator('button[title="Expand sub-rows"]');
+    if (await btn.count()) {
+      await btn.first().click();
+      await page.waitForTimeout(300);
+    }
+  }
+}
 const target = opt('--scroll-to');
-if (target) {
-  await (await findLabel(target)).evaluate((el) => {
+if (target || rowId) {
+  const l = rowId ? await find(page.locator(`.tl-lane-label[data-row="${rowId}"]`).first()) : await findLabel(target!);
+  if (rowId && !(await l.count())) {
+    if (loaded.some((ts) => ts.some((t) => t.id === rowId))) problems.push(`--row: row "${rowId}" isn't drawn (hidden by a filter?)`);
+  }
+  else await l.evaluate((el) => {
     el.scrollIntoView({ block: 'start' });
     let s = el.parentElement;
     while (s && s.scrollHeight <= s.clientHeight + 5) s = s.parentElement;

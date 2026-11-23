@@ -7,9 +7,12 @@
 Tick what this change affects and update it here; leave the rest unticked. Reader-facing words follow
 [docs/glossary.md](../docs/glossary.md).
 
-- [ ] README: feature list, included timelines, counts
+- [ ] README **Features**: a new or changed reader-facing feature has its bullet (nothing checks this; it fell six
+  merges behind once)
+- [ ] README: included timelines, counts
+- [ ] **Code map** (`docs/development.md`): a new file or module, or one whose job changed, has its row
 - [ ] `docs/data-format.md`: new or changed fields, rules the app checks (`npm run docs:check` catches missing fields)
-- [ ] `docs/development.md`: npm scripts (`docs:check` catches missing ones), the code map, how to build or check
+- [ ] `docs/development.md`: npm scripts (`docs:check` catches missing ones), how to build or check
 - [ ] App text: Legend, tour, labels, tooltips, messages
 - [ ] `docs/glossary.md`: a new reader-facing word, or a renamed one (renamed everywhere)
 - [ ] `docs/BACKLOG.md`, `docs/feature-audit.md`: items this finishes or changes
