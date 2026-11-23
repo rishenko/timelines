@@ -29,10 +29,11 @@
 /* the footer's link to it (components/Credits.tsx): a 24 px target at the footer's end */
 .legal-about {
   margin-left: auto;
+  padding: 4px 6px;
+  /* an inline link's padding doesn't make it taller (it measured 20 px): a flex box of at least 24 px does (2.5.8) */
   display: inline-flex;
   align-items: center;
   min-height: 24px;
-  padding: 0 6px;
   white-space: nowrap;
   color: var(--link);
 }
