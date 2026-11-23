@@ -13,7 +13,10 @@ ranked by reign length times log inbound links; the rest get 3 (minor, folded in
     pipelines/extract/.venv/bin/python -I pipelines/extract/rulers.py --timeline modern-states --rows france,spain [--preview]
 
 Writes pipelines/out/rows/<timeline>/: rulers.csv (one row per reign, with flags), rulers-events.json (the events and
-their sources, for the build or a generator to apply) and report.md. --preview also writes a compiled-ready source copy
+their sources, for the build or a generator to apply) and report.md.
+Reign marker (Kevin, 2026-11-22): the category sub-kind `reign` (REIGN_CATEGORY), no schema change; the app sorts reigns
+to the top of a row's events. Every placed reign also has reign=yes in rulers.csv and its id in rulers-events.json's
+`reignIds`. --preview also writes a compiled-ready source copy
 of the timeline with the events added (id <timeline>-rulers-pilot) for a local preview; it is never committed.
 """
 import csv
@@ -37,6 +40,7 @@ from wd_join import wd_time  # noqa: E402
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 ACC = '2026-11-21'  # access date of the dump's text, as in common/wp_claims.py
 WP = 'https://en.wikipedia.org/wiki/'
+REIGN_CATEGORY = 'reign'  # the reign marker: a sub-kind in pipelines/common/event_categories.py VOCAB (Kevin, 2026-11-22)
 PER_YEARS = 25  # one visible ruler per 25 years of the row's span (Kevin)
 REIGN = re.compile(r'^(reign|term_start|term_end)(\d*)$')
 LEADER = re.compile(r'^leader\d*$')
@@ -409,14 +413,14 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
                  f"{f' ({yrs} years)' if yrs >= 2 else ''}.")
         ev = {'uuid': uid, 'title': title, **date_fields('start', r['st']), **(date_fields('end', r['en']) if r['en'] else {}),
               'tracks': [rid], 'descr': descr, 'sources': [{'sourceKey': key, 'sourceLocation': loc}], 'importance': imp,
-              'memberships': [{'facet': 'category', 'value': 'succession', 'sources': [{'sourceKey': key, 'sourceLocation': loc}]}]}
+              'memberships': [{'facet': 'category', 'value': REIGN_CATEGORY, 'sources': [{'sourceKey': key, 'sourceLocation': loc}]}]}
         if r['en'] is None:
             ev.pop('end', None)
         events[uid] = ev
         if title.lower() in existing:
             r['flags'].append(f"timeline already has {existing[title.lower()]}")
         rows.append(dict(row=rid, person=r['person'], qid=r['qid'], start=fmt(r['st']), end=fmt(r['en']), field=r['field'],
-                         quote=r['quote'], wd=r['wd'], importance=imp, flags='; '.join(r['flags']), uuid=uid))
+                         quote=r['quote'], wd=r['wd'], importance=imp, flags='; '.join(r['flags']), uuid=uid, reign='yes'))
 
 
 def main():
@@ -425,12 +429,12 @@ def main():
     out = os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
     os.makedirs(out, exist_ok=True)
     ds, rows, events, sources, win = run(timeline, row_ids, Sources(settings.DATA))
-    cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'field', 'quote', 'wd', 'flags', 'uuid']
+    cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'quote', 'wd', 'flags', 'uuid']
     with open(os.path.join(out, 'rulers.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
-    json.dump({'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w'), indent=1, ensure_ascii=False)
     md = [f'# Rulers pass: {timeline} ({", ".join(row_ids)})', '',
           f'Window {win[0]}–{win[1]}; one visible ruler (importance 2) per {PER_YEARS} years of each row; the rest importance 3.', '',
           '| Row | Placed | Visible | Wikidata differs | No Wikidata term | Not placed (no Wikipedia reign) | Already on the timeline |',
