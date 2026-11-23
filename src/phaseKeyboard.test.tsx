@@ -59,9 +59,10 @@ describe('phase strips from the keyboard', () => {
     expect(cells.length).toBeGreaterThanOrEqual(3);
     expect(cells.every((el) => el.getAttribute('role') === 'button' && el.tabIndex === -1)).toBe(true);
     expect(cells.map((el) => el.getAttribute('aria-label'))).toContain('Second Council, 60 L – 179 L, phase: details and sources');
-    expect(c.querySelector('[data-lane="quay"] .tl-phase.member')!.getAttribute('aria-label')).toBe(
-      'Quay Town in The Harbor League, 60 L – 179 L, membership: details and sources',
-    );
+    // a membership's name starts with its visible text, verbatim (2.5.3 Label in Name)
+    const member = c.querySelector<HTMLElement>('[data-lane="quay"] .tl-phase.member')!;
+    expect(member.getAttribute('aria-label')).toBe('in The Harbor League, 60–179, Quay Town, membership: details and sources');
+    expect(member.getAttribute('aria-label')!.startsWith(member.querySelector('.tl-phase-name')!.textContent!)).toBe(true);
   });
 
   it("reaches a row's strip lines with ↑ from its events, walks a line with ←/→ and Home/End", async () => {
