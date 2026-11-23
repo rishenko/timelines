@@ -173,6 +173,20 @@ left out of the Tab order; the details link the article).
 | `present` | yes | The stored year that is "present": `1950` for geology's and radiocarbon's BP (before present). Years show as their distance from it: "4.567 Ga", "66 Ma", "11.7 ka". |
 | `circaShare` | no | How far an uncited "c." date fades, as a share of its age: `0.01` fades "c. 66 Ma" by 0.66 Ma either side. Without it, `meta.circaFade` years apply, which can't suit both 66 Ma and 11.7 ka. More than 0, at most 0.5. |
 
+How the app shows it:
+
+- **Years:** Ga and Ma as geologists write them ("4.567 Ga", "66 Ma"); from 10,000 years, "ka", and below that years, both
+  with "BP" when `present` is `1950` ("11.7 ka BP", "9,600 years BP"; otherwise "11.7 ka", "9,600 years ago"). The
+  present itself reads "present".
+- **Lengths** (zoom steps, the ruler's "per tick", shortened gaps) in Gyr, Myr and kyr: "100 Myr / tick", "540 Myr".
+- **The ruler** ticks on round ages (100 Ma, 200 Ma…, not round stored years) and stops at `present`, which is drawn
+  as the era line.
+- **"c."** with `circaShare`: the fade is that share of the date's age, at least `meta.circaFade` years (default 0).
+  The share's cap of 0.5 keeps the fade short of the present.
+- **Reading dates** (the search box, and source files built with `build-dataset.ts`): "4.567 Ga", "66 Ma", "11.7 ka",
+  "11.7 ka BP", "c. 2.6 Ma", as well as stored years. A date claim's `year` may carry its margin in the same unit,
+  `"251.902 ± 0.024 Ma"` (or `+/-`), which sets the claim's `margin`; a ± anywhere else is an error.
+
 ## tracks
 
 Each track is a row. Rows nest to **any depth** (e.g. group → region → civilization → period); each

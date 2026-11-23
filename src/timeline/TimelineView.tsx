@@ -11,6 +11,7 @@ import { stripStopKey } from './keyboard.ts';
 import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
 import { mergeStretches } from '../lib/lifespan.ts';
 import { eraStart } from '../lib/calendar.ts';
+import { beforePresent } from '../lib/beforePresent.ts';
 import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { rootOf, trackIndex } from '../lib/tracks.ts';
@@ -259,6 +260,7 @@ export function TimelineView(props: Props) {
         compress,
         calendar: cal,
         keep: increment < 1 ? keptStretches(events, present, data.meta.range) : undefined,
+        end: beforePresent(cal)?.present,
       }),
     [events, present, laneSpans, data.meta.range, increment, compress, cal],
   );
@@ -644,6 +646,7 @@ export function TimelineView(props: Props) {
             sources={props.data.sources}
             selectedId={props.selectedAgeId}
             onOpen={props.onOpenAge}
+            gaps={gaps}
           />
         )}
 

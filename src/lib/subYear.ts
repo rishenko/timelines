@@ -34,22 +34,46 @@ export function subYearUnit(inc: number): SubYearUnit | undefined {
   return (Object.keys(SUB_YEAR) as SubYearUnit[]).find((u) => Math.abs(SUB_YEAR[u] - inc) < 1e-12);
 }
 
-/** "10 yr", "1 month", "1 week": a zoom step, short. */
+const dec = (v: number) => String(Number(v.toFixed(3)));
+
+/**
+ * A length of 10,000 years or more, short: "100 Myr", "1 Gyr", "50 kyr" (deep time's zoom steps; lengths in Myr, dates
+ * in Ma, as geologists write them: Kevin, 2026-11-23). Null below that, so the other timelines' steps are unchanged.
+ */
+export function shortYears(n: number): string | null {
+  if (n < 1e4) return null;
+  return n >= 1e9 ? `${dec(n / 1e9)} Gyr` : n >= 1e6 ? `${dec(n / 1e6)} Myr` : `${dec(n / 1e3)} kyr`;
+}
+
+/** Spoken: "100 million years", "50 thousand years", "10 years". */
+function spokenYears(n: number): string {
+  return n >= 1e9 ? `${dec(n / 1e9)} billion years` : n >= 1e6 ? `${dec(n / 1e6)} million years` : n >= 1e4 ? `${dec(n / 1e3)} thousand years` : `${n} years`;
+}
+
+/** Deep time: a shortened gap's length, "4.4 Gyr", "540 Myr", "11.7 kyr", under 10,000 years "9,600 yrs". */
+export function formatSpan(yrs: number): string {
+  const s = shortYears(yrs);
+  if (s) return s;
+  const n = Math.round(yrs);
+  return `${n.toLocaleString('en')} ${n === 1 ? 'yr' : 'yrs'}`;
+}
+
+/** "10 yr", "1 month", "1 week", "100 Myr": a zoom step, short. */
 export function incrementLabel(inc: number): string {
   const u = subYearUnit(inc);
-  return u ? (u === 'quarter' ? '3 months' : `1 ${u}`) : `${inc} yr`;
+  return u ? (u === 'quarter' ? '3 months' : `1 ${u}`) : (shortYears(inc) ?? `${inc} yr`);
 }
 
 /** "10 years per tick", "1 month per tick": a zoom step, spoken. */
 export function incrementSpoken(inc: number): string {
   const u = subYearUnit(inc);
-  return u ? `${u === 'quarter' ? '3 months' : `1 ${u}`} per tick` : `${inc} years per tick`;
+  return u ? `${u === 'quarter' ? '3 months' : `1 ${u}`} per tick` : `${spokenYears(inc)} per tick`;
 }
 
 /** A zoom step's toolbar button: the number, or the unit's short name below a year. */
 export function incrementButton(inc: number): string {
   const u = subYearUnit(inc);
-  return u ? { quarter: '3 mo', month: 'Month', week: 'Week', day: 'Day' }[u] : String(inc);
+  return u ? { quarter: '3 mo', month: 'Month', week: 'Week', day: 'Day' }[u] : (shortYears(inc) ?? String(inc));
 }
 
 /**

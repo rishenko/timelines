@@ -1,4 +1,5 @@
 import type { Calendar } from '../types.ts';
+import { beforePresent } from './beforePresent.ts';
 import { dayOf, daysInMonth, isMajorSubYearTick, MONTH_NAMES, monthShort, subYearFloor, subYearNext, subYearUnit } from './subYear.ts';
 
 /**
@@ -45,9 +46,58 @@ export function formatDate(y: number, month: number | undefined, day: number | u
   return `${circa ? 'c. ' : ''}${day ? `${day} ` : ''}${MONTH_NAMES[month - 1]} ${formatYear(y, cal)}`;
 }
 
+/** A whole number divided by 10^pow, written exactly, trailing zeros dropped: exactDec(251902137, 6) is "251.902137". */
+function exactDec(n: number, pow: number): string {
+  const s = String(n).padStart(pow + 1, '0');
+  const frac = s.slice(-pow).replace(/0+$/, '');
+  return frac ? `${s.slice(0, -pow)}.${frac}` : s.slice(0, -pow);
+}
+
+/** "251.902" × 10^6 as a whole number, by digits (no floating-point error); digits past 10^-pow are rounded. */
+function scaledInt(text: string, pow: number): number {
+  const [int, frac = ''] = text.replace(/,/g, '').split('.');
+  const keep = frac.padEnd(pow, '0').slice(0, pow);
+  const round = frac.length > pow && Number(frac[pow]) >= 5 ? 1 : 0;
+  return Number(int) * 10 ** pow + Number(keep || '0') + round;
+}
+
+/** Up to three decimals, trailing zeros dropped: 4.567, 66, 11.7. */
+const dec = (v: number) => String(Number(v.toFixed(3)));
+
+/**
+ * Deep time (`calendar.beforePresent`): a time before present in Ga, Ma, ka or years: "4.567 Ga", "66 Ma",
+ * "11.7 ka BP", "9,600 years BP". Ga and Ma are written without "BP", as geologists do; ka and years add it when present
+ * is 1950 (radiocarbon's and geology's BP), else ka reads "ka" and years "years ago". 0 is "present"; a year after the
+ * present, "N years after present".
+ */
+export function formatAgo(ago: number, present: number, exact = false): string {
+  const bp = present === 1950;
+  // `exact` (the editors): every digit, so the text reads back as the same year ("251.902137 Ma")
+  const d = (pow: number) => (exact && Number.isInteger(ago) ? exactDec(ago, pow) : dec(ago / 10 ** pow));
+  if (ago >= 1e9) return `${d(9)} Ga`;
+  if (ago >= 1e6) return `${d(6)} Ma`;
+  if (ago >= 1e4) return `${d(3)} ka${bp ? ' BP' : ''}`;
+  if (ago === 0) return 'present';
+  if (ago < 0) return `${(-ago).toLocaleString('en')} ${ago === -1 ? 'year' : 'years'} after present`;
+  return `${ago.toLocaleString('en')} ${ago === 1 ? 'year' : 'years'} ${bp ? 'BP' : 'ago'}`;
+}
+
 export function formatYear(y: number, cal: Calendar, circa = false): string {
+  const bp = beforePresent(cal);
+  if (bp) return `${circa ? 'c. ' : ''}${formatAgo(bp.present - y, bp.present)}`;
   const { year, era } = fromStored(y, cal);
   return `${circa ? 'c. ' : ''}${year} ${eraLabel(era, cal)}`;
+}
+
+/**
+ * A year as an editor shows it: as `formatYear`, except that in deep time every digit is kept ("251.902137 Ma"), so
+ * saving an unchanged form keeps the year. `formatDate`'s month and day as usual.
+ */
+export function formatEditDate(y: number, month: number | undefined, day: number | undefined, cal: Calendar, circa = false): string {
+  const bp = beforePresent(cal);
+  if (!bp) return formatDate(y, month, day, cal, circa);
+  const when = formatAgo(bp.present - y, bp.present, true);
+  return `${circa ? 'c. ' : ''}${month ? `${day ? `${day} ` : ''}${MONTH_NAMES[month - 1]} ` : ''}${when}`;
 }
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -56,7 +106,9 @@ const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
  * Parses "1450 BCE", "1450bc", "c. 1450 BCE", "ca 1450 BCE", "4560 AE", "4560", "-500".
  * A bare number is in the "after" era; a leading minus means the "before" era.
  */
-export function parseDate(input: string, cal: Calendar): { year: number; circa: boolean } | null {
+export function parseDate(input: string, cal: Calendar): { year: number; circa: boolean; margin?: number } | null {
+  const ago = parseAgo(input, cal);
+  if (ago) return ago;
   const before = [cal.before, ...(cal.aliases?.before ?? [])].map(escape).join('|');
   const after = [cal.after, ...(cal.aliases?.after ?? [])].map(escape).join('|');
   const re = new RegExp(`^\\s*(c\\.?|ca\\.?|circa)?\\s*(-?\\d+)\\s*(?:(${before})|(${after}))?\\s*$`, 'i');
@@ -69,12 +121,42 @@ export function parseDate(input: string, cal: Calendar): { year: number; circa: 
   return { year: toStored(Math.abs(n), isBefore ? 'before' : 'after', cal), circa: !!m[1] };
 }
 
+const AGO_POW: Record<string, number> = { ga: 9, ma: 6, ka: 3 };
+
+/**
+ * Deep time (`calendar.beforePresent` only): reads what `formatAgo` writes, and a margin. "4.567 Ga", "66 Ma",
+ * "11.7 ka BP", "c. 2.6 Ma", "9,600 years BP", "9,600 years ago", "present", "50 years after present", and
+ * "251.902 ± 0.024 Ma" (or "+/-"; the margin in the same unit). Exact by digits, rounded to a whole stored year. Null for
+ * anything else, or on a calendar without `beforePresent`.
+ */
+export function parseAgo(input: string, cal: Calendar): { year: number; circa: boolean; margin?: number } | null {
+  const bp = beforePresent(cal);
+  if (!bp) return null;
+  const num = String.raw`(\d[\d,]*(?:\.\d+)?)`;
+  const c = String.raw`^\s*(c\.?|ca\.?|circa)?\s*`;
+  const unit = new RegExp(`${c}${num}\\s*(?:(?:±|\\+/-)\\s*${num}\\s*)?(ga|ma|ka)(?:\\s*bp)?\\s*$`, 'i').exec(input);
+  if (unit) {
+    const pow = AGO_POW[unit[4].toLowerCase()];
+    const out: { year: number; circa: boolean; margin?: number } = { year: bp.present - scaledInt(unit[2], pow), circa: !!unit[1] };
+    if (unit[3] !== undefined) out.margin = scaledInt(unit[3], pow);
+    return out;
+  }
+  const years = new RegExp(`${c}${num}\\s*years?\\s+(bp|ago|after\\s+present)\\s*$`, 'i').exec(input);
+  if (years) {
+    const n = scaledInt(years[2], 0);
+    return { year: /after/i.test(years[3]) ? bp.present + n : bp.present - n, circa: !!years[1] };
+  }
+  const now = new RegExp(`${c}present\\s*$`, 'i').exec(input);
+  if (now) return { year: bp.present, circa: !!now[1] };
+  return null;
+}
+
 /**
  * Parses a date that may give a month and day: "28 June 1914", "June 1914", "Jun 1914", "c. July 1916",
  * "15 March 44 BCE", "1914-06-28", "1914-06", or anything parseDate reads (a year). Month names may be cut to three
  * letters. Null if it can't be read, or the day doesn't exist in that month.
  */
-export function parseFullDate(input: string, cal: Calendar): { year: number; month?: number; day?: number; circa: boolean } | null {
+export function parseFullDate(input: string, cal: Calendar): { year: number; month?: number; day?: number; circa: boolean; margin?: number } | null {
   const plain = parseDate(input, cal);
   if (plain) return plain;
   const iso = /^\s*(c\.?|ca\.?|circa)?\s*(-?\d+)-(\d{1,2})(?:-(\d{1,2}))?\s*$/i.exec(input);
@@ -126,6 +208,9 @@ export function exampleYear(cal: Calendar, y: number): string {
 export function tickFloor(y: number, inc: number, cal: Calendar): number {
   const unit = subYearUnit(inc);
   if (unit) return subYearFloor(y, unit);
+  // deep time: ticks on round ages ("100 Ma", not 100 million stored years, which is 1,950 years off)
+  const bp = beforePresent(cal);
+  if (bp) return bp.present - Math.ceil((bp.present - y) / inc) * inc;
   if (cal.yearZero) return Math.floor(y / inc) * inc;
   if (y >= inc && inc > 1) return Math.floor(y / inc) * inc;
   if (y >= 1) return inc === 1 ? Math.floor(y) : 1;
@@ -136,7 +221,7 @@ export function tickFloor(y: number, inc: number, cal: Calendar): number {
 export function nextTick(t: number, inc: number, cal: Calendar): number {
   const unit = subYearUnit(inc);
   if (unit) return subYearNext(t, unit);
-  if (cal.yearZero) return t + inc;
+  if (cal.yearZero || beforePresent(cal)) return t + inc;
   if (t === 1) return inc > 1 ? inc : 2;
   return t + inc;
 }
@@ -150,8 +235,10 @@ export function ticksBetween(a: number, b: number, inc: number, cal: Calendar): 
   return out;
 }
 
-/** The first year of the "after" era: drawn as the era line on the ruler. */
+/** The first year of the "after" era: drawn as the era line on the ruler. In deep time, the present. */
 export function eraStart(cal: Calendar): number {
+  const bp = beforePresent(cal);
+  if (bp) return bp.present;
   return cal.yearZero ? 0 : 1;
 }
 
@@ -159,6 +246,8 @@ export function eraStart(cal: Calendar): number {
 export function isMajorTick(t: number, inc: number, cal: Calendar): boolean {
   const unit = subYearUnit(inc);
   if (unit) return isMajorSubYearTick(t, unit);
+  const bp = beforePresent(cal);
+  if (bp) return (bp.present - t) % (inc * 10) === 0;
   return fromStored(t, cal).year % (inc * 10) === 0;
 }
 
