@@ -372,7 +372,8 @@ events and facet values form a graph: events link rows, memberships link rows to
 **Event categories.** Events join the values of a facet whose `applies` is `"events"` the same way. The Wikipedia-sourced
 timelines share one such facet, `category`: ten kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
 `unrest`, `diplomacy`, `society`, `science`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
-`conflict`). An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
+`conflict`). A ruler's time in office, as a span ("Reign of Sargon", "Presidency of Juárez"), is `reign` ("Reign or
+term") in `rule`; the accession or death on a single date stays `succession`. An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
 article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed
 corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
 shape before the event's title, names both categories in the table and the event's details, and filters by them
