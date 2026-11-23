@@ -1,0 +1,549 @@
+{
+ "_note": "Draft list of key religious foundings, events and traditions, with the same world-region quotas as events.json (Kevin, 2026-11-23). `type`: founding (a founder or a start), event (a council, schism, conversion or spread), tradition (no single founder or start: do not force a date; `represent` says how the data could show it). `traditional` is the traditional date, when it differs from the scholarly one, to check that the data keeps both as date claims. Written from general knowledge, no page cited.",
+ "events": [
+  {
+   "id": "zoroaster",
+   "name": "Zoroaster and Zoroastrianism",
+   "year": -1000,
+   "tol": 500,
+   "region": "West Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Zoroast",
+   "traditional": -611
+  },
+  {
+   "id": "judaism-torah",
+   "name": "Israelite religion to Judaism (Torah, Babylonian exile)",
+   "year": -586,
+   "tol": 200,
+   "region": "West Asia",
+   "type": "tradition",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "match": "Judaism|Torah|Babylonian (exile|captivity)|Israelite",
+   "represent": "a span (c. 1200–500 BCE) with the exile (586 BCE) as one dated event; no founder"
+  },
+  {
+   "id": "mahavira",
+   "name": "Mahavira and Jainism",
+   "year": -540,
+   "tol": 60,
+   "region": "South Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Mahavira|Jain",
+   "traditional": -599
+  },
+  {
+   "id": "buddha",
+   "name": "Buddha's life and the founding of Buddhism",
+   "year": -480,
+   "tol": 100,
+   "region": "South Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Buddha|Gautama|Siddhartha",
+   "traditional": -563
+  },
+  {
+   "id": "confucius",
+   "name": "Confucius (Confucianism)",
+   "year": -551,
+   "tol": 100,
+   "region": "East Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Confuci",
+   "traditional": -551
+  },
+  {
+   "id": "laozi",
+   "name": "Laozi and Daoism (Daodejing)",
+   "year": -400,
+   "tol": 200,
+   "region": "East Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Laozi|Lao Tzu|Daoism|Taoism|Daodejing|Tao Te Ching",
+   "traditional": -571
+  },
+  {
+   "id": "vedas",
+   "name": "Vedic religion and the Vedas (Hinduism's roots)",
+   "year": -1200,
+   "tol": 500,
+   "region": "South Asia",
+   "type": "tradition",
+   "expect": [
+    "society"
+   ],
+   "match": "a span (c. 1500–500 BCE) for the Vedas, then \"c.\" claims for the Upanishads and the epics; no founder|Veda|Vedic|Hindu|Upanishad|Brahman"
+  },
+  {
+   "id": "ashoka-dhamma",
+   "name": "Ashoka spreads Buddhism (Third Council, missions)",
+   "year": -250,
+   "tol": 20,
+   "region": "South Asia",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Ashoka|Third (Buddhist )?Council|Mahinda"
+  },
+  {
+   "id": "mani",
+   "name": "Mani and Manichaeism",
+   "year": 240,
+   "tol": 30,
+   "region": "West Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Mani\\b|Manichae"
+  },
+  {
+   "id": "jesus-christianity",
+   "name": "Jesus and the beginning of Christianity",
+   "year": 30,
+   "tol": 10,
+   "region": "West Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Jesus|Crucifixion|Christian|Paul"
+  },
+  {
+   "id": "buddhism-china",
+   "name": "Buddhism reaches China",
+   "year": 67,
+   "tol": 60,
+   "region": "East Asia",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Buddhism.*China|White Horse|Buddhist.*(China|Han)"
+  },
+  {
+   "id": "nicaea",
+   "name": "Council of Nicaea",
+   "year": 325,
+   "tol": 5,
+   "region": "Europe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Nicaea|Nicea"
+  },
+  {
+   "id": "constantine-conversion",
+   "name": "Constantine and Christianity (Edict of Milan)",
+   "year": 313,
+   "tol": 15,
+   "region": "Europe",
+   "type": "event",
+   "expect": [
+    "society",
+    "rule"
+   ],
+   "match": "Edict of Milan|Constantine"
+  },
+  {
+   "id": "aksum-christian",
+   "name": "Aksum adopts Christianity (Ezana)",
+   "year": 330,
+   "tol": 25,
+   "region": "Africa (with Egypt and North Africa)",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Ezana|Aksum.*Christian|Christian.*Aksum"
+  },
+  {
+   "id": "chalcedon",
+   "name": "Council of Chalcedon: the Oriental Orthodox split",
+   "year": 451,
+   "tol": 5,
+   "region": "West Asia",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Chalcedon"
+  },
+  {
+   "id": "muhammad-revelation",
+   "name": "Muhammad's first revelation (Islam begins)",
+   "year": 610,
+   "tol": 5,
+   "region": "West Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Muhammad|Quran|Qur.an|Islam"
+  },
+  {
+   "id": "hijra",
+   "name": "The Hijra (Muslim era begins)",
+   "year": 622,
+   "tol": 3,
+   "region": "West Asia",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Hijra|Hegira"
+  },
+  {
+   "id": "quran-compiled",
+   "name": "Uthman fixes the text of the Qur'an",
+   "year": 650,
+   "tol": 15,
+   "region": "West Asia",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Uthman|Qur.an|Quran"
+  },
+  {
+   "id": "karbala",
+   "name": "Karbala and the Sunni–Shia split",
+   "year": 680,
+   "tol": 5,
+   "region": "West Asia",
+   "type": "event",
+   "expect": [
+    "society",
+    "conflict"
+   ],
+   "match": "Karbala|\\bShi.?a\\b"
+  },
+  {
+   "id": "buddhism-japan",
+   "name": "Buddhism reaches Japan",
+   "year": 552,
+   "tol": 20,
+   "region": "East Asia",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Buddhism.*Japan|Buddhist.*Japan|Soga|Asuka",
+   "traditional": 538
+  },
+  {
+   "id": "buddhism-tibet",
+   "name": "Buddhism reaches Tibet (Songtsen Gampo)",
+   "year": 640,
+   "tol": 30,
+   "region": "Central Asia and the steppe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Tibet|Songtsen|Padmasambhava"
+  },
+  {
+   "id": "shinto-kojiki",
+   "name": "Shinto: the Kojiki and Nihon Shoki",
+   "year": 712,
+   "tol": 10,
+   "region": "East Asia",
+   "type": "tradition",
+   "expect": [
+    "society",
+    "culture"
+   ],
+   "match": "Shinto|Kojiki|Nihon Shoki",
+   "represent": "a span or period with no founder; the Kojiki (712) is only its first written account"
+  },
+  {
+   "id": "shankara",
+   "name": "Adi Shankara and Advaita Vedanta",
+   "year": 788,
+   "tol": 40,
+   "region": "South Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Shankara|Advaita"
+  },
+  {
+   "id": "uyghur-manichaeism",
+   "name": "The Uyghur khagan adopts Manichaeism",
+   "year": 762,
+   "tol": 10,
+   "region": "Central Asia and the steppe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Uyghur|Manichae"
+  },
+  {
+   "id": "clovis",
+   "name": "Clovis is baptised (Frankish Christianity)",
+   "year": 496,
+   "tol": 10,
+   "region": "Europe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Clovis"
+  },
+  {
+   "id": "rus-baptism",
+   "name": "Vladimir baptises Kievan Rus'",
+   "year": 988,
+   "tol": 5,
+   "region": "Europe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Vladimir|Kiev|Rus.*(baptis|Christian|conver)"
+  },
+  {
+   "id": "islam-west-africa",
+   "name": "Islam in West Africa (Takrur, Ghana, Mali)",
+   "year": 1040,
+   "tol": 60,
+   "region": "Africa (with Egypt and North Africa)",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Takrur|War Jabi|Almoravid|Islam.*(Africa|Mali|Ghana)"
+  },
+  {
+   "id": "karakhanid-islam",
+   "name": "The Karakhanids turn to Islam",
+   "year": 960,
+   "tol": 20,
+   "region": "Central Asia and the steppe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Karakhanid|Qarakhanid|Satuq"
+  },
+  {
+   "id": "great-schism",
+   "name": "East–West Schism",
+   "year": 1054,
+   "tol": 5,
+   "region": "Europe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Schism"
+  },
+  {
+   "id": "zhu-xi",
+   "name": "Zhu Xi and Neo-Confucianism",
+   "year": 1180,
+   "tol": 30,
+   "region": "East Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Zhu Xi|Neo-Confucian"
+  },
+  {
+   "id": "pagan-theravada",
+   "name": "Theravada Buddhism at Pagan",
+   "year": 1044,
+   "tol": 60,
+   "region": "Southeast Asia and Oceania",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Theravada|Anawrahta|Pagan.*Buddh"
+  },
+  {
+   "id": "pasai-islam",
+   "name": "Islam in Southeast Asia (Samudera Pasai)",
+   "year": 1267,
+   "tol": 40,
+   "region": "Southeast Asia and Oceania",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Pasai|Samudra|Islam.*(Sumatra|Indonesia|Malay)"
+  },
+  {
+   "id": "ghazan-islam",
+   "name": "Ilkhan Ghazan converts to Islam",
+   "year": 1295,
+   "tol": 3,
+   "region": "West Asia",
+   "type": "event",
+   "expect": [
+    "society",
+    "rule"
+   ],
+   "match": "Ghazan"
+  },
+  {
+   "id": "reformation",
+   "name": "Luther's 95 Theses (Reformation)",
+   "year": 1517,
+   "tol": 3,
+   "region": "Europe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Luther|Reformation|Ninety-five"
+  },
+  {
+   "id": "guru-nanak",
+   "name": "Guru Nanak and the beginning of Sikhism",
+   "year": 1499,
+   "tol": 15,
+   "region": "South Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Nanak|Sikh"
+  },
+  {
+   "id": "trent",
+   "name": "Council of Trent (Counter-Reformation)",
+   "year": 1545,
+   "tol": 5,
+   "region": "Europe",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Trent|Counter-Reformation"
+  },
+  {
+   "id": "khalsa",
+   "name": "Guru Gobind Singh founds the Khalsa",
+   "year": 1699,
+   "tol": 3,
+   "region": "South Asia",
+   "type": "event",
+   "expect": [
+    "society"
+   ],
+   "match": "Khalsa|Gobind Singh"
+  },
+  {
+   "id": "andean-religion",
+   "name": "Andean religion (Inti, huacas) and Inca state cult",
+   "year": 1438,
+   "tol": 200,
+   "region": "The Americas",
+   "type": "tradition",
+   "expect": [
+    "society"
+   ],
+   "match": "a span for the Andean tradition, with the Inca state cult as a dated phase; no founder|Inti|huaca|Inca.*(relig|sun)"
+  },
+  {
+   "id": "mesoamerican-religion",
+   "name": "Mesoamerican religion (Popol Vuh, Aztec Templo Mayor)",
+   "year": 1487,
+   "tol": 300,
+   "region": "The Americas",
+   "type": "tradition",
+   "expect": [
+    "society",
+    "archaeology"
+   ],
+   "match": "a span for the tradition; dated events only for specific sites and texts (Templo Mayor dedication 1487)|Templo Mayor|Popol Vuh|Aztec religion|human sacrifice"
+  },
+  {
+   "id": "yoruba-ife",
+   "name": "Yoruba religion (Ifá) and Ife",
+   "year": 1000,
+   "tol": 400,
+   "region": "Africa (with Egypt and North Africa)",
+   "type": "tradition",
+   "expect": [
+    "society"
+   ],
+   "match": "a span, with \"c.\" claims for Ife's rise; no founder or single date|Yoruba|Ifá|Ife"
+  },
+  {
+   "id": "mormon",
+   "name": "Joseph Smith founds the Latter Day Saint movement",
+   "year": 1830,
+   "tol": 2,
+   "region": "The Americas",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Mormon|Latter Day|Joseph Smith"
+  },
+  {
+   "id": "ghost-dance",
+   "name": "Ghost Dance movement (Wovoka)",
+   "year": 1890,
+   "tol": 3,
+   "region": "The Americas",
+   "type": "event",
+   "expect": [
+    "society",
+    "unrest"
+   ],
+   "match": "Ghost Dance|Wovoka|Wounded Knee"
+  },
+  {
+   "id": "taiping-religion",
+   "name": "Hong Xiuquan founds the God Worshippers (Taiping)",
+   "year": 1843,
+   "tol": 5,
+   "region": "East Asia",
+   "type": "founding",
+   "expect": [
+    "society",
+    "unrest"
+   ],
+   "match": "Hong Xiuquan|God Worshipp|Taiping"
+  },
+  {
+   "id": "bahai",
+   "name": "The Báb and Bahá'u'lláh (Bahá'í Faith)",
+   "year": 1844,
+   "tol": 20,
+   "region": "West Asia",
+   "type": "founding",
+   "expect": [
+    "society"
+   ],
+   "match": "Bahá|Baha.i|Bab\\b"
+  }
+ ]
+}
