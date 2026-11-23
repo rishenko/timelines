@@ -1,6 +1,6 @@
 // Checks that the reader-facing docs name every kind of source the shipped data uses, and the licence of quoted text:
 // - each source in the timelines this site ships (data-src/site-timelines.json) has one known kind, its tag
-//   (wikipedia, cited-via-wikipedia, periodo, cliopatria, ics…); a source with an unknown or missing tag fails, so a new
+//   (wikipedia, cited-via-wikipedia, periodo, cliopatria, ics, journal…); a source with an unknown or missing tag fails, so a new
 //   kind has to be added here, with the names that describe it;
 // - the event maps' own sources count too: their credits (Cliopatria, Natural Earth, Wikimedia Commons) and where each
 //   row's map location came from (data-src/<timeline>-places.json: Wikipedia, Wikidata);
@@ -19,6 +19,8 @@ const KINDS: Record<string, { names: RegExp; credit?: RegExp }> = {
   periodo: { names: /PeriodO/ },
   cliopatria: { names: /Cliopatria/, credit: /Cliopatria/ },
   ics: { names: /International Chronostratigraphic Chart|\bICS\b/ },
+  // a paper cited directly (not via Wikipedia), e.g. a dating study in Earth and Life
+  journal: { names: /\bjournal (articles?|papers?)\b|\bpeer-reviewed\b|\bpapers? cited directly\b/i },
   'natural-earth': { names: /Natural Earth/, credit: /Natural Earth/ },
   'wikimedia-commons': { names: /Wikimedia Commons/, credit: /Wikimedia Commons/ },
   wikidata: { names: /Wikidata/ },
