@@ -9,7 +9,8 @@
 import { useMemo } from 'react';
 import type { Dataset, Track } from '../types.ts';
 import type { ResolvedEvent, ResolvedPhase, ResolvedSpan } from '../lib/chronology.ts';
-import { formatYear } from '../lib/calendar.ts';
+import { eraStart, formatYear } from '../lib/calendar.ts';
+import { printTicks, tickStep } from './ticks.ts';
 
 interface Props {
   data: Dataset;
@@ -63,16 +64,6 @@ interface RowLayout {
   phases: ResolvedPhase[];
   items: Item[];
   folded: number;
-}
-
-/** Display year (1500 BCE = -1500, no year 0) to the data's astronomical year (1500 BCE = -1499), and back. */
-const astro = (d: number) => (d < 0 ? d + 1 : d);
-const display = (a: number) => (a <= 0 ? a - 1 : a);
-
-
-function tickStep(years: number): number {
-  for (const s of [1, 2, 5, 10, 25, 50, 100, 250, 500, 1000]) if (years / s <= 12) return s;
-  return 2000;
 }
 
 /** Rows in display order with their depth (only rows switched on, and their visible ancestors). */
@@ -165,8 +156,6 @@ function cut(text: string, room: number): string {
 export function PrintPages(p: Props) {
   const meta = p.data.meta;
   const figure = !!p.figure;
-  const dFrom = display(p.from);
-  const dTo = display(p.to);
   // rows on screen print as they are, with or without events in the years; otherwise only rows with events
   const eventsOnly = !p.rows && (meta.hideRowsOutOfView ?? p.data.tracks.length > 150);
   // every event the chart draws (crowded ones fold into "+N more", as on screen)
@@ -177,11 +166,11 @@ export function PrintPages(p: Props) {
 
   // one page: the view's years, every row (print.css shrinks a tall page to the paper)
   const pages = useMemo(() => {
-    const a = astro(dFrom);
-    const b = astro(dTo);
+    const a = p.from;
+    const b = p.to;
     const x = (y: number) => ((y - a) / (b - a)) * plotW;
     return [{ from: a, to: b, rows: layoutRows(p, a, b, x, plotW, minImp, eventsOnly) }];
-  }, [p, dFrom, dTo, plotW, minImp, eventsOnly]);
+  }, [p, plotW, minImp, eventsOnly]);
 
   const cal = meta.calendar;
   const yr = (y: number) => formatYear(y, cal);
@@ -193,8 +182,7 @@ export function PrintPages(p: Props) {
       {pages.map((pg, i) => {
         const x = (y: number) => LABEL_W + ((y - pg.from) / (pg.to - pg.from)) * plotW;
         const step = tickStep(pg.to - pg.from);
-        const ticks: number[] = [];
-        for (let d = Math.ceil(display(pg.from) / step) * step; astro(d) <= pg.to; d += step) if (d !== 0) ticks.push(astro(d));
+        const ticks = printTicks(pg.from, pg.to, cal);
         let y = HEADER_H + RULER_H;
         const pageH = Math.max(figure ? 0 : sheetH, HEADER_H + RULER_H + pg.rows.reduce((n, r) => n + r.height, 0) + FOOTER_H);
         return (
@@ -210,7 +198,7 @@ export function PrintPages(p: Props) {
               </text>
               {ticks.map((t) => (
                 <g key={t}>
-                  <line x1={x(t)} x2={x(t)} y1={HEADER_H + RULER_H - 6} y2={pageH - FOOTER_H} className={t === 0 ? 'p-zero' : 'p-grid'} />
+                  <line x1={x(t)} x2={x(t)} y1={HEADER_H + RULER_H - 6} y2={pageH - FOOTER_H} className={t === eraStart(cal) ? 'p-zero' : 'p-grid'} />
                   <text x={x(t) + 2} y={HEADER_H + 12} className="p-tick">
                     {yr(t)}
                   </text>
