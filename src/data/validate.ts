@@ -437,7 +437,10 @@ export function validateDataset(d: unknown): string[] {
       const sorted = [...list].sort((a, b) => at0(a) - at0(b));
       for (let i = 1; i < sorted.length; i++) {
         const prev = sorted[i - 1];
-        if (prev.ongoing || at1(prev) > at0(sorted[i]))
+        const next = sorted[i];
+        // neighbours may share a boundary year, as PeriodO's chains do, when both ends there are year-only
+        const touch = prev.end === next.start && !prev.endMonth && !prev.endDay && !next.startMonth && !next.startDay;
+        if (prev.ongoing || (at1(prev) > at0(next) && !touch))
           errors.push(`Eras "${prev.name}" and "${sorted[i].name}" overlap: eras in one group follow each other (put alternatives in another group).`);
       }
     }

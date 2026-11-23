@@ -63,6 +63,22 @@ describe('schema version 5 rules', () => {
       expect(found.some((p) => message.test(p)), found.join('\n') || '(no problems)').toBe(true);
     });
 
+  describe('neighbouring eras in a group', () => {
+    // The Age of Piers ends the year (or day) the Age of Leagues starts, 60
+    const end = (e: Record<string, unknown>) => (d: Dataset) =>
+      Object.assign(d.meta.eras![0], { endMonth: undefined, endDay: undefined, endDates: undefined, endEvent: undefined, ...e });
+    const overlap = /Eras "The Age of Piers" and "The Age of Leagues" overlap/;
+    it('may share a boundary year when both ends there are year-only, as PeriodO chains are written', () => {
+      expect(problems(end({ end: 60 }))).toEqual([]);
+    });
+    it('may not overlap by a year', () => {
+      expect(problems(end({ end: 61 })).some((p) => overlap.test(p))).toBe(true);
+    });
+    it('may not share the year when an end there gives a month or day', () => {
+      expect(problems(end({ end: 60, endMonth: 12, endDay: 31 })).some((p) => overlap.test(p))).toBe(true);
+    });
+  });
+
   it('accepts an era that runs past meta.range, as long as it overlaps it', () => {
     // a seam era keeps its own dates in both timelines (the Timurid Renaissance, c. 1375–1525, across 1500)
     expect(problems((d) => Object.assign(d.meta.eras![0], { start: -150, startMonth: undefined, startDay: undefined, startDates: undefined, startEvent: undefined }))).toEqual([]);

@@ -131,7 +131,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `id` | yes | Letters, digits and dashes; unique among the eras. |
 | `name` | yes | |
 | `sources` | yes | At least one. |
-| `group` | no | Eras that divide the same years one way share a group, and don't overlap within it. Another group (a region's own periods) is an alternative division of the same years. |
+| `group` | no | Eras that divide the same years one way share a group, and follow each other within it; neighbours may share a boundary year, as PeriodO's chains do (both ends there year-only), and are drawn meeting at the later one's start. Another group (a region's own periods) is an alternative division of the same years. |
 | `color` | no | `#rrggbb`. |
 | `chronology` | no | The dating system its dates follow. |
 | `url` | no | A page about the age, such as its Wikipedia article: readers can open it from the age. It isn't a date source; `sources` are. |
