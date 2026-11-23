@@ -109,8 +109,15 @@
 
 /* Colour-blind safe: row colours come from the data, so colour alone can't tell rows apart. Marks get a heavier edge
    in the row's colour moved toward the text, and labels and phase names stay the main cue. */
+/* the Okabe-Ito colours are brighter than the data's (yellow above all), so rows draw in them moved a quarter toward
+   the page: light labels on their bars stay at 4.5:1 */
+:root[data-preset='cvd'] [style*='--track-color'] {
+  --track-ink: color-mix(in srgb, var(--track-color) 75%, var(--bg));
+}
 :root[data-preset='cvd'] :is(.tl-mark, .lg-bar, .lg-band) {
   --mark-edge: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, var(--text));
+  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 24%, transparent);
+  --range-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, transparent);
 }
 :root[data-preset='cvd'] .tl-mark.span .bar,
 :root[data-preset='cvd'] .tl-mark.point .diamond {
@@ -119,5 +126,5 @@
 /* rows in the CVD palette (lib/cvdPalette.ts): a stronger lifespan tint, so neighbouring rows differ by more than a
    faint wash */
 :root[data-preset='cvd'] .tl-span {
-  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 22%, transparent);
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 16%, transparent);
 }
