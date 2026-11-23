@@ -98,6 +98,11 @@ button.icon {
 button.icon:hover {
   color: var(--text);
 }
+/* a panel's close and cancel buttons: at least 24 × 24 px (WCAG 2.5.8), so they never depend on nothing being near */
+button.icon:not(.small) {
+  min-width: 24px;
+  min-height: 24px;
+}
 button.icon.small {
   font-size: 12px;
   padding: 0 4px;
