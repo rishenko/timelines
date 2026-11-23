@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 6,
+  "schemaVersion": 8,
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
@@ -443,6 +443,12 @@
               "rule"
             ]
           },
+          "reign": {
+            "name": "Reign or term",
+            "broader": [
+              "rule"
+            ]
+          },
           "coup": {
             "name": "Coup or deposition",
             "broader": [
@@ -723,11 +729,10 @@
         "side": "after"
       }
     ],
-    "eras": [
+    "context": [
       {
         "id": "islamic-golden-age",
         "name": "Islamic Golden Age",
-        "group": "islamic-world",
         "start": 786,
         "end": 1258,
         "startDates": [
@@ -765,12 +770,17 @@
             "sourceKey": "wp-islamic-golden-age",
             "sourceLocation": "lead: \"The period is said to have ended with the collapse of the Abbasid caliphate following the Mongol invasions and the Siege of Baghdad in 1258.\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Islamic_Golden_Age",
+        "ids": {
+          "wikidata": "Q745799"
+        },
+        "kind": "age",
+        "line": "islamic-world"
       },
       {
         "id": "pax-mongolica",
         "name": "Pax Mongolica",
-        "group": "steppe-persianate",
         "start": 1250,
         "end": 1350,
         "circa": true,
@@ -801,12 +811,17 @@
             "sourceKey": "wp-pax-mongolica",
             "sourceLocation": "lead: \"The Pax Mongolica (Latin for ), less often known as Pax Tatarica (), is a historiographical term modeled after the original phrase Pax Romana which describes th\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Pax_Mongolica",
+        "ids": {
+          "wikidata": "Q1473258"
+        },
+        "kind": "age",
+        "line": "steppe-persianate"
       },
       {
         "id": "timurid-renaissance",
         "name": "Timurid Renaissance",
-        "group": "steppe-persianate",
         "start": 1375,
         "end": 1525,
         "circa": true,
@@ -837,12 +852,17 @@
             "sourceKey": "wp-timurid-renaissance",
             "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Timurid_Renaissance",
+        "ids": {
+          "wikidata": "Q3424763"
+        },
+        "kind": "age",
+        "line": "steppe-persianate"
       },
       {
         "id": "renaissance",
         "name": "Renaissance",
-        "group": "europe-thought",
         "start": 1400,
         "end": 1600,
         "circa": true,
@@ -891,12 +911,17 @@
             "sourceKey": "wp-renaissance",
             "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Renaissance",
+        "ids": {
+          "wikidata": "Q4692"
+        },
+        "kind": "age",
+        "line": "europe-thought"
       },
       {
         "id": "age-of-discovery",
         "name": "Age of Discovery",
-        "group": "europe-expansion",
         "start": 1415,
         "end": 1650,
         "circa": true,
@@ -931,7 +956,13 @@
             "sourceKey": "wp-age-of-discovery",
             "sourceLocation": "infobox end: Mid-17th century"
           }
-        ]
+        ],
+        "url": "https://en.wikipedia.org/wiki/Age_of_Discovery",
+        "ids": {
+          "wikidata": "Q133641"
+        },
+        "kind": "age",
+        "line": "europe-expansion"
       }
     ]
   },

@@ -19,7 +19,7 @@
           ]
         }
       },
-      "defaultTheme": "parchment",
+      "defaultTheme": "dark",
       "map": "../maps/ancient-classical.json"
     },
     {
