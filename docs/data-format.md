@@ -103,7 +103,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `calendar` | yes | See [calendar](#calendar). |
 | `increments` | yes | Years-per-tick choices for the toolbar, finest first, e.g. `[10, 50, 100, 500]`. Steps below a year are named: `"quarter"`, `"month"`, `"week"`, `"day"`, e.g. `["day", "week", "month", 1, 5, 10]` ([months and days](#months-and-days)). A step whose chart would be too wide to draw (day zoom over centuries) is disabled. |
 | `defaultIncrement` | yes | The one selected when the timeline opens; must be in `increments`. |
-| `defaultTheme` | no | `"dark"`, `"light"`, `"parchment"` or `"contrast"`. Used until the reader picks their own theme. |
+| `defaultTheme` | no | `"dark"`, `"light"`, `"parchment"`, `"cvd"` (Colour-blind safe) or `"contrast"`. Used until the reader picks their own theme. |
 | `customSourceTag` | no | Tag id given to sources readers create in edit mode (e.g. `"homebrew"`), so others can filter them. |
 | `circaFade` | no | Years of uncertainty drawn either side of a `circa` date that has no other range. Default `0`. |
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
