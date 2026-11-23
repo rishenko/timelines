@@ -245,6 +245,26 @@ All of these have unit tests in `extract/test_dates.py`.
   - **Many differences are one day apart:** a night action (Action of 14/15 February 1918: Wikipedia 02-14, Wikidata P585 02-15), a putsch dated the day after (1918 Liechtenstein putsch), or an end two days off (African theatre). Others are real: 1914–1915 Muslim revolts in Albania start 1914-05 in Wikidata against 1914-11 in the infobox. Read them as review flags; the cited source stays the Wikipedia quote.
   - Julian values are rare in these topics (1 in WW1, likely Russian), so a calendar conversion isn't worth building yet.
 
+- **Julian-model times are mixed (rulers pilot, 2026-11-22).** Wikidata's convention is that a Julian-model value is the Julian date, but the dump holds both kinds under that label:
+  - Henry II of France: start `+1547-03-31` (Julian), the date as Wikipedia writes it;
+  - Francis II of France: start `+1559-07-20`, the Gregorian twin of 10 July Julian;
+  - Catherine the Great: start `+1762-06-28` (Julian, Old Style) where Wikipedia gives 9 July (New Style).
+
+  `rulers.Sources.terms` keeps the value plus its Julian and Gregorian conversions, and `rulers.agrees` accepts any of the three. Never convert the Wikipedia date: it stays as written.
+
+## Ruler infoboxes (`extract/rulers.py`)
+
+- **Fields:** monarchs use `reign`, `reign1`, `reign2`… with `succession`, `succession1`… naming the office; office holders use `term_start`/`term_end` (+ `office`). The extractor's lookup tables don't keep these (they aren't date fields), so `rulers.py` reads the ruler's page from the dump.
+- **Patterns fixed in `dates.py`** (tests in `test_dates.py`):
+  - `{{awrap|10 July 1559}}`, `{{avoid wrap| 19 March 1808}}` (Henry II, Charles IV of Spain);
+  - `{{start and end date|1886|05|17|1931|04|14|df=y}}`, singular (Alfonso XIII);
+  - a `<br/>` right after the dash, `26 November 1504 – <br/> 12 April 1555` (Joanna of Castile), used to split the range;
+  - `17 (6) May 1727`, the New Style day with its Old Style day in parentheses (Peter II of Russia);
+  - `{{Gregorian to Julian|23 July 1645}}` (Alexis of Russia).
+- **Two reigns, one person:** Philip V of Spain (`reign1` 1700–1724, `reign2` 1724–1746). Napoleon's two are in one field, split by `<br>`. `rulers.picks` places every span that matches a Wikidata term or names the same office.
+- **Wrong span for the office:** Alain Poher's infobox has a 24-year Senate term beside his two acting presidencies. Pick the span closest to the Wikidata term, not the one overlapping it most, and drop spans whose office names a non-head office (`rulers.NOT_HEAD`: Senate, government, prime minister, staff…).
+- **Polities without office links:** Bourbon Restoration and July Monarchy have no P1906/P35, but their infoboxes list `leader1`, `leader2`…; Tsardom of Russia has neither, so one hop goes from rulers already found to offices named for the row ("Tsar of all Russia").
+
 ## Other sources' quirks already met
 
 - **NATO members table** (enwiki-20261101): no accession cell for Italy, the United States, Lithuania, Slovakia or Slovenia. They're cited from prose instead (`modern-states/connections/claims_data.py`, `NATO_FALLBACK`).
