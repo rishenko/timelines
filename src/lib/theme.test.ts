@@ -1,5 +1,6 @@
+// @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
-import { contrast, onColor, PRESETS, readabilityWarnings, sanitize, themeMode, THEME_FIELDS } from './theme.ts';
+import { applyTheme, contrast, onColor, PRESETS, readabilityWarnings, sanitize, themeMode, THEME_FIELDS } from './theme.ts';
 
 describe('theme', () => {
   it('every preset defines every color as 6-digit hex', () => {
@@ -36,5 +37,20 @@ describe('theme', () => {
     expect(s.colors.text).toBe(PRESETS.dark.colors.text);
     expect(s.colors.accent).toBe(PRESETS.dark.colors.accent);
     expect(s.preset).toBe('custom');
+  });
+
+  it('gives a saved preset its current colours, so a retune reaches readers who chose it', () => {
+    const old = { ...PRESETS.parchment.colors, bg: '#f3ead8', line: '#cdbb98' };
+    expect(sanitize({ preset: 'parchment', colors: old }).colors).toEqual(PRESETS.parchment.colors);
+    // a customised theme keeps its own colours
+    expect(sanitize({ preset: 'custom', colors: old }).colors.bg).toBe('#f3ead8');
+  });
+
+  it('marks the page with the preset its colours are, for preset-only CSS', () => {
+    const root = document.createElement('div');
+    applyTheme(PRESETS.parchment.colors, root);
+    expect(root.dataset.preset).toBe('parchment');
+    applyTheme({ ...PRESETS.parchment.colors, accent: '#123456' }, root);
+    expect(root.dataset.preset).toBe('custom');
   });
 });
