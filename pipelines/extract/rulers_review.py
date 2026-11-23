@@ -4,8 +4,8 @@ Per row: reign count, coverage, the items to check first, then a small sample of
 
     pipelines/extract/.venv/bin/python -I pipelines/extract/rulers_review.py --timeline modern-states --dir pipelines/out/rows/bulk/modern-states
 
-"To check" = Wikidata's term differs by more than a month, reign outside the row's phase, Old Style date, AI-flagged
-article. "Unchecked" (no Wikidata term) and small Wikidata differences are counted, not listed.
+"To check" = Wikidata's term differs by more than a month, reign outside the row's phase, Old Style date. Reigns from
+AI-flagged articles are never cited (rulers.py leaves them unplaced); the file counts them per row. "Unchecked" (no Wikidata term) and small Wikidata differences are counted, not listed.
 """
 import csv
 import json
@@ -106,13 +106,14 @@ def main():
         check = [(r, check_reasons(r)) for r in rows]
         flagged = [(r, w) for r, w in check if w]
         rest = [r for r, w in check if not w]
+        ai = sum('AI-flagged' in r['flags'] for r in R if r['row'] == t['id'] and not r['uuid'])
         unchecked = sum('no Wikidata term' in r['flags'] for r in rows)
         step = max(1, len(rest) // SAMPLE)
         sample = rest[::step][:SAMPLE]
         stats.append((t, len(rows), cov, len(flagged), unchecked))
         sections += [f"## {t['name']}", '',
                      f"{len(rows)} reigns · coverage {100 * cov:.0f}% of {hist(r0)}–{hist(r1)} · {len(flagged)} to check · "
-                     f"{unchecked} unchecked (no Wikidata term) · {unplaced[t['id']]} not placed", '']
+                     f"{unchecked} unchecked (no Wikidata term) · {unplaced[t['id']]} not placed" + (f" ({ai} of them AI-flagged articles, never cited)" if ai else ''), '']
         if flagged:
             sections += ['**To check**', ''] + [line(r, w) for r, w in flagged] + ['']
         if sample:
@@ -127,7 +128,7 @@ def main():
           f"{100 * covs[len(covs) // 2]:.0f}% (share of a row's years with a reign). {nf} to check "
           f"({100 * nf / max(1, n):.0f}%). Nothing is in data-src yet.", '',
           'Each row lists reigns to check first: Wikidata gives dates more than a month apart, the reign falls outside '
-          "the row's phase, an Old Style date, or an AI-flagged article. Then a sample of the rest. "
+          "the row's phase, or an Old Style date. Then a sample of the rest. "
           '"Visible" = importance 2 (shown at default zoom). "via" = how it was found (polity office, Wikidata P35, '
           'office from the row name, or a "List of monarchs of X" page).', '',
           '| Row | Reigns | Coverage | To check | Unchecked |', '|---|---|---|---|---|']
