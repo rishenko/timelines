@@ -1,0 +1,63 @@
+{
+  "output": "data-src/earth-life.json",
+  "wikipedia_dump": "enwiki-20261101 (read through pipelines/common/wp_sections.py)",
+  "ics_chart": {
+    "version": "v 2026/06",
+    "url": "https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf",
+    "copyright": "(c) International Commission on Stratigraphy, June 2026",
+    "cite": "Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated). The ICS international chronostratigraphic chart this decade. Episodes 48: 105-115",
+    "read": "2026-11-23",
+    "table": "pipelines/earth-life/ics_2026_06.json (verified by verify_ics.py)"
+  },
+  "journal": {
+    "burgess-2014-pnas": "abstract read through Europe PMC (PMID 24516148)"
+  },
+  "articles": {
+    "Ordovician–Silurian extinction events": [
+      {
+        "where": "lead",
+        "sentence": "The Late Ordovician mass extinction (LOME), sometimes referred to as the end-Ordovician mass extinction or the Ordovician–Silurian extinction, is the first of the \"big five\" major mass extinction events in Earth's history, occurring roughly"
+      },
+      {
+        "where": "lead",
+        "sentence": "The first pulse (interval), known as LOMEI-1, began at the boundary between the Katian and Hirnantian stages of the Late Ordovician epoch."
+      }
+    ],
+    "Late Devonian extinction": [
+      {
+        "where": "lead",
+        "sentence": "The Late Devonian mass extinction, also known as the Kellwasser event, was a mass extinction event which occurred around 372.15 million years ago, at the boundary between the Frasnian and Famennian ages of the Late Devonian period."
+      },
+      {
+        "where": "lead",
+        "sentence": "A second mass extinction called the Hangenberg event, also known as the end-Devonian extinction, occurred 13 million years later around 358.86 million years ago, bringing an end to the Famennian and Devonian, as the world transitioned into "
+      }
+    ],
+    "Permian–Triassic extinction event": [
+      {
+        "where": "lead",
+        "sentence": "There is evidence for one to three distinct pulses, or phases, of extinction, with the major pulse of marine extinction occurring in a 60,000-100,000 year interval around 251.902 million years ago (mya) marking the boundary between the Perm"
+      },
+      {
+        "where": "Dating",
+        "sentence": "The extinction occurred between 251.941 ± 0.037 and 251.880 ± 0.031 million years ago, a duration of 60 ± 48 thousand years."
+      }
+    ],
+    "Triassic–Jurassic extinction event": [
+      {
+        "where": "lead",
+        "sentence": "The Triassic–Jurassic (Tr-J) extinction event, often called the Triassic–Jurassic mass extinction (TJME) or end-Triassic extinction, marks the boundary between the Triassic and Jurassic periods, ."
+      }
+    ],
+    "Cretaceous–Paleogene extinction event": [
+      {
+        "where": "lead",
+        "sentence": "The Cretaceous–Paleogene (K–Pg) extinction event, formerly known as the Cretaceous–Tertiary (K–T) extinction event, was a major mass extinction of three-quarters (75%) of the plant and animal species on Earth which occurred around 65.5 mill"
+      },
+      {
+        "where": "Causes > Deccan Traps",
+        "sentence": "Some geophysical models suggest that the Chicxulub impact 66.0 Mya could have triggered some of the largest Deccan eruptions, as well as eruptions at active volcano sites anywhere on Earth."
+      }
+    ]
+  }
+}

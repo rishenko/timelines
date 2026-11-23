@@ -38,6 +38,10 @@ export function OverviewStrip({
   const fromStrip = (s: number) => Math.min(1, Math.max(0, s / Math.max(1, track))) * scale.width;
   const a = toStrip(view.left);
   const b = toStrip(Math.min(scale.width, view.left + shown));
+  // the outline is at least 6 px wide and stays inside the track: at the end of a narrow strip it would otherwise stick
+  // out past the window and make the page scroll sideways (WCAG 1.4.10, seen at 320 px)
+  const outlineW = Math.max(6, b - a);
+  const outlineLeft = Math.max(0, Math.min(a, track - outlineW));
   // events by where they start: one bar per 3 px of strip, heights on a square-root scale so sparse stretches show
   const bars = useMemo(() => {
     const n = Math.max(1, Math.floor(track / 3));
@@ -116,7 +120,7 @@ export function OverviewStrip({
           aria-valuenow={pct}
           aria-valuetext={`Viewing ${from} – ${to}, of ${all}`}
           title={`Viewing ${from} – ${to}, of ${all}. Drag, or use the arrow keys, Page Up/Down, Home and End.`}
-          style={{ left: a, width: Math.max(6, b - a) }}
+          style={{ left: outlineLeft, width: outlineW }}
           onKeyDown={onKeyDown}
         />
         <span className="tl-overview-end start" aria-hidden="true">
