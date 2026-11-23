@@ -40,6 +40,17 @@ export function uiStates(base: string, timeline: string): UiState[] {
     ['Customize: Timelines', async (p) => (await clickText(p, 'Customize'), clickTab(p, 'Timelines'))],
     ['search results', async (p) => (await p.locator('input[type=search], .search input').first().fill('egypt'), p.waitForTimeout(300))],
     ['event details', (p) => click(p, '.tl-mark:not(.cluster)')],
+    // the panel opened over a scrolled chart, then scrolled again: opening it narrows the chart without a window resize
+    // (#99's overview outline ran under the panel's Close button only in this state; fixed in #103)
+    ['side panel open after scrolling', async (p) => {
+      const scroll = (dx: number, dy: number) =>
+        p.evaluate(([x, y]) => document.querySelector('.tl-scroller')?.scrollBy(x, y), [dx, dy]);
+      await scroll(600, 400);
+      await p.waitForTimeout(300);
+      await click(p, '.tl-mark:not(.cluster)');
+      await scroll(300, 200);
+      await p.waitForTimeout(300);
+    }],
     // the footer's link to the About this data page (components/About.tsx)
     ['About this data', async (p) => (await click(p, '.legal-about'), p.locator('.about').waitFor())],
     ['table view', (p) => p.goto(timelineUrl(base, timeline, '&view=table'))],

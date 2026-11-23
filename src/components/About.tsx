@@ -92,7 +92,6 @@ export function About({ search = window.location.search, pathname = window.locat
 
       <h2>Known gaps</h2>
       <ul>
-        
         <li>
           Coverage follows Wikipedia’s: well-documented states and periods have more events than poorly documented
           ones, and Wikipedia itself can be wrong or one-sided.
