@@ -13,6 +13,7 @@ npm run test:watch     # vitest, rerunning on each change
 npm run docs:check     # the code's file fields and npm scripts are all documented (CI runs it)
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
+npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
 npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages from this clone (the workflow below is the usual way)
 ```
@@ -26,7 +27,9 @@ means nothing untracked in a local clone can end up on the site.
 
 CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
 build, `run-all --check` for each included timeline, and a check that the files in `public/timelines/` and the
-key-event lists in `docs/` are what `data-src/` compiles to. If that check fails, run `npm run data -- build <timeline>`
+key-event lists in `docs/` are what `data-src/` compiles to. `npm run data:check` also refuses any link in `data-src/`
+to a Wikipedia page flagged for AI-generated text (`npm run data -- ai-flags --check`, against
+`data-src/ai-flagged-pages.txt`; see [pipelines/README.md](../pipelines/README.md#a-new-dump)). If that check fails, run `npm run data -- build <timeline>`
 and `npm run data -- importance <timeline>`, and commit the result. Last comes the id-stability check
 (`npm run data -- ids --check`): no id that a link can name may disappear from a compiled timeline without an entry in
 its `redirects` ([data-format.md](data-format.md#keeping-ids-stable)). The docs check (`npm run docs:check`) fails
@@ -36,6 +39,11 @@ key in an example, or when an npm script isn't named on this page.
 **Pull requests** update the docs and app text they affect, in the same pull request: the template
 (`.github/pull_request_template.md`) lists what to check. Reader-facing words follow the
 [glossary](glossary.md).
+
+`npm run check:all` runs, before you ask for review, everything CI checks except the compiled-files diff (it rewrites
+files), plus the type-check of app and scripts, `seam-check`, and `categories:proof` on every timeline against
+`--base` (default `origin/main`). It prints one line per check and the end of each failing one's output; `--skip` and
+`--only` take the names it prints.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
@@ -386,11 +394,12 @@ TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
 ```sh
 npx vite preview --port 4317   # after npm run build; serves the app at /
 npm run shot -- <url> <out.png> [--width N --height N --close-legend --click "Expand all" --expand "Egypt" --keys "Tab|ArrowRight" --measure ".toolbar > *"]
-npm run contrast [-- --timeline ancient-classical --preset dark --state focus --sweep --details]   # text contrast per theme
+npm run contrast [-- --timeline ancient-classical --preset dark --state focus --zoom 100 --quick --details]   # text contrast per theme
 npm run contrast:ui [-- --preset dark --check marks|focus|fields --sweep --details]   # marks, focus outline, fields at 3:1 (WCAG 1.4.11)
 npm run reflow [-- --width 320 --width 640 --details]   # nothing runs off screen or scrolls sideways (WCAG 1.4.10)
 npm run targets [-- --width 390 --details]   # every control at least 24 × 24 px, or spaced apart (WCAG 2.5.8)
 npm run a11y:report [-- --skip contrast]     # all of the above, axe in the browser, and the a11y tests → docs/wcag-report.md (~10 min)
+npm run a11y:report -- --state "plugin view"  # axe over the named views only (a PR's new states, ~1 min); writes no report
 npm run check:live -- --expect "some text"   # after deploying: wait for the live site and check it loads
 ```
 
@@ -410,7 +419,11 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `src/a11y.test.tsx` runs axe-core over each bundled timeline, the table view, the tour and the Customize panel,
   and tests accessible names, focus handling and keyboard control.
 - jsdom can't check colour contrast, so `npm run contrast` does it in a real browser: axe-core for ordinary text,
-  and a pixel check for text on the timeline's layered backgrounds. `--sweep` checks every screen of a timeline.
+  and a pixel check for text on the timeline's layered backgrounds. It checks every screen of a timeline (`--quick`:
+  the opening view only, as the a11y report runs it). A theme or colour change runs it at a fine `--zoom` on every
+  timeline: the opening view passed a retune that broke labels further along. Both contrast scripts save only the
+  preset's name, so the served build loads its own colours for it: a baseline run against main's build from a PR's
+  worktree tests main's colours. Text shadows aren't measured, so a halo change needs a look at screenshots.
   `npm run contrast:ui` does the same at 3:1 for what isn't text: event marks (with and without them on screen,
   pixel by pixel), the focus outline on each kind of control, and form fields' borders.
 - oxlint runs the `jsx-a11y` rules, with three off: `prefer-tag-over-role`, `no-noninteractive-element-to-interactive-role`
@@ -419,7 +432,8 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
   person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
-  It isn't in CI (about 10 minutes): run it after a UI change, before asking for review, and paste its summary line
+  It isn't in CI (about 10 minutes): run it after a UI change, before asking for review (`--state <name>` checks just
+  the views a pull request adds, in about a minute, and writes no report), and paste its summary line
   ("Failing: 0", the number of views) in the pull request. **Pull requests don't commit `wcag-report.md`**: it would
   conflict with every other UI change. The maintainers commit a fresh report, run on the default timeline (Ancient) so
   reports stay comparable, after each batch of merges. The report names its timeline and any view it couldn't open
