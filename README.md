@@ -192,7 +192,7 @@ golden ages and ages are generated.
 candidates for review, each with a verbatim quote, and a pass over the Wikidata JSON dump adds Wikidata's date beside
 Wikipedia's so disagreements stand out. The rulers pass (`pipelines/extract/rulers.py`) uses it to put a reign
 on each ruler's row: Wikidata finds the rulers, every reign date is quoted from Wikipedia, a Wikidata term that differs
-by more than a month flags the reign for checking, an open Wikidata term marks 186 modern reigns as ongoing, and 4
+by more than a month flags the reign for checking, an open Wikidata term marks 187 modern reigns as ongoing, and 4
 reigns whose end could not be read are left out. Other candidates are meant to feed a generator as cited claims; none
 does yet. It has its own Python 3.11 environment and needs more room: about 10 GiB of lookup tables
 beside the Wikipedia dump, and about 97 GiB for the Wikidata dump, which is read as a stream (about 2 hours on 4
