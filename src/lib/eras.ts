@@ -15,7 +15,7 @@ export interface PlacedAge {
   /** The context span (kind `age`). */
   era: ContextSpan;
   span: ResolvedSpan;
-  /** Its line in the strip or band (its group's). */
+  /** Its line in the strip or band (its `line`'s). */
   line: number;
   /** The row whose band it's drawn on (the track whose `context` holds it); absent: the Ages strip. */
   band?: string;
@@ -26,7 +26,7 @@ export interface PlacedAge {
 }
 
 export function placeAges(ds: Dataset, selection: ChronologySelection): PlacedAge[] {
-  // lines are numbered per strip or band, by group, in the order groups first appear there
+  // lines are numbered per strip or band, by line id, in the order lines first appear there
   const lines = new Map<string, Map<string, number>>();
   const lineOf = (band: string, g: string) => {
     const m = lines.get(band) ?? lines.set(band, new Map()).get(band)!;

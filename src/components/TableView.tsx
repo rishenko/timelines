@@ -47,7 +47,7 @@ interface Props {
   visibleTracks: Record<string, boolean>;
   /** Each row's regions with their sources, on timelines with regions (a Regions column in the rows tables). */
   regionsOf?: Map<string, RowRegion[]>;
-  /** The timeline's ages (meta.eras) under the reader's Dating choice: an Ages table first, the chart's strip in words. */
+  /** The timeline's ages (context spans of kind age) under the reader's Dating choice: an Ages table first, the chart's strip in words. */
   ages?: PlacedAge[];
   /** Each event's categories, on timelines whose events have them (a Category column, and a sort by it). */
   categoriesOf?: Map<string, EventCategories>;
@@ -524,13 +524,13 @@ function RowsTable({
 }
 
 /**
- * Ages (meta.eras), as the chart's strip under the ruler and the rows' age bands show them, in words, each with the
+ * Ages (context spans of kind age), as the chart's strip under the ruler and the rows' age bands show them, in words, each with the
  * region (the rows) it belongs to.
  */
 function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
   const cal = data.meta.calendar;
   const rowName = new Map(data.tracks.map((t) => [t.id, t.name]));
-  // an age placed in several rows is one row of the table
+  // one row of the table per age (by id)
   const once = [...new Map(ages.map((a) => [a.era.id, a])).values()];
   const sorted = once.sort((a, b) => a.span.start - b.span.start || a.era.name.localeCompare(b.era.name));
   return (

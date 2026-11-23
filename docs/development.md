@@ -281,7 +281,7 @@ stop key (`strip:<ref>`) and `App.tsx`'s `selectedPhaseRef`; Enter or Space on a
 `DetailsFrame`; `findPhase` in `App.tsx` maps the ref back to the stored and resolved phase). Clicks on a cell still go
 through to the row.
 
-Ages with `tracks` aren't in the strip: `placeAges` places such an age once per row it names (`band`), numbering
+A row's own ages (`Track.context`) aren't in the strip: `placeAges` places each on that row's band (`band`), numbering
 lines per row, and `splitAges` separates the strip's from each row's. `TimelineView` adds each row's band height to
 its `headerPx` (after its phase strips) and draws the band (`.tl-lane-ages`) with the same `AgeBars` as the strip;
 double-clicks and long presses there don't add events. A row that's filtered out takes its ages with it (the table

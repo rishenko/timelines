@@ -242,14 +242,14 @@ describe('a row’s ages (Track.context) follow row edits', () => {
     const quay = d0.tracks.find((t) => t.id === 'quay')!;
     expect(spanIds(upsertTrack(d0, { ...quay, id: 'quay-town' }, 'quay'), 'quay-town')).toEqual(['age-of-piers', 'quay-high-tide']);
   });
-  it('removing a row moves its ages to the timeline’s own (the strip); its other context spans go with it', () => {
+  it('removing a row moves its context spans, of every kind, to the timeline’s own (ages to the strip)', () => {
     const d0 = structuredClone(everyField) as Dataset;
     const leaf = d0.tracks.find((t) => t.id !== 'quay' && !d0.tracks.some((c) => c.parent === t.id))!;
     const quay = d0.tracks.find((t) => t.id === 'quay')!;
     leaf.context = quay.context;
     delete quay.context;
     const d1 = removeTrack(d0, leaf.id);
-    expect(spanIds(d1)).toEqual(['long-harbor', 'age-of-leagues', 'age-of-piers']);
+    expect(spanIds(d1)).toEqual(['long-harbor', 'age-of-leagues', 'age-of-piers', 'quay-high-tide']);
     expect(validateDataset(d1)).toEqual([]);
   });
   it('an age without a line takes the removed row’s id as its line, so it never runs into the timeline’s own', () => {

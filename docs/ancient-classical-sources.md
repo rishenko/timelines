@@ -151,4 +151,5 @@ BCE", or plain negative BC years such as "-2300"). Every age links to its own Wi
 Wikidata id. The Macedonian Period and Mesoamerica's Late Archaic have no article of their own (the Late Archaic's
 nearest, "Archaic period in Mesoamerica", is its parent period's), so they have no link. Each PeriodO citation is its
 own source, linking to the period's PeriodO page, so their dates still open their source. Ages show on
-their region's band (`tracks`), under the region names in `meta.eraGroups`.
+their region's band (the region row's `context`; the source file's era `tracks`, lifted when it compiles), under the
+region names in `meta.lines` (the source file's `meta.eraGroups`).

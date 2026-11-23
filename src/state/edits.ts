@@ -174,11 +174,10 @@ export function removeTrack(d: Dataset, id: string): Dataset {
       const { memberOf: _dropped, ...rest } = t;
       return memberOf.length ? { ...t, memberOf } : rest;
     });
-  // the removed row's ages move to the timeline's own (the strip under the ruler), as they did before v8; its other
-  // context spans go with it
-  // (one without a line takes the row's id as its line, so it can't run into the timeline's own)
-  const ages = (d.tracks.find((t) => t.id === id)?.context ?? []).filter((a) => a.kind === 'age').map((a) => (a.line ? a : { ...a, line: id }));
-  const meta = ages.length ? { ...d.meta, context: [...(d.meta.context ?? []), ...ages] } : d.meta;
+  // the removed row's context spans move to the timeline's own (ages to the strip under the ruler), as ages did before
+  // v8 (one without a line takes the row's id as its line, so it can't run into the timeline's own)
+  const moved = (d.tracks.find((t) => t.id === id)?.context ?? []).map((a) => (a.line ? a : { ...a, line: id }));
+  const meta = moved.length ? { ...d.meta, context: [...(d.meta.context ?? []), ...moved] } : d.meta;
   return { ...d, meta, tracks: dropEdgeEvents(tracks, removed), events };
 }
 

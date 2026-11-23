@@ -44,7 +44,7 @@ interface Props {
   data: Dataset;
   /** Events on the period lane: their own line(s) directly under each row's phases. */
   periodLane?: ReadonlySet<string>;
-  /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler, and bands on the rows they name. */
+  /** The timeline's ages (context spans of kind age), placed on their lines: a strip under the ruler, and each row's on its band. */
   ages?: PlacedAge[];
   /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
   selectedAgeId?: string | null;
