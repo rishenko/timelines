@@ -390,12 +390,14 @@ describe('layoutPhaseStrips', () => {
       { name: 'Rebel Republic', start: 100, end: 400 },
     ];
     const near = strips(list, 2);
+    // a named line has 2 px of room under its names (Kevin, 2026-11-22)
+    const named = namedPx + STRIP_DEFAULTS.padBottomPx;
     expect(near.lines).toEqual([
-      { top: 0, height: namedPx, named: true },
-      { top: namedPx, height: namedPx, named: true },
+      { top: 0, height: named, named: true },
+      { top: named, height: named, named: true },
     ]);
-    expect(near.height).toBe(2 * namedPx);
-    expect(near.cells.map((c) => c.line.top)).toEqual([0, namedPx]);
+    expect(near.height).toBe(2 * named);
+    expect(near.cells.map((c) => c.line.top)).toEqual([0, named]);
     // zoomed far out nothing fits: both lines thin, and the row is shorter than with names
     const far = strips(list, 0.01);
     expect(far.lines.map((l) => [l.height, l.named])).toEqual([
