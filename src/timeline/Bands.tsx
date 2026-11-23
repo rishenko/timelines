@@ -115,7 +115,10 @@ export function PhaseStripCell({
   selected = false,
   onOpen,
   onStopFocus,
+  viewLeft = 0,
 }: Common & {
+  /** The chart's visible left edge, content px: a named age line's names start right of its line name, never under it. */
+  viewLeft?: number;
   cell: PhaseCell;
   color: string;
   memberName?: string;
@@ -132,7 +135,11 @@ export function PhaseStripCell({
   if (b.x1 < b.x0 || (!inView(b.x0, b.x1) && !isTabStop)) return null;
   const arrow = p.ongoing || b.continues;
   // a name beside or inside the phase keeps to the chart too; too little of it left, and the tooltip names the phase
-  const name = c.name && { ...c.name, x0: Math.max(c.name.x0, 0), x1: Math.min(c.name.x1, scale.width) };
+  const name = c.name && {
+    ...c.name,
+    x0: Math.max(c.name.x0, 0, p.lineName && !c.name.outside ? viewLeft + stripLineNamePx(p.lineName) : 0),
+    x1: Math.min(c.name.x1, scale.width),
+  };
   const showName = name && name.x1 - name.x0 >= 24 ? name : null;
   const member = p.member !== undefined;
   // a context cell (an age) that shows no name, or is under 10 px, draws no edges and no alternate fill, so a run of

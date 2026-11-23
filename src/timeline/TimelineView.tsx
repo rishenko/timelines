@@ -679,6 +679,7 @@ export function TimelineView(props: Props) {
                   isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
                   selected={!!c.phase.ref && (c.phase.ref === props.selectedPhaseRef || (!!props.selectedAgeId && c.phase.ref === ageRef(props.selectedAgeId)))}
                   onOpen={openStrip}
+                  viewLeft={view.left}
                   onStopFocus={onStopFocus}
                   {...band}
                 />
