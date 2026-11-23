@@ -73,6 +73,31 @@ def line(r):
     return f"- **{r['person']}** ({dates}){vis}{office} · via {', '.join(kinds)}{cited}"
 
 
+GROUP = 'Ruled from another row'
+GROUP_ABOUT = ("Reigns found only through the row's polity (Wikidata head of state), held by someone who also has a reign "
+               "on another row, under an office that doesn't name this row: colonial sovereigns (George V on Ghana, "
+               "Truman on Micronesia), personal unions (Aragon on Catalonia), and some plain mistakes. One call for the "
+               "class: keep them, drop them, or keep only some kinds. Each is also listed under its row.")
+GENERIC = {'of', 'the', 'and', 'kingdom', 'empire', 'republic', 'state', 'states', 'dynasty', 'federation', 'union',
+           'south', 'north', 'east', 'west', 'central', 'great', 'federated', 'democratic', 'people', 'peoples',
+           'islamic', 'united', 'duchy', 'county', 'principality', 'sultanate', 'khanate', 'caliphate'}
+
+
+def stems(s):
+    return {w[:5] for w in re.findall(r'[a-z]+', s.lower()) if w not in GENERIC and len(w) > 2}
+
+
+def from_elsewhere(rows, names):
+    """Placed rows (keyed by id) ruled from another row: polity route only, the same person placed on another row, and
+    an office that doesn't name this row."""
+    rows_of = {}
+    for r in rows:
+        rows_of.setdefault(r['qid'], set()).add(r['row'])
+    return {id(r) for r in rows
+            if {x.split(':')[0].strip() for x in r['route'].split('; ') if x} == {'polity'}
+            and len(rows_of[r['qid']]) > 1 and not stems(names.get(r['row'], r['row'])) & stems(r['office'])}
+
+
 def ai_check(events):
     """(citations of AI-flagged pages, pages checked): every Wikipedia page the events cite, read from the dump."""
     sys.path[:0] = [os.path.join(ROOT, 'pipelines', 'common')]
@@ -101,8 +126,11 @@ def main():
     for r in R:
         if r['uuid']:
             by_row.setdefault(r['row'], []).append(r)
+        elif r['field'] == 'interregnum':  # intermediate output for a later feature, not a missing reign
+            continue
         else:
             unplaced[r['row']] += 1
+    other = from_elsewhere([r for rs in by_row.values() for r in rs], {t['id']: t['name'] for t in ds['tracks']})
     years = {}
     for e in E:
         years.setdefault(e['tracks'][0], set()).update(range(hist(e['start']), hist(e.get('end', e['start'])) + 1))
@@ -113,7 +141,7 @@ def main():
                 glossary='"Visible" = importance 2 (shown at default zoom). "via" = how it was found (polity office, '
                          'Wikidata P35, office from the row name, or a "List of monarchs of X" page). "Unchecked" = '
                          'Wikidata has no term for that office. A reign whose own article is AI-flagged is cited '
-                         'from a list page\'s row instead, or not placed.')
+                         'from a list page\'s row instead, or not placed.', groups={GROUP: GROUP_ABOUT})
     for t in tracks:
         rows = by_row.get(t['id'])
         if not rows:
@@ -125,10 +153,25 @@ def main():
         r1 = min(w1, max(hist(s.get('end', w1)) for s in st))
         cov = len({y for y in years.get(t['id'], ()) if r0 <= y <= r1}) / max(1, r1 - r0 + 1)
         ai = sum('AI-flagged' in r['flags'] for r in R if r['row'] == t['id'] and not r['uuid'])
-        notes = f"{unplaced[t['id']]} not placed" + (f" ({ai} of them AI-flagged articles with no list-page row, never cited)" if ai else '')
+        g = sum(r['flags'].startswith('generic office') for r in R if r['row'] == t['id'] and not r['uuid'])
+        why = ([f"{ai} AI-flagged articles with no list-page row, never cited"] if ai else []) + ([f"{g} generic office"] if g else [])
+        notes = f"{unplaced[t['id']]} not placed" + (f" ({'; '.join(why)})" if why else '')
         rv.rows.append(Row(name=t['name'], coverage=cov, years=(r0, r1), notes=notes,
                            extra={'Unchecked': sum('no Wikidata term' in r['flags'] for r in rows)},
-                           items=[{'text': line(r), 'why': check_reasons(r)} for r in rows]))
+                           items=[{'text': line(r) + (' · ruled from another row' if id(r) in other else ''), 'why': check_reasons(r), 'group': GROUP if id(r) in other else None}
+                                  for r in rows]))
+    names = {t['id']: t['name'] for t in ds['tracks']}
+    gen = {}
+    for r in R:
+        if not r['uuid'] and r['flags'].startswith('generic office'):
+            dates = f"{r['start']} – {r['end']}" if r['end'] else f"{r['start']} –"
+            gen.setdefault(names.get(r['row'], r['row']), []).append(f"- **{r['person']}** ({dates})")
+    if gen:
+        rv.left_out['Generic office, unplaced'] = (
+            "Reached only because the row's polity gives a general title (\"Monarch\", \"king\", \"prince\", \"emir\") as its "
+            "head-of-state office in Wikidata, so every holder of that title anywhere came along. Kept out unless the "
+            "ruler's office or article names the row. Most are wrong rows (an Emperor of China on Catalonia); a few are the "
+            "row's real rulers, accepted as losses for now, to come back through list pages later.", dict(sorted(gen.items())))
     rv.ai_check = ai_check(E) if '--no-ai-check' not in sys.argv else None
     out = os.path.join(d, 'review.md')
     n, nf = rv.write(out)

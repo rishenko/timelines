@@ -47,9 +47,11 @@ REIGN = re.compile(r'^(reign|term_start|term_end)(\d*)$')
 LEADER = re.compile(r'^leader\d*$')
 RULER_WORD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|shah|caliph|monarch|president|grand prince|'
                         r'grand duke|head of state)', re.I)
+TITLE_STEM = re.compile(r'(emir|amir|king|kingd|sult|khan|khag|shah|tsar|czar|empe|empi|caliph|monar|princ|duke|duch|'
+                        r'count|lord|presid|repub|realm|crown|sove|regen)', re.I)
 # offices that name a president but don't head the state ("President of the Senate of Spain")
-NOT_HEAD = re.compile(r'\b(administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|(?<!provisional )government|court|assembly|parliament|chamber|minister|duma|'
-                      r'soviet of|bank|academy|committee|party|olympic|federation|society|university)', re.I)
+NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|(?<!provisional )government|court|assembly|parliament|chamber|minister|duma|'
+                      r'soviet of|bank|academy|committee|party|olympic|federation|society|university|advis[eo]r|legislature|secretary|league|youth|non-aligned)', re.I)
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
@@ -233,6 +235,38 @@ def list_rows(text, person):
     return out
 
 
+INTERREGNUM = re.compile(r'\binterregnum\b', re.I)
+
+
+def interregna(text):
+    """[(start, end, quote)] for each list-page row that names an interregnum (a table row or a numbered template
+    field): its first date range. Kevin approved labelled interregnums where a source names one (2026-11-23)."""
+    out = []
+    for tbl in re.findall(r'\{\|.*?\|\}', text, re.S):
+        for row in re.split(r'\n\|-[^\n]*', tbl)[1:]:
+            m = INTERREGNUM.search(row)
+            if m and '[[' not in row[:m.start()]:  # the row is the interregnum, not a king's note ("Interregnum until 1447")
+                cells = [re.sub(r'^[^|\[\]{}]*?(?:style|rowspan|colspan|align|bgcolor)\s*=[^|]*\|', '', c)
+                         for c in re.split(r'\n[|!]|\|\||!!', '\n' + row.strip()) if c.strip()]
+                pts = [p for p, _ in _points(cells)]
+                if pts and pts[0]:
+                    out.append((pts[0], pts[1] if len(pts) > 1 else None, re.sub(r'\s+', ' ', dates.clean(row))[:200]))
+    for m in re.finditer(r'^(=+)([^=\n]*\binterregnum\b[^=\n]*)\1\s*$', text, re.I | re.M):  # ==First Interregnum (1649–1660)==
+        sp = dates.spans(dates.clean(m.group(2)))
+        if sp and sp[0]['end']:
+            out.append((sp[0]['start'], sp[0]['end'], m.group(2).strip()[:200]))
+    for m in re.finditer(r'\|\s*(?:name|officeholder)(\d*)\s*=[^|]*?interregnum', text, re.I):  # {{List of rulers|nameN=''Interregnum''}}
+        n = m.group(1)
+        st = re.search(r'\|\s*(?:reignstart|term_start|start)' + n + r'\s*=([^|\n]*)', text[m.end():m.end() + 2000])
+        en = re.search(r'\|\s*(?:reignend|term_end|end)' + n + r'\s*=([^|\n]*)', text[m.end():m.end() + 2000])
+        a = _points([st.group(1)]) if st else []
+        b = _points([en.group(1)]) if en else []
+        if a and a[0][0]:
+            out.append((a[0][0], b[0][0] if b else None, re.sub(r'\s+', ' ', f"Interregnum: {dates.clean(st.group(1)).strip()} – "
+                                                                           f"{dates.clean(en.group(1)).strip() if en else ''}")[:200]))
+    return list(dict.fromkeys(out))
+
+
 def resource(sel, person, pages, row_stems):
     """A list-page span for one reign whose own article is AI-flagged. `sel` is the article's span, used only to find
     the matching row (never cited). The page's title names the row; the row starts in the article's start year and
@@ -279,6 +313,10 @@ class Sources:
     def __init__(self, data):
         self.wd = sqlite3.connect(f'file:{os.path.join(data, "wikidata", "wikidata-20261116.sqlite")}?mode=ro', uri=True)
         self.wp = sqlite3.connect(f'file:{os.path.join(data, "wikipedia", "extract-enwiki-20261101.sqlite")}?mode=ro', uri=True)
+        # per row (reset by rulers()): {person: {offices}} reached as holders of a polity's office (P1906, or a P35
+        # naming an office), {office: {holders}}, and the people a polity's P35 names directly (George V on Ghana)
+        self.by_office, self.office_holders, self.named = {}, {}, set()
+        self._concurrent = {}  # office -> most holders at once (concurrent())
 
     def qid(self, title):
         r = self.wd.execute('SELECT qid FROM wd_item WHERE enwiki=?', (title,)).fetchone()
@@ -338,14 +376,30 @@ class Sources:
         out = set()
         for (o,) in self.wd.execute(f"SELECT DISTINCT target FROM wd_link WHERE prop='P39' AND qid IN ({ph})", list(people)):
             t = (self.title(o) or '').lower()
-            if RULER_WORD.search(t) and not NOT_HEAD.search(t) and any(w in t for w in stems(words)):  # not "south" (UNASUR on Peru)
+            # whole row words, generic ones skipped: not "south" (UNASUR on Peru) or "states" (US presidents on Micronesia);
+            # not stems, which widen "Japanese" to "Emperor of Japan" on Korea
+            if RULER_WORD.search(t) and not NOT_HEAD.search(t) and any(w in t for w in words if w not in GENERIC):
                 out.add(o)
         return out
+
+    def concurrent(self, office):
+        """Most holders of an office at once, by their dated P39 terms (day resolution): a real office has one at a
+        time, with an acting or rival holder (Pope, President of the United States: 2); a general title has many
+        ("king": 8, "emir": 6, "Monarch": 4)."""
+        if office not in self._concurrent:
+            ev = []
+            for (sid,) in self.wd.execute("SELECT sid FROM wd_link WHERE prop='P39' AND target=? AND sid IS NOT NULL", (office,)):
+                t0, t1 = self.terms(sid)[:2]
+                if t0:
+                    ev.append((days(t0), days(t1) if t1 else days(t0)))
+            self._concurrent[office] = max((sum(a <= x <= b for a, b in ev) for x in {a for a, _ in ev}), default=0)
+        return self._concurrent[office]
 
     def rulers(self, polity_qids, via):
         """{person qid: [(start, end, how)]} from P1906 offices' holders and the polities' own P35. `via` gets
         {person: {polity qids that led to them}}, so a reign can be kept to that polity's phase."""
         out = {}
+        self.by_office, self.office_holders, self.named = {}, {}, set()
         ph = ','.join('?' * len(polity_qids))
         office_of = {}
         for polity, office in self.wd.execute(f"SELECT DISTINCT qid, target FROM wd_link WHERE prop='P1906' AND qid IN ({ph})", polity_qids):
@@ -360,10 +414,13 @@ class Sources:
                     f"SELECT qid, sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND target IN ({oh})", list(office_of)):
                 out.setdefault(person, []).append(self.terms(sid) + (f'P39 {office}',))
                 via.setdefault(person, set()).update(office_of[office])
+                self.by_office.setdefault(person, set()).add(office)
+                self.office_holders.setdefault(office, set()).add(person)
         for polity, person, sid in p35:
             if person not in office_of:
                 out.setdefault(person, []).append(self.terms(sid) + (f'P35 of {polity}',))
                 via.setdefault(person, set()).add(polity)
+                self.named.add(person)
         return out
 
 
@@ -447,8 +504,8 @@ def picks(spans, terms, words):
         if g and all(g[1] is not o[1] for o in out):
             out.append(g)
     offices = {norm(o[2]) for o in out if o[2]}
-    for f, s, succ in spans:
-        if succ and norm(succ) in offices and all(s is not o[1] for o in out):
+    for f, s, succ in spans:  # a ruler's office only (not Wickremesinghe's four terms as Leader of the Opposition)
+        if succ and norm(succ) in offices and (f.startswith('reign') or RULER_WORD.search(succ)) and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
     return out
 
@@ -534,6 +591,7 @@ def run(timeline, row_ids, src):
         found = []
         via = {}
         ruled = src.rulers(polities, via)
+        leaders = set()  # named in a state infobox's leader fields
         for t in titles:  # Wikipedia's route: the state infoboxes' leader1, leader2… (Bourbon Restoration, July Monarchy)
             pg = page_of(t)
             for k, raw in infobox_params(pg['text'] if pg else '').items():
@@ -543,6 +601,7 @@ def run(timeline, row_ids, src):
                         if q:
                             ruled.setdefault(q, [])
                             via.setdefault(q, set()).add(src.qid(t))
+                            leaders.add(q)
         # one hop by the row's words ("Tsar of all Russia"); such an office belongs to a phase whose name is in its
         # title ("President of the Republic of China" -> the Republic of China phase, 1912-1949), else to the whole row
         for o in src.offices_of(list(ruled), words):
@@ -590,6 +649,23 @@ def run(timeline, row_ids, src):
                     ruled[q] = src.p39_terms(q)
                     list_only.add(q)
                 via.setdefault(q, set()).add(('list', lt))
+        # interregnums a list page names: intermediate output only (no event yet), one CSV row each, the list as source
+        for lt in lists:
+            pg = page_of(lt)
+            if not pg or wp_dump.ai_flagged(pg['text']):
+                continue
+            for a, b, quote in interregna(pg['text']):
+                if overlap(a[0], year(b), r0, r1) >= 0:
+                    rows.append(dict(row=rid, person='Interregnum', qid='', start=fmt(a), end=fmt(b) if b else '', field='interregnum',
+                                     quote=quote, wd='', importance='', flags='interregnum: named on a list page',
+                                     route=f'list: {lt}', cited=lt))
+        # a polity's office can be a generic title ("Monarch", "king", "prince", "emir" as the Kingdom of Bosnia's, Arab
+        # Syria's, Catalonia's or Afghanistan's head of state), whose holders are every king anywhere. An office is real
+        # when at least a quarter of its holders also reach the row another way (US presidents through their list), or
+        # when no more than two of its dated holders ever overlap (popes, Xiongnu chanyus); the rest are checked one by
+        # one below
+        other = {p for p in ruled if p in leaders or p in src.named or any(not isinstance(q, str) for q in via.get(p, ()))}
+        real = {o for o, hs in src.office_holders.items() if len(hs & other) >= 0.25 * len(hs) or src.concurrent(o) <= 2}
         for person, terms in ruled.items():
             terms = merge_terms(list(dict.fromkeys(terms)))
             name = src.title(person)
@@ -626,8 +702,29 @@ def run(timeline, row_ids, src):
                 wins = [w for q in via[person] for w in polity_win[q]]
             route = '; '.join(sorted(('list: ' + q[1]) if isinstance(q, tuple) and q[0] == 'list' else ('office: ' + (src.title(q[1]) or q[1]))
                                      if isinstance(q, tuple) else ('row words' if q is None else 'polity: ' + (src.title(q) or q)) for q in via.get(person, ())))
+            # reached only through a generic office: the ruler's office or article must name the row (Gongyang of Goryeo
+            # on Bosnia is a "Monarch" holder, nothing more)
+            generic = person in src.by_office and person not in other and not src.by_office[person] & real
+            if generic:
+                # the row's and phases' names, not the polity's title, and no title words: "Emirate of Afghanistan" is a
+                # phase, and "emir" would pass every Emir of Bukhara
+                names = {st for st in row_stems if not TITLE_STEM.match(st)}
+                # the polity's and the phases' articles, not the row's own: every Afghan cleric's article links Afghanistan
+                arts = {t.lower() for t in titles[1:]} | {(src.title(q) or '').lower() for q in via[person]}
+                # the article links a phase's article or the polity's, or the infobox's office fields link a
+                # page named for the row ([[Governor-General of India|Governor-General of the Presidency of Fort William]])
+                offices = {x.strip().lower() for k, raw in infobox_params(page['text']).items()
+                           if k.startswith(('office', 'succession', 'title', 'order')) for x in LINK.findall(raw)}
+                linked = bool(arts & {x.strip().lower() for x in LINK.findall(page['text'])}) \
+                    or any(st in x for x in offices for st in names)
             for field, s, succ, term in got:
                 cite = None
+                if generic and not linked and not any(st in succ.lower() for st in names):
+                    if overlap(s['start'][0], year(s['end']), r0, r1) >= 0:
+                        rows.append(dict(row=rid, person=name, qid=person, start=fmt(s['start']), end=fmt(s['end']), field=field,
+                                         quote='', wd='', importance='', flags="generic office: the polity's head-of-state title "
+                                         "is a general one, and neither this ruler's office nor article names the row"))
+                    continue
                 if ai:  # never cite the article: take the term from a list page's row (the row's lists, then the pages
                     # its succession/office fields link to, used as navigation only), else leave it unplaced
                     nav = [(page_of(x.strip()) or {}).get('title') for k, raw in infobox_params(page['text']).items()

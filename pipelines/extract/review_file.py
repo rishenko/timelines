@@ -12,7 +12,11 @@ way. A pass builds a `Review` and calls `write()`; the file is Markdown:
     **To check**     every item with a reason (⚠ line under it)
     **Sample**       up to SAMPLE of the rest, spread evenly
 
-Items are plain dicts the pass formats itself (`text`, optional `why`: [reasons]); the module owns layout, ordering,
+The file opens with a small front-matter header the dashboard reads (dataset, timeline, generated, items, to_check,
+rows, ai_flagged_citations), and `write()` adds or updates the file's entry in MANIFEST (JSON: {"reviews": {path: {…}}}).
+
+Items are plain dicts the pass formats itself (`text`, optional `why`: [reasons], optional `group`: a key of
+Review.groups, for a class Kevin decides in one go; the group gets its own section after the table); the module owns layout, ordering,
 sampling and the summary, so the passes can't drift apart.
 
     from review_file import Review, Row
@@ -22,9 +26,17 @@ sampling and the summary, so the passes can't drift apart.
     rv.ai_check = (0, 412)  # (citations of AI-flagged pages, pages checked)
     rv.write(path)
 """
+import datetime
+from collections import Counter
+import json
+import os
+import tempfile
 from dataclasses import dataclass, field
 
 SAMPLE = 5
+# Every review file gets an entry here, for the Kevin Dashboard to list. Keyed by the file's absolute path;
+# entries are updated by key, never rewritten whole. Override with REVIEW_MANIFEST.
+MANIFEST = os.environ.get('REVIEW_MANIFEST') or os.path.expanduser('~/Documents/GitHub/timelines-bakeoff-results/review-manifest.json')
 
 
 @dataclass
@@ -56,6 +68,12 @@ class Review:
     empty: list = field(default_factory=list)  # names of rows with nothing found
     ai_check: tuple | None = None  # (citations of AI-flagged pages, pages checked)
     total_rows: int | None = None  # rows the pass looked at (default: rows + empty)
+    # classes Kevin decides in one go ("Ruled from another row"): {name: about}; items join one with a 'group' key and
+    # are listed together after the table as well as under their row
+    groups: dict = field(default_factory=dict)
+    # items left out that Kevin should still see ("Generic office, unplaced"): {title: (about, {row name: [lines]})},
+    # each a section after the groups; not counted in the totals
+    left_out: dict = field(default_factory=dict)
 
     def summary(self):
         n = sum(len(r.items) for r in self.rows)
@@ -72,12 +90,23 @@ class Review:
                   f" AI-flag check: none of the {pages} cited pages is AI-flagged") + '.'
         return s + ' Nothing is in data-src yet.', n, nf
 
-    def write(self, path):
+    def header(self, n, nf):
+        return {'dataset': self.kind.lower(), 'timeline': self.timeline, 'title': f"{self.kind} review: {self.timeline}",
+                'generated': datetime.datetime.now().astimezone().isoformat(timespec='minutes'),
+                'items': n, 'item': self.item, 'to_check': nf, 'rows': len(self.rows),
+                'ai_flagged_citations': self.ai_check[0] if self.ai_check else None,
+                'groups': {g: sum(i.get('group') == g for r in self.rows for i in r.items) for g in self.groups},
+                'left_out': {t: sum(map(len, rows.values())) for t, (_, rows) in self.left_out.items()},
+                'status': 'review'}
+
+    def write(self, path, manifest=MANIFEST):
         text, n, nf = self.summary()
+        meta = self.header(n, nf)
         cols = list(dict.fromkeys(k for r in self.rows for k in r.extra))
         spans = any(r.coverage is not None for r in self.rows)
         head = ['Row', self.item.capitalize()] + (['Coverage'] if spans else []) + ['To check'] + cols
-        md = [f"# {self.kind} review: {self.timeline}", '', text, '',
+        md = ['---'] + [f"{k}: {json.dumps(v, ensure_ascii=False)}" for k, v in meta.items()] + ['---',
+              f"# {self.kind} review: {self.timeline}", '', text, '',
               f"Each row lists {self.item} to check first ({self.check_means}), then a sample of the rest."
               + (f" {self.glossary}" if self.glossary else ''), '',
               '| ' + ' | '.join(head) + ' |', '|' + '---|' * len(head)]
@@ -86,6 +115,15 @@ class Review:
                 + [str(len(r.to_check))] + [str(r.extra.get(c, '')) for c in cols]
             md.append('| ' + ' | '.join(cells) + ' |')
         md += ['', f"**Rows with nothing found ({len(self.empty)}):** " + ', '.join(self.empty), '']
+        for g, about in self.groups.items():
+            members = [(r.name, i) for r in self.rows for i in r.items if i.get('group') == g]
+            md += [f"## {g} ({len(members)})", '', about, '']
+            for name in dict.fromkeys(n for n, _ in members):
+                md += [f"**{name}**", ''] + [i['text'] for n, i in members if n == name] + ['']
+        for t, (about, rows) in self.left_out.items():
+            md += [f"## {t} ({sum(map(len, rows.values()))})", '', about, '']
+            for name, lines in rows.items():
+                md += [f"**{name}**", ''] + lines + ['']
         for r in self.rows:
             line = [f"{len(r.items)} {self.item}"]
             if r.coverage is not None:
@@ -94,6 +132,8 @@ class Review:
             line += [f"{v} {k.lower()}" for k, v in r.extra.items() if k != 'To check']
             if r.notes:
                 line.append(r.notes)
+            grouped = Counter(i['group'] for i in r.items if i.get('group'))
+            line += [f"{k} {g.lower()}" for g, k in grouped.items()]
             md += [f"## {r.name}", '', ' · '.join(line), '']
             if r.to_check:
                 md += ['**To check**', ''] + [f"{i['text']}\n  - ⚠ {'; '.join(i['why'])}" for i in r.to_check] + ['']
@@ -103,4 +143,20 @@ class Review:
             if sample:
                 md += [f"**Sample** ({len(sample)} of {len(rest)} others)", ''] + [i['text'] for i in sample] + ['']
         open(path, 'w').write('\n'.join(md) + '\n')
+        if manifest:
+            register(manifest, os.path.abspath(path), meta)
         return n, nf
+
+
+def register(manifest, path, entry):
+    """Add or update one review file's entry in the manifest (atomic replace; other entries untouched)."""
+    os.makedirs(os.path.dirname(manifest), exist_ok=True)
+    try:
+        data = json.load(open(manifest))
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = {}
+    data.setdefault('reviews', {})[path] = dict(entry, path=path)
+    fd, tmp = tempfile.mkstemp(dir=os.path.dirname(manifest), suffix='.tmp')
+    with os.fdopen(fd, 'w') as f:
+        json.dump(data, f, indent=1, ensure_ascii=False)
+    os.replace(tmp, manifest)
