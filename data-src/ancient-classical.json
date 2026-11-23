@@ -16186,6 +16186,7 @@
       "tracks": ["pharaonic-egypt"],
       "descr": "Co-ruler with Hatshepsut, then sole king; he conquers much of the Near East from the Euphrates to Nubia.",
       "sources": [{ "sourceKey": "wp-new-kingdom", "sourceLocation": "Eighteenth Dynasty" }],
+      "importance": 1,
       "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-new-kingdom", "sourceLocation": "Eighteenth Dynasty" }] }]
     },
     {
@@ -17881,7 +17882,6 @@
       "tracks": ["valdivia"],
       "descr": "Phase A on the coast of Ecuador, long thought to be the oldest pottery produced by a coastal culture in South America.",
       "sources": [{ "sourceKey": "wp-valdivia", "sourceLocation": "Influences on Valdivia culture" }],
-      "importance": 1,
       "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-valdivia", "sourceLocation": "Influences on Valdivia culture" }] }]
     },
     {
@@ -18052,7 +18052,6 @@
       "tracks": ["unetice"],
       "descr": "Associated with the Bornhöck mound (c. 1800 BCE), an Únětice princely grave.",
       "sources": [{ "sourceKey": "wp-unetice", "sourceLocation": "History of research (caption 'Early Bronze Age, 1800–1600 BC') and Barrows" }],
-      "importance": 1,
       "memberships": [
         {
           "facet": "category",
@@ -19557,7 +19556,6 @@
       "tracks": ["dong-son"],
       "descr": "Produced from about 600 BCE or earlier until the third century CE, and found from eastern Indonesia to Vietnam and southern China. Vietnamese historians attribute the culture to the states of Văn Lang and Âu Lạc.",
       "sources": [{ "sourceKey": "wp-dong-son-drum", "sourceLocation": "lead" }, { "sourceKey": "wp-dong-son", "sourceLocation": "lead" }],
-      "importance": 1,
       "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-dong-son-drum", "sourceLocation": "lead" }] }]
     },
     {
@@ -20072,7 +20070,6 @@
       "descr": "The culture takes its name from a royal burial. More than 7000 gold and some 1000 silver objects are known; wheels date to the second half of the fourth millennium, and the Maykop animal style is more than a thousand years older than the Scythian. Contemporaneous with the late Uruk period in Mesopotamia; the Yamnaya culture lies to the north.",
       "sources": [{ "sourceKey": "wp-maykop", "sourceLocation": "lead, Territory, Horse breeding, Culture and Art" }],
       "links": [{ "to": "uruk-expansion", "kind": "related" }],
-      "importance": 1,
       "memberships": [
         {
           "facet": "category",
@@ -20576,7 +20573,6 @@
       "tracks": ["adena"],
       "descr": "Mounds built from hundreds of thousands of baskets of graded earth serve as burial and ceremonial sites; trade runs from Great Lakes copper to Gulf Coast shells. The Great Serpent Mound has been attributed to the culture, without conclusive evidence.",
       "sources": [{ "sourceKey": "wp-adena", "sourceLocation": "lead, infobox, Mounds and Importance" }],
-      "importance": 1,
       "memberships": [{ "facet": "category", "value": "site", "sources": [{ "sourceKey": "wp-adena", "sourceLocation": "lead, infobox, Mounds and Importance" }] }]
     },
     {
@@ -20784,7 +20780,6 @@
       "descr": "It makes significant contributions in the textile arts. Early Paracas communities were within the Chavín sphere, whose influence dwindled in 500–380 BCE; about 420 mummy bundles date to around 300–200 BCE, and the culture shows the earliest trepanations in the Americas.",
       "sources": [{ "sourceKey": "wp-paracas", "sourceLocation": "infobox, lead, Political and social organization, Mummy bundles and Trepanation" }],
       "links": [{ "to": "chavin-old-temple", "kind": "related" }],
-      "importance": 1,
       "memberships": [
         {
           "facet": "category",
@@ -20884,7 +20879,6 @@
         { "year": "2600 BCE", "source": { "sourceKey": "wp-okunev", "sourceLocation": "Dating ('within 2600 –1800 BCE')" } },
         { "year": "2700 BCE", "source": { "sourceKey": "wp-okunev", "sourceLocation": "infobox" } }
       ],
-      "importance": 1,
       "memberships": [
         {
           "facet": "category",
@@ -21317,7 +21311,6 @@
         { "year": "5500 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "lead and infobox" } },
         { "year": "6000 BCE", "source": { "sourceKey": "wp-samarra", "sourceLocation": "chronology table" } }
       ],
-      "importance": 1,
       "memberships": [{ "facet": "category", "value": "horizon", "sources": [{ "sourceKey": "wp-samarra", "sourceLocation": "infobox and lead" }] }]
     },
     {
@@ -21699,7 +21692,6 @@
       "descr": "Appearing about 5600–5400 BC on the middle Danube, the culture spreads about 1,500 km in 360 years, building long houses.",
       "sources": [{ "sourceKey": "wp-lbk", "sourceLocation": "infobox, lead, Culture and Geography" }],
       "links": [{ "to": "starcevo", "kind": "related" }],
-      "importance": 1,
       "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-lbk", "sourceLocation": "infobox, lead, Culture and Geography" }] }]
     },
     {
@@ -21872,7 +21864,6 @@
       "tracks": ["yangshao"],
       "descr": "Millet farmers who also grow some rice and raise pigs; they make white, red and black painted pottery. A dragon statue of the fifth millennium BC is the world’s oldest known dragon depiction. Scholars trace a line from Yangshao to the Longshan and Shang cultures.",
       "sources": [{ "sourceKey": "wp-yangshao", "sourceLocation": "infobox, lead, Phases, Origins, Subsistence, Crafts and Social structure" }],
-      "importance": 1,
       "memberships": [
         {
           "facet": "category",
@@ -21889,7 +21880,6 @@
       "tracks": ["hongshan"],
       "descr": "Known for jade pig dragons and embryo dragons, among the earliest jade working; it interacts with the contemporary Yangshao, and its jades show considerable kinship with some Shang jades.",
       "sources": [{ "sourceKey": "wp-hongshan", "sourceLocation": "infobox, lead, Historical context, Artifacts and Development of Chinese civilization" }],
-      "importance": 1,
       "memberships": [
         {
           "facet": "category",
