@@ -1663,18 +1663,6 @@
   "mahavira": [
    "religion"
   ],
-  "main-kingdom": [
-   "title"
-  ],
-  "main-nashshan": [
-   "annexation"
-  ],
-  "main-trade": [
-   "economy"
-  ],
-  "main-yathill": [
-   "alliance"
-  ],
   "maize-domesticated": [
    "find"
   ],
@@ -1806,6 +1794,18 @@
   ],
   "mihirakula": [
    "reign"
+  ],
+  "minaeans-kingdom": [
+   "title"
+  ],
+  "minaeans-nashshan": [
+   "annexation"
+  ],
+  "minaeans-trade": [
+   "economy"
+  ],
+  "minaeans-yathill": [
+   "alliance"
   ],
   "mita-sargon": [
    "alliance"

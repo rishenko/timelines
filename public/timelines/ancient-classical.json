@@ -11810,7 +11810,7 @@
       ]
     },
     {
-      "id": "main",
+      "id": "minaeans",
       "name": "Ma'in (Minaeans)",
       "color": "#b8905a",
       "parent": "arabia",
@@ -63752,11 +63752,11 @@
       ]
     },
     {
-      "uuid": "main-kingdom",
+      "uuid": "minaeans-kingdom",
       "title": "Ma'in becomes a kingdom",
       "start": -612,
       "tracks": [
-        "main"
+        "minaeans"
       ],
       "descr": "Ma'in, a city-state in the town of Qarnawu in the Jawf, grows into a kingdom: peace with Saba and Saba's defeat of the Nashshan kingdom let the Minaeans extend their power over nearby territories. Inscriptions from the Temple of Shaqab al-Manaṣṣa name many of its kings. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
       "sources": [
@@ -63790,11 +63790,11 @@
       "circa": true
     },
     {
-      "uuid": "main-yathill",
+      "uuid": "minaeans-yathill",
       "title": "Ma'in breaks with Saba and joins Yathill",
       "start": -599,
       "tracks": [
-        "main"
+        "minaeans"
       ],
       "descr": "The alliance with Saba breaks down. Ma'in forms a confederation with Yathill (Baraqish) and makes alliances with other South Arabian kingdoms, the basis of its later frankincense trade. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
       "sources": [
@@ -63828,11 +63828,11 @@
       "circa": true
     },
     {
-      "uuid": "main-nashshan",
+      "uuid": "minaeans-nashshan",
       "title": "Ma'in absorbs Nashshan",
       "start": -449,
       "tracks": [
-        "main"
+        "minaeans"
       ],
       "descr": "Nashshan, the most important city of the Jawf valley, comes under the Kingdom of Ma'in, and Ma'in's pantheon replaces its own; Nashshan restores its old gods when Ma'in falls. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
       "sources": [
@@ -63866,11 +63866,11 @@
       "circa": true
     },
     {
-      "uuid": "main-trade",
+      "uuid": "minaeans-trade",
       "title": "Minaean caravans outdo Saba's trade",
       "start": -499,
       "tracks": [
-        "main"
+        "minaeans"
       ],
       "descr": "By the middle of the 1st millennium BCE, Ma'in's trade in aromatics surpasses Saba's, and it takes over the caravan route along the Red Sea. Its caravans reach Egypt, the Levant, Mesopotamia and Greece; about seventy Minaic inscriptions mark its trading communities abroad, most at al-Ula, and one at Delos records an altar to its god Wadd. One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from the Arabic article.",
       "sources": [

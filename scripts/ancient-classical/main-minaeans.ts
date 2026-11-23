@@ -16,7 +16,7 @@ const NOTICE = "One cited page, Wikipedia's Ma'in, carries a notice asking for t
 
 ed.track(
   {
-    id: 'main',
+    id: 'minaeans',
     name: "Ma'in (Minaeans)",
     color: '#b8905a',
     parent: 'arabia',
@@ -31,40 +31,40 @@ ed.track(
 );
 
 ed.event({
-  uuid: 'main-kingdom',
+  uuid: 'minaeans-kingdom',
   title: "Ma'in becomes a kingdom",
   start: 'c. 613 BCE',
-  tracks: ['main'],
+  tracks: ['minaeans'],
   descr: `Ma'in, a city-state in the town of Qarnawu in the Jawf, grows into a kingdom: peace with Saba and Saba's defeat of the Nashshan kingdom let the Minaeans extend their power over nearby territories. Inscriptions from the Temple of Shaqab al-Manaṣṣa name many of its kings. ${NOTICE}`,
   sources: [S('wp-main', 'lead and History')],
   startDates: [R(625, 601, 'wp-main', "lead ('transition from a city-state to kingdom in the last quarter of the 7th century BCE')")],
 });
 
 ed.event({
-  uuid: 'main-yathill',
+  uuid: 'minaeans-yathill',
   title: "Ma'in breaks with Saba and joins Yathill",
   start: 'c. 600 BCE',
-  tracks: ['main'],
+  tracks: ['minaeans'],
   descr: `The alliance with Saba breaks down. Ma'in forms a confederation with Yathill (Baraqish) and makes alliances with other South Arabian kingdoms, the basis of its later frankincense trade. ${NOTICE}`,
   sources: [S('wp-main', 'History')],
   startDates: [C(600, 'wp-main', "History ('As the seventh century BCE closed, and the sixth century BCE opened, the alliance with Saba broke down')", { margin: 25 })],
 });
 
 ed.event({
-  uuid: 'main-nashshan',
+  uuid: 'minaeans-nashshan',
   title: "Ma'in absorbs Nashshan",
   start: 'c. 450 BCE',
-  tracks: ['main'],
+  tracks: ['minaeans'],
   descr: `Nashshan, the most important city of the Jawf valley, comes under the Kingdom of Ma'in, and Ma'in's pantheon replaces its own; Nashshan restores its old gods when Ma'in falls. ${NOTICE}`,
   sources: [S('wp-main', 'History')],
   startDates: [R(600, 301, 'wp-main', "History ('absorbed under the dominion of the Kingdom of Ma'in between the 6th and 4th centuries BC')")],
 });
 
 ed.event({
-  uuid: 'main-trade',
+  uuid: 'minaeans-trade',
   title: "Minaean caravans outdo Saba's trade",
   start: 'c. 500 BCE',
-  tracks: ['main'],
+  tracks: ['minaeans'],
   descr: `By the middle of the 1st millennium BCE, Ma'in's trade in aromatics surpasses Saba's, and it takes over the caravan route along the Red Sea. Its caravans reach Egypt, the Levant, Mesopotamia and Greece; about seventy Minaic inscriptions mark its trading communities abroad, most at al-Ula, and one at Delos records an altar to its god Wadd. ${NOTICE}`,
   sources: [S('wp-main', 'History and International trade')],
   startDates: [C(500, 'wp-main', "International trade ('The Ma'in trade surpassed that of the Saba by the mid-1st millennium BCE')", { margin: 50 })],
