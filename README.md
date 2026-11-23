@@ -151,7 +151,8 @@ Setup, commands, the code map, the data tooling and the checks are in [docs/deve
 | [docs/examples/example-timeline.json](docs/examples/example-timeline.json) | A complete example to copy |
 | [docs/development.md](docs/development.md) | Setup, commands, code map, data tooling and checks |
 | [docs/glossary.md](docs/glossary.md) | The words the app and the docs use for what a reader sees |
-| [pipelines/README.md](pipelines/README.md) | The generators that build Medieval World and Modern States from a Wikipedia dump |
+| [pipelines/README.md](pipelines/README.md) | The generators that build Medieval World and Modern States from a Wikipedia dump, and the extractor |
+| [pipelines/PARSING-NOTES.md](pipelines/PARSING-NOTES.md) | What the Wikipedia and Wikidata dumps get wrong, and what the code does about it |
 | [docs/ancient-classical-sources.md](docs/ancient-classical-sources.md) | How Ancient and Classical was made from two earlier timelines, and the changes since |
 | [docs/ancient-sources.md](docs/ancient-sources.md), [docs/classical-sources.md](docs/classical-sources.md) | Where its dates come from, and the judgment calls |
 | [docs/ancient-classical-map.md](docs/ancient-classical-map.md) | Which rows its event maps can draw, and from what |
@@ -160,6 +161,39 @@ Setup, commands, the code map, the data tooling and the checks are in [docs/deve
 | [docs/BACKLOG.md](docs/BACKLOG.md) | Planned work |
 | [docs/feature-audit.md](docs/feature-audit.md) | Features under consideration, including the accessibility plan |
 | [docs/wcag-coverage.md](docs/wcag-coverage.md), [docs/wcag-report.md](docs/wcag-report.md) | Which WCAG 2.2 AA criteria the automated checks cover, and the latest results |
+
+## How the data is made
+
+Medieval World and Modern States are built by scripts that anyone with the disk space can rerun. Ancient and
+Classical is written by hand in `data-src/` ([how](docs/ancient-classical-sources.md)); only its event categories,
+golden ages and ages are generated.
+
+1. **Dumps.** An offline copy of English Wikipedia: the dump of 1 November 2026, about 25 GiB in two files, plus a
+   title index built from it.
+2. **Generators** in [pipelines/](pipelines/README.md) (Python 3.11) read the dump and write each timeline's source
+   file, `data-src/<id>.json`. Every date cites the infobox field, heading or sentence it was read from, and the
+   scripts check that the cited text holds the year. A rerun on the same dump reproduces the committed file byte for
+   byte.
+3. **Provenance manifests** in `data-src/provenance/` list every article a build read, the fields and sentences it
+   cites, and the dump it read them from.
+4. **Build.** `npm run data -- build <id>` compiles `data-src/` into `public/timelines/`, the files the app loads, and
+   `npm run build` makes the site ([docs/development.md](docs/development.md)). CI checks that the committed files
+   are what `data-src/` compiles to.
+
+**The extractor** (`pipelines/extract/`) makes no timeline data. It gathers a topic's dated events from the dump as
+candidates for review, each with a verbatim quote, and a pass over the Wikidata JSON dump adds Wikidata's date beside
+Wikipedia's so disagreements stand out. Reviewed candidates are meant to feed a generator as cited claims; no
+timeline uses them yet. It has its own Python 3.11 environment and needs more room: about 10 GiB of lookup tables
+beside the Wikipedia dump, and about 97 GiB for the Wikidata dump, which is read as a stream (about 2 hours on 4
+cores) and never unpacked to disk.
+
+**What the dumps get wrong** (date formats, calendars, infobox quirks) and what the code does about each is kept in
+[pipelines/PARSING-NOTES.md](pipelines/PARSING-NOTES.md). Anyone parsing a dump reads it first and adds to it.
+
+**Refreshing.** Wikimedia publishes new dumps every month. The plan is to rerun the generators on each one: a
+manifest has one source per line and no timestamp, so the diff shows only the articles that changed, and a cited
+field that changed or disappeared fails the run or shows in the diff. The steps are in
+[A new dump](pipelines/README.md#a-new-dump); no refresh has been run yet.
 
 ## Data sources and AI use
 
