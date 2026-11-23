@@ -1,0 +1,98 @@
+/* the overview strip above the chart: the label column says which years are in view; the track maps the whole
+   timeline, with the stretch in view outlined and the rest dimmed (OverviewStrip.tsx) */
+/* the chart's column: the overview strip, then the scroller (a band between them can join as one more child) */
+.tl-wrap {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.tl-wrap > .tl-scroller {
+  min-height: 0;
+}
+.tl-overview {
+  display: flex;
+  height: 30px;
+  flex: none;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line-2);
+  font-size: 11px;
+}
+.tl-overview-label {
+  width: var(--label-w);
+  flex: none;
+  box-sizing: border-box;
+  padding: 0 10px;
+  border-right: 1px solid var(--line-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10px;
+  font-weight: 600;
+}
+.tl-overview-track {
+  position: relative;
+  flex: 1;
+  margin: 0 6px;
+  min-width: 0;
+  cursor: pointer;
+  touch-action: none;
+}
+.tl-overview-track svg {
+  position: absolute;
+  inset: 4px 0 4px 0;
+  height: calc(100% - 8px);
+}
+.tl-overview-track .bar {
+  fill: color-mix(in srgb, var(--muted) 55%, transparent);
+}
+.tl-overview-track .gap {
+  fill: var(--line-2);
+}
+.tl-overview-shade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
+  pointer-events: none;
+}
+.tl-overview-view {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  box-sizing: border-box;
+  border: 2px solid var(--accent);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  cursor: grab;
+}
+.tl-overview-view:active {
+  cursor: grabbing;
+}
+.tl-overview-view:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--text);
+}
+.tl-overview-end {
+  position: absolute;
+  top: 1px;
+  padding: 0 3px;
+  border-radius: 2px;
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 11px;
+  pointer-events: none;
+}
+.tl-overview-end.start {
+  left: 0;
+}
+.tl-overview-end.end {
+  right: 0;
+}

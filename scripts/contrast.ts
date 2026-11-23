@@ -14,7 +14,7 @@
 //        [--preset parchment|dark|light|contrast]... [--state rest|focus]... [--width 1700] [--height 1000]
 //        [--zoom 100] [--quick] [--details] [--browser chrome|msedge]
 // Defaults: Ancient only, every preset, both states, the whole chart (see --quick). --details lists each failing
-// element; without it,// failures are grouped by kind (the worst one shown). Exits with 1 if any check fails.
+// element; without it, failures are grouped by kind (the worst one shown). Exits with 1 if any check fails.
 // Run `npm run build` and `npx vite preview --port 4317` first. Microsoft Edge on Windows, Google Chrome elsewhere.
 // Only what's drawn is checked. The timeline draws the events within about a screen of the view, so this scrolls
 // through the whole chart a screen at a time and checks each one (screens overlap by more than a label's width, and a
@@ -202,12 +202,13 @@ async function checkView(page: Page): Promise<Failure[]> {
 /** The pixel check for text on layered backgrounds (see the header). */
 async function layeredText(page: Page): Promise<Failure[]> {
   const items = await page.evaluate((layered) => {
-    // the chart area: inside the scroller, right of the sticky row labels and below the sticky ruler
+    // the chart area: inside the scroller, right of the sticky row labels and below the sticky ruler and ages strip
     const s = document.querySelector('.tl-scroller')!.getBoundingClientRect();
     const scroller = {
       left: document.querySelector('.tl-lane-label')?.getBoundingClientRect().right ?? s.left,
       right: s.right,
-      top: document.querySelector('.tl-ruler')?.getBoundingClientRect().bottom ?? s.top,
+      // below the sticky headers (the ruler, and the ages strip under it): text scrolled under them isn't visible
+      top: Math.max(s.top, ...[...document.querySelectorAll('.tl-ruler, .tl-ages')].map((e) => e.getBoundingClientRect().bottom)),
       bottom: s.bottom,
     };
     const parse = (c: string) => {

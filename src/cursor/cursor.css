@@ -34,17 +34,7 @@
   outline-offset: 2px;
 }
 
-/* the band and the chart share the space in a column, so the band never covers the chart */
-.tl-cursor-col {
-  flex: 1;
-  min-width: 0;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-}
-.tl-cursor-col > .tl-scroller {
-  min-height: 0;
-}
+/* the band sits in the chart's column (.tl-wrap, overview.css) between the overview strip and the chart */
 .tl-cursor-band {
   flex: none;
   height: 44px;

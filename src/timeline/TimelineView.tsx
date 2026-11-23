@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { OverviewStrip } from './OverviewStrip.tsx';
 import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
 import type { Dataset, Track } from '../types.ts';
@@ -850,7 +851,10 @@ export function TimelineView(props: Props) {
     </div>
   );
   return (
-    <div className="tl-cursor-col">
+    // the chart's column: the overview strip (a map of the whole timeline, the view outlined), the year cursor's band,
+    // then the chart
+    <div className="tl-wrap">
+      <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} view={view} scrollerRef={scrollerRef} />
       <CursorBand m={cursorM} label={cursor ? formatYear(cursor.year, cal) : null} />
       {chart}
     </div>
