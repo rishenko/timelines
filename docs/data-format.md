@@ -383,7 +383,8 @@ events and facet values form a graph: events link rows, memberships link rows to
 timelines share one such facet, `category`: ten kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
 `unrest`, `diplomacy`, `society`, `science`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
 `conflict`). A ruler's time in office, as a span ("Reign of Sargon", "Presidency of Juárez"), is `reign` ("Reign or
-term") in `rule`; the accession or death on a single date stays `succession`. An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
+term") in `rule`; the accession or death on a single date stays `succession`. A sourced gap in rule, as a span
+("Ottoman Interregnum", "Time of Troubles"), is `interregnum` in `rule` (version 9). An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
 article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed
 corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
 shape before the event's title, names both categories in the table and the event's details, and filters by them
@@ -445,8 +446,9 @@ The editor keeps a locator while the reference is unchanged, and drops it when t
 | `memberships` | no | The facet values the event belongs to, cited like a row's [memberships](#memberships). Only facets whose `applies` is `"events"` or `"both"`. Kept by the editor; not drawn or filtered yet. |
 | `edited` | no | Set by edit mode on events the reader added or changed; **Download in-progress** keeps it and **Download final** removes it. Don't write it by hand. |
 
-Link kinds: `causes` (leads to), `part-of`, `succeeds`, `conquers`, `related`. All but `related` draw
-as arrows.
+Link kinds: `causes` (leads to), `part-of`, `succeeds`, `conquers`, `related`, and `with` (version 9: together,
+such as co-rulers' reigns, Wikidata's P1706 "together with"). All but `related` and `with` draw as arrows; those two
+have no direction and are stored once, on either event.
 
 ## Date claims and uncertain dates
 
@@ -688,7 +690,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 
 | Version | What changed |
 |---|---|
-| 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates. Additive: a version 8 file is read as it is. |
+| 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |
 | 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. Never released: it folded into 8. |
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |

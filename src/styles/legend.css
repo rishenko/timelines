@@ -287,6 +287,10 @@
 .lg-link .link.succeeds {
   stroke-dasharray: 10 3;
 }
+/* together (co-rulers): dash-dot, no arrowhead */
+.lg-link .link.with {
+  stroke-dasharray: 6 2 1 2;
+}
 .lg-link .link.conquers {
   stroke: color-mix(in srgb, var(--danger) 70%, transparent);
 }

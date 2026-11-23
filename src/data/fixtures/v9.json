@@ -712,6 +712,10 @@
         {
           "to": "founding",
           "kind": "succeeds"
+        },
+        {
+          "to": "founding",
+          "kind": "with"
         }
       ],
       "edited": true

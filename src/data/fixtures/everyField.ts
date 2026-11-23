@@ -248,7 +248,7 @@ export const everyField = {
       endDates: [claim(60, 1, 15, 'p. 10')],
       tracks: ['quay'],
       sources: [ref('p. 12')],
-      links: [{ to: 'founding', kind: 'succeeds' }],
+      links: [{ to: 'founding', kind: 'succeeds' }, { to: 'founding', kind: 'with' }],
       edited: true,
     },
     { uuid: 'joins-league', title: 'Quay Town joins the League', descr: 'A treaty.', start: 131, startMonth: 4, startDay: 2, tracks: ['quay', 'league'], sources: [ref('p. 20')] },

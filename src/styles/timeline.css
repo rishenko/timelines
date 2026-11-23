@@ -186,6 +186,10 @@
 .tl-connections .link.succeeds {
   stroke-dasharray: 10 3;
 }
+/* together (co-rulers): dash-dot, no arrowhead */
+.tl-connections .link.with {
+  stroke-dasharray: 6 2 1 2;
+}
 .tl-connections .link.conquers {
   stroke: color-mix(in srgb, var(--danger) 60%, transparent);
 }

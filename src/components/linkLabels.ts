@@ -7,4 +7,6 @@ export const LINK_LABEL: Record<LinkKind, { form: string; out: string; in: strin
   related: { form: 'related to', out: 'Related', in: 'Related' },
   succeeds: { form: 'succeeds', out: 'Succeeds', in: 'Succeeded by' },
   conquers: { form: 'conquers', out: 'Conquers', in: 'Conquered by' },
+  // symmetric: co-rulers' reigns, allies acting together (Wikidata P1706)
+  with: { form: 'together with', out: 'With', in: 'With' },
 };

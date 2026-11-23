@@ -339,9 +339,13 @@ export interface DateClaim {
   note?: string;
 }
 
-export type LinkKind = 'causes' | 'part-of' | 'related' | 'succeeds' | 'conquers';
+/**
+ * How two events connect. `with` (schema v9) is symmetric, as `related` is: the two acted together, e.g. co-rulers'
+ * reigns (Wikidata P1706, "together with"). It's stored once, on either event.
+ */
+export type LinkKind = 'causes' | 'part-of' | 'related' | 'succeeds' | 'conquers' | 'with';
 
-export const LINK_KINDS: LinkKind[] = ['causes', 'part-of', 'related', 'succeeds', 'conquers'];
+export const LINK_KINDS: LinkKind[] = ['causes', 'part-of', 'related', 'succeeds', 'conquers', 'with'];
 
 export interface EventLink {
   /** uuid of the target event */

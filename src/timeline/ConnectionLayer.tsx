@@ -62,7 +62,8 @@ export function ConnectionLayer({ left, width, height, marksByEvent, eventsById,
           key={`${id}->${l.to}`}
           d={d}
           className={`link ${l.kind} ${focused ? 'on' : ''}`}
-          markerEnd={l.kind === 'related' ? undefined : `url(#arrow-${l.kind satisfies LinkKind})`}
+          // symmetric kinds have no arrowhead
+          markerEnd={l.kind === 'related' || l.kind === 'with' ? undefined : `url(#arrow-${l.kind satisfies LinkKind})`}
         />,
       );
     }

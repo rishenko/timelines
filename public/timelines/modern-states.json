@@ -58,6 +58,12 @@
               "rule"
             ]
           },
+          "interregnum": {
+            "name": "Interregnum",
+            "broader": [
+              "rule"
+            ]
+          },
           "coup": {
             "name": "Coup or deposition",
             "broader": [
@@ -81342,7 +81348,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "interregnum",
           "sources": [
             {
               "sourceKey": "wp-kashmir-sultanate",
