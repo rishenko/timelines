@@ -1,6 +1,7 @@
 // Proves a timeline changed only in the fields you name. Compares its source and compiled files with their versions at
-// a git revision, field by field, with rows, eras and events keyed by id and sources by key, so a moved or added item
-// reads as itself. A row, era or event whose place in its list changed is reported as `<list> order`. Each change is
+// a git revision, field by field, with rows, the timeline's context spans and events keyed by id and sources by key, so a
+// moved or added item reads as itself. Both sides are lifted to the current schema first (src/data/migrate.ts), so a
+// version change alone shows nothing. A row, context span or event whose place in its list changed is reported as `<list> order`. Each change is
 // allowed when its path matches an --allow pattern (`*` matches one id or field); the script prints each allowed
 // pattern with its count and every other change on its own line, and exits with 1 if there are any. Use it beside
 // data:compare, which checks what the app draws but not group parents, era fields or row order.
@@ -11,11 +12,12 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { SOURCE_TIMELINES } from './lib/timelines.ts';
+import { migrate } from '../src/data/migrate.ts';
 
 type Json = any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 /** Lists of objects keyed by a field, so their items are compared by id; the path names the list. */
-const KEYED: Record<string, string> = { tracks: 'id', events: 'uuid', 'meta.eras': 'id' };
+const KEYED: Record<string, string> = { tracks: 'id', events: 'uuid', 'meta.context': 'id' };
 
 export interface Change {
   path: string;
@@ -93,8 +95,8 @@ function main() {
   }
   let failed = false;
   for (const file of [t.source, t.compiled]) {
-    const before = JSON.parse(execFileSync('git', ['show', `${base}:${file}`], { encoding: 'utf8', maxBuffer: 1 << 28 }));
-    const after = JSON.parse(readFileSync(file, 'utf8'));
+    const before = migrate(JSON.parse(execFileSync('git', ['show', `${base}:${file}`], { encoding: 'utf8', maxBuffer: 1 << 28 })));
+    const after = migrate(JSON.parse(readFileSync(file, 'utf8')));
     const changes = fieldChanges(before, after);
     const counts = new Map(allow.map((a) => [a.p, 0]));
     const other: Change[] = [];

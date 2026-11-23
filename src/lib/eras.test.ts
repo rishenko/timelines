@@ -1,25 +1,35 @@
 import { describe, expect, it } from 'vitest';
 import { agesInView, ageLines, groupLabel, placeAges, splitAges } from './eras.ts';
 import { plainTimeline } from '../test/fixtures.ts';
-import type { Dataset, Era } from '../types.ts';
+import type { ContextSpan, Dataset } from '../types.ts';
 
 const cite = [{ sourceKey: 'ledger', sourceLocation: 'p. 1' }];
-const withEras = (eras: Era[]): Dataset => {
+type Age = ContextSpan & { row?: string };
+/** A timeline with these ages: on the timeline, or (`row`) on that row, which is added when the timeline lacks it. */
+const withEras = (eras: Age[]): Dataset => {
   const d = plainTimeline();
-  d.meta.eras = eras;
+  for (const { row, ...span } of eras) {
+    if (!row) d.meta.context = [...(d.meta.context ?? []), span];
+    else {
+      let t = d.tracks.find((x) => x.id === row);
+      if (!t) d.tracks.push((t = { id: row, name: row, color: '#888888' }));
+      t.context = [...(t.context ?? []), span];
+    }
+  }
   return d;
 };
-const era = (id: string, start: number, end: number, group?: string, more: Partial<Era> = {}): Era => ({
+const era = (id: string, start: number, end: number, line?: string, more: Partial<Age> = {}): Age => ({
   id,
+  kind: 'age',
   name: id,
   start,
   end,
   sources: cite,
-  ...(group ? { group } : {}),
+  ...(line ? { line } : {}),
   ...more,
 });
 
-describe('ages (meta.eras)', () => {
+describe('ages (context spans of kind age)', () => {
   it('gives each group one line, in the order groups first appear; ages in a group share it', () => {
     const ages = placeAges(withEras([era('salt', 0, 50, 'trade'), era('storm', 10, 30, 'weather'), era('silver', 51, 90, 'trade'), era('calm', 0, 5)]), {});
     expect(ages.map((a) => [a.era.id, a.line])).toEqual([
@@ -54,15 +64,14 @@ describe('ages (meta.eras)', () => {
     expect(agesInView(ages, null)).toBe(ages);
   });
 
-  it('places an age with tracks on each row it names, with lines numbered per row; the strip keeps the rest', () => {
+  it('places a row’s ages on its band, with lines numbered per row; the strip keeps the timeline’s', () => {
     const ages = placeAges(
       withEras([
         era('world', 0, 90, 'world'),
-        era('nile-1', 0, 40, 'nile', { tracks: ['africa'] }),
-        era('nile-2', 40, 90, 'nile', { tracks: ['africa'] }),
-        era('aegean', 0, 60, 'aegean', { tracks: ['europe'] }),
-        era('alps', 0, 60, 'alps', { tracks: ['europe'] }),
-        era('both', 10, 20, 'shared', { tracks: ['africa', 'europe'] }),
+        era('nile-1', 0, 40, 'nile', { row: 'africa' }),
+        era('nile-2', 40, 90, 'nile', { row: 'africa' }),
+        era('aegean', 0, 60, 'aegean', { row: 'europe' }),
+        era('alps', 0, 60, 'alps', { row: 'europe' }),
       ]),
       {},
     );
@@ -71,30 +80,28 @@ describe('ages (meta.eras)', () => {
     expect(bands.get('africa')!.map((a) => [a.era.id, a.line])).toEqual([
       ['nile-1', 0],
       ['nile-2', 0],
-      ['both', 1],
     ]);
     expect(bands.get('europe')!.map((a) => [a.era.id, a.line])).toEqual([
       ['aegean', 0],
       ['alps', 1],
-      ['both', 2],
     ]);
     // the shared boundary year is handled within each row's line
     expect(bands.get('africa')![0].drawEnd).toBe(40);
   });
 
   it('closes up each row’s band separately when lines leave the years in view', () => {
-    const ages = placeAges(withEras([era('a', 0, 10, 'one', { tracks: ['r'] }), era('b', 50, 60, 'two', { tracks: ['r'] }), era('w', 0, 10)]), {});
+    const ages = placeAges(withEras([era('a', 0, 10, 'one', { row: 'r' }), era('b', 50, 60, 'two', { row: 'r' }), era('w', 0, 10)]), {});
     const shown = agesInView(ages, { y0: 45, y1: 70 });
     expect(shown.map((a) => [a.era.id, a.band, a.line])).toEqual([['b', 'r', 0]]);
   });
 
-  it('names the lines of a band with two or more (from the group id), and leaves one-line bands and the strip unnamed', () => {
+  it('names the lines of a band with two or more (from the line id), and leaves one-line bands and the strip unnamed', () => {
     const ages = placeAges(
       withEras([
         era('w', 0, 90, 'world'),
-        era('nile', 0, 40, 'ages-nile-valley', { tracks: ['africa'] }),
-        era('aegean', 0, 60, 'ages-aegean', { tracks: ['europe'] }),
-        era('alps', 0, 60, 'ages-central-europe', { tracks: ['europe'] }),
+        era('nile', 0, 40, 'ages-nile-valley', { row: 'africa' }),
+        era('aegean', 0, 60, 'ages-aegean', { row: 'europe' }),
+        era('alps', 0, 60, 'ages-central-europe', { row: 'europe' }),
       ]),
       {},
     );
@@ -107,15 +114,15 @@ describe('ages (meta.eras)', () => {
     expect(groupLabel(undefined)).toBeUndefined();
   });
 
-  it('takes a line’s name from meta.eraGroups when it has one', () => {
-    const d = withEras([era('aegean', 0, 60, 'ages-aegean', { tracks: ['europe'] }), era('alps', 0, 60, 'ages-central-europe', { tracks: ['europe'] })]);
-    d.meta.eraGroups = { 'ages-aegean': { name: 'Aegean and Mediterranean' } };
+  it('takes a line’s name from meta.lines when it has one', () => {
+    const d = withEras([era('aegean', 0, 60, 'ages-aegean', { row: 'europe' }), era('alps', 0, 60, 'ages-central-europe', { row: 'europe' })]);
+    d.meta.lines = { 'ages-aegean': { name: 'Aegean and Mediterranean' } };
     expect(placeAges(d, {}).map((a) => a.lineName)).toEqual(['Aegean and Mediterranean', 'Central Europe']);
   });
 
-  it('names a one-line band’s line when meta.eraGroups names its group, and not otherwise', () => {
-    const d = withEras([era('old', 0, 40, 'ages-nile-valley', { tracks: ['africa'] }), era('han', 0, 40, 'ages-china', { tracks: ['east-asia'] })]);
-    d.meta.eraGroups = { 'ages-nile-valley': { name: 'Nile Valley' } };
+  it('names a one-line band’s line when meta.lines names it, and not otherwise', () => {
+    const d = withEras([era('old', 0, 40, 'ages-nile-valley', { row: 'africa' }), era('han', 0, 40, 'ages-china', { row: 'east-asia' })]);
+    d.meta.lines = { 'ages-nile-valley': { name: 'Nile Valley' } };
     expect(placeAges(d, {}).map((a) => [a.era.id, a.lineName])).toEqual([
       ['old', 'Nile Valley'],
       ['han', undefined],

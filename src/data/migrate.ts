@@ -14,10 +14,55 @@
  * - 6: `Era.url` and `Era.ids` (an age's own article and Wikidata item). Additive: a v5 file is a v6 file with a
  *   different number.
  * - 7: `Era.tracks` (the rows an age belongs to, such as a region; drawn in their bands) and `meta.eraGroups` (era
- *   groups' display names). Additive: a v6 file is a v7 file with a different number.
+ *   groups' display names). Additive: a v6 file is a v7 file with a different number. Never released (it folded into
+ *   v8), but the step stays for files written while it was current.
+ * - 8: context lines. `meta.eras` becomes `meta.context` and each row's `Track.context` (`ContextSpan`, with a
+ *   `kind`; ages are kind `age`), `Era.group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. Structural:
+ *   see `toV8`.
  */
 
-export const SCHEMA_VERSION = 7;
+export const SCHEMA_VERSION = 8;
+
+type Obj = Record<string, unknown>;
+
+/**
+ * v7 → v8: each era becomes a context span of kind `age` with the same id. One without `tracks` goes to
+ * `meta.context`; one with `tracks` goes to the first named row's `Track.context` (any further row gets a copy with
+ * the id `<id>--<row>`; no shipped file has one). A row that isn't in the file leaves the age on the timeline, so
+ * nothing is lost. `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`.
+ */
+function toV8(d: Obj): Obj {
+  const meta = { ...((d.meta as Obj) ?? {}) };
+  const eras = Array.isArray(meta.eras) ? (meta.eras as Obj[]) : [];
+  const groups = meta.eraGroups;
+  delete meta.eras;
+  delete meta.eraGroups;
+  const tracks = Array.isArray(d.tracks) ? (d.tracks as Obj[]) : [];
+  const known = new Set(tracks.map((t) => t?.id));
+  const root: Obj[] = [];
+  const onRow = new Map<unknown, Obj[]>();
+  for (const era of eras) {
+    if (!era || typeof era !== 'object') {
+      root.push(era);
+      continue;
+    }
+    const { tracks: rows, group, ...rest } = era;
+    const span: Obj = { ...rest, kind: 'age', ...(group !== undefined ? { line: group } : {}) };
+    const named = Array.isArray(rows) ? rows.filter((r) => known.has(r)) : [];
+    if (!named.length) root.push(span);
+    named.forEach((r, i) => onRow.set(r, [...(onRow.get(r) ?? []), i ? { ...span, id: `${span.id}--${r}` } : span]));
+  }
+  if (root.length) meta.context = [...(Array.isArray(meta.context) ? (meta.context as Obj[]) : []), ...root];
+  if (groups !== undefined) meta.lines = groups;
+  return {
+    ...d,
+    schemaVersion: 8,
+    meta,
+    ...(onRow.size
+      ? { tracks: tracks.map((t) => (onRow.has(t?.id) ? { ...t, context: [...(Array.isArray(t.context) ? (t.context as Obj[]) : []), ...onRow.get(t.id)!] } : t)) }
+      : {}),
+  };
+}
 
 /** Each step lifts a file from its version to the next. */
 const STEPS: Record<number, (d: Record<string, unknown>) => Record<string, unknown>> = {
@@ -25,6 +70,7 @@ const STEPS: Record<number, (d: Record<string, unknown>) => Record<string, unkno
   4: (d) => ({ ...d, schemaVersion: 5 }),
   5: (d) => ({ ...d, schemaVersion: 6 }),
   6: (d) => ({ ...d, schemaVersion: 7 }),
+  7: toV8,
 };
 
 /** Whether a file of this version can be read (it is current, or can be lifted to it). */

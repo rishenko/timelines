@@ -80,14 +80,14 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `7`. Files of versions `3` to `6` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `8`. Files of versions `3` to `7` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
 | `tags` | yes | Labels for grouping sources, keyed by id. May be `{}`. |
 | `events` | yes | See [events](#events). |
 | `chronologies` | no | Alternative dating systems. See [chronologies](#chronologies). |
-| `redirects` | no | Ids the timeline no longer has, so links that name them still work: `{ "<old id>": "<new id>", "<removed id>": null }`. An old id maps to the row, event or era that replaced it, or to `null` when it was removed on purpose. Keys can't be ids the timeline has; targets must be. See [keeping ids stable](#keeping-ids-stable). |
+| `redirects` | no | Ids the timeline no longer has, so links that name them still work: `{ "<old id>": "<new id>", "<removed id>": null }`. An old id maps to the row, event or context span that replaced it, or to `null` when it was removed on purpose. Keys can't be ids the timeline has; targets must be. See [keeping ids stable](#keeping-ids-stable). |
 | `present` | no | The setting's "now" (a stored year). Events, lifespans and phases marked `ongoing` run to it. Defaults to the latest year any event starts or ends in. |
 
 ## meta
@@ -110,44 +110,47 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Data filters → Regions) uses the first facet that rows belong to, and comparison sets show each row's broad region from it. |
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
-| `eras` | no | Named periods across the whole timeline or one region (the Bronze Age, the Age of Revolutions, the Old Kingdom). See [eras](#eras). Readers see them as ages, in a strip under the ruler or on their region's band. |
-| `eraGroups` | no | Display names for era groups, by group id: `{ "ages-aegean": { "name": "Aegean" } }`. A row's band labels each line with its group's `name`, even a band's only line; without one, a band with two or more lines makes a name from the id (`ages-central-europe` → "Central Europe") and a one-line band stays unlabelled. Each key must be a `group` some era has. |
+| `context` | no | The timeline's own context lines: named periods across the whole timeline (the Bronze Age, the Age of Revolutions). See [context lines](#context-lines-context). Readers see ages in a strip under the ruler. A region's own periods (the Old Kingdom) are in its row's `context`. |
+| `lines` | no | Display names for context lines, by line id: `{ "ages-aegean": { "name": "Aegean" } }`. A row's band labels each line with its `name`, even a band's only line; without one, a band with two or more lines makes a name from the id (`ages-central-europe` → "Central Europe") and a one-line band stays unlabelled. Each key must be a `line` some context span has. |
 | `range` | no | `{ "start": <year>, "end": <year> }`: the period the timeline is about. The ruler doesn't extend past it, even when rows or uncertainty ranges do (the included timeline's Eastern Roman Empire row runs to 1453). Readable years work in a source file. |
 
-### eras
+### Context lines: `context`
 
-`meta.eras` lists periods that run across every row, each dated like a [phase](#tracks) (`start`, `end` or `ongoing`,
-`circa`, months and days, [date claims](#date-claims-and-uncertain-dates), `startEvent`/`endEvent`) and cited:
+`meta.context` (the timeline's own) and a row's or group's `context` list **context spans**: named periods on that
+node, each with a `kind`, dated like a [phase](#tracks) (`start`, `end` or `ongoing`, `circa`, months and days,
+[date claims](#date-claims-and-uncertain-dates), `startEvent`/`endEvent`) and cited:
 
 ```json
-"eras": [
-  { "id": "late-bronze-age", "name": "Late Bronze Age", "group": "three-age", "start": -1549, "end": -1199,
+"context": [
+  { "id": "late-bronze-age", "kind": "age", "name": "Late Bronze Age", "line": "three-age", "start": -1549, "end": -1199,
     "sources": [{ "sourceKey": "wp-bronze-age", "sourceLocation": "lead" }] }
 ]
 ```
 
 | Field | Required | What |
 |---|---|---|
-| `id` | yes | Letters, digits and dashes; unique among the eras. |
+| `id` | yes | Letters, digits and dashes; unique among all the timeline's context spans. Links can name it. |
+| `kind` | yes | What sort of period: `age` (an archaeological or historical age; drawn) or `golden-age` (a high point; off by default, not drawn yet). Any other lowercase kind (letters, digits, dashes) is kept but not drawn, so a later kind needs no new version. |
 | `name` | yes | |
 | `sources` | yes | At least one. |
-| `group` | no | Eras that divide the same years one way share a group, and follow each other within it; neighbours may share a boundary year, as PeriodO's chains do (both ends there year-only), and are drawn meeting at the later one's start. Another group (a region's own periods) is an alternative division of the same years. |
+| `line` | no | Spans that divide the same years one way share a line, and spans of one kind on a line follow each other, anywhere in the timeline; neighbours may share a boundary year, as PeriodO's chains do (both ends there year-only), and are drawn meeting at the later one's start. Another line (a region's own periods) is an alternative division of the same years, so give each region's chain its own line. Spans without a line follow each other only on their own node. |
 | `color` | no | `#rrggbb`. |
 | `chronology` | no | The dating system its dates follow. |
-| `url` | no | A page about the age, such as its Wikipedia article: readers can open it from the age. It isn't a date source; `sources` are. |
-| `ids` | no | The age's identifiers in other datasets, as a row's: `{ "wikidata": "Q…" }`. |
-| `tracks` | no | The rows the age belongs to, usually region groups (`["africa"]`): each id names a row, once. The age is drawn in each of their bands. Left out, it spans the whole timeline and sits in the strip under the ruler. The rule that ages in one `group` don't overlap holds across bands, so give each region's chain its own `group`. |
+| `url` | no | A page about the period, such as its Wikipedia article: readers can open it from the age. It isn't a date source; `sources` are. |
+| `ids` | no | Its identifiers in other datasets, as a row's: `{ "wikidata": "Q…" }`. |
 
-An era must overlap `meta.range` when the timeline has one; it may run past it, as rows do, so an era that crosses a seam keeps its own dates in both timelines.
+A context span must overlap `meta.range` when the timeline has one; it may run past it, as rows do, so an age that
+crosses a seam keeps its own dates in both timelines. Version 7 files' `meta.eras` load as context spans of kind `age`:
+an era with `tracks` moves to that row's `context` (see [versions](#versions)).
 
-The app draws eras as **ages**: those without `tracks` in a strip under the ruler, the rest on a band at the top of
-each row they name (a region's title band, under any phase strips), with the same buttons and links. Each strip or band
-has one line per `group` (in the order groups first appear there),
+The app draws spans of kind `age` as **ages**: the timeline's own in a strip under the ruler, a row's on a band at the
+top of that row (a region's title band, under any phase strips), with the same buttons and links. Each strip or band
+has one line per `line` (in the order lines first appear there),
 lines with no age in the years in view left out, uncertain ends hatched, and an end past the timeline's range cut with
 a dashed edge. `color`, when set, tints the age. Each age's tooltip and accessible name give its dates and sources;
 clicking it opens its details: its dates, its article (`url`) and its sources as links, so every age reaches its
 article and sources however narrow its bar. Ages never move the chart. An age with a `url` has a ↗ link to that page just before its name (when its bar
-has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`, and names its region (its rows, or "All
+has room for both); the table view's Ages table links its name, plus its Wikidata id from `ids`, and names its region (its row, or "All
 regions"). Deleting a row in edit mode names the ages that move to the strip. From the keyboard, each line of the strip or
 a band is one Tab stop: ←/→ and Home/End move along it, and Enter opens the focused age's details (the ↗ links are
 left out of the Tab order; the details link the article).
@@ -178,6 +181,7 @@ cost label width, so three or four levels is a practical ceiling rather than a r
 | `span` | no | Lifespan: shaded across the row. One stretch, or a list of stretches. Leave it out on a row with phases to have it worked out from them. See below. |
 | `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
 | `memberOf` | no | Other rows this row belonged to for a stretch of years (a republic in a union). See [memberOf](#dated-memberships-memberof). |
+| `context` | no | The row's or group's own context lines, such as a region's ages, drawn on its band. See [context lines](#context-lines-context). Kept by the track editor, not edited there. |
 | `image` | no | Small image in the row label (`https://…` or a path on the app's own site). |
 | `url` | no | A page about the row, such as its Wikipedia article (`https://…` or a path on the app's own site). The row's name links to it, in the chart and the table view. |
 | `ids` | no | The row's identifiers in other datasets: `{ "wikidata": "Q11768" }` (a Wikidata item id). Shown in the table view and the CSV download. |
@@ -368,7 +372,8 @@ events and facet values form a graph: events link rows, memberships link rows to
 **Event categories.** Events join the values of a facet whose `applies` is `"events"` the same way. The Wikipedia-sourced
 timelines share one such facet, `category`: ten kinds of event (`rule`, `statehood`, `territory`, `place`, `conflict`,
 `unrest`, `diplomacy`, `society`, `science`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
-`conflict`). An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
+`conflict`). A ruler's time in office, as a span ("Reign of Sargon", "Presidency of Juárez"), is `reign` ("Reign or
+term") in `rule`; the accession or death on a single date stays `succession`. An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
 article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed
 corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
 shape before the event's title, names both categories in the table and the event's details, and filters by them
@@ -498,7 +503,7 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 7, or 3 to 6 (lifted to 7 when loaded).
+- The required fields above are present; `schemaVersion` is 8, or 3 to 7 (lifted to 8 when loaded).
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
   `"day"`.
@@ -522,11 +527,12 @@ A file that breaks any of these is refused, with a message naming the problem.
   phase of that name on the row that contains it.
 - A facet's `applies` is `tracks`, `events` or `both`, and every row's or event's membership is in a facet that applies
   to it. A row's `kind` is `polity`, `person` or `theme`.
-- Eras have unique ids, a name and at least one known source, are dated like phases, overlap `meta.range` when set,
-  and don't overlap others in their group.
+- Context spans have unique ids, a lowercase `kind`, a name and at least one known source, are dated like phases,
+  overlap `meta.range` when set, and don't overlap others of their kind on their line (on their node, without a line).
+  Each `meta.lines` key is a line some span has.
 - A source's `dump` looks like `enwiki-20261101`; a `revision` is a positive whole number on a source with a `url`. A
   `locator` has a known `kind` and that kind's fields only.
-- `redirects` map ids the timeline doesn't have to rows, events or eras it has, or to `null`.
+- `redirects` map ids the timeline doesn't have to rows, events or context spans it has, or to `null`.
 - `present` is a whole year; `meta.circaFade` is zero or more; `meta.hideRowsOutOfView` is `true` or `false`;
   `meta.range` has whole years with `start` before `end`; each `meta.continues` entry has a timeline id, a whole-year
   `at` and a `side` of `"before"` or `"after"`.
@@ -605,7 +611,7 @@ them quietly: the link opens, minus that part of the view. `redirects` keeps the
 "redirects": { "kingdom-of-quay": "quay", "storm-of-131": null }
 ```
 
-- **Renamed** row, event or era: map the old id to the new one. A link that names the old id opens on the new one.
+- **Renamed** row, event or context span: map the old id to the new one. A link that names the old id opens on the new one.
 - **Removed on purpose:** map the old id to `null`. A link that names it skips it.
 - **Other ids** (facets, regions, sources, tags, chronologies) can only be mapped to `null`.
 - Redirects don't chain: a target can't itself be a key. When an id is renamed again, point the oldest id straight at
@@ -671,9 +677,10 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 
 | Version | What changed |
 |---|---|
+| 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |
+| 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. Never released: it folded into 8. |
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |
-| 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. |
-| 5 | Facets on events (`applies`, event `memberships`), [`meta.eras`](#eras), row `kind`, events' `ongoingSources`, sources' `dump` and `revision`, source `locator`s, the `phase` of a [`memberOf`](#dated-memberships-memberof) entry, and `redirects`. Additive: a version 4 file is read as it is. |
+| 5 | Facets on events (`applies`, event `memberships`), `meta.eras` (since 8: [context lines](#context-lines-context)), row `kind`, events' `ongoingSources`, sources' `dump` and `revision`, source `locator`s, the `phase` of a [`memberOf`](#dated-memberships-memberof) entry, and `redirects`. Additive: a version 4 file is read as it is. |
 | 4 | Dates may give [months and days](#months-and-days); `meta.increments` may name steps below a year. Additive: a version 3 file is read as it is. |
 | 3 | Generic timelines: rows (tracks) with lifespans, phases and memberships, sources, chronologies, events. |
 

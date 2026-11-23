@@ -206,6 +206,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     // memberships in other rows, and category memberships (regions, peoples), aren't edited here yet: kept as they were
     if (initial?.memberOf?.length) t.memberOf = initial.memberOf;
     if (initial?.memberships?.length) t.memberships = initial.memberships;
+    // its context lines (ages of a region, for example) aren't edited here, and stay as they were
+    if (initial?.context?.length) t.context = initial.context;
     const found = newProblems(data, upsertTrack(data, t, initial?.id));
     setProblems(found);
     if (!found.length) onSave(t, initial?.id);
@@ -223,7 +225,6 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (info.shared) parts.push(`${info.shared} event(s) shared with other rows will just lose this one.`);
     if (info.agesToStrip.length)
       parts.push(`${info.agesToStrip.length === 1 ? 'This age moves' : 'These ages move'} to the Ages strip at the top: ${info.agesToStrip.join(', ')}.`);
-    if (info.agesShared.length) parts.push(`Shown in other rows too, so staying there: ${info.agesShared.join(', ')}.`);
     if (window.confirm(parts.join('\n\n'))) onDelete(initial.id);
   };
 

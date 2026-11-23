@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 7,
+  "schemaVersion": 8,
   "meta": {
     "id": "ancient-classical",
     "title": "Ancient and Classical World",
@@ -639,6 +639,12 @@
               "rule"
             ]
           },
+          "reign": {
+            "name": "Reign or term",
+            "broader": [
+              "rule"
+            ]
+          },
           "coup": {
             "name": "Coup or deposition",
             "broader": [
@@ -903,11 +909,10 @@
         }
       }
     },
-    "eras": [
+    "context": [
       {
         "id": "axial-age",
         "name": "Axial Age",
-        "group": "world",
         "start": -749,
         "end": -249,
         "circa": true,
@@ -942,12 +947,13 @@
         "url": "https://en.wikipedia.org/wiki/Axial_Age",
         "ids": {
           "wikidata": "Q340742"
-        }
+        },
+        "kind": "age",
+        "line": "world"
       },
       {
         "id": "pax-romana",
         "name": "Pax Romana",
-        "group": "roman-world",
         "start": -26,
         "end": 180,
         "startDates": [
@@ -981,1522 +987,12 @@
         "url": "https://en.wikipedia.org/wiki/Pax_Romana",
         "ids": {
           "wikidata": "Q75207"
-        }
-      },
-      {
-        "id": "near-east-neolithic",
-        "name": "Neolithic",
-        "group": "ages-near-east",
-        "start": -9749,
-        "end": -4499,
-        "startDates": [
-          {
-            "year": -9749,
-            "source": {
-              "sourceKey": "periodo-p0ckt9xjf45",
-              "sourceLocation": "period \"Neolithic\", start \"9750 BCE\" (p0ckt9xjf45)"
-            }
-          },
-          {
-            "year": -8299,
-            "source": {
-              "sourceKey": "periodo-p0dkm292q3s",
-              "sourceLocation": "period \"Pre-Pottery Neolithic\", start \"8,300 BCE\" (p0dkm292q3s)"
-            },
-            "note": "NEAEHL's Pre-Pottery Neolithic starts later."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -4499,
-            "source": {
-              "sourceKey": "periodo-p0dkm29sd62",
-              "sourceLocation": "period \"Pottery Neolithic\", end \"4,500 BCE\" (p0dkm29sd62)"
-            },
-            "note": "The end of NEAEHL's Pottery Neolithic."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0ckt9xjf45",
-            "sourceLocation": "period \"Neolithic\", start \"9750 BCE\" (p0ckt9xjf45)"
-          },
-          {
-            "sourceKey": "periodo-p0dkm29sd62",
-            "sourceLocation": "period \"Pottery Neolithic\", end \"4,500 BCE\" (p0dkm29sd62)"
-          }
-        ],
-        "tracks": [
-          "near-east"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Neolithic",
-        "ids": {
-          "wikidata": "Q36422"
-        }
-      },
-      {
-        "id": "near-east-chalcolithic",
-        "name": "Chalcolithic",
-        "group": "ages-near-east",
-        "start": -4499,
-        "end": -3299,
-        "startDates": [
-          {
-            "year": -4499,
-            "source": {
-              "sourceKey": "periodo-p0dkm29j944",
-              "sourceLocation": "period \"Chalcolithic\", start \"4,500 BCE\" (p0dkm29j944)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -3299,
-            "source": {
-              "sourceKey": "periodo-p0dkm29j944",
-              "sourceLocation": "period \"Chalcolithic\", end \"3,300 BCE\" (p0dkm29j944)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0dkm29j944",
-            "sourceLocation": "period \"Chalcolithic\", start \"4,500 BCE\" (p0dkm29j944)"
-          },
-          {
-            "sourceKey": "periodo-p0dkm29j944",
-            "sourceLocation": "period \"Chalcolithic\", end \"3,300 BCE\" (p0dkm29j944)"
-          }
-        ],
-        "tracks": [
-          "near-east"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Chalcolithic",
-        "ids": {
-          "wikidata": "Q130253"
-        }
-      },
-      {
-        "id": "near-east-bronze-age",
-        "name": "Bronze Age",
-        "group": "ages-near-east",
-        "start": -3299,
-        "end": -1199,
-        "startDates": [
-          {
-            "year": -3299,
-            "source": {
-              "sourceKey": "periodo-p0dkm29gmkt",
-              "sourceLocation": "period \"Bronze Age\", start \"3300 BCE\" (p0dkm29gmkt)"
-            }
-          },
-          {
-            "year": -3499,
-            "source": {
-              "sourceKey": "periodo-p0hsq83z6ms",
-              "sourceLocation": "period \"Bronze Age\", start \"3500 BCE\" (p0hsq83z6ms)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "periodo-p0dkm29gmkt",
-              "sourceLocation": "period \"Bronze Age\", end \"1200 BCE\" (p0dkm29gmkt)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0dkm29gmkt",
-            "sourceLocation": "period \"Bronze Age\", start \"3300 BCE\" (p0dkm29gmkt)"
-          },
-          {
-            "sourceKey": "periodo-p0dkm29gmkt",
-            "sourceLocation": "period \"Bronze Age\", end \"1200 BCE\" (p0dkm29gmkt)"
-          }
-        ],
-        "tracks": [
-          "near-east"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Bronze_Age",
-        "ids": {
-          "wikidata": "Q11761"
-        }
-      },
-      {
-        "id": "near-east-iron-age",
-        "name": "Iron Age",
-        "group": "ages-near-east",
-        "start": -1199,
-        "end": -585,
-        "startDates": [
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "periodo-p0dkm29kmvv",
-              "sourceLocation": "period \"Iron Age\", start \"1200 BCE\" (p0dkm29kmvv)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -585,
-            "source": {
-              "sourceKey": "periodo-p0dkm29kmvv",
-              "sourceLocation": "period \"Iron Age\", end \"586 BCE\" (p0dkm29kmvv)"
-            }
-          },
-          {
-            "year": -329,
-            "source": {
-              "sourceKey": "periodo-p0m64td6gpk",
-              "sourceLocation": "period \"Iron Age\", end \"-330\" (p0m64td6gpk)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0dkm29kmvv",
-            "sourceLocation": "period \"Iron Age\", start \"1200 BCE\" (p0dkm29kmvv)"
-          },
-          {
-            "sourceKey": "periodo-p0dkm29kmvv",
-            "sourceLocation": "period \"Iron Age\", end \"586 BCE\" (p0dkm29kmvv)"
-          }
-        ],
-        "tracks": [
-          "near-east"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Iron_Age",
-        "ids": {
-          "wikidata": "Q11764"
-        }
-      },
-      {
-        "id": "central-europe-neolithic",
-        "name": "Neolithic",
-        "group": "ages-central-europe",
-        "start": -5599,
-        "end": -4499,
-        "startDates": [
-          {
-            "year": -5599,
-            "source": {
-              "sourceKey": "periodo-p0wctqtpn3m",
-              "sourceLocation": "period \"Early Neolithic\", start \"-5600\" (p0wctqtpn3m)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -4499,
-            "source": {
-              "sourceKey": "periodo-p0wctqthbgf",
-              "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
-            },
-            "note": "AMCR's Early Neolithic ends 4701 BC; the age runs on to its Eneolithic."
-          },
-          {
-            "year": -4700,
-            "source": {
-              "sourceKey": "periodo-p0wctqtpn3m",
-              "sourceLocation": "period \"Early Neolithic\", end \"-4701\" (p0wctqtpn3m)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0wctqtpn3m",
-            "sourceLocation": "period \"Early Neolithic\", start \"-5600\" (p0wctqtpn3m)"
-          },
-          {
-            "sourceKey": "periodo-p0wctqthbgf",
-            "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Neolithic_Europe",
-        "ids": {
-          "wikidata": "Q1275904"
-        }
-      },
-      {
-        "id": "central-europe-copper-age",
-        "name": "Copper Age",
-        "group": "ages-central-europe",
-        "start": -4499,
-        "end": -2300,
-        "startDates": [
-          {
-            "year": -4499,
-            "source": {
-              "sourceKey": "periodo-p0wctqthbgf",
-              "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
-            }
-          },
-          {
-            "year": -4249,
-            "source": {
-              "sourceKey": "periodo-p0qhb66f8kc",
-              "sourceLocation": "period \"Copper Age\", start \"6250 BP (2000)\" (p0qhb66f8kc)"
-            },
-            "note": "ARIADNE's Copper Age (Austria)."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2300,
-            "source": {
-              "sourceKey": "periodo-p0wctqthbgf",
-              "sourceLocation": "period \"Eneolithic\", end \"-2301\" (p0wctqthbgf)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0wctqthbgf",
-            "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
-          },
-          {
-            "sourceKey": "periodo-p0wctqthbgf",
-            "sourceLocation": "period \"Eneolithic\", end \"-2301\" (p0wctqthbgf)"
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Chalcolithic_Europe",
-        "ids": {
-          "wikidata": "Q4354077"
-        }
-      },
-      {
-        "id": "central-europe-bronze-age",
-        "name": "Bronze Age",
-        "group": "ages-central-europe",
-        "start": -2299,
-        "end": -799,
-        "startDates": [
-          {
-            "year": -2299,
-            "source": {
-              "sourceKey": "periodo-p0wctqtcsjh",
-              "sourceLocation": "period \"Bronze Age\", start \"-2300\" (p0wctqtcsjh)"
-            }
-          },
-          {
-            "year": -2199,
-            "source": {
-              "sourceKey": "periodo-p0qhb66wrsn",
-              "sourceLocation": "period \"Bronze Age\", start \"4200 BP (2000)\" (p0qhb66wrsn)"
-            },
-            "note": "ARIADNE's Bronze Age (Austria)."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -799,
-            "source": {
-              "sourceKey": "periodo-p0wctqtbqvf",
-              "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
-            },
-            "note": "Where AMCR's Hallstatt–La Tène begins; its Bronze Age runs to 751 BC."
-          },
-          {
-            "year": -750,
-            "source": {
-              "sourceKey": "periodo-p0wctqtcsjh",
-              "sourceLocation": "period \"Bronze Age\", end \"-751\" (p0wctqtcsjh)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0wctqtcsjh",
-            "sourceLocation": "period \"Bronze Age\", start \"-2300\" (p0wctqtcsjh)"
-          },
-          {
-            "sourceKey": "periodo-p0wctqtbqvf",
-            "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Bronze_Age_Europe",
-        "ids": {
-          "wikidata": "Q2394404"
-        }
-      },
-      {
-        "id": "central-europe-iron-age",
-        "name": "Iron Age",
-        "group": "ages-central-europe",
-        "start": -799,
-        "end": -30,
-        "startDates": [
-          {
-            "year": -799,
-            "source": {
-              "sourceKey": "periodo-p0wctqtbqvf",
-              "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
-            },
-            "note": "AMCR's Hallstatt and La Tène periods."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -30,
-            "source": {
-              "sourceKey": "periodo-p0wctqtbqvf",
-              "sourceLocation": "period \"Hallstatt–La Tène Period\", end \"-31\" (p0wctqtbqvf)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0wctqtbqvf",
-            "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
-          },
-          {
-            "sourceKey": "periodo-p0wctqtbqvf",
-            "sourceLocation": "period \"Hallstatt–La Tène Period\", end \"-31\" (p0wctqtbqvf)"
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Iron_Age_Europe",
-        "ids": {
-          "wikidata": "Q16000127"
-        }
-      },
-      {
-        "id": "aegean-neolithic",
-        "name": "Neolithic",
-        "group": "ages-aegean",
-        "start": -6499,
-        "end": -3199,
-        "startDates": [
-          {
-            "year": -6499,
-            "source": {
-              "sourceKey": "periodo-p0ds9qj3x2t",
-              "sourceLocation": "period \"Neolithic\", start \"6500 BC\" (p0ds9qj3x2t)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -3199,
-            "source": {
-              "sourceKey": "periodo-p0ds9qj3x2t",
-              "sourceLocation": "period \"Neolithic\", end \"3200/3000 BC\" (p0ds9qj3x2t)"
-            },
-            "note": "The BSA gives 3200/3000 BC."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0ds9qj3x2t",
-            "sourceLocation": "period \"Neolithic\", start \"6500 BC\" (p0ds9qj3x2t)"
-          },
-          {
-            "sourceKey": "periodo-p0ds9qj3x2t",
-            "sourceLocation": "period \"Neolithic\", end \"3200/3000 BC\" (p0ds9qj3x2t)"
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Neolithic_Greece",
-        "ids": {
-          "wikidata": "Q16737804"
-        }
-      },
-      {
-        "id": "aegean-bronze-age",
-        "name": "Bronze Age",
-        "group": "ages-aegean",
-        "start": -3199,
-        "end": -1099,
-        "startDates": [
-          {
-            "year": -3199,
-            "source": {
-              "sourceKey": "periodo-p0ds9qjq7b2",
-              "sourceLocation": "period \"Bronze Age\", start \"3200 BC\" (p0ds9qjq7b2)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1099,
-            "source": {
-              "sourceKey": "periodo-p0ds9qjrvwn",
-              "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
-            },
-            "note": "Where the BSA's Early Iron Age begins; its Bronze Age runs to 1050 BC."
-          },
-          {
-            "year": -1049,
-            "source": {
-              "sourceKey": "periodo-p0ds9qjq7b2",
-              "sourceLocation": "period \"Bronze Age\", end \"1050 BC\" (p0ds9qjq7b2)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0ds9qjq7b2",
-            "sourceLocation": "period \"Bronze Age\", start \"3200 BC\" (p0ds9qjq7b2)"
-          },
-          {
-            "sourceKey": "periodo-p0ds9qjrvwn",
-            "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Aegean_civilization",
-        "ids": {
-          "wikidata": "Q192530"
-        }
-      },
-      {
-        "id": "aegean-early-iron-age",
-        "name": "Early Iron Age",
-        "group": "ages-aegean",
-        "start": -1099,
-        "end": -699,
-        "startDates": [
-          {
-            "year": -1099,
-            "source": {
-              "sourceKey": "periodo-p0ds9qjrvwn",
-              "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -699,
-            "source": {
-              "sourceKey": "periodo-p0ds9qjrvwn",
-              "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0ds9qjrvwn",
-            "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
-          },
-          {
-            "sourceKey": "periodo-p0ds9qjrvwn",
-            "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Greek_Dark_Ages",
-        "ids": {
-          "wikidata": "Q210443"
-        }
-      },
-      {
-        "id": "classical-antiquity",
-        "name": "Classical antiquity",
-        "group": "ages-aegean",
-        "start": -699,
-        "end": 476,
-        "startDates": [
-          {
-            "year": -699,
-            "source": {
-              "sourceKey": "periodo-p0ds9qjrvwn",
-              "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
-            },
-            "note": "Where the BSA's Early Iron Age ends."
-          },
-          {
-            "year": -749,
-            "source": {
-              "sourceKey": "wp-classical-antiquity",
-              "sourceLocation": "lead: \"Classical antiquity, also known as the classical era, classical period, classical age, or simply antiquity, is the period of cultural European history between t\""
-            },
-            "margin": 50,
-            "note": "The 8th century BC."
-          }
-        ],
-        "endDates": [
-          {
-            "year": 476,
-            "source": {
-              "sourceKey": "wp-classical-antiquity",
-              "sourceLocation": "lead: \"Conventionally, it is often considered to begin with the earliest recorded Epic Greek poetry of Homer (8th–7th centuries BC) and end with the fall of the Wester\""
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0ds9qjrvwn",
-            "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
-          },
-          {
-            "sourceKey": "wp-classical-antiquity",
-            "sourceLocation": "lead: \"Conventionally, it is often considered to begin with the earliest recorded Epic Greek poetry of Homer (8th–7th centuries BC) and end with the fall of the Wester\""
-          }
-        ],
-        "tracks": [
-          "europe-med"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Classical_antiquity",
-        "ids": {
-          "wikidata": "Q486761"
-        }
-      },
-      {
-        "id": "south-asia-neolithic",
-        "name": "Neolithic",
-        "group": "ages-south-asia",
-        "start": -6999,
-        "end": -3299,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -6999,
-            "source": {
-              "sourceKey": "wp-neolithic",
-              "sourceLocation": "section \"Periods by region > South and East Asia\": \"Settled life, encompassing the transition from foraging to farming and pastoralism, began in South Asia in the region of Balochistan, Pakistan, around 7,000 BC.\""
-            },
-            "note": "Wikipedia only (no PeriodO period for the region's ages). Settled life in Balochistan."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -3299,
-            "source": {
-              "sourceKey": "wp-bronze-age",
-              "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
-            },
-            "note": "Wikipedia only (no PeriodO period for the region's ages). Where the Bronze Age begins."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-neolithic",
-            "sourceLocation": "section \"Periods by region > South and East Asia\": \"Settled life, encompassing the transition from foraging to farming and pastoralism, began in South Asia in the region of Balochistan, Pakistan, around 7,000 BC.\""
-          },
-          {
-            "sourceKey": "wp-bronze-age",
-            "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
-          }
-        ],
-        "tracks": [
-          "steppe-south-asia"
-        ],
-        "url": "https://en.wikipedia.org/wiki/South_Asian_Stone_Age",
-        "ids": {
-          "wikidata": "Q1287957"
-        }
-      },
-      {
-        "id": "south-asia-bronze-age",
-        "name": "Bronze Age",
-        "group": "ages-south-asia",
-        "start": -3299,
-        "end": -1199,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -3299,
-            "source": {
-              "sourceKey": "wp-bronze-age",
-              "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
-            },
-            "note": "Wikipedia only (no PeriodO period for the region's ages)."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "wp-iron-age",
-              "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
-            },
-            "note": "Wikipedia only (no PeriodO period for the region's ages). Where the Iron Age begins."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-bronze-age",
-            "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
-          },
-          {
-            "sourceKey": "wp-iron-age",
-            "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
-          }
-        ],
-        "tracks": [
-          "steppe-south-asia"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Bronze_Age_India",
-        "ids": {
-          "wikidata": "Q4974228"
-        }
-      },
-      {
-        "id": "south-asia-iron-age",
-        "name": "Iron Age",
-        "group": "ages-south-asia",
-        "start": -1199,
-        "end": -249,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "wp-iron-age",
-              "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
-            },
-            "note": "Wikipedia only (no PeriodO period for the region's ages). The Painted Grey Ware culture."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -249,
-            "source": {
-              "sourceKey": "wp-iron-age",
-              "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
-            },
-            "margin": 50,
-            "note": "Wikipedia only (no PeriodO period for the region's ages). To the reign of Ashoka, in the 3rd century BC."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-iron-age",
-            "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
-          }
-        ],
-        "tracks": [
-          "steppe-south-asia"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Iron_Age_in_India",
-        "ids": {
-          "wikidata": "Q1056845"
-        }
-      },
-      {
-        "id": "china-neolithic",
-        "name": "Neolithic",
-        "group": "ages-china",
-        "start": -9499,
-        "end": -1999,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -9499,
-            "source": {
-              "sourceKey": "wp-neolithic",
-              "sourceLocation": "section \"Periods by region > South and East Asia\": \"In East Asia, the earliest sites include the Nanzhuangtou culture around 9500–9000 BC, Pengtoushan culture around 7500–6100 BC, and Peiligang culture around 700\""
-            },
-            "note": "Wikipedia only (no PeriodO period for China): the earliest East Asian site it names, Nanzhuangtou (in China), around 9500–9000 BC."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1999,
-            "source": {
-              "sourceKey": "wp-neolithic",
-              "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
-            },
-            "note": "Wikipedia only: until the rise of the Erlitou culture."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-neolithic",
-            "sourceLocation": "section \"Periods by region > South and East Asia\": \"In East Asia, the earliest sites include the Nanzhuangtou culture around 9500–9000 BC, Pengtoushan culture around 7500–6100 BC, and Peiligang culture around 700\""
-          },
-          {
-            "sourceKey": "wp-neolithic",
-            "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
-          }
-        ],
-        "tracks": [
-          "east-asia"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Neolithic",
-        "ids": {
-          "wikidata": "Q36422"
-        }
-      },
-      {
-        "id": "china-bronze-age",
-        "name": "Bronze Age",
-        "group": "ages-china",
-        "start": -1999,
-        "end": -899,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -1999,
-            "source": {
-              "sourceKey": "wp-neolithic",
-              "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
-            },
-            "note": "Wikipedia only: where the Neolithic ends, with the Erlitou culture."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -899,
-            "source": {
-              "sourceKey": "wp-iron-age",
-              "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
-            },
-            "note": "Wikipedia only: where the Iron Age begins."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-neolithic",
-            "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
-          },
-          {
-            "sourceKey": "wp-iron-age",
-            "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
-          }
-        ],
-        "tracks": [
-          "east-asia"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Bronze_Age",
-        "ids": {
-          "wikidata": "Q11761"
-        }
-      },
-      {
-        "id": "china-iron-age",
-        "name": "Iron Age",
-        "group": "ages-china",
-        "start": -899,
-        "end": -99,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -899,
-            "source": {
-              "sourceKey": "wp-iron-age",
-              "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
-            },
-            "note": "Wikipedia only: a term \"used sometimes\" for China's transitional period."
-          }
-        ],
-        "endDates": [
-          {
-            "year": -99,
-            "source": {
-              "sourceKey": "wp-iron-age",
-              "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
-            },
-            "note": "Wikipedia only."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-iron-age",
-            "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
-          }
-        ],
-        "tracks": [
-          "east-asia"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Iron_Age",
-        "ids": {
-          "wikidata": "Q11764"
-        }
-      },
-      {
-        "id": "mesoamerica-late-archaic",
-        "name": "Late Archaic",
-        "group": "ages-mesoamerica",
-        "start": -3999,
-        "end": -1999,
-        "startDates": [
-          {
-            "year": -3999,
-            "source": {
-              "sourceKey": "periodo-p064v7m2kbt",
-              "sourceLocation": "period \"Late Archaic\", start \"4000 BC\" (p064v7m2kbt)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1999,
-            "source": {
-              "sourceKey": "periodo-p064v7m2kbt",
-              "sourceLocation": "period \"Late Archaic\", end \"2000 BC\" (p064v7m2kbt)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p064v7m2kbt",
-            "sourceLocation": "period \"Late Archaic\", start \"4000 BC\" (p064v7m2kbt)"
-          },
-          {
-            "sourceKey": "periodo-p064v7m2kbt",
-            "sourceLocation": "period \"Late Archaic\", end \"2000 BC\" (p064v7m2kbt)"
-          }
-        ],
-        "tracks": [
-          "americas"
-        ]
-      },
-      {
-        "id": "mesoamerica-formative",
-        "name": "Formative",
-        "group": "ages-mesoamerica",
-        "start": -1199,
-        "end": 250,
-        "circa": true,
-        "startDates": [
-          {
-            "year": -1199,
-            "source": {
-              "sourceKey": "periodo-p064v7mj95d",
-              "sourceLocation": "period \"Early Formative\", start \"CA. 1200 BC\" (p064v7mj95d)"
-            },
-            "note": "The Oxford handbook's Early Formative, \"ca. 1200 BC\"."
-          },
-          {
-            "year": -2499,
-            "source": {
-              "sourceKey": "wp-mesoamerican-chronology",
-              "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
-            },
-            "note": "Wikipedia's Formative."
-          }
-        ],
-        "endDates": [
-          {
-            "year": 250,
-            "source": {
-              "sourceKey": "periodo-p064v7m6cvm",
-              "sourceLocation": "period \"Formative period\", end \"250 AD\" (p064v7m6cvm)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p064v7mj95d",
-            "sourceLocation": "period \"Early Formative\", start \"CA. 1200 BC\" (p064v7mj95d)"
-          },
-          {
-            "sourceKey": "periodo-p064v7m6cvm",
-            "sourceLocation": "period \"Formative period\", end \"250 AD\" (p064v7m6cvm)"
-          }
-        ],
-        "tracks": [
-          "americas"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Mesoamerican_Preclassic_period",
-        "ids": {
-          "wikidata": "Q3063552"
-        }
-      },
-      {
-        "id": "mesoamerica-classic",
-        "name": "Classic",
-        "group": "ages-mesoamerica",
-        "start": 250,
-        "end": 900,
-        "startDates": [
-          {
-            "year": 250,
-            "source": {
-              "sourceKey": "wp-mesoamerican-chronology",
-              "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 900,
-            "source": {
-              "sourceKey": "wp-mesoamerican-chronology",
-              "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-mesoamerican-chronology",
-            "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
-          }
-        ],
-        "tracks": [
-          "americas"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Mesoamerican_Classic_period",
-        "ids": {
-          "wikidata": "Q6073099"
-        }
-      },
-      {
-        "id": "nile-neolithic",
-        "name": "Neolithic",
-        "group": "ages-nile-valley",
-        "start": -5999,
-        "end": -4499,
-        "startDates": [
-          {
-            "year": -5999,
-            "source": {
-              "sourceKey": "periodo-p0qk76zw52w",
-              "sourceLocation": "period \"Neolithic\", start \"6000 BCE\" (p0qk76zw52w)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -4499,
-            "source": {
-              "sourceKey": "periodo-p0qk76zw52w",
-              "sourceLocation": "period \"Neolithic\", end \"4500 BCE\" (p0qk76zw52w)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zw52w",
-            "sourceLocation": "period \"Neolithic\", start \"6000 BCE\" (p0qk76zw52w)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zw52w",
-            "sourceLocation": "period \"Neolithic\", end \"4500 BCE\" (p0qk76zw52w)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
-        "ids": {
-          "wikidata": "Q208520"
-        }
-      },
-      {
-        "id": "nile-predynastic",
-        "name": "Predynastic Period",
-        "group": "ages-nile-valley",
-        "start": -4499,
-        "end": -2949,
-        "startDates": [
-          {
-            "year": -4499,
-            "source": {
-              "sourceKey": "periodo-p0qk76zvrnc",
-              "sourceLocation": "period \"Predynastic\", start \"4500 BCE\" (p0qk76zvrnc)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2949,
-            "source": {
-              "sourceKey": "periodo-p0qk76zvrnc",
-              "sourceLocation": "period \"Predynastic\", end \"2950 BCE\" (p0qk76zvrnc)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zvrnc",
-            "sourceLocation": "period \"Predynastic\", start \"4500 BCE\" (p0qk76zvrnc)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zvrnc",
-            "sourceLocation": "period \"Predynastic\", end \"2950 BCE\" (p0qk76zvrnc)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
-        "ids": {
-          "wikidata": "Q208520"
-        }
-      },
-      {
-        "id": "nile-early-dynastic",
-        "name": "Early Dynastic Period",
-        "group": "ages-nile-valley",
-        "start": -2949,
-        "end": -2669,
-        "startDates": [
-          {
-            "year": -2949,
-            "source": {
-              "sourceKey": "periodo-p0qk76zkc72",
-              "sourceLocation": "period \"Early Dynastic\", start \"2950 BCE\" (p0qk76zkc72)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2669,
-            "source": {
-              "sourceKey": "periodo-p0qk76zkc72",
-              "sourceLocation": "period \"Early Dynastic\", end \"2670 BCE\" (p0qk76zkc72)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zkc72",
-            "sourceLocation": "period \"Early Dynastic\", start \"2950 BCE\" (p0qk76zkc72)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zkc72",
-            "sourceLocation": "period \"Early Dynastic\", end \"2670 BCE\" (p0qk76zkc72)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Early_Dynastic_Period_of_Egypt",
-        "ids": {
-          "wikidata": "Q187979"
-        }
-      },
-      {
-        "id": "nile-old-kingdom",
-        "name": "Old Kingdom",
-        "group": "ages-nile-valley",
-        "start": -2669,
-        "end": -2167,
-        "startDates": [
-          {
-            "year": -2669,
-            "source": {
-              "sourceKey": "periodo-p0qk76z92f9",
-              "sourceLocation": "period \"Old Kingdom\", start \"2670 BCE\" (p0qk76z92f9)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2167,
-            "source": {
-              "sourceKey": "periodo-p0qk76z92f9",
-              "sourceLocation": "period \"Old Kingdom\", end \"2168 BCE\" (p0qk76z92f9)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76z92f9",
-            "sourceLocation": "period \"Old Kingdom\", start \"2670 BCE\" (p0qk76z92f9)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76z92f9",
-            "sourceLocation": "period \"Old Kingdom\", end \"2168 BCE\" (p0qk76z92f9)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Old_Kingdom_of_Egypt",
-        "ids": {
-          "wikidata": "Q177819"
-        }
-      },
-      {
-        "id": "nile-first-intermediate",
-        "name": "First Intermediate Period",
-        "group": "ages-nile-valley",
-        "start": -2167,
-        "end": -2039,
-        "startDates": [
-          {
-            "year": -2167,
-            "source": {
-              "sourceKey": "periodo-p0qk76zqqr2",
-              "sourceLocation": "period \"First Intermediate Period\", start \"2168 BCE\" (p0qk76zqqr2)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -2039,
-            "source": {
-              "sourceKey": "periodo-p0qk76zqqr2",
-              "sourceLocation": "period \"First Intermediate Period\", end \"2040 BCE\" (p0qk76zqqr2)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zqqr2",
-            "sourceLocation": "period \"First Intermediate Period\", start \"2168 BCE\" (p0qk76zqqr2)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zqqr2",
-            "sourceLocation": "period \"First Intermediate Period\", end \"2040 BCE\" (p0qk76zqqr2)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/First_Intermediate_Period_of_Egypt",
-        "ids": {
-          "wikidata": "Q232211"
-        }
-      },
-      {
-        "id": "nile-middle-kingdom",
-        "name": "Middle Kingdom",
-        "group": "ages-nile-valley",
-        "start": -2039,
-        "end": -1639,
-        "startDates": [
-          {
-            "year": -2039,
-            "source": {
-              "sourceKey": "periodo-p0qk76zkb23",
-              "sourceLocation": "period \"Middle Kingdom\", start \"2040 BCE\" (p0qk76zkb23)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1639,
-            "source": {
-              "sourceKey": "periodo-p0qk76zkb23",
-              "sourceLocation": "period \"Middle Kingdom\", end \"1640 BCE\" (p0qk76zkb23)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zkb23",
-            "sourceLocation": "period \"Middle Kingdom\", start \"2040 BCE\" (p0qk76zkb23)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zkb23",
-            "sourceLocation": "period \"Middle Kingdom\", end \"1640 BCE\" (p0qk76zkb23)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Middle_Kingdom_of_Egypt",
-        "ids": {
-          "wikidata": "Q191324"
-        }
-      },
-      {
-        "id": "nile-second-intermediate",
-        "name": "Second Intermediate Period",
-        "group": "ages-nile-valley",
-        "start": -1639,
-        "end": -1547,
-        "startDates": [
-          {
-            "year": -1639,
-            "source": {
-              "sourceKey": "periodo-p0qk76zxgwt",
-              "sourceLocation": "period \"Second Intermediate Period\", start \"1640 BCE\" (p0qk76zxgwt)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1547,
-            "source": {
-              "sourceKey": "periodo-p0qk76zxgwt",
-              "sourceLocation": "period \"Second Intermediate Period\", end \"1548 BCE\" (p0qk76zxgwt)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zxgwt",
-            "sourceLocation": "period \"Second Intermediate Period\", start \"1640 BCE\" (p0qk76zxgwt)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zxgwt",
-            "sourceLocation": "period \"Second Intermediate Period\", end \"1548 BCE\" (p0qk76zxgwt)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Second_Intermediate_Period_of_Egypt",
-        "ids": {
-          "wikidata": "Q206715"
-        }
-      },
-      {
-        "id": "nile-new-kingdom",
-        "name": "New Kingdom",
-        "group": "ages-nile-valley",
-        "start": -1547,
-        "end": -1085,
-        "startDates": [
-          {
-            "year": -1547,
-            "source": {
-              "sourceKey": "periodo-p0qk76zvjkw",
-              "sourceLocation": "period \"New Kingdom\", start \"1548 BCE\" (p0qk76zvjkw)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -1085,
-            "source": {
-              "sourceKey": "periodo-p0qk76zvjkw",
-              "sourceLocation": "period \"New Kingdom\", end \"1086 BCE\" (p0qk76zvjkw)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zvjkw",
-            "sourceLocation": "period \"New Kingdom\", start \"1548 BCE\" (p0qk76zvjkw)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zvjkw",
-            "sourceLocation": "period \"New Kingdom\", end \"1086 BCE\" (p0qk76zvjkw)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/New_Kingdom_of_Egypt",
-        "ids": {
-          "wikidata": "Q180568"
-        }
-      },
-      {
-        "id": "nile-third-intermediate",
-        "name": "Third Intermediate Period",
-        "group": "ages-nile-valley",
-        "start": -1085,
-        "end": -663,
-        "startDates": [
-          {
-            "year": -1085,
-            "source": {
-              "sourceKey": "periodo-p0qk76zpmnv",
-              "sourceLocation": "period \"Third Intermediate Period\", start \"1086 BCE\" (p0qk76zpmnv)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -663,
-            "source": {
-              "sourceKey": "periodo-p0qk76zpmnv",
-              "sourceLocation": "period \"Third Intermediate Period\", end \"664 BCE\" (p0qk76zpmnv)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zpmnv",
-            "sourceLocation": "period \"Third Intermediate Period\", start \"1086 BCE\" (p0qk76zpmnv)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zpmnv",
-            "sourceLocation": "period \"Third Intermediate Period\", end \"664 BCE\" (p0qk76zpmnv)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Third_Intermediate_Period_of_Egypt",
-        "ids": {
-          "wikidata": "Q212728"
-        }
-      },
-      {
-        "id": "nile-late-period",
-        "name": "Late Period",
-        "group": "ages-nile-valley",
-        "start": -663,
-        "end": -331,
-        "startDates": [
-          {
-            "year": -663,
-            "source": {
-              "sourceKey": "periodo-p0qk76zh6n2",
-              "sourceLocation": "period \"Late Period\", start \"664 BCE\" (p0qk76zh6n2)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -331,
-            "source": {
-              "sourceKey": "periodo-p0qk76zh6n2",
-              "sourceLocation": "period \"Late Period\", end \"332 BCE\" (p0qk76zh6n2)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zh6n2",
-            "sourceLocation": "period \"Late Period\", start \"664 BCE\" (p0qk76zh6n2)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zh6n2",
-            "sourceLocation": "period \"Late Period\", end \"332 BCE\" (p0qk76zh6n2)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Late_Period_of_Egypt",
-        "ids": {
-          "wikidata": "Q621917"
-        }
-      },
-      {
-        "id": "nile-macedonian",
-        "name": "Macedonian Period",
-        "group": "ages-nile-valley",
-        "start": -331,
-        "end": -303,
-        "startDates": [
-          {
-            "year": -331,
-            "source": {
-              "sourceKey": "periodo-p0qk76z756b",
-              "sourceLocation": "period \"Macedonian\", start \"332 BCE\" (p0qk76z756b)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -303,
-            "source": {
-              "sourceKey": "periodo-p0qk76z756b",
-              "sourceLocation": "period \"Macedonian\", end \"304 BCE\" (p0qk76z756b)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76z756b",
-            "sourceLocation": "period \"Macedonian\", start \"332 BCE\" (p0qk76z756b)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76z756b",
-            "sourceLocation": "period \"Macedonian\", end \"304 BCE\" (p0qk76z756b)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ]
-      },
-      {
-        "id": "nile-ptolemaic",
-        "name": "Ptolemaic Period",
-        "group": "ages-nile-valley",
-        "start": -303,
-        "end": -29,
-        "startDates": [
-          {
-            "year": -303,
-            "source": {
-              "sourceKey": "periodo-p0qk76zn9c9",
-              "sourceLocation": "period \"Ptolemaic\", start \"304 BCE\" (p0qk76zn9c9)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": -29,
-            "source": {
-              "sourceKey": "periodo-p0qk76zn9c9",
-              "sourceLocation": "period \"Ptolemaic\", end \"30 BCE\" (p0qk76zn9c9)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zn9c9",
-            "sourceLocation": "period \"Ptolemaic\", start \"304 BCE\" (p0qk76zn9c9)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zn9c9",
-            "sourceLocation": "period \"Ptolemaic\", end \"30 BCE\" (p0qk76zn9c9)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom",
-        "ids": {
-          "wikidata": "Q2320005"
-        }
-      },
-      {
-        "id": "nile-roman",
-        "name": "Roman Period",
-        "group": "ages-nile-valley",
-        "start": -29,
-        "end": 394,
-        "startDates": [
-          {
-            "year": -29,
-            "source": {
-              "sourceKey": "periodo-p0qk76zbv62",
-              "sourceLocation": "period \"Roman\", start \"30 BCE\" (p0qk76zbv62)"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 394,
-            "source": {
-              "sourceKey": "periodo-p0qk76zbv62",
-              "sourceLocation": "period \"Roman\", end \"394 CE\" (p0qk76zbv62)"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "periodo-p0qk76zbv62",
-            "sourceLocation": "period \"Roman\", start \"30 BCE\" (p0qk76zbv62)"
-          },
-          {
-            "sourceKey": "periodo-p0qk76zbv62",
-            "sourceLocation": "period \"Roman\", end \"394 CE\" (p0qk76zbv62)"
-          }
-        ],
-        "tracks": [
-          "africa"
-        ],
-        "url": "https://en.wikipedia.org/wiki/Roman_Egypt",
-        "ids": {
-          "wikidata": "Q202311"
-        }
+        },
+        "kind": "age",
+        "line": "roman-world"
       }
     ],
-    "eraGroups": {
+    "lines": {
       "ages-near-east": {
         "name": "Near East"
       },
@@ -2528,7 +1024,525 @@
       "url": "https://en.wikipedia.org/wiki/Africa",
       "ids": {
         "wikidata": "Q15"
-      }
+      },
+      "context": [
+        {
+          "id": "nile-neolithic",
+          "name": "Neolithic",
+          "start": -5999,
+          "end": -4499,
+          "startDates": [
+            {
+              "year": -5999,
+              "source": {
+                "sourceKey": "periodo-p0qk76zw52w",
+                "sourceLocation": "period \"Neolithic\", start \"6000 BCE\" (p0qk76zw52w)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -4499,
+              "source": {
+                "sourceKey": "periodo-p0qk76zw52w",
+                "sourceLocation": "period \"Neolithic\", end \"4500 BCE\" (p0qk76zw52w)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zw52w",
+              "sourceLocation": "period \"Neolithic\", start \"6000 BCE\" (p0qk76zw52w)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zw52w",
+              "sourceLocation": "period \"Neolithic\", end \"4500 BCE\" (p0qk76zw52w)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
+          "ids": {
+            "wikidata": "Q208520"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-predynastic",
+          "name": "Predynastic Period",
+          "start": -4499,
+          "end": -2949,
+          "startDates": [
+            {
+              "year": -4499,
+              "source": {
+                "sourceKey": "periodo-p0qk76zvrnc",
+                "sourceLocation": "period \"Predynastic\", start \"4500 BCE\" (p0qk76zvrnc)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -2949,
+              "source": {
+                "sourceKey": "periodo-p0qk76zvrnc",
+                "sourceLocation": "period \"Predynastic\", end \"2950 BCE\" (p0qk76zvrnc)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zvrnc",
+              "sourceLocation": "period \"Predynastic\", start \"4500 BCE\" (p0qk76zvrnc)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zvrnc",
+              "sourceLocation": "period \"Predynastic\", end \"2950 BCE\" (p0qk76zvrnc)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Prehistoric_Egypt",
+          "ids": {
+            "wikidata": "Q208520"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-early-dynastic",
+          "name": "Early Dynastic Period",
+          "start": -2949,
+          "end": -2669,
+          "startDates": [
+            {
+              "year": -2949,
+              "source": {
+                "sourceKey": "periodo-p0qk76zkc72",
+                "sourceLocation": "period \"Early Dynastic\", start \"2950 BCE\" (p0qk76zkc72)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -2669,
+              "source": {
+                "sourceKey": "periodo-p0qk76zkc72",
+                "sourceLocation": "period \"Early Dynastic\", end \"2670 BCE\" (p0qk76zkc72)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zkc72",
+              "sourceLocation": "period \"Early Dynastic\", start \"2950 BCE\" (p0qk76zkc72)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zkc72",
+              "sourceLocation": "period \"Early Dynastic\", end \"2670 BCE\" (p0qk76zkc72)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Early_Dynastic_Period_of_Egypt",
+          "ids": {
+            "wikidata": "Q187979"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-old-kingdom",
+          "name": "Old Kingdom",
+          "start": -2669,
+          "end": -2167,
+          "startDates": [
+            {
+              "year": -2669,
+              "source": {
+                "sourceKey": "periodo-p0qk76z92f9",
+                "sourceLocation": "period \"Old Kingdom\", start \"2670 BCE\" (p0qk76z92f9)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -2167,
+              "source": {
+                "sourceKey": "periodo-p0qk76z92f9",
+                "sourceLocation": "period \"Old Kingdom\", end \"2168 BCE\" (p0qk76z92f9)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76z92f9",
+              "sourceLocation": "period \"Old Kingdom\", start \"2670 BCE\" (p0qk76z92f9)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76z92f9",
+              "sourceLocation": "period \"Old Kingdom\", end \"2168 BCE\" (p0qk76z92f9)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Old_Kingdom_of_Egypt",
+          "ids": {
+            "wikidata": "Q177819"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-first-intermediate",
+          "name": "First Intermediate Period",
+          "start": -2167,
+          "end": -2039,
+          "startDates": [
+            {
+              "year": -2167,
+              "source": {
+                "sourceKey": "periodo-p0qk76zqqr2",
+                "sourceLocation": "period \"First Intermediate Period\", start \"2168 BCE\" (p0qk76zqqr2)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -2039,
+              "source": {
+                "sourceKey": "periodo-p0qk76zqqr2",
+                "sourceLocation": "period \"First Intermediate Period\", end \"2040 BCE\" (p0qk76zqqr2)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zqqr2",
+              "sourceLocation": "period \"First Intermediate Period\", start \"2168 BCE\" (p0qk76zqqr2)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zqqr2",
+              "sourceLocation": "period \"First Intermediate Period\", end \"2040 BCE\" (p0qk76zqqr2)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/First_Intermediate_Period_of_Egypt",
+          "ids": {
+            "wikidata": "Q232211"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-middle-kingdom",
+          "name": "Middle Kingdom",
+          "start": -2039,
+          "end": -1639,
+          "startDates": [
+            {
+              "year": -2039,
+              "source": {
+                "sourceKey": "periodo-p0qk76zkb23",
+                "sourceLocation": "period \"Middle Kingdom\", start \"2040 BCE\" (p0qk76zkb23)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1639,
+              "source": {
+                "sourceKey": "periodo-p0qk76zkb23",
+                "sourceLocation": "period \"Middle Kingdom\", end \"1640 BCE\" (p0qk76zkb23)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zkb23",
+              "sourceLocation": "period \"Middle Kingdom\", start \"2040 BCE\" (p0qk76zkb23)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zkb23",
+              "sourceLocation": "period \"Middle Kingdom\", end \"1640 BCE\" (p0qk76zkb23)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Middle_Kingdom_of_Egypt",
+          "ids": {
+            "wikidata": "Q191324"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-second-intermediate",
+          "name": "Second Intermediate Period",
+          "start": -1639,
+          "end": -1547,
+          "startDates": [
+            {
+              "year": -1639,
+              "source": {
+                "sourceKey": "periodo-p0qk76zxgwt",
+                "sourceLocation": "period \"Second Intermediate Period\", start \"1640 BCE\" (p0qk76zxgwt)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1547,
+              "source": {
+                "sourceKey": "periodo-p0qk76zxgwt",
+                "sourceLocation": "period \"Second Intermediate Period\", end \"1548 BCE\" (p0qk76zxgwt)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zxgwt",
+              "sourceLocation": "period \"Second Intermediate Period\", start \"1640 BCE\" (p0qk76zxgwt)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zxgwt",
+              "sourceLocation": "period \"Second Intermediate Period\", end \"1548 BCE\" (p0qk76zxgwt)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Second_Intermediate_Period_of_Egypt",
+          "ids": {
+            "wikidata": "Q206715"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-new-kingdom",
+          "name": "New Kingdom",
+          "start": -1547,
+          "end": -1085,
+          "startDates": [
+            {
+              "year": -1547,
+              "source": {
+                "sourceKey": "periodo-p0qk76zvjkw",
+                "sourceLocation": "period \"New Kingdom\", start \"1548 BCE\" (p0qk76zvjkw)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1085,
+              "source": {
+                "sourceKey": "periodo-p0qk76zvjkw",
+                "sourceLocation": "period \"New Kingdom\", end \"1086 BCE\" (p0qk76zvjkw)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zvjkw",
+              "sourceLocation": "period \"New Kingdom\", start \"1548 BCE\" (p0qk76zvjkw)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zvjkw",
+              "sourceLocation": "period \"New Kingdom\", end \"1086 BCE\" (p0qk76zvjkw)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/New_Kingdom_of_Egypt",
+          "ids": {
+            "wikidata": "Q180568"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-third-intermediate",
+          "name": "Third Intermediate Period",
+          "start": -1085,
+          "end": -663,
+          "startDates": [
+            {
+              "year": -1085,
+              "source": {
+                "sourceKey": "periodo-p0qk76zpmnv",
+                "sourceLocation": "period \"Third Intermediate Period\", start \"1086 BCE\" (p0qk76zpmnv)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -663,
+              "source": {
+                "sourceKey": "periodo-p0qk76zpmnv",
+                "sourceLocation": "period \"Third Intermediate Period\", end \"664 BCE\" (p0qk76zpmnv)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zpmnv",
+              "sourceLocation": "period \"Third Intermediate Period\", start \"1086 BCE\" (p0qk76zpmnv)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zpmnv",
+              "sourceLocation": "period \"Third Intermediate Period\", end \"664 BCE\" (p0qk76zpmnv)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Third_Intermediate_Period_of_Egypt",
+          "ids": {
+            "wikidata": "Q212728"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-late-period",
+          "name": "Late Period",
+          "start": -663,
+          "end": -331,
+          "startDates": [
+            {
+              "year": -663,
+              "source": {
+                "sourceKey": "periodo-p0qk76zh6n2",
+                "sourceLocation": "period \"Late Period\", start \"664 BCE\" (p0qk76zh6n2)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -331,
+              "source": {
+                "sourceKey": "periodo-p0qk76zh6n2",
+                "sourceLocation": "period \"Late Period\", end \"332 BCE\" (p0qk76zh6n2)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zh6n2",
+              "sourceLocation": "period \"Late Period\", start \"664 BCE\" (p0qk76zh6n2)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zh6n2",
+              "sourceLocation": "period \"Late Period\", end \"332 BCE\" (p0qk76zh6n2)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Late_Period_of_Egypt",
+          "ids": {
+            "wikidata": "Q621917"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-macedonian",
+          "name": "Macedonian Period",
+          "start": -331,
+          "end": -303,
+          "startDates": [
+            {
+              "year": -331,
+              "source": {
+                "sourceKey": "periodo-p0qk76z756b",
+                "sourceLocation": "period \"Macedonian\", start \"332 BCE\" (p0qk76z756b)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -303,
+              "source": {
+                "sourceKey": "periodo-p0qk76z756b",
+                "sourceLocation": "period \"Macedonian\", end \"304 BCE\" (p0qk76z756b)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76z756b",
+              "sourceLocation": "period \"Macedonian\", start \"332 BCE\" (p0qk76z756b)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76z756b",
+              "sourceLocation": "period \"Macedonian\", end \"304 BCE\" (p0qk76z756b)"
+            }
+          ],
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-ptolemaic",
+          "name": "Ptolemaic Period",
+          "start": -303,
+          "end": -29,
+          "startDates": [
+            {
+              "year": -303,
+              "source": {
+                "sourceKey": "periodo-p0qk76zn9c9",
+                "sourceLocation": "period \"Ptolemaic\", start \"304 BCE\" (p0qk76zn9c9)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -29,
+              "source": {
+                "sourceKey": "periodo-p0qk76zn9c9",
+                "sourceLocation": "period \"Ptolemaic\", end \"30 BCE\" (p0qk76zn9c9)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zn9c9",
+              "sourceLocation": "period \"Ptolemaic\", start \"304 BCE\" (p0qk76zn9c9)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zn9c9",
+              "sourceLocation": "period \"Ptolemaic\", end \"30 BCE\" (p0qk76zn9c9)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom",
+          "ids": {
+            "wikidata": "Q2320005"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        },
+        {
+          "id": "nile-roman",
+          "name": "Roman Period",
+          "start": -29,
+          "end": 394,
+          "startDates": [
+            {
+              "year": -29,
+              "source": {
+                "sourceKey": "periodo-p0qk76zbv62",
+                "sourceLocation": "period \"Roman\", start \"30 BCE\" (p0qk76zbv62)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 394,
+              "source": {
+                "sourceKey": "periodo-p0qk76zbv62",
+                "sourceLocation": "period \"Roman\", end \"394 CE\" (p0qk76zbv62)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0qk76zbv62",
+              "sourceLocation": "period \"Roman\", start \"30 BCE\" (p0qk76zbv62)"
+            },
+            {
+              "sourceKey": "periodo-p0qk76zbv62",
+              "sourceLocation": "period \"Roman\", end \"394 CE\" (p0qk76zbv62)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Roman_Egypt",
+          "ids": {
+            "wikidata": "Q202311"
+          },
+          "kind": "age",
+          "line": "ages-nile-valley"
+        }
+      ]
     },
     {
       "id": "egypt",
@@ -4768,7 +3782,381 @@
     {
       "id": "europe-med",
       "name": "Europe & Mediterranean",
-      "color": "#3f6aa8"
+      "color": "#3f6aa8",
+      "context": [
+        {
+          "id": "central-europe-neolithic",
+          "name": "Neolithic",
+          "start": -5599,
+          "end": -4499,
+          "startDates": [
+            {
+              "year": -5599,
+              "source": {
+                "sourceKey": "periodo-p0wctqtpn3m",
+                "sourceLocation": "period \"Early Neolithic\", start \"-5600\" (p0wctqtpn3m)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -4499,
+              "source": {
+                "sourceKey": "periodo-p0wctqthbgf",
+                "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
+              },
+              "note": "AMCR's Early Neolithic ends 4701 BC; the age runs on to its Eneolithic."
+            },
+            {
+              "year": -4700,
+              "source": {
+                "sourceKey": "periodo-p0wctqtpn3m",
+                "sourceLocation": "period \"Early Neolithic\", end \"-4701\" (p0wctqtpn3m)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0wctqtpn3m",
+              "sourceLocation": "period \"Early Neolithic\", start \"-5600\" (p0wctqtpn3m)"
+            },
+            {
+              "sourceKey": "periodo-p0wctqthbgf",
+              "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Neolithic_Europe",
+          "ids": {
+            "wikidata": "Q1275904"
+          },
+          "kind": "age",
+          "line": "ages-central-europe"
+        },
+        {
+          "id": "central-europe-copper-age",
+          "name": "Copper Age",
+          "start": -4499,
+          "end": -2300,
+          "startDates": [
+            {
+              "year": -4499,
+              "source": {
+                "sourceKey": "periodo-p0wctqthbgf",
+                "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
+              }
+            },
+            {
+              "year": -4249,
+              "source": {
+                "sourceKey": "periodo-p0qhb66f8kc",
+                "sourceLocation": "period \"Copper Age\", start \"6250 BP (2000)\" (p0qhb66f8kc)"
+              },
+              "note": "ARIADNE's Copper Age (Austria)."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -2300,
+              "source": {
+                "sourceKey": "periodo-p0wctqthbgf",
+                "sourceLocation": "period \"Eneolithic\", end \"-2301\" (p0wctqthbgf)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0wctqthbgf",
+              "sourceLocation": "period \"Eneolithic\", start \"-4500\" (p0wctqthbgf)"
+            },
+            {
+              "sourceKey": "periodo-p0wctqthbgf",
+              "sourceLocation": "period \"Eneolithic\", end \"-2301\" (p0wctqthbgf)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Chalcolithic_Europe",
+          "ids": {
+            "wikidata": "Q4354077"
+          },
+          "kind": "age",
+          "line": "ages-central-europe"
+        },
+        {
+          "id": "central-europe-bronze-age",
+          "name": "Bronze Age",
+          "start": -2299,
+          "end": -799,
+          "startDates": [
+            {
+              "year": -2299,
+              "source": {
+                "sourceKey": "periodo-p0wctqtcsjh",
+                "sourceLocation": "period \"Bronze Age\", start \"-2300\" (p0wctqtcsjh)"
+              }
+            },
+            {
+              "year": -2199,
+              "source": {
+                "sourceKey": "periodo-p0qhb66wrsn",
+                "sourceLocation": "period \"Bronze Age\", start \"4200 BP (2000)\" (p0qhb66wrsn)"
+              },
+              "note": "ARIADNE's Bronze Age (Austria)."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -799,
+              "source": {
+                "sourceKey": "periodo-p0wctqtbqvf",
+                "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
+              },
+              "note": "Where AMCR's Hallstatt–La Tène begins; its Bronze Age runs to 751 BC."
+            },
+            {
+              "year": -750,
+              "source": {
+                "sourceKey": "periodo-p0wctqtcsjh",
+                "sourceLocation": "period \"Bronze Age\", end \"-751\" (p0wctqtcsjh)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0wctqtcsjh",
+              "sourceLocation": "period \"Bronze Age\", start \"-2300\" (p0wctqtcsjh)"
+            },
+            {
+              "sourceKey": "periodo-p0wctqtbqvf",
+              "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Bronze_Age_Europe",
+          "ids": {
+            "wikidata": "Q2394404"
+          },
+          "kind": "age",
+          "line": "ages-central-europe"
+        },
+        {
+          "id": "central-europe-iron-age",
+          "name": "Iron Age",
+          "start": -799,
+          "end": -30,
+          "startDates": [
+            {
+              "year": -799,
+              "source": {
+                "sourceKey": "periodo-p0wctqtbqvf",
+                "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
+              },
+              "note": "AMCR's Hallstatt and La Tène periods."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -30,
+              "source": {
+                "sourceKey": "periodo-p0wctqtbqvf",
+                "sourceLocation": "period \"Hallstatt–La Tène Period\", end \"-31\" (p0wctqtbqvf)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0wctqtbqvf",
+              "sourceLocation": "period \"Hallstatt–La Tène Period\", start \"-800\" (p0wctqtbqvf)"
+            },
+            {
+              "sourceKey": "periodo-p0wctqtbqvf",
+              "sourceLocation": "period \"Hallstatt–La Tène Period\", end \"-31\" (p0wctqtbqvf)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Iron_Age_Europe",
+          "ids": {
+            "wikidata": "Q16000127"
+          },
+          "kind": "age",
+          "line": "ages-central-europe"
+        },
+        {
+          "id": "aegean-neolithic",
+          "name": "Neolithic",
+          "start": -6499,
+          "end": -3199,
+          "startDates": [
+            {
+              "year": -6499,
+              "source": {
+                "sourceKey": "periodo-p0ds9qj3x2t",
+                "sourceLocation": "period \"Neolithic\", start \"6500 BC\" (p0ds9qj3x2t)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -3199,
+              "source": {
+                "sourceKey": "periodo-p0ds9qj3x2t",
+                "sourceLocation": "period \"Neolithic\", end \"3200/3000 BC\" (p0ds9qj3x2t)"
+              },
+              "note": "The BSA gives 3200/3000 BC."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0ds9qj3x2t",
+              "sourceLocation": "period \"Neolithic\", start \"6500 BC\" (p0ds9qj3x2t)"
+            },
+            {
+              "sourceKey": "periodo-p0ds9qj3x2t",
+              "sourceLocation": "period \"Neolithic\", end \"3200/3000 BC\" (p0ds9qj3x2t)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Neolithic_Greece",
+          "ids": {
+            "wikidata": "Q16737804"
+          },
+          "kind": "age",
+          "line": "ages-aegean"
+        },
+        {
+          "id": "aegean-bronze-age",
+          "name": "Bronze Age",
+          "start": -3199,
+          "end": -1099,
+          "startDates": [
+            {
+              "year": -3199,
+              "source": {
+                "sourceKey": "periodo-p0ds9qjq7b2",
+                "sourceLocation": "period \"Bronze Age\", start \"3200 BC\" (p0ds9qjq7b2)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1099,
+              "source": {
+                "sourceKey": "periodo-p0ds9qjrvwn",
+                "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
+              },
+              "note": "Where the BSA's Early Iron Age begins; its Bronze Age runs to 1050 BC."
+            },
+            {
+              "year": -1049,
+              "source": {
+                "sourceKey": "periodo-p0ds9qjq7b2",
+                "sourceLocation": "period \"Bronze Age\", end \"1050 BC\" (p0ds9qjq7b2)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0ds9qjq7b2",
+              "sourceLocation": "period \"Bronze Age\", start \"3200 BC\" (p0ds9qjq7b2)"
+            },
+            {
+              "sourceKey": "periodo-p0ds9qjrvwn",
+              "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Aegean_civilization",
+          "ids": {
+            "wikidata": "Q192530"
+          },
+          "kind": "age",
+          "line": "ages-aegean"
+        },
+        {
+          "id": "aegean-early-iron-age",
+          "name": "Early Iron Age",
+          "start": -1099,
+          "end": -699,
+          "startDates": [
+            {
+              "year": -1099,
+              "source": {
+                "sourceKey": "periodo-p0ds9qjrvwn",
+                "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -699,
+              "source": {
+                "sourceKey": "periodo-p0ds9qjrvwn",
+                "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0ds9qjrvwn",
+              "sourceLocation": "period \"Early Iron Age\", start \"1100 BC\" (p0ds9qjrvwn)"
+            },
+            {
+              "sourceKey": "periodo-p0ds9qjrvwn",
+              "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Greek_Dark_Ages",
+          "ids": {
+            "wikidata": "Q210443"
+          },
+          "kind": "age",
+          "line": "ages-aegean"
+        },
+        {
+          "id": "classical-antiquity",
+          "name": "Classical antiquity",
+          "start": -699,
+          "end": 476,
+          "startDates": [
+            {
+              "year": -699,
+              "source": {
+                "sourceKey": "periodo-p0ds9qjrvwn",
+                "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
+              },
+              "note": "Where the BSA's Early Iron Age ends."
+            },
+            {
+              "year": -749,
+              "source": {
+                "sourceKey": "wp-classical-antiquity",
+                "sourceLocation": "lead: \"Classical antiquity, also known as the classical era, classical period, classical age, or simply antiquity, is the period of cultural European history between t\""
+              },
+              "margin": 50,
+              "note": "The 8th century BC."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 476,
+              "source": {
+                "sourceKey": "wp-classical-antiquity",
+                "sourceLocation": "lead: \"Conventionally, it is often considered to begin with the earliest recorded Epic Greek poetry of Homer (8th–7th centuries BC) and end with the fall of the Wester\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0ds9qjrvwn",
+              "sourceLocation": "period \"Early Iron Age\", end \"700 BC\" (p0ds9qjrvwn)"
+            },
+            {
+              "sourceKey": "wp-classical-antiquity",
+              "sourceLocation": "lead: \"Conventionally, it is often considered to begin with the earliest recorded Epic Greek poetry of Homer (8th–7th centuries BC) and end with the fall of the Wester\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Classical_antiquity",
+          "ids": {
+            "wikidata": "Q486761"
+          },
+          "kind": "age",
+          "line": "ages-aegean"
+        }
+      ]
     },
     {
       "id": "europe",
@@ -8500,7 +7888,192 @@
       "url": "https://en.wikipedia.org/wiki/Ancient_Near_East",
       "ids": {
         "wikidata": "Q269678"
-      }
+      },
+      "context": [
+        {
+          "id": "near-east-neolithic",
+          "name": "Neolithic",
+          "start": -9749,
+          "end": -4499,
+          "startDates": [
+            {
+              "year": -9749,
+              "source": {
+                "sourceKey": "periodo-p0ckt9xjf45",
+                "sourceLocation": "period \"Neolithic\", start \"9750 BCE\" (p0ckt9xjf45)"
+              }
+            },
+            {
+              "year": -8299,
+              "source": {
+                "sourceKey": "periodo-p0dkm292q3s",
+                "sourceLocation": "period \"Pre-Pottery Neolithic\", start \"8,300 BCE\" (p0dkm292q3s)"
+              },
+              "note": "NEAEHL's Pre-Pottery Neolithic starts later."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -4499,
+              "source": {
+                "sourceKey": "periodo-p0dkm29sd62",
+                "sourceLocation": "period \"Pottery Neolithic\", end \"4,500 BCE\" (p0dkm29sd62)"
+              },
+              "note": "The end of NEAEHL's Pottery Neolithic."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0ckt9xjf45",
+              "sourceLocation": "period \"Neolithic\", start \"9750 BCE\" (p0ckt9xjf45)"
+            },
+            {
+              "sourceKey": "periodo-p0dkm29sd62",
+              "sourceLocation": "period \"Pottery Neolithic\", end \"4,500 BCE\" (p0dkm29sd62)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Neolithic",
+          "ids": {
+            "wikidata": "Q36422"
+          },
+          "kind": "age",
+          "line": "ages-near-east"
+        },
+        {
+          "id": "near-east-chalcolithic",
+          "name": "Chalcolithic",
+          "start": -4499,
+          "end": -3299,
+          "startDates": [
+            {
+              "year": -4499,
+              "source": {
+                "sourceKey": "periodo-p0dkm29j944",
+                "sourceLocation": "period \"Chalcolithic\", start \"4,500 BCE\" (p0dkm29j944)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -3299,
+              "source": {
+                "sourceKey": "periodo-p0dkm29j944",
+                "sourceLocation": "period \"Chalcolithic\", end \"3,300 BCE\" (p0dkm29j944)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0dkm29j944",
+              "sourceLocation": "period \"Chalcolithic\", start \"4,500 BCE\" (p0dkm29j944)"
+            },
+            {
+              "sourceKey": "periodo-p0dkm29j944",
+              "sourceLocation": "period \"Chalcolithic\", end \"3,300 BCE\" (p0dkm29j944)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Chalcolithic",
+          "ids": {
+            "wikidata": "Q130253"
+          },
+          "kind": "age",
+          "line": "ages-near-east"
+        },
+        {
+          "id": "near-east-bronze-age",
+          "name": "Bronze Age",
+          "start": -3299,
+          "end": -1199,
+          "startDates": [
+            {
+              "year": -3299,
+              "source": {
+                "sourceKey": "periodo-p0dkm29gmkt",
+                "sourceLocation": "period \"Bronze Age\", start \"3300 BCE\" (p0dkm29gmkt)"
+              }
+            },
+            {
+              "year": -3499,
+              "source": {
+                "sourceKey": "periodo-p0hsq83z6ms",
+                "sourceLocation": "period \"Bronze Age\", start \"3500 BCE\" (p0hsq83z6ms)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "periodo-p0dkm29gmkt",
+                "sourceLocation": "period \"Bronze Age\", end \"1200 BCE\" (p0dkm29gmkt)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0dkm29gmkt",
+              "sourceLocation": "period \"Bronze Age\", start \"3300 BCE\" (p0dkm29gmkt)"
+            },
+            {
+              "sourceKey": "periodo-p0dkm29gmkt",
+              "sourceLocation": "period \"Bronze Age\", end \"1200 BCE\" (p0dkm29gmkt)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Bronze_Age",
+          "ids": {
+            "wikidata": "Q11761"
+          },
+          "kind": "age",
+          "line": "ages-near-east"
+        },
+        {
+          "id": "near-east-iron-age",
+          "name": "Iron Age",
+          "start": -1199,
+          "end": -585,
+          "startDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "periodo-p0dkm29kmvv",
+                "sourceLocation": "period \"Iron Age\", start \"1200 BCE\" (p0dkm29kmvv)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -585,
+              "source": {
+                "sourceKey": "periodo-p0dkm29kmvv",
+                "sourceLocation": "period \"Iron Age\", end \"586 BCE\" (p0dkm29kmvv)"
+              }
+            },
+            {
+              "year": -329,
+              "source": {
+                "sourceKey": "periodo-p0m64td6gpk",
+                "sourceLocation": "period \"Iron Age\", end \"-330\" (p0m64td6gpk)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p0dkm29kmvv",
+              "sourceLocation": "period \"Iron Age\", start \"1200 BCE\" (p0dkm29kmvv)"
+            },
+            {
+              "sourceKey": "periodo-p0dkm29kmvv",
+              "sourceLocation": "period \"Iron Age\", end \"586 BCE\" (p0dkm29kmvv)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Iron_Age",
+          "ids": {
+            "wikidata": "Q11764"
+          },
+          "kind": "age",
+          "line": "ages-near-east"
+        }
+      ]
     },
     {
       "id": "levant",
@@ -13764,7 +13337,135 @@
     {
       "id": "steppe-south-asia",
       "name": "Steppe & South Asia",
-      "color": "#7a8a2a"
+      "color": "#7a8a2a",
+      "context": [
+        {
+          "id": "south-asia-neolithic",
+          "name": "Neolithic",
+          "start": -6999,
+          "end": -3299,
+          "circa": true,
+          "startDates": [
+            {
+              "year": -6999,
+              "source": {
+                "sourceKey": "wp-neolithic",
+                "sourceLocation": "section \"Periods by region > South and East Asia\": \"Settled life, encompassing the transition from foraging to farming and pastoralism, began in South Asia in the region of Balochistan, Pakistan, around 7,000 BC.\""
+              },
+              "note": "Wikipedia only (no PeriodO period for the region's ages). Settled life in Balochistan."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -3299,
+              "source": {
+                "sourceKey": "wp-bronze-age",
+                "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
+              },
+              "note": "Wikipedia only (no PeriodO period for the region's ages). Where the Bronze Age begins."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-neolithic",
+              "sourceLocation": "section \"Periods by region > South and East Asia\": \"Settled life, encompassing the transition from foraging to farming and pastoralism, began in South Asia in the region of Balochistan, Pakistan, around 7,000 BC.\""
+            },
+            {
+              "sourceKey": "wp-bronze-age",
+              "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/South_Asian_Stone_Age",
+          "ids": {
+            "wikidata": "Q1287957"
+          },
+          "kind": "age",
+          "line": "ages-south-asia"
+        },
+        {
+          "id": "south-asia-bronze-age",
+          "name": "Bronze Age",
+          "start": -3299,
+          "end": -1199,
+          "circa": true,
+          "startDates": [
+            {
+              "year": -3299,
+              "source": {
+                "sourceKey": "wp-bronze-age",
+                "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
+              },
+              "note": "Wikipedia only (no PeriodO period for the region's ages)."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "wp-iron-age",
+                "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
+              },
+              "note": "Wikipedia only (no PeriodO period for the region's ages). Where the Iron Age begins."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-bronze-age",
+              "sourceLocation": "section \"Asia > South Asia > Indus Valley\": \"The Bronze Age on the Indian subcontinent began c. 3300 BC with the beginning of the Indus Valley Civilization.\""
+            },
+            {
+              "sourceKey": "wp-iron-age",
+              "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Bronze_Age_India",
+          "ids": {
+            "wikidata": "Q4974228"
+          },
+          "kind": "age",
+          "line": "ages-south-asia"
+        },
+        {
+          "id": "south-asia-iron-age",
+          "name": "Iron Age",
+          "start": -1199,
+          "end": -249,
+          "circa": true,
+          "startDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "wp-iron-age",
+                "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
+              },
+              "note": "Wikipedia only (no PeriodO period for the region's ages). The Painted Grey Ware culture."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -249,
+              "source": {
+                "sourceKey": "wp-iron-age",
+                "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
+              },
+              "margin": 50,
+              "note": "Wikipedia only (no PeriodO period for the region's ages). To the reign of Ashoka, in the 3rd century BC."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-iron-age",
+              "sourceLocation": "lead: \"The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Iron_Age_in_India",
+          "ids": {
+            "wikidata": "Q1056845"
+          },
+          "kind": "age",
+          "line": "ages-south-asia"
+        }
+      ]
     },
     {
       "id": "steppe",
@@ -16278,7 +15979,134 @@
     {
       "id": "east-asia",
       "name": "East & Southeast Asia",
-      "color": "#6a4a9a"
+      "color": "#6a4a9a",
+      "context": [
+        {
+          "id": "china-neolithic",
+          "name": "Neolithic",
+          "start": -9499,
+          "end": -1999,
+          "circa": true,
+          "startDates": [
+            {
+              "year": -9499,
+              "source": {
+                "sourceKey": "wp-neolithic",
+                "sourceLocation": "section \"Periods by region > South and East Asia\": \"In East Asia, the earliest sites include the Nanzhuangtou culture around 9500–9000 BC, Pengtoushan culture around 7500–6100 BC, and Peiligang culture around 700\""
+              },
+              "note": "Wikipedia only (no PeriodO period for China): the earliest East Asian site it names, Nanzhuangtou (in China), around 9500–9000 BC."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1999,
+              "source": {
+                "sourceKey": "wp-neolithic",
+                "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
+              },
+              "note": "Wikipedia only: until the rise of the Erlitou culture."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-neolithic",
+              "sourceLocation": "section \"Periods by region > South and East Asia\": \"In East Asia, the earliest sites include the Nanzhuangtou culture around 9500–9000 BC, Pengtoushan culture around 7500–6100 BC, and Peiligang culture around 700\""
+            },
+            {
+              "sourceKey": "wp-neolithic",
+              "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Neolithic",
+          "ids": {
+            "wikidata": "Q36422"
+          },
+          "kind": "age",
+          "line": "ages-china"
+        },
+        {
+          "id": "china-bronze-age",
+          "name": "Bronze Age",
+          "start": -1999,
+          "end": -899,
+          "circa": true,
+          "startDates": [
+            {
+              "year": -1999,
+              "source": {
+                "sourceKey": "wp-neolithic",
+                "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
+              },
+              "note": "Wikipedia only: where the Neolithic ends, with the Erlitou culture."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -899,
+              "source": {
+                "sourceKey": "wp-iron-age",
+                "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
+              },
+              "note": "Wikipedia only: where the Iron Age begins."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-neolithic",
+              "sourceLocation": "lead: \"In China, it lasted until circa 2000 BC with the rise of the pre-Shang Erlitou culture, as it did in Scandinavia.\""
+            },
+            {
+              "sourceKey": "wp-iron-age",
+              "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Bronze_Age",
+          "ids": {
+            "wikidata": "Q11761"
+          },
+          "kind": "age",
+          "line": "ages-china"
+        },
+        {
+          "id": "china-iron-age",
+          "name": "Iron Age",
+          "start": -899,
+          "end": -99,
+          "circa": true,
+          "startDates": [
+            {
+              "year": -899,
+              "source": {
+                "sourceKey": "wp-iron-age",
+                "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
+              },
+              "note": "Wikipedia only: a term \"used sometimes\" for China's transitional period."
+            }
+          ],
+          "endDates": [
+            {
+              "year": -99,
+              "source": {
+                "sourceKey": "wp-iron-age",
+                "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
+              },
+              "note": "Wikipedia only."
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-iron-age",
+              "sourceLocation": "section \"Chronological history > Beginning\": \"In China, because writing was developed first, there is no recognizable prehistoric period characterized by ironworking, and the Bronze Age China transitions al\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Iron_Age",
+          "ids": {
+            "wikidata": "Q11764"
+          },
+          "kind": "age",
+          "line": "ages-china"
+        }
+      ]
     },
     {
       "id": "se-asia",
@@ -19997,7 +19825,131 @@
       "url": "https://en.wikipedia.org/wiki/Americas",
       "ids": {
         "wikidata": "Q828"
-      }
+      },
+      "context": [
+        {
+          "id": "mesoamerica-late-archaic",
+          "name": "Late Archaic",
+          "start": -3999,
+          "end": -1999,
+          "startDates": [
+            {
+              "year": -3999,
+              "source": {
+                "sourceKey": "periodo-p064v7m2kbt",
+                "sourceLocation": "period \"Late Archaic\", start \"4000 BC\" (p064v7m2kbt)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": -1999,
+              "source": {
+                "sourceKey": "periodo-p064v7m2kbt",
+                "sourceLocation": "period \"Late Archaic\", end \"2000 BC\" (p064v7m2kbt)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p064v7m2kbt",
+              "sourceLocation": "period \"Late Archaic\", start \"4000 BC\" (p064v7m2kbt)"
+            },
+            {
+              "sourceKey": "periodo-p064v7m2kbt",
+              "sourceLocation": "period \"Late Archaic\", end \"2000 BC\" (p064v7m2kbt)"
+            }
+          ],
+          "kind": "age",
+          "line": "ages-mesoamerica"
+        },
+        {
+          "id": "mesoamerica-formative",
+          "name": "Formative",
+          "start": -1199,
+          "end": 250,
+          "circa": true,
+          "startDates": [
+            {
+              "year": -1199,
+              "source": {
+                "sourceKey": "periodo-p064v7mj95d",
+                "sourceLocation": "period \"Early Formative\", start \"CA. 1200 BC\" (p064v7mj95d)"
+              },
+              "note": "The Oxford handbook's Early Formative, \"ca. 1200 BC\"."
+            },
+            {
+              "year": -2499,
+              "source": {
+                "sourceKey": "wp-mesoamerican-chronology",
+                "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
+              },
+              "note": "Wikipedia's Formative."
+            }
+          ],
+          "endDates": [
+            {
+              "year": 250,
+              "source": {
+                "sourceKey": "periodo-p064v7m6cvm",
+                "sourceLocation": "period \"Formative period\", end \"250 AD\" (p064v7m6cvm)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "periodo-p064v7mj95d",
+              "sourceLocation": "period \"Early Formative\", start \"CA. 1200 BC\" (p064v7mj95d)"
+            },
+            {
+              "sourceKey": "periodo-p064v7m6cvm",
+              "sourceLocation": "period \"Formative period\", end \"250 AD\" (p064v7m6cvm)"
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Mesoamerican_Preclassic_period",
+          "ids": {
+            "wikidata": "Q3063552"
+          },
+          "kind": "age",
+          "line": "ages-mesoamerica"
+        },
+        {
+          "id": "mesoamerica-classic",
+          "name": "Classic",
+          "start": 250,
+          "end": 900,
+          "startDates": [
+            {
+              "year": 250,
+              "source": {
+                "sourceKey": "wp-mesoamerican-chronology",
+                "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 900,
+              "source": {
+                "sourceKey": "wp-mesoamerican-chronology",
+                "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-mesoamerican-chronology",
+              "sourceLocation": "lead: \"Mesoamerican chronology divides the history of prehispanic Mesoamerica into several periods: the Paleo-Indian (first human habitation until 3500 BCE), the Archa\""
+            }
+          ],
+          "url": "https://en.wikipedia.org/wiki/Mesoamerican_Classic_period",
+          "ids": {
+            "wikidata": "Q6073099"
+          },
+          "kind": "age",
+          "line": "ages-mesoamerica"
+        }
+      ]
     },
     {
       "id": "arctic",
@@ -29404,7 +29356,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-sargon",
@@ -29473,7 +29425,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-naramsin",
@@ -29658,7 +29610,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ur3",
@@ -29839,7 +29791,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-chron-ane",
@@ -30143,7 +30095,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-anitta",
@@ -30256,7 +30208,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hattusili1",
@@ -30393,7 +30345,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mursili1",
@@ -30699,7 +30651,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-suppiluliuma1",
@@ -30778,7 +30730,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-muwatalli2",
@@ -30911,7 +30863,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hattusili3",
@@ -31063,7 +31015,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-tudhaliya4",
@@ -31192,7 +31144,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-suppiluliuma2",
@@ -31910,7 +31862,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ahmose",
@@ -31986,7 +31938,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hatshepsut",
@@ -32050,7 +32002,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-new-kingdom",
@@ -32177,7 +32129,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-akhenaten",
@@ -32283,7 +32235,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-tut",
@@ -32343,7 +32295,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ramesses2",
@@ -32383,7 +32335,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-sea-peoples",
@@ -33637,7 +33589,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nebuchadnezzar",
@@ -33883,7 +33835,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-fall-babylon",
@@ -34116,7 +34068,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-middle-assyria",
@@ -34145,7 +34097,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-middle-assyria",
@@ -34201,7 +34153,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-tp3",
@@ -34257,7 +34209,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ashurbanipal",
@@ -35064,7 +35016,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-aram",
@@ -35391,7 +35343,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-achaemenid",
@@ -36030,7 +35982,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-shang",
@@ -36223,7 +36175,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-zhou",
@@ -37604,7 +37556,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-philip-ii",
@@ -37753,7 +37705,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-phrygia",
@@ -37939,7 +37891,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-croesus",
@@ -40056,7 +40008,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-taharqa",
@@ -40769,7 +40721,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bimbisara",
@@ -50605,7 +50557,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-merodach-baladan",
@@ -52627,7 +52579,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-justinian",
@@ -52812,7 +52764,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-herod",
@@ -53461,7 +53413,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ashoka",
@@ -53842,7 +53794,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-kanishka",
@@ -53916,7 +53868,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-anuradhapura",
@@ -54002,7 +53954,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-samudragupta",
@@ -54053,7 +54005,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-chandragupta-ii",
@@ -54430,7 +54382,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-emperor-wu-han",
@@ -56094,7 +56046,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-attila",
@@ -57359,7 +57311,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ezana",
@@ -57528,7 +57480,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-kaleb",
@@ -58834,7 +58786,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-theodoric",
@@ -59854,7 +59806,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-palenque",
@@ -61231,7 +61183,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-liu-song",
@@ -62490,7 +62442,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-toramana",
@@ -62572,7 +62524,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mihirakula",
@@ -62664,7 +62616,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-vima-kadphises",
@@ -63380,7 +63332,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-yuknoom-cheen",
@@ -63640,7 +63592,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-himiko",

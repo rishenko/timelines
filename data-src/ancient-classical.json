@@ -187,6 +187,7 @@
         "values": {
           "rule": { "name": "Rulers" },
           "succession": { "name": "Succession", "broader": ["rule"] },
+          "reign": { "name": "Reign or term", "broader": ["rule"] },
           "coup": { "name": "Coup or deposition", "broader": ["rule"] },
           "title": { "name": "New title", "broader": ["rule"] },
           "statehood": { "name": "Statehood" },
@@ -15223,7 +15224,7 @@
         { "year": "2285 BCE", "source": { "sourceKey": "wp-sargon", "sourceLocation": "Chronology (Lafont 2017)" } },
         { "year": "2277 BCE", "source": { "sourceKey": "wp-sargon", "sourceLocation": "Chronology (Schrakamp 2020)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-sargon", "sourceLocation": "Chronology" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-sargon", "sourceLocation": "Chronology" }] }]
     },
     {
       "uuid": "sargon-conquers-sumer",
@@ -15244,7 +15245,7 @@
       "tracks": ["akkad"],
       "descr": "Sargon's grandson. He took the title 'King of the Four Corners', was the first Mesopotamian king to claim divinity in his lifetime, and campaigned as far as Anatolia and Ebla.",
       "sources": [{ "sourceKey": "wp-naramsin", "sourceLocation": "Biography (middle chronology)" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-naramsin", "sourceLocation": "Biography (middle chronology)" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-naramsin", "sourceLocation": "Biography (middle chronology)" }] }]
     },
     {
       "uuid": "gutian-period",
@@ -15319,7 +15320,7 @@
       "tracks": ["sumer"],
       "descr": "Ur-Nammu's son reigns for about half the dynasty's length, consolidating the kingdom into an empire on the Akkadian model.",
       "sources": [{ "sourceKey": "wp-ur3", "sourceLocation": "Shulgi" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ur3", "sourceLocation": "Shulgi" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ur3", "sourceLocation": "Shulgi" }] }]
     },
     {
       "uuid": "fall-of-ur",
@@ -15373,7 +15374,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-chron-ane", "sourceLocation": "table 'Variant Middle Bronze Age chronologies'" }]
         }
       ]
@@ -15476,7 +15477,7 @@
         { "year": "1725 BCE", "chronology": "middle", "source": { "sourceKey": "wp-anitta", "sourceLocation": "Reign (MC)" } },
         { "year": "1715 BCE", "source": { "sourceKey": "wp-anitta", "sourceLocation": "Reign (low middle chronology)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-anitta", "sourceLocation": "Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-anitta", "sourceLocation": "Reign" }] }]
     },
     {
       "uuid": "anitta-hattusa",
@@ -15511,7 +15512,7 @@
       ],
       "importance": 1,
       "memberships": [
-        { "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-hattusili1", "sourceLocation": "Reign" }] },
+        { "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-hattusili1", "sourceLocation": "Reign" }] },
         { "facet": "category", "value": "capital-moved", "sources": [{ "sourceKey": "wp-hattusili1", "sourceLocation": "Reign" }] }
       ]
     },
@@ -15562,13 +15563,7 @@
         { "year": "1526 BCE", "chronology": "low", "source": { "sourceKey": "wp-mursili1", "sourceLocation": "lead (short chronology)" } },
         { "year": "1585 BCE", "source": { "sourceKey": "freu-2007", "sourceLocation": "p. 25 (via Wikipedia: List of Hittite kings)" } }
       ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-mursili1", "sourceLocation": "lead; Accession; Assassination" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-mursili1", "sourceLocation": "lead; Accession; Assassination" }] }]
     },
     {
       "uuid": "mursili-aleppo",
@@ -15670,7 +15665,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-suppiluliuma1", "sourceLocation": "lead; One-Year War; Six-Year War" }]
         }
       ]
@@ -15710,7 +15705,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-muwatalli2", "sourceLocation": "lead (Van De Mieroop 2007, p. 159); Move to Tarhuntassa" }]
         }
       ]
@@ -15752,7 +15747,7 @@
         { "year": "1237 BCE", "source": { "sourceKey": "bryce-2005", "sourceLocation": "via Wikipedia: Ḫattušili III" } },
         { "year": "1245 BCE", "source": { "sourceKey": "kuhrt", "sourceLocation": "via Wikipedia: Ḫattušili III (MC)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-hattusili3", "sourceLocation": "Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-hattusili3", "sourceLocation": "Reign" }] }]
     },
     {
       "uuid": "eternal-treaty",
@@ -15806,7 +15801,7 @@
         { "year": "1209 BCE", "source": { "sourceKey": "bryce-2005", "sourceLocation": "via Wikipedia: List of Hittite kings" } },
         { "year": "1215 BCE", "source": { "sourceKey": "wp-tudhaliya4", "sourceLocation": "lead (Kuhrt 2020)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-tudhaliya4", "sourceLocation": "Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-tudhaliya4", "sourceLocation": "Reign" }] }]
     },
     {
       "uuid": "nihriya",
@@ -15853,7 +15848,7 @@
         { "year": "1178 BCE", "source": { "sourceKey": "wp-suppiluliuma2", "sourceLocation": "infobox" } },
         { "year": "1190 BCE", "source": { "sourceKey": "wp-hittites", "sourceLocation": "infobox" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-suppiluliuma2", "sourceLocation": "lead; Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-suppiluliuma2", "sourceLocation": "lead; Reign" }] }]
     },
     {
       "uuid": "hattusa-abandoned",
@@ -16141,7 +16136,7 @@
         { "year": "1546 BCE", "source": { "sourceKey": "wp-ahmose", "sourceLocation": "infobox (HC)" } },
         { "year": "1515 BCE", "chronology": "hornung", "source": { "sourceKey": "wp-ahmose", "sourceLocation": "note 1 (Hornung 2012)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ahmose", "sourceLocation": "Length and date of reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ahmose", "sourceLocation": "Length and date of reign" }] }]
     },
     {
       "uuid": "tanaju",
@@ -16168,7 +16163,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-hatshepsut", "sourceLocation": "lead; Reign (Low Chronology, following Hornung 2006)" }]
         }
       ]
@@ -16191,7 +16186,7 @@
       "tracks": ["pharaonic-egypt"],
       "descr": "Co-ruler with Hatshepsut, then sole king; he conquers much of the Near East from the Euphrates to Nubia.",
       "sources": [{ "sourceKey": "wp-new-kingdom", "sourceLocation": "Eighteenth Dynasty" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-new-kingdom", "sourceLocation": "Eighteenth Dynasty" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-new-kingdom", "sourceLocation": "Eighteenth Dynasty" }] }]
     },
     {
       "uuid": "megiddo",
@@ -16233,7 +16228,7 @@
         { "year": "1334 BCE", "source": { "sourceKey": "wp-akhenaten", "sourceLocation": "lead" } }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-akhenaten", "sourceLocation": "lead; infobox; Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-akhenaten", "sourceLocation": "lead; infobox; Reign" }] }]
     },
     {
       "uuid": "amarna-letters",
@@ -16271,7 +16266,7 @@
         { "year": "1323 BCE", "source": { "sourceKey": "wp-tut", "sourceLocation": "infobox and lead" } },
         { "year": "1324 BCE", "source": { "sourceKey": "wp-tut", "sourceLocation": "subtitle" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-tut", "sourceLocation": "lead; infobox; Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-tut", "sourceLocation": "lead; infobox; Reign" }] }]
     },
     {
       "uuid": "ramesses-ii",
@@ -16302,7 +16297,7 @@
         }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ramesses2", "sourceLocation": "infobox; Reign length" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ramesses2", "sourceLocation": "infobox; Reign length" }] }]
     },
     {
       "uuid": "merneptah",
@@ -16319,7 +16314,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-sea-peoples", "sourceLocation": "Merneptah narrative (reign 1213–1203 BC)" }]
         },
         {
@@ -16822,7 +16817,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-nebuchadnezzar", "sourceLocation": "Reign (Parker & Dubberstein 1942, p. 10)" }]
         }
       ]
@@ -16910,7 +16905,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-fall-babylon", "sourceLocation": "Conditions; Preparations (Oates 1986, p. 132)" }]
         }
       ]
@@ -17004,7 +16999,7 @@
         { "sourceKey": "wp-middle-assyria", "sourceLocation": "infobox and lead" },
         { "sourceKey": "wp-assyria", "sourceLocation": "infobox (capitals)" }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-middle-assyria", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-middle-assyria", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "tiglath-pileser-i",
@@ -17017,7 +17012,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-middle-assyria", "sourceLocation": "infobox (kings; second expansion 1114–1056 BC)" }]
         }
       ]
@@ -17046,7 +17041,7 @@
       "descr": "Perhaps a usurper, he more than doubles the land ruled by Assyria: he defeats Urartu (743), conquers Damascus (732) and Babylonia (729).",
       "sources": [{ "sourceKey": "wp-tp3", "sourceLocation": "infobox and lead" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-tp3", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-tp3", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "dur-sharrukin",
@@ -17072,7 +17067,7 @@
       "descr": "The last great Neo-Assyrian king. He wins a civil war against his brother Shamash-shum-ukin, king of Babylon (652–648), and destroys Elam. Assyria falls about two decades after his death.",
       "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "infobox and lead" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ashurbanipal", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "shamash-shum-ukin",
@@ -17336,7 +17331,7 @@
         { "year": "796 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "infobox" } },
         { "year": "805 BCE", "source": { "sourceKey": "wp-aram", "sourceLocation": "kings navbox ('842–805/796 BCE')" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-aram", "sourceLocation": "infobox and History" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-aram", "sourceLocation": "infobox and History" }] }]
     },
     {
       "uuid": "fall-of-damascus",
@@ -17461,7 +17456,7 @@
       "descr": "The empire's campaigns fail to conquer Scythia (513) and Greece (492–490).",
       "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "infobox and lead" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-achaemenid", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "greco-persian-wars",
@@ -17700,7 +17695,7 @@
         { "year": "1191 BCE", "source": { "sourceKey": "wp-shang", "sourceLocation": "infobox" } },
         { "year": "1197 BCE", "margin": 10, "source": { "sourceKey": "wp-oracle-bone", "sourceLocation": "radiocarbon" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-shang", "sourceLocation": "infobox" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-shang", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "oracle-bones",
@@ -17769,7 +17764,7 @@
       "descr": "A regency in the Western Zhou, 841–828 BCE. Sima Qian was only able to establish historical dates after its time.",
       "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox" }],
       "chronology": "xszcp",
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "zhou-east",
@@ -18271,7 +18266,7 @@
       "tracks": ["greece", "macedon"],
       "descr": "King of Macedon from 359 BCE. He is assassinated in 336 and immediately succeeded by his son Alexander.",
       "sources": [{ "sourceKey": "wp-philip-ii", "sourceLocation": "infobox and lead" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-philip-ii", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-philip-ii", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "chaeronea",
@@ -18318,7 +18313,7 @@
         { "year": "695 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Midas (8th century BCE) (Eusebius)" } },
         { "year": "676 BCE", "source": { "sourceKey": "wp-midas", "sourceLocation": "Midas (8th century BCE) (Julius Africanus)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-phrygia", "sourceLocation": "infobox (kings)" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-phrygia", "sourceLocation": "infobox (kings)" }] }]
     },
     {
       "uuid": "phrygia-falls",
@@ -18380,7 +18375,7 @@
         { "year": "585 BCE", "source": { "sourceKey": "wp-croesus", "sourceLocation": "infobox and lead" } },
         { "year": "561 BCE", "source": { "sourceKey": "wp-croesus", "sourceLocation": "short description ('from 585 or 561')" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-croesus", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-croesus", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "fall-of-sardis",
@@ -19210,7 +19205,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-taharqa", "sourceLocation": "infobox, lead and War between Taharqa and Assyria" }]
         }
       ]
@@ -19468,7 +19463,7 @@
         { "year": "492 BCE", "source": { "sourceKey": "wp-bimbisara", "sourceLocation": "infobox (long chronology)" } },
         { "year": "405 BCE", "source": { "sourceKey": "wp-bimbisara", "sourceLocation": "infobox (short chronology)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-bimbisara", "sourceLocation": "infobox, lead and Death" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bimbisara", "sourceLocation": "infobox, lead and Death" }] }]
     },
     {
       "uuid": "mahavira",
@@ -23283,7 +23278,7 @@
         { "sourceKey": "wp-qedarites", "sourceLocation": "Neo-Assyrian period" }
       ],
       "links": [{ "to": "merodach-baladan", "kind": "succeeds" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-merodach-baladan", "sourceLocation": "Biography" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-merodach-baladan", "sourceLocation": "Biography" }] }]
     },
     {
       "uuid": "naram-sin-amorites",
@@ -24013,7 +24008,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-justinian",
@@ -24096,7 +24091,7 @@
         { "year": "4 BCE", "source": { "sourceKey": "wp-herod", "sourceLocation": "infobox (Schürer)" } },
         { "year": "1 BCE", "source": { "sourceKey": "wp-herod", "sourceLocation": "infobox (Steinmann)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-herod", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-herod", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "crucifixion",
@@ -24310,7 +24305,7 @@
         { "year": "273 BCE", "source": { "sourceKey": "wp-chandragupta-maurya", "sourceLocation": "infobox dynasty table ('273/268')" } }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ashoka", "sourceLocation": "lead and infobox" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ashoka", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "kalinga-war",
@@ -24451,7 +24446,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-kanishka", "sourceLocation": "lead, infobox and Kanishka and Buddhism" }]
         }
       ]
@@ -24484,7 +24479,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Kashyapa I (473–491) chooses Sigiriya to be his capital.",
       "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura" }] }]
     },
     {
       "uuid": "chandragupta-i",
@@ -24510,7 +24505,7 @@
         { "year": "350 CE", "source": { "sourceKey": "wp-samudragupta", "sourceLocation": "Period" } }
       ],
       "links": [{ "to": "chandragupta-i", "kind": "related" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-samudragupta", "sourceLocation": "lead, infobox and Period" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-samudragupta", "sourceLocation": "lead, infobox and Period" }] }]
     },
     {
       "uuid": "chandragupta-ii",
@@ -24528,7 +24523,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-chandragupta-ii", "sourceLocation": "lead, infobox and Period of reign" }]
         }
       ]
@@ -24662,7 +24657,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-emperor-wu-han", "sourceLocation": "lead, infobox and Calendar reform" }]
         }
       ]
@@ -25256,7 +25251,7 @@
         { "year": "437 CE", "source": { "sourceKey": "wp-huns", "sourceLocation": "infobox (co-rulers)" } }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-attila", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-attila", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "catalaunian-plains",
@@ -25700,7 +25695,7 @@
         { "year": "325 CE", "margin": 5, "source": { "sourceKey": "wp-ezana", "sourceLocation": "infobox ('320s')" } },
         { "year": "321 CE", "source": { "sourceKey": "wp-obelisk-axum", "sourceLocation": "History ('c. 321 – c. 360')" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ezana", "sourceLocation": "infobox, lead and Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ezana", "sourceLocation": "infobox, lead and Reign" }] }]
     },
     {
       "uuid": "aksum-christian",
@@ -25752,11 +25747,7 @@
       ],
       "links": [{ "to": "aksum-himyar", "kind": "related" }],
       "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-kaleb", "sourceLocation": "short description, infobox and Life" }]
-        },
+        { "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-kaleb", "sourceLocation": "short description, infobox and Life" }] },
         {
           "facet": "category",
           "value": "invasion",
@@ -26259,7 +26250,7 @@
       "sources": [{ "sourceKey": "wp-theodoric", "sourceLocation": "infobox, lead and body" }, { "sourceKey": "wp-gothic-war", "sourceLocation": "Background" }],
       "links": [{ "to": "theodoric-italy", "kind": "related" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-theodoric", "sourceLocation": "infobox, lead and body" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-theodoric", "sourceLocation": "infobox, lead and body" }] }]
     },
     {
       "uuid": "gothic-war",
@@ -26637,7 +26628,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-palenque", "sourceLocation": "History, Late Classic and Temple of the Inscriptions" }]
         }
       ]
@@ -27168,7 +27159,7 @@
       "tracks": ["southern-dynasties", "northern-dynasties"],
       "descr": "Emperor Wen’s reign is known for political stability and capable administration; but he loses three commanderies to the Northern Wei in his first year, his campaigns against Wei fail in 450 and 452, and in 453 his son Liu Shao assassinates him.",
       "sources": [{ "sourceKey": "wp-liu-song", "sourceLocation": "lead and Reign of Emperor Wen" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-liu-song", "sourceLocation": "lead and Reign of Emperor Wen" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-liu-song", "sourceLocation": "lead and Reign of Emperor Wen" }] }]
     },
     {
       "uuid": "zu-chongzhi",
@@ -27688,7 +27679,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-toramana", "sourceLocation": "lead, infobox, Defeats, Sack of Kausambi and Punjab inscription" }]
         }
       ]
@@ -27725,7 +27716,7 @@
         { "year": "540 CE", "source": { "sourceKey": "wp-mihirakula", "sourceLocation": "Alchon Huns succession table ('c.515–540')" } }
       ],
       "links": [{ "to": "toramana", "kind": "related" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-mihirakula", "sourceLocation": "lead, infobox and Xuanzang" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-mihirakula", "sourceLocation": "lead, infobox and Xuanzang" }] }]
     },
     {
       "uuid": "sondani",
@@ -27759,7 +27750,7 @@
       "descr": "Kushan emperor from approximately 113 to 127 CE. The same page also gives 90–100 CE (navbox) and AD 100–127 (a quoted source).",
       "sources": [{ "sourceKey": "wp-vima-kadphises", "sourceLocation": "lead and infobox" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-vima-kadphises", "sourceLocation": "lead and infobox" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-vima-kadphises", "sourceLocation": "lead and infobox" }] }]
     },
     {
       "uuid": "vasudeva-i",
@@ -28072,7 +28063,7 @@
       "descr": "He accedes on 1 May 636; his successor takes the throne in 686.",
       "sources": [{ "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "infobox and Reign" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "infobox and Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "infobox and Reign" }] }]
     },
     {
       "uuid": "dos-pilas-calakmul",
@@ -28171,7 +28162,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-himiko",
