@@ -17764,7 +17764,7 @@
       "descr": "A regency in the Western Zhou, 841–828 BCE. Sima Qian was only able to establish historical dates after its time.",
       "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox" }],
       "chronology": "xszcp",
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-zhou", "sourceLocation": "infobox" }] }]
     },
     {
       "uuid": "zhou-east",
@@ -23278,7 +23278,7 @@
         { "sourceKey": "wp-qedarites", "sourceLocation": "Neo-Assyrian period" }
       ],
       "links": [{ "to": "merodach-baladan", "kind": "succeeds" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-merodach-baladan", "sourceLocation": "Biography" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-merodach-baladan", "sourceLocation": "Biography" }] }]
     },
     {
       "uuid": "naram-sin-amorites",
@@ -24091,7 +24091,7 @@
         { "year": "4 BCE", "source": { "sourceKey": "wp-herod", "sourceLocation": "infobox (Schürer)" } },
         { "year": "1 BCE", "source": { "sourceKey": "wp-herod", "sourceLocation": "infobox (Steinmann)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-herod", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-herod", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "crucifixion",
@@ -24479,7 +24479,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Kashyapa I (473–491) chooses Sigiriya to be his capital.",
       "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "The city of Anuradhapura" }] }]
     },
     {
       "uuid": "chandragupta-i",
@@ -25251,7 +25251,7 @@
         { "year": "437 CE", "source": { "sourceKey": "wp-huns", "sourceLocation": "infobox (co-rulers)" } }
       ],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-attila", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-attila", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "catalaunian-plains",
@@ -26628,7 +26628,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-palenque", "sourceLocation": "History, Late Classic and Temple of the Inscriptions" }]
         }
       ]
@@ -27716,7 +27716,7 @@
         { "year": "540 CE", "source": { "sourceKey": "wp-mihirakula", "sourceLocation": "Alchon Huns succession table ('c.515–540')" } }
       ],
       "links": [{ "to": "toramana", "kind": "related" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-mihirakula", "sourceLocation": "lead, infobox and Xuanzang" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-mihirakula", "sourceLocation": "lead, infobox and Xuanzang" }] }]
     },
     {
       "uuid": "sondani",
@@ -28063,7 +28063,7 @@
       "descr": "He accedes on 1 May 636; his successor takes the throne in 686.",
       "sources": [{ "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "infobox and Reign" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "infobox and Reign" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-yuknoom-cheen", "sourceLocation": "infobox and Reign" }] }]
     },
     {
       "uuid": "dos-pilas-calakmul",
@@ -28162,7 +28162,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-himiko",

@@ -148,6 +148,7 @@ WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
 # a ruler's or office-holder's time in office, at the start of a title
 REIGN = re.compile(r'^(?:the )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
+REIGN_ANY = re.compile(r"\brules\b|\b(?:first|second|third|fourth) reign\b|\bregency$", re.I)
 WIKI = re.compile(r'^https?://en\.wikipedia\.org/wiki/(.+)$')
 
 
@@ -206,7 +207,11 @@ def classify(e, ds, wp=None):
     title = e['title']
     # "Reign of Sargon", "Presidency of Juárez": a ruler's time in office, as a span, is a reign (Kevin, 2026-11-22: the
     # layout puts reigns on their row's top event lines). A point ("Reign of X begins") stays a succession.
-    rm = REIGN.match(title)
+    # Also "Attila rules the Huns" (a person, not one of the event's rows, ruling), "…'s second reign", "Gonghe Regency".
+    rm = REIGN.match(title) or REIGN_ANY.search(title)
+    rs = re.match(r'(.+?)\s+rules\b', title)
+    if rs and any(rs.group(1).lower() == t['name'].lower() for t in ds['tracks'] if t['id'] in e.get('tracks', [])):
+        rm = REIGN.match(title)
     if rm and (e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])):
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))
     # "Fall of X": a state ending when X is one of the timeline's rows, else a city falling
