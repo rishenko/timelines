@@ -19,9 +19,11 @@
  * - 8: context lines. `meta.eras` becomes `meta.context` and each row's `Track.context` (`ContextSpan`, with a
  *   `kind`; ages are kind `age`), `Era.group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. Structural:
  *   see `toV8`.
+ * - 9: `calendar.beforePresent` (deep time: years shown as time before a present, e.g. 1950, with an optional
+ *   `circaShare`). Additive: a v8 file is a v9 file with a different number.
  */
 
-export const SCHEMA_VERSION = 8;
+export const SCHEMA_VERSION = 9;
 
 type Obj = Record<string, unknown>;
 
@@ -71,6 +73,7 @@ const STEPS: Record<number, (d: Record<string, unknown>) => Record<string, unkno
   5: (d) => ({ ...d, schemaVersion: 6 }),
   6: (d) => ({ ...d, schemaVersion: 7 }),
   7: toV8,
+  8: (d) => ({ ...d, schemaVersion: 9 }),
 };
 
 /** Whether a file of this version can be read (it is current, or can be lifted to it). */

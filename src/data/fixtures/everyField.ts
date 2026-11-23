@@ -27,7 +27,7 @@ function claim(year: number, month: number, day: number, at: string) {
 }
 
 export const everyField = {
-  schemaVersion: 8,
+  schemaVersion: 9,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -35,7 +35,7 @@ export const everyField = {
     description: 'A fictional timeline that uses every field of the format once.',
     credits: 'Made up for tests.',
     creditsImage: 'timelines/example/quay.svg',
-    calendar: { before: 'BL', after: 'L', yearZero: true, aliases: { before: ['B.L.'], after: ['A.L.'] } },
+    calendar: { before: 'BL', after: 'L', yearZero: true, aliases: { before: ['B.L.'], after: ['A.L.'] }, beforePresent: { present: 1950, circaShare: 0.01 } },
     increments: ['day', 'month', 1, 10, 100],
     defaultIncrement: 10,
     defaultTheme: 'parchment',
@@ -248,7 +248,7 @@ export const everyField = {
       endDates: [claim(60, 1, 15, 'p. 10')],
       tracks: ['quay'],
       sources: [ref('p. 12')],
-      links: [{ to: 'founding', kind: 'succeeds' }],
+      links: [{ to: 'founding', kind: 'succeeds' }, { to: 'founding', kind: 'with' }],
       edited: true,
     },
     { uuid: 'joins-league', title: 'Quay Town joins the League', descr: 'A treaty.', start: 131, startMonth: 4, startDay: 2, tracks: ['quay', 'league'], sources: [ref('p. 20')] },

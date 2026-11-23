@@ -19,6 +19,12 @@
      "rule"
     ]
    },
+   "interregnum": {
+    "name": "Interregnum",
+    "broader": [
+     "rule"
+    ]
+   },
    "coup": {
     "name": "Coup or deposition",
     "broader": [

@@ -1,4 +1,5 @@
 import { migrate, SCHEMA_VERSION } from './migrate.ts';
+import { beforePresent, circaShare } from '../lib/beforePresent.ts';
 import { at0, at1, daysInMonth, endAt, MONTH_NAMES, startAt, SUB_YEAR } from '../lib/subYear.ts';
 import { FACET_APPLIES, LINK_KINDS, LOCATOR_KINDS, TRACK_KINDS, type ContextSpan, type DateClaim, type Dataset, type DateDays, type Membership, type SourceRef, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronologies } from '../lib/chronology.ts';
@@ -38,6 +39,12 @@ export function validateDataset(d: unknown): string[] {
     errors.push('meta.increments must be a list of positive whole numbers, or quarter, month, week or day.');
   else if (!m.increments.includes(m.defaultIncrement)) errors.push('meta.defaultIncrement must be one of meta.increments.');
   if (m.circaFade !== undefined && !(m.circaFade >= 0)) errors.push('meta.circaFade must be zero or more.');
+  const bp = beforePresent(m.calendar);
+  if (m.calendar?.beforePresent !== undefined) {
+    if (!bp || !Number.isInteger(bp.present)) errors.push('meta.calendar.beforePresent.present must be a whole stored year (e.g. 1950).');
+    const share = circaShare(m.calendar);
+    if (share !== null && !(share > 0 && share <= 0.5)) errors.push('meta.calendar.beforePresent.circaShare must be more than 0 and at most 0.5.');
+  }
   if (m.hideRowsOutOfView !== undefined && typeof m.hideRowsOutOfView !== 'boolean') errors.push('meta.hideRowsOutOfView must be true or false.');
   if (m.range !== undefined && !(m.range && Number.isInteger(m.range.start) && Number.isInteger(m.range.end) && m.range.start < m.range.end))
     errors.push('meta.range needs whole-number years start < end.');

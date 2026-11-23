@@ -10,6 +10,8 @@ import { eventCategories } from './categories.ts';
  * label is wider than its reign, the rest fold into "+N" as on the live site.
  */
 export const REIGN = 'reign';
+/** A sourced gap in rule ("Ottoman Interregnum"), drawn on the reign line too (Kevin, 2026-11-23). */
+export const INTERREGNUM = 'interregnum';
 
 /** The events of a timeline that go in the reign lane. */
 export function reignLaneIds(
@@ -20,6 +22,6 @@ export function reignLaneIds(
 ): Set<string> {
   const out = new Set<string>();
   if (!facet || !facetId) return out;
-  for (const e of ds.events) if (eventCategories(e, facetId, facet, sourceOn).includes(REIGN)) out.add(e.uuid);
+  for (const e of ds.events) if (eventCategories(e, facetId, facet, sourceOn).some((c) => c === REIGN || c === INTERREGNUM)) out.add(e.uuid);
   return out;
 }

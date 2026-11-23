@@ -188,6 +188,7 @@
           "rule": { "name": "Rulers" },
           "succession": { "name": "Succession", "broader": ["rule"] },
           "reign": { "name": "Reign or term", "broader": ["rule"] },
+          "interregnum": { "name": "Interregnum", "broader": ["rule"] },
           "coup": { "name": "Coup or deposition", "broader": ["rule"] },
           "title": { "name": "New title", "broader": ["rule"] },
           "statehood": { "name": "Statehood" },
