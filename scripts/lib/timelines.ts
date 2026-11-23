@@ -66,6 +66,15 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     scripts: [],
   },
   {
+    // generated: data-src/earth-life.json is written by pipelines/earth-life/gen_earth_life.py (the ICS chart's eons,
+    // eras and periods, and the Phanerozoic extinctions; pipelines/README.md), not by hand or by content scripts
+    short: 'earth-life',
+    id: 'earth-life',
+    source: 'data-src/earth-life.json',
+    compiled: 'public/timelines/earth-life.json',
+    scripts: [],
+  },
+  {
     // generated: data-src/medieval.json is written by pipelines/medieval/gen_medieval.py (pipelines/README.md),
     // not by hand or by content scripts; listed so `data:build` and CI check its compiled file
     short: 'medieval',

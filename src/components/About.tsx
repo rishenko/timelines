@@ -54,6 +54,21 @@ export function About({ search = window.location.search, pathname = window.locat
           World, and one date claim in Medieval World (Srivijaya’s end, 1293), kept beside Wikipedia’s.
         </li>
         <li>
+          <strong>
+            <a href="https://stratigraphy.org/chart">International Chronostratigraphic Chart</a> (International
+            Commission on Stratigraphy, v2026/06)
+          </strong>
+          : the boundary ages and colour codes of the geological time scale in Earth and Life (every eon, era and
+          period, with the chart’s ± where it gives one); each boundary cites the chart. © ICS, all rights reserved.
+          Cite: Cohen, K.M., Harper, D.A.T., Gibbard, P.L. &amp; Car, N. (2025, updated), The ICS International
+          Chronostratigraphic Chart this decade, Episodes 48: 105–115. We take the numbers only; the chart’s image and
+          layout are not reproduced.
+        </li>
+        <li>
+          <strong>Peer-reviewed papers</strong>, read from their abstracts: in Earth and Life, Burgess, Bowring &amp;
+          Shen (2014, PNAS) for the end-Permian extinction’s dates.
+        </li>
+        <li>
           <strong>Natural Earth</strong>: the land on the event maps.
         </li>
         <li>

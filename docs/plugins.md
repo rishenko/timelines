@@ -96,15 +96,15 @@ A plugin view should meet the same bar as the rest of the app, WCAG 2.2 AA:
 
 - Every control is reachable and usable from the keyboard, with a visible focus ring (`--focus`).
 - If the plugin redraws, focus stays on the same control.
-- Targets are at least 24 px, or there's a full-size control that does the same job. The sample's bars can be narrow,
-  so its century picker (a `<select>`) is that control.
+- Targets are at least 24 px, or there's a full-size control that does the same job. The sample's bars are 24 px wide,
+  and its century picker (a `<select>`) does the same job.
 - Text contrast meets 4.5:1 on the page background.
 - The view starts with a heading.
 
-**Known exceptions (the sample only).** `centuries.js` is an example of the contract, not a finished view. Its
-century bars are narrower than 24 px (2.5.8; the century select is the full-size control), and its view doesn't reflow
-at 320 and 640 px (1.4.10). The report lists both under the plugin states. The plugin system itself (loading, the
-toolbar button, notices, the view's frame) has no exceptions.
+**The sample meets all of these.** `centuries.js` draws its century bars as 24 px-wide targets in a row that scrolls
+sideways on its own when the view is narrow (a chart: the two-dimensional exception to 1.4.10; the reflow check skips
+`.cv .bars` for that reason), and its century `<select>` does the same job without scrolling. The plugin system itself
+(loading, the toolbar button, notices, the view's frame) has no exceptions either.
 
 The accessibility report checks the sample plugin's view (`npm run a11y:report`, states "plugin view" and "plugin
 view, century picked"). Add states for a new plugin in `scripts/lib/ui-states.ts`.

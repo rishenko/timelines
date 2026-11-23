@@ -1,7 +1,8 @@
 // Checks reflow (WCAG 1.4.10) and 200% zoom (1.4.4): at each width, opens the app's views and panels and reports
 // content that runs past the screen's edges or is cut off by a box that hides its overflow. 640 px is 200% zoom on a
 // 1280 px screen; 320 px is the reflow test's width. The chart and data tables may scroll in two directions (WCAG
-// exempts content that needs a two-dimensional layout), so they are skipped; a box that scrolls sideways is reported.
+// exempts content that needs a two-dimensional layout), so they are skipped, and so is the sample plugin's row of bars
+// (.cv .bars, a chart that scrolls on its own); any other box that scrolls sideways is reported.
 //   node scripts/reflow.ts [--url http://localhost:4317/] [--timeline ancient-classical] [--width 320]... [--details]
 //        [--browser chrome|msedge]
 // Defaults: widths 320 and 640. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1 if anything
@@ -28,8 +29,11 @@ for (const width of widths) {
     if (!page) continue;
     const found = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
-      const exempt = (el: Element) => !!el.closest('.tl-scroller, table, .tl-lanes');
+      const exempt = (el: Element) => !!el.closest('.tl-scroller, table, .tl-lanes, .cv .bars');
       const visible = (el: Element) => {
+        // what a closed <details> holds is not shown (the browser skips its layout, so its boxes sit where they were)
+        const d = el.closest('details');
+        if (d && !d.open && !el.closest('summary')) return false;
         const st = getComputedStyle(el);
         const r = el.getBoundingClientRect();
         return st.visibility !== 'hidden' && st.display !== 'none' && r.width > 0 && r.height > 0;

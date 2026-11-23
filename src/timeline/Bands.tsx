@@ -158,7 +158,10 @@ export function PhaseStripCell({
         'data-phase-ref': p.ref,
         'aria-label': p.kind
           ? `${p.name}${p.lineName ? ` (${p.lineName})` : ''}, ${spanDates(p, cal, isApprox(p))}, ${p.kind}: details, article and sources`
-          : `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}, ${spanDates(p, cal, isApprox(p))}, ${member ? 'membership' : 'phase'}: details and sources`,
+          : member
+            ? // starts with the strip's visible text, verbatim (WCAG 2.5.3 Label in Name), then which row it belongs to
+              `${p.name}, ${memberName ?? ''}, membership: details and sources`
+            : `${p.name}, ${spanDates(p, cal, isApprox(p))}, phase: details and sources`,
         // an age opens with a click too, as its bar did (Kevin: every age reachable at any width); phases open by keyboard
         ...(p.kind ? { onClick: (ev: React.MouseEvent) => (ev.stopPropagation(), onOpen!(p.ref!)) } : {}),
         'aria-pressed': selected,
