@@ -192,9 +192,10 @@ def build(repo):
         'id': 'earth-life', 'title': 'Earth and Life',
         'subtitle': 'Deep time: the geological eons, eras and periods, and the Phanerozoic extinctions',
         'description': 'The Earth\'s geological time scale from its formation, as the International Commission on Stratigraphy\'s eons, eras and periods, with the five Phanerozoic mass extinctions. A pilot: more events are to come.',
-        'credits': ('Boundary ages and colours: the International Commission on Stratigraphy\'s International Chronostratigraphic Chart v2026/06 '
-                    f'({chart["copyright"]}; cite: {chart["cite"]}), each boundary cited to the chart. Extinction dates also from the English '
-                    'Wikipedia articles (dump of 1 November 2026) and Burgess et al. (2014).'),
+        'credits': ('Boundary ages and colour codes: International Commission on Stratigraphy, International Chronostratigraphic Chart '
+                    'v2026/06 (stratigraphy.org; © ICS, all rights reserved). Cite: Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. '
+                    '(2025, updated), The ICS International Chronostratigraphic Chart this decade, Episodes 48: 105–115. '
+                    'Extinction dates also from the English Wikipedia articles (dump of 1 November 2026) and Burgess et al. (2014).'),
         'calendar': {'before': 'BP', 'after': 'AP', 'yearZero': True, 'beforePresent': {'present': PRESENT, 'circaShare': 0.01}},
         'increments': [100000, 1000000, 10000000, 100000000, 1000000000], 'defaultIncrement': 100000000,
         'hideRowsOutOfView': False,

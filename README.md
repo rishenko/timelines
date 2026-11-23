@@ -12,7 +12,7 @@ give it your own timelines.
 
 ## Included timelines
 
-Every date cites the Wikipedia article it comes from; see [Data sources and AI use](#data-sources-and-ai-use).
+Every date cites the source it comes from (an English Wikipedia article, and in Earth and Life the International Commission on Stratigraphy's chart); see [Data sources and AI use](#data-sources-and-ai-use).
 
 - **Ancient and Classical World**, c. 9000 BCE – 650 CE: from the first farmers to the rise of Islam, across Europe,
   Africa, the Near East, Asia, Oceania and the Americas. 371 rows, 883 events.
@@ -21,7 +21,10 @@ Every date cites the Wikipedia article it comes from; see [Data sources and AI u
 - **Modern States**, 1500 to today: every state in the world, with its governments as phases and its memberships in
   unions and empires. 602 rows, 1,508 events.
 
-The three link to each other where they meet, at 650 and 1500.
+- **Earth and Life** (a pilot), 4.567 Ga to the present: the geological eons, eras and periods from the International
+  Commission on Stratigraphy's chart, and the five mass extinctions of the Phanerozoic. 2 rows, 6 events, 36 ages.
+
+The first three link to each other where they meet, at 650 and 1500.
 
 ## Features
 
@@ -210,7 +213,11 @@ The code, tests and documentation were written with the help of an AI coding ass
 
 The included timelines were compiled with AI assistance. The aim is to find several highly reputable sources and stick
 to them. Most of the data comes from English Wikipedia; each date cites the page it was read from, and where pages
-disagree, every value is kept. Other sources are cited where they are used: [PeriodO](https://perio.do/) period
+disagree, every value is kept. Other sources are cited where they are used: the International Commission on Stratigraphy's
+[International Chronostratigraphic Chart](https://stratigraphy.org/chart) (v2026/06; © ICS, all rights reserved; cite:
+Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated), The ICS International Chronostratigraphic Chart
+this decade, Episodes 48: 105–115) for Earth and Life's boundary ages and colour codes (the numbers only: the chart's
+image and layout are not reproduced), with Burgess et al. (2014) for one extinction's dates; [PeriodO](https://perio.do/) period
 definitions for the regional Ages lines in Ancient and Classical World, and Cliopatria for its map borders and for one
 Medieval World date claim (Srivijaya's end). Books and papers appear only where Wikipedia cites them. Pages carrying a
 notice that they contain AI-generated text are not used (a check refuses any link to a page on the list of flagged
@@ -225,6 +232,10 @@ pages).
   what sentences in the cited articles say, each checked against its sentence, and events with no such sentence have
   none; 35 early ones (the Byzantine events) are the assistant's own summaries. Modern States' descriptions are the
   assistant's own summaries.
+
+- **Earth and Life:** built by `pipelines/earth-life/` from the ICS chart (transcribed into
+  `ics_2026_06.json` and checked against the chart's own text by `verify_ics.py`) and the same Wikipedia dump. Events'
+  descriptions are the assistant's own summaries.
 
 The Ancient and Classical event maps draw borders from
 [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) (Seshat Global History Databank, CC BY 4.0;
