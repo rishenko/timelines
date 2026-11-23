@@ -9,6 +9,8 @@ interface Props {
   /** Timeline (the chart) or table. The chart's own controls (zoom, rows) are hidden in table view. */
   view: View;
   onView: (v: View) => void;
+  /** Export: save an image of the view. Printing is the browser's own (⌘P), which prints the same view. */
+  onExport?: (kind: 'png' | 'svg') => void;
   /** A view plugin's button after Timeline and Table (docs/plugins.md), and whether its view is showing. */
   pluginView?: { name: string; on: boolean; onShow: () => void };
   increments: number[];
@@ -81,6 +83,15 @@ export function Toolbar(p: Props) {
           </button>
         )}
       </div>
+      {p.onExport && (
+        <details className="export-menu">
+          <summary title="Save an image of this view. To print it, use your browser's Print (⌘P or Ctrl+P).">Export</summary>
+          <div className="export-items">
+            <button onClick={(e) => (p.onExport!('png'), e.currentTarget.closest('details')!.removeAttribute('open'))}>Image (PNG)</button>
+            <button onClick={(e) => (p.onExport!('svg'), e.currentTarget.closest('details')!.removeAttribute('open'))}>Image (SVG)</button>
+          </div>
+        </details>
+      )}
       {p.dating}
       {p.view === 'timeline' && !p.pluginView?.on && (
         <>
