@@ -48,7 +48,7 @@ LEADER = re.compile(r'^leader\d*$')
 RULER_WORD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|shah|caliph|monarch|president|grand prince|'
                         r'grand duke|head of state)', re.I)
 # offices that name a president but don't head the state ("President of the Senate of Spain")
-NOT_HEAD = re.compile(r'\b(administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|government|court|assembly|parliament|chamber|minister|duma|'
+NOT_HEAD = re.compile(r'\b(administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|(?<!provisional )government|court|assembly|parliament|chamber|minister|duma|'
                       r'soviet of|bank|academy|committee|party|olympic|federation|society|university)', re.I)
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
@@ -67,7 +67,8 @@ GENERIC = {'empire', 'kingdom', 'dynasty', 'republic', 'state', 'states', 'sulta
            'duchy', 'grand', 'united', 'federal', 'people', 'peoples', 'democratic', 'socialist', 'soviet', 'first',
            'second', 'third', 'later', 'early', 'late', 'great', 'greater', 'northern', 'southern', 'eastern', 'western',
            'upper', 'lower', 'free', 'royal', 'imperial', 'holy', 'new', 'old', 'restored', 'provisional', 'government',
-           'national', 'kingdoms', 'confederation', 'union', 'regime', 'puppet', 'rule', 'under', 'colony', 'colonial'}
+           'national', 'kingdoms', 'confederation', 'union', 'regime', 'puppet', 'rule', 'under', 'colony', 'colonial',
+           'south', 'north', 'east', 'west', 'central'}  # compass words: "Republic of South Peru" isn't UNASUR's "South American"
 
 
 def to_gregorian(t):
@@ -130,9 +131,21 @@ def infobox_params(text):
     return {str(p.name).strip().lower(): str(p.value).strip() for p in tpl[0].params} if tpl else {}
 
 
+def term_offices(params):
+    """{N: office text} for each term_startN: officeN, orderN or titleN, carried down to the later terms until the
+    next one (Charles Dupuy: order = Prime Minister covers terms 1–3, order4 = Acting President covers 4–6)."""
+    num = lambda k: int(k) if k else 0
+    out, cur = {}, ''
+    for n in sorted({REIGN.match(k).group(2) for k in params if REIGN.match(k)}, key=num):
+        cur = next((params[f'{w}{n}'] for w in ('office', 'order', 'title') if params.get(f'{w}{n}')), cur)
+        out[n] = cur
+    return out
+
+
 def wp_reigns(params):
     """[(field, span, succession text)] from reign/reignN, or term_startN + term_endN, of one infobox."""
     out = []
+    offices = term_offices(params)
     for k, raw in params.items():
         m = REIGN.match(k)
         if not m or not raw:
@@ -149,8 +162,105 @@ def wp_reigns(params):
                 s['end'] = en[0]['start'] if en else None
                 s['text'] = f"{st[0]['text']} – {en[0]['text'] if en else ''}".strip(' –')
                 s['old_style'] = st[0]['old_style'] or bool(en and en[0]['old_style'])
-                out.append((f'term_start{n}', s, dates.clean(params.get(f'office{n}', ''))))
+                out.append((f'term_start{n}', s, dates.clean(offices.get(n, ''))))
     return out
+
+
+# ---- list-page rows: the citation for a ruler whose own article is AI-flagged ----
+
+LIFE = re.compile(r'\((?:born|b\.|d\.|died)?\s*c?\.?\s*\d{1,4}\s*(?:BCE?|AD|CE)?\s*[–-]?\s*(?:\d{1,4}\s*(?:BCE?|AD|CE)?)?\)', re.I)
+ONGOING = re.compile(r'\b(incumbent|present|ongoing|to date)\b', re.I)
+START_P = re.compile(r'^(?:term_?start|reign_?start|reignstart|start|took_office|from)$')
+END_P = re.compile(r'^(?:term_?end|reign_?end|reignend|end|left_office|to|until)$')
+
+
+def _points(cells):
+    """Date points of a row's cells in order: a range gives its start and end, "Incumbent" gives None."""
+    out = []
+    for c in cells:
+        txt = re.sub(r'<br\s*/?>', ' ', c, flags=re.I)
+        plain = dates.clean(txt)
+        plain = LIFE.sub(' ', plain)
+        sp = dates.spans(plain)
+        for s in sp:
+            out.append((s['start'], s))
+            if s['end']:
+                out.append((s['end'], s))
+        if not sp and ONGOING.search(plain):
+            out.append((None, None))
+    return out
+
+
+def list_rows(text, person):
+    """[(points, quote)] for each table row or officeholder template on a page that links `person`: the date points
+    after the person's link, in order."""
+    out = []
+    link = re.compile(r'\[\[\s*' + re.escape(person) + r'\s*(?:\||\]\])')
+    for tbl in re.findall(r'\{\|.*?\|\}', text, re.S):
+        for row in re.split(r'\n\|-[^\n]*', tbl)[1:]:
+            m = link.search(row)
+            if not m:
+                continue
+            cells = [c for c in re.split(r'\n[|!]|\|\||!!', '\n' + row[m.start():].strip()) if c.strip()]
+            cells[0] = cells[0].split(']]', 1)[-1]  # the name cell after the link (Peru: "(born 1962)<br>7 December 2022")
+            cells = [re.sub(r'^[^|\[\]{}]*?(?:style|rowspan|colspan|align|bgcolor)\s*=[^|]*\|', '', c) for c in cells]
+            pts = _points(cells)
+            if pts:
+                out.append((pts, re.sub(r'\s+', ' ', dates.clean(row[m.start():]))[:200]))
+    import mwparserfromhell
+    for m in link.finditer(text):  # template rows: {{Officeholder table|officeholder=[[X]]|term_start=…}}, nameN/reignstartN
+        s = text.rfind('{{', 0, m.start())
+        while s >= 0 and braces_end(text, s) <= m.start():  # the template that encloses the link, not a closed {{lang}}
+            s = text.rfind('{{', 0, s)
+        if s < 0:
+            continue  # the link isn't inside a template
+        try:
+            tpl = mwparserfromhell.parse(text[s:braces_end(text, s)]).filter_templates(recursive=False)[0]
+        except Exception:
+            continue
+        params = {str(p.name).strip().lower(): str(p.value) for p in tpl.params}
+        key = next((k for k, v in params.items() if link.search(v)), None)
+        if key is None:
+            continue
+        n = re.search(r'(\d*)$', key).group(1)
+        base = lambda k: k[:-len(n)] if n and k.endswith(n) else (k if not n else None)
+        st = [v for k, v in params.items() if base(k) and START_P.match(base(k))]
+        en = [v for k, v in params.items() if base(k) and END_P.match(base(k))]
+        if st:
+            pts = _points(st[:1]) + (_points(en[:1]) or [(None, None)])
+            quote = f"{tpl.name.strip()}: {dates.clean(st[0]).strip()} – {dates.clean(en[0]).strip() if en else ''}"
+            out.append((pts, re.sub(r'\s+', ' ', quote)[:200]))
+    return out
+
+
+def resource(sel, person, pages, row_stems):
+    """A list-page span for one reign whose own article is AI-flagged. `sel` is the article's span, used only to find
+    the matching row (never cited). The page's title names the row; the row starts in the article's start year and
+    ends within a year of its end (or both are open); an exact start, then an exact end, wins. (title, span) or None."""
+    best = None
+    for lt in pages:
+        if not any(st in lt.lower() for st in row_stems):  # the page names the row (not UNASUR's presidents on Peru)
+            continue
+        pg = page_of(lt)
+        if not pg or wp_dump.ai_flagged(pg['text']):
+            continue
+        for pts, quote in list_rows(pg['text'], person):
+            for i, (p, s) in enumerate(pts):
+                if not p or p[0] != sel['start'][0]:  # the article's start year (Bhutan's list: 21 July 1972, the article 24 July)
+                    continue
+                end = pts[i + 1][0] if i + 1 < len(pts) else None
+                if end and days(end) < days(p):
+                    continue
+                # the end agrees within a year, or both are open (Tokayev's row has no end; its party years aren't one)
+                if (end is None) != (sel['end'] is None) or (end and abs(end[0] - sel['end'][0]) > 1):
+                    continue
+                prec = sum(x is not None for x in p) + sum(x is not None for x in (end or ()))
+                score = (same(p, sel['start']), end is None or same(end, sel['end']), prec)
+                if not best or score > best[0]:
+                    span = {'start': p, 'end': end, 'text': quote, 'old_style': bool(s and s['old_style']),
+                            'precision': s['precision'] if s else 'year'}
+                    best = (score, (pg['title'], span))
+    return best[1] if best else None
 
 
 # ---- Wikidata side ----
@@ -228,7 +338,7 @@ class Sources:
         out = set()
         for (o,) in self.wd.execute(f"SELECT DISTINCT target FROM wd_link WHERE prop='P39' AND qid IN ({ph})", list(people)):
             t = (self.title(o) or '').lower()
-            if RULER_WORD.search(t) and not NOT_HEAD.search(t) and any(w in t for w in words):
+            if RULER_WORD.search(t) and not NOT_HEAD.search(t) and any(w in t for w in stems(words)):  # not "south" (UNASUR on Peru)
                 out.add(o)
         return out
 
@@ -279,10 +389,11 @@ def same(a, b):
 
 
 def merge_terms(terms):
-    """A person's back-to-back terms as one (Louis XIII: 1610–1617 under regency, 1617–1643 in Wikidata)."""
+    """A person's back-to-back terms of one office as one (Louis XIII: 1610–1617 under regency, 1617–1643 in
+    Wikidata). Two offices stay apart (Napoleon III: President 1848–1852, then Emperor 1852–1870)."""
     out = []
     for t in sorted((t for t in terms if t[0]), key=lambda t: tuple(x or 0 for x in t[0])):
-        if out and out[-1][1] and same(out[-1][1], t[0]):
+        if out and out[-1][1] and same(out[-1][1], t[0]) and out[-1][4] == t[4]:
             out[-1] = (out[-1][0], t[1], out[-1][2], t[3], out[-1][4])
         else:
             out.append(t)
@@ -294,7 +405,33 @@ def agrees(st, en, term, terms):
     full = next(t for t in terms if t[0] == term[0] and t[1] == term[1])
     ok_s = same(st, full[0]) or any(same(st, x) for x in full[2] or ())
     ok_e = same(en, full[1]) or any(same(en, x) for x in full[3] or ())
+    # a title change: the term runs on, back to back, in another office (Louis XVI: King of France to 4 September
+    # 1791, then King of the French to 1792)
+    cur, seen = full, set()
+    while not ok_e and cur[1] and id(cur) not in seen:
+        seen.add(id(cur))
+        cur = next((t for t in terms if t[0] and same(t[0], cur[1]) and t is not cur), None)
+        if not cur:
+            break
+        ok_e = same(en, cur[1])
+    cur, seen = full, set()
+    while not ok_s and cur[0] and id(cur) not in seen:
+        seen.add(id(cur))
+        cur = next((t for t in terms if t[1] and same(t[1], cur[0]) and t is not cur), None)
+        if not cur:
+            break
+        ok_s = same(st, cur[0])
     return ok_s and ok_e
+
+
+def same_office(st, en, term, w1):
+    """The Wikidata claim describes this reign, not another office the person held: the two share at least half of
+    the longer one (Mercedes Aráoz: a one-day interim presidency inside a four-year vice-presidency is not)."""
+    end = lambda t, s: days(t) if t else days((w1, 12, 31)) if s else None
+    a0, a1, b0, b1 = days(st), end(en, True), days(term[0]), end(term[1], True)
+    if None in (a0, b0):
+        return True
+    return (min(a1, b1) - max(a0, b0)) >= 0.5 * max(a1 - a0, b1 - b0, 1)
 
 
 def days(t):
@@ -462,8 +599,7 @@ def run(timeline, row_ids, src):
             flags = []
             if not page:
                 continue
-            if wp_dump.ai_flagged(page['text']):
-                flags.append('AI-flagged article: not usable')
+            ai = wp_dump.ai_flagged(page['text'])
             # a span whose own office text is a non-head office (Franco as head of government) isn't a reign
             cand = [x for x in wp_reigns(infobox_params(page['text'])) if not NOT_HEAD.search(x[2])]
             if person in list_only:  # reached only through list pages: a ruler's office that names the list's subject
@@ -491,7 +627,20 @@ def run(timeline, row_ids, src):
             route = '; '.join(sorted(('list: ' + q[1]) if isinstance(q, tuple) and q[0] == 'list' else ('office: ' + (src.title(q[1]) or q[1]))
                                      if isinstance(q, tuple) else ('row words' if q is None else 'polity: ' + (src.title(q) or q)) for q in via.get(person, ())))
             for field, s, succ, term in got:
-                place(rid, name, person, field, s, succ, term, terms, list(flags), r0, r1, wins, w1, src, rows, found, route)
+                cite = None
+                if ai:  # never cite the article: take the term from a list page's row (the row's lists, then the pages
+                    # its succession/office fields link to, used as navigation only), else leave it unplaced
+                    nav = [(page_of(x.strip()) or {}).get('title') for k, raw in infobox_params(page['text']).items()
+                           if k.startswith(('succession', 'office')) for x in LINK.findall(raw)]
+                    hit = resource(s, name, list(dict.fromkeys([*lists, *(t for t in nav if t)])), row_stems)
+                    if not hit:
+                        if overlap(s['start'][0], year(s['end']), r0, r1) >= 0:
+                            rows.append(dict(row=rid, person=name, qid=person, start=fmt(s['start']), end=fmt(s['end']), field=field,
+                                             quote='', wd='', importance='', flags='AI-flagged article: not usable; no list-page row'))
+                        continue
+                    cite, s = hit
+                    field = 'list row'
+                place(rid, name, person, field, s, succ, term, terms, list(flags), r0, r1, wins, w1, src, rows, found, route, cite)
         gathered.append((rid, r0, r1, found))
     # a reign found on two rows stays only where it falls inside the phase that led to it (Taiwan's presidents: the
     # Taiwan row's Republic of China phase, not the China row's 1912-1949 one); a reign outside its phase with no
@@ -515,25 +664,23 @@ def run(timeline, row_ids, src):
     return ds, rows, list(events.values()), sources, (w0, w1)
 
 
-def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w1, src, rows, found, route=''):
+def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w1, src, rows, found, route='', cite=None):
     """One reign span: flags, or a candidate for the row. `wins`: the phase spans that led to this ruler (None: the
     whole row)."""
     st, en = s['start'], s['end']
     if overlap(st[0], year(en), r0, r1) < 0:
         return  # outside the row's span in this timeline's window
     in_phase = wins is None or any(overlap(st[0], year(en), a, b) >= 0 for a, b in wins)
-    if term and not agrees(st, en, term, terms):
+    if term and not same_office(st, en, term, w1):
+        term = None  # another office's claim (Napoleon III's presidency beside his reign as Emperor): nothing to check
+    if term and not agrees(st, en, term, terms + src.p39_terms(person)):
         flags.append(f'Wikidata differs: {fmt(term[0])} – {fmt(term[1])}')
     if not term:
         flags.append('no Wikidata term to check')
     if s['old_style']:
         flags.append('Old Style date as written')
-    if flags and flags[0].startswith('AI'):
-        rows.append(dict(row=rid, person=name, qid=person, start=fmt(st), end=fmt(en), field=field, quote=s['text'],
-                         wd='', importance='', flags='; '.join(flags)))
-        return
     yrs = max(1, (year(en) or w1) - st[0])
-    found.append(dict(row=rid, person=name, qid=person, st=st, en=en, field=field, quote=s['text'], succ=succ,
+    found.append(dict(row=rid, person=name, qid=person, st=st, en=en, field=field, quote=s['text'], succ=succ, cite=cite,
                       office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase, route=route,
                       wd=f'{fmt(term[0])} – {fmt(term[1])}' if term else ''))
 
@@ -565,10 +712,11 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
             uid = base
             while uid in events:
                 uid, n = f"{base}-{n}", n + 1
-        key = 'wp-' + slug(r['person'])
-        sources[key] = {'name': f"{r['person']} (Wikipedia)", 'url': WP + r['person'].replace(' ', '_'), 'accessed': ACC,
+        page = r.get('cite') or r['person']  # a list page when the person's own article is AI-flagged
+        key = 'wp-' + slug(page)
+        sources[key] = {'name': f"{page} (Wikipedia)", 'url': WP + page.replace(' ', '_'), 'accessed': ACC,
                         'tags': ['wikipedia']}
-        loc = f"infobox {r['field']}: {r['quote']}"
+        loc = f"table row: {r['quote']}" if r.get('cite') else f"infobox {r['field']}: {r['quote']}"
         yrs = (year(r['en']) or w1) - r['st'][0]
         descr = (f"{'Holds office' if r['office'] else 'Rules'} as head of state of {tracks[rid]['name']}"
                  f" from {fmt(r['st'])}{' to ' + fmt(r['en']) if r['en'] else ''}"
@@ -582,7 +730,7 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
         if title.lower() in existing:
             r['flags'].append(f"timeline already has {existing[title.lower()]}")
         rows.append(dict(row=rid, person=r['person'], qid=r['qid'], start=fmt(r['st']), end=fmt(r['en']), field=r['field'],
-                         quote=r['quote'], wd=r['wd'], importance=imp, flags='; '.join(r['flags']), uuid=uid, reign='yes', route=r['route'], office=r['succ']))
+                         quote=r['quote'], wd=r['wd'], importance=imp, flags='; '.join(r['flags']), uuid=uid, reign='yes', route=r['route'], office=r['succ'], cited=page))
 
 
 def main():
@@ -593,7 +741,7 @@ def main():
     out = flag('--out') or os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
     os.makedirs(out, exist_ok=True)
     ds, rows, events, sources, win = run(timeline, row_ids, Sources(settings.DATA))
-    cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'office', 'quote', 'wd', 'flags', 'route', 'uuid']
+    cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'office', 'quote', 'wd', 'flags', 'route', 'cited', 'uuid']
     with open(os.path.join(out, 'rulers.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()

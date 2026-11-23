@@ -4,8 +4,9 @@ Per row: reign count, coverage, the items to check first, then a small sample of
 
     pipelines/extract/.venv/bin/python -I pipelines/extract/rulers_review.py --timeline modern-states --dir pipelines/out/rows/bulk/modern-states
 
-"To check" = Wikidata's term differs by more than a month, reign outside the row's phase, Old Style date. Reigns from
-AI-flagged articles are never cited (rulers.py leaves them unplaced); the file counts them per row. "Unchecked" (no Wikidata term) and small Wikidata differences are counted, not listed.
+Layout: review_file.py (shared by every bulk pass). "To check" = Wikidata's term for the same office differs by more
+than a month, reign outside the row's phase, Old Style date. A reign whose article is AI-flagged is cited from a list
+page's row (rulers.py) or left unplaced and counted per row; the file also checks every cited page against the dump. "Unchecked" (no Wikidata term) and small Wikidata differences are counted, not listed.
 """
 import csv
 import json
@@ -16,9 +17,6 @@ from collections import Counter
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 MONTHS = 'January February March April May June July August September October November December'.split()
-SAMPLE = 5
-
-
 def flag(name, default=None):
     return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
 
@@ -66,22 +64,38 @@ def check_reasons(r):
     return out
 
 
-def line(r, why=None):
+def line(r):
     dates = f"{r['start']} – {r['end']}" if r['end'] else f"{r['start']} –"
     vis = ' · visible' if r['importance'] == '2' else ''
     office = f" · {r['office']}" if r.get('office') else ''
     kinds = sorted({x.split(':')[0].strip() for x in r['route'].split('; ') if x}) or ['?']
-    s = f"- **{r['person']}** ({dates}){vis}{office} · via {', '.join(kinds)}"
-    return s + (f"\n  - ⚠ {'; '.join(why)}" if why else '')
+    cited = f" · cited: {r['cited']} (article AI-flagged)" if r.get('cited') and r['cited'] != r['person'] else ''
+    return f"- **{r['person']}** ({dates}){vis}{office} · via {', '.join(kinds)}{cited}"
+
+
+def ai_check(events):
+    """(citations of AI-flagged pages, pages checked): every Wikipedia page the events cite, read from the dump."""
+    sys.path[:0] = [os.path.join(ROOT, 'pipelines', 'common')]
+    import wp_dump
+    pages = {s['url'].rsplit('/wiki/', 1)[-1].replace('_', ' ') for e in events for s in [e['_src']] if '/wiki/' in s['url']}
+    bad = [t for t in sorted(pages) if (pg := wp_dump.page(t)) and wp_dump.ai_flagged(pg['text'])]
+    for t in bad:
+        print('AI-flagged page cited:', t)
+    return len(bad), len(pages)
 
 
 def main():
+    sys.path[:0] = [os.path.dirname(os.path.abspath(__file__))]
+    from review_file import Review, Row
     timeline = flag('--timeline', 'modern-states')
     d = flag('--dir') or os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
     ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
     w0, w1 = hist(ds['meta']['range']['start']), hist(ds['meta']['range']['end'])
     R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'))))
-    E = json.load(open(os.path.join(d, 'rulers-events.json')))['events']
+    data = json.load(open(os.path.join(d, 'rulers-events.json')))
+    E, S = data['events'], data['sources']
+    for e in E:
+        e['_src'] = S[e['sources'][0]['sourceKey']]
     tracks = [t for t in ds['tracks'] if t.get('url')]
     by_row, unplaced = {}, Counter()
     for r in R:
@@ -93,50 +107,32 @@ def main():
     for e in E:
         years.setdefault(e['tracks'][0], set()).update(range(hist(e['start']), hist(e.get('end', e['start'])) + 1))
 
-    stats, sections = [], []
+    rv = Review(kind='Rulers', timeline=ds['meta']['title'], item='reigns', total_rows=len(tracks),
+                check_means="Wikidata's term for the same office is more than a month apart, the reign falls outside "
+                            "the row's phase, or an Old Style date",
+                glossary='"Visible" = importance 2 (shown at default zoom). "via" = how it was found (polity office, '
+                         'Wikidata P35, office from the row name, or a "List of monarchs of X" page). "Unchecked" = '
+                         'Wikidata has no term for that office. A reign whose own article is AI-flagged is cited '
+                         'from a list page\'s row instead, or not placed.')
     for t in tracks:
         rows = by_row.get(t['id'])
         if not rows:
+            rv.empty.append(t['name'])
             continue
         sp = t.get('span') or {'start': w0, 'end': w1}
         st = t.get('phases') or (sp if isinstance(sp, list) else [sp])
         r0 = max(w0, min(hist(s['start']) for s in st))
         r1 = min(w1, max(hist(s.get('end', w1)) for s in st))
         cov = len({y for y in years.get(t['id'], ()) if r0 <= y <= r1}) / max(1, r1 - r0 + 1)
-        check = [(r, check_reasons(r)) for r in rows]
-        flagged = [(r, w) for r, w in check if w]
-        rest = [r for r, w in check if not w]
         ai = sum('AI-flagged' in r['flags'] for r in R if r['row'] == t['id'] and not r['uuid'])
-        unchecked = sum('no Wikidata term' in r['flags'] for r in rows)
-        step = max(1, len(rest) // SAMPLE)
-        sample = rest[::step][:SAMPLE]
-        stats.append((t, len(rows), cov, len(flagged), unchecked))
-        sections += [f"## {t['name']}", '',
-                     f"{len(rows)} reigns · coverage {100 * cov:.0f}% of {hist(r0)}–{hist(r1)} · {len(flagged)} to check · "
-                     f"{unchecked} unchecked (no Wikidata term) · {unplaced[t['id']]} not placed" + (f" ({ai} of them AI-flagged articles, never cited)" if ai else ''), '']
-        if flagged:
-            sections += ['**To check**', ''] + [line(r, w) for r, w in flagged] + ['']
-        if sample:
-            sections += [f"**Sample** ({len(sample)} of {len(rest)} others)", ''] + [line(r) for r in sample] + ['']
-
-    n = sum(s[1] for s in stats)
-    nf = sum(s[3] for s in stats)
-    none = [t['name'] for t in tracks if t['id'] not in by_row]
-    covs = sorted(s[2] for s in stats)
-    md = [f"# Rulers review: {ds['meta']['title']}", '',
-          f"{n} reign events on {len(stats)} of {len(tracks)} rows with an article. Median coverage "
-          f"{100 * covs[len(covs) // 2]:.0f}% (share of a row's years with a reign). {nf} to check "
-          f"({100 * nf / max(1, n):.0f}%). Nothing is in data-src yet.", '',
-          'Each row lists reigns to check first: Wikidata gives dates more than a month apart, the reign falls outside '
-          "the row's phase, or an Old Style date. Then a sample of the rest. "
-          '"Visible" = importance 2 (shown at default zoom). "via" = how it was found (polity office, Wikidata P35, '
-          'office from the row name, or a "List of monarchs of X" page).', '',
-          '| Row | Reigns | Coverage | To check | Unchecked |', '|---|---|---|---|---|']
-    md += [f"| {t['name']} | {k} | {100 * c:.0f}% | {f} | {u} |" for t, k, c, f, u in stats]
-    md += ['', f"**Rows with no reigns found ({len(none)}):** " + ', '.join(none), ''] + sections
+        notes = f"{unplaced[t['id']]} not placed" + (f" ({ai} of them AI-flagged articles with no list-page row, never cited)" if ai else '')
+        rv.rows.append(Row(name=t['name'], coverage=cov, years=(r0, r1), notes=notes,
+                           extra={'Unchecked': sum('no Wikidata term' in r['flags'] for r in rows)},
+                           items=[{'text': line(r), 'why': check_reasons(r)} for r in rows]))
+    rv.ai_check = ai_check(E) if '--no-ai-check' not in sys.argv else None
     out = os.path.join(d, 'review.md')
-    open(out, 'w').write('\n'.join(md) + '\n')
-    print(f'{n} reigns, {nf} to check, {len(stats)} rows -> {out}')
+    n, nf = rv.write(out)
+    print(f'{n} reigns, {nf} to check, {len(rv.rows)} rows, AI check {rv.ai_check} -> {out}')
 
 
 if __name__ == '__main__':
