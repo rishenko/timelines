@@ -245,8 +245,18 @@
           "storm": { "name": "Storm", "broader": ["natural"] },
           "drought": { "name": "Drought or crop failure", "broader": ["natural"] },
           "epidemic": { "name": "Epidemic", "broader": ["natural"] },
+          "mass-movement": { "name": "Mass movement", "broader": ["natural"] },
+          "extreme-temperature": { "name": "Extreme temperature", "broader": ["natural"] },
+          "wildfire": { "name": "Wildfire", "broader": ["natural"] },
+          "impact": { "name": "Impact or space weather", "broader": ["natural"] },
+          "infestation": { "name": "Infestation", "broader": ["natural"] },
           "famine": { "name": "Famine", "broader": ["human-caused"] },
           "industrial": { "name": "Industrial accident", "broader": ["human-caused"] },
+          "transport": { "name": "Transport accident", "broader": ["human-caused"] },
+          "collapse": { "name": "Structural collapse", "broader": ["human-caused"] },
+          "urban-fire": { "name": "Urban fire", "broader": ["human-caused"] },
+          "spill": { "name": "Spill or pollution", "broader": ["human-caused"] },
+          "crowd-crush": { "name": "Crowd crush", "broader": ["human-caused"] },
           "accident": { "name": "Accident or explosion", "broader": ["human-caused"] },
           "nuclear-test": { "name": "Nuclear test", "broader": ["human-caused"] }
         }
@@ -16576,7 +16586,14 @@
       ],
       "links": [{ "to": "lm-ib-destructions", "kind": "related" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "eruption", "sources": [{ "sourceKey": "wp-thera", "sourceLocation": "Eruption dating; radiocarbon table" }] }]
+      "memberships": [
+        { "facet": "category", "value": "eruption", "sources": [{ "sourceKey": "wp-thera", "sourceLocation": "Eruption dating; radiocarbon table" }] },
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [{ "sourceKey": "wp-thera", "sourceLocation": "Eruption dating; radiocarbon table" }]
+        }
+      ]
     },
     {
       "uuid": "lm-ib-destructions",
@@ -22326,7 +22343,10 @@
       "sources": [{ "sourceKey": "wp-storegga", "sourceLocation": "lead and Description" }, { "sourceKey": "wp-doggerland", "sourceLocation": "Disappearance" }],
       "startDates": [{ "year": "6198 BCE", "margin": 27, "source": { "sourceKey": "wp-storegga", "sourceLocation": "lead (carbon dating)" } }],
       "links": [{ "to": "doggerland", "kind": "related" }, { "to": "event-8-2-ka", "kind": "related" }],
-      "memberships": [{ "facet": "category", "value": "earthquake", "sources": [{ "sourceKey": "wp-storegga", "sourceLocation": "lead and Description" }] }]
+      "memberships": [
+        { "facet": "category", "value": "mass-movement", "sources": [{ "sourceKey": "wp-storegga", "sourceLocation": "lead and Description" }] },
+        { "facet": "category", "value": "earthquake", "sources": [{ "sourceKey": "wp-storegga", "sourceLocation": "lead and Description" }] }
+      ]
     },
     {
       "uuid": "ertebolle",
