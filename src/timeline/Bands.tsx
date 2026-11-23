@@ -171,32 +171,7 @@ export function PhaseStripCell({
         },
       }
     : {};
-  return (
-    <div
-      {...keys}
-      className={`tl-phase${member ? ' member' : c.alt && !plain ? ' alt' : ''}${c.line.named ? '' : ' thin'}${showName?.outside ? ' has-outside' : ''}${selected ? ' selected' : ''}`}
-      data-kind={p.kind}
-      style={
-        {
-          left: labelW + b.x0,
-          width: b.x1 - b.x0,
-          top: c.line.top,
-          height: c.line.height,
-          '--track-color': color,
-          '--fade-in': `${b.fadeIn}px`,
-          '--fade-out': `${b.fadeOut}px`,
-        } as React.CSSProperties
-      }
-    >
-      <div className="tl-phase-fill" title={tip} />
-      {!plain && c.startX >= b.x0 && c.startX <= b.x1 && <div className="tl-phase-edge" style={{ left: c.startX - b.x0 }} />}
-      {!plain && c.endX !== null && c.endX >= b.x0 && c.endX <= b.x1 && <div className="tl-phase-edge end" style={{ left: c.endX - b.x0 }} />}
-      {arrow && (
-        <div className="tl-ongoing-run">
-          <span className="tl-ongoing" />
-        </div>
-      )}
-      {showName && (
+  const names = showName && (
         <div className={`tl-phase-names${showName.outside ? ` outside ${showName.outside}` : ''}`} style={{ left: showName.x0 - b.x0, width: showName.x1 - showName.x0 }}>
           {/* (a still-going phase's name keeps clear of its arrow at the right of the view) */}
           <span
@@ -226,8 +201,50 @@ export function PhaseStripCell({
             {member ? <MemberName name={p.name} /> : p.name}
           </span>
         </div>
+  );
+  const cell = (
+    <div
+      {...keys}
+      className={`tl-phase${member ? ' member' : c.alt && !plain ? ' alt' : ''}${c.line.named ? '' : ' thin'}${showName?.outside ? ' has-outside' : ''}${selected ? ' selected' : ''}`}
+      data-kind={p.kind}
+      style={
+        {
+          left: labelW + b.x0,
+          width: b.x1 - b.x0,
+          top: c.line.top,
+          height: c.line.height,
+          '--track-color': color,
+          '--fade-in': `${b.fadeIn}px`,
+          '--fade-out': `${b.fadeOut}px`,
+        } as React.CSSProperties
+      }
+    >
+      <div className="tl-phase-fill" title={tip} />
+      {!plain && c.startX >= b.x0 && c.startX <= b.x1 && <div className="tl-phase-edge" style={{ left: c.startX - b.x0 }} />}
+      {!plain && c.endX !== null && c.endX >= b.x0 && c.endX <= b.x1 && <div className="tl-phase-edge end" style={{ left: c.endX - b.x0 }} />}
+      {arrow && (
+        <div className="tl-ongoing-run">
+          <span className="tl-ongoing" />
+        </div>
       )}
+      {showName && !p.kind && names}
     </div>
+  );
+  if (!p.kind || !showName) return cell;
+  // an age's name (and its ↗ link) is drawn beside its cell, not inside it, so the link isn't nested in the cell's
+  // button; it covers the same box and lets clicks through to the cell
+  return (
+    <>
+      {cell}
+      <div
+        className="tl-phase tl-age-names"
+        data-kind={p.kind}
+        aria-hidden={url ? undefined : true}
+        style={{ left: labelW + b.x0, width: b.x1 - b.x0, top: c.line.top, height: c.line.height, '--track-color': color } as React.CSSProperties}
+      >
+        {names}
+      </div>
+    </>
   );
 }
 

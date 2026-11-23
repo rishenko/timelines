@@ -354,6 +354,14 @@
      full name is in the tooltip and accessible name */
   text-overflow: clip;
 }
+/* an age's name, drawn beside its cell (Bands.tsx): clicks go through to the cell, except on the ↗ link */
+.tl-phase.tl-age-names,
+.tl-phase.tl-age-names .tl-phase-name {
+  pointer-events: none;
+}
+.tl-age-names .tl-strip-link {
+  pointer-events: auto;
+}
 /* an age's ↗ article link, before its name in the strip (the side panel links it too) */
 .tl-strip-link {
   margin-right: 4px;
