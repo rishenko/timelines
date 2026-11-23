@@ -44,6 +44,8 @@ interface Props {
   data: Dataset;
   /** Events on the period lane: their own line(s) directly under each row's phases. */
   periodLane?: ReadonlySet<string>;
+  /** Events on the reign lane: their row's first event lines, above the period lane. */
+  reignLane?: ReadonlySet<string>;
   /** The timeline's ages (context spans of kind age), placed on their lines: a strip under the ruler, and each row's on its band. */
   ages?: PlacedAge[];
   /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
@@ -267,8 +269,8 @@ export function TimelineView(props: Props) {
     [props.categories],
   );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane }),
-    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane],
+    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane, reignLane: props.reignLane }),
+    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane, props.reignLane],
   );
   const marksByEvent = useMemo(() => {
     const m = new Map<string, Mark[]>();

@@ -74,6 +74,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
+| `src/lib/reignLane.ts` | The reign lane: events with the `reign` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler, and the rows' age bands (`AgeBars`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
@@ -247,13 +248,24 @@ without knowing about regions. Off in edit mode. The link carries `&regions=`.
 ### Period lane
 
 Golden ages and long society spans apply to a whole civilization or country and can span rulers, so each row draws
-them on a line of their own directly under its phases, above its other events (Kevin, 2026-11-22).
+them on a line of their own under its phases (and its reigns, below), above its other events (Kevin, 2026-11-22).
 `periodLaneIds` (`src/lib/periodLane.ts`) picks the events: a golden age (`golden-age`) as the main or second
 category; or a society kind (religion, law, culture, economy) as the **main** category over 25 years or more, except
 a person's lifetime ("Life of …"). `src/data/period-lane.json` then includes or excludes events by id, per timeline;
 a test fails if it names an id its timeline doesn't have. The layout (`layoutLanes`'s `periodLane`) places these
 events first, on their own line(s); the other events pack below them, and the row cap and "+N" folding count only
 those lines. Key-event and "+N" behaviour and the category shapes are unchanged.
+
+### Reign lane
+
+A row's reigns come first among its events, above the period lane (Kevin, 2026-11-22: "rulers just be events again,
+but keep them at the top relative to other events"). `reignLaneIds` (`src/lib/reignLane.ts`) picks events with the
+`reign` sub-kind as main or second category; the classifier (`pipelines/common/event_categories.py`) sets it for spans
+titled "Reign of …", "Presidency of …" and the like. `layoutLanes`'s `reignLane` places them before the period lane's
+events, on at most two lines of their own (`maxReignRows`): one after another on the first; overlapping reigns
+(co-rulers, rival claimants), or names that would collide, on the second. Reigns that don't fit fold into "+N" with the other events, so zoomed out (where each label
+is wider than its reign) the row looks as it did before; expanding the row lifts the cap. A reign that also qualifies
+for the period lane stays in the reign lane. A gap means no reign is recorded there yet.
 
 ### Ages strip
 
