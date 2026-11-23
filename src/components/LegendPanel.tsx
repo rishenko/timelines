@@ -136,6 +136,11 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
 
   const rows: Item[] = [
     {
+      sample: <span className="lg-overview" />,
+      title: 'Overview',
+      text: 'The strip above the chart maps the whole timeline: its bars count the events, the outlined stretch is what’s on screen, and the rest is dimmed. Click or drag it to move the chart there; from the keyboard, ← → move a quarter of a screen, PgUp/PgDn a screen, Home/End to either end.',
+    },
+    {
       sample: (
         <span className="lg-rows">
           <span className="lg-row d0">Region ▾</span>
