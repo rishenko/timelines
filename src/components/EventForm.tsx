@@ -280,7 +280,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               <input
                 id="ev-start"
                 placeholder="66 Ma"
-                {...register('startWhen', { validate: (t) => deepWhenError(t, cal) ?? true })}
+                {...register('startWhen', { validate: (t) => deepWhenError(t, cal, true) ?? true })}
                 {...errorProps('ev-start', errors.startWhen)}
               />
             ) : (
@@ -308,7 +308,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
                 <input
                   id="ev-end"
                   placeholder="65 Ma"
-                  {...register('endWhen', { validate: (t) => deepWhenError(t, cal) ?? true })}
+                  {...register('endWhen', { validate: (t) => deepWhenError(t, cal, true) ?? true })}
                   {...errorProps('ev-end', errors.endWhen ?? errors.endYear)}
                 />
               ) : (

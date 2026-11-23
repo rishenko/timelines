@@ -151,7 +151,8 @@ export function parseDate(input: string, cal: Calendar): { year: number; circa: 
 const AGO_POW: Record<string, number> = { ga: 9, ma: 6, ka: 3 };
 
 /**
- * Deep time (`calendar.beforePresent` only): reads what `formatAgo` writes, and a margin. "4.567 Ga", "66 Ma",
+ * Deep time (`calendar.beforePresent` only): reads what `formatAgo` writes, and a margin ("66 Ma ± 500 ka"; a ± beside
+ * a date with its own unit needs its own unit too, since "66 Ma ± 500" could mean 500 Ma). "4.567 Ga", "66 Ma",
  * "11.7 ka BP", "c. 2.6 Ma", "9,600 years BP", "9,600 years ago", "present", "50 years after present", and
  * "251.902 ± 0.024 Ma" (or "+/-"; the margin in the same unit). Exact by digits, rounded to a whole stored year. Null for
  * anything else, or on a calendar without `beforePresent`.
@@ -164,7 +165,8 @@ export function parseAgo(input: string, cal: Calendar): { year: number; circa: b
   // "66 Ma", "251.902 ± 0.024 Ma" (one unit for both), "66 Ma ± 500 ka" (each its own); "BP" after either unit
   const u = String.raw`(ga|ma|ka)(?:\s*bp)?`;
   const unit = new RegExp(`${c}${num}\\s*(?:${u})?\\s*(?:(?:±|\\+/-)\\s*${num}\\s*(?:${u})?)?\\s*$`, 'i').exec(input);
-  if (unit && (unit[3] || unit[5])) {
+  // a date with its own unit and a ± with none ("66 Ma ± 500") is ambiguous (500 Ma?), so it isn't read
+  if (unit && (unit[3] || unit[5]) && !(unit[3] && unit[4] !== undefined && !unit[5])) {
     const datePow = AGO_POW[(unit[3] ?? unit[5]).toLowerCase()];
     const out: { year: number; circa: boolean; margin?: number } = { year: bp.present - scaledInt(unit[2], datePow), circa: !!unit[1] };
     if (unit[4] !== undefined) out.margin = scaledInt(unit[4], AGO_POW[(unit[5] ?? unit[3]).toLowerCase()]);

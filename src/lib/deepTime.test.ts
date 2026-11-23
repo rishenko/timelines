@@ -164,6 +164,9 @@ describe('editors (follow-up)', () => {
     // one unit for both still reads; a bare "66 ± 1" (no unit) doesn't
     expect(parseFullDate('251.902 ± 0.024 Ma', BP)?.margin).toBe(24_000);
     expect(parseFullDate('66 ± 1', BP)).toBeNull();
+    // a date with its own unit and a bare ± is ambiguous ("66 Ma ± 500": 500 Ma?), so it is not read; a bare date and a ± with a unit is
+    expect(parseFullDate('66 Ma ± 500', BP)).toBeNull();
+    expect(parseFullDate('66 ± 0.5 Ma', BP)?.margin).toBe(500_000);
   });
 
   it('lengths for the editors: exact text that reads back', () => {

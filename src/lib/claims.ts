@@ -61,10 +61,27 @@ export function keepLocator(r: SourceRef, before: SourceRef[] | undefined): Sour
 }
 
 /** Deep time: why a claim's date or margin can't be read, or null (ClaimList shows it, and saving waits). */
-export const deepWhenError = (text: string | undefined, cal: Calendar): string | null =>
-  beforePresent(cal) && !parseFullDate(text ?? '', cal) ? 'Write a date like "66 Ma", "11.7 ka BP" or "251.902 ± 0.024 Ma".' : null;
-export const deepMarginError = (text: string | undefined, cal: Calendar): string | null =>
-  beforePresent(cal) && (text ?? '').trim() !== '' && parseSpan(text ?? '') === null ? 'Write a length like "24 kyr", "0.5 Myr" or "9,600 yrs".' : null;
+export function deepWhenError(text: string | undefined, cal: Calendar, noMargin = false): string | null {
+  if (!beforePresent(cal)) return null;
+  const d = parseFullDate(text ?? '', cal);
+  if (!d) {
+    // a ± whose unit is missing gets its own hint
+    if (/(±|\+\/-)\s*[\d.,]+\s*$/.test(text ?? '')) return 'Give the ± a unit, like "66 Ma ± 500 ka": "66 Ma ± 500" could mean 500 Ma.';
+    return 'Write a date like "66 Ma", "11.7 ka BP" or "251.902 ± 0.024 Ma".';
+  }
+  // an event's own date has no margin: a ± belongs in a date claim (saving would drop it, as compile.ts refuses it)
+  if (noMargin && d.margin !== undefined) return "A ± belongs in a date claim's margin, not the event's own date: write the date alone.";
+  return null;
+}
+/** `when`: the claim's date text, to check a ± typed there against this margin (they must agree). */
+export function deepMarginError(text: string | undefined, cal: Calendar, when?: string): string | null {
+  if (!beforePresent(cal) || (text ?? '').trim() === '') return null;
+  const m = parseSpan(text ?? '');
+  if (m === null) return 'Write a length like "24 kyr", "0.5 Myr" or "9,600 yrs".';
+  const typed = parseFullDate(when ?? '', cal)?.margin;
+  if (typed !== undefined && typed !== m) return `The margin disagrees with the ± typed in the date (${formatEditSpan(typed)}): keep one of them.`;
+  return null;
+}
 
 export const fromClaimValues = (v: ClaimValues, cal: Calendar): DateClaim | null => {
   let c: DateClaim;

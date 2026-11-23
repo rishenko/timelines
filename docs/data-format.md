@@ -189,6 +189,8 @@ How the app shows it:
 - **Editors:** the event form, its date claims and the row form show deep-time dates as text with every digit
   ("251.902137 Ma") and each claim's margin as a length with its unit ("24 kyr", "0.5 Myr", "9,600 yrs"), in place of year,
   era and years. What's typed is checked as typed; a date or margin that can't be read stops the save and says why.
+  A ± written with a claim's date must agree with the margin field (or leave the field empty); a ± beside a date with
+  its own unit needs a unit too ("66 Ma ± 500 ka", not "66 Ma ± 500"); an event's own start and end take no ±.
   Saving unchanged keeps every year exactly.
 
 ## tracks

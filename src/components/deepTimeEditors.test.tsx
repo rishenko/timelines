@@ -53,10 +53,10 @@ describe('deep-time event editor', () => {
     expect(saved.startDates?.[0]).toMatchObject({ year: ago(251_902_000), margin: 24_000 });
   });
 
-  it('the margin field wins over a ± typed with the date', async () => {
+  it('the margin field alone sets the margin', async () => {
     const d = deep();
     const onSave = open(d, mk(d, { startDates: [{ year: ago(252_000_000) }] }));
-    type('Date', '252 Ma ± 1 Ma');
+    type('Date', '252 Ma');
     type('Margin', '0.5 Myr');
     await save();
     expect((onSave.mock.calls[0][0] as TimelineEvent).startDates?.[0].margin).toBe(500_000);
@@ -71,6 +71,32 @@ describe('deep-time event editor', () => {
     expect(onSave).not.toHaveBeenCalled();
     expect(screen.getAllByRole('alert').map((a) => a.textContent).join('\n')).toMatch(/Write a date like.*\n?.*Write a length like|Write a length like.*Write a date like|Write a date like/s);
     expect(screen.getAllByRole('alert').length).toBeGreaterThanOrEqual(2);
+  });
+
+  it("an event's own start and end reject a ± (it would be dropped), and a ± without a unit asks for one", async () => {
+    const d = deep();
+    const onSave = open(d, mk(d, { end: ago(66_000_001) }));
+    type('Start', '66 Ma ± 500 ka');
+    await save();
+    expect(onSave).not.toHaveBeenCalled();
+    expect(screen.getAllByRole('alert').map((a) => a.textContent).join('\n')).toMatch(/± belongs in a date claim/);
+    type('Start', '66 Ma ± 500');
+    await save();
+    expect(screen.getAllByRole('alert').map((a) => a.textContent).join('\n')).toMatch(/Give the ± a unit/);
+    expect(onSave).not.toHaveBeenCalled();
+  });
+
+  it('a claim margin that disagrees with a ± typed in its date is an error; agreeing or one alone is fine', async () => {
+    const d = deep();
+    const onSave = open(d, mk(d, { startDates: [{ year: ago(252_000_000) }] }));
+    type('Date', '252 Ma ± 1 Ma');
+    type('Margin', '0.5 Myr');
+    await save();
+    expect(onSave).not.toHaveBeenCalled();
+    expect(screen.getAllByRole('alert').map((a) => a.textContent).join('\n')).toMatch(/disagrees with the ± typed/);
+    type('Margin', '1 Myr'); // agrees
+    await save();
+    expect((onSave.mock.calls[0][0] as TimelineEvent).startDates?.[0].margin).toBe(1_000_000);
   });
 
   it('other calendars keep year and era fields', () => {

@@ -98,7 +98,7 @@ export function ClaimList<T extends FieldValues>({
                 id={fieldId(i, 'when')}
                 aria-label="Date"
                 placeholder="66 Ma"
-                {...reg(`${name}.${i}.when`, { validate: (t) => deepWhenError(String(t ?? ''), cal) ?? true })}
+                {...reg(`${name}.${i}.when`, { validate: (t) => deepWhenError(String(t ?? ''), cal) ?? true, deps: [`${name}.${i}.margin`] })}
                 {...errorProps(fieldId(i, 'when'), errorAt(`${name}.${i}.when`))}
               />
             ) : (
@@ -115,7 +115,7 @@ export function ClaimList<T extends FieldValues>({
                 aria-label="Margin"
                 className="margin-length"
                 placeholder="24 kyr"
-                {...reg(`${name}.${i}.margin`, { validate: (t) => deepMarginError(String(t ?? ''), cal) ?? true })}
+                {...reg(`${name}.${i}.margin`, { validate: (t, form) => deepMarginError(String(t ?? ''), cal, String(get(form, `${name}.${i}.when`) ?? '')) ?? true })}
                 {...errorProps(fieldId(i, 'margin'), errorAt(`${name}.${i}.margin`))}
               />
             ) : (
