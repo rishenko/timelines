@@ -77,3 +77,36 @@ describe('a phase cell at the end of the chart', () => {
     expect(container.querySelector('.tl-phase')).toBeNull();
   });
 });
+
+describe('an age cell on a row’s strip (a context span)', () => {
+  const ageCell = (x0: number, x1: number, named: boolean, alt = true): PhaseCell => ({
+    phase: { name: 'Old Kingdom', kind: 'age', start: 1100, end: 1200, trackId: 'r', level: 0, nameFrom: 1100, nameTo: 1200 } as PhaseCell['phase'],
+    line: { top: 0, height: 18, named: true },
+    alt,
+    x0,
+    x1,
+    fadeIn: 0,
+    fadeOut: 0,
+    startX: x0,
+    endX: x1,
+    name: named ? { x0, x1, outside: false } : null,
+  });
+
+  it('with its name: edges and the alternate fill, as a phase', () => {
+    const { container } = render(<PhaseStripCell cell={ageCell(100, 300, true)} color="#336699" {...common} />);
+    const p = container.querySelector<HTMLElement>('.tl-phase')!;
+    expect(p.dataset.kind).toBe('age');
+    expect(p.classList.contains('alt')).toBe(true);
+    expect(p.querySelectorAll('.tl-phase-edge')).toHaveLength(2);
+  });
+
+  it('without a name, or under 10 px: no edges and no alternate fill, so a run of them reads as one stripe', () => {
+    for (const c of [ageCell(100, 300, false), ageCell(100, 108, true)]) {
+      const { container } = render(<PhaseStripCell cell={c} color="#336699" {...common} />);
+      const p = container.querySelector<HTMLElement>('.tl-phase')!;
+      expect(p.classList.contains('alt')).toBe(false);
+      expect(p.querySelector('.tl-phase-edge')).toBeNull();
+      cleanup();
+    }
+  });
+});
