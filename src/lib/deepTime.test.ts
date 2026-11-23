@@ -3,7 +3,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Calendar, Dataset } from '../types.ts';
 import { eraStart, formatAgo, formatEditDate, formatYear, isMajorTick, parseFullDate, parseYear, tickFloor, ticksBetween } from './calendar.ts';
-import { formatSpan, incrementButton, incrementLabel, incrementSpoken } from './subYear.ts';
+import { formatSpan, incrementButton, incrementLabel, incrementName, incrementSpoken } from './subYear.ts';
 import { circaFadeAt } from './chronology.ts';
 import { buildScale } from '../timeline/scale.ts';
 import { compileSource } from '../../scripts/lib/compile.ts';
@@ -40,6 +40,8 @@ describe('formatting', () => {
     expect(incrementLabel(100_000_000)).toBe('100 Myr');
     expect(incrementButton(1_000_000_000)).toBe('1 Gyr');
     expect(incrementSpoken(100_000)).toBe('100 thousand years per tick');
+    expect(incrementName(100_000_000)).toBe('100 Myr: 100 million years per tick');
+    expect(incrementName(50)).toBe('50 years per tick');
     expect(incrementLabel(1000)).toBe('1000 yr');
     expect(incrementButton(250)).toBe('250');
     expect(incrementSpoken(50)).toBe('50 years per tick');

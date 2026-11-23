@@ -64,7 +64,7 @@ export function incrementLabel(inc: number): string {
   return u ? (u === 'quarter' ? '3 months' : `1 ${u}`) : (shortYears(inc) ?? `${inc} yr`);
 }
 
-/** "10 years per tick", "1 month per tick": a zoom step, spoken. */
+/** "10 years per tick", "1 month per tick", "100 million years per tick": a zoom step, spoken. */
 export function incrementSpoken(inc: number): string {
   const u = subYearUnit(inc);
   return u ? `${u === 'quarter' ? '3 months' : `1 ${u}`} per tick` : `${spokenYears(inc)} per tick`;
@@ -78,10 +78,11 @@ export function incrementButton(inc: number): string {
 
 /**
  * A zoom step button's accessible name: as spoken for a number ("10 years per tick", which begins with its visible
- * "10"); below a year, its visible name first ("Day: 1 day per tick"), so speech input can say what it sees (2.5.3).
+ * "10"); below a year, and in deep time, its visible name first ("Day: 1 day per tick", "100 Myr: 100 million years per
+ * tick"), so speech input can say what it sees (2.5.3).
  */
 export function incrementName(inc: number): string {
-  return subYearUnit(inc) ? `${incrementButton(inc)}: ${incrementSpoken(inc)}` : incrementSpoken(inc);
+  return subYearUnit(inc) || shortYears(inc) ? `${incrementButton(inc)}: ${incrementSpoken(inc)}` : incrementSpoken(inc);
 }
 
 /** A zoom step's name in links (?inc=): its unit name below a year, else its number. */
