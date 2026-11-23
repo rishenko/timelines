@@ -34,6 +34,8 @@ interface Options {
   onShowKeys?: () => void;
   /** "/": move to the search box. Only in the chart, so it never takes a key typed elsewhere (WCAG 2.1.4). */
   onSearchKey?: () => void;
+  /** Y: place the year cursor at the focused event's year, else the view's centre. */
+  onCursorKey?: (year: number) => void;
   /** Each label has a compare button (comparison sets). */
   compare?: boolean;
   /** A lane's phase strip lines, each its cells' stop keys and left edges (content px): grid lines above its events. */
@@ -133,6 +135,10 @@ export function useRovingFocus(o: Options) {
     } else if (ev.key === '/') {
       ev.preventDefault();
       o.onSearchKey?.();
+    } else if ((ev.key === 'y' || ev.key === 'Y') && o.onCursorKey) {
+      ev.preventDefault();
+      const e = stopInfo(key)?.eventIds.map((id) => o.eventsById.get(id)).find(Boolean);
+      o.onCursorKey(e ? e.start : o.centerYearRef.current);
     }
   };
   return { rovingKey, onStopFocus, onKeyNav };

@@ -84,6 +84,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
 | `src/lib/reignLane.ts` | The reign lane: events with the `reign` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
+| `src/timeline/OverviewStrip.tsx`, `overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
@@ -96,6 +97,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen; the view's stretch for drawing (a vertical scroll re-renders only every half screen) |
 | `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys; phase strip lines are grid lines) and its movement rules |
 | `src/timeline/gestures.ts` | Pinch zoom and long press |
+| `src/cursor/meanwhile.ts`, `YearCursor.tsx` | The year cursor: a line at the year under the pointer (or placed with Y), its year chip, and the band above the chart saying what was going on then in the rows on screen (reign, phase, sub-rows, ongoing events, ages) |
 | `src/timeline/rowsInView.ts` | Which rows have nothing near the view ("Hide rows with nothing in view") |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
 | `src/map/mapData.ts`, `src/components/EventMap.tsx` | Event maps: which borders, pins and map images to draw for an event's year (see [Event maps](#event-maps)) |
@@ -274,6 +276,17 @@ events, on at most two lines of their own (`maxReignRows`): one after another on
 (co-rulers, rival claimants), or names that would collide, on the second. Reigns that don't fit fold into "+N" with the other events, so zoomed out (where each label
 is wider than its reign) the row looks as it did before; expanding the row lifts the cap. A reign that also qualifies
 for the period lane stays in the reign lane. A gap means no reign is recorded there yet.
+
+### Overview strip
+
+`OverviewStrip` (`src/timeline/OverviewStrip.tsx`, `overview.css`) is a 30 px map of the whole timeline above the
+chart (Kevin, 2026-11-23: the "onion skin" version). It maps the chart's own pixels, so shortened gaps stay short (and
+are marked) and the outlined view is always the screen's share of the chart; everything outside it is dimmed. Bars
+count events by where they start (one per 3 px, square-root heights). A click centres the view there and a drag
+moves it; the outline is a `role="slider"` (one Tab stop: ←/→ a quarter of a screen, Page Up/Down a screen,
+Home/End), named with the years in view. It scrolls the chart's scroller (`scrollerRef`), so it needs no state of
+its own. `TimelineView` wraps the strip and the scroller in `.tl-wrap`, a flex column; a band above the chart can
+join it as one more child.
 
 ### Ages strip
 

@@ -80,7 +80,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 |---|---|---|---|---|---|
 | 2.1.1 Keyboard | A | Partial | tests | CI: axe `scrollable-region-focusable`; jsx-a11y `click-events-have-key-events` (each mouse-only handler names its key); tests: chart keys (`keyboard.test.ts`, `a11y.test.tsx`), phase strips and their details (`phaseKeyboard.test.tsx`), age lines (`AgeStrip.test.tsx`), Customize tabs, edit mode on and off. | Pass |
 | 2.1.2 No Keyboard Trap | A | Partial | tests | Tests: the chart is one Tab stop and Tab leaves it; Escape leaves the detail panel. No test tabs through every view. | Pass |
-| 2.1.4 Character Key Shortcuts | A | Partial | tests | The one-key shortcuts (`/`, `?`, `+`/`−`) act only while the chart has focus, which WCAG allows. Test: `/` moves to search from the chart and does nothing elsewhere. | Pass (fixed 20 Nov 2026; `/` used to work page-wide) |
+| 2.1.4 Character Key Shortcuts | A | Partial | tests | The one-key shortcuts (`/`, `?`, `+`/`−`, `Y`) act only while the chart has focus, which WCAG allows. Tests: `/` moves to search from the chart and does nothing elsewhere; `Y` places the year cursor from the chart and does nothing in the search box. | Pass (fixed 20 Nov 2026; `/` used to work page-wide) |
 | 2.2.1 Timing Adjustable | A | Manual | — | Toasts disappear after 3.5 s, including error toasts (a failed upload, edits that can't be saved). They are also announced in the live region. | Not reviewed |
 | 2.2.2 Pause, Stop, Hide | A | Partial | — | CI: axe `blink`, `marquee`. No auto-moving content; smooth scrolling stops under reduced motion. | Pass |
 | 2.3.1 Three Flashes or Below Threshold | A | Manual | — | Nothing flashes. | Pass (code) |

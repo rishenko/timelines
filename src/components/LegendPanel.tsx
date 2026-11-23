@@ -68,6 +68,7 @@ const KEYS: Item[] = [
   { readSample: true, sample: kbd('+', '−'), title: 'Zoom', text: 'Zoom in or out around the focused event.' },
   { readSample: true, sample: kbd('Enter'), title: 'Open', text: 'Open the event’s or phase’s details (Esc closes them and comes back), zoom into a “+N” group, or fold a row.' },
   { readSample: true, sample: kbd('Tab'), title: 'Ages', text: 'Each line of the Ages strip, and of a row’s ages, is one stop: ← → and Home/End move along it, Enter opens the age’s details.' },
+  { readSample: true, sample: kbd('Y'), title: 'Year cursor', text: 'Put the year cursor on the focused event’s year: the band above the chart says what was going on then. ← → move it a step (Shift: a tenth of one), Esc puts it away.' },
   { readSample: true, sample: kbd('/'), title: 'Search', text: 'Move to the search box, to find a row, an event or a year.' },
   { readSample: true, sample: kbd('?'), title: 'This list', text: 'Opens the legend from the chart.' },
 ];
@@ -135,6 +136,11 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
   const era = formatYear(cal.yearZero ? 0 : 1, cal);
 
   const rows: Item[] = [
+    {
+      sample: <span className="lg-overview" />,
+      title: 'Overview',
+      text: 'The strip above the chart maps the whole timeline: its bars count the events, the outlined stretch is what’s on screen, and the rest is dimmed. Click or drag it to move the chart there; from the keyboard, ← → move a quarter of a screen, PgUp/PgDn a screen, Home/End to either end.',
+    },
     {
       sample: (
         <span className="lg-rows">
