@@ -350,6 +350,9 @@
 .tl-phase[data-kind] .tl-phase-name {
   letter-spacing: 0;
   text-transform: none;
+  /* clipped as the live site's age bars clip ("Early D"), no ellipsis: in a narrow cell "…" costs three letters; the
+     full name is in the tooltip and accessible name */
+  text-overflow: clip;
 }
 /* an age's ↗ article link, before its name in the strip (the side panel links it too) */
 .tl-strip-link {
