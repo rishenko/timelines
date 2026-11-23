@@ -186,6 +186,10 @@
 .tl-connections .link.succeeds {
   stroke-dasharray: 10 3;
 }
+/* together (co-rulers): dash-dot, no arrowhead */
+.tl-connections .link.with {
+  stroke-dasharray: 6 2 1 2;
+}
 .tl-connections .link.conquers {
   stroke: color-mix(in srgb, var(--danger) 60%, transparent);
 }
@@ -937,7 +941,9 @@
 .tl-ages {
   position: sticky;
   top: 44px;
-  z-index: 4;
+  /* as the ruler: above the rows' sticky name cells (4), which scroll under it; otherwise the row passing under the
+     strip covered its "Ages" corner, and the timeline's ages looked like the row's (Kevin, 2026-11-23) */
+  z-index: 5;
   background: var(--bg-2);
   border-bottom: 1px solid var(--line-2);
 }

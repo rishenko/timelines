@@ -82,7 +82,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
-| `src/lib/reignLane.ts` | The reign lane: events with the `reign` category go on their row's first event lines |
+| `src/lib/reignLane.ts` | The reign lane: events with the `reign` or `interregnum` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/timeline/OverviewStrip.tsx`, `overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
@@ -98,6 +98,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys; phase strip lines are grid lines) and its movement rules |
 | `src/timeline/gestures.ts` | Pinch zoom and long press |
 | `src/cursor/meanwhile.ts`, `YearCursor.tsx` | The year cursor: a line at the year under the pointer (or placed with Y), its year chip, and the band above the chart saying what was going on then in the rows on screen (reign, phase, sub-rows, ongoing events, ages) |
+| `src/print/PrintView.tsx`, `export.ts`, `print.css` | Print and Export: the view (years and rows on screen) as an SVG page. Print is the browser's (⌘P): App mounts the layer on `beforeprint` and print.css fits it to one landscape page. Export saves it as PNG or SVG |
 | `src/timeline/rowsInView.ts` | Which rows have nothing near the view ("Hide rows with nothing in view") |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
 | `src/map/mapData.ts`, `src/components/EventMap.tsx` | Event maps: which borders, pins and map images to draw for an event's year (see [Event maps](#event-maps)) |
@@ -270,12 +271,14 @@ those lines. Key-event and "+N" behaviour and the category shapes are unchanged.
 
 A row's reigns come first among its events, above the period lane (Kevin, 2026-11-22: "rulers just be events again,
 but keep them at the top relative to other events"). `reignLaneIds` (`src/lib/reignLane.ts`) picks events with the
-`reign` sub-kind as main or second category; the classifier (`pipelines/common/event_categories.py`) sets it for spans
-titled "Reign of …", "Presidency of …" and the like. `layoutLanes`'s `reignLane` places them before the period lane's
+`reign` or `interregnum` sub-kind as main or second category; the classifier (`pipelines/common/event_categories.py`)
+sets `reign` for spans titled "Reign of …", "Presidency of …" and the like, and `interregnum` for spans titled "…
+interregnum" or "Time of Troubles" (Kevin, 2026-11-23: a sourced gap in rule is drawn on the reign line). `layoutLanes`'s `reignLane` places them before the period lane's
 events, on at most two lines of their own (`maxReignRows`): one after another on the first; overlapping reigns
 (co-rulers, rival claimants), or names that would collide, on the second. Reigns that don't fit fold into "+N" with the other events, so zoomed out (where each label
 is wider than its reign) the row looks as it did before; expanding the row lifts the cap. A reign that also qualifies
-for the period lane stays in the reign lane. A gap means no reign is recorded there yet.
+for the period lane stays in the reign lane. A gap means no reign is recorded there yet; a sourced interregnum
+fills its gap with a labelled span.
 
 ### Overview strip
 

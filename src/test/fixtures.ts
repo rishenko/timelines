@@ -8,7 +8,7 @@ import type { ContextSpan, Dataset } from '../types.ts';
  */
 export function plainTimeline(): Dataset {
   return {
-    schemaVersion: 8,
+    schemaVersion: 9,
     meta: {
       id: 'harbor-towns',
       title: 'The Harbor Towns',

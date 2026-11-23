@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # ---- the vocabulary: 9 top-level ids (stable), each with a short list of sub-kinds ----
 VOCAB = {
-    'rule': ('Rulers', {'succession': 'Succession', 'reign': 'Reign or term', 'coup': 'Coup or deposition', 'title': 'New title'}),
+    'rule': ('Rulers', {'succession': 'Succession', 'reign': 'Reign or term', 'interregnum': 'Interregnum', 'coup': 'Coup or deposition', 'title': 'New title'}),
     'statehood': ('Statehood', {'founded': 'State founded', 'independence': 'Independence', 'union': 'Union', 'dissolved': 'State ends', 'reform': 'New name, form or constitution'}),
     'territory': ('Territory', {'conquest': 'Conquest', 'annexation': 'Annexation', 'cession': 'Cession', 'colony': 'Colony'}),
     'place': ('Cities and places', {'city-founded': 'City founded', 'sack': 'Sack or fall', 'capital-moved': 'Capital moved', 'disaster': 'Disaster'}),
@@ -148,6 +148,8 @@ WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
 # a ruler's or office-holder's time in office, at the start of a title
 REIGN = re.compile(r'^(?:the )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
+# a sourced gap in rule, as a span (Kevin, 2026-11-23: its own sub-kind, drawn on the reign line)
+INTERREGNUM = re.compile(r'\binterregnum\b|\btime of troubles\b', re.I)
 REIGN_ANY = re.compile(r"\brules\b|\b(?:first|second|third|fourth) reign\b|\bregency$", re.I)
 WIKI = re.compile(r'^https?://en\.wikipedia\.org/wiki/(.+)$')
 
@@ -233,8 +235,13 @@ def classify(e, ds, wp=None):
     rs = re.match(r'(.+?)\s+rules\b', title)
     if rs and not ruler_is_person(rs.group(1), ds):
         rm = REIGN.match(title)
-    if rm and (e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])):
+    span = e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])
+    if rm and span:
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))
+    # "Ottoman Interregnum", "Time of Troubles": a gap in rule, as a span (a point stays a succession)
+    im = INTERREGNUM.search(title)
+    if im and span and not rm:
+        found.append(('interregnum', f'title: "{im.group(0)}" (a span)'))
     # "Fall of X": a state ending when X is one of the timeline's rows, else a city falling
     m = re.match(r'(?:the )?fall of (?:the )?([^,;(]+)', title, re.I)
     if m:
