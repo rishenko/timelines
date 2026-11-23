@@ -57,6 +57,9 @@ export function About({ search = window.location.search, pathname = window.locat
           <strong>Natural Earth</strong>: the land on the event maps.
         </li>
         <li>
+          <strong>Wikimedia Commons</strong>: the map images shown with some rows, each with its author and licence.
+        </li>
+        <li>
           <strong>Wikidata</strong>: identifiers and, for some rows, a location for the map. Never a date.
         </li>
       </ul>

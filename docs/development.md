@@ -14,6 +14,7 @@ npm run docs:check     # the code's file fields and npm scripts are all document
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
+npm run sources:check  # every kind of source the shipped data uses is named in the README and on the About page (CI runs it)
 npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages from this clone (the workflow below is the usual way)
 ```
@@ -41,7 +42,7 @@ key in an example, or when an npm script isn't named on this page.
 [glossary](glossary.md).
 
 `npm run check:all` runs, before you ask for review, everything CI checks except the compiled-files diff (it rewrites
-files), plus the type-check of app and scripts, `seam-check`, and `categories:proof` on every timeline against
+files), plus the type-check of app and scripts, `seam-check`, `sources:check`, and `categories:proof` on every timeline against
 `--base` (default `origin/main`). It prints one line per check and the end of each failing one's output; `--skip` and
 `--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
 `fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
@@ -75,7 +76,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 |---|---|
 | `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
 | `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` and `?collection=<url>` links, update checks for timelines from links, the reader's own timelines, the welcome page |
-| `src/components/About.tsx` | The About this data page (`?page=about`, opened from the footer link in `Credits.tsx`; `Boot.tsx` shows it without loading a timeline). Its claims follow the README's "Data sources and AI use" |
+| `src/components/About.tsx` | The About this data page (`?page=about`, opened from the footer link in `Credits.tsx`; `Boot.tsx` shows it without loading a timeline). Its claims follow the README's "Data sources and AI use"; `npm run sources:check` (`scripts/source-kinds.ts`) fails when either leaves out a kind of source the shipped data uses, or the CC BY-SA carve-out for quoted text |
 | `src/types.ts` | The format's types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …), at the current schema version (`SCHEMA_VERSION`; history in data-format.md, "Versions") |
 | `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
 | `src/data/` | The validator (`validate.ts`), schema versions and migration (`migrate.ts`), the site's list format (`timelineIndex.ts`), and row proximity checks (`proximity.ts`) |
