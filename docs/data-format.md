@@ -411,8 +411,7 @@ failure", `epidemic`) and `human-caused` (`famine`, `industrial` "Industrial acc
 explosion", `nuclear-test`). The names follow the IRDR peril classification as EM-DAT uses it (IRDR, *Peril
 classification and hazard glossary*, IRDR DATA Publication No. 1, 2014; EM-DAT's tree as updated in September 2023);
 `pipelines/common/disaster_classes.json` gives each value's EM-DAT class and Wikidata class, and every place we merge or
-rename (e.g. tsunamis with earthquakes, EM-DAT's miscellaneous and transport accidents as one type, nuclear tests
-added). A famine caused mainly by policy or war is human-caused, not natural (Kevin, 2026-11-23); one classed as genocide
+rename (e.g. tsunamis with earthquakes, nuclear tests added; transport accidents have no type yet). A famine caused mainly by policy or war is human-caused, not natural (Kevin, 2026-11-23); one classed as genocide
 (the Holodomor) also carries `atrocity` ("Massacre or genocide") as its second category, and any other famine is
 natural, under "Drought or crop failure", as EM-DAT reclassified most famines as drought. An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
 article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed

@@ -126,7 +126,8 @@ TEXT_RULES = [
     (R(r'\b(plagues?|epidemics?|pandemics?|pestilence|black death|smallpox|cholera)\b'), 'epidemic'),
     (R(r'\bnuclear (weapons? )?tests?\b'), 'nuclear-test'),
     (R(r'\b(nuclear (disaster|accident)|chemical (disaster|leak)|industrial (disaster|accident)|oil spill|mine disaster)\b'), 'industrial'),
-    (R(r'\b(great fire|fire of|explosion(?! (in|of) (the )?(population|growth|trade|art|culture))|shipwreck|train crash|air crash)\b'), 'accident'),
+    (R(r'\b(great fire|fire of|explosion(?! (in|of) (the )?(population|growth|trade|art|culture)))\b'), 'accident'),
+    # transport accidents (shipwrecks, crashes) have no type yet: Kevin is weighing new types (2026-11-23)
     (R(r'\bdisaster\b'), 'disaster'),
     (R(r'\b(drives? out|drove out|expels?|overruns?|overran|seiz\w*(?! (the throne|power))|fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
     (R(r'\bpartition\w*|\bsplits?\b|\bdivided\b'), 'territory'),

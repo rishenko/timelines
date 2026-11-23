@@ -16,8 +16,8 @@
  "famine": { "name": "Famine", "cause": "human-caused", "emdat": "none since 2023 (the former 'Complex' group; now an 'Associated disaster' tag)", "wikidata": ["Q168247"],
   "note": "Only a famine caused mainly by policy or war (Kevin, 2026-11-23); one classed as genocide also carries 'Massacre or genocide'." },
  "industrial": { "name": "Industrial accident", "cause": "human-caused", "emdat": "Technological > Industrial accident", "wikidata": ["Q68800046"] },
- "accident": { "name": "Accident or explosion", "cause": "human-caused", "emdat": "Technological > Miscellaneous accident; Technological > Transport", "wikidata": ["Q171558", "Q179057"],
-  "note": "Merged: EM-DAT's 'Miscellaneous accident' (collapse, explosion, fire) and 'Transport' (air, rail, road, water)." },
+ "accident": { "name": "Accident or explosion", "cause": "human-caused", "emdat": "Technological > Miscellaneous accident", "wikidata": ["Q171558", "Q179057"],
+  "note": "EM-DAT's 'Miscellaneous accident' (collapse, explosion, fire). Transport accidents (EM-DAT's 'Transport': air, rail, road, water) are not mapped yet: Kevin is weighing new types (2026-11-23)." },
  "nuclear-test": { "name": "Nuclear test", "cause": "human-caused", "emdat": "none (EM-DAT records accidents, not tests; nearest: Industrial accident > Radiation)", "wikidata": ["Q210112"],
   "note": "Added: no IRDR or EM-DAT class (Kevin, 2026-11-23)." }
 }
