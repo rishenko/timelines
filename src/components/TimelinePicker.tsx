@@ -11,6 +11,8 @@ interface Props {
   subtitle?: string;
   /** "Add or manage timelines…": opens the Timelines panel. */
   onManage: () => void;
+  /** "Cite this timeline": opens its citation. */
+  onCite?: () => void;
 }
 
 /**
@@ -19,7 +21,7 @@ interface Props {
  * only when the reader follows it; a <select> here opened one on every arrow key in some browsers (WCAG 3.2.2).
  * The list sits outside the <h1>, so the heading is only the title.
  */
-export function TimelinePicker({ timelines, currentId, title, subtitle, onManage }: Props) {
+export function TimelinePicker({ timelines, currentId, title, subtitle, onManage, onCite }: Props) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -103,6 +105,19 @@ export function TimelinePicker({ timelines, currentId, title, subtitle, onManage
           >
             Add or manage timelines…
           </button>
+          {onCite && (
+            <button
+              className="linklike"
+              onClick={() => {
+                setOpen(false);
+                // focus the title button first: the dialog returns focus to it on close (this item unmounts)
+                buttonRef.current?.focus();
+                onCite();
+              }}
+            >
+              Cite this timeline…
+            </button>
+          )}
         </div>
       )}
     </div>

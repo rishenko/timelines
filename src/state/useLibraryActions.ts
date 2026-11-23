@@ -135,15 +135,22 @@ export function useLibraryActions(opts: {
     notify('Share link copied.');
   };
 
-  /** Copies a link to one event of the open timeline, with the current view settings. */
-  const copyEventLink = async (eventId: string) => {
+  /** A link to one event of the open timeline, with the current view settings (also what "Cite this" cites). */
+  const eventLink = (eventId: string) => {
     // a URL timeline shares as ?data=…, so the link works in any browser; view settings ride along
     const q = new URLSearchParams(window.location.search);
     const extra = ['inc', 'at', 'compress']
       .filter((k) => q.has(k))
       .map((k) => `&${k}=${encodeURIComponent(q.get(k)!)}`)
       .join('');
-    await navigator.clipboard.writeText(`${shareBase(library)}${extra}#${eventId}`);
+    return `${shareBase(library)}${extra}#${eventId}`;
+  };
+  /** The open timeline's own link (what "Cite this timeline" cites). */
+  const timelineLink = () => shareBase(library);
+
+  /** Copies a link to one event of the open timeline, with the current view settings. */
+  const copyEventLink = async (eventId: string) => {
+    await navigator.clipboard.writeText(eventLink(eventId));
     notify('Link copied.');
   };
 
@@ -157,6 +164,8 @@ export function useLibraryActions(opts: {
     removeEntry,
     copyShareLink,
     copyEventLink,
+    eventLink,
+    timelineLink,
     refreshCollection,
     removeList,
     copyListLink,

@@ -35,7 +35,9 @@ The three link to each other where they meet, at 650 and 1500.
   governments in a civil war) take a second strip.
 - **Memberships:** a row that belonged to another row for a while (a republic in a union, a province in an empire)
   shows "in" that row's name and years on one more strip; the union's row lists its members.
-- **Calendars:** BCE/CE, or your own era names, with or without a year 0.
+- **Calendars:** BCE/CE, or your own era names, with or without a year 0. **Deep time:** a timeline can show years
+  before present ("4.567 Ga", "66 Ma", "11.7 ka BP"), with zoom steps and gaps in Myr, a ruler that ends at the present,
+  and dates typed the same way in search.
 - **Days and months:** any date can give a month or a day. A timeline can offer zoom steps below a year (quarter,
   month, week, day), and the ruler then labels months or days.
 - **The ruler and zoom:** pick the time each tick covers (buttons, `+`/`−`, or pinch), and scroll or drag through
@@ -60,6 +62,11 @@ The three link to each other where they meet, at 650 and 1500.
   them, with the dates each source gives.
 - **Event details:** the description, dates, sources, connections, and what the event began or ended, with a *Copy
   link* button.
+- **About this data:** the footer's link opens a page on how the timelines were made: each source and what it
+  supplies, the rule against AI-flagged pages, known gaps and the licences.
+- **Cite this:** a timeline (title menu → *Cite this timeline…*) or an event (its details) gives a Chicago citation and
+  a BibTeX entry with the data version, the date accessed and the link. **Report a problem** on an event opens a
+  GitHub issue pre-filled with its timeline, id, dates and sources (on the timelines this site ships).
 - **Maps** (Ancient and Classical): opening an event shows its rows on a map of its year: borders where a source has
   them, else a pin and the map from the row's Wikipedia article.
 
@@ -201,17 +208,22 @@ field that changed or disappeared fails the run or shows in the diff. The steps 
 The code, tests and documentation were written with the help of an AI coding assistant
 ([Claude Code](https://claude.com/claude-code), Anthropic), directed and reviewed by the author.
 
-The included timelines were compiled with AI assistance from English Wikipedia. No date was invented: every year and
-margin comes from a cited page, and where pages disagree, every value is kept. Pages carrying a notice that they
-contain AI-generated text are not used. None of the timelines has been reviewed by a specialist yet.
+The included timelines were compiled with AI assistance. The aim is to find several highly reputable sources and stick
+to them. Most of the data comes from English Wikipedia; each date cites the page it was read from, and where pages
+disagree, every value is kept. Other sources are cited where they are used: [PeriodO](https://perio.do/) period
+definitions for the regional Ages lines in Ancient and Classical World, and Cliopatria for its map borders and for one
+Medieval World date claim (Srivijaya's end). Books and papers appear only where Wikipedia cites them. Pages carrying a
+notice that they contain AI-generated text are not used (a check refuses any link to a page on the list of flagged
+pages).
 
 - **Ancient and Classical World:** the assistant read the cited articles (17–18 November 2026) and transcribed their
   dates; the descriptions are its own summaries. Books and papers appear only where Wikipedia cites them, tagged
   **Cited via Wikipedia (not checked)**.
 - **Medieval World** and **Modern States:** built by the generators in [pipelines/](pipelines/README.md) from the
   English Wikipedia dump of 1 November 2026. Each date cites the infobox field, heading or sentence it was read from,
-  and each build lists every article it read (`data-src/provenance/`). Medieval World's descriptions say only what
-  sentences in the cited articles say; events with no such sentence have none. Modern States' descriptions are the
+  and each build lists every article it read (`data-src/provenance/`). Most of Medieval World's descriptions say only
+  what sentences in the cited articles say, each checked against its sentence, and events with no such sentence have
+  none; 35 early ones (the Byzantine events) are the assistant's own summaries. Modern States' descriptions are the
   assistant's own summaries.
 
 The Ancient and Classical event maps draw borders from
@@ -224,5 +236,6 @@ cites Cliopatria for one row's end (Srivijaya), as a second date claim beside it
 ## License
 
 Code: [MIT](LICENSE). Timeline data and maps: [CC BY 4.0](LICENSE-DATA.md), except third-party material that keeps
-its own licence (listed in `LICENSE-DATA.md` and in each file's credits). Wikipedia text is CC BY-SA; the timelines
-quote only dates and short phrases, and link each article. By [rishenko](https://github.com/rishenko).
+its own licence (listed in `LICENSE-DATA.md`). Quoted Wikipedia text (source locators, and
+descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed through the linked article;
+everything else in the data is CC BY 4.0. By [rishenko](https://github.com/rishenko).

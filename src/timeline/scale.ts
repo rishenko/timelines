@@ -38,6 +38,8 @@ export interface ScaleOptions {
   calendar?: Calendar;
   /** Stretches never compressed, whatever their length (below a year's zoom: the days inside event bars). */
   keep?: [number, number][];
+  /** The last year the scale may reach (deep time: the present). Padding after the last anchor stops here. */
+  end?: number;
 }
 
 export interface Scale {
@@ -77,6 +79,9 @@ export function buildScale(anchors: number[], opts: ScaleOptions): Scale {
     for (let i = 0; i < pad; i++) hi = nextTick(hi, inc, cal);
     return [lo, hi];
   });
+
+  // nothing after the end (deep time: the ruler stops at the present, rather than ticking "present" again past it)
+  if (opts.end !== undefined) for (const c of cells) if (c[1] > opts.end && c[0] < opts.end) c[1] = opts.end;
 
   // Merge intervals; holes no longer than gapMinTicks stay linear.
   const mergeSlack = compress ? gapMinTicks * inc * (inc < 1 ? 1.1 : 1) : Infinity;

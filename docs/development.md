@@ -43,7 +43,8 @@ key in an example, or when an npm script isn't named on this page.
 `npm run check:all` runs, before you ask for review, everything CI checks except the compiled-files diff (it rewrites
 files), plus the type-check of app and scripts, `seam-check`, and `categories:proof` on every timeline against
 `--base` (default `origin/main`). It prints one line per check and the end of each failing one's output; `--skip` and
-`--only` take the names it prints.
+`--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
+`fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
@@ -74,10 +75,12 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 |---|---|
 | `src/App.tsx` | The app shell: owns the open timeline's state and wires it to the toolbar, timeline and panels |
 | `src/Boot.tsx` | Opens the page's timeline before the app starts: the site's list, `?data=<url>` and `?collection=<url>` links, update checks for timelines from links, the reader's own timelines, the welcome page |
+| `src/components/About.tsx` | The About this data page (`?page=about`, opened from the footer link in `Credits.tsx`; `Boot.tsx` shows it without loading a timeline). Its claims follow the README's "Data sources and AI use" |
 | `src/types.ts` | The format's types (`Dataset`, `Track`, `TimelineEvent`, `DateClaim`, …), at the current schema version (`SCHEMA_VERSION`; history in data-format.md, "Versions") |
 | `public/timelines/` | The site's timelines and their list, `index.json` (format and checks in `src/data/timelineIndex.ts`; loading in `src/state/timelines.ts`) |
 | `src/data/` | The validator (`validate.ts`), schema versions and migration (`migrate.ts`), the site's list format (`timelineIndex.ts`), and row proximity checks (`proximity.ts`) |
-| `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks |
+| `src/lib/calendar.ts` | Eras, year 0, parsing and formatting, round-year ruler ticks; deep time (`formatAgo`, `parseAgo`, ticks on round ages) |
+| `src/lib/beforePresent.ts` | Reads `calendar.beforePresent` (deep time); the "c." fade from `circaShare` is `circaFadeAt` in `chronology.ts` |
 | `src/lib/subYear.ts` | Months and days: zoom steps below a year, date positions, `inc`/`at` in links |
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
@@ -86,6 +89,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/timeline/OverviewStrip.tsx`, `overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
+| `src/lib/cite.ts`, `src/components/CiteBox.tsx`, `CiteDialog.tsx` | Cite this (Chicago, BibTeX) and Report a problem (a pre-filled GitHub issue); the data version comes from `vite.config.ts` (`__DATA_VERSION__`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -465,7 +469,8 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
   purpose). Each mouse-only handler has a comment naming its keyboard equivalent.
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
-  person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
+  person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails;
+  under each failing view it prints every failing element's selector and axe's reason.
   It isn't in CI (about 10 minutes): run it after a UI change, before asking for review (`--state <name>` checks just
   the views a pull request adds, in about a minute, and writes no report), and paste its summary line
   ("Failing: 0", the number of views) in the pull request. **Pull requests don't commit `wcag-report.md`**: it would
