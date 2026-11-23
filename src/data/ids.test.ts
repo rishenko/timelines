@@ -28,6 +28,7 @@ function renameRow(d: Dataset, from: string, to: string) {
     for (const m of t.memberOf ?? []) m.row = fix(m.row);
   }
   for (const e of d.events) e.tracks = e.tracks.map(fix);
+  for (const a of d.meta.eras ?? []) if (a.tracks) a.tracks = a.tracks.map(fix);
 }
 
 describe('ids a link can name', () => {

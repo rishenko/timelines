@@ -69,9 +69,19 @@ export interface TimelineMeta {
    * same years.
    */
   eras?: Era[];
+  /**
+   * Display names for era groups, by group id (`{ "ages-aegean": { "name": "Aegean" } }`): a group's ages are
+   * labelled with its name, or with the id when it has none. Each key names a `group` some era has.
+   */
+  eraGroups?: Record<string, EraGroup>;
 }
 
-/** A named period across all rows (TimelineMeta.eras). */
+/** How a group of eras is shown (meta.eraGroups). */
+export interface EraGroup {
+  name: string;
+}
+
+/** A named period across the whole timeline, or the rows it names in `tracks` (TimelineMeta.eras). */
 export interface Era extends TrackSpan {
   /** Letters, digits and dashes; unique among the timeline's eras. */
   id: string;
@@ -85,6 +95,11 @@ export interface Era extends TrackSpan {
   url?: string;
   /** The age's identifiers in other datasets (as a row's). */
   ids?: TrackIds;
+  /**
+   * The rows the age belongs to, usually region groups (e.g. ["africa"]): it is drawn in each of their bands. Left
+   * out, the age spans the whole timeline and sits in the strip under the ruler.
+   */
+  tracks?: string[];
   sources: SourceRef[];
 }
 
@@ -347,7 +362,7 @@ export interface TimelineEvent extends DateDays {
 
 export interface Dataset {
   /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 6;
+  schemaVersion: 7;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest

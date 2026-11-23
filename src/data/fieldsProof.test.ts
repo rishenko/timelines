@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { allowPattern, fieldChanges } from '../../scripts/fields-proof.ts';
 
-const ds = (tracks: object[], extra: object = {}) => ({ schemaVersion: 6, meta: { id: 't', eras: [{ id: 'axial', name: 'Axial' }] }, tracks, events: [], ...extra });
+const ds = (tracks: object[], extra: object = {}) => ({ schemaVersion: 7, meta: { id: 't', eras: [{ id: 'axial', name: 'Axial' }] }, tracks, events: [], ...extra });
 const rows = [{ id: 'a' }, { id: 'b', parent: 'a' }, { id: 'g' }, { id: 'c', parent: 'g' }];
 
 describe('fields:proof', () => {
