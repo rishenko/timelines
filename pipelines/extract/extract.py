@@ -28,7 +28,8 @@ ARGS = settings.take_flags(sys.argv[1:])
 import wp_dump as wp  # noqa: E402
 import extractors as X  # noqa: E402
 from topics import LIST_TITLE, WINDOW_AFTER, Tables, article_set
-from wd_join import WD, compare  # noqa: E402  # noqa: E402
+from dates import astro  # noqa: E402
+from wd_join import WD, compare  # noqa: E402
 
 KIND_WEIGHT = {'infobox': 5, 'table': 4, 'lead': 3, 'heading': 2, 'prose': 1}
 WIKI = 'https://en.wikipedia.org/wiki/'
@@ -42,9 +43,11 @@ def opt(name, default=None, cast=str, many=False):
 
 
 def iso(v):
+    """A (y, m, d) with a historical year -> ISO text with the astronomical year the timelines store (44 BC -> -0043)."""
     if not v:
         return ''
     y, m, d = v
+    y = astro(y)
     s = f'{y:05d}' if y < 0 else f'{y:04d}'
     return s + (f'-{m:02d}' if m else '') + (f'-{d:02d}' if d else '')
 
@@ -263,7 +266,7 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
           f'- Dropped: ' + (', '.join(f'{v} {k}' for k, v in dropped.items()) or 'none') + '.',
           f'- Files: candidates.csv {sum(r["kind"] != "prose" for r in rows)} rows (infobox, table, lead, heading); '
           f'candidates-prose.csv {sum(r["kind"] == "prose" for r in rows)}.',
-          f'- Topic window: ' + (f'{rep["window"][0] - 1}–{rep["window"][1] + WINDOW_AFTER} (the seeds\' dates, a year before, '
+          f'- Topic window: ' + (f'{astro(rep["window"][0] - 1)}–{astro(rep["window"][1] + WINDOW_AFTER)} (astronomical years; the seeds\' dates, a year before, '
                                  f'{WINDOW_AFTER} after); outside it: {sum(r["in_window"] == 0 for r in rows)} rows, sorted last.'
                                  if rep['window'][0] is not None else 'none (the seeds have no infobox dates).'),
           f'- Old Style flagged: {sum(r["span"]["old_style"] for r in rows)}. Circa: {sum(r["span"]["circa"] for r in rows)}.',

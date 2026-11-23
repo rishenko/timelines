@@ -78,6 +78,10 @@ Unless noted, numbers come from enwiki-20261101 and the extractor's WW1 pilot (2
 
 All of these have unit tests in `extract/test_dates.py`.
 
+**BC years: two conventions (#56 review, 2026-11-22).** `dates.py` and `wd_join` work in historical years (44 BC = −44, no year zero), which is how both Wikipedia's text and Wikidata's JSON write them. The timelines store **astronomical** years (1 BC = 0, 44 BC = −43; `docs/data-format.md`). Everything written out (`extract.iso`: the CSV's `start`, `end` and `alts`, the report, and the Wikidata comparison text) goes through `dates.astro`, so "15 March 44 BC" is written `-0043-03-15` and "1 BC" `0000`. Before the fix, candidates came out a year early. A generator copying them would have put Caesar's assassination in 45 BC. `cand_id` still hashes the internal value, so ids didn't change.
+
+**Era before the year.** "AD 43", "14 March AD 1066" and "AD 9–14" parsed to nothing, or lost the day and month, until the #56 review. `dates._atom` now takes a leading "AD" before the year.
+
 **Ranges.** The left side borrows what it lacks from the right (`dates._resolve`):
 
 | Form | Example | Note |
@@ -227,7 +231,7 @@ All of these have unit tests in `extract/test_dates.py`.
 - **Time values:**
   - Format: `"+1914-07-28T00:00:00Z"` with a `precision` (9 year, 10 month, 11 day) and a `calendarmodel` (Q1985727 Gregorian, Q1985786 Julian).
   - Month and day are `00` below their precision (`+1848-00-00`).
-  - `wd_join.wd_time` reads `-0044` as 44 BC, Wikidata's documented convention, not yet checked against a known BC item.
+  - `wd_join.wd_time` reads `-0044` as 44 BC (historical numbering, no year zero). **Checked** on the schema-2 table: Assassination of Julius Caesar P585 `-0044-03-15`, Battle of Actium `-0031-09-02`, Battle of Gaugamela `-0331-10-01`. Output converts it to the timelines' astronomical year (−43), like every other year (see Date strings).
 - **Comparing with Wikipedia** (`wd_join.compare`):
   - Only infobox dates (the article's own) are compared. A lead or table row may date something else: in a first try that compared every row, 74% "differed".
   - A P585 point in time on a ranged event is often its end or a day inside (Battle of Lahti), so a P585 inside the range counts as agreement.

@@ -27,5 +27,25 @@ class ShortTitles(unittest.TestCase):
                          'Republican officer Tom Barry, who had escaped, was recaptured in Dublin')
 
 
+class ClassifierThroughShim(unittest.TestCase):
+    """WpShim rebuilds only an article's infobox type and categories for the shared classifier; if the classifier starts
+    reading something else, the extractor would quietly get fewer categories. This catches that."""
+    def test_military_conflict_infobox_gives_conflict(self):
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
+        import event_categories
+        from extract import WIKI, WpShim
+
+        class Tables:  # the lookup tables' two calls WpShim makes: (page_id, title, infobox type), categories
+            page = staticmethod(lambda title: (1, title, 'military conflict') if title == 'Kilmichael ambush' else None)
+            categories = staticmethod(lambda page_id: [])
+
+        e = {'title': 'Kilmichael', 'descr': '', 'tracks': [], 'sources': [{'sourceKey': 'wp', 'sourceLocation': 'lead'}]}
+        ds = {'sources': {'wp': {'url': WIKI + 'Kilmichael_ambush'}}, 'tracks': []}
+        got = event_categories.classify(e, ds, WpShim(Tables()))
+        self.assertTrue(got, 'no category: the classifier no longer reads what WpShim provides')
+        self.assertEqual(got[0][0], 'conflict')
+        self.assertIn('infobox', got[0][1])
+
+
 if __name__ == '__main__':
     unittest.main()

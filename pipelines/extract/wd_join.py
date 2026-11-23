@@ -9,6 +9,10 @@ QID its dates and links). Wikidata is a cross-check and a discovery route; the c
 """
 import os
 import sqlite3
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dates import astro  # noqa: E402
 
 START, END = ('P580', 'P585', 'P571'), ('P582', 'P576')
 JULIAN = 'Q1985786'
@@ -16,7 +20,8 @@ JULIAN = 'Q1985786'
 
 def wd_time(t, precision):
     """'+1914-07-28T00:00:00Z' at precision 11 -> (1914, 7, 28); 9 -> (1914, None, None). Negative years are BCE as
-    Wikidata writes them ("-0044" is 44 BC, no year zero), the timelines' convention too."""
+    Wikidata's JSON writes them ("-0044" is 44 BC, no year zero): historical years, as dates.py uses internally. The
+    timelines store astronomical years (44 BC = -43), so output converts with dates.astro (see `compare`)."""
     sign = -1 if t.startswith('-') else 1
     y, m, d = t.lstrip('+-').split('T')[0].split('-')
     y = sign * int(y)
@@ -88,7 +93,9 @@ def compare(span, dates):
     Julian-calendar values are marked, since Wikipedia may give the other calendar."""
     if not dates['start'] and not dates['end']:
         return 'no date'
-    fmt = lambda v: '-'.join(str(x) for x in v[:3] if x is not None) + f' ({v[3]}{", Julian" if v[4] == JULIAN else ""})'
+    # written out with the astronomical year the timelines store (Wikidata's -0044 = 44 BC -> -43)
+    fmt = lambda v: '-'.join(str(x) for x in (astro(v[0]),) + tuple(v[1:3]) if x is not None) + \
+        f' ({v[3]}{", Julian" if v[4] == JULIAN else ""})'
     starts = [v for v in dates['start'] if v[3] != 'P585']
     points = [v for v in dates['start'] if v[3] == 'P585']
     end = span['end'] or span['start']

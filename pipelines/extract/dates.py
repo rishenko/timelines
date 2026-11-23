@@ -4,7 +4,10 @@ Date normaliser for the extractor: turns the wikitext of an infobox field, a tab
     spans(raw, year_hint=False) -> [{'start': (y, m, d), 'end': (y, m, d) | None, 'alts': [(y, m, d)], 'circa': bool,
                                      'old_style': bool, 'precision': 'day'|'month'|'year'|'century', 'text': str}]
 
-- Years are astronomical-free historical years: negative for BC, no year zero (1 BC is -1, as the timelines store them).
+- Years inside this module are historical: negative for BC, no year zero (1 BC is -1, 44 BC is -44). The timelines
+  store astronomical years (1 BC is 0, 44 BC is -43; docs/data-format.md), so anything written out goes through
+  `astro()` (extract.iso does).
+- An era word may come before the year as well as after it: "AD 43", "14 March AD 1066", "AD 9–14".
 - Ranges: "28 July 1914 – 11 November 1918", "24–29 April 1916", "24 April – 1 May 1916", "June–July 1848",
   "1914–18", "44–42 BC"; the left side takes the missing month, year or era from the right.
 - Alternatives ("11 November 1918/13 November 1918", "1453 or 1454") go to `alts` beside the end (or start) they follow.
@@ -22,6 +25,11 @@ MONTH = {m: i + 1 for i, m in enumerate(MONTHS)} | {m[:3]: i + 1 for i, m in enu
 # "17 (6) May 1727" (Peter II of Russia): the New Style day with its Old Style twin in parentheses
 _OS_DAY = re.compile(r'\b(\d{1,2})\s*\((\d{1,2})\)(?=\s+[A-Z][a-z]+)')
 _OS = re.compile(r'\bO\.\s?S\.|\bOld Style\b|\bJulian\b|\{\{\s*OldStyleDate', re.I)
+
+
+def astro(y):
+    """A historical year (1 BC = -1, no year zero) -> the astronomical year the timelines store (1 BC = 0, 44 BC = -43)."""
+    return y + 1 if y is not None and y < 0 else y
 
 
 def clean(raw):
@@ -144,10 +152,15 @@ def _atom(toks, i):
         a['circa'] = True; j += 1
     k = lambda n=0: toks[j + n][0] if j + n < len(toks) else None
     v = lambda n=0: toks[j + n][1]
+    lead_ad = lambda: k() == 'era' and v() == 'ad' and k(1) == 'num'  # "AD 43": the era before the year
+    if lead_ad():
+        a['era'] = 'ad'; j += 1
     if k() == 'century':
         a['century'] = v(); j += 1
     elif k() == 'num' and k(1) == 'month':  # 28 July [1914]
         a['d'], a['m'] = v(), v(1); j += 2
+        if lead_ad():  # 14 March AD 1066
+            a['era'] = 'ad'; j += 1
         if k() == 'num' and v() > 31 or (k() == 'num' and k(1) == 'era'):
             a['y'] = v(); j += 1
         elif k() == 'num' and k(1) != 'month':
@@ -160,6 +173,8 @@ def _atom(toks, i):
                 j += 1
         if k() == 'comma' and k(1) == 'num' and v(1) > 31:  # "July–August, 1914"
             j += 1
+        if lead_ad():  # March AD 1066
+            a['era'] = 'ad'; j += 1
         if k() == 'num' and (v() > 31 or k(1) == 'era'):
             a['y'] = v(); j += 1
     elif k() == 'num' and v() <= 31 and k(1) == 'comma' and k(2) == 'num' and v(2) > 31 and i > 0 and toks[i - 1][0] in ('dash', 'alt'):
