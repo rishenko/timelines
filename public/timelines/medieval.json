@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 8,
+  "schemaVersion": 9,
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
@@ -445,6 +445,12 @@
           },
           "reign": {
             "name": "Reign or term",
+            "broader": [
+              "rule"
+            ]
+          },
+          "interregnum": {
+            "name": "Interregnum",
             "broader": [
               "rule"
             ]
@@ -26951,7 +26957,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "interregnum",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1301-1526",
@@ -31936,7 +31942,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "interregnum",
           "sources": [
             {
               "sourceKey": "wp-ottoman-empire",
@@ -32180,7 +32186,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "interregnum",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-georgia",

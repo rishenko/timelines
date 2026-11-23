@@ -359,8 +359,9 @@ Important events only, in six re-runnable scripts (run before `groups.ts`): `cau
 `eastern-europe.ts`, `americas.ts`, `north-asia.ts`, `fill-gaps.ts`. 70 events, 58 sources, 55 rows. Seven web-fetch
 agents read about 65 pages.
 
-- **Not used (AI-text warnings):** *Trialeti–Vanadzor culture*, *Lusatian culture* (Biskupin's own page is used
-  instead), and *Ma'in* (Minaeans): its banner cites the LLM translation guideline, so it is treated as flagged.
+- **Not used (AI-text warnings):** *Trialeti–Vanadzor culture* and *Lusatian culture* (Biskupin's own page is used
+  instead). *Ma'in* (Minaeans) was also left out here, as its banner cites the LLM translation guideline; it was
+  re-read on 23 November 2026 and is now used (see "Ma'in", below).
 - **Not found (404):** Umm an-Nar culture (dates from *Magan* and *Hafit period*), Dedan (from *Lihyan*), Casimiroid
   (from *Ortoiroid people*), Sechín Bajo, Oasisamerica cultures / Tucson Basin / Las Capas (no US Southwest data),
   Southern Neolithic and Ash mound (no South Indian Neolithic), Megalithic culture of South India (*Iron Age in India*
@@ -617,3 +618,21 @@ No date was added or changed, and none of the 48 period rows had any other setti
 - **Layout change:** phase names now stack only when the periods' best dates overlap (rival governments), not when
   only their uncertainty windows do. Before, Egypt's Early Dynastic and First Intermediate names dropped to a second
   line.
+
+## Ma'in (23 November 2026)
+
+`scripts/ancient-classical/main-minaeans.ts` (re-runnable) adds **Ma'in (Minaeans)** to Arabia, after Qataban: its
+lifespan (it "appears in the historical record in the 8th century BCE"; "the most popular hypothesis places its demise
+in the 1st century CE") and four events, each date quoted from the page: it becomes a kingdom (the last quarter of the
+7th century BCE), breaks with Saba and joins Yathill (as the 7th century BCE closed), absorbs Nashshan (between the 6th
+and 4th centuries BC), and its trade surpasses Saba's (by the mid-1st millennium BCE).
+
+- **The notice:** the 1 November dump and the live page (read 23 November) carry one notice, asking for text
+  translated from the Arabic article. Its LLM mention is guidance for translators ("translators must follow the LLM
+  translation guideline"); no banner says the text is AI-written, and the page isn't in the AI-flag list. Under the
+  author's rule for translation notices (as for *Polynesians*, eighth pass), it is used, and each of the four events
+  says so in its description: "One cited page, Wikipedia's Ma'in, carries a notice asking for text translated from
+  the Arabic article." The call was delegated by the author (docs/BACKLOG.md).
+- **Categories:** the classifier's calls are kept (becomes a kingdom: `title`; Yathill: `alliance`; trade:
+  `economy`). It left the Nashshan event without one, so a reviewed override files it under `annexation`.
+

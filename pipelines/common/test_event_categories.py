@@ -38,6 +38,13 @@ class ReignRule(unittest.TestCase):
         self.assertEqual(cats('Reign of Ramesses II', ['egypt'])[0], 'reign')
         self.assertNotIn('reign', cats('Attila rules the Huns', ['huns'], span=False))
 
+    def test_an_interregnum_span_is_its_own_sub_kind_and_a_point_is_not(self):
+        self.assertEqual(cats('Ottoman Interregnum', ['egypt'])[0], 'interregnum')
+        self.assertEqual(cats('The Time of Troubles', ['egypt'])[0], 'interregnum')
+        self.assertNotIn('interregnum', cats('Interregnum ends', ['egypt'], span=False))
+        # a war of succession stays a war
+        self.assertNotIn('interregnum', cats('War of the Spanish Succession', ['egypt']))
+
     def test_ruler_is_person(self):
         self.assertTrue(ec.ruler_is_person('Kashyapa I', DS))
         self.assertFalse(ec.ruler_is_person('rome', DS))
