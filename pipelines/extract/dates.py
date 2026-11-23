@@ -6,7 +6,7 @@ Date normaliser for the extractor: turns the wikitext of an infobox field, a tab
 
 - Years inside this module are historical: negative for BC, no year zero (1 BC is -1, 44 BC is -44). The timelines
   store astronomical years (1 BC is 0, 44 BC is -43; docs/data-format.md), so anything written out goes through
-  `astro()` (extract.iso does).
+  `astro()` (`iso()` does).
 - An era word may come before the year as well as after it: "AD 43", "14 March AD 1066", "AD 9–14".
 - Ranges: "28 July 1914 – 11 November 1918", "24–29 April 1916", "24 April – 1 May 1916", "June–July 1848",
   "1914–18", "44–42 BC"; the left side takes the missing month, year or era from the right.
@@ -30,6 +30,16 @@ _OS = re.compile(r'\bO\.\s?S\.|\bOld Style\b|\bJulian\b|\{\{\s*OldStyleDate', re
 def astro(y):
     """A historical year (1 BC = -1, no year zero) -> the astronomical year the timelines store (1 BC = 0, 44 BC = -43)."""
     return y + 1 if y is not None and y < 0 else y
+
+
+def iso(v):
+    """A (y, m, d) with a historical year -> ISO text with the astronomical year the timelines store (44 BC -> -0043)."""
+    if not v:
+        return ''
+    y, m, d = v
+    y = astro(y)
+    s = f'{y:05d}' if y < 0 else f'{y:04d}'
+    return s + (f'-{m:02d}' if m else '') + (f'-{d:02d}' if d else '')
 
 
 def clean(raw):

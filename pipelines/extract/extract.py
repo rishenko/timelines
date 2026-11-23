@@ -28,7 +28,7 @@ ARGS = settings.take_flags(sys.argv[1:])
 import wp_dump as wp  # noqa: E402
 import extractors as X  # noqa: E402
 from topics import LIST_TITLE, WINDOW_AFTER, Tables, article_set
-from dates import astro  # noqa: E402
+from dates import astro, iso  # noqa: E402
 from wd_join import WD, compare  # noqa: E402
 
 KIND_WEIGHT = {'infobox': 5, 'table': 4, 'lead': 3, 'heading': 2, 'prose': 1}
@@ -40,16 +40,6 @@ def opt(name, default=None, cast=str, many=False):
     if many:
         return vals
     return cast(vals[-1]) if vals else default
-
-
-def iso(v):
-    """A (y, m, d) with a historical year -> ISO text with the astronomical year the timelines store (44 BC -> -0043)."""
-    if not v:
-        return ''
-    y, m, d = v
-    y = astro(y)
-    s = f'{y:05d}' if y < 0 else f'{y:04d}'
-    return s + (f'-{m:02d}' if m else '') + (f'-{d:02d}' if d else '')
 
 
 def cand_id(article, locator, s):
