@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 7,
+  "schemaVersion": 8,
   "meta": {
     "id": "modern-states",
     "title": "Modern States",
@@ -36,335 +36,6 @@
         "timeline": "medieval",
         "at": 1500,
         "side": "before"
-      }
-    ],
-    "eras": [
-      {
-        "id": "timurid-renaissance",
-        "name": "Timurid Renaissance",
-        "group": "steppe-persianate",
-        "start": 1375,
-        "end": 1525,
-        "circa": true,
-        "startDates": [
-          {
-            "year": 1375,
-            "source": {
-              "sourceKey": "wp-timurid-renaissance",
-              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
-            },
-            "margin": 25,
-            "note": "The late 14th century."
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1525,
-            "source": {
-              "sourceKey": "wp-timurid-renaissance",
-              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
-            },
-            "margin": 25,
-            "note": "The early 16th century."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-timurid-renaissance",
-            "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
-          }
-        ],
-        "url": "https://en.wikipedia.org/wiki/Timurid_Renaissance",
-        "ids": {
-          "wikidata": "Q3424763"
-        }
-      },
-      {
-        "id": "renaissance",
-        "name": "Renaissance",
-        "group": "europe-thought",
-        "start": 1400,
-        "end": 1600,
-        "circa": true,
-        "startDates": [
-          {
-            "year": 1400,
-            "source": {
-              "sourceKey": "wp-renaissance",
-              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
-            },
-            "margin": 50,
-            "note": "From the 15th century."
-          },
-          {
-            "year": 1300,
-            "source": {
-              "sourceKey": "wp-renaissance",
-              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
-            },
-            "margin": 50,
-            "note": "More broadly, from the 14th century."
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1600,
-            "source": {
-              "sourceKey": "wp-renaissance",
-              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
-            },
-            "margin": 50,
-            "note": "To the end of the 16th century."
-          },
-          {
-            "year": 1700,
-            "source": {
-              "sourceKey": "wp-renaissance",
-              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
-            },
-            "margin": 50,
-            "note": "More broadly, to the 17th century."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-renaissance",
-            "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
-          }
-        ],
-        "url": "https://en.wikipedia.org/wiki/Renaissance",
-        "ids": {
-          "wikidata": "Q4692"
-        }
-      },
-      {
-        "id": "age-of-discovery",
-        "name": "Age of Discovery",
-        "group": "europe-expansion",
-        "start": 1415,
-        "end": 1650,
-        "circa": true,
-        "startDates": [
-          {
-            "year": 1415,
-            "source": {
-              "sourceKey": "wp-age-of-discovery",
-              "sourceLocation": "infobox start: Early 15th century"
-            },
-            "margin": 25,
-            "note": "The early 15th century."
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1650,
-            "source": {
-              "sourceKey": "wp-age-of-discovery",
-              "sourceLocation": "infobox end: Mid-17th century"
-            },
-            "margin": 25,
-            "note": "The mid-17th century."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-age-of-discovery",
-            "sourceLocation": "infobox start: Early 15th century"
-          },
-          {
-            "sourceKey": "wp-age-of-discovery",
-            "sourceLocation": "infobox end: Mid-17th century"
-          }
-        ],
-        "url": "https://en.wikipedia.org/wiki/Age_of_Discovery",
-        "ids": {
-          "wikidata": "Q133641"
-        }
-      },
-      {
-        "id": "scientific-revolution",
-        "name": "Scientific Revolution",
-        "group": "europe-science",
-        "start": 1543,
-        "end": 1687,
-        "startDates": [
-          {
-            "year": 1543,
-            "source": {
-              "sourceKey": "wp-scientific-revolution",
-              "sourceLocation": "lead: \"While the period is frequently said to have begun in 1543 with the printings of De humani corporis fabrica (On the Workings of the Human Body) by Andreas Vesali\""
-            }
-          },
-          {
-            "year": 1572,
-            "source": {
-              "sourceKey": "wp-scientific-revolution",
-              "sourceLocation": "infobox start: 1543 or 1572"
-            },
-            "note": "The infobox gives 1543 or 1572."
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1687,
-            "source": {
-              "sourceKey": "wp-scientific-revolution",
-              "sourceLocation": "lead: \"The period culminated with the publication of the Philosophiæ Naturalis Principia Mathematica in 1687 by Isaac Newton.\""
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-scientific-revolution",
-            "sourceLocation": "lead: \"While the period is frequently said to have begun in 1543 with the printings of De humani corporis fabrica (On the Workings of the Human Body) by Andreas Vesali\""
-          },
-          {
-            "sourceKey": "wp-scientific-revolution",
-            "sourceLocation": "lead: \"The period culminated with the publication of the Philosophiæ Naturalis Principia Mathematica in 1687 by Isaac Newton.\""
-          }
-        ],
-        "url": "https://en.wikipedia.org/wiki/Scientific_Revolution",
-        "ids": {
-          "wikidata": "Q214078"
-        }
-      },
-      {
-        "id": "age-of-enlightenment",
-        "name": "Enlightenment",
-        "group": "europe-thought",
-        "start": 1687,
-        "end": 1789,
-        "startDates": [
-          {
-            "year": 1687,
-            "source": {
-              "sourceKey": "wp-age-of-enlightenment",
-              "sourceLocation": "infobox start: 1687"
-            }
-          },
-          {
-            "year": 1637,
-            "source": {
-              "sourceKey": "wp-age-of-enlightenment",
-              "sourceLocation": "lead: \"The dating of the period of the beginning of the Enlightenment can be attributed to the publication of Descartes' Discourse on the Method in 1637, with his meth\""
-            },
-            "note": "Descartes' Discourse on the Method."
-          },
-          {
-            "year": 1715,
-            "source": {
-              "sourceKey": "wp-age-of-enlightenment",
-              "sourceLocation": "lead: \"European historians traditionally dated its beginning with the death of Louis XIV of France in 1715 and its end with the outbreak of the French Revolution in 17\""
-            },
-            "note": "The traditional start."
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1789,
-            "source": {
-              "sourceKey": "wp-age-of-enlightenment",
-              "sourceLocation": "infobox end: 1789"
-            }
-          },
-          {
-            "year": 1804,
-            "source": {
-              "sourceKey": "wp-age-of-enlightenment",
-              "sourceLocation": "lead: \"Many historians now date the end of the Enlightenment as the start of the 19th century, with the latest proposed year being the death of Immanuel Kant in 1804.\""
-            },
-            "note": "The latest proposed end."
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-age-of-enlightenment",
-            "sourceLocation": "infobox start: 1687"
-          },
-          {
-            "sourceKey": "wp-age-of-enlightenment",
-            "sourceLocation": "infobox end: 1789"
-          }
-        ],
-        "url": "https://en.wikipedia.org/wiki/Age_of_Enlightenment",
-        "ids": {
-          "wikidata": "Q12539"
-        }
-      },
-      {
-        "id": "industrial-revolution",
-        "name": "Industrial Revolution",
-        "group": "europe-science",
-        "start": 1760,
-        "end": 1840,
-        "circa": true,
-        "startDates": [
-          {
-            "year": 1760,
-            "source": {
-              "sourceKey": "wp-industrial-revolution",
-              "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1840,
-            "source": {
-              "sourceKey": "wp-industrial-revolution",
-              "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-industrial-revolution",
-            "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
-          }
-        ],
-        "url": "https://en.wikipedia.org/wiki/Industrial_Revolution",
-        "ids": {
-          "wikidata": "Q2269"
-        }
-      },
-      {
-        "id": "belle-epoque",
-        "name": "Belle Époque",
-        "group": "europe-thought",
-        "start": 1871,
-        "end": 1914,
-        "startDates": [
-          {
-            "year": 1871,
-            "source": {
-              "sourceKey": "wp-belle-poque",
-              "sourceLocation": "infobox start: 1871"
-            }
-          }
-        ],
-        "endDates": [
-          {
-            "year": 1914,
-            "source": {
-              "sourceKey": "wp-belle-poque",
-              "sourceLocation": "infobox end: 1914"
-            }
-          }
-        ],
-        "sources": [
-          {
-            "sourceKey": "wp-belle-poque",
-            "sourceLocation": "infobox start: 1871"
-          },
-          {
-            "sourceKey": "wp-belle-poque",
-            "sourceLocation": "infobox end: 1914"
-          }
-        ],
-        "url": "https://en.wikipedia.org/wiki/Belle_Époque",
-        "ids": {
-          "wikidata": "Q466887"
-        }
       }
     ],
     "facets": {
@@ -644,7 +315,343 @@
           }
         }
       }
-    }
+    },
+    "context": [
+      {
+        "id": "timurid-renaissance",
+        "name": "Timurid Renaissance",
+        "start": 1375,
+        "end": 1525,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1375,
+            "source": {
+              "sourceKey": "wp-timurid-renaissance",
+              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+            },
+            "margin": 25,
+            "note": "The late 14th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1525,
+            "source": {
+              "sourceKey": "wp-timurid-renaissance",
+              "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+            },
+            "margin": 25,
+            "note": "The early 16th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-timurid-renaissance",
+            "sourceLocation": "lead: \"The Timurid Renaissance was a period in Asian and Islamic history, following the Islamic Golden Age, and spanning from the late 14th to the early 16th centuries\""
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Timurid_Renaissance",
+        "ids": {
+          "wikidata": "Q3424763"
+        },
+        "kind": "age",
+        "line": "steppe-persianate"
+      },
+      {
+        "id": "renaissance",
+        "name": "Renaissance",
+        "start": 1400,
+        "end": 1600,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1400,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "From the 15th century."
+          },
+          {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "More broadly, from the 14th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1600,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "To the end of the 16th century."
+          },
+          {
+            "year": 1700,
+            "source": {
+              "sourceKey": "wp-renaissance",
+              "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+            },
+            "margin": 50,
+            "note": "More broadly, to the 17th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-renaissance",
+            "sourceLocation": "lead: \"It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.\""
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Renaissance",
+        "ids": {
+          "wikidata": "Q4692"
+        },
+        "kind": "age",
+        "line": "europe-thought"
+      },
+      {
+        "id": "age-of-discovery",
+        "name": "Age of Discovery",
+        "start": 1415,
+        "end": 1650,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1415,
+            "source": {
+              "sourceKey": "wp-age-of-discovery",
+              "sourceLocation": "infobox start: Early 15th century"
+            },
+            "margin": 25,
+            "note": "The early 15th century."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1650,
+            "source": {
+              "sourceKey": "wp-age-of-discovery",
+              "sourceLocation": "infobox end: Mid-17th century"
+            },
+            "margin": 25,
+            "note": "The mid-17th century."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-age-of-discovery",
+            "sourceLocation": "infobox start: Early 15th century"
+          },
+          {
+            "sourceKey": "wp-age-of-discovery",
+            "sourceLocation": "infobox end: Mid-17th century"
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Age_of_Discovery",
+        "ids": {
+          "wikidata": "Q133641"
+        },
+        "kind": "age",
+        "line": "europe-expansion"
+      },
+      {
+        "id": "scientific-revolution",
+        "name": "Scientific Revolution",
+        "start": 1543,
+        "end": 1687,
+        "startDates": [
+          {
+            "year": 1543,
+            "source": {
+              "sourceKey": "wp-scientific-revolution",
+              "sourceLocation": "lead: \"While the period is frequently said to have begun in 1543 with the printings of De humani corporis fabrica (On the Workings of the Human Body) by Andreas Vesali\""
+            }
+          },
+          {
+            "year": 1572,
+            "source": {
+              "sourceKey": "wp-scientific-revolution",
+              "sourceLocation": "infobox start: 1543 or 1572"
+            },
+            "note": "The infobox gives 1543 or 1572."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1687,
+            "source": {
+              "sourceKey": "wp-scientific-revolution",
+              "sourceLocation": "lead: \"The period culminated with the publication of the Philosophiæ Naturalis Principia Mathematica in 1687 by Isaac Newton.\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-scientific-revolution",
+            "sourceLocation": "lead: \"While the period is frequently said to have begun in 1543 with the printings of De humani corporis fabrica (On the Workings of the Human Body) by Andreas Vesali\""
+          },
+          {
+            "sourceKey": "wp-scientific-revolution",
+            "sourceLocation": "lead: \"The period culminated with the publication of the Philosophiæ Naturalis Principia Mathematica in 1687 by Isaac Newton.\""
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Scientific_Revolution",
+        "ids": {
+          "wikidata": "Q214078"
+        },
+        "kind": "age",
+        "line": "europe-science"
+      },
+      {
+        "id": "age-of-enlightenment",
+        "name": "Enlightenment",
+        "start": 1687,
+        "end": 1789,
+        "startDates": [
+          {
+            "year": 1687,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "infobox start: 1687"
+            }
+          },
+          {
+            "year": 1637,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "lead: \"The dating of the period of the beginning of the Enlightenment can be attributed to the publication of Descartes' Discourse on the Method in 1637, with his meth\""
+            },
+            "note": "Descartes' Discourse on the Method."
+          },
+          {
+            "year": 1715,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "lead: \"European historians traditionally dated its beginning with the death of Louis XIV of France in 1715 and its end with the outbreak of the French Revolution in 17\""
+            },
+            "note": "The traditional start."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1789,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "infobox end: 1789"
+            }
+          },
+          {
+            "year": 1804,
+            "source": {
+              "sourceKey": "wp-age-of-enlightenment",
+              "sourceLocation": "lead: \"Many historians now date the end of the Enlightenment as the start of the 19th century, with the latest proposed year being the death of Immanuel Kant in 1804.\""
+            },
+            "note": "The latest proposed end."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-age-of-enlightenment",
+            "sourceLocation": "infobox start: 1687"
+          },
+          {
+            "sourceKey": "wp-age-of-enlightenment",
+            "sourceLocation": "infobox end: 1789"
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Age_of_Enlightenment",
+        "ids": {
+          "wikidata": "Q12539"
+        },
+        "kind": "age",
+        "line": "europe-thought"
+      },
+      {
+        "id": "industrial-revolution",
+        "name": "Industrial Revolution",
+        "start": 1760,
+        "end": 1840,
+        "circa": true,
+        "startDates": [
+          {
+            "year": 1760,
+            "source": {
+              "sourceKey": "wp-industrial-revolution",
+              "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1840,
+            "source": {
+              "sourceKey": "wp-industrial-revolution",
+              "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-industrial-revolution",
+            "sourceLocation": "lead: \"Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.\""
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Industrial_Revolution",
+        "ids": {
+          "wikidata": "Q2269"
+        },
+        "kind": "age",
+        "line": "europe-science"
+      },
+      {
+        "id": "belle-epoque",
+        "name": "Belle Époque",
+        "start": 1871,
+        "end": 1914,
+        "startDates": [
+          {
+            "year": 1871,
+            "source": {
+              "sourceKey": "wp-belle-poque",
+              "sourceLocation": "infobox start: 1871"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1914,
+            "source": {
+              "sourceKey": "wp-belle-poque",
+              "sourceLocation": "infobox end: 1914"
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-belle-poque",
+            "sourceLocation": "infobox start: 1871"
+          },
+          {
+            "sourceKey": "wp-belle-poque",
+            "sourceLocation": "infobox end: 1914"
+          }
+        ],
+        "url": "https://en.wikipedia.org/wiki/Belle_Époque",
+        "ids": {
+          "wikidata": "Q466887"
+        },
+        "kind": "age",
+        "line": "europe-thought"
+      }
+    ]
   },
   "present": 2026,
   "tracks": [

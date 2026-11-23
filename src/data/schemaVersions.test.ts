@@ -26,6 +26,8 @@ const FROZEN: Record<number, string> = {
   4: '298b4f4f7834a5cd0d91fe2ced248801dddbc167f911141f7c3721db4b44cbf0',
   5: '0f78fdc46747a6e6aeea6ef0cc3779074e25c2842893b2d8e456b529c0e2ec56',
   6: '7733d4b4bdc9916758288e54a44205c66fe3afd66ecfd2aa6bccdb5a7322c368',
+  // never released (it folded into 8), but kept: files written while it was current lift through it
+  7: '1847cb56f23dfff454d7910dea610a233aadac822b0e9a18f4914c04a8ae07c9',
 };
 
 const dir = 'src/data/fixtures';

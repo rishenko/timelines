@@ -64,42 +64,50 @@ export interface TimelineMeta {
   /** The period the timeline is about (stored years). The ruler doesn't extend past it, even for rows that do. */
   range?: { start: number; end: number };
   /**
-   * Named periods across the whole timeline (the Bronze Age, the Age of Revolutions), each dated like a phase and
-   * cited. Eras in one `group` follow each other without overlapping; groups are alternative ways of dividing the
-   * same years.
+   * The timeline's own context lines (schema v8): named, cited periods across the whole timeline, such as the Bronze
+   * Age or the Age of Revolutions (kind `age`), drawn in the strip under the ruler. A group's or row's own are in its
+   * `Track.context`.
    */
-  eras?: Era[];
+  context?: ContextSpan[];
   /**
-   * Display names for era groups, by group id (`{ "ages-aegean": { "name": "Aegean" } }`): a group's ages are
-   * labelled with its name, or with the id when it has none. Each key names a `group` some era has.
+   * Display names for context lines, by line id (`{ "ages-aegean": { "name": "Aegean" } }`): a line's spans are
+   * labelled with its name, or with one made from the id when it has none. Each key is a `line` some span has.
    */
-  eraGroups?: Record<string, EraGroup>;
+  lines?: Record<string, ContextLine>;
 }
 
-/** How a group of eras is shown (meta.eraGroups). */
-export interface EraGroup {
+/** How a context line is shown (meta.lines). */
+export interface ContextLine {
   name: string;
 }
 
-/** A named period across the whole timeline, or the rows it names in `tracks` (TimelineMeta.eras). */
-export interface Era extends TrackSpan {
-  /** Letters, digits and dashes; unique among the timeline's eras. */
+/** The kinds of context span the app knows; others are kept but not drawn. */
+export const CONTEXT_KINDS = ['age', 'golden-age'] as const;
+
+/**
+ * A named period on a node's context lines (schema v8): the timeline's own (`meta.context`) or a group's or row's
+ * (`Track.context`). Dated like a phase, and cited. Spans of one kind on one `line` of a node follow each other
+ * without overlapping; lines are alternative ways of dividing the same years.
+ */
+export interface ContextSpan extends TrackSpan {
+  /** Letters, digits and dashes; unique among all the timeline's context spans. Links can name it. */
   id: string;
+  /**
+   * What sort of period it is: `age` (an archaeological or historical age; shown) or `golden-age` (a high point;
+   * off by default). Any other kind of letters, digits and dashes is kept but not drawn, so a later kind needs no new
+   * schema version.
+   */
+  kind: string;
   name: string;
-  /** Eras that divide the same years one way share a group (e.g. "three-age"); one group if left out. */
-  group?: string;
+  /** Spans that divide the same years one way share a line (e.g. "three-age"); one line if left out. */
+  line?: string;
   color?: string;
   /** The chronology its dates follow. */
   chronology?: string;
-  /** A page about the age (e.g. its Wikipedia article): its name links to it. Not a date source; those are `sources`. */
+  /** A page about the period (e.g. its Wikipedia article): its name links to it. Not a date source; those are `sources`. */
   url?: string;
-  /** The age's identifiers in other datasets (as a row's). */
+  /** Its identifiers in other datasets (as a row's). */
   ids?: TrackIds;
-  /**
-   * The rows the age belongs to, usually region groups (e.g. ["africa"]): it is drawn in each of their bands. Left
-   * out, the age spans the whole timeline and sits in the strip under the ruler.
-   */
-  tracks?: string[];
   sources: SourceRef[];
 }
 
@@ -176,6 +184,8 @@ export interface Track {
    * a phase and with its sources. Different from `memberships` (facet values such as regions, undated).
    */
   memberOf?: RowMembership[];
+  /** The group's or row's own context lines (schema v8): ages of a region, for example, drawn on its band. */
+  context?: ContextSpan[];
 }
 
 /**
@@ -362,7 +372,7 @@ export interface TimelineEvent extends DateDays {
 
 export interface Dataset {
   /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 7;
+  schemaVersion: 8;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest
@@ -375,7 +385,7 @@ export interface Dataset {
   chronologies?: Record<string, Chronology>;
   events: TimelineEvent[];
   /**
-   * Ids this timeline no longer has (rows, events, eras), each mapped to the id that replaced it, or to null when it was
+   * Ids this timeline no longer has (rows, events, context spans), each mapped to the id that replaced it, or to null when it was
    * removed on purpose. Links and saved views that name an old id follow it.
    */
   redirects?: Record<string, string | null>;

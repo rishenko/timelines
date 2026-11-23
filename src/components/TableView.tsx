@@ -547,7 +547,7 @@ function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
           </tr>
         </thead>
         <tbody>
-          {sorted.map(({ era, span, lineName }) => {
+          {sorted.map(({ era, span, lineName, band }) => {
             const d = spanInWords(span, cal, data.sources);
             return (
               <tr key={era.id}>
@@ -555,7 +555,7 @@ function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
                   <LinkedName name={era.name} url={era.url} ids={era.ids} />
                 </th>
                 <td>
-                  {era.tracks?.length ? era.tracks.map((t) => rowName.get(t) ?? t).join(', ') : 'All regions'}
+                  {band ? (rowName.get(band) ?? band) : 'All regions'}
                   {lineName && `: ${lineName}`}
                 </td>
                 <td className="date">

@@ -75,7 +75,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
-| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, the strip under the ruler, and the rows' age bands (`AgeBars`) |
+| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler, and the rows' age bands (`AgeBars`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -122,7 +122,8 @@ npm run data -- index                       # print the site's list of timelines
 ```
 
 **Golden ages and eras** come from a plan, `data-src/ancient-classical-periods.json` (`meta.eras` and the golden-age
-events), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval
+events; source files and plans stay schema v7 until the generators write v8, and compiling lifts them to context
+spans), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval
 and Modern States generators read too. **Event categories** come from another plan,
 `data-src/ancient-classical-categories.json` (the `category` facet and each event's categories, main first), written by
 `pipelines/ancient/categories.py`: it runs the shared classifier (`pipelines/common/event_categories.py`, as the
@@ -177,7 +178,7 @@ matches `data-src/`. Medieval World reads Modern States' committed build at the 
 compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
 
 To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
-them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or `meta.eras`; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (rows, eras and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
+them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or context spans; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (both sides lifted to the current schema; rows, the timeline's context spans and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
 `pipelines/README.md` covers the inputs, the settings and how to rerun.
 
 ## Row links
@@ -256,9 +257,10 @@ those lines. Key-event and "+N" behaviour and the category shapes are unchanged.
 
 ### Ages strip
 
-`meta.eras` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`) in a sticky strip under the
-ruler. `placeAges` resolves each under the reader's Dating choice (`resolveSpan` with the era's own `chronology`) and
-gives each `group` a line; `agesInView` drops lines with no age in the settled year window the chart already keeps
+Context spans of kind `age` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`): the
+timeline's own (`meta.context`) in a sticky strip under the ruler, a row's (`Track.context`) on its band. `placeAges`
+resolves each under the reader's Dating choice (`resolveSpan` with the span's own `chronology`) and gives each `line` a
+line; `agesInView` drops lines with no age in the settled year window the chart already keeps
 for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
 hatching; ends past the chart are cut with a dashed edge. Clicking an age (or Enter) opens its details
 in the side panel, as an event's do (`AgePanel`, in `DetailsFrame`, the frame it shares with `DetailPanel`: focus moves

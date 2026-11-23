@@ -51,8 +51,8 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
 
 type BarProps = Omit<Props, 'lines' | 'width'>;
 
-/** A strip or band line, kept across renders: its band and group (its number changes as empty lines close up). */
-const lineKey = (a: PlacedAge) => `${a.band ?? ''}\n${a.era.group ?? ''}\n${a.lineName ?? ''}`;
+/** A strip or band line, kept across renders: its band and line id (its number changes as empty lines close up). */
+const lineKey = (a: PlacedAge) => `${a.band ?? ''}\n${a.era.line ?? ''}\n${a.lineName ?? ''}`;
 
 /**
  * The ages' buttons (and ↗ links), placed by their line: shared by the Ages strip and the rows' age bands. Positions
