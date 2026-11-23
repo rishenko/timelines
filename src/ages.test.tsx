@@ -61,15 +61,18 @@ describe('ages', () => {
     expect(within(table).queryByRole('link', { name: /Long Calm/ })).toBeNull();
   });
 
-  it('an age placed in a row is drawn on that row’s band, not in the strip, with the same button', () => {
+  it('an age placed in a row is drawn as a line of that row’s strip, not in the Ages strip, as a button', () => {
     const d = withAges();
     const row = d.tracks[0];
     placeAge(d, 'salt-years', row.id);
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
     const strip = screen.getByRole('group', { name: 'Ages' });
     expect(within(strip).queryByRole('button', { name: /^Salt Years/ })).toBeNull();
-    const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
-    expect(within(band).getByRole('button', { name: /^Salt Years, 20 L – 60 L, age: details, article and sources$/ })).toBeTruthy();
+    const lane = screen.getByRole('group', { name: row.name });
+    const cell = within(lane).getByRole('button', { name: /^Salt Years, 20 L – 60 L, age: details, article and sources$/ });
+    // a step lighter than a phase, its name in title case (the stylesheet keys on data-kind)
+    expect(cell.classList.contains('tl-phase')).toBe(true);
+    expect(cell.getAttribute('data-kind')).toBe('age');
   });
 
   it('the table names each age’s region: its row, or all regions', () => {
@@ -83,16 +86,16 @@ describe('ages', () => {
     expect(rows[1].textContent).toContain(d.tracks[1].name);
   });
 
-  it('a band with two lines names each line, in the tooltip, the accessible name and the table', () => {
+  it('a row with two age lines names each line in the tooltip, the accessible name and the table', () => {
     const d = withAges();
     const row = d.tracks[0];
     placeAge(d, 'salt-years', row.id).line = 'ages-salt-coast';
     placeAge(d, 'long-calm', row.id).line = 'ages-weather-coast';
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
-    const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
-    const b = within(band).getByRole('button', { name: /^Salt Years \(Salt Coast\), 20 L – 60 L, age/ });
-    expect(b.title).toContain('Region: Salt Coast');
-    expect([...band.querySelectorAll('.tl-age-line-name')].map((e) => e.textContent)).toEqual(['Salt Coast', 'Weather Coast']);
+    const lane = screen.getByRole('group', { name: row.name });
+    const b = within(lane).getByRole('button', { name: /^Salt Years \(Salt Coast\), 20 L – 60 L, age/ });
+    expect(b.querySelector('.tl-phase-fill')!.getAttribute('title')).toContain('Region: Salt Coast');
+    expect(within(lane).getByRole('button', { name: /^Long Calm \(Weather Coast\)/ })).toBeTruthy();
     cleanup();
     renderApp(`timeline=harbor-towns&view=table`, [d]);
     expect(screen.getByRole('table', { name: /^Ages/ }).textContent).toContain(`${row.name}: Salt Coast`);
@@ -106,7 +109,7 @@ describe('ages', () => {
     salt.line = 'ages-salt';
     d.meta.lines = { 'ages-salt': { name: 'Salt Coast' } };
     renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
-    const b = within(screen.getByRole('group', { name: `Ages in ${row.name}` })).getByRole('button', { name: /^Salt Years/ });
+    const b = within(screen.getByRole('group', { name: row.name })).getByRole('button', { name: /^Salt Years/ });
     fireEvent.click(b);
     expect(b.getAttribute('aria-pressed')).toBe('true');
     const panel = screen.getByRole('complementary', { name: 'Salt Years' });

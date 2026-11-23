@@ -3,7 +3,7 @@ import { spanDates } from '../lib/lifespan.ts';
 import { isApprox, type ResolvedSpan } from '../lib/chronology.ts';
 import type { Scale } from './scale.ts';
 import { certainFrom, certainTo, drawnFrom, drawnTo } from '../lib/subYear.ts';
-import type { PhaseCell } from './layout.ts';
+import { stripLineNamePx, type PhaseCell } from './layout.ts';
 import { successionTip } from '../lib/succession.ts';
 import { stripStopKey } from './keyboard.ts';
 
@@ -134,7 +134,10 @@ export function PhaseStripCell({
   const name = c.name && { ...c.name, x0: Math.max(c.name.x0, 0), x1: Math.min(c.name.x1, scale.width) };
   const showName = name && name.x1 - name.x0 >= 24 ? name : null;
   const member = p.member !== undefined;
-  const tip = `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}`;
+  // a context cell (an age) that shows no name, or is under 10 px, draws no edges and no alternate fill, so a run of
+  // them reads as one plain stripe (its tooltip and the side panel still name each); phases are drawn as before
+  const plain = !!p.kind && (b.x1 - b.x0 < 10 || !showName);
+  const tip = `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}${p.lineName ? `\nRegion: ${p.lineName}` : ''}`;
   const key = p.ref && onOpen ? stripStopKey(p.ref) : undefined;
   const keys = key
     ? {
@@ -142,7 +145,11 @@ export function PhaseStripCell({
         tabIndex: isTabStop ? 0 : -1,
         'data-stop': key,
         'data-phase-ref': p.ref,
-        'aria-label': `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}, ${spanDates(p, cal, isApprox(p))}, ${member ? 'membership' : 'phase'}: details and sources`,
+        'aria-label': p.kind
+          ? `${p.name}${p.lineName ? ` (${p.lineName})` : ''}, ${spanDates(p, cal, isApprox(p))}, ${p.kind}: details, article and sources`
+          : `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}, ${spanDates(p, cal, isApprox(p))}, ${member ? 'membership' : 'phase'}: details and sources`,
+        // an age opens with a click too, as its bar did (Kevin: every age reachable at any width); phases open by keyboard
+        ...(p.kind ? { onClick: (ev: React.MouseEvent) => (ev.stopPropagation(), onOpen!(p.ref!)) } : {}),
         'aria-pressed': selected,
         onFocus: () => onStopFocus?.(key),
         onKeyDown: (ev: React.KeyboardEvent) => {
@@ -156,7 +163,8 @@ export function PhaseStripCell({
   return (
     <div
       {...keys}
-      className={`tl-phase${member ? ' member' : c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${showName?.outside ? ' has-outside' : ''}${selected ? ' selected' : ''}`}
+      className={`tl-phase${member ? ' member' : c.alt && !plain ? ' alt' : ''}${c.line.named ? '' : ' thin'}${showName?.outside ? ' has-outside' : ''}${selected ? ' selected' : ''}`}
+      data-kind={p.kind}
       style={
         {
           left: labelW + b.x0,
@@ -170,8 +178,8 @@ export function PhaseStripCell({
       }
     >
       <div className="tl-phase-fill" title={tip} />
-      {c.startX >= b.x0 && c.startX <= b.x1 && <div className="tl-phase-edge" style={{ left: c.startX - b.x0 }} />}
-      {c.endX !== null && c.endX >= b.x0 && c.endX <= b.x1 && <div className="tl-phase-edge end" style={{ left: c.endX - b.x0 }} />}
+      {!plain && c.startX >= b.x0 && c.startX <= b.x1 && <div className="tl-phase-edge" style={{ left: c.startX - b.x0 }} />}
+      {!plain && c.endX !== null && c.endX >= b.x0 && c.endX <= b.x1 && <div className="tl-phase-edge end" style={{ left: c.endX - b.x0 }} />}
       {arrow && (
         <div className="tl-ongoing-run">
           <span className="tl-ongoing" />
@@ -182,7 +190,12 @@ export function PhaseStripCell({
           {/* (a still-going phase's name keeps clear of its arrow at the right of the view) */}
           <span
             className="tl-phase-name"
-            style={{ left: labelW, maxWidth: showName.x1 - showName.x0, marginRight: arrow && !showName.outside ? 12 : 0 }}
+            // (a named age line's names stick just right of its line name, which holds the chart's left edge)
+            style={{
+              left: p.lineName && !showName.outside ? `calc(${labelW}px + var(--strip-line-inset, ${stripLineNamePx(p.lineName)}px))` : labelW,
+              maxWidth: showName.x1 - showName.x0,
+              marginRight: arrow && !showName.outside ? 12 : 0,
+            }}
             title={tip}
           >
             {member ? <MemberName name={p.name} /> : p.name}

@@ -333,7 +333,21 @@ export interface PlacedPhase extends ResolvedPhase {
    * choice that moves or reorders them keeps the same ref.
    */
   ref?: string;
+  /**
+   * Set on a context span drawn as a strip line of the row (schema v8; today `age`, a region's ages on its own
+   * strip): drawn a step lighter than a phase, its name in title case, and a run of unnamed or tiny cells as one
+   * plain stripe. Absent: a phase or a membership.
+   */
+  kind?: string;
+  /** A context span's line name (a region's age line, e.g. "Nile Valley"): in its tooltip and accessible name. */
+  lineName?: string;
 }
+
+/** The width of a strip line's name (a region's age line, "Nile Valley"), drawn at the chart's left edge. */
+export const stripLineNamePx = (name: string) => Math.ceil(name.length * 6 + 12);
+
+/** An age's ref (PlacedPhase.ref) on a row's strip: its context span's id. */
+export const ageRef = (id: string) => `age:${id}`;
 
 /** A phase's ref (PlacedPhase.ref): its row and its index in Track.phases. */
 export const phaseRef = (trackId: string, index: number) => `phase:${trackId}:${index}`;
@@ -413,6 +427,9 @@ export const STRIP_DEFAULTS = {
   thinPx: 8,
   /** The narrowest room for a name inside its phase (about five capitals, plus padding). */
   minNamePx: 70,
+  /** The same for a context span (an age, in title case): a few letters, cut short with an ellipsis, as the live
+   * site's age bars named them ("Early D…"). */
+  minKindNamePx: 36,
   /** Estimated width of one character of a phase name (10.5 px bold capitals), and the name's padding. */
   charPx: 7,
   namePadPx: 14,
@@ -420,6 +437,8 @@ export const STRIP_DEFAULTS = {
   pointerPx: 12,
   /** Space between two names on a line. */
   gapPx: 4,
+  /** (Kevin, 2026-11-22) extra room under the names of a named phase or age line (memberships keep their height). */
+  padBottomPx: 2,
 };
 
 export interface StripLine {
@@ -498,7 +517,7 @@ export function layoutPhaseStrips(
     // the line that marks the phase's start, so the line never runs through its name
     for (const p of line) {
       const from = x(Math.max(p.nameFrom, at0(p)));
-      if (x(p.nameTo) - from >= o.minNamePx) names.set(p, { x0: from, x1: x(p.nameTo), outside: false });
+      if (x(p.nameTo) - from >= (p.kind ? o.minKindNamePx : o.minNamePx)) names.set(p, { x0: from, x1: x(p.nameTo), outside: false });
     }
     // a line with no room for names stays thin; on a line with names, a phase too short for its own gets it in the
     // blank strip beside it, pointing at it: after its end, else before its start (never over another phase or name,
@@ -530,7 +549,7 @@ export function layoutPhaseStrips(
   let top = 0;
   for (const line of byLine) {
     const named = line.some((p) => names.get(p));
-    const height = named ? o.namedPx : o.thinPx;
+    const height = named ? o.namedPx + (line.some((p) => p.member !== undefined) ? 0 : o.padBottomPx) : o.thinPx;
     lines.push({ top, height, named });
     top += height;
   }

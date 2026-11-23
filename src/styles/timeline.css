@@ -339,6 +339,42 @@
 .tl-phase.alt .tl-phase-fill {
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 40%, transparent);
 }
+/* a context span drawn as a strip line (a region's ages, above its phases): the same cells, a step lighter, and its
+   name in title case as written ("Old Kingdom"); phases stay in capitals (Kevin, 2026-11-22) */
+.tl-phase[data-kind] .tl-phase-fill {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 13%, transparent);
+}
+.tl-phase.alt[data-kind] .tl-phase-fill {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent);
+}
+.tl-phase[data-kind] .tl-phase-name {
+  letter-spacing: 0;
+  text-transform: none;
+}
+/* a named age line's name (a region's line, "Nile Valley"), held at the chart's left edge over the line's cells; the
+   ages' names stick just right of it (Bands.tsx) */
+.tl-strip-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+.tl-strip-line-name {
+  position: sticky;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 2px;
+  height: 14px;
+  overflow: hidden;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 /* a membership in another row (Track.memberOf), on its own strip line after the phases: in the union's colour (set as
    --track-color), a faint cell with a dashed underline instead of a filled one, so it never reads as a phase of the
    row; begins and ends with the same lines as a phase. Its name is in ordinary type, not capitals. */
