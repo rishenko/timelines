@@ -234,6 +234,6 @@ cites Cliopatria for one row's end (Srivijaya), as a second date claim beside it
 ## License
 
 Code: [MIT](LICENSE). Timeline data and maps: [CC BY 4.0](LICENSE-DATA.md), except third-party material that keeps
-its own licence (listed in `LICENSE-DATA.md` and in each file's credits). Quoted Wikipedia text (source locators, and
+its own licence (listed in `LICENSE-DATA.md`). Quoted Wikipedia text (source locators, and
 descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed through the linked article;
 everything else in the data is CC BY 4.0. By [rishenko](https://github.com/rishenko).
