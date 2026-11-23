@@ -30,7 +30,7 @@ gives them.
 | **c.** (circa) | An approximate date. | |
 | **dating system** | One of several absolute datings of a region that scholars disagree on, chosen in the **Dating** menu. In the file: `chronologies`. | calendar, chronology (in app text) |
 | **calendar** | The era names a timeline counts years in (BCE/CE or its own), and whether it has a year 0. | |
-| **age** | A named period across the whole timeline, such as the Islamic Golden Age, drawn in the **Ages** strip under the ruler; or across one region, such as the Nile Valley's Old Kingdom, drawn on that region's band. In the file: `meta.eras`. | era, period |
+| **age** | A named period across the whole timeline, such as the Islamic Golden Age, drawn in the **Ages** strip under the ruler; or across one region, such as the Nile Valley's Old Kingdom, drawn as a line of that region's strip. In the file: context spans of kind `age`, in `meta.context` (the timeline's) or a row's `context` (schema v8; `meta.eras` before). | era, period |
 | **era line** | The line on the chart where one era name gives way to the next (BCE to CE, or the timeline's own). | |
 | **ruler** | The strip of years along the top of the chart. | time axis (only to say what it is) |
 | **zoom step** | How much time each tick of the ruler covers (years, or a quarter, month, week or day). | scale, increment (in app text) |

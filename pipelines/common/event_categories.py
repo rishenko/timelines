@@ -201,16 +201,37 @@ def own_articles(e, ds):
     return [(t, t == e['title'] or bool(words(t) & mine)) for t in dict.fromkeys(titles) if t.lower() not in rows]
 
 
+# a polity, not a person: "the Nabhani dynasty rules Oman", "the Ottoman Empire rules Egypt"
+POLITY = re.compile(r'\b(dynasty|empire|kingdom|caliphate|sultanate|republic|state|confederation|confederacy|league|'
+                    r'khanate|emirate|shogunate|company|church|papacy|council|junta|government|regime|crown|duchy|'
+                    r'grand duchy|principality|monarchy|union|federation|commonwealth|protectorate|colony|county|'
+                    r'electorate|realm|tsardom|khaganate|beylik|imamate|polity|city-state|tribes?|clan|house of)\b', re.I)
+
+
+def ruler_is_person(x, ds):
+    """Whether the subject of "X rules …" is a person: not any row of the timeline (by name or id, so "Rome rules Egypt"
+    on Egypt's row isn't a reign either), not any row's phase ("Sasanian Empire"; rows have no aliases), and not a
+    polity ("… dynasty", "Duchy of …", "… monarchy")."""
+    name = x.strip().lower()
+    slug = re.sub(r'\W+', '-', name).strip('-')
+    if any(name == t['name'].lower() or slug == t['id'] for t in ds['tracks']):
+        return False
+    if any(name == p.get('name', '').lower() for t in ds['tracks'] for p in t.get('phases', [])):
+        return False
+    return not POLITY.search(x)
+
+
 def classify(e, ds, wp=None):
     """Up to two categories, main first: [(value, evidence)], or [] when nothing says (left for review)."""
     found = []
     title = e['title']
     # "Reign of Sargon", "Presidency of Juárez": a ruler's time in office, as a span, is a reign (Kevin, 2026-11-22: the
     # layout puts reigns on their row's top event lines). A point ("Reign of X begins") stays a succession.
-    # Also "Attila rules the Huns" (a person, not one of the event's rows, ruling), "…'s second reign", "Gonghe Regency".
+    # Also "Attila rules the Huns" (a person ruling: not any row of the timeline or its phases, not a polity), "…'s second reign",
+    # "Gonghe Regency".
     rm = REIGN.match(title) or REIGN_ANY.search(title)
     rs = re.match(r'(.+?)\s+rules\b', title)
-    if rs and any(rs.group(1).lower() == t['name'].lower() for t in ds['tracks'] if t['id'] in e.get('tracks', [])):
+    if rs and not ruler_is_person(rs.group(1), ds):
         rm = REIGN.match(title)
     if rm and (e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])):
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))

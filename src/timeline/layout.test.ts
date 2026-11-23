@@ -124,6 +124,46 @@ describe('layoutLanes', () => {
     expect(pill(new Set(['folded'])).footprintEnd - pill().footprintEnd).toBe(15);
   });
 
+  it('puts reigns on the top lines, then the period lane, then the rest; reigns never fold', () => {
+    const lanes = buildLanes(tracks, {}, {});
+    const events = [
+      ev('normal', 50, ['guild']),
+      ev('age', 30, ['guild'], 70),
+      ev('reign1', 10, ['guild'], 40),
+      ev('reign2', 43, ['guild'], 90),
+      ev('corule', 20, ['guild'], 30),
+      ev('both', 92, ['guild'], 99),
+    ];
+    const lane = layoutLanes(lanes, events, scale, 100, {
+      reignLane: new Set(['reign1', 'reign2', 'corule', 'both']),
+      periodLane: new Set(['age', 'both']),
+      maxRows: 1,
+    }).lanes.find((l) => l.lane.id === 'guild')!;
+    const row = (id: string) => lane.marks.find((m) => m.eventId === id)?.row;
+    // successive reigns share the top line; a co-ruler stacks onto a second
+    expect(row('reign1')).toBe(0);
+    expect(row('corule')).toBe(1);
+    // an event in both lanes stays a reign
+    expect(row('reign2')).toBe(0);
+    expect(row('both')).toBe(0);
+    expect(row('age')).toBe(2);
+    expect(row('normal')).toBe(3);
+    expect(lane.marks.some((m) => m.kind === 'cluster')).toBe(false);
+    expect(lane.rows).toBe(4);
+  });
+
+  it('caps the reign lane at two lines; further reigns fold into "+N" unless the row is expanded', () => {
+    const lanes = buildLanes(tracks, {}, {});
+    // three overlapping reigns (a long label at this zoom makes each overlap the next)
+    const events = [ev('r1', 10, ['guild'], 20), ev('r2', 12, ['guild'], 22), ev('r3', 14, ['guild'], 24)];
+    const reignLane = new Set(['r1', 'r2', 'r3']);
+    const lane = (expanded?: Record<string, boolean>) =>
+      layoutLanes(lanes, events, scale, 100, { reignLane, expanded }).lanes.find((l) => l.lane.id === 'guild')!;
+    expect(lane().marks.filter((m) => m.kind === 'event').length).toBe(2);
+    expect(lane().marks.find((m) => m.kind === 'cluster')?.eventIds).toEqual(['r3']);
+    expect(lane({ guild: true }).marks.filter((m) => m.kind === 'event').length).toBe(3);
+  });
+
   it('puts period-lane events on lines of their own first, the other events below, never folded', () => {
     const lanes = buildLanes(tracks, {}, {});
     const events = [ev('normal', 50, ['guild']), ev('age', 30, ['guild'], 70), ev('normal2', 51, ['guild'])];
@@ -350,12 +390,14 @@ describe('layoutPhaseStrips', () => {
       { name: 'Rebel Republic', start: 100, end: 400 },
     ];
     const near = strips(list, 2);
+    // a named line has 2 px of room under its names (Kevin, 2026-11-22)
+    const named = namedPx + STRIP_DEFAULTS.padBottomPx;
     expect(near.lines).toEqual([
-      { top: 0, height: namedPx, named: true },
-      { top: namedPx, height: namedPx, named: true },
+      { top: 0, height: named, named: true },
+      { top: named, height: named, named: true },
     ]);
-    expect(near.height).toBe(2 * namedPx);
-    expect(near.cells.map((c) => c.line.top)).toEqual([0, namedPx]);
+    expect(near.height).toBe(2 * named);
+    expect(near.cells.map((c) => c.line.top)).toEqual([0, named]);
     // zoomed far out nothing fits: both lines thin, and the row is shorter than with names
     const far = strips(list, 0.01);
     expect(far.lines.map((l) => [l.height, l.named])).toEqual([

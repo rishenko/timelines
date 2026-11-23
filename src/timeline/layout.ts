@@ -73,6 +73,8 @@ export interface LayoutOptions {
   glyphs?: ReadonlySet<string>;
   /** Events drawn on the period lane: their own line(s) directly under the row's phases, above its other events. */
   periodLane?: ReadonlySet<string>;
+  /** Events drawn on the reign lane: the row's first event lines, above the period lane and everything else. */
+  reignLane?: ReadonlySet<string>;
 }
 
 export const LAYOUT_DEFAULTS = {
@@ -84,6 +86,9 @@ export const LAYOUT_DEFAULTS = {
   maxLabelPx: 240,
   gapPx: 8,
   maxRows: 5, // the Legend names this number ("more than five stacked lines", LegendPanel.tsx)
+  /** Max reign-lane lines: successive rulers on the first, co-rulers or rival claimants on the second. Reigns that
+   * don't fit (zoomed out, where each label is wider than its bar) fold into "+N" with the other events. */
+  maxReignRows: 2,
   clusterPx: 44,
   /** A category glyph and its gap, before an event's title. */
   glyphPx: 15,
@@ -171,15 +176,20 @@ export function layoutLanes(
     // Occupied [start, end] footprints per sub-row. Events aren't placed in date order, so a row
     // can have gaps that a later-placed event fills.
     const rowSpans: [number, number][][] = [];
-    // the period lane (golden ages, long society spans): its own lines first, never folded into "+N"
+    // the reign lane (at most maxReignRows lines), then the period lane (golden ages, long society spans, never
+    // folded into "+N"): their own lines first, in that order
+    const reignSpans: [number, number][][] = [];
     const periodSpans: [number, number][][] = [];
     const marks: Mark[] = [];
     const maxRows = expanded[lane.id] ? Infinity : o.maxRows;
+    const maxReignRows = expanded[lane.id] ? Infinity : o.maxReignRows;
     const overflow: { id: string; x: number; key: boolean; title: string }[] = [];
-    const inPeriod = (i: number) => !!opts.periodLane?.has(sorted[i].uuid);
-    for (const i of opts.periodLane ? [...mine.filter(inPeriod), ...mine.filter((i) => !inPeriod(i))] : mine) {
+    // 0 reign, 1 period, 2 the rest; a reign that also qualifies for the period lane stays a reign
+    const band = (i: number) => (opts.reignLane?.has(sorted[i].uuid) ? 0 : opts.periodLane?.has(sorted[i].uuid) ? 1 : 2);
+    const order = opts.reignLane || opts.periodLane ? [0, 1, 2].flatMap((b) => mine.filter((i) => band(i) === b)) : mine;
+    for (const i of order) {
       const e = sorted[i];
-      const period = inPeriod(i);
+      const which = band(i);
       // a span given in months or days too short to draw as a bar at this zoom is drawn as a point, in its middle
       const short = isSpan(e) && hasDays(e) && scale.x(at1(e, effectiveEnd(e, present))) - scale.x(at0(e)) < o.pointPx;
       const span = isSpan(e) && !short;
@@ -228,9 +238,10 @@ export function layoutLanes(
       }
       const fits = (spans: [number, number][]) =>
         spans.every(([s, en]) => en + o.gapPx <= footprintStart || footprintEnd + o.gapPx <= s);
-      const lines = period ? periodSpans : rowSpans;
+      const lines = which === 0 ? reignSpans : which === 1 ? periodSpans : rowSpans;
       let row = lines.findIndex(fits);
-      if (row === -1 && !period && rowSpans.length >= maxRows) {
+      const cap = which === 2 ? maxRows : which === 0 ? maxReignRows : Infinity;
+      if (row === -1 && lines.length >= cap) {
         overflow.push({ id: e.uuid, x: x0, key: rank(e) === 1, title: e.title });
         continue;
       }
@@ -239,8 +250,9 @@ export function layoutLanes(
         lines.push([]);
       }
       lines[row].push([footprintStart, footprintEnd]);
-      // period events come first, so the period lines are all known by the time other events are placed below them
-      if (!period) row += periodSpans.length;
+      // reigns come first, then period events, so the lines above are all known by the time an event is placed
+      if (which >= 1) row += reignSpans.length;
+      if (which === 2) row += periodSpans.length;
       marks.push({
         key: `${lane.id}:${e.uuid}`,
         kind: 'event',
@@ -258,7 +270,7 @@ export function layoutLanes(
       });
     }
     // Fold overflow into cluster badges on an extra row, merging badges that would touch.
-    const clusterRow = periodSpans.length + rowSpans.length;
+    const clusterRow = reignSpans.length + periodSpans.length + rowSpans.length;
     let current: Mark | null = null;
     overflow.sort((a, b) => a.x - b.x);
     // A pill that holds a key event names it (the earliest one), so it is wider by the name.
@@ -290,7 +302,7 @@ export function layoutLanes(
       };
       marks.push(current);
     }
-    const rows = Math.max(1, periodSpans.length + rowSpans.length + (overflow.length ? 1 : 0));
+    const rows = Math.max(1, reignSpans.length + periodSpans.length + rowSpans.length + (overflow.length ? 1 : 0));
     const height = head + rows * o.rowH + o.lanePad * 2;
     out.push({ lane, top, height, rows, marks, overflow: overflow.length });
     top += height;
@@ -321,7 +333,23 @@ export interface PlacedPhase extends ResolvedPhase {
    * choice that moves or reorders them keeps the same ref.
    */
   ref?: string;
+  /**
+   * Set on a context span drawn as a strip line of the row (schema v8; today `age`, a region's ages on its own
+   * strip): drawn a step lighter than a phase, its name in title case, and a run of unnamed or tiny cells as one
+   * plain stripe. Absent: a phase or a membership.
+   */
+  kind?: string;
+  /** A context span's line name (a region's age line, e.g. "Nile Valley"): in its tooltip and accessible name. */
+  lineName?: string;
+  /** A context span's article (an age's `url`): a ↗ link before its name in the strip. */
+  url?: string;
 }
+
+/** The width of a strip line's name (a region's age line, "Nile Valley"), drawn at the chart's left edge. */
+export const stripLineNamePx = (name: string) => Math.ceil(name.length * 6 + 12);
+
+/** An age's ref (PlacedPhase.ref) on a row's strip: its context span's id. */
+export const ageRef = (id: string) => `age:${id}`;
 
 /** A phase's ref (PlacedPhase.ref): its row and its index in Track.phases. */
 export const phaseRef = (trackId: string, index: number) => `phase:${trackId}:${index}`;
@@ -401,6 +429,9 @@ export const STRIP_DEFAULTS = {
   thinPx: 8,
   /** The narrowest room for a name inside its phase (about five capitals, plus padding). */
   minNamePx: 70,
+  /** The same for a context span (an age, in title case): a few letters, cut short with an ellipsis, as the live
+   * site's age bars named them ("Early D…"). */
+  minKindNamePx: 36,
   /** Estimated width of one character of a phase name (10.5 px bold capitals), and the name's padding. */
   charPx: 7,
   namePadPx: 14,
@@ -408,6 +439,8 @@ export const STRIP_DEFAULTS = {
   pointerPx: 12,
   /** Space between two names on a line. */
   gapPx: 4,
+  /** (Kevin, 2026-11-22) extra room under the names of a named phase or age line (memberships keep their height). */
+  padBottomPx: 2,
 };
 
 export interface StripLine {
@@ -486,7 +519,7 @@ export function layoutPhaseStrips(
     // the line that marks the phase's start, so the line never runs through its name
     for (const p of line) {
       const from = x(Math.max(p.nameFrom, at0(p)));
-      if (x(p.nameTo) - from >= o.minNamePx) names.set(p, { x0: from, x1: x(p.nameTo), outside: false });
+      if (x(p.nameTo) - from >= (p.kind ? o.minKindNamePx : o.minNamePx)) names.set(p, { x0: from, x1: x(p.nameTo), outside: false });
     }
     // a line with no room for names stays thin; on a line with names, a phase too short for its own gets it in the
     // blank strip beside it, pointing at it: after its end, else before its start (never over another phase or name,
@@ -518,7 +551,7 @@ export function layoutPhaseStrips(
   let top = 0;
   for (const line of byLine) {
     const named = line.some((p) => names.get(p));
-    const height = named ? o.namedPx : o.thinPx;
+    const height = named ? o.namedPx + (line.some((p) => p.member !== undefined) ? 0 : o.padBottomPx) : o.thinPx;
     lines.push({ top, height, named });
     top += height;
   }

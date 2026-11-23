@@ -18,6 +18,8 @@ interface Props {
   onTour?: () => void;
   /** Events on the period lane (golden ages, long society spans): the Legend explains the line when there are any. */
   periodLane?: ReadonlySet<string>;
+  /** Events on the reign lane: the Legend explains the line when there are any. */
+  reignLane?: ReadonlySet<string>;
 }
 
 interface Item {
@@ -66,6 +68,7 @@ const KEYS: Item[] = [
   { readSample: true, sample: kbd('+', '−'), title: 'Zoom', text: 'Zoom in or out around the focused event.' },
   { readSample: true, sample: kbd('Enter'), title: 'Open', text: 'Open the event’s or phase’s details (Esc closes them and comes back), zoom into a “+N” group, or fold a row.' },
   { readSample: true, sample: kbd('Tab'), title: 'Ages', text: 'Each line of the Ages strip, and of a row’s ages, is one stop: ← → and Home/End move along it, Enter opens the age’s details.' },
+  { readSample: true, sample: kbd('Y'), title: 'Year cursor', text: 'Put the year cursor on the focused event’s year: the band above the chart says what was going on then. ← → move it a step (Shift: a tenth of one), Esc puts it away.' },
   { readSample: true, sample: kbd('/'), title: 'Search', text: 'Move to the search box, to find a row, an event or a year.' },
   { readSample: true, sample: kbd('?'), title: 'This list', text: 'Opens the legend from the chart.' },
 ];
@@ -92,7 +95,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
   );
 }
 
-export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
+export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Props) {
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
   const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
@@ -133,6 +136,11 @@ export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
   const era = formatYear(cal.yearZero ? 0 : 1, cal);
 
   const rows: Item[] = [
+    {
+      sample: <span className="lg-overview" />,
+      title: 'Overview',
+      text: 'The strip above the chart maps the whole timeline: its bars count the events, the outlined stretch is what’s on screen, and the rest is dimmed. Click or drag it to move the chart there; from the keyboard, ← → move a quarter of a screen, PgUp/PgDn a screen, Home/End to either end.',
+    },
     {
       sample: (
         <span className="lg-rows">
@@ -235,10 +243,16 @@ export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
       ),
     },
     {
+      sample: <span className="lg-reign" />,
+      show: !!reignLane?.size,
+      title: 'Reigns',
+      text: 'A row’s rulers, such as “Reign of Ramesses II”, come first among its events, one after another on the top line; overlapping reigns, or names that would collide, go on a second line. A gap means no reign is recorded there yet. Zoomed out, reigns that don’t fit fold into the row’s “+N”.',
+    },
+    {
       sample: <span className="lg-period" />,
       show: !!periodLane?.size,
       title: 'Golden ages and long spans',
-      text: 'A row’s golden ages, and spans of 25 years or more in religion, law, culture or the economy, sit on a line of their own just under its phases, above its other events. They cross its rulers, so they are kept apart from what happened within them.',
+      text: 'A row’s golden ages, and spans of 25 years or more in religion, law, culture or the economy, sit on a line of their own under its phases and reigns, above its other events. They cross its rulers, so they are kept apart from what happened within them.',
     },
     {
       sample: <span className="lg-cluster">+3</span>,
@@ -262,9 +276,9 @@ export function LegendPanel({ data, onClose, onTour, periodLane }: Props) {
   const dates: Item[] = [
     {
       sample: <span className="lg-age">Age</span>,
-      show: !!data.meta.eras?.length,
+      show: !!data.meta.context?.some((s) => s.kind === 'age') || data.tracks.some((t) => t.context?.some((s) => s.kind === 'age')),
       title: 'Age',
-      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler; an age of one region, such as the Nile Valley’s Old Kingdom, sits on that region’s band instead. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age for its details, article and sources in the side panel; its ↗, on a wide bar, opens the article directly.',
+      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler; an age of one region, such as the Nile Valley’s Old Kingdom, is a lighter line of that region’s strip instead, above its phases. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age for its details, article and sources in the side panel; its ↗, on a wide bar, opens the article directly.',
     },
     {
       sample: <span className="lg-bar uncertain" />,

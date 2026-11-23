@@ -325,3 +325,24 @@
   border-top: 4px solid var(--line-2);
   background: linear-gradient(to bottom, transparent 3px, var(--bg-3) 3px 10px, transparent 10px);
 }
+/* the reign lane's sample: reigns one after another on one line, with a gap */
+.lg-reign {
+  display: inline-block;
+  width: 44px;
+  height: 16px;
+  background: linear-gradient(to right, var(--bg-3) 0 18px, transparent 18px 22px, var(--bg-3) 22px 34px, transparent 34px 38px, var(--bg-3) 38px);
+  background-size: 100% 7px;
+  background-position: 0 4px;
+  background-repeat: no-repeat;
+}
+/* the overview strip's sample: a short map with the stretch in view outlined and the rest dimmed */
+.lg-overview {
+  display: inline-block;
+  width: 44px;
+  height: 14px;
+  border-bottom: 1px solid var(--line-2);
+  background:
+    linear-gradient(to right, transparent 16px, var(--focus) 16px 17px, transparent 17px 29px, var(--focus) 29px 30px, transparent 30px),
+    linear-gradient(to right, color-mix(in srgb, var(--bg) 55%, transparent) 16px, transparent 16px 30px, color-mix(in srgb, var(--bg) 55%, transparent) 30px),
+    repeating-linear-gradient(to right, var(--muted) 0 2px, transparent 2px 4px);
+}

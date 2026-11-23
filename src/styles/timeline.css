@@ -339,6 +339,65 @@
 .tl-phase.alt .tl-phase-fill {
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 40%, transparent);
 }
+/* a context span drawn as a strip line (a region's ages, above its phases): the same cells, a step lighter, and its
+   name in title case as written ("Old Kingdom"); phases stay in capitals (Kevin, 2026-11-22) */
+.tl-phase[data-kind] .tl-phase-fill {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 13%, transparent);
+}
+.tl-phase.alt[data-kind] .tl-phase-fill {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 26%, transparent);
+}
+.tl-phase[data-kind] .tl-phase-name {
+  letter-spacing: 0;
+  text-transform: none;
+  /* clipped as the live site's age bars clip ("Early D"), no ellipsis: in a narrow cell "…" costs three letters; the
+     full name is in the tooltip and accessible name */
+  text-overflow: clip;
+}
+/* an age's name, drawn beside its cell (Bands.tsx): clicks go through to the cell, except on the ↗ link */
+.tl-phase.tl-age-names,
+.tl-phase.tl-age-names .tl-phase-name {
+  pointer-events: none;
+}
+.tl-age-names .tl-strip-link {
+  pointer-events: auto;
+}
+/* an age's ↗ article link, before its name in the strip (the side panel links it too) */
+.tl-strip-link {
+  margin-right: 4px;
+  /* the name's own colour (currentColor): the contrast check hides a name by making it transparent, and a link with a
+     colour of its own would be measured as the name's background */
+  color: currentColor;
+  font-weight: 700;
+  text-decoration: none;
+}
+.tl-strip-link:hover {
+  text-decoration: underline;
+}
+/* a named age line's name (a region's line, "Nile Valley"), held at the chart's left edge over the line's cells; the
+   ages' names stick just right of it (Bands.tsx) */
+.tl-strip-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+.tl-strip-line-name {
+  position: sticky;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 2px;
+  height: 14px;
+  overflow: hidden;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 /* a membership in another row (Track.memberOf), on its own strip line after the phases: in the union's colour (set as
    --track-color), a faint cell with a dashed underline instead of a filled one, so it never reads as a phase of the
    row; begins and ends with the same lines as a phase. Its name is in ordinary type, not capitals. */
@@ -627,6 +686,11 @@
 .tl-mark.span .label {
   padding-left: 6px;
 }
+/* light themes: a label drawn over its bar keeps no halo. The halo is the page colour, which on a tinted bar thins the
+   dark glyphs instead of separating them from what's behind (Kevin, #90 preview) */
+:root[data-mode='light'] .tl-mark.span .label {
+  text-shadow: none;
+}
 /*
  * Uncertain dates: the start and end ranges are drawn in a lighter tint of the track color,
  * the certain middle in the normal bar color. Hard color stops, no fade.
@@ -869,7 +933,7 @@
   margin-right: 0;
 }
 
-/* Ages (meta.eras): a strip under the ruler, one line per group; it stays on screen like the ruler */
+/* Ages (context spans of kind age): a strip under the ruler, one line per line id; it stays on screen like the ruler */
 .tl-ages {
   position: sticky;
   top: 44px;
@@ -1021,4 +1085,36 @@
 .tl-age .bar.uncertain::after {
   right: 0;
   width: var(--fade-out, 0px);
+}
+
+/* Nesting guides: one vertical line per nesting level in a nested row's label, under the start of each ancestor's name
+   (the indent steps above: 12 px + 14 px per level), like an outline's indent guides, plus an elbow (a tree view's └)
+   from the innermost guide to the row's name. Guides run the row's full height and 1 px past it, so the guides of
+   consecutive nested rows join up. */
+.tl-lane-label {
+  --guide-start: 12px;
+  --guide-step: 14px;
+  --guide-x: 3px;
+}
+.nest-guides {
+  position: absolute;
+  inset: 0 auto -1px 0;
+  pointer-events: none;
+}
+.nest-guide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--guide-start) + var(--i) * var(--guide-step) + var(--guide-x));
+  width: 1px;
+  background: color-mix(in srgb, var(--muted) 85%, transparent);
+}
+.nest-guide.last::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: calc(var(--guide-step) - var(--guide-x) - 3px);
+  height: 1px;
+  background: inherit;
 }

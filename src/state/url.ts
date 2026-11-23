@@ -87,7 +87,9 @@ export function useUrlSync(v: UrlView, initialCenter: number, ds: Dataset) {
         ...(cat ? { cat: cat.split(',') } : {}),
         ...(selectedId ? { selected: selectedId } : {}),
       };
-      const query = `timeline=${encodeURIComponent(timelineId)}&${serializeView(state, ds)}`;
+      // a view plugin's ?plugin= stays in the link (docs/plugins.md)
+      const plugin = new URLSearchParams(window.location.search).get('plugin');
+      const query = `timeline=${encodeURIComponent(timelineId)}&${serializeView(state, ds)}${plugin ? `&plugin=${encodeURIComponent(plugin)}` : ''}`;
       window.history.replaceState(null, '', `${window.location.pathname}?${query}${serializeHash(state)}`);
     }, 250);
   }, [timelineId, increment, compress, selectedId, mode, hideOutOfView, thinRows, regions, set, order, cat, ds]);

@@ -13,6 +13,7 @@ npm run test:watch     # vitest, rerunning on each change
 npm run docs:check     # the code's file fields and npm scripts are all documented (CI runs it)
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
+npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
 npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages from this clone (the workflow below is the usual way)
 ```
@@ -26,7 +27,9 @@ means nothing untracked in a local clone can end up on the site.
 
 CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request, on Node 22 and 24: lint, tests,
 build, `run-all --check` for each included timeline, and a check that the files in `public/timelines/` and the
-key-event lists in `docs/` are what `data-src/` compiles to. If that check fails, run `npm run data -- build <timeline>`
+key-event lists in `docs/` are what `data-src/` compiles to. `npm run data:check` also refuses any link in `data-src/`
+to a Wikipedia page flagged for AI-generated text (`npm run data -- ai-flags --check`, against
+`data-src/ai-flagged-pages.txt`; see [pipelines/README.md](../pipelines/README.md#a-new-dump)). If that check fails, run `npm run data -- build <timeline>`
 and `npm run data -- importance <timeline>`, and commit the result. Last comes the id-stability check
 (`npm run data -- ids --check`): no id that a link can name may disappear from a compiled timeline without an entry in
 its `redirects` ([data-format.md](data-format.md#keeping-ids-stable)). The docs check (`npm run docs:check`) fails
@@ -36,6 +39,11 @@ key in an example, or when an npm script isn't named on this page.
 **Pull requests** update the docs and app text they affect, in the same pull request: the template
 (`.github/pull_request_template.md`) lists what to check. Reader-facing words follow the
 [glossary](glossary.md).
+
+`npm run check:all` runs, before you ask for review, everything CI checks except the compiled-files diff (it rewrites
+files), plus the type-check of app and scripts, `seam-check`, and `categories:proof` on every timeline against
+`--base` (default `origin/main`). It prints one line per check and the end of each failing one's output; `--skip` and
+`--only` take the names it prints.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
@@ -74,8 +82,10 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/lifespan.ts`, `memberOf.ts`, `succession.ts` | Lifespans worked out from phases; dated memberships (`memberOf`); the events that began and ended them |
 | `src/lib/regions.ts`, `sets.ts` | The region filter's rules; comparison sets and their orders |
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
+| `src/lib/reignLane.ts` | The reign lane: events with the `reign` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
-| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (`meta.eras`): placing them on lines, the strip under the ruler, and the rows' age bands (`AgeBars`) |
+| `src/timeline/OverviewStrip.tsx`, `overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
+| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -87,6 +97,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/timeline/useViewport.ts` | Scroll position: center year, focus requests, keeping the selection on screen; the view's stretch for drawing (a vertical scroll re-renders only every half screen) |
 | `src/timeline/useRovingFocus.ts`, `keyboard.ts` | Keyboard control of the chart (one Tab stop, arrow keys; phase strip lines are grid lines) and its movement rules |
 | `src/timeline/gestures.ts` | Pinch zoom and long press |
+| `src/cursor/meanwhile.ts`, `YearCursor.tsx` | The year cursor: a line at the year under the pointer (or placed with Y), its year chip, and the band above the chart saying what was going on then in the rows on screen (reign, phase, sub-rows, ongoing events, ages) |
 | `src/timeline/rowsInView.ts` | Which rows have nothing near the view ("Hide rows with nothing in view") |
 | `src/timeline/ConnectionLayer.tsx`, `anchors.ts` | Connection arrows; the years the ruler must cover |
 | `src/map/mapData.ts`, `src/components/EventMap.tsx` | Event maps: which borders, pins and map images to draw for an event's year (see [Event maps](#event-maps)) |
@@ -122,7 +133,8 @@ npm run data -- index                       # print the site's list of timelines
 ```
 
 **Golden ages and eras** come from a plan, `data-src/ancient-classical-periods.json` (`meta.eras` and the golden-age
-events), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval
+events; source files and plans stay schema v7 until the generators write v8, and compiling lifts them to context
+spans), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval
 and Modern States generators read too. **Event categories** come from another plan,
 `data-src/ancient-classical-categories.json` (the `category` facet and each event's categories, main first), written by
 `pipelines/ancient/categories.py`: it runs the shared classifier (`pipelines/common/event_categories.py`, as the
@@ -177,7 +189,7 @@ matches `data-src/`. Medieval World reads Modern States' committed build at the 
 compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
 
 To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
-them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or `meta.eras`; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (rows, eras and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
+them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or context spans; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (both sides lifted to the current schema; rows, the timeline's context spans and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`).
 `pipelines/README.md` covers the inputs, the settings and how to rerun.
 
 ## Row links
@@ -246,7 +258,7 @@ without knowing about regions. Off in edit mode. The link carries `&regions=`.
 ### Period lane
 
 Golden ages and long society spans apply to a whole civilization or country and can span rulers, so each row draws
-them on a line of their own directly under its phases, above its other events (Kevin, 2026-11-22).
+them on a line of their own under its phases (and its reigns, below), above its other events (Kevin, 2026-11-22).
 `periodLaneIds` (`src/lib/periodLane.ts`) picks the events: a golden age (`golden-age`) as the main or second
 category; or a society kind (religion, law, culture, economy) as the **main** category over 25 years or more, except
 a person's lifetime ("Life of …"). `src/data/period-lane.json` then includes or excludes events by id, per timeline;
@@ -254,11 +266,34 @@ a test fails if it names an id its timeline doesn't have. The layout (`layoutLan
 events first, on their own line(s); the other events pack below them, and the row cap and "+N" folding count only
 those lines. Key-event and "+N" behaviour and the category shapes are unchanged.
 
+### Reign lane
+
+A row's reigns come first among its events, above the period lane (Kevin, 2026-11-22: "rulers just be events again,
+but keep them at the top relative to other events"). `reignLaneIds` (`src/lib/reignLane.ts`) picks events with the
+`reign` sub-kind as main or second category; the classifier (`pipelines/common/event_categories.py`) sets it for spans
+titled "Reign of …", "Presidency of …" and the like. `layoutLanes`'s `reignLane` places them before the period lane's
+events, on at most two lines of their own (`maxReignRows`): one after another on the first; overlapping reigns
+(co-rulers, rival claimants), or names that would collide, on the second. Reigns that don't fit fold into "+N" with the other events, so zoomed out (where each label
+is wider than its reign) the row looks as it did before; expanding the row lifts the cap. A reign that also qualifies
+for the period lane stays in the reign lane. A gap means no reign is recorded there yet.
+
+### Overview strip
+
+`OverviewStrip` (`src/timeline/OverviewStrip.tsx`, `overview.css`) is a 30 px map of the whole timeline above the
+chart (Kevin, 2026-11-23: the "onion skin" version). It maps the chart's own pixels, so shortened gaps stay short (and
+are marked) and the outlined view is always the screen's share of the chart; everything outside it is dimmed. Bars
+count events by where they start (one per 3 px, square-root heights). A click centres the view there and a drag
+moves it; the outline is a `role="slider"` (one Tab stop: ←/→ a quarter of a screen, Page Up/Down a screen,
+Home/End), named with the years in view. It scrolls the chart's scroller (`scrollerRef`), so it needs no state of
+its own. `TimelineView` wraps the strip and the scroller in `.tl-wrap`, a flex column; a band above the chart can
+join it as one more child.
+
 ### Ages strip
 
-`meta.eras` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`) in a sticky strip under the
-ruler. `placeAges` resolves each under the reader's Dating choice (`resolveSpan` with the era's own `chronology`) and
-gives each `group` a line; `agesInView` drops lines with no age in the settled year window the chart already keeps
+Context spans of kind `age` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`): the
+timeline's own (`meta.context`) in a sticky strip under the ruler, a row's (`Track.context`) as lines of its strip. `placeAges`
+resolves each under the reader's Dating choice (`resolveSpan` with the span's own `chronology`) and gives each `line` a
+line; `agesInView` drops lines with no age in the settled year window the chart already keeps
 for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
 hatching; ends past the chart are cut with a dashed edge. Clicking an age (or Enter) opens its details
 in the side panel, as an event's do (`AgePanel`, in `DetailsFrame`, the frame it shares with `DetailPanel`: focus moves
@@ -279,10 +314,16 @@ stop key (`strip:<ref>`) and `App.tsx`'s `selectedPhaseRef`; Enter or Space on a
 `DetailsFrame`; `findPhase` in `App.tsx` maps the ref back to the stored and resolved phase). Clicks on a cell still go
 through to the row.
 
-Ages with `tracks` aren't in the strip: `placeAges` places such an age once per row it names (`band`), numbering
-lines per row, and `splitAges` separates the strip's from each row's. `TimelineView` adds each row's band height to
-its `headerPx` (after its phase strips) and draws the band (`.tl-lane-ages`) with the same `AgeBars` as the strip;
-double-clicks and long presses there don't add events. A row that's filtered out takes its ages with it (the table
+A row's own ages (`Track.context`) aren't in the Ages strip: `placeAges` places each on that row (`band`), numbering
+lines per row, and `splitAges` separates the strip's from each row's. `TimelineView` lays them out as lines of the
+row's phase strip, above its phases (Kevin, 2026-11-22: the live look, regional ages as lighter strip lines): one
+strip line per age line, each cell a `PlacedPhase` with `kind` (`age`), `lineName` and `ref` (`ageRef`: `age:<id>`).
+The cells are drawn a step lighter (13%/26%), names in title case and shown from 36 px (`minKindNamePx`); a cell with no
+name or under 10 px draws no edges or alternate fill, so a run reads as one stripe. A named line's name
+(`.tl-strip-line-name`) holds the chart's left edge and its ages' names stick just right of it. Age cells open
+`AgePanel` on a click as well as Enter (phases open by keyboard only). Age lines and membership lines with nothing in
+the strip window (`stripWindow`, the view plus a margin, set when sideways scrolling settles) are left out. Named phase
+and age lines get 2 px under their names (`padBottomPx`). A row that's filtered out takes its ages with it (the table
 still lists them). `trackDeletion` names the ages that would move to the strip, for the delete warning.
 
 ### Category filter
@@ -384,11 +425,12 @@ TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
 ```sh
 npx vite preview --port 4317   # after npm run build; serves the app at /
 npm run shot -- <url> <out.png> [--width N --height N --close-legend --click "Expand all" --expand "Egypt" --keys "Tab|ArrowRight" --measure ".toolbar > *"]
-npm run contrast [-- --timeline ancient-classical --preset dark --state focus --sweep --details]   # text contrast per theme
+npm run contrast [-- --timeline ancient-classical --preset dark --state focus --zoom 100 --quick --details]   # text contrast per theme
 npm run contrast:ui [-- --preset dark --check marks|focus|fields --sweep --details]   # marks, focus outline, fields at 3:1 (WCAG 1.4.11)
 npm run reflow [-- --width 320 --width 640 --details]   # nothing runs off screen or scrolls sideways (WCAG 1.4.10)
 npm run targets [-- --width 390 --details]   # every control at least 24 × 24 px, or spaced apart (WCAG 2.5.8)
 npm run a11y:report [-- --skip contrast]     # all of the above, axe in the browser, and the a11y tests → docs/wcag-report.md (~10 min)
+npm run a11y:report -- --state "plugin view"  # axe over the named views only (a PR's new states, ~1 min); writes no report
 npm run check:live -- --expect "some text"   # after deploying: wait for the live site and check it loads
 ```
 
@@ -408,7 +450,11 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `src/a11y.test.tsx` runs axe-core over each bundled timeline, the table view, the tour and the Customize panel,
   and tests accessible names, focus handling and keyboard control.
 - jsdom can't check colour contrast, so `npm run contrast` does it in a real browser: axe-core for ordinary text,
-  and a pixel check for text on the timeline's layered backgrounds. `--sweep` checks every screen of a timeline.
+  and a pixel check for text on the timeline's layered backgrounds. It checks every screen of a timeline (`--quick`:
+  the opening view only, as the a11y report runs it). A theme or colour change runs it at a fine `--zoom` on every
+  timeline: the opening view passed a retune that broke labels further along. Both contrast scripts save only the
+  preset's name, so the served build loads its own colours for it: a baseline run against main's build from a PR's
+  worktree tests main's colours. Text shadows aren't measured, so a halo change needs a look at screenshots.
   `npm run contrast:ui` does the same at 3:1 for what isn't text: event marks (with and without them on screen,
   pixel by pixel), the focus outline on each kind of control, and form fields' borders.
 - oxlint runs the `jsx-a11y` rules, with three off: `prefer-tag-over-role`, `no-noninteractive-element-to-interactive-role`
@@ -417,7 +463,8 @@ browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewh
 - `npm run a11y:report` runs every check above, plus axe-core in a real browser over each view, and writes the results
   per WCAG 2.2 success criterion to [wcag-report.md](wcag-report.md). Which criteria each check covers, and which need a
   person, is the matrix in [wcag-coverage.md](wcag-coverage.md); edit it there. Exits with 1 if any check fails.
-  It isn't in CI (about 10 minutes): run it after a UI change, before asking for review, and paste its summary line
+  It isn't in CI (about 10 minutes): run it after a UI change, before asking for review (`--state <name>` checks just
+  the views a pull request adds, in about a minute, and writes no report), and paste its summary line
   ("Failing: 0", the number of views) in the pull request. **Pull requests don't commit `wcag-report.md`**: it would
   conflict with every other UI change. The maintainers commit a fresh report, run on the default timeline (Ancient) so
   reports stay comparable, after each batch of merges. The report names its timeline and any view it couldn't open

@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { AgeBars, AgeStrip, AGE_LINE_PX } from './AgeStrip.tsx';
+import { OverviewStrip } from './OverviewStrip.tsx';
+import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
 import type { Dataset, Track } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor, keptStretches } from './anchors.ts';
-import { buildLanes, layoutLanes, layoutPhaseStrips, memberRef, phaseRef, placeMemberships, placeOnLines, type LaneLayout, type Mark } from './layout.ts';
+import { ageRef, stripLineNamePx, buildLanes, layoutLanes, layoutPhaseStrips, memberRef, phaseRef, placeMemberships, placeOnLines, type LaneLayout, type Mark, type PlacedPhase } from './layout.ts';
 import { stripStopKey } from './keyboard.ts';
 import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
 import { mergeStretches } from '../lib/lifespan.ts';
@@ -23,6 +24,9 @@ import { ClusterMark, EventMark } from './Marks.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import { hasGlyph } from '../components/CategoryGlyph.tsx';
 import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
+import { formatYear } from '../lib/calendar.ts';
+import { meanwhile } from '../cursor/meanwhile.ts';
+import { CursorBand, CursorHead, CursorLine } from '../cursor/YearCursor.tsx';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
@@ -44,7 +48,9 @@ interface Props {
   data: Dataset;
   /** Events on the period lane: their own line(s) directly under each row's phases. */
   periodLane?: ReadonlySet<string>;
-  /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler, and bands on the rows they name. */
+  /** Events on the reign lane: their row's first event lines, above the period lane. */
+  reignLane?: ReadonlySet<string>;
+  /** The timeline's ages (context spans of kind age), placed on their lines: a strip under the ruler, and each row's on its band. */
   ages?: PlacedAge[];
   /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
   selectedAgeId?: string | null;
@@ -142,6 +148,11 @@ export function TimelineView(props: Props) {
   const allLanes = useMemo(() => buildLanes(data.tracks, visibleTracks, collapsed), [data.tracks, visibleTracks, collapsed]);
   /** The years the hidden rows were last checked against (when scrolling settled), or null before the first check. */
   const [rowWindow, setRowWindow] = useState<YearWindow | null>(null);
+  /**
+   * The years the strips are checked against (the view plus a margin either side), set when sideways scrolling
+   * settles, never per frame: age lines and membership lines with nothing there are left out (Kevin, 2026-11-22).
+   */
+  const [stripWindow, setStripWindow] = useState<YearWindow | null>(null);
   /** Headers whose rows with nothing in view the reader asked to see. */
   const [revealed, setRevealed] = useState<ReadonlySet<string>>(new Set());
   /** The lane holding keyboard focus when hiding last settled: it stays, so focus isn't lost. */
@@ -190,21 +201,37 @@ export function TimelineView(props: Props) {
     return out;
   }, [data.tracks, trackById]);
   const memberOf = props.memberOf ?? NO_MEMBERSHIPS;
-  // a lane's strip lines: its phases, then one line per membership in another row ("in Soviet Union, 1922–91"), drawn
-  // in the union's colour
+  // ages: only the lines with an age in the years in view (checked when scrolling settles); cross-region ages in the
+  // Ages strip under the ruler, a region's own as lines of its row's strip, above its phases
+  const agesShown = useMemo(() => splitAges(agesInView(props.ages ?? [], stripWindow)), [props.ages, stripWindow]);
+  // a lane's strip lines: its ages (a step lighter, one line per age line), its phases, then one line per membership
+  // in another row ("in Soviet Union, 1922–91"), drawn in the union's colour; memberships with nothing in the years
+  // in view leave no empty line
   const lanePhases = useMemo(
     () =>
       new Map(
         lanes.map((l) => {
           // (each keeps a ref to what it stands for, so the keyboard and the side panel find it again)
-          const own = placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })));
-          const lines = own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0;
+          const ages = agesShown.bands.get(l.id) ?? [];
+          const own: PlacedPhase[] = [];
+          const next = () => (own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0);
+          for (const line of [...new Set(ages.map((a) => a.line))].sort((a, b) => a - b))
+            own.push(
+              ...placeOnLines(
+                l.id,
+                ages.filter((a) => a.line === line).map((a) => ({ ...a.span, name: a.era.name, kind: a.era.kind, lineName: a.lineName, url: a.era.url, ref: ageRef(a.era.id) })),
+                next(),
+              ),
+            );
+          own.push(...placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })), next()));
           const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row)?.name ?? m.row, cal, isApprox(m));
-          const ms = (memberOf.get(l.id) ?? []).map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
-          return [l.id, [...own, ...placeMemberships(l.id, ms, lines, label)]];
+          const ms = (memberOf.get(l.id) ?? [])
+            .filter((m) => !stripWindow || (m.end >= stripWindow.y0 && m.start <= stripWindow.y1))
+            .map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
+          return [l.id, [...own, ...placeMemberships(l.id, ms, next(), label)]];
         }),
       ),
-    [lanes, phases, memberOf, anyRow, cal],
+    [lanes, phases, memberOf, anyRow, cal, agesShown, stripWindow],
   );
   // a union's row says who its members were, and when (its name's and lifespan's tooltips)
   const unionTips = useMemo(() => {
@@ -253,22 +280,17 @@ export function TimelineView(props: Props) {
     () => new Map([...lanePhases].filter(([, list]) => list.length).map(([id, list]) => [id, layoutPhaseStrips(list, scale.x, {}, laneLifespans.get(id))])),
     [lanePhases, scale, laneLifespans],
   );
-  // ages: only the lines with an age in the years in view (checked when scrolling settles, as rows are); cross-region
-  // ages in the strip, the rest on a band of the rows they name, under those rows' phase strips
-  const agesShown = useMemo(() => splitAges(agesInView(props.ages ?? [], rowWindow)), [props.ages, rowWindow]);
   const headerPx = useMemo(() => {
-    const out: Record<string, number> = Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height]));
-    for (const [id, list] of agesShown.bands) out[id] = (out[id] ?? 0) + ageLines(list) * AGE_LINE_PX;
-    return out;
-  }, [laneStrips, agesShown]);
+    return Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height])) as Record<string, number>;
+  }, [laneStrips]);
   // events drawn with a category glyph before their title: their labels are that much wider
   const glyphs = useMemo(
     () => new Set([...(props.categories ?? [])].filter(([, c]) => hasGlyph(c.kind)).map(([id]) => id)),
     [props.categories],
   );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane }),
-    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane],
+    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane, reignLane: props.reignLane }),
+    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane, props.reignLane],
   );
   const marksByEvent = useMemo(() => {
     const m = new Map<string, Mark[]>();
@@ -344,6 +366,12 @@ export function TimelineView(props: Props) {
     io.observe(el);
     return () => io.disconnect();
   }, []);
+  // the strips' window follows the view as scrolling settles (a new window re-lays out the strips, so never per frame)
+  useEffect(() => {
+    const w = nextWindow;
+    const t = window.setTimeout(() => setStripWindow((p) => (p && p.y0 === w.y0 && p.y1 === w.y1 ? p : w)), stripWindow ? SETTLE_MS : 0);
+    return () => window.clearTimeout(t);
+  }, [nextWindow, stripWindow]);
   const settleRows = useEffectEvent(() => {
     const w = nextWindow;
     if (rowWindow && rowWindow.y0 === w.y0 && rowWindow.y1 === w.y1) return;
@@ -391,9 +419,15 @@ export function TimelineView(props: Props) {
   // thin lines hold nothing to reach with the keyboard
   const navLanes = useMemo(() => layout.lanes.filter((l) => !shown.thin.has(l.lane.id)), [layout, shown.thin]);
   // a row's phase strip lines are grid lines above its events: each drawn cell is a stop (only with a side panel to open)
+  // a strip cell opens its details in the side panel: an age's in the age panel, a phase's or membership's in the phase panel
+  const { onOpenAge, onOpenPhase } = props;
+  const openStrip = useMemo(
+    () => (onOpenPhase || onOpenAge ? (ref: string) => (ref.startsWith('age:') ? onOpenAge?.(ref.slice(4)) : onOpenPhase?.(ref)) : undefined),
+    [onOpenAge, onOpenPhase],
+  );
   const stripStops = useMemo(() => {
     const out = new Map<string, { key: string; x: number }[][]>();
-    if (!props.onOpenPhase) return out;
+    if (!openStrip) return out;
     for (const [id, st] of laneStrips) {
       const lines = st.lines.map(() => [] as { key: string; x: number }[]);
       for (const c of st.cells) {
@@ -404,7 +438,7 @@ export function TimelineView(props: Props) {
       out.set(id, lines);
     }
     return out;
-  }, [laneStrips, scale, props.onOpenPhase]);
+  }, [laneStrips, scale, openStrip]);
   const stripLines = useCallback((l: LaneLayout) => stripStops.get(l.lane.id) ?? [], [stripStops]);
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
@@ -422,6 +456,7 @@ export function TimelineView(props: Props) {
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,
     onSearchKey: props.onSearchKey,
+    onCursorKey: (y) => placeCursorByKey(y),
     stripLines,
   });
 
@@ -442,6 +477,47 @@ export function TimelineView(props: Props) {
     }
     return ids;
   }, [keep, flashLane, rovingKey, layout, stripStops]);
+  // The year cursor: the year under the pointer (or placed with Y), with the chart's geometry when it was set (where
+  // the chart is in the window, its sticky header's height, and which stretch of rows is on screen), so drawing it
+  // reads no refs. Pointer and scroll keep it current.
+  type Cursor = { year: number; keyboard: boolean; left: number; top: number; headH: number; rowsTop: number; rowsBottom: number };
+  const [cursor, setCursor] = useState<Cursor | null>(null);
+  const cursorFrame = useRef(0);
+  const cursorReturn = useRef<HTMLElement | null>(null);
+  const cursorAt = (year: number, keyboard: boolean): Cursor | null => {
+    const el = scrollerRef.current;
+    if (!el) return null;
+    const box = el.getBoundingClientRect();
+    const headH = lanesRef.current?.offsetTop ?? 0;
+    return { year, keyboard, left: box.left, top: box.top, headH, rowsTop: el.scrollTop, rowsBottom: el.scrollTop + el.clientHeight - headH };
+  };
+  const onCursorMove = (ev: React.PointerEvent) => {
+    if (ev.pointerType === 'touch' || cursor?.keyboard) return;
+    const { clientX } = ev;
+    cancelAnimationFrame(cursorFrame.current);
+    cursorFrame.current = requestAnimationFrame(() => {
+      const el = scrollerRef.current;
+      if (!el) return;
+      const x = clientX - el.getBoundingClientRect().left + el.scrollLeft - labelW;
+      setCursor(x < 0 || x > scale.width ? null : cursorAt(Math.round(scale.yearAt(x)), false));
+    });
+  };
+  const onCursorLeave = () => {
+    cancelAnimationFrame(cursorFrame.current);
+    setCursor((c) => (c?.keyboard ? c : null));
+  };
+  const onCursorScroll = () => setCursor((c) => (c ? cursorAt(c.year, c.keyboard) : c));
+  function placeCursorByKey(year: number) {
+    cursorReturn.current = document.activeElement as HTMLElement | null;
+    setCursor(cursorAt(Math.round(year), true));
+  }
+  const stepCursor = (dir: 1 | -1, fine: boolean) =>
+    setCursor((c) => (c ? cursorAt(c.year + dir * Math.max(1, Math.round(fine ? increment / 10 : increment)), true) : c));
+  const closeCursor = () => {
+    setCursor(null);
+    cursorReturn.current?.focus();
+  };
+
   const drawnLanes = useMemo(() => {
     const y0 = rows.top - rows.height * ROWS_ABOVE;
     const y1 = rows.top + rows.height * (1 + ROWS_BELOW);
@@ -490,7 +566,22 @@ export function TimelineView(props: Props) {
     press.start(x, ev.clientY, () => createAt(trackId, lane, x));
   };
 
-  return (
+  // what was going on at the cursor's year in the rows on screen, and where its line meets the window
+  const cursorM = useMemo(() => {
+    if (!cursor) return null;
+    const onScreen = layout.lanes.filter((l) => l.top + l.height > cursor.rowsTop && l.top < cursor.rowsBottom && !shown.thin.has(l.lane.id));
+    return meanwhile(
+      cursor.year,
+      onScreen.map(({ lane }) => ({ id: lane.id, name: lane.track.name, color: lane.track.color, depth: lane.depth, members: lane.members, memberNames: new Map(lane.members.map((m) => [m, anyRow.get(m)?.name ?? m])) })),
+      phases,
+      events,
+      props.reignLane ?? new Set(),
+      props.ages ?? [],
+      spans,
+    );
+  }, [cursor, layout.lanes, shown.thin, anyRow, phases, events, props.reignLane, props.ages, spans]);
+  const cursorX = cursor ? cursor.left + labelW + scale.x(cursor.year) - view.left : 0;
+  const chart = (
     // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
     // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <div
@@ -501,7 +592,12 @@ export function TimelineView(props: Props) {
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
       aria-busy={rowsPending || !!props.busy}
       ref={scrollerRef}
-      onScroll={onScroll}
+      onScroll={() => {
+        onScroll();
+        onCursorScroll();
+      }}
+      onPointerMove={onCursorMove}
+      onPointerLeave={onCursorLeave}
       {...pinch}
       onClick={(e) => {
         if (e.target === e.currentTarget) onSelect(null);
@@ -567,6 +663,7 @@ export function TimelineView(props: Props) {
           {/* the era line has its own layer, over the rows' backgrounds and spans (which cover the grid), under the marks */}
           {visibleTicks.includes(era) && <div className="tl-era-line" style={{ left: labelW + scale.x(era) }} />}
 
+          {cursor && <CursorLine x={labelW + scale.x(cursor.year)} height={layout.height} />}
           <ConnectionLayer
             left={labelW}
             width={scale.width + END_PAD}
@@ -627,6 +724,18 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
+              {/* a named age line (a region's, e.g. Africa's "Nile Valley") shows its name at the chart's left edge, as
+                  the age bands did (Kevin, #82: every named line is labelled); its ages' names stick just right of it */}
+              {laneStrips.get(lane.id)?.lines.map((ln) => {
+                const name = laneStrips.get(lane.id)!.cells.find((c) => c.line === ln && c.phase.lineName)?.phase.lineName;
+                return name ? (
+                  <div key={`line-${ln.top}`} className="tl-strip-line" style={{ left: labelW, width: scale.width, top: ln.top, height: ln.height }} aria-hidden="true">
+                    <span className="tl-strip-line-name" style={{ left: labelW, width: stripLineNamePx(name) }}>
+                      {name}
+                    </span>
+                  </div>
+                ) : null;
+              })}
               {laneStrips.get(lane.id)?.cells.map((c, i) => (
                 <PhaseStripCell
                   key={`phase-${i}`}
@@ -635,36 +744,13 @@ export function TimelineView(props: Props) {
                   memberName={lane.track.name}
                   unionName={c.phase.member && (anyRow.get(c.phase.member)?.name ?? c.phase.member)}
                   isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
-                  selected={!!c.phase.ref && c.phase.ref === props.selectedPhaseRef}
-                  onOpen={props.onOpenPhase}
+                  selected={!!c.phase.ref && (c.phase.ref === props.selectedPhaseRef || (!!props.selectedAgeId && c.phase.ref === ageRef(props.selectedAgeId)))}
+                  onOpen={openStrip}
+                  viewLeft={view.left}
                   onStopFocus={onStopFocus}
                   {...band}
                 />
               ))}
-              {agesShown.bands.has(lane.id) && (
-                // the row's ages (e.g. the Nile Valley's on Africa): the strip's buttons and links, on lines of their own
-                // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-                <div
-                  className="tl-lane-ages"
-                  style={{ top: laneStrips.get(lane.id)?.height ?? 0, height: ageLines(agesShown.bands.get(lane.id)!) * AGE_LINE_PX }}
-                  role="group"
-                  aria-label={`Ages in ${lane.track.name}`}
-                  // a double-click or long press here isn't adding an event to the row
-                  onDoubleClick={(ev) => ev.stopPropagation()}
-                  onPointerDown={(ev) => ev.stopPropagation()}
-                >
-                  <AgeBars
-                    ages={agesShown.bands.get(lane.id)!}
-                    scale={scale}
-                    labelW={labelW}
-                    viewLeft={view.left}
-                    cal={cal}
-                    sources={props.data.sources}
-                    selectedId={props.selectedAgeId}
-                    onOpen={props.onOpenAge}
-                  />
-                </div>
-              )}
               <LaneLabel
                 lane={lane}
                 regionTip={[props.regionTips?.get(lane.id), unionTips.get(lane.id)].filter(Boolean).join('\n') || undefined}
@@ -751,6 +837,26 @@ export function TimelineView(props: Props) {
           )}
         </div>
       </div>
+      {cursor && cursorX >= cursor.left + labelW && cursorX <= cursor.left + view.width && (
+        <CursorHead
+          label={formatYear(cursor.year, cal)}
+          x={cursorX}
+          top={cursor.top}
+          headH={cursor.headH}
+          keyboard={cursor.keyboard}
+          onStep={stepCursor}
+          onClose={closeCursor}
+        />
+      )}
+    </div>
+  );
+  return (
+    // the chart's column: the overview strip (a map of the whole timeline, the view outlined), the year cursor's band,
+    // then the chart
+    <div className="tl-wrap">
+      <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} view={view} scrollerRef={scrollerRef} />
+      <CursorBand m={cursorM} label={cursor ? formatYear(cursor.year, cal) : null} keyboard={!!cursor?.keyboard} />
+      {chart}
     </div>
   );
 }

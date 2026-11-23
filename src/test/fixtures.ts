@@ -1,4 +1,4 @@
-import type { Dataset } from '../types.ts';
+import type { ContextSpan, Dataset } from '../types.ts';
 
 /**
  * A small fictional timeline for tests that need a plain one: top-level rows only (no regions), a calendar with a
@@ -8,7 +8,7 @@ import type { Dataset } from '../types.ts';
  */
 export function plainTimeline(): Dataset {
   return {
-    schemaVersion: 7,
+    schemaVersion: 8,
     meta: {
       id: 'harbor-towns',
       title: 'The Harbor Towns',
@@ -114,4 +114,23 @@ export function secondSiteTimeline(): Dataset {
   const d = plainTimeline();
   d.meta = { ...d.meta, id: 'second-site', title: 'A Second Timeline' };
   return d;
+}
+
+/** A context span of the dataset by id (on the timeline or on a row), to change in a test. */
+export function age(d: Dataset, id: string): ContextSpan {
+  const s = [...(d.meta.context ?? []), ...d.tracks.flatMap((t) => t.context ?? [])].find((a) => a.id === id);
+  if (!s) throw new Error(`no context span "${id}"`);
+  return s;
+}
+
+/** Moves a context span (by id) to a row's own context lines (its band), or to the timeline's with no row. */
+export function placeAge(d: Dataset, id: string, row?: string): ContextSpan {
+  const s = age(d, id);
+  const drop = (l?: ContextSpan[]) => l?.filter((a) => a !== s);
+  d.meta.context = drop(d.meta.context);
+  for (const t of d.tracks) if (t.context) t.context = drop(t.context);
+  const to = row ? d.tracks.find((t) => t.id === row)! : undefined;
+  if (to) to.context = [...(to.context ?? []), s];
+  else d.meta.context = [...(d.meta.context ?? []), s];
+  return s;
 }

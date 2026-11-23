@@ -5,7 +5,10 @@ import { AgeStrip } from './AgeStrip.tsx';
 import { placeAges } from '../lib/eras.ts';
 import { buildScale } from './scale.ts';
 import { plainTimeline } from '../test/fixtures.ts';
-import type { Era } from '../types.ts';
+import type { ContextSpan } from '../types.ts';
+
+/** An age as the tests write it; render_ makes it a context span of kind `age` on the timeline. */
+type Era = Omit<ContextSpan, 'kind'>;
 
 afterEach(cleanup);
 
@@ -13,7 +16,7 @@ const cite = [{ sourceKey: 'ledger', sourceLocation: 'p. 1' }];
 
 function render_(eras: Era[], viewLeft = 0, onOpen = vi.fn()) {
   const d = plainTimeline();
-  d.meta.eras = eras;
+  d.meta.context = eras.map((e) => ({ kind: 'age', ...e }));
   const ages = placeAges(d, {});
   // the chart runs from 0 to 200 L
   const scale = buildScale([0, 200], { increment: 10, tickPx: 80, compress: false });
@@ -88,10 +91,10 @@ describe('the Ages strip', () => {
 
 describe('the Ages strip from the keyboard', () => {
   const eras: Era[] = [
-    { id: 'a', name: 'Ash', start: 0, end: 40, group: 'g1', sources: cite },
-    { id: 'b', name: 'Brine', start: 40, end: 90, group: 'g1', sources: cite },
-    { id: 'c', name: 'Coral', start: 90, end: 150, group: 'g1', sources: cite, url: wiki },
-    { id: 'd', name: 'Dune', start: 10, end: 120, group: 'g2', sources: cite },
+    { id: 'a', name: 'Ash', start: 0, end: 40, line: 'g1', sources: cite },
+    { id: 'b', name: 'Brine', start: 40, end: 90, line: 'g1', sources: cite },
+    { id: 'c', name: 'Coral', start: 90, end: 150, line: 'g1', sources: cite, url: wiki },
+    { id: 'd', name: 'Dune', start: 10, end: 120, line: 'g2', sources: cite },
   ];
   const stops = (c: HTMLElement) => [...c.querySelectorAll<HTMLElement>('[tabindex="0"]')].map((e) => e.dataset.ageId ?? e.tagName);
 

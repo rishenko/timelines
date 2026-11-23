@@ -93,7 +93,7 @@ This writes `candidates.csv` (one row per date claim) and `report.md` to `pipeli
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
-Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`.
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`.
 
 ## Wikidata (`extract/wikidata.py`)
 
@@ -117,7 +117,10 @@ A full run also writes `data-src/provenance/<id>.json`. It lists every cited art
 1. Download it.
 2. Run `wp_index_db.py --dump <name>`, or set `TIMELINES_WP_DUMP`. This rebuilds `index.sqlite`, which serves one dump at a time.
 3. Rerun each generator with the same setting.
-4. Review `git diff data-src/`.
+4. Rebuild the extract tables (`build_index.py`), then the list of pages flagged for AI-generated text that
+   `npm run data:check` reads: `pipelines/extract/.venv/bin/python -I pipelines/extract/ai_flagged.py` writes
+   `data-src/ai-flagged-pages.txt` (flagged articles and the redirects to them).
+5. Review `git diff data-src/`; `npm run data:check` fails if a link now names a newly flagged page.
 
 A cited field that changed or disappeared fails the run, or shows in the diff, depending on the helper. Pages that carry an AI-generated-text notice are refused as sources.
 

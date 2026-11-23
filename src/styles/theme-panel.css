@@ -82,4 +82,56 @@
 :root[data-mode='dark'] :is(.tl-mark, .lg-bar, .lg-band) {
   --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 34%, transparent);
 }
+/* Dark themes: a phase name is white with a tenth of its row's colour (instead of the text colour with a fifth). On a
+   bright row's strip (gold Romania, Ecuador, Vatican City, Pharaonic Egypt) the row's colour in the text pulled it
+   toward the strip, 4.0–4.4:1; even the plain text colour stays under 4.5:1 on the lightest of them. This reaches
+   4.6:1 and up, and the name still leans to its row's colour. */
+:root[data-mode='dark'] .tl-phase-name {
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, #fff);
+}
 
+/* Parchment: a paper page where tints read as tints. Fewer, fainter washes (groups, stripes) with crisper edges, and
+   deeper row colours than other light themes, so bars and diamonds read as colours, not pastels. */
+:root[data-preset='parchment'] [style*='--track-color'] {
+  --track-ink: color-mix(in srgb, var(--track-color) 55%, var(--text));
+}
+:root[data-preset='parchment'] :is(.tl-mark, .lg-bar, .lg-band) {
+  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 40%, transparent);
+  --range-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 16%, transparent);
+  --mark-edge: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, var(--text));
+}
+:root[data-preset='parchment'] .tl-span {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 15%, transparent);
+  border-top-color: color-mix(in srgb, var(--track-ink, var(--track-color)) 75%, transparent);
+}
+:root[data-preset='parchment'] .tl-lane.in-group {
+  box-shadow: inset 0 0 0 9999px color-mix(in srgb, var(--group-color) 3%, transparent);
+}
+:root[data-preset='parchment'] .tl-lanes > .tl-lane.stripe {
+  background: color-mix(in srgb, var(--text) 3%, transparent);
+}
+:root[data-preset='parchment'] .tl-lane {
+  border-bottom-color: color-mix(in srgb, var(--line) 70%, var(--text));
+}
+
+/* Colour-blind safe: row colours come from the data, so colour alone can't tell rows apart. Marks get a heavier edge
+   in the row's colour moved toward the text, and labels and phase names stay the main cue. */
+/* the Okabe-Ito colours are brighter than the data's (yellow above all), so rows draw in them moved a quarter toward
+   the page: light labels on their bars stay at 4.5:1 */
+:root[data-preset='cvd'] [style*='--track-color'] {
+  --track-ink: color-mix(in srgb, var(--track-color) 75%, var(--bg));
+}
+:root[data-preset='cvd'] :is(.tl-mark, .lg-bar, .lg-band) {
+  --mark-edge: color-mix(in srgb, var(--track-ink, var(--track-color)) 35%, var(--text));
+  --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 24%, transparent);
+  --range-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, transparent);
+}
+:root[data-preset='cvd'] .tl-mark.span .bar,
+:root[data-preset='cvd'] .tl-mark.point .diamond {
+  border-width: 1.5px;
+}
+/* rows in the CVD palette (lib/cvdPalette.ts): a stronger lifespan tint, so neighbouring rows differ by more than a
+   faint wash */
+:root[data-preset='cvd'] .tl-span {
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 16%, transparent);
+}

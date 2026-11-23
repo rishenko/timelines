@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 7,
+  "schemaVersion": 8,
   "meta": {
     "id": "medieval",
     "title": "Medieval World",
@@ -729,11 +729,10 @@
         "side": "after"
       }
     ],
-    "eras": [
+    "context": [
       {
         "id": "islamic-golden-age",
         "name": "Islamic Golden Age",
-        "group": "islamic-world",
         "start": 786,
         "end": 1258,
         "startDates": [
@@ -775,12 +774,13 @@
         "url": "https://en.wikipedia.org/wiki/Islamic_Golden_Age",
         "ids": {
           "wikidata": "Q745799"
-        }
+        },
+        "kind": "age",
+        "line": "islamic-world"
       },
       {
         "id": "pax-mongolica",
         "name": "Pax Mongolica",
-        "group": "steppe-persianate",
         "start": 1250,
         "end": 1350,
         "circa": true,
@@ -815,12 +815,13 @@
         "url": "https://en.wikipedia.org/wiki/Pax_Mongolica",
         "ids": {
           "wikidata": "Q1473258"
-        }
+        },
+        "kind": "age",
+        "line": "steppe-persianate"
       },
       {
         "id": "timurid-renaissance",
         "name": "Timurid Renaissance",
-        "group": "steppe-persianate",
         "start": 1375,
         "end": 1525,
         "circa": true,
@@ -855,12 +856,13 @@
         "url": "https://en.wikipedia.org/wiki/Timurid_Renaissance",
         "ids": {
           "wikidata": "Q3424763"
-        }
+        },
+        "kind": "age",
+        "line": "steppe-persianate"
       },
       {
         "id": "renaissance",
         "name": "Renaissance",
-        "group": "europe-thought",
         "start": 1400,
         "end": 1600,
         "circa": true,
@@ -913,12 +915,13 @@
         "url": "https://en.wikipedia.org/wiki/Renaissance",
         "ids": {
           "wikidata": "Q4692"
-        }
+        },
+        "kind": "age",
+        "line": "europe-thought"
       },
       {
         "id": "age-of-discovery",
         "name": "Age of Discovery",
-        "group": "europe-expansion",
         "start": 1415,
         "end": 1650,
         "circa": true,
@@ -957,7 +960,9 @@
         "url": "https://en.wikipedia.org/wiki/Age_of_Discovery",
         "ids": {
           "wikidata": "Q133641"
-        }
+        },
+        "kind": "age",
+        "line": "europe-expansion"
       }
     ]
   },

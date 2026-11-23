@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 7,
+  "schemaVersion": 8,
   "meta": {
     "id": "every-field",
     "title": "Every Field",
@@ -72,11 +72,10 @@
       "start": -100,
       "end": 300
     },
-    "eras": [
+    "context": [
       {
         "id": "age-of-piers",
         "name": "The Age of Piers",
-        "group": "harbor-ages",
         "color": "#c8a24a",
         "chronology": "court",
         "start": -40,
@@ -133,12 +132,13 @@
               "page": "50"
             }
           }
-        ]
+        ],
+        "kind": "age",
+        "line": "harbor-ages"
       },
       {
         "id": "age-of-leagues",
         "name": "The Age of Leagues",
-        "group": "harbor-ages",
         "start": 60,
         "ongoing": true,
         "ongoingSources": [
@@ -160,7 +160,9 @@
               "page": "51"
             }
           }
-        ]
+        ],
+        "kind": "age",
+        "line": "harbor-ages"
       }
     ]
   },

@@ -174,7 +174,15 @@ export function useViewport(o: Options) {
       }
     };
     window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    // the chart also changes width without the window doing so: a side panel opening beside it, or the toolbar
+    // wrapping. Without this, the view kept its old width (the overview strip's outline ran under the panel).
+    const el = scrollerRef.current;
+    const ro = el && typeof ResizeObserver !== 'undefined' ? new ResizeObserver(onResize) : null;
+    if (el) ro?.observe(el);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      ro?.disconnect();
+    };
   }, [scrollerRef, setView, setRows]);
 
   return { view, rows, centerYearRef, flashLane, onScroll };

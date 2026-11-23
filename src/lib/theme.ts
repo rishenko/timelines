@@ -81,20 +81,40 @@ export const PRESETS: Record<string, { label: string; colors: ThemeColors }> = {
       ok: '#2f855a',
     },
   },
+  // Retuned 2026-11-23 for contrast between elements (dense screens read too faint and pastel): a paler, cleaner page
+  // so row tints read as tints, darker panels, borders and muted text; theme-panel.css deepens row colours and bars.
   parchment: {
     label: 'Parchment',
     colors: {
-      bg: '#f3ead8',
-      panel: '#e8dcc3',
-      control: '#fbf6ea',
-      line: '#cdbb98',
-      text: '#2e2416',
-      muted: '#6e5c42',
-      accent: '#8c3b1f',
-      focus: '#a8710f',
-      link: '#2f5a8a',
-      danger: '#a1262b',
-      ok: '#4d7a32',
+      bg: '#fbf7ee',
+      panel: '#e4d3ae',
+      control: '#fffdf7',
+      line: '#bca880',
+      text: '#1c1409',
+      muted: '#4f412b',
+      accent: '#8a3216',
+      focus: '#9a5c00',
+      link: '#1d4c85',
+      danger: '#9e1f24',
+      ok: '#3f6e26',
+    },
+  },
+  // Colour-blind safe: Okabe-Ito UI colours on Dark. No red/green pair carries meaning: danger is vermillion, success
+  // bluish green, links sky blue. theme-panel.css adds heavier mark edges, and lib/cvdPalette.ts redraws row colours.
+  cvd: {
+    label: 'Colour-blind safe',
+    colors: {
+      bg: '#0f1216',
+      panel: '#171b22',
+      control: '#1f242c',
+      line: '#3a424e',
+      text: '#eef1f4',
+      muted: '#a3adba',
+      accent: '#e69f00',
+      focus: '#f0e442',
+      link: '#56b4e9',
+      danger: '#d55e00',
+      ok: '#009e73',
     },
   },
   contrast: {
@@ -181,6 +201,8 @@ export function sanitize(input: unknown): ThemeSetting {
     if (typeof v === 'string' && HEX.test(v)) colors[key] = v.toLowerCase();
   }
   const preset = typeof raw.preset === 'string' && (raw.preset in PRESETS || raw.preset === 'custom') ? raw.preset : 'custom';
+  // a saved preset (no colour changed) follows the preset's current colours, so a retune reaches readers who chose it
+  if (preset !== 'custom') return { preset, colors: { ...PRESETS[preset].colors } };
   return { preset, colors };
 }
 
@@ -256,6 +278,9 @@ export function applyTheme(c: ThemeColors, root: HTMLElement = document.document
   for (const { key } of THEME_FIELDS) root.style.setProperty(VAR[key], c[key]);
   const mode = themeMode(c);
   root.dataset.mode = mode;
+  // the preset these colours are ("custom" otherwise), so preset-only CSS (theme-panel.css) can apply
+  const preset = Object.keys(PRESETS).find((k) => THEME_FIELDS.every(({ key }) => PRESETS[k].colors[key].toLowerCase() === c[key].toLowerCase()));
+  root.dataset.preset = preset ?? 'custom';
   root.style.setProperty('--on-accent', onColor(c.accent));
   root.style.setProperty('--on-danger', onColor(c.danger));
   root.style.setProperty('--on-ok', onColor(c.ok));

@@ -19,7 +19,7 @@
 // thread), where what's measured behind them is that line, not the row. Run `npm run build` and
 // `npx vite preview --port 4317` first. Exits with 1 if anything fails.
 import { chromium, type Page } from 'playwright-core';
-import { PRESETS } from '../src/lib/theme.ts';
+import { PRESETS } from '../src/lib/theme.ts'; // preset names only; the colours come from the served build
 import { uiStates } from './lib/ui-states.ts';
 
 const args = process.argv.slice(2);
@@ -47,17 +47,18 @@ let failed = 0;
 
 async function themedPage(preset: string, width = 1700, height = 1000, query = ''): Promise<Page> {
   const page = await browser.newPage({ viewport: { width, height } });
-  await page.addInitScript(
-    ([colors, p]) => {
-      localStorage.setItem('timeline:theme', JSON.stringify({ preset: p, colors }));
-      localStorage.setItem('timelines:legend-seen', '1');
-    },
-    [PRESETS[preset].colors, preset] as const,
-  );
+  // the preset's name only, so the served build loads its own colours for it (theme.ts sanitize); a baseline run from
+  // another worktree then tests that build's colours, not this worktree's
+  await page.addInitScript((p) => {
+    localStorage.setItem('timeline:theme', JSON.stringify({ preset: p }));
+    localStorage.setItem('timelines:legend-seen', '1');
+  }, preset);
   const url = new URL(base);
   url.searchParams.set('timeline', timeline);
   await page.goto(url.toString() + query);
   await page.waitForTimeout(1500);
+  const loaded = await page.evaluate(() => document.documentElement.dataset.preset);
+  if (loaded !== preset) throw new Error(`the served build has no "${preset}" preset (it loaded ${loaded ?? 'none'}); pass --preset`);
   await page.locator('.tour-card .tour-actions .linklike').first().click({ timeout: 500 }).catch(() => {});
   await page.locator('.legend-panel header button.icon').first().click({ timeout: 500 }).catch(() => {});
   return page;
@@ -115,7 +116,8 @@ async function checkMarks(page: Page): Promise<Finding[]> {
     const area = {
       left: document.querySelector('.tl-lane-label')?.getBoundingClientRect().right ?? s.left,
       right: s.right,
-      top: document.querySelector('.tl-ruler')?.getBoundingClientRect().bottom ?? s.top,
+      // below the sticky headers (the ruler, and the ages strip under it): text scrolled under them isn't visible
+      top: Math.max(s.top, ...[...document.querySelectorAll('.tl-ruler, .tl-ages')].map((e) => e.getBoundingClientRect().bottom)),
       bottom: s.bottom,
     };
     return [...document.querySelectorAll<HTMLElement>('.tl-mark .diamond, .tl-mark .bar, .tl-mark.cluster')].flatMap((el) => {

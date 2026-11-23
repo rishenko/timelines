@@ -12,20 +12,26 @@
 //   focus    the same with a key event selected, so unrelated events are dimmed.
 //   node scripts/contrast.ts [--url http://localhost:4317/] [--timeline ancient-classical]...
 //        [--preset parchment|dark|light|contrast]... [--state rest|focus]... [--width 1700] [--height 1000]
-//        [--zoom 100] [--sweep] [--details] [--browser chrome|msedge]
-// Defaults: every bundled timeline, every preset, both states. --details lists each failing element; without it,
-// failures are grouped by kind (the worst one shown). Exits with 1 if any check fails.
+//        [--zoom 100] [--quick] [--details] [--browser chrome|msedge]
+// Defaults: Ancient only, every preset, both states, the whole chart (see --quick). --details lists each failing
+// element; without it, failures are grouped by kind (the worst one shown). Exits with 1 if any check fails.
 // Run `npm run build` and `npx vite preview --port 4317` first. Microsoft Edge on Windows, Google Chrome elsewhere.
-// Only what's drawn is checked. The timeline draws the events within about a screen of the view, so by default this
-// checks the opening view; --sweep scrolls through the whole chart a screen at a time and checks each one (screens
-// overlap by more than a label's width, and a label is only checked where it's wholly on screen). At the
+// Only what's drawn is checked. The timeline draws the events within about a screen of the view, so this scrolls
+// through the whole chart a screen at a time and checks each one (screens overlap by more than a label's width, and a
+// label is only checked where it's wholly on screen). --quick checks the opening view only (the a11y report's run);
+// a theme or colour change needs the sweep at a fine --zoom on every timeline (one --timeline each, with that
+// timeline's own zoom step), since the opening view passed a retune
+// that broke labels further along (#90). --sweep is still accepted (it's the default).
+// The colours are the served build's own: the page is opened with only the preset's name saved, so the app loads that
+// preset's current colours (theme.ts sanitize). A main baseline run from a PR's worktree therefore tests main's
+// colours. A preset the served build doesn't have is reported and skipped. At the
 // coarsest zoom only key events are drawn and crowded ones fold into "+N"; --zoom picks a finer increment (the
 // toolbar's button text, e.g. 100) so the others are drawn too. The selected event (state focus) is the first key
 // event in the opening view.
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { chromium, type Page } from 'playwright-core';
-import { PRESETS } from '../src/lib/theme.ts';
+import { PRESETS } from '../src/lib/theme.ts'; // preset names only; the colours come from the served build
 
 const args = process.argv.slice(2);
 const all = (flag: string) => args.flatMap((a, i) => (a === flag ? [args[i + 1]] : []));
@@ -35,7 +41,7 @@ const timelines = all('--timeline').length ? all('--timeline') : ['ancient-class
 const presets = all('--preset').length ? all('--preset') : Object.keys(PRESETS);
 const states = all('--state').length ? all('--state') : ['rest', 'focus'];
 const zoom = all('--zoom')[0];
-const sweep = args.includes('--sweep');
+const sweep = !args.includes('--quick');
 const details = args.includes('--details');
 const axeSource = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
 
@@ -54,6 +60,8 @@ const browser = await chromium.launch({
   channel: one('--browser', process.platform === 'win32' ? 'msedge' : 'chrome'),
 });
 let failed = 0;
+let checked = 0;
+let skipped = 0;
 
 for (const timeline of timelines) {
   for (const preset of presets) {
@@ -61,18 +69,25 @@ for (const timeline of timelines) {
       const page = await browser.newPage({
         viewport: { width: Number(one('--width', '1700')), height: Number(one('--height', '1000')) },
       });
-      // a saved theme, and the tour marked as seen so it doesn't open over the timeline
-      await page.addInitScript(
-        ([colors, p]) => {
-          localStorage.setItem('timeline:theme', JSON.stringify({ preset: p, colors }));
-          localStorage.setItem('timelines:legend-seen', '1');
-        },
-        [PRESETS[preset].colors, preset] as const,
-      );
+      // the preset's name only (the served build fills in its colours), and the tour marked as seen so it doesn't open
+      // over the timeline
+      await page.addInitScript((p) => {
+        localStorage.setItem('timeline:theme', JSON.stringify({ preset: p }));
+        localStorage.setItem('timelines:legend-seen', '1');
+      }, preset);
       const url = new URL(base);
       url.searchParams.set('timeline', timeline);
       await page.goto(url.toString());
       await page.waitForTimeout(1500);
+      // the served build may not have this preset (an older build, or a preset added in this worktree only)
+      const loaded = await page.evaluate(() => document.documentElement.dataset.preset);
+      if (loaded !== preset) {
+        console.log(`skip  ${timeline} / ${preset} / ${state}: the served build has no "${preset}" preset (it loaded ${loaded ?? 'none'})`);
+        await page.close();
+        skipped++;
+        continue;
+      }
+      checked++;
       await page.locator('.tour-card .tour-actions .linklike').first().click({ timeout: 500 }).catch(() => {});
       await page.locator('.legend-panel header button.icon').first().click({ timeout: 500 }).catch(() => {});
       await page.locator('button', { hasText: 'Expand all' }).first().click({ timeout: 1000 }).catch(() => {});
@@ -83,13 +98,22 @@ for (const timeline of timelines) {
         await page.waitForTimeout(400);
       }
       if (zoom) {
-        await page.locator('button', { hasText: new RegExp('^\\s*' + zoom + '\\s*$') }).first().click();
+        // a timeline without that zoom step is skipped (each timeline has its own steps)
+        const step = page.locator('button', { hasText: new RegExp('^\\s*' + zoom + '\\s*$') }).first();
+        if (!(await step.count())) {
+          console.log(`skip  ${timeline} / ${preset} / ${state}: no "${zoom}" zoom step on this timeline`);
+          await page.close();
+          checked--;
+          skipped++;
+          continue;
+        }
+        await step.click();
         await page.waitForTimeout(600);
       }
       await page.addScriptTag({ content: axeSource });
 
-      // the scroll positions to check: the opening view, or (--sweep) every screen of the chart, overlapping by more
-      // than the widest label (240 px) and a few lines of events
+      // the scroll positions to check: every screen of the chart, overlapping by more than the widest label (240 px) and
+      // a few lines of events (--quick: the opening view only)
       const positions = await page.evaluate((sweep) => {
         const el = document.querySelector('.tl-scroller') as HTMLElement;
         if (!sweep) return [[el.scrollLeft, el.scrollTop]];
@@ -146,7 +170,9 @@ for (const timeline of timelines) {
   }
 }
 await browser.close();
-process.exit(failed ? 1 : 0);
+// a run that checked nothing (every preset missing from the served build) is a failure, not a pass
+if (!checked) console.log(`nothing checked: ${skipped} run${skipped === 1 ? '' : 's'} skipped`);
+process.exit(failed || !checked ? 1 : 0);
 
 /** Both passes over what's on screen now. */
 async function checkView(page: Page): Promise<Failure[]> {
@@ -176,12 +202,13 @@ async function checkView(page: Page): Promise<Failure[]> {
 /** The pixel check for text on layered backgrounds (see the header). */
 async function layeredText(page: Page): Promise<Failure[]> {
   const items = await page.evaluate((layered) => {
-    // the chart area: inside the scroller, right of the sticky row labels and below the sticky ruler
+    // the chart area: inside the scroller, right of the sticky row labels and below the sticky ruler and ages strip
     const s = document.querySelector('.tl-scroller')!.getBoundingClientRect();
     const scroller = {
       left: document.querySelector('.tl-lane-label')?.getBoundingClientRect().right ?? s.left,
       right: s.right,
-      top: document.querySelector('.tl-ruler')?.getBoundingClientRect().bottom ?? s.top,
+      // below the sticky headers (the ruler, and the ages strip under it): text scrolled under them isn't visible
+      top: Math.max(s.top, ...[...document.querySelectorAll('.tl-ruler, .tl-ages')].map((e) => e.getBoundingClientRect().bottom)),
       bottom: s.bottom,
     };
     const parse = (c: string) => {

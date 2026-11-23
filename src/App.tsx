@@ -1,11 +1,13 @@
-import { useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { periodLaneIds } from './lib/periodLane.ts';
+import { reignLaneIds } from './lib/reignLane.ts';
 import { placeAges } from './lib/eras.ts';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
 import { downloadDataset, unreadableDraftKey, useDataset } from './state/dataset.ts';
 import { isEventVisible, useFilters } from './state/filters.ts';
 import { useTheme } from './state/theme.ts';
+import { withCvdColors } from './lib/cvdPalette.ts';
 import { useToast } from './state/toast.ts';
 import { usePanels } from './state/panels.ts';
 import { goToTimeline, readUrl, useUrlSync, type View } from './state/url.ts';
@@ -24,6 +26,9 @@ import { TimelinePicker } from './components/TimelinePicker.tsx';
 import { EditBar } from './components/EditBar.tsx';
 import { SidePanel, type Editing } from './components/SidePanel.tsx';
 import type { SelectedPhase } from './components/PhasePanel.tsx';
+import { pluginUrl, PLUGIN_API, type ViewContext } from './plugins/api.ts';
+import { PluginView } from './plugins/PluginView.tsx';
+import { usePlugin } from './plugins/usePlugin.ts';
 import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
@@ -88,6 +93,11 @@ export default function App({ published: opened, library: libraryEntry, site, no
     () => periodLaneIds(data, categories.facetId, categories.facet, categories.sourceOn),
     [data, categories.facetId, categories.facet, categories.sourceOn],
   );
+  // reigns: the first event lines of their row, above the period lane
+  const reignLane = useMemo(
+    () => reignLaneIds(data, categories.facetId, categories.facet, categories.sourceOn),
+    [data, categories.facetId, categories.facet, categories.sourceOn],
+  );
   // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
   const comparison = useComparison(data, initialUrl, editMode);
   const rowsOn = useMemo(
@@ -127,6 +137,13 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const shownFilters = useMemo(() => ({ ...filters, tracks: rowsOn }), [filters, rowsOn]);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
+  // a view plugin: an ES module from this site's plugins/ folder (?plugin=plugins/<name>.js), shown as a third view
+  // after Timeline and Table (docs/plugins.md). Read once at load; a link naming one from anywhere else is refused.
+  const [pluginAt, pluginRefused] = useMemo(() => {
+    const raw = new URLSearchParams(window.location.search).get('plugin');
+    const at = pluginUrl(raw);
+    return [at, !!raw && !at] as const;
+  }, []);
   // on opening, readers with a saved draft hear if the published timeline changed underneath it
   const [toast, notify] = useToast(
     unreadableDraft
@@ -135,7 +152,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
       : updatedUnderDraft
         ? 'The published timeline has been updated. Your local edits are kept on top of the new version.'
         : // Boot's notice, then what the link names that this timeline can't open (one toast)
-          [notice, initialUrl.notice].filter(Boolean).join(' ') || null,
+          [notice, initialUrl.notice, pluginRefused && "This link names a view plugin from outside this site's plugins folder, so it wasn't loaded."]
+            .filter(Boolean)
+            .join(' ') || null,
   );
 
   useEffect(() => {
@@ -150,7 +169,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
   // ---- chronologies: readers pick one per group (e.g. Mesopotamia: High / Middle / Low) ----
   const chron = useChronology(data);
-  // ages (meta.eras) under the reader's Dating choice, on their lines
+  // ages (context spans of kind age) under the reader's Dating choice, on their lines
   const ages = useMemo(() => placeAges(data, chron.selection), [data, chron.selection]);
   const { resolved, resolvedById, spans, phases, memberOf } = chron;
   const visibleEvents = useMemo(
@@ -369,19 +388,48 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
   // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
   // Zoom stays immediate: its scroll anchoring needs the new scale at once.
-  const shownData = useDeferredValue(viewData);
+  // the Colour-blind safe preset draws rows in a CVD-safe palette: the chart, the table and every row chip (side panel,
+  // filters, legend), so a chip matches its row. Display only, and off while editing, so an edit never saves the
+  // palette's colours
+  const cvdOn = theme.preset === 'cvd' && !editMode && editing === null;
+  const chartData = useMemo(() => withCvdColors(viewData, cvdOn), [viewData, cvdOn]);
+  const displayData = useMemo(() => withCvdColors(data, cvdOn), [data, cvdOn]);
+  const shownData = useDeferredValue(chartData);
   const shownEvents = useDeferredValue(drawnEvents);
   const shownListEvents = useDeferredValue(visibleEvents);
   const shownSpans = useDeferredValue(spans);
   const shownPhases = useDeferredValue(phases);
   const shownMemberOf = useDeferredValue(memberOf);
   const shownRows = useDeferredValue(rowsOn);
+  const onPluginError = useCallback((why: string) => notify(`The view plugin didn't load: ${why}.`, 'error'), [notify]);
+  const plugin = usePlugin(pluginAt, data.schemaVersion, onPluginError);
+  const [pluginOn, setPluginOn] = useState(!!pluginAt);
+  const pluginCtx = useMemo<ViewContext | null>(
+    () =>
+      plugin
+        ? Object.freeze({
+            apiVersion: PLUGIN_API,
+            data: shownData,
+            events: shownListEvents,
+            spans: shownSpans,
+            selectedId,
+            formatYear: (y: number) => formatYear(y, cal),
+            select: (id: string | null) => setSelectedId(id),
+            showOnTimeline: (year: number) => {
+              setPluginOn(false);
+              setView('timeline');
+              focusOn({ year });
+            },
+          })
+        : null,
+    [plugin, shownData, shownListEvents, shownSpans, selectedId, cal, focusOn],
+  );
   const shownCollapsed = useDeferredValue(collapsed);
   const shownCompress = useDeferredValue(compress);
   const shownHide = useDeferredValue(hideOutOfView && !editMode);
   const shownThin = useDeferredValue(thinRows);
   const busy =
-    shownData !== viewData ||
+    shownData !== chartData ||
     shownEvents !== drawnEvents ||
     shownListEvents !== visibleEvents ||
     shownSpans !== spans ||
@@ -400,7 +448,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
       </a>
       <Toolbar
         view={view}
+        pluginView={plugin ? { name: plugin.name, on: pluginOn, onShow: () => (setPluginOn(true), setAnnouncement(`${plugin.name} view`)) } : undefined}
         onView={(v) => {
+          setPluginOn(false);
           setView(v);
           setAnnouncement(v === 'table' ? 'Table view' : 'Timeline view');
           // back on the chart, bring the selected event into view
@@ -540,8 +590,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
       {panels.open.legend && (
         <LegendPanel
-          data={data}
+          data={displayData}
           periodLane={periodLane}
+          reignLane={reignLane}
           onClose={() => panels.show('legend', false)}
           onTour={() => {
             panels.show('legend', false);
@@ -585,7 +636,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
 
       {panels.open.filters && (
         <FiltersPanel
-          data={data}
+          data={displayData}
           filters={filters}
           isOn={isOn}
           toggleTrack={toggleTrack}
@@ -648,7 +699,9 @@ export default function App({ published: opened, library: libraryEntry, site, no
       )}
 
       <main className={hasSidePanel ? 'with-panel' : ''}>
-        {view === 'table' ? (
+        {pluginOn && plugin && pluginCtx ? (
+          <PluginView plugin={plugin} ctx={pluginCtx} />
+        ) : view === 'table' ? (
           <TableView
             data={shownData}
             events={shownListEvents}
@@ -673,6 +726,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             data={shownData}
             categories={categories.info}
             periodLane={periodLane}
+            reignLane={reignLane}
             events={shownEvents}
             eventsById={resolvedById}
             spans={shownSpans}
@@ -724,7 +778,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           />
         )}
         <SidePanel
-          data={data}
+          data={displayData}
           dispatch={dispatch}
           notify={notify}
           editing={editing}
