@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # ---- the vocabulary: 9 top-level ids (stable), each with a short list of sub-kinds ----
 VOCAB = {
-    'rule': ('Rulers', {'succession': 'Succession', 'coup': 'Coup or deposition', 'title': 'New title'}),
+    'rule': ('Rulers', {'succession': 'Succession', 'reign': 'Reign or term', 'coup': 'Coup or deposition', 'title': 'New title'}),
     'statehood': ('Statehood', {'founded': 'State founded', 'independence': 'Independence', 'union': 'Union', 'dissolved': 'State ends', 'reform': 'New name, form or constitution'}),
     'territory': ('Territory', {'conquest': 'Conquest', 'annexation': 'Annexation', 'cession': 'Cession', 'colony': 'Colony'}),
     'place': ('Cities and places', {'city-founded': 'City founded', 'sack': 'Sack or fall', 'capital-moved': 'Capital moved', 'disaster': 'Disaster'}),
@@ -146,6 +146,8 @@ STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|k
 # generic sub-kinds a more specific one of the same top level replaces
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
+# a ruler's or office-holder's time in office, at the start of a title
+REIGN = re.compile(r'^(?:the )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
 WIKI = re.compile(r'^https?://en\.wikipedia\.org/wiki/(.+)$')
 
 
@@ -202,6 +204,11 @@ def classify(e, ds, wp=None):
     """Up to two categories, main first: [(value, evidence)], or [] when nothing says (left for review)."""
     found = []
     title = e['title']
+    # "Reign of Sargon", "Presidency of Juárez": a ruler's time in office, as a span, is a reign (Kevin, 2026-11-22: the
+    # layout puts reigns on their row's top event lines). A point ("Reign of X begins") stays a succession.
+    rm = REIGN.match(title)
+    if rm and (e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])):
+        found.append(('reign', f'title: "{rm.group(0)}" (a span)'))
     # "Fall of X": a state ending when X is one of the timeline's rows, else a city falling
     m = re.match(r'(?:the )?fall of (?:the )?([^,;(]+)', title, re.I)
     if m:
