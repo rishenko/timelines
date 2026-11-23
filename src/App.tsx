@@ -1,5 +1,6 @@
 import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { periodLaneIds } from './lib/periodLane.ts';
+import { reignLaneIds } from './lib/reignLane.ts';
 import { placeAges } from './lib/eras.ts';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
@@ -90,6 +91,11 @@ export default function App({ published: opened, library: libraryEntry, site, no
   // golden ages and long society spans: a line of their own under each row's phases
   const periodLane = useMemo(
     () => periodLaneIds(data, categories.facetId, categories.facet, categories.sourceOn),
+    [data, categories.facetId, categories.facet, categories.sourceOn],
+  );
+  // reigns: the first event lines of their row, above the period lane
+  const reignLane = useMemo(
+    () => reignLaneIds(data, categories.facetId, categories.facet, categories.sourceOn),
     [data, categories.facetId, categories.facet, categories.sourceOn],
   );
   // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
@@ -583,6 +589,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
         <LegendPanel
           data={data}
           periodLane={periodLane}
+          reignLane={reignLane}
           onClose={() => panels.show('legend', false)}
           onTour={() => {
             panels.show('legend', false);
@@ -716,6 +723,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             data={shownData}
             categories={categories.info}
             periodLane={periodLane}
+            reignLane={reignLane}
             events={shownEvents}
             eventsById={resolvedById}
             spans={shownSpans}

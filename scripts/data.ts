@@ -8,6 +8,8 @@
 //   npm run data -- ids [--check] [--base <rev>] [<dir> ...]
 //                                                the id-stability check: ids links can name that a compiled timeline
 //                                                lost since <rev> (default origin/main) without a redirect (CI runs it)
+//   npm run data -- ai-flags [--check]           links in data-src/ to Wikipedia pages flagged for AI-generated text
+//                                                (data-src/ai-flagged-pages.txt; --check exits with 1 if any)
 //   npm run data -- index                        print the site's list of timelines (timelines/index.json, made at
 //                                                build time from public/timelines and data-src/site-timelines.json)
 //
@@ -30,9 +32,10 @@ import { applyMemberships } from './lib/memberships.ts';
 import { applyCategories } from './lib/categories.ts';
 import { applyPeriods } from './lib/periods.ts';
 import { idsCommand } from './lib/ids-check.ts';
+import { flaggedCitations, loadFlagged } from './lib/ai-flagged.ts';
 
 const [command, name, ...rest] = process.argv.slice(2);
-const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], npm run data -- ids [--check] [--base <rev>] [<dir> ...], or npm run data -- index';
+const USAGE = 'usage: npm run data -- <build|importance|format|row-order|run-all> <timeline|all> [options], npm run data -- ids [--check] [--base <rev>] [<dir> ...], npm run data -- ai-flags [--check], or npm run data -- index';
 
 function build(t: SourceTimeline) {
   const { dataset, errors } = compileSource(readSource(t.source));
@@ -147,6 +150,16 @@ try {
     case 'ids':
       idsCommand(process.argv.slice(3));
       break;
+    case 'ai-flags': {
+      // Kevin's rule: never cite a page flagged for AI-generated text
+      const { titles, dump } = loadFlagged();
+      const hits = flaggedCitations(titles);
+      for (const h of hits.slice(0, 20)) console.log(`${h.file}: ${h.at}: "${h.title}" is flagged for AI-generated text`);
+      if (hits.length > 20) console.log(`… and ${hits.length - 20} more`);
+      console.log(`ai-flags: ${hits.length} links to flagged pages (list: ${titles.size} titles, dump ${dump})`);
+      if (hits.length && process.argv.slice(3).includes('--check')) process.exitCode = 1;
+      break;
+    }
     case 'index':
       index();
       break;
