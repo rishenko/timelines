@@ -3,11 +3,13 @@
 // (events.json, religions.json, documents.json, leaders.json), written for Kevin and regional readers to adjust; each
 // item has a title regex, a year (with a tolerance) and the kinds a good match should have.
 //   npm run landmarks:check [-- --data <dir>] [--out report.md] [--json report.json] [--only events|religions|documents|leaders]
-//        [--max-missing N]
+//        [--max-missing N] [--warn-importance]
 // --data: a folder holding ancient-classical.json, medieval.json and modern-states.json (default public/timelines; point
 //   it at another worktree's public/timelines to check a branch). Prints a Markdown report: a table per list, the
 //   regional balance of the lists and of the data, the gaps and the tally. Exits with 1 only if --max-missing N is
-//   given and more than N items are absent.
+//   given and more than N items are absent. --warn-importance prints a warning line (to stderr) for each listed leader
+//   whose reign event is below importance 1: the list is a check that the data's ranking puts them high, not a ranking
+//   to copy into it (Kevin, 2026-11-23).
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -15,6 +17,7 @@ const args = process.argv.slice(2);
 const opt = (flag: string) => (args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined);
 const dataDir = opt('--data') ?? 'public/timelines';
 const only = opt('--only');
+const warnImportance = args.includes('--warn-importance');
 const maxMissing = opt('--max-missing') === undefined ? undefined : Number(opt('--max-missing'));
 
 const TIMELINES = [
@@ -237,7 +240,10 @@ if (leaders.length) {
     const best = reigns.sort((a, b) => overlap(b) - overlap(a))[0];
     const imp = best ? (reigns.some((r) => r.e.importance === 1) ? '1' : (best.e.importance ?? '–')) : '';
     const covered = best ? overlap(best) / Math.max(1, ld.end - ld.start) : 0;
-    if (best && imp !== '1') counts.lowImp++;
+    if (best && imp !== '1') {
+      counts.lowImp++;
+      if (warnImportance) console.error(`warning: listed leader below importance 1: ${ld.name} (${best.l.label}: ${best.e.title}, importance ${best.e.importance ?? 'none'})`);
+    }
     const titles = [...reigns, ...named].map((h) => h.e.title);
     const uses = !ld.ownTokens.length ? '' : titles.some((t) => ld.ownTokens.some((tok) => new RegExp(tok, 'i').test(t))) ? 'yes' : titles.length ? 'English form only' : '';
     if (best && covered < 0.6 && ld.end - ld.start > 3) partial.push(`${ld.name} (${Math.round(covered * 100)}% of ${fmtYear(ld.start)}–${fmtYear(ld.end)})`);
