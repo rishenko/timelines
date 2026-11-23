@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 9,
+  "schemaVersion": 10,
   "meta": {
     "id": "earth-life",
     "title": "Earth and Life",
@@ -24,6 +24,7 @@
     ],
     "defaultIncrement": 100000000,
     "hideRowsOutOfView": false,
+    "compress": false,
     "range": {
       "start": -4566998050,
       "end": 1950

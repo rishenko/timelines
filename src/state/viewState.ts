@@ -44,8 +44,8 @@ export type ViewWindow = { at?: number; inc?: number } | { from: number; to: num
 export interface ViewState {
   window?: ViewWindow;
   view?: 'timeline' | 'table';
-  /** Shortened gaps off (`compress=0`); they are on by default. */
-  compress?: false;
+  /** Shortened gaps as the link says (`compress=0` off, `compress=1` on); left out, the timeline's own default (`meta.compress`, on unless `false`). */
+  compress?: boolean;
   rows?: RowsMode;
   /** Ticked regions, in the facet's order. */
   regions?: string[];
@@ -131,6 +131,7 @@ export function parseView(query: string, hash: string, ds: Dataset): ParsedView 
 
   if (q.get('view') === 'table') state.view = 'table';
   if (q.get('compress') === '0') state.compress = false;
+  else if (q.get('compress') === '1') state.compress = true;
   const rows = q.get('rows');
   if (rows === 'all' || rows === 'active' || rows === 'thin') state.rows = rows;
 
@@ -156,6 +157,8 @@ export function parseView(query: string, hash: string, ds: Dataset): ParsedView 
 }
 
 /** The rows mode a timeline opens with. */
+/** Whether the timeline opens with shortened gaps: on unless its `meta.compress` is `false` (deep time, until it has events). */
+const defaultCompress = (ds: Dataset): boolean => ds.meta.compress !== false;
 const defaultRows = (ds: Dataset): RowsMode => (ds.meta.hideRowsOutOfView !== false ? 'active' : 'all');
 
 /**
@@ -187,7 +190,8 @@ export function serializeView(state: ViewState, ds: Dataset): string {
     if (w.at !== undefined) out.push(`at=${whenParam(w.at, cal)}`);
   }
   if (state.view === 'table') out.push('view=table');
-  if (state.compress === false) out.push('compress=0');
+  // only a choice that differs from the timeline's own default is written, as with `rows`
+  if (state.compress !== undefined && state.compress !== defaultCompress(ds)) out.push(`compress=${state.compress ? 1 : 0}`);
   if (state.rows && state.rows !== defaultRows(ds)) out.push(`rows=${state.rows}`);
   if (state.regions?.length) out.push(`regions=${list(inFacetOrder(state.regions, facetOf(ds, regionFacetId(ds))))}`);
   if (state.set?.ids.length) {
@@ -248,7 +252,7 @@ export function resolveView(state: ViewState, ds: Dataset, widthPx = 1200): Reso
     increment,
     at,
     window,
-    compress: state.compress !== false,
+    compress: state.compress ?? defaultCompress(ds),
     hideOutOfView: rows !== 'all',
     thinRows: rows === 'thin',
     view: state.view ?? 'timeline',

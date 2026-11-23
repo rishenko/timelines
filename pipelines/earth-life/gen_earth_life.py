@@ -199,12 +199,14 @@ def build(repo):
         'calendar': {'before': 'BP', 'after': 'AP', 'yearZero': True, 'beforePresent': {'present': PRESENT, 'circaShare': 0.01}},
         'increments': [100000, 1000000, 10000000, 100000000, 1000000000], 'defaultIncrement': 100000000,
         'hideRowsOutOfView': False,
+        # Kevin (2026-11-23): shortened gaps off for deep time until there are real events to fill it (they hid the Archean and Proterozoic)
+        'compress': False,
         'range': {'start': stored('4567'), 'end': PRESENT},
         'lines': {'ics-eon': {'name': 'Eons'}, 'ics-era': {'name': 'Eras'}, 'ics-period': {'name': 'Periods'}},
         'context': context,
     }
     data = {
-        'schemaVersion': 9, 'meta': meta, 'present': PRESENT,
+        'schemaVersion': 10, 'meta': meta, 'present': PRESENT,
         'tracks': [
             # Earth's own lifespan, from the chart's oldest boundary to now: it anchors the whole axis, so the Hadean
             # and the other Precambrian eons can be reached before any event there exists (ages are not anchors)

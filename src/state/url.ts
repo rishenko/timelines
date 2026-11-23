@@ -80,7 +80,7 @@ export function useUrlSync(v: UrlView, initialCenter: number, ds: Dataset) {
       const state: ViewState = {
         window: keepWindow.current ? { from: keepWindow.current.from, to: keepWindow.current.to } : { inc: increment, at: centerRef.current },
         ...(mode === 'table' ? { view: 'table' as const } : {}),
-        ...(compress ? {} : { compress: false as const }),
+        compress,
         rows: !hideOutOfView ? 'all' : thinRows ? 'thin' : 'active',
         ...(regions ? { regions: regions.split(',') } : {}),
         ...(set ? { set: { ids: set.split(','), order } } : {}),
