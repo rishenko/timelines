@@ -50,3 +50,42 @@ describe('keyboard grid', () => {
     expect(relocate(grid, 'c', ['nope'])).toBeUndefined();
   });
 });
+
+describe('keyboard grid with phase strips', () => {
+  // c has two strip lines: phases at 0 and 200 (listed out of order), and a membership at 50
+  const strips = (l: LaneLayout) =>
+    l.lane.id === 'c'
+      ? [
+          [
+            { key: 'strip:p2', x: 200 },
+            { key: 'strip:p1', x: 0 },
+          ],
+          [{ key: 'strip:m1', x: 50 }],
+          [],
+        ]
+      : [];
+  const g = buildGrid(lanes, (l) => ((l.lane as { hasChildren: boolean }).hasChildren ? [labelStopKey(l.lane.id, 'fold')] : []), strips);
+
+  it('puts a lane’s strip lines above its events, cells in time order, empty lines left out', () => {
+    expect(g.map((l) => l.stops.map((s) => s.key))).toEqual([
+      ['label:a:fold', 'a:a1', 'a:a2', 'a:a3'],
+      [],
+      ['strip:p1', 'strip:p2'],
+      ['strip:m1'],
+      ['c:c1', 'c:cl'],
+    ]);
+    expect(g[2].laneId).toBe('c');
+    expect(g[2].stops.every((s) => s.strip && !s.label)).toBe(true);
+  });
+
+  it('reaches strip lines with Up and Down on the way to the row’s events, and walks them with ←/→/Home/End', () => {
+    expect(move(g, 'a:a2', 'down')).toBe('strip:p2');
+    expect(move(g, 'strip:p2', 'down')).toBe('strip:m1');
+    expect(move(g, 'strip:m1', 'down')).toBe('c:c1');
+    expect(move(g, 'c:cl', 'up')).toBe('strip:m1');
+    expect(move(g, 'strip:p1', 'right')).toBe('strip:p2');
+    expect(move(g, 'strip:p2', 'right')).toBeUndefined();
+    expect(move(g, 'strip:p2', 'home')).toBe('strip:p1');
+    expect(move(g, 'strip:p1', 'end')).toBe('strip:p2');
+  });
+});

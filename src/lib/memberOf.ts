@@ -16,6 +16,8 @@ export interface ResolvedMembership extends ResolvedSpan {
   /** The member row's phase that held it, when the data names one (RowMembership.phase). */
   phase?: string;
   sources: SourceRef[];
+  /** Its index in the member row's Track.memberOf (the list here is sorted by start, which a Dating choice can change). */
+  index: number;
 }
 
 /** One member of a union, as the union's row lists it. */
@@ -33,7 +35,13 @@ export function resolveMemberships(ds: Dataset, selection: ChronologySelection):
     out.set(
       t.id,
       t.memberOf
-        .map((m) => ({ ...resolveSpan(ds, t.id, m, selection), row: m.row, ...(m.phase !== undefined ? { phase: m.phase } : {}), sources: m.sources }))
+        .map((m, index) => ({
+          ...resolveSpan(ds, t.id, m, selection),
+          row: m.row,
+          ...(m.phase !== undefined ? { phase: m.phase } : {}),
+          sources: m.sources,
+          index,
+        }))
         .sort((a, b) => a.start - b.start),
     );
   }

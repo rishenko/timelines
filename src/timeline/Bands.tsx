@@ -5,6 +5,7 @@ import type { Scale } from './scale.ts';
 import { certainFrom, certainTo, drawnFrom, drawnTo } from '../lib/subYear.ts';
 import type { PhaseCell } from './layout.ts';
 import { successionTip } from '../lib/succession.ts';
+import { stripStopKey } from './keyboard.ts';
 
 /**
  * Where a lifespan or phase sits, in content px: from the earliest possible start to the latest possible end, with
@@ -93,8 +94,9 @@ export function SpanBand({
  * A phase in its row's strip (see layoutPhaseStrips): a tinted cell (alternating shades on its line, fading across
  * uncertain edges), a line where it begins and another where it ends (unless the next phase begins there), an arrow
  * instead of an end when it is still going (or runs on past the end of the chart, where it is cut: clipToChart), and
- * its name where it fits. Display only: hovering it shows its name and
- * dates, and clicks go through to the row.
+ * its name where it fits. Hovering it shows its name and dates, and clicks go through to the row. From the keyboard it
+ * is a stop in the chart's grid (useRovingFocus: its strip line is a grid line above the row's events): Enter or Space
+ * opens its details in the side panel (`onOpen`, with its PlacedPhase.ref).
  * A membership in another row (PlacedPhase.member) is drawn the same way on its own line, in the union's colour, as a
  * dashed outline rather than a filled cell, with its name ("in Soviet Union, 1922–91") in ordinary type.
  */
@@ -108,19 +110,53 @@ export function PhaseStripCell({
   memberName,
   unionName,
   scale,
-}: Common & { cell: PhaseCell; color: string; memberName?: string; unionName?: string }) {
+  isTabStop = false,
+  selected = false,
+  onOpen,
+  onStopFocus,
+}: Common & {
+  cell: PhaseCell;
+  color: string;
+  memberName?: string;
+  unionName?: string;
+  /** It holds the chart's one Tab stop (drawn even when out of view, so Tab and the arrow keys reach it). */
+  isTabStop?: boolean;
+  /** Its details are open in the side panel. */
+  selected?: boolean;
+  onOpen?: (ref: string) => void;
+  onStopFocus?: (key: string) => void;
+}) {
   const p = c.phase;
   const b = clipToChart(c, scale.width);
-  if (b.x1 < b.x0 || !inView(b.x0, b.x1)) return null;
+  if (b.x1 < b.x0 || (!inView(b.x0, b.x1) && !isTabStop)) return null;
   const arrow = p.ongoing || b.continues;
   // a name beside or inside the phase keeps to the chart too; too little of it left, and the tooltip names the phase
   const name = c.name && { ...c.name, x0: Math.max(c.name.x0, 0), x1: Math.min(c.name.x1, scale.width) };
   const showName = name && name.x1 - name.x0 >= 24 ? name : null;
   const member = p.member !== undefined;
   const tip = `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}`;
+  const key = p.ref && onOpen ? stripStopKey(p.ref) : undefined;
+  const keys = key
+    ? {
+        role: 'button',
+        tabIndex: isTabStop ? 0 : -1,
+        'data-stop': key,
+        'data-phase-ref': p.ref,
+        'aria-label': `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}, ${spanDates(p, cal, isApprox(p))}, ${member ? 'membership' : 'phase'}: details and sources`,
+        'aria-pressed': selected,
+        onFocus: () => onStopFocus?.(key),
+        onKeyDown: (ev: React.KeyboardEvent) => {
+          if ((ev.key === 'Enter' || ev.key === ' ') && !ev.altKey && !ev.ctrlKey && !ev.metaKey) {
+            ev.preventDefault();
+            onOpen!(p.ref!);
+          }
+        },
+      }
+    : {};
   return (
     <div
-      className={`tl-phase${member ? ' member' : c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${showName?.outside ? ' has-outside' : ''}`}
+      {...keys}
+      className={`tl-phase${member ? ' member' : c.alt ? ' alt' : ''}${c.line.named ? '' : ' thin'}${showName?.outside ? ' has-outside' : ''}${selected ? ' selected' : ''}`}
       style={
         {
           left: labelW + b.x0,

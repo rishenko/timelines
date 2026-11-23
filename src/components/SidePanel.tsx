@@ -2,6 +2,7 @@ import type { Dispatch } from 'react';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import { DetailPanel } from './DetailPanel.tsx';
 import { AgePanel } from './AgePanel.tsx';
+import { PhasePanel, type SelectedPhase } from './PhasePanel.tsx';
 import type { PlacedAge } from '../lib/eras.ts';
 import { EventForm } from './EventForm.tsx';
 import { TrackForm } from './TrackForm.tsx';
@@ -39,11 +40,14 @@ interface Props {
   /** The age whose details are open (clicked in the strip or a band), and closing them. */
   selectedAge?: PlacedAge;
   onCloseAge?: () => void;
+  /** The phase or membership whose details are open (Enter on its strip cell), and closing them. */
+  selectedPhase?: SelectedPhase;
+  onClosePhase?: () => void;
 }
 
 /**
  * The panel beside the timeline: an editor (event, track or source) while editing, else the selected event's or
- * age's details. Renders nothing when there is neither. Every change goes through `dispatch` and is announced by `notify`.
+ * age's or phase's details. Renders nothing when there is neither. Every change goes through `dispatch` and is announced by `notify`.
  */
 export function SidePanel(p: Props) {
   const { data, dispatch, notify, editing, setEditing, selectedId, setSelectedId } = p;
@@ -116,6 +120,7 @@ export function SidePanel(p: Props) {
       />
     );
 
+  if (p.selectedPhase && p.onClosePhase) return <PhasePanel key={p.selectedPhase.ref} phase={p.selectedPhase} data={data} onClose={p.onClosePhase} />;
   if (p.selectedAge && p.onCloseAge) return <AgePanel key={p.selectedAge.era.id} age={p.selectedAge} data={data} onClose={p.onCloseAge} />;
   const selected = selectedId ? data.events.find((e) => e.uuid === selectedId) : undefined;
   const resolved = selectedId ? p.resolvedById.get(selectedId) : undefined;

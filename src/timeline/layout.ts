@@ -315,7 +315,18 @@ export interface PlacedPhase extends ResolvedPhase {
    * is the strip's text ("in Soviet Union, 1922–91").
    */
   member?: string;
+  /**
+   * What the strip cell stands for, so the keyboard and the side panel can find it again: `phase:<row>:<index in
+   * Track.phases>` or `member:<row>:<index in Track.memberOf>` (see phaseRef, memberRef). Indexes, so a Dating
+   * choice that moves or reorders them keeps the same ref.
+   */
+  ref?: string;
 }
+
+/** A phase's ref (PlacedPhase.ref): its row and its index in Track.phases. */
+export const phaseRef = (trackId: string, index: number) => `phase:${trackId}:${index}`;
+/** A membership's ref (PlacedPhase.ref): its row and its index in Track.memberOf. */
+export const memberRef = (trackId: string, index: number) => `member:${trackId}:${index}`;
 
 /**
  * Dated parts of a row (phases, or memberships), each on the first strip line it fits, counting lines from

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import type { Calendar, Dataset } from '../types.ts';
 import type { PlacedAge } from '../lib/eras.ts';
 import { at0, at1 } from '../lib/subYear.ts';
@@ -51,11 +51,48 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
 
 type BarProps = Omit<Props, 'lines' | 'width'>;
 
+/** A strip or band line, kept across renders: its band and group (its number changes as empty lines close up). */
+const lineKey = (a: PlacedAge) => `${a.band ?? ''}\n${a.era.group ?? ''}\n${a.lineName ?? ''}`;
+
 /**
  * The ages' buttons (and ↗ links), placed by their line: shared by the Ages strip and the rows' age bands. Positions
  * are from the top of their container, `labelW` in from its left edge.
  */
 export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, selectedId, onOpen }: BarProps) {
+  // keyboard: each line is one Tab stop (a roving tabindex), and ←/→ and Home/End move between its ages; Enter or Space
+  // opens the focused age's details, as a click does. The stop is the age last focused on the line, else the open one,
+  // else the first at or after the left edge of the view. Lines are keyed by band and group, since a line's number
+  // changes as lines with nothing in view close up.
+  const [last, setLast] = useState<Record<string, string>>({});
+  const lo = scale.x(scale.domain[0]);
+  const drawn = new Map<string, { id: string; x0: number }[]>();
+  for (const a of ages) {
+    const sw = a.span.startWindow;
+    const x0 = scale.x(sw ? Math.min(sw[0], at0(a.span)) : at0(a.span));
+    const x1 = scale.x(a.drawEnd ?? at1(a.span, a.span.end));
+    if (Math.max(x1, x0 + 1) <= lo || x0 >= scale.width) continue;
+    const k = lineKey(a);
+    (drawn.get(k) ?? drawn.set(k, []).get(k)!).push({ id: a.era.id, x0 });
+  }
+  const stop = new Map<string, string>();
+  for (const [k, on] of drawn) {
+    on.sort((a, b) => a.x0 - b.x0);
+    const has = (id: string | null | undefined) => !!id && on.some((a) => a.id === id);
+    stop.set(k, has(last[k]) ? last[k] : has(selectedId) ? selectedId! : (on.find((a) => a.x0 >= viewLeft) ?? on[on.length - 1]).id);
+  }
+  const onKey = (k: string) => (ev: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (ev.altKey || ev.ctrlKey || ev.metaKey || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(ev.key)) return;
+    ev.preventDefault();
+    const on = drawn.get(k) ?? [];
+    const i = on.findIndex((a) => a.id === ev.currentTarget.dataset.ageId);
+    const j = ev.key === 'Home' ? 0 : ev.key === 'End' ? on.length - 1 : Math.max(0, Math.min(on.length - 1, i + (ev.key === 'ArrowRight' ? 1 : -1)));
+    if (j === i || !on[j]) return;
+    const el = ev.currentTarget.parentElement?.querySelector<HTMLButtonElement>(`button.tl-age[data-age-id="${CSS.escape(on[j].id)}"]`);
+    if (!el) return;
+    setLast((m) => ({ ...m, [k]: on[j].id }));
+    el.focus({ preventScroll: true });
+    el.scrollIntoView?.({ block: 'nearest', inline: 'center' });
+  };
   // clicking an age (or Enter on it) opens its details in the side panel, as an event's do: dates, region, its article
   // and its sources as links. However narrow its bar, every age reaches them this way; it never moves the chart.
   // a named line (a band with two or more): its name at the line's left end, kept on screen; the ages' names and links
@@ -82,11 +119,12 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, selectedI
           </span>
         );
       })}
-      {ages.map(({ era, span, line, drawEnd, lineName }) => {
+      {ages.map((age) => {
+        const { era, span, line, drawEnd, lineName } = age;
+        const k = lineKey(age);
         // on a named line, an age's name and link keep clear of the line's name
         const left0 = lineName ? viewLeft + lineNamePx(lineName) : viewLeft;
-        // an age may run past the timeline's ends (like a row): the chart cuts it there, with an open edge
-        const lo = scale.x(scale.domain[0]);
+        // an age may run past the timeline's ends (like a row): the chart cuts it there, with an open edge (lo)
         // with date claims it spans its whole uncertain range; the uncertain ends are drawn lighter and hatched
         const sw = span.startWindow;
         const ew = span.endWindow;
@@ -137,6 +175,9 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, selectedI
               aria-pressed={selectedId === era.id}
               data-age-id={era.id}
               onClick={() => onOpen?.(era.id)}
+              tabIndex={stop.get(k) === era.id ? 0 : -1}
+              onKeyDown={onKey(k)}
+              onFocus={() => setLast((m) => (m[k] === era.id ? m : { ...m, [k]: era.id }))}
             >
               <span className={`bar${era.color ? ' colored' : ''}${fadeIn || fadeOut ? ' uncertain' : ''}${cut}`} style={bar}>
                 <span className="name" style={{ left: linked ? linkAt : nameAt, paddingLeft: linked ? LINK_INSET_PX + 5 : undefined }}>
@@ -150,6 +191,7 @@ export function AgeBars({ ages, scale, labelW, viewLeft, cal, sources, selectedI
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
+                tabIndex={-1}
                 style={{ left: left + (target - w) / 2 + linkAt, top: line * AGE_LINE_PX, width: LINK_PX }}
                 title={`${era.name}: ${host} (opens in a new tab)`}
                 aria-label={`${era.name}: article on ${host} (opens in a new tab)`}
