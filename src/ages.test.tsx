@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // Ages (meta.eras) in the app: the strip under the ruler in the chart, and the Ages table in the table view.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { cleanup, screen, within } from '@testing-library/react';
+import { cleanup, fireEvent, screen, within } from '@testing-library/react';
 import { renderApp } from './test/app.tsx';
 import { plainTimeline } from './test/fixtures.ts';
 
@@ -59,6 +59,64 @@ describe('ages', () => {
     expect(link.getAttribute('target')).toBe('_blank');
     expect(within(table).getByRole('link', { name: /^Wikidata\s*Q123\s*\(opens in a new tab\)$/ }).getAttribute('href')).toBe('https://www.wikidata.org/wiki/Q123');
     expect(within(table).queryByRole('link', { name: /Long Calm/ })).toBeNull();
+  });
+
+  it('an age placed in a row is drawn on that row’s band, not in the strip, with the same button', () => {
+    const d = withAges();
+    const row = d.tracks[0];
+    d.meta.eras![0].tracks = [row.id];
+    renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
+    const strip = screen.getByRole('group', { name: 'Ages' });
+    expect(within(strip).queryByRole('button', { name: /^Salt Years/ })).toBeNull();
+    const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
+    expect(within(band).getByRole('button', { name: /^Salt Years, 20 L – 60 L, age: details, article and sources$/ })).toBeTruthy();
+  });
+
+  it('the table names each age’s region, and lists an age in two rows once', () => {
+    const d = withAges();
+    d.meta.eras![0].tracks = [d.tracks[0].id, d.tracks[1].id];
+    renderApp(`timeline=harbor-towns&view=table`, [d]);
+    const table = screen.getByRole('table', { name: /^Ages/ });
+    const rows = within(table).getAllByRole('row').slice(1);
+    expect(rows).toHaveLength(2);
+    expect(rows[0].textContent).toContain('All regions');
+    expect(rows[1].textContent).toContain(`${d.tracks[0].name}, ${d.tracks[1].name}`);
+  });
+
+  it('a band with two lines names each line, in the tooltip, the accessible name and the table', () => {
+    const d = withAges();
+    const row = d.tracks[0];
+    d.meta.eras![0].tracks = [row.id];
+    d.meta.eras![0].group = 'ages-salt-coast';
+    d.meta.eras![1].tracks = [row.id];
+    d.meta.eras![1].group = 'ages-weather-coast';
+    renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
+    const band = screen.getByRole('group', { name: `Ages in ${row.name}` });
+    const b = within(band).getByRole('button', { name: /^Salt Years \(Salt Coast\), 20 L – 60 L, age/ });
+    expect(b.title).toContain('Region: Salt Coast');
+    expect([...band.querySelectorAll('.tl-age-line-name')].map((e) => e.textContent)).toEqual(['Salt Coast', 'Weather Coast']);
+    cleanup();
+    renderApp(`timeline=harbor-towns&view=table`, [d]);
+    expect(screen.getByRole('table', { name: /^Ages/ }).textContent).toContain(`${row.name}: Salt Coast`);
+  });
+
+  it('clicking an age opens its details in the side panel: region, article and sources as links; Escape closes it', () => {
+    const d = withAges();
+    const row = d.tracks[0];
+    d.meta.eras![0].tracks = [row.id];
+    d.meta.eras![0].url = 'https://en.wikipedia.org/wiki/Salt_Years';
+    d.meta.eras![0].group = 'ages-salt';
+    d.meta.eraGroups = { 'ages-salt': { name: 'Salt Coast' } };
+    renderApp(`timeline=harbor-towns&inc=10&at=30`, [d]);
+    const b = within(screen.getByRole('group', { name: `Ages in ${row.name}` })).getByRole('button', { name: /^Salt Years/ });
+    fireEvent.click(b);
+    expect(b.getAttribute('aria-pressed')).toBe('true');
+    const panel = screen.getByRole('complementary', { name: 'Salt Years' });
+    expect(within(panel).getByText(`${row.name} · Salt Coast`)).toBeTruthy();
+    expect(within(panel).getByRole('link', { name: /^Article on en\.wikipedia\.org/ }).getAttribute('href')).toBe('https://en.wikipedia.org/wiki/Salt_Years');
+    expect(within(panel).getByRole('heading', { name: 'Sources' })).toBeTruthy();
+    fireEvent.keyDown(panel, { key: 'Escape' });
+    expect(screen.queryByRole('complementary', { name: 'Salt Years' })).toBeNull();
   });
 
   it('a timeline without ages has no strip', () => {

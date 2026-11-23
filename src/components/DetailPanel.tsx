@@ -32,7 +32,7 @@ interface Props {
   category?: EventCategories;
 }
 
-function Cite({ data, s }: { data: Dataset; s: SourceRef }) {
+export function Cite({ data, s }: { data: Dataset; s: SourceRef }) {
   const src = data.sources[s.sourceKey];
   const name = src?.name ?? s.sourceKey;
   const href = safeUrl(src?.url);
@@ -119,24 +119,71 @@ function ClaimRows({ data, claims, label, window, days }: { data: Dataset; claim
   );
 }
 
-/** Puts focus back on an event's mark in the timeline, if it is drawn (after its detail panel closes). */
-function focusEventMark(uuid: string) {
-  requestAnimationFrame(() => document.querySelector<HTMLElement>(`[data-event-id="${CSS.escape(uuid)}"]`)?.focus());
+/** Puts focus back on what opened a panel in the timeline (an event's mark, an age's bar), if it is drawn. */
+function focusInChart(selector: string) {
+  requestAnimationFrame(() => document.querySelector<HTMLElement>(selector)?.focus());
+}
+
+/**
+ * The details panel's frame, for everything you click in the chart (events, ages): dates over the title, a close
+ * button, and its keyboard and focus behaviour. Opening moves focus to the title (not on page load: a deep link opens
+ * details before the reader has done anything); Escape anywhere in it, or the close button, closes it and puts focus
+ * back on `returnTo` (a CSS selector for what opened it).
+ */
+export function DetailsFrame({
+  openKey,
+  dates,
+  title,
+  returnTo,
+  onClose,
+  children,
+}: {
+  /** Focus moves to the title when this changes. */
+  openKey: string;
+  dates: React.ReactNode;
+  title: React.ReactNode;
+  returnTo: string;
+  onClose: () => void;
+  children: React.ReactNode;
+}) {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    const active = document.activeElement;
+    if (active && active !== document.body) headingRef.current?.focus();
+  }, [openKey]);
+  const close = () => {
+    onClose();
+    focusInChart(returnTo);
+  };
+  return (
+    // Escape anywhere in the panel closes it
+    // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    <aside
+      className="side-panel detail"
+      aria-labelledby="detail-title"
+      onKeyDown={(ev) => {
+        if (ev.key === 'Escape') {
+          ev.stopPropagation();
+          close();
+        }
+      }}
+    >
+      <header>
+        <div className="dates">{dates}</div>
+        <button className="icon" onClick={close} aria-label="Close details" title="Close (Esc)">
+          ✕
+        </button>
+      </header>
+      <h2 id="detail-title" ref={headingRef} tabIndex={-1}>
+        {title}
+      </h2>
+      {children}
+    </aside>
+  );
 }
 
 export function DetailPanel(p: Props) {
   const { event: e, resolved: r, data } = p;
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  // Move focus to the panel when an event opens, so keyboard and screen-reader users land on it. Not on page load
-  // (a deep link opens an event before the reader has done anything; focus stays where the browser put it).
-  useEffect(() => {
-    const active = document.activeElement;
-    if (active && active !== document.body) headingRef.current?.focus();
-  }, [e.uuid]);
-  const close = () => {
-    p.onClose();
-    focusEventMark(e.uuid);
-  };
   const cal = data.meta.calendar;
   const tracks = e.tracks.map((id) => data.tracks.find((t) => t.id === id)).filter((t) => !!t);
   const byId = p.resolvedById;
@@ -160,27 +207,13 @@ export function DetailPanel(p: Props) {
   const hasDating = startClaims.length > 0 || endClaims.length > 0 || r.startWindow || r.endWindow || r.startDays || r.endDays || chronology;
 
   return (
-    // Escape anywhere in the panel closes it
-    // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-    <aside
-      className="side-panel detail"
-      aria-labelledby="detail-title"
-      onKeyDown={(ev) => {
-        if (ev.key === 'Escape') {
-          ev.stopPropagation();
-          close();
-        }
-      }}
+    <DetailsFrame
+      openKey={e.uuid}
+      dates={formatEventDates(r, cal, approx)}
+      title={e.title}
+      returnTo={`[data-event-id="${CSS.escape(e.uuid)}"]`}
+      onClose={p.onClose}
     >
-      <header>
-        <div className="dates">{formatEventDates(r, cal, approx)}</div>
-        <button className="icon" onClick={close} aria-label="Close details" title="Close (Esc)">
-          ✕
-        </button>
-      </header>
-      <h2 id="detail-title" ref={headingRef} tabIndex={-1}>
-        {e.title}
-      </h2>
       <div className="track-chips">
         {tracks.map((t) => (
           <span key={t.id} className="track-chip" style={{ '--track-color': t.color } as React.CSSProperties}>
@@ -271,6 +304,6 @@ export function DetailPanel(p: Props) {
           </>
         )}
       </footer>
-    </aside>
+    </DetailsFrame>
   );
 }

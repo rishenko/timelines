@@ -133,6 +133,10 @@ export interface TrackDeletion {
   orphaned: number;
   /** Events that also belong to other tracks; they just lose this one. */
   shared: number;
+  /** Ages (by name) placed only in this row: they move to the Ages strip at the top. */
+  agesToStrip: string[];
+  /** Ages placed in this row and others: they stay in the others. */
+  agesShared: string[];
 }
 
 export function trackDeletion(d: Dataset, id: string): TrackDeletion {
@@ -145,6 +149,8 @@ export function trackDeletion(d: Dataset, id: string): TrackDeletion {
       : undefined,
     orphaned,
     shared: using.length - orphaned,
+    agesToStrip: (d.meta.eras ?? []).filter((a) => a.tracks?.length === 1 && a.tracks[0] === id).map((a) => a.name),
+    agesShared: (d.meta.eras ?? []).filter((a) => (a.tracks?.length ?? 0) > 1 && a.tracks!.includes(id)).map((a) => a.name),
   };
 }
 

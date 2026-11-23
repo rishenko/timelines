@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { AgeStrip } from './AgeStrip.tsx';
-import { ageLines, agesInView, type PlacedAge } from '../lib/eras.ts';
+import { AgeBars, AgeStrip, AGE_LINE_PX } from './AgeStrip.tsx';
+import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
 import type { Dataset, Track } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
@@ -43,10 +43,11 @@ interface Props {
   data: Dataset;
   /** Events on the period lane: their own line(s) directly under each row's phases. */
   periodLane?: ReadonlySet<string>;
-  /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler. */
+  /** The timeline's ages (meta.eras), placed on their lines: a strip under the ruler, and bands on the rows they name. */
   ages?: PlacedAge[];
-  /** Centre the chart on a year, keeping the zoom (an age was clicked). */
-  onCenter?: (year: number) => void;
+  /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
+  selectedAgeId?: string | null;
+  onOpenAge?: (id: string) => void;
   /** Each event's categories (its main kind draws a glyph; both are in its accessible name). */
   categories?: Map<string, EventCategories>;
   /** Visible events, re-plotted under the selected chronologies. */
@@ -246,9 +247,14 @@ export function TimelineView(props: Props) {
     () => new Map([...lanePhases].filter(([, list]) => list.length).map(([id, list]) => [id, layoutPhaseStrips(list, scale.x, {}, laneLifespans.get(id))])),
     [lanePhases, scale, laneLifespans],
   );
-  // ages: only the strip's lines with an age in the years in view (checked when scrolling settles, as rows are)
-  const agesShown = useMemo(() => agesInView(props.ages ?? [], rowWindow), [props.ages, rowWindow]);
-  const headerPx = useMemo(() => Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height])), [laneStrips]);
+  // ages: only the lines with an age in the years in view (checked when scrolling settles, as rows are); cross-region
+  // ages in the strip, the rest on a band of the rows they name, under those rows' phase strips
+  const agesShown = useMemo(() => splitAges(agesInView(props.ages ?? [], rowWindow)), [props.ages, rowWindow]);
+  const headerPx = useMemo(() => {
+    const out: Record<string, number> = Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height]));
+    for (const [id, list] of agesShown.bands) out[id] = (out[id] ?? 0) + ageLines(list) * AGE_LINE_PX;
+    return out;
+  }, [laneStrips, agesShown]);
   // events drawn with a category glyph before their title: their labels are that much wider
   const glyphs = useMemo(
     () => new Set([...(props.categories ?? [])].filter(([, c]) => hasGlyph(c.kind)).map(([id]) => id)),
@@ -503,17 +509,18 @@ export function TimelineView(props: Props) {
           edgeLinks={props.edgeLinks}
           viewLeft={view.left}
         />
-        {props.ages && props.onCenter && (
+        {props.ages && (
           <AgeStrip
-            ages={agesShown}
-            lines={ageLines(agesShown)}
+            ages={agesShown.strip}
+            lines={ageLines(agesShown.strip)}
             scale={scale}
             labelW={labelW}
             width={canvasW}
             viewLeft={view.left}
             cal={cal}
             sources={props.data.sources}
-            onSelect={props.onCenter}
+            selectedId={props.selectedAgeId}
+            onOpen={props.onOpenAge}
           />
         )}
 
@@ -605,6 +612,30 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
+              {agesShown.bands.has(lane.id) && (
+                // the row's ages (e.g. the Nile Valley's on Africa): the strip's buttons and links, on lines of their own
+                // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                <div
+                  className="tl-lane-ages"
+                  style={{ top: laneStrips.get(lane.id)?.height ?? 0, height: ageLines(agesShown.bands.get(lane.id)!) * AGE_LINE_PX }}
+                  role="group"
+                  aria-label={`Ages in ${lane.track.name}`}
+                  // a double-click or long press here isn't adding an event to the row
+                  onDoubleClick={(ev) => ev.stopPropagation()}
+                  onPointerDown={(ev) => ev.stopPropagation()}
+                >
+                  <AgeBars
+                    ages={agesShown.bands.get(lane.id)!}
+                    scale={scale}
+                    labelW={labelW}
+                    viewLeft={view.left}
+                    cal={cal}
+                    sources={props.data.sources}
+                    selectedId={props.selectedAgeId}
+                    onOpen={props.onOpenAge}
+                  />
+                </div>
+              )}
               <LaneLabel
                 lane={lane}
                 regionTip={[props.regionTips?.get(lane.id), unionTips.get(lane.id)].filter(Boolean).join('\n') || undefined}

@@ -916,6 +916,39 @@
   padding: 0 5px;
   white-space: nowrap;
 }
+/* a row's ages (Era.tracks): a band under its phase strips, drawn like the Ages strip */
+.tl-lane-ages {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  /* a thin rule between the age lines and the row's events below */
+  border-bottom: 1px solid var(--rule);
+}
+.tl-lane-ages > * {
+  pointer-events: auto;
+}
+/* the age whose details are open in the side panel */
+.tl-age.selected .bar {
+  border-color: var(--text);
+  box-shadow: 0 0 0 1px var(--text);
+}
+/* a band line's name (two or more lines in a band), at the line's left end */
+.tl-age-line-name {
+  position: absolute;
+  z-index: 1;
+  height: 16px;
+  overflow: hidden;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 16px;
+  white-space: nowrap;
+  pointer-events: none;
+}
 /* the ↗ link to an age's article: a 24 px target over the start of the bar, before the age's name */
 .tl-age-link {
   position: absolute;

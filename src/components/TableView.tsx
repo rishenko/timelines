@@ -20,6 +20,7 @@ import { compareEvents } from '../lib/years.ts';
 import { trackIndex, trackPath } from '../lib/tracks.ts';
 import type { RowRegion } from '../lib/regions.ts';
 import { safeUrl } from '../lib/urls.ts';
+import { SourceList } from './SourceList.tsx';
 import { isOn } from '../state/filters.ts';
 import { membersByUnion, type ResolvedMembership, type UnionMember } from '../lib/memberOf.ts';
 
@@ -252,25 +253,7 @@ export function TableView(p: Props) {
                         )}
                         <td className="rows">{e.tracks.map((t) => names.get(t) ?? t).join(', ')}</td>
                         <td className="sources">
-                          <ul>
-                            {e.sources.map((src, i) => {
-                              const source = data.sources[src.sourceKey];
-                              const href = safeUrl(source?.url);
-                              const name = source?.name ?? src.sourceKey;
-                              return (
-                                <li key={`${src.sourceKey}-${i}`}>
-                                  {href ? (
-                                    <a href={href} target="_blank" rel="noreferrer">
-                                      {name}
-                                    </a>
-                                  ) : (
-                                    name
-                                  )}
-                                  {src.sourceLocation && <span className="muted">, {src.sourceLocation}</span>}
-                                </li>
-                              );
-                            })}
-                          </ul>
+                          <SourceList refs={e.sources} sources={data.sources} />
                         </td>
                       </tr>
                     );
@@ -540,35 +523,48 @@ function RowsTable({
   );
 }
 
-/** Ages (meta.eras): periods across the whole timeline, as the chart's strip under the ruler shows them, in words. */
+/**
+ * Ages (meta.eras), as the chart's strip under the ruler and the rows' age bands show them, in words, each with the
+ * region (the rows) it belongs to.
+ */
 function AgesTable({ ages, data }: { ages: PlacedAge[]; data: Dataset }) {
   const cal = data.meta.calendar;
-  const sorted = [...ages].sort((a, b) => a.span.start - b.span.start || a.era.name.localeCompare(b.era.name));
+  const rowName = new Map(data.tracks.map((t) => [t.id, t.name]));
+  // an age placed in several rows is one row of the table
+  const once = [...new Map(ages.map((a) => [a.era.id, a])).values()];
+  const sorted = once.sort((a, b) => a.span.start - b.span.start || a.era.name.localeCompare(b.era.name));
   return (
     <section>
       <h2 tabIndex={-1}>Ages</h2>
       <table className="ages-table">
-        <caption>Ages: periods across the whole timeline</caption>
+        <caption>Ages: periods across the whole timeline or one region</caption>
         <thead>
           <tr>
             <th scope="col">Age</th>
+            <th scope="col">Region</th>
             <th scope="col">Dates</th>
             <th scope="col">Sources</th>
           </tr>
         </thead>
         <tbody>
-          {sorted.map(({ era, span }) => {
+          {sorted.map(({ era, span, lineName }) => {
             const d = spanInWords(span, cal, data.sources);
             return (
               <tr key={era.id}>
                 <th scope="row">
                   <LinkedName name={era.name} url={era.url} ids={era.ids} />
                 </th>
+                <td>
+                  {era.tracks?.length ? era.tracks.map((t) => rowName.get(t) ?? t).join(', ') : 'All regions'}
+                  {lineName && `: ${lineName}`}
+                </td>
                 <td className="date">
                   {d.main}
                   {d.ranges.length > 0 && <div className="muted small">{d.ranges.join('; ')}</div>}
                 </td>
-                <td className="sources">{citationsInWords(era.sources, data.sources)}</td>
+                <td className="sources">
+                  <SourceList refs={era.sources} sources={data.sources} />
+                </td>
               </tr>
             );
           })}
