@@ -82,6 +82,13 @@
 :root[data-mode='dark'] :is(.tl-mark, .lg-bar, .lg-band) {
   --bar-fill: color-mix(in srgb, var(--track-ink, var(--track-color)) 34%, transparent);
 }
+/* Dark themes: a phase name is white with a tenth of its row's colour (instead of the text colour with a fifth). On a
+   bright row's strip (gold Romania, Ecuador, Vatican City, Pharaonic Egypt) the row's colour in the text pulled it
+   toward the strip, 4.0–4.4:1; even the plain text colour stays under 4.5:1 on the lightest of them. This reaches
+   4.6:1 and up, and the name still leans to its row's colour. */
+:root[data-mode='dark'] .tl-phase-name {
+  color: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, #fff);
+}
 
 /* Parchment: a paper page where tints read as tints. Fewer, fainter washes (groups, stripes) with crisper edges, and
    deeper row colours than other light themes, so bars and diamonds read as colours, not pastels. */
