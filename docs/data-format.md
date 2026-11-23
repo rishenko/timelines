@@ -80,7 +80,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `9`. Files of versions `3` to `8` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `10`. Files of versions `3` to `9` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -109,6 +109,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
 | `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Data filters → Regions) uses the first facet that rows belong to, and comparison sets show each row's broad region from it. |
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
+| `compress` | no | On unless `false`: the timeline opens with long stretches without events shortened (the hatched gaps on the ruler and rows). Readers can turn it on or off in Filters, and a link's `compress=0` or `compress=1` wins. Set `false` where gaps mislead, e.g. a deep-time timeline before it has events to fill its span. Since version 10. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
 | `context` | no | The timeline's own context lines: named periods across the whole timeline (the Bronze Age, the Age of Revolutions). See [context lines](#context-lines-context). Readers see ages in a strip under the ruler. A region's own periods (the Old Kingdom) are in its row's `context`. |
 | `lines` | no | Display names for context lines, by line id: `{ "ages-aegean": { "name": "Aegean" } }`. A row's band labels each line with its `name`, even a band's only line; without one, a band with two or more lines makes a name from the id (`ages-central-europe` → "Central Europe") and a one-line band stays unlabelled. Each key must be a `line` some context span has. |
@@ -535,7 +536,7 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 9, or 3 to 8 (lifted to 9 when loaded).
+- The required fields above are present; `schemaVersion` is 10, or 3 to 9 (lifted to 10 when loaded).
 - `calendar.beforePresent`, when set, has a whole-number `present`, and a `circaShare` more than 0 and at most 0.5.
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
@@ -566,7 +567,7 @@ A file that breaks any of these is refused, with a message naming the problem.
 - A source's `dump` looks like `enwiki-20261101`; a `revision` is a positive whole number on a source with a `url`. A
   `locator` has a known `kind` and that kind's fields only.
 - `redirects` map ids the timeline doesn't have to rows, events or context spans it has, or to `null`.
-- `present` is a whole year; `meta.circaFade` is zero or more; `meta.hideRowsOutOfView` is `true` or `false`;
+- `present` is a whole year; `meta.circaFade` is zero or more; `meta.hideRowsOutOfView` and `meta.compress` are `true` or `false`;
   `meta.range` has whole years with `start` before `end`; each `meta.continues` entry has a timeline id, a whole-year
   `at` and a `side` of `"before"` or `"after"`.
 - `ongoingSources` appear only on an ongoing event, stretch or phase, and each cites a known source.
@@ -711,6 +712,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 | Version | What changed |
 |---|---|
 | 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
+| 10 | [`meta.compress`](#meta): whether the timeline opens with gaps shortened (default on), e.g. off for deep time until it has events. Additive: a version 9 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |
 | 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. Never released: it folded into 8. |
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |

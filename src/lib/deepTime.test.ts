@@ -114,7 +114,7 @@ describe('reading dates', () => {
 
   it('source files: a claim year with ± sets its margin; a ± on start is a problem', () => {
     const src = {
-      schemaVersion: 9,
+      schemaVersion: 10,
       meta: { id: 'dt', title: 'Deep', calendar: BP, increments: [1_000_000], defaultIncrement: 1_000_000 },
       sources: { ics: { name: 'ICS chart' } },
       tracks: [{ id: 'earth', name: 'Earth', color: '#336699' }],

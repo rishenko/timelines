@@ -27,7 +27,7 @@ function claim(year: number, month: number, day: number, at: string) {
 }
 
 export const everyField = {
-  schemaVersion: 9,
+  schemaVersion: 10,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -43,6 +43,7 @@ export const everyField = {
     circaFade: 5,
     collapsed: ['coast'],
     hideRowsOutOfView: false,
+    compress: false,
     facets: {
       region: {
         name: 'Region',
