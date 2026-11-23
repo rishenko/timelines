@@ -277,7 +277,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
       sample: <span className="lg-age">Age</span>,
       show: !!data.meta.context?.some((s) => s.kind === 'age') || data.tracks.some((t) => t.context?.some((s) => s.kind === 'age')),
       title: 'Age',
-      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler; an age of one region, such as the Nile Valley’s Old Kingdom, sits on that region’s band instead. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age for its details, article and sources in the side panel; its ↗, on a wide bar, opens the article directly.',
+      text: 'A named period across the whole timeline, such as the Islamic Golden Age, in the Ages strip under the ruler; an age of one region, such as the Nile Valley’s Old Kingdom, is a lighter line of that region’s strip instead, above its phases. Ages in one sphere share a line; lines with no age in view are left out. Hatched ends are uncertain, and a dashed end runs on past this timeline. Click an age for its details, article and sources in the side panel; its ↗, on a wide bar, opens the article directly.',
     },
     {
       sample: <span className="lg-bar uncertain" />,

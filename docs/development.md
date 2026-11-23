@@ -85,7 +85,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/reignLane.ts` | The reign lane: events with the `reign` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/timeline/OverviewStrip.tsx`, `overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
-| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler, and the rows' age bands (`AgeBars`) |
+| `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
 | `src/lib/tracks.ts` | Walking the row tree: ancestors, depth, children, lane order (use these, don't hand-roll walks) |
 | `src/lib/search.ts`, `table.ts`, `tour.ts` | Search index and ranking; table view rows; the guided tour's steps |
@@ -290,7 +290,7 @@ join it as one more child.
 ### Ages strip
 
 Context spans of kind `age` are drawn as ages (`src/timeline/AgeStrip.tsx`, placed by `src/lib/eras.ts`): the
-timeline's own (`meta.context`) in a sticky strip under the ruler, a row's (`Track.context`) on its band. `placeAges`
+timeline's own (`meta.context`) in a sticky strip under the ruler, a row's (`Track.context`) as lines of its strip. `placeAges`
 resolves each under the reader's Dating choice (`resolveSpan` with the span's own `chronology`) and gives each `line` a
 line; `agesInView` drops lines with no age in the settled year window the chart already keeps
 for hiding rows (`rowWindow`), so the strip only grows with what is on screen. Uncertain ends use the event bars'
@@ -313,10 +313,16 @@ stop key (`strip:<ref>`) and `App.tsx`'s `selectedPhaseRef`; Enter or Space on a
 `DetailsFrame`; `findPhase` in `App.tsx` maps the ref back to the stored and resolved phase). Clicks on a cell still go
 through to the row.
 
-A row's own ages (`Track.context`) aren't in the strip: `placeAges` places each on that row's band (`band`), numbering
-lines per row, and `splitAges` separates the strip's from each row's. `TimelineView` adds each row's band height to
-its `headerPx` (after its phase strips) and draws the band (`.tl-lane-ages`) with the same `AgeBars` as the strip;
-double-clicks and long presses there don't add events. A row that's filtered out takes its ages with it (the table
+A row's own ages (`Track.context`) aren't in the Ages strip: `placeAges` places each on that row (`band`), numbering
+lines per row, and `splitAges` separates the strip's from each row's. `TimelineView` lays them out as lines of the
+row's phase strip, above its phases (Kevin, 2026-11-22: the live look, regional ages as lighter strip lines): one
+strip line per age line, each cell a `PlacedPhase` with `kind` (`age`), `lineName` and `ref` (`ageRef`: `age:<id>`).
+The cells are drawn a step lighter (13%/26%), names in title case and shown from 36 px (`minKindNamePx`); a cell with no
+name or under 10 px draws no edges or alternate fill, so a run reads as one stripe. A named line's name
+(`.tl-strip-line-name`) holds the chart's left edge and its ages' names stick just right of it. Age cells open
+`AgePanel` on a click as well as Enter (phases open by keyboard only). Age lines and membership lines with nothing in
+the strip window (`stripWindow`, the view plus a margin, set when sideways scrolling settles) are left out. Named phase
+and age lines get 2 px under their names (`padBottomPx`). A row that's filtered out takes its ages with it (the table
 still lists them). `trackDeletion` names the ages that would move to the strip, for the delete warning.
 
 ### Category filter
