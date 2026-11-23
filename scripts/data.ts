@@ -16,8 +16,8 @@
 //
 // run-all rebuilds the timeline's additions from the scripts, in the order the table gives. Every script is an
 // upsert, so on an up-to-date source file it should change nothing. --check proves that: it replays everything,
-// reports any difference, and puts the source file back as it was (exit code 1 if anything changed). It also warns
-// about phases with no date claims (every date cites its source; a warning only, until the old ones are cited).
+// reports any difference, and puts the source file back as it was (exit code 1 if anything changed). A phase with no
+// date claims fails it too (every date cites its source); a plain run-all only warns about one.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { compileSource, compiledText } from './lib/compile.ts';
@@ -110,7 +110,9 @@ function runAll(t: SourceTimeline, check: boolean) {
     const uncited = uncitedPhases(readSource(t.source));
     if (uncited.length) {
       const shown = uncited.slice(0, 5).join('; ');
-      console.log(`${t.short}: warning: ${uncited.length} phases have no date claims (${shown}${uncited.length > 5 ? '; …' : ''})`);
+      const label = check ? 'error' : 'warning';
+      console.log(`${t.short}: ${label}: ${uncited.length} phases have no date claims (${shown}${uncited.length > 5 ? '; …' : ''})`);
+      if (check) process.exitCode = 1;
     }
     if (!check) importance(t);
   } finally {

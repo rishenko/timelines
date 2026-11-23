@@ -157,7 +157,7 @@ const PLAN: Plan = {
     'Late Predynastic (Dynasty 0)': {
       // No source gives 3300 itself; the Protodynastic Period's three datings bracket it.
       start: [
-        alt(C(3325, 'wp-protodynastic', `${PROTO} ('approximately from 3325 to 3000 BC')`)),
+        alt(C(3325, 'wp-protodynastic', `${PROTO} ('approximately from 3325 to 3000 BC')`, { note: 'The stored c. 3300 BCE is an estimate inside the cited spread (3350–3200 BCE); no source gives 3300 itself.' })),
         alt(C(3350, 'wp-protodynastic', `${PROTO} ('from c. 3350 BC to c. 2920 BC')`)),
         alt(C(3200, 'wp-protodynastic', `${PROTO} ('or from 3200 to 3000 BC')`)),
       ],
@@ -180,7 +180,7 @@ const PLAN: Plan = {
       start: [C(30, 'wp-roman-egypt', "History > Early Roman Egypt: 'The province was established in 30 BC after Octavian (the future Roman emperor Augustus) defeated his rival Mark Antony'")],
       // No source gives 641 as the end; the Arab conquest ran 639–642 and Egypt left the empire in 642.
       end: [
-        alt(RCE(639, 642, 'wp-arab-egypt', "lead: 'The Arab conquest of Egypt … took place between 639 and 642 AD.'")),
+        alt(RCE(639, 642, 'wp-arab-egypt', "lead: 'The Arab conquest of Egypt … took place between 639 and 642 AD.'", { note: 'The stored 641 CE is an estimate inside the cited spread (639–642); no source gives 641 itself.' })),
         alt(C('642 CE', 'wp-roman-egypt', "lead: 'Egypt ceased to be a part of the Roman Empire in 642, when it became part of the Rashidun Caliphate following the Muslim conquest of Egypt.'")),
       ],
     },

@@ -2671,7 +2671,8 @@
               "source": {
                 "sourceKey": "wp-protodynastic",
                 "sourceLocation": "lead: Depending on the sources, it is dated ('approximately from 3325 to 3000 BC')"
-              }
+              },
+              "note": "The stored c. 3300 BCE is an estimate inside the cited spread (3350–3200 BCE); no source gives 3300 itself."
             },
             {
               "year": -3349,
@@ -3576,7 +3577,8 @@
               "source": {
                 "sourceKey": "wp-arab-egypt",
                 "sourceLocation": "lead: 'The Arab conquest of Egypt … took place between 639 and 642 AD.'"
-              }
+              },
+              "note": "The stored 641 CE is an estimate inside the cited spread (639–642); no source gives 641 itself."
             },
             {
               "year": 642,
