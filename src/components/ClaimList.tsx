@@ -113,7 +113,7 @@ export function ClaimList<T extends FieldValues>({
               <input
                 id={fieldId(i, 'margin')}
                 aria-label="Margin"
-                className="narrow"
+                className="margin-length"
                 placeholder="24 kyr"
                 {...reg(`${name}.${i}.margin`, { validate: (t) => deepMarginError(String(t ?? ''), cal) ?? true })}
                 {...errorProps(fieldId(i, 'margin'), errorAt(`${name}.${i}.margin`))}
