@@ -31,6 +31,14 @@ class ClassifierThroughShim(unittest.TestCase):
     """WpShim rebuilds only an article's infobox type and categories for the shared classifier; if the classifier starts
     reading something else, the extractor would quietly get fewer categories. This catches that."""
     def test_military_conflict_infobox_gives_conflict(self):
+        # extract.py imports the shared wp_dump, which opens <TIMELINES_DATA>/wikipedia/index.sqlite at import: give it an
+        # empty one in a temporary folder, so the test needs no dump (CI has none)
+        import sqlite3
+        import tempfile
+        tmp = tempfile.mkdtemp()
+        os.makedirs(os.path.join(tmp, 'wikipedia'))
+        sqlite3.connect(os.path.join(tmp, 'wikipedia', 'index.sqlite')).close()
+        os.environ['TIMELINES_DATA'] = tmp
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
         import event_categories
         from extract import WIKI, WpShim

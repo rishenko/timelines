@@ -214,7 +214,7 @@ class AstronomicalOutput(unittest.TestCase):
         self.assertEqual([astro(y) for y in (-44, -1, 1, 1914)], [-43, 0, 1, 1914])
 
     def test_written_iso(self):
-        from extract import iso
+        from dates import iso
         self.assertEqual(iso(one('15 March 44 BC')['start']), '-0043-03-15')
         self.assertEqual(iso(one('44 BC')['start']), '-0043')
         self.assertEqual(iso(one('1 BC')['start']), '0000')
