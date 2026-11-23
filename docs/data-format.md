@@ -80,7 +80,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `8`. Files of versions `3` to `7` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `9`. Files of versions `3` to `8` still load ([versions](#versions)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -164,6 +164,14 @@ left out of the Tab order; the details link the article).
 | `after` | yes | Label for years from the epoch on: `"CE"`, `"AE"`, `"AF"`… |
 | `yearZero` | yes | `true` if the calendar has a year 0. Real-world BCE/CE does not. |
 | `aliases` | no | Other spellings readers may type in search: `{ "before": ["BC"], "after": ["AD"] }`. |
+| `beforePresent` | no | Deep time (version 9): show years as time before a present instead of with `before`/`after`, e.g. `{ "present": 1950, "circaShare": 0.01 }`. The file still stores years in this calendar; only the display changes. See below. |
+
+**`beforePresent`** (version 9) is for timelines measured in thousands to billions of years:
+
+| Field | Required | What |
+|---|---|---|
+| `present` | yes | The stored year that is "present": `1950` for geology's and radiocarbon's BP (before present). Years show as their distance from it: "4.567 Ga", "66 Ma", "11.7 ka". |
+| `circaShare` | no | How far an uncited "c." date fades, as a share of its age: `0.01` fades "c. 66 Ma" by 0.66 Ma either side. Without it, `meta.circaFade` years apply, which can't suit both 66 Ma and 11.7 ka. More than 0, at most 0.5. |
 
 ## tracks
 
@@ -505,7 +513,8 @@ claim recorded for it, else at the derived value, else at its best estimate.
 
 A file that breaks any of these is refused, with a message naming the problem.
 
-- The required fields above are present; `schemaVersion` is 8, or 3 to 7 (lifted to 8 when loaded).
+- The required fields above are present; `schemaVersion` is 9, or 3 to 8 (lifted to 9 when loaded).
+- `calendar.beforePresent`, when set, has a whole-number `present`, and a `circaShare` more than 0 and at most 0.5.
 - `meta.id` and event `uuid`s use only letters, digits and dashes; event ids and track ids are unique.
 - `defaultIncrement` is one of `increments`, which are positive whole numbers or `"quarter"`, `"month"`, `"week"`,
   `"day"`.
@@ -679,6 +688,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 
 | Version | What changed |
 |---|---|
+| 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates. Additive: a version 8 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |
 | 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. Never released: it folded into 8. |
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |

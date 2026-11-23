@@ -8,19 +8,19 @@ import ancient from '../../public/timelines/ancient-classical.json';
 const asVersion = (v: number) => ({ ...plainTimeline(), schemaVersion: v });
 
 describe('schema versions', () => {
-  it('writes version 8 and reads 3 to 8', () => {
-    expect(SCHEMA_VERSION).toBe(8);
-    for (const v of [3, 4, 5, 6, 7, 8]) expect(canRead(v)).toBe(true);
+  it('writes version 9 and reads 3 to 9', () => {
+    expect(SCHEMA_VERSION).toBe(9);
+    for (const v of [3, 4, 5, 6, 7, 8, 9]) expect(canRead(v)).toBe(true);
     expect(canRead(2)).toBe(false);
-    expect(canRead(9)).toBe(false);
-    expect(canRead('8')).toBe(false);
+    expect(canRead(10)).toBe(false);
+    expect(canRead('9')).toBe(false);
   });
 
-  for (const v of [3, 4, 5, 6, 7])
-    it(`lifts a version ${v} file without ages to 8 without changing anything else`, () => {
+  for (const v of [3, 4, 5, 6, 7, 8])
+    it(`lifts a version ${v} file without ages to 9 without changing anything else`, () => {
       const old = asVersion(v);
       const lifted = migrate(old) as Record<string, unknown>;
-      expect(lifted.schemaVersion).toBe(8);
+      expect(lifted.schemaVersion).toBe(9);
       expect({ ...lifted, schemaVersion: v }).toEqual(old);
       // the input is left as it was
       expect(old.schemaVersion).toBe(v);
@@ -32,17 +32,18 @@ describe('schema versions', () => {
     expect(validateDataset(asVersion(5))).toEqual([]);
     expect(validateDataset(asVersion(6))).toEqual([]);
     expect(validateDataset(asVersion(7))).toEqual([]);
-    expect(validateDataset(asVersion(9))[0]).toBe('Unsupported schemaVersion: 9 (this app reads versions 3 to 8).');
+    expect(validateDataset(asVersion(8))).toEqual([]);
+    expect(validateDataset(asVersion(10))[0]).toBe('Unsupported schemaVersion: 10 (this app reads versions 3 to 9).');
   });
 
   it('lifts an uploaded version 3 file', () => {
     const { dataset, errors } = parseUpload(JSON.stringify(asVersion(3)));
     expect(errors).toEqual([]);
-    expect(dataset?.schemaVersion).toBe(8);
+    expect(dataset?.schemaVersion).toBe(9);
   });
 
-  it('ships the bundled timeline as version 8', () => {
-    expect(ancient.schemaVersion).toBe(8);
+  it('ships the bundled timeline as version 9', () => {
+    expect(ancient.schemaVersion).toBe(9);
   });
 });
 
