@@ -2,7 +2,7 @@
 // ages, the scale ending at the present, proportional "c." and deep-time dates read in search and source files.
 import { describe, expect, it } from 'vitest';
 import type { Calendar, Dataset } from '../types.ts';
-import { eraStart, formatAgo, formatEditDate, formatYear, isMajorTick, parseFullDate, parseYear, tickFloor, ticksBetween } from './calendar.ts';
+import { eraStart, formatAgo, formatEditDate, formatEditSpan, parseSpan, formatYear, isMajorTick, parseFullDate, parseYear, tickFloor, ticksBetween } from './calendar.ts';
 import { formatSpan, incrementButton, incrementLabel, incrementName, incrementSpoken } from './subYear.ts';
 import { circaFadeAt } from './chronology.ts';
 import { buildScale } from '../timeline/scale.ts';
@@ -114,7 +114,7 @@ describe('reading dates', () => {
 
   it('source files: a claim year with ± sets its margin; a ± on start is a problem', () => {
     const src = {
-      schemaVersion: 9,
+      schemaVersion: 10,
       meta: { id: 'dt', title: 'Deep', calendar: BP, increments: [1_000_000], defaultIncrement: 1_000_000 },
       sources: { ics: { name: 'ICS chart' } },
       tracks: [{ id: 'earth', name: 'Earth', color: '#336699' }],
@@ -153,5 +153,29 @@ describe('proportional circa', () => {
   it('without circaShare, meta.circaFade years as before', () => {
     expect(circaFadeAt(ds(BCE, 5), -1000)).toBe(5);
     expect(circaFadeAt(ds(AGO0, 5), -66_000_000)).toBe(5);
+  });
+});
+
+describe('editors (follow-up)', () => {
+  it('a ± in a different unit from the date: "66 Ma ± 500 ka"', () => {
+    expect(parseFullDate('66 Ma ± 500 ka', BP)).toEqual({ year: ago(66_000_000), circa: false, margin: 500_000 });
+    expect(parseFullDate('11.7 ka BP ± 0.1 ka', BP)).toEqual({ year: ago(11_700), circa: false, margin: 100 });
+    expect(parseFullDate('1.2 Ga ± 5 Ma', BP)?.margin).toBe(5_000_000);
+    // one unit for both still reads; a bare "66 ± 1" (no unit) doesn't
+    expect(parseFullDate('251.902 ± 0.024 Ma', BP)?.margin).toBe(24_000);
+    expect(parseFullDate('66 ± 1', BP)).toBeNull();
+    // a date with its own unit and a bare ± is ambiguous ("66 Ma ± 500": 500 Ma?), so it is not read; a bare date and a ± with a unit is
+    expect(parseFullDate('66 Ma ± 500', BP)).toBeNull();
+    expect(parseFullDate('66 ± 0.5 Ma', BP)?.margin).toBe(500_000);
+  });
+
+  it('lengths for the editors: exact text that reads back', () => {
+    for (const n of [24_000, 500_000, 1_250_000_000, 9_600, 1, 123_456_789]) expect(parseSpan(formatEditSpan(n)), formatEditSpan(n)).toBe(n);
+    expect(formatEditSpan(24_000)).toBe('24 kyr');
+    expect(formatEditSpan(123_456_789)).toBe('123.456789 Myr');
+    expect(parseSpan('0.5 Myr')).toBe(500_000);
+    expect(parseSpan('500 ka')).toBe(500_000);
+    expect(parseSpan('24000')).toBe(24_000);
+    expect(parseSpan('a lot')).toBeNull();
   });
 });

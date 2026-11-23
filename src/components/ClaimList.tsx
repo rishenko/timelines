@@ -1,6 +1,8 @@
-import { useFieldArray, type Control, type FieldValues, type UseFormRegister } from 'react-hook-form';
+import { get, useFieldArray, useFormState, type Control, type FieldValues, type UseFormRegister } from 'react-hook-form';
 import type { Calendar, Dataset } from '../types.ts';
-import type { ClaimValues } from '../lib/claims.ts';
+import { deepMarginError, deepWhenError, type ClaimValues } from '../lib/claims.ts';
+import { beforePresent } from '../lib/beforePresent.ts';
+import { errorProps, FieldError } from './FieldError.tsx';
 import { MONTH_NAMES } from '../lib/subYear.ts';
 
 /**
@@ -76,6 +78,11 @@ export function ClaimList<T extends FieldValues>({
   const reg = register as unknown as UseFormRegister<Record<string, string | number>>;
   const claims = useFieldArray({ control: ctl, name });
   const cal = data.meta.calendar;
+  // deep time: the date as text ("66 Ma ± 500 ka") and the margin with its unit, each checked as typed
+  const deep = !!beforePresent(cal);
+  const { errors } = useFormState({ control: ctl });
+  const errorAt = (path: string) => get(errors, path) as { message?: string } | undefined;
+  const fieldId = (i: number, f: string) => `${name.replace(/\./g, '-')}-${i}-${f}`;
   const chronologies = Object.entries(data.chronologies ?? {});
   // a real list, so a screen reader says how many claims there are and which one it is in ("2 of 3")
   const which = name.endsWith('endDates') ? 'end' : 'start';
@@ -86,11 +93,34 @@ export function ClaimList<T extends FieldValues>({
       {claims.fields.map((f, i) => (
         <li key={f.id} className="claim">
           <div className="row">
-            <input aria-label="Year" type="number" min={0} {...reg(`${name}.${i}.year`, { valueAsNumber: true })} />
-            <EraSelect cal={cal} label="Era" reg={reg(`${name}.${i}.era`)} />
+            {deep ? (
+              <input
+                id={fieldId(i, 'when')}
+                aria-label="Date"
+                placeholder="66 Ma"
+                {...reg(`${name}.${i}.when`, { validate: (t) => deepWhenError(String(t ?? ''), cal) ?? true, deps: [`${name}.${i}.margin`] })}
+                {...errorProps(fieldId(i, 'when'), errorAt(`${name}.${i}.when`))}
+              />
+            ) : (
+              <>
+                <input aria-label="Year" type="number" min={0} {...reg(`${name}.${i}.year`, { valueAsNumber: true })} />
+                <EraSelect cal={cal} label="Era" reg={reg(`${name}.${i}.era`)} />
+              </>
+            )}
             {days && <DayFields label="Claim" month={reg(`${name}.${i}.month`)} day={reg(`${name}.${i}.day`)} />}
             <span className="muted">±</span>
-            <input aria-label="Margin in years" className="narrow" placeholder="0" {...reg(`${name}.${i}.margin`)} />
+            {deep ? (
+              <input
+                id={fieldId(i, 'margin')}
+                aria-label="Margin"
+                className="margin-length"
+                placeholder="24 kyr"
+                {...reg(`${name}.${i}.margin`, { validate: (t, form) => deepMarginError(String(t ?? ''), cal, String(get(form, `${name}.${i}.when`) ?? '')) ?? true })}
+                {...errorProps(fieldId(i, 'margin'), errorAt(`${name}.${i}.margin`))}
+              />
+            ) : (
+              <input aria-label="Margin in years" className="narrow" placeholder="0" {...reg(`${name}.${i}.margin`)} />
+            )}
             {chronologies.length > 0 && (
               <select aria-label="Chronology" {...reg(`${name}.${i}.chronology`)}>
                 <option value="">({owner}'s chronology)</option>
@@ -123,6 +153,8 @@ export function ClaimList<T extends FieldValues>({
             <input aria-label="Location in source" placeholder="p. 12" {...reg(`${name}.${i}.sourceLocation`)} />
           </div>
           <input aria-label="Note" placeholder="Note (optional)" {...reg(`${name}.${i}.note`)} />
+          <FieldError id={fieldId(i, 'when')} error={errorAt(`${name}.${i}.when`)} />
+          <FieldError id={fieldId(i, 'margin')} error={errorAt(`${name}.${i}.margin`)} />
         </li>
       ))}
         </ul>
@@ -133,6 +165,7 @@ export function ClaimList<T extends FieldValues>({
           claims.append({
             year: 0,
             era: cal.yearZero ? 'after' : 'before',
+            ...(deep ? { when: '' } : {}),
             margin: '',
             month: '',
             day: '',

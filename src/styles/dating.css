@@ -99,6 +99,10 @@
 .editor .row input.narrow {
   width: 52px;
 }
+/* a margin written with its unit in deep time ("24 kyr", "0.5 Myr", "9,600 yrs") */
+.editor .row input.margin-length {
+  width: 84px;
+}
 .editor .row .grow {
   flex: 1;
 }
