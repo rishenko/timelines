@@ -21,9 +21,11 @@
  *   see `toV8`.
  * - 9: `calendar.beforePresent` (deep time: years shown as time before a present, e.g. 1950, with an optional
  *   `circaShare`). Additive: a v8 file is a v9 file with a different number.
+ * - 10: `meta.compress` (whether the timeline opens with gaps shortened; default on). Additive: a v9 file is a v10 file
+ *   with a different number.
  */
 
-export const SCHEMA_VERSION = 9;
+export const SCHEMA_VERSION = 10;
 
 type Obj = Record<string, unknown>;
 
@@ -74,6 +76,7 @@ const STEPS: Record<number, (d: Record<string, unknown>) => Record<string, unkno
   6: (d) => ({ ...d, schemaVersion: 7 }),
   7: toV8,
   8: (d) => ({ ...d, schemaVersion: 9 }),
+  9: (d) => ({ ...d, schemaVersion: 10 }),
 };
 
 /** Whether a file of this version can be read (it is current, or can be lifted to it). */
