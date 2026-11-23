@@ -1,0 +1,1632 @@
+{
+ "_note": "Draft list of notable events, with a quota per world region and per era (Kevin, 2026-11-23: cover the world). Written from general knowledge and the periodisation of the regional histories (not taken from any one ranking, and no page is cited) for Kevin and regional readers to adjust; `year` is the start (negative = BCE), `tol` the years either side a data event may differ, `expect` the kinds a good match should have, `match` a case-insensitive regex tried against event titles. Read by scripts/landmarks-check.ts.",
+ "events": [
+  {
+   "id": "gobekli",
+   "name": "Göbekli Tepe built",
+   "year": -9500,
+   "tol": 400,
+   "region": "West Asia",
+   "expect": [
+    "archaeology"
+   ],
+   "match": "G[oö]bekli"
+  },
+  {
+   "id": "farming",
+   "name": "Beginning of agriculture in the Fertile Crescent",
+   "year": -9500,
+   "tol": 600,
+   "region": "West Asia",
+   "expect": [
+    "society",
+    "archaeology"
+   ],
+   "match": "domesticat|first farm|beginning of agriculture|Neolithic Revolution"
+  },
+  {
+   "id": "writing",
+   "name": "Writing invented in Sumer (cuneiform)",
+   "year": -3300,
+   "tol": 300,
+   "region": "West Asia",
+   "expect": [
+    "science",
+    "society"
+   ],
+   "match": "cuneiform|proto-cuneiform|invention of writing|earliest writing"
+  },
+  {
+   "id": "akkad",
+   "name": "Akkadian Empire founded (Sargon)",
+   "year": -2334,
+   "tol": 40,
+   "region": "West Asia",
+   "expect": [
+    "statehood",
+    "territory"
+   ],
+   "match": "Sargon|Akkadian Empire"
+  },
+  {
+   "id": "hammurabi-code",
+   "name": "Code of Hammurabi",
+   "year": -1754,
+   "tol": 30,
+   "region": "West Asia",
+   "expect": [
+    "society"
+   ],
+   "match": "Code of Hammurabi"
+  },
+  {
+   "id": "kadesh",
+   "name": "Battle of Kadesh",
+   "year": -1274,
+   "tol": 10,
+   "region": "West Asia",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Kadesh"
+  },
+  {
+   "id": "bronze-collapse",
+   "name": "Late Bronze Age collapse",
+   "year": -1177,
+   "tol": 60,
+   "region": "West Asia",
+   "expect": [
+    "statehood",
+    "society"
+   ],
+   "match": "Bronze Age collapse"
+  },
+  {
+   "id": "nineveh",
+   "name": "Fall of Nineveh and the end of Assyria",
+   "year": -612,
+   "tol": 15,
+   "region": "West Asia",
+   "expect": [
+    "statehood",
+    "conflict"
+   ],
+   "match": "Nineveh|fall of Assyria|Assyria.*(ends|falls|collapse)"
+  },
+  {
+   "id": "babylon-taken",
+   "name": "Cyrus takes Babylon",
+   "year": -539,
+   "tol": 5,
+   "region": "West Asia",
+   "expect": [
+    "territory",
+    "conflict"
+   ],
+   "match": "Cyrus.*Babylon|Babylon.*Cyrus"
+  },
+  {
+   "id": "gaugamela",
+   "name": "Alexander defeats Darius at Gaugamela",
+   "year": -331,
+   "tol": 10,
+   "region": "West Asia",
+   "expect": [
+    "conflict",
+    "territory"
+   ],
+   "match": "Gaugamela|Alexander.*(Persia|Achaemenid)"
+  },
+  {
+   "id": "sasanian",
+   "name": "Sasanian Empire founded",
+   "year": 224,
+   "tol": 5,
+   "region": "West Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Sasanian|Sassanid|Ardashir"
+  },
+  {
+   "id": "hijra",
+   "name": "Muhammad's Hijra",
+   "year": 622,
+   "tol": 3,
+   "region": "West Asia",
+   "expect": [
+    "society"
+   ],
+   "match": "Hijra|Hegira"
+  },
+  {
+   "id": "arab-conquests",
+   "name": "Early Muslim conquests (Yarmouk, Persia)",
+   "year": 636,
+   "tol": 20,
+   "region": "West Asia",
+   "expect": [
+    "territory",
+    "conflict"
+   ],
+   "match": "Yarmouk|Rashidun|Qadisiyya|Muslim conquest|Arab conquest"
+  },
+  {
+   "id": "abbasid",
+   "name": "Abbasid Revolution and Baghdad",
+   "year": 750,
+   "tol": 15,
+   "region": "West Asia",
+   "expect": [
+    "unrest",
+    "statehood"
+   ],
+   "match": "Abbasid Revolution|Abbasid.*(overthrow|caliphate (begins|founded))|Founding of Baghdad"
+  },
+  {
+   "id": "manzikert",
+   "name": "Battle of Manzikert (Seljuks in Anatolia)",
+   "year": 1071,
+   "tol": 3,
+   "region": "West Asia",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Manzikert"
+  },
+  {
+   "id": "hattin",
+   "name": "Battle of Hattin and Saladin retakes Jerusalem",
+   "year": 1187,
+   "tol": 3,
+   "region": "West Asia",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Hattin|Saladin (takes|retakes|captures) Jerusalem"
+  },
+  {
+   "id": "baghdad-sacked",
+   "name": "Mongols sack Baghdad",
+   "year": 1258,
+   "tol": 3,
+   "region": "West Asia",
+   "expect": [
+    "conflict",
+    "place"
+   ],
+   "match": "Baghdad.*(sack|siege|fall)|Siege of Baghdad"
+  },
+  {
+   "id": "constantinople-falls",
+   "name": "Fall of Constantinople",
+   "year": 1453,
+   "tol": 2,
+   "region": "West Asia",
+   "expect": [
+    "conflict",
+    "statehood"
+   ],
+   "match": "Constantinople.*(fall|captur|conquer)|Fall of Constantinople"
+  },
+  {
+   "id": "chaldiran",
+   "name": "Battle of Chaldiran (Ottomans and Safavids)",
+   "year": 1514,
+   "tol": 2,
+   "region": "West Asia",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Chaldiran|[CÇ]aldıran"
+  },
+  {
+   "id": "turkish-republic",
+   "name": "Republic of Turkey founded",
+   "year": 1923,
+   "tol": 3,
+   "region": "West Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Republic of Turkey|Turkish Republic|abolition of the (Ottoman|Sultanate)"
+  },
+  {
+   "id": "israel",
+   "name": "State of Israel founded",
+   "year": 1948,
+   "tol": 2,
+   "region": "West Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "State of Israel|Israel declares|Israeli Declaration"
+  },
+  {
+   "id": "iran-revolution",
+   "name": "Iranian Revolution",
+   "year": 1979,
+   "tol": 2,
+   "region": "West Asia",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Iranian Revolution|Islamic Revolution"
+  },
+  {
+   "id": "egypt-unified",
+   "name": "Egypt unified (Narmer)",
+   "year": -3100,
+   "tol": 150,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Narmer|unif\\w+ (of )?(upper and lower )?egypt"
+  },
+  {
+   "id": "great-pyramid",
+   "name": "Great Pyramid of Giza built",
+   "year": -2560,
+   "tol": 60,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "match": "Great Pyramid|Khufu"
+  },
+  {
+   "id": "kushite-egypt",
+   "name": "Kushite kings (Piye) conquer Egypt",
+   "year": -744,
+   "tol": 15,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "territory",
+    "conquest"
+   ],
+   "match": "Piye|Kushite|Kush.*Egypt|25th Dynasty"
+  },
+  {
+   "id": "carthage-destroyed",
+   "name": "Carthage destroyed",
+   "year": -146,
+   "tol": 5,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "conflict",
+    "territory"
+   ],
+   "match": "Carthage.*(destroy|fall)|destroys? Carthage|Third Punic"
+  },
+  {
+   "id": "aksum-christian",
+   "name": "Aksum adopts Christianity (Ezana)",
+   "year": 330,
+   "tol": 25,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society"
+   ],
+   "match": "Ezana|Aksum.*Christian|Christian.*Aksum"
+  },
+  {
+   "id": "ghana-almoravid",
+   "name": "Almoravids and the end of ancient Ghana",
+   "year": 1076,
+   "tol": 30,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "conflict",
+    "statehood"
+   ],
+   "match": "Almoravid.*(Ghana|conquer|captur)|Ghana.*(Almoravid|conquer|fall|end)"
+  },
+  {
+   "id": "lalibela",
+   "name": "Rock-hewn churches of Lalibela",
+   "year": 1200,
+   "tol": 40,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "match": "Lalibela"
+  },
+  {
+   "id": "great-zimbabwe",
+   "name": "Great Zimbabwe at its height",
+   "year": 1300,
+   "tol": 100,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "archaeology",
+    "statehood"
+   ],
+   "match": "Zimbabwe"
+  },
+  {
+   "id": "mali",
+   "name": "Mali Empire founded (Sundiata)",
+   "year": 1235,
+   "tol": 10,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Sundiata|Mali Empire|Kirina"
+  },
+  {
+   "id": "mansa-musa",
+   "name": "Mansa Musa's pilgrimage to Mecca",
+   "year": 1324,
+   "tol": 3,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society"
+   ],
+   "match": "Mansa Musa"
+  },
+  {
+   "id": "swahili-kilwa",
+   "name": "Swahili coast: Kilwa Sultanate",
+   "year": 1200,
+   "tol": 150,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Kilwa|Swahili"
+  },
+  {
+   "id": "kongo",
+   "name": "Kingdom of Kongo converts to Christianity",
+   "year": 1491,
+   "tol": 5,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society"
+   ],
+   "match": "Kongo|Kingdom of the Kongo"
+  },
+  {
+   "id": "songhai",
+   "name": "Songhai Empire under Askia Muhammad",
+   "year": 1493,
+   "tol": 10,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood",
+    "rule"
+   ],
+   "match": "Askia"
+  },
+  {
+   "id": "tondibi",
+   "name": "Moroccan conquest of Songhai (Tondibi)",
+   "year": 1591,
+   "tol": 2,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "conflict",
+    "territory"
+   ],
+   "match": "Tondibi|Songhai"
+  },
+  {
+   "id": "slave-trade",
+   "name": "Transatlantic slave trade",
+   "year": 1501,
+   "tol": 60,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society",
+    "economy"
+   ],
+   "match": "Atlantic slave trade|transatlantic slave"
+  },
+  {
+   "id": "mfecane",
+   "name": "Shaka and the Zulu kingdom (Mfecane)",
+   "year": 1816,
+   "tol": 8,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood",
+    "conflict"
+   ],
+   "match": "Shaka|Mfecane|Zulu Kingdom"
+  },
+  {
+   "id": "adwa",
+   "name": "Battle of Adwa",
+   "year": 1896,
+   "tol": 2,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Adwa|Adowa"
+  },
+  {
+   "id": "berlin-conference",
+   "name": "Berlin Conference (Scramble for Africa)",
+   "year": 1884,
+   "tol": 3,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "diplomacy",
+    "territory"
+   ],
+   "match": "Berlin Conference|Scramble for Africa"
+  },
+  {
+   "id": "ghana-independence",
+   "name": "Ghana's independence (Nkrumah)",
+   "year": 1957,
+   "tol": 2,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Independence of Ghana|Ghana.*independence"
+  },
+  {
+   "id": "africa-1960",
+   "name": "Year of Africa: decolonisation",
+   "year": 1960,
+   "tol": 3,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Year of Africa|decoloni[sz]ation of Africa|Belgian Congo.*independen|Independence of the Congo"
+  },
+  {
+   "id": "apartheid-ends",
+   "name": "End of apartheid and Mandela elected",
+   "year": 1994,
+   "tol": 3,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood",
+    "society"
+   ],
+   "match": "end of apartheid|Mandela (elected|president)|1994 (general )?election"
+  },
+  {
+   "id": "rwanda",
+   "name": "Rwandan genocide",
+   "year": 1994,
+   "tol": 1,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Rwanda"
+  },
+  {
+   "id": "indus",
+   "name": "Indus Valley cities at their height",
+   "year": -2600,
+   "tol": 400,
+   "region": "South Asia",
+   "expect": [
+    "statehood",
+    "archaeology"
+   ],
+   "match": "Indus|Harappa|Mohenjo"
+  },
+  {
+   "id": "buddha",
+   "name": "Buddha's life and teaching (death c. 483 BCE)",
+   "year": -483,
+   "tol": 100,
+   "region": "South Asia",
+   "expect": [
+    "society"
+   ],
+   "match": "Buddha|Gautama|Siddhartha"
+  },
+  {
+   "id": "maurya",
+   "name": "Mauryan Empire founded",
+   "year": -322,
+   "tol": 10,
+   "region": "South Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Maurya|Chandragupta"
+  },
+  {
+   "id": "kalinga",
+   "name": "Kalinga War and Ashoka's conversion",
+   "year": -261,
+   "tol": 10,
+   "region": "South Asia",
+   "expect": [
+    "conflict",
+    "society"
+   ],
+   "match": "Kalinga"
+  },
+  {
+   "id": "gupta",
+   "name": "Gupta Empire founded",
+   "year": 320,
+   "tol": 20,
+   "region": "South Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Gupta"
+  },
+  {
+   "id": "chola-naval",
+   "name": "Chola conquest across the sea (Rajendra)",
+   "year": 1025,
+   "tol": 10,
+   "region": "South Asia",
+   "expect": [
+    "conflict",
+    "territory"
+   ],
+   "match": "Chola|Rajendra"
+  },
+  {
+   "id": "delhi-sultanate",
+   "name": "Delhi Sultanate founded",
+   "year": 1206,
+   "tol": 5,
+   "region": "South Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Delhi Sultanate"
+  },
+  {
+   "id": "vijayanagara",
+   "name": "Vijayanagara Empire founded",
+   "year": 1336,
+   "tol": 8,
+   "region": "South Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Vijayanagara"
+  },
+  {
+   "id": "panipat",
+   "name": "Babur wins Panipat: the Mughal Empire",
+   "year": 1526,
+   "tol": 3,
+   "region": "South Asia",
+   "expect": [
+    "statehood",
+    "conflict"
+   ],
+   "match": "Panipat|Mughal"
+  },
+  {
+   "id": "plassey",
+   "name": "Battle of Plassey",
+   "year": 1757,
+   "tol": 2,
+   "region": "South Asia",
+   "expect": [
+    "conflict",
+    "territory"
+   ],
+   "match": "Plassey"
+  },
+  {
+   "id": "indian-rebellion",
+   "name": "Indian Rebellion of 1857",
+   "year": 1857,
+   "tol": 2,
+   "region": "South Asia",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Indian Rebellion|Sepoy|Mutiny"
+  },
+  {
+   "id": "indian-independence",
+   "name": "Indian independence and Partition",
+   "year": 1947,
+   "tol": 2,
+   "region": "South Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Partition|Indian independence|independence of India"
+  },
+  {
+   "id": "shang",
+   "name": "Shang dynasty founded",
+   "year": -1600,
+   "tol": 120,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Shang (dynasty|state)|Tang of Shang"
+  },
+  {
+   "id": "confucius",
+   "name": "Confucius",
+   "year": -551,
+   "tol": 100,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "match": "Confuci"
+  },
+  {
+   "id": "warring-states",
+   "name": "Warring States period begins",
+   "year": -475,
+   "tol": 25,
+   "region": "East Asia",
+   "expect": [
+    "conflict",
+    "statehood"
+   ],
+   "match": "Warring States"
+  },
+  {
+   "id": "qin-unifies",
+   "name": "Qin unifies China",
+   "year": -221,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "statehood",
+    "territory"
+   ],
+   "match": "Qin.*(unif|conquer|empire)|First Emperor|Qin Shi Huang"
+  },
+  {
+   "id": "han-founded",
+   "name": "Han dynasty founded",
+   "year": -202,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Han (dynasty|Empire)|Liu Bang|Gaozu"
+  },
+  {
+   "id": "paper",
+   "name": "Paper invented (Cai Lun)",
+   "year": 105,
+   "tol": 25,
+   "region": "East Asia",
+   "expect": [
+    "science"
+   ],
+   "match": "Cai Lun|papermaking|invention of paper"
+  },
+  {
+   "id": "tang",
+   "name": "Tang dynasty founded",
+   "year": 618,
+   "tol": 5,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Tang (dynasty|Empire)|Li Yuan|Gaozu of Tang"
+  },
+  {
+   "id": "silla",
+   "name": "Silla unifies Korea",
+   "year": 668,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "statehood",
+    "territory"
+   ],
+   "match": "Silla"
+  },
+  {
+   "id": "an-lushan",
+   "name": "An Lushan Rebellion",
+   "year": 755,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "unrest"
+   ],
+   "match": "An Lushan"
+  },
+  {
+   "id": "song",
+   "name": "Song dynasty founded",
+   "year": 960,
+   "tol": 5,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Song (dynasty|Empire)|Zhao Kuangyin|Taizu"
+  },
+  {
+   "id": "kamakura",
+   "name": "Kamakura shogunate founded",
+   "year": 1185,
+   "tol": 8,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Kamakura|Genpei|Minamoto"
+  },
+  {
+   "id": "yuan",
+   "name": "Yuan dynasty founded (Kublai Khan)",
+   "year": 1271,
+   "tol": 8,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Yuan (dynasty|Empire)|Great Yuan|Kublai"
+  },
+  {
+   "id": "ming",
+   "name": "Ming dynasty founded",
+   "year": 1368,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Ming (dynasty|Empire)|Hongwu|Zhu Yuanzhang"
+  },
+  {
+   "id": "zheng-he",
+   "name": "Zheng He's treasure voyages",
+   "year": 1405,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "science",
+    "society"
+   ],
+   "match": "Zheng He"
+  },
+  {
+   "id": "hangul",
+   "name": "Hangul created (King Sejong)",
+   "year": 1443,
+   "tol": 5,
+   "region": "East Asia",
+   "expect": [
+    "science",
+    "society"
+   ],
+   "match": "Hangul|Hunmin|Sejong"
+  },
+  {
+   "id": "imjin",
+   "name": "Imjin War (Japan invades Korea)",
+   "year": 1592,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Imjin|Hideyoshi"
+  },
+  {
+   "id": "tokugawa",
+   "name": "Tokugawa shogunate founded",
+   "year": 1603,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Tokugawa|Edo|shogun"
+  },
+  {
+   "id": "qing",
+   "name": "Qing conquest of China",
+   "year": 1644,
+   "tol": 5,
+   "region": "East Asia",
+   "expect": [
+    "statehood",
+    "territory"
+   ],
+   "match": "Qing|Manchu"
+  },
+  {
+   "id": "opium-war",
+   "name": "First Opium War",
+   "year": 1839,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Opium War"
+  },
+  {
+   "id": "taiping",
+   "name": "Taiping Rebellion",
+   "year": 1850,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Taiping"
+  },
+  {
+   "id": "meiji",
+   "name": "Meiji Restoration",
+   "year": 1868,
+   "tol": 2,
+   "region": "East Asia",
+   "expect": [
+    "statehood",
+    "unrest"
+   ],
+   "match": "Meiji"
+  },
+  {
+   "id": "prc",
+   "name": "People's Republic of China founded",
+   "year": 1949,
+   "tol": 2,
+   "region": "East Asia",
+   "expect": [
+    "statehood"
+   ],
+   "match": "People.s Republic of China|Chinese Communist|Mao"
+  },
+  {
+   "id": "cultural-revolution",
+   "name": "Cultural Revolution",
+   "year": 1966,
+   "tol": 2,
+   "region": "East Asia",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Cultural Revolution"
+  },
+  {
+   "id": "lapita",
+   "name": "Lapita voyagers settle the Pacific",
+   "year": -1500,
+   "tol": 400,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "society",
+    "archaeology"
+   ],
+   "match": "Lapita|Austronesian|Polynesian"
+  },
+  {
+   "id": "funan",
+   "name": "Funan, the first Mekong state",
+   "year": 68,
+   "tol": 100,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Funan"
+  },
+  {
+   "id": "borobudur",
+   "name": "Borobudur built",
+   "year": 800,
+   "tol": 40,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "match": "Borobudur|Sailendra"
+  },
+  {
+   "id": "angkor-founded",
+   "name": "Angkor founded (Jayavarman II)",
+   "year": 802,
+   "tol": 10,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Jayavarman II|Angkor.*found"
+  },
+  {
+   "id": "bach-dang",
+   "name": "Vietnam wins independence (Bach Dang)",
+   "year": 938,
+   "tol": 5,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "statehood",
+    "conflict"
+   ],
+   "match": "B[aạ]ch [DĐ][aằ]ng|Ng[oô] Quy[eề]n"
+  },
+  {
+   "id": "pagan",
+   "name": "Pagan Kingdom founded (Anawrahta)",
+   "year": 1044,
+   "tol": 10,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Pagan|Anawrahta"
+  },
+  {
+   "id": "angkor-wat",
+   "name": "Angkor Wat built",
+   "year": 1113,
+   "tol": 40,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "match": "Angkor Wat|Suryavarman II"
+  },
+  {
+   "id": "majapahit",
+   "name": "Majapahit founded",
+   "year": 1293,
+   "tol": 3,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Majapahit.*(found|establish|begins|rise)|found.*Majapahit"
+  },
+  {
+   "id": "aotearoa",
+   "name": "Polynesians settle Aotearoa (New Zealand)",
+   "year": 1250,
+   "tol": 60,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "society",
+    "territory"
+   ],
+   "match": "Aotearoa|New Zealand|Māori|Maori"
+  },
+  {
+   "id": "melaka",
+   "name": "Melaka founded",
+   "year": 1400,
+   "tol": 10,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "place",
+    "statehood"
+   ],
+   "match": "Malacca.*(found|establish)|Melaka.*found"
+  },
+  {
+   "id": "philippines-spanish",
+   "name": "Spain begins the colonisation of the Philippines",
+   "year": 1565,
+   "tol": 5,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "territory"
+   ],
+   "match": "colonisation of the Philippines|colonization of the Philippines|Legazpi"
+  },
+  {
+   "id": "waitangi",
+   "name": "Treaty of Waitangi",
+   "year": 1840,
+   "tol": 3,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "diplomacy"
+   ],
+   "match": "Waitangi"
+  },
+  {
+   "id": "indonesia-independence",
+   "name": "Indonesia declares independence",
+   "year": 1945,
+   "tol": 2,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Indonesia.*(independence|proclam)|Proclamation of Indonesian"
+  },
+  {
+   "id": "vietnam-war",
+   "name": "Vietnam War",
+   "year": 1965,
+   "tol": 10,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Vietnam War"
+  },
+  {
+   "id": "xiongnu",
+   "name": "Xiongnu confederation under Modu",
+   "year": -209,
+   "tol": 10,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Xiongnu|Modu|Maodun"
+  },
+  {
+   "id": "kushan",
+   "name": "Kushan Empire under Kanishka",
+   "year": 127,
+   "tol": 30,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Kushan|Kanishka"
+  },
+  {
+   "id": "gokturk",
+   "name": "Göktürk Khaganate founded",
+   "year": 552,
+   "tol": 10,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "statehood"
+   ],
+   "match": "G[oö]kt[uü]rk|Turk.*Khagan|Bumin"
+  },
+  {
+   "id": "talas",
+   "name": "Battle of Talas",
+   "year": 751,
+   "tol": 3,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Talas"
+  },
+  {
+   "id": "mongol-unified",
+   "name": "Genghis Khan unites the Mongols",
+   "year": 1206,
+   "tol": 3,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "statehood",
+    "rule"
+   ],
+   "match": "Genghis|Chinggis|Tem[uü]jin"
+  },
+  {
+   "id": "timur",
+   "name": "Timur's empire",
+   "year": 1370,
+   "tol": 10,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "statehood",
+    "territory"
+   ],
+   "match": "Timur|Tamerlane"
+  },
+  {
+   "id": "dzungar",
+   "name": "Qing destroys the Dzungar Khanate",
+   "year": 1757,
+   "tol": 3,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "conflict",
+    "territory"
+   ],
+   "match": "Dzungar|Zunghar"
+  },
+  {
+   "id": "caral",
+   "name": "Caral-Supe, the first Andean city",
+   "year": -2600,
+   "tol": 200,
+   "region": "The Americas",
+   "expect": [
+    "archaeology",
+    "place"
+   ],
+   "match": "Caral|Norte Chico"
+  },
+  {
+   "id": "olmec",
+   "name": "Olmec civilisation (San Lorenzo)",
+   "year": -1200,
+   "tol": 300,
+   "region": "The Americas",
+   "expect": [
+    "statehood",
+    "archaeology"
+   ],
+   "match": "Olmec|San Lorenzo"
+  },
+  {
+   "id": "chavin",
+   "name": "Chavín de Huántar",
+   "year": -900,
+   "tol": 200,
+   "region": "The Americas",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "match": "Chav[ií]n"
+  },
+  {
+   "id": "teotihuacan",
+   "name": "Teotihuacan",
+   "year": 100,
+   "tol": 200,
+   "region": "The Americas",
+   "expect": [
+    "statehood",
+    "place"
+   ],
+   "match": "Teotihuacan"
+  },
+  {
+   "id": "tikal",
+   "name": "Classic Maya cities (Tikal)",
+   "year": 250,
+   "tol": 150,
+   "region": "The Americas",
+   "expect": [
+    "statehood",
+    "place"
+   ],
+   "match": "Tikal"
+  },
+  {
+   "id": "cahokia",
+   "name": "Cahokia at its height",
+   "year": 1050,
+   "tol": 60,
+   "region": "The Americas",
+   "expect": [
+    "place",
+    "archaeology"
+   ],
+   "match": "Cahokia|Mississippian"
+  },
+  {
+   "id": "tenochtitlan",
+   "name": "Tenochtitlan founded",
+   "year": 1325,
+   "tol": 5,
+   "region": "The Americas",
+   "expect": [
+    "place"
+   ],
+   "match": "Tenochtitlan"
+  },
+  {
+   "id": "inca-expansion",
+   "name": "Inca expansion under Pachacuti",
+   "year": 1438,
+   "tol": 15,
+   "region": "The Americas",
+   "expect": [
+    "territory",
+    "statehood"
+   ],
+   "match": "Pachacuti"
+  },
+  {
+   "id": "columbus",
+   "name": "Columbus reaches the Americas",
+   "year": 1492,
+   "tol": 3,
+   "region": "The Americas",
+   "expect": [
+    "territory",
+    "science"
+   ],
+   "match": "Columbus"
+  },
+  {
+   "id": "cortes",
+   "name": "Cortés conquers the Aztec Empire",
+   "year": 1521,
+   "tol": 3,
+   "region": "The Americas",
+   "expect": [
+    "territory",
+    "conflict"
+   ],
+   "match": "Cort[eé]s|Aztec"
+  },
+  {
+   "id": "pizarro",
+   "name": "Pizarro conquers the Inca",
+   "year": 1532,
+   "tol": 3,
+   "region": "The Americas",
+   "expect": [
+    "territory",
+    "conflict"
+   ],
+   "match": "Pizarro|Cajamarca|Atahualpa"
+  },
+  {
+   "id": "us-independence",
+   "name": "American Declaration of Independence",
+   "year": 1776,
+   "tol": 4,
+   "region": "The Americas",
+   "expect": [
+    "statehood",
+    "unrest"
+   ],
+   "match": "Declaration of Independence"
+  },
+  {
+   "id": "haiti",
+   "name": "Haitian Revolution",
+   "year": 1791,
+   "tol": 8,
+   "region": "The Americas",
+   "expect": [
+    "unrest",
+    "statehood"
+   ],
+   "match": "Haitian|Saint-Domingue|Haiti"
+  },
+  {
+   "id": "bolivar",
+   "name": "Bolívar liberates New Granada (Boyacá)",
+   "year": 1819,
+   "tol": 6,
+   "region": "The Americas",
+   "expect": [
+    "unrest",
+    "statehood"
+   ],
+   "match": "Boyac[aá]|Bol[ií]var|Gran Colombia"
+  },
+  {
+   "id": "us-civil-war",
+   "name": "American Civil War",
+   "year": 1861,
+   "tol": 2,
+   "region": "The Americas",
+   "expect": [
+    "unrest",
+    "conflict"
+   ],
+   "match": "American Civil War|Civil War"
+  },
+  {
+   "id": "mexican-revolution",
+   "name": "Mexican Revolution",
+   "year": 1910,
+   "tol": 3,
+   "region": "The Americas",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Mexican Revolution"
+  },
+  {
+   "id": "cuban-missile",
+   "name": "Cuban Missile Crisis",
+   "year": 1962,
+   "tol": 1,
+   "region": "The Americas",
+   "expect": [
+    "diplomacy",
+    "conflict"
+   ],
+   "match": "Cuban Missile"
+  },
+  {
+   "id": "olympics",
+   "name": "First Olympic Games",
+   "year": -776,
+   "tol": 30,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "match": "Olympic"
+  },
+  {
+   "id": "marathon",
+   "name": "Persian Wars: Marathon and Thermopylae",
+   "year": -490,
+   "tol": 12,
+   "region": "Europe",
+   "expect": [
+    "conflict"
+   ],
+   "match": "Marathon|Thermopylae|Salamis"
+  },
+  {
+   "id": "caesar-killed",
+   "name": "Julius Caesar assassinated",
+   "year": -44,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "rule",
+    "conflict"
+   ],
+   "match": "Caesar.*(assassinat|murder|kill)|Ides of March|Death of (Julius )?Caesar"
+  },
+  {
+   "id": "roman-empire",
+   "name": "Augustus founds the Roman Empire",
+   "year": -27,
+   "tol": 5,
+   "region": "Europe",
+   "expect": [
+    "statehood",
+    "rule"
+   ],
+   "match": "Octavian becomes Augustus|Augustus.*(Roman Empire|princeps)|Roman Empire.*(begins|founded)"
+  },
+  {
+   "id": "edict-milan",
+   "name": "Constantine and the Edict of Milan",
+   "year": 313,
+   "tol": 15,
+   "region": "Europe",
+   "expect": [
+    "society",
+    "rule"
+   ],
+   "match": "Edict of Milan|Constantine.*(Christian|convert|Milvian)"
+  },
+  {
+   "id": "rome-falls",
+   "name": "Fall of the Western Roman Empire",
+   "year": 476,
+   "tol": 5,
+   "region": "Europe",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Romulus Augustulus|Western Roman Empire|Odoacer"
+  },
+  {
+   "id": "charlemagne-crowned",
+   "name": "Charlemagne crowned emperor",
+   "year": 800,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "rule"
+   ],
+   "match": "Charlemagne"
+  },
+  {
+   "id": "hastings",
+   "name": "Battle of Hastings (Norman Conquest)",
+   "year": 1066,
+   "tol": 3,
+   "region": "Europe",
+   "expect": [
+    "conflict",
+    "territory"
+   ],
+   "match": "Hastings|Norman Conquest"
+  },
+  {
+   "id": "magna-carta",
+   "name": "Magna Carta",
+   "year": 1215,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "match": "Magna Carta"
+  },
+  {
+   "id": "gutenberg",
+   "name": "Gutenberg's printing press",
+   "year": 1455,
+   "tol": 8,
+   "region": "Europe",
+   "expect": [
+    "science"
+   ],
+   "match": "Gutenberg|movable type"
+  },
+  {
+   "id": "luther",
+   "name": "Luther's 95 Theses (Reformation)",
+   "year": 1517,
+   "tol": 3,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "match": "Luther|Ninety-five|95 Theses|Protestant Reformation"
+  },
+  {
+   "id": "westphalia",
+   "name": "Peace of Westphalia",
+   "year": 1648,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "diplomacy"
+   ],
+   "match": "Westphalia"
+  },
+  {
+   "id": "principia",
+   "name": "Newton's Principia",
+   "year": 1687,
+   "tol": 5,
+   "region": "Europe",
+   "expect": [
+    "science"
+   ],
+   "match": "Principia|Newton.*(Principia|laws of motion)"
+  },
+  {
+   "id": "bastille",
+   "name": "French Revolution begins (Bastille)",
+   "year": 1789,
+   "tol": 3,
+   "region": "Europe",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Bastille|French Revolution"
+  },
+  {
+   "id": "russian-revolution",
+   "name": "Russian Revolution",
+   "year": 1917,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Russian Revolution|October Revolution"
+  },
+  {
+   "id": "berlin-wall",
+   "name": "Fall of the Berlin Wall",
+   "year": 1989,
+   "tol": 1,
+   "region": "Europe",
+   "expect": [
+    "unrest"
+   ],
+   "match": "Berlin Wall"
+  },
+  {
+   "id": "ussr-dissolved",
+   "name": "Dissolution of the Soviet Union",
+   "year": 1991,
+   "tol": 1,
+   "region": "Europe",
+   "expect": [
+    "statehood"
+   ],
+   "match": "Soviet Union.*(dissol|collapse)|dissolution of the Soviet"
+  },
+  {
+   "id": "ww1",
+   "name": "World War I",
+   "year": 1914,
+   "tol": 1,
+   "region": "World-wide",
+   "expect": [
+    "conflict"
+   ],
+   "match": "World War I|First World War|Great War"
+  },
+  {
+   "id": "ww2",
+   "name": "World War II",
+   "year": 1939,
+   "tol": 1,
+   "region": "World-wide",
+   "expect": [
+    "conflict"
+   ],
+   "match": "World War II|Second World War"
+  },
+  {
+   "id": "hiroshima",
+   "name": "Atomic bombing of Hiroshima and Nagasaki",
+   "year": 1945,
+   "tol": 1,
+   "region": "World-wide",
+   "expect": [
+    "conflict",
+    "science"
+   ],
+   "match": "Hiroshima|atomic bomb|Nagasaki"
+  },
+  {
+   "id": "united-nations",
+   "name": "United Nations founded",
+   "year": 1945,
+   "tol": 2,
+   "region": "World-wide",
+   "expect": [
+    "diplomacy"
+   ],
+   "match": "United Nations"
+  },
+  {
+   "id": "tordesillas",
+   "name": "Treaty of Tordesillas (the world divided)",
+   "year": 1494,
+   "tol": 3,
+   "region": "World-wide",
+   "expect": [
+    "diplomacy"
+   ],
+   "match": "Tordesillas"
+  },
+  {
+   "id": "magellan",
+   "name": "Magellan's circumnavigation",
+   "year": 1519,
+   "tol": 4,
+   "region": "World-wide",
+   "expect": [
+    "science",
+    "territory"
+   ],
+   "match": "Magellan|circumnavigat"
+  },
+  {
+   "id": "slavery-abolished",
+   "name": "British abolition of slavery",
+   "year": 1833,
+   "tol": 5,
+   "region": "World-wide",
+   "expect": [
+    "society"
+   ],
+   "match": "Slavery Abolition|abolition of slavery"
+  },
+  {
+   "id": "moon-landing",
+   "name": "Moon landing",
+   "year": 1969,
+   "tol": 2,
+   "region": "World-wide",
+   "expect": [
+    "science"
+   ],
+   "match": "Moon landing|Apollo"
+  }
+ ]
+}

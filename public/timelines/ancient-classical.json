@@ -745,9 +745,18 @@
             ]
           },
           "disaster": {
-            "name": "Disaster",
+            "name": "Disasters"
+          },
+          "natural": {
+            "name": "Natural",
             "broader": [
-              "place"
+              "disaster"
+            ]
+          },
+          "human-caused": {
+            "name": "Human-caused",
+            "broader": [
+              "disaster"
             ]
           },
           "conflict": {
@@ -910,6 +919,66 @@
             "name": "Find or earliest record",
             "broader": [
               "archaeology"
+            ]
+          },
+          "eruption": {
+            "name": "Volcanic activity",
+            "broader": [
+              "natural"
+            ]
+          },
+          "earthquake": {
+            "name": "Earthquake or tsunami",
+            "broader": [
+              "natural"
+            ]
+          },
+          "flood": {
+            "name": "Flood",
+            "broader": [
+              "natural"
+            ]
+          },
+          "storm": {
+            "name": "Storm",
+            "broader": [
+              "natural"
+            ]
+          },
+          "drought": {
+            "name": "Drought or crop failure",
+            "broader": [
+              "natural"
+            ]
+          },
+          "epidemic": {
+            "name": "Epidemic",
+            "broader": [
+              "natural"
+            ]
+          },
+          "famine": {
+            "name": "Famine",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "industrial": {
+            "name": "Industrial accident",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "accident": {
+            "name": "Accident or explosion",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "nuclear-test": {
+            "name": "Nuclear test",
+            "broader": [
+              "human-caused"
             ]
           }
         }
@@ -37240,7 +37309,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "drought",
           "sources": [
             {
               "sourceKey": "wp-hattusa",
@@ -38803,7 +38872,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "eruption",
           "sources": [
             {
               "sourceKey": "wp-thera",
@@ -50713,7 +50782,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "drought",
           "sources": [
             {
               "sourceKey": "wp-humid-period",
@@ -52872,7 +52941,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "economy",
           "sources": [
             {
               "sourceKey": "wp-jomon",
@@ -53681,7 +53750,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "revolt",
+          "value": "flood",
           "sources": [
             {
               "sourceKey": "wp-doggerland",
@@ -53733,7 +53802,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "earthquake",
           "sources": [
             {
               "sourceKey": "wp-storegga",
@@ -55527,7 +55596,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "rule",
           "sources": [
             {
               "sourceKey": "wp-pericles",
@@ -55706,7 +55775,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-mausoleum",
@@ -58502,7 +58571,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "disaster",
+          "value": "epidemic",
           "sources": [
             {
               "sourceKey": "wp-plague-justinian",
@@ -65274,7 +65343,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "sack",
+          "value": "eruption",
           "sources": [
             {
               "sourceKey": "wp-cuicuilco",
