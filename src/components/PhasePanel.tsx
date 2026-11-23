@@ -18,7 +18,8 @@ export interface SelectedPhase {
 
 /**
  * A row's phase (or its membership in another row) in the side panel, as an age's or event's details are: its dates,
- * each date's claims with their sources, the events that began and ended it, and its sources. Opened from the
+ * each date's claims with their sources, the events that began and ended it, and any other sources (a membership's own,
+ * or those saying it is still going). Opened from the
  * keyboard on its strip cell; it never moves the chart.
  */
 export function PhasePanel({ phase, data, onClose }: { phase: SelectedPhase; data: Dataset; onClose: () => void }) {
@@ -30,9 +31,11 @@ export function PhasePanel({ phase, data, onClose }: { phase: SelectedPhase; dat
   const eventTitle = (id?: string) => (id ? data.events.find((e) => e.uuid === id)?.title : undefined);
   const began = eventTitle(stored.startEvent);
   const ended = eventTitle(stored.endEvent);
-  // every source it cites: its own (a membership's), its date claims', and those saying it's still going
-  const seen = new Set<string>();
-  const refs = [...('sources' in stored ? stored.sources : []), ...[...startClaims, ...endClaims].flatMap((c) => (c.source ? [c.source] : [])), ...(stored.ongoingSources ?? [])].filter((s) => {
+  // its own sources (a membership's) and those saying it's still going; a date claim's source is shown with its claim
+  // under Dating, so it isn't listed twice
+  const claimed = [...startClaims, ...endClaims].flatMap((c) => (c.source ? [c.source] : []));
+  const seen = new Set(claimed.map((s) => `${s.sourceKey}\n${s.sourceLocation}`));
+  const refs = [...('sources' in stored ? stored.sources : []), ...(stored.ongoingSources ?? [])].filter((s) => {
     const k = `${s.sourceKey}\n${s.sourceLocation}`;
     return seen.has(k) ? false : (seen.add(k), true);
   });
@@ -80,17 +83,19 @@ export function PhasePanel({ phase, data, onClose }: { phase: SelectedPhase; dat
           </ul>
         </section>
       )}
-      <section>
-        <h3>Sources</h3>
-        {refs.length === 0 && <p className="muted">No source listed.</p>}
-        <ul className="sources">
-          {refs.map((s, i) => (
-            <li key={`${s.sourceKey}-${i}`}>
-              <Cite data={data} s={s} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      {(refs.length > 0 || claimed.length === 0) && (
+        <section>
+          <h3>Sources</h3>
+          {refs.length === 0 && <p className="muted">No source listed.</p>}
+          <ul className="sources">
+            {refs.map((s, i) => (
+              <li key={`${s.sourceKey}-${i}`}>
+                <Cite data={data} s={s} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </DetailsFrame>
   );
 }
