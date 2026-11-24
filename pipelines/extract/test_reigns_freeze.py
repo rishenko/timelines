@@ -147,6 +147,13 @@ class Guards(unittest.TestCase):
         DS['tracks'].append({'id': 'rome2', 'name': 'Roman Empire'})
         self.assertTrue(self.go('av2', 'Roman emperor in the West', row='rome2', start=455, end=456)[0])  # "in the West" is a half of the empire, kept (the direction guard handles the row)
 
+    def test_13b_despot_is_a_head_of_state_where_the_row_is_a_despotate(self):  # Despot of Epirus on the Despotate of Epirus; Despot of Serbia on Serbia
+        DS['tracks'] += [{'id': 'epirus', 'name': 'Despotate of Epirus'}, {'id': 'serbia', 'name': 'Serbia', 'phases': [{'name': 'Serbian Despotate'}]}]
+        self.assertTrue(self.go('de', 'Despot of Epirus', row='epirus')[0])
+        self.assertTrue(self.go('ds2', 'Despot of Serbia', row='serbia')[0])
+        self.assertFalse(self.go('dm', 'Despot of the Morea', row='epirus')[0])  # another polity's despot: excluded
+        self.assertFalse(self.go('et', 'Byzantine emperor in Thessalonica', row='epirus')[0])
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 

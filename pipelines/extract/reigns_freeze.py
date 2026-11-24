@@ -182,7 +182,7 @@ def inputs_of(d):
 FIELDS = {}  # uuid -> the infobox field
 OFFICES = {}  # uuid -> the office text of the placed ruler (kept out of the review file, whose bytes must not change)
 CHRON = re.compile(r'\((?:high|low|middle|mc|short|long|ultra[- ]?\w+|ac)\b[^)]*\)|chronolog', re.I)
-GENERIC_ROW = {'kingdom', 'duchy', 'empire', 'republic', 'state', 'states', 'principality', 'union', 'dynasty', 'caliphate', 'sultanate', 'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate'}
+GENERIC_ROW = {'kingdom', 'duchy', 'despotate', 'empire', 'republic', 'state', 'states', 'principality', 'union', 'dynasty', 'caliphate', 'sultanate', 'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate'}
 
 
 COLONIAL = re.compile(r'colon|protectorate|east indies|west indies|settlement|mandate|trust territory|occupation|dominion|territory|presidency|crown rule|british rule|company rule', re.I)
@@ -232,7 +232,9 @@ def wrong_kind(e, r, office, track):
     office = ' ; '.join(offices)
     if CONSORT.search(office):
         return 'consort (not a ruler)'
-    if re.search(r'\b(emperor|king|prince|duke|ruler|lord)\s+in\s+(?!the\b)[A-Z]|\b(despot|appanage|tributary)\b', office):
+    own = row_words(track, colonial=False) if track else set()  # the row's own words: "Despot of Epirus" on the Despotate of Epirus is the head of state
+    names_row = any(tok[:4] == w[:4] for tok in re.findall(r'[a-zà-ÿ]{4,}', re.sub(r'\([^)]*\)', ' ', office).lower()) for w in own)
+    if (re.search(r'\b(emperor|king|prince|duke|ruler|lord)\s+in\s+(?!the\b)[A-Z]', office) or (re.search(r'\b(despot|appanage|tributary)\b', office, re.I) and not names_row)):
         return "a subordinate or regional title (despot, appanage, 'emperor in Thessalonica'), not the realm's own reign"
     head = bool(HEAD.search(office))
     if NONHEAD.search(office) and not head:
