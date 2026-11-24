@@ -114057,7 +114057,8 @@
         "sweden",
         "polish-lithuanian-commonwealth",
         "denmark-norway",
-        "russia"
+        "russia",
+        "europe"
       ],
       "sources": [
         {
@@ -138982,7 +138983,8 @@
         "paraguay",
         "brazil",
         "argentina",
-        "uruguay"
+        "uruguay",
+        "south-america"
       ],
       "sources": [
         {
@@ -145300,7 +145302,8 @@
         "uganda",
         "burundi",
         "zimbabwe",
-        "namibia"
+        "namibia",
+        "africa"
       ],
       "sources": [
         {

@@ -572,7 +572,9 @@
       "title": "Paraguayan War",
       "sub": "war",
       "countries": [],
-      "note": "placed by the conflicts rule from its main combatants"
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "south-america",
+      "wide_by": "mass involvement across the region: \"Total: 150,000–500,000 dead\"; four states, all in South America (Kevin, 2026-11-24)"
     },
     {
       "title": "Mahdist War",
@@ -598,7 +600,9 @@
       "title": "Great Northern War",
       "sub": "war",
       "countries": [],
-      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "europe",
+      "wide_by": "mass involvement across the region: peak strength 100,000 vs 200,000; \"1,000,000+ total deaths with Sweden alone suffering 350,000 deaths\"; nine states in four regions (Kevin, 2026-11-24)"
     },
     {
       "title": "American Revolutionary War",
@@ -654,7 +658,9 @@
       "title": "Second Congo War",
       "sub": "war",
       "countries": [],
-      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "africa",
+      "wide_by": "mass involvement across the region: \"drew in nine African nations and approximately 25 armed groups\"; \"an estimated 5.4 million deaths\" (Kevin, 2026-11-24)"
     },
     {
       "title": "Gempei War",
