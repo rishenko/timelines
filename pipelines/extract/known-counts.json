@@ -69,13 +69,10 @@
     "quote": "The eponymous Ottoman dynasty he founded endured for six centuries through the reigns of 36 sultans.",
     "dump": "enwiki-20261101"
    },
-   "notCounted": {
-    "Cem Sultan": "claimant in the succession struggle, never sultan",
-    "Musa Çelebi": "claimant of the Ottoman Interregnum, not in the list of sultans",
-    "İsa Çelebi": "claimant of the Ottoman Interregnum, not in the list of sultans",
-    "Süleyman Çelebi": "claimant of the Ottoman Interregnum, not in the list of sultans",
-    "Abdülmecid II": "last caliph only; the sultanate was abolished in 1922"
-   }
+   "titles": [
+    "Reign of"
+   ],
+   "note": "Claimants are titled 'Claim of …' and the last caliph is off the row (Architect, 2026-11-23), so the sultans are the 'Reign of' events"
   },
   {
    "id": "fatimid-caliphs",
