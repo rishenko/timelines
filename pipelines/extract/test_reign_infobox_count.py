@@ -44,6 +44,13 @@ class Compare(unittest.TestCase):
         self.assertEqual(C.compare(got, mine, 'uk')[0], [])
         self.assertEqual([t[0] for t in C.compare(got, mine, 'canada')[0]], ['reign3'])
 
+    def test_a_dual_dated_block_is_read_only_when_the_ce_year_was_parsed(self):
+        c = carried(1729)
+        self.assertEqual(C.compare([term('reign', 1729), term('reign2', 750, text='750 LE (1388/89 CE)')], c), ([], []))  # Thong Lan: parsed the Lanna year
+        self.assertEqual(C.compare([term('reign', 1729), term('reign2', 788, text='1386/7 – 1402/3 CE (788 – 805 – AH)')], c), ([], []))
+        same, _ = C.compare([term('reign', 1729), term('reign2', 1036, text="13 June 1036 (15 Sha'ban 427 AH)")], c)
+        self.assertEqual([t[0] for t in same], ['reign2'])
+
     def test_local_era_blocks_are_skipped(self):
         self.assertEqual(C.compare([term('reign', 1729), term('reign2', 227, text='227 - 232 AH')], carried(1729)), ([], []))
 

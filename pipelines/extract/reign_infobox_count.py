@@ -69,14 +69,20 @@ def norm_succ(t):
 LOCAL_ERA = re.compile(r'\b(AH|LE|BE|CS|ME|AM|SE)\b')
 
 
+def local_start(t):
+    """True when the block's parsed start year is a local-era number: it sits in an era clause outside brackets ("750 LE (1388/89 CE)", "788 – 805 AH"),
+    not a CE year with the era beside it in brackets ("13 June 1036 (15 Sha'ban 427 AH)")."""
+    return bool(re.search(rf'\b{abs(t[1])}\b[^()]*?\b(AH|LE|BE|CS|ME|AM|SE)\b', t[3]))
+
+
 def compare(got, mine, row=None):
     """(same-office, unknown-office) lists of the infobox terms no committed reign of the person matches. got: terms_of(); mine:
     [(uuid, row, person, start year, cited field)]. A term matches a reign that starts within a year of it, on any row (a term the
     person's other row carries is not missing). The office is the row's own: with row given, only the succession texts of the blocks that
-    row's reigns cite count. A block dated in a local era (AH, LE, BE…) is skipped unless it also gives a CE/AD date."""
+    row's reigns cite count. A block dated in a local era (AH, LE, BE…) is skipped when its parsed start is the local-era year."""
     starts = {m[3] for m in mine}
     carried_succ = {t[4] for t in got if t[0] in {m[4] for m in mine if row is None or m[1] == row} and t[4]}
-    missing = [t for t in got if not any(abs(t[1] - s) <= 1 for s in starts) and not (LOCAL_ERA.search(t[3]) and not re.search(r'\b(CE|AD|C\.E\.)', t[3]))]
+    missing = [t for t in got if not any(abs(t[1] - s) <= 1 for s in starts) and not local_start(t)]
     return ([t + ('same office',) for t in missing if t[4] and t[4] in carried_succ], [t + ('succession unknown',) for t in missing if not t[4]])
 
 
