@@ -13,7 +13,8 @@ import {
   reservedIds,
   type TimelineChoice,
 } from './state/timelines.ts';
-import { parseUpload } from './state/dataset.ts';
+import { parseUpload, uploadError } from './state/dataset.ts';
+import { newerMinor } from './data/migrate.ts';
 import { goToTimeline } from './state/url.ts';
 import { applyTheme, loadTheme, rememberThemeHint } from './lib/theme.ts';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
@@ -164,7 +165,7 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
     // IndexedDB no longer has, fetched again from its link
     const entry = choice.library;
     try {
-      if (!entry.sourceUrl) throw new Error('its saved copy is gone from this browser and it has no link to fetch it again.');
+      if (!entry.sourceUrl) throw new Error('its saved copy is missing or unreadable in this browser, and it has no link to fetch it again.');
       const fresh = sessionCopy(entry) ?? (await fetchTimeline(entry.sourceUrl, fetchImpl));
       published = { ...fresh, meta: { ...fresh.meta, id: entryId(entry) } };
       updateSummary(published); // the picker's title and description follow the timeline just read
@@ -179,7 +180,10 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
   // the reader's saved theme, else this timeline's own (the list's entry may have lacked it); remembered for next time
   applyTheme(loadTheme(published.meta.defaultTheme).colors);
   rememberThemeHint(id, published.meta.defaultTheme);
-  return { kind: 'ready', published, library: choice.library, site, notice };
+  // the newer-format notice (core 1.0, rule 1) from the timeline itself, so it shows however it was reached: file, link, shared list,
+  // the library, a re-check, or the site's own files (a toast set before a page load is gone after it)
+  const newer = newerMinor(published);
+  return { kind: 'ready', published, library: choice.library, site, notice: [notice, newer].filter(Boolean).join(' ') || undefined };
 }
 
 /** Fetches a shared list again and saves it if it changed; true if it did. Unreachable: false (the saved copy stays). */
@@ -229,7 +233,7 @@ function Welcome({ site, fetchImpl }: { site: TimelineIndexEntry[]; fetchImpl: t
         onAddUrl={async (raw) => goToTimeline(await addFromLink(raw, site, fetchImpl))}
         onAddFile={async (file) => {
           const { dataset, errors } = parseUpload(await file.text());
-          if (!dataset) throw new Error(`Couldn't load ${file.name}: ${errors[0]}`);
+          if (!dataset) throw new Error(uploadError(file.name, errors));
           goToTimeline((await addToLibrary(dataset, { reservedIds: reservedIds(site) })).dataset.meta.id);
         }}
         onRefresh={async () => {}}

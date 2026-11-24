@@ -5320,6 +5320,36 @@
    ]
   },
   {
+   "uuid": "reign-coloman-king-of-hungary-croatia",
+   "title": "Reign of Coloman, King of Hungary",
+   "start": 1096,
+   "end": 1116,
+   "endMonth": 2,
+   "endDay": 3,
+   "tracks": [
+    "croatia"
+   ],
+   "descr": "Rules as head of state of Croatia from 1096 to 3 February 1116 (20 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-coloman-king-of-hungary",
+     "sourceLocation": "infobox reign: 1096 – 3 February 1116"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-coloman-king-of-hungary",
+       "sourceLocation": "infobox reign: 1096 – 3 February 1116"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "reign-stephen-ii-of-hungary-croatia",
    "title": "Reign of Stephen II of Hungary",
    "start": 1116,
@@ -6078,6 +6108,38 @@
       {
        "sourceKey": "wp-w-adys-aw-iii-of-poland",
        "sourceLocation": "infobox reign2: 1440 – 1444"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-ladislaus-the-posthumous-croatia",
+   "title": "Reign of Ladislaus the Posthumous",
+   "start": 1440,
+   "startMonth": 2,
+   "startDay": 22,
+   "end": 1457,
+   "endMonth": 11,
+   "endDay": 23,
+   "tracks": [
+    "croatia"
+   ],
+   "descr": "Rules as head of state of Croatia from 22 February 1440 to 23 November 1457 (17 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-ladislaus-the-posthumous",
+     "sourceLocation": "infobox reign: 22 February 1440 – 23 November 1457"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-ladislaus-the-posthumous",
+       "sourceLocation": "infobox reign: 22 February 1440 – 23 November 1457"
       }
      ]
     }
@@ -54506,10 +54568,11 @@
   {
    "uuid": "reign-thong-lan-thailand",
    "title": "Reign of Thong Lan",
+   "start": 1388,
    "tracks": [
     "thailand"
    ],
-   "descr": "Rules as head of state of Thailand (Ayutthaya) from 750 to 1388 (638 years).",
+   "descr": "Rules as head of state of Thailand (Ayutthaya) for seven days in 1388/89.",
    "sources": [
     {
      "sourceKey": "wp-thong-lan",
@@ -54528,8 +54591,7 @@
      ]
     }
    ],
-   "start": 750,
-   "end": 1388
+   "end": 1389
   },
   {
    "uuid": "reign-ramrachathirat-thailand",
@@ -64338,16 +64400,6 @@
     "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
    ]
   },
-  "reign-coloman-king-of-hungary": {
-   "row": "croatia",
-   "person": "Coloman, King of Hungary",
-   "qid": "Q83066",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary; polity: Croatia in personal union with Hungary",
-   "cited": "Coloman, King of Hungary",
-   "toCheck": [
-    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
-   ]
-  },
   "reign-henry-ii-of-austria": {
    "row": "croatia",
    "person": "Henry II of Austria",
@@ -64444,16 +64496,6 @@
    "qid": "Q313179",
    "route": "list: List of rulers of Austria",
    "cited": "William, Duke of Austria",
-   "toCheck": [
-    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
-   ]
-  },
-  "reign-ladislaus-the-posthumous": {
-   "row": "croatia",
-   "person": "Ladislaus the Posthumous",
-   "qid": "Q116382",
-   "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; list: List of rulers of Austria; office: King of Hungary",
-   "cited": "Ladislaus the Posthumous",
    "toCheck": [
     "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
    ]
@@ -81850,6 +81892,16 @@
    "cited": "Stephen II of Croatia",
    "toCheck": []
   },
+  "reign-coloman-king-of-hungary-croatia": {
+   "row": "croatia",
+   "person": "Coloman, King of Hungary",
+   "qid": "Q83066",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary; polity: Croatia in personal union with Hungary",
+   "cited": "Coloman, King of Hungary",
+   "toCheck": [
+    "Wikidata differs: 29 July 1095 – 3 February 1116"
+   ]
+  },
   "reign-stephen-ii-of-hungary-croatia": {
    "row": "croatia",
    "person": "Stephen II of Hungary",
@@ -82044,6 +82096,14 @@
    "qid": "Q54053",
    "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
    "cited": "Władysław III of Poland",
+   "toCheck": []
+  },
+  "reign-ladislaus-the-posthumous-croatia": {
+   "row": "croatia",
+   "person": "Ladislaus the Posthumous",
+   "qid": "Q116382",
+   "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; list: List of rulers of Austria; office: King of Hungary",
+   "cited": "Ladislaus the Posthumous",
    "toCheck": []
   },
   "reign-matthias-corvinus-croatia": {
@@ -97859,7 +97919,7 @@
  "inputs": {
   "rulers.csv": "87cf1e8be49222d5",
   "rulers-events.json": "21519636c8fb4b26",
-  "reigns-excluded.json": "88549953f16f1c90",
+  "reigns-excluded.json": "b8212031d1fc7cb4",
   "reigns-claims.json": "b24f6b32332152a9",
   "location-tidy": "2",
   "wikipedia": "enwiki-20261101"

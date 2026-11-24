@@ -159,3 +159,36 @@ describe('editor keeps fields it does not know', () => {
     expect(saved).toEqual(withoutEdited(e));
   });
 });
+
+// found by the full round trip on the real data (#213): an end on the start's own date, and an explicit importance 2, were dropped on an unchanged save
+describe('editor keeps an end on the start\'s own date and an explicit importance 2', () => {
+  const data = everyField as Dataset;
+  const save = async (e: Dataset['events'][number]) => {
+    const onSave = vi.fn();
+    render(<EventForm initial={e} isNew={false} data={data} onSave={onSave} onCancel={() => {}} onCreateTrack={() => {}} onCreateSource={() => {}} />);
+    const saved = (await submit('Save changes', onSave)) as typeof e;
+    cleanup();
+    return saved;
+  };
+  const plain = () => {
+    // a copy of a fixture event under its own id, so no phase or span hangs on its dates
+    const e = data.events.find((x) => x.end === undefined && !x.ongoing && x.tracks.length)!;
+    return { ...e, uuid: 'roundtrip-plain', title: 'A plain event', importance: undefined, endDates: undefined } as Dataset['events'][number];
+  };
+  it('a reign whose end is its start year keeps the end', async () => {
+    const p = plain();
+    expect((await save({ ...p, startMonth: undefined, startDay: undefined, end: p.start })).end).toBe(p.start); // years only, as Kittisena (524) and Yunus Pasha (1517)
+  });
+  it('a one-day span keeps its end month and day', async () => {
+    const p = plain();
+    const saved = await save({ ...p, end: p.start, endMonth: p.startMonth, endDay: p.startDay });
+    expect([saved.end, saved.endMonth, saved.endDay]).toEqual([p.start, p.startMonth, p.startDay]);
+  });
+  it('an event with no end still gets none', async () => {
+    expect((await save(plain())).end).toBeUndefined();
+  });
+  it('an explicit importance 2 stays; none stays none', async () => {
+    expect((await save({ ...plain(), importance: 2 })).importance).toBe(2);
+    expect((await save(plain())).importance).toBeUndefined();
+  });
+});

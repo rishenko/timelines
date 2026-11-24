@@ -1,5 +1,5 @@
 {
-  "note": "Reigns the rulers pass finds on a row where they do not belong, left out by reigns_freeze.py and listed in the provenance file (skipped). Each is a reader-visible error found by hand; the cause is in the why. A key 'Person@YYYY' leaves out only the term starting that year.",
+  "note": "Reigns the rulers pass finds on a row where they do not belong, left out by reigns_freeze.py and listed in the provenance file (skipped). Each is a reader-visible error found by hand; the cause is in the why. A key 'Person@YYYY' leaves out only the term starting that year. The top-level 'keep' lists reviewed reigns the freeze guards must not hold (same keys).",
   "modern-states": {
     "dominican-republic": {
       "Alexandre Pétion": "President of Haiti 1807-1818, before Haiti ruled Santo Domingo (1822-1844)",
@@ -196,6 +196,9 @@
       "Zhou Ziqi": "not a local ruler of Taiwan before 1945 (Kevin 2026-11-24: only local rulers; Tungning 1661–1683 and the Republic of Formosa 1895 stay)",
       "Yan Xishan@1949": "his infobox term is Premier of the Republic of China, not the presidency (another office's term)"
     },
+    "thailand": {
+      "Ngua Nam Thum": "infobox reign 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE): a 14th-century Sukhothai reign, Medieval's, left for the Medieval rulers run"
+    },
     "afghanistan": {
       "Yusuf Banuri@1973": "head of a Pakistani religious board, not an Afghan office"
     },
@@ -245,7 +248,8 @@
       "William Morrison, 1st Viscount Dunrossil@1960": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
       "William Sidney, 1st Viscount De L'Isle@1961": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
       "William Slim, 1st Viscount Slim@1953": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
-      "Zelman Cowen@1977": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+      "Zelman Cowen@1977": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William IV@1830": "King of the United Kingdom 1830–37, when Australia was a set of colonies: realms keep their monarch, colonies don't (Kevin 2026-11-24; the Architect's review of #205)"
     },
     "austria": {
       "Ferdinand IV, King of the Romans@1647": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
@@ -537,13 +541,11 @@
       "Albert II of Austria@1330": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Andrew I of Hungary@1046": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
       "Béla I of Hungary@1060": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
-      "Coloman, King of Hungary@1096": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
       "Frederick II of Austria@1230": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Frederick the Fair@1308": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Géza I of Hungary@1074": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
       "Henry II of Austria@1141": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Ladislaus I of Hungary@1077": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
-      "Ladislaus the Posthumous@1440": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Leopold II, Margrave of Austria@1075": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Leopold V, Duke of Austria@1177": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Leopold VI of Austria@1198": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
@@ -666,6 +668,13 @@
     },
     "umayyad-cordoba": {
       "Abd al-Malik ibn Umar ibn Marwan@756": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    }
+  },
+  "keep": {
+    "medieval": {
+      "croatia": {
+        "Ladislaus the Posthumous@1440": "King of Hungary and Croatia 1440–57 (his infobox office reads Duke of Austria): a real king of Croatia (the Architect's review of #205)"
+      }
     }
   }
 }

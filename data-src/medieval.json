@@ -40207,6 +40207,14 @@
         "wikipedia"
       ]
     },
+    "wp-chinampa": {
+      "name": "Chinampa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chinampa",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-dresden-codex": {
       "name": "Dresden Codex (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Dresden_Codex",
@@ -62218,7 +62226,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-basil-onomagoulos",
@@ -63730,7 +63738,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-basil-ii",
@@ -64173,7 +64181,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-andronikos-doukas-co-emperor",
@@ -64805,7 +64813,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-constantine-laskaris",
@@ -65618,7 +65626,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-constantine-xi-palaiologos",
@@ -66525,7 +66533,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-belo",
@@ -66997,6 +67005,36 @@
             {
               "sourceKey": "wp-stephen-ii-of-croatia",
               "sourceLocation": "infobox reign: 1089–1090/91"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-coloman-king-of-hungary-croatia",
+      "title": "Reign of Coloman, King of Hungary",
+      "start": 1096,
+      "end": 1116,
+      "endMonth": 2,
+      "endDay": 3,
+      "tracks": [
+        "croatia"
+      ],
+      "descr": "Rules as head of state of Croatia from 1096 to 3 February 1116 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-coloman-king-of-hungary",
+          "sourceLocation": "infobox reign: 1096 – 3 February 1116"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-coloman-king-of-hungary",
+              "sourceLocation": "infobox reign: 1096 – 3 February 1116"
             }
           ]
         }
@@ -67761,6 +67799,38 @@
             {
               "sourceKey": "wp-w-adys-aw-iii-of-poland",
               "sourceLocation": "infobox reign2: 1440 – 1444"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ladislaus-the-posthumous-croatia",
+      "title": "Reign of Ladislaus the Posthumous",
+      "start": 1440,
+      "startMonth": 2,
+      "startDay": 22,
+      "end": 1457,
+      "endMonth": 11,
+      "endDay": 23,
+      "tracks": [
+        "croatia"
+      ],
+      "descr": "Rules as head of state of Croatia from 22 February 1440 to 23 November 1457 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ladislaus-the-posthumous",
+          "sourceLocation": "infobox reign: 22 February 1440 – 23 November 1457"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ladislaus-the-posthumous",
+              "sourceLocation": "infobox reign: 22 February 1440 – 23 November 1457"
             }
           ]
         }
@@ -71139,7 +71209,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mojmir-i-of-moravia",
@@ -71194,7 +71264,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-slavomir-of-moravia",
@@ -72871,7 +72941,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-g-za-grand-prince-of-the-hungarians",
@@ -74254,7 +74324,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-boles-aw-i-the-brave",
@@ -75516,7 +75586,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-k-stutis",
@@ -76723,7 +76793,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-giovanni-ii-participazio",
@@ -80285,7 +80355,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nepotian-of-asturias",
@@ -82211,7 +82281,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ramiro-ii-of-aragon",
@@ -91431,7 +91501,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-magnus-the-strong",
@@ -95815,7 +95885,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-frederick-ii-holy-roman-emperor",
@@ -98240,7 +98310,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-abd-al-malik-ii-samanid-emir",
@@ -101006,7 +101076,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-shah-temur",
@@ -101320,7 +101390,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-abu-l-khayr-khan",
@@ -101715,7 +101785,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hayder-of-crimea",
@@ -103498,7 +103568,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-praudha-raya",
@@ -103585,7 +103655,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-thimma-bhupala",
@@ -103783,7 +103853,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-unhanagara-hatthadatha",
@@ -104695,7 +104765,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mahinda-vi",
@@ -104751,7 +104821,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-vira-bahu-i",
@@ -104778,7 +104848,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-vikramabahu-ii",
@@ -104952,7 +105022,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-anikanga",
@@ -105267,7 +105337,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bhuvanekabahu-iii",
@@ -105294,7 +105364,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-parakramabahu-iv",
@@ -109765,7 +109835,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-emperor-mo-of-jin",
@@ -111236,7 +111306,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-emperor-mo-of-jin",
@@ -112061,7 +112131,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-sinmu-of-silla",
@@ -112233,7 +112303,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-jeonggang-of-silla",
@@ -112810,7 +112880,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-prince-tomo",
@@ -115065,7 +115135,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-jye-h-ry",
@@ -116219,10 +116289,11 @@
     {
       "uuid": "reign-thong-lan-thailand",
       "title": "Reign of Thong Lan",
+      "start": 1388,
       "tracks": [
         "thailand"
       ],
-      "descr": "Rules as head of state of Thailand (Ayutthaya) from 750 to 1388 (638 years).",
+      "descr": "Rules as head of state of Thailand (Ayutthaya) for seven days in 1388/89.",
       "sources": [
         {
           "sourceKey": "wp-thong-lan",
@@ -116241,8 +116312,7 @@
           ]
         }
       ],
-      "start": 750,
-      "end": 1388
+      "end": 1389
     },
     {
       "uuid": "reign-ramrachathirat-thailand",
@@ -116575,7 +116645,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nang-keo-phimpha",
@@ -118117,7 +118187,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ishaq-ibn-ali",
@@ -118349,7 +118419,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-kassa-mansa",
@@ -118522,7 +118592,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-uli-ii",
@@ -118668,7 +118738,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-quinanga-of-kongo",
@@ -118724,7 +118794,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nkuwu-a-ntinu-of-kongo",
@@ -119256,7 +119326,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-eleni-of-ethiopia",
@@ -119835,7 +119905,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hunzah-a",
@@ -120545,7 +120615,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-prince-moriyoshi",
@@ -121889,6 +121959,16 @@
       "memberships": [
         {
           "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-pope-theodore-ii",
+              "sourceLocation": "infobox term_start: December 897 – December 897"
+            }
+          ]
+        },
+        {
+          "facet": "category",
           "value": "religion",
           "sources": [
             {
@@ -121999,6 +122079,16 @@
       ],
       "importance": 3,
       "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-pope-leo-v",
+              "sourceLocation": "infobox term_start: Second half of 903 – Second half of 903"
+            }
+          ]
+        },
         {
           "facet": "category",
           "value": "religion",
@@ -131099,7 +131189,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-king-of-italy",
@@ -131889,6 +131979,39 @@
           ]
         }
       ]
+    },
+    {
+      "uuid": "chinampa-agriculture",
+      "title": "Chinampa fields, the earliest securely dated",
+      "descr": "The earliest securely dated chinampas, the raised fields of Mesoamerican agriculture, are from the Middle Postclassic period, 1150–1350 CE.",
+      "start": 1150,
+      "end": 1350,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-chinampa",
+          "sourceLocation": "History: \"The earliest fields that have been securely dated are from the Middle Postclassic period, 1150–1350 CE\""
+        },
+        {
+          "sourceKey": "wp-chinampa",
+          "sourceLocation": "lead: \"is a technique used in Mesoamerican agriculture\""
+        }
+      ],
+      "tracks": [
+        "mesoamerica"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-chinampa",
+              "sourceLocation": "History: \"The earliest fields that have been securely dated are from the Middle Postclassic period, 1150–1350 CE\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "redirects": {
@@ -131912,7 +132035,6 @@
     "reign-charles-iii-of-naples-czechia": null,
     "reign-charles-the-fat-france": null,
     "reign-cnut-sweden": null,
-    "reign-coloman-king-of-hungary-croatia": null,
     "reign-coloman-king-of-hungary-czechia": null,
     "reign-conrad-i-of-germany-france": null,
     "reign-emeric-king-of-hungary-czechia": null,
@@ -131951,7 +132073,6 @@
     "reign-ladislaus-iii-of-hungary-czechia": null,
     "reign-ladislaus-iv-of-hungary-czechia": null,
     "reign-ladislaus-of-naples-czechia": null,
-    "reign-ladislaus-the-posthumous-croatia": null,
     "reign-leopold-ii-margrave-of-austria-croatia": null,
     "reign-leopold-ii-margrave-of-austria-czechia": null,
     "reign-leopold-v-duke-of-austria-croatia": null,

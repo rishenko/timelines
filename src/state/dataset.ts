@@ -55,6 +55,22 @@ export function datasetReducer(state: DatasetState, action: DatasetAction): Data
 }
 
 /**
+ * Stores a whole file uploaded for another of the site's timelines as that timeline's draft (format `replace`). A file past the
+ * browser's storage limit (about 5 MB for the whole site; Modern States alone is 9 MB) can't be kept: throws an Error that says so,
+ * instead of the browser's raw quota error, and leaves any draft already stored as it was.
+ */
+export function saveReplaceDraft(id: string, dataset: Dataset, title: string, store: Pick<Storage, 'setItem'> = localStorage) {
+  try {
+    store.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
+  } catch {
+    throw new Error(
+      `This file is too large to keep in this browser as a replacement for "${title}" (about 5 MB is available for the whole site). ` +
+        `Nothing was changed. Remove timelines or edits you no longer need and try again, or add the file as a timeline of its own from a link.`,
+    );
+  }
+}
+
+/**
  * Turns whatever is stored for a timeline into the reader's dataset. Three stored forms:
  * - `{ format: 'changes' }` (current): the reader's changes, replayed onto today's published data;
  * - `{ format: 'replace', data }`: a whole file uploaded for this timeline from another one (see useLibraryActions), applied in
@@ -148,6 +164,10 @@ export function useDataset(published: Dataset) {
   }, [state]);
   return [state, dispatch, unsaved] as const;
 }
+
+/** The message for a file that isn't a valid timeline: the first problem, and how many more there are. */
+export const uploadError = (name: string, errors: string[]) =>
+  `Couldn't load ${name}: ${errors[0]}${errors.length > 1 ? ` (+${errors.length - 1} more; see console)` : ''}`;
 
 /** Parses and validates an uploaded file. */
 export function parseUpload(text: string): { dataset?: Dataset; errors: string[]; notice?: string } {

@@ -87300,34 +87300,6 @@
    ]
   },
   {
-   "uuid": "reign-ban-mueang-thailand",
-   "title": "Reign of Ban Mueang",
-   "start": 1822,
-   "tracks": [
-    "thailand"
-   ],
-   "descr": "Rules as head of state of Thailand from 1822.",
-   "sources": [
-    {
-     "sourceKey": "wp-ban-mueang",
-     "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ban-mueang",
-       "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-rama-iii-thailand",
    "title": "Reign of Rama III",
    "start": 1824,
@@ -87418,33 +87390,6 @@
       {
        "sourceKey": "wp-chulalongkorn",
        "sourceLocation": "infobox reign: 1 October 1868 – 23 October 1910"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ngua-nam-thum-thailand",
-   "title": "Reign of Ngua Nam Thum",
-   "start": 1890,
-   "tracks": [
-    "thailand"
-   ],
-   "descr": "Rules as head of state of Thailand from 1890.",
-   "sources": [
-    {
-     "sourceKey": "wp-ngua-nam-thum",
-     "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ngua-nam-thum",
-       "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
       }
      ]
     }
@@ -151158,38 +151103,6 @@
    "ongoing": true
   },
   {
-   "uuid": "reign-william-iv-australia",
-   "title": "Reign of William IV",
-   "start": 1830,
-   "startMonth": 6,
-   "startDay": 26,
-   "end": 1837,
-   "endMonth": 6,
-   "endDay": 20,
-   "tracks": [
-    "australia"
-   ],
-   "descr": "Rules as head of state of Australia from 26 June 1830 to 20 June 1837 (7 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-william-iv",
-     "sourceLocation": "infobox reign: 26 June 1830 – 20 June 1837"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-william-iv",
-       "sourceLocation": "infobox reign: 26 June 1830 – 20 June 1837"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-george-vi-australia",
    "title": "Reign of George VI",
    "start": 1936,
@@ -161097,6 +161010,26 @@
     "not imported, office is not head of state: List of kings of Cambodia"
    ]
   },
+  "reign-ban-mueang": {
+   "row": "thailand",
+   "person": "Ban Mueang",
+   "qid": "Q2881860",
+   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
+   "cited": "Ban Mueang",
+   "toCheck": [
+    "not imported, the source dates it in a local era and gives no CE start: c. ? – c. 1822 BE (1279/80 CE)"
+   ]
+  },
+  "reign-ngua-nam-thum": {
+   "row": "thailand",
+   "person": "Ngua Nam Thum",
+   "qid": "Q3510561",
+   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
+   "cited": "Ngua Nam Thum",
+   "toCheck": [
+    "not imported, wrong row: infobox reign 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE): a 14th-century Sukhothai reign, Medieval's, left for the Medieval rulers run"
+   ]
+  },
   "reign-devan-nair": {
    "row": "singapore",
    "person": "Devan Nair",
@@ -162355,6 +162288,16 @@
    "cited": "'Mamohato Bereng Seeiso",
    "toCheck": [
     "not imported, wrong row: a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+   ]
+  },
+  "reign-william-iv-8": {
+   "row": "australia",
+   "person": "William IV",
+   "qid": "Q130822",
+   "route": "list: Monarchy of Australia; polity: Van Diemen's Land",
+   "cited": "William IV",
+   "toCheck": [
+    "not imported, wrong row: King of the United Kingdom 1830–37, when Australia was a set of colonies: realms keep their monarch, colonies don't (Kevin 2026-11-24; the Architect's review of #205)"
    ]
   },
   "reign-george-bowen": {
@@ -167102,14 +167045,6 @@
   "wp-bamir-topi": {
    "name": "Bamir Topi (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Bamir_Topi",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-ban-mueang": {
-   "name": "Ban Mueang (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Ban_Mueang",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -185758,14 +185693,6 @@
   "wp-ngo-dinh-diem": {
    "name": "Ngo Dinh Diem (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Ngo_Dinh_Diem",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-ngua-nam-thum": {
-   "name": "Ngua Nam Thum (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Ngua_Nam_Thum",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -218046,16 +217973,6 @@
    "cited": "Rama II",
    "toCheck": []
   },
-  "reign-ban-mueang-thailand": {
-   "row": "thailand",
-   "person": "Ban Mueang",
-   "qid": "Q2881860",
-   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
-   "cited": "Ban Mueang",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
-  },
   "reign-rama-iii-thailand": {
    "row": "thailand",
    "person": "Rama III",
@@ -218079,16 +217996,6 @@
    "route": "list: List of Thai monarchs; office: King of Thailand; polity: Rattanakosin Kingdom (1782–1932); polity: Thailand",
    "cited": "Chulalongkorn",
    "toCheck": []
-  },
-  "reign-ngua-nam-thum-thailand": {
-   "row": "thailand",
-   "person": "Ngua Nam Thum",
-   "qid": "Q3510561",
-   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
-   "cited": "Ngua Nam Thum",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
   },
   "reign-vajiravudh-thailand": {
    "row": "thailand",
@@ -234413,14 +234320,6 @@
     "open end read as incumbent"
    ]
   },
-  "reign-william-iv-australia": {
-   "row": "australia",
-   "person": "William IV",
-   "qid": "Q130822",
-   "route": "list: Monarchy of Australia; polity: Van Diemen's Land",
-   "cited": "William IV",
-   "toCheck": []
-  },
   "reign-george-vi-australia": {
    "row": "australia",
    "person": "George VI",
@@ -236099,7 +235998,7 @@
  "inputs": {
   "rulers.csv": "22579128aef6de5c",
   "rulers-events.json": "71b28aac4050d80a",
-  "reigns-excluded.json": "88549953f16f1c90",
+  "reigns-excluded.json": "b8212031d1fc7cb4",
   "reigns-claims.json": "b24f6b32332152a9",
   "location-tidy": "2",
   "wikipedia": "enwiki-20261101"
