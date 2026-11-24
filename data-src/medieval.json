@@ -23126,7 +23126,7 @@
     {
       "uuid": "africa-lost",
       "title": "Africa lost to the Umayyads",
-      "descr": "The Umayyads take Africa from the empire in 698; under the Isaurian dynasty it then steadies.",
+      "descr": "The Umayyads take the Exarchate of Africa from the empire in 698; under the Isaurian dynasty it then steadies.",
       "start": 698,
       "tracks": [
         "eastern-roman",
@@ -24168,7 +24168,7 @@
     {
       "uuid": "wu-zhou-proclaimed",
       "title": "Wu Zetian proclaims the Zhou dynasty",
-      "descr": "In 690 Wu Zhao usurps the throne of her son, Emperor Ruizong of Tang, and founds the Zhou dynasty; she is China's only undisputed female sovereign.",
+      "descr": "In 690 Wu Zhao usurps the throne of her son, Emperor Ruizong of Tang, and founds the Zhou dynasty; she is the only woman generally accepted as China's sovereign.",
       "start": 690,
       "tracks": [
         "china"
