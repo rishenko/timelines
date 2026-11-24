@@ -1,5 +1,5 @@
 import { useState, type Dispatch } from 'react';
-import { draftKey, parseUpload, type DatasetAction } from './dataset.ts';
+import { parseUpload, saveReplaceDraft, type DatasetAction } from './dataset.ts';
 import { addToLibrary, entrySummary, fetchTimeline, removeFromLibrary, type LibraryEntry } from './library.ts';
 import {
   collectionName,
@@ -61,7 +61,7 @@ export function useLibraryActions(opts: {
     // the newer-version notice (core 1.0, rule 1) only once the file is accepted
     if (timelines.some((t) => t.entry && t.summary.id === id)) {
       // a whole file for another of the site's timelines: that timeline applies it in full (see restoreDraft)
-      localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
+      saveReplaceDraft(id, dataset, timelines.find((t) => t.summary.id === id)!.summary.title);
       if (notice) notify(notice);
       goToTimeline(id);
       return;
