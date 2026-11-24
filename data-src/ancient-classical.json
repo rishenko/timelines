@@ -18267,7 +18267,21 @@
     },
     "wp-rechiar": { "name": "Rechiar (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Rechiar", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-regalian": { "name": "Regalian (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Regalian", "accessed": "2026-11-21", "tags": ["wikipedia"] },
-    "wp-tang-of-shang": { "name": "Tang of Shang (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tang_of_Shang", "accessed": "2026-11-21", "tags": ["wikipedia"] }
+    "wp-tang-of-shang": { "name": "Tang of Shang (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tang_of_Shang", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-austronesian-peoples": {
+      "name": "Wikipedia: Austronesian peoples",
+      "url": "https://en.wikipedia.org/wiki/Austronesian_peoples",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
+    },
+    "wp-crab-claw-sail": { "name": "Wikipedia: Crab claw sail", "url": "https://en.wikipedia.org/wiki/Crab_claw_sail", "tags": ["wikipedia"], "accessed": "2026-11-24" },
+    "wp-iron-metallurgy-in-africa": {
+      "name": "Wikipedia: Iron metallurgy in Africa",
+      "url": "https://en.wikipedia.org/wiki/Iron_metallurgy_in_Africa",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
+    },
+    "wp-nixtamalization": { "name": "Wikipedia: Nixtamalization", "url": "https://en.wikipedia.org/wiki/Nixtamalization", "tags": ["wikipedia"], "accessed": "2026-11-24" }
   },
   "tags": {
     "wikipedia": { "name": "Wikipedia" },
@@ -22577,13 +22591,54 @@
       "start": "c. 650 BCE",
       "tracks": ["nok"],
       "descr": "Iron metallurgy may have developed independently here.",
-      "sources": [{ "sourceKey": "wp-nok", "sourceLocation": "lead and Iron metallurgy" }],
+      "sources": [
+        { "sourceKey": "wp-nok", "sourceLocation": "lead and Iron metallurgy" },
+        {
+          "sourceKey": "wp-iron-metallurgy-in-africa",
+          "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
+        }
+      ],
       "startDates": [
         { "year": "650 BCE", "margin": 100, "source": { "sourceKey": "wp-nok", "sourceLocation": "lead ('between 750 BCE and 550 BCE')" } },
         {
           "year": "801 BCE",
           "margin": 99,
           "source": { "sourceKey": "wp-nok", "sourceLocation": "Iron metallurgy ('in the 9th century BCE or 8th century BCE')" }
+        },
+        {
+          "year": "725 BCE",
+          "margin": 175,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
+          },
+          "note": "The Iron metallurgy in Africa article: \"between the 9th century BCE and 550 BCE\"."
+        },
+        {
+          "year": "2500 BCE",
+          "margin": 750,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC\""
+          },
+          "note": "Contested: the article's range for West and Central Africa, 2500–1000 BC, not the mainstream line."
+        },
+        {
+          "year": "2545 BCE",
+          "margin": 90,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"Iron metallurgical development occurred 2631 BCE – 2458 BCE at Lejja, in Nigeria\""
+          },
+          "note": "Contested: Lejja, Nigeria."
+        },
+        {
+          "year": "2000 BCE",
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"At Oboui they excavated an undated iron forge yielding eight consistent radiocarbon dates of 2000 BCE\""
+          },
+          "note": "Contested: Oboui, Central African Republic; the article reports Bernard Clist's argument that the site is highly disturbed."
         }
       ],
       "importance": 1,
@@ -44852,6 +44907,68 @@
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-jangsu-of-goguryeo", "sourceLocation": "infobox reign: October 412 – December 491" }]
+        }
+      ]
+    },
+    {
+      "uuid": "nixtamalization-guatemala",
+      "title": "Nixtamalization: the earliest evidence, on Guatemala's southern coast",
+      "descr": "Equipment for nixtamalization, the alkaline treatment of maize first developed in Mesoamerica, dates from 1500 to 1200 BCE on Guatemala's southern coast.",
+      "start": "c. 1500 BCE",
+      "end": "1200 BCE",
+      "tracks": ["mesoamerica"],
+      "sources": [
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE\""
+        },
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The process of nixtamalization was first developed in Mesoamerica, where maize was originally cultivated\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-nixtamalization",
+              "sourceLocation": "History: \"The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "crab-claw-sail",
+      "title": "Austronesians invent the crab claw sail",
+      "descr": "The Austronesians invent the crab claw sail somewhere in Island Southeast Asia, by at least 2000 BCE: a latest-by date, so the sail may be older.",
+      "start": "c. 2000 BCE",
+      "tracks": ["austronesia"],
+      "sources": [
+        {
+          "sourceKey": "wp-crab-claw-sail",
+          "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": "2000 BCE",
+          "source": { "sourceKey": "wp-austronesian-peoples", "sourceLocation": "lead: \"They used sails some time before 2000 BCE\"" },
+          "note": "Also a latest-by date."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-crab-claw-sail",
+              "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
+            }
+          ]
         }
       ]
     }
