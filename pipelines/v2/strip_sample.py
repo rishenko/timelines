@@ -15,16 +15,21 @@ import wp_dump  # noqa: E402
 
 KEY = {'world-war-i': r'World War I\b|First World War|Great War', 'world-war-ii': r'World War II|Second World War', 'thirty-years-war': r'Thirty Years',
        'seven-years-war': r'Seven Years', 'napoleonic-wars': r'Napoleonic|Coalition', 'second-sino-japanese-war': r'Sino-Japanese|Japanese invasion|War of Resistance',
-       'paraguayan-war': r'Paraguayan War|Triple Alliance|War of the Triple', 'mahdist-war': r'Mahdist|Mahdi'}
+       'paraguayan-war': r'Paraguayan War|Triple Alliance|War of the Triple', 'mahdist-war': r'Mahdist|Mahdi',
+       'hundred-years-war': r'Hundred Years', 'war-of-the-spanish-succession': r'Spanish Succession', 'great-northern-war': r'Great Northern War',
+       'american-revolutionary-war': r'Revolutionary War|American War of Independence', 'crimean-war': r'Crimean War', 'russo-japanese-war': r'Russo-Japanese',
+       'war-of-the-pacific': r'War of the Pacific', 'korean-war': r'Korean War', 'vietnam-war': r'Vietnam War', 'iran-iraq-war': r'Iran.Iraq',
+       'chaco-war': r'Chaco War', 'second-congo-war': r'Congo War|Second Congo'}
 SUFFIX = {'world-war-i': 'World War I', 'world-war-ii': 'World War II'}
 
 
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 30
     random.seed(int(sys.argv[2]) if len(sys.argv) > 2 else 1)
-    d = json.load(open(os.path.join(HERE, 'emitted', 'conflict-modern-states.json')))
+    d = json.load(open(os.path.join(HERE, 'emitted', os.environ.get('SAMPLE_FILE', 'conflict-modern-states.json'))))
     tracks = {t['id']: t for t in json.load(open(os.path.join(HERE, '..', '..', 'data-src', 'modern-states.json')))['tracks']}
-    strips = [(m['row'], r, m['start'], m.get('end'), m['sources'][0]['sourceLocation']) for r, es in d['rowEdits'].items() for e in es for m in [e.get('memberOf')] if m]
+    only = set(sys.argv[3].split(',')) if len(sys.argv) > 3 else None  # war row ids to sample from
+    strips = [(m['row'], r, m['start'], m.get('end'), m['sources'][0]['sourceLocation']) for r, es in d['rowEdits'].items() for e in es for m in [e.get('memberOf')] if m and (not only or m['row'] in only)]
     for i, (war, r, s, e, loc) in enumerate(random.sample(strips, min(n, len(strips))), 1):
         name = tracks[r]['name']
         titles = [f'{name} in {SUFFIX[war]}', f'{name} during {SUFFIX[war]}'] if war in SUFFIX else []
