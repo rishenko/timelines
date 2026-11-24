@@ -81,7 +81,8 @@ The first three link to each other where they meet, at 650 and 1500.
   folded under broader ones. Each row's regions cite their sources, shown in the table view and the row name's
   tooltip.
 - **Kinds of event:** a shape before each event's title says what kind it was (rulers, statehood, territory, cities
-  and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and technology).
+  and places, disasters, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and
+  technology, life and evolution).
   Filters → Data filters →
   Categories shows only the kinds you tick; the table and an event's details name its categories. Golden ages and long spans in
   religion, law, culture or the economy sit on a line of their own just under each row's phases.

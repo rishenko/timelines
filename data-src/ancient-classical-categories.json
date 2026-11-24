@@ -301,6 +301,33 @@
      "archaeology"
     ]
    },
+   "life": {
+    "name": "Life and evolution"
+   },
+   "first-appearance": {
+    "name": "First appearance",
+    "broader": [
+     "life"
+    ]
+   },
+   "fossil-biota": {
+    "name": "Fossil biota",
+    "broader": [
+     "life"
+    ]
+   },
+   "human-evolution": {
+    "name": "Human evolution",
+    "broader": [
+     "life"
+    ]
+   },
+   "earth-system": {
+    "name": "Change in the Earth system",
+    "broader": [
+     "life"
+    ]
+   },
    "eruption": {
     "name": "Volcanic activity",
     "broader": [
@@ -357,6 +384,12 @@
    },
    "impact": {
     "name": "Impact or space weather",
+    "broader": [
+     "natural"
+    ]
+   },
+   "mass-extinction": {
+    "name": "Mass extinction",
     "broader": [
      "natural"
     ]
