@@ -13,6 +13,12 @@ def one(raw, **kw):
     return s[0]
 
 
+class LinkSwitch(unittest.TestCase):
+    def test_lk_yes_in_a_circa_template_is_no_date(self):  # Osei Kwadwo: infobox "{{circa|1764|lk=yes}} – 1777" read as a start of 1777
+        (sp,) = spans('c. 1764|lk=yes – 1777')
+        self.assertEqual((sp['start'][0], sp['end'][0], sp['circa']), (1764, 1777, True))
+
+
 class Ranges(unittest.TestCase):
     def test_full_range_with_snd(self):
         s = one('28 July 1914{{snd}}11 November 1918<br>({{Age in years, months and days|month1=7|day1=28|year1=1914}})')

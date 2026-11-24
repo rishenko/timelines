@@ -149851,15 +149851,14 @@
   {
    "uuid": "reign-osei-kwadwo-asante-empire",
    "title": "Tenure of Osei Kwadwo",
-   "start": 1777,
    "tracks": [
     "asante-empire"
    ],
-   "descr": "Rules as head of state of Asante Empire from 1777.",
+   "descr": "Rules as head of state of Asante Empire from 1764 to 1777 (13 years).",
    "sources": [
     {
      "sourceKey": "wp-osei-kwadwo",
-     "sourceLocation": "infobox reign: c. 1764|lk=yes – 1777"
+     "sourceLocation": "infobox reign: c. 1764 – 1777"
     }
    ],
    "memberships": [
@@ -149869,11 +149868,14 @@
      "sources": [
       {
        "sourceKey": "wp-osei-kwadwo",
-       "sourceLocation": "infobox reign: c. 1764|lk=yes – 1777"
+       "sourceLocation": "infobox reign: c. 1764 – 1777"
       }
      ]
     }
-   ]
+   ],
+   "start": 1764,
+   "end": 1777,
+   "circa": true
   },
   {
    "uuid": "reign-kwaku-dua-i-asante-empire",
@@ -149998,6 +150000,23 @@
        "sourceLocation": "infobox reign: 26 March 1888 – 12 May 1931"
       }
      ]
+    }
+   ],
+   "endDates": [
+    {
+     "year": 1931,
+     "source": {
+      "sourceKey": "wp-prempeh-i",
+      "sourceLocation": "infobox reign: 26 March 1888 – 12 May 1931"
+     }
+    },
+    {
+     "year": 1895,
+     "source": {
+      "sourceKey": "wp-asantehene",
+      "sourceLocation": "table row: Otumfuo Nana Prempeh I 26 March 1888 – 19 November 1895"
+     },
+     "note": "The ruler list page gives this end; the infobox the headline."
     }
    ]
   },
@@ -243858,7 +243877,6 @@
    "route": "list: List of rulers of Asante",
    "cited": "Osei Kwadwo",
    "toCheck": [
-    "no end read: shown as one year",
     "office noun unclear (shown as \"Tenure of\"): 4th Asantehene of the Ashanti Empire"
    ]
   },
@@ -249036,8 +249054,8 @@
   }
  },
  "inputs": {
-  "rulers.csv": "8500c81d446c4ef3",
-  "rulers-events.json": "9a2a37a0211588c0",
+  "rulers.csv": "22579128aef6de5c",
+  "rulers-events.json": "71b28aac4050d80a",
   "reigns-excluded.json": "c4a553676c486b94",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"

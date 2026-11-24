@@ -10,6 +10,8 @@ A table is read through its header (list_rows.py, Dev C's reader for disaster li
 date is the row's own date cell run through dates.spans, quoted as the cell reads; a row whose cell holds no year ("20 years"),
 or a regent's note spanning the row, is listed as skipped and never given a date. The reign events are built by rulers.finish,
 so they look like every other reign (importance, uuid, source "table row: <name> <date cell>").
+Two date columns (the King of Italy page): a spec with `start_header` and `end_header` (regexes on the header names) reads each reign
+from its start and end cells, quoted "<start> | <end>"; `tables: "all"` takes every table of the page.
 Counts (the spec's `count`): the number of reigns read from the table must equal the number the page states, or the
 last number of its numbered column: the check fails otherwise.
 """
@@ -51,44 +53,63 @@ def read(spec, report=None):
         raise SystemExit(f"{spec['page']}: missing or flagged for AI text")
     out = []
     for ti, tm in enumerate(re.finditer(r'\{\|.*?\n\|\}', page['text'], re.S)):
-        if ti not in spec['tables']:
+        if spec['tables'] == 'all' or ti in spec['tables']:
+            out += read_table(tm.group(0), spec, report)
+    return out
+
+
+def read_table(table, spec, report=None):
+    """The reigns of one table. Dates come from one cell (`date_header`: "Reign", "Approximate dates") or, for a list that gives a
+    reign's start and end in two columns (the King of Italy page: "Coronation" and "Ceased to be King"), from `start_header` and
+    `end_header`: each cell's first date, the end left open only when the end cell says "present"."""
+    out = []
+    names = LR.header_names(table)
+    col = {}
+    for i, n in enumerate(names):
+        if 'number' not in col and re.match(r'^(no\b|no\.|#)', n):
+            col['number'] = i
+        elif 'name' not in col and re.match(r"^(name|mai|ruler|asantehene)", n):
+            col['name'] = i
+        elif 'start_header' in spec and 'start' not in col and re.search(spec['start_header'], n):
+            col['start'] = i
+        elif 'end_header' in spec and 'end' not in col and re.search(spec['end_header'], n):
+            col['end'] = i
+        elif 'start_header' not in spec and re.search(spec.get('date_header', r'approximate dates|reign'), n):
+            if 'date' not in col or 'approximate' in n:
+                col['date'] = i
+    carry = {}
+    for row in table.split('\n|-')[1:]:
+        if row.lstrip().startswith('!') and '\n|' not in row:
             continue
-        table = tm.group(0)
-        names = LR.header_names(table)
-        col = {}
-        for i, n in enumerate(names):
-            if 'number' not in col and re.match(r'^(no\b|no\.|#)', n):
-                col['number'] = i
-            elif 'name' not in col and re.match(r"^(name|mai|ruler|asantehene)", n):
-                col['name'] = i
-            elif re.search(spec.get('date_header', r'approximate dates|reign'), n):
-                if 'date' not in col or 'approximate' in n:
-                    col['date'] = i
-        carry = {}
-        for row in table.split('\n|-')[1:]:
-            if row.lstrip().startswith('!') and '\n|' not in row:
-                continue
-            cells = LR.expand(LR._cells(row), carry)
-            if not cells:
-                continue
-            if len(cells) != len(names) or len({LR.plain(c) for c in cells[:2]}) == 1:
-                if report is not None:
-                    report.append(f"note: {LR.plain(cells[0])[:70]}")
-                continue
-            name_raw = cells[col['name']]
-            name = LR.plain(name_raw)
-            name = re.sub(r'\s*\(.*?\)', '', name).strip()  # "Susam (or Sef)" -> the first name
-            name = re.sub(r'^(Otumfuo\s+)?(Nana\s+)?', '', name)  # Asante honorifics: "Otumfuo Nana Osei Tutu I" -> "Osei Tutu I"
+        cells = LR.expand(LR._cells(row), carry)
+        if not cells:
+            continue
+        if len(cells) != len(names) or len({LR.plain(c) for c in cells[:2]}) == 1:
+            if report is not None:
+                report.append(f"note: {LR.plain(cells[0])[:70]}")
+            continue
+        name_raw = cells[col['name']]
+        name = LR.plain(name_raw)
+        name = re.sub(r'\s*\(.*?\)', '', name).strip()  # "Susam (or Sef)" -> the first name
+        name = re.sub(r'^(Otumfuo\s+)?(Nana\s+)?', '', name)  # Asante honorifics: "Otumfuo Nana Osei Tutu I" -> "Osei Tutu I"
+        if 'start' in col and 'end' in col:  # two columns: the reign's start and end, each cell's first date; quoted "<start> | <end>"
+            a, b = LR.plain(cells[col['start']]), LR.plain(cells[col['end']])
+            date_cell = f'{a} | {b}'
+            sa = [x for x in dates.spans(LR.REF.sub('', cells[col['start']])) if x['start'][0] is not None][:1]  # raw: {{circa|616}} is a date
+            sb = [x for x in dates.spans(LR.REF.sub('', cells[col['end']])) if x['start'][0] is not None][:1]
+            open_end = bool(re.search(r'present|current|incumbent', b, re.I))
+            ds = [(sa[0]['start'], sb[0]['start'] if sb else None, sa[0]['circa'] or bool(sb and sb[0]['circa']))] if sa and (sb or open_end) else []
+        else:
             date_cell = LR.plain(cells[col['date']]) if 'date' in col else ''
             ds = dates_of(date_cell)
-            if not ds:
-                if report is not None:
-                    report.append(f"undated: {LR.plain(cells[col['number']]) if 'number' in col else ''} {name}: \"{date_cell[:50]}\"")
-                continue
-            m = LR.LINK.search(LR.REF.sub('', name_raw))
-            for d in ds:
-                out.append(dict(number=LR.plain(cells[col['number']]) if 'number' in col else '', name=name, article=m.group(1) if m else None,
-                                st=d[0], en=d[1], circa=d[2], name_cell=LR.plain(name_raw), date_cell=date_cell))
+        if not ds:
+            if report is not None:
+                report.append(f"undated: {LR.plain(cells[col['number']]) if 'number' in col else ''} {name}: \"{date_cell[:50]}\"")
+            continue
+        m = LR.LINK.search(LR.REF.sub('', name_raw))
+        for d in ds:
+            out.append(dict(number=LR.plain(cells[col['number']]) if 'number' in col else '', name=name, article=m.group(1) if m else None,
+                            st=d[0], en=d[1], circa=d[2], name_cell=LR.plain(name_raw), date_cell=date_cell))
     return out
 
 

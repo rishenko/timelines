@@ -29,5 +29,58 @@ class DatesOf(unittest.TestCase):
         self.assertEqual((st[0], en), (1999, None))
 
 
+TABLE = """{| class="wikitable"
+! Image
+! Name
+! Life
+! Coronation
+! Ceased to be King
+|-
+| [[File:A.jpg]]
+| [[Alboin]]
+| 530s – 28 June 572
+| 568
+| 572
+|-
+|
+| [[Adaloald]]
+| 602-628
+| {{circa|616}}
+| 626
+|-
+|
+| [[Rule of the Dukes|Rule of the Dukes (interregnum)]]
+| 574 – 584
+| 574
+| ?
+|-
+|
+| [[Umberto II]]
+| 1904 – 1983
+| 9 May 1946
+| present
+|}"""
+SPEC = {'start_header': 'coronation|became king', 'end_header': 'ceased to be king'}
+
+
+class StartEndColumns(unittest.TestCase):
+    def test_a_reign_is_the_start_cell_to_the_end_cell(self):
+        rep = []
+        r = {x['name']: x for x in L.read_table(TABLE, SPEC, rep)}
+        self.assertEqual((r['Alboin']['st'][0], r['Alboin']['en'][0]), (568, 572))
+        self.assertEqual(r['Alboin']['date_cell'], '568 | 572')  # quoted as the two cells read
+
+    def test_a_circa_template_in_the_start_cell_is_read(self):
+        r = {x['name']: x for x in L.read_table(TABLE, SPEC)}
+        self.assertEqual((r['Adaloald']['st'][0], r['Adaloald']['en'][0], r['Adaloald']['circa']), (616, 626, True))
+
+    def test_an_unknown_end_is_undated_and_present_leaves_it_open(self):
+        rep = []
+        r = {x['name']: x for x in L.read_table(TABLE, SPEC, rep)}
+        self.assertNotIn('Rule of the Dukes', r)
+        self.assertTrue(any(x.startswith('undated') and 'Rule of the Dukes' in x for x in rep))
+        self.assertEqual((r['Umberto II']['st'][0], r['Umberto II']['en']), (1946, None))
+
+
 if __name__ == '__main__':
     unittest.main()
