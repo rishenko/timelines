@@ -1,0 +1,77 @@
+{
+ "_note": "Reviewed calls for the conflicts pilot, applied last (reject / fix by QID).",
+ "Q59134881": {
+  "why": "Fable adjudication (Kevin 2026-11-24): 1834-35; 1471 is background (the Dai Viet conquest of northern Champa)",
+  "set": {
+   "startYear": 1834
+  }
+ },
+ "Q2383159": {
+  "why": "Fable adjudication: starts after Menelik submitted to Yohannes IV in 1878; ends 1904",
+  "set": {
+   "start": {
+    "article": "Menelik II's conquests",
+    "year": 1878,
+    "locator": "lead sentence",
+    "quote": "After Emperor Yohannes IV forced him to submit in 1878 he turned his attention south"
+   }
+  }
+ },
+ "Q852171": {
+  "why": "Fable adjudication: the 1236-1242 campaigns (1223 and 1241 stay as claims)",
+  "set": {
+   "start": {
+    "article": "Mongol invasion of Europe",
+    "year": 1236,
+    "locator": "article text",
+    "quote": "principally the 1236–1242 campaigns led by Batu Khan and Subutai"
+   },
+   "end": {
+    "article": "Mongol invasion of Europe",
+    "year": 1242,
+    "locator": "article text",
+    "quote": "principally the 1236–1242 campaigns led by Batu Khan and Subutai"
+   }
+  }
+ },
+ "Q1134220": {
+  "why": "Fable adjudication: main invasion 1237, Kiev captured 1240 (1223 stays a claim)",
+  "set": {
+   "start": {
+    "article": "Mongol invasion of Kievan Rus'",
+    "year": 1237,
+    "locator": "infobox date",
+    "quote": "1237–1241 (main invasion)"
+   },
+   "end": {
+    "article": "Mongol invasion of Kievan Rus'",
+    "year": 1240,
+    "locator": "lead sentence",
+    "quote": "The Mongols captured Kiev in 1240"
+   }
+  }
+ },
+ "Q16932349": {
+  "why": "Fable adjudication: first intervention 138 BC to Dian 109 BC (135 and 111 stay claims)",
+  "set": {
+   "start": {
+    "article": "Southward expansion of the Han dynasty",
+    "year": -138,
+    "locator": "article text",
+    "quote": "Minyue invaded the kingdom in 138 BC"
+   },
+   "end": {
+    "article": "Southward expansion of the Han dynasty",
+    "year": -109,
+    "locator": "lead sentence",
+    "quote": "Dian in 109 BC"
+   }
+  }
+ },
+ "Q7573336": {
+  "why": "Fable adjudication: c. 1618 to 1697",
+  "set": {
+   "startYear": 1618
+  }
+ }
+}
