@@ -451,6 +451,9 @@ def build(repo, module_names=None):
     if tuple(module_names) == MODULES:
         import traditions
         REPORT.append(f'traditions: {traditions.apply(data, "modern-states")}')
+        # science and discoveries pilot (pipelines/common/science.py from science.json), likewise left out by a partial run
+        import science
+        REPORT.append(f'science: {science.apply(data, "modern-states")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')
