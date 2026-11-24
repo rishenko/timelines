@@ -148,6 +148,18 @@ class Guards(unittest.TestCase):
         self.assertIn('bare-1989', review)
         self.assertNotIn('bare', review)
 
+    def test_8f_a_reviewed_reign_in_keep_passes_the_guards(self):  # Ladislaus the Posthumous: office "Duke of Austria" on the Croatia row
+        F.OFFICES['k'], F.FIELDS['k'] = 'Duke of Austria', 'reign'
+        e = dict(ev('k', 1440, 'infobox reign: 1440'), title='Reign of Ladislaus the Posthumous', end=1457, tracks=['czechia'])
+        keep, review = [e], {'k': dict(rev('czechia', 'Ladislaus the Posthumous'))}
+        F.KEEP.clear()
+        F.KEEP.update({'czechia': {'Ladislaus the Posthumous@1440': 'x'}})
+        try:
+            F.guards(keep, review, set(), DS)
+            self.assertEqual([x['uuid'] for x in keep], ['k'])
+        finally:
+            F.KEEP.clear()
+
     def test_12_head_of_government_and_junior_emperor_titles(self):  # Pol Pot as Prime Minister of Democratic Kampuchea; Constantius Chlorus as Caesar
         self.assertFalse(self.go('pm', 'Prime Minister of Democratic Kampuchea', row='czechia', field='term_start1')[0])
         self.assertFalse(self.go('cs', 'Caesar of the Western Roman Empire')[0])

@@ -111,6 +111,7 @@ def partial_name_match(office, row_name):
 CLAIMS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-claims.json'), encoding='utf-8'))
 CLAIM_UUIDS = {}  # uuid -> timeline, for the category pins below
 EXCLUDED = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-excluded.json'), encoding='utf-8'))
+KEEP = {}  # row -> {'Person' or 'Person@YYYY': why}: reviewed reigns the guards must not hold (the timeline's EXCLUDED['keep'], set in main)
 
 
 def flag(name, default=None):
@@ -380,6 +381,9 @@ def guards(keep, review, ours, ds, committed=None):
         if not r or e['uuid'] in ours:
             continue
         office = OFFICES.get(e['uuid'], '')
+        kept_by_hand = KEEP.get(r['row'], {})
+        if r['person'] in kept_by_hand or f"{r['person']}@{e['start']}" in kept_by_hand:
+            continue  # reviewed and kept (reigns-excluded.json "keep"): the guards would hold it (a real ruler whose infobox office names another row)
         why = wrong_kind(e, dict(r, field=FIELDS.get(e['uuid'], '')), office, tracks.get(r['row']))
         if why:
             keep.remove(e)
@@ -390,6 +394,7 @@ def guards(keep, review, ours, ds, committed=None):
 
 def main():
     timeline = flag('--timeline', 'modern-states')
+    KEEP.update(EXCLUDED.get('keep', {}).get(timeline, {}))
     d = flag('--dir')
     lp = flag('--term-labels')
     if lp and os.path.exists(lp):

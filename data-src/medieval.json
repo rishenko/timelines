@@ -67003,6 +67003,36 @@
       ]
     },
     {
+      "uuid": "reign-coloman-king-of-hungary-croatia",
+      "title": "Reign of Coloman, King of Hungary",
+      "start": 1096,
+      "end": 1116,
+      "endMonth": 2,
+      "endDay": 3,
+      "tracks": [
+        "croatia"
+      ],
+      "descr": "Rules as head of state of Croatia from 1096 to 3 February 1116 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-coloman-king-of-hungary",
+          "sourceLocation": "infobox reign: 1096 – 3 February 1116"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-coloman-king-of-hungary",
+              "sourceLocation": "infobox reign: 1096 – 3 February 1116"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "reign-stephen-ii-of-hungary-croatia",
       "title": "Reign of Stephen II of Hungary",
       "start": 1116,
@@ -67761,6 +67791,38 @@
             {
               "sourceKey": "wp-w-adys-aw-iii-of-poland",
               "sourceLocation": "infobox reign2: 1440 – 1444"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ladislaus-the-posthumous-croatia",
+      "title": "Reign of Ladislaus the Posthumous",
+      "start": 1440,
+      "startMonth": 2,
+      "startDay": 22,
+      "end": 1457,
+      "endMonth": 11,
+      "endDay": 23,
+      "tracks": [
+        "croatia"
+      ],
+      "descr": "Rules as head of state of Croatia from 22 February 1440 to 23 November 1457 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ladislaus-the-posthumous",
+          "sourceLocation": "infobox reign: 22 February 1440 – 23 November 1457"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ladislaus-the-posthumous",
+              "sourceLocation": "infobox reign: 22 February 1440 – 23 November 1457"
             }
           ]
         }
@@ -131912,7 +131974,6 @@
     "reign-charles-iii-of-naples-czechia": null,
     "reign-charles-the-fat-france": null,
     "reign-cnut-sweden": null,
-    "reign-coloman-king-of-hungary-croatia": null,
     "reign-coloman-king-of-hungary-czechia": null,
     "reign-conrad-i-of-germany-france": null,
     "reign-emeric-king-of-hungary-czechia": null,
@@ -131951,7 +132012,6 @@
     "reign-ladislaus-iii-of-hungary-czechia": null,
     "reign-ladislaus-iv-of-hungary-czechia": null,
     "reign-ladislaus-of-naples-czechia": null,
-    "reign-ladislaus-the-posthumous-croatia": null,
     "reign-leopold-ii-margrave-of-austria-croatia": null,
     "reign-leopold-ii-margrave-of-austria-czechia": null,
     "reign-leopold-v-duke-of-austria-croatia": null,

@@ -151158,38 +151158,6 @@
    "ongoing": true
   },
   {
-   "uuid": "reign-william-iv-australia",
-   "title": "Reign of William IV",
-   "start": 1830,
-   "startMonth": 6,
-   "startDay": 26,
-   "end": 1837,
-   "endMonth": 6,
-   "endDay": 20,
-   "tracks": [
-    "australia"
-   ],
-   "descr": "Rules as head of state of Australia from 26 June 1830 to 20 June 1837 (7 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-william-iv",
-     "sourceLocation": "infobox reign: 26 June 1830 – 20 June 1837"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-william-iv",
-       "sourceLocation": "infobox reign: 26 June 1830 – 20 June 1837"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-george-vi-australia",
    "title": "Reign of George VI",
    "start": 1936,
@@ -162355,6 +162323,16 @@
    "cited": "'Mamohato Bereng Seeiso",
    "toCheck": [
     "not imported, wrong row: a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+   ]
+  },
+  "reign-william-iv-8": {
+   "row": "australia",
+   "person": "William IV",
+   "qid": "Q130822",
+   "route": "list: Monarchy of Australia; polity: Van Diemen's Land",
+   "cited": "William IV",
+   "toCheck": [
+    "not imported, wrong row: King of the United Kingdom 1830–37, when Australia was a set of colonies: realms keep their monarch, colonies don't (Kevin 2026-11-24; the Architect's review of #205)"
    ]
   },
   "reign-george-bowen": {
@@ -234413,14 +234391,6 @@
     "open end read as incumbent"
    ]
   },
-  "reign-william-iv-australia": {
-   "row": "australia",
-   "person": "William IV",
-   "qid": "Q130822",
-   "route": "list: Monarchy of Australia; polity: Van Diemen's Land",
-   "cited": "William IV",
-   "toCheck": []
-  },
   "reign-george-vi-australia": {
    "row": "australia",
    "person": "George VI",
@@ -236099,7 +236069,7 @@
  "inputs": {
   "rulers.csv": "22579128aef6de5c",
   "rulers-events.json": "71b28aac4050d80a",
-  "reigns-excluded.json": "88549953f16f1c90",
+  "reigns-excluded.json": "bf7f099bfb9230f0",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }

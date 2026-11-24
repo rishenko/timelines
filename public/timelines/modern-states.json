@@ -309469,38 +309469,6 @@
       "ongoing": true
     },
     {
-      "uuid": "reign-william-iv-australia",
-      "title": "Reign of William IV",
-      "start": 1830,
-      "startMonth": 6,
-      "startDay": 26,
-      "end": 1837,
-      "endMonth": 6,
-      "endDay": 20,
-      "tracks": [
-        "australia"
-      ],
-      "descr": "Rules as head of state of Australia from 26 June 1830 to 20 June 1837 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-william-iv",
-          "sourceLocation": "infobox reign: 26 June 1830 – 20 June 1837"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-william-iv",
-              "sourceLocation": "infobox reign: 26 June 1830 – 20 June 1837"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-george-vi-australia",
       "title": "Reign of George VI",
       "start": 1936,
@@ -316500,6 +316468,7 @@
     "reign-william-henry-gregory-sri-lanka": null,
     "reign-william-i-of-the-netherlands-suriname": null,
     "reign-william-iii-of-the-netherlands-suriname": null,
+    "reign-william-iv-australia": null,
     "reign-william-macgregor-australia": null,
     "reign-william-manning-colonial-administrator-sri-lanka": null,
     "reign-william-mckell-australia": null,
