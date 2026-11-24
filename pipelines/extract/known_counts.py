@@ -17,6 +17,11 @@ A spec holds the expected number, what is counted, and where the number comes fr
   measure "people": distinct people with a reign (title "Reign of …", "Presidency of …", …) on the rows
           "reigns": the reign events themselves (a ruler with two terms counts twice)
           "members": the rows that were members of the bloc row at `at` (the rows' `memberOf` lists)
+          "table": the article's list has no number: its table rows (the first cell of each row, `table.names`, frozen in the spec) are the
+          count. Every listed person must have a reign (or tenure) on the rows, matched by name without its disambiguation in
+          brackets, `aliases` mapping a list name to ours; `notRequired` {name: reason} lists rows the data may leave out. `expected` is
+          the number of distinct names; --verify-sources reads the article and fails when its table no longer has exactly these names.
+          A failure lists the missing names. Co-emperors, usurpers and consorts the data holds but the list leaves out are not counted.
   from/to the reigns that start in these years (astronomical, inclusive); titles: only these title prefixes;
   notCounted {person: reason}: reigns the article's count leaves out (a claimant, a co-king), listed so a change shows.
 A failure is one line: FAIL <id> <timeline>/<row>: expected N, got M (<article>: "<quote>").
@@ -54,8 +59,32 @@ def reigns(spec):
     return out
 
 
+def base(name):
+    return re.sub(r'\s*\([^)]*\)', '', name).strip().lower()
+
+
+def table_count(spec):
+    """(got, detail): how many of the table's distinct names have a reign on the rows; detail lists the missing ones."""
+    t = spec['table']
+    have = set()
+    for tl, row in spec['rows']:
+        for e in timeline(tl)['events']:
+            if row in e['tracks'] and PREFIX.match(e['title']) and spec.get('from', -10**6) <= e['start'] <= spec.get('to', 10**6):
+                have.add(base(PREFIX.sub('', e['title'])))
+    missing = []
+    for n in dict.fromkeys(t['names']):
+        if n in spec.get('notRequired', {}):
+            continue
+        if base(spec.get('aliases', {}).get(n, n)) not in have:
+            missing.append(n)
+    need = len(dict.fromkeys(t['names'])) - len([n for n in dict.fromkeys(t['names']) if n in spec.get('notRequired', {})])
+    return need - len(missing), 'missing: ' + ', '.join(missing) if missing else ''
+
+
 def count(spec):
     """(got, detail) for one spec."""
+    if spec['measure'] == 'table':
+        return table_count(spec)
     if spec['measure'] == 'members':
         tl, bloc = spec['rows'][0]
         y = spec['at']
@@ -89,6 +118,10 @@ def verify_source(spec):
     text = re.sub(r'\s+', ' ', mw.parse(ref.sub('', p['text'])).strip_code()).lower()
     if re.sub(r'\s+', ' ', src['quote']).lower() not in text:
         return f"quote not in {p['title']!r}"
+    if spec['measure'] == 'table':  # the table's rows are the count: the article must still list exactly these names
+        now = [re.search(r'\[\[([^|\]]+)', m).group(1) for m in re.findall(r'^!\s*scope\s*=\s*"?row"?\s*\|?(.*)$', p['text'], re.M) if re.search(r'\[\[([^|\]]+)', m)]
+        if now != spec['table']['names']:
+            return f"table rows changed ({len(now)} rows, spec has {len(spec['table']['names'])}): {sorted(set(now) ^ set(spec['table']['names']))[:6]}"
     return None
 
 
@@ -96,15 +129,15 @@ def main():
     verify = '--verify-sources' in sys.argv
     hard = soft = 0
     for spec in SPEC['counts']:
-        got, _ = count(spec)
+        got, detail = count(spec)
         src = spec['source']
         bad = got != spec['expected']
         why = verify_source(spec) if verify else None
         where = '+'.join(f'{t}/{r}' for t, r in spec['rows'])
         if bad or why:
-            line = (f"{spec['id']} {where}: expected {spec['expected']}, got {got} ({src['article']}: \"{src['quote'][:110]}\")"
+            line = (f"{spec['id']} {where}: expected {spec['expected']}, got {got}" + (f" [{detail}]" if detail else '') + f" ({src['article']}: \"{src['quote'][:110]}\")"
                     + (f"; SOURCE: {why}" if why else ''))
-            if spec['kind'] == 'text' or why:
+            if spec['kind'] in ('text', 'table') or why:
                 print('FAIL ' + line)
                 hard += 1
             else:
