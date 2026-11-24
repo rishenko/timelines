@@ -23751,6 +23751,54 @@
         "wikipedia"
       ]
     },
+    "wp-black-death-in-the-middle-east": {
+      "name": "Black Death in the Middle East (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Black_Death_in_the_Middle_East",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1303-hongdong-earthquake": {
+      "name": "1303 Hongdong earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1303_Hongdong_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "gvp-20843": {
+      "name": "Smithsonian Global Volcanism Program, Rinjani, eruption 20843",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=264030",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-1257-samalas-eruption": {
+      "name": "1257 Samalas eruption (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1257_Samalas_eruption",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-856-damghan-earthquake": {
+      "name": "856 Damghan earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/856_Damghan_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-st-elizabeth-s-flood-1421": {
+      "name": "St. Elizabeth's flood (1421) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/St._Elizabeth's_flood_(1421)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-abaoji": {
       "name": "Abaoji (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Abaoji",
@@ -38938,6 +38986,9 @@
     },
     "cliopatria": {
       "name": "Cliopatria"
+    },
+    "catalogue": {
+      "name": "Official catalogue"
     },
     "scholarly": {
       "name": "Scholarly pages"
@@ -58408,6 +58459,154 @@
             {
               "sourceKey": "wp-macedonian-renaissance",
               "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-856-damghan-earthquake",
+      "title": "856 Damghan earthquake",
+      "descr": "Earthquake or tsunami in Iran, 22 December 856. The sources give 200,000 deaths. Magnitude 7.9.",
+      "start": 856,
+      "tracks": [
+        "iran-iraq"
+      ],
+      "startMonth": 12,
+      "startDay": 22,
+      "sources": [
+        {
+          "sourceKey": "wp-856-damghan-earthquake",
+          "sourceLocation": "infobox local_date: 22 December 856"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-856-damghan-earthquake",
+              "sourceLocation": "infobox local_date: 22 December 856"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1257-samalas-eruption",
+      "title": "1257 Samalas eruption",
+      "descr": "Volcanic activity in Indonesia, 1257. Volcanic Explosivity Index 7.",
+      "start": 1257,
+      "tracks": [
+        "maritime-se-asia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1257-samalas-eruption",
+          "sourceLocation": "infobox date: 1257"
+        },
+        {
+          "sourceKey": "gvp-20843",
+          "sourceLocation": "eruption 20843: start 1257-07-01, VEI 7"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-1257-samalas-eruption",
+              "sourceLocation": "infobox date: 1257"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1303-hongdong-earthquake",
+      "title": "1303 Hongdong earthquake",
+      "descr": "Earthquake or tsunami in China, 25 September 1303. The sources give 170,000 to 270,000 deaths. Magnitude 7.2 to 7.6.",
+      "start": 1303,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 9,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-1303-hongdong-earthquake",
+          "sourceLocation": "infobox local_date: 25 September 1303"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1303-hongdong-earthquake",
+              "sourceLocation": "infobox local_date: 25 September 1303"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-black-death-in-the-middle-east",
+      "title": "Black Death in Egypt",
+      "descr": "Epidemic in Egypt, 1347.",
+      "start": 1347,
+      "tracks": [
+        "egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-black-death-in-the-middle-east",
+          "sourceLocation": "sentence: \"Plague migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "epidemic",
+          "sources": [
+            {
+              "sourceKey": "wp-black-death-in-the-middle-east",
+              "sourceLocation": "sentence: \"Plague migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-st-elizabeth-s-flood-1421",
+      "title": "St. Elizabeth's flood (1421)",
+      "descr": "Flood in Netherlands, 18 November 1421 to 19 November 1421. The sources give 2,000 to 10,000 deaths.",
+      "start": 1421,
+      "tracks": [
+        "western-europe"
+      ],
+      "startMonth": 11,
+      "startDay": 18,
+      "sources": [
+        {
+          "sourceKey": "wp-st-elizabeth-s-flood-1421",
+          "sourceLocation": "infobox date: 18–19 November 1421"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "flood",
+          "sources": [
+            {
+              "sourceKey": "wp-st-elizabeth-s-flood-1421",
+              "sourceLocation": "infobox date: 18–19 November 1421"
             }
           ]
         }
