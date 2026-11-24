@@ -551,7 +551,7 @@ def pick(spans, terms, words, window=None):
     if window:  # no Wikidata term and several spans (Gaozu of Tang: the Duke of Tang's 572–617 beside his reign): the one inside the row's window
         inside = [x for x in (named or spans) if overlap(x[1]['start'][0], year(x[1]['end']), window[0], window[1]) >= 0]
         if inside:  # several: a ruler's own office first (not "Duke of Tang" or "Retired Emperor"), then the earliest; picks() adds the same office's other spans
-            own = [x for x in inside if RULER_WORD.search(x[2]) and not re.search(r'\b(retired|former|duke|prince|regent|crown|co-)', x[2], re.I)]
+            own = [x for x in inside if RULER_WORD.search(x[2]) and not re.search(r'\b(retired|former|duke|prince|regent|crown|consort|co-)', x[2], re.I)]
             f, s, succ = min(own or inside, key=lambda x: days(x[1]['start']))
             return f, s, succ, None
     return None

@@ -193,6 +193,10 @@ class PickTheRowsOffice(unittest.TestCase):
         s = self.spans(('reign1', '600 – 20 December 620', 'Duke of Tang'), ('reign', '18 June 619 – 4 September 626', 'Emperor of the Tang dynasty'))
         self.assertEqual(R.pick(s, [], {'tang'}, (618, 650))[0], 'reign')
 
+    def test_window_skips_a_consort_span(self):  # Empress Kōgyoku: "Empress consort of Japan" (630-641) is not her reign (642-645)
+        s = self.spans(('reign1', '630 – 641', 'Empress consort of Japan'), ('reign', '642 – 645', 'Empress of Japan'))
+        self.assertEqual(R.pick(s, [], {'yamato'}, (500, 700))[0], 'reign')
+
     def test_an_exact_match_is_unchanged(self):  # the old behaviour: one span naming the row wins, whatever the window
         s = self.spans(('reign', '1643 – 1715', 'King of France'), ('reign1', '1600 – 1643', 'Duke of Orléans'))
         self.assertEqual(R.pick(s, [], {'france'}, (1500, 1800))[0], 'reign')
