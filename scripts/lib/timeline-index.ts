@@ -9,7 +9,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseTimelineIndex, summarize, type TimelineIndexEntry } from '../../src/data/timelineIndex.ts';
-import { validateDataset } from '../../src/data/validate.ts';
+import { validateStrict } from '../../src/data/strict.ts';
 import type { Dataset } from '../../src/types.ts';
 
 export const TIMELINES_DIR = 'public/timelines';
@@ -46,7 +46,7 @@ export function timelineIndexText(dir = TIMELINES_DIR, orderFile = SITE_ORDER): 
 
   const entryFor = (file: string): TimelineIndexEntry | null => {
     const data = JSON.parse(readFileSync(join(dir, file), 'utf8')) as Dataset;
-    const problems = validateDataset(data);
+    const problems = validateStrict(data);
     if (problems.length) {
       notes.push(`${file} left out: ${problems[0]}`);
       return null;

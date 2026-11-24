@@ -540,6 +540,8 @@ def build(repo):
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
         data['tags']['cliopatria'] = {'name': 'Cliopatria'}
+    if any('scholarly' in s.get('tags', []) for s in G.SOURCES.values()):  # scholarly pages (date_rulings.py; traditions)
+        data['tags']['scholarly'] = {'name': 'Scholarly pages'}
     # reigns (pipelines/common/reigns.py): the frozen rulers pass; before the categories, so the classifier sees them
     import reigns
     REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "medieval-reigns.json"))}')

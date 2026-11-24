@@ -359,6 +359,7 @@ def ancient_row(anc, id_, parent):
 # (after #32).
 # To sync with a later Modern States build, change the commit and rerun.
 MODERN_COMMIT = 'd9c6674'
+SEAM_OWN = {'songhai-empire'}  # rows whose span a headline-date ruling sets (common/date_rulings.py): not copied from the pinned Modern file
 
 
 @functools.lru_cache(maxsize=None)
@@ -407,7 +408,7 @@ def modern_sync(R):
             M.REPORT.append(f'  {t["id"]}: phase "{cp["name"]}" {cp["start"]}–{cp.get("end", "ongoing")} copied from Modern States')
             if t.get('span') and not m.get('span'):
                 t.pop('span')
-        if m.get('span'):
+        if m.get('span') and t['id'] not in SEAM_OWN:  # SEAM_OWN: a ruling sets the span on both timelines from one list (date_rulings.py), so the seam copy of the pinned Modern file would only undo it
             ms = m['span'] if isinstance(m['span'], list) else [m['span']]
             inside = all(any(st['start'] <= p['start'] and (st.get('ongoing') or p['end'] <= st['end']) for st in ms) for p in t.get('phases', []))
             if inside:

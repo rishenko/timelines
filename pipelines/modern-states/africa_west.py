@@ -26,6 +26,8 @@ Called from gen_modern.py with its module (M).
 """
 import re
 
+import date_rulings as DR
+
 GROUPS = [
     {'id': 'middle-africa', 'name': 'Middle Africa', 'color': '#5a8a3a', 'parent': 'africa'},
 ]
@@ -528,7 +530,8 @@ def tracks(M):
     # =====================================================================================================
     # ---------- seam rows (Medieval World ids, dates and claim locations) ----------
     T.append(hist('mali-empire', 'Mali Empire', '#c08a2a', WAF, 'Mali Empire', circa=True))
-    T.append(hist('songhai-empire', 'Songhai Empire', '#c0a03a', WAF, 'Songhai Empire', endEvent='moroccan-invasion-of-songhai'))
+    T.append(hist('songhai-empire', 'Songhai Empire', '#c0a03a', WAF, 'Songhai Empire', sc=DR.songhai_start(), circa=True,  # start c. 1464 (ruling 2026-11-24), as on Medieval
+                  endEvent='moroccan-invasion-of-songhai'))
     kb = 'Kanem–Bornu Empire'
     T.append(row('bornu-empire', 'Kanem–Bornu', '#6a4a8a', WAF, kb, phases=[
         phase('Kanem', HEAD(M, kb, 'Medieval period', 'start'), HEAD(M, kb, 'Conversion to Islam', 'end'), circa=True),
