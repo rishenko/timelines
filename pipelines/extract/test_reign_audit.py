@@ -37,10 +37,18 @@ class Checks(unittest.TestCase):
         self.assertEqual(sorted((h['row'], h['kind']) for h in got), [('sri-lanka', 'colonial phase'), ('taiwan', 'colonial phase')])
 
     def test_allowlist_keys(self):
-        h = {'uuid': 'u', 'row': 'canada', 'pair': ['canada|united-kingdom'], 'guard': 'g'}
-        A.allow = lambda name: {'canada': 'a realm'} if name == 'other-row' else {}
-        self.assertEqual(A.keyed('other-row', h), 'canada')
-        self.assertIsNone(A.keyed('governors', h))
+        h = {'uuid': 'u', 'row': 'canada', 'pair': ['canada|united-kingdom'], 'guard': 'g', 'kind': 'colonial phase'}
+        A.allow = lambda name: {'canada:colonial': 'a realm'} if name == 'other-row' else {'canada': 'x'} if name == 'governors' else {}
+        self.assertEqual(A.keyed('other-row', h), 'canada:colonial')
+        self.assertIsNone(A.keyed('other-row', dict(h, kind='names another row')))  # the colonial key does not clear the other kind
+        A.allow = lambda name: {'canada': 'a row key'}
+        self.assertIsNone(A.keyed('other-row', h))  # a bare row key clears nothing for other-row
+        self.assertEqual(A.keyed('governors', h), 'canada')
+
+    def test_stems(self):
+        self.assertNotEqual(A.stem('austria'), A.stem('australia'))
+        self.assertNotEqual(A.stem('niger'), A.stem('nigeria'))
+        self.assertEqual(A.stem('mexico'), 'mexico')
 
 
 if __name__ == '__main__':

@@ -40,6 +40,11 @@ GENERIC = {'kingdom', 'duchy', 'despotate', 'empire', 'republic', 'state', 'stat
 WORD = re.compile(r'[A-Za-zÀ-ÿ]{5,}')
 
 
+def stem(w):
+    """The first six letters of a word of six or more (Austria and Australia differ at the sixth), the whole word below that (Niger is not Nigeria)."""
+    return w[:6] if len(w) >= 6 else w
+
+
 def allow(name):
     p = os.path.join(HERE, 'reign-audit', f'{name}-allow.json')
     return json.load(open(p))['allow'] if os.path.exists(p) else {}
@@ -71,14 +76,14 @@ def check_governors(rows, tracks, ok):
 
 def check_other_row(rows, tracks, ok):
     import reigns_freeze as F
-    name_words = {tid: {w[:5] for w in words(t['name'])} for tid, t in tracks.items()}
+    name_words = {tid: {stem(w) for w in words(t['name'])} for tid, t in tracks.items()}
     hits = []
     for x in rows:
         t = tracks.get(x['row'])
         o = x['office']
         if not t or not o:
             continue
-        toks = {w[:5] for w in words(o)}
+        toks = {stem(w) for w in words(o)}
         own = name_words[x['row']]
         if own & toks:
             continue
@@ -87,7 +92,7 @@ def check_other_row(rows, tracks, ok):
             hits.append(dict(x, detail=f"office names {', '.join(named[:4])}", kind='names another row', pair=[f"{x['row']}|{n}" for n in named]))
             continue
         # colonial phase: the office matches a phase of this row that is a colony, protectorate, viceroyalty or mandate, and nothing of the row's own name
-        ph = [p['name'] for p in t.get('phases', []) if F.COLONIAL.search(p['name']) and toks & {w[:5] for w in words(p['name'])}]
+        ph = [p['name'] for p in t.get('phases', []) if F.COLONIAL.search(p['name']) and toks & {stem(w) for w in words(p['name'])}]
         if ph:
             hits.append(dict(x, detail=f"office matches only the colonial phase {ph[0]!r}", kind='colonial phase', pair=[]))
     return hits
@@ -98,8 +103,16 @@ def check_guards(rows, tracks, ok):
 
 
 def keyed(name, hit):
+    """The allowlist key that clears a hit, or None. governors: a reign uuid or a row id (the row's governors are its heads); other-row: a reign
+    uuid, a "row|other row" pair (names another row) or "row:colonial" (the colonial-phase rule: a realm whose monarch is its head), never a bare
+    row, which would silence every kind of hit; guards: a reign uuid or "reason|row"."""
     a = allow(name)
-    keys = [hit['uuid'], hit['row']] + hit.get('pair', []) + [f"{hit.get('guard')}|{hit['row']}"]
+    if name == 'freeze-guards':
+        keys = [hit['uuid'], f"{hit.get('guard')}|{hit['row']}"]
+    elif name == 'other-row':
+        keys = [hit['uuid']] + hit.get('pair', []) + ([f"{hit['row']}:colonial"] if hit.get('kind') == 'colonial phase' else [])
+    else:
+        keys = [hit['uuid'], hit['row']]
     return next((k for k in keys if k in a), None)
 
 
