@@ -170,3 +170,15 @@ Hinduism's row). Every quote is checked against the Wikipedia dump or a cached s
 (ended traditions, each with its sourced end and end claims), Tengrism, Hawaiian religion (its faded start reaches back
 to 500 CE) and Mesoamerican religion. A thematic group shares events with every region, so the row-proximity test
 leaves it out.
+
+## Science and discoveries pilot (24 November 2026)
+
+25 events in the `science` kind (discovery, invention, work), 8 of them in this timeline (the Rhind papyrus, the Babylonian
+astronomical diaries, Euclid's *Elements*, Ptolemy's *Almagest*, Brahmagupta's *Brāhmasphuṭasiddhānta*, Zhang Heng's
+seismoscope, the earliest Long Count date, the *Nine Chapters*), from the shared list `pipelines/common/science.json`
+that the Medieval and Modern States generators read too. `scripts/ancient-classical/science.ts` writes this timeline's
+events and their Wikipedia sources; each event's sub-kind (its `kind`) is a pinned category, applied after Kevin's reviewed
+overrides (`science.category_pins`), so the overrides file is untouched. Every date and place is a quoted sentence from the dump:
+`pipelines/.venv/bin/python -I pipelines/common/science.py --check`. Plan and the three taxonomy calls left open for Kevin:
+Workbench "2026-11-24 Timelines science and discoveries pilot plan".
+
