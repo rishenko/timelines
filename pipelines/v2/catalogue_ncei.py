@@ -13,6 +13,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 import urllib.parse
 import urllib.request
 
@@ -49,10 +50,14 @@ def tcase(s):
     return ', '.join(parts[1:] if len(parts) > 1 else parts)
 
 
-def descr(recs, label):
+def ascii_slug(s):
+    return re.sub(r'[^a-z0-9]+', '-', unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode().lower()).strip('-')
+
+
+def descr(recs, label, hazard='earthquakes', wp_deaths=None):
     """One line from the record's own fields: place, magnitude, deaths. Nothing typed."""
     r = recs[0]
-    kind = 'Eruption' if 'vei' in r else 'Earthquake'
+    kind = 'Eruption' if 'vei' in r else 'Tsunami' if hazard.startswith('tsunami') else 'Earthquake'
     place = r.get('locationName') or r.get('name') or ''
     bits = []
     if r.get('eqMagnitude'):
@@ -63,7 +68,11 @@ def descr(recs, label):
     if toll:
         bits.append(f"{toll:,} deaths")
     s = f"{kind} in {tcase(place)}" if place else kind
-    return s + (': ' + ', '.join(bits) if bits else '') + ' (NCEI record).'
+    s += (': ' + ', '.join(bits) if bits else '') + ' (NCEI record).'
+    if toll and wp_deaths and sorted(set(wp_deaths)) != [toll]:  # the article's toll differs: both are shown
+        lo, hi = min(wp_deaths), max(wp_deaths)
+        s += f" Wikipedia gives {lo:,.0f}" + (f"–{hi:,.0f}" if hi != lo else '') + ' deaths.'
+    return s
 
 
 def emit():
@@ -90,7 +99,9 @@ def emit():
         for k, h, rec in zip(keys, kinds, recs):
             parts = [f"year {rec['year']}"] + ([f"month {rec['month']}"] if rec.get('month') else []) + ([f"day {rec['day']}"] if rec.get('day') else [])
             refs.append({'sourceKey': f"ncei-{k}", 'sourceLocation': f"{PAGE[h]} record {rec['id']}: " + ', '.join(parts)})
-        ev = {'uuid': f"disaster-ncei-{key}", 'title': e['label'], 'descr': descr(recs, e['label']), 'start': y, 'tracks': rows}
+        c = wp.get(e.get('wiki'))
+        wpd = [round(x) for x in c['measures']['deaths']['all']] if c and 'deaths' in c['measures'] else None
+        ev = {'uuid': f"disaster-ncei-{key}", 'title': e.get('wiki') or e['label'], 'descr': descr(recs, e['label'], e['hazard'], wpd), 'start': y, 'tracks': rows}
         if r.get('month'):
             ev['startMonth'] = r['month']
         if r.get('day'):
@@ -100,11 +111,10 @@ def emit():
             t['sources'][f"ncei-{k}"] = {'name': f"NCEI/WDS Global Significant {'Earthquake' if h == 'earthquakes' else 'Volcanic Eruptions' if h == 'volcanoes' else 'Tsunami'} Database, record {rec['id']}",
                                          'url': f"https://www.ngdc.noaa.gov/hazel/view/hazards/{PAGE[h]}/event-more-info/{rec['id']}",
                                          'accessed': cache['fetched'], 'tags': ['catalogue']}
-        c = wp.get(e.get('wiki'))
         if c:  # a Wikipedia article agreeing with the record's date is a second source, with its quoted sentence
             q = next((d for d in c['dates'] if d['from'] == 'wikipedia' and d['year'] == r['year']), None)
             if q:
-                wkey = 'wp-' + re.sub(r'[^a-z0-9]+', '-', c['wp']['title'].lower()).strip('-')
+                wkey = 'wp-' + ascii_slug(c['wp']['title'])
                 refs.append({'sourceKey': wkey, 'sourceLocation': src_loc(q)})
                 t['sources'][wkey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),
                                       'accessed': c['harvest']['at'], 'tags': ['wikipedia']}

@@ -12,14 +12,16 @@ def dataset(tid, start, end, after=True):
     return {'meta': {'id': tid, 'range': {'start': start, 'end': end}, 'facets': {'geography': {'values': {'japan': {}, 'south-asia': {}}}},
                      'continues': [{'side': 'after'}] if after else []},
             'tracks': [{'id': 'japan', 'name': 'Japan'}, {'id': 'kofun', 'name': 'Kofun'}],
-            'events': [{'uuid': 'buddhism-japan', 'tracks': ['kofun']}], 'sources': {}}
+            # every event the list shares with this timeline, as a stand-in
+            'events': [{'uuid': x['uuid'], 'tracks': ['kofun']} for t in traditions.load()['traditions'] for x in t['shared'] if x['timeline'] == tid],
+            'sources': {}}
 
 
 class Apply(unittest.TestCase):
     def test_medieval_gets_rows_events_in_range_places_and_sources(self):
         d = dataset('medieval', 650, 1500)
         counts = traditions.apply(d, 'medieval')
-        self.assertEqual(counts['traditions'], 4)
+        self.assertEqual(counts['traditions'], 8)  # all but Egypt (ended by 540) and Cao Đài (1926)
         ids = [t['id'] for t in d['tracks']]
         self.assertEqual(ids[:3], ['japan', 'kofun', 'religions-traditions'])
         ev = {e['uuid']: e for e in d['events']}
@@ -42,7 +44,33 @@ class Apply(unittest.TestCase):
         d['events'] = []
         with self.assertRaises(SystemExit) as e:
             traditions.apply(d, 'ancient-classical')
-        self.assertIn('rigveda', str(e.exception))
+        self.assertIn('shares event', str(e.exception))
+
+    def test_an_ended_tradition_has_an_end_and_leaves_later_timelines(self):
+        d = dataset('medieval', 650, 1500)
+        traditions.apply(d, 'medieval')
+        rows = {t['id']: t for t in d['tracks']}
+        self.assertNotIn('ancient-egyptian-religion', rows)          # last claim 540: before 650
+        greek = rows['ancient-greek-religion']['span']              # ends 393, but the Maniots claim reaches 900
+        self.assertEqual(greek['end'], 393)
+        self.assertNotIn('ongoing', greek)
+        self.assertTrue(greek['endDates'])
+        self.assertTrue(rows['tengrism']['span']['ongoing'])
+
+    def test_a_timeline_keeps_its_own_entry_for_an_article(self):
+        d = dataset('modern-states', 1500, 2026, after=False)
+        d['sources']['wp-fall-of-tenochtitlan'] = {'name': 'Fall of Tenochtitlan (Wikipedia)', 'url': 'https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan', 'accessed': '2026-11-21', 'tags': ['wikipedia']}
+        traditions.apply(d, 'modern-states')
+        self.assertEqual(d['sources']['wp-fall-of-tenochtitlan']['accessed'], '2026-11-21')
+
+    def test_pinned_categories_name_real_events_with_valid_values(self):
+        import event_categories as ec
+        pins = traditions.category_pins()
+        uuids = {e['uuid'] for t in traditions.load()['traditions'] for e in t['events']}
+        self.assertTrue(pins)
+        self.assertLessEqual(set(pins), uuids)
+        for k, v in pins.items():
+            ec.check(v, k)
 
     def test_rerunning_changes_nothing(self):
         d = dataset('medieval', 650, 1500)

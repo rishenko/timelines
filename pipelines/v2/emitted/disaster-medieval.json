@@ -43,6 +43,10 @@
     {
      "sourceKey": "wp-1257-samalas-eruption",
      "sourceLocation": "infobox date: 1257"
+    },
+    {
+     "sourceKey": "gvp-20843",
+     "sourceLocation": "eruption 20843: start 1257-07-01, VEI 7"
     }
    ],
    "importance": 1,
@@ -161,6 +165,14 @@
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
+   ]
+  },
+  "gvp-20843": {
+   "name": "Smithsonian Global Volcanism Program, Rinjani, eruption 20843",
+   "url": "https://volcano.si.edu/volcano.cfm?vn=264030",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
    ]
   },
   "wp-1257-samalas-eruption": {

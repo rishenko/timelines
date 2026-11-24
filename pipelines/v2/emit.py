@@ -18,6 +18,8 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'extract'))
 import dates  # noqa: E402  (stdlib only)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import gvp_second  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
@@ -167,6 +169,9 @@ def main(kind):
         if extra_end and 'end' in ev:
             ev['endDates'] = [{'year': ev['end'], 'source': ev['sources'][-1]}] + [
                 {'year': astro(d['year']), 'source': ref(d), 'note': 'The same article gives this year too.'} for d in extra_end]
+        g = gvp_second.source(c['wp']['title'])  # a second source for a volcano event: the GVP eruption record (cite-only)
+        if g:
+            ev['sources'].append({'sourceKey': g[0], 'sourceLocation': g[2]})
         ev['descr'] = describe(c, s, e)
         imp = ov.get('set', {}).get('importance') or importance(c, rules)
         if imp:
@@ -177,6 +182,8 @@ def main(kind):
                                       'sources': [ref({'locator': q['locator'], 'quote': q['quote']}) for q in c['also']['quotes']]})
         t_ = out.setdefault(tl, {'events': [], 'sources': {}})
         t_['events'].append(ev)
+        if g:
+            t_['sources'][g[0]] = g[1]
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),
                                'accessed': c['harvest']['at'], 'tags': ['wikipedia']}
     cats = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 'modern-states'}

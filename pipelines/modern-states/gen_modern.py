@@ -438,6 +438,8 @@ def build(repo, module_names=None):
         REPORT.append(emit_merge.merge('disaster', 'modern-states', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
+    if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)
+        data['tags']['catalogue'] = {'name': 'Official catalogue'}
     full = tuple(module_names) == MODULES
     # reigns (pipelines/common/reigns.py): the frozen rulers pass, on a full run only (a partial run lacks their rows);
     # before the categories, so the classifier sees them

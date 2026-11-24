@@ -60,7 +60,7 @@
   {
    "uuid": "disaster-ncei-tsu-29",
    "title": "173 Laizhou Bay tsunami",
-   "descr": "Earthquake in Laizhou Bay, Bohai Sea (NCEI record).",
+   "descr": "Tsunami in Laizhou Bay, Bohai Sea (NCEI record).",
    "start": 173,
    "tracks": [
     "han"
