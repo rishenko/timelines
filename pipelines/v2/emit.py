@@ -71,11 +71,72 @@ def describe(c, s, e):
 
 def importance(c, rules):
     m = {k: v.get('low', v['value']) for k, v in c['measures'].items()}  # the low end of a sourced range: a key event needs the least toll the sources agree on
+    if c.get('inlinks') is not None:
+        m['inlinks'] = c['inlinks']  # conflicts: notability decides (the pilot reads no casualty figures)
     for r in rules.get('importance', []):
         k = next(k for k in r if k not in ('set',))
         op, val = r[k]
         if k in m and op == '>=' and m[k] >= val:
             return r['set']
+    return None
+
+
+_MAIN = {}
+
+
+def main_events(tl):
+    """(events, wikipedia titles by event uuid) of timeline `tl` on origin/main (compiled), for the already-there check; ([], {}) if git has no such ref."""
+    if tl not in _MAIN:
+        import subprocess
+        try:
+            raw = subprocess.run(['git', 'show', f'origin/main:public/timelines/{tl}.json'], capture_output=True, text=True, check=True,
+                                 cwd=os.path.join(HERE, '..', '..')).stdout
+            d = json.loads(raw)
+            arts = {}
+            for e in d['events']:
+                for r in e.get('sources', []):
+                    u = (d.get('sources', {}).get(r.get('sourceKey') if isinstance(r, dict) else r, {}) or {}).get('url', '')
+                    m = re.search(r'wikipedia\.org/wiki/([^#?]+)', u)
+                    if m:
+                        arts.setdefault(e['uuid'], set()).add(norm_title(m.group(1).replace('_', ' ')))
+            _MAIN[tl] = (d['events'], arts)
+        except Exception:
+            _MAIN[tl] = ([], {})
+    return _MAIN[tl]
+
+
+def norm_title(t):
+    """The duplicates guard's title form: dashes as separators, accents and a bracketed part dropped (pipelines/common/duplicates_guard.py)."""
+    import unicodedata
+    t = re.sub(r'[\u2010-\u2015\u2212/]', ' ', t)
+    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+', ' ', re.sub(r'\(.*?\)', '', t)).strip()
+
+
+_GENERIC = {'war', 'wars', 'rebellion', 'rebellions', 'conquest', 'conquests', 'invasion', 'invasions', 'battle', 'siege', 'of', 'and', 'the', 'in', 'to'}
+
+
+def title_key(t):
+    """The content words of a title, diacritics and plural endings removed: "Ōnin War" -> {onin}; "Red Turban Rebellions" -> {red, turban}."""
+    import unicodedata
+    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
+    return {w[:-1] if w.endswith('s') and len(w) > 3 else w for w in re.findall(r'[a-z0-9]+', t) if w not in _GENERIC}
+
+
+def already_there(title, year, tl, article=None):
+    """An event of main that is the same one: it is dated from the same Wikipedia article, or its title is the same (accents, dashes and a bracketed
+    part ignored), or the title words are the same or one set inside the other with at least two words (Red Turban Rebellion / Rebellions, Fatimid
+    conquest of Egypt / ... and foundation of Cairo); and it starts within 2 years. Returns that event or None. The test
+    scripts/lib/conflict-duplicates.test.ts applies the title rule to the compiled timelines."""
+    events, arts = main_events(tl)
+    a, n = title_key(title), norm_title(title)
+    art = norm_title(article) if article else None
+    for o in events:
+        if abs(o['start'] - year) > 2:
+            continue
+        b = title_key(o['title'])
+        if (art and art in arts.get(o['uuid'], ())) or norm_title(o['title']) == n or (a and b and (a == b or (min(len(a), len(b)) >= 2 and (a <= b or b <= a)))):
+            return o
     return None
 
 
@@ -99,7 +160,16 @@ def main(kind):
     over = {k: v for k, v in json.load(open(os.path.join(HERE, 'overrides', f'{kind}s.json'))).items() if not k.startswith('_')}
     cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.jsonl'))]
     heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json')))
-    out, review = {}, []
+    out, review, acct = {}, [], {}
+    wide_used = set()
+    war_rows = {}
+    if kind == 'conflict':
+        import placement
+        ptable = placement.load()
+        qids = {}
+        for c in cands:  # combatant title -> its Wikidata item (the harvest wrote them in step)
+            for t, q in zip(c['countries'], c.get('country_qids', [])):
+                qids[t] = q
     for c in cands:
         collapsed = check_measures(c)
         if collapsed:
@@ -118,16 +188,49 @@ def main(kind):
                 review.append((c['title'], f"override startYear {ov['set']['startYear']} has no quoted claim")); continue
             s = {'year': pick['year'], 'month': pick.get('month'), 'day': pick.get('day'), 'circa': pick.get('circa', False),
                  'locator': pick['locator'], 'quote': pick['quote']}
+        # a reviewed start or end the harvest did not read: {year, locator, quote}, the quote a sentence the article says (checked
+        # against the dump by pipelines/v2/check_override_quotes.py); the harvested years stay as the article's own extra claims
+        for side in ('start', 'end'):
+            rc = ov.get('set', {}).get(side)
+            if rc:
+                if not (rc['quote'] and rc['locator'] and str(abs(rc['year'])) in rc['quote']):
+                    raise SystemExit(f"{c['title']}: override {side} needs a quote that names its year")
+                claim = {'year': rc['year'], 'month': rc.get('month'), 'day': rc.get('day'), 'circa': rc.get('circa', False),
+                         'locator': rc['locator'], 'quote': rc['quote']}
+                if side == 'start':
+                    s = claim
+                else:
+                    e = claim
+                c['dates'] = [d for d in c['dates'] if not (d['side'] == side and d['from'] == 'wikipedia' and d['year'] == rc['year'])]
+                c['dates'].append({'side': side, 'from': 'wikipedia', **claim})
+        if kind == 'conflict' and not ov.get('set', {}).get('startYear') and not ov.get('set', {}).get('start'):  # data protection: quoted start years more than 2 apart need a call
+            ys = sorted({d['year'] for d in c['dates'] if d['side'] == 'start' and d['from'] == 'wikipedia'})
+            if ys and ys[-1] - ys[0] > 2:
+                review.append((c['title'], f'quoted start dates disagree ({", ".join(map(str, ys))}): withheld until an override picks one')); continue
         y = astro(s['year'])
         tl = next((t for t, (a, b) in rules['windows'].items() if (a is None or y >= a) and (b is None or y <= b)), None)
+        if rules.get('emit') and tl not in rules['emit']:  # a timeline whose generator doesn't merge this kind yet (Ancient: no TS emitter)
+            review.append((c['title'], f'{tl}: no emitter for this kind yet')); continue
         rows = []
-        for q in c['places']:
-            for r in places.get(q, {}).get('rows', {}).get(tl, []):
-                if r not in rows:
-                    rows.append(r)
+        if kind == 'conflict':  # the conflicts rule: <= 3 countries -> each row; one region -> its row; wider -> the Wars row
+            rows, how = placement.rows_for(c, tl, ptable, rules['wide_row']['id'], lambda t: qids.get(t))
+            if rows == [rules['wide_row']['id']]:
+                wide_used.add(tl)
+            if not rows:
+                review.append((c['title'], f'no row in {tl}: {how}')); continue
+        else:
+            for q in c['places']:
+                for r in places.get(q, {}).get('rows', {}).get(tl, []):
+                    if r not in rows:
+                        rows.append(r)
         if not rows:
             review.append((c['title'], f'no row in {tl} for {", ".join(c["countries"])}')); continue
         title = c.get('label') or c['title']
+        shared = None
+        if kind == 'conflict':
+            shared = already_there(title, y, tl, c['wp']['title'])
+            if shared and not c.get('wide'):  # the same event is already on main, on its combatants' rows: no second copy
+                review.append((c['title'], f"already on {tl} as {shared['uuid']!r} ({shared['title']}, {shared['start']}): not emitted again")); continue
         ev = {'uuid': f'{kind}-{slug(c["wp"]["title"])}', 'title': title, 'descr': '', 'start': y, 'tracks': rows}
         if s.get('month'):
             ev['startMonth'] = s['month']
@@ -162,7 +265,8 @@ def main(kind):
             if g[3] != y:  # GVP's start year differs from the headline: a claim with GVP's own +/- as the margin
                 ev.setdefault('startDates', [{'year': y, 'source': ev['sources'][0]}])
                 ev['startDates'].append({'year': g[3], **({'margin': g[4]} if g[4] else {}), 'source': gref, 'note': "The GVP record's start year."})
-        ev['descr'] = describe(c, s, e)
+        if kind != 'conflict':  # conflicts keep their own description (set above)
+            ev['descr'] = describe(c, s, e)
         imp = ov.get('set', {}).get('importance') or importance(c, rules)
         if imp:
             ev['importance'] = imp
@@ -171,17 +275,92 @@ def main(kind):
             ev['memberships'].append({'facet': 'category', 'value': c['also']['sub'],
                                       'sources': [ref({'locator': q['locator'], 'quote': q['quote']}) for q in c['also']['quotes']]})
         t_ = out.setdefault(tl, {'events': [], 'sources': {}})
-        t_['events'].append(ev)
+        if kind == 'conflict' and c.get('wide'):
+            # a named multi-region war: its own row under the Wars row, and a dated membership (the dashed "in <war>" strip) on every
+            # participant that has a row. No schema change: a theme row plus memberOf (the Architect's note, 2026-11-23). Every
+            # participant gets the war's whole span: joining and leaving dates (Italy 1915) need the war's own claims, a later round.
+            war = slug(c['title'])
+            ev['tracks'] = [war]
+            span = {'start': y, 'startDates': [{'year': y, 'source': ev['sources'][0]}]}
+            for k_ in ('startMonth', 'startDay'):
+                if ev.get(k_):
+                    span[k_] = ev[k_]
+            if ev.get('end'):
+                span.update({'end': ev['end'], 'endDates': [{'year': ev['end'], 'source': ev['sources'][-1]}]})
+                for k_ in ('endMonth', 'endDay'):
+                    if ev.get(k_):
+                        span[k_] = ev[k_]
+            war_rows.setdefault(tl, []).append({'id': war, 'name': title, 'color': rules['wide_row']['color'], 'kind': 'theme', 'parent': rules['wide_row']['id'],
+                                                'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'), 'span': span})
+            joined = {}
+            pdates = c.get('participant_dates', {})
+            for ents in c['participants'].values():
+                for t in ents:
+                    r = placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t))
+                    if r and r != war and (r not in joined or (pdates.get(t) and not pdates.get(joined[r])) or (pdates.get(t) and pdates.get(joined[r]) and min(x.get('from', 9999) for x in pdates[t]) < min(x.get('from', 9999) for x in pdates[joined[r]]))):  # one row, several entries: the earliest dated one
+                        joined[r] = t
+            skipped, withheld = [], []
+            principals = {ents[0] for col, ents in c['participants'].items() if col in ('1', '2', '3') and ents}  # the first entry of each side
+            for r, t in joined.items():
+                qs = pdates.get(t) or []
+                if rules.get('withhold_undated_nonprincipal', True) and not qs and t not in principals:  # no joining year of its own: the war's span would overstate it
+                    withheld.append(r)
+                    continue
+                q = min(qs, key=lambda x: x.get('from', 0)) if qs else None  # the earliest record carries the source; the span spans all of them
+                m = {'row': war, 'start': y, 'startDates': span['startDates'], 'sources': [ev['sources'][0]]}
+                if ev.get('end'):
+                    m.update({'end': ev['end'], 'endDates': span['endDates']})
+                if q:  # a joining or leaving year quoted by the infobox or a member list: it replaces the war's own span for this participant
+                    qskey = 'wp-' + slug(q.get('article') or c['wp']['title'])
+                    t_['sources'].setdefault(qskey, {'name': f"{q.get('article') or c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + (q.get('article') or c['wp']['title']).replace(' ', '_'),
+                                                     'accessed': c['harvest']['at'], 'tags': ['wikipedia']})
+                    qref = {'sourceKey': qskey, 'sourceLocation': (f"{q['locator']}: {q['quote']}" if q.get('locator') else q['quote'])}
+                    st = min(x.get('from', y) for x in qs)
+                    en = max(x.get('until', ev.get('end', st)) for x in qs) if (ev.get('end') or any('until' in x for x in qs)) else None
+                    st = max(st, y)  # a range quoted for the state itself ("Republic of China (1912–1949)") is not a joining year: stay inside the war
+                    if en is not None and ev.get('end'):
+                        en = min(en, ev['end'])
+                    if st != y:
+                        m.update({'start': st, 'startDates': [{'year': st, 'source': qref}], 'sources': [qref]})
+                    if en is not None and en != ev.get('end'):
+                        m.update({'end': en, 'endDates': [{'year': en, 'source': qref}]})
+                        m['sources'] = [qref]
+                if not placement.within_life(ptable, tl, r, m['start'], m.get('end')):  # the validator refuses a membership outside the row's lifespan
+                    skipped.append(f"{r} ({m['start']}–{m.get('end')})")
+                    continue
+                t_.setdefault('rowEdits', {}).setdefault(r, []).append({'memberOf': m})
+            names = list(dict.fromkeys(t for ents in c['participants'].values() for t in ents))
+            mapped = {t: placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t)) for t in names}
+            acct.setdefault(c['title'], {})[tl] = {'entries read': len(names), 'with a row here': sum(1 for r in mapped.values() if r and r != war),
+                                                   'rows with a strip': len(joined) - len(skipped) - len(withheld), 'withheld (undated, not a principal)': withheld, 'skipped (outside the row\'s lifespan)': skipped,
+                                                   'no row in this timeline': [t for t, r in mapped.items() if not r or r == war]}
+            if skipped:
+                review.append((c['title'], 'no strip, outside the row\'s lifespan: ' + ', '.join(skipped)))
+            joined = list(joined)
+            ev['_joined'] = joined
+        if shared:  # a named multi-region war already on main: its Wars row joins the existing event, no second event
+            t_.setdefault('eventEdits', {})[shared['uuid']] = {'addTracks': list(ev['tracks'])}
+            review.append((c['title'], f"shares main's {shared['uuid']!r}: its war row is added to that event's rows"))
+        else:
+            t_['events'].append(ev)
         if g:
             t_['sources'][g[0]] = g[1]
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),
                                'accessed': c['harvest']['at'], 'tags': ['wikipedia']}
+    for tl in wide_used:
+        w = rules['wide_row']
+        out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'theme'}] + war_rows.get(tl, [])
     for tl, v in out.items():
+        for x in v['events']:
+            x.pop('_joined', None)
         v['events'].sort(key=lambda x: (x['start'], x['uuid']))
         json.dump({'note': f'Emitted by pipelines/v2/emit.py from the {kind} candidates; merged by the generators. Edit rules, places or overrides, not this file.', **v},
                   open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w'), indent=1, ensure_ascii=False)
         open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'a').write('\n')
         print(f'{tl}: {len(v["events"])} events')
+    if acct:
+        json.dump(acct, open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'w'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'a').write('\n')
     for t, why in review:
         print('not emitted:', t, '-', why)
 

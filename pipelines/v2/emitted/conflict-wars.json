@@ -1,0 +1,163 @@
+{
+ "Napoleonic Wars": {
+  "modern-states": {
+   "entries read": 41,
+   "with a row here": 20,
+   "rows with a strip": 0,
+   "withheld (undated, not a principal)": [
+    "united-kingdom",
+    "habsburg-monarchy",
+    "hre",
+    "liechtenstein",
+    "russia",
+    "prussia",
+    "spain",
+    "portugal",
+    "sweden",
+    "netherlands",
+    "naples",
+    "sicily",
+    "papal-states",
+    "france",
+    "denmark",
+    "switzerland",
+    "florence",
+    "denmark-norway"
+   ],
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Coalition forces of the Napoleonic Wars",
+    "Electorate of Hanover",
+    "List of states in the Holy Roman Empire",
+    "Kingdom of Hungary (1526–1867)",
+    "History of Spain (1808–1874)",
+    "History of Portugal (1777–1834)",
+    "Kingdom of Sardinia",
+    "Kingdom of Sardinia (1720–1861)",
+    "Prince-Bishopric of Montenegro",
+    "Kingdom of Bavaria",
+    "Kingdom of Saxony",
+    "Kingdom of Württemberg",
+    "Baden",
+    "First Restoration",
+    "Duchy of Brunswick",
+    "Nassau",
+    "Danish Unitary State",
+    "Restoration and Regeneration in Switzerland",
+    "Tuscany",
+    "List of French client states",
+    "History of Spain (1700–1808)"
+   ]
+  }
+ },
+ "Seven Years' War": {
+  "modern-states": {
+   "entries read": 13,
+   "with a row here": 9,
+   "rows with a strip": 2,
+   "withheld (undated, not a principal)": [
+    "prussia",
+    "portugal",
+    "russia",
+    "hre",
+    "spain",
+    "sweden"
+   ],
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Electorate of Hanover",
+    "History of Portugal (1640–1777)",
+    "Seven Years' War",
+    "Bengal Subah"
+   ]
+  }
+ },
+ "Thirty Years' War": {
+  "modern-states": {
+   "entries read": 20,
+   "with a row here": 11,
+   "rows with a strip": 10,
+   "withheld (undated, not a principal)": [],
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Kingdom of Bohemia",
+    "Lands of the Bohemian Crown",
+    "Electoral Palatinate",
+    "Heilbronn League",
+    "Landgraviate of Hesse-Kassel",
+    "Electorate of Saxony",
+    "Peace of Prague (1635)",
+    "Electorate of Bavaria",
+    "Catholic League (German)"
+   ]
+  }
+ },
+ "World War I": {
+  "modern-states": {
+   "entries read": 40,
+   "with a row here": 31,
+   "rows with a strip": 10,
+   "withheld (undated, not a principal)": [
+    "france",
+    "united-kingdom",
+    "british-empire",
+    "australia",
+    "canada",
+    "egypt",
+    "new-zealand",
+    "india",
+    "south-africa",
+    "japan",
+    "germany",
+    "habsburg-monarchy",
+    "ottoman-empire",
+    "serbia",
+    "belgium",
+    "montenegro"
+   ],
+   "skipped (outside the row's lifespan)": [
+    "armenia (1917–1918)"
+   ],
+   "no row in this timeline": [
+    "Allies of World War I",
+    "British Ceylon",
+    "Newfoundland and Labrador",
+    "Central Powers",
+    "Bede",
+    "Asir",
+    "Third Saudi state",
+    "First Brazilian Republic",
+    "Britain and the British Empire"
+   ]
+  }
+ },
+ "World War II": {
+  "modern-states": {
+   "entries read": 63,
+   "with a row here": 45,
+   "rows with a strip": 43,
+   "withheld (undated, not a principal)": [],
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Allies of World War II",
+    "Axis powers",
+    "Kingdom of Nepal",
+    "Attack on Pearl Harbor",
+    "Third Dominican Republic",
+    "Republic of Haiti (1859–1957)",
+    "Republic of Cuba (1902–1959)",
+    "Czechoslovak government-in-exile",
+    "Vargas era",
+    "Kingdom of Iraq",
+    "History of Bolivia (1920–1964)#Prelude to the National Revolution, 1935–1952",
+    "Pahlavi Iran",
+    "Kingdom of the South",
+    "Kingdom of Hungary (1920–1946)",
+    "United States of Venezuela",
+    "Kingdom of Egypt",
+    "First Syrian Republic",
+    "Presidential Republic (1925–1973)"
+   ]
+  }
+ }
+}
