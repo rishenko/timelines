@@ -72,7 +72,7 @@ jobs:
       - name: Extractor tests
         working-directory: pipelines/extract
         run: |
-          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze; do
+          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check; do
             python -I "$t.py"
           done
       # The shared event classifier's rules (pipelines/common/event_categories.py) and the traditions applier: no dump needed

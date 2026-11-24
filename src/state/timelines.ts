@@ -4,11 +4,10 @@ import {
   INDEX_PATH,
   isTimelineIndex,
   parseTimelineIndex,
-  summarize,
   type TimelineIndexEntry,
   type TimelineSummary,
 } from '../data/timelineIndex.ts';
-import { addToLibrary, fetchText, fetchTimeline, loadLibrary, normalizeUrl, timelineFromText, type LibraryEntry } from './library.ts';
+import { addToLibrary, entryId, entrySummary, fetchText, fetchTimeline, loadLibrary, normalizeUrl, timelineFromText, type LibraryEntry } from './library.ts';
 import { loadCollections, parseCollection, removeCollection, saveCollection, type Collection } from './collections.ts';
 
 /**
@@ -34,8 +33,9 @@ export interface TimelineChoice {
 export function listTimelines(site: TimelineIndexEntry[]): TimelineChoice[] {
   const taken = new Set(site.map((e) => e.id));
   const lib = loadLibrary()
-    .filter((e) => !taken.has(e.dataset.meta.id) && validateDataset(e.dataset).length === 0)
-    .map((e) => ({ summary: summarize(e.dataset), library: e }));
+    // a link-only entry (too large to keep) is checked when it is fetched, as a shared list's timelines are
+    .filter((e) => !taken.has(entryId(e)) && (!e.dataset || validateDataset(e.dataset).length === 0))
+    .map((e) => ({ summary: entrySummary(e), library: e }));
   for (const t of lib) taken.add(t.summary.id);
   const shared = loadCollections().flatMap((collection) =>
     collection.entries.flatMap((entry) => {
