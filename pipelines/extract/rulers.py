@@ -60,6 +60,9 @@ JULIAN = 'Q1985786'
 # Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
 HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope'],
                 ('ancient-classical', 'yamato'): ['Emperor of Japan']}  # the Yamato Kingship row (ancient/yamato-reigns.json): the Emperor was its head
+# rows whose list page names a phase's rulers under the phase's own heading, by office ("King of Kandy" on List of Sri Lankan monarchs):
+# opt-in per row, because on other rows the same rule also took consorts, regents and occupiers (recall pass, 2026-11-24)
+PHASE_OFFICE_ROWS = {('modern-states', 'sri-lanka')}
 # an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
 OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
@@ -896,7 +899,7 @@ def run(timeline, row_ids, src):
                 need = set().union(*(list_stems[q[1]] for q in via[person] if isinstance(q, tuple) and q[0] == 'list'))
                 ruler = [x for x in cand if not NOT_RULER.search(x[2]) and (x[0].startswith('reign') or RULER_WORD.search(x[2]))]
                 cand = [x for x in ruler if any(st in x[2].lower() for st in need)]
-                if not cand:  # no office names the list's subject: one that names a phase of the row, kept to that phase, when
+                if not cand and (timeline, rid) in PHASE_OFFICE_ROWS:  # no office names the list's subject: one that names a phase of the row, kept to that phase, when
                     # the list also has the person under a heading naming that phase (Senarat under "Kingdom of Kandy (1469–1815)")
                     heads = ' | '.join(headings.get(person, ()))
                     for x in ruler:
