@@ -57,8 +57,10 @@ LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
 # rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
 # shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the
-# Modern row reached every pope through its Vatican City phase). Row id -> Wikipedia article of the office.
-HEAD_OFFICES = {'japan': ['Shogun'], 'papal-states': ['Pope']}
+# Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
+HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope']}
+# an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
+OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
 LIST_NOUNS = ('monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
               'caliphs', 'khans', 'khagans', 'pharaohs', 'heads of state', 'presidents', 'grand dukes', 'grand princes',
@@ -624,7 +626,7 @@ def run(timeline, row_ids, src):
         for o in src.offices_of(list(ruled), words):
             ot = (src.title(o) or '').lower()
             polity_win[('office', o)] = [(hist(p['start']), hist(p.get('end', w1))) for p in tr.get('phases', []) if p['name'].lower() in ot] or None
-        for title in HEAD_OFFICES.get(rid, ()):  # named offices (see HEAD_OFFICES): the whole row
+        for title in HEAD_OFFICES.get((timeline, rid), ()):  # named offices (see HEAD_OFFICES): the whole row
             o = src.qid(title)
             if o:
                 polity_win[('office', o)] = None
@@ -836,7 +838,8 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
                         'tags': ['wikipedia']}
         loc = f"table row: {r['quote']}" if r.get('cite') else f"infobox {r['field']}: {r['quote']}"
         yrs = year(r['en']) - r['st'][0] if r['en'] else 0  # no end read: the length is unknown
-        descr = (f"{'Holds office' if r['office'] else 'Rules'} as head of state of {tracks[rid]['name']}"
+        noun = next((n for pat, n in OFFICE_NOUN.items() if isinstance(r.get('succ'), str) and re.search(pat, r['succ'], re.I)), None)
+        descr = (f"{'Holds office' if r['office'] else 'Rules'} as {noun or 'head of state of ' + tracks[rid]['name']}"
                  f" from {fmt(r['st'])}{' to ' + fmt(r['en']) if r['en'] else ''}"
                  f"{f' ({yrs} years)' if yrs >= 2 else ''}.")
         ev = {'uuid': uid, 'title': title, **date_fields('start', r['st']), **(date_fields('end', r['en']) if r['en'] else {}),
