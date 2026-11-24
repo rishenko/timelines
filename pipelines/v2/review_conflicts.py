@@ -123,7 +123,10 @@ def main(out):
             who = sorted(r for r, eds in d.get('rowEdits', {}).items() if any(e['memberOf']['row'] == w['id'] for e in eds))
             sp = w['span']
             L.append(f"- **{w['name']}** ({tl}): a theme row under the top-level Wars row, {sp['start']}–{sp.get('end', '?')}; dashed strips on {len(who)} participant rows: {', '.join(who)}. "
-                     "Every participant gets the war's whole span (no joining or leaving dates yet); participants without a row in this timeline are left out.")
+                     "Every participant gets the war's whole span (no joining or leaving dates yet).")
+    L.append("- **Who is a participant is deliberate and source-bound:** only the entries the war article's own infobox names (all its combatant columns, including later alliances such as France from 1635), mapped to the timeline's rows (a successor article such as German Empire or Dutch Republic counts for its country's row, by the `row_aliases` table in `pilot-conflicts.json`). "
+             "Nothing comes from memory. Two limits follow: an entry with no row in the timeline is left out, and the infobox of a large war says \"and others\": WWI's lists only the major states (Allies: France, the British Empire and its dominions, Russia, Italy, the United States, Japan; Central Powers: Germany, Austria-Hungary, the Ottoman Empire, Bulgaria), so Serbia, Belgium, Romania, Greece, Montenegro and Portugal, who fought on the Allied side, get no strip yet. "
+             "The fix is a second quoted source per war (the Allies of World War I member list, with each state's joining and leaving dates), which also gives the strips their own dates; recommended for the wars pass.")
     L.append('- No schema change is needed (the Architect\'s note): a `theme` row plus dated `memberOf`. Sides (Allies / Axis, side switches) would need an optional `role` on `memberOf` (v10); not built.')
     # duplicates with existing events
     L += ['', '## Already on a timeline?', '']

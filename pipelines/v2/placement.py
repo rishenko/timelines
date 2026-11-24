@@ -23,12 +23,15 @@ def load():
                 rows_in.setdefault(tl, set()).add(r['row'])
                 parent_of[(tl, r['row'])] = r['parent']
     own = {t: c['id'] for c in pilot['countries'] for t in c['titles']}
-    return {'own': own, 'hand': hand, 'gen': gen, 'rows_in': rows_in, 'parent_of': parent_of}
+    return {'own': own, 'alias': pilot.get('row_aliases', {}), 'hand': hand, 'gen': gen, 'rows_in': rows_in, 'parent_of': parent_of}
 
 
 def country_row(table, tl, title, qid):
     """The row of one country in a timeline, or None."""
     rid = table['own'].get(title)
+    if rid and rid in table['rows_in'].get(tl, ()):
+        return rid
+    rid = table['alias'].get(title)  # a successor or colonial article of a country the timeline has as one row
     if rid and rid in table['rows_in'].get(tl, ()):
         return rid
     for src in (table['hand'], table['gen']):

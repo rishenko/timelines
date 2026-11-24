@@ -1416,6 +1416,35 @@
           "endEvent": "seato-dissolved"
         },
         {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        },
+        {
           "row": "world-war-i",
           "start": 1914,
           "startDates": [
@@ -1482,7 +1511,38 @@
           }
         ],
         "endEvent": "hre-dissolved"
-      }
+      },
+      "memberOf": [
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "german-confederation",
@@ -1888,6 +1948,35 @@
           ],
           "startEvent": "comecon-admits-1950",
           "endEvent": "reunification"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -2088,6 +2177,35 @@
             }
           ],
           "startEvent": "ngc-founded"
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
         }
       ]
     },
@@ -3409,6 +3527,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -4514,6 +4661,35 @@
           ],
           "startEvent": "cento-admits-1955",
           "endEvent": "cento-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5360,6 +5536,35 @@
             }
           ],
           "startEvent": "nato-admits-2024"
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5918,6 +6123,35 @@
               "source": {
                 "sourceKey": "wp-thirty-years-war",
                 "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
               }
             }
           ]
@@ -6537,6 +6771,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
         }
       ]
     },
@@ -8230,6 +8493,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12478,6 +12770,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12782,6 +13103,35 @@
           ],
           "startEvent": "soviet-union-founded",
           "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -23277,6 +23627,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -25962,6 +26341,37 @@
             {
               "sourceKey": "wp-japan",
               "sourceLocation": "lead: \"With a population of almost 123 million as of 2026, it is the world's 11th most populous country.\" (current state)"
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
             }
           ]
         }
@@ -32721,6 +33131,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -54433,6 +54872,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1994"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -55990,6 +56458,35 @@
           ],
           "startEvent": "seato-founded",
           "endEvent": "seato-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -121860,6 +122357,7 @@
       "descr": "",
       "start": 1764,
       "tracks": [
+        "united-kingdom",
         "mughal-empire"
       ],
       "startMonth": 10,
@@ -121923,6 +122421,7 @@
       "descr": "",
       "start": 1805,
       "tracks": [
+        "united-kingdom",
         "france"
       ],
       "startMonth": 10,
@@ -121953,7 +122452,8 @@
       "descr": "",
       "start": 1812,
       "tracks": [
-        "france"
+        "france",
+        "russia"
       ],
       "startMonth": 6,
       "startDay": 24,
@@ -121983,7 +122483,8 @@
       "descr": "",
       "start": 1815,
       "tracks": [
-        "france"
+        "france",
+        "united-kingdom"
       ],
       "startMonth": 6,
       "startDay": 18,
@@ -122013,6 +122514,7 @@
       "descr": "",
       "start": 1815,
       "tracks": [
+        "united-kingdom",
         "france"
       ],
       "startMonth": 3,
@@ -122073,6 +122575,7 @@
       "descr": "",
       "start": 1867,
       "tracks": [
+        "united-kingdom",
         "ethiopia"
       ],
       "startMonth": 12,
@@ -122152,7 +122655,8 @@
       "descr": "",
       "start": 1896,
       "tracks": [
-        "ethiopia"
+        "ethiopia",
+        "italy"
       ],
       "startMonth": 3,
       "startDay": 1,

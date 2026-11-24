@@ -55,7 +55,7 @@ def entries(raw):
                 v = str(node.params[0].value).strip()
                 if v and not re.search(r'\.(png|svg|jpe?g|gif)\b', v, re.I):
                     out.append(v)
-    return list(dict.fromkeys(out))[:15]
+    return list(dict.fromkeys(out))[:40]
 
 
 def first_entry(raw):
@@ -64,14 +64,14 @@ def first_entry(raw):
 
 
 def combatants(box):
-    """{column number: [entries]} of an Infobox military conflict (the first entry of a column is its main combatant)."""
+    """{column: [entries]} of an Infobox military conflict. Columns '1', '2', '3' are the sides (the first entry of one is its main combatant); '1a', '2a' are later alliances (participants only)."""
     out = {}
     for prm in box.params:
-        m = re.fullmatch(r'combatant(\d)', str(prm.name).strip().lower())
+        m = re.fullmatch(r'combatant(\d)([a-z]?)', str(prm.name).strip().lower())
         if m and str(prm.value).strip():
             e = entries(str(prm.value))
             if e:
-                out[int(m.group(1))] = e
+                out[m.group(1) + m.group(2)] = e  # '1', '2', and the later alliances ('1a': France after 1635)
     return out
 
 
@@ -121,7 +121,7 @@ def main():
         mine = {canon(t) for t in ctry['titles']} | set(ctry['titles'])
         titles = {}
         for r in index:  # main combatants first: every battle whose infobox lists this country first in a column (any category)
-            if {canon(v[0]) for v in r['combatants'].values() if v} & mine:
+            if {canon(v[0]) for k, v in r['combatants'].items() if v and k.isdigit()} & mine:
                 titles[r['title']] = r['inlinks']
         for cat in ctry['cats']:  # then the category's other participants
             for t, n in db.execute('SELECT p.title, COALESCE(i.n, 0) FROM category c JOIN page p ON p.page_id=c.page_id '
@@ -171,7 +171,7 @@ def main():
                        'measures': {}, 'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')},
                        **({'dropped': dropped} if dropped else {})}
                 seen[t] = rec
-            firsts = {canon(v[0]) for v in rec['combatants'].values() if v}
+            firsts = {canon(v[0]) for k, v in rec['combatants'].items() if v and k.isdigit()}
             rec = dict(rec, ranked_for=ctry['id'], main=bool(firsts & mine))
             recs.append(rec)
         manifest_c[ctry['id']] = {'pool (main by index + category)': len(titles), 'read': len(recs)}
@@ -233,7 +233,7 @@ def main():
         for r in sorted(out.values(), key=lambda r: r['title']):
             # the combatant countries: every first entry of a column (up to the three-country rule), as QIDs for the place table
             # placement counts the main combatants (the first entry of each column); allies are 'participants' (used for the wars' strips)
-            r['countries'] = list(dict.fromkeys(canon(v[0]) for v in r['combatants'].values() if v))
+            r['countries'] = list(dict.fromkeys(canon(v[0]) for k, v in r['combatants'].items() if v and k.isdigit()))
             r['participants'] = {col: [canon(x) for x in v] for col, v in r['combatants'].items()}
             r['participant_qids'] = {t: qid(t) for v in r['participants'].values() for t in v}
             r['country_qids'] = [qid(c) for c in r['countries']]

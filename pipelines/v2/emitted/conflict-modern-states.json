@@ -255,6 +255,7 @@
    "descr": "",
    "start": 1764,
    "tracks": [
+    "united-kingdom",
     "mughal-empire"
    ],
    "startMonth": 10,
@@ -318,6 +319,7 @@
    "descr": "",
    "start": 1805,
    "tracks": [
+    "united-kingdom",
     "france"
    ],
    "startMonth": 10,
@@ -348,7 +350,8 @@
    "descr": "",
    "start": 1812,
    "tracks": [
-    "france"
+    "france",
+    "russia"
    ],
    "startMonth": 6,
    "startDay": 24,
@@ -378,7 +381,8 @@
    "descr": "",
    "start": 1815,
    "tracks": [
-    "france"
+    "france",
+    "united-kingdom"
    ],
    "startMonth": 6,
    "startDay": 18,
@@ -408,6 +412,7 @@
    "descr": "",
    "start": 1815,
    "tracks": [
+    "united-kingdom",
     "france"
    ],
    "startMonth": 3,
@@ -468,6 +473,7 @@
    "descr": "",
    "start": 1867,
    "tracks": [
+    "united-kingdom",
     "ethiopia"
    ],
    "startMonth": 12,
@@ -547,7 +553,8 @@
    "descr": "",
    "start": 1896,
    "tracks": [
-    "ethiopia"
+    "ethiopia",
+    "italy"
    ],
    "startMonth": 3,
    "startDay": 1,
@@ -993,7 +1000,73 @@
   }
  },
  "rowEdits": {
+  "sweden": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
   "savoy": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "netherlands": [
    {
     "memberOf": {
      "row": "thirty-years-war",
@@ -1059,6 +1132,103 @@
     }
    }
   ],
+  "prussia": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "france": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
   "habsburg-monarchy": [
    {
     "memberOf": {
@@ -1086,6 +1256,37 @@
        "source": {
         "sourceKey": "wp-thirty-years-war",
         "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
        }
       }
      ]
@@ -1158,7 +1359,40 @@
     }
    }
   ],
-  "france": [
+  "hre": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "united-kingdom": [
    {
     "memberOf": {
      "row": "world-war-i",
@@ -1257,6 +1491,237 @@
     }
    }
   ],
+  "canada": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "egypt": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "new-zealand": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "india": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "south-africa": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "russia": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "italy": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
   "united-states": [
    {
     "memberOf": {
@@ -1290,7 +1755,106 @@
     }
    }
   ],
+  "japan": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "germany": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
   "ottoman-empire": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "bulgaria": [
    {
     "memberOf": {
      "row": "world-war-i",

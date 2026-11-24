@@ -12809,6 +12809,28 @@
 }
 ]
 }
+},
+"Q2487": {
+"name": "Thirty Years' War",
+"rows": {
+"modern-states": [
+{
+"row": "thirty-years-war",
+"parent": "wars"
+}
+]
+}
+},
+"Q361": {
+"name": "World War I",
+"rows": {
+"modern-states": [
+{
+"row": "world-war-i",
+"parent": "wars"
+}
+]
+}
 }
 }
 }
