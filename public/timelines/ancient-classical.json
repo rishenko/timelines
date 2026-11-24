@@ -861,6 +861,12 @@
               "society"
             ]
           },
+          "text": {
+            "name": "Foundational text",
+            "broader": [
+              "society"
+            ]
+          },
           "culture": {
             "name": "Culture and learning",
             "broader": [
@@ -30092,7 +30098,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-code-hammurabi",
