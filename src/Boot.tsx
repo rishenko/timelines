@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import App from './App.tsx';
 import type { Dataset } from './types.ts';
 import type { TimelineIndexEntry } from './data/timelineIndex.ts';
-import { addToLibrary, fetchTimeline, loadLibrary, normalizeUrl, withTimeout, type LibraryEntry } from './state/library.ts';
+import { addToLibrary, entryId, fetchTimeline, loadLibrary, normalizeUrl, sessionCopy, withTimeout, type LibraryEntry } from './state/library.ts';
 import { fetchCollection, loadCollections, saveCollection, type Collection } from './state/collections.ts';
 import {
   addFromLink,
@@ -133,7 +133,7 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
       return go(addToLibrary(await fetchTimeline(url, fetchImpl), { sourceUrl: url, reservedIds: reservedIds(site) }).dataset.meta.id);
     } catch (e) {
       const cached = loadLibrary().find((x) => x.sourceUrl === url);
-      if (cached) return go(cached.dataset.meta.id);
+      if (cached) return go(entryId(cached));
       return { kind: 'error', message: (e as Error).message, detail: dataUrl };
     }
   }
@@ -146,14 +146,31 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
   let notice: string | undefined;
   if (choice.collection) {
     if (await recheckCollection(choice.collection, fetchImpl)) choice = findTimeline(listTimelines(site), id) ?? choice;
-  } else if (choice.library?.sourceUrl) {
+  } else if (choice.library?.sourceUrl && choice.library.dataset) {
+    // (a link-only entry is fetched below anyway)
     const updated = await recheckLinked(choice, site, fetchImpl);
     if (updated) {
       choice = { ...choice, library: updated };
       notice = `Updated "${updated.dataset.meta.title}" to the latest version from its link.`;
     }
   }
-  const published = choice.library ? choice.library.dataset : await loadSiteTimeline(choice.entry!, fetchImpl);
+  let published: Dataset;
+  if (!choice.library) published = await loadSiteTimeline(choice.entry!, fetchImpl);
+  else if (choice.library.dataset) published = choice.library.dataset;
+  else {
+    // too large to keep in the browser: opened from its link each time (see LibraryEntry.linkOnly)
+    const entry = choice.library;
+    try {
+      const fresh = sessionCopy(entry) ?? (await fetchTimeline(entry.sourceUrl!, fetchImpl));
+      published = { ...fresh, meta: { ...fresh.meta, id: entryId(entry) } };
+    } catch (e) {
+      return {
+        kind: 'error',
+        message: `Couldn't open "${entry.linkOnly!.title}". It's too large to keep in this browser, so it opens from its link, and that failed: ${(e as Error).message}`,
+        detail: entry.sourceUrl,
+      };
+    }
+  }
   // the reader's saved theme, else this timeline's own (the list's entry may have lacked it); remembered for next time
   applyTheme(loadTheme(published.meta.defaultTheme).colors);
   rememberThemeHint(id, published.meta.defaultTheme);
@@ -181,8 +198,8 @@ async function recheckLinked(choice: TimelineChoice, site: TimelineIndexEntry[],
   try {
     const fresh = await fetchTimeline(old.sourceUrl!, withTimeout(fetchImpl, CHECK_MS));
     // the saved copy may carry a different id (see addToLibrary); compare as it would be saved
-    const same = { ...fresh, meta: { ...fresh.meta, id: old.dataset.meta.id } };
-    if (JSON.stringify(same) === JSON.stringify(old.dataset)) return undefined;
+    const same = { ...fresh, meta: { ...fresh.meta, id: entryId(old) } };
+    if (JSON.stringify(same) === JSON.stringify(old.dataset!)) return undefined;
     return addToLibrary(fresh, { sourceUrl: old.sourceUrl, reservedIds: reservedIds(site) });
   } catch {
     return undefined;
