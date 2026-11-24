@@ -1,7 +1,7 @@
 import { useMemo, type ReactNode } from 'react';
 import { CategoryGlyph, hasGlyph } from './CategoryGlyph.tsx';
 import { categoryFacetId, eventCategories, topOf } from '../lib/categories.ts';
-import type { Dataset, DateClaim, LinkKind } from '../types.ts';
+import { LINK_KINDS, type Dataset, type DateClaim, type LinkKind } from '../types.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { hasDayZoom } from '../lib/subYear.ts';
 import { chronologyGroups } from '../lib/chronology.ts';
@@ -129,7 +129,8 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
     circa: data.events.some((e) => e.circa),
     shared: data.events.some((e) => e.tracks.length > 1),
   };
-  const linkKinds = new Set<LinkKind>(data.events.flatMap((e) => (e.links ?? []).map((l) => l.kind)));
+  // only kinds this app draws (core 1.0, rule 3: a newer file's unknown kind is kept but not shown)
+  const linkKinds = new Set<LinkKind>(data.events.flatMap((e) => (e.links ?? []).map((l) => l.kind)).filter((k) => LINK_KINDS.includes(k)));
   // a timeline dated in months and days (it offers a zoom step below a year) says "date" where others say "year"
   const days = hasDayZoom(data.meta.increments);
   const circa = formatYear(cal.yearZero ? 1200 : -1199, cal, true);
