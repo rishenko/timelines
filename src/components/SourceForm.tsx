@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import type { Dataset, Source } from '../types.ts';
-import { customTags, slug, sourceUsage, uniqueId } from '../state/edits.ts';
+import { customTags, slug, sourceBlockers, sourceUsage, uniqueId } from '../state/edits.ts';
 import { errorProps, FieldError } from './FieldError.tsx';
 
 interface FormValues {
@@ -82,6 +82,13 @@ export function SourceForm({ sourceKey, data, onSave, onDelete, onCancel }: Prop
 
   const del = () => {
     if (!sourceKey || !initial) return;
+    const people = sourceBlockers(data, sourceKey);
+    if (people.length) {
+      window.alert(
+        `"${initial.name}" can't be deleted: it is the only source for when ${people.slice(0, 3).join(', ')}${people.length > 3 ? ` and ${people.length - 3} more` : ''} ${people.length === 1 ? 'was' : 'were'} active. Edit the file to cite another source first.`,
+      );
+      return;
+    }
     const n = sourceUsage(data, sourceKey);
     const msg = n
       ? `Delete "${initial.name}"? ${n} event(s) cite it; the citation will be removed from them (the events and their dates stay).`

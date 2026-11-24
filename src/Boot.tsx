@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import App from './App.tsx';
 import type { Dataset } from './types.ts';
 import type { TimelineIndexEntry } from './data/timelineIndex.ts';
-import { addToLibrary, entryId, fetchTimeline, loadLibrary, normalizeUrl, sessionCopy, withTimeout, type LibraryEntry } from './state/library.ts';
+import { addToLibrary, entryId, fetchTimeline, loadEntryDataset, loadLibrary, normalizeUrl, sessionCopy, updateSummary, withTimeout, type LibraryEntry } from './state/library.ts';
 import { fetchCollection, loadCollections, saveCollection, type Collection } from './state/collections.ts';
 import {
   addFromLink,
@@ -13,7 +13,8 @@ import {
   reservedIds,
   type TimelineChoice,
 } from './state/timelines.ts';
-import { parseUpload } from './state/dataset.ts';
+import { parseUpload, uploadError } from './state/dataset.ts';
+import { newerMinor } from './data/migrate.ts';
 import { goToTimeline } from './state/url.ts';
 import { applyTheme, loadTheme, rememberThemeHint } from './lib/theme.ts';
 import { TimelinesPanel } from './components/TimelinesPanel.tsx';
@@ -130,7 +131,7 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
   if (dataUrl) {
     const url = normalizeUrl(dataUrl);
     try {
-      return go(addToLibrary(await fetchTimeline(url, fetchImpl), { sourceUrl: url, reservedIds: reservedIds(site) }).dataset.meta.id);
+      return go((await addToLibrary(await fetchTimeline(url, fetchImpl), { sourceUrl: url, reservedIds: reservedIds(site) })).dataset.meta.id);
     } catch (e) {
       const cached = loadLibrary().find((x) => x.sourceUrl === url);
       if (cached) return go(entryId(cached));
@@ -146,7 +147,7 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
   let notice: string | undefined;
   if (choice.collection) {
     if (await recheckCollection(choice.collection, fetchImpl)) choice = findTimeline(listTimelines(site), id) ?? choice;
-  } else if (choice.library?.sourceUrl && choice.library.dataset) {
+  } else if (choice.library?.sourceUrl && (choice.library.dataset || choice.library.big)) {
     // (a link-only entry is fetched below anyway)
     const updated = await recheckLinked(choice, site, fetchImpl);
     if (updated) {
@@ -155,18 +156,23 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
     }
   }
   let published: Dataset;
+  let stored: Dataset | undefined;
   if (!choice.library) published = await loadSiteTimeline(choice.entry!, fetchImpl);
   else if (choice.library.dataset) published = choice.library.dataset;
+  else if (choice.library.big && (stored = await loadEntryDataset(choice.library))) published = stored;
   else {
-    // too large to keep in the browser: opened from its link each time (see LibraryEntry.linkOnly)
+    // too large for localStorage: opened from its link each time (see LibraryEntry.linkOnly), or, for a large entry
+    // IndexedDB no longer has, fetched again from its link
     const entry = choice.library;
     try {
-      const fresh = sessionCopy(entry) ?? (await fetchTimeline(entry.sourceUrl!, fetchImpl));
+      if (!entry.sourceUrl) throw new Error('its saved copy is gone from this browser and it has no link to fetch it again.');
+      const fresh = sessionCopy(entry) ?? (await fetchTimeline(entry.sourceUrl, fetchImpl));
       published = { ...fresh, meta: { ...fresh.meta, id: entryId(entry) } };
+      updateSummary(published); // the picker's title and description follow the timeline just read
     } catch (e) {
       return {
         kind: 'error',
-        message: `Couldn't open "${entry.linkOnly!.title}". It's too large to keep in this browser, so it opens from its link, and that failed: ${(e as Error).message}`,
+        message: `Couldn't open "${(entry.big ?? entry.linkOnly)!.title}". It's too large to keep in this browser, so it opens from its link, and that failed: ${(e as Error).message}`,
         detail: entry.sourceUrl,
       };
     }
@@ -174,7 +180,10 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
   // the reader's saved theme, else this timeline's own (the list's entry may have lacked it); remembered for next time
   applyTheme(loadTheme(published.meta.defaultTheme).colors);
   rememberThemeHint(id, published.meta.defaultTheme);
-  return { kind: 'ready', published, library: choice.library, site, notice };
+  // the newer-format notice (core 1.0, rule 1) from the timeline itself, so it shows however it was reached: file, link, shared list,
+  // the library, a re-check, or the site's own files (a toast set before a page load is gone after it)
+  const newer = newerMinor(published);
+  return { kind: 'ready', published, library: choice.library, site, notice: [notice, newer].filter(Boolean).join(' ') || undefined };
 }
 
 /** Fetches a shared list again and saves it if it changed; true if it did. Unreachable: false (the saved copy stays). */
@@ -199,8 +208,9 @@ async function recheckLinked(choice: TimelineChoice, site: TimelineIndexEntry[],
     const fresh = await fetchTimeline(old.sourceUrl!, withTimeout(fetchImpl, CHECK_MS));
     // the saved copy may carry a different id (see addToLibrary); compare as it would be saved
     const same = { ...fresh, meta: { ...fresh.meta, id: entryId(old) } };
-    if (JSON.stringify(same) === JSON.stringify(old.dataset!)) return undefined;
-    return addToLibrary(fresh, { sourceUrl: old.sourceUrl, reservedIds: reservedIds(site) });
+    const had = await loadEntryDataset(old);
+    if (had && JSON.stringify(same) === JSON.stringify(had)) return undefined;
+    return await addToLibrary(fresh, { sourceUrl: old.sourceUrl, reservedIds: reservedIds(site) });
   } catch {
     return undefined;
   }
@@ -223,8 +233,8 @@ function Welcome({ site, fetchImpl }: { site: TimelineIndexEntry[]; fetchImpl: t
         onAddUrl={async (raw) => goToTimeline(await addFromLink(raw, site, fetchImpl))}
         onAddFile={async (file) => {
           const { dataset, errors } = parseUpload(await file.text());
-          if (!dataset) throw new Error(`Couldn't load ${file.name}: ${errors[0]}`);
-          goToTimeline(addToLibrary(dataset, { reservedIds: reservedIds(site) }).dataset.meta.id);
+          if (!dataset) throw new Error(uploadError(file.name, errors));
+          goToTimeline((await addToLibrary(dataset, { reservedIds: reservedIds(site) })).dataset.meta.id);
         }}
         onRefresh={async () => {}}
         onRemove={() => {}}

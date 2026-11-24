@@ -1,5 +1,5 @@
 import { useState, type Dispatch } from 'react';
-import { draftKey, parseUpload, type DatasetAction } from './dataset.ts';
+import { draftKey, parseUpload, uploadError, type DatasetAction } from './dataset.ts';
 import { addToLibrary, entrySummary, fetchTimeline, removeFromLibrary, type LibraryEntry } from './library.ts';
 import {
   collectionName,
@@ -48,9 +48,7 @@ export function useLibraryActions(opts: {
     const { dataset, errors, notice } = parseUpload(await file.text());
     if (!dataset) {
       console.error(errors);
-      throw new Error(
-        `Couldn't load ${file.name}: ${errors[0]}${errors.length > 1 ? ` (+${errors.length - 1} more; see console)` : ''}`,
-      );
+      throw new Error(uploadError(file.name, errors));
     }
     const id = dataset.meta.id;
     if (id === currentId) {
@@ -58,17 +56,14 @@ export function useLibraryActions(opts: {
       notify(`Loaded ${file.name}.${notice ? ` ${notice}` : ''}`);
       return;
     }
-    // the newer-version notice (core 1.0, rule 1) only once the file is accepted
+    // (a newer-format notice is shown when the timeline opens, since the page loads again: Boot)
     if (timelines.some((t) => t.entry && t.summary.id === id)) {
       // a whole file for another of the site's timelines: that timeline applies it in full (see restoreDraft)
       localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
-      if (notice) notify(notice);
       goToTimeline(id);
       return;
     }
-    const added = addToLibrary(dataset, { reservedIds: reservedIds(site) }).dataset.meta.id;
-    if (notice) notify(notice);
-    goToTimeline(added);
+    goToTimeline((await addToLibrary(dataset, { reservedIds: reservedIds(site) })).dataset.meta.id);
   };
 
   /** The edit bar's Upload JSON: like importFile, but errors become a toast. */
@@ -79,7 +74,7 @@ export function useLibraryActions(opts: {
 
   const refreshEntry = async (entry: LibraryEntry) => {
     const dataset = await fetchTimeline(entry.sourceUrl!);
-    const updated = addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: reservedIds(site) });
+    const updated = await addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: reservedIds(site) });
     if (updated.dataset.meta.id === currentId) window.location.reload();
     else {
       reload();
@@ -87,10 +82,10 @@ export function useLibraryActions(opts: {
     }
   };
 
-  const removeEntry = (entry: LibraryEntry) => {
+  const removeEntry = async (entry: LibraryEntry) => {
     const { id, title } = entrySummary(entry);
     if (!window.confirm(`Remove "${title}" from this browser? Any edits you made to it are deleted too.`)) return;
-    removeFromLibrary(id);
+    await removeFromLibrary(id);
     if (id === currentId) goHome();
     else {
       reload();

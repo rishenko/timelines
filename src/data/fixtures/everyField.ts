@@ -28,7 +28,7 @@ function claim(year: number, month: number, day: number, at: string) {
 
 export const everyField = {
   schemaVersion: 11,
-  schemaMinor: 1,
+  schemaMinor: 2,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -55,6 +55,7 @@ export const everyField = {
         },
       },
       theme: { name: 'Theme', applies: 'events', values: { trade: { name: 'Trade' } } },
+      area: { name: 'Area', applies: 'people', values: { rulers: { name: 'Rulers' } } },
     },
     continues: [{ timeline: 'harbor-towns', at: 300, side: 'after' }],
     lines: { 'harbor-ages': { name: 'Harbor ages' } },
@@ -235,6 +236,7 @@ export const everyField = {
       importance: 1,
       tracks: ['quay'],
       sources: [ref('p. 1')],
+      people: ['first-warden'],
     },
     {
       uuid: 'council-falls',
@@ -270,6 +272,17 @@ export const everyField = {
     },
     { uuid: 'league-ends', title: 'The League ends', descr: 'Its last council.', start: 200, startMonth: 8, startDay: 1, tracks: ['league'], sources: [ref('p. 30')] },
   ],
+  people: {
+    'first-warden': {
+      name: 'The First Warden',
+      ids: { wikidata: 'Q1' },
+      active: { year: -40, from: 'source', source: ref('p. 2') },
+      born: claim(-75, 5, 1, 'p. 2'),
+      died: claim(-20, 9, 9, 'p. 3'),
+      memberships: [{ facet: 'area', value: 'rulers', sources: [ref('p. 2')] }],
+      rows: [{ row: 'quay', via: 'citizenship', sources: [ref('p. 2')] }],
+    },
+  },
   redirects: { 'old-quay': 'quay', 'lost-storm': null },
 } satisfies Dataset;
 

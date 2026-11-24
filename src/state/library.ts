@@ -15,10 +15,15 @@ export interface LibraryEntry {
   /** The timeline. Absent on a link-only entry (`linkOnly`): too large to keep, it is fetched from `sourceUrl` again. */
   dataset?: Dataset;
   /**
-   * A linked timeline too large for the browser's storage (about 5 MB for the whole library): only its summary is kept,
-   * and it opens by fetching its link, as a shared list's timelines do. It needs the network to open.
+   * A linked timeline too large for localStorage that IndexedDB couldn't keep either (none in this browser, or full):
+   * only its summary is kept, and it opens by fetching its link, as a shared list's timelines do. It needs the network.
    */
   linkOnly?: TimelineSummary;
+  /**
+   * A timeline too large for localStorage (about 5 MB for the whole library): its summary stays here so the picker can
+   * list it, and the timeline itself is in IndexedDB (`BigStore`), under its id. Read it with `loadEntryDataset`.
+   */
+  big?: TimelineSummary;
   /** Where it was loaded from, if from a URL. Used to refresh it and to build share links. */
   sourceUrl?: string;
   addedAt: string;
@@ -28,10 +33,10 @@ export interface LibraryEntry {
 export const LIBRARY_KEY = 'timelines:library';
 
 /** The entry's timeline id. */
-export const entryId = (e: LibraryEntry): string => (e.dataset?.meta.id ?? e.linkOnly?.id)!;
+export const entryId = (e: LibraryEntry): string => (e.dataset?.meta.id ?? e.big?.id ?? e.linkOnly?.id)!;
 
 /** The entry's summary, as the picker shows it. */
-export const entrySummary = (e: LibraryEntry): TimelineSummary => (e.dataset ? summarize(e.dataset) : e.linkOnly!);
+export const entrySummary = (e: LibraryEntry): TimelineSummary => (e.dataset ? summarize(e.dataset) : (e.big ?? e.linkOnly)!);
 
 /**
  * Timelines fetched this session whose entries are link-only, by link: opening one right after adding it doesn't
@@ -48,6 +53,88 @@ export const rememberFetched = (url: string, d: Dataset) => void fetchedThisSess
 type Store = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
 const defaultStore = (): Store => globalThis.localStorage;
 
+/** Where timelines too large for localStorage are kept: IndexedDB in the browser, a map in tests. Reads and writes are async. */
+export interface BigStore {
+  get(id: string): Promise<Dataset | undefined>;
+  put(id: string, d: Dataset): Promise<void>;
+  delete(id: string): Promise<void>;
+}
+
+const DB_NAME = 'timelines-library';
+const DB_STORE = 'datasets';
+
+function openDb(): Promise<IDBDatabase> {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = () => req.result.createObjectStore(DB_STORE);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function request<T>(mode: IDBTransactionMode, run: (s: IDBObjectStore) => IDBRequest<T>): Promise<T> {
+  return openDb().then(
+    (db) =>
+      new Promise<T>((resolve, reject) => {
+        const tx = db.transaction(DB_STORE, mode);
+        const req = run(tx.objectStore(DB_STORE));
+        tx.oncomplete = () => {
+          db.close();
+          resolve(req.result);
+        };
+        tx.onabort = tx.onerror = () => {
+          db.close();
+          reject(tx.error ?? req.error);
+        };
+      }),
+  );
+}
+
+/** The browser's IndexedDB as a `BigStore`. */
+export const indexedDbStore: BigStore = {
+  get: (id) => request<Dataset | undefined>('readonly', (s) => s.get(id)),
+  put: (id, d) => request('readwrite', (s) => s.put(d, id)).then(() => undefined),
+  delete: (id) => request('readwrite', (s) => s.delete(id)).then(() => undefined),
+};
+
+/** The store for large timelines, or undefined where the browser has no IndexedDB (private modes, old browsers, tests). */
+const defaultBig = (): BigStore | undefined => (bigOverride !== null ? bigOverride : globalThis.indexedDB ? indexedDbStore : undefined);
+
+let bigOverride: BigStore | undefined | null = null;
+/** For tests: stands in for IndexedDB everywhere the default store is used (undefined: none; null: the browser's). */
+export const setBigStore = (b: BigStore | undefined | null) => void (bigOverride = b);
+
+/** The entry's timeline: kept in the entry, or read from IndexedDB; undefined for a link-only entry or one the browser lost. */
+export async function loadEntryDataset(e: LibraryEntry, big: BigStore | undefined = defaultBig()): Promise<Dataset | undefined> {
+  if (e.dataset) return e.dataset;
+  if (!e.big || !big) return undefined;
+  try {
+    const d = await big.get(entryId(e));
+    return d ? migrate(d) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * Rewrites the summary a large or link-only entry shows in the picker, when the timeline just read has a newer title or
+ * description than the summary written when it was added.
+ */
+export function updateSummary(d: Dataset, store: Store = defaultStore()) {
+  const id = d.meta.id;
+  const entries = loadLibrary(store);
+  const e = entries.find((x) => !x.dataset && entryId(x) === id);
+  if (!e) return;
+  const now = summarize(d);
+  const key = e.big ? 'big' : 'linkOnly';
+  if (JSON.stringify(e[key]) === JSON.stringify(now)) return;
+  try {
+    saveLibrary(entries.map((x) => (x === e ? { ...x, [key]: now } : x)), store);
+  } catch {
+    // the old summary stays: a stale title is better than none
+  }
+}
+
 export function loadLibrary(store: Store = defaultStore()): LibraryEntry[] {
   try {
     const raw = store.getItem(LIBRARY_KEY);
@@ -55,7 +142,7 @@ export function loadLibrary(store: Store = defaultStore()): LibraryEntry[] {
     // timelines saved by an older version of the app are lifted to the current one (data/migrate.ts)
     return Array.isArray(list)
       ? list
-          .filter((e) => e?.dataset?.meta?.id || (e?.linkOnly?.id && e.sourceUrl))
+          .filter((e) => e?.dataset?.meta?.id || e?.big?.id || (e?.linkOnly?.id && e.sourceUrl))
           .map((e) => (e.dataset ? { ...e, dataset: migrate(e.dataset) } : e))
       : [];
   } catch {
@@ -78,6 +165,8 @@ export interface AddOptions {
   /** Ids that can't be used (the bundled timelines). A clashing timeline is given a new id. */
   reservedIds?: string[];
   store?: Store;
+  /** Where a timeline too large for `store` goes (default: IndexedDB). */
+  big?: BigStore;
   now?: string;
 }
 
@@ -89,8 +178,9 @@ export interface AddOptions {
 /** An entry with its timeline at hand (what `addToLibrary` returns, link-only or not). */
 export type LoadedEntry = LibraryEntry & { dataset: Dataset };
 
-export function addToLibrary(ds: Dataset, opts: AddOptions = {}): LoadedEntry {
+export async function addToLibrary(ds: Dataset, opts: AddOptions = {}): Promise<LoadedEntry> {
   const store = opts.store ?? defaultStore();
+  const big = opts.big ?? defaultBig();
   const now = opts.now ?? new Date().toISOString();
   const entries = loadLibrary(store);
   const existing = entries.find((e) => entryId(e) === ds.meta.id && (e.sourceUrl ?? null) === (opts.sourceUrl ?? null));
@@ -112,22 +202,37 @@ export function addToLibrary(ds: Dataset, opts: AddOptions = {}): LoadedEntry {
   const place = (x: LibraryEntry) => (target ? entries.map((e) => (e === target ? x : e)) : [...entries, x]);
   try {
     saveLibrary(place(entry), store);
+    // it fits again: a copy kept in IndexedDB for an earlier, larger version is no longer needed
+    if (target?.big) await big?.delete(entryId(target)).catch(() => {});
+    return entry;
   } catch (e) {
-    // too large to keep: a linked timeline is kept as its link and summary, and fetched again when opened
-    if (!opts.sourceUrl) throw e;
     const { dataset: _full, ...rest } = entry;
+    // too large for localStorage: the timeline goes to IndexedDB, and only its summary stays in the list
+    if (big) {
+      try {
+        await big.put(dataset.meta.id, dataset);
+        const stored: LibraryEntry = { ...rest, big: summarize(dataset) };
+        saveLibrary(place(stored), store);
+        return { ...stored, dataset };
+      } catch {
+        await big.delete(dataset.meta.id).catch(() => {});
+      }
+    }
+    // no IndexedDB (or it is full too): a linked timeline is kept as its link and summary, and fetched again when opened
+    if (!opts.sourceUrl) throw e;
     const linkOnly: LibraryEntry = { ...rest, linkOnly: summarize(dataset) };
     saveLibrary(place(linkOnly), store);
     rememberFetched(opts.sourceUrl, dataset);
     return { ...linkOnly, dataset };
   }
-  return entry;
 }
 
 /** Removes a timeline and any draft of it. */
-export function removeFromLibrary(id: string, store: Store = defaultStore()) {
+export async function removeFromLibrary(id: string, store: Store = defaultStore(), big: BigStore | undefined = defaultBig()) {
+  const gone = loadLibrary(store).find((e) => entryId(e) === id);
   saveLibrary(loadLibrary(store).filter((e) => entryId(e) !== id), store);
   store.removeItem(draftKey(id));
+  if (gone?.big) await big?.delete(id).catch(() => {});
 }
 
 /** Fetches a file from a URL as text. Throws an Error with a readable message. */

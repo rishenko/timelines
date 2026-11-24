@@ -45,9 +45,10 @@
   source toggles, folded rows or dating choices. Would include naming and saving comparison sets.
 - **Read-only public mode** with editing hidden; undecided whether the public can edit at all.
 - **Phones:** not yet tried on a real phone.
-- **Library size:** everything lives in localStorage (about 5 MB per site). A linked timeline too large to keep is
-  saved as its link and summary and fetched each time it opens (so it needs the network); an uploaded file that large
-  still can't be saved. Move to IndexedDB if people keep large uploaded ones.
+- **Library size:** the list of a reader's timelines lives in localStorage (about 5 MB per site). A timeline too large
+  for it, uploaded or linked, is kept in IndexedDB, with only its summary in the list. Where IndexedDB is missing or
+  full, a linked one is saved as its link and summary and fetched each time it opens (it needs the network), and an
+  uploaded one can't be saved. Edits (drafts) are stored as changes and still go to localStorage.
 - **Shared drafts:** edits to a linked timeline stay local. To publish them, download the JSON and replace the file
   at the link.
 

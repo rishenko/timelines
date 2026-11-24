@@ -38,21 +38,21 @@ def category_proofs():
     import subprocess
     lines = []
     for tl in ('ancient-classical', 'medieval', 'modern-states'):
-        r = subprocess.run(['npm', 'run', '--silent', 'categories:proof', '--', tl, '--base', 'origin/main'], capture_output=True, text=True, cwd=os.path.join(HERE, '..', '..'))
+        r = subprocess.run(['npm', 'run', '--silent', 'categories:proof', '--', tl, '--base', 'origin/main'], capture_output=True, text=True, cwd=os.path.join(HERE, '..', '..'), encoding='utf-8')
         out = [l.strip() for l in (r.stdout + r.stderr).splitlines() if l.strip() and 'known negatives' not in l]
         lines.append(f"- {tl}: " + (out[0] if out else 'no output'))
     return lines
 
 
 def main(out):
-    seeds = {s['title']: s for s in json.load(open(os.path.join(HERE, 'pilot-disasters.json')))['events']}
-    cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', 'disaster.jsonl'))]
-    heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'disaster.headline.json')))
+    seeds = {s['title']: s for s in json.load(open(os.path.join(HERE, 'pilot-disasters.json'), encoding='utf-8'))['events']}
+    cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', 'disaster.jsonl'), encoding='utf-8')]
+    heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'disaster.headline.json'), encoding='utf-8'))
     emitted = {}
     for tl in TL:
         p = os.path.join(HERE, 'emitted', f'disaster-{tl}.json')
         if os.path.exists(p):
-            for e in json.load(open(p))['events']:
+            for e in json.load(open(p, encoding='utf-8'))['events']:
                 emitted[e['uuid']] = (tl, e)
     slug = lambda s: __import__('re').sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
     kept, rows, balance = Counter(), [], defaultdict(Counter)
@@ -93,7 +93,7 @@ def main(out):
         '- **Rinderpest and limnic eruptions:** Lake Nyos is Volcanic activity (EM-DAT files a limnic eruption there); Ethiopia\'s 1888–92 famine is Drought or crop failure with rinderpest named as the cause. Say if either should move.',
         '- **Wide events** (Samalas, Tambora, Krakatoa, Huaynaputina): placed on their country or region row only. A global theme row for events that cool the whole planet ("Wars" is the model for conflicts) needs a decision before it exists.',
         '- **Sahel drought:** five countries are wider than the three-row rule, so it sits on the Western Africa group row (Chad is Middle Africa).']
-    open(out, 'w').write('\n'.join(md) + '\n')
+    open(out, 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
     print('\n'.join(md[:40]))
 
 

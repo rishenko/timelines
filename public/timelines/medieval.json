@@ -40236,6 +40236,14 @@
         "wikipedia"
       ]
     },
+    "wp-chinampa": {
+      "name": "Chinampa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chinampa",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-dresden-codex": {
       "name": "Dresden Codex (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Dresden_Codex",
@@ -119780,11 +119788,10 @@
     {
       "uuid": "reign-thong-lan-thailand",
       "title": "Reign of Thong Lan",
-      "start": 1388,
       "tracks": [
         "thailand"
       ],
-      "descr": "Rules as head of state of Thailand (Ayutthaya) for seven days in 1388/89.",
+      "descr": "Rules as head of state of Thailand (Ayutthaya) from 750 to 1388 (638 years).",
       "sources": [
         {
           "sourceKey": "wp-thong-lan",
@@ -119803,7 +119810,8 @@
           ]
         }
       ],
-      "end": 1389
+      "start": 750,
+      "end": 1388
     },
     {
       "uuid": "reign-ramrachathirat-thailand",
@@ -135446,6 +135454,39 @@
             {
               "sourceKey": "wp-muqaddimah",
               "sourceLocation": "short description: \"Book by Ibn Khaldun, written in 1377\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "chinampa-agriculture",
+      "title": "Chinampa fields, the earliest securely dated",
+      "descr": "The earliest securely dated chinampas, the raised fields of Mesoamerican agriculture, are from the Middle Postclassic period, 1150–1350 CE.",
+      "start": 1150,
+      "end": 1350,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-chinampa",
+          "sourceLocation": "History: \"The earliest fields that have been securely dated are from the Middle Postclassic period, 1150–1350 CE\""
+        },
+        {
+          "sourceKey": "wp-chinampa",
+          "sourceLocation": "lead: \"is a technique used in Mesoamerican agriculture\""
+        }
+      ],
+      "tracks": [
+        "mesoamerica"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-chinampa",
+              "sourceLocation": "History: \"The earliest fields that have been securely dated are from the Middle Postclassic period, 1150–1350 CE\""
             }
           ]
         }

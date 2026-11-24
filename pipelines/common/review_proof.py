@@ -23,7 +23,7 @@ import subprocess
 import sys
 
 # the checkout under review: the git repo of the current directory (so one copy of this script can prove any worktree)
-ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
+ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True, encoding='utf-8').stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 GUARDS = [('overrides', 'pipelines/common/overrides_guard.py'), ('duplicates', 'pipelines/common/duplicates_guard.py'),
           ('reigns', 'pipelines/common/reigns_guard.py')]
@@ -31,17 +31,17 @@ DATA_DIR = 'public/timelines'
 
 
 def git(*args):
-    return subprocess.run(['git', *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+    return subprocess.run(['git', *args], cwd=ROOT, capture_output=True, text=True, check=True, encoding='utf-8').stdout.strip()
 
 
 def load_at(ref, path):
     """The JSON file at a git revision, or None if it isn't there."""
-    r = subprocess.run(['git', 'show', f'{ref}:{path}'], cwd=ROOT, capture_output=True, text=True)
+    r = subprocess.run(['git', 'show', f'{ref}:{path}'], cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
     return json.loads(r.stdout) if r.returncode == 0 else None
 
 
 def timelines_at(ref):
-    out = subprocess.run(['git', 'ls-tree', '--name-only', f'{ref}:{DATA_DIR}'], cwd=ROOT, capture_output=True, text=True)
+    out = subprocess.run(['git', 'ls-tree', '--name-only', f'{ref}:{DATA_DIR}'], cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
     return {n[:-5] for n in out.stdout.split() if n.endswith('.json') and n != 'index.json'}
 
 
@@ -75,7 +75,7 @@ def report_additivity(base, show):
         path = f'{DATA_DIR}/{t}.json'
         a = load_at(base, path)
         fp = os.path.join(ROOT, path)
-        b = json.load(open(fp)) if os.path.exists(fp) else None
+        b = json.load(open(fp, encoding='utf-8')) if os.path.exists(fp) else None
         if a is None or b is None:
             parts.append(f'{t} {"new timeline" if a is None else "removed timeline"}')
             continue
@@ -108,7 +108,7 @@ def main(argv):
             results.append(f'{name} MISSING')
             failed = True
             continue
-        r = subprocess.run([sys.executable, '-I', script, '--base', base], cwd=ROOT, capture_output=True, text=True)
+        r = subprocess.run([sys.executable, '-I', script, '--base', base], cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
         if r.returncode == 0:
             results.append(f'{name} ok')
         else:
