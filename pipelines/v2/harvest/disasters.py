@@ -39,11 +39,20 @@ REF = re.compile(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>|\{\{(sfn|efn|r|sfnp|harvnb)[
 SENT = re.compile(r'(?<=[.!?])\s+(?=[A-Z])')
 
 
-DASH = re.compile(r'\{\{\s*(snd|ndash|spaced ndash|spnd|nbsndash)\s*\}\}', re.I)
+DASH = re.compile(r'\{\{\s*(snds?|ndash|spaced ndash|spnd|nbsndash)\s*\}\}', re.I)
 
 
 def plain(s):
-    s = DASH.sub(' – ', REF.sub('', s))  # {{snd}} stays a dash: "28 July 1914{{snd}}11 November 1918" must not collapse to "191411 November 1918"
+    """Plain text of a wikitext fragment. {{snd}}/{{snds}} stay a dash ("28 July 1914{{snd}}11 November 1918" must not collapse to
+    "191411 November 1918"); whole templates go first, so a footnote ({{Efn|… <ref>…</ref> …}}) takes its refs and braces with it."""
+    s = DASH.sub(' – ', s)
+    code = mw.parse(s)
+    for tpl in code.filter_templates(recursive=False):
+        try:
+            code.remove(tpl)
+        except ValueError:
+            pass
+    s = re.sub(r'</?ref[^>]*>', '', REF.sub('', str(code)))
     return re.sub(r'\s+', ' ', mw.parse(s).strip_code().replace('&nbsp;', ' ')).strip()
 
 

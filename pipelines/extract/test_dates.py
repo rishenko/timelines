@@ -264,3 +264,9 @@ class Disasters132(unittest.TestCase):
         self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1880, 1904, True))
         s = one('the 1880s')
         self.assertEqual((s['start'][0], s['end'][0]), (1880, 1889))
+
+
+class Snds(unittest.TestCase):
+    def test_snds_is_a_dash(self):  # {{snds}} (a spaced en dash) between two dates is a range
+        s = one('April 19, 1775{{snds}}September 3, 1783')
+        self.assertEqual((s['start'], s['end']), ((1775, 4, 19), (1783, 9, 3)))
