@@ -67,6 +67,7 @@ def main():
                 if K.PREFIX.match(e['title']):
                     have.setdefault(K.base(K.PREFIX.sub('', e['title'])), []).append((tl, e['tracks'][0]))
         aliases = {}
+        redirects = {n: redirect(n) for n in uniq if redirect(n)}  # frozen for every name, whether or not the data has the target yet
         for n in uniq:
             if K.base(n) in have:
                 continue
@@ -78,7 +79,7 @@ def main():
             for tl, r in have.get(K.base(aliases.get(n, n)), [])[:1]:
                 rows[(tl, r)] = rows.get((tl, r), 0) + 1
         spec = {'id': sid, 'rows': [list(k) for k in sorted(rows)], 'measure': 'table', 'expected': len(uniq), 'kind': 'table', 'region': region, 'era': era,
-                'source': {'article': art, 'quote': quote_of(p['text']), 'dump': settings.DUMP_NAME}, 'table': {'article': art, 'names': names, **({'col': col} if isinstance(col, int) else {}), **({'all_tables': True} if col == 'all' else {})}, 'aliases': aliases, 'notRequired': {}}
+                'source': {'article': art, 'quote': quote_of(p['text']), 'dump': settings.DUMP_NAME}, 'table': {'article': art, 'names': names, **({'col': col} if isinstance(col, int) else {}), **({'all_tables': True} if col == 'all' else {})}, 'aliases': aliases, 'redirects': redirects, 'notRequired': {}}
         got, detail = K.table_count(spec) if rows else (0, 'no name found in the data')
         if got != spec['expected']:
             spec['kind'] = 'list'  # a warning: the list is read, but whether its legendary, interregnum or colonial rows belong is Kevin's call
