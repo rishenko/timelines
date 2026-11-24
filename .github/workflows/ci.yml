@@ -85,6 +85,7 @@ jobs:
           python -I pipelines/common/test_owned_ids_check.py
           python -I pipelines/common/test_reigns_guard.py
           python -I pipelines/common/test_sample_judge.py
+          python -I pipelines/ancient/test_oneoff_reigns.py
           python -I pipelines/common/test_reign_checks.py
           python -I pipelines/common/test_review_proof.py
           python -I pipelines/common/test_traditions.py

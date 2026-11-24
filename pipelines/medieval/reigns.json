@@ -58038,10 +58038,11 @@
   {
    "uuid": "reign-thong-lan-thailand",
    "title": "Reign of Thong Lan",
+   "start": 1388,
    "tracks": [
     "thailand"
    ],
-   "descr": "Rules as head of state of Thailand (Ayutthaya) from 750 to 1388 (638 years).",
+   "descr": "Rules as head of state of Thailand (Ayutthaya) for seven days in 1388/89.",
    "sources": [
     {
      "sourceKey": "wp-thong-lan",
@@ -58060,8 +58061,7 @@
      ]
     }
    ],
-   "start": 750,
-   "end": 1388
+   "end": 1389
   },
   {
    "uuid": "reign-ramrachathirat-thailand",
@@ -101195,7 +101195,7 @@
  "inputs": {
   "rulers.csv": "87cf1e8be49222d5",
   "rulers-events.json": "21519636c8fb4b26",
-  "reigns-excluded.json": "e7f9dd26285cc24f",
+  "reigns-excluded.json": "dec604987f82a445",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
