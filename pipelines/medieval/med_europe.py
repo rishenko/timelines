@@ -569,6 +569,13 @@ def build(mod, repo):
     R.append(ancient_row(anc, 'lombards', 'italian-peninsula'))
     all_events('Kingdom of the Lombards', 'lombards')
     event('Kingdom of the Lombards', 'end', 'lombards', force=True)
+    # DRAFT (2026-11-24, for Kevin's call on a new row): the Kingdom of Italy from the Frankish conquest (774), so the
+    # Carolingian and post-Carolingian kings of Italy who were also emperors (Louis II, Guy III and Lambert II of Spoleto,
+    # Louis the Blind, Berengar I) have a row; the infobox's 962 (Otto I) is a claim. Its reigns: italy-reigns.json.
+    T = 'kingdom-of-italy'
+    kit = 'Kingdom of Italy (Holy Roman Empire)'
+    row(T, 'Kingdom of Italy', 'italian-peninsula', kit, 'italy', '#3a7a9a',
+        span=S(kit, track=T, sc=M.L(774, kit, 'In June 774, the kingdom collapsed') + M.F(kit, 'year_start', 'start', note='The kingdom within the Holy Roman Empire, from Otto I (962).')))
     T = 'papal-states'
     row(T, 'Papal States', 'italian-peninsula', 'Papal States', 'italy', '#c0a030', span=S('Papal States', track=T))
     T = 'venice'

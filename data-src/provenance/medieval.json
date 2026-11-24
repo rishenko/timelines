@@ -15,7 +15,7 @@
  },
  "ancient_classical": {
   "file": "public/timelines/ancient-classical.json",
-  "sha256": "1ddebd3fa8b184116896787115e8dfe67d699d66eeb3bc9a64e36cdf1d7b7d9a"
+  "sha256": "fb9879849fabf7f40ecbc65dafb642d80660536e00e08b2dbaa60b41265c200d"
  },
  "articles": [
   "Abbasid Caliphate",
@@ -185,6 +185,7 @@
   "Kingdom of Hungary (1000–1301)",
   "Kingdom of Hungary (1301–1526)",
   "Kingdom of Imereti",
+  "Kingdom of Italy (Holy Roman Empire)",
   "Kingdom of Jerusalem",
   "Kingdom of Kaffa",
   "Kingdom of Kakheti",
