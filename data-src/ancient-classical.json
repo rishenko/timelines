@@ -1983,6 +1983,13 @@
         "startDates": [
           { "year": "550 CE", "margin": 50, "source": { "sourceKey": "wp-alodia", "sourceLocation": "infobox ('6th century')" } },
           { "year": "550 CE", "source": { "sourceKey": "wp-alodia", "sourceLocation": "Origins ('completed by the mid-6th century')" } }
+        ],
+        "endDates": [
+          { "year": "1500 CE", "source": { "sourceKey": "wp-alodia", "sourceLocation": "infobox year_end: 'c. 1500'" } },
+          {
+            "year": "1500 CE",
+            "source": { "sourceKey": "wp-alodia", "sourceLocation": "lead: 'By around 1500 Soba had fallen to either Arabs or the Funj.'" }
+          }
         ]
       },
       "memberships": [
@@ -3792,7 +3799,38 @@
       "parent": "west-med",
       "url": "https://en.wikipedia.org/wiki/Nuragic_civilization",
       "ids": { "wikidata": "Q1421436" },
-      "span": { "start": "c. 1800 BCE", "end": "238 BCE" },
+      "span": {
+        "start": "c. 1800 BCE",
+        "end": "238 BCE",
+        "startDates": [
+          {
+            "year": "1751 BCE",
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-nuragic",
+              "sourceLocation": "lead: 'Nuragic civilization lasted from the 18th century BC (Middle Bronze Age), up to the Iron Age or until the beginning of Roman colonization in 238 BC.'"
+            },
+            "note": "\"18th century BC\" (1800–1701): the row starts at its beginning."
+          },
+          {
+            "year": "1800 BCE",
+            "source": {
+              "sourceKey": "wp-nuragic",
+              "sourceLocation": "lead: 'the nuraghe, a tower-fortress type of construction the ancient Sardinians built in large numbers starting from about 1800 BC'"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": "238 BCE",
+            "source": {
+              "sourceKey": "wp-nuragic",
+              "sourceLocation": "lead: 'Nuragic civilization lasted from the 18th century BC (Middle Bronze Age), up to the Iron Age or until the beginning of Roman colonization in 238 BC.'"
+            },
+            "note": "The same lead adds: \"Others date the culture as lasting at least until the 2nd century AD\" (the Barbagia to the 6th)."
+          }
+        ]
+      },
       "memberships": [
         {
           "facet": "geography",
@@ -4848,7 +4886,28 @@
       "parent": "hellenistic",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_Pergamon",
       "ids": { "wikidata": "Q2022162" },
-      "span": { "start": "c. 282 BCE", "end": "129 BCE" },
+      "span": {
+        "start": "c. 282 BCE",
+        "end": "129 BCE",
+        "startDates": [{ "year": "282 BCE", "source": { "sourceKey": "wp-pergamon", "sourceLocation": "infobox year_start: 'approx. 282 BC'" } }],
+        "endDates": [
+          {
+            "year": "129 BCE",
+            "source": {
+              "sourceKey": "wp-pergamon",
+              "sourceLocation": "infobox year_end: '129 BC'; event_end: 'Incorporated into Roman province of Asia after the defeat of Eumenes III Aristonicus'"
+            }
+          },
+          {
+            "year": "133 BCE",
+            "source": {
+              "sourceKey": "wp-pergamon",
+              "sourceLocation": "lead: 'bequeathed his realm to the Roman Republic in his will with his death in 133 BC'"
+            },
+            "note": "Attalus III's bequest: the kingdom passed to Rome in 133 BC and was incorporated in 129 BC."
+          }
+        ]
+      },
       "memberships": [
         {
           "facet": "geography",
@@ -8230,7 +8289,12 @@
       "parent": "steppe",
       "url": "https://en.wikipedia.org/wiki/Kidarites",
       "ids": { "wikidata": "Q26996" },
-      "span": { "start": "320 CE", "end": "467 CE" },
+      "span": {
+        "start": "320 CE",
+        "end": "467 CE",
+        "startDates": [{ "year": "320 CE", "source": { "sourceKey": "wp-kidarites", "sourceLocation": "infobox year_start: '320 CE'" } }],
+        "endDates": [{ "year": "467 CE", "source": { "sourceKey": "wp-kidarites", "sourceLocation": "infobox year_end: '467 CE'" } }]
+      },
       "memberships": [
         {
           "facet": "geography",
