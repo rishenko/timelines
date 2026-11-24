@@ -91,7 +91,8 @@ reads the whole sample, the others the same overlap rows) and `verdicts-template
 `verdicts-<reader>.csv` with `ok`, `bad` or `unsure`; `report` merges them and prints precision, the Wilson interval, Cohen's
 kappa on the overlap and the gate line (`point ≥95% (pass-9 gate)`, Wilson lower bound shown). The gate reads the strict
 figure: a row is real only if every reader who read it says `ok`. A drawn sample is never redrawn. `sample_judge_fixtures/` keeps
-the two persons-store runs of 2026-11-24 (90.0%, then 95.1%) as frozen fixtures. Tests: `test_sample_judge.py`.
+the persons-store runs of 2026-11-24 as frozen fixtures: two single-reader reads (90.0%, then 95.1%) and the two-reader
+run that settled it (strict 80.0%, kappa 0.86), which shows how far one author's read can overstate. Tests: `test_sample_judge.py`.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the

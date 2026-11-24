@@ -200,6 +200,15 @@ class Fixtures(unittest.TestCase):
         self.assertIn('Wilson lower bound 88.0%', text)
         self.assertIn('88.0%–98.1%', text)
 
+    def test_run5_two_blind_readers_strict_80_and_kappa(self):
+        code, text = self.report('persons-store-run5')
+        self.assertEqual(code, 1)
+        self.assertIn('dev_a alone:** 81 of 100 real', text)
+        self.assertIn('GATE: 80/100 = 80.0%', text)
+        self.assertIn('Wilson lower bound 71.1%', text)
+        self.assertIn("96 agree (96.0%); Cohen's kappa 0.86", text)
+        self.assertEqual(text.count('DISAGREE'), 4)
+
 
 if __name__ == '__main__':
     unittest.main()
