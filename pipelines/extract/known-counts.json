@@ -589,6 +589,481 @@
    },
    "notRequired": {},
    "note": "102 table rows, 96 distinct emperors (a few reigned twice or more). Consorts, co-emperors and usurpers the data holds but the list leaves out are not counted; the list itself includes some usurpers (Procopius, Basiliscus, Artabasdos), which the data must hold."
+  },
+  {
+   "id": "ottoman-sultans-table",
+   "rows": [
+    [
+     "medieval",
+     "ottoman-empire"
+    ],
+    [
+     "medieval",
+     "seljuk-empire"
+    ],
+    [
+     "modern-states",
+     "ottoman-empire"
+    ]
+   ],
+   "measure": "table",
+   "expected": 43,
+   "kind": "list",
+   "region": "West Asia",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of sultans of the Ottoman Empire",
+    "quote": "thumb|240px|Ottoman Imperial Standard thumb|left|80px|Family tree thumb|240px|Ottoman Empire in 1683, at the height of its territorial expan",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of sultans of the Ottoman Empire",
+    "names": [
+     "Osman I",
+     "Orhan",
+     "Murad I",
+     "Savcı Bey",
+     "Bayezid I",
+     "İsa Çelebi",
+     "Süleyman Çelebi",
+     "Musa Çelebi",
+     "Mehmed I",
+     "Mehmed I",
+     "Mustafa Çelebi",
+     "Murad II",
+     "Mehmed II",
+     "Bayezid II",
+     "Cem Sultan",
+     "Selim I",
+     "Suleiman the Magnificent",
+     "Selim II",
+     "Murad III",
+     "Mehmed III",
+     "Ahmed I",
+     "Mustafa I",
+     "Osman II",
+     "Murad IV",
+     "Ibrahim (Ottoman sultan)",
+     "Mehmed IV",
+     "Suleiman II of the Ottoman Empire",
+     "Ahmed II",
+     "Mustafa II",
+     "Ahmed III",
+     "Mahmud I",
+     "Osman III",
+     "Mustafa III",
+     "Abdul Hamid I",
+     "Selim III",
+     "Mustafa IV",
+     "Mahmud II",
+     "Abdülmecid I",
+     "Abdulaziz",
+     "Murad V",
+     "Abdul Hamid II",
+     "Mehmed V",
+     "Mehmed VI",
+     "Abdulmejid II"
+    ]
+   },
+   "aliases": {
+    "Ibrahim (Ottoman sultan)": "Ibrahim of the Ottoman Empire",
+    "Suleiman II of the Ottoman Empire": "Suleiman II (Ottoman sultan)"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Savcı Bey, İsa Çelebi, Süleyman Çelebi, Musa Çelebi, Mustafa Çelebi, Cem Sultan, Abdulmejid II"
+  },
+  {
+   "id": "tang-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "tang"
+    ],
+    [
+     "medieval",
+     "china"
+    ]
+   ],
+   "measure": "table",
+   "expected": 20,
+   "kind": "list",
+   "region": "East Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "List of emperors of the Tang dynasty",
+    "quote": "This is a list of emperors of the Tang dynasty (618–690, 705–907) of China.",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of emperors of the Tang dynasty",
+    "names": [
+     "Emperor Gaozu of Tang",
+     "Emperor Taizong of Tang",
+     "Emperor Gaozong of Tang",
+     "Emperor Zhongzong of Tang",
+     "Emperor Ruizong of Tang",
+     "Emperor Zhongzong of Tang",
+     "Emperor Shang of Tang",
+     "Emperor Ruizong of Tang",
+     "Emperor Xuanzong of Tang",
+     "Emperor Suzong of Tang",
+     "Emperor Daizong of Tang",
+     "Emperor Dezong of Tang",
+     "Emperor Shunzong of Tang",
+     "Emperor Xianzong of Tang",
+     "Emperor Muzong of Tang",
+     "Emperor Jingzong of Tang",
+     "Emperor Wenzong of Tang",
+     "Emperor Wuzong of Tang",
+     "Emperor Xuanzong of Tang (9th century)",
+     "Emperor Yizong of Tang",
+     "Emperor Xizong of Tang",
+     "Emperor Zhaozong of Tang"
+    ],
+    "col": 1
+   },
+   "aliases": {},
+   "notRequired": {},
+   "note": "fails today: missing: Emperor Gaozu of Tang"
+  },
+  {
+   "id": "song-emperors",
+   "rows": [
+    [
+     "medieval",
+     "china"
+    ]
+   ],
+   "measure": "table",
+   "expected": 18,
+   "kind": "table",
+   "region": "East Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "List of emperors of the Song dynasty",
+    "quote": "The Song dynasty (960–1279) was an imperial dynasty of China that succeeded the period referred to as Five Dynasties and Ten Kingdoms period",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of emperors of the Song dynasty",
+    "names": [
+     "Emperor Taizu of Song",
+     "Emperor Taizong of Song",
+     "Emperor Zhenzong",
+     "Emperor Renzong of Song",
+     "Emperor Yingzong of Song",
+     "Emperor Shenzong of Song",
+     "Emperor Zhezong",
+     "Emperor Huizong of Song",
+     "Emperor Qinzong",
+     "Emperor Gaozong of Song",
+     "Emperor Xiaozong of Song",
+     "Emperor Guangzong of Song",
+     "Emperor Ningzong",
+     "Emperor Lizong",
+     "Emperor Duzong",
+     "Emperor Gong of Song",
+     "Emperor Duanzong",
+     "Zhao Bing"
+    ]
+   },
+   "aliases": {},
+   "notRequired": {}
+  },
+  {
+   "id": "japanese-emperors",
+   "rows": [
+    [
+     "medieval",
+     "japan"
+    ],
+    [
+     "modern-states",
+     "japan"
+    ],
+    [
+     "modern-states",
+     "taiwan"
+    ]
+   ],
+   "measure": "table",
+   "expected": 129,
+   "kind": "list",
+   "region": "East Asia",
+   "era": "500 BCE–500 CE and 500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of emperors of Japan",
+    "quote": "The sequence, order and dates of the early emperors are almost entirely based on the 8th-century Nihon Shoki, which was meant to retroactive",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of emperors of Japan",
+    "names": [
+     "Emperor Jimmu",
+     "Emperor Suizei",
+     "Emperor Annei",
+     "Emperor Itoku",
+     "Emperor Kōshō",
+     "Emperor Kōan",
+     "Emperor Kōrei",
+     "Emperor Kōgen",
+     "Emperor Kaika",
+     "Emperor Sujin",
+     "Emperor Suinin",
+     "Emperor Keikō",
+     "Emperor Seimu",
+     "Emperor Chūai",
+     "Emperor Ōjin",
+     "Emperor Nintoku",
+     "Emperor Richū",
+     "Emperor Hanzei",
+     "Emperor Ingyō",
+     "Emperor Ankō",
+     "Emperor Yūryaku",
+     "Emperor Seinei",
+     "Emperor Kenzō",
+     "Emperor Ninken",
+     "Emperor Buretsu",
+     "Emperor Keitai",
+     "Emperor Ankan",
+     "Emperor Senka",
+     "Emperor Kinmei",
+     "Emperor Bidatsu",
+     "Emperor Yōmei",
+     "Emperor Sushun",
+     "Empress Suiko",
+     "Emperor Jomei",
+     "Empress Kōgyoku",
+     "Emperor Kōtoku",
+     "Empress Kōgyoku",
+     "Emperor Tenji",
+     "Emperor Kōbun",
+     "Emperor Tenmu",
+     "Empress Jitō",
+     "Emperor Monmu",
+     "Empress Genmei",
+     "Empress Genshō",
+     "Emperor Shōmu",
+     "Empress Kōken",
+     "Emperor Junnin",
+     "Empress Shōtoku",
+     "Emperor Kōnin",
+     "Emperor Kanmu",
+     "Emperor Heizei",
+     "Emperor Saga",
+     "Emperor Junna",
+     "Emperor Ninmyō",
+     "Emperor Montoku",
+     "Emperor Seiwa",
+     "Emperor Yōzei",
+     "Emperor Kōkō",
+     "Emperor Uda",
+     "Emperor Daigo",
+     "Emperor Suzaku",
+     "Emperor Murakami",
+     "Emperor Reizei",
+     "Emperor En'yū",
+     "Emperor Kazan",
+     "Emperor Ichijō",
+     "Emperor Sanjō",
+     "Emperor Go-Ichijō",
+     "Emperor Go-Suzaku",
+     "Emperor Go-Reizei",
+     "Emperor Go-Sanjō",
+     "Emperor Shirakawa",
+     "Emperor Horikawa",
+     "Emperor Toba",
+     "Emperor Sutoku",
+     "Emperor Konoe",
+     "Emperor Go-Shirakawa",
+     "Emperor Nijō",
+     "Emperor Rokujō",
+     "Emperor Takakura",
+     "Emperor Antoku",
+     "Emperor Go-Toba",
+     "Emperor Tsuchimikado",
+     "Emperor Juntoku",
+     "Emperor Chūkyō",
+     "Emperor Go-Horikawa",
+     "Emperor Shijō",
+     "Emperor Go-Saga",
+     "Emperor Go-Fukakusa",
+     "Emperor Kameyama",
+     "Emperor Go-Uda",
+     "Emperor Fushimi",
+     "Emperor Go-Fushimi",
+     "Emperor Go-Nijō",
+     "Emperor Hanazono",
+     "Emperor Go-Daigo",
+     "Emperor Go-Murakami",
+     "Emperor Chōkei",
+     "Emperor Go-Kameyama",
+     "Emperor Kōgon",
+     "Emperor Kōmyō",
+     "Emperor Sukō",
+     "Emperor Go-Kōgon",
+     "Emperor Go-En'yū",
+     "Emperor Go-Komatsu",
+     "Emperor Shōkō",
+     "Emperor Go-Hanazono",
+     "Emperor Go-Tsuchimikado",
+     "Emperor Go-Kashiwabara",
+     "Emperor Go-Nara",
+     "Emperor Ōgimachi",
+     "Emperor Go-Yōzei",
+     "Emperor Go-Mizunoo",
+     "Empress Meishō",
+     "Emperor Go-Kōmyō",
+     "Emperor Go-Sai",
+     "Emperor Reigen",
+     "Emperor Higashiyama",
+     "Emperor Nakamikado",
+     "Emperor Sakuramachi",
+     "Emperor Momozono",
+     "Empress Go-Sakuramachi",
+     "Emperor Go-Momozono",
+     "Emperor Kōkaku",
+     "Emperor Ninkō",
+     "Emperor Kōmei",
+     "Emperor Meiji",
+     "Emperor Taishō",
+     "Hirohito",
+     "Empress Jingū"
+    ],
+    "col": 3
+   },
+   "aliases": {
+    "Emperor Kōbun": "Prince Ōtomo",
+    "Empress Shōtoku": "Empress Kōken"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Emperor Jimmu, Emperor Suizei, Emperor Annei, Emperor Itoku, Emperor Kōshō, Emperor Kōan, Emperor Kōrei, Emperor Kōgen, Emperor Kaika, Emperor Sujin, Emperor Suinin, Emperor Keikō, Emperor Seimu, Emperor Chūai, Emperor Ōjin, Emperor Nintoku, Emperor Richū, Emperor Hanzei, Emperor Ingyō, Emperor Ankō, Emperor Yūryaku, Emperor Seinei, Emperor Kenzō, Emperor Ninken, Emperor Buretsu, Emperor "
+  },
+  {
+   "id": "tlatoque-tenochtitlan",
+   "rows": [
+    [
+     "medieval",
+     "tenochtitlan"
+    ],
+    [
+     "modern-states",
+     "tenochtitlan"
+    ]
+   ],
+   "measure": "table",
+   "expected": 21,
+   "kind": "list",
+   "region": "The Americas",
+   "era": "500–1500 and 1500–1800",
+   "source": {
+    "article": "List of tlatoque of Tenochtitlan",
+    "quote": "thumb|Glyph of Tenochtitlan|upright=0.7 This is a list of Mesoamerican rulers of the altepetl of Tenochtitlan (modern Mexico City) from its",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of tlatoque of Tenochtitlan",
+    "names": [
+     "Tenoch",
+     "Acamapichtli",
+     "Huitzilihuitl",
+     "Chimalpopoca",
+     "Xihuitl Temoc",
+     "Itzcoatl",
+     "Moctezuma I",
+     "Atotoztli II",
+     "Axayacatl",
+     "Tizoc",
+     "Ahuitzotl",
+     "Moctezuma II",
+     "Cuitláhuac",
+     "Cuauhtémoc",
+     "Juan Velázquez Tlacotzin",
+     "Andrés de Tapia Motelchiuh",
+     "Pablo Xochiquentzin",
+     "Diego de Alvarado Huanitzin",
+     "Diego de San Francisco Tehuetzquititzin",
+     "Cristóbal de Guzmán Cecetzin",
+     "Luis de Santa María Nanacacipactzin"
+    ]
+   },
+   "aliases": {},
+   "notRequired": {},
+   "note": "fails today: missing: Xihuitl Temoc, Atotoztli II, Ahuitzotl, Juan Velázquez Tlacotzin, Andrés de Tapia Motelchiuh, Pablo Xochiquentzin, Diego de Alvarado Huanitzin, Diego de San Francisco Tehuetzquititzin, Cristóbal de Guzmán Cecetzin, Luis de Santa María Nanacacipactzin"
+  },
+  {
+   "id": "holy-roman-emperors",
+   "rows": [
+    [
+     "medieval",
+     "croatia"
+    ],
+    [
+     "medieval",
+     "east-francia"
+    ],
+    [
+     "medieval",
+     "francia"
+    ],
+    [
+     "medieval",
+     "hre"
+    ],
+    [
+     "modern-states",
+     "hre"
+    ]
+   ],
+   "measure": "table",
+   "expected": 28,
+   "kind": "list",
+   "region": "Europe",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of Holy Roman Emperors",
+    "quote": "The Holy Roman Emperor, originally and officially the Emperor of the Romans (; ) during the Middle Ages, and also known as the Roman-German",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of Holy Roman Emperors",
+    "names": [
+     "Charlemagne",
+     "Louis the Pious",
+     "Lothair I",
+     "Louis II, Holy Roman Emperor",
+     "Charles the Bald",
+     "Guy III of Spoleto",
+     "Lambert II of Spoleto",
+     "Louis the Blind",
+     "Berengar I of Italy",
+     "Otto I, Holy Roman Emperor",
+     "Otto II, Holy Roman Emperor",
+     "Otto III, Holy Roman Emperor",
+     "Henry II, Holy Roman Emperor",
+     "Conrad II, Holy Roman Emperor",
+     "Henry III, Holy Roman Emperor",
+     "Henry IV, Holy Roman Emperor",
+     "Henry V, Holy Roman Emperor",
+     "Lothair III, Holy Roman Emperor",
+     "Frederick I, Holy Roman Emperor",
+     "Henry VI, Holy Roman Emperor",
+     "Otto IV, Holy Roman Emperor",
+     "Frederick II, Holy Roman Emperor",
+     "Henry VII, Holy Roman Emperor",
+     "Louis IV, Holy Roman Emperor",
+     "Charles IV, Holy Roman Emperor",
+     "Sigismund, Holy Roman Emperor",
+     "Frederick III, Holy Roman Emperor",
+     "Charles V, Holy Roman Emperor"
+    ]
+   },
+   "aliases": {
+    "Otto I, Holy Roman Emperor": "Otto the Great",
+    "Frederick I, Holy Roman Emperor": "Frederick Barbarossa"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Louis the Pious, Louis II, Holy Roman Emperor, Guy III of Spoleto, Lambert II of Spoleto, Louis the Blind, Berengar I of Italy"
   }
  ],
  "gaps": [
