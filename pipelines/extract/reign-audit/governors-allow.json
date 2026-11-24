@@ -1,0 +1,9 @@
+{
+ "note": "Check 1 (non-sovereign office words): rows or reigns whose governor-like office is the row's own head (hereditary governor dynasties: Tahirids, Khwarazm, Córdoba). Key: a row id (all its hits) or a reign uuid; value: why. Reviewed by the Architect.",
+ "allow": {
+  "tahirid-dynasty": "the Tahirids were hereditary governors of Khurasan, and the row is their dynasty",
+  "khwarazmian-empire": "Anushtegin Gharchai, governor of Khwarazm, founded the dynasty the row covers",
+  "reign-mateo-de-toro-zambrano-chile": "Mateo de Toro Zambrano presided over Chile's first national junta in 1810; his infobox calls the office Royal Governor",
+  "reign-lorenzo-latorre-uruguay": "Lorenzo Latorre ruled Uruguay as Provisional Governor 1876 and then as dictator and president: the head of the state"
+ }
+}
