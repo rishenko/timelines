@@ -80,6 +80,7 @@ jobs:
         run: |
           python -I pipelines/common/test_event_categories.py
           python -I pipelines/common/test_overrides_guard.py
+          python -I pipelines/common/test_duplicates_guard.py
           python -I pipelines/common/test_traditions.py
           python -I pipelines/common/test_science.py
       # Kevin's reviewed category overrides change only in a pull request he labels `kevin-overrides`; a pipeline sets
@@ -93,6 +94,12 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin "$GUARD_BASE"
           python -I pipelines/common/overrides_guard.py --base FETCH_HEAD
+      # No added event repeats an existing one, and no war is wide by hand (pipelines/common/duplicates_guard.py); against main
+      - name: No duplicate events
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin main
+          python -I pipelines/common/duplicates_guard.py --base FETCH_HEAD
       # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
       - name: Description check tests
         run: python -I pipelines/medieval/test_description_check.py

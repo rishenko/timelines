@@ -5,6 +5,7 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from dates import spans  # noqa: E402
+import dates  # noqa: E402
 
 
 def one(raw, **kw):
@@ -242,10 +243,6 @@ class AstronomicalOutput(unittest.TestCase):
         self.assertEqual(iso(one('AD 1')['start']), '0001')
 
 
-if __name__ == '__main__':
-    unittest.main()
-
-
 class Disasters132(unittest.TestCase):
     """Regressions from the conflicts review of the disasters harvest (Dev B, 2026-11-24)."""
 
@@ -271,8 +268,30 @@ class Disasters132(unittest.TestCase):
         s = one('the 1880s')
         self.assertEqual((s['start'][0], s['end'][0]), (1880, 1889))
 
+    def test_decade_before_a_circa_end_is_a_start(self):  # Magnus the Strong, "1120s – c. 1132": the end stays circa (the re-freeze dropped it)
+        s = one('1120s – c. 1132')
+        self.assertEqual((s['start'][0], s['end'][0]), (1120, 1132))
+        self.assertTrue(s['circa'])
+
+
+class Legacy(unittest.TestCase):
+    """The rulers pass and its freeze read dates with legacy=True: the reading main's committed reigns were frozen with (before the vague-date
+    rules of #132), so a re-freeze reproduces them byte for byte (CI: freeze-regression). Moving the rulers pass to the new reading is a data PR."""
+    def test_legacy_keeps_the_old_reading(self):
+        s = dates.spans('1068\u20131070s', legacy=True)[0]
+        self.assertEqual((s['start'][0], s['end'], s['circa']), (1068, None, False))
+        s = dates.spans('1120s \u2013 c. 1132', legacy=True)[0]
+        self.assertEqual((s['start'][0], s['end'], s['circa']), (1132, None, True))
+
+    def test_default_reading_is_unchanged(self):
+        self.assertEqual(one('the 1880s')['end'][0], 1889)
+
 
 class Snds(unittest.TestCase):
     def test_snds_is_a_dash(self):  # {{snds}} (a spaced en dash) between two dates is a range
         s = one('April 19, 1775{{snds}}September 3, 1783')
         self.assertEqual((s['start'], s['end']), ((1775, 4, 19), (1783, 9, 3)))
+
+
+if __name__ == '__main__':
+    unittest.main()
