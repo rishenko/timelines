@@ -49,7 +49,7 @@ def web_text(key):
     import subprocess
     path = cached(key)
     if path.endswith('.pdf'):
-        t = subprocess.run(['pdftotext', '-layout', path, '-'], capture_output=True, text=True, check=True).stdout
+        t = subprocess.run(['pdftotext', '-layout', path, '-'], capture_output=True, text=True, check=True, encoding='utf-8').stdout
         t = re.sub(r'(\w)-\s*\n\s*(\w)', r'\1\2', t)
     else:
         t = open(path, encoding='utf-8', errors='replace').read()
@@ -72,7 +72,7 @@ def cache():
 
 
 def load():
-    with open(LIST) as f:
+    with open(LIST, encoding='utf-8') as f:
         return json.load(f)
 
 

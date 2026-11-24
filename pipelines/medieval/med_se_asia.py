@@ -33,7 +33,7 @@ X.KEY.update({'fall-of-malacca', 'capture-of-malacca'})
 def build(mod, repo):
     M, G = mod, mod.G
     S, P, on = X.S, X.P, X.on
-    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
+    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json'), encoding='utf-8'))
     R = [{'id': 'se-asia-oceania', 'name': 'Southeast Asia and Oceania', 'color': '#2a8a7a'}]
 
     def row(id_, name, parent, title, region, color, **kw):

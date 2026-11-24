@@ -108,7 +108,7 @@ class Disasters(unittest.TestCase):
 
     def test_the_mapping_table_matches_the_vocabulary(self):
         import json
-        table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'disaster_classes.json')))
+        table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'disaster_classes.json'), encoding='utf-8'))
         values = {'disaster', *ec.VOCAB['disaster'][1], *ec.DISASTER_TYPES}
         self.assertEqual({k for k in table if not k.startswith('_')}, values)
         for k in values:
@@ -161,7 +161,7 @@ class FoundationalText(unittest.TestCase):
 
     def test_the_mapping_table_matches_the_types(self):
         import json
-        table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'text_classes.json')))
+        table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'text_classes.json'), encoding='utf-8'))
         self.assertEqual(table['text']['name'], ec.facet()['values']['text']['name'])
         self.assertEqual(set(table['types']), set(ec.TEXT_TYPES))
         for k, f in table['types'].items():
@@ -210,8 +210,8 @@ class LifeAndEvolution(unittest.TestCase):
     def test_earth_and_life_overrides_cover_every_event_with_valid_values(self):
         import json
         repo = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        overrides = {k: v for k, v in json.load(open(os.path.join(repo, 'pipelines', 'earth-life', 'categories.json'))).items() if not k.startswith('_')}
-        events = json.load(open(os.path.join(repo, 'data-src', 'earth-life.json')))['events']
+        overrides = {k: v for k, v in json.load(open(os.path.join(repo, 'pipelines', 'earth-life', 'categories.json'), encoding='utf-8')).items() if not k.startswith('_')}
+        events = json.load(open(os.path.join(repo, 'data-src', 'earth-life.json'), encoding='utf-8'))['events']
         self.assertEqual(set(overrides), {e['uuid'] for e in events})
         for k, v in overrides.items():
             ec.check(v, k)

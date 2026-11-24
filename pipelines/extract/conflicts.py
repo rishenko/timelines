@@ -53,7 +53,7 @@ def year(v):
 
 def main():
     timeline = flag('--timeline', 'modern-states')
-    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
     w0, w1 = hist(ds['meta']['range']['start']), hist(ds['meta']['range']['end'])
     tracks = {t['id']: t for t in ds['tracks']}
     row_ids = flag('--rows', '').split(',')
@@ -75,7 +75,7 @@ def main():
     rulers = {}
     rpath = os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline, 'rulers.csv')
     if os.path.exists(rpath):
-        for r in csv.DictReader(open(rpath)):
+        for r in csv.DictReader(open(rpath, encoding='utf-8')):
             if r.get('uuid') and r.get('qid'):
                 rulers.setdefault(r['row'], set()).add(r['qid'])
 
@@ -170,7 +170,7 @@ def main():
 
     cols = ['row', 'article', 'qid', 'start', 'end', 'precision', 'circa', 'category_main', 'category_second', 'importance_suggested', 'names_row',
             'inlinks', 'box', 'sourceLocation', 'wikidata', 'routes', 'flags']
-    with open(os.path.join(out, 'conflicts.csv'), 'w', newline='') as f:
+    with open(os.path.join(out, 'conflicts.csv'), 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
@@ -186,7 +186,7 @@ def main():
                   f"{sum('not placed' in r['flags'] for r in rr)} | {', '.join(f'{k} {v}' for k, v in cats)} |")
     routes = Counter(x.split(':')[0] if x.startswith('cat') else x for r in rows if r.get('start') for x in r['routes'].split('; '))
     md += ['', 'Routes (an article may have several): ' + ', '.join(f'{k} {v}' for k, v in routes.most_common()), '']
-    open(os.path.join(out, 'conflicts-report.md'), 'w').write('\n'.join(md) + '\n')
+    open(os.path.join(out, 'conflicts-report.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
     print(f"{sum(1 for r in rows if r.get('start'))} conflict candidates on {len(row_ids)} rows -> {out}")
 
 

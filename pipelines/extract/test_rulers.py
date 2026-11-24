@@ -132,8 +132,8 @@ class ReviewLayout(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path, man = os.path.join(d, 'review.md'), os.path.join(d, 'm', 'manifest.json')
             self.assertEqual(rv.write(path, man), (2, 1))
-            md = open(path).read()
-            entry = json.load(open(man))['reviews'][path]
+            md = open(path, encoding='utf-8').read()
+            entry = json.load(open(man, encoding='utf-8'))['reviews'][path]
         self.assertTrue(md.startswith('---\ndataset: "rulers"\ntimeline: "T"'))
         self.assertEqual((entry['items'], entry['to_check'], entry['ai_flagged_citations']), (2, 1, 0))
         self.assertIn('2 reigns on 1 of 2 rows', md)
@@ -148,7 +148,7 @@ class ReviewLayout(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path, man = os.path.join(d, 'review.md'), os.path.join(d, 'manifest.json')
             rv.write(path, man)
-            md, entry = open(path).read(), json.load(open(man))['reviews'][path]
+            md, entry = open(path, encoding='utf-8').read(), json.load(open(man, encoding='utf-8'))['reviews'][path]
         self.assertEqual(entry['groups'], {'Ruled from another row': 1})
         self.assertIn('## Ruled from another row (1)\n\nabout\n\n**Ghana**\n\n- George V', md)
         self.assertIn('1 ruled from another row', md)
@@ -160,9 +160,30 @@ class ReviewLayout(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path, man = os.path.join(d, 'review.md'), os.path.join(d, 'manifest.json')
             self.assertEqual(rv.write(path, man), (1, 0))
-            md, entry = open(path).read(), json.load(open(man))['reviews'][path]
+            md, entry = open(path, encoding='utf-8').read(), json.load(open(man, encoding='utf-8'))['reviews'][path]
         self.assertEqual(entry['left_out'], {'Generic office, unplaced': 1})
         self.assertIn('## Generic office, unplaced (1)\n\nabout\n\n**Syria**\n\n- Teimuraz I (1606 – 1648)', md)
+
+
+class YearlessStart(unittest.TestCase):
+    def terms(self, **p):
+        return [(f, x['start'], x['end']) for f, x, _ in R.wp_reigns(p)]
+
+    def test_start_without_a_year_takes_the_ends(self):  # Derog Gioura's presidency, "10 March" – "29 May 2003<br>…"
+        got = self.terms(order='President of Nauru', term_start='10 March', term_end='29 May 2003<br><small>[[Acting President]] until 20 March</small>')
+        self.assertEqual(got, [('term_start', (2003, 3, 10), (2003, 5, 29))])
+
+    def test_start_after_the_end_in_that_year_is_the_year_before(self):
+        self.assertEqual(self.terms(office='X', term_start='10 December', term_end='29 January 2003'), [('term_start', (2002, 12, 10), (2003, 1, 29))])
+
+    def test_year_only_or_dayless_end_does_not_raise(self):  # tuples with None: "10 March" + "2003", "10 May" + "May 2003"
+        self.assertEqual(self.terms(office='X', term_start='10 March', term_end='2003'), [('term_start', (2003, 3, 10), (2003, None, None))])
+        self.assertEqual(self.terms(office='X', term_start='10 May', term_end='May 2003'), [('term_start', (2003, 5, 10), (2003, 5, None))])
+        self.assertEqual(self.terms(office='X', term_start='10 June', term_end='May 2003'), [('term_start', (2002, 6, 10), (2003, 5, None))])
+
+    def test_month_only_and_no_end_are_not_guessed(self):
+        self.assertEqual(self.terms(office='X', term_start='March', term_end='May 2003'), [])
+        self.assertEqual(self.terms(office='X', term_start='10 March', term_end=''), [])
 
 
 class PersonsLookup(unittest.TestCase):
