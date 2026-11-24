@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    # labeled/unlabeled too, so adding `kevin-overrides` re-runs the overrides check
+    # labeled/unlabeled too, so adding `rishenko-overrides` re-runs the overrides check
     types: [opened, synchronize, reopened, labeled, unlabeled]
 
 permissions:
@@ -81,16 +81,20 @@ jobs:
           python -I pipelines/common/test_event_categories.py
           python -I pipelines/common/test_overrides_guard.py
           python -I pipelines/common/test_duplicates_guard.py
+          python -I pipelines/common/test_name_guard.py
           python -I pipelines/common/test_reigns_guard.py
           python -I pipelines/common/test_traditions.py
           python -I pipelines/common/test_science.py
-      # Kevin's reviewed category overrides change only in a pull request he labels `kevin-overrides`; a pipeline sets
+      # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)
+      - name: Account name not in data
+        run: python -I pipelines/common/name_guard.py
+      # Kevin's reviewed category overrides change only in a pull request he labels `rishenko-overrides`; a pipeline sets
       # categories through the pinned layer (pipelines/common/overrides_guard.py)
       # Always against main, not the PR's base: a stacked PR must not hide override writes it inherits from its base PR
       - name: Reviewed overrides unchanged
         if: github.event_name == 'pull_request'
         env:
-          OVERRIDES_ALLOWED: ${{ contains(github.event.pull_request.labels.*.name, 'kevin-overrides') }}
+          OVERRIDES_ALLOWED: ${{ contains(github.event.pull_request.labels.*.name, 'rishenko-overrides') }}
           GUARD_BASE: main
         run: |
           git fetch --no-tags --depth=1 origin "$GUARD_BASE"
