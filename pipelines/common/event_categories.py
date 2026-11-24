@@ -426,9 +426,11 @@ def classify(e, ds, wp=None):
     rs = re.match(r'(.+?)\s+rules\b', title)
     if rs and not ruler_is_person(rs.group(1), ds):
         rm = REIGN.match(title)
-    # a span: a later end, in years or, within one year, in months and days (a 1848 presidency of four months)
+    # a span: a later end, in years or, within one year, in months and days (a 1848 presidency of four months), or an end given in
+    # the start's own year with neither month nor day (Kittisena 524–524: a reign inside one year, not an accession whose end is unknown)
     end_later = e.get('end') is not None and (e['end'] != e['start'] or
-                                              (e.get('endMonth'), e.get('endDay')) != (e.get('startMonth'), e.get('startDay')))
+                                              (e.get('endMonth'), e.get('endDay')) != (e.get('startMonth'), e.get('startDay')) or
+                                              not any(e.get(k) for k in ('startMonth', 'startDay', 'endMonth', 'endDay')))
     span = e.get('ongoing') or end_later
     if rm and span:
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))

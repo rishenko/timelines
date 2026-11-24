@@ -41768,7 +41768,7 @@
       "descr": "Rules as head of state of Anuradhapura kingdom from 524 to 524.",
       "sources": [{ "sourceKey": "wp-kittisena", "sourceLocation": "infobox reign: 524 – 524" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-kittisena", "sourceLocation": "infobox reign: 524 – 524" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-kittisena", "sourceLocation": "infobox reign: 524 – 524" }] }]
     },
     {
       "uuid": "reign-upatissa-ii-anuradhapura",
