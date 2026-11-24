@@ -64,7 +64,7 @@ export function useLibraryActions(opts: {
       goToTimeline(id);
       return;
     }
-    goToTimeline(addToLibrary(dataset, { reservedIds: reservedIds(site) }).dataset.meta.id);
+    goToTimeline((await addToLibrary(dataset, { reservedIds: reservedIds(site) })).dataset.meta.id);
   };
 
   /** The edit bar's Upload JSON: like importFile, but errors become a toast. */
@@ -75,7 +75,7 @@ export function useLibraryActions(opts: {
 
   const refreshEntry = async (entry: LibraryEntry) => {
     const dataset = await fetchTimeline(entry.sourceUrl!);
-    const updated = addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: reservedIds(site) });
+    const updated = await addToLibrary(dataset, { sourceUrl: entry.sourceUrl, reservedIds: reservedIds(site) });
     if (updated.dataset.meta.id === currentId) window.location.reload();
     else {
       reload();
@@ -83,10 +83,10 @@ export function useLibraryActions(opts: {
     }
   };
 
-  const removeEntry = (entry: LibraryEntry) => {
+  const removeEntry = async (entry: LibraryEntry) => {
     const { id, title } = entrySummary(entry);
     if (!window.confirm(`Remove "${title}" from this browser? Any edits you made to it are deleted too.`)) return;
-    removeFromLibrary(id);
+    await removeFromLibrary(id);
     if (id === currentId) goHome();
     else {
       reload();
