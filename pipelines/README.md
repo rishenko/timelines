@@ -54,6 +54,13 @@ Then run the generator and compile its output:
 
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.
 
+## Ancient: what regenerates, and in what order
+
+`data-src/ancient-classical.json` is the one generated source that is also hand-kept: 904 events and all 384 rows exist only there (the scripts under `scripts/ancient-classical/` upsert onto it), and 830 events are owned by scripts and frozen files. Two rules follow, both decided by Kevin and the coordinator (2026-11-25):
+- **Event order is history.** The scripts upsert, so Ancient's events stay in the order they were first added; a rebuild from nothing would reorder them (the same events, in a different order). Nobody writes them in a canonical order. Diffs of the file show new events at the position their script put them.
+- **Nothing is typed into a generated file.** A reign goes into `extra-reigns.json` (or its freeze), then `npm run data:regen`. Scripts never delete: an event whose owner file no longer holds it would stay in Ancient for good, so `pipelines/common/owned_ids_check.py` (CI "Ancient owned ids", `check:all`'s `owned-ids`) fails when a `reign-`, `conflict-` or `disaster-` event in the source is in none of `pipelines/ancient/*reigns.json` or `pipelines/v2/emitted/*-ancient-classical.json`. To remove an owned event on purpose, delete it from the source file and add a `null` redirect.
+- Yamato's traditional reigns stay in `yamato-reigns.json`, unapplied (`TRADITIONAL = false`), as a documented record.
+
 ## Connections claims (the Cold War blocs)
 
 `modern-states/blocs.py` builds the bloc rows from `modern-states/connections/connections-claims.json`, which is committed. To rebuild the claims (a new dump, or new hand claims in `claims_data.py`):
