@@ -207,6 +207,16 @@ export interface Track {
   memberOf?: RowMembership[];
   /** The group's or row's own context lines (schema v8): ages of a region, for example, drawn on its band. */
   context?: ContextSpan[];
+  /**
+   * The sides members of this row can take (schema 11, minor 1), by slug: a war's `{ "axis": { "name": "Axis" } }`.
+   * A member's `memberOf` entry names one in its `role`.
+   */
+  roles?: Record<string, RowRole>;
+}
+
+/** A side members of a row can take (Track.roles), e.g. one of a war's sides. */
+export interface RowRole {
+  name: string;
 }
 
 /**
@@ -216,6 +226,12 @@ export interface Track {
 export interface RowMembership extends TrackSpan {
   /** The row it belonged to (a track id): a union, empire or alliance with its own row. */
   row: string;
+  /**
+   * The side this row took in it (schema 11, minor 1): one of the `roles` the target row names, such as a war's
+   * "axis" and "allies". A row that changed sides has one entry per side, each with its own dates (Italy in the Second
+   * World War: axis 1940–43, allies 1943–45). Letters, digits and dashes.
+   */
+  role?: string;
   /**
    * The phase of this row that held the membership (a phase name), when the row has rival phases at the time: West
    * Germany in NATO, East Germany in the Warsaw Pact, both phases of one row. The membership lies within that phase.
@@ -396,8 +412,16 @@ export interface TimelineEvent extends DateDays {
 }
 
 export interface Dataset {
-  /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 10;
+  /**
+   * The core version of the format (data/migrate.ts): 11 is core 1.0, which only ever grows by additions. Older files
+   * are lifted to it when loaded.
+   */
+  schemaVersion: 11;
+  /**
+   * The additions to the core this file may use (core 1.0: 0; `RowMembership.role` and `Track.roles`: 1). A reader
+   * accepts a file with a higher minor and ignores what it doesn't know. Absent: 0.
+   */
+  schemaMinor?: number;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest

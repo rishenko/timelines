@@ -2,6 +2,7 @@
 // is valid as it stands, and must be named.
 import { describe, expect, it } from 'vitest';
 import { validateDataset } from './validate.ts';
+import { validateStrict } from './strict.ts';
 import { everyField } from './fixtures/everyField.ts';
 import type { Dataset } from '../types.ts';
 
@@ -25,12 +26,10 @@ describe('schema version 5 rules', () => {
 
   const cases: [string, (d: Dataset) => void, RegExp][] = [
     // facets on events
-    ['facet applies', (d) => ((d.meta.facets!.theme as { applies: string }).applies = 'places'), /Facet "theme" applies must be tracks, events or both/],
     ['event in a rows-only facet', (d) => Object.assign(watch(d).memberships![0], { facet: 'region', value: 'bay' }), /Event "The Long Watch" has a membership in facet "region", which applies to tracks only/],
     ['row in an events-only facet', (d) => (quay(d).memberships = [{ facet: 'theme', value: 'trade', sources: [{ sourceKey: 'ledger', sourceLocation: '' }] }]), /Track "quay" has a membership in facet "theme", which applies to events only/],
     ['event membership without a source', (d) => (watch(d).memberships![0].sources = []), /Event "The Long Watch" membership theme\/trade cites no source/],
     // row kinds
-    ['row kind', (d) => ((quay(d) as { kind: string }).kind = 'empire'), /Track "quay" kind must be polity, person or theme/],
     // events' ongoingSources
     ['ongoingSources on an ended event', (d) => Object.assign(watch(d), { ongoing: undefined, end: 160 }), /Event "The Long Watch" has ongoingSources but isn't ongoing/],
     ['ongoingSources citing an unknown source', (d) => (watch(d).ongoingSources![0].sourceKey = 'nowhere'), /ongoingSources cites unknown source "nowhere"/],
@@ -38,9 +37,7 @@ describe('schema version 5 rules', () => {
     ['dump', (d) => (d.sources.ledger.dump = '2026-11-01'), /Source "ledger" dump must name a snapshot like "enwiki-20261101"/],
     ['revision', (d) => (d.sources.ledger.revision = 1.5), /Source "ledger" revision must be a page revision id/],
     ['revision without a url', (d) => Object.assign(d.sources.logbook, { revision: 7 }), /Source "logbook" has a revision but no url/],
-    ['locator kind', (d) => ((watch(d).sources[0] as { locator: unknown }).locator = { kind: 'margin' }), /events\[\d+\]\.sources\[0\]: locator kind must be one of/],
     ['locator without its field', (d) => ((watch(d).sources[0] as { locator: unknown }).locator = { kind: 'lead' }), /a lead locator needs quote/],
-    ['locator with a field it has no place for', (d) => ((watch(d).sources[0] as { locator: unknown }).locator = { kind: 'page', page: '3', line: '2' }), /a page locator has no field "line"/],
     // context spans (schema v8; v5's eras)
     ['context span id', (d) => (leagues(d).id = 'age-of-piers'), /Duplicate context span id "age-of-piers"/],
     ['context span without a source', (d) => (piers(d).sources = []), /Context span "The Age of Piers" cites no source/],
@@ -63,6 +60,23 @@ describe('schema version 5 rules', () => {
     it(name, () => {
       const found = problems(edit);
       expect(found.some((p) => message.test(p)), found.join('\n') || '(no problems)').toBe(true);
+    });
+
+  // core 1.0 (schema 11), rules 2 and 3: a kind or a field this app doesn't know is kept and ignored when the app reads
+  // a file; the site's own data is checked strictly, where each is an error (data/strict.ts)
+  const lenient: [string, (d: Dataset) => void, RegExp][] = [
+    ['facet applies', (d) => ((d.meta.facets!.theme as { applies: string }).applies = 'places'), /meta\.facets\.theme: unknown facet applies "places"/],
+    ['row kind', (d) => ((quay(d) as { kind: string }).kind = 'empire'), /tracks\["quay"\]: unknown row kind "empire"/],
+    ['locator kind', (d) => ((watch(d).sources[0] as { locator: unknown }).locator = { kind: 'margin' }), /sources\[0\]\.locator: unknown locator kind "margin"/],
+    ['locator with a field it has no place for', (d) => ((watch(d).sources[0] as { locator: unknown }).locator = { kind: 'page', page: '3', line: '2' }), /sources\[0\]\.locator: unknown field "line"/],
+  ];
+  for (const [name, edit, message] of lenient)
+    it(`${name}: kept by the app, refused in our own data`, () => {
+      const d = structuredClone(everyField) as unknown as Dataset;
+      edit(d);
+      expect(validateDataset(d)).toEqual([]);
+      const strict = validateStrict(d);
+      expect(strict.some((p) => message.test(p)), strict.join('\n') || '(no problems)').toBe(true);
     });
 
   describe('neighbouring spans of a kind on a line', () => {
