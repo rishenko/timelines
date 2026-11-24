@@ -209,6 +209,38 @@ def main():
         a = sum(1 for p in kept_v if cen(p['year']) == c0)
         b = sum(1 for p in kept if cen(p['year']) == c0)
         L.append(f"| {c0} to {c0 + 99} | " + ' | '.join(row) + f" | {a} ({b}) |")
+
+    # Kevin (2026-11-24): the cap is a ceiling and a guide, never a target; where a region is thin before 1500 the floor may drop to 20 if a blind sample
+    # shows the extra names are significant. Variant: 50 before 1500 and 100 after, but 20 before 1500 for Africa, the Americas and Oceania.
+    THIN = {'Africa', 'Americas', 'Oceania'}
+    thin_floor = int(flag('--thin-floor', 20))
+    def varying_thin(p):
+        if p['year'] >= 1500:
+            return 100
+        return thin_floor if big(p) in THIN else 50
+    def keep_fn(fn):
+        cells = collections.defaultdict(list)
+        for p in people:
+            if p['inlinks'] >= fn(p):
+                cells[(p['country'], decade(p['year']))].append(p)
+        out = []
+        for ps in cells.values():
+            ps.sort(key=lambda p: -p['inlinks'])
+            out += ps[:cap]
+        return out
+    kept_t = keep_fn(varying_thin)
+    have = {p['qid'] for p in kept_v}
+    added = [p for p in kept_t if p['qid'] not in have]
+    L.append(f"\n## Variant: as above, but floor {thin_floor} before 1500 for Africa, the Americas and Oceania\n")
+    L.append(f"Kept: **{len(kept_t):,}** (era-varying 50/100: {len(kept_v):,}); added by the lower floor: **{len(added):,}**.\n")
+    L.append(f"- by timeline: {split('timeline', kept_t, lambda p: timeline(p['year']))}")
+    L.append(f"- by continent: {split('continent', kept_t, big)}")
+    L.append(f"- the added names by continent: {split('continent', added, big)}; by area: {split('area', added, lambda p: p['area'])}\n")
+    L.append('| century | Africa | Americas | Oceania |\n|---|---|---|---|')
+    for c0 in range(-1000, 1500, 100):
+        row = [f"{sum(1 for p in kept_t if cen(p['year']) == c0 and big(p) == g)} ({sum(1 for p in kept_v if cen(p['year']) == c0 and big(p) == g)})" for g in ('Africa', 'Americas', 'Oceania')]
+        L.append(f"| {c0} to {c0 + 99} | " + ' | '.join(row) + ' |')
+    L.append('\n(in brackets: the era-varying 50/100 count)')
     L.append(f'\n**20 largest country x decade cells** (floor {main_floor}, before the cap)\n\n| country | decade | people at floor | kept |\n|---|---|---|---|')
     for (c, d), ps in sorted(cells.items(), key=lambda kv: -len(kv[1]))[:20]:
         L.append(f'| {R(c)[0]} | {d} | {len(ps)} | {min(cap, len(ps))} |')
@@ -232,6 +264,21 @@ def main():
             w.writerow(['qid', 'label', 'enwiki', 'area', 'year', 'decade', 'country', 'via', 'inlinks', 'timeline'])
             for p in sorted(kept, key=lambda p: (p['year'], -p['inlinks'])):
                 w.writerow([p['qid'], p['label'], p['enwiki'], p['area'], p['year'], decade(p['year']), R(p['country'])[0], p['via'], p['inlinks'], timeline(p['year'])])
+        import wp_dump
+        def lead(t):
+            pg = wp_dump.page(t)
+            tx = (pg or {}).get('text', '')
+            for _ in range(3):
+                tx = re.sub(r'\{\{[^{}]*\}\}', '', tx)
+            tx = re.sub(r'<ref[^>]*?/>|<ref.*?</ref>', '', tx, flags=re.S)
+            tx = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', r'\1', tx)
+            m = re.search(r"\n([^\n=|{}*][^\n]{80,})", tx)
+            return re.sub(r'\s+', ' ', m.group(1))[:300] if m else ''
+        with open(os.path.join(flag('--lists'), 'added-low-link.csv'), 'w', newline='') as f:
+            w = csv.writer(f)
+            w.writerow(['qid', 'person', 'year', 'country', 'region', 'area', 'inlinks', 'lead'])
+            for p in sorted(added, key=lambda p: p['year']):
+                w.writerow([p['qid'], p['label'], p['year'], R(p['country'])[0], big(p), p['area'], p['inlinks'], lead(p['enwiki'])])
         with open(os.path.join(flag('--lists'), 'unplaced.csv'), 'w', newline='') as f:
             w = csv.writer(f)
             w.writerow(['qid', 'label', 'enwiki', 'area', 'year', 'inlinks'])
