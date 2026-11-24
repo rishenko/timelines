@@ -129234,6 +129234,7 @@
           "note": "The final military campaign began in 1695."
         }
       ],
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
