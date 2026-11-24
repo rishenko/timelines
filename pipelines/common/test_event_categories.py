@@ -12,8 +12,11 @@ DS = {'sources': {}, 'tracks': [{'id': 'egypt', 'name': 'Egypt'}, {'id': 'rome',
                                {'id': 'huns', 'name': 'Huns'}, {'id': 'oman', 'name': 'Oman'}]}
 
 
-def cats(title, tracks, span=True):
-    e = {'title': title, 'descr': '', 'tracks': tracks, 'sources': [], 'start': {'year': 100}, 'end': {'year': 120 if span else 100}}
+def cats(title, tracks, span=True, uuid=None, **extra):
+    # a point has no end (as in the data); a span ends in a later year
+    e = {'title': title, 'descr': '', 'tracks': tracks, 'sources': [], 'start': 100, **({'end': 120} if span else {}), **extra}
+    if uuid:
+        e['uuid'] = uuid
     return [v for v, _ in ec.classify(e, DS)]
 
 
@@ -38,6 +41,20 @@ class ReignRule(unittest.TestCase):
     def test_reign_of_is_still_a_reign_and_a_point_is_not(self):
         self.assertEqual(cats('Reign of Ramesses II', ['egypt'])[0], 'reign')
         self.assertNotIn('reign', cats('Attila rules the Huns', ['huns'], span=False))
+
+    def test_a_reign_inside_one_year_is_a_span(self):  # Kittisena 524–524: an end in the start's own year, no month or day
+        self.assertEqual(cats('Reign of Kittisena', ['egypt'], span=False, end=100)[0], 'reign')
+        # given to the day, the same day is still a point
+        self.assertNotIn('reign', cats('Reign of X begins', ['egypt'], span=False, end=100, startMonth=3, startDay=1, endMonth=3, endDay=1))
+
+    def test_a_rulers_pass_reign_is_a_reign_with_its_end_unknown(self):  # Kevin, 2026-11-24: "Yes, still a reign"
+        self.assertEqual(cats('Reign of Narmer', ['egypt'], span=False, uuid='reign-narmer-pharaonic-egypt')[0], 'reign')
+        self.assertEqual(cats('Presidency of Pedro Lascuráin', ['egypt'], span=False, uuid='reign-pedro-lascur-in-mexico')[0], 'reign')
+        # a hand-written point stays a succession
+        self.assertNotIn('reign', cats('Reign of X begins', ['egypt'], span=False, uuid='x-accession'))
+        # a claimant is not a ruler, even with a reign- uuid (the Ottoman Interregnum's claims)
+        self.assertNotIn('reign', cats('Claim of Süleyman Çelebi', ['egypt'], uuid='reign-s-leyman-elebi-ottoman-empire'))
+        self.assertNotIn('reign', cats('Claim of İsa Çelebi', ['egypt'], span=False, uuid='reign-isa-elebi-ottoman-empire'))
 
     def test_an_interregnum_span_is_its_own_sub_kind_and_a_point_is_not(self):
         self.assertEqual(cats('Ottoman Interregnum', ['egypt'])[0], 'interregnum')
