@@ -11,7 +11,7 @@ stays out of the repo (`$TIMELINES_DATA/v2/candidates/`); everything that decide
 | `places.json` | country (Wikidata QID) → the row that carries an event in each timeline |
 | `rules/disasters.json` | which timeline an event belongs to by year; importance by toll, VEI or magnitude (the low end of a range) |
 | `overrides/disasters.json` | reviewed calls, applied last, so reruns keep them (Hatepe's headline year) |
-| `emit.py` | writes `emitted/disaster-<timeline>.json` (events and sources) and pins each event's type in the timeline's reviewed `categories.json` (which wins over the keyword classifier); refuses a collapsed range |
+| `emit.py` | writes `emitted/disaster-<timeline>.json` (events and sources) and carries each event's type as a category membership; `pipelines/common/disaster_pins.py` reads those as a pinned layer (evidence "pinned: pipelines/v2/emitted/<file>"; it wins over the keyword classifier and never touches Kevin's reviewed `categories.json`); refuses a collapsed range |
 | `emit_merge.py` | merges an emitted file into a generator's dataset; `scripts/ancient-classical/disasters.ts` does the same for Ancient |
 | `review_disasters.py` | the review file: parity table, region × era balance against the quotas, every event with its quotes |
 
