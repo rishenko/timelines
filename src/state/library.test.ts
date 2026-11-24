@@ -200,6 +200,17 @@ describe('a library with IndexedDB behind it', () => {
     await expect(addToLibrary(mine('other'), { store, big })).rejects.toThrow(/storage is full/);
   });
 
+  it('does not open a record that fails validation, or one that is missing', async () => {
+    const store = smallStore(20_000), big = memoryBig();
+    await addToLibrary(mine('big', 'Big One'), { store, big });
+    const [kept] = loadLibrary(store);
+    expect((await loadEntryDataset(kept, big))?.meta.title).toBe('Big One');
+    big.map.set('big', { ...mine('big'), events: [{ nonsense: true }] } as unknown as Dataset); // another version's record, or a damaged one
+    expect(await loadEntryDataset(kept, big)).toBeUndefined();
+    big.map.delete('big');
+    expect(await loadEntryDataset(kept, big)).toBeUndefined();
+  });
+
   it('drops the IndexedDB copy when the timeline is replaced by a version that fits', async () => {
     const store = memoryStore(), big = memoryBig();
     big.map.set('t', mine('t'));
