@@ -91,7 +91,7 @@
       ]
     },
     "conquest-of-granada": {
-      "descr": "Muhammad XI, the last Nasrid ruler, formally surrenders Granada in January, ending independent Muslim rule in the Iberian Peninsula.",
+      "descr": "In January 1492 Muhammad XI, the last Nasrid ruler, hands Granada over in a formal surrender, and independent Muslim rule on the Iberian Peninsula ends.",
       "basis": [
         [
           "Emirate of Granada",
@@ -131,7 +131,7 @@
       ]
     },
     "kalmar-union-formed": {
-      "descr": "Sweden joins Norway and Denmark to form the Scandinavian Kalmar Union; Sweden leaves it in 1523.",
+      "descr": "Sweden, Norway and Denmark combine in the Scandinavian Kalmar Union; Sweden withdraws from it in 1523.",
       "basis": [
         [
           "Sweden",
@@ -1135,7 +1135,7 @@
       ]
     },
     "treaty-of-saint-clair-sur-epte": {
-      "descr": "King Charles III of West Francia and the Viking leader Rollo make the treaty from which the Duchy of Normandy grows.",
+      "descr": "A treaty of 911 between King Charles III of West Francia and the Viking chief Rollo is the origin of the Duchy of Normandy.",
       "basis": [
         [
           "Duchy of Normandy",
@@ -1391,7 +1391,7 @@
       ]
     },
     "fatimids-overthrow-the-aghlabids": {
-      "descr": "The new power of the Fatimids overthrows the Aghlabids.",
+      "descr": "The Fatimids, a newly risen power, bring Aghlabid rule to an end in 909.",
       "basis": [
         [
           "Aghlabid dynasty",
@@ -1694,7 +1694,7 @@
       ]
     },
     "battle-of-ghazni-1117": {
-      "descr": "Bahram Shah defeats his brother Arslan for the throne.",
+      "descr": "At the Battle of Ghazni in 1117 Bahram Shah beats his brother Arslan to win the throne.",
       "basis": [
         [
           "Ghaznavid Empire",

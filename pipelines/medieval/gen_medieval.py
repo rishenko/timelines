@@ -417,7 +417,7 @@ def build(repo):
             'description': 'Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.',
             'credits': 'Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence. '
                        'Quoted Wikipedia text (the sentences in source locators) stays under CC BY-SA 4.0, attributed through the linked article; everything else in the data is CC BY 4.0. '
-                       'Descriptions are written for this project: the build refuses one that shares more than five ordinary words in a row with a sentence it cites.',
+                       'Descriptions are written for this project: the build refuses one that shares more than five ordinary words in a row, or 40% of its five-word phrases, with a sentence it cites.',
             'calendar': {'before': 'BCE', 'after': 'CE', 'yearZero': False, 'aliases': {'before': ['BC'], 'after': ['AD']}},
             'increments': [10, 25, 50, 100, 250], 'defaultIncrement': 50,
             'hideRowsOutOfView': True,
@@ -516,21 +516,19 @@ def build(repo):
                 e['sources'].append(ref)
     data['events'] = me.PILOT_EVENTS + [e for e in europe.EVENTS.values() if e not in me.PILOT_EVENTS]
     # Licence option C (Kevin, 2026-11-23): descriptions are this project's own words. Refuse any that shares RUN_LIMIT or more
-    # ordinary words in a row with a Wikipedia sentence it cites (names and numbers don't count; description_check.py).
+    # ordinary words in a row, or NGRAM_LIMIT of its five-word phrases, with a Wikipedia sentence it cites (names and numbers
+    # don't count; description_check.py). A quoted locator that matches no sentence also stops the build.
     import description_check as DC
     import wp_sections
     wp_titles = {k: v['name'][:-len(' (Wikipedia)')] for k, v in G.SOURCES.items() if v['name'].endswith(' (Wikipedia)')}
     too_close = []
     for e in data['events']:
         if e.get('descr'):
-            n, run, _ = DC.run_words(e['descr'], DC.source_sentences(e, wp_titles, wp_sections.sentences_of, None))
-            if n >= DC.RUN_LIMIT:
-                too_close.append(f'{e["uuid"]}: {n} ordinary words in a row ("{run}")')
+            n, run, share, why = DC.too_close(e['descr'], DC.source_sentences(e, wp_titles, wp_sections.sentences_of))
+            if why:
+                too_close.append(f'{e["uuid"]}: ' + '; '.join(why))
     if too_close:
         raise SystemExit('descriptions too close to a cited sentence (rewrite them in your own words):\n  ' + '\n  '.join(too_close))
-    # golden ages and eras (pipelines/common/periods.py from periods.json): before the sources, which they cite
-    import periods
-    REPORT.append(f'periods: {periods.apply(data, "medieval")}')
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
