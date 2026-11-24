@@ -274,3 +274,11 @@ class NoDuplicateSpans(unittest.TestCase):
         got = R.picks(spans, [], {'wallachia'}, (1300, 1900))
         self.assertEqual(len(got), len({(g[0], g[1]['start'], g[1]['end']) for g in got}))
         self.assertEqual(sorted(g[0] for g in got), ['reign', 'reign2'])
+
+
+class ReignType(unittest.TestCase):
+    def test_a_caesar_span_is_not_a_reign(self):  # Constantius Chlorus: reign1 (Caesar) 293-305, reign (Augustus) 305-306
+        params = {'reign1': '1 March 293 – 1 May 305', 'reign_type1': "[[Caesar (title)|''Caesar'']]", 'reign': '1 May 305 – 25 July 306', 'reign_type': "[[Augustus (title)|''Augustus'']]",
+                  'succession': 'Roman emperor'}
+        got = [f for f, s, succ in R.wp_reigns(params)]
+        self.assertEqual(got, ['reign'])

@@ -163,6 +163,9 @@ def wp_reigns(params):
             continue
         kind, n = m.groups()
         if kind == 'reign':
+            rtype = dates.clean(params.get(f'reign_type{n}', ''))
+            if re.search(r'\b(caesar|heir|junior|crown|designate|co-?(?:emperor|king|ruler)|subking|regent)\b', rtype, re.I):
+                continue  # a span the infobox types as Caesar, heir, junior or co-ruler (Constantius Chlorus 293-305) is not the ruler's own reign
             for s in dates.spans(raw):
                 out.append((k, s, dates.clean(params.get(f'succession{n}') or (params.get('succession', '') if n in ('', '1') else ''))))  # reign1 may be paired with an unnumbered |succession=
         elif kind == 'term':
