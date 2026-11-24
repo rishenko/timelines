@@ -22495,16 +22495,23 @@
         "wikidata": "Q447131"
       },
       "span": {
-        "start": -2999,
+        "start": -3099,
         "end": 535,
         "startDates": [
+          {
+            "year": -3099,
+            "source": {
+              "sourceKey": "australian-museum-egypt-timeline",
+              "sourceLocation": "Early Dynastic Period: \"3100 BCE - Unification of Upper and Lower Egypt by the first pharaoh Menes\""
+            },
+            "note": "The Early Dynastic Period begins (Australian Museum)."
+          },
           {
             "year": -2999,
             "source": {
               "sourceKey": "wp-ancient-egyptian-religion",
               "sourceLocation": "History: \"The Early Dynastic Period began with the unification of Egypt around 3000 BC\""
-            },
-            "note": "Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+            }
           },
           {
             "year": -2892,
@@ -22623,18 +22630,9 @@
         "wikidata": "Q837605"
       },
       "span": {
-        "start": -349,
+        "start": -208,
         "ongoing": true,
         "startDates": [
-          {
-            "year": -349,
-            "margin": 50,
-            "source": {
-              "sourceKey": "wp-tengri",
-              "sourceLocation": "Name: \"The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu\""
-            },
-            "note": "Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
-          },
           {
             "year": -208,
             "source": {
@@ -22642,6 +22640,23 @@
               "sourceLocation": "lead: \"from the Xiongnu empire (founded 209 BC) to the Mongol Empire (13th century)\""
             },
             "note": "The first dated polity that practised it."
+          },
+          {
+            "year": -208,
+            "source": {
+              "sourceKey": "eor-tengri",
+              "sourceLocation": "Tengri: \"The sky god appears already before the common era among the Xiongnu\""
+            },
+            "note": "Jean-Paul Roux (Encyclopedia of Religion): no year given; dated here by the Xiongnu empire (209 BCE). He names the Han shu's transcription of tengri as its earliest attested form."
+          },
+          {
+            "year": -349,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-tengri",
+              "sourceLocation": "Name: \"The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu\""
+            },
+            "note": "An earlier date, from Wikipedia's Tengri article only."
           }
         ],
         "ongoingSources": [
@@ -22676,9 +22691,18 @@
         "wikidata": "Q503089"
       },
       "span": {
-        "start": 900,
+        "start": 1100,
         "end": 1819,
         "startDates": [
+          {
+            "year": 1100,
+            "margin": 100,
+            "source": {
+              "sourceKey": "nps-first-hawaiians",
+              "sourceLocation": "People of the Islands: \"the most recent carbon-dating estimates place arrival and settlement in the islands between 1000 to 1200 AD\""
+            },
+            "note": "U.S. National Park Service: the settlers who brought the religion."
+          },
           {
             "year": 900,
             "margin": 400,
@@ -22686,7 +22710,7 @@
               "sourceKey": "wp-hawaiian-religion",
               "sourceLocation": "lead: \"likely originated among the Tahitians and other Pacific Islanders who landed in Hawaii between 500 and 1300 AD\""
             },
-            "note": "Single source for the start: a scholarly review (Kirch, on when Polynesians settled Hawaiʻi) sits behind a bot check and was not used. Headline: the middle of the range (flagged for Kevin)."
+            "note": "The wider, older range."
           }
         ],
         "endDates": [
@@ -30132,6 +30156,34 @@
         "wikipedia"
       ],
       "accessed": "2026-11-23"
+    },
+    "australian-museum-egypt-timeline": {
+      "name": "Ancient Egyptian Timeline (Australian Museum)",
+      "url": "https://australian.museum/learn/cultures/international-collection/ancient-egyptian/ancient-egyptian-timeline/",
+      "author": "Australian Museum",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "eor-tengri": {
+      "name": "Jean-Paul Roux, Tengri, Encyclopedia of Religion (Macmillan, 1987; at Encyclopedia.com)",
+      "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/tengri",
+      "author": "Jean-Paul Roux",
+      "year": "1987",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "nps-first-hawaiians": {
+      "name": "Native Hawaiians, Hawaiʻi Volcanoes National Park (U.S. National Park Service)",
+      "url": "https://www.nps.gov/havo/learn/historyculture/native-hawaiians.htm",
+      "author": "U.S. National Park Service",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
     }
   },
   "tags": {
@@ -65130,6 +65182,18 @@
           "sourceKey": "wp-ancient-egyptian-religion",
           "sourceLocation": "History: \"it was not until the Old Kingdom (2686–2181 BCE), when Ra became the dominant figure in the Egyptian pantheon, that the Sun Cult took power\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ancient-egyptian-religion",
+              "sourceLocation": "History: \"it was not until the Old Kingdom (2686–2181 BCE), when Ra became the dominant figure in the Egyptian pantheon, that the Sun Cult took power\""
+            }
+          ]
+        }
       ]
     },
     {
@@ -65150,7 +65214,17 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "sack",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"Official persecution of paganism in the Eastern Empire began under Theodosius I in 381\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "law",
           "sources": [
             {
               "sourceKey": "wp-ancient-greek-religion",
@@ -65173,6 +65247,18 @@
         {
           "sourceKey": "wp-ancient-greek-religion",
           "sourceLocation": "Decline: \"The last Olympic Games were held in 393\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"The last Olympic Games were held in 393\""
+            }
+          ]
         }
       ]
     }

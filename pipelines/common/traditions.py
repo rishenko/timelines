@@ -72,7 +72,8 @@ def cache():
 
 
 def load():
-    return json.load(open(LIST))
+    with open(LIST) as f:
+        return json.load(f)
 
 
 def stored(y):
@@ -97,6 +98,12 @@ def claim(c, source=None, quote=None):
 def membership(t):
     m = t['region_membership']
     return {'facet': 'geography', 'value': m['value'], 'sources': [{'sourceKey': m['source'], 'sourceLocation': loc(m)}]}
+
+
+def category_pins():
+    """{event uuid: [categories]} for the events the list gives categories (applied by event_categories.apply, after
+    Kevin's reviewed overrides and before the keyword classifier)."""
+    return {e['uuid']: e['categories'] for t in load()['traditions'] for e in t['events'] if e.get('categories')}
 
 
 def earliest(t):

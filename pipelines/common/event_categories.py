@@ -538,7 +538,9 @@ def apply(data, overrides_path, evidence_path=None):
     Reviewed overrides win: overrides_path is {"<event uuid>": ["<value>", ...]} (an empty list: no category).
     Each membership cites the event's first source, the article it is dated from. evidence_path, if given, gets one
     line per event: its categories and what each rests on (the classifier's evidence, or "reviewed").
-    Returns {"classified", "reviewed", "none"} counts.
+    Pinned categories come next: an event that a curated list names with its categories (pipelines/common/traditions.json,
+    `categories` on an event) gets them with the evidence "pinned: <list>", so they stay apart from Kevin's reviews.
+    Returns {"classified", "reviewed", "pinned", "none"} counts.
     """
     import wp_dump as wp
     data['meta'].setdefault('facets', {})['category'] = facet()
@@ -548,12 +550,19 @@ def apply(data, overrides_path, evidence_path=None):
         if k not in uuids:
             raise ValueError(f'{overrides_path}: no event "{k}"')
         check(v, f'{overrides_path} "{k}"')
-    counts = {'classified': 0, 'reviewed': 0, 'none': 0}
+    import traditions
+    pins = traditions.category_pins()
+    for k, v in pins.items():
+        check(v, f'traditions.json "{k}"')
+    counts = {'classified': 0, 'reviewed': 0, 'pinned': 0, 'none': 0}
     evidence = {}
     for e in data['events']:
         if e['uuid'] in overrides:
             cats = [(v, 'reviewed') for v in overrides[e['uuid']]]
             counts['reviewed'] += 1
+        elif e['uuid'] in pins:
+            cats = [(v, 'pinned: pipelines/common/traditions.json') for v in pins[e['uuid']]]
+            counts['pinned'] += 1
         else:
             cats = classify(e, data, wp)
             counts['classified' if cats else 'none'] += 1

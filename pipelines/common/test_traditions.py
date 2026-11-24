@@ -63,6 +63,15 @@ class Apply(unittest.TestCase):
         traditions.apply(d, 'modern-states')
         self.assertEqual(d['sources']['wp-fall-of-tenochtitlan']['accessed'], '2026-11-21')
 
+    def test_pinned_categories_name_real_events_with_valid_values(self):
+        import event_categories as ec
+        pins = traditions.category_pins()
+        uuids = {e['uuid'] for t in traditions.load()['traditions'] for e in t['events']}
+        self.assertTrue(pins)
+        self.assertLessEqual(set(pins), uuids)
+        for k, v in pins.items():
+            ec.check(v, k)
+
     def test_rerunning_changes_nothing(self):
         d = dataset('medieval', 650, 1500)
         traditions.apply(d, 'medieval')

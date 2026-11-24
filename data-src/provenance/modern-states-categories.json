@@ -27,7 +27,7 @@
   "afghan-kingdom-1926": [["founded", "title: \"proclaimed\""]],
   "agadez-french-suzerainty": [["vassalage", "title: \"under French suzerainty\""]],
   "ahom-mughal-wars": [["war", "title: \"wars\""]],
-  "ai-noa": [],
+  "ai-noa": [["religion", "pinned: pipelines/common/traditions.json"]],
   "akwamu-conquers-accra": [["conquest", "title: \"conquers\""]],
   "akwamu-defeated": [["conflict", "title: \"defeated\""]],
   "al-bu-said": [["succession", "title: \"dynasty\""]],

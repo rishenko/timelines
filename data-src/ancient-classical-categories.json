@@ -1773,6 +1773,9 @@
   "las-vegas": [
    "horizon"
   ],
+  "last-ancient-olympics": [
+   "religion"
+  ],
   "latin-league": [
    "alliance",
    "dissolved"
@@ -2428,6 +2431,9 @@
   "quanrong-haojing": [
    "sack"
   ],
+  "ra-sun-cult": [
+   "religion"
+  ],
   "ramesses-ii": [
    "reign"
   ],
@@ -2883,7 +2889,8 @@
    "succession"
   ],
   "theodosius-persecution": [
-   "sack"
+   "religion",
+   "law"
   ],
   "thera": [
    "eruption",

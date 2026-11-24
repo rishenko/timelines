@@ -82,7 +82,9 @@ export function About({ search = window.location.search, pathname = window.locat
           University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran
           on Ilé-Ifẹ̀ (The Conversation), the Biblical Archaeology Society on Yonatan Adler’s work, Jan N. Bremmer’s
           Greek Religion (Cambridge University Press), the Journal of Daesoon Thought and the Religions of East Asia on
-          Caodaism, and the U.S. National Library of Medicine’s Native Voices on the end of the Hawaiian kapu (1819).
+          Caodaism, the U.S. National Library of Medicine’s Native Voices on the end of the Hawaiian kapu (1819), the U.S. National
+          Park Service on the settling of Hawaiʻi, Jean-Paul Roux in the Encyclopedia of Religion on Tengri, and the
+          Australian Museum’s ancient Egyptian timeline.
         </li>
         <li>
           <strong>Natural Earth</strong>: the land on the event maps.

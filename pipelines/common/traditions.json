@@ -1,5 +1,5 @@
 {
- "_note": "Traditions with no single founder (Kevin, 2026-11-23, approved with his edit): one `theme` row per tradition in a 'Religions and traditions' group, the same ids in every timeline (seams). The row's start is the mainstream scholarly date (the headline); the other scholarly dates are date claims, drawn as the faded range; the most extreme claim is never the headline. A 'roots' claim dates the tradition it grew out of, with a note. Events: dated texts, councils, schools and reforms, each placed in the timeline whose range holds it; `places` puts an event on the row of the place where it happened too (Kevin, 2026-11-23: \"the associated event in whatever region or location it came from\"), where the timeline has that row; `shared` adds a tradition row to an event that is already in a timeline. Years are stored years (negative = BCE, no year 0). Every claim quotes its article; pipelines/common/traditions.py --check verifies each quote against the Wikipedia dump. PILOT: 4 traditions from 4 regions. Claims may cite `web_sources` (scholarly pages, cached in $TIMELINES_DATA/traditions-sources/ by traditions.py --cache and checked the same way).",
+ "_note": "Traditions with no single founder (Kevin, 2026-11-23, approved with his edit): one `theme` row per tradition in a 'Religions and traditions' group, the same ids in every timeline (seams). The row's start is the mainstream scholarly date (the headline); the other scholarly dates are date claims, drawn as the faded range; the most extreme claim is never the headline. A 'roots' claim dates the tradition it grew out of, with a note. Events: dated texts, councils, schools and reforms, each placed in the timeline whose range holds it; `places` puts an event on the row of the place where it happened too (Kevin, 2026-11-23: \"the associated event in whatever region or location it came from\"), where the timeline has that row; `shared` adds a tradition row to an event that is already in a timeline. Years are stored years (negative = BCE, no year 0). Every claim quotes its article; pipelines/common/traditions.py --check verifies each quote against the Wikipedia dump. PILOT: 4 traditions from 4 regions. Claims may cite `web_sources` (scholarly pages, cached in $TIMELINES_DATA/traditions-sources/ by traditions.py --cache and checked the same way). An event may carry `categories`: pinned by this list (applied after Kevin's reviewed overrides, before the keyword classifier, with the evidence \"pinned: pipelines/common/traditions.json\").",
  "group": {
   "id": "religions-traditions",
   "name": "Religions and traditions",
@@ -541,15 +541,21 @@
    "wikidata": "Q447131",
    "article": "Ancient Egyptian religion",
    "color": "#c9a227",
-   "start": -3000,
+   "start": -3100,
    "circa": true,
    "startDates": [
+    {
+     "year": -3100,
+     "source": "australian-museum-egypt-timeline",
+     "section": "Early Dynastic Period",
+     "quote": "3100 BCE - Unification of Upper and Lower Egypt by the first pharaoh Menes",
+     "note": "The Early Dynastic Period begins (Australian Museum)."
+    },
     {
      "year": -3000,
      "source": "wp-ancient-egyptian-religion",
      "section": "History",
-     "quote": "The Early Dynastic Period began with the unification of Egypt around 3000 BC",
-     "note": "Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+     "quote": "The Early Dynastic Period began with the unification of Egypt around 3000 BC"
     },
     {
      "year": -2893,
@@ -597,7 +603,10 @@
       "ancient-classical": [
        "pharaonic-egypt"
       ]
-     }
+     },
+     "categories": [
+      "religion"
+     ]
     }
    ],
    "shared": [
@@ -667,7 +676,11 @@
       "ancient-classical": [
        "eastern-roman"
       ]
-     }
+     },
+     "categories": [
+      "religion",
+      "law"
+     ]
     },
     {
      "uuid": "last-ancient-olympics",
@@ -681,7 +694,10 @@
       "ancient-classical": [
        "greece"
       ]
-     }
+     },
+     "categories": [
+      "religion"
+     ]
     }
    ],
    "shared": [
@@ -698,23 +714,30 @@
    "wikidata": "Q837605",
    "article": "Tengrism",
    "color": "#3f9e9e",
-   "start": -350,
+   "start": -209,
    "circa": true,
    "startDates": [
-    {
-     "year": -350,
-     "margin": 50,
-     "source": "wp-tengri",
-     "section": "Name",
-     "quote": "The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu",
-     "note": "Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
-    },
     {
      "year": -209,
      "source": "wp-tengrism",
      "section": "lead",
      "quote": "from the Xiongnu empire (founded 209 BC) to the Mongol Empire (13th century)",
      "note": "The first dated polity that practised it."
+    },
+    {
+     "year": -209,
+     "source": "eor-tengri",
+     "section": "Tengri",
+     "quote": "The sky god appears already before the common era among the Xiongnu",
+     "note": "Jean-Paul Roux (Encyclopedia of Religion): no year given; dated here by the Xiongnu empire (209 BCE). He names the Han shu's transcription of tengri as its earliest attested form."
+    },
+    {
+     "year": -350,
+     "margin": 50,
+     "source": "wp-tengri",
+     "section": "Name",
+     "quote": "The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu",
+     "note": "An earlier date, from Wikipedia's Tengri article only."
     }
    ],
    "ongoing": {
@@ -748,7 +771,10 @@
       "medieval": [
        "second-turkic-khaganate"
       ]
-     }
+     },
+     "categories": [
+      "religion"
+     ]
     },
     {
      "uuid": "uyghur-manichaeism",
@@ -790,16 +816,24 @@
    "wikidata": "Q503089",
    "article": "Hawaiian religion",
    "color": "#d9665b",
-   "start": 900,
+   "start": 1100,
    "circa": true,
    "startDates": [
+    {
+     "year": 1100,
+     "margin": 100,
+     "source": "nps-first-hawaiians",
+     "section": "People of the Islands",
+     "quote": "the most recent carbon-dating estimates place arrival and settlement in the islands between 1000 to 1200 AD",
+     "note": "U.S. National Park Service: the settlers who brought the religion."
+    },
     {
      "year": 900,
      "margin": 400,
      "source": "wp-hawaiian-religion",
      "section": "lead",
      "quote": "likely originated among the Tahitians and other Pacific Islanders who landed in Hawaii between 500 and 1300 AD",
-     "note": "Single source for the start: a scholarly review (Kirch, on when Polynesians settled Hawaiʻi) sits behind a bot check and was not used. Headline: the middle of the range (flagged for Kevin)."
+     "note": "The wider, older range."
     }
    ],
    "end": 1819,
@@ -833,7 +867,10 @@
      "descr": "Pāʻao, a priest or chief from Tahiti, is thought to have brought the kapu restrictions on daily life with him.",
      "source": "wp-hawaiian-religion",
      "section": "Kapu",
-     "quote": "Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD"
+     "quote": "Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD",
+     "categories": [
+      "religion"
+     ]
     },
     {
      "uuid": "ai-noa",
@@ -847,7 +884,10 @@
       "modern-states": [
        "hawaiian-kingdom"
       ]
-     }
+     },
+     "categories": [
+      "religion"
+     ]
     },
     {
      "uuid": "battle-of-kuamoo",
@@ -926,7 +966,10 @@
       "modern-states": [
        "french-indochina"
       ]
-     }
+     },
+     "categories": [
+      "religion"
+     ]
     }
    ],
    "shared": []
@@ -1029,6 +1072,25 @@
    "name": "1819: Hawaiian queen lifts kapu, or taboos (Native Voices, U.S. National Library of Medicine)",
    "url": "https://www.nlm.nih.gov/nativevoices/timeline/267.html",
    "author": "U.S. National Library of Medicine",
+   "accessed": "2026-11-23"
+  },
+  "nps-first-hawaiians": {
+   "name": "Native Hawaiians, Hawaiʻi Volcanoes National Park (U.S. National Park Service)",
+   "url": "https://www.nps.gov/havo/learn/historyculture/native-hawaiians.htm",
+   "author": "U.S. National Park Service",
+   "accessed": "2026-11-23"
+  },
+  "eor-tengri": {
+   "name": "Jean-Paul Roux, Tengri, Encyclopedia of Religion (Macmillan, 1987; at Encyclopedia.com)",
+   "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/tengri",
+   "author": "Jean-Paul Roux",
+   "year": "1987",
+   "accessed": "2026-11-23"
+  },
+  "australian-museum-egypt-timeline": {
+   "name": "Ancient Egyptian Timeline (Australian Museum)",
+   "url": "https://australian.museum/learn/cultures/international-collection/ancient-egyptian/ancient-egyptian-timeline/",
+   "author": "Australian Museum",
    "accessed": "2026-11-23"
   }
  }
