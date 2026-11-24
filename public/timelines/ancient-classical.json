@@ -22197,7 +22197,7 @@
           },
           {
             "year": -99,
-            "margin": 100,
+            "margin": 99,
             "source": {
               "sourceKey": "wp-yahwism",
               "sourceLocation": "Transition to Judaism and Samaritanism: \"with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)\""
@@ -64552,6 +64552,18 @@
             "sourceKey": "wp-shinto",
             "sourceLocation": "History: \"From the early 6th century CE, the style of ritual favored by the Yamato began spreading to other shrines around Japan\""
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "History: \"From the early 6th century CE, the style of ritual favored by the Yamato began spreading to other shrines around Japan\""
+            }
+          ]
         }
       ],
       "circa": true

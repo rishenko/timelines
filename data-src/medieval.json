@@ -19584,7 +19584,7 @@
           },
           {
             "year": -99,
-            "margin": 100,
+            "margin": 99,
             "source": {
               "sourceKey": "wp-yahwism",
               "sourceLocation": "Transition to Judaism and Samaritanism: \"with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)\""
@@ -42963,6 +42963,18 @@
             "sourceLocation": "Principles of faith: \"In the 12th century, Maimonides developed his 13 principles of faith, which is the most widely accepted formulation\""
           }
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-judaism",
+              "sourceLocation": "Principles of faith: \"In the 12th century, Maimonides developed his 13 principles of faith, which is the most widely accepted formulation\""
+            }
+          ]
+        }
       ]
     },
     {
@@ -42979,6 +42991,18 @@
         {
           "sourceKey": "wp-history-of-shinto",
           "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+            }
+          ]
         }
       ]
     },
@@ -43023,6 +43047,18 @@
           "sourceKey": "wp-timeline-of-yoruba-history",
           "sourceLocation": "900 AD: \"The Yoruba religious practice of Ifá also became standardized in Ifẹ around this time\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"The Yoruba religious practice of Ifá also became standardized in Ifẹ around this time\""
+            }
+          ]
+        }
       ]
     },
     {
@@ -43048,6 +43084,18 @@
             "sourceKey": "wp-ifa",
             "sourceLocation": "History: \"it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s\""
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ifa",
+              "sourceLocation": "History: \"it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s\""
+            }
+          ]
         }
       ]
     }

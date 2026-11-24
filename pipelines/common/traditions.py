@@ -73,9 +73,11 @@ def apply(data, timeline):
             'span': {'start': stored(t['start']), **({'circa': True} if t.get('circa') else {}), 'ongoing': True,
                      'startDates': [claim(c) for c in t['startDates']],
                      'ongoingSources': [{'sourceKey': o['source'], 'sourceLocation': loc(o)}]},
-            'memberships': [membership(t)],
         })
-        used |= {c['source'] for c in t['startDates']} | {o['source'], t['region_membership']['source']}
+        # a region only where the timeline has that region (Modern States has no region facet)
+        if t['region_membership']['value'] in data['meta'].get('facets', {}).get('geography', {}).get('values', {}):
+            rows[-1]['memberships'] = [membership(t)]
+        used |= {c['source'] for c in t['startDates']} | {o['source']} | ({t['region_membership']['source']} if 'memberships' in rows[-1] else set())
         for e in t['events']:
             if not within(e['start']):
                 continue

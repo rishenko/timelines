@@ -157,6 +157,16 @@ class FoundationalText(unittest.TestCase):
         self.assertEqual(known_negatives.failures(None), [])
 
 
+class Traditions(unittest.TestCase):
+    """Religions with no single founder (traditions pilot): Shinto, shrines, Ifá, principles of faith."""
+    def test_their_words_are_religion(self):
+        for title in ['Shinto transformed under the Ritsuryō system', 'Yamato shrine ritual spreads across Japan', 'Ifá reaches Oyo', "Maimonides' thirteen principles of faith"]:
+            self.assertEqual(cats(title, ['egypt'])[0], 'religion', title)
+
+    def test_ifat_is_not_ifa(self):
+        self.assertNotIn('religion', cats('Sultanate of Ifat founded', ['egypt']))
+
+
 class Famines(unittest.TestCase):
     """A famine caused mainly by policy or war is not a natural disaster (Kevin, 2026-11-23)."""
     def test_a_genocide_famine_is_human_caused_with_genocide_second(self):

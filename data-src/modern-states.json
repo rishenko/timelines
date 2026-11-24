@@ -58631,6 +58631,231 @@
         ],
         "startEvent": "nam-founded"
       }
+    },
+    {
+      "id": "religions-traditions",
+      "name": "Religions and traditions",
+      "color": "#8a6fb0"
+    },
+    {
+      "id": "hinduism",
+      "name": "Hinduism",
+      "kind": "theme",
+      "color": "#d9822b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Hinduism",
+      "ids": {
+        "wikidata": "Q9089"
+      },
+      "span": {
+        "start": -499,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -99,
+            "margin": 400,
+            "source": {
+              "sourceKey": "wp-hinduism",
+              "sourceLocation": "History: \"scholars regard Hinduism as a synthesis of various Indian cultures and traditions, with diverse roots and no single founder, which emerged after the Vedic period, between c. 500–200 BCE and c. 300 CE\""
+            }
+          },
+          {
+            "year": -1299,
+            "margin": 200,
+            "source": {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "lead: \"The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE\""
+            },
+            "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-hinduism",
+            "sourceLocation": "lead: \"Hinduism is the world's third-largest religion\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "judaism",
+      "name": "Judaism",
+      "kind": "theme",
+      "color": "#4a7fb5",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Judaism",
+      "ids": {
+        "wikidata": "Q9268"
+      },
+      "span": {
+        "start": -449,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -449,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-origins-of-judaism",
+              "sourceLocation": "Widespread adoption of Torah law: \"most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE\""
+            }
+          },
+          {
+            "year": -515,
+            "source": {
+              "sourceKey": "wp-second-temple-judaism",
+              "sourceLocation": "lead: \"the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE\""
+            }
+          },
+          {
+            "year": -349,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "lead: \"With the establishment of Yehud Medinata in the 4th century BCE, Yahwism coalesced into what is known as Second Temple Judaism\""
+            }
+          },
+          {
+            "year": -99,
+            "margin": 99,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "Transition to Judaism and Samaritanism: \"with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)\""
+            },
+            "note": "Yonatan Adler's view."
+          },
+          {
+            "year": -999,
+            "margin": 200,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "infobox: \"founded_date = c. 12th – 9th century BCE\""
+            },
+            "note": "Roots: Yahwism, the religion Judaism separated from."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-judaism",
+            "sourceLocation": "lead: \"Judaism () is an Abrahamic, monotheistic, ethnic religion that comprises the collective spiritual, cultural, and legal traditions of the Jewish people\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "shinto",
+      "name": "Shinto",
+      "kind": "theme",
+      "color": "#c0504d",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Shinto",
+      "ids": {
+        "wikidata": "Q812767"
+      },
+      "span": {
+        "start": 700,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 750,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"While several institutions and practices now associated with Shinto existed in Japan by the 8th century\""
+            }
+          },
+          {
+            "year": 650,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+            },
+            "note": "Shōji Okada's first of four possible points (7th century; then the 8th–9th, the 11th–12th and the 15th centuries)."
+          },
+          {
+            "year": 1150,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 11th and 12th centuries when an awareness of Shinto spread throughout the various regions of Japan (Hiroshi Inoue)\""
+            }
+          },
+          {
+            "year": 1450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 15th century with the emergence of Yoshida Shinto (Toshio Kuroda)\""
+            }
+          },
+          {
+            "year": 1850,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"various scholars have argued that Shinto as a distinct religion was essentially \"invented\" during the 19th century, in Japan's Meiji era\""
+            }
+          },
+          {
+            "year": -24,
+            "margin": 275,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"veneration has been traced back to Japan's Yayoi period (300 BCE to 250 CE)\""
+            },
+            "note": "Roots: kami veneration."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "lead: \"Shinto is primarily found in Japan, where there are around 100,000 public shrines\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "yoruba-religion",
+      "name": "Yoruba religion",
+      "kind": "theme",
+      "color": "#5a9a5a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
+      "ids": {
+        "wikidata": "Q1086440"
+      },
+      "span": {
+        "start": 900,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 900,
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ\""
+            }
+          },
+          {
+            "year": 650,
+            "margin": 150,
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"although it had been developing gradually with its nexus of practise based in locations across central Yorubaland since Ifẹ's early formative period (500-800 AD)\""
+            },
+            "note": "Ifá before it was standardized at Ife."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-yoruba-religion",
+            "sourceLocation": "lead: \"comprises the traditional religious and spiritual concepts and practice of the Yoruba people\""
+          }
+        ]
+      }
     }
   ],
   "sources": {
@@ -73534,6 +73759,86 @@
       "name": "Dutch Golden Age (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Dutch_Golden_Age",
       "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hinduism": {
+      "name": "Hinduism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hinduism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-historical-vedic-religion": {
+      "name": "Historical Vedic religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Historical_Vedic_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-shinto": {
+      "name": "History of Shinto (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-judaism": {
+      "name": "Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Judaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-origins-of-judaism": {
+      "name": "Origins of Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Origins_of_Judaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-temple-judaism": {
+      "name": "Second Temple Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Temple_Judaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-shinto": {
+      "name": "Shinto (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-timeline-of-yoruba-history": {
+      "name": "Timeline of Yoruba history (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_Yoruba_history",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-yahwism": {
+      "name": "Yahwism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yahwism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-yoruba-religion": {
+      "name": "Yoruba religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
+      "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
@@ -120060,6 +120365,129 @@
             {
               "sourceKey": "wp-dutch-golden-age",
               "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "hindu-reform-movements",
+      "title": "Hindu reform movements: the Brahmo Samaj and Neo-Vedanta",
+      "descr": "In response to Western colonialism and Protestant missions, reform movements reject the 'superstitions' of Puranic Hinduism and call for a return to the Vedas.",
+      "start": 1875,
+      "end": 1925,
+      "circa": true,
+      "tracks": [
+        "hinduism"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-historical-vedic-religion",
+          "sourceLocation": "Legacy: \"Hindu reform movements like the Brahmo Samaj and the Neo-Vedanta in the late 19th and early 20th century rejected the 'superstitions' of Puranic Hinduism\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "law",
+          "sources": [
+            {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "Legacy: \"Hindu reform movements like the Brahmo Samaj and the Neo-Vedanta in the late 19th and early 20th century rejected the 'superstitions' of Puranic Hinduism\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "jewish-enlightenment-change",
+      "title": "Judaism changes in response to the Enlightenment",
+      "descr": "The Enlightenment brings major changes to Judaism and the first post-Enlightenment Jewish philosophers.",
+      "start": 1775,
+      "end": 1825,
+      "circa": true,
+      "tracks": [
+        "judaism"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-judaism",
+          "sourceLocation": "Modern era: \"Major changes occurred in response to the Enlightenment (late 18th to early 19th century), leading to the emergence of post-Enlightenment Jewish philosophers\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-judaism",
+              "sourceLocation": "Modern era: \"Major changes occurred in response to the Enlightenment (late 18th to early 19th century), leading to the emergence of post-Enlightenment Jewish philosophers\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "state-shinto",
+      "title": "State Shinto formed in the Meiji era",
+      "descr": "Japan's nationalist leadership expels Buddhist influence from worship and forms State Shinto, which some historians regard as the origin of Shinto as a distinct religion.",
+      "start": 1868,
+      "end": 1912,
+      "tracks": [
+        "shinto"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-shinto",
+          "sourceLocation": "lead: \"During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "odu-ifa-unesco",
+      "title": "UNESCO names the Odù Ifá a Masterpiece of Intangible Heritage",
+      "descr": "UNESCO proclaims the Odù Ifá, the Yoruba scripture of oracular texts passed down orally, one of the Masterpieces of the Oral and Intangible Heritage of Humanity.",
+      "start": 2005,
+      "tracks": [
+        "yoruba-religion"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-yoruba-religion",
+          "sourceLocation": "Scripture: \"In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-yoruba-religion",
+              "sourceLocation": "Scripture: \"In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity\""
             }
           ]
         }
