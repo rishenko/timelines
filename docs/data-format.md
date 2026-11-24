@@ -1,4 +1,4 @@
-# Timeline data format (schema v10)
+# Timeline data format (schema 11.1)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -348,6 +348,21 @@ optional `startEvent`/`endEvent`), with the `sources` that place the row there (
 
 **Not the same as [`memberships`](#memberships):** those place a row in facet values (regions, peoples), undated and
 for filtering. `memberOf` names another **row**, for a stretch of years, and is drawn.
+
+**Sides (`role`, schema 11.1).** A membership may name the side the row took, as a `role`: one of the sides the row
+it belonged to lists in its `roles`, by slug, each with a display name. A war is the usual case: its row names the
+sides, and each participant's membership says which one it fought on. A row that changed sides has one membership per
+side, each with its own dates:
+
+```json
+{ "id": "world-war-ii", "name": "Second World War", "kind": "theme", "roles": { "axis": { "name": "Axis" }, "allies": { "name": "Allies" } } }
+{ "id": "italy", "memberOf": [
+  { "row": "world-war-ii", "role": "axis", "start": 1940, "startMonth": 6, "end": 1943, "endMonth": 9, "sources": [ … ] },
+  { "row": "world-war-ii", "role": "allies", "start": 1943, "startMonth": 10, "end": 1945, "sources": [ … ] } ] }
+```
+
+A role and a side's slug are letters, digits and dashes. The app keeps a role it can't match to a side. The site's own
+data is checked strictly: a role its row doesn't name is an error there, with the nearest side suggested.
 
 ### Lifespan, phases or a row?
 
@@ -747,6 +762,7 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 
 | Version | What changed |
 |---|---|
+| 11 | **Core 1.0** (minor 0): from here the format only grows by additions, counted by `schemaMinor` (see below). A reader loads a file with a newer minor, with a notice, keeps fields it doesn't know, and keeps link, row and locator kinds and facet `applies` values it doesn't know (ignoring them); the site's own data is checked strictly. **Minor 1:** a membership's [`role`](#dated-memberships-memberof) and a row's `roles` (a war's sides). A version 10 file is read as it is. |
 | 10 | [`meta.compress`](#meta): whether the timeline opens with gaps shortened (default on), e.g. off for deep time until it has events. Additive: a version 9 file is read as it is. |
 | 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |

@@ -12,7 +12,7 @@
 import { everyField } from './fixtures/everyField.ts';
 import { migrate } from './migrate.ts';
 import { validateDataset } from './validate.ts';
-import { CONTEXT_KINDS } from '../types.ts';
+import { CONTEXT_KINDS, FACET_APPLIES, LINK_KINDS, LOCATOR_KINDS, TRACK_KINDS } from '../types.ts';
 
 /** What sits under a key: one object of a kind, a list of them, a map of them (by id), or one or a list ("span"). */
 type Child = { one: string } | { list: string } | { map: string } | { oneOrList: string };
@@ -30,7 +30,7 @@ export const CHILDREN: Record<string, Record<string, Child>> = {
   calendar: { aliases: one('aliases'), beforePresent: one('beforePresent') },
   facet: { values: map('facetValue') },
   context: { ...DATED, ids: one('ids'), sources: list('ref') },
-  track: { ids: one('ids'), span: { oneOrList: 'span' }, phases: list('phase'), memberships: list('membership'), memberOf: list('memberOf'), context: list('context') },
+  track: { ids: one('ids'), span: { oneOrList: 'span' }, phases: list('phase'), memberships: list('membership'), memberOf: list('memberOf'), context: list('context'), roles: map('rowRole') },
   span: DATED,
   phase: DATED,
   memberOf: { ...DATED, sources: list('ref') },
@@ -120,17 +120,31 @@ export function strictProblems(ds: unknown): string[] {
   if (!isObj(ds)) return [];
   const fields = knownFields();
   const out: string[] = [];
+  const rows = new Map<unknown, Record<string, unknown>>((Array.isArray(ds.tracks) ? ds.tracks : []).filter(isObj).map((t) => [t.id, t]));
   walk('dataset', ds, '', (kind, o, at) => {
     const allowed = fields[kind];
     const where = at || 'dataset';
     if (!allowed) {
-      // an unknown locator kind is already an error in validateDataset
-      if (!kind.startsWith('locator:')) out.push(`${where}: no known fields for a ${kind} (strict check)`);
+      out.push(kind.startsWith('locator:') ? `${where}: unknown locator kind "${kind.slice(8)}"${nearest(kind.slice(8), LOCATOR_KINDS)}` : `${where}: no known fields for a ${kind} (strict check)`);
       return;
     }
     for (const key of Object.keys(o)) if (!allowed.has(key)) out.push(`${where}: unknown field "${key}"${nearest(key, allowed)}`);
-    if (kind === 'context' && typeof o.kind === 'string' && !(CONTEXT_KINDS as readonly string[]).includes(o.kind))
-      out.push(`${where}: unknown context kind "${o.kind}"${nearest(o.kind, CONTEXT_KINDS)}`);
+    // core 1.0, rule 3: the app keeps and ignores a kind it doesn't know; our own data may not have one
+    const slug = (field: string, known: readonly string[], what: string) => {
+      const v = o[field];
+      if (typeof v === 'string' && !known.includes(v)) out.push(`${where}: unknown ${what} "${v}"${nearest(v, known)}`);
+    };
+    if (kind === 'context') slug('kind', CONTEXT_KINDS, 'context kind');
+    if (kind === 'track') slug('kind', TRACK_KINDS, 'row kind');
+    if (kind === 'link') slug('kind', LINK_KINDS, 'link kind');
+    if (kind === 'facet') slug('applies', FACET_APPLIES, 'facet applies');
+    // a member's side must be one its row names (Track.roles)
+    if (kind === 'memberOf' && typeof o.role === 'string') {
+      const sides = rows.get(o.row)?.roles;
+      const names = isObj(sides) ? Object.keys(sides) : [];
+      if (!names.includes(o.role))
+        out.push(`${where}: role "${o.role}" isn't one of the sides "${String(o.row)}" names${names.length ? ` (${names.join(', ')})${nearest(o.role, names)}` : ' (it has no roles)'}`);
+    }
   });
   return out;
 }
