@@ -26,7 +26,9 @@ LINK = re.compile(r'\[\[([^|\]#]+)(?:#[^|\]]*)?(?:\|([^\]]*))?\]\]')
 
 
 def _drop_templates(s):
-    """Templates removed, except the ones that carry a value we read: nts/sort give their number."""
+    """Templates removed, except the ones that carry a value we read: nts/sort give their number, dts/nat/Date table sorting their date."""
+    s = re.sub(r'\{\{\s*(?:dts|nat|Date table sorting)\s*\|\s*(-?\d+)(?:\s*[|-]\s*(\d+))?(?:\s*[|-]\s*(\d+))?[^{}]*\}\}',
+               lambda m: '-'.join(x for x in m.groups() if x), s, flags=re.I)
     s = re.sub(r'\{\{\s*(?:nts|sort)\s*\|\s*([^|{}]*)[^{}]*\}\}', r'\1', s, flags=re.I)
     prev = None
     while prev != s:
