@@ -76,3 +76,6 @@ jobs:
       # The shared event classifier's rules (pipelines/common/event_categories.py): no dump needed
       - name: Classifier tests
         run: python -I pipelines/common/test_event_categories.py
+      # The shared source cache (pipelines/common/source_cache.py): fetch-once caches and the phrase check; no network
+      - name: Source cache tests
+        run: python -I pipelines/common/test_source_cache.py
