@@ -182,7 +182,8 @@ class PersonsStore(unittest.TestCase):
     def test_a_person_the_shared_store_lacks_resolves_by_its_article_title(self):  # Paullu Inca: no wd_item row
         s = self.sources()
         self.assertEqual(s.qid('Italy'), 'Q38')
-        self.assertEqual(s.qid('Paullu Inca'), 'Q99')
+        self.assertIsNone(s.qid('Paullu Inca'))  # not by default: only the list route asks for the store
+        self.assertEqual(s.qid('Paullu Inca', persons=True), 'Q99')
         self.assertEqual(s.title('Q99'), 'Paullu Inca')
         self.assertIsNone(s.qid('Nowhere'))
         self.assertTrue(s.has_item('Italy'))
@@ -196,7 +197,7 @@ class PersonsStore(unittest.TestCase):
     def test_no_store_file_is_no_fallback(self):
         s = self.sources()
         s.persons = False
-        self.assertIsNone(s.qid('Paullu Inca'))
+        self.assertIsNone(s.qid('Paullu Inca', persons=True))
 
     def test_a_list_of_consorts_is_recognised(self):
         for t in ('List of Holy Roman empresses', 'List of queens consort of England', 'List of Polish consorts'):

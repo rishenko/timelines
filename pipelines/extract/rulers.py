@@ -352,6 +352,9 @@ class Sources:
         """wikidata-<dump>-persons.sqlite (wd_person_labels.py): every human with an English article, which wd_item leaves out when the
         person has no time claim or non-P31 link (Paullu Inca, Túpac Amaru, the presidents of Panama). Read-only; False when absent."""
         if getattr(self, 'persons', None) is None:
+            if os.environ.get('NO_PERSONS_STORE'):  # a run without the store, for a before/after count
+                self.persons = False
+                return False
             path = os.path.join(os.path.dirname(self.wd.execute('PRAGMA database_list').fetchone()[2]), 'wikidata-20261116-persons.sqlite')
             self.persons = sqlite3.connect(f'file:{path}?mode=ro', uri=True) if os.path.exists(path) else False
         return self.persons
@@ -359,7 +362,10 @@ class Sources:
     def has_item(self, title):
         return bool(self.wd.execute('SELECT 1 FROM wd_item WHERE enwiki=?', (title,)).fetchone())
 
-    def qid(self, title):
+    def qid(self, title, persons=False):
+        """`persons`: also look in the persons store (a list page's link to a ruler the shared store dropped). Only the list route asks:
+        the polities, leaders and phase windows must not change because the store holds more humans (it dropped 15 Aksum kings by
+        giving a list its subject word from a newly found person's succession link)."""
         r = self.wd.execute('SELECT qid FROM wd_item WHERE enwiki=?', (title,)).fetchone()
         if r:
             return r[0]
@@ -368,7 +374,7 @@ class Sources:
         r = o.execute('SELECT qid FROM wd_office WHERE enwiki=? OR (label=? COLLATE NOCASE AND instr(label, " ") > 0) LIMIT 1', (title, title)).fetchone() if o else None
         if r:
             return r[0]
-        pp = self._persons()  # a person without an item row, by the article title only
+        pp = self._persons() if persons else False  # a person without an item row, by the article title only
         r = pp.execute('SELECT qid FROM wd_person WHERE enwiki=? LIMIT 1', (title,)).fetchone() if pp else None
         return r[0] if r else None
 
@@ -731,9 +737,9 @@ def run(timeline, row_ids, src):
                 target = target.strip()
                 if ':' in target or target.startswith('List of') or re.match(r'^\d', target):
                     continue
-                q = src.qid(target)
+                q = src.qid(target, persons=True)
                 if not q:
-                    q = src.qid((page_of(target) or {}).get('title', ''))
+                    q = src.qid((page_of(target) or {}).get('title', ''), persons=True)
                 if not q:
                     continue
                 # a consort's own reign (an empress's, a queen consort's "reign" field) is not the row's ruler: a list of consorts
