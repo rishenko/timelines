@@ -3,7 +3,7 @@ Guard for Kevin's reviewed category overrides (pipelines/{ancient,medieval,moder
 his decisions, and an entry there is read as "reviewed" in the evidence files. A pipeline that wants to set a category uses
 the pinned layer instead (traditions.json and science.json, evidence "pinned: <file>"). This check fails when an override
 entry is added, removed or changed against the base, unless the change is Kevin's own: a pull request labelled
-`kevin-overrides` (CI passes OVERRIDES_ALLOWED=true), or locally `check:all --skip overrides`.
+`rishenko-overrides` (CI passes OVERRIDES_ALLOWED=true), or locally `check:all --skip overrides`.
 
 It is a process guard, not a security control: everyone on the project works through one shared account, so it stops an
 honest mistake (a pipeline writing its categories into the wrong file), not a deliberate edit. CI compares with main,
@@ -86,9 +86,9 @@ def main(argv):
     if found and not allowed:
         print(f'{len(found)} of Kevin\'s reviewed category overrides changed against {base}. A pipeline sets categories through '
               'the pinned layer (traditions.json, science.json), never these files. If this is Kevin\'s own edit, label the pull '
-              'request `kevin-overrides` (locally: check:all --skip overrides).')
+              'request `rishenko-overrides` (locally: check:all --skip overrides).')
         return 1
-    print(f'overrides: {len(found)} changed against {base}' + (' (allowed: kevin-overrides)' if found else ''))
+    print(f'overrides: {len(found)} changed against {base}' + (' (allowed: rishenko-overrides)' if found else ''))
     return 0
 
 

@@ -19093,7 +19093,10 @@
       "descr": "After three attacks on Avaris, Ahmose takes the city in a fourth and then Sharuhen after a three-year siege, reuniting Egypt and opening the New Kingdom.",
       "sources": [
         { "sourceKey": "wp-kadesh", "sourceLocation": "Background ('around 1550 BC')" },
-        { "sourceKey": "wp-ahmose", "sourceLocation": "Conquest of the Hyksos" }
+        {
+          "sourceKey": "wp-ahmose",
+          "sourceLocation": "Conquest of the Hyksos: \"Ahmose would have conquered Avaris by the 18th or 19th year of his reign at the very latest.\""
+        }
       ],
       "links": [{ "to": "hyksos", "kind": "conquers" }],
       "importance": 1,
@@ -19770,19 +19773,34 @@
       "start": "612 BCE",
       "tracks": ["assyria", "babylonia", "medes"],
       "descr": "Medes and Babylonians besiege Nineveh from May to August; king Sîn-šar-iškun dies in the siege.",
-      "sources": [{ "sourceKey": "wp-nineveh", "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3)" }],
+      "sources": [
+        {
+          "sourceKey": "wp-nineveh",
+          "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3): \"was a major battle that marked the climax of the Conquest of the Assyrian Empire in 612 BC.\""
+        }
+      ],
       "links": [{ "to": "neo-assyrian", "kind": "conquers" }, { "to": "fall-of-harran", "kind": "causes" }],
       "importance": 1,
       "memberships": [
         {
           "facet": "category",
           "value": "sack",
-          "sources": [{ "sourceKey": "wp-nineveh", "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3)" }]
+          "sources": [
+            {
+              "sourceKey": "wp-nineveh",
+              "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3): \"was a major battle that marked the climax of the Conquest of the Assyrian Empire in 612 BC.\""
+            }
+          ]
         },
         {
           "facet": "category",
           "value": "battle",
-          "sources": [{ "sourceKey": "wp-nineveh", "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3)" }]
+          "sources": [
+            {
+              "sourceKey": "wp-nineveh",
+              "sourceLocation": "Account of the battle (Lipschits 2005, p. 18; ABC 3): \"was a major battle that marked the climax of the Conquest of the Assyrian Empire in 612 BC.\""
+            }
+          ]
         }
       ]
     },
@@ -21232,10 +21250,26 @@
       "start": "490 BCE",
       "tracks": ["greece", "persia"],
       "descr": "The Persians are defeated in their first invasion of Greece.",
-      "sources": [{ "sourceKey": "wp-marathon", "sourceLocation": "infobox and lead" }],
+      "sources": [
+        {
+          "sourceKey": "wp-marathon",
+          "sourceLocation": "infobox and lead: \"The Battle of Marathon took place in 490 BCE during the first Persian invasion of Greece.\""
+        }
+      ],
       "links": [{ "to": "greco-persian-wars", "kind": "part-of" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-marathon", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-marathon",
+              "sourceLocation": "infobox and lead: \"The Battle of Marathon took place in 490 BCE during the first Persian invasion of Greece.\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "salamis",
@@ -22452,7 +22486,7 @@
       "tracks": ["magadha"],
       "descr": "The Haryanka king annexes Anga; his son Ajatashatru succeeds him (by Buddhist accounts, by killing him). His reign is dated c. 544–492 or c. 457–405 BCE.",
       "sources": [
-        { "sourceKey": "wp-bimbisara", "sourceLocation": "infobox, lead and Death" },
+        { "sourceKey": "wp-bimbisara", "sourceLocation": "infobox, lead and Death: \"Haryanka emperor from 544 to 492 BCE\"" },
         { "sourceKey": "wp-mahajanapadas", "sourceLocation": "Anga" },
         { "sourceKey": "wp-magadha", "sourceLocation": "Haryanka dynasty" }
       ],
@@ -22464,7 +22498,13 @@
         { "year": "492 BCE", "source": { "sourceKey": "wp-bimbisara", "sourceLocation": "infobox (long chronology)" } },
         { "year": "405 BCE", "source": { "sourceKey": "wp-bimbisara", "sourceLocation": "infobox (short chronology)" } }
       ],
-      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bimbisara", "sourceLocation": "infobox, lead and Death" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-bimbisara", "sourceLocation": "infobox, lead and Death: \"Haryanka emperor from 544 to 492 BCE\"" }]
+        }
+      ]
     },
     {
       "uuid": "mahavira",
@@ -25347,12 +25387,22 @@
       "end": "4700 BCE",
       "tracks": ["lbk"],
       "descr": "Perhaps the oldest and best known of the circular enclosures of the Central European Neolithic, presented as a ritual or cult structure; it dates to the transition from Linear Pottery to Stroke-ornamented ware.",
-      "sources": [{ "sourceKey": "wp-goseck", "sourceLocation": "infobox, lead, History and Astronomical alignment" }],
+      "sources": [
+        {
+          "sourceKey": "wp-goseck",
+          "sourceLocation": "infobox, lead, History and Astronomical alignment: \"It was constructed around 4900 BC, and appears to have remained in use until around 4700BC.\""
+        }
+      ],
       "memberships": [
         {
           "facet": "category",
           "value": "site",
-          "sources": [{ "sourceKey": "wp-goseck", "sourceLocation": "infobox, lead, History and Astronomical alignment" }]
+          "sources": [
+            {
+              "sourceKey": "wp-goseck",
+              "sourceLocation": "infobox, lead, History and Astronomical alignment: \"It was constructed around 4900 BC, and appears to have remained in use until around 4700BC.\""
+            }
+          ]
         }
       ]
     },
@@ -25545,8 +25595,14 @@
       "start": "c. 4800 BCE",
       "tracks": ["iberia-neolithic", "megaliths"],
       "descr": "Possibly the oldest dolmen tombs of their kind anywhere.",
-      "sources": [{ "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "Neolithic" }],
-      "memberships": [{ "facet": "category", "value": "site", "sources": [{ "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "Neolithic" }] }]
+      "sources": [{ "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "Neolithic: \"the first dolmen tombs begin to be built c. 4800 BC\"" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "site",
+          "sources": [{ "sourceKey": "wp-prehistoric-iberia", "sourceLocation": "Neolithic: \"the first dolmen tombs begin to be built c. 4800 BC\"" }]
+        }
+      ]
     },
     {
       "uuid": "menga",
@@ -25934,9 +25990,20 @@
       "start": "c. 700 BCE",
       "tracks": ["greece"],
       "descr": "Hesiod is generally thought to have been active between 750 and 650 BC; Works and Days describes the five Ages of Man.",
-      "sources": [{ "sourceKey": "wp-hesiod", "sourceLocation": "infobox, lead and Dating" }],
+      "sources": [{ "sourceKey": "wp-hesiod", "sourceLocation": "infobox, lead and Dating: \"generally thought to have been active between 750 and 650 BC\"" }],
       "startDates": [{ "year": "700 BCE", "margin": 50, "source": { "sourceKey": "wp-hesiod", "sourceLocation": "infobox and lead" } }],
-      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-hesiod", "sourceLocation": "infobox, lead and Dating" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-hesiod",
+              "sourceLocation": "infobox, lead and Dating: \"generally thought to have been active between 750 and 650 BC\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "thales-eclipse",
@@ -26234,8 +26301,24 @@
       "start": "852 BCE",
       "tracks": ["chaldeans", "assyria"],
       "descr": "Shalmaneser III subjugates Mushallim-Marduk, chief of the Amukani tribe: the first written attestation of the Chaldeans. Their tribes include Bit-Yâkin, Bet-Dakuri, Bet-Adini, Bet-Amukkani and Bet-Shilani.",
-      "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "History" }],
-      "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-chaldea", "sourceLocation": "History" }] }]
+      "sources": [
+        {
+          "sourceKey": "wp-chaldea",
+          "sourceLocation": "History: \"The very first written historical attestation of the existence of Chaldeans occurs in 852 BC\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [
+            {
+              "sourceKey": "wp-chaldea",
+              "sourceLocation": "History: \"The very first written historical attestation of the existence of Chaldeans occurs in 852 BC\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "marduk-apla-usur",
@@ -27330,9 +27413,15 @@
       "start": "267 BCE",
       "tracks": ["anuradhapura"],
       "descr": "Theravada Buddhism is introduced during the reign of King Devanampiya Tissa.",
-      "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead" }],
+      "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead: \"Theravada Buddhism (from 267 BC)\"" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead: \"Theravada Buddhism (from 267 BC)\"" }]
+        }
+      ]
     },
     {
       "uuid": "shunga-coup",
@@ -27802,9 +27891,15 @@
       "start": "609 CE",
       "tracks": ["sui"],
       "descr": "The network is expanded and completed by Emperor Yang of Sui; its oldest sections date to the early 5th century BC.",
-      "sources": [{ "sourceKey": "wp-grand-canal", "sourceLocation": "lead" }],
+      "sources": [{ "sourceKey": "wp-grand-canal", "sourceLocation": "lead: \"The network was expanded and completed by Emperor Yang of Sui in 609\"" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-grand-canal", "sourceLocation": "lead" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "economy",
+          "sources": [{ "sourceKey": "wp-grand-canal", "sourceLocation": "lead: \"The network was expanded and completed by Emperor Yang of Sui in 609\"" }]
+        }
+      ]
     },
     {
       "uuid": "tang-founded",
@@ -28765,7 +28860,7 @@
       "start": "c. 614 CE",
       "tracks": ["aksum", "early-islam"],
       "descr": "The first Hijrah: a small group of early Muslims, then a second of 83 men and 18 women, find refuge with an Aksumite king whom modern historians have alternatively identified with Armah. Many return to Mecca in 622; a second wave goes to Medina in 628.",
-      "sources": [{ "sourceKey": "wp-abyssinia-migration", "sourceLocation": "infobox, lead, The migration(s) and End of the Muslim exile" }],
+      "sources": [{ "sourceKey": "wp-abyssinia-migration", "sourceLocation": "infobox, lead, The migration(s) and End of the Muslim exile: \"c. 613-615 CE\"" }],
       "startDates": [
         { "year": "613 CE", "source": { "sourceKey": "wp-abyssinia-migration", "sourceLocation": "lead ('9 BH (613 CE)')" } },
         { "year": "615 CE", "source": { "sourceKey": "wp-abyssinia-migration", "sourceLocation": "lead ('7 BH (615 CE)')" } }
@@ -28775,7 +28870,12 @@
         {
           "facet": "category",
           "value": "conquest",
-          "sources": [{ "sourceKey": "wp-abyssinia-migration", "sourceLocation": "infobox, lead, The migration(s) and End of the Muslim exile" }]
+          "sources": [
+            {
+              "sourceKey": "wp-abyssinia-migration",
+              "sourceLocation": "infobox, lead, The migration(s) and End of the Muslim exile: \"c. 613-615 CE\""
+            }
+          ]
         }
       ]
     },
@@ -28805,12 +28905,22 @@
       "end": "500 CE",
       "tracks": ["sub-saharan"],
       "descr": "Bantu speakers reach KwaZulu-Natal by 300 AD and Limpopo Province by 500 AD.",
-      "sources": [{ "sourceKey": "wp-bantu-classical", "sourceLocation": "lead and History > Eastern Stream" }],
+      "sources": [
+        {
+          "sourceKey": "wp-bantu-classical",
+          "sourceLocation": "lead and History > Eastern Stream: \"Other pioneering groups had reached modern KwaZulu-Natal in South Africa by 300 AD along the coast, and the modern Limpopo Province by 500 AD\""
+        }
+      ],
       "memberships": [
         {
           "facet": "category",
           "value": "horizon",
-          "sources": [{ "sourceKey": "wp-bantu-classical", "sourceLocation": "lead and History > Eastern Stream" }]
+          "sources": [
+            {
+              "sourceKey": "wp-bantu-classical",
+              "sourceLocation": "lead and History > Eastern Stream: \"Other pioneering groups had reached modern KwaZulu-Natal in South Africa by 300 AD along the coast, and the modern Limpopo Province by 500 AD\""
+            }
+          ]
         }
       ]
     },
@@ -29039,8 +29149,24 @@
       "start": "597 CE",
       "tracks": ["anglo-saxons"],
       "descr": "Sent by Pope Gregory the Great in 596, about forty missionaries arrive in 597; King Æthelberht converts before 601, and by 627 Paulinus has converted King Edwin.",
-      "sources": [{ "sourceKey": "wp-gregorian-mission", "sourceLocation": "lead and Arrival" }],
-      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-gregorian-mission", "sourceLocation": "lead and Arrival" }] }]
+      "sources": [
+        {
+          "sourceKey": "wp-gregorian-mission",
+          "sourceLocation": "lead and Arrival: \"In 597, the forty missionaries arrived in Kent and were permitted by Æthelberht to preach freely in his capital of Canterbury.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-gregorian-mission",
+              "sourceLocation": "lead and Arrival: \"In 597, the forty missionaries arrived in Kent and were permitted by Æthelberht to preach freely in his capital of Canterbury.\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "teutoburg",
@@ -30018,7 +30144,7 @@
       "tracks": ["yarlung", "tang"],
       "descr": "In 634 Songtsen Gampo sends an envoy to the Tang; in 638 the Tibetans attack Songzhou but withdraw after Tang counterattacks. In 640 the Tang accept his marriage proposal, and the princess leaves for Tibet with Gar Tongtsen.",
       "sources": [
-        { "sourceKey": "wp-wencheng", "sourceLocation": "infobox and lead" },
+        { "sourceKey": "wp-wencheng", "sourceLocation": "infobox and lead: \"who married King Songtsen Gampo of the Tibetan Empire in 641.\"" },
         { "sourceKey": "wp-tibetan-empire", "sourceLocation": "History > Songtsen Gampo" },
         { "sourceKey": "wp-jokhang", "sourceLocation": "History" }
       ],
@@ -30028,7 +30154,13 @@
       ],
       "links": [{ "to": "songtsen-gampo", "kind": "part-of" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "alliance", "sources": [{ "sourceKey": "wp-wencheng", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "alliance",
+          "sources": [{ "sourceKey": "wp-wencheng", "sourceLocation": "infobox and lead: \"who married King Songtsen Gampo of the Tibetan Empire in 641.\"" }]
+        }
+      ]
     },
     {
       "uuid": "jokhang",
@@ -30277,8 +30409,24 @@
       "end": "494 CE",
       "tracks": ["northern-dynasties"],
       "descr": "Near Pingcheng (Datong) the first period of carving ends in 465; a second phase under imperial supervision runs from around 471 to 494, when the court moves to Luoyang. Private patronage continues until 525.",
-      "sources": [{ "sourceKey": "wp-yungang", "sourceLocation": "lead and History" }],
-      "memberships": [{ "facet": "category", "value": "religion", "sources": [{ "sourceKey": "wp-yungang", "sourceLocation": "lead and History" }] }]
+      "sources": [
+        {
+          "sourceKey": "wp-yungang",
+          "sourceLocation": "lead and History: \"Beginning around the year 471 AD, in a second construction phase that lasted until 494 AD\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-yungang",
+              "sourceLocation": "lead and History: \"Beginning around the year 471 AD, in a second construction phase that lasted until 494 AD\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "longmen",
@@ -30555,7 +30703,10 @@
       "sources": [
         { "sourceKey": "wp-marquesas", "sourceLocation": "History" },
         { "sourceKey": "wp-easter-island-history", "sourceLocation": "First peoples" },
-        { "sourceKey": "wp-hawaii-history", "sourceLocation": "Polynesian migration and arrival" }
+        {
+          "sourceKey": "wp-hawaii-history",
+          "sourceLocation": "Polynesian migration and arrival: \"Kirch's textbooks on Hawaiian archeology date the first Polynesian settlements to about 300, although his more recent estimates are as late as 600.\""
+        }
       ],
       "startDates": [
         {
@@ -31036,13 +31187,23 @@
       "start": "629 CE",
       "tracks": ["tikal"],
       "descr": "The Tikal king Kʼinich Muwaan Jol II installs his four-year-old son Bʼalaj Chan Kʼawiil as ruler of Dos Pilas, an offshoot of the Tikal dynasty.",
-      "sources": [{ "sourceKey": "wp-dos-pilas", "sourceLocation": "lead, infobox and 629: Aligned to Tikal" }],
+      "sources": [
+        {
+          "sourceKey": "wp-dos-pilas",
+          "sourceLocation": "lead, infobox and 629: Aligned to Tikal: \"founded by an offshoot of the dynasty of the great city of Tikal in AD 629\""
+        }
+      ],
       "importance": 3,
       "memberships": [
         {
           "facet": "category",
           "value": "founded",
-          "sources": [{ "sourceKey": "wp-dos-pilas", "sourceLocation": "lead, infobox and 629: Aligned to Tikal" }]
+          "sources": [
+            {
+              "sourceKey": "wp-dos-pilas",
+              "sourceLocation": "lead, infobox and 629: Aligned to Tikal: \"founded by an offshoot of the dynasty of the great city of Tikal in AD 629\""
+            }
+          ]
         }
       ]
     },
