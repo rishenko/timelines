@@ -27,7 +27,7 @@
       "title": "Medieval World",
       "file": "medieval.json",
       "subtitle": "Europe, Africa, Asia, Oceania and the Americas, 650–1500",
-      "eventCount": 2619,
+      "eventCount": 2761,
       "calendar": {
         "before": "BCE",
         "after": "CE",
@@ -47,7 +47,7 @@
       "title": "Modern States",
       "file": "modern-states.json",
       "subtitle": "Every state in the world, 1500 to today",
-      "eventCount": 6755,
+      "eventCount": 6774,
       "calendar": {
         "before": "BCE",
         "after": "CE",
