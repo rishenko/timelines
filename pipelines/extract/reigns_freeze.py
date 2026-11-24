@@ -232,6 +232,8 @@ def wrong_kind(e, r, office, track):
     office = ' ; '.join(offices)
     if CONSORT.search(office):
         return 'consort (not a ruler)'
+    if re.search(r'\b(emperor|king|prince|duke|ruler|lord)\s+in\s+(?!the\b)[A-Z]|\b(despot|appanage|tributary)\b', office):
+        return "a subordinate or regional title (despot, appanage, 'emperor in Thessalonica'), not the realm's own reign"
     head = bool(HEAD.search(office))
     if NONHEAD.search(office) and not head:
         return 'office is not the head of state'

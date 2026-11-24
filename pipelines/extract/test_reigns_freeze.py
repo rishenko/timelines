@@ -141,6 +141,12 @@ class Guards(unittest.TestCase):
         self.assertFalse(self.go('cs', 'Caesar of the Western Roman Empire')[0])
         self.assertTrue(self.go('pk', 'Prime Minister and King of Bohemia')[0])  # a head word beside it: kept
 
+    def test_13_a_pre_accession_regional_title(self):  # Manuel II 1382-87: "Byzantine emperor in Thessalonica" on the Eastern Roman row
+        self.assertFalse(self.go('mn', 'Byzantine emperor in Thessalonica', row='czechia')[0])
+        self.assertFalse(self.go('ds', 'Despot of the Morea', row='czechia')[0])
+        DS['tracks'].append({'id': 'rome2', 'name': 'Roman Empire'})
+        self.assertTrue(self.go('av2', 'Roman emperor in the West', row='rome2', start=455, end=456)[0])  # "in the West" is a half of the empire, kept (the direction guard handles the row)
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 
