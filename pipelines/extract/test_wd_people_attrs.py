@@ -29,7 +29,7 @@ def human(qid='Q1', claims=None, title='Someone', sitelinks=None, aliases=None, 
     e = {'id': qid, 'labels': {'en': {'value': label}}, 'claims': cl, 'sitelinks': {'enwiki': {'site': 'enwiki', 'title': title}, **(sitelinks or {})}}
     if aliases:
         e['aliases'] = {'en': [{'value': a} for a in aliases]}
-    return json.dumps(e).encode()
+    return json.dumps(e, separators=(',', ':')).encode()  # the dump's compact form, which the needle matches
 
 
 def person(line):
@@ -66,15 +66,28 @@ class Dates(unittest.TestCase):
         self.assertEqual((p['died'], p['died_n']), (None, 1))
 
 
-class Living(unittest.TestCase):
-    def test_no_death_claim_and_born_1916_or_later_is_left_out(self):
-        self.assertEqual(P.parse(human(claims={'P569': [time('+1990-05-05T00:00:00Z')]})), ('l', None))
-        self.assertEqual(P.parse(human(claims={'P569': [time('+1916-01-01T00:00:00Z', 9)]})), ('l', None))
+class Status(unittest.TestCase):
+    """Kevin, 2026-11-24: living people are kept and judged by importance; the status field says who is alive. Nobody is dropped."""
 
-    def test_the_rest_stay(self):
-        self.assertEqual(person(human(claims={'P569': [time('+1915-12-31T00:00:00Z')]}))['born_n'], 1)  # too old to be alive: kept without a death date
-        self.assertEqual(person(human(claims={'P569': [time('+1990-05-05T00:00:00Z')], 'P570': [time('+2020-01-01T00:00:00Z')]}))['died_n'], 1)
-        self.assertIsNone(person(human())['born'])  # no dates at all (an ancient person): kept
+    def test_deceased_has_a_death_claim(self):
+        self.assertEqual(person(human(claims={'P569': [time('+1990-05-05T00:00:00Z')], 'P570': [time('+2020-01-01T00:00:00Z')]}))['status'], 'deceased')
+        unknown = {'mainsnak': {'snaktype': 'somevalue'}, 'rank': 'normal'}
+        self.assertEqual(person(human(claims={'P569': [time('+1930-01-01T00:00:00Z', 9)], 'P570': [unknown]}))['status'], 'deceased')  # dead, date unknown
+
+    def test_living_is_no_death_claim_and_born_1916_or_later(self):
+        for born, prec in (('+1990-05-05T00:00:00Z', 11), ('+1916-01-01T00:00:00Z', 9)):
+            p = person(human(claims={'P569': [time(born, prec)]}))
+            self.assertEqual((p['status'], p['born']), ('living', born))  # kept, not left out
+
+    def test_unknown_is_the_rest(self):
+        self.assertEqual(person(human(claims={'P569': [time('+1915-12-31T00:00:00Z')]}))['status'], 'unknown')  # too old to be alive, no death date
+        self.assertEqual(person(human())['status'], 'unknown')  # no dates at all
+        dep = time('+1990-05-05T00:00:00Z', rank='deprecated')
+        self.assertEqual(person(human(claims={'P569': [dep]}))['status'], 'unknown')  # a deprecated date is never read
+
+    def test_a_deprecated_death_is_no_death_claim(self):
+        p = person(human(claims={'P569': [time('+1950-01-01T00:00:00Z', 9)], 'P570': [time('+1960-01-01T00:00:00Z', 9, rank='deprecated')]}))
+        self.assertEqual((p['status'], p['died']), ('living', None))
 
 
 class Claims(unittest.TestCase):
@@ -115,25 +128,101 @@ class Check(unittest.TestCase):
         P.setup(db)
         qs = ','.join('?' * len(P.PERSON_COLS))
         db.executemany(f'INSERT INTO person VALUES ({qs})', people)
-        db.executemany('INSERT INTO meta VALUES (?,?)', [('schema', '2'), ('done', done), ('skipped_living', '7')])
+        db.executemany('INSERT INTO meta VALUES (?,?)', [('schema', '2'), ('done', done)])
         return db
 
     def row(self, qid, claims=None):
-        r = P.parse(human(qid=qid, claims=claims))
-        return r[1]
+        return P.parse(human(qid=qid, claims=claims))[1]
 
-    def test_a_clean_file_has_no_problems(self):
-        db = self.db([self.row('Q1', {'P569': [time('+1564-04-23T00:00:00Z')], 'P570': [time('+1616-04-23T00:00:00Z')]}), self.row('Q2')])
-        problems, counts = P.check(db)
+    def test_a_clean_file_has_no_problems_and_counts_the_three_statuses(self):
+        db = self.db([self.row('Q1', {'P569': [time('+1564-04-23T00:00:00Z')], 'P570': [time('+1616-04-23T00:00:00Z')]}), self.row('Q2'),
+                      self.row('Q3', {'P569': [time('+1990-01-01T00:00:00Z')]})])
+        problems, counts = P.check(db, expected=3)
         self.assertEqual(problems, [])
-        self.assertEqual((counts['persons'], counts['with born'], counts['skipped_living']), (2, 1, 7))
+        self.assertEqual((counts['persons'], counts['deceased'], counts['living'], counts['unknown']), (3, 1, 1, 1))
+
+    def test_the_person_count_must_match_schema_1(self):
+        problems, _ = P.check(self.db([self.row('Q1')]), expected=2)
+        self.assertTrue(any('parse difference' in x for x in problems))
 
     def test_problems_are_found(self):
-        alive = list(self.row('Q1', {'P569': [time('+1900-01-01T00:00:00Z')]}))
-        alive[P.PERSON_COLS.index('born')] = '+1990-01-01T00:00:00Z'  # a living person that slipped through
-        problems, _ = P.check(self.db([tuple(alive)], done='0'))
-        self.assertTrue(any('living person' in x for x in problems))
+        bad = list(self.row('Q1', {'P569': [time('+1990-01-01T00:00:00Z')]}))
+        bad[P.PERSON_COLS.index('status')] = 'deceased'  # a living person marked deceased
+        problems, _ = P.check(self.db([tuple(bad)], done='0'))
+        self.assertTrue(any('deceased without a death claim' in x for x in problems))
         self.assertTrue(any('not finished' in x for x in problems))
+        worse = list(self.row('Q2', {'P569': [time('+1990-01-01T00:00:00Z')]}))
+        worse[P.PERSON_COLS.index('status')] = 'unknown'
+        problems, _ = P.check(self.db([tuple(worse)]))
+        self.assertTrue(any('living must be exactly' in x for x in problems))
+
+
+class Parallel(unittest.TestCase):
+    """The same rows whatever --workers is: results come back in order and the blocks in flight are bounded."""
+
+    def dump(self, d, n):
+        import bz2
+        lines = [b'[']
+        for i in range(n):
+            if i % 7 == 0:
+                e = {'id': f'Q{1000 + i}', 'labels': {'en': {'value': f'Place {i}'}}, 'claims': {'P31': [item('Q3624078')], 'P17': [item('Q145')]},
+                     'sitelinks': {'enwiki': {'site': 'enwiki', 'title': f'Place {i}'}}}
+                lines.append(json.dumps(e, separators=(',', ':')).encode() + b',')
+            elif i % 11 == 0:
+                lines.append(json.dumps({'id': f'Q{1000 + i}', 'claims': {'P31': [item('Q5')]}, 'sitelinks': {}}).encode() + b',')  # a human with no enwiki: skipped
+            else:
+                born = 1500 + i if i % 5 else 1990 - (i % 3)
+                claims = {'P569': [time(f'+{born:04d}-01-01T00:00:00Z', 9)], 'P106': [item('Q1')], 'P27': [item('Q145', quals={'P580': '+1500-01-01T00:00:00Z'})]}
+                if i % 5:
+                    claims['P570'] = [time(f'+{born + 40:04d}-01-01T00:00:00Z', 9)]
+                lines.append(human(qid=f'Q{1000 + i}', claims=claims, title=f'Person {i}', label=f'Person {i}') + b',')
+        lines.append(b']')
+        path = os.path.join(d, 'dump.json.bz2')
+        with bz2.open(path, 'wb') as f:
+            f.write(b'\n'.join(lines) + b'\n')
+        return path
+
+    def rows(self, out):
+        db = sqlite3.connect(out)
+        return (db.execute('SELECT * FROM person ORDER BY qid').fetchall(), db.execute('SELECT * FROM ref ORDER BY qid').fetchall(),
+                db.execute("SELECT key, value FROM meta WHERE key IN ('persons', 'refs', 'lines', 'done', 'offset') ORDER BY key").fetchall())
+
+    def test_one_worker_and_many_give_the_same_rows(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            src = self.dump(d, 600)
+            old = P.BLOCK
+            P.BLOCK = 4096  # many small blocks: several in flight at once
+            try:
+                got = []
+                for w in (1, 4):
+                    out = os.path.join(d, f'o{w}.sqlite')
+                    P.run(src, out, threads=1, workers=w, log=lambda m: None)
+                    got.append(self.rows(out))
+            finally:
+                P.BLOCK = old
+            self.assertEqual(got[0], got[1])
+            persons, refs, meta = got[0]
+            self.assertGreater(len(persons), 400)
+            self.assertGreater(len(refs), 50)
+            self.assertEqual(dict(meta)['done'], '1')
+            self.assertEqual({r[-1] for r in persons}, {'deceased', 'living'})  # the 1990s without a death claim are kept, as living
+
+    def test_a_paused_run_resumes_to_the_same_rows(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            src = self.dump(d, 600)
+            P.BLOCK = 4096
+            try:
+                whole = os.path.join(d, 'whole.sqlite')
+                P.run(src, whole, workers=2, log=lambda m: None)
+                part = os.path.join(d, 'part.sqlite')
+                P.run(src, part, workers=2, max_gib=20000 / (1 << 30), log=lambda m: None)  # stops after about 20 KB of JSON
+                self.assertEqual(dict(sqlite3.connect(part).execute('SELECT key, value FROM meta'))['done'], '0')
+                P.run(src, part, workers=2, log=lambda m: None)  # resumes
+            finally:
+                P.BLOCK = 16 << 20
+            self.assertEqual(self.rows(whole)[:2], self.rows(part)[:2])
 
 
 if __name__ == '__main__':
