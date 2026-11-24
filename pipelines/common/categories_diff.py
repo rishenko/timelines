@@ -32,8 +32,10 @@ TIMELINES = {
 
 
 def old_classifier(rev):
-    src = subprocess.run(['git', 'show', f'{rev}:pipelines/common/event_categories.py'], cwd=REPO, check=True,
-                         capture_output=True, text=True).stdout
+    r = subprocess.run(['git', 'show', f'{rev}:pipelines/common/event_categories.py'], cwd=REPO, capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(f'no classifier at "{rev}": {r.stderr.strip()}')
+    src = r.stdout
     path = os.path.join(tempfile.mkdtemp(), 'event_categories_old.py')
     open(path, 'w').write(src)
     spec = importlib.util.spec_from_file_location('event_categories_old', path)
@@ -48,7 +50,12 @@ def fmt(cats):
 
 
 def main(argv):
+    if '--base' in argv and (argv.index('--base') + 1 >= len(argv) or argv[argv.index('--base') + 1].startswith('--')):
+        sys.exit('--base needs a git revision')
     base = argv[argv.index('--base') + 1] if '--base' in argv else 'origin/main'
+    unknown = [a for a in argv if a.startswith('--') and a not in ('--base', '--all')]
+    if unknown:
+        sys.exit(f'unknown option {", ".join(unknown)} (options: --base <rev>, --all)')
     show_all = '--all' in argv
     names = [a for i, a in enumerate(argv) if not a.startswith('--') and (i == 0 or argv[i - 1] != '--base')] or list(TIMELINES)
     for n in names:
