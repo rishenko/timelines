@@ -167,6 +167,29 @@ def term_offices(params):
     return out
 
 
+YEARLESS = re.compile(r'^\s*(?:(\d{1,2})\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+(\d{1,2}))\s*$')
+
+
+def _upto(t):
+    """(year, month, day) with a missing month or day at its end, so a year-only or day-less end compares as the latest it can be."""
+    return (t[0], t[1] or 12, t[2] or 31)
+
+
+def yearless_start(raw, end):
+    """The start of a term written without a year ("10 March") in the year of its end ("29 May 2003"), or the year before when that
+    would put it after the end ("10 December" – "29 January 2003"). [] when the text is not a bare day and month, or the end has no year."""
+    m = YEARLESS.match(dates.clean(raw) or '')
+    if not m or not end or not end.get('start'):
+        return []
+    day, month = (m.group(1), m.group(2)) if m.group(1) else (m.group(4), m.group(3))
+    y = end['start'][0]
+    for yr in (y, y - 1):
+        st = dates.spans(f'{day} {month} {abs(yr)}' + (' BC' if yr < 0 else ''), legacy=True)
+        if st and _upto(st[0]['start']) <= _upto(end['start']):
+            return st
+    return []
+
+
 def wp_reigns(params):
     """[(field, span, succession text)] from reign/reignN, or term_startN + term_endN, of one infobox."""
     out = []
@@ -189,6 +212,8 @@ def wp_reigns(params):
         elif kind == 'term_start':
             st = dates.spans(raw, legacy=True)
             en = dates.spans(params.get(f'term_end{n}', ''), legacy=True) if params.get(f'term_end{n}') else []
+            if not st and en:
+                st = yearless_start(raw, en[0])  # "10 March" – "29 May 2003" (Derog Gioura): the year is the end's
             if st:
                 s = dict(st[0])
                 s['end'] = en[0]['start'] if en else None
