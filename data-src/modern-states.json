@@ -77730,6 +77730,54 @@
         "wikipedia"
       ]
     },
+    "wp-ashikaga-yoshiaki": {
+      "name": "Ashikaga Yoshiaki (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_Yoshiaki",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ashikaga-yoshiharu": {
+      "name": "Ashikaga Yoshiharu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_Yoshiharu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ashikaga-yoshihide": {
+      "name": "Ashikaga Yoshihide (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_Yoshihide",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ashikaga-yoshitane": {
+      "name": "Ashikaga Yoshitane (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_Yoshitane",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ashikaga-yoshiteru": {
+      "name": "Ashikaga Yoshiteru (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_Yoshiteru",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ashikaga-yoshizumi": {
+      "name": "Ashikaga Yoshizumi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashikaga_Yoshizumi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-ashraf-ghani": {
       "name": "Ashraf Ghani (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ashraf_Ghani",
@@ -105322,9 +105370,113 @@
         "wikipedia"
       ]
     },
+    "wp-tokugawa-ieharu": {
+      "name": "Tokugawa Ieharu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Ieharu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-iemitsu": {
+      "name": "Tokugawa Iemitsu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Iemitsu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-iemochi": {
+      "name": "Tokugawa Iemochi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Iemochi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-ienari": {
+      "name": "Tokugawa Ienari (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Ienari",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-ienobu": {
+      "name": "Tokugawa Ienobu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Ienobu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-iesada": {
+      "name": "Tokugawa Iesada (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Iesada",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-ieshige": {
+      "name": "Tokugawa Ieshige (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Ieshige",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-ietsugu": {
+      "name": "Tokugawa Ietsugu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Ietsugu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-ietsuna": {
+      "name": "Tokugawa Ietsuna (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Ietsuna",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-tokugawa-ieyasu": {
       "name": "Tokugawa Ieyasu (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Tokugawa_Ieyasu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-ieyoshi": {
+      "name": "Tokugawa Ieyoshi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Ieyoshi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-tsunayoshi": {
+      "name": "Tokugawa Tsunayoshi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Tsunayoshi",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-yoshimune": {
+      "name": "Tokugawa Yoshimune (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Yoshimune",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tokugawa-yoshinobu": {
+      "name": "Tokugawa Yoshinobu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tokugawa_Yoshinobu",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -322542,6 +322694,602 @@
             {
               "sourceKey": "wp-p-mare-v",
               "sourceLocation": "infobox reign: 17 September 1877 – 29 June 1880"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashikaga-yoshizumi-japan",
+      "title": "Reign of Ashikaga Yoshizumi",
+      "start": 1493,
+      "end": 1508,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 1493 to 1508 (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-yoshizumi",
+          "sourceLocation": "infobox term_start: 1493 – 1508"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-yoshizumi",
+              "sourceLocation": "infobox term_start: 1493 – 1508"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashikaga-yoshitane-japan",
+      "title": "Reign of Ashikaga Yoshitane",
+      "start": 1508,
+      "end": 1521,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 1508 to 1521 (13 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-yoshitane",
+          "sourceLocation": "infobox term_start: 1508 – 1521"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-yoshitane",
+              "sourceLocation": "infobox term_start: 1508 – 1521"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashikaga-yoshiharu-japan",
+      "title": "Reign of Ashikaga Yoshiharu",
+      "start": 1521,
+      "end": 1545,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 1521 to 1545 (24 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-yoshiharu",
+          "sourceLocation": "infobox term_start: 1521 – 1545"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-yoshiharu",
+              "sourceLocation": "infobox term_start: 1521 – 1545"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashikaga-yoshiteru-japan",
+      "title": "Reign of Ashikaga Yoshiteru",
+      "start": 1545,
+      "end": 1565,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 1545 to 1565 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-yoshiteru",
+          "sourceLocation": "infobox term_start: 1545 – 1565"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-yoshiteru",
+              "sourceLocation": "infobox term_start: 1545 – 1565"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashikaga-yoshihide-japan",
+      "title": "Reign of Ashikaga Yoshihide",
+      "start": 1564,
+      "end": 1568,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 1564 to 1568 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-yoshihide",
+          "sourceLocation": "infobox term_start: 1564 – 1568"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-yoshihide",
+              "sourceLocation": "infobox term_start: 1564 – 1568"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashikaga-yoshiaki-japan",
+      "title": "Reign of Ashikaga Yoshiaki",
+      "start": 1568,
+      "end": 1573,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 1568 to 1573 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ashikaga-yoshiaki",
+          "sourceLocation": "infobox term_start: 1568 – 1573"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-yoshiaki",
+              "sourceLocation": "infobox term_start: 1568 – 1573"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-iemitsu-japan",
+      "title": "Reign of Tokugawa Iemitsu",
+      "start": 1623,
+      "startMonth": 8,
+      "startDay": 23,
+      "end": 1651,
+      "endMonth": 6,
+      "endDay": 8,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 23 August 1623 to 8 June 1651 (28 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-iemitsu",
+          "sourceLocation": "infobox term_start: 23 August 1623 – 8 June 1651"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-iemitsu",
+              "sourceLocation": "infobox term_start: 23 August 1623 – 8 June 1651"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-ietsuna-japan",
+      "title": "Reign of Tokugawa Ietsuna",
+      "start": 1651,
+      "startMonth": 9,
+      "startDay": 10,
+      "end": 1680,
+      "endMonth": 6,
+      "endDay": 4,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 10 September 1651 to 4 June 1680 (29 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-ietsuna",
+          "sourceLocation": "infobox term: 10 September 1651 – 4 June 1680"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-ietsuna",
+              "sourceLocation": "infobox term: 10 September 1651 – 4 June 1680"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-tsunayoshi-japan",
+      "title": "Reign of Tokugawa Tsunayoshi",
+      "start": 1680,
+      "startMonth": 8,
+      "startDay": 12,
+      "end": 1709,
+      "endMonth": 2,
+      "endDay": 19,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 12 August 1680 to 19 February 1709 (29 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-tsunayoshi",
+          "sourceLocation": "infobox term: 12 August 1680 – 19 February 1709"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-tsunayoshi",
+              "sourceLocation": "infobox term: 12 August 1680 – 19 February 1709"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-ienobu-japan",
+      "title": "Reign of Tokugawa Ienobu",
+      "start": 1709,
+      "startMonth": 5,
+      "startDay": 11,
+      "end": 1712,
+      "endMonth": 11,
+      "endDay": 12,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 11 May 1709 to 12 November 1712 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-ienobu",
+          "sourceLocation": "infobox term: 11 May 1709 – 12 November 1712"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-ienobu",
+              "sourceLocation": "infobox term: 11 May 1709 – 12 November 1712"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-ietsugu-japan",
+      "title": "Reign of Tokugawa Ietsugu",
+      "start": 1713,
+      "startMonth": 3,
+      "startDay": 29,
+      "end": 1716,
+      "endMonth": 6,
+      "endDay": 19,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 29 March 1713 to 19 June 1716 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-ietsugu",
+          "sourceLocation": "infobox term_start: 29 March 1713 – 19 June 1716"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-ietsugu",
+              "sourceLocation": "infobox term_start: 29 March 1713 – 19 June 1716"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-yoshimune-japan",
+      "title": "Reign of Tokugawa Yoshimune",
+      "start": 1716,
+      "startMonth": 9,
+      "startDay": 3,
+      "end": 1745,
+      "endMonth": 10,
+      "endDay": 20,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 3 September 1716 to 20 October 1745 (29 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-yoshimune",
+          "sourceLocation": "infobox term_start: 3 September 1716 – 20 October 1745"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-yoshimune",
+              "sourceLocation": "infobox term_start: 3 September 1716 – 20 October 1745"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-ieshige-japan",
+      "title": "Reign of Tokugawa Ieshige",
+      "start": 1745,
+      "startMonth": 10,
+      "startDay": 31,
+      "end": 1760,
+      "endMonth": 6,
+      "endDay": 25,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 31 October 1745 to 25 June 1760 (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-ieshige",
+          "sourceLocation": "infobox term_start: 31 October 1745 – 25 June 1760"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-ieshige",
+              "sourceLocation": "infobox term_start: 31 October 1745 – 25 June 1760"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-ieharu-japan",
+      "title": "Reign of Tokugawa Ieharu",
+      "start": 1760,
+      "startMonth": 10,
+      "startDay": 31,
+      "end": 1786,
+      "endMonth": 6,
+      "endDay": 25,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 31 October 1760 to 25 June 1786 (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-ieharu",
+          "sourceLocation": "infobox term_start: 31 October 1760 – 25 June 1786"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-ieharu",
+              "sourceLocation": "infobox term_start: 31 October 1760 – 25 June 1786"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-ienari-japan",
+      "title": "Reign of Tokugawa Ienari",
+      "start": 1787,
+      "startMonth": 4,
+      "startDay": 23,
+      "end": 1837,
+      "endMonth": 5,
+      "endDay": 6,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 23 April 1787 to 6 May 1837 (50 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-ienari",
+          "sourceLocation": "infobox term_start: 23 April 1787 – 6 May 1837"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-ienari",
+              "sourceLocation": "infobox term_start: 23 April 1787 – 6 May 1837"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-ieyoshi-japan",
+      "title": "Reign of Tokugawa Ieyoshi",
+      "start": 1837,
+      "startMonth": 9,
+      "startDay": 4,
+      "end": 1853,
+      "endMonth": 7,
+      "endDay": 27,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 4 September 1837 to 27 July 1853 (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-ieyoshi",
+          "sourceLocation": "infobox term_start: 4 September 1837 – 27 July 1853"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-ieyoshi",
+              "sourceLocation": "infobox term_start: 4 September 1837 – 27 July 1853"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-iesada-japan",
+      "title": "Reign of Tokugawa Iesada",
+      "start": 1853,
+      "startMonth": 11,
+      "startDay": 12,
+      "end": 1858,
+      "endMonth": 8,
+      "endDay": 14,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 12 November 1853 to 14 August 1858 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-iesada",
+          "sourceLocation": "infobox term_start: 12 November 1853 – 14 August 1858"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-iesada",
+              "sourceLocation": "infobox term_start: 12 November 1853 – 14 August 1858"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-iemochi-japan",
+      "title": "Reign of Tokugawa Iemochi",
+      "start": 1858,
+      "startMonth": 8,
+      "startDay": 14,
+      "end": 1866,
+      "endMonth": 8,
+      "endDay": 29,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 14 August 1858 to 29 August 1866 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-iemochi",
+          "sourceLocation": "infobox term_start: 14 August 1858 – 29 August 1866"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-iemochi",
+              "sourceLocation": "infobox term_start: 14 August 1858 – 29 August 1866"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tokugawa-yoshinobu-japan",
+      "title": "Reign of Tokugawa Yoshinobu",
+      "start": 1867,
+      "startMonth": 1,
+      "startDay": 10,
+      "end": 1868,
+      "endMonth": 1,
+      "endDay": 3,
+      "tracks": [
+        "japan"
+      ],
+      "descr": "Holds office as head of state of Japan from 10 January 1867 to 3 January 1868.",
+      "sources": [
+        {
+          "sourceKey": "wp-tokugawa-yoshinobu",
+          "sourceLocation": "infobox term_start: 10 January 1867 – 3 January 1868"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tokugawa-yoshinobu",
+              "sourceLocation": "infobox term_start: 10 January 1867 – 3 January 1868"
             }
           ]
         }

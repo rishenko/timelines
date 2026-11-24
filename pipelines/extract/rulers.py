@@ -55,6 +55,10 @@ NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
+# rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
+# shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the
+# Modern row reached every pope through its Vatican City phase). Row id -> Wikipedia article of the office.
+HEAD_OFFICES = {'japan': ['Shogun'], 'papal-states': ['Pope']}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
 LIST_NOUNS = ('monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
               'caliphs', 'khans', 'khagans', 'pharaohs', 'heads of state', 'presidents', 'grand dukes', 'grand princes',
@@ -620,6 +624,10 @@ def run(timeline, row_ids, src):
         for o in src.offices_of(list(ruled), words):
             ot = (src.title(o) or '').lower()
             polity_win[('office', o)] = [(hist(p['start']), hist(p.get('end', w1))) for p in tr.get('phases', []) if p['name'].lower() in ot] or None
+        for title in HEAD_OFFICES.get(rid, ()):  # named offices (see HEAD_OFFICES): the whole row
+            o = src.qid(title)
+            if o:
+                polity_win[('office', o)] = None
         for person, terms in src.holders([k[1] for k in polity_win if isinstance(k, tuple)]).items():
             ruled.setdefault(person, []).extend(t for t in terms if t not in ruled[person])
             via.setdefault(person, set()).update(('office', t[-1].split(' ', 1)[1]) for t in terms)
