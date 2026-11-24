@@ -77,6 +77,12 @@ export function About({ search = window.location.search, pathname = window.locat
           sapiens).
         </li>
         <li>
+          <strong>Scholarly pages</strong>, cited directly for when the traditions in Religions and traditions began:
+          Jamison and Witzel’s essay on Vedic religion (Harvard University), the Encyclopedia of Shinto (Kokugakuin
+          University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran
+          on Ilé-Ifẹ̀ (The Conversation) and the Biblical Archaeology Society on Yonatan Adler’s work.
+        </li>
+        <li>
           <strong>Natural Earth</strong>: the land on the event maps.
         </li>
         <li>
