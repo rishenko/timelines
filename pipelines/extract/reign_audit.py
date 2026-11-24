@@ -36,7 +36,10 @@ GENERIC = {'kingdom', 'duchy', 'despotate', 'empire', 'republic', 'state', 'stat
            'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate', 'first', 'second', 'third', 'upper', 'lower',
            'great', 'grand', 'north', 'south', 'east', 'west', 'northern', 'southern', 'eastern', 'western', 'central', 'later', 'early',
            'rule', 'period', 'british', 'french', 'spanish', 'german', 'dutch', 'portuguese', 'italian', 'russian', 'danish', 'swedish',
-           'ottoman', 'roman', 'islamic', 'arab', 'holy'}
+           'ottoman', 'roman', 'islamic', 'arab', 'holy', 'united', 'federal', 'people', 'peoples', 'general', 'american', 'americas', 'america', 'revolutionary',
+           'central', 'islands', 'island', 'saint', 'free', 'independent', 'national', 'provisional', 'interim', 'acting', 'chairman', 'president',
+           'presidency', 'council', 'republics', 'democratic', 'socialist', 'territory', 'mandate', 'occupation', 'revolution', 'movement',
+           'alliance', 'league', 'nations', 'imamate', 'sultanate', 'emirate'}
 WORD = re.compile(r'[A-Za-zÀ-ÿ]{5,}')
 
 
