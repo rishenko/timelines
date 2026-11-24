@@ -29,10 +29,12 @@ describe('people (schema 11.2)', () => {
     delete d.meta.facets.area;
     expect(minorNeeded(d)).toBe(1);
   });
-  it('an event names only people the timeline has', () => {
+  it('an event names only people the timeline has, each once', () => {
     const d = copy();
     d.events[0].people = ['darius-iii'];
     expect(validateDataset(d)).toEqual(['Event "Reign of Darius II" names unknown person "darius-iii".']);
+    d.events[0].people = ['darius-ii', 'darius-ii'];
+    expect(validateDataset(d)).toEqual(['Event "Reign of Darius II" names person "darius-ii" more than once.']);
   });
   it('a person needs a name, an active year and how it was found, and cited rows', () => {
     const d = copy();
@@ -86,7 +88,7 @@ describe('people (schema 11.2)', () => {
 });
 
 describe('editing a timeline with people', async () => {
-  const { removeSource, removeTrack, upsertTrack } = await import('../state/edits.ts');
+  const { removeSource, removeTrack, sourceBlockers, upsertTrack } = await import('../state/edits.ts');
   const ds = () => copy() as never;
   it('a renamed row takes its people with it', () => {
     const d = ds() as Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -106,5 +108,12 @@ describe('editing a timeline with people', async () => {
     expect(out.people!['darius-ii'].rows).toBeUndefined();
     expect(out.people!['darius-ii'].memberships).toHaveLength(1); // cites the people pass
     expect(validateDataset(out).filter((e) => e.startsWith('Person'))).toEqual([]);
+  });
+  it("a source a person's floruit rests on can't be deleted; the editor names them", () => {
+    const d = copy(everyField) as never as import('../types.ts').Dataset;
+    expect(sourceBlockers(d, 'ledger')).toEqual(['The First Warden']);
+    expect(removeSource(d, 'ledger')).toBe(d);
+    expect(sourceBlockers(d, 'logbook')).toEqual([]);
+    expect(validateStrict(removeSource(d, 'logbook')).filter((e) => e.includes('first-warden'))).toEqual([]);
   });
 });

@@ -607,7 +607,10 @@ export function validateDataset(d: unknown): string[] {
   for (const e of ds.events) {
     if (e.people === undefined) continue;
     if (!Array.isArray(e.people)) errors.push(`Event "${e.title}" people must be a list of person ids.`);
-    else for (const pid of e.people) if (!personIds.has(pid)) errors.push(`Event "${e.title}" names unknown person "${pid}".`);
+    else {
+      for (const pid of e.people) if (!personIds.has(pid)) errors.push(`Event "${e.title}" names unknown person "${pid}".`);
+      for (const pid of new Set(e.people.filter((x, i) => e.people!.indexOf(x) !== i))) errors.push(`Event "${e.title}" names person "${pid}" more than once.`);
+    }
   }
 
   for (const e of ds.events) {

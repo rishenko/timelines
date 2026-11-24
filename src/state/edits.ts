@@ -337,8 +337,19 @@ export function sourceUsage(d: Dataset, key: string): number {
     .length;
 }
 
-/** Removes a source and every citation of it; date claims that cited it keep their values. */
+/**
+ * People whose active year comes from this source alone (`active.from: "source"`): the source can't be deleted while they
+ * cite it, since a floruit without its source has nothing to stand on. Their names, for the editor to say so.
+ */
+export function sourceBlockers(d: Dataset, key: string): string[] {
+  return Object.values(d.people ?? {})
+    .filter((p) => p.active?.from === 'source' && p.active.source?.sourceKey === key)
+    .map((p) => p.name);
+}
+
+/** Removes a source and every citation of it; date claims that cited it keep their values. Refused (unchanged) while a person's floruit rests on it (see sourceBlockers). */
 export function removeSource(d: Dataset, key: string): Dataset {
+  if (sourceBlockers(d, key).length) return d;
   const { [key]: _removed, ...sources } = d.sources;
   return { ...d, ...recite(d, key, null), sources };
 }

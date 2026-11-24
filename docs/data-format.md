@@ -547,7 +547,7 @@ thousands, which as rows would bury the polities. Events name them in their `peo
 
 A person isn't drawn yet; the block gives people one identity across rows and a place in time. Renaming or removing a
 row in the editor updates its people's `rows`, and removing a source drops the citations of it (birth and death keep
-their years).
+their years). A source that a person's active year rests on (`from: "source"`) can't be deleted until they cite another.
 
 ## Date claims and uncertain dates
 
@@ -640,7 +640,7 @@ A file that breaks any of these is refused, with a message naming the problem.
 - A facet's `applies` is `tracks`, `events`, `both` or `people`, and every row's, event's or person's membership is in
   a facet that applies to it (`both` doesn't include people). A row's `kind` is `polity`, `person` or `theme`.
 - People (11.2): an id of letters, digits and dashes, a name, an `active` year with its `from`; `born` no later than
-  `died`; each row a known row with at least one known source. An event's `people` are ids the timeline has. Strictly
+  `died`; each row a known row with at least one known source. An event's `people` are ids the timeline has, each named once. Strictly
   (the site's own data): `from` and `via` are known values, `"source"` cites one, and a derived year is exactly what
   its rule gives.
 - Context spans have unique ids, a lowercase `kind`, a name and at least one known source, are dated like phases,
