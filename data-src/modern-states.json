@@ -74050,6 +74050,158 @@
         "wikipedia"
       ]
     },
+    "wp-famines-in-ethiopia": {
+      "name": "Famines in Ethiopia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Famines_in_Ethiopia",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-droughts-in-the-sahel": {
+      "name": "Droughts in the Sahel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Droughts_in_the_Sahel",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-lake-nyos-disaster": {
+      "name": "Lake Nyos disaster (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lake_Nyos_disaster",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-great-bengal-famine-of-1770": {
+      "name": "Great Bengal famine of 1770 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Bengal_famine_of_1770",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1839-coringa-cyclone": {
+      "name": "1839 Coringa cyclone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1839_Coringa_cyclone",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1999-odisha-cyclone": {
+      "name": "1999 Odisha cyclone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1999_Odisha_cyclone",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1556-shaanxi-earthquake": {
+      "name": "1556 Shaanxi earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1556_Shaanxi_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1931-china-floods": {
+      "name": "1931 China floods (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1931_China_floods",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1976-tangshan-earthquake": {
+      "name": "1976 Tangshan earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1976_Tangshan_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "gvp-16231": {
+      "name": "Smithsonian Global Volcanism Program, Tambora, eruption 16231",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=264040",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-1815-eruption-of-mount-tambora": {
+      "name": "1815 eruption of Mount Tambora (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "gvp-15589": {
+      "name": "Smithsonian Global Volcanism Program, Krakatau, eruption 15589",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=262000",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-1883-eruption-of-krakatoa": {
+      "name": "1883 eruption of Krakatoa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "gvp-16210": {
+      "name": "Smithsonian Global Volcanism Program, Agung, eruption 16210",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=264020",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-mount-agung": {
+      "name": "Mount Agung (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mount_Agung",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1948-ashgabat-earthquake": {
+      "name": "1948 Ashgabat earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1948_Ashgabat_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "gvp-11795": {
+      "name": "Smithsonian Global Volcanism Program, Huaynaputina, eruption 11795",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=354030",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-huaynaputina": {
+      "name": "Huaynaputina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Huaynaputina",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1985-mexico-city-earthquake": {
+      "name": "1985 Mexico City earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1985_Mexico_City_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-14th-dalai-lama": {
       "name": "14th Dalai Lama (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/14th_Dalai_Lama",
@@ -108101,11 +108253,110 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-artemisinin": {
+      "name": "Artemisinin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Artemisinin",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bose-einstein-statistics": {
+      "name": "Bose–Einstein statistics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bose–Einstein_statistics",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-c.-v.-raman": {
+      "name": "C. V. Raman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/C._V._Raman",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-de-revolutionibus-orbium-coelestium": {
+      "name": "De revolutionibus orbium coelestium (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-heart-transplantation": {
+      "name": "Heart transplantation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Heart_transplantation",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kaitai-shinsho": {
+      "name": "Kaitai Shinsho (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kaitai_Shinsho",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nicolaus-copernicus": {
+      "name": "Nicolaus Copernicus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nicolaus_Copernicus",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-philosophiae-naturalis-principia-mathematica": {
+      "name": "Philosophiæ Naturalis Principia Mathematica (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Philosophiæ_Naturalis_Principia_Mathematica",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-raman-scattering": {
+      "name": "Raman scattering (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Raman_scattering",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-satyendra-nath-bose": {
+      "name": "Satyendra Nath Bose (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Satyendra_Nath_Bose",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wi-fi": {
+      "name": "Wi-Fi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wi-Fi",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wright-brothers": {
+      "name": "Wright brothers (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wright_brothers",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
     "wikipedia": {
       "name": "Wikipedia"
+    },
+    "catalogue": {
+      "name": "Official catalogue"
     },
     "scholarly": {
       "name": "Scholarly pages"
@@ -154627,6 +154878,517 @@
             {
               "sourceKey": "wp-dutch-golden-age",
               "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1556-shaanxi-earthquake",
+      "title": "1556 Shaanxi earthquake",
+      "descr": "Earthquake or tsunami in China, 23 January 1556. The sources give 100,000 to 730,000 deaths. Magnitude 7 to 7.5.",
+      "start": 1556,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 1,
+      "startDay": 23,
+      "sources": [
+        {
+          "sourceKey": "wp-1556-shaanxi-earthquake",
+          "sourceLocation": "infobox local_date: 23 January 1556 in Julian calendar ; 2 February 1556 in Gregorian calendar ; The 12th day of the 12th month of the 34th year of the Jiajing era in Chinese calendar"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1556-shaanxi-earthquake",
+              "sourceLocation": "infobox local_date: 23 January 1556 in Julian calendar ; 2 February 1556 in Gregorian calendar ; The 12th day of the 12th month of the 34th year of the Jiajing era in Chinese calendar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-huaynaputina",
+      "title": "1600 eruption of Huaynaputina",
+      "descr": "Volcanic activity in Peru, 19 February 1600 to 6 March 1600. Volcanic Explosivity Index 6.",
+      "start": 1600,
+      "tracks": [
+        "viceroyalty-of-peru"
+      ],
+      "startMonth": 2,
+      "startDay": 19,
+      "sources": [
+        {
+          "sourceKey": "wp-huaynaputina",
+          "sourceLocation": "infobox start_date: 19 February 1600"
+        },
+        {
+          "sourceKey": "wp-huaynaputina",
+          "sourceLocation": "infobox end_date: 6 March 1600"
+        },
+        {
+          "sourceKey": "gvp-11795",
+          "sourceLocation": "eruption 11795: start 1600-02-17, end 1600-03-06, VEI 6"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-huaynaputina",
+              "sourceLocation": "infobox start_date: 19 February 1600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-great-bengal-famine-of-1770",
+      "title": "Great Bengal famine of 1770",
+      "descr": "Drought or crop failure in India, Bangladesh, 1769 to 1770. The sources give 1,000,000 to 10,000,000 deaths.",
+      "start": 1769,
+      "tracks": [
+        "india",
+        "bangladesh"
+      ],
+      "end": 1770,
+      "sources": [
+        {
+          "sourceKey": "wp-great-bengal-famine-of-1770",
+          "sourceLocation": "infobox period: 1769–1770"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1769,
+          "source": {
+            "sourceKey": "wp-great-bengal-famine-of-1770",
+            "sourceLocation": "infobox period: 1769–1770"
+          }
+        },
+        {
+          "year": 1770,
+          "source": {
+            "sourceKey": "wp-great-bengal-famine-of-1770",
+            "sourceLocation": "lead: \"The Great Bengal famine of 1770 struck Bengal and Bihar between 1769 and 1770 and affected some 30 million people, which was about one third of the current population of the area.\""
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "drought",
+          "sources": [
+            {
+              "sourceKey": "wp-great-bengal-famine-of-1770",
+              "sourceLocation": "infobox period: 1769–1770"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "famine",
+          "sources": [
+            {
+              "sourceKey": "wp-great-bengal-famine-of-1770",
+              "sourceLocation": "infobox period: 1769–1770"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1815-eruption-of-mount-tambora",
+      "title": "1815 eruption of Mount Tambora",
+      "descr": "Volcanic activity in Indonesia, April 1815 to 15 July 1815. Volcanic Explosivity Index 7.",
+      "start": 1815,
+      "tracks": [
+        "indonesia"
+      ],
+      "startMonth": 4,
+      "sources": [
+        {
+          "sourceKey": "wp-1815-eruption-of-mount-tambora",
+          "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
+        },
+        {
+          "sourceKey": "wp-1815-eruption-of-mount-tambora",
+          "sourceLocation": "infobox end_date: 15 July 1815"
+        },
+        {
+          "sourceKey": "gvp-16231",
+          "sourceLocation": "eruption 16231: start 1812-07-02, end 1815-07-15, VEI 7"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1815,
+          "source": {
+            "sourceKey": "wp-1815-eruption-of-mount-tambora",
+            "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
+          }
+        },
+        {
+          "year": 1812,
+          "source": {
+            "sourceKey": "wp-1815-eruption-of-mount-tambora",
+            "sourceLocation": "infobox start_date: 1812"
+          },
+          "note": "The same article gives this year too."
+        },
+        {
+          "year": 1812,
+          "source": {
+            "sourceKey": "gvp-16231",
+            "sourceLocation": "eruption 16231: start 1812-07-02, end 1815-07-15, VEI 7"
+          },
+          "note": "The GVP record's start year."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-1815-eruption-of-mount-tambora",
+              "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1839-coringa-cyclone",
+      "title": "1839 Coringa cyclone",
+      "descr": "Storm in India, 25 November 1839.",
+      "start": 1839,
+      "tracks": [
+        "india"
+      ],
+      "startMonth": 11,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-1839-coringa-cyclone",
+          "sourceLocation": "lead: \"On 25 November 1839, the port city of Coringa in present-day Andhra Pradesh on the southeastern coast of British India was battered by a tropical cyclone that destroyed the harbour.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "storm",
+          "sources": [
+            {
+              "sourceKey": "wp-1839-coringa-cyclone",
+              "sourceLocation": "lead: \"On 25 November 1839, the port city of Coringa in present-day Andhra Pradesh on the southeastern coast of British India was battered by a tropical cyclone that destroyed the harbour.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1883-eruption-of-krakatoa",
+      "title": "1883 eruption of Krakatoa",
+      "descr": "Volcanic activity in Indonesia, 20 May 1883 to 21 October 1883. The sources give 36,417 deaths. Volcanic Explosivity Index 6.",
+      "start": 1883,
+      "tracks": [
+        "indonesia"
+      ],
+      "startMonth": 5,
+      "startDay": 20,
+      "sources": [
+        {
+          "sourceKey": "wp-1883-eruption-of-krakatoa",
+          "sourceLocation": "infobox start_date: 20 May 1883"
+        },
+        {
+          "sourceKey": "wp-1883-eruption-of-krakatoa",
+          "sourceLocation": "infobox end_date: 21 October 1883"
+        },
+        {
+          "sourceKey": "gvp-15589",
+          "sourceLocation": "eruption 15589: start 1883-05-20, end 1883-10-21, VEI 6"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-1883-eruption-of-krakatoa",
+              "sourceLocation": "infobox start_date: 20 May 1883"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-famines-in-ethiopia",
+      "title": "Great Ethiopian Famine",
+      "descr": "Drought or crop failure in Ethiopia, 1888 to 1892.",
+      "start": 1888,
+      "tracks": [
+        "ethiopia"
+      ],
+      "end": 1892,
+      "sources": [
+        {
+          "sourceKey": "wp-famines-in-ethiopia",
+          "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "drought",
+          "sources": [
+            {
+              "sourceKey": "wp-famines-in-ethiopia",
+              "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1931-china-floods",
+      "title": "1931 China floods",
+      "descr": "Flood in China, 1931. The sources give 422,499 to 4,000,000 deaths.",
+      "start": 1931,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1931-china-floods",
+          "sourceLocation": "lead: \"The 1931 China floods, or the 1931 Yangtze–Huai River floods, were a series of devastating floods that occurred from June to August 1931 in China, hitting major cities such as Wuhan, Nanjing and beyond, and eventually culminating in a dike breach along Lake Gaoyou on 25 August 1931.\""
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "flood",
+          "sources": [
+            {
+              "sourceKey": "wp-1931-china-floods",
+              "sourceLocation": "lead: \"The 1931 China floods, or the 1931 Yangtze–Huai River floods, were a series of devastating floods that occurred from June to August 1931 in China, hitting major cities such as Wuhan, Nanjing and beyond, and eventually culminating in a dike breach along Lake Gaoyou on 25 August 1931.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1948-ashgabat-earthquake",
+      "title": "1948 Ashgabat earthquake",
+      "descr": "Earthquake or tsunami in Turkmenistan, 5 October 1948. The sources give 10,000 to 110,000 deaths. Magnitude 7.3.",
+      "start": 1948,
+      "tracks": [
+        "turkmenistan"
+      ],
+      "startMonth": 10,
+      "startDay": 5,
+      "sources": [
+        {
+          "sourceKey": "wp-1948-ashgabat-earthquake",
+          "sourceLocation": "infobox timestamp: 1948-10-05 20:12:09"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1948-ashgabat-earthquake",
+              "sourceLocation": "infobox timestamp: 1948-10-05 20:12:09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-mount-agung",
+      "title": "1963 eruption of Mount Agung",
+      "descr": "Volcanic activity in Indonesia, 1963.",
+      "start": 1963,
+      "tracks": [
+        "indonesia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mount-agung",
+          "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+        },
+        {
+          "sourceKey": "gvp-16210",
+          "sourceLocation": "eruption 16210: start 1963-02-18, end 1964-01-27, VEI 5"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-mount-agung",
+              "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-droughts-in-the-sahel",
+      "title": "Sahel drought of 1968–1974",
+      "descr": "Drought or crop failure in Mali, Niger, Chad and neighbouring countries, 1968 to 1974.",
+      "start": 1968,
+      "tracks": [
+        "western-africa"
+      ],
+      "end": 1974,
+      "sources": [
+        {
+          "sourceKey": "wp-droughts-in-the-sahel",
+          "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "drought",
+          "sources": [
+            {
+              "sourceKey": "wp-droughts-in-the-sahel",
+              "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1976-tangshan-earthquake",
+      "title": "1976 Tangshan earthquake",
+      "descr": "Earthquake or tsunami in China, 28 July 1976. The sources give 242,469 deaths.",
+      "start": 1976,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 7,
+      "startDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-1976-tangshan-earthquake",
+          "sourceLocation": "infobox local_date: 28 July 1976"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1976-tangshan-earthquake",
+              "sourceLocation": "infobox local_date: 28 July 1976"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1985-mexico-city-earthquake",
+      "title": "1985 Mexico City earthquake",
+      "descr": "Earthquake or tsunami in Mexico, 19 September 1985. The sources give 5,000 to 45,000 deaths. Magnitude 8.",
+      "start": 1985,
+      "tracks": [
+        "mexico"
+      ],
+      "startMonth": 9,
+      "startDay": 19,
+      "sources": [
+        {
+          "sourceKey": "wp-1985-mexico-city-earthquake",
+          "sourceLocation": "infobox local_date: 19 September 1985"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1985-mexico-city-earthquake",
+              "sourceLocation": "infobox local_date: 19 September 1985"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-lake-nyos-disaster",
+      "title": "Lake Nyos disaster",
+      "descr": "Volcanic activity in Cameroon, 21 August 1986. The sources give 1,746 deaths.",
+      "start": 1986,
+      "tracks": [
+        "cameroon"
+      ],
+      "startMonth": 8,
+      "startDay": 21,
+      "sources": [
+        {
+          "sourceKey": "wp-lake-nyos-disaster",
+          "sourceLocation": "infobox date: 21 August 1986"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-lake-nyos-disaster",
+              "sourceLocation": "infobox date: 21 August 1986"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1999-odisha-cyclone",
+      "title": "1999 Odisha cyclone",
+      "descr": "Storm in India, 1999. The sources give 9,887 to 30,000 deaths.",
+      "start": 1999,
+      "tracks": [
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1999-odisha-cyclone",
+          "sourceLocation": "lead: \"The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "storm",
+          "sources": [
+            {
+              "sourceKey": "wp-1999-odisha-cyclone",
+              "sourceLocation": "lead: \"The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.\""
             }
           ]
         }
@@ -324439,6 +325201,265 @@
             {
               "sourceKey": "wp-caodaism",
               "sourceLocation": "History: \"By 1940, it had gathered over a million members and converting a fifth to a fourth of the population of Cochinchina\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "copernicus-de-revolutionibus",
+      "title": "Copernicus's De revolutionibus is printed",
+      "descr": "Copernicus's book proposing that the Earth moves around the Sun is printed in Nuremberg.",
+      "start": 1543,
+      "sources": [
+        {
+          "sourceKey": "wp-de-revolutionibus-orbium-coelestium",
+          "sourceLocation": "lead: \"first printed in 1543 CE in Nuremberg, Holy Roman Empire\""
+        },
+        {
+          "sourceKey": "wp-nicolaus-copernicus",
+          "sourceLocation": "Early life: \"born on 19 February 1473 in the city of Thorn (Toruń), in the province of Royal Prussia, in the Crown of the Kingdom of Poland\""
+        }
+      ],
+      "tracks": [
+        "poland"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-de-revolutionibus-orbium-coelestium",
+              "sourceLocation": "lead: \"first printed in 1543 CE in Nuremberg, Holy Roman Empire\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "newton-principia",
+      "title": "Newton publishes the Principia",
+      "descr": "Isaac Newton publishes the Principia, which sets out the laws of motion and universal gravitation.",
+      "start": 1687,
+      "sources": [
+        {
+          "sourceKey": "wp-philosophiae-naturalis-principia-mathematica",
+          "sourceLocation": "lead: \"first published in 1687\""
+        }
+      ],
+      "tracks": [
+        "united-kingdom"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-philosophiae-naturalis-principia-mathematica",
+              "sourceLocation": "lead: \"first published in 1687\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "raman-effect",
+      "title": "C. V. Raman discovers Raman scattering",
+      "descr": "C. V. Raman and his student find that light passing through a transparent material changes wavelength; he won the Nobel Prize in Physics for it in 1930.",
+      "start": 1928,
+      "sources": [
+        {
+          "sourceKey": "wp-raman-scattering",
+          "sourceLocation": "lead: \"Raman, who discovered it in 1928\""
+        },
+        {
+          "sourceKey": "wp-c.-v.-raman",
+          "sourceLocation": "Career: \"the Indian Association for the Cultivation of Science (IACS), the first research institute in India\""
+        }
+      ],
+      "tracks": [
+        "india"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-raman-scattering",
+              "sourceLocation": "lead: \"Raman, who discovered it in 1928\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "bose-einstein-statistics",
+      "title": "Bose derives the quantum statistics later named for him and Einstein",
+      "descr": "Satyendra Nath Bose derives Planck's radiation law by a new way of counting identical particles, the start of Bose–Einstein statistics.",
+      "start": 1924,
+      "sources": [
+        {
+          "sourceKey": "wp-satyendra-nath-bose",
+          "sourceLocation": "Career: \"In 1924, whilst a Reader in the Physics Department of the University of Dhaka, Bose wrote a paper deriving Planck's quantum radiation law\""
+        },
+        {
+          "sourceKey": "wp-bose-einstein-statistics",
+          "sourceLocation": "lead: \"developed (1924–25) by Satyendra Nath Bose\""
+        }
+      ],
+      "tracks": [
+        "india"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-satyendra-nath-bose",
+              "sourceLocation": "Career: \"In 1924, whilst a Reader in the Physics Department of the University of Dhaka, Bose wrote a paper deriving Planck's quantum radiation law\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "kaitai-shinsho",
+      "title": "Kaitai Shinsho, the Japanese anatomy book, is published",
+      "descr": "Sugita Genpaku's Kaitai Shinsho, a translation of a Dutch anatomy text, is published and starts Japan's Dutch medical learning.",
+      "start": 1774,
+      "sources": [
+        {
+          "sourceKey": "wp-kaitai-shinsho",
+          "sourceLocation": "lead: \"in 1774, the third year of An'ei\""
+        }
+      ],
+      "tracks": [
+        "japan"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-kaitai-shinsho",
+              "sourceLocation": "lead: \"in 1774, the third year of An'ei\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "artemisinin-discovered",
+      "title": "Tu Youyou discovers artemisinin",
+      "descr": "Tu Youyou finds artemisinin, a malaria drug, for which she shared the 2015 Nobel Prize in Physiology or Medicine.",
+      "start": 1972,
+      "sources": [
+        {
+          "sourceKey": "wp-artemisinin",
+          "sourceLocation": "lead: \"It was discovered in 1972 by Tu Youyou\""
+        }
+      ],
+      "tracks": [
+        "china"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-artemisinin",
+              "sourceLocation": "lead: \"It was discovered in 1972 by Tu Youyou\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "first-heart-transplant",
+      "title": "The first human heart transplant is performed in Cape Town",
+      "descr": "Christiaan Barnard performs the first human-to-human heart transplant at Groote Schuur Hospital in Cape Town.",
+      "start": 1967,
+      "sources": [
+        {
+          "sourceKey": "wp-heart-transplantation",
+          "sourceLocation": "lead: \"Louis Washkansky received this transplant on December 3, 1967, at the Groote Schuur Hospital in Cape Town, South Africa\""
+        }
+      ],
+      "tracks": [
+        "south-africa"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-heart-transplantation",
+              "sourceLocation": "lead: \"Louis Washkansky received this transplant on December 3, 1967, at the Groote Schuur Hospital in Cape Town, South Africa\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "wright-first-flight",
+      "title": "The Wright brothers make the first powered, controlled flight",
+      "descr": "Orville and Wilbur Wright make the first controlled, sustained flight of an engine-powered aircraft near Kitty Hawk, North Carolina.",
+      "start": 1903,
+      "sources": [
+        {
+          "sourceKey": "wp-wright-brothers",
+          "sourceLocation": "lead: \"the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903\""
+        }
+      ],
+      "tracks": [
+        "united-states"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-wright-brothers",
+              "sourceLocation": "lead: \"the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "csiro-wireless-lan",
+      "title": "A CSIRO team builds a wireless LAN prototype",
+      "descr": "Researchers at the CSIRO in Australia build a prototype wireless local area network; Australia, the United States and the Netherlands each claim the invention of Wi-Fi.",
+      "start": 1992,
+      "sources": [
+        {
+          "sourceKey": "wp-wi-fi",
+          "sourceLocation": "History: \"A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO\""
+        },
+        {
+          "sourceKey": "wp-wi-fi",
+          "sourceLocation": "History: \"Australia, the United States and the Netherlands simultaneously claim the invention of Wi-Fi, and a consensus has not been reached globally\""
+        }
+      ],
+      "tracks": [
+        "australia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-wi-fi",
+              "sourceLocation": "History: \"A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO\""
             }
           ]
         }
