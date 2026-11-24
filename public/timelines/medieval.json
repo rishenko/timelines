@@ -14867,6 +14867,22 @@
             }
           }
         ],
+        "endDates": [
+          {
+            "year": 1500,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "infobox year_end: 'c. 1500'"
+            }
+          },
+          {
+            "year": 1500,
+            "source": {
+              "sourceKey": "wp-alodia",
+              "sourceLocation": "lead: 'By around 1500 Soba had fallen to either Arabs or the Funj.'"
+            }
+          }
+        ],
         "circa": true
       },
       "memberships": [
