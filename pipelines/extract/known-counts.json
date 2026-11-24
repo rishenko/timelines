@@ -218,6 +218,235 @@
     "dump": "enwiki-20261101"
    },
    "at": 2026
+  },
+  {
+   "id": "rashidun-caliphs",
+   "rows": [
+    [
+     "medieval",
+     "caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 4,
+   "kind": "text",
+   "region": "West Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "Rashidun Caliphate",
+    "quote": "was the early Islamic polity led by the first four successive caliphs",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 632,
+   "to": 661,
+   "notCounted": {
+    "Mu'awiya I": "first Umayyad, after the four",
+    "Hasan ibn Ali": "some Sunni counts add him as a fifth; the article says four"
+   }
+  },
+  {
+   "id": "abbasid-caliphs",
+   "rows": [
+    [
+     "medieval",
+     "caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 37,
+   "kind": "list",
+   "region": "West Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "List of Abbasid caliphs",
+    "quote": "37 al-Musta'sim",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 750,
+   "to": 1258,
+   "notCounted": {
+    "Bajkam": "amir al-umara, not a caliph",
+    "Tuzun (amir al-umara)": "amir al-umara, not a caliph"
+   }
+  },
+  {
+   "id": "sufyanid-caliphs",
+   "rows": [
+    [
+     "medieval",
+     "caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 3,
+   "kind": "text",
+   "region": "West Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "Umayyad Caliphate",
+    "quote": "the Sufyanid line of Mu'awiya (which includes only the first three Umayyad caliphs)",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 661,
+   "to": 684,
+   "notCounted": {
+    "Hasan ibn Ali": "rival caliph, not Umayyad",
+    "Marwan I": "founded the Marwanid line"
+   }
+  },
+  {
+   "id": "safavid-monarchs",
+   "rows": [
+    [
+     "modern-states",
+     "iran"
+    ]
+   ],
+   "measure": "people",
+   "expected": 11,
+   "kind": "list",
+   "region": "West Asia",
+   "era": "1500–1800",
+   "source": {
+    "article": "List of Safavid monarchs",
+    "quote": "11 Abbas III",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1501,
+   "to": 1736,
+   "notCounted": {
+    "Mahmud Hotak": "Hotak usurper",
+    "Ashraf Hotak": "Hotak usurper",
+    "Nader Shah": "Afsharid"
+   }
+  },
+  {
+   "id": "joseon-kings",
+   "rows": [
+    [
+     "medieval",
+     "korea"
+    ],
+    [
+     "modern-states",
+     "korea"
+    ]
+   ],
+   "measure": "people",
+   "expected": 27,
+   "kind": "text",
+   "region": "East Asia",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of kings of Joseon",
+    "quote": "Twenty-seven kings ruled over united Korea for more than 500 years.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1392,
+   "to": 1910
+  },
+  {
+   "id": "ming-emperors",
+   "rows": [
+    [
+     "medieval",
+     "china"
+    ],
+    [
+     "modern-states",
+     "china"
+    ]
+   ],
+   "measure": "people",
+   "expected": 16,
+   "kind": "list",
+   "region": "East Asia",
+   "era": "500–1500 and 1500–1800",
+   "source": {
+    "article": "List of emperors of the Ming dynasty",
+    "quote": "Chongzhen Emperor Zhu Youjian 2 October 1627 – 25 April 1644",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1368,
+   "to": 1644,
+   "notCounted": {
+    "Biligtü Khan Ayushiridara": "Northern Yuan khan",
+    "Nurhaci": "Later Jin",
+    "Hong Taiji": "Later Jin",
+    "Shunzhi Emperor": "Qing",
+    "Li Zicheng": "Shun rebel",
+    "Hongguang Emperor": "Southern Ming, outside the 16 of the main list"
+   },
+   "note": "16 people on the list page (Emperor Yingzong reigns twice), counted from its rows: the page states no total"
+  },
+  {
+   "id": "popes-1492-2025",
+   "rows": [
+    [
+     "modern-states",
+     "papal-states"
+    ]
+   ],
+   "measure": "people",
+   "expected": 54,
+   "kind": "list",
+   "region": "Europe",
+   "era": "1500–1800 and 1800 on",
+   "source": {
+    "url": "https://www.vatican.va/content/vatican/en/holy-father.html",
+    "article": "Supreme Pontiffs (vatican.va)",
+    "quote": "214 Alexander VI 11,26.VIII.1492 … 267 Leo XIV 8,18.V.2025 (numbered 214–267 = 54)",
+    "read": "2026-11-24"
+   },
+   "titles": [
+    "Pontificate of",
+    "Reign of"
+   ],
+   "from": 1492
+  },
+  {
+   "id": "popes-1500-1799",
+   "rows": [
+    [
+     "modern-states",
+     "papal-states"
+    ]
+   ],
+   "measure": "people",
+   "expected": 36,
+   "kind": "list",
+   "region": "Europe",
+   "era": "1500–1800",
+   "source": {
+    "url": "https://www.vatican.va/content/vatican/en/holy-father.html",
+    "article": "Supreme Pontiffs (vatican.va)",
+    "quote": "215 Pius III 22.IX.1503 … 250 Pius VI 15,22.II.1775 (250 − 215 + 1 = 36)",
+    "read": "2026-11-24"
+   },
+   "titles": [
+    "Pontificate of",
+    "Reign of"
+   ],
+   "from": 1500,
+   "to": 1799
   }
  ],
  "gaps": [
@@ -270,6 +499,11 @@
    "region": "Africa, Medieval",
    "what": "Ethiopian Empire: 5 emperors in 5 years after Yeshaq",
    "why": "a window count; no row-level check yet"
+  },
+  {
+   "region": "East Asia, Medieval",
+   "what": "Yuan emperors after Kublai",
+   "why": "Yuan dynasty says \"the last of the nine successors of Kublai Khan\" but its own list and our data have ten (Temür to Toghon Temür); a source conflict, not added"
   }
  ]
 }

@@ -7,7 +7,7 @@ Wikipedia article states becomes a check on the compiled timelines in public/tim
     python3 -I pipelines/extract/known_counts.py [--verify-sources] [--list]
 
 A spec holds the expected number, what is counted, and where the number comes from:
-  source  {article, quote, dump}: the Wikipedia sentence (or list entry) that states the number. The expected number
+  source  {article, quote, dump} (or {url, article, quote, read} for an official page outside the dump, read by hand on `read`; --verify-sources skips it): the Wikipedia sentence (or list entry) that states the number. The expected number
           is in the quote. `--verify-sources` reads the dump (pipelines/common/wp_dump, needs the extractor's venv and
           $TIMELINES_DATA) and fails when the article no longer holds the quote: a monthly refresh then shows which
           stated numbers moved. Without the flag the check needs no dump, so it runs in check:all.
@@ -80,6 +80,8 @@ def verify_source(spec):
     import wp_dump
     import mwparserfromhell as mw
     src = spec['source']
+    if src.get('url'):  # an official page outside the dump (vatican.va): read by hand on the date it gives
+        return None
     p = wp_dump.page(src['article'])
     if not p:
         return f"article {src['article']!r} not in the dump"
