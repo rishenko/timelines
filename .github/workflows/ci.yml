@@ -72,7 +72,7 @@ jobs:
       - name: Extractor tests
         working-directory: pipelines/extract
         run: |
-          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check test_wd_crosscheck test_table_specs; do
+          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check test_wd_crosscheck test_table_specs test_reign_audit; do
             python -I "$t.py"
           done
       # The shared event classifier's rules (pipelines/common/event_categories.py) and the traditions applier: no dump needed
@@ -82,8 +82,10 @@ jobs:
           python -I pipelines/common/test_overrides_guard.py
           python -I pipelines/common/test_duplicates_guard.py
           python -I pipelines/common/test_name_guard.py
+          python -I pipelines/common/test_owned_ids_check.py
           python -I pipelines/common/test_reigns_guard.py
           python -I pipelines/common/test_sample_judge.py
+          python -I pipelines/ancient/test_oneoff_reigns.py
           python -I pipelines/common/test_reign_checks.py
           python -I pipelines/common/test_review_proof.py
           python -I pipelines/common/test_traditions.py
@@ -93,6 +95,9 @@ jobs:
       # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)
       - name: Account name not in data
         run: python -I pipelines/common/name_guard.py
+      # Ancient's scripts never delete an event: a reign, conflict or disaster event that no frozen or emitted file owns would stay for good
+      - name: Ancient owned ids
+        run: python -I pipelines/common/owned_ids_check.py
       # Kevin's reviewed category overrides change only in a pull request he labels `rishenko-overrides`; a pipeline sets
       # categories through the pinned layer (pipelines/common/overrides_guard.py)
       # Always against main, not the PR's base: a stacked PR must not hide override writes it inherits from its base PR
@@ -145,3 +150,6 @@ jobs:
       - run: pip install -r pipelines/extract/requirements.txt
       - name: Freeze regression
         run: python -I pipelines/extract/freeze_regression.py .regression-inputs/kc2-inputs
+      # Report mode (Kevin's calls of 2026-11-24 turn it into a gate once the pilot rows are fixed): counts per check, with the allowlists in pipelines/extract/reign-audit/
+      - name: Reign audit (report)
+        run: python -I pipelines/extract/reign_audit.py .regression-inputs/kc2-inputs --out /tmp/reign-audit
