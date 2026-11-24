@@ -40236,6 +40236,14 @@
         "wikipedia"
       ]
     },
+    "wp-chinampa": {
+      "name": "Chinampa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chinampa",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-dresden-codex": {
       "name": "Dresden Codex (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Dresden_Codex",
@@ -62247,7 +62255,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-basil-onomagoulos",
@@ -63759,7 +63767,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-basil-ii",
@@ -64202,7 +64210,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-andronikos-doukas-co-emperor",
@@ -64834,7 +64842,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-constantine-laskaris",
@@ -65647,7 +65655,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-constantine-xi-palaiologos",
@@ -66554,7 +66562,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-belo",
@@ -71839,7 +71847,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mojmir-i-of-moravia",
@@ -71894,7 +71902,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-slavomir-of-moravia",
@@ -75034,7 +75042,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-g-za-grand-prince-of-the-hungarians",
@@ -76559,7 +76567,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-boles-aw-i-the-brave",
@@ -77821,7 +77829,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-k-stutis",
@@ -84548,7 +84556,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ramiro-ii-of-aragon",
@@ -93391,7 +93399,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-magnus-the-strong",
@@ -94876,7 +94884,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-magnus-the-strong",
@@ -99318,7 +99326,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-frederick-ii-holy-roman-emperor",
@@ -101743,7 +101751,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-abd-al-malik-ii-samanid-emir",
@@ -104567,7 +104575,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-shah-temur",
@@ -104881,7 +104889,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-abu-l-khayr-khan",
@@ -105276,7 +105284,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hayder-of-crimea",
@@ -107059,7 +107067,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-praudha-raya",
@@ -107146,7 +107154,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-thimma-bhupala",
@@ -107344,7 +107352,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-unhanagara-hatthadatha",
@@ -108256,7 +108264,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mahinda-vi",
@@ -108312,7 +108320,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-vira-bahu-i",
@@ -108339,7 +108347,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-vikramabahu-ii",
@@ -108828,7 +108836,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bhuvanekabahu-iii",
@@ -108855,7 +108863,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-parakramabahu-iv",
@@ -113326,7 +113334,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-emperor-mo-of-jin",
@@ -114797,7 +114805,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-emperor-mo-of-jin",
@@ -115622,7 +115630,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-sinmu-of-silla",
@@ -115794,7 +115802,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-jeonggang-of-silla",
@@ -116371,7 +116379,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-prince-tomo",
@@ -118626,7 +118634,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-jye-h-ry",
@@ -120136,7 +120144,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nang-keo-phimpha",
@@ -121678,7 +121686,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ishaq-ibn-ali",
@@ -121910,7 +121918,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-kassa-mansa",
@@ -122083,7 +122091,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-uli-ii",
@@ -122229,7 +122237,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-quinanga-of-kongo",
@@ -122285,7 +122293,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nkuwu-a-ntinu-of-kongo",
@@ -122817,7 +122825,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-eleni-of-ethiopia",
@@ -123396,7 +123404,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hunzah-a",
@@ -124106,7 +124114,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-prince-moriyoshi",
@@ -125448,6 +125456,16 @@
       ],
       "importance": 3,
       "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-pope-theodore-ii",
+              "sourceLocation": "infobox term_start: December 897 – December 897"
+            }
+          ]
+        },
         {
           "facet": "category",
           "value": "religion",
@@ -135456,6 +135474,39 @@
             {
               "sourceKey": "wp-muqaddimah",
               "sourceLocation": "short description: \"Book by Ibn Khaldun, written in 1377\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "chinampa-agriculture",
+      "title": "Chinampa fields, the earliest securely dated",
+      "descr": "The earliest securely dated chinampas, the raised fields of Mesoamerican agriculture, are from the Middle Postclassic period, 1150–1350 CE.",
+      "start": 1150,
+      "end": 1350,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-chinampa",
+          "sourceLocation": "History: \"The earliest fields that have been securely dated are from the Middle Postclassic period, 1150–1350 CE\""
+        },
+        {
+          "sourceKey": "wp-chinampa",
+          "sourceLocation": "lead: \"is a technique used in Mesoamerican agriculture\""
+        }
+      ],
+      "tracks": [
+        "mesoamerica"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-chinampa",
+              "sourceLocation": "History: \"The earliest fields that have been securely dated are from the Middle Postclassic period, 1150–1350 CE\""
             }
           ]
         }

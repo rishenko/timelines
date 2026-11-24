@@ -110494,6 +110494,22 @@
         "wikipedia"
       ]
     },
+    "wp-14-bis": {
+      "name": "14-bis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/14-bis",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-alberto-santos-dumont": {
+      "name": "Alberto Santos-Dumont (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alberto_Santos-Dumont",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-artemisinin": {
       "name": "Artemisinin (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Artemisinin",
@@ -110518,9 +110534,25 @@
         "wikipedia"
       ]
     },
+    "wp-david-warren-inventor": {
+      "name": "David Warren (inventor) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/David_Warren_(inventor)",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-de-revolutionibus-orbium-coelestium": {
       "name": "De revolutionibus orbium coelestium (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-flight-recorder": {
+      "name": "Flight recorder (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Flight_recorder",
       "accessed": "2026-11-24",
       "tags": [
         "wikipedia"
@@ -110534,9 +110566,25 @@
         "wikipedia"
       ]
     },
+    "wp-hokulea": {
+      "name": "Hōkūle'a (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hōkūle'a",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-kaitai-shinsho": {
       "name": "Kaitai Shinsho (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Kaitai_Shinsho",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-m-pesa": {
+      "name": "M-Pesa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/M-Pesa",
       "accessed": "2026-11-24",
       "tags": [
         "wikipedia"
@@ -159445,7 +159493,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-louis-antoine-duke-of-angoul-me",
@@ -166926,7 +166974,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-jahan-shah-mughal-emperor",
@@ -170931,6 +170979,18 @@
         {
           "sourceKey": "wp-pedro-lascur-in",
           "sourceLocation": "infobox term: 19 February 1913 ; (c. 45 minutes)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-pedro-lascur-in",
+              "sourceLocation": "infobox term: 19 February 1913 ; (c. 45 minutes)"
+            }
+          ]
         }
       ]
     },
@@ -176903,7 +176963,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-carl-xvi-gustaf",
@@ -199223,7 +199283,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-gerardo-giovagnoli",
@@ -204894,7 +204954,19 @@
           "sourceLocation": "infobox term_start: 7 October 2026"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-justina-shiroka-pula",
+              "sourceLocation": "infobox term_start: 7 October 2026"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-frederick-of-saxony-teutonic-knight-teutonic-order",
@@ -206844,7 +206916,19 @@
           "sourceLocation": "infobox term_start: 8 July 2010 – 8 July 2010"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-bogdan-borusewicz",
+              "sourceLocation": "infobox term_start: 8 July 2010 – 8 July 2010"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-bronis-aw-komorowski-poland-2010",
@@ -208577,7 +208661,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-andrew-b-thory",
@@ -213157,7 +213241,19 @@
           "sourceLocation": "infobox term_start: 1 December 2019"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-george-simion",
+              "sourceLocation": "infobox term_start: 1 December 2019"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-elena-lasconi-romania",
@@ -213763,7 +213859,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-rumen-radev",
@@ -219931,7 +220027,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bagrat-iv-of-imereti",
@@ -220160,7 +220256,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-george-iv-gurieli",
@@ -220215,7 +220311,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-george-vii-of-imereti",
@@ -221051,6 +221147,18 @@
           "sourceKey": "wp-vladislav-ardzinba",
           "sourceLocation": "infobox term_start: 26 November 1994"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-vladislav-ardzinba",
+              "sourceLocation": "infobox term_start: 26 November 1994"
+            }
+          ]
+        }
       ]
     },
     {
@@ -221266,7 +221374,19 @@
           "sourceLocation": "infobox term_start: 2 April 2025 ; Acting: 19 November 2024 – 2 April 2025"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-badra-gunba",
+              "sourceLocation": "infobox term_start: 2 April 2025 ; Acting: 19 November 2024 – 2 April 2025"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-znaur-gassiyev-south-ossetia",
@@ -221509,7 +221629,19 @@
           "sourceLocation": "infobox term_start: 30 September 2026"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-marat-kambolov",
+              "sourceLocation": "infobox term_start: 30 September 2026"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-leonard-petrosyan-artsakh",
@@ -222081,6 +222213,18 @@
         {
           "sourceKey": "wp-shavkat-mirziyoyev",
           "sourceLocation": "infobox term_start: 14 December 2016"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-shavkat-mirziyoyev",
+              "sourceLocation": "infobox term_start: 14 December 2016"
+            }
+          ]
         }
       ]
     },
@@ -229467,7 +229611,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-zulfiqar-khan-nusrat-jung",
@@ -235868,7 +236012,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ya-arab-bin-bel-arab",
@@ -236531,7 +236675,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mohammed-bin-rashid-al-maktoum",
@@ -239632,7 +239776,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-abdel-fattah-al-burhan",
@@ -249248,7 +249392,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ang-nan",
@@ -249303,7 +249447,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-queen-tey",
@@ -249617,7 +249761,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-thommo-reachea-iv",
@@ -249702,7 +249846,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-satha-ii",
@@ -251046,7 +251190,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-worawongsathirat",
@@ -251725,7 +251869,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ban-mueang",
@@ -251849,7 +251993,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ngua-nam-thum",
@@ -257744,7 +257888,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-cuitl-huac",
@@ -271709,6 +271853,18 @@
           "sourceKey": "wp-manuel-m-rquez-sterling",
           "sourceLocation": "infobox term: 18 January 1934 ; (6 hours)"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-manuel-m-rquez-sterling",
+              "sourceLocation": "infobox term: 18 January 1934 ; (6 hours)"
+            }
+          ]
+        }
       ]
     },
     {
@@ -272018,6 +272174,18 @@
           "sourceKey": "wp-carlos-manuel-piedra",
           "sourceLocation": "infobox term: January 1, 1959"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-carlos-manuel-piedra",
+              "sourceLocation": "infobox term: January 1, 1959"
+            }
+          ]
+        }
       ]
     },
     {
@@ -272131,6 +272299,18 @@
         {
           "sourceKey": "wp-miguel-d-az-canel",
           "sourceLocation": "infobox term_start1: 10 October 2019"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-miguel-d-az-canel",
+              "sourceLocation": "infobox term_start1: 10 October 2019"
+            }
+          ]
         }
       ]
     },
@@ -282059,7 +282239,19 @@
           "sourceLocation": "infobox term_start1: 28 July 2024 ; Disputed with Nicolás Maduro"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-edmundo-gonz-lez",
+              "sourceLocation": "infobox term_start1: 28 July 2024 ; Disputed with Nicolás Maduro"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-delcy-rodr-guez-venezuela",
@@ -287591,6 +287783,18 @@
           "sourceKey": "wp-jos-luis-tejada-sorzano",
           "sourceLocation": "infobox term_start1: 1 December 1934"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-jos-luis-tejada-sorzano",
+              "sourceLocation": "infobox term_start1: 1 December 1934"
+            }
+          ]
+        }
       ]
     },
     {
@@ -289092,7 +289296,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-manuel-rodr-guez-erdo-za",
@@ -290822,7 +291026,19 @@
           "sourceLocation": "infobox term_start: 11 March 2026"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-jos-antonio-kast",
+              "sourceLocation": "infobox term_start: 11 March 2026"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-domingo-matheu-argentina",
@@ -295471,7 +295687,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-pedro-carve",
@@ -300031,6 +300247,18 @@
           "sourceKey": "wp-alassane-ouattara",
           "sourceLocation": "infobox term_start: 11 April 2011"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-alassane-ouattara",
+              "sourceLocation": "infobox term_start: 11 April 2011"
+            }
+          ]
+        }
       ]
     },
     {
@@ -302974,6 +303202,18 @@
           "sourceKey": "wp-aminata-tour-senegalese-politician",
           "sourceLocation": "infobox term_start2: 26 August 2024"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-aminata-tour-senegalese-politician",
+              "sourceLocation": "infobox term_start2: 26 August 2024"
+            }
+          ]
+        }
       ]
     },
     {
@@ -304883,6 +305123,18 @@
           "sourceKey": "wp-teodoro-obiang-nguema-mbasogo",
           "sourceLocation": "infobox term_start: 12 October 1982"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-teodoro-obiang-nguema-mbasogo",
+              "sourceLocation": "infobox term_start: 12 October 1982"
+            }
+          ]
+        }
       ]
     },
     {
@@ -305441,7 +305693,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mahmud-iv-mansa",
@@ -306134,7 +306386,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-francisco-i-of-kongo",
@@ -306935,7 +307187,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mwene-mbandu-kapova-i-of-mbunda",
@@ -307396,7 +307648,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-amda-seyon-usurper",
@@ -309351,7 +309603,19 @@
           "sourceLocation": "infobox term_start: 23 May 2022"
         }
       ],
-      "importance": 3
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-hassan-sheikh-mohamud",
+              "sourceLocation": "infobox term_start: 23 May 2022"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "reign-abdirahman-tuur-somaliland",
@@ -309678,7 +309942,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-abba-jofir",
@@ -313326,6 +313590,18 @@
           "sourceKey": "wp-hyppolite-ramaroson",
           "sourceLocation": "infobox term: 17 March 2009 ; (several hours)"
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-hyppolite-ramaroson",
+              "sourceLocation": "infobox term: 17 March 2009 ; (several hours)"
+            }
+          ]
+        }
       ]
     },
     {
@@ -316609,7 +316885,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-masenate-mohato-seeiso",
@@ -324901,6 +325177,134 @@
             {
               "sourceKey": "wp-wi-fi",
               "sourceLocation": "History: \"A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "mpesa-launched",
+      "title": "M-Pesa launches mobile money in Kenya",
+      "descr": "Vodafone and Safaricom launch M-Pesa, a mobile-phone-based money transfer, payments and micro-financing service, in Kenya.",
+      "start": 2007,
+      "sources": [
+        {
+          "sourceKey": "wp-m-pesa",
+          "sourceLocation": "lead: \"launched in 2007 by Vodafone and Safaricom\""
+        },
+        {
+          "sourceKey": "wp-m-pesa",
+          "sourceLocation": "lead: \"the largest mobile network operator in Kenya\""
+        }
+      ],
+      "tracks": [
+        "kenya"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-m-pesa",
+              "sourceLocation": "lead: \"launched in 2007 by Vodafone and Safaricom\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "santos-dumont-14-bis",
+      "title": "Santos-Dumont's 14-bis makes the first publicly witnessed powered flight",
+      "descr": "The Brazilian aeronaut Alberto Santos-Dumont flies the 14-bis near Paris, a manned powered flight witnessed by a crowd and filmed.",
+      "start": 1906,
+      "sources": [
+        {
+          "sourceKey": "wp-14-bis",
+          "sourceLocation": "lead: \"In 1906, near Paris, the 14-bis made a manned powered flight that was the first to be publicly witnessed by a crowd and also filmed\""
+        },
+        {
+          "sourceKey": "wp-alberto-santos-dumont",
+          "sourceLocation": "lead: \"was a Brazilian aeronaut\""
+        }
+      ],
+      "tracks": [
+        "brazil"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-14-bis",
+              "sourceLocation": "lead: \"In 1906, near Paris, the 14-bis made a manned powered flight that was the first to be publicly witnessed by a crowd and also filmed\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "hokulea-1976-voyage",
+      "title": "Hōkūleʻa sails from Hawaiʻi to Tahiti by traditional navigation alone",
+      "descr": "The Polynesian Voyaging Society's double-hulled voyaging canoe Hōkūleʻa completes the voyage from Hawaiʻi to Tahiti with exclusively traditional navigation techniques.",
+      "start": 1976,
+      "sources": [
+        {
+          "sourceKey": "wp-hokulea",
+          "sourceLocation": "lead: \"1976 Hawaiʻi to Tahiti voyage completed with exclusively traditional navigation techniques\""
+        },
+        {
+          "sourceKey": "wp-hokulea",
+          "sourceLocation": "lead: \"a Polynesian double-hulled voyaging canoe\""
+        }
+      ],
+      "tracks": [
+        "polynesia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-hokulea",
+              "sourceLocation": "lead: \"1976 Hawaiʻi to Tahiti voyage completed with exclusively traditional navigation techniques\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "warren-flight-memory-unit",
+      "title": "David Warren builds the ARL Flight Memory Unit, a flight data recorder prototype",
+      "descr": "The Australian scientist David Warren builds a prototype flight data recorder, the ARL Flight Memory Unit. An earlier flight data recorder, Mata-Hari, had been made in Finland in 1942.",
+      "start": 1956,
+      "sources": [
+        {
+          "sourceKey": "wp-flight-recorder",
+          "sourceLocation": "History: \"Warren built a prototype FDR called \"The ARL Flight Memory Unit\" in 1956\""
+        },
+        {
+          "sourceKey": "wp-david-warren-inventor",
+          "sourceLocation": "lead: \"was an Australian scientist, best known for inventing and developing the flight data recorder\""
+        },
+        {
+          "sourceKey": "wp-flight-recorder",
+          "sourceLocation": "History: \"The first modern flight data recorder, called \"Mata-Hari\", named after the famous spy, was created in 1942 by Finnish aviation engineer Veijo Hietala\""
+        }
+      ],
+      "tracks": [
+        "australia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-flight-recorder",
+              "sourceLocation": "History: \"Warren built a prototype FDR called \"The ARL Flight Memory Unit\" in 1956\""
             }
           ]
         }

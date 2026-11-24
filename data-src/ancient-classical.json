@@ -18267,7 +18267,21 @@
     },
     "wp-rechiar": { "name": "Rechiar (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Rechiar", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-regalian": { "name": "Regalian (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Regalian", "accessed": "2026-11-21", "tags": ["wikipedia"] },
-    "wp-tang-of-shang": { "name": "Tang of Shang (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tang_of_Shang", "accessed": "2026-11-21", "tags": ["wikipedia"] }
+    "wp-tang-of-shang": { "name": "Tang of Shang (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tang_of_Shang", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-austronesian-peoples": {
+      "name": "Wikipedia: Austronesian peoples",
+      "url": "https://en.wikipedia.org/wiki/Austronesian_peoples",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
+    },
+    "wp-crab-claw-sail": { "name": "Wikipedia: Crab claw sail", "url": "https://en.wikipedia.org/wiki/Crab_claw_sail", "tags": ["wikipedia"], "accessed": "2026-11-24" },
+    "wp-iron-metallurgy-in-africa": {
+      "name": "Wikipedia: Iron metallurgy in Africa",
+      "url": "https://en.wikipedia.org/wiki/Iron_metallurgy_in_Africa",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
+    },
+    "wp-nixtamalization": { "name": "Wikipedia: Nixtamalization", "url": "https://en.wikipedia.org/wiki/Nixtamalization", "tags": ["wikipedia"], "accessed": "2026-11-24" }
   },
   "tags": {
     "wikipedia": { "name": "Wikipedia" },
@@ -22577,13 +22591,54 @@
       "start": "c. 650 BCE",
       "tracks": ["nok"],
       "descr": "Iron metallurgy may have developed independently here.",
-      "sources": [{ "sourceKey": "wp-nok", "sourceLocation": "lead and Iron metallurgy" }],
+      "sources": [
+        { "sourceKey": "wp-nok", "sourceLocation": "lead and Iron metallurgy" },
+        {
+          "sourceKey": "wp-iron-metallurgy-in-africa",
+          "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
+        }
+      ],
       "startDates": [
         { "year": "650 BCE", "margin": 100, "source": { "sourceKey": "wp-nok", "sourceLocation": "lead ('between 750 BCE and 550 BCE')" } },
         {
           "year": "801 BCE",
           "margin": 99,
           "source": { "sourceKey": "wp-nok", "sourceLocation": "Iron metallurgy ('in the 9th century BCE or 8th century BCE')" }
+        },
+        {
+          "year": "725 BCE",
+          "margin": 175,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
+          },
+          "note": "The Iron metallurgy in Africa article: \"between the 9th century BCE and 550 BCE\"."
+        },
+        {
+          "year": "2500 BCE",
+          "margin": 750,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC\""
+          },
+          "note": "Contested: the article's range for West and Central Africa, 2500–1000 BC, not the mainstream line."
+        },
+        {
+          "year": "2545 BCE",
+          "margin": 90,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"Iron metallurgical development occurred 2631 BCE – 2458 BCE at Lejja, in Nigeria\""
+          },
+          "note": "Contested: Lejja, Nigeria."
+        },
+        {
+          "year": "2000 BCE",
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"At Oboui they excavated an undated iron forge yielding eight consistent radiocarbon dates of 2000 BCE\""
+          },
+          "note": "Contested: Oboui, Central African Republic; the article reports Bernard Clist's argument that the site is highly disturbed."
         }
       ],
       "importance": 1,
@@ -31840,7 +31895,7 @@
       "tracks": ["egypt"],
       "descr": "Rules as head of state of Egypt and Nubia from 522 BCE.",
       "sources": [{ "sourceKey": "wp-bardiya", "sourceLocation": "infobox reign: 522 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-bardiya", "sourceLocation": "infobox reign: 522 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bardiya", "sourceLocation": "infobox reign: 522 BC" }] }]
     },
     {
       "uuid": "reign-artaxerxes-i-egypt",
@@ -31867,13 +31922,7 @@
       "tracks": ["egypt"],
       "descr": "Rules as head of state of Egypt and Nubia from 424 BCE.",
       "sources": [{ "sourceKey": "wp-xerxes-ii", "sourceLocation": "infobox reign: 424 BC (45 days)" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-xerxes-ii", "sourceLocation": "infobox reign: 424 BC (45 days)" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-xerxes-ii", "sourceLocation": "infobox reign: 424 BC (45 days)" }] }]
     },
     {
       "uuid": "reign-sogdianus-egypt",
@@ -31987,7 +32036,7 @@
       "descr": "Rules as head of state of Pharaonic Egypt from 3100 BCE.",
       "sources": [{ "sourceKey": "wp-narmer", "sourceLocation": "infobox reign: c. 3100 BC" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-narmer", "sourceLocation": "infobox reign: c. 3100 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-narmer", "sourceLocation": "infobox reign: c. 3100 BC" }] }]
     },
     {
       "uuid": "reign-khasekhemwy-pharaonic-egypt",
@@ -32000,7 +32049,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-khasekhemwy", "sourceLocation": "infobox reign: 18 years c. 2690 BC" }]
         }
       ]
@@ -32016,7 +32065,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-menkare", "sourceLocation": "infobox reign: Probably short, c. 2181 BC" }]
         }
       ]
@@ -32360,7 +32409,7 @@
       "descr": "Rules as head of state of Kingdom of Aksum from 585.",
       "sources": [{ "sourceKey": "wp-ioel", "sourceLocation": "infobox reign:  # c.585" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ioel", "sourceLocation": "infobox reign:  # c.585" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ioel", "sourceLocation": "infobox reign:  # c.585" }] }]
     },
     {
       "uuid": "reign-hataz-aksum",
@@ -32409,7 +32458,7 @@
       "tracks": ["suebi"],
       "descr": "Rules as head of state of Kingdom of the Suebi from 585.",
       "sources": [{ "sourceKey": "wp-malaric", "sourceLocation": "infobox reign: 585" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-malaric", "sourceLocation": "infobox reign: 585" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-malaric", "sourceLocation": "infobox reign: 585" }] }]
     },
     {
       "uuid": "reign-wallia-visigoths",
@@ -33259,7 +33308,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-geta-emperor", "sourceLocation": "infobox reign1: 28 January 198 – late 209" }]
         }
       ]
@@ -33486,7 +33535,7 @@
       "tracks": ["rome-republic-empire"],
       "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 240.",
       "sources": [{ "sourceKey": "wp-sabinian-proconsul", "sourceLocation": "infobox reign: 240" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-sabinian-proconsul", "sourceLocation": "infobox reign: 240" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-sabinian-proconsul", "sourceLocation": "infobox reign: 240" }] }]
     },
     {
       "uuid": "reign-philip-the-arab-rome-republic-empire",
@@ -33535,7 +33584,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-pacatian", "sourceLocation": "infobox reign: c. 248 (against Philip the Arab)" }]
         }
       ]
@@ -33567,7 +33616,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-jotapian", "sourceLocation": "infobox reign: c. 249 (against Philip the Arab)" }]
         }
       ]
@@ -33784,7 +33833,7 @@
       "tracks": ["rome-republic-empire"],
       "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 260.",
       "sources": [{ "sourceKey": "wp-ingenuus", "sourceLocation": "infobox reign: 260 AD" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ingenuus", "sourceLocation": "infobox reign: 260 AD" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ingenuus", "sourceLocation": "infobox reign: 260 AD" }] }]
     },
     {
       "uuid": "reign-saloninus-rome-republic-empire-260",
@@ -33796,7 +33845,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-saloninus", "sourceLocation": "infobox reign: July (?) 260 (briefly) ; 258–260" }]
         }
       ]
@@ -33830,13 +33879,7 @@
       "tracks": ["rome-republic-empire"],
       "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 270.",
       "sources": [{ "sourceKey": "wp-quintillus", "sourceLocation": "infobox reign: 270 (17–77 days)" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-quintillus", "sourceLocation": "infobox reign: 270 (17–77 days)" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-quintillus", "sourceLocation": "infobox reign: 270 (17–77 days)" }] }]
     },
     {
       "uuid": "reign-septimius-usurper-rome-republic-empire",
@@ -33848,7 +33891,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-septimius-usurper", "sourceLocation": "infobox reign: 271 or 272 AD, during Aurelian's rule" }]
         }
       ]
@@ -33920,7 +33963,7 @@
       "tracks": ["rome-republic-empire"],
       "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 280.",
       "sources": [{ "sourceKey": "wp-julius-saturninus", "sourceLocation": "infobox reign: 280" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-julius-saturninus", "sourceLocation": "infobox reign: 280" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-julius-saturninus", "sourceLocation": "infobox reign: 280" }] }]
     },
     {
       "uuid": "reign-bonosus-usurper-rome-republic-empire",
@@ -33933,7 +33976,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-bonosus-usurper", "sourceLocation": "infobox reign: c. AD 280 (against Probus)" }]
         }
       ]
@@ -34160,13 +34203,7 @@
       "tracks": ["rome-republic-empire"],
       "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 11 November 308.",
       "sources": [{ "sourceKey": "wp-licinius", "sourceLocation": "infobox reign: 11 November 308 –" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-licinius", "sourceLocation": "infobox reign: 11 November 308 –" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-licinius", "sourceLocation": "infobox reign: 11 November 308 –" }] }]
     },
     {
       "uuid": "reign-maximinus-daza-rome-republic-empire",
@@ -34287,7 +34324,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-constantius-ii", "sourceLocation": "infobox reign: 9 September 337 –" }]
         }
       ]
@@ -34345,7 +34382,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-julian-emperor", "sourceLocation": "infobox reign: 3 November 361 – 26 June 363 (proclaimed in February 360)" }]
         }
       ]
@@ -34822,7 +34859,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-libius-severus", "sourceLocation": "infobox reign: 19 November 461 –" }]
         }
       ]
@@ -34960,7 +34997,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-arcadius", "sourceLocation": "infobox reign: 19 January 383 – 1 May 408 ; (senior from 17 January 395)" }]
         }
       ]
@@ -35011,7 +35048,7 @@
       "tracks": ["eastern-roman"],
       "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 408.",
       "sources": [{ "sourceKey": "wp-thermantia", "sourceLocation": "infobox reign: 408" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-thermantia", "sourceLocation": "infobox reign: 408" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-thermantia", "sourceLocation": "infobox reign: 408" }] }]
     },
     {
       "uuid": "reign-theodosius-ii-eastern-roman",
@@ -35025,7 +35062,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-theodosius-ii", "sourceLocation": "infobox reign: 10 January 402 – 28 July 450 ; (senior from 1 May 408)" }]
         }
       ]
@@ -35037,7 +35074,7 @@
       "tracks": ["eastern-roman"],
       "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 421.",
       "sources": [{ "sourceKey": "wp-galla-placidia", "sourceLocation": "infobox reign: 421" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-galla-placidia", "sourceLocation": "infobox reign: 421" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-galla-placidia", "sourceLocation": "infobox reign: 421" }] }]
     },
     {
       "uuid": "reign-constantius-iii-eastern-roman",
@@ -35309,13 +35346,7 @@
       "tracks": ["eastern-roman"],
       "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 24 June 474.",
       "sources": [{ "sourceKey": "wp-julius-nepos", "sourceLocation": "infobox reign: 24 June 474 –" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-julius-nepos", "sourceLocation": "infobox reign: 24 June 474 –" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-julius-nepos", "sourceLocation": "infobox reign: 24 June 474 –" }] }]
     },
     {
       "uuid": "reign-zenonis-eastern-roman",
@@ -35582,7 +35613,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-maurice-emperor", "sourceLocation": "infobox reign: 13 August 582 –" }]
         }
       ]
@@ -35622,13 +35653,7 @@
       "tracks": ["eastern-roman"],
       "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 23 November 602.",
       "sources": [{ "sourceKey": "wp-phocas", "sourceLocation": "infobox reign: 23 November 602 –" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-phocas", "sourceLocation": "infobox reign: 23 November 602 –" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-phocas", "sourceLocation": "infobox reign: 23 November 602 –" }] }]
     },
     {
       "uuid": "reign-fabia-eudokia-eastern-roman",
@@ -35699,7 +35724,7 @@
       "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 641.",
       "sources": [{ "sourceKey": "wp-gregoria", "sourceLocation": "infobox reign: 641" }],
       "importance": 3,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-gregoria", "sourceLocation": "infobox reign: 641" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-gregoria", "sourceLocation": "infobox reign: 641" }] }]
     },
     {
       "uuid": "reign-heraclius-constantine-eastern-roman",
@@ -35773,7 +35798,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-heraclonas", "sourceLocation": "infobox reign: February – October/ ; November 641" }]
         }
       ]
@@ -36012,7 +36037,7 @@
       "tracks": ["macedon"],
       "descr": "Rules as head of state of Macedon from 359 BCE.",
       "sources": [{ "sourceKey": "wp-amyntas-iv", "sourceLocation": "infobox reign: 359 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-amyntas-iv", "sourceLocation": "infobox reign: 359 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-amyntas-iv", "sourceLocation": "infobox reign: 359 BC" }] }]
     },
     {
       "uuid": "reign-alexander-the-great-macedon",
@@ -36099,13 +36124,7 @@
       "tracks": ["macedon"],
       "descr": "Rules as head of state of Macedon from 297 BCE.",
       "sources": [{ "sourceKey": "wp-philip-iv-of-macedon", "sourceLocation": "infobox reign: 297 BC" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-philip-iv-of-macedon", "sourceLocation": "infobox reign: 297 BC" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-philip-iv-of-macedon", "sourceLocation": "infobox reign: 297 BC" }] }]
     },
     {
       "uuid": "reign-demetrius-i-poliorcetes-macedon",
@@ -36161,7 +36180,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-meleager-king", "sourceLocation": "infobox reign: 279 BC (2 months)" }]
         }
       ]
@@ -36176,7 +36195,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-antipater-etesias", "sourceLocation": "infobox reign: 279 BC (45 days)" }]
         }
       ]
@@ -36432,7 +36451,7 @@
       "tracks": ["israel-judah"],
       "descr": "Rules as head of state of Israel and Judah from 885 BCE.",
       "sources": [{ "sourceKey": "wp-zimri-king", "sourceLocation": "infobox reign: 885 BCE" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-zimri-king", "sourceLocation": "infobox reign: 885 BCE" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-zimri-king", "sourceLocation": "infobox reign: 885 BCE" }] }]
     },
     {
       "uuid": "reign-omri-israel-judah",
@@ -36597,7 +36616,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-zechariah-of-israel", "sourceLocation": "infobox reign: c. 752 BC (reigned 6 months)" }]
         }
       ]
@@ -36687,7 +36706,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-hezekiah", "sourceLocation": "infobox reign: Uncertain, reign ended c. 687 BCE" }]
         }
       ]
@@ -36726,13 +36745,7 @@
       "tracks": ["israel-judah"],
       "descr": "Rules as head of state of Israel and Judah from 609 BCE.",
       "sources": [{ "sourceKey": "wp-jehoahaz-of-judah", "sourceLocation": "infobox reign: 609 BC" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-jehoahaz-of-judah", "sourceLocation": "infobox reign: 609 BC" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-jehoahaz-of-judah", "sourceLocation": "infobox reign: 609 BC" }] }]
     },
     {
       "uuid": "reign-jehoiakim-israel-judah",
@@ -36840,7 +36853,7 @@
       "tracks": ["palmyra"],
       "descr": "Rules as head of state of Palmyra from 272.",
       "sources": [{ "sourceKey": "wp-zenobia", "sourceLocation": "infobox reign: 272 AD" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-zenobia", "sourceLocation": "infobox reign: 272 AD" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-zenobia", "sourceLocation": "infobox reign: 272 AD" }] }]
     },
     {
       "uuid": "reign-gyges-of-lydia-lydia",
@@ -37189,7 +37202,7 @@
       "descr": "Rules as head of state of Assyria from 1735 BCE.",
       "sources": [{ "sourceKey": "wp-asinum", "sourceLocation": "infobox reign: c. 1735 BC" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-asinum", "sourceLocation": "infobox reign: c. 1735 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-asinum", "sourceLocation": "infobox reign: c. 1735 BC" }] }]
     },
     {
       "uuid": "reign-puzur-sin-assyria",
@@ -37199,7 +37212,7 @@
       "descr": "Rules as head of state of Assyria from 1735 BCE.",
       "sources": [{ "sourceKey": "wp-puzur-sin", "sourceLocation": "infobox reign: c. 1735 BC" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-puzur-sin", "sourceLocation": "infobox reign: c. 1735 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-puzur-sin", "sourceLocation": "infobox reign: c. 1735 BC" }] }]
     },
     {
       "uuid": "reign-ashur-dugul-assyria",
@@ -37209,7 +37222,7 @@
       "descr": "Rules as head of state of Assyria from 1715 BCE.",
       "sources": [{ "sourceKey": "wp-ashur-dugul", "sourceLocation": "infobox reign: c. 1715 BC" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ashur-dugul", "sourceLocation": "infobox reign: c. 1715 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ashur-dugul", "sourceLocation": "infobox reign: c. 1715 BC" }] }]
     },
     {
       "uuid": "reign-adasi-assyria-assyria",
@@ -37219,13 +37232,7 @@
       "descr": "Rules as head of state of Assyria from 1700 BCE.",
       "sources": [{ "sourceKey": "wp-adasi-assyria", "sourceLocation": "infobox reign: c. 1700 BC" }],
       "circa": true,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-adasi-assyria", "sourceLocation": "infobox reign: c. 1700 BC" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-adasi-assyria", "sourceLocation": "infobox reign: c. 1700 BC" }] }]
     },
     {
       "uuid": "reign-bel-bani-assyria",
@@ -37502,7 +37509,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-ninurta-tukulti-ashur", "sourceLocation": "infobox reign: c. 1132 BC" }]
         }
       ]
@@ -37515,13 +37522,7 @@
       "descr": "Rules as head of state of Assyria from 1132 BCE.",
       "sources": [{ "sourceKey": "wp-mutakkil-nusku", "sourceLocation": "infobox reign: c. 1132 BC" }],
       "circa": true,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-mutakkil-nusku", "sourceLocation": "infobox reign: c. 1132 BC" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-mutakkil-nusku", "sourceLocation": "infobox reign: c. 1132 BC" }] }]
     },
     {
       "uuid": "reign-ashur-resh-ishi-i-assyria",
@@ -37822,7 +37823,7 @@
       "tracks": ["assyria"],
       "descr": "Rules as head of state of Assyria from 626 BCE.",
       "sources": [{ "sourceKey": "wp-s-n-umu-l-ir", "sourceLocation": "infobox reign: 626 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-s-n-umu-l-ir", "sourceLocation": "infobox reign: 626 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-s-n-umu-l-ir", "sourceLocation": "infobox reign: 626 BC" }] }]
     },
     {
       "uuid": "reign-ashur-uballit-ii-assyria",
@@ -38339,7 +38340,7 @@
       "descr": "Rules as head of state of Qedarites (Arabs) from 738 BCE.",
       "sources": [{ "sourceKey": "wp-zabibe", "sourceLocation": "infobox reign: c. 738 BCE" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-zabibe", "sourceLocation": "infobox reign: c. 738 BCE" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-zabibe", "sourceLocation": "infobox reign: c. 738 BCE" }] }]
     },
     {
       "uuid": "reign-shammar-yahri-sh-himyar",
@@ -38379,7 +38380,7 @@
       "descr": "Rules as head of state of Elam from 2350 BCE.",
       "sources": [{ "sourceKey": "wp-hishep-ratep", "sourceLocation": "infobox reign: c. 2350 BC" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-hishep-ratep", "sourceLocation": "infobox reign: c. 2350 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-hishep-ratep", "sourceLocation": "infobox reign: c. 2350 BC" }] }]
     },
     {
       "uuid": "reign-luh-ishan-elam",
@@ -38511,7 +38512,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-inshushinak-shar-ili", "sourceLocation": "infobox reign: c. 1400 BC" }]
         }
       ]
@@ -38524,13 +38525,7 @@
       "descr": "Rules as head of state of Elam from 1370 BCE.",
       "sources": [{ "sourceKey": "wp-humban-numena", "sourceLocation": "infobox reign: c. 1370 BC" }],
       "circa": true,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-humban-numena", "sourceLocation": "infobox reign: c. 1370 BC" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-humban-numena", "sourceLocation": "infobox reign: c. 1370 BC" }] }]
     },
     {
       "uuid": "reign-untash-napirisha-elam",
@@ -38543,7 +38538,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-untash-napirisha", "sourceLocation": "infobox reign: circa 1300 BC" }]
         }
       ]
@@ -38688,7 +38683,7 @@
       "tracks": ["persia"],
       "descr": "Rules as head of state of Achaemenid Persia from 522 BCE.",
       "sources": [{ "sourceKey": "wp-bardiya", "sourceLocation": "infobox reign: 522 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-bardiya", "sourceLocation": "infobox reign: 522 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bardiya", "sourceLocation": "infobox reign: 522 BC" }] }]
     },
     {
       "uuid": "reign-gaumata-persia",
@@ -38697,7 +38692,7 @@
       "tracks": ["persia"],
       "descr": "Rules as head of state of Achaemenid Persia from 522 BCE.",
       "sources": [{ "sourceKey": "wp-gaumata", "sourceLocation": "infobox reign: 522 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-gaumata", "sourceLocation": "infobox reign: 522 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-gaumata", "sourceLocation": "infobox reign: 522 BC" }] }]
     },
     {
       "uuid": "reign-xerxes-i-persia",
@@ -38753,13 +38748,7 @@
       "tracks": ["persia"],
       "descr": "Rules as head of state of Achaemenid Persia from 424 BCE.",
       "sources": [{ "sourceKey": "wp-xerxes-ii", "sourceLocation": "infobox reign: 424 BC (45 days)" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-xerxes-ii", "sourceLocation": "infobox reign: 424 BC (45 days)" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-xerxes-ii", "sourceLocation": "infobox reign: 424 BC (45 days)" }] }]
     },
     {
       "uuid": "reign-darius-ii-persia",
@@ -38925,7 +38914,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-seleucus-iii-ceraunus", "sourceLocation": "infobox reign: 226/225 – summer 223 BC" }]
         }
       ]
@@ -39526,7 +39515,7 @@
       "tracks": ["sasanian"],
       "descr": "Rules as head of state of Sasanian Empire from 293.",
       "sources": [{ "sourceKey": "wp-bahram-iii", "sourceLocation": "infobox reign: 293" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-bahram-iii", "sourceLocation": "infobox reign: 293" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bahram-iii", "sourceLocation": "infobox reign: 293" }] }]
     },
     {
       "uuid": "reign-hormizd-ii-sasanian",
@@ -39556,7 +39545,7 @@
       "tracks": ["sasanian"],
       "descr": "Rules as head of state of Sasanian Empire from 309.",
       "sources": [{ "sourceKey": "wp-adur-narseh", "sourceLocation": "infobox reign: 309" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-adur-narseh", "sourceLocation": "infobox reign: 309" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-adur-narseh", "sourceLocation": "infobox reign: 309" }] }]
     },
     {
       "uuid": "reign-ardashir-ii-sasanian",
@@ -39618,7 +39607,7 @@
       "tracks": ["sasanian"],
       "descr": "Rules as head of state of Sasanian Empire from 420.",
       "sources": [{ "sourceKey": "wp-shapur-iv", "sourceLocation": "infobox reign1: 420" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-shapur-iv", "sourceLocation": "infobox reign1: 420" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-shapur-iv", "sourceLocation": "infobox reign1: 420" }] }]
     },
     {
       "uuid": "reign-khosrow-son-of-bahram-iv-sasanian",
@@ -39627,13 +39616,7 @@
       "tracks": ["sasanian"],
       "descr": "Rules as head of state of Sasanian Empire from 420.",
       "sources": [{ "sourceKey": "wp-khosrow-son-of-bahram-iv", "sourceLocation": "infobox reign: 420" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-khosrow-son-of-bahram-iv", "sourceLocation": "infobox reign: 420" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-khosrow-son-of-bahram-iv", "sourceLocation": "infobox reign: 420" }] }]
     },
     {
       "uuid": "reign-yazdegerd-ii-sasanian",
@@ -39735,7 +39718,7 @@
       "tracks": ["sasanian"],
       "descr": "Rules as head of state of Sasanian Empire from 590.",
       "sources": [{ "sourceKey": "wp-khosrow-ii", "sourceLocation": "infobox reign1: 590" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-khosrow-ii", "sourceLocation": "infobox reign1: 590" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-khosrow-ii", "sourceLocation": "infobox reign1: 590" }] }]
     },
     {
       "uuid": "reign-bahram-chobin-sasanian",
@@ -39760,7 +39743,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-kavad-ii", "sourceLocation": "infobox reign: 25 February 628 – Summer/Autumn 628" }]
         }
       ]
@@ -39815,7 +39798,7 @@
       "tracks": ["sasanian"],
       "descr": "Rules as head of state of Sasanian Empire from 630.",
       "sources": [{ "sourceKey": "wp-boran", "sourceLocation": "infobox reign: 630" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-boran", "sourceLocation": "infobox reign: 630" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-boran", "sourceLocation": "infobox reign: 630" }] }]
     },
     {
       "uuid": "reign-hormizd-vi-sasanian",
@@ -39969,7 +39952,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-artaxias-ii", "sourceLocation": "infobox reign: 34 (de jure) or 30 (de facto) – 20 BC" }]
         }
       ]
@@ -40017,7 +40000,7 @@
       "tracks": ["armenia"],
       "descr": "Rules as head of state of Armenia from 109.",
       "sources": [{ "sourceKey": "wp-sanatruk", "sourceLocation": "infobox reign1: ?–109 AD" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-sanatruk", "sourceLocation": "infobox reign1: ?–109 AD" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-sanatruk", "sourceLocation": "infobox reign1: ?–109 AD" }] }]
     },
     {
       "uuid": "reign-axidares-of-armenia-armenia",
@@ -40286,13 +40269,7 @@
       "descr": "Rules as head of state of Scythians from 658 BCE.",
       "sources": [{ "sourceKey": "wp-bartatua", "sourceLocation": "infobox reign: c.  # c. 658/9 BCE" }],
       "circa": true,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-bartatua", "sourceLocation": "infobox reign: c.  # c. 658/9 BCE" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bartatua", "sourceLocation": "infobox reign: c.  # c. 658/9 BCE" }] }]
     },
     {
       "uuid": "reign-modu-chanyu-xiongnu",
@@ -40471,7 +40448,7 @@
       "tracks": ["first-turkic"],
       "descr": "Rules as head of state of First Turkic Khaganate (Göktürks) from 552.",
       "sources": [{ "sourceKey": "wp-bumin-qaghan", "sourceLocation": "infobox reign: 552" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-bumin-qaghan", "sourceLocation": "infobox reign: 552" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bumin-qaghan", "sourceLocation": "infobox reign: 552" }] }]
     },
     {
       "uuid": "reign-ist-mi-first-turkic",
@@ -40523,7 +40500,7 @@
       "tracks": ["first-turkic"],
       "descr": "Rules as head of state of First Turkic Khaganate (Göktürks) from 581.",
       "sources": [{ "sourceKey": "wp-amrak-khagan", "sourceLocation": "infobox reign: 581" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-amrak-khagan", "sourceLocation": "infobox reign: 581" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-amrak-khagan", "sourceLocation": "infobox reign: 581" }] }]
     },
     {
       "uuid": "reign-ishbara-qaghan-first-turkic",
@@ -40653,7 +40630,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-n-gad-saka", "sourceLocation": "infobox reign: c. 437|413 BCE (24 years)" }]
         }
       ]
@@ -40762,7 +40739,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-brihadratha-maurya", "sourceLocation": "infobox reign: c. 187|185 or 180 BCE" }]
         }
       ]
@@ -40944,7 +40921,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [{ "sourceKey": "wp-brihadratha-maurya", "sourceLocation": "infobox reign: c. 187|185 or 180 BCE" }]
         }
       ]
@@ -40996,7 +40973,7 @@
       "descr": "Rules as head of state of Gupta Empire from 375.",
       "sources": [{ "sourceKey": "wp-ramagupta", "sourceLocation": "infobox reign: c. 375" }],
       "circa": true,
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-ramagupta", "sourceLocation": "infobox reign: c. 375" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-ramagupta", "sourceLocation": "infobox reign: c. 375" }] }]
     },
     {
       "uuid": "reign-kumaragupta-i-gupta",
@@ -41245,7 +41222,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Rules as head of state of Anuradhapura kingdom from 119 BCE.",
       "sources": [{ "sourceKey": "wp-thulatthana", "sourceLocation": "infobox reign: 119 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-thulatthana", "sourceLocation": "infobox reign: 119 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-thulatthana", "sourceLocation": "infobox reign: 119 BC" }] }]
     },
     {
       "uuid": "reign-khallata-naga-anuradhapura",
@@ -41342,7 +41319,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
       "sources": [{ "sourceKey": "wp-siva-i", "sourceLocation": "infobox reign: 48 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-siva-i", "sourceLocation": "infobox reign: 48 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-siva-i", "sourceLocation": "infobox reign: 48 BC" }] }]
     },
     {
       "uuid": "reign-vatuka-of-anuradhapura-anuradhapura",
@@ -41351,13 +41328,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
       "sources": [{ "sourceKey": "wp-vatuka-of-anuradhapura", "sourceLocation": "infobox reign: 48 BC" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-vatuka-of-anuradhapura", "sourceLocation": "infobox reign: 48 BC" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-vatuka-of-anuradhapura", "sourceLocation": "infobox reign: 48 BC" }] }]
     },
     {
       "uuid": "reign-darubhatika-tissa-anuradhapura",
@@ -41366,7 +41337,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
       "sources": [{ "sourceKey": "wp-darubhatika-tissa", "sourceLocation": "infobox reign: 48 BC" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-darubhatika-tissa", "sourceLocation": "infobox reign: 48 BC" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-darubhatika-tissa", "sourceLocation": "infobox reign: 48 BC" }] }]
     },
     {
       "uuid": "reign-niliya-of-anuradhapura-anuradhapura",
@@ -41375,13 +41346,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Rules as head of state of Anuradhapura kingdom from 48 BCE.",
       "sources": [{ "sourceKey": "wp-niliya-of-anuradhapura", "sourceLocation": "infobox reign: 48 BC" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-niliya-of-anuradhapura", "sourceLocation": "infobox reign: 48 BC" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-niliya-of-anuradhapura", "sourceLocation": "infobox reign: 48 BC" }] }]
     },
     {
       "uuid": "reign-kutakanna-tissa-anuradhapura",
@@ -41688,7 +41653,7 @@
       "tracks": ["anuradhapura"],
       "descr": "Rules as head of state of Anuradhapura kingdom from 434.",
       "sources": [{ "sourceKey": "wp-soththisena", "sourceLocation": "infobox reign: 434" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-soththisena", "sourceLocation": "infobox reign: 434" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-soththisena", "sourceLocation": "infobox reign: 434" }] }]
     },
     {
       "uuid": "reign-mittasena-anuradhapura",
@@ -42037,13 +42002,7 @@
       "tracks": ["tibet"],
       "descr": "Rules as head of state of Tibet from 127 BCE.",
       "sources": [{ "sourceKey": "wp-nyatri-tsenpo", "sourceLocation": "infobox reign: 127 BC – ???" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-nyatri-tsenpo", "sourceLocation": "infobox reign: 127 BC – ???" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-nyatri-tsenpo", "sourceLocation": "infobox reign: 127 BC – ???" }] }]
     },
     {
       "uuid": "reign-namri-songtsen-tibet",
@@ -42083,13 +42042,7 @@
       "tracks": ["yarlung"],
       "descr": "Rules as head of state of Yarlung kings and the Tibetan Empire from 127 BCE.",
       "sources": [{ "sourceKey": "wp-nyatri-tsenpo", "sourceLocation": "infobox reign: 127 BC – ???" }],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-nyatri-tsenpo", "sourceLocation": "infobox reign: 127 BC – ???" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-nyatri-tsenpo", "sourceLocation": "infobox reign: 127 BC – ???" }] }]
     },
     {
       "uuid": "reign-namri-songtsen-yarlung",
@@ -42140,13 +42093,7 @@
       "descr": "Rules as head of state of Shang dynasty from 1587 BCE.",
       "sources": [{ "sourceKey": "wp-bu-bing", "sourceLocation": "infobox reign: c. 1587 B. C. - ?" }],
       "circa": true,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [{ "sourceKey": "wp-bu-bing", "sourceLocation": "infobox reign: c. 1587 B. C. - ?" }]
-        }
-      ]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-bu-bing", "sourceLocation": "infobox reign: c. 1587 B. C. - ?" }] }]
     },
     {
       "uuid": "reign-zu-geng-of-shang-shang",
@@ -42171,7 +42118,7 @@
       "tracks": ["shang"],
       "descr": "Rules as head of state of Shang dynasty from 1184 BCE.",
       "sources": [{ "sourceKey": "wp-zu-jia", "sourceLocation": "infobox reign: 1184 BCE - ?" }],
-      "memberships": [{ "facet": "category", "value": "succession", "sources": [{ "sourceKey": "wp-zu-jia", "sourceLocation": "infobox reign: 1184 BCE - ?" }] }]
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-zu-jia", "sourceLocation": "infobox reign: 1184 BCE - ?" }] }]
     },
     {
       "uuid": "reign-di-yi-shang",
@@ -44852,6 +44799,68 @@
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-jangsu-of-goguryeo", "sourceLocation": "infobox reign: October 412 – December 491" }]
+        }
+      ]
+    },
+    {
+      "uuid": "nixtamalization-guatemala",
+      "title": "Nixtamalization: the earliest evidence, on Guatemala's southern coast",
+      "descr": "Equipment for nixtamalization, the alkaline treatment of maize first developed in Mesoamerica, dates from 1500 to 1200 BCE on Guatemala's southern coast.",
+      "start": "c. 1500 BCE",
+      "end": "1200 BCE",
+      "tracks": ["mesoamerica"],
+      "sources": [
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE\""
+        },
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The process of nixtamalization was first developed in Mesoamerica, where maize was originally cultivated\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-nixtamalization",
+              "sourceLocation": "History: \"The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "crab-claw-sail",
+      "title": "Austronesians invent the crab claw sail",
+      "descr": "The Austronesians invent the crab claw sail somewhere in Island Southeast Asia, by at least 2000 BCE: a latest-by date, so the sail may be older.",
+      "start": "c. 2000 BCE",
+      "tracks": ["austronesia"],
+      "sources": [
+        {
+          "sourceKey": "wp-crab-claw-sail",
+          "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": "2000 BCE",
+          "source": { "sourceKey": "wp-austronesian-peoples", "sourceLocation": "lead: \"They used sails some time before 2000 BCE\"" },
+          "note": "Also a latest-by date."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-crab-claw-sail",
+              "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
+            }
+          ]
         }
       ]
     }
