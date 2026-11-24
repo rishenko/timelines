@@ -28,6 +28,8 @@ const KINDS: Record<string, { names: RegExp; credit?: RegExp }> = {
   // a scholar's own essay, a university encyclopedia or library, or an academic's article, cited directly for a date
   // (the traditions rows: Jamison & Witzel, Kokugakuin University, the Posen Library, Ogundiran, the Biblical Archaeology Society)
   scholarly: { names: /scholarly (pages|works|sources)/i },
+  // an official catalogue cited per event by its record id (NOAA NCEI/WDS significant earthquakes, eruptions and tsunamis in the disasters pilot)
+  catalogue: { names: /official catalogues?/i },
   wikidata: { names: /Wikidata/ },
 };
 /** Where a map location came from (places files, `point.from`) → its kind. */

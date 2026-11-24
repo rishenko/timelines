@@ -77,6 +77,10 @@ export function About({ search = window.location.search, pathname = window.locat
           sapiens).
         </li>
         <li>
+          <strong>Official catalogues</strong>: the NOAA NCEI/WDS significant-hazard databases and the Smithsonian Global Volcanism Program date or confirm some
+          disasters in the disasters pilot; each event cites its catalogue record.
+        </li>
+        <li>
           <strong>Scholarly pages</strong>, cited directly for when the traditions in Religions and traditions began:
           Jamison and Witzel’s essay on Vedic religion (Harvard University), the Encyclopedia of Shinto (Kokugakuin
           University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran

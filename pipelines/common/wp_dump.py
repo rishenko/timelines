@@ -12,7 +12,17 @@ from functools import lru_cache
 
 from settings import DUMP, WIKIPEDIA as W
 
-_db = sqlite3.connect(f'file:{W}/index.sqlite?mode=ro', uri=True)
+_conn = None
+
+
+def _db():
+    """Opened on first use, so a module that only imports wp_dump (the freeze regression in CI, which has no dump) needs no index."""
+    global _conn
+    if _conn is None:
+        _conn = sqlite3.connect(f'file:{W}/index.sqlite?mode=ro', uri=True)
+    return _conn
+
+
 _unesc = lambda s: s.replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"').replace('&#039;', "'").replace('&amp;', '&')
 
 @lru_cache(maxsize=256)
@@ -29,7 +39,7 @@ def _stream(offset):
 def _raw(title):
     title = title.replace('_', ' ').strip()
     if title: title = title[0].upper() + title[1:]
-    row = _db.execute('SELECT offset, id FROM page WHERE title = ?', (title,)).fetchone()
+    row = _db().execute('SELECT offset, id FROM page WHERE title = ?', (title,)).fetchone()
     if not row: return None
     xml = _stream(row[0])
     m = re.search(r'<page>\s*<title>([^<]*)</title>\s*<ns>\d+</ns>\s*<id>%d</id>(.*?)</page>' % row[1], xml, re.S)
