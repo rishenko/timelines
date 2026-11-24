@@ -60,6 +60,13 @@ Kevin's reviewed category overrides (`pipelines/{ancient,medieval,modern-states}
 
 The `duplicates` check (`pipelines/common/duplicates_guard.py`, also in CI on pull requests, against main) fails when an added non-reign event has the same title as another starting within 2 years: a pipeline that has the same event shares it or adds a date claim to it. An intended second event with the same name goes in `pipelines/common/same-event.json` with a reason. It catches same-title repeats within a timeline only; the same event under another title, or across timelines, is still for review to catch. It also fails when a war in `pipelines/v2/pilot-conflicts.json` is `wide` (its own row under Wars) without a `wide_by` reason, since Kevin's rule places a war of up to 3 countries on their rows and a one-region war on the region row.
 
+The `reigns` check (`pipelines/common/reigns_guard.py`, also in CI on pull requests, against main) compares every committed
+reign file under `pipelines/` (`reigns.json` and any `*-reigns.json`, such as `yamato-reigns.json` or `italy-reigns.json`) with
+main's copy by uuid. Added reigns pass; a reign lost or changed in any field fails unless Kevin labels the pull request
+`kevin-reigns` (locally, `check:all --skip reigns`). `freeze_regression` proves a `reigns.json` reproduces from the inputs it
+records; this check stops a pull request from re-freezing and re-recording those inputs unseen, and covers the frozen files
+beside `reigns.json` that nothing re-freezes. The label is its own so that a category-overrides PR can't move a reign.
+
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
 detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:
