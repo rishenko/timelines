@@ -21,7 +21,7 @@ class Apply(unittest.TestCase):
     def test_medieval_gets_rows_events_in_range_places_and_sources(self):
         d = dataset('medieval', 650, 1500)
         counts = traditions.apply(d, 'medieval')
-        self.assertEqual(counts['traditions'], 8)  # all but Egypt (ended by 540) and Cao Đài (1926)
+        self.assertEqual(counts['traditions'], 14)  # all but Egypt (ended by 540), Mesopotamia (500) and Cao Đài (1926)
         ids = [t['id'] for t in d['tracks']]
         self.assertEqual(ids[:3], ['japan', 'kofun', 'religions-traditions'])
         ev = {e['uuid']: e for e in d['events']}

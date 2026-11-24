@@ -12941,6 +12941,320 @@
           ]
         }
       ]
+    },
+    {
+      "id": "buddhism",
+      "name": "Buddhism",
+      "kind": "theme",
+      "color": "#e0a526",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Buddhism",
+      "ids": { "wikidata": "Q748" },
+      "span": {
+        "start": "c. 450 BCE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "450 BCE",
+            "source": { "sourceKey": "sep-buddha", "sourceLocation": "lead: \"circa 450 BCE\"" },
+            "note": "Mark Siderits: the Buddha's floruit; many scholars now place his death around 405 BCE."
+          },
+          {
+            "year": "450 BCE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "lead: \"It originated in the eastern Gangetic plain as a śramaṇa movement in the 5th century BCE\""
+            }
+          },
+          {
+            "year": "500 BCE",
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "lead: \"a śramaṇa (wandering ascetic) and religious teacher who lived in the 6th or 5th century BCE\""
+            },
+            "note": "The Buddha's lifetime under the older and newer chronologies."
+          }
+        ],
+        "ongoingSources": [{ "sourceKey": "wp-buddhism", "sourceLocation": "lead: \"It is the world's fourth-largest religion\"" }]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [{ "sourceKey": "wp-buddhism", "sourceLocation": "lead: \"It originated in the eastern Gangetic plain\"" }]
+        }
+      ]
+    },
+    {
+      "id": "jainism",
+      "name": "Jainism",
+      "kind": "theme",
+      "color": "#c4572e",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Jainism",
+      "ids": { "wikidata": "Q9232" },
+      "span": {
+        "start": "c. 500 BCE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "550 BCE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "ucla-manas-mahavira",
+              "sourceLocation": "Mahavira: \"it was Mahavira who formalized the philosophy of what was to be known as Jainism in the sixth century\""
+            }
+          },
+          {
+            "year": "500 BCE",
+            "margin": 100,
+            "source": { "sourceKey": "wp-jainism", "sourceLocation": "History: \"Mahavira c. 6th or 5th century BCE, was a contemporary of the Buddha\"" },
+            "note": "The headline, c. 500 BCE, is where the two sources meet: the 6th century (UCLA) and the 6th or 5th (Wikipedia)."
+          },
+          {
+            "year": "700 BCE",
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"is dated by historians to the c. 8th or 7th century BCE, making him likely the tradition's earliest historical figure\""
+            },
+            "note": "Roots: Pārśvanātha, the 23rd tīrthaṅkara."
+          }
+        ],
+        "ongoingSources": [{ "sourceKey": "wp-jainism", "sourceLocation": "lead: \"Jainism has between four and five million followers\"" }]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [{ "sourceKey": "wp-jainism", "sourceLocation": "lead: \"residing mostly in India\"" }]
+        }
+      ]
+    },
+    {
+      "id": "christianity",
+      "name": "Christianity",
+      "kind": "theme",
+      "color": "#b23a48",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Christianity",
+      "ids": { "wikidata": "Q5043" },
+      "span": {
+        "start": "c. 30 CE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "30 CE",
+            "source": { "sourceKey": "cojs-rise-of-christianity", "sourceLocation": "Overview: \"He was later crucified by the Romans around 30 CE\"" }
+          },
+          {
+            "year": "50 CE",
+            "margin": 50,
+            "source": { "sourceKey": "wp-christianity", "sourceLocation": "lead: \"Christianity began in the 1st century, after the death of Jesus\"" },
+            "note": "Wikipedia: after the death of Jesus, as a Judaic sect."
+          }
+        ],
+        "ongoingSources": [{ "sourceKey": "wp-christianity", "sourceLocation": "lead: \"It is the world's largest and most widespread religion\"" }]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-christianity",
+              "sourceLocation": "History: \"Christianity originated as a Jewish movement in Judaea during the 1st century AD\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "islam",
+      "name": "Islam",
+      "kind": "theme",
+      "color": "#2e8b57",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Islam",
+      "ids": { "wikidata": "Q432" },
+      "span": {
+        "start": "610 CE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "610 CE",
+            "source": { "sourceKey": "wp-islam", "sourceLocation": "History: \"The religion of Islam originated in Mecca c. 610 CE\"" }
+          },
+          {
+            "year": "610 CE",
+            "source": {
+              "sourceKey": "palomar-muhammad-islam",
+              "sourceLocation": "Chapter Two: \"In 610 CE, an event would occur that would alter the trajectory of world history\""
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-islam",
+            "sourceLocation": "Demographics: \"Islam is the world's second-largest religious population after Christianity\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [{ "sourceKey": "wp-islam", "sourceLocation": "History: \"The religion of Islam originated in Mecca\"" }]
+        }
+      ]
+    },
+    {
+      "id": "mesopotamian-religion",
+      "name": "Ancient Mesopotamian religion",
+      "kind": "theme",
+      "color": "#8c6d46",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Mesopotamian_religion",
+      "ids": { "wikidata": "Q21028568" },
+      "span": {
+        "start": "c. 3500 BCE",
+        "end": "500 CE",
+        "startDates": [
+          {
+            "year": "3500 BCE",
+            "source": {
+              "sourceKey": "wp-ancient-mesopotamian-religion",
+              "sourceLocation": "History: \"The first evidence for what is recognisably Mesopotamian religion can be seen with the invention in Mesopotamia of writing circa 3500 BC\""
+            }
+          },
+          {
+            "year": "3300 BCE",
+            "source": { "sourceKey": "webb-mesopotamian-religion", "sourceLocation": "lead: \"around 3300 BCE in Sumer in southern Mesopotamia\"" },
+            "note": "Eugene Webb: the earliest written records; the religion behind them is older."
+          },
+          {
+            "year": "6000 BCE",
+            "source": { "sourceKey": "wp-ancient-mesopotamian-religion", "sourceLocation": "lead: \"between circa 6000 BC and 500 AD\"" },
+            "note": "Roots: the prehistoric religion of the Ubaid period and before."
+          }
+        ],
+        "endDates": [
+          {
+            "year": "500 CE",
+            "source": { "sourceKey": "wp-ancient-mesopotamian-religion", "sourceLocation": "lead: \"between circa 6000 BC and 500 AD\"" }
+          },
+          {
+            "year": "75 CE",
+            "source": {
+              "sourceKey": "csmc-cuneiform-extinction",
+              "sourceLocation": "The extinction of cuneiform writing: \"The latest text to be discovered dates from 75 CE\""
+            },
+            "note": "The end of the temple scholars' cuneiform; cults continued after it."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [{ "sourceKey": "wp-ancient-mesopotamian-religion", "sourceLocation": "lead: \"practices of the civilizations of ancient Mesopotamia\"" }]
+        }
+      ]
+    },
+    {
+      "id": "norse-religion",
+      "name": "Old Norse religion",
+      "kind": "theme",
+      "color": "#4f6d8f",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Old_Norse_religion",
+      "ids": { "wikidata": "Q121617" },
+      "span": {
+        "start": "c. 200 CE",
+        "end": "1100 CE",
+        "startDates": [
+          {
+            "year": "200 CE",
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-proto-norse-language",
+              "sourceLocation": "Inscriptions: \"There are about 260 of these inscriptions in Proto-Norse, the earliest dating to the 2nd century\""
+            },
+            "note": "Dated by proxy: Old Norse religion took shape in the Proto-Norse period, whose earliest inscriptions are from the 2nd century. Single source (flagged for Kevin)."
+          },
+          {
+            "year": "500 BCE",
+            "source": { "sourceKey": "wp-old-norse-religion", "sourceLocation": "Origins: \"is believed to have died out around 500 BCE\"" },
+            "note": "Roots: the Bronze Age belief system, some of whose motifs reappear in the Iron Age."
+          }
+        ],
+        "endDates": [
+          {
+            "year": "1100 CE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-old-norse-religion",
+              "sourceLocation": "lead: \"By the 12th century, Old Norse religion had been replaced by Christianity\""
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "northern-europe",
+          "sources": [{ "sourceKey": "wp-old-norse-religion", "sourceLocation": "Terminology: \"the pre-Christian religions of Scandinavia\"" }]
+        }
+      ]
+    },
+    {
+      "id": "daoism",
+      "name": "Taoism (Daoism)",
+      "kind": "theme",
+      "color": "#3f8f8a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Taoism",
+      "ids": { "wikidata": "Q9598" },
+      "span": {
+        "start": "142 CE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "142 CE",
+            "source": {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"The first instance of Taoism as a proper religious community is generally traced back to the Way of the Celestial Masters tradition founded in 142 CE\""
+            }
+          },
+          {
+            "year": "142 CE",
+            "source": {
+              "sourceKey": "sep-daoism-religion",
+              "sourceLocation": "3.1 Tianshi dao: \"in 142 CE, according to the traditional date—to Zhang Daoling\""
+            },
+            "note": "Fabrizio Pregadio: the traditional date of the Celestial Masters' covenant."
+          },
+          {
+            "year": "450 BCE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"The core of Taoist thought crystallized during the early Warring States period (c. 450)\""
+            },
+            "note": "Roots: the philosophical texts (the Zhuangzi, the Tao Te Ching), c. 450 BCE."
+          }
+        ],
+        "ongoingSources": [{ "sourceKey": "wp-taoism", "sourceLocation": "lead: \"is a philosophical and religious tradition indigenous to China\"" }]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "china",
+          "sources": [{ "sourceKey": "wp-taoism", "sourceLocation": "lead: \"a philosophical and religious tradition indigenous to China\"" }]
+        }
+      ]
     }
   ],
   "sources": {
@@ -17868,7 +18182,79 @@
     },
     "wp-olmec-religion": { "name": "Wikipedia: Olmec religion", "url": "https://en.wikipedia.org/wiki/Olmec_religion", "tags": ["wikipedia"], "accessed": "2026-11-23" },
     "wp-tengri": { "name": "Wikipedia: Tengri", "url": "https://en.wikipedia.org/wiki/Tengri", "tags": ["wikipedia"], "accessed": "2026-11-23" },
-    "wp-tengrism": { "name": "Wikipedia: Tengrism", "url": "https://en.wikipedia.org/wiki/Tengrism", "tags": ["wikipedia"], "accessed": "2026-11-23" }
+    "wp-tengrism": { "name": "Wikipedia: Tengrism", "url": "https://en.wikipedia.org/wiki/Tengrism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "cojs-rise-of-christianity": {
+      "name": "Overview: The Rise of Christianity (circa 4 BCE-330 CE) (Center for Online Judaic Studies)",
+      "url": "https://cojs.org/?p=7106",
+      "author": "Center for Online Judaic Studies",
+      "accessed": "2026-11-24",
+      "tags": ["scholarly"]
+    },
+    "csmc-cuneiform-extinction": {
+      "name": "The extinction of cuneiform writing (Centre for the Study of Manuscript Cultures, University of Hamburg)",
+      "url": "https://www.csmc.uni-hamburg.de/publications/mesopotamia/2020-08-31.html",
+      "author": "CSMC, University of Hamburg",
+      "accessed": "2026-11-24",
+      "tags": ["scholarly"]
+    },
+    "palomar-muhammad-islam": {
+      "name": "Travis Ritt, Muhammad and Islam, c. 570-632 (The History of the Middle East, Palomar College)",
+      "url": "https://pressbooks.palomar.edu/historyofthemiddleeast/?p=26",
+      "author": "Travis Ritt",
+      "accessed": "2026-11-24",
+      "tags": ["scholarly"]
+    },
+    "sep-buddha": {
+      "name": "Mark Siderits, Buddha (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/buddha/",
+      "author": "Mark Siderits",
+      "accessed": "2026-11-24",
+      "tags": ["scholarly"]
+    },
+    "ucla-manas-mahavira": {
+      "name": "Mahavira (MANAS, South Asia, University of California, Los Angeles)",
+      "url": "https://southasia.ucla.edu/religions/gurus-saints/mahavira",
+      "author": "MANAS, UCLA",
+      "accessed": "2026-11-24",
+      "tags": ["scholarly"]
+    },
+    "webb-mesopotamian-religion": {
+      "name": "Eugene Webb, Mesopotamian Religion (a supplement for RELIG 201, University of Washington)",
+      "url": "https://faculty.washington.edu/ewebb/Mesopotamia.html",
+      "author": "Eugene Webb",
+      "accessed": "2026-11-24",
+      "tags": ["scholarly"]
+    },
+    "wp-ancient-mesopotamian-religion": {
+      "name": "Wikipedia: Ancient Mesopotamian religion",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Mesopotamian_religion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-buddhism": { "name": "Wikipedia: Buddhism", "url": "https://en.wikipedia.org/wiki/Buddhism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-christianity": { "name": "Wikipedia: Christianity", "url": "https://en.wikipedia.org/wiki/Christianity", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-islam": { "name": "Wikipedia: Islam", "url": "https://en.wikipedia.org/wiki/Islam", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-jainism": { "name": "Wikipedia: Jainism", "url": "https://en.wikipedia.org/wiki/Jainism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-old-norse-religion": {
+      "name": "Wikipedia: Old Norse religion",
+      "url": "https://en.wikipedia.org/wiki/Old_Norse_religion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-proto-norse-language": {
+      "name": "Wikipedia: Proto-Norse language",
+      "url": "https://en.wikipedia.org/wiki/Proto-Norse_language",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "sep-daoism-religion": {
+      "name": "Fabrizio Pregadio, Religious Daoism (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/daoism-religion/",
+      "author": "Fabrizio Pregadio",
+      "accessed": "2026-11-24",
+      "tags": ["scholarly"]
+    },
+    "wp-taoism": { "name": "Wikipedia: Taoism", "url": "https://en.wikipedia.org/wiki/Taoism", "tags": ["wikipedia"], "accessed": "2026-11-23" }
   },
   "tags": {
     "wikipedia": { "name": "Wikipedia" },
@@ -17966,7 +18352,7 @@
       "title": "Earliest proto-cuneiform tablets (Uruk IV)",
       "start": "c. 3350 BCE",
       "end": "3200 BCE",
-      "tracks": ["sumer"],
+      "tracks": ["sumer", "mesopotamian-religion"],
       "descr": "Administrative tablets, the earliest stage of the writing that became cuneiform. Dates are the CDLI's, as cited by Wikipedia.",
       "sources": [{ "sourceKey": "wp-uruk", "sourceLocation": "Outline of the 4th millennium BC (CDLI, Uruk IV)" }],
       "importance": 1,
@@ -22283,7 +22669,7 @@
       "title": "Life of Mahavira",
       "start": "c. 599 BCE",
       "end": "527 BCE",
-      "tracks": ["magadha"],
+      "tracks": ["magadha", "jainism"],
       "descr": "Traditional dates; historians place him in the 6th or 5th century BCE, a contemporary of the Buddha under Bimbisara and Ajatashatru.",
       "sources": [{ "sourceKey": "wp-mahavira", "sourceLocation": "infobox, lead and Dating" }],
       "startDates": [
@@ -22302,7 +22688,7 @@
       "title": "Life of the Buddha",
       "start": "c. 480 BCE",
       "end": "400 BCE",
-      "tracks": ["magadha"],
+      "tracks": ["magadha", "buddhism"],
       "descr": "He lives under Bimbisara and dies under Ajatashatru. Most scholars who give a date place his death within 20 years of 400 BCE; earlier scholarship used 563–483 BCE.",
       "sources": [{ "sourceKey": "wp-buddha", "sourceLocation": "infobox, Dating and Historical person" }],
       "startDates": [
@@ -25604,7 +25990,7 @@
       "uuid": "gilgamesh",
       "title": "The Epic of Gilgamesh (Old Babylonian version)",
       "start": "c. 1800 BCE",
-      "tracks": ["babylonia"],
+      "tracks": ["babylonia", "mesopotamian-religion"],
       "descr": "The world’s oldest surviving narrative literature. Sumerian Gilgamesh poems may date to the Third Dynasty of Ur (c. 2100 BCE); the Standard Babylonian version was compiled by Sîn-lēqi-unninni between 1300 and 1000 BCE.",
       "sources": [{ "sourceKey": "wp-gilgamesh", "sourceLocation": "infobox, lead and Versions" }],
       "importance": 1,
@@ -25870,7 +26256,7 @@
       "uuid": "laozi",
       "title": "Laozi (traditional dates)",
       "start": "c. 550 BCE",
-      "tracks": ["zhou"],
+      "tracks": ["zhou", "daoism"],
       "descr": "Considered the author of the Tao Te Ching and the founder of Taoism. Tradition makes him a contemporary of Confucius; he is sometimes dated to the 4th century BC, and the oldest manuscript of his book dates to the late 4th century BC.",
       "sources": [{ "sourceKey": "wp-laozi", "sourceLocation": "infobox, lead and Identity" }],
       "startDates": [
@@ -26898,7 +27284,7 @@
       "uuid": "crucifixion",
       "title": "Crucifixion of Jesus",
       "start": "c. 30 CE",
-      "tracks": ["judea"],
+      "tracks": ["judea", "christianity"],
       "descr": "In Jerusalem, in the Roman province of Judaea; dated AD 30 or 33.",
       "sources": [{ "sourceKey": "wp-crucifixion", "sourceLocation": "infobox" }],
       "startDates": [
@@ -26978,7 +27364,7 @@
       "uuid": "armenia-christian",
       "title": "Armenia adopts Christianity",
       "start": "301 CE",
-      "tracks": ["armenia"],
+      "tracks": ["armenia", "christianity"],
       "descr": "The traditional date; scholars propose dates from 284 to no later than 325, and many favour 314.",
       "sources": [{ "sourceKey": "wp-armenia-christian", "sourceLocation": "lead and Date and causes" }],
       "startDates": [
@@ -27022,7 +27408,7 @@
       "uuid": "hijrah",
       "title": "The Hijrah: start of the Islamic calendar",
       "start": "622 CE",
-      "tracks": ["early-islam"],
+      "tracks": ["early-islam", "islam"],
       "descr": "Its date equates to 16 July 622; the year is the epoch of the Islamic calendar.",
       "sources": [{ "sourceKey": "wp-hijrah", "sourceLocation": "lead and Note 3" }],
       "importance": 1,
@@ -27097,7 +27483,7 @@
       "title": "Reign of Ashoka",
       "start": "c. 268 BCE",
       "end": "232 BCE",
-      "tracks": ["maurya"],
+      "tracks": ["maurya", "buddhism"],
       "descr": "Mauryan emperor from c. 268 BCE until his death in 232 BCE. His reputation grows after the 19th-century decipherment of sources written in the Brahmi script.",
       "sources": [{ "sourceKey": "wp-ashoka", "sourceLocation": "lead and infobox" }, { "sourceKey": "wp-maurya", "sourceLocation": "infobox" }],
       "startDates": [
@@ -27137,7 +27523,7 @@
       "uuid": "buddhism-sri-lanka",
       "title": "Buddhism reaches Sri Lanka",
       "start": "267 BCE",
-      "tracks": ["anuradhapura"],
+      "tracks": ["anuradhapura", "buddhism"],
       "descr": "Theravada Buddhism is introduced during the reign of King Devanampiya Tissa.",
       "sources": [{ "sourceKey": "wp-anuradhapura", "sourceLocation": "infobox and lead" }],
       "importance": 1,
@@ -27343,7 +27729,7 @@
       "uuid": "nalanda",
       "title": "Nalanda founded",
       "start": "c. 427 CE",
-      "tracks": ["gupta"],
+      "tracks": ["gupta", "buddhism"],
       "descr": "Established by the Gupta emperor Kumaragupta I; it operates for almost a thousand years, until around 1400 CE.",
       "sources": [{ "sourceKey": "wp-nalanda", "sourceLocation": "infobox and lead" }],
       "importance": 1,
@@ -27512,7 +27898,7 @@
       "title": "Yellow Turban Rebellion",
       "start": "184 CE",
       "end": "205 CE",
-      "tracks": ["han"],
+      "tracks": ["han", "daoism"],
       "descr": "It breaks out in March 184, during the reign of Emperor Ling. The main rebellion is suppressed by 185, but subduing the resisting areas takes until 205.",
       "sources": [{ "sourceKey": "wp-yellow-turban", "sourceLocation": "infobox, lead and Background" }],
       "memberships": [{ "facet": "category", "value": "revolt", "sources": [{ "sourceKey": "wp-yellow-turban", "sourceLocation": "infobox, lead and Background" }] }]
@@ -27761,7 +28147,7 @@
       "uuid": "buddhism-japan",
       "title": "Buddhism reaches Japan",
       "start": "538 CE",
-      "tracks": ["kofun", "asuka", "baekje", "shinto"],
+      "tracks": ["kofun", "asuka", "baekje", "shinto", "buddhism"],
       "descr": "According to the Nihon Shoki (720), Buddhism and the Chinese characters are introduced from Baekje; the date marks the end of the Kofun period and the start of the Asuka period.",
       "sources": [{ "sourceKey": "wp-kofun", "sourceLocation": "lead" }, { "sourceKey": "wp-asuka", "sourceLocation": "infobox and lead" }],
       "importance": 1,
@@ -28394,7 +28780,7 @@
       "title": "The Nubian kingdoms convert to Christianity",
       "start": "543 CE",
       "end": "580 CE",
-      "tracks": ["nobatia", "makuria", "alodia"],
+      "tracks": ["nobatia", "makuria", "alodia", "christianity"],
       "descr": "Nobatia converts in 543; Makuria has “received the faith of Christ” by around 568 and sends a delegation to Constantinople in 573. Alodia, first mentioned in 569, is the last: its request is granted in 580 and Longinus is sent.",
       "sources": [
         { "sourceKey": "wp-nobatia", "sourceLocation": "lead" },
@@ -28502,7 +28888,7 @@
       "uuid": "aksum-christian",
       "title": "Aksum becomes Christian",
       "start": "c. 328 CE",
-      "tracks": ["aksum"],
+      "tracks": ["aksum", "christianity"],
       "descr": "Ezana converts; Frumentius, who came to Aksum as a child around 316, is consecrated its bishop. The coin weights suggest a conversion before Constantine’s reform of 324, or a few years after.",
       "sources": [
         { "sourceKey": "wp-aksum", "sourceLocation": "infobox and lead" },
@@ -43003,6 +43389,162 @@
           "facet": "category",
           "value": "religion",
           "sources": [{ "sourceKey": "wp-ancient-greek-religion", "sourceLocation": "Decline: \"The last Olympic Games were held in 393\"" }]
+        }
+      ]
+    },
+    {
+      "uuid": "hathigumpha-inscription",
+      "title": "The Hathigumpha inscription",
+      "descr": "King Kharavela of Kalinga records his patronage of Jain monks at the Udayagiri caves, key early evidence for Jainism.",
+      "start": "c. 150 BCE",
+      "tracks": ["jainism"],
+      "sources": [
+        {
+          "sourceKey": "wp-jainism",
+          "sourceLocation": "History: \"The Hathigumpha Inscription at the Udayagiri Caves in Odisha, dated to the 2nd century BCE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"The Hathigumpha Inscription at the Udayagiri Caves in Odisha, dated to the 2nd century BCE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "digambara-svetambara-schism",
+      "title": "The Digambara–Śvētāmbara schism",
+      "descr": "Inscriptions already show Jainism divided into its two main traditions, the Digambara and the Śvētāmbara.",
+      "start": "c. 50 CE",
+      "tracks": ["jainism"],
+      "sources": [
+        {
+          "sourceKey": "wp-jainism",
+          "sourceLocation": "History: \"Inscriptions from as early as the first century CE already show the schism between Digambara and Śvētāmbara\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"Inscriptions from as early as the first century CE already show the schism between Digambara and Śvētāmbara\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "council-of-nicaea",
+      "title": "The Council of Nicaea",
+      "descr": "Constantine convenes the first council of the whole church, which adopts the Nicene Creed.",
+      "start": "325 CE",
+      "tracks": ["christianity", "rome-republic-empire"],
+      "sources": [
+        {
+          "sourceKey": "wp-christianity",
+          "sourceLocation": "History: \"In 325, Constantine convened the Council of Nicaea, where the Nicene Creed was adopted\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-christianity",
+              "sourceLocation": "History: \"In 325, Constantine convened the Council of Nicaea, where the Nicene Creed was adopted\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "enuma-elish",
+      "title": "The Enuma Elish",
+      "descr": "The Babylonian creation epic, in which Marduk kills Tiamat and makes heaven and earth from her body.",
+      "start": "c. 1150 BCE",
+      "tracks": ["mesopotamian-religion", "babylonia"],
+      "sources": [{ "sourceKey": "wp-ancient-mesopotamian-religion", "sourceLocation": "Cosmology: \"In the Enuma Elish (c. 12th century BCE)\"" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [{ "sourceKey": "wp-ancient-mesopotamian-religion", "sourceLocation": "Cosmology: \"In the Enuma Elish (c. 12th century BCE)\"" }]
+        },
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [{ "sourceKey": "wp-ancient-mesopotamian-religion", "sourceLocation": "Cosmology: \"In the Enuma Elish (c. 12th century BCE)\"" }]
+        }
+      ]
+    },
+    {
+      "uuid": "last-cuneiform-text",
+      "title": "The latest known cuneiform text",
+      "descr": "The last dated cuneiform tablet, an astronomical text: the scholarly tradition of the temples ends.",
+      "start": "75 CE",
+      "tracks": ["mesopotamian-religion", "babylonia"],
+      "sources": [
+        {
+          "sourceKey": "csmc-cuneiform-extinction",
+          "sourceLocation": "The extinction of cuneiform writing: \"The latest text to be discovered dates from 75 CE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "csmc-cuneiform-extinction",
+              "sourceLocation": "The extinction of cuneiform writing: \"The latest text to be discovered dates from 75 CE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "lingbao-scriptures",
+      "title": "The Lingbao scriptures",
+      "descr": "Ge Chaofu compiles the scriptures that found the Lingbao school of Taoism.",
+      "start": "397 CE",
+      "end": "402 CE",
+      "tracks": ["daoism"],
+      "sources": [
+        {
+          "sourceKey": "wp-taoism",
+          "sourceLocation": "History: \"between 397 and 402, Ge Chaofu compiled a series of scriptures that later served as the foundation of the Lingbao school\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"between 397 and 402, Ge Chaofu compiled a series of scriptures that later served as the foundation of the Lingbao school\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"between 397 and 402, Ge Chaofu compiled a series of scriptures that later served as the foundation of the Lingbao school\""
+            }
+          ]
         }
       ]
     }

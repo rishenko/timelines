@@ -59143,6 +59143,229 @@
           }
         ]
       }
+    },
+    {
+      "id": "buddhism",
+      "name": "Buddhism",
+      "kind": "theme",
+      "color": "#e0a526",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Buddhism",
+      "ids": {
+        "wikidata": "Q748"
+      },
+      "span": {
+        "start": -449,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -449,
+            "source": {
+              "sourceKey": "sep-buddha",
+              "sourceLocation": "lead: \"circa 450 BCE\""
+            },
+            "note": "Mark Siderits: the Buddha's floruit; many scholars now place his death around 405 BCE."
+          },
+          {
+            "year": -449,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "lead: \"It originated in the eastern Gangetic plain as a śramaṇa movement in the 5th century BCE\""
+            }
+          },
+          {
+            "year": -499,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "lead: \"a śramaṇa (wandering ascetic) and religious teacher who lived in the 6th or 5th century BCE\""
+            },
+            "note": "The Buddha's lifetime under the older and newer chronologies."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-buddhism",
+            "sourceLocation": "lead: \"It is the world's fourth-largest religion\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "jainism",
+      "name": "Jainism",
+      "kind": "theme",
+      "color": "#c4572e",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Jainism",
+      "ids": {
+        "wikidata": "Q9232"
+      },
+      "span": {
+        "start": -499,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -549,
+            "margin": 50,
+            "source": {
+              "sourceKey": "ucla-manas-mahavira",
+              "sourceLocation": "Mahavira: \"it was Mahavira who formalized the philosophy of what was to be known as Jainism in the sixth century\""
+            }
+          },
+          {
+            "year": -499,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"Mahavira c. 6th or 5th century BCE, was a contemporary of the Buddha\""
+            },
+            "note": "The headline, c. 500 BCE, is where the two sources meet: the 6th century (UCLA) and the 6th or 5th (Wikipedia)."
+          },
+          {
+            "year": -699,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"is dated by historians to the c. 8th or 7th century BCE, making him likely the tradition's earliest historical figure\""
+            },
+            "note": "Roots: Pārśvanātha, the 23rd tīrthaṅkara."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-jainism",
+            "sourceLocation": "lead: \"Jainism has between four and five million followers\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "christianity",
+      "name": "Christianity",
+      "kind": "theme",
+      "color": "#b23a48",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Christianity",
+      "ids": {
+        "wikidata": "Q5043"
+      },
+      "span": {
+        "start": 30,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 30,
+            "source": {
+              "sourceKey": "cojs-rise-of-christianity",
+              "sourceLocation": "Overview: \"He was later crucified by the Romans around 30 CE\""
+            }
+          },
+          {
+            "year": 50,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-christianity",
+              "sourceLocation": "lead: \"Christianity began in the 1st century, after the death of Jesus\""
+            },
+            "note": "Wikipedia: after the death of Jesus, as a Judaic sect."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-christianity",
+            "sourceLocation": "lead: \"It is the world's largest and most widespread religion\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "islam",
+      "name": "Islam",
+      "kind": "theme",
+      "color": "#2e8b57",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Islam",
+      "ids": {
+        "wikidata": "Q432"
+      },
+      "span": {
+        "start": 610,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 610,
+            "source": {
+              "sourceKey": "wp-islam",
+              "sourceLocation": "History: \"The religion of Islam originated in Mecca c. 610 CE\""
+            }
+          },
+          {
+            "year": 610,
+            "source": {
+              "sourceKey": "palomar-muhammad-islam",
+              "sourceLocation": "Chapter Two: \"In 610 CE, an event would occur that would alter the trajectory of world history\""
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-islam",
+            "sourceLocation": "Demographics: \"Islam is the world's second-largest religious population after Christianity\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "daoism",
+      "name": "Taoism (Daoism)",
+      "kind": "theme",
+      "color": "#3f8f8a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Taoism",
+      "ids": {
+        "wikidata": "Q9598"
+      },
+      "span": {
+        "start": 142,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 142,
+            "source": {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"The first instance of Taoism as a proper religious community is generally traced back to the Way of the Celestial Masters tradition founded in 142 CE\""
+            }
+          },
+          {
+            "year": 142,
+            "source": {
+              "sourceKey": "sep-daoism-religion",
+              "sourceLocation": "3.1 Tianshi dao: \"in 142 CE, according to the traditional date—to Zhang Daoling\""
+            },
+            "note": "Fabrizio Pregadio: the traditional date of the Celestial Masters' covenant."
+          },
+          {
+            "year": -449,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"The core of Taoist thought crystallized during the early Warring States period (c. 450)\""
+            },
+            "note": "Roots: the philosophical texts (the Zhuangzi, the Tao Te Ching), c. 450 BCE."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-taoism",
+            "sourceLocation": "lead: \"is a philosophical and religious tradition indigenous to China\""
+          }
+        ]
+      }
     }
   ],
   "sources": {
@@ -107731,6 +107954,15 @@
         "scholarly"
       ]
     },
+    "cojs-rise-of-christianity": {
+      "name": "Overview: The Rise of Christianity (circa 4 BCE-330 CE) (Center for Online Judaic Studies)",
+      "url": "https://cojs.org/?p=7106",
+      "author": "Center for Online Judaic Studies",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
     "conversation-ogundiran-ife": {
       "name": "Akinwumi Ogundiran (University of North Carolina at Charlotte), Nigeria's city of Ilé-Ifẹ̀ has survived and thrived for 1,000 years (The Conversation, 2023)",
       "url": "https://theconversation.com/nigerias-city-of-ile-if-has-survived-and-thrived-for-1-000-years-heres-how-204569",
@@ -107788,11 +108020,47 @@
         "scholarly"
       ]
     },
+    "palomar-muhammad-islam": {
+      "name": "Travis Ritt, Muhammad and Islam, c. 570-632 (The History of the Middle East, Palomar College)",
+      "url": "https://pressbooks.palomar.edu/historyofthemiddleeast/?p=26",
+      "author": "Travis Ritt",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
     "posen-bakhos-rise-of-torah": {
       "name": "Carol Bakhos, The Rise of Torah in Jewish Antiquity (The Posen Library of Jewish Culture and Civilization, Yale University Press)",
       "url": "https://www.posenlibrary.com/node/11663",
       "author": "Carol Bakhos",
       "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "sep-buddha": {
+      "name": "Mark Siderits, Buddha (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/buddha/",
+      "author": "Mark Siderits",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "sep-daoism-religion": {
+      "name": "Fabrizio Pregadio, Religious Daoism (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/daoism-religion/",
+      "author": "Fabrizio Pregadio",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "ucla-manas-mahavira": {
+      "name": "Mahavira (MANAS, South Asia, University of California, Los Angeles)",
+      "url": "https://southasia.ucla.edu/religions/gurus-saints/mahavira",
+      "author": "MANAS, UCLA",
+      "accessed": "2026-11-24",
       "tags": [
         "scholarly"
       ]
@@ -107814,9 +108082,25 @@
         "wikipedia"
       ]
     },
+    "wp-buddhism": {
+      "name": "Buddhism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Buddhism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-caodaism": {
       "name": "Caodaism (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Caodaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-christianity": {
+      "name": "Christianity (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Christianity",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -107849,6 +108133,22 @@
     "wp-history-of-shinto": {
       "name": "History of Shinto (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/History_of_Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-islam": {
+      "name": "Islam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Islam",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jainism": {
+      "name": "Jainism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jainism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -107889,6 +108189,14 @@
     "wp-shinto": {
       "name": "Shinto (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-taoism": {
+      "name": "Taoism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taoism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -322780,6 +323088,129 @@
             {
               "sourceKey": "wp-caodaism",
               "sourceLocation": "History: \"By 1940, it had gathered over a million members and converting a fifth to a fourth of the population of Cochinchina\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "dunhuang-manuscripts",
+      "title": "The Dunhuang manuscripts are found",
+      "descr": "Over 40,000 manuscripts, mostly Buddhist, are discovered in a cave at Dunhuang in China.",
+      "start": 1900,
+      "tracks": [
+        "buddhism",
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-buddhism",
+          "sourceLocation": "Texts: \"were discovered in 1900 in the Dunhuang Chinese cave alone\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "Texts: \"were discovered in 1900 in the Dunhuang Chinese cave alone\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ninety-five-theses",
+      "title": "Luther's Ninety-five Theses",
+      "descr": "Martin Luther begins the Reformation, from which Protestantism splits into many denominations.",
+      "start": 1517,
+      "tracks": [
+        "christianity",
+        "hre"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-christianity",
+          "sourceLocation": "Reformation and response: \"Martin Luther initiated the Reformation with his Ninety-five Theses in 1517.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-christianity",
+              "sourceLocation": "Reformation and response: \"Martin Luther initiated the Reformation with his Ninety-five Theses in 1517.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ottoman-caliphate-1517",
+      "title": "The Ottomans strengthen their claim to the caliphate",
+      "descr": "Selim I becomes ruler of Mecca and Medina, strengthening the Ottoman dynasty's claim to the caliphate.",
+      "start": 1517,
+      "tracks": [
+        "islam",
+        "ottoman-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-islam",
+          "sourceLocation": "Ottoman era: \"its claims were strengthened in 1517 as Selim I became the ruler of Mecca and Medina\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-islam",
+              "sourceLocation": "Ottoman era: \"its claims were strengthened in 1517 as Selim I became the ruler of Mecca and Medina\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "cultural-revolution-taoism",
+      "title": "Taoism in the Cultural Revolution",
+      "descr": "Many Taoist priests are laicised and sent to work camps, and many Taoist temples are destroyed or turned to secular use.",
+      "start": 1966,
+      "end": 1976,
+      "tracks": [
+        "daoism",
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-taoism",
+          "sourceLocation": "History: \"During the Cultural Revolution (1966–1976), many Taoist priests were laicized and sent to work camps\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"During the Cultural Revolution (1966–1976), many Taoist priests were laicized and sent to work camps\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "repression",
+          "sources": [
+            {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"During the Cultural Revolution (1966–1976), many Taoist priests were laicized and sent to work camps\""
             }
           ]
         }

@@ -20123,6 +20123,346 @@
           ]
         }
       ]
+    },
+    {
+      "id": "buddhism",
+      "name": "Buddhism",
+      "kind": "theme",
+      "color": "#e0a526",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Buddhism",
+      "ids": {
+        "wikidata": "Q748"
+      },
+      "span": {
+        "start": -449,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -449,
+            "source": {
+              "sourceKey": "sep-buddha",
+              "sourceLocation": "lead: \"circa 450 BCE\""
+            },
+            "note": "Mark Siderits: the Buddha's floruit; many scholars now place his death around 405 BCE."
+          },
+          {
+            "year": -449,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "lead: \"It originated in the eastern Gangetic plain as a śramaṇa movement in the 5th century BCE\""
+            }
+          },
+          {
+            "year": -499,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "lead: \"a śramaṇa (wandering ascetic) and religious teacher who lived in the 6th or 5th century BCE\""
+            },
+            "note": "The Buddha's lifetime under the older and newer chronologies."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-buddhism",
+            "sourceLocation": "lead: \"It is the world's fourth-largest religion\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "gangetic-plain",
+          "sources": [
+            {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "lead: \"It originated in the eastern Gangetic plain\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jainism",
+      "name": "Jainism",
+      "kind": "theme",
+      "color": "#c4572e",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Jainism",
+      "ids": {
+        "wikidata": "Q9232"
+      },
+      "span": {
+        "start": -499,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -549,
+            "margin": 50,
+            "source": {
+              "sourceKey": "ucla-manas-mahavira",
+              "sourceLocation": "Mahavira: \"it was Mahavira who formalized the philosophy of what was to be known as Jainism in the sixth century\""
+            }
+          },
+          {
+            "year": -499,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"Mahavira c. 6th or 5th century BCE, was a contemporary of the Buddha\""
+            },
+            "note": "The headline, c. 500 BCE, is where the two sources meet: the 6th century (UCLA) and the 6th or 5th (Wikipedia)."
+          },
+          {
+            "year": -699,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"is dated by historians to the c. 8th or 7th century BCE, making him likely the tradition's earliest historical figure\""
+            },
+            "note": "Roots: Pārśvanātha, the 23rd tīrthaṅkara."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-jainism",
+            "sourceLocation": "lead: \"Jainism has between four and five million followers\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "lead: \"residing mostly in India\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "christianity",
+      "name": "Christianity",
+      "kind": "theme",
+      "color": "#b23a48",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Christianity",
+      "ids": {
+        "wikidata": "Q5043"
+      },
+      "span": {
+        "start": 30,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 30,
+            "source": {
+              "sourceKey": "cojs-rise-of-christianity",
+              "sourceLocation": "Overview: \"He was later crucified by the Romans around 30 CE\""
+            }
+          },
+          {
+            "year": 50,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-christianity",
+              "sourceLocation": "lead: \"Christianity began in the 1st century, after the death of Jesus\""
+            },
+            "note": "Wikipedia: after the death of Jesus, as a Judaic sect."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-christianity",
+            "sourceLocation": "lead: \"It is the world's largest and most widespread religion\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-christianity",
+              "sourceLocation": "History: \"Christianity originated as a Jewish movement in Judaea during the 1st century AD\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "islam",
+      "name": "Islam",
+      "kind": "theme",
+      "color": "#2e8b57",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Islam",
+      "ids": {
+        "wikidata": "Q432"
+      },
+      "span": {
+        "start": 610,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 610,
+            "source": {
+              "sourceKey": "wp-islam",
+              "sourceLocation": "History: \"The religion of Islam originated in Mecca c. 610 CE\""
+            }
+          },
+          {
+            "year": 610,
+            "source": {
+              "sourceKey": "palomar-muhammad-islam",
+              "sourceLocation": "Chapter Two: \"In 610 CE, an event would occur that would alter the trajectory of world history\""
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-islam",
+            "sourceLocation": "Demographics: \"Islam is the world's second-largest religious population after Christianity\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-islam",
+              "sourceLocation": "History: \"The religion of Islam originated in Mecca\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "norse-religion",
+      "name": "Old Norse religion",
+      "kind": "theme",
+      "color": "#4f6d8f",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Old_Norse_religion",
+      "ids": {
+        "wikidata": "Q121617"
+      },
+      "span": {
+        "start": 200,
+        "circa": true,
+        "end": 1100,
+        "startDates": [
+          {
+            "year": 200,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-proto-norse-language",
+              "sourceLocation": "Inscriptions: \"There are about 260 of these inscriptions in Proto-Norse, the earliest dating to the 2nd century\""
+            },
+            "note": "Dated by proxy: Old Norse religion took shape in the Proto-Norse period, whose earliest inscriptions are from the 2nd century. Single source (flagged for Kevin)."
+          },
+          {
+            "year": -499,
+            "source": {
+              "sourceKey": "wp-old-norse-religion",
+              "sourceLocation": "Origins: \"is believed to have died out around 500 BCE\""
+            },
+            "note": "Roots: the Bronze Age belief system, some of whose motifs reappear in the Iron Age."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1100,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-old-norse-religion",
+              "sourceLocation": "lead: \"By the 12th century, Old Norse religion had been replaced by Christianity\""
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "northern-europe",
+          "sources": [
+            {
+              "sourceKey": "wp-old-norse-religion",
+              "sourceLocation": "Terminology: \"the pre-Christian religions of Scandinavia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daoism",
+      "name": "Taoism (Daoism)",
+      "kind": "theme",
+      "color": "#3f8f8a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Taoism",
+      "ids": {
+        "wikidata": "Q9598"
+      },
+      "span": {
+        "start": 142,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 142,
+            "source": {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"The first instance of Taoism as a proper religious community is generally traced back to the Way of the Celestial Masters tradition founded in 142 CE\""
+            }
+          },
+          {
+            "year": 142,
+            "source": {
+              "sourceKey": "sep-daoism-religion",
+              "sourceLocation": "3.1 Tianshi dao: \"in 142 CE, according to the traditional date—to Zhang Daoling\""
+            },
+            "note": "Fabrizio Pregadio: the traditional date of the Celestial Masters' covenant."
+          },
+          {
+            "year": -449,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"The core of Taoist thought crystallized during the early Warring States period (c. 450)\""
+            },
+            "note": "Roots: the philosophical texts (the Zhuangzi, the Tao Te Ching), c. 450 BCE."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-taoism",
+            "sourceLocation": "lead: \"is a philosophical and religious tradition indigenous to China\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "china",
+          "sources": [
+            {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "lead: \"a philosophical and religious tradition indigenous to China\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -37570,6 +37910,15 @@
         "scholarly"
       ]
     },
+    "cojs-rise-of-christianity": {
+      "name": "Overview: The Rise of Christianity (circa 4 BCE-330 CE) (Center for Online Judaic Studies)",
+      "url": "https://cojs.org/?p=7106",
+      "author": "Center for Online Judaic Studies",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
     "conversation-ogundiran-ife": {
       "name": "Akinwumi Ogundiran (University of North Carolina at Charlotte), Nigeria's city of Ilé-Ifẹ̀ has survived and thrived for 1,000 years (The Conversation, 2023)",
       "url": "https://theconversation.com/nigerias-city-of-ile-if-has-survived-and-thrived-for-1-000-years-heres-how-204569",
@@ -37617,11 +37966,47 @@
         "scholarly"
       ]
     },
+    "palomar-muhammad-islam": {
+      "name": "Travis Ritt, Muhammad and Islam, c. 570-632 (The History of the Middle East, Palomar College)",
+      "url": "https://pressbooks.palomar.edu/historyofthemiddleeast/?p=26",
+      "author": "Travis Ritt",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
     "posen-bakhos-rise-of-torah": {
       "name": "Carol Bakhos, The Rise of Torah in Jewish Antiquity (The Posen Library of Jewish Culture and Civilization, Yale University Press)",
       "url": "https://www.posenlibrary.com/node/11663",
       "author": "Carol Bakhos",
       "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "sep-buddha": {
+      "name": "Mark Siderits, Buddha (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/buddha/",
+      "author": "Mark Siderits",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "sep-daoism-religion": {
+      "name": "Fabrizio Pregadio, Religious Daoism (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/daoism-religion/",
+      "author": "Fabrizio Pregadio",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "ucla-manas-mahavira": {
+      "name": "Mahavira (MANAS, South Asia, University of California, Los Angeles)",
+      "url": "https://southasia.ucla.edu/religions/gurus-saints/mahavira",
+      "author": "MANAS, UCLA",
+      "accessed": "2026-11-24",
       "tags": [
         "scholarly"
       ]
@@ -37646,6 +38031,38 @@
     "wp-ancient-greek-religion": {
       "name": "Ancient Greek religion (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ancient_Greek_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-buddhism": {
+      "name": "Buddhism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Buddhism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-christianity": {
+      "name": "Christianity (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Christianity",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-christianization-of-iceland": {
+      "name": "Christianization of Iceland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Christianization_of_Iceland",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-christianization-of-scandinavia": {
+      "name": "Christianization of Scandinavia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Christianization_of_Scandinavia",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -37707,6 +38124,22 @@
         "wikipedia"
       ]
     },
+    "wp-islam": {
+      "name": "Islam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Islam",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jainism": {
+      "name": "Jainism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jainism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-judaism": {
       "name": "Judaism (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Judaism",
@@ -37718,6 +38151,14 @@
     "wp-mesoamerican-religion": {
       "name": "Mesoamerican religion (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Mesoamerican_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-old-norse-religion": {
+      "name": "Old Norse religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Old_Norse_religion",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -37739,6 +38180,14 @@
         "wikipedia"
       ]
     },
+    "wp-proto-norse-language": {
+      "name": "Proto-Norse language (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Proto-Norse_language",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-second-temple-judaism": {
       "name": "Second Temple Judaism (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Second_Temple_Judaism",
@@ -37750,6 +38199,14 @@
     "wp-shinto": {
       "name": "Shinto (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-taoism": {
+      "name": "Taoism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taoism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -38288,7 +38745,8 @@
       "descr": "In 750 the Abbasids topple Caliph Marwan II, and most members of the Umayyad family are killed.",
       "start": 750,
       "tracks": [
-        "caliphate"
+        "caliphate",
+        "islam"
       ],
       "sources": [
         {
@@ -38829,7 +39287,8 @@
       "start": 1324,
       "end": 1326,
       "tracks": [
-        "mali-empire"
+        "mali-empire",
+        "islam"
       ],
       "sources": [
         {
@@ -39465,7 +39924,8 @@
       "descr": "Under Byzantium's strong cultural influence, Bulgaria adopts Christianity.",
       "start": 864,
       "tracks": [
-        "bulgaria"
+        "bulgaria",
+        "christianity"
       ],
       "sources": [
         {
@@ -45465,7 +45925,8 @@
       "descr": "",
       "start": 988,
       "tracks": [
-        "kievan-rus"
+        "kievan-rus",
+        "christianity"
       ],
       "sources": [
         {
@@ -49579,7 +50040,8 @@
       "descr": "Volga Bulgaria adopts Islam as its state religion, 66 years before the Christianization of Kievan Rus'.",
       "start": 922,
       "tracks": [
-        "volga-bulgaria"
+        "volga-bulgaria",
+        "islam"
       ],
       "sources": [
         {
@@ -54984,7 +55446,8 @@
       "descr": "",
       "start": 1030,
       "tracks": [
-        "takrur"
+        "takrur",
+        "islam"
       ],
       "sources": [
         {
@@ -55365,7 +55828,8 @@
       "descr": "",
       "start": 1491,
       "tracks": [
-        "kingdom-of-kongo"
+        "kingdom-of-kongo",
+        "christianity"
       ],
       "sources": [
         {
@@ -119693,6 +120157,245 @@
             {
               "sourceKey": "wp-hawaiian-religion",
               "sourceLocation": "Kapu: \"Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "vikramashila",
+      "title": "Vikramashila founded",
+      "descr": "The Pala king Dharmapala founds Vikramashila, a monastic university that grows as powerful as Nalanda.",
+      "start": 783,
+      "circa": true,
+      "tracks": [
+        "buddhism",
+        "pala-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-buddhism",
+          "sourceLocation": "Mahāyāna: \"Vikramashila (established under Dharmapala c. 783 to 820)\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "Mahāyāna: \"Vikramashila (established under Dharmapala c. 783 to 820)\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-buddhism",
+              "sourceLocation": "Mahāyāna: \"Vikramashila (established under Dharmapala c. 783 to 820)\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ellora-jain-temples",
+      "title": "Jain temples at Ellora",
+      "descr": "The Yadava dynasty builds many temples at the Ellora caves.",
+      "start": 700,
+      "end": 1000,
+      "tracks": [
+        "jainism"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-jainism",
+          "sourceLocation": "History: \"The Yadava dynasty built many temples at the Ellora Caves between 700 and 1000 CE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"The Yadava dynasty built many temples at the Ellora Caves between 700 and 1000 CE\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "culture",
+          "sources": [
+            {
+              "sourceKey": "wp-jainism",
+              "sourceLocation": "History: \"The Yadava dynasty built many temples at the Ellora Caves between 700 and 1000 CE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "east-west-schism",
+      "title": "The East–West Schism",
+      "descr": "The Eastern Orthodox Church and the Catholic Church separate.",
+      "start": 1054,
+      "tracks": [
+        "christianity",
+        "eastern-roman"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-christianity",
+          "sourceLocation": "lead: \"the Eastern Orthodox Church and the Catholic Church separated in the East–West Schism in 1054\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-christianity",
+              "sourceLocation": "lead: \"the Eastern Orthodox Church and the Catholic Church separated in the East–West Schism in 1054\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "tafsir-al-tabari",
+      "title": "The Tafsir al-Tabari",
+      "descr": "Al-Tabari completes the first commentary on the Quran, one of the most cited in Sunni Islam.",
+      "start": 900,
+      "circa": true,
+      "tracks": [
+        "islam",
+        "caliphate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-islam",
+          "sourceLocation": "Classical era: \"In the 9th century, Al-Tabari completed the first commentary of the Quran\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-islam",
+              "sourceLocation": "Classical era: \"In the 9th century, Al-Tabari completed the first commentary of the Quran\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-islam",
+              "sourceLocation": "Classical era: \"In the 9th century, Al-Tabari completed the first commentary of the Quran\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "iceland-christianized",
+      "title": "Iceland adopts Christianity",
+      "descr": "The Althing, Iceland's parliament, makes Christianity the official religion of Iceland.",
+      "start": 1000,
+      "tracks": [
+        "norse-religion",
+        "iceland"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-christianization-of-iceland",
+          "sourceLocation": "lead: \"Iceland was legally Christianized in the year 1000 CE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-christianization-of-iceland",
+              "sourceLocation": "lead: \"Iceland was legally Christianized in the year 1000 CE\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "law",
+          "sources": [
+            {
+              "sourceKey": "wp-christianization-of-iceland",
+              "sourceLocation": "lead: \"Iceland was legally Christianized in the year 1000 CE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "scandinavian-archdioceses",
+      "title": "Lund becomes the first Scandinavian archdiocese",
+      "descr": "Denmark gets its own archdiocese, answering to the pope; Norway and Sweden follow in 1154 and 1164.",
+      "start": 1104,
+      "tracks": [
+        "norse-religion",
+        "denmark"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-christianization-of-scandinavia",
+          "sourceLocation": "lead: \"The realms of Denmark, Norway and Sweden established their own archdioceses, responsible directly to the pope, in 1104, 1154 and 1164, respectively.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-christianization-of-scandinavia",
+              "sourceLocation": "lead: \"The realms of Denmark, Norway and Sweden established their own archdioceses, responsible directly to the pope, in 1104, 1154 and 1164, respectively.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "xuanzong-taoism",
+      "title": "Emperor Xuanzong reshapes court ritual on Taoist lines",
+      "descr": "The Tang emperor Xuanzong, a devoted Taoist, writes Taoist works and reorganises imperial rituals on Taoist forms.",
+      "start": 712,
+      "end": 755,
+      "tracks": [
+        "daoism",
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-taoism",
+          "sourceLocation": "History: \"Emperor Xuanzong (r. 712–755) was also a devoted Taoist\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-taoism",
+              "sourceLocation": "History: \"Emperor Xuanzong (r. 712–755) was also a devoted Taoist\""
             }
           ]
         }

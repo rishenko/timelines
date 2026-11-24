@@ -4,7 +4,7 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 `npm run data -- importance` and `run-all`. Written by `node scripts/row-links.ts ancient-classical`; see
 `docs/data-format.md` (tracks: `url`, `ids`) and the rules in `docs/development.md` ("Row links").
 
-353 rows linked, 29 without a link, 0 undecided.
+360 rows linked, 29 without a link, 0 undecided.
 
 ## Without a link
 
@@ -395,3 +395,10 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 | Tengrism (`tengrism`) | [Tengrism](https://en.wikipedia.org/wiki/Tengrism) · [Q837605](https://www.wikidata.org/wiki/Q837605) |
 | Hawaiian religion (`hawaiian-religion`) | [Hawaiian religion](https://en.wikipedia.org/wiki/Hawaiian_religion) · [Q503089](https://www.wikidata.org/wiki/Q503089) |
 | Mesoamerican religion (`mesoamerican-religion`) | [Mesoamerican religion](https://en.wikipedia.org/wiki/Mesoamerican_religion) · [Q6105119](https://www.wikidata.org/wiki/Q6105119) |
+| Buddhism (`buddhism`) | [Buddhism](https://en.wikipedia.org/wiki/Buddhism) · [Q748](https://www.wikidata.org/wiki/Q748) |
+| Jainism (`jainism`) | [Jainism](https://en.wikipedia.org/wiki/Jainism) · [Q9232](https://www.wikidata.org/wiki/Q9232) |
+| Christianity (`christianity`) | [Christianity](https://en.wikipedia.org/wiki/Christianity) · [Q5043](https://www.wikidata.org/wiki/Q5043) |
+| Islam (`islam`) | [Islam](https://en.wikipedia.org/wiki/Islam) · [Q432](https://www.wikidata.org/wiki/Q432) |
+| Ancient Mesopotamian religion (`mesopotamian-religion`) | [Ancient Mesopotamian religion](https://en.wikipedia.org/wiki/Ancient_Mesopotamian_religion) · [Q21028568](https://www.wikidata.org/wiki/Q21028568) |
+| Old Norse religion (`norse-religion`) | [Old Norse religion](https://en.wikipedia.org/wiki/Old_Norse_religion) · [Q121617](https://www.wikidata.org/wiki/Q121617) |
+| Taoism (Daoism) (`daoism`) | [Taoism](https://en.wikipedia.org/wiki/Taoism) · [Q9598](https://www.wikidata.org/wiki/Q9598) |

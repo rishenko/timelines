@@ -83,8 +83,11 @@ export function About({ search = window.location.search, pathname = window.locat
           on Ilé-Ifẹ̀ (The Conversation), the Biblical Archaeology Society on Yonatan Adler’s work, Jan N. Bremmer’s
           Greek Religion (Cambridge University Press), the Journal of Daesoon Thought and the Religions of East Asia on
           Caodaism, the U.S. National Library of Medicine’s Native Voices on the end of the Hawaiian kapu (1819), the U.S. National
-          Park Service on the settling of Hawaiʻi, Jean-Paul Roux in the Encyclopedia of Religion on Tengri, and the
-          Australian Museum’s ancient Egyptian timeline.
+          Park Service on the settling of Hawaiʻi, Jean-Paul Roux in the Encyclopedia of Religion on Tengri, the
+          Australian Museum’s ancient Egyptian timeline, Mark Siderits on the Buddha and Fabrizio Pregadio on
+          religious Daoism (Stanford Encyclopedia of Philosophy), MANAS (UCLA) on Mahavira, Eugene Webb (University of Washington) on Mesopotamian religion, the
+          University of Hamburg’s Centre for the Study of Manuscript Cultures on the end of cuneiform, the Center for Online
+          Judaic Studies on early Christianity, and Travis Ritt’s History of the Middle East (Palomar College) on Islam.
         </li>
         <li>
           <strong>Natural Earth</strong>: the land on the event maps.

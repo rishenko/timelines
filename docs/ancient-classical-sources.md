@@ -170,3 +170,8 @@ Hinduism's row). Every quote is checked against the Wikipedia dump or a cached s
 (ended traditions, each with its sourced end and end claims), Tengrism, Hawaiian religion (its faded start reaches back
 to 500 CE) and Mesoamerican religion. A thematic group shares events with every region, so the row-proximity test
 leaves it out.
+
+**Batch 3 (24 November 2026):** Buddhism, Jainism, Taoism (from the Celestial Masters, 142 CE), Christianity and Islam (living traditions, each citing that it
+still exists), Ancient Mesopotamian religion (ended; its end claims include the latest known cuneiform text, 75 CE)
+and Old Norse religion (its start dated by proxy from the earliest Proto-Norse inscriptions, a single source flagged
+for review). Islam's row starts in 610, inside this timeline's range, so it shows here with the Hijrah.

@@ -10805,6 +10805,90 @@
           }
         ]
       }
+    ],
+    "buddhism": [
+      {
+        "facet": "geography",
+        "value": "gangetic-plain",
+        "sources": [
+          {
+            "sourceKey": "wp-buddhism",
+            "sourceLocation": "lead: \"It originated in the eastern Gangetic plain\""
+          }
+        ]
+      }
+    ],
+    "jainism": [
+      {
+        "facet": "geography",
+        "value": "south-asia",
+        "sources": [
+          {
+            "sourceKey": "wp-jainism",
+            "sourceLocation": "lead: \"residing mostly in India\""
+          }
+        ]
+      }
+    ],
+    "christianity": [
+      {
+        "facet": "geography",
+        "value": "levant",
+        "sources": [
+          {
+            "sourceKey": "wp-christianity",
+            "sourceLocation": "History: \"Christianity originated as a Jewish movement in Judaea during the 1st century AD\""
+          }
+        ]
+      }
+    ],
+    "islam": [
+      {
+        "facet": "geography",
+        "value": "arabia",
+        "sources": [
+          {
+            "sourceKey": "wp-islam",
+            "sourceLocation": "History: \"The religion of Islam originated in Mecca\""
+          }
+        ]
+      }
+    ],
+    "mesopotamian-religion": [
+      {
+        "facet": "geography",
+        "value": "mesopotamia",
+        "sources": [
+          {
+            "sourceKey": "wp-ancient-mesopotamian-religion",
+            "sourceLocation": "lead: \"practices of the civilizations of ancient Mesopotamia\""
+          }
+        ]
+      }
+    ],
+    "norse-religion": [
+      {
+        "facet": "geography",
+        "value": "northern-europe",
+        "sources": [
+          {
+            "sourceKey": "wp-old-norse-religion",
+            "sourceLocation": "Terminology: \"the pre-Christian religions of Scandinavia\""
+          }
+        ]
+      }
+    ],
+    "daoism": [
+      {
+        "facet": "geography",
+        "value": "china",
+        "sources": [
+          {
+            "sourceKey": "wp-taoism",
+            "sourceLocation": "lead: \"a philosophical and religious tradition indigenous to China\""
+          }
+        ]
+      }
     ]
   }
 }

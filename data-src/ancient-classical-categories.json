@@ -971,6 +971,9 @@
   "copan-dynasty": [
    "founded"
   ],
+  "council-of-nicaea": [
+   "religion"
+  ],
   "crisis-third-century": [
    "conflict"
   ],
@@ -1044,6 +1047,9 @@
   ],
   "diadochi": [
    "war"
+  ],
+  "digambara-svetambara-schism": [
+   "religion"
   ],
   "dilmun-height": [
    "golden-age"
@@ -1153,6 +1159,10 @@
   "end-roman-britain": [
    "dissolved",
    "invasion"
+  ],
+  "enuma-elish": [
+   "religion",
+   "text"
   ],
   "eridu": [
    "founded",
@@ -1409,6 +1419,9 @@
   ],
   "hassuna": [
    "horizon"
+  ],
+  "hathigumpha-inscription": [
+   "religion"
   ],
   "hatshepsut": [
    "reign"
@@ -1776,6 +1789,9 @@
   "last-ancient-olympics": [
    "religion"
   ],
+  "last-cuneiform-text": [
+   "religion"
+  ],
   "latin-league": [
    "alliance",
    "dissolved"
@@ -1818,6 +1834,10 @@
   ],
   "linear-elamite": [
    "culture"
+  ],
+  "lingbao-scriptures": [
+   "religion",
+   "text"
   ],
   "lingling-o": [
    "find"
