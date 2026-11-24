@@ -6,7 +6,7 @@
   {"title": "Castle Bravo", "article": "Castle Bravo", "first": "nuclear-test", "never": ["industrial", "accident"], "why": "'Nuclear accidents and incidents' comes first among its categories"},
   {"title": "Beirut port explosion", "article": "2020 Beirut explosion", "first": "accident", "never": ["transport", "nuclear-test"], "why": "its maritime categories"},
   {"title": "Storegga Slide", "article": "Storegga Slide", "first": "mass-movement", "never": ["text"], "why": "a cascade keeps the trigger (the slide) first, the tsunami second"},
-  {"title": "Balfour Declaration", "article": "Balfour Declaration", "never": ["text"], "why": "infobox document: a policy letter"},
+  {"title": "Balfour Declaration", "article": "Balfour Declaration", "never": ["text", "charter"], "why": "infobox document: a policy letter, not a charter"},
   {"title": "Domesday Book", "article": "Domesday Book", "never": ["text"], "why": "infobox manuscript: a survey record"},
   {"title": "Peace of Westphalia", "article": "Peace of Westphalia", "first": "treaty", "never": ["text"], "why": "a plain treaty stays a Treaty"}
  ]

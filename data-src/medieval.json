@@ -850,6 +850,30 @@
             "broader": [
               "human-caused"
             ]
+          },
+          "scripture": {
+            "name": "Scripture or religious text",
+            "broader": [
+              "text"
+            ]
+          },
+          "law-code": {
+            "name": "Law code",
+            "broader": [
+              "text"
+            ]
+          },
+          "charter": {
+            "name": "Charter, constitution or declaration",
+            "broader": [
+              "text"
+            ]
+          },
+          "classic": {
+            "name": "Epic or classic",
+            "broader": [
+              "text"
+            ]
           }
         }
       }
@@ -23405,7 +23429,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-holy-roman-empire",
@@ -25060,7 +25084,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "law-code",
           "sources": [
             {
               "sourceKey": "wp-serbian-empire",
@@ -26927,7 +26951,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -26954,7 +26978,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -27396,7 +27420,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "founded",
           "sources": [
             {
               "sourceKey": "wp-state-of-the-teutonic-order",
@@ -27406,7 +27430,7 @@
         },
         {
           "facet": "category",
-          "value": "founded",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-state-of-the-teutonic-order",
@@ -27604,7 +27628,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-old-swiss-confederacy",
@@ -27867,7 +27891,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-republic-of-venice",
@@ -30086,7 +30110,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-england",
@@ -30768,7 +30792,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "law-code",
           "sources": [
             {
               "sourceKey": "wp-kievan-rus",
