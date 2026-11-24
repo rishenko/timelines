@@ -124,7 +124,7 @@ def check():
                 pages[article] = traditions.render(p['text']) + ' ' + re.sub(r'\s+', ' ', raw)
         return re.sub(r'\s+', ' ', quote) in pages[article]
 
-    for e in L['events']:
+    for e in L['events'] + [{'uuid': x['uuid'], 'source': (x.get('more') or x['claims'])[0], 'more': x.get('more', [])[1:], 'claims': x.get('claims', [])} for x in L.get('enrich', [])]:
         for q in [e['source']] + e.get('more', []) + e.get('claims', []):
             n += 1
             if not has(q['article'], q['quote']):

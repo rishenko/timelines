@@ -47503,6 +47503,10 @@
         {
           "sourceKey": "wp-nok",
           "sourceLocation": "lead and Iron metallurgy"
+        },
+        {
+          "sourceKey": "wp-iron-metallurgy-in-africa",
+          "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
         }
       ],
       "startDates": [
@@ -47521,6 +47525,41 @@
             "sourceKey": "wp-nok",
             "sourceLocation": "Iron metallurgy ('in the 9th century BCE or 8th century BCE')"
           }
+        },
+        {
+          "year": -724,
+          "margin": 175,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
+          },
+          "note": "The Iron metallurgy in Africa article: \"between the 9th century BCE and 550 BCE\"."
+        },
+        {
+          "year": -2499,
+          "margin": 750,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC\""
+          },
+          "note": "Contested: the article's range for West and Central Africa, 2500–1000 BC, not the mainstream line."
+        },
+        {
+          "year": -2544,
+          "margin": 90,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"Iron metallurgical development occurred 2631 BCE – 2458 BCE at Lejja, in Nigeria\""
+          },
+          "note": "Contested: Lejja, Nigeria."
+        },
+        {
+          "year": -1999,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"At Oboui they excavated an undated iron forge yielding eight consistent radiocarbon dates of 2000 BCE\""
+          },
+          "note": "Contested: Oboui, Central African Republic; the article reports Bernard Clist's argument that the site is highly disturbed."
         }
       ],
       "importance": 1,
@@ -94827,70 +94866,6 @@
             {
               "sourceKey": "wp-crab-claw-sail",
               "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
-      "uuid": "iron-metallurgy-nok",
-      "title": "Iron metallurgy may have developed independently in the Nok culture",
-      "descr": "Iron metallurgy may have developed independently in the Nok culture of Nigeria, between the 9th century BCE and 550 BCE. The article also lists earlier dates, contested: Lejja in Nigeria (2631–2458 BCE) and Oboui in the Central African Republic (c. 2000 BCE).",
-      "start": -899,
-      "end": -549,
-      "tracks": [
-        "nok"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-iron-metallurgy-in-africa",
-          "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
-        }
-      ],
-      "startDates": [
-        {
-          "year": -899,
-          "source": {
-            "sourceKey": "wp-iron-metallurgy-in-africa",
-            "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
-          }
-        },
-        {
-          "year": -2499,
-          "margin": 750,
-          "source": {
-            "sourceKey": "wp-iron-metallurgy-in-africa",
-            "sourceLocation": "lead: \"the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC\""
-          },
-          "note": "Contested: the article's range for West and Central Africa, 2500–1000 BC, not the mainstream line."
-        },
-        {
-          "year": -2544,
-          "margin": 90,
-          "source": {
-            "sourceKey": "wp-iron-metallurgy-in-africa",
-            "sourceLocation": "Origins and spread in Africa: \"Iron metallurgical development occurred 2631 BCE – 2458 BCE at Lejja, in Nigeria\""
-          },
-          "note": "Contested: Lejja, Nigeria."
-        },
-        {
-          "year": -1999,
-          "source": {
-            "sourceKey": "wp-iron-metallurgy-in-africa",
-            "sourceLocation": "Origins and spread in Africa: \"At Oboui they excavated an undated iron forge yielding eight consistent radiocarbon dates of 2000 BCE\""
-          },
-          "note": "Contested: Oboui, Central African Republic; the article reports Bernard Clist's argument that the site is highly disturbed."
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invention",
-          "sources": [
-            {
-              "sourceKey": "wp-iron-metallurgy-in-africa",
-              "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
             }
           ]
         }

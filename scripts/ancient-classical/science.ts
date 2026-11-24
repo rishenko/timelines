@@ -24,7 +24,7 @@ const claim = (c: Claim) => C(yr(c.year), L.sources[c.article], `${c.section}: "
 
 const ed = open('data-src/ancient-classical.json', '2026-11-24');
 // events this script wrote under an earlier id (the iron event was first headlined on the contested 2500–1000 BCE line)
-const RETIRED = new Set(['iron-metallurgy-west-central-africa']);
+const RETIRED = new Set(['iron-metallurgy-west-central-africa', 'iron-metallurgy-nok']);
 ed.data.events = ed.data.events.filter((e: { uuid: string }) => !RETIRED.has(e.uuid));
 const here = new Set(ed.data.tracks.map((t: { id: string }) => t.id));
 const used = new Set<string>();
@@ -45,6 +45,21 @@ for (const e of L.events.filter((x) => x.start < END)) {
     ...(claims.length ? { startDates: claims } : {}),
   });
   for (const q of [e.source, ...(e.more ?? []), ...(e.claims ?? [])]) used.add(q.article);
+}
+// existing events that get more sources and date claims (an `enrich` entry: the Nok culture's iron event): added once, never replaced
+for (const en of (L as unknown as { enrich?: { uuid: string; more?: Q[]; claims?: Claim[] }[] }).enrich ?? []) {
+  const ev = ed.data.events.find((e: { uuid: string }) => e.uuid === en.uuid);
+  if (!ev) throw new Error(`science.json enrich: no event ${en.uuid}`);
+  for (const q of en.more ?? []) {
+    const r = ref(q);
+    if (!ev.sources.some((s: { sourceKey: string; sourceLocation: string }) => s.sourceKey === r.sourceKey && s.sourceLocation === r.sourceLocation)) ev.sources.push(r);
+  }
+  for (const c of en.claims ?? []) {
+    const added = claim(c);
+    const loc = (x: { source: { sourceKey: string; sourceLocation: string } }) => `${x.source.sourceKey}|${x.source.sourceLocation}`;
+    if (!(ev.startDates ?? []).some((x: { source: { sourceKey: string; sourceLocation: string } }) => loc(x) === loc(added))) (ev.startDates ??= []).push(added);
+  }
+  for (const q of [...(en.more ?? []), ...(en.claims ?? [])]) used.add(q.article);
 }
 for (const a of [...used].sort()) ed.wikipedia(L.sources[a], a, a.replaceAll(' ', '_'));
 ed.save();

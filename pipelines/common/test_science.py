@@ -81,8 +81,8 @@ class List(unittest.TestCase):
             ov = json.load(open(os.path.join(REPO, 'pipelines', f, 'categories.json')))
             self.assertEqual({e['uuid'] for e in L['events']} & set(ov), set(), tl)
 
-    def test_there_are_33_events_and_none_is_the_east_baray(self):
-        self.assertEqual(len(L['events']), 33)
+    def test_there_are_32_events_and_none_is_the_east_baray(self):
+        self.assertEqual(len(L['events']), 32)
         self.assertNotIn('east-baray', {e['uuid'] for e in L['events']})
 
 
