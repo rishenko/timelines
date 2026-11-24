@@ -1,5 +1,5 @@
 import { useState, type Dispatch } from 'react';
-import { draftKey, parseUpload, uploadError, type DatasetAction } from './dataset.ts';
+import { parseUpload, saveReplaceDraft, uploadError, type DatasetAction } from './dataset.ts';
 import { addToLibrary, entrySummary, fetchTimeline, removeFromLibrary, type LibraryEntry } from './library.ts';
 import {
   collectionName,
@@ -59,7 +59,7 @@ export function useLibraryActions(opts: {
     // (a newer-format notice is shown when the timeline opens, since the page loads again: Boot)
     if (timelines.some((t) => t.entry && t.summary.id === id)) {
       // a whole file for another of the site's timelines: that timeline applies it in full (see restoreDraft)
-      localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
+      saveReplaceDraft(id, dataset, timelines.find((t) => t.summary.id === id)!.summary.title);
       goToTimeline(id);
       return;
     }
