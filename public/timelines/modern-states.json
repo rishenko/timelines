@@ -274,6 +274,12 @@
               "society"
             ]
           },
+          "text": {
+            "name": "Foundational text",
+            "broader": [
+              "society"
+            ]
+          },
           "culture": {
             "name": "Culture and learning",
             "broader": [
@@ -85059,7 +85065,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-palestine",
@@ -95227,6 +95233,16 @@
               "sourceLocation": "infobox: Declaration (4 July 1776)"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-united-states",
+              "sourceLocation": "infobox: Declaration (4 July 1776)"
+            }
+          ]
         }
       ]
     },
@@ -95247,7 +95263,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-united-states",
@@ -99669,7 +99685,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-venezuela",
@@ -99819,7 +99835,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-argentina",
@@ -99944,6 +99960,16 @@
         {
           "facet": "category",
           "value": "independence",
+          "sources": [
+            {
+              "sourceKey": "wp-chile",
+              "sourceLocation": "infobox: Declared (12 February 1818)"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-chile",
@@ -115305,7 +115331,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-united-tribes-of-new-zealand",

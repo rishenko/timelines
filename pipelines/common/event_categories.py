@@ -195,8 +195,9 @@ INFOBOX = [
     (R(r'^(archaeological site|ancient site|archaeological culture)$'), 'archaeology'),
     (R(r'^(writing system|script)$'), 'culture'),
     (R(r'^(religious building|christian leader|council)$'), 'religion'),
-    (R(r'^(religious text|book|poem|literary work|written work|manuscript|document)$'), 'text'),
-    (R(r'^(legislation|constitution)$'), 'law'),
+    # (not "document" or "manuscript": policy letters and records use them too, e.g. the Balfour Declaration, Domesday Book)
+    (R(r'^(religious text|book|poem|literary work|written work)$'), 'text'),
+    (R(r'^(legislation|constitution|document)$'), 'law'),
 ]
 CATEGORY = [
     (R(r'\b(scientific|astronomical|mathematical|chemical) discoveries\b|\bdiscoveries by\b'), 'discovery'),

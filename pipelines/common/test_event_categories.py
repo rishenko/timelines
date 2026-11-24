@@ -136,6 +136,26 @@ class FoundationalText(unittest.TestCase):
     def test_a_plain_treaty_stays_a_treaty(self):
         self.assertEqual(cats('Treaty of Paris', ['egypt']), ['treaty'])
 
+    def test_only_text_infoboxes_count(self):
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'religious text')[0], 'text')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'document')[0], 'law')
+        self.assertIsNone(ec.first_match(ec.INFOBOX, 'manuscript'))
+
+    def test_the_register_is_not_evidence(self):
+        self.assertIsNone(ec.first_match(ec.CATEGORY, 'Memory of the World Register'))
+        self.assertEqual(ec.first_match(ec.CATEGORY, 'Medieval legal codes')[0], 'text')
+
+    def test_the_mapping_table_names_the_value(self):
+        import json
+        table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'text_classes.json')))
+        self.assertEqual(table['text']['name'], ec.facet()['values']['text']['name'])
+        for k, f in table['families'].items():
+            self.assertTrue(f['wikidata'] and all(q.startswith('Q') for q in f['wikidata']), k)
+
+    def test_known_negatives_on_title_evidence(self):
+        import known_negatives
+        self.assertEqual(known_negatives.failures(None), [])
+
 
 class Famines(unittest.TestCase):
     """A famine caused mainly by policy or war is not a natural disaster (Kevin, 2026-11-23)."""

@@ -1,0 +1,15 @@
+{
+ "_note": "Foundational text (Kevin, 2026-11-23): the sub-kind 'text' of society, in pipelines/common/event_categories.py (VOCAB 'society', TEXT_ID, the INFOBOX and CATEGORY rules). The class is Wikidata's 'foundational text' (Q3519366). Each family below is a kind of text the classifier recognises, with the Wikidata class it matches (labels checked against Wikidata, 2026-11-23) and the evidence the classifier reads for it. UNESCO's Memory of the World register (Q16024238) is cited as a reference for which documents count as world heritage, but it is not evidence: it also lists archives about events (the Nanjing Massacre) and scripts. Facet values have no ids field, so the ids live here, not in the timelines.",
+ "text": {"name": "Foundational text", "wikidata": ["Q3519366"], "reference": ["Q16024238"]},
+ "families": {
+  "scripture": {"name": "Scripture or religious text", "wikidata": ["Q179461"], "evidence": "titles (Vedas, Bible, Qur'an, Torah, Tripitaka, Avesta, Guru Granth Sahib…); infobox 'religious text'; categories 'religious texts', 'scriptures', 'sacred texts'"},
+  "law-code": {"name": "Law code", "wikidata": ["Q922203"], "evidence": "titles ('Code of …', 'Laws of …', Corpus Juris, Arthashastra, Manusmriti); categories 'law codes', 'legal codes'"},
+  "charter": {"name": "Charter, constitution or declaration", "wikidata": ["Q727002", "Q7755", "Q1464916"], "evidence": "titles (Magna Carta, 'Charter of …', 'Constitution of …', 'Declaration of Independence', 'Declaration of the Rights'); category 'charters'. A text that makes a state or declares independence keeps that act as its main category, with Foundational text second; a plain treaty stays Treaty."},
+  "epic-or-classic": {"name": "Epic or classic", "wikidata": ["Q37484", "Q576921", "Q7725634"], "evidence": "titles (Gilgamesh, Mahabharata, Iliad, Shahnameh, Analects, Kojiki, Popol Vuh…); infoboxes 'book', 'poem', 'literary work', 'written work'; categories 'epic poems', 'Chinese classic texts'"}
+ },
+ "not_evidence": {
+  "infobox document": "policy letters and declarations (the Balfour Declaration) use it: stays Laws",
+  "infobox manuscript": "records and surveys (Domesday Book) use it",
+  "Memory of the World Register": "lists event archives and scripts too"
+ }
+}

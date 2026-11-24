@@ -228,6 +228,7 @@
           "society": { "name": "Religion, law and culture" },
           "religion": { "name": "Religion", "broader": ["society"] },
           "law": { "name": "Laws", "broader": ["society"] },
+          "text": { "name": "Foundational text", "broader": ["society"] },
           "culture": { "name": "Culture and learning", "broader": ["society"] },
           "economy": { "name": "Economy", "broader": ["society"] },
           "golden-age": { "name": "Golden age or high point", "broader": ["society"] },
@@ -15465,7 +15466,13 @@
       "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }],
       "links": [{ "to": "hammurabi-reign", "kind": "part-of" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }]
+        }
+      ]
     },
     {
       "uuid": "kanesh-karum-ii",

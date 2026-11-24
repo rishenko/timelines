@@ -22,6 +22,7 @@ gives them.
 | **category** | What kind of event it was: a **kind** or one of its **sub-kinds**. An event has up to two, the main one first (the file's `memberships` in the events facet). Filters → Categories filters by them. | type, tag, region |
 | **kind** | One of the eleven top-level categories (rulers, statehood, territory, cities and places, disasters, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and technology), each drawn as a **shape** before an event's title. | type, class |
 | **sub-kind** | A narrower category within a kind (a siege within wars and battles). Disasters have two levels of them: a cause (natural, human-caused), then a type (a flood, a transport accident). | subcategory, subtype |
+| **foundational text** | A sub-kind of religion, law and culture: a text marked as itself, such as a scripture, a law code, a charter or an epic (the Code of Hammurabi, Magna Carta). A law it brings in is still under Laws. | key text, classic, document |
 | **shape** | The small mark before an event's title that shows its main category's kind; the Legend lists them. | glyph, icon (in app text) |
 | **shared event** | One event on several rows, joined by a thread while selected. | |
 | **connection** | A historical link between events: leads to, part of, succeeds, conquers, related. | dependency |
