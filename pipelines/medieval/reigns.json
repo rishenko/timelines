@@ -38020,7 +38020,7 @@
   },
   {
    "uuid": "reign-s-leyman-elebi-ottoman-empire",
-   "title": "Reign of Süleyman Çelebi",
+   "title": "Claim of Süleyman Çelebi",
    "start": 1402,
    "end": 1411,
    "endMonth": 2,
@@ -38028,7 +38028,7 @@
    "tracks": [
     "ottoman-empire"
    ],
-   "descr": "Rules as head of state of Ottoman Empire from 1402 to 17 February 1411 (9 years).",
+   "descr": "Claims the throne of Ottoman Empire from 1402 to 17 February 1411 (9 years).",
    "sources": [
     {
      "sourceKey": "wp-s-leyman-elebi",
@@ -38051,7 +38051,7 @@
   },
   {
    "uuid": "reign-i-sa-elebi-ottoman-empire",
-   "title": "Reign of İsa Çelebi",
+   "title": "Claim of İsa Çelebi",
    "start": 1403,
    "startMonth": 1,
    "end": 1403,
@@ -38059,7 +38059,7 @@
    "tracks": [
     "ottoman-empire"
    ],
-   "descr": "Rules as head of state of Ottoman Empire from January 1403 to March 1403.",
+   "descr": "Claims the throne of Ottoman Empire from January 1403 to March 1403.",
    "sources": [
     {
      "sourceKey": "wp-i-sa-elebi",
@@ -38082,7 +38082,7 @@
   },
   {
    "uuid": "reign-musa-elebi-ottoman-empire",
-   "title": "Reign of Musa Çelebi",
+   "title": "Claim of Musa Çelebi",
    "start": 1411,
    "startMonth": 2,
    "startDay": 17,
@@ -38092,7 +38092,7 @@
    "tracks": [
     "ottoman-empire"
    ],
-   "descr": "Rules as head of state of Ottoman Empire from 17 February 1411 to 5 July 1413 (2 years).",
+   "descr": "Claims the throne of Ottoman Empire from 17 February 1411 to 5 July 1413 (2 years).",
    "sources": [
     {
      "sourceKey": "wp-musa-elebi",
@@ -38305,7 +38305,7 @@
   },
   {
    "uuid": "reign-cem-sultan-ottoman-empire",
-   "title": "Reign of Cem Sultan",
+   "title": "Claim of Cem Sultan",
    "start": 1481,
    "startMonth": 5,
    "startDay": 28,
@@ -38315,7 +38315,7 @@
    "tracks": [
     "ottoman-empire"
    ],
-   "descr": "Rules as head of state of Ottoman Empire from 28 May 1481 to 20 June 1481.",
+   "descr": "Claims the throne of Ottoman Empire from 28 May 1481 to 20 June 1481.",
    "sources": [
     {
      "sourceKey": "wp-cem-sultan",
@@ -92809,7 +92809,8 @@
  "inputs": {
   "rulers.csv": "e0d37db661b35a00",
   "rulers-events.json": "b780fdc4875707bd",
-  "reigns-excluded.json": "0617240d9034430d",
+  "reigns-excluded.json": "c561def235161dde",
+  "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
 }

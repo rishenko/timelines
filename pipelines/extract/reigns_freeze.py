@@ -100,6 +100,8 @@ def partial_name_match(office, row_name):
     return hit
 
 
+CLAIMS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-claims.json')))
+CLAIM_UUIDS = {}  # uuid -> timeline, for the category pins below
 EXCLUDED = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-excluded.json')))
 
 
@@ -142,6 +144,29 @@ def existing_match(ev, person, by_row):
     return None
 
 
+CATEGORY_FILES = {'modern-states': 'modern-states', 'medieval': 'medieval', 'ancient-classical': 'ancient'}
+
+
+def pin_claims(timeline):
+    """Pins 'succession' for the claim events in the generator's reviewed overrides (pipelines/<generator>/categories.json),
+    which win over the classifier; entries for claims this freeze no longer has are removed. The rest of the file is kept
+    byte for byte (same text edit as pipelines/v2/emit.py)."""
+    path = os.path.join(ROOT, 'pipelines', CATEGORY_FILES[timeline], 'categories.json')
+    text = open(path).read()
+    mine = sorted(u for u, t in CLAIM_UUIDS.items() if t == timeline)
+    old = re.findall(r'"(reign-[^"]*)":\s*\["succession"\],?', text)
+    claims_all = {u for u in old if u not in mine}
+    for u in claims_all:  # removed claims
+        text = re.sub(r'\n\s*"' + re.escape(u) + r'":\s*\[[^\]]*\],?', '', text)
+    for u in mine:
+        text = re.sub(r'\n\s*"' + re.escape(u) + r'":\s*\[[^\]]*\],?', '', text)
+    text = re.sub(r',(\s*\})\s*$', r'\1', text.rstrip() + '\n')
+    compact = '": ["' in text
+    body = ''.join(',\n' + (f' "{u}": ["succession"]' if compact else f' "{u}": [\n  "succession"\n ]') for u in mine)
+    i = text.rstrip().rfind('}')
+    open(path, 'w').write(text[:i].rstrip() + body + '\n}\n')
+
+
 def inputs_of(d):
     """The hashes of what a freeze reads besides data-src: the bulk run's files, the hand exclusions and the Wikipedia dump."""
     import hashlib
@@ -149,7 +174,8 @@ def inputs_of(d):
     def sha(p):
         return hashlib.sha256(open(p, 'rb').read()).hexdigest()[:16]
     return {'rulers.csv': sha(os.path.join(d, 'rulers.csv')), 'rulers-events.json': sha(os.path.join(d, 'rulers-events.json')),
-            'reigns-excluded.json': sha(os.path.join(HERE, 'reigns-excluded.json')), 'wikipedia': RU.settings.DUMP_NAME}
+            'reigns-excluded.json': sha(os.path.join(HERE, 'reigns-excluded.json')),
+            'reigns-claims.json': sha(os.path.join(HERE, 'reigns-claims.json')), 'wikipedia': RU.settings.DUMP_NAME}
 
 
 def main():
@@ -307,6 +333,11 @@ def main():
             while uid in review:
                 uid, n = f"{base}-m{ev.get('startMonth') or 0}-{n}", n + 1
         ev = {k: v for k, v in dict(ev, uuid=uid).items() if not (k == 'importance' and v == 2)}  # 2 is the default
+        if r['person'] in CLAIMS.get(timeline, {}).get(r['row'], {}):
+            # a claimant, not a ruler: "Claim of X", described as a claim, category 'succession' (pinned after the loop)
+            ev['title'] = f"Claim of {r['person']}"
+            ev['descr'] = re.sub(r'^(Rules|Holds office) as head of state of ', 'Claims the throne of ', ev['descr'], count=1)
+            CLAIM_UUIDS[uid] = timeline
         keep.append(ev)
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
@@ -329,6 +360,7 @@ def main():
                      "pass --update to freeze the new ones and record their hashes")
     if '--check' not in sys.argv:
         open(path, 'w').write(text)
+        pin_claims(timeline)
     print(f"{timeline}: {len(keep)} reigns, {sum(1 for v in review.values() if v['toCheck'])} to check; dropped "
           f"{dict(dropped)}; two-date quotes {len(swapped)}; titles {dict(nouns)}; pinned matched {len(matched & pinned)} of {len(pinned)}"
           + (f" (unmatched: {', '.join(sorted(pinned - matched))})" if pinned - matched else '') + f" -> {path}")
