@@ -1,7 +1,7 @@
 # pipelines/v2: one harvest per kind, shared by all timelines
 
 The disasters pilot is the first kind built this way (design: the Workbench note "Timelines data pipeline v2 brief"). Big derived data
-stays out of the repo (`$TIMELINES_DATA/v2/candidates/`); everything that decides what ships is here.
+stays out of the repo (`$TIMELINES_DATA/v2/candidates/`); everything that decides what ships is here, with the trimmed emit inputs (`inputs/`: the fields and quotes `emit.py` reads, from `trim_inputs.py`), so `emit.py` runs from a checkout alone and CI proves the emitted files.
 
 | file | what it does |
 |---|---|
@@ -11,6 +11,7 @@ stays out of the repo (`$TIMELINES_DATA/v2/candidates/`); everything that decide
 | `places.json` | country (Wikidata QID) → the row that carries an event in each timeline |
 | `rules/disasters.json` | which timeline an event belongs to by year; importance by toll, VEI or magnitude (the low end of a range) |
 | `overrides/disasters.json` | reviewed calls, applied last, so reruns keep them (Hatepe's headline year) |
+| `inputs/` | the emit inputs, trimmed from the full harvest by `trim_inputs.py` (run after harvest, `consensus.py` and `build_places.py`): per candidate only the fields `emit.py` and `placement.py` read, Wikipedia date claims with their quotes (the emitted files cite them), measures without quotes (the collapsed-range check runs on the full ones during the trim); the two `.headline.json` files and `places.generated.json` as they are. `emit.py` reads the already-there events from the checkout's compiled timelines and stops if one is unreadable. CI step "Emitted files reproduce" runs both emitters and diffs `emitted/` |
 | `overrides/conflicts.json` | reviewed calls: `reject`, `set.startYear` (picks a quoted claim), or `set.start` / `set.end` = `{article, year, locator, quote}` for a reviewed year the harvest did not read; `check_override_quotes.py conflict` proves each quote is in the article (needs the dump); an event with no harvested start is skipped ("no quoted date") before overrides apply, so `set.start` can't rescue it |
 | `emit.py` | writes `emitted/disaster-<timeline>.json` (events and sources) and carries each event's type as a category membership; `pipelines/common/disaster_pins.py` reads those as a pinned layer (evidence "pinned: pipelines/v2/emitted/<file>"; it wins over the keyword classifier and never touches Kevin's reviewed `categories.json`); refuses a collapsed range |
 | `emit_merge.py` | merges an emitted file into a generator's dataset; `scripts/ancient-classical/disasters.ts` does the same for Ancient |

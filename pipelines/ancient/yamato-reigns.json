@@ -1,5 +1,5 @@
 {
- "note": "Frozen from pipelines/extract/rulers.py run on the Ancient row yamato (2026-11-24), with HEAD_OFFICES[('ancient-classical', 'yamato')] = ['Emperor of Japan'] (the head-office table is #141's). All 20 reigns the pass found; scripts/ancient-classical/yamato.ts applies the historical ones (no '(traditional)' in the infobox) unless TRADITIONAL is set (Kevin's call). Not found: Empress Kōgyoku (642–645), whose infobox has three spans and no Wikidata term (see #146's pick). Edit by re-running, not by hand.",
+ "note": "Frozen from pipelines/extract/rulers.py run on the Ancient row yamato (2026-11-24), with HEAD_OFFICES[('ancient-classical', 'yamato')] = ['Emperor of Japan'] (the head-office table is #141's). All 20 reigns the pass found; scripts/ancient-classical/yamato.ts applies the historical ones (no '(traditional)' in the infobox) unless TRADITIONAL is set (Kevin's call). Not found: Empress Kōgyoku (642–645), whose infobox has three spans and no Wikidata term (see #146's pick). Rebuild: pipelines/.venv/bin/python -I pipelines/extract/rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato (Yamato needs HEAD_OFFICES[('ancient-classical', 'yamato')], now in rulers.py); the run's rulers-events.json and rulers.csv are stored in pipelines/ancient/oneoff-inputs/ and `inputs` records its hash; test_oneoff_reigns.py proves each event here equals the stored run's. Edit by re-running, not by hand.",
  "events": [
   {
    "uuid": "reign-emperor-nintoku",
@@ -783,5 +783,9 @@
     "wikipedia"
    ]
   }
+ },
+ "inputs": {
+  "rulers-events.json": "20b79623659aa1a5",
+  "wikipedia": "enwiki-20261101"
  }
 }
