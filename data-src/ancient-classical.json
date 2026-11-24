@@ -17896,7 +17896,21 @@
       "tags": ["wikipedia"],
       "accessed": "2026-11-24"
     },
-    "wp-zhang-heng": { "name": "Wikipedia: Zhang Heng", "url": "https://en.wikipedia.org/wiki/Zhang_Heng", "tags": ["wikipedia"], "accessed": "2026-11-24" }
+    "wp-zhang-heng": { "name": "Wikipedia: Zhang Heng", "url": "https://en.wikipedia.org/wiki/Zhang_Heng", "tags": ["wikipedia"], "accessed": "2026-11-24" },
+    "wp-austronesian-peoples": {
+      "name": "Wikipedia: Austronesian peoples",
+      "url": "https://en.wikipedia.org/wiki/Austronesian_peoples",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
+    },
+    "wp-crab-claw-sail": { "name": "Wikipedia: Crab claw sail", "url": "https://en.wikipedia.org/wiki/Crab_claw_sail", "tags": ["wikipedia"], "accessed": "2026-11-24" },
+    "wp-iron-metallurgy-in-africa": {
+      "name": "Wikipedia: Iron metallurgy in Africa",
+      "url": "https://en.wikipedia.org/wiki/Iron_metallurgy_in_Africa",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
+    },
+    "wp-nixtamalization": { "name": "Wikipedia: Nixtamalization", "url": "https://en.wikipedia.org/wiki/Nixtamalization", "tags": ["wikipedia"], "accessed": "2026-11-24" }
   },
   "tags": {
     "wikipedia": { "name": "Wikipedia" },
@@ -43248,6 +43262,69 @@
               "sourceLocation": "lead: \"composed by several generations of scholars from the 10th–2nd century BCE, its latest stage being from the 1st century CE\""
             }
           ]
+        }
+      ]
+    },
+    {
+      "uuid": "iron-metallurgy-west-central-africa",
+      "title": "Iron metallurgy begins in West and Central Africa",
+      "descr": "Iron metallurgy begins in Western and Central Africa, from 2500 to 1000 BC by the article's range, with radiocarbon dates from Nigeria and the Central African Republic as early as the third millennium BC.",
+      "start": "c. 2500 BCE",
+      "end": "1000 BCE",
+      "tracks": ["nok"],
+      "sources": [
+        {
+          "sourceKey": "wp-iron-metallurgy-in-africa",
+          "sourceLocation": "lead: \"the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": "2500 BCE",
+          "margin": 500,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"radiocarbon and thermoluminescence dating of artifacts associated with iron metallurgy in Nigeria and the Central African Republic have yielded dates as early as the third millennium BC\""
+          },
+          "note": "The third millennium BC (3000–2001 BC); the headline range is the article's 2500–1000 BC."
+        }
+      ]
+    },
+    {
+      "uuid": "nixtamalization-guatemala",
+      "title": "Nixtamalization: the earliest evidence, on Guatemala's southern coast",
+      "descr": "Equipment for nixtamalization, the alkaline treatment of maize first developed in Mesoamerica, dates from 1500 to 1200 BCE on Guatemala's southern coast.",
+      "start": "c. 1500 BCE",
+      "end": "1200 BCE",
+      "tracks": ["mesoamerica"],
+      "sources": [
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE\""
+        },
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The process of nixtamalization was first developed in Mesoamerica, where maize was originally cultivated\""
+        }
+      ]
+    },
+    {
+      "uuid": "crab-claw-sail",
+      "title": "Austronesians invent the crab claw sail",
+      "descr": "The Austronesians invent the crab claw sail somewhere in Island Southeast Asia, by at least 2000 BCE: a latest-by date, so the sail may be older.",
+      "start": "c. 2000 BCE",
+      "tracks": ["austronesia"],
+      "sources": [
+        {
+          "sourceKey": "wp-crab-claw-sail",
+          "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": "2000 BCE",
+          "source": { "sourceKey": "wp-austronesian-peoples", "sourceLocation": "lead: \"They used sails some time before 2000 BCE\"" },
+          "note": "Also a latest-by date."
         }
       ]
     }

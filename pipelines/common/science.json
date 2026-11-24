@@ -1,5 +1,5 @@
 {
- "_note": "Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events and 1 recategorised, from Workbench \"2026-11-24 Timelines science and discoveries pilot plan\". Every date and place is a quoted sentence from the Wikipedia dump (checked by science.py --check). `source`: the date quote; `more`: other quoted facts (the place of work, a caveat); `claims`: other dates, ranges included. kind: the `science` sub-kind (discovery, invention, work); the generators' categories.json hold it. `tracks`: the row, where the timeline has it.",
+ "_note": "Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events and 1 recategorised, plus 8 gap events (Africa, the Americas, Southeast Asia, Oceania; second batch, 2026-11-24), from Workbench \"2026-11-24 Timelines science and discoveries pilot plan\". Every date and place is a quoted sentence from the Wikipedia dump (checked by science.py --check). `source`: the date quote; `more`: other quoted facts (the place of work, a caveat); `claims`: other dates, ranges included. kind: the `science` sub-kind (discovery, invention, work); the generators' categories.json hold it. `tracks`: the row, where the timeline has it.",
  "sources": {
   "Rhind Mathematical Papyrus": "wp-rhind-mathematical-papyrus",
   "Babylonian astronomical diaries": "wp-babylonian-astronomical-diaries",
@@ -30,7 +30,18 @@
   "Artemisinin": "wp-artemisinin",
   "Heart transplantation": "wp-heart-transplantation",
   "Wright brothers": "wp-wright-brothers",
-  "Wi-Fi": "wp-wi-fi"
+  "Wi-Fi": "wp-wi-fi",
+  "M-Pesa": "wp-m-pesa",
+  "14-bis": "wp-14-bis",
+  "Alberto Santos-Dumont": "wp-alberto-santos-dumont",
+  "Hōkūle'a": "wp-hokulea",
+  "Flight recorder": "wp-flight-recorder",
+  "David Warren (inventor)": "wp-david-warren-inventor",
+  "Iron metallurgy in Africa": "wp-iron-metallurgy-in-africa",
+  "Nixtamalization": "wp-nixtamalization",
+  "Chinampa": "wp-chinampa",
+  "Crab claw sail": "wp-crab-claw-sail",
+  "Austronesian peoples": "wp-austronesian-peoples"
  },
  "events": [
   {
@@ -575,6 +586,199 @@
      "article": "Wi-Fi",
      "section": "History",
      "quote": "Australia, the United States and the Netherlands simultaneously claim the invention of Wi-Fi, and a consensus has not been reached globally"
+    }
+   ]
+  },
+  {
+   "uuid": "mpesa-launched",
+   "title": "M-Pesa launches mobile money in Kenya",
+   "descr": "Vodafone and Safaricom launch M-Pesa, a mobile-phone-based money transfer, payments and micro-financing service, in Kenya.",
+   "start": 2007,
+   "kind": "invention",
+   "tracks": [
+    "kenya"
+   ],
+   "source": {
+    "article": "M-Pesa",
+    "section": "lead",
+    "quote": "launched in 2007 by Vodafone and Safaricom"
+   },
+   "more": [
+    {
+     "article": "M-Pesa",
+     "section": "lead",
+     "quote": "the largest mobile network operator in Kenya"
+    }
+   ]
+  },
+  {
+   "uuid": "santos-dumont-14-bis",
+   "title": "Santos-Dumont's 14-bis makes the first publicly witnessed powered flight",
+   "descr": "The Brazilian aeronaut Alberto Santos-Dumont flies the 14-bis near Paris, a manned powered flight witnessed by a crowd and filmed.",
+   "start": 1906,
+   "kind": "invention",
+   "tracks": [
+    "brazil"
+   ],
+   "source": {
+    "article": "14-bis",
+    "section": "lead",
+    "quote": "In 1906, near Paris, the 14-bis made a manned powered flight that was the first to be publicly witnessed by a crowd and also filmed"
+   },
+   "more": [
+    {
+     "article": "Alberto Santos-Dumont",
+     "section": "lead",
+     "quote": "was a Brazilian aeronaut"
+    }
+   ]
+  },
+  {
+   "uuid": "hokulea-1976-voyage",
+   "title": "Hōkūleʻa sails from Hawaiʻi to Tahiti by traditional navigation alone",
+   "descr": "The Polynesian Voyaging Society's double-hulled voyaging canoe Hōkūleʻa completes the voyage from Hawaiʻi to Tahiti with exclusively traditional navigation techniques.",
+   "start": 1976,
+   "kind": "discovery",
+   "tracks": [
+    "polynesia"
+   ],
+   "source": {
+    "article": "Hōkūle'a",
+    "section": "lead",
+    "quote": "1976 Hawaiʻi to Tahiti voyage completed with exclusively traditional navigation techniques"
+   },
+   "more": [
+    {
+     "article": "Hōkūle'a",
+     "section": "lead",
+     "quote": "a Polynesian double-hulled voyaging canoe"
+    }
+   ]
+  },
+  {
+   "uuid": "warren-flight-memory-unit",
+   "title": "David Warren builds the ARL Flight Memory Unit, a flight data recorder prototype",
+   "descr": "The Australian scientist David Warren builds a prototype flight data recorder, the ARL Flight Memory Unit. An earlier flight data recorder, Mata-Hari, had been made in Finland in 1942.",
+   "start": 1956,
+   "kind": "invention",
+   "tracks": [
+    "australia"
+   ],
+   "source": {
+    "article": "Flight recorder",
+    "section": "History",
+    "quote": "Warren built a prototype FDR called \"The ARL Flight Memory Unit\" in 1956"
+   },
+   "more": [
+    {
+     "article": "David Warren (inventor)",
+     "section": "lead",
+     "quote": "was an Australian scientist, best known for inventing and developing the flight data recorder"
+    },
+    {
+     "article": "Flight recorder",
+     "section": "History",
+     "quote": "The first modern flight data recorder, called \"Mata-Hari\", named after the famous spy, was created in 1942 by Finnish aviation engineer Veijo Hietala"
+    }
+   ]
+  },
+  {
+   "uuid": "iron-metallurgy-west-central-africa",
+   "title": "Iron metallurgy begins in West and Central Africa",
+   "descr": "Iron metallurgy begins in Western and Central Africa, from 2500 to 1000 BC by the article's range, with radiocarbon dates from Nigeria and the Central African Republic as early as the third millennium BC.",
+   "start": -2500,
+   "end": -1000,
+   "circa": true,
+   "kind": "invention",
+   "tracks": [
+    "nok"
+  ],
+   "source": {
+    "article": "Iron metallurgy in Africa",
+    "section": "lead",
+    "quote": "the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC"
+   },
+   "claims": [
+    {
+     "article": "Iron metallurgy in Africa",
+     "section": "lead",
+     "quote": "radiocarbon and thermoluminescence dating of artifacts associated with iron metallurgy in Nigeria and the Central African Republic have yielded dates as early as the third millennium BC",
+     "year": -2500,
+     "margin": 500,
+     "note": "The third millennium BC (3000–2001 BC); the headline range is the article's 2500–1000 BC."
+    }
+   ]
+  },
+  {
+   "uuid": "nixtamalization-guatemala",
+   "title": "Nixtamalization: the earliest evidence, on Guatemala's southern coast",
+   "descr": "Equipment for nixtamalization, the alkaline treatment of maize first developed in Mesoamerica, dates from 1500 to 1200 BCE on Guatemala's southern coast.",
+   "start": -1500,
+   "end": -1200,
+   "circa": true,
+   "kind": "invention",
+   "tracks": [
+    "mesoamerica"
+   ],
+   "source": {
+    "article": "Nixtamalization",
+    "section": "History",
+    "quote": "The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE"
+   },
+   "more": [
+    {
+     "article": "Nixtamalization",
+     "section": "History",
+     "quote": "The process of nixtamalization was first developed in Mesoamerica, where maize was originally cultivated"
+    }
+   ]
+  },
+  {
+   "uuid": "chinampa-agriculture",
+   "title": "Chinampa fields, the earliest securely dated",
+   "descr": "The earliest securely dated chinampas, the raised fields of Mesoamerican agriculture, are from the Middle Postclassic period, 1150–1350 CE.",
+   "start": 1150,
+   "end": 1350,
+   "circa": true,
+   "kind": "invention",
+   "tracks": [
+    "mesoamerica"
+   ],
+   "source": {
+    "article": "Chinampa",
+    "section": "History",
+    "quote": "The earliest fields that have been securely dated are from the Middle Postclassic period, 1150–1350 CE"
+   },
+   "more": [
+    {
+     "article": "Chinampa",
+     "section": "lead",
+     "quote": "is a technique used in Mesoamerican agriculture"
+    }
+   ]
+  },
+  {
+   "uuid": "crab-claw-sail",
+   "title": "Austronesians invent the crab claw sail",
+   "descr": "The Austronesians invent the crab claw sail somewhere in Island Southeast Asia, by at least 2000 BCE: a latest-by date, so the sail may be older.",
+   "start": -2000,
+   "circa": true,
+   "kind": "invention",
+   "tracks": [
+    "austronesia"
+   ],
+   "source": {
+    "article": "Crab claw sail",
+    "section": "History",
+    "quote": "The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE"
+   },
+   "claims": [
+    {
+     "article": "Austronesian peoples",
+     "section": "lead",
+     "quote": "They used sails some time before 2000 BCE",
+     "year": -2000,
+     "note": "Also a latest-by date."
     }
    ]
   }

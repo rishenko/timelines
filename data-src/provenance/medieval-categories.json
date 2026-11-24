@@ -118,6 +118,7 @@
   "chanyuan-treaty": [["treaty", "title: \"Treaty\""]],
   "charlemagne-crowned": [["succession", "title: \"crowned\""], ["founded", "infobox field: event_start"]],
   "charles-the-fat-deposed": [["coup", "title: \"deposed\""]],
+  "chinampa-agriculture": [["invention", "reviewed"]],
   "chola-invasion-of-srivijaya": [["invasion", "title: \"invasion\""], ["dissolved", "infobox field: event_end"]],
   "christianisation": [["religion", "title: \"Christianisation\""]],
   "christianisation-of-bulgaria": [["religion", "title: \"Christianisation\""]],

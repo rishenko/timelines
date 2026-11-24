@@ -119,6 +119,9 @@
   "sack",
   "conquest"
  ],
+ "hokulea-1976-voyage": [
+  "discovery"
+ ],
  "holocaust": [
   "atrocity"
  ],
@@ -162,6 +165,9 @@
  "meiji-restoration": [
   "revolution",
   "rule"
+ ],
+ "mpesa-launched": [
+  "invention"
  ],
  "msiri-killed": [
   "coup",
@@ -227,6 +233,9 @@
  ],
  "raman-effect": [
   "discovery"
+ ],
+ "santos-dumont-14-bis": [
+  "invention"
  ],
  "saudi-oil": [
   "economy"
@@ -294,6 +303,9 @@
  ],
  "venezuela-1953": [
   "reform"
+ ],
+ "warren-flight-memory-unit": [
+  "invention"
  ],
  "wright-first-flight": [
   "invention"
