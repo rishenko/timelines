@@ -108,6 +108,20 @@ def first_entry(raw):
     return e[0] if e else None
 
 
+END_WORDS = re.compile(r'\b(climax(?:ed)?|culminat\w+|mark(?:s|ed|ing)? the end|ended|concluded|came to an end)\b[^.]{0,40}?\b(?:in|with|by)\b', re.I)
+
+
+def lead_claims(sent, i, wt, pl, have):
+    """Claims from a lead sentence. It only corroborates: a start year is kept only when the infobox gave none or has one within 2 years
+    (a background sentence such as "conquered in 1471" must not rival the infobox). A year after "climaxed in"/"culminating in" is an end."""
+    cl, why = D.date_claims(sent, f'lead sentence {i + 1}', wt, pl)
+    cl = cl[:2]
+    if cl and cl[0]['side'] == 'start' and END_WORDS.search(sent):
+        cl = [dict(cl[0], side='end')]
+    starts = [d['year'] for d in have if d['side'] == 'start']
+    return [c for c in cl if c['side'] != 'start' or not starts or any(abs(c['year'] - y) <= 2 for y in starts)]
+
+
 def combatants(box):
     """{column: [entries]} of an Infobox military conflict. Columns '1', '2', '3' are the sides (the first entry of one is its main combatant); '1a', '2a' are later alliances (participants only)."""
     out = {}
@@ -220,8 +234,7 @@ def main():
                             dropped.append(f'infobox {k}: {why}')
                 for i, sent in enumerate(D.body_sentences(code)[:4]):
                     if YEAR.search(sent):
-                        cl, why = D.date_claims(sent, f'lead sentence {i + 1}', wt, pl)
-                        dates += cl[:2]
+                        dates += lead_claims(sent, i, wt, pl, dates)
                         break
                 comb = combatants(box)
                 loc = next((D.plain(str(prm.value)) for prm in box.params if str(prm.name).strip().lower() == 'location'), '')
@@ -311,7 +324,7 @@ def main():
                         break
         for i, sent in enumerate(D.body_sentences(code)[:4]):
             if YEAR.search(sent):
-                dates += D.date_claims(sent, f'lead sentence {i + 1}', wt, pl)[0][:2]
+                dates += lead_claims(sent, i, wt, pl, dates)
                 break
         q = qid(p['title'])
         if q and wd:

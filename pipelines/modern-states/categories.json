@@ -477,10 +477,16 @@
  "conflict-international-force-east-timor": [
   "battle"
  ],
+ "conflict-ja-thak-wa-uprising": [
+  "war"
+ ],
  "conflict-japanese-invasion-of-manchuria": [
   "invasion"
  ],
  "conflict-la-noche-triste": [
+  "battle"
+ ],
+ "conflict-menelik-ii-s-conquests": [
   "battle"
  ],
  "conflict-mesopotamian-campaign": [
@@ -518,6 +524,9 @@
  ],
  "conflict-siege-of-tobruk": [
   "siege"
+ ],
+ "conflict-spanish-conquest-of-pet-n": [
+  "invasion"
  ],
  "conflict-spanish-conquest-of-the-aztec-empire": [
   "invasion"

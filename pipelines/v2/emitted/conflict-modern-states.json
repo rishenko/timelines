@@ -505,6 +505,35 @@
    ]
   },
   {
+   "uuid": "conflict-spanish-conquest-of-pet-n",
+   "title": "Spanish conquest of Petén",
+   "descr": "",
+   "start": 1618,
+   "tracks": [
+    "spanish-empire"
+   ],
+   "end": 1697,
+   "circa": true,
+   "sources": [
+    {
+     "sourceKey": "wp-spanish-conquest-of-pet-n",
+     "sourceLocation": "infobox date: c. 1618 – c. 1697"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-spanish-conquest-of-pet-n",
+       "sourceLocation": "infobox date: c. 1618 – c. 1697"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-thirty-years-war",
    "title": "Thirty Years' War",
    "descr": "",
@@ -963,6 +992,37 @@
    ]
   },
   {
+   "uuid": "conflict-ja-thak-wa-uprising",
+   "title": "Ja Thak Wa uprising",
+   "descr": "",
+   "start": 1834,
+   "tracks": [
+    "champa",
+    "vietnam"
+   ],
+   "startMonth": 9,
+   "end": 1835,
+   "endMonth": 7,
+   "sources": [
+    {
+     "sourceKey": "wp-ja-thak-wa-uprising",
+     "sourceLocation": "infobox date: September 1834 – July 1835"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-ja-thak-wa-uprising",
+       "sourceLocation": "infobox date: September 1834 – July 1835"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-blood-river",
    "title": "Battle of Blood River",
    "descr": "",
@@ -1252,6 +1312,53 @@
    ]
   },
   {
+   "uuid": "conflict-menelik-ii-s-conquests",
+   "title": "Menelik II's conquests",
+   "descr": "",
+   "start": 1880,
+   "tracks": [
+    "ethiopia",
+    "emirate-of-harar"
+   ],
+   "end": 1904,
+   "circa": true,
+   "sources": [
+    {
+     "sourceKey": "wp-menelik-ii-s-conquests",
+     "sourceLocation": "infobox date: early 1880s–1904"
+    }
+   ],
+   "endDates": [
+    {
+     "year": 1904,
+     "source": {
+      "sourceKey": "wp-menelik-ii-s-conquests",
+      "sourceLocation": "infobox date: early 1880s–1904"
+     }
+    },
+    {
+     "year": 1900,
+     "source": {
+      "sourceKey": "wp-menelik-ii-s-conquests",
+      "sourceLocation": "lead: \"Menelik II's conquests, also known as the Agar Maqnat (), were a series of late 19th-century military campaigns led by Menelik II, king of Shewa (1865–1889) and Ethiopian Emperor (1889–1913) to expand the territory of the Ethiopian Empire.\""
+     },
+     "note": "The same article gives this year too."
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-menelik-ii-s-conquests",
+       "sourceLocation": "infobox date: early 1880s–1904"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-adwa",
    "title": "Battle of Adwa",
    "descr": "",
@@ -1397,6 +1504,23 @@
     {
      "sourceKey": "wp-occupation-of-constantinople",
      "sourceLocation": "infobox date: 12 November 1918 – 4 October 1923()"
+    }
+   ],
+   "endDates": [
+    {
+     "year": 1923,
+     "source": {
+      "sourceKey": "wp-occupation-of-constantinople",
+      "sourceLocation": "infobox date: 12 November 1918 – 4 October 1923()"
+     }
+    },
+    {
+     "year": 1918,
+     "source": {
+      "sourceKey": "wp-occupation-of-constantinople",
+      "sourceLocation": "lead: \"The occupation of Constantinople (now Istanbul, 12 November 1918 – 4 October 1923), the capital of the Ottoman Empire, by British, French, Italian, and Greek forces, took place in accordance with the Armistice of Mudros, which ended Ottoman participation in the First World War.\""
+     },
+     "note": "The same article gives this year too."
     }
    ],
    "memberships": [
@@ -2600,6 +2724,14 @@
     "wikipedia"
    ]
   },
+  "wp-ja-thak-wa-uprising": {
+   "name": "Ja Thak Wa uprising (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ja_Thak_Wa_uprising",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-japanese-invasion-of-manchuria": {
    "name": "Japanese invasion of Manchuria (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Japanese_invasion_of_Manchuria",
@@ -2611,6 +2743,14 @@
   "wp-la-noche-triste": {
    "name": "La Noche Triste (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/La_Noche_Triste",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-menelik-ii-s-conquests": {
+   "name": "Menelik II's conquests (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Menelik_II's_conquests",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -2707,6 +2847,14 @@
   "wp-siege-of-tobruk": {
    "name": "Siege of Tobruk (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Siege_of_Tobruk",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-spanish-conquest-of-pet-n": {
+   "name": "Spanish conquest of Petén (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Spanish_conquest_of_Petén",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"

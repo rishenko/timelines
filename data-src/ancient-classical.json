@@ -18082,6 +18082,12 @@
       "url": "https://en.wikipedia.org/wiki/Year_of_the_Elephant",
       "accessed": "2026-11-23",
       "tags": ["wikipedia"]
+    },
+    "wp-southward-expansion-of-the-han-dynasty": {
+      "name": "Southward expansion of the Han dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Southward_expansion_of_the_Han_dynasty",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
     }
   },
   "tags": {
@@ -43840,6 +43846,22 @@
           "facet": "category",
           "value": "war",
           "sources": [{ "sourceKey": "wp-second-tikal-calakmul-war", "sourceLocation": "infobox date: 648–695" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-southward-expansion-of-the-han-dynasty",
+      "title": "Southward expansion of the Han dynasty",
+      "descr": "",
+      "start": -199,
+      "tracks": ["han", "nanyue"],
+      "end": -100,
+      "sources": [{ "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "infobox date: 2nd century BC" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "infobox date: 2nd century BC" }]
         }
       ]
     }
