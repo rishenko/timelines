@@ -55,8 +55,14 @@ NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
+# rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
+# shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the
+# Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
+HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope']}
+# an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
+OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
-LIST_NOUNS = ('monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
+LIST_NOUNS = ('tlatoque', 'monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
               'caliphs', 'khans', 'khagans', 'pharaohs', 'heads of state', 'presidents', 'grand dukes', 'grand princes',
               'princes', 'dukes', 'emirs', 'beys', 'nawabs', 'maharajas', 'rajas', 'kings and queens', 'consuls', 'tyrants')
 # a list's people who aren't its rulers: consorts, regents, ministers, governors, deputies, claimants
@@ -163,15 +169,18 @@ def wp_reigns(params):
             continue
         kind, n = m.groups()
         if kind == 'reign':
-            for s in dates.spans(raw):
-                out.append((k, s, dates.clean(params.get(f'succession{n}', ''))))
+            rtype = dates.clean(params.get(f'reign_type{n}', ''))
+            if re.search(r'\b(caesar|heir|junior|crown|designate|co-?(?:emperor|king|ruler)|subking|regent)\b', rtype, re.I):
+                continue  # a span the infobox types as Caesar, heir, junior or co-ruler (Constantius Chlorus 293-305) is not the ruler's own reign
+            for s in dates.spans(raw, legacy=True):
+                out.append((k, s, dates.clean(params.get(f'succession{n}') or (params.get('succession', '') if n in ('', '1') else ''))))  # reign1 may be paired with an unnumbered |succession=
         elif kind == 'term':
             # a short term written whole: |term = {{Date range|1881|03|04|1881|09|19}} (Garfield, W. H. Harrison)
-            for s in dates.spans(raw)[:1]:
+            for s in dates.spans(raw, legacy=True)[:1]:
                 out.append((k, s, dates.clean(offices.get(n, ''))))
         elif kind == 'term_start':
-            st = dates.spans(raw)
-            en = dates.spans(params.get(f'term_end{n}', '')) if params.get(f'term_end{n}') else []
+            st = dates.spans(raw, legacy=True)
+            en = dates.spans(params.get(f'term_end{n}', ''), legacy=True) if params.get(f'term_end{n}') else []
             if st:
                 s = dict(st[0])
                 s['end'] = en[0]['start'] if en else None
@@ -196,7 +205,7 @@ def _points(cells):
         txt = re.sub(r'<br\s*/?>', ' ', c, flags=re.I)
         plain = dates.clean(txt)
         plain = LIFE.sub(' ', plain)
-        sp = dates.spans(plain)
+        sp = dates.spans(plain, legacy=True)
         for s in sp:
             out.append((s['start'], s))
             if s['end']:
@@ -265,7 +274,7 @@ def interregna(text):
                 if pts and pts[0]:
                     out.append((pts[0], pts[1] if len(pts) > 1 else None, re.sub(r'\s+', ' ', dates.clean(row))[:200]))
     for m in re.finditer(r'^(=+)([^=\n]*\binterregnum\b[^=\n]*)\1\s*$', text, re.I | re.M):  # ==First Interregnum (1649–1660)==
-        sp = dates.spans(dates.clean(m.group(2)))
+        sp = dates.spans(dates.clean(m.group(2)), legacy=True)
         if sp and sp[0]['end']:
             out.append((sp[0]['start'], sp[0]['end'], m.group(2).strip()[:200]))
     for m in re.finditer(r'\|\s*(?:name|officeholder)(\d*)\s*=[^|]*?interregnum', text, re.I):  # {{List of rulers|nameN=''Interregnum''}}
@@ -331,12 +340,29 @@ class Sources:
         self.by_office, self.office_holders, self.named = {}, {}, set()
         self._concurrent = {}  # office -> most holders at once (concurrent())
 
+    offices = None  # wikidata-<dump>-offices.sqlite (wd_office_labels.py): the office items wd_item leaves out, by English label
+
+    def _offices(self):
+        if self.offices is None:
+            path = os.path.join(os.path.dirname(self.wd.execute('PRAGMA database_list').fetchone()[2]), 'wikidata-20261116-offices.sqlite')
+            self.offices = sqlite3.connect(f'file:{path}?mode=ro', uri=True) if os.path.exists(path) else False
+        return self.offices
+
     def qid(self, title):
         r = self.wd.execute('SELECT qid FROM wd_item WHERE enwiki=?', (title,)).fetchone()
+        if r:
+            return r[0]
+        o = self._offices()  # an office without an item row: "Monarch of Italy" by its article title or English label
+        # by the article title; by the English label only when it has two or more words ("Monarch of Italy"), never a generic one ("king", "regent")
+        r = o.execute('SELECT qid FROM wd_office WHERE enwiki=? OR (label=? COLLATE NOCASE AND instr(label, " ") > 0) LIMIT 1', (title, title)).fetchone() if o else None
         return r[0] if r else None
 
     def title(self, qid):
         r = self.wd.execute('SELECT enwiki FROM wd_item WHERE qid=?', (qid,)).fetchone()
+        if r:
+            return r[0]
+        o = self._offices()
+        r = o.execute('SELECT COALESCE(enwiki, label) FROM wd_office WHERE qid=?', (qid,)).fetchone() if o else None
         return r[0] if r else None
 
     def inlinks(self, title):
@@ -508,26 +534,43 @@ def days(t):
     return t[0] * 372 + (t[1] or 1) * 31 + (t[2] or 1) if t else None
 
 
-def picks(spans, terms, words):
+def picks(spans, terms, words, window=None):
     """Every Wikipedia span for this row: the closest to each Wikidata term, plus the person's other spans for the same
     office (Philip V of Spain's two reigns, 1700–1724 and 1724–1746)."""
     out = []
     for t in [t for t in terms if t[0]] or [None]:
-        g = pick(spans, [t] if t else [], words)
+        g = pick(spans, [t] if t else [], words, window)
         if g and all(g[1] is not o[1] for o in out):
             out.append(g)
     offices = {norm(o[2]) for o in out if o[2]}
     for f, s, succ in spans:  # a ruler's office only (not Wickremesinghe's four terms as Leader of the Opposition)
         if succ and norm(succ) in offices and (f.startswith('reign') or RULER_WORD.search(succ)) and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
-    return out
+    # the same polity under another title (Prince then King of Montenegro; Duke then King of Bohemia): its ruler spans are reigns of the row too
+    for f, s, succ in spans:
+        if f.startswith('reign') and (RULER_WORD.search(succ) or re.search(r'\b(prince|duke|voivode|vojvoda|khan|emir|doge|lord|margrave|count|elector)\b', succ, re.I)) \
+                and not NOT_RULER.search(succ) and not re.search(r'\b(heir|crown|co-|junior|designate|elect|claimant|pretender|regent|titular|nominal)', succ, re.I) \
+                and any(len(w) >= 5 and w in re.sub(r'\([^)]*\)', ' ', succ).lower() for w in words) \
+                and all(s is not o[1] for o in out):
+            out.append((f, s, succ, None))
+    seen, uniq = set(), []
+    for g in out:  # one reign once: two joins (same office, same polity) can take the same field's span twice
+        key = (g[0], g[1]['start'], g[1]['end'])
+        if key not in seen:
+            seen.add(key)
+            uniq.append(g)
+    return uniq
+
+
+ORDINAL = re.compile(r'\(?\b(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth)\s+(?:reign|term|tenure|rule)\)?', re.I)
 
 
 def norm(succ):
-    return re.sub(r'\W+', ' ', succ.lower()).strip()
+    """An office text without its ordinal ("Prince of Wallachia ; (2nd reign)" is "prince of wallachia"), so a ruler's reign2, reign3... join his reign."""
+    return re.sub(r'\W+', ' ', ORDINAL.sub(' ', succ.lower())).strip()
 
 
-def pick(spans, terms, words):
+def pick(spans, terms, words, window=None):
     """The Wikipedia span for this row: the one overlapping a Wikidata term most, else one whose succession names the
     row, else the only one. (field, span, succession, term) or None."""
     best = None
@@ -540,10 +583,20 @@ def pick(spans, terms, words):
                     best = (score, (f, s, succ, (t0, t1)))
     if best:
         return best[1]
-    named = [x for x in spans if any(w in x[2].lower() for w in words)]
+    named = [x for x in spans if any(w in re.sub(r'\([^)]*\)', ' ', x[2]).lower() for w in words)]  # a bracket ("vassal of Bohemia") names the suzerain, not the office
     if len(named) == 1 or (len(spans) == 1):
         f, s, succ = (named or spans)[0]
         return f, s, succ, None
+    stem = [x for x in spans if any(len(w) >= 5 and any(tok[:4] == w[:4] for tok in re.findall(r'[a-z]{4,}', x[2].lower())) for w in words)]
+    if len(stem) == 1:  # the office is kin to the row's name ("King of the Franks" on Francia), not the same word
+        f, s, succ = stem[0]
+        return f, s, succ, None
+    if window:  # no Wikidata term and several spans (Gaozu of Tang: the Duke of Tang's 572–617 beside his reign): the one inside the row's window
+        inside = [x for x in (named or spans) if overlap(x[1]['start'][0], year(x[1]['end']), window[0], window[1]) >= 0]
+        if inside:  # several: a ruler's own office first (not "Duke of Tang" or "Retired Emperor"), then the earliest; picks() adds the same office's other spans
+            own = [x for x in inside if RULER_WORD.search(x[2]) and not re.search(r'\b(retired|former|duke|prince|regent|crown|consort|co-|junior|heir|designate|titular|nominal|claimant|pretender)', x[2], re.I)]
+            f, s, succ = min(own or inside, key=lambda x: days(x[1]['start']))
+            return f, s, succ, None
     return None
 
 
@@ -620,6 +673,10 @@ def run(timeline, row_ids, src):
         for o in src.offices_of(list(ruled), words):
             ot = (src.title(o) or '').lower()
             polity_win[('office', o)] = [(hist(p['start']), hist(p.get('end', w1))) for p in tr.get('phases', []) if p['name'].lower() in ot] or None
+        for title in HEAD_OFFICES.get((timeline, rid), ()):  # named offices (see HEAD_OFFICES): the whole row
+            o = src.qid(title)
+            if o:
+                polity_win[('office', o)] = None
         for person, terms in src.holders([k[1] for k in polity_win if isinstance(k, tuple)]).items():
             ruled.setdefault(person, []).extend(t for t in terms if t not in ruled[person])
             via.setdefault(person, set()).update(('office', t[-1].split(' ', 1)[1]) for t in terms)
@@ -700,7 +757,7 @@ def run(timeline, row_ids, src):
                 # cross-check only against the offices that name the list's subject (Christian X as King of Iceland, not
                 # his Danish term); none: nothing to check against, rather than a false disagreement
                 terms = [t for t in terms if any(st in (src.title(t[-1].split(' ', 1)[1]) or '').lower() for st in need)]
-            got = picks(cand, terms, words)
+            got = picks(cand, terms, words, (r0, r1))
             dated = [t for t in terms if t[0]]
             if not got:
                 if dated and any(overlap(t[0][0], year(t[1]), r0, r1) >= 0 for t in dated):
@@ -828,7 +885,8 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
                         'tags': ['wikipedia']}
         loc = f"table row: {r['quote']}" if r.get('cite') else f"infobox {r['field']}: {r['quote']}"
         yrs = year(r['en']) - r['st'][0] if r['en'] else 0  # no end read: the length is unknown
-        descr = (f"{'Holds office' if r['office'] else 'Rules'} as head of state of {tracks[rid]['name']}"
+        noun = next((n for pat, n in OFFICE_NOUN.items() if isinstance(r.get('succ'), str) and re.search(pat, r['succ'], re.I)), None)
+        descr = (f"{'Holds office' if r['office'] else 'Rules'} as {noun or 'head of state of ' + tracks[rid]['name']}"
                  f" from {fmt(r['st'])}{' to ' + fmt(r['en']) if r['en'] else ''}"
                  f"{f' ({yrs} years)' if yrs >= 2 else ''}.")
         ev = {'uuid': uid, 'title': title, **date_fields('start', r['st']), **(date_fields('end', r['en']) if r['en'] else {}),

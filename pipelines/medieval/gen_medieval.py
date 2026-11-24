@@ -532,13 +532,25 @@ def build(repo):
                 too_close.append(f'{e["uuid"]}: ' + '; '.join(why))
     if too_close:
         raise SystemExit('descriptions too close to a cited sentence (rewrite them in your own words):\n  ' + '\n  '.join(too_close))
+    sys.path.insert(0, os.path.join(HERE, '..', 'v2'))  # v2 emitters: disasters
+    import emit_merge
+    REPORT.append(emit_merge.merge('disaster', 'medieval', data, G.SOURCES))
+    REPORT.append(emit_merge.merge('conflict', 'medieval', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
         data['tags']['cliopatria'] = {'name': 'Cliopatria'}
+    if any('scholarly' in s.get('tags', []) for s in G.SOURCES.values()):  # scholarly pages (date_rulings.py; traditions)
+        data['tags']['scholarly'] = {'name': 'Scholarly pages'}
     # reigns (pipelines/common/reigns.py): the frozen rulers pass; before the categories, so the classifier sees them
     import reigns
     REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "medieval-reigns.json"))}')
+    REPORT.append(f'extra reigns: {reigns.apply(data, os.path.join(HERE, "extra-reigns.json"))}')  # reigns the rulers pass missed (Ahuitzotl)
+    # the Kingdom of Italy's kings 774–961 from the King of Italy list page (list_rulers.py --freeze), frozen in italy-reigns.json
+    if os.path.exists(os.path.join(HERE, 'italy-reigns.json')):
+        REPORT.append(f'italy reigns: {reigns.apply(data, os.path.join(HERE, "italy-reigns.json"))}')
+    if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)
+        data['tags']['catalogue'] = {'name': 'Official catalogue'}
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events
     import traditions

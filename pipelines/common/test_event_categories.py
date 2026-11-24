@@ -224,6 +224,28 @@ class LifeAndEvolution(unittest.TestCase):
         self.assertEqual(overrides['cretaceous-paleogene-extinction'], ['mass-extinction', 'impact'])
 
 
+class FoundedInstitutions(unittest.TestCase):
+    '''Founding a school, academy, library, house, sect, order or movement isn't founding a state (Kevin, 2026-11-24).'''
+
+    def test_what_a_title_founds(self):
+        cases = {'Pythagoras founds a school at Croton': 'learning', 'Aristotle founds the Lyceum': 'learning', 'Mozi founds Mohism': 'learning',
+                 'University of Bologna founded': 'learning', 'Foundation of the Library of Alexandria': 'learning', 'Cluny Abbey founded': 'religious',
+                 'Mendicant orders founded': 'religious', 'Franciscan Order founded': 'other', 'Non-Aligned Movement founded': 'other',
+                 'State of the Teutonic Order established': None, 'Chandragupta Maurya founds the Maurya Empire': None,
+                 'Kingdom of Castile established': None, 'Founding of Rome (traditional)': None}
+        for title, want in cases.items():
+            self.assertEqual(ec.founded_institution(title), want, title)
+
+    def test_classify_gives_culture_or_nothing_never_founded(self):
+        ds = {'sources': {}, 'tracks': []}
+        cls = lambda t, d='': [v for v, _ in ec.classify({'uuid': 'x', 'title': t, 'descr': d, 'tracks': [], 'sources': []}, ds)]  # noqa: E731
+        self.assertEqual(cls('Pythagoras founds a school at Croton'), ['culture'])
+        self.assertEqual(cls('Cluny Abbey founded'), ['religion'])
+        self.assertEqual(cls('Non-Aligned Movement founded', 'A forum of states during the Cold War.'), [])  # not "war" from the description
+        self.assertIn('founded', cls('Chandragupta Maurya founds the Maurya Empire'))
+        self.assertIn('founded', cls('State of the Teutonic Order established'))
+
+
 class Famines(unittest.TestCase):
     """A famine caused mainly by policy or war is not a natural disaster (Kevin, 2026-11-23)."""
     def test_a_genocide_famine_is_human_caused_with_genocide_second(self):

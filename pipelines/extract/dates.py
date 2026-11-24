@@ -1,7 +1,7 @@
 """
 Date normaliser for the extractor: turns the wikitext of an infobox field, a table cell or a sentence into dated spans.
 
-    spans(raw, year_hint=False) -> [{'start': (y, m, d), 'end': (y, m, d) | None, 'alts': [(y, m, d)], 'circa': bool,
+    spans(raw, year_hint=False, legacy=False) -> [{'start': (y, m, d), 'end': (y, m, d) | None, 'alts': [(y, m, d)], 'circa': bool,
                                      'old_style': bool, 'precision': 'day'|'month'|'year'|'century', 'text': str}]
 
 - Years inside this module are historical: negative for BC, no year zero (1 BC is -1, 44 BC is -44). The timelines
@@ -48,12 +48,15 @@ def clean(raw):
     s = re.sub(r'<!--.*?-->', '', s, flags=re.S)
     s = re.sub(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>', '', s, flags=re.S | re.I)
     s = re.sub(r'([–—-]|&ndash;)\s*<br\s*/?>', r'\1 ', s, flags=re.I)  # a break right after a dash continues the range (Joanna of Castile)
+    s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}\s*<br\s*/?>', ' – ', s, flags=re.I)  # "12 September 1185 {{ndash}}<br>8 April 1195" is one range (Isaac II Angelos)
     s = re.sub(r'<br\s*/?>', ' ; ', s, flags=re.I)
     s = re.sub(r'<[^>]+>', '', s)
     s = re.sub(r'(?<=\S) ~ ', ' – ', s)  # a spaced tilde between two dates is a range (Goi of Baekje: "234 ~ November 286"); "~1500" stays an approximation
     s = s.replace('&nbsp;', ' ').replace('&ndash;', '–').replace('&mdash;', '—').replace('&minus;', '−')
-    s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}', ' – ', s, flags=re.I)
+    s = re.sub(r'\{\{\s*(?:snd|snds|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}', ' – ', s, flags=re.I)
+    s = re.sub(r'\|\s*lk\s*=\s*\w*', '', s)  # {{circa|1764|lk=yes}}: the link switch is no date (Osei Kwadwo: "c. 1764|lk=yes – 1777")
     s = re.sub(r'\{\{\s*(?:circa|c\.|ca)\s*\|?\s*', '{{c-mark|', s, flags=re.I)
+    s = re.sub(r'\{\{\s*nowrap\s*\|([^{}]*)\}\}', r'\1', s, flags=re.I)  # {{Nowrap|[[a|b]] (1486) – …}}: its pipes are the link's, not arguments
     s = _templates(s)
     # an unclosed template or ref runs to the end (a field value cut short, as the side tables store at most 2,000
     # characters): drop it, so a long footnote's years don't leak in
@@ -168,6 +171,10 @@ def _atom(toks, i):
         a['era'] = 'ad'; j += 1
     if k() == 'century':
         a['century'] = v(); j += 1
+    elif k() == 'num' and v() > 31 and k(1) == 'month':  # year first: "1919 May 26 – June 3" (a number over 31 cannot be a day)
+        a['y'], a['m'] = v(), v(1); j += 2
+        if k() == 'num' and v() <= 31 and k(1) != 'era':
+            a['d'] = v(); j += 1
     elif k() == 'num' and k(1) == 'month':  # 28 July [1914]
         a['d'], a['m'] = v(), v(1); j += 2
         if lead_ad():  # 14 March AD 1066
@@ -221,6 +228,8 @@ def _resolve(left, right):
         right['m'] = left['m']
     if left['y'] is None:
         left['y'] = right['y']
+    elif right['y'] is None and right['m'] is not None and right['d'] is not None:
+        right['y'] = left['y']  # "1919 May 26 – June 3": the end takes the start's year
     if right['y'] is not None and left['y'] is not None and right['m'] is None and left['m'] is None and right['y'] < 100 <= left['y'] \
             and right['y'] < left['y'] % 100 + 100:
         right['y'] = left['y'] // 100 * 100 + right['y']  # 1914–18
@@ -264,8 +273,41 @@ def _ok(a, year_hint):
     return bool(a['era']) or year_hint or (y >= 100 and a.get('bare_ok', True)) or (a['circa'] and a.get('bare_ok', True))
 
 
-def spans(raw, year_hint=False):
+_PAREN_RANGE = re.compile(r'(?<![\d(])\b[A-Za-z][\w ]*\s*\((\d{3,4})\)\s*[–—-]\s*(?:\d{1,2}\s+)?[A-Za-z][\w ]*\s*\((\d{3,4})\)')
+
+_DECADE = re.compile(r'\b(?:(early|mid|late)[\s-]+)?(?:the\s+)?(\d{3,4})s\b(?!\s*(?:BC|B\.C|CE|AD))', re.I)
+_QCENT = re.compile(r'\b(early|mid|late)[\s-]+(\d{1,2})(?:st|nd|rd|th)[\s-]+century\b(?!\s*(?:BC|B\.C))', re.I)
+_PARTS = {'early': (0, 33), 'mid': (33, 66), 'late': (66, 99), None: (0, 99)}
+
+
+def _vague(text):
+    """Decades ("the 1880s", "early 1880s") and qualified centuries ("late 19th century") become circa ranges ("c. 1880–1883"), or,
+    before a dash, their low bound ("early 1880s–1904" starts c. 1880), instead of being read as one year or a whole century."""
+    def rng(lo, hi, m):
+        before_dash = re.match(r'\s*(?:[–—-]|to\b)\s*(?:(?:c|ca|circa|about|around|approximately)\b\.?\s*)?\d', m.string[m.end():], re.I)  # "1120s – c. 1132" starts c. 1120
+        return f'c. {lo}' if before_dash else f'c. {lo}–{hi}'
+
+    def dec(m):
+        a, b = _PARTS[(m.group(1) or '').lower() or None]
+        y = int(m.group(2))
+        return rng(y + (a * 10 // 99 if a else 0), y + (round(b * 9 / 99)), m)
+
+    def cen(m):
+        a, b = _PARTS[m.group(1).lower()]
+        base = (int(m.group(2)) - 1) * 100
+        return rng(base + a + 1, base + (b if b < 99 else 100), m)
+    return _QCENT.sub(cen, _DECADE.sub(dec, text))
+
+
+_BETWEEN = re.compile(r'\bbetween\s+(\d{1,4})\s+and\s+(\d{1,4}\s*(?:BCE|BC|CE|AD)\b)', re.I)
+
+
+def spans(raw, year_hint=False, legacy=False):
     text = QUANTITY.sub(' # ', clean(raw))
+    shown = text  # the cleaned cell as written: what a quote shows
+    text = _PAREN_RANGE.sub(r'\1–\2', text)  # "7 Rabbit (1486) – 10 Rabbit (1502)": the years in brackets are the range
+    text = text if legacy else _vague(text)
+    text = _BETWEEN.sub(r'\1–\2', text)  # "between 109 and 108 BCE" is a range, so the first year shares the era
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
     text = _OS_DAY.sub(r'\1', text)
     toks = [t for t in _tokens(text) if t[0] != 'os']
@@ -292,8 +334,8 @@ def spans(raw, year_hint=False):
         sv, cend = _value(start)
         if sv is None:  # no year on either side ("May to June")
             continue
-        span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'], 'old_style': old_style,
-                'precision': _precision(sv, start), 'text': text}
+        span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'] or (bool(start['century']) and not legacy), 'old_style': old_style,
+                'precision': _precision(sv, start), 'text': shown}
         for role, b in group[1:]:
             bv, bend = _value(b)
             if bv is None:

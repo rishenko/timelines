@@ -56,15 +56,23 @@ ACTING = re.compile(r'^(acting|interim|provisional)\b|\(acting\)', re.I)
 _BOX = {}
 
 
+LABELS = {}  # "article|field" -> the office label (--term-labels FILE: read when it exists, written with --record-labels)
+
+
 def term_label(article, field):
     """The office the infobox names for a numbered term (term_start2 -> office2, carried down), or ''. A person's
     other offices sit in the same infobox (Jackson as Senator 1797-98), and the bulk run matched them to the row by the
-    words of the polity's name ("United States Senator"); the label shows which office the term is."""
+    words of the polity's name ("United States Senator"); the label shows which office the term is.
+    The label comes from LABELS when it holds the key (CI has no Wikipedia dump), else from the dump."""
+    key = f'{article}|{field}'
+    if key in LABELS:
+        return LABELS[key]
     import wp_dump
     if article not in _BOX:
         pg = wp_dump.page(article)
         _BOX[article] = RU.term_offices(RU.infobox_params(pg['text'])) if pg else {}
-    return RU.dates.clean(_BOX[article].get(field.replace('term_start', ''), ''))
+    LABELS[key] = RU.dates.clean(_BOX[article].get(field.replace('term_start', ''), ''))
+    return LABELS[key]
 
 
 def office_noun(office):
@@ -133,8 +141,9 @@ def existing_match(ev, person, by_row):
             if e['uuid'] in OWN:
                 continue
             t = e['title'].lower()
-            if not any(re.search(r'\b' + re.escape(w) + r'\b', t) for w in ws):
-                continue
+            hit = sum(1 for w in ws if re.search(r'\b' + re.escape(w) + r'\b', t))
+            if hit < min(2, len(ws)):
+                continue  # one shared name is not the same ruler (Nicholas and Constantine Mavrocordatos, father and son)
             b0, b1 = span(e)
             if not REIGN_WORDS.search(t):
                 continue  # a war, coronation or kingdom that merely names the ruler ("Fall of the Assad regime"), not a reign
@@ -178,16 +187,212 @@ def inputs_of(d):
             'reigns-claims.json': sha(os.path.join(HERE, 'reigns-claims.json')), 'wikipedia': RU.settings.DUMP_NAME}
 
 
+FIELDS = {}  # uuid -> the infobox field
+OFFICES = {}  # uuid -> the office text of the placed ruler (kept out of the review file, whose bytes must not change)
+CHRON = re.compile(r'\((?:high|low|middle|mc|short|long|ultra[- ]?\w+|ac)\b[^)]*\)|chronolog', re.I)
+RANGE = re.compile(r'(\d{3,4})\s*(?:BCE|BC|CE|AD)?\s*[–\-|]\s*(\d{3,4})')
+
+
+def merged_chronologies(e, loc):
+    """True when the span joins two chronologies: the infobox gives the reign twice ("c. 492|460 BCE or c. 405|373 BCE", "1273–1244 BC ; 1263-1234 BC")
+    and the span runs from the first range's start to the last range's end, far longer than either range (Ajatashatru -459 to -372, 87 years)."""
+    ranges = {(min(int(a), int(b)), max(int(a), int(b))) for a, b in RANGE.findall(loc or '')}
+    if len(ranges) < 2 or e.get('end') is None:
+        return False
+    longest = max(b - a for a, b in ranges)
+    return abs(e['end'] - e['start']) > 1.5 * longest + 5
+
+
+GENERIC_ROW = {'kingdom', 'duchy', 'despotate', 'empire', 'republic', 'state', 'states', 'principality', 'union', 'dynasty', 'caliphate', 'sultanate', 'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate'}
+
+
+COLONIAL = re.compile(r'colon|protectorate|east indies|west indies|settlement|mandate|trust territory|occupation|dominion|territory|presidency|crown rule|british rule|company rule', re.I)
+CONSORT_LIST = re.compile(r'empresses|queens consort|consorts', re.I)
+
+
+def row_words(track, colonial=True, phase_window=None):
+    """The distinctive words of a row's name and phases (first four letters are enough to tell Bohemia from Croatia). With `colonial`, a phase
+    that is a colonial or occupation rule ("Spanish East Indies", "British rule in Burma") does not lend its words: the empire's monarch is not
+    that row's head of state."""
+    def overlaps(p):
+        if not phase_window:
+            return True
+        try:
+            a, b = RU.hist(p['start']), (RU.hist(p['end']) if p.get('end') else 3000)
+        except Exception:
+            return True
+        s, e = phase_window[0], phase_window[1] if phase_window[1] is not None else phase_window[0]
+        return min(b, e) - max(a, s) >= 0  # a phase that does not overlap the reign lends no words (Eritrea in federation with Ethiopia, 1952–62)
+    names = [track['name']] + [p['name'] for p in track.get('phases', []) if not (colonial and COLONIAL.search(p['name'])) and overlaps(p)]
+    return {w.lower() for n in names for w in re.findall(r'[A-Za-zÀ-ÿ]{4,}', n)} - GENERIC_ROW
+
+
+HEAD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|sultana|shah|caliph|khan|khagan|prince|princess|duke|duchess|archduke|margrave|landgrave|elector|count|president|doge|voivode|vojvoda|pharaoh|monarch|head of state|sapa|negus|raja|maharaja|nawab|emir|amir|tlatoani|mansa|basileus|despot|lord|chief|chieftain|ruler|leader|regent|stadtholder|grand|yabghu|tenno|shogun|bey|dey|pasha|wali)\b', re.I)
+CONSORT = re.compile(r'consort|wife of|husband of|spouse', re.I)
+NONHEAD = re.compile(r'\b(governor|ambassador|commander|chief of security|minister|premier|envoy|general|viceroy|admiral|prefect|mayor|secretary|speaker|caesar|vice[- ]\w+)\b', re.I)
+
+
+TRACKS = {}  # id -> track of the timeline being frozen
+PERSON_OFFICES = {}  # qid -> every office text the run gives that person on any row (fills an empty office)
+
+
+def wrong_kind(e, r, office, track):
+    """Why a reign this freeze adds (not in the committed reigns.json) is not a head of state of its row, or None. The five guards of the
+    2026-11-24 precision sample, each with a test in test_reigns_freeze.py:
+    1. a consort's years (Cleopatra Selene as queen consort of Egypt on the Seleucid row);
+    2. an office that is not the head of state (a governor or chief of police, a commander, an ambassador) unless the office also names a head;
+    3. another office's infobox term: a `term_start` field whose office has no head-of-state word;
+    4. an office that names none of the row's own words (a colony's row with the empire's monarch, a federation's president on a member's row,
+       an overlord's title on a vassal's row): the first four letters of an office word and a row word must agree;
+    5. a reign that covers less than half of its length inside the row's span (Francis II 1792-1835 on a Milan row that ends earlier)."""
+    if CONSORT_LIST.search(r.get('route', '')) and not re.search(r'monarchs|rulers|heads of state|emperors|kings', r.get('route', ''), re.I):
+        return 'reached only through a list of empresses or consorts'
+    offices = [office] if office else sorted(PERSON_OFFICES.get(r.get('qid'), []))
+    if not offices:
+        return None
+    office = ' ; '.join(offices)
+    if CONSORT.search(office):
+        return 'consort (not a ruler)'
+    own = row_words(track, colonial=False) if track else set()  # the row's own words: "Despot of Epirus" on the Despotate of Epirus is the head of state
+    names_row = any(tok[:4] == w[:4] for tok in re.findall(r'[a-zà-ÿ]{4,}', re.sub(r'\([^)]*\)', ' ', office).lower()) for w in own)
+    if (re.search(r'\b(emperor|king|prince|duke|ruler|lord)\s+in\s+(?!the\b)[A-Z]', office) or (re.search(r'\b(despot|appanage|tributary)\b', office, re.I) and not names_row)):
+        return "a subordinate or regional title (despot, appanage, 'emperor in Thessalonica'), not the realm's own reign"
+    head = bool(HEAD.search(office))
+    if NONHEAD.search(office) and not head:
+        return 'office is not the head of state'
+    if r.get('field', '').startswith('term') and not head:
+        return "another office's term"
+    # direction: a Western emperor is not on the Eastern row, an Eastern emperor not on the Roman Empire row once an Eastern row exists
+    low = office.lower()
+    rname = (track['name'] if track else '').lower()
+    west, east = bool(re.search(r'\b(west|western)\b', low)), bool(re.search(r'\b(east|eastern)\b', low))
+    if track and ((west and re.search(r'\b(east|eastern|byzantine)\b', rname)) or (east and re.search(r'\b(west|western)\b', rname))):
+        return "office names the other half (West/East) of the row's polity"
+    if track and east and 'roman' in rname and not re.search(r'east|byzantine', rname) and any(
+            'roman' in x['name'].lower() and re.search(r'east|byzantine', x['name'].lower()) for x in TRACKS.values()):
+        return 'an Eastern emperor on the undivided Roman row (the Eastern row carries him)'
+    words = row_words(track, phase_window=(e['start'], e.get('end'))) if track else set()
+    text = re.findall(r'[a-zà-ÿ]{4,}', re.sub(r'\([^)]*\)', ' ', office).lower())  # the office only, without "(as Philip II)": a ruler's own name (Philip on the Philippines) is no evidence
+    if words and not any(tok[:4] == w[:4] for tok in text for w in words):
+        return "office names none of the row's words (a colony, member or vassal row)"
+    matched = [p for p in (track or {}).get('phases', []) if any(tok[:4] == w[:4].lower() for tok in text for w in re.findall(r'[A-Za-zÀ-ÿ]{4,}', p['name']) if w.lower() not in GENERIC_ROW)]
+    if matched and e.get('end') is not None:
+        try:
+            lo, hi = min(RU.hist(p['start']) for p in matched), max(RU.hist(p['end']) if p.get('end') else 3000 for p in matched)
+            length = e['end'] - e['start'] + 1
+            if min(e['end'], hi) - max(e['start'], lo) + 1 < 0.5 * length:
+                return "reign mostly outside the phases the office names (a monarch's whole reign on a realm that lasted a few years)"
+        except Exception:
+            pass
+    sp = track.get('span') if track else None
+    if sp and not isinstance(sp, list) and e.get('end') is not None:
+        try:
+            r0, r1 = RU.hist(sp['start']), RU.hist(sp.get('end', e['end']))
+            length = e['end'] - e['start'] + 1  # inclusive years: a reign inside one year has length 1
+            inside = min(e['end'], r1) - max(e['start'], r0) + 1
+            if inside < 0.5 * length:
+                return "reign mostly outside the row's span"
+        except Exception:
+            pass
+    return None
+
+
+def guards(keep, review, ours, ds, committed=None):
+    """Two guards on the reigns this freeze adds beyond the committed reigns.json (an existing reign is never touched):
+    - chronologies: an infobox that gives one reign in two chronologies ("1206-1203 BC (high) ; 1196-1193 BC (low)") is read as two reigns of the
+      same ruler; keep the first listed (earliest start) and make the others claims on its start (startDates, "another chronology");
+    - wrong row: a reign reached only through a list page (no polity route) whose office names none of the row's own words is another polity's
+      ruler (Tomislav of Croatia on Czechia, through a Habsburg-era list): dropped, listed in the review's skipped notes."""
+    tracks = {t['id']: t for t in ds['tracks']}
+    TRACKS.clear()
+    TRACKS.update(tracks)
+    out = Counter()
+    groups = {}
+    for e in keep:
+        r = review[e['uuid']]
+        loc = e['sources'][0]['sourceLocation'] if e.get('sources') else ''
+        if e['uuid'] not in ours and CHRON.search(loc):
+            groups.setdefault((r['row'], r['person'], loc), []).append(e)
+    for evs in groups.values():
+        if len(evs) < 2:
+            continue
+        evs.sort(key=lambda x: x['start'])
+        head = evs[0]
+        head['startDates'] = [{'year': head['start'], 'source': head['sources'][0]}] + [
+            {'year': o['start'], 'source': head['sources'][0], 'note': 'Another chronology in the same infobox.'} for o in evs[1:]]
+        for o in evs[1:]:
+            keep.remove(o)
+            review.pop(o['uuid'], None)
+            out['chronology variant (kept as a claim)'] += 1
+    for e in list(keep):  # a span that joins two chronologies is held, not merged (listed by the caller; the reign is not added)
+        if e['uuid'] not in ours and e['uuid'] in review and merged_chronologies(e, e['sources'][0]['sourceLocation'] if e.get('sources') else ''):
+            keep.remove(e)
+            review.pop(e['uuid'], None)
+            out['span joins two chronologies (held)'] += 1
+    def key(e):
+        r = review.get(e['uuid'])
+        return (r['row'] if r else None, e['title'], e['start'], e.get('startMonth'), e.get('startDay'), e.get('end'))
+    committed = committed or {}
+    # a uuid the committed file already uses for ANOTHER reign of the same ruler (the first reign of a ruler who gained an earlier one: Alexander II
+    # Mircea's committed "reign-…-wallachia" is his 1574 reign, the new run's is his 1568 one) gets a fresh id: it is an addition, not the committed reign
+    for e in keep:
+        c = committed.get(e['uuid'])
+        if c and (c['start'], c.get('startMonth'), c.get('end')) != (e['start'], e.get('startMonth'), e.get('end')):
+            new, n = f"{e['uuid']}-{abs(e['start'])}", 2
+            while new in committed or any(x['uuid'] == new for x in keep):
+                new, n = f"{e['uuid']}-{abs(e['start'])}-{n}", n + 1
+            for d in (review, OFFICES, FIELDS):
+                if e['uuid'] in d:
+                    d[new] = d.pop(e['uuid'])
+            ours.discard(new)
+            e['uuid'] = new
+    def ckey(c):
+        return (c['tracks'][0] if c.get('tracks') else None, c['title'], c['start'], c.get('startMonth'), c.get('startDay'), c.get('end'))
+    seen = {ckey(c) for c in committed.values()} | {key(e) for e in keep if e['uuid'] in ours and e['uuid'] not in committed}  # the committed reigns count first
+    for e in list(keep):  # no two reigns on a row with the same title and dates
+        if e['uuid'] in ours or e['uuid'] not in review:
+            continue
+        k = key(e)
+        if k in seen:
+            keep.remove(e)
+            review.pop(e['uuid'], None)
+            out['duplicate of another reign on the row (same title and dates)'] += 1
+        else:
+            seen.add(k)
+    for e in list(keep):
+        r = review.get(e['uuid'])
+        if not r or e['uuid'] in ours:
+            continue
+        office = OFFICES.get(e['uuid'], '')
+        why = wrong_kind(e, dict(r, field=FIELDS.get(e['uuid'], '')), office, tracks.get(r['row']))
+        if why:
+            keep.remove(e)
+            review.pop(e['uuid'], None)
+            out[why] += 1
+    return out
+
+
 def main():
     timeline = flag('--timeline', 'modern-states')
     d = flag('--dir')
+    lp = flag('--term-labels')
+    if lp and os.path.exists(lp):
+        LABELS.update(json.load(open(lp)))
     ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    if '--without-extras' in sys.argv:  # freeze_regression: extra reigns (extra-reigns.json, when a generator has one) are not inputs of this freeze, and an event already on the timeline counts as a duplicate
+        xp = os.path.join(ROOT, 'pipelines', OUT[timeline], 'extra-reigns.json')
+        if os.path.exists(xp):
+            xs = {e['uuid'] for e in json.load(open(xp))['events']}
+            ds['events'] = [e for e in ds['events'] if e['uuid'] not in xs]
     prov = os.path.join(ROOT, 'data-src', 'provenance', f'{timeline}-reigns.json')
     OWN.update(json.load(open(prov)) if os.path.exists(prov) else {})
     R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'))))
     data = json.load(open(os.path.join(d, 'rulers-events.json')))
     ev_by = {e['uuid']: e for e in data['events']}
     placed = [r for r in R if r['uuid']]
+    for r in R:
+        if r['office'] and r['qid']:
+            PERSON_OFFICES.setdefault(r['qid'], set()).add(r['office'])
     other = RR.from_elsewhere(placed, {t['id']: t['name'] for t in ds['tracks']})
     imp_path = os.path.join(ROOT, 'data-src', f'{timeline}-importance.json')
     pinned = set(json.load(open(imp_path)).get('_pinnedReigns', [])) if os.path.exists(imp_path) else set()
@@ -242,7 +447,7 @@ def main():
                                    'cited': r['cited'] or r['person'], 'toCheck': ['not imported, row matched by part of a word: ' + r['office']]}
             continue
         # read the quote again, for what the bulk run left out (review of #113): "c.", a BC end year, century-only dates
-        pair = [x for x in RU.dates.spans(r['quote'])]
+        pair = [x for x in RU.dates.spans(r['quote'], legacy=True)]
         bare = re.fullmatch(r'\s*(c\.?|ca\.?)?\s*(\d{1,4})\s*[| ]\s*(\d{1,4})\s*(BCE|BC|CE|AD|A\.D\.)?\s*', r['quote'])
         if bare and len(pair) < 2:
             # two bare years ("1816 1828", "c. 320|297 BCE"): the parser keeps only the second
@@ -265,7 +470,7 @@ def main():
                 if pair[0]['circa']:
                     ev['circa'] = True
                 swapped.append(r['person'])
-        sp = [x for x in RU.dates.spans(r['quote']) if x['start'][0] == RU.hist(ev['start'])]
+        sp = [x for x in RU.dates.spans(r['quote'], legacy=True) if x['start'][0] == RU.hist(ev['start'])]
         sp = sp[0] if sp else None
         if sp and sp['precision'] == 'century':
             # "5th century" would draw as an exact 99-year reign: not imported, listed for review
@@ -339,8 +544,13 @@ def main():
             ev['descr'] = re.sub(r'^(Rules|Holds office) as head of state of ', 'Claims the throne of ', ev['descr'], count=1)
             CLAIM_UUIDS[uid] = timeline
         keep.append(ev)
+        OFFICES[ev['uuid']] = r['office']
+        FIELDS[ev['uuid']] = r['field']
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
+    guard_added = guards(keep, review, ours, ds, {e['uuid']: e for e in json.load(open(path))['events']} if os.path.exists(path) else {})
+    for why, n in guard_added.items():
+        dropped[why] += n
     used = {s['sourceKey'] for e in keep for s in e['sources']} | {
         s['sourceKey'] for e in keep for m in e.get('memberships', []) for s in m.get('sources', [])}
     out = {'note': 'Frozen from a reviewed rulers bulk run by pipelines/extract/reigns_freeze.py; merged by '
@@ -348,6 +558,12 @@ def main():
            'events': keep, 'skipped': skipped, 'sources': {k: v for k, v in sorted(data['sources'].items()) if k in used}, 'review': review}
     out['inputs'] = inputs_of(d)
     text = json.dumps(out, indent=1, ensure_ascii=False) + '\n'
+    if lp and '--record-labels' in sys.argv:  # merged across the three timelines (freeze_regression.py --record)
+        json.dump(dict(sorted(LABELS.items())), open(lp, 'w'), ensure_ascii=False, indent=0)
+    if flag('--out'):  # a dry freeze into another file (freeze_regression.py): no input check, no write to reigns.json
+        open(flag('--out'), 'w').write(text)
+        print(f"{timeline}: {len(keep)} reigns -> {flag('--out')}")
+        return
     if os.path.exists(path):
         old = json.load(open(path))
         if old.get('inputs') == out['inputs']:

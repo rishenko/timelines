@@ -1,4 +1,4 @@
-# Timeline data format (schema v7)
+# Timeline data format (schema v10)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -603,6 +603,14 @@ A file that breaks any of these is refused, with a message naming the problem.
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
   Timelines can come from anyone, so anything else (such as `javascript:`) is refused.
 
+**Strict checks for the bundled timelines.** The app loads a file with fields it doesn't know (a newer tool's, say) and
+ignores them, and it keeps a context span of an unknown `kind` without drawing it. The site's own build and CI are stricter,
+so a typo can't load silently: every bundled and private timeline compiles through `validateStrict`
+(`src/data/strict.ts`), where an unknown field anywhere (`"rol"` for `"role"`) or an unknown context kind is an error that
+names the place and the nearest known name. The known fields are those the schema's test fixture
+(`src/data/fixtures/everyField.ts`) sets, and the build already requires it to set every field of the format, so a new
+field is known as soon as it's added.
+
 ## The site's list of timelines
 
 A site lists its own timelines in `timelines/index.json`, next to the files. (This repo makes it at build time from
@@ -739,8 +747,8 @@ says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
 
 | Version | What changed |
 |---|---|
-| 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
 | 10 | [`meta.compress`](#meta): whether the timeline opens with gaps shortened (default on), e.g. off for deep time until it has events. Additive: a version 9 file is read as it is. |
+| 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |
 | 7 | An era's `tracks` (the rows an age belongs to, such as a region), and `meta.eraGroups` (era groups' display names). Additive: a version 6 file is read as it is. Never released: it folded into 8. |
 | 6 | An era's `url` (a page about the age) and `ids` (`wikidata`). Additive: a version 5 file is read as it is. |

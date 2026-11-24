@@ -4,7 +4,7 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 `npm run data -- importance` and `run-all`. Written by `node scripts/row-links.ts ancient-classical`; see
 `docs/data-format.md` (tracks: `url`, `ids`) and the rules in `docs/development.md` ("Row links").
 
-353 rows linked, 29 without a link, 0 undecided.
+354 rows linked, 29 without a link, 0 undecided.
 
 ## Without a link
 
@@ -321,6 +321,7 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 | Yayoi period (Japan) (`yayoi`) | [Yayoi period](https://en.wikipedia.org/wiki/Yayoi_period) · [Q207858](https://www.wikidata.org/wiki/Q207858) |
 | Kofun period (Japan) (`kofun`) | [Kofun period](https://en.wikipedia.org/wiki/Kofun_period) · [Q459939](https://www.wikidata.org/wiki/Q459939) |
 | Asuka period (Japan) (`asuka`) | [Asuka period](https://en.wikipedia.org/wiki/Asuka_period) · [Q210688](https://www.wikidata.org/wiki/Q210688) |
+| Yamato Kingship (`yamato`) | [Yamato Kingship](https://en.wikipedia.org/wiki/Yamato_Kingship) · [Q2658252](https://www.wikidata.org/wiki/Q2658252) |
 | Taiwan and Island Southeast Asia (`island-sea`) | [Maritime Southeast Asia](https://en.wikipedia.org/wiki/Maritime_Southeast_Asia) · [Q2919361](https://www.wikidata.org/wiki/Q2919361) |
 | Taiwan (`taiwan`) | [Prehistory of Taiwan](https://en.wikipedia.org/wiki/Prehistory_of_Taiwan) · [Q709357](https://www.wikidata.org/wiki/Q709357) |
 | Philippines (`philippines`) | [Prehistory of the Philippines](https://en.wikipedia.org/wiki/Prehistory_of_the_Philippines) · [Q4164227](https://www.wikidata.org/wiki/Q4164227) |
