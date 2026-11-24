@@ -348,6 +348,10 @@ def main():
            'events': keep, 'skipped': skipped, 'sources': {k: v for k, v in sorted(data['sources'].items()) if k in used}, 'review': review}
     out['inputs'] = inputs_of(d)
     text = json.dumps(out, indent=1, ensure_ascii=False) + '\n'
+    if flag('--out'):  # a dry freeze into another file (the silent-misses comparison): no input check, no write to reigns.json
+        open(flag('--out'), 'w').write(text)
+        print(f"{timeline}: {len(keep)} reigns -> {flag('--out')}")
+        return
     if os.path.exists(path):
         old = json.load(open(path))
         if old.get('inputs') == out['inputs']:
