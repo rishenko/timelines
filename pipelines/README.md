@@ -123,6 +123,13 @@ It writes `crosscheck-<timeline>.jsonl` (one v2-candidate-shaped line per unit, 
 
 What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
 
+**The people pass** (`extract/wd_people_attrs.py`, schema 2; design in the Workbench note "Timelines people pass design review"): one more streaming read of the same dump, into `wikidata-<dump>-people2.sqlite` (the schema 1 `-people.sqlite` stays as the first report's input). For every human with an English article it keeps the occupations, citizenships, birthplace, work location and residence (non-deprecated claims, preferred rank first; the first occupation is the primary one), born and died with precision, calendar model, rank and claim count, P27 with its P580/P582 dates, floruit (P1317), work period (P2031/P2032), the sitelink count and the English aliases; the `ref` table adds an index on `enwiki`. Living people (no death claim, born 1916 or later) are left out and counted in `meta.skipped_living`. About 2 hours on 4 cores:
+
+    nice -n 19 pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py --threads 2 --workers 3     # pause: touch ~/data/wikidata/PAUSE-people, run again to resume
+    pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py --check                                 # invariants and counts of the finished file
+    pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py --out /tmp/p2.sqlite --max-gib 1 --restart   # a smoke run on the first GiB of JSON, in about 20 seconds (works without indexed_bzip2)
+
+
 ## Freeze regression (CI: "freeze-regression")
 
 `extract/freeze_regression.py INPUTS_DIR` re-freezes the rulers inputs that `pipelines/<generator>/reigns.json` was frozen from and fails if any committed reign is lost or changed. CI runs it on every pull request. The inputs (`<timeline>/rulers.csv`, `<timeline>/rulers-events.json`) and `term-labels.json` (the infobox office labels the freeze reads from the dump, so CI needs no dump) are in `kc2-inputs/` (earlier: `main-inputs/`) on the data-only branch `regression-inputs`. Run it locally before asking for review of any change to `reigns_freeze.py` or the data it reads:
