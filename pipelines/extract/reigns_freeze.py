@@ -351,6 +351,22 @@ def guards(keep, review, ours, ds, committed=None):
                     d[new] = d.pop(e['uuid'])
             ours.discard(new)
             e['uuid'] = new
+    # a reign the committed file already holds (same row, title and dates) keeps the committed uuid: ids are numbered by order of the
+    # ruler's kept reigns, so leaving one out by hand (reigns-excluded.json) would renumber the rest (Nauru: Kenas Aroi's 1989 term
+    # would become the bare id of his excluded 1968 seat)
+    ckeys = {(c['tracks'][0] if c.get('tracks') else None, c['title'], c['start'], c.get('startMonth'), c.get('startDay'), c.get('end')): u
+             for u, c in committed.items()}
+    moves = {e['uuid']: ckeys[key(e)] for e in keep if key(e) in ckeys and ckeys[key(e)] != e['uuid']}
+    if moves:
+        assert len(set(moves.values())) == len(moves), 'two kept reigns match one committed reign'
+        stay = {e['uuid'] for e in keep} - set(moves)
+        assert not (set(moves.values()) & stay), 'a committed uuid is taken by another kept reign'
+        for d in (review, OFFICES, FIELDS):
+            moved = {moves[u]: d.pop(u) for u in list(d) if u in moves}
+            d.update(moved)
+        for e in keep:
+            e['uuid'] = moves.get(e['uuid'], e['uuid'])
+        ours.update(moves.values())
     def ckey(c):
         return (c['tracks'][0] if c.get('tracks') else None, c['title'], c['start'], c.get('startMonth'), c.get('startDay'), c.get('end'))
     seen = {ckey(c) for c in committed.values()} | {key(e) for e in keep if e['uuid'] in ours and e['uuid'] not in committed}  # the committed reigns count first

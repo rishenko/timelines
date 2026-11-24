@@ -95753,6 +95753,34 @@
    ]
   },
   {
+   "uuid": "reign-ban-mueang-thailand",
+   "title": "Reign of Ban Mueang",
+   "start": 1822,
+   "tracks": [
+    "thailand"
+   ],
+   "descr": "Rules as head of state of Thailand from 1822.",
+   "sources": [
+    {
+     "sourceKey": "wp-ban-mueang",
+     "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-ban-mueang",
+       "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
+      }
+     ]
+    }
+   ],
+   "circa": true
+  },
+  {
    "uuid": "reign-rama-iii-thailand",
    "title": "Reign of Rama III",
    "start": 1824,
@@ -95851,10 +95879,11 @@
   {
    "uuid": "reign-ngua-nam-thum-thailand",
    "title": "Reign of Ngua Nam Thum",
+   "start": 1890,
    "tracks": [
     "thailand"
    ],
-   "descr": "Rules as head of state of Thailand from 1323 to 1347 (24 years).",
+   "descr": "Rules as head of state of Thailand from 1890.",
    "sources": [
     {
      "sourceKey": "wp-ngua-nam-thum",
@@ -95872,9 +95901,7 @@
       }
      ]
     }
-   ],
-   "start": 1323,
-   "end": 1347
+   ]
   },
   {
    "uuid": "reign-vajiravudh-thailand",
@@ -98890,39 +98917,6 @@
    "ongoing": true
   },
   {
-   "uuid": "reign-devan-nair-singapore",
-   "title": "Presidency of Devan Nair",
-   "start": 1964,
-   "startMonth": 5,
-   "startDay": 18,
-   "end": 1969,
-   "endMonth": 3,
-   "endDay": 20,
-   "tracks": [
-    "singapore"
-   ],
-   "descr": "Holds office as head of state of Singapore from 18 May 1964 to 20 March 1969 (5 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-devan-nair",
-     "sourceLocation": "infobox term_start6: 18 May 1964 – 20 March 1969"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-devan-nair",
-       "sourceLocation": "infobox term_start6: 18 May 1964 – 20 March 1969"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-yusof-ishak-singapore",
    "title": "Presidency of Yusof Ishak",
    "start": 1965,
@@ -99048,39 +99042,6 @@
       {
        "sourceKey": "wp-benjamin-sheares",
        "sourceLocation": "infobox term_start: 2 January 1971 – 12 May 1981"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-devan-nair-singapore-1979",
-   "title": "Presidency of Devan Nair",
-   "start": 1979,
-   "startMonth": 2,
-   "startDay": 10,
-   "end": 1981,
-   "endMonth": 10,
-   "endDay": 13,
-   "tracks": [
-    "singapore"
-   ],
-   "descr": "Holds office as head of state of Singapore from 10 February 1979 to 13 October 1981 (2 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-devan-nair",
-     "sourceLocation": "infobox term_start5: 10 February 1979 – 13 October 1981"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-devan-nair",
-       "sourceLocation": "infobox term_start5: 10 February 1979 – 13 October 1981"
       }
      ]
     }
@@ -163422,35 +163383,6 @@
    ]
   },
   {
-   "uuid": "reign-kalkot-mataskelekele-vanuatu",
-   "title": "Presidency of Kalkot Mataskelekele",
-   "start": 1988,
-   "end": 1991,
-   "tracks": [
-    "vanuatu"
-   ],
-   "descr": "Holds office as head of state of Vanuatu from 1988 to 1991 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kalkot-mataskelekele",
-     "sourceLocation": "infobox term_start2: 1988 – 1991"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kalkot-mataskelekele",
-       "sourceLocation": "infobox term_start2: 1988 – 1991"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-onneyn-tahi-vanuatu",
    "title": "Acting presidency of Onneyn Tahi",
    "start": 1989,
@@ -165010,104 +164942,6 @@
    "ongoing": true
   },
   {
-   "uuid": "reign-kenas-aroi-nauru",
-   "title": "Presidency of Kenas Aroi",
-   "start": 1968,
-   "startMonth": 1,
-   "startDay": 31,
-   "end": 1991,
-   "endMonth": 1,
-   "endDay": 22,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 31 January 1968 to 22 January 1991 (23 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kenas-aroi",
-     "sourceLocation": "infobox term_start2: January 31, 1968 – January 22, 1991"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kenas-aroi",
-       "sourceLocation": "infobox term_start2: January 31, 1968 – January 22, 1991"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-lagumot-harris-nauru",
-   "title": "Presidency of Lagumot Harris",
-   "start": 1968,
-   "startMonth": 1,
-   "startDay": 31,
-   "end": 1976,
-   "endMonth": 12,
-   "endDay": 18,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 31 January 1968 to 18 December 1976 (8 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-lagumot-harris",
-     "sourceLocation": "infobox term_start3: 31 January 1968 – 18 December 1976"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-lagumot-harris",
-       "sourceLocation": "infobox term_start3: 31 January 1968 – 18 December 1976"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-derog-gioura-nauru",
-   "title": "Presidency of Derog Gioura",
-   "start": 1968,
-   "startMonth": 1,
-   "startDay": 31,
-   "end": 1971,
-   "endMonth": 1,
-   "endDay": 25,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 31 January 1968 to 25 January 1971 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-derog-gioura",
-     "sourceLocation": "infobox term_start1: 31 January 1968 – 25 January 1971"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-derog-gioura",
-       "sourceLocation": "infobox term_start1: 31 January 1968 – 25 January 1971"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-hammer-deroburt-nauru",
    "title": "Presidency of Hammer DeRoburt",
    "start": 1968,
@@ -165134,170 +164968,6 @@
       {
        "sourceKey": "wp-hammer-deroburt",
        "sourceLocation": "infobox term_start: 17 May 1968 – 22 December 1976"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ruben-kun-nauru",
-   "title": "Presidency of Ruben Kun",
-   "start": 1971,
-   "startMonth": 1,
-   "startDay": 25,
-   "end": 1992,
-   "endMonth": 11,
-   "endDay": 16,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 25 January 1971 to 16 November 1992 (21 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-ruben-kun",
-     "sourceLocation": "infobox term_start5: 25 January 1971 – 16 November 1992"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ruben-kun",
-       "sourceLocation": "infobox term_start5: 25 January 1971 – 16 November 1992"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kennan-adeang-nauru",
-   "title": "Presidency of Kennan Adeang",
-   "start": 1971,
-   "startMonth": 1,
-   "startDay": 25,
-   "end": 1971,
-   "endMonth": 6,
-   "endDay": 18,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 25 January 1971 to 18 June 1971.",
-   "sources": [
-    {
-     "sourceKey": "wp-kennan-adeang",
-     "sourceLocation": "infobox term_start4: 25 January 1971 – 18 June 1971"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kennan-adeang",
-       "sourceLocation": "infobox term_start4: 25 January 1971 – 18 June 1971"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-derog-gioura-nauru-1971",
-   "title": "Presidency of Derog Gioura",
-   "start": 1971,
-   "startMonth": 8,
-   "startDay": 18,
-   "end": 1973,
-   "endMonth": 12,
-   "endDay": 17,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 18 August 1971 to 17 December 1973 (2 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-derog-gioura",
-     "sourceLocation": "infobox term_start2: 18 August 1971 – 17 December 1973"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-derog-gioura",
-       "sourceLocation": "infobox term_start2: 18 August 1971 – 17 December 1973"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kennan-adeang-nauru-1973",
-   "title": "Presidency of Kennan Adeang",
-   "start": 1973,
-   "startMonth": 12,
-   "startDay": 17,
-   "end": 1976,
-   "endMonth": 12,
-   "endDay": 18,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 17 December 1973 to 18 December 1976 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kennan-adeang",
-     "sourceLocation": "infobox term_start5: 17 December 1973 – 18 December 1976"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kennan-adeang",
-       "sourceLocation": "infobox term_start5: 17 December 1973 – 18 December 1976"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-derog-gioura-nauru-1976",
-   "title": "Presidency of Derog Gioura",
-   "start": 1976,
-   "startMonth": 12,
-   "startDay": 18,
-   "end": 1977,
-   "endMonth": 5,
-   "endDay": 26,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 18 December 1976 to 26 May 1977.",
-   "sources": [
-    {
-     "sourceKey": "wp-derog-gioura",
-     "sourceLocation": "infobox term_start3: 18 December 1976 – 26 May 1977"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-derog-gioura",
-       "sourceLocation": "infobox term_start3: 18 December 1976 – 26 May 1977"
       }
      ]
     }
@@ -165331,72 +165001,6 @@
       {
        "sourceKey": "wp-bernard-dowiyogo",
        "sourceLocation": "infobox term_start: December 22, 1976 – April 19, 1978"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kennan-adeang-nauru-1977",
-   "title": "Presidency of Kennan Adeang",
-   "start": 1977,
-   "startMonth": 5,
-   "startDay": 16,
-   "end": 1978,
-   "endMonth": 9,
-   "endDay": 14,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 16 May 1977 to 14 September 1978.",
-   "sources": [
-    {
-     "sourceKey": "wp-kennan-adeang",
-     "sourceLocation": "infobox term_start6: 16 May 1977 – 14 September 1978"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kennan-adeang",
-       "sourceLocation": "infobox term_start6: 16 May 1977 – 14 September 1978"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-lagumot-harris-nauru-1977",
-   "title": "Presidency of Lagumot Harris",
-   "start": 1977,
-   "startMonth": 11,
-   "startDay": 12,
-   "end": 1980,
-   "endMonth": 12,
-   "endDay": 8,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 12 November 1977 to 8 December 1980 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-lagumot-harris",
-     "sourceLocation": "infobox term_start4: 12 November 1977 – 8 December 1980"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-lagumot-harris",
-       "sourceLocation": "infobox term_start4: 12 November 1977 – 8 December 1980"
       }
      ]
     }
@@ -165462,71 +165066,6 @@
       {
        "sourceKey": "wp-hammer-deroburt",
        "sourceLocation": "infobox term_start2: 15 May 1978 – 17 September 1986"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-derog-gioura-nauru-1978",
-   "title": "Presidency of Derog Gioura",
-   "start": 1978,
-   "startMonth": 10,
-   "startDay": 21,
-   "end": 2001,
-   "endMonth": 11,
-   "endDay": 6,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 21 October 1978 to 6 November 2001 (23 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-derog-gioura",
-     "sourceLocation": "infobox term_start4: 21 October 1978 – 6 November 2001"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-derog-gioura",
-       "sourceLocation": "infobox term_start4: 21 October 1978 – 6 November 2001"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kennan-adeang-nauru-1980",
-   "title": "Presidency of Kennan Adeang",
-   "start": 1980,
-   "startMonth": 12,
-   "startDay": 8,
-   "end": 1988,
-   "endMonth": 7,
-   "endDay": 25,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 8 December 1980 to 25 July 1988 (8 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kennan-adeang",
-     "sourceLocation": "infobox term_start7: 8 December 1980 – 25 July 1988"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kennan-adeang",
-       "sourceLocation": "infobox term_start7: 8 December 1980 – 25 July 1988"
       }
      ]
     }
@@ -165659,38 +165198,6 @@
       {
        "sourceKey": "wp-hammer-deroburt",
        "sourceLocation": "infobox term_start4: 22 December 1986 – 17 August 1989"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kennan-adeang-nauru-1988",
-   "title": "Presidency of Kennan Adeang",
-   "start": 1988,
-   "startMonth": 9,
-   "startDay": 3,
-   "end": 2000,
-   "endMonth": 4,
-   "endDay": 8,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 3 September 1988 to 8 April 2000 (12 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kennan-adeang",
-     "sourceLocation": "infobox term_start8: 3 September 1988 – 8 April 2000"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kennan-adeang",
-       "sourceLocation": "infobox term_start8: 3 September 1988 – 8 April 2000"
       }
      ]
     }
@@ -166060,39 +165567,6 @@
    ]
   },
   {
-   "uuid": "reign-derog-gioura-nauru-2001",
-   "title": "Presidency of Derog Gioura",
-   "start": 2001,
-   "startMonth": 12,
-   "startDay": 18,
-   "end": 2004,
-   "endMonth": 10,
-   "endDay": 23,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 18 December 2001 to 23 October 2004 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-derog-gioura",
-     "sourceLocation": "infobox term_start5: 18 December 2001 – 23 October 2004"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-derog-gioura",
-       "sourceLocation": "infobox term_start5: 18 December 2001 – 23 October 2004"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-bernard-dowiyogo-nauru-2003",
    "title": "Presidency of Bernard Dowiyogo",
    "start": 2003,
@@ -166285,39 +165759,6 @@
       {
        "sourceKey": "wp-ludwig-scotty",
        "sourceLocation": "infobox term_start1: 22 June 2004 – 19 December 2007"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-freddie-pitcher-nauru",
-   "title": "Presidency of Freddie Pitcher",
-   "start": 2004,
-   "startMonth": 10,
-   "startDay": 23,
-   "end": 2013,
-   "endMonth": 6,
-   "endDay": 8,
-   "tracks": [
-    "nauru"
-   ],
-   "descr": "Holds office as head of state of Nauru from 23 October 2004 to 8 June 2013 (9 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-freddie-pitcher",
-     "sourceLocation": "infobox term_start2: 23 October 2004 – 8 June 2013"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-freddie-pitcher",
-       "sourceLocation": "infobox term_start2: 23 October 2004 – 8 June 2013"
       }
      ]
     }
@@ -170218,14 +169659,24 @@
     "not imported, office is not head of state: List of kings of Cambodia"
    ]
   },
-  "reign-ban-mueang": {
-   "row": "thailand",
-   "person": "Ban Mueang",
-   "qid": "Q2881860",
-   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
-   "cited": "Ban Mueang",
+  "reign-devan-nair": {
+   "row": "singapore",
+   "person": "Devan Nair",
+   "qid": "Q457929",
+   "route": "list: List of presidents of Singapore; office: President of Singapore; polity: Singapore",
+   "cited": "Devan Nair",
    "toCheck": [
-    "not imported, the source dates it in a local era and gives no CE start: c. ? – c. 1822 BE (1279/80 CE)"
+    "not imported, wrong row: infobox term_start6 (18 May 1964 – 20 Mar 1969): parliament6 = Malaysian, constituency_mp6 = Bangsar, a Member of Parliament seat; his presidency is term_start (23 Oct 1981 – 28 Mar 1985)"
+   ]
+  },
+  "reign-devan-nair-1979": {
+   "row": "singapore",
+   "person": "Devan Nair",
+   "qid": "Q457929",
+   "route": "list: List of presidents of Singapore; office: President of Singapore; polity: Singapore",
+   "cited": "Devan Nair",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start5 (10 Feb 1979 – 13 Oct 1981): parliament5 = Singapore, constituency_mp5 = Anson, a Member of Parliament seat; his presidency is term_start (1981–85)"
    ]
   },
   "reign-andrew-jackson": {
@@ -171036,6 +170487,166 @@
    "cited": "Hissène Habré",
    "toCheck": [
     "not imported, office is not head of state: List of heads of state of Chad President of Chad"
+   ]
+  },
+  "reign-kalkot-mataskelekele": {
+   "row": "vanuatu",
+   "person": "Kalkot Mataskelekele",
+   "qid": "Q316133",
+   "route": "list: President of Vanuatu; office: President of Vanuatu; polity: Vanuatu",
+   "cited": "Kalkot Mataskelekele",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start2 (1988–91): parliament2 = Vanuatu, constituency_mp2 = Port Vila, a Member of Parliament seat; his presidency is term_start (16 Aug 2004 – 16 Aug 2009)"
+   ]
+  },
+  "reign-kenas-aroi": {
+   "row": "nauru",
+   "person": "Kenas Aroi",
+   "qid": "Q887804",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kenas Aroi",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start2 (31 Jan 1968 – 22 Jan 1991): parliament2 = Nauruan, constituency_mp2 = Boe, a Member of Parliament seat; his presidency is term_start1 (17 Aug – 12 Dec 1989)"
+   ]
+  },
+  "reign-lagumot-harris": {
+   "row": "nauru",
+   "person": "Lagumot Harris",
+   "qid": "Q783823",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Lagumot Harris",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start3 (31 Jan 1968 – 18 Dec 1976): its office field is empty and its predecessor reads 'Position Established'; his presidency terms are term_start (19 Apr – 15 May 1978) and term_start1 (1995–96)"
+   ]
+  },
+  "reign-derog-gioura": {
+   "row": "nauru",
+   "person": "Derog Gioura",
+   "qid": "Q888033",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Derog Gioura",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start1 (1968–71): parliament1 = Nauruan, constituency_mp1 = Ubenide, a Member of Parliament seat; his presidency is the unnumbered term (10 Mar – 29 May 2003)"
+   ]
+  },
+  "reign-ruben-kun": {
+   "row": "nauru",
+   "person": "Ruben Kun",
+   "qid": "Q887813",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Ruben Kun",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start5 (25 Jan 1971 – 16 Nov 1992): its office field is empty; parliament4 = Nauruan is the Member of Parliament block before it; his presidency is term_start3 (19 Dec 1996 – 13 Feb 1997)"
+   ]
+  },
+  "reign-kennan-adeang": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start4 (25 Jan 1971 – 18 Jun 1971): parliament4 = Nauruan, constituency_mp4 = Ubenide, a Member of Parliament seat; his presidency terms are term_start, term_start2 (1986) and term_start3 (1996)"
+   ]
+  },
+  "reign-derog-gioura-1971": {
+   "row": "nauru",
+   "person": "Derog Gioura",
+   "qid": "Q888033",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Derog Gioura",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start2 (18 Aug 1971 – 17 Dec 1973): no office of its own, follows the Member of Parliament block term_start1"
+   ]
+  },
+  "reign-kennan-adeang-1973": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start5 (17 Dec 1973 – 18 Dec 1976): no office of its own, follows the Member of Parliament block term_start4"
+   ]
+  },
+  "reign-derog-gioura-1976": {
+   "row": "nauru",
+   "person": "Derog Gioura",
+   "qid": "Q888033",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Derog Gioura",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start3 (18 Dec 1976 – 26 May 1977): no office of its own, follows the Member of Parliament block term_start1"
+   ]
+  },
+  "reign-kennan-adeang-1977": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start6 (16 May 1977 – 14 Sep 1978): no office of its own, follows the Member of Parliament block term_start4"
+   ]
+  },
+  "reign-lagumot-harris-1977": {
+   "row": "nauru",
+   "person": "Lagumot Harris",
+   "qid": "Q783823",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Lagumot Harris",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start4 (12 Nov 1977 – 8 Dec 1980): its office field is empty (a seat, successor Kennan Adeang); his presidency terms are term_start and term_start1"
+   ]
+  },
+  "reign-derog-gioura-1978": {
+   "row": "nauru",
+   "person": "Derog Gioura",
+   "qid": "Q888033",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Derog Gioura",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start4 (21 Oct 1978 – 6 Nov 2001): no office of its own, follows the Member of Parliament block term_start1"
+   ]
+  },
+  "reign-kennan-adeang-1980": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start7 (8 Dec 1980 – 25 Jul 1988): successor7 = 'Constituency abolished', a constituency seat"
+   ]
+  },
+  "reign-kennan-adeang-1988": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start8 (3 Sep 1988 – 8 Apr 2000): predecessor8 = 'Constituency re-established', a constituency seat"
+   ]
+  },
+  "reign-derog-gioura-2001": {
+   "row": "nauru",
+   "person": "Derog Gioura",
+   "qid": "Q888033",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Derog Gioura",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start5 (18 Dec 2001 – 23 Oct 2004): no office of its own, follows the Member of Parliament block term_start1"
+   ]
+  },
+  "reign-freddie-pitcher": {
+   "row": "nauru",
+   "person": "Freddie Pitcher",
+   "qid": "Q917601",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Freddie Pitcher",
+   "toCheck": [
+    "not imported, wrong row: infobox term_start2 (23 Oct 2004 – 8 Jun 2013): parliament2 = Nauruan, constituency_mp2 = Ubenide, a Member of Parliament seat; his presidency is term_start (10–15 Nov 2011)"
    ]
   }
  },
@@ -175304,6 +174915,14 @@
     "wikipedia"
    ]
   },
+  "wp-ban-mueang": {
+   "name": "Ban Mueang (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ban_Mueang",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-barack-obama": {
    "name": "Barack Obama (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
@@ -178163,14 +177782,6 @@
   "wp-deodoro-da-fonseca": {
    "name": "Deodoro da Fonseca (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Deodoro_da_Fonseca",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-derog-gioura": {
-   "name": "Derog Gioura (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Derog_Gioura",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -230038,6 +229649,16 @@
    "cited": "Rama II",
    "toCheck": []
   },
+  "reign-ban-mueang-thailand": {
+   "row": "thailand",
+   "person": "Ban Mueang",
+   "qid": "Q2881860",
+   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
+   "cited": "Ban Mueang",
+   "toCheck": [
+    "no end read: shown as one year"
+   ]
+  },
   "reign-rama-iii-thailand": {
    "row": "thailand",
    "person": "Rama III",
@@ -230068,7 +229689,9 @@
    "qid": "Q3510561",
    "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
    "cited": "Ngua Nam Thum",
-   "toCheck": []
+   "toCheck": [
+    "no end read: shown as one year"
+   ]
   },
   "reign-vajiravudh-thailand": {
    "row": "thailand",
@@ -230836,14 +230459,6 @@
     "open end read as incumbent"
    ]
   },
-  "reign-devan-nair-singapore": {
-   "row": "singapore",
-   "person": "Devan Nair",
-   "qid": "Q457929",
-   "route": "list: List of presidents of Singapore; office: President of Singapore; polity: Singapore",
-   "cited": "Devan Nair",
-   "toCheck": []
-  },
   "reign-yusof-ishak-singapore": {
    "row": "singapore",
    "person": "Yusof Ishak",
@@ -230876,14 +230491,6 @@
    "cited": "Benjamin Sheares",
    "toCheck": []
   },
-  "reign-devan-nair-singapore-1979": {
-   "row": "singapore",
-   "person": "Devan Nair",
-   "qid": "Q457929",
-   "route": "list: List of presidents of Singapore; office: President of Singapore; polity: Singapore",
-   "cited": "Devan Nair",
-   "toCheck": []
-  },
   "reign-wee-chong-jin-singapore": {
    "row": "singapore",
    "person": "Wee Chong Jin",
@@ -230898,14 +230505,6 @@
    "qid": "Q8052418",
    "route": "list: List of presidents of Singapore; office: President of Singapore; polity: Singapore",
    "cited": "Yeoh Ghim Seng",
-   "toCheck": []
-  },
-  "reign-devan-nair-singapore-1981": {
-   "row": "singapore",
-   "person": "Devan Nair",
-   "qid": "Q457929",
-   "route": "list: List of presidents of Singapore; office: President of Singapore; polity: Singapore",
-   "cited": "Devan Nair",
    "toCheck": []
   },
   "reign-wee-chong-jin-singapore-1985": {
@@ -247503,14 +247102,6 @@
    "cited": "Ati George Sokomanu",
    "toCheck": []
   },
-  "reign-kalkot-mataskelekele-vanuatu": {
-   "row": "vanuatu",
-   "person": "Kalkot Mataskelekele",
-   "qid": "Q316133",
-   "route": "list: President of Vanuatu; office: President of Vanuatu; polity: Vanuatu",
-   "cited": "Kalkot Mataskelekele",
-   "toCheck": []
-  },
   "reign-onneyn-tahi-vanuatu": {
    "row": "vanuatu",
    "person": "Onneyn Tahi",
@@ -247565,14 +247156,6 @@
    "qid": "Q888602",
    "route": "list: President of Vanuatu; office: President of Vanuatu; polity: Vanuatu",
    "cited": "Alfred Maseng",
-   "toCheck": []
-  },
-  "reign-kalkot-mataskelekele-vanuatu-2004": {
-   "row": "vanuatu",
-   "person": "Kalkot Mataskelekele",
-   "qid": "Q316133",
-   "route": "list: President of Vanuatu; office: President of Vanuatu; polity: Vanuatu",
-   "cited": "Kalkot Mataskelekele",
    "toCheck": []
   },
   "reign-maxime-carlot-korman-vanuatu": {
@@ -247905,30 +247488,6 @@
     "open end read as incumbent"
    ]
   },
-  "reign-kenas-aroi-nauru": {
-   "row": "nauru",
-   "person": "Kenas Aroi",
-   "qid": "Q887804",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kenas Aroi",
-   "toCheck": []
-  },
-  "reign-lagumot-harris-nauru": {
-   "row": "nauru",
-   "person": "Lagumot Harris",
-   "qid": "Q783823",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Lagumot Harris",
-   "toCheck": []
-  },
-  "reign-derog-gioura-nauru": {
-   "row": "nauru",
-   "person": "Derog Gioura",
-   "qid": "Q888033",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Derog Gioura",
-   "toCheck": []
-  },
   "reign-hammer-deroburt-nauru": {
    "row": "nauru",
    "person": "Hammer DeRoburt",
@@ -247938,46 +247497,6 @@
    "toCheck": [
     "Wikidata differs: 31 January 1968 – 22 December 1976"
    ]
-  },
-  "reign-ruben-kun-nauru": {
-   "row": "nauru",
-   "person": "Ruben Kun",
-   "qid": "Q887813",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Ruben Kun",
-   "toCheck": []
-  },
-  "reign-kennan-adeang-nauru": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
-   "toCheck": []
-  },
-  "reign-derog-gioura-nauru-1971": {
-   "row": "nauru",
-   "person": "Derog Gioura",
-   "qid": "Q888033",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Derog Gioura",
-   "toCheck": []
-  },
-  "reign-kennan-adeang-nauru-1973": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
-   "toCheck": []
-  },
-  "reign-derog-gioura-nauru-1976": {
-   "row": "nauru",
-   "person": "Derog Gioura",
-   "qid": "Q888033",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Derog Gioura",
-   "toCheck": []
   },
   "reign-bernard-dowiyogo-nauru": {
    "row": "nauru",
@@ -247989,60 +247508,12 @@
     "Wikidata differs: 22 December 1976 – 19 December 1978"
    ]
   },
-  "reign-kennan-adeang-nauru-1977": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
-   "toCheck": []
-  },
-  "reign-lagumot-harris-nauru-1977": {
-   "row": "nauru",
-   "person": "Lagumot Harris",
-   "qid": "Q783823",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Lagumot Harris",
-   "toCheck": []
-  },
-  "reign-lagumot-harris-nauru-1978": {
-   "row": "nauru",
-   "person": "Lagumot Harris",
-   "qid": "Q783823",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Lagumot Harris",
-   "toCheck": []
-  },
   "reign-hammer-deroburt-nauru-1978": {
    "row": "nauru",
    "person": "Hammer DeRoburt",
    "qid": "Q336231",
    "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
    "cited": "Hammer DeRoburt",
-   "toCheck": []
-  },
-  "reign-derog-gioura-nauru-1978": {
-   "row": "nauru",
-   "person": "Derog Gioura",
-   "qid": "Q888033",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Derog Gioura",
-   "toCheck": []
-  },
-  "reign-kennan-adeang-nauru-1980": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
-   "toCheck": []
-  },
-  "reign-kennan-adeang-nauru-1986": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
    "toCheck": []
   },
   "reign-hammer-deroburt-nauru-1986": {
@@ -248053,36 +247524,12 @@
    "cited": "Hammer DeRoburt",
    "toCheck": []
   },
-  "reign-kennan-adeang-nauru-1986-m12": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
-   "toCheck": []
-  },
   "reign-hammer-deroburt-nauru-1986-m12": {
    "row": "nauru",
    "person": "Hammer DeRoburt",
    "qid": "Q336231",
    "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
    "cited": "Hammer DeRoburt",
-   "toCheck": []
-  },
-  "reign-kennan-adeang-nauru-1988": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
-   "toCheck": []
-  },
-  "reign-kenas-aroi-nauru-1989": {
-   "row": "nauru",
-   "person": "Kenas Aroi",
-   "qid": "Q887804",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kenas Aroi",
    "toCheck": []
   },
   "reign-bernard-dowiyogo-nauru-1989": {
@@ -248115,14 +247562,6 @@
    "qid": "Q888040",
    "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
    "cited": "Kennan Adeang",
-   "toCheck": []
-  },
-  "reign-ruben-kun-nauru-1996": {
-   "row": "nauru",
-   "person": "Ruben Kun",
-   "qid": "Q887813",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Ruben Kun",
    "toCheck": []
   },
   "reign-kinza-clodumar-nauru": {
@@ -248163,14 +247602,6 @@
    "qid": "Q560557",
    "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
    "cited": "René Harris",
-   "toCheck": []
-  },
-  "reign-derog-gioura-nauru-2001": {
-   "row": "nauru",
-   "person": "Derog Gioura",
-   "qid": "Q888033",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Derog Gioura",
    "toCheck": []
   },
   "reign-bernard-dowiyogo-nauru-2003": {
@@ -248221,28 +247652,12 @@
    "cited": "Ludwig Scotty",
    "toCheck": []
   },
-  "reign-freddie-pitcher-nauru": {
-   "row": "nauru",
-   "person": "Freddie Pitcher",
-   "qid": "Q917601",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Freddie Pitcher",
-   "toCheck": []
-  },
   "reign-marcus-stephen-nauru": {
    "row": "nauru",
    "person": "Marcus Stephen",
    "qid": "Q274174",
    "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
    "cited": "Marcus Stephen",
-   "toCheck": []
-  },
-  "reign-freddie-pitcher-nauru-2011": {
-   "row": "nauru",
-   "person": "Freddie Pitcher",
-   "qid": "Q917601",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Freddie Pitcher",
    "toCheck": []
   },
   "reign-sprent-dabwido-nauru": {
@@ -249014,12 +248429,76 @@
    "toCheck": [
     "list-page date"
    ]
+  },
+  "reign-devan-nair-singapore-1981": {
+   "row": "singapore",
+   "person": "Devan Nair",
+   "qid": "Q457929",
+   "route": "list: List of presidents of Singapore; office: President of Singapore; polity: Singapore",
+   "cited": "Devan Nair",
+   "toCheck": []
+  },
+  "reign-kalkot-mataskelekele-vanuatu-2004": {
+   "row": "vanuatu",
+   "person": "Kalkot Mataskelekele",
+   "qid": "Q316133",
+   "route": "list: President of Vanuatu; office: President of Vanuatu; polity: Vanuatu",
+   "cited": "Kalkot Mataskelekele",
+   "toCheck": []
+  },
+  "reign-lagumot-harris-nauru-1978": {
+   "row": "nauru",
+   "person": "Lagumot Harris",
+   "qid": "Q783823",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Lagumot Harris",
+   "toCheck": []
+  },
+  "reign-kennan-adeang-nauru-1986": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": []
+  },
+  "reign-kennan-adeang-nauru-1986-m12": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": []
+  },
+  "reign-kenas-aroi-nauru-1989": {
+   "row": "nauru",
+   "person": "Kenas Aroi",
+   "qid": "Q887804",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kenas Aroi",
+   "toCheck": []
+  },
+  "reign-ruben-kun-nauru-1996": {
+   "row": "nauru",
+   "person": "Ruben Kun",
+   "qid": "Q887813",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Ruben Kun",
+   "toCheck": []
+  },
+  "reign-freddie-pitcher-nauru-2011": {
+   "row": "nauru",
+   "person": "Freddie Pitcher",
+   "qid": "Q917601",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Freddie Pitcher",
+   "toCheck": []
   }
  },
  "inputs": {
   "rulers.csv": "22579128aef6de5c",
   "rulers-events.json": "71b28aac4050d80a",
-  "reigns-excluded.json": "c4a553676c486b94",
+  "reigns-excluded.json": "6d73c456f0664aa0",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
