@@ -14,6 +14,10 @@
 //   both files, when both give the row phases.
 // Pairs (data-src/seams.json) cover a row in one timeline that is a set of phases in the other (Ancient's `tang` row =
 // the Tang phases of Medieval's `china`): the row's lifespan must match the first phase's start and the last one's end.
+// Both also agree on each stretch's and same-name phase's `circa` and the years of its date claims (`startDates`,
+// `endDates`), so a ruling made on one side can't drift from the other. A row whose claims differ for an older reason
+// is listed in seams.json's `claimGaps` ("<timeline>/<timeline>/<row>": reason): reported, not failed, and a listed gap
+// that no longer differs fails, so the list can only shrink.
 // Start and end events and memberships are not compared. Exits 1 on any difference.
 import { existsSync, readFileSync } from 'node:fs';
 
@@ -32,6 +36,14 @@ const tls: Json[] = files.map((f) => JSON.parse(readFileSync(f, 'utf8')));
 const typed = (t: Json): Json[] | null => (t.span ? (Array.isArray(t.span) ? t.span : [t.span]) : null);
 const dates = (x: Json) => `${x.start}–${x.ongoing ? 'ongoing' : x.end}`;
 const same = (x: Json, y: Json) => x.start === y.start && (x.end ?? null) === (y.end ?? null) && !!x.ongoing === !!y.ongoing;
+const years = (cs?: Json[]) => (cs ?? []).map((c) => c.year).sort((x, y) => x - y).join(',');
+/** What two copies of a stretch or phase disagree on besides their dates: circa, and their claims' years. */
+const detail = (x: Json, y: Json) =>
+  [!!x.circa !== !!y.circa && `circa ${!!x.circa} vs ${!!y.circa}`,
+    years(x.startDates) !== years(y.startDates) && `start claims [${years(x.startDates)}] vs [${years(y.startDates)}]`,
+    years(x.endDates) !== years(y.endDates) && `end claims [${years(x.endDates)}] vs [${years(y.endDates)}]`].filter(Boolean).join('; ');
+const gaps: Record<string, string> = plan.claimGaps ?? {};
+const gapsSeen = new Set<string>();
 const contains = (p: Json, y: number) => p.start <= y && (p.ongoing || p.end >= y);
 /** The year where a's range ends and b's begins, if they are neighbours. */
 const seamYear = (a: Json, b: Json) =>
@@ -52,9 +64,11 @@ for (let i = 0; i < tls.length; i++) {
       const sa = typed(ta), sb = typed(tb);
       if (!sa && !sb && !ta.phases && !tb.phases) continue; // a group row in both
       const errs: string[] = [];
+      const claimDiffs: string[] = [];
       if (sa && sb) {
         if (sa.length !== sb.length || sa.some((x, k) => !same(x, sb[k])))
           errs.push(`typed lifespan: ${A} ${sa.map(dates).join(', ')} vs ${B} ${sb.map(dates).join(', ')}`);
+        else sa.forEach((x, k) => { const d = detail(x, sb[k]); if (d) claimDiffs.push(`lifespan ${dates(x)}: ${d}`); });
       } else if (sa || sb) {
         notes.push(`  ${ta.id}: lifespan typed only in ${sa ? A : B} (${(sa ?? sb)!.map(dates).join(', ')})`);
       }
@@ -62,6 +76,7 @@ for (let i = 0; i < tls.length; i++) {
       for (const p of pa) {
         const q = pb.find((x) => x.name === p.name);
         if (q && !same(p, q)) errs.push(`phase "${p.name}": ${A} ${dates(p)} vs ${B} ${dates(q)}`);
+        else if (q && detail(p, q)) claimDiffs.push(`phase "${p.name}": ${detail(p, q)}`);
       }
       if (seam !== null && pa.length && pb.length) {
         for (const [ps, qs, X, Y] of [[pa, pb, A, B], [pb, pa, B, A]] as [Json[], Json[], string, string][])
@@ -70,6 +85,11 @@ for (let i = 0; i < tls.length; i++) {
       } else if (seam !== null && (pa.length || pb.length)) {
         notes.push(`  ${ta.id}: phases only in ${pa.length ? A : B}`);
       }
+      const gapKey = `${A}/${B}/${ta.id}`;
+      if (claimDiffs.length && gaps[gapKey]) {
+        gapsSeen.add(gapKey);
+        notes.push(`  known claim gap ${ta.id} (${A}/${B}): ${claimDiffs.join('; ')} (${gaps[gapKey]})`);
+      } else errs.push(...claimDiffs);
       if (errs.length) problems.push(...errs.map((e) => `${ta.id} (${A}/${B}): ${e}`));
       else notes.push(`ok ${ta.id} (${A}/${B})`);
     }
@@ -88,6 +108,9 @@ for (const pair of plan.pairs ?? []) {
   if (!s || s[0].start !== start || s[s.length - 1].end !== end) problems.push(`pair differs: ${where}`);
   else notes.push(`ok pair ${where}`);
 }
+for (const k of Object.keys(gaps))
+  if (!gapsSeen.has(k) && tls.some((t) => t.meta.id === k.split('/')[0]) && tls.some((t) => t.meta.id === k.split('/')[1]))
+    problems.push(`claimGaps lists ${k}, which no longer differs: remove it from data-src/seams.json`);
 console.log(`Seams across ${tls.map((t) => t.meta.id).join(', ')}`);
 for (const n of notes) console.log(n);
 for (const p of problems) console.log(`DIFFERS ${p}`);

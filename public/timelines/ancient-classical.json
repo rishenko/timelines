@@ -57147,7 +57147,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "founded",
+          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-pythagoras",
@@ -57362,7 +57362,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "founded",
+          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-lyceum",
@@ -57557,7 +57557,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "founded",
+          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-mozi",
