@@ -84,7 +84,11 @@ export function About({ search = window.location.search, pathname = window.locat
           <strong>Scholarly pages</strong>, cited directly for when the traditions in Religions and traditions began:
           Jamison and Witzel’s essay on Vedic religion (Harvard University), the Encyclopedia of Shinto (Kokugakuin
           University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran
-          on Ilé-Ifẹ̀ (The Conversation) and the Biblical Archaeology Society on Yonatan Adler’s work.
+          on Ilé-Ifẹ̀ (The Conversation), the Biblical Archaeology Society on Yonatan Adler’s work, Jan N. Bremmer’s
+          Greek Religion (Cambridge University Press), the Journal of Daesoon Thought and the Religions of East Asia on
+          Caodaism, the U.S. National Library of Medicine’s Native Voices on the end of the Hawaiian kapu (1819), the U.S. National
+          Park Service on the settling of Hawaiʻi, Jean-Paul Roux in the Encyclopedia of Religion on Tengri, and the
+          Australian Museum’s ancient Egyptian timeline.
         </li>
         <li>
           <strong>Natural Earth</strong>: the land on the event maps.
