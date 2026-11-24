@@ -140,7 +140,7 @@ export function validateDataset(d: unknown): string[] {
     for (const vid of Object.keys(values)) if ((values[vid]?.broader ?? []).some((b) => loops(b, new Set([vid])))) errors.push(`Facet "${fid}" value "${vid}" is inside itself through broader values.`);
   }
   /** Memberships in facet values, of a row or an event: known values of facets that apply to it, each cited. */
-  const checkMemberships = (label: string, list: Membership[] | undefined, of: 'tracks' | 'events') => {
+  const checkMemberships = (label: string, list: Membership[] | undefined, of: 'tracks' | 'events' | 'people') => {
     if (list === undefined) return;
     if (!Array.isArray(list)) {
       errors.push(`${label} memberships must be a list.`);
@@ -151,8 +151,12 @@ export function validateDataset(d: unknown): string[] {
       if (!f) errors.push(`${label} has a membership in unknown facet "${ms?.facet}".`);
       else if (!f.values?.[ms.value]) errors.push(`${label} has a membership in unknown ${ms.facet} value "${ms.value}".`);
       // an `applies` value this app doesn't know (rule 3) says nothing about where memberships may be
-      else if (KNOWN_APPLIES.includes(f.applies ?? 'tracks') && ![of, 'both'].includes(f.applies ?? 'tracks'))
-        errors.push(`${label} has a membership in facet "${ms.facet}", which applies to ${f.applies ?? 'tracks'} only (set its applies to "both" to use it here).`);
+      else if (KNOWN_APPLIES.includes(f.applies ?? 'tracks') && f.applies !== of && !(of !== 'people' && f.applies === 'both') && !(of === 'tracks' && f.applies === undefined))
+        errors.push(
+          of === 'people' || f.applies === 'people'
+            ? `${label} has a membership in facet "${ms.facet}", which applies to ${f.applies ?? 'tracks'} only (a facet for people applies to people only).`
+            : `${label} has a membership in facet "${ms.facet}", which applies to ${f.applies ?? 'tracks'} only (set its applies to "both" to use it here).`,
+        );
       if (!Array.isArray(ms?.sources) || !ms.sources.length) errors.push(`${label} membership ${ms?.facet}/${ms?.value} cites no source.`);
       else for (const s of ms.sources) if (!ds.sources[s?.sourceKey]) errors.push(`${label} membership ${ms.facet}/${ms.value} cites unknown source "${s?.sourceKey}".`);
     }
@@ -558,6 +562,52 @@ export function validateDataset(d: unknown): string[] {
           `${label} ${side === 'start' ? 'starts' : 'ends'} in ${yr(y!)}, but its ${field} "${e.title}" is dated ${yr(from)}${to !== from ? ` – ${yr(to)}` : ''}: the event must fall within a year of the edge it begins or ends.`,
         );
     }
+
+  // people (schema 11, minor 2): kept out of the row tree, named by events
+  const people = ds.people;
+  if (people !== undefined && (!people || typeof people !== 'object' || Array.isArray(people))) errors.push('people must be an object of people by id.');
+  const personIds = new Set(people && typeof people === 'object' && !Array.isArray(people) ? Object.keys(people) : []);
+  for (const [pid, p] of people && typeof people === 'object' && !Array.isArray(people) ? Object.entries(people) : []) {
+    const label = `Person "${pid}"`;
+    if (!ID_RE.test(pid)) errors.push(`${label}: an id is letters, digits and dashes.`);
+    if (!p || typeof p !== 'object') {
+      errors.push(`${label} must be an object.`);
+      continue;
+    }
+    if (typeof p.name !== 'string' || !p.name.trim()) errors.push(`${label} has no name.`);
+    checkIds(label, p.ids);
+    const a = p.active;
+    if (!a || typeof a !== 'object' || !Number.isInteger(a.year)) errors.push(`${label} needs active, a year it is placed at.`);
+    // core 1.0, rule 3: a `from` this app doesn't know is kept (strict mode refuses it)
+    else if (typeof a.from !== 'string') errors.push(`${label} active needs from: how the year was found (source, born-died, born or died).`);
+    else {
+      if (a.source && !ds.sources[a.source.sourceKey]) errors.push(`${label} active cites unknown source "${a.source.sourceKey}".`);
+    }
+    for (const side of ['born', 'died'] as const) {
+      const c = p[side];
+      if (c === undefined) continue;
+      if (!c || typeof c !== 'object') errors.push(`${label} ${side} must be a date claim.`);
+      else checkClaims(`${label} ${side}`, c.year, [c], undefined);
+    }
+    if (Number.isInteger(p.born?.year) && Number.isInteger(p.died?.year) && p.born!.year > p.died!.year) errors.push(`${label} is born (${p.born!.year}) after dying (${p.died!.year}).`);
+    checkMemberships(label, p.memberships, 'people');
+    if (p.rows !== undefined) {
+      if (!Array.isArray(p.rows)) errors.push(`${label} rows must be a list.`);
+      else
+        for (const r of p.rows) {
+          if (!r || !trackIds.has(r.row)) errors.push(`${label} belongs to unknown row "${r?.row}".`);
+          // core 1.0, rule 3: a `via` this app doesn't know is kept (strict mode refuses it)
+          if (r?.via !== undefined && typeof r.via !== 'string') errors.push(`${label} row "${r.row}" via must be text, such as citizenship.`);
+          if (!Array.isArray(r?.sources) || !r.sources.length) errors.push(`${label} row "${r?.row}" cites no source.`);
+          else for (const x of r.sources) if (!ds.sources[x?.sourceKey]) errors.push(`${label} row "${r.row}" cites unknown source "${x?.sourceKey}".`);
+        }
+    }
+  }
+  for (const e of ds.events) {
+    if (e.people === undefined) continue;
+    if (!Array.isArray(e.people)) errors.push(`Event "${e.title}" people must be a list of person ids.`);
+    else for (const pid of e.people) if (!personIds.has(pid)) errors.push(`Event "${e.title}" names unknown person "${pid}".`);
+  }
 
   for (const e of ds.events) {
     for (const l of e.links ?? []) {

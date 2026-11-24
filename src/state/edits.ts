@@ -1,4 +1,4 @@
-import type { Dataset, DateClaim, Membership, RowMembership, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
+import type { Dataset, DateClaim, Membership, Person, RowMembership, Source, SourceRef, TimelineEvent, Track, TrackSpan } from '../types.ts';
 import { validateDataset } from '../data/validate.ts';
 import { spanStretches } from '../lib/lifespan.ts';
 
@@ -106,8 +106,18 @@ export function upsertTrack(d: Dataset, track: Track, previousId?: string): Data
     tracks = tracks.map((t) =>
       t.memberOf?.some((m) => m.row === previousId) ? { ...t, memberOf: t.memberOf.map((m) => (m.row === previousId ? { ...m, row: track.id } : m)) } : t,
     );
+    // so do the people who belong to it
+    const people = mapPeople(d.people, (p) =>
+      p.rows?.some((r) => r.row === previousId) ? { ...p, rows: p.rows.map((r) => (r.row === previousId ? { ...r, row: track.id } : r)) } : p,
+    );
+    return { ...d, tracks, events, ...(people ? { people } : {}) };
   }
   return { ...d, tracks, events };
+}
+
+/** The people map with `f` applied to each person (undefined when there are none); unchanged people keep identity. */
+function mapPeople(people: Dataset['people'], f: (p: Person) => Person): Dataset['people'] {
+  return people ? Object.fromEntries(Object.entries(people).map(([id, p]) => [id, f(p)])) : undefined;
 }
 
 /** Swaps a track with its previous/next sibling (same parent). */
@@ -178,7 +188,14 @@ export function removeTrack(d: Dataset, id: string): Dataset {
   // v8 (one without a line takes the row's id as its line, so it can't run into the timeline's own)
   const moved = (d.tracks.find((t) => t.id === id)?.context ?? []).map((a) => (a.line ? a : { ...a, line: id }));
   const meta = moved.length ? { ...d.meta, context: [...(d.meta.context ?? []), ...moved] } : d.meta;
-  return { ...d, meta, tracks: dropEdgeEvents(tracks, removed), events };
+  // people who belonged to the removed row no longer do (a person left with no rows loses the field)
+  const people = mapPeople(d.people, (p) => {
+    if (!p.rows?.some((r) => r.row === id)) return p;
+    const rows = p.rows.filter((r) => r.row !== id);
+    const { rows: _dropped, ...rest } = p;
+    return rows.length ? { ...p, rows } : rest;
+  });
+  return { ...d, meta, tracks: dropEdgeEvents(tracks, removed), events, ...(people ? { people } : {}) };
 }
 
 /**
@@ -188,7 +205,7 @@ export function removeTrack(d: Dataset, id: string): Dataset {
  * estimate outside the remaining claims).
  * Events whose citations change are marked `edited`.
  */
-function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'events' | 'tracks' | 'chronologies'> {
+function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'events' | 'tracks' | 'chronologies' | 'people'> {
   const ref = (r: SourceRef): SourceRef | null => (r.sourceKey !== from ? r : to === null ? null : { ...r, sourceKey: to });
   const claim = (c: DateClaim): DateClaim => {
     if (c.source?.sourceKey !== from) return c;
@@ -268,7 +285,32 @@ function recite(d: Dataset, from: string, to: string | null): Pick<Dataset, 'eve
         }),
       )
     : undefined;
-  return { events, tracks, ...(chronologies ? { chronologies } : {}) };
+  // people: birth and death keep their years; an active year keeps its year (and its `from`); facet memberships and
+  // rows keep their other citations, and one left citing nothing is dropped
+  const people = mapPeople(d.people, (p) => {
+    const rowCites = !!p.rows?.some((r) => r.sources.some((x) => x.sourceKey === from));
+    const touched =
+      p.born?.source?.sourceKey === from || p.died?.source?.sourceKey === from || p.active?.source?.sourceKey === from || facetCites(p.memberships) || rowCites;
+    if (!touched) return p;
+    const out: Person = withMemberships({ ...p });
+    if (p.born) out.born = claim(p.born);
+    if (p.died) out.died = claim(p.died);
+    if (p.active?.source?.sourceKey === from) {
+      const source = ref(p.active.source);
+      const { source: _dropped, ...rest } = p.active;
+      out.active = source ? { ...rest, source } : rest;
+    }
+    if (p.rows) {
+      const rows = p.rows.flatMap((r) => {
+        const sources = r.sources.flatMap((x) => ref(x) ?? []);
+        return sources.length ? [{ ...r, sources }] : [];
+      });
+      if (rows.length) out.rows = rows;
+      else delete out.rows;
+    }
+    return out;
+  });
+  return { events, tracks, ...(chronologies ? { chronologies } : {}), ...(people ? { people } : {}) };
 }
 
 /** Adds or replaces a source; a key change rewrites every citation of it. Unknown tags are created. */
