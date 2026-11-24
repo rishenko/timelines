@@ -96,6 +96,11 @@ jobs:
           python -I pipelines/v2/emit.py disaster > /dev/null
           python -I pipelines/v2/emit.py conflict > /dev/null
           git diff --exit-code -- pipelines/v2/emitted
+      # The regeneration stamp (data-src/provenance/regen.json): the hashes of the route's inputs and outputs. Report only until the
+      # first regeneration is committed; then it becomes a required check (npm run data:regen writes it)
+      - name: Regen stamp (report only)
+        continue-on-error: true
+        run: node scripts/regen.ts --verify
       # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)
       - name: Account name not in data
         run: python -I pipelines/common/name_guard.py
