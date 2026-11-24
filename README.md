@@ -81,7 +81,8 @@ The first three link to each other where they meet, at 650 and 1500.
   folded under broader ones. Each row's regions cite their sources, shown in the table view and the row name's
   tooltip.
 - **Kinds of event:** a shape before each event's title says what kind it was (rulers, statehood, territory, cities
-  and places, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and technology).
+  and places, disasters, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and
+  technology, life and evolution).
   Filters → Data filters →
   Categories shows only the kinds you tick; the table and an event's details name its categories. Golden ages and long spans in
   religion, law, culture or the economy sit on a line of their own just under each row's phases.
@@ -220,7 +221,7 @@ disagree, every value is kept. Other sources are cited where they are used: the 
 [International Chronostratigraphic Chart](https://stratigraphy.org/chart) (v2026/06; © ICS, all rights reserved; cite:
 Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated), The ICS International Chronostratigraphic Chart
 this decade, Episodes 48: 105–115) for Earth and Life's boundary ages and colour codes (the numbers only: the chart's
-image and layout are not reproduced), with peer-reviewed papers cited directly for the dates of its events (from their abstracts, or for open-access papers their full text), and the [Smithsonian Institution's Human Origins Program](https://humanorigins.si.edu/) species pages for the human lineage's; [PeriodO](https://perio.do/) period
+image and layout are not reproduced), with peer-reviewed papers cited directly for the dates of its events (from their abstracts, or for open-access papers their full text), and the [Smithsonian Institution's Human Origins Program](https://humanorigins.si.edu/) species pages for the human lineage's; scholarly pages cited directly for when the traditions in Religions and traditions began (Jamison and Witzel's essay on Vedic religion at Harvard, Kokugakuin University's Encyclopedia of Shinto, the Posen Library of Jewish Culture and Civilization from Yale University Press, Akinwumi Ogundiran on Ilé-Ifẹ̀ in The Conversation, and the Biblical Archaeology Society on Yonatan Adler's work); [PeriodO](https://perio.do/) period
 definitions for the regional Ages lines in Ancient and Classical World, and Cliopatria for its map borders and for one
 Medieval World date claim (Srivijaya's end). Books and papers appear only where Wikipedia cites them. Pages carrying a
 notice that they contain AI-generated text are not used (a check refuses any link to a page on the list of flagged
@@ -250,6 +251,6 @@ cites Cliopatria for one row's end (Srivijaya), as a second date claim beside it
 ## License
 
 Code: [MIT](LICENSE). Timeline data and maps: [CC BY 4.0](LICENSE-DATA.md), except third-party material that keeps
-its own licence (listed in `LICENSE-DATA.md`). Quoted Wikipedia text (source locators, and
-descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed through the linked article;
+its own licence (listed in `LICENSE-DATA.md`). Quoted Wikipedia text (source locators, and,
+outside Medieval World, descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed through the linked article;
 everything else in the data is CC BY 4.0. By [rishenko](https://github.com/rishenko).

@@ -60,6 +60,9 @@
     "united-states": {
       "Alexander Andreyevich Baranov": "chief manager of Russian America (Alaska) before the purchase, not a head of the United States",
       "Andrew Jackson@1797": "US Senator from Tennessee 1797-98 (his infobox's term_start2 has no office or state of its own, so it read as the presidency); caught by known-counts"
+    },
+    "ottoman-empire": {
+      "Abdülmecid II": "caliph only (1922-1924), after the sultanate was abolished: he did not rule the state; Modern has no caliphate row to hold him (Architect's call, 2026-11-23)"
     }
   }
 }

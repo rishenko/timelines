@@ -41,6 +41,7 @@ ALIAS = {
     'castilian conquest': 'conquest of granada',
     'tvrtko i crowned king of bosnia': 'coronation of tvrtko i',
     'norman conquest': 'battle of hastings',
+    "charles iv's golden bull": 'golden bull of 1356',  # the Old Swiss Confederacy's infobox label for the same act (one event, on both rows)
     'unification of the angles, saxons and danes': 'unification of the angles, saxons and danes',
     'part of the kalmar union': 'kalmar union formed',
     'kingdom of león established': 'creations of the kingdoms of galicia and león',

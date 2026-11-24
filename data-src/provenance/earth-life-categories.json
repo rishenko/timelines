@@ -1,0 +1,32 @@
+{
+ "timeline": "earth-life",
+ "generator": "pipelines/common/event_categories.py",
+ "overrides": "pipelines/earth-life/categories.json",
+ "note": "Each event's categories, main first, with the evidence for each; \"reviewed\" = from the overrides file. An empty list: not reviewed yet (the review queue); [null, \"reviewed: no category\"]: reviewed, and none fits.",
+ "events": {
+  "archaeopteryx": [["first-appearance", "reviewed"]],
+  "ardipithecus-ramidus": [["human-evolution", "reviewed"]],
+  "burgess-shale": [["fossil-biota", "reviewed"]],
+  "cambrian-explosion-start": [["earth-system", "reviewed"]],
+  "cretaceous-paleogene-extinction": [["mass-extinction", "reviewed"], ["impact", "reviewed"]],
+  "earliest-amniotes-joggins": [["first-appearance", "reviewed"]],
+  "earliest-dinosaurs-ischigualasto": [["first-appearance", "reviewed"]],
+  "earliest-eukaryotes": [["first-appearance", "reviewed"]],
+  "earliest-eutherian-eomaia": [["first-appearance", "reviewed"]],
+  "earliest-grasses-phytoliths": [["first-appearance", "reviewed"]],
+  "earliest-homo-sapiens": [["human-evolution", "reviewed"]],
+  "earliest-land-plants": [["first-appearance", "reviewed"]],
+  "earliest-life-dresser": [["first-appearance", "reviewed"]],
+  "early-flowering-plants-archaefructus": [["first-appearance", "reviewed"]],
+  "ediacaran-biota-podolia": [["fossil-biota", "reviewed"]],
+  "end-permian-extinction": [["mass-extinction", "reviewed"]],
+  "end-triassic-extinction": [["mass-extinction", "reviewed"]],
+  "great-oxidation-event": [["earth-system", "reviewed"]],
+  "hangenberg-extinction": [["mass-extinction", "reviewed"]],
+  "kellwasser-extinction": [["mass-extinction", "reviewed"]],
+  "late-ordovician-extinction": [["mass-extinction", "reviewed"]],
+  "qingjiang-biota": [["fossil-biota", "reviewed"]],
+  "sahelanthropus": [["human-evolution", "reviewed"]],
+  "tiktaalik": [["first-appearance", "reviewed"]]
+ }
+}

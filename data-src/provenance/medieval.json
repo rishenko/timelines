@@ -15,7 +15,7 @@
  },
  "ancient_classical": {
   "file": "public/timelines/ancient-classical.json",
-  "sha256": "553f666d46a62702cb948a010cff32f2e6fc9a7234b6e9532a950f3ec4a4616d"
+  "sha256": "c17e89488be4a95cd1049a8ab176f6a264cd31f96b091a6775ca5570aa1e7486"
  },
  "articles": [
   "Abbasid Caliphate",
@@ -168,6 +168,7 @@
   "Kingdom of Benin",
   "Kingdom of Bohemia",
   "Kingdom of Bosnia",
+  "Kingdom of Burgundy",
   "Kingdom of Butua",
   "Kingdom of Castile",
   "Kingdom of Croatia (925–1102)",
@@ -380,6 +381,7 @@
   "West Francia",
   "Western Chalukya Empire",
   "Western Xia",
+  "Wu Zetian",
   "Wu Zhou",
   "Yuan dynasty",
   "Zagwe dynasty",

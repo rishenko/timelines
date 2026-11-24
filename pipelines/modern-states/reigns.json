@@ -55728,39 +55728,6 @@
    ]
   },
   {
-   "uuid": "reign-abd-lmecid-ii-ottoman-empire",
-   "title": "Reign of Abdülmecid II",
-   "start": 1922,
-   "startMonth": 11,
-   "startDay": 19,
-   "end": 1924,
-   "endMonth": 3,
-   "endDay": 3,
-   "tracks": [
-    "ottoman-empire"
-   ],
-   "descr": "Rules as head of state of Ottoman Empire from 19 November 1922 to 3 March 1924 (2 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-abd-lmecid-ii",
-     "sourceLocation": "infobox reign: 19 November 1922 – 3 March 1924"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-abd-lmecid-ii",
-       "sourceLocation": "infobox reign: 19 November 1922 – 3 March 1924"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-manuel-ii-of-portugal-portuguese-empire",
    "title": "Reign of Manuel II of Portugal",
    "start": 1908,
@@ -168517,6 +168484,16 @@
     "not imported, office is not head of state: 48th Mayor of Sofia"
    ]
   },
+  "reign-abd-lmecid-ii": {
+   "row": "ottoman-empire",
+   "person": "Abdülmecid II",
+   "qid": "Q203768",
+   "route": "list: List of sultans of the Ottoman Empire",
+   "cited": "Abdülmecid II",
+   "toCheck": [
+    "not imported, wrong row: caliph only (1922-1924), after the sultanate was abolished: he did not rule the state; Modern has no caliphate row to hold him (Architect's call, 2026-11-23)"
+   ]
+  },
   "reign-alexei-badayev": {
    "row": "russia",
    "person": "Alexei Badayev",
@@ -169728,14 +169705,6 @@
   "wp-abd-lmecid-i": {
    "name": "Abdülmecid I (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Abdülmecid_I",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-abd-lmecid-ii": {
-   "name": "Abdülmecid II (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Abdülmecid_II",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -217574,14 +217543,6 @@
    "cited": "Mehmed VI",
    "toCheck": []
   },
-  "reign-abd-lmecid-ii-ottoman-empire": {
-   "row": "ottoman-empire",
-   "person": "Abdülmecid II",
-   "qid": "Q203768",
-   "route": "list: List of sultans of the Ottoman Empire",
-   "cited": "Abdülmecid II",
-   "toCheck": []
-  },
   "reign-manuel-ii-of-portugal-portuguese-empire": {
    "row": "portuguese-empire",
    "person": "Manuel II of Portugal",
@@ -246977,7 +246938,8 @@
  "inputs": {
   "rulers.csv": "12632047a1442610",
   "rulers-events.json": "551e62ef658a2b66",
-  "reigns-excluded.json": "0617240d9034430d",
+  "reigns-excluded.json": "c561def235161dde",
+  "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
 }
