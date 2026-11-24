@@ -37,7 +37,7 @@ def problems(table=None, pdf=None):
     out = []
     pdf = pdf or os.path.join(settings.DATA, 'ics', t['chart']['file'])
     try:
-        text = subprocess.run(['pdftotext', '-layout', pdf, '-'], capture_output=True, text=True, check=True).stdout
+        text = subprocess.run(['pdftotext', '-layout', pdf, '-'], capture_output=True, text=True, check=True, encoding='utf-8').stdout
     except (OSError, subprocess.CalledProcessError) as e:
         return [f'cannot read the chart PDF {pdf}: {e}']
     squashed = re.sub(r'\s+', '', text)

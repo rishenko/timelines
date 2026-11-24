@@ -91,7 +91,7 @@ def main():
     uniq = list(dict.fromkeys(names))
     have = {}
     for tl in ('ancient-classical', 'medieval', 'modern-states'):
-        for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json')))['events']:
+        for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json'), encoding='utf-8'))['events']:
             if PREFIX.match(e['title']):
                 have.setdefault(re.sub(r'\s*\([^)]*\)', '', PREFIX.sub('', e['title'])).strip().lower(), []).append((tl, e['tracks'][0]))
     miss = [n for n in uniq if re.sub(r'\s*\([^)]*\)', '', n).strip().lower() not in have]

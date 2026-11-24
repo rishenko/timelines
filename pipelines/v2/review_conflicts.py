@@ -49,18 +49,18 @@ def norm(t):
 
 
 def main(out):
-    rows = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', 'conflict.jsonl'))]
-    heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'conflict.headline.json')))
-    man = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'conflict.manifest.json')))
-    pilot = json.load(open(os.path.join(HERE, 'pilot-conflicts.json')))
-    gen = json.load(open(os.path.join(os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data')), 'v2', 'places.generated.json')))['places']
+    rows = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', 'conflict.jsonl'), encoding='utf-8')]
+    heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'conflict.headline.json'), encoding='utf-8'))
+    man = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'conflict.manifest.json'), encoding='utf-8'))
+    pilot = json.load(open(os.path.join(HERE, 'pilot-conflicts.json'), encoding='utf-8'))
+    gen = json.load(open(os.path.join(os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data')), 'v2', 'places.generated.json'), encoding='utf-8'))['places']
     parent = {(tl, r['row']): r['parent'] for v in gen.values() for tl, rs in v['rows'].items() for r in rs}
     cand = {c['title']: c for c in rows}
     emitted = {}
     for tl in ERAS:
         p = os.path.join(HERE, 'emitted', f'conflict-{tl}.json')
         if os.path.exists(p):
-            for e in json.load(open(p))['events']:
+            for e in json.load(open(p, encoding='utf-8'))['events']:
                 emitted[e['uuid']] = (tl, e)
     L = ['---', 'created: 2026-11-23', 'tags: [workbench]', 'related:', '  - "[[2026-11-22 Timelines team hub]]"', '---',
          '# Timelines: conflicts pilot, for review', '',
@@ -133,7 +133,7 @@ def main(out):
         p = os.path.join(HERE, 'emitted', f'conflict-{tl}.json')
         if not os.path.exists(p):
             continue
-        d = json.load(open(p))
+        d = json.load(open(p, encoding='utf-8'))
         wars = [t for t in d.get('tracks', []) if t.get('parent')]
         for w in wars:
             who = sorted(r for r, eds in d.get('rowEdits', {}).items() if any(e['memberOf']['row'] == w['id'] for e in eds))
@@ -144,7 +144,7 @@ def main(out):
     if os.path.exists(wp_):
         L += ['', 'Strip accounting (every entry the source names is either on a row with a strip, skipped with its reason, or has no row in that timeline):', '',
               '| War | Timeline | Entries read | Side lists (lines naming a state / entries read) | Have a row | Strips | Withheld (undated, not a principal) | Skipped (lifespan) | No row here |', '|---|---|---|---|---|---|---|---|---|']
-        for war_, tls in json.load(open(wp_)).items():
+        for war_, tls in json.load(open(wp_, encoding='utf-8')).items():
             for tl_, a_ in tls.items():
                 L.append(f"| {war_} | {tl_} | {a_['entries read']} | {'; '.join(k + ': ' + v for k, v in a_.get('side list check', {}).items()) or '-'} | {a_['with a row here']} | {a_['rows with a strip']} | {', '.join(a_.get('withheld (undated, not a principal)', [])) or '-'} | {', '.join(a_[chr(115)+'kipped (outside the row' + chr(39) + 's lifespan)']) or '-'} | {', '.join(a_['no row in this timeline']) or '-'} |")
         L.append('')
@@ -241,7 +241,7 @@ def main(out):
           "2. **Wars are not ranked as events here.** Titles with war, conflict, crusade, revolt, resistance or insurgency are left to the named multi-region wars (Thirty Years' War, WWI, built as war rows with strips) and to a later wars pass; so the Hundred Years' War, Napoleonic Wars and the Italo-Ethiopian wars are absent. (a, recommended) a wars pass with the same row-and-strip build for every war that is not confined to one region, with joining and leaving dates from each war's own text; (b) include wars as events on the country rows now.",
           "3. **Importance** comes from inlinks (400 or more = key), since the pilot reads no casualty figures. (a, recommended) keep; (b) read infobox casualties like the disasters pilot.",
           "4. **Ancient** is built now (`scripts/ancient-classical/conflicts.ts`, registered in run-all): Rome, Achaemenid Persia, Han China and Aksum, 22 events. Rome's cut line shows famous battles that missed the cap of 6 (Carrhae, Alesia, the Sack of Rome 410). (a, recommended) keep the cap of 6 for the pilot and raise it for the bulk run; (b) raise it now.", "5. **Gaps in the region × era table** (documented, not filled by hand). Closed from sourced articles this round: Southeast Asia Medieval (Khmer–Cham wars, Tonlé Sap, Champa–Đại Việt, Song–Đại Việt, Mongol invasions of Burma and Java, Pamalayu, Chola invasion of Srivijaya), the Classic Maya (the Tikal–Calakmul wars), Korea's Three Kingdoms (Goguryeo–Sui and –Tang, Silla–Tang, Hwangsanbeol) and Makuria. Still open: Kush and Meroë have no battle article with a military-conflict infobox in the dump, so Ancient Africa has no Kushite battle; Andes before the Inca has only Chimor–Inca (the Wari and Tiwanaku have none); Oceania has nothing before 1500. Checked against the 24k-article combatant index (every title or side naming Polynesian, Māori, Hawaiian, Fijian, Wari, Tiwanaku, Chimú, Inca, Mapuche and similar): the earliest Andean battle articles are the Inca Civil War (about 1529) and Cajamarca (1532), the earliest Pacific ones the Hawaiian battles of the 1790s, so no sourced article exists before 1500 and nothing was added. (a, recommended) accept for the pilot and take these from regional scholarship in the bulk round, with each date quoted from its source; (b) add curated lists for those countries now.", '']
-    open(out, 'w').write('\n'.join(L) + '\n')
+    open(out, 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n')
     print(f'wrote {out}')
 
 

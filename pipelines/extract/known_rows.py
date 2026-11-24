@@ -11,13 +11,13 @@ import re
 import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-SPEC = json.load(open(os.path.join(os.path.dirname(__file__), 'known-rows.json')))
+SPEC = json.load(open(os.path.join(os.path.dirname(__file__), 'known-rows.json'), encoding='utf-8'))
 _cache = {}
 
 
 def reigns(timeline, row):
     if timeline not in _cache:
-        _cache[timeline] = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{timeline}.json')))
+        _cache[timeline] = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{timeline}.json'), encoding='utf-8'))
     return [e['title'] for e in _cache[timeline]['events'] if e['uuid'].startswith('reign-') and row in e['tracks']]
 
 
