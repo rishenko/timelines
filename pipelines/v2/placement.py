@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 def load():
     pilot = json.load(open(os.path.join(HERE, 'pilot-conflicts.json'), encoding='utf-8'))
     hand = json.load(open(os.path.join(HERE, 'places.json'), encoding='utf-8'))['places']
-    gen = json.load(open(os.path.join(os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data')), 'v2', 'places.generated.json'), encoding='utf-8'))['places']
+    gen = json.load(open(os.path.join(HERE, 'inputs', 'places.generated.json'), encoding='utf-8'))['places']
     rows_in, parent_of, life_of = {}, {}, {}
     for v in gen.values():
         for tl, rs in v['rows'].items():

@@ -1,0 +1,4068 @@
+{
+ "Q4569951": {
+  "start": {
+   "year": 1960,
+   "month": 12,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13–17 December 1960 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1960,
+   "month": 12,
+   "day": 17,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13–17 December 1960 ()",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q4919446": {
+  "start": {
+   "year": 1970,
+   "month": 3,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "18 March 1970",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q860423": {
+  "start": {
+   "year": 2006,
+   "month": 9,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{Start date and age|df=yes|2006|9|19}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q15920546": {
+  "start": {
+   "year": 2014,
+   "month": 3,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "In February and March 2014, Russia invaded the Crimean Peninsula of Ukraine, occupied it, and then annexed it after an illegitimate referendum.",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q134711136": {
+  "start": {
+   "year": 2025,
+   "month": 5,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "Border crisis: 28 May – 26 October 2025 () 10 November – 7 December 2025 () Border conflicts: 24–28 July 2025 () 8–27 December 2025 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 2025,
+   "month": 10,
+   "day": 26,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "Border crisis: 28 May – 26 October 2025 () 10 November – 7 December 2025 () Border conflicts: 24–28 July 2025 () 8–27 December 2025 ()",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q113331496": {
+  "start": {
+   "year": 518,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "518–525",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 525,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "518–525",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q139553080": {
+  "start": {
+   "year": 570,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "570 AD",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q39088236": {
+  "start": {
+   "year": 1299,
+   "month": 6,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 1299–1304",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1304,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 1299–1304",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q117751445": {
+  "start": {
+   "year": 1159,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1159–1160",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1160,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1159–1160",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q40949": {
+  "start": {
+   "year": 1775,
+   "month": 4,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1783,
+   "month": 9,
+   "day": 3,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q112182472": {
+  "start": {
+   "year": 711,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "711–713 AD",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 713,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "711–713 AD",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q52418": {
+  "start": {
+   "year": 1941,
+   "month": 12,
+   "day": 7,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start date|1941|12|7}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q133696039": {
+  "start": {
+   "year": 1447,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": ", 1456, 1500",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1500,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": ", 1456, 1500",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    1456
+   ]
+  }
+ },
+ "Q4831848": {
+  "start": {
+   "year": 1441,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1441–1474",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1474,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1441–1474",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q302519": {
+  "start": {
+   "year": 1896,
+   "month": 3,
+   "day": 1,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start date and age|1896|03|01|df=yes}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q188495": {
+  "start": {
+   "year": 1415,
+   "month": 10,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "25 October 1415 (Saint Crispin's Day)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1453,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "The Battle of Agincourt (; ) was an English victory in the Hundred Years' War (1337–1453).",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q244356": {
+  "start": {
+   "year": 1260,
+   "month": 9,
+   "day": 3,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "3 September 1260 (26 Ramadan 658 H)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q49764712": {
+  "start": {
+   "year": 1493,
+   "month": 4,
+   "day": 12,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 12, 1493",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q209387": {
+  "start": {
+   "year": 1402,
+   "month": 7,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "28 July 1402",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q106935527": {
+  "start": {
+   "year": 1270,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1270",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q3271565": {
+  "start": {
+   "year": -200,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "200 BC",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -199
+   ]
+  },
+  "end": null
+ },
+ "Q1392699": {
+  "start": {
+   "year": 1838,
+   "month": 12,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "16 December 1838",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1808450": {
+  "start": {
+   "year": 1847,
+   "month": 2,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "February 22–23, 1847",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1847,
+   "month": 2,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "February 22–23, 1847",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q2355467": {
+  "start": {
+   "year": 1764,
+   "month": 10,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22–23 October 1764",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1764,
+   "month": 10,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22–23 October 1764",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q1425362": {
+  "start": {
+   "year": 1532,
+   "month": 11,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "November 16, 1532",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q179591": {
+  "start": {
+   "year": -216,
+   "month": 8,
+   "day": 2,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "2 August 216 BC",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -215
+   ]
+  },
+  "end": null
+ },
+ "Q1536618": {
+  "start": {
+   "year": 1847,
+   "month": 9,
+   "day": 12,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "September 12–13, 1847",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1847,
+   "month": 9,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "September 12–13, 1847",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q27759": {
+  "start": {
+   "year": 1346,
+   "month": 8,
+   "day": 26,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "26 August 1346",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q968676": {
+  "start": {
+   "year": 1185,
+   "month": 4,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 25, 1185",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q118876002": {
+  "start": {
+   "year": 1332,
+   "month": 7,
+   "day": 3,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "3 July 1332()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q24940110": {
+  "start": {
+   "year": 1519,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1519",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1628477": {
+  "start": {
+   "year": 1509,
+   "month": 2,
+   "day": 3,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "3 February 1509",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q110192510": {
+  "start": {
+   "year": 1276,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1276",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q151340": {
+  "start": {
+   "year": 1940,
+   "month": 5,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "10 May – 25 June 1940()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1940,
+   "month": 6,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "10 May – 25 June 1940()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q1349891": {
+  "start": {
+   "year": -203,
+   "month": 12,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "December 203 BC",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -201
+   ]
+  },
+  "end": null
+ },
+ "Q179670": {
+  "start": {
+   "year": -331,
+   "month": 10,
+   "day": 1,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1 October 331 BC",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -330
+   ]
+  },
+  "end": null
+ },
+ "Q33132": {
+  "start": {
+   "year": 1863,
+   "month": 7,
+   "day": 1,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "July 1–3, 1863",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1863,
+   "month": 7,
+   "day": 3,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "July 1–3, 1863",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q4871091": {
+  "start": {
+   "year": 1529,
+   "month": 5,
+   "day": 6,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "6 May 1529",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q4871123": {
+  "start": {
+   "year": 1445,
+   "month": 12,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "25 December 1445",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q15211638": {
+  "start": {
+   "year": 570,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "570",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q4871254": {
+  "start": {
+   "year": 621,
+   "month": 5,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "28 May 621",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1036636": {
+  "start": {
+   "year": 660,
+   "month": 7,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "July 9, 660 CE",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q483039": {
+  "start": {
+   "year": 1950,
+   "month": 9,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "10–19 September 1950(10–15 September – Bombardments of Wolmido and Incheon)(15–19 September – Incheon Landing)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1950,
+   "month": 9,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "10–19 September 1950(10–15 September – Bombardments of Wolmido and Incheon)(15–19 September – Incheon Landing)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q747589": {
+  "start": {
+   "year": 1879,
+   "month": 1,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22 January 1879",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q4871323": {
+  "start": {
+   "year": 1599,
+   "month": 4,
+   "day": 26,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 26, 1599",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q4166578": {
+  "start": {
+   "year": 1527,
+   "month": 3,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "16 March 1527",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q179288": {
+  "start": {
+   "year": 1389,
+   "month": 6,
+   "day": 15,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "15 June 1389",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q210354": {
+  "start": {
+   "year": 1380,
+   "month": 9,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8 September 1380",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q151005": {
+  "start": {
+   "year": 1813,
+   "month": 10,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "16–19 October 1813",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1813,
+   "month": 10,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "16–19 October 1813",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q165425": {
+  "start": {
+   "year": 1571,
+   "month": 10,
+   "day": 7,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "7 October 1571",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q947667": {
+  "start": {
+   "year": 1868,
+   "month": 4,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9–13 April 1868 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1868,
+   "month": 4,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9–13 April 1868 ()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q31900": {
+  "start": {
+   "year": -490,
+   "month": 9,
+   "day": 12,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "12 September 490 BC (6 Boedromion)",
+   "agree": 2,
+   "of": 5,
+   "otherYears": [
+    -489
+   ]
+  },
+  "end": null
+ },
+ "Q971248": {
+  "start": {
+   "year": 1516,
+   "month": 8,
+   "day": 24,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start date and age|1516|08|24|df=y}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q178510": {
+  "start": {
+   "year": 1526,
+   "month": 8,
+   "day": 29,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "29 August 1526",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q2889512": {
+  "start": {
+   "year": 1277,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1277",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q212220": {
+  "start": {
+   "year": 1396,
+   "month": 9,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "25 September 1396",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q192660": {
+  "start": {
+   "year": 1945,
+   "month": 4,
+   "day": 1,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1 April – 22 June 1945()",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1945,
+   "month": 6,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1 April – 22 June 1945()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q2338569": {
+  "start": {
+   "year": 1537,
+   "month": 1,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "January, 1537",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q2744133": {
+  "start": {
+   "year": 1287,
+   "month": 12,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "December 1287",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q204636": {
+  "start": {
+   "year": -479,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "27 or 28 August, 479BC",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    -478
+   ]
+  },
+  "end": null
+ },
+ "Q201692": {
+  "start": {
+   "year": 1356,
+   "month": 9,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "19 September 1356",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1123353": {
+  "start": {
+   "year": 1879,
+   "month": 1,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22–23 January 1879",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1879,
+   "month": 1,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22–23 January 1879",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q178850": {
+  "start": {
+   "year": -480,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "26 or 27 September, 480 BC",
+   "agree": 2,
+   "of": 4,
+   "otherYears": [
+    -479
+   ]
+  },
+  "end": null
+ },
+ "Q2536997": {
+  "start": {
+   "year": 1471,
+   "month": 7,
+   "day": 14,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "14 July 1471",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q131969": {
+  "start": {
+   "year": -480,
+   "month": 8,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "21–23 July, 20 August or 8–10 September 480 BC",
+   "agree": 2,
+   "of": 4,
+   "otherYears": [
+    -479
+   ]
+  },
+  "end": {
+   "year": -480,
+   "month": 9,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "21–23 July, 20 August or 8–10 September 480 BC",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q387238": {
+  "start": {
+   "year": 1473,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1473",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q589285": {
+  "start": {
+   "year": 1591,
+   "month": 3,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13 March 1591",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q23719075": {
+  "start": {
+   "year": 1177,
+   "month": 6,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13 June 1177",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q171416": {
+  "start": {
+   "year": 1805,
+   "month": 10,
+   "day": 21,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "21 October 1805",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q32832": {
+  "start": {
+   "year": 1444,
+   "month": 11,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{Start date and age|1444|11|10}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1316711": {
+  "start": {
+   "year": 1914,
+   "month": 4,
+   "day": 21,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 21, 1914 – November 23, 1914 ()",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1914,
+   "month": 11,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 21, 1914 – November 23, 1914 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q200855": {
+  "start": {
+   "year": 1683,
+   "month": 7,
+   "day": 14,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "Siege: 14 July – 11 September 1683()Battle: 12 September 1683",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1683,
+   "month": 9,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "Siege: 14 July – 11 September 1683()Battle: 12 September 1683",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q48314": {
+  "start": {
+   "year": 1815,
+   "month": 6,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{Start date and age|1815|06|18|df=yes}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q132477203": {
+  "start": {
+   "year": 1410,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1410",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q655777": {
+  "start": {
+   "year": -387,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "387 BC (probable), 390 BC (traditional)",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    -386
+   ]
+  },
+  "end": null
+ },
+ "Q151018": {
+  "start": {
+   "year": 1944,
+   "month": 12,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "16 December 1944 – 28 January 1945()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1945,
+   "month": 1,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "16 December 1944 – 28 January 1945()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q44732": {
+  "start": {
+   "year": 1302,
+   "month": 7,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "11 July 1302",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q2339983": {
+  "start": {
+   "year": 1471,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "Probably at some time between 1471 and 1493, or 1532",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1493,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 3",
+   "quote": "The account of Garcilaso de la Vega depicts the three-day battle, which is generally believed to have occurred in the reign of Tupac Inca Yupanqui (1471-93 CE).",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q482979": {
+  "start": {
+   "year": 1950,
+   "month": 8,
+   "day": 4,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4 August – 18 September 1950()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1950,
+   "month": 9,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4 August – 18 September 1950()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q87779": {
+  "start": {
+   "year": 9,
+   "month": 9,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8–11 September 9 AD",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 9,
+   "month": 9,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8–11 September 9 AD",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q743652": {
+  "start": {
+   "year": 1867,
+   "month": 12,
+   "day": 4,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end date|1867|12|04|1868|05|13|df=y}}",
+   "agree": 2,
+   "of": 4,
+   "otherYears": [
+    1868
+   ]
+  },
+  "end": {
+   "year": 1868,
+   "month": 5,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end date|1867|12|04|1868|05|13|df=y}}",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q31307": {
+  "start": {
+   "year": 1765,
+   "month": 8,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "23 August 1765 – 7 April 1767(1 year, 7 months, 2 weeks, and 1 day)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1767,
+   "month": 4,
+   "day": 7,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "23 August 1765 – 7 April 1767(1 year, 7 months, 2 weeks, and 1 day)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q2994973": {
+  "start": {
+   "year": 1970,
+   "month": 4,
+   "day": 29,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 29 – July 22, 1970",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1970,
+   "month": 7,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "April 29 – July 22, 1970",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Campaigns of Amda Seyon (1332–1333)": {
+  "start": {
+   "year": 1332,
+   "month": 2,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "19 February 1332 – 6 January 1333",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1333,
+   "month": 1,
+   "day": 6,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "19 February 1332 – 6 January 1333",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q132573508": {
+  "start": {
+   "year": 1424,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1424–1429",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1429,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1424–1429",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q223126": {
+  "start": {
+   "year": 1932,
+   "month": 9,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9 September 1932 – 12 June 1935()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1935,
+   "month": 6,
+   "day": 12,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9 September 1932 – 12 June 1935()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q10747206": {
+  "start": {
+   "year": 1367,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1367–1390",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1390,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1367–1390",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q3391315": {
+  "start": {
+   "year": 1471,
+   "month": 2,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "February – March 22, 1471",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1471,
+   "month": 3,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "February – March 22, 1471",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q65119540": {
+  "start": {
+   "year": 1470,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "~1470",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q16957926": {
+  "start": {
+   "year": 1025,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1025–1026 AD",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1026,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1025–1026 AD",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q1151705": {
+  "start": {
+   "year": -206,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "206–202 BCE",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -205
+   ]
+  },
+  "end": {
+   "year": -202,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "206–202 BCE",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    -201
+   ]
+  }
+ },
+ "Q254106": {
+  "start": {
+   "year": 1853,
+   "month": 10,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1853|10|16|1856|3|30|df= yes}}<br />(2 years, 5 months and 2 weeks)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1856,
+   "month": 3,
+   "day": 30,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1853|10|16|1856|3|30|df= yes}}<br />(2 years, 5 months and 2 weeks)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q329838": {
+  "start": {
+   "year": 235,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "235–285 AD (50 years)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 285,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "235–285 AD (50 years)",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    284
+   ]
+  }
+ },
+ "Q24945556": {
+  "start": {
+   "year": 1431,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "The fall of Angkor (, ), also known as the sack of Angkor or siege of Angkor or also Siamese occupation of Angkor, refers to the capture of the Khmer capital at Angkor by the Ayutthaya Kingdom, conventionally dated to 1431.",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    1430
+   ]
+  },
+  "end": {
+   "year": 1431,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1430–1431",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q160077": {
+  "start": {
+   "year": 1453,
+   "month": 4,
+   "day": 6,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "6 April – 29 May 1453()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1453,
+   "month": 5,
+   "day": 29,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "6 April – 29 May 1453()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q482456": {
+  "start": {
+   "year": 1975,
+   "month": 4,
+   "day": 30,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start date and age|1975|4|30|df=y}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q593267": {
+  "start": {
+   "year": 1521,
+   "month": 5,
+   "day": 26,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "May 26 – August 13, 1521 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1521,
+   "month": 8,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "May 26 – August 13, 1521 ()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q112125056": {
+  "start": {
+   "year": 1991,
+   "month": 5,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start date and age|1991|05|28|df=y}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q85760625": {
+  "start": {
+   "year": 969,
+   "month": 2,
+   "day": 6,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "6 February – 9 July 969",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 969,
+   "month": 7,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "6 February – 9 July 969",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q605321": {
+  "start": {
+   "year": 1526,
+   "month": 4,
+   "day": 21,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "21 April 1526",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q748780": {
+  "start": {
+   "year": 1946,
+   "month": 12,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "19 December 1946 – 11 August 1954 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1954,
+   "month": 8,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "19 December 1946 – 11 August 1954 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q531916": {
+  "start": {
+   "year": 1277,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1277–1278, 1283–1285 and 1287",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1287,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "The first Mongol invasion of Burma (Burmese: မွန်ဂို–မြန်မာ စစ် (၁၂၇၇–၁၂၈၇); Chinese: 元緬戰爭) was a series of military conflicts between Kublai Khan's Yuan dynasty, a division of the Mongol Empire, and the Pagan Empire that took place between 1277 and 1287.",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    1278
+   ]
+  }
+ },
+ "Q18150751": {
+  "start": {
+   "year": 537,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "537–572",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 572,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "537–572",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q780845": {
+  "start": {
+   "year": 1940,
+   "month": 10,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "October 1940 – 28 January 1941",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1941,
+   "month": 1,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "October 1940 – 28 January 1941",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q253684": {
+  "start": {
+   "year": 1798,
+   "month": 6,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "28 June 1798 – 2 September 1801()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1801,
+   "month": 9,
+   "day": 2,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "28 June 1798 – 2 September 1801()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q179250": {
+  "start": {
+   "year": 1812,
+   "month": 6,
+   "day": 24,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "24 June – 24 December 1812()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1812,
+   "month": 12,
+   "day": 24,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "24 June – 24 December 1812()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q737542": {
+  "start": {
+   "year": 1180,
+   "month": 6,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 20, 1180 – April 25, 1185()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1185,
+   "month": 4,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 20, 1180 – April 25, 1185()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q48883": {
+  "start": {
+   "year": 598,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "598, 612–614",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 614,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "598, 612–614",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q703179": {
+  "start": {
+   "year": 645,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "645–668",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 668,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "645–668",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q706428": {
+  "start": {
+   "year": 993,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "993, 1010, 1018–1019",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1019,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "993, 1010, 1018–1019",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    1022
+   ]
+  }
+ },
+ "Q151616": {
+  "start": {
+   "year": 1700,
+   "month": 2,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1700|2|22|1721|9|10|df=yes}} {{nwr|({{Age in years, months and days|month1=2|day1=22|year1=1700|month2=9|day2=10|year2=1721}})}} [[Gregorian calendar|N.S.]]",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1721,
+   "month": 9,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1700|2|22|1721|9|10|df=yes}} {{nwr|({{Age in years, months and days|month1=2|day1=22|year1=1700|month2=9|day2=10|year2=1721}})}} [[Gregorian calendar|N.S.]]",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q25628": {
+  "start": {
+   "year": 1480,
+   "month": 10,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8 October – 11 November 1480",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1480,
+   "month": 11,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8 October – 11 November 1480",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q217145": {
+  "start": {
+   "year": 1942,
+   "month": 8,
+   "day": 7,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "7 August 1942 – 9 February 1943()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1943,
+   "month": 2,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "7 August 1942 – 9 February 1943()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q1711032": {
+  "start": {
+   "year": -111,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "111 BC",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -110
+   ]
+  },
+  "end": null
+ },
+ "Q4495612": {
+  "start": {
+   "year": -109,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "109–108 BCE",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -108
+   ]
+  },
+  "end": {
+   "year": -108,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "109–108 BCE",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -107
+   ]
+  }
+ },
+ "Q199955": {
+  "start": {
+   "year": 1815,
+   "month": 3,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "20 March – 8 July 1815(110 days)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1815,
+   "month": 7,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "20 March – 8 July 1815(110 days)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q12551": {
+  "start": {
+   "year": 1337,
+   "month": 5,
+   "day": 24,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "24 May 1337 – 19 October 1453 (intermittent)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1453,
+   "month": 10,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "24 May 1337 – 19 October 1453 (intermittent)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q23039086": {
+  "start": {
+   "year": 1748,
+   "month": 1,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "11 January 1748 – June 1770",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1770,
+   "month": 6,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "11 January 1748 – June 1770",
+   "agree": 1,
+   "of": 3,
+   "otherYears": [
+    1767,
+    1769
+   ]
+  }
+ },
+ "Q402096": {
+  "start": {
+   "year": 1999,
+   "month": 9,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "20 September 1999 – 28 February 2000",
+   "agree": 5,
+   "of": 5,
+   "otherYears": []
+  },
+  "end": {
+   "year": 2000,
+   "month": 2,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "20 September 1999 – 28 February 2000",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  }
+ },
+ "Q82664": {
+  "start": {
+   "year": 1980,
+   "month": 9,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22 September 1980 – 20 August 1988()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1988,
+   "month": 8,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22 September 1980 – 20 August 1988()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q59134881": {
+  "start": {
+   "year": 1834,
+   "month": 9,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "September 1834 – July 1835",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1835,
+   "month": 7,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "September 1834 – July 1835",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q1551794": {
+  "start": {
+   "year": 1931,
+   "month": 9,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "September 18, 1931 – February 27, 1932()",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1932,
+   "month": 2,
+   "day": 27,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "September 18, 1931 – February 27, 1932()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q1326831": {
+  "start": {
+   "year": 1127,
+   "month": 1,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "January 1127",
+   "agree": 2,
+   "of": 4,
+   "otherYears": [
+    1125
+   ]
+  },
+  "end": null
+ },
+ "Q4446152": {
+  "start": {
+   "year": 1125,
+   "month": 11,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1234,
+   "month": 2,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q105082127": {
+  "start": {
+   "year": 950,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "c. 950",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q8663": {
+  "start": {
+   "year": 1950,
+   "month": 6,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "25 June 1950 – 27 July 1953 (ceasefire)()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1953,
+   "month": 7,
+   "day": 27,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "25 June 1950 – 27 July 1953 (ceasefire)()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q1308854": {
+  "start": {
+   "year": 1520,
+   "month": 6,
+   "day": 30,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 30 – July 1, 1520",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1520,
+   "month": 7,
+   "day": 1,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 30 – July 1, 1520",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q31944": {
+  "start": {
+   "year": 1881,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1899,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    1881
+   ]
+  }
+ },
+ "Q2383159": {
+  "start": {
+   "year": 1880,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "early 1880s–1904",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    1878
+   ]
+  },
+  "end": {
+   "year": 1904,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "early 1880s–1904",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    1900
+   ]
+  }
+ },
+ "Q18937": {
+  "start": {
+   "year": 1914,
+   "month": 11,
+   "day": 6,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "6 November 1914 – 14 November 1918()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1918,
+   "month": 11,
+   "day": 14,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "6 November 1914 – 14 November 1918()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q400061": {
+  "start": {
+   "year": 1235,
+   "month": 2,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "11 February 1235 – 19 March 1279",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1279,
+   "month": 3,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "11 February 1235 – 19 March 1279",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q852171": {
+  "start": {
+   "year": 1220,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "1220s–1240s",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    1223
+   ]
+  },
+  "end": {
+   "year": 1240,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "1220s–1240s",
+   "agree": 1,
+   "of": 3,
+   "otherYears": [
+    1241,
+    1242
+   ]
+  }
+ },
+ "Q2672432": {
+  "start": {
+   "year": 1293,
+   "month": 8,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "22 January – early August 1293",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1134220": {
+  "start": {
+   "year": 1223,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1223 (initial invasion)1237–1241 (main invasion)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q431177": {
+  "start": {
+   "year": 1219,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1219–1221",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1221,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1219–1221",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q2079940": {
+  "start": {
+   "year": 1221,
+   "month": 11,
+   "day": 24,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "24 November 1221–1327",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1327,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "24 November 1221–1327",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q208156": {
+  "start": {
+   "year": 1274,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1274, 1281",
+   "agree": 3,
+   "of": 4,
+   "otherYears": [
+    1281
+   ]
+  },
+  "end": {
+   "year": 1281,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1274, 1281",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q702266": {
+  "start": {
+   "year": 1231,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1231–1259 (intermittently)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1259,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1231–1259 (intermittently)",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q2397066": {
+  "start": {
+   "year": 1260,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1260–1323",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1323,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1260–1323",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q2448644": {
+  "start": {
+   "year": 1258,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1258, 1283–1284, 1285 and 1287–1288",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q3119106": {
+  "start": {
+   "year": 1590,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1590–1599",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1599,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1590–1599",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q6932364": {
+  "start": {
+   "year": 1803,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1803–1807",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1807,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1803–1807",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q242099": {
+  "start": {
+   "year": 1931,
+   "month": 9,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "September 18, 1931",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q6957844": {
+  "start": {
+   "year": 1738,
+   "month": 5,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1738|5|10|1739|5|16|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=05|day1=10|year1=1738|month2=5|day2=16|year2=1739}})}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1739,
+   "month": 5,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1738|5|10|1739|5|16|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=05|day1=10|year1=1738|month2=5|day2=16|year2=1739}})}}",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    1740
+   ]
+  }
+ },
+ "Q264012": {
+  "start": {
+   "year": 1336,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1336 to 1392 (56 years)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1392,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1336 to 1392 (56 years)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q78994": {
+  "start": {
+   "year": 1803,
+   "month": 5,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1803|5|18|1815|11|20|df=yes}}<br/>({{Age in years, months, weeks and days|month1=05|day1=18|year1=1803|month2=11|day2=20|year2=1815}})",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1815,
+   "month": 11,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1803|5|18|1815|11|20|df=yes}}<br/>({{Age in years, months, weeks and days|month1=05|day1=18|year1=1803|month2=11|day2=20|year2=1815}})",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q2276692": {
+  "start": {
+   "year": 1942,
+   "month": 1,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "23 January 1942 – 15 August 1945",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1945,
+   "month": 8,
+   "day": 15,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "23 January 1942 – 15 August 1945",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q1073476": {
+  "start": {
+   "year": 1926,
+   "month": 7,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9 July 1926 – 29 December 1928",
+   "agree": 3,
+   "of": 4,
+   "otherYears": [
+    1928
+   ]
+  },
+  "end": {
+   "year": 1928,
+   "month": 12,
+   "day": 29,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9 July 1926 – 29 December 1928",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q2854228": {
+  "start": {
+   "year": 1918,
+   "month": 11,
+   "day": 12,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "12 November 1918 – 4 October 1923()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1923,
+   "month": 10,
+   "day": 4,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "12 November 1918 – 4 October 1923()",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    1918
+   ]
+  }
+ },
+ "Q194132": {
+  "start": {
+   "year": 1942,
+   "month": 11,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8–16 November 1942 ()",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1942,
+   "month": 11,
+   "day": 16,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8–16 November 1942 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q10922917": {
+  "start": {
+   "year": 660,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "660 (nation)660–663 (resistance)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q4264622": {
+  "start": {
+   "year": 1275,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1275–1292 (First phase)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1292,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1275–1292 (First phase)",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q58947": {
+  "start": {
+   "year": 1864,
+   "month": 11,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13 November 1864 – 8 April 1870()",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1870,
+   "month": 4,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13 November 1864 – 8 April 1870()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q487757": {
+  "start": {
+   "year": 1636,
+   "month": 12,
+   "day": 9,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9 December 1636 – 30 January 1637",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1637,
+   "month": 1,
+   "day": 30,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "9 December 1636 – 30 January 1637",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q112524": {
+  "start": {
+   "year": 1351,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1351–1368",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1368,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1351–1368",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q2657004": {
+  "start": {
+   "year": 1359,
+   "month": 12,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "December 1359 and November 1360",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1258062": {
+  "start": {
+   "year": 43,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "AD 43–84",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 84,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "AD 43–84",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q159950": {
+  "start": {
+   "year": 1904,
+   "month": 2,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8 February 1904 – 5 September 1905 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1905,
+   "month": 9,
+   "day": 5,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "8 February 1904 – 5 September 1905 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q16840744": {
+  "start": {
+   "year": 575,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "575 or 578",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q75756": {
+  "start": {
+   "year": 1998,
+   "month": 8,
+   "day": 2,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "2 August 1998 – 18 July 2003()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 2003,
+   "month": 7,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "2 August 1998 – 18 July 2003()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q1122337": {
+  "start": {
+   "year": -480,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "480–479 BC",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -479
+   ]
+  },
+  "end": {
+   "year": -479,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "480–479 BC",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    -478
+   ]
+  }
+ },
+ "Q170314": {
+  "start": {
+   "year": 1937,
+   "month": 7,
+   "day": 7,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "7 July 1937 – 2 September 1945 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1945,
+   "month": 9,
+   "day": 2,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "7 July 1937 – 2 September 1945 ()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q18356475": {
+  "start": {
+   "year": 648,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "648–695",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 695,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "648–695",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q7443083": {
+  "start": {
+   "year": 652,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "652",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q33143": {
+  "start": {
+   "year": 1756,
+   "month": 5,
+   "day": 17,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1756|5|17|1763|2|10|df=yes}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1763,
+   "month": 2,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1756|5|17|1763|2|10|df=yes}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q325985": {
+  "start": {
+   "year": 1291,
+   "month": 4,
+   "day": 4,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4 April – 18 May 1291",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1291,
+   "month": 5,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4 April – 18 May 1291",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q244980": {
+  "start": {
+   "year": 1456,
+   "month": 7,
+   "day": 4,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4–22 July 1456",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1456,
+   "month": 7,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4–22 July 1456",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q676340": {
+  "start": {
+   "year": 1346,
+   "month": 9,
+   "day": 4,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4 September 1346 – 3 August 1347",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1347,
+   "month": 8,
+   "day": 3,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "4 September 1346 – 3 August 1347",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q48724683": {
+  "start": {
+   "year": 1303,
+   "month": 1,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1303|01|28|1303|08|26|df=yes}}",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1303,
+   "month": 8,
+   "day": 26,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1303|01|28|1303|08|26|df=yes}}",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q2343263": {
+  "start": {
+   "year": 1857,
+   "month": 6,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1857|6|8|1857|9|21|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=06|day1=08|year1=1857|month2=09|day2=21|year2=1857}})}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1857,
+   "month": 9,
+   "day": 21,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start and end dates|1857|6|8|1857|9|21|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=06|day1=08|year1=1857|month2=09|day2=21|year2=1857}})}}",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q844886": {
+  "start": {
+   "year": 70,
+   "month": 4,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13 April – 8 September 70 CE()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 70,
+   "month": 9,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "13 April – 8 September 70 CE()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q392213": {
+  "start": {
+   "year": 1428,
+   "month": 10,
+   "day": 12,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "12 October 1428 – 8 May 1429 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1429,
+   "month": 5,
+   "day": 8,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "12 October 1428 – 8 May 1429 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q15211837": {
+  "start": {
+   "year": 570,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "570",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q611089": {
+  "start": {
+   "year": 1941,
+   "month": 4,
+   "day": 10,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "10 April – 27 November 1941 (7 months, 2 weeks, 3 days)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1941,
+   "month": 11,
+   "day": 27,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "10 April – 27 November 1941 (7 months, 2 weeks, 3 days)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q710709": {
+  "start": {
+   "year": 670,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "670–676",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 676,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "670–676",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q7242972": {
+  "start": {
+   "year": 1075,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1075–1077",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1077,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1075–1077",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q16932349": {
+  "start": {
+   "year": -200,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "2nd century BC",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": {
+   "year": -101,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "2nd century BC",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q7573336": {
+  "start": {
+   "year": 1618,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "c. 1618 – c. 1697",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1697,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "c. 1618 – c. 1697",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q828435": {
+  "start": {
+   "year": 1519,
+   "month": 2,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "February 1519 – 13 August 1521 against the Aztec Empire,after 1529 – 17 February 1530 against the Purépecha Empire",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1521,
+   "month": 8,
+   "day": 13,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "February 1519 – 13 August 1521 against the Aztec Empire,after 1529 – 17 February 1530 against the Purépecha Empire",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q636771": {
+  "start": {
+   "year": 1532,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1532–1572",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1572,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1532–1572",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q104878928": {
+  "start": {
+   "year": 605,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "605",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q5373922": {
+  "start": {
+   "year": 629,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "629–630",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": {
+   "year": 630,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "629–630",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q18394176": {
+  "start": {
+   "year": 720,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "720–744",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 744,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "720–744",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q2487": {
+  "start": {
+   "year": 1618,
+   "month": 5,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "23 May 1618 – 24 October 1648",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1648,
+   "month": 10,
+   "day": 24,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "23 May 1618 – 24 October 1648",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q18148539": {
+  "start": {
+   "year": 537,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 838,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q4272591": {
+  "start": {
+   "year": 613,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "613–628",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": {
+   "year": 628,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "613–628",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q7843245": {
+  "start": {
+   "year": 785,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "785–816",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": {
+   "year": 816,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "785–816",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q128199113": {
+  "start": {
+   "year": 1173,
+   "month": 1,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "January 1173",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q8740": {
+  "start": {
+   "year": 1955,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "circa 1955 – 30 April 1975",
+   "agree": 2,
+   "of": 3,
+   "otherYears": [
+    1975
+   ]
+  },
+  "end": {
+   "year": 1975,
+   "month": 4,
+   "day": 30,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "circa 1955 – 30 April 1975",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q152004": {
+  "start": {
+   "year": 1879,
+   "month": 2,
+   "day": 14,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "14 February 1879 – 4 April 1884 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1884,
+   "month": 4,
+   "day": 4,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "14 February 1879 – 4 April 1884 ()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q150701": {
+  "start": {
+   "year": 1701,
+   "month": 3,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "March 1701 – 7 September 1714 (13 years)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1714,
+   "month": 9,
+   "day": 7,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "March 1701 – 7 September 1714 (13 years)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q361": {
+  "start": {
+   "year": 1914,
+   "month": 7,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "28 July 1914 – 11 November 1918()",
+   "agree": 3,
+   "of": 4,
+   "otherYears": [
+    1918
+   ]
+  },
+  "end": {
+   "year": 1918,
+   "month": 11,
+   "day": 11,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "28 July 1914 – 11 November 1918()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q362": {
+  "start": {
+   "year": 1939,
+   "month": 9,
+   "day": 1,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1 September 1939 – 2 September 1945()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1945,
+   "month": 9,
+   "day": 2,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1 September 1939 – 2 September 1945()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ },
+ "Q1265281": {
+  "start": {
+   "year": 570,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "circa 570",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 571,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "The ʿām al-fīl (, Year of the Elephant) is the name in Islamic history for the year approximately equating to 570–571 CE.",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q701121": {
+  "start": {
+   "year": 1419,
+   "month": 6,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 20, 1419 – July 3, 1419()",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1419,
+   "month": 7,
+   "day": 3,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "June 20, 1419 – July 3, 1419()",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q385676": {
+  "start": {
+   "year": 1467,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1467–1477 (10 years)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1477,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1467–1477 (10 years)",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  }
+ }
+}

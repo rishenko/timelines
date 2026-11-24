@@ -602,6 +602,17 @@ def main():
         FIELDS[ev['uuid']] = r['field']
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
+    if flag('--audit'):  # reign_audit.py: every kept reign with its office, field and route, and the reason the freeze guards would give for it (they run only on added reigns)
+        TRACKS.clear()
+        TRACKS.update({t['id']: t for t in ds['tracks']})
+        rows = []
+        for e in keep:
+            rv = review[e['uuid']]
+            fld = FIELDS.get(e['uuid'], '')
+            rows.append({'uuid': e['uuid'], 'row': rv['row'], 'person': rv['person'], 'qid': rv['qid'], 'title': e['title'], 'start': e['start'],
+                         'end': e.get('end'), 'office': OFFICES.get(e['uuid'], ''), 'field': fld, 'route': rv['route'], 'toCheck': rv['toCheck'],
+                         'guard': wrong_kind(e, dict(rv, field=fld), OFFICES.get(e['uuid'], ''), TRACKS.get(rv['row']))})
+        json.dump(rows, open(flag('--audit'), 'w'), ensure_ascii=False)
     guard_added = guards(keep, review, ours, ds, {e['uuid']: e for e in json.load(open(path, encoding='utf-8'))['events']} if os.path.exists(path) else {})
     for why, n in guard_added.items():
         dropped[why] += n
