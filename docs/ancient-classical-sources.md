@@ -153,3 +153,15 @@ nearest, "Archaic period in Mesoamerica", is its parent period's), so they have 
 own source, linking to the period's PeriodO page, so their dates still open their source. Ages show on
 their region's band (the region row's `context`; the source file's era `tracks`, lifted when it compiles), under the
 region names in `meta.lines` (the source file's `meta.eraGroups`).
+
+## Religions and traditions (23 November 2026)
+
+A pilot of traditions with no single founder (Hinduism, Judaism, Shinto, Yoruba religion), one `theme` row each in a new
+group, from the shared list `pipelines/common/traditions.json` that the Medieval and Modern States generators read too,
+so the rows keep the same ids across the three timelines. `scripts/ancient-classical/traditions.ts` writes them, with
+their events and sources, and **owns the four traditions' rows in the memberships plan**
+(`data-src/ancient-classical-memberships.json`), setting each row's region from the list; their articles and Wikidata
+ids are recorded in the row-links plan. A row's start is the mainstream scholarly date; other scholarly dates are claims
+(the faded part), so an event may sit on the row before its headline, inside the claimed range (the Rigveda on
+Hinduism's row). Every quote is checked against the Wikipedia dump or a cached scholarly page:
+`pipelines/.venv/bin/python -I pipelines/common/traditions.py --check`.

@@ -58688,6 +58688,285 @@
         ],
         "startEvent": "nam-founded"
       }
+    },
+    {
+      "id": "religions-traditions",
+      "name": "Religions and traditions",
+      "color": "#8a6fb0"
+    },
+    {
+      "id": "hinduism",
+      "name": "Hinduism",
+      "kind": "theme",
+      "color": "#d9822b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Hinduism",
+      "ids": {
+        "wikidata": "Q9089"
+      },
+      "span": {
+        "start": -499,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -99,
+            "margin": 400,
+            "source": {
+              "sourceKey": "wp-hinduism",
+              "sourceLocation": "History: \"scholars regard Hinduism as a synthesis of various Indian cultures and traditions, with diverse roots and no single founder, which emerged after the Vedic period, between c. 500–200 BCE and c. 300 CE\""
+            }
+          },
+          {
+            "year": -1299,
+            "margin": 200,
+            "source": {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "lead: \"The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE\""
+            },
+            "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."
+          },
+          {
+            "year": -499,
+            "source": {
+              "sourceKey": "witzel-vedic-hinduism",
+              "sourceLocation": "Introduction: \"We tentatively suggest 1500-500 BCE as convenient limiting dates of the period\""
+            },
+            "note": "The end of the Vedic period; Vedic religion is \"a predecessor of Hinduism\" (Jamison and Witzel)."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-hinduism",
+            "sourceLocation": "lead: \"Hinduism is the world's third-largest religion\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "judaism",
+      "name": "Judaism",
+      "kind": "theme",
+      "color": "#4a7fb5",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Judaism",
+      "ids": {
+        "wikidata": "Q9268"
+      },
+      "span": {
+        "start": -449,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -449,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-origins-of-judaism",
+              "sourceLocation": "Widespread adoption of Torah law: \"most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE\""
+            },
+            "note": "Single source: no second highly reputable source found that gives the majority view's date (Kevin, 2026-11-23: keep, flagged)."
+          },
+          {
+            "year": -515,
+            "source": {
+              "sourceKey": "wp-second-temple-judaism",
+              "sourceLocation": "lead: \"the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE\""
+            }
+          },
+          {
+            "year": -524,
+            "margin": 25,
+            "source": {
+              "sourceKey": "posen-bakhos-rise-of-torah",
+              "sourceLocation": "The Rise of Torah in Jewish Antiquity: \"rebuild the Temple in the late sixth century BCE\""
+            },
+            "note": "Carol Bakhos: one theory, Persian imperial authorization of Jewish law, from the return and the rebuilt Temple."
+          },
+          {
+            "year": -349,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "lead: \"With the establishment of Yehud Medinata in the 4th century BCE, Yahwism coalesced into what is known as Second Temple Judaism\""
+            }
+          },
+          {
+            "year": -99,
+            "margin": 99,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "Transition to Judaism and Samaritanism: \"with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)\""
+            },
+            "note": "Yonatan Adler's view."
+          },
+          {
+            "year": -999,
+            "margin": 200,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "infobox: \"founded_date = c. 12th – 9th century BCE\""
+            },
+            "note": "Roots: Yahwism, the religion Judaism separated from."
+          },
+          {
+            "year": -99,
+            "margin": 99,
+            "source": {
+              "sourceKey": "posen-bakhos-rise-of-torah",
+              "sourceLocation": "The Rise of Torah in Jewish Antiquity: \"in the second and first centuries BCE, the Torah was known and authoritative\""
+            },
+            "note": "Carol Bakhos: by the time of the Dead Sea Scrolls."
+          },
+          {
+            "year": -149,
+            "margin": 25,
+            "source": {
+              "sourceKey": "bas-origins-of-judaism",
+              "sourceLocation": "article: \"situate the origins of Judaism around the middle of the second century BCE\""
+            },
+            "note": "Yonatan Adler's view, from archaeology (Bible History Daily)."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-judaism",
+            "sourceLocation": "lead: \"Judaism () is an Abrahamic, monotheistic, ethnic religion that comprises the collective spiritual, cultural, and legal traditions of the Jewish people\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "shinto",
+      "name": "Shinto",
+      "kind": "theme",
+      "color": "#c0504d",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Shinto",
+      "ids": {
+        "wikidata": "Q812767"
+      },
+      "span": {
+        "start": 700,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 680,
+            "margin": 7,
+            "source": {
+              "sourceKey": "kokugakuin-classical-institutions",
+              "sourceLocation": "Policies and Institutions of the Classical Period: \"was formulated during the reign of Emperor Tenmu (r. 673-686)\""
+            },
+            "note": "Okada Shōji: the ritsuryō system of kami worship, the first Shinto institutions that can be confirmed."
+          },
+          {
+            "year": 750,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"While several institutions and practices now associated with Shinto existed in Japan by the 8th century\""
+            }
+          },
+          {
+            "year": 650,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+            },
+            "note": "Shōji Okada's first of four possible points (7th century; then the 8th–9th, the 11th–12th and the 15th centuries)."
+          },
+          {
+            "year": 1150,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 11th and 12th centuries when an awareness of Shinto spread throughout the various regions of Japan (Hiroshi Inoue)\""
+            }
+          },
+          {
+            "year": 1450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 15th century with the emergence of Yoshida Shinto (Toshio Kuroda)\""
+            }
+          },
+          {
+            "year": 1850,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"various scholars have argued that Shinto as a distinct religion was essentially \"invented\" during the 19th century, in Japan's Meiji era\""
+            }
+          },
+          {
+            "year": -24,
+            "margin": 275,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"veneration has been traced back to Japan's Yayoi period (300 BCE to 250 CE)\""
+            },
+            "note": "Roots: kami veneration."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "lead: \"Shinto is primarily found in Japan, where there are around 100,000 public shrines\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "yoruba-religion",
+      "name": "Yoruba religion",
+      "kind": "theme",
+      "color": "#5a9a5a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
+      "ids": {
+        "wikidata": "Q1086440"
+      },
+      "span": {
+        "start": 900,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 900,
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ\""
+            }
+          },
+          {
+            "year": 975,
+            "margin": 25,
+            "source": {
+              "sourceKey": "conversation-ogundiran-ife",
+              "sourceLocation": "article: \"at the end of the first millennium AD\""
+            },
+            "note": "Akinwumi Ogundiran: Ife's city-making and its ideology of divine kingship."
+          },
+          {
+            "year": 650,
+            "margin": 150,
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"although it had been developing gradually with its nexus of practise based in locations across central Yorubaland since Ifẹ's early formative period (500-800 AD)\""
+            },
+            "note": "Ifá before it was standardized at Ife."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-yoruba-religion",
+            "sourceLocation": "lead: \"comprises the traditional religious and spiritual concepts and practice of the Yoruba people\""
+          }
+        ]
+      }
     }
   ],
   "sources": {
@@ -73595,121 +73874,127 @@
         "wikipedia"
       ]
     },
-    "wp-famines-in-ethiopia": {
-      "name": "Famines in Ethiopia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Famines_in_Ethiopia",
+    "bas-origins-of-judaism": {
+      "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
+      "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
+      "author": "Marek Dospěl",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "conversation-ogundiran-ife": {
+      "name": "Akinwumi Ogundiran (University of North Carolina at Charlotte), Nigeria's city of Ilé-Ifẹ̀ has survived and thrived for 1,000 years (The Conversation, 2023)",
+      "url": "https://theconversation.com/nigerias-city-of-ile-if-has-survived-and-thrived-for-1-000-years-heres-how-204569",
+      "author": "Akinwumi Ogundiran",
+      "year": "2023",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "kokugakuin-classical-institutions": {
+      "name": "Okada Shōji, Policies and Institutions of the Classical Period (Encyclopedia of Shinto, Kokugakuin University)",
+      "url": "https://d-museum.kokugakuin.ac.jp/eos/detail/?id=8613",
+      "author": "Okada Shōji",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "posen-bakhos-rise-of-torah": {
+      "name": "Carol Bakhos, The Rise of Torah in Jewish Antiquity (The Posen Library of Jewish Culture and Civilization, Yale University Press)",
+      "url": "https://www.posenlibrary.com/node/11663",
+      "author": "Carol Bakhos",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "witzel-vedic-hinduism": {
+      "name": "Jamison & Witzel, Vedic Hinduism (Michael Witzel's pages, Harvard University)",
+      "url": "https://sites.harvard.edu/witzel/?p=419",
+      "author": "S. W. Jamison and M. Witzel",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "wp-hinduism": {
+      "name": "Hinduism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hinduism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-droughts-in-the-sahel": {
-      "name": "Droughts in the Sahel (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Droughts_in_the_Sahel",
+    "wp-historical-vedic-religion": {
+      "name": "Historical Vedic religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Historical_Vedic_religion",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-lake-nyos-disaster": {
-      "name": "Lake Nyos disaster (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Lake_Nyos_disaster",
+    "wp-history-of-shinto": {
+      "name": "History of Shinto (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Shinto",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-great-bengal-famine-of-1770": {
-      "name": "Great Bengal famine of 1770 (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Great_Bengal_famine_of_1770",
+    "wp-judaism": {
+      "name": "Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Judaism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-1839-coringa-cyclone": {
-      "name": "1839 Coringa cyclone (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1839_Coringa_cyclone",
+    "wp-origins-of-judaism": {
+      "name": "Origins of Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Origins_of_Judaism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-1999-odisha-cyclone": {
-      "name": "1999 Odisha cyclone (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1999_Odisha_cyclone",
+    "wp-second-temple-judaism": {
+      "name": "Second Temple Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Temple_Judaism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-1556-shaanxi-earthquake": {
-      "name": "1556 Shaanxi earthquake (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1556_Shaanxi_earthquake",
+    "wp-shinto": {
+      "name": "Shinto (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shinto",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-1931-china-floods": {
-      "name": "1931 China floods (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1931_China_floods",
+    "wp-timeline-of-yoruba-history": {
+      "name": "Timeline of Yoruba history (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_Yoruba_history",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-1976-tangshan-earthquake": {
-      "name": "1976 Tangshan earthquake (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1976_Tangshan_earthquake",
+    "wp-yahwism": {
+      "name": "Yahwism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yahwism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-1815-eruption-of-mount-tambora": {
-      "name": "1815 eruption of Mount Tambora (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-1883-eruption-of-krakatoa": {
-      "name": "1883 eruption of Krakatoa (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-mount-agung": {
-      "name": "Mount Agung (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mount_Agung",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-1948-ashgabat-earthquake": {
-      "name": "1948 Ashgabat earthquake (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1948_Ashgabat_earthquake",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-huaynaputina": {
-      "name": "Huaynaputina (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Huaynaputina",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-1985-mexico-city-earthquake": {
-      "name": "1985 Mexico City earthquake (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/1985_Mexico_City_earthquake",
+    "wp-yoruba-religion": {
+      "name": "Yoruba religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -73719,6 +74004,9 @@
   "tags": {
     "wikipedia": {
       "name": "Wikipedia"
+    },
+    "scholarly": {
+      "name": "Scholarly pages"
     }
   },
   "events": [
@@ -120243,477 +120531,126 @@
       ]
     },
     {
-      "uuid": "disaster-1556-shaanxi-earthquake",
-      "title": "1556 Shaanxi earthquake",
-      "descr": "",
-      "start": 1556,
+      "uuid": "hindu-reform-movements",
+      "title": "Hindu reform movements: the Brahmo Samaj and Neo-Vedanta",
+      "descr": "In response to Western colonialism and Protestant missions, reform movements reject the 'superstitions' of Puranic Hinduism and call for a return to the Vedas.",
+      "start": 1875,
+      "end": 1925,
+      "circa": true,
       "tracks": [
-        "china"
-      ],
-      "startMonth": 1,
-      "startDay": 23,
-      "sources": [
-        {
-          "sourceKey": "wp-1556-shaanxi-earthquake",
-          "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "earthquake",
-          "sources": [
-            {
-              "sourceKey": "wp-1556-shaanxi-earthquake",
-              "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-huaynaputina",
-      "title": "1600 eruption of Huaynaputina",
-      "descr": "",
-      "start": 1600,
-      "tracks": [
-        "viceroyalty-of-peru"
-      ],
-      "startMonth": 2,
-      "startDay": 19,
-      "sources": [
-        {
-          "sourceKey": "wp-huaynaputina",
-          "sourceLocation": "infobox start_date: 19 February 1600"
-        },
-        {
-          "sourceKey": "wp-huaynaputina",
-          "sourceLocation": "infobox end_date: 6 March 1600"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "eruption",
-          "sources": [
-            {
-              "sourceKey": "wp-huaynaputina",
-              "sourceLocation": "infobox start_date: 19 February 1600"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-great-bengal-famine-of-1770",
-      "title": "Great Bengal famine of 1770",
-      "descr": "",
-      "start": 1769,
-      "tracks": [
-        "india",
-        "bangladesh"
-      ],
-      "end": 1770,
-      "sources": [
-        {
-          "sourceKey": "wp-great-bengal-famine-of-1770",
-          "sourceLocation": "infobox period: 1769–1770"
-        }
-      ],
-      "startDates": [
-        {
-          "year": 1769,
-          "source": {
-            "sourceKey": "wp-great-bengal-famine-of-1770",
-            "sourceLocation": "infobox period: 1769–1770"
-          }
-        },
-        {
-          "year": 1770,
-          "source": {
-            "sourceKey": "wp-great-bengal-famine-of-1770",
-            "sourceLocation": "lead: \"The Great Bengal famine of 1770 struck Bengal and Bihar between 1769 and 1770 and affected some 30 million people, which was about one third of the current population of the area.\""
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "drought",
-          "sources": [
-            {
-              "sourceKey": "wp-great-bengal-famine-of-1770",
-              "sourceLocation": "infobox period: 1769–1770"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1815-eruption-of-mount-tambora",
-      "title": "1815 eruption of Mount Tambora",
-      "descr": "",
-      "start": 1815,
-      "tracks": [
-        "indonesia"
-      ],
-      "startMonth": 4,
-      "sources": [
-        {
-          "sourceKey": "wp-1815-eruption-of-mount-tambora",
-          "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
-        },
-        {
-          "sourceKey": "wp-1815-eruption-of-mount-tambora",
-          "sourceLocation": "infobox end_date: {{Start date and age|1815|7|15|df=y}}"
-        }
-      ],
-      "startDates": [
-        {
-          "year": 1815,
-          "source": {
-            "sourceKey": "wp-1815-eruption-of-mount-tambora",
-            "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
-          }
-        },
-        {
-          "year": 1812,
-          "source": {
-            "sourceKey": "wp-1815-eruption-of-mount-tambora",
-            "sourceLocation": "infobox start_date: 1812"
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "eruption",
-          "sources": [
-            {
-              "sourceKey": "wp-1815-eruption-of-mount-tambora",
-              "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1839-coringa-cyclone",
-      "title": "1839 Coringa cyclone",
-      "descr": "",
-      "start": 1839,
-      "tracks": [
-        "india"
-      ],
-      "startMonth": 11,
-      "startDay": 25,
-      "sources": [
-        {
-          "sourceKey": "wp-1839-coringa-cyclone",
-          "sourceLocation": "lead: \"On 25 November 1839, the port city of Coringa in present-day Andhra Pradesh on the southeastern coast of British India was battered by a tropical cyclone that destroyed the harbour.\""
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "storm",
-          "sources": [
-            {
-              "sourceKey": "wp-1839-coringa-cyclone",
-              "sourceLocation": "lead: \"On 25 November 1839, the port city of Coringa in present-day Andhra Pradesh on the southeastern coast of British India was battered by a tropical cyclone that destroyed the harbour.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1883-eruption-of-krakatoa",
-      "title": "1883 eruption of Krakatoa",
-      "descr": "",
-      "start": 1883,
-      "tracks": [
-        "indonesia"
-      ],
-      "startMonth": 5,
-      "startDay": 20,
-      "sources": [
-        {
-          "sourceKey": "wp-1883-eruption-of-krakatoa",
-          "sourceLocation": "infobox start_date: 20 May 1883"
-        },
-        {
-          "sourceKey": "wp-1883-eruption-of-krakatoa",
-          "sourceLocation": "infobox end_date: {{end date|1883|10|21|df=y}}"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "eruption",
-          "sources": [
-            {
-              "sourceKey": "wp-1883-eruption-of-krakatoa",
-              "sourceLocation": "infobox start_date: 20 May 1883"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-famines-in-ethiopia",
-      "title": "Great Ethiopian Famine",
-      "descr": "",
-      "start": 1888,
-      "tracks": [
-        "ethiopia"
-      ],
-      "end": 1892,
-      "sources": [
-        {
-          "sourceKey": "wp-famines-in-ethiopia",
-          "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "drought",
-          "sources": [
-            {
-              "sourceKey": "wp-famines-in-ethiopia",
-              "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1931-china-floods",
-      "title": "1931 China floods",
-      "descr": "",
-      "start": 1931,
-      "tracks": [
-        "china"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-1931-china-floods",
-          "sourceLocation": "lead: \"The 1931 China floods, or the 1931 Yangtze–Huai River floods, were a series of devastating floods that occurred from June to August 1931 in China, hitting major cities such as Wuhan, Nanjing and beyond, and eventually culminating in a dike breach along Lake Gaoyou on 25 August 1931.\""
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "flood",
-          "sources": [
-            {
-              "sourceKey": "wp-1931-china-floods",
-              "sourceLocation": "lead: \"The 1931 China floods, or the 1931 Yangtze–Huai River floods, were a series of devastating floods that occurred from June to August 1931 in China, hitting major cities such as Wuhan, Nanjing and beyond, and eventually culminating in a dike breach along Lake Gaoyou on 25 August 1931.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1948-ashgabat-earthquake",
-      "title": "1948 Ashgabat earthquake",
-      "descr": "",
-      "start": 1948,
-      "tracks": [
-        "turkmenistan"
-      ],
-      "startMonth": 10,
-      "startDay": 5,
-      "sources": [
-        {
-          "sourceKey": "wp-1948-ashgabat-earthquake",
-          "sourceLocation": "infobox timestamp: 1948-10-05 20:12:09"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "earthquake",
-          "sources": [
-            {
-              "sourceKey": "wp-1948-ashgabat-earthquake",
-              "sourceLocation": "infobox timestamp: 1948-10-05 20:12:09"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-mount-agung",
-      "title": "1963 eruption of Mount Agung",
-      "descr": "",
-      "start": 1963,
-      "tracks": [
-        "indonesia"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-mount-agung",
-          "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "eruption",
-          "sources": [
-            {
-              "sourceKey": "wp-mount-agung",
-              "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-droughts-in-the-sahel",
-      "title": "Sahel drought of 1968–1974",
-      "descr": "",
-      "start": 1968,
-      "tracks": [
-        "western-africa"
-      ],
-      "end": 1974,
-      "sources": [
-        {
-          "sourceKey": "wp-droughts-in-the-sahel",
-          "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "drought",
-          "sources": [
-            {
-              "sourceKey": "wp-droughts-in-the-sahel",
-              "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1976-tangshan-earthquake",
-      "title": "1976 Tangshan earthquake",
-      "descr": "",
-      "start": 1976,
-      "tracks": [
-        "china"
-      ],
-      "startMonth": 7,
-      "startDay": 28,
-      "sources": [
-        {
-          "sourceKey": "wp-1976-tangshan-earthquake",
-          "sourceLocation": "infobox local_date: 28 July 1976"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "earthquake",
-          "sources": [
-            {
-              "sourceKey": "wp-1976-tangshan-earthquake",
-              "sourceLocation": "infobox local_date: 28 July 1976"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1985-mexico-city-earthquake",
-      "title": "1985 Mexico City earthquake",
-      "descr": "",
-      "start": 1985,
-      "tracks": [
-        "mexico"
-      ],
-      "startMonth": 9,
-      "startDay": 19,
-      "sources": [
-        {
-          "sourceKey": "wp-1985-mexico-city-earthquake",
-          "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "earthquake",
-          "sources": [
-            {
-              "sourceKey": "wp-1985-mexico-city-earthquake",
-              "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-lake-nyos-disaster",
-      "title": "Lake Nyos disaster",
-      "descr": "",
-      "start": 1986,
-      "tracks": [
-        "cameroon"
-      ],
-      "startMonth": 8,
-      "startDay": 21,
-      "sources": [
-        {
-          "sourceKey": "wp-lake-nyos-disaster",
-          "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "eruption",
-          "sources": [
-            {
-              "sourceKey": "wp-lake-nyos-disaster",
-              "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-1999-odisha-cyclone",
-      "title": "1999 Odisha cyclone",
-      "descr": "",
-      "start": 1999,
-      "tracks": [
+        "hinduism",
         "india"
       ],
       "sources": [
         {
-          "sourceKey": "wp-1999-odisha-cyclone",
-          "sourceLocation": "lead: \"The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.\""
+          "sourceKey": "wp-historical-vedic-religion",
+          "sourceLocation": "Legacy: \"Hindu reform movements like the Brahmo Samaj and the Neo-Vedanta in the late 19th and early 20th century rejected the 'superstitions' of Puranic Hinduism\""
         }
       ],
       "memberships": [
         {
           "facet": "category",
-          "value": "storm",
+          "value": "law",
           "sources": [
             {
-              "sourceKey": "wp-1999-odisha-cyclone",
-              "sourceLocation": "lead: \"The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.\""
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "Legacy: \"Hindu reform movements like the Brahmo Samaj and the Neo-Vedanta in the late 19th and early 20th century rejected the 'superstitions' of Puranic Hinduism\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "jewish-enlightenment-change",
+      "title": "Judaism changes in response to the Enlightenment",
+      "descr": "The Enlightenment brings major changes to Judaism and the first post-Enlightenment Jewish philosophers.",
+      "start": 1775,
+      "end": 1825,
+      "circa": true,
+      "tracks": [
+        "judaism"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-judaism",
+          "sourceLocation": "Modern era: \"Major changes occurred in response to the Enlightenment (late 18th to early 19th century), leading to the emergence of post-Enlightenment Jewish philosophers\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-judaism",
+              "sourceLocation": "Modern era: \"Major changes occurred in response to the Enlightenment (late 18th to early 19th century), leading to the emergence of post-Enlightenment Jewish philosophers\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "state-shinto",
+      "title": "State Shinto formed in the Meiji era",
+      "descr": "Japan's nationalist leadership expels Buddhist influence from worship and forms State Shinto, which some historians regard as the origin of Shinto as a distinct religion.",
+      "start": 1868,
+      "end": 1912,
+      "tracks": [
+        "shinto",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-shinto",
+          "sourceLocation": "lead: \"During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto\""
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "founded",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "odu-ifa-unesco",
+      "title": "UNESCO names the Odù Ifá a Masterpiece of Intangible Heritage",
+      "descr": "UNESCO proclaims the Odù Ifá, the Yoruba scripture of oracular texts passed down orally, one of the Masterpieces of the Oral and Intangible Heritage of Humanity.",
+      "start": 2005,
+      "tracks": [
+        "yoruba-religion",
+        "nigeria"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-yoruba-religion",
+          "sourceLocation": "Scripture: \"In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-yoruba-religion",
+              "sourceLocation": "Scripture: \"In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity\""
             }
           ]
         }

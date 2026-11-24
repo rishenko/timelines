@@ -771,8 +771,14 @@
   "boudica": [
    "revolt"
   ],
+  "brahmanism-ganges": [
+   "religion"
+  ],
   "brennus-greece": [
    "invasion"
+  ],
+  "brihadaranyaka-upanishad": [
+   "scripture"
   ],
   "bronze-age-collapse": [
    "dissolved"
@@ -1178,6 +1184,9 @@
   ],
   "ezana": [
    "reign"
+  ],
+  "ezra-reads-torah": [
+   "scripture"
   ],
   "faiyum-a": [
    "find"
@@ -2576,6 +2585,9 @@
   "second-punic-war": [
    "war"
   ],
+  "second-temple-built": [
+   "religion"
+  ],
   "seleucid-mauryan-war": [
    "war"
   ],
@@ -3133,6 +3145,9 @@
   ],
   "yamato-kingship": [
    "archaeology"
+  ],
+  "yamato-ritual-spreads": [
+   "religion"
   ],
   "yamnaya-corded-ware": [
    "horizon"

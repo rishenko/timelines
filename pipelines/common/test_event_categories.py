@@ -173,6 +173,15 @@ class FoundationalText(unittest.TestCase):
         self.assertEqual(known_negatives.failures(None), [])
 
 
+class Traditions(unittest.TestCase):
+    """Religions with no single founder (traditions pilot): Shinto, shrines, Ifá, principles of faith."""
+    def test_their_words_are_religion(self):
+        for title in ['Shinto transformed under the Ritsuryō system', 'Yamato shrine ritual spreads across Japan', 'Ifá reaches Oyo', "Maimonides' thirteen principles of faith"]:
+            self.assertEqual(cats(title, ['egypt'])[0], 'religion', title)
+
+    def test_ifat_is_not_ifa(self):
+        self.assertNotIn('religion', cats('Sultanate of Ifat founded', ['egypt']))
+
 
 class LifeAndEvolution(unittest.TestCase):
     """The Life and evolution kind and Mass extinction (Kevin, 2026-11-23); Earth and Life's events are all reviewed."""

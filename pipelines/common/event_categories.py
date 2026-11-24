@@ -195,7 +195,7 @@ TEXT_RULES = [
     (TEXT_CHARTER, 'charter'),
     (TEXT_CLASSIC, 'classic'),
     (TEXT_ID, 'text'),
-    (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
+    (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|shinto|shrines?|faith|if[aá]|orishas?|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
     (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet|amnest\w*|(motion|resolution) (is |was )?passed|passed a (motion|resolution)|bill (is |was )?passed|bill comes into (effect|force)|act (comes into (effect|force)|is passed|was passed)|comes into (effect|force))\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
     (R(r'\b(trade|coinage|currency|market|tax)\b'), 'economy'),
