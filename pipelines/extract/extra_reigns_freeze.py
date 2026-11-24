@@ -11,6 +11,7 @@ reviewed event each, and fold into reigns.json at the next full re-freeze.
 import hashlib
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -34,6 +35,10 @@ def from_freeze(argv):
         r = new['review'][e['uuid']]
         if e['uuid'] in old or e['uuid'] in have or r['row'] not in rows or any(s in ' '.join(r['toCheck']) for s in skip):
             continue
+        m = re.search(r'\(with ([^)]+)\)', e['sources'][0]['sourceLocation'])
+        if m:  # "c. 1344 – 1352 (with Basarab I)": a co-reign, said in the description and the review
+            e = dict(e, descr=re.sub(r'\.?$', f'; a co-reign with {m.group(1)}.', e['descr'], count=1))
+            r = dict(r, toCheck=list(r['toCheck']) + [f'co-reign with {m.group(1)}'])
         cur['events'].append(e)
         cur['review'][e['uuid']] = r
         added.append(e['title'])

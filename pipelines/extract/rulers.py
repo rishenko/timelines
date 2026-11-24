@@ -523,8 +523,12 @@ def picks(spans, terms, words, window=None):
     return out
 
 
+ORDINAL = re.compile(r'\(?\b(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth)\s+(?:reign|term|tenure|rule)\)?', re.I)
+
+
 def norm(succ):
-    return re.sub(r'\W+', ' ', succ.lower()).strip()
+    """An office text without its ordinal ("Prince of Wallachia ; (2nd reign)" is "prince of wallachia"), so a ruler's reign2, reign3... join his reign."""
+    return re.sub(r'\W+', ' ', ORDINAL.sub(' ', succ.lower())).strip()
 
 
 def pick(spans, terms, words, window=None):

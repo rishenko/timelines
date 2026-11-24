@@ -120,7 +120,7 @@ def verify_source(spec):
         return f"quote not in {p['title']!r}"
     if spec['measure'] == 'table':  # the table's rows are the count: the article must still list exactly these names
         import table_probe  # the same reader that wrote the spec
-        now = table_probe.names_of(p['text'], spec['table'].get('col'))
+        now = table_probe.names_of(p['text'], spec['table'].get('col'), all_tables=spec['table'].get('all_tables', False))
         if now != spec['table']['names']:
             return f"table rows changed ({len(now)} rows, spec has {len(spec['table']['names'])}): {sorted(set(now) ^ set(spec['table']['names']))[:6]}"
     return None

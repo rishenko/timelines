@@ -34,20 +34,61 @@ class Guards(unittest.TestCase):
         F.guards(keep, review, set(), DS)
         self.assertEqual(len(keep), 2)
 
-    def test_list_route_office_must_name_the_row(self):  # Tomislav of Croatia on Czechia through a list page; Wenceslaus stays
-        F.OFFICES.update({'t': 'King of Croatia', 'w': 'Duke of Bohemia'})
-        keep = [ev('t', 925, 'infobox reign: c. 925–928'), ev('w', 921, 'infobox reign: 921 – 935')]
-        review = {'t': rev('czechia', 'Tomislav, King of Croatia'), 'w': rev('czechia', 'Wenceslaus I, Duke of Bohemia')}
-        out = F.guards(keep, review, set(), DS)
-        self.assertEqual([e['uuid'] for e in keep], ['w'])
-        self.assertEqual(out['office names another polity (list route only)'], 1)
+    def go(self, uuid, office, row='czechia', field='reign', person='P', start=900, end=910, route='list: x', ours=()):
+        F.OFFICES[uuid], F.FIELDS[uuid] = office, field
+        e = dict(ev(uuid, start, 'infobox reign: x'), end=end)
+        keep, review = [e], {uuid: rev(row, person, route)}
+        out = F.guards(keep, review, set(ours), DS)
+        return bool(keep), out
 
-    def test_a_polity_route_is_kept_and_an_existing_reign_is_never_touched(self):
-        F.OFFICES.update({'p': 'King of Croatia', 'o': 'King of Croatia'})
-        keep = [ev('p', 925, 'x'), ev('o', 930, 'x')]
-        review = {'p': rev('czechia', 'P', 'polity: Kingdom of Bohemia'), 'o': rev('czechia', 'O')}
-        F.guards(keep, review, {'o'}, DS)  # 'o' is in the committed reigns.json
-        self.assertEqual(len(keep), 2)
+    def test_1_consort(self):  # Cleopatra Selene: "Queen consort of Egypt" on the Seleucid row
+        kept, out = self.go('c', 'Queen consort of Egypt', row='assyria')
+        self.assertFalse(kept)
+        self.assertEqual(out['consort (not a ruler)'], 1)
+
+    def test_2_governor_is_not_a_head_of_state(self):  # the Tahirid governor of Baghdad on the Caliphate row
+        kept, out = self.go('g', 'Governor of Baghdad', row='czechia')
+        self.assertEqual((kept, out['office is not the head of state']), (False, 1))
+        self.assertTrue(self.go('g2', 'Governor and Duke of Bohemia')[0])  # a head word beside it: kept
+
+    def test_3_another_offices_term(self):  # Guerrero: "Commander-in-chief" in a term_start field; Raczyński: ambassador
+        kept, out = self.go('t', 'Poland Ambassador to the United Kingdom', field='term_start3')
+        self.assertFalse(kept)
+        self.assertFalse(self.go('t2', 'Lieutenant of Bohemia', field='term_start')[0])  # no head word in a term field
+        self.assertTrue(self.go('t3', 'President of Bohemia', field='term_start')[0])
+
+    def test_4_the_offices_words_must_name_the_row(self):  # Victoria on a colony, Morazán on a member state, Christophe via Haiti
+        for u, off in (('v', 'Queen of the United Kingdom'), ('m', '2nd President of Central America'), ('h', 'King of Croatia')):
+            kept, out = self.go(u, off, route='polity: Colony of Bohemia')
+            self.assertFalse(kept, off)
+        self.assertTrue(self.go('w', 'Duke of Bohemia')[0])
+        self.assertTrue(self.go('k', 'King of Bohemia and Hungary', route='polity: Kingdom of Bohemia')[0])
+
+    def test_5_reign_mostly_outside_the_row(self):  # Francis II 1792-1835 on a row that ends in 1797
+        DS['tracks'].append({'id': 'milan', 'name': 'Duchy of Milan', 'span': {'start': '1450 CE', 'end': '1797 CE'}})
+        kept, out = self.go('f', 'Duke of Milan', row='milan', start=1792, end=1835)
+        self.assertFalse(kept)
+        self.assertTrue(self.go('f2', 'Duke of Milan', row='milan', start=1792, end=1797)[0])
+
+    def test_6_empress_list_and_colonial_phases(self):  # Tzitzak (a list of empresses); Philip II on a row whose only link is a colonial phase
+        DS['tracks'].append({'id': 'philippines', 'name': 'Philippines', 'phases': [{'name': 'Spanish East Indies'}, {'name': 'Fifth Republic'}]})
+        kept, out = self.go('z', 'Empress of the Byzantine Empire', route='list: List of Roman and Byzantine empresses')
+        self.assertFalse(kept)
+        self.assertEqual(out['reached only through a list of empresses or consorts'], 1)
+        kept, out = self.go('ph', 'King of Spain ; (as Philip II)', row='philippines', route='polity: Spanish East Indies')
+        self.assertFalse(kept)  # "Spanish" is the colonial phase's word, not the row's
+        self.assertTrue(self.go('ph2', 'President of the Philippines', row='philippines', route='polity: Fifth Republic')[0])
+
+    def test_7_an_empty_office_is_read_from_the_persons_other_rows(self):  # Elizabeth II on Guyana: no office text on that row
+        DS['tracks'].append({'id': 'guyana', 'name': 'Guyana', 'phases': [{'name': 'British Guiana'}, {'name': 'Co-operative Republic of Guyana'}]})
+        F.PERSON_OFFICES['Q9439'] = {'Queen of the United Kingdom'}
+        F.OFFICES['q'], F.FIELDS['q'] = '', 'reign'
+        keep, review = [dict(ev('q', 1952, 'infobox reign'), end=2022)], {'q': dict(rev('guyana', 'Elizabeth II'), qid='Q9439')}
+        F.guards(keep, review, set(), DS)
+        self.assertEqual(keep, [])
+
+    def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
+        self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 
 
 if __name__ == '__main__':

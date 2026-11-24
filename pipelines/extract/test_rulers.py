@@ -200,3 +200,17 @@ class PickTheRowsOffice(unittest.TestCase):
     def test_an_exact_match_is_unchanged(self):  # the old behaviour: one span naming the row wins, whatever the window
         s = self.spans(('reign', '1643 – 1715', 'King of France'), ('reign1', '1600 – 1643', 'Duke of Orléans'))
         self.assertEqual(R.pick(s, [], {'france'}, (1500, 1800))[0], 'reign')
+
+
+class OrdinalOffices(unittest.TestCase):
+    def test_reigns_of_one_office_join_across_ordinals(self):  # Constantine Mavrocordatos: six reigns, each labelled "(Nth reign)"
+        from dates import spans as sp
+        items = [('reign', '1730 – 1730', 'Prince of Wallachia ; (1st reign)'), ('reign2', '1731 – 1733', 'Prince of Wallachia ; (2nd reign)'),
+                 ('reign3', '1735 – 1741', 'Prince of Wallachia ; (3rd reign)'), ('reign7', '1730 – 1735', 'Prince of Moldavia ; (1st reign)')]
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in items]
+        got = R.picks(spans, [], {'wallachia'}, (1500, 1900))
+        self.assertEqual(sorted(g[0] for g in got), ['reign', 'reign2', 'reign3'])  # the Moldavian reign is another office
+
+    def test_norm_drops_ordinals_only(self):
+        self.assertEqual(R.norm('Prince of Wallachia ; (2nd reign)'), R.norm('Prince of Wallachia ; (1st reign)'))
+        self.assertNotEqual(R.norm('Prince of Moldavia'), R.norm('Prince of Wallachia'))

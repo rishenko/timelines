@@ -30,6 +30,7 @@ LISTS = [
     ('japanese-emperors', 'List of emperors of Japan', 'East Asia', '500 BCE–500 CE and 500–1500 and 1500–1800 and 1800 on', 3),
     ('tlatoque-tenochtitlan', 'List of tlatoque of Tenochtitlan', 'The Americas', '500–1500 and 1500–1800', None),
     ('holy-roman-emperors', 'List of Holy Roman Emperors', 'Europe', '500–1500 and 1500–1800 and 1800 on', None),
+    ('wallachia-rulers', 'List of rulers of Wallachia', 'Europe', '500–1500 and 1500–1800 and 1800 on', 'all'),  # one table per dynasty
 ]
 UNREADABLE = [('List of emperors of the Mughal Empire', 'the table has family rows and image cells that shift its columns; the existing list spec (20) covers it'),
               ('Sapa Inca', 'the table has a rowspan title column: needs the span-expanding reader (list_rows.expand), not ported here'),
@@ -57,7 +58,7 @@ def main():
     out = []
     for sid, art, region, era, col in LISTS:
         p = wp_dump.page(art)
-        names = TP.names_of(p['text'], col)
+        names = TP.names_of(p['text'], None if col == 'all' else col, all_tables=(col == 'all'))
         names = [n for n in names if not re.match(r'(List of|Category|File|Template)', n)]
         uniq = list(dict.fromkeys(names))
         have = {}
@@ -77,7 +78,7 @@ def main():
             for tl, r in have.get(K.base(aliases.get(n, n)), [])[:1]:
                 rows[(tl, r)] = rows.get((tl, r), 0) + 1
         spec = {'id': sid, 'rows': [list(k) for k in sorted(rows)], 'measure': 'table', 'expected': len(uniq), 'kind': 'table', 'region': region, 'era': era,
-                'source': {'article': art, 'quote': quote_of(p['text']), 'dump': settings.DUMP_NAME}, 'table': {'article': art, 'names': names, **({'col': col} if col is not None else {})}, 'aliases': aliases, 'notRequired': {}}
+                'source': {'article': art, 'quote': quote_of(p['text']), 'dump': settings.DUMP_NAME}, 'table': {'article': art, 'names': names, **({'col': col} if isinstance(col, int) else {}), **({'all_tables': True} if col == 'all' else {})}, 'aliases': aliases, 'notRequired': {}}
         got, detail = K.table_count(spec) if rows else (0, 'no name found in the data')
         if got != spec['expected']:
             spec['kind'] = 'list'  # a warning: the list is read, but whether its legendary, interregnum or colonial rows belong is Kevin's call

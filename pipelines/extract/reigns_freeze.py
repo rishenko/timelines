@@ -178,15 +178,69 @@ def inputs_of(d):
             'reigns-claims.json': sha(os.path.join(HERE, 'reigns-claims.json')), 'wikipedia': RU.settings.DUMP_NAME}
 
 
+FIELDS = {}  # uuid -> the infobox field
 OFFICES = {}  # uuid -> the office text of the placed ruler (kept out of the review file, whose bytes must not change)
 CHRON = re.compile(r'\((?:high|low|middle|mc|short|long|ultra[- ]?\w+|ac)\b[^)]*\)|chronolog', re.I)
 GENERIC_ROW = {'kingdom', 'duchy', 'empire', 'republic', 'state', 'states', 'principality', 'union', 'dynasty', 'caliphate', 'sultanate', 'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate'}
 
 
-def row_words(track):
-    """The distinctive words of a row's name and phases (first four letters are enough to tell Bohemia from Croatia)."""
-    names = [track['name']] + [p['name'] for p in track.get('phases', [])]
+COLONIAL = re.compile(r'colon|protectorate|east indies|west indies|settlement|mandate|trust territory|occupation|dominion|territory|presidency|crown rule|british rule|company rule', re.I)
+CONSORT_LIST = re.compile(r'empresses|queens consort|consorts', re.I)
+
+
+def row_words(track, colonial=True):
+    """The distinctive words of a row's name and phases (first four letters are enough to tell Bohemia from Croatia). With `colonial`, a phase
+    that is a colonial or occupation rule ("Spanish East Indies", "British rule in Burma") does not lend its words: the empire's monarch is not
+    that row's head of state."""
+    names = [track['name']] + [p['name'] for p in track.get('phases', []) if not (colonial and COLONIAL.search(p['name']))]
     return {w.lower() for n in names for w in re.findall(r'[A-Za-zÀ-ÿ]{4,}', n)} - GENERIC_ROW
+
+
+HEAD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|sultana|shah|caliph|khan|khagan|prince|princess|duke|duchess|archduke|margrave|landgrave|elector|count|president|doge|voivode|vojvoda|pharaoh|monarch|head of state|sapa|negus|raja|maharaja|nawab|emir|amir|tlatoani|mansa|basileus|despot|lord|chief|chieftain|ruler|leader|regent|stadtholder|grand|yabghu|tenno|shogun|bey|dey|pasha|wali)\b', re.I)
+CONSORT = re.compile(r'consort|wife of|husband of|spouse', re.I)
+NONHEAD = re.compile(r'\b(governor|ambassador|commander|chief of security|minister|envoy|general|viceroy|admiral|prefect|mayor|secretary|speaker)\b', re.I)
+
+
+PERSON_OFFICES = {}  # qid -> every office text the run gives that person on any row (fills an empty office)
+
+
+def wrong_kind(e, r, office, track):
+    """Why a reign this freeze adds (not in the committed reigns.json) is not a head of state of its row, or None. The five guards of the
+    2026-11-24 precision sample, each with a test in test_reigns_freeze.py:
+    1. a consort's years (Cleopatra Selene as queen consort of Egypt on the Seleucid row);
+    2. an office that is not the head of state (a governor or chief of police, a commander, an ambassador) unless the office also names a head;
+    3. another office's infobox term: a `term_start` field whose office has no head-of-state word;
+    4. an office that names none of the row's own words (a colony's row with the empire's monarch, a federation's president on a member's row,
+       an overlord's title on a vassal's row): the first four letters of an office word and a row word must agree;
+    5. a reign that covers less than half of its length inside the row's span (Francis II 1792-1835 on a Milan row that ends earlier)."""
+    if CONSORT_LIST.search(r.get('route', '')) and not re.search(r'monarchs|rulers|heads of state|emperors|kings', r.get('route', ''), re.I):
+        return 'reached only through a list of empresses or consorts'
+    offices = [office] if office else sorted(PERSON_OFFICES.get(r.get('qid'), []))
+    if not offices:
+        return None
+    office = ' ; '.join(offices)
+    if CONSORT.search(office):
+        return 'consort (not a ruler)'
+    head = bool(HEAD.search(office))
+    if NONHEAD.search(office) and not head:
+        return 'office is not the head of state'
+    if r.get('field', '').startswith('term') and not head:
+        return "another office's term"
+    words = row_words(track) if track else set()
+    text = re.findall(r'[a-zà-ÿ]{4,}', re.sub(r'\([^)]*\)', ' ', office).lower())  # the office only, without "(as Philip II)": a ruler's own name (Philip on the Philippines) is no evidence
+    if words and not any(tok[:4] == w[:4] for tok in text for w in words):
+        return "office names none of the row's words (a colony, member or vassal row)"
+    sp = track.get('span') if track else None
+    if sp and not isinstance(sp, list) and e.get('end') is not None:
+        try:
+            r0, r1 = RU.hist(sp['start']), RU.hist(sp.get('end', e['end']))
+            length = max(1, e['end'] - e['start'])
+            inside = min(e['end'], r1) - max(e['start'], r0)
+            if inside < 0.5 * length:
+                return "reign mostly outside the row's span"
+        except Exception:
+            pass
+    return None
 
 
 def guards(keep, review, ours, ds):
@@ -216,15 +270,14 @@ def guards(keep, review, ours, ds):
             out['chronology variant (kept as a claim)'] += 1
     for e in list(keep):
         r = review.get(e['uuid'])
-        if not r or e['uuid'] in ours or 'list:' not in r['route'] or 'polity:' in r['route']:
+        if not r or e['uuid'] in ours:
             continue
         office = OFFICES.get(e['uuid'], '')
-        words = row_words(tracks[r['row']])
-        text = re.findall(r'[a-zà-ÿ]{4,}', (office + ' ' + r['person']).lower())
-        if office and words and not any(tok[:4] == w[:4] for tok in text for w in words):
+        why = wrong_kind(e, dict(r, field=FIELDS.get(e['uuid'], '')), office, tracks.get(r['row']))
+        if why:
             keep.remove(e)
             review.pop(e['uuid'], None)
-            out["office names another polity (list route only)"] += 1
+            out[why] += 1
     return out
 
 
@@ -238,6 +291,9 @@ def main():
     data = json.load(open(os.path.join(d, 'rulers-events.json')))
     ev_by = {e['uuid']: e for e in data['events']}
     placed = [r for r in R if r['uuid']]
+    for r in R:
+        if r['office'] and r['qid']:
+            PERSON_OFFICES.setdefault(r['qid'], set()).add(r['office'])
     other = RR.from_elsewhere(placed, {t['id']: t['name'] for t in ds['tracks']})
     imp_path = os.path.join(ROOT, 'data-src', f'{timeline}-importance.json')
     pinned = set(json.load(open(imp_path)).get('_pinnedReigns', [])) if os.path.exists(imp_path) else set()
@@ -390,6 +446,7 @@ def main():
             CLAIM_UUIDS[uid] = timeline
         keep.append(ev)
         OFFICES[ev['uuid']] = r['office']
+        FIELDS[ev['uuid']] = r['field']
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
     guard_added = guards(keep, review, ours, ds)
