@@ -23848,6 +23848,14 @@
         "wikipedia"
       ]
     },
+    "wp-mongol-invasion-of-kievan-rus": {
+      "name": "Mongol invasion of Kievan Rus' (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Kievan_Rus'",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-black-death-in-the-middle-east": {
       "name": "Black Death in the Middle East (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Black_Death_in_the_Middle_East",
@@ -46998,7 +47006,7 @@
       "title": "Mongol invasion of Rus'",
       "descr": "",
       "start": 1237,
-      "end": 1241,
+      "end": 1240,
       "tracks": [
         "kievan-rus",
         "mongol-empire"
@@ -47007,9 +47015,53 @@
         {
           "sourceKey": "wp-kievan-rus",
           "sourceLocation": "infobox event4: Mongol invasion, 1237–1241"
+        },
+        {
+          "sourceKey": "wp-mongol-invasion-of-kievan-rus",
+          "sourceLocation": "section \"Background\": \"In 1237, they besieged and took Ryazan, and Vladimir fell in early February 1238. \"For our sins\", wrote a chronicler, \"unknown nations arrived.\""
+        },
+        {
+          "sourceKey": "wp-mongol-invasion-of-kievan-rus",
+          "sourceLocation": "lead: \"The Mongols captured Kiev in 1240 and moved west into Hungary and Poland.\""
         }
       ],
       "importance": 1,
+      "startDates": [
+        {
+          "year": 1237,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-kievan-rus",
+            "sourceLocation": "section \"Background\": \"In 1237, they besieged and took Ryazan, and Vladimir fell in early February 1238. \"For our sins\", wrote a chronicler, \"unknown nations arrived.\""
+          },
+          "note": "The main invasion: Ryazan, the first great Rus' city, fell in December 1237."
+        },
+        {
+          "year": 1223,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-kievan-rus",
+            "sourceLocation": "lead: \"The Mongol campaign was heralded by the Battle of the Kalka River on 31 May 1223, which resulted in a Mongol victory over the forces of several principalities a\""
+          },
+          "note": "The first incursion, a reconnaissance in force that withdrew."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1240,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-kievan-rus",
+            "sourceLocation": "lead: \"The Mongols captured Kiev in 1240 and moved west into Hungary and Poland.\""
+          },
+          "note": "The fall of Kiev, which the article takes as the end of the conquest of the Rus' principalities."
+        },
+        {
+          "year": 1241,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-kievan-rus",
+            "sourceLocation": "infobox date: 1223 (initial invasion) / 1237–1241 (main invasion)"
+          },
+          "note": "The infobox dates the main invasion 1237–1241, taking in the move west into Hungary and Poland."
+        }
+      ],
       "memberships": [
         {
           "facet": "category",
