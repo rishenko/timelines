@@ -1,5 +1,5 @@
 {
- "_note": "The disasters pilot (v2 step 2): 24 named events, rebalanced for world coverage (Kevin, 2026-11-23). Picked by impact within each region and era, not by English fame. 'sub' is the type id in pipelines/common/disaster_classes.json; 'countries' are the Wikipedia articles of the places whose rows carry the event (resolved to QIDs); 'wide' marks an event that affects a whole region or the world (region row plus a global theme row). 'flag' is a call that goes to Kevin with the quotes. 'find' lists words a sentence of the article must contain to quote the date, for an article that covers more than the event.",
+ "_note": "The disasters pilot (v2 step 2): 24 named events, rebalanced for world coverage (Kevin, 2026-11-23). Picked by impact within each region and era, not by English fame. 'sub' is the type id in pipelines/common/disaster_classes.json; 'countries' are the Wikipedia articles of the places whose rows carry the event (resolved to QIDs); 'wide' marks an event that affects a whole region or the world (region row plus a global theme row). 'flag' is a call that goes to Kevin with the quotes. 'find' lists words a sentence of the article must contain to quote the date, for an article that covers more than the event. 'label' is our title for an article that covers more than the event.",
  "events": [
   {
    "title": "Black Death in the Middle East",
@@ -12,7 +12,8 @@
    "find": [
     "1347",
     "Egypt"
-   ]
+   ],
+   "label": "Black Death in Egypt"
   },
   {
    "title": "Famines in Ethiopia",
@@ -20,12 +21,13 @@
    "countries": [
     "Ethiopia"
    ],
-   "flag": "famine evidence test: Great Ethiopian Famine 1888-92 (drought + rinderpest); the article is the general Ethiopian famines one",
+   "flag": "type question (Kevin): the article says an African rinderpest epizootic (a cattle plague) caused the 1888-92 famine; an animal epidemic is filed as Epidemic by EM-DAT's tree but the famine itself is Drought or crop failure here",
    "span": "1888-1892",
    "find": [
     "1888",
     "rinderpest"
-   ]
+   ],
+   "label": "Great Ethiopian Famine"
   },
   {
    "title": "Droughts in the Sahel",
@@ -40,7 +42,8 @@
    "span": "1968-1985",
    "find": [
     "1968"
-   ]
+   ],
+   "label": "Sahel drought of 1968–1974"
   },
   {
    "title": "Lake Nyos disaster",
@@ -52,12 +55,12 @@
   },
   {
    "title": "Great Bengal famine of 1770",
-   "sub": "famine",
+   "sub": "drought",
    "countries": [
     "India",
     "Bangladesh"
    ],
-   "flag": "famine evidence test: contested cause; the quote decides"
+   "flag": "famine evidence test (Kevin): policy counts only when a quoted sentence in the article names it as a main cause. The article names a monsoon failure as the start and lists Company policy as 'other factors adding to the pressure' (rice bought for the Company's army, no tax relief, land revenue up about 30%), so it stays Drought or crop failure; the quotes go to Kevin"
   },
   {
    "title": "1839 Coringa cyclone",
@@ -143,7 +146,8 @@
    "note": "the 1963 eruption; the article is the volcano's. Replaces Pinatubo 1991, whose article carries an AI-generated-text notice (no flagged sources)",
    "find": [
     "eruption of 1963"
-   ]
+   ],
+   "label": "1963 eruption of Mount Agung"
   },
   {
    "title": "526 Antioch earthquake",
@@ -185,7 +189,8 @@
    "find": [
     "1600",
     "eruption"
-   ]
+   ],
+   "label": "1600 eruption of Huaynaputina"
   },
   {
    "title": "1985 Mexico City earthquake",

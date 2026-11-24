@@ -432,6 +432,10 @@ def build(repo, module_names=None):
     if tuple(module_names) == MODULES:
         import periods
         REPORT.append(f'periods: {periods.apply(data, "modern-states")}')
+    if tuple(module_names) == MODULES:  # v2 emitters (pipelines/v2): disasters
+        sys.path.insert(0, os.path.join(HERE, '..', 'v2'))
+        import emit_merge
+        REPORT.append(emit_merge.merge('disaster', 'modern-states', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence

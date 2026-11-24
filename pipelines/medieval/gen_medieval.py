@@ -548,6 +548,9 @@ def build(repo):
     # golden ages and eras (pipelines/common/periods.py from periods.json): before the sources, which they cite
     import periods
     REPORT.append(f'periods: {periods.apply(data, "medieval")}')
+    sys.path.insert(0, os.path.join(HERE, '..', 'v2'))  # v2 emitters: disasters
+    import emit_merge
+    REPORT.append(emit_merge.merge('disaster', 'medieval', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:

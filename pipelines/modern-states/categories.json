@@ -277,5 +277,50 @@
  ],
  "zemene-mesafint": [
   "rule"
+ ],
+ "disaster-1556-shaanxi-earthquake": [
+  "earthquake"
+ ],
+ "disaster-1815-eruption-of-mount-tambora": [
+  "eruption"
+ ],
+ "disaster-1839-coringa-cyclone": [
+  "storm"
+ ],
+ "disaster-1883-eruption-of-krakatoa": [
+  "eruption"
+ ],
+ "disaster-1931-china-floods": [
+  "flood"
+ ],
+ "disaster-1948-ashgabat-earthquake": [
+  "earthquake"
+ ],
+ "disaster-1976-tangshan-earthquake": [
+  "earthquake"
+ ],
+ "disaster-1985-mexico-city-earthquake": [
+  "earthquake"
+ ],
+ "disaster-1999-odisha-cyclone": [
+  "storm"
+ ],
+ "disaster-droughts-in-the-sahel": [
+  "drought"
+ ],
+ "disaster-famines-in-ethiopia": [
+  "drought"
+ ],
+ "disaster-great-bengal-famine-of-1770": [
+  "drought"
+ ],
+ "disaster-huaynaputina": [
+  "eruption"
+ ],
+ "disaster-lake-nyos-disaster": [
+  "eruption"
+ ],
+ "disaster-mount-agung": [
+  "eruption"
  ]
 }

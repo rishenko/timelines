@@ -239,5 +239,9 @@
  "yungang": ["religion"],
  "zhang-qian": ["diplomacy"],
  "zoroaster": ["religion"],
- "zu-chongzhi": ["discovery"]
+ "zu-chongzhi": ["discovery"],
+ "disaster-526-antioch-earthquake": ["earthquake"],
+ "disaster-hatepe-eruption": ["eruption"],
+ "disaster-minoan-eruption": ["eruption"],
+ "disaster-tierra-blanca-joven-eruption": ["eruption"]
 }

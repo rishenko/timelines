@@ -188,7 +188,7 @@ def main():
                    'wp': {'title': p['title'], 'dump': settings.DUMP_NAME}, 'dates': dates, 'places': places,
                    'countries': seed['countries'], 'measures': measures, 'notability': {'inlinks': inl[0] if inl else None},
                    'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')},
-                   **({'dropped': dropped} if dropped else {}), **({'span': seed['span']} if seed.get('span') else {}),
+                   **({'dropped': dropped} if dropped else {}), **({'span': seed['span']} if seed.get('span') else {}), **({'label': seed['label']} if seed.get('label') else {}),
                    **({'wide': True} if seed.get('wide') else {}), **({'flag': seed['flag']} if seed.get('flag') else {})}
             f.write(json.dumps(rec, ensure_ascii=False) + '\n')
             n += 1

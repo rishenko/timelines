@@ -38,7 +38,7 @@ def headline(c):
         best = max(votes, key=lambda y: (votes[y], -min(rank(d['locator']) for d in quoted if d['year'] == y)))
         pick = next(d for d in sorted(quoted, key=lambda d: rank(d['locator'])) if d['year'] == best)
         years = sorted({d['year'] for d in quoted + wd})
-        out[side] = {'year': best, 'month': pick.get('month'), 'day': pick.get('day'), 'locator': pick['locator'],
+        out[side] = {'year': best, 'month': pick.get('month'), 'day': pick.get('day'), 'circa': pick.get('circa', False), 'locator': pick['locator'],
                      'quote': pick['quote'], 'agree': sum(1 for d in quoted + wd if d['year'] == best),
                      'of': len(quoted + wd), 'otherYears': [y for y in years if y != best]}
     return out
