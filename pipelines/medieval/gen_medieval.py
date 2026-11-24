@@ -564,6 +564,7 @@ def build(repo):
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "medieval-categories.json"))}')
     # ids this build no longer has (links that name them still work): the 1356 Golden Bull was listed twice
     data['redirects'] = {'charles-ivs-golden-bull': 'golden-bull'}
+    data['redirects'].update(json.load(open(os.path.join(HERE, 'redirects.json')))['redirects'])  # reigns left out on purpose (reigns-excluded.json), and their sources
     data = {k: data[k] for k in ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events', 'redirects']}
     out = os.path.join(repo, 'data-src', 'medieval.json')
     json.dump(data, open(out, 'w'), indent=2, ensure_ascii=False)
