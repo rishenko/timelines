@@ -222,5 +222,42 @@
    },
    "at": 2026
   }
+ ],
+ "gaps": [
+  {
+   "region": "South Asia, Ancient",
+   "what": "Maurya emperors",
+   "why": "Maurya Empire and List of Maurya emperors state no total in the dump"
+  },
+  {
+   "region": "West/Central Asia, Ancient",
+   "what": "Achaemenid kings",
+   "why": "Achaemenid Empire states no total (it lists rulers in a table)"
+  },
+  {
+   "region": "Americas, Medieval/Modern",
+   "what": "Sapa Incas; Aztec tlatoque",
+   "why": "the Sapa Inca article states no total; \"List of tlatoque of Tenochtitlan\" is a table"
+  },
+  {
+   "region": "South Asia, Medieval",
+   "what": "Delhi Sultanate dynasties",
+   "why": "\"five periods\" is stated, but the data has one row for the sultanate with no per-dynasty rows to count"
+  },
+  {
+   "region": "Africa, Medieval",
+   "what": "Solomonic Ethiopia; Songhai; Mali",
+   "why": "no sentence gives a total (Zagwe: eleven or five kings, contested)"
+  },
+  {
+   "region": "East Asia, Modern",
+   "what": "Qing: \"twelve Qing rulers\"; Kamakura \"9 shōguns\"; Ming 16",
+   "why": "the China and Japan rows hold every dynasty and office together; counting a dynasty needs a per-dynasty row or a name list (Ming states no total in the dump)"
+  },
+  {
+   "region": "Global",
+   "what": "EU 27, UN 193 members, Swiss cantons 26, India 28 states, African Union 55",
+   "why": "sentences exist, but the timelines have no member-state rows for these bodies (only NATO, SEATO, Warsaw Pact, Comecon and the Non-Aligned Movement)"
+  }
  ]
 }
