@@ -75182,14 +75182,6 @@
         "wikipedia"
       ]
     },
-    "wp-battle-of-dien-bien-phu": {
-      "name": "Battle of Dien Bien Phu (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Dien_Bien_Phu",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-battle-of-france": {
       "name": "Battle of France (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_France",
@@ -75310,6 +75302,14 @@
         "wikipedia"
       ]
     },
+    "wp-cambodian-campaign": {
+      "name": "Cambodian campaign (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cambodian_campaign",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-fall-of-the-derg-regime": {
       "name": "Fall of the Derg regime (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Fall_of_the_Derg_regime",
@@ -75417,14 +75417,6 @@
     "wp-siege-of-tobruk": {
       "name": "Siege of Tobruk (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Siege_of_Tobruk",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-tet-offensive": {
-      "name": "Tet Offensive (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Tet_Offensive",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -123276,6 +123268,38 @@
       ]
     },
     {
+      "uuid": "conflict-burmese-siamese-war-1765-1767",
+      "title": "Burmese–Siamese War (1765–1767)",
+      "descr": "",
+      "start": 1765,
+      "tracks": [
+        "thailand"
+      ],
+      "startMonth": 8,
+      "startDay": 23,
+      "end": 1767,
+      "endMonth": 4,
+      "endDay": 7,
+      "sources": [
+        {
+          "sourceKey": "wp-burmese-siamese-war-1765-1767",
+          "sourceLocation": "infobox date: 23 August 1765 – 7 April 1767(1 year, 7 months, 2 weeks, and 1 day)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-burmese-siamese-war-1765-1767",
+              "sourceLocation": "infobox date: 23 August 1765 – 7 April 1767(1 year, 7 months, 2 weeks, and 1 day)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-french-invasion-of-egypt-and-syria",
       "title": "French invasion of Egypt and Syria",
       "descr": "",
@@ -123783,35 +123807,6 @@
       ]
     },
     {
-      "uuid": "conflict-1893-franco-siamese-crisis",
-      "title": "1893 Franco-Siamese crisis",
-      "descr": "",
-      "start": 1893,
-      "tracks": [
-        "france"
-      ],
-      "startMonth": 7,
-      "startDay": 13,
-      "sources": [
-        {
-          "sourceKey": "wp-1893-franco-siamese-crisis",
-          "sourceLocation": "infobox date: 13 July – 3 October 1893"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-1893-franco-siamese-crisis",
-              "sourceLocation": "infobox date: 13 July – 3 October 1893"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-adwa",
       "title": "Battle of Adwa",
       "descr": "",
@@ -124101,6 +124096,38 @@
       ]
     },
     {
+      "uuid": "conflict-franco-thai-war",
+      "title": "Franco-Thai War",
+      "descr": "",
+      "start": 1940,
+      "tracks": [
+        "france",
+        "thailand"
+      ],
+      "startMonth": 10,
+      "end": 1941,
+      "endMonth": 1,
+      "endDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-franco-thai-war",
+          "sourceLocation": "infobox date: October 1940 – 28 January 1941"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-franco-thai-war",
+              "sourceLocation": "infobox date: October 1940 – 28 January 1941"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-attack-on-pearl-harbor",
       "title": "Attack on Pearl Harbor",
       "descr": "",
@@ -124325,6 +124352,40 @@
       ]
     },
     {
+      "uuid": "conflict-first-indochina-war",
+      "title": "First Indochina War",
+      "descr": "",
+      "start": 1946,
+      "tracks": [
+        "vietnam",
+        "france"
+      ],
+      "startMonth": 12,
+      "startDay": 19,
+      "end": 1954,
+      "endMonth": 8,
+      "endDay": 11,
+      "sources": [
+        {
+          "sourceKey": "wp-first-indochina-war",
+          "sourceLocation": "infobox date: 19 December 194611 August 1954 ()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-first-indochina-war",
+              "sourceLocation": "infobox date: 19 December 194611 August 1954 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-battle-of-inchon",
       "title": "Battle of Inchon",
       "descr": "",
@@ -124384,31 +124445,32 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-dien-bien-phu",
-      "title": "Battle of Dien Bien Phu",
+      "uuid": "conflict-vietnam-war",
+      "title": "Vietnam War",
       "descr": "",
-      "start": 1954,
+      "start": 1955,
       "tracks": [
-        "france",
         "vietnam"
       ],
-      "startMonth": 3,
-      "startDay": 13,
+      "end": 1975,
+      "endMonth": 4,
+      "endDay": 30,
+      "circa": true,
       "sources": [
         {
-          "sourceKey": "wp-battle-of-dien-bien-phu",
-          "sourceLocation": "infobox date: 13 March– 7 May 1954()"
+          "sourceKey": "wp-vietnam-war",
+          "sourceLocation": "infobox date: circa 195530 April 1975"
         }
       ],
       "importance": 1,
       "memberships": [
         {
           "facet": "category",
-          "value": "battle",
+          "value": "war",
           "sources": [
             {
-              "sourceKey": "wp-battle-of-dien-bien-phu",
-              "sourceLocation": "infobox date: 13 March– 7 May 1954()"
+              "sourceKey": "wp-vietnam-war",
+              "sourceLocation": "infobox date: circa 195530 April 1975"
             }
           ]
         }
@@ -124444,30 +124506,58 @@
       ]
     },
     {
-      "uuid": "conflict-tet-offensive",
-      "title": "Tet Offensive",
+      "uuid": "conflict-1970-cambodian-coup-d-tat",
+      "title": "1970 Cambodian coup d'état",
       "descr": "",
-      "start": 1968,
+      "start": 1970,
       "tracks": [
-        "vietnam"
+        "cambodia"
       ],
-      "startMonth": 1,
-      "startDay": 30,
+      "startMonth": 3,
+      "startDay": 18,
       "sources": [
         {
-          "sourceKey": "wp-tet-offensive",
-          "sourceLocation": "infobox date: Phase 1: 30 January – 20 March 1968()Phase 2: 5 May – 15 June 1968()Phase 3: 9 August – 23 September 1968()"
+          "sourceKey": "wp-1970-cambodian-coup-d-tat",
+          "sourceLocation": "infobox date: 18 March 1970"
         }
       ],
-      "importance": 1,
       "memberships": [
         {
           "facet": "category",
           "value": "battle",
           "sources": [
             {
-              "sourceKey": "wp-tet-offensive",
-              "sourceLocation": "infobox date: Phase 1: 30 January – 20 March 1968()Phase 2: 5 May – 15 June 1968()Phase 3: 9 August – 23 September 1968()"
+              "sourceKey": "wp-1970-cambodian-coup-d-tat",
+              "sourceLocation": "infobox date: 18 March 1970"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-cambodian-campaign",
+      "title": "Cambodian campaign",
+      "descr": "",
+      "start": 1970,
+      "tracks": [
+        "cambodia"
+      ],
+      "startMonth": 4,
+      "startDay": 29,
+      "sources": [
+        {
+          "sourceKey": "wp-cambodian-campaign",
+          "sourceLocation": "infobox date: April 29 – July 22, 1970"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-cambodian-campaign",
+              "sourceLocation": "infobox date: April 29 – July 22, 1970"
             }
           ]
         }

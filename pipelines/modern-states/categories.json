@@ -324,10 +324,10 @@
  "disaster-mount-agung": [
   "eruption"
  ],
- "conflict-1893-franco-siamese-crisis": [
+ "conflict-1960-ethiopian-coup-attempt": [
   "battle"
  ],
- "conflict-1960-ethiopian-coup-attempt": [
+ "conflict-1970-cambodian-coup-d-tat": [
   "battle"
  ],
  "conflict-2006-thai-coup-d-tat": [
@@ -361,9 +361,6 @@
   "battle"
  ],
  "conflict-battle-of-dholpur": [
-  "battle"
- ],
- "conflict-battle-of-dien-bien-phu": [
   "battle"
  ],
  "conflict-battle-of-diu": [
@@ -438,6 +435,12 @@
  "conflict-british-expedition-to-abyssinia": [
   "invasion"
  ],
+ "conflict-burmese-siamese-war-1765-1767": [
+  "war"
+ ],
+ "conflict-cambodian-campaign": [
+  "invasion"
+ ],
  "conflict-fall-of-saigon": [
   "battle"
  ],
@@ -449,6 +452,12 @@
  ],
  "conflict-first-battle-of-panipat": [
   "battle"
+ ],
+ "conflict-first-indochina-war": [
+  "war"
+ ],
+ "conflict-franco-thai-war": [
+  "war"
  ],
  "conflict-french-invasion-of-egypt-and-syria": [
   "invasion"
@@ -516,10 +525,10 @@
  "conflict-spanish-conquest-of-the-inca-empire": [
   "invasion"
  ],
- "conflict-tet-offensive": [
-  "battle"
- ],
  "conflict-thirty-years-war": [
+  "war"
+ ],
+ "conflict-vietnam-war": [
   "war"
  ],
  "conflict-world-war-i": [

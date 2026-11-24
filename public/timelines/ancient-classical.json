@@ -29987,6 +29987,54 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-first-tikal-calakmul-war": {
+      "name": "First Tikal–Calakmul War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Tikal–Calakmul_War",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-goguryeo-sui-war": {
+      "name": "Goguryeo–Sui War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Goguryeo–Sui_War",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-goguryeo-tang-war": {
+      "name": "Goguryeo–Tang War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Goguryeo–Tang_War",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-tikal-calakmul-war": {
+      "name": "Second Tikal–Calakmul War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Tikal–Calakmul_War",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sui-l-m-p-war": {
+      "name": "Sui–Lâm Ấp war (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sui–Lâm_Ấp_war",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tikal-calakmul-wars": {
+      "name": "Tikal–Calakmul wars (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tikal–Calakmul_wars",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -65808,6 +65856,175 @@
             {
               "sourceKey": "wp-tang-campaign-against-the-eastern-turks",
               "sourceLocation": "infobox date: 629–630"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-first-tikal-calakmul-war",
+      "title": "First Tikal–Calakmul War",
+      "descr": "",
+      "start": 537,
+      "tracks": [
+        "maya"
+      ],
+      "end": 572,
+      "sources": [
+        {
+          "sourceKey": "wp-first-tikal-calakmul-war",
+          "sourceLocation": "infobox date: 537–572"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-first-tikal-calakmul-war",
+              "sourceLocation": "infobox date: 537–572"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-tikal-calakmul-wars",
+      "title": "Tikal–Calakmul wars",
+      "descr": "",
+      "start": 537,
+      "tracks": [
+        "maya"
+      ],
+      "end": 838,
+      "sources": [
+        {
+          "sourceKey": "wp-tikal-calakmul-wars",
+          "sourceLocation": "infobox date: 537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-tikal-calakmul-wars",
+              "sourceLocation": "infobox date: 537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-goguryeo-sui-war",
+      "title": "Goguryeo–Sui War",
+      "descr": "",
+      "start": 598,
+      "tracks": [
+        "goguryeo",
+        "sui"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-goguryeo-sui-war",
+          "sourceLocation": "infobox date: 598, 612–614"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-goguryeo-sui-war",
+              "sourceLocation": "infobox date: 598, 612–614"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-sui-l-m-p-war",
+      "title": "Sui–Lâm Ấp war",
+      "descr": "",
+      "start": 605,
+      "tracks": [
+        "champa",
+        "sui"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-sui-l-m-p-war",
+          "sourceLocation": "infobox date: 605"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-sui-l-m-p-war",
+              "sourceLocation": "infobox date: 605"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-goguryeo-tang-war",
+      "title": "Goguryeo–Tang War",
+      "descr": "",
+      "start": 645,
+      "tracks": [
+        "china",
+        "goguryeo"
+      ],
+      "end": 668,
+      "sources": [
+        {
+          "sourceKey": "wp-goguryeo-tang-war",
+          "sourceLocation": "infobox date: 645–668"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-goguryeo-tang-war",
+              "sourceLocation": "infobox date: 645–668"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-second-tikal-calakmul-war",
+      "title": "Second Tikal–Calakmul War",
+      "descr": "",
+      "start": 648,
+      "tracks": [
+        "maya"
+      ],
+      "end": 695,
+      "sources": [
+        {
+          "sourceKey": "wp-second-tikal-calakmul-war",
+          "sourceLocation": "infobox date: 648–695"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-second-tikal-calakmul-war",
+              "sourceLocation": "infobox date: 648–695"
             }
           ]
         }

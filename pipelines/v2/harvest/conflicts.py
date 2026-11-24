@@ -258,7 +258,8 @@ def main():
             tl = next((t for t, (a, b) in windows.items() if (a is None or ay >= a) and (b is None or ay <= b)), None)
             by_tl.setdefault(tl, []).append(r)
         for tl, rs in by_tl.items():
-            rs = [r for r in rs if r['sub'] != 'war']  # the pilot ranks battles, sieges and campaigns; wars are the named ones below
+            allow_war = next((c.get('allow_war') for c in pilot['countries'] if c['id'] == cid), False)  # regional-war countries (SE Asia, Korea, Maya...): their conflicts are titled wars
+            rs = [r for r in rs if allow_war or r['sub'] != 'war']  # the pilot ranks battles, sieges and campaigns; wars are the named ones below
             rs.sort(key=lambda r: (not r['main'], -r['inlinks'], r['title']))
             for r in rs[:K]:
                 out.setdefault(r['title'], dict(r, countries_ranked=[]))['countries_ranked'].append(cid)

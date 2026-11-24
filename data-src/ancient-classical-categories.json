@@ -1010,6 +1010,15 @@
   "conflict-crisis-of-the-third-century": [
    "battle"
   ],
+  "conflict-first-tikal-calakmul-war": [
+   "war"
+  ],
+  "conflict-goguryeo-sui-war": [
+   "war"
+  ],
+  "conflict-goguryeo-tang-war": [
+   "war"
+  ],
   "conflict-han-conquest-of-nanyue": [
    "invasion"
   ],
@@ -1022,14 +1031,23 @@
   "conflict-second-persian-invasion-of-greece": [
    "invasion"
   ],
+  "conflict-second-tikal-calakmul-war": [
+   "war"
+  ],
   "conflict-siege-of-jerusalem-70-ce": [
    "siege"
   ],
   "conflict-siege-of-sanaa-570": [
    "siege"
   ],
+  "conflict-sui-l-m-p-war": [
+   "war"
+  ],
   "conflict-tang-campaign-against-the-eastern-turks": [
    "invasion"
+  ],
+  "conflict-tikal-calakmul-wars": [
+   "war"
   ],
   "conflict-transition-from-sui-to-tang": [
    "battle"

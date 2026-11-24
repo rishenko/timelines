@@ -2,6 +2,236 @@
  "note": "Emitted by pipelines/v2/emit.py from the conflict candidates; merged by the generators. Edit rules, places or overrides, not this file.",
  "events": [
   {
+   "uuid": "conflict-second-battle-of-dongola",
+   "title": "Second battle of Dongola",
+   "descr": "",
+   "start": 652,
+   "tracks": [
+    "makuria"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-second-battle-of-dongola",
+     "sourceLocation": "infobox date: 652"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-second-battle-of-dongola",
+       "sourceLocation": "infobox date: 652"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-hwangsanbeol",
+   "title": "Battle of Hwangsanbeol",
+   "descr": "",
+   "start": 660,
+   "tracks": [
+    "goguryeo",
+    "baekje"
+   ],
+   "startMonth": 7,
+   "startDay": 9,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-hwangsanbeol",
+     "sourceLocation": "infobox date: July 9, 660 CE"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-hwangsanbeol",
+       "sourceLocation": "infobox date: July 9, 660 CE"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-paekche-tang-war",
+   "title": "Paekche–Tang War",
+   "descr": "",
+   "start": 660,
+   "tracks": [
+    "china",
+    "baekje"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-paekche-tang-war",
+     "sourceLocation": "infobox date: 660 (nation)660–663 (resistance)"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-paekche-tang-war",
+       "sourceLocation": "infobox date: 660 (nation)660–663 (resistance)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-silla-tang-war",
+   "title": "Silla–Tang War",
+   "descr": "",
+   "start": 670,
+   "tracks": [
+    "goguryeo",
+    "china"
+   ],
+   "end": 676,
+   "sources": [
+    {
+     "sourceKey": "wp-silla-tang-war",
+     "sourceLocation": "infobox date: 670–676"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-silla-tang-war",
+       "sourceLocation": "infobox date: 670–676"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-third-tikal-calakmul-war",
+   "title": "Third Tikal–Calakmul War",
+   "descr": "",
+   "start": 720,
+   "tracks": [
+    "tikal",
+    "calakmul"
+   ],
+   "end": 744,
+   "sources": [
+    {
+     "sourceKey": "wp-third-tikal-calakmul-war",
+     "sourceLocation": "infobox date: 720–744"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-third-tikal-calakmul-war",
+       "sourceLocation": "infobox date: 720–744"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-khmer-cham-wars",
+   "title": "Khmer–Cham wars",
+   "descr": "",
+   "start": 950,
+   "tracks": [
+    "cambodia",
+    "champa"
+   ],
+   "circa": true,
+   "sources": [
+    {
+     "sourceKey": "wp-khmer-cham-wars",
+     "sourceLocation": "infobox date: c. 950"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-khmer-cham-wars",
+       "sourceLocation": "infobox date: c. 950"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-chola-invasion-of-srivijaya",
+   "title": "Chola invasion of Srivijaya",
+   "descr": "",
+   "start": 1025,
+   "tracks": [
+    "chola-empire",
+    "majapahit"
+   ],
+   "end": 1026,
+   "sources": [
+    {
+     "sourceKey": "wp-chola-invasion-of-srivijaya",
+     "sourceLocation": "infobox date: 1025–1026 AD"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-chola-invasion-of-srivijaya",
+       "sourceLocation": "infobox date: 1025–1026 AD"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-song-i-vi-t-war",
+   "title": "Song–Đại Việt war",
+   "descr": "",
+   "start": 1075,
+   "tracks": [
+    "china",
+    "vietnam"
+   ],
+   "end": 1077,
+   "sources": [
+    {
+     "sourceKey": "wp-song-i-vi-t-war",
+     "sourceLocation": "infobox date: 1075–1077"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-song-i-vi-t-war",
+       "sourceLocation": "infobox date: 1075–1077"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-jingkang-incident",
    "title": "Jingkang incident",
    "descr": "",
@@ -24,6 +254,65 @@
       {
        "sourceKey": "wp-jingkang-incident",
        "sourceLocation": "infobox date: January 1127"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-turan-shah-s-nubian-campaign",
+   "title": "Turan-Shah's Nubian campaign",
+   "descr": "",
+   "start": 1173,
+   "tracks": [
+    "ayyubid-dynasty",
+    "makuria"
+   ],
+   "startMonth": 1,
+   "sources": [
+    {
+     "sourceKey": "wp-turan-shah-s-nubian-campaign",
+     "sourceLocation": "infobox date: January 1173"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-turan-shah-s-nubian-campaign",
+       "sourceLocation": "infobox date: January 1173"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-tonl-sap",
+   "title": "Battle of Tonlé Sap",
+   "descr": "",
+   "start": 1177,
+   "tracks": [
+    "cambodia",
+    "champa"
+   ],
+   "startMonth": 6,
+   "startDay": 13,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-tonl-sap",
+     "sourceLocation": "infobox date: 13 June 1177"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-tonl-sap",
+       "sourceLocation": "infobox date: 13 June 1177"
       }
      ]
     }
@@ -321,20 +610,18 @@
    ]
   },
   {
-   "uuid": "conflict-battle-of-ch-ng-d-ng",
-   "title": "Battle of Chương Dương",
+   "uuid": "conflict-pamalayu",
+   "title": "Pamalayu",
    "descr": "",
-   "start": 1285,
+   "start": 1275,
    "tracks": [
-    "vietnam",
-    "china"
+    "majapahit"
    ],
-   "startMonth": 6,
-   "startDay": 24,
+   "end": 1292,
    "sources": [
     {
-     "sourceKey": "wp-battle-of-ch-ng-d-ng",
-     "sourceLocation": "infobox date: 24 June 1285"
+     "sourceKey": "wp-pamalayu",
+     "sourceLocation": "infobox date: 1275–1292 (First phase)"
     }
    ],
    "memberships": [
@@ -343,28 +630,26 @@
      "value": "battle",
      "sources": [
       {
-       "sourceKey": "wp-battle-of-ch-ng-d-ng",
-       "sourceLocation": "infobox date: 24 June 1285"
+       "sourceKey": "wp-pamalayu",
+       "sourceLocation": "infobox date: 1275–1292 (First phase)"
       }
      ]
     }
    ]
   },
   {
-   "uuid": "conflict-battle-of-b-ch-ng-1288",
-   "title": "Battle of Bạch Đằng (1288)",
+   "uuid": "conflict-battle-of-dongola-1276",
+   "title": "Battle of Dongola (1276)",
    "descr": "",
-   "start": 1288,
+   "start": 1276,
    "tracks": [
-    "vietnam",
-    "china"
+    "makuria",
+    "mamluk-sultanate"
    ],
-   "startMonth": 4,
-   "startDay": 9,
    "sources": [
     {
-     "sourceKey": "wp-battle-of-b-ch-ng-1288",
-     "sourceLocation": "infobox date: 9 April 1288"
+     "sourceKey": "wp-battle-of-dongola-1276",
+     "sourceLocation": "infobox date: 1276"
     }
    ],
    "memberships": [
@@ -373,8 +658,98 @@
      "value": "battle",
      "sources": [
       {
-       "sourceKey": "wp-battle-of-b-ch-ng-1288",
-       "sourceLocation": "infobox date: 9 April 1288"
+       "sourceKey": "wp-battle-of-dongola-1276",
+       "sourceLocation": "infobox date: 1276"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-ngasaunggyan",
+   "title": "Battle of Ngasaunggyan",
+   "descr": "",
+   "start": 1277,
+   "tracks": [
+    "pagan-kingdom",
+    "china"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-ngasaunggyan",
+     "sourceLocation": "infobox date: 1277"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-ngasaunggyan",
+       "sourceLocation": "infobox date: 1277"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-first-mongol-invasion-of-burma",
+   "title": "First Mongol invasion of Burma",
+   "descr": "",
+   "start": 1277,
+   "tracks": [
+    "china",
+    "pagan-kingdom"
+   ],
+   "end": 1287,
+   "sources": [
+    {
+     "sourceKey": "wp-first-mongol-invasion-of-burma",
+     "sourceLocation": "infobox date: 1277–1278, 1283–1285 and 1287"
+    },
+    {
+     "sourceKey": "wp-first-mongol-invasion-of-burma",
+     "sourceLocation": "lead: \"The first Mongol invasion of Burma (Burmese: မွန်ဂို–မြန်မာ စစ် (၁၂၇၇–၁၂၈၇); Chinese: 元緬戰爭) was a series of military conflicts between Kublai Khan's Yuan dynasty, a division of the Mongol Empire, and the Pagan Empire that took place between 1277 and 1287.\""
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-first-mongol-invasion-of-burma",
+       "sourceLocation": "infobox date: 1277–1278, 1283–1285 and 1287"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-pagan",
+   "title": "Battle of Pagan",
+   "descr": "",
+   "start": 1287,
+   "tracks": [
+    "pagan-kingdom",
+    "china"
+   ],
+   "startMonth": 12,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-pagan",
+     "sourceLocation": "infobox date: December 1287"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-pagan",
+       "sourceLocation": "infobox date: December 1287"
       }
      ]
     }
@@ -405,6 +780,36 @@
       {
        "sourceKey": "wp-siege-of-acre-1291",
        "sourceLocation": "infobox date: 4 April – 18 May 1291"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-mongol-invasion-of-java",
+   "title": "Mongol invasion of Java",
+   "descr": "",
+   "start": 1293,
+   "tracks": [
+    "china",
+    "kediri-kingdom",
+    "majapahit"
+   ],
+   "startMonth": 8,
+   "sources": [
+    {
+     "sourceKey": "wp-mongol-invasion-of-java",
+     "sourceLocation": "infobox date: 22 January – early August 1293"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-mongol-invasion-of-java",
+       "sourceLocation": "infobox date: 22 January – early August 1293"
       }
      ]
     }
@@ -739,6 +1144,35 @@
    ]
   },
   {
+   "uuid": "conflict-champa-i-vi-t-war-1367-1390",
+   "title": "Champa–Đại Việt War (1367–1390)",
+   "descr": "",
+   "start": 1367,
+   "tracks": [
+    "champa",
+    "vietnam"
+   ],
+   "end": 1390,
+   "sources": [
+    {
+     "sourceKey": "wp-champa-i-vi-t-war-1367-1390",
+     "sourceLocation": "infobox date: 1367–1390"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-champa-i-vi-t-war-1367-1390",
+       "sourceLocation": "infobox date: 1367–1390"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-kulikovo",
    "title": "Battle of Kulikovo",
    "descr": "",
@@ -1057,6 +1491,35 @@
    ]
   },
   {
+   "uuid": "conflict-ayutthaya-lan-na-war-1441-1474",
+   "title": "Ayutthaya–Lan Na War (1441–1474)",
+   "descr": "",
+   "start": 1441,
+   "tracks": [
+    "thailand",
+    "lan-na"
+   ],
+   "end": 1474,
+   "sources": [
+    {
+     "sourceKey": "wp-ayutthaya-lan-na-war-1441-1474",
+     "sourceLocation": "infobox date: 1441–1474"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-ayutthaya-lan-na-war-1441-1474",
+       "sourceLocation": "infobox date: 1441–1474"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-varna",
    "title": "Battle of Varna",
    "descr": "",
@@ -1205,6 +1668,34 @@
    ]
   },
   {
+   "uuid": "conflict-chimor-inca-war",
+   "title": "Chimor–Inca War",
+   "descr": "",
+   "start": 1470,
+   "tracks": [
+    "chimor",
+    "inca-empire"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-chimor-inca-war",
+     "sourceLocation": "infobox date: ~1470"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-chimor-inca-war",
+       "sourceLocation": "infobox date: ~1470"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-shelon",
    "title": "Battle of Shelon",
    "descr": "",
@@ -1261,6 +1752,35 @@
       {
        "sourceKey": "wp-battle-of-the-maule",
        "sourceLocation": "infobox date: Probably at some time between 1471 and 1493, or 1532"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-champa-i-vi-t-war-1471",
+   "title": "Champa–Đại Việt War (1471)",
+   "descr": "",
+   "start": 1471,
+   "tracks": [
+    "champa",
+    "vietnam"
+   ],
+   "startMonth": 2,
+   "sources": [
+    {
+     "sourceKey": "wp-champa-i-vi-t-war-1471",
+     "sourceLocation": "infobox date: February – March 22, 1471"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-champa-i-vi-t-war-1471",
+       "sourceLocation": "infobox date: February – March 22, 1471"
       }
      ]
     }
@@ -1369,6 +1889,14 @@
     "wikipedia"
    ]
   },
+  "wp-ayutthaya-lan-na-war-1441-1474": {
+   "name": "Ayutthaya–Lan Na War (1441–1474) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ayutthaya–Lan_Na_War_(1441–1474)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-agincourt": {
    "name": "Battle of Agincourt (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Agincourt",
@@ -1409,22 +1937,6 @@
     "wikipedia"
    ]
   },
-  "wp-battle-of-b-ch-ng-1288": {
-   "name": "Battle of Bạch Đằng (1288) (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Battle_of_Bạch_Đằng_(1288)",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-battle-of-ch-ng-d-ng": {
-   "name": "Battle of Chương Dương (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Battle_of_Chương_Dương",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-battle-of-cr-cy": {
    "name": "Battle of Crécy (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Crécy",
@@ -1449,9 +1961,25 @@
     "wikipedia"
    ]
   },
+  "wp-battle-of-dongola-1276": {
+   "name": "Battle of Dongola (1276) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Dongola_(1276)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-gomit": {
    "name": "Battle of Gomit (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Gomit",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-hwangsanbeol": {
+   "name": "Battle of Hwangsanbeol (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Hwangsanbeol",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1473,9 +2001,25 @@
     "wikipedia"
    ]
   },
+  "wp-battle-of-ngasaunggyan": {
+   "name": "Battle of Ngasaunggyan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Ngasaunggyan",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-nicopolis": {
    "name": "Battle of Nicopolis (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Nicopolis",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-pagan": {
+   "name": "Battle of Pagan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Pagan",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1500,6 +2044,14 @@
   "wp-battle-of-tlatelolco": {
    "name": "Battle of Tlatelolco (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Tlatelolco",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-tonl-sap": {
+   "name": "Battle of Tonlé Sap (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Tonlé_Sap",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1553,6 +2105,38 @@
     "wikipedia"
    ]
   },
+  "wp-champa-i-vi-t-war-1367-1390": {
+   "name": "Champa–Đại Việt War (1367–1390) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Champa–Đại_Việt_War_(1367–1390)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-champa-i-vi-t-war-1471": {
+   "name": "Champa–Đại Việt War (1471) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Champa–Đại_Việt_War_(1471)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-chimor-inca-war": {
+   "name": "Chimor–Inca War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Chimor–Inca_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-chola-invasion-of-srivijaya": {
+   "name": "Chola invasion of Srivijaya (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Chola_invasion_of_Srivijaya",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-fall-of-angkor": {
    "name": "Fall of Angkor (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Fall_of_Angkor",
@@ -1564,6 +2148,14 @@
   "wp-fall-of-constantinople": {
    "name": "Fall of Constantinople (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-first-mongol-invasion-of-burma": {
+   "name": "First Mongol invasion of Burma (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/First_Mongol_invasion_of_Burma",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1585,9 +2177,25 @@
     "wikipedia"
    ]
   },
+  "wp-khmer-cham-wars": {
+   "name": "Khmer–Cham wars (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Khmer–Cham_wars",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-mongol-invasion-of-europe": {
    "name": "Mongol invasion of Europe (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Europe",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-mongol-invasion-of-java": {
+   "name": "Mongol invasion of Java (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Java",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1649,6 +2257,22 @@
     "wikipedia"
    ]
   },
+  "wp-paekche-tang-war": {
+   "name": "Paekche–Tang War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Paekche–Tang_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-pamalayu": {
+   "name": "Pamalayu (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Pamalayu",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-red-turban-rebellions": {
    "name": "Red Turban Rebellions (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Red_Turban_Rebellions",
@@ -1660,6 +2284,14 @@
   "wp-red-turban-invasions-of-goryeo": {
    "name": "Red Turban invasions of Goryeo (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Red_Turban_invasions_of_Goryeo",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-second-battle-of-dongola": {
+   "name": "Second battle of Dongola (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Second_battle_of_Dongola",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1700,6 +2332,38 @@
   "wp-siege-of-orl-ans-1428-1429": {
    "name": "Siege of Orléans (1428–1429) (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Siege_of_Orléans_(1428–1429)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-silla-tang-war": {
+   "name": "Silla–Tang War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Silla–Tang_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-song-i-vi-t-war": {
+   "name": "Song–Đại Việt war (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Song–Đại_Việt_war",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-third-tikal-calakmul-war": {
+   "name": "Third Tikal–Calakmul War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Third_Tikal–Calakmul_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-turan-shah-s-nubian-campaign": {
+   "name": "Turan-Shah's Nubian campaign (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Turan-Shah's_Nubian_campaign",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
