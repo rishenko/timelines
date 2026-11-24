@@ -57,6 +57,8 @@ files), plus the type-check of app and scripts, `seam-check`, `sources:check`, a
 `--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
 `fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
 
+Kevin's reviewed category overrides (`pipelines/{ancient,medieval,modern-states}/categories.json`) are his decisions. A pipeline that sets categories uses the pinned layer (`traditions.json`, `science.json`). The `overrides` check (`pipelines/common/overrides_guard.py`, also in CI on pull requests) fails when an override entry is added, removed or changed against the base. Label the pull request `kevin-overrides` for his own edits; locally, `check:all --skip overrides`. CI compares with main, not a stacked PR's base. It also fails, label or not, when an overridden event's categories in `public/timelines/<id>.json` differ from its override: Kevin's call goes into the overrides file and a generator rerun carries it into the data, never a hand edit of a generated plan such as `data-src/ancient-classical-categories.json`. It is a process guard against honest mistakes (one shared account), not a security control.
+
 `npm run review-proof [-- --base <rev>] [--list N]` is the reviewer's step before every approval
 (`pipelines/common/review_proof.py`). It compares the checkout with its merge-base with `--base` (default `origin/main`),
 so later commits on main don't count as the branch's own. It runs the overrides guard (Kevin's reviewed category overrides
@@ -64,7 +66,7 @@ unchanged) and the duplicates guard (no repeated event, no hand-set wide war), t
 added and removed, events whose only change is appended `tracks`, and events changed in other ways, counted by field. The
 guards fail the run, and so does one missing from the checkout. The additivity report never fails: the reviewer checks that
 what changed is what the PR says. Its last line names the head SHA and goes into the approval comment. Run from any
-worktree, it proves that worktree.
+worktree, it proves that worktree. For a pull request labelled `kevin-overrides`, run it with `OVERRIDES_ALLOWED=true`, as CI does.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
