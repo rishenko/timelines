@@ -134,8 +134,9 @@ def check():
                 bad.append(f'{title}: {"missing" if not p else "AI-flagged"}')
                 pages[title] = ''
             else:
-                # the rendered text, and the source with only "c." templates and spacing normalised (infobox fields)
+                # the rendered text, and the source with only "c." templates, links and spacing normalised (infobox fields)
                 raw = re.sub(r'\{\{(?:circa|c\.)\}\}', 'c.', p['text'], flags=re.I)
+                raw = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', r'\1', raw)
                 pages[title] = render(p['text']) + ' ' + re.sub(r'\s+', ' ', raw)
         return re.sub(r'\s+', ' ', quote) in pages[title]
     n = 0

@@ -198,9 +198,9 @@
    ],
    "region_membership": {
     "value": "levant",
-    "source": "wp-second-temple-judaism",
-    "section": "lead",
-    "quote": "the construction of the Second Temple in Persian Judah around 516 BCE"
+    "source": "wp-judaism",
+    "section": "infobox",
+    "quote": "area = Israel and worldwide as minorities"
    }
   },
   {
@@ -384,9 +384,9 @@
    "shared": [],
    "region_membership": {
     "value": "west-africa",
-    "source": "wp-ifa",
-    "section": "lead",
-    "quote": "is a geomantic system originating from Yorubaland in West Africa"
+    "source": "wp-yoruba-religion",
+    "section": "Overview",
+    "quote": "in present-day Southwestern Nigeria; the Departments of Collines, Oueme, Plateau in Southern Benin; and the adjoining parts of Central Togo"
    }
   }
  ]
