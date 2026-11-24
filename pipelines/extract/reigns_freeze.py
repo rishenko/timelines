@@ -514,6 +514,14 @@ def main():
                 if pair[0]['circa']:
                     ev['circa'] = True
                 swapped.append(r['person'])
+        dur = re.match(r'\s*((?:\w+\s+)?(?:days?|weeks?|months?))\b', r['quote'], re.I) if qt != r['quote'] and len(pair) == 1 else None
+        alt = (pair[0].get('alts') or [None])[0] if dur else None
+        if dur and alt and ev.get('end') is None and not ev.get('ongoing'):
+            # a reign of days or months dated by a local era with a two-year CE date ("Seven days in 750 LE (1388/89 CE)"): the source
+            # puts it in 1388 or 1389, so the span is those two years (an event whose end is its own start year is read as a
+            # succession, and a reign's category is reign); the length is the source's own words
+            ev = dict(ev, end=alt[0])
+            ev['descr'] = re.sub(r' from .*$', f" for {dur.group(1).lower()} in {RU.fmt(pair[0]['start'])}/{alt[0] % 100:02d}.", ev['descr'])
         sp = [x for x in RU.dates.spans(qt, legacy=True) if x['start'][0] == RU.hist(ev['start'])]
         sp = sp[0] if sp else None
         if sp and sp['precision'] == 'century':

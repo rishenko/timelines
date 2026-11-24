@@ -119784,7 +119784,7 @@
       "tracks": [
         "thailand"
       ],
-      "descr": "Rules as head of state of Thailand (Ayutthaya) from 1388.",
+      "descr": "Rules as head of state of Thailand (Ayutthaya) for seven days in 1388/89.",
       "sources": [
         {
           "sourceKey": "wp-thong-lan",
@@ -119794,7 +119794,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-thong-lan",
@@ -119802,7 +119802,8 @@
             }
           ]
         }
-      ]
+      ],
+      "end": 1389
     },
     {
       "uuid": "reign-ramrachathirat-thailand",
