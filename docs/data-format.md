@@ -666,8 +666,8 @@ a page that asks readers to add a timeline.
 - **Host the file** anywhere that allows other sites to read it (CORS). GitHub raw files, GitHub Pages
   and gists do. A GitHub page link (`github.com/…/blob/…`) is converted to the raw file automatically.
 - **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser. One too
-  large for the browser's storage (about 5 MB for all of a reader's timelines) is saved as its link instead, and
-  opens from the link each time.
+  large for localStorage (about 5 MB for all of a reader's timelines) is kept in the browser's IndexedDB instead;
+  where that isn't available, it is saved as its link and opens from the link each time.
   Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. Below a year, `inc` names
   the step and `at` is a date: `&inc=month&at=1916-07-01`. The link also carries
   the reader's view: `&view=table`, `&compress=0`, `&rows=all|active|thin` (hidden rows), ticked regions
