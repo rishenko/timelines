@@ -7064,6 +7064,61 @@
         }
       ]
     },
+    {
+      "id": "rashidun-caliphate",
+      "name": "Rashidun Caliphate",
+      "color": "#3f8a63",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Rashidun_Caliphate",
+      "ids": { "wikidata": "Q12490507" },
+      "span": {
+        "start": "632 CE",
+        "end": "661 CE",
+        "startDates": [
+          {
+            "year": "632 CE",
+            "source": { "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "infobox year_start ('632', Succession to Muhammad)" }
+          }
+        ],
+        "endDates": [{ "year": "661 CE", "source": { "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "infobox year_end ('661', Assassination of Ali)" } }]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [{ "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"7th century in Egypt\"" }]
+        },
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [{ "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"7th century in Iran\"" }]
+        },
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [{ "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"History of Central Asia\"" }]
+        },
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [{ "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"History of the Arabian Peninsula\"" }]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [{ "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"Medieval history of Iraq\"" }]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            { "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"Medieval history of Syria\"" },
+            { "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"Medieval history of Jordan\"" },
+            { "sourceKey": "wp-rashidun-caliphate", "sourceLocation": "category \"Medieval history of Palestine\"" }
+          ]
+        }
+      ]
+    },
     { "id": "iran", "name": "Iran and Central Asia", "color": "#2f8a8a", "parent": "near-east" },
     {
       "id": "chogha-golan",
@@ -17915,6 +17970,14 @@
     "wp-olmec-religion": { "name": "Wikipedia: Olmec religion", "url": "https://en.wikipedia.org/wiki/Olmec_religion", "tags": ["wikipedia"], "accessed": "2026-11-23" },
     "wp-tengri": { "name": "Wikipedia: Tengri", "url": "https://en.wikipedia.org/wiki/Tengri", "tags": ["wikipedia"], "accessed": "2026-11-23" },
     "wp-tengrism": { "name": "Wikipedia: Tengrism", "url": "https://en.wikipedia.org/wiki/Tengrism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-rashidun-caliphate": {
+      "name": "Wikipedia: Rashidun Caliphate",
+      "url": "https://en.wikipedia.org/wiki/Rashidun_Caliphate",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
+    },
+    "wp-abu-bakr": { "name": "Abu Bakr (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Abu_Bakr", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-umar": { "name": "Umar (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Umar", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-yamato-kingship": { "name": "Wikipedia: Yamato Kingship", "url": "https://en.wikipedia.org/wiki/Yamato_Kingship", "tags": ["wikipedia"], "accessed": "2026-11-24" },
     "wp-emperor-buretsu": { "name": "Emperor Buretsu (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Emperor_Buretsu", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-emperor-keitai": { "name": "Emperor Keitai (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Emperor_Keitai", "accessed": "2026-11-21", "tags": ["wikipedia"] },
@@ -43061,6 +43124,46 @@
           "facet": "category",
           "value": "religion",
           "sources": [{ "sourceKey": "wp-ancient-greek-religion", "sourceLocation": "Decline: \"The last Olympic Games were held in 393\"" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-abu-bakr",
+      "title": "Reign of Abu Bakr",
+      "start": 632,
+      "startMonth": 6,
+      "startDay": 8,
+      "end": 634,
+      "endMonth": 8,
+      "endDay": 23,
+      "tracks": ["rashidun-caliphate"],
+      "descr": "Rules as head of state of Rashidun Caliphate from 8 June 632 to 23 August 634 (2 years).",
+      "sources": [{ "sourceKey": "wp-abu-bakr", "sourceLocation": "infobox reign: 8 June 632 – 23 August 634 ; ( )" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-abu-bakr", "sourceLocation": "infobox reign: 8 June 632 – 23 August 634 ; ( )" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-umar",
+      "title": "Reign of Umar",
+      "start": 634,
+      "startMonth": 8,
+      "startDay": 23,
+      "end": 644,
+      "endMonth": 11,
+      "endDay": 6,
+      "tracks": ["rashidun-caliphate"],
+      "descr": "Rules as head of state of Rashidun Caliphate from 23 August 634 to 6 November 644 (10 years).",
+      "sources": [{ "sourceKey": "wp-umar", "sourceLocation": "infobox reign: 23 August 634 – c. 6 November 644 ; ( )" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-umar", "sourceLocation": "infobox reign: 23 August 634 – c. 6 November 644 ; ( )" }]
         }
       ]
     },
