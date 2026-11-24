@@ -167,7 +167,10 @@ def wp_reigns(params):
             if re.search(r'\b(caesar|heir|junior|crown|designate|co-?(?:emperor|king|ruler)|subking|regent)\b', rtype, re.I):
                 continue  # a span the infobox types as Caesar, heir, junior or co-ruler (Constantius Chlorus 293-305) is not the ruler's own reign
             for s in dates.spans(raw):
-                out.append((k, s, dates.clean(params.get(f'succession{n}') or (params.get('succession', '') if n in ('', '1') else ''))))  # reign1 may be paired with an unnumbered |succession=
+                succ = params.get(f'succession{n}') or (params.get('succession', '') if n in ('', '1') else '')  # reign1 may be paired with an unnumbered |succession=
+                if not succ and n in ('', '1'):
+                    succ = params.get('title', '')  # no office label: the infobox title ("Usurper of the Western Roman Empire") says which one
+                out.append((k, s, dates.clean(succ)))
         elif kind == 'term':
             # a short term written whole: |term = {{Date range|1881|03|04|1881|09|19}} (Garfield, W. H. Harrison)
             for s in dates.spans(raw)[:1]:

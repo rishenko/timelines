@@ -282,3 +282,11 @@ class ReignType(unittest.TestCase):
                   'succession': 'Roman emperor'}
         got = [f for f, s, succ in R.wp_reigns(params)]
         self.assertEqual(got, ['reign'])
+
+
+class TitleFallback(unittest.TestCase):
+    def test_an_infobox_without_an_office_label_uses_its_title(self):  # Marcus (usurper): no |succession=, title "Usurper of the Western Roman Empire"
+        params = {'title': '[[Roman usurper|Usurper]] of the [[Western Roman Empire]]', 'reign': 'July 406 – October 406'}
+        got = R.wp_reigns(params)
+        self.assertEqual(R.dates.clean(got[0][2]).lower().count('western'), 1)
+        self.assertEqual(R.wp_reigns({'succession': 'Roman emperor', 'title': 'x', 'reign': '406 – 407'})[0][2], 'Roman emperor')  # a label wins
