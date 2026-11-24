@@ -236,3 +236,25 @@ class SamePolityOtherTitle(unittest.TestCase):
         from dates import spans as sp
         spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1900 – 1910', 'King of Montenegro'), ('reign1', '1890 – 1900', 'Prince of Serbia')]]
         self.assertEqual([g[0] for g in R.picks(spans, [], {'montenegro'}, (1500, 2026))], ['reign'])
+
+
+class OfficeLabels(unittest.TestCase):
+    def test_offices_without_an_item_row_resolve_by_label(self):  # Monarch of Italy (Q271148): P39 links, no wd_item row
+        import sqlite3 as sq
+        s = R.Sources.__new__(R.Sources)
+        s.wd = sq.connect(':memory:')
+        s.wd.execute('CREATE TABLE wd_item(qid TEXT, enwiki TEXT)')
+        s.wd.execute("INSERT INTO wd_item VALUES ('Q38', 'Italy')")
+        s.offices = sq.connect(':memory:')
+        s.offices.execute('CREATE TABLE wd_office(qid TEXT, label TEXT, description TEXT, enwiki TEXT)')
+        s.offices.execute("INSERT INTO wd_office VALUES ('Q271148', 'Monarch of Italy', 'office', NULL)")
+        self.assertEqual(s.qid('Italy'), 'Q38')
+        self.assertEqual(s.qid('monarch of italy'), 'Q271148')
+        self.assertEqual(s.title('Q271148'), 'Monarch of Italy')
+        self.assertIsNone(s.qid('Nowhere'))
+
+    def test_non_ruling_titles_of_the_polity_do_not_join(self):  # an heir's "Prince" span before the reign, a regent, a co-king, a claimant
+        from dates import spans as sp
+        for bad in ('Heir apparent of Montenegro', 'Crown Prince of Montenegro', 'Regent of Montenegro', 'Co-king of Montenegro', 'Junior King of Montenegro', 'Pretender to the throne of Montenegro'):
+            spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1910 – 1918', 'King of Montenegro'), ('reign1', '1890 – 1910', bad)]]
+            self.assertEqual([g[0] for g in R.picks(spans, [], {'montenegro'}, (1500, 2026))], ['reign'], bad)

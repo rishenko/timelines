@@ -331,12 +331,28 @@ class Sources:
         self.by_office, self.office_holders, self.named = {}, {}, set()
         self._concurrent = {}  # office -> most holders at once (concurrent())
 
+    offices = None  # wikidata-<dump>-offices.sqlite (wd_office_labels.py): the office items wd_item leaves out, by English label
+
+    def _offices(self):
+        if self.offices is None:
+            path = os.path.join(os.path.dirname(self.wd.execute('PRAGMA database_list').fetchone()[2]), 'wikidata-20261116-offices.sqlite')
+            self.offices = sqlite3.connect(f'file:{path}?mode=ro', uri=True) if os.path.exists(path) else False
+        return self.offices
+
     def qid(self, title):
         r = self.wd.execute('SELECT qid FROM wd_item WHERE enwiki=?', (title,)).fetchone()
+        if r:
+            return r[0]
+        o = self._offices()  # an office without an item row: "Monarch of Italy" by its article title or English label
+        r = o.execute('SELECT qid FROM wd_office WHERE enwiki=? OR label=? COLLATE NOCASE LIMIT 1', (title, title)).fetchone() if o else None
         return r[0] if r else None
 
     def title(self, qid):
         r = self.wd.execute('SELECT enwiki FROM wd_item WHERE qid=?', (qid,)).fetchone()
+        if r:
+            return r[0]
+        o = self._offices()
+        r = o.execute('SELECT COALESCE(enwiki, label) FROM wd_office WHERE qid=?', (qid,)).fetchone() if o else None
         return r[0] if r else None
 
     def inlinks(self, title):
@@ -523,7 +539,8 @@ def picks(spans, terms, words, window=None):
     # the same polity under another title (Prince then King of Montenegro; Duke then King of Bohemia): its ruler spans are reigns of the row too
     for f, s, succ in spans:
         if f.startswith('reign') and (RULER_WORD.search(succ) or re.search(r'\b(prince|duke|voivode|vojvoda|khan|emir|doge|lord|margrave|count|elector)\b', succ, re.I)) \
-                and not NOT_RULER.search(succ) and any(len(w) >= 5 and w in succ.lower() for w in words) \
+                and not NOT_RULER.search(succ) and not re.search(r'\b(heir|crown|co-|junior|designate|elect|claimant|pretender|regent|titular|nominal)', succ, re.I) \
+                and any(len(w) >= 5 and w in succ.lower() for w in words) \
                 and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
     return out
@@ -561,7 +578,7 @@ def pick(spans, terms, words, window=None):
     if window:  # no Wikidata term and several spans (Gaozu of Tang: the Duke of Tang's 572–617 beside his reign): the one inside the row's window
         inside = [x for x in (named or spans) if overlap(x[1]['start'][0], year(x[1]['end']), window[0], window[1]) >= 0]
         if inside:  # several: a ruler's own office first (not "Duke of Tang" or "Retired Emperor"), then the earliest; picks() adds the same office's other spans
-            own = [x for x in inside if RULER_WORD.search(x[2]) and not re.search(r'\b(retired|former|duke|prince|regent|crown|consort|co-)', x[2], re.I)]
+            own = [x for x in inside if RULER_WORD.search(x[2]) and not re.search(r'\b(retired|former|duke|prince|regent|crown|consort|co-|junior|heir|designate|titular|nominal|claimant|pretender)', x[2], re.I)]
             f, s, succ = min(own or inside, key=lambda x: days(x[1]['start']))
             return f, s, succ, None
     return None
