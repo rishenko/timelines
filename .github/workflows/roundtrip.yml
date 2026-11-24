@@ -1,0 +1,62 @@
+# The editor round trip in full (Kevin, 2026-11-24: "Full, split per timeline"): every row and every event of every
+# bundled timeline opened in the editor and saved unchanged must come back exactly as it was. CI's main job runs a
+# sample (src/components/editorRoundTrip.test.tsx); this one opens every item, on pull requests that touch the data,
+# the pipelines or the forms. Each job takes one timeline, or one shard of a large one (ROUNDTRIP_SHARD k/n: every
+# n-th item from the k-th), so the jobs run side by side. Sized from a laptop: a row takes ~1.3 s, an event ~0.8 s.
+name: Editor round trip (full)
+
+on:
+  pull_request:
+    paths:
+      - 'data-src/**'
+      - 'public/timelines/**'
+      - 'pipelines/**'
+      - 'src/components/EventForm.tsx'
+      - 'src/components/TrackForm.tsx'
+      - 'src/components/formFields.ts'
+      - 'src/components/editorRoundTrip.test.tsx'
+      - '.github/workflows/roundtrip.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: roundtrip-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  roundtrip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { timeline: ancient-classical, shard: 1/2 }
+          - { timeline: ancient-classical, shard: 2/2 }
+          - { timeline: medieval, shard: 1/3 }
+          - { timeline: medieval, shard: 2/3 }
+          - { timeline: medieval, shard: 3/3 }
+          - { timeline: modern-states, shard: 1/8 }
+          - { timeline: modern-states, shard: 2/8 }
+          - { timeline: modern-states, shard: 3/8 }
+          - { timeline: modern-states, shard: 4/8 }
+          - { timeline: modern-states, shard: 5/8 }
+          - { timeline: modern-states, shard: 6/8 }
+          - { timeline: modern-states, shard: 7/8 }
+          - { timeline: modern-states, shard: 8/8 }
+          - { timeline: earth-life, shard: 1/1 }
+          - { timeline: every-field fixture, shard: 1/1 }
+    name: round trip ${{ matrix.timeline }} ${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run src/components/editorRoundTrip.test.tsx -t "editor round trip"
+        env:
+          ROUNDTRIP: all
+          ROUNDTRIP_TIMELINE: ${{ matrix.timeline }}
+          ROUNDTRIP_SHARD: ${{ matrix.shard }}
