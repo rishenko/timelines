@@ -2228,6 +2228,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1702,
+          "startDates": [
+            {
+              "year": 1702,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox combatant2a: (from 1702)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox combatant2a: (from 1702)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ]
         }
       ]
     },
@@ -4681,6 +4710,35 @@
           ],
           "startEvent": "cento-admits-1955",
           "endEvent": "cento-dissolved"
+        },
+        {
+          "row": "american-revolutionary-war",
+          "start": 1775,
+          "startDates": [
+            {
+              "year": 1775,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+            }
+          ],
+          "end": 1783,
+          "endDates": [
+            {
+              "year": 1783,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+              }
+            }
+          ]
         },
         {
           "row": "seven-years-war",
@@ -7844,6 +7902,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1701,
+          "startDates": [
+            {
+              "year": 1701,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ]
         }
       ]
     },
@@ -8590,6 +8677,35 @@
               "source": {
                 "sourceKey": "wp-thirty-years-war",
                 "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+              }
+            }
+          ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1703,
+          "startDates": [
+            {
+              "year": 1703,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox combatant2a: (from 1703)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox combatant2a: (from 1703)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
               }
             }
           ]
@@ -34349,6 +34465,35 @@
           ],
           "startEvent": "seato-founded",
           "endEvent": "seato-dissolved"
+        },
+        {
+          "row": "american-revolutionary-war",
+          "start": 1776,
+          "startDates": [
+            {
+              "year": 1776,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox combatant1: (from 1776)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox combatant1: (from 1776)"
+            }
+          ],
+          "end": 1783,
+          "endDates": [
+            {
+              "year": 1783,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+              }
+            }
+          ]
         },
         {
           "row": "world-war-i",
@@ -60593,6 +60738,40 @@
       "kind": "theme"
     },
     {
+      "id": "american-revolutionary-war",
+      "name": "American Revolutionary War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+      "span": {
+        "start": 1775,
+        "startDates": [
+          {
+            "year": 1775,
+            "source": {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+            }
+          }
+        ],
+        "startMonth": 4,
+        "startDay": 19,
+        "end": 1783,
+        "endDates": [
+          {
+            "year": 1783,
+            "source": {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 3
+      }
+    },
+    {
       "id": "napoleonic-wars",
       "name": "Napoleonic Wars",
       "color": "#8c3a3a",
@@ -60692,6 +60871,39 @@
         ],
         "endMonth": 10,
         "endDay": 24
+      }
+    },
+    {
+      "id": "war-of-the-spanish-succession",
+      "name": "War of the Spanish Succession",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
+      "span": {
+        "start": 1701,
+        "startDates": [
+          {
+            "year": 1701,
+            "source": {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          }
+        ],
+        "startMonth": 3,
+        "end": 1714,
+        "endDates": [
+          {
+            "year": 1714,
+            "source": {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 7
       }
     },
     {
@@ -112908,7 +113120,8 @@
         "france",
         "united-kingdom",
         "habsburg-monarchy",
-        "netherlands"
+        "netherlands",
+        "war-of-the-spanish-succession"
       ],
       "sources": [
         {
@@ -132143,7 +132356,8 @@
         "united-states",
         "british-empire",
         "united-kingdom",
-        "france"
+        "france",
+        "american-revolutionary-war"
       ],
       "sources": [
         {
@@ -132156,16 +132370,6 @@
         {
           "facet": "category",
           "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-american-revolutionary-war",
-              "sourceLocation": "infobox date: April 19, 1775September 3, 1783"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "revolt",
           "sources": [
             {
               "sourceKey": "wp-american-revolutionary-war",

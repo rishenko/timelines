@@ -1278,6 +1278,14 @@
     "wikipedia"
    ]
   },
+  "wp-american-revolutionary-war": {
+   "name": "American Revolutionary War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-buena-vista": {
    "name": "Battle of Buena Vista (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Buena_Vista",
@@ -1574,6 +1582,14 @@
     "wikipedia"
    ]
   },
+  "wp-war-of-the-spanish-succession": {
+   "name": "War of the Spanish Succession (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-allies-of-world-war-i": {
    "name": "Allies of World War I (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Allies_of_World_War_I",
@@ -1623,30 +1639,165 @@
    ]
   }
  },
- "eventEdits": {
-  "napoleonic-wars": {
-   "addTracks": [
-    "napoleonic-wars"
-   ]
-  },
-  "thirty-years-war": {
-   "addTracks": [
-    "thirty-years-war"
-   ]
-  },
-  "ww1": {
-   "addTracks": [
-    "world-war-i"
-   ]
-  },
-  "ww2": {
-   "addTracks": [
-    "world-war-ii"
-   ]
-  }
- },
  "rowEdits": {
+  "united-states": [
+   {
+    "memberOf": {
+     "row": "american-revolutionary-war",
+     "start": 1776,
+     "startDates": [
+      {
+       "year": 1776,
+       "source": {
+        "sourceKey": "wp-american-revolutionary-war",
+        "sourceLocation": "infobox combatant1: (from 1776)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-american-revolutionary-war",
+       "sourceLocation": "infobox combatant1: (from 1776)"
+      }
+     ],
+     "end": 1783,
+     "endDates": [
+      {
+       "year": 1783,
+       "source": {
+        "sourceKey": "wp-american-revolutionary-war",
+        "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1917,
+     "startDates": [
+      {
+       "year": 1917,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox combatant1: (from 1917)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox combatant1: (from 1917)"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1917,
+     "startDates": [
+      {
+       "year": 1917,
+       "source": {
+        "sourceKey": "wp-allies-of-world-war-i",
+        "sourceLocation": "heading in \"Leaders\": === United States (1917–1918) ==="
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-allies-of-world-war-i",
+       "sourceLocation": "heading in \"Leaders\": === United States (1917–1918) ==="
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-ii",
+     "start": 1941,
+     "startDates": [
+      {
+       "year": 1941,
+       "source": {
+        "sourceKey": "wp-allies-of-world-war-ii",
+        "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-allies-of-world-war-ii",
+       "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
+      }
+     ],
+     "end": 1945,
+     "endDates": [
+      {
+       "year": 1945,
+       "source": {
+        "sourceKey": "wp-world-war-ii",
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+       }
+      }
+     ]
+    }
+   }
+  ],
   "united-kingdom": [
+   {
+    "memberOf": {
+     "row": "american-revolutionary-war",
+     "start": 1775,
+     "startDates": [
+      {
+       "year": 1775,
+       "source": {
+        "sourceKey": "wp-american-revolutionary-war",
+        "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-american-revolutionary-war",
+       "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+      }
+     ],
+     "end": 1783,
+     "endDates": [
+      {
+       "year": 1783,
+       "source": {
+        "sourceKey": "wp-american-revolutionary-war",
+        "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+       }
+      }
+     ]
+    }
+   },
    {
     "memberOf": {
      "row": "seven-years-war",
@@ -1869,6 +2020,68 @@
       }
      ]
     }
+   },
+   {
+    "memberOf": {
+     "row": "war-of-the-spanish-succession",
+     "start": 1703,
+     "startDates": [
+      {
+       "year": 1703,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox combatant2a: (from 1703)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-war-of-the-spanish-succession",
+       "sourceLocation": "infobox combatant2a: (from 1703)"
+      }
+     ],
+     "end": 1714,
+     "endDates": [
+      {
+       "year": 1714,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "war-of-the-spanish-succession",
+     "start": 1701,
+     "startDates": [
+      {
+       "year": 1701,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-war-of-the-spanish-succession",
+       "sourceLocation": "infobox combatant1a: (until 1703)"
+      }
+     ],
+     "end": 1703,
+     "endDates": [
+      {
+       "year": 1703,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox combatant1a: (until 1703)"
+       }
+      }
+     ]
+    }
    }
   ],
   "netherlands": [
@@ -1999,6 +2212,37 @@
       }
      ]
     }
+   },
+   {
+    "memberOf": {
+     "row": "war-of-the-spanish-succession",
+     "start": 1702,
+     "startDates": [
+      {
+       "year": 1702,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox combatant2a: (from 1702)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-war-of-the-spanish-succession",
+       "sourceLocation": "infobox combatant2a: (from 1702)"
+      }
+     ],
+     "end": 1714,
+     "endDates": [
+      {
+       "year": 1714,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+       }
+      }
+     ]
+    }
    }
   ],
   "habsburg-monarchy": [
@@ -2061,6 +2305,37 @@
        "source": {
         "sourceKey": "wp-thirty-years-war",
         "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "war-of-the-spanish-succession",
+     "start": 1701,
+     "startDates": [
+      {
+       "year": 1701,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-war-of-the-spanish-succession",
+       "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+      }
+     ],
+     "end": 1714,
+     "endDates": [
+      {
+       "year": 1714,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
        }
       }
      ]
@@ -2215,70 +2490,6 @@
       {
        "sourceKey": "wp-axis-powers",
        "sourceLocation": "section \"Italy\": Italy's declaration of war against the Western Allies of Britain and France in June 1940 as the following: \"We are going to war against the plutocratic and reactionary democracies of the West who have invariably hindered the progress and often threatened the very existence of the Italian people\"."
-      }
-     ],
-     "end": 1945,
-     "endDates": [
-      {
-       "year": 1945,
-       "source": {
-        "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "united-states": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1917,
-     "startDates": [
-      {
-       "year": 1917,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox combatant1: (from 1917)"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox combatant1: (from 1917)"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   },
-   {
-    "memberOf": {
-     "row": "world-war-ii",
-     "start": 1941,
-     "startDates": [
-      {
-       "year": 1941,
-       "source": {
-        "sourceKey": "wp-allies-of-world-war-ii",
-        "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-allies-of-world-war-ii",
-       "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
       }
      ],
      "end": 1945,
@@ -3774,12 +3985,78 @@
    }
   ]
  },
+ "eventEdits": {
+  "american-revolutionary-war": {
+   "addTracks": [
+    "american-revolutionary-war"
+   ]
+  },
+  "napoleonic-wars": {
+   "addTracks": [
+    "napoleonic-wars"
+   ]
+  },
+  "thirty-years-war": {
+   "addTracks": [
+    "thirty-years-war"
+   ]
+  },
+  "war-of-the-spanish-succession": {
+   "addTracks": [
+    "war-of-the-spanish-succession"
+   ]
+  },
+  "ww1": {
+   "addTracks": [
+    "world-war-i"
+   ]
+  },
+  "ww2": {
+   "addTracks": [
+    "world-war-ii"
+   ]
+  }
+ },
  "tracks": [
   {
    "id": "wars",
    "name": "Wars",
    "color": "#8c3a3a",
    "kind": "theme"
+  },
+  {
+   "id": "american-revolutionary-war",
+   "name": "American Revolutionary War",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+   "span": {
+    "start": 1775,
+    "startDates": [
+     {
+      "year": 1775,
+      "source": {
+       "sourceKey": "wp-american-revolutionary-war",
+       "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+      }
+     }
+    ],
+    "startMonth": 4,
+    "startDay": 19,
+    "end": 1783,
+    "endDates": [
+     {
+      "year": 1783,
+      "source": {
+       "sourceKey": "wp-american-revolutionary-war",
+       "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+      }
+     }
+    ],
+    "endMonth": 9,
+    "endDay": 3
+   }
   },
   {
    "id": "napoleonic-wars",
@@ -3881,6 +4158,39 @@
     ],
     "endMonth": 10,
     "endDay": 24
+   }
+  },
+  {
+   "id": "war-of-the-spanish-succession",
+   "name": "War of the Spanish Succession",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
+   "span": {
+    "start": 1701,
+    "startDates": [
+     {
+      "year": 1701,
+      "source": {
+       "sourceKey": "wp-war-of-the-spanish-succession",
+       "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+      }
+     }
+    ],
+    "startMonth": 3,
+    "end": 1714,
+    "endDates": [
+     {
+      "year": 1714,
+      "source": {
+       "sourceKey": "wp-war-of-the-spanish-succession",
+       "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+      }
+     }
+    ],
+    "endMonth": 9,
+    "endDay": 7
    }
   },
   {
