@@ -23,7 +23,8 @@
    "flag": "famine evidence test: Great Ethiopian Famine 1888-92 (drought + rinderpest); the article is the general Ethiopian famines one",
    "span": "1888-1892",
    "find": [
-    "1888"
+    "1888",
+    "rinderpest"
    ]
   },
   {
@@ -141,7 +142,7 @@
    "span": "1963-1964",
    "note": "the 1963 eruption; the article is the volcano's. Replaces Pinatubo 1991, whose article carries an AI-generated-text notice (no flagged sources)",
    "find": [
-    "1963"
+    "eruption of 1963"
    ]
   },
   {

@@ -33,7 +33,7 @@ from dates import spans, clean  # noqa: E402
 from wd_join import WD  # noqa: E402
 
 ADAPTER = 'disasters@1'
-DATE_FIELDS = ('date', 'start_date', 'end_date', 'timestamp', 'dates', 'time', 'local_date', 'period', 'year', 'origin')
+DATE_FIELDS = ('date', 'start_date', 'end_date', 'timestamp', 'dates', 'time', 'local_date', 'period')  # not 'year': an effects box's year is the year of the toll, not the event
 MEASURES = {'magnitude': ('magnitude', 'mag'), 'vei': ('vei',), 'deaths': ('deaths', 'fatalities', 'total_fatalities', 'casualties', 'killed', 'total_deaths')}
 REF = re.compile(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>|\{\{(sfn|efn|r|sfnp|harvnb)[^}]*\}\}', re.S | re.I)
 SENT = re.compile(r'(?<=[.!?])\s+(?=[A-Z])')
@@ -155,7 +155,8 @@ def main():
                     for m, names in MEASURES.items():
                         if kl in names and m not in measures:
                             q = plain(raw)
-                            nums = [float(x.replace(',', '')) for x in re.findall(r'\d[\d,]*\.?\d*', q)]
+                            mult = 1e6 if re.search(r'\bmillion\b', q, re.I) else 1
+                            nums = [float(x.replace(',', '')) * mult for x in re.findall(r'\d[\d,]*\.?\d*', q)]
                             if nums:
                                 measures[m] = {'value': nums[0], 'all': nums[:4], 'quote': q[:200], 'locator': f'infobox {k}'}
             if seed.get('find'):
@@ -163,6 +164,11 @@ def main():
                 sents = hits[:1]
             else:
                 sents = body_sentences(code)[:4]
+            if seed.get('find'):  # a long article sentence about many events: quote only the clause at the first keyword
+                def clause(x):
+                    k = min((x.lower().find(w.lower()) for w in seed['find'] if w.lower() in x.lower()), default=0)
+                    return x[max(0, k - 12):k + 150]
+                sents = [clause(x) for x in sents]
             for i, sent in enumerate(sents):
                 if re.search(r'\b(1[0-9]{3}|[1-9][0-9]{2})\b|\b(BC|BCE|AD|CE)\b', sent):
                     cl, why = date_claims(sent, 'sentence' if seed.get('find') else f'lead sentence {i + 1}', wt, pl)
