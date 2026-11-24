@@ -76,3 +76,6 @@ jobs:
       # The shared event classifier's rules (pipelines/common/event_categories.py): no dump needed
       - name: Classifier tests
         run: python -I pipelines/common/test_event_categories.py
+      # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
+      - name: Description check tests
+        run: python -I pipelines/medieval/test_description_check.py
