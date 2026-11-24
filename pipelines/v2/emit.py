@@ -248,6 +248,9 @@ def main(kind):
                     qref = {'sourceKey': qskey, 'sourceLocation': (f"{q['locator']}: {q['quote']}" if q.get('locator') else q['quote'])}
                     st = min(x.get('from', y) for x in qs)
                     en = max(x.get('until', ev.get('end', st)) for x in qs) if (ev.get('end') or any('until' in x for x in qs)) else None
+                    st = max(st, y)  # a range quoted for the state itself ("Republic of China (1912–1949)") is not a joining year: stay inside the war
+                    if en is not None and ev.get('end'):
+                        en = min(en, ev['end'])
                     if st != y:
                         m.update({'start': st, 'startDates': [{'year': st, 'source': qref}], 'sources': [qref]})
                     if en is not None and en != ev.get('end'):

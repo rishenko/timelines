@@ -155,6 +155,58 @@ def heading_members(article, sections):
     return out
 
 
+MONTHS = 'January February March April May June July August September October November December'.split()
+
+
+def dated_list_members(article, section):
+    """A dated bullet list of states ("Timeline of Allied states entering the war": "* Poland: 1 September 1939"): {name: {'from', 'quote', ...}}.
+    Top-level bullets only (colonies sit one level down). The quote is the line as plain text."""
+    p = wp_dump.page(article)
+    if not p or wp_dump.ai_flagged(p['text']):
+        return {}
+    m = re.search(r'^==\s*' + re.escape(section) + r'\s*==\s*$(.*?)(?=^==[^=])', p['text'], re.S | re.M)
+    out = {}
+    for line in (m.group(1) if m else '').split('\n'):
+        if not line.startswith('* '):
+            continue
+        d = re.search(r'\b(\d{1,2}\s+(?:' + '|'.join(MONTHS) + r')\s+(\d{4}))', line)
+        bare = re.sub(r'\{\{[^{}]*\}\}', '', line[2:])
+        link = re.findall(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]', bare)
+        if not d:
+            continue
+        name = (link[0][0] if link else bare.split(':')[0]).strip()
+        if not name:
+            continue
+        if name not in out:
+            q = D.plain(re.sub(r'<ref.*?(?:</ref>|/>)', '', line[2:], flags=re.S)).strip()
+            out[name] = {'article': article, 'from': int(d.group(2)), 'quote': q[:300], 'locator': f'list "{section}"'}
+    return out
+
+
+def table_initiators(article, names, not_before):
+    """The first row of a war-declarations table (|date || initiator || target || ...) in which each name is an initiator, on or after not_before
+    (an ISO date): {name: {'from', 'quote', ...}}. A name matches its words in the initiator cell, flag templates included (Nazi Germany, Empire of Japan)."""
+    p = wp_dump.page(article)
+    if not p or wp_dump.ai_flagged(p['text']):
+        return {}
+    alias = {'Germany': 'Nazi Germany|Germany', 'Italy': 'Fascist Italy|Kingdom of Italy|Italy', 'Japan': 'Empire of Japan|Japan',
+             'Hungary': 'Kingdom of Hungary|Hungary', 'Romania': 'Kingdom of Romania|Romania', 'Bulgaria': 'Kingdom of Bulgaria|Bulgaria',
+             'Slovakia': 'Slovak Republic|Slovakia'}
+    out = {}
+    for line in p['text'].split('\n'):
+        cells = line.split('||')
+        mm = re.match(r'\|\s*(\d{4}-\d{2}-\d{2})\s*$', cells[0])
+        if not mm or len(cells) < 3 or mm.group(1) < not_before:
+            continue
+        iso, ini = mm.group(1), cells[1]
+        for n in names:
+            if n not in out and re.search(r'(?<![\w])(?:' + alias.get(n, re.escape(n)) + r')(?![\w])', ini):
+                ini_t = D.plain(re.sub(r'<br\s*/?>', ', ', ini)).strip() or n
+                tgt_t = D.plain(re.sub(r'<br\s*/?>', ', ', cells[2])).strip()
+                out[n] = {'article': article, 'from': int(iso[:4]), 'quote': f'{iso}: {ini_t} \u2192 {tgt_t}'[:300], 'locator': 'table "List of war declarations"'}
+    return out
+
+
 def sub_of(title, itype):
     t = title.lower()
     if t.startswith('siege of') or ' siege ' in f' {t} ':
@@ -303,7 +355,13 @@ def main():
             comb, pdates = {}, {}
         members = {}
         for src in w.get('members', []):
-            members.update(heading_members(src['article'], src['sections']))
+            if src.get('dated_list'):
+                members.update(dated_list_members(src['article'], src['dated_list']))
+            elif src.get('initiators_of'):
+                names = [n for n in heading_members(src['article'], src['sections']) if n not in src.get('exclude', [])]
+                members.update(table_initiators(src['initiators_of'], names, src['not_before']))
+            else:
+                members.update(heading_members(src['article'], src['sections']))
         for name, q in members.items():
             if name not in {x for v in comb.values() for x in v}:
                 comb.setdefault('M', []).append(name)

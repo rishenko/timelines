@@ -712,6 +712,39 @@
    ]
   },
   {
+   "uuid": "conflict-seven-years-war",
+   "title": "Seven Years' War",
+   "descr": "",
+   "start": 1756,
+   "tracks": [
+    "seven-years-war"
+   ],
+   "startMonth": 5,
+   "startDay": 17,
+   "end": 1763,
+   "endMonth": 2,
+   "endDay": 10,
+   "sources": [
+    {
+     "sourceKey": "wp-seven-years-war",
+     "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-buxar",
    "title": "Battle of Buxar",
    "descr": "",
@@ -831,6 +864,39 @@
       {
        "sourceKey": "wp-muhammad-ali-s-rise-to-power",
        "sourceLocation": "infobox date: 1803–1807"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-napoleonic-wars",
+   "title": "Napoleonic Wars",
+   "descr": "",
+   "start": 1803,
+   "tracks": [
+    "napoleonic-wars"
+   ],
+   "startMonth": 5,
+   "startDay": 18,
+   "end": 1815,
+   "endMonth": 11,
+   "endDay": 20,
+   "sources": [
+    {
+     "sourceKey": "wp-napoleonic-wars",
+     "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
       }
      ]
     }
@@ -1172,6 +1238,39 @@
    ]
   },
   {
+   "uuid": "conflict-paraguayan-war",
+   "title": "Paraguayan War",
+   "descr": "",
+   "start": 1864,
+   "tracks": [
+    "paraguayan-war"
+   ],
+   "startMonth": 11,
+   "startDay": 13,
+   "end": 1870,
+   "endMonth": 4,
+   "endDay": 8,
+   "sources": [
+    {
+     "sourceKey": "wp-paraguayan-war",
+     "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-paraguayan-war",
+       "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-british-expedition-to-abyssinia",
    "title": "British expedition to Abyssinia",
    "descr": "",
@@ -1353,6 +1452,56 @@
       {
        "sourceKey": "wp-menelik-ii-s-conquests",
        "sourceLocation": "infobox date: early 1880s–1904"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-mahdist-war",
+   "title": "Mahdist War",
+   "descr": "",
+   "start": 1881,
+   "tracks": [
+    "mahdist-war"
+   ],
+   "end": 1899,
+   "sources": [
+    {
+     "sourceKey": "wp-mahdist-war",
+     "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+    },
+    {
+     "sourceKey": "wp-mahdist-war",
+     "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+    }
+   ],
+   "endDates": [
+    {
+     "year": 1899,
+     "source": {
+      "sourceKey": "wp-mahdist-war",
+      "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+     }
+    },
+    {
+     "year": 1881,
+     "source": {
+      "sourceKey": "wp-mahdist-war",
+      "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+     },
+     "note": "The same article gives this year too."
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-mahdist-war",
+       "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
       }
      ]
     }
@@ -1629,6 +1778,72 @@
       {
        "sourceKey": "wp-mukden-incident",
        "sourceLocation": "infobox date: September 18, 1931"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-second-sino-japanese-war",
+   "title": "Second Sino-Japanese War",
+   "descr": "",
+   "start": 1937,
+   "tracks": [
+    "second-sino-japanese-war"
+   ],
+   "startMonth": 7,
+   "startDay": 7,
+   "end": 1945,
+   "endMonth": 9,
+   "endDay": 2,
+   "sources": [
+    {
+     "sourceKey": "wp-second-sino-japanese-war",
+     "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-world-war-ii",
+   "title": "World War II",
+   "descr": "",
+   "start": 1939,
+   "tracks": [
+    "world-war-ii"
+   ],
+   "startMonth": 9,
+   "startDay": 1,
+   "end": 1945,
+   "endMonth": 9,
+   "endDay": 2,
+   "sources": [
+    {
+     "sourceKey": "wp-world-war-ii",
+     "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-ii",
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
       }
      ]
     }
@@ -2748,6 +2963,14 @@
     "wikipedia"
    ]
   },
+  "wp-mahdist-war": {
+   "name": "Mahdist War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mahdist_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-menelik-ii-s-conquests": {
    "name": "Menelik II's conquests (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Menelik_II's_conquests",
@@ -2796,6 +3019,14 @@
     "wikipedia"
    ]
   },
+  "wp-napoleonic-wars": {
+   "name": "Napoleonic Wars (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Napoleonic_Wars",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-new-guinea-campaign": {
    "name": "New Guinea campaign (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/New_Guinea_campaign",
@@ -2828,9 +3059,33 @@
     "wikipedia"
    ]
   },
+  "wp-paraguayan-war": {
+   "name": "Paraguayan War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Paraguayan_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-qing-invasion-of-joseon": {
    "name": "Qing invasion of Joseon (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Qing_invasion_of_Joseon",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-second-sino-japanese-war": {
+   "name": "Second Sino-Japanese War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-seven-years-war": {
+   "name": "Seven Years' War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Seven_Years'_War",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -2907,10 +3162,749 @@
    "tags": [
     "wikipedia"
    ]
+  },
+  "wp-world-war-ii": {
+   "name": "World War II (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/World_War_II",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
   }
  },
  "rowEdits": {
-  "sweden": [
+  "british-empire": [
+   {
+    "memberOf": {
+     "row": "mahdist-war",
+     "start": 1881,
+     "startDates": [
+      {
+       "year": 1881,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-mahdist-war",
+       "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+      }
+     ],
+     "end": 1899,
+     "endDates": [
+      {
+       "year": 1899,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "second-sino-japanese-war",
+     "start": 1937,
+     "startDates": [
+      {
+       "year": 1937,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     ],
+     "end": 1945,
+     "endDates": [
+      {
+       "year": 1945,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "canada": [
+   {
+    "memberOf": {
+     "row": "mahdist-war",
+     "start": 1881,
+     "startDates": [
+      {
+       "year": 1881,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-mahdist-war",
+       "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+      }
+     ],
+     "end": 1899,
+     "endDates": [
+      {
+       "year": 1899,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "italy": [
+   {
+    "memberOf": {
+     "row": "mahdist-war",
+     "start": 1881,
+     "startDates": [
+      {
+       "year": 1881,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-mahdist-war",
+       "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+      }
+     ],
+     "end": 1899,
+     "endDates": [
+      {
+       "year": 1899,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1915,
+     "startDates": [
+      {
+       "year": 1915,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox combatant1: (from 1915)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox combatant1: (from 1915)"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "ethiopia": [
+   {
+    "memberOf": {
+     "row": "mahdist-war",
+     "start": 1881,
+     "startDates": [
+      {
+       "year": 1881,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-mahdist-war",
+       "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+      }
+     ],
+     "end": 1899,
+     "endDates": [
+      {
+       "year": 1899,
+       "source": {
+        "sourceKey": "wp-mahdist-war",
+        "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "united-kingdom": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "habsburg-monarchy": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
+      }
+     ],
+     "end": 1635,
+     "endDates": [
+      {
+       "year": 1635,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "liechtenstein": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "russia": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox combatant1: (until 1917)"
+      }
+     ],
+     "end": 1917,
+     "endDates": [
+      {
+       "year": 1917,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox combatant1: (until 1917)"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "prussia": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+      }
+     ],
+     "end": 1635,
+     "endDates": [
+      {
+       "year": 1635,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "spain": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
    {
     "memberOf": {
      "row": "thirty-years-war",
@@ -2928,6 +3922,811 @@
       {
        "sourceKey": "wp-thirty-years-war",
        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "portugal": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1916,
+     "startDates": [
+      {
+       "year": 1916,
+       "source": {
+        "sourceKey": "wp-allies-of-world-war-i",
+        "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-allies-of-world-war-i",
+       "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "sweden": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "sicily": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "papal-states": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "france": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1635,
+     "startDates": [
+      {
+       "year": 1635,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "article text (a sentence saying when it entered): Richelieu provided the Swedes with new subsidies, hired mercenaries led by Bernard of Saxe-Weimar for an offensive in the Rhineland, and in May 1635 initiated the Franco–Spanish War (1635–1659)."
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "article text (a sentence saying when it entered): Richelieu provided the Swedes with new subsidies, hired mercenaries led by Bernard of Saxe-Weimar for an offensive in the Rhineland, and in May 1635 initiated the Franco–Spanish War (1635–1659)."
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "switzerland": [
+   {
+    "memberOf": {
+     "row": "napoleonic-wars",
+     "start": 1803,
+     "startDates": [
+      {
+       "year": 1803,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     ],
+     "end": 1815,
+     "endDates": [
+      {
+       "year": 1815,
+       "source": {
+        "sourceKey": "wp-napoleonic-wars",
+        "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "argentina": [
+   {
+    "memberOf": {
+     "row": "paraguayan-war",
+     "start": 1864,
+     "startDates": [
+      {
+       "year": 1864,
+       "source": {
+        "sourceKey": "wp-paraguayan-war",
+        "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-paraguayan-war",
+       "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+      }
+     ],
+     "end": 1870,
+     "endDates": [
+      {
+       "year": 1870,
+       "source": {
+        "sourceKey": "wp-paraguayan-war",
+        "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "paraguay": [
+   {
+    "memberOf": {
+     "row": "paraguayan-war",
+     "start": 1864,
+     "startDates": [
+      {
+       "year": 1864,
+       "source": {
+        "sourceKey": "wp-paraguayan-war",
+        "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-paraguayan-war",
+       "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+      }
+     ],
+     "end": 1870,
+     "endDates": [
+      {
+       "year": 1870,
+       "source": {
+        "sourceKey": "wp-paraguayan-war",
+        "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "uruguay": [
+   {
+    "memberOf": {
+     "row": "paraguayan-war",
+     "start": 1865,
+     "startDates": [
+      {
+       "year": 1865,
+       "source": {
+        "sourceKey": "wp-paraguayan-war",
+        "sourceLocation": "infobox combatant1: (from 1865)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-paraguayan-war",
+       "sourceLocation": "infobox combatant1: (from 1865)"
+      }
+     ],
+     "end": 1870,
+     "endDates": [
+      {
+       "year": 1870,
+       "source": {
+        "sourceKey": "wp-paraguayan-war",
+        "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "china": [
+   {
+    "memberOf": {
+     "row": "second-sino-japanese-war",
+     "start": 1912,
+     "startDates": [
+      {
+       "year": 1912,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox combatant1: Republic of China (1912–1949)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox combatant1: Republic of China (1912–1949)"
+      }
+     ],
+     "end": 1949,
+     "endDates": [
+      {
+       "year": 1949,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox combatant1: Republic of China (1912–1949)"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "soviet-union": [
+   {
+    "memberOf": {
+     "row": "second-sino-japanese-war",
+     "start": 1937,
+     "startDates": [
+      {
+       "year": 1937,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     ],
+     "end": 1945,
+     "endDates": [
+      {
+       "year": 1945,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "united-states": [
+   {
+    "memberOf": {
+     "row": "second-sino-japanese-war",
+     "start": 1937,
+     "startDates": [
+      {
+       "year": 1937,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     ],
+     "end": 1945,
+     "endDates": [
+      {
+       "year": 1945,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1917,
+     "startDates": [
+      {
+       "year": 1917,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox combatant1: (from 1917)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox combatant1: (from 1917)"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "japan": [
+   {
+    "memberOf": {
+     "row": "second-sino-japanese-war",
+     "start": 1937,
+     "startDates": [
+      {
+       "year": 1937,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     ],
+     "end": 1945,
+     "endDates": [
+      {
+       "year": 1945,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "manchukuo": [
+   {
+    "memberOf": {
+     "row": "second-sino-japanese-war",
+     "start": 1937,
+     "startDates": [
+      {
+       "year": 1937,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     ],
+     "end": 1945,
+     "endDates": [
+      {
+       "year": 1945,
+       "source": {
+        "sourceKey": "wp-second-sino-japanese-war",
+        "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "hre": [
+   {
+    "memberOf": {
+     "row": "seven-years-war",
+     "start": 1756,
+     "startDates": [
+      {
+       "year": 1756,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     ],
+     "end": 1763,
+     "endDates": [
+      {
+       "year": 1763,
+       "source": {
+        "sourceKey": "wp-seven-years-war",
+        "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1635,
+     "startDates": [
+      {
+       "year": 1635,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
       }
      ],
      "end": 1648,
@@ -3042,200 +4841,6 @@
     }
    }
   ],
-  "prussia": [
-   {
-    "memberOf": {
-     "row": "thirty-years-war",
-     "start": 1618,
-     "startDates": [
-      {
-       "year": 1618,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-thirty-years-war",
-       "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
-      }
-     ],
-     "end": 1635,
-     "endDates": [
-      {
-       "year": 1635,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "france": [
-   {
-    "memberOf": {
-     "row": "thirty-years-war",
-     "start": 1635,
-     "startDates": [
-      {
-       "year": 1635,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "article text (a sentence saying when it entered): Richelieu provided the Swedes with new subsidies, hired mercenaries led by Bernard of Saxe-Weimar for an offensive in the Rhineland, and in May 1635 initiated the Franco–Spanish War (1635–1659)."
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-thirty-years-war",
-       "sourceLocation": "article text (a sentence saying when it entered): Richelieu provided the Swedes with new subsidies, hired mercenaries led by Bernard of Saxe-Weimar for an offensive in the Rhineland, and in May 1635 initiated the Franco–Spanish War (1635–1659)."
-      }
-     ],
-     "end": 1648,
-     "endDates": [
-      {
-       "year": 1648,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-       }
-      }
-     ]
-    }
-   },
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1914,
-     "startDates": [
-      {
-       "year": 1914,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "habsburg-monarchy": [
-   {
-    "memberOf": {
-     "row": "thirty-years-war",
-     "start": 1618,
-     "startDates": [
-      {
-       "year": 1618,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-thirty-years-war",
-       "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
-      }
-     ],
-     "end": 1635,
-     "endDates": [
-      {
-       "year": 1635,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
-       }
-      }
-     ]
-    }
-   },
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1914,
-     "startDates": [
-      {
-       "year": 1914,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "spain": [
-   {
-    "memberOf": {
-     "row": "thirty-years-war",
-     "start": 1618,
-     "startDates": [
-      {
-       "year": 1618,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-thirty-years-war",
-       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-      }
-     ],
-     "end": 1648,
-     "endDates": [
-      {
-       "year": 1648,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-       }
-      }
-     ]
-    }
-   }
-  ],
   "spanish-empire": [
    {
     "memberOf": {
@@ -3269,139 +4874,7 @@
     }
    }
   ],
-  "hre": [
-   {
-    "memberOf": {
-     "row": "thirty-years-war",
-     "start": 1635,
-     "startDates": [
-      {
-       "year": 1635,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-thirty-years-war",
-       "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
-      }
-     ],
-     "end": 1648,
-     "endDates": [
-      {
-       "year": 1648,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "united-kingdom": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1914,
-     "startDates": [
-      {
-       "year": 1914,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "british-empire": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1914,
-     "startDates": [
-      {
-       "year": 1914,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
   "australia": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1914,
-     "startDates": [
-      {
-       "year": 1914,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "canada": [
    {
     "memberOf": {
      "row": "world-war-i",
@@ -3534,138 +5007,6 @@
    }
   ],
   "south-africa": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1914,
-     "startDates": [
-      {
-       "year": 1914,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "russia": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1914,
-     "startDates": [
-      {
-       "year": 1914,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox combatant1: (until 1917)"
-      }
-     ],
-     "end": 1917,
-     "endDates": [
-      {
-       "year": 1917,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox combatant1: (until 1917)"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "italy": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1915,
-     "startDates": [
-      {
-       "year": 1915,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox combatant1: (from 1915)"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox combatant1: (from 1915)"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "united-states": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1917,
-     "startDates": [
-      {
-       "year": 1917,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox combatant1: (from 1917)"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox combatant1: (from 1917)"
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "japan": [
    {
     "memberOf": {
      "row": "world-war-i",
@@ -3962,39 +5303,6 @@
     }
    }
   ],
-  "portugal": [
-   {
-    "memberOf": {
-     "row": "world-war-i",
-     "start": 1916,
-     "startDates": [
-      {
-       "year": 1916,
-       "source": {
-        "sourceKey": "wp-allies-of-world-war-i",
-        "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-allies-of-world-war-i",
-       "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
-      }
-     ],
-     "end": 1918,
-     "endDates": [
-      {
-       "year": 1918,
-       "source": {
-        "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-       }
-      }
-     ]
-    }
-   }
-  ],
   "thailand": [
    {
     "memberOf": {
@@ -4103,6 +5411,172 @@
    "kind": "theme"
   },
   {
+   "id": "mahdist-war",
+   "name": "Mahdist War",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/Mahdist_War",
+   "span": {
+    "start": 1881,
+    "startDates": [
+     {
+      "year": 1881,
+      "source": {
+       "sourceKey": "wp-mahdist-war",
+       "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+      }
+     }
+    ],
+    "end": 1899,
+    "endDates": [
+     {
+      "year": 1899,
+      "source": {
+       "sourceKey": "wp-mahdist-war",
+       "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "napoleonic-wars",
+   "name": "Napoleonic Wars",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/Napoleonic_Wars",
+   "span": {
+    "start": 1803,
+    "startDates": [
+     {
+      "year": 1803,
+      "source": {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     }
+    ],
+    "startMonth": 5,
+    "startDay": 18,
+    "end": 1815,
+    "endDates": [
+     {
+      "year": 1815,
+      "source": {
+       "sourceKey": "wp-napoleonic-wars",
+       "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+      }
+     }
+    ],
+    "endMonth": 11,
+    "endDay": 20
+   }
+  },
+  {
+   "id": "paraguayan-war",
+   "name": "Paraguayan War",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/Paraguayan_War",
+   "span": {
+    "start": 1864,
+    "startDates": [
+     {
+      "year": 1864,
+      "source": {
+       "sourceKey": "wp-paraguayan-war",
+       "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+      }
+     }
+    ],
+    "startMonth": 11,
+    "startDay": 13,
+    "end": 1870,
+    "endDates": [
+     {
+      "year": 1870,
+      "source": {
+       "sourceKey": "wp-paraguayan-war",
+       "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+      }
+     }
+    ],
+    "endMonth": 4,
+    "endDay": 8
+   }
+  },
+  {
+   "id": "second-sino-japanese-war",
+   "name": "Second Sino-Japanese War",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War",
+   "span": {
+    "start": 1937,
+    "startDates": [
+     {
+      "year": 1937,
+      "source": {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     }
+    ],
+    "startMonth": 7,
+    "startDay": 7,
+    "end": 1945,
+    "endDates": [
+     {
+      "year": 1945,
+      "source": {
+       "sourceKey": "wp-second-sino-japanese-war",
+       "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+      }
+     }
+    ],
+    "endMonth": 9,
+    "endDay": 2
+   }
+  },
+  {
+   "id": "seven-years-war",
+   "name": "Seven Years' War",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/Seven_Years'_War",
+   "span": {
+    "start": 1756,
+    "startDates": [
+     {
+      "year": 1756,
+      "source": {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     }
+    ],
+    "startMonth": 5,
+    "startDay": 17,
+    "end": 1763,
+    "endDates": [
+     {
+      "year": 1763,
+      "source": {
+       "sourceKey": "wp-seven-years-war",
+       "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+      }
+     }
+    ],
+    "endMonth": 2,
+    "endDay": 10
+   }
+  },
+  {
    "id": "thirty-years-war",
    "name": "Thirty Years' War",
    "color": "#8c3a3a",
@@ -4168,6 +5642,40 @@
     ],
     "endMonth": 11,
     "endDay": 11
+   }
+  },
+  {
+   "id": "world-war-ii",
+   "name": "World War II",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/World_War_II",
+   "span": {
+    "start": 1939,
+    "startDates": [
+     {
+      "year": 1939,
+      "source": {
+       "sourceKey": "wp-world-war-ii",
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+      }
+     }
+    ],
+    "startMonth": 9,
+    "startDay": 1,
+    "end": 1945,
+    "endDates": [
+     {
+      "year": 1945,
+      "source": {
+       "sourceKey": "wp-world-war-ii",
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+      }
+     }
+    ],
+    "endMonth": 9,
+    "endDay": 2
    }
   }
  ]

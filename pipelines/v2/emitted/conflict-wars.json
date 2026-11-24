@@ -1,4 +1,108 @@
 {
+ "Mahdist War": {
+  "modern-states": {
+   "entries read": 11,
+   "with a row here": 5,
+   "rows with a strip": 4,
+   "skipped (outside the row's lifespan)": [
+    "mahdist-state (1881–1899)"
+   ],
+   "no row in this timeline": [
+    "Khedivate of Egypt",
+    "Presidencies and provinces of British India",
+    "New South Wales",
+    "Colony of New South Wales",
+    "Italian Eritrea",
+    "Congo Free State"
+   ]
+  }
+ },
+ "Napoleonic Wars": {
+  "modern-states": {
+   "entries read": 41,
+   "with a row here": 17,
+   "rows with a strip": 12,
+   "skipped (outside the row's lifespan)": [
+    "hre (1803–1815)",
+    "florence (1803–1815)",
+    "denmark-norway (1803–1815)"
+   ],
+   "no row in this timeline": [
+    "Coalition forces of the Napoleonic Wars",
+    "Electorate of Hanover",
+    "List of states in the Holy Roman Empire",
+    "Kingdom of Hungary (1526–1867)",
+    "History of Spain (1808–1874)",
+    "History of Portugal (1777–1834)",
+    "United Kingdom of the Netherlands",
+    "Kingdom of Naples",
+    "Kingdom of Sardinia",
+    "Kingdom of Sardinia (1720–1861)",
+    "Prince-Bishopric of Montenegro",
+    "Kingdom of Bavaria",
+    "Kingdom of Saxony",
+    "Kingdom of Württemberg",
+    "Baden",
+    "First Restoration",
+    "Duchy of Brunswick",
+    "Nassau",
+    "Denmark",
+    "Danish Unitary State",
+    "Restoration and Regeneration in Switzerland",
+    "Tuscany",
+    "List of French client states",
+    "History of Spain (1700–1808)"
+   ]
+  }
+ },
+ "Paraguayan War": {
+  "modern-states": {
+   "entries read": 8,
+   "with a row here": 3,
+   "rows with a strip": 3,
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Empire of Brazil",
+    "Paraguayan Legion",
+    "Colorado Party (Uruguay)",
+    "Uruguayan War",
+    "National Party (Uruguay)"
+   ]
+  }
+ },
+ "Second Sino-Japanese War": {
+  "modern-states": {
+   "entries read": 15,
+   "with a row here": 8,
+   "rows with a strip": 6,
+   "skipped (outside the row's lifespan)": [
+    "mengjiang (1937–1945)"
+   ],
+   "no row in this timeline": [
+    "Kuomintang",
+    "Chinese Communist Party",
+    "Soviet Volunteer Group",
+    "American Volunteer Group",
+    "China Burma India theater",
+    "Wang Jingwei regime",
+    "North China Political Council"
+   ]
+  }
+ },
+ "Seven Years' War": {
+  "modern-states": {
+   "entries read": 13,
+   "with a row here": 9,
+   "rows with a strip": 8,
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Electorate of Hanover",
+    "History of Portugal (1640–1777)",
+    "Seven Years' War",
+    "Bengal Subah"
+   ]
+  }
+ },
  "Thirty Years' War": {
   "modern-states": {
    "entries read": 20,
@@ -36,6 +140,18 @@
     "Third Saudi state",
     "First Brazilian Republic",
     "Britain and the British Empire"
+   ]
+  }
+ },
+ "World War II": {
+  "modern-states": {
+   "entries read": 2,
+   "with a row here": 0,
+   "rows with a strip": 0,
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Allies of World War II",
+    "Axis powers"
    ]
   }
  }

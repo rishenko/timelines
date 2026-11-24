@@ -516,6 +516,67 @@
           ]
         }
       ]
+    },
+    {
+      "title": "World War II",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "multi-region war: the Wars row",
+      "members": [
+        {
+          "article": "Allies of World War II",
+          "dated_list": "Timeline of Allied states entering the war"
+        },
+        {
+          "article": "Axis powers",
+          "sections": [
+            "Major Axis powers",
+            "Other Tripartite Pact signatories"
+          ],
+          "initiators_of": "Declarations of war during World War II",
+          "not_before": "1939-09-01",
+          "exclude": [
+            "Yugoslavia",
+            "Independent State of Croatia"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Seven Years' War",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "multi-region war: the Wars row"
+    },
+    {
+      "title": "Napoleonic Wars",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "multi-region war: the Wars row"
+    },
+    {
+      "title": "Second Sino-Japanese War",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "multi-region war: the Wars row"
+    },
+    {
+      "title": "Paraguayan War",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "multi-region war: the Wars row"
+    },
+    {
+      "title": "Mahdist War",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "multi-region war: the Wars row"
     }
   ],
   "row_aliases": {

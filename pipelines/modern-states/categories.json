@@ -486,6 +486,9 @@
  "conflict-la-noche-triste": [
   "battle"
  ],
+ "conflict-mahdist-war": [
+  "war"
+ ],
  "conflict-menelik-ii-s-conquests": [
   "battle"
  ],
@@ -504,6 +507,9 @@
  "conflict-nader-shah-s-invasion-of-india": [
   "invasion"
  ],
+ "conflict-napoleonic-wars": [
+  "war"
+ ],
  "conflict-new-guinea-campaign": [
   "invasion"
  ],
@@ -516,8 +522,17 @@
  "conflict-operation-torch": [
   "battle"
  ],
+ "conflict-paraguayan-war": [
+  "war"
+ ],
  "conflict-qing-invasion-of-joseon": [
   "invasion"
+ ],
+ "conflict-second-sino-japanese-war": [
+  "war"
+ ],
+ "conflict-seven-years-war": [
+  "war"
  ],
  "conflict-siege-of-delhi-1857": [
   "siege"
@@ -541,6 +556,9 @@
   "war"
  ],
  "conflict-world-war-i": [
+  "war"
+ ],
+ "conflict-world-war-ii": [
   "war"
  ]
 }
