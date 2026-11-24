@@ -3399,6 +3399,55 @@
       ]
     },
     {
+      "id": "kingdom-of-italy",
+      "name": "Kingdom of Italy",
+      "color": "#3a7a9a",
+      "parent": "italian-peninsula",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy_(Holy_Roman_Empire)",
+      "span": {
+        "start": 774,
+        "end": 1801,
+        "startDates": [
+          {
+            "year": 774,
+            "source": {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "lead: \"In June 774, the kingdom collapsed and the Franks became masters of northern Italy.\""
+            }
+          },
+          {
+            "year": 962,
+            "source": {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox year_start: 962"
+            },
+            "note": "The kingdom within the Holy Roman Empire, from Otto I (962)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1801,
+            "source": {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox year_end: 1801"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "italy",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox capital: Pavia (at least to 1024)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "papal-states",
       "name": "Papal States",
       "color": "#c0a030",
@@ -20569,6 +20618,14 @@
     "wp-kingdom-of-the-lombards": {
       "name": "Kingdom of the Lombards (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Kingdom_of_the_Lombards",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kingdom-of-italy-holy-roman-empire": {
+      "name": "Kingdom of Italy (Holy Roman Empire) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy_(Holy_Roman_Empire)",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -42386,6 +42443,105 @@
             {
               "sourceKey": "wp-kingdom-of-the-lombards",
               "sourceLocation": "infobox event_end: Frankish invasion, 774"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "investiture-controversy",
+      "title": "Investiture Controversy",
+      "descr": "",
+      "start": 1075,
+      "end": 1122,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event1: Investiture Controversy, 1075–1122"
+        }
+      ]
+    },
+    {
+      "uuid": "diet-of-roncaglia",
+      "title": "Diet of Roncaglia",
+      "descr": "",
+      "start": 1158,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event2: Diet of Roncaglia, 1158"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "law",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox event2: Diet of Roncaglia, 1158"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "guelph-ghibelline-wars",
+      "title": "Guelph–Ghibelline wars",
+      "descr": "",
+      "start": 1216,
+      "end": 1392,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event3: Guelph–Ghibelline wars, 1216–1392"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox event3: Guelph–Ghibelline wars, 1216–1392"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "italian-wars",
+      "title": "Italian Wars",
+      "descr": "",
+      "start": 1494,
+      "end": 1559,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event4: Italian Wars, 1494–1559"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox event4: Italian Wars, 1494–1559"
             }
           ]
         }
