@@ -324,19 +324,73 @@
  "disaster-mount-agung": [
   "eruption"
  ],
+ "conflict-1893-franco-siamese-crisis": [
+  "battle"
+ ],
  "conflict-1960-ethiopian-coup-attempt": [
+  "battle"
+ ],
+ "conflict-2006-thai-coup-d-tat": [
+  "battle"
+ ],
+ "conflict-2014-russian-annexation-of-crimea": [
+  "battle"
+ ],
+ "conflict-2025-cambodian-thai-border-crisis": [
+  "battle"
+ ],
+ "conflict-attack-on-pearl-harbor": [
   "battle"
  ],
  "conflict-battle-of-adwa": [
   "battle"
  ],
+ "conflict-battle-of-blood-river": [
+  "battle"
+ ],
+ "conflict-battle-of-buena-vista": [
+  "battle"
+ ],
  "conflict-battle-of-buxar": [
+  "battle"
+ ],
+ "conflict-battle-of-cajamarca": [
+  "battle"
+ ],
+ "conflict-battle-of-chapultepec": [
+  "battle"
+ ],
+ "conflict-battle-of-dholpur": [
+  "battle"
+ ],
+ "conflict-battle-of-dien-bien-phu": [
+  "battle"
+ ],
+ "conflict-battle-of-diu": [
   "battle"
  ],
  "conflict-battle-of-france": [
   "battle"
  ],
+ "conflict-battle-of-gettysburg": [
+  "battle"
+ ],
+ "conflict-battle-of-ghaghra": [
+  "battle"
+ ],
+ "conflict-battle-of-inchon": [
+  "battle"
+ ],
+ "conflict-battle-of-isandlwana": [
+  "battle"
+ ],
+ "conflict-battle-of-jenn": [
+  "battle"
+ ],
  "conflict-battle-of-khanwa": [
+  "battle"
+ ],
+ "conflict-battle-of-leipzig": [
   "battle"
  ],
  "conflict-battle-of-lepanto": [
@@ -345,10 +399,34 @@
  "conflict-battle-of-magdala": [
   "battle"
  ],
+ "conflict-battle-of-marj-dabiq": [
+  "battle"
+ ],
  "conflict-battle-of-moh-cs": [
   "battle"
  ],
+ "conflict-battle-of-okinawa": [
+  "battle"
+ ],
+ "conflict-battle-of-ollantaytambo": [
+  "battle"
+ ],
+ "conflict-battle-of-rorke-s-drift": [
+  "battle"
+ ],
+ "conflict-battle-of-the-bulge": [
+  "battle"
+ ],
+ "conflict-battle-of-the-pusan-perimeter": [
+  "battle"
+ ],
+ "conflict-battle-of-tondibi": [
+  "battle"
+ ],
  "conflict-battle-of-trafalgar": [
+  "battle"
+ ],
+ "conflict-battle-of-veracruz-1914": [
   "battle"
  ],
  "conflict-battle-of-vienna": [
@@ -359,6 +437,12 @@
  ],
  "conflict-british-expedition-to-abyssinia": [
   "invasion"
+ ],
+ "conflict-fall-of-saigon": [
+  "battle"
+ ],
+ "conflict-fall-of-tenochtitlan": [
+  "battle"
  ],
  "conflict-fall-of-the-derg-regime": [
   "battle"
@@ -372,16 +456,43 @@
  "conflict-french-invasion-of-russia": [
   "invasion"
  ],
+ "conflict-guadalcanal-campaign": [
+  "invasion"
+ ],
  "conflict-hundred-days": [
   "battle"
  ],
  "conflict-indian-campaign-of-ahmad-shah-durrani": [
   "invasion"
  ],
+ "conflict-international-force-east-timor": [
+  "battle"
+ ],
+ "conflict-japanese-invasion-of-manchuria": [
+  "invasion"
+ ],
+ "conflict-la-noche-triste": [
+  "battle"
+ ],
  "conflict-mesopotamian-campaign": [
   "invasion"
  ],
+ "conflict-moroccan-invasion-of-the-songhai-empire": [
+  "invasion"
+ ],
+ "conflict-muhammad-ali-s-rise-to-power": [
+  "battle"
+ ],
+ "conflict-mukden-incident": [
+  "battle"
+ ],
  "conflict-nader-shah-s-invasion-of-india": [
+  "invasion"
+ ],
+ "conflict-new-guinea-campaign": [
+  "invasion"
+ ],
+ "conflict-northern-expedition": [
   "invasion"
  ],
  "conflict-occupation-of-constantinople": [
@@ -390,8 +501,23 @@
  "conflict-operation-torch": [
   "battle"
  ],
+ "conflict-qing-invasion-of-joseon": [
+  "invasion"
+ ],
  "conflict-siege-of-delhi-1857": [
   "siege"
+ ],
+ "conflict-siege-of-tobruk": [
+  "siege"
+ ],
+ "conflict-spanish-conquest-of-the-aztec-empire": [
+  "invasion"
+ ],
+ "conflict-spanish-conquest-of-the-inca-empire": [
+  "invasion"
+ ],
+ "conflict-tet-offensive": [
+  "battle"
  ],
  "conflict-thirty-years-war": [
   "war"

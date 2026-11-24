@@ -983,6 +983,9 @@
   "conflict-battle-of-hadhramaut": [
    "battle"
   ],
+  "conflict-battle-of-hulao": [
+   "battle"
+  ],
   "conflict-battle-of-marathon": [
    "battle"
   ],
@@ -1024,6 +1027,12 @@
   ],
   "conflict-siege-of-sanaa-570": [
    "siege"
+  ],
+  "conflict-tang-campaign-against-the-eastern-turks": [
+   "invasion"
+  ],
+  "conflict-transition-from-sui-to-tang": [
+   "battle"
   ],
   "conflict-year-of-the-elephant": [
    "battle"

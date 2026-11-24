@@ -20,11 +20,17 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
 ERAS = {'ancient-classical': 'Ancient (< 650)', 'medieval': 'Medieval (650–1499)', 'modern-states': 'Modern (≥ 1500)'}
-REGIONS = ['Europe', 'West Asia and Anatolia', 'South Asia', 'East and Central Asia', 'Africa', 'Other / several', 'Wars row (several regions)']
+REGIONS = ['Europe', 'West Asia and Anatolia', 'South Asia', 'East and Central Asia', 'Africa', 'Americas', 'Southeast Asia', 'Oceania', 'Other / several', 'Wars row (several regions)']
 
 
 def region_of(group):
     g = (group or '').lower()
+    if any(x in g for x in ('southeast', 'south-east', 'indochina', 'vietnam', 'thai', 'siam', 'burma', 'indonesia', 'philippin')):
+        return 'Southeast Asia'
+    if any(x in g for x in ('america', 'mexic', 'andes', 'caribbean', 'aztec', 'inca', 'mesoamer')):
+        return 'Americas'
+    if any(x in g for x in ('oceania', 'australia', 'pacific', 'polynesia', 'zealand')):
+        return 'Oceania'
     if any(x in g for x in ('europe', 'britain', 'iberia', 'balkan', 'scandinav', 'france')):
         return 'Europe'
     if any(x in g for x in ('africa', 'horn', 'sahara', 'nile', 'maghreb')):
@@ -100,8 +106,7 @@ def main(out):
     L += ['', '## Region × era balance (by the first row an event lands on)', '', '| Region | ' + ' | '.join(ERAS.values()) + ' | Total |', '|---|---|---|---|---|']
     for reg in REGIONS:
         L.append(f'| {reg} | ' + ' | '.join(str(bal[reg][tl]) for tl in ERAS) + f' | {sum(bal[reg].values())} |')
-    L += ['', "The pilot's countries decide the regions (France: Europe; Ottoman Empire: West Asia and Anatolia, with its European battles; Mughal Empire: South Asia; Ethiopia and Aksum: Africa; Rome, Achaemenid Persia and Han China for Ancient), "
-          "so the Americas, Oceania and Southeast Asia are empty by construction. They need their own countries in the next round (Mexico or the Aztec and Inca states, Japan, Korea, Vietnam, Mali). Maurya India has two candidate articles and no quoted date (Wikipedia's infobox battles are thin there), so it has no event.", '']
+    L += ['', "Regions come from each row's parent group; a battle counts under the first row it lands on. Every country in the pilot list has K=3 per timeline (the original eight: 6), so a region's total follows how many of its countries have documented battles in that era. Maurya India has two candidate articles and no quoted date, so it has no event. Any region left at 0 in an era is listed in the questions as a gap, not filled by hand.", '']
     # title-year check
     L += ['## Counts a source states: years in a title against the headline dates', '']
     bad = []
@@ -179,11 +184,12 @@ def main(out):
             ys = sorted({d['year'] for d in c['dates'] if d['side'] == 'start' and d['from'] == 'wikipedia'})
             why = 'its quoted start dates disagree (' + ', '.join(map(str, ys)) + '): needs a call' if ys and ys[-1] - ys[0] > 2 else 'Ancient: no emitter for this kind yet' if h.get('year', 9999) <= 649 else 'no row'
             L.append(f"- {c['title']} ({h.get('year', '?')}): {why}")
+    L += ['', '## Known exceptions', '', "- **Armenia in World War I (1917–18):** the war's dated membership for Armenia falls outside the Armenia row's lifespan, so no strip is built for that row. The row is not stretched to fit; a known exception."]
     L += ['', '## Questions for Kevin', '',
           "1. **Rank by inlinks favours the famous.** It picks Crécy, Agincourt, Waterloo, Lepanto, Vienna 1683, Adwa: the right battles, but from the English-language article graph. A regional-scholarship check (as for the landmarks) would be the next step. (a, recommended) keep the rule for the pilot and add a per-region quota in the next round; (b) add a curated list per country.",
           "2. **Wars are not ranked as events here.** Titles with war, conflict, crusade, revolt, resistance or insurgency are left to the named multi-region wars (Thirty Years' War, WWI, built as war rows with strips) and to a later wars pass; so the Hundred Years' War, Napoleonic Wars and the Italo-Ethiopian wars are absent. (a, recommended) a wars pass with the same row-and-strip build for every war that is not confined to one region, with joining and leaving dates from each war's own text; (b) include wars as events on the country rows now.",
           "3. **Importance** comes from inlinks (400 or more = key), since the pilot reads no casualty figures. (a, recommended) keep; (b) read infobox casualties like the disasters pilot.",
-          "4. **Ancient** is built now (`scripts/ancient-classical/conflicts.ts`, registered in run-all): Rome, Achaemenid Persia, Han China and Aksum, 22 events. Rome's cut line shows famous battles that missed the cap of 6 (Carrhae, Alesia, the Sack of Rome 410). (a, recommended) keep the cap of 6 for the pilot and raise it for the bulk run; (b) raise it now.", '']
+          "4. **Ancient** is built now (`scripts/ancient-classical/conflicts.ts`, registered in run-all): Rome, Achaemenid Persia, Han China and Aksum, 22 events. Rome's cut line shows famous battles that missed the cap of 6 (Carrhae, Alesia, the Sack of Rome 410). (a, recommended) keep the cap of 6 for the pilot and raise it for the bulk run; (b) raise it now.", "5. **Gaps in the region × era table** (documented, not filled by hand): Southeast Asia has no Medieval battle (Thailand's pool is 2 articles, Vietnam's 8, none picked with a quoted date); Mali, Songhai, Aztec and Inca have 1 to 2 candidate battles each; Ancient has nothing outside the Mediterranean, Persia, South and East Asia; Mongol and Mamluk battles land under 'Other / several' because their rows sit under wider groups. (a, recommended) accept for the pilot and take these from regional scholarship in the bulk round; (b) add curated lists for those countries now.", '']
     open(out, 'w').write('\n'.join(L) + '\n')
     print(f'wrote {out}')
 

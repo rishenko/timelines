@@ -23537,9 +23537,41 @@
         "wikipedia"
       ]
     },
+    "wp-alauddin-khalji-s-conquest-of-gujarat": {
+      "name": "Alauddin Khalji's conquest of Gujarat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alauddin_Khalji's_conquest_of_Gujarat",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ayutthaya-invasions-of-the-malacca-sultanate": {
+      "name": "Ayutthaya invasions of the Malacca Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ayutthaya_invasions_of_the_Malacca_Sultanate",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-battle-of-agincourt": {
       "name": "Battle of Agincourt (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Agincourt",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-ain-jalut": {
+      "name": "Battle of Ain Jalut (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ain_Jalut",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-anfao": {
+      "name": "Battle of Anfao (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Anfao",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -23561,9 +23593,33 @@
         "wikipedia"
       ]
     },
+    "wp-battle-of-b-ch-ng-1288": {
+      "name": "Battle of Bạch Đằng (1288) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Bạch_Đằng_(1288)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-ch-ng-d-ng": {
+      "name": "Battle of Chương Dương (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Chương_Dương",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-battle-of-cr-cy": {
       "name": "Battle of Crécy (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Crécy",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-dan-no-ura": {
+      "name": "Battle of Dan-no-ura (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Dan-no-ura",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -23593,6 +23649,14 @@
         "wikipedia"
       ]
     },
+    "wp-battle-of-kulikovo": {
+      "name": "Battle of Kulikovo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Kulikovo",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-battle-of-nicopolis": {
       "name": "Battle of Nicopolis (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Nicopolis",
@@ -23604,6 +23668,22 @@
     "wp-battle-of-poitiers": {
       "name": "Battle of Poitiers (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Poitiers",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-shelon": {
+      "name": "Battle of Shelon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Shelon",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-tlatelolco": {
+      "name": "Battle of Tlatelolco (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Tlatelolco",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -23633,6 +23713,14 @@
         "wikipedia"
       ]
     },
+    "wp-battle-of-the-maule": {
+      "name": "Battle of the Maule (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Maule",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-campaigns-of-amda-seyon-1332-1333": {
       "name": "Campaigns of Amda Seyon (1332–1333) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Campaigns_of_Amda_Seyon_(1332–1333)",
@@ -23649,9 +23737,121 @@
         "wikipedia"
       ]
     },
+    "wp-fall-of-angkor": {
+      "name": "Fall of Angkor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Angkor",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-fall-of-constantinople": {
       "name": "Fall of Constantinople (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-great-stand-on-the-ugra-river": {
+      "name": "Great Stand on the Ugra River (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Stand_on_the_Ugra_River",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-jingkang-incident": {
+      "name": "Jingkang incident (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jingkang_incident",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-invasion-of-europe": {
+      "name": "Mongol invasion of Europe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Europe",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-invasion-of-the-khwarazmian-empire": {
+      "name": "Mongol invasion of the Khwarazmian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_the_Khwarazmian_Empire",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-invasions-of-india": {
+      "name": "Mongol invasions of India (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_India",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-invasions-of-japan": {
+      "name": "Mongol invasions of Japan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Japan",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-invasions-of-korea": {
+      "name": "Mongol invasions of Korea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Korea",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-invasions-of-syria": {
+      "name": "Mongol invasions of Syria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Syria",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mongol-invasions-of-vietnam": {
+      "name": "Mongol invasions of Vietnam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Vietnam",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nanboku-ch-period": {
+      "name": "Nanboku-chō period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nanboku-chō_period",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-red-turban-rebellions": {
+      "name": "Red Turban Rebellions (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Red_Turban_Rebellions",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-red-turban-invasions-of-goryeo": {
+      "name": "Red Turban invasions of Goryeo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Red_Turban_invasions_of_Goryeo",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-acre-1291": {
+      "name": "Siege of Acre (1291) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Acre_(1291)",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -23673,9 +23873,25 @@
         "wikipedia"
       ]
     },
+    "wp-siege-of-chittorgarh-1303": {
+      "name": "Siege of Chittorgarh (1303) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Chittorgarh_(1303)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-siege-of-orl-ans-1428-1429": {
       "name": "Siege of Orléans (1428–1429) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Siege_of_Orléans_(1428–1429)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ei-invasion": {
+      "name": "Ōei Invasion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ōei_Invasion",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -43449,6 +43665,269 @@
       ]
     },
     {
+      "uuid": "conflict-jingkang-incident",
+      "title": "Jingkang incident",
+      "descr": "",
+      "start": 1127,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 1,
+      "sources": [
+        {
+          "sourceKey": "wp-jingkang-incident",
+          "sourceLocation": "infobox date: January 1127"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-jingkang-incident",
+              "sourceLocation": "infobox date: January 1127"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-dan-no-ura",
+      "title": "Battle of Dan-no-ura",
+      "descr": "",
+      "start": 1185,
+      "tracks": [
+        "japan"
+      ],
+      "startMonth": 4,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-dan-no-ura",
+          "sourceLocation": "infobox date: April 25, 1185"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-dan-no-ura",
+              "sourceLocation": "infobox date: April 25, 1185"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mongol-invasion-of-the-khwarazmian-empire",
+      "title": "Mongol invasion of the Khwarazmian Empire",
+      "descr": "",
+      "start": 1219,
+      "tracks": [
+        "mongol-empire",
+        "khwarazmian-empire"
+      ],
+      "end": 1221,
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-invasion-of-the-khwarazmian-empire",
+          "sourceLocation": "infobox date: 1219–1221"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-invasion-of-the-khwarazmian-empire",
+              "sourceLocation": "infobox date: 1219–1221"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mongol-invasions-of-india",
+      "title": "Mongol invasions of India",
+      "descr": "",
+      "start": 1221,
+      "tracks": [
+        "mongol-empire",
+        "delhi-sultanate"
+      ],
+      "startMonth": 11,
+      "startDay": 24,
+      "end": 1327,
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-invasions-of-india",
+          "sourceLocation": "infobox date: 24 November 1221–1327"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-invasions-of-india",
+              "sourceLocation": "infobox date: 24 November 1221–1327"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mongol-invasions-of-korea",
+      "title": "Mongol invasions of Korea",
+      "descr": "",
+      "start": 1231,
+      "tracks": [
+        "korea",
+        "mongol-empire"
+      ],
+      "end": 1259,
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-invasions-of-korea",
+          "sourceLocation": "infobox date: 1231–1259 (intermittently)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-invasions-of-korea",
+              "sourceLocation": "infobox date: 1231–1259 (intermittently)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mongol-invasion-of-europe",
+      "title": "Mongol invasion of Europe",
+      "descr": "",
+      "start": 1241,
+      "tracks": [
+        "kievan-rus",
+        "mongol-empire"
+      ],
+      "startMonth": 4,
+      "startDay": 9,
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-invasion-of-europe",
+          "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-invasion-of-europe",
+              "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mongol-invasions-of-vietnam",
+      "title": "Mongol invasions of Vietnam",
+      "descr": "",
+      "start": 1258,
+      "tracks": [
+        "mongol-empire",
+        "vietnam"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-invasions-of-vietnam",
+          "sourceLocation": "infobox date: 1258, 1283–1284, 1285 and 1287–1288"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-invasions-of-vietnam",
+              "sourceLocation": "infobox date: 1258, 1283–1284, 1285 and 1287–1288"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-ain-jalut",
+      "title": "Battle of Ain Jalut",
+      "descr": "",
+      "start": 1260,
+      "tracks": [
+        "mamluk-sultanate",
+        "ilkhanate"
+      ],
+      "startMonth": 9,
+      "startDay": 3,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-ain-jalut",
+          "sourceLocation": "infobox date: 3 September 1260 (26 Ramadan 658 H)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-ain-jalut",
+              "sourceLocation": "infobox date: 3 September 1260 (26 Ramadan 658 H)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mongol-invasions-of-syria",
+      "title": "Mongol invasions of Syria",
+      "descr": "",
+      "start": 1260,
+      "tracks": [
+        "ilkhanate",
+        "mamluk-sultanate"
+      ],
+      "end": 1323,
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-invasions-of-syria",
+          "sourceLocation": "infobox date: 1260–1323"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-invasions-of-syria",
+              "sourceLocation": "infobox date: 1260–1323"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-battle-of-ansata",
       "title": "Battle of Ansata",
       "descr": "",
@@ -43471,6 +43950,153 @@
             {
               "sourceKey": "wp-battle-of-ansata",
               "sourceLocation": "infobox date: 1270"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mongol-invasions-of-japan",
+      "title": "Mongol invasions of Japan",
+      "descr": "",
+      "start": 1274,
+      "tracks": [
+        "japan",
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mongol-invasions-of-japan",
+          "sourceLocation": "infobox date: 1274, 1281"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-mongol-invasions-of-japan",
+              "sourceLocation": "infobox date: 1274, 1281"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-ch-ng-d-ng",
+      "title": "Battle of Chương Dương",
+      "descr": "",
+      "start": 1285,
+      "tracks": [
+        "vietnam",
+        "china"
+      ],
+      "startMonth": 6,
+      "startDay": 24,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-ch-ng-d-ng",
+          "sourceLocation": "infobox date: 24 June 1285"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-ch-ng-d-ng",
+              "sourceLocation": "infobox date: 24 June 1285"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-b-ch-ng-1288",
+      "title": "Battle of Bạch Đằng (1288)",
+      "descr": "",
+      "start": 1288,
+      "tracks": [
+        "vietnam",
+        "china"
+      ],
+      "startMonth": 4,
+      "startDay": 9,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-b-ch-ng-1288",
+          "sourceLocation": "infobox date: 9 April 1288"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-b-ch-ng-1288",
+              "sourceLocation": "infobox date: 9 April 1288"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-siege-of-acre-1291",
+      "title": "Siege of Acre (1291)",
+      "descr": "",
+      "start": 1291,
+      "tracks": [
+        "mamluk-sultanate",
+        "kingdom-of-jerusalem"
+      ],
+      "startMonth": 4,
+      "startDay": 4,
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-acre-1291",
+          "sourceLocation": "infobox date: 4 April – 18 May 1291"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [
+            {
+              "sourceKey": "wp-siege-of-acre-1291",
+              "sourceLocation": "infobox date: 4 April – 18 May 1291"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-alauddin-khalji-s-conquest-of-gujarat",
+      "title": "Alauddin Khalji's conquest of Gujarat",
+      "descr": "",
+      "start": 1299,
+      "tracks": [
+        "delhi-sultanate"
+      ],
+      "startMonth": 6,
+      "end": 1304,
+      "sources": [
+        {
+          "sourceKey": "wp-alauddin-khalji-s-conquest-of-gujarat",
+          "sourceLocation": "infobox date: June 1299–1304"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-alauddin-khalji-s-conquest-of-gujarat",
+              "sourceLocation": "infobox date: June 1299–1304"
             }
           ]
         }
@@ -43500,6 +44126,35 @@
             {
               "sourceKey": "wp-battle-of-the-golden-spurs",
               "sourceLocation": "infobox date: 11 July 1302"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-siege-of-chittorgarh-1303",
+      "title": "Siege of Chittorgarh (1303)",
+      "descr": "",
+      "start": 1303,
+      "tracks": [
+        "delhi-sultanate"
+      ],
+      "startMonth": 1,
+      "startDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-chittorgarh-1303",
+          "sourceLocation": "infobox date: {{start and end dates|1303|01|28|1303|08|26|df=yes}}"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [
+            {
+              "sourceKey": "wp-siege-of-chittorgarh-1303",
+              "sourceLocation": "infobox date: {{start and end dates|1303|01|28|1303|08|26|df=yes}}"
             }
           ]
         }
@@ -43562,6 +44217,35 @@
             {
               "sourceKey": "wp-campaigns-of-amda-seyon-1332-1333",
               "sourceLocation": "infobox date: 19 February 1332 – 6 January 1333}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-nanboku-ch-period",
+      "title": "Nanboku-chō period",
+      "descr": "",
+      "start": 1336,
+      "tracks": [
+        "japan"
+      ],
+      "end": 1392,
+      "sources": [
+        {
+          "sourceKey": "wp-nanboku-ch-period",
+          "sourceLocation": "infobox date: 1336 to 1392 (56 years)"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-nanboku-ch-period",
+              "sourceLocation": "infobox date: 1336 to 1392 (56 years)"
             }
           ]
         }
@@ -43632,6 +44316,34 @@
       ]
     },
     {
+      "uuid": "conflict-red-turban-rebellions",
+      "title": "Red Turban Rebellions",
+      "descr": "",
+      "start": 1351,
+      "tracks": [
+        "china-group"
+      ],
+      "end": 1368,
+      "sources": [
+        {
+          "sourceKey": "wp-red-turban-rebellions",
+          "sourceLocation": "infobox date: 1351–1368"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-red-turban-rebellions",
+              "sourceLocation": "infobox date: 1351–1368"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-battle-of-poitiers",
       "title": "Battle of Poitiers",
       "descr": "",
@@ -43656,6 +44368,64 @@
             {
               "sourceKey": "wp-battle-of-poitiers",
               "sourceLocation": "infobox date: 19 September 1356"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-red-turban-invasions-of-goryeo",
+      "title": "Red Turban invasions of Goryeo",
+      "descr": "",
+      "start": 1359,
+      "tracks": [
+        "korea"
+      ],
+      "startMonth": 12,
+      "sources": [
+        {
+          "sourceKey": "wp-red-turban-invasions-of-goryeo",
+          "sourceLocation": "infobox date: December 1359 and November 1360"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-red-turban-invasions-of-goryeo",
+              "sourceLocation": "infobox date: December 1359 and November 1360"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-kulikovo",
+      "title": "Battle of Kulikovo",
+      "descr": "",
+      "start": 1380,
+      "tracks": [
+        "russia",
+        "golden-horde"
+      ],
+      "startMonth": 9,
+      "startDay": 8,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-kulikovo",
+          "sourceLocation": "infobox date: 8 September 1380"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-kulikovo",
+              "sourceLocation": "infobox date: 8 September 1380"
             }
           ]
         }
@@ -43810,6 +44580,35 @@
       ]
     },
     {
+      "uuid": "conflict-ei-invasion",
+      "title": "Ōei Invasion",
+      "descr": "",
+      "start": 1419,
+      "tracks": [
+        "korea"
+      ],
+      "startMonth": 6,
+      "startDay": 20,
+      "sources": [
+        {
+          "sourceKey": "wp-ei-invasion",
+          "sourceLocation": "infobox date: June 20, 1419 – July 3, 1419()"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-ei-invasion",
+              "sourceLocation": "infobox date: June 20, 1419 – July 3, 1419()"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-campaigns-of-jamal-ad-din-ii",
       "title": "Campaigns of Jamal ad-Din II",
       "descr": "",
@@ -43866,6 +44665,55 @@
             {
               "sourceKey": "wp-siege-of-orl-ans-1428-1429",
               "sourceLocation": "infobox date: 12 October 1428 – 8 May 1429 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-fall-of-angkor",
+      "title": "Fall of Angkor",
+      "descr": "",
+      "start": 1431,
+      "tracks": [
+        "thailand",
+        "cambodia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-fall-of-angkor",
+          "sourceLocation": "lead: \"The fall of Angkor (, ), also known as the sack of Angkor or siege of Angkor or also Siamese occupation of Angkor, refers to the capture of the Khmer capital at Angkor by the Ayutthaya Kingdom, conventionally dated to 1431.\""
+        },
+        {
+          "sourceKey": "wp-fall-of-angkor",
+          "sourceLocation": "infobox date: 1430–1431"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1431,
+          "source": {
+            "sourceKey": "wp-fall-of-angkor",
+            "sourceLocation": "lead: \"The fall of Angkor (, ), also known as the sack of Angkor or siege of Angkor or also Siamese occupation of Angkor, refers to the capture of the Khmer capital at Angkor by the Ayutthaya Kingdom, conventionally dated to 1431.\""
+          }
+        },
+        {
+          "year": 1430,
+          "source": {
+            "sourceKey": "wp-fall-of-angkor",
+            "sourceLocation": "infobox date: 1430–1431"
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-fall-of-angkor",
+              "sourceLocation": "lead: \"The fall of Angkor (, ), also known as the sack of Angkor or siege of Angkor or also Siamese occupation of Angkor, refers to the capture of the Khmer capital at Angkor by the Ayutthaya Kingdom, conventionally dated to 1431.\""
             }
           ]
         }
@@ -43931,6 +44779,35 @@
       ]
     },
     {
+      "uuid": "conflict-ayutthaya-invasions-of-the-malacca-sultanate",
+      "title": "Ayutthaya invasions of the Malacca Sultanate",
+      "descr": "",
+      "start": 1447,
+      "tracks": [
+        "malacca-sultanate",
+        "thailand"
+      ],
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-ayutthaya-invasions-of-the-malacca-sultanate",
+          "sourceLocation": "infobox date: , 1456, 1500"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-ayutthaya-invasions-of-the-malacca-sultanate",
+              "sourceLocation": "infobox date: , 1456, 1500"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-fall-of-constantinople",
       "title": "Fall of Constantinople",
       "descr": "",
@@ -43985,6 +44862,153 @@
             {
               "sourceKey": "wp-siege-of-belgrade-1456",
               "sourceLocation": "infobox date: 4–22 July 1456"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-shelon",
+      "title": "Battle of Shelon",
+      "descr": "",
+      "start": 1471,
+      "tracks": [
+        "novgorod-republic",
+        "russia"
+      ],
+      "startMonth": 7,
+      "startDay": 14,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-shelon",
+          "sourceLocation": "infobox date: 14 July 1471"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-shelon",
+              "sourceLocation": "infobox date: 14 July 1471"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-the-maule",
+      "title": "Battle of the Maule",
+      "descr": "",
+      "start": 1471,
+      "tracks": [
+        "inca-empire"
+      ],
+      "end": 1493,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-the-maule",
+          "sourceLocation": "infobox date: Probably at some time between 1471 and 1493, or 1532"
+        },
+        {
+          "sourceKey": "wp-battle-of-the-maule",
+          "sourceLocation": "lead: \"The account of Garcilaso de la Vega depicts the three-day battle, which is generally believed to have occurred in the reign of Tupac Inca Yupanqui (1471-93 CE).\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-the-maule",
+              "sourceLocation": "infobox date: Probably at some time between 1471 and 1493, or 1532"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-tlatelolco",
+      "title": "Battle of Tlatelolco",
+      "descr": "",
+      "start": 1473,
+      "tracks": [
+        "aztec-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-tlatelolco",
+          "sourceLocation": "infobox date: 1473"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-tlatelolco",
+              "sourceLocation": "infobox date: 1473"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-great-stand-on-the-ugra-river",
+      "title": "Great Stand on the Ugra River",
+      "descr": "",
+      "start": 1480,
+      "tracks": [
+        "russia"
+      ],
+      "startMonth": 10,
+      "startDay": 8,
+      "sources": [
+        {
+          "sourceKey": "wp-great-stand-on-the-ugra-river",
+          "sourceLocation": "infobox date: 8 October – 11 November 1480"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-great-stand-on-the-ugra-river",
+              "sourceLocation": "infobox date: 8 October – 11 November 1480"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-anfao",
+      "title": "Battle of Anfao",
+      "descr": "",
+      "start": 1493,
+      "tracks": [
+        "songhai-empire"
+      ],
+      "startMonth": 4,
+      "startDay": 12,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-anfao",
+          "sourceLocation": "infobox date: April 12, 1493"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-anfao",
+              "sourceLocation": "infobox date: April 12, 1493"
             }
           ]
         }

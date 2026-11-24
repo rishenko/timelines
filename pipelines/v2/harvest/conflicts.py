@@ -244,9 +244,10 @@ def main():
         picked[ctry['id']] = recs
     # selection: per country and timeline, main combatants first, then inlinks; the rest are counted, with the cut line kept
     windows = rules['windows']
-    K = pilot['per_timeline']
+    K_DEFAULT = pilot['per_timeline']
     out, cut = {}, {}
     for cid, recs in picked.items():
+        K = next((c.get('per_timeline') for c in pilot['countries'] if c['id'] == cid), None) or K_DEFAULT
         by_tl = {}
         for r in recs:
             ys = [d['year'] for d in r['dates'] if d['side'] == 'start' and d['from'] == 'wikipedia']

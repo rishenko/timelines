@@ -2,6 +2,185 @@
  "note": "Emitted by pipelines/v2/emit.py from the conflict candidates; merged by the generators. Edit rules, places or overrides, not this file.",
  "events": [
   {
+   "uuid": "conflict-battle-of-diu",
+   "title": "Battle of Diu",
+   "descr": "",
+   "start": 1509,
+   "tracks": [
+    "portuguese-empire",
+    "mamluk-sultanate"
+   ],
+   "startMonth": 2,
+   "startDay": 3,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-diu",
+     "sourceLocation": "infobox date: 3 February 1509"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-diu",
+       "sourceLocation": "infobox date: 3 February 1509"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-marj-dabiq",
+   "title": "Battle of Marj Dabiq",
+   "descr": "",
+   "start": 1516,
+   "tracks": [
+    "ottoman-empire",
+    "mamluk-sultanate"
+   ],
+   "startMonth": 8,
+   "startDay": 24,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-marj-dabiq",
+     "sourceLocation": "infobox date: {{start date and age|1516|08|24|df=y}}"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-marj-dabiq",
+       "sourceLocation": "infobox date: {{start date and age|1516|08|24|df=y}}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-dholpur",
+   "title": "Battle of Dholpur",
+   "descr": "",
+   "start": 1519,
+   "tracks": [
+    "mewar",
+    "delhi-sultanate"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-dholpur",
+     "sourceLocation": "infobox date: 1519"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-dholpur",
+       "sourceLocation": "infobox date: 1519"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-spanish-conquest-of-the-aztec-empire",
+   "title": "Spanish conquest of the Aztec Empire",
+   "descr": "",
+   "start": 1519,
+   "tracks": [
+    "aztec-empire"
+   ],
+   "startMonth": 2,
+   "end": 1521,
+   "endMonth": 8,
+   "endDay": 13,
+   "sources": [
+    {
+     "sourceKey": "wp-spanish-conquest-of-the-aztec-empire",
+     "sourceLocation": "infobox date: February 1519 – 13 August 1521 against the Aztec Empire,after 1529 – 17 February 1530 against the Purépecha Empire"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-spanish-conquest-of-the-aztec-empire",
+       "sourceLocation": "infobox date: February 1519 – 13 August 1521 against the Aztec Empire,after 1529 – 17 February 1530 against the Purépecha Empire"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-la-noche-triste",
+   "title": "La Noche Triste",
+   "descr": "",
+   "start": 1520,
+   "tracks": [
+    "aztec-empire"
+   ],
+   "startMonth": 6,
+   "startDay": 30,
+   "sources": [
+    {
+     "sourceKey": "wp-la-noche-triste",
+     "sourceLocation": "infobox date: June 30 – July 1, 1520"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-la-noche-triste",
+       "sourceLocation": "infobox date: June 30 – July 1, 1520"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-fall-of-tenochtitlan",
+   "title": "Fall of Tenochtitlan",
+   "descr": "",
+   "start": 1521,
+   "tracks": [
+    "spanish-empire",
+    "aztec-empire"
+   ],
+   "startMonth": 5,
+   "startDay": 26,
+   "sources": [
+    {
+     "sourceKey": "wp-fall-of-tenochtitlan",
+     "sourceLocation": "infobox date: May 26 – August 13, 1521 ()"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-fall-of-tenochtitlan",
+       "sourceLocation": "infobox date: May 26 – August 13, 1521 ()"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-moh-cs",
    "title": "Battle of Mohács",
    "descr": "",
@@ -92,6 +271,124 @@
    ]
   },
   {
+   "uuid": "conflict-battle-of-ghaghra",
+   "title": "Battle of Ghaghra",
+   "descr": "",
+   "start": 1529,
+   "tracks": [
+    "mughal-empire",
+    "delhi-sultanate"
+   ],
+   "startMonth": 5,
+   "startDay": 6,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-ghaghra",
+     "sourceLocation": "infobox date: 6 May 1529"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-ghaghra",
+       "sourceLocation": "infobox date: 6 May 1529"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-cajamarca",
+   "title": "Battle of Cajamarca",
+   "descr": "",
+   "start": 1532,
+   "tracks": [
+    "spanish-empire",
+    "inca-empire"
+   ],
+   "startMonth": 11,
+   "startDay": 16,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-cajamarca",
+     "sourceLocation": "infobox date: November 16, 1532"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-cajamarca",
+       "sourceLocation": "infobox date: November 16, 1532"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-spanish-conquest-of-the-inca-empire",
+   "title": "Spanish conquest of the Inca Empire",
+   "descr": "",
+   "start": 1532,
+   "tracks": [
+    "spanish-empire",
+    "inca-empire"
+   ],
+   "end": 1572,
+   "sources": [
+    {
+     "sourceKey": "wp-spanish-conquest-of-the-inca-empire",
+     "sourceLocation": "infobox date: 1532–1572"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-spanish-conquest-of-the-inca-empire",
+       "sourceLocation": "infobox date: 1532–1572"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-ollantaytambo",
+   "title": "Battle of Ollantaytambo",
+   "descr": "",
+   "start": 1537,
+   "tracks": [
+    "inca-empire",
+    "spanish-empire"
+   ],
+   "startMonth": 1,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-ollantaytambo",
+     "sourceLocation": "infobox date: January, 1537"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-ollantaytambo",
+       "sourceLocation": "infobox date: January, 1537"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-lepanto",
    "title": "Battle of Lepanto",
    "descr": "",
@@ -116,6 +413,92 @@
       {
        "sourceKey": "wp-battle-of-lepanto",
        "sourceLocation": "infobox date: 7 October 1571"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-moroccan-invasion-of-the-songhai-empire",
+   "title": "Moroccan invasion of the Songhai Empire",
+   "descr": "",
+   "start": 1590,
+   "tracks": [
+    "songhai-empire"
+   ],
+   "end": 1599,
+   "sources": [
+    {
+     "sourceKey": "wp-moroccan-invasion-of-the-songhai-empire",
+     "sourceLocation": "infobox date: 1590–1599"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-moroccan-invasion-of-the-songhai-empire",
+       "sourceLocation": "infobox date: 1590–1599"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-tondibi",
+   "title": "Battle of Tondibi",
+   "descr": "",
+   "start": 1591,
+   "tracks": [
+    "songhai-empire"
+   ],
+   "startMonth": 3,
+   "startDay": 13,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-tondibi",
+     "sourceLocation": "infobox date: 13 March 1591"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-tondibi",
+       "sourceLocation": "infobox date: 13 March 1591"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-jenn",
+   "title": "Battle of Jenné",
+   "descr": "",
+   "start": 1599,
+   "tracks": [
+    "mali-empire"
+   ],
+   "startMonth": 4,
+   "startDay": 26,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-jenn",
+     "sourceLocation": "infobox date: April 26, 1599"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-jenn",
+       "sourceLocation": "infobox date: April 26, 1599"
       }
      ]
     }
@@ -149,6 +532,39 @@
       {
        "sourceKey": "wp-thirty-years-war",
        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-qing-invasion-of-joseon",
+   "title": "Qing invasion of Joseon",
+   "descr": "",
+   "start": 1636,
+   "tracks": [
+    "china",
+    "korea"
+   ],
+   "startMonth": 12,
+   "startDay": 9,
+   "end": 1637,
+   "endMonth": 1,
+   "endDay": 30,
+   "sources": [
+    {
+     "sourceKey": "wp-qing-invasion-of-joseon",
+     "sourceLocation": "infobox date: 9 December 1636 – 30 January 1637"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-qing-invasion-of-joseon",
+       "sourceLocation": "infobox date: 9 December 1636 – 30 January 1637"
       }
      ]
     }
@@ -314,6 +730,35 @@
    ]
   },
   {
+   "uuid": "conflict-muhammad-ali-s-rise-to-power",
+   "title": "Muhammad Ali's rise to power",
+   "descr": "",
+   "start": 1803,
+   "tracks": [
+    "ottoman-empire",
+    "united-kingdom"
+   ],
+   "end": 1807,
+   "sources": [
+    {
+     "sourceKey": "wp-muhammad-ali-s-rise-to-power",
+     "sourceLocation": "infobox date: 1803–1807"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-muhammad-ali-s-rise-to-power",
+       "sourceLocation": "infobox date: 1803–1807"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-trafalgar",
    "title": "Battle of Trafalgar",
    "descr": "",
@@ -370,6 +815,37 @@
       {
        "sourceKey": "wp-french-invasion-of-russia",
        "sourceLocation": "infobox date: 24 June – 24 December 1812()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-leipzig",
+   "title": "Battle of Leipzig",
+   "descr": "",
+   "start": 1813,
+   "tracks": [
+    "russia",
+    "france"
+   ],
+   "startMonth": 10,
+   "startDay": 16,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-leipzig",
+     "sourceLocation": "infobox date: 16–19 October 1813"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-leipzig",
+       "sourceLocation": "infobox date: 16–19 October 1813"
       }
      ]
     }
@@ -438,6 +914,95 @@
    ]
   },
   {
+   "uuid": "conflict-battle-of-blood-river",
+   "title": "Battle of Blood River",
+   "descr": "",
+   "start": 1838,
+   "tracks": [
+    "zulu-kingdom"
+   ],
+   "startMonth": 12,
+   "startDay": 16,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-blood-river",
+     "sourceLocation": "infobox date: 16 December 1838"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-blood-river",
+       "sourceLocation": "infobox date: 16 December 1838"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-buena-vista",
+   "title": "Battle of Buena Vista",
+   "descr": "",
+   "start": 1847,
+   "tracks": [
+    "united-states",
+    "mexico"
+   ],
+   "startMonth": 2,
+   "startDay": 22,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-buena-vista",
+     "sourceLocation": "infobox date: February 22–23, 1847"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-buena-vista",
+       "sourceLocation": "infobox date: February 22–23, 1847"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-chapultepec",
+   "title": "Battle of Chapultepec",
+   "descr": "",
+   "start": 1847,
+   "tracks": [
+    "united-states",
+    "mexico"
+   ],
+   "startMonth": 9,
+   "startDay": 12,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-chapultepec",
+     "sourceLocation": "infobox date: September 12–13, 1847"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-chapultepec",
+       "sourceLocation": "infobox date: September 12–13, 1847"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-siege-of-delhi-1857",
    "title": "Siege of Delhi (1857)",
    "descr": "",
@@ -462,6 +1027,36 @@
       {
        "sourceKey": "wp-siege-of-delhi-1857",
        "sourceLocation": "infobox date: {{start and end dates|1857|6|8|1857|9|21|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=06|day1=08|year1=1857|month2=09|day2=21|year2=1857}})}}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-gettysburg",
+   "title": "Battle of Gettysburg",
+   "descr": "",
+   "start": 1863,
+   "tracks": [
+    "united-states"
+   ],
+   "startMonth": 7,
+   "startDay": 1,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-gettysburg",
+     "sourceLocation": "infobox date: July 1–3, 1863"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-gettysburg",
+       "sourceLocation": "infobox date: July 1–3, 1863"
       }
      ]
     }
@@ -548,6 +1143,95 @@
    ]
   },
   {
+   "uuid": "conflict-battle-of-isandlwana",
+   "title": "Battle of Isandlwana",
+   "descr": "",
+   "start": 1879,
+   "tracks": [
+    "united-kingdom",
+    "zulu-kingdom"
+   ],
+   "startMonth": 1,
+   "startDay": 22,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-isandlwana",
+     "sourceLocation": "infobox date: 22 January 1879"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-isandlwana",
+       "sourceLocation": "infobox date: 22 January 1879"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-rorke-s-drift",
+   "title": "Battle of Rorke's Drift",
+   "descr": "",
+   "start": 1879,
+   "tracks": [
+    "united-kingdom",
+    "zulu-kingdom"
+   ],
+   "startMonth": 1,
+   "startDay": 22,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-rorke-s-drift",
+     "sourceLocation": "infobox date: 22–23 January 1879"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-rorke-s-drift",
+       "sourceLocation": "infobox date: 22–23 January 1879"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-1893-franco-siamese-crisis",
+   "title": "1893 Franco-Siamese crisis",
+   "descr": "",
+   "start": 1893,
+   "tracks": [
+    "france"
+   ],
+   "startMonth": 7,
+   "startDay": 13,
+   "sources": [
+    {
+     "sourceKey": "wp-1893-franco-siamese-crisis",
+     "sourceLocation": "infobox date: 13 July – 3 October 1893"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-1893-franco-siamese-crisis",
+       "sourceLocation": "infobox date: 13 July – 3 October 1893"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-adwa",
    "title": "Battle of Adwa",
    "descr": "",
@@ -572,6 +1256,37 @@
       {
        "sourceKey": "wp-battle-of-adwa",
        "sourceLocation": "infobox date: {{start date and age|1896|03|01|df=yes}}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-veracruz-1914",
+   "title": "Battle of Veracruz (1914)",
+   "descr": "",
+   "start": 1914,
+   "tracks": [
+    "united-states",
+    "mexico"
+   ],
+   "startMonth": 4,
+   "startDay": 21,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-veracruz-1914",
+     "sourceLocation": "infobox date: April 21, 1914 – November 23, 1914 ()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-veracruz-1914",
+       "sourceLocation": "infobox date: April 21, 1914 – November 23, 1914 ()"
       }
      ]
     }
@@ -678,6 +1393,104 @@
    ]
   },
   {
+   "uuid": "conflict-northern-expedition",
+   "title": "Northern Expedition",
+   "descr": "",
+   "start": 1926,
+   "tracks": [
+    "china"
+   ],
+   "startMonth": 7,
+   "startDay": 9,
+   "end": 1928,
+   "endMonth": 12,
+   "endDay": 29,
+   "sources": [
+    {
+     "sourceKey": "wp-northern-expedition",
+     "sourceLocation": "infobox date: 9 July 1926 – 29 December 1928"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-northern-expedition",
+       "sourceLocation": "infobox date: 9 July 1926 – 29 December 1928"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-japanese-invasion-of-manchuria",
+   "title": "Japanese invasion of Manchuria",
+   "descr": "",
+   "start": 1931,
+   "tracks": [
+    "japan",
+    "china"
+   ],
+   "startMonth": 9,
+   "startDay": 18,
+   "end": 1932,
+   "endMonth": 2,
+   "endDay": 27,
+   "sources": [
+    {
+     "sourceKey": "wp-japanese-invasion-of-manchuria",
+     "sourceLocation": "infobox date: September 18, 1931 – February 27, 1932()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-japanese-invasion-of-manchuria",
+       "sourceLocation": "infobox date: September 18, 1931 – February 27, 1932()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-mukden-incident",
+   "title": "Mukden incident",
+   "descr": "",
+   "start": 1931,
+   "tracks": [
+    "china",
+    "japan"
+   ],
+   "startMonth": 9,
+   "startDay": 18,
+   "sources": [
+    {
+     "sourceKey": "wp-mukden-incident",
+     "sourceLocation": "infobox date: September 18, 1931"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-mukden-incident",
+       "sourceLocation": "infobox date: September 18, 1931"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-france",
    "title": "Battle of France",
    "descr": "",
@@ -702,6 +1515,135 @@
       {
        "sourceKey": "wp-battle-of-france",
        "sourceLocation": "infobox date: 10 May – 25 June 1940()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-attack-on-pearl-harbor",
+   "title": "Attack on Pearl Harbor",
+   "descr": "",
+   "start": 1941,
+   "tracks": [
+    "united-states",
+    "japan"
+   ],
+   "startMonth": 12,
+   "startDay": 7,
+   "sources": [
+    {
+     "sourceKey": "wp-attack-on-pearl-harbor",
+     "sourceLocation": "infobox date: {{start date|1941|12|7}}"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-attack-on-pearl-harbor",
+       "sourceLocation": "infobox date: {{start date|1941|12|7}}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-siege-of-tobruk",
+   "title": "Siege of Tobruk",
+   "descr": "",
+   "start": 1941,
+   "tracks": [
+    "australia"
+   ],
+   "startMonth": 4,
+   "startDay": 10,
+   "sources": [
+    {
+     "sourceKey": "wp-siege-of-tobruk",
+     "sourceLocation": "infobox date: 10 April – 27 November 1941 (7 months, 2 weeks, 3 days)"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "siege",
+     "sources": [
+      {
+       "sourceKey": "wp-siege-of-tobruk",
+       "sourceLocation": "infobox date: 10 April – 27 November 1941 (7 months, 2 weeks, 3 days)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-guadalcanal-campaign",
+   "title": "Guadalcanal campaign",
+   "descr": "",
+   "start": 1942,
+   "tracks": [
+    "united-states",
+    "japan"
+   ],
+   "startMonth": 8,
+   "startDay": 7,
+   "end": 1943,
+   "endMonth": 2,
+   "endDay": 9,
+   "sources": [
+    {
+     "sourceKey": "wp-guadalcanal-campaign",
+     "sourceLocation": "infobox date: 7 August 1942 – 9 February 1943()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-guadalcanal-campaign",
+       "sourceLocation": "infobox date: 7 August 1942 – 9 February 1943()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-new-guinea-campaign",
+   "title": "New Guinea campaign",
+   "descr": "",
+   "start": 1942,
+   "tracks": [
+    "australia",
+    "japan"
+   ],
+   "startMonth": 1,
+   "startDay": 23,
+   "end": 1945,
+   "endMonth": 8,
+   "endDay": 15,
+   "sources": [
+    {
+     "sourceKey": "wp-new-guinea-campaign",
+     "sourceLocation": "infobox date: 23 January 1942 – 15 August 1945"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-new-guinea-campaign",
+       "sourceLocation": "infobox date: 23 January 1942 – 15 August 1945"
       }
      ]
     }
@@ -739,6 +1681,160 @@
    ]
   },
   {
+   "uuid": "conflict-battle-of-the-bulge",
+   "title": "Battle of the Bulge",
+   "descr": "",
+   "start": 1944,
+   "tracks": [
+    "united-states"
+   ],
+   "startMonth": 12,
+   "startDay": 16,
+   "end": 1945,
+   "endMonth": 1,
+   "endDay": 28,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-the-bulge",
+     "sourceLocation": "infobox date: 16 December 1944 – 28 January 1945()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-the-bulge",
+       "sourceLocation": "infobox date: 16 December 1944 – 28 January 1945()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-okinawa",
+   "title": "Battle of Okinawa",
+   "descr": "",
+   "start": 1945,
+   "tracks": [
+    "united-states",
+    "japan"
+   ],
+   "startMonth": 4,
+   "startDay": 1,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-okinawa",
+     "sourceLocation": "infobox date: 1 April – 22 June 1945()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-okinawa",
+       "sourceLocation": "infobox date: 1 April – 22 June 1945()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-inchon",
+   "title": "Battle of Inchon",
+   "descr": "",
+   "start": 1950,
+   "tracks": [
+    "korea"
+   ],
+   "startMonth": 9,
+   "startDay": 10,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-inchon",
+     "sourceLocation": "infobox date: 10–19 September 1950(10–15 September – Bombardments of Wolmido and Incheon)(15–19 September – Incheon Landing)"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-inchon",
+       "sourceLocation": "infobox date: 10–19 September 1950(10–15 September – Bombardments of Wolmido and Incheon)(15–19 September – Incheon Landing)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-the-pusan-perimeter",
+   "title": "Battle of the Pusan Perimeter",
+   "descr": "",
+   "start": 1950,
+   "tracks": [
+    "korea"
+   ],
+   "startMonth": 8,
+   "startDay": 4,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-the-pusan-perimeter",
+     "sourceLocation": "infobox date: 4 August – 18 September 1950()"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-the-pusan-perimeter",
+       "sourceLocation": "infobox date: 4 August – 18 September 1950()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-dien-bien-phu",
+   "title": "Battle of Dien Bien Phu",
+   "descr": "",
+   "start": 1954,
+   "tracks": [
+    "france",
+    "vietnam"
+   ],
+   "startMonth": 3,
+   "startDay": 13,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-dien-bien-phu",
+     "sourceLocation": "infobox date: 13 March– 7 May 1954()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-dien-bien-phu",
+       "sourceLocation": "infobox date: 13 March– 7 May 1954()"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-1960-ethiopian-coup-attempt",
    "title": "1960 Ethiopian coup attempt",
    "descr": "",
@@ -762,6 +1858,66 @@
       {
        "sourceKey": "wp-1960-ethiopian-coup-attempt",
        "sourceLocation": "infobox date: 13–17 December 1960 ()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-tet-offensive",
+   "title": "Tet Offensive",
+   "descr": "",
+   "start": 1968,
+   "tracks": [
+    "vietnam"
+   ],
+   "startMonth": 1,
+   "startDay": 30,
+   "sources": [
+    {
+     "sourceKey": "wp-tet-offensive",
+     "sourceLocation": "infobox date: Phase 1: 30 January – 20 March 1968()Phase 2: 5 May – 15 June 1968()Phase 3: 9 August – 23 September 1968()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-tet-offensive",
+       "sourceLocation": "infobox date: Phase 1: 30 January – 20 March 1968()Phase 2: 5 May – 15 June 1968()Phase 3: 9 August – 23 September 1968()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-fall-of-saigon",
+   "title": "Fall of Saigon",
+   "descr": "",
+   "start": 1975,
+   "tracks": [
+    "vietnam"
+   ],
+   "startMonth": 4,
+   "startDay": 30,
+   "sources": [
+    {
+     "sourceKey": "wp-fall-of-saigon",
+     "sourceLocation": "infobox date: {{start date and age|1975|4|30|df=y}}"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-fall-of-saigon",
+       "sourceLocation": "infobox date: {{start date and age|1975|4|30|df=y}}"
       }
      ]
     }
@@ -795,12 +1951,175 @@
      ]
     }
    ]
+  },
+  {
+   "uuid": "conflict-international-force-east-timor",
+   "title": "International Force East Timor",
+   "descr": "",
+   "start": 1999,
+   "tracks": [
+    "australia",
+    "indonesia"
+   ],
+   "startMonth": 9,
+   "startDay": 20,
+   "end": 2000,
+   "endMonth": 2,
+   "endDay": 28,
+   "sources": [
+    {
+     "sourceKey": "wp-international-force-east-timor",
+     "sourceLocation": "infobox date: 20 September 1999 – 28 February 2000"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-international-force-east-timor",
+       "sourceLocation": "infobox date: 20 September 1999 – 28 February 2000"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-2006-thai-coup-d-tat",
+   "title": "2006 Thai coup d'état",
+   "descr": "",
+   "start": 2006,
+   "tracks": [
+    "thailand"
+   ],
+   "startMonth": 9,
+   "startDay": 19,
+   "sources": [
+    {
+     "sourceKey": "wp-2006-thai-coup-d-tat",
+     "sourceLocation": "infobox date: {{Start date and age|df=yes|2006|9|19}}"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-2006-thai-coup-d-tat",
+       "sourceLocation": "infobox date: {{Start date and age|df=yes|2006|9|19}}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-2014-russian-annexation-of-crimea",
+   "title": "2014 Russian annexation of Crimea",
+   "descr": "",
+   "start": 2014,
+   "tracks": [
+    "russia",
+    "ukraine"
+   ],
+   "startMonth": 3,
+   "sources": [
+    {
+     "sourceKey": "wp-2014-russian-annexation-of-crimea",
+     "sourceLocation": "lead: \"In February and March 2014, Russia invaded the Crimean Peninsula of Ukraine, occupied it, and then annexed it after an illegitimate referendum.\""
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-2014-russian-annexation-of-crimea",
+       "sourceLocation": "lead: \"In February and March 2014, Russia invaded the Crimean Peninsula of Ukraine, occupied it, and then annexed it after an illegitimate referendum.\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-2025-cambodian-thai-border-crisis",
+   "title": "2025 Cambodian–Thai border crisis",
+   "descr": "",
+   "start": 2025,
+   "tracks": [
+    "cambodia",
+    "thailand"
+   ],
+   "startMonth": 5,
+   "startDay": 28,
+   "sources": [
+    {
+     "sourceKey": "wp-2025-cambodian-thai-border-crisis",
+     "sourceLocation": "infobox date: Border crisis: 28 May – 26 October 2025 () 10 November – 7 December 2025 () Border conflicts: 24–28 July 2025 () 8–27 December 2025 ()"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-2025-cambodian-thai-border-crisis",
+       "sourceLocation": "infobox date: Border crisis: 28 May – 26 October 2025 () 10 November – 7 December 2025 () Border conflicts: 24–28 July 2025 () 8–27 December 2025 ()"
+      }
+     ]
+    }
+   ]
   }
  ],
  "sources": {
+  "wp-1893-franco-siamese-crisis": {
+   "name": "1893 Franco-Siamese crisis (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/1893_Franco-Siamese_crisis",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-1960-ethiopian-coup-attempt": {
    "name": "1960 Ethiopian coup attempt (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/1960_Ethiopian_coup_attempt",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-2006-thai-coup-d-tat": {
+   "name": "2006 Thai coup d'état (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/2006_Thai_coup_d'état",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-2014-russian-annexation-of-crimea": {
+   "name": "2014 Russian annexation of Crimea (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/2014_Russian_annexation_of_Crimea",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-2025-cambodian-thai-border-crisis": {
+   "name": "2025 Cambodian–Thai border crisis (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/2025_Cambodian–Thai_border_crisis",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-attack-on-pearl-harbor": {
+   "name": "Attack on Pearl Harbor (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Attack_on_Pearl_Harbor",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -814,9 +2133,65 @@
     "wikipedia"
    ]
   },
+  "wp-battle-of-blood-river": {
+   "name": "Battle of Blood River (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Blood_River",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-buena-vista": {
+   "name": "Battle of Buena Vista (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Buena_Vista",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-buxar": {
    "name": "Battle of Buxar (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Buxar",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-cajamarca": {
+   "name": "Battle of Cajamarca (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Cajamarca",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-chapultepec": {
+   "name": "Battle of Chapultepec (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Chapultepec",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-dholpur": {
+   "name": "Battle of Dholpur (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Dholpur",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-dien-bien-phu": {
+   "name": "Battle of Dien Bien Phu (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Dien_Bien_Phu",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-diu": {
+   "name": "Battle of Diu (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Diu",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -830,9 +2205,57 @@
     "wikipedia"
    ]
   },
+  "wp-battle-of-gettysburg": {
+   "name": "Battle of Gettysburg (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-ghaghra": {
+   "name": "Battle of Ghaghra (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Ghaghra",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-inchon": {
+   "name": "Battle of Inchon (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Inchon",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-isandlwana": {
+   "name": "Battle of Isandlwana (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Isandlwana",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-jenn": {
+   "name": "Battle of Jenné (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Jenné",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-khanwa": {
    "name": "Battle of Khanwa (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Khanwa",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-leipzig": {
+   "name": "Battle of Leipzig (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Leipzig",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -854,6 +2277,14 @@
     "wikipedia"
    ]
   },
+  "wp-battle-of-marj-dabiq": {
+   "name": "Battle of Marj Dabiq (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Marj_Dabiq",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-moh-cs": {
    "name": "Battle of Mohács (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Mohács",
@@ -862,9 +2293,49 @@
     "wikipedia"
    ]
   },
+  "wp-battle-of-okinawa": {
+   "name": "Battle of Okinawa (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Okinawa",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-ollantaytambo": {
+   "name": "Battle of Ollantaytambo (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Ollantaytambo",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-rorke-s-drift": {
+   "name": "Battle of Rorke's Drift (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Rorke's_Drift",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-tondibi": {
+   "name": "Battle of Tondibi (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Tondibi",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-battle-of-trafalgar": {
    "name": "Battle of Trafalgar (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Trafalgar",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-veracruz-1914": {
+   "name": "Battle of Veracruz (1914) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Veracruz_(1914)",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -886,9 +2357,41 @@
     "wikipedia"
    ]
   },
+  "wp-battle-of-the-bulge": {
+   "name": "Battle of the Bulge (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_the_Bulge",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-the-pusan-perimeter": {
+   "name": "Battle of the Pusan Perimeter (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_the_Pusan_Perimeter",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-british-expedition-to-abyssinia": {
    "name": "British expedition to Abyssinia (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/British_expedition_to_Abyssinia",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-fall-of-saigon": {
+   "name": "Fall of Saigon (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Fall_of_Saigon",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-fall-of-tenochtitlan": {
+   "name": "Fall of Tenochtitlan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -926,6 +2429,14 @@
     "wikipedia"
    ]
   },
+  "wp-guadalcanal-campaign": {
+   "name": "Guadalcanal campaign (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Guadalcanal_campaign",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-hundred-days": {
    "name": "Hundred Days (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Hundred_Days",
@@ -942,6 +2453,30 @@
     "wikipedia"
    ]
   },
+  "wp-international-force-east-timor": {
+   "name": "International Force East Timor (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/International_Force_East_Timor",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-japanese-invasion-of-manchuria": {
+   "name": "Japanese invasion of Manchuria (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Japanese_invasion_of_Manchuria",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-la-noche-triste": {
+   "name": "La Noche Triste (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/La_Noche_Triste",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-mesopotamian-campaign": {
    "name": "Mesopotamian campaign (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Mesopotamian_campaign",
@@ -950,9 +2485,49 @@
     "wikipedia"
    ]
   },
+  "wp-moroccan-invasion-of-the-songhai-empire": {
+   "name": "Moroccan invasion of the Songhai Empire (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Moroccan_invasion_of_the_Songhai_Empire",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-muhammad-ali-s-rise-to-power": {
+   "name": "Muhammad Ali's rise to power (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Muhammad_Ali's_rise_to_power",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-mukden-incident": {
+   "name": "Mukden incident (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mukden_incident",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-nader-shah-s-invasion-of-india": {
    "name": "Nader Shah's invasion of India (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Nader_Shah's_invasion_of_India",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-new-guinea-campaign": {
+   "name": "New Guinea campaign (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/New_Guinea_campaign",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-northern-expedition": {
+   "name": "Northern Expedition (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Northern_Expedition",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -974,9 +2549,49 @@
     "wikipedia"
    ]
   },
+  "wp-qing-invasion-of-joseon": {
+   "name": "Qing invasion of Joseon (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Qing_invasion_of_Joseon",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-siege-of-delhi-1857": {
    "name": "Siege of Delhi (1857) (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Siege_of_Delhi_(1857)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-siege-of-tobruk": {
+   "name": "Siege of Tobruk (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Tobruk",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-spanish-conquest-of-the-aztec-empire": {
+   "name": "Spanish conquest of the Aztec Empire (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Spanish_conquest_of_the_Aztec_Empire",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-spanish-conquest-of-the-inca-empire": {
+   "name": "Spanish conquest of the Inca Empire (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Spanish_conquest_of_the_Inca_Empire",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-tet-offensive": {
+   "name": "Tet Offensive (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Tet_Offensive",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"

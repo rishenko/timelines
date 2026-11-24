@@ -141,6 +141,235 @@
     "Persian Empire",
     "Median Empire"
    ]
+  },
+  {
+   "id": "china",
+   "name": "China (Tang to Qing, and the republics)",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "China",
+    "Tang dynasty",
+    "Song dynasty",
+    "Northern Song",
+    "Southern Song",
+    "Yuan dynasty",
+    "Ming dynasty",
+    "Qing dynasty",
+    "Jin dynasty (1115–1234)",
+    "Republic of China (1912–1949)",
+    "Republic of China (1912–1949)",
+    "People's Republic of China",
+    "Western Xia",
+    "Liao dynasty",
+    "Taiping Heavenly Kingdom"
+   ]
+  },
+  {
+   "id": "japan",
+   "name": "Japan",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Japan",
+    "Empire of Japan",
+    "Kamakura shogunate",
+    "Ashikaga shogunate",
+    "Muromachi period",
+    "Tokugawa shogunate",
+    "Edo period",
+    "Imperial Japan",
+    "Heian period",
+    "Minamoto clan",
+    "Taira clan"
+   ]
+  },
+  {
+   "id": "korea",
+   "name": "Korea",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Korea",
+    "Joseon",
+    "Goryeo",
+    "Korean Empire",
+    "Silla",
+    "Unified Silla",
+    "Later Silla",
+    "Balhae",
+    "South Korea",
+    "North Korea"
+   ]
+  },
+  {
+   "id": "vietnam",
+   "name": "Vietnam",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Vietnam",
+    "Đại Việt",
+    "Dai Viet",
+    "Lê dynasty",
+    "Early Lê dynasty",
+    "Later Lê dynasty",
+    "Trần dynasty",
+    "Nguyễn dynasty",
+    "Tây Sơn dynasty",
+    "Lý dynasty",
+    "North Vietnam",
+    "Democratic Republic of Vietnam"
+   ]
+  },
+  {
+   "id": "thailand",
+   "name": "Siam and Thailand",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Thailand",
+    "Siam",
+    "Ayutthaya Kingdom",
+    "Kingdom of Ayutthaya",
+    "Thonburi Kingdom",
+    "Rattanakosin Kingdom",
+    "Kingdom of Siam",
+    "Sukhothai Kingdom"
+   ]
+  },
+  {
+   "id": "mongol-empire",
+   "name": "Mongol Empire",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Mongol Empire",
+    "Mongols",
+    "Great Mongol State"
+   ]
+  },
+  {
+   "id": "delhi-sultanate",
+   "name": "Delhi Sultanate",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Delhi Sultanate"
+   ]
+  },
+  {
+   "id": "mali-empire",
+   "name": "Mali Empire",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Mali Empire"
+   ]
+  },
+  {
+   "id": "songhai-empire",
+   "name": "Songhai Empire",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Songhai Empire",
+    "Songhai"
+   ]
+  },
+  {
+   "id": "aztec-empire",
+   "name": "Aztec Empire",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Aztec Empire",
+    "Aztec Triple Alliance",
+    "Tenochtitlan",
+    "Mexica"
+   ]
+  },
+  {
+   "id": "inca-empire",
+   "name": "Inca Empire",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Inca Empire",
+    "Tawantinsuyu"
+   ]
+  },
+  {
+   "id": "mexico",
+   "name": "Mexico",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Mexico",
+    "First Mexican Republic",
+    "Second Mexican Empire",
+    "Mexican Empire",
+    "Mexican Republic"
+   ]
+  },
+  {
+   "id": "united-states",
+   "name": "United States",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "United States",
+    "Confederate States of America",
+    "Union (American Civil War)"
+   ]
+  },
+  {
+   "id": "zulu-kingdom",
+   "name": "Zulu Kingdom",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Zulu Kingdom",
+    "Zulu people"
+   ]
+  },
+  {
+   "id": "mamluk-sultanate",
+   "name": "Mamluk Sultanate",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Mamluk Sultanate",
+    "Mamluk Sultanate (Cairo)",
+    "Mamluks"
+   ]
+  },
+  {
+   "id": "russia",
+   "name": "Russia",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Russia",
+    "Russian Empire",
+    "Tsardom of Russia",
+    "Grand Principality of Moscow",
+    "Grand Duchy of Moscow",
+    "Muscovy",
+    "Russian Republic",
+    "Russian SFSR"
+   ]
+  },
+  {
+   "id": "australia",
+   "name": "Australia",
+   "per_timeline": 3,
+   "cats": [],
+   "titles": [
+    "Australia",
+    "Dominion of Australia",
+    "Commonwealth of Australia"
+   ]
   }
  ],
  "wars": [

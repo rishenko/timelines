@@ -628,6 +628,94 @@
      ]
     }
    ]
+  },
+  {
+   "uuid": "conflict-transition-from-sui-to-tang",
+   "title": "Transition from Sui to Tang",
+   "descr": "",
+   "start": 613,
+   "tracks": [
+    "china",
+    "sui",
+    "goguryeo"
+   ],
+   "end": 628,
+   "sources": [
+    {
+     "sourceKey": "wp-transition-from-sui-to-tang",
+     "sourceLocation": "infobox date: 613–628"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-transition-from-sui-to-tang",
+       "sourceLocation": "infobox date: 613–628"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-hulao",
+   "title": "Battle of Hulao",
+   "descr": "",
+   "start": 621,
+   "tracks": [
+    "china"
+   ],
+   "startMonth": 5,
+   "startDay": 28,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-hulao",
+     "sourceLocation": "infobox date: 28 May 621"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-hulao",
+       "sourceLocation": "infobox date: 28 May 621"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-tang-campaign-against-the-eastern-turks",
+   "title": "Tang campaign against the Eastern Turks",
+   "descr": "",
+   "start": 629,
+   "tracks": [
+    "china",
+    "eastern-turkic"
+   ],
+   "end": 630,
+   "sources": [
+    {
+     "sourceKey": "wp-tang-campaign-against-the-eastern-turks",
+     "sourceLocation": "infobox date: 629–630"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-tang-campaign-against-the-eastern-turks",
+       "sourceLocation": "infobox date: 629–630"
+      }
+     ]
+    }
+   ]
   }
  ],
  "sources": {
@@ -682,6 +770,14 @@
   "wp-battle-of-hadhramaut": {
    "name": "Battle of Hadhramaut (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Battle_of_Hadhramaut",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-hulao": {
+   "name": "Battle of Hulao (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Hulao",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -794,6 +890,22 @@
   "wp-siege-of-sanaa-570": {
    "name": "Siege of Sanaa (570) (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Siege_of_Sanaa_(570)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-tang-campaign-against-the-eastern-turks": {
+   "name": "Tang campaign against the Eastern Turks (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Tang_campaign_against_the_Eastern_Turks",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-transition-from-sui-to-tang": {
+   "name": "Transition from Sui to Tang (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Transition_from_Sui_to_Tang",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"

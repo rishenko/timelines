@@ -251,6 +251,7 @@
  "conflict-battle-of-gaixia": ["battle"],
  "conflict-battle-of-gaugamela": ["battle"],
  "conflict-battle-of-hadhramaut": ["battle"],
+ "conflict-battle-of-hulao": ["battle"],
  "conflict-battle-of-marathon": ["battle"],
  "conflict-battle-of-plataea": ["battle"],
  "conflict-battle-of-salamis": ["battle"],
@@ -265,5 +266,7 @@
  "conflict-second-persian-invasion-of-greece": ["invasion"],
  "conflict-siege-of-jerusalem-70-ce": ["siege"],
  "conflict-siege-of-sanaa-570": ["siege"],
+ "conflict-tang-campaign-against-the-eastern-turks": ["invasion"],
+ "conflict-transition-from-sui-to-tang": ["battle"],
  "conflict-year-of-the-elephant": ["battle"]
 }
