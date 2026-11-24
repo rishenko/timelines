@@ -169,15 +169,15 @@ def wp_reigns(params):
             continue
         kind, n = m.groups()
         if kind == 'reign':
-            for s in dates.spans(raw):
+            for s in dates.spans(raw, legacy=True):
                 out.append((k, s, dates.clean(params.get(f'succession{n}', ''))))
         elif kind == 'term':
             # a short term written whole: |term = {{Date range|1881|03|04|1881|09|19}} (Garfield, W. H. Harrison)
-            for s in dates.spans(raw)[:1]:
+            for s in dates.spans(raw, legacy=True)[:1]:
                 out.append((k, s, dates.clean(offices.get(n, ''))))
         elif kind == 'term_start':
-            st = dates.spans(raw)
-            en = dates.spans(params.get(f'term_end{n}', '')) if params.get(f'term_end{n}') else []
+            st = dates.spans(raw, legacy=True)
+            en = dates.spans(params.get(f'term_end{n}', ''), legacy=True) if params.get(f'term_end{n}') else []
             if st:
                 s = dict(st[0])
                 s['end'] = en[0]['start'] if en else None
@@ -202,7 +202,7 @@ def _points(cells):
         txt = re.sub(r'<br\s*/?>', ' ', c, flags=re.I)
         plain = dates.clean(txt)
         plain = LIFE.sub(' ', plain)
-        sp = dates.spans(plain)
+        sp = dates.spans(plain, legacy=True)
         for s in sp:
             out.append((s['start'], s))
             if s['end']:
@@ -271,7 +271,7 @@ def interregna(text):
                 if pts and pts[0]:
                     out.append((pts[0], pts[1] if len(pts) > 1 else None, re.sub(r'\s+', ' ', dates.clean(row))[:200]))
     for m in re.finditer(r'^(=+)([^=\n]*\binterregnum\b[^=\n]*)\1\s*$', text, re.I | re.M):  # ==First Interregnum (1649–1660)==
-        sp = dates.spans(dates.clean(m.group(2)))
+        sp = dates.spans(dates.clean(m.group(2)), legacy=True)
         if sp and sp[0]['end']:
             out.append((sp[0]['start'], sp[0]['end'], m.group(2).strip()[:200]))
     for m in re.finditer(r'\|\s*(?:name|officeholder)(\d*)\s*=[^|]*?interregnum', text, re.I):  # {{List of rulers|nameN=''Interregnum''}}
