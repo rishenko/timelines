@@ -143,6 +143,8 @@ def build(repo):
     }
     data = {
         'schemaVersion': 10, 'meta': meta, 'present': PRESENT,
+        # sources the pilot replaced (the end-Permian and end-Triassic events now cite other sources)
+        'redirects': {'burgess-2014-pnas': None, 'wp-triassic-jurassic-extinction-event': None},
         'tracks': [
             # Earth's own lifespan, from the chart's oldest boundary to now: it anchors the whole axis, so the Hadean
             # and the other Precambrian eons can be reached before any event there exists (ages are not anchors)
