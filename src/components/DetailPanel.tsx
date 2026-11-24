@@ -192,9 +192,11 @@ export function DetailPanel(p: Props) {
   const cal = data.meta.calendar;
   const tracks = e.tracks.map((id) => data.tracks.find((t) => t.id === id)).filter((t) => !!t);
   const byId = p.resolvedById;
-  const outgoing = (e.links ?? []).map((l) => ({ label: LINK_LABEL[l.kind].out, ev: byId.get(l.to) }));
+  // a link kind this app doesn't know (core 1.0, rule 3: a newer file's) is kept in the data but not shown
+  const known = (l: { kind: string }) => Object.hasOwn(LINK_LABEL, l.kind);
+  const outgoing = (e.links ?? []).filter(known).map((l) => ({ label: LINK_LABEL[l.kind].out, ev: byId.get(l.to) }));
   const incoming = data.events.flatMap((x) =>
-    (x.links ?? []).filter((l) => l.to === e.uuid).map((l) => ({ label: LINK_LABEL[l.kind].in, ev: byId.get(x.uuid) })),
+    (x.links ?? []).filter((l) => l.to === e.uuid && known(l)).map((l) => ({ label: LINK_LABEL[l.kind].in, ev: byId.get(x.uuid) })),
   );
   const all = [...outgoing, ...incoming].filter((l) => l.ev);
   const links = all.filter((l) => p.visibleIds.has(l.ev!.uuid)).sort((a, b) => compareEvents(a.ev!, b.ev!));

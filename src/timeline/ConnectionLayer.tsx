@@ -1,4 +1,4 @@
-import type { TimelineEvent, LinkKind } from '../types.ts';
+import { LINK_KINDS, type TimelineEvent, type LinkKind } from '../types.ts';
 import type { Mark } from './layout.ts';
 
 interface Props {
@@ -42,6 +42,7 @@ export function ConnectionLayer({ left, width, height, marksByEvent, eventsById,
   const links: React.ReactNode[] = [];
   for (const [id, e] of eventsById) {
     for (const l of e.links ?? []) {
+      if (!LINK_KINDS.includes(l.kind)) continue; // a kind this app doesn't know (core 1.0, rule 3): kept, not drawn
       const focused = !!related && related.has(id) && related.has(l.to);
       const reachable = (ms: Mark[] | undefined) => (focused ? ms : ms?.filter((m) => m.kind === 'event'));
       const from = reachable(marksByEvent.get(id));
