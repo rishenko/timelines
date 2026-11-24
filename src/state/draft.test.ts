@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Dataset } from '../types.ts';
 import { applyChanges, changesFromLegacyCopy, diffDataset, isEmpty } from './draft.ts';
-import { draftKey, draftToStore, loadInitial, restoreDraft, unreadableDraftKey } from './dataset.ts';
+import { draftKey, draftToStore, loadInitial, restoreDraft, saveReplaceDraft, unreadableDraftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
 import example from '../../docs/examples/example-timeline.json';
 import combined from '../../public/timelines/ancient-classical.json';
@@ -149,5 +149,28 @@ describe('opening a timeline with a draft that no longer applies', () => {
     expect(state.dirty).toBe(true);
     expect(ev(state.data, 'founding').title).toBe('Changed');
     expect(store.has(unreadableDraftKey(pub.meta.id))).toBe(false);
+  });
+});
+
+describe('a whole file uploaded for another timeline', () => {
+  const memory = () => {
+    const m = new Map<string, string>();
+    return { m, store: { setItem: (k: string, v: string) => void m.set(k, v) } };
+  };
+  it('is kept as that timeline\'s replace draft', () => {
+    const { m, store } = memory();
+    saveReplaceDraft('second-site', base(), 'A Second Timeline', store);
+    expect(JSON.parse(m.get(draftKey('second-site'))!)).toMatchObject({ format: 'replace' });
+  });
+  it('over the storage limit says so, readably, and keeps the draft already stored', () => {
+    const m = new Map<string, string>([[draftKey('second-site'), 'earlier draft']]);
+    const full = {
+      setItem: (k: string, v: string) => {
+        if (v.length > 1000) throw new DOMException('quota', 'QuotaExceededError');
+        m.set(k, v);
+      },
+    };
+    expect(() => saveReplaceDraft('second-site', base(), 'A Second Timeline', full)).toThrow(/too large to keep in this browser as a replacement for "A Second Timeline"/);
+    expect(m.get(draftKey('second-site'))).toBe('earlier draft');
   });
 });

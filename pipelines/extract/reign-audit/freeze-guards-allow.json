@@ -1,0 +1,10 @@
+{
+ "note": "Check 3 (the freeze guards on committed reigns): a reign uuid, or 'guard reason|row', value: why. A reign the guard flags and a reviewer has kept.",
+ "allow": {
+  "reign-pedro-celestino-negrete-mexico": "Supreme Executive Power of 1823–24 (the triumvirate) was Mexico's head of state",
+  "reign-jos-mariano-michelena-mexico": "Supreme Executive Power of 1823–24 (the triumvirate) was Mexico's head of state",
+  "reign-miguel-dom-nguez-mexico": "Supreme Executive Power of 1823–24 (the triumvirate) was Mexico's head of state",
+  "reign-koxinga-taiwan": "Kingdom of Tungning 1661–1683 kept (Kevin 2026-11-24: only local rulers)",
+  "reign-zheng-jing-taiwan": "Kingdom of Tungning 1661–1683 kept (Kevin 2026-11-24: only local rulers)"
+ }
+}
