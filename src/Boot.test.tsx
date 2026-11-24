@@ -327,6 +327,21 @@ describe('Boot: shared lists and timelines from links', () => {
         expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
         expect(w.asked).toEqual([LINK]); // the recheck, not a download to open it
       });
+      it('fetches it again when the IndexedDB record does not validate', async () => {
+        const big = mem();
+        stored(big, false);
+        big.map.set(plainTimeline().meta.id, { ...plainTimeline(), events: [{ nonsense: true }] } as unknown as Dataset);
+        go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: plainTimeline() }).fetchImpl);
+        expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+      });
+      it('says so, and does not open it, when the record is unreadable and there is no link', async () => {
+        const big = mem();
+        big.map.set(plainTimeline().meta.id, { ...plainTimeline(), events: [{ nonsense: true }] } as unknown as Dataset);
+        localStorage.setItem(LIBRARY_KEY, JSON.stringify([{ big: summarize(plainTimeline()), addedAt: '2026-11-24', updatedAt: '2026-11-24' }]));
+        setBigStore(big);
+        go(`timeline=${plainTimeline().meta.id}`, web({}).fetchImpl);
+        expect(await screen.findByText(/missing or unreadable in this browser/)).toBeTruthy();
+      });
       it('fetches it again from its link when IndexedDB no longer has it', async () => {
         const big = mem();
         stored(big, false);

@@ -165,7 +165,7 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
     // IndexedDB no longer has, fetched again from its link
     const entry = choice.library;
     try {
-      if (!entry.sourceUrl) throw new Error('its saved copy is gone from this browser and it has no link to fetch it again.');
+      if (!entry.sourceUrl) throw new Error('its saved copy is missing or unreadable in this browser, and it has no link to fetch it again.');
       const fresh = sessionCopy(entry) ?? (await fetchTimeline(entry.sourceUrl, fetchImpl));
       published = { ...fresh, meta: { ...fresh.meta, id: entryId(entry) } };
       updateSummary(published); // the picker's title and description follow the timeline just read
