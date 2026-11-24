@@ -33,7 +33,7 @@ export interface TimelineChoice {
 export function listTimelines(site: TimelineIndexEntry[]): TimelineChoice[] {
   const taken = new Set(site.map((e) => e.id));
   const lib = loadLibrary()
-    // a link-only entry (too large to keep) is checked when it is fetched, as a shared list's timelines are
+    // a large or link-only entry (not kept in the list) is checked when it is read, as a shared list's timelines are
     .filter((e) => !taken.has(entryId(e)) && (!e.dataset || validateDataset(e.dataset).length === 0))
     .map((e) => ({ summary: entrySummary(e), library: e }));
   for (const t of lib) taken.add(t.summary.id);
@@ -113,7 +113,7 @@ export async function addFromLink(raw: string, site: TimelineIndexEntry[], fetch
     json = undefined; // timelineFromText says what is wrong
   }
   if (!isTimelineIndex(json))
-    return addToLibrary(timelineFromText(text), { sourceUrl: url, reservedIds: reservedIds(site) }).dataset.meta.id;
+    return (await addToLibrary(timelineFromText(text), { sourceUrl: url, reservedIds: reservedIds(site) })).dataset.meta.id;
   const known = loadCollections().some((c) => c.url === url);
   saveCollection(parseCollection(json, url));
   const first = listTimelines(site).find((t) => t.collection?.url === url);

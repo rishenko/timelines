@@ -409,7 +409,7 @@ def events():
 
 
 def build(repo):
-    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
+    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json'), encoding='utf-8'))
     data = {
         'schemaVersion': 7,  # v7 only adds Era.tracks
         'meta': {
@@ -504,7 +504,7 @@ def build(repo):
     for t in data['tracks']:
         unlink(t)
     # Descriptions (Kevin: one pass after the last wave; descriptions.json holds the text and the sentences it rests on)
-    descs = json.load(open(os.path.join(HERE, 'descriptions.json')))['events']
+    descs = json.load(open(os.path.join(HERE, 'descriptions.json'), encoding='utf-8'))['events']
     for uuid, dd in descs.items():
         e = europe.EVENTS.get(uuid) or next((x for x in me.PILOT_EVENTS if x['uuid'] == uuid), None)
         if e is None:
@@ -567,9 +567,9 @@ def build(repo):
     data['redirects'].update(json.load(open(os.path.join(HERE, 'redirects.json')))['redirects'])  # reigns left out on purpose (reigns-excluded.json), and their sources
     data = {k: data[k] for k in ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events', 'redirects']}
     out = os.path.join(repo, 'data-src', 'medieval.json')
-    json.dump(data, open(out, 'w'), indent=2, ensure_ascii=False)
+    json.dump(data, open(out, 'w', encoding='utf-8', newline='\n'), indent=2, ensure_ascii=False)
     os.makedirs(OUT, exist_ok=True)
-    open(os.path.join(OUT, 'gen_medieval-report.txt'), 'w').write('\n'.join(REPORT) + '\n')
+    open(os.path.join(OUT, 'gen_medieval-report.txt'), 'w', encoding='utf-8', newline='\n').write('\n'.join(REPORT) + '\n')
     # Provenance (Kevin, 2026-11-21): what this build read, so a later dump or Cliopatria release can be re-checked
     import hashlib
     import med_europe
@@ -590,8 +590,8 @@ def build(repo):
     }
     prov = os.path.join(repo, 'data-src', 'provenance', 'medieval.json')
     os.makedirs(os.path.dirname(prov), exist_ok=True)
-    json.dump(manifest, open(prov, 'w'), indent=1, ensure_ascii=False)
-    open(prov, 'a').write('\n')
+    json.dump(manifest, open(prov, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+    open(prov, 'a', encoding='utf-8', newline='\n').write('\n')
     print('\n'.join(REPORT))
     print('Modern States typed lifespans that can\'t hold Medieval phases:', europe.NEEDS)
     print(f'wrote {out}: {len(data["tracks"])} tracks, {len(data["events"])} events, {len(G.SOURCES)} sources')

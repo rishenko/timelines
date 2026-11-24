@@ -19,7 +19,7 @@ import os
 
 
 def load(path):
-    return json.load(open(path))
+    return json.load(open(path, encoding='utf-8'))
 
 
 def apply(data, path, provenance=None):
@@ -43,7 +43,7 @@ def apply(data, path, provenance=None):
         os.makedirs(os.path.dirname(provenance), exist_ok=True)
         review = {**claims.get('skipped', {}), **claims['review']}  # skipped: century-only dates, not imported, listed
         lines = [f'  {json.dumps(u, ensure_ascii=False)}: {json.dumps(review[u], ensure_ascii=False)}' for u in sorted(review)]
-        open(provenance, 'w').write('{\n' + ',\n'.join(lines) + '\n}\n')
+        open(provenance, 'w', encoding='utf-8', newline='\n').write('{\n' + ',\n'.join(lines) + '\n}\n')
     n = len(claims['events'])
     k = sum(1 for r in claims['review'].values() if r.get('toCheck'))
     return f'{n} reigns, {k} to check'

@@ -46,7 +46,7 @@ X.KEY.update({'battle-of-manzikert', 'ottoman-state-founded', 'saladin-abolishes
 def build(mod, repo):
     M, G = mod, mod.G
     P, S, event, on, claim, ie = X.P, X.S, X.event, X.on, X.claim, X.infobox_event
-    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
+    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json'), encoding='utf-8'))
     R = []
 
     def row(id_, name, parent, title, region, color, **kw):

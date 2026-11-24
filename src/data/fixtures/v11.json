@@ -1,6 +1,6 @@
 {
   "schemaVersion": 11,
-  "schemaMinor": 1,
+  "schemaMinor": 2,
   "meta": {
     "id": "every-field",
     "title": "Every Field",
@@ -63,6 +63,15 @@
         "values": {
           "trade": {
             "name": "Trade"
+          }
+        }
+      },
+      "area": {
+        "name": "Area",
+        "applies": "people",
+        "values": {
+          "rulers": {
+            "name": "Rulers"
           }
         }
       }
@@ -656,6 +665,9 @@
             "page": "1"
           }
         }
+      ],
+      "people": [
+        "first-warden"
       ]
     },
     {
@@ -846,6 +858,90 @@
       ]
     }
   ],
+  "people": {
+    "first-warden": {
+      "name": "The First Warden",
+      "ids": {
+        "wikidata": "Q1"
+      },
+      "active": {
+        "year": -40,
+        "from": "source",
+        "source": {
+          "sourceKey": "ledger",
+          "sourceLocation": "p. 2",
+          "locator": {
+            "kind": "page",
+            "page": "2"
+          }
+        }
+      },
+      "born": {
+        "year": -75,
+        "month": 5,
+        "day": 1,
+        "margin": 0,
+        "chronology": "court",
+        "source": {
+          "sourceKey": "ledger",
+          "sourceLocation": "p. 2",
+          "locator": {
+            "kind": "page",
+            "page": "2"
+          }
+        },
+        "note": "As given, p. 2."
+      },
+      "died": {
+        "year": -20,
+        "month": 9,
+        "day": 9,
+        "margin": 0,
+        "chronology": "court",
+        "source": {
+          "sourceKey": "ledger",
+          "sourceLocation": "p. 3",
+          "locator": {
+            "kind": "page",
+            "page": "3"
+          }
+        },
+        "note": "As given, p. 3."
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers",
+          "sources": [
+            {
+              "sourceKey": "ledger",
+              "sourceLocation": "p. 2",
+              "locator": {
+                "kind": "page",
+                "page": "2"
+              }
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "quay",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "ledger",
+              "sourceLocation": "p. 2",
+              "locator": {
+                "kind": "page",
+                "page": "2"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
   "redirects": {
     "old-quay": "quay",
     "lost-storm": null

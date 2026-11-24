@@ -40,7 +40,7 @@ WANT = set()  # a title as it may stand in the dump's JSON: raw UTF-8 bytes and 
 def wanted(paths):
     titles = set()
     for p in paths:
-        titles |= set(json.load(open(p)))
+        titles |= set(json.load(open(p, encoding='utf-8')))
     out = set()
     for t in titles:
         out.add(t.encode())
