@@ -40,7 +40,7 @@ export default {
   id: 'centuries',          // unique, matches the file name
   name: 'Centuries',        // the toolbar button's label
   apiVersion: 1,            // the plugin API it was written for
-  schema: [5, 10],          // the data schema versions it reads, inclusive
+  schema: [5, 11],          // the data schema versions it reads, inclusive
   mount(el, ctx) {          // draw into `el`; return what the app calls later
     return {
       update(ctx) {},       // a new snapshot: filters, dating or the selection changed

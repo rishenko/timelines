@@ -436,6 +436,7 @@ def build(repo, module_names=None):
         sys.path.insert(0, os.path.join(HERE, '..', 'v2'))
         import emit_merge
         REPORT.append(emit_merge.merge('disaster', 'modern-states', data, G.SOURCES))
+        REPORT.append(emit_merge.merge('conflict', 'modern-states', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)
@@ -460,6 +461,10 @@ def build(repo, module_names=None):
     import event_categories
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')
     order = ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']
+    redirects = json.load(open(os.path.join(HERE, 'redirects.json')))['redirects']  # ids removed on purpose (the ids check)
+    if redirects:
+        data['redirects'] = redirects
+        order.append('redirects')
     data = {k: data[k] for k in order}
     out = os.path.join(repo, 'data-src', 'modern-states.json')
     json.dump(data, open(out, 'w'), indent=2, ensure_ascii=False)

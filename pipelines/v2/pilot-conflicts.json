@@ -1,0 +1,778 @@
+{
+  "_note": "The conflicts pilot (v2 kind 'conflict', Kevin 2026-11-23): battles as events, ranked by main combatant then inlinks. Candidates for a country are the members of its 'Battles involving ...' categories; a battle is a MAIN combatant's when the country (any of its 'titles': the articles that stand for it over time) is the first entry of a combatant column in the infobox. 'wars' are named multi-region wars: a top-level Wars row, no country rows. 'per_timeline' caps the pilot's picks per country and timeline.",
+  "per_timeline": 6,
+  "countries": [
+    {
+      "id": "france",
+      "name": "France",
+      "cats": [
+        "Battles involving France",
+        "Battles involving the Kingdom of France",
+        "Battles involving West Francia",
+        "Battles involving the French First Republic",
+        "Battles involving the First French Empire",
+        "Battles involving the French Third Republic"
+      ],
+      "titles": [
+        "France",
+        "Kingdom of France",
+        "West Francia",
+        "French First Republic",
+        "First French Empire",
+        "Second French Empire",
+        "French Third Republic",
+        "French Republic",
+        "Vichy France",
+        "Free France",
+        "Provisional Government of the French Republic",
+        "Kingdom of the French",
+        "July Monarchy",
+        "Bourbon Restoration",
+        "French Fourth Republic",
+        "French Fifth Republic",
+        "French Directory",
+        "French Consulate",
+        "Capetian dynasty"
+      ]
+    },
+    {
+      "id": "ottoman-empire",
+      "name": "Ottoman Empire",
+      "cats": [
+        "Battles involving the Ottoman Empire"
+      ],
+      "titles": [
+        "Ottoman Empire",
+        "Ottoman Turks",
+        "Ottoman Sultanate",
+        "Ottoman dynasty",
+        "Rise of the Ottoman Empire"
+      ]
+    },
+    {
+      "id": "mughal-empire",
+      "name": "Mughal Empire",
+      "cats": [
+        "Battles involving the Mughal Empire"
+      ],
+      "titles": [
+        "Mughal Empire",
+        "Mughals",
+        "Mughal dynasty"
+      ]
+    },
+    {
+      "id": "ethiopia",
+      "name": "Ethiopia",
+      "cats": [
+        "Battles involving Ethiopia",
+        "Battles involving the Ethiopian Empire",
+        "Battles involving the Kingdom of Aksum",
+        "Battles involving the Abyssinian Empire"
+      ],
+      "titles": [
+        "Ethiopia",
+        "Ethiopian Empire",
+        "Abyssinia",
+        "Ethiopian Empire (1270–1974)",
+        "Solomonic dynasty",
+        "Zagwe dynasty",
+        "Kingdom of Aksum",
+        "Axumite Empire",
+        "Provisional Military Government of Socialist Ethiopia",
+        "Derg",
+        "Federal Democratic Republic of Ethiopia",
+        "People's Democratic Republic of Ethiopia",
+        "Ethiopian Army"
+      ]
+    },
+    {
+      "id": "rome-republic-empire",
+      "name": "Rome",
+      "cats": [
+        "Battles involving the Roman Republic",
+        "Battles involving the Roman Empire",
+        "Battles involving ancient Rome"
+      ],
+      "titles": [
+        "Roman Empire",
+        "Roman Republic",
+        "Ancient Rome",
+        "Western Roman Empire",
+        "Kingdom of Rome",
+        "Roman Kingdom",
+        "Roman Italy"
+      ]
+    },
+    {
+      "id": "han",
+      "name": "Han China",
+      "cats": [
+        "Battles involving the Han dynasty"
+      ],
+      "titles": [
+        "Han dynasty",
+        "Western Han",
+        "Eastern Han",
+        "Former Han",
+        "Later Han",
+        "Han Empire"
+      ]
+    },
+    {
+      "id": "maurya",
+      "name": "Maurya Empire",
+      "cats": [
+        "Battles involving the Maurya Empire"
+      ],
+      "titles": [
+        "Maurya Empire",
+        "Mauryan Empire"
+      ]
+    },
+    {
+      "id": "persia",
+      "name": "Achaemenid Persia",
+      "cats": [
+        "Battles involving the Achaemenid Empire"
+      ],
+      "titles": [
+        "Achaemenid Empire",
+        "Persian Empire",
+        "Median Empire"
+      ]
+    },
+    {
+      "id": "china",
+      "name": "China (Tang to Qing, and the republics)",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "China",
+        "Tang dynasty",
+        "Song dynasty",
+        "Northern Song",
+        "Southern Song",
+        "Yuan dynasty",
+        "Ming dynasty",
+        "Qing dynasty",
+        "Jin dynasty (1115–1234)",
+        "Republic of China (1912–1949)",
+        "Republic of China (1912–1949)",
+        "People's Republic of China",
+        "Western Xia",
+        "Liao dynasty",
+        "Taiping Heavenly Kingdom"
+      ]
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Japan",
+        "Empire of Japan",
+        "Kamakura shogunate",
+        "Ashikaga shogunate",
+        "Muromachi period",
+        "Tokugawa shogunate",
+        "Edo period",
+        "Imperial Japan",
+        "Heian period",
+        "Minamoto clan",
+        "Taira clan"
+      ]
+    },
+    {
+      "id": "korea",
+      "name": "Korea",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Korea",
+        "Joseon",
+        "Goryeo",
+        "Korean Empire",
+        "Silla",
+        "Unified Silla",
+        "Later Silla",
+        "Balhae",
+        "South Korea",
+        "North Korea"
+      ]
+    },
+    {
+      "id": "vietnam",
+      "name": "Vietnam",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Vietnam",
+        "Đại Việt",
+        "Dai Viet",
+        "Lê dynasty",
+        "Early Lê dynasty",
+        "Later Lê dynasty",
+        "Trần dynasty",
+        "Nguyễn dynasty",
+        "Tây Sơn dynasty",
+        "Lý dynasty",
+        "North Vietnam",
+        "Democratic Republic of Vietnam"
+      ],
+      "allow_war": true
+    },
+    {
+      "id": "thailand",
+      "name": "Siam and Thailand",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Thailand",
+        "Siam",
+        "Ayutthaya Kingdom",
+        "Kingdom of Ayutthaya",
+        "Thonburi Kingdom",
+        "Rattanakosin Kingdom",
+        "Kingdom of Siam",
+        "Sukhothai Kingdom"
+      ],
+      "allow_war": true
+    },
+    {
+      "id": "mongol-empire",
+      "name": "Mongol Empire",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Mongol Empire",
+        "Mongols",
+        "Great Mongol State"
+      ]
+    },
+    {
+      "id": "delhi-sultanate",
+      "name": "Delhi Sultanate",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Delhi Sultanate"
+      ]
+    },
+    {
+      "id": "mali-empire",
+      "name": "Mali Empire",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Mali Empire"
+      ]
+    },
+    {
+      "id": "songhai-empire",
+      "name": "Songhai Empire",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Songhai Empire",
+        "Songhai"
+      ]
+    },
+    {
+      "id": "aztec-empire",
+      "name": "Aztec Empire",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Aztec Empire",
+        "Aztec Triple Alliance",
+        "Tenochtitlan",
+        "Mexica"
+      ]
+    },
+    {
+      "id": "inca-empire",
+      "name": "Inca Empire",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Inca Empire",
+        "Tawantinsuyu"
+      ]
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Mexico",
+        "First Mexican Republic",
+        "Second Mexican Empire",
+        "Mexican Empire",
+        "Mexican Republic"
+      ]
+    },
+    {
+      "id": "united-states",
+      "name": "United States",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "United States",
+        "Confederate States of America",
+        "Union (American Civil War)"
+      ]
+    },
+    {
+      "id": "zulu-kingdom",
+      "name": "Zulu Kingdom",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Zulu Kingdom",
+        "Zulu people"
+      ]
+    },
+    {
+      "id": "mamluk-sultanate",
+      "name": "Mamluk Sultanate",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Mamluk Sultanate",
+        "Mamluk Sultanate (Cairo)",
+        "Mamluks"
+      ]
+    },
+    {
+      "id": "russia",
+      "name": "Russia",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Russia",
+        "Russian Empire",
+        "Tsardom of Russia",
+        "Grand Principality of Moscow",
+        "Grand Duchy of Moscow",
+        "Muscovy",
+        "Russian Republic",
+        "Russian SFSR"
+      ]
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "per_timeline": 3,
+      "cats": [],
+      "titles": [
+        "Australia",
+        "Dominion of Australia",
+        "Commonwealth of Australia"
+      ]
+    },
+    {
+      "id": "khmer",
+      "name": "Khmer Empire",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Khmer Empire",
+        "Angkor",
+        "Cambodia",
+        "Kingdom of Cambodia"
+      ]
+    },
+    {
+      "id": "champa",
+      "name": "Champa",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Champa",
+        "Lâm Ấp"
+      ]
+    },
+    {
+      "id": "majapahit",
+      "name": "Majapahit and Srivijaya",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Majapahit",
+        "Singhasari",
+        "Srivijaya"
+      ]
+    },
+    {
+      "id": "pagan",
+      "name": "Pagan Kingdom",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Pagan Kingdom",
+        "Pagan Empire",
+        "Bagan"
+      ]
+    },
+    {
+      "id": "kush",
+      "name": "Kush and Meroë",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Kingdom of Kush",
+        "Kushites",
+        "Kingdom of Meroë",
+        "Kush",
+        "Napata"
+      ]
+    },
+    {
+      "id": "makuria",
+      "name": "Makuria",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Kingdom of Makuria",
+        "Makuria",
+        "Banu Kanz"
+      ]
+    },
+    {
+      "id": "maya",
+      "name": "Maya",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Maya civilization",
+        "Tikal",
+        "Calakmul",
+        "Maya peoples",
+        "Kaan kingdom"
+      ]
+    },
+    {
+      "id": "andes",
+      "name": "Andean states before the Inca",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Wari Empire",
+        "Tiwanaku Empire",
+        "Tiwanaku",
+        "Moche culture",
+        "Nazca culture",
+        "Chimor",
+        "Chimú"
+      ]
+    },
+    {
+      "id": "goguryeo",
+      "name": "Korea: Three Kingdoms",
+      "per_timeline": 3,
+      "allow_war": true,
+      "cats": [],
+      "titles": [
+        "Goguryeo",
+        "Baekje",
+        "Silla",
+        "Unified Silla",
+        "Gaya confederacy",
+        "Gojoseon"
+      ]
+    }
+  ],
+  "wars": [
+    {
+      "title": "Thirty Years' War",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span four regions (all participants' rows, Europe and beyond); Kevin's rule: named multi-region war"
+    },
+    {
+      "title": "World War I",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "members": [
+        {
+          "article": "Allies of World War I",
+          "sections": [
+            "Affiliated state combatants",
+            "Leaders"
+          ]
+        }
+      ],
+      "wide_by": "combatants span 14 regions"
+    },
+    {
+      "title": "World War II",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "members": [
+        {
+          "article": "Allies of World War II",
+          "dated_list": "Timeline of Allied states entering the war"
+        },
+        {
+          "article": "Axis powers",
+          "sections": [
+            "Major Axis powers",
+            "Other Tripartite Pact signatories"
+          ],
+          "initiators_of": "Declarations of war during World War II",
+          "not_before": "1939-09-01",
+          "exclude": [
+            "Yugoslavia",
+            "Independent State of Croatia"
+          ]
+        }
+      ],
+      "wide_by": "combatants span 13 regions"
+    },
+    {
+      "title": "Seven Years' War",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span 5 regions (Europe, the Americas, South Asia, West Africa)"
+    },
+    {
+      "title": "Napoleonic Wars",
+      "sub": "war",
+      "wide": true,
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span 4 regions and 18 rows"
+    },
+    {
+      "title": "Second Sino-Japanese War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants"
+    },
+    {
+      "title": "Paraguayan War",
+      "sub": "war",
+      "countries": [],
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "south-america",
+      "wide_by": "mass involvement across the region: \"Total: 150,000–500,000 dead\"; four states, all in South America (Kevin, 2026-11-24)"
+    },
+    {
+      "title": "Mahdist War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants"
+    },
+    {
+      "title": "Hundred Years' War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "War of the Spanish Succession",
+      "sub": "war",
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "wide": true,
+      "wide_by": "combatants span several regions; the Architect lists it as a Wars-row war"
+    },
+    {
+      "title": "Great Northern War",
+      "sub": "war",
+      "countries": [],
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "europe",
+      "wide_by": "mass involvement across the region: peak strength 100,000 vs 200,000; \"1,000,000+ total deaths with Sweden alone suffering 350,000 deaths\"; nine states in four regions (Kevin, 2026-11-24)"
+    },
+    {
+      "title": "American Revolutionary War",
+      "sub": "war",
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "wide": true,
+      "wide_by": "combatants span several regions; the Architect lists it as a Wars-row war"
+    },
+    {
+      "title": "Crimean War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Russo-Japanese War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "War of the Pacific",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Korean War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Vietnam War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Iran–Iraq War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Chaco War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Second Congo War",
+      "sub": "war",
+      "countries": [],
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "africa",
+      "wide_by": "mass involvement across the region: \"drew in nine African nations and approximately 25 armed groups\"; \"an estimated 5.4 million deaths\" (Kevin, 2026-11-24)"
+    },
+    {
+      "title": "Gempei War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Ōnin War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Mongol conquest of the Song dynasty",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Jin–Song wars",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Tripartite Struggle",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Almohad conquest of Ifriqiya",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Fatimid conquest of Egypt",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Muslim conquest of Sindh",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Red Turban Rebellion",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Goryeo–Khitan War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    }
+  ],
+  "row_aliases": {
+    "German Empire": "germany",
+    "Russian Empire": "russia",
+    "Tsardom of Russia": "russia",
+    "Kingdom of Italy": "italy",
+    "Kingdom of Italy (1861–1946)": "italy",
+    "Austria-Hungary": "habsburg-monarchy",
+    "Austrian Empire": "habsburg-monarchy",
+    "Habsburg monarchy": "habsburg-monarchy",
+    "Kingdom of Bulgaria": "bulgaria",
+    "Principality of Bulgaria": "bulgaria",
+    "Dutch Republic": "netherlands",
+    "Kingdom of the Netherlands": "netherlands",
+    "Swedish Empire": "sweden",
+    "Kingdom of Sweden": "sweden",
+    "Brandenburg–Prussia": "prussia",
+    "Brandenburg-Prussia": "prussia",
+    "Kingdom of Prussia": "prussia",
+    "Kingdom of Serbia": "serbia",
+    "Empire of Japan": "japan",
+    "Kingdom of Belgium": "belgium",
+    "Kingdom of Romania": "romania",
+    "Kingdom of Greece": "greece",
+    "Kingdom of Montenegro": "montenegro",
+    "First Portuguese Republic": "portugal",
+    "Portuguese Republic": "portugal",
+    "Kingdom of Portugal": "portugal",
+    "United Kingdom of Great Britain and Ireland": "united-kingdom",
+    "Kingdom of Great Britain": "united-kingdom",
+    "Kingdom of England": "united-kingdom",
+    "Canada in World War I": "canada",
+    "Dominion of New Zealand": "new-zealand",
+    "Union of South Africa": "south-africa",
+    "British Raj": "india",
+    "Sultanate of Egypt": "egypt",
+    "Spanish Empire": "spanish-empire",
+    "Kingdom of Spain": "spain",
+    "Denmark–Norway": "denmark-norway",
+    "Duchy of Savoy": "savoy",
+    "Savoyard state": "savoy",
+    "Second Polish Republic": "poland",
+    "Kingdom of Yugoslavia": "yugoslavia",
+    "Denmark": "denmark",
+    "Netherlands": "netherlands",
+    "Empire of Brazil": "brazil",
+    "Kingdom of Naples": "naples",
+    "United Kingdom of the Netherlands": "netherlands",
+    "Khedivate of Egypt": "egypt",
+    "Peru": "peru",
+    "Kingdom of Hungary": "hungary",
+    "Almohad Caliphate": "morocco"
+  }
+}

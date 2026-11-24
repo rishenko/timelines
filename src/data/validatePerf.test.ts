@@ -5,6 +5,9 @@
 // about 110 ms the night before as Modern States went from 1,511 to 6,828 events (validate.ts unchanged), so the
 // budget scales with the event count: 25 µs per event (512 ms today), about 1.3× the slowest CI run. When every
 // track's chronology rebuilt the track index (tracks × tracks) it took 1–2 s at the same row count.
+// That bug grows with rows, not events, so a second test validates the rows alone (with only the events their edges
+// name), on a budget per row: 100 µs (183 ms today; about 20 ms on a laptop, fastest of 7, and 40 ms at twice the
+// rows). A tracks × tracks pass is far over it at any size, and grows past it faster as rows are added.
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { bigDataset } from '../test/bigDataset.ts';
@@ -13,6 +16,8 @@ import { validateDataset } from './validate.ts';
 
 /** Per event: the budget grows with the data, which a linear validation does too. */
 const BUDGET_US_PER_EVENT = 25;
+/** Per row, for the rows alone. */
+const BUDGET_US_PER_ROW = 100;
 const modern = JSON.parse(readFileSync(new URL('../../public/timelines/modern-states.json', import.meta.url), 'utf8')) as Dataset;
 
 /** The fastest of a few runs, so one slow moment on a busy machine doesn't fail the test. */
@@ -36,5 +41,21 @@ describe('validation on a large timeline', () => {
 
   it(`takes under ${BUDGET_US_PER_EVENT} µs per event`, () => {
     expect(fastest(() => validateDataset(big)), `budget ${budget} ms for ${big.events.length} events`).toBeLessThan(budget);
+  });
+});
+
+describe('validation of many rows', () => {
+  const big = bigDataset(modern, 3);
+  // only the events a row's lifespan, phases or memberships begin or end with, so the file stays valid
+  const named = new Set(JSON.stringify(big.tracks).match(/"(?:startEvent|endEvent)":"[^"]+"/g)?.map((m) => m.split('"')[3]) ?? []);
+  const rows: Dataset = { ...big, events: big.events.filter((e) => named.has(e.uuid)) };
+  const budget = Math.round((BUDGET_US_PER_ROW * rows.tracks.length) / 1000);
+
+  it('is a valid timeline', () => {
+    expect(validateDataset(rows)).toEqual([]);
+  });
+
+  it(`takes under ${BUDGET_US_PER_ROW} µs per row`, () => {
+    expect(fastest(() => validateDataset(rows)), `budget ${budget} ms for ${rows.tracks.length} rows, ${rows.events.length} events`).toBeLessThan(budget);
   });
 });

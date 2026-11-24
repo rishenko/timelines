@@ -1407,6 +1407,93 @@
           ],
           "startEvent": "seato-founded",
           "endEvent": "seato-dissolved"
+        },
+        {
+          "row": "seven-years-war",
+          "start": 1756,
+          "startDates": [
+            {
+              "year": 1756,
+              "source": {
+                "sourceKey": "wp-seven-years-war",
+                "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-seven-years-war",
+              "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+            }
+          ],
+          "end": 1763,
+          "endDates": [
+            {
+              "year": 1763,
+              "source": {
+                "sourceKey": "wp-seven-years-war",
+                "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+              }
+            }
+          ]
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1635,
+          "startDates": [
+            {
+              "year": 1635,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "article text (a sentence saying when it entered): Richelieu provided the Swedes with new subsidies, hired mercenaries led by Bernard of Saxe-Weimar for an offensive in the Rhineland, and in May 1635 initiated the Franco–Spanish War (1635–1659)."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "article text (a sentence saying when it entered): Richelieu provided the Swedes with new subsidies, hired mercenaries led by Bernard of Saxe-Weimar for an offensive in the Rhineland, and in May 1635 initiated the Franco–Spanish War (1635–1659)."
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -1446,7 +1533,38 @@
           }
         ],
         "endEvent": "hre-dissolved"
-      }
+      },
+      "memberOf": [
+        {
+          "row": "thirty-years-war",
+          "start": 1635,
+          "startDates": [
+            {
+              "year": 1635,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "german-confederation",
@@ -1852,6 +1970,35 @@
           ],
           "startEvent": "comecon-admits-1950",
           "endEvent": "reunification"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -2052,6 +2199,64 @@
             }
           ],
           "startEvent": "ngc-founded"
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+            }
+          ],
+          "end": 1635,
+          "endDates": [
+            {
+              "year": 1635,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+              }
+            }
+          ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1702,
+          "startDates": [
+            {
+              "year": 1702,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox combatant2a: (from 1702)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox combatant2a: (from 1702)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ]
         }
       ]
     },
@@ -2189,6 +2394,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Yugoslavia: 6 April 1941 (Yugoslavia signed the Tripartite Pact, becoming a nominal member of the Axis on 25 March. The signing of the pact was met with coup d'état on 27 March by pro-western forces which led to an invasion by the Axis on 6 April 1941.)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Yugoslavia: 6 April 1941 (Yugoslavia signed the Tripartite Pact, becoming a nominal member of the Axis on 25 March. The signing of the pact was met with coup d'état on 27 March by pro-western forces which led to an invasion by the Axis on 6 April 1941.)"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -3048,7 +3282,38 @@
             }
           }
         ]
-      }
+      },
+      "memberOf": [
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "dutch-empire",
@@ -4196,6 +4461,35 @@
           ],
           "startEvent": "fall-of-tenochtitlan",
           "endEvent": "mexican-independence-war"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1942,
+          "startDates": [
+            {
+              "year": 1942,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Mexico: 22 May 1942"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Mexico: 22 May 1942"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -4416,6 +4710,93 @@
           ],
           "startEvent": "cento-admits-1955",
           "endEvent": "cento-dissolved"
+        },
+        {
+          "row": "american-revolutionary-war",
+          "start": 1775,
+          "startDates": [
+            {
+              "year": 1775,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+            }
+          ],
+          "end": 1783,
+          "endDates": [
+            {
+              "year": 1783,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+              }
+            }
+          ]
+        },
+        {
+          "row": "seven-years-war",
+          "start": 1756,
+          "startDates": [
+            {
+              "year": 1756,
+              "source": {
+                "sourceKey": "wp-seven-years-war",
+                "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-seven-years-war",
+              "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+            }
+          ],
+          "end": 1763,
+          "endDates": [
+            {
+              "year": 1763,
+              "source": {
+                "sourceKey": "wp-seven-years-war",
+                "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -4807,7 +5188,38 @@
           }
         ],
         "endEvent": "treaty-of-kiel"
-      }
+      },
+      "memberOf": [
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+            }
+          ],
+          "end": 1635,
+          "endDates": [
+            {
+              "year": 1635,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sweden-norway",
@@ -4946,6 +5358,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Denmark 9 April 1940 – German invasion without declaration of war"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Denmark 9 April 1940 – German invasion without declaration of war"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5093,6 +5534,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Norway: 8 April 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Norway: 8 April 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5231,6 +5701,35 @@
             }
           ],
           "startEvent": "nato-admits-2024"
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5361,6 +5860,35 @@
             }
           ],
           "startEvent": "nato-admits-2023"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Finland: 3 March 1945 – former ally of Germany in the Continuation War. On 3 March 1945, Finland retroactively declared war on Germany from 15 September 1944."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Finland: 3 March 1945 – former ally of Germany in the Continuation War. On 3 March 1945, Finland retroactively declared war on Germany from 15 September 1944."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5761,6 +6289,37 @@
           ],
           "startEvent": "compromise-1867",
           "endEvent": "dissolution-of-austria-hungary"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
+            }
+          ],
+          "end": 1635,
+          "endDates": [
+            {
+              "year": 1635,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
+              }
+            }
+          ]
         }
       ]
     },
@@ -6377,6 +6936,64 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Netherlands: 10 May 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Netherlands: 10 May 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -6630,6 +7247,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Belgium: 10 May 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Belgium: 10 May 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -6680,6 +7326,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Luxembourg: 10 May 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Luxembourg: 10 May 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -7198,6 +7873,64 @@
             }
           ],
           "startEvent": "nato-admits-1982"
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          ],
+          "end": 1648,
+          "endDates": [
+            {
+              "year": 1648,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1701,
+          "startDates": [
+            {
+              "year": 1701,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ]
         }
       ]
     },
@@ -7774,6 +8507,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1916,
+          "startDates": [
+            {
+              "year": 1916,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -7887,6 +8649,64 @@
             {
               "sourceKey": "wp-kingdom-of-sardinia",
               "sourceLocation": "lead: \"The Congress of Vienna (1814–1815), which restructured Europe after Napoleon's defeat, returned to Savoy its mainland possessions and augmented them with Liguri\""
+            }
+          ]
+        },
+        {
+          "row": "thirty-years-war",
+          "start": 1618,
+          "startDates": [
+            {
+              "year": 1618,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+            }
+          ],
+          "end": 1635,
+          "endDates": [
+            {
+              "year": 1635,
+              "source": {
+                "sourceKey": "wp-thirty-years-war",
+                "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+              }
+            }
+          ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1703,
+          "startDates": [
+            {
+              "year": 1703,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox combatant2a: (from 1703)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox combatant2a: (from 1703)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
             }
           ]
         }
@@ -8012,6 +8832,64 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1915,
+          "startDates": [
+            {
+              "year": 1915,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox combatant1: (from 1915)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox combatant1: (from 1915)"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-axis-powers",
+                "sourceLocation": "section \"Italy\": Italy's declaration of war against the Western Allies of Britain and France in June 1940 as the following: \"We are going to war against the plutocratic and reactionary democracies of the West who have invariably hindered the progress and often threatened the very existence of the Italian people\"."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-axis-powers",
+              "sourceLocation": "section \"Italy\": Italy's declaration of war against the Western Allies of Britain and France in June 1940 as the following: \"We are going to war against the plutocratic and reactionary democracies of the West who have invariably hindered the progress and often threatened the very existence of the Italian people\"."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -8926,6 +9804,64 @@
             }
           ],
           "startEvent": "nato-admits-1952"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1916,
+          "startDates": [
+            {
+              "year": 1916,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Greece (1916/17–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Greece (1916/17–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Greece: 28 October 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Greece: 28 October 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -10616,6 +11552,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -10996,6 +11961,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+                "sourceLocation": "table \"List of war declarations\": 1941-06-27: Hungary → "
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+              "sourceLocation": "table \"List of war declarations\": 1941-06-27: Hungary → "
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -11237,6 +12231,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1918,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Czechoslovakia (1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Czechoslovakia (1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -11721,6 +12744,35 @@
             }
           ],
           "startEvent": "nato-admits-2004"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-axis-powers",
+                "sourceLocation": "section \"Slovakia\": Slovakia declared war on the Soviet Union in 1941 and signed the revived Anti-Comintern Pact in 1941."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-axis-powers",
+              "sourceLocation": "section \"Slovakia\": Slovakia declared war on the Soviet Union in 1941 and signed the revived Anti-Comintern Pact in 1941."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12044,6 +13096,64 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1916,
+          "startDates": [
+            {
+              "year": 1916,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Romania (1916–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Romania (1916–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-axis-powers",
+                "sourceLocation": "section \"Romania\": Romania joined the German-led invasion of the Soviet Union on June 22, 1941."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-axis-powers",
+              "sourceLocation": "section \"Romania\": Romania joined the German-led invasion of the Soviet Union on June 22, 1941."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12260,6 +13370,64 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1915,
+          "startDates": [
+            {
+              "year": 1915,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox combatant2: (from 1915)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox combatant2: (from 1915)"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-axis-powers",
+                "sourceLocation": "section \"Bulgaria\": Bulgarian government declared war on the Western Allies."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-axis-powers",
+              "sourceLocation": "section \"Bulgaria\": Bulgarian government declared war on the Western Allies."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12533,6 +13701,35 @@
           ],
           "startEvent": "soviet-union-founded",
           "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Russia (1914–1917) ==="
+            }
+          ],
+          "end": 1917,
+          "endDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Russia (1914–1917) ==="
+              }
+            }
+          ]
         }
       ]
     },
@@ -12628,6 +13825,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Soviet Union: 22 June 1941; Despite membership of the Soviet Union, Ukraine and Belarus were recognized as separate fighting states by the United Kingdom and the United States at the end of the war."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Soviet Union: 22 June 1941; Despite membership of the Soviet Union, Ukraine and Belarus were recognized as separate fighting states by the United Kingdom and the United States at the end of the war."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -19021,6 +20247,35 @@
           ],
           "startEvent": "cento-founded",
           "endEvent": "cento-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Turkey: 23 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Turkey: 23 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -20310,6 +21565,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Lebanon: 27 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Lebanon: 27 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -21115,6 +22399,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Saudi Arabia: 1 March 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Saudi Arabia: 1 March 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -25214,6 +26527,37 @@
           ],
           "startEvent": "prc-proclaimed"
         }
+      ],
+      "memberOf": [
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": China: 9 December 1941 (at war with Japan since 1937)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": China: 9 December 1941 (at war with Japan since 1937)"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
+        }
       ]
     },
     {
@@ -25713,6 +27057,37 @@
             {
               "sourceKey": "wp-japan",
               "sourceLocation": "lead: \"With a population of almost 123 million as of 2026, it is the world's 11th most populous country.\" (current state)"
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-axis-powers",
+                "sourceLocation": "section \"Japan\": On 7 December 1941 Japan declared war on the United States and the British Empire."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-axis-powers",
+              "sourceLocation": "section \"Japan\": On 7 December 1941 Japan declared war on the United States and the British Empire."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
             }
           ]
         }
@@ -28669,6 +30044,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1993"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1917,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Siam (1917–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Siam (1917–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -32472,6 +33876,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -33032,6 +34465,93 @@
           ],
           "startEvent": "seato-founded",
           "endEvent": "seato-dissolved"
+        },
+        {
+          "row": "american-revolutionary-war",
+          "start": 1776,
+          "startDates": [
+            {
+              "year": 1776,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox combatant1: (from 1776)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox combatant1: (from 1776)"
+            }
+          ],
+          "end": 1783,
+          "endDates": [
+            {
+              "year": 1783,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-i",
+          "start": 1917,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox combatant1: (from 1917)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox combatant1: (from 1917)"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -33537,6 +35057,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1993"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Guatemala: 9 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Guatemala: 9 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -33684,6 +35233,35 @@
           ],
           "startEvent": "central-america-leaves-mexico",
           "endEvent": "frca-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": El Salvador: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": El Salvador: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -33844,6 +35422,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1995"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Honduras: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Honduras: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -34004,6 +35611,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1979"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Nicaragua: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Nicaragua: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -34168,6 +35804,35 @@
           ],
           "startEvent": "central-america-leaves-mexico",
           "endEvent": "costa-rica-leaves-federation"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Costa Rica: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Costa Rica: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -34530,6 +36195,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1976"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Panama: 7 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Panama: 7 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -38683,6 +40377,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1983"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1943,
+          "startDates": [
+            {
+              "year": 1943,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Colombia: 26 July 1943"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Colombia: 26 July 1943"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -39147,6 +40870,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1983"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Ecuador: 2 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Ecuador: 2 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -39329,6 +41081,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1973"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Peru: 12 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Peru: 12 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -39938,6 +41719,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1973"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Argentina: 27 March 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Argentina: 27 March 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -40074,6 +41884,35 @@
           ],
           "startEvent": "paraguay-joins-viceroyalty",
           "endEvent": "paraguayan-independence"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Paraguay: 7 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Paraguay: 7 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -40193,6 +42032,35 @@
           ],
           "startEvent": "brazilian-independence",
           "endEvent": "treaty-of-montevideo-1828"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Uruguay: 15 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Uruguay: 15 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -40516,6 +42384,35 @@
           ],
           "startEvent": "uk-pba-founded",
           "endEvent": "brazilian-independence"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1917,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Brazil (1917–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Brazil (1917–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -42996,6 +44893,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1964"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1944,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Liberia: 27 January 1944"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Liberia: 27 January 1944"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -48019,6 +49945,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1942,
+          "startDates": [
+            {
+              "year": 1942,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Ethiopia: 14 December 1942"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Ethiopia: 14 December 1942"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -54166,6 +56121,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1994"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -55525,6 +57509,35 @@
           ],
           "startEvent": "seato-founded",
           "endEvent": "seato-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -55694,6 +57707,35 @@
           ],
           "startEvent": "seato-founded",
           "endEvent": "seato-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -58698,6 +60740,249 @@
           }
         ],
         "startEvent": "nam-founded"
+      }
+    },
+    {
+      "id": "wars",
+      "name": "Wars",
+      "color": "#8c3a3a",
+      "kind": "theme"
+    },
+    {
+      "id": "american-revolutionary-war",
+      "name": "American Revolutionary War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+      "span": {
+        "start": 1775,
+        "startDates": [
+          {
+            "year": 1775,
+            "source": {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+            }
+          }
+        ],
+        "startMonth": 4,
+        "startDay": 19,
+        "end": 1783,
+        "endDates": [
+          {
+            "year": 1783,
+            "source": {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 3
+      }
+    },
+    {
+      "id": "napoleonic-wars",
+      "name": "Napoleonic Wars",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Napoleonic_Wars",
+      "span": {
+        "start": 1803,
+        "startDates": [
+          {
+            "year": 1803,
+            "source": {
+              "sourceKey": "wp-napoleonic-wars",
+              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+            }
+          }
+        ],
+        "startMonth": 5,
+        "startDay": 18,
+        "end": 1815,
+        "endDates": [
+          {
+            "year": 1815,
+            "source": {
+              "sourceKey": "wp-napoleonic-wars",
+              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+            }
+          }
+        ],
+        "endMonth": 11,
+        "endDay": 20
+      }
+    },
+    {
+      "id": "seven-years-war",
+      "name": "Seven Years' War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Seven_Years'_War",
+      "span": {
+        "start": 1756,
+        "startDates": [
+          {
+            "year": 1756,
+            "source": {
+              "sourceKey": "wp-seven-years-war",
+              "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+            }
+          }
+        ],
+        "startMonth": 5,
+        "startDay": 17,
+        "end": 1763,
+        "endDates": [
+          {
+            "year": 1763,
+            "source": {
+              "sourceKey": "wp-seven-years-war",
+              "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+            }
+          }
+        ],
+        "endMonth": 2,
+        "endDay": 10
+      }
+    },
+    {
+      "id": "thirty-years-war",
+      "name": "Thirty Years' War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Thirty_Years'_War",
+      "span": {
+        "start": 1618,
+        "startDates": [
+          {
+            "year": 1618,
+            "source": {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          }
+        ],
+        "startMonth": 5,
+        "startDay": 23,
+        "end": 1648,
+        "endDates": [
+          {
+            "year": 1648,
+            "source": {
+              "sourceKey": "wp-thirty-years-war",
+              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+            }
+          }
+        ],
+        "endMonth": 10,
+        "endDay": 24
+      }
+    },
+    {
+      "id": "war-of-the-spanish-succession",
+      "name": "War of the Spanish Succession",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
+      "span": {
+        "start": 1701,
+        "startDates": [
+          {
+            "year": 1701,
+            "source": {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          }
+        ],
+        "startMonth": 3,
+        "end": 1714,
+        "endDates": [
+          {
+            "year": 1714,
+            "source": {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 7
+      }
+    },
+    {
+      "id": "world-war-i",
+      "name": "World War I",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "span": {
+        "start": 1914,
+        "startDates": [
+          {
+            "year": 1914,
+            "source": {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+            }
+          }
+        ],
+        "startMonth": 7,
+        "startDay": 28,
+        "end": 1918,
+        "endDates": [
+          {
+            "year": 1918,
+            "source": {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+            }
+          }
+        ],
+        "endMonth": 11,
+        "endDay": 11
+      }
+    },
+    {
+      "id": "world-war-ii",
+      "name": "World War II",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
+      "span": {
+        "start": 1939,
+        "startDates": [
+          {
+            "year": 1939,
+            "source": {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          }
+        ],
+        "startMonth": 9,
+        "startDay": 1,
+        "end": 1945,
+        "endDates": [
+          {
+            "year": 1945,
+            "source": {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 2
       }
     },
     {
@@ -74213,6 +76498,350 @@
         "wikipedia"
       ]
     },
+    "wp-1960-ethiopian-coup-attempt": {
+      "name": "1960 Ethiopian coup attempt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1960_Ethiopian_coup_attempt",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2006-thai-coup-d-tat": {
+      "name": "2006 Thai coup d'état (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2006_Thai_coup_d'état",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2014-russian-annexation-of-crimea": {
+      "name": "2014 Russian annexation of Crimea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2014_Russian_annexation_of_Crimea",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-2025-cambodian-thai-border-crisis": {
+      "name": "2025 Cambodian–Thai border crisis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2025_Cambodian–Thai_border_crisis",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-buena-vista": {
+      "name": "Battle of Buena Vista (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Buena_Vista",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-chapultepec": {
+      "name": "Battle of Chapultepec (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Chapultepec",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-dholpur": {
+      "name": "Battle of Dholpur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Dholpur",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-france": {
+      "name": "Battle of France (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_France",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-gettysburg": {
+      "name": "Battle of Gettysburg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-ghaghra": {
+      "name": "Battle of Ghaghra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ghaghra",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-inchon": {
+      "name": "Battle of Inchon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Inchon",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-jenn": {
+      "name": "Battle of Jenné (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Jenné",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-leipzig": {
+      "name": "Battle of Leipzig (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Leipzig",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-magdala": {
+      "name": "Battle of Magdala (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Magdala",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-okinawa": {
+      "name": "Battle of Okinawa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Okinawa",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-ollantaytambo": {
+      "name": "Battle of Ollantaytambo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ollantaytambo",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-rorke-s-drift": {
+      "name": "Battle of Rorke's Drift (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Rorke's_Drift",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-trafalgar": {
+      "name": "Battle of Trafalgar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Trafalgar",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-veracruz-1914": {
+      "name": "Battle of Veracruz (1914) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Veracruz_(1914)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-waterloo": {
+      "name": "Battle of Waterloo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-the-bulge": {
+      "name": "Battle of the Bulge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Bulge",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-the-pusan-perimeter": {
+      "name": "Battle of the Pusan Perimeter (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Pusan_Perimeter",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cambodian-campaign": {
+      "name": "Cambodian campaign (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cambodian_campaign",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-fall-of-the-derg-regime": {
+      "name": "Fall of the Derg regime (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_the_Derg_regime",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-indian-campaign-of-ahmad-shah-durrani": {
+      "name": "Indian campaign of Ahmad Shah Durrani (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indian_campaign_of_Ahmad_Shah_Durrani",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-international-force-east-timor": {
+      "name": "International Force East Timor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/International_Force_East_Timor",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ja-thak-wa-uprising": {
+      "name": "Ja Thak Wa uprising (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ja_Thak_Wa_uprising",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-la-noche-triste": {
+      "name": "La Noche Triste (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/La_Noche_Triste",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-menelik-ii-s-conquests": {
+      "name": "Menelik II's conquests (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Menelik_II's_conquests",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-muhammad-ali-s-rise-to-power": {
+      "name": "Muhammad Ali's rise to power (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muhammad_Ali's_rise_to_power",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mukden-incident": {
+      "name": "Mukden incident (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mukden_incident",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-new-guinea-campaign": {
+      "name": "New Guinea campaign (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/New_Guinea_campaign",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-northern-expedition": {
+      "name": "Northern Expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Northern_Expedition",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-occupation-of-constantinople": {
+      "name": "Occupation of Constantinople (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Occupation_of_Constantinople",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-operation-torch": {
+      "name": "Operation Torch (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Operation_Torch",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-qing-invasion-of-joseon": {
+      "name": "Qing invasion of Joseon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qing_invasion_of_Joseon",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-seven-years-war": {
+      "name": "Seven Years' War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seven_Years'_War",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-delhi-1857": {
+      "name": "Siege of Delhi (1857) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Delhi_(1857)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-tobruk": {
+      "name": "Siege of Tobruk (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Tobruk",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-allies-of-world-war-i": {
+      "name": "Allies of World War I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Allies_of_World_War_I",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-allies-of-world-war-ii": {
+      "name": "Allies of World War II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Allies_of_World_War_II",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-axis-powers": {
+      "name": "Axis powers (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Axis_powers",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-declarations-of-war-during-world-war-ii": {
+      "name": "Declarations of war during World War II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Declarations_of_war_during_World_War_II",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-14th-dalai-lama": {
       "name": "14th Dalai Lama (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/14th_Dalai_Lama",
@@ -81344,14 +83973,6 @@
     "wp-deodoro-da-fonseca": {
       "name": "Deodoro da Fonseca (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Deodoro_da_Fonseca",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-derog-gioura": {
-      "name": "Derog Gioura (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Derog_Gioura",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -108825,7 +111446,8 @@
         "south-africa",
         "australia",
         "new-zealand",
-        "nauru"
+        "nauru",
+        "world-war-i"
       ],
       "sources": [
         {
@@ -108921,7 +111543,8 @@
         "south-africa",
         "australia",
         "new-zealand",
-        "tonga"
+        "tonga",
+        "world-war-ii"
       ],
       "sources": [
         {
@@ -110764,7 +113387,8 @@
         "france",
         "united-kingdom",
         "habsburg-monarchy",
-        "netherlands"
+        "netherlands",
+        "war-of-the-spanish-succession"
       ],
       "sources": [
         {
@@ -111667,7 +114291,8 @@
         "france",
         "denmark",
         "spain",
-        "habsburg-monarchy"
+        "habsburg-monarchy",
+        "thirty-years-war"
       ],
       "sources": [
         {
@@ -111699,7 +114324,8 @@
         "sweden",
         "polish-lithuanian-commonwealth",
         "denmark-norway",
-        "russia"
+        "russia",
+        "europe"
       ],
       "sources": [
         {
@@ -111735,7 +114361,8 @@
         "spain",
         "portugal",
         "sweden",
-        "russia"
+        "russia",
+        "napoleonic-wars"
       ],
       "sources": [
         {
@@ -130038,7 +132665,8 @@
         "united-states",
         "british-empire",
         "united-kingdom",
-        "france"
+        "france",
+        "american-revolutionary-war"
       ],
       "sources": [
         {
@@ -136663,7 +139291,8 @@
         "paraguay",
         "brazil",
         "argentina",
-        "uruguay"
+        "uruguay",
+        "south-america"
       ],
       "sources": [
         {
@@ -142981,7 +145610,8 @@
         "uganda",
         "burundi",
         "zimbabwe",
-        "namibia"
+        "namibia",
+        "africa"
       ],
       "sources": [
         {
@@ -155437,6 +158067,1269 @@
             {
               "sourceKey": "wp-1999-odisha-cyclone",
               "sourceLocation": "lead: \"The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-dholpur",
+      "title": "Battle of Dholpur",
+      "descr": "",
+      "start": 1519,
+      "tracks": [
+        "mewar",
+        "delhi-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-dholpur",
+          "sourceLocation": "infobox date: 1519"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-dholpur",
+              "sourceLocation": "infobox date: 1519"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-la-noche-triste",
+      "title": "La Noche Triste",
+      "descr": "",
+      "start": 1520,
+      "tracks": [
+        "aztec-empire"
+      ],
+      "startMonth": 6,
+      "startDay": 30,
+      "sources": [
+        {
+          "sourceKey": "wp-la-noche-triste",
+          "sourceLocation": "infobox date: June 30 – July 1, 1520"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-la-noche-triste",
+              "sourceLocation": "infobox date: June 30 – July 1, 1520"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-ghaghra",
+      "title": "Battle of Ghaghra",
+      "descr": "",
+      "start": 1529,
+      "tracks": [
+        "mughal-empire",
+        "delhi-sultanate"
+      ],
+      "startMonth": 5,
+      "startDay": 6,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-ghaghra",
+          "sourceLocation": "infobox date: 6 May 1529"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-ghaghra",
+              "sourceLocation": "infobox date: 6 May 1529"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-ollantaytambo",
+      "title": "Battle of Ollantaytambo",
+      "descr": "",
+      "start": 1537,
+      "tracks": [
+        "inca-empire",
+        "spanish-empire"
+      ],
+      "startMonth": 1,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-ollantaytambo",
+          "sourceLocation": "infobox date: January, 1537"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-ollantaytambo",
+              "sourceLocation": "infobox date: January, 1537"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-jenn",
+      "title": "Battle of Jenné",
+      "descr": "",
+      "start": 1599,
+      "tracks": [
+        "mali-empire"
+      ],
+      "startMonth": 4,
+      "startDay": 26,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-jenn",
+          "sourceLocation": "infobox date: April 26, 1599"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-jenn",
+              "sourceLocation": "infobox date: April 26, 1599"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-qing-invasion-of-joseon",
+      "title": "Qing invasion of Joseon",
+      "descr": "",
+      "start": 1636,
+      "tracks": [
+        "china",
+        "korea"
+      ],
+      "startMonth": 12,
+      "startDay": 9,
+      "end": 1637,
+      "endMonth": 1,
+      "endDay": 30,
+      "sources": [
+        {
+          "sourceKey": "wp-qing-invasion-of-joseon",
+          "sourceLocation": "infobox date: 9 December 1636 – 30 January 1637"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-qing-invasion-of-joseon",
+              "sourceLocation": "infobox date: 9 December 1636 – 30 January 1637"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-indian-campaign-of-ahmad-shah-durrani",
+      "title": "Indian campaign of Ahmad Shah Durrani",
+      "descr": "",
+      "start": 1748,
+      "tracks": [
+        "durrani-empire",
+        "mughal-empire"
+      ],
+      "startMonth": 1,
+      "startDay": 11,
+      "end": 1770,
+      "endMonth": 6,
+      "sources": [
+        {
+          "sourceKey": "wp-indian-campaign-of-ahmad-shah-durrani",
+          "sourceLocation": "infobox date: 11 January 1748 – June 1770"
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1770,
+          "source": {
+            "sourceKey": "wp-indian-campaign-of-ahmad-shah-durrani",
+            "sourceLocation": "infobox date: 11 January 1748 – June 1770"
+          }
+        },
+        {
+          "year": 1769,
+          "source": {
+            "sourceKey": "wp-indian-campaign-of-ahmad-shah-durrani",
+            "sourceLocation": "lead: \"The Indian campaign of Ahmad Shah Durrani (1748–1769) was a series of invasions by the Afghan Emperor, Ahmad Shah Durrani against the declining Mughal Empire, the Maratha Empire, Sikh Confederacy, and numerous other Indian kingdoms.\""
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-indian-campaign-of-ahmad-shah-durrani",
+              "sourceLocation": "infobox date: 11 January 1748 – June 1770"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-seven-years-war",
+      "title": "Seven Years' War",
+      "descr": "",
+      "start": 1756,
+      "tracks": [
+        "seven-years-war"
+      ],
+      "startMonth": 5,
+      "startDay": 17,
+      "end": 1763,
+      "endMonth": 2,
+      "endDay": 10,
+      "sources": [
+        {
+          "sourceKey": "wp-seven-years-war",
+          "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-seven-years-war",
+              "sourceLocation": "infobox date: 17 May 1756 – 10 February 1763"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-muhammad-ali-s-rise-to-power",
+      "title": "Muhammad Ali's rise to power",
+      "descr": "",
+      "start": 1803,
+      "tracks": [
+        "ottoman-empire",
+        "united-kingdom"
+      ],
+      "end": 1807,
+      "sources": [
+        {
+          "sourceKey": "wp-muhammad-ali-s-rise-to-power",
+          "sourceLocation": "infobox date: 1803–1807"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-muhammad-ali-s-rise-to-power",
+              "sourceLocation": "infobox date: 1803–1807"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-trafalgar",
+      "title": "Battle of Trafalgar",
+      "descr": "",
+      "start": 1805,
+      "tracks": [
+        "united-kingdom",
+        "france"
+      ],
+      "startMonth": 10,
+      "startDay": 21,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-trafalgar",
+          "sourceLocation": "infobox date: 21 October 1805"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-trafalgar",
+              "sourceLocation": "infobox date: 21 October 1805"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-leipzig",
+      "title": "Battle of Leipzig",
+      "descr": "",
+      "start": 1813,
+      "tracks": [
+        "russia",
+        "france"
+      ],
+      "startMonth": 10,
+      "startDay": 16,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-leipzig",
+          "sourceLocation": "infobox date: 16–19 October 1813"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-leipzig",
+              "sourceLocation": "infobox date: 16–19 October 1813"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-waterloo",
+      "title": "Battle of Waterloo",
+      "descr": "",
+      "start": 1815,
+      "tracks": [
+        "france",
+        "united-kingdom"
+      ],
+      "startMonth": 6,
+      "startDay": 18,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-waterloo",
+          "sourceLocation": "infobox date: 18 June 1815"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-waterloo",
+              "sourceLocation": "infobox date: 18 June 1815"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-ja-thak-wa-uprising",
+      "title": "Ja Thak Wa uprising",
+      "descr": "",
+      "start": 1834,
+      "tracks": [
+        "champa",
+        "vietnam"
+      ],
+      "startMonth": 9,
+      "end": 1835,
+      "endMonth": 7,
+      "sources": [
+        {
+          "sourceKey": "wp-ja-thak-wa-uprising",
+          "sourceLocation": "infobox date: September 1834 – July 1835"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-ja-thak-wa-uprising",
+              "sourceLocation": "infobox date: September 1834 – July 1835"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-buena-vista",
+      "title": "Battle of Buena Vista",
+      "descr": "",
+      "start": 1847,
+      "tracks": [
+        "united-states",
+        "mexico"
+      ],
+      "startMonth": 2,
+      "startDay": 22,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-buena-vista",
+          "sourceLocation": "infobox date: February 22–23, 1847"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-buena-vista",
+              "sourceLocation": "infobox date: February 22–23, 1847"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-chapultepec",
+      "title": "Battle of Chapultepec",
+      "descr": "",
+      "start": 1847,
+      "tracks": [
+        "united-states",
+        "mexico"
+      ],
+      "startMonth": 9,
+      "startDay": 12,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-chapultepec",
+          "sourceLocation": "infobox date: September 12–13, 1847"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-chapultepec",
+              "sourceLocation": "infobox date: September 12–13, 1847"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-siege-of-delhi-1857",
+      "title": "Siege of Delhi (1857)",
+      "descr": "",
+      "start": 1857,
+      "tracks": [
+        "british-empire",
+        "mughal-empire"
+      ],
+      "startMonth": 6,
+      "startDay": 8,
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-delhi-1857",
+          "sourceLocation": "infobox date: 8 June 1857 – 21 September 1857"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [
+            {
+              "sourceKey": "wp-siege-of-delhi-1857",
+              "sourceLocation": "infobox date: 8 June 1857 – 21 September 1857"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-gettysburg",
+      "title": "Battle of Gettysburg",
+      "descr": "",
+      "start": 1863,
+      "tracks": [
+        "united-states"
+      ],
+      "startMonth": 7,
+      "startDay": 1,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-gettysburg",
+          "sourceLocation": "infobox date: July 1–3, 1863"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-gettysburg",
+              "sourceLocation": "infobox date: July 1–3, 1863"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-magdala",
+      "title": "Battle of Magdala",
+      "descr": "",
+      "start": 1868,
+      "tracks": [
+        "united-kingdom",
+        "ethiopia"
+      ],
+      "startMonth": 4,
+      "startDay": 9,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-magdala",
+          "sourceLocation": "infobox date: 9–13 April 1868 ()"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-magdala",
+              "sourceLocation": "infobox date: 9–13 April 1868 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-menelik-ii-s-conquests",
+      "title": "Menelik II's conquests",
+      "descr": "",
+      "start": 1878,
+      "tracks": [
+        "ethiopia",
+        "emirate-of-harar"
+      ],
+      "end": 1904,
+      "sources": [
+        {
+          "sourceKey": "wp-menelik-ii-s-conquests",
+          "sourceLocation": "lead: \"After Emperor Yohannes IV forced him to submit in 1878 he turned his attention south\""
+        },
+        {
+          "sourceKey": "wp-menelik-ii-s-conquests",
+          "sourceLocation": "infobox date: early 1880s–1904"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1878,
+          "source": {
+            "sourceKey": "wp-menelik-ii-s-conquests",
+            "sourceLocation": "lead: \"After Emperor Yohannes IV forced him to submit in 1878 he turned his attention south\""
+          }
+        },
+        {
+          "year": 1880,
+          "source": {
+            "sourceKey": "wp-menelik-ii-s-conquests",
+            "sourceLocation": "infobox date: early 1880s–1904"
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1904,
+          "source": {
+            "sourceKey": "wp-menelik-ii-s-conquests",
+            "sourceLocation": "infobox date: early 1880s–1904"
+          }
+        },
+        {
+          "year": 1900,
+          "source": {
+            "sourceKey": "wp-menelik-ii-s-conquests",
+            "sourceLocation": "lead: \"Menelik II's conquests, also known as the Agar Maqnat (), were a series of late 19th-century military campaigns led by Menelik II, king of Shewa (1865–1889) and Ethiopian Emperor (1889–1913) to expand the territory of the Ethiopian Empire.\""
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-menelik-ii-s-conquests",
+              "sourceLocation": "lead: \"After Emperor Yohannes IV forced him to submit in 1878 he turned his attention south\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-rorke-s-drift",
+      "title": "Battle of Rorke's Drift",
+      "descr": "",
+      "start": 1879,
+      "tracks": [
+        "united-kingdom",
+        "zulu-kingdom"
+      ],
+      "startMonth": 1,
+      "startDay": 22,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-rorke-s-drift",
+          "sourceLocation": "infobox date: 22–23 January 1879"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-rorke-s-drift",
+              "sourceLocation": "infobox date: 22–23 January 1879"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-veracruz-1914",
+      "title": "Battle of Veracruz (1914)",
+      "descr": "",
+      "start": 1914,
+      "tracks": [
+        "united-states",
+        "mexico"
+      ],
+      "startMonth": 4,
+      "startDay": 21,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-veracruz-1914",
+          "sourceLocation": "infobox date: April 21, 1914 – November 23, 1914 ()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-veracruz-1914",
+              "sourceLocation": "infobox date: April 21, 1914 – November 23, 1914 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-occupation-of-constantinople",
+      "title": "Occupation of Constantinople",
+      "descr": "",
+      "start": 1918,
+      "tracks": [
+        "british-empire",
+        "ottoman-empire"
+      ],
+      "startMonth": 11,
+      "startDay": 12,
+      "end": 1923,
+      "endMonth": 10,
+      "endDay": 4,
+      "sources": [
+        {
+          "sourceKey": "wp-occupation-of-constantinople",
+          "sourceLocation": "infobox date: 12 November 1918 – 4 October 1923()"
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1923,
+          "source": {
+            "sourceKey": "wp-occupation-of-constantinople",
+            "sourceLocation": "infobox date: 12 November 1918 – 4 October 1923()"
+          }
+        },
+        {
+          "year": 1918,
+          "source": {
+            "sourceKey": "wp-occupation-of-constantinople",
+            "sourceLocation": "lead: \"The occupation of Constantinople (now Istanbul, 12 November 1918 – 4 October 1923), the capital of the Ottoman Empire, by British, French, Italian, and Greek forces, took place in accordance with the Armistice of Mudros, which ended Ottoman participation in the First World War.\""
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-occupation-of-constantinople",
+              "sourceLocation": "infobox date: 12 November 1918 – 4 October 1923()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-northern-expedition",
+      "title": "Northern Expedition",
+      "descr": "",
+      "start": 1926,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 7,
+      "startDay": 9,
+      "end": 1928,
+      "endMonth": 12,
+      "endDay": 29,
+      "sources": [
+        {
+          "sourceKey": "wp-northern-expedition",
+          "sourceLocation": "infobox date: 9 July 1926 – 29 December 1928"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-northern-expedition",
+              "sourceLocation": "infobox date: 9 July 1926 – 29 December 1928"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-mukden-incident",
+      "title": "Mukden incident",
+      "descr": "",
+      "start": 1931,
+      "tracks": [
+        "china",
+        "japan"
+      ],
+      "startMonth": 9,
+      "startDay": 18,
+      "sources": [
+        {
+          "sourceKey": "wp-mukden-incident",
+          "sourceLocation": "infobox date: September 18, 1931"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-mukden-incident",
+              "sourceLocation": "infobox date: September 18, 1931"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-france",
+      "title": "Battle of France",
+      "descr": "",
+      "start": 1940,
+      "tracks": [
+        "france"
+      ],
+      "startMonth": 5,
+      "startDay": 10,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-france",
+          "sourceLocation": "infobox date: 10 May – 25 June 1940()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-france",
+              "sourceLocation": "infobox date: 10 May – 25 June 1940()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-siege-of-tobruk",
+      "title": "Siege of Tobruk",
+      "descr": "",
+      "start": 1941,
+      "tracks": [
+        "australia"
+      ],
+      "startMonth": 4,
+      "startDay": 10,
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-tobruk",
+          "sourceLocation": "infobox date: 10 April – 27 November 1941 (7 months, 2 weeks, 3 days)"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [
+            {
+              "sourceKey": "wp-siege-of-tobruk",
+              "sourceLocation": "infobox date: 10 April – 27 November 1941 (7 months, 2 weeks, 3 days)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-new-guinea-campaign",
+      "title": "New Guinea campaign",
+      "descr": "",
+      "start": 1942,
+      "tracks": [
+        "australia",
+        "japan"
+      ],
+      "startMonth": 1,
+      "startDay": 23,
+      "end": 1945,
+      "endMonth": 8,
+      "endDay": 15,
+      "sources": [
+        {
+          "sourceKey": "wp-new-guinea-campaign",
+          "sourceLocation": "infobox date: 23 January 1942 – 15 August 1945"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-new-guinea-campaign",
+              "sourceLocation": "infobox date: 23 January 1942 – 15 August 1945"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-operation-torch",
+      "title": "Operation Torch",
+      "descr": "",
+      "start": 1942,
+      "tracks": [
+        "united-states",
+        "france"
+      ],
+      "startMonth": 11,
+      "startDay": 8,
+      "sources": [
+        {
+          "sourceKey": "wp-operation-torch",
+          "sourceLocation": "infobox date: 8–16 November 1942 ()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-operation-torch",
+              "sourceLocation": "infobox date: 8–16 November 1942 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-the-bulge",
+      "title": "Battle of the Bulge",
+      "descr": "",
+      "start": 1944,
+      "tracks": [
+        "united-states"
+      ],
+      "startMonth": 12,
+      "startDay": 16,
+      "end": 1945,
+      "endMonth": 1,
+      "endDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-the-bulge",
+          "sourceLocation": "infobox date: 16 December 1944 – 28 January 1945()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-the-bulge",
+              "sourceLocation": "infobox date: 16 December 1944 – 28 January 1945()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-okinawa",
+      "title": "Battle of Okinawa",
+      "descr": "",
+      "start": 1945,
+      "tracks": [
+        "united-states",
+        "japan"
+      ],
+      "startMonth": 4,
+      "startDay": 1,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-okinawa",
+          "sourceLocation": "infobox date: 1 April – 22 June 1945()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-okinawa",
+              "sourceLocation": "infobox date: 1 April – 22 June 1945()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-inchon",
+      "title": "Battle of Inchon",
+      "descr": "",
+      "start": 1950,
+      "tracks": [
+        "korea"
+      ],
+      "startMonth": 9,
+      "startDay": 10,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-inchon",
+          "sourceLocation": "infobox date: 10–19 September 1950(10–15 September – Bombardments of Wolmido and Incheon)(15–19 September – Incheon Landing)"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-inchon",
+              "sourceLocation": "infobox date: 10–19 September 1950(10–15 September – Bombardments of Wolmido and Incheon)(15–19 September – Incheon Landing)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-the-pusan-perimeter",
+      "title": "Battle of the Pusan Perimeter",
+      "descr": "",
+      "start": 1950,
+      "tracks": [
+        "korea"
+      ],
+      "startMonth": 8,
+      "startDay": 4,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-the-pusan-perimeter",
+          "sourceLocation": "infobox date: 4 August – 18 September 1950()"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-the-pusan-perimeter",
+              "sourceLocation": "infobox date: 4 August – 18 September 1950()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-1960-ethiopian-coup-attempt",
+      "title": "1960 Ethiopian coup attempt",
+      "descr": "",
+      "start": 1960,
+      "tracks": [
+        "ethiopia"
+      ],
+      "startMonth": 12,
+      "startDay": 13,
+      "sources": [
+        {
+          "sourceKey": "wp-1960-ethiopian-coup-attempt",
+          "sourceLocation": "infobox date: 13–17 December 1960 ()"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-1960-ethiopian-coup-attempt",
+              "sourceLocation": "infobox date: 13–17 December 1960 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-cambodian-campaign",
+      "title": "Cambodian campaign",
+      "descr": "",
+      "start": 1970,
+      "tracks": [
+        "cambodia"
+      ],
+      "startMonth": 4,
+      "startDay": 29,
+      "sources": [
+        {
+          "sourceKey": "wp-cambodian-campaign",
+          "sourceLocation": "infobox date: April 29 – July 22, 1970"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [
+            {
+              "sourceKey": "wp-cambodian-campaign",
+              "sourceLocation": "infobox date: April 29 – July 22, 1970"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-fall-of-the-derg-regime",
+      "title": "Fall of the Derg regime",
+      "descr": "",
+      "start": 1991,
+      "tracks": [
+        "ethiopia"
+      ],
+      "startMonth": 5,
+      "startDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-fall-of-the-derg-regime",
+          "sourceLocation": "infobox date: 28 May 1991"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-fall-of-the-derg-regime",
+              "sourceLocation": "infobox date: 28 May 1991"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-international-force-east-timor",
+      "title": "International Force East Timor",
+      "descr": "",
+      "start": 1999,
+      "tracks": [
+        "australia",
+        "indonesia"
+      ],
+      "startMonth": 9,
+      "startDay": 20,
+      "end": 2000,
+      "endMonth": 2,
+      "endDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-international-force-east-timor",
+          "sourceLocation": "infobox date: 20 September 1999 – 28 February 2000"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-international-force-east-timor",
+              "sourceLocation": "infobox date: 20 September 1999 – 28 February 2000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-2006-thai-coup-d-tat",
+      "title": "2006 Thai coup d'état",
+      "descr": "",
+      "start": 2006,
+      "tracks": [
+        "thailand"
+      ],
+      "startMonth": 9,
+      "startDay": 19,
+      "sources": [
+        {
+          "sourceKey": "wp-2006-thai-coup-d-tat",
+          "sourceLocation": "infobox date: 19 September 2006"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-2006-thai-coup-d-tat",
+              "sourceLocation": "infobox date: 19 September 2006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-2014-russian-annexation-of-crimea",
+      "title": "2014 Russian annexation of Crimea",
+      "descr": "",
+      "start": 2014,
+      "tracks": [
+        "russia",
+        "ukraine"
+      ],
+      "startMonth": 3,
+      "sources": [
+        {
+          "sourceKey": "wp-2014-russian-annexation-of-crimea",
+          "sourceLocation": "lead: \"In February and March 2014, Russia invaded the Crimean Peninsula of Ukraine, occupied it, and then annexed it after an illegitimate referendum.\""
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-2014-russian-annexation-of-crimea",
+              "sourceLocation": "lead: \"In February and March 2014, Russia invaded the Crimean Peninsula of Ukraine, occupied it, and then annexed it after an illegitimate referendum.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-2025-cambodian-thai-border-crisis",
+      "title": "2025 Cambodian–Thai border crisis",
+      "descr": "",
+      "start": 2025,
+      "tracks": [
+        "cambodia",
+        "thailand"
+      ],
+      "startMonth": 5,
+      "startDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-2025-cambodian-thai-border-crisis",
+          "sourceLocation": "infobox date: Border crisis: 28 May – 26 October 2025 () 10 November – 7 December 2025 () Border conflicts: 24–28 July 2025 () 8–27 December 2025 ()"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-2025-cambodian-thai-border-crisis",
+              "sourceLocation": "infobox date: Border crisis: 28 May – 26 October 2025 () 10 November – 7 December 2025 () Border conflicts: 24–28 July 2025 () 8–27 December 2025 ()"
             }
           ]
         }
@@ -254952,39 +258845,6 @@
       "ongoing": true
     },
     {
-      "uuid": "reign-devan-nair-singapore",
-      "title": "Presidency of Devan Nair",
-      "start": 1964,
-      "startMonth": 5,
-      "startDay": 18,
-      "end": 1969,
-      "endMonth": 3,
-      "endDay": 20,
-      "tracks": [
-        "singapore"
-      ],
-      "descr": "Holds office as head of state of Singapore from 18 May 1964 to 20 March 1969 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-devan-nair",
-          "sourceLocation": "infobox term_start6: 18 May 1964 – 20 March 1969"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-devan-nair",
-              "sourceLocation": "infobox term_start6: 18 May 1964 – 20 March 1969"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-yusof-ishak-singapore",
       "title": "Presidency of Yusof Ishak",
       "start": 1965,
@@ -255110,39 +258970,6 @@
             {
               "sourceKey": "wp-benjamin-sheares",
               "sourceLocation": "infobox term_start: 2 January 1971 – 12 May 1981"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-devan-nair-singapore-1979",
-      "title": "Presidency of Devan Nair",
-      "start": 1979,
-      "startMonth": 2,
-      "startDay": 10,
-      "end": 1981,
-      "endMonth": 10,
-      "endDay": 13,
-      "tracks": [
-        "singapore"
-      ],
-      "descr": "Holds office as head of state of Singapore from 10 February 1979 to 13 October 1981 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-devan-nair",
-          "sourceLocation": "infobox term_start5: 10 February 1979 – 13 October 1981"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-devan-nair",
-              "sourceLocation": "infobox term_start5: 10 February 1979 – 13 October 1981"
             }
           ]
         }
@@ -319392,35 +323219,6 @@
       ]
     },
     {
-      "uuid": "reign-kalkot-mataskelekele-vanuatu",
-      "title": "Presidency of Kalkot Mataskelekele",
-      "start": 1988,
-      "end": 1991,
-      "tracks": [
-        "vanuatu"
-      ],
-      "descr": "Holds office as head of state of Vanuatu from 1988 to 1991 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kalkot-mataskelekele",
-          "sourceLocation": "infobox term_start2: 1988 – 1991"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kalkot-mataskelekele",
-              "sourceLocation": "infobox term_start2: 1988 – 1991"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-onneyn-tahi-vanuatu",
       "title": "Acting presidency of Onneyn Tahi",
       "start": 1989,
@@ -320980,104 +324778,6 @@
       "ongoing": true
     },
     {
-      "uuid": "reign-kenas-aroi-nauru",
-      "title": "Presidency of Kenas Aroi",
-      "start": 1968,
-      "startMonth": 1,
-      "startDay": 31,
-      "end": 1991,
-      "endMonth": 1,
-      "endDay": 22,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 31 January 1968 to 22 January 1991 (23 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kenas-aroi",
-          "sourceLocation": "infobox term_start2: January 31, 1968 – January 22, 1991"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kenas-aroi",
-              "sourceLocation": "infobox term_start2: January 31, 1968 – January 22, 1991"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-lagumot-harris-nauru",
-      "title": "Presidency of Lagumot Harris",
-      "start": 1968,
-      "startMonth": 1,
-      "startDay": 31,
-      "end": 1976,
-      "endMonth": 12,
-      "endDay": 18,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 31 January 1968 to 18 December 1976 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-lagumot-harris",
-          "sourceLocation": "infobox term_start3: 31 January 1968 – 18 December 1976"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-lagumot-harris",
-              "sourceLocation": "infobox term_start3: 31 January 1968 – 18 December 1976"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru",
-      "title": "Presidency of Derog Gioura",
-      "start": 1968,
-      "startMonth": 1,
-      "startDay": 31,
-      "end": 1971,
-      "endMonth": 1,
-      "endDay": 25,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 31 January 1968 to 25 January 1971 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start1: 31 January 1968 – 25 January 1971"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start1: 31 January 1968 – 25 January 1971"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-hammer-deroburt-nauru",
       "title": "Presidency of Hammer DeRoburt",
       "start": 1968,
@@ -321104,170 +324804,6 @@
             {
               "sourceKey": "wp-hammer-deroburt",
               "sourceLocation": "infobox term_start: 17 May 1968 – 22 December 1976"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ruben-kun-nauru",
-      "title": "Presidency of Ruben Kun",
-      "start": 1971,
-      "startMonth": 1,
-      "startDay": 25,
-      "end": 1992,
-      "endMonth": 11,
-      "endDay": 16,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 25 January 1971 to 16 November 1992 (21 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ruben-kun",
-          "sourceLocation": "infobox term_start5: 25 January 1971 – 16 November 1992"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ruben-kun",
-              "sourceLocation": "infobox term_start5: 25 January 1971 – 16 November 1992"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1971,
-      "startMonth": 1,
-      "startDay": 25,
-      "end": 1971,
-      "endMonth": 6,
-      "endDay": 18,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 25 January 1971 to 18 June 1971.",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start4: 25 January 1971 – 18 June 1971"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start4: 25 January 1971 – 18 June 1971"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru-1971",
-      "title": "Presidency of Derog Gioura",
-      "start": 1971,
-      "startMonth": 8,
-      "startDay": 18,
-      "end": 1973,
-      "endMonth": 12,
-      "endDay": 17,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 18 August 1971 to 17 December 1973 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start2: 18 August 1971 – 17 December 1973"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start2: 18 August 1971 – 17 December 1973"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1973",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1973,
-      "startMonth": 12,
-      "startDay": 17,
-      "end": 1976,
-      "endMonth": 12,
-      "endDay": 18,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 17 December 1973 to 18 December 1976 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start5: 17 December 1973 – 18 December 1976"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start5: 17 December 1973 – 18 December 1976"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru-1976",
-      "title": "Presidency of Derog Gioura",
-      "start": 1976,
-      "startMonth": 12,
-      "startDay": 18,
-      "end": 1977,
-      "endMonth": 5,
-      "endDay": 26,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 18 December 1976 to 26 May 1977.",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start3: 18 December 1976 – 26 May 1977"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start3: 18 December 1976 – 26 May 1977"
             }
           ]
         }
@@ -321301,72 +324837,6 @@
             {
               "sourceKey": "wp-bernard-dowiyogo",
               "sourceLocation": "infobox term_start: December 22, 1976 – April 19, 1978"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1977",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1977,
-      "startMonth": 5,
-      "startDay": 16,
-      "end": 1978,
-      "endMonth": 9,
-      "endDay": 14,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 16 May 1977 to 14 September 1978.",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start6: 16 May 1977 – 14 September 1978"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start6: 16 May 1977 – 14 September 1978"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-lagumot-harris-nauru-1977",
-      "title": "Presidency of Lagumot Harris",
-      "start": 1977,
-      "startMonth": 11,
-      "startDay": 12,
-      "end": 1980,
-      "endMonth": 12,
-      "endDay": 8,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 12 November 1977 to 8 December 1980 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-lagumot-harris",
-          "sourceLocation": "infobox term_start4: 12 November 1977 – 8 December 1980"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-lagumot-harris",
-              "sourceLocation": "infobox term_start4: 12 November 1977 – 8 December 1980"
             }
           ]
         }
@@ -321432,71 +324902,6 @@
             {
               "sourceKey": "wp-hammer-deroburt",
               "sourceLocation": "infobox term_start2: 15 May 1978 – 17 September 1986"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru-1978",
-      "title": "Presidency of Derog Gioura",
-      "start": 1978,
-      "startMonth": 10,
-      "startDay": 21,
-      "end": 2001,
-      "endMonth": 11,
-      "endDay": 6,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 21 October 1978 to 6 November 2001 (23 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start4: 21 October 1978 – 6 November 2001"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start4: 21 October 1978 – 6 November 2001"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1980",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1980,
-      "startMonth": 12,
-      "startDay": 8,
-      "end": 1988,
-      "endMonth": 7,
-      "endDay": 25,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 8 December 1980 to 25 July 1988 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start7: 8 December 1980 – 25 July 1988"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start7: 8 December 1980 – 25 July 1988"
             }
           ]
         }
@@ -321629,38 +325034,6 @@
             {
               "sourceKey": "wp-hammer-deroburt",
               "sourceLocation": "infobox term_start4: 22 December 1986 – 17 August 1989"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1988",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1988,
-      "startMonth": 9,
-      "startDay": 3,
-      "end": 2000,
-      "endMonth": 4,
-      "endDay": 8,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 3 September 1988 to 8 April 2000 (12 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start8: 3 September 1988 – 8 April 2000"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start8: 3 September 1988 – 8 April 2000"
             }
           ]
         }
@@ -322030,39 +325403,6 @@
       ]
     },
     {
-      "uuid": "reign-derog-gioura-nauru-2001",
-      "title": "Presidency of Derog Gioura",
-      "start": 2001,
-      "startMonth": 12,
-      "startDay": 18,
-      "end": 2004,
-      "endMonth": 10,
-      "endDay": 23,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 18 December 2001 to 23 October 2004 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start5: 18 December 2001 – 23 October 2004"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start5: 18 December 2001 – 23 October 2004"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-bernard-dowiyogo-nauru-2003",
       "title": "Presidency of Bernard Dowiyogo",
       "start": 2003,
@@ -322255,39 +325595,6 @@
             {
               "sourceKey": "wp-ludwig-scotty",
               "sourceLocation": "infobox term_start1: 22 June 2004 – 19 December 2007"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-freddie-pitcher-nauru",
-      "title": "Presidency of Freddie Pitcher",
-      "start": 2004,
-      "startMonth": 10,
-      "startDay": 23,
-      "end": 2013,
-      "endMonth": 6,
-      "endDay": 8,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 23 October 2004 to 8 June 2013 (9 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-freddie-pitcher",
-          "sourceLocation": "infobox term_start2: 23 October 2004 – 8 June 2013"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-freddie-pitcher",
-              "sourceLocation": "infobox term_start2: 23 October 2004 – 8 June 2013"
             }
           ]
         }
@@ -325513,5 +328820,26 @@
         }
       ]
     }
-  ]
+  ],
+  "redirects": {
+    "reign-derog-gioura-nauru": null,
+    "reign-derog-gioura-nauru-1971": null,
+    "reign-derog-gioura-nauru-1976": null,
+    "reign-derog-gioura-nauru-1978": null,
+    "reign-derog-gioura-nauru-2001": null,
+    "reign-devan-nair-singapore": null,
+    "reign-devan-nair-singapore-1979": null,
+    "reign-freddie-pitcher-nauru": null,
+    "reign-kalkot-mataskelekele-vanuatu": null,
+    "reign-kenas-aroi-nauru": null,
+    "reign-kennan-adeang-nauru": null,
+    "reign-kennan-adeang-nauru-1973": null,
+    "reign-kennan-adeang-nauru-1977": null,
+    "reign-kennan-adeang-nauru-1980": null,
+    "reign-kennan-adeang-nauru-1988": null,
+    "reign-lagumot-harris-nauru": null,
+    "reign-lagumot-harris-nauru-1977": null,
+    "reign-ruben-kun-nauru": null,
+    "wp-derog-gioura": null
+  }
 }
